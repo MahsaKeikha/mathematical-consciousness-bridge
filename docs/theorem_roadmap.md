@@ -2,7 +2,7 @@
 
 This roadmap records the current proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge.
 
-![P1-P22 theorem roadmap](figures/theorem_roadmap.svg)
+![P1-P23 theorem roadmap](figures/theorem_roadmap.svg)
 
 ---
 
@@ -32,6 +32,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P20](proposition_20_finite_sample_residual_certification.md) | Hoeffding joint-TV concentration plus finite-alphabet entropy continuity | finite-sample confidence interval for the P19 conditional-information residual | proved finite-sample certification theorem |
 | [P21](proposition_21_descriptor_refinement_residual_persistence.md) | nested descriptor factorization and conditional-information chain rule | explicit omitted-physics audit and residual-persistence trajectory | proved descriptor-refinement theorem |
 | [P22](proposition_22_simultaneous_refinement_chain_certification.md) | shared base-TV confidence event plus deterministic pushforward contraction | simultaneous finite-data confidence family for P21 residuals and gains | proved simultaneous-certification theorem |
+| [P23](proposition_23_adaptive_descriptor_selection_certification.md) | universal pushforward control plus post-selection regret analysis | adaptive fixed-sample physical-refinement selection with valid coverage | proved post-selection theorem |
 
 ---
 
@@ -560,7 +561,55 @@ Direct proof: [Proposition 22](proposition_22_simultaneous_refinement_chain_cert
 
 ---
 
-# 12. Dependency chain
+# 12. Adaptive physical-descriptor selection: P23
+
+Let \(T_c=c(\Omega)\) be a common coarse physical descriptor and let every admissible \(T_f=f(\Omega)\) refine \(T_c\).
+
+On the one P22 base confidence event,
+
+\[
+\boxed{
+\|P-\widehat P\|_{\mathrm{TV}}
+\le\tau_n(\alpha),
+}
+\]
+
+total-variation contraction implies uniform control for every deterministic candidate pushforward. Hence the simultaneous gain and residual bounds remain valid even after selecting
+
+\[
+\boxed{
+\widehat f\in\operatorname*{arg\,max}_f\widehat G_f.
+}
+\]
+
+If \(G^*=\max_fG_f\), then P23 proves
+
+\[
+\boxed{
+0\le G^*-G_{\widehat f}
+\le\max_fU_f^G-L_{\widehat f}^G
+\le2\Gamma_{\max}.
+}
+\]
+
+By P21,
+
+\[
+\boxed{
+R_{\widehat f}-\min_fR_f
+=G^*-G_{\widehat f}.
+}
+\]
+
+Thus fixed-sample adaptive selection retains coverage and receives a quantitative near-optimality certificate relative to the declared admissible descriptor class.
+
+P23 does not cover optional stopping across sample sizes, and statistical post-selection validity does not by itself establish that a selected map is a scientifically meaningful physical descriptor.
+
+Direct proof: [Proposition 23](proposition_23_adaptive_descriptor_selection_certification.md). Implementation: [adaptive_descriptor_selection.py](../src/consciousness_bridge/adaptive_descriptor_selection.py). Tests: [test_adaptive_descriptor_selection.py](../tests/test_adaptive_descriptor_selection.py).
+
+---
+
+# 13. Dependency chain
 
 \[
 \boxed{
@@ -583,20 +632,22 @@ Direct proof: [Proposition 22](proposition_22_simultaneous_refinement_chain_cert
 &\Downarrow\\
 &\text{P21: physical-descriptor refinement + residual persistence}\\
 &\Downarrow\\
-&\text{P22: simultaneous finite-sample refinement certification}.
+&\text{P22: simultaneous finite-sample refinement certification}\\
+&\Downarrow\\
+&\text{P23: fixed-sample adaptive descriptor selection}.
 \end{aligned}
 }
 \]
 
 ---
 
-# 13. Current frontier
+# 14. Current frontier
 
 The next structural problems are:
 
 1. extend scale certification from response geometry \(\mathcal G\) to directed influence \(\mathcal A\) under block-compatible coarse maps;
 2. characterize partition-lattice compatibility required to control \(\mathcal K\) across scale;
-3. extend P22 beyond fixed finite-alphabet IID chains to continuous, dependent, hidden-state, noisy-descriptor, and adaptive-refinement settings with valid coverage;
+3. extend P23 from fixed-sample post-selection validity to anytime-valid adaptive refinement with optional stopping, then address continuous, dependent, hidden-state, and noisy-descriptor settings;
 4. model genuine physical split/merge dynamics where state variables and intervention channels change;
 5. formalize the moving world-tube / causal-structure interface;
 6. normalize temporal geometry under irregular observation time;

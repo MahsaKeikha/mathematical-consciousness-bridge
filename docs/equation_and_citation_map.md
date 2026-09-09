@@ -299,7 +299,23 @@ P22 is a finite-data theorem for a fixed declared deterministic refinement chain
 
 ---
 
-# 17. Candidate consciousness-theory feature families
+# 17. P23 - adaptive physical-descriptor selection certification
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(\|h_\#P-h_\#\widehat P\|_{\mathrm{TV}}\le\|P-\widehat P\|_{\mathrm{TV}}\) for every deterministic \(h\) | pathwise pushforward contraction supporting uniform candidate control | standard total-variation data processing applied here | standard probability; [P23](proposition_23_adaptive_descriptor_selection_certification.md) |
+| \(G_f=I(E;T_f\mid T_c)\) | target-relevant information captured by candidate refinement \(f\) | P21 refinement gain used as P23 selection objective | [P21](proposition_21_descriptor_refinement_residual_persistence.md); [P23](proposition_23_adaptive_descriptor_selection_certification.md) |
+| \(\widehat f\in\operatorname*{arg\,max}_f\widehat G_f\) | fixed-sample data-dependent descriptor-selection rule | repository selection construction | [P23](proposition_23_adaptive_descriptor_selection_certification.md) |
+| \(|G_f-\widehat G_f|\le\Gamma_f(\tau_n)\) for all candidates on one base event | simultaneous gain confidence family before and after selection | proved from P22 base event, TV contraction, and P20 entropy continuity | [P20](proposition_20_finite_sample_residual_certification.md); [P22](proposition_22_simultaneous_refinement_chain_certification.md); [P23](proposition_23_adaptive_descriptor_selection_certification.md) |
+| \(0\le G^*-G_{\widehat f}\le2\Gamma_{\max}\) | generic post-selection refinement-regret bound | proved | [P23](proposition_23_adaptive_descriptor_selection_certification.md) |
+| \(G^*-G_{\widehat f}\le\max_fU_f^G-L_{\widehat f}^G\) | data-dependent regret certificate from simultaneous candidate intervals | proved | [P23](proposition_23_adaptive_descriptor_selection_certification.md) |
+| \(R_{\widehat f}-\min_fR_f=G^*-G_{\widehat f}\) | converts gain regret into excess remaining residual under a common coarse descriptor | proved from P21 identity | [P21](proposition_21_descriptor_refinement_residual_persistence.md); [P23](proposition_23_adaptive_descriptor_selection_certification.md) |
+
+P23 is a fixed-sample post-selection theorem. The shared base confidence event supports data-dependent candidate choice because all candidate laws are deterministic pushforwards of the same finite base law. This does not provide optional-stopping validity across sample sizes and does not establish the physical admissibility or completeness of the selected descriptor.
+
+---
+
+# 18. Candidate consciousness-theory feature families
 
 The following are source-grounded translations into generic feature notation. They are not claims that each named theory reduces to one scalar or one universally agreed implementation.
 
@@ -316,7 +332,7 @@ Detailed caveats and source roles are maintained in [Candidate Theory Families](
 
 ---
 
-# 18. Citation discipline
+# 19. Citation discipline
 
 A result is cited as a repository result when the bridge-specific statement, construction, or counterexample is introduced here.
 
