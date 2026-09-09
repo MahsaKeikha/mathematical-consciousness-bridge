@@ -70,3 +70,5 @@ jobs:
           git add -A
           git commit -m "Integrate P27 partition-lattice node aggregation"
           git push origin HEAD:p27-partition-lattice-node-aggregation
+
+# Rerun after tightening the canonical P27 figure copy.
