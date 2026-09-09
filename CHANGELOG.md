@@ -2,6 +2,21 @@
 
 This changelog records theorem-level scientific releases. Definitions, proofs, implementations, tests, and documentation remain linked from the main research page.
 
+## 0.10.0 - 2026-09-09
+
+### Propositions 5-10 - complete-signature recovery and robust experiment design
+
+- Proposition 5 characterized exactly when a physical feature is sufficient for a declared bridge and established a direct feature-matched counterexample criterion.
+- Proposition 6 constructed the canonical complete bridge signature and proved that its fibers coincide exactly with the bridge fibers.
+- Proposition 7 characterized experimental recoverability of a proposed complete signature through observable fingerprints and established the corresponding no-go condition.
+- Proposition 8 introduced within-signature spread, between-signature separation, the robust signature gap, and a finite-error threshold for exact partition recovery.
+- Proposition 9 converted the robust gap into an explicit categorical finite-sample sufficient bound using Hoeffding concentration and a union bound.
+- Proposition 10 introduced robust protocol-family design, proved finite optimum existence, proved nonmonotonicity under added protocols, and linked the robust gap directly to the Proposition 9 trial requirement.
+- Added a source-faithful comparison of IIT, GNWT, recurrent-processing, higher-order, predictive-processing, and related bridge families.
+- Expanded the bibliography and equation/citation map to distinguish repository constructions, standard mathematical tools, physical assumptions, and external empirical evidence.
+- Corrected the Proposition 10 controlled example to use explicitly realizable Bernoulli probability laws rather than an abstract pair-distance table.
+- The Proposition 10 checkpoint passes the test and `ruff` matrix on Python 3.10, 3.11, and 3.12.
+
 ## 0.5.0 - 2026-09-09
 
 ### Proposition 4 - optimal discriminating experiment families
