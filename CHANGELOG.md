@@ -2,6 +2,36 @@
 
 This changelog records theorem-level scientific releases. Definitions, proofs, implementations, tests, figures, and documentation remain linked from the main research page.
 
+## 0.16.0 - 2026-09-09
+
+### Proposition 16 - independent composition and controlled coupling
+
+- Defined the independent product-response composition
+  \[
+  P_{A\otimes B}^{(u_A,u_B),\tau}=P_A^{u_A,\tau}\otimes P_B^{u_B,\tau}.
+  \]
+- Proved the composed response-geometry bounds
+  \[
+  \max\{d_A,d_B\}\le d_{AB}\le d_A+d_B-d_Ad_B.
+  \]
+- Proved exact preservation of one-factor total-variation distance when the other subsystem intervention is held fixed.
+- Proved zero cross-system directed influence under independent product-response composition.
+- Proved zero partition irreducibility across the complete \(A|B\) subsystem split.
+- Defined the response-level coupling defect
+  \[
+  \chi_{A|B}(\tau)
+  =
+  \sup_{u_A,u_B}
+  \left\|
+  P_{AB}-P_{A,\mathrm{marg}}\otimes P_{B,\mathrm{marg}}
+  \right\|_{\mathrm{TV}},
+  \]
+  and identified it exactly with the Proposition 11 partition irreducibility for the \(A|B\) split.
+- Clarified the identifiability boundary: zero response-factorization defect does not by itself establish absence of every hidden mechanistic interaction outside the declared intervention-observable regime.
+- Added executable composition utilities and eight claim-level tests, increasing the suite to 92 tests.
+- Added a publication-style composition/coupling figure and rebuilt the theorem roadmap through P16.
+- Extended repository structure and visual-quality guards to protect the complete P16 artifact set.
+
 ## 0.15.0 - 2026-09-09
 
 ### Proposition 15 - finite-sample temporal certification
