@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
+  <title id="title">Proposition 15 finite-sample temporal certification</title>
+  <desc id="desc">Visual explanation of estimated temporal separation, uncertainty propagation, certified distance intervals, path-variation bounds, and three-way threshold classification.</desc>
+  <defs>
+    <style>
+      .title{font:700 38px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 18px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .group{font:700 12px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
+      .head{font:700 19px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 15px Inter,Segoe UI,Arial,sans-serif;fill:#334155}
+      .small{font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .eq{font:600 18px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .eqLight{font:600 18px Georgia,'Times New Roman',serif;fill:#f8fafc}
+      .status{font:700 12px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.5px}
+    </style>
+  </defs>
+
+  <rect width="1600" height="980" fill="#ffffff"/>
+  <text x="70" y="66" class="title">Proposition 15 - Finite-Sample Temporal Certification</text>
+  <text x="70" y="100" class="subtitle">Finite fingerprint uncertainty is propagated through the representation-invariant temporal metric rather than ignored.</text>
+
+  <text x="70" y="145" class="group">A. ESTIMATED TEMPORAL STEP WITH DECLARED FINGERPRINT RADII</text>
+
+  <rect x="70" y="165" width="430" height="235" rx="16" fill="#f7fbff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="96" y="201" class="head">Estimated state at time s</text>
+  <text x="96" y="242" class="eq">ĉₛ</text>
+  <text x="96" y="277" class="body">True state lies inside a metric ball:</text>
+  <text x="96" y="312" class="eq">D<tspan baseline-shift="sub" font-size="12">w</tspan>(cₛ, ĉₛ) ≤ εₛ</text>
+  <rect x="96" y="340" width="185" height="32" rx="8" fill="#dbeafe"/>
+  <text x="113" y="361" class="status" fill="#1d4ed8">SIMULTANEOUS ERROR EVENT</text>
+
+  <rect x="585" y="165" width="430" height="235" rx="16" fill="#f5fcfd" stroke="#0891b2" stroke-width="1.5"/>
+  <text x="611" y="201" class="head">Estimated quotient separation</text>
+  <text x="611" y="246" class="eq">d̂ₛₜ = D̄<tspan baseline-shift="sub" font-size="12">w</tspan>([ĉₛ],[ĉₜ])</text>
+  <text x="611" y="286" class="body">Representation alignment is performed before</text>
+  <text x="611" y="310" class="body">the temporal change is interpreted physically.</text>
+  <text x="611" y="350" class="eq">error budget = εₛ + εₜ</text>
+
+  <rect x="1100" y="165" width="430" height="235" rx="16" fill="#f7fbff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="1126" y="201" class="head">Estimated state at time t</text>
+  <text x="1126" y="242" class="eq">ĉₜ</text>
+  <text x="1126" y="277" class="body">True state lies inside a metric ball:</text>
+  <text x="1126" y="312" class="eq">D<tspan baseline-shift="sub" font-size="12">w</tspan>(cₜ, ĉₜ) ≤ εₜ</text>
+  <rect x="1126" y="340" width="185" height="32" rx="8" fill="#dbeafe"/>
+  <text x="1143" y="361" class="status" fill="#1d4ed8">SIMULTANEOUS ERROR EVENT</text>
+
+  <line x1="500" y1="280" x2="585" y2="280" stroke="#64748b" stroke-width="2"/>
+  <polygon points="585,280 573,274 573,286" fill="#64748b"/>
+  <line x1="1015" y1="280" x2="1100" y2="280" stroke="#64748b" stroke-width="2"/>
+  <polygon points="1100,280 1088,274 1088,286" fill="#64748b"/>
+
+  <text x="70" y="455" class="group">B. EXACT STABILITY BOUND AND TRUE-DISTANCE INTERVAL</text>
+
+  <rect x="70" y="475" width="700" height="205" rx="16" fill="#f5fcf8" stroke="#059669" stroke-width="1.5"/>
+  <text x="96" y="511" class="head">Quotient-distance stability</text>
+  <text x="96" y="555" class="eq">| d̂ₛₜ - dₛₜ | ≤ εₛ + εₜ</text>
+  <text x="96" y="596" class="body">The uncertainty in a temporal comparison is no larger than</text>
+  <text x="96" y="620" class="body">the sum of the two endpoint fingerprint radii.</text>
+  <rect x="96" y="642" width="188" height="28" rx="8" fill="#d1fae5"/>
+  <text x="113" y="661" class="status" fill="#047857">PROVED - PROPOSITION 15A</text>
+
+  <rect x="830" y="475" width="700" height="205" rx="16" fill="#faf8ff" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="856" y="511" class="head">Certified interval for true structural change</text>
+  <text x="856" y="555" class="eq">Lₛₜ = max{0, d̂ₛₜ - εₛ - εₜ}</text>
+  <text x="856" y="594" class="eq">Uₛₜ = d̂ₛₜ + εₛ + εₜ</text>
+  <text x="856" y="630" class="body">If Lₛₜ &gt; 0, a nonzero physical separation is certified.</text>
+  <text x="856" y="654" class="small">If Lₛₜ = 0, equality is not established; the comparison is unresolved.</text>
+
+  <text x="70" y="735" class="group">C. PATH-LEVEL CERTIFICATION AND THRESHOLD DECISION</text>
+
+  <rect x="70" y="755" width="470" height="160" rx="16" fill="#fffdf5" stroke="#ca8a04" stroke-width="1.5"/>
+  <text x="96" y="790" class="head">Cumulative variation</text>
+  <text x="96" y="829" class="eq">| V̂ - V | ≤ ε₀ + 2Σ εᵢ + ε<tspan baseline-shift="sub" font-size="12">T</tspan></text>
+  <text x="96" y="867" class="body">Interior time-point uncertainty contributes twice</text>
+  <text x="96" y="890" class="body">because each state participates in two adjacent steps.</text>
+
+  <rect x="565" y="755" width="400" height="160" rx="16" fill="#fffaf7" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="591" y="790" class="head">Maximum-step bound</text>
+  <text x="591" y="829" class="eq">| Ĵ - J | ≤ max<tspan baseline-shift="sub" font-size="12">i</tspan>(εᵢ + εᵢ₊₁)</text>
+  <text x="591" y="867" class="body">The largest possible jump error is controlled</text>
+  <text x="591" y="890" class="body">by the largest adjacent radius pair.</text>
+
+  <rect x="990" y="755" width="540" height="160" rx="16" fill="#0f172a"/>
+  <text x="1016" y="790" class="head" fill="#f8fafc" style="fill:#f8fafc">Three-way threshold certificate</text>
+  <text x="1016" y="826" class="eqLight">L &gt; η  : certified above threshold</text>
+  <text x="1016" y="854" class="eqLight">U ≤ η  : certified below threshold</text>
+  <text x="1016" y="882" class="eqLight">otherwise : unresolved</text>
+
+  <text x="70" y="954" class="small">Interpretation boundary: P15 certifies physical structural change under declared uncertainty; it does not equate temporal smoothness or discontinuity with consciousness.</text>
+</svg>
