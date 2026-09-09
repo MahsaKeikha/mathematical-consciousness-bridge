@@ -71,10 +71,12 @@
 
   <rect x="345" y="700" width="910" height="220" rx="20" fill="#f8fafc" stroke="#0f172a" stroke-width="1.8"/>
   <text x="385" y="738" class="label">FUNDAMENTAL PHYSICAL SUFFICIENCY · P19</text>
-  <text x="385" y="776" class="head">Does the independently defined target factor through the physical descriptor?</text>
-  <text x="385" y="819" class="eq">E = BT ∘ T  iff  T(Ω)=T(Ω′) ⇒ E(Ω)=E(Ω′)</text>
-  <text x="385" y="855" class="eq">stochastic criterion:  I(E;Ω | T) = 0</text>
-  <text x="385" y="889" class="body">A positive residual first challenges the completeness of T; it is not itself a metaphysical conclusion.</text>
+  <text x="385" y="776" class="head">Physical sufficiency / residual test</text>
+  <text x="385" y="804" class="body">Can an independently defined target be reconstructed from T?</text>
+  <text x="385" y="839" class="eq">E = BT ∘ T  iff  T(Ω)=T(Ω′) ⇒ E(Ω)=E(Ω′)</text>
+  <text x="385" y="873" class="eq">stochastic criterion:  I(E;Ω | T) = 0</text>
+  <text x="385" y="900" class="body">A positive residual first challenges the completeness of T.</text>
+  <text x="385" y="923" class="body">It is not, by itself, a metaphysical conclusion.</text>
 
   <path class="arrow" d="M1295 590 V650 H800 V688"/>
 
