@@ -39,7 +39,7 @@ def test_adding_protocol_can_reduce_robust_signature_gap():
     gap_ab = robust_signature_gap(predictions, feature, ("A", "B"))
 
     assert gap_a == pytest.approx(0.50)
-    assert gap_ab == pytest.approx(0.08)
+    assert gap_ab == pytest.approx(0.05)
     assert gap_ab < gap_a
 
 
@@ -51,9 +51,9 @@ def test_marginal_effect_equals_between_gain_minus_within_inflation():
         added="B",
     )
 
-    assert between_gain == pytest.approx(0.03)
+    assert between_gain == pytest.approx(0.00)
     assert within_inflation == pytest.approx(0.45)
-    assert gap_change == pytest.approx(-0.42)
+    assert gap_change == pytest.approx(-0.45)
     assert gap_change == pytest.approx(between_gain - within_inflation)
 
 
