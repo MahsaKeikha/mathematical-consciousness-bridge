@@ -1,6 +1,18 @@
 # Changelog
 
-This changelog records theorem-level scientific releases. Definitions, proofs, implementations, tests, and documentation remain linked from the main research page.
+This changelog records theorem-level scientific releases. Definitions, proofs, implementations, tests, figures, and documentation remain linked from the main research page.
+
+## 0.12.0 - 2026-09-09
+
+### Proposition 12 - IRCG component insufficiency and minimal-feature audit
+
+- Proved a general projection-collision no-go theorem: if a compressed feature identifies two systems that the target signature distinguishes, the target cannot factor through that compression.
+- Constructed realizable collision pairs proving that IRCG response geometry alone, directed marginal influence alone, and partition irreducibility alone are each insufficient to reconstruct the full IRCG object.
+- Added explicit counterexamples showing that response diameter, a minimum irreducibility scalar, and a cycle/no-cycle recurrence flag are not complete descriptors of IRCG.
+- Added executable minimality-audit utilities and regression tests for projection collisions and completeness on finite declared domains.
+- Added a professional visual research system: research architecture, P1-P12 theorem roadmap, IRCG anatomy, P12 collision map, universal-proof ladder, theory-comparison map, and a dedicated Visual Research Guide.
+- Synchronized the public research narrative with the actual P1-P12 theorem state and v0.12.0 metadata.
+- The P12 scientific suite reaches 60 passing tests; the prior formatting-only CI defect was corrected before this release.
 
 ## 0.11.0 - 2026-09-09
 
