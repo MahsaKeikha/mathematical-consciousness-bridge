@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">P21 physical-descriptor refinement and residual persistence</title>
+  <desc id="desc">Publication-style theorem map showing nested physical descriptors, deterministic collision monotonicity, stochastic residual decomposition, and the omitted-physics interpretation boundary.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .title{font:700 36px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 17px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .label{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
+      .head{font:700 20px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 15px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .eq{font:600 20px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .eqsmall{font:600 17px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .arrow{stroke:#64748b;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+
+  <rect width="1600" height="1000" fill="#ffffff"/>
+  <text x="70" y="62" class="title">P21 · Physical-Descriptor Refinement and Residual Persistence</text>
+  <text x="70" y="95" class="subtitle">A residual is audited by adding physical detail, not interpreted in isolation.</text>
+
+  <rect x="90" y="145" width="1420" height="180" rx="20" fill="#f8fafc" stroke="#94a3b8"/>
+  <text x="125" y="181" class="label">NESTED PHYSICAL DESCRIPTION</text>
+  <text x="125" y="217" class="head">Fine descriptors refine coarse descriptors</text>
+  <text x="125" y="255" class="eq">Ω  →  T_f  →  T_c</text>
+  <text x="470" y="255" class="eqsmall">T_f = f(Ω),   T_c = c(T_f)</text>
+  <text x="125" y="292" class="body">Every fine fiber lies inside one coarse fiber; refinement adds declared physical detail.</text>
+
+  <rect x="90" y="380" width="680" height="255" rx="20" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="125" y="416" class="label">DETERMINISTIC AUDIT</text>
+  <text x="125" y="452" class="head">Unresolved target collisions can only disappear</text>
+  <text x="125" y="500" class="eq">C(T_f,E) ⊆ C(T_c,E)</text>
+  <text x="125" y="543" class="body">A collision that survives the finer descriptor also existed at the coarse level.</text>
+  <text x="125" y="579" class="body">A refinement may resolve a coarse collision, but cannot create a new one.</text>
+
+  <rect x="830" y="380" width="680" height="255" rx="20" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="865" y="416" class="label">STOCHASTIC AUDIT</text>
+  <text x="865" y="452" class="head">Residual decrease equals captured target information</text>
+  <text x="865" y="500" class="eq">R(T_c) = I(E;T_f | T_c) + R(T_f)</text>
+  <text x="865" y="543" class="eqsmall">R(T) := I(E;Ω | T)</text>
+  <text x="865" y="579" class="body">Therefore R(T_f) ≤ R(T_c); valid physical refinement cannot raise the residual.</text>
+
+  <rect x="90" y="690" width="1420" height="185" rx="20" fill="#fff7ed" stroke="#f97316"/>
+  <text x="125" y="726" class="label">NESTED REFINEMENT CHAIN</text>
+  <text x="125" y="762" class="head">Residual persistence becomes a trajectory, not a single number</text>
+  <text x="125" y="807" class="eq">R₀ ≥ R₁ ≥ ··· ≥ Rₘ ≥ 0</text>
+  <text x="610" y="807" class="eq">R₀ − Rₘ = Σₖ I(E;Tₖ | Tₖ₋₁)</text>
+  <text x="125" y="844" class="body">Each drop is exactly the target-relevant information supplied by the added physical detail.</text>
+
+  <rect x="90" y="910" width="1420" height="58" rx="14" fill="#0f172a"/>
+  <text x="125" y="936" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">INTERPRETATION BOUNDARY</text>
+  <text x="125" y="957" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">A positive terminal residual challenges the finest declared descriptor; it does not establish nonphysical ontology or physical completeness.</text>
+</svg>

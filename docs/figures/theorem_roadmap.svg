@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1240" viewBox="0 0 1600 1240" role="img" aria-labelledby="title desc">
-  <title id="title">Theorem roadmap through Proposition 20</title>
-  <desc id="desc">Publication-style dependency map from invariance and identifiability through causal structure, time, composition, scale, physical sufficiency, and finite-sample residual certification.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1480" viewBox="0 0 1600 1480" role="img" aria-labelledby="title desc">
+  <title id="title">Theorem roadmap through Proposition 21</title>
+  <desc id="desc">Publication-style dependency map from invariance and identifiability through causal structure, time, composition, scale, physical sufficiency, finite-sample certification, and descriptor refinement.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
       <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
@@ -16,9 +16,9 @@
     </style>
   </defs>
 
-  <rect width="1600" height="1240" fill="#ffffff"/>
-  <text x="70" y="62" class="title">Theorem Roadmap - P1 through P20</text>
-  <text x="70" y="94" class="subtitle">The proof chain separates representation, recovery, causal structure, time, composition, scale, physical sufficiency, and finite-data certification.</text>
+  <rect width="1600" height="1480" fill="#ffffff"/>
+  <text x="70" y="62" class="title">Theorem Roadmap - P1 through P21</text>
+  <text x="70" y="94" class="subtitle">The chain separates representation, recovery, causal structure, time, composition, scale, sufficiency, finite data, and refinement controls.</text>
 
   <rect x="95" y="145" width="420" height="180" rx="18" fill="#eff6ff" stroke="#3b82f6"/>
   <text x="125" y="178" class="label">FOUNDATION · P1-P4</text>
@@ -88,9 +88,19 @@
   <text x="265" y="1074" class="eq">|I(E;Ω | T) − În| ≤ ΔCMI(τn(α))</text>
   <text x="925" y="1074" class="eq">Ln &gt; 0 ⇒ residual certified at 1−α</text>
 
-  <path class="arrow" d="M800 1112 V1142"/>
+  <path class="arrow" d="M800 1112 V1150"/>
 
-  <rect x="95" y="1154" width="1410" height="62" rx="14" fill="#0f172a"/>
-  <text x="125" y="1179" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">OPEN BRIDGE FRONTIER</text>
-  <text x="125" y="1202" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Experiential formalization, physically complete descriptors, omitted-physics controls, replication, and sharper finite-data methods remain required.</text>
+  <rect x="225" y="1162" width="1150" height="188" rx="20" fill="#eff6ff" stroke="#2563eb" stroke-width="1.8"/>
+  <text x="265" y="1199" class="label">OMITTED-PHYSICS CONTROL · P21</text>
+  <text x="265" y="1237" class="head">Descriptor refinement and residual persistence</text>
+  <text x="265" y="1271" class="body">Valid refinement cannot increase the unresolved residual.</text>
+  <text x="265" y="1306" class="eq">R(Tc) = I(E;Tf | Tc) + R(Tf)</text>
+  <text x="925" y="1306" class="eq">R0 ≥ R1 ≥ ··· ≥ Rm ≥ 0</text>
+  <text x="265" y="1336" class="body">Each decrease is target information captured by added physical detail.</text>
+
+  <path class="arrow" d="M800 1350 V1382"/>
+
+  <rect x="95" y="1394" width="1410" height="62" rx="14" fill="#0f172a"/>
+  <text x="125" y="1419" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">OPEN BRIDGE FRONTIER</text>
+  <text x="125" y="1442" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Experiential formalization, physical-completeness arguments, replication, and sharper finite-data refinement tests remain required.</text>
 </svg>

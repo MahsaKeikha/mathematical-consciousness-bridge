@@ -2,6 +2,20 @@
 
 This changelog records theorem-level scientific releases. Definitions, proofs, implementations, tests, figures, and documentation remain linked from the main research page.
 
+## 0.21.0 - 2026-09-09
+
+### Proposition 21 - physical-descriptor refinement and residual persistence
+
+- Formalized nested deterministic physical descriptors through \(T_c=c\circ T_f\) with \(T_f=f(\Omega)\).
+- Proved deterministic collision monotonicity \(\mathcal C(T_f,E)\subseteq\mathcal C(T_c,E)\), so valid physical refinement can remove unresolved target collisions but cannot create new ones.
+- Defined the descriptor-relative stochastic residual \(R(T)=I(E;\Omega\mid T)\).
+- Proved the exact refinement identity \(R(T_c)=I(E;T_f\mid T_c)+R(T_f)\) and therefore \(R(T_f)\le R(T_c)\).
+- Extended the result to nested refinement chains with exact telescoping \(R_0-R_m=\sum_k I(E;T_k\mid T_{k-1})\).
+- Added executable refinement validation, collision audits, pairwise residual decomposition, nested residual trajectories, and twelve regression tests.
+- Added a publication-style P21 theorem map and extended the public theorem roadmap through P21.
+- Added the identity-descriptor boundary \(I(E;\Omega\mid\Omega)=0\) as an explicit guard against treating conditional screening-off as a proof of nonphysical ontology.
+- Integrated P21 into the README paper, reader navigation, equation provenance, visual guards, theorem-chain guards, changelog, and release metadata.
+
 ## 0.20.0 - 2026-09-09
 
 ### Proposition 20 - finite-sample residual certification

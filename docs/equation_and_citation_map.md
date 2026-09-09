@@ -265,7 +265,23 @@ P20 is deliberately conservative. A positive lower confidence bound certifies in
 
 ---
 
-# 15. Candidate consciousness-theory feature families
+# 15. P21 - physical-descriptor refinement and residual persistence
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(T_c=c\circ T_f\) with \(T_f=f(\Omega)\) | declares a nested deterministic physical-description relation | repository modeling assumption using standard function composition | [P21](proposition_21_descriptor_refinement_residual_persistence.md) |
+| \(\mathcal C(T_f,E)\subseteq\mathcal C(T_c,E)\) | deterministic target-collision monotonicity under valid refinement | proved | [P21](proposition_21_descriptor_refinement_residual_persistence.md) |
+| \(R(T)=I(E;\Omega\mid T)\) | descriptor-relative stochastic residual inherited from P19 | repository diagnostic built from standard conditional mutual information | [P19](proposition_19_fundamental_physical_sufficiency.md); [P21](proposition_21_descriptor_refinement_residual_persistence.md) |
+| \(R(T_c)=I(E;T_f\mid T_c)+R(T_f)\) | exact decomposition of the coarse residual into refinement capture plus remaining residual | proved from the conditional-mutual-information chain rule and deterministic nesting | [Cover and Thomas 2006](foundational_physics_mathematics_bibliography.md#cover-and-thomas-2006); [P21](proposition_21_descriptor_refinement_residual_persistence.md) |
+| \(R(T_f)\le R(T_c)\) | residual monotonicity under valid physical refinement | proved | [P21](proposition_21_descriptor_refinement_residual_persistence.md) |
+| \(R_0-R_m=\sum_{k=1}^{m}I(E;T_k\mid T_{k-1})\) | exact telescoping accounting for a nested descriptor chain | proved by repeated P21 decomposition | [P21](proposition_21_descriptor_refinement_residual_persistence.md) |
+| \(I(E;\Omega\mid\Omega)=0\) | identity-descriptor boundary preventing ontological overinterpretation of screening-off residuals | standard conditional-information identity used here as an interpretation guard | [Cover and Thomas 2006](foundational_physics_mathematics_bibliography.md#cover-and-thomas-2006); [P21](proposition_21_descriptor_refinement_residual_persistence.md) |
+
+P21 formalizes an omitted-physics control. Persistence of a residual through a finite declared refinement chain is evidence only relative to that chain. Physical completeness requires an independent scientific argument; the conditional-information residual cannot supply that argument by itself.
+
+---
+
+# 16. Candidate consciousness-theory feature families
 
 The following are source-grounded translations into generic feature notation. They are not claims that each named theory reduces to one scalar or one universally agreed implementation.
 
@@ -282,7 +298,7 @@ Detailed caveats and source roles are maintained in [Candidate Theory Families](
 
 ---
 
-# 16. Citation discipline
+# 17. Citation discipline
 
 A result is cited as a repository result when the bridge-specific statement, construction, or counterexample is introduced here.
 
