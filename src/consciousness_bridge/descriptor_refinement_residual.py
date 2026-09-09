@@ -17,6 +17,7 @@ target-relevant information captured by the added physical detail.
 
 from collections.abc import Hashable, Iterable, Sequence
 from dataclasses import dataclass
+from itertools import pairwise
 
 from consciousness_bridge.fundamental_physical_sufficiency import (
     conditional_mutual_information,
@@ -155,7 +156,6 @@ def refinement_residual_decomposition(
     omega_labels = [record[0] for record in materialized]
     coarse_labels = [record[1] for record in materialized]
     fine_labels = [record[2] for record in materialized]
-    target_labels = [record[3] for record in materialized]
 
     _validate_descriptor_is_function_of_state(omega_labels, fine_labels, "fine")
     if not is_descriptor_refinement(coarse_labels, fine_labels):
@@ -262,8 +262,7 @@ def refinement_chain_residuals(
 
     telescoping_error = abs(residuals[0] - residuals[-1] - sum(increments))
     monotone = all(
-        later <= earlier + tolerance
-        for earlier, later in zip(residuals, residuals[1:])
+        later <= earlier + tolerance for earlier, later in pairwise(residuals)
     )
     if not monotone:
         raise AssertionError("nested refinement increased the residual")
