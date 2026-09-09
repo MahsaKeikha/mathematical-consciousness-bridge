@@ -4,6 +4,10 @@
 
 **Proved finite-sample theorem under an explicit finite-alphabet IID sampling model.**
 
+![P20 finite-sample residual certification](figures/p20_finite_sample_residual_certificate.svg)
+
+**P20 theorem map.** The population screening-off condition from P19 is converted into a finite-data confidence interval by joint-distribution concentration and finite-alphabet entropy continuity.
+
 P20 turns the population-level stochastic criterion from [Proposition 19](proposition_19_fundamental_physical_sufficiency.md),
 
 \[
@@ -443,6 +447,7 @@ This hierarchy prevents a finite-sample statistical residual from being promoted
 | Item | Direct link |
 | --- | --- |
 | population sufficiency theorem | [P19](proposition_19_fundamental_physical_sufficiency.md) |
+| P20 publication theorem map | [p20_finite_sample_residual_certificate.svg](figures/p20_finite_sample_residual_certificate.svg) |
 | finite-sample implementation | [finite_sample_residual_certification.py](../src/consciousness_bridge/finite_sample_residual_certification.py) |
 | claim-level tests | [test_finite_sample_residual_certification.py](../tests/test_finite_sample_residual_certification.py) |
 | information-theory source | [Cover and Thomas 2006](foundational_physics_mathematics_bibliography.md#cover-and-thomas-2006) |
