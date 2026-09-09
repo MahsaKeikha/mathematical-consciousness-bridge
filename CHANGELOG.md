@@ -2,6 +2,21 @@
 
 This changelog records theorem-level scientific releases. Definitions, proofs, implementations, tests, and documentation remain linked from the main research page.
 
+## 0.11.0 - 2026-09-09
+
+### Proposition 11 - Intervention-Resolved Causal Geometry (IRCG)
+
+- Introduced the first original candidate physical signature in the program as a structured intervention-response object rather than a scalar consciousness score.
+- Defined intervention-conditioned response laws, response pseudometric geometry, directed interventional influence, and the complete partition-irredundancy landscape.
+- Defined the representation-invariant IRCG signature as a compatible isomorphism class of the full causal-response structure.
+- Proved invariance under compatible bijective physical reparameterization.
+- Proved an exact partition-factorization certificate using total-variation distance to the product of partition marginals.
+- Proved the feedforward no-return certificate for acyclic directed perturbational influence graphs.
+- Added executable finite discrete tools for response geometry, marginals, partition product models, directed influence, cycle detection, and outcome relabeling.
+- Added claim-level tests separating response differentiation, partition irreducibility, and recurrent directed influence.
+- Expanded the physical evidence base with perturbational-complexity, synergistic-information, network-controllability, causal-modeling, and non-neural causal-emergence sources.
+- The Proposition 11 checkpoint passes the test and `ruff` matrix on Python 3.10, 3.11, and 3.12.
+
 ## 0.10.0 - 2026-09-09
 
 ### Propositions 5-10 - complete-signature recovery and robust experiment design
