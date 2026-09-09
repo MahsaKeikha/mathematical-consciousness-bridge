@@ -1,41 +1,116 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
-  <title id="title">Universal consciousness proof criteria ladder</title>
-  <desc id="desc">Twelve criteria grouped into physical definition, bridge structure, empirical discrimination, finite-data certification, and temporal/compositional generality.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
+  <title id="title">Universal consciousness proof criteria</title>
+  <desc id="desc">Twelve required layers grouped into domain definition, physical-signature structure, empirical discrimination, finite-data certification, and generality.</desc>
   <defs>
     <style>
-      .title{font:700 30px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
-      .sub{font:400 15px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
-      .n{font:800 14px Inter,Segoe UI,Arial,sans-serif;fill:#fff}
-      .h{font:700 14px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
-      .t{font:400 12.5px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .title{font:700 37px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 18px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
       .group{font:700 12px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
+      .num{font:800 13px Inter,Segoe UI,Arial,sans-serif;fill:#ffffff}
+      .head{font:700 16px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 13.5px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .eq{font:600 15px Georgia,'Times New Roman',serif;fill:#0f172a}
     </style>
   </defs>
-  <rect width="1200" height="760" fill="#f8fafc"/>
-  <text x="55" y="55" class="title">Universal Proof Target - 12 Required Layers</text>
-  <text x="55" y="83" class="sub">A final theorem is only as strong as its weakest unresolved layer. Mathematical proof and empirical support are tracked separately.</text>
 
-  <text x="55" y="125" class="group">I. DEFINE THE DOMAINS</text>
-  <g><rect x="55" y="142" width="260" height="90" rx="14" fill="#e0f2fe" stroke="#0284c7"/><circle cx="83" cy="170" r="18" fill="#0284c7"/><text x="75" y="175" class="n">U1</text><text x="112" y="168" class="h">Physical well-definedness</text><text x="112" y="191" class="t">state, dynamics, interventions,</text><text x="112" y="210" class="t">observables, representation quotient</text></g>
-  <g><rect x="335" y="142" width="260" height="90" rx="14" fill="#fff7ed" stroke="#ea580c"/><circle cx="363" cy="170" r="18" fill="#ea580c"/><text x="355" y="175" class="n">U2</text><text x="392" y="168" class="h">Experiential well-definedness</text><text x="392" y="191" class="t">formal experiential space Q_E</text><text x="392" y="210" class="t">and experiential equivalence</text></g>
-  <g><rect x="615" y="142" width="260" height="90" rx="14" fill="#f5f3ff" stroke="#7c3aed"/><circle cx="643" cy="170" r="18" fill="#7c3aed"/><text x="635" y="175" class="n">U3</text><text x="672" y="168" class="h">Non-definitional bridge</text><text x="672" y="191" class="t">bridge premises must have</text><text x="672" y="210" class="t">independent justification</text></g>
-  <g><rect x="895" y="142" width="250" height="90" rx="14" fill="#ecfeff" stroke="#0891b2"/><circle cx="923" cy="170" r="18" fill="#0891b2"/><text x="915" y="175" class="n">U4</text><text x="952" y="168" class="h">Representation invariance</text><text x="952" y="191" class="t">bridge descends to Q_P</text><text x="952" y="210" class="t">Proposition 1</text></g>
+  <rect width="1600" height="980" fill="#ffffff"/>
+  <text x="70" y="64" class="title">Universal Proof Target - Twelve Required Layers</text>
+  <text x="70" y="96" class="subtitle">Mathematical validity, physical interpretation, empirical identifiability, and finite-data support are tracked as separate requirements.</text>
 
-  <text x="55" y="280" class="group">II. CHARACTERIZE THE PHYSICAL SIGNATURE</text>
-  <g><rect x="55" y="297" width="350" height="90" rx="14" fill="#ecfdf5" stroke="#059669"/><circle cx="83" cy="325" r="18" fill="#059669"/><text x="75" y="330" class="n">U5</text><text x="112" y="323" class="h">Physical-feature sufficiency</text><text x="112" y="346" class="t">feature-matched systems must not split bridge classes</text><text x="112" y="365" class="t">Proposition 5 counterexample criterion</text></g>
-  <g><rect x="425" y="297" width="350" height="90" rx="14" fill="#ecfdf5" stroke="#059669"/><circle cx="453" cy="325" r="18" fill="#059669"/><text x="445" y="330" class="n">U6</text><text x="482" y="323" class="h">Bridge completeness</text><text x="482" y="346" class="t">physical signature fibers = bridge fibers</text><text x="482" y="365" class="t">Proposition 6 canonical target</text></g>
-  <g><rect x="795" y="297" width="350" height="90" rx="14" fill="#ecfeff" stroke="#0891b2"/><circle cx="823" cy="325" r="18" fill="#0891b2"/><text x="815" y="330" class="n">U9</text><text x="852" y="323" class="h">Experimental recoverability</text><text x="852" y="346" class="t">the proposed signature must be inferable</text><text x="852" y="365" class="t">from admissible physical experiments</text></g>
+  <!-- Group I -->
+  <text x="70" y="145" class="group">I. DEFINE THE PHYSICAL AND EXPERIENTIAL DOMAINS</text>
 
-  <text x="55" y="435" class="group">III. EXPOSE THE BRIDGE TO COMPETING THEORIES AND DATA</text>
-  <g><rect x="55" y="452" width="350" height="90" rx="14" fill="#fefce8" stroke="#ca8a04"/><circle cx="83" cy="480" r="18" fill="#ca8a04"/><text x="75" y="485" class="n">U7</text><text x="112" y="478" class="h">Empirical identifiability</text><text x="112" y="501" class="t">bridge disagreements must change an observable law</text><text x="112" y="520" class="t">Propositions 2-3</text></g>
-  <g><rect x="425" y="452" width="350" height="90" rx="14" fill="#fefce8" stroke="#ca8a04"/><circle cx="453" cy="480" r="18" fill="#ca8a04"/><text x="445" y="485" class="n">U8</text><text x="482" y="478" class="h">Cross-theory discrimination</text><text x="482" y="501" class="t">IIT, GNWT, RPT, HOT, predictive families</text><text x="482" y="520" class="t">tested in a common interface</text></g>
-  <g><rect x="795" y="452" width="350" height="90" rx="14" fill="#fff1f2" stroke="#e11d48"/><circle cx="823" cy="480" r="18" fill="#e11d48"/><text x="811" y="485" class="n">U12</text><text x="852" y="478" class="h">Falsification + generality</text><text x="852" y="501" class="t">temporal, composition, substrate changes</text><text x="852" y="520" class="t">must expose the theory to failure</text></g>
+  <rect x="70" y="165" width="350" height="145" rx="14" fill="#f7fbff" stroke="#3b82f6"/>
+  <circle cx="100" cy="198" r="19" fill="#3b82f6"/><text x="90" y="203" class="num">U1</text>
+  <text x="130" y="196" class="head">Physical well-definedness</text>
+  <text x="130" y="224" class="body">State space, dynamics, interventions,</text>
+  <text x="130" y="246" class="body">observables, and representation quotient.</text>
+  <text x="130" y="276" class="eq">Q_P = P / ~_P</text>
 
-  <text x="55" y="590" class="group">IV. FINITE-DATA CERTIFICATION</text>
-  <g><rect x="55" y="607" width="350" height="90" rx="14" fill="#f5f3ff" stroke="#7c3aed"/><circle cx="83" cy="635" r="18" fill="#7c3aed"/><text x="70" y="640" class="n">U10</text><text x="112" y="633" class="h">Finite-measurement certification</text><text x="112" y="656" class="t">robust gap gamma_S &gt; 4 epsilon</text><text x="112" y="675" class="t">Proposition 8</text></g>
-  <g><rect x="425" y="607" width="350" height="90" rx="14" fill="#f5f3ff" stroke="#7c3aed"/><circle cx="453" cy="635" r="18" fill="#7c3aed"/><text x="440" y="640" class="n">U11</text><text x="482" y="633" class="h">Explicit sample complexity</text><text x="482" y="656" class="t">finite trial requirement at confidence 1-alpha</text><text x="482" y="675" class="t">Proposition 9</text></g>
-  <rect x="795" y="607" width="350" height="90" rx="14" fill="#0f172a"/>
-  <text x="820" y="635" style="font:700 14px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Final theorem-and-evidence package</text>
-  <text x="820" y="660" style="font:400 12.5px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">All layers must connect without redefining</text>
-  <text x="820" y="679" style="font:400 12.5px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">the desired conclusion into a physical score.</text>
+  <rect x="445" y="165" width="350" height="145" rx="14" fill="#fffaf7" stroke="#ea580c"/>
+  <circle cx="475" cy="198" r="19" fill="#ea580c"/><text x="465" y="203" class="num">U2</text>
+  <text x="505" y="196" class="head">Experiential well-definedness</text>
+  <text x="505" y="224" class="body">Formal experiential structures and an</text>
+  <text x="505" y="246" class="body">explicit experiential equivalence relation.</text>
+  <text x="505" y="276" class="eq">Q_E = E / ~_E</text>
+
+  <rect x="820" y="165" width="350" height="145" rx="14" fill="#faf8ff" stroke="#7c3aed"/>
+  <circle cx="850" cy="198" r="19" fill="#7c3aed"/><text x="840" y="203" class="num">U3</text>
+  <text x="880" y="196" class="head">Non-definitional bridge</text>
+  <text x="880" y="224" class="body">Bridge premises require justification that</text>
+  <text x="880" y="246" class="body">is independent of the conclusion they support.</text>
+
+  <rect x="1195" y="165" width="335" height="145" rx="14" fill="#f5fcfd" stroke="#0891b2"/>
+  <circle cx="1225" cy="198" r="19" fill="#0891b2"/><text x="1215" y="203" class="num">U4</text>
+  <text x="1255" y="196" class="head">Representation invariance</text>
+  <text x="1255" y="224" class="body">Equivalent physical descriptions cannot</text>
+  <text x="1255" y="246" class="body">change the bridge assignment.</text>
+  <text x="1255" y="276" class="body">Supported by Proposition 1.</text>
+
+  <!-- Group II -->
+  <text x="70" y="365" class="group">II. CHARACTERIZE A COMPLETE PHYSICAL SIGNATURE</text>
+
+  <rect x="70" y="385" width="455" height="145" rx="14" fill="#f5fcf8" stroke="#059669"/>
+  <circle cx="100" cy="418" r="19" fill="#059669"/><text x="90" y="423" class="num">U5</text>
+  <text x="130" y="416" class="head">Physical-feature sufficiency</text>
+  <text x="130" y="444" class="body">Feature-matched systems must not split bridge classes.</text>
+  <text x="130" y="470" class="eq">F(p)=F(p')  =>  B-bar(p)=B-bar(p')</text>
+  <text x="130" y="500" class="body">Exact criterion: Proposition 5.</text>
+
+  <rect x="572" y="385" width="455" height="145" rx="14" fill="#f5fcf8" stroke="#059669"/>
+  <circle cx="602" cy="418" r="19" fill="#059669"/><text x="592" y="423" class="num">U6</text>
+  <text x="632" y="416" class="head">Bridge completeness</text>
+  <text x="632" y="444" class="body">Physical-signature fibers must coincide with</text>
+  <text x="632" y="466" class="body">the canonical bridge-equivalence classes.</text>
+  <text x="632" y="496" class="body">Canonical target: Proposition 6.</text>
+
+  <rect x="1075" y="385" width="455" height="145" rx="14" fill="#f5fcfd" stroke="#0891b2"/>
+  <circle cx="1105" cy="418" r="19" fill="#0891b2"/><text x="1095" y="423" class="num">U9</text>
+  <text x="1135" y="416" class="head">Experimental recoverability</text>
+  <text x="1135" y="444" class="body">The proposed complete signature must be inferable</text>
+  <text x="1135" y="466" class="body">from the declared physical experiment class.</text>
+  <text x="1135" y="496" class="body">Exact criterion: Proposition 7.</text>
+
+  <!-- Group III -->
+  <text x="70" y="585" class="group">III. EXPOSE THE BRIDGE TO COMPETING THEORIES AND DATA</text>
+
+  <rect x="70" y="605" width="455" height="145" rx="14" fill="#fffdf5" stroke="#ca8a04"/>
+  <circle cx="100" cy="638" r="19" fill="#ca8a04"/><text x="90" y="643" class="num">U7</text>
+  <text x="130" y="636" class="head">Empirical identifiability</text>
+  <text x="130" y="664" class="body">A bridge disagreement must alter at least one</text>
+  <text x="130" y="686" class="body">observable law in the admissible experiment class.</text>
+  <text x="130" y="716" class="body">Supported by Propositions 2-3.</text>
+
+  <rect x="572" y="605" width="455" height="145" rx="14" fill="#fffdf5" stroke="#ca8a04"/>
+  <circle cx="602" cy="638" r="19" fill="#ca8a04"/><text x="592" y="643" class="num">U8</text>
+  <text x="632" y="636" class="head">Cross-theory discrimination</text>
+  <text x="632" y="664" class="body">IIT, GNWT, recurrent-processing, higher-order,</text>
+  <text x="632" y="686" class="body">predictive, and new bridge families share one test interface.</text>
+  <text x="632" y="716" class="body">Experiment design: Proposition 4.</text>
+
+  <rect x="1075" y="605" width="455" height="145" rx="14" fill="#fff8f9" stroke="#e11d48"/>
+  <circle cx="1105" cy="638" r="19" fill="#e11d48"/><text x="1091" y="643" class="num">U12</text>
+  <text x="1135" y="636" class="head">Falsification and generality</text>
+  <text x="1135" y="664" class="body">Temporal, compositional, substrate, and empirical</text>
+  <text x="1135" y="686" class="body">tests must expose the theory to failure.</text>
+
+  <!-- Group IV -->
+  <text x="70" y="805" class="group">IV. FINITE-DATA CERTIFICATION</text>
+
+  <rect x="70" y="825" width="455" height="110" rx="14" fill="#faf8ff" stroke="#7c3aed"/>
+  <circle cx="100" cy="858" r="19" fill="#7c3aed"/><text x="86" y="863" class="num">U10</text>
+  <text x="130" y="856" class="head">Finite-measurement certification</text>
+  <text x="130" y="884" class="eq">gamma_S &gt; 4 epsilon</text>
+  <text x="130" y="911" class="body">Robust recovery guarantee: Proposition 8.</text>
+
+  <rect x="572" y="825" width="455" height="110" rx="14" fill="#faf8ff" stroke="#7c3aed"/>
+  <circle cx="602" cy="858" r="19" fill="#7c3aed"/><text x="588" y="863" class="num">U11</text>
+  <text x="632" y="856" class="head">Explicit sample complexity</text>
+  <text x="632" y="884" class="body">Finite trial requirements at confidence 1 - alpha.</text>
+  <text x="632" y="911" class="body">Current categorical theorem: Proposition 9.</text>
+
+  <rect x="1075" y="825" width="455" height="110" rx="14" fill="#0f172a"/>
+  <text x="1105" y="858" style="font:700 17px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Final theorem-and-evidence package</text>
+  <text x="1105" y="887" style="font:400 13.5px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">The final result must connect all layers without defining</text>
+  <text x="1105" y="910" style="font:400 13.5px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">the desired experiential conclusion into the physical feature.</text>
 </svg>
