@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="920" viewBox="0 0 1600 920" role="img" aria-labelledby="title desc">
+  <title id="title">Proposition 18 scale sufficiency by approximate reconstruction</title>
+  <desc id="desc">A publication-style diagram showing fine response laws, deterministic coarse-graining, stochastic reconstruction, the two-rho response-geometry bound, and the finite-family identifiability margin.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0 0 L0 8 L10 4 z" fill="#64748b"/></marker>
+    <style>
+      .title{font:700 37px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 18px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .head{font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .eq{font:600 17px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .small{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.6px}
+      .arrow{stroke:#64748b;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1600" height="920" fill="#ffffff"/>
+  <text x="70" y="62" class="title">P18 - Scale Sufficiency by Approximate Reconstruction</text>
+  <text x="70" y="96" class="subtitle">A coarse scale can remain sufficient for a declared response family even when the global map is many-to-one.</text>
+
+  <rect x="70" y="150" width="400" height="230" rx="18" fill="#f7fbff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="98" y="186" class="head">Fine response family</text>
+  <text x="98" y="224" class="eq">P ∈ F on Ωf</text>
+  <text x="98" y="260" class="body">Intervention-conditioned laws at the</text>
+  <text x="98" y="283" class="body">declared fine physical scale.</text>
+  <text x="98" y="329" class="eq">df(P,Q) = ‖P − Q‖TV</text>
+  <rect x="98" y="342" width="160" height="26" rx="8" fill="#dbeafe"/>
+  <text x="116" y="360" class="small" fill="#1d4ed8">FINE RESPONSE LAW</text>
+
+  <rect x="600" y="150" width="400" height="230" rx="18" fill="#f5fcfd" stroke="#0891b2" stroke-width="1.5"/>
+  <text x="628" y="186" class="head">Deterministic coarse map</text>
+  <text x="628" y="224" class="eq">C : Ωf → Ωc</text>
+  <text x="628" y="260" class="body">Pushforward gives the measured coarse</text>
+  <text x="628" y="283" class="body">law C#P without increasing TV distance.</text>
+  <text x="628" y="329" class="eq">dc(P,Q) ≤ df(P,Q)</text>
+  <rect x="628" y="342" width="158" height="26" rx="8" fill="#cffafe"/>
+  <text x="646" y="360" class="small" fill="#0e7490">P17 BASELINE</text>
+
+  <rect x="1130" y="150" width="400" height="230" rx="18" fill="#f5fcf8" stroke="#059669" stroke-width="1.5"/>
+  <text x="1158" y="186" class="head">Fiber-consistent decoder</text>
+  <text x="1158" y="224" class="eq">R(x|y),  R#C#P</text>
+  <text x="1158" y="260" class="body">Reconstruct fine structure only inside</text>
+  <text x="1158" y="283" class="body">the coarse fiber associated with y.</text>
+  <text x="1158" y="329" class="eq">ρ(P) = ‖P − R#C#P‖TV</text>
+  <rect x="1158" y="342" width="178" height="26" rx="8" fill="#d1fae5"/>
+  <text x="1176" y="360" class="small" fill="#047857">RECONSTRUCTION DEFECT</text>
+
+  <path class="arrow" d="M470 265 H588"/>
+  <path class="arrow" d="M1000 265 H1118"/>
+
+  <rect x="70" y="430" width="1460" height="170" rx="18" fill="#faf8ff" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="98" y="468" class="head">P18A - response-geometry distortion certificate</text>
+  <text x="98" y="514" class="eq">dc(P,Q) ≤ df(P,Q) ≤ dc(P,Q) + ρ(P) + ρ(Q)</text>
+  <text x="98" y="557" class="eq">0 ≤ df(P,Q) − dc(P,Q) ≤ 2ρF</text>
+  <text x="950" y="514" class="body">where ρF = supP∈F ρ(P)</text>
+  <text x="950" y="546" class="body">Small reconstructibility defect implies</text>
+  <text x="950" y="569" class="body">controlled loss of response geometry.</text>
+
+  <rect x="70" y="650" width="700" height="165" rx="18" fill="#f7fbff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="98" y="686" class="head">P18B - exact family sufficiency</text>
+  <text x="98" y="728" class="eq">ρF = 0  ⇒  dc(P,Q) = df(P,Q)  for all P,Q ∈ F</text>
+  <text x="98" y="768" class="body">Global injectivity of C is not required if the declared family</text>
+  <text x="98" y="791" class="body">has fixed reconstructible fine structure inside each coarse fiber.</text>
+
+  <rect x="830" y="650" width="700" height="165" rx="18" fill="#fff8f9" stroke="#e11d48" stroke-width="1.5"/>
+  <text x="858" y="686" class="head">P18C - finite-family identifiability margin</text>
+  <text x="858" y="728" class="eq">δc ≥ δf − 2ρF</text>
+  <text x="858" y="768" class="eq">δf &gt; 2ρF  ⇒  δc &gt; 0</text>
+  <text x="1155" y="768" class="body">distinct fine laws remain distinct at the coarse scale</text>
+
+  <rect x="70" y="845" width="1460" height="56" rx="10" fill="#0f172a"/>
+  <text x="98" y="869" style="font:600 14px Inter,Segoe UI,Arial,sans-serif;fill:#e2e8f0">Research boundary: P18 certifies response-law and response-geometry preservation.</text>
+  <text x="98" y="891" style="font:600 14px Inter,Segoe UI,Arial,sans-serif;fill:#e2e8f0">Directed influence, partition structure, split/merge dynamics, and experiential claims need separate assumptions.</text>
+</svg>

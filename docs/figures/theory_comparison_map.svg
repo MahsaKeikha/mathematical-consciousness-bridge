@@ -21,7 +21,6 @@
   <text x="100" y="173" style="font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Common theory object</text>
   <text x="100" y="211" style="font:600 19px Georgia,'Times New Roman',serif;fill:#e2e8f0">T_j = (F_j, B_j, M_j, Pi_j) = physical feature family + bridge architecture + measurement interface + experiment class</text>
 
-  <!-- Row 1 -->
   <rect x="70" y="285" width="460" height="245" rx="16" fill="#faf8ff" stroke="#7c3aed" stroke-width="1.5"/>
   <text x="98" y="322" class="name">Integrated Information Theory 4.0</text>
   <line x1="98" y1="338" x2="502" y2="338" class="divider"/>
@@ -55,7 +54,6 @@
   <text x="1098" y="512" class="head">KEY EXPERIMENTAL EXPOSURE</text>
   <text x="1098" y="540" class="body">Local temporal disruption and recurrent interactions.</text>
 
-  <!-- Row 2 -->
   <rect x="70" y="570" width="460" height="245" rx="16" fill="#fffaf7" stroke="#ea580c" stroke-width="1.5"/>
   <text x="98" y="607" class="name">Higher-Order Approaches</text>
   <line x1="98" y1="623" x2="502" y2="623" class="divider"/>
@@ -89,7 +87,8 @@
   <text x="1098" y="797" class="head">KEY EXPERIMENTAL EXPOSURE</text>
   <text x="1098" y="825" class="body">Controlled perturbation, recovery, and counterexamples.</text>
 
-  <rect x="70" y="865" width="1460" height="70" rx="14" fill="#f8fafc" stroke="#94a3b8"/>
-  <text x="100" y="895" class="head">Common mathematical tests</text>
-  <text x="100" y="922" class="body">P2-P4: empirical distinguishability and experiment design.  P5: physical-feature sufficiency.  P6: bridge completeness.  New candidate theories are evaluated by the same standards as established theories.</text>
+  <rect x="70" y="865" width="1460" height="82" rx="14" fill="#f8fafc" stroke="#94a3b8"/>
+  <text x="100" y="894" class="head">Common mathematical tests</text>
+  <text x="100" y="919" class="body">P2-P4: empirical distinguishability and experiment design. P5: physical-feature sufficiency. P6: bridge completeness.</text>
+  <text x="100" y="941" class="body">New candidate theories are evaluated by the same standards as established theories.</text>
 </svg>

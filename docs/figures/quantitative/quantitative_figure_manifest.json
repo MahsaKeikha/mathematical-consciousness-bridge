@@ -1,0 +1,282 @@
+[
+  {
+    "file": "q01_ornstein_uhlenbeck_trajectories.svg",
+    "title": "Ornstein\u2013Uhlenbeck mean-reverting trajectories",
+    "equation": "dX = theta(mu-X)dt + sigma dW",
+    "fact": "Linear drift pulls trajectories toward equilibrium while diffusion sustains fluctuations.",
+    "status": "Equation-driven stochastic simulation"
+  },
+  {
+    "file": "q02_ou_stationary_variance.svg",
+    "title": "OU stationary variance",
+    "equation": "Var[X(t)] = sigma^2/(2 theta) [1-exp(-2 theta t)]",
+    "fact": "The variance of a zero-initialized OU process approaches sigma^2/(2 theta) monotonically.",
+    "status": "Closed-form mathematical fact"
+  },
+  {
+    "file": "q03_double_well_potential.svg",
+    "title": "Double-well potential",
+    "equation": "U(x)=a x^4/4 - b x^2/2",
+    "fact": "Two minima separated by a barrier form a canonical model of noise-driven switching.",
+    "status": "Equation-driven physical illustration"
+  },
+  {
+    "file": "q04_double_well_stationary_density.svg",
+    "title": "Double-well stationary density",
+    "equation": "p(x) proportional to exp[-beta U(x)]",
+    "fact": "At fixed inverse temperature, probability mass concentrates near low-potential states.",
+    "status": "Equilibrium statistical-mechanics illustration"
+  },
+  {
+    "file": "q05_linear_state_space_flow.svg",
+    "title": "Linear state-space flow",
+    "equation": "dx/dt = A x",
+    "fact": "Negative eigenvalue real parts produce decay toward the fixed point while off-diagonal terms generate rotation.",
+    "status": "Equation-driven dynamical-systems map"
+  },
+  {
+    "file": "q06_eigenvalue_stability_map.svg",
+    "title": "Continuous-time eigenvalue stability map",
+    "equation": "Re(lambda_i(A))<0 for all i implies asymptotic stability",
+    "fact": "All eigenvalues in the open left half-plane imply asymptotic stability for a linear autonomous system.",
+    "status": "Standard linear-systems fact"
+  },
+  {
+    "file": "q07_diffusion_mean_square_displacement.svg",
+    "title": "Diffusive mean-square displacement",
+    "equation": "E||X(t)-X(0)||^2 = 2 d D t",
+    "fact": "For isotropic Brownian diffusion, mean-square displacement grows linearly with time and dimension.",
+    "status": "Standard diffusion fact"
+  },
+  {
+    "file": "q08_heat_kernel_propagator.svg",
+    "title": "Heat-kernel diffusion propagator",
+    "equation": "G(x,t)=(4 pi D t)^(-1/2) exp[-x^2/(4Dt)]",
+    "fact": "The diffusion kernel broadens while its peak decreases, preserving total probability.",
+    "status": "Closed-form physical map"
+  },
+  {
+    "file": "q09_landauer_bound_temperature.svg",
+    "title": "Landauer erasure bound versus temperature",
+    "equation": "W_erase >= k_B T ln 2",
+    "fact": "The minimum work associated with logically irreversible one-bit erasure scales linearly with absolute temperature.",
+    "status": "Established thermodynamic bound"
+  },
+  {
+    "file": "q10_two_state_kl_asymmetry.svg",
+    "title": "Two-state directional KL asymmetry",
+    "equation": "D_KL(p||q)=sum_i p_i log(p_i/q_i)",
+    "fact": "KL divergence vanishes only when the two Bernoulli laws coincide and grows sharply toward opposing deterministic limits.",
+    "status": "Information-theoretic fact"
+  },
+  {
+    "file": "q11_kuramoto_order_parameter.svg",
+    "title": "Synchronization order parameter",
+    "equation": "r exp(i psi) = N^-1 sum_j exp(i theta_j)",
+    "fact": "The Kuramoto order parameter summarizes phase coherence; the curve is a synthetic mean-field-style benchmark, not neural data.",
+    "status": "Synthetic coupled-oscillator benchmark"
+  },
+  {
+    "file": "q12_markov_spectral_mixing.svg",
+    "title": "Markov spectral mixing",
+    "equation": "mixing envelope approximately |lambda_2|^n",
+    "fact": "For an ergodic finite Markov chain, the subdominant eigenvalue magnitude controls asymptotic mixing rate.",
+    "status": "Standard Markov-chain fact"
+  },
+  {
+    "file": "q13_controllability_gramian_trace.svg",
+    "title": "Controllability Gramian growth",
+    "equation": "Wc(T)=integral_0^T exp(At) B B^T exp(A^T t) dt",
+    "fact": "For this stable controllable system, the finite-horizon Gramian grows toward a finite infinite-horizon limit.",
+    "status": "Equation-driven control-theory example"
+  },
+  {
+    "file": "q14_correlated_gaussian_contours.svg",
+    "title": "Correlated Gaussian contours",
+    "equation": "p(x) proportional to exp[-1/2 (x-mu)^T Sigma^-1 (x-mu)]",
+    "fact": "Off-diagonal covariance rotates elliptical equal-density contours, encoding statistical dependence.",
+    "status": "Equation-driven probability geometry"
+  },
+  {
+    "file": "q15_gaussian_shift_kl.svg",
+    "title": "KL divergence for Gaussian mean shifts",
+    "equation": "D_KL = (mu1-mu2)^2/(2 sigma^2)",
+    "fact": "With equal variance, Gaussian KL divergence grows quadratically with normalized mean separation.",
+    "status": "Closed-form information-theoretic fact"
+  },
+  {
+    "file": "q16_bernoulli_fisher_information.svg",
+    "title": "Bernoulli Fisher information",
+    "equation": "I(p)=1/[p(1-p)]",
+    "fact": "Under direct Bernoulli parameterization, Fisher information is smallest at p=1/2 and diverges toward the boundaries.",
+    "status": "Closed-form information-geometry fact"
+  },
+  {
+    "file": "q17_gaussian_mutual_information.svg",
+    "title": "Gaussian mutual information",
+    "equation": "I(X;Y)=-1/2 log(1-rho^2)",
+    "fact": "For jointly Gaussian scalars, mutual information depends only on |rho| and diverges as |rho| approaches one.",
+    "status": "Closed-form information-theoretic fact"
+  },
+  {
+    "file": "q18_gaussian_total_variation.svg",
+    "title": "Gaussian total variation under mean shift",
+    "equation": "TV(P,Q)=1/2 integral |p-q| dx",
+    "fact": "Total variation rises from zero toward one as two equal-variance Gaussian laws separate.",
+    "status": "Numerically integrated mathematical example"
+  },
+  {
+    "file": "q19_intervention_response_laws.svg",
+    "title": "Intervention-conditioned response laws",
+    "equation": "P_p^(u,tau) = Law(Y_(t+tau) | do(u), p)",
+    "fact": "Different interventions can induce distinguishable future response distributions, the primitive objects of the causal-structure construction.",
+    "status": "Synthetic intervention benchmark"
+  },
+  {
+    "file": "q20_response_geometry_matrix.svg",
+    "title": "Intervention response-geometry matrix",
+    "equation": "d_p^tau(u,v)=TV(P_p^(u,tau), P_p^(v,tau))",
+    "fact": "The matrix is symmetric with zero diagonal because total variation is a metric on probability laws.",
+    "status": "Synthetic metric example"
+  },
+  {
+    "file": "q21_directed_influence_matrix.svg",
+    "title": "Directed interventional influence matrix",
+    "equation": "A_ij^p(tau)=sup TV(P_j^u, P_j^v) over source-i intervention pairs",
+    "fact": "Directed influence is generally asymmetric; source-to-target effects need not equal target-to-source effects.",
+    "status": "Synthetic causal-structure example"
+  },
+  {
+    "file": "q22_partition_irreducibility_coupling.svg",
+    "title": "Partition irreducibility versus coupling",
+    "equation": "kappa = TV(P_AB, P_A tensor P_B)",
+    "fact": "For the displayed balanced binary family, the product-factorization defect grows linearly with coupling.",
+    "status": "Closed-form synthetic coupling family"
+  },
+  {
+    "file": "q23_coupled_binary_joint_law.svg",
+    "title": "Coupled binary joint response law",
+    "equation": "P_AB != P_A tensor P_B",
+    "fact": "Uniform marginals can coexist with a dependent joint law; one-variable marginals alone do not reveal the coupling.",
+    "status": "Synthetic composition counterexample"
+  },
+  {
+    "file": "q24_coupling_defect_vs_correlation.svg",
+    "title": "Response-level coupling defect",
+    "equation": "chi_A|B = TV(P_AB, P_A tensor P_B)",
+    "fact": "For this balanced binary family, the factorization defect is zero only at independence and grows with |rho|.",
+    "status": "Closed-form composition example"
+  },
+  {
+    "file": "q25_tv_contraction_binning.svg",
+    "title": "TV contraction under coarse binning",
+    "equation": "TV(C#P,C#Q) <= TV(P,Q)",
+    "fact": "Successive deterministic bin merging cannot increase total-variation distinguishability.",
+    "status": "Numerical verification of Proposition 17"
+  },
+  {
+    "file": "q26_exact_coarse_graining_collision.svg",
+    "title": "Exact coarse-graining collision",
+    "equation": "C(x)=C(x'), x!=x' => C#delta_x = C#delta_x'",
+    "fact": "A many-to-one map can collapse maximally distinct point-mass laws to an identical coarse law.",
+    "status": "Exact Proposition 17 counterexample"
+  },
+  {
+    "file": "q27_reconstruction_defect_decoder_mismatch.svg",
+    "title": "Reconstruction defect versus decoder mismatch",
+    "equation": "rho(P)=TV(P, R#C#P)",
+    "fact": "With fixed coarse mass, reconstruction error is governed by mismatch between the decoder and the true within-fiber conditional structure.",
+    "status": "Closed-form Proposition 18 example"
+  },
+  {
+    "file": "q28_p18_scale_identifiability_margin.svg",
+    "title": "P18 scale-identifiability margin",
+    "equation": "delta_c >= max(0, delta_f - 2 rho_F)",
+    "fact": "The coarse family is certified identifiable whenever fine-family separation exceeds twice the reconstruction defect.",
+    "status": "Direct visualization of Proposition 18"
+  },
+  {
+    "file": "q29_exact_family_scale_sufficiency.svg",
+    "title": "Exact family sufficiency despite a many-to-one map",
+    "equation": "rho_F=0 => d_f=d_c on the declared family",
+    "fact": "Fixed within-fiber conditionals allow a globally many-to-one map to preserve all pairwise distances on a restricted family.",
+    "status": "Constructive Proposition 18 example"
+  },
+  {
+    "file": "q30_temporal_fingerprint_trajectory.svg",
+    "title": "Temporal causal-fingerprint trajectory",
+    "equation": "c_t=(g_t,a_t,k_t)",
+    "fact": "A time-indexed structural fingerprint traces a path through feature space; representation alignment precedes physical comparison.",
+    "status": "Synthetic temporal benchmark"
+  },
+  {
+    "file": "q31_cumulative_path_variation.svg",
+    "title": "Cumulative temporal path variation",
+    "equation": "V_0:T = sum_t Dbar([c_t],[c_t+1])",
+    "fact": "Cumulative path variation is nondecreasing because it sums nonnegative adjacent structural distances.",
+    "status": "Synthetic visualization of Proposition 14"
+  },
+  {
+    "file": "q32_temporal_certification_interval_width.svg",
+    "title": "Temporal certification interval width",
+    "equation": "|d_hat - d| <= epsilon_s + epsilon_t",
+    "fact": "Under an illustrative 1/sqrt(n) error schedule, certified temporal-distance intervals shrink at the same rate.",
+    "status": "Proposition 15 bound visualization"
+  },
+  {
+    "file": "q33_sample_complexity_vs_gap.svg",
+    "title": "Categorical sample complexity versus gap",
+    "equation": "n >= 8 K^2/gamma_S^2 * log(2 N_P N_pi K / alpha)",
+    "fact": "The sufficient sample requirement scales quadratically as the inverse robust separation gap.",
+    "status": "Direct visualization of Proposition 9"
+  },
+  {
+    "file": "q34_empirical_tv_monte_carlo.svg",
+    "title": "Empirical TV-distance convergence",
+    "equation": "d_hat_TV=1/2 sum_k |p_hat_k-q_hat_k|",
+    "fact": "Repeated categorical simulations show empirical TV converging toward population TV as sample size increases.",
+    "status": "Deterministic-seed Monte Carlo test"
+  },
+  {
+    "file": "q35_robust_signature_gap.svg",
+    "title": "Robust signature gap",
+    "equation": "gamma_S=delta_S-omega_S",
+    "fact": "Increasing nuisance spread reduces the robust gap one-for-one; positive gap is necessary before finite-error recovery margins can be positive.",
+    "status": "Direct visualization of Proposition 8 quantities"
+  },
+  {
+    "file": "q36_hoeffding_repeated_event_bound.svg",
+    "title": "Repeated-event Hoeffding error bound",
+    "equation": "error <= exp(-n eta^2/2)",
+    "fact": "For fixed effect size eta, the concentration bound decays exponentially with independent repetitions.",
+    "status": "Direct visualization of Proposition 2 finite-sample bound"
+  },
+  {
+    "file": "q37_synthetic_perturbational_spreading.svg",
+    "title": "Synthetic perturbational spreading map",
+    "equation": "distributed Y_(t+tau)^V response",
+    "fact": "The heatmap is a synthetic propagation benchmark illustrating spread and decay before intervention-response distances are computed.",
+    "status": "Synthetic network-response illustration"
+  },
+  {
+    "file": "q38_synthetic_dynamical_complexity_trace.svg",
+    "title": "Synthetic local dynamical-complexity trace",
+    "equation": "C_t illustrated by a local multiscale variation statistic",
+    "fact": "This is a synthetic benchmark for state-transition analysis; it is not presented as a validated consciousness measure.",
+    "status": "Synthetic test signal"
+  },
+  {
+    "file": "q39_world_tube_centerline_projection.svg",
+    "title": "World-tube centerline projection",
+    "equation": "W=(S_0,...,S_T-1)",
+    "fact": "A persistent moving subsystem defines a time-indexed spatial trajectory, illustrating the handoff from observer localization to causal analysis.",
+    "status": "Synthetic spatiotemporal illustration"
+  },
+  {
+    "file": "q40_p18_bound_admissible_region.svg",
+    "title": "P18 bound admissible region",
+    "equation": "0 <= d_f-d_c <= rho(P)+rho(Q)",
+    "fact": "Every admissible point lies on or below the identity line; the sharp collapsed-fiber witness reaches the boundary.",
+    "status": "Synthetic bound-domain visualization"
+  }
+]

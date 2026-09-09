@@ -21,6 +21,7 @@ FIGURES = (
     "p15_finite_sample_temporal_certification.svg",
     "p16_composition_coupling.svg",
     "p17_coarse_graining_refinement.svg",
+    "p18_scale_sufficiency_certificate.svg",
     "universal_proof_ladder.svg",
     "theory_comparison_map.svg",
 )

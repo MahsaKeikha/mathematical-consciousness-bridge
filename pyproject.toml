@@ -4,15 +4,24 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mathematical-consciousness-bridge"
-version = "0.17.0"
-description = "Formal tools for physical-to-experiential bridge theory, intervention-resolved causal structure, temporal continuation, finite-sample certification, composition, coarse-graining, recoverability, and falsifiable experiment design."
+version = "0.18.0"
+description = "Formal tools for physical-to-experiential bridge theory, intervention-resolved causal structure, temporal continuation, finite-sample certification, composition, coarse-graining, scale-sufficiency certification, recoverability, and falsifiable experiment design."
 requires-python = ">=3.10"
 
 [project.optional-dependencies]
-dev = ["pytest>=7.4", "ruff>=0.5"]
+dev = [
+    "pytest>=7.4",
+    "ruff>=0.5",
+    "numpy>=1.26",
+    "matplotlib>=3.8",
+]
 
 [tool.ruff]
 line-length = 88
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/generate_quantitative_atlas.py" = ["E402", "E501", "I001"]
+"scripts/generate_quantum_foundations_atlas.py" = ["E501", "I001"]
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]
