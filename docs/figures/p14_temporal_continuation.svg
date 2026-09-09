@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1010" viewBox="0 0 1600 1010" role="img" aria-labelledby="title desc">
   <title id="title">Temporal continuation of intervention-resolved causal structure</title>
   <desc id="desc">A publication-style visual of quotient alignment across time, local structural steps, cumulative path variation, and the distinction between endpoint similarity and path continuity.</desc>
   <defs>
@@ -14,80 +14,35 @@
       .dash{stroke:#94a3b8;stroke-width:2;stroke-dasharray:8 7;fill:none}
     </style>
   </defs>
-
-  <rect width="1600" height="980" fill="#ffffff"/>
+  <rect width="1600" height="1010" fill="#ffffff"/>
   <text x="70" y="64" class="title">P14 - Temporal Continuation of the Causal-Structure Candidate</text>
-  <text x="70" y="96" class="subtitle">Temporal identity is defined on representation-invariant causal-structure classes, not on raw labels or endpoint similarity alone.</text>
+  <text x="70" y="96" class="subtitle">Temporal identity is defined on representation-invariant structure classes.</text>
+  <text x="70" y="122" class="subtitle">Raw labels and endpoint similarity alone are insufficient.</text>
 
-  <text x="70" y="145" class="small" fill="#64748b">A. REPRESENTATION ALIGNMENT ACROSS PHYSICAL TIME</text>
+  <text x="70" y="165" class="small" fill="#64748b">A. REPRESENTATION ALIGNMENT ACROSS PHYSICAL TIME</text>
+  <rect x="70" y="190" width="390" height="225" rx="16" fill="#f7fbff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="95" y="227" class="head">Time t₀</text><text x="95" y="264" class="eq">c₀ = (g₀, a₀, k₀)</text><text x="95" y="302" class="body">Full response geometry</text><text x="95" y="328" class="body">Directed interventional influence</text><text x="95" y="354" class="body">Partition irreducibility</text><rect x="95" y="370" width="162" height="28" rx="8" fill="#dbeafe"/><text x="112" y="389" class="small" fill="#1d4ed8">PHYSICAL SNAPSHOT</text>
+  <rect x="605" y="190" width="390" height="225" rx="16" fill="#f5fcfd" stroke="#0891b2" stroke-width="1.5"/>
+  <text x="630" y="227" class="head">Time t₁</text><text x="630" y="264" class="eq">c₁ = (g₁, a₁, k₁)</text><text x="630" y="302" class="body">Labels may differ from t₀</text><text x="630" y="328" class="body">Only admissible relabelings are quotiented</text><text x="630" y="354" class="body">Physical structure remains the comparison target</text><rect x="630" y="370" width="184" height="28" rx="8" fill="#cffafe"/><text x="647" y="389" class="small" fill="#0e7490">QUOTIENT ALIGNED</text>
+  <rect x="1140" y="190" width="390" height="225" rx="16" fill="#f5fcf8" stroke="#059669" stroke-width="1.5"/>
+  <text x="1165" y="227" class="head">Time t₂</text><text x="1165" y="264" class="eq">c₂ = (g₂, a₂, k₂)</text><text x="1165" y="302" class="body">The sequence is evaluated as a path</text><text x="1165" y="328" class="body">through causal-structure orbit space</text><text x="1165" y="354" class="body">rather than independent static states</text><rect x="1165" y="370" width="177" height="28" rx="8" fill="#d1fae5"/><text x="1182" y="389" class="small" fill="#047857">TEMPORAL STATE</text>
+  <path class="arrow" d="M460 302 H593"/><path class="arrow" d="M995 302 H1128"/>
 
-  <rect x="70" y="170" width="390" height="225" rx="16" fill="#f7fbff" stroke="#3b82f6" stroke-width="1.5"/>
-  <text x="95" y="207" class="head">Time t₀</text>
-  <text x="95" y="244" class="eq">c₀ = (g₀, a₀, k₀)</text>
-  <text x="95" y="282" class="body">Full response geometry</text>
-  <text x="95" y="308" class="body">Directed interventional influence</text>
-  <text x="95" y="334" class="body">Partition irreducibility</text>
-  <rect x="95" y="350" width="162" height="28" rx="8" fill="#dbeafe"/>
-  <text x="112" y="369" class="small" fill="#1d4ed8">PHYSICAL SNAPSHOT</text>
+  <text x="70" y="475" class="small" fill="#64748b">B. QUOTIENT METRIC AND PATH CERTIFICATES</text>
+  <rect x="70" y="500" width="460" height="190" rx="16" fill="#faf8ff" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="95" y="536" class="head">Representation-invariant distance</text><text x="95" y="576" class="eq">D̄w([c],[c′]) = minₕ Dw(c, h c′)</text><text x="95" y="611" class="body">The admissible relabeling group acts by isometries.</text><text x="95" y="637" class="body">Pure label changes therefore have distance zero.</text><rect x="95" y="652" width="174" height="26" rx="8" fill="#ede9fe"/><text x="110" y="670" class="small" fill="#6d28d9">PROVED METRIC</text>
+  <rect x="570" y="500" width="460" height="190" rx="16" fill="#f6fcf7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="595" y="536" class="head">Cumulative path variation</text><text x="595" y="576" class="eq">V₀:T = Σ D̄w([cᵣ],[cᵣ₊₁])</text><text x="595" y="611" class="body">Measures total structural change along the sampled path.</text><text x="595" y="637" class="eq">D̄w([cₛ],[cₜ]) ≤ Vₛ:ₜ</text><rect x="595" y="652" width="189" height="26" rx="8" fill="#dcfce7"/><text x="610" y="670" class="small" fill="#15803d">ENDPOINT BOUND</text>
+  <rect x="1070" y="500" width="460" height="190" rx="16" fill="#fffdf5" stroke="#ca8a04" stroke-width="1.5"/>
+  <text x="1095" y="536" class="head">Largest local transition</text><text x="1095" y="576" class="eq">J₀:T = max D̄w([cᵣ],[cᵣ₊₁])</text><text x="1095" y="611" class="body">A local continuation certificate declares</text><text x="1095" y="637" class="eq">J₀:T ≤ ρ</text><rect x="1095" y="652" width="196" height="26" rx="8" fill="#fef3c7"/><text x="1110" y="670" class="small" fill="#a16207">DECLARED SCALE ρ</text>
 
-  <rect x="605" y="170" width="390" height="225" rx="16" fill="#f5fcfd" stroke="#0891b2" stroke-width="1.5"/>
-  <text x="630" y="207" class="head">Time t₁</text>
-  <text x="630" y="244" class="eq">c₁ = (g₁, a₁, k₁)</text>
-  <text x="630" y="282" class="body">Labels may differ from t₀</text>
-  <text x="630" y="308" class="body">Only admissible relabelings are quotiented</text>
-  <text x="630" y="334" class="body">Physical structure remains the comparison target</text>
-  <rect x="630" y="350" width="184" height="28" rx="8" fill="#cffafe"/>
-  <text x="647" y="369" class="small" fill="#0e7490">QUOTIENT ALIGNED</text>
+  <text x="70" y="755" class="small" fill="#64748b">C. WHY ENDPOINT SIMILARITY IS NOT ENOUGH</text>
+  <rect x="70" y="780" width="1460" height="170" rx="16" fill="#fff8f9" stroke="#e11d48" stroke-width="1.5"/>
+  <text x="95" y="818" class="head">Excursion counterexample</text><text x="95" y="860" class="eq">[a] → [b] → [a]</text><text x="445" y="860" class="eq">D̄w([c₀],[c₂]) = 0</text><text x="795" y="860" class="eq">V₀:₂ = 2D̄w([a],[b]) &gt; 0</text>
+  <text x="95" y="900" class="body">The system can return to the same endpoint after a substantial excursion.</text>
+  <text x="95" y="925" class="body">Temporal continuation is therefore a path property, not an endpoint property.</text>
+  <path class="dash" d="M225 859 H407"/><path class="dash" d="M665 859 H757"/>
 
-  <rect x="1140" y="170" width="390" height="225" rx="16" fill="#f5fcf8" stroke="#059669" stroke-width="1.5"/>
-  <text x="1165" y="207" class="head">Time t₂</text>
-  <text x="1165" y="244" class="eq">c₂ = (g₂, a₂, k₂)</text>
-  <text x="1165" y="282" class="body">The sequence is evaluated as a path</text>
-  <text x="1165" y="308" class="body">through causal-structure orbit space</text>
-  <text x="1165" y="334" class="body">rather than independent static states</text>
-  <rect x="1165" y="350" width="177" height="28" rx="8" fill="#d1fae5"/>
-  <text x="1182" y="369" class="small" fill="#047857">TEMPORAL STATE</text>
-
-  <path class="arrow" d="M460 282 H593"/>
-  <path class="arrow" d="M995 282 H1128"/>
-
-  <text x="70" y="455" class="small" fill="#64748b">B. QUOTIENT METRIC AND PATH CERTIFICATES</text>
-
-  <rect x="70" y="480" width="460" height="190" rx="16" fill="#faf8ff" stroke="#7c3aed" stroke-width="1.5"/>
-  <text x="95" y="516" class="head">Representation-invariant distance</text>
-  <text x="95" y="556" class="eq">D̄w([c],[c′]) = minₕ Dw(c, h c′)</text>
-  <text x="95" y="591" class="body">The admissible relabeling group acts by isometries.</text>
-  <text x="95" y="617" class="body">Pure label changes therefore have distance zero.</text>
-  <rect x="95" y="632" width="174" height="26" rx="8" fill="#ede9fe"/>
-  <text x="110" y="650" class="small" fill="#6d28d9">PROVED METRIC</text>
-
-  <rect x="570" y="480" width="460" height="190" rx="16" fill="#f6fcf7" stroke="#16a34a" stroke-width="1.5"/>
-  <text x="595" y="516" class="head">Cumulative path variation</text>
-  <text x="595" y="556" class="eq">V₀:T = Σ D̄w([cᵣ],[cᵣ₊₁])</text>
-  <text x="595" y="591" class="body">Measures total structural change along the sampled path.</text>
-  <text x="595" y="617" class="eq">D̄w([cₛ],[cₜ]) ≤ Vₛ:ₜ</text>
-  <rect x="595" y="632" width="189" height="26" rx="8" fill="#dcfce7"/>
-  <text x="610" y="650" class="small" fill="#15803d">ENDPOINT BOUND</text>
-
-  <rect x="1070" y="480" width="460" height="190" rx="16" fill="#fffdf5" stroke="#ca8a04" stroke-width="1.5"/>
-  <text x="1095" y="516" class="head">Largest local transition</text>
-  <text x="1095" y="556" class="eq">J₀:T = max D̄w([cᵣ],[cᵣ₊₁])</text>
-  <text x="1095" y="591" class="body">A local continuation certificate declares</text>
-  <text x="1095" y="617" class="eq">J₀:T ≤ ρ</text>
-  <rect x="1095" y="632" width="196" height="26" rx="8" fill="#fef3c7"/>
-  <text x="1110" y="650" class="small" fill="#a16207">DECLARED SCALE ρ</text>
-
-  <text x="70" y="735" class="small" fill="#64748b">C. WHY ENDPOINT SIMILARITY IS NOT ENOUGH</text>
-
-  <rect x="70" y="760" width="1460" height="155" rx="16" fill="#fff8f9" stroke="#e11d48" stroke-width="1.5"/>
-  <text x="95" y="798" class="head">Excursion counterexample</text>
-  <text x="95" y="840" class="eq">[a]  →  [b]  →  [a]</text>
-  <text x="445" y="840" class="eq">D̄w([c₀],[c₂]) = 0</text>
-  <text x="795" y="840" class="eq">V₀:₂ = 2D̄w([a],[b]) &gt; 0</text>
-  <text x="95" y="879" class="body">The system can return to the same endpoint signature after a substantial intermediate structural excursion. Temporal continuation is therefore a path property.</text>
-
-  <path class="dash" d="M225 839 H407"/>
-  <path class="dash" d="M665 839 H757"/>
-
-  <text x="70" y="955" class="body">Scope: finite-dimensional component fingerprints and finite admissible relabeling groups. Statistical uncertainty, splits/merges, and experiential continuity remain separate extension problems.</text>
+  <text x="70" y="982" class="body">Scope: finite-dimensional fingerprints and finite admissible relabeling groups.</text>
+  <text x="70" y="1004" class="body">Statistical uncertainty, splits/merges, and experiential continuity remain separate problems.</text>
 </svg>
