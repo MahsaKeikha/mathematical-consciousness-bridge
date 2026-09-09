@@ -2,7 +2,7 @@
 
 This roadmap records the current proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge.
 
-![P1-P17 theorem roadmap](figures/theorem_roadmap.svg)
+![P1-P18 theorem roadmap](figures/theorem_roadmap.svg)
 
 ---
 
@@ -26,7 +26,8 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P14](proposition_14_temporal_continuation.md) | quotient metric and path variation | representation-invariant temporal continuation | proved temporal-structure theorem |
 | [P15](proposition_15_finite_sample_temporal_certification.md) | perturbation bounds for quotient distances and paths | finite-error certification of temporal change | proved certification theorem |
 | [P16](proposition_16_independent_composition_and_coupling.md) | product-response composition and factorization defect | distinguishes independent coexistence from observed cross-system coupling | proved composition theorem |
-| [P17](proposition_17_coarse_graining_and_refinement.md) | deterministic pushforward and data processing | quantifies information loss under coarse-graining and refinement ambiguity | proved scale-change theorem |
+| [P17](proposition_17_coarse_graining_and_refinement.md) | deterministic pushforward and data processing | quantifies information loss under coarse-graining and refinement ambiguity | proved scale-loss theorem |
+| [P18](proposition_18_scale_sufficiency_certification.md) | approximate reconstruction and separation margin | certifies when a coarse scale preserves a declared response family | proved scale-sufficiency theorem |
 
 ---
 
@@ -236,7 +237,7 @@ The same theorem yields certified intervals for cumulative path variation and th
 
 ---
 
-# 7. Composition and scale change: P16-P17
+# 7. Composition and scale structure: P16-P18
 
 ## P16 - independent composition and coupling
 
@@ -267,7 +268,7 @@ The coupling defect is
 }
 \]
 
-## P17 - coarse-graining and refinement
+## P17 - coarse-graining and refinement loss
 
 For deterministic coarse map
 
@@ -299,6 +300,59 @@ This establishes the baseline distinction
 }
 \]
 
+## P18 - scale sufficiency by approximate reconstruction
+
+P18 asks when the coarse description is nevertheless sufficient for a declared finite family \(\mathcal F\).
+
+Let \(R\) be a fiber-consistent stochastic decoder and define
+
+\[
+\boxed{
+\rho_{\mathcal F}
+=
+\sup_{P\in\mathcal F}
+\|P-R_{\#}C_{\#}P\|_{\mathrm{TV}}.
+}
+\]
+
+Then for every \(P,Q\in\mathcal F\),
+
+\[
+\boxed{
+0
+\le
+\|P-Q\|_{\mathrm{TV}}
+-
+\|C_{\#}P-C_{\#}Q\|_{\mathrm{TV}}
+\le
+2\rho_{\mathcal F}.
+}
+\]
+
+For minimum pairwise separations \(\delta_f\) and \(\delta_c\),
+
+\[
+\boxed{
+\delta_c
+\ge
+\delta_f-2\rho_{\mathcal F}.
+}
+\]
+
+Therefore
+
+\[
+\boxed{
+\delta_f>2\rho_{\mathcal F}
+\Longrightarrow
+\delta_c>0,
+}
+\]
+
+so all response laws in the declared family remain identifiable at the coarse scale.
+
+If \(\rho_{\mathcal F}=0\), pairwise response geometry is preserved exactly even when \(C\) is globally many-to-one. The relevant requirement is family sufficiency, not microscopic invertibility everywhere.
+
 ---
 
 # 8. Dependency chain
@@ -314,7 +368,9 @@ This establishes the baseline distinction
 &\Downarrow\\
 &\text{P14-P15: temporal continuation + certification}\\
 &\Downarrow\\
-&\text{P16-P17: composition + scale change}.
+&\text{P16: composition + coupling}\\
+&\Downarrow\\
+&\text{P17-P18: scale loss + scale sufficiency}.
 \end{aligned}
 }
 \]
@@ -325,11 +381,13 @@ This establishes the baseline distinction
 
 The next structural problems are:
 
-1. estimator-specific finite-sample certification for composition and coarse-graining quantities;
-2. genuine physical split/merge dynamics where state variables and intervention channels change;
-3. moving world-tube / causal-structure interface;
-4. irregular-time normalization of temporal geometry;
-5. cross-theory adversarial experiments on a shared perturbational protocol family;
-6. biological and non-biological counterexample search;
-7. experiential-space formalization independent of the physical candidate;
-8. a bridge theorem only after the preceding physical, statistical, and falsification layers have been jointly addressed.
+1. extend scale certification from response geometry \(\mathcal G\) to directed influence \(\mathcal A\) under block-compatible coarse maps;
+2. characterize partition-lattice compatibility required to control \(\mathcal K\) across scale;
+3. derive estimator-specific finite-sample confidence bounds for \(\rho_{\mathcal F}\), \(\delta_f\), and the P18 scale margin;
+4. model genuine physical split/merge dynamics where state variables and intervention channels change;
+5. formalize the moving world-tube / causal-structure interface;
+6. normalize temporal geometry under irregular observation time;
+7. run cross-theory adversarial experiments on a shared perturbational protocol family;
+8. search biological and non-biological counterexamples;
+9. formalize experiential space independently of the physical candidate;
+10. attempt a bridge theorem only after the physical, statistical, scale, and falsification layers have been jointly addressed.
