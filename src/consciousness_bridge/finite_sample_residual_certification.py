@@ -7,9 +7,9 @@ descriptor does not screen off the target under the stated finite-alphabet
 model. It does not identify the missing information as nonphysical.
 """
 
+from collections.abc import Iterable
 from dataclasses import dataclass
 from math import log, sqrt
-from typing import Iterable
 
 from consciousness_bridge.fundamental_physical_sufficiency import (
     conditional_mutual_information,
@@ -192,20 +192,22 @@ def certify_cmi_from_records(
     _validate_alphabet_size(target_size, "target_size")
 
     materialized = list(records)
+    if not materialized:
+        raise ValueError("records must contain at least one sample")
     if any(len(record) != 3 for record in materialized):
         raise ValueError("each record must contain omega, physical, target")
-    if materialized:
-        observed_sizes = (
-            len({record[0] for record in materialized}),
-            len({record[1] for record in materialized}),
-            len({record[2] for record in materialized}),
-        )
-        declared_sizes = (omega_size, physical_size, target_size)
-        if any(
-            observed > declared
-            for observed, declared in zip(observed_sizes, declared_sizes)
-        ):
-            raise ValueError("observed labels exceed the declared alphabet sizes")
+
+    observed_sizes = (
+        len({record[0] for record in materialized}),
+        len({record[1] for record in materialized}),
+        len({record[2] for record in materialized}),
+    )
+    declared_sizes = (omega_size, physical_size, target_size)
+    if any(
+        observed > declared
+        for observed, declared in zip(observed_sizes, declared_sizes)
+    ):
+        raise ValueError("observed labels exceed the declared alphabet sizes")
 
     weights = empirical_joint_from_records(materialized)
     estimate = conditional_mutual_information(weights)
