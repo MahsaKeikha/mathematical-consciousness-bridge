@@ -22,7 +22,9 @@ jobs:
           fetch-depth: 0
 
       - name: Apply P25 release integration
-        run: python .github/integrate_p25_release.py
+        run: |
+          sed -i 's/^p18_marker = """/p18_marker = r"""/' .github/integrate_p25_release.py
+          python .github/integrate_p25_release.py
 
       - name: Remove one-time integration scaffolding before validation
         run: |
