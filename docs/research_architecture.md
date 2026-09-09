@@ -2,7 +2,7 @@
 
 ![Mathematical Consciousness Bridge research architecture](figures/research_architecture.svg)
 
-The program separates physical modeling, candidate physical signatures, experiential formalization, bridge principles, observable predictions, finite-data certification, and falsification. This separation is deliberate: it prevents a valid theorem about a physical quantity from being mistaken for independent support of a physical-to-experiential bridge.
+The program separates physical modeling, candidate physical signatures, experiential formalization, bridge principles, observable predictions, finite-data certification, and falsification. This prevents a theorem about a physical quantity from being mistaken for independent support of a physical-to-experiential bridge.
 
 ---
 
@@ -26,7 +26,7 @@ Examples include
 y(t)=h(x(t)),
 \]
 
-or a stochastic transition law
+or
 
 \[
 X_{t+\Delta t}
@@ -42,13 +42,11 @@ When applicable, [Spatiotemporal Observer Mathematics](https://github.com/MahsaK
 
 \[
 \boxed{
-\mathcal W
-=
-(S_0,\ldots,S_{T-1}).
+\mathcal W=(S_0,\ldots,S_{T-1}).
 }
 \]
 
-The world-tube is a candidate physical domain. It is not assigned an experiential interpretation by the observer mathematics itself.
+The world-tube is a physical domain candidate, not an experiential conclusion.
 
 ---
 
@@ -61,7 +59,7 @@ Declare which representation changes leave the physically relevant system unchan
 p\sim_Pp'.}
 \]
 
-The representation-independent domain is
+Then
 
 \[
 \boxed{
@@ -83,11 +81,11 @@ A candidate physical signature is a representation-independent feature
 F_*:\mathcal Q_P\to\mathcal Z_*.
 \]
 
-The first original candidate in the program is [Intervention-Resolved Causal Geometry](proposition_11_intervention_resolved_causal_geometry.md):
+The first original candidate is [intervention-resolved causal structure](proposition_11_intervention_resolved_causal_structure.md):
 
 \[
 \boxed{
-F_{\mathrm{IRCG}}(p)
+F_{\mathrm{causal}}(p)
 =
 [\mathfrak C_p]_{\cong},
 }
@@ -101,21 +99,21 @@ with
 (V,\mathcal U_p,\mathcal T,\mathcal G_p,\mathcal A_p,\mathcal K_p).
 \]
 
-The three structural components encode intervention-response geometry, directed perturbational influence, and partition-specific response irreducibility.
+The three components encode intervention-response geometry, directed perturbational influence, and partition-specific response irreducibility.
 
-[Proposition 12](proposition_12_component_insufficiency.md) begins the minimality program by proving that each component alone, and several simple scalar summaries, are insufficient to reconstruct full IRCG on explicit finite domains.
+[Proposition 12](proposition_12_component_insufficiency.md) proves that each component alone, and several scalar summaries, are incomplete. [Proposition 13](proposition_13_pairwise_component_irredundancy.md) proves that each component remains irredundant relative to the other two on an explicit finite audit domain.
 
 ---
 
 ## Layer 5 - experiential formalization
 
-Define a formal space
+Define
 
 \[
 \mathcal E
 \]
 
-and experiential equivalence relation
+and experiential equivalence
 
 \[
 e\sim_Ee'.
@@ -131,7 +129,7 @@ The experiential quotient is
 }
 \]
 
-This layer remains an essential open formalization problem. A convenient physical score does not substitute for defining the experiential target.
+This remains an essential open formalization problem. A convenient physical score does not substitute for a definition of the experiential target.
 
 ---
 
@@ -145,7 +143,7 @@ The most general bridge begins as a relation
 \mathcal P\times\mathcal E.
 \]
 
-When single-valuedness and invariance are justified, the desired quotient-level object is
+When single-valuedness and invariance are justified,
 
 \[
 \boxed{
@@ -156,9 +154,7 @@ When single-valuedness and invariance are justified, the desired quotient-level 
 }
 \]
 
-[Propositions 5 and 6](theorem_roadmap.md) formalize physical-feature sufficiency and bridge completeness.
-
-The strongest physical-signature target is
+Propositions 5 and 6 formalize physical-feature sufficiency and bridge completeness. The strongest physical-signature target is
 
 \[
 \boxed{
@@ -167,8 +163,6 @@ F_*(p)=F_*(p')
 \bar B(p)=\bar B(p').
 }
 \]
-
-on a declared physical domain.
 
 ---
 
@@ -180,15 +174,11 @@ A complete theory must generate observable probability laws under declared proto
 P_{\mathfrak T}^{\pi,q}.
 \]
 
-[Propositions 2-4](theorem_roadmap.md) establish exact identifiability and experiment-design results for comparing competing bridge theories.
-
-[Candidate Theory Families](candidate_theory_families.md) translates IIT, GNWT, recurrent-processing, higher-order, predictive/neurorepresentational, and related approaches into a common comparison interface.
+Propositions 2-4 establish exact identifiability and experiment-design results. [Candidate Theory Families](candidate_theory_families.md) translates IIT, GNWT, recurrent-processing, higher-order, predictive/neurorepresentational, and repository candidate families into a common comparison interface.
 
 ---
 
 ## Layer 8 - experimental recoverability and finite-data certification
-
-A mathematically complete signature must also be experimentally recoverable.
 
 For physical fingerprint
 
@@ -198,9 +188,7 @@ For physical fingerprint
 (P^{\pi,p})_{\pi\in\Pi},
 \]
 
-[Proposition 7](proposition_7_experimental_signature_recovery.md) gives the exact recoverability criterion.
-
-Propositions 8-10 add finite-error certification, explicit sample complexity, and robust protocol design:
+Proposition 7 gives the exact recoverability criterion. Propositions 8-10 add finite-error certification, explicit sample complexity, and robust protocol design:
 
 \[
 \boxed{
@@ -211,7 +199,7 @@ Propositions 8-10 add finite-error certification, explicit sample complexity, an
 }
 \]
 
-and, for the categorical benchmark,
+and
 
 \[
 \boxed{
@@ -233,13 +221,13 @@ Every candidate signature or bridge is exposed to:
 1. representation counterexamples;
 2. feature-sufficiency collisions;
 3. observational non-identifiability;
-4. recovery failures;
-5. component-minimality collisions;
+4. recoverability failures;
+5. one-component and pairwise-component collisions;
 6. temporal or composition inconsistencies;
 7. empirical prediction failures;
 8. biological and artificial substrate counterexamples.
 
-P12 is an example of this architecture in practice: the first original physical candidate is attacked internally before any experiential equivalence claim is attached to it.
+P12-P13 illustrate the architecture in practice: the first physical candidate is attacked internally before an experiential equivalence claim is attached.
 
 ---
 
@@ -247,7 +235,7 @@ P12 is an example of this architecture in practice: the first original physical 
 
 Only after the physical domain, experiential domain, bridge principles, complete physical signature, empirical identifiability, recoverability, finite-data uncertainty, and falsification conditions are explicit should the program state a final bridge theorem.
 
-The canonical schematic target is
+The schematic target is
 
 \[
 \boxed{
@@ -261,4 +249,4 @@ The canonical schematic target is
 }
 \]
 
-See [Universal Consciousness Proof Target](universal_proof_target.md) for the twelve full criteria.
+See [Universal Consciousness Proof Target](universal_proof_target.md).
