@@ -48,6 +48,7 @@ def test_core_research_documents_exist():
         root / "docs" / "figures" / "thermodynamics_information_processing.svg",
         root / "docs" / "figures" / "information_geometry_response_manifold.svg",
         root / "docs" / "figures" / "conscious_state_measurement_map.svg",
+        root / "docs" / "figures" / "state_space_dynamics_map.svg",
         root / "docs" / "figures" / "spaceflight_extreme_environment_map.svg",
         root / "docs" / "figures" / "multiscale_physical_hierarchy.svg",
         root / "docs" / "figures" / "observer_to_bridge_handoff.svg",
