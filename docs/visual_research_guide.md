@@ -508,7 +508,7 @@ See [Physics and Mathematics Atlas](physics_mathematics_consciousness_atlas.md) 
 | 9 | [P14 - Temporal Continuation](proposition_14_temporal_continuation.md) | How is the physical candidate compared through time after relabeling? |
 | 10 | [P15 - Finite-Sample Temporal Certification](proposition_15_finite_sample_temporal_certification.md) | When is apparent temporal change larger than uncertainty? |
 | 11 | [P16 - Independent Composition and Coupling](proposition_16_independent_composition_and_coupling.md) | When do systems merely coexist, and when does response structure depart from factorization? |
-| 12 | [P17 - Coarse-Graining and Refinement](proposition_17_coarse_graining_refinement.md) | Which physical distinctions survive a change of scale? |
+| 12 | [P17 - Coarse-Graining and Refinement](proposition_17_coarse_graining_and_refinement.md) | Which physical distinctions survive a change of scale? |
 | 13 | [Candidate Theory Families](candidate_theory_families.md) | How are major consciousness theories compared? |
 | 14 | [Universal Proof Target](universal_proof_target.md) | What would the final theorem-and-evidence package require? |
 | 15 | [Equation and Citation Map](equation_and_citation_map.md) | Which equations are original, standard, assumed, or externally sourced? |
