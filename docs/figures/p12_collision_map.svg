@@ -1,72 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="930" viewBox="0 0 1600 930" role="img" aria-labelledby="title desc">
   <title id="title">Proposition 12 constructive collision tests</title>
   <desc id="desc">Three explicit collision families proving that response geometry, partition irreducibility, and directed marginal influence are each incomplete descriptions of the full intervention-resolved causal structure.</desc>
-  <defs>
-    <style>
-      .title{font:700 37px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
-      .subtitle{font:400 18px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
-      .head{font:700 19px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
-      .body{font:400 14.5px Inter,Segoe UI,Arial,sans-serif;fill:#334155}
-      .label{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
-      .eq{font:600 17px Georgia,'Times New Roman',serif;fill:#0f172a}
-      .divider{stroke:#cbd5e1;stroke-width:1}
-    </style>
-  </defs>
-
-  <rect width="1600" height="900" fill="#ffffff"/>
+  <defs><style>.title{font:700 37px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}.subtitle{font:400 18px Inter,Segoe UI,Arial,sans-serif;fill:#475569}.head{font:700 19px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}.body{font:400 14.5px Inter,Segoe UI,Arial,sans-serif;fill:#334155}.label{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}.eq{font:600 17px Georgia,'Times New Roman',serif;fill:#0f172a}.divider{stroke:#cbd5e1;stroke-width:1}</style></defs>
+  <rect width="1600" height="930" fill="#ffffff"/>
   <text x="70" y="64" class="title">Proposition 12 - Constructive Component Collisions</text>
-  <text x="70" y="96" class="subtitle">A compressed feature is incomplete when it identifies two systems that the full physical signature distinguishes.</text>
-
+  <text x="70" y="96" class="subtitle">A compressed feature is incomplete when it identifies systems that the full signature distinguishes.</text>
   <rect x="70" y="140" width="1460" height="105" rx="14" fill="#0f172a"/>
   <text x="100" y="177" style="font:700 17px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">General projection-collision criterion</text>
-  <text x="100" y="215" style="font:600 18px Georgia,'Times New Roman',serif;fill:#e2e8f0">H(x) = H(x')  and  F(x) ≠ F(x')   ⇒   there is no map g with F = g ∘ H on the declared domain.</text>
-
-  <!-- Collision 1 -->
+  <text x="100" y="215" style="font:600 18px Georgia,'Times New Roman',serif;fill:#e2e8f0">H(x) = H(x′) and F(x) ≠ F(x′) ⇒ no map g can satisfy F = g ∘ H on the declared domain.</text>
   <rect x="70" y="300" width="455" height="405" rx="16" fill="#f5fcf8" stroke="#059669" stroke-width="1.6"/>
-  <text x="98" y="340" class="head">1. Response geometry held fixed</text>
-  <line x1="98" y1="356" x2="497" y2="356" class="divider"/>
-  <text x="98" y="393" class="label">MATCHED PROJECTION</text>
-  <text x="98" y="425" class="eq">G_C = G_P</text>
-  <text x="98" y="456" class="eq">d_C(u₀,u₁) = d_P(u₀,u₁) = 1</text>
-  <text x="98" y="500" class="label">PHYSICAL DIFFERENCE</text>
-  <text x="98" y="532" class="body">Correlated joint responses versus exactly</text>
-  <text x="98" y="557" class="body">factorized responses across the same partition.</text>
-  <text x="98" y="596" class="eq">κ_C(π) = 1/2,   κ_P(π) = 0</text>
-  <text x="98" y="641" class="label">CONCLUSION</text>
-  <text x="98" y="671" class="body">Response geometry alone cannot recover</text>
-  <text x="98" y="696" class="body">partition-specific irreducibility.</text>
-
-  <!-- Collision 2 -->
+  <text x="98" y="340" class="head">1. Response geometry held fixed</text><line x1="98" y1="356" x2="497" y2="356" class="divider"/><text x="98" y="393" class="label">MATCHED PROJECTION</text><text x="98" y="425" class="eq">G_C = G_P</text><text x="98" y="456" class="eq">d_C(u₀,u₁) = d_P(u₀,u₁) = 1</text><text x="98" y="500" class="label">PHYSICAL DIFFERENCE</text><text x="98" y="532" class="body">Correlated joint responses versus exactly</text><text x="98" y="557" class="body">factorized responses across the same partition.</text><text x="98" y="596" class="eq">κ_C(π) = 1/2, κ_P(π) = 0</text><text x="98" y="641" class="label">CONCLUSION</text><text x="98" y="671" class="body">Response geometry alone cannot recover</text><text x="98" y="696" class="body">partition-specific irreducibility.</text>
   <rect x="572" y="300" width="455" height="405" rx="16" fill="#fffaf7" stroke="#ea580c" stroke-width="1.6"/>
-  <text x="600" y="340" class="head">2. Partition irreducibility held fixed</text>
-  <line x1="600" y1="356" x2="999" y2="356" class="divider"/>
-  <text x="600" y="393" class="label">MATCHED PROJECTION</text>
-  <text x="600" y="425" class="eq">K_D = K_S</text>
-  <text x="600" y="456" class="eq">κ_D(π) = κ_S(π) = 0</text>
-  <text x="600" y="500" class="label">PHYSICAL DIFFERENCE</text>
-  <text x="600" y="532" class="body">Both systems factorize, but one produces</text>
-  <text x="600" y="557" class="body">differentiated responses and the other does not.</text>
-  <text x="600" y="596" class="eq">d_D(u₀,u₁) = 1,   d_S(u₀,u₁) = 0</text>
-  <text x="600" y="641" class="label">CONCLUSION</text>
-  <text x="600" y="671" class="body">Irreducibility alone cannot recover</text>
-  <text x="600" y="696" class="body">the intervention-response geometry.</text>
-
-  <!-- Collision 3 -->
+  <text x="600" y="340" class="head">2. Partition irreducibility held fixed</text><line x1="600" y1="356" x2="999" y2="356" class="divider"/><text x="600" y="393" class="label">MATCHED PROJECTION</text><text x="600" y="425" class="eq">K_D = K_S</text><text x="600" y="456" class="eq">κ_D(π) = κ_S(π) = 0</text><text x="600" y="500" class="label">PHYSICAL DIFFERENCE</text><text x="600" y="532" class="body">Both systems factorize, but one produces</text><text x="600" y="557" class="body">differentiated responses and the other does not.</text><text x="600" y="596" class="eq">d_D(u₀,u₁) = 1, d_S(u₀,u₁) = 0</text><text x="600" y="641" class="label">CONCLUSION</text><text x="600" y="671" class="body">Irreducibility alone cannot recover</text><text x="600" y="696" class="body">the intervention-response geometry.</text>
   <rect x="1075" y="300" width="455" height="405" rx="16" fill="#faf8ff" stroke="#7c3aed" stroke-width="1.6"/>
-  <text x="1103" y="340" class="head">3. Directed marginal influence held fixed</text>
-  <line x1="1103" y1="356" x2="1502" y2="356" class="divider"/>
-  <text x="1103" y="393" class="label">MATCHED PROJECTION</text>
-  <text x="1103" y="425" class="eq">A_R = A_I</text>
-  <text x="1103" y="456" class="body">All tested single-block marginals coincide.</text>
-  <text x="1103" y="500" class="label">PHYSICAL DIFFERENCE</text>
-  <text x="1103" y="532" class="body">One system changes only its joint dependence</text>
-  <text x="1103" y="557" class="body">structure; the other joint response is unchanged.</text>
-  <text x="1103" y="596" class="eq">G_R ≠ G_I</text>
-  <text x="1103" y="641" class="label">CONCLUSION</text>
-  <text x="1103" y="671" class="body">Marginal influence can miss causal differences</text>
-  <text x="1103" y="696" class="body">that exist only in joint response structure.</text>
-
-  <rect x="70" y="765" width="1460" height="80" rx="14" fill="#fff8f9" stroke="#e11d48" stroke-width="1.5"/>
+  <text x="1103" y="340" class="head">3. Directed marginal influence held fixed</text><line x1="1103" y1="356" x2="1502" y2="356" class="divider"/><text x="1103" y="393" class="label">MATCHED PROJECTION</text><text x="1103" y="425" class="eq">A_R = A_I</text><text x="1103" y="456" class="body">All tested single-block marginals coincide.</text><text x="1103" y="500" class="label">PHYSICAL DIFFERENCE</text><text x="1103" y="532" class="body">One system changes only its joint dependence</text><text x="1103" y="557" class="body">structure; the other joint response is unchanged.</text><text x="1103" y="596" class="eq">G_R ≠ G_I</text><text x="1103" y="641" class="label">CONCLUSION</text><text x="1103" y="671" class="body">Marginal influence can miss causal differences</text><text x="1103" y="696" class="body">that exist only in joint response structure.</text>
+  <rect x="70" y="765" width="1460" height="110" rx="14" fill="#fff8f9" stroke="#e11d48" stroke-width="1.5"/>
   <text x="100" y="797" class="head">P12 consequence</text>
-  <text x="100" y="826" class="body">No single component G, A, or K—and no tested scalar compression such as response diameter, minimum irreducibility, or a cycle/no-cycle flag—reconstructs the full causal-structure candidate on the declared audit domains.</text>
+  <text x="100" y="829" class="body">No single component G, A, or K reconstructs the full causal-structure candidate.</text>
+  <text x="100" y="854" class="body">Tested scalar compressions also fail on the declared audit domains.</text>
 </svg>
