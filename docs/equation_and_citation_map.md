@@ -2,7 +2,7 @@
 
 This page distinguishes repository definitions, standard mathematics, physical modeling assumptions, candidate physical hypotheses, bridge hypotheses, theorem statements, theory-family translations, and external empirical evidence.
 
-The purpose is provenance: a reader should be able to see immediately whether an equation is introduced here, inherited from standard mathematics, adapted from an external theory, or motivated by experiment.
+Its purpose is provenance: a reader should be able to determine immediately whether an equation is introduced here, inherited from standard mathematics, adapted from an external theory, or motivated by experiment.
 
 ---
 
@@ -12,7 +12,7 @@ The purpose is provenance: a reader should be able to see immediately whether an
 | --- | --- | --- | --- |
 | \(p=(\mathcal X,\mathcal D,\mathfrak I,\mathcal O)\) | physical-system object | repository definition | physical modeling framework |
 | \(dX_t=f(X_t,u_t)dt+G(X_t,u_t)dW_t\) | example stochastic physical model | standard modeling form | stochastic dynamics |
-| \(K_{\Delta t}(\cdot\mid X_t,u_t)\) | transition-kernel representation | standard probability object | Markov/stochastic modeling |
+| \(K_{\Delta t}(\cdot\mid X_t,u_t)\) | transition-kernel representation | standard probability object | stochastic-process modeling |
 | \(\mathcal B\subseteq\mathcal P\times\mathcal E\) | general physical-to-experiential bridge relation | repository definition | bridge formulation |
 | \(p\sim_Pp'\) | physically irrelevant representation equivalence | repository definition, theory dependent | quotient framework |
 | \(e\sim_Ee'\) | experiential equivalence | repository definition, open formalization | mathematical-consciousness context |
@@ -32,7 +32,7 @@ The purpose is provenance: a reader should be able to see immediately whether an
 | \(\|P-Q\|_{\mathrm{TV}}\) | probability distance controlling binary distinguishability | standard probability/statistics | Le Cam-Yang; Tsybakov |
 | \(\Delta_\Pi=\sup_{\pi\in\Pi}\|P_1^{\pi,q}-P_2^{\pi,q}\|_{\mathrm{TV}}\) | experiment-class bridge discriminability | repository construction | P2 |
 | \(R_\pi^*=\tfrac12(1-\|P_1-P_2\|_{\mathrm{TV}})\) | optimal equal-prior binary testing error | standard identity applied here | decision theory; P2 |
-| \(\exp(-n\eta^2/2)\) | repeated-event discrimination error bound | standard concentration applied here | Hoeffding 1963; P2 |
+| \(\exp(-n\eta^2/2)\) | repeated-event discrimination bound | standard concentration applied here | Hoeffding 1963; P2 |
 | \(\Phi_{\Pi,q}(\mathfrak T)=(P_{\mathfrak T}^{\pi,q})_{\pi\in\Pi}\) | complete observable theory fingerprint | repository construction | P3 |
 | \(\Theta/{\sim_{\Pi,q}}\cong\operatorname{Im}(\Phi_{\Pi,q})\) | observational theory quotient | proved | P3 + quotient logic |
 | \(d_{ij}(\pi)=\|P_i^{\pi,q}-P_j^{\pi,q}\|_{\mathrm{TV}}\) | protocol-specific theory-pair separation | repository construction | P4 |
@@ -53,7 +53,7 @@ The purpose is provenance: a reader should be able to see immediately whether an
 | \(C_B(p)=[p]_{\sim_B}\) | canonical complete bridge signature | repository construction | P6 |
 | \(C_B(p)=C_B(p')\iff\bar B(p)=\bar B(p')\) | exact canonical completeness | proved | P6 |
 | \(\mathcal Q_B\cong\operatorname{Im}(\bar B)\) | quotient / bridge-image equivalence | proved | P6 |
-| \(F_*(p)=F_*(p')\iff\bar B(p)=\bar B(p')\) | complete physical-signature target | repository theorem target | P6 / Universal Proof Target |
+| \(F_*(p)=F_*(p')\iff C_B(p)=C_B(p')\) | complete physical-signature target | repository theorem target | P6 / Universal Proof Target |
 
 ---
 
@@ -67,7 +67,7 @@ The purpose is provenance: a reader should be able to see immediately whether an
 | \(\omega_S\) | maximum within-signature spread | repository definition | P8 |
 | \(\delta_S\) | minimum between-signature separation | repository definition | P8 |
 | \(\gamma_S=\delta_S-\omega_S\) | robust signature gap | repository construction | P8 |
-| \(|\widehat d_S-d_S|\le2\varepsilon\) | distance perturbation bound | proved from TV triangle inequality | P8 |
+| \(|\widehat d_S-d_S|\le2\varepsilon\) | distance perturbation bound | proved from the TV triangle inequality | P8 |
 | \(\gamma_S>4\varepsilon\) | sufficient exact-partition recovery condition | proved | P8 |
 | \(\Pr(|\widehat p_j-p_j|>a)\le2e^{-2na^2}\) | one-category empirical-frequency concentration | standard inequality | Hoeffding 1963 |
 | \(2N_PN_\pi K\exp(-8n\varepsilon^2/K^2)\) | uniform categorical failure bound | proved from Hoeffding + union bounds | P9 |
@@ -78,9 +78,9 @@ The purpose is provenance: a reader should be able to see immediately whether an
 
 ---
 
-# 5. P11 - Intervention-Resolved Causal Geometry
+# 5. P11 - intervention-resolved causal structure
 
-IRCG is a repository-original **candidate physical signature**. The following equations are definitions or theorems about that physical object; they are not imported as a consciousness identity from any external theory.
+The intervention-resolved causal structure is a repository-original **candidate physical signature**. The equations in this section are definitions or theorems about that physical object; none is imported from an external source as an identity with consciousness.
 
 | Equation or object | Role | Status | Primary provenance |
 | --- | --- | --- | --- |
@@ -92,8 +92,8 @@ IRCG is a repository-original **candidate physical signature**. The following eq
 | \(P_{p,\pi}^{u,\tau}=\bigotimes_{B\in\pi}P_{p,B}^{u,\tau}\) | productized partition response | standard product measure applied here | P11 |
 | \(\kappa_p^\tau(\pi)=\sup_u\|P_p^{u,\tau}-P_{p,\pi}^{u,\tau}\|_{\mathrm{TV}}\) | partition response irreducibility | repository construction | P11 |
 | \(\mathcal K_p=\{\kappa_p^\tau(\pi)\}_{\pi,\tau}\) | complete partition landscape | repository definition | P11 |
-| \(\mathfrak C_p=(V,\mathcal U_p,\mathcal T,\mathcal G_p,\mathcal A_p,\mathcal K_p)\) | raw IRCG object | repository definition | P11 |
-| \(F_{\mathrm{IRCG}}(p)=[\mathfrak C_p]_{\cong}\) | representation-invariant IRCG signature | repository construction | P11 |
+| \(\mathfrak C_p=(V,\mathcal U_p,\mathcal T,\mathcal G_p,\mathcal A_p,\mathcal K_p)\) | raw intervention-resolved causal structure | repository definition | P11 |
+| \(F_{\mathrm{causal}}(p)=[\mathfrak C_p]_{\cong}\) | representation-invariant causal-structure signature | repository construction | P11 |
 | \(\kappa_p^\tau(\pi)=0\iff P_p^{u,\tau}=\bigotimes_{B\in\pi}P_{p,B}^{u,\tau}\ \forall u\) | exact factorization certificate | proved | P11 |
 | DAG influence graph \(\Rightarrow\) no directed return loop | feedforward no-return certificate | proved | P11 + graph-theoretic definition |
 
@@ -102,16 +102,16 @@ IRCG is a repository-original **candidate physical signature**. The following eq
 | Physical idea motivating measurement | External evidence / theory role | Citation |
 | --- | --- | --- |
 | direct perturbation + differentiated distributed response | perturbational-complexity evidence | Casali et al. 2013; Maschke et al. 2024 |
-| intrinsic causal organization / irreducibility | existing bridge theory motivation | Albantakis et al. 2023 |
+| intrinsic causal organization / irreducibility | existing bridge-theory motivation | Albantakis et al. 2023 |
 | recurrent and distributed processing | theory-family motivation | Mashour et al. 2020; Lamme 2006; Changeux-Farisco 2026 |
 | synergistic integration changing with consciousness | empirical information-integration evidence | Luppi et al. 2024 |
 | integration and controllability under anesthesia | cross-species empirical evidence | Luppi et al. 2026 |
 
-These sources motivate what is worth measuring. They do not establish the IRCG bridge-completeness target.
+These sources motivate quantities worth measuring. They do not establish the bridge-completeness target for the causal-structure candidate.
 
 ---
 
-# 6. P12 - component minimality and projection collisions
+# 6. P12 - single-component minimality and projection collisions
 
 | Equation or object | Role | Status | Primary provenance |
 | --- | --- | --- | --- |
@@ -124,13 +124,44 @@ These sources motivate what is worth measuring. They do not establish the IRCG b
 | \(\kappa_p^*\) | minimum irreducibility scalar | proved incomplete on explicit domain | P12 |
 | cycle/no-cycle indicator | Boolean recurrence compression | proved incomplete for influence strength | P12 |
 
-P12 is a **physical-signature minimality theorem**, not an experiential theorem. It demonstrates why a simple scalar or one-component summary cannot be assumed to preserve the physical information retained by IRCG.
+P12 is a physical-signature minimality theorem. It demonstrates that several natural one-component or scalar compressions lose information before any experiential interpretation is attached.
 
 ---
 
-# 7. Candidate consciousness-theory feature families
+# 7. P13 - pairwise component irredundancy
 
-The following are source-grounded translations into the generic feature notation. They are not claims that each named theory reduces to one scalar or one universally agreed implementation.
+Define the labeled component fingerprint
+
+\[
+F_C(p)
+=
+(\mathcal G_p,\mathcal A_p,\mathcal K_p).
+\]
+
+P13 constructs three collision families:
+
+| Pair retained | Matched quantities | Omitted quantity that differs | Conclusion |
+| --- | --- | --- | --- |
+| \((\mathcal G,\mathcal A)\) | \(\mathcal G_L=\mathcal G_H\), \(\mathcal A_L=\mathcal A_H\) | \(\mathcal K_L\ne\mathcal K_H\) | \(\mathcal K\) is irredundant on the audit domain |
+| \((\mathcal G,\mathcal K)\) | \(\mathcal G_0=\mathcal G_+\), \(\mathcal K_0=\mathcal K_+\) | \(\mathcal A_0\ne\mathcal A_+\) | \(\mathcal A\) is irredundant on the audit domain |
+| \((\mathcal A,\mathcal K)\) | \(\mathcal A_D=\mathcal A_S\), \(\mathcal K_D=\mathcal K_S\) | \(\mathcal G_D\ne\mathcal G_S\) | \(\mathcal G\) is irredundant on the audit domain |
+
+Therefore
+
+\[
+\boxed{
+H_{GA},\ H_{GK},\ H_{AK}
+\text{ are all incomplete projections on }D_{13}.
+}
+\]
+
+This is a component-level irredundancy result on the declared finite domain, not a global minimality theorem over every possible physical representation.
+
+---
+
+# 8. Candidate consciousness-theory feature families
+
+The following are source-grounded translations into generic feature notation. They are not claims that each named theory reduces to one scalar or one universally agreed implementation.
 
 | Theory family | Generic feature notation in this repository | Primary source role |
 | --- | --- | --- |
@@ -139,13 +170,13 @@ The following are source-grounded translations into the generic feature notation
 | RPT | \(\mathcal F_{\mathrm{RPT}}(p)=\) relevant recurrent-processing structure and dynamics | Lamme 2006 |
 | HOT | \(\mathcal F_{\mathrm{HOT}}(p)=\) theory-specific higher-order representational relation | Brown-Lau-LeDoux 2019 |
 | predictive / NR / active-inference families | \(\mathcal F_{\mathrm{PP}}(p)=\) theory-specific predictive, inferential, and representational structure | Seth-Hohwy 2021; Pennartz 2022; Corcoran et al. 2026 |
-| IRCG | \(F_{\mathrm{IRCG}}(p)=[\mathfrak C_p]_{\cong}\) | repository-original candidate physical signature | P11-P12 |
+| intervention-resolved causal structure | \(F_{\mathrm{causal}}(p)=[\mathfrak C_p]_{\cong}\) | repository-original candidate physical signature | P11-P13 |
 
 Detailed caveats and source roles are maintained in [Candidate Theory Families](candidate_theory_families.md) and [Literature Map](literature_map.md).
 
 ---
 
-# 8. Citation discipline
+# 9. Citation discipline
 
 A result is cited as a repository result when the bridge-specific statement, construction, or counterexample is introduced here.
 
