@@ -1,11 +1,11 @@
-# Proposition 12: IRCG component insufficiency and minimal-feature audit
+# Proposition 12: component insufficiency and minimal-feature audit
 
 ## Why this theorem is necessary
 
-Proposition 11 introduces the Intervention-Resolved Causal Geometry signature
+Proposition 11 introduces the intervention-resolved causal-structure signature
 
 \[
-F_{\mathrm{IRCG}}(p)
+F_{\mathrm{causal}}(p)
 =
 [\mathfrak C_p]_{\cong},
 \]
@@ -30,7 +30,7 @@ The central result is:
 \[
 \boxed{
 \mathcal G_p,\ \mathcal A_p,\ \mathcal K_p
-\text{ are each individually insufficient to reconstruct full IRCG.}
+\text{ are each individually insufficient to reconstruct the full causal-structure candidate.}
 }
 \]
 
@@ -96,7 +96,7 @@ contradicting \(F(x)\ne F(x')\).
 \boxed{\text{QED}}
 \]
 
-This is the Proposition 5 factorization criterion applied internally to IRCG compression.
+This is the Proposition 5 factorization criterion applied internally to compression of the causal-structure candidate.
 
 ---
 
@@ -187,15 +187,14 @@ Therefore
 \[
 \mathcal G_C=\mathcal G_P
 \qquad\text{but}\qquad
-F_{\mathrm{IRCG}}(p_C)
-e F_{\mathrm{IRCG}}(p_P).
+F_{\mathrm{causal}}(p_C)\ne F_{\mathrm{causal}}(p_P).
 \]
 
 By Proposition 12A:
 
 \[
 \boxed{
-F_{\mathrm{IRCG}}
+F_{\mathrm{causal}}
 \text{ cannot factor through response geometry alone.}
 }
 \]
@@ -266,7 +265,7 @@ Therefore
 
 \[
 \boxed{
-F_{\mathrm{IRCG}}
+F_{\mathrm{causal}}
 \text{ cannot factor through the partition-irredundancy landscape alone.}
 }
 \]
@@ -343,7 +342,7 @@ Thus
 
 \[
 \boxed{
-F_{\mathrm{IRCG}}
+F_{\mathrm{causal}}
 \text{ cannot factor through the directed-influence tensor alone.}
 }
 \]
@@ -413,7 +412,7 @@ Therefore
 }
 \]
 
-A maximum pairwise response difference is consequently too coarse to serve as the complete IRCG descriptor.
+A maximum pairwise response difference is consequently too coarse to serve as a complete descriptor of the causal-structure candidate.
 
 ---
 
@@ -460,7 +459,7 @@ Thus the same scalar irreducibility value can coexist with different interventio
 \[
 \boxed{
 \kappa_p^*
-\text{ is not a complete IRCG statistic.}
+\text{ is not a complete causal-structure statistic.}
 }
 \]
 
@@ -514,7 +513,7 @@ Therefore recurrence presence alone cannot reconstruct the directed influence te
 
 ---
 
-# 8. Proposition 12B - single-component insufficiency theorem for IRCG
+# 8. Proposition 12B - single-component insufficiency theorem
 
 On the explicit finite domain containing the constructions above, none of the projections
 
@@ -529,28 +528,28 @@ F_K(p)=\mathcal K_p
 is sufficient to reconstruct
 
 \[
-F_{\mathrm{IRCG}}(p).
+F_{\mathrm{causal}}(p).
 \]
 
-Equivalently, there exist no maps \(g_G,g_A,g_K\) satisfying all three identities
+Equivalently, there exist no maps \(g_G,g_A,g_K\) satisfying
 
 \[
-F_{\mathrm{IRCG}}=g_G\circ F_G,
-\]
-
-\[
-F_{\mathrm{IRCG}}=g_A\circ F_A,
+F_{\mathrm{causal}}=g_G\circ F_G,
 \]
 
 \[
-F_{\mathrm{IRCG}}=g_K\circ F_K
+F_{\mathrm{causal}}=g_A\circ F_A,
 \]
 
-on that domain.
+\[
+F_{\mathrm{causal}}=g_K\circ F_K
+\]
+
+throughout that domain.
 
 ## Proof
 
-Sections 2-4 provide an explicit collision for each projection. Proposition 12A then rules out the corresponding factorization.
+Sections 2-4 provide an explicit collision for each projection. Proposition 12A rules out the corresponding factorization.
 
 \[
 \boxed{\text{QED}}
@@ -559,8 +558,6 @@ Sections 2-4 provide an explicit collision for each projection. Proposition 12A 
 ---
 
 # 9. What this rules out
-
-Proposition 12 rules out the following shortcuts as complete descriptions of Candidate A:
 
 | Compression | Exact failure |
 | --- | --- |
@@ -571,27 +568,17 @@ Proposition 12 rules out the following shortcuts as complete descriptions of Can
 | minimum irreducibility scalar | different geometries can share one irreducibility value |
 | recurrence yes/no | different directed causal structures can share cycle status |
 
-This does **not** establish that the full IRCG object is minimal. Pairwise combinations of components may still contain redundancy, and the complete isomorphism class may itself contain more detail than any eventual bridge requires.
+This does **not** establish that the complete causal-structure object is globally minimal. Pairwise combinations may still contain redundancy, and the complete isomorphism class may contain more detail than any eventual bridge requires.
 
 ---
 
 # 10. Scientific consequence
 
-The theorem changes the design philosophy of the project.
-
-A future consciousness bridge should not begin by selecting one intuitively appealing number such as:
-
-- complexity;
-- integration;
-- recurrence;
-- broadcast strength;
-- controllability;
-- entropy;
-- criticality.
+A future consciousness bridge should not begin by selecting one intuitively appealing number such as complexity, integration, recurrence, broadcast strength, controllability, entropy, or criticality.
 
 Instead, the project first preserves a sufficiently rich physical causal object and then asks which information can be removed **without creating counterexample collisions**.
 
-The criterion is mathematical:
+The criterion is
 
 \[
 \boxed{
@@ -601,26 +588,24 @@ F_{\mathrm{target}}(p)=F_{\mathrm{target}}(p')
 }
 \]
 
-must hold before \(H\) can be called sufficient for the declared target.
+before \(H\) can be called sufficient for the declared target.
 
-For IRCG, Proposition 12 shows that several obvious compressions fail this criterion already at the purely physical level.
+Proposition 12 shows that several obvious compressions fail this criterion already at the purely physical level.
 
 ---
 
 # 11. Next frontier
 
-The next audit should test **pairwise component combinations**:
+Proposition 13 tests the pairwise component combinations
 
 \[
 (\mathcal G,\mathcal A),
 \qquad
 (\mathcal G,\mathcal K),
 \qquad
-(\mathcal A,\mathcal K),
+(\mathcal A,\mathcal K)
 \]
 
-and determine whether any pair reconstructs the third component on scientifically relevant model classes.
+and determines whether any pair reconstructs the omitted component on an explicit finite audit domain.
 
-A stronger future result would identify a mathematically minimal invariant sufficient to reconstruct IRCG on a declared class of causal systems.
-
-Only after that physical minimality problem is understood should the program test whether the surviving physical invariant is sufficient or complete for a physical-to-experiential bridge.
+Only after this physical minimality problem is understood should the program test whether the surviving physical invariant is sufficient or complete for a physical-to-experiential bridge.
