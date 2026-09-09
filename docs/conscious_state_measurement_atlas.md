@@ -4,6 +4,33 @@ This atlas organizes empirical states and measurement interfaces without reducin
 
 ![Conscious-state measurement and dissociation map](figures/conscious_state_measurement_map.svg)
 
+## State-space view
+
+![State-space dynamics and consciousness-related regimes](figures/state_space_dynamics_map.svg)
+
+The state-space figure treats wakefulness, sleep, anesthesia, recovery, and perturbational excursions as dynamical regimes in a measurable physical state space. The colored regions are schematic: they are not universal experiential classes and they are not ordered along a single consciousness axis.
+
+A controlled stochastic model may be written
+
+\[
+dX_t
+=
+f(X_t,u_t)\,dt
++G(X_t,u_t)\,dW_t,
+\]
+
+while intervention-conditioned response geometry is represented by
+
+\[
+d_p^\tau(u,v)
+=
+\left\|
+P_p^{u,\tau}-P_p^{v,\tau}
+\right\|_{\mathrm{TV}}.
+\]
+
+This connects empirical state-transition work directly to the repository's dynamical and intervention-resolved physical framework.
+
 ---
 
 # 1. Why dissociations matter
