@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - .github/workflows/professional-reference-style-once.yml
+      - .github/normalize_reference_style.py
 
 permissions:
   contents: write
