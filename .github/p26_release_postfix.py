@@ -15,7 +15,7 @@ def replace_once(path: str, old: str, new: str, label: str) -> None:
 replace_once(
     "docs/figures/p26_partition_irreducibility_scale_certification.svg",
     "P26 certifies one partition under compatible observation. Partition-lattice aggregation, physical fusion, full P11 scale equivalence, and experience remain open.",
-    "P26 certifies one partition under compatible observation. Lattice aggregation, physical fusion, full P11 scale equivalence, and experience remain open.",
+    "P26 certifies one partition under compatible observation. Lattice aggregation, physical fusion, full P11 equivalence, and experience remain open.",
     "P26 canonical footer length",
 )
 
