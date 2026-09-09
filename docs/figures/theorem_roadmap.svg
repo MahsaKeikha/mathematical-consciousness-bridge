@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
+  <title id="title">Propositions 1 through 12 theorem roadmap</title>
+  <desc id="desc">Visual dependency map organizing the theorem program into invariance, identifiability, signature completeness, finite-data recovery, experiment design, and original IRCG candidate layers.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0 L0 6 L9 3 z" fill="#64748b"/></marker>
+    <style>
+      .title{font:700 30px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .sub{font:400 15px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .layer{font:700 12px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.7px;fill:#64748b}
+      .pnum{font:800 15px Inter,Segoe UI,Arial,sans-serif;fill:#fff}
+      .ptitle{font:700 14px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .ptext{font:400 12px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .arrow{stroke:#64748b;stroke-width:2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="780" fill="#f8fafc"/>
+  <text x="55" y="55" class="title">Theorem Roadmap - P1 through P12</text>
+  <text x="55" y="82" class="sub">Each layer solves a different logical problem. No later consciousness claim can skip the earlier dependencies.</text>
+
+  <text x="55" y="124" class="layer">A. PHYSICAL WELL-DEFINEDNESS</text>
+  <g>
+    <rect x="55" y="140" width="230" height="92" rx="14" fill="#e0f2fe" stroke="#0284c7"/>
+    <circle cx="85" cy="170" r="19" fill="#0284c7"/><text x="77" y="175" class="pnum">P1</text>
+    <text x="112" y="168" class="ptitle">Representation invariance</text>
+    <text x="112" y="191" class="ptext">bridge descends to Q_P</text>
+    <text x="112" y="210" class="ptext">iff constant on physical classes</text>
+  </g>
+
+  <text x="335" y="124" class="layer">B. THEORY IDENTIFIABILITY</text>
+  <g>
+    <rect x="335" y="140" width="230" height="92" rx="14" fill="#fefce8" stroke="#ca8a04"/>
+    <circle cx="365" cy="170" r="19" fill="#ca8a04"/><text x="357" y="175" class="pnum">P2</text>
+    <text x="392" y="168" class="ptitle">Bridge identifiability</text>
+    <text x="392" y="191" class="ptext">TV discriminability</text>
+    <text x="392" y="210" class="ptext">exact non-identifiability</text>
+  </g>
+  <g>
+    <rect x="335" y="255" width="230" height="92" rx="14" fill="#fefce8" stroke="#ca8a04"/>
+    <circle cx="365" cy="285" r="19" fill="#ca8a04"/><text x="357" y="290" class="pnum">P3</text>
+    <text x="392" y="283" class="ptitle">Equivalence classes</text>
+    <text x="392" y="306" class="ptext">theory quotient by identical</text>
+    <text x="392" y="325" class="ptext">observable fingerprints</text>
+  </g>
+  <g>
+    <rect x="335" y="370" width="230" height="92" rx="14" fill="#fefce8" stroke="#ca8a04"/>
+    <circle cx="365" cy="400" r="19" fill="#ca8a04"/><text x="357" y="405" class="pnum">P4</text>
+    <text x="392" y="398" class="ptitle">Discriminating experiments</text>
+    <text x="392" y="421" class="ptext">maximin separation + set cover</text>
+    <text x="392" y="440" class="ptext">for competing theory families</text>
+  </g>
+
+  <text x="615" y="124" class="layer">C. SIGNATURE SUFFICIENCY + COMPLETENESS</text>
+  <g>
+    <rect x="615" y="140" width="250" height="92" rx="14" fill="#ecfdf5" stroke="#059669"/>
+    <circle cx="645" cy="170" r="19" fill="#059669"/><text x="637" y="175" class="pnum">P5</text>
+    <text x="672" y="168" class="ptitle">Feature sufficiency</text>
+    <text x="672" y="191" class="ptext">B-bar = g o F iff feature fibers</text>
+    <text x="672" y="210" class="ptext">refine bridge fibers</text>
+  </g>
+  <g>
+    <rect x="615" y="255" width="250" height="92" rx="14" fill="#ecfdf5" stroke="#059669"/>
+    <circle cx="645" cy="285" r="19" fill="#059669"/><text x="637" y="290" class="pnum">P6</text>
+    <text x="672" y="283" class="ptitle">Canonical bridge signature</text>
+    <text x="672" y="306" class="ptext">exact bridge equivalence classes</text>
+    <text x="672" y="325" class="ptext">define the completeness target</text>
+  </g>
+
+  <text x="915" y="124" class="layer">D. RECOVERY + DESIGN</text>
+  <g>
+    <rect x="915" y="140" width="230" height="76" rx="14" fill="#f5f3ff" stroke="#7c3aed"/>
+    <circle cx="945" cy="169" r="19" fill="#7c3aed"/><text x="937" y="174" class="pnum">P7</text>
+    <text x="972" y="167" class="ptitle">Recoverability</text>
+    <text x="972" y="190" class="ptext">observable fingerprint criterion</text>
+  </g>
+  <g>
+    <rect x="915" y="235" width="230" height="76" rx="14" fill="#f5f3ff" stroke="#7c3aed"/>
+    <circle cx="945" cy="264" r="19" fill="#7c3aed"/><text x="937" y="269" class="pnum">P8</text>
+    <text x="972" y="262" class="ptitle">Robust recovery</text>
+    <text x="972" y="285" class="ptext">gamma &gt; 4 epsilon</text>
+  </g>
+  <g>
+    <rect x="915" y="330" width="230" height="76" rx="14" fill="#f5f3ff" stroke="#7c3aed"/>
+    <circle cx="945" cy="359" r="19" fill="#7c3aed"/><text x="937" y="364" class="pnum">P9</text>
+    <text x="972" y="357" class="ptitle">Sample complexity</text>
+    <text x="972" y="380" class="ptext">explicit finite trial requirement</text>
+  </g>
+  <g>
+    <rect x="915" y="425" width="230" height="76" rx="14" fill="#f5f3ff" stroke="#7c3aed"/>
+    <circle cx="945" cy="454" r="19" fill="#7c3aed"/><text x="933" y="459" class="pnum">P10</text>
+    <text x="972" y="452" class="ptitle">Robust experiment design</text>
+    <text x="972" y="475" class="ptext">maximize between-vs-within gap</text>
+  </g>
+
+  <text x="55" y="555" class="layer">E. ORIGINAL PHYSICAL CANDIDATE + INTERNAL FALSIFICATION</text>
+  <g>
+    <rect x="55" y="575" width="505" height="105" rx="16" fill="#ecfeff" stroke="#0891b2" stroke-width="1.5"/>
+    <circle cx="92" cy="610" r="22" fill="#0891b2"/><text x="79" y="616" class="pnum">P11</text>
+    <text x="128" y="607" class="ptitle">Intervention-Resolved Causal Geometry (IRCG)</text>
+    <text x="128" y="632" class="ptext">full perturbational response geometry + directed influence + partition irreducibility</text>
+    <text x="128" y="654" class="ptext">representation-invariant structured candidate; not a scalar consciousness score</text>
+  </g>
+  <g>
+    <rect x="640" y="575" width="505" height="105" rx="16" fill="#fff1f2" stroke="#e11d48" stroke-width="1.5"/>
+    <circle cx="677" cy="610" r="22" fill="#e11d48"/><text x="664" y="616" class="pnum">P12</text>
+    <text x="713" y="607" class="ptitle">Component insufficiency / minimality audit</text>
+    <text x="713" y="632" class="ptext">constructive collisions prove G, A, K and simple scalar reductions are incomplete alone</text>
+    <text x="713" y="654" class="ptext">the candidate is attacked before any experiential interpretation is attached</text>
+  </g>
+
+  <path class="arrow" d="M285 186 H327"/>
+  <path class="arrow" d="M450 232 V247"/>
+  <path class="arrow" d="M450 347 V362"/>
+  <path class="arrow" d="M565 186 H607"/>
+  <path class="arrow" d="M740 232 V247"/>
+  <path class="arrow" d="M865 186 H907"/>
+  <path class="arrow" d="M1030 216 V227"/>
+  <path class="arrow" d="M1030 311 V322"/>
+  <path class="arrow" d="M1030 406 V417"/>
+  <path class="arrow" d="M1030 501 C1030 535 780 530 780 567"/>
+  <path class="arrow" d="M560 628 H632"/>
+
+  <rect x="55" y="712" width="1090" height="42" rx="12" fill="#0f172a"/>
+  <text x="75" y="738" style="font:600 14px Inter,Segoe UI,Arial,sans-serif;fill:#e2e8f0">Current frontier: pairwise-component minimality, temporal continuation, composition consistency, observer-to-bridge interface, and empirical counterexample search.</text>
+</svg>
