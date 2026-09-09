@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Proposition 17 coarse-graining and refinement</title>
+  <desc id="desc">A publication-style diagram showing deterministic coarse-graining, total-variation contraction, exact preservation under bijections, and non-recoverability under many-to-one maps.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0 0 L0 8 L10 4 z" fill="#64748b"/></marker>
+    <style>
+      .title{font:700 38px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 18px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .head{font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .eq{font:600 17px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .small{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.6px}
+      .arrow{stroke:#64748b;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="#ffffff"/>
+  <text x="70" y="64" class="title">P17 - Coarse-Graining, Refinement, and Recoverability</text>
+  <text x="70" y="98" class="subtitle">Reducing physical-response granularity can erase distinctions; bijective relabeling preserves them exactly.</text>
+
+  <rect x="70" y="155" width="430" height="250" rx="18" fill="#f7fbff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="98" y="190" class="head">Fine response description</text>
+  <text x="98" y="226" class="eq">P, Q on Ωf</text>
+  <text x="98" y="262" class="body">Intervention-conditioned laws retain all</text>
+  <text x="98" y="285" class="body">distinctions visible at the chosen fine scale.</text>
+  <text x="98" y="330" class="eq">df = ‖P − Q‖TV</text>
+  <rect x="98" y="352" width="165" height="28" rx="8" fill="#dbeafe"/>
+  <text x="116" y="371" class="small" fill="#1d4ed8">FINE PHYSICAL SCALE</text>
+
+  <rect x="585" y="155" width="430" height="250" rx="18" fill="#f5fcfd" stroke="#0891b2" stroke-width="1.5"/>
+  <text x="613" y="190" class="head">Deterministic scale map</text>
+  <text x="613" y="226" class="eq">C : Ωf → Ωc</text>
+  <text x="613" y="262" class="body">Pushforward aggregates all fine states</text>
+  <text x="613" y="285" class="body">that share the same coarse image.</text>
+  <text x="613" y="330" class="eq">C#P(y) = Σx:C(x)=y P(x)</text>
+  <rect x="613" y="352" width="175" height="28" rx="8" fill="#cffafe"/>
+  <text x="631" y="371" class="small" fill="#0e7490">DECLARED COARSE MAP</text>
+
+  <rect x="1100" y="155" width="430" height="250" rx="18" fill="#f5fcf8" stroke="#059669" stroke-width="1.5"/>
+  <text x="1128" y="190" class="head">Coarse response description</text>
+  <text x="1128" y="226" class="eq">C#P, C#Q on Ωc</text>
+  <text x="1128" y="262" class="body">Total variation cannot increase under</text>
+  <text x="1128" y="285" class="body">deterministic coarse-graining.</text>
+  <text x="1128" y="330" class="eq">dc ≤ df</text>
+  <rect x="1128" y="352" width="150" height="28" rx="8" fill="#d1fae5"/>
+  <text x="1146" y="371" class="small" fill="#047857">P17A PROVED</text>
+
+  <path class="arrow" d="M500 280 H573"/>
+  <path class="arrow" d="M1015 280 H1088"/>
+
+  <rect x="70" y="475" width="700" height="250" rx="18" fill="#faf8ff" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="98" y="512" class="head">Bijective map - pure reparameterization</text>
+  <text x="98" y="550" class="eq">C injective on observed support  ⇒  dc = df</text>
+  <text x="98" y="592" class="body">No response distinction is lost. This is the scale-change analogue</text>
+  <text x="98" y="616" class="body">of representation invariance and relabeling equivalence.</text>
+  <rect x="98" y="660" width="180" height="28" rx="8" fill="#ede9fe"/>
+  <text x="116" y="679" class="small" fill="#6d28d9">P17B EXACT EQUALITY</text>
+
+  <rect x="830" y="475" width="700" height="250" rx="18" fill="#fff8f9" stroke="#e11d48" stroke-width="1.5"/>
+  <text x="858" y="512" class="head">Many-to-one map - refinement ambiguity</text>
+  <text x="858" y="550" class="eq">x ≠ x′, C(x)=C(x′)</text>
+  <text x="858" y="590" class="eq">‖δx − δx′‖TV = 1,   ‖C#δx − C#δx′‖TV = 0</text>
+  <text x="858" y="630" class="body">Fine physical distinctions can collapse completely. The coarse law</text>
+  <text x="858" y="654" class="body">does not generally determine a unique later refinement.</text>
+  <rect x="858" y="680" width="190" height="28" rx="8" fill="#ffe4e6"/>
+  <text x="876" y="699" class="small" fill="#be123c">P17C NON-RECOVERABLE</text>
+
+  <rect x="70" y="790" width="1460" height="65" rx="14" fill="#0f172a"/>
+  <text x="98" y="829" style="font:600 15px Inter,Segoe UI,Arial,sans-serif;fill:#e2e8f0">Research boundary: descriptive coarse-graining is not the same operation as physical fusion; a true split or merge may change dynamics, interventions, and state variables.</text>
+</svg>
