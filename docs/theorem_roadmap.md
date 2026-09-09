@@ -1,10 +1,8 @@
 # Theorem Roadmap
 
-This roadmap records the current proved theorem chain and the open route toward a scientifically meaningful physical-to-experiential bridge.
+This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge.
 
-The program is layered deliberately: a theorem about a physical feature is not promoted to an experiential conclusion unless the bridge dependency and empirical evidence are explicit.
-
-![P1-P12 theorem roadmap](figures/theorem_roadmap.svg)
+![P1-P13 theorem roadmap](figures/theorem_roadmap.svg)
 
 ---
 
@@ -12,26 +10,25 @@ The program is layered deliberately: a theorem about a physical feature is not p
 
 | Proposition | Mathematical role | Scientific role | Status |
 | --- | --- | --- | --- |
-| [P1](proposition_1_representation_invariance.md) | quotient factorization | representation-independent physical/bridge objects | proved |
-| [P2](proposition_2_bridge_identifiability.md) | total-variation experiment-class discriminability | exact theory non-identifiability criterion | proved |
-| [P3](proposition_3_bridge_equivalence_classes.md) | quotient of theories by observable fingerprint | identifies what an experiment class can actually resolve | proved |
-| [P4](proposition_4_discriminating_experiment_design.md) | maximin and set-cover protocol design | adversarial theory-discriminating experiment design | proved |
-| [P5](proposition_5_feature_sufficiency.md) | bridge factorization through physical features | exact sufficiency/counterexample criterion | proved |
+| [P1](proposition_1_representation_invariance.md) | quotient factorization | representation-independent bridge objects | proved |
+| [P2](proposition_2_bridge_identifiability.md) | total-variation discriminability | exact theory non-identifiability criterion | proved |
+| [P3](proposition_3_bridge_equivalence_classes.md) | quotient by observable fingerprints | identifies what an experiment class can resolve | proved |
+| [P4](proposition_4_discriminating_experiment_design.md) | maximin and set-cover design | adversarial theory-discriminating experiments | proved |
+| [P5](proposition_5_feature_sufficiency.md) | bridge factorization through physical features | exact sufficiency / counterexample criterion | proved |
 | [P6](proposition_6_canonical_bridge_signature.md) | canonical bridge quotient | defines the exact completeness target | proved |
-| [P7](proposition_7_experimental_signature_recovery.md) | decoder/fingerprint factorization | exact experimental recoverability/no-go condition | proved |
-| [P8](proposition_8_robust_signature_recovery.md) | deterministic metric perturbation | finite-error signature recovery | proved |
+| [P7](proposition_7_experimental_signature_recovery.md) | observable-fingerprint factorization | exact recoverability / no-go condition | proved |
+| [P8](proposition_8_robust_signature_recovery.md) | deterministic perturbation bound | finite-error signature recovery | proved |
 | [P9](proposition_9_categorical_sample_complexity.md) | Hoeffding + union bound | explicit finite trial requirement | proved |
-| [P10](proposition_10_robust_experiment_design.md) | robust protocol-family optimization | separates useful discrimination from nuisance variation | proved |
-| [P11](proposition_11_intervention_resolved_causal_geometry.md) | structured intervention-response signature | first original candidate physical object | proved construction / candidate |
-| [P12](proposition_12_component_insufficiency.md) | projection-collision no-go theorem | proves simple IRCG reductions lose information | proved minimality/no-go |
+| [P10](proposition_10_robust_experiment_design.md) | robust protocol optimization | separates discrimination from nuisance variation | proved |
+| [P11](proposition_11_intervention_resolved_causal_structure.md) | structured intervention-response object | first original candidate physical signature | proved construction / candidate |
+| [P12](proposition_12_component_insufficiency.md) | projection-collision theorem | one-component and scalar reductions lose information | proved minimality / no-go |
+| [P13](proposition_13_pairwise_component_irredundancy.md) | pairwise projection collisions | every major component is irredundant relative to the other two on the audit domain | proved irredundancy |
 
 ---
 
-# 2. Layer A - physical and representational well-definedness
+# 2. P1 - physical and representational well-definedness
 
-## Proposition 1 - representation invariance
-
-A bridge descends uniquely to the physical quotient if and only if it is constant on physical-equivalence classes:
+A bridge descends uniquely to the physical quotient exactly when it is constant on physical-equivalence classes:
 
 \[
 \boxed{
@@ -41,51 +38,41 @@ B(p)=B(p').
 }
 \]
 
-Equivalently,
-
-\[
-\bar B:\mathcal P/{\sim_P}\to\mathcal E/{\sim_E}.
-\]
-
-**Role:** coordinates, units, labels, and other physically irrelevant encodings cannot change the bridge assignment.
+This removes dependence on arbitrary coordinates, units, labels, and equivalent encodings.
 
 ---
 
-# 3. Layer B - theory identifiability and empirical no-go structure
+# 3. P2-P4 - theory identifiability and experiment design
 
-## Proposition 2 - experiment-class identifiability
+For complete theories \(\mathfrak T_1,\mathfrak T_2\),
 
 \[
 \boxed{
-\Delta_\Pi(\mathfrak T_1,\mathfrak T_2;q)
+\Delta_\Pi
 =
 \sup_{\pi\in\Pi}
 \|P_1^{\pi,q}-P_2^{\pi,q}\|_{\mathrm{TV}}.
 }
 \]
 
-The exact non-identifiability condition is
+P2 proves
 
 \[
-\boxed{
 \Delta_\Pi=0
 \iff
 P_1^{\pi,q}=P_2^{\pi,q}
 \quad\forall\pi\in\Pi.
-}
 \]
 
-## Proposition 3 - observational theory quotient
-
-With
+P3 defines the complete theory fingerprint
 
 \[
 \Phi_{\Pi,q}(\mathfrak T)
 =
-(P_{\mathfrak T}^{\pi,q})_{\pi\in\Pi},
+(P_{\mathfrak T}^{\pi,q})_{\pi\in\Pi}
 \]
 
-observational equivalence gives
+and proves
 
 \[
 \boxed{
@@ -95,26 +82,15 @@ observational equivalence gives
 }
 \]
 
-## Proposition 4 - discriminating experiment design
-
-For
+P4 defines pairwise protocol separation
 
 \[
 d_{ij}(\pi)
 =
-\|P_i^{\pi,q}-P_j^{\pi,q}\|_{\mathrm{TV}},
+\|P_i^{\pi,q}-P_j^{\pi,q}\|_{\mathrm{TV}}
 \]
 
-define
-
-\[
-U(S)
-=
-\min_{\{i,j\}\in\mathcal U}
-\max_{\pi\in S}d_{ij}(\pi).
-\]
-
-Then
+and proves the complete-discrimination / set-cover equivalence
 
 \[
 \boxed{
@@ -124,21 +100,17 @@ U(S)>0
 }
 \]
 
-Finite complete theory discrimination is therefore a set-cover problem over distinguishable theory pairs.
-
 ---
 
-# 4. Layer C - physical-feature sufficiency and completeness
+# 4. P5-P6 - physical-feature sufficiency and bridge completeness
 
-## Proposition 5 - feature sufficiency
-
-For
+For physical feature
 
 \[
 F:\mathcal Q_P\to\mathcal Z,
-\qquad
-\bar B:\mathcal Q_P\to\mathcal Q_E,
 \]
+
+P5 proves
 
 \[
 \boxed{
@@ -148,11 +120,7 @@ F(p)=F(p')\Rightarrow\bar B(p)=\bar B(p').
 }
 \]
 
-A single feature-matched, bridge-different pair refutes sufficiency on the declared domain.
-
-## Proposition 6 - canonical complete bridge signature
-
-Define
+P6 defines the canonical bridge equivalence
 
 \[
 p\sim_Bp'
@@ -160,7 +128,7 @@ p\sim_Bp'
 \bar B(p)=\bar B(p')
 \]
 
-and
+and signature
 
 \[
 C_B(p)=[p]_{\sim_B}.
@@ -179,30 +147,34 @@ C_B(p)=C_B(p')
 and
 
 \[
+\mathcal Q_B\cong\operatorname{Im}(\bar B).
+\]
+
+The complete physical-signature target is therefore
+
+\[
 \boxed{
-\mathcal Q_B
-\cong
-\operatorname{Im}(\bar B).
+F_*(p)=F_*(p')
+\iff
+C_B(p)=C_B(p').
 }
 \]
 
-This defines the exact equivalence-class geometry a complete physical signature would need to match.
+on a declared domain.
 
 ---
 
-# 5. Layer D - recoverability and finite-data certification
+# 5. P7-P10 - recoverability, finite data, and robust protocol design
 
-## Proposition 7 - experimental signature recovery
-
-For
+P7 uses the physical observable fingerprint
 
 \[
 \Psi_\Pi(p)
 =
-(P^{\pi,p})_{\pi\in\Pi},
+(P^{\pi,p})_{\pi\in\Pi}
 \]
 
-a target signature \(F_*\) is recoverable exactly when
+and proves exact recoverability when
 
 \[
 \boxed{
@@ -212,17 +184,17 @@ F_*(p)=F_*(p').
 }
 \]
 
-## Proposition 8 - robust signature recovery
-
-Let
+P8 defines the robust signature gap
 
 \[
+\boxed{
 \gamma_S
 =
-\delta_S-\omega_S,
+\delta_S-\omega_S
+}
 \]
 
-where \(\delta_S\) is minimum between-signature separation and \(\omega_S\) is maximum within-signature spread. If uniform distribution error is at most \(\varepsilon\), exact recovery is guaranteed when
+and gives the finite-error condition
 
 \[
 \boxed{
@@ -230,9 +202,7 @@ where \(\delta_S\) is minimum between-signature separation and \(\omega_S\) is m
 }
 \]
 
-## Proposition 9 - categorical sample complexity
-
-A sufficient per-cell sample count is
+P9 turns that error tolerance into the explicit sufficient categorical bound
 
 \[
 \boxed{
@@ -245,17 +215,13 @@ n
 }
 \]
 
-## Proposition 10 - robust protocol design
-
-Define
+P10 defines
 
 \[
-\Gamma(S)
-=
-\delta(S)-\omega(S).
+\Gamma(S)=\delta(S)-\omega(S)
 \]
 
-For newly added protocol \(\rho\),
+and proves
 
 \[
 \boxed{
@@ -265,15 +231,13 @@ a_\rho(S)-b_\rho(S).
 }
 \]
 
-Thus an additional modality helps exactly when its between-signature gain exceeds its within-signature inflation.
+An added modality improves the robust gap exactly when its between-signature gain exceeds its within-signature inflation.
 
 ---
 
-# 6. Layer E - first original physical candidate
+# 6. P11 - intervention-resolved causal structure
 
-## Proposition 11 - Intervention-Resolved Causal Geometry
-
-For physical system \(p\), intervention \(u\in\mathcal U_p\), and delay \(\tau\in\mathcal T\), define
+For physical system \(p\), intervention \(u\), and delay \(\tau\), define
 
 \[
 \boxed{
@@ -283,7 +247,7 @@ P_p^{u,\tau}
 }
 \]
 
-IRCG retains three complementary structures:
+The candidate retains
 
 \[
 \boxed{
@@ -291,93 +255,115 @@ IRCG retains three complementary structures:
 \quad\text{response geometry},
 \qquad
 \mathcal A_p
-\quad\text{directed influence},
+\quad\text{directed interventional influence},
 \qquad
 \mathcal K_p
 \quad\text{partition irreducibility}.
 }
 \]
 
-The representation-invariant signature is
+Define
+
+\[
+\mathfrak C_p
+=
+(V,\mathcal U_p,\mathcal T,\mathcal G_p,\mathcal A_p,\mathcal K_p)
+\]
+
+and
 
 \[
 \boxed{
-F_{\mathrm{IRCG}}(p)
+F_{\mathrm{causal}}(p)
 =
-[\mathfrak C_p]_{\cong},
-\qquad
-\mathfrak C_p
-=
-(V,\mathcal U_p,\mathcal T,\mathcal G_p,\mathcal A_p,\mathcal K_p).
+[\mathfrak C_p]_{\cong}.
 }
 \]
 
 P11 proves compatible-reparameterization invariance, an exact partition-factorization certificate, and a feedforward no-return certificate.
 
-The strongest possible future candidate-completeness target is
-
-\[
-F_{\mathrm{IRCG}}(p)=F_{\mathrm{IRCG}}(p')
-\iff
-C_B(p)=C_B(p').
-\]
-
-This biconditional is the target being tested, not a premise of P11.
-
 ---
 
-# 7. Layer F - internal minimality and falsification
+# 7. P12 - single-component insufficiency
 
-## Proposition 12 - component insufficiency
-
-Let \(H\) be a proposed compression of target signature \(F\). If
+If a compression \(H\) satisfies
 
 \[
-\boxed{
 H(x)=H(x')
 \quad\text{but}\quad
 F(x)\ne F(x'),
-}
 \]
 
-then no map \(g\) can satisfy
+then no map \(g\) can satisfy \(F=g\circ H\) on the declared domain.
 
-\[
-F=g\circ H
-\]
-
-on the declared domain.
-
-P12 constructs explicit realizable intervention-response systems proving
-
-\[
-\boxed{
-\mathcal G_p,\quad
-\mathcal A_p,\quad
-\mathcal K_p
-\text{ are each individually insufficient to reconstruct full IRCG.}
-}
-\]
-
-It also constructs collisions for scalar summaries including
-
-\[
-\operatorname{Diam}_p(\tau),
-\qquad
-\kappa_p^*,
-\qquad
-\mathbf 1\{\text{directed cycle exists}\}.
-\]
+P12 constructs explicit realizable systems proving that response geometry alone, directed influence alone, partition irreducibility alone, response diameter, one scalar irreducibility value, and a Boolean recurrence indicator are incomplete descriptors of the richer causal-structure candidate.
 
 ![P12 constructive collision map](figures/p12_collision_map.svg)
 
 ---
 
-# 8. Current dependency graph
+# 8. P13 - pairwise component irredundancy
+
+Define
+
+\[
+F_C(p)
+=
+(\mathcal G_p,\mathcal A_p,\mathcal K_p).
+\]
+
+P13 constructs collision families satisfying
+
+\[
+\mathcal G_L=\mathcal G_H,
+\quad
+\mathcal A_L=\mathcal A_H,
+\quad
+\mathcal K_L\ne\mathcal K_H,
+\]
+
+\[
+\mathcal G_0=\mathcal G_+,
+\quad
+\mathcal K_0=\mathcal K_+,
+\quad
+\mathcal A_0\ne\mathcal A_+,
+\]
+
+and
+
+\[
+\mathcal A_D=\mathcal A_S,
+\quad
+\mathcal K_D=\mathcal K_S,
+\quad
+\mathcal G_D\ne\mathcal G_S.
+\]
+
+Therefore
 
 \[
 \boxed{
-\begin{array}{ccccccccccccccc}
+H_{GA},
+\quad
+H_{GK},
+\quad
+H_{AK}
+\text{ are all incomplete on }D_{13}.
+}
+\]
+
+![P13 pairwise component irredundancy](figures/p13_component_irredundancy.svg)
+
+This proves component-level irredundancy on the declared audit domain, not global minimality over every possible physical representation.
+
+---
+
+# 9. Current dependency graph
+
+\[
+\boxed{
+\begin{array}{ccccccccccccccccc}
 P1
 &\to&P5
 &\to&P6
@@ -386,7 +372,8 @@ P1
 &\to&P9
 &\to&P10
 &\to&P11
-\to P12\\
+&\to&P12
+&\to&P13\\
 &&&&&&\uparrow\\
 P2&\to&P3&\to&P4
 &&\text{experiment design}
@@ -394,38 +381,16 @@ P2&\to&P3&\to&P4
 }
 \]
 
-Interpretation:
-
-- P1 makes physical features and bridges representation well defined.
-- P2-P4 determine what competing theories can be distinguished and how to design tests.
-- P5-P6 define sufficiency and bridge completeness.
-- P7-P10 make complete signatures experimentally recoverable and finite-data certifiable.
-- P11 supplies the first original candidate physical object.
-- P12 attacks simplifications of that candidate before an experiential interpretation is attached.
-
 ---
 
-# 9. Immediate frontier
+# 10. Current frontier
 
-The next target is **P13 - pairwise-component minimality**.
+With pairwise component irredundancy established on \(D_{13}\), the next structural program is:
 
-The program will test whether any of
-
-\[
-(\mathcal G_p,\mathcal A_p),
-\qquad
-(\mathcal G_p,\mathcal K_p),
-\qquad
-(\mathcal A_p,\mathcal K_p)
-\]
-
-can reconstruct full IRCG on increasingly rich declared domains, or whether each admits constructive collisions.
-
-After that, the major structural frontiers are:
-
-1. temporal continuation of physical-signature states;
+1. temporal continuation of time-indexed physical signatures;
 2. composition, splitting, merging, and controlled coupling;
 3. observer-to-bridge interface with certified moving world-tubes;
 4. source-faithful cross-theory adversarial experiments;
 5. biological and artificial counterexample programs;
-6. a bridge theorem only after the physical, experiential, identifiability, recovery, and falsification conditions have been jointly addressed.
+6. experiential-space formalization;
+7. a bridge theorem only after physical, experiential, identifiability, recovery, finite-data, and falsification requirements have been jointly addressed.
