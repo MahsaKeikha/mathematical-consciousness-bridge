@@ -31,4 +31,12 @@ replacement = r'''replace_once(
 )'''.splitlines()
 
 lines[start : end + 1] = replacement
-path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+text = "\n".join(lines) + "\n"
+old_assertion = (
+    'if "P1 through P20" not in roadmap or "proposition_20_" not in nav:'
+)
+new_assertion = 'if "P1-P20" not in roadmap or "proposition_20_" not in nav:'
+if old_assertion not in text:
+    raise RuntimeError("could not locate P20 roadmap/navigation sanity assertion")
+text = text.replace(old_assertion, new_assertion, 1)
+path.write_text(text, encoding="utf-8")
