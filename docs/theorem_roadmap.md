@@ -344,18 +344,115 @@ n\propto\Gamma(S)^{-2}.
 
 ---
 
+# Layer F. First original physical candidate
+
+## Proposition 11 - Intervention-Resolved Causal Geometry (IRCG)
+
+For a physical subsystem \(p\), admissible interventions \(u\in\mathcal U_p\), and physical delays \(\tau\in\mathcal T\), define the intervention-conditioned joint response law
+
+\[
+\boxed{
+P_p^{u,\tau}
+=
+\mathcal L(Y_{t+\tau}^V\mid do(u),p).
+}
+\]
+
+The intervention-response geometry is
+
+\[
+\boxed{
+d_p^\tau(u,v)
+=
+\|P_p^{u,\tau}-P_p^{v,\tau}\|_{\mathrm{TV}}.
+}
+\]
+
+Directed interventional influence is
+
+\[
+\boxed{
+A_{ij}^p(\tau)
+=
+\sup_{(u,v)\in\mathcal E_i}
+\|P_{p,j}^{u,\tau}-P_{p,j}^{v,\tau}\|_{\mathrm{TV}}.
+}
+\]
+
+For nontrivial partition \(\pi\), partition response irreducibility is
+
+\[
+\boxed{
+\kappa_p^\tau(\pi)
+=
+\sup_{u\in\mathcal U_p}
+\left\|
+P_p^{u,\tau}
+-
+\bigotimes_{B\in\pi}P_{p,B}^{u,\tau}
+\right\|_{\mathrm{TV}}.
+}
+\]
+
+The raw causal object is
+
+\[
+\mathfrak C_p
+=
+(V,\mathcal U_p,\mathcal T,\mathcal G_p,\mathcal A_p,\mathcal K_p),
+\]
+
+and the representation-invariant candidate signature is its compatible isomorphism class
+
+\[
+\boxed{
+F_{\mathrm{IRCG}}(p)
+=
+[\mathfrak C_p]_{\cong}.
+}
+\]
+
+Proposition 11 proves:
+
+1. invariance under compatible bijective physical reparameterization;
+2. the exact partition-factorization certificate
+   \[
+   \kappa_p^\tau(\pi)=0
+   \iff
+   P_p^{u,\tau}
+   =
+   \bigotimes_{B\in\pi}P_{p,B}^{u,\tau}
+   \quad\forall u;
+   \]
+3. an acyclic directed-influence graph contains no perturbational return loop among distinct physical blocks.
+
+IRCG is a structured physical candidate rather than a scalar consciousness score. Its intended strongest future target is
+
+\[
+F_{\mathrm{IRCG}}(p)=F_{\mathrm{IRCG}}(p')
+\iff
+C_B(p)=C_B(p'),
+\]
+
+but Proposition 11 does not assume or establish that biconditional.
+
+**Scientific role:** provides the first intervention-grounded physical object rich enough to be attacked by the sufficiency, counterexample, recovery, and experiment-design theorems already proved.
+
+---
+
 # Current dependency graph
 
 \[
 \boxed{
-\begin{array}{ccccccccccc}
+\begin{array}{ccccccccccccc}
 P1
 &\to&P5
 &\to&P6
 &\to&P7
 &\to&P8
 &\to&P9
-\to P10\\
+&\to&P10
+\to P11\\
 &&&&&&\uparrow\\
 P2&\to&P3&\to&P4
 &&\text{experiment design}
@@ -370,60 +467,50 @@ Interpretation:
 - P2-P4 determine what competing bridge claims can be empirically distinguished and how to design theory-discriminating experiments.
 - P7-P9 determine whether a proposed complete signature can be recovered from finite experiments.
 - P10 chooses protocol families that preserve bridge-relevant separation while suppressing within-signature nuisance variation.
+- P11 introduces the first original physical candidate on which those abstract tests can operate.
 
 ---
 
 # Immediate scientific frontier
 
-## Candidate A - intervention-resolved causal geometry
+## Proposition 12 - component insufficiency and minimal-feature audit
 
-The next step is to construct a physical signature independently of an assumed experiential label and then try to break it using Propositions 5-10.
+The next step is to prevent the new candidate from becoming a kitchen-sink theory by proving which summaries lose essential information.
 
-The candidate should be based on the **full geometry of controlled perturbational responses**, not a single complexity number. A generic starting object is
-
-\[
-\boxed{
-\mathcal R_p
-=
-\left\{
-P^{u,\tau}_p
-:
-u u\in\mathcal U_p,\ 	au\in\mathcal T
-\right\},
-}
-\]
-
-where \(P^{u,\tau}_p\) is the response law of the certified physical subsystem at delay \(\tau\) after admissible intervention \(u\).
-
-The associated intervention-response geometry is
+Let
 
 \[
-\boxed{
-d_p^\tau(u,v)
-=
-\|P^{u,\tau}_p-P^{v,\tau}_p\|_{\mathrm{TV}}.
-}
+F_G(p)=\mathcal G_p,
+\qquad
+F_A(p)=\mathcal A_p,
+\qquad
+F_K(p)=\mathcal K_p
 \]
 
-The candidate program must then test whether this geometry, augmented only by mathematically justified irreducibility and temporal structure, can distinguish:
+denote the response-geometry, directed-influence, and partition-irredundancy projections of IRCG.
 
-1. integrated recurrent systems from decomposable systems;
-2. sustained differentiated responses from stereotyped global responses;
-3. conscious conditions from matched unconscious conditions;
-4. biological realizations from substrate changes that preserve the relevant causal geometry;
-5. sophisticated controllers or simulations that provide P5 counterexamples.
+The target is to construct explicit finite pairs \(p,p'\) satisfying collisions such as
 
-No consciousness claim follows merely from constructing this object. Its value is that it produces a precise, perturbation-based candidate that can be exposed to the complete falsification machinery already proved.
+\[
+F_G(p)=F_G(p')
+\quad\text{but}\quad
+F_{\mathrm{IRCG}}(p)\ne F_{\mathrm{IRCG}}(p'),
+\]
+
+and analogously for \(F_A\), \(F_K\), and scalar summaries such as response diameter or minimum partition irreducibility.
+
+Such constructions would prove that the corresponding projection cannot reconstruct full IRCG on the declared domain, by the same factorization logic used in Proposition 5.
+
+The strongest useful outcome is a **minimal-feature theorem** identifying which components are genuinely required before any empirical bridge analysis begins.
 
 ---
 
 # Later structural frontiers
 
-If Candidate A survives controlled counterexample searches, the program should address:
+If IRCG survives controlled counterexample searches, the program should address:
 
-1. **feature-lattice minimality:** which components of the intervention-resolved geometry are necessary, redundant, or jointly sufficient;
-2. **composition consistency:** how signature and bridge classes behave under system coupling, splitting, and merging;
-3. **temporal continuation:** when time-indexed bridge assignments define one coherent experiential history;
-4. **observer-to-bridge interface:** how a certified moving subsystem from Spatiotemporal Observer Mathematics supplies the physical domain for the bridge;
-5. **cross-theory empirical tests:** source-faithful IIT, GNWT, RPT, HOT, predictive/neurorepresentational, and future bridge families;
-6. **conditional consciousness theorem:** only after the bridge premises themselves have survived the preceding mathematical and empirical tests.
+1. **composition consistency:** how signature and bridge classes behave under system coupling, splitting, and merging;
+2. **temporal continuation:** when time-indexed bridge assignments define one coherent experiential history;
+3. **observer-to-bridge interface:** how a certified moving subsystem from Spatiotemporal Observer Mathematics supplies the physical domain for the bridge;
+4. **cross-theory empirical tests:** source-faithful IIT, GNWT, RPT, HOT, predictive/neurorepresentational, and future bridge families;
+5. **conditional consciousness theorem:** only after the bridge premises themselves have survived the preceding mathematical and empirical tests.
