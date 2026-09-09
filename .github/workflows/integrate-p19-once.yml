@@ -34,3 +34,5 @@ jobs:
           git add README.md docs/theorem_roadmap.md pyproject.toml CITATION.cff CHANGELOG.md tests/test_main_page_visual_paper.py tests/test_visual_and_terminology_quality.py .github/workflows/integrate-p19-once.yml .github/integrate_p19_release.sh
           git commit -m "Integrate Proposition 19 into main research paper"
           git push origin HEAD:main
+
+# one-time release integration; this workflow removes itself after a clean run
