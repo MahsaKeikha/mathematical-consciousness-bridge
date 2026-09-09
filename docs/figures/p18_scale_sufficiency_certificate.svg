@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="920" viewBox="0 0 1600 920" role="img" aria-labelledby="title desc">
   <title id="title">Proposition 18 scale sufficiency by approximate reconstruction</title>
   <desc id="desc">A publication-style diagram showing fine response laws, deterministic coarse-graining, stochastic reconstruction, the two-rho response-geometry bound, and the finite-family identifiability margin.</desc>
   <defs>
@@ -13,7 +13,7 @@
       .arrow{stroke:#64748b;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
     </style>
   </defs>
-  <rect width="1600" height="900" fill="#ffffff"/>
+  <rect width="1600" height="920" fill="#ffffff"/>
   <text x="70" y="62" class="title">P18 - Scale Sufficiency by Approximate Reconstruction</text>
   <text x="70" y="96" class="subtitle">A coarse scale can remain sufficient for a declared response family even when the global map is many-to-one.</text>
 
@@ -67,6 +67,7 @@
   <text x="858" y="768" class="eq">δf &gt; 2ρF  ⇒  δc &gt; 0</text>
   <text x="1155" y="768" class="body">distinct fine laws remain distinct at the coarse scale</text>
 
-  <rect x="70" y="845" width="1460" height="35" rx="10" fill="#0f172a"/>
-  <text x="98" y="868" style="font:600 14px Inter,Segoe UI,Arial,sans-serif;fill:#e2e8f0">Research boundary: P18 certifies response-law and response-geometry preservation; directed influence, partition structure, physical split/merge dynamics, and experiential claims require separate assumptions.</text>
+  <rect x="70" y="845" width="1460" height="56" rx="10" fill="#0f172a"/>
+  <text x="98" y="869" style="font:600 14px Inter,Segoe UI,Arial,sans-serif;fill:#e2e8f0">Research boundary: P18 certifies response-law and response-geometry preservation.</text>
+  <text x="98" y="891" style="font:600 14px Inter,Segoe UI,Arial,sans-serif;fill:#e2e8f0">Directed influence, partition structure, split/merge dynamics, and experiential claims need separate assumptions.</text>
 </svg>
