@@ -2,7 +2,6 @@ import pytest
 
 from consciousness_bridge import intervention_causal_geometry, ircg_minimality
 
-
 DELAY = ("t",)
 INTERVENTIONS = ("u0", "u1")
 PARTITIONS = (((0,), (1,)),)
@@ -163,10 +162,8 @@ def test_same_minimum_irreducibility_scalar_can_hide_geometry_difference():
     kappa_swap = intervention_causal_geometry.partition_response_irreducibility(
         swap, PARTITIONS[0], "t"
     )
-    kappa_identical = (
-        intervention_causal_geometry.partition_response_irreducibility(
-            identical, PARTITIONS[0], "t"
-        )
+    kappa_identical = intervention_causal_geometry.partition_response_irreducibility(
+        identical, PARTITIONS[0], "t"
     )
 
     assert kappa_swap == pytest.approx(0.5)
