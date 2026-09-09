@@ -10,6 +10,7 @@ def test_core_research_documents_exist():
         root / "docs" / "proposition_1_representation_invariance.md",
         root / "docs" / "proposition_2_bridge_identifiability.md",
         root / "docs" / "proposition_3_bridge_equivalence_classes.md",
+        root / "docs" / "proposition_4_optimal_discriminating_experiments.md",
         root / "docs" / "universal_proof_target.md",
         root / "docs" / "equation_and_citation_map.md",
         root / "docs" / "axiom_ledger.md",
