@@ -1,84 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="730" viewBox="0 0 1200 730" role="img" aria-labelledby="title desc">
   <title id="title">Candidate consciousness theory families in a common comparison interface</title>
-  <desc id="desc">IIT, GNWT, recurrent processing, higher-order, and predictive/neurorepresentational theories are translated into a common feature, bridge, measurement, and experiment interface.</desc>
-  <defs>
-    <style>
-      .title{font:700 30px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
-      .sub{font:400 15px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
-      .name{font:700 16px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
-      .body{font:400 12.7px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
-      .head{font:700 13px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
-      .eq{font:600 15px 'Times New Roman',serif;fill:#0f172a}
-    </style>
-  </defs>
+  <desc id="desc">IIT, GNWT, recurrent processing, higher-order, predictive/neurorepresentational theories, and the causal-structure candidate are translated into a common feature, bridge, measurement, and experiment interface.</desc>
+  <defs><style>.title{font:700 30px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}.sub{font:400 15px Inter,Segoe UI,Arial,sans-serif;fill:#475569}.name{font:700 16px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}.body{font:400 12.7px Inter,Segoe UI,Arial,sans-serif;fill:#475569}.head{font:700 13px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}.eq{font:600 15px 'Times New Roman',serif;fill:#0f172a}</style></defs>
   <rect width="1200" height="730" fill="#f8fafc"/>
   <text x="55" y="55" class="title">Theory-Comparative Interface</text>
   <text x="55" y="83" class="sub">Competing theories are translated source-faithfully into one mathematical interface so their predictions can be compared rather than rhetorically ranked.</text>
-
   <rect x="55" y="112" width="1090" height="82" rx="16" fill="#0f172a"/>
   <text x="80" y="145" style="font:700 16px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Common theory object</text>
   <text x="80" y="174" style="font:600 18px 'Times New Roman',serif;fill:#e2e8f0">T_j = (F_j, B_j, M_j, Pi_j) = physical feature family + bridge architecture + measurement interface + experiment class</text>
-
-  <g>
-    <rect x="55" y="235" width="205" height="290" rx="16" fill="#f5f3ff" stroke="#7c3aed"/>
-    <text x="75" y="268" class="name">IIT 4.0</text>
-    <text x="75" y="296" class="head">Physical focus</text>
-    <text x="75" y="317" class="body">intrinsic cause-effect</text><text x="75" y="335" class="body">structure, maximality,</text><text x="75" y="353" class="body">distinctions + relations</text>
-    <text x="75" y="386" class="head">Bridge style</text>
-    <text x="75" y="407" class="body">constitutive mapping from</text><text x="75" y="425" class="body">phenomenal axioms to</text><text x="75" y="443" class="body">physical postulates</text>
-    <text x="75" y="476" class="head">Key exposure</text>
-    <text x="75" y="497" class="body">causal/transition structure</text>
-  </g>
-
-  <g>
-    <rect x="280" y="235" width="205" height="290" rx="16" fill="#e0f2fe" stroke="#0284c7"/>
-    <text x="300" y="268" class="name">GNWT</text>
-    <text x="300" y="296" class="head">Physical focus</text>
-    <text x="300" y="317" class="body">multilevel workspace,</text><text x="300" y="335" class="body">ignition, amplification,</text><text x="300" y="353" class="body">long-range availability</text>
-    <text x="300" y="386" class="head">Bridge style</text>
-    <text x="300" y="407" class="body">conscious access/content</text><text x="300" y="425" class="body">associated with global</text><text x="300" y="443" class="body">workspace dynamics</text>
-    <text x="300" y="476" class="head">Key exposure</text>
-    <text x="300" y="497" class="body">timing + broadcast dynamics</text>
-  </g>
-
-  <g>
-    <rect x="505" y="235" width="205" height="290" rx="16" fill="#ecfdf5" stroke="#059669"/>
-    <text x="525" y="268" class="name">RPT</text>
-    <text x="525" y="296" class="head">Physical focus</text>
-    <text x="525" y="317" class="body">recurrent processing in</text><text x="525" y="335" class="body">relevant sensory/neural</text><text x="525" y="353" class="body">circuits</text>
-    <text x="525" y="386" class="head">Bridge style</text>
-    <text x="525" y="407" class="body">recurrent processing as</text><text x="525" y="425" class="body">central to phenomenal</text><text x="525" y="443" class="body">consciousness</text>
-    <text x="525" y="476" class="head">Key exposure</text>
-    <text x="525" y="497" class="body">local temporal disruption</text>
-  </g>
-
-  <g>
-    <rect x="730" y="235" width="205" height="290" rx="16" fill="#fff7ed" stroke="#ea580c"/>
-    <text x="750" y="268" class="name">Higher-order</text>
-    <text x="750" y="296" class="head">Physical focus</text>
-    <text x="750" y="317" class="body">higher-order relation to</text><text x="750" y="335" class="body">a first-order mental or</text><text x="750" y="353" class="body">representational state</text>
-    <text x="750" y="386" class="head">Bridge style</text>
-    <text x="750" y="407" class="body">state is conscious in virtue</text><text x="750" y="425" class="body">of an appropriate higher-</text><text x="750" y="443" class="body">order relation</text>
-    <text x="750" y="476" class="head">Key exposure</text>
-    <text x="750" y="497" class="body">first-vs-higher-order dissociation</text>
-  </g>
-
-  <g>
-    <rect x="955" y="235" width="190" height="290" rx="16" fill="#fefce8" stroke="#ca8a04"/>
-    <text x="975" y="268" class="name">Predictive / NR</text>
-    <text x="975" y="296" class="head">Physical focus</text>
-    <text x="975" y="317" class="body">hierarchical prediction,</text><text x="975" y="335" class="body">inference, precision,</text><text x="975" y="353" class="body">multimodal representation</text>
-    <text x="975" y="386" class="head">Bridge style</text>
-    <text x="975" y="407" class="body">heterogeneous; theory-</text><text x="975" y="425" class="body">specific bridge required</text>
-    <text x="975" y="476" class="head">Key exposure</text>
-    <text x="975" y="497" class="body">prediction + representation</text>
-  </g>
-
+  <g><rect x="55" y="235" width="205" height="290" rx="16" fill="#f5f3ff" stroke="#7c3aed"/><text x="75" y="268" class="name">IIT 4.0</text><text x="75" y="296" class="head">Physical focus</text><text x="75" y="317" class="body">intrinsic cause-effect</text><text x="75" y="335" class="body">structure, maximality,</text><text x="75" y="353" class="body">distinctions + relations</text><text x="75" y="386" class="head">Bridge style</text><text x="75" y="407" class="body">phenomenal axioms to</text><text x="75" y="425" class="body">physical postulates</text><text x="75" y="476" class="head">Key exposure</text><text x="75" y="497" class="body">causal/transition structure</text></g>
+  <g><rect x="280" y="235" width="205" height="290" rx="16" fill="#e0f2fe" stroke="#0284c7"/><text x="300" y="268" class="name">GNWT</text><text x="300" y="296" class="head">Physical focus</text><text x="300" y="317" class="body">multilevel workspace,</text><text x="300" y="335" class="body">ignition, amplification,</text><text x="300" y="353" class="body">long-range availability</text><text x="300" y="386" class="head">Bridge style</text><text x="300" y="407" class="body">conscious access/content</text><text x="300" y="425" class="body">with workspace dynamics</text><text x="300" y="476" class="head">Key exposure</text><text x="300" y="497" class="body">timing + broadcast dynamics</text></g>
+  <g><rect x="505" y="235" width="205" height="290" rx="16" fill="#ecfdf5" stroke="#059669"/><text x="525" y="268" class="name">RPT</text><text x="525" y="296" class="head">Physical focus</text><text x="525" y="317" class="body">recurrent processing in</text><text x="525" y="335" class="body">relevant neural circuits</text><text x="525" y="386" class="head">Bridge style</text><text x="525" y="407" class="body">recurrent processing as</text><text x="525" y="425" class="body">central to phenomenal</text><text x="525" y="443" class="body">consciousness</text><text x="525" y="476" class="head">Key exposure</text><text x="525" y="497" class="body">local temporal disruption</text></g>
+  <g><rect x="730" y="235" width="205" height="290" rx="16" fill="#fff7ed" stroke="#ea580c"/><text x="750" y="268" class="name">Higher-order</text><text x="750" y="296" class="head">Physical focus</text><text x="750" y="317" class="body">higher-order relation to</text><text x="750" y="335" class="body">a first-order mental or</text><text x="750" y="353" class="body">representational state</text><text x="750" y="386" class="head">Bridge style</text><text x="750" y="407" class="body">state conscious in virtue</text><text x="750" y="425" class="body">of higher-order relation</text><text x="750" y="476" class="head">Key exposure</text><text x="750" y="497" class="body">first-vs-higher-order dissociation</text></g>
+  <g><rect x="955" y="235" width="190" height="290" rx="16" fill="#fefce8" stroke="#ca8a04"/><text x="975" y="268" class="name">Predictive / NR</text><text x="975" y="296" class="head">Physical focus</text><text x="975" y="317" class="body">hierarchical prediction,</text><text x="975" y="335" class="body">inference, precision,</text><text x="975" y="353" class="body">multimodal representation</text><text x="975" y="386" class="head">Bridge style</text><text x="975" y="407" class="body">heterogeneous; theory-</text><text x="975" y="425" class="body">specific bridge required</text><text x="975" y="476" class="head">Key exposure</text><text x="975" y="497" class="body">prediction + representation</text></g>
   <rect x="55" y="565" width="1090" height="110" rx="18" fill="#ffffff" stroke="#cbd5e1"/>
   <text x="80" y="598" class="head">Common mathematical tests applied to every family</text>
   <text x="80" y="630" class="eq">P2-P4: Are the theories empirically distinguishable?   P5: Is the physical feature sufficient?   P6: Is it complete?</text>
   <text x="80" y="657" class="body">The comparison layer does not assume that any named theory is correct. It identifies precise places where predictions, feature fibers, or bridge commitments differ.</text>
-
   <rect x="55" y="690" width="1090" height="24" rx="8" fill="#fff1f2"/>
-  <text x="70" y="707" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;fill:#be123c;letter-spacing:.4px">IRCG IS EVALUATED IN THE SAME FRAMEWORK - IT IS NOT EXEMPT FROM COUNTEREXAMPLES OR COMPETING-THEORY TESTS.</text>
+  <text x="70" y="707" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;fill:#be123c;letter-spacing:.4px">THE CAUSAL-STRUCTURE CANDIDATE IS TESTED IN THE SAME FRAMEWORK AND REMAINS SUBJECT TO COUNTEREXAMPLES AND COMPETING-THEORY TESTS.</text>
 </svg>
