@@ -261,7 +261,7 @@ The equivalences follow immediately.
 
 ---
 
-# 5. Explicit nonmonotonicity counterexample
+# 5. Explicit realizable nonmonotonicity counterexample
 
 Consider three physical systems
 
@@ -275,7 +275,17 @@ with
 F_*(p_1)=F_*(p_2)\ne F_*(p_3).
 \]
 
-Suppose protocol \(\pi_A\) produces pair distances
+For transparency, use binary outcomes \(\{\text{yes},\text{no}\}\). Under protocol \(\pi_A\), let
+
+\[
+P^{A,p_1}(\text{yes})=0.80,
+\qquad
+P^{A,p_2}(\text{yes})=0.75,
+\qquad
+P^{A,p_3}(\text{yes})=0.20.
+\]
+
+For Bernoulli laws, total-variation distance is the absolute difference of the yes-probabilities, so
 
 \[
 d_A(p_1,p_2)=0.05,
@@ -285,7 +295,7 @@ d_A(p_1,p_3)=0.60,
 d_A(p_2,p_3)=0.55.
 \]
 
-Then
+Therefore
 
 \[
 \omega(\{A\})=0.05,
@@ -293,7 +303,7 @@ Then
 \delta(\{A\})=0.55,
 \]
 
-so
+and
 
 \[
 \boxed{
@@ -301,35 +311,66 @@ so
 }
 \]
 
-Now add protocol \(\pi_B\) with
+Now add protocol \(\pi_B\) with realizable binary laws
+
+\[
+P^{B,p_1}(\text{yes})=0.75,
+\qquad
+P^{B,p_2}(\text{yes})=0.25,
+\qquad
+P^{B,p_3}(\text{yes})=0.17.
+\]
+
+Then
 
 \[
 d_B(p_1,p_2)=0.50,
 \qquad
-d_B(p_1,p_3)=0.62,
+d_B(p_1,p_3)=0.58,
 \qquad
-d_B(p_2,p_3)=0.58.
+d_B(p_2,p_3)=0.08.
 \]
 
 Using the max-over-protocol family distance,
 
 \[
+d_{\{A,B\}}(p_1,p_2)=0.50,
+\]
+
+\[
+d_{\{A,B\}}(p_1,p_3)=0.60,
+\qquad
+d_{\{A,B\}}(p_2,p_3)=0.55.
+\]
+
+Hence
+
+\[
 \omega(\{A,B\})=0.50,
 \qquad
-\delta(\{A,B\})=0.58,
+\delta(\{A,B\})=0.55,
 \]
 
 so
 
 \[
 \boxed{
-\Gamma(\{A,B\})=0.08<0.50.
+\Gamma(\{A,B\})=0.05<0.50.
 }
 \]
 
-The second protocol creates a small improvement in the weakest between-class distinction but a much larger increase in irrelevant within-signature separation.
+In this realizable counterexample,
 
-Thus more measurement channels or perturbations are not automatically better for bridge-signature recovery.
+\[
+\boxed{
+a_B(\{A\})=0,
+\qquad
+b_B(\{A\})=0.45,
+\qquad
+\Delta\Gamma=-0.45.}
+\]
+
+The added protocol contributes no improvement to the weakest between-signature distinction, because protocol \(A\) already dominates the critical between-class pair. Yet it introduces a large within-signature separation. Thus more measurement channels or perturbations are not automatically better for bridge-signature recovery.
 
 ---
 
@@ -457,7 +498,7 @@ This makes a general methodological prediction of the framework:
 | robust protocol-family objective \(\Gamma(S)\) | defined |
 | finite budgeted optimum existence | proved |
 | exact finite exhaustive optimum | proved |
-| nonmonotonicity under adding protocols | proved |
+| nonmonotonicity under adding protocols | proved with realizable probability laws |
 | marginal improvement criterion | proved |
 | connection to P9 trial requirement | proved |
 | efficient large-library approximation algorithms | open |
