@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1180" viewBox="0 0 1600 1180" role="img" aria-labelledby="title desc">
+  <title id="title">P24 anytime-valid adaptive physical-refinement certification</title>
+  <desc id="desc">Publication-style theorem map for time-uniform base-law confidence, adaptive descriptor selection, and finite stopping-time validity.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .title{font:700 34px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 17px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .label{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
+      .head{font:700 20px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 15px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .eq{font:600 19px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .eqsmall{font:600 16px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .arrow{stroke:#64748b;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+
+  <rect width="1600" height="1180" fill="#ffffff"/>
+  <text x="70" y="62" class="title">P24 · Anytime-Valid Adaptive Physical-Refinement Certification</text>
+  <text x="70" y="95" class="subtitle">A summable error schedule turns the fixed-sample P23 certificate into one event valid at every positive sample size.</text>
+
+  <rect x="90" y="145" width="1420" height="180" rx="20" fill="#f8fafc" stroke="#94a3b8"/>
+  <text x="125" y="181" class="label">ALPHA SPENDING ACROSS TIME</text>
+  <text x="125" y="217" class="head">Allocate the total failure budget over all positive sample sizes</text>
+  <text x="125" y="260" class="eq">αₙ = 6α/(π²n²)</text>
+  <text x="520" y="260" class="eqsmall">Σₙ≥1 αₙ = α</text>
+  <text x="125" y="296" class="body">Each fixed-time base-law certificate uses its own local level αₙ.</text>
+
+  <path class="arrow" d="M800 325 V360"/>
+
+  <rect x="90" y="374" width="1420" height="210" rx="20" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="125" y="410" class="label">TIME-UNIFORM BASE EVENT</text>
+  <text x="125" y="446" class="head">One confidence event holds simultaneously for every n</text>
+  <text x="125" y="490" class="eqsmall">τₙany(α) = min{1, (M/2)√[(1/(2n)) log(Mπ²n²/(3α))]}</text>
+  <text x="125" y="534" class="eq">Pr(∀n ≥ 1: ‖P − P̂ₙ‖TV ≤ τₙany) ≥ 1 − α</text>
+  <text x="125" y="568" class="body">A countable union bound over the local failures produces the anytime-valid event.</text>
+
+  <path class="arrow" d="M800 584 V625"/>
+
+  <rect x="90" y="640" width="680" height="220" rx="20" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="125" y="676" class="label">ADAPTIVE DESCRIPTOR SELECTION</text>
+  <text x="125" y="712" class="head">P23 now holds at every time simultaneously</text>
+  <text x="125" y="756" class="eqsmall">f̂ₙ = Sₙ(Z₁,…,Zₙ)</text>
+  <text x="125" y="798" class="body">The selected gain and residual inherit valid intervals for every n.</text>
+  <text x="125" y="832" class="body">No new candidate-count union bound is introduced.</text>
+
+  <rect x="830" y="640" width="680" height="220" rx="20" fill="#f5f3ff" stroke="#8b5cf6"/>
+  <text x="865" y="676" class="label">FINITE STOPPING-TIME VALIDITY</text>
+  <text x="865" y="712" class="head">Repeated inspection no longer breaks nominal coverage</text>
+  <text x="865" y="756" class="eqsmall">τ = data-dependent stopping time</text>
+  <text x="865" y="798" class="body">Because the event holds for all n, it also holds at the realized finite τ.</text>
+  <text x="865" y="832" class="body">Examples include first positive gain or first small-regret certificate.</text>
+
+  <path class="arrow" d="M430 860 V900 H800"/>
+  <path class="arrow" d="M1170 860 V900 H800"/>
+
+  <rect x="90" y="916" width="1420" height="150" rx="20" fill="#fff7ed" stroke="#f97316"/>
+  <text x="125" y="952" class="label">ANYTIME NEAR-OPTIMALITY</text>
+  <text x="125" y="988" class="head">The P23 refinement-regret certificate is valid at every time and at stopping</text>
+  <text x="125" y="1032" class="eq">0 ≤ G* − Gf̂ₙ ≤ Bₙ</text>
+  <text x="470" y="1032" class="eqsmall">Rf̂ₙ − minf Rf = G* − Gf̂ₙ ≤ Bₙ</text>
+
+  <rect x="90" y="1090" width="680" height="66" rx="14" fill="#fef2f2" stroke="#ef4444"/>
+  <text x="125" y="1118" class="label">METHOD BOUNDARY</text>
+  <text x="125" y="1142" class="body">Conservative alpha spending; not an optimal martingale or e-process bound.</text>
+
+  <rect x="830" y="1090" width="680" height="66" rx="14" fill="#0f172a"/>
+  <text x="865" y="1118" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">INTERPRETATION BOUNDARY</text>
+  <text x="865" y="1142" style="font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Anytime validity is not physical completeness and is not an experiential theorem.</text>
+</svg>

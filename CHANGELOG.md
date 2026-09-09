@@ -2,6 +2,21 @@
 
 This changelog records theorem-level scientific releases. Definitions, proofs, implementations, tests, figures, and documentation remain linked from the main research page.
 
+## 0.24.0 - 2026-09-09
+
+### Proposition 24 - anytime-valid adaptive physical-refinement certification
+
+- Converted P23 fixed-sample post-selection validity into a time-uniform certificate for one finite-alphabet IID stream.
+- Introduced the explicit summable error schedule \(\alpha_n=6\alpha/(\pi^2n^2)\) with total mass exactly \(\alpha\).
+- Derived the anytime base-law radius \(\tau_n^{\mathrm{any}}(\alpha)\) by applying the P20 categorical bound at local level \(\alpha_n\).
+- Proved one confidence event valid simultaneously for every positive sample size using a countable union bound.
+- Lifted P23 adaptive descriptor-selection coverage to every time on that event.
+- Proved validity at any realized finite data-dependent stopping time.
+- Extended the P23 refinement-regret and excess-residual certificates to the full time-uniform path.
+- Added executable anytime certification, dedicated regression tests, a publication-style P24 theorem map, and a P1-P24 global roadmap.
+- Preserved the interpretation boundary that anytime statistical validity does not establish physical completeness or experiential interpretation.
+- Integrated P24 into the README paper, reader navigation, equation provenance, release metadata, proposition guards, and visual-quality guards.
+
 ## 0.23.0 - 2026-09-09
 
 ### Proposition 23 - adaptive physical-descriptor selection certification

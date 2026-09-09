@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1960" viewBox="0 0 1600 1960" role="img" aria-labelledby="title desc">
-  <title id="title">Theorem roadmap through Proposition 23</title>
-  <desc id="desc">Publication-style dependency map from invariance and identifiability through causal structure, scale, physical sufficiency, residual certification, refinement, simultaneous chains, and adaptive descriptor selection.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2180" viewBox="0 0 1600 2180" role="img" aria-labelledby="title desc">
+  <title id="title">Theorem roadmap through Proposition 24</title>
+  <desc id="desc">Publication-style dependency map from invariance and identifiability through causal structure, scale, physical sufficiency, residual certification, refinement, adaptive selection, and anytime-valid stopping-time control.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
       <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
@@ -16,9 +16,9 @@
     </style>
   </defs>
 
-  <rect width="1600" height="1960" fill="#ffffff"/>
-  <text x="70" y="62" class="title">Theorem Roadmap - P1 through P23</text>
-  <text x="70" y="94" class="subtitle">The chain separates physical structure, finite-data certification, refinement, and adaptive selection.</text>
+  <rect width="1600" height="2180" fill="#ffffff"/>
+  <text x="70" y="62" class="title">Theorem Roadmap - P1 through P24</text>
+  <text x="70" y="94" class="subtitle">The chain separates physical structure, finite-data certification, refinement, adaptive selection, and repeated-look validity.</text>
 
   <rect x="95" y="145" width="420" height="180" rx="18" fill="#eff6ff" stroke="#3b82f6"/>
   <text x="125" y="178" class="label">FOUNDATION · P1-P4</text>
@@ -120,7 +120,17 @@
 
   <path class="arrow" d="M800 1820 V1855"/>
 
-  <rect x="95" y="1867" width="1410" height="62" rx="14" fill="#0f172a"/>
-  <text x="125" y="1892" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">OPEN BRIDGE FRONTIER</text>
-  <text x="125" y="1915" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Anytime-valid inference, physical completeness, replication, and experiential formalization remain open.</text>
+  <rect x="225" y="1867" width="1150" height="188" rx="20" fill="#ecfeff" stroke="#0891b2" stroke-width="1.8"/>
+  <text x="265" y="1904" class="label">ANYTIME-VALID CONTROL · P24</text>
+  <text x="265" y="1942" class="head">Repeated inspection and finite stopping remain certifiable</text>
+  <text x="265" y="1976" class="body">A summable error schedule creates one event valid for every sample size.</text>
+  <text x="265" y="2011" class="eq">αn = 6α/(π²n²),  Σn≥1 αn = α</text>
+  <text x="805" y="2011" class="eq">Pr(∀n: ‖P−P̂n‖TV ≤ τnany) ≥ 1−α</text>
+  <text x="265" y="2041" class="body">P23 selection and regret remain valid at every finite stopping time.</text>
+
+  <path class="arrow" d="M800 2055 V2090"/>
+
+  <rect x="95" y="2102" width="1410" height="62" rx="14" fill="#0f172a"/>
+  <text x="125" y="2127" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">OPEN BRIDGE FRONTIER</text>
+  <text x="125" y="2150" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Sharper time-uniform inference, physical completeness, replication, and experiential formalization remain open.</text>
 </svg>
