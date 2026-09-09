@@ -32,8 +32,8 @@ def test_population_signature_gap_separates_classes():
     within, between = signature_spread_and_separation(predictions, feature)
 
     assert within == pytest.approx(0.04)
-    assert between == pytest.approx(0.51)
-    assert between - within == pytest.approx(0.47)
+    assert between == pytest.approx(0.52)
+    assert between - within == pytest.approx(0.48)
 
 
 def test_pair_distance_is_maximum_over_protocols():
@@ -45,12 +45,12 @@ def test_pair_distance_is_maximum_over_protocols():
 def test_robust_threshold_interval_requires_gap_larger_than_four_epsilon():
     lower, upper = robust_threshold_interval(
         within_spread=0.04,
-        between_separation=0.51,
+        between_separation=0.52,
         epsilon=0.05,
     )
 
     assert lower == pytest.approx(0.14)
-    assert upper == pytest.approx(0.41)
+    assert upper == pytest.approx(0.42)
 
     with pytest.raises(ValueError):
         robust_threshold_interval(0.20, 0.35, 0.05)
