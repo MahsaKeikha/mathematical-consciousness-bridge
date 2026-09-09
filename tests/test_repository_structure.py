@@ -13,6 +13,7 @@ def test_core_research_documents_exist():
         root / "docs" / "figure_style_guide.md",
         root / "docs" / "physics_mathematics_consciousness_atlas.md",
         root / "docs" / "advanced_physics_visual_atlas.md",
+        root / "docs" / "conscious_state_measurement_atlas.md",
         root / "docs" / "physics_equation_provenance.md",
         root / "docs" / "foundational_physics_mathematics_bibliography.md",
         root / "docs" / "proposition_1_representation_invariance.md",
@@ -45,6 +46,7 @@ def test_core_research_documents_exist():
         root / "docs" / "figures" / "equation_evidence_map.svg",
         root / "docs" / "figures" / "thermodynamics_information_processing.svg",
         root / "docs" / "figures" / "information_geometry_response_manifold.svg",
+        root / "docs" / "figures" / "conscious_state_measurement_map.svg",
         root / "docs" / "figures" / "spaceflight_extreme_environment_map.svg",
         root / "docs" / "figures" / "causal_structure_anatomy.svg",
         root / "docs" / "figures" / "p12_collision_map.svg",
@@ -72,6 +74,7 @@ def test_core_research_documents_exist():
         root / "tests" / "test_visual_and_terminology_quality.py",
         root / "references.bib",
         root / "foundational_physics_mathematics.bib",
+        root / "empirical_consciousness_measurement.bib",
         root / "CITATION.cff",
     ]
     missing = [str(path.relative_to(root)) for path in required if not path.exists()]
