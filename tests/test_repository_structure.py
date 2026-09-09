@@ -12,6 +12,7 @@ def test_core_research_documents_exist():
         root / "docs" / "visual_research_guide.md",
         root / "docs" / "figure_style_guide.md",
         root / "docs" / "physics_mathematics_consciousness_atlas.md",
+        root / "docs" / "physics_equation_provenance.md",
         root / "docs" / "foundational_physics_mathematics_bibliography.md",
         root / "docs" / "proposition_1_representation_invariance.md",
         root / "docs" / "proposition_2_bridge_identifiability.md",
