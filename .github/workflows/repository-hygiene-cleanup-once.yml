@@ -1,0 +1,53 @@
+name: repository-hygiene-cleanup-once
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/repository-hygiene-cleanup-once.yml
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Remove generated repository artifacts
+        run: |
+          find src tests -type d -name __pycache__ -prune -exec rm -rf {} +
+          find src -maxdepth 1 -type d -name '*.egg-info' -prune -exec rm -rf {} +
+      - name: Polish main page prose
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("README.md")
+          text = path.read_text(encoding="utf-8")
+          old = "A new quantum-foundations layer now asks a sharper question: if the declared quantum description is operationally complete-state, admissible channels, and all declared measurement statistics-what exact mathematical evidence would be required to show that an independently defined experiential variable does **not** factor through that quantum operational state? This is formulated as an open non-reducibility theorem target, not as an assumption that consciousness is quantum or that quantum theory is incomplete."
+          new = "A new quantum-foundations layer now asks a sharper question. Suppose the declared quantum description is operationally complete with respect to the state, admissible channels, and all declared measurement statistics. What exact mathematical evidence would be required to show that an independently defined experiential variable does **not** factor through that quantum operational state? This is formulated as an open non-reducibility theorem target. It is not an assumption that consciousness is quantum or that quantum theory is incomplete."
+          if old not in text:
+              raise RuntimeError("README editorial marker not found")
+          text = text.replace(old, new, 1)
+          path.write_text(text, encoding="utf-8")
+          PY
+      - name: Validate repository
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+          pytest
+          ruff check .
+      - name: Commit clean repository state
+        run: |
+          rm .github/workflows/repository-hygiene-cleanup-once.yml
+          find src tests -type d -name __pycache__ -prune -exec rm -rf {} +
+          find src -maxdepth 1 -type d -name '*.egg-info' -prune -exec rm -rf {} +
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Polish scientific prose and clean generated artifacts"
+          git push origin HEAD:main
