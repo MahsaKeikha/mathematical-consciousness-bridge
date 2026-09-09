@@ -50,6 +50,7 @@ def test_core_research_documents_exist():
         root / "docs" / "figures" / "conscious_state_measurement_map.svg",
         root / "docs" / "figures" / "spaceflight_extreme_environment_map.svg",
         root / "docs" / "figures" / "multiscale_physical_hierarchy.svg",
+        root / "docs" / "figures" / "observer_to_bridge_handoff.svg",
         root / "docs" / "figures" / "causal_structure_anatomy.svg",
         root / "docs" / "figures" / "p12_collision_map.svg",
         root / "docs" / "figures" / "p13_component_irredundancy.svg",
