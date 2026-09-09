@@ -70,7 +70,7 @@ def test_geometry_contains_every_intervention_pair_at_every_delay():
     family = declared_response_family(_responses(), INTERVENTIONS, DELAYS)
     geometry = response_geometry_over_grid(family, INTERVENTIONS, DELAYS)
     assert len(geometry) == 6
-    assert set(key[2] for key in geometry) == set(DELAYS)
+    assert {key[2] for key in geometry} == set(DELAYS)
 
 
 def test_lossless_node_aggregation_preserves_complete_response_geometry():
