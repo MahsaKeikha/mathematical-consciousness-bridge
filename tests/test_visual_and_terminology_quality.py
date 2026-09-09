@@ -10,6 +10,7 @@ FIGURES = (
     "thermodynamics_information_processing.svg",
     "information_geometry_response_manifold.svg",
     "conscious_state_measurement_map.svg",
+    "state_space_dynamics_map.svg",
     "spaceflight_extreme_environment_map.svg",
     "multiscale_physical_hierarchy.svg",
     "observer_to_bridge_handoff.svg",
