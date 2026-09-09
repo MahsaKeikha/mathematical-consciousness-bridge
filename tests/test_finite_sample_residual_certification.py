@@ -87,10 +87,10 @@ def test_zero_empirical_residual_is_not_certified_positive():
 
 
 def test_record_level_certificate_recovers_binary_residual():
-    records = [
-        *(("omega0", "same_t", "e0"),) * 5000,
-        *(("omega1", "same_t", "e1"),) * 5000,
-    ]
+    records = ["placeholder"]
+    records = [("omega0", "same_t", "e0")] * 5000 + [
+        ("omega1", "same_t", "e1")
+    ] * 5000
     certificate = certify_cmi_from_records(
         records,
         omega_size=2,
