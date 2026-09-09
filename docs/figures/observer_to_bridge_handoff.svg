@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="980" viewBox="0 0 1800 980" role="img" aria-labelledby="title desc">
+  <title id="title">Research handoff from Spatiotemporal Observer Mathematics to Mathematical Consciousness Bridge</title>
+  <desc id="desc">Two-repository research map showing measured dynamics, world-tube identification and finite-sample certification in Spatiotemporal Observer Mathematics, followed by intervention-resolved causal structure, temporal-compositional-scale analysis, and the open physical-to-experiential bridge in Mathematical Consciousness Bridge.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0 0 L0 8 L10 4 z" fill="#64748b"/></marker>
+    <style>
+      .title{font:700 40px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 18px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .repo{font:700 25px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .head{font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 15px Inter,Segoe UI,Arial,sans-serif;fill:#334155}
+      .small{font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#64748b}
+      .label{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
+      .eq{font:600 17px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .eqdark{font:600 18px Georgia,'Times New Roman',serif;fill:#e2e8f0}
+      .arrow{stroke:#64748b;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+
+  <rect width="1800" height="980" fill="#ffffff"/>
+  <text x="80" y="68" class="title">Research Continuation: Physical Observer Structure to the Consciousness Bridge</text>
+  <text x="80" y="103" class="subtitle">The first repository identifies and certifies a physical subsystem. The second asks what additional causal, temporal, compositional, scale, empirical, and bridge structure is required.</text>
+
+  <rect x="80" y="150" width="760" height="710" rx="22" fill="#f8fbff" stroke="#2563eb" stroke-width="1.8"/>
+  <text x="120" y="198" class="repo">Spatiotemporal Observer Mathematics</text>
+  <text x="120" y="226" class="small">github.com/MahsaKeikha/spatiotemporal-observer-math</text>
+  <text x="120" y="266" class="label">PHYSICAL SUBSYSTEM IDENTIFICATION</text>
+
+  <rect x="120" y="292" width="680" height="120" rx="15" fill="#eff6ff" stroke="#60a5fa"/>
+  <text x="150" y="328" class="head">Measured dynamical process</text>
+  <text x="150" y="363" class="eq">X<tspan baseline-shift="sub" font-size="12">t+1</tspan> = A<tspan baseline-shift="sub" font-size="12">t</tspan>X<tspan baseline-shift="sub" font-size="12">t</tspan> + ε<tspan baseline-shift="sub" font-size="12">t</tspan></text>
+  <text x="150" y="393" class="body">sensor / neural / physical time series with declared uncertainty and timescale</text>
+
+  <path class="arrow" d="M460 412 V447"/>
+
+  <rect x="120" y="460" width="680" height="145" rx="15" fill="#ecfdf5" stroke="#34d399"/>
+  <text x="150" y="496" class="head">Time-dependent subsystem boundary</text>
+  <text x="150" y="532" class="eq">W = (S<tspan baseline-shift="sub" font-size="12">0</tspan>, … , S<tspan baseline-shift="sub" font-size="12">T−1</tspan>)</text>
+  <text x="150" y="567" class="body">integration • insulation • persistence • transport</text>
+  <text x="150" y="592" class="small">The boundary is inferred as a moving physical object rather than fixed in advance.</text>
+
+  <path class="arrow" d="M460 605 V640"/>
+
+  <rect x="120" y="653" width="680" height="160" rx="15" fill="#fefce8" stroke="#eab308"/>
+  <text x="150" y="689" class="head">Recovery, identifiability, and finite-sample certification</text>
+  <text x="150" y="726" class="body">population recovery • symmetry / impossibility • covariance uncertainty • temporal calibration</text>
+  <text x="150" y="758" class="body">innovation whitening • physical-time inference • covariance-to-path bridge</text>
+  <text x="150" y="790" class="small">Output: a statistically certified physical subsystem or world-tube.</text>
+
+  <rect x="880" y="265" width="160" height="460" rx="22" fill="#0f172a"/>
+  <text x="960" y="322" text-anchor="middle" style="font:700 13px Inter,Segoe UI,Arial,sans-serif;fill:#94a3b8;letter-spacing:.8px">RESEARCH</text>
+  <text x="960" y="346" text-anchor="middle" style="font:700 13px Inter,Segoe UI,Arial,sans-serif;fill:#94a3b8;letter-spacing:.8px">HANDOFF</text>
+  <text x="960" y="405" text-anchor="middle" class="eqdark">p<tspan baseline-shift="sub" font-size="12">W</tspan> ∈ Q<tspan baseline-shift="sub" font-size="12">P</tspan></text>
+  <path d="M920 455 H1000" stroke="#e2e8f0" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="960" y="510" text-anchor="middle" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">certified</text>
+  <text x="960" y="532" text-anchor="middle" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">physical</text>
+  <text x="960" y="554" text-anchor="middle" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">object</text>
+  <text x="960" y="620" text-anchor="middle" style="font:400 12px Inter,Segoe UI,Arial,sans-serif;fill:#94a3b8">no experiential</text>
+  <text x="960" y="640" text-anchor="middle" style="font:400 12px Inter,Segoe UI,Arial,sans-serif;fill:#94a3b8">property is added</text>
+  <text x="960" y="660" text-anchor="middle" style="font:400 12px Inter,Segoe UI,Arial,sans-serif;fill:#94a3b8">at this step</text>
+
+  <rect x="1080" y="150" width="640" height="710" rx="22" fill="#fcfbff" stroke="#7c3aed" stroke-width="1.8"/>
+  <text x="1120" y="198" class="repo">Mathematical Consciousness Bridge</text>
+  <text x="1120" y="226" class="small">github.com/MahsaKeikha/mathematical-consciousness-bridge</text>
+  <text x="1120" y="266" class="label">NEXT MATHEMATICAL-PHYSICS LAYER</text>
+
+  <rect x="1120" y="292" width="560" height="145" rx="15" fill="#f5f3ff" stroke="#a78bfa"/>
+  <text x="1150" y="328" class="head">Intervention-resolved causal structure</text>
+  <text x="1150" y="364" class="eq">Pᵤ,τ(p) = ℒ(Yᵛ(t + τ) | do(u), p)</text>
+  <text x="1150" y="397" class="body">response geometry G • directed influence A • partition irreducibility K</text>
+  <text x="1150" y="422" class="small">P11-P13: structure + component minimality / irredundancy audits</text>
+
+  <path class="arrow" d="M1400 437 V472"/>
+
+  <rect x="1120" y="485" width="560" height="145" rx="15" fill="#fff7ed" stroke="#fb923c"/>
+  <text x="1150" y="521" class="head">Time, composition, scale, and uncertainty</text>
+  <text x="1150" y="557" class="body">P14-P15: temporal continuation and finite-error certification</text>
+  <text x="1150" y="587" class="body">P16: independent composition and coupling defect</text>
+  <text x="1150" y="617" class="body">P17: coarse-graining contraction and refinement limits</text>
+
+  <path class="arrow" d="M1400 630 V665"/>
+
+  <rect x="1120" y="678" width="560" height="135" rx="15" fill="#0f172a"/>
+  <text x="1150" y="716" style="font:700 19px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Open physical-to-experiential bridge</text>
+  <text x="1150" y="755" class="eqdark">B̄ : Q<tspan baseline-shift="sub" font-size="12">P</tspan> → Q<tspan baseline-shift="sub" font-size="12">E</tspan></text>
+  <text x="1150" y="786" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">Requires independent experiential formalization, cross-theory discrimination, finite-data evidence, and falsification.</text>
+
+  <path class="arrow" d="M840 505 H872"/>
+  <path class="arrow" d="M1040 505 H1072"/>
+
+  <rect x="80" y="895" width="1640" height="55" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="110" y="929" class="body">Research lineage: the second repository extends the physical program; it does not reinterpret the first repository's observer theorem as a consciousness result.</text>
+</svg>
