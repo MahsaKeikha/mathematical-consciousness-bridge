@@ -6,6 +6,7 @@ on:
       - p26-partition-irreducibility-scale-certification
     paths:
       - .github/integrate_p26_release.py
+      - .github/p26_release_postfix.py
       - .github/workflows/integrate-p26-once.yml
 
 permissions:
@@ -22,11 +23,14 @@ jobs:
           fetch-depth: 0
 
       - name: Apply P26 release integration
-        run: python .github/integrate_p26_release.py
+        run: |
+          python .github/integrate_p26_release.py
+          python .github/p26_release_postfix.py
 
       - name: Remove one-time integration scaffolding before validation
         run: |
           rm .github/integrate_p26_release.py
+          rm .github/p26_release_postfix.py
           rm .github/workflows/integrate-p26-once.yml
 
       - name: Validate on Python 3.10
