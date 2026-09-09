@@ -15,84 +15,86 @@
   </defs>
   <rect width="1800" height="1200" fill="#ffffff"/>
   <text x="75" y="66" class="title">Physics &amp; Mathematics Atlas for Consciousness Research</text>
-  <text x="75" y="102" class="subtitle">A disciplined map from physical law and measurable dynamics to candidate structures, empirical tests, and the unresolved physical-to-experiential bridge.</text>
+  <text x="75" y="102" class="subtitle">From physical law and measurable dynamics to mathematical structure and empirical tests.</text>
+  <text x="75" y="130" class="subtitle">The physical-to-experiential bridge remains a distinct research problem.</text>
 
-  <rect x="75" y="160" width="390" height="255" rx="18" fill="#f7fbff" stroke="#3b82f6" stroke-width="1.5"/>
-  <text x="103" y="196" class="head">1. Physical dynamics</text>
-  <text x="103" y="232" class="eq">dXₜ = f(Xₜ,uₜ)dt + G(Xₜ,uₜ)dWₜ</text>
-  <text x="103" y="268" class="body">State, energy, noise, intervention, timescale,</text>
-  <text x="103" y="291" class="body">boundary conditions, and observables.</text>
-  <text x="103" y="335" class="eq">Xₜ₊Δ ∼ KΔ(· | Xₜ,uₜ)</text>
-  <text x="103" y="376" class="cite">Dynamical systems • stochastic processes • control</text>
+  <rect x="75" y="175" width="390" height="255" rx="18" fill="#f7fbff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="103" y="211" class="head">1. Physical dynamics</text>
+  <text x="103" y="247" class="eq">dXₜ = f(Xₜ,uₜ)dt + G(Xₜ,uₜ)dWₜ</text>
+  <text x="103" y="283" class="body">state · energy · noise · intervention</text>
+  <text x="103" y="306" class="body">timescale · boundaries · observables</text>
+  <text x="103" y="350" class="eq">Xₜ₊Δ ∼ KΔ(· | Xₜ,uₜ)</text>
+  <text x="103" y="391" class="cite">dynamics · stochastic processes · control</text>
 
-  <rect x="505" y="160" width="390" height="255" rx="18" fill="#fffdf5" stroke="#ca8a04" stroke-width="1.5"/>
-  <text x="533" y="196" class="head">2. Information and geometry</text>
-  <text x="533" y="232" class="eq">I(X;Y)=Dₖₗ(PXY ‖ PX PY)</text>
-  <text x="533" y="268" class="body">Entropy, mutual information, divergence, synergy,</text>
-  <text x="533" y="291" class="body">statistical manifolds, and distinguishability.</text>
-  <text x="533" y="335" class="eq">ds² = gᵢⱼ(θ)dθⁱdθʲ</text>
-  <text x="533" y="376" class="cite">Shannon • Cover &amp; Thomas • Amari • Luppi et al.</text>
+  <rect x="505" y="175" width="390" height="255" rx="18" fill="#fffdf5" stroke="#ca8a04" stroke-width="1.5"/>
+  <text x="533" y="211" class="head">2. Information and geometry</text>
+  <text x="533" y="247" class="eq">I(X;Y)=DKL(PXY ‖ PX PY)</text>
+  <text x="533" y="283" class="body">entropy · dependence · divergence · synergy</text>
+  <text x="533" y="306" class="body">statistical manifolds · distinguishability</text>
+  <text x="533" y="350" class="eq">ds² = gᵢⱼ(θ)dθⁱdθʲ</text>
+  <text x="533" y="391" class="cite">Shannon · Cover &amp; Thomas · Amari</text>
 
-  <rect x="935" y="160" width="390" height="255" rx="18" fill="#f5fcfd" stroke="#0891b2" stroke-width="1.5"/>
-  <text x="963" y="196" class="head">3. Causal intervention structure</text>
-  <text x="963" y="232" class="eq">Pᵤ,τ = 𝓛(Yₜ₊τ | do(u))</text>
-  <text x="963" y="268" class="body">Perturbation-response geometry, directed influence,</text>
-  <text x="963" y="291" class="body">partition factorization, and identifiability.</text>
-  <text x="963" y="335" class="eq">dτ(u,v)=‖Pᵤ,τ−Pᵥ,τ‖TV</text>
-  <text x="963" y="376" class="cite">Pearl • Casali et al. • repository P11-P17</text>
+  <rect x="935" y="175" width="390" height="255" rx="18" fill="#f5fcfd" stroke="#0891b2" stroke-width="1.5"/>
+  <text x="963" y="211" class="head">3. Causal intervention structure</text>
+  <text x="963" y="247" class="eq">Pᵤ,τ = ℒ(Yₜ₊τ | do(u))</text>
+  <text x="963" y="283" class="body">perturbation-response geometry</text>
+  <text x="963" y="306" class="body">directed influence · factorization · identity</text>
+  <text x="963" y="350" class="eq">dτ(u,v)=‖Pᵤ,τ−Pᵥ,τ‖TV</text>
+  <text x="963" y="391" class="cite">Pearl · Casali · repository P11-P17</text>
 
-  <rect x="1365" y="160" width="360" height="255" rx="18" fill="#fff8f9" stroke="#e11d48" stroke-width="1.5"/>
-  <text x="1393" y="196" class="head">4. Thermodynamics of information</text>
-  <text x="1393" y="232" class="eq">Werase ≥ kBT ln 2</text>
-  <text x="1393" y="268" class="body">Physical cost, irreversibility, entropy production,</text>
-  <text x="1393" y="291" class="body">nonequilibrium dynamics, and computation.</text>
-  <text x="1393" y="335" class="eq">Σ = ΔSsys + ΔSenv ≥ 0</text>
-  <text x="1393" y="376" class="cite">Landauer • stochastic thermodynamics</text>
+  <rect x="1365" y="175" width="360" height="255" rx="18" fill="#fff8f9" stroke="#e11d48" stroke-width="1.5"/>
+  <text x="1393" y="211" class="head">4. Thermodynamics of information</text>
+  <text x="1393" y="247" class="eq">Werase ≥ kBT ln 2</text>
+  <text x="1393" y="283" class="body">physical cost · irreversibility</text>
+  <text x="1393" y="306" class="body">entropy production · nonequilibrium flow</text>
+  <text x="1393" y="350" class="eq">Σ = ΔSsys + ΔSenv ≥ 0</text>
+  <text x="1393" y="391" class="cite">Landauer · Seifert</text>
 
-  <path class="arrow" d="M465 286 H493"/><path class="arrow" d="M895 286 H923"/><path class="arrow" d="M1325 286 H1353"/>
+  <path class="arrow" d="M465 301 H493"/><path class="arrow" d="M895 301 H923"/><path class="arrow" d="M1325 301 H1353"/>
 
-  <rect x="75" y="485" width="390" height="255" rx="18" fill="#f5fcf8" stroke="#059669" stroke-width="1.5"/>
-  <text x="103" y="521" class="head">5. Integration and segregation</text>
-  <text x="103" y="557" class="eq">C = ΣS H(XS) − structured baselines</text>
-  <text x="103" y="593" class="body">Whole/part dependence, neural complexity, causal</text>
-  <text x="103" y="616" class="body">integration, synergy, and workspace organization.</text>
-  <text x="103" y="660" class="eq">Φ-family quantities are theory-specific</text>
-  <text x="103" y="701" class="cite">Tononi-Sporns-Edelman • IIT • Luppi et al.</text>
+  <rect x="75" y="500" width="390" height="255" rx="18" fill="#f5fcf8" stroke="#059669" stroke-width="1.5"/>
+  <text x="103" y="536" class="head">5. Integration and segregation</text>
+  <text x="103" y="572" class="eq">C = ΣS H(XS) − structured baseline</text>
+  <text x="103" y="608" class="body">whole/part dependence · neural complexity</text>
+  <text x="103" y="631" class="body">causal integration · synergy · workspace</text>
+  <text x="103" y="675" class="eq">Φ-family terms remain theory-specific</text>
+  <text x="103" y="716" class="cite">Tononi-Sporns-Edelman · IIT · Luppi</text>
 
-  <rect x="505" y="485" width="390" height="255" rx="18" fill="#faf8ff" stroke="#7c3aed" stroke-width="1.5"/>
-  <text x="533" y="521" class="head">6. Neural and cognitive dynamics</text>
-  <text x="533" y="557" class="eq">ẋ = F(x,u),   y = h(x)</text>
-  <text x="533" y="593" class="body">Recurrence, broadcasting, criticality, prediction,</text>
-  <text x="533" y="616" class="body">metastability, and state-transition structure.</text>
-  <text x="533" y="660" class="eq">Fvariational = Eq[ln q − ln p]</text>
-  <text x="533" y="701" class="cite">GNWT • RPT • Friston • Maschke et al.</text>
+  <rect x="505" y="500" width="390" height="255" rx="18" fill="#faf8ff" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="533" y="536" class="head">6. Neural and cognitive dynamics</text>
+  <text x="533" y="572" class="eq">ẋ = F(x,u),   y = h(x)</text>
+  <text x="533" y="608" class="body">recurrence · broadcasting · criticality</text>
+  <text x="533" y="631" class="body">prediction · metastability · transitions</text>
+  <text x="533" y="675" class="eq">Fvar = Eq[ln q − ln p]</text>
+  <text x="533" y="716" class="cite">GNWT · RPT · Friston · Maschke</text>
 
-  <rect x="935" y="485" width="390" height="255" rx="18" fill="#fffaf7" stroke="#ea580c" stroke-width="1.5"/>
-  <text x="963" y="521" class="head">7. Empirical consciousness measures</text>
-  <text x="963" y="557" class="eq">measurement ≠ bridge identity</text>
-  <text x="963" y="593" class="body">Perturbational complexity, anesthesia transitions,</text>
-  <text x="963" y="616" class="body">disorders of consciousness, report and no-report tests.</text>
-  <text x="963" y="660" class="eq">data → likelihood → theory discrimination</text>
-  <text x="963" y="701" class="cite">Casali • Cogitate • Mashour • Luppi</text>
+  <rect x="935" y="500" width="390" height="255" rx="18" fill="#fffaf7" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="963" y="536" class="head">7. Empirical consciousness measures</text>
+  <text x="963" y="572" class="eq">measurement ≠ bridge identity</text>
+  <text x="963" y="608" class="body">perturbation · anesthesia · recovery</text>
+  <text x="963" y="631" class="body">behavior · report · no-report paradigms</text>
+  <text x="963" y="675" class="eq">data → likelihood → theory test</text>
+  <text x="963" y="716" class="cite">Casali · Cogitate · Luppi</text>
 
-  <rect x="1365" y="485" width="360" height="255" rx="18" fill="#f8fafc" stroke="#64748b" stroke-width="1.5"/>
-  <text x="1393" y="521" class="head">8. Mathematical bridge problem</text>
-  <text x="1393" y="557" class="eq">B̄ : 𝒬P → 𝒬E</text>
-  <text x="1393" y="593" class="body">Which physical equivalence structure, if any,</text>
-  <text x="1393" y="616" class="body">supports a testable experiential assignment?</text>
-  <text x="1393" y="660" class="eq">F*(p)=F*(p′) ⇔ Cᴮ(p)=Cᴮ(p′)</text>
-  <text x="1393" y="701" class="cite">Kleiner • Kleiner &amp; Tull • repository P1-P17</text>
+  <rect x="1365" y="500" width="360" height="255" rx="18" fill="#f8fafc" stroke="#64748b" stroke-width="1.5"/>
+  <text x="1393" y="536" class="head">8. Mathematical bridge problem</text>
+  <text x="1393" y="572" class="eq">B̄ : QP → QE</text>
+  <text x="1393" y="608" class="body">Which physical equivalence structure</text>
+  <text x="1393" y="631" class="body">supports a testable experiential assignment?</text>
+  <text x="1393" y="675" class="eq">F*(p)=F*(p′) ⇔ Cᴮ(p)=Cᴮ(p′)</text>
+  <text x="1393" y="716" class="cite">Kleiner · Kleiner &amp; Tull · P1-P17</text>
 
-  <path class="arrow" d="M270 415 V473"/><path class="arrow" d="M700 415 V473"/><path class="arrow" d="M1130 415 V473"/><path class="arrow" d="M1545 415 V473"/>
-  <path class="arrow" d="M465 612 H493"/><path class="arrow" d="M895 612 H923"/><path class="arrow" d="M1325 612 H1353"/>
+  <path class="arrow" d="M270 430 V488"/><path class="arrow" d="M700 430 V488"/><path class="arrow" d="M1130 430 V488"/><path class="arrow" d="M1545 430 V488"/>
+  <path class="arrow" d="M465 627 H493"/><path class="arrow" d="M895 627 H923"/><path class="arrow" d="M1325 627 H1353"/>
 
-  <rect x="75" y="805" width="1650" height="285" rx="18" fill="#0f172a"/>
-  <text x="105" y="847" style="font:700 20px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">How to read the atlas</text>
-  <text x="105" y="888" style="font:400 15px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">Physics provides state, dynamics, energy, noise, and intervention semantics. Mathematics provides invariance, geometry, information, causality, probability, and finite-sample certification.</text>
-  <text x="105" y="921" style="font:400 15px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">Neuroscience and clinical experiments constrain candidate mechanisms. Existing theories propose different bridge principles. None of those layers may be silently substituted for another.</text>
-  <text x="105" y="970" style="font:600 17px Georgia,'Times New Roman',serif;fill:#e2e8f0">physical law → measurable response structure → mathematical invariants → empirical discrimination → bridge test</text>
-  <text x="105" y="1022" style="font:400 15px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">The repository's goal is to make every arrow explicit enough to prove, estimate, falsify, or mark as unresolved.</text>
-  <text x="105" y="1060" style="font:600 13px Inter,Segoe UI,Arial,sans-serif;fill:#94a3b8">Primary lineage includes Tegmark (2015), Tononi et al. (1994), Tononi (2004), Albantakis et al. (2023), Kleiner (2019), Casali et al. (2013), Luppi et al. (2024), Friston (2010), Pearl (2009), Landauer (1961), and Amari (2016).</text>
+  <rect x="75" y="825" width="1650" height="285" rx="18" fill="#0f172a"/>
+  <text x="110" y="868" style="font:700 20px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">How to read the atlas</text>
+  <text x="110" y="909" style="font:400 15px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">Physics specifies states, dynamics, energy, noise, and intervention semantics.</text>
+  <text x="110" y="938" style="font:400 15px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">Mathematics supplies invariance, geometry, information, probability, and finite-data certification.</text>
+  <text x="110" y="978" style="font:400 15px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">Experiments constrain mechanisms and competing theories.</text>
+  <text x="110" y="1007" style="font:400 15px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">No one layer is silently substituted for another.</text>
+  <text x="110" y="1050" style="font:600 17px Georgia,'Times New Roman',serif;fill:#e2e8f0">physical law → measurable structure → mathematical invariant → empirical test → bridge test</text>
+  <text x="110" y="1083" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#94a3b8">Foundational and empirical sources are maintained in separate role-aware bibliographies.</text>
 
-  <text x="75" y="1150" class="subtitle">Research boundary: equations from physics or neuroscience become consciousness equations only if an independently justified physical-to-experiential bridge is established.</text>
+  <text x="75" y="1160" class="subtitle">Research boundary: physical or neural equations require an independently justified bridge before experiential interpretation.</text>
 </svg>
