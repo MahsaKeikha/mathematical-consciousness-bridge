@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1100" viewBox="0 0 1800 1100" role="img" aria-labelledby="title desc">
+  <title id="title">State-space dynamics and empirical consciousness-related regimes</title>
+  <desc id="desc">A schematic physics figure showing stochastic trajectories, perturbational excursions, attractor-like regimes, temporal transitions, and empirical measurement interfaces for wakefulness, sleep, anesthesia, and recovery. The figure does not impose a universal one-dimensional consciousness ranking.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0 0 L0 8 L10 4 z" fill="#64748b"/></marker>
+    <style>
+      .title{font:700 40px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 18px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .head{font:700 19px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 15px Inter,Segoe UI,Arial,sans-serif;fill:#334155}
+      .small{font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#64748b}
+      .label{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
+      .eq{font:600 17px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .axis{stroke:#64748b;stroke-width:2}
+      .traj{fill:none;stroke-width:3.2}
+      .arrow{stroke:#64748b;stroke-width:2.1;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+
+  <rect width="1800" height="1100" fill="#ffffff"/>
+  <text x="80" y="68" class="title">State-Space Dynamics and Consciousness-Related Regimes</text>
+  <text x="80" y="103" class="subtitle">A physics view of trajectories, perturbations, transitions, and measurement—without reducing heterogeneous states to one universal scalar axis.</text>
+
+  <rect x="80" y="145" width="1120" height="760" rx="20" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="115" y="185" class="label">SCHEMATIC MEASURABLE STATE SPACE</text>
+  <line x1="155" y1="835" x2="1100" y2="835" class="axis"/>
+  <line x1="155" y1="835" x2="155" y2="245" class="axis"/>
+  <text x="1080" y="870" class="small">measured coordinate 1</text>
+  <text x="82" y="260" class="small" transform="rotate(-90 82 260)">measured coordinate 2</text>
+
+  <ellipse cx="420" cy="450" rx="210" ry="150" fill="#dbeafe" stroke="#2563eb" stroke-width="2" opacity="0.82"/>
+  <ellipse cx="790" cy="655" rx="180" ry="120" fill="#ede9fe" stroke="#7c3aed" stroke-width="2" opacity="0.82"/>
+  <ellipse cx="840" cy="355" rx="160" ry="105" fill="#dcfce7" stroke="#16a34a" stroke-width="2" opacity="0.82"/>
+  <ellipse cx="475" cy="700" rx="150" ry="95" fill="#ffedd5" stroke="#ea580c" stroke-width="2" opacity="0.82"/>
+
+  <text x="350" y="400" class="head">Wakeful / responsive regime</text>
+  <text x="316" y="428" class="small">broad repertoire may be observed in some measures</text>
+
+  <text x="742" y="622" class="head">NREM-like regime</text>
+  <text x="708" y="650" class="small">different temporal and perturbational organization</text>
+
+  <text x="785" y="328" class="head">Dream / dissociated regime</text>
+  <text x="750" y="356" class="small">report and overt responsiveness can dissociate</text>
+
+  <text x="414" y="674" class="head">Anesthetic regime</text>
+  <text x="387" y="702" class="small">agent-specific dynamics; not one universal pattern</text>
+
+  <path d="M300 475 C340 380 470 360 520 445 C560 520 455 565 370 520 C300 485 345 425 430 430 C510 435 520 500 470 520" class="traj" stroke="#2563eb"/>
+  <path d="M705 680 C750 610 850 600 900 670 C930 720 860 760 790 735 C735 715 735 655 810 645" class="traj" stroke="#7c3aed"/>
+  <path d="M770 375 C820 320 900 320 950 365 C975 395 925 430 865 415 C815 402 815 355 875 350" class="traj" stroke="#16a34a"/>
+  <path d="M405 720 C450 670 520 675 565 715 C585 750 525 780 470 760 C430 744 435 710 490 705" class="traj" stroke="#ea580c"/>
+
+  <circle cx="430" cy="430" r="9" fill="#0f172a"/>
+  <path d="M430 430 C560 350 640 310 745 340" class="arrow"/>
+  <text x="535" y="325" class="label">SPONTANEOUS / STATE TRANSITION</text>
+
+  <circle cx="500" cy="500" r="9" fill="#dc2626"/>
+  <path d="M500 500 C620 525 720 520 805 475" stroke="#dc2626" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <text x="590" y="552" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#b91c1c">CONTROLLED PERTURBATION</text>
+
+  <rect x="180" y="205" width="470" height="95" rx="14" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="210" y="238" class="head">Local dynamical model</text>
+  <text x="210" y="272" class="eq">dX<tspan baseline-shift="sub" font-size="12">t</tspan> = f(X<tspan baseline-shift="sub" font-size="12">t</tspan>,u<tspan baseline-shift="sub" font-size="12">t</tspan>)dt + G(X<tspan baseline-shift="sub" font-size="12">t</tspan>,u<tspan baseline-shift="sub" font-size="12">t</tspan>)dW<tspan baseline-shift="sub" font-size="12">t</tspan></text>
+
+  <rect x="690" y="205" width="455" height="95" rx="14" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="720" y="238" class="head">Intervention-response geometry</text>
+  <text x="720" y="272" class="eq">dᵖτ(u,v) = ‖Pᵤ,τ(p) − Pᵥ,τ(p)‖<tspan baseline-shift="sub" font-size="12">TV</tspan></text>
+
+  <rect x="1250" y="145" width="470" height="760" rx="20" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="1285" y="185" class="label">MEASUREMENT AND INFERENCE LAYERS</text>
+
+  <rect x="1285" y="215" width="400" height="125" rx="14" fill="#eff6ff" stroke="#60a5fa"/>
+  <text x="1315" y="250" class="head">Observed signals</text>
+  <text x="1315" y="283" class="body">EEG • MEG • fMRI • intracranial signals</text>
+  <text x="1315" y="311" class="body">physiology • behavior • report</text>
+
+  <path class="arrow" d="M1485 340 V372"/>
+
+  <rect x="1285" y="385" width="400" height="125" rx="14" fill="#f0fdf4" stroke="#4ade80"/>
+  <text x="1315" y="420" class="head">Derived dynamical features</text>
+  <text x="1315" y="453" class="body">complexity • connectivity • criticality</text>
+  <text x="1315" y="481" class="body">response propagation • causal geometry</text>
+
+  <path class="arrow" d="M1485 510 V542"/>
+
+  <rect x="1285" y="555" width="400" height="135" rx="14" fill="#fff7ed" stroke="#fb923c"/>
+  <text x="1315" y="590" class="head">Empirical state evidence</text>
+  <text x="1315" y="623" class="body">wakefulness • dreaming • anesthesia</text>
+  <text x="1315" y="651" class="body">recovery • covert command response</text>
+  <text x="1315" y="677" class="small">State labels remain measurement-model dependent.</text>
+
+  <path class="arrow" d="M1485 690 V722"/>
+
+  <rect x="1285" y="735" width="400" height="135" rx="14" fill="#f5f3ff" stroke="#a78bfa"/>
+  <text x="1315" y="770" class="head">Bridge-level interpretation</text>
+  <text x="1315" y="804" class="eq">B̄ : Q<tspan baseline-shift="sub" font-size="12">P</tspan> → Q<tspan baseline-shift="sub" font-size="12">E</tspan></text>
+  <text x="1315" y="836" class="small">Requires an independently justified experiential formalization</text>
+  <text x="1315" y="858" class="small">and cannot be inferred from one dynamical feature alone.</text>
+
+  <rect x="80" y="945" width="1640" height="100" rx="16" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="115" y="980" class="label">INTERPRETATION BOUNDARY</text>
+  <text x="115" y="1014" class="body">The colored basins are schematic dynamical regimes, not universal consciousness classes and not a ranking of subjective experience.</text>
+  <text x="115" y="1039" class="small">Empirical motivation: perturbational-complexity, sleep/dream, anesthesia, critical-dynamics, and covert-command-following studies. Full citations are maintained in the empirical measurement bibliography.</text>
+</svg>
