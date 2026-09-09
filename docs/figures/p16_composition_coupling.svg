@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
+  <title id="title">Proposition 16 independent composition and controlled coupling</title>
+  <desc id="desc">Publication-style diagram showing product-response composition, zero cross-system influence, zero subsystem partition defect, response-distance bounds, and departure from the independent null model through a coupling defect.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0 0 L0 8 L10 4 z" fill="#64748b"/></marker>
+    <style>
+      .title{font:700 38px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 18px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .section{font:700 13px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
+      .cardTitle{font:700 20px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 16px Inter,Segoe UI,Arial,sans-serif;fill:#334155}
+      .small{font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .eq{font:600 19px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .eqSmall{font:600 16px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .arrow{stroke:#64748b;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1600" height="980" fill="#ffffff"/>
+
+  <text x="72" y="68" class="title">Independent Composition and Controlled Coupling</text>
+  <text x="72" y="101" class="subtitle">Proposition 16 separates mere coexistence from measurable cross-system response structure.</text>
+
+  <text x="72" y="150" class="section">A. INDEPENDENT PRODUCT-RESPONSE NULL MODEL</text>
+
+  <rect x="72" y="175" width="350" height="205" rx="18" fill="#f7fbff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="100" y="214" class="cardTitle">Subsystem A</text>
+  <text x="100" y="248" class="body">Intervention-conditioned law</text>
+  <text x="100" y="289" class="eq">P<tspan baseline-shift="sub" font-size="14">A</tspan><tspan baseline-shift="super" font-size="14">uₐ,τ</tspan></text>
+  <text x="100" y="332" class="small">Own interventions and response blocks</text>
+
+  <rect x="1178" y="175" width="350" height="205" rx="18" fill="#f5fcf8" stroke="#059669" stroke-width="1.5"/>
+  <text x="1206" y="214" class="cardTitle">Subsystem B</text>
+  <text x="1206" y="248" class="body">Intervention-conditioned law</text>
+  <text x="1206" y="289" class="eq">P<tspan baseline-shift="sub" font-size="14">B</tspan><tspan baseline-shift="super" font-size="14">uᵦ,τ</tspan></text>
+  <text x="1206" y="332" class="small">Own interventions and response blocks</text>
+
+  <rect x="525" y="175" width="550" height="205" rx="18" fill="#faf8ff" stroke="#7c3aed" stroke-width="1.6"/>
+  <text x="558" y="214" class="cardTitle">Independent composition</text>
+  <text x="558" y="251" class="body">Joint response factorizes across the declared split:</text>
+  <text x="558" y="298" class="eq">P<tspan baseline-shift="sub" font-size="14">A⊗B</tspan><tspan baseline-shift="super" font-size="14">(uₐ,uᵦ),τ</tspan> = P<tspan baseline-shift="sub" font-size="14">A</tspan><tspan baseline-shift="super" font-size="14">uₐ,τ</tspan> ⊗ P<tspan baseline-shift="sub" font-size="14">B</tspan><tspan baseline-shift="super" font-size="14">uᵦ,τ</tspan></text>
+  <text x="558" y="343" class="small">Physical null model for independent response organization</text>
+
+  <path class="arrow" d="M422 278 H513"/>
+  <path class="arrow" d="M1178 278 H1087"/>
+
+  <text x="72" y="433" class="section">B. EXACT CONSEQUENCES OF INDEPENDENCE</text>
+
+  <rect x="72" y="458" width="450" height="190" rx="18" fill="#f5fcfd" stroke="#0891b2" stroke-width="1.5"/>
+  <text x="100" y="497" class="cardTitle">No cross-system directed influence</text>
+  <text x="100" y="534" class="body">Changing an A intervention while B is fixed</text>
+  <text x="100" y="562" class="body">cannot change a B marginal response.</text>
+  <text x="100" y="606" class="eq">A<tspan baseline-shift="sub" font-size="14">i∈A,j∈B</tspan>(τ) = 0</text>
+
+  <rect x="575" y="458" width="450" height="190" rx="18" fill="#fffdf5" stroke="#ca8a04" stroke-width="1.5"/>
+  <text x="603" y="497" class="cardTitle">Exact subsystem factorization</text>
+  <text x="603" y="534" class="body">Across the complete A|B partition, the joint</text>
+  <text x="603" y="562" class="body">response equals the product of its marginals.</text>
+  <text x="603" y="606" class="eq">κ<tspan baseline-shift="sub" font-size="14">A⊗B</tspan><tspan baseline-shift="super" font-size="14">τ</tspan>(π<tspan baseline-shift="sub" font-size="14">A|B</tspan>) = 0</text>
+
+  <rect x="1078" y="458" width="450" height="190" rx="18" fill="#fff8f9" stroke="#e11d48" stroke-width="1.5"/>
+  <text x="1106" y="497" class="cardTitle">Response-geometry bounds</text>
+  <text x="1106" y="534" class="body">Joint intervention separation cannot be smaller</text>
+  <text x="1106" y="562" class="body">than either subsystem separation.</text>
+  <text x="1106" y="600" class="eqSmall">max{dₐ,dᵦ} ≤ dₐᵦ</text>
+  <text x="1106" y="628" class="eqSmall">dₐᵦ ≤ dₐ + dᵦ − dₐdᵦ</text>
+
+  <text x="72" y="705" class="section">C. DEPARTURE FROM THE NULL MODEL</text>
+
+  <rect x="72" y="730" width="955" height="170" rx="18" fill="#f8fafc" stroke="#64748b" stroke-width="1.5"/>
+  <text x="100" y="769" class="cardTitle">Response-level coupling defect</text>
+  <text x="100" y="804" class="body">Compare each observed joint response with the product of its measured subsystem marginals.</text>
+  <text x="100" y="850" class="eqSmall">χ<tspan baseline-shift="sub" font-size="12">A|B</tspan>(τ) = sup<tspan baseline-shift="sub" font-size="12">uₐ,uᵦ</tspan> ‖P<tspan baseline-shift="sub" font-size="12">AB</tspan> − P<tspan baseline-shift="sub" font-size="12">A,marg</tspan> ⊗ P<tspan baseline-shift="sub" font-size="12">B,marg</tspan>‖<tspan baseline-shift="sub" font-size="12">TV</tspan></text>
+  <text x="100" y="883" class="small">χ = 0 certifies response factorization for the declared interventions and observables.</text>
+
+  <rect x="1078" y="730" width="450" height="170" rx="18" fill="#fffaf7" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="1106" y="769" class="cardTitle">Interpretation boundary</text>
+  <text x="1106" y="807" class="body">χ &gt; 0: observed response does not factorize.</text>
+  <text x="1106" y="839" class="body">χ = 0: factorization is certified only for</text>
+  <text x="1106" y="867" class="body">the measured intervention-observable regime.</text>
+
+  <rect x="72" y="925" width="1456" height="38" rx="10" fill="#0f172a"/>
+  <text x="94" y="950" style="font:600 14px Inter,Segoe UI,Arial,sans-serif;fill:#e2e8f0">Physical composition theorem only: an experiential composition rule requires an additional independently tested bridge principle.</text>
+</svg>
