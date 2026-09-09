@@ -81,6 +81,7 @@
   <path class="arrow" d="M1295 590 V650 H800 V688"/>
 
   <rect x="95" y="970" width="1410" height="70" rx="14" fill="#0f172a"/>
-  <text x="125" y="999" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">OPEN BRIDGE FRONTIER</text>
-  <text x="125" y="1025" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Independent experiential formalization, finite-sample residual certification, omitted-physics controls, and falsifiable bridge predictions remain required.</text>
+  <text x="125" y="995" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">OPEN BRIDGE FRONTIER</text>
+  <text x="125" y="1018" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Independent experiential formalization, residual certification, and omitted-physics controls remain required.</text>
+  <text x="125" y="1037" style="font:400 12px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">Falsifiable bridge predictions remain an open research target.</text>
 </svg>
