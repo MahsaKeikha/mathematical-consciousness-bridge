@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1760" viewBox="0 0 1800 1760" role="img" aria-labelledby="title desc">
   <title id="title">Theorem roadmap through Proposition 18</title>
-  <desc id="desc">Publication-style theorem roadmap from representation invariance and identifiability through recovery, intervention-resolved causal structure, temporal certification, composition, coarse-graining, and scale sufficiency.</desc>
+  <desc id="desc">Publication-style roadmap from representation invariance and identifiability through finite-data recovery, causal structure, temporal certification, composition, coarse-graining, and scale sufficiency.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
       <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
@@ -17,202 +17,46 @@
       .divider{stroke:#d7dee8;stroke-width:1}
     </style>
   </defs>
-
   <rect width="1800" height="1760" fill="#ffffff"/>
   <text x="80" y="68" class="title">Theorem Roadmap — Propositions 1 through 18</text>
   <text x="80" y="104" class="subtitle">Each layer resolves a separate mathematical problem before the still-open physical-to-experiential bridge.</text>
 
   <text x="80" y="150" class="section">A. REPRESENTATION + IDENTIFIABILITY</text>
-
-  <g>
-    <rect x="80" y="172" width="520" height="190" rx="16" fill="#f7fbff" stroke="#3b82f6"/>
-    <circle cx="114" cy="207" r="20" fill="#3b82f6"/><text x="104" y="212" class="num">P1</text>
-    <text x="150" y="205" class="cardTitle">Representation invariance</text>
-    <line x1="106" y1="228" x2="574" y2="228" class="divider"/>
-    <text x="106" y="260" class="copy">Equivalent physical descriptions must preserve the bridge assignment.</text>
-    <text x="106" y="301" class="math">p ~P p'  implies  B(p)=B(p')</text>
-  </g>
-
-  <g>
-    <rect x="640" y="172" width="520" height="190" rx="16" fill="#fffdf5" stroke="#ca8a04"/>
-    <circle cx="674" cy="207" r="20" fill="#ca8a04"/><text x="664" y="212" class="num">P2</text>
-    <text x="710" y="205" class="cardTitle">Bridge identifiability</text>
-    <line x1="666" y1="228" x2="1134" y2="228" class="divider"/>
-    <text x="666" y="260" class="copy">Total variation measures theory separation over a declared experiment class.</text>
-    <text x="666" y="301" class="math">Delta_Pi = sup_pi TV(P1,P2)</text>
-  </g>
-
-  <g>
-    <rect x="1200" y="172" width="520" height="190" rx="16" fill="#fffdf5" stroke="#ca8a04"/>
-    <circle cx="1234" cy="207" r="20" fill="#ca8a04"/><text x="1224" y="212" class="num">P3</text>
-    <text x="1270" y="205" class="cardTitle">Observational equivalence</text>
-    <line x1="1226" y1="228" x2="1694" y2="228" class="divider"/>
-    <text x="1226" y="260" class="copy">Observable fingerprints define experiment-relative theory equivalence classes.</text>
-    <text x="1226" y="301" class="math">Theta / ~Pi,q  isomorphic to  Im(Phi_Pi,q)</text>
-  </g>
-
+  <g><rect x="80" y="172" width="520" height="190" rx="16" fill="#f7fbff" stroke="#3b82f6"/><circle cx="114" cy="207" r="20" fill="#3b82f6"/><text x="104" y="212" class="num">P1</text><text x="150" y="205" class="cardTitle">Representation invariance</text><line x1="106" y1="228" x2="574" y2="228" class="divider"/><text x="106" y="260" class="copy">Equivalent physical descriptions preserve the bridge assignment.</text><text x="106" y="301" class="math">p ~P p' implies B(p)=B(p')</text></g>
+  <g><rect x="640" y="172" width="520" height="190" rx="16" fill="#fffdf5" stroke="#ca8a04"/><circle cx="674" cy="207" r="20" fill="#ca8a04"/><text x="664" y="212" class="num">P2</text><text x="710" y="205" class="cardTitle">Bridge identifiability</text><line x1="666" y1="228" x2="1134" y2="228" class="divider"/><text x="666" y="260" class="copy">Total variation measures theory separation over a declared experiment class.</text><text x="666" y="301" class="math">ΔΠ = supπ TV(P1,P2)</text></g>
+  <g><rect x="1200" y="172" width="520" height="190" rx="16" fill="#fffdf5" stroke="#ca8a04"/><circle cx="1234" cy="207" r="20" fill="#ca8a04"/><text x="1224" y="212" class="num">P3</text><text x="1270" y="205" class="cardTitle">Observational equivalence</text><line x1="1226" y1="228" x2="1694" y2="228" class="divider"/><text x="1226" y="260" class="copy">Observable fingerprints define experiment-relative theory classes.</text><text x="1226" y="301" class="math">Θ / ~Π,q ≅ Im ΦΠ,q</text></g>
   <path class="arrow" d="M600 267 H628"/><path class="arrow" d="M1160 267 H1188"/>
 
   <text x="80" y="418" class="section">B. EXPERIMENT DESIGN + SUFFICIENCY</text>
-
-  <g>
-    <rect x="80" y="440" width="520" height="190" rx="16" fill="#fffdf5" stroke="#ca8a04"/>
-    <circle cx="114" cy="475" r="20" fill="#ca8a04"/><text x="104" y="480" class="num">P4</text>
-    <text x="150" y="473" class="cardTitle">Discriminating experiments</text>
-    <line x1="106" y1="496" x2="574" y2="496" class="divider"/>
-    <text x="106" y="528" class="copy">Maximin and set-cover design choose protocols that resolve theory pairs.</text>
-    <text x="106" y="569" class="math">U(S)&gt;0  iff  all required pairs are covered</text>
-  </g>
-
-  <g>
-    <rect x="640" y="440" width="520" height="190" rx="16" fill="#f5fcf8" stroke="#059669"/>
-    <circle cx="674" cy="475" r="20" fill="#059669"/><text x="664" y="480" class="num">P5</text>
-    <text x="710" y="473" class="cardTitle">Physical-feature sufficiency</text>
-    <line x1="666" y1="496" x2="1134" y2="496" class="divider"/>
-    <text x="666" y="528" class="copy">A feature is sufficient only if its fibers do not split bridge classes.</text>
-    <text x="666" y="569" class="math">Bbar = g o F</text>
-  </g>
-
-  <g>
-    <rect x="1200" y="440" width="520" height="190" rx="16" fill="#f5fcf8" stroke="#059669"/>
-    <circle cx="1234" cy="475" r="20" fill="#059669"/><text x="1224" y="480" class="num">P6</text>
-    <text x="1270" y="473" class="cardTitle">Canonical complete signature</text>
-    <line x1="1226" y1="496" x2="1694" y2="496" class="divider"/>
-    <text x="1226" y="528" class="copy">Bridge equivalence classes define the exact physical completeness target.</text>
-    <text x="1226" y="569" class="math">C_B(p)=C_B(p')  iff  Bbar(p)=Bbar(p')</text>
-  </g>
-
-  <path class="arrow" d="M1460 362 V405 H340 V428"/>
-  <path class="arrow" d="M600 535 H628"/><path class="arrow" d="M1160 535 H1188"/>
+  <g><rect x="80" y="440" width="520" height="190" rx="16" fill="#fffdf5" stroke="#ca8a04"/><circle cx="114" cy="475" r="20" fill="#ca8a04"/><text x="104" y="480" class="num">P4</text><text x="150" y="473" class="cardTitle">Discriminating experiments</text><line x1="106" y1="496" x2="574" y2="496" class="divider"/><text x="106" y="528" class="copy">Maximin and set-cover design select protocols that resolve theory pairs.</text><text x="106" y="569" class="math">U(S)&gt;0 iff all required pairs are covered</text></g>
+  <g><rect x="640" y="440" width="520" height="190" rx="16" fill="#f5fcf8" stroke="#059669"/><circle cx="674" cy="475" r="20" fill="#059669"/><text x="664" y="480" class="num">P5</text><text x="710" y="473" class="cardTitle">Physical-feature sufficiency</text><line x1="666" y1="496" x2="1134" y2="496" class="divider"/><text x="666" y="528" class="copy">A sufficient feature cannot split a single bridge-equivalence class.</text><text x="666" y="569" class="math">B̄ = g ∘ F</text></g>
+  <g><rect x="1200" y="440" width="520" height="190" rx="16" fill="#f5fcf8" stroke="#059669"/><circle cx="1234" cy="475" r="20" fill="#059669"/><text x="1224" y="480" class="num">P6</text><text x="1270" y="473" class="cardTitle">Canonical complete signature</text><line x1="1226" y1="496" x2="1694" y2="496" class="divider"/><text x="1226" y="528" class="copy">Bridge-equivalence classes define the exact completeness target.</text><text x="1226" y="569" class="math">CB(p)=CB(p') iff B̄(p)=B̄(p')</text></g>
+  <path class="arrow" d="M1460 362 V405 H340 V428"/><path class="arrow" d="M600 535 H628"/><path class="arrow" d="M1160 535 H1188"/>
 
   <text x="80" y="686" class="section">C. RECOVERABILITY + FINITE DATA</text>
-
-  <g>
-    <rect x="80" y="708" width="520" height="190" rx="16" fill="#faf8ff" stroke="#7c3aed"/>
-    <circle cx="114" cy="743" r="20" fill="#7c3aed"/><text x="104" y="748" class="num">P7</text>
-    <text x="150" y="741" class="cardTitle">Experimental recoverability</text>
-    <line x1="106" y1="764" x2="574" y2="764" class="divider"/>
-    <text x="106" y="796" class="copy">Observable fingerprints must determine the target physical signature.</text>
-    <text x="106" y="837" class="math">Psi(p)=Psi(p')  implies  F*(p)=F*(p')</text>
-  </g>
-
-  <g>
-    <rect x="640" y="708" width="520" height="190" rx="16" fill="#faf8ff" stroke="#7c3aed"/>
-    <circle cx="674" cy="743" r="20" fill="#7c3aed"/><text x="664" y="748" class="num">P8</text>
-    <text x="710" y="741" class="cardTitle">Robust finite-error recovery</text>
-    <line x1="666" y1="764" x2="1134" y2="764" class="divider"/>
-    <text x="666" y="796" class="copy">Between-class separation must dominate nuisance spread and estimation error.</text>
-    <text x="666" y="837" class="math">gamma_S &gt; 4 epsilon</text>
-  </g>
-
-  <g>
-    <rect x="1200" y="708" width="520" height="190" rx="16" fill="#faf8ff" stroke="#7c3aed"/>
-    <circle cx="1234" cy="743" r="20" fill="#7c3aed"/><text x="1224" y="748" class="num">P9</text>
-    <text x="1270" y="741" class="cardTitle">Categorical sample complexity</text>
-    <line x1="1226" y1="764" x2="1694" y2="764" class="divider"/>
-    <text x="1226" y="796" class="copy">Finite trial counts certify recovery at a declared confidence level.</text>
-    <text x="1226" y="837" class="math">n scales as gamma_S^-2 log(1/alpha)</text>
-  </g>
-
-  <path class="arrow" d="M1460 630 V673 H340 V696"/>
-  <path class="arrow" d="M600 803 H628"/><path class="arrow" d="M1160 803 H1188"/>
+  <g><rect x="80" y="708" width="520" height="190" rx="16" fill="#faf8ff" stroke="#7c3aed"/><circle cx="114" cy="743" r="20" fill="#7c3aed"/><text x="104" y="748" class="num">P7</text><text x="150" y="741" class="cardTitle">Experimental recoverability</text><line x1="106" y1="764" x2="574" y2="764" class="divider"/><text x="106" y="796" class="copy">Observable fingerprints must determine the target physical signature.</text><text x="106" y="837" class="math">Ψ(p)=Ψ(p') implies F*(p)=F*(p')</text></g>
+  <g><rect x="640" y="708" width="520" height="190" rx="16" fill="#faf8ff" stroke="#7c3aed"/><circle cx="674" cy="743" r="20" fill="#7c3aed"/><text x="664" y="748" class="num">P8</text><text x="710" y="741" class="cardTitle">Robust finite-error recovery</text><line x1="666" y1="764" x2="1134" y2="764" class="divider"/><text x="666" y="796" class="copy">Separation must dominate nuisance spread and estimation error.</text><text x="666" y="837" class="math">γS &gt; 4 ε</text></g>
+  <g><rect x="1200" y="708" width="520" height="190" rx="16" fill="#faf8ff" stroke="#7c3aed"/><circle cx="1234" cy="743" r="20" fill="#7c3aed"/><text x="1224" y="748" class="num">P9</text><text x="1270" y="741" class="cardTitle">Categorical sample complexity</text><line x1="1226" y1="764" x2="1694" y2="764" class="divider"/><text x="1226" y="796" class="copy">Finite trial counts certify recovery at a declared confidence level.</text><text x="1226" y="837" class="math">n scales as γS⁻² log(1/α)</text></g>
+  <path class="arrow" d="M1460 630 V673 H340 V696"/><path class="arrow" d="M600 803 H628"/><path class="arrow" d="M1160 803 H1188"/>
 
   <text x="80" y="954" class="section">D. ROBUST DESIGN + PHYSICAL CANDIDATE + FIRST NO-GO</text>
-
-  <g>
-    <rect x="80" y="976" width="520" height="190" rx="16" fill="#faf8ff" stroke="#7c3aed"/>
-    <circle cx="114" cy="1011" r="20" fill="#7c3aed"/><text x="100" y="1016" class="num">P10</text>
-    <text x="150" y="1009" class="cardTitle">Robust protocol design</text>
-    <line x1="106" y1="1032" x2="574" y2="1032" class="divider"/>
-    <text x="106" y="1064" class="copy">A new protocol helps only when signal gain exceeds nuisance inflation.</text>
-    <text x="106" y="1105" class="math">Delta Gamma = gain - inflation</text>
-  </g>
-
-  <g>
-    <rect x="640" y="976" width="520" height="190" rx="16" fill="#f5fcfd" stroke="#0891b2"/>
-    <circle cx="674" cy="1011" r="20" fill="#0891b2"/><text x="660" y="1016" class="num">P11</text>
-    <text x="710" y="1009" class="cardTitle">Intervention-resolved causal structure</text>
-    <line x1="666" y1="1032" x2="1134" y2="1032" class="divider"/>
-    <text x="666" y="1064" class="copy">Retains response geometry, directed influence, and partition irreducibility.</text>
-    <text x="666" y="1105" class="math">F_causal(p) = [C_p]_cong</text>
-  </g>
-
-  <g>
-    <rect x="1200" y="976" width="520" height="190" rx="16" fill="#fff8f9" stroke="#e11d48"/>
-    <circle cx="1234" cy="1011" r="20" fill="#e11d48"/><text x="1220" y="1016" class="num">P12</text>
-    <text x="1270" y="1009" class="cardTitle">Single-component insufficiency</text>
-    <line x1="1226" y1="1032" x2="1694" y2="1032" class="divider"/>
-    <text x="1226" y="1064" class="copy">Constructive collisions show that single components and simple scalars fail.</text>
-    <text x="1226" y="1105" class="math">H(x)=H(x'), F(x) != F(x')</text>
-  </g>
-
-  <path class="arrow" d="M1460 898 V941 H340 V964"/>
-  <path class="arrow" d="M600 1071 H628"/><path class="arrow" d="M1160 1071 H1188"/>
+  <g><rect x="80" y="976" width="520" height="190" rx="16" fill="#faf8ff" stroke="#7c3aed"/><circle cx="114" cy="1011" r="20" fill="#7c3aed"/><text x="100" y="1016" class="num">P10</text><text x="150" y="1009" class="cardTitle">Robust protocol design</text><line x1="106" y1="1032" x2="574" y2="1032" class="divider"/><text x="106" y="1064" class="copy">A new protocol helps only when signal gain exceeds nuisance inflation.</text><text x="106" y="1105" class="math">ΔΓ = gain − inflation</text></g>
+  <g><rect x="640" y="976" width="520" height="190" rx="16" fill="#f5fcfd" stroke="#0891b2"/><circle cx="674" cy="1011" r="20" fill="#0891b2"/><text x="660" y="1016" class="num">P11</text><text x="710" y="1009" class="cardTitle">Intervention-resolved causal structure</text><line x1="666" y1="1032" x2="1134" y2="1032" class="divider"/><text x="666" y="1064" class="copy">Retains response geometry, directed influence, and partition irreducibility.</text><text x="666" y="1105" class="math">Fcausal(p) = [Cp]≅</text></g>
+  <g><rect x="1200" y="976" width="520" height="190" rx="16" fill="#fff8f9" stroke="#e11d48"/><circle cx="1234" cy="1011" r="20" fill="#e11d48"/><text x="1220" y="1016" class="num">P12</text><text x="1270" y="1009" class="cardTitle">Single-component insufficiency</text><line x1="1226" y1="1032" x2="1694" y2="1032" class="divider"/><text x="1226" y="1064" class="copy">Constructive collisions defeat single components and simple scalars.</text><text x="1226" y="1105" class="math">H(x)=H(x'), F(x)≠F(x')</text></g>
+  <path class="arrow" d="M1460 898 V941 H340 V964"/><path class="arrow" d="M600 1071 H628"/><path class="arrow" d="M1160 1071 H1188"/>
 
   <text x="80" y="1222" class="section">E. IRREDUNDANCY + TEMPORAL STRUCTURE</text>
-
-  <g>
-    <rect x="80" y="1244" width="520" height="190" rx="16" fill="#fffaf7" stroke="#ea580c"/>
-    <circle cx="114" cy="1279" r="20" fill="#ea580c"/><text x="100" y="1284" class="num">P13</text>
-    <text x="150" y="1277" class="cardTitle">Pairwise component irredundancy</text>
-    <line x1="106" y1="1300" x2="574" y2="1300" class="divider"/>
-    <text x="106" y="1332" class="copy">Every two-component projection admits a collision on the audit domain.</text>
-    <text x="106" y="1373" class="math">(G,A), (G,K), (A,K) are incomplete</text>
-  </g>
-
-  <g>
-    <rect x="640" y="1244" width="520" height="190" rx="16" fill="#f5fcf8" stroke="#059669"/>
-    <circle cx="674" cy="1279" r="20" fill="#059669"/><text x="660" y="1284" class="num">P14</text>
-    <text x="710" y="1277" class="cardTitle">Temporal continuation</text>
-    <line x1="666" y1="1300" x2="1134" y2="1300" class="divider"/>
-    <text x="666" y="1332" class="copy">Admissible relabelings are aligned before structural states are compared.</text>
-    <text x="666" y="1373" class="math">Dbar([c],[c']) = min_h D(c,hc')</text>
-  </g>
-
-  <g>
-    <rect x="1200" y="1244" width="520" height="190" rx="16" fill="#faf8ff" stroke="#7c3aed"/>
-    <circle cx="1234" cy="1279" r="20" fill="#7c3aed"/><text x="1220" y="1284" class="num">P15</text>
-    <text x="1270" y="1277" class="cardTitle">Finite-error temporal certification</text>
-    <line x1="1226" y1="1300" x2="1694" y2="1300" class="divider"/>
-    <text x="1226" y="1332" class="copy">Fingerprint uncertainty propagates to certified temporal-distance intervals.</text>
-    <text x="1226" y="1373" class="math">|dhat-d| &lt;= epsilon_s + epsilon_t</text>
-  </g>
-
-  <path class="arrow" d="M1460 1166 V1209 H340 V1232"/>
-  <path class="arrow" d="M600 1339 H628"/><path class="arrow" d="M1160 1339 H1188"/>
+  <g><rect x="80" y="1244" width="520" height="190" rx="16" fill="#fffaf7" stroke="#ea580c"/><circle cx="114" cy="1279" r="20" fill="#ea580c"/><text x="100" y="1284" class="num">P13</text><text x="150" y="1277" class="cardTitle">Pairwise component irredundancy</text><line x1="106" y1="1300" x2="574" y2="1300" class="divider"/><text x="106" y="1332" class="copy">Every two-component projection admits a collision on the audit domain.</text><text x="106" y="1373" class="math">(G,A), (G,K), (A,K) are incomplete</text></g>
+  <g><rect x="640" y="1244" width="520" height="190" rx="16" fill="#f5fcf8" stroke="#059669"/><circle cx="674" cy="1279" r="20" fill="#059669"/><text x="660" y="1284" class="num">P14</text><text x="710" y="1277" class="cardTitle">Temporal continuation</text><line x1="666" y1="1300" x2="1134" y2="1300" class="divider"/><text x="666" y="1332" class="copy">Admissible relabelings are aligned before structural states are compared.</text><text x="666" y="1373" class="math">D̄([c],[c']) = minₕ D(c,hc')</text></g>
+  <g><rect x="1200" y="1244" width="520" height="190" rx="16" fill="#faf8ff" stroke="#7c3aed"/><circle cx="1234" cy="1279" r="20" fill="#7c3aed"/><text x="1220" y="1284" class="num">P15</text><text x="1270" y="1277" class="cardTitle">Finite-error temporal certification</text><line x1="1226" y1="1300" x2="1694" y2="1300" class="divider"/><text x="1226" y="1332" class="copy">Fingerprint uncertainty yields certified temporal-distance intervals.</text><text x="1226" y="1373" class="math">|d̂−d| ≤ εs + εt</text></g>
+  <path class="arrow" d="M1460 1166 V1209 H340 V1232"/><path class="arrow" d="M600 1339 H628"/><path class="arrow" d="M1160 1339 H1188"/>
 
   <text x="80" y="1490" class="section">F. COMPOSITION + SCALE LOSS + SCALE SUFFICIENCY</text>
+  <g><rect x="80" y="1512" width="520" height="190" rx="16" fill="#f5fcfd" stroke="#0891b2"/><circle cx="114" cy="1547" r="20" fill="#0891b2"/><text x="100" y="1552" class="num">P16</text><text x="150" y="1545" class="cardTitle">Composition and coupling</text><line x1="106" y1="1568" x2="574" y2="1568" class="divider"/><text x="106" y="1600" class="copy">Independent product response is the null for two coexisting systems.</text><text x="106" y="1641" class="math">χA|B = κAB(πA|B)</text></g>
+  <g><rect x="640" y="1512" width="520" height="190" rx="16" fill="#fff8f9" stroke="#e11d48"/><circle cx="674" cy="1547" r="20" fill="#e11d48"/><text x="660" y="1552" class="num">P17</text><text x="710" y="1545" class="cardTitle">Coarse-graining and scale loss</text><line x1="666" y1="1568" x2="1134" y2="1568" class="divider"/><text x="666" y="1600" class="copy">Deterministic scale reduction contracts TV and can erase distinctions.</text><text x="666" y="1641" class="math">TV(C#P,C#Q) ≤ TV(P,Q)</text></g>
+  <g><rect x="1200" y="1512" width="520" height="190" rx="16" fill="#f5fcf8" stroke="#059669" stroke-width="2"/><circle cx="1234" cy="1547" r="20" fill="#059669"/><text x="1220" y="1552" class="num">P18</text><text x="1270" y="1545" class="cardTitle">Scale sufficiency by reconstruction</text><line x1="1226" y1="1568" x2="1694" y2="1568" class="divider"/><text x="1226" y="1600" class="copy">Small reconstruction defect certifies bounded response-geometry loss.</text><text x="1226" y="1641" class="math">δc ≥ δf − 2ρF</text></g>
+  <path class="arrow" d="M1460 1434 V1477 H340 V1500"/><path class="arrow" d="M600 1607 H628"/><path class="arrow" d="M1160 1607 H1188"/>
 
-  <g>
-    <rect x="80" y="1512" width="520" height="190" rx="16" fill="#f5fcfd" stroke="#0891b2"/>
-    <circle cx="114" cy="1547" r="20" fill="#0891b2"/><text x="100" y="1552" class="num">P16</text>
-    <text x="150" y="1545" class="cardTitle">Composition and coupling</text>
-    <line x1="106" y1="1568" x2="574" y2="1568" class="divider"/>
-    <text x="106" y="1600" class="copy">Independent product response is the null; coupling is departure from factorization.</text>
-    <text x="106" y="1641" class="math">chi_A|B = kappa_AB(pi_A|B)</text>
-  </g>
-
-  <g>
-    <rect x="640" y="1512" width="520" height="190" rx="16" fill="#fff8f9" stroke="#e11d48"/>
-    <circle cx="674" cy="1547" r="20" fill="#e11d48"/><text x="660" y="1552" class="num">P17</text>
-    <text x="710" y="1545" class="cardTitle">Coarse-graining and scale loss</text>
-    <line x1="666" y1="1568" x2="1134" y2="1568" class="divider"/>
-    <text x="666" y="1600" class="copy">Deterministic scale reduction contracts TV and can erase distinctions exactly.</text>
-    <text x="666" y="1641" class="math">TV(C#P,C#Q) &lt;= TV(P,Q)</text>
-  </g>
-
-  <g>
-    <rect x="1200" y="1512" width="520" height="190" rx="16" fill="#f5fcf8" stroke="#059669" stroke-width="2"/>
-    <circle cx="1234" cy="1547" r="20" fill="#059669"/><text x="1220" y="1552" class="num">P18</text>
-    <text x="1270" y="1545" class="cardTitle">Scale sufficiency by reconstruction</text>
-    <line x1="1226" y1="1568" x2="1694" y2="1568" class="divider"/>
-    <text x="1226" y="1600" class="copy">Small reconstruction defect certifies controlled response-geometry loss.</text>
-    <text x="1226" y="1641" class="math">delta_c &gt;= delta_f - 2 rho_F</text>
-  </g>
-
-  <path class="arrow" d="M1460 1434 V1477 H340 V1500"/>
-  <path class="arrow" d="M600 1607 H628"/><path class="arrow" d="M1160 1607 H1188"/>
-
-  <text x="80" y="1720" style="font:600 15px Inter,Segoe UI,Arial,sans-serif;fill:#475569">Open frontier: extend scale certification to directed influence and partition structure.</text>
-  <text x="80" y="1742" style="font:600 15px Inter,Segoe UI,Arial,sans-serif;fill:#475569">Then connect the certified physical chain to an independently formalized experiential domain.</text>
+  <text x="80" y="1720" style="font:600 15px Inter,Segoe UI,Arial,sans-serif;fill:#475569">Open frontier: extend scale certification to quantum operational structure, directed influence, and partition structure.</text>
+  <text x="80" y="1742" style="font:600 15px Inter,Segoe UI,Arial,sans-serif;fill:#475569">Then test whether an independently formalized experiential domain is reducible to the complete physical description.</text>
 </svg>
