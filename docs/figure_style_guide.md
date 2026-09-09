@@ -112,7 +112,9 @@ Before a figure is considered canonical:
 4. confirm no arrow crosses text;
 5. confirm no text touches or leaves a card;
 6. confirm the figure is cited or explained in the relevant Markdown page;
-7. run `pytest` and `ruff check .`.
+7. run `pytest` and `ruff check .` on Python 3.10, 3.11, and 3.12.
+
+A canonical visual checkpoint is not complete until the full three-version CI matrix is green on the same repository head.
 
 The automated tests are a minimum safety net. Visual inspection remains required because rendered font metrics can differ across environments.
 
