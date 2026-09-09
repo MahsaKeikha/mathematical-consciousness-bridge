@@ -1,7 +1,7 @@
 # Mathematical Consciousness Bridge
 
 [![tests](https://github.com/MahsaKeikha/mathematical-consciousness-bridge/actions/workflows/test.yml/badge.svg)](https://github.com/MahsaKeikha/mathematical-consciousness-bridge/actions/workflows/test.yml)
-[![version](https://img.shields.io/badge/version-0.24.0-2563eb)](CITATION.cff)
+[![version](https://img.shields.io/badge/version-0.25.0-2563eb)](CITATION.cff)
 [![license](https://img.shields.io/badge/license-MIT-059669)](LICENSE)
 
 **Mahsa Keikha, PhD**
@@ -40,11 +40,11 @@ This project continues **[Spatiotemporal Observer Mathematics](https://github.co
 
 Physics can describe states, fields, probability amplitudes, density operators, spacetime, Hamiltonians, open-system dynamics, thermodynamics, interventions, measurements, and statistical predictions without by itself defining subjective experience. A mathematically serious consciousness theory therefore requires a separately specified bridge between physically meaningful equivalence classes and formally defined experiential equivalence classes.
 
-The program here makes that bridge itself an object of mathematics. Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design. **P11** introduces intervention-resolved causal structure as a structured physical candidate rather than a scalar. **P12-P13** prove constructive insufficiency and component irredundancy results. **P14-P15** formalize temporal continuation and finite-error temporal certification. **P16** gives an independent-composition null model and response-level coupling defect. **P17** proves total-variation contraction and exact refinement ambiguity under deterministic coarse-graining. **P18** proves a quantitative scale-sufficiency certificate based on approximate reconstruction. **P19** proves exact deterministic and stochastic criteria for whether an independently defined target factors through a declared physical descriptor, together with a differential no-go test. **P20** converts the P19 stochastic population residual into an explicit finite-sample confidence certificate under a declared finite-alphabet IID model. **P21** then proves how that residual behaves under nested physical-descriptor refinement: unresolved deterministic collisions can only disappear, while the stochastic residual decreases by exactly the target-relevant information supplied by the added physical detail. **P22** gives a simultaneous finite-sample certificate for the entire declared refinement chain from one shared confidence event on the empirical physical-target law. **P23** proves that the same shared base confidence event also supports fixed-sample data-dependent selection among admissible deterministic refinements, together with an explicit near-optimality bound for the selected refinement. **P24** converts that fixed-sample result into an anytime-valid certificate by allocating the total error budget across all positive sample sizes, giving simultaneous repeated-look and finite stopping-time validity under the declared finite-alphabet IID model.
+The program here makes that bridge itself an object of mathematics. Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design. **P11** introduces intervention-resolved causal structure as a structured physical candidate rather than a scalar. **P12-P13** prove constructive insufficiency and component irredundancy results. **P14-P15** formalize temporal continuation and finite-error temporal certification. **P16** gives an independent-composition null model and response-level coupling defect. **P17** proves total-variation contraction and exact refinement ambiguity under deterministic coarse-graining. **P18** proves a quantitative scale-sufficiency certificate based on approximate reconstruction. **P19** proves exact deterministic and stochastic criteria for whether an independently defined target factors through a declared physical descriptor, together with a differential no-go test. **P20** converts the P19 stochastic population residual into an explicit finite-sample confidence certificate under a declared finite-alphabet IID model. **P21** then proves how that residual behaves under nested physical-descriptor refinement: unresolved deterministic collisions can only disappear, while the stochastic residual decreases by exactly the target-relevant information supplied by the added physical detail. **P22** gives a simultaneous finite-sample certificate for the entire declared refinement chain from one shared confidence event on the empirical physical-target law. **P23** proves that the same shared base confidence event also supports fixed-sample data-dependent selection among admissible deterministic refinements, together with an explicit near-optimality bound for the selected refinement. **P24** converts that fixed-sample result into an anytime-valid certificate by allocating the total error budget across all positive sample sizes, giving simultaneous repeated-look and finite stopping-time validity under the declared finite-alphabet IID model. **P25** returns to the P11 physical candidate and proves a directed-influence scale theorem: deterministic target coarse observation cannot increase matched-intervention influence, and P18 reconstruction defect bounds the loss by twice the uniform reconstruction error.
 
 A new quantum-foundations layer now asks a sharper question. Suppose the declared quantum description is operationally complete with respect to the state, admissible channels, and all declared measurement statistics. What exact mathematical evidence would be required to show that an independently defined experiential variable does **not** factor through that quantum operational state? This is formulated as an open non-reducibility theorem target. It is not an assumption that consciousness is quantum or that quantum theory is incomplete.
 
-The public research record now contains **24 proposition-level results, 58 equation-driven quantitative figures, quantum and classical physical maps, reproducible numerical examples, counterexamples, and a multi-version Python test matrix**.
+The public research record now contains **25 proposition-level results, 58 equation-driven quantitative figures, quantum and classical physical maps, reproducible numerical examples, counterexamples, and a multi-version Python test matrix**.
 
 ---
 
@@ -81,7 +81,7 @@ A reader should not need to search the repository to understand the argument. Th
 
 | What you want to inspect | Direct link | What is there |
 | --- | --- | --- |
-| complete theorem chain | [Theorem Roadmap](docs/theorem_roadmap.md) | P1 through P24 in dependency order |
+| complete theorem chain | [Theorem Roadmap](docs/theorem_roadmap.md) | P1 through P25 with explicit dependency branches |
 | equation provenance | [Equation and Citation Map](docs/equation_and_citation_map.md) | standard results, repository definitions, proofs, and external sources separated explicitly |
 | population physical-sufficiency theorem | [Proposition 19](docs/proposition_19_fundamental_physical_sufficiency.md) | deterministic factorization, stochastic sufficiency, and local rank obstruction |
 | finite-sample residual theorem | [Proposition 20](docs/proposition_20_finite_sample_residual_certification.md) | confidence interval for the P19 conditional-information residual |
@@ -89,6 +89,7 @@ A reader should not need to search the repository to understand the argument. Th
 | simultaneous refinement-chain theorem | [Proposition 22](docs/proposition_22_simultaneous_refinement_chain_certification.md) | one confidence event controlling the full residual-and-gain trajectory |
 | adaptive refinement-selection theorem | [Proposition 23](docs/proposition_23_adaptive_descriptor_selection_certification.md) | fixed-sample post-selection validity and refinement-regret control |
 | anytime refinement theorem | [Proposition 24](docs/proposition_24_anytime_adaptive_refinement_certification.md) | repeated-look, adaptive-selection, and finite stopping-time validity |
+| directed-influence scale theorem | [Proposition 25](docs/proposition_25_directed_influence_scale_certification.md) | P11 directed influence under P18 reconstruction-controlled target coarse observation |
 | fundamental-theory program | [Fundamental Theory to Consciousness](docs/fundamental_theory_consciousness_program.md) | candidate fundamental state, physical quotients, experiential quotient, and falsifiable bridge program |
 | stochastic extension | [Stochastic Fundamental Bridge](docs/stochastic_fundamental_bridge.md) | Markov-kernel and conditional-information formulation |
 | empirical falsification | [Falsification Program](docs/falsification_program.md) | conditions that would weaken or defeat a bridge claim |
@@ -101,6 +102,7 @@ A reader should not need to search the repository to understand the argument. Th
 | implementation of P22 | [refinement_chain_certification.py](src/consciousness_bridge/refinement_chain_certification.py) | simultaneous finite-sample refinement-chain confidence certificate |
 | implementation of P23 | [adaptive_descriptor_selection.py](src/consciousness_bridge/adaptive_descriptor_selection.py) | adaptive fixed-sample descriptor-selection and regret certificate |
 | implementation of P24 | [anytime_refinement_certification.py](src/consciousness_bridge/anytime_refinement_certification.py) | anytime-valid adaptive refinement and stopping-time certificate |
+| implementation of P25 | [directed_influence_scale_certification.py](src/consciousness_bridge/directed_influence_scale_certification.py) | directed-influence distortion and threshold-edge scale certificate |
 
 Every local documentation and figure link is checked by automated tests. Broken internal links therefore fail CI instead of remaining silently in the public research record.
 
@@ -128,6 +130,7 @@ Every local documentation and figure link is checked by automated tests. Broken 
 | **9. P14-P15** | How is structure compared through time? |
 | **10. P16** | How do independent systems differ from coupled systems? |
 | **11. P17-P18** | What is lost under coarse-graining, and when is a scale still sufficient? |
+| **11.1 P25 directed-influence scale** | When does P11 directed influence survive target coarse observation? |
 | **12. Observer handoff** | How does world-tube identification feed the bridge program? |
 | **13. Empirical interface** | What do perturbational and state-dependent observations actually constrain? |
 | **14. Competing theories** | How are alternative theories translated into a common empirical interface? |
@@ -141,7 +144,7 @@ Every local documentation and figure link is checked by automated tests. Broken 
 
 | Research record | Current state |
 | --- | ---: |
-| proposition-level results | **24** |
+| proposition-level results | **25** |
 | equation-driven classical/causal quantitative figures | **40** |
 | equation-driven quantum-foundations figures | **18** |
 | total equation-driven quantitative figures | **58** |
@@ -151,7 +154,7 @@ Every local documentation and figure link is checked by automated tests. Broken 
 | fundamental-theory factorization test | **formal open theorem + experiment target** |
 | automated tests | **160+ and expanding** |
 | CI matrix | **Python 3.10, 3.11, 3.12** |
-| research-software version | **0.24.0** |
+| research-software version | **0.25.0** |
 
 ---
 
@@ -1635,7 +1638,7 @@ A complete empirical bridge theory must specify
 
 ---
 
-# 7. Theorem roadmap - P1 through P24
+# 7. Theorem roadmap - P1 through P25
 
 ![Theorem roadmap](docs/figures/theorem_roadmap.svg)
 
@@ -1665,6 +1668,7 @@ A complete empirical bridge theory must specify
 | **P22** | one base confidence event simultaneously certifies the declared residual-and-refinement-gain chain | proved finite-sample theorem | [P22](docs/proposition_22_simultaneous_refinement_chain_certification.md) |
 | **P23** | fixed-sample adaptive descriptor selection retains simultaneous coverage and admits explicit refinement-regret bounds | proved post-selection theorem | [P23](docs/proposition_23_adaptive_descriptor_selection_certification.md) |
 | **P24** | summable alpha spending gives time-uniform adaptive-selection and finite stopping-time validity | proved anytime-valid theorem | [P24](docs/proposition_24_anytime_adaptive_refinement_certification.md) |
+| **P25** | P11 directed influence contracts under target coarse observation, with P18 reconstruction controlling the loss | proved physical scale theorem | [P25](docs/proposition_25_directed_influence_scale_certification.md) |
 
 ---
 
@@ -2051,6 +2055,109 @@ P17 and QM15 express the same broad information-theoretic principle in different
 
 P18 does not automatically certify directed influence, partition structure, intervention semantics, quantum coherence, physical split/merge dynamics, or experiential properties.
 
+## 13.3 P25 - directed-influence scale certification
+
+![P25 directed-influence scale certification](docs/figures/p25_directed_influence_scale_certification.svg)
+
+P25 returns to the P11 directed-influence component and asks whether it survives deterministic coarse observation of the target response. Fix a source block \(i\), target block \(j\), delay \(\tau\), and the same matched intervention-pair family \(\mathcal E_i\) at both observational scales.
+
+The fine directed influence is
+
+\[
+\boxed{
+A_{i\to j}^{f}(\tau)
+=
+\sup_{(u,v)\in\mathcal E_i}
+\|P_j^{u,\tau}-P_j^{v,\tau}\|_{\mathrm{TV}}.
+}
+\]
+
+For deterministic target map \(C_j\), define
+
+\[
+\overline P_j^{u,\tau}=(C_j)_\#P_j^{u,\tau}
+\]
+
+and
+
+\[
+\boxed{
+A_{i\to j}^{c}(\tau)
+=
+\sup_{(u,v)\in\mathcal E_i}
+\|\overline P_j^{u,\tau}-\overline P_j^{v,\tau}\|_{\mathrm{TV}}.
+}
+\]
+
+Total-variation contraction gives the first P25 statement:
+
+\[
+\boxed{
+A_{i\to j}^{c}(\tau)
+\le
+A_{i\to j}^{f}(\tau).
+}
+\]
+
+Thus deterministic target coarse observation cannot manufacture a larger P11 directed-influence value when intervention semantics are held fixed.
+
+Now let \(R_j\) be a P18 fiber-consistent stochastic decoder and define
+
+\[
+\rho_{i\to j}(\tau)
+=
+\sup_u
+\|P_j^{u,\tau}-(R_j)_\#(C_j)_\#P_j^{u,\tau}\|_{\mathrm{TV}},
+\]
+
+where the supremum is over interventions appearing in the matched-pair family. Applying the P18 pairwise distortion theorem before taking the P11 supremum gives
+
+\[
+\boxed{
+0
+\le
+A_{i\to j}^{f}(\tau)-A_{i\to j}^{c}(\tau)
+\le
+2\rho_{i\to j}(\tau).
+}
+\]
+
+Equivalently,
+
+\[
+\boxed{
+A_{i\to j}^{c}(\tau)
+\ge
+A_{i\to j}^{f}(\tau)-2\rho_{i\to j}(\tau).
+}
+\]
+
+Therefore exact reconstruction on the declared response family, \(\rho_{i\to j}(\tau)=0\), gives exact directed-influence preservation even when the target map is globally many-to-one.
+
+For a declared edge threshold \(\theta\), P25 also yields the margin certificate
+
+\[
+\boxed{
+A_{i\to j}^{f}(\tau)>\theta+2\rho_{i\to j}(\tau)
+\Longrightarrow
+A_{i\to j}^{c}(\tau)>\theta.
+}
+\]
+
+Conversely, contraction gives
+
+\[
+A_{i\to j}^{c}(\tau)>\theta
+\Longrightarrow
+A_{i\to j}^{f}(\tau)>\theta.
+\]
+
+So coarse observation cannot create a threshold edge relative to the same fine intervention semantics, while a sufficiently strong fine edge is guaranteed to survive coarse observation.
+
+The theorem has a deliberately narrow physical scope. P25 certifies target-response observation coarse-graining. It does not yet certify source-node aggregation, changed intervention channels, partition irreducibility \(\mathcal K\), genuine physical fusion, the entire P11 structure, physical completeness, or experience.
+
+[Read Proposition 25](docs/proposition_25_directed_influence_scale_certification.md). The [P25 theorem map](docs/figures/p25_directed_influence_scale_certification.svg), [implementation](src/consciousness_bridge/directed_influence_scale_certification.py), and [tests](tests/test_directed_influence_scale_certification.py) expose the complete proof-to-code path.
+
 ---
 
 # 14. Observer-to-bridge handoff
@@ -2187,7 +2294,7 @@ P16 supplies the independent product-response null. A higher-level claim must di
 
 ## Scale failure
 
-P17 shows that coarse-graining can erase distinctions. P18 quantifies when reconstruction is good enough to retain the declared response geometry.
+P17 shows that coarse-graining can erase distinctions. P18 quantifies when reconstruction is good enough to retain the declared response geometry. P25 extends that control to the P11 directed-influence component under fixed intervention semantics and target observation coarse-graining.
 
 ## Quantum-reduction failure
 

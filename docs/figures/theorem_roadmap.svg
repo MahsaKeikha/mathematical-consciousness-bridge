@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2180" viewBox="0 0 1600 2180" role="img" aria-labelledby="title desc">
-  <title id="title">Theorem roadmap through Proposition 24</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2410" viewBox="0 0 1600 2410" role="img" aria-labelledby="title desc">
+  <title id="title">Theorem roadmap through Proposition 25</title>
   <desc id="desc">Publication-style dependency map from invariance and identifiability through causal structure, scale, physical sufficiency, residual certification, refinement, adaptive selection, and anytime-valid stopping-time control.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
@@ -17,7 +17,7 @@
   </defs>
 
   <rect width="1600" height="2180" fill="#ffffff"/>
-  <text x="70" y="62" class="title">Theorem Roadmap - P1 through P24</text>
+  <text x="70" y="62" class="title">Theorem Roadmap - P1 through P25</text>
   <text x="70" y="94" class="subtitle">The chain separates physical structure, finite-data certification, refinement, adaptive selection, and repeated-look validity.</text>
 
   <rect x="95" y="145" width="420" height="180" rx="18" fill="#eff6ff" stroke="#3b82f6"/>
@@ -128,9 +128,15 @@
   <text x="805" y="2011" class="eq">Pr(∀n: ‖P−P̂n‖TV ≤ τnany) ≥ 1−α</text>
   <text x="265" y="2041" class="body">P23 selection and regret remain valid at every finite stopping time.</text>
 
-  <path class="arrow" d="M800 2055 V2090"/>
+  <rect x="225" y="2100" width="1150" height="190" rx="20" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.8"/>
+  <text x="265" y="2137" class="label">PHYSICAL SCALE BRANCH · P25</text>
+  <text x="265" y="2175" class="head">P11 directed influence + P18 reconstruction control</text>
+  <text x="265" y="2209" class="body">Target coarse observation cannot increase matched-pair influence.</text>
+  <text x="265" y="2244" class="eq">0 ≤ Af − Ac ≤ 2ρ</text>
+  <text x="725" y="2244" class="eq">Af &gt; θ + 2ρ ⇒ Ac &gt; θ</text>
+  <text x="265" y="2274" class="body">Dependency branch: P11 + P18; P24 is not a mathematical prerequisite.</text>
 
-  <rect x="95" y="2102" width="1410" height="62" rx="14" fill="#0f172a"/>
-  <text x="125" y="2127" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">OPEN BRIDGE FRONTIER</text>
-  <text x="125" y="2150" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Sharper time-uniform inference, physical completeness, replication, and experiential formalization remain open.</text>
+  <rect x="95" y="2320" width="1410" height="62" rx="14" fill="#0f172a"/>
+  <text x="125" y="2345" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">OPEN BRIDGE FRONTIER</text>
+  <text x="125" y="2368" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Partition scale, block aggregation, physical completeness, and experiential formalization remain open.</text>
 </svg>

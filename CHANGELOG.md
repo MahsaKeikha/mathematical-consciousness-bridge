@@ -2,6 +2,21 @@
 
 This changelog records theorem-level scientific releases. Definitions, proofs, implementations, tests, figures, and documentation remain linked from the main research page.
 
+## 0.25.0 - 2026-09-09
+
+### Proposition 25 - directed-influence scale certification
+
+- Returned to the P11 structured physical candidate and isolated the directed perturbational influence component for scale analysis.
+- Proved that deterministic target observation coarse-graining cannot increase matched-intervention directed influence.
+- Specialized the P18 fiber-consistent reconstruction defect to the intervention-conditioned target response family.
+- Proved the sharp additive bound \(0\le A^f-A^c\le2\rho\).
+- Proved exact directed-influence preservation when the declared response family reconstructs exactly.
+- Derived the threshold-edge margin \(A^f>\theta+2\rho\Rightarrow A^c>\theta\) and the no-false-positive implication \(A^c>\theta\Rightarrow A^f>\theta\).
+- Added an explicit binary counterexample saturating the \(2\rho\) loss bound.
+- Added executable certification, regression tests, a publication theorem map, and an explicit P11+P18 dependency branch in the global roadmap.
+- Preserved the boundary that P25 does not certify partition irreducibility, node fusion, changed intervention semantics, physical completeness, or experience.
+- Integrated P25 into the README paper, navigation, equation provenance, release metadata, theorem guards, and visual-quality guards.
+
 ## 0.24.0 - 2026-09-09
 
 ### Proposition 24 - anytime-valid adaptive physical-refinement certification
