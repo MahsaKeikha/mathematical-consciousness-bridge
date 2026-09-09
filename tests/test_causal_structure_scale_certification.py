@@ -64,7 +64,9 @@ def test_uniform_defect_yields_two_rho_distortion_certificate():
             fine, coarse, _ = pairwise_scale_distortion(
                 family[first_label], family[second_label], coarse_map, decoder
             )
-            assert 0.0 <= fine - coarse <= 2.0 * rho + 1e-12
+            loss = fine - coarse
+            assert loss >= -1e-12
+            assert loss <= 2.0 * rho + 1e-12
 
 
 def test_collision_family_hits_the_two_rho_bound_exactly():
