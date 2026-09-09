@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mathematical-consciousness-bridge"
-version = "0.13.0"
-description = "Formal tools for physical-to-experiential bridge theory, intervention-resolved causal structure, minimality audits, finite-data certification, and falsifiable experiment design."
+version = "0.14.0"
+description = "Formal tools for physical-to-experiential bridge theory, intervention-resolved causal structure, temporal continuation, finite-data certification, and falsifiable experiment design."
 requires-python = ">=3.10"
 
 [project.optional-dependencies]
