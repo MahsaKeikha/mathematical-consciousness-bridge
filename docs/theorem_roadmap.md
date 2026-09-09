@@ -2,7 +2,7 @@
 
 This roadmap records the current proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge.
 
-![P1-P25 theorem roadmap](figures/theorem_roadmap.svg)
+![P1-P26 theorem roadmap](figures/theorem_roadmap.svg)
 
 ---
 
@@ -35,6 +35,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P23](proposition_23_adaptive_descriptor_selection_certification.md) | universal pushforward control plus post-selection regret analysis | adaptive fixed-sample physical-refinement selection with valid coverage | proved post-selection theorem |
 | [P24](proposition_24_anytime_adaptive_refinement_certification.md) | summable alpha spending plus countable union control | repeated-look adaptive refinement and finite stopping-time validity | proved anytime-valid theorem |
 | [P25](proposition_25_directed_influence_scale_certification.md) | P11 influence plus P18 reconstruction distortion | directed-influence preservation and edge-margin certification across target observation scale | proved physical scale theorem |
+| [P26](proposition_26_partition_irreducibility_scale_certification.md) | P11 partition productization plus P17 contraction and P18 reconstruction | partition-irreducibility preservation and margin certification under block-compatible observation | proved physical scale theorem |
 
 ---
 
@@ -403,6 +404,48 @@ The theorem controls observation loss for \(\mathcal A\). It does not yet solve 
 
 Direct proof: [Proposition 25](proposition_25_directed_influence_scale_certification.md). Implementation: [directed_influence_scale_certification.py](../src/consciousness_bridge/directed_influence_scale_certification.py). Tests: [test_directed_influence_scale_certification.py](../tests/test_directed_influence_scale_certification.py).
 
+## P26 - partition-irreducibility scale certification from P11 + P17 + P18
+
+P26 applies the scale theorem to the P11 partition component. For a declared partition \(\pi\),
+
+\[
+\kappa_f^{u,\tau}(\pi)
+=
+\|P^{u,\tau}-P_{\pi}^{u,\tau}\|_{\mathrm{TV}},
+\qquad
+P_{\pi}^{u,\tau}
+=
+\bigotimes_{B\in\pi}P_B^{u,\tau}.
+\]
+
+Under a block-compatible deterministic observation map \(C\), productization commutes with pushforward and therefore
+
+\[
+\boxed{
+\kappa_c^{u,\tau}(\pi)
+\le
+\kappa_f^{u,\tau}(\pi).
+}
+\]
+
+If \(D=R_\#C_\#\) is the P18 reconstruction operator, then
+
+\[
+\boxed{
+0\le
+\kappa_f^{u,\tau}(\pi)-\kappa_c^{u,\tau}(\pi)
+\le
+\rho(P^{u,\tau})+
+ho(P_{\pi}^{u,\tau}).
+}
+\]
+
+Exact reconstruction of both laws gives exact preservation. A fine margin larger than the reconstruction budget guarantees survival of a declared coarse threshold.
+
+The theorem does not yet transport the entire partition lattice through physical node aggregation. It certifies one declared partition under observation-compatible scale change.
+
+Direct proof: [Proposition 26](proposition_26_partition_irreducibility_scale_certification.md). Implementation: [partition_irreducibility_scale_certification.py](../src/consciousness_bridge/partition_irreducibility_scale_certification.py). Tests: [test_partition_irreducibility_scale_certification.py](../tests/test_partition_irreducibility_scale_certification.py).
+
 ---
 
 # 8. Fundamental physical sufficiency: P19
@@ -737,8 +780,8 @@ Direct proof: [Proposition 24](proposition_24_anytime_adaptive_refinement_certif
 
 The next structural problems are:
 
-1. extend P25 from target observation coarse-graining to genuine block aggregation with source/intervention compatibility;
-2. characterize partition-lattice compatibility required to control \(\mathcal K\) across scale;
+1. extend P25-P26 from observation-compatible scale change to genuine block aggregation with source/intervention compatibility;
+2. characterize the induced map between fine and coarse partition lattices and determine when the full \(\mathcal A,\mathcal K\) structure survives node aggregation;
 3. sharpen P24 beyond conservative alpha spending and extend the refinement program to continuous, dependent, hidden-state, noisy-descriptor, and learned-descriptor settings;
 4. model genuine physical split/merge dynamics where state variables and intervention channels change;
 5. formalize the moving world-tube / causal-structure interface;

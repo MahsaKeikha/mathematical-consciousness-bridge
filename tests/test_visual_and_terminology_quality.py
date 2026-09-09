@@ -29,6 +29,7 @@ FIGURES = (
     "p23_adaptive_descriptor_selection_certification.svg",
     "p24_anytime_adaptive_refinement_certification.svg",
     "p25_directed_influence_scale_certification.svg",
+    "p26_partition_irreducibility_scale_certification.svg",
     "universal_proof_ladder.svg",
     "theory_comparison_map.svg",
 )
