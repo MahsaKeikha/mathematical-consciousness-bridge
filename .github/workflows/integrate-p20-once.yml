@@ -15,6 +15,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Correct exact theorem dependency marker
+        run: python .github/fix_p20_integrator.py
+
       - name: Apply P20 release integration
         run: python .github/integrate_p20_release.py
 
@@ -22,6 +25,7 @@ jobs:
         run: |
           rm .github/workflows/integrate-p20-once.yml
           rm .github/integrate_p20_release.py
+          rm .github/fix_p20_integrator.py
 
       - name: Validate on Python 3.10
         uses: actions/setup-python@v5
