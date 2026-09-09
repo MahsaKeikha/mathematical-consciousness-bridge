@@ -1,8 +1,8 @@
 # Theorem Roadmap
 
-This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge.
+This roadmap records the current proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge.
 
-![P1-P16 theorem roadmap](figures/theorem_roadmap.svg)
+![P1-P17 theorem roadmap](figures/theorem_roadmap.svg)
 
 ---
 
@@ -23,59 +23,37 @@ This roadmap records the proved mathematical chain and the open route toward a s
 | [P11](proposition_11_intervention_resolved_causal_structure.md) | structured intervention-response object | first original candidate physical signature | proved construction / candidate |
 | [P12](proposition_12_component_insufficiency.md) | projection-collision theorem | one-component and scalar reductions lose information | proved minimality / no-go |
 | [P13](proposition_13_pairwise_component_irredundancy.md) | pairwise projection collisions | every major component is irredundant relative to the other two on the audit domain | proved irredundancy |
-| [P14](proposition_14_temporal_continuation.md) | quotient metric and path variation | representation-invariant temporal continuation of the physical candidate | proved temporal-structure theorem |
-| [P15](proposition_15_finite_sample_temporal_certification.md) | perturbation bounds for quotient distances and paths | finite-error certification of temporal change and continuity | proved certification theorem |
-| [P16](proposition_16_independent_composition_and_coupling.md) | product-response composition and factorization defect | distinguishes independent coexistence from observed cross-system response structure | proved composition theorem |
+| [P14](proposition_14_temporal_continuation.md) | quotient metric and path variation | representation-invariant temporal continuation | proved temporal-structure theorem |
+| [P15](proposition_15_finite_sample_temporal_certification.md) | perturbation bounds for quotient distances and paths | finite-error certification of temporal change | proved certification theorem |
+| [P16](proposition_16_independent_composition_and_coupling.md) | product-response composition and factorization defect | distinguishes independent coexistence from observed cross-system coupling | proved composition theorem |
+| [P17](proposition_17_coarse_graining_and_refinement.md) | deterministic pushforward and data processing | quantifies information loss under coarse-graining and refinement ambiguity | proved scale-change theorem |
 
 ---
 
-# 2. P1 - physical and representational well-definedness
+# 2. Foundation layer: P1-P4
 
-A bridge descends uniquely to the physical quotient exactly when it is constant on physical-equivalence classes:
+P1 makes the bridge representation independent:
 
 \[
 \boxed{
-p\sim_Pp'
-\Longrightarrow
-B(p)=B(p').
+p\sim_Pp'\Longrightarrow B(p)=B(p').
 }
 \]
 
-This removes dependence on arbitrary coordinates, units, labels, and equivalent encodings.
-
----
-
-# 3. P2-P4 - theory identifiability and experiment design
-
-For complete theories \(\mathfrak T_1,\mathfrak T_2\),
+P2 defines experiment-class discriminability
 
 \[
 \boxed{
 \Delta_\Pi
 =
 \sup_{\pi\in\Pi}
-\|P_1^{\pi,q}-P_2^{\pi,q}\|_{\mathrm{TV}}.
+\|P_1^{\pi,q}-P_2^{\pi,q}\|_{\mathrm{TV}}
 }
 \]
 
-P2 proves
+and proves exact non-identifiability when \(\Delta_\Pi=0\).
 
-\[
-\Delta_\Pi=0
-\iff
-P_1^{\pi,q}=P_2^{\pi,q}
-\quad\forall\pi\in\Pi.
-\]
-
-P3 defines the complete theory fingerprint
-
-\[
-\Phi_{\Pi,q}(\mathfrak T)
-=
-(P_{\mathfrak T}^{\pi,q})_{\pi\in\Pi}
-\]
-
-and proves
+P3 quotients theory space by complete observable fingerprints:
 
 \[
 \boxed{
@@ -85,15 +63,7 @@ and proves
 }
 \]
 
-P4 defines pairwise protocol separation
-
-\[
-d_{ij}(\pi)
-=
-\|P_i^{\pi,q}-P_j^{\pi,q}\|_{\mathrm{TV}}
-\]
-
-and proves the complete-discrimination / set-cover equivalence
+P4 turns theory discrimination into protocol design:
 
 \[
 \boxed{
@@ -105,15 +75,9 @@ U(S)>0
 
 ---
 
-# 4. P5-P6 - physical-feature sufficiency and bridge completeness
+# 3. Sufficiency and completeness: P5-P6
 
-For physical feature
-
-\[
-F:\mathcal Q_P\to\mathcal Z,
-\]
-
-P5 proves
+For a proposed physical feature \(F\), P5 proves
 
 \[
 \boxed{
@@ -123,61 +87,29 @@ F(p)=F(p')\Rightarrow\bar B(p)=\bar B(p').
 }
 \]
 
-P6 defines the canonical bridge equivalence
+P6 defines the canonical bridge signature
 
 \[
-p\sim_Bp'
-\iff
-\bar B(p)=\bar B(p')
+C_B(p)=[p]_{\sim_B}
 \]
 
-and signature
-
-\[
-C_B(p)=[p]_{\sim_B}.
-\]
-
-Then
+and proves
 
 \[
 \boxed{
 C_B(p)=C_B(p')
 \iff
-\bar B(p)=\bar B(p')
+\bar B(p)=\bar B(p').
 }
 \]
 
-and
-
-\[
-\mathcal Q_B\cong\operatorname{Im}(\bar B).
-\]
-
-The complete physical-signature target is therefore
-
-\[
-\boxed{
-F_*(p)=F_*(p')
-\iff
-C_B(p)=C_B(p').
-}
-\]
-
-on a declared domain.
+This gives the exact equivalence-class target a complete physical signature would need to match.
 
 ---
 
-# 5. P7-P10 - recoverability, finite data, and robust protocol design
+# 4. Recoverability and finite data: P7-P10
 
-P7 uses the physical observable fingerprint
-
-\[
-\Psi_\Pi(p)
-=
-(P^{\pi,p})_{\pi\in\Pi}
-\]
-
-and proves exact recoverability when
+P7 characterizes exact experimental recoverability:
 
 \[
 \boxed{
@@ -187,17 +119,15 @@ F_*(p)=F_*(p').
 }
 \]
 
-P8 defines the robust signature gap
+P8 introduces the robust signature gap
 
 \[
 \boxed{
-\gamma_S
-=
-\delta_S-\omega_S
+\gamma_S=\delta_S-\omega_S
 }
 \]
 
-and gives the finite-error condition
+and proves exact recovery under uniform error when
 
 \[
 \boxed{
@@ -205,312 +135,112 @@ and gives the finite-error condition
 }
 \]
 
-P9 turns that error tolerance into the explicit sufficient categorical bound
+P9 gives an explicit categorical finite-sample sufficient condition:
 
 \[
 \boxed{
 n
 \ge
 \frac{8K^2}{\gamma_S^2}
-\log\left(
-\frac{2N_PN_\pi K}{\alpha}
-\right).
+\log\left(\frac{2N_PN_\pi K}{\alpha}\right).
 }
 \]
 
-P10 defines
-
-\[
-\Gamma(S)=\delta(S)-\omega(S)
-\]
-
-and proves
-
-\[
-\boxed{
-\Gamma(S\cup\{\rho\})-\Gamma(S)
-=
-a_\rho(S)-b_\rho(S).
-}
-\]
-
-An added modality improves the robust gap exactly when its between-signature gain exceeds its within-signature inflation.
+P10 proves that an added protocol is useful only when its between-signature gain exceeds its within-signature inflation.
 
 ---
 
-# 6. P11 - intervention-resolved causal structure
+# 5. Physical candidate and internal falsification: P11-P13
 
-For physical system \(p\), intervention \(u\), and delay \(\tau\), define
-
-\[
-\boxed{
-P_p^{u,\tau}
-=
-\mathcal L(Y_{t+\tau}^{V}\mid do(u),p).
-}
-\]
-
-The candidate retains
-
-\[
-\boxed{
-\mathcal G_p
-\quad\text{response geometry},
-\qquad
-\mathcal A_p
-\quad\text{directed interventional influence},
-\qquad
-\mathcal K_p
-\quad\text{partition irreducibility}.
-}
-\]
-
-Define
-
-\[
-\mathfrak C_p
-=
-(V,\mathcal U_p,\mathcal T,\mathcal G_p,\mathcal A_p,\mathcal K_p)
-\]
-
-and
+P11 defines the intervention-resolved causal structure
 
 \[
 \boxed{
 F_{\mathrm{causal}}(p)
 =
-[\mathfrak C_p]_{\cong}.
+[\mathfrak C_p]_{\cong},
+\qquad
+\mathfrak C_p
+=
+(V,\mathcal U_p,\mathcal T,\mathcal G_p,\mathcal A_p,\mathcal K_p).
 }
 \]
 
-P11 proves compatible-reparameterization invariance, an exact partition-factorization certificate, and a feedforward no-return certificate.
-
----
-
-# 7. P12 - single-component insufficiency
-
-If a compression \(H\) satisfies
+The three retained structures are:
 
 \[
-H(x)=H(x')
-\quad\text{but}\quad
-F(x)\ne F(x'),
+\mathcal G_p
+\quad\text{response geometry},
+\qquad
+\mathcal A_p
+\quad\text{directed influence},
+\qquad
+\mathcal K_p
+\quad\text{partition irreducibility}.
 \]
 
-then no map \(g\) can satisfy \(F=g\circ H\) on the declared domain.
+P12 proves that each component alone, and several scalar reductions, are incomplete by explicit projection collisions.
 
-P12 constructs explicit realizable systems proving that response geometry alone, directed influence alone, partition irreducibility alone, response diameter, one scalar irreducibility value, and a Boolean recurrence indicator are incomplete descriptors of the richer causal-structure candidate.
-
-![P12 constructive collision map](figures/p12_collision_map.svg)
-
----
-
-# 8. P13 - pairwise component irredundancy
-
-Define
-
-\[
-F_C(p)
-=
-(\mathcal G_p,\mathcal A_p,\mathcal K_p).
-\]
-
-P13 constructs collision families satisfying
-
-\[
-\mathcal G_L=\mathcal G_H,
-\quad
-\mathcal A_L=\mathcal A_H,
-\quad
-\mathcal K_L\ne\mathcal K_H,
-\]
-
-\[
-\mathcal G_0=\mathcal G_+,
-\quad
-\mathcal K_0=\mathcal K_+,
-\quad
-\mathcal A_0\ne\mathcal A_+,
-\]
-
-and
-
-\[
-\mathcal A_D=\mathcal A_S,
-\quad
-\mathcal K_D=\mathcal K_S,
-\quad
-\mathcal G_D\ne\mathcal G_S.
-\]
-
-Therefore
+P13 strengthens the minimality result:
 
 \[
 \boxed{
-H_{GA},
+(\mathcal G,\mathcal A),
 \quad
-H_{GK},
+(\mathcal G,\mathcal K),
 \quad
-H_{AK}
-\text{ are all incomplete on }D_{13}.
+(\mathcal A,\mathcal K)
 }
 \]
 
-![P13 pairwise component irredundancy](figures/p13_component_irredundancy.svg)
-
-This proves component-level irredundancy on the declared audit domain, not global minimality over every possible physical representation.
+are each incomplete on the declared audit domain.
 
 ---
 
-# 9. P14 - temporal continuation on the quotient space
+# 6. Temporal structure and certification: P14-P15
 
-For finite component fingerprint
-
-\[
-c=(g,a,k),
-\]
-
-P14 defines
-
-\[
-\boxed{
-D_w(c,c')
-=
-\max\left\{
-w_G\|g-g'\|_\infty,
-w_A\|a-a'\|_\infty,
-w_K\|k-k'\|_\infty
-\right\}.
-}
-\]
-
-If the declared finite relabeling group \(\mathcal H\) acts isometrically, then
+P14 defines a weighted metric on component fingerprints and then quotients admissible relabelings:
 
 \[
 \boxed{
 \overline D_w([c],[c'])
 =
-\min_{h\in\mathcal H}D_w(c,hc')
+\min_{h\in\mathcal H}D_w(c,hc').
 }
 \]
 
-is a metric on the orbit space.
-
-For a temporal path \([c_0],\ldots,[c_T]\), define
+It also defines temporal path variation
 
 \[
 \boxed{
 V_{0:T}
 =
 \sum_{t=0}^{T-1}
-\overline D_w([c_t],[c_{t+1}]),
+\overline D_w([c_t],[c_{t+1}])
 }
 \]
 
-and
+and proves endpoint and relabeling-invariance results.
+
+P15 propagates finite fingerprint error through this geometry:
 
 \[
 \boxed{
-J_{0:T}
-=
-\max_t
-\overline D_w([c_t],[c_{t+1}]).
-}
-\]
-
-P14 proves the endpoint bound
-
-\[
-\boxed{
-\overline D_w([c_s],[c_t])\le V_{s:t},
-}
-\]
-
-and invariance under time-dependent admissible relabelings. It also gives the excursion counterexample showing that equal endpoints do not imply a trivial temporal path.
-
-![P14 temporal continuation](figures/p14_temporal_continuation.svg)
-
----
-
-# 10. P15 - finite-error temporal certification
-
-Let \(\widehat c_t\) estimate \(c_t\) and suppose simultaneous radii satisfy
-
-\[
-D_w(c_t,\widehat c_t)\le\varepsilon_t.
-\]
-
-P15 proves the quotient-distance stability inequality
-
-\[
-\boxed{
-\left|
-\overline D_w([\widehat c_s],[\widehat c_t])
--
-\overline D_w([c_s],[c_t])
-\right|
+|\widehat d_{st}-d_{st}|
 \le
 \varepsilon_s+\varepsilon_t.
 }
 \]
 
-Therefore the true temporal separation lies in
-
-\[
-\boxed{
-\left[
-\max\{0,\widehat d_{st}-\varepsilon_s-\varepsilon_t\},
-\widehat d_{st}+\varepsilon_s+\varepsilon_t
-\right].
-}
-\]
-
-For cumulative variation,
-
-\[
-\boxed{
-|\widehat V_{0:T}-V_{0:T}|
-\le
-\varepsilon_0
-+2\sum_{t=1}^{T-1}\varepsilon_t
-+\varepsilon_T.
-}
-\]
-
-For maximum adjacent change,
-
-\[
-\boxed{
-|\widehat J_{0:T}-J_{0:T}|
-\le
-\max_t(\varepsilon_t+\varepsilon_{t+1}).
-}
-\]
-
-The theorem yields a three-way finite-data classification relative to any declared physical threshold \(\eta\): certified above threshold, certified below threshold, or unresolved.
-
-For the special case of \(M\) bounded sample-mean coordinates at each of \(T+1\) times, each estimated from \(n\) IID repetitions, the simultaneous Hoeffding radius is
-
-\[
-\boxed{
-\delta_n(\alpha)
-=
-\sqrt{
-\frac{1}{2n}
-\log\left(\frac{2M(T+1)}{\alpha}\right)
-}.
-}
-\]
-
-This bounded-coordinate corollary is intentionally limited: more complex causal-structure estimators require estimator-specific concentration results.
-
-![P15 finite-sample temporal certification](figures/p15_finite_sample_temporal_certification.svg)
+The same theorem yields certified intervals for cumulative path variation and the maximum adjacent structural jump.
 
 ---
 
-# 11. P16 - independent composition and controlled coupling
+# 7. Composition and scale change: P16-P17
 
-For two systems \(A\) and \(B\), define the independent product-response composition
+## P16 - independent composition and coupling
+
+For exact independent product-response composition,
 
 \[
 \boxed{
@@ -520,64 +250,14 @@ P_A^{u_A,\tau}\otimes P_B^{u_B,\tau}.
 }
 \]
 
-If
+P16 proves:
 
-\[
-d_A
-=
-\|P_A^{u_A,\tau}-P_A^{v_A,\tau}\|_{\mathrm{TV}},
-\qquad
- d_B
-=
-\|P_B^{u_B,\tau}-P_B^{v_B,\tau}\|_{\mathrm{TV}},
-\]
+- subsystem response geometry is preserved when the other factor is held fixed;
+- cross-system directed influence is zero;
+- irreducibility across the \(A|B\) partition is zero;
+- response-level coupling is detected by departure from the product-factorization null.
 
-then P16 proves
-
-\[
-\boxed{
-\max\{d_A,d_B\}
-\le d_{AB}
-\le d_A+d_B-d_Ad_B.
-}
-\]
-
-When one subsystem intervention is unchanged, the corresponding one-factor distance is preserved exactly.
-
-For source and target blocks lying in different independent subsystems,
-
-\[
-\boxed{
-A_{ij}^{A\otimes B}(\tau)=0.
-}
-\]
-
-For the partition separating the two complete subsystems,
-
-\[
-\boxed{
-\kappa_{A\otimes B}^{\tau}(\pi_{A|B})=0.
-}
-\]
-
-For an arbitrary observed joint response law, define the response-factorization defect
-
-\[
-\boxed{
-\chi_{A|B}(\tau)
-=
-\sup_{u_A,u_B}
-\left\|
-P_{AB}^{(u_A,u_B),\tau}
--
-P_{A,\mathrm{marg}}^{(u_A,u_B),\tau}
-\otimes
-P_{B,\mathrm{marg}}^{(u_A,u_B),\tau}
-\right\|_{\mathrm{TV}}.
-}
-\]
-
-P16 identifies this exactly with the P11 irreducibility of the \(A|B\) partition:
+The coupling defect is
 
 \[
 \boxed{
@@ -587,50 +267,69 @@ P16 identifies this exactly with the P11 irreducibility of the \(A|B\) partition
 }
 \]
 
-A positive defect certifies departure from response factorization on the declared intervention-observable regime. A zero defect certifies factorization of the measured response laws, not universal absence of every hidden mechanistic interaction.
+## P17 - coarse-graining and refinement
 
-![P16 independent composition and controlled coupling](figures/p16_composition_coupling.svg)
+For deterministic coarse map
 
----
+\[
+C:\Omega_f\to\Omega_c,
+\]
 
-# 12. Current dependency graph
+P17 proves total-variation contraction:
 
 \[
 \boxed{
-\begin{array}{ccccccccccccccccccccccc}
-P1
-&\to&P5
-&\to&P6
-&\to&P7
-&\to&P8
-&\to&P9
-&\to&P10
-&\to&P11
-&\to&P12
-&\to&P13
-&\to&P14
-&\to&P15
-&\to&P16\\
-&&&&&&\uparrow\\
-P2&\to&P3&\to&P4
-&&\text{experiment design}
-\end{array}
+\|C_{\#}P-C_{\#}Q\|_{\mathrm{TV}}
+\le
+\|P-Q\|_{\mathrm{TV}}.
+}
+\]
+
+If \(C\) is bijective on observed support, equality holds.
+
+If \(C\) is many-to-one, there exist distinct fine laws with identical coarse pushforwards. Thus coarse structure does not generally determine a unique refinement.
+
+This establishes the baseline distinction
+
+\[
+\boxed{
+\text{descriptive coarse-graining}
+\neq
+\text{physical fusion}.
 }
 \]
 
 ---
 
-# 13. Current frontier
+# 8. Dependency chain
 
-With independent composition and a response-level coupling defect established, the next structural program is:
+\[
+\boxed{
+\begin{aligned}
+&\text{P1-P4: invariance + identifiability}\\
+&\Downarrow\\
+&\text{P5-P10: sufficiency + recovery + finite data}\\
+&\Downarrow\\
+&\text{P11-P13: physical candidate + minimality}\\
+&\Downarrow\\
+&\text{P14-P15: temporal continuation + certification}\\
+&\Downarrow\\
+&\text{P16-P17: composition + scale change}.
+\end{aligned}
+}
+\]
 
-1. finite-sample confidence intervals for the coupling defect and cross-system influence;
-2. splitting, merging, birth, and disappearance of physical blocks;
-3. controlled coupling trajectories that connect P14 temporal continuation to P16 composition;
-4. observer-to-bridge interface with certified moving world-tubes;
-5. estimator-specific concentration for the full Proposition 11 causal-structure coordinates;
-6. irregular-time normalization and sampling-cadence sensitivity;
-7. source-faithful cross-theory adversarial experiments;
-8. biological and artificial counterexample programs;
-9. experiential-space formalization;
-10. a bridge theorem only after physical, experiential, identifiability, recovery, finite-data, composition, and falsification requirements have been jointly addressed.
+---
+
+# 9. Current frontier
+
+The next structural problems are:
+
+1. estimator-specific finite-sample certification for composition and coarse-graining quantities;
+2. genuine physical split/merge dynamics where state variables and intervention channels change;
+3. moving world-tube / causal-structure interface;
+4. irregular-time normalization of temporal geometry;
+5. cross-theory adversarial experiments on a shared perturbational protocol family;
+6. biological and non-biological counterexample search;
+7. experiential-space formalization independent of the physical candidate;
+8. a bridge theorem only after the preceding physical, statistical, and falsification layers have been jointly addressed.
