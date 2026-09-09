@@ -61,3 +61,4 @@ jobs:
           git push origin HEAD:main
 
 # one-time citation-navigation pass; removes itself after all validations pass
+# retry with exact GitHub section anchor
