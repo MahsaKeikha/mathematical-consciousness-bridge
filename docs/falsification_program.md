@@ -137,7 +137,7 @@ For robust signature gap
 
 for its current exact-recovery guarantee under uniform TV error \(\varepsilon\).
 
-If the certified error radius is too large for this condition, the correct conclusion is that the declared data do not certify exact recovery under the current theorem.
+If the certified error radius is too large for this condition, the declared data do not certify exact recovery under the current theorem.
 
 [Proposition 9](proposition_9_categorical_sample_complexity.md) converts the same requirement into an explicit finite trial bound in the categorical benchmark.
 
@@ -167,9 +167,9 @@ Thus a modality that mainly increases nuisance variation should not be treated a
 
 ---
 
-# 7. IRCG component-minimality failure
+# 7. Causal-structure component minimality
 
-The first original candidate, IRCG, contains
+The intervention-resolved causal-structure candidate retains
 
 \[
 \mathcal G_p,
@@ -195,25 +195,41 @@ It constructs explicit finite systems showing that response geometry alone, dire
 
 ![P12 collision map](figures/p12_collision_map.svg)
 
-The next minimality test is pairwise: determine whether any two IRCG components can reconstruct the full object or whether they also admit collisions.
+[Proposition 13](proposition_13_pairwise_component_irredundancy.md) strengthens the audit by constructing three pairwise collision families:
+
+\[
+(\mathcal G,\mathcal A)\text{ fixed while }\mathcal K\text{ changes},
+\]
+
+\[
+(\mathcal G,\mathcal K)\text{ fixed while }\mathcal A\text{ changes},
+\]
+
+\[
+(\mathcal A,\mathcal K)\text{ fixed while }\mathcal G\text{ changes}.
+\]
+
+![P13 pairwise component irredundancy](figures/p13_component_irredundancy.svg)
+
+The current conclusion is component-level irredundancy on the declared audit domain, not a global minimality theorem over every physical representation.
 
 ---
 
 # 8. Non-neural and engineered counterexamples
 
-IRCG is deliberately tested outside the human-brain domain because generic causal integration, recurrence, complexity, and controllability can occur in systems for which an experiential interpretation cannot simply be assumed.
+The causal-structure candidate is deliberately tested outside the human-brain domain because generic causal integration, recurrence, complexity, and controllability can occur in systems for which an experiential interpretation cannot simply be assumed.
 
 Priority counterexample classes include:
 
 | Counterexample class | Scientific question |
 | --- | --- |
-| integrated non-neural biological network | can a rich IRCG-like structure occur without the target experiential evidence? |
+| integrated non-neural biological network | can a rich causal-structure signature occur without the target experiential evidence? |
 | recurrent artificial controller | do recurrence and irreducibility overgenerate the candidate? |
 | feedforward surrogate matched on passive behavior | do interventions reveal the hidden causal difference? |
 | simulator reproducing selected response statistics | which physical causal properties survive simulation and which do not? |
-| conscious/unconscious biological pair with similar gross activity | does the full causal geometry separate the states? |
+| conscious/unconscious biological pair with similar gross activity | does the full causal-structure candidate separate the states? |
 
-These cases are essential for avoiding a circular definition in which any sufficiently complicated causal system is declared conscious by construction.
+These cases are essential for avoiding a circular definition in which any sufficiently complicated causal system is assigned the target experiential class by construction.
 
 ---
 
@@ -225,7 +241,7 @@ Perturb or compare:
 - recurrence;
 - memory;
 - synchronization;
-- time-resolved intervention-response geometry;
+- time-resolved intervention-response structure;
 - world-tube continuity;
 - state transitions under anesthesia, sleep, injury, recovery, or controlled artificial dynamics.
 
@@ -251,7 +267,7 @@ The theory must predict whether physical-signature and bridge classes remain sep
 
 # 11. Cross-theory adversarial tests
 
-IIT, GNWT, RPT, higher-order, predictive/neurorepresentational, active-inference, and IRCG-constrained bridge families are represented through the common interface
+IIT, GNWT, RPT, higher-order, predictive/neurorepresentational, active-inference, and the intervention-resolved causal-structure candidate are represented through the common interface
 
 \[
 \mathfrak T_j
