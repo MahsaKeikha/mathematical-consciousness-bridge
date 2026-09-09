@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this research program, please cite the repository and the method-specific sources relevant to the result."
+title: "Mathematical Consciousness Bridge"
+version: 0.2.0
+date-released: 2026-09-09
+authors:
+  - family-names: Keikha
+    given-names: Mahsa
+    suffix: PhD
+type: software
+repository-code: "https://github.com/MahsaKeikha/mathematical-consciousness-bridge"
+abstract: "A formal research program for explicit physical-to-experiential bridge principles, consciousness-theory identifiability, no-go results, empirical discriminants, and conditional consciousness theorems."
