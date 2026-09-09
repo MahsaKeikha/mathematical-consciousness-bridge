@@ -54,7 +54,7 @@ class AnytimeAdaptiveSelectionPath:
 
 def _validate_time_index(time_index: int) -> None:
     if isinstance(time_index, bool) or not isinstance(time_index, int):
-        raise ValueError("time_index must be a positive integer")
+        raise TypeError("time_index must be an integer")
     if time_index < 1:
         raise ValueError("time_index must be a positive integer")
 
