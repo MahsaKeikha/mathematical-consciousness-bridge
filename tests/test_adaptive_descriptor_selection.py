@@ -1,10 +1,10 @@
 from math import log
 
 import pytest
+
 from consciousness_bridge.adaptive_descriptor_selection import (
     certify_adaptive_descriptor_selection_from_records,
 )
-
 
 OMEGA = (0, 1, 2, 3)
 COARSE = {state: 0 for state in OMEGA}
