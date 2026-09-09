@@ -72,7 +72,7 @@
   <rect x="225" y="675" width="1150" height="205" rx="20" fill="#f8fafc" stroke="#0f172a" stroke-width="1.8"/>
   <text x="265" y="712" class="label">FUNDAMENTAL PHYSICAL SUFFICIENCY · P19</text>
   <text x="265" y="750" class="head">Population factorization and residual tests</text>
-  <text x="265" y="782" class="body">Can an independently defined target be reconstructed from the declared descriptor T?</text>
+  <text x="265" y="782" class="body">Can target E be reconstructed from the declared descriptor T?</text>
   <text x="265" y="820" class="eq">E = BT ∘ T  iff  T(Ω)=T(Ω′) ⇒ E(Ω)=E(Ω′)</text>
   <text x="265" y="851" class="eq">stochastic criterion: I(E;Ω | T) = 0</text>
   <text x="925" y="820" class="eq">rank D(T,E) = rank DT</text>
@@ -84,7 +84,7 @@
   <rect x="225" y="932" width="1150" height="180" rx="20" fill="#ecfdf5" stroke="#059669" stroke-width="1.8"/>
   <text x="265" y="969" class="label">FINITE-SAMPLE RESIDUAL CERTIFICATION · P20</text>
   <text x="265" y="1007" class="head">Confidence interval for the P19 stochastic residual</text>
-  <text x="265" y="1040" class="body">IID finite-alphabet samples give a Hoeffding joint-TV radius and entropy-continuity bound.</text>
+  <text x="265" y="1040" class="body">IID finite-alphabet data give a joint-TV radius and entropy bound.</text>
   <text x="265" y="1074" class="eq">|I(E;Ω | T) − În| ≤ ΔCMI(τn(α))</text>
   <text x="925" y="1074" class="eq">Ln &gt; 0 ⇒ residual certified at 1−α</text>
 
