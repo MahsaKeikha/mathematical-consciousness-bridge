@@ -83,7 +83,7 @@ P19 combines repository-original sufficiency statements with standard mathematic
 
 | Ingredient | Status in P19 | Direct source |
 | --- | --- | --- |
-| factorization through fibers | proved here for the declared maps | [P19 proof on this page](#2-p19a-exact-factorization-theorem), with earlier bridge-factorization structure in [P5](proposition_5_feature_sufficiency.md) |
+| factorization through fibers | proved here for the declared maps | [P19 proof on this page](#2-p19a---exact-factorization-theorem), with earlier bridge-factorization structure in [P5](proposition_5_feature_sufficiency.md) |
 | conditional mutual information and conditional independence | standard finite-alphabet information theory applied here | [Cover and Thomas 2006](foundational_physics_mathematics_bibliography.md#cover-and-thomas-2006) |
 | differential, chain rule, and rank | standard smooth-map mathematics applied here | [Lee 2013](foundational_physics_mathematics_bibliography.md#lee-2013) |
 | physical interpretation limits | repository scientific-boundary rule | [Citation and Reference Policy](citation_and_reference_policy.md) |
