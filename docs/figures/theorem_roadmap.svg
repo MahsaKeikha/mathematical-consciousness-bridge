@@ -126,7 +126,7 @@
   <text x="265" y="1976" class="body">A summable error schedule creates one event valid for every sample size.</text>
   <text x="265" y="2011" class="eq">αn = 6α/(π²n²),  Σn≥1 αn = α</text>
   <text x="805" y="2011" class="eq">Pr(∀n: ‖P−P̂n‖TV ≤ τnany) ≥ 1−α</text>
-  <text x="265" y="2041" class="body">P23 selection and regret bounds therefore remain valid at any realized finite stopping time.</text>
+  <text x="265" y="2041" class="body">P23 selection and regret remain valid at every finite stopping time.</text>
 
   <path class="arrow" d="M800 2055 V2090"/>
 
