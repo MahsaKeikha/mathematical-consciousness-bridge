@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1720" viewBox="0 0 1600 1720" role="img" aria-labelledby="title desc">
-  <title id="title">Theorem roadmap through Proposition 22</title>
-  <desc id="desc">Publication-style dependency map from invariance and identifiability through causal structure, time, composition, scale, physical sufficiency, finite-sample residual certification, descriptor refinement, and simultaneous chain certification.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1960" viewBox="0 0 1600 1960" role="img" aria-labelledby="title desc">
+  <title id="title">Theorem roadmap through Proposition 23</title>
+  <desc id="desc">Publication-style dependency map from invariance and identifiability through causal structure, scale, physical sufficiency, residual certification, refinement, simultaneous chains, and adaptive descriptor selection.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
       <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
@@ -16,9 +16,9 @@
     </style>
   </defs>
 
-  <rect width="1600" height="1720" fill="#ffffff"/>
-  <text x="70" y="62" class="title">Theorem Roadmap - P1 through P22</text>
-  <text x="70" y="94" class="subtitle">The chain separates representation, recovery, causal structure, scale, sufficiency, finite data, refinement, and simultaneous certification.</text>
+  <rect width="1600" height="1960" fill="#ffffff"/>
+  <text x="70" y="62" class="title">Theorem Roadmap - P1 through P23</text>
+  <text x="70" y="94" class="subtitle">The chain separates physical structure, finite-data certification, refinement, and adaptive selection.</text>
 
   <rect x="95" y="145" width="420" height="180" rx="18" fill="#eff6ff" stroke="#3b82f6"/>
   <text x="125" y="178" class="label">FOUNDATION · P1-P4</text>
@@ -110,7 +110,17 @@
 
   <path class="arrow" d="M800 1585 V1620"/>
 
-  <rect x="95" y="1632" width="1410" height="62" rx="14" fill="#0f172a"/>
-  <text x="125" y="1657" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">OPEN BRIDGE FRONTIER</text>
-  <text x="125" y="1680" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Continuous-state, dependent-data, physical-completeness, replication, and experiential-formalization problems remain open.</text>
+  <rect x="225" y="1632" width="1150" height="188" rx="20" fill="#fff7ed" stroke="#ea580c" stroke-width="1.8"/>
+  <text x="265" y="1669" class="label">POST-SELECTION CONTROL · P23</text>
+  <text x="265" y="1707" class="head">Adaptive descriptor selection remains certifiable</text>
+  <text x="265" y="1741" class="body">One base event controls every deterministic candidate.</text>
+  <text x="265" y="1776" class="eq">f̂ ∈ arg maxf Ĝf</text>
+  <text x="925" y="1776" class="eq">G* − Gf̂ ≤ maxf Uf − Lf̂ ≤ 2Γmax</text>
+  <text x="265" y="1806" class="body">Selected residual excess equals refinement-gain regret.</text>
+
+  <path class="arrow" d="M800 1820 V1855"/>
+
+  <rect x="95" y="1867" width="1410" height="62" rx="14" fill="#0f172a"/>
+  <text x="125" y="1892" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">OPEN BRIDGE FRONTIER</text>
+  <text x="125" y="1915" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Anytime-valid inference, physical completeness, replication, and experiential formalization remain open.</text>
 </svg>
