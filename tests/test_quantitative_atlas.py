@@ -9,7 +9,6 @@ from consciousness_bridge.causal_structure_scale_certification import (
     scale_separation_certificate,
 )
 
-
 ROOT = Path(__file__).resolve().parents[1]
 FIGURE_DIR = ROOT / "docs" / "figures" / "quantitative"
 MANIFEST = FIGURE_DIR / "quantitative_figure_manifest.json"
