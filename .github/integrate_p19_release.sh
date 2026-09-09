@@ -226,9 +226,9 @@ ptext = pyproject.read_text(encoding="utf-8")
 ptext = replace_once(ptext, 'version = "0.18.0"', 'version = "0.19.0"', "pyproject version")
 ptext = replace_once(
     ptext,
-    "quantitative scale-sufficiency certification by approximate reconstruction, robust experiment design",
-    "quantitative scale-sufficiency certification by approximate reconstruction, fundamental "
-    "physical-sufficiency and residual tests, robust experiment design",
+    "scale-sufficiency certification, recoverability, and falsifiable experiment design",
+    "scale-sufficiency certification, fundamental physical-sufficiency and residual tests, "
+    "recoverability, and falsifiable experiment design",
     "pyproject description",
 )
 pyproject.write_text(ptext, encoding="utf-8")
