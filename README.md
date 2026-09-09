@@ -1,7 +1,7 @@
 # Mathematical Consciousness Bridge
 
 [![tests](https://github.com/MahsaKeikha/mathematical-consciousness-bridge/actions/workflows/test.yml/badge.svg)](https://github.com/MahsaKeikha/mathematical-consciousness-bridge/actions/workflows/test.yml)
-[![version](https://img.shields.io/badge/version-0.23.0-2563eb)](CITATION.cff)
+[![version](https://img.shields.io/badge/version-0.24.0-2563eb)](CITATION.cff)
 [![license](https://img.shields.io/badge/license-MIT-059669)](LICENSE)
 
 **Mahsa Keikha, PhD**
@@ -40,11 +40,11 @@ This project continues **[Spatiotemporal Observer Mathematics](https://github.co
 
 Physics can describe states, fields, probability amplitudes, density operators, spacetime, Hamiltonians, open-system dynamics, thermodynamics, interventions, measurements, and statistical predictions without by itself defining subjective experience. A mathematically serious consciousness theory therefore requires a separately specified bridge between physically meaningful equivalence classes and formally defined experiential equivalence classes.
 
-The program here makes that bridge itself an object of mathematics. Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design. **P11** introduces intervention-resolved causal structure as a structured physical candidate rather than a scalar. **P12-P13** prove constructive insufficiency and component irredundancy results. **P14-P15** formalize temporal continuation and finite-error temporal certification. **P16** gives an independent-composition null model and response-level coupling defect. **P17** proves total-variation contraction and exact refinement ambiguity under deterministic coarse-graining. **P18** proves a quantitative scale-sufficiency certificate based on approximate reconstruction. **P19** proves exact deterministic and stochastic criteria for whether an independently defined target factors through a declared physical descriptor, together with a differential no-go test. **P20** converts the P19 stochastic population residual into an explicit finite-sample confidence certificate under a declared finite-alphabet IID model. **P21** then proves how that residual behaves under nested physical-descriptor refinement: unresolved deterministic collisions can only disappear, while the stochastic residual decreases by exactly the target-relevant information supplied by the added physical detail. **P22** gives a simultaneous finite-sample certificate for the entire declared refinement chain from one shared confidence event on the empirical physical-target law. **P23** proves that the same shared base confidence event also supports fixed-sample data-dependent selection among admissible deterministic refinements, together with an explicit near-optimality bound for the selected refinement.
+The program here makes that bridge itself an object of mathematics. Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design. **P11** introduces intervention-resolved causal structure as a structured physical candidate rather than a scalar. **P12-P13** prove constructive insufficiency and component irredundancy results. **P14-P15** formalize temporal continuation and finite-error temporal certification. **P16** gives an independent-composition null model and response-level coupling defect. **P17** proves total-variation contraction and exact refinement ambiguity under deterministic coarse-graining. **P18** proves a quantitative scale-sufficiency certificate based on approximate reconstruction. **P19** proves exact deterministic and stochastic criteria for whether an independently defined target factors through a declared physical descriptor, together with a differential no-go test. **P20** converts the P19 stochastic population residual into an explicit finite-sample confidence certificate under a declared finite-alphabet IID model. **P21** then proves how that residual behaves under nested physical-descriptor refinement: unresolved deterministic collisions can only disappear, while the stochastic residual decreases by exactly the target-relevant information supplied by the added physical detail. **P22** gives a simultaneous finite-sample certificate for the entire declared refinement chain from one shared confidence event on the empirical physical-target law. **P23** proves that the same shared base confidence event also supports fixed-sample data-dependent selection among admissible deterministic refinements, together with an explicit near-optimality bound for the selected refinement. **P24** converts that fixed-sample result into an anytime-valid certificate by allocating the total error budget across all positive sample sizes, giving simultaneous repeated-look and finite stopping-time validity under the declared finite-alphabet IID model.
 
 A new quantum-foundations layer now asks a sharper question. Suppose the declared quantum description is operationally complete with respect to the state, admissible channels, and all declared measurement statistics. What exact mathematical evidence would be required to show that an independently defined experiential variable does **not** factor through that quantum operational state? This is formulated as an open non-reducibility theorem target. It is not an assumption that consciousness is quantum or that quantum theory is incomplete.
 
-The public research record now contains **23 proposition-level results, 58 equation-driven quantitative figures, quantum and classical physical maps, reproducible numerical examples, counterexamples, and a multi-version Python test matrix**.
+The public research record now contains **24 proposition-level results, 58 equation-driven quantitative figures, quantum and classical physical maps, reproducible numerical examples, counterexamples, and a multi-version Python test matrix**.
 
 ---
 
@@ -81,13 +81,14 @@ A reader should not need to search the repository to understand the argument. Th
 
 | What you want to inspect | Direct link | What is there |
 | --- | --- | --- |
-| complete theorem chain | [Theorem Roadmap](docs/theorem_roadmap.md) | P1 through P23 in dependency order |
+| complete theorem chain | [Theorem Roadmap](docs/theorem_roadmap.md) | P1 through P24 in dependency order |
 | equation provenance | [Equation and Citation Map](docs/equation_and_citation_map.md) | standard results, repository definitions, proofs, and external sources separated explicitly |
 | population physical-sufficiency theorem | [Proposition 19](docs/proposition_19_fundamental_physical_sufficiency.md) | deterministic factorization, stochastic sufficiency, and local rank obstruction |
 | finite-sample residual theorem | [Proposition 20](docs/proposition_20_finite_sample_residual_certification.md) | confidence interval for the P19 conditional-information residual |
 | physical-refinement theorem | [Proposition 21](docs/proposition_21_descriptor_refinement_residual_persistence.md) | omitted-physics residual trajectory and exact refinement gain |
 | simultaneous refinement-chain theorem | [Proposition 22](docs/proposition_22_simultaneous_refinement_chain_certification.md) | one confidence event controlling the full residual-and-gain trajectory |
 | adaptive refinement-selection theorem | [Proposition 23](docs/proposition_23_adaptive_descriptor_selection_certification.md) | fixed-sample post-selection validity and refinement-regret control |
+| anytime refinement theorem | [Proposition 24](docs/proposition_24_anytime_adaptive_refinement_certification.md) | repeated-look, adaptive-selection, and finite stopping-time validity |
 | fundamental-theory program | [Fundamental Theory to Consciousness](docs/fundamental_theory_consciousness_program.md) | candidate fundamental state, physical quotients, experiential quotient, and falsifiable bridge program |
 | stochastic extension | [Stochastic Fundamental Bridge](docs/stochastic_fundamental_bridge.md) | Markov-kernel and conditional-information formulation |
 | empirical falsification | [Falsification Program](docs/falsification_program.md) | conditions that would weaken or defeat a bridge claim |
@@ -99,6 +100,7 @@ A reader should not need to search the repository to understand the argument. Th
 | implementation of P21 | [descriptor_refinement_residual.py](src/consciousness_bridge/descriptor_refinement_residual.py) | executable omitted-physics refinement and residual-persistence audit |
 | implementation of P22 | [refinement_chain_certification.py](src/consciousness_bridge/refinement_chain_certification.py) | simultaneous finite-sample refinement-chain confidence certificate |
 | implementation of P23 | [adaptive_descriptor_selection.py](src/consciousness_bridge/adaptive_descriptor_selection.py) | adaptive fixed-sample descriptor-selection and regret certificate |
+| implementation of P24 | [anytime_refinement_certification.py](src/consciousness_bridge/anytime_refinement_certification.py) | anytime-valid adaptive refinement and stopping-time certificate |
 
 Every local documentation and figure link is checked by automated tests. Broken internal links therefore fail CI instead of remaining silently in the public research record.
 
@@ -118,6 +120,7 @@ Every local documentation and figure link is checked by automated tests. Broken 
 | **4.7 P21 descriptor refinement** | Does a residual survive systematic enrichment of the declared physical description? |
 | **4.8 P22 simultaneous refinement certification** | Can one finite data set certify the full declared residual-and-gain trajectory at once? |
 | **4.9 P23 adaptive descriptor selection** | Does finite-sample validity survive choosing the physical refinement after inspecting the same data? |
+| **4.10 P24 anytime-valid refinement** | Does coverage survive repeated inspection and a data-dependent finite stopping time? |
 | **5. Probability and information geometry** | How are physical response laws distinguished quantitatively? |
 | **6. Bridge domains and theorem criteria** | What would a well-defined bridge have to map and preserve? |
 | **7. P1-P10** | What can be identified, recovered, and certified from finite data? |
@@ -138,7 +141,7 @@ Every local documentation and figure link is checked by automated tests. Broken 
 
 | Research record | Current state |
 | --- | ---: |
-| proposition-level results | **23** |
+| proposition-level results | **24** |
 | equation-driven classical/causal quantitative figures | **40** |
 | equation-driven quantum-foundations figures | **18** |
 | total equation-driven quantitative figures | **58** |
@@ -148,7 +151,7 @@ Every local documentation and figure link is checked by automated tests. Broken 
 | fundamental-theory factorization test | **formal open theorem + experiment target** |
 | automated tests | **160+ and expanding** |
 | CI matrix | **Python 3.10, 3.11, 3.12** |
-| research-software version | **0.23.0** |
+| research-software version | **0.24.0** |
 
 ---
 
@@ -1373,6 +1376,154 @@ Finally, P23 is **fixed-sample**. Repeatedly collecting more data, inspecting th
 
 [Read Proposition 23](docs/proposition_23_adaptive_descriptor_selection_certification.md). The [P23 theorem map](docs/figures/p23_adaptive_descriptor_selection_certification.svg), [implementation](src/consciousness_bridge/adaptive_descriptor_selection.py), and [tests](tests/test_adaptive_descriptor_selection.py) expose the full proof-to-code path.
 
+# 4.10 P24 - anytime-valid adaptive physical-refinement certification
+
+![P24 anytime-valid adaptive physical-refinement certification](docs/figures/p24_anytime_adaptive_refinement_certification.svg)
+
+P23 is a fixed-sample theorem. P24 addresses the remaining repeated-look loophole: **what happens when the same growing data stream is inspected repeatedly and the analysis stops when a desired certificate first appears?**
+
+Let
+
+\[
+Z_i=(\Omega_i,E_i),
+\qquad
+Z_1,Z_2,\ldots\overset{\mathrm{IID}}{\sim}P,
+\]
+
+on a finite base alphabet of size \(M\). P24 allocates the total error probability across all positive sample sizes using
+
+\[
+\boxed{
+\alpha_n
+=
+\frac{6\alpha}{\pi^2n^2}.
+}
+\]
+
+Because
+
+\[
+\sum_{n=1}^{\infty}\frac1{n^2}=\frac{\pi^2}{6},
+\]
+
+we obtain the exact budget identity
+
+\[
+\boxed{
+\sum_{n=1}^{\infty}\alpha_n=\alpha.
+}
+\]
+
+Applying the P20 finite-alphabet concentration bound at local level \(\alpha_n\) gives
+
+\[
+\boxed{
+\tau_n^{\mathrm{any}}(\alpha)
+=
+\min\left\{
+1,
+\frac M2
+\sqrt{
+\frac1{2n}
+\log\left(
+\frac{M\pi^2n^2}{3\alpha}
+\right)
+}
+\right\}.
+}
+\]
+
+A countable union bound then yields one event valid for all positive times:
+
+\[
+\boxed{
+\Pr\left(
+\forall n\ge1,
+\ \|P-\widehat P_n\|_{\mathrm{TV}}
+\le
+\tau_n^{\mathrm{any}}(\alpha)
+\right)
+\ge1-\alpha.
+}
+\]
+
+P23's deterministic-pushforward argument is pathwise, so on this one event the gain and residual intervals remain valid for every admissible deterministic descriptor at every time. If the analysis selects
+
+\[
+\widehat f_n=S_n(Z_1,\ldots,Z_n),
+\]
+
+then
+
+\[
+\boxed{
+G_{\widehat f_n}\in\mathcal I^G_{n,\widehat f_n},
+\qquad
+R_{\widehat f_n}\in\mathcal I^R_{n,\widehat f_n}
+\quad\forall n\ge1
+}
+\]
+
+with simultaneous probability at least \(1-\alpha\).
+
+Let \(\tau\) be a stopping time with respect to the observed-data filtration. If \(\tau<\infty\), the same event is valid at the realized random time, so
+
+\[
+\boxed{
+\Pr\left(
+G_{\widehat f_\tau}\in\mathcal I^G_{\tau,\widehat f_\tau},
+\quad
+R_{\widehat f_\tau}\in\mathcal I^R_{\tau,\widehat f_\tau}
+\right)
+\ge1-\alpha.
+}
+\]
+
+The P23 near-optimality result is also time uniform. With
+
+\[
+B_n
+=
+\max_fU_{f,n}^G-L_{\widehat f_n,n}^G,
+\]
+
+P24 gives
+
+\[
+\boxed{
+0\le G^*-G_{\widehat f_n}\le B_n
+\qquad\forall n\ge1,
+}
+\]
+
+and, by P21,
+
+\[
+\boxed{
+R_{\widehat f_n}-\min_fR_f
+=G^*-G_{\widehat f_n}
+\le B_n.
+}
+\]
+
+This permits statistically valid stopping rules such as the first time the selected gain has a positive lower bound or the first time the refinement-regret certificate falls below a prespecified tolerance.
+
+The construction is deliberately conservative. It is an explicit alpha-spending confidence sequence, not an optimized martingale, e-process, or mixture bound. It assumes a fixed finite alphabet, IID observations, and deterministic admissible descriptor maps.
+
+The interpretation boundary remains strict:
+
+\[
+\boxed{
+\text{anytime statistical validity}
+\neq
+\text{physical completeness}
+\neq
+\text{experiential interpretation}.
+}
+\]
+
+[Read Proposition 24](docs/proposition_24_anytime_adaptive_refinement_certification.md). The [P24 theorem map](docs/figures/p24_anytime_adaptive_refinement_certification.svg), [implementation](src/consciousness_bridge/anytime_refinement_certification.py), and [tests](tests/test_anytime_refinement_certification.py) expose the full proof-to-code path.
+
 ---
 
 # 5. Probability, distinguishability, and information geometry
@@ -1484,7 +1635,7 @@ A complete empirical bridge theory must specify
 
 ---
 
-# 7. Theorem roadmap - P1 through P23
+# 7. Theorem roadmap - P1 through P24
 
 ![Theorem roadmap](docs/figures/theorem_roadmap.svg)
 
@@ -1513,6 +1664,7 @@ A complete empirical bridge theory must specify
 | **P21** | descriptor refinement makes deterministic collisions and stochastic residuals monotone, with exact information-gain decomposition | proved | [P21](docs/proposition_21_descriptor_refinement_residual_persistence.md) |
 | **P22** | one base confidence event simultaneously certifies the declared residual-and-refinement-gain chain | proved finite-sample theorem | [P22](docs/proposition_22_simultaneous_refinement_chain_certification.md) |
 | **P23** | fixed-sample adaptive descriptor selection retains simultaneous coverage and admits explicit refinement-regret bounds | proved post-selection theorem | [P23](docs/proposition_23_adaptive_descriptor_selection_certification.md) |
+| **P24** | summable alpha spending gives time-uniform adaptive-selection and finite stopping-time validity | proved anytime-valid theorem | [P24](docs/proposition_24_anytime_adaptive_refinement_certification.md) |
 
 ---
 

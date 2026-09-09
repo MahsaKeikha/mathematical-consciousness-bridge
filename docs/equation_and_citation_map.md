@@ -315,7 +315,24 @@ P23 is a fixed-sample post-selection theorem. The shared base confidence event s
 
 ---
 
-# 18. Candidate consciousness-theory feature families
+# 18. P24 - anytime-valid adaptive physical-refinement certification
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(\alpha_n=6\alpha/(\pi^2n^2)\) | summable time-indexed failure allocation | repository choice using the standard Basel identity | standard analysis; [P24](proposition_24_anytime_adaptive_refinement_certification.md) |
+| \(\sum_{n\ge1}\alpha_n=\alpha\) | exact total error-budget identity | follows from \(\sum_{n\ge1}n^{-2}=\pi^2/6\) | standard analysis; [P24](proposition_24_anytime_adaptive_refinement_certification.md) |
+| \(\tau_n^{\mathrm{any}}(\alpha)\) | time-indexed P20 base-law TV radius evaluated at local level \(\alpha_n\) | repository construction from P20 | [P20](proposition_20_finite_sample_residual_certification.md); [P24](proposition_24_anytime_adaptive_refinement_certification.md) |
+| \(\Pr(\forall n\ge1:\|P-\widehat P_n\|_{\mathrm{TV}}\le\tau_n^{\mathrm{any}})\ge1-\alpha\) | time-uniform base-law confidence event | proved by countable union bound over P20 failures | [P20](proposition_20_finite_sample_residual_certification.md); [P24](proposition_24_anytime_adaptive_refinement_certification.md) |
+| \(\widehat f_n=S_n(Z_1,\ldots,Z_n)\) | data-dependent descriptor selected at time \(n\) | repository notation | [P23](proposition_23_adaptive_descriptor_selection_certification.md); [P24](proposition_24_anytime_adaptive_refinement_certification.md) |
+| selected gain and residual intervals valid for every \(n\) | repeated-look adaptive-selection coverage | proved from the P24 base event plus P23 pathwise pushforward control | [P23](proposition_23_adaptive_descriptor_selection_certification.md); [P24](proposition_24_anytime_adaptive_refinement_certification.md) |
+| stopping-time certificate at finite \(\tau\) | validity after a data-dependent finite stopping rule | proved because the confidence event is simultaneous over all positive times | [P24](proposition_24_anytime_adaptive_refinement_certification.md) |
+| \(0\le G^*-G_{\widehat f_n}\le B_n\) for all \(n\) | anytime refinement-regret certificate | proved by applying P23 on the time-uniform event | [P23](proposition_23_adaptive_descriptor_selection_certification.md); [P24](proposition_24_anytime_adaptive_refinement_certification.md) |
+
+P24 uses a transparent alpha-spending union-bound construction. It is intentionally conservative and is not claimed to be an optimal confidence sequence. Anytime statistical validity does not establish physical completeness or experiential interpretation.
+
+---
+
+# 19. Candidate consciousness-theory feature families
 
 The following are source-grounded translations into generic feature notation. They are not claims that each named theory reduces to one scalar or one universally agreed implementation.
 
@@ -332,7 +349,7 @@ Detailed caveats and source roles are maintained in [Candidate Theory Families](
 
 ---
 
-# 19. Citation discipline
+# 20. Citation discipline
 
 A result is cited as a repository result when the bridge-specific statement, construction, or counterexample is introduced here.
 

@@ -2,7 +2,7 @@
 
 This roadmap records the current proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge.
 
-![P1-P23 theorem roadmap](figures/theorem_roadmap.svg)
+![P1-P24 theorem roadmap](figures/theorem_roadmap.svg)
 
 ---
 
@@ -33,6 +33,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P21](proposition_21_descriptor_refinement_residual_persistence.md) | nested descriptor factorization and conditional-information chain rule | explicit omitted-physics audit and residual-persistence trajectory | proved descriptor-refinement theorem |
 | [P22](proposition_22_simultaneous_refinement_chain_certification.md) | shared base-TV confidence event plus deterministic pushforward contraction | simultaneous finite-data confidence family for P21 residuals and gains | proved simultaneous-certification theorem |
 | [P23](proposition_23_adaptive_descriptor_selection_certification.md) | universal pushforward control plus post-selection regret analysis | adaptive fixed-sample physical-refinement selection with valid coverage | proved post-selection theorem |
+| [P24](proposition_24_anytime_adaptive_refinement_certification.md) | summable alpha spending plus countable union control | repeated-look adaptive refinement and finite stopping-time validity | proved anytime-valid theorem |
 
 ---
 
@@ -609,7 +610,52 @@ Direct proof: [Proposition 23](proposition_23_adaptive_descriptor_selection_cert
 
 ---
 
-# 13. Dependency chain
+# 13. Anytime-valid adaptive refinement: P24
+
+P24 distributes the global error budget over all positive sample sizes using
+
+\[
+\boxed{
+\alpha_n=\frac{6\alpha}{\pi^2n^2},
+\qquad
+\sum_{n\ge1}\alpha_n=\alpha.
+}
+\]
+
+The resulting time-indexed P20 radius is
+
+\[
+\boxed{
+\tau_n^{\mathrm{any}}(\alpha)
+=
+\min\left\{
+1,
+\frac M2
+\sqrt{\frac1{2n}\log\left(\frac{M\pi^2n^2}{3\alpha}\right)}
+\right\}.
+}
+\]
+
+A countable union bound gives
+
+\[
+\boxed{
+\Pr\left(
+\forall n\ge1:
+\|P-\widehat P_n\|_{\mathrm{TV}}
+\le\tau_n^{\mathrm{any}}(\alpha)
+\right)
+\ge1-\alpha.
+}
+\]
+
+P23's post-selection bounds are deterministic consequences of the base-law event. They therefore hold at every time simultaneously and at any realized finite stopping time.
+
+Direct proof: [Proposition 24](proposition_24_anytime_adaptive_refinement_certification.md). Implementation: [anytime_refinement_certification.py](../src/consciousness_bridge/anytime_refinement_certification.py). Tests: [test_anytime_refinement_certification.py](../tests/test_anytime_refinement_certification.py).
+
+---
+
+# 14. Dependency chain
 
 \[
 \boxed{
@@ -634,20 +680,22 @@ Direct proof: [Proposition 23](proposition_23_adaptive_descriptor_selection_cert
 &\Downarrow\\
 &\text{P22: simultaneous finite-sample refinement certification}\\
 &\Downarrow\\
-&\text{P23: fixed-sample adaptive descriptor selection}.
+&\text{P23: fixed-sample adaptive descriptor selection}\\
+&\Downarrow\\
+&\text{P24: anytime-valid adaptive selection + finite stopping-time control}.
 \end{aligned}
 }
 \]
 
 ---
 
-# 14. Current frontier
+# 15. Current frontier
 
 The next structural problems are:
 
 1. extend scale certification from response geometry \(\mathcal G\) to directed influence \(\mathcal A\) under block-compatible coarse maps;
 2. characterize partition-lattice compatibility required to control \(\mathcal K\) across scale;
-3. extend P23 from fixed-sample post-selection validity to anytime-valid adaptive refinement with optional stopping, then address continuous, dependent, hidden-state, and noisy-descriptor settings;
+3. sharpen P24 beyond conservative alpha spending and extend the refinement program to continuous, dependent, hidden-state, noisy-descriptor, and learned-descriptor settings;
 4. model genuine physical split/merge dynamics where state variables and intervention channels change;
 5. formalize the moving world-tube / causal-structure interface;
 6. normalize temporal geometry under irregular observation time;

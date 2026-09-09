@@ -27,6 +27,7 @@ FIGURES = (
     "p21_descriptor_refinement_residual_persistence.svg",
     "p22_simultaneous_refinement_chain_certification.svg",
     "p23_adaptive_descriptor_selection_certification.svg",
+    "p24_anytime_adaptive_refinement_certification.svg",
     "universal_proof_ladder.svg",
     "theory_comparison_map.svg",
 )
