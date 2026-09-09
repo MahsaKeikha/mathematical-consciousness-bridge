@@ -1,4 +1,4 @@
-"""Finite discrete tools for Proposition 11 intervention-resolved causal geometry.
+"""Finite discrete tools for Proposition 11 intervention-resolved causal structure.
 
 The module constructs physical perturbation-response quantities. It does not assign
 consciousness and does not treat any one diagnostic as a consciousness criterion.
