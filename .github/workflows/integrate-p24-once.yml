@@ -70,3 +70,5 @@ jobs:
           git add -A
           git commit -m "Integrate P24 anytime-valid refinement certification"
           git push origin HEAD:p24-anytime-refinement-certification
+
+# Retriggered after tightening the P24 roadmap copy for publication visual QA.
