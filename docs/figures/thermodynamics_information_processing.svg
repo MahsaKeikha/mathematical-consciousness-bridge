@@ -1,83 +1,88 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1080" viewBox="0 0 1800 1080" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1120" viewBox="0 0 1800 1120" role="img" aria-labelledby="title desc">
   <title id="title">Thermodynamics of information processing and consciousness research</title>
-  <desc id="desc">Publication-style diagram connecting physical energy flow, stochastic dynamics, information processing, Landauer erasure cost, entropy production, intervention-response structure, measurement, and the separate physical-to-experiential bridge problem.</desc>
+  <desc id="desc">Publication-style diagram connecting physical dynamics, information-bearing states, Landauer erasure cost, nonequilibrium entropy production, intervention-response structure, thermodynamic measurements, and the distinct consciousness bridge problem.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0 0 L0 8 L10 4 z" fill="#64748b"/></marker>
     <style>
       .title{font:700 40px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
       .subtitle{font:400 18px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
-      .head{font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
-      .body{font:400 13.8px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
-      .eq{font:600 16px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .head{font:700 19px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .eq{font:600 17px Georgia,'Times New Roman',serif;fill:#0f172a}
       .cite{font:600 12px Inter,Segoe UI,Arial,sans-serif;fill:#64748b}
-      .tag{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.5px}
       .arrow{stroke:#64748b;stroke-width:2.1;fill:none;marker-end:url(#arrow)}
     </style>
   </defs>
-  <rect width="1800" height="1080" fill="#ffffff"/>
-  <text x="75" y="66" class="title">Thermodynamics of Information Processing</text>
-  <text x="75" y="102" class="subtitle">Physical energy, entropy production, and information processing constrain the substrate; they do not by themselves specify experiential structure.</text>
 
-  <rect x="75" y="160" width="345" height="250" rx="18" fill="#f7fbff" stroke="#3b82f6" stroke-width="1.6"/>
-  <text x="100" y="198" class="head">Physical state and dynamics</text>
-  <text x="100" y="235" class="eq">dXₜ = f(Xₜ,uₜ)dt + G(Xₜ,uₜ)dWₜ</text>
-  <text x="100" y="275" class="body">State variables exchange energy and matter</text>
-  <text x="100" y="298" class="body">with an environment while evolving under</text>
-  <text x="100" y="321" class="body">deterministic and stochastic forces.</text>
-  <text x="100" y="365" class="cite">stochastic dynamics / nonequilibrium physics</text>
+  <rect width="1800" height="1120" fill="#ffffff"/>
+  <text x="80" y="68" class="title">Thermodynamics of Information Processing</text>
+  <text x="80" y="103" class="subtitle">Energy flow, entropy production, and information processing constrain a physical substrate.</text>
+  <text x="80" y="130" class="subtitle">These quantities do not by themselves define experiential structure.</text>
 
-  <rect x="505" y="160" width="345" height="250" rx="18" fill="#f8fafc" stroke="#64748b" stroke-width="1.6"/>
-  <text x="530" y="198" class="head">Information-bearing states</text>
-  <text x="530" y="235" class="eq">H(X) = −Σ p(x) log p(x)</text>
-  <text x="530" y="270" class="eq">I(X;Y) = Dₖₗ(Pₓᵧ ‖ PₓPᵧ)</text>
-  <text x="530" y="310" class="body">Probability laws encode uncertainty and</text>
-  <text x="530" y="333" class="body">statistical dependence among observables.</text>
-  <text x="530" y="365" class="cite">Shannon 1948; Cover &amp; Thomas 2006</text>
+  <!-- Top physics row -->
+  <rect x="80" y="180" width="365" height="255" rx="18" fill="#f7fbff" stroke="#3b82f6" stroke-width="1.6"/>
+  <text x="110" y="220" class="head">Physical dynamics</text>
+  <text x="110" y="262" class="eq">dXₜ = f(Xₜ,uₜ)dt</text>
+  <text x="110" y="290" class="eq">+ G(Xₜ,uₜ)dWₜ</text>
+  <text x="110" y="335" class="body">State variables evolve while exchanging</text>
+  <text x="110" y="359" class="body">energy and matter with an environment.</text>
+  <text x="110" y="402" class="cite">stochastic / nonequilibrium dynamics</text>
 
-  <rect x="935" y="160" width="345" height="250" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="1.6"/>
-  <text x="960" y="198" class="head">Irreversibility and erasure</text>
-  <text x="960" y="238" class="eq">Wₑᵣₐₛₑ ≥ kᴮ T ln 2</text>
-  <text x="960" y="278" class="body">Logical irreversibility has a minimum</text>
-  <text x="960" y="301" class="body">thermodynamic cost under the standard</text>
-  <text x="960" y="324" class="body">idealized Landauer setting.</text>
-  <text x="960" y="365" class="cite">Landauer 1961</text>
+  <rect x="505" y="180" width="365" height="255" rx="18" fill="#f8fafc" stroke="#64748b" stroke-width="1.6"/>
+  <text x="535" y="220" class="head">Information-bearing states</text>
+  <text x="535" y="262" class="eq">H(X) = −Σ p(x) log p(x)</text>
+  <text x="535" y="300" class="eq">I(X;Y) = DKL(PXY ‖ PXPY)</text>
+  <text x="535" y="343" class="body">Probability laws quantify uncertainty</text>
+  <text x="535" y="367" class="body">and statistical dependence.</text>
+  <text x="535" y="402" class="cite">Shannon 1948; Cover &amp; Thomas 2006</text>
 
-  <rect x="1365" y="160" width="360" height="250" rx="18" fill="#fefce8" stroke="#ca8a04" stroke-width="1.6"/>
-  <text x="1390" y="198" class="head">Nonequilibrium entropy production</text>
-  <text x="1390" y="238" class="eq">Δsₜₒₜ = Δsₛᵧₛ + Δsₘₑd</text>
-  <text x="1390" y="274" class="eq">⟨Δsₜₒₜ⟩ ≥ 0</text>
-  <text x="1390" y="314" class="body">Work, heat, and entropy production can be</text>
-  <text x="1390" y="337" class="body">tracked along fluctuating trajectories.</text>
-  <text x="1390" y="365" class="cite">Seifert 2012</text>
+  <rect x="930" y="180" width="365" height="255" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="1.6"/>
+  <text x="960" y="220" class="head">Irreversibility and erasure</text>
+  <text x="960" y="265" class="eq">Werase ≥ kB T ln 2</text>
+  <text x="960" y="316" class="body">Logical erasure carries a minimum</text>
+  <text x="960" y="340" class="body">thermodynamic cost in the standard</text>
+  <text x="960" y="364" class="body">Landauer setting.</text>
+  <text x="960" y="402" class="cite">Landauer 1961</text>
 
-  <path class="arrow" d="M420 285 H493"/>
-  <path class="arrow" d="M850 285 H923"/>
-  <path class="arrow" d="M1280 285 H1353"/>
+  <rect x="1355" y="180" width="365" height="255" rx="18" fill="#fefce8" stroke="#ca8a04" stroke-width="1.6"/>
+  <text x="1385" y="220" class="head">Entropy production</text>
+  <text x="1385" y="262" class="eq">Δstot = Δssys + Δsmed</text>
+  <text x="1385" y="300" class="eq">⟨Δstot⟩ ≥ 0</text>
+  <text x="1385" y="343" class="body">Work, heat, and entropy production</text>
+  <text x="1385" y="367" class="body">are defined along fluctuating trajectories.</text>
+  <text x="1385" y="402" class="cite">Seifert 2012</text>
 
-  <rect x="190" y="500" width="600" height="260" rx="20" fill="#ecfeff" stroke="#0891b2" stroke-width="1.7"/>
-  <text x="220" y="540" class="head">Measured intervention-response structure</text>
-  <text x="220" y="580" class="eq">Pₚᵘ,τ = Law(Yₜ₊τ | do(u), p)</text>
-  <text x="220" y="620" class="eq">dₚτ(u,v) = ‖Pₚᵘ,τ − Pₚᵛ,τ‖TV</text>
-  <text x="220" y="665" class="body">Controlled perturbations probe the response repertoire,</text>
-  <text x="220" y="690" class="body">directional influence, factorization, temporal change,</text>
-  <text x="220" y="715" class="body">composition, coupling, and scale dependence.</text>
-  <text x="220" y="744" class="cite">repository P11–P17; Pearl 2009 for intervention semantics</text>
+  <path class="arrow" d="M445 307 H493"/>
+  <path class="arrow" d="M870 307 H918"/>
+  <path class="arrow" d="M1295 307 H1343"/>
 
-  <rect x="1010" y="500" width="600" height="260" rx="20" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.7"/>
-  <text x="1040" y="540" class="head">Thermodynamic augmentation frontier</text>
-  <text x="1040" y="580" class="eq">Jₑ(t),  Q̇(t),  Ẇ(t),  σ(t)</text>
-  <text x="1040" y="620" class="body">Future experiments can measure energy flux, heat flow,</text>
-  <text x="1040" y="645" class="body">work rate, and entropy production alongside causal</text>
-  <text x="1040" y="670" class="body">response geometry rather than treating information as</text>
-  <text x="1040" y="695" class="body">physically cost-free.</text>
-  <text x="1040" y="735" class="cite">Landauer / stochastic thermodynamics lineage</text>
+  <!-- Lower measurement row -->
+  <rect x="145" y="520" width="690" height="285" rx="20" fill="#ecfeff" stroke="#0891b2" stroke-width="1.7"/>
+  <text x="180" y="564" class="head">Intervention-response structure</text>
+  <text x="180" y="607" class="eq">Pₚᵘ,τ = ℒ(Yₜ₊τ | do(u), p)</text>
+  <text x="180" y="647" class="eq">dₚτ(u,v) = ‖Pₚᵘ,τ − Pₚᵛ,τ‖TV</text>
+  <text x="180" y="697" class="body">Controlled perturbations probe response repertoire,</text>
+  <text x="180" y="722" class="body">directed influence, factorization, temporal variation,</text>
+  <text x="180" y="747" class="body">composition, coupling, and scale dependence.</text>
+  <text x="180" y="780" class="cite">repository P11–P17 · Pearl 2009 for intervention semantics</text>
 
-  <path class="arrow" d="M480 410 V488"/>
-  <path class="arrow" d="M1545 410 V455 C1545 475 1310 475 1310 488"/>
-  <path class="arrow" d="M790 630 H998"/>
+  <rect x="965" y="520" width="690" height="285" rx="20" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.7"/>
+  <text x="1000" y="564" class="head">Thermodynamic measurement frontier</text>
+  <text x="1000" y="608" class="eq">Jₑ(t) · Q̇(t) · Ẇ(t) · σ(t)</text>
+  <text x="1000" y="657" class="body">Measure energy flux, heat flow, work rate, and</text>
+  <text x="1000" y="682" class="body">entropy production alongside perturbational</text>
+  <text x="1000" y="707" class="body">response geometry and causal organization.</text>
+  <text x="1000" y="757" class="body">This tests energetic constraints without assuming</text>
+  <text x="1000" y="782" class="body">that energy or entropy is a consciousness variable.</text>
 
-  <rect x="230" y="850" width="1340" height="145" rx="20" fill="#0f172a"/>
-  <text x="265" y="890" style="font:700 19px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Bridge boundary</text>
-  <text x="265" y="930" style="font:600 18px Georgia,'Times New Roman',serif;fill:#e2e8f0">physical energetics + information dynamics + causal response structure  ≠  experiential structure by definition</text>
-  <text x="265" y="965" style="font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#94a3b8">A bridge theory must explain which thermodynamic and causal invariants matter, why they map to experiential equivalence classes, and what observations could falsify that mapping.</text>
+  <path class="arrow" d="M490 435 V508"/>
+  <path class="arrow" d="M1540 435 V475 C1540 495 1310 495 1310 508"/>
+  <path class="arrow" d="M835 662 H953"/>
+
+  <!-- Bridge boundary -->
+  <rect x="220" y="900" width="1360" height="155" rx="20" fill="#0f172a"/>
+  <text x="260" y="943" style="font:700 20px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Bridge boundary</text>
+  <text x="260" y="985" style="font:600 18px Georgia,'Times New Roman',serif;fill:#e2e8f0">energetics + information dynamics + causal response structure</text>
+  <text x="260" y="1016" style="font:600 18px Georgia,'Times New Roman',serif;fill:#e2e8f0">≠ experiential structure by definition</text>
+  <text x="260" y="1043" style="font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">A bridge theory must specify which invariants matter and what observations could falsify that mapping.</text>
 </svg>
