@@ -117,6 +117,16 @@ def test_declared_alphabet_must_cover_observed_labels():
         )
 
 
+def test_empty_records_are_rejected():
+    with pytest.raises(ValueError, match="at least one sample"):
+        certify_cmi_from_records(
+            [],
+            omega_size=2,
+            physical_size=1,
+            target_size=2,
+        )
+
+
 def test_invalid_certificate_inputs_are_rejected():
     with pytest.raises(ValueError, match="sample_size"):
         hoeffding_joint_tv_radius(0, 4, 0.05)
