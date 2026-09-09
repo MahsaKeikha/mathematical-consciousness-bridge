@@ -198,7 +198,7 @@ Every bridge-sufficient feature determines the canonical signature; every bridge
 
 ---
 
-# Layer D. Experimental recoverability of a complete signature
+# Layer D. Experimental recoverability and finite-data certification
 
 ## Proposition 7 - experimental signature recovery
 
@@ -235,19 +235,7 @@ d_S(p,p')
 \|P^{\pi,p}-P^{\pi,p'}\|_{\mathrm{TV}},
 \]
 
-within-signature spread
-
-\[
-\omega_S,
-\]
-
-between-signature separation
-
-\[
-\delta_S,
-\]
-
-and robust gap
+within-signature spread \(\omega_S\), between-signature separation \(\delta_S\), and robust gap
 
 \[
 \boxed{
@@ -283,20 +271,7 @@ an explicit threshold recovers the complete signature partition exactly.
 
 ## Proposition 9 - finite categorical sample complexity
 
-For \(N_P\) physical systems, \(N_\pi\) protocols, categorical alphabet size at most \(K\), and \(n\) IID repetitions per system/protocol cell, proves
-
-\[
-\Pr\left[
-\sup_{p,\pi}
-\|\widehat P^{\pi,p}-P^{\pi,p}\|_{\mathrm{TV}}
->\varepsilon
-\right]
-\le
-2N_PN_\pi K
-\exp\left(-\frac{8n\varepsilon^2}{K^2}\right).
-\]
-
-With \(\varepsilon=\gamma_S/8\), a sufficient trial count for exact signature-partition recovery with confidence at least \(1-\alpha\) is
+For \(N_P\) physical systems, \(N_\pi\) protocols, categorical alphabet size at most \(K\), and \(n\) IID repetitions per system/protocol cell, a sufficient trial count for exact signature-partition recovery with confidence at least \(1-\alpha\) is
 
 \[
 \boxed{
@@ -309,7 +284,63 @@ n
 }
 \]
 
-**Scientific role:** closes the first end-to-end theorem chain from candidate complete physical signature to explicit finite-data recovery requirement.
+**Scientific role:** closes the first end-to-end chain from candidate complete physical signature to explicit finite-data recovery requirement.
+
+---
+
+# Layer E. Robust protocol design
+
+## Proposition 10 - robust experiment design for signature recovery
+
+For a finite admissible protocol family \(S\), defines
+
+\[
+\boxed{
+\Gamma(S)=\delta(S)-\omega(S).
+}
+\]
+
+Under a finite protocol library and finite budget, an optimal family exists and exhaustive finite search returns a global optimum.
+
+For a newly added protocol \(\rho\), defines
+
+\[
+a_\rho(S)=\delta(S\cup\{\rho\})-\delta(S),
+\]
+
+\[
+b_\rho(S)=\omega(S\cup\{\rho\})-\omega(S),
+\]
+
+and proves
+
+\[
+\boxed{
+\Gamma(S\cup\{\rho\})-\Gamma(S)
+=
+a_\rho(S)-b_\rho(S).
+}
+\]
+
+Therefore
+
+\[
+\boxed{
+\Gamma(S\cup\{\rho\})>\Gamma(S)
+\iff
+a_\rho(S)>b_\rho(S).
+}
+\]
+
+A realizable Bernoulli counterexample demonstrates that an added protocol can leave the weakest between-signature separation unchanged while substantially inflating within-signature variation.
+
+At fixed protocol count, maximizing \(\Gamma(S)\) minimizes the current conservative Proposition 9 trial requirement because
+
+\[
+n\propto\Gamma(S)^{-2}.
+\]
+
+**Scientific role:** establishes that multimodal or multi-perturbation measurement should be selected by bridge-relevant separation rather than raw signal abundance.
 
 ---
 
@@ -317,13 +348,14 @@ n
 
 \[
 \boxed{
-\begin{array}{ccccccccc}
+\begin{array}{ccccccccccc}
 P1
 &\to&P5
 &\to&P6
 &\to&P7
 &\to&P8
-\to P9\\
+&\to&P9
+\to P10\\
 &&&&&&\uparrow\\
 P2&\to&P3&\to&P4
 &&\text{experiment design}
@@ -335,45 +367,63 @@ Interpretation:
 
 - P1 determines whether a physical feature or bridge is representation well defined.
 - P5-P6 determine what sufficiency and completeness mean.
-- P2-P4 determine what competing bridge claims can be empirically distinguished and how to design experiments.
+- P2-P4 determine what competing bridge claims can be empirically distinguished and how to design theory-discriminating experiments.
 - P7-P9 determine whether a proposed complete signature can be recovered from finite experiments.
+- P10 chooses protocol families that preserve bridge-relevant separation while suppressing within-signature nuisance variation.
 
 ---
 
-# Next theorem frontier
+# Immediate scientific frontier
 
-## Proposition 10 - robust experiment design for signature recovery
+## Candidate A - intervention-resolved causal geometry
 
-The next target is to optimize the same quantity controlling Proposition 9 sample complexity:
+The next step is to construct a physical signature independently of an assumed experiential label and then try to break it using Propositions 5-10.
+
+The candidate should be based on the **full geometry of controlled perturbational responses**, not a single complexity number. A generic starting object is
 
 \[
 \boxed{
-\Gamma(S)
+\mathcal R_p
 =
-\delta_S-\omega_S.
+\left\{
+P^{u,\tau}_p
+:
+u u\in\mathcal U_p,\ 	au\in\mathcal T
+\right\},
 }
 \]
 
-The theorem program will characterize protocol-family selection that maximizes robust signature separation subject to cost or protocol-count constraints.
+where \(P^{u,\tau}_p\) is the response law of the certified physical subsystem at delay \(\tau\) after admissible intervention \(u\).
 
-Because the current finite-sample requirement scales as
+The associated intervention-response geometry is
 
 \[
-n\propto\Gamma(S)^{-2},
+\boxed{
+d_p^\tau(u,v)
+=
+\|P^{u,\tau}_p-P^{v,\tau}_p\|_{\mathrm{TV}}.
+}
 \]
 
-experiment design and statistical efficiency meet in one explicit objective.
+The candidate program must then test whether this geometry, augmented only by mathematically justified irreducibility and temporal structure, can distinguish:
+
+1. integrated recurrent systems from decomposable systems;
+2. sustained differentiated responses from stereotyped global responses;
+3. conscious conditions from matched unconscious conditions;
+4. biological realizations from substrate changes that preserve the relevant causal geometry;
+5. sophisticated controllers or simulations that provide P5 counterexamples.
+
+No consciousness claim follows merely from constructing this object. Its value is that it produces a precise, perturbation-based candidate that can be exposed to the complete falsification machinery already proved.
 
 ---
 
 # Later structural frontiers
 
-After Proposition 10, the program should address:
+If Candidate A survives controlled counterexample searches, the program should address:
 
-1. **composite candidate physical signatures** without simply concatenating existing theories;
-2. **feature-lattice minimality:** which physical components are necessary, redundant, or jointly sufficient;
-3. **composition consistency:** how signature and bridge classes behave under system coupling, splitting, and merging;
-4. **temporal continuation:** when time-indexed bridge assignments define one coherent experiential history;
-5. **observer-to-bridge interface:** how a certified moving subsystem from Spatiotemporal Observer Mathematics supplies the physical domain for the bridge;
-6. **cross-theory empirical tests:** source-faithful IIT, GNWT, RPT, HOT, predictive/neurorepresentational, and future bridge families;
-7. **conditional consciousness theorem:** only after the bridge premises themselves have survived the preceding mathematical and empirical tests.
+1. **feature-lattice minimality:** which components of the intervention-resolved geometry are necessary, redundant, or jointly sufficient;
+2. **composition consistency:** how signature and bridge classes behave under system coupling, splitting, and merging;
+3. **temporal continuation:** when time-indexed bridge assignments define one coherent experiential history;
+4. **observer-to-bridge interface:** how a certified moving subsystem from Spatiotemporal Observer Mathematics supplies the physical domain for the bridge;
+5. **cross-theory empirical tests:** source-faithful IIT, GNWT, RPT, HOT, predictive/neurorepresentational, and future bridge families;
+6. **conditional consciousness theorem:** only after the bridge premises themselves have survived the preceding mathematical and empirical tests.
