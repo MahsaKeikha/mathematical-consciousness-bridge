@@ -46,7 +46,7 @@ def finish(fig, filename, title, equation, fact, status):
     )
 
 
-# QM01 — Free Gaussian wavepacket spreading
+# QM01 - Free Gaussian wavepacket spreading
 hbar = 1.0
 mass = 1.0
 sigma0 = 0.65
@@ -82,7 +82,7 @@ finish(
     "Exact free-particle Gaussian solution in dimensionless units",
 )
 
-# QM02 — Infinite square-well eigenstates
+# QM02 - Infinite square-well eigenstates
 well_x = np.linspace(0.0, 1.0, 700)
 fig, ax = plt.subplots()
 for n in (1, 2, 3, 4):
@@ -105,7 +105,7 @@ finish(
     "Standard quantum-mechanical eigenvalue problem",
 )
 
-# QM03 — Double-slit interference
+# QM03 - Double-slit interference
 angle = np.linspace(-0.12, 0.12, 900)
 wavelength = 1.0
 slit_width = 4.0
@@ -132,7 +132,7 @@ finish(
     "Standard wave-mechanical interference law",
 )
 
-# QM04 — Heisenberg uncertainty frontier
+# QM04 - Heisenberg uncertainty frontier
 sigma_x = np.linspace(0.12, 4.0, 700)
 minimum_sigma_p = hbar / (2.0 * sigma_x)
 fig, ax = plt.subplots()
@@ -163,7 +163,7 @@ finish(
     "Standard quantum-mechanical uncertainty relation",
 )
 
-# QM05 — Bloch sphere
+# QM05 - Bloch sphere
 fig = plt.figure(figsize=(8.0, 7.2))
 ax = fig.add_subplot(111, projection="3d")
 u = np.linspace(0.0, 2.0 * np.pi, 45)
@@ -199,7 +199,7 @@ finish(
     "Standard finite-dimensional quantum-state geometry",
 )
 
-# QM06 — Born probability
+# QM06 - Born probability
 polar_angle = np.linspace(0.0, np.pi, 500)
 p_zero = np.cos(polar_angle / 2.0) ** 2
 p_one = np.sin(polar_angle / 2.0) ** 2
@@ -221,7 +221,7 @@ finish(
     "Standard Born rule for a pure qubit",
 )
 
-# QM07 — Rabi oscillations
+# QM07 - Rabi oscillations
 rabi_time = np.linspace(0.0, 8.0 * np.pi, 700)
 p_excited = np.sin(rabi_time / 2.0) ** 2
 fig, ax = plt.subplots()
@@ -240,7 +240,7 @@ finish(
     "Standard two-level coherent dynamics",
 )
 
-# QM08 — Pure dephasing coherence decay
+# QM08 - Pure dephasing coherence decay
 gamma = 0.45
 dephase_time = np.linspace(0.0, 12.0, 600)
 coherence = 0.5 * np.exp(-gamma * dephase_time)
@@ -260,7 +260,7 @@ finish(
     "Lindblad pure-dephasing model",
 )
 
-# QM09 — Purity under dephasing
+# QM09 - Purity under dephasing
 purity = 0.5 * (1.0 + np.exp(-2.0 * gamma * dephase_time))
 fig, ax = plt.subplots()
 ax.plot(dephase_time, purity, lw=2.2)
@@ -280,7 +280,7 @@ finish(
     "Closed-form Lindblad dephasing result",
 )
 
-# QM10 — von Neumann entropy of a qubit spectrum
+# QM10 - von Neumann entropy of a qubit spectrum
 probability = np.linspace(1e-5, 1.0 - 1e-5, 700)
 entropy = -probability * np.log2(probability) - (
     1.0 - probability
@@ -301,7 +301,7 @@ finish(
     "Standard quantum-information entropy",
 )
 
-# QM11 — Entanglement entropy of a Schmidt pair
+# QM11 - Entanglement entropy of a Schmidt pair
 schmidt_angle = np.linspace(0.0, np.pi / 2.0, 600)
 lam = np.cos(schmidt_angle) ** 2
 safe_lam = np.clip(lam, 1e-12, 1.0 - 1e-12)
@@ -324,7 +324,7 @@ finish(
     "Standard pure-state bipartite entanglement result",
 )
 
-# QM12 — Bell-CHSH quantum violation
+# QM12 - Bell-CHSH quantum violation
 chsh_angle = np.linspace(0.0, np.pi / 2.0, 700)
 chsh_value = np.abs(-3.0 * np.cos(chsh_angle) + np.cos(3.0 * chsh_angle))
 fig, ax = plt.subplots()
@@ -346,7 +346,7 @@ finish(
     "Standard Bell-test quantum prediction",
 )
 
-# QM13 — Wigner negativity for the first excited oscillator state
+# QM13 - Wigner negativity for the first excited oscillator state
 phase_x = np.linspace(-3.2, 3.2, 300)
 phase_p = np.linspace(-3.2, 3.2, 300)
 xx, pp = np.meshgrid(phase_x, phase_p)
@@ -372,7 +372,7 @@ finish(
     "Standard harmonic-oscillator Wigner-function example",
 )
 
-# QM14 — Hilbert-space dimension growth
+# QM14 - Hilbert-space dimension growth
 qubits = np.arange(1, 31)
 hilbert_dimension = 2.0**qubits
 fig, ax = plt.subplots()
@@ -391,7 +391,7 @@ finish(
     "Standard tensor-product dimension fact",
 )
 
-# QM15 — Trace-distance contraction under depolarizing noise
+# QM15 - Trace-distance contraction under depolarizing noise
 noise = np.linspace(0.0, 1.0, 600)
 for initial_distance in (0.25, 0.5, 0.75, 1.0):
     ax_label = f"D_in={initial_distance:.2f}"
@@ -413,7 +413,7 @@ finish(
     "Standard CPTP-channel trace-distance contraction example",
 )
 
-# QM16 — Pure-state fidelity and trace distance
+# QM16 - Pure-state fidelity and trace distance
 state_angle = np.linspace(0.0, np.pi, 600)
 fidelity = np.cos(state_angle / 2.0) ** 2
 trace_distance = np.sin(state_angle / 2.0)
@@ -435,7 +435,7 @@ finish(
     "Standard pure-state quantum-information identity",
 )
 
-# QM17 — Quantum Zeno survival
+# QM17 - Quantum Zeno survival
 zeno_time = np.linspace(0.0, np.pi, 500)
 fig, ax = plt.subplots()
 for measurements in (1, 2, 5, 20, 100):
@@ -456,7 +456,7 @@ finish(
     "Idealized repeated-projective-measurement result",
 )
 
-# QM18 — Reduced-state spectrum of an entangled pair
+# QM18 - Reduced-state spectrum of an entangled pair
 reduced_lambda_one = np.cos(schmidt_angle) ** 2
 reduced_lambda_two = np.sin(schmidt_angle) ** 2
 fig, ax = plt.subplots()

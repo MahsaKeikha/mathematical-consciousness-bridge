@@ -46,7 +46,7 @@ def finish(fig, filename, title, equation, fact, status):
     )
 
 
-# Q01 — Ornstein-Uhlenbeck trajectories
+# Q01 - Ornstein-Uhlenbeck trajectories
 rng = np.random.default_rng(7)
 theta, mu, sigma, dt, horizon = 1.4, 0.0, 0.65, 0.005, 8.0
 t = np.arange(0, horizon + dt, dt)
@@ -64,20 +64,20 @@ for _ in range(6):
     ax.plot(t, state, lw=1.2, alpha=0.85)
 ax.axhline(mu, ls="--", lw=1)
 ax.set(
-    title="Q01 · Ornstein–Uhlenbeck mean-reverting trajectories",
+    title="Q01 · Ornstein-Uhlenbeck mean-reverting trajectories",
     xlabel="time",
     ylabel="state X(t)",
 )
 finish(
     fig,
     "q01_ornstein_uhlenbeck_trajectories.svg",
-    "Ornstein–Uhlenbeck mean-reverting trajectories",
+    "Ornstein-Uhlenbeck mean-reverting trajectories",
     "dX = theta(mu-X)dt + sigma dW",
     "Linear drift pulls trajectories toward equilibrium while diffusion sustains fluctuations.",
     "Equation-driven stochastic simulation",
 )
 
-# Q02 — OU stationary variance
+# Q02 - OU stationary variance
 tt = np.linspace(0, 6, 400)
 variance = sigma**2 / (2 * theta) * (1 - np.exp(-2 * theta * tt))
 stationary_variance = sigma**2 / (2 * theta)
@@ -99,7 +99,7 @@ finish(
     "Closed-form mathematical fact",
 )
 
-# Q03 — double well
+# Q03 - double well
 x = np.linspace(-2.2, 2.2, 600)
 a, b = 1.0, 2.0
 potential = a * x**4 / 4 - b * x**2 / 2
@@ -120,7 +120,7 @@ finish(
     "Equation-driven physical illustration",
 )
 
-# Q04 — stationary density in the double well
+# Q04 - stationary density in the double well
 beta = 3.0
 density = np.exp(-beta * (potential - potential.min()))
 density /= np.trapezoid(density, x)
@@ -140,7 +140,7 @@ finish(
     "Equilibrium statistical-mechanics illustration",
 )
 
-# Q05 — linear flow map
+# Q05 - linear flow map
 xx, yy = np.meshgrid(np.linspace(-2.5, 2.5, 20), np.linspace(-2.5, 2.5, 20))
 linear_a = np.array([[-0.45, -1.1], [1.0, -0.35]])
 u = linear_a[0, 0] * xx + linear_a[0, 1] * yy
@@ -172,7 +172,7 @@ finish(
     "Equation-driven dynamical-systems map",
 )
 
-# Q06 — eigenvalue stability map
+# Q06 - eigenvalue stability map
 fig, ax = plt.subplots()
 ax.axvspan(-2, 0, alpha=0.12, label="stable half-plane")
 ax.axvline(0, ls="--", lw=1)
@@ -195,7 +195,7 @@ finish(
     "Standard linear-systems fact",
 )
 
-# Q07 — diffusion MSD
+# Q07 - diffusion MSD
 diffusion = 0.35
 td = np.linspace(0, 10, 300)
 fig, ax = plt.subplots()
@@ -216,7 +216,7 @@ finish(
     "Standard diffusion fact",
 )
 
-# Q08 — heat kernel propagator
+# Q08 - heat kernel propagator
 grid = np.linspace(-4, 4, 400)
 times = np.linspace(0.05, 3, 240)
 heat_kernel = np.array(
@@ -248,7 +248,7 @@ finish(
     "Closed-form physical map",
 )
 
-# Q09 — Landauer bound
+# Q09 - Landauer bound
 k_b = 1.380649e-23
 temperatures = np.linspace(1, 500, 400)
 erasure_bound = k_b * temperatures * np.log(2)
@@ -268,7 +268,7 @@ finish(
     "Established thermodynamic bound",
 )
 
-# Q10 — Bernoulli KL asymmetry
+# Q10 - Bernoulli KL asymmetry
 probability = np.linspace(0.01, 0.99, 500)
 kl = probability * np.log(probability / (1 - probability)) + (
     1 - probability
@@ -290,7 +290,7 @@ finish(
     "Information-theoretic fact",
 )
 
-# Q11 — synchronization benchmark
+# Q11 - synchronization benchmark
 coupling = np.linspace(0.05, 5, 300)
 critical_coupling = 2.0
 order_parameter = np.sqrt(np.clip(1 - critical_coupling / coupling, 0, None))
@@ -313,7 +313,7 @@ finish(
     "Synthetic coupled-oscillator benchmark",
 )
 
-# Q12 — Markov mixing
+# Q12 - Markov mixing
 transition = np.array([[0.92, 0.08], [0.18, 0.82]])
 subdominant = sorted(np.abs(np.linalg.eigvals(transition)))[-2]
 steps = np.arange(0, 50)
@@ -333,7 +333,7 @@ finish(
     "Standard Markov-chain fact",
 )
 
-# Q13 — controllability Gramian
+# Q13 - controllability Gramian
 control_a = np.array([[-0.5, 1.0], [-1.2, -0.4]])
 control_b = np.array([[1.0], [0.2]])
 horizons = np.linspace(0.05, 8, 160)
@@ -366,7 +366,7 @@ finish(
     "Equation-driven control-theory example",
 )
 
-# Q14 — correlated Gaussian geometry
+# Q14 - correlated Gaussian geometry
 gx = np.linspace(-4, 4, 300)
 gy = np.linspace(-4, 4, 300)
 gaussian_x, gaussian_y = np.meshgrid(gx, gy)
@@ -398,7 +398,7 @@ finish(
     "Equation-driven probability geometry",
 )
 
-# Q15 — Gaussian KL shift
+# Q15 - Gaussian KL shift
 normalized_shift = np.linspace(0, 4, 400)
 fig, ax = plt.subplots()
 ax.plot(normalized_shift, 0.5 * normalized_shift**2, lw=2.5)
@@ -416,7 +416,7 @@ finish(
     "Closed-form information-theoretic fact",
 )
 
-# Q16 — Bernoulli Fisher information
+# Q16 - Bernoulli Fisher information
 bernoulli_p = np.linspace(0.02, 0.98, 500)
 fig, ax = plt.subplots()
 ax.plot(bernoulli_p, 1 / (bernoulli_p * (1 - bernoulli_p)), lw=2.5)
@@ -434,7 +434,7 @@ finish(
     "Closed-form information-geometry fact",
 )
 
-# Q17 — Gaussian mutual information
+# Q17 - Gaussian mutual information
 correlation = np.linspace(-0.98, 0.98, 500)
 fig, ax = plt.subplots()
 ax.plot(correlation, -0.5 * np.log(1 - correlation**2), lw=2.5)
@@ -452,7 +452,7 @@ finish(
     "Closed-form information-theoretic fact",
 )
 
-# Q18 — Gaussian total variation
+# Q18 - Gaussian total variation
 mean_shifts = np.linspace(0, 4, 180)
 integration_x = np.linspace(-8, 8, 5000)
 tv_values = []
@@ -480,7 +480,7 @@ finish(
     "Numerically integrated mathematical example",
 )
 
-# Q19 — intervention response laws
+# Q19 - intervention response laws
 response_axis = np.linspace(-4, 5, 700)
 fig, ax = plt.subplots()
 for mean_value, label in zip([-1.0, 0.7, 2.2], ["do(u0)", "do(u1)", "do(u2)"]):
@@ -503,7 +503,7 @@ finish(
     "Synthetic intervention benchmark",
 )
 
-# Q20 — response geometry matrix
+# Q20 - response geometry matrix
 response_geometry = np.array(
     [
         [0.00, 0.22, 0.61, 0.78],
@@ -537,7 +537,7 @@ finish(
     "Synthetic metric example",
 )
 
-# Q21 — directed influence
+# Q21 - directed influence
 influence = np.array(
     [
         [0.00, 0.71, 0.18, 0.07],
@@ -561,7 +561,7 @@ finish(
     "Synthetic causal-structure example",
 )
 
-# Q22 — partition irreducibility versus coupling
+# Q22 - partition irreducibility versus coupling
 coupling_parameter = np.linspace(0, 0.49, 300)
 fig, ax = plt.subplots()
 ax.plot(coupling_parameter, 2 * coupling_parameter, lw=2.5)
@@ -579,7 +579,7 @@ finish(
     "Closed-form synthetic coupling family",
 )
 
-# Q23 — coupled joint law
+# Q23 - coupled joint law
 joint = np.array([[0.43, 0.07], [0.07, 0.43]])
 fig, ax = plt.subplots()
 image = ax.imshow(joint, vmin=0, vmax=0.5)
@@ -606,7 +606,7 @@ finish(
     "Synthetic composition counterexample",
 )
 
-# Q24 — coupling defect versus signed correlation
+# Q24 - coupling defect versus signed correlation
 binary_correlation = np.linspace(-0.95, 0.95, 300)
 fig, ax = plt.subplots()
 ax.plot(binary_correlation, np.abs(binary_correlation) / 2, lw=2.5)
@@ -624,7 +624,7 @@ finish(
     "Closed-form composition example",
 )
 
-# Q25 — numerical coarse-graining contraction
+# Q25 - numerical coarse-graining contraction
 fine_axis = np.arange(64)
 first_law = np.exp(-(fine_axis - 20) ** 2 / (2 * 7**2))
 first_law /= first_law.sum()
@@ -654,7 +654,7 @@ finish(
     "Numerical verification of Proposition 17",
 )
 
-# Q26 — exact collision
+# Q26 - exact collision
 fig, ax = plt.subplots()
 ax.bar(["fine TV(P,Q)", "coarse TV(C#P,C#Q)"], [1, 0])
 ax.set(
@@ -671,7 +671,7 @@ finish(
     "Exact Proposition 17 counterexample",
 )
 
-# Q27 — reconstruction defect under decoder mismatch
+# Q27 - reconstruction defect under decoder mismatch
 decoder_probability = np.linspace(0, 1, 300)
 true_conditional = 0.75
 fig, ax = plt.subplots()
@@ -692,7 +692,7 @@ finish(
     "Closed-form Proposition 18 example",
 )
 
-# Q28 — P18 margin
+# Q28 - P18 margin
 reconstruction_defect = np.linspace(0, 0.5, 300)
 fine_separation = 0.72
 guaranteed_coarse_separation = np.maximum(
@@ -725,7 +725,7 @@ finish(
     "Direct visualization of Proposition 18",
 )
 
-# Q29 — exact family sufficiency
+# Q29 - exact family sufficiency
 weights = np.linspace(0.05, 0.95, 10)
 fine_distance = []
 coarse_distance = []
@@ -767,7 +767,7 @@ finish(
     "Constructive Proposition 18 example",
 )
 
-# Q30 — temporal fingerprint trajectory
+# Q30 - temporal fingerprint trajectory
 temporal_axis = np.linspace(0, 12, 160)
 geometry_coordinate = 0.5 + 0.22 * np.sin(0.65 * temporal_axis)
 influence_coordinate = 0.45 + 0.18 * np.sin(0.65 * temporal_axis + 0.8)
@@ -794,7 +794,7 @@ finish(
     "Synthetic temporal benchmark",
 )
 
-# Q31 — cumulative path variation
+# Q31 - cumulative path variation
 step_distance = np.sqrt(
     np.diff(geometry_coordinate) ** 2 + np.diff(influence_coordinate) ** 2
 )
@@ -815,7 +815,7 @@ finish(
     "Synthetic visualization of Proposition 14",
 )
 
-# Q32 — certification interval width
+# Q32 - certification interval width
 sample_size = np.logspace(np.log10(20), np.log10(2000), 120)
 estimation_error = 0.65 / np.sqrt(sample_size)
 interval_width = 4 * estimation_error
@@ -835,7 +835,7 @@ finish(
     "Proposition 15 bound visualization",
 )
 
-# Q33 — categorical sample complexity
+# Q33 - categorical sample complexity
 robust_gap = np.linspace(0.05, 0.8, 300)
 category_count = 8
 physical_count = 5
@@ -869,7 +869,7 @@ finish(
     "Direct visualization of Proposition 9",
 )
 
-# Q34 — empirical TV Monte Carlo
+# Q34 - empirical TV Monte Carlo
 rng = np.random.default_rng(42)
 monte_p = np.array([0.1, 0.2, 0.3, 0.4])
 monte_q = np.array([0.35, 0.25, 0.2, 0.2])
@@ -908,7 +908,7 @@ finish(
     "Deterministic-seed Monte Carlo test",
 )
 
-# Q35 — robust signature gap
+# Q35 - robust signature gap
 between_separation = np.linspace(0.1, 1.0, 200)
 fig, ax = plt.subplots()
 for nuisance_spread in [0.05, 0.2, 0.35]:
@@ -934,7 +934,7 @@ finish(
     "Direct visualization of Proposition 8 quantities",
 )
 
-# Q36 — repeated-event concentration bound
+# Q36 - repeated-event concentration bound
 repeat_count = np.arange(1, 1200)
 fig, ax = plt.subplots()
 for effect_size in [0.1, 0.2, 0.35]:
@@ -959,7 +959,7 @@ finish(
     "Direct visualization of Proposition 2 finite-sample bound",
 )
 
-# Q37 — synthetic perturbational spreading
+# Q37 - synthetic perturbational spreading
 node_count = 18
 perturbation_time = np.linspace(0, 3, 160)
 node_position = np.arange(node_count)
@@ -998,7 +998,7 @@ finish(
     "Synthetic network-response illustration",
 )
 
-# Q38 — synthetic dynamical complexity trace
+# Q38 - synthetic dynamical complexity trace
 complexity_time = np.linspace(0, 20, 500)
 complexity_signal = (
     np.sin(complexity_time)
@@ -1026,7 +1026,7 @@ finish(
     "Synthetic test signal",
 )
 
-# Q39 — world-tube projection
+# Q39 - world-tube projection
 world_time = np.linspace(0, 10, 200)
 center_x = 1.3 * world_time + 0.6 * np.sin(world_time)
 center_y = 0.7 * np.sin(0.8 * world_time)
@@ -1048,7 +1048,7 @@ finish(
     "Synthetic spatiotemporal illustration",
 )
 
-# Q40 — P18 admissible loss region
+# Q40 - P18 admissible loss region
 rng = np.random.default_rng(55)
 first_rho = rng.uniform(0, 0.45, 250)
 second_rho = rng.uniform(0, 0.45, 250)

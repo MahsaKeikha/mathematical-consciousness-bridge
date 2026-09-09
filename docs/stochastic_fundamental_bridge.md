@@ -259,14 +259,14 @@ A future bridge result must satisfy all of these simultaneously, not only achiev
 
 A positive residual must be challenged in this order:
 
-1. **measurement failure** — is \(E\) unreliable or circularly defined?
-2. **representation failure** — does the result disappear under equivalent coordinates?
-3. **omitted physical variable** — does an enriched physical descriptor absorb the residual?
-4. **scale failure** — was relevant information destroyed by coarse-graining?
-5. **temporal failure** — was the alignment between physical and experiential states wrong?
-6. **intervention failure** — does the residual disappear under controlled perturbation?
-7. **generalization failure** — does it fail out of sample or across laboratories?
-8. **bridge-class failure** — was the allowed mapping class too restrictive?
+1. **measurement failure** - is \(E\) unreliable or circularly defined?
+2. **representation failure** - does the result disappear under equivalent coordinates?
+3. **omitted physical variable** - does an enriched physical descriptor absorb the residual?
+4. **scale failure** - was relevant information destroyed by coarse-graining?
+5. **temporal failure** - was the alignment between physical and experiential states wrong?
+6. **intervention failure** - does the residual disappear under controlled perturbation?
+7. **generalization failure** - does it fail out of sample or across laboratories?
+8. **bridge-class failure** - was the allowed mapping class too restrictive?
 
 Only after surviving those tests should a residual be considered evidence of a deeper structural problem for the declared physical bridge.
 

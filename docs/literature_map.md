@@ -10,7 +10,7 @@ For equation-level provenance, see [Equation and Citation Map](equation_and_cita
 
 ## Tegmark 2015
 
-Max Tegmark, "Consciousness as a State of Matter," *Chaos, Solitons & Fractals* 76 (2015): 238-270. DOI: 10.1016/j.chaos.2015.03.014.
+Max Tegmark, "Consciousness as a State of Matter," *Chaos, Solitons & Fractals* 76 (2015): 238-270. DOI: [10.1016/j.chaos.2015.03.014](https://doi.org/10.1016/j.chaos.2015.03.014).
 
 **Role:** conceptual background for observer factorization, information, integration, independence, dynamics, and physically distinguished subsystem structure.
 
@@ -22,7 +22,7 @@ Max Tegmark, "Consciousness as a State of Matter," *Chaos, Solitons & Fractals* 
 
 ## Albantakis et al. 2023 - IIT 4.0
 
-Larissa Albantakis et al., "Integrated information theory (IIT) 4.0: Formulating the properties of phenomenal existence in physical terms," *PLOS Computational Biology* 19(10): e1011465. DOI: 10.1371/journal.pcbi.1011465.
+Larissa Albantakis et al., "Integrated information theory (IIT) 4.0: Formulating the properties of phenomenal existence in physical terms," *PLOS Computational Biology* 19(10): e1011465. DOI: [10.1371/journal.pcbi.1011465](https://doi.org/10.1371/journal.pcbi.1011465).
 
 **Role:** a major explicit architecture beginning from phenomenal axioms and developing physical postulates, intrinsic cause-effect structure, maximality, distinctions, and relations.
 
@@ -50,7 +50,7 @@ Johannes Kleiner and Sean Tull, "The Mathematical Structure of Integrated Inform
 
 ## Seth and Bayne 2022
 
-Anil K. Seth and Tim Bayne, "Theories of consciousness," *Nature Reviews Neuroscience* 23 (2022): 439-452. DOI: 10.1038/s41583-022-00587-4.
+Anil K. Seth and Tim Bayne, "Theories of consciousness," *Nature Reviews Neuroscience* 23 (2022): 439-452. DOI: [10.1038/s41583-022-00587-4](https://doi.org/10.1038/s41583-022-00587-4).
 
 **Role:** broad comparative review of higher-order, global workspace, re-entry/predictive-processing, and integrated-information approaches.
 
@@ -62,13 +62,13 @@ Anil K. Seth and Tim Bayne, "Theories of consciousness," *Nature Reviews Neurosc
 
 ## Dehaene and Changeux 2011
 
-Stanislas Dehaene and Jean-Pierre Changeux, "Experimental and theoretical approaches to conscious processing," *Neuron* 70(2) (2011): 200-227. DOI: 10.1016/j.neuron.2011.03.018.
+Stanislas Dehaene and Jean-Pierre Changeux, "Experimental and theoretical approaches to conscious processing," *Neuron* 70(2) (2011): 200-227. DOI: [10.1016/j.neuron.2011.03.018](https://doi.org/10.1016/j.neuron.2011.03.018).
 
 **Role:** major Global Neuronal Workspace formulation linking conscious access to large-scale workspace dynamics, amplification, and availability.
 
 ## Mashour et al. 2020
 
-George A. Mashour, Pieter Roelfsema, Jean-Pierre Changeux, and Stanislas Dehaene, "Conscious Processing and the Global Neuronal Workspace Hypothesis," *Neuron* 105(5) (2020): 776-798. DOI: 10.1016/j.neuron.2020.01.026.
+George A. Mashour, Pieter Roelfsema, Jean-Pierre Changeux, and Stanislas Dehaene, "Conscious Processing and the Global Neuronal Workspace Hypothesis," *Neuron* 105(5) (2020): 776-798. DOI: [10.1016/j.neuron.2020.01.026](https://doi.org/10.1016/j.neuron.2020.01.026).
 
 **Role:** contemporary GNW synthesis emphasizing ignition, recurrent processing, and global availability.
 
@@ -76,7 +76,7 @@ George A. Mashour, Pieter Roelfsema, Jean-Pierre Changeux, and Stanislas Dehaene
 
 ## Changeux and Farisco 2026
 
-Jean-Pierre Changeux and Michele Farisco, "The Global Neuronal Workspace as a multilevel model of conscious processing," *Trends in Cognitive Sciences* 30(6) (2026): 477-479. DOI: 10.1016/j.tics.2026.03.004.
+Jean-Pierre Changeux and Michele Farisco, "The Global Neuronal Workspace as a multilevel model of conscious processing," *Trends in Cognitive Sciences* 30(6) (2026): 477-479. DOI: [10.1016/j.tics.2026.03.004](https://doi.org/10.1016/j.tics.2026.03.004).
 
 **Role:** clarification that GNW is a multilevel neural model rather than a purely software-level broadcast criterion.
 
@@ -84,7 +84,7 @@ Jean-Pierre Changeux and Michele Farisco, "The Global Neuronal Workspace as a mu
 
 ## Lamme 2006
 
-Victor A. F. Lamme, "Towards a true neural stance on consciousness," *Trends in Cognitive Sciences* 10(11) (2006): 494-501. DOI: 10.1016/j.tics.2006.09.001.
+Victor A. F. Lamme, "Towards a true neural stance on consciousness," *Trends in Cognitive Sciences* 10(11) (2006): 494-501. DOI: [10.1016/j.tics.2006.09.001](https://doi.org/10.1016/j.tics.2006.09.001).
 
 **Role:** recurrent-processing account emphasizing recurrent neural interactions.
 
@@ -96,7 +96,7 @@ Victor A. F. Lamme, "Towards a true neural stance on consciousness," *Trends in 
 
 ## Brown, Lau, and LeDoux 2019
 
-Richard Brown, Hakwan Lau, and Joseph E. LeDoux, "Understanding the Higher-Order Approach to Consciousness," *Trends in Cognitive Sciences* 23(9) (2019): 754-768. DOI: 10.1016/j.tics.2019.06.009.
+Richard Brown, Hakwan Lau, and Joseph E. LeDoux, "Understanding the Higher-Order Approach to Consciousness," *Trends in Cognitive Sciences* 23(9) (2019): 754-768. DOI: [10.1016/j.tics.2019.06.009](https://doi.org/10.1016/j.tics.2019.06.009).
 
 **Role:** review and clarification of higher-order approaches and their variants.
 
@@ -104,13 +104,13 @@ Richard Brown, Hakwan Lau, and Joseph E. LeDoux, "Understanding the Higher-Order
 
 ## Seth and Hohwy 2021
 
-Anil K. Seth and Jakob Hohwy, "Predictive processing as an empirical theory for consciousness science," *Cognitive Neuroscience* 12(2) (2021): 89-90. DOI: 10.1080/17588928.2020.1838467.
+Anil K. Seth and Jakob Hohwy, "Predictive processing as an empirical theory for consciousness science," *Cognitive Neuroscience* 12(2) (2021): 89-90. DOI: [10.1080/17588928.2020.1838467](https://doi.org/10.1080/17588928.2020.1838467).
 
 **Role:** positions predictive processing as a useful empirical framework rather than a single settled consciousness bridge.
 
 ## Pennartz 2022
 
-Cyriel M. A. Pennartz, "What is neurorepresentationalism? From neural activity and predictive processing to multi-level representations and consciousness," *Behavioural Brain Research* 432 (2022): 113969. DOI: 10.1016/j.bbr.2022.113969.
+Cyriel M. A. Pennartz, "What is neurorepresentationalism? From neural activity and predictive processing to multi-level representations and consciousness," *Behavioural Brain Research* 432 (2022): 113969. DOI: [10.1016/j.bbr.2022.113969](https://doi.org/10.1016/j.bbr.2022.113969).
 
 **Role:** explicit neurorepresentational account involving multimodal, situated, multi-level representations.
 
@@ -122,7 +122,7 @@ Cyriel M. A. Pennartz, "What is neurorepresentationalism? From neural activity a
 
 ## Doerig et al. 2019
 
-Adrien Doerig, Aaron Schurger, Kathryn Hess, and Michael H. Herzog, "The unfolding argument: Why IIT and other causal structure theories cannot explain consciousness," *Consciousness and Cognition* 72 (2019): 49-59. DOI: 10.1016/j.concog.2019.04.002.
+Adrien Doerig, Aaron Schurger, Kathryn Hess, and Michael H. Herzog, "The unfolding argument: Why IIT and other causal structure theories cannot explain consciousness," *Consciousness and Cognition* 72 (2019): 49-59. DOI: [10.1016/j.concog.2019.04.002](https://doi.org/10.1016/j.concog.2019.04.002).
 
 **Role:** motivates explicit analysis of whether competing consciousness assignments are distinguishable by a declared experiment class.
 
@@ -130,7 +130,7 @@ Adrien Doerig, Aaron Schurger, Kathryn Hess, and Michael H. Herzog, "The unfoldi
 
 ## Cogitate Consortium et al. 2025
 
-Cogitate Consortium, Oscar Ferrante, Urszula Gorska-Klimowska, et al., "Adversarial testing of global neuronal workspace and integrated information theories of consciousness," *Nature* 642 (2025): 133-142. DOI: 10.1038/s41586-025-08888-1.
+Cogitate Consortium, Oscar Ferrante, Urszula Gorska-Klimowska, et al., "Adversarial testing of global neuronal workspace and integrated information theories of consciousness," *Nature* 642 (2025): 133-142. DOI: [10.1038/s41586-025-08888-1](https://doi.org/10.1038/s41586-025-08888-1).
 
 **Role:** preregistered adversarial comparison of IIT and GNWT using fMRI, MEG, and intracranial EEG.
 
@@ -138,7 +138,7 @@ Cogitate Consortium, Oscar Ferrante, Urszula Gorska-Klimowska, et al., "Adversar
 
 ## Corcoran et al. 2026
 
-Andrew W. Corcoran et al., "Integrated information and predictive processing theories of consciousness: An adversarial collaborative review," *Neuroscience and Biobehavioral Reviews* 187 (2026): 106742. DOI: 10.1016/j.neubiorev.2026.106742.
+Andrew W. Corcoran et al., "Integrated information and predictive processing theories of consciousness: An adversarial collaborative review," *Neuroscience and Biobehavioral Reviews* 187 (2026): 106742. DOI: [10.1016/j.neubiorev.2026.106742](https://doi.org/10.1016/j.neubiorev.2026.106742).
 
 **Role:** adversarial-collaboration framework comparing IIT, Neurorepresentationalism, and Active Inference with emphasis on divergent predictions and quantitative evidence integration.
 
@@ -150,7 +150,7 @@ Andrew W. Corcoran et al., "Integrated information and predictive processing the
 
 ## Casali et al. 2013
 
-Adenauer G. Casali et al., "A theoretically based index of consciousness independent of sensory processing and behavior," *Science Translational Medicine* 5(198) (2013): 198ra105. DOI: 10.1126/scitranslmed.3006294.
+Adenauer G. Casali et al., "A theoretically based index of consciousness independent of sensory processing and behavior," *Science Translational Medicine* 5(198) (2013): 198ra105. DOI: [10.1126/scitranslmed.3006294](https://doi.org/10.1126/scitranslmed.3006294).
 
 **Role:** perturbational-complexity work using direct cortical perturbation and distributed EEG response to distinguish a range of conscious and unconscious conditions.
 
@@ -158,7 +158,7 @@ Adenauer G. Casali et al., "A theoretically based index of consciousness indepen
 
 ## Maschke et al. 2024
 
-Charlotte Maschke et al., "Critical dynamics in spontaneous EEG predict anesthetic-induced loss of consciousness and perturbational complexity," *Communications Biology* 7 (2024): 946. DOI: 10.1038/s42003-024-06613-8.
+Charlotte Maschke et al., "Critical dynamics in spontaneous EEG predict anesthetic-induced loss of consciousness and perturbational complexity," *Communications Biology* 7 (2024): 946. DOI: [10.1038/s42003-024-06613-8](https://doi.org/10.1038/s42003-024-06613-8).
 
 **Role:** links spontaneous critical dynamics, anesthesia-induced loss of consciousness, and perturbational complexity.
 
@@ -166,7 +166,7 @@ Charlotte Maschke et al., "Critical dynamics in spontaneous EEG predict anesthet
 
 ## Mashour 2024
 
-George A. Mashour, "Anesthesia and the neurobiology of consciousness," *Neuron* 112(10) (2024): 1553-1567. DOI: 10.1016/j.neuron.2024.03.002.
+George A. Mashour, "Anesthesia and the neurobiology of consciousness," *Neuron* 112(10) (2024): 1553-1567. DOI: [10.1016/j.neuron.2024.03.002](https://doi.org/10.1016/j.neuron.2024.03.002).
 
 **Role:** contemporary review of anesthesia and consciousness emphasizing state transitions and dynamical organization.
 
@@ -178,7 +178,7 @@ George A. Mashour, "Anesthesia and the neurobiology of consciousness," *Neuron* 
 
 ## Luppi et al. 2024
 
-Andrea I. Luppi et al., "A synergistic workspace for human consciousness revealed by Integrated Information Decomposition," *eLife* 12 (2024): RP88173. DOI: 10.7554/eLife.88173.
+Andrea I. Luppi et al., "A synergistic workspace for human consciousness revealed by Integrated Information Decomposition," *eLife* 12 (2024): RP88173. DOI: [10.7554/eLife.88173](https://doi.org/10.7554/eLife.88173).
 
 **Role:** reports that loss of consciousness under anesthesia or disorders of consciousness is associated with reduced ability of a synergistic workspace to integrate information, with restoration accompanying recovery.
 
@@ -186,7 +186,7 @@ Andrea I. Luppi et al., "A synergistic workspace for human consciousness reveale
 
 ## Luppi et al. 2026
 
-Andrea I. Luppi et al., "Convergent transcriptomic and connectomic controllers of information integration and its anaesthetic breakdown across mammalian brains," *Nature Human Behaviour* 10 (2026): 777-802. DOI: 10.1038/s41562-025-02381-5.
+Andrea I. Luppi et al., "Convergent transcriptomic and connectomic controllers of information integration and its anaesthetic breakdown across mammalian brains," *Nature Human Behaviour* 10 (2026): 777-802. DOI: [10.1038/s41562-025-02381-5](https://doi.org/10.1038/s41562-025-02381-5).
 
 **Role:** cross-species work connecting anesthesia-related changes in information integration to large-scale dynamical control and biological organization.
 
@@ -194,7 +194,7 @@ Andrea I. Luppi et al., "Convergent transcriptomic and connectomic controllers o
 
 ## Pigozzi, Goldstein, and Levin 2025
 
-Federico Pigozzi, Adam Goldstein, and Michael Levin, "Associative conditioning in gene regulatory network models increases integrative causal emergence," *Communications Biology* 8 (2025): 1027. DOI: 10.1038/s42003-025-08411-2.
+Federico Pigozzi, Adam Goldstein, and Michael Levin, "Associative conditioning in gene regulatory network models increases integrative causal emergence," *Communications Biology* 8 (2025): 1027. DOI: [10.1038/s42003-025-08411-2](https://doi.org/10.1038/s42003-025-08411-2).
 
 **Role:** example of causal-emergence analysis in a non-neural biological modeling context.
 
@@ -226,7 +226,7 @@ Jonas Peters, Stefan Bauer, and Niklas Pfister, "Causal Models for Dynamical Sys
 
 ## Burago, Burago, and Ivanov 2001
 
-Dmitri Burago, Yuri Burago, and Sergei Ivanov, *A Course in Metric Geometry*, Graduate Studies in Mathematics 33, American Mathematical Society, 2001. DOI: 10.1090/gsm/033.
+Dmitri Burago, Yuri Burago, and Sergei Ivanov, *A Course in Metric Geometry*, Graduate Studies in Mathematics 33, American Mathematical Society, 2001. DOI: [10.1090/gsm/033](https://doi.org/10.1090/gsm/033).
 
 **Role:** standard metric-space background, including quotient-style geometric reasoning under isometries.
 
@@ -238,19 +238,19 @@ Dmitri Burago, Yuri Burago, and Sergei Ivanov, *A Course in Metric Geometry*, Gr
 
 ## Le Cam and Yang 2000
 
-Lucien Le Cam and Grace Lo Yang, *Asymptotics in Statistics: Some Basic Concepts*, 2nd ed. Springer, 2000. DOI: 10.1007/978-1-4612-1166-2.
+Lucien Le Cam and Grace Lo Yang, *Asymptotics in Statistics: Some Basic Concepts*, 2nd ed. Springer, 2000. DOI: [10.1007/978-1-4612-1166-2](https://doi.org/10.1007/978-1-4612-1166-2).
 
 **Role:** decision-theoretic and statistical-experiment foundations for comparing probability models and experiments.
 
 ## Tsybakov 2009
 
-Alexandre B. Tsybakov, *Introduction to Nonparametric Estimation*. Springer, 2009. DOI: 10.1007/b13794.
+Alexandre B. Tsybakov, *Introduction to Nonparametric Estimation*. Springer, 2009. DOI: [10.1007/b13794](https://doi.org/10.1007/b13794).
 
 **Role:** standard reference for minimax testing and probability-distance tools.
 
 ## Hoeffding 1963
 
-Wassily Hoeffding, "Probability Inequalities for Sums of Bounded Random Variables," *Journal of the American Statistical Association* 58(301) (1963): 13-30. DOI: 10.1080/01621459.1963.10500830.
+Wassily Hoeffding, "Probability Inequalities for Sums of Bounded Random Variables," *Journal of the American Statistical Association* 58(301) (1963): 13-30. DOI: [10.1080/01621459.1963.10500830](https://doi.org/10.1080/01621459.1963.10500830).
 
 **Role:** concentration inequality for independent bounded variables.
 

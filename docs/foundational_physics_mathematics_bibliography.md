@@ -23,7 +23,7 @@ A source in sections 1-5 supplies mathematics or physics. A source in section 6 
 
 Claude E. Shannon, "A Mathematical Theory of Communication," *Bell System Technical Journal* 27 (1948): 379-423, 623-656.
 
-DOI Part I: `10.1002/j.1538-7305.1948.tb01338.x`.
+DOI Part I: [10.1002/j.1538-7305.1948.tb01338.x](https://doi.org/10.1002/j.1538-7305.1948.tb01338.x).
 
 **Role:** foundational definition of entropy and information in communication theory.
 
@@ -45,7 +45,7 @@ D_{\mathrm{KL}}(P_{XY}\Vert P_XP_Y).
 
 ## Cover and Thomas 2006
 
-Thomas M. Cover and Joy A. Thomas, *Elements of Information Theory*, 2nd ed., Wiley, 2006. DOI: `10.1002/047174882X`.
+Thomas M. Cover and Joy A. Thomas, *Elements of Information Theory*, 2nd ed., Wiley, 2006. DOI: [10.1002/047174882X](https://doi.org/10.1002/047174882X).
 
 **Role:** standard modern reference for entropy, mutual information, conditional information, data processing, and information-theoretic inequalities.
 
@@ -55,7 +55,7 @@ Thomas M. Cover and Joy A. Thomas, *Elements of Information Theory*, 2nd ed., Wi
 
 ## Amari 2016
 
-Shun-ichi Amari, *Information Geometry and Its Applications*. Applied Mathematical Sciences 194, Springer, 2016. DOI: `10.1007/978-4-431-55978-8`.
+Shun-ichi Amari, *Information Geometry and Its Applications*. Applied Mathematical Sciences 194, Springer, 2016. DOI: [10.1007/978-4-431-55978-8](https://doi.org/10.1007/978-4-431-55978-8).
 
 **Role:** foundational modern reference for differential-geometric structure on statistical manifolds.
 
@@ -77,7 +77,7 @@ g_{ij}(\theta)
 
 ## Ay, Jost, Le, and Schwachhofer 2017
 
-Nihat Ay, Jurgen Jost, Hong Van Le, and Lorenz Schwachhofer, *Information Geometry*. Ergebnisse der Mathematik und ihrer Grenzgebiete 64, Springer, 2017. DOI: `10.1007/978-3-319-56478-4`.
+Nihat Ay, Jurgen Jost, Hong Van Le, and Lorenz Schwachhofer, *Information Geometry*. Ergebnisse der Mathematik und ihrer Grenzgebiete 64, Springer, 2017. DOI: [10.1007/978-3-319-56478-4](https://doi.org/10.1007/978-3-319-56478-4).
 
 **Role:** rigorous mathematical foundations for statistical manifolds, Fisher metric, Amari-Chentsov tensor, sufficient statistics, and geometric inference.
 
@@ -87,7 +87,7 @@ Nihat Ay, Jurgen Jost, Hong Van Le, and Lorenz Schwachhofer, *Information Geomet
 
 ## Landauer 1961
 
-Rolf Landauer, "Irreversibility and Heat Generation in the Computing Process," *IBM Journal of Research and Development* 5(3) (1961): 183-191. DOI: `10.1147/rd.53.0183`.
+Rolf Landauer, "Irreversibility and Heat Generation in the Computing Process," *IBM Journal of Research and Development* 5(3) (1961): 183-191. DOI: [10.1147/rd.53.0183](https://doi.org/10.1147/rd.53.0183).
 
 **Role:** foundational link between logically irreversible information processing and physical dissipation.
 
@@ -105,7 +105,7 @@ k_B T\ln 2.
 
 ## Seifert 2012
 
-Udo Seifert, "Stochastic thermodynamics, fluctuation theorems and molecular machines," *Reports on Progress in Physics* 75(12) (2012): 126001. DOI: `10.1088/0034-4885/75/12/126001`.
+Udo Seifert, "Stochastic thermodynamics, fluctuation theorems and molecular machines," *Reports on Progress in Physics* 75(12) (2012): 126001. DOI: [10.1088/0034-4885/75/12/126001](https://doi.org/10.1088/0034-4885/75/12/126001).
 
 **Role:** modern framework for work, heat, entropy production, and fluctuation relations along stochastic nonequilibrium trajectories.
 
@@ -127,13 +127,13 @@ A representative entropy-production decomposition is written schematically as
 
 ## Uhlenbeck and Ornstein 1930
 
-George E. Uhlenbeck and Leonard S. Ornstein, "On the Theory of the Brownian Motion," *Physical Review* 36 (1930): 823-841. DOI: `10.1103/PhysRev.36.823`.
+George E. Uhlenbeck and Leonard S. Ornstein, "On the Theory of the Brownian Motion," *Physical Review* 36 (1930): 823-841. DOI: [10.1103/PhysRev.36.823](https://doi.org/10.1103/PhysRev.36.823).
 
 **Role:** classical stochastic relaxation model and physical lineage for continuous-time temporal correlation.
 
 ## Doob 1942
 
-Joseph L. Doob, "The Brownian Movement and Stochastic Equations," *Annals of Mathematics* 43(2) (1942): 351-369. DOI: `10.2307/1968873`.
+Joseph L. Doob, "The Brownian Movement and Stochastic Equations," *Annals of Mathematics* 43(2) (1942): 351-369. DOI: [10.2307/1968873](https://doi.org/10.2307/1968873).
 
 **Role:** Gaussian Markov-process context.
 
@@ -177,13 +177,13 @@ Giulio Tononi, Olaf Sporns, and Gerald M. Edelman, "A measure for brain complexi
 
 ## Tononi 2004
 
-Giulio Tononi, "An Information Integration Theory of Consciousness," *BMC Neuroscience* 5 (2004): 42. DOI: `10.1186/1471-2202-5-42`.
+Giulio Tononi, "An Information Integration Theory of Consciousness," *BMC Neuroscience* 5 (2004): 42. DOI: [10.1186/1471-2202-5-42](https://doi.org/10.1186/1471-2202-5-42).
 
 **Role:** foundational integrated-information consciousness-theory paper.
 
 ## Albantakis et al. 2023
 
-Larissa Albantakis et al., "Integrated information theory (IIT) 4.0: Formulating the properties of phenomenal existence in physical terms," *PLOS Computational Biology* 19(10) (2023): e1011465. DOI: `10.1371/journal.pcbi.1011465`.
+Larissa Albantakis et al., "Integrated information theory (IIT) 4.0: Formulating the properties of phenomenal existence in physical terms," *PLOS Computational Biology* 19(10) (2023): e1011465. DOI: [10.1371/journal.pcbi.1011465](https://doi.org/10.1371/journal.pcbi.1011465).
 
 **Role:** current formal IIT architecture linking phenomenal axioms to physical postulates and intrinsic cause-effect structure.
 
@@ -193,7 +193,7 @@ Larissa Albantakis et al., "Integrated information theory (IIT) 4.0: Formulating
 
 ## Casali et al. 2013
 
-Adenauer G. Casali et al., "A theoretically based index of consciousness independent of sensory processing and behavior," *Science Translational Medicine* 5(198) (2013): 198ra105. DOI: `10.1126/scitranslmed.3006294`.
+Adenauer G. Casali et al., "A theoretically based index of consciousness independent of sensory processing and behavior," *Science Translational Medicine* 5(198) (2013): 198ra105. DOI: [10.1126/scitranslmed.3006294](https://doi.org/10.1126/scitranslmed.3006294).
 
 **Role:** perturbational-complexity work combining direct cortical perturbation with distributed neural response.
 
@@ -201,19 +201,19 @@ Adenauer G. Casali et al., "A theoretically based index of consciousness indepen
 
 ## Maschke et al. 2024
 
-Charlotte Maschke et al., "Critical dynamics in spontaneous EEG predict anesthetic-induced loss of consciousness and perturbational complexity," *Communications Biology* 7 (2024): 946. DOI: `10.1038/s42003-024-06613-8`.
+Charlotte Maschke et al., "Critical dynamics in spontaneous EEG predict anesthetic-induced loss of consciousness and perturbational complexity," *Communications Biology* 7 (2024): 946. DOI: [10.1038/s42003-024-06613-8](https://doi.org/10.1038/s42003-024-06613-8).
 
 **Role:** empirical relation among spontaneous critical dynamics, anesthesia-induced loss of consciousness, and perturbational complexity.
 
 ## Luppi et al. 2024
 
-Andrea I. Luppi et al., "A synergistic workspace for human consciousness revealed by Integrated Information Decomposition," *eLife* 12 (2024): RP88173. DOI: `10.7554/eLife.88173`.
+Andrea I. Luppi et al., "A synergistic workspace for human consciousness revealed by Integrated Information Decomposition," *eLife* 12 (2024): RP88173. DOI: [10.7554/eLife.88173](https://doi.org/10.7554/eLife.88173).
 
 **Role:** empirical information-decomposition study connecting synergistic information integration with conscious state.
 
 ## Luppi et al. 2026
 
-Andrea I. Luppi et al., "Convergent transcriptomic and connectomic controllers of information integration and its anaesthetic breakdown across mammalian brains," *Nature Human Behaviour* 10 (2026): 777-802. DOI: `10.1038/s41562-025-02381-5`.
+Andrea I. Luppi et al., "Convergent transcriptomic and connectomic controllers of information integration and its anaesthetic breakdown across mammalian brains," *Nature Human Behaviour* 10 (2026): 777-802. DOI: [10.1038/s41562-025-02381-5](https://doi.org/10.1038/s41562-025-02381-5).
 
 **Role:** cross-species work relating information integration, dynamical control, biological organization, and anesthesia.
 
@@ -223,7 +223,7 @@ Andrea I. Luppi et al., "Convergent transcriptomic and connectomic controllers o
 
 ## Tegmark 2015
 
-Max Tegmark, "Consciousness as a State of Matter," *Chaos, Solitons & Fractals* 76 (2015): 238-270. DOI: `10.1016/j.chaos.2015.03.014`.
+Max Tegmark, "Consciousness as a State of Matter," *Chaos, Solitons & Fractals* 76 (2015): 238-270. DOI: [10.1016/j.chaos.2015.03.014](https://doi.org/10.1016/j.chaos.2015.03.014).
 
 **Role:** physics/factorization lineage and conceptual background for observer-like physical organization.
 
@@ -241,13 +241,13 @@ Johannes Kleiner and Sean Tull, "The Mathematical Structure of Integrated Inform
 
 ## Seth and Bayne 2022
 
-Anil K. Seth and Tim Bayne, "Theories of consciousness," *Nature Reviews Neuroscience* 23 (2022): 439-452. DOI: `10.1038/s41583-022-00587-4`.
+Anil K. Seth and Tim Bayne, "Theories of consciousness," *Nature Reviews Neuroscience* 23 (2022): 439-452. DOI: [10.1038/s41583-022-00587-4](https://doi.org/10.1038/s41583-022-00587-4).
 
 **Role:** major comparative review of leading consciousness theories.
 
 ## Cogitate Consortium et al. 2025
 
-Cogitate Consortium et al., "Adversarial testing of global neuronal workspace and integrated information theories of consciousness," *Nature* 642 (2025): 133-142. DOI: `10.1038/s41586-025-08888-1`.
+Cogitate Consortium et al., "Adversarial testing of global neuronal workspace and integrated information theories of consciousness," *Nature* 642 (2025): 133-142. DOI: [10.1038/s41586-025-08888-1](https://doi.org/10.1038/s41586-025-08888-1).
 
 **Role:** preregistered adversarial test of major theory predictions using fMRI, MEG, and intracranial EEG.
 

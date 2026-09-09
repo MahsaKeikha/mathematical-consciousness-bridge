@@ -1,4 +1,4 @@
-# Proposition 19 — Fundamental Physical Sufficiency and Residual Tests
+# Proposition 19 - Fundamental Physical Sufficiency and Residual Tests
 
 ## Status
 
@@ -52,7 +52,7 @@ such that
 
 ---
 
-# 2. P19A — exact factorization theorem
+# 2. P19A - exact factorization theorem
 
 ## Proposition
 
@@ -107,7 +107,7 @@ Fiber constancy makes this definition independent of the representative. Therefo
 
 ---
 
-# 3. P19B — exact no-factorization witness
+# 3. P19B - exact no-factorization witness
 
 A single exact collision
 
@@ -135,7 +135,7 @@ It does **not** establish that no richer physical descriptor exists. A collision
 
 ---
 
-# 4. P19C — stochastic physical sufficiency
+# 4. P19C - stochastic physical sufficiency
 
 A deterministic bridge may be unnecessarily restrictive. Let \((\Omega,T,E)\) be random variables with a finite joint law. Physical sufficiency in the stochastic case means that the conditional distribution of \(E\) depends on the underlying state only through \(T\):
 
@@ -239,7 +239,7 @@ The deterministic fiber theorem and the information-theoretic criterion are ther
 
 ---
 
-# 6. P19D — differential no-go criterion
+# 6. P19D - differential no-go criterion
 
 Suppose \(\mathcal M\), \(\mathcal Q_T\), and \(\mathcal Q_E\) are smooth manifolds in a neighborhood of \(\Omega_0\), and \(T\) and \(E\) are differentiable there.
 
@@ -323,7 +323,7 @@ If a candidate variable \(Z\) removes the residual after defining
 T'=(T,Z),
 \]
 
-then the result is evidence that \(T\) was physically incomplete—not evidence for a nonphysical entity.
+then the result is evidence that \(T\) was physically incomplete-not evidence for a nonphysical entity.
 
 ---
 

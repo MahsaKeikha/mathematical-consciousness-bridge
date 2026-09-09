@@ -19,10 +19,10 @@ This report records deterministic numerical checkpoints used by the quantitative
 
 The quantitative test suite checks four distinct layers rather than only checking file existence:
 
-1. **Artifact integrity** — at least 33 equation-driven SVGs must exist, every manifest entry must resolve to a nonempty SVG, and equations/status labels must be present.
-2. **Closed-form benchmarks** — OU stationary variance and the Landauer bound are checked numerically.
-3. **Linear and stochastic systems** — the state-space eigenvalues and Markov-chain spectral quantity used by the figures are checked.
-4. **Repository propositions** — explicit P17 contraction/collision and P18 exact-family-sufficiency examples are checked against the code implementation; P9 inverse-square sample-complexity scaling is also tested.
+1. **Artifact integrity** - at least 33 equation-driven SVGs must exist, every manifest entry must resolve to a nonempty SVG, and equations/status labels must be present.
+2. **Closed-form benchmarks** - OU stationary variance and the Landauer bound are checked numerically.
+3. **Linear and stochastic systems** - the state-space eigenvalues and Markov-chain spectral quantity used by the figures are checked.
+4. **Repository propositions** - explicit P17 contraction/collision and P18 exact-family-sufficiency examples are checked against the code implementation; P9 inverse-square sample-complexity scaling is also tested.
 
 ## Interpretation discipline
 

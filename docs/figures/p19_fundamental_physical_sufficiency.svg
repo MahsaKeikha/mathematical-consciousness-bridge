@@ -18,7 +18,7 @@
   </defs>
 
   <rect width="1600" height="980" fill="#ffffff"/>
-  <text x="70" y="62" class="title">P19 — Fundamental Physical Sufficiency and Residual Tests</text>
+  <text x="70" y="62" class="title">P19 - Fundamental Physical Sufficiency and Residual Tests</text>
   <text x="70" y="96" class="subtitle">Test whether an independently defined target is fixed by the declared physical descriptor before adding a new primitive.</text>
 
   <rect x="570" y="145" width="460" height="120" rx="16" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>

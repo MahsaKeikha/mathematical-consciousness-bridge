@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: mathematical-consciousness-bridge
+Version: 0.18.0
+Summary: Formal tools for physical-to-experiential bridge theory, intervention-resolved causal structure, temporal continuation, finite-sample certification, composition, coarse-graining, scale-sufficiency certification, recoverability, and falsifiable experiment design.
+Requires-Python: >=3.10
+License-File: LICENSE
+Provides-Extra: dev
+Requires-Dist: pytest>=7.4; extra == "dev"
+Requires-Dist: ruff>=0.5; extra == "dev"
+Requires-Dist: numpy>=1.26; extra == "dev"
+Requires-Dist: matplotlib>=3.8; extra == "dev"
+Dynamic: license-file

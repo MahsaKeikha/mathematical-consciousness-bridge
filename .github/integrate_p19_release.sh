@@ -49,8 +49,8 @@ text = replace_once(
 )
 text = replace_once(
     text,
-    "# 7. Theorem roadmap — P1 through P18",
-    "# 7. Theorem roadmap — P1 through P19",
+    "# 7. Theorem roadmap - P1 through P18",
+    "# 7. Theorem roadmap - P1 through P19",
     "README theorem heading",
 )
 p18_row = (
@@ -64,7 +64,7 @@ p19_row = (
 )
 text = replace_once(text, p18_row, p18_row + "\n" + p19_row, "README P19 theorem row")
 
-p19_section = r'''# 4.5 P19 — fundamental physical sufficiency and residual tests
+p19_section = r'''# 4.5 P19 - fundamental physical sufficiency and residual tests
 
 ![P19 fundamental physical sufficiency](docs/figures/p19_fundamental_physical_sufficiency.svg)
 

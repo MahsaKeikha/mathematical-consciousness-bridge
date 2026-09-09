@@ -42,7 +42,7 @@ Physics can describe states, fields, probability amplitudes, density operators, 
 
 The program here makes that bridge itself an object of mathematics. Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design. **P11** introduces intervention-resolved causal structure as a structured physical candidate rather than a scalar. **P12-P13** prove constructive insufficiency and component irredundancy results. **P14-P15** formalize temporal continuation and finite-error temporal certification. **P16** gives an independent-composition null model and response-level coupling defect. **P17** proves total-variation contraction and exact refinement ambiguity under deterministic coarse-graining. **P18** proves a quantitative scale-sufficiency certificate based on approximate reconstruction.
 
-A new quantum-foundations layer now asks a sharper question: if the declared quantum description is operationally complete—state, admissible channels, and all declared measurement statistics—what exact mathematical evidence would be required to show that an independently defined experiential variable does **not** factor through that quantum operational state? This is formulated as an open non-reducibility theorem target, not as an assumption that consciousness is quantum or that quantum theory is incomplete.
+A new quantum-foundations layer now asks a sharper question: if the declared quantum description is operationally complete-state, admissible channels, and all declared measurement statistics-what exact mathematical evidence would be required to show that an independently defined experiential variable does **not** factor through that quantum operational state? This is formulated as an open non-reducibility theorem target, not as an assumption that consciousness is quantum or that quantum theory is incomplete.
 
 The public research record now contains **18 proposition-level results, 58 equation-driven quantitative figures, quantum and classical physical maps, reproducible numerical examples, counterexamples, and a multi-version Python test matrix**.
 
@@ -64,6 +64,14 @@ The public research record now contains **18 proposition-level results, 58 equat
 | **Open theorem target** | precisely stated mathematical objective not yet established |
 
 Quantum mechanics does not by itself imply consciousness. Entanglement, coherence, decoherence, interference, quantum entropy, and measurement are physical structures. Any experiential interpretation requires an additional independently justified bridge.
+
+---
+
+# Citation, provenance, and writing standard
+
+Scientific provenance is part of the argument, not an afterthought. Standard equations, external empirical findings, repository-original propositions, and speculative antecedents are labeled separately. The main provenance resources are the [Equation and Citation Map](docs/equation_and_citation_map.md), the [Foundational Bibliography](docs/foundational_physics_mathematics_bibliography.md), the [Literature Map](docs/literature_map.md), the machine-readable [Fundamental Theory References](docs/fundamental_theory_references.bib), and the [Reference Audit](docs/reference_audit.md). The complete citation rules are documented in the [Citation and Reference Policy](docs/citation_and_reference_policy.md).
+
+The writing style is deliberately direct and technical. En dashes and em dashes are not used in prose. External claims are kept within the scope of the cited source, and repository results are identified by proposition number rather than presented as literature-derived facts.
 
 ---
 
@@ -348,11 +356,11 @@ These equations define physical dynamics. They do not define experience.
 
 ![QM01 free Gaussian wavepacket](docs/figures/quantum/qm01_free_gaussian_wavepacket.svg)
 
-**QM01 — Free Gaussian wavepacket.** The exact free-particle Gaussian solution broadens under Schrödinger evolution because different momentum components accumulate different phases.
+**QM01 - Free Gaussian wavepacket.** The exact free-particle Gaussian solution broadens under Schrödinger evolution because different momentum components accumulate different phases.
 
 ![QM02 infinite-well eigenstates](docs/figures/quantum/qm02_infinite_well_eigenstates.svg)
 
-**QM02 — Quantized stationary states.** For an infinite one-dimensional well,
+**QM02 - Quantized stationary states.** For an infinite one-dimensional well,
 
 \[
 \boxed{
@@ -368,11 +376,11 @@ Boundary conditions discretize the allowed energy spectrum.
 
 ![QM03 double-slit interference](docs/figures/quantum/qm03_double_slit_interference.svg)
 
-**QM03 — Double-slit interference.** Amplitudes add before probabilities are computed; interference is a physical consequence of coherent superposition.
+**QM03 - Double-slit interference.** Amplitudes add before probabilities are computed; interference is a physical consequence of coherent superposition.
 
 ![QM04 uncertainty frontier](docs/figures/quantum/qm04_uncertainty_frontier.svg)
 
-**QM04 — Heisenberg uncertainty frontier.** For canonical position and momentum,
+**QM04 - Heisenberg uncertainty frontier.** For canonical position and momentum,
 
 \[
 \boxed{\Delta x\,\Delta p\ge\frac{\hbar}{2}.}
@@ -384,7 +392,7 @@ Minimum-uncertainty Gaussian states saturate the bound.
 
 ![QM05 Bloch sphere](docs/figures/quantum/qm05_bloch_sphere.svg)
 
-**QM05 — Bloch-sphere geometry.** A qubit density operator can be written
+**QM05 - Bloch-sphere geometry.** A qubit density operator can be written
 
 \[
 \boxed{
@@ -397,7 +405,7 @@ Pure states satisfy \(|\mathbf r|=1\); mixed states lie inside the sphere.
 
 ![QM06 Born probabilities](docs/figures/quantum/qm06_born_probabilities.svg)
 
-**QM06 — Born probabilities.** For a rotated pure qubit,
+**QM06 - Born probabilities.** For a rotated pure qubit,
 
 \[
 \boxed{
@@ -417,7 +425,7 @@ More generally, a measurement with POVM element \(M_y\) gives
 
 ![QM07 Rabi oscillations](docs/figures/quantum/qm07_rabi_oscillations.svg)
 
-**QM07 — Rabi oscillation.** A resonantly driven two-level system exhibits
+**QM07 - Rabi oscillation.** A resonantly driven two-level system exhibits
 
 \[
 P_e(t)=\sin^2\frac{\Omega t}{2}.
@@ -425,7 +433,7 @@ P_e(t)=\sin^2\frac{\Omega t}{2}.
 
 ![QM08 dephasing coherence](docs/figures/quantum/qm08_dephasing_coherence.svg)
 
-**QM08 — Pure dephasing.** A standard Markovian model gives
+**QM08 - Pure dephasing.** A standard Markovian model gives
 
 \[
 \boxed{|\rho_{01}(t)|=|\rho_{01}(0)|e^{-\Gamma t}.}
@@ -433,7 +441,7 @@ P_e(t)=\sin^2\frac{\Omega t}{2}.
 
 ![QM09 purity under dephasing](docs/figures/quantum/qm09_purity_under_dephasing.svg)
 
-**QM09 — Purity.** For an initially coherent qubit under the displayed dephasing model,
+**QM09 - Purity.** For an initially coherent qubit under the displayed dephasing model,
 
 \[
 \boxed{
@@ -448,7 +456,7 @@ This tends from one toward one half.
 
 ![QM10 von Neumann entropy](docs/figures/quantum/qm10_von_neumann_entropy.svg)
 
-**QM10 — Von Neumann entropy.** Quantum-state entropy is
+**QM10 - Von Neumann entropy.** Quantum-state entropy is
 
 \[
 \boxed{S(\rho)=-\operatorname{Tr}(\rho\log_2\rho).}
@@ -458,7 +466,7 @@ For a qubit spectrum \((p,1-p)\), entropy is zero for a pure state and one bit f
 
 ![QM11 entanglement entropy](docs/figures/quantum/qm11_entanglement_entropy.svg)
 
-**QM11 — Bipartite entanglement.** For
+**QM11 - Bipartite entanglement.** For
 
 \[
 |\psi\rangle
@@ -469,7 +477,7 @@ the reduced-state entropy reaches one bit at \(\theta=\pi/4\).
 
 ![QM18 reduced density spectrum](docs/figures/quantum/qm18_reduced_density_spectrum.svg)
 
-**QM18 — Partial trace.** The globally pure Schmidt state above gives reduced eigenvalues
+**QM18 - Partial trace.** The globally pure Schmidt state above gives reduced eigenvalues
 
 \[
 \boxed{\lambda_1=\cos^2\theta,\qquad\lambda_2=\sin^2\theta.}
@@ -481,7 +489,7 @@ A subsystem can therefore be mixed even when the joint quantum state is pure.
 
 ![QM12 CHSH violation](docs/figures/quantum/qm12_chsh_violation.svg)
 
-**QM12 — Bell-CHSH structure.** Local hidden-variable models obey
+**QM12 - Bell-CHSH structure.** Local hidden-variable models obey
 
 \[
 \boxed{|S_{\mathrm{CHSH}}|\le2,}
@@ -497,13 +505,13 @@ Violation of the local bound demonstrates nonclassical correlation structure; it
 
 ![QM13 Wigner negativity](docs/figures/quantum/qm13_wigner_negativity.svg)
 
-**QM13 — Wigner negativity.** The first excited harmonic-oscillator state has a negative region in its Wigner quasiprobability. This is a standard marker of nonclassical state structure, not an experiential variable.
+**QM13 - Wigner negativity.** The first excited harmonic-oscillator state has a negative region in its Wigner quasiprobability. This is a standard marker of nonclassical state structure, not an experiential variable.
 
 ## 3.7 Hilbert-space growth and quantum distinguishability
 
 ![QM14 Hilbert-space dimension](docs/figures/quantum/qm14_hilbert_space_dimension.svg)
 
-**QM14 — Tensor-product growth.** For \(N\) qubits,
+**QM14 - Tensor-product growth.** For \(N\) qubits,
 
 \[
 \boxed{\dim\left[(\mathbb C^2)^{\otimes N}\right]=2^N.}
@@ -513,7 +521,7 @@ Exponential Hilbert-space dimension is a mathematical property of composite quan
 
 ![QM15 trace-distance contraction](docs/figures/quantum/qm15_trace_distance_contraction.svg)
 
-**QM15 — Quantum data processing.** For a depolarizing channel
+**QM15 - Quantum data processing.** For a depolarizing channel
 
 \[
 \Lambda_p(\rho)=(1-p)\rho+p\frac{I}{2},
@@ -532,7 +540,7 @@ This quantum information-loss law is conceptually parallel to P17's classical to
 
 ![QM16 fidelity and trace distance](docs/figures/quantum/qm16_fidelity_trace_distance.svg)
 
-**QM16 — Pure-state geometry.** For pure qubit states separated by projective angle \(\theta\),
+**QM16 - Pure-state geometry.** For pure qubit states separated by projective angle \(\theta\),
 
 \[
 F=\cos^2\frac\theta2,
@@ -544,7 +552,7 @@ D=\sin\frac\theta2.
 
 ![QM17 quantum Zeno survival](docs/figures/quantum/qm17_quantum_zeno_survival.svg)
 
-**QM17 — Idealized quantum Zeno effect.** Repeated projective survival measurements yield
+**QM17 - Idealized quantum Zeno effect.** Repeated projective survival measurements yield
 
 \[
 \boxed{
@@ -874,7 +882,7 @@ A complete empirical bridge theory must specify
 
 ---
 
-# 7. Theorem roadmap — P1 through P18
+# 7. Theorem roadmap - P1 through P18
 
 ![Theorem roadmap](docs/figures/theorem_roadmap.svg)
 
@@ -901,7 +909,7 @@ A complete empirical bridge theory must specify
 
 ---
 
-# 8. P1-P10 — invariance, identifiability, recovery, and finite data
+# 8. P1-P10 - invariance, identifiability, recovery, and finite data
 
 ## 8.1 Representation invariance
 
@@ -996,7 +1004,7 @@ The fixed-seed simulation verifies convergence of empirical total variation towa
 
 ---
 
-# 9. P11 — intervention-resolved causal structure
+# 9. P11 - intervention-resolved causal structure
 
 ![Causal-structure anatomy](docs/figures/causal_structure_anatomy.svg)
 
@@ -1010,7 +1018,7 @@ P_p^{u,\tau}=\mathcal L(Y_{t+\tau}^{V}\mid do(u),p).
 
 ![Q19 intervention response laws](docs/figures/quantitative/q19_intervention_response_laws.svg)
 
-**Q19 — Intervention response laws.** Synthetic distributions illustrate the primitive observable object of P11.
+**Q19 - Intervention response laws.** Synthetic distributions illustrate the primitive observable object of P11.
 
 ## 9.1 Response geometry
 
@@ -1061,7 +1069,7 @@ It is a structured physical candidate, not a consciousness value.
 
 ---
 
-# 10. P12-P13 — constructive no-go results
+# 10. P12-P13 - constructive no-go results
 
 ![P12 collision map](docs/figures/p12_collision_map.svg)
 
@@ -1097,7 +1105,7 @@ These negative results prevent premature reduction to a one-number consciousness
 
 ---
 
-# 11. P14-P15 — temporal continuation
+# 11. P14-P15 - temporal continuation
 
 ![P14 temporal continuation](docs/figures/p14_temporal_continuation.svg)
 
@@ -1144,7 +1152,7 @@ then
 
 ---
 
-# 12. P16 — composition and coupling
+# 12. P16 - composition and coupling
 
 ![P16 composition and coupling](docs/figures/p16_composition_coupling.svg)
 
@@ -1185,11 +1193,11 @@ A dependent joint law can retain unchanged single-variable marginals.
 
 ---
 
-# 13. P17-P18 — scale, information loss, and sufficiency
+# 13. P17-P18 - scale, information loss, and sufficiency
 
 ![P17 coarse-graining and refinement](docs/figures/p17_coarse_graining_refinement.svg)
 
-## 13.1 P17 — deterministic coarse-graining
+## 13.1 P17 - deterministic coarse-graining
 
 Let
 
@@ -1220,7 +1228,7 @@ If \(x\ne x'\) but \(C(x)=C(x')\), then
 \boxed{\|C_\#\delta_x-C_\#\delta_{x'}\|_{\mathrm{TV}}=0.}
 \]
 
-## 13.2 P18 — approximate reconstruction certificate
+## 13.2 P18 - approximate reconstruction certificate
 
 ![P18 scale-sufficiency certificate](docs/figures/p18_scale_sufficiency_certificate.svg)
 
@@ -1335,11 +1343,11 @@ Behavioral responsiveness, report, perturbational response, neural dynamics, ima
 
 ![Q37 synthetic perturbational spreading](docs/figures/quantitative/q37_synthetic_perturbational_spreading.svg)
 
-**Q37 — Synthetic perturbational spreading.** This controlled network example is not patient or neural data.
+**Q37 - Synthetic perturbational spreading.** This controlled network example is not patient or neural data.
 
 ![Q38 synthetic dynamical complexity trace](docs/figures/quantitative/q38_synthetic_dynamical_complexity_trace.svg)
 
-**Q38 — Synthetic dynamical complexity.** This is not presented as a validated consciousness measure.
+**Q38 - Synthetic dynamical complexity.** This is not presented as a validated consciousness measure.
 
 Selected empirical lineages are tracked in [Literature Map](docs/literature_map.md), including perturbational complexity, critical dynamics, information integration, and adversarial theory comparison. Empirical correlates constrain a candidate bridge; they do not by themselves establish one.
 
@@ -1583,7 +1591,7 @@ The next research stage is not to invent a consciousness equation. It is to make
 
 1. **Quantum operational completeness.** Specify experiment classes rich enough that \(q\sim_Qq'\) has a defensible physical meaning rather than merely meaning “we did not measure enough.”
 2. **Quantum bridge identifiability.** Extend P2-P4 to quantum channels and POVM families using trace distance, fidelity, and optimal quantum hypothesis testing.
-3. **Quantum feature sufficiency.** Determine which quantum features—coherence, entanglement spectrum, channel structure, response geometry—are provably incomplete or irredundant for declared targets.
+3. **Quantum feature sufficiency.** Determine which quantum features-coherence, entanglement spectrum, channel structure, response geometry-are provably incomplete or irredundant for declared targets.
 4. **Open-system intervention structure.** Generalize P11 from classical response laws to controlled quantum channels and reduced-state response families.
 5. **Quantum/classical scale handoff.** Relate CPTP data processing, decoherence, classical coarse-graining, and P17-P18 reconstruction in one multiscale theorem.
 6. **Directed influence across scale.** Extend P18-style certification from response geometry to directed influence and partition structure.
@@ -1612,7 +1620,7 @@ The current physical-mathematical chain is
 }
 \]
 
-The scientific objective is to discover whether a complete physical description is sufficient—not to assume in advance that it is sufficient or insufficient.
+The scientific objective is to discover whether a complete physical description is sufficient-not to assume in advance that it is sufficient or insufficient.
 
 ---
 
@@ -1624,9 +1632,9 @@ The scientific objective is to discover whether a complete physical description 
 | Check numerical facts behind Q01-Q40 | **[Quantitative Atlas Validation Report](docs/quantitative_atlas_validation_report.md)** |
 | Inspect the generated quantum atlas metadata | [`docs/figures/quantum/quantum_figure_manifest.json`](docs/figures/quantum/quantum_figure_manifest.json) |
 | Follow P1-P18 in proof order | **[Theorem Roadmap](docs/theorem_roadmap.md)** |
-| Read the structured physical candidate | **[P11 — Intervention-Resolved Causal Structure](docs/proposition_11_intervention_resolved_causal_structure.md)** |
-| Read the scale-loss theorem | **[P17 — Coarse-Graining and Refinement](docs/proposition_17_coarse_graining_and_refinement.md)** |
-| Read the scale-sufficiency theorem | **[P18 — Scale Sufficiency](docs/proposition_18_scale_sufficiency_certification.md)** |
+| Read the structured physical candidate | **[P11 - Intervention-Resolved Causal Structure](docs/proposition_11_intervention_resolved_causal_structure.md)** |
+| Read the scale-loss theorem | **[P17 - Coarse-Graining and Refinement](docs/proposition_17_coarse_graining_and_refinement.md)** |
+| Read the scale-sufficiency theorem | **[P18 - Scale Sufficiency](docs/proposition_18_scale_sufficiency_certification.md)** |
 | Trace equations to sources | [Equation and Citation Map](docs/equation_and_citation_map.md) |
 | Inspect failure conditions | [Falsification Program](docs/falsification_program.md) |
 | Continue backward to subsystem identification | [Spatiotemporal Observer Mathematics](https://github.com/MahsaKeikha/spatiotemporal-observer-math) |

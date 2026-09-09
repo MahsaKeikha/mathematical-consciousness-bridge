@@ -8239,7 +8239,7 @@ L 406.538398 219.898906
 " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="text_18">
-    <text style="font-size: 11.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="226.939395" y="15.938203" transform="rotate(-0 226.939395 15.938203)">Q01 · Ornstein–Uhlenbeck mean-reverting trajectories</text>
+    <text style="font-size: 11.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="226.939395" y="15.938203" transform="rotate(-0 226.939395 15.938203)">Q01 · Ornstein-Uhlenbeck mean-reverting trajectories</text>
    </g>
   </g>
  </g>
