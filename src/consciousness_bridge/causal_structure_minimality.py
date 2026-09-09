@@ -11,7 +11,7 @@ from collections.abc import Hashable, Mapping, Sequence
 from itertools import combinations
 from typing import TypeVar
 
-from consciousness_bridge.intervention_causal_geometry import (
+from consciousness_bridge.intervention_causal_structure import (
     aggregate_directed_influence_matrix,
     partition_response_irreducibility,
     response_distance,
