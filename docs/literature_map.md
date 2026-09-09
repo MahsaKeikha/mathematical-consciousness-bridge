@@ -2,6 +2,8 @@
 
 This map records the role of each source in the Mathematical Consciousness Bridge program. Sources are not treated as interchangeable evidence for one theory. Each is cited for the specific conceptual, mathematical, statistical, physical, or empirical contribution it supplies.
 
+For the equation-level provenance map, see [Equation and Citation Map](equation_and_citation_map.md).
+
 ---
 
 # 1. Physical and conceptual background
@@ -12,35 +14,35 @@ Max Tegmark, "Consciousness as a State of Matter," *Chaos, Solitons & Fractals* 
 
 **Role:** conceptual background for observer factorization, information, integration, independence, dynamics, and physically distinguished subsystem structure.
 
-**Use in this repository:** motivates part of the physical-subsystem problem but does not supply the physical-to-experiential bridge used here.
+**Use here:** motivates part of the physical-subsystem problem and the companion observer program. It does not provide the physical-to-experiential bridge developed in this repository.
 
 ---
 
-# 2. Explicit bridge architectures and mathematical consciousness formalisms
+# 2. Explicit bridge architectures and mathematical consciousness formalization
 
-## Albantakis et al. 2023, IIT 4.0
+## Albantakis et al. 2023 - IIT 4.0
 
 Larissa Albantakis et al., "Integrated information theory (IIT) 4.0: Formulating the properties of phenomenal existence in physical terms," *PLOS Computational Biology* 19(10): e1011465. DOI: 10.1371/journal.pcbi.1011465.
 
-**Role:** major example of an explicit architecture that starts from phenomenal axioms and develops physical postulates intended to correspond to them.
+**Role:** major explicit architecture beginning from phenomenal axioms and developing physical postulates, intrinsic cause-effect structure, maximality, distinctions, and relations.
 
-**Use in this repository:** treated as an important competing bridge family and as evidence that the phenomenal-to-physical step must be explicit rather than hidden inside a score. IIT 4.0 is represented by its high-dimensional intrinsic cause-effect structure, not reduced to a slogan that "more integration means more consciousness."
+**Use here:** treated as a serious competing bridge family and as motivation for making the phenomenal-to-physical step explicit. IIT is not reduced here to a scalar statement that "more integration means more consciousness."
 
 ## Kleiner 2019
 
 Johannes Kleiner, "Mathematical Models of Consciousness," arXiv:1907.03223.
 
-**Role:** general mathematical framework for representing experience and connecting mathematical models to the epistemic structure of consciousness science.
+**Role:** mathematical framework for representing experience and formal consciousness models.
 
-**Use in this repository:** informs the requirement that the experiential space and its representation receive explicit mathematical justification.
+**Use here:** supports the requirement that the experiential domain and its mathematical representation must themselves be explicit objects.
 
 ## Kleiner and Tull 2020/2021
 
 Johannes Kleiner and Sean Tull, "The Mathematical Structure of Integrated Information Theory," arXiv:2002.07655.
 
-**Role:** axiomatic formalization of generalized IIT and an important example of separating core mathematical structure from auxiliary formal tools.
+**Role:** axiomatic formalization of generalized IIT and methodological example of separating a theory's core mathematical structure from auxiliary tools.
 
-**Use in this repository:** methodological precedent for making theory architecture explicit enough to support theorem-level analysis.
+**Use here:** precedent for making bridge architectures explicit enough to support theorem-level comparison.
 
 ---
 
@@ -50,13 +52,13 @@ Johannes Kleiner and Sean Tull, "The Mathematical Structure of Integrated Inform
 
 Anil K. Seth and Tim Bayne, "Theories of consciousness," *Nature Reviews Neuroscience* 23 (2022): 439-452. DOI: 10.1038/s41583-022-00587-4.
 
-**Role:** major comparative review of higher-order, global workspace, re-entry/predictive-processing, and integrated-information approaches.
+**Role:** broad comparative review of higher-order, global workspace, re-entry/predictive-processing, and integrated-information approaches.
 
-**Use in this repository:** supports the decision to represent theories as structurally distinct bridge families and to focus on whether their predictions can be made empirically discriminable.
+**Use here:** supports the theory-comparative strategy and the need to distinguish physical feature families, bridge architectures, and predictions rather than selecting a theory by literature count.
 
 ---
 
-# 4. Physical feature families used in the comparison layer
+# 4. Global neuronal workspace and recurrent-processing sources
 
 ## Dehaene and Changeux 2011
 
@@ -64,23 +66,33 @@ Stanislas Dehaene and Jean-Pierre Changeux, "Experimental and theoretical approa
 
 **Role:** major Global Neuronal Workspace formulation linking conscious access to large-scale workspace dynamics, amplification, and availability.
 
-**Use in this repository:** source for the GNWT feature-family translation used in the candidate-theory comparison.
+## Mashour et al. 2020
+
+George A. Mashour, Pieter Roelfsema, Jean-Pierre Changeux, and Stanislas Dehaene, "Conscious Processing and the Global Neuronal Workspace Hypothesis," *Neuron* 105(5) (2020): 776-798. DOI: 10.1016/j.neuron.2020.01.026.
+
+**Role:** contemporary GNW synthesis emphasizing ignition, recurrent processing, and global availability.
+
+**Use here:** motivates time-resolved, distributed perturbational influence as a physical structure worth measuring in IRCG without treating broadcast alone as sufficient.
 
 ## Changeux and Farisco 2026
 
 Jean-Pierre Changeux and Michele Farisco, "The Global Neuronal Workspace as a multilevel model of conscious processing," *Trends in Cognitive Sciences* 30(6) (2026): 477-479. DOI: 10.1016/j.tics.2026.03.004.
 
-**Role:** current clarification that GNW should be understood as a multilevel neural model extending from cellular and molecular mechanisms to large-scale network dynamics rather than as a purely software-level global-workspace criterion.
+**Role:** clarification that GNW is a multilevel neural model rather than a purely software-level broadcast criterion.
 
-**Use in this repository:** prevents the mathematical translation from caricaturing GNWT as a single binary broadcast feature.
+**Use here:** prevents the common mathematical translation from caricaturing GNWT as a single binary feature.
 
 ## Lamme 2006
 
 Victor A. F. Lamme, "Towards a true neural stance on consciousness," *Trends in Cognitive Sciences* 10(11) (2006): 494-501. DOI: 10.1016/j.tics.2006.09.001.
 
-**Role:** recurrent-processing account emphasizing recurrent neural interactions as central to conscious vision and phenomenal processing.
+**Role:** recurrent-processing account emphasizing recurrent neural interactions.
 
-**Use in this repository:** source for the RPT feature-family translation and future recurrence-preserving counterexample tests.
+**Use here:** source for the RPT comparison family and motivation for testing recurrent perturbational return paths in IRCG.
+
+---
+
+# 5. Higher-order and predictive / representational approaches
 
 ## Brown, Lau, and LeDoux 2019
 
@@ -88,75 +100,117 @@ Richard Brown, Hakwan Lau, and Joseph E. LeDoux, "Understanding the Higher-Order
 
 **Role:** review and clarification of higher-order approaches and their variants.
 
-**Use in this repository:** source for representing HOT theories by theory-specific higher-order representational relations rather than assuming one universal HOT mechanism.
+**Use here:** source for representing HOT families by theory-specific higher-order relations rather than assuming a universal HOT mechanism.
 
 ## Seth and Hohwy 2021
 
 Anil K. Seth and Jakob Hohwy, "Predictive processing as an empirical theory for consciousness science," *Cognitive Neuroscience* 12(2) (2021): 89-90. DOI: 10.1080/17588928.2020.1838467.
 
-**Role:** argues for predictive processing as a framework for systematic mappings among physical, functional, and phenomenological properties rather than a single monolithic consciousness mechanism.
-
-**Use in this repository:** motivates treating predictive processing as a family requiring an explicit theory-specific bridge.
+**Role:** positions predictive processing as a useful empirical framework rather than a single settled consciousness bridge.
 
 ## Pennartz 2022
 
 Cyriel M. A. Pennartz, "What is neurorepresentationalism? From neural activity and predictive processing to multi-level representations and consciousness," *Behavioural Brain Research* 432 (2022): 113969. DOI: 10.1016/j.bbr.2022.113969.
 
-**Role:** neurorepresentational account of conscious experience in terms of multimodal, situated, multi-level representations or superinferences.
+**Role:** explicit neurorepresentational account involving multimodal, situated, multi-level representations.
 
-**Use in this repository:** provides a more explicit predictive/representational bridge family for future feature-sufficiency and experiment-design comparisons.
+**Use here:** provides a more explicit predictive/representational family for future P4-P6 comparison and counterexample testing.
 
 ---
 
-# 5. Identifiability and no-go motivation
+# 6. Identifiability and adversarial theory testing
 
 ## Doerig et al. 2019
 
 Adrien Doerig, Aaron Schurger, Kathryn Hess, and Michael H. Herzog, "The unfolding argument: Why IIT and other causal structure theories cannot explain consciousness," *Consciousness and Cognition* 72 (2019): 49-59. DOI: 10.1016/j.concog.2019.04.002.
 
-**Role:** motivates explicit analysis of whether competing consciousness assignments can be distinguished by a declared experiment class.
+**Role:** motivates explicit analysis of whether competing consciousness assignments are distinguishable by a declared experiment class.
 
-**Use in this repository:** Proposition 2 does not assume the unfolding conclusion. It supplies a general total-variation criterion in which an unfolding-style observational-equivalence claim can be expressed and tested.
-
----
-
-# 6. Contemporary adversarial theory testing
+**Use here:** P2 does not assume the unfolding conclusion. It provides a general total-variation criterion in which observational-equivalence claims can be expressed and tested.
 
 ## Cogitate Consortium et al. 2025
 
 Cogitate Consortium, Oscar Ferrante, Urszula Gorska-Klimowska, et al., "Adversarial testing of global neuronal workspace and integrated information theories of consciousness," *Nature* 642 (2025): 133-142. DOI: 10.1038/s41586-025-08888-1.
 
-**Role:** large-scale preregistered adversarial comparison of IIT and global neuronal workspace theory using fMRI, MEG, and intracranial EEG.
+**Role:** preregistered adversarial comparison of IIT and GNWT using fMRI, MEG, and intracranial EEG.
 
-**Use in this repository:** contemporary empirical benchmark for cross-theory testing. The study reported mixed support and substantial challenges to key predictions of both IIT and GNWT. The bridge-identifiability and experiment-design program is designed to operate at that cross-theory level.
+**Use here:** contemporary empirical benchmark for cross-theory testing and motivation for the quantitative theory-identifiability and experiment-design program.
 
 ## Corcoran et al. 2026
 
-Andrew W. Corcoran, Andrew M. Haun, Reinder Dorman, Giulio Tononi, Karl J. Friston, Cyriel M. A. Pennartz, and the TWCF: INTREPID Consortium, "Integrated information and predictive processing theories of consciousness: An adversarial collaborative review," *Neuroscience and Biobehavioral Reviews* 187 (2026): 106742. DOI: 10.1016/j.neubiorev.2026.106742.
+Andrew W. Corcoran et al., "Integrated information and predictive processing theories of consciousness: An adversarial collaborative review," *Neuroscience and Biobehavioral Reviews* 187 (2026): 106742. DOI: 10.1016/j.neubiorev.2026.106742.
 
-**Role:** current adversarial-collaboration framework comparing Integrated Information Theory, Neurorepresentationalism, and Active Inference, including planned divergent predictions and quantitative integration of evidence.
+**Role:** adversarial-collaboration framework comparing IIT, Neurorepresentationalism, and Active Inference with emphasis on divergent predictions and quantitative evidence integration.
 
-**Use in this repository:** strong contemporary motivation for building theory-neutral prediction maps and optimizing discriminating experiments before claiming a final bridge.
+**Use here:** motivation for source-faithful theory translation and shared discriminating experiment design.
 
 ---
 
-# 7. Statistical decision theory for Propositions 2-4
+# 7. Perturbational evidence motivating IRCG
+
+## Casali et al. 2013
+
+Adenauer G. Casali et al., "A theoretically based index of consciousness independent of sensory processing and behavior," *Science Translational Medicine* 5(198) (2013): 198ra105. DOI: 10.1126/scitranslmed.3006294.
+
+**Role:** perturbational-complexity work using direct cortical perturbation and distributed EEG response to distinguish a range of conscious and unconscious conditions.
+
+**Use here:** motivates measuring controlled perturbation-response structure directly rather than relying only on passive observations. IRCG does not identify one PCI scalar with its bridge.
+
+## Maschke et al. 2024
+
+Charlotte Maschke et al., "Critical dynamics in spontaneous EEG predict anesthetic-induced loss of consciousness and perturbational complexity," *Communications Biology* 7 (2024): 946. DOI: 10.1038/s42003-024-06613-8.
+
+**Role:** links spontaneous critical dynamics, anesthesia-induced loss of consciousness, and perturbational complexity.
+
+**Use here:** motivates explicit temporal dynamical structure and warns against interpreting one static connectivity or complexity statistic as sufficient.
+
+---
+
+# 8. Information integration, synergy, and controllability evidence
+
+## Luppi et al. 2024
+
+Andrea I. Luppi et al., "A synergistic workspace for human consciousness revealed by Integrated Information Decomposition," *eLife* 12 (2024): RP88173. DOI: 10.7554/eLife.88173.
+
+**Role:** reports that loss of consciousness under anesthesia or disorders of consciousness is associated with reduced ability of a synergistic workspace to integrate information, with restoration accompanying recovery.
+
+**Use here:** motivates testing distributed integration and differentiated information flow as physical structures while keeping the bridge question separate.
+
+## Luppi et al. 2026
+
+Andrea I. Luppi et al., "Convergent transcriptomic and connectomic controllers of information integration and its anaesthetic breakdown across mammalian brains," *Nature Human Behaviour* 10 (2026): 777-802. DOI: 10.1038/s41562-025-02381-5.
+
+**Role:** cross-species work connecting anesthesia-related changes in information integration to large-scale dynamical control and biological organization.
+
+**Use here:** motivates the IRCG emphasis on perturbational influence and controllability-like physical response structure rather than integration alone.
+
+---
+
+# 9. Causal modeling
+
+## Pearl 2009
+
+Judea Pearl, *Causality: Models, Reasoning, and Inference*, 2nd ed. Cambridge University Press, 2009.
+
+**Role:** standard causal-intervention semantics.
+
+**Use here:** source context for the \(do(u)\) notation used to distinguish intervention-conditioned response laws from passive observational correlations in P11.
+
+---
+
+# 10. Statistical decision theory and concentration
 
 ## Le Cam and Yang 2000
 
-Lucien Le Cam and Grace Lo Yang, *Asymptotics in Statistics: Some Basic Concepts*, 2nd ed., Springer, 2000. DOI: 10.1007/978-1-4612-1166-2.
+Lucien Le Cam and Grace Lo Yang, *Asymptotics in Statistics: Some Basic Concepts*, 2nd ed. Springer, 2000. DOI: 10.1007/978-1-4612-1166-2.
 
-**Role:** statistical-experiment, decision-theoretic, and distance-based foundations for comparing experiments and probability models.
-
-**Use in this repository:** standard statistical lineage for experiment comparison and distributional distinguishability.
+**Role:** decision-theoretic and statistical-experiment foundations for comparing probability models and experiments.
 
 ## Tsybakov 2009
 
 Alexandre B. Tsybakov, *Introduction to Nonparametric Estimation*. Springer, 2009. DOI: 10.1007/b13794.
 
-**Role:** modern statistical reference for minimax lower bounds, testing reductions, and probability-distance tools.
-
-**Use in this repository:** standard hypothesis-testing lineage for the total-variation/Bayes-error identity used in Proposition 2.
+**Role:** standard reference for minimax testing and probability-distance tools.
 
 ## Hoeffding 1963
 
@@ -164,32 +218,65 @@ Wassily Hoeffding, "Probability Inequalities for Sums of Bounded Random Variable
 
 **Role:** concentration inequality for independent bounded variables.
 
-**Use in this repository:** Proposition 2 uses Hoeffding's inequality to show that a nonzero one-protocol probability gap can be amplified under independently repeatable experiments.
+**Use here:** supports the repeated-experiment result in P2 and the finite categorical sample-complexity theorem in P9.
 
 ---
 
-# 8. Companion mathematical foundation
+# 11. Companion mathematical foundation
 
-## Keikha, Spatiotemporal Observer Mathematics
+## Keikha - Spatiotemporal Observer Mathematics
 
 Mahsa Keikha, *Spatiotemporal Observer Mathematics*.
 
-**Role:** candidate physical-subsystem identification layer: moving boundaries, integration, insulation, persistence, transport, identifiability, and finite-sample measurement certification.
+**Role:** candidate physical-subsystem identification layer: moving boundaries, integration, insulation, persistence, transport, identifiability, temporal calibration, and finite-sample measurement certification.
 
-**Use in this repository:** can provide a certified physical subsystem or world-tube as input to the consciousness-bridge layer. Its results are not substituted for the separate physical-to-experiential bridge problem.
+**Use here:** can supply a certified physical subsystem or world-tube as an input to IRCG and the bridge layer. The subsystem theorem and the experiential bridge remain separate logical statements.
 
 ---
 
-# 9. Citation discipline
+# 12. Proposition-to-literature map
+
+| Repository result | Standard mathematical/statistical lineage | Consciousness / physical-science role |
+| --- | --- | --- |
+| P1 | quotient-set factorization | representation/factorization context: Tegmark; Kleiner |
+| P2 | total variation, binary testing, Hoeffding | unfolding and adversarial theory testing |
+| P3 | equivalence relations and quotient sets | unresolved theory multiplicity |
+| P4 | finite maximin optimization and set cover | adversarial experiment design |
+| P5 | factorization through fibers | theory-specific physical-feature claims |
+| P6 | quotient/factorization mathematics | complete physical-signature target |
+| P7 | observable-fingerprint factorization | empirical accessibility of a signature |
+| P8 | metric triangle inequality | finite measurement uncertainty |
+| P9 | Hoeffding + union bounds | explicit trials for signature recovery |
+| P10 | finite protocol optimization | multimodal experiment selection |
+| P11 | TV geometry, product measures, graph cycles, causal interventions | PCI, IIT, GNWT/RPT, synergistic integration, controllability |
+| P12 | factorization/collision logic | tests whether complexity, recurrence, influence, or irreducibility summaries overcompress the physical candidate |
+
+---
+
+# 13. Citation discipline
 
 The repository distinguishes:
 
-| Source type | What it can support |
+| Source type | What it supports |
 | --- | --- |
-| physical/conceptual literature | motivation and physical candidate structures |
-| mathematical consciousness literature | formal representation and theory architecture |
-| statistical literature | probability, testing, identifiability, concentration, and experiment design |
-| empirical consciousness studies | observed support, failure, or discrimination among theory predictions |
-| repository propositions | new definitions, theorem applications, and bridge-specific constructions developed here |
+| physical/conceptual literature | motivation and candidate physical structures |
+| mathematical consciousness literature | formal representation and bridge architecture |
+| causal/statistical literature | interventions, probability, testing, identifiability, concentration, and experiment design |
+| empirical consciousness studies | observed support, failure, or discrimination among predictions |
+| repository propositions | new bridge-specific definitions, constructions, theorems, and counterexamples developed here |
 
-The long-term proof target requires these layers to meet; none is treated as a substitute for the others.
+The program therefore maintains
+
+\[
+\boxed{
+\text{conceptual lineage}
+\neq
+\text{mathematical proof}
+\neq
+\text{empirical evidence}
+\neq
+\text{bridge conclusion}.
+}
+\]
+
+The final theorem target requires these layers to meet explicitly rather than allowing one layer to substitute for another.
