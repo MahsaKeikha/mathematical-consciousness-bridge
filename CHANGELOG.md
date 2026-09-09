@@ -2,6 +2,60 @@
 
 This changelog records theorem-level scientific releases. Definitions, proofs, implementations, tests, figures, and documentation remain linked from the main research page.
 
+## 0.18.0 - 2026-09-09
+
+### Proposition 18 - scale sufficiency by approximate reconstruction
+
+- Introduced a fiber-consistent stochastic decoder \(R\) for reconstructing fine response laws from a declared coarse-graining map \(C\).
+- Defined the reconstruction defect
+  \[
+  \rho(P)=\|P-R_\#C_\#P\|_{\mathrm{TV}}
+  \]
+  and the uniform declared-family defect \(\rho_{\mathcal F}\).
+- Proved the quantitative response-geometry distortion bound
+  \[
+  0\le
+  \|P-Q\|_{\mathrm{TV}}-
+  \|C_\#P-C_\#Q\|_{\mathrm{TV}}
+  \le 2\rho_{\mathcal F}.
+  \]
+- Proved exact family sufficiency when \(\rho_{\mathcal F}=0\), even for globally many-to-one coarse maps.
+- Proved the finite-family separation guarantee
+  \[
+  \delta_c\ge\delta_f-2\rho_{\mathcal F},
+  \]
+  so \(\delta_f>2\rho_{\mathcal F}\) certifies coarse-family identifiability.
+- Added a sharp collapsed-fiber witness attaining the factor-two bound.
+- Added executable scale-certification utilities and dedicated regression tests.
+- Added a publication-style P18 figure and integrated P18 into the theorem roadmap, multiscale hierarchy, citation metadata, and visual-quality guards.
+- Added a reproducible **40-figure quantitative physics and mathematics atlas** spanning stochastic dynamics, diffusion, thermodynamics, probability geometry, intervention-response structure, composition, coarse-graining, temporal certification, sample complexity, Monte Carlo tests, perturbational propagation, and world-tube examples.
+- Added deterministic figure generation, a machine-readable figure manifest, a quantitative validation report, and automated tests that require at least 33 quantitative scientific figures and verify numerical checkpoints.
+- Rebuilt the main README as a complete visual research-paper narrative with the quantitative figures embedded where the equations and propositions are introduced.
+- Rebuilt the theorem roadmap through **P18** and tightened canonical SVG publication-quality checks.
+- Updated the research-software version to **0.18.0**.
+
+## 0.17.0 - 2026-09-09
+
+### Proposition 17 - coarse-graining, refinement, and recoverability
+
+- Defined deterministic response-law coarse-graining
+  \[
+  C:\Omega_f\to\Omega_c,
+  \qquad
+  C_\#P(y)=\sum_{x:C(x)=y}P(x).
+  \]
+- Proved total-variation contraction
+  \[
+  \|C_\#P-C_\#Q\|_{\mathrm{TV}}
+  \le
+  \|P-Q\|_{\mathrm{TV}}.
+  \]
+- Proved exact preservation under bijective reparameterization on the observed support.
+- Constructed exact many-to-one information-collision witnesses with fine-scale TV distance one and coarse-scale TV distance zero.
+- Formalized refinement ambiguity as an identifiability problem rather than a computational inconvenience.
+- Distinguished descriptive coarse-graining from genuine physical fusion or splitting, which can alter dynamics, intervention channels, and state variables.
+- Added executable coarse-graining utilities, regression tests, a publication-style P17 figure, and multiscale documentation.
+
 ## 0.16.0 - 2026-09-09
 
 ### Proposition 16 - independent composition and controlled coupling
