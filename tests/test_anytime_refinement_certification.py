@@ -1,3 +1,4 @@
+from itertools import pairwise
 from math import pi
 
 import pytest
@@ -77,7 +78,7 @@ def test_spending_levels_are_positive_and_strictly_decreasing():
     levels = [alpha_spending_level(index) for index in range(1, 20)]
 
     assert all(level > 0.0 for level in levels)
-    assert all(left > right for left, right in zip(levels, levels[1:]))
+    assert all(left > right for left, right in pairwise(levels))
 
 
 def test_anytime_radius_equals_fixed_time_radius_at_allocated_alpha():
@@ -168,6 +169,8 @@ def test_inspection_times_must_be_strictly_increasing_and_available():
 
 
 def test_invalid_time_alpha_and_empty_inputs_are_rejected():
+    with pytest.raises(TypeError, match="integer"):
+        alpha_spending_level(1.5)
     with pytest.raises(ValueError, match="positive integer"):
         alpha_spending_level(0)
     with pytest.raises(ValueError, match="alpha"):
