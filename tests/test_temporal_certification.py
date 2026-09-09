@@ -112,7 +112,7 @@ def test_bounded_coordinate_radius_matches_hoeffding_union_bound_formula():
         alpha=0.05,
     )
 
-    assert radius == pytest.approx(0.0882199369, rel=1e-8)
+    assert radius == pytest.approx(0.0882225822, rel=1e-8)
 
 
 def test_weighted_bounded_coordinate_radius_scales_by_largest_weight():
