@@ -6,7 +6,7 @@ This guide provides the fastest visual route through the Mathematical Consciousn
 
 ![Research architecture](figures/research_architecture.svg)
 
-The project separates physical realization, representation-invariant physical structure, candidate physical signatures, bridge principles, experiential structure, observable predictions, finite-data certification, and falsification.
+The project separates physical realization, representation-invariant physical structure, candidate physical signatures, bridge principles, experiential structure, observable predictions, finite-data certification, composition, and falsification.
 
 The key distinction is
 
@@ -24,7 +24,7 @@ until an independently justified bridge connects them.
 
 ![Theorem roadmap](figures/theorem_roadmap.svg)
 
-Propositions 1-10 establish the general mathematical infrastructure. Proposition 11 introduces the first original physical candidate, **intervention-resolved causal structure**. Proposition 12 proves that its individual components and several scalar reductions are incomplete. Proposition 13 proves that no pair of the three major components reconstructs the omitted component on the declared finite audit domain. Proposition 14 turns the static physical candidate into a representation-invariant temporal trajectory. Proposition 15 propagates finite fingerprint uncertainty through that temporal geometry.
+Propositions 1-10 establish the general mathematical infrastructure. Proposition 11 introduces the first original physical candidate, **intervention-resolved causal structure**. Proposition 12 proves that its individual components and several scalar reductions are incomplete. Proposition 13 proves that no pair of the three major components reconstructs the omitted component on the declared finite audit domain. Proposition 14 turns the static physical candidate into a representation-invariant temporal trajectory. Proposition 15 propagates finite fingerprint uncertainty through that temporal geometry. Proposition 16 establishes the independent-composition null model and a response-level coupling defect.
 
 ## 3. Anatomy of the causal-structure candidate
 
@@ -155,13 +155,64 @@ This yields a certified interval for the true physical change:
 
 Relative to a declared threshold \(\eta\), every comparison is classified as **certified above**, **certified below**, or **unresolved**. The unresolved region is kept explicit rather than hidden behind a forced binary decision.
 
-## 8. Universal proof criteria
+## 8. Independent composition and controlled coupling
+
+![Proposition 16 independent composition and controlled coupling](figures/p16_composition_coupling.svg)
+
+Proposition 16 defines the independent response-level composition
+
+\[
+\boxed{
+P_{A\otimes B}^{(u_A,u_B),\tau}
+=
+P_A^{u_A,\tau}\otimes P_B^{u_B,\tau}.
+}
+\]
+
+Under this null model, cross-system directed influence vanishes and the partition separating the two complete subsystems has zero irreducibility:
+
+\[
+\boxed{
+A_{ij}^{A\otimes B}(\tau)=0
+\quad(i\in A,j\in B),
+}
+\]
+
+\[
+\boxed{
+\kappa_{A\otimes B}^{\tau}(\pi_{A|B})=0.
+}
+\]
+
+The composed response distance obeys
+
+\[
+\boxed{
+\max\{d_A,d_B\}
+\le d_{AB}
+\le d_A+d_B-d_Ad_B.
+}
+\]
+
+For an arbitrary observed joint response, the response-level coupling defect is
+
+\[
+\boxed{
+\chi_{A|B}(\tau)
+=
+\kappa_{AB}^{\tau}(\pi_{A|B}).
+}
+\]
+
+A positive defect certifies departure from response factorization on the declared intervention-observable regime. A zero defect does not by itself establish universal mechanistic independence outside that regime.
+
+## 9. Universal proof criteria
 
 ![Universal proof ladder](figures/universal_proof_ladder.svg)
 
 The project uses twelve criteria to separate a theorem internal to a framework from a scientifically exposed physical-to-experiential result. Full statements are in [Universal Consciousness Proof Target](universal_proof_target.md).
 
-## 9. Competing theory families
+## 10. Competing theory families
 
 ![Theory comparison map](figures/theory_comparison_map.svg)
 
@@ -175,7 +226,7 @@ The project compares contemporary theory families through one common interface
 
 This allows theory-specific physical features, bridge architectures, measurements, and interventions to be compared using the same identifiability and experiment-design theorems.
 
-## 10. Recommended reading order
+## 11. Recommended reading order
 
 | Stage | Read | Main question |
 | --- | --- | --- |
@@ -188,12 +239,13 @@ This allows theory-specific physical features, bridge architectures, measurement
 | 7 | [P13 - Pairwise Component Irredundancy](proposition_13_pairwise_component_irredundancy.md) | Can any two components reconstruct the third? |
 | 8 | [P14 - Temporal Continuation](proposition_14_temporal_continuation.md) | How is the physical candidate compared through time after relabeling? |
 | 9 | [P15 - Finite-Sample Temporal Certification](proposition_15_finite_sample_temporal_certification.md) | When is an apparent temporal change larger than measurement uncertainty? |
-| 10 | [Candidate Theory Families](candidate_theory_families.md) | How are major consciousness theories compared? |
-| 11 | [Universal Proof Target](universal_proof_target.md) | What would the final theorem-and-evidence package require? |
-| 12 | [Equation and Citation Map](equation_and_citation_map.md) | Which equations are original, standard, assumed, or externally sourced? |
-| 13 | [Literature Map](literature_map.md) | What role does each cited source play? |
+| 10 | [P16 - Independent Composition and Coupling](proposition_16_independent_composition_and_coupling.md) | When do two systems merely coexist, and when does observed response structure depart from factorization? |
+| 11 | [Candidate Theory Families](candidate_theory_families.md) | How are major consciousness theories compared? |
+| 12 | [Universal Proof Target](universal_proof_target.md) | What would the final theorem-and-evidence package require? |
+| 13 | [Equation and Citation Map](equation_and_citation_map.md) | Which equations are original, standard, assumed, or externally sourced? |
+| 14 | [Literature Map](literature_map.md) | What role does each cited source play? |
 
-## 11. Reading-status convention
+## 12. Reading-status convention
 
 | Label | Meaning |
 | --- | --- |
@@ -203,6 +255,7 @@ This allows theory-specific physical features, bridge architectures, measurement
 | **Empirical result** | evidence reported by a cited experiment or dataset |
 | **Counterexample / no-go** | a sufficiency, compression, or recoverability claim fails on an explicit construction |
 | **Finite-error certificate** | statement guaranteed under explicitly declared estimation-error radii |
+| **Physical composition theorem** | theorem about factorization, coupling, or decomposition of the physical response structure |
 | **Open bridge problem** | unresolved connection between physical and experiential structure |
 
 This convention is essential for reading every figure and theorem in the repository correctly.
