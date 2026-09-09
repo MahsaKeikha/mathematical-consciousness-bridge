@@ -2,7 +2,7 @@
 
 This roadmap records the current proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge.
 
-![P1-P24 theorem roadmap](figures/theorem_roadmap.svg)
+![P1-P25 theorem roadmap](figures/theorem_roadmap.svg)
 
 ---
 
@@ -34,6 +34,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P22](proposition_22_simultaneous_refinement_chain_certification.md) | shared base-TV confidence event plus deterministic pushforward contraction | simultaneous finite-data confidence family for P21 residuals and gains | proved simultaneous-certification theorem |
 | [P23](proposition_23_adaptive_descriptor_selection_certification.md) | universal pushforward control plus post-selection regret analysis | adaptive fixed-sample physical-refinement selection with valid coverage | proved post-selection theorem |
 | [P24](proposition_24_anytime_adaptive_refinement_certification.md) | summable alpha spending plus countable union control | repeated-look adaptive refinement and finite stopping-time validity | proved anytime-valid theorem |
+| [P25](proposition_25_directed_influence_scale_certification.md) | P11 influence plus P18 reconstruction distortion | directed-influence preservation and edge-margin certification across target observation scale | proved physical scale theorem |
 
 ---
 
@@ -358,6 +359,49 @@ Therefore
 so all response laws in the declared family remain identifiable at the coarse scale.
 
 If \(\rho_{\mathcal F}=0\), pairwise response geometry is preserved exactly even when \(C\) is globally many-to-one. The relevant requirement is family sufficiency, not microscopic invertibility everywhere.
+
+## P25 - directed-influence scale certification from P11 + P18
+
+P25 is a branch extension of the physical scale program, not a consequence of P24. It combines the P11 directed-influence definition with the P18 reconstruction theorem.
+
+For fixed source \(i\), target \(j\), delay \(\tau\), and matched intervention family \(\mathcal E_i\),
+
+\[
+A_{i\to j}^{f}(\tau)
+=
+\sup_{(u,v)\in\mathcal E_i}
+\|P_j^{u,\tau}-P_j^{v,\tau}\|_{\mathrm{TV}}.
+\]
+
+A deterministic target map \(C_j\) gives
+
+\[
+\boxed{A_{i\to j}^{c}(\tau)\le A_{i\to j}^{f}(\tau).}
+\]
+
+If a P18 decoder reconstructs all relevant target response laws with uniform defect \(\rho_{i\to j}(\tau)\), then
+
+\[
+\boxed{
+0\le
+A_{i\to j}^{f}(\tau)-A_{i\to j}^{c}(\tau)
+\le2\rho_{i\to j}(\tau).
+}
+\]
+
+Hence for threshold \(\theta\),
+
+\[
+\boxed{
+A_{i\to j}^{f}(\tau)>\theta+2\rho_{i\to j}(\tau)
+\Longrightarrow
+A_{i\to j}^{c}(\tau)>\theta.
+}
+\]
+
+The theorem controls observation loss for \(\mathcal A\). It does not yet solve block aggregation, changing intervention semantics, or scale behavior of \(\mathcal K\).
+
+Direct proof: [Proposition 25](proposition_25_directed_influence_scale_certification.md). Implementation: [directed_influence_scale_certification.py](../src/consciousness_bridge/directed_influence_scale_certification.py). Tests: [test_directed_influence_scale_certification.py](../tests/test_directed_influence_scale_certification.py).
 
 ---
 
@@ -693,7 +737,7 @@ Direct proof: [Proposition 24](proposition_24_anytime_adaptive_refinement_certif
 
 The next structural problems are:
 
-1. extend scale certification from response geometry \(\mathcal G\) to directed influence \(\mathcal A\) under block-compatible coarse maps;
+1. extend P25 from target observation coarse-graining to genuine block aggregation with source/intervention compatibility;
 2. characterize partition-lattice compatibility required to control \(\mathcal K\) across scale;
 3. sharpen P24 beyond conservative alpha spending and extend the refinement program to continuous, dependent, hidden-state, noisy-descriptor, and learned-descriptor settings;
 4. model genuine physical split/merge dynamics where state variables and intervention channels change;

@@ -332,7 +332,23 @@ P24 uses a transparent alpha-spending union-bound construction. It is intentiona
 
 ---
 
-# 19. Candidate consciousness-theory feature families
+# 19. P25 - directed-influence scale certification
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(A_{i\to j}^{f}(\tau)=\sup_{(u,v)\in\mathcal E_i}\|P_j^{u,\tau}-P_j^{v,\tau}\|_{\mathrm{TV}}\) | fine P11 directed perturbational influence | repository physical-signature definition | [P11](proposition_11_intervention_resolved_causal_structure.md) |
+| \(\overline P_j^{u,\tau}=(C_j)_\#P_j^{u,\tau}\) | deterministic target observation coarse-graining | standard pushforward applied to P11 marginal law | P17; [P25](proposition_25_directed_influence_scale_certification.md) |
+| \(A_{i\to j}^{c}(\tau)\le A_{i\to j}^{f}(\tau)\) | coarse target observation cannot increase matched-pair influence | proved by TV contraction and supremum monotonicity | P17; [P25](proposition_25_directed_influence_scale_certification.md) |
+| \(\rho_{i\to j}(\tau)=\sup_u\|P_j^{u,\tau}-R_{j\#}C_{j\#}P_j^{u,\tau}\|_{\mathrm{TV}}\) | uniform response-family reconstruction defect | P18 reconstruction object specialized to the P11 target family | [P18](proposition_18_scale_sufficiency_certification.md); [P25](proposition_25_directed_influence_scale_certification.md) |
+| \(0\le A^f-A^c\le2\rho\) | directed-influence scale distortion theorem | proved | [P25](proposition_25_directed_influence_scale_certification.md) |
+| \(A^f>\theta+2\rho\Rightarrow A^c>\theta\) | threshold-edge preservation margin | proved corollary | [P25](proposition_25_directed_influence_scale_certification.md) |
+| \(A^c>\theta\Rightarrow A^f>\theta\) | no threshold false positive under deterministic target coarse observation | proved by contraction | [P25](proposition_25_directed_influence_scale_certification.md) |
+
+P25 is a physical scale theorem with dependency branch P11 + P18. It does not establish scale stability of partition irreducibility, arbitrary source aggregation, changed intervention semantics, physical completeness, or experience.
+
+---
+
+# 20. Candidate consciousness-theory feature families
 
 The following are source-grounded translations into generic feature notation. They are not claims that each named theory reduces to one scalar or one universally agreed implementation.
 
@@ -349,7 +365,7 @@ Detailed caveats and source roles are maintained in [Candidate Theory Families](
 
 ---
 
-# 20. Citation discipline
+# 21. Citation discipline
 
 A result is cited as a repository result when the bridge-specific statement, construction, or counterexample is introduced here.
 
