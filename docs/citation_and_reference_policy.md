@@ -12,8 +12,11 @@ This repository uses explicit provenance rules so that readers can distinguish s
 6. Empirical consciousness findings are described as evidence about measured neural or behavioral states. They are not described as proofs of a physical-to-experiential bridge.
 7. Speculative proposals are labeled explicitly. Thomas W. Campbell and coauthors are included only for the falsifiable simulation-test proposal, not as an established theory of fundamental physics or consciousness.
 8. The wording of a source's scientific role must not exceed what the cited source establishes.
+9. Local theorem, figure, code, and documentation links are checked automatically in CI so the public research path remains navigable.
 
 ## Reference layers
+
+- [Research Navigation](research_navigation.md): complete reading order and direct theorem, evidence, figure, and implementation paths.
 
 - [Equation and Citation Map](equation_and_citation_map.md): equation-level provenance and proposition lineage.
 - [Foundational Physics, Mathematics, and Spaceflight Bibliography](foundational_physics_mathematics_bibliography.md): standard mathematics, physics, statistics, empirical work, and application sources.

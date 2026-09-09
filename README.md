@@ -1,7 +1,7 @@
 # Mathematical Consciousness Bridge
 
 [![tests](https://github.com/MahsaKeikha/mathematical-consciousness-bridge/actions/workflows/test.yml/badge.svg)](https://github.com/MahsaKeikha/mathematical-consciousness-bridge/actions/workflows/test.yml)
-[![version](https://img.shields.io/badge/version-0.18.0-2563eb)](CITATION.cff)
+[![version](https://img.shields.io/badge/version-0.19.0-2563eb)](CITATION.cff)
 [![license](https://img.shields.io/badge/license-MIT-059669)](LICENSE)
 
 **Mahsa Keikha, PhD**
@@ -40,11 +40,11 @@ This project continues **[Spatiotemporal Observer Mathematics](https://github.co
 
 Physics can describe states, fields, probability amplitudes, density operators, spacetime, Hamiltonians, open-system dynamics, thermodynamics, interventions, measurements, and statistical predictions without by itself defining subjective experience. A mathematically serious consciousness theory therefore requires a separately specified bridge between physically meaningful equivalence classes and formally defined experiential equivalence classes.
 
-The program here makes that bridge itself an object of mathematics. Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design. **P11** introduces intervention-resolved causal structure as a structured physical candidate rather than a scalar. **P12-P13** prove constructive insufficiency and component irredundancy results. **P14-P15** formalize temporal continuation and finite-error temporal certification. **P16** gives an independent-composition null model and response-level coupling defect. **P17** proves total-variation contraction and exact refinement ambiguity under deterministic coarse-graining. **P18** proves a quantitative scale-sufficiency certificate based on approximate reconstruction.
+The program here makes that bridge itself an object of mathematics. Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design. **P11** introduces intervention-resolved causal structure as a structured physical candidate rather than a scalar. **P12-P13** prove constructive insufficiency and component irredundancy results. **P14-P15** formalize temporal continuation and finite-error temporal certification. **P16** gives an independent-composition null model and response-level coupling defect. **P17** proves total-variation contraction and exact refinement ambiguity under deterministic coarse-graining. **P18** proves a quantitative scale-sufficiency certificate based on approximate reconstruction. **P19** proves exact deterministic and stochastic criteria for whether an independently defined target factors through a declared physical descriptor, together with a differential no-go test.
 
 A new quantum-foundations layer now asks a sharper question. Suppose the declared quantum description is operationally complete with respect to the state, admissible channels, and all declared measurement statistics. What exact mathematical evidence would be required to show that an independently defined experiential variable does **not** factor through that quantum operational state? This is formulated as an open non-reducibility theorem target. It is not an assumption that consciousness is quantum or that quantum theory is incomplete.
 
-The public research record now contains **18 proposition-level results, 58 equation-driven quantitative figures, quantum and classical physical maps, reproducible numerical examples, counterexamples, and a multi-version Python test matrix**.
+The public research record now contains **19 proposition-level results, 58 equation-driven quantitative figures, quantum and classical physical maps, reproducible numerical examples, counterexamples, and a multi-version Python test matrix**.
 
 ---
 
@@ -75,6 +75,27 @@ The writing style is deliberately direct and technical. En dashes and em dashes 
 
 ---
 
+# Reader navigation
+
+A reader should not need to search the repository to understand the argument. The [Research Navigation](docs/research_navigation.md) page provides the complete reading order and direct links to every proposition. The most important paths are also available here:
+
+| What you want to inspect | Direct link | What is there |
+| --- | --- | --- |
+| complete theorem chain | [Theorem Roadmap](docs/theorem_roadmap.md) | P1 through P19 in dependency order |
+| equation provenance | [Equation and Citation Map](docs/equation_and_citation_map.md) | standard results, repository definitions, proofs, and external sources separated explicitly |
+| current frontier theorem | [Proposition 19](docs/proposition_19_fundamental_physical_sufficiency.md) | deterministic factorization, stochastic sufficiency, and local rank obstruction |
+| fundamental-theory program | [Fundamental Theory to Consciousness](docs/fundamental_theory_consciousness_program.md) | candidate fundamental state, physical quotients, experiential quotient, and falsifiable bridge program |
+| stochastic extension | [Stochastic Fundamental Bridge](docs/stochastic_fundamental_bridge.md) | Markov-kernel and conditional-information formulation |
+| empirical falsification | [Falsification Program](docs/falsification_program.md) | conditions that would weaken or defeat a bridge claim |
+| source standards | [Citation and Reference Policy](docs/citation_and_reference_policy.md) | citation, DOI, attribution, evidence-class, and prose rules |
+| high-impact source audit | [Reference Audit](docs/reference_audit.md) | publication metadata and evidential role of major sources |
+| quantitative physics | [Quantitative Physics and Mathematics Atlas](docs/quantitative_physics_mathematics_atlas.md) | Q01 through Q40 with equations and reproducible figures |
+| implementation of P19 | [fundamental_physical_sufficiency.py](src/consciousness_bridge/fundamental_physical_sufficiency.py) | executable factorization and conditional-information utilities |
+
+Every local documentation and figure link is checked by automated tests. Broken internal links therefore fail CI instead of remaining silently in the public research record.
+
+---
+
 # Paper map
 
 | Section | Scientific question |
@@ -84,6 +105,7 @@ The writing style is deliberately direct and technical. En dashes and em dashes 
 | **3. Quantum foundations** | What is the deepest operational physical description used by the program? |
 | **4. Quantum completeness test** | What exact result would show failure of a quantum-only experiential reduction? |
 | **4.4 Fundamental-theory interface** | Can spacetime, quantum, causal, and experiential structure be tested as quotients of one candidate fundamental state? |
+| **4.5 P19 physical sufficiency** | Does an independently defined target factor through the declared physical descriptor? |
 | **5. Probability and information geometry** | How are physical response laws distinguished quantitatively? |
 | **6. Bridge domains and theorem criteria** | What would a well-defined bridge have to map and preserve? |
 | **7. P1-P10** | What can be identified, recovered, and certified from finite data? |
@@ -104,7 +126,7 @@ The writing style is deliberately direct and technical. En dashes and em dashes 
 
 | Research record | Current state |
 | --- | ---: |
-| proposition-level results | **18** |
+| proposition-level results | **19** |
 | equation-driven classical/causal quantitative figures | **40** |
 | equation-driven quantum-foundations figures | **18** |
 | total equation-driven quantitative figures | **58** |
@@ -112,9 +134,9 @@ The writing style is deliberately direct and technical. En dashes and em dashes 
 | structured physical candidate | **intervention-resolved causal structure** |
 | quantum operational-completeness test | **formal open theorem target** |
 | fundamental-theory factorization test | **formal open theorem + experiment target** |
-| automated tests | **120+ and expanding** |
+| automated tests | **150+ and expanding** |
 | CI matrix | **Python 3.10, 3.11, 3.12** |
-| research-software version | **0.18.0** |
+| research-software version | **0.19.0** |
 
 ---
 
@@ -773,6 +795,90 @@ The scientific rule is simple: an additional primitive must change a measurable 
 
 [Read the full Fundamental Theory to Consciousness program](docs/fundamental_theory_consciousness_program.md).
 
+# 4.5 P19 - fundamental physical sufficiency and residual tests
+
+![P19 fundamental physical sufficiency](docs/figures/p19_fundamental_physical_sufficiency.svg)
+
+P19 turns the fundamental-theory interface into an exact theorem. Let
+
+\[
+T:\mathcal M\to\mathcal Q_T
+\]
+
+be the declared physical descriptor and let
+
+\[
+E:\mathcal M\to\mathcal Q_E
+\]
+
+be an independently defined target descriptor. There exists a unique bridge on the physical image,
+
+\[
+\boxed{E=B_T\circ T,}
+\]
+
+if and only if the target is constant on every physical fiber:
+
+\[
+\boxed{
+T(\Omega)=T(\Omega')
+\Longrightarrow
+E(\Omega)=E(\Omega').
+}
+\]
+
+Thus a single exact collision
+
+\[
+\boxed{
+T(\Omega)=T(\Omega')
+\quad\text{but}\quad
+E(\Omega)\ne E(\Omega')
+}
+\]
+
+rules out every deterministic bridge through that declared physical descriptor.
+
+The stochastic extension replaces deterministic factorization by conditional independence,
+
+\[
+\boxed{E\perp\!\!\!\perp\Omega\mid T.}
+\]
+
+For finite alphabets this is equivalent to
+
+\[
+\boxed{
+\mathcal I_{\perp}^{\mathrm{fund}}
+:=I(E;\Omega\mid T)=0.
+}
+\]
+
+For smooth local coordinates, any differentiable factorization requires
+
+\[
+\boxed{
+\operatorname{rank}D(T,E)=\operatorname{rank}DT.
+}
+\]
+
+Therefore
+
+\[
+\boxed{
+d_{\perp}
+:=\operatorname{rank}D(T,E)-\operatorname{rank}DT>0
+}
+\]
+
+is a sufficient local no-factorization certificate.
+
+The interpretation is deliberately conservative. A residual first challenges the completeness of the declared physical descriptor. Measurement error, omitted physical variables, system boundaries, timescale, and intervention coverage must be tested before introducing a new primitive.
+
+[Read Proposition 19](docs/proposition_19_fundamental_physical_sufficiency.md). See the [Equation and Citation Map](docs/equation_and_citation_map.md) for the provenance of each mathematical ingredient and the [Falsification Program](docs/falsification_program.md) for the empirical burden.
+
+---
+
 # 5. Probability, distinguishability, and information geometry
 
 ![Physics and mathematics atlas](docs/figures/physics_mathematics_atlas.svg)
@@ -882,7 +988,7 @@ A complete empirical bridge theory must specify
 
 ---
 
-# 7. Theorem roadmap - P1 through P18
+# 7. Theorem roadmap - P1 through P19
 
 ![Theorem roadmap](docs/figures/theorem_roadmap.svg)
 
@@ -906,6 +1012,7 @@ A complete empirical bridge theory must specify
 | **P16** | independent composition and response-level coupling defect | proved | [P16](docs/proposition_16_independent_composition_and_coupling.md) |
 | **P17** | coarse-graining contraction and refinement non-recoverability | proved | [P17](docs/proposition_17_coarse_graining_and_refinement.md) |
 | **P18** | approximate reconstruction gives a quantitative scale-sufficiency certificate | proved | [P18](docs/proposition_18_scale_sufficiency_certification.md) |
+| **P19** | exact physical-sufficiency factorization, conditional-information residual, and differential no-go criterion | proved | [P19](docs/proposition_19_fundamental_physical_sufficiency.md) |
 
 ---
 

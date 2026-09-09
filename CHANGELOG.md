@@ -2,6 +2,20 @@
 
 This changelog records theorem-level scientific releases. Definitions, proofs, implementations, tests, figures, and documentation remain linked from the main research page.
 
+## 0.19.0 - 2026-09-09
+
+### Proposition 19 - fundamental physical sufficiency and residual tests
+
+- Proved the exact factorization criterion \(E=B_T\circ T\) if and only if the target is constant on every fiber of the declared physical descriptor.
+- Added exact collision witnesses that rule out deterministic factorization through an incomplete descriptor.
+- Proved the finite stochastic equivalence between physical screening-off and \(I(E;\Omega\mid T)=0\).
+- Added the deterministic-target corollary \(I(E;\Omega\mid T)=H(E\mid T)\).
+- Added a differential no-go criterion based on \(\operatorname{rank}D(T,E)-\operatorname{rank}DT\).
+- Added executable factorization and conditional-information utilities with regression tests.
+- Added a P19 theorem map and synchronized the public P1-P19 dependency map.
+- Added a complete reader-navigation index and automated internal-link integrity checks.
+- Extended the equation and citation map through P19 so standard mathematics, repository results, and interpretation boundaries remain explicit.
+
 ## 0.18.0 - 2026-09-09
 
 ### Proposition 18 - scale sufficiency by approximate reconstruction

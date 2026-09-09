@@ -2,7 +2,7 @@
 
 This roadmap records the current proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge.
 
-![P1-P18 theorem roadmap](figures/theorem_roadmap.svg)
+![P1-P19 theorem roadmap](figures/theorem_roadmap.svg)
 
 ---
 
@@ -28,6 +28,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P16](proposition_16_independent_composition_and_coupling.md) | product-response composition and factorization defect | distinguishes independent coexistence from observed cross-system coupling | proved composition theorem |
 | [P17](proposition_17_coarse_graining_and_refinement.md) | deterministic pushforward and data processing | quantifies information loss under coarse-graining and refinement ambiguity | proved scale-loss theorem |
 | [P18](proposition_18_scale_sufficiency_certification.md) | approximate reconstruction and separation margin | certifies when a coarse scale preserves a declared response family | proved scale-sufficiency theorem |
+| [P19](proposition_19_fundamental_physical_sufficiency.md) | quotient factorization, conditional mutual information, and differential rank obstruction | tests whether an independent target is fixed by the declared physical descriptor | proved physical-sufficiency theorem |
 
 ---
 
@@ -355,7 +356,43 @@ If \(\rho_{\mathcal F}=0\), pairwise response geometry is preserved exactly even
 
 ---
 
-# 8. Dependency chain
+# 8. Fundamental physical sufficiency: P19
+
+P19 asks whether an independently defined target descriptor \(E\) is already fixed by the declared physical descriptor \(T\).
+
+The deterministic criterion is
+
+\[
+\boxed{
+E=B_T\circ T
+\iff
+T(\Omega)=T(\Omega')\Rightarrow E(\Omega)=E(\Omega').
+}
+\]
+
+For finite stochastic variables, physical sufficiency is equivalent to
+
+\[
+\boxed{
+I(E;\Omega\mid T)=0.
+}
+\]
+
+For differentiable local coordinates, any smooth factorization requires
+
+\[
+\boxed{
+\operatorname{rank}D(T,E)=\operatorname{rank}DT.
+}
+\]
+
+A positive rank residual is therefore a sufficient local no-factorization certificate. Neither a positive information residual nor a positive rank residual establishes a nonphysical ontology. Both first challenge the completeness of the declared physical descriptor.
+
+Direct proof: [Proposition 19](proposition_19_fundamental_physical_sufficiency.md). Provenance: [Equation and Citation Map](equation_and_citation_map.md). Empirical burden: [Falsification Program](falsification_program.md).
+
+---
+
+# 9. Dependency chain
 
 \[
 \boxed{
@@ -377,7 +414,7 @@ If \(\rho_{\mathcal F}=0\), pairwise response geometry is preserved exactly even
 
 ---
 
-# 9. Current frontier
+# 10. Current frontier
 
 The next structural problems are:
 

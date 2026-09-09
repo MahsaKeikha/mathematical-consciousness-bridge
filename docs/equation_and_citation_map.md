@@ -202,7 +202,54 @@ The mathematical ingredients are standard properties of total variation, measura
 
 ---
 
-# 11. Candidate consciousness-theory feature families
+# 11. P17 - coarse-graining and refinement
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(C:\Omega_f\to\Omega_c\) | deterministic coarse-graining map | repository modeling definition | P17 |
+| \(C_\#P(y)=\sum_{x:C(x)=y}P(x)\) | pushforward of a fine response law | standard pushforward construction applied here | P17; standard probability |
+| \(\|C_\#P-C_\#Q\|_{\mathrm{TV}}\le\|P-Q\|_{\mathrm{TV}}\) | data-processing contraction under deterministic coarse-graining | proved for the declared response laws | P17; standard TV contraction principle |
+| fine-scale collision with identical coarse pushforwards | exact refinement non-recoverability witness | repository counterexample | P17 |
+| bijective reparameterization preserves TV exactly | representation-preserving special case | proved | P17 |
+
+P17 is a physical information-loss theorem. It does not identify a privileged biological scale and does not attach an experiential interpretation to coarse-graining.
+
+---
+
+# 12. P18 - scale sufficiency by approximate reconstruction
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(D=R_\#C_\#\) | reconstruction operator induced by a coarse map and declared decoder | repository construction using standard pushforwards | P18 |
+| \(\rho(P)=\|P-R_\#C_\#P\|_{\mathrm{TV}}\) | response-law reconstruction defect | repository definition | P18 |
+| \(\rho_{\mathcal F}=\sup_{P\in\mathcal F}\rho(P)\) | uniform family reconstruction defect | repository definition | P18 |
+| \(0\le d_f-d_c\le\rho(P)+\rho(Q)\le2\rho_{\mathcal F}\) | pairwise response-geometry distortion certificate | proved | P18 |
+| \(\delta_c\ge\delta_f-2\rho_{\mathcal F}\) | finite-family separation guarantee | proved | P18 |
+| \(\rho_{\mathcal F}=0\Rightarrow d_c=d_f\) on the declared family | exact family scale sufficiency | proved | P18 |
+
+The pushforward, total variation, and triangle inequality are standard mathematics. The reconstruction-defect certificate and its role as a scale-sufficiency criterion are repository results.
+
+---
+
+# 13. P19 - fundamental physical sufficiency and residual tests
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(T:\mathcal M\to\mathcal Q_T\) | declared physical descriptor on a candidate fundamental state space | repository abstraction | P19 |
+| \(E:\mathcal M\to\mathcal Q_E\) | independently defined target descriptor | repository abstraction; experiential instantiation remains open | P19 |
+| \(E=B_T\circ T\) iff \(E\) is constant on every fiber of \(T\) | exact deterministic physical-sufficiency criterion | proved | P19; standard quotient and factorization logic |
+| \(T(\Omega)=T(\Omega')\) and \(E(\Omega)\ne E(\Omega')\) | exact no-factorization witness relative to the declared \(T\) | proved | P19 |
+| \(E\perp\!\!\!\perp\Omega\mid T\) | stochastic physical-sufficiency condition | standard conditional-independence form applied here | P19; Cover and Thomas 2006 |
+| \(I(E;\Omega\mid T)=0\) | finite-alphabet information criterion equivalent to conditional independence | standard information-theoretic identity applied here | Cover and Thomas 2006; P19 |
+| \(I(E;\Omega\mid T)=H(E\mid T)\) for deterministic \(E=E(\Omega)\) | deterministic-target corollary | proved from standard entropy identities | P19; Cover and Thomas 2006 |
+| \(\operatorname{rank}D(T,E)=\operatorname{rank}DT\) under local smooth factorization | necessary differential condition | proved by the chain rule | P19; standard differential calculus |
+| \(d_\perp=\operatorname{rank}D(T,E)-\operatorname{rank}DT>0\) | sufficient local no-factorization witness | proved | P19 |
+
+P19 is a theorem about sufficiency relative to a declared physical descriptor. A residual first indicates that the declared descriptor may be incomplete. It is not by itself evidence for a nonphysical substance, a new spacetime dimension, or a failure of quantum mechanics.
+
+---
+
+# 14. Candidate consciousness-theory feature families
 
 The following are source-grounded translations into generic feature notation. They are not claims that each named theory reduces to one scalar or one universally agreed implementation.
 
@@ -219,7 +266,7 @@ Detailed caveats and source roles are maintained in [Candidate Theory Families](
 
 ---
 
-# 12. Citation discipline
+# 15. Citation discipline
 
 A result is cited as a repository result when the bridge-specific statement, construction, or counterexample is introduced here.
 
