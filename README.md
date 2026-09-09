@@ -1,7 +1,7 @@
 # Mathematical Consciousness Bridge
 
 [![tests](https://github.com/MahsaKeikha/mathematical-consciousness-bridge/actions/workflows/test.yml/badge.svg)](https://github.com/MahsaKeikha/mathematical-consciousness-bridge/actions/workflows/test.yml)
-[![version](https://img.shields.io/badge/version-0.22.0-2563eb)](CITATION.cff)
+[![version](https://img.shields.io/badge/version-0.23.0-2563eb)](CITATION.cff)
 [![license](https://img.shields.io/badge/license-MIT-059669)](LICENSE)
 
 **Mahsa Keikha, PhD**
@@ -40,11 +40,11 @@ This project continues **[Spatiotemporal Observer Mathematics](https://github.co
 
 Physics can describe states, fields, probability amplitudes, density operators, spacetime, Hamiltonians, open-system dynamics, thermodynamics, interventions, measurements, and statistical predictions without by itself defining subjective experience. A mathematically serious consciousness theory therefore requires a separately specified bridge between physically meaningful equivalence classes and formally defined experiential equivalence classes.
 
-The program here makes that bridge itself an object of mathematics. Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design. **P11** introduces intervention-resolved causal structure as a structured physical candidate rather than a scalar. **P12-P13** prove constructive insufficiency and component irredundancy results. **P14-P15** formalize temporal continuation and finite-error temporal certification. **P16** gives an independent-composition null model and response-level coupling defect. **P17** proves total-variation contraction and exact refinement ambiguity under deterministic coarse-graining. **P18** proves a quantitative scale-sufficiency certificate based on approximate reconstruction. **P19** proves exact deterministic and stochastic criteria for whether an independently defined target factors through a declared physical descriptor, together with a differential no-go test. **P20** converts the P19 stochastic population residual into an explicit finite-sample confidence certificate under a declared finite-alphabet IID model. **P21** then proves how that residual behaves under nested physical-descriptor refinement: unresolved deterministic collisions can only disappear, while the stochastic residual decreases by exactly the target-relevant information supplied by the added physical detail. **P22** gives a simultaneous finite-sample certificate for the entire declared refinement chain from one shared confidence event on the empirical physical-target law.
+The program here makes that bridge itself an object of mathematics. Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design. **P11** introduces intervention-resolved causal structure as a structured physical candidate rather than a scalar. **P12-P13** prove constructive insufficiency and component irredundancy results. **P14-P15** formalize temporal continuation and finite-error temporal certification. **P16** gives an independent-composition null model and response-level coupling defect. **P17** proves total-variation contraction and exact refinement ambiguity under deterministic coarse-graining. **P18** proves a quantitative scale-sufficiency certificate based on approximate reconstruction. **P19** proves exact deterministic and stochastic criteria for whether an independently defined target factors through a declared physical descriptor, together with a differential no-go test. **P20** converts the P19 stochastic population residual into an explicit finite-sample confidence certificate under a declared finite-alphabet IID model. **P21** then proves how that residual behaves under nested physical-descriptor refinement: unresolved deterministic collisions can only disappear, while the stochastic residual decreases by exactly the target-relevant information supplied by the added physical detail. **P22** gives a simultaneous finite-sample certificate for the entire declared refinement chain from one shared confidence event on the empirical physical-target law. **P23** proves that the same shared base confidence event also supports fixed-sample data-dependent selection among admissible deterministic refinements, together with an explicit near-optimality bound for the selected refinement.
 
 A new quantum-foundations layer now asks a sharper question. Suppose the declared quantum description is operationally complete with respect to the state, admissible channels, and all declared measurement statistics. What exact mathematical evidence would be required to show that an independently defined experiential variable does **not** factor through that quantum operational state? This is formulated as an open non-reducibility theorem target. It is not an assumption that consciousness is quantum or that quantum theory is incomplete.
 
-The public research record now contains **22 proposition-level results, 58 equation-driven quantitative figures, quantum and classical physical maps, reproducible numerical examples, counterexamples, and a multi-version Python test matrix**.
+The public research record now contains **23 proposition-level results, 58 equation-driven quantitative figures, quantum and classical physical maps, reproducible numerical examples, counterexamples, and a multi-version Python test matrix**.
 
 ---
 
@@ -81,12 +81,13 @@ A reader should not need to search the repository to understand the argument. Th
 
 | What you want to inspect | Direct link | What is there |
 | --- | --- | --- |
-| complete theorem chain | [Theorem Roadmap](docs/theorem_roadmap.md) | P1 through P22 in dependency order |
+| complete theorem chain | [Theorem Roadmap](docs/theorem_roadmap.md) | P1 through P23 in dependency order |
 | equation provenance | [Equation and Citation Map](docs/equation_and_citation_map.md) | standard results, repository definitions, proofs, and external sources separated explicitly |
 | population physical-sufficiency theorem | [Proposition 19](docs/proposition_19_fundamental_physical_sufficiency.md) | deterministic factorization, stochastic sufficiency, and local rank obstruction |
 | finite-sample residual theorem | [Proposition 20](docs/proposition_20_finite_sample_residual_certification.md) | confidence interval for the P19 conditional-information residual |
 | physical-refinement theorem | [Proposition 21](docs/proposition_21_descriptor_refinement_residual_persistence.md) | omitted-physics residual trajectory and exact refinement gain |
 | simultaneous refinement-chain theorem | [Proposition 22](docs/proposition_22_simultaneous_refinement_chain_certification.md) | one confidence event controlling the full residual-and-gain trajectory |
+| adaptive refinement-selection theorem | [Proposition 23](docs/proposition_23_adaptive_descriptor_selection_certification.md) | fixed-sample post-selection validity and refinement-regret control |
 | fundamental-theory program | [Fundamental Theory to Consciousness](docs/fundamental_theory_consciousness_program.md) | candidate fundamental state, physical quotients, experiential quotient, and falsifiable bridge program |
 | stochastic extension | [Stochastic Fundamental Bridge](docs/stochastic_fundamental_bridge.md) | Markov-kernel and conditional-information formulation |
 | empirical falsification | [Falsification Program](docs/falsification_program.md) | conditions that would weaken or defeat a bridge claim |
@@ -97,6 +98,7 @@ A reader should not need to search the repository to understand the argument. Th
 | implementation of P20 | [finite_sample_residual_certification.py](src/consciousness_bridge/finite_sample_residual_certification.py) | executable finite-sample residual confidence certificate |
 | implementation of P21 | [descriptor_refinement_residual.py](src/consciousness_bridge/descriptor_refinement_residual.py) | executable omitted-physics refinement and residual-persistence audit |
 | implementation of P22 | [refinement_chain_certification.py](src/consciousness_bridge/refinement_chain_certification.py) | simultaneous finite-sample refinement-chain confidence certificate |
+| implementation of P23 | [adaptive_descriptor_selection.py](src/consciousness_bridge/adaptive_descriptor_selection.py) | adaptive fixed-sample descriptor-selection and regret certificate |
 
 Every local documentation and figure link is checked by automated tests. Broken internal links therefore fail CI instead of remaining silently in the public research record.
 
@@ -115,6 +117,7 @@ Every local documentation and figure link is checked by automated tests. Broken 
 | **4.6 P20 finite-sample residual certification** | What can finite data certify about the P19 population residual? |
 | **4.7 P21 descriptor refinement** | Does a residual survive systematic enrichment of the declared physical description? |
 | **4.8 P22 simultaneous refinement certification** | Can one finite data set certify the full declared residual-and-gain trajectory at once? |
+| **4.9 P23 adaptive descriptor selection** | Does finite-sample validity survive choosing the physical refinement after inspecting the same data? |
 | **5. Probability and information geometry** | How are physical response laws distinguished quantitatively? |
 | **6. Bridge domains and theorem criteria** | What would a well-defined bridge have to map and preserve? |
 | **7. P1-P10** | What can be identified, recovered, and certified from finite data? |
@@ -135,7 +138,7 @@ Every local documentation and figure link is checked by automated tests. Broken 
 
 | Research record | Current state |
 | --- | ---: |
-| proposition-level results | **22** |
+| proposition-level results | **23** |
 | equation-driven classical/causal quantitative figures | **40** |
 | equation-driven quantum-foundations figures | **18** |
 | total equation-driven quantitative figures | **58** |
@@ -145,7 +148,7 @@ Every local documentation and figure link is checked by automated tests. Broken 
 | fundamental-theory factorization test | **formal open theorem + experiment target** |
 | automated tests | **160+ and expanding** |
 | CI matrix | **Python 3.10, 3.11, 3.12** |
-| research-software version | **0.22.0** |
+| research-software version | **0.23.0** |
 
 ---
 
@@ -1227,6 +1230,149 @@ remains unchanged.
 
 [Read Proposition 22](docs/proposition_22_simultaneous_refinement_chain_certification.md). The [P22 theorem map](docs/figures/p22_simultaneous_refinement_chain_certification.svg), [implementation](src/consciousness_bridge/refinement_chain_certification.py), and [tests](tests/test_refinement_chain_certification.py) expose the full proof-to-code path.
 
+# 4.9 P23 - adaptive physical-descriptor selection certification
+
+![P23 adaptive physical-descriptor selection certification](docs/figures/p23_adaptive_descriptor_selection_certification.svg)
+
+P22 certifies a fixed declared refinement chain. P23 addresses the next statistical question: **what happens when the next physical refinement is selected after inspecting the same finite data?**
+
+Let the sampled base law be
+
+\[
+Z=(\Omega,E)\sim P,
+\]
+
+with empirical law \(\widehat P_n\), and let a common coarse physical descriptor be
+
+\[
+T_c=c(\Omega).
+\]
+
+For every admissible candidate \(f\), define a finer deterministic descriptor
+
+\[
+T_f=f(\Omega)
+\]
+
+that refines \(T_c\). The P21 refinement gain and remaining residual are
+
+\[
+\boxed{
+G_f=I(E;T_f\mid T_c),
+\qquad
+R_f=I(E;\Omega\mid T_f).
+}
+\]
+
+P21 gives
+
+\[
+\boxed{R_c-R_f=G_f.}
+\]
+
+P23 starts from the same one-event finite-sample certificate used by P22:
+
+\[
+\boxed{
+\mathcal A_n
+=
+\left\{
+\|P-\widehat P_n\|_{\mathrm{TV}}
+\le\tau_n(\alpha)
+\right\},
+\qquad
+\Pr(\mathcal A_n)\ge1-\alpha.
+}
+\]
+
+For **every** deterministic map \(h\), total variation contracts pathwise:
+
+\[
+\boxed{
+\|h_\#P-h_\#\widehat P_n\|_{\mathrm{TV}}
+\le
+\|P-\widehat P_n\|_{\mathrm{TV}}.
+}
+\]
+
+Therefore, once \(\mathcal A_n\) occurs, all admissible residual and gain pushforwards are controlled simultaneously. In particular,
+
+\[
+\boxed{
+|G_f-\widehat G_f|
+\le
+\Gamma_f(\tau_n),
+\qquad
+|R_f-\widehat R_f|
+\le
+\Delta_f(\tau_n)
+\quad
+\forall f.
+}
+\]
+
+Now choose the refinement from the same data:
+
+\[
+\boxed{
+\widehat f
+\in
+\operatorname*{arg\,max}_{f}\widehat G_f.
+}
+\]
+
+Because the candidate inequalities already hold simultaneously on one base event, they remain valid for the selected candidate. P23 therefore proves fixed-sample post-selection coverage without a separate candidate-count confidence split.
+
+The theorem also quantifies selection regret. If
+
+\[
+G^*=\max_f G_f
+\]
+
+and \(L_f^G,U_f^G\) are simultaneous candidate gain bounds, then
+
+\[
+\boxed{
+0
+\le
+G^*-G_{\widehat f}
+\le
+\max_f U_f^G-L_{\widehat f}^G
+\le
+2\Gamma_{\max}.
+}
+\]
+
+Since all candidates refine the same coarse descriptor,
+
+\[
+\boxed{
+R_{\widehat f}-\min_fR_f
+=
+G^*-G_{\widehat f}.
+}
+\]
+
+Thus the same certificate bounds how far the selected physical refinement can be from the smallest population residual available in the declared admissible class.
+
+The absence of a direct candidate-count penalty is structural, not a general statement that model selection is free. The confidence ball controls the **base distribution itself**, and candidate laws are deterministic pushforwards of that same law. The finite-data cost still depends strongly on the declared physical-state alphabet and on the descriptor alphabet sizes.
+
+P23 also draws a strict boundary between statistical validity and scientific interpretation:
+
+\[
+\boxed{
+\text{post-selection statistical validity}
+\neq
+\text{physical admissibility}.
+}
+\]
+
+A descriptor engineered from target labels can still be a mathematical function of \(\Omega\) after construction. P23's probability theorem does not make such a map a physically explanatory variable. Physical admissibility still requires independent justification of variables, system boundaries, measurement models, intervention semantics, and scale.
+
+Finally, P23 is **fixed-sample**. Repeatedly collecting more data, inspecting the certificate, and stopping when a desired result appears is an optional-stopping problem and is not covered by this theorem.
+
+[Read Proposition 23](docs/proposition_23_adaptive_descriptor_selection_certification.md). The [P23 theorem map](docs/figures/p23_adaptive_descriptor_selection_certification.svg), [implementation](src/consciousness_bridge/adaptive_descriptor_selection.py), and [tests](tests/test_adaptive_descriptor_selection.py) expose the full proof-to-code path.
+
 ---
 
 # 5. Probability, distinguishability, and information geometry
@@ -1338,7 +1484,7 @@ A complete empirical bridge theory must specify
 
 ---
 
-# 7. Theorem roadmap - P1 through P22
+# 7. Theorem roadmap - P1 through P23
 
 ![Theorem roadmap](docs/figures/theorem_roadmap.svg)
 
@@ -1366,6 +1512,7 @@ A complete empirical bridge theory must specify
 | **P20** | finite-sample confidence interval for the P19 conditional-information residual | proved | [P20](docs/proposition_20_finite_sample_residual_certification.md) |
 | **P21** | descriptor refinement makes deterministic collisions and stochastic residuals monotone, with exact information-gain decomposition | proved | [P21](docs/proposition_21_descriptor_refinement_residual_persistence.md) |
 | **P22** | one base confidence event simultaneously certifies the declared residual-and-refinement-gain chain | proved finite-sample theorem | [P22](docs/proposition_22_simultaneous_refinement_chain_certification.md) |
+| **P23** | fixed-sample adaptive descriptor selection retains simultaneous coverage and admits explicit refinement-regret bounds | proved post-selection theorem | [P23](docs/proposition_23_adaptive_descriptor_selection_certification.md) |
 
 ---
 

@@ -2,6 +2,21 @@
 
 This changelog records theorem-level scientific releases. Definitions, proofs, implementations, tests, figures, and documentation remain linked from the main research page.
 
+## 0.23.0 - 2026-09-09
+
+### Proposition 23 - adaptive physical-descriptor selection certification
+
+- Extended the P22 shared-base-law confidence event from fixed refinement chains to fixed-sample data-dependent selection among admissible deterministic refinements.
+- Used pathwise total-variation contraction to show that one base confidence event controls every deterministic candidate pushforward simultaneously.
+- Proved that the residual and refinement-gain confidence intervals remain valid for the descriptor selected from the same finite sample.
+- Proved the generic post-selection regret bound \(0\le G^*-G_{\widehat f}\le2\Gamma_{\max}\).
+- Added the sharper observable certificate \(G^*-G_{\widehat f}\le\max_fU_f^G-L_{\widehat f}^G\).
+- Used P21 to identify the same quantity with selected residual excess: \(R_{\widehat f}-\min_fR_f=G^*-G_{\widehat f}\).
+- Made the distinction between statistical post-selection validity and physical admissibility explicit.
+- Preserved the fixed-sample boundary: optional stopping across growing sample sizes remains outside P23.
+- Added executable adaptive-selection certification, fourteen dedicated regression tests, and a publication-style P23 theorem map.
+- Extended the README paper, global theorem roadmap, research navigation, equation provenance, release metadata, proposition guards, and figure-quality guards through P23.
+
 ## 0.22.0 - 2026-09-09
 
 ### Proposition 22 - simultaneous finite-sample certification of physical-refinement chains

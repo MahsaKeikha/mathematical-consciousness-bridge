@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120" role="img" aria-labelledby="title desc">
+  <title id="title">P23 adaptive physical-descriptor selection certification</title>
+  <desc id="desc">Publication-style theorem map for post-selection validity and refinement-regret control under one shared base confidence ball.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .title{font:700 34px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 17px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .label{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
+      .head{font:700 20px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 15px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .eq{font:600 20px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .eqsmall{font:600 17px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .arrow{stroke:#64748b;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+
+  <rect width="1600" height="1120" fill="#ffffff"/>
+  <text x="70" y="62" class="title">P23 · Adaptive Physical-Descriptor Selection Certification</text>
+  <text x="70" y="95" class="subtitle">One base confidence ball remains valid after selecting a deterministic physical refinement from the same data.</text>
+
+  <rect x="90" y="145" width="1420" height="175" rx="20" fill="#f8fafc" stroke="#94a3b8"/>
+  <text x="125" y="181" class="label">SHARED BASE EVENT</text>
+  <text x="125" y="217" class="head">Control the finite physical-target law before selection</text>
+  <text x="125" y="258" class="eq">‖PΩE − P̂ΩE‖TV ≤ τn(α)</text>
+  <text x="650" y="258" class="eqsmall">Pr(event) ≥ 1 − α</text>
+  <text x="125" y="294" class="body">The probability statement is made once at the base-law level.</text>
+
+  <path class="arrow" d="M800 320 V356"/>
+
+  <rect x="90" y="370" width="680" height="235" rx="20" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="125" y="406" class="label">UNIFORM PUSHFORWARD CONTROL</text>
+  <text x="125" y="442" class="head">Every deterministic descriptor inherits the event</text>
+  <text x="125" y="486" class="eqsmall">∀f: ‖f#P − f#P̂‖TV ≤ ‖P − P̂‖TV</text>
+  <text x="125" y="528" class="body">Residual and gain laws are deterministic pushforwards of (Ω,E).</text>
+  <text x="125" y="562" class="body">No candidate-wise probability union bound is introduced.</text>
+
+  <rect x="830" y="370" width="680" height="235" rx="20" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="865" y="406" class="label">DATA-DEPENDENT SELECTION</text>
+  <text x="865" y="442" class="head">Choose the empirically strongest admissible refinement</text>
+  <text x="865" y="486" class="eq">f̂ ∈ arg maxf Ĝf</text>
+  <text x="865" y="528" class="body">The selected gain and residual retain their simultaneous intervals.</text>
+  <text x="865" y="562" class="body">Selection can use the same fixed-n sample because coverage is pathwise.</text>
+
+  <path class="arrow" d="M430 605 V650 H800"/>
+  <path class="arrow" d="M1170 605 V650 H800"/>
+
+  <rect x="90" y="666" width="1420" height="225" rx="20" fill="#fff7ed" stroke="#f97316"/>
+  <text x="125" y="702" class="label">POST-SELECTION NEAR-OPTIMALITY</text>
+  <text x="125" y="738" class="head">The selected refinement is certified relative to the best admissible candidate</text>
+  <text x="125" y="784" class="eq">0 ≤ G* − Gf̂ ≤ maxf UfG − Lf̂G ≤ 2Γmax</text>
+  <text x="125" y="827" class="eqsmall">Rf̂ − minf Rf = G* − Gf̂</text>
+  <text x="125" y="861" class="body">The same regret bound controls excess residual because P21 gives Rf = Rc − Gf.</text>
+
+  <rect x="90" y="925" width="680" height="105" rx="16" fill="#fef2f2" stroke="#ef4444"/>
+  <text x="125" y="961" class="label">NOT OPTIONAL STOPPING</text>
+  <text x="125" y="994" class="body">P23 is fixed-n. Repeated looks across growing sample sizes need an anytime-valid theorem.</text>
+
+  <rect x="830" y="925" width="680" height="105" rx="16" fill="#f5f3ff" stroke="#8b5cf6"/>
+  <text x="865" y="961" class="label">PHYSICAL INTERPRETATION</text>
+  <text x="865" y="994" class="body">Statistical post-selection validity does not make a target-engineered map a physical explanation.</text>
+
+  <rect x="90" y="1050" width="1420" height="46" rx="12" fill="#0f172a"/>
+  <text x="125" y="1079" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">P23 certifies adaptive choice within the declared physical model; it does not establish physical completeness or nonphysical ontology.</text>
+</svg>
