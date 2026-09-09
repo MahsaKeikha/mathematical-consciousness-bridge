@@ -30,6 +30,7 @@ FIGURES = (
     "p24_anytime_adaptive_refinement_certification.svg",
     "p25_directed_influence_scale_certification.svg",
     "p26_partition_irreducibility_scale_certification.svg",
+    "p27_partition_lattice_node_aggregation.svg",
     "universal_proof_ladder.svg",
     "theory_comparison_map.svg",
 )

@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2640" viewBox="0 0 1600 2640" role="img" aria-labelledby="title desc">
-  <title id="title">Theorem roadmap through Proposition 26</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2870" viewBox="0 0 1600 2870" role="img" aria-labelledby="title desc">
+  <title id="title">Theorem roadmap through Proposition 27</title>
   <desc id="desc">Publication-style dependency map from invariance and identifiability through causal structure, scale, physical sufficiency, residual certification, refinement, adaptive selection, and anytime-valid stopping-time control.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
@@ -16,8 +16,8 @@
     </style>
   </defs>
 
-  <rect width="1600" height="2640" fill="#ffffff"/>
-  <text x="70" y="62" class="title">Theorem Roadmap - P1 through P26</text>
+  <rect width="1600" height="2870" fill="#ffffff"/>
+  <text x="70" y="62" class="title">Theorem Roadmap - P1 through P27</text>
   <text x="70" y="94" class="subtitle">The chain separates physical structure, finite-data certification, refinement, adaptive selection, and repeated-look validity.</text>
 
   <rect x="95" y="145" width="420" height="180" rx="18" fill="#eff6ff" stroke="#3b82f6"/>
@@ -144,7 +144,15 @@
   <text x="790" y="2464" class="eq">κf &gt; θ + ε ⇒ κc &gt; θ</text>
   <text x="265" y="2494" class="body">Partition-lattice transport under node aggregation remains open.</text>
 
-  <rect x="95" y="2550" width="1410" height="62" rx="14" fill="#0f172a"/>
-  <text x="125" y="2575" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">OPEN BRIDGE FRONTIER</text>
-  <text x="125" y="2598" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Block aggregation, partition-lattice transport, physical completeness, and experiential formalization remain open.</text>
+  <rect x="225" y="2550" width="1150" height="190" rx="20" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.8"/>
+  <text x="265" y="2587" class="label">NODE-AGGREGATION BRANCH · P27</text>
+  <text x="265" y="2625" class="head">Exact partition descent through a surjective node quotient</text>
+  <text x="265" y="2659" class="body">Only aggregation-saturated fine partitions survive as coarse partitions.</text>
+  <text x="265" y="2694" class="eq">Part(Vc) ≅ Partsat(Vf;a)</text>
+  <text x="765" y="2694" class="eq">0 ≤ κf − κc ≤ ρ(P)+ρ(Pπf)</text>
+  <text x="265" y="2724" class="body">Intervention and source aggregation remain separate theorem burdens.</text>
+
+  <rect x="95" y="2790" width="1410" height="62" rx="14" fill="#0f172a"/>
+  <text x="125" y="2815" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">OPEN BRIDGE FRONTIER</text>
+  <text x="125" y="2838" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Intervention aggregation, full P11 scale equivalence, physical completeness, and experiential formalization remain open.</text>
 </svg>
