@@ -1,85 +1,89 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="940" viewBox="0 0 1600 940" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1100" viewBox="0 0 1800 1100" role="img" aria-labelledby="title desc">
   <title id="title">Intervention-resolved causal structure</title>
-  <desc id="desc">Publication-style decomposition of the candidate physical signature into response geometry, directed interventional influence, and partition irreducibility.</desc>
+  <desc id="desc">Publication-style anatomy of the intervention-resolved causal-structure candidate, showing controlled response laws, response geometry, directed interventional influence, partition irreducibility, their combined signature, and the open bridge question.</desc>
   <defs>
-    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0 0 L0 8 L10 4 z" fill="#64748b"/></marker>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
+    </marker>
     <style>
-      .title{font:700 37px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
-      .subtitle{font:400 18px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
-      .head{font:700 20px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
-      .body{font:400 15px Inter,Segoe UI,Arial,sans-serif;fill:#334155}
-      .label{font:700 12px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.7px;fill:#64748b}
-      .eq{font:600 17px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .title{font:700 40px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 19px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .head{font:700 21px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 16px Inter,Segoe UI,Arial,sans-serif;fill:#334155}
+      .small{font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .label{font:700 12px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
+      .eq{font:600 19px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .eqsmall{font:600 17px Georgia,'Times New Roman',serif;fill:#0f172a}
       .arrow{stroke:#64748b;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
       .divider{stroke:#cbd5e1;stroke-width:1}
     </style>
   </defs>
 
-  <rect width="1600" height="940" fill="#ffffff"/>
-  <text x="70" y="64" class="title">Intervention-Resolved Causal Structure</text>
-  <text x="70" y="96" class="subtitle">A representation-invariant physical candidate constructed from controlled perturbation-response laws; no experiential interpretation is built into the definition.</text>
+  <rect width="1800" height="1100" fill="#ffffff"/>
+  <text x="85" y="70" class="title">Intervention-Resolved Causal Structure</text>
+  <text x="85" y="106" class="subtitle">A representation-invariant physical candidate built from controlled perturbation-response laws, with no experiential property encoded in its definition.</text>
 
-  <!-- Input law -->
-  <rect x="70" y="145" width="1460" height="145" rx="16" fill="#f7fbff" stroke="#3b82f6" stroke-width="1.6"/>
-  <text x="100" y="183" class="head">Controlled intervention and delayed physical response</text>
-  <text x="100" y="225" class="eq">P_p^(u,tau) = Law(Y_(t+tau)^V | do(u), p)</text>
-  <text x="850" y="183" class="label">DECLARED PHYSICAL VARIABLES</text>
-  <text x="850" y="216" class="body">u : admissible intervention</text>
-  <text x="850" y="241" class="body">tau : response delay</text>
-  <text x="850" y="266" class="body">V : subsystem partition into physical blocks</text>
+  <rect x="85" y="155" width="1630" height="160" rx="18" fill="#f7fbff" stroke="#3b82f6" stroke-width="1.6"/>
+  <text x="120" y="196" class="head">Controlled intervention and delayed physical response</text>
+  <text x="120" y="244" class="eq">Pᵤ,τ(p) = ℒ(Yᵛ(t + τ) | do(u), p)</text>
+  <text x="990" y="193" class="label">DECLARED PHYSICAL VARIABLES</text>
+  <text x="990" y="228" class="body">u  — admissible intervention</text>
+  <text x="990" y="257" class="body">τ  — response delay</text>
+  <text x="990" y="286" class="body">V  — declared subsystem partition into physical blocks</text>
 
-  <path class="arrow" d="M800 290 V336"/>
+  <path class="arrow" d="M900 315 V365"/>
 
-  <!-- Three components -->
   <g>
-    <rect x="70" y="355" width="445" height="300" rx="16" fill="#f5fcf8" stroke="#059669" stroke-width="1.6"/>
-    <text x="98" y="394" class="head">A. Response geometry</text>
-    <line x1="98" y1="410" x2="487" y2="410" class="divider"/>
-    <text x="98" y="448" class="eq">d_p^tau(u,v) = ||P_p^(u,tau) - P_p^(v,tau)||_TV</text>
-    <text x="98" y="486" class="label">PHYSICAL CONTENT</text>
-    <text x="98" y="516" class="body">- distinguishability of responses to interventions</text>
-    <text x="98" y="544" class="body">- time-resolved response differentiation</text>
-    <text x="98" y="572" class="body">- response-equivalence classes over interventions</text>
-    <text x="98" y="614" class="label">MINIMALITY STATUS</text>
-    <text x="98" y="639" class="body">P12: insufficient alone; P13: not reconstructible from A and K.</text>
+    <rect x="85" y="385" width="500" height="355" rx="18" fill="#f5fcf8" stroke="#059669" stroke-width="1.6"/>
+    <text x="120" y="430" class="head">A. Response geometry</text>
+    <line x1="120" y1="448" x2="550" y2="448" class="divider"/>
+    <text x="120" y="492" class="eq">dᵖτ(u,v) = ‖Pᵤ,τ(p) − Pᵥ,τ(p)‖TV</text>
+    <text x="120" y="538" class="label">PHYSICAL CONTENT</text>
+    <text x="120" y="572" class="body">• distinguishes responses generated by different interventions</text>
+    <text x="120" y="604" class="body">• resolves how differentiation changes with response delay</text>
+    <text x="120" y="636" class="body">• defines response-equivalence classes over interventions</text>
+    <text x="120" y="684" class="label">MINIMALITY RESULT</text>
+    <text x="120" y="716" class="small">P12: incomplete alone.  P13: not reconstructible from influence and irreducibility.</text>
   </g>
 
   <g>
-    <rect x="578" y="355" width="445" height="300" rx="16" fill="#faf8ff" stroke="#7c3aed" stroke-width="1.6"/>
-    <text x="606" y="394" class="head">B. Directed interventional influence</text>
-    <line x1="606" y1="410" x2="995" y2="410" class="divider"/>
-    <text x="606" y="448" class="eq">A_ij^p(tau) = sup ||P_(p,j)^(u,tau) - P_(p,j)^(v,tau)||_TV</text>
-    <text x="606" y="486" class="label">PHYSICAL CONTENT</text>
-    <text x="606" y="516" class="body">- source-specific perturbational propagation</text>
-    <text x="606" y="544" class="body">- direction and timing of causal influence</text>
-    <text x="606" y="572" class="body">- return-path and recurrence structure</text>
-    <text x="606" y="614" class="label">MINIMALITY STATUS</text>
-    <text x="606" y="639" class="body">P12: insufficient alone; P13: not reconstructible from G and K.</text>
+    <rect x="650" y="385" width="500" height="355" rx="18" fill="#faf8ff" stroke="#7c3aed" stroke-width="1.6"/>
+    <text x="685" y="430" class="head">B. Directed interventional influence</text>
+    <line x1="685" y1="448" x2="1115" y2="448" class="divider"/>
+    <text x="685" y="488" class="eqsmall">Aᵖᵢⱼ(τ) = sup  ‖Pᵤ,τ(p,j) − Pᵥ,τ(p,j)‖TV</text>
+    <text x="685" y="514" class="small">over intervention pairs (u,v) that differ only at source block i</text>
+    <text x="685" y="558" class="label">PHYSICAL CONTENT</text>
+    <text x="685" y="592" class="body">• measures source-specific perturbational propagation</text>
+    <text x="685" y="624" class="body">• preserves direction and timing of causal influence</text>
+    <text x="685" y="656" class="body">• exposes return paths and recurrent influence structure</text>
+    <text x="685" y="704" class="label">MINIMALITY RESULT</text>
+    <text x="685" y="716" class="small"></text>
+    <text x="685" y="732" class="small">P12: incomplete alone.  P13: not reconstructible from geometry and irreducibility.</text>
   </g>
 
   <g>
-    <rect x="1085" y="355" width="445" height="300" rx="16" fill="#fffaf7" stroke="#ea580c" stroke-width="1.6"/>
-    <text x="1113" y="394" class="head">C. Partition irreducibility</text>
-    <line x1="1113" y1="410" x2="1502" y2="410" class="divider"/>
-    <text x="1113" y="448" class="eq">kappa_p^tau(pi) = sup_u ||P_p^(u,tau) - product_B P_(p,B)^(u,tau)||_TV</text>
-    <text x="1113" y="486" class="label">PHYSICAL CONTENT</text>
-    <text x="1113" y="516" class="body">- departure from block-wise factorization</text>
-    <text x="1113" y="544" class="body">- partition-specific joint dependence</text>
-    <text x="1113" y="572" class="body">- irreducibility across declared physical cuts</text>
-    <text x="1113" y="614" class="label">MINIMALITY STATUS</text>
-    <text x="1113" y="639" class="body">P12: insufficient alone; P13: not reconstructible from G and A.</text>
+    <rect x="1215" y="385" width="500" height="355" rx="18" fill="#fffaf7" stroke="#ea580c" stroke-width="1.6"/>
+    <text x="1250" y="430" class="head">C. Partition irreducibility</text>
+    <line x1="1250" y1="448" x2="1680" y2="448" class="divider"/>
+    <text x="1250" y="486" class="eqsmall">κᵖτ(π) = supᵤ ‖Pᵤ,τ(p) − Pᵤ,τπ(p)‖TV</text>
+    <text x="1250" y="515" class="small">Pᵤ,τπ(p) is the product of response marginals over blocks B ∈ π</text>
+    <text x="1250" y="558" class="label">PHYSICAL CONTENT</text>
+    <text x="1250" y="592" class="body">• measures departure from block-wise factorization</text>
+    <text x="1250" y="624" class="body">• retains partition-specific joint dependence</text>
+    <text x="1250" y="656" class="body">• tests irreducibility across declared physical cuts</text>
+    <text x="1250" y="704" class="label">MINIMALITY RESULT</text>
+    <text x="1250" y="732" class="small">P12: incomplete alone.  P13: not reconstructible from geometry and influence.</text>
   </g>
 
-  <path class="arrow" d="M292 655 V713 H610"/>
-  <path class="arrow" d="M800 655 V713"/>
-  <path class="arrow" d="M1307 655 V713 H990"/>
+  <path class="arrow" d="M335 740 V795 H670"/>
+  <path class="arrow" d="M900 740 V795"/>
+  <path class="arrow" d="M1465 740 V795 H1130"/>
 
-  <!-- Combined candidate -->
-  <rect x="315" y="730" width="970" height="120" rx="16" fill="#0f172a"/>
-  <text x="350" y="767" style="font:700 20px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Combined physical signature</text>
-  <text x="350" y="807" style="font:600 18px Georgia,'Times New Roman',serif;fill:#e2e8f0">F_causal(p) = [(V, U_p, T, G_p, A_p, K_p)]_isomorphism</text>
-  <text x="350" y="835" style="font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#94a3b8">P11 defines the structure. P12 and P13 establish component-level information loss under all one- and two-component projections on the declared audit domains.</text>
+  <rect x="350" y="815" width="1100" height="150" rx="18" fill="#0f172a"/>
+  <text x="395" y="858" style="font:700 22px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Combined physical signature</text>
+  <text x="395" y="905" style="font:600 21px Georgia,'Times New Roman',serif;fill:#e2e8f0">F<tspan baseline-shift="sub" font-size="14">causal</tspan>(p) = [ V, U<tspan baseline-shift="sub" font-size="14">p</tspan>, T, G<tspan baseline-shift="sub" font-size="14">p</tspan>, A<tspan baseline-shift="sub" font-size="14">p</tspan>, K<tspan baseline-shift="sub" font-size="14">p</tspan> ]<tspan baseline-shift="sub" font-size="14">≅</tspan></text>
+  <text x="395" y="938" style="font:400 15px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">P11 defines the structure. P12 and P13 show that every one-component and every two-component projection loses information on the declared audit domains.</text>
 
-  <rect x="70" y="880" width="1460" height="38" rx="10" fill="#fff8f9" stroke="#e11d48"/>
-  <text x="95" y="904" style="font:600 13px Inter,Segoe UI,Arial,sans-serif;fill:#9f1239">Open bridge question: whether the equivalence classes of this physical structure correspond to independently formalized experiential equivalence classes.</text>
+  <rect x="250" y="1005" width="1300" height="56" rx="12" fill="#fff8f9" stroke="#e11d48" stroke-width="1.3"/>
+  <text x="285" y="1039" style="font:600 15px Inter,Segoe UI,Arial,sans-serif;fill:#9f1239">Open bridge problem: determine whether equivalence classes of this physical structure correspond to independently formalized experiential equivalence classes.</text>
 </svg>
