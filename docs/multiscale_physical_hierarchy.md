@@ -57,6 +57,8 @@ The declared state variables may be spikes, local field potentials, coarse physi
 
 The scale choice matters. Proposition 17 proves that deterministic many-to-one coarse-graining can contract total-variation distinguishability and can map physically distinct fine states to exactly the same coarse state.
 
+Proposition 18 adds the complementary positive criterion: a coarse scale can still be sufficient for a **declared response family** if the fine laws can be reconstructed from that scale with sufficiently small uniform defect. Thus the relevant scientific question is not whether microscopic information is globally invertible, but whether the scale preserves the physical distinctions that the declared experiment must resolve.
+
 ---
 
 ## 3. Certified moving subsystem
@@ -147,7 +149,7 @@ P_A\otimes P_B.
 
 Proposition 16 characterizes this null model and introduces a response-level coupling defect based on departure from product structure.
 
-### Coarse-graining
+### Coarse-graining loss
 
 For deterministic coarse-graining map \(C\), Proposition 17 proves
 
@@ -159,7 +161,50 @@ For deterministic coarse-graining map \(C\), Proposition 17 proves
 }
 \]
 
-This is a direct data-processing statement: deterministic coarse-graining cannot increase total-variation distinguishability.
+This is a direct data-processing statement: deterministic coarse-graining cannot increase total-variation distinguishability, and a many-to-one map can erase distinctions completely.
+
+### Scale sufficiency by approximate reconstruction
+
+Let \(R\) be a fiber-consistent stochastic decoder and let
+
+\[
+\rho_{\mathcal F}
+=
+\sup_{P\in\mathcal F}
+\|P-R_{\#}C_{\#}P\|_{\mathrm{TV}}
+\]
+
+for a declared response family \(\mathcal F\).
+
+Proposition 18 proves
+
+\[
+\boxed{
+0
+\le
+\|P-Q\|_{\mathrm{TV}}
+-
+\|C_{\#}P-C_{\#}Q\|_{\mathrm{TV}}
+\le
+2\rho_{\mathcal F}
+}
+\]
+
+for every \(P,Q\in\mathcal F\).
+
+If \(\delta_f\) is the minimum fine-family separation and \(\delta_c\) the minimum coarse-family separation, then
+
+\[
+\boxed{
+\delta_c
+\ge
+\delta_f-2\rho_{\mathcal F}.
+}
+\]
+
+Therefore \(\delta_f>2\rho_{\mathcal F}\) certifies that all declared response laws remain identifiable after coarse-graining.
+
+This gives a mathematically explicit distinction between **global invertibility** and **family sufficiency**.
 
 ---
 
@@ -220,11 +265,13 @@ The multiscale program therefore asks not only whether a physical signature is m
 1. representation invariant;
 2. temporally coherent;
 3. compositionally consistent;
-4. stable or interpretable across scale;
+4. stable or quantitatively sufficient across scale;
 5. experimentally recoverable;
 6. finite-data certifiable;
 7. empirically discriminating against serious alternatives;
 8. compatible with an independently justified experiential formalization.
+
+At present, P18 provides a quantitative sufficiency certificate for the response-law family and its induced response geometry. Extending comparable guarantees to directed influence and partition structure remains open.
 
 ---
 
