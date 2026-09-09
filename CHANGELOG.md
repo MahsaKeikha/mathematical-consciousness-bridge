@@ -2,6 +2,51 @@
 
 This changelog records theorem-level scientific releases. Definitions, proofs, implementations, tests, figures, and documentation remain linked from the main research page.
 
+## 0.15.0 - 2026-09-09
+
+### Proposition 15 - finite-sample temporal certification
+
+- Proved the quotient-distance stability inequality
+  \[
+  |\widehat d_{st}-d_{st}|\le\varepsilon_s+\varepsilon_t
+  \]
+  under simultaneous fingerprint-error radii.
+- Derived exact lower and upper finite-error bounds for every pairwise temporal separation.
+- Derived cumulative path-variation uncertainty
+  \[
+  |\widehat V-V|\le\varepsilon_0+2\sum_{t=1}^{T-1}\varepsilon_t+\varepsilon_T.
+  \]
+- Derived maximum-step uncertainty
+  \[
+  |\widehat J-J|\le\max_t(\varepsilon_t+\varepsilon_{t+1}).
+  \]
+- Added a three-way threshold certificate: certified above threshold, certified below threshold, or unresolved.
+- Added a limited explicit Hoeffding corollary for bounded IID sample-mean fingerprint coordinates, while keeping estimator-specific concentration requirements explicit for the general causal-structure coordinates.
+- Added executable certification utilities and eight claim-level regression tests.
+- Added a publication-style finite-sample temporal-certification figure and extended the theorem and visual roadmaps through P15.
+- Expanded repository structure and visual-quality guards so all P15 artifacts are required and audited.
+
+## 0.14.0 - 2026-09-09
+
+### Proposition 14 - temporal continuation of intervention-resolved causal structure
+
+- Defined a positive-weight max metric over response geometry, directed influence, and partition irreducibility fingerprints.
+- Defined the relabeling-quotient distance
+  \[
+  \overline D_w([c],[c'])=\min_{h\in\mathcal H}D_w(c,hc')
+  \]
+  for a declared finite group acting by isometries.
+- Proved that the quotient distance is a metric on the orbit space.
+- Defined cumulative temporal path variation and maximum local structural jump.
+- Proved the endpoint bound
+  \[
+  \overline D_w([c_s],[c_t])\le V_{s:t}.
+  \]
+- Proved invariance of path variation and maximum-step distance under time-dependent admissible relabelings.
+- Added an explicit excursion counterexample showing that identical start and end signatures do not imply a trivial intervening temporal path.
+- Added executable temporal-geometry utilities and seven claim-level tests.
+- Added the publication-style temporal-continuation figure and established the future interface with certified moving world-tubes from the companion observer project.
+
 ## 0.13.0 - 2026-09-09
 
 ### Proposition 13 - pairwise component irredundancy
