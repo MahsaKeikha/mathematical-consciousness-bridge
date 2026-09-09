@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1180" viewBox="0 0 1800 1180" role="img" aria-labelledby="title desc">
+  <title id="title">Quantum operational completeness and physical-to-experiential bridge test</title>
+  <desc id="desc">Publication-style map separating Hilbert-space quantum structure, interventions, Born probabilities, operational equivalence, and the still-open experiential bridge. It states a precise no-go criterion without assuming quantum consciousness.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .title{font:700 40px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 18px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .head{font:700 19px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .eq{font:600 17px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .small{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.7px;fill:#64748b}
+      .arrow{stroke:#64748b;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+      .divider{stroke:#cbd5e1;stroke-width:1}
+    </style>
+  </defs>
+
+  <rect width="1800" height="1180" fill="#ffffff"/>
+  <text x="80" y="68" class="title">Quantum Operational Completeness and the Bridge Problem</text>
+  <text x="80" y="104" class="subtitle">Quantum mechanics is treated as the physical theory to be tested for sufficiency, not as an assumed explanation of consciousness.</text>
+
+  <text x="80" y="158" class="small">STANDARD QUANTUM PHYSICAL LAYER</text>
+
+  <rect x="80" y="185" width="380" height="230" rx="18" fill="#f7fbff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="110" y="225" class="head">Quantum state space</text>
+  <line x1="110" y1="244" x2="430" y2="244" class="divider"/>
+  <text x="110" y="282" class="eq">H,  rho >= 0,  Tr(rho)=1</text>
+  <text x="110" y="325" class="body">Hilbert space and density operator define</text>
+  <text x="110" y="348" class="body">the physical state used by the model.</text>
+  <text x="110" y="386" class="body">No experiential meaning is inserted here.</text>
+
+  <rect x="530" y="185" width="380" height="230" rx="18" fill="#f5fcfd" stroke="#0891b2" stroke-width="1.5"/>
+  <text x="560" y="225" class="head">Admissible interventions</text>
+  <line x1="560" y1="244" x2="880" y2="244" class="divider"/>
+  <text x="560" y="282" class="eq">rho -> Phi_u(rho)</text>
+  <text x="560" y="325" class="body">Each Phi_u is a declared physical quantum</text>
+  <text x="560" y="348" class="body">channel or controlled transformation.</text>
+  <text x="560" y="386" class="body">Intervention semantics must be explicit.</text>
+
+  <rect x="980" y="185" width="380" height="230" rx="18" fill="#f5fcf8" stroke="#059669" stroke-width="1.5"/>
+  <text x="1010" y="225" class="head">Measurement statistics</text>
+  <line x1="1010" y1="244" x2="1330" y2="244" class="divider"/>
+  <text x="1010" y="282" class="eq">p(y|u)=Tr[M_y Phi_u(rho)]</text>
+  <text x="1010" y="325" class="body">Born probabilities connect the quantum</text>
+  <text x="1010" y="348" class="body">description to observable frequencies.</text>
+  <text x="1010" y="386" class="body">This is an operational statement.</text>
+
+  <rect x="1430" y="185" width="290" height="230" rx="18" fill="#fffdf5" stroke="#ca8a04" stroke-width="1.5"/>
+  <text x="1460" y="225" class="head">Operational quotient</text>
+  <line x1="1460" y1="244" x2="1690" y2="244" class="divider"/>
+  <text x="1460" y="282" class="eq">q ~Q q'</text>
+  <text x="1460" y="325" class="body">iff all declared quantum</text>
+  <text x="1460" y="348" class="body">experiment probabilities agree.</text>
+  <text x="1460" y="386" class="eq">Q_Q = Q / ~Q</text>
+
+  <path class="arrow" d="M460 300 H518"/>
+  <path class="arrow" d="M910 300 H968"/>
+  <path class="arrow" d="M1360 300 H1418"/>
+
+  <text x="80" y="480" class="small">BRIDGE-SUFFICIENCY TEST</text>
+
+  <rect x="80" y="510" width="760" height="235" rx="18" fill="#faf8ff" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="110" y="550" class="head">Quantum-only bridge hypothesis</text>
+  <line x1="110" y1="570" x2="810" y2="570" class="divider"/>
+  <text x="110" y="610" class="eq">B_Q : Q_Q -> Q_E</text>
+  <text x="110" y="652" class="body">If the complete operational quantum class is sufficient, experiential</text>
+  <text x="110" y="675" class="body">equivalence must be constant on every quantum-operational equivalence class.</text>
+  <text x="110" y="715" class="eq">q ~Q q'  implies  B_Q([q]) = B_Q([q'])</text>
+
+  <rect x="920" y="510" width="800" height="235" rx="18" fill="#fff8f9" stroke="#e11d48" stroke-width="1.5"/>
+  <text x="950" y="550" class="head">Exact non-reducibility witness</text>
+  <line x1="950" y1="570" x2="1690" y2="570" class="divider"/>
+  <text x="950" y="610" class="eq">q ~Q q'  and  e not~E e'</text>
+  <text x="950" y="652" class="body">would imply that no bridge depending only on the declared complete</text>
+  <text x="950" y="675" class="body">quantum-operational state can reproduce those experiential distinctions.</text>
+  <text x="950" y="715" class="eq">there exists no B_Q consistent with both assignments</text>
+
+  <path class="arrow" d="M1575 415 V470 H460 V498"/>
+  <path class="arrow" d="M840 628 H908"/>
+
+  <text x="80" y="815" class="small">WHAT WOULD COUNT AS A NEW DEGREE OF FREEDOM?</text>
+
+  <rect x="80" y="845" width="1040" height="230" rx="18" fill="#f5fcf8" stroke="#059669" stroke-width="1.5"/>
+  <text x="110" y="885" class="head">Local dimensional-residual theorem target</text>
+  <line x1="110" y1="904" x2="1090" y2="904" class="divider"/>
+  <text x="110" y="944" class="eq">d_perp = rank D(Psi_Q, Psi_E) - rank D Psi_Q</text>
+  <text x="110" y="984" class="body">If Psi_Q is physically complete, Psi_E is independently defined, and d_perp &gt; 0</text>
+  <text x="110" y="1007" class="body">survives identifiability and finite-data tests, no local smooth factorization Psi_E=g(Psi_Q) exists.</text>
+  <text x="110" y="1046" class="body">This would establish an independent formal degree of freedom, not automatically a new spatial dimension.</text>
+
+  <rect x="1180" y="845" width="540" height="230" rx="18" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="1210" y="885" class="head">Scientific boundary</text>
+  <line x1="1210" y1="904" x2="1690" y2="904" class="divider"/>
+  <text x="1210" y="944" class="body">No such witness is currently established here.</text>
+  <text x="1210" y="975" class="body">Quantum mechanics does not by itself imply consciousness.</text>
+  <text x="1210" y="1006" class="body">Entanglement, coherence, entropy, and measurement</text>
+  <text x="1210" y="1029" class="body">are physical structures, not experiential definitions.</text>
+  <text x="1210" y="1060" class="body">The theorem target remains falsifiable and open.</text>
+
+  <rect x="80" y="1120" width="1640" height="38" rx="10" fill="#0f172a"/>
+  <text x="110" y="1145" style="font:600 14px Inter,Segoe UI,Arial,sans-serif;fill:#e2e8f0">Research principle: test the completeness of the quantum physical description first; infer an additional experiential degree only from a certified failure of quantum-level reduction.</text>
+</svg>
