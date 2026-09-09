@@ -146,7 +146,7 @@ Andrew W. Corcoran et al., "Integrated information and predictive processing the
 
 ---
 
-# 7. Perturbational evidence motivating the causal-structure candidate
+# 7. Perturbational and dynamical evidence motivating the causal-structure candidate
 
 ## Casali et al. 2013
 
@@ -164,9 +164,17 @@ Charlotte Maschke et al., "Critical dynamics in spontaneous EEG predict anesthet
 
 **Use here:** motivates explicit temporal dynamical structure and warns against interpreting one static connectivity or complexity statistic as sufficient.
 
+## Mashour 2024
+
+George A. Mashour, "Anesthesia and the neurobiology of consciousness," *Neuron* 112(10) (2024): 1553-1567. DOI: 10.1016/j.neuron.2024.03.002.
+
+**Role:** contemporary review of anesthesia and consciousness emphasizing state transitions and dynamical organization.
+
+**Use here:** physical motivation for treating consciousness-related biological conditions as evolving dynamical regimes. It does not imply that the P14 temporal metric is a measure of consciousness.
+
 ---
 
-# 8. Information integration, synergy, and controllability evidence
+# 8. Information integration, synergy, controllability, and non-neural causal organization
 
 ## Luppi et al. 2024
 
@@ -184,9 +192,17 @@ Andrea I. Luppi et al., "Convergent transcriptomic and connectomic controllers o
 
 **Use here:** motivates the causal-structure candidate's emphasis on perturbational influence and controllability-like response structure rather than integration alone.
 
+## Pigozzi, Goldstein, and Levin 2025
+
+Federico Pigozzi, Adam Goldstein, and Michael Levin, "Associative conditioning in gene regulatory network models increases integrative causal emergence," *Communications Biology* 8 (2025): 1027. DOI: 10.1038/s42003-025-08411-2.
+
+**Role:** example of causal-emergence analysis in a non-neural biological modeling context.
+
+**Use here:** helps expose candidate physical signatures to substrate-general counterexamples rather than assuming that neural implementation alone confers experiential relevance.
+
 ---
 
-# 9. Causal modeling
+# 9. Causal modeling and dynamical interventions
 
 ## Pearl 2009
 
@@ -196,9 +212,29 @@ Judea Pearl, *Causality: Models, Reasoning, and Inference*, 2nd ed. Cambridge Un
 
 **Use here:** source context for the \(do(u)\) notation used to distinguish intervention-conditioned response laws from passive observational correlations in P11.
 
+## Peters, Bauer, and Pfister 2020
+
+Jonas Peters, Stefan Bauer, and Niklas Pfister, "Causal Models for Dynamical Systems," arXiv:2001.06208.
+
+**Role:** causal modeling framework for explicitly evolving dynamical systems.
+
+**Use here:** contextual support for treating intervention-defined causal structure as time-indexed rather than static in P14. The specific quotient metric and path-variation theorem are repository constructions.
+
 ---
 
-# 10. Statistical decision theory and concentration
+# 10. Metric geometry and quotient-space background
+
+## Burago, Burago, and Ivanov 2001
+
+Dmitri Burago, Yuri Burago, and Sergei Ivanov, *A Course in Metric Geometry*, Graduate Studies in Mathematics 33, American Mathematical Society, 2001. DOI: 10.1090/gsm/033.
+
+**Role:** standard metric-space background, including quotient-style geometric reasoning under isometries.
+
+**Use here:** mathematical lineage for P14's weighted metric and relabeling-orbit construction. The intervention-resolved causal-structure fingerprint and its temporal use are specific to this repository.
+
+---
+
+# 11. Statistical decision theory and concentration
 
 ## Le Cam and Yang 2000
 
@@ -218,11 +254,11 @@ Wassily Hoeffding, "Probability Inequalities for Sums of Bounded Random Variable
 
 **Role:** concentration inequality for independent bounded variables.
 
-**Use here:** supports the repeated-experiment result in P2 and the finite categorical sample-complexity theorem in P9.
+**Use here:** supports the repeated-experiment result in P2, the finite categorical sample-complexity theorem in P9, and the deliberately limited bounded-coordinate finite-sample corollary in P15.
 
 ---
 
-# 11. Companion mathematical foundation
+# 12. Companion mathematical foundation
 
 ## Keikha - Spatiotemporal Observer Mathematics
 
@@ -230,11 +266,11 @@ Mahsa Keikha, *Spatiotemporal Observer Mathematics*.
 
 **Role:** candidate physical-subsystem identification layer: moving boundaries, integration, insulation, persistence, transport, identifiability, temporal calibration, and finite-sample measurement certification.
 
-**Use here:** can supply a certified physical subsystem or world-tube as an input to the intervention-resolved causal-structure candidate and the bridge layer. The subsystem theorem and the experiential bridge remain separate logical statements.
+**Use here:** can supply a certified physical subsystem or world-tube as an input to the intervention-resolved causal-structure candidate and the bridge layer. P14 creates a temporal-geometry interface for causal structure carried by successive world-tube states. The subsystem theorem and the experiential bridge remain separate logical statements.
 
 ---
 
-# 12. Proposition-to-literature map
+# 13. Proposition-to-literature map
 
 | Repository result | Standard mathematical/statistical lineage | Consciousness / physical-science role |
 | --- | --- | --- |
@@ -251,10 +287,12 @@ Mahsa Keikha, *Spatiotemporal Observer Mathematics*.
 | P11 | TV geometry, product measures, graph cycles, causal interventions | perturbational complexity, IIT, GNWT/RPT, synergistic integration, controllability |
 | P12 | factorization/collision logic | tests whether geometry, influence, irreducibility, recurrence, or scalar summaries overcompress the physical candidate |
 | P13 | pairwise projection collisions | tests whether any two major candidate components reconstruct the third |
+| P14 | metric geometry, finite group actions by isometries, path variation | representation-invariant temporal organization; dynamical and anesthesia context |
+| P15 | metric perturbation bounds; Hoeffding for the bounded-coordinate corollary | finite-error certification of temporal change without equating change with consciousness |
 
 ---
 
-# 13. Citation discipline
+# 14. Citation discipline
 
 The repository distinguishes:
 
@@ -263,6 +301,7 @@ The repository distinguishes:
 | physical/conceptual literature | motivation and candidate physical structures |
 | mathematical consciousness literature | formal representation and bridge architecture |
 | causal/statistical literature | interventions, probability, testing, identifiability, concentration, and experiment design |
+| metric/dynamical mathematics | quotient geometry and temporal comparison tools |
 | empirical consciousness studies | observed support, failure, or discrimination among predictions |
 | repository propositions | new bridge-specific definitions, constructions, theorems, and counterexamples developed here |
 
