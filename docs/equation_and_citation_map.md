@@ -344,11 +344,27 @@ P24 uses a transparent alpha-spending union-bound construction. It is intentiona
 | \(A^f>\theta+2\rho\Rightarrow A^c>\theta\) | threshold-edge preservation margin | proved corollary | [P25](proposition_25_directed_influence_scale_certification.md) |
 | \(A^c>\theta\Rightarrow A^f>\theta\) | no threshold false positive under deterministic target coarse observation | proved by contraction | [P25](proposition_25_directed_influence_scale_certification.md) |
 
-P25 is a physical scale theorem with dependency branch P11 + P18. It does not establish scale stability of partition irreducibility, arbitrary source aggregation, changed intervention semantics, physical completeness, or experience.
+P25 is a physical scale theorem with dependency branch P11 + P18. It does not by itself establish scale stability of partition irreducibility, arbitrary source aggregation, changed intervention semantics, physical completeness, or experience.
 
 ---
 
-# 20. Candidate consciousness-theory feature families
+# 20. P26 - partition-irreducibility scale certification
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(P_{\pi}^{u,\tau}=\bigotimes_{B\in\pi}P_B^{u,\tau}\) | partition-factorized reference law | P11 physical-signature definition | [P11](proposition_11_intervention_resolved_causal_structure.md) |
+| \(\kappa_f^{u,\tau}(\pi)=\|P^{u,\tau}-P_{\pi}^{u,\tau}\|_{\mathrm{TV}}\) | fine partition irreducibility | P11 physical-signature definition | [P11](proposition_11_intervention_resolved_causal_structure.md) |
+| \(C_\#P_{\pi}^{u,\tau}=\bigotimes_{B\in\pi}(C_B)_\#P_B^{u,\tau}\) | commutation of productization with block-compatible coarse observation | proved from product pushforward factorization | [P26](proposition_26_partition_irreducibility_scale_certification.md) |
+| \(\kappa_c^{u,\tau}(\pi)\le\kappa_f^{u,\tau}(\pi)\) | coarse observation cannot increase declared partition irreducibility | proved by TV contraction | P17; [P26](proposition_26_partition_irreducibility_scale_certification.md) |
+| \(0\le\kappa_f-\kappa_c\le\rho(P)+\rho(P_{\pi})\) | reconstruction-controlled partition-scale loss | proved by applying P18 to the response/product-law pair | [P18](proposition_18_scale_sufficiency_certification.md); [P26](proposition_26_partition_irreducibility_scale_certification.md) |
+| \(\rho(P)=\rho(P_{\pi})=0\Rightarrow\kappa_c=\kappa_f\) | exact preservation on the declared two-law family | proved corollary | [P26](proposition_26_partition_irreducibility_scale_certification.md) |
+| \(\kappa_f>\theta+\rho(P)+\rho(P_{\pi})\Rightarrow\kappa_c>\theta\) | threshold-preservation margin | proved corollary | [P26](proposition_26_partition_irreducibility_scale_certification.md) |
+
+P26 is an observation-scale theorem for one declared partition. It does not yet define the induced map between fine and coarse partition lattices under physical node aggregation, and it does not establish physical completeness or experience.
+
+---
+
+# 21. Candidate consciousness-theory feature families
 
 The following are source-grounded translations into generic feature notation. They are not claims that each named theory reduces to one scalar or one universally agreed implementation.
 
@@ -365,7 +381,7 @@ Detailed caveats and source roles are maintained in [Candidate Theory Families](
 
 ---
 
-# 21. Citation discipline
+# 22. Citation discipline
 
 A result is cited as a repository result when the bridge-specific statement, construction, or counterexample is introduced here.
 

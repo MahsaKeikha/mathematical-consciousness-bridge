@@ -2,6 +2,21 @@
 
 This changelog records theorem-level scientific releases. Definitions, proofs, implementations, tests, figures, and documentation remain linked from the main research page.
 
+## 0.26.0 - 2026-09-09
+
+### Proposition 26 - partition-irreducibility scale certification
+
+- Extended the P11 physical scale program from response geometry and directed influence to the partition-irreducibility component.
+- Formalized block-compatible deterministic observation so the declared partition has the same physical meaning at fine and coarse scales.
+- Proved that partition productization commutes with block-compatible pushforward.
+- Proved contraction \(\kappa_c\le\kappa_f\), so compatible coarse observation cannot manufacture additional partition irreducibility.
+- Applied P18 to the response law and its partition-product null to prove \(0\le\kappa_f-\kappa_c\le\rho(P)+\rho(P_\pi)\).
+- Kept the two reconstruction terms separate to expose the actual-response and factorized-null reconstruction burdens.
+- Proved exact preservation under exact reconstruction and a threshold-survival margin under bounded reconstruction error.
+- Added a binary counterexample in which fine irreducibility \(0.4\) collapses to zero after one coordinate is observationally erased.
+- Added executable utilities, regression tests, a publication theorem map, README paper integration, theorem-roadmap integration, navigation, provenance, and release guards.
+- Preserved the boundary that P26 does not yet solve partition-lattice transport, physical node aggregation, genuine fusion, physical completeness, or experience.
+
 ## 0.25.0 - 2026-09-09
 
 ### Proposition 25 - directed-influence scale certification

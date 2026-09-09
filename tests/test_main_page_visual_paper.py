@@ -30,6 +30,7 @@ CANONICAL_MAIN_PAGE_FIGURES = (
     "p23_adaptive_descriptor_selection_certification.svg",
     "p24_anytime_adaptive_refinement_certification.svg",
     "p25_directed_influence_scale_certification.svg",
+    "p26_partition_irreducibility_scale_certification.svg",
     "observer_to_bridge_handoff.svg",
     "conscious_state_measurement_map.svg",
     "theory_comparison_map.svg",
@@ -63,7 +64,7 @@ def test_main_page_contains_canonical_scientific_maps():
 def test_main_page_exposes_entire_proposition_chain():
     text = README.read_text(encoding="utf-8")
 
-    for index in range(1, 26):
+    for index in range(1, 27):
         assert f"**P{index}**" in text, f"README is missing proposition P{index}"
 
 

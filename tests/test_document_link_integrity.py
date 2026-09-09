@@ -121,7 +121,7 @@ def test_all_local_markdown_links_resolve():
 
 def test_reader_navigation_exposes_the_complete_theorem_chain():
     nav = (ROOT / "docs/research_navigation.md").read_text(encoding="utf-8")
-    for number in range(1, 26):
+    for number in range(1, 27):
         assert f"proposition_{number}_" in nav
 
 
