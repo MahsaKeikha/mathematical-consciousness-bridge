@@ -67,6 +67,7 @@ def test_core_research_documents_exist():
         root / "tests" / "test_causal_structure_coarse_graining.py",
         root / "tests" / "test_visual_and_terminology_quality.py",
         root / "references.bib",
+        root / "foundational_physics_mathematics.bib",
         root / "CITATION.cff",
     ]
     missing = [str(path.relative_to(root)) for path in required if not path.exists()]
