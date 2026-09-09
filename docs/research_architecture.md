@@ -2,7 +2,7 @@
 
 ![Mathematical Consciousness Bridge research architecture](figures/research_architecture.svg)
 
-The program separates physical modeling, candidate physical signatures, experiential formalization, bridge principles, observable predictions, finite-data certification, and falsification. This prevents a theorem about a physical quantity from being mistaken for independent support of a physical-to-experiential bridge.
+The program separates physical modeling, candidate physical signatures, temporal physical organization, experiential formalization, bridge principles, observable predictions, finite-data certification, and falsification. This prevents a theorem about a physical quantity from being mistaken for independent support of a physical-to-experiential bridge.
 
 ---
 
@@ -105,7 +105,59 @@ The three components encode intervention-response geometry, directed perturbatio
 
 ---
 
-## Layer 5 - experiential formalization
+## Layer 5 - temporal physical organization
+
+A static signature does not yet specify how physical organization persists or changes through time.
+
+For finite causal-structure fingerprint
+
+\[
+c_t=(g_t,a_t,k_t),
+\]
+
+[Proposition 14](proposition_14_temporal_continuation.md) defines the relabeling-invariant quotient metric
+
+\[
+\boxed{
+\overline D_w([c],[c'])
+=
+\min_{h\in\mathcal H}D_w(c,hc'),
+}
+\]
+
+and temporal path quantities
+
+\[
+\boxed{
+V_{0:T}
+=
+\sum_{t=0}^{T-1}\overline D_w([c_t],[c_{t+1}]),
+\qquad
+J_{0:T}
+=
+\max_t\overline D_w([c_t],[c_{t+1}]).
+}
+\]
+
+P14 proves that these quantities are invariant under time-dependent admissible relabelings and that endpoint equality does not replace path analysis.
+
+[Proposition 15](proposition_15_finite_sample_temporal_certification.md) then propagates declared fingerprint-error radii through this geometry:
+
+\[
+\boxed{
+|\widehat d_{st}-d_{st}|
+\le
+\varepsilon_s+\varepsilon_t.
+}
+\]
+
+Thus temporal physical organization is both representation aware and finite-error certifiable under stated assumptions.
+
+This layer remains physical. Temporal continuation is not identified with experiential continuity.
+
+---
+
+## Layer 6 - experiential formalization
 
 Define
 
@@ -129,11 +181,11 @@ The experiential quotient is
 }
 \]
 
-This remains an essential open formalization problem. A convenient physical score does not substitute for a definition of the experiential target.
+This remains an essential open formalization problem. A convenient physical score or a smooth physical trajectory does not substitute for a definition of the experiential target.
 
 ---
 
-## Layer 6 - bridge
+## Layer 7 - bridge
 
 The most general bridge begins as a relation
 
@@ -166,7 +218,7 @@ F_*(p)=F_*(p')
 
 ---
 
-## Layer 7 - empirical interface
+## Layer 8 - empirical interface
 
 A complete theory must generate observable probability laws under declared protocols:
 
@@ -178,7 +230,7 @@ Propositions 2-4 establish exact identifiability and experiment-design results. 
 
 ---
 
-## Layer 8 - experimental recoverability and finite-data certification
+## Layer 9 - experimental recoverability and finite-data certification
 
 For physical fingerprint
 
@@ -212,9 +264,11 @@ n
 }
 \]
 
+P15 adds a separate temporal-certification layer. Given valid simultaneous fingerprint radii, it converts estimated temporal separations into certified intervals and explicitly preserves an unresolved region when the data do not determine whether a structural threshold is crossed.
+
 ---
 
-## Layer 9 - falsification and counterexample search
+## Layer 10 - falsification and counterexample search
 
 Every candidate signature or bridge is exposed to:
 
@@ -223,17 +277,19 @@ Every candidate signature or bridge is exposed to:
 3. observational non-identifiability;
 4. recoverability failures;
 5. one-component and pairwise-component collisions;
-6. temporal or composition inconsistencies;
-7. empirical prediction failures;
-8. biological and artificial substrate counterexamples.
+6. endpoint-only temporal failures;
+7. finite-data overclaiming and unresolved temporal comparisons;
+8. composition, splitting, merging, or coupling inconsistencies;
+9. empirical prediction failures;
+10. biological and artificial substrate counterexamples.
 
-P12-P13 illustrate the architecture in practice: the first physical candidate is attacked internally before an experiential equivalence claim is attached.
+P12-P15 illustrate the architecture in practice: the physical candidate is attacked internally, temporally, and statistically before an experiential equivalence claim is attached.
 
 ---
 
-## Layer 10 - conditional bridge theorem
+## Layer 11 - conditional bridge theorem
 
-Only after the physical domain, experiential domain, bridge principles, complete physical signature, empirical identifiability, recoverability, finite-data uncertainty, and falsification conditions are explicit should the program state a final bridge theorem.
+Only after the physical domain, experiential domain, bridge principles, complete physical signature, empirical identifiability, recoverability, finite-data uncertainty, temporal consistency, composition rules, and falsification conditions are explicit should the program state a final bridge theorem.
 
 The schematic target is
 
