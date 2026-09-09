@@ -10,6 +10,7 @@ continuity.
 from __future__ import annotations
 
 from collections.abc import Sequence
+from itertools import pairwise
 from math import isfinite
 
 ComponentFingerprint = tuple[
@@ -124,7 +125,7 @@ def path_variation(
         return 0.0
     return sum(
         quotient_distance(left, right, actions, weights)
-        for left, right in zip(path, path[1:])
+        for left, right in pairwise(path)
     )
 
 
@@ -138,7 +139,7 @@ def maximum_step_distance(
         return 0.0
     return max(
         quotient_distance(left, right, actions, weights)
-        for left, right in zip(path, path[1:])
+        for left, right in pairwise(path)
     )
 
 
