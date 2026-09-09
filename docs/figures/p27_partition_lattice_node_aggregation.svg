@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1320" viewBox="0 0 1600 1320" role="img" aria-labelledby="title desc">
+  <title id="title">P27 partition-lattice transport under node aggregation</title>
+  <desc id="desc">Theorem map for saturated partition descent, lattice isomorphism, aggregation-compatible state maps, and irreducibility control after node aggregation.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .title{font:700 36px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 17px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .label{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
+      .head{font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .eq{font:600 17px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .arrow{stroke:#64748b;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+
+  <rect width="1600" height="1320" fill="#ffffff"/>
+  <text x="70" y="64" class="title">P27 - Partition-Lattice Transport Under Node Aggregation</text>
+  <text x="70" y="96" class="subtitle">Which fine partitions still have an exact meaning when several physical nodes become one coarse node?</text>
+
+  <rect x="80" y="145" width="430" height="220" rx="18" fill="#eff6ff" stroke="#2563eb"/>
+  <text x="110" y="180" class="label">NODE AGGREGATION</text>
+  <text x="110" y="220" class="head">Surjective node map</text>
+  <text x="110" y="262" class="eq">a : Vf ↠ Vc</text>
+  <text x="110" y="304" class="eq">Fc = a⁻¹(c)</text>
+  <text x="110" y="336" class="body">Each coarse node represents one fine aggregation fiber.</text>
+
+  <rect x="585" y="145" width="430" height="220" rx="18" fill="#f5f3ff" stroke="#7c3aed"/>
+  <text x="615" y="180" class="label">EXACT DESCENT CRITERION</text>
+  <text x="615" y="220" class="head">Fine partition must be saturated</text>
+  <text x="615" y="262" class="eq">∀c ∃B∈πf : Fc ⊆ B</text>
+  <text x="615" y="304" class="eq">a(i)=a(j) ⇒ i ~πf j</text>
+  <text x="615" y="336" class="body">A coarse node cannot belong to two partition blocks.</text>
+
+  <rect x="1090" y="145" width="430" height="220" rx="18" fill="#ecfdf5" stroke="#059669"/>
+  <text x="1120" y="180" class="label">COARSE PARTITION</text>
+  <text x="1120" y="220" class="head">Unique descent when saturated</text>
+  <text x="1120" y="262" class="eq">Da(πf) = {a(B) : B∈πf}</text>
+  <text x="1120" y="304" class="eq">La(πc) = {a⁻¹(C) : C∈πc}</text>
+  <text x="1120" y="336" class="body">Lift and descent are inverse on their declared domains.</text>
+
+  <path class="arrow" d="M510 255 H573"/>
+  <path class="arrow" d="M1015 255 H1078"/>
+
+  <rect x="160" y="440" width="1280" height="225" rx="20" fill="#f8fafc" stroke="#0f172a" stroke-width="1.8"/>
+  <text x="200" y="478" class="label">PARTITION-LATTICE ISOMORPHISM</text>
+  <text x="200" y="518" class="head">Coarse partitions are exactly the aggregation-saturated fine partitions</text>
+  <text x="200" y="566" class="eq">Part(Vc) ≅ Partsat(Vf ; a)</text>
+  <text x="200" y="610" class="eq">La(π∧σ)=La(π)∧La(σ)   and   La(π∨σ)=La(π)∨La(σ)</text>
+  <text x="200" y="642" class="body">Refinement order, meet, and join are preserved by the lift/descent correspondence.</text>
+
+  <path class="arrow" d="M800 365 V428"/>
+
+  <rect x="80" y="745" width="430" height="230" rx="18" fill="#f0fdfa" stroke="#0d9488"/>
+  <text x="110" y="780" class="label">AGGREGATE STATE MAP</text>
+  <text x="110" y="820" class="head">Each coarse state uses one fiber</text>
+  <text x="110" y="862" class="eq">Ca(x)c = gc(xFc)</text>
+  <text x="110" y="904" class="body">Node reduction and state compression are distinct operations.</text>
+  <text x="110" y="936" class="body">A lossless block state may retain all fine states inside a fiber.</text>
+
+  <rect x="585" y="745" width="430" height="230" rx="18" fill="#fff7ed" stroke="#ea580c"/>
+  <text x="615" y="780" class="label">P11 PARTITION STRUCTURE</text>
+  <text x="615" y="820" class="head">Productization commutes when descendable</text>
+  <text x="615" y="862" class="eq">Ca# Pπf = (Ca# P)πc</text>
+  <text x="615" y="904" class="eq">κc(πc) ≤ κf(Laπc)</text>
+  <text x="615" y="936" class="body">Valid aggregation can preserve or erase dependence, not create it.</text>
+
+  <rect x="1090" y="745" width="430" height="230" rx="18" fill="#fff1f2" stroke="#e11d48"/>
+  <text x="1120" y="780" class="label">P18 RECONSTRUCTION CONTROL</text>
+  <text x="1120" y="820" class="head">Quantitative irreducibility loss</text>
+  <text x="1120" y="862" class="eq">0 ≤ κf − κc ≤ ρ(P)+ρ(Pπf)</text>
+  <text x="1120" y="904" class="body">Exact reconstruction gives exact preservation.</text>
+  <text x="1120" y="936" class="body">Information-destroying aggregation can erase irreducibility.</text>
+
+  <path class="arrow" d="M800 665 V705 H295 V733"/>
+  <path class="arrow" d="M800 705 V733"/>
+  <path class="arrow" d="M800 705 H1305 V733"/>
+
+  <rect x="160" y="1055" width="1280" height="135" rx="18" fill="#fefce8" stroke="#ca8a04"/>
+  <text x="200" y="1092" class="label">TWO DISTINCT FAILURE MODES</text>
+  <text x="200" y="1132" class="eq">no saturation ⇒ no coarse partition semantics</text>
+  <text x="800" y="1132" class="eq">saturation + lossy state map ⇒ κc may be smaller than κf</text>
+  <text x="200" y="1164" class="body">Semantic obstruction and observational attenuation are mathematically different and must not be conflated.</text>
+
+  <rect x="80" y="1230" width="1440" height="62" rx="14" fill="#0f172a"/>
+  <text x="115" y="1255" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">BOUNDARY</text>
+  <text x="115" y="1278" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">P27 transports the partition component through declared node aggregation. Intervention aggregation, full P11 equivalence, physical completeness, and experience remain open.</text>
+</svg>
