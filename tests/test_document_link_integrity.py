@@ -14,7 +14,7 @@ def _without_fenced_code(text: str) -> str:
     fence = ""
     for line in text.splitlines():
         stripped = line.lstrip()
-        if stripped.startswith("```") or stripped.startswith("~~~"):
+        if stripped.startswith(("```", "~~~")):
             token = stripped[:3]
             if not in_fence:
                 in_fence = True
