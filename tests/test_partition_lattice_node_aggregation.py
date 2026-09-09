@@ -1,5 +1,7 @@
 import itertools
 
+import pytest
+
 from consciousness_bridge.partition_lattice_node_aggregation import (
     aggregation_compatible_coarse_map,
     canonical_partition,
@@ -11,7 +13,6 @@ from consciousness_bridge.partition_lattice_node_aggregation import (
     partition_meet,
     partition_refines,
 )
-import pytest
 
 
 FINE_NODES = ("a", "b", "c", "d", "e")
