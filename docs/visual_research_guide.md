@@ -24,7 +24,7 @@ until an independently justified bridge connects them.
 
 ![Theorem roadmap](figures/theorem_roadmap.svg)
 
-Propositions 1-10 establish the general mathematical infrastructure. Proposition 11 introduces the first original physical candidate, **intervention-resolved causal structure**. Proposition 12 proves that its individual components and several scalar reductions are incomplete. Proposition 13 proves that no pair of the three major components reconstructs the omitted component on the declared finite audit domain.
+Propositions 1-10 establish the general mathematical infrastructure. Proposition 11 introduces the first original physical candidate, **intervention-resolved causal structure**. Proposition 12 proves that its individual components and several scalar reductions are incomplete. Proposition 13 proves that no pair of the three major components reconstructs the omitted component on the declared finite audit domain. Proposition 14 turns the static physical candidate into a representation-invariant temporal trajectory. Proposition 15 propagates finite fingerprint uncertainty through that temporal geometry.
 
 ## 3. Anatomy of the causal-structure candidate
 
@@ -88,13 +88,80 @@ Proposition 13 constructs three independent collision families:
 
 Therefore each component carries information not reconstructible from the other two on the explicit audit domain.
 
-## 6. Universal proof criteria
+## 6. Temporal continuation of the physical candidate
+
+![Proposition 14 temporal continuation](figures/p14_temporal_continuation.svg)
+
+Proposition 14 defines a weighted metric on the full three-component fingerprint and removes physically irrelevant relabeling by minimizing over the declared finite isometry group:
+
+\[
+\boxed{
+\overline D_w([c],[c'])
+=
+\min_{h\in\mathcal H}D_w(c,hc').
+}
+\]
+
+A physical trajectory is then described by cumulative variation
+
+\[
+\boxed{
+V_{0:T}
+=
+\sum_t\overline D_w([c_t],[c_{t+1}])
+}
+\]
+
+and maximum local jump
+
+\[
+\boxed{
+J_{0:T}
+=
+\max_t\overline D_w([c_t],[c_{t+1}]).
+}
+\]
+
+The theorem proves representation invariance and shows why identical endpoints cannot replace analysis of the intervening path.
+
+## 7. Finite-sample temporal certification
+
+![Proposition 15 finite-sample temporal certification](figures/p15_finite_sample_temporal_certification.svg)
+
+Proposition 15 assumes simultaneous fingerprint radii
+
+\[
+D_w(c_t,\widehat c_t)\le\varepsilon_t
+\]
+
+and proves
+
+\[
+\boxed{
+|\widehat d_{st}-d_{st}|
+\le\varepsilon_s+\varepsilon_t.
+}
+\]
+
+This yields a certified interval for the true physical change:
+
+\[
+\boxed{
+\max\{0,\widehat d_{st}-\varepsilon_s-\varepsilon_t\}
+\le d_{st}\le
+\widehat d_{st}+\varepsilon_s+\varepsilon_t.
+}
+\]
+
+Relative to a declared threshold \(\eta\), every comparison is classified as **certified above**, **certified below**, or **unresolved**. The unresolved region is kept explicit rather than hidden behind a forced binary decision.
+
+## 8. Universal proof criteria
 
 ![Universal proof ladder](figures/universal_proof_ladder.svg)
 
 The project uses twelve criteria to separate a theorem internal to a framework from a scientifically exposed physical-to-experiential result. Full statements are in [Universal Consciousness Proof Target](universal_proof_target.md).
 
-## 7. Competing theory families
+## 9. Competing theory families
 
 ![Theory comparison map](figures/theory_comparison_map.svg)
 
@@ -108,7 +175,7 @@ The project compares contemporary theory families through one common interface
 
 This allows theory-specific physical features, bridge architectures, measurements, and interventions to be compared using the same identifiability and experiment-design theorems.
 
-## 8. Recommended reading order
+## 10. Recommended reading order
 
 | Stage | Read | Main question |
 | --- | --- | --- |
@@ -119,12 +186,14 @@ This allows theory-specific physical features, bridge architectures, measurement
 | 5 | [P11 - Intervention-Resolved Causal Structure](proposition_11_intervention_resolved_causal_structure.md) | What is the first original candidate physical signature? |
 | 6 | [P12 - Component Insufficiency](proposition_12_component_insufficiency.md) | Which one-component reductions fail? |
 | 7 | [P13 - Pairwise Component Irredundancy](proposition_13_pairwise_component_irredundancy.md) | Can any two components reconstruct the third? |
-| 8 | [Candidate Theory Families](candidate_theory_families.md) | How are major consciousness theories compared? |
-| 9 | [Universal Proof Target](universal_proof_target.md) | What would the final theorem-and-evidence package require? |
-| 10 | [Equation and Citation Map](equation_and_citation_map.md) | Which equations are original, standard, assumed, or externally sourced? |
-| 11 | [Literature Map](literature_map.md) | What role does each cited source play? |
+| 8 | [P14 - Temporal Continuation](proposition_14_temporal_continuation.md) | How is the physical candidate compared through time after relabeling? |
+| 9 | [P15 - Finite-Sample Temporal Certification](proposition_15_finite_sample_temporal_certification.md) | When is an apparent temporal change larger than measurement uncertainty? |
+| 10 | [Candidate Theory Families](candidate_theory_families.md) | How are major consciousness theories compared? |
+| 11 | [Universal Proof Target](universal_proof_target.md) | What would the final theorem-and-evidence package require? |
+| 12 | [Equation and Citation Map](equation_and_citation_map.md) | Which equations are original, standard, assumed, or externally sourced? |
+| 13 | [Literature Map](literature_map.md) | What role does each cited source play? |
 
-## 9. Reading-status convention
+## 11. Reading-status convention
 
 | Label | Meaning |
 | --- | --- |
@@ -133,6 +202,7 @@ This allows theory-specific physical features, bridge architectures, measurement
 | **Candidate physical signature** | physical structure under test, not an experiential conclusion |
 | **Empirical result** | evidence reported by a cited experiment or dataset |
 | **Counterexample / no-go** | a sufficiency, compression, or recoverability claim fails on an explicit construction |
+| **Finite-error certificate** | statement guaranteed under explicitly declared estimation-error radii |
 | **Open bridge problem** | unresolved connection between physical and experiential structure |
 
 This convention is essential for reading every figure and theorem in the repository correctly.
