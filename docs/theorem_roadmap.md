@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge.
 
-![P1-P13 theorem roadmap](figures/theorem_roadmap.svg)
+![P1-P15 theorem roadmap](figures/theorem_roadmap.svg)
 
 ---
 
@@ -23,6 +23,8 @@ This roadmap records the proved mathematical chain and the open route toward a s
 | [P11](proposition_11_intervention_resolved_causal_structure.md) | structured intervention-response object | first original candidate physical signature | proved construction / candidate |
 | [P12](proposition_12_component_insufficiency.md) | projection-collision theorem | one-component and scalar reductions lose information | proved minimality / no-go |
 | [P13](proposition_13_pairwise_component_irredundancy.md) | pairwise projection collisions | every major component is irredundant relative to the other two on the audit domain | proved irredundancy |
+| [P14](proposition_14_temporal_continuation.md) | quotient metric and path variation | representation-invariant temporal continuation of the physical candidate | proved temporal-structure theorem |
+| [P15](proposition_15_finite_sample_temporal_certification.md) | perturbation bounds for quotient distances and paths | finite-error certification of temporal change and continuity | proved certification theorem |
 
 ---
 
@@ -359,11 +361,155 @@ This proves component-level irredundancy on the declared audit domain, not globa
 
 ---
 
-# 9. Current dependency graph
+# 9. P14 - temporal continuation on the quotient space
+
+For finite component fingerprint
+
+\[
+c=(g,a,k),
+\]
+
+P14 defines
 
 \[
 \boxed{
-\begin{array}{ccccccccccccccccc}
+D_w(c,c')
+=
+\max\left\{
+w_G\|g-g'\|_\infty,
+w_A\|a-a'\|_\infty,
+w_K\|k-k'\|_\infty
+\right\}.
+}
+\]
+
+If the declared finite relabeling group \(\mathcal H\) acts isometrically, then
+
+\[
+\boxed{
+\overline D_w([c],[c'])
+=
+\min_{h\in\mathcal H}D_w(c,hc')
+}
+\]
+
+is a metric on the orbit space.
+
+For a temporal path \([c_0],\ldots,[c_T]\), define
+
+\[
+\boxed{
+V_{0:T}
+=
+\sum_{t=0}^{T-1}
+\overline D_w([c_t],[c_{t+1}]),
+}
+\]
+
+and
+
+\[
+\boxed{
+J_{0:T}
+=
+\max_t
+\overline D_w([c_t],[c_{t+1}]).
+}
+\]
+
+P14 proves the endpoint bound
+
+\[
+\boxed{
+\overline D_w([c_s],[c_t])\le V_{s:t},
+}
+\]
+
+and invariance under time-dependent admissible relabelings. It also gives the excursion counterexample showing that equal endpoints do not imply a trivial temporal path.
+
+![P14 temporal continuation](figures/p14_temporal_continuation.svg)
+
+---
+
+# 10. P15 - finite-error temporal certification
+
+Let \(\widehat c_t\) estimate \(c_t\) and suppose simultaneous radii satisfy
+
+\[
+D_w(c_t,\widehat c_t)\le\varepsilon_t.
+\]
+
+P15 proves the quotient-distance stability inequality
+
+\[
+\boxed{
+\left|
+\overline D_w([\widehat c_s],[\widehat c_t])
+-
+\overline D_w([c_s],[c_t])
+\right|
+\le
+\varepsilon_s+\varepsilon_t.
+}
+\]
+
+Therefore the true temporal separation lies in
+
+\[
+\boxed{
+\left[
+\max\{0,\widehat d_{st}-\varepsilon_s-\varepsilon_t\},
+\widehat d_{st}+\varepsilon_s+\varepsilon_t
+\right].
+}
+\]
+
+For cumulative variation,
+
+\[
+\boxed{
+|\widehat V_{0:T}-V_{0:T}|
+\le
+\varepsilon_0
++2\sum_{t=1}^{T-1}\varepsilon_t
++\varepsilon_T.
+}
+\]
+
+For maximum adjacent change,
+
+\[
+\boxed{
+|\widehat J_{0:T}-J_{0:T}|
+\le
+\max_t(\varepsilon_t+\varepsilon_{t+1}).
+}
+\]
+
+The theorem yields a three-way finite-data classification relative to any declared physical threshold \(\eta\): certified above threshold, certified below threshold, or unresolved.
+
+For the special case of \(M\) bounded sample-mean coordinates at each of \(T+1\) times, each estimated from \(n\) IID repetitions, the simultaneous Hoeffding radius is
+
+\[
+\boxed{
+\delta_n(\alpha)
+=
+\sqrt{
+\frac{1}{2n}
+\log\left(\frac{2M(T+1)}{\alpha}\right)
+}.
+}
+\]
+
+This bounded-coordinate corollary is intentionally limited: more complex causal-structure estimators require estimator-specific concentration results.
+
+---
+
+# 11. Current dependency graph
+
+\[
+\boxed{
+\begin{array}{ccccccccccccccccccccc}
 P1
 &\to&P5
 &\to&P6
@@ -373,7 +519,9 @@ P1
 &\to&P10
 &\to&P11
 &\to&P12
-&\to&P13\\
+&\to&P13
+&\to&P14
+&\to&P15\\
 &&&&&&\uparrow\\
 P2&\to&P3&\to&P4
 &&\text{experiment design}
@@ -383,14 +531,16 @@ P2&\to&P3&\to&P4
 
 ---
 
-# 10. Current frontier
+# 12. Current frontier
 
-With pairwise component irredundancy established on \(D_{13}\), the next structural program is:
+With representation-invariant temporal continuation and finite-error temporal certification established, the next structural program is:
 
-1. temporal continuation of time-indexed physical signatures;
-2. composition, splitting, merging, and controlled coupling;
+1. composition of independent and weakly coupled causal-structure systems;
+2. splitting, merging, birth, and disappearance of physical blocks;
 3. observer-to-bridge interface with certified moving world-tubes;
-4. source-faithful cross-theory adversarial experiments;
-5. biological and artificial counterexample programs;
-6. experiential-space formalization;
-7. a bridge theorem only after physical, experiential, identifiability, recovery, finite-data, and falsification requirements have been jointly addressed.
+4. estimator-specific concentration for the full Proposition 11 causal-structure coordinates;
+5. irregular-time normalization and sampling-cadence sensitivity;
+6. source-faithful cross-theory adversarial experiments;
+7. biological and artificial counterexample programs;
+8. experiential-space formalization;
+9. a bridge theorem only after physical, experiential, identifiability, recovery, finite-data, and falsification requirements have been jointly addressed.
