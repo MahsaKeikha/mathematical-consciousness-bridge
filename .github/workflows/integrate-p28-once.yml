@@ -70,3 +70,5 @@ jobs:
           git add -A
           git commit -m "Integrate P28 intervention node aggregation"
           git push origin HEAD:p28-intervention-node-aggregation-compatibility
+
+# Rerun after tightening the P28 publication figure boundary text.
