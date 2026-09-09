@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1080" viewBox="0 0 1600 1080" role="img" aria-labelledby="title desc">
-  <title id="title">Theorem roadmap through Proposition 19</title>
-  <desc id="desc">Compact publication-style dependency map from invariance and identifiability through physical sufficiency, causal structure, time, composition, scale, and fundamental physical sufficiency.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1240" viewBox="0 0 1600 1240" role="img" aria-labelledby="title desc">
+  <title id="title">Theorem roadmap through Proposition 20</title>
+  <desc id="desc">Publication-style dependency map from invariance and identifiability through causal structure, time, composition, scale, physical sufficiency, and finite-sample residual certification.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
       <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
@@ -16,9 +16,9 @@
     </style>
   </defs>
 
-  <rect width="1600" height="1080" fill="#ffffff"/>
-  <text x="70" y="62" class="title">Theorem Roadmap - P1 through P19</text>
-  <text x="70" y="94" class="subtitle">The proof chain separates representation, recovery, causal structure, time, composition, scale, and physical sufficiency.</text>
+  <rect width="1600" height="1240" fill="#ffffff"/>
+  <text x="70" y="62" class="title">Theorem Roadmap - P1 through P20</text>
+  <text x="70" y="94" class="subtitle">The proof chain separates representation, recovery, causal structure, time, composition, scale, physical sufficiency, and finite-data certification.</text>
 
   <rect x="95" y="145" width="420" height="180" rx="18" fill="#eff6ff" stroke="#3b82f6"/>
   <text x="125" y="178" class="label">FOUNDATION · P1-P4</text>
@@ -69,19 +69,28 @@
   <path class="arrow" d="M515 500 H578"/>
   <path class="arrow" d="M1010 500 H1073"/>
 
-  <rect x="345" y="700" width="910" height="220" rx="20" fill="#f8fafc" stroke="#0f172a" stroke-width="1.8"/>
-  <text x="385" y="738" class="label">FUNDAMENTAL PHYSICAL SUFFICIENCY · P19</text>
-  <text x="385" y="776" class="head">Physical sufficiency / residual test</text>
-  <text x="385" y="804" class="body">Can an independently defined target be reconstructed from T?</text>
-  <text x="385" y="839" class="eq">E = BT ∘ T  iff  T(Ω)=T(Ω′) ⇒ E(Ω)=E(Ω′)</text>
-  <text x="385" y="873" class="eq">stochastic criterion:  I(E;Ω | T) = 0</text>
-  <text x="385" y="900" class="body">A positive residual first challenges the completeness of T.</text>
-  <text x="385" y="923" class="body">It is not, by itself, a metaphysical conclusion.</text>
+  <rect x="225" y="675" width="1150" height="205" rx="20" fill="#f8fafc" stroke="#0f172a" stroke-width="1.8"/>
+  <text x="265" y="712" class="label">FUNDAMENTAL PHYSICAL SUFFICIENCY · P19</text>
+  <text x="265" y="750" class="head">Population factorization and residual tests</text>
+  <text x="265" y="782" class="body">Can target E be reconstructed from the declared descriptor T?</text>
+  <text x="265" y="820" class="eq">E = BT ∘ T  iff  T(Ω)=T(Ω′) ⇒ E(Ω)=E(Ω′)</text>
+  <text x="265" y="851" class="eq">stochastic criterion: I(E;Ω | T) = 0</text>
+  <text x="925" y="820" class="eq">rank D(T,E) = rank DT</text>
+  <text x="925" y="851" class="body">Residuals first test the completeness of T.</text>
 
-  <path class="arrow" d="M1295 590 V650 H800 V688"/>
+  <path class="arrow" d="M1295 590 V635 H800 V663"/>
+  <path class="arrow" d="M800 880 V920"/>
 
-  <rect x="95" y="970" width="1410" height="70" rx="14" fill="#0f172a"/>
-  <text x="125" y="995" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">OPEN BRIDGE FRONTIER</text>
-  <text x="125" y="1018" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Independent experiential formalization, residual certification, and omitted-physics controls remain required.</text>
-  <text x="125" y="1037" style="font:400 12px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">Falsifiable bridge predictions remain an open research target.</text>
+  <rect x="225" y="932" width="1150" height="180" rx="20" fill="#ecfdf5" stroke="#059669" stroke-width="1.8"/>
+  <text x="265" y="969" class="label">FINITE-SAMPLE RESIDUAL CERTIFICATION · P20</text>
+  <text x="265" y="1007" class="head">Confidence interval for the P19 stochastic residual</text>
+  <text x="265" y="1040" class="body">IID finite-alphabet data give a joint-TV radius and entropy bound.</text>
+  <text x="265" y="1074" class="eq">|I(E;Ω | T) − În| ≤ ΔCMI(τn(α))</text>
+  <text x="925" y="1074" class="eq">Ln &gt; 0 ⇒ residual certified at 1−α</text>
+
+  <path class="arrow" d="M800 1112 V1142"/>
+
+  <rect x="95" y="1154" width="1410" height="62" rx="14" fill="#0f172a"/>
+  <text x="125" y="1179" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">OPEN BRIDGE FRONTIER</text>
+  <text x="125" y="1202" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Experiential formalization, physically complete descriptors, omitted-physics controls, replication, and sharper finite-data methods remain required.</text>
 </svg>

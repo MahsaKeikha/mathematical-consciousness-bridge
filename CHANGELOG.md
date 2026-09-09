@@ -2,6 +2,19 @@
 
 This changelog records theorem-level scientific releases. Definitions, proofs, implementations, tests, figures, and documentation remain linked from the main research page.
 
+## 0.20.0 - 2026-09-09
+
+### Proposition 20 - finite-sample residual certification
+
+- Converted the P19 population condition \(I(E;\Omega\mid T)=0\) into an explicit finite-sample confidence certificate for declared finite-alphabet IID data.
+- Derived a simultaneous joint-distribution total-variation radius from cellwise Hoeffding concentration and a union bound.
+- Added a finite-alphabet entropy-continuity lemma that remains valid when only an upper TV radius is known.
+- Propagated the joint-distribution confidence radius through the entropy representation of conditional mutual information.
+- Proved a confidence interval \([L_n,U_n]\) for the population residual and the decision rule \(L_n>0\Rightarrow I_P(E;\Omega\mid T)>0\) at confidence at least \(1-\alpha\).
+- Added a synthetic binary numerical checkpoint, executable implementation, claim-level regression tests, and a publication-style P20 theorem map.
+- Extended the README, theorem roadmap, reader navigation, equation provenance, release metadata, and link-integrity guards through P20.
+- Preserved the interpretation boundary that a certified residual first challenges the completeness of the declared physical descriptor and sampling model.
+
 ## 0.19.0 - 2026-09-09
 
 ### Proposition 19 - fundamental physical sufficiency and residual tests

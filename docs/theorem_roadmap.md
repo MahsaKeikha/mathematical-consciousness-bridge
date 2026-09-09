@@ -2,7 +2,7 @@
 
 This roadmap records the current proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge.
 
-![P1-P19 theorem roadmap](figures/theorem_roadmap.svg)
+![P1-P20 theorem roadmap](figures/theorem_roadmap.svg)
 
 ---
 
@@ -29,6 +29,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P17](proposition_17_coarse_graining_and_refinement.md) | deterministic pushforward and data processing | quantifies information loss under coarse-graining and refinement ambiguity | proved scale-loss theorem |
 | [P18](proposition_18_scale_sufficiency_certification.md) | approximate reconstruction and separation margin | certifies when a coarse scale preserves a declared response family | proved scale-sufficiency theorem |
 | [P19](proposition_19_fundamental_physical_sufficiency.md) | quotient factorization, conditional mutual information, and differential rank obstruction | tests whether an independent target is fixed by the declared physical descriptor | proved physical-sufficiency theorem |
+| [P20](proposition_20_finite_sample_residual_certification.md) | Hoeffding joint-TV concentration plus finite-alphabet entropy continuity | finite-sample confidence interval for the P19 conditional-information residual | proved finite-sample certification theorem |
 
 ---
 
@@ -392,7 +393,55 @@ Direct proof: [Proposition 19](proposition_19_fundamental_physical_sufficiency.m
 
 ---
 
-# 9. Dependency chain
+# 9. Finite-sample residual certification: P20
+
+P20 converts the P19 population condition into a finite-data statement. For IID categorical samples on a declared joint alphabet of size
+
+\[
+M=d_\Omega d_T d_E,
+\]
+
+it defines the conservative total-variation radius
+
+\[
+\boxed{
+\tau_n(\alpha)
+=
+\min\left\{1,
+\frac M2\sqrt{\frac1{2n}\log\frac{2M}{\alpha}}
+\right\}.
+}
+\]
+
+Finite-alphabet entropy continuity gives a deterministic function \(\Delta_{\mathrm{CMI}}\) such that, with probability at least \(1-\alpha\),
+
+\[
+\boxed{
+|I_P(E;\Omega\mid T)-\widehat I_n|
+\le
+\Delta_{\mathrm{CMI}}(\tau_n(\alpha)).
+}
+\]
+
+Thus the lower bound
+
+\[
+L_n=\max\{0,\widehat I_n-\Delta_{\mathrm{CMI}}(\tau_n)\}
+\]
+
+satisfies
+
+\[
+\boxed{L_n>0\Longrightarrow I_P(E;\Omega\mid T)>0}
+\]
+
+with the declared confidence. This certifies failure of screening-off by the declared \(T\), not a nonphysical ontology.
+
+Direct proof: [Proposition 20](proposition_20_finite_sample_residual_certification.md). Implementation: [finite_sample_residual_certification.py](../src/consciousness_bridge/finite_sample_residual_certification.py). Tests: [test_finite_sample_residual_certification.py](../tests/test_finite_sample_residual_certification.py).
+
+---
+
+# 10. Dependency chain
 
 \[
 \boxed{
@@ -407,20 +456,24 @@ Direct proof: [Proposition 19](proposition_19_fundamental_physical_sufficiency.m
 &\Downarrow\\
 &\text{P16: composition + coupling}\\
 &\Downarrow\\
-&\text{P17-P18: scale loss + scale sufficiency}.
+&\text{P17-P18: scale loss + scale sufficiency}\\
+&\Downarrow\\
+&\text{P19: population physical sufficiency}\\
+&\Downarrow\\
+&\text{P20: finite-sample residual certification}.
 \end{aligned}
 }
 \]
 
 ---
 
-# 10. Current frontier
+# 11. Current frontier
 
 The next structural problems are:
 
 1. extend scale certification from response geometry \(\mathcal G\) to directed influence \(\mathcal A\) under block-compatible coarse maps;
 2. characterize partition-lattice compatibility required to control \(\mathcal K\) across scale;
-3. derive estimator-specific finite-sample confidence bounds for \(\rho_{\mathcal F}\), \(\delta_f\), and the P18 scale margin;
+3. sharpen P20 beyond the conservative finite-alphabet IID baseline using structured, multinomial, non-IID, and quantum confidence methods with explicit coverage;
 4. model genuine physical split/merge dynamics where state variables and intervention channels change;
 5. formalize the moving world-tube / causal-structure interface;
 6. normalize temporal geometry under irregular observation time;

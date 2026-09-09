@@ -23,6 +23,7 @@ FIGURES = (
     "p17_coarse_graining_refinement.svg",
     "p18_scale_sufficiency_certificate.svg",
     "p19_fundamental_physical_sufficiency.svg",
+    "p20_finite_sample_residual_certificate.svg",
     "universal_proof_ladder.svg",
     "theory_comparison_map.svg",
 )

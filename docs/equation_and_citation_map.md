@@ -249,7 +249,23 @@ P19 is a theorem about sufficiency relative to a declared physical descriptor. A
 
 ---
 
-# 14. Candidate consciousness-theory feature families
+# 14. P20 - finite-sample residual certification
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(M=d_\Omega d_T d_E\) | declared joint alphabet size | repository sampling-model definition | [P20](proposition_20_finite_sample_residual_certification.md) |
+| \(a_n(\alpha)=\sqrt{\frac1{2n}\log\frac{2M}{\alpha}}\) | simultaneous cell-frequency radius | standard Hoeffding inequality plus union bound applied here | [Hoeffding 1963](https://doi.org/10.1080/01621459.1963.10500830); [P20](proposition_20_finite_sample_residual_certification.md) |
+| \(\tau_n(\alpha)=\min\{1,\frac M2 a_n(\alpha)\}\) | conservative joint total-variation confidence radius | proved from the simultaneous cell bounds | [P20](proposition_20_finite_sample_residual_certification.md) |
+| \(c_d(r)\) | uniform finite-alphabet entropy-continuity radius for a known TV upper bound | standard finite-alphabet entropy reasoning applied and proved here | [Cover and Thomas 2006](foundational_physics_mathematics_bibliography.md#cover-and-thomas-2006); [P20](proposition_20_finite_sample_residual_certification.md) |
+| \(\Delta_{\mathrm{CMI}}(r)\) | propagates joint-distribution TV error through the four entropy terms of conditional mutual information | repository finite-sample construction | [P20](proposition_20_finite_sample_residual_certification.md) |
+| \(|I_P-\widehat I_n|\le\Delta_{\mathrm{CMI}}(\tau_n(\alpha))\) | finite-sample population-residual confidence bound | proved under the declared finite-alphabet IID model | [P20](proposition_20_finite_sample_residual_certification.md) |
+| \(L_n>0\Rightarrow I_P(E;\Omega\mid T)>0\) at confidence \(1-\alpha\) | certified rejection of P19 stochastic screening-off for the declared descriptor | proved finite-sample decision rule | [P20](proposition_20_finite_sample_residual_certification.md) |
+
+P20 is deliberately conservative. A positive lower confidence bound certifies insufficiency of the declared descriptor under the sampling model. It does not identify the residual as nonphysical and does not remove the need to test omitted physical variables, measurement error, system boundaries, timescale, preprocessing, and sampling assumptions.
+
+---
+
+# 15. Candidate consciousness-theory feature families
 
 The following are source-grounded translations into generic feature notation. They are not claims that each named theory reduces to one scalar or one universally agreed implementation.
 
@@ -266,7 +282,7 @@ Detailed caveats and source roles are maintained in [Candidate Theory Families](
 
 ---
 
-# 15. Citation discipline
+# 16. Citation discipline
 
 A result is cited as a repository result when the bridge-specific statement, construction, or counterexample is introduced here.
 
