@@ -55,9 +55,9 @@ def test_weighted_component_distance_satisfies_triangle_inequality():
     b = ((0.2,), (0.4,), (0.1,))
     c = ((0.5,), (0.7,), (0.2,))
 
-    assert weighted_component_distance(a, c) <= pytest.approx(
-        weighted_component_distance(a, b) + weighted_component_distance(b, c)
-    )
+    direct = weighted_component_distance(a, c)
+    via_b = weighted_component_distance(a, b) + weighted_component_distance(b, c)
+    assert direct <= via_b + 1e-12
 
 
 def test_quotient_distance_removes_pure_relabeling_jump():
