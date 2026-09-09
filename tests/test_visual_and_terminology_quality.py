@@ -7,6 +7,8 @@ FIGURES = (
     "theorem_roadmap.svg",
     "physics_mathematics_atlas.svg",
     "equation_evidence_map.svg",
+    "thermodynamics_information_processing.svg",
+    "information_geometry_response_manifold.svg",
     "spaceflight_extreme_environment_map.svg",
     "causal_structure_anatomy.svg",
     "p12_collision_map.svg",
