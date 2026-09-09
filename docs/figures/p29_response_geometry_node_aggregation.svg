@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1320" viewBox="0 0 1600 1320" role="img" aria-labelledby="title desc">
+  <title id="title">P29 response-geometry transport under node aggregation</title>
+  <desc id="desc">Theorem map for full intervention-delay response geometry, node aggregation, total-variation contraction, and P18 reconstruction-controlled distortion.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .title{font:700 36px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 17px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .label{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
+      .head{font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .eq{font:600 17px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .arrow{stroke:#64748b;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+
+  <rect width="1600" height="1320" fill="#ffffff"/>
+  <text x="70" y="64" class="title">P29 - Response-Geometry Transport Under Node Aggregation</text>
+  <text x="70" y="96" class="subtitle">The complete P11 response pseudometric is transported on one fixed intervention-delay experiment grid.</text>
+
+  <rect x="80" y="145" width="430" height="220" rx="18" fill="#eff6ff" stroke="#2563eb"/>
+  <text x="110" y="180" class="label">DECLARED EXPERIMENT GRID</text>
+  <text x="110" y="220" class="head">Same interventions and delays</text>
+  <text x="110" y="262" class="eq">U = {u1,...,um}</text>
+  <text x="110" y="304" class="eq">T = {τ1,...,τr}</text>
+  <text x="110" y="336" class="body">No intervention merging or temporal resampling.</text>
+
+  <rect x="585" y="145" width="430" height="220" rx="18" fill="#f5f3ff" stroke="#7c3aed"/>
+  <text x="615" y="180" class="label">FINE RESPONSE GEOMETRY</text>
+  <text x="615" y="220" class="head">Every pair at every delay</text>
+  <text x="615" y="262" class="eq">Gf(u,v,τ)=||Pᵘ,τ-Pᵛ,τ||TV</text>
+  <text x="615" y="304" class="body">The labels u, v, and τ are part of the object.</text>
+  <text x="615" y="336" class="body">A diameter alone does not encode the full geometry.</text>
+
+  <rect x="1090" y="145" width="430" height="220" rx="18" fill="#ecfdf5" stroke="#059669"/>
+  <text x="1120" y="180" class="label">NODE AGGREGATION</text>
+  <text x="1120" y="220" class="head">Aggregate only response state</text>
+  <text x="1120" y="262" class="eq">Ca : Ωf → Ωc</text>
+  <text x="1120" y="304" class="eq">Pbarᵘ,τ=(Ca)#Pᵘ,τ</text>
+  <text x="1120" y="336" class="body">The physical node count may change.</text>
+
+  <path class="arrow" d="M510 255 H573"/>
+  <path class="arrow" d="M1015 255 H1078"/>
+
+  <rect x="155" y="445" width="1290" height="215" rx="20" fill="#f8fafc" stroke="#0f172a" stroke-width="1.8"/>
+  <text x="195" y="482" class="label">ENTRYWISE DATA PROCESSING</text>
+  <text x="195" y="522" class="head">Every indexed response distance contracts under the same aggregate-state map</text>
+  <text x="195" y="568" class="eq">Gc(u,v,τ) ≤ Gf(u,v,τ)</text>
+  <text x="720" y="568" class="eq">0 ≤ Gf(u,v,τ)-Gc(u,v,τ)</text>
+  <text x="195" y="612" class="body">Coarse response-state processing cannot create an intervention distinction that was absent at the fine scale.</text>
+
+  <path class="arrow" d="M800 365 V433"/>
+
+  <rect x="80" y="740" width="430" height="230" rx="18" fill="#fff7ed" stroke="#ea580c"/>
+  <text x="110" y="775" class="label">P18 RECONSTRUCTION</text>
+  <text x="110" y="815" class="head">Law-specific distortion</text>
+  <text x="110" y="858" class="eq">ρu,τ=||Pᵘ,τ-DPᵘ,τ||TV</text>
+  <text x="110" y="902" class="eq">Gf-Gc ≤ ρu,τ+ρv,τ</text>
+  <text x="110" y="934" class="body">Each geometry edge pays only for its two endpoint laws.</text>
+
+  <rect x="585" y="740" width="430" height="230" rx="18" fill="#f0fdfa" stroke="#0d9488"/>
+  <text x="615" y="775" class="label">UNIFORM GEOMETRY CERTIFICATE</text>
+  <text x="615" y="815" class="head">One bound for the entire grid</text>
+  <text x="615" y="858" class="eq">ρ* = supu,τ ρu,τ</text>
+  <text x="615" y="902" class="eq">||Gf-Gc||∞ ≤ 2ρ*</text>
+  <text x="615" y="934" class="body">ρ*=0 gives exact geometry preservation.</text>
+
+  <rect x="1090" y="740" width="430" height="230" rx="18" fill="#fff1f2" stroke="#e11d48"/>
+  <text x="1120" y="775" class="label">COROLLARIES</text>
+  <text x="1120" y="815" class="head">Diameter and threshold control</text>
+  <text x="1120" y="858" class="eq">0 ≤ Δf-Δc ≤ 2ρ*</text>
+  <text x="1120" y="902" class="eq">Gf &gt; θ+2ρ* ⇒ Gc &gt; θ</text>
+  <text x="1120" y="934" class="body">The full geometry theorem is stronger than its diameter.</text>
+
+  <path class="arrow" d="M800 660 V700 H295 V728"/>
+  <path class="arrow" d="M800 700 V728"/>
+  <path class="arrow" d="M800 700 H1305 V728"/>
+
+  <rect x="155" y="1050" width="1290" height="140" rx="18" fill="#fefce8" stroke="#ca8a04"/>
+  <text x="195" y="1087" class="label">STRUCTURE ASSEMBLY STATUS</text>
+  <text x="195" y="1127" class="eq">P27: K   +   P28: A   +   P29: G</text>
+  <text x="195" y="1163" class="body">All three central P11 components now have changing-node transport rules, but a simultaneous assembly theorem is still required.</text>
+
+  <rect x="80" y="1230" width="1440" height="62" rx="14" fill="#0f172a"/>
+  <text x="115" y="1255" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">BOUNDARY</text>
+  <text x="115" y="1278" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">P29 fixes intervention and delay semantics. Full P11 assembly, physical completeness, and experiential interpretation remain open.</text>
+</svg>
