@@ -1,6 +1,6 @@
 import pytest
 
-from consciousness_bridge import causal_structure_minimality, intervention_causal_geometry
+from consciousness_bridge import causal_structure_minimality, intervention_causal_structure
 
 DELAY = ("t",)
 INTERVENTIONS = ("u0", "u1")
@@ -142,10 +142,10 @@ def test_response_diameter_collision_does_not_imply_equal_geometry():
     }
     interventions = ("u0", "u1", "u2")
 
-    assert intervention_causal_geometry.response_diameter(
+    assert intervention_causal_structure.response_diameter(
         system_a, "t"
     ) == pytest.approx(1.0)
-    assert intervention_causal_geometry.response_diameter(
+    assert intervention_causal_structure.response_diameter(
         system_b, "t"
     ) == pytest.approx(1.0)
     assert causal_structure_minimality.geometry_fingerprint(
@@ -161,10 +161,10 @@ def test_same_minimum_irreducibility_scalar_can_hide_geometry_difference():
     swap = _correlation_swap()
     identical = _identical_correlated()
 
-    kappa_swap = intervention_causal_geometry.partition_response_irreducibility(
+    kappa_swap = intervention_causal_structure.partition_response_irreducibility(
         swap, PARTITIONS[0], "t"
     )
-    kappa_identical = intervention_causal_geometry.partition_response_irreducibility(
+    kappa_identical = intervention_causal_structure.partition_response_irreducibility(
         identical, PARTITIONS[0], "t"
     )
 
@@ -183,8 +183,8 @@ def test_boolean_recurrence_is_not_complete_for_influence_strength():
     strong_cycle = ((0.0, 1.0), (1.0, 0.0))
     weak_cycle = ((0.0, 0.2), (0.2, 0.0))
 
-    assert intervention_causal_geometry.has_directed_cycle(strong_cycle)
-    assert intervention_causal_geometry.has_directed_cycle(weak_cycle)
+    assert intervention_causal_structure.has_directed_cycle(strong_cycle)
+    assert intervention_causal_structure.has_directed_cycle(weak_cycle)
     assert strong_cycle != weak_cycle
 
 
