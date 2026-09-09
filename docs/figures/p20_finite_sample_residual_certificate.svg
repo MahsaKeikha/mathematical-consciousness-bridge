@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
+  <title id="title">Proposition 20 finite-sample residual certification</title>
+  <desc id="desc">A theorem map from the P19 population screening-off condition through IID categorical samples, a Hoeffding total-variation radius, entropy continuity, and a finite-sample confidence interval for conditional mutual information.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .title{font:700 36px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 17px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .head{font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .small{font:400 12px Inter,Segoe UI,Arial,sans-serif;fill:#64748b}
+      .label{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.7px;fill:#64748b}
+      .eq{font:600 17px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .eqsmall{font:600 14px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .arrow{stroke:#64748b;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+
+  <rect width="1600" height="980" fill="#ffffff"/>
+  <text x="70" y="62" class="title">P20 - Finite-Sample Residual Certification</text>
+  <text x="70" y="96" class="subtitle">Turn the P19 population screening-off condition into an explicit finite-data confidence certificate.</text>
+
+  <rect x="100" y="145" width="420" height="135" rx="18" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="130" y="181" class="label">P19 POPULATION TARGET</text>
+  <text x="130" y="224" class="eq">I(E; Ω | T) = 0</text>
+  <text x="130" y="253" class="body">Screening-off by the declared physical descriptor T.</text>
+
+  <path class="arrow" d="M520 212 H610"/>
+
+  <rect x="610" y="145" width="420" height="135" rx="18" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+  <text x="640" y="181" class="label">FINITE DATA</text>
+  <text x="640" y="220" class="eq">(Ωᵢ, Tᵢ, Eᵢ),  i = 1,…,n</text>
+  <text x="640" y="251" class="body">IID categorical observations on declared finite alphabets.</text>
+
+  <path class="arrow" d="M1030 212 H1120"/>
+
+  <rect x="1120" y="145" width="380" height="135" rx="18" fill="#faf5ff" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="1150" y="181" class="label">EMPIRICAL RESIDUAL</text>
+  <text x="1150" y="224" class="eq">Îₙ = I(P̂ₙ; E, Ω | T)</text>
+  <text x="1150" y="253" class="body">Plug-in conditional mutual information in nats.</text>
+
+  <path class="arrow" d="M1310 280 V345 H1110"/>
+  <path class="arrow" d="M820 280 V345 H490"/>
+
+  <rect x="135" y="345" width="650" height="205" rx="18" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="165" y="381" class="head">P20A · Joint-distribution concentration</text>
+  <text x="165" y="422" class="eq">M = dΩ dT dE</text>
+  <text x="165" y="461" class="eqsmall">τₙ(α) = min{1, (M/2) √[log(2M/α)/(2n)]}</text>
+  <text x="165" y="500" class="body">Cellwise Hoeffding bounds plus a union bound control joint total variation.</text>
+  <text x="165" y="526" class="small">With probability at least 1−α:  TV(P̂ₙ,P) ≤ τₙ(α).</text>
+
+  <rect x="815" y="345" width="650" height="205" rx="18" fill="#fff7ed" stroke="#f97316" stroke-width="1.5"/>
+  <text x="845" y="381" class="head">P20B · Continuity transfer to conditional information</text>
+  <text x="845" y="420" class="eqsmall">c_d(r) = h₂(r)+r log(d−1), below its uniform threshold</text>
+  <text x="845" y="459" class="eqsmall">ΔCMI(r) = min{Imax, cET(r)+cΩT(r)+cT(r)+cEΩT(r)}</text>
+  <text x="845" y="498" class="body">Marginal TV contraction and finite-alphabet entropy continuity propagate error.</text>
+  <text x="845" y="526" class="small">The bound is capped by Imax = min{log dΩ, log dE}.</text>
+
+  <path class="arrow" d="M460 550 V610 H650"/>
+  <path class="arrow" d="M1140 550 V610 H950"/>
+
+  <rect x="310" y="610" width="980" height="175" rx="18" fill="#f8fafc" stroke="#334155" stroke-width="1.6"/>
+  <text x="340" y="646" class="head">P20C · Finite-sample confidence interval</text>
+  <text x="340" y="688" class="eq">| I(E;Ω | T) − Îₙ | ≤ ΔCMI(τₙ(α))</text>
+  <text x="340" y="728" class="eqsmall">Lₙ = max{0, Îₙ−ΔCMI(τₙ)}      Uₙ = min{Imax, Îₙ+ΔCMI(τₙ)}</text>
+  <text x="340" y="760" class="body">The interval [Lₙ,Uₙ] covers the population residual with probability at least 1−α.</text>
+
+  <path class="arrow" d="M800 785 V825"/>
+
+  <rect x="275" y="825" width="1050" height="72" rx="15" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+  <text x="305" y="854" class="label">CERTIFIED DECISION</text>
+  <text x="305" y="882" class="eq">Lₙ &gt; 0  ⇒  the declared T fails the P19 screening-off condition at confidence 1−α.</text>
+
+  <rect x="135" y="920" width="1330" height="42" rx="12" fill="#0f172a"/>
+  <text x="800" y="947" style="font:600 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc" text-anchor="middle">Interpret descriptor insufficiency first: omitted physics, measurement error, boundaries, timescale, or sampling assumptions remain live alternatives.</text>
+</svg>
