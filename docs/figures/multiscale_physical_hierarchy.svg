@@ -1,10 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1220" viewBox="0 0 1800 1220" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1260" viewBox="0 0 1800 1260" role="img" aria-labelledby="title desc">
   <title id="title">Multiscale physical hierarchy for the consciousness bridge program</title>
-  <desc id="desc">Master figure connecting microscopic physical dynamics, mesoscopic biological and engineered networks, certified moving subsystems from Spatiotemporal Observer Mathematics, intervention-resolved causal structure, temporal composition and scale theorems, empirical measurements, and the open mathematical consciousness bridge.</desc>
+  <desc id="desc">Master figure connecting physical dynamics, network state, certified moving subsystems, intervention-resolved causal structure, temporal and compositional theorems, empirical measurement, and the open physical-to-experiential bridge.</desc>
   <defs>
-    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
-      <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
-    </marker>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0 0 L0 8 L10 4 z" fill="#64748b"/></marker>
     <style>
       .title{font:700 40px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
       .subtitle{font:400 18px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
@@ -19,132 +17,129 @@
     </style>
   </defs>
 
-  <rect width="1800" height="1220" fill="#ffffff"/>
+  <rect width="1800" height="1260" fill="#ffffff"/>
   <text x="80" y="68" class="title">Multiscale Physical Hierarchy of the Research Program</text>
-  <text x="80" y="103" class="subtitle">From physical dynamics to measurable causal organization, with scale, uncertainty, and the physical-to-experiential bridge kept mathematically distinct.</text>
+  <text x="80" y="103" class="subtitle">Physical scale, mathematical structure, measurement, and bridge interpretation remain distinct.</text>
 
-  <!-- Left spine: physical scales -->
-  <text x="80" y="152" class="label">PHYSICAL SCALE AND MODELING LAYERS</text>
+  <text x="80" y="155" class="label">PHYSICAL MODELING</text>
+  <text x="650" y="155" class="label">STRUCTURAL THEOREMS</text>
+  <text x="1220" y="155" class="label">EMPIRICAL + BRIDGE</text>
 
+  <!-- Left column -->
   <g>
-    <rect x="80" y="175" width="500" height="145" rx="18" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
-    <text x="115" y="212" class="head">1. Microscopic / local physical dynamics</text>
-    <text x="115" y="248" class="eq">dX<tspan baseline-shift="sub" font-size="12">t</tspan> = f(X<tspan baseline-shift="sub" font-size="12">t</tspan>,u<tspan baseline-shift="sub" font-size="12">t</tspan>) dt + G(X<tspan baseline-shift="sub" font-size="12">t</tspan>,u<tspan baseline-shift="sub" font-size="12">t</tspan>) dW<tspan baseline-shift="sub" font-size="12">t</tspan></text>
-    <text x="115" y="282" class="body">state variables • forces / transitions • noise • energy exchange</text>
-    <text x="115" y="307" class="small">Physics lineage: stochastic dynamics, statistical mechanics, nonequilibrium thermodynamics</text>
+    <rect x="80" y="180" width="500" height="150" rx="18" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+    <text x="115" y="218" class="head">1. Local physical dynamics</text>
+    <text x="115" y="258" class="eq">dXₜ = f(Xₜ,uₜ)dt + G(Xₜ,uₜ)dWₜ</text>
+    <text x="115" y="296" class="body">state variables · noise · forces · energy exchange</text>
+    <text x="115" y="318" class="small">stochastic dynamics and nonequilibrium physics</text>
   </g>
 
   <g>
-    <rect x="80" y="360" width="500" height="145" rx="18" fill="#ecfeff" stroke="#0891b2" stroke-width="1.5"/>
-    <text x="115" y="397" class="head">2. Cellular, neural, or engineered network state</text>
-    <text x="115" y="433" class="eq">X<tspan baseline-shift="sub" font-size="12">t+Δt</tspan> ∼ K<tspan baseline-shift="sub" font-size="12">Δt</tspan>( · | X<tspan baseline-shift="sub" font-size="12">t</tspan>,u<tspan baseline-shift="sub" font-size="12">t</tspan> )</text>
-    <text x="115" y="467" class="body">spiking / field / physiological / controller variables at a declared resolution</text>
-    <text x="115" y="492" class="small">Scale choice is explicit; P17 proves that coarse-graining can erase distinctions.</text>
+    <rect x="80" y="370" width="500" height="150" rx="18" fill="#ecfeff" stroke="#0891b2" stroke-width="1.5"/>
+    <text x="115" y="408" class="head">2. Network state at declared resolution</text>
+    <text x="115" y="448" class="eq">Xₜ₊Δₜ ∼ KΔₜ( · | Xₜ,uₜ )</text>
+    <text x="115" y="486" class="body">neural · physiological · engineered variables</text>
+    <text x="115" y="508" class="small">P17 makes the choice of physical scale explicit.</text>
   </g>
 
   <g>
-    <rect x="80" y="545" width="500" height="160" rx="18" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
-    <text x="115" y="582" class="head">3. Dynamically distinguished moving subsystem</text>
-    <text x="115" y="620" class="eq">W = (S<tspan baseline-shift="sub" font-size="12">0</tspan>, … , S<tspan baseline-shift="sub" font-size="12">T−1</tspan>)</text>
-    <text x="115" y="654" class="body">integration • insulation • persistence • transport • identifiability</text>
-    <text x="115" y="680" class="small">Foundation: Spatiotemporal Observer Mathematics</text>
-    <text x="115" y="699" class="small">The output is a certified physical subsystem, not an experiential conclusion.</text>
+    <rect x="80" y="560" width="500" height="165" rx="18" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+    <text x="115" y="598" class="head">3. Dynamically distinguished subsystem</text>
+    <text x="115" y="638" class="eq">W = (S₀, … , Sₜ₋₁)</text>
+    <text x="115" y="676" class="body">integration · insulation · persistence · transport</text>
+    <text x="115" y="700" class="small">Spatiotemporal Observer Mathematics supplies this layer.</text>
   </g>
 
   <g>
-    <rect x="80" y="745" width="500" height="180" rx="18" fill="#faf5ff" stroke="#7c3aed" stroke-width="1.5"/>
-    <text x="115" y="782" class="head">4. Intervention-resolved causal structure</text>
-    <text x="115" y="820" class="eq">Pᵤ,τ(p) = ℒ(Yᵛ(t + τ) | do(u), p)</text>
-    <text x="115" y="854" class="body">response geometry G • directed influence A • partition irreducibility K</text>
-    <text x="115" y="882" class="eq">F<tspan baseline-shift="sub" font-size="12">causal</tspan>(p) = [V,U<tspan baseline-shift="sub" font-size="12">p</tspan>,T,G<tspan baseline-shift="sub" font-size="12">p</tspan>,A<tspan baseline-shift="sub" font-size="12">p</tspan>,K<tspan baseline-shift="sub" font-size="12">p</tspan>]<tspan baseline-shift="sub" font-size="12">≅</tspan></text>
-    <text x="115" y="910" class="small">P11-P13: construction + component-level minimality and irredundancy audits</text>
+    <rect x="80" y="765" width="500" height="190" rx="18" fill="#faf5ff" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="115" y="803" class="head">4. Intervention-resolved causal structure</text>
+    <text x="115" y="843" class="eq">Pₚᵘ,τ = ℒ(Yₜ₊τⱽ | do(u), p)</text>
+    <text x="115" y="882" class="body">response geometry G · directed influence A</text>
+    <text x="115" y="908" class="body">partition irreducibility K</text>
+    <text x="115" y="936" class="small">P11-P13: construction and minimality audits</text>
   </g>
 
-  <path class="arrow" d="M330 320 V352"/>
-  <path class="arrow" d="M330 505 V537"/>
-  <path class="arrow" d="M330 705 V737"/>
+  <path class="arrow" d="M330 330 V358"/>
+  <path class="arrow" d="M330 520 V548"/>
+  <path class="arrow" d="M330 725 V753"/>
 
-  <!-- Center: structural theorems -->
-  <text x="650" y="152" class="label">MATHEMATICAL STRUCTURE ACROSS TIME, COMPOSITION, AND SCALE</text>
-
+  <!-- Center column -->
   <g>
-    <rect x="650" y="175" width="500" height="170" rx="18" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
-    <text x="685" y="212" class="head">Temporal continuation</text>
-    <text x="685" y="248" class="eq">D̄([c],[c′]) = min<tspan baseline-shift="sub" font-size="12">h∈H</tspan> D(c,hc′)</text>
-    <text x="685" y="282" class="eq">V<tspan baseline-shift="sub" font-size="12">0:T</tspan> = Σ D̄([c<tspan baseline-shift="sub" font-size="12">t</tspan>],[c<tspan baseline-shift="sub" font-size="12">t+1</tspan>])</text>
-    <text x="685" y="316" class="small">P14-P15: representation-invariant temporal paths + finite-error certification</text>
+    <rect x="650" y="180" width="500" height="175" rx="18" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+    <text x="685" y="218" class="head">Temporal continuation</text>
+    <text x="685" y="258" class="eq">D̄([c],[c′]) = minₕ D(c,hc′)</text>
+    <text x="685" y="297" class="eq">V₀:T = Σₜ D̄([cₜ],[cₜ₊₁])</text>
+    <text x="685" y="329" class="small">P14-P15: temporal paths + finite-error certification</text>
   </g>
 
   <g>
-    <rect x="650" y="385" width="500" height="170" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
-    <text x="685" y="422" class="head">Composition and coupling</text>
-    <text x="685" y="458" class="eq">P<tspan baseline-shift="sub" font-size="12">AB</tspan> = P<tspan baseline-shift="sub" font-size="12">A</tspan> ⊗ P<tspan baseline-shift="sub" font-size="12">B</tspan>  under declared independence</text>
-    <text x="685" y="494" class="eq">χ<tspan baseline-shift="sub" font-size="12">AB</tspan> = sup ‖P<tspan baseline-shift="sub" font-size="12">AB</tspan> − P<tspan baseline-shift="sub" font-size="12">A</tspan>⊗P<tspan baseline-shift="sub" font-size="12">B</tspan>‖<tspan baseline-shift="sub" font-size="12">TV</tspan></text>
-    <text x="685" y="528" class="small">P16: exact null model for independent composition and measurable coupling defect</text>
+    <rect x="650" y="400" width="500" height="175" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+    <text x="685" y="438" class="head">Composition and coupling</text>
+    <text x="685" y="478" class="eq">PAB = PA ⊗ PB  under independence</text>
+    <text x="685" y="517" class="eq">χAB = sup ‖PAB − PA⊗PB‖TV</text>
+    <text x="685" y="549" class="small">P16: independent null model + measurable coupling defect</text>
   </g>
 
   <g>
-    <rect x="650" y="595" width="500" height="170" rx="18" fill="#fefce8" stroke="#ca8a04" stroke-width="1.5"/>
-    <text x="685" y="632" class="head">Scale change and coarse-graining</text>
-    <text x="685" y="668" class="eq">‖C<tspan baseline-shift="super" font-size="12">#</tspan>P − C<tspan baseline-shift="super" font-size="12">#</tspan>Q‖<tspan baseline-shift="sub" font-size="12">TV</tspan> ≤ ‖P − Q‖<tspan baseline-shift="sub" font-size="12">TV</tspan></text>
-    <text x="685" y="704" class="body">bijective relabeling preserves distance; many-to-one maps can collapse it to zero</text>
-    <text x="685" y="738" class="small">P17: data-processing contraction and exact non-recoverability witnesses</text>
+    <rect x="650" y="620" width="500" height="175" rx="18" fill="#fefce8" stroke="#ca8a04" stroke-width="1.5"/>
+    <text x="685" y="658" class="head">Scale change and coarse-graining</text>
+    <text x="685" y="700" class="eq">‖C#P − C#Q‖TV ≤ ‖P − Q‖TV</text>
+    <text x="685" y="740" class="body">bijections preserve distance</text>
+    <text x="685" y="766" class="body">many-to-one maps can erase distinctions</text>
   </g>
 
   <g>
-    <rect x="650" y="805" width="500" height="150" rx="18" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.5"/>
-    <text x="685" y="842" class="head">Finite-data observability</text>
-    <text x="685" y="878" class="eq">γ<tspan baseline-shift="sub" font-size="12">S</tspan> &gt; 4ε</text>
-    <text x="685" y="910" class="body">measurement error, sample complexity, protocol selection, and recoverability</text>
-    <text x="685" y="938" class="small">P7-P10 and P15: population statements are separated from certified finite-data claims.</text>
+    <rect x="650" y="840" width="500" height="160" rx="18" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.5"/>
+    <text x="685" y="878" class="head">Finite-data observability</text>
+    <text x="685" y="918" class="eq">γS &gt; 4ε</text>
+    <text x="685" y="956" class="body">error · sample size · protocol design · recovery</text>
+    <text x="685" y="982" class="small">P7-P10 and P15 separate population and data claims.</text>
   </g>
 
-  <path class="dash" d="M580 835 H642"/>
+  <path class="dash" d="M580 855 H638"/>
 
-  <!-- Right: empirical and bridge layers -->
-  <text x="1220" y="152" class="label">EMPIRICAL INTERFACE AND BRIDGE PROBLEM</text>
-
+  <!-- Right column -->
   <g>
-    <rect x="1220" y="175" width="500" height="180" rx="18" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.5"/>
-    <text x="1255" y="212" class="head">Measured state and perturbation evidence</text>
-    <text x="1255" y="250" class="body">EEG / MEG / fMRI / intracranial signals / physiology / behavior</text>
-    <text x="1255" y="282" class="body">wakefulness • dreaming • anesthesia • disorders of consciousness</text>
-    <text x="1255" y="314" class="small">Key empirical lineage: Casali; Sarasso; Siclari; Claassen; Luppi and collaborators</text>
-    <text x="1255" y="339" class="small">Measurements constrain theory; they do not define the experiential target by themselves.</text>
+    <rect x="1220" y="180" width="500" height="180" rx="18" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.5"/>
+    <text x="1255" y="218" class="head">Measured state and perturbation evidence</text>
+    <text x="1255" y="258" class="body">EEG · MEG · fMRI · intracranial · physiology</text>
+    <text x="1255" y="286" class="body">behavior · report · controlled perturbation</text>
+    <text x="1255" y="318" class="small">Casali · Sarasso · Siclari · Claassen · Luppi</text>
+    <text x="1255" y="342" class="small">Measurements constrain theory; they do not define experience.</text>
   </g>
 
   <g>
-    <rect x="1220" y="395" width="500" height="170" rx="18" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
-    <text x="1255" y="432" class="head">Extreme-environment robustness</text>
-    <text x="1255" y="468" class="body">sleep / circadian disruption • isolation • workload • radiation • altered gravity</text>
-    <text x="1255" y="504" class="body">tests stability of measurement and state-estimation models under operational stress</text>
-    <text x="1255" y="538" class="small">NASA Human Research Program is used here as an application and validation domain.</text>
+    <rect x="1220" y="405" width="500" height="165" rx="18" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="1255" y="443" class="head">Extreme-environment robustness</text>
+    <text x="1255" y="483" class="body">sleep disruption · isolation · workload</text>
+    <text x="1255" y="511" class="body">radiation · altered gravity · operational stress</text>
+    <text x="1255" y="543" class="small">NASA HRP is an application and validation domain.</text>
   </g>
 
   <g>
-    <rect x="1220" y="605" width="500" height="175" rx="18" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.7"/>
-    <text x="1255" y="642" class="head">Competing bridge theories</text>
-    <text x="1255" y="678" class="body">IIT • GNWT • recurrent processing • higher-order • predictive / representational families</text>
-    <text x="1255" y="712" class="eq">𝔗<tspan baseline-shift="sub" font-size="12">j</tspan> = (F<tspan baseline-shift="sub" font-size="12">j</tspan>, B<tspan baseline-shift="sub" font-size="12">j</tspan>, M<tspan baseline-shift="sub" font-size="12">j</tspan>, Π<tspan baseline-shift="sub" font-size="12">j</tspan>)</text>
-    <text x="1255" y="746" class="small">P2-P6 provide common identifiability, discrimination, sufficiency, and completeness tests.</text>
+    <rect x="1220" y="615" width="500" height="175" rx="18" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="1255" y="653" class="head">Competing bridge theories</text>
+    <text x="1255" y="693" class="body">IIT · GNWT · recurrent · higher-order</text>
+    <text x="1255" y="721" class="body">predictive and representational families</text>
+    <text x="1255" y="755" class="eq">𝔗ⱼ = (Fⱼ, Bⱼ, Mⱼ, Πⱼ)</text>
   </g>
 
   <g>
-    <rect x="1220" y="820" width="500" height="190" rx="18" fill="#0f172a"/>
-    <text x="1255" y="858" style="font:700 21px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Open mathematical consciousness bridge</text>
-    <text x="1255" y="901" class="eqdark">B̄ : Q<tspan baseline-shift="sub" font-size="12">P</tspan> → Q<tspan baseline-shift="sub" font-size="12">E</tspan></text>
-    <text x="1255" y="939" style="font:400 15px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">Target: identify an independently physical signature whose equivalence classes match a formally justified experiential equivalence.</text>
-    <text x="1255" y="978" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#94a3b8">The bridge remains a distinct theorem-and-evidence problem, not a relabeling of complexity, integration, recurrence, or causal structure.</text>
+    <rect x="1220" y="835" width="500" height="190" rx="18" fill="#0f172a"/>
+    <text x="1255" y="875" style="font:700 20px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Open mathematical bridge</text>
+    <text x="1255" y="920" class="eqdark">B̄ : QP → QE</text>
+    <text x="1255" y="960" style="font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">Find an independently physical signature whose classes</text>
+    <text x="1255" y="985" style="font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">match a formally justified experiential equivalence.</text>
   </g>
 
-  <path class="arrow" d="M1150 260 H1212"/>
-  <path class="arrow" d="M1150 470 H1212"/>
-  <path class="arrow" d="M1150 680 H1212"/>
-  <path class="arrow" d="M1470 780 V812"/>
+  <path class="arrow" d="M1150 265 H1208"/>
+  <path class="arrow" d="M1150 487 H1208"/>
+  <path class="arrow" d="M1150 702 H1208"/>
+  <path class="arrow" d="M1470 790 V823"/>
 
-  <!-- Footer: source lineage -->
-  <rect x="80" y="1065" width="1640" height="95" rx="16" fill="#f8fafc" stroke="#cbd5e1"/>
-  <text x="115" y="1100" class="label">SELECTED FOUNDATIONAL LINEAGE</text>
-  <text x="115" y="1133" class="body">Shannon — information theory   •   Amari — information geometry   •   Landauer / Seifert — thermodynamics of information   •   Pearl — intervention   •   Tegmark — physical factorization</text>
-  <text x="115" y="1158" class="small">Empirical consciousness interface: Tononi / IIT literature, Casali perturbational complexity, Luppi information integration, adversarial theory testing, and state-dissociation studies. Full role-aware citations are maintained in the repository bibliographies.</text>
+  <!-- Footer -->
+  <rect x="80" y="1080" width="1640" height="115" rx="16" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="115" y="1118" class="label">FOUNDATIONAL LINEAGE</text>
+  <text x="115" y="1152" class="body">Shannon · Amari · Landauer · Seifert · Pearl · Tegmark</text>
+  <text x="115" y="1178" class="small">Empirical and theory-specific sources are separated in the role-aware bibliographies.</text>
 </svg>
