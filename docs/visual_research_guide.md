@@ -140,7 +140,7 @@ The physical-to-experiential target is represented abstractly as
 
 The mathematical challenge is to establish which physical equivalence classes, if any, correspond to which experiential equivalence classes under explicit and independently testable bridge principles.
 
-For the full equation-by-equation discussion, see [Physics and Mathematics Atlas](physics_mathematics_atlas.md).
+For the full equation-by-equation discussion, see [Physics and Mathematics Atlas](physics_mathematics_consciousness_atlas.md).
 
 ---
 
@@ -397,7 +397,7 @@ measures departure from response factorization on the declared intervention-obse
 
 ## 11. Coarse-graining and refinement
 
-![Proposition 17 coarse-graining and refinement](figures/p17_coarse_graining.svg)
+![Proposition 17 coarse-graining and refinement](figures/p17_coarse_graining_refinement.svg)
 
 Let \(C:X\to Z\) be a deterministic coarse-graining map. For probability laws \(P,Q\), the pushforward satisfies
 
@@ -489,7 +489,7 @@ These can influence cognition, perceptual performance, neural dynamics, physiolo
 
 Relevant authoritative programs include NASA's Human Research Program, Human Factors and Behavioral Performance work, sleep/circadian risk research, and Artemis-oriented behavioral-health data collection.
 
-See [Physics and Mathematics Atlas](physics_mathematics_atlas.md) for the exact role of the spaceflight layer.
+See [Physics and Mathematics Atlas](physics_mathematics_consciousness_atlas.md) for the exact role of the spaceflight layer.
 
 ---
 
@@ -498,7 +498,7 @@ See [Physics and Mathematics Atlas](physics_mathematics_atlas.md) for the exact 
 | Stage | Read | Main question |
 | --- | --- | --- |
 | 1 | [README](../README.md) | What is the complete research program? |
-| 2 | [Physics and Mathematics Atlas](physics_mathematics_atlas.md) | How do physics, information, causality, thermodynamics, neural measurement, and bridge mathematics connect? |
+| 2 | [Physics and Mathematics Atlas](physics_mathematics_consciousness_atlas.md) | How do physics, information, causality, thermodynamics, neural measurement, and bridge mathematics connect? |
 | 3 | [Bridge Problem](bridge_problem.md) | What is missing between physical structure and experience? |
 | 4 | [Physical Foundation](physical_foundation.md) | What counts as a physical system and admissible intervention? |
 | 5 | [Theorem Roadmap](theorem_roadmap.md) | What has actually been proved? |
