@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge.
 
-![P1-P15 theorem roadmap](figures/theorem_roadmap.svg)
+![P1-P16 theorem roadmap](figures/theorem_roadmap.svg)
 
 ---
 
@@ -25,6 +25,7 @@ This roadmap records the proved mathematical chain and the open route toward a s
 | [P13](proposition_13_pairwise_component_irredundancy.md) | pairwise projection collisions | every major component is irredundant relative to the other two on the audit domain | proved irredundancy |
 | [P14](proposition_14_temporal_continuation.md) | quotient metric and path variation | representation-invariant temporal continuation of the physical candidate | proved temporal-structure theorem |
 | [P15](proposition_15_finite_sample_temporal_certification.md) | perturbation bounds for quotient distances and paths | finite-error certification of temporal change and continuity | proved certification theorem |
+| [P16](proposition_16_independent_composition_and_coupling.md) | product-response composition and factorization defect | distinguishes independent coexistence from observed cross-system response structure | proved composition theorem |
 
 ---
 
@@ -503,13 +504,100 @@ For the special case of \(M\) bounded sample-mean coordinates at each of \(T+1\)
 
 This bounded-coordinate corollary is intentionally limited: more complex causal-structure estimators require estimator-specific concentration results.
 
+![P15 finite-sample temporal certification](figures/p15_finite_sample_temporal_certification.svg)
+
 ---
 
-# 11. Current dependency graph
+# 11. P16 - independent composition and controlled coupling
+
+For two systems \(A\) and \(B\), define the independent product-response composition
 
 \[
 \boxed{
-\begin{array}{ccccccccccccccccccccc}
+P_{A\otimes B}^{(u_A,u_B),\tau}
+=
+P_A^{u_A,\tau}\otimes P_B^{u_B,\tau}.
+}
+\]
+
+If
+
+\[
+d_A
+=
+\|P_A^{u_A,\tau}-P_A^{v_A,\tau}\|_{\mathrm{TV}},
+\qquad
+ d_B
+=
+\|P_B^{u_B,\tau}-P_B^{v_B,\tau}\|_{\mathrm{TV}},
+\]
+
+then P16 proves
+
+\[
+\boxed{
+\max\{d_A,d_B\}
+\le d_{AB}
+\le d_A+d_B-d_Ad_B.
+}
+\]
+
+When one subsystem intervention is unchanged, the corresponding one-factor distance is preserved exactly.
+
+For source and target blocks lying in different independent subsystems,
+
+\[
+\boxed{
+A_{ij}^{A\otimes B}(\tau)=0.
+}
+\]
+
+For the partition separating the two complete subsystems,
+
+\[
+\boxed{
+\kappa_{A\otimes B}^{\tau}(\pi_{A|B})=0.
+}
+\]
+
+For an arbitrary observed joint response law, define the response-factorization defect
+
+\[
+\boxed{
+\chi_{A|B}(\tau)
+=
+\sup_{u_A,u_B}
+\left\|
+P_{AB}^{(u_A,u_B),\tau}
+-
+P_{A,\mathrm{marg}}^{(u_A,u_B),\tau}
+\otimes
+P_{B,\mathrm{marg}}^{(u_A,u_B),\tau}
+\right\|_{\mathrm{TV}}.
+}
+\]
+
+P16 identifies this exactly with the P11 irreducibility of the \(A|B\) partition:
+
+\[
+\boxed{
+\chi_{A|B}(\tau)
+=
+\kappa_{AB}^{\tau}(\pi_{A|B}).
+}
+\]
+
+A positive defect certifies departure from response factorization on the declared intervention-observable regime. A zero defect certifies factorization of the measured response laws, not universal absence of every hidden mechanistic interaction.
+
+![P16 independent composition and controlled coupling](figures/p16_composition_coupling.svg)
+
+---
+
+# 12. Current dependency graph
+
+\[
+\boxed{
+\begin{array}{ccccccccccccccccccccccc}
 P1
 &\to&P5
 &\to&P6
@@ -521,7 +609,8 @@ P1
 &\to&P12
 &\to&P13
 &\to&P14
-&\to&P15\\
+&\to&P15
+&\to&P16\\
 &&&&&&\uparrow\\
 P2&\to&P3&\to&P4
 &&\text{experiment design}
@@ -531,16 +620,17 @@ P2&\to&P3&\to&P4
 
 ---
 
-# 12. Current frontier
+# 13. Current frontier
 
-With representation-invariant temporal continuation and finite-error temporal certification established, the next structural program is:
+With independent composition and a response-level coupling defect established, the next structural program is:
 
-1. composition of independent and weakly coupled causal-structure systems;
+1. finite-sample confidence intervals for the coupling defect and cross-system influence;
 2. splitting, merging, birth, and disappearance of physical blocks;
-3. observer-to-bridge interface with certified moving world-tubes;
-4. estimator-specific concentration for the full Proposition 11 causal-structure coordinates;
-5. irregular-time normalization and sampling-cadence sensitivity;
-6. source-faithful cross-theory adversarial experiments;
-7. biological and artificial counterexample programs;
-8. experiential-space formalization;
-9. a bridge theorem only after physical, experiential, identifiability, recovery, finite-data, and falsification requirements have been jointly addressed.
+3. controlled coupling trajectories that connect P14 temporal continuation to P16 composition;
+4. observer-to-bridge interface with certified moving world-tubes;
+5. estimator-specific concentration for the full Proposition 11 causal-structure coordinates;
+6. irregular-time normalization and sampling-cadence sensitivity;
+7. source-faithful cross-theory adversarial experiments;
+8. biological and artificial counterexample programs;
+9. experiential-space formalization;
+10. a bridge theorem only after physical, experiential, identifiability, recovery, finite-data, composition, and falsification requirements have been jointly addressed.
