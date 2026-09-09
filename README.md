@@ -1,7 +1,7 @@
 # Mathematical Consciousness Bridge
 
 [![tests](https://github.com/MahsaKeikha/mathematical-consciousness-bridge/actions/workflows/test.yml/badge.svg)](https://github.com/MahsaKeikha/mathematical-consciousness-bridge/actions/workflows/test.yml)
-[![version](https://img.shields.io/badge/version-0.26.0-2563eb)](CITATION.cff)
+[![version](https://img.shields.io/badge/version-0.27.0-2563eb)](CITATION.cff)
 [![license](https://img.shields.io/badge/license-MIT-059669)](LICENSE)
 
 **Mahsa Keikha, PhD**
@@ -40,11 +40,11 @@ This project continues **[Spatiotemporal Observer Mathematics](https://github.co
 
 Physics can describe states, fields, probability amplitudes, density operators, spacetime, Hamiltonians, open-system dynamics, thermodynamics, interventions, measurements, and statistical predictions without by itself defining subjective experience. A mathematically serious consciousness theory therefore requires a separately specified bridge between physically meaningful equivalence classes and formally defined experiential equivalence classes.
 
-The program here makes that bridge itself an object of mathematics. Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design. **P11** introduces intervention-resolved causal structure as a structured physical candidate rather than a scalar. **P12-P13** prove constructive insufficiency and component irredundancy results. **P14-P15** formalize temporal continuation and finite-error temporal certification. **P16** gives an independent-composition null model and response-level coupling defect. **P17** proves total-variation contraction and exact refinement ambiguity under deterministic coarse-graining. **P18** proves a quantitative scale-sufficiency certificate based on approximate reconstruction. **P19** proves exact deterministic and stochastic criteria for whether an independently defined target factors through a declared physical descriptor, together with a differential no-go test. **P20** converts the P19 stochastic population residual into an explicit finite-sample confidence certificate under a declared finite-alphabet IID model. **P21** then proves how that residual behaves under nested physical-descriptor refinement: unresolved deterministic collisions can only disappear, while the stochastic residual decreases by exactly the target-relevant information supplied by the added physical detail. **P22** gives a simultaneous finite-sample certificate for the entire declared refinement chain from one shared confidence event on the empirical physical-target law. **P23** proves that the same shared base confidence event also supports fixed-sample data-dependent selection among admissible deterministic refinements, together with an explicit near-optimality bound for the selected refinement. **P24** converts that fixed-sample result into an anytime-valid certificate by allocating the total error budget across all positive sample sizes, giving simultaneous repeated-look and finite stopping-time validity under the declared finite-alphabet IID model. **P25** returns to the P11 physical candidate and proves a directed-influence scale theorem: deterministic target coarse observation cannot increase matched-intervention influence, and P18 reconstruction defect bounds the loss by twice the uniform reconstruction error. **P26** extends the same physical scale program to P11 partition irreducibility: block-compatible coarse observation cannot increase the distance from the declared partition-product null, and P18 reconstruction separately controls the actual response law and its factorized reference.
+The program here makes that bridge itself an object of mathematics. Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design. **P11** introduces intervention-resolved causal structure as a structured physical candidate rather than a scalar. **P12-P13** prove constructive insufficiency and component irredundancy results. **P14-P15** formalize temporal continuation and finite-error temporal certification. **P16** gives an independent-composition null model and response-level coupling defect. **P17** proves total-variation contraction and exact refinement ambiguity under deterministic coarse-graining. **P18** proves a quantitative scale-sufficiency certificate based on approximate reconstruction. **P19** proves exact deterministic and stochastic criteria for whether an independently defined target factors through a declared physical descriptor, together with a differential no-go test. **P20** converts the P19 stochastic population residual into an explicit finite-sample confidence certificate under a declared finite-alphabet IID model. **P21** then proves how that residual behaves under nested physical-descriptor refinement: unresolved deterministic collisions can only disappear, while the stochastic residual decreases by exactly the target-relevant information supplied by the added physical detail. **P22** gives a simultaneous finite-sample certificate for the entire declared refinement chain from one shared confidence event on the empirical physical-target law. **P23** proves that the same shared base confidence event also supports fixed-sample data-dependent selection among admissible deterministic refinements, together with an explicit near-optimality bound for the selected refinement. **P24** converts that fixed-sample result into an anytime-valid certificate by allocating the total error budget across all positive sample sizes, giving simultaneous repeated-look and finite stopping-time validity under the declared finite-alphabet IID model. **P25** returns to the P11 physical candidate and proves a directed-influence scale theorem: deterministic target coarse observation cannot increase matched-intervention influence, and P18 reconstruction defect bounds the loss by twice the uniform reconstruction error. **P26** extends the same physical scale program to P11 partition irreducibility: block-compatible coarse observation cannot increase the distance from the declared partition-product null, and P18 reconstruction separately controls the actual response law and its factorized reference. **P27** then allows the node set itself to change: a fine partition descends through a surjective node aggregation exactly when it is saturated by the aggregation fibers, the surviving partitions form a lattice isomorphic to the coarse partition lattice, and P18 controls any remaining irreducibility loss under an aggregation-compatible state map.
 
 A new quantum-foundations layer now asks a sharper question. Suppose the declared quantum description is operationally complete with respect to the state, admissible channels, and all declared measurement statistics. What exact mathematical evidence would be required to show that an independently defined experiential variable does **not** factor through that quantum operational state? This is formulated as an open non-reducibility theorem target. It is not an assumption that consciousness is quantum or that quantum theory is incomplete.
 
-The public research record now contains **26 proposition-level results, 58 equation-driven quantitative figures, quantum and classical physical maps, reproducible numerical examples, counterexamples, and a multi-version Python test matrix**.
+The public research record now contains **27 proposition-level results, 58 equation-driven quantitative figures, quantum and classical physical maps, reproducible numerical examples, counterexamples, and a multi-version Python test matrix**.
 
 ---
 
@@ -81,7 +81,7 @@ A reader should not need to search the repository to understand the argument. Th
 
 | What you want to inspect | Direct link | What is there |
 | --- | --- | --- |
-| complete theorem chain | [Theorem Roadmap](docs/theorem_roadmap.md) | P1 through P26 with explicit dependency branches |
+| complete theorem chain | [Theorem Roadmap](docs/theorem_roadmap.md) | P1 through P27 with explicit dependency branches |
 | equation provenance | [Equation and Citation Map](docs/equation_and_citation_map.md) | standard results, repository definitions, proofs, and external sources separated explicitly |
 | population physical-sufficiency theorem | [Proposition 19](docs/proposition_19_fundamental_physical_sufficiency.md) | deterministic factorization, stochastic sufficiency, and local rank obstruction |
 | finite-sample residual theorem | [Proposition 20](docs/proposition_20_finite_sample_residual_certification.md) | confidence interval for the P19 conditional-information residual |
@@ -91,6 +91,7 @@ A reader should not need to search the repository to understand the argument. Th
 | anytime refinement theorem | [Proposition 24](docs/proposition_24_anytime_adaptive_refinement_certification.md) | repeated-look, adaptive-selection, and finite stopping-time validity |
 | directed-influence scale theorem | [Proposition 25](docs/proposition_25_directed_influence_scale_certification.md) | P11 directed influence under P18 reconstruction-controlled target coarse observation |
 | partition-irreducibility scale theorem | [Proposition 26](docs/proposition_26_partition_irreducibility_scale_certification.md) | P11 partition irreducibility under block-compatible observation with P18 reconstruction control |
+| partition-lattice node-aggregation theorem | [Proposition 27](docs/proposition_27_partition_lattice_node_aggregation.md) | exact partition descent, lattice transport, and P18-controlled irreducibility under changing node sets |
 | fundamental-theory program | [Fundamental Theory to Consciousness](docs/fundamental_theory_consciousness_program.md) | candidate fundamental state, physical quotients, experiential quotient, and falsifiable bridge program |
 | stochastic extension | [Stochastic Fundamental Bridge](docs/stochastic_fundamental_bridge.md) | Markov-kernel and conditional-information formulation |
 | empirical falsification | [Falsification Program](docs/falsification_program.md) | conditions that would weaken or defeat a bridge claim |
@@ -105,6 +106,7 @@ A reader should not need to search the repository to understand the argument. Th
 | implementation of P24 | [anytime_refinement_certification.py](src/consciousness_bridge/anytime_refinement_certification.py) | anytime-valid adaptive refinement and stopping-time certificate |
 | implementation of P25 | [directed_influence_scale_certification.py](src/consciousness_bridge/directed_influence_scale_certification.py) | directed-influence distortion and threshold-edge scale certificate |
 | implementation of P26 | [partition_irreducibility_scale_certification.py](src/consciousness_bridge/partition_irreducibility_scale_certification.py) | partition-product commutation, irreducibility contraction, and reconstruction-controlled scale certificate |
+| implementation of P27 | [partition_lattice_node_aggregation.py](src/consciousness_bridge/partition_lattice_node_aggregation.py) | saturated partition descent, lattice isomorphism, aggregate-state maps, and node-aggregation irreducibility certificate |
 
 Every local documentation and figure link is checked by automated tests. Broken internal links therefore fail CI instead of remaining silently in the public research record.
 
@@ -134,6 +136,7 @@ Every local documentation and figure link is checked by automated tests. Broken 
 | **11. P17-P18** | What is lost under coarse-graining, and when is a scale still sufficient? |
 | **11.1 P25 directed-influence scale** | When does P11 directed influence survive target coarse observation? |
 | **11.2 P26 partition-irreducibility scale** | When does P11 partition irreducibility survive block-compatible coarse observation? |
+| **11.3 P27 partition lattice under node aggregation** | Which fine partitions remain well-defined after several nodes become one coarse node? |
 | **12. Observer handoff** | How does world-tube identification feed the bridge program? |
 | **13. Empirical interface** | What do perturbational and state-dependent observations actually constrain? |
 | **14. Competing theories** | How are alternative theories translated into a common empirical interface? |
@@ -147,7 +150,7 @@ Every local documentation and figure link is checked by automated tests. Broken 
 
 | Research record | Current state |
 | --- | ---: |
-| proposition-level results | **26** |
+| proposition-level results | **27** |
 | equation-driven classical/causal quantitative figures | **40** |
 | equation-driven quantum-foundations figures | **18** |
 | total equation-driven quantitative figures | **58** |
@@ -157,7 +160,7 @@ Every local documentation and figure link is checked by automated tests. Broken 
 | fundamental-theory factorization test | **formal open theorem + experiment target** |
 | automated tests | **160+ and expanding** |
 | CI matrix | **Python 3.10, 3.11, 3.12** |
-| research-software version | **0.26.0** |
+| research-software version | **0.27.0** |
 
 ---
 
@@ -1641,7 +1644,7 @@ A complete empirical bridge theory must specify
 
 ---
 
-# 7. Theorem roadmap - P1 through P26
+# 7. Theorem roadmap - P1 through P27
 
 ![Theorem roadmap](docs/figures/theorem_roadmap.svg)
 
@@ -1673,6 +1676,7 @@ A complete empirical bridge theory must specify
 | **P24** | summable alpha spending gives time-uniform adaptive-selection and finite stopping-time validity | proved anytime-valid theorem | [P24](docs/proposition_24_anytime_adaptive_refinement_certification.md) |
 | **P25** | P11 directed influence contracts under target coarse observation, with P18 reconstruction controlling the loss | proved physical scale theorem | [P25](docs/proposition_25_directed_influence_scale_certification.md) |
 | **P26** | P11 partition irreducibility contracts under block-compatible observation, with P18 reconstruction controlling the loss from the partition-product null | proved physical scale theorem | [P26](docs/proposition_26_partition_irreducibility_scale_certification.md) |
+| **P27** | aggregation-saturated fine partitions are exactly those that descend through a surjective node map; the surviving partition lattice is isomorphic to the coarse partition lattice, with P18 controlling probabilistic irreducibility loss | proved physical scale theorem | [P27](docs/proposition_27_partition_lattice_node_aggregation.md) |
 
 ---
 
@@ -2240,8 +2244,7 @@ For a threshold \(\theta\), define
 \[
 \varepsilon_{\pi}^{u,\tau}
 =
-\rho(P^{u,\tau})+
-ho(P_{\pi}^{u,\tau}).
+\rho(P^{u,\tau})+\rho(P_{\pi}^{u,\tau}).
 \]
 
 Then
@@ -2268,6 +2271,114 @@ A binary counterexample shows why no stronger unconditional invariance statement
 P26 remains an observation-scale theorem. It does not yet solve aggregation of multiple fine blocks into a new coarse node, transformation of the full partition lattice, changing intervention semantics, genuine physical fusion, complete P11 scale equivalence, physical completeness, or experience.
 
 [Read Proposition 26](docs/proposition_26_partition_irreducibility_scale_certification.md). The [P26 theorem map](docs/figures/p26_partition_irreducibility_scale_certification.svg), [implementation](src/consciousness_bridge/partition_irreducibility_scale_certification.py), and [tests](tests/test_partition_irreducibility_scale_certification.py) expose the complete proof-to-code path.
+
+## 13.5 P27 - partition-lattice transport under node aggregation
+
+![P27 partition-lattice transport under node aggregation](docs/figures/p27_partition_lattice_node_aggregation.svg)
+
+P27 removes an assumption that P26 deliberately retained. The node set itself may now change. Let
+
+\[
+\boxed{
+a:V_f\twoheadrightarrow V_c
+}
+\]
+
+be a surjective node-aggregation map and let
+
+\[
+F_c=a^{-1}(c)
+\]
+
+be the fine-node fiber represented by coarse node \(c\).
+
+A fine partition \(\pi_f\) has an exact coarse meaning if and only if no aggregation fiber is split across two fine partition blocks:
+
+\[
+\boxed{
+\pi_f\text{ descends through }a
+\iff
+\forall c\in V_c\;\exists B\in\pi_f:\;F_c\subseteq B.
+}
+\]
+
+Equivalently,
+
+\[
+\boxed{
+a(i)=a(j)\Longrightarrow i\sim_{\pi_f}j.}
+\]
+
+This aggregation-saturation criterion separates a structural incompatibility from ordinary measurement error. If a fiber crosses a proposed partition boundary, the corresponding coarse partition simply does not exist.
+
+For every coarse partition \(\pi_c\), define the lift
+
+\[
+\boxed{
+L_a(\pi_c)=\{a^{-1}(C):C\in\pi_c\}.
+}
+\]
+
+For every saturated fine partition, define its descent by the images of its blocks. The two operations are inverse and preserve the refinement order, meet, and join. Therefore
+
+\[
+\boxed{
+\operatorname{Part}(V_c)
+\simeq_{\mathrm{lattice}}
+\operatorname{Part}_{\mathrm{sat}}(V_f;a).
+}
+\]
+
+This identifies exactly which portion of the fine partition lattice survives node aggregation.
+
+The probabilistic P11 quantity can also be transported when each coarse state depends only on the fine states inside its aggregation fiber. If \(C_a\) is such an aggregation-compatible state map and \(\pi_f=L_a(\pi_c)\), then
+
+\[
+\boxed{
+(C_a)_\#P_{\pi_f}
+=
+\bigl((C_a)_\#P\bigr)_{\pi_c}.
+}
+\]
+
+Hence total-variation contraction gives
+
+\[
+\boxed{
+\kappa_c(\pi_c)
+\le
+\kappa_f(L_a\pi_c).
+}
+\]
+
+With a P18 reconstruction operator \(D=R_\#(C_a)_\#\),
+
+\[
+\boxed{
+0\le
+\kappa_f(\pi_f)-\kappa_c(\pi_c)
+\le
+\rho(P)+\rho(P_{\pi_f}).
+}
+\]
+
+Exact reconstruction of the response law and its partition-product null gives exact irreducibility preservation even though the declared node count has changed.
+
+P27 therefore distinguishes two failure modes that should never be conflated:
+
+\[
+\boxed{
+\text{no partition descent}
+\neq
+\text{valid partition with attenuated irreducibility}.
+}
+\]
+
+The first is a semantic obstruction created by the node quotient. The second is information loss created by the aggregate-state map.
+
+P27 still does not solve intervention-channel aggregation, source-node perturbation semantics, directed influence under source aggregation, complete P11 scale equivalence, genuine physical fusion, physical completeness, or experience. Those remain separate theorem burdens.
+
+[Read Proposition 27](docs/proposition_27_partition_lattice_node_aggregation.md). The [P27 theorem map](docs/figures/p27_partition_lattice_node_aggregation.svg), [implementation](src/consciousness_bridge/partition_lattice_node_aggregation.py), and [tests](tests/test_partition_lattice_node_aggregation.py) expose the complete proof-to-code path.
 
 ---
 
@@ -2405,7 +2516,7 @@ P16 supplies the independent product-response null. A higher-level claim must di
 
 ## Scale failure
 
-P17 shows that coarse-graining can erase distinctions. P18 quantifies when reconstruction is good enough to retain the declared response geometry. P25 extends that control to the P11 directed-influence component under fixed intervention semantics and target observation coarse-graining. P26 extends it to P11 partition irreducibility when the observation map is compatible with the declared partition.
+P17 shows that coarse-graining can erase distinctions. P18 quantifies when reconstruction is good enough to retain the declared response geometry. P25 extends that control to the P11 directed-influence component under fixed intervention semantics and target observation coarse-graining. P26 extends it to P11 partition irreducibility when the observation map is compatible with the declared partition. P27 identifies exactly which fine partitions remain meaningful when the node set itself is aggregated and quantifies their remaining irreducibility under aggregation-compatible state maps.
 
 ## Quantum-reduction failure
 
@@ -2482,7 +2593,7 @@ Regenerate the 18 quantum-foundations figures:
 python scripts/generate_quantum_foundations_atlas.py
 ```
 
-The repository includes separate GitHub Actions workflows for both generated atlases. The main-page tests require the full Q01-Q40 sequence, the full QM01-QM18 sequence, the P1-P26 proposition chain, and the canonical scientific maps to remain visible in this README.
+The repository includes separate GitHub Actions workflows for both generated atlases. The main-page tests require the full Q01-Q40 sequence, the full QM01-QM18 sequence, the P1-P27 proposition chain, and the canonical scientific maps to remain visible in this README.
 
 The code audits representation invariance, theory discrimination, feature sufficiency, experimental recovery, finite-error certification, sample complexity, causal response geometry, directed influence, partition irreducibility, compression collisions, temporal metrics, composition, coupling, coarse-graining, scale sufficiency, fundamental residual certification, quantum normalization, uncertainty, decoherence, entropy, entanglement, Bell bounds, trace-distance contraction, figure inventories, documentation integrity, and visual publication quality.
 

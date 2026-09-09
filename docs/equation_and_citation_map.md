@@ -360,11 +360,27 @@ P25 is a physical scale theorem with dependency branch P11 + P18. It does not by
 | \(\rho(P)=\rho(P_{\pi})=0\Rightarrow\kappa_c=\kappa_f\) | exact preservation on the declared two-law family | proved corollary | [P26](proposition_26_partition_irreducibility_scale_certification.md) |
 | \(\kappa_f>\theta+\rho(P)+\rho(P_{\pi})\Rightarrow\kappa_c>\theta\) | threshold-preservation margin | proved corollary | [P26](proposition_26_partition_irreducibility_scale_certification.md) |
 
-P26 is an observation-scale theorem for one declared partition. It does not yet define the induced map between fine and coarse partition lattices under physical node aggregation, and it does not establish physical completeness or experience.
+P26 is an observation-scale theorem for one declared partition. P27 supplies the missing node-aggregation transport criterion.
 
 ---
 
-# 21. Candidate consciousness-theory feature families
+# 21. P27 - partition-lattice transport under node aggregation
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(a:V_f\twoheadrightarrow V_c\), \(F_c=a^{-1}(c)\) | declared surjective node aggregation and its fibers | repository definition | [P27](proposition_27_partition_lattice_node_aggregation.md) |
+| \(F_c\subseteq B\) for some \(B\in\pi_f\) for every \(c\) | aggregation-saturation criterion | necessary and sufficient for exact partition descent | [P27](proposition_27_partition_lattice_node_aggregation.md) |
+| \(L_a(\pi_c)=\{a^{-1}(C):C\in\pi_c\}\) | lifts coarse partitions to saturated fine partitions | repository construction | [P27](proposition_27_partition_lattice_node_aggregation.md) |
+| \(\operatorname{Part}(V_c)\simeq_{\mathrm{lattice}}\operatorname{Part}_{\mathrm{sat}}(V_f;a)\) | exact surviving partition-lattice correspondence | proved | [P27](proposition_27_partition_lattice_node_aggregation.md) |
+| \((C_a)_\#P_{\pi_f}=((C_a)_\#P)_{\pi_c}\) | productization commutes with aggregation-compatible state mapping for descendable partitions | proved | [P27](proposition_27_partition_lattice_node_aggregation.md) |
+| \(\kappa_c(\pi_c)\le\kappa_f(L_a\pi_c)\) | node aggregation cannot increase corresponding partition irreducibility | proved by TV contraction | P17; [P27](proposition_27_partition_lattice_node_aggregation.md) |
+| \(0\le\kappa_f-\kappa_c\le\rho(P)+\rho(P_{\pi_f})\) | reconstruction-controlled irreducibility loss after node aggregation | proved by P18 applied to the response/product pair | P18; [P27](proposition_27_partition_lattice_node_aggregation.md) |
+
+P27 distinguishes failure of partition semantics from loss of partition signal. It does not yet transport intervention channels or directed influence through source-node aggregation and does not establish physical completeness or experience.
+
+---
+
+# 22. Candidate consciousness-theory feature families
 
 The following are source-grounded translations into generic feature notation. They are not claims that each named theory reduces to one scalar or one universally agreed implementation.
 
@@ -381,7 +397,7 @@ Detailed caveats and source roles are maintained in [Candidate Theory Families](
 
 ---
 
-# 22. Citation discipline
+# 23. Citation discipline
 
 A result is cited as a repository result when the bridge-specific statement, construction, or counterexample is introduced here.
 

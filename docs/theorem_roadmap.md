@@ -2,7 +2,7 @@
 
 This roadmap records the current proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge.
 
-![P1-P26 theorem roadmap](figures/theorem_roadmap.svg)
+![P1-P27 theorem roadmap](figures/theorem_roadmap.svg)
 
 ---
 
@@ -36,6 +36,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P24](proposition_24_anytime_adaptive_refinement_certification.md) | summable alpha spending plus countable union control | repeated-look adaptive refinement and finite stopping-time validity | proved anytime-valid theorem |
 | [P25](proposition_25_directed_influence_scale_certification.md) | P11 influence plus P18 reconstruction distortion | directed-influence preservation and edge-margin certification across target observation scale | proved physical scale theorem |
 | [P26](proposition_26_partition_irreducibility_scale_certification.md) | P11 partition productization plus P17 contraction and P18 reconstruction | partition-irreducibility preservation and margin certification under block-compatible observation | proved physical scale theorem |
+| [P27](proposition_27_partition_lattice_node_aggregation.md) | surjective node quotient plus partition saturation, lattice transport, P17 contraction, and P18 reconstruction | exact criterion for surviving partition semantics under node aggregation and quantitative irreducibility control | proved physical scale theorem |
 
 ---
 
@@ -435,8 +436,7 @@ If \(D=R_\#C_\#\) is the P18 reconstruction operator, then
 0\le
 \kappa_f^{u,\tau}(\pi)-\kappa_c^{u,\tau}(\pi)
 \le
-\rho(P^{u,\tau})+
-ho(P_{\pi}^{u,\tau}).
+\rho(P^{u,\tau})+\rho(P_{\pi}^{u,\tau}).
 }
 \]
 
@@ -445,6 +445,48 @@ Exact reconstruction of both laws gives exact preservation. A fine margin larger
 The theorem does not yet transport the entire partition lattice through physical node aggregation. It certifies one declared partition under observation-compatible scale change.
 
 Direct proof: [Proposition 26](proposition_26_partition_irreducibility_scale_certification.md). Implementation: [partition_irreducibility_scale_certification.py](../src/consciousness_bridge/partition_irreducibility_scale_certification.py). Tests: [test_partition_irreducibility_scale_certification.py](../tests/test_partition_irreducibility_scale_certification.py).
+
+## P27 - partition-lattice transport under node aggregation
+
+Let \(a:V_f\twoheadrightarrow V_c\) be a surjective node map. A fine partition \(\pi_f\) descends exactly when every aggregation fiber lies wholly within one fine block:
+
+\[
+\boxed{
+\pi_f\text{ descends}
+\iff
+\forall c\in V_c\;\exists B\in\pi_f:\;a^{-1}(c)\subseteq B.
+}
+\]
+
+Coarse partitions and aggregation-saturated fine partitions are in bijection through lift and descent, and the correspondence preserves refinement, meet, and join:
+
+\[
+\boxed{
+\operatorname{Part}(V_c)
+\simeq_{\mathrm{lattice}}
+\operatorname{Part}_{\mathrm{sat}}(V_f;a).
+}
+\]
+
+For an aggregation-compatible state map \(C_a\), partition productization commutes with pushforward for every descendable partition. Therefore
+
+\[
+\boxed{
+\kappa_c(\pi_c)\le\kappa_f(L_a\pi_c)
+}
+\]
+
+and P18 gives
+
+\[
+\boxed{
+0\le\kappa_f-\kappa_c\le\rho(P)+\rho(P_{\pi_f}).
+}
+\]
+
+P27 separates structural non-descendability from ordinary information loss. It does not yet transport intervention channels or directed influence through source-node aggregation.
+
+Direct proof: [Proposition 27](proposition_27_partition_lattice_node_aggregation.md). Implementation: [partition_lattice_node_aggregation.py](../src/consciousness_bridge/partition_lattice_node_aggregation.py). Tests: [test_partition_lattice_node_aggregation.py](../tests/test_partition_lattice_node_aggregation.py).
 
 ---
 

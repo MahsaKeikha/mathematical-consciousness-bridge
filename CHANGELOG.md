@@ -2,6 +2,22 @@
 
 This changelog records theorem-level scientific releases. Definitions, proofs, implementations, tests, figures, and documentation remain linked from the main research page.
 
+## 0.27.0 - 2026-09-09
+
+### Proposition 27 - partition-lattice transport under node aggregation
+
+- Introduced an explicit surjective node-aggregation map \(a:V_f\twoheadrightarrow V_c\) and its fine aggregation fibers.
+- Proved that a fine partition has an exact coarse descent if and only if every aggregation fiber lies wholly inside one fine partition block.
+- Proved that coarse partitions are in one-to-one correspondence with aggregation-saturated fine partitions through inverse lift/descent maps.
+- Proved preservation of refinement order, meet, and join, yielding a lattice isomorphism between \(\operatorname{Part}(V_c)\) and the saturated sublattice of \(\operatorname{Part}(V_f)\).
+- Defined aggregation-compatible state maps that distinguish node-count reduction from within-fiber state compression.
+- Proved partition-product commutation for descendable partitions under aggregation-compatible state maps.
+- Proved irreducibility contraction across node aggregation and inherited the P18 reconstruction bound \(0\le\kappa_f-\kappa_c\le\rho(P)+\rho(P_{\pi_f})\).
+- Added exact-preservation and complete-loss examples, separating structural non-descendability from observational attenuation.
+- Added executable mathematics, nine dedicated tests, a publication theorem map, main-paper integration, navigation, provenance, release guards, and synchronized 0.27.0 metadata.
+- Corrected the P26 README and theorem-roadmap transcription of the second reconstruction term from a malformed `ho(...)` token to \(\rho(...)\).
+- Preserved the boundary that intervention aggregation, directed influence under source aggregation, full P11 scale equivalence, physical completeness, genuine physical fusion, and experience remain open.
+
 ## 0.26.0 - 2026-09-09
 
 ### Proposition 26 - partition-irreducibility scale certification
