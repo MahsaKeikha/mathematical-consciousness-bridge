@@ -1,8 +1,8 @@
-# Proposition 13: pairwise IRCG component insufficiency and irredundancy
+# Proposition 13: pairwise causal-structure component insufficiency and irredundancy
 
 ## 1. Purpose
 
-Proposition 12 proves that each major component of Intervention-Resolved Causal Geometry (IRCG) is individually insufficient to reconstruct the three-component physical fingerprint
+Proposition 12 proves that each major component of the intervention-resolved causal-structure candidate is individually insufficient to reconstruct the three-component physical fingerprint
 
 \[
 \boxed{
@@ -37,7 +37,7 @@ Proposition 13 asks the stronger minimality question:
 
 The answer is **no** for the explicit finite audit domain constructed below.
 
-The theorem is a component-level minimality result for the labeled IRCG fingerprint. It does not claim that the full raw IRCG object has been proved globally minimal among all possible mathematical representations, and it does not attach an experiential interpretation to IRCG.
+The theorem is a component-level minimality result for the labeled causal-structure fingerprint. It does not claim that the full raw physical object has been proved globally minimal among all possible mathematical representations, and it does not attach an experiential interpretation to the candidate.
 
 ---
 
@@ -88,7 +88,7 @@ F_C=g\circ H
 
 on that domain.
 
-Therefore, to show that all three IRCG components are pairwise irredundant, it is enough to construct one collision for each omitted component.
+Therefore, to show that all three components are pairwise irredundant, it is enough to construct one collision for each omitted component.
 
 ---
 
@@ -227,7 +227,7 @@ For \(u_0\), total variation from the uniform product distribution is
 \frac34.
 \]
 
-For \(u_1\), the corresponding value is \(1/4\). Since IRCG partition irreducibility takes the supremum over interventions,
+For \(u_1\), the corresponding value is \(1/4\). Since partition irreducibility takes the supremum over interventions,
 
 \[
 \boxed{
@@ -541,21 +541,21 @@ where \(X\preceq Y\) means that \(X\) is deterministically reconstructible from 
 - response geometry cannot be omitted while retaining only directed influence and partition irreducibility;
 - directed influence cannot be omitted while retaining only response geometry and partition irreducibility;
 - partition irreducibility cannot be omitted while retaining only response geometry and directed influence;
-- the three-component labeled IRCG fingerprint is therefore pairwise irredundant on the domain.
+- the three-component labeled causal-structure fingerprint is therefore pairwise irredundant on the domain.
 
 **Not established by Proposition 13:**
 
-- global minimality of the full raw IRCG object over every possible physical domain;
+- global minimality of the full raw causal-structure object over every possible physical domain;
 - uniqueness of the particular \((\mathcal G,\mathcal A,\mathcal K)\) representation;
 - that no alternative lower-dimensional sufficient representation exists after additional physical assumptions are imposed;
 - bridge completeness with respect to experiential structure;
-- an experiential interpretation of any IRCG component.
+- an experiential interpretation of any component.
 
 ---
 
 # 8. Why the result matters for the larger bridge program
 
-P11 introduced IRCG as a deliberately rich physical candidate. P12 showed that no single major component is enough. P13 now shows that **no pair is enough on the controlled domain either**.
+P11 introduced a deliberately rich physical candidate. P12 showed that no single major component is enough. P13 now shows that **no pair is enough on the controlled domain either**.
 
 This blocks three tempting reductions:
 
@@ -583,8 +583,8 @@ The next structural question is no longer whether the three components are pairw
 
 The next frontier is **temporal continuation and composition**:
 
-1. define time-indexed IRCG states \(F_{\mathrm{IRCG}}(p_t)\);
-2. determine what makes two neighboring states part of one persistent physical process;
-3. characterize how IRCG behaves under independent composition and controlled coupling;
+1. define time-indexed causal-structure states \(F_{\mathrm{causal}}(p_t)\);
+2. determine what makes neighboring states part of one persistent physical process;
+3. characterize how the causal structure behaves under independent composition and controlled coupling;
 4. connect those temporal/compositional laws to the certified moving-subsystem machinery of Spatiotemporal Observer Mathematics;
-5. only then test whether the resulting persistent causal geometry improves cross-state and cross-substrate bridge discrimination.
+5. test whether the resulting persistent causal structure improves cross-state and cross-substrate bridge discrimination.
