@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1000" viewBox="0 0 1800 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Spaceflight and extreme-environment relevance map</title>
+  <desc id="desc">A research map connecting spaceflight hazards to cognition, neurobehavioral performance, measurable physical variables, and consciousness-relevant research questions without treating spaceflight studies as evidence for a consciousness bridge.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0 0 L0 8 L10 4 z" fill="#64748b"/></marker>
+    <style>
+      .title{font:700 40px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 18px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .head{font:700 17px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 13.5px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .eq{font:600 15px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .cite{font:600 12px Inter,Segoe UI,Arial,sans-serif;fill:#64748b}
+      .arrow{stroke:#64748b;stroke-width:2.1;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1800" height="1000" fill="#ffffff"/>
+  <text x="75" y="65" class="title">Spaceflight &amp; Extreme-Environment Relevance</text>
+  <text x="75" y="101" class="subtitle">NASA human-performance research provides high-value stress tests for cognition and physical state monitoring; it is an application domain, not a consciousness bridge theory.</text>
+
+  <rect x="75" y="165" width="360" height="250" rx="18" fill="#f7fbff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="103" y="201" class="head">Spaceflight hazards</text>
+  <text x="103" y="240" class="body">• sleep loss and circadian disruption</text>
+  <text x="103" y="267" class="body">• isolation and confinement</text>
+  <text x="103" y="294" class="body">• altered gravity and sensorimotor change</text>
+  <text x="103" y="321" class="body">• radiation and CNS risk</text>
+  <text x="103" y="348" class="body">• workload, autonomy, and communication delay</text>
+  <text x="103" y="385" class="cite">NASA Human Research Program / HFBP</text>
+
+  <rect x="505" y="165" width="360" height="250" rx="18" fill="#fffdf5" stroke="#ca8a04" stroke-width="1.5"/>
+  <text x="533" y="201" class="head">Physical and behavioral observables</text>
+  <text x="533" y="240" class="body">sleep / actigraphy / circadian phase</text>
+  <text x="533" y="267" class="body">reaction time / memory / attention</text>
+  <text x="533" y="294" class="body">spatial cognition / sensorimotor state</text>
+  <text x="533" y="321" class="body">workload / error / team performance</text>
+  <text x="533" y="348" class="body">physiological and neural measurements</text>
+  <text x="533" y="385" class="cite">NASA standards, risk records, ARCHeR</text>
+
+  <rect x="935" y="165" width="360" height="250" rx="18" fill="#f5fcfd" stroke="#0891b2" stroke-width="1.5"/>
+  <text x="963" y="201" class="head">Mathematical research interface</text>
+  <text x="963" y="240" class="eq">xₜ₊₁ = F(xₜ,uₜ,wₜ)</text>
+  <text x="963" y="276" class="body">time-varying state estimation</text>
+  <text x="963" y="303" class="body">change-point and temporal-path metrics</text>
+  <text x="963" y="330" class="body">intervention-response comparison</text>
+  <text x="963" y="357" class="body">finite-error certification under drift</text>
+  <text x="963" y="385" class="cite">repository P14-P17 + statistical dynamics</text>
+
+  <rect x="1365" y="165" width="360" height="250" rx="18" fill="#faf8ff" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="1393" y="201" class="head">Consciousness-science relevance</text>
+  <text x="1393" y="240" class="body">Extreme environments perturb alertness, cognition,</text>
+  <text x="1393" y="263" class="body">perception, and behavioral performance.</text>
+  <text x="1393" y="303" class="body">They can test whether proposed physical markers</text>
+  <text x="1393" y="326" class="body">remain stable, degrade, or dissociate.</text>
+  <text x="1393" y="365" class="eq">stress test ≠ consciousness proof</text>
+
+  <path class="arrow" d="M435 290 H493"/><path class="arrow" d="M865 290 H923"/><path class="arrow" d="M1295 290 H1353"/>
+
+  <rect x="75" y="485" width="780" height="300" rx="18" fill="#f5fcf8" stroke="#059669" stroke-width="1.5"/>
+  <text x="103" y="523" class="head">Research questions that legitimately connect the fields</text>
+  <text x="103" y="565" class="body">1. Do perturbational-response fingerprints remain invariant across altered gravity, sleep loss, and workload?</text>
+  <text x="103" y="600" class="body">2. Which temporal changes exceed measurement uncertainty rather than reflecting normal operational variation?</text>
+  <text x="103" y="635" class="body">3. Can causal-structure measures distinguish vigilance loss from deeper changes in conscious level?</text>
+  <text x="103" y="670" class="body">4. Which markers are substrate-specific, environment-sensitive, or robust under extreme conditions?</text>
+  <text x="103" y="705" class="body">5. Can human-system monitoring detect state transitions without confusing workload or fatigue with consciousness?</text>
+  <text x="103" y="748" class="eq">measured state change → model comparison → falsifiable interpretation</text>
+
+  <rect x="905" y="485" width="820" height="300" rx="18" fill="#f8fafc" stroke="#64748b" stroke-width="1.5"/>
+  <text x="933" y="523" class="head">Authoritative spaceflight source roles</text>
+  <text x="933" y="565" class="body">NASA Human Research Program: integrated human health and performance research.</text>
+  <text x="933" y="600" class="body">Human Factors &amp; Behavioral Performance: sleep, cognition, team performance, human-robot interaction.</text>
+  <text x="933" y="635" class="body">Behavioral Health Risk Evidence: cognitive and behavioral outcomes under exploration hazards.</text>
+  <text x="933" y="670" class="body">Sleep/Circadian Risk: alertness, fatigue, errors, and neurobehavioral performance.</text>
+  <text x="933" y="705" class="body">ARCHeR: Artemis-era activity, sleep, well-being, and behavioral-performance measurements.</text>
+  <text x="933" y="748" class="cite">NASA HRP • NASA HFBP • NTRS evidence reports • Artemis research</text>
+
+  <rect x="75" y="845" width="1650" height="80" rx="15" fill="#0f172a"/>
+  <text x="105" y="881" style="font:600 15px Inter,Segoe UI,Arial,sans-serif;fill:#e2e8f0">Scope rule: spaceflight evidence is used to study perturbations of cognition, perception, physiology, and operational state. It is not cited as support for a specific physical-to-experiential bridge.</text>
+  <text x="105" y="907" style="font:400 13.5px Inter,Segoe UI,Arial,sans-serif;fill:#94a3b8">This separation makes the spaceflight layer scientifically useful without overstating what NASA human-performance research establishes.</text>
+</svg>
