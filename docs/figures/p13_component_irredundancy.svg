@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Proposition 13 pairwise component irredundancy</title>
+  <desc id="desc">A visual map showing that each two-component projection of the causal-structure fingerprint admits a collision and therefore cannot reconstruct the omitted component on the declared audit domain.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0 L0 6 L9 3 z" fill="#475569"/></marker>
+    <style>
+      .title{font:700 30px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .sub{font:400 15px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .head{font:700 16px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .eq{font:600 16px 'Times New Roman',serif;fill:#0f172a}
+      .tag{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.5px}
+      .arrow{stroke:#475569;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="760" fill="#f8fafc"/>
+  <text x="55" y="55" class="title">P13 - Pairwise Component Irredundancy</text>
+  <text x="55" y="83" class="sub">Each component carries physical information that the other two fail to reconstruct on an explicit finite audit domain.</text>
+
+  <rect x="330" y="120" width="540" height="118" rx="20" fill="#0f172a"/>
+  <text x="365" y="156" style="font:700 19px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Full causal-structure fingerprint</text>
+  <text x="365" y="193" style="font:600 20px 'Times New Roman',serif;fill:#e2e8f0">F_C(p) = (G_p, A_p, K_p)</text>
+  <text x="365" y="220" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#94a3b8">response geometry + directed influence + partition irreducibility</text>
+
+  <path class="arrow" d="M600 238 V286"/>
+
+  <g>
+    <rect x="55" y="305" width="330" height="240" rx="18" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+    <text x="80" y="340" class="head">Keep (G, A), omit K</text>
+    <text x="80" y="374" class="eq">G_L = G_H,   A_L = A_H</text>
+    <text x="80" y="405" class="body">Both systems have whole-response</text>
+    <text x="80" y="426" class="body">distance 1 and zero marginal influence.</text>
+    <text x="80" y="460" class="eq">K_L = 1/2,   K_H = 3/4</text>
+    <rect x="80" y="487" width="195" height="28" rx="9" fill="#d1fae5"/>
+    <text x="94" y="506" class="tag" fill="#047857">K IS IRREDUNDANT</text>
+  </g>
+
+  <g>
+    <rect x="435" y="305" width="330" height="240" rx="18" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="460" y="340" class="head">Keep (G, K), omit A</text>
+    <text x="460" y="374" class="eq">G_0 = G_+,   K_0 = K_+</text>
+    <text x="460" y="405" class="body">Both systems have response distance 1</text>
+    <text x="460" y="426" class="body">and partition irreducibility 1/2.</text>
+    <text x="460" y="460" class="eq">A_0 = 0,   A_+ != 0</text>
+    <rect x="460" y="487" width="195" height="28" rx="9" fill="#ede9fe"/>
+    <text x="474" y="506" class="tag" fill="#6d28d9">A IS IRREDUNDANT</text>
+  </g>
+
+  <g>
+    <rect x="815" y="305" width="330" height="240" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+    <text x="840" y="340" class="head">Keep (A, K), omit G</text>
+    <text x="840" y="374" class="eq">A_D = A_S,   K_D = K_S</text>
+    <text x="840" y="405" class="body">Both systems have zero marginal influence</text>
+    <text x="840" y="426" class="body">and partition irreducibility 1/2.</text>
+    <text x="840" y="460" class="eq">G_D != G_S</text>
+    <rect x="840" y="487" width="195" height="28" rx="9" fill="#ffedd5"/>
+    <text x="854" y="506" class="tag" fill="#c2410c">G IS IRREDUNDANT</text>
+  </g>
+
+  <path class="arrow" d="M600 545 V592"/>
+  <rect x="180" y="605" width="840" height="95" rx="18" fill="#fff1f2" stroke="#e11d48" stroke-width="1.5"/>
+  <text x="210" y="637" class="head">Proposition 13 conclusion on the declared audit domain D13</text>
+  <text x="210" y="669" class="eq">(G,A), (G,K), and (A,K) are all incomplete projections of F_C.</text>
+  <text x="210" y="692" class="body">Any future reduction must add assumptions strong enough to prove the omitted component becomes reconstructible.</text>
+</svg>
