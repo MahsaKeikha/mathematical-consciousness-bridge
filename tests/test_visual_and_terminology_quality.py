@@ -31,6 +31,7 @@ FIGURES = (
     "p25_directed_influence_scale_certification.svg",
     "p26_partition_irreducibility_scale_certification.svg",
     "p27_partition_lattice_node_aggregation.svg",
+    "p28_intervention_node_aggregation_compatibility.svg",
     "universal_proof_ladder.svg",
     "theory_comparison_map.svg",
 )
