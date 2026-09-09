@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Mathematical Consciousness Bridge research architecture</title>
+  <desc id="desc">A layered diagram from physical realization through physical quotient, candidate physical signature, bridge, experiential quotient, observable predictions, finite-data certification, and falsification.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .title{font:700 31px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 16px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .boxTitle{font:700 17px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .boxText{font:400 13.5px Inter,Segoe UI,Arial,sans-serif;fill:#334155}
+      .eq{font:600 14px 'Times New Roman',serif;fill:#0f172a}
+      .tag{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.6px}
+      .arrow{stroke:#334155;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="720" fill="#f8fafc"/>
+  <text x="60" y="58" class="title">Mathematical Consciousness Bridge - Research Architecture</text>
+  <text x="60" y="87" class="subtitle">The bridge from physics to experience is treated as a separate mathematical and empirical problem.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="55" y="145" rx="18" width="190" height="145" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+    <text x="75" y="176" class="boxTitle">1. Physical realization</text>
+    <text x="75" y="203" class="eq">p = (X, D, I, O)</text>
+    <text x="75" y="231" class="boxText">state space + dynamics</text>
+    <text x="75" y="252" class="boxText">interventions + observables</text>
+    <rect x="75" y="265" rx="8" width="84" height="20" fill="#bae6fd"/>
+    <text x="86" y="279" class="tag" fill="#0369a1">PHYSICS</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="300" y="145" rx="18" width="190" height="145" fill="#ecfeff" stroke="#0891b2" stroke-width="1.5"/>
+    <text x="320" y="176" class="boxTitle">2. Physical quotient</text>
+    <text x="320" y="203" class="eq">Q_P = P / ~_P</text>
+    <text x="320" y="231" class="boxText">remove coordinate, label,</text>
+    <text x="320" y="252" class="boxText">unit and encoding artifacts</text>
+    <rect x="320" y="265" rx="8" width="104" height="20" fill="#cffafe"/>
+    <text x="331" y="279" class="tag" fill="#0e7490">P1 INVARIANCE</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="545" y="130" rx="18" width="250" height="175" fill="#ecfdf5" stroke="#059669" stroke-width="1.8"/>
+    <text x="565" y="163" class="boxTitle">3. Candidate physical signature</text>
+    <text x="565" y="190" class="eq">F_IRCG(p) = [C_p]_isomorphism</text>
+    <text x="565" y="218" class="boxText">response geometry G_p</text>
+    <text x="565" y="239" class="boxText">directed influence A_p</text>
+    <text x="565" y="260" class="boxText">partition landscape K_p</text>
+    <rect x="565" y="273" rx="8" width="112" height="20" fill="#d1fae5"/>
+    <text x="576" y="287" class="tag" fill="#047857">P11-P12 TESTED</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="850" y="145" rx="18" width="190" height="145" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="870" y="176" class="boxTitle">4. Bridge structure</text>
+    <text x="870" y="203" class="eq">B-bar : Q_P -> Q_E</text>
+    <text x="870" y="231" class="boxText">explicit bridge principles</text>
+    <text x="870" y="252" class="boxText">must be independently tested</text>
+    <rect x="870" y="265" rx="8" width="73" height="20" fill="#ede9fe"/>
+    <text x="881" y="279" class="tag" fill="#6d28d9">OPEN</text>
+  </g>
+
+  <path class="arrow" d="M245 218 H292"/>
+  <path class="arrow" d="M490 218 H537"/>
+  <path class="arrow" d="M795 218 H842"/>
+
+  <g filter="url(#shadow)">
+    <rect x="850" y="385" rx="18" width="190" height="135" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+    <text x="870" y="416" class="boxTitle">5. Experiential quotient</text>
+    <text x="870" y="444" class="eq">Q_E = E / ~_E</text>
+    <text x="870" y="472" class="boxText">formal experiential structure</text>
+    <rect x="870" y="493" rx="8" width="109" height="20" fill="#ffedd5"/>
+    <text x="881" y="507" class="tag" fill="#c2410c">CORE OPEN PROBLEM</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="545" y="385" rx="18" width="250" height="135" fill="#fefce8" stroke="#ca8a04" stroke-width="1.5"/>
+    <text x="565" y="416" class="boxTitle">6. Observable predictions</text>
+    <text x="565" y="444" class="eq">P_T^(pi,q)</text>
+    <text x="565" y="472" class="boxText">theory-specific probability laws</text>
+    <rect x="565" y="493" rx="8" width="126" height="20" fill="#fef9c3"/>
+    <text x="576" y="507" class="tag" fill="#a16207">P2-P4 IDENTIFIABLE</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="300" y="385" rx="18" width="190" height="135" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+    <text x="320" y="416" class="boxTitle">7. Finite-data recovery</text>
+    <text x="320" y="444" class="eq">gamma_S &gt; 4 epsilon</text>
+    <text x="320" y="472" class="boxText">explicit confidence + trials</text>
+    <rect x="320" y="493" rx="8" width="118" height="20" fill="#dcfce7"/>
+    <text x="331" y="507" class="tag" fill="#15803d">P7-P10 CERTIFIED</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="55" y="385" rx="18" width="190" height="135" fill="#fff1f2" stroke="#e11d48" stroke-width="1.5"/>
+    <text x="75" y="416" class="boxTitle">8. Falsification</text>
+    <text x="75" y="444" class="eq">counterexample / no-go</text>
+    <text x="75" y="472" class="boxText">representation, identifiability,</text>
+    <text x="75" y="493" class="boxText">composition, temporal, empirical</text>
+  </g>
+
+  <path class="arrow" d="M945 290 V377"/>
+  <path class="arrow" d="M842 452 H803"/>
+  <path class="arrow" d="M537 452 H498"/>
+  <path class="arrow" d="M292 452 H253"/>
+
+  <rect x="55" y="580" rx="16" width="985" height="85" fill="#0f172a"/>
+  <text x="80" y="612" style="font:700 16px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Strongest target</text>
+  <text x="80" y="642" style="font:600 18px 'Times New Roman',serif;fill:#e2e8f0">physical first principles + validated bridge premises + finite-data certification  ->  formal experiential property</text>
+  <text x="1055" y="614" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;fill:#94a3b8">STATUS</text>
+  <text x="1055" y="641" style="font:700 15px Inter,Segoe UI,Arial,sans-serif;fill:#fbbf24">OPEN</text>
+</svg>
