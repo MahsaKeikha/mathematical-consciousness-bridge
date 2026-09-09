@@ -87,7 +87,6 @@ def test_zero_empirical_residual_is_not_certified_positive():
 
 
 def test_record_level_certificate_recovers_binary_residual():
-    records = ["placeholder"]
     records = [("omega0", "same_t", "e0")] * 5000 + [
         ("omega1", "same_t", "e1")
     ] * 5000
