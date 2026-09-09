@@ -2,7 +2,7 @@
 
 This map records the role of each source in the Mathematical Consciousness Bridge program. Sources are not treated as interchangeable evidence for one theory. Each is cited for the specific conceptual, mathematical, statistical, physical, or empirical contribution it supplies.
 
-For the equation-level provenance map, see [Equation and Citation Map](equation_and_citation_map.md).
+For equation-level provenance, see [Equation and Citation Map](equation_and_citation_map.md).
 
 ---
 
@@ -14,7 +14,7 @@ Max Tegmark, "Consciousness as a State of Matter," *Chaos, Solitons & Fractals* 
 
 **Role:** conceptual background for observer factorization, information, integration, independence, dynamics, and physically distinguished subsystem structure.
 
-**Use here:** motivates part of the physical-subsystem problem and the companion observer program. It does not provide the physical-to-experiential bridge developed in this repository.
+**Use here:** motivates part of the physical-subsystem problem and the companion observer program. It does not supply the physical-to-experiential bridge developed in this repository.
 
 ---
 
@@ -24,9 +24,9 @@ Max Tegmark, "Consciousness as a State of Matter," *Chaos, Solitons & Fractals* 
 
 Larissa Albantakis et al., "Integrated information theory (IIT) 4.0: Formulating the properties of phenomenal existence in physical terms," *PLOS Computational Biology* 19(10): e1011465. DOI: 10.1371/journal.pcbi.1011465.
 
-**Role:** major explicit architecture beginning from phenomenal axioms and developing physical postulates, intrinsic cause-effect structure, maximality, distinctions, and relations.
+**Role:** a major explicit architecture beginning from phenomenal axioms and developing physical postulates, intrinsic cause-effect structure, maximality, distinctions, and relations.
 
-**Use here:** treated as a serious competing bridge family and as motivation for making the phenomenal-to-physical step explicit. IIT is not reduced here to a scalar statement that "more integration means more consciousness."
+**Use here:** treated as a serious competing bridge family and as motivation for making the phenomenal-to-physical step explicit. IIT is not reduced here to a scalar statement that more integration means more consciousness.
 
 ## Kleiner 2019
 
@@ -72,7 +72,7 @@ George A. Mashour, Pieter Roelfsema, Jean-Pierre Changeux, and Stanislas Dehaene
 
 **Role:** contemporary GNW synthesis emphasizing ignition, recurrent processing, and global availability.
 
-**Use here:** motivates time-resolved, distributed perturbational influence as a physical structure worth measuring in IRCG without treating broadcast alone as sufficient.
+**Use here:** motivates time-resolved distributed perturbational influence as a physical structure worth measuring in the intervention-resolved causal-structure candidate without treating broadcast alone as sufficient.
 
 ## Changeux and Farisco 2026
 
@@ -88,7 +88,7 @@ Victor A. F. Lamme, "Towards a true neural stance on consciousness," *Trends in 
 
 **Role:** recurrent-processing account emphasizing recurrent neural interactions.
 
-**Use here:** source for the RPT comparison family and motivation for testing recurrent perturbational return paths in IRCG.
+**Use here:** source for the RPT comparison family and motivation for testing recurrent perturbational return paths in the causal-structure candidate.
 
 ---
 
@@ -146,7 +146,7 @@ Andrew W. Corcoran et al., "Integrated information and predictive processing the
 
 ---
 
-# 7. Perturbational evidence motivating IRCG
+# 7. Perturbational evidence motivating the causal-structure candidate
 
 ## Casali et al. 2013
 
@@ -154,7 +154,7 @@ Adenauer G. Casali et al., "A theoretically based index of consciousness indepen
 
 **Role:** perturbational-complexity work using direct cortical perturbation and distributed EEG response to distinguish a range of conscious and unconscious conditions.
 
-**Use here:** motivates measuring controlled perturbation-response structure directly rather than relying only on passive observations. IRCG does not identify one PCI scalar with its bridge.
+**Use here:** motivates measuring controlled perturbation-response structure directly rather than relying only on passive observations. The present candidate does not identify one perturbational-complexity scalar with the physical-to-experiential bridge.
 
 ## Maschke et al. 2024
 
@@ -182,7 +182,7 @@ Andrea I. Luppi et al., "Convergent transcriptomic and connectomic controllers o
 
 **Role:** cross-species work connecting anesthesia-related changes in information integration to large-scale dynamical control and biological organization.
 
-**Use here:** motivates the IRCG emphasis on perturbational influence and controllability-like physical response structure rather than integration alone.
+**Use here:** motivates the causal-structure candidate's emphasis on perturbational influence and controllability-like response structure rather than integration alone.
 
 ---
 
@@ -230,7 +230,7 @@ Mahsa Keikha, *Spatiotemporal Observer Mathematics*.
 
 **Role:** candidate physical-subsystem identification layer: moving boundaries, integration, insulation, persistence, transport, identifiability, temporal calibration, and finite-sample measurement certification.
 
-**Use here:** can supply a certified physical subsystem or world-tube as an input to IRCG and the bridge layer. The subsystem theorem and the experiential bridge remain separate logical statements.
+**Use here:** can supply a certified physical subsystem or world-tube as an input to the intervention-resolved causal-structure candidate and the bridge layer. The subsystem theorem and the experiential bridge remain separate logical statements.
 
 ---
 
@@ -248,8 +248,9 @@ Mahsa Keikha, *Spatiotemporal Observer Mathematics*.
 | P8 | metric triangle inequality | finite measurement uncertainty |
 | P9 | Hoeffding + union bounds | explicit trials for signature recovery |
 | P10 | finite protocol optimization | multimodal experiment selection |
-| P11 | TV geometry, product measures, graph cycles, causal interventions | PCI, IIT, GNWT/RPT, synergistic integration, controllability |
-| P12 | factorization/collision logic | tests whether complexity, recurrence, influence, or irreducibility summaries overcompress the physical candidate |
+| P11 | TV geometry, product measures, graph cycles, causal interventions | perturbational complexity, IIT, GNWT/RPT, synergistic integration, controllability |
+| P12 | factorization/collision logic | tests whether geometry, influence, irreducibility, recurrence, or scalar summaries overcompress the physical candidate |
+| P13 | pairwise projection collisions | tests whether any two major candidate components reconstruct the third |
 
 ---
 
