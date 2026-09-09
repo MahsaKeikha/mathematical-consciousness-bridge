@@ -3,6 +3,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 README = ROOT / "README.md"
 PROGRAM = ROOT / "docs" / "fundamental_theory_consciousness_program.md"
+STOCHASTIC = ROOT / "docs" / "stochastic_fundamental_bridge.md"
 MAP = ROOT / "docs" / "figures" / "fundamental_theory_consciousness_map.svg"
 
 
@@ -40,6 +41,18 @@ def test_program_defines_exact_factorization_failure_and_controls():
     assert "R_{E|T}" in text
     assert "No-free-metaphysics rule" in text
     assert "The last possibility matters" in text
+
+
+def test_stochastic_bridge_defines_conditional_information_residual():
+    text = STOCHASTIC.read_text(encoding="utf-8")
+
+    assert "Markov kernel" in text
+    assert "E\\perp\\!\\!\\!\\perp\\Omega\\mid T" in text
+    assert "I(E;\\Omega\\mid T)=0" in text
+    assert "\\mathcal I_{\\perp}^{\\mathrm{fund}}" in text
+    assert "I(E;Z\\mid T)" in text
+    assert "omitted physical variable" in text
+    assert "would automatically prove" in text
 
 
 def test_fundamental_theory_map_is_valid_svg_with_scientific_boundary():
