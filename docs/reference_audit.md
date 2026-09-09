@@ -10,6 +10,7 @@ This audit records the source class and bibliographic metadata for references th
 | Takayanagi, 2025 | *Physical Review Letters* 134, 240001. DOI: [10.1103/pg4r-fy8n](https://doi.org/10.1103/pg4r-fy8n) | quantum-information perspective on emergent holographic spacetime | peer-reviewed essay in a physics journal |
 | Maldacena, 1998 | *Advances in Theoretical and Mathematical Physics* 2, 231-252. DOI: [10.1023/A:1026654312961](https://doi.org/10.1023/A:1026654312961) | holographic duality background | peer-reviewed theoretical physics article |
 | Kleiner, 2020 | *Entropy* 22, 609. DOI: [10.3390/e22060609](https://doi.org/10.3390/e22060609) | mathematical formalization of consciousness models and experiential spaces | peer-reviewed mathematical consciousness paper |
+| Lee, 2013 | *Introduction to Smooth Manifolds*, 2nd ed. DOI: [10.1007/978-1-4419-9982-5](https://doi.org/10.1007/978-1-4419-9982-5) | standard differential and rank background used in the P19 local obstruction | standard scholarly monograph |
 | Cogitate Consortium et al., 2025 | *Nature* 642, 133-142. DOI: [10.1038/s41586-025-08888-1](https://doi.org/10.1038/s41586-025-08888-1) | adversarial empirical testing of IIT and GNWT predictions | peer-reviewed empirical neuroscience article |
 | Campbell, Owhadi, Sauvageau, and Watkinson, 2017 | *International Journal of Quantum Foundations* 3, 78-99; [arXiv:1703.00058](https://arxiv.org/abs/1703.00058) | historical example of a falsifiable simulation-test proposal | speculative antecedent, not established fundamental physics |
 

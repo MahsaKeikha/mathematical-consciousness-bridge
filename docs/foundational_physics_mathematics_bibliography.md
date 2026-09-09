@@ -83,6 +83,18 @@ Nihat Ay, Jurgen Jost, Hong Van Le, and Lorenz Schwachhofer, *Information Geomet
 
 ---
 
+# 2.1 Differential topology and smooth maps
+
+## Lee 2013
+
+John M. Lee, *Introduction to Smooth Manifolds*, 2nd ed., Graduate Texts in Mathematics 218, Springer, 2013. DOI: [10.1007/978-1-4419-9982-5](https://doi.org/10.1007/978-1-4419-9982-5).
+
+**Role:** standard reference for smooth manifolds, differentials, the chain rule, rank, submersions, immersions, and local smooth-map structure.
+
+**Repository use:** mathematical background for the differential rank obstruction in Proposition 19. The P19 statement itself is proved in this repository from the chain rule and does not originate in this text.
+
+---
+
 # 3. Thermodynamics and physics of information
 
 ## Landauer 1961

@@ -785,11 +785,22 @@ If \(\Psi_E=g\circ\Psi_T\), then necessarily \(d_{\mathrm{TOE}}^{\perp}=0\). A c
 
 ## Scientific anchors
 
-The fundamental-theory layer is motivated by peer-reviewed work showing that quantum information can constrain questions about gravity and emergent spacetime: Jacobson's entanglement-equilibrium derivation of the semiclassical Einstein equation, holographic quantum error-correcting-code models, recent information-theoretic quantum-gravity test programs, and holographic spacetime/entanglement relations. The experiential side is kept independent using mathematical consciousness frameworks and adversarial empirical theory testing.
+The fundamental-theory layer is connected to external literature through explicit source roles. These papers motivate mathematical and experimental directions. None is cited as a proof of consciousness.
+
+| Source | Role in this repository | Direct record |
+| --- | --- | --- |
+| Jacobson, 2016 | entanglement-equilibrium route connecting quantum information and semiclassical spacetime dynamics | [DOI 10.1103/PhysRevLett.116.201101](https://doi.org/10.1103/PhysRevLett.116.201101) |
+| Pastawski, Yoshida, Harlow, and Preskill, 2015 | holographic quantum error correction and bulk-boundary structure | [DOI 10.1007/JHEP06(2015)149](https://doi.org/10.1007/JHEP06(2015)149) |
+| Marletto and Vedral, 2025 | information-theoretic methods for laboratory tests relevant to quantum gravity | [DOI 10.1103/RevModPhys.97.015006](https://doi.org/10.1103/RevModPhys.97.015006) |
+| Takayanagi, 2025 | quantum-information perspective on emergent holographic spacetime | [DOI 10.1103/pg4r-fy8n](https://doi.org/10.1103/pg4r-fy8n) |
+| Kleiner, 2020 | mathematical formalization of consciousness models and experiential spaces | [DOI 10.3390/e22060609](https://doi.org/10.3390/e22060609) |
+| Cogitate Consortium et al., 2025 | adversarial empirical testing of predictions from IIT and GNWT | [DOI 10.1038/s41586-025-08888-1](https://doi.org/10.1038/s41586-025-08888-1) |
+
+The evidential classification and bibliographic metadata for these sources are maintained in the [Reference Audit](docs/reference_audit.md). The broader physics and mathematical foundation is maintained in the [Foundational Bibliography](docs/foundational_physics_mathematics_bibliography.md).
 
 ## Where *My Big TOE* fits
 
-Thomas W. Campbell's *My Big TOE* proposes that consciousness is fundamental and physical reality is virtual. Those broad claims are **not treated as established scientific facts here**. Campbell, Owhadi, Sauvageau, and Watkinson did publish a narrower simulation-theory experiment proposal based on explicit finite-resource assumptions and wave/particle tests. That work is included only as a **speculative, falsifiable antecedent**, not as a premise of the present framework.
+Thomas W. Campbell's *My Big TOE* proposes that consciousness is fundamental and physical reality is virtual. Those broad claims are **not treated as established scientific facts here**. Campbell, Owhadi, Sauvageau, and Watkinson published a narrower simulation-theory experiment proposal based on explicit finite-resource assumptions and wave/particle tests. The paper is available as [arXiv:1703.00058](https://arxiv.org/abs/1703.00058). It is included only as a **speculative, falsifiable antecedent**, not as a premise of the present framework.
 
 The scientific rule is simple: an additional primitive must change a measurable prediction, improve out-of-sample explanatory power, resolve a proved factorization failure, or produce a new falsifiable invariant. Otherwise it is not an identifiable new component of reality.
 

@@ -363,11 +363,26 @@ The theorem establishes the exact mathematical **form of the sufficiency test**.
 
 ---
 
-# 10. Computational audit
+# 10. Scientific provenance and direct audit path
 
-The implementation is in
+P19 combines repository-original sufficiency statements with standard mathematical ingredients. The lineage is explicit:
 
-`src/consciousness_bridge/fundamental_physical_sufficiency.py`.
+| Ingredient | Status in P19 | Direct source |
+| --- | --- | --- |
+| factorization through fibers | proved here for the declared maps | [P19 proof on this page](#2-p19a---exact-factorization-theorem), with earlier bridge-factorization structure in [P5](proposition_5_feature_sufficiency.md) |
+| conditional mutual information and conditional independence | standard finite-alphabet information theory applied here | [Cover and Thomas 2006](foundational_physics_mathematics_bibliography.md#cover-and-thomas-2006) |
+| differential, chain rule, and rank | standard smooth-map mathematics applied here | [Lee 2013](foundational_physics_mathematics_bibliography.md#lee-2013) |
+| physical interpretation limits | repository scientific-boundary rule | [Citation and Reference Policy](citation_and_reference_policy.md) |
+| empirical burden | open scientific program | [Falsification Program](falsification_program.md) |
+| fundamental-theory context | open candidate-theory interface | [Fundamental Theory to Consciousness](fundamental_theory_consciousness_program.md) |
+
+The theorem does not inherit a consciousness ontology from any of these references. The experiential descriptor remains an independently specified target whose scientific validity must be established separately.
+
+---
+
+# 11. Computational audit
+
+The implementation is [fundamental_physical_sufficiency.py](../src/consciousness_bridge/fundamental_physical_sufficiency.py), with claim-level regression tests in [test_fundamental_physical_sufficiency.py](../tests/test_fundamental_physical_sufficiency.py).
 
 The tests cover:
 

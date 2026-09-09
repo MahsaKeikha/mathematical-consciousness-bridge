@@ -235,15 +235,15 @@ The pushforward, total variation, and triangle inequality are standard mathemati
 
 | Equation or object | Role | Status | Primary provenance |
 | --- | --- | --- | --- |
-| \(T:\mathcal M\to\mathcal Q_T\) | declared physical descriptor on a candidate fundamental state space | repository abstraction | P19 |
+| \(T:\mathcal M\to\mathcal Q_T\) | declared physical descriptor on a candidate fundamental state space | repository abstraction | [P19](proposition_19_fundamental_physical_sufficiency.md) |
 | \(E:\mathcal M\to\mathcal Q_E\) | independently defined target descriptor | repository abstraction; experiential instantiation remains open | P19 |
 | \(E=B_T\circ T\) iff \(E\) is constant on every fiber of \(T\) | exact deterministic physical-sufficiency criterion | proved | P19; standard quotient and factorization logic |
-| \(T(\Omega)=T(\Omega')\) and \(E(\Omega)\ne E(\Omega')\) | exact no-factorization witness relative to the declared \(T\) | proved | P19 |
-| \(E\perp\!\!\!\perp\Omega\mid T\) | stochastic physical-sufficiency condition | standard conditional-independence form applied here | P19; Cover and Thomas 2006 |
-| \(I(E;\Omega\mid T)=0\) | finite-alphabet information criterion equivalent to conditional independence | standard information-theoretic identity applied here | Cover and Thomas 2006; P19 |
-| \(I(E;\Omega\mid T)=H(E\mid T)\) for deterministic \(E=E(\Omega)\) | deterministic-target corollary | proved from standard entropy identities | P19; Cover and Thomas 2006 |
-| \(\operatorname{rank}D(T,E)=\operatorname{rank}DT\) under local smooth factorization | necessary differential condition | proved by the chain rule | P19; standard differential calculus |
-| \(d_\perp=\operatorname{rank}D(T,E)-\operatorname{rank}DT>0\) | sufficient local no-factorization witness | proved | P19 |
+| \(T(\Omega)=T(\Omega')\) and \(E(\Omega)\ne E(\Omega')\) | exact no-factorization witness relative to the declared \(T\) | proved | [P19](proposition_19_fundamental_physical_sufficiency.md) |
+| \(E\perp\!\!\!\perp\Omega\mid T\) | stochastic physical-sufficiency condition | standard conditional-independence form applied here | [P19](proposition_19_fundamental_physical_sufficiency.md); [Cover and Thomas 2006](foundational_physics_mathematics_bibliography.md#cover-and-thomas-2006) |
+| \(I(E;\Omega\mid T)=0\) | finite-alphabet information criterion equivalent to conditional independence | standard information-theoretic identity applied here | [Cover and Thomas 2006](foundational_physics_mathematics_bibliography.md#cover-and-thomas-2006); [P19](proposition_19_fundamental_physical_sufficiency.md) |
+| \(I(E;\Omega\mid T)=H(E\mid T)\) for deterministic \(E=E(\Omega)\) | deterministic-target corollary | proved from standard entropy identities | [P19](proposition_19_fundamental_physical_sufficiency.md); [Cover and Thomas 2006](foundational_physics_mathematics_bibliography.md#cover-and-thomas-2006) |
+| \(\operatorname{rank}D(T,E)=\operatorname{rank}DT\) under local smooth factorization | necessary differential condition | proved by the chain rule | [P19](proposition_19_fundamental_physical_sufficiency.md); [Lee 2013](foundational_physics_mathematics_bibliography.md#lee-2013) |
+| \(d_\perp=\operatorname{rank}D(T,E)-\operatorname{rank}DT>0\) | sufficient local no-factorization witness | proved | [P19](proposition_19_fundamental_physical_sufficiency.md) |
 
 P19 is a theorem about sufficiency relative to a declared physical descriptor. A residual first indicates that the declared descriptor may be incomplete. It is not by itself evidence for a nonphysical substance, a new spacetime dimension, or a failure of quantum mechanics.
 
