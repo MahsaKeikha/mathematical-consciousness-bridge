@@ -19,6 +19,7 @@ def test_core_research_documents_exist():
         root / "docs" / "proposition_8_robust_signature_recovery.md",
         root / "docs" / "proposition_9_categorical_sample_complexity.md",
         root / "docs" / "proposition_10_robust_experiment_design.md",
+        root / "docs" / "proposition_11_intervention_resolved_causal_geometry.md",
         root / "docs" / "universal_proof_target.md",
         root / "docs" / "equation_and_citation_map.md",
         root / "docs" / "axiom_ledger.md",
