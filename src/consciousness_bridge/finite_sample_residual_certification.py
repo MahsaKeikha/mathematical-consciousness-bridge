@@ -47,22 +47,27 @@ def binary_entropy(probability: float) -> float:
     )
 
 
-def entropy_continuity_bound(tv_distance: float, alphabet_size: int) -> float:
-    """Bound entropy change for finite distributions separated by TV distance.
+def entropy_continuity_bound(tv_radius: float, alphabet_size: int) -> float:
+    """Bound entropy change when TV distance is at most ``tv_radius``.
 
-    For alphabet size ``d`` and total variation distance ``delta``, the bound is
+    For alphabet size ``d``, the sharp finite-alphabet expression
 
-        h_2(delta) + delta log(d - 1),
+        h_2(delta) + delta log(d - 1)
 
-    capped by the trivial entropy range ``log(d)``. The result is in nats.
+    increases up to ``delta = 1 - 1/d``. When only an upper radius is known,
+    the safe uniform bound is therefore this expression below that threshold
+    and the trivial entropy range ``log(d)`` above it. The result is in nats.
     """
     _validate_alphabet_size(alphabet_size, "alphabet_size")
-    if not 0.0 <= tv_distance <= 1.0:
-        raise ValueError("tv_distance must lie in [0, 1]")
+    if not 0.0 <= tv_radius <= 1.0:
+        raise ValueError("tv_radius must lie in [0, 1]")
     if alphabet_size == 1:
         return 0.0
-    continuity = binary_entropy(tv_distance) + tv_distance * log(alphabet_size - 1)
-    return min(log(alphabet_size), continuity)
+
+    threshold = 1.0 - 1.0 / alphabet_size
+    if tv_radius >= threshold:
+        return log(alphabet_size)
+    return binary_entropy(tv_radius) + tv_radius * log(alphabet_size - 1)
 
 
 def hoeffding_joint_tv_radius(
@@ -77,7 +82,12 @@ def hoeffding_joint_tv_radius(
 
     The returned radius is clipped at one.
     """
-    if isinstance(sample_size, bool) or not isinstance(sample_size, int) or sample_size < 1:
+    invalid_sample_size = (
+        isinstance(sample_size, bool)
+        or not isinstance(sample_size, int)
+        or sample_size < 1
+    )
+    if invalid_sample_size:
         raise ValueError("sample_size must be a positive integer")
     _validate_alphabet_size(alphabet_size, "alphabet_size")
     if not 0.0 < alpha < 1.0:
@@ -142,8 +152,9 @@ def finite_sample_cmi_certificate(
     """Certify a finite-sample interval for population I(E;Omega|T), in nats."""
     max_cmi = maximum_conditional_mutual_information(omega_size, target_size)
     _validate_alphabet_size(physical_size, "physical_size")
-    if estimate < 0.0 or estimate > max_cmi + 1e-12:
+    if estimate < -1e-12 or estimate > max_cmi + 1e-12:
         raise ValueError("estimate must lie in the valid conditional-information range")
+    estimate = min(max_cmi, max(0.0, estimate))
 
     joint_size = omega_size * physical_size * target_size
     tv_radius = hoeffding_joint_tv_radius(sample_size, joint_size, alpha)
@@ -176,7 +187,26 @@ def certify_cmi_from_records(
     alpha: float = 0.05,
 ) -> CMIConfidenceCertificate:
     """Estimate CMI from records and return the Proposition 20 certificate."""
+    _validate_alphabet_size(omega_size, "omega_size")
+    _validate_alphabet_size(physical_size, "physical_size")
+    _validate_alphabet_size(target_size, "target_size")
+
     materialized = list(records)
+    if any(len(record) != 3 for record in materialized):
+        raise ValueError("each record must contain omega, physical, target")
+    if materialized:
+        observed_sizes = (
+            len({record[0] for record in materialized}),
+            len({record[1] for record in materialized}),
+            len({record[2] for record in materialized}),
+        )
+        declared_sizes = (omega_size, physical_size, target_size)
+        if any(
+            observed > declared
+            for observed, declared in zip(observed_sizes, declared_sizes)
+        ):
+            raise ValueError("observed labels exceed the declared alphabet sizes")
+
     weights = empirical_joint_from_records(materialized)
     estimate = conditional_mutual_information(weights)
     return finite_sample_cmi_certificate(
