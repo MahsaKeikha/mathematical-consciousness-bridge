@@ -11,6 +11,7 @@ FIGURES = (
     "information_geometry_response_manifold.svg",
     "conscious_state_measurement_map.svg",
     "spaceflight_extreme_environment_map.svg",
+    "multiscale_physical_hierarchy.svg",
     "causal_structure_anatomy.svg",
     "p12_collision_map.svg",
     "p13_component_irredundancy.svg",
