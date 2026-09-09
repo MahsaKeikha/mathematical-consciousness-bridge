@@ -1,22 +1,95 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="730" viewBox="0 0 1200 730" role="img" aria-labelledby="title desc">
-  <title id="title">Candidate consciousness theory families in a common comparison interface</title>
-  <desc id="desc">IIT, GNWT, recurrent processing, higher-order, predictive/neurorepresentational theories, and the causal-structure candidate are translated into a common feature, bridge, measurement, and experiment interface.</desc>
-  <defs><style>.title{font:700 30px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}.sub{font:400 15px Inter,Segoe UI,Arial,sans-serif;fill:#475569}.name{font:700 16px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}.body{font:400 12.7px Inter,Segoe UI,Arial,sans-serif;fill:#475569}.head{font:700 13px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}.eq{font:600 15px 'Times New Roman',serif;fill:#0f172a}</style></defs>
-  <rect width="1200" height="730" fill="#f8fafc"/>
-  <text x="55" y="55" class="title">Theory-Comparative Interface</text>
-  <text x="55" y="83" class="sub">Competing theories are translated source-faithfully into one mathematical interface so their predictions can be compared rather than rhetorically ranked.</text>
-  <rect x="55" y="112" width="1090" height="82" rx="16" fill="#0f172a"/>
-  <text x="80" y="145" style="font:700 16px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Common theory object</text>
-  <text x="80" y="174" style="font:600 18px 'Times New Roman',serif;fill:#e2e8f0">T_j = (F_j, B_j, M_j, Pi_j) = physical feature family + bridge architecture + measurement interface + experiment class</text>
-  <g><rect x="55" y="235" width="205" height="290" rx="16" fill="#f5f3ff" stroke="#7c3aed"/><text x="75" y="268" class="name">IIT 4.0</text><text x="75" y="296" class="head">Physical focus</text><text x="75" y="317" class="body">intrinsic cause-effect</text><text x="75" y="335" class="body">structure, maximality,</text><text x="75" y="353" class="body">distinctions + relations</text><text x="75" y="386" class="head">Bridge style</text><text x="75" y="407" class="body">phenomenal axioms to</text><text x="75" y="425" class="body">physical postulates</text><text x="75" y="476" class="head">Key exposure</text><text x="75" y="497" class="body">causal/transition structure</text></g>
-  <g><rect x="280" y="235" width="205" height="290" rx="16" fill="#e0f2fe" stroke="#0284c7"/><text x="300" y="268" class="name">GNWT</text><text x="300" y="296" class="head">Physical focus</text><text x="300" y="317" class="body">multilevel workspace,</text><text x="300" y="335" class="body">ignition, amplification,</text><text x="300" y="353" class="body">long-range availability</text><text x="300" y="386" class="head">Bridge style</text><text x="300" y="407" class="body">conscious access/content</text><text x="300" y="425" class="body">with workspace dynamics</text><text x="300" y="476" class="head">Key exposure</text><text x="300" y="497" class="body">timing + broadcast dynamics</text></g>
-  <g><rect x="505" y="235" width="205" height="290" rx="16" fill="#ecfdf5" stroke="#059669"/><text x="525" y="268" class="name">RPT</text><text x="525" y="296" class="head">Physical focus</text><text x="525" y="317" class="body">recurrent processing in</text><text x="525" y="335" class="body">relevant neural circuits</text><text x="525" y="386" class="head">Bridge style</text><text x="525" y="407" class="body">recurrent processing as</text><text x="525" y="425" class="body">central to phenomenal</text><text x="525" y="443" class="body">consciousness</text><text x="525" y="476" class="head">Key exposure</text><text x="525" y="497" class="body">local temporal disruption</text></g>
-  <g><rect x="730" y="235" width="205" height="290" rx="16" fill="#fff7ed" stroke="#ea580c"/><text x="750" y="268" class="name">Higher-order</text><text x="750" y="296" class="head">Physical focus</text><text x="750" y="317" class="body">higher-order relation to</text><text x="750" y="335" class="body">a first-order mental or</text><text x="750" y="353" class="body">representational state</text><text x="750" y="386" class="head">Bridge style</text><text x="750" y="407" class="body">state conscious in virtue</text><text x="750" y="425" class="body">of higher-order relation</text><text x="750" y="476" class="head">Key exposure</text><text x="750" y="497" class="body">first-vs-higher-order dissociation</text></g>
-  <g><rect x="955" y="235" width="190" height="290" rx="16" fill="#fefce8" stroke="#ca8a04"/><text x="975" y="268" class="name">Predictive / NR</text><text x="975" y="296" class="head">Physical focus</text><text x="975" y="317" class="body">hierarchical prediction,</text><text x="975" y="335" class="body">inference, precision,</text><text x="975" y="353" class="body">multimodal representation</text><text x="975" y="386" class="head">Bridge style</text><text x="975" y="407" class="body">heterogeneous; theory-</text><text x="975" y="425" class="body">specific bridge required</text><text x="975" y="476" class="head">Key exposure</text><text x="975" y="497" class="body">prediction + representation</text></g>
-  <rect x="55" y="565" width="1090" height="110" rx="18" fill="#ffffff" stroke="#cbd5e1"/>
-  <text x="80" y="598" class="head">Common mathematical tests applied to every family</text>
-  <text x="80" y="630" class="eq">P2-P4: Are the theories empirically distinguishable?   P5: Is the physical feature sufficient?   P6: Is it complete?</text>
-  <text x="80" y="657" class="body">The comparison layer does not assume that any named theory is correct. It identifies precise places where predictions, feature fibers, or bridge commitments differ.</text>
-  <rect x="55" y="690" width="1090" height="24" rx="8" fill="#fff1f2"/>
-  <text x="70" y="707" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;fill:#be123c;letter-spacing:.4px">THE CAUSAL-STRUCTURE CANDIDATE IS TESTED IN THE SAME FRAMEWORK AND REMAINS SUBJECT TO COUNTEREXAMPLES AND COMPETING-THEORY TESTS.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
+  <title id="title">Candidate consciousness theory families in a common mathematical interface</title>
+  <desc id="desc">Six theory families are summarized by their physical feature family, bridge style, and principal experimental exposure within a common comparison framework.</desc>
+  <defs>
+    <style>
+      .title{font:700 37px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 18px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .name{font:700 19px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .head{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
+      .body{font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#334155}
+      .eq{font:600 17px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .divider{stroke:#cbd5e1;stroke-width:1}
+    </style>
+  </defs>
+
+  <rect width="1600" height="980" fill="#ffffff"/>
+  <text x="70" y="64" class="title">Theory-Comparative Interface</text>
+  <text x="70" y="96" class="subtitle">Competing theories are translated into the same mathematical categories without reducing them to slogans or a single scalar mechanism.</text>
+
+  <rect x="70" y="135" width="1460" height="100" rx="14" fill="#0f172a"/>
+  <text x="100" y="173" style="font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Common theory object</text>
+  <text x="100" y="211" style="font:600 19px Georgia,'Times New Roman',serif;fill:#e2e8f0">T_j = (F_j, B_j, M_j, Pi_j) = physical feature family + bridge architecture + measurement interface + experiment class</text>
+
+  <!-- Row 1 -->
+  <rect x="70" y="285" width="460" height="245" rx="16" fill="#faf8ff" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="98" y="322" class="name">Integrated Information Theory 4.0</text>
+  <line x1="98" y1="338" x2="502" y2="338" class="divider"/>
+  <text x="98" y="369" class="head">PHYSICAL FEATURE FAMILY</text>
+  <text x="98" y="397" class="body">Intrinsic cause-effect structure, maximal substrate,</text>
+  <text x="98" y="420" class="body">distinctions, relations, and intrinsic information.</text>
+  <text x="98" y="455" class="head">BRIDGE STYLE</text>
+  <text x="98" y="483" class="body">Phenomenal axioms mapped to physical postulates.</text>
+  <text x="98" y="512" class="head">KEY EXPERIMENTAL EXPOSURE</text>
+  <text x="98" y="540" class="body">Causal and transition structure under interventions.</text>
+
+  <rect x="570" y="285" width="460" height="245" rx="16" fill="#f7fbff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="598" y="322" class="name">Global Neuronal Workspace Theory</text>
+  <line x1="598" y1="338" x2="1002" y2="338" class="divider"/>
+  <text x="598" y="369" class="head">PHYSICAL FEATURE FAMILY</text>
+  <text x="598" y="397" class="body">Multilevel workspace organization, ignition,</text>
+  <text x="598" y="420" class="body">amplification, and long-range availability.</text>
+  <text x="598" y="455" class="head">BRIDGE STYLE</text>
+  <text x="598" y="483" class="body">Conscious access/content associated with workspace dynamics.</text>
+  <text x="598" y="512" class="head">KEY EXPERIMENTAL EXPOSURE</text>
+  <text x="598" y="540" class="body">Timing, report, large-scale and multilevel neural dynamics.</text>
+
+  <rect x="1070" y="285" width="460" height="245" rx="16" fill="#f5fcf8" stroke="#059669" stroke-width="1.5"/>
+  <text x="1098" y="322" class="name">Recurrent Processing Theory</text>
+  <line x1="1098" y1="338" x2="1502" y2="338" class="divider"/>
+  <text x="1098" y="369" class="head">PHYSICAL FEATURE FAMILY</text>
+  <text x="1098" y="397" class="body">Recurrent processing in relevant sensory and</text>
+  <text x="1098" y="420" class="body">neural circuits.</text>
+  <text x="1098" y="455" class="head">BRIDGE STYLE</text>
+  <text x="1098" y="483" class="body">Recurrent processing proposed as central to experience.</text>
+  <text x="1098" y="512" class="head">KEY EXPERIMENTAL EXPOSURE</text>
+  <text x="1098" y="540" class="body">Local temporal disruption and recurrent interactions.</text>
+
+  <!-- Row 2 -->
+  <rect x="70" y="570" width="460" height="245" rx="16" fill="#fffaf7" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="98" y="607" class="name">Higher-Order Approaches</text>
+  <line x1="98" y1="623" x2="502" y2="623" class="divider"/>
+  <text x="98" y="654" class="head">PHYSICAL / REPRESENTATIONAL FEATURE FAMILY</text>
+  <text x="98" y="682" class="body">A theory-specific higher-order relation to a</text>
+  <text x="98" y="705" class="body">first-order mental or representational state.</text>
+  <text x="98" y="740" class="head">BRIDGE STYLE</text>
+  <text x="98" y="768" class="body">Consciousness in virtue of an appropriate higher-order relation.</text>
+  <text x="98" y="797" class="head">KEY EXPERIMENTAL EXPOSURE</text>
+  <text x="98" y="825" class="body">First-order versus higher-order dissociations.</text>
+
+  <rect x="570" y="570" width="460" height="245" rx="16" fill="#fffdf5" stroke="#ca8a04" stroke-width="1.5"/>
+  <text x="598" y="607" class="name">Predictive / Neurorepresentational Families</text>
+  <line x1="598" y1="623" x2="1002" y2="623" class="divider"/>
+  <text x="598" y="654" class="head">PHYSICAL FEATURE FAMILY</text>
+  <text x="598" y="682" class="body">Hierarchical prediction, inference, precision,</text>
+  <text x="598" y="705" class="body">and multimodal representation.</text>
+  <text x="598" y="740" class="head">BRIDGE STYLE</text>
+  <text x="598" y="768" class="body">Heterogeneous; the bridge remains theory specific.</text>
+  <text x="598" y="797" class="head">KEY EXPERIMENTAL EXPOSURE</text>
+  <text x="598" y="825" class="body">Prediction, precision, representation, and hierarchy.</text>
+
+  <rect x="1070" y="570" width="460" height="245" rx="16" fill="#f5fcfd" stroke="#0891b2" stroke-width="1.5"/>
+  <text x="1098" y="607" class="name">Intervention-Resolved Causal Structure</text>
+  <line x1="1098" y1="623" x2="1502" y2="623" class="divider"/>
+  <text x="1098" y="654" class="head">PHYSICAL FEATURE FAMILY</text>
+  <text x="1098" y="682" class="body">Response geometry, directed interventional influence,</text>
+  <text x="1098" y="705" class="body">and partition irreducibility.</text>
+  <text x="1098" y="740" class="head">BRIDGE STYLE</text>
+  <text x="1098" y="768" class="body">No experiential bridge is assumed at the current stage.</text>
+  <text x="1098" y="797" class="head">KEY EXPERIMENTAL EXPOSURE</text>
+  <text x="1098" y="825" class="body">Controlled perturbation, recovery, and counterexamples.</text>
+
+  <rect x="70" y="865" width="1460" height="70" rx="14" fill="#f8fafc" stroke="#94a3b8"/>
+  <text x="100" y="895" class="head">Common mathematical tests</text>
+  <text x="100" y="922" class="body">P2-P4: empirical distinguishability and experiment design.  P5: physical-feature sufficiency.  P6: bridge completeness.  New candidate theories are evaluated by the same standards as established theories.</text>
 </svg>
