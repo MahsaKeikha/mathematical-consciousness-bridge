@@ -159,7 +159,42 @@ This is a component-level irredundancy result on the declared finite domain, not
 
 ---
 
-# 8. Candidate consciousness-theory feature families
+# 8. P14 - temporal continuation on the causal-structure quotient
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(c=(g,a,k)\) | finite ordered causal-structure fingerprint | repository notation | P14, built from P11-P13 |
+| \(D_w(c,c')=\max\{w_G\|g-g'\|_\infty,w_A\|a-a'\|_\infty,w_K\|k-k'\|_\infty\}\) | fixed-coordinate weighted component metric | repository construction using standard sup-norm metrics | P14; metric background: Burago-Burago-Ivanov |
+| \(\mathcal H\) | finite group of physically admissible fingerprint relabelings acting by isometries | declared physical/modeling assumption | P14 |
+| \(\overline D_w([c],[c'])=\min_{h\in\mathcal H}D_w(c,hc')\) | representation-invariant quotient distance | repository construction; proved metric on orbit space | P14; quotient/metric background: Burago-Burago-Ivanov |
+| \(V_{0:T}=\sum_{t=0}^{T-1}\overline D_w([c_t],[c_{t+1}])\) | cumulative structural path variation | repository construction | P14 |
+| \(J_{0:T}=\max_t\overline D_w([c_t],[c_{t+1}])\) | maximum local structural transition | repository construction | P14 |
+| \(\overline D_w([c_s],[c_t])\le V_{s:t}\) | endpoint/path bound | proved from quotient-metric triangle inequality | P14 |
+| time-dependent relabelings leave \(V\) and \(J\) invariant | representation-invariant temporal continuation | proved | P14 |
+| \([a]\to[b]\to[a]\) with zero endpoint distance but positive path variation | endpoint-only insufficiency counterexample | proved explicit construction | P14 |
+
+Peters-Bauer-Pfister provide dynamical causal-model context and Mashour 2024 supplies biological motivation for treating consciousness-related conditions as evolving dynamical regimes. Neither source supplies the P14 metric or implies that temporal smoothness is consciousness.
+
+---
+
+# 9. P15 - finite-sample temporal certification
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(D_w(c_t,\widehat c_t)\le\varepsilon_t\) simultaneously over time | declared fingerprint-error event | theorem assumption | P15 |
+| \(|\widehat d_{st}-d_{st}|\le\varepsilon_s+\varepsilon_t\) | quotient-distance stability | proved | P15 + P14 metric triangle inequality |
+| \(\max\{0,\widehat d_{st}-\varepsilon_s-\varepsilon_t\}\le d_{st}\le\widehat d_{st}+\varepsilon_s+\varepsilon_t\) | certified interval for true structural change | proved | P15 |
+| \(|\widehat V-V|\le\varepsilon_0+2\sum_{t=1}^{T-1}\varepsilon_t+\varepsilon_T\) | cumulative path-variation perturbation bound | proved | P15 |
+| \(|\widehat J-J|\le\max_t(\varepsilon_t+\varepsilon_{t+1})\) | maximum-step perturbation bound | proved | P15 |
+| lower bound above \(\eta\), upper bound below \(\eta\), otherwise unresolved | three-way threshold certificate | repository decision rule derived from the proved interval | P15 |
+| \(\delta_n(\alpha)=\sqrt{\frac1{2n}\log\frac{2M(T+1)}{\alpha}}\) | simultaneous coordinate radius for the restricted bounded-IID sample-mean model | standard Hoeffding inequality + union bound applied here | Hoeffding 1963; P15 corollary |
+| \(\varepsilon_t=w_{\max}\delta_n(\alpha)\) | translation from coordinate error to weighted max-metric radius in that restricted model | repository corollary | P15 |
+
+The bounded-coordinate corollary is intentionally narrow. It does not assert that every P11 response-geometry, influence, or irreducibility coordinate is a direct IID sample mean; estimator-specific concentration is required outside that special case.
+
+---
+
+# 10. Candidate consciousness-theory feature families
 
 The following are source-grounded translations into generic feature notation. They are not claims that each named theory reduces to one scalar or one universally agreed implementation.
 
@@ -170,13 +205,13 @@ The following are source-grounded translations into generic feature notation. Th
 | RPT | \(\mathcal F_{\mathrm{RPT}}(p)=\) relevant recurrent-processing structure and dynamics | Lamme 2006 |
 | HOT | \(\mathcal F_{\mathrm{HOT}}(p)=\) theory-specific higher-order representational relation | Brown-Lau-LeDoux 2019 |
 | predictive / NR / active-inference families | \(\mathcal F_{\mathrm{PP}}(p)=\) theory-specific predictive, inferential, and representational structure | Seth-Hohwy 2021; Pennartz 2022; Corcoran et al. 2026 |
-| intervention-resolved causal structure | \(F_{\mathrm{causal}}(p)=[\mathfrak C_p]_{\cong}\) | repository-original candidate physical signature | P11-P13 |
+| intervention-resolved causal structure | \(F_{\mathrm{causal}}(p)=[\mathfrak C_p]_{\cong}\) | repository-original candidate physical signature; temporal and finite-error extensions remain physical | P11-P15 |
 
 Detailed caveats and source roles are maintained in [Candidate Theory Families](candidate_theory_families.md) and [Literature Map](literature_map.md).
 
 ---
 
-# 9. Citation discipline
+# 11. Citation discipline
 
 A result is cited as a repository result when the bridge-specific statement, construction, or counterexample is introduced here.
 
