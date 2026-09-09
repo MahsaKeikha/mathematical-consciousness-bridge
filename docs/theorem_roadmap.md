@@ -2,7 +2,7 @@
 
 This roadmap records the current proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge.
 
-![P1-P20 theorem roadmap](figures/theorem_roadmap.svg)
+![P1-P21 theorem roadmap](figures/theorem_roadmap.svg)
 
 ---
 
@@ -30,6 +30,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P18](proposition_18_scale_sufficiency_certification.md) | approximate reconstruction and separation margin | certifies when a coarse scale preserves a declared response family | proved scale-sufficiency theorem |
 | [P19](proposition_19_fundamental_physical_sufficiency.md) | quotient factorization, conditional mutual information, and differential rank obstruction | tests whether an independent target is fixed by the declared physical descriptor | proved physical-sufficiency theorem |
 | [P20](proposition_20_finite_sample_residual_certification.md) | Hoeffding joint-TV concentration plus finite-alphabet entropy continuity | finite-sample confidence interval for the P19 conditional-information residual | proved finite-sample certification theorem |
+| [P21](proposition_21_descriptor_refinement_residual_persistence.md) | nested descriptor factorization and conditional-information chain rule | explicit omitted-physics audit and residual-persistence trajectory | proved descriptor-refinement theorem |
 
 ---
 
@@ -441,7 +442,65 @@ Direct proof: [Proposition 20](proposition_20_finite_sample_residual_certificati
 
 ---
 
-# 10. Dependency chain
+# 10. Descriptor refinement and omitted-physics control: P21
+
+Let \(T_f=f(\Omega)\) refine \(T_c\) through
+
+\[
+\boxed{T_c=c(T_f).}
+\]
+
+For deterministic target collisions, P21 proves
+
+\[
+\boxed{
+\mathcal C(T_f,E)
+\subseteq
+\mathcal C(T_c,E).
+}
+\]
+
+For the P19 stochastic residual
+
+\[
+R(T)=I(E;\Omega\mid T),
+\]
+
+the conditional-information chain rule gives
+
+\[
+\boxed{
+R(T_c)
+=
+I(E;T_f\mid T_c)
++
+R(T_f).
+}
+\]
+
+Therefore
+
+\[
+\boxed{R(T_f)\le R(T_c).}
+\]
+
+For a nested chain \(T_0\preceq\cdots\preceq T_m\),
+
+\[
+\boxed{
+R_0-R_m
+=
+\sum_{k=1}^{m}I(E;T_k\mid T_{k-1}),
+}
+\]
+
+so every residual decrease is assigned exactly to target-relevant information added by one physical refinement step. A positive terminal residual remains descriptor relative; it does not establish physical completeness or a nonphysical ontology.
+
+Direct proof: [Proposition 21](proposition_21_descriptor_refinement_residual_persistence.md). Implementation: [descriptor_refinement_residual.py](../src/consciousness_bridge/descriptor_refinement_residual.py). Tests: [test_descriptor_refinement_residual.py](../tests/test_descriptor_refinement_residual.py).
+
+---
+
+# 11. Dependency chain
 
 \[
 \boxed{
@@ -460,20 +519,22 @@ Direct proof: [Proposition 20](proposition_20_finite_sample_residual_certificati
 &\Downarrow\\
 &\text{P19: population physical sufficiency}\\
 &\Downarrow\\
-&\text{P20: finite-sample residual certification}.
+&\text{P20: finite-sample residual certification}\\
+&\Downarrow\\
+&\text{P21: physical-descriptor refinement + residual persistence}.
 \end{aligned}
 }
 \]
 
 ---
 
-# 11. Current frontier
+# 12. Current frontier
 
 The next structural problems are:
 
 1. extend scale certification from response geometry \(\mathcal G\) to directed influence \(\mathcal A\) under block-compatible coarse maps;
 2. characterize partition-lattice compatibility required to control \(\mathcal K\) across scale;
-3. sharpen P20 beyond the conservative finite-alphabet IID baseline using structured, multinomial, non-IID, and quantum confidence methods with explicit coverage;
+3. derive simultaneous finite-sample confidence accounting across P21 refinement chains, including adaptive refinement and principled stopping rules for physical-completeness audits;
 4. model genuine physical split/merge dynamics where state variables and intervention channels change;
 5. formalize the moving world-tube / causal-structure interface;
 6. normalize temporal geometry under irregular observation time;

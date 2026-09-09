@@ -18,7 +18,7 @@
 
   <rect width="1600" height="1480" fill="#ffffff"/>
   <text x="70" y="62" class="title">Theorem Roadmap - P1 through P21</text>
-  <text x="70" y="94" class="subtitle">The proof chain separates representation, recovery, causal structure, time, composition, scale, sufficiency, finite data, and physical-refinement controls.</text>
+  <text x="70" y="94" class="subtitle">The chain separates representation, recovery, causal structure, time, composition, scale, sufficiency, finite data, and refinement controls.</text>
 
   <rect x="95" y="145" width="420" height="180" rx="18" fill="#eff6ff" stroke="#3b82f6"/>
   <text x="125" y="178" class="label">FOUNDATION · P1-P4</text>
