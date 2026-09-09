@@ -67,4 +67,4 @@ jobs:
           git commit -m "Integrate P20 finite-sample residual certification"
           git push origin HEAD:p20-finite-residual-certification
 
-# third fail-fast integration attempt; the workflow removes itself after success
+# rerun after canonical theorem-roadmap copy was tightened
