@@ -2,32 +2,44 @@
 
 This changelog records theorem-level scientific releases. Definitions, proofs, implementations, tests, figures, and documentation remain linked from the main research page.
 
+## 0.13.0 - 2026-09-09
+
+### Proposition 13 - pairwise component irredundancy
+
+- Proved, on an explicit finite audit domain, that each two-component projection of the intervention-resolved causal-structure fingerprint admits a collision.
+- Constructed one family with matched response geometry and directed influence but different partition irreducibility.
+- Constructed one family with matched response geometry and partition irreducibility but different directed influence.
+- Constructed one family with matched directed influence and partition irreducibility but different response geometry.
+- Established component-level irredundancy of \(\mathcal G\), \(\mathcal A\), and \(\mathcal K\) on the declared audit domain.
+- Added executable pairwise-minimality utilities and claim-level regression tests.
+- Rebuilt the public research figures on larger publication-style canvases with consistent typography, spacing, terminology, and equation presentation.
+- Standardized the codebase and documentation on the term **intervention-resolved causal structure** and the notation \(F_{\mathrm{causal}}\).
+- Removed obsolete acronym-named and geometry-named duplicate files so the repository has one canonical terminology and one canonical path for each research object.
+
 ## 0.12.0 - 2026-09-09
 
-### Proposition 12 - IRCG component insufficiency and minimal-feature audit
+### Proposition 12 - component insufficiency and minimal-feature audit
 
 - Proved a general projection-collision no-go theorem: if a compressed feature identifies two systems that the target signature distinguishes, the target cannot factor through that compression.
-- Constructed realizable collision pairs proving that IRCG response geometry alone, directed marginal influence alone, and partition irreducibility alone are each insufficient to reconstruct the full IRCG object.
-- Added explicit counterexamples showing that response diameter, a minimum irreducibility scalar, and a cycle/no-cycle recurrence flag are not complete descriptors of IRCG.
+- Constructed realizable collision pairs proving that response geometry alone, directed marginal influence alone, and partition irreducibility alone are each insufficient to reconstruct the full intervention-resolved causal structure.
+- Added explicit counterexamples showing that response diameter, a minimum irreducibility scalar, and a cycle/no-cycle recurrence flag are not complete descriptors of the full physical candidate.
 - Added executable minimality-audit utilities and regression tests for projection collisions and completeness on finite declared domains.
-- Added a professional visual research system: research architecture, P1-P12 theorem roadmap, IRCG anatomy, P12 collision map, universal-proof ladder, theory-comparison map, and a dedicated Visual Research Guide.
-- Synchronized the public research narrative with the actual P1-P12 theorem state and v0.12.0 metadata.
-- The P12 scientific suite reaches 60 passing tests; the prior formatting-only CI defect was corrected before this release.
+- Added the first visual research system: research architecture, theorem roadmap, causal-structure anatomy, component-collision map, universal-proof criteria, theory-comparison map, and Visual Research Guide.
+- Synchronized the public research narrative with the P1-P12 theorem state.
 
 ## 0.11.0 - 2026-09-09
 
-### Proposition 11 - Intervention-Resolved Causal Geometry (IRCG)
+### Proposition 11 - intervention-resolved causal structure
 
-- Introduced the first original candidate physical signature in the program as a structured intervention-response object rather than a scalar consciousness score.
+- Introduced the first original candidate physical signature in the program as a structured intervention-response object rather than a scalar score.
 - Defined intervention-conditioned response laws, response pseudometric geometry, directed interventional influence, and the complete partition-irredundancy landscape.
-- Defined the representation-invariant IRCG signature as a compatible isomorphism class of the full causal-response structure.
+- Defined the representation-invariant causal-structure signature as a compatible isomorphism class of the full causal-response structure.
 - Proved invariance under compatible bijective physical reparameterization.
 - Proved an exact partition-factorization certificate using total-variation distance to the product of partition marginals.
 - Proved the feedforward no-return certificate for acyclic directed perturbational influence graphs.
 - Added executable finite discrete tools for response geometry, marginals, partition product models, directed influence, cycle detection, and outcome relabeling.
 - Added claim-level tests separating response differentiation, partition irreducibility, and recurrent directed influence.
 - Expanded the physical evidence base with perturbational-complexity, synergistic-information, network-controllability, causal-modeling, and non-neural causal-emergence sources.
-- The Proposition 11 checkpoint passes the test and `ruff` matrix on Python 3.10, 3.11, and 3.12.
 
 ## 0.10.0 - 2026-09-09
 
@@ -42,7 +54,6 @@ This changelog records theorem-level scientific releases. Definitions, proofs, i
 - Added a source-faithful comparison of IIT, GNWT, recurrent-processing, higher-order, predictive-processing, and related bridge families.
 - Expanded the bibliography and equation/citation map to distinguish repository constructions, standard mathematical tools, physical assumptions, and external empirical evidence.
 - Corrected the Proposition 10 controlled example to use explicitly realizable Bernoulli probability laws rather than an abstract pair-distance table.
-- The Proposition 10 checkpoint passes the test and `ruff` matrix on Python 3.10, 3.11, and 3.12.
 
 ## 0.5.0 - 2026-09-09
 
@@ -53,7 +64,6 @@ This changelog records theorem-level scientific releases. Definitions, proofs, i
 - Proved the exact equivalence between positive complete separation and coverage of every distinguishable theory pair.
 - Reduced minimum complete experiment-family design to a finite set-cover problem.
 - Implemented finite maximin and minimum-cover experiment-design utilities.
-- Added claim-level tests; the v0.5.0 checkpoint has 17 tests passing on Python 3.10, 3.11, and 3.12 with `ruff` clean.
 
 ## 0.4.0 - 2026-09-09
 
