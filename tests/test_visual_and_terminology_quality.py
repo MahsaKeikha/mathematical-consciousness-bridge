@@ -8,6 +8,7 @@ FIGURES = (
     "causal_structure_anatomy.svg",
     "p12_collision_map.svg",
     "p13_component_irredundancy.svg",
+    "p14_temporal_continuation.svg",
     "universal_proof_ladder.svg",
     "theory_comparison_map.svg",
 )
