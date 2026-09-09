@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1320" viewBox="0 0 1600 1320" role="img" aria-labelledby="title desc">
+  <title id="title">P28 intervention compatibility under node aggregation</title>
+  <desc id="desc">Theorem map showing matched intervention-pair descent, aggregate target-fiber response, total-variation contraction, and reconstruction-controlled directed influence.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .title{font:700 36px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 17px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .label{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
+      .head{font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .eq{font:600 17px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .arrow{stroke:#64748b;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+
+  <rect width="1600" height="1320" fill="#ffffff"/>
+  <text x="70" y="64" class="title">P28 - Intervention Compatibility Under Node Aggregation</text>
+  <text x="70" y="96" class="subtitle">Transporting P11 directed influence through a changing source and target node set without inventing new intervention physics.</text>
+
+  <rect x="80" y="145" width="430" height="220" rx="18" fill="#eff6ff" stroke="#2563eb"/>
+  <text x="110" y="180" class="label">FINE SOURCE SEMANTICS</text>
+  <text x="110" y="220" class="head">Matched pair families Ei</text>
+  <text x="110" y="262" class="eq">Sf(e) = { i : e ∈ Ei }</text>
+  <text x="110" y="304" class="body">A pair may carry more than one fine source label.</text>
+  <text x="110" y="336" class="body">Those labels are part of the declared experiment design.</text>
+
+  <rect x="585" y="145" width="430" height="220" rx="18" fill="#f5f3ff" stroke="#7c3aed"/>
+  <text x="615" y="180" class="label">SOURCE-LABEL DESCENT</text>
+  <text x="615" y="220" class="head">One pair, at most one coarse source</text>
+  <text x="615" y="262" class="eq">|{a(i): i∈Sf(e)}| ≤ 1</text>
+  <text x="615" y="304" class="eq">e∈Ei∩Ej ⇒ a(i)=a(j)</text>
+  <text x="615" y="336" class="body">Cross-fiber ambiguity blocks exact source descent.</text>
+
+  <rect x="1090" y="145" width="430" height="220" rx="18" fill="#ecfdf5" stroke="#059669"/>
+  <text x="1120" y="180" class="label">COARSE SOURCE FAMILY</text>
+  <text x="1120" y="220" class="head">Inherited pair pooling</text>
+  <text x="1120" y="262" class="eq">Ecᵃ = ⋃i∈a⁻¹(c) Ei</text>
+  <text x="1120" y="304" class="body">Duplicate comparisons are counted once.</text>
+  <text x="1120" y="336" class="body">Pooling does not imply simultaneous perturbation.</text>
+
+  <path class="arrow" d="M510 255 H573"/>
+  <path class="arrow" d="M1015 255 H1078"/>
+
+  <rect x="155" y="445" width="1290" height="215" rx="20" fill="#f8fafc" stroke="#0f172a" stroke-width="1.8"/>
+  <text x="195" y="482" class="label">TARGET NODE AGGREGATION</text>
+  <text x="195" y="522" class="head">Use the full fine target fiber before state compression</text>
+  <text x="195" y="565" class="eq">PFdᵘ,τ = MargFd Pᵘ,τ</text>
+  <text x="760" y="565" class="eq">P̄dᵘ,τ = (gd)# PFdᵘ,τ</text>
+  <text x="195" y="612" class="body">The aggregate target is compared against its complete fine block, not against an arbitrary constituent coordinate.</text>
+
+  <path class="arrow" d="M800 365 V433"/>
+
+  <rect x="80" y="740" width="430" height="230" rx="18" fill="#fff7ed" stroke="#ea580c"/>
+  <text x="110" y="775" class="label">INHERITED FINE BLOCK INFLUENCE</text>
+  <text x="110" y="815" class="head">Same descended pair family</text>
+  <text x="110" y="858" class="eq">Af = sup e∈Ecᵃ ‖PFdᵘ − PFdᵛ‖TV</text>
+  <text x="110" y="902" class="body">The supremum pools inherited comparisons.</text>
+  <text x="110" y="934" class="body">It does not measure within-fiber intervention synergy.</text>
+
+  <rect x="585" y="740" width="430" height="230" rx="18" fill="#f0fdfa" stroke="#0d9488"/>
+  <text x="615" y="775" class="label">COARSE DIRECTED INFLUENCE</text>
+  <text x="615" y="815" class="head">Target-state processing contracts TV</text>
+  <text x="615" y="858" class="eq">Ac = sup e∈Ecᵃ ‖P̄dᵘ − P̄dᵛ‖TV</text>
+  <text x="615" y="902" class="eq">Ac ≤ Af</text>
+  <text x="615" y="934" class="body">A compatible target map cannot create a stronger edge.</text>
+
+  <rect x="1090" y="740" width="430" height="230" rx="18" fill="#fff1f2" stroke="#e11d48"/>
+  <text x="1120" y="775" class="label">P18 RECONSTRUCTION CONTROL</text>
+  <text x="1120" y="815" class="head">Quantitative influence loss</text>
+  <text x="1120" y="858" class="eq">0 ≤ Af − Ac ≤ 2ρc→dᵃ</text>
+  <text x="1120" y="902" class="eq">Af &gt; θ + 2ρ ⇒ Ac &gt; θ</text>
+  <text x="1120" y="934" class="body">Exact target reconstruction gives exact preservation.</text>
+
+  <path class="arrow" d="M800 660 V700 H295 V728"/>
+  <path class="arrow" d="M800 700 V728"/>
+  <path class="arrow" d="M800 700 H1305 V728"/>
+
+  <rect x="155" y="1050" width="1290" height="140" rx="18" fill="#fefce8" stroke="#ca8a04"/>
+  <text x="195" y="1087" class="label">INTERPRETATION GUARD</text>
+  <text x="195" y="1127" class="eq">aggregate source label ≠ new aggregate actuator</text>
+  <text x="195" y="1163" class="body">P28 transports declared matched comparisons. Simultaneous interventions require independently defined protocols and response laws.</text>
+
+  <rect x="80" y="1230" width="1440" height="62" rx="14" fill="#0f172a"/>
+  <text x="115" y="1255" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">BOUNDARY</text>
+  <text x="115" y="1278" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">P28 transports declared comparisons. Full response geometry, P11 scale equivalence, physical completeness, and experience remain open.</text>
+</svg>

@@ -2,7 +2,7 @@
 
 This roadmap records the current proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge.
 
-![P1-P27 theorem roadmap](figures/theorem_roadmap.svg)
+![P1-P28 theorem roadmap](figures/theorem_roadmap.svg)
 
 ---
 
@@ -37,6 +37,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P25](proposition_25_directed_influence_scale_certification.md) | P11 influence plus P18 reconstruction distortion | directed-influence preservation and edge-margin certification across target observation scale | proved physical scale theorem |
 | [P26](proposition_26_partition_irreducibility_scale_certification.md) | P11 partition productization plus P17 contraction and P18 reconstruction | partition-irreducibility preservation and margin certification under block-compatible observation | proved physical scale theorem |
 | [P27](proposition_27_partition_lattice_node_aggregation.md) | surjective node quotient plus partition saturation, lattice transport, P17 contraction, and P18 reconstruction | exact criterion for surviving partition semantics under node aggregation and quantitative irreducibility control | proved physical scale theorem |
+| [P28](proposition_28_intervention_node_aggregation_compatibility.md) | P11 matched-pair source incidence plus P25 target contraction and P27 node aggregation | exact source-label descent and directed-influence certification across aggregate nodes | proved physical scale theorem |
 
 ---
 
@@ -487,6 +488,46 @@ and P18 gives
 P27 separates structural non-descendability from ordinary information loss. It does not yet transport intervention channels or directed influence through source-node aggregation.
 
 Direct proof: [Proposition 27](proposition_27_partition_lattice_node_aggregation.md). Implementation: [partition_lattice_node_aggregation.py](../src/consciousness_bridge/partition_lattice_node_aggregation.py). Tests: [test_partition_lattice_node_aggregation.py](../tests/test_partition_lattice_node_aggregation.py).
+
+## P28 - intervention compatibility under node aggregation
+
+For each matched intervention pair \(e\), let \(S_f(e)=\{i:e\in\mathcal E_i\}\). Exact coarse source labeling exists iff
+
+\[
+\boxed{
+|\{a(i):i\in S_f(e)\}|\le1
+\quad\forall e.
+}
+\]
+
+Then the coarse source family is the inherited union
+
+\[
+\mathcal E_c^a=\bigcup_{i\in a^{-1}(c)}\mathcal E_i.
+\]
+
+For target fiber \(F_d=a^{-1}(d)\), P28 defines the inherited fine block influence and proves
+
+\[
+\boxed{
+A_{c\to d}^{c,a}(\tau)
+\le
+A_{c\to d}^{f,a}(\tau),
+}
+\]
+
+with P18 reconstruction control
+
+\[
+\boxed{
+0\le A_{c\to d}^{f,a}-A_{c\to d}^{c,a}
+\le2\rho_{c\to d}^{a}.
+}
+\]
+
+Pooling inherited intervention pairs does not create a simultaneous aggregate actuator. Full P11 scale equivalence still requires response-geometry and intervention-family alignment.
+
+Direct proof: [Proposition 28](proposition_28_intervention_node_aggregation_compatibility.md). Implementation: [intervention_node_aggregation_compatibility.py](../src/consciousness_bridge/intervention_node_aggregation_compatibility.py). Tests: [test_intervention_node_aggregation_compatibility.py](../tests/test_intervention_node_aggregation_compatibility.py).
 
 ---
 

@@ -2,6 +2,20 @@
 
 This changelog records theorem-level scientific releases. Definitions, proofs, implementations, tests, figures, and documentation remain linked from the main research page.
 
+## 0.28.0 - 2026-09-09
+
+### Proposition 28 - intervention compatibility under node aggregation
+
+- Extended the P25 directed-influence scale branch through the changing node set introduced by P27.
+- Defined the fine source-incidence set of each matched intervention pair and proved the exact condition for unambiguous coarse source descent.
+- Defined canonical coarse source pair families as unions of inherited fine pair families within each aggregation fiber, with duplicate comparisons removed.
+- Explicitly separated aggregate source labeling from any claim of a new simultaneous aggregate actuator.
+- Defined the fine target block as the full response marginal on the target aggregation fiber rather than an arbitrary constituent node.
+- Proved directed-influence contraction under deterministic target-fiber state aggregation.
+- Applied P18 reconstruction to prove \(0\le A_f-A_c\le2\rho\), with exact-preservation and threshold-edge corollaries.
+- Added executable implementation, nine regression tests, a publication theorem map, main-paper integration, roadmap, navigation, provenance, release guards, and synchronized 0.28.0 metadata.
+- Preserved the boundary that response-geometry alignment, genuinely new aggregate interventions, complete P11 scale equivalence, physical completeness, and experience remain open.
+
 ## 0.27.0 - 2026-09-09
 
 ### Proposition 27 - partition-lattice transport under node aggregation

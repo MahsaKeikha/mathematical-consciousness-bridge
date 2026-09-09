@@ -376,11 +376,27 @@ P26 is an observation-scale theorem for one declared partition. P27 supplies the
 | \(\kappa_c(\pi_c)\le\kappa_f(L_a\pi_c)\) | node aggregation cannot increase corresponding partition irreducibility | proved by TV contraction | P17; [P27](proposition_27_partition_lattice_node_aggregation.md) |
 | \(0\le\kappa_f-\kappa_c\le\rho(P)+\rho(P_{\pi_f})\) | reconstruction-controlled irreducibility loss after node aggregation | proved by P18 applied to the response/product pair | P18; [P27](proposition_27_partition_lattice_node_aggregation.md) |
 
-P27 distinguishes failure of partition semantics from loss of partition signal. It does not yet transport intervention channels or directed influence through source-node aggregation and does not establish physical completeness or experience.
+P27 distinguishes failure of partition semantics from loss of partition signal. P28 supplies the matched-intervention source-label transport needed for the directed-influence branch.
 
 ---
 
-# 22. Candidate consciousness-theory feature families
+# 22. P28 - intervention compatibility under node aggregation
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(S_f(e)=\{i:e\in\mathcal E_i\}\) | fine source-incidence set of one matched intervention pair | repository definition | [P28](proposition_28_intervention_node_aggregation_compatibility.md) |
+| \(|\{a(i):i\in S_f(e)\}|\le1\) | exact compatibility criterion for unambiguous coarse source labeling | proved necessary and sufficient | [P28](proposition_28_intervention_node_aggregation_compatibility.md) |
+| \(\mathcal E_c^a=\bigcup_{i\in a^{-1}(c)}\mathcal E_i\) | canonical pooling of inherited matched comparisons | repository construction | [P28](proposition_28_intervention_node_aggregation_compatibility.md) |
+| \(P_{F_d}^{u,\tau}=\operatorname{Marg}_{F_d}P^{u,\tau}\) | complete fine response block represented by aggregate target \(d\) | repository construction from P11 marginalization | P11; [P28](proposition_28_intervention_node_aggregation_compatibility.md) |
+| \(A_{c\to d}^{c,a}\le A_{c\to d}^{f,a}\) | target aggregation cannot increase directed influence for the descended pair family | proved by TV contraction | P17, P25; [P28](proposition_28_intervention_node_aggregation_compatibility.md) |
+| \(0\le A_f-A_c\le2\rho_{c\to d}^{a}\) | reconstruction-controlled aggregate-node influence loss | proved by P18 applied pairwise before the supremum | P18, P25; [P28](proposition_28_intervention_node_aggregation_compatibility.md) |
+| aggregate source label \(\ne\) new aggregate actuator | prevents pair-family pooling from being misread as physical intervention synergy | interpretation boundary | [P28](proposition_28_intervention_node_aggregation_compatibility.md) |
+
+P28 is a theorem about declared intervention comparisons and target response blocks. It does not create simultaneous interventions, establish complete P11 scale equivalence, physical completeness, or experience.
+
+---
+
+# 23. Candidate consciousness-theory feature families
 
 The following are source-grounded translations into generic feature notation. They are not claims that each named theory reduces to one scalar or one universally agreed implementation.
 
@@ -397,7 +413,7 @@ Detailed caveats and source roles are maintained in [Candidate Theory Families](
 
 ---
 
-# 23. Citation discipline
+# 24. Citation discipline
 
 A result is cited as a repository result when the bridge-specific statement, construction, or counterexample is introduced here.
 
