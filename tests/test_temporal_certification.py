@@ -21,8 +21,6 @@ def _actions():
 
 
 def test_distance_interval_contains_known_true_distance_under_valid_radii():
-    true_left = _state(0.0)
-    true_right = _state(0.6)
     estimated_left = _state(0.05)
     estimated_right = _state(0.55)
 
