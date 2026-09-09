@@ -1,10 +1,5 @@
 import pytest
 
-from consciousness_bridge.intervention_causal_geometry import (
-    has_directed_cycle,
-    partition_response_irreducibility,
-    response_diameter,
-)
 from consciousness_bridge.ircg_minimality import (
     geometry_fingerprint,
     influence_fingerprint,
@@ -12,6 +7,11 @@ from consciousness_bridge.ircg_minimality import (
     partition_fingerprint,
     projection_collision,
     projection_is_complete,
+)
+from consciousness_bridge.intervention_causal_geometry import (
+    has_directed_cycle,
+    partition_response_irreducibility,
+    response_diameter,
 )
 
 
