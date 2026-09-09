@@ -1,6 +1,9 @@
 import pytest
 
-from consciousness_bridge import causal_structure_minimality, intervention_causal_structure
+from consciousness_bridge import (
+    causal_structure_minimality,
+    intervention_causal_structure,
+)
 
 DELAY = ("t",)
 INTERVENTIONS = ("u0", "u1")
