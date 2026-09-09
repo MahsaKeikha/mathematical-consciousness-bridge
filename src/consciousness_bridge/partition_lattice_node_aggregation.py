@@ -14,7 +14,6 @@ from __future__ import annotations
 
 from collections.abc import Hashable, Mapping, Sequence
 from dataclasses import dataclass
-from itertools import product
 
 from consciousness_bridge.causal_structure_coarse_graining import (
     pushforward_distribution,
@@ -245,7 +244,10 @@ def aggregation_compatible_coarse_map(
     return result
 
 
-def _partition_indices(partition: Partition, nodes: Sequence[Node]) -> tuple[tuple[int, ...], ...]:
+def _partition_indices(
+    partition: Partition,
+    nodes: Sequence[Node],
+) -> tuple[tuple[int, ...], ...]:
     index = {node: position for position, node in enumerate(nodes)}
     return tuple(tuple(sorted(index[node] for node in block)) for block in partition)
 
@@ -294,36 +296,3 @@ def node_aggregation_partition_certificate(
         additive_loss_bound=bound,
         exact_preservation_certified=bound == 0.0,
     )
-
-
-def product_decoder_from_aggregate_fibers(
-    coarse_outcomes: Sequence[JointOutcome],
-    fiber_decoders: Sequence[Mapping[Hashable, Mapping[Hashable, float]]],
-) -> dict[JointOutcome, dict[JointOutcome, float]]:
-    """Build a factorized decoder over coarse aggregate-node coordinates."""
-    if not coarse_outcomes:
-        raise ValueError("Coarse outcomes must be nonempty.")
-    dimension = len(coarse_outcomes[0])
-    if len(fiber_decoders) != dimension:
-        raise ValueError("One decoder is required per coarse aggregate coordinate.")
-    if any(len(outcome) != dimension for outcome in coarse_outcomes):
-        raise ValueError("All coarse outcomes must have the same dimension.")
-
-    decoder: dict[JointOutcome, dict[JointOutcome, float]] = {}
-    for coarse_outcome in coarse_outcomes:
-        choices: list[list[tuple[Hashable, float]]] = []
-        for index, value in enumerate(coarse_outcome):
-            conditional = fiber_decoders[index].get(value)
-            if not conditional:
-                raise ValueError("Fiber decoder must cover each coarse aggregate state.")
-            choices.append(list(conditional.items()))
-
-        joint: dict[JointOutcome, float] = {}
-        for selected in product(*choices):
-            fine_components = tuple(value for value, _ in selected)
-            probability = 1.0
-            for _, factor in selected:
-                probability *= factor
-            joint[fine_components] = joint.get(fine_components, 0.0) + probability
-        decoder[coarse_outcome] = joint
-    return decoder
