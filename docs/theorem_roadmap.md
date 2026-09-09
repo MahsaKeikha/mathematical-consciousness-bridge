@@ -2,15 +2,36 @@
 
 This roadmap records the current proved theorem chain and the open route toward a scientifically meaningful physical-to-experiential bridge.
 
-The program is deliberately layered. A theorem about a physical feature is not promoted to a theorem about consciousness unless the bridge dependency and empirical evidence are explicit.
+The program is layered deliberately: a theorem about a physical feature is not promoted to an experiential conclusion unless the bridge dependency and empirical evidence are explicit.
+
+![P1-P12 theorem roadmap](figures/theorem_roadmap.svg)
 
 ---
 
-# Layer A. Physical and representational well-definedness
+# 1. Complete proposition index
 
-## Proposition 1 - representation-invariant consciousness bridges
+| Proposition | Mathematical role | Scientific role | Status |
+| --- | --- | --- | --- |
+| [P1](proposition_1_representation_invariance.md) | quotient factorization | representation-independent physical/bridge objects | proved |
+| [P2](proposition_2_bridge_identifiability.md) | total-variation experiment-class discriminability | exact theory non-identifiability criterion | proved |
+| [P3](proposition_3_bridge_equivalence_classes.md) | quotient of theories by observable fingerprint | identifies what an experiment class can actually resolve | proved |
+| [P4](proposition_4_discriminating_experiment_design.md) | maximin and set-cover protocol design | adversarial theory-discriminating experiment design | proved |
+| [P5](proposition_5_feature_sufficiency.md) | bridge factorization through physical features | exact sufficiency/counterexample criterion | proved |
+| [P6](proposition_6_canonical_bridge_signature.md) | canonical bridge quotient | defines the exact completeness target | proved |
+| [P7](proposition_7_experimental_signature_recovery.md) | decoder/fingerprint factorization | exact experimental recoverability/no-go condition | proved |
+| [P8](proposition_8_robust_signature_recovery.md) | deterministic metric perturbation | finite-error signature recovery | proved |
+| [P9](proposition_9_categorical_sample_complexity.md) | Hoeffding + union bound | explicit finite trial requirement | proved |
+| [P10](proposition_10_robust_experiment_design.md) | robust protocol-family optimization | separates useful discrimination from nuisance variation | proved |
+| [P11](proposition_11_intervention_resolved_causal_geometry.md) | structured intervention-response signature | first original candidate physical object | proved construction / candidate |
+| [P12](proposition_12_component_insufficiency.md) | projection-collision no-go theorem | proves simple IRCG reductions lose information | proved minimality/no-go |
 
-A bridge assignment descends uniquely from raw physical descriptions to physical equivalence classes if and only if it is constant on each declared physical-equivalence class:
+---
+
+# 2. Layer A - physical and representational well-definedness
+
+## Proposition 1 - representation invariance
+
+A bridge descends uniquely to the physical quotient if and only if it is constant on physical-equivalence classes:
 
 \[
 \boxed{
@@ -20,30 +41,30 @@ B(p)=B(p').
 }
 \]
 
-Equivalent quotient form:
+Equivalently,
 
 \[
 \bar B:\mathcal P/{\sim_P}\to\mathcal E/{\sim_E}.
 \]
 
-**Scientific role:** prevents coordinate systems, units, encodings, or physically irrelevant relabelings from changing the bridge assignment.
+**Role:** coordinates, units, labels, and other physically irrelevant encodings cannot change the bridge assignment.
 
 ---
 
-# Layer B. Theory identifiability and experimental no-go structure
+# 3. Layer B - theory identifiability and empirical no-go structure
 
-## Proposition 2 - experiment-class bridge identifiability
-
-Defines
+## Proposition 2 - experiment-class identifiability
 
 \[
+\boxed{
 \Delta_\Pi(\mathfrak T_1,\mathfrak T_2;q)
 =
 \sup_{\pi\in\Pi}
 \|P_1^{\pi,q}-P_2^{\pi,q}\|_{\mathrm{TV}}.
+}
 \]
 
-Proves
+The exact non-identifiability condition is
 
 \[
 \boxed{
@@ -54,28 +75,17 @@ P_1^{\pi,q}=P_2^{\pi,q}
 }
 \]
 
-For equal prior probabilities,
+## Proposition 3 - observational theory quotient
 
-\[
-R_\pi^*
-=
-\frac12
-\left(1-\|P_1^{\pi,q}-P_2^{\pi,q}\|_{\mathrm{TV}}\right).
-\]
-
-**Scientific role:** makes empirical distinguishability of bridge theories an exact statistical property.
-
-## Proposition 3 - observational bridge-equivalence classes
-
-Defines the complete observable fingerprint
+With
 
 \[
 \Phi_{\Pi,q}(\mathfrak T)
 =
-(P_{\mathfrak T}^{\pi,q})_{\pi\in\Pi}.
+(P_{\mathfrak T}^{\pi,q})_{\pi\in\Pi},
 \]
 
-Proves
+observational equivalence gives
 
 \[
 \boxed{
@@ -85,11 +95,9 @@ Proves
 }
 \]
 
-**Scientific role:** identifies the empirically accessible object as an observational equivalence class of theories whenever named theories make identical predictions.
+## Proposition 4 - discriminating experiment design
 
-## Proposition 4 - optimal discriminating experiment families
-
-For pairwise protocol separation
+For
 
 \[
 d_{ij}(\pi)
@@ -97,7 +105,7 @@ d_{ij}(\pi)
 \|P_i^{\pi,q}-P_j^{\pi,q}\|_{\mathrm{TV}},
 \]
 
-defines
+define
 
 \[
 U(S)
@@ -106,7 +114,7 @@ U(S)
 \max_{\pi\in S}d_{ij}(\pi).
 \]
 
-Proves
+Then
 
 \[
 \boxed{
@@ -116,15 +124,13 @@ U(S)>0
 }
 \]
 
-Minimum complete finite protocol design is therefore a set-cover problem over distinguishable theory pairs.
-
-**Scientific role:** converts adversarial consciousness-experiment design into an optimization problem.
+Finite complete theory discrimination is therefore a set-cover problem over distinguishable theory pairs.
 
 ---
 
-# Layer C. Physical-feature sufficiency and complete bridge signatures
+# 4. Layer C - physical-feature sufficiency and completeness
 
-## Proposition 5 - physical-feature sufficiency
+## Proposition 5 - feature sufficiency
 
 For
 
@@ -134,8 +140,6 @@ F:\mathcal Q_P\to\mathcal Z,
 \bar B:\mathcal Q_P\to\mathcal Q_E,
 \]
 
-proves the equivalence
-
 \[
 \boxed{
 \bar B=g\circ F
@@ -144,21 +148,11 @@ F(p)=F(p')\Rightarrow\bar B(p)=\bar B(p').
 }
 \]
 
-A single pair satisfying
-
-\[
-F(p)=F(p'),
-\qquad
-\bar B(p)\ne\bar B(p')
-\]
-
-refutes sufficiency on the declared domain.
-
-**Scientific role:** turns the statement "physical feature \(F\) is sufficient for the bridge" into a precise factorization claim with a universal counterexample template.
+A single feature-matched, bridge-different pair refutes sufficiency on the declared domain.
 
 ## Proposition 6 - canonical complete bridge signature
 
-Defines
+Define
 
 \[
 p\sim_Bp'
@@ -172,13 +166,13 @@ and
 C_B(p)=[p]_{\sim_B}.
 \]
 
-Proves
+Then
 
 \[
 \boxed{
 C_B(p)=C_B(p')
 \iff
-\bar B(p)=\bar B(p').
+\bar B(p)=\bar B(p')
 }
 \]
 
@@ -192,17 +186,15 @@ and
 }
 \]
 
-Every bridge-sufficient feature determines the canonical signature; every bridge-complete feature is isomorphic to it on its realized image.
-
-**Scientific role:** gives the exact mathematical target for a complete physical signature of a declared bridge.
+This defines the exact equivalence-class geometry a complete physical signature would need to match.
 
 ---
 
-# Layer D. Experimental recoverability and finite-data certification
+# 5. Layer D - recoverability and finite-data certification
 
 ## Proposition 7 - experimental signature recovery
 
-For the complete experimental fingerprint
+For
 
 \[
 \Psi_\Pi(p)
@@ -210,7 +202,7 @@ For the complete experimental fingerprint
 (P^{\pi,p})_{\pi\in\Pi},
 \]
 
-proves that a target signature \(F_*\) is recoverable exactly when
+a target signature \(F_*\) is recoverable exactly when
 
 \[
 \boxed{
@@ -220,58 +212,27 @@ F_*(p)=F_*(p').
 }
 \]
 
-A signature-different pair with identical observable fingerprints is an exact no-go counterexample for that experiment class.
+## Proposition 8 - robust signature recovery
 
-**Scientific role:** separates existence of a mathematical complete signature from experimental ability to determine it.
-
-## Proposition 8 - robust signature recovery under distribution error
-
-Defines
+Let
 
 \[
-d_S(p,p')
+\gamma_S
 =
-\max_{\pi\in S}
-\|P^{\pi,p}-P^{\pi,p'}\|_{\mathrm{TV}},
+\delta_S-\omega_S,
 \]
 
-within-signature spread \(\omega_S\), between-signature separation \(\delta_S\), and robust gap
+where \(\delta_S\) is minimum between-signature separation and \(\omega_S\) is maximum within-signature spread. If uniform distribution error is at most \(\varepsilon\), exact recovery is guaranteed when
 
 \[
 \boxed{
-\gamma_S=\delta_S-\omega_S.
+\gamma_S>4\varepsilon.
 }
 \]
 
-If
+## Proposition 9 - categorical sample complexity
 
-\[
-\sup_{p,\pi}
-\|\widehat P^{\pi,p}-P^{\pi,p}\|_{\mathrm{TV}}
-\le\varepsilon,
-\]
-
-then
-
-\[
-|\widehat d_S-d_S|\le2\varepsilon.
-\]
-
-If
-
-\[
-\boxed{
-\gamma_S>4\varepsilon,
-}
-\]
-
-an explicit threshold recovers the complete signature partition exactly.
-
-**Scientific role:** establishes the first deterministic finite-error bridge-signature recovery condition.
-
-## Proposition 9 - finite categorical sample complexity
-
-For \(N_P\) physical systems, \(N_\pi\) protocols, categorical alphabet size at most \(K\), and \(n\) IID repetitions per system/protocol cell, a sufficient trial count for exact signature-partition recovery with confidence at least \(1-\alpha\) is
+A sufficient per-cell sample count is
 
 \[
 \boxed{
@@ -284,35 +245,17 @@ n
 }
 \]
 
-**Scientific role:** closes the first end-to-end chain from candidate complete physical signature to explicit finite-data recovery requirement.
+## Proposition 10 - robust protocol design
 
----
-
-# Layer E. Robust protocol design
-
-## Proposition 10 - robust experiment design for signature recovery
-
-For a finite admissible protocol family \(S\), defines
+Define
 
 \[
-\boxed{
-\Gamma(S)=\delta(S)-\omega(S).
-}
+\Gamma(S)
+=
+\delta(S)-\omega(S).
 \]
 
-Under a finite protocol library and finite budget, an optimal family exists and exhaustive finite search returns a global optimum.
-
-For a newly added protocol \(\rho\), defines
-
-\[
-a_\rho(S)=\delta(S\cup\{\rho\})-\delta(S),
-\]
-
-\[
-b_\rho(S)=\omega(S\cup\{\rho\})-\omega(S),
-\]
-
-and proves
+For newly added protocol \(\rho\),
 
 \[
 \boxed{
@@ -322,129 +265,119 @@ a_\rho(S)-b_\rho(S).
 }
 \]
 
-Therefore
-
-\[
-\boxed{
-\Gamma(S\cup\{\rho\})>\Gamma(S)
-\iff
-a_\rho(S)>b_\rho(S).
-}
-\]
-
-A realizable Bernoulli counterexample demonstrates that an added protocol can leave the weakest between-signature separation unchanged while substantially inflating within-signature variation.
-
-At fixed protocol count, maximizing \(\Gamma(S)\) minimizes the current conservative Proposition 9 trial requirement because
-
-\[
-n\propto\Gamma(S)^{-2}.
-\]
-
-**Scientific role:** establishes that multimodal or multi-perturbation measurement should be selected by bridge-relevant separation rather than raw signal abundance.
+Thus an additional modality helps exactly when its between-signature gain exceeds its within-signature inflation.
 
 ---
 
-# Layer F. First original physical candidate
+# 6. Layer E - first original physical candidate
 
-## Proposition 11 - Intervention-Resolved Causal Geometry (IRCG)
+## Proposition 11 - Intervention-Resolved Causal Geometry
 
-For a physical subsystem \(p\), admissible interventions \(u\in\mathcal U_p\), and physical delays \(\tau\in\mathcal T\), define the intervention-conditioned joint response law
+For physical system \(p\), intervention \(u\in\mathcal U_p\), and delay \(\tau\in\mathcal T\), define
 
 \[
 \boxed{
 P_p^{u,\tau}
 =
-\mathcal L(Y_{t+\tau}^V\mid do(u),p).
+\mathcal L(Y_{t+\tau}^{V}\mid do(u),p).
 }
 \]
 
-The intervention-response geometry is
+IRCG retains three complementary structures:
 
 \[
 \boxed{
-d_p^\tau(u,v)
-=
-\|P_p^{u,\tau}-P_p^{v,\tau}\|_{\mathrm{TV}}.
+\mathcal G_p
+\quad\text{response geometry},
+\qquad
+\mathcal A_p
+\quad\text{directed influence},
+\qquad
+\mathcal K_p
+\quad\text{partition irreducibility}.
 }
 \]
 
-Directed interventional influence is
-
-\[
-\boxed{
-A_{ij}^p(\tau)
-=
-\sup_{(u,v)\in\mathcal E_i}
-\|P_{p,j}^{u,\tau}-P_{p,j}^{v,\tau}\|_{\mathrm{TV}}.
-}
-\]
-
-For nontrivial partition \(\pi\), partition response irreducibility is
-
-\[
-\boxed{
-\kappa_p^\tau(\pi)
-=
-\sup_{u\in\mathcal U_p}
-\left\|
-P_p^{u,\tau}
--
-\bigotimes_{B\in\pi}P_{p,B}^{u,\tau}
-\right\|_{\mathrm{TV}}.
-}
-\]
-
-The raw causal object is
-
-\[
-\mathfrak C_p
-=
-(V,\mathcal U_p,\mathcal T,\mathcal G_p,\mathcal A_p,\mathcal K_p),
-\]
-
-and the representation-invariant candidate signature is its compatible isomorphism class
+The representation-invariant signature is
 
 \[
 \boxed{
 F_{\mathrm{IRCG}}(p)
 =
-[\mathfrak C_p]_{\cong}.
+[\mathfrak C_p]_{\cong},
+\qquad
+\mathfrak C_p
+=
+(V,\mathcal U_p,\mathcal T,\mathcal G_p,\mathcal A_p,\mathcal K_p).
 }
 \]
 
-Proposition 11 proves:
+P11 proves compatible-reparameterization invariance, an exact partition-factorization certificate, and a feedforward no-return certificate.
 
-1. invariance under compatible bijective physical reparameterization;
-2. the exact partition-factorization certificate
-   \[
-   \kappa_p^\tau(\pi)=0
-   \iff
-   P_p^{u,\tau}
-   =
-   \bigotimes_{B\in\pi}P_{p,B}^{u,\tau}
-   \quad\forall u;
-   \]
-3. an acyclic directed-influence graph contains no perturbational return loop among distinct physical blocks.
-
-IRCG is a structured physical candidate rather than a scalar consciousness score. Its intended strongest future target is
+The strongest possible future candidate-completeness target is
 
 \[
 F_{\mathrm{IRCG}}(p)=F_{\mathrm{IRCG}}(p')
 \iff
-C_B(p)=C_B(p'),
+C_B(p)=C_B(p').
 \]
 
-but Proposition 11 does not assume or establish that biconditional.
-
-**Scientific role:** provides the first intervention-grounded physical object rich enough to be attacked by the sufficiency, counterexample, recovery, and experiment-design theorems already proved.
+This biconditional is the target being tested, not a premise of P11.
 
 ---
 
-# Current dependency graph
+# 7. Layer F - internal minimality and falsification
+
+## Proposition 12 - component insufficiency
+
+Let \(H\) be a proposed compression of target signature \(F\). If
 
 \[
 \boxed{
-\begin{array}{ccccccccccccc}
+H(x)=H(x')
+\quad\text{but}\quad
+F(x)\ne F(x'),
+}
+\]
+
+then no map \(g\) can satisfy
+
+\[
+F=g\circ H
+\]
+
+on the declared domain.
+
+P12 constructs explicit realizable intervention-response systems proving
+
+\[
+\boxed{
+\mathcal G_p,\quad
+\mathcal A_p,\quad
+\mathcal K_p
+\text{ are each individually insufficient to reconstruct full IRCG.}
+}
+\]
+
+It also constructs collisions for scalar summaries including
+
+\[
+\operatorname{Diam}_p(\tau),
+\qquad
+\kappa_p^*,
+\qquad
+\mathbf 1\{\text{directed cycle exists}\}.
+\]
+
+![P12 constructive collision map](figures/p12_collision_map.svg)
+
+---
+
+# 8. Current dependency graph
+
+\[
+\boxed{
+\begin{array}{ccccccccccccccc}
 P1
 &\to&P5
 &\to&P6
@@ -452,7 +385,8 @@ P1
 &\to&P8
 &\to&P9
 &\to&P10
-\to P11\\
+&\to&P11
+\to P12\\
 &&&&&&\uparrow\\
 P2&\to&P3&\to&P4
 &&\text{experiment design}
@@ -462,55 +396,36 @@ P2&\to&P3&\to&P4
 
 Interpretation:
 
-- P1 determines whether a physical feature or bridge is representation well defined.
-- P5-P6 determine what sufficiency and completeness mean.
-- P2-P4 determine what competing bridge claims can be empirically distinguished and how to design theory-discriminating experiments.
-- P7-P9 determine whether a proposed complete signature can be recovered from finite experiments.
-- P10 chooses protocol families that preserve bridge-relevant separation while suppressing within-signature nuisance variation.
-- P11 introduces the first original physical candidate on which those abstract tests can operate.
+- P1 makes physical features and bridges representation well defined.
+- P2-P4 determine what competing theories can be distinguished and how to design tests.
+- P5-P6 define sufficiency and bridge completeness.
+- P7-P10 make complete signatures experimentally recoverable and finite-data certifiable.
+- P11 supplies the first original candidate physical object.
+- P12 attacks simplifications of that candidate before an experiential interpretation is attached.
 
 ---
 
-# Immediate scientific frontier
+# 9. Immediate frontier
 
-## Proposition 12 - component insufficiency and minimal-feature audit
+The next target is **P13 - pairwise-component minimality**.
 
-The next step is to prevent the new candidate from becoming a kitchen-sink theory by proving which summaries lose essential information.
-
-Let
+The program will test whether any of
 
 \[
-F_G(p)=\mathcal G_p,
+(\mathcal G_p,\mathcal A_p),
 \qquad
-F_A(p)=\mathcal A_p,
+(\mathcal G_p,\mathcal K_p),
 \qquad
-F_K(p)=\mathcal K_p
+(\mathcal A_p,\mathcal K_p)
 \]
 
-denote the response-geometry, directed-influence, and partition-irredundancy projections of IRCG.
+can reconstruct full IRCG on increasingly rich declared domains, or whether each admits constructive collisions.
 
-The target is to construct explicit finite pairs \(p,p'\) satisfying collisions such as
+After that, the major structural frontiers are:
 
-\[
-F_G(p)=F_G(p')
-\quad\text{but}\quad
-F_{\mathrm{IRCG}}(p)\ne F_{\mathrm{IRCG}}(p'),
-\]
-
-and analogously for \(F_A\), \(F_K\), and scalar summaries such as response diameter or minimum partition irreducibility.
-
-Such constructions would prove that the corresponding projection cannot reconstruct full IRCG on the declared domain, by the same factorization logic used in Proposition 5.
-
-The strongest useful outcome is a **minimal-feature theorem** identifying which components are genuinely required before any empirical bridge analysis begins.
-
----
-
-# Later structural frontiers
-
-If IRCG survives controlled counterexample searches, the program should address:
-
-1. **composition consistency:** how signature and bridge classes behave under system coupling, splitting, and merging;
-2. **temporal continuation:** when time-indexed bridge assignments define one coherent experiential history;
-3. **observer-to-bridge interface:** how a certified moving subsystem from Spatiotemporal Observer Mathematics supplies the physical domain for the bridge;
-4. **cross-theory empirical tests:** source-faithful IIT, GNWT, RPT, HOT, predictive/neurorepresentational, and future bridge families;
-5. **conditional consciousness theorem:** only after the bridge premises themselves have survived the preceding mathematical and empirical tests.
+1. temporal continuation of physical-signature states;
+2. composition, splitting, merging, and controlled coupling;
+3. observer-to-bridge interface with certified moving world-tubes;
+4. source-faithful cross-theory adversarial experiments;
+5. biological and artificial counterexample programs;
+6. a bridge theorem only after the physical, experiential, identifiability, recovery, and falsification conditions have been jointly addressed.
