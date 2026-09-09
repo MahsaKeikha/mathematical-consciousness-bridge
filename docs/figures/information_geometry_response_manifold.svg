@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1080" viewBox="0 0 1800 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Information geometry of intervention-response laws</title>
+  <desc id="desc">Publication-style diagram showing a manifold of intervention-conditioned probability laws, Fisher information geometry, total-variation response distances, temporal trajectories, coarse-graining, and the separate physical-to-experiential bridge problem.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0 0 L0 8 L10 4 z" fill="#64748b"/></marker>
+    <style>
+      .title{font:700 40px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 18px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .head{font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 13.8px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .eq{font:600 16px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .cite{font:600 12px Inter,Segoe UI,Arial,sans-serif;fill:#64748b}
+      .arrow{stroke:#64748b;stroke-width:2.1;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1800" height="1080" fill="#ffffff"/>
+  <text x="75" y="66" class="title">Information Geometry of Intervention-Response Laws</text>
+  <text x="75" y="102" class="subtitle">Probability laws can form a geometric state space for physical response structure; an experiential geometry would require an independently justified bridge.</text>
+
+  <rect x="75" y="150" width="510" height="270" rx="18" fill="#f7fbff" stroke="#3b82f6" stroke-width="1.6"/>
+  <text x="105" y="190" class="head">Parameterized response family</text>
+  <text x="105" y="232" class="eq">p(y | θ, do(u), τ)</text>
+  <text x="105" y="272" class="body">Each intervention, delay, physiological state, or</text>
+  <text x="105" y="295" class="body">model parameter selects a probability law over</text>
+  <text x="105" y="318" class="body">measurable physical responses.</text>
+  <text x="105" y="365" class="cite">probability / causal-response layer</text>
+
+  <rect x="645" y="150" width="510" height="270" rx="18" fill="#ecfdf5" stroke="#059669" stroke-width="1.6"/>
+  <text x="675" y="190" class="head">Local statistical geometry</text>
+  <text x="675" y="232" class="eq">gᵢⱼ(θ) = Eθ[∂ᵢ log p · ∂ⱼ log p]</text>
+  <text x="675" y="272" class="eq">ds² = gᵢⱼ(θ)dθⁱdθʲ</text>
+  <text x="675" y="312" class="body">Fisher geometry quantifies local statistical</text>
+  <text x="675" y="335" class="body">distinguishability of nearby probability laws.</text>
+  <text x="675" y="365" class="cite">Amari 2016; Ay et al. 2017</text>
+
+  <rect x="1215" y="150" width="510" height="270" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="1.6"/>
+  <text x="1245" y="190" class="head">Finite response geometry</text>
+  <text x="1245" y="232" class="eq">dₚτ(u,v) = ‖Pₚᵘ,τ − Pₚᵛ,τ‖TV</text>
+  <text x="1245" y="272" class="body">Total variation gives an operational distance</text>
+  <text x="1245" y="295" class="body">between finite intervention-conditioned laws and</text>
+  <text x="1245" y="318" class="body">controls binary distinguishability.</text>
+  <text x="1245" y="365" class="cite">Le Cam / Tsybakov; repository P2, P11</text>
+
+  <path class="arrow" d="M585 285 H633"/>
+  <path class="arrow" d="M1155 285 H1203"/>
+
+  <rect x="120" y="510" width="455" height="250" rx="18" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.6"/>
+  <text x="150" y="550" class="head">Temporal trajectory</text>
+  <text x="150" y="592" class="eq">[c₀] → [c₁] → ··· → [cT]</text>
+  <text x="150" y="632" class="eq">V = Σ D̄w([cₜ],[cₜ₊₁])</text>
+  <text x="150" y="675" class="body">P14-P15 track representation-invariant</text>
+  <text x="150" y="698" class="body">motion through physical structure space.</text>
+  <text x="150" y="730" class="cite">repository temporal layer</text>
+
+  <rect x="675" y="510" width="455" height="250" rx="18" fill="#ecfeff" stroke="#0891b2" stroke-width="1.6"/>
+  <text x="705" y="550" class="head">Composition and scale</text>
+  <text x="705" y="592" class="eq">PAB = PA ⊗ PB</text>
+  <text x="705" y="632" class="eq">‖C#P − C#Q‖TV ≤ ‖P − Q‖TV</text>
+  <text x="705" y="675" class="body">P16 tests factorization and coupling; P17</text>
+  <text x="705" y="698" class="body">tracks information loss under coarse-graining.</text>
+  <text x="705" y="730" class="cite">repository composition / scale layer</text>
+
+  <rect x="1230" y="510" width="455" height="250" rx="18" fill="#fff1f2" stroke="#e11d48" stroke-width="1.6"/>
+  <text x="1260" y="550" class="head">Experiential geometry remains separate</text>
+  <text x="1260" y="592" class="eq">B̄ : QP → QE</text>
+  <text x="1260" y="632" class="body">A physical metric or manifold does not define</text>
+  <text x="1260" y="655" class="body">an experiential metric automatically.</text>
+  <text x="1260" y="695" class="body">The bridge must specify what structure is</text>
+  <text x="1260" y="718" class="body">preserved and how that claim can be tested.</text>
+
+  <path class="arrow" d="M335 420 V498"/>
+  <path class="arrow" d="M900 420 V498"/>
+  <path class="arrow" d="M1470 420 V498"/>
+
+  <rect x="165" y="855" width="1470" height="140" rx="20" fill="#0f172a"/>
+  <text x="200" y="895" style="font:700 19px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Research opportunity</text>
+  <text x="200" y="935" style="font:600 18px Georgia,'Times New Roman',serif;fill:#e2e8f0">intervention-conditioned statistical manifold  →  invariant physical geometry  →  empirical discrimination  →  explicit bridge test</text>
+  <text x="200" y="970" style="font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#94a3b8">A future theorem should determine which geometric features survive representation change, finite sampling, composition, scale change, and cross-substrate testing before any experiential correspondence is proposed.</text>
+</svg>
