@@ -133,20 +133,10 @@ P12 is a physical-signature minimality theorem. It demonstrates that several nat
 Define the labeled component fingerprint
 
 \[
-F_C(p)
-=
-(\mathcal G_p,\mathcal A_p,\mathcal K_p).
+F_C(p)=(\mathcal G_p,\mathcal A_p,\mathcal K_p).
 \]
 
-P13 constructs three collision families:
-
-| Pair retained | Matched quantities | Omitted quantity that differs | Conclusion |
-| --- | --- | --- | --- |
-| \((\mathcal G,\mathcal A)\) | \(\mathcal G_L=\mathcal G_H\), \(\mathcal A_L=\mathcal A_H\) | \(\mathcal K_L\ne\mathcal K_H\) | \(\mathcal K\) is irredundant on the audit domain |
-| \((\mathcal G,\mathcal K)\) | \(\mathcal G_0=\mathcal G_+\), \(\mathcal K_0=\mathcal K_+\) | \(\mathcal A_0\ne\mathcal A_+\) | \(\mathcal A\) is irredundant on the audit domain |
-| \((\mathcal A,\mathcal K)\) | \(\mathcal A_D=\mathcal A_S\), \(\mathcal K_D=\mathcal K_S\) | \(\mathcal G_D\ne\mathcal G_S\) | \(\mathcal G\) is irredundant on the audit domain |
-
-Therefore
+P13 proves on the declared audit domain that each pairwise projection is incomplete:
 
 \[
 \boxed{
@@ -194,7 +184,25 @@ The bounded-coordinate corollary is intentionally narrow. It does not assert tha
 
 ---
 
-# 10. Candidate consciousness-theory feature families
+# 10. P16 - independent composition and controlled coupling
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(P_{A\otimes B}^{(u_A,u_B),\tau}=P_A^{u_A,\tau}\otimes P_B^{u_B,\tau}\) | independent product-response composition | repository physical null-model definition using standard product measures | P16; product-measure background: standard probability |
+| \(\max\{d_A,d_B\}\le d_{AB}\) | lower response-distance bound under composition | proved by total-variation contraction under marginalization | P16; standard TV data-processing property |
+| \(d_{AB}\le d_A+d_B-d_Ad_B\) | product-coupling upper bound | proved using maximal coupling of subsystem response pairs | P16; coupling interpretation of total variation |
+| one subsystem unchanged \(\Rightarrow d_{AB}=d_A\) or \(d_B\) | exact one-factor distance preservation | proved | P16 |
+| \(A_{ij}^{A\otimes B}(\tau)=0\) for \(i\in A,j\in B\) | zero cross-system directed influence under independent composition | proved | P16 + P11 directed-influence definition |
+| \(\kappa_{A\otimes B}^{\tau}(\pi_{A|B})=0\) | exact factorization across complete subsystem split | proved | P16 + P11 partition irreducibility |
+| \(\chi_{A|B}(\tau)=\sup_{u_A,u_B}\|P_{AB}-P_{A,\mathrm{marg}}\otimes P_{B,\mathrm{marg}}\|_{\mathrm{TV}}\) | response-level coupling defect | repository construction | P16 |
+| \(\chi_{A|B}(\tau)=\kappa_{AB}^{\tau}(\pi_{A|B})\) | identification of coupling defect with P11 partition irreducibility | proved | P16 |
+| \(\chi=0\) certifies factorization only on the declared intervention-observable regime | identifiability boundary | theorem interpretation / limitation | P16 + P2-P4/P7 identifiability framework |
+
+The mathematical ingredients are standard properties of total variation, measurable marginalization, product measures, and couplings. The specific physical composition null model, coupling-defect use, and connection to the bridge program are repository constructions.
+
+---
+
+# 11. Candidate consciousness-theory feature families
 
 The following are source-grounded translations into generic feature notation. They are not claims that each named theory reduces to one scalar or one universally agreed implementation.
 
@@ -205,13 +213,13 @@ The following are source-grounded translations into generic feature notation. Th
 | RPT | \(\mathcal F_{\mathrm{RPT}}(p)=\) relevant recurrent-processing structure and dynamics | Lamme 2006 |
 | HOT | \(\mathcal F_{\mathrm{HOT}}(p)=\) theory-specific higher-order representational relation | Brown-Lau-LeDoux 2019 |
 | predictive / NR / active-inference families | \(\mathcal F_{\mathrm{PP}}(p)=\) theory-specific predictive, inferential, and representational structure | Seth-Hohwy 2021; Pennartz 2022; Corcoran et al. 2026 |
-| intervention-resolved causal structure | \(F_{\mathrm{causal}}(p)=[\mathfrak C_p]_{\cong}\) | repository-original candidate physical signature; temporal and finite-error extensions remain physical | P11-P15 |
+| intervention-resolved causal structure | \(F_{\mathrm{causal}}(p)=[\mathfrak C_p]_{\cong}\) | repository-original candidate physical signature; temporal, finite-error, and composition extensions remain physical | P11-P16 |
 
 Detailed caveats and source roles are maintained in [Candidate Theory Families](candidate_theory_families.md) and [Literature Map](literature_map.md).
 
 ---
 
-# 11. Citation discipline
+# 12. Citation discipline
 
 A result is cited as a repository result when the bridge-specific statement, construction, or counterexample is introduced here.
 
