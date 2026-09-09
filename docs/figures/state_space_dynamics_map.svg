@@ -19,7 +19,7 @@
 
   <rect width="1800" height="1100" fill="#ffffff"/>
   <text x="80" y="68" class="title">State-Space Dynamics and Consciousness-Related Regimes</text>
-  <text x="80" y="103" class="subtitle">A physics view of trajectories, perturbations, transitions, and measurement—without reducing heterogeneous states to one universal scalar axis.</text>
+  <text x="80" y="103" class="subtitle">Trajectories, perturbations, transitions, and measurements are shown without imposing one universal scalar ranking.</text>
 
   <rect x="80" y="145" width="1120" height="760" rx="20" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
   <text x="115" y="185" class="label">SCHEMATIC MEASURABLE STATE SPACE</text>
@@ -35,13 +35,10 @@
 
   <text x="350" y="400" class="head">Wakeful / responsive regime</text>
   <text x="316" y="428" class="small">broad repertoire may be observed in some measures</text>
-
   <text x="742" y="622" class="head">NREM-like regime</text>
   <text x="708" y="650" class="small">different temporal and perturbational organization</text>
-
   <text x="785" y="328" class="head">Dream / dissociated regime</text>
   <text x="750" y="356" class="small">report and overt responsiveness can dissociate</text>
-
   <text x="414" y="674" class="head">Anesthetic regime</text>
   <text x="387" y="702" class="small">agent-specific dynamics; not one universal pattern</text>
 
@@ -60,11 +57,11 @@
 
   <rect x="180" y="205" width="470" height="95" rx="14" fill="#ffffff" stroke="#94a3b8"/>
   <text x="210" y="238" class="head">Local dynamical model</text>
-  <text x="210" y="272" class="eq">dX<tspan baseline-shift="sub" font-size="12">t</tspan> = f(X<tspan baseline-shift="sub" font-size="12">t</tspan>,u<tspan baseline-shift="sub" font-size="12">t</tspan>)dt + G(X<tspan baseline-shift="sub" font-size="12">t</tspan>,u<tspan baseline-shift="sub" font-size="12">t</tspan>)dW<tspan baseline-shift="sub" font-size="12">t</tspan></text>
+  <text x="210" y="272" class="eq">dXₜ = f(Xₜ,uₜ)dt + G(Xₜ,uₜ)dWₜ</text>
 
   <rect x="690" y="205" width="455" height="95" rx="14" fill="#ffffff" stroke="#94a3b8"/>
   <text x="720" y="238" class="head">Intervention-response geometry</text>
-  <text x="720" y="272" class="eq">dᵖτ(u,v) = ‖Pᵤ,τ(p) − Pᵥ,τ(p)‖<tspan baseline-shift="sub" font-size="12">TV</tspan></text>
+  <text x="720" y="272" class="eq">dᵖτ(u,v) = ‖Pᵤ,τ(p) − Pᵥ,τ(p)‖TV</text>
 
   <rect x="1250" y="145" width="470" height="760" rx="20" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
   <text x="1285" y="185" class="label">MEASUREMENT AND INFERENCE LAYERS</text>
@@ -75,14 +72,12 @@
   <text x="1315" y="311" class="body">physiology • behavior • report</text>
 
   <path class="arrow" d="M1485 340 V372"/>
-
   <rect x="1285" y="385" width="400" height="125" rx="14" fill="#f0fdf4" stroke="#4ade80"/>
   <text x="1315" y="420" class="head">Derived dynamical features</text>
   <text x="1315" y="453" class="body">complexity • connectivity • criticality</text>
   <text x="1315" y="481" class="body">response propagation • causal geometry</text>
 
   <path class="arrow" d="M1485 510 V542"/>
-
   <rect x="1285" y="555" width="400" height="135" rx="14" fill="#fff7ed" stroke="#fb923c"/>
   <text x="1315" y="590" class="head">Empirical state evidence</text>
   <text x="1315" y="623" class="body">wakefulness • dreaming • anesthesia</text>
@@ -90,15 +85,15 @@
   <text x="1315" y="677" class="small">State labels remain measurement-model dependent.</text>
 
   <path class="arrow" d="M1485 690 V722"/>
-
   <rect x="1285" y="735" width="400" height="135" rx="14" fill="#f5f3ff" stroke="#a78bfa"/>
   <text x="1315" y="770" class="head">Bridge-level interpretation</text>
-  <text x="1315" y="804" class="eq">B̄ : Q<tspan baseline-shift="sub" font-size="12">P</tspan> → Q<tspan baseline-shift="sub" font-size="12">E</tspan></text>
+  <text x="1315" y="804" class="eq">B̄ : QP → QE</text>
   <text x="1315" y="836" class="small">Requires an independently justified experiential formalization</text>
   <text x="1315" y="858" class="small">and cannot be inferred from one dynamical feature alone.</text>
 
-  <rect x="80" y="945" width="1640" height="100" rx="16" fill="#f8fafc" stroke="#cbd5e1"/>
+  <rect x="80" y="945" width="1640" height="110" rx="16" fill="#f8fafc" stroke="#cbd5e1"/>
   <text x="115" y="980" class="label">INTERPRETATION BOUNDARY</text>
-  <text x="115" y="1014" class="body">The colored basins are schematic dynamical regimes, not universal consciousness classes and not a ranking of subjective experience.</text>
-  <text x="115" y="1039" class="small">Empirical motivation: perturbational-complexity, sleep/dream, anesthesia, critical-dynamics, and covert-command-following studies. Full citations are maintained in the empirical measurement bibliography.</text>
+  <text x="115" y="1014" class="body">Colored basins are schematic dynamical regimes, not universal experiential classes.</text>
+  <text x="115" y="1039" class="small">Empirical motivation: perturbational complexity, sleep, dreaming, anesthesia,</text>
+  <text x="115" y="1061" class="small">critical dynamics, and covert command following. Citations are maintained separately.</text>
 </svg>
