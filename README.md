@@ -1,14 +1,14 @@
 # Mathematical Consciousness Bridge
 
 [![tests](https://github.com/MahsaKeikha/mathematical-consciousness-bridge/actions/workflows/test.yml/badge.svg)](https://github.com/MahsaKeikha/mathematical-consciousness-bridge/actions/workflows/test.yml)
-[![version](https://img.shields.io/badge/version-0.13.0-2563eb)](CITATION.cff)
+[![version](https://img.shields.io/badge/version-0.15.0-2563eb)](CITATION.cff)
 [![license](https://img.shields.io/badge/license-MIT-059669)](LICENSE)
 
 **Mahsa Keikha, PhD**
 
 > **What mathematical and physical conditions would be required for a physical description of a system to support a scientifically testable claim about consciousness?**
 
-This repository develops a formal mathematical-physics program for the **consciousness bridge problem**: connecting physical organization to formal experiential structure through explicit bridge principles, theorem-level consequences, empirical identifiability, controlled intervention, finite-data certification, and falsification.
+This repository develops a formal mathematical-physics program for the **consciousness bridge problem**: connecting physical organization to formal experiential structure through explicit bridge principles, theorem-level consequences, empirical identifiability, controlled intervention, finite-data certification, temporal structure, and falsification.
 
 The program builds on, but remains logically distinct from, [Spatiotemporal Observer Mathematics](https://github.com/MahsaKeikha/spatiotemporal-observer-math), which studies whether a persistent moving subsystem can be inferred and certified from dynamics. That companion project can supply a candidate physical subsystem. The present project studies the additional physical-to-experiential bridge.
 
@@ -52,6 +52,8 @@ The mathematical implication must be proved from explicit premises. The bridge p
 | Read the original physical candidate | **[P11 - Intervention-Resolved Causal Structure](docs/proposition_11_intervention_resolved_causal_structure.md)** |
 | Read the single-component no-go result | **[P12 - Component Insufficiency](docs/proposition_12_component_insufficiency.md)** |
 | Read the pairwise irredundancy result | **[P13 - Pairwise Component Irredundancy](docs/proposition_13_pairwise_component_irredundancy.md)** |
+| Read the temporal continuation theorem | **[P14 - Temporal Continuation](docs/proposition_14_temporal_continuation.md)** |
+| Read the finite-sample temporal certificate | **[P15 - Finite-Sample Temporal Certification](docs/proposition_15_finite_sample_temporal_certification.md)** |
 | Compare major consciousness theories | [Candidate Theory Families](docs/candidate_theory_families.md) |
 | Audit equation provenance | [Equation and Citation Map](docs/equation_and_citation_map.md) |
 | Inspect falsification criteria | [Falsification Program](docs/falsification_program.md) |
@@ -67,7 +69,7 @@ A physical theory can specify states, dynamics, interventions, causal response l
 
 This repository makes that bridge itself the object of mathematics. Propositions 1-10 establish representation invariance, exact theory identifiability, observational equivalence classes, discriminating experiment design, physical-feature sufficiency, canonical bridge completeness, experimental recoverability, robust finite-error recovery, explicit sample complexity, and robust protocol design.
 
-Proposition 11 then introduces the first original candidate physical signature: **intervention-resolved causal structure**. It is not a scalar. It retains the structure of controlled perturbational response through three complementary objects:
+Proposition 11 introduces the first original candidate physical signature: **intervention-resolved causal structure**. It is not a scalar. It retains the structure of controlled perturbational response through three complementary objects:
 
 \[
 \boxed{
@@ -82,13 +84,16 @@ Proposition 11 then introduces the first original candidate physical signature: 
 }
 \]
 
-Proposition 12 constructively proves that no one of these components, and several natural scalar reductions, can reconstruct the full physical candidate on explicit finite domains. Proposition 13 strengthens this result by proving that **no pair of the three components can reconstruct the omitted component** on a declared finite audit domain.
+Proposition 12 proves constructively that no one of these components, and several natural scalar reductions, can reconstruct the full physical candidate on explicit finite domains. Proposition 13 strengthens this by proving that **no pair of the three components can reconstruct the omitted component** on a declared finite audit domain.
+
+Proposition 14 turns the candidate from a sequence of disconnected snapshots into a representation-invariant temporal object. It defines a metric on causal-structure fingerprints, quotients physically irrelevant relabelings, and proves path-variation and endpoint bounds. Proposition 15 then propagates finite fingerprint uncertainty through that temporal geometry and gives explicit lower/upper confidence bounds for pairwise change, cumulative variation, and maximum local jumps.
 
 The present record therefore separates:
 
-1. **proved mathematical structure** - P1-P13;
-2. **candidate physical structure** - the intervention-resolved causal-structure candidate;
-3. **open bridge problem** - determining whether an independently justified physical equivalence structure can be connected to formal experiential equivalence and survive competing-theory, cross-substrate, temporal, compositional, and empirical tests.
+1. **proved mathematical structure** - P1-P15;
+2. **candidate physical structure** - intervention-resolved causal structure and its temporal trajectory;
+3. **finite-error experimental certification** - P8-P10 and P15 under explicit assumptions;
+4. **open bridge problem** - determining whether an independently justified physical equivalence structure can be connected to formal experiential equivalence and survive competing-theory, cross-substrate, temporal, compositional, and empirical tests.
 
 ---
 
@@ -135,7 +140,7 @@ Mathematically,
 }
 \]
 
-The central difficulty is the third arrow. Integration, complexity, recurrence, global broadcasting, causal structure, criticality, or subsystem persistence can all be mathematically meaningful without yet constituting a bridge to experience.
+The central difficulty is the third arrow. Integration, complexity, recurrence, global broadcasting, causal structure, criticality, subsystem persistence, or temporal smoothness can all be mathematically meaningful without yet constituting a bridge to experience.
 
 ---
 
@@ -296,9 +301,9 @@ A complete empirical theory must also specify its measurement model and experime
 | U7 | empirical identifiability | P2-P3 |
 | U8 | cross-theory discrimination | P4 + theory interface |
 | U9 | experimental recoverability | P7 |
-| U10 | finite-measurement certification | P8 |
-| U11 | explicit sample complexity | P9 |
-| U12 | temporal, compositional, substrate, and falsification consistency | active frontier |
+| U10 | finite-measurement certification | P8 + P15 temporal extension |
+| U11 | explicit sample complexity | P9 + restricted P15 bounded-coordinate corollary |
+| U12 | temporal, compositional, substrate, and falsification consistency | temporal layer P14-P15; composition/substrate still active frontier |
 
 A strong conditional theorem would have the form
 
@@ -331,11 +336,11 @@ Both directions require independent justification.
 
 ---
 
-# 5. Theorem roadmap: P1-P13
+# 5. Theorem roadmap: P1-P15
 
-![Propositions 1 through 13 theorem roadmap](docs/figures/theorem_roadmap.svg)
+![Propositions 1 through 15 theorem roadmap](docs/figures/theorem_roadmap.svg)
 
-**Figure 3. Theorem dependency map.** P1-P10 establish the general bridge and finite-data machinery. P11 introduces the physical candidate. P12 and P13 test whether that candidate can be compressed without losing physical information.
+**Figure 3. Theorem dependency map.** P1-P10 establish the general bridge and finite-data machinery. P11 introduces the physical candidate. P12-P13 test internal compression. P14 establishes representation-invariant temporal continuation. P15 propagates finite fingerprint uncertainty through that temporal geometry.
 
 | Proposition | Core result | Status | Full proof |
 | --- | --- | --- | --- |
@@ -352,6 +357,8 @@ Both directions require independent justification.
 | **P11** | intervention-resolved causal structure + structural certificates | Proved construction / candidate | [P11](docs/proposition_11_intervention_resolved_causal_structure.md) |
 | **P12** | single-component insufficiency and scalar collision theorems | Proved no-go / minimality result | [P12](docs/proposition_12_component_insufficiency.md) |
 | **P13** | all three pairwise component projections are incomplete on an explicit audit domain | Proved irredundancy result | [P13](docs/proposition_13_pairwise_component_irredundancy.md) |
+| **P14** | quotient metric, temporal path variation, relabeling invariance, endpoint bound | Proved temporal-structure theorem | [P14](docs/proposition_14_temporal_continuation.md) |
+| **P15** | finite-error bounds for temporal distance, path variation, and maximum jump | Proved certification theorem | [P15](docs/proposition_15_finite_sample_temporal_certification.md) |
 
 ---
 
@@ -1034,11 +1041,198 @@ This does not prove that the chosen representation is globally minimal on every 
 
 ---
 
-# 13. Candidate theory families in one common interface
+# 13. P14 - representation-invariant temporal continuation
+
+![Proposition 14 temporal continuation](docs/figures/p14_temporal_continuation.svg)
+
+**Figure 7. Temporal continuation.** Causal-structure fingerprints are compared after quotienting physically irrelevant relabelings, and continuation is treated as a path property rather than an endpoint similarity score.
+
+For a finite fingerprint
+
+\[
+c=(g,a,k),
+\]
+
+define the weighted metric
+
+\[
+\boxed{
+D_w(c,c')
+=
+\max\left\{
+w_G\|g-g'\|_\infty,
+w_A\|a-a'\|_\infty,
+w_K\|k-k'\|_\infty
+\right\}.
+}
+\]
+
+Let \(\mathcal H\) be a finite declared group of admissible relabelings acting by isometries. P14 proves that
+
+\[
+\boxed{
+\overline D_w([c],[c'])
+=
+\min_{h\in\mathcal H}D_w(c,hc')
+}
+\]
+
+is a metric on the orbit space.
+
+For a temporal path \([c_0],\ldots,[c_T]\), define
+
+\[
+\boxed{
+V_{0:T}
+=
+\sum_{t=0}^{T-1}
+\overline D_w([c_t],[c_{t+1}])
+}
+\]
+
+and
+
+\[
+\boxed{
+J_{0:T}
+=
+\max_t
+\overline D_w([c_t],[c_{t+1}]).
+}
+\]
+
+P14 proves
+
+\[
+\boxed{
+\overline D_w([c_s],[c_t])
+\le
+V_{s:t},
+}
+\]
+
+and shows that both \(V\) and \(J\) remain unchanged under arbitrary time-dependent admissible relabelings.
+
+An explicit excursion construction
+
+\[
+[a]\longrightarrow[b]\longrightarrow[a]
+\]
+
+has zero endpoint distance but positive path variation. Endpoint equality therefore does not certify a trivial intervening physical trajectory.
+
+**Interpretation boundary:** P14 is a theorem about temporal organization of the physical candidate. It does not equate temporal continuity with experiential continuity.
+
+---
+
+# 14. P15 - finite-sample temporal certification
+
+![Proposition 15 finite-sample temporal certification](docs/figures/p15_finite_sample_temporal_certification.svg)
+
+**Figure 8. Finite-sample temporal certification.** Estimated temporal separation is converted into a certified interval using explicit fingerprint-error radii; comparisons are classified as above threshold, below threshold, or unresolved.
+
+Let \(\widehat c_t\) estimate \(c_t\), and suppose a simultaneous event gives
+
+\[
+\boxed{
+D_w(c_t,\widehat c_t)
+\le
+\varepsilon_t
+\qquad\text{for all }t.
+}
+\]
+
+Define
+
+\[
+d_{st}=\overline D_w([c_s],[c_t]),
+\qquad
+\widehat d_{st}=\overline D_w([\widehat c_s],[\widehat c_t]).
+\]
+
+P15 proves the exact perturbation inequality
+
+\[
+\boxed{
+|\widehat d_{st}-d_{st}|
+\le
+\varepsilon_s+arepsilon_t.
+}
+\]
+
+Hence
+
+\[
+\boxed{
+\max\{0,\widehat d_{st}-\varepsilon_s-\varepsilon_t\}
+\le d_{st}
+\le
+\widehat d_{st}+\varepsilon_s+\varepsilon_t.
+}
+\]
+
+A nonzero physical separation is therefore certified whenever
+
+\[
+\boxed{
+\widehat d_{st}>\varepsilon_s+\varepsilon_t.
+}
+\]
+
+For cumulative path variation,
+
+\[
+\boxed{
+|\widehat V_{0:T}-V_{0:T}|
+\le
+\varepsilon_0
++2\sum_{t=1}^{T-1}\varepsilon_t
++\varepsilon_T.
+}
+\]
+
+For the maximum adjacent structural change,
+
+\[
+\boxed{
+|\widehat J_{0:T}-J_{0:T}|
+\le
+\max_t(\varepsilon_t+\varepsilon_{t+1}).
+}
+\]
+
+Given a declared physical threshold \(\eta\), the theorem yields three outcomes:
+
+- lower confidence bound above \(\eta\): **certified above threshold**;
+- upper confidence bound at or below \(\eta\): **certified below threshold**;
+- otherwise: **unresolved**.
+
+For the restricted case of \(M\) coordinates in \([0,1]\), each estimated as an IID sample mean from \(n\) repetitions at each of \(T+1\) times, Hoeffding plus a union bound gives
+
+\[
+\boxed{
+\delta_n(\alpha)
+=
+\sqrt{
+\frac{1}{2n}
+\log\left(
+\frac{2M(T+1)}{\alpha}
+\right)
+}.
+}
+\]
+
+Then \(\varepsilon_t=w_{\max}\delta_n(\alpha)\) for the P14 weighted max metric. This is a deliberately limited corollary; the general P11 quantities may require estimator-specific concentration results.
+
+**Interpretation boundary:** P15 certifies physical structural change under declared uncertainty. It does not establish that smoothness implies consciousness, that a large jump implies loss of consciousness, or that the threshold \(\eta\) is universal.
+
+---
+
+# 15. Candidate theory families in one common interface
 
 ![Candidate theory comparison map](docs/figures/theory_comparison_map.svg)
 
-**Figure 7. Theory-comparative interface.** Existing theory families and the repository's physical candidate are represented through one common mathematical interface.
+**Figure 9. Theory-comparative interface.** Existing theory families and the repository's physical candidate are represented through one common mathematical interface.
 
 \[
 \boxed{
@@ -1055,13 +1249,13 @@ This does not prove that the chosen representation is globally minimal on every 
 | **RPT** | recurrent processing in relevant neural circuits | recurrence proposed as central to phenomenal processing | local temporal disruption and recurrent interactions |
 | **Higher-order** | theory-specific higher-order representational relation | state is conscious in virtue of an appropriate higher-order relation | first-order / higher-order dissociation |
 | **Predictive / neurorepresentational / active-inference families** | hierarchical prediction, inference, precision, multimodal representation | heterogeneous; theory-specific bridge required | prediction, precision, representation, hierarchical perturbation |
-| **Causal-structure candidate** | full intervention-resolved response geometry, directed influence, partition landscape | no experiential bridge assumed | controlled perturbation, counterexamples, recoverability, substrate tests |
+| **Causal-structure candidate** | full intervention-resolved response geometry, directed influence, partition landscape, temporal trajectory | no experiential bridge assumed | controlled perturbation, compression counterexamples, temporal certification, substrate tests |
 
 The comparison is not a popularity ranking. P2-P6 ask whether theories are empirically identifiable, whether proposed physical features are sufficient, and whether any candidate approaches bridge completeness.
 
 ---
 
-# 14. Relationship to Spatiotemporal Observer Mathematics
+# 16. Relationship to Spatiotemporal Observer Mathematics
 
 The intended dependency is
 
@@ -1082,6 +1276,12 @@ physical equivalence class [p]
 intervention-resolved causal structure
         |
         v
+representation-invariant temporal trajectory
+        |
+        v
+finite-error physical continuation certificate
+        |
+        v
 candidate bridge
         |
         v
@@ -1097,11 +1297,13 @@ The companion repository supplies candidate physical objects such as a certified
 \mathcal W=(S_0,\ldots,S_{T-1}).
 \]
 
-The present repository can treat \(p_{\mathcal W}\in\mathcal P\) as the physical input to the bridge program.
+The present repository can treat \(p_{\mathcal W}\in\mathcal P\) as the physical input to the bridge program. P14 now supplies a temporal-geometry interface for the causal structure carried by successive world-tube states, while P15 supplies finite-error certification once valid fingerprint radii are available.
+
+The combined statement remains physical. A separate bridge principle would still be required to connect persistent physical-process structure to experiential continuity.
 
 ---
 
-# 15. Evidence and claim hierarchy
+# 17. Evidence and claim hierarchy
 
 | Status | Meaning |
 | --- | --- |
@@ -1109,19 +1311,20 @@ The present repository can treat \(p_{\mathcal W}\in\mathcal P\) as the physical
 | **Proved** | theorem derived from explicit assumptions |
 | **Identifiability / no-go result** | theorem about what observations or compressed features can or cannot determine |
 | **Candidate physical signature** | physical structure proposed for testing, not an experiential conclusion |
+| **Finite-error certificate** | conclusion guaranteed under explicitly declared estimation-error bounds |
 | **Empirical result** | evidence reported by a cited experiment or dataset |
-| **Counterexample** | explicit construction defeating a sufficiency, completeness, or recoverability claim |
+| **Counterexample** | explicit construction defeating a sufficiency, completeness, compression, or endpoint-only claim |
 | **Open bridge problem** | unresolved relation between physical and experiential equivalence structure |
 
-This separation keeps mathematical validity, physical modeling, empirical evidence, and experiential interpretation visible as different kinds of support.
+This separation keeps mathematical validity, physical modeling, empirical evidence, statistical uncertainty, and experiential interpretation visible as different kinds of support.
 
 ---
 
-# 16. Falsification program
+# 18. Falsification program
 
 A candidate bridge or physical signature is exposed to several classes of failure.
 
-## 16.1 Representation failure
+## 18.1 Representation failure
 
 \[
 p\sim_Pp'
@@ -1129,7 +1332,7 @@ p\sim_Pp'
 F(p)\ne F(p').
 \]
 
-## 16.2 Feature-sufficiency failure
+## 18.2 Feature-sufficiency failure
 
 \[
 F(p)=F(p')
@@ -1137,13 +1340,13 @@ F(p)=F(p')
 \bar B(p)\ne\bar B(p').
 \]
 
-## 16.3 Observational identifiability failure
+## 18.3 Observational identifiability failure
 
 \[
 \Delta_\Pi=0.
 \]
 
-## 16.4 Experimental-recoverability failure
+## 18.4 Experimental-recoverability failure
 
 \[
 \Psi_\Pi(p)=\Psi_\Pi(p')
@@ -1151,35 +1354,43 @@ F(p)=F(p')
 F_*(p)\ne F_*(p').
 \]
 
-## 16.5 Physical compression failure
+## 18.5 Physical compression failure
 
 P12-P13 provide explicit examples in which a reduced component set identifies systems that the richer physical signature distinguishes.
 
-## 16.6 Temporal and composition failure
+## 18.6 Temporal endpoint failure
 
-Future continuation and composition theorems must remain consistent under splitting, merging, independent composition, coupling, and physical evolution.
+P14 gives an explicit path with identical start and end signatures but positive intervening structural variation. Any temporal criterion based only on endpoint agreement therefore fails on that construction.
+
+## 18.7 Finite-data overclaiming failure
+
+P15 makes the unresolved region explicit. If an estimated temporal separation is not larger than its uncertainty budget, the theorem does not permit the analyst to declare true equality or true nonzero change.
+
+## 18.8 Composition and substrate failure
+
+Future composition theorems must remain consistent under splitting, merging, independent composition, controlled coupling, and changes of physical substrate.
 
 [Read the full falsification program](docs/falsification_program.md).
 
 ---
 
-# 17. Empirical and theoretical lineage
+# 19. Empirical and theoretical lineage
 
-External work is cited for the exact role it supplies: conceptual origin, bridge architecture, physical mechanism, empirical evidence, causal modeling, or statistical theorem support.
+External work is cited for the exact role it supplies: conceptual origin, bridge architecture, physical mechanism, empirical evidence, causal modeling, metric geometry, or statistical theorem support.
 
-## 17.1 Observer factorization and physical organization
+## 19.1 Observer factorization and physical organization
 
 **Max Tegmark.** "Consciousness as a State of Matter." *Chaos, Solitons & Fractals* 76 (2015): 238-270. DOI: [10.1016/j.chaos.2015.03.014](https://doi.org/10.1016/j.chaos.2015.03.014).
 
 **Role:** conceptual background for factorization, information, integration, independence, dynamics, and observer-like physical organization.
 
-## 17.2 Integrated Information Theory
+## 19.2 Integrated Information Theory
 
 **Larissa Albantakis et al.** "Integrated information theory (IIT) 4.0: Formulating the properties of phenomenal existence in physical terms." *PLOS Computational Biology* 19(10) (2023): e1011465. DOI: [10.1371/journal.pcbi.1011465](https://doi.org/10.1371/journal.pcbi.1011465).
 
 **Role:** major example of an explicit phenomenal-axiom to physical-postulate bridge architecture.
 
-## 17.3 Mathematical formalization
+## 19.3 Mathematical formalization
 
 **Johannes Kleiner.** "Mathematical Models of Consciousness." arXiv:1907.03223.
 
@@ -1187,7 +1398,7 @@ External work is cited for the exact role it supplies: conceptual origin, bridge
 
 **Role:** mathematical representation of experiential structure and axiomatic/formal consciousness theory.
 
-## 17.4 Major competing-theory sources
+## 19.4 Major competing-theory sources
 
 **Anil K. Seth and Tim Bayne.** "Theories of consciousness." *Nature Reviews Neuroscience* 23 (2022): 439-452. DOI: [10.1038/s41583-022-00587-4](https://doi.org/10.1038/s41583-022-00587-4).
 
@@ -1205,7 +1416,7 @@ External work is cited for the exact role it supplies: conceptual origin, bridge
 
 **Cyriel M. A. Pennartz.** "What is neurorepresentationalism? From neural activity and predictive processing to multi-level representations and consciousness." *Behavioural Brain Research* 432 (2022): 113969. DOI: [10.1016/j.bbr.2022.113969](https://doi.org/10.1016/j.bbr.2022.113969).
 
-## 17.5 Identifiability and adversarial testing
+## 19.5 Identifiability and adversarial testing
 
 **Adrien Doerig et al.** "The unfolding argument: Why IIT and other causal structure theories cannot explain consciousness." *Consciousness and Cognition* 72 (2019): 49-59. DOI: [10.1016/j.concog.2019.04.002](https://doi.org/10.1016/j.concog.2019.04.002).
 
@@ -1213,19 +1424,25 @@ External work is cited for the exact role it supplies: conceptual origin, bridge
 
 **Andrew W. Corcoran et al.** "Integrated information and predictive processing theories of consciousness: An adversarial collaborative review." *Neuroscience and Biobehavioral Reviews* 187 (2026): 106742. DOI: [10.1016/j.neubiorev.2026.106742](https://doi.org/10.1016/j.neubiorev.2026.106742).
 
-## 17.6 Perturbational and integration evidence motivating the physical candidate
+## 19.6 Perturbational, integration, and temporal evidence motivating the physical candidate
 
 **Adenauer G. Casali et al.** "A theoretically based index of consciousness independent of sensory processing and behavior." *Science Translational Medicine* 5(198) (2013): 198ra105. DOI: [10.1126/scitranslmed.3006294](https://doi.org/10.1126/scitranslmed.3006294).
 
 **Charlotte Maschke et al.** "Critical dynamics in spontaneous EEG predict anesthetic-induced loss of consciousness and perturbational complexity." *Communications Biology* 7 (2024): 946. DOI: [10.1038/s42003-024-06613-8](https://doi.org/10.1038/s42003-024-06613-8).
 
+**George A. Mashour.** "Anesthesia and the neurobiology of consciousness." *Neuron* 112(10) (2024): 1553-1567. DOI: [10.1016/j.neuron.2024.03.002](https://doi.org/10.1016/j.neuron.2024.03.002).
+
 **Andrea I. Luppi et al.** "A synergistic workspace for human consciousness revealed by Integrated Information Decomposition." *eLife* 12 (2024): RP88173. DOI: [10.7554/eLife.88173](https://doi.org/10.7554/eLife.88173).
 
 **Andrea I. Luppi et al.** "Convergent transcriptomic and connectomic controllers of information integration and its anaesthetic breakdown across mammalian brains." *Nature Human Behaviour* 10 (2026): 777-802. DOI: [10.1038/s41562-025-02381-5](https://doi.org/10.1038/s41562-025-02381-5).
 
-## 17.7 Causal modeling and statistical decision theory
+## 19.7 Causal modeling, metric geometry, and statistical decision theory
 
 **Judea Pearl.** *Causality: Models, Reasoning, and Inference*, 2nd ed. Cambridge University Press, 2009.
+
+**Jonas Peters, Stefan Bauer, and Niklas Pfister.** "Causal Models for Dynamical Systems." arXiv:2001.06208 (2020).
+
+**Dmitri Burago, Yuri Burago, and Sergei Ivanov.** *A Course in Metric Geometry*. Graduate Studies in Mathematics 33, American Mathematical Society, 2001. DOI: [10.1090/gsm/033](https://doi.org/10.1090/gsm/033).
 
 **Lucien Le Cam and Grace Lo Yang.** *Asymptotics in Statistics: Some Basic Concepts*, 2nd ed. Springer, 2000. DOI: [10.1007/978-1-4612-1166-2](https://doi.org/10.1007/978-1-4612-1166-2).
 
@@ -1235,26 +1452,28 @@ External work is cited for the exact role it supplies: conceptual origin, bridge
 
 The full role-aware bibliography is maintained in [Literature Map](docs/literature_map.md), with machine-readable references in [`references.bib`](references.bib).
 
+No citation is used to imply endorsement of the repository's bridge hypothesis.
+
 ---
 
-# 18. Research record
+# 20. Research record
 
 | Research record | Current state |
 | --- | ---: |
-| proposition-level results | **13** |
+| proposition-level results | **15** |
 | original physical candidate families | **1 - intervention-resolved causal structure** |
 | candidate bridge principles | **8** |
 | universal-proof criteria | **12** |
-| claim-level / regression tests | **66** after terminology cleanup and P13 consolidation |
-| visual research figures | **7** |
+| claim-level / regression tests | **84** |
+| canonical visual research figures | **9** |
 | CI matrix | **Python 3.10, 3.11, 3.12** |
-| research-software version | **0.13.0** |
+| research-software version | **0.15.0** |
 
-The v0.13.0 checkpoint extends the previous bridge, recovery, and finite-data record with P13 pairwise component irredundancy and replaces opaque internal shorthand with plain scientific terminology.
+The v0.15.0 checkpoint extends the bridge, recovery, finite-data, and physical-minimality record with a representation-invariant temporal geometry and a finite-error temporal certification theorem.
 
 ---
 
-# 19. Reproducibility and audit path
+# 21. Reproducibility and audit path
 
 ```bash
 python -m pip install -e ".[dev]"
@@ -1278,62 +1497,48 @@ The code audits:
 - partition response irreducibility;
 - directed perturbational influence and cycle detection;
 - single-component projection collisions;
-- pairwise component irredundancy.
+- pairwise component irredundancy;
+- weighted causal-structure metrics;
+- quotient alignment under admissible relabelings;
+- temporal path variation and endpoint bounds;
+- temporal invariance under time-dependent relabeling;
+- pairwise finite-error temporal intervals;
+- cumulative-variation and maximum-jump uncertainty bounds;
+- three-way temporal threshold certification;
+- the bounded-coordinate Hoeffding corollary.
 
-The documentation integrity test checks local Markdown links and image targets, and the repository structure guard protects P1-P13 and all current visual research assets.
+The documentation integrity test checks local Markdown links and image targets. The repository structure guard protects P1-P15 and all current visual research assets. The visual-quality guard enforces large publication canvases, accessibility metadata, consistent fonts, and the absence of obsolete shorthand in canonical figures.
 
 ---
 
-# 20. Current frontier
+# 22. Current frontier
 
-P13 resolves the immediate component-level question on the declared finite domain: none of the three major components is reconstructible from the other two without additional assumptions.
+P13 resolves the immediate component-level question on the declared finite domain: none of the three major components is reconstructible from the other two without additional assumptions. P14 resolves the first fixed-dimension temporal-geometry problem under a finite isometric relabeling group. P15 resolves deterministic propagation of declared fingerprint-error radii through that geometry and adds a limited bounded-coordinate finite-sample corollary.
 
-The next frontier is therefore temporal and compositional structure:
+The next frontier is therefore structural and estimator-specific:
 
-1. **temporal continuation:** define when neighboring time-indexed causal-structure states belong to one persistent physical process;
-2. **composition:** characterize independent composition, weak and strong coupling, splitting, and merging;
-3. **observer-to-bridge interface:** connect certified moving world-tubes to the causal-structure domain;
-4. **cross-theory adversarial experiments:** derive protocol-level divergences among IIT, GNWT, RPT, higher-order, predictive/neurorepresentational, and repository candidate families;
-5. **biological and non-biological counterexamples:** actively search for systems that match rich physical causal structure while differing in the relevant experiential evidence;
-6. **experiential formalization:** sharpen \(\mathcal Q_E\) and its invariances independently of the physical candidate;
-7. **bridge theorem:** pursue a final implication only after the physical signature, experiential space, identifiability, recoverability, finite-data uncertainty, and falsification requirements have survived the preceding program.
+1. **composition:** characterize independent composition and weak or controlled coupling of causal-structure systems;
+2. **splitting and merging:** extend temporal continuation when the number or identity of physical blocks changes;
+3. **observer-to-bridge interface:** connect certified moving world-tubes to the time-indexed causal-structure domain;
+4. **estimator-specific concentration:** derive valid finite-sample radii for the actual response-geometry, directed-influence, and irreducibility estimators rather than relying on the restricted P15 sample-mean corollary;
+5. **irregular-time normalization:** determine how structural variation should depend on sampling cadence and physical time;
+6. **cross-theory adversarial experiments:** derive protocol-level divergences among IIT, GNWT, RPT, higher-order, predictive/neurorepresentational, and repository candidate families;
+7. **biological and non-biological counterexamples:** actively search for systems that match rich physical causal structure while differing in the relevant experiential evidence;
+8. **experiential formalization:** sharpen \(\mathcal Q_E\) and its invariances independently of the physical candidate;
+9. **bridge theorem:** pursue a final implication only after the physical signature, experiential space, identifiability, recoverability, finite-data uncertainty, composition, and falsification requirements have survived the preceding program.
 
-The strongest open structural target remains
+The current research chain is therefore
 
 \[
 \boxed{
-F_*(p)=F_*(p')
-\iff
-C_B(p)=C_B(p').
+\text{controlled physical response}
+\longrightarrow
+\text{intervention-resolved causal structure}
+\longrightarrow
+\text{representation-invariant temporal trajectory}
+\longrightarrow
+\text{finite-error temporal certification}.
 }
 \]
 
-The scientific task is to determine whether an independently physical feature \(F_*\) can satisfy this equivalence on an empirically meaningful domain.
-
----
-
-# 21. Repository map
-
-| Area | Main files |
-| --- | --- |
-| Visual navigation | [`docs/visual_research_guide.md`](docs/visual_research_guide.md), [`docs/figures/`](docs/figures/) |
-| Problem definition | [`docs/bridge_problem.md`](docs/bridge_problem.md), [`docs/research_architecture.md`](docs/research_architecture.md) |
-| Physical modeling | [`docs/physical_foundation.md`](docs/physical_foundation.md) |
-| Universal theorem target | [`docs/universal_proof_target.md`](docs/universal_proof_target.md) |
-| Theorem chain | [`docs/theorem_roadmap.md`](docs/theorem_roadmap.md), P1-P13 proof pages |
-| Physical candidate | [`docs/proposition_11_intervention_resolved_causal_structure.md`](docs/proposition_11_intervention_resolved_causal_structure.md) |
-| Single-component no-go audit | [`docs/proposition_12_component_insufficiency.md`](docs/proposition_12_component_insufficiency.md) |
-| Pairwise irredundancy audit | [`docs/proposition_13_pairwise_component_irredundancy.md`](docs/proposition_13_pairwise_component_irredundancy.md) |
-| Competing theories | [`docs/candidate_theory_families.md`](docs/candidate_theory_families.md) |
-| Bridge principles | [`docs/axiom_ledger.md`](docs/axiom_ledger.md) |
-| Equation provenance | [`docs/equation_and_citation_map.md`](docs/equation_and_citation_map.md) |
-| Falsification | [`docs/falsification_program.md`](docs/falsification_program.md) |
-| Bibliography | [`docs/literature_map.md`](docs/literature_map.md), [`references.bib`](references.bib) |
-| Reproducibility | [`src/consciousness_bridge/`](src/consciousness_bridge/), [`tests/`](tests/), [CI workflow](.github/workflows/test.yml) |
-| Release history | [`CHANGELOG.md`](CHANGELOG.md), [`CITATION.cff`](CITATION.cff) |
-
----
-
-## Citation
-
-Use [`CITATION.cff`](CITATION.cff) for the repository-level citation and [`references.bib`](references.bib) for method-specific scientific references. Conceptual lineage, mathematical tools, empirical evidence, and repository-original constructions are distinguished in the [Equation and Citation Map](docs/equation_and_citation_map.md) and [Literature Map](docs/literature_map.md).
+That chain is a physical and mathematical result. The physical-to-experiential bridge remains an open scientific problem.
