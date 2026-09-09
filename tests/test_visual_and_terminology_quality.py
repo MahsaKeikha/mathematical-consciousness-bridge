@@ -5,6 +5,9 @@ ROOT = Path(__file__).resolve().parents[1]
 FIGURES = (
     "research_architecture.svg",
     "theorem_roadmap.svg",
+    "physics_mathematics_atlas.svg",
+    "equation_evidence_map.svg",
+    "spaceflight_extreme_environment_map.svg",
     "causal_structure_anatomy.svg",
     "p12_collision_map.svg",
     "p13_component_irredundancy.svg",
