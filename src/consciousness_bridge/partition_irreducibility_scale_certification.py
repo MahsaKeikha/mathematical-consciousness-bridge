@@ -21,7 +21,6 @@ from consciousness_bridge.causal_structure_scale_certification import (
 )
 from consciousness_bridge.identifiability import total_variation_discrete
 from consciousness_bridge.intervention_causal_structure import (
-    marginal_distribution,
     productized_partition_distribution,
 )
 
