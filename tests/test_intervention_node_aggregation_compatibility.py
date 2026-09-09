@@ -9,7 +9,6 @@ from consciousness_bridge.intervention_node_aggregation_compatibility import (
     source_pair_families_are_aggregation_compatible,
 )
 
-
 FINE_NODES = (0, 1, 2)
 COARSE_NODES = ("A", "B")
 AGGREGATION = {0: "A", 1: "A", 2: "B"}
