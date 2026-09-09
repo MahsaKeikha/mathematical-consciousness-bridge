@@ -25,6 +25,7 @@ FIGURES = (
     "p19_fundamental_physical_sufficiency.svg",
     "p20_finite_sample_residual_certificate.svg",
     "p21_descriptor_refinement_residual_persistence.svg",
+    "p22_simultaneous_refinement_chain_certification.svg",
     "universal_proof_ladder.svg",
     "theory_comparison_map.svg",
 )

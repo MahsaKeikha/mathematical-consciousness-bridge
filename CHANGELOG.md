@@ -2,6 +2,21 @@
 
 This changelog records theorem-level scientific releases. Definitions, proofs, implementations, tests, figures, and documentation remain linked from the main research page.
 
+## 0.22.0 - 2026-09-09
+
+### Proposition 22 - simultaneous finite-sample certification of physical-refinement chains
+
+- Rebased P20 finite-sample concentration on one declared base law \((\Omega,E)\) for a fixed nested physical-descriptor chain.
+- Proved that deterministic pushforward contraction transfers one base total-variation confidence event to every residual law and every refinement-gain law simultaneously.
+- Derived simultaneous confidence intervals for the complete P21 residual trajectory \(R_k=I(E;\Omega\mid T_k)\).
+- Derived simultaneous confidence intervals for every refinement gain \(G_k=I(E;T_k\mid T_{k-1})\).
+- Used the P21 identity \(G_k=R_{k-1}-R_k\) to intersect direct and difference-based gain certificates without weakening coverage.
+- Proved joint coverage \(\Pr(R_k\in\mathcal I_k^R\ \forall k,\ G_k\in\mathcal I_k^G\ \forall k)\ge1-\alpha\).
+- Established that this shared-base-event construction requires no separate \(\alpha/(2m+1)\) confidence split over descriptor levels, while preserving the alphabet-size limitations of the conservative finite-alphabet bound.
+- Added executable simultaneous chain certification and twelve regression tests.
+- Added a publication-style P22 theorem map and extended the global theorem roadmap through P22.
+- Integrated P22 into the README paper, reader navigation, equation provenance, release metadata, proposition guards, and figure-quality guards.
+
 ## 0.21.0 - 2026-09-09
 
 ### Proposition 21 - physical-descriptor refinement and residual persistence

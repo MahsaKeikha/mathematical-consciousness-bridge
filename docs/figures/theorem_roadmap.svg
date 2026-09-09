@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1480" viewBox="0 0 1600 1480" role="img" aria-labelledby="title desc">
-  <title id="title">Theorem roadmap through Proposition 21</title>
-  <desc id="desc">Publication-style dependency map from invariance and identifiability through causal structure, time, composition, scale, physical sufficiency, finite-sample certification, and descriptor refinement.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1720" viewBox="0 0 1600 1720" role="img" aria-labelledby="title desc">
+  <title id="title">Theorem roadmap through Proposition 22</title>
+  <desc id="desc">Publication-style dependency map from invariance and identifiability through causal structure, time, composition, scale, physical sufficiency, finite-sample residual certification, descriptor refinement, and simultaneous chain certification.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
       <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
@@ -16,9 +16,9 @@
     </style>
   </defs>
 
-  <rect width="1600" height="1480" fill="#ffffff"/>
-  <text x="70" y="62" class="title">Theorem Roadmap - P1 through P21</text>
-  <text x="70" y="94" class="subtitle">The chain separates representation, recovery, causal structure, time, composition, scale, sufficiency, finite data, and refinement controls.</text>
+  <rect width="1600" height="1720" fill="#ffffff"/>
+  <text x="70" y="62" class="title">Theorem Roadmap - P1 through P22</text>
+  <text x="70" y="94" class="subtitle">The chain separates representation, recovery, causal structure, scale, sufficiency, finite data, refinement, and simultaneous certification.</text>
 
   <rect x="95" y="145" width="420" height="180" rx="18" fill="#eff6ff" stroke="#3b82f6"/>
   <text x="125" y="178" class="label">FOUNDATION · P1-P4</text>
@@ -98,9 +98,19 @@
   <text x="925" y="1306" class="eq">R0 ≥ R1 ≥ ··· ≥ Rm ≥ 0</text>
   <text x="265" y="1336" class="body">Each decrease is target information captured by added physical detail.</text>
 
-  <path class="arrow" d="M800 1350 V1382"/>
+  <path class="arrow" d="M800 1350 V1385"/>
 
-  <rect x="95" y="1394" width="1410" height="62" rx="14" fill="#0f172a"/>
-  <text x="125" y="1419" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">OPEN BRIDGE FRONTIER</text>
-  <text x="125" y="1442" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Experiential formalization, physical-completeness arguments, replication, and sharper finite-data refinement tests remain required.</text>
+  <rect x="225" y="1397" width="1150" height="188" rx="20" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.8"/>
+  <text x="265" y="1434" class="label">SIMULTANEOUS CHAIN CERTIFICATION · P22</text>
+  <text x="265" y="1472" class="head">One base confidence event controls the full chain</text>
+  <text x="265" y="1506" class="body">Deterministic pushforwards inherit one joint-TV confidence event.</text>
+  <text x="265" y="1541" class="eq">Pr(Rk ∈ IkR ∀k, Gk ∈ IkG ∀k) ≥ 1−α</text>
+  <text x="925" y="1541" class="eq">no α/(2m+1) split</text>
+  <text x="265" y="1571" class="body">Alphabet size, not level count, is the main finite-sample bottleneck here.</text>
+
+  <path class="arrow" d="M800 1585 V1620"/>
+
+  <rect x="95" y="1632" width="1410" height="62" rx="14" fill="#0f172a"/>
+  <text x="125" y="1657" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">OPEN BRIDGE FRONTIER</text>
+  <text x="125" y="1680" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Continuous-state, dependent-data, physical-completeness, replication, and experiential-formalization problems remain open.</text>
 </svg>

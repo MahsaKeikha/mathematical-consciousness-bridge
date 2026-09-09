@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1040" viewBox="0 0 1600 1040" role="img" aria-labelledby="title desc">
+  <title id="title">P22 simultaneous finite-sample certification of physical-refinement chains</title>
+  <desc id="desc">Publication-style theorem map showing one base confidence event, deterministic pushforward control, simultaneous residual intervals, and simultaneous refinement-gain intervals.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .title{font:700 34px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 17px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .label{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
+      .head{font:700 20px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 15px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .eq{font:600 20px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .eqsmall{font:600 17px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .arrow{stroke:#64748b;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+
+  <rect width="1600" height="1040" fill="#ffffff"/>
+  <text x="70" y="62" class="title">P22 · Simultaneous Finite-Sample Certification of Refinement Chains</text>
+  <text x="70" y="95" class="subtitle">One confidence event for the base physical-target law controls the entire declared descriptor chain.</text>
+
+  <rect x="90" y="145" width="1420" height="180" rx="20" fill="#f8fafc" stroke="#94a3b8"/>
+  <text x="125" y="181" class="label">ONE BASE EVENT</text>
+  <text x="125" y="217" class="head">Certify the empirical base law once</text>
+  <text x="125" y="258" class="eq">‖PΩE − P̂ΩE‖TV ≤ τn(α)</text>
+  <text x="650" y="258" class="eqsmall">Pr(event) ≥ 1 − α</text>
+  <text x="125" y="295" class="body">The radius depends on the base alphabet dΩ dE, not on the number of descriptor levels.</text>
+
+  <path class="arrow" d="M800 325 V365"/>
+
+  <rect x="90" y="378" width="680" height="250" rx="20" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="125" y="414" class="label">RESIDUAL PUSHFORWARDS</text>
+  <text x="125" y="450" class="head">All P21 residual levels share the event</text>
+  <text x="125" y="496" class="eqsmall">φk(ω,e) = (ω,Tk(ω),e)</text>
+  <text x="125" y="535" class="eq">|Rk − R̂k| ≤ Δk(τn)</text>
+  <text x="125" y="576" class="body">The inequalities hold simultaneously for k = 0,…,m.</text>
+  <text x="125" y="606" class="body">A positive terminal lower bound certifies persistence at the finest tested level.</text>
+
+  <rect x="830" y="378" width="680" height="250" rx="20" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="865" y="414" class="label">GAIN PUSHFORWARDS</text>
+  <text x="865" y="450" class="head">All refinement gains share the same event</text>
+  <text x="865" y="496" class="eqsmall">ψk(ω,e) = (Tk(ω),Tk−1(ω),e)</text>
+  <text x="865" y="535" class="eq">|Gk − Ĝk| ≤ Γk(τn)</text>
+  <text x="865" y="576" class="body">P21 also gives Gk = Rk−1 − Rk at population and empirical levels.</text>
+  <text x="865" y="606" class="body">Intersecting direct and difference intervals can tighten the certificate.</text>
+
+  <path class="arrow" d="M430 628 V674 H800"/>
+  <path class="arrow" d="M1170 628 V674 H800"/>
+
+  <rect x="90" y="690" width="1420" height="205" rx="20" fill="#fff7ed" stroke="#f97316"/>
+  <text x="125" y="726" class="label">SIMULTANEOUS P22 GUARANTEE</text>
+  <text x="125" y="762" class="head">The whole residual-and-gain trajectory is covered together</text>
+  <text x="125" y="810" class="eq">Pr( Rk ∈ IkR ∀k  and  Gk ∈ IkG ∀k ) ≥ 1 − α</text>
+  <text x="125" y="850" class="body">No replacement of α by α/(2m+1) is needed because one base-TV event implies every level-specific bound.</text>
+  <text x="125" y="879" class="body">Long chains are not free: large alphabets can make the shared finite-sample radius numerically weak.</text>
+
+  <rect x="90" y="930" width="1420" height="78" rx="14" fill="#0f172a"/>
+  <text x="125" y="956" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">INTERPRETATION BOUNDARY</text>
+  <text x="125" y="979" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Certified terminal persistence challenges only the finest declared descriptor; it does not establish physical completeness or nonphysical ontology.</text>
+  <text x="125" y="999" style="font:400 12px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">The identity-descriptor boundary I(E;Ω | Ω)=0 remains unchanged.</text>
+</svg>

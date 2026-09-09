@@ -281,7 +281,25 @@ P21 formalizes an omitted-physics control. Persistence of a residual through a f
 
 ---
 
-# 16. Candidate consciousness-theory feature families
+# 16. P22 - simultaneous finite-sample refinement-chain certification
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(M=d_\Omega d_E\) | alphabet size of the common sampled base law \((\Omega,E)\) | repository sampling-model definition | [P22](proposition_22_simultaneous_refinement_chain_certification.md) |
+| \(\|P_{\Omega E}-\widehat P_{\Omega E}\|_{\mathrm{TV}}\le\tau_n(\alpha)\) | one finite-sample confidence event shared by the whole descriptor chain | Hoeffding plus union bound applied to the base categorical law | [Hoeffding 1963](https://doi.org/10.1080/01621459.1963.10500830); [P20](proposition_20_finite_sample_residual_certification.md); [P22](proposition_22_simultaneous_refinement_chain_certification.md) |
+| \(P_k=(\phi_k)_\#P_{\Omega E}\) and \(Q_k=(\psi_k)_\#P_{\Omega E}\) | expresses residual and gain distributions as deterministic pushforwards of one base law | repository construction using standard pushforward probability | [P22](proposition_22_simultaneous_refinement_chain_certification.md) |
+| \(\|P_k-\widehat P_k\|_{\mathrm{TV}}\le\tau_n\) and \(\|Q_k-\widehat Q_k\|_{\mathrm{TV}}\le\tau_n\) for all \(k\) | transfers one base confidence event to every level by TV contraction | standard data-processing property applied here | [P17](proposition_17_coarse_graining_and_refinement.md); [P22](proposition_22_simultaneous_refinement_chain_certification.md) |
+| \(|R_k-\widehat R_k|\le\Delta_k(\tau_n)\) simultaneously for all \(k\) | finite-sample confidence family for the P21 residual trajectory | proved from shared TV event plus P20 continuity | [P20](proposition_20_finite_sample_residual_certification.md); [P22](proposition_22_simultaneous_refinement_chain_certification.md) |
+| \(|G_k-\widehat G_k|\le\Gamma_k(\tau_n)\) simultaneously for all \(k\) | finite-sample confidence family for target information captured by each refinement | proved from the same shared event | [P22](proposition_22_simultaneous_refinement_chain_certification.md) |
+| \(G_k=R_{k-1}-R_k\) and \(\widehat G_k=\widehat R_{k-1}-\widehat R_k\) | population and empirical chain-rule identity used to sharpen gain intervals | proved in P21 and inherited by P22 | [P21](proposition_21_descriptor_refinement_residual_persistence.md); [P22](proposition_22_simultaneous_refinement_chain_certification.md) |
+| \(\Pr(R_k\in\mathcal I_k^R\ \forall k,\ G_k\in\mathcal I_k^G\ \forall k)\ge1-\alpha\) | simultaneous residual-and-gain coverage | proved | [P22](proposition_22_simultaneous_refinement_chain_certification.md) |
+| no \(\alpha/(2m+1)\) replacement is required | one base-TV event deterministically implies every level-specific bound in this construction | theorem consequence, not a generic multiple-testing exemption | [P22](proposition_22_simultaneous_refinement_chain_certification.md) |
+
+P22 is a finite-data theorem for a fixed declared deterministic refinement chain. It does not justify post hoc adaptive descriptor selection using the same confidence statement, and it does not establish physical completeness.
+
+---
+
+# 17. Candidate consciousness-theory feature families
 
 The following are source-grounded translations into generic feature notation. They are not claims that each named theory reduces to one scalar or one universally agreed implementation.
 
@@ -298,7 +316,7 @@ Detailed caveats and source roles are maintained in [Candidate Theory Families](
 
 ---
 
-# 17. Citation discipline
+# 18. Citation discipline
 
 A result is cited as a repository result when the bridge-specific statement, construction, or counterexample is introduced here.
 

@@ -2,7 +2,7 @@
 
 This roadmap records the current proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge.
 
-![P1-P21 theorem roadmap](figures/theorem_roadmap.svg)
+![P1-P22 theorem roadmap](figures/theorem_roadmap.svg)
 
 ---
 
@@ -31,6 +31,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P19](proposition_19_fundamental_physical_sufficiency.md) | quotient factorization, conditional mutual information, and differential rank obstruction | tests whether an independent target is fixed by the declared physical descriptor | proved physical-sufficiency theorem |
 | [P20](proposition_20_finite_sample_residual_certification.md) | Hoeffding joint-TV concentration plus finite-alphabet entropy continuity | finite-sample confidence interval for the P19 conditional-information residual | proved finite-sample certification theorem |
 | [P21](proposition_21_descriptor_refinement_residual_persistence.md) | nested descriptor factorization and conditional-information chain rule | explicit omitted-physics audit and residual-persistence trajectory | proved descriptor-refinement theorem |
+| [P22](proposition_22_simultaneous_refinement_chain_certification.md) | shared base-TV confidence event plus deterministic pushforward contraction | simultaneous finite-data confidence family for P21 residuals and gains | proved simultaneous-certification theorem |
 
 ---
 
@@ -500,7 +501,66 @@ Direct proof: [Proposition 21](proposition_21_descriptor_refinement_residual_per
 
 ---
 
-# 11. Dependency chain
+# 11. Simultaneous finite-sample refinement certification: P22
+
+Let the finite-alphabet IID base law be \(P_{\Omega E}\), and let every descriptor \(T_k=f_k(\Omega)\) be predeclared and nested.
+
+P22 constructs one base event
+
+\[
+\boxed{
+\|P_{\Omega E}-\widehat P_{\Omega E}\|_{\mathrm{TV}}
+\le
+\tau_n(\alpha)
+}
+\]
+
+with probability at least \(1-\alpha\). Because every residual and gain law is a deterministic pushforward of this base law, the same event implies
+
+\[
+\boxed{
+|R_k-\widehat R_k|
+\le
+\Delta_k(\tau_n)
+\qquad
+\forall k
+}
+\]
+
+and
+
+\[
+\boxed{
+|G_k-\widehat G_k|
+\le
+\Gamma_k(\tau_n)
+\qquad
+\forall k.
+}
+\]
+
+Using the P21 identity \(G_k=R_{k-1}-R_k\), P22 also intersects each direct gain interval with the difference interval implied by adjacent residual bounds.
+
+Therefore
+
+\[
+\boxed{
+\Pr\left(
+R_k\in\mathcal I_k^R\ \forall k,
+\quad
+G_k\in\mathcal I_k^G\ \forall k
+\right)
+\ge1-\alpha.
+}
+\]
+
+No additional confidence split over the number of descriptor levels is required for this shared-base-event construction. The bound can nevertheless become weak as the declared physical-target and descriptor alphabets grow.
+
+Direct proof: [Proposition 22](proposition_22_simultaneous_refinement_chain_certification.md). Implementation: [refinement_chain_certification.py](../src/consciousness_bridge/refinement_chain_certification.py). Tests: [test_refinement_chain_certification.py](../tests/test_refinement_chain_certification.py).
+
+---
+
+# 12. Dependency chain
 
 \[
 \boxed{
@@ -521,20 +581,22 @@ Direct proof: [Proposition 21](proposition_21_descriptor_refinement_residual_per
 &\Downarrow\\
 &\text{P20: finite-sample residual certification}\\
 &\Downarrow\\
-&\text{P21: physical-descriptor refinement + residual persistence}.
+&\text{P21: physical-descriptor refinement + residual persistence}\\
+&\Downarrow\\
+&\text{P22: simultaneous finite-sample refinement certification}.
 \end{aligned}
 }
 \]
 
 ---
 
-# 12. Current frontier
+# 13. Current frontier
 
 The next structural problems are:
 
 1. extend scale certification from response geometry \(\mathcal G\) to directed influence \(\mathcal A\) under block-compatible coarse maps;
 2. characterize partition-lattice compatibility required to control \(\mathcal K\) across scale;
-3. derive simultaneous finite-sample confidence accounting across P21 refinement chains, including adaptive refinement and principled stopping rules for physical-completeness audits;
+3. extend P22 beyond fixed finite-alphabet IID chains to continuous, dependent, hidden-state, noisy-descriptor, and adaptive-refinement settings with valid coverage;
 4. model genuine physical split/merge dynamics where state variables and intervention channels change;
 5. formalize the moving world-tube / causal-structure interface;
 6. normalize temporal geometry under irregular observation time;
