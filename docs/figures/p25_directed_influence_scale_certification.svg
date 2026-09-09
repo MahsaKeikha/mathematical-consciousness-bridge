@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120" role="img" aria-labelledby="title desc">
+  <title id="title">P25 directed-influence scale certification</title>
+  <desc id="desc">Publication-style theorem map showing contraction, reconstruction control, and threshold edge preservation for P11 directed influence under deterministic target coarse observation.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .title{font:700 34px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 17px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .label{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
+      .head{font:700 20px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 15px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .eq{font:600 19px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .eqsmall{font:600 16px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .arrow{stroke:#64748b;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+
+  <rect width="1600" height="1120" fill="#ffffff"/>
+  <text x="70" y="62" class="title">P25 · Directed-Influence Scale Certification</text>
+  <text x="70" y="95" class="subtitle">P18 reconstruction control is lifted to the P11 directed perturbational influence component.</text>
+
+  <rect x="90" y="145" width="680" height="210" rx="20" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="125" y="181" class="label">FINE-SCALE P11 INFLUENCE</text>
+  <text x="125" y="217" class="head">Matched source interventions, fine target response</text>
+  <text x="125" y="262" class="eqsmall">Af = sup(u,v)∈Ei ‖Pjᵘ,τ − Pjᵛ,τ‖TV</text>
+  <text x="125" y="306" class="body">The intervention-pair family is held fixed across observational scale.</text>
+  <text x="125" y="334" class="body">Only the target response representation is coarse-grained.</text>
+
+  <rect x="830" y="145" width="680" height="210" rx="20" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="865" y="181" class="label">DETERMINISTIC TARGET MAP</text>
+  <text x="865" y="217" class="head">Coarse observation contracts total variation</text>
+  <text x="865" y="262" class="eqsmall">P̄jᵘ,τ = Cj# Pjᵘ,τ</text>
+  <text x="865" y="306" class="eq">Ac ≤ Af</text>
+  <text x="865" y="334" class="body">A coarse directed edge cannot be created by this observation map.</text>
+
+  <path class="arrow" d="M770 250 H818"/>
+  <path class="arrow" d="M800 355 V405"/>
+
+  <rect x="90" y="420" width="1420" height="210" rx="20" fill="#f5f3ff" stroke="#8b5cf6"/>
+  <text x="125" y="456" class="label">P18 RECONSTRUCTION CONTROL</text>
+  <text x="125" y="492" class="head">Decode each coarse target law back into its fine fiber</text>
+  <text x="125" y="536" class="eqsmall">ρ = supu ‖Pjᵘ,τ − Rj# Cj# Pjᵘ,τ‖TV</text>
+  <text x="125" y="580" class="body">The defect is evaluated only on interventions used by the declared P11 source-pair family.</text>
+  <text x="125" y="610" class="body">Global invertibility outside that response family is not required.</text>
+
+  <path class="arrow" d="M800 630 V680"/>
+
+  <rect x="90" y="695" width="1420" height="180" rx="20" fill="#fff7ed" stroke="#f97316"/>
+  <text x="125" y="731" class="label">P25 DISTORTION THEOREM</text>
+  <text x="125" y="767" class="head">Directed influence is stable when response-family reconstruction is accurate</text>
+  <text x="125" y="815" class="eq">0 ≤ Af − Ac ≤ 2ρ</text>
+  <text x="550" y="815" class="eqsmall">Ac ≥ Af − 2ρ</text>
+  <text x="125" y="851" class="body">If ρ = 0, the directed-influence entry is preserved exactly.</text>
+
+  <path class="arrow" d="M800 875 V925"/>
+
+  <rect x="90" y="940" width="680" height="150" rx="20" fill="#ecfeff" stroke="#0891b2"/>
+  <text x="125" y="976" class="label">THRESHOLD EDGE GUARANTEE</text>
+  <text x="125" y="1012" class="eqsmall">Af &gt; θ + 2ρ  ⇒  Ac &gt; θ</text>
+  <text x="125" y="1052" class="body">A fine edge with sufficient margin must survive coarse observation.</text>
+
+  <rect x="830" y="940" width="680" height="150" rx="20" fill="#0f172a"/>
+  <text x="865" y="976" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">BOUNDARY</text>
+  <text x="865" y="1012" style="font:600 17px Georgia,'Times New Roman',serif;fill:#f8fafc">scale-stable influence ≠ full causal-structure sufficiency</text>
+  <text x="865" y="1052" style="font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">P25 does not certify K, physical fusion, completeness, or experience.</text>
+</svg>
