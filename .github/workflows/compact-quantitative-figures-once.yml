@@ -53,3 +53,5 @@ jobs:
           git add scripts/generate_quantitative_atlas.py scripts/generate_quantum_foundations_atlas.py docs/figures/quantitative docs/figures/quantum .github/workflows/compact-quantitative-figures-once.yml
           git commit -m "Reduce Q01-Q40 and QM01-QM18 figure scale"
           git push origin HEAD:main
+
+# retry after theorem-roadmap overflow correction
