@@ -25,9 +25,22 @@ FIGURES = (
     "theory_comparison_map.svg",
 )
 
+OVERFLOW_SENSITIVE = (
+    "causal_structure_anatomy.svg",
+    "thermodynamics_information_processing.svg",
+    "theorem_roadmap.svg",
+    "multiscale_physical_hierarchy.svg",
+    "observer_to_bridge_handoff.svg",
+    "state_space_dynamics_map.svg",
+)
+
 
 def _numeric_svg_dimension(value: str) -> float:
     return float(value.removesuffix("px"))
+
+
+def _visible_text(element: ET.Element) -> str:
+    return " ".join("".join(element.itertext()).split())
 
 
 def test_canonical_figures_follow_publication_layout_baseline():
@@ -58,6 +71,36 @@ def test_canonical_figures_follow_publication_layout_baseline():
         assert " -> " not in source
         assert "Inter,Segoe UI,Arial" in source
         assert "Georgia" in source
+
+
+def test_canonical_figures_avoid_unbounded_single_line_text():
+    figure_root = ROOT / "docs" / "figures"
+    namespace = {"svg": "http://www.w3.org/2000/svg"}
+
+    for name in FIGURES:
+        root = ET.parse(figure_root / name).getroot()
+        for text in root.findall(".//svg:text", namespace):
+            visible = _visible_text(text)
+            assert len(visible) <= 150, (
+                f"{name} contains an excessively long SVG text line: {visible!r}"
+            )
+
+
+def test_high_visibility_figures_use_compact_card_copy():
+    figure_root = ROOT / "docs" / "figures"
+    namespace = {"svg": "http://www.w3.org/2000/svg"}
+
+    limits = {"head": 58, "body": 82, "eq": 74, "eqsmall": 82, "label": 42}
+    for name in OVERFLOW_SENSITIVE:
+        root = ET.parse(figure_root / name).getroot()
+        for text in root.findall(".//svg:text", namespace):
+            css_class = text.attrib.get("class", "")
+            if css_class not in limits:
+                continue
+            visible = _visible_text(text)
+            assert len(visible) <= limits[css_class], (
+                f"{name} {css_class} copy is too long for a single line: {visible!r}"
+            )
 
 
 def test_obsolete_candidate_shorthand_is_absent_from_current_text_sources():
