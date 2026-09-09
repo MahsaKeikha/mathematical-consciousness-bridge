@@ -11,6 +11,7 @@ CANONICAL_MAIN_PAGE_FIGURES = (
     "equation_evidence_map.svg",
     "state_space_dynamics_map.svg",
     "thermodynamics_information_processing.svg",
+    "quantum_bridge_completeness_map.svg",
     "physics_mathematics_atlas.svg",
     "information_geometry_response_manifold.svg",
     "universal_proof_ladder.svg",
@@ -38,6 +39,14 @@ def test_main_page_contains_complete_quantitative_figure_sequence():
         assert token in text, f"README is missing quantitative figure Q{index:02d}"
 
 
+def test_main_page_contains_complete_quantum_figure_sequence():
+    text = README.read_text(encoding="utf-8")
+
+    for index in range(1, 19):
+        token = f"qm{index:02d}_"
+        assert token in text, f"README is missing quantum figure QM{index:02d}"
+
+
 def test_main_page_contains_canonical_scientific_maps():
     text = README.read_text(encoding="utf-8")
 
@@ -59,6 +68,7 @@ def test_main_page_declares_scientific_status_boundaries():
         "Synthetic example",
         "Open bridge problem",
         "does **not** assume that a physical quantity is consciousness",
+        "Quantum mechanics does not by itself imply consciousness",
         "Reproducibility and audit path",
         "Numerical validation facts",
     )
