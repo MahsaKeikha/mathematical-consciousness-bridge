@@ -14,11 +14,11 @@ for path in OUT.glob("q*.svg"):
 
 plt.rcParams.update(
     {
-        "figure.figsize": (9.6, 6.0),
+        "figure.figsize": (7.6, 4.7),
         "figure.dpi": 120,
-        "font.size": 11,
-        "axes.titlesize": 16,
-        "axes.labelsize": 11,
+        "font.size": 9.5,
+        "axes.titlesize": 13,
+        "axes.labelsize": 9.5,
         "axes.grid": True,
         "grid.alpha": 0.22,
         "axes.spines.top": False,
