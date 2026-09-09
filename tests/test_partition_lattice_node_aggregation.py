@@ -14,7 +14,6 @@ from consciousness_bridge.partition_lattice_node_aggregation import (
     partition_refines,
 )
 
-
 FINE_NODES = ("a", "b", "c", "d", "e")
 AGGREGATION = {
     "a": "X",
