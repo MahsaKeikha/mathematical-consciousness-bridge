@@ -1,3 +1,13 @@
+# 0.48.0 - 2026-09-10
+
+- Add P48 gap-dependent stopping complexity for the P47 sequential witness graph.
+- Prove deterministic lower/upper margin perturbation bounds from the edge uncertainty proxy.
+- Derive an explicit sufficient local count for logarithmic time-uniform confidence envelopes.
+- Prove positive-witness and all-negative finite stopping-epoch bounds.
+- Make the exactly-zero-margin no-finite-bound boundary explicit.
+- Add full-family and safely pruned acquisition-cost comparisons.
+- Add implementation, regression tests, equation-map provenance, and a publication visual.
+
 # 0.47.0 - 2026-09-10
 
 - Add P47 anytime-valid sequential witness-graph refinement.
