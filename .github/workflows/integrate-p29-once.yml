@@ -24,6 +24,20 @@ jobs:
       - name: Apply P29 release integration
         run: python .github/integrate_p29_release.py
 
+      - name: Normalize P29 roadmap card copy
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("docs/figures/theorem_roadmap.svg")
+          text = path.read_text(encoding="utf-8")
+          old = "Every intervention-pair distance is controlled at every delay"
+          new = "Every pairwise response distance is controlled at every delay"
+          if text.count(old) != 1:
+              raise RuntimeError("P29 roadmap heading marker not found exactly once")
+          path.write_text(text.replace(old, new, 1), encoding="utf-8")
+          PY
+
       - name: Remove one-time integration scaffolding before validation
         run: |
           rm .github/integrate_p29_release.py
