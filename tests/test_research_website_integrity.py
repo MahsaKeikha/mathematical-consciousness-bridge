@@ -46,7 +46,7 @@ def test_website_release_status_matches_repository():
 
 def test_website_latest_figure_is_real():
     html = WEBSITE.read_text(encoding="utf-8")
-    figure = "docs/figures/p64_fast_heterogeneous_integer_approximation.svg"
+    figure = "docs/figures/p65_lower_bounded_heterogeneous_calibration.svg"
     assert figure in html
     assert (ROOT / figure).exists()
 
@@ -129,5 +129,5 @@ def test_research_map_covers_full_proposition_frontier():
     assert "P25-P37" in html
     assert "P38-P44" in html
     assert "P45-P53" in html
-    assert "P54-P64" in html
-    assert _max_proposition_number() == 64
+    frontier = _max_proposition_number()
+    assert f"P54-P{frontier}" in html
