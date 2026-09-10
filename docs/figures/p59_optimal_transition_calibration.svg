@@ -22,9 +22,9 @@
     <rect class="card" x="70" y="175" width="500" height="250" rx="22" fill="#ffffff" stroke="#94a3b8"/>
     <text x="115" y="222" class="bt">1. Transition uncertainty</text>
     <text x="115" y="272" class="math">ρₑ(nₑ) = aₑ / √nₑ</text>
-    <text x="115" y="320" class="tx">More measurements reduce uncertainty.</text>
+    <text x="115" y="320" class="tx">More data lowers uncertainty.</text>
     <text x="115" y="352" class="tx">Larger aₑ means harder estimation.</text>
-    <text x="115" y="395" class="small">Each edge has its own calibration scale.</text>
+    <text x="115" y="395" class="small">Each edge has a calibration scale.</text>
   </g>
 
   <g id="p59-importance" data-qa-block="true" data-x="650" data-y="175" data-width="500" data-height="250">
@@ -33,14 +33,14 @@
     <text x="695" y="272" class="math">wₑ &gt; 0</text>
     <text x="695" y="320" class="tx">Larger weight means this edge</text>
     <text x="695" y="352" class="tx">matters more to the surrogate.</text>
-    <text x="695" y="395" class="small">Importance and difficulty combine as wₑaₑ.</text>
+    <text x="695" y="395" class="small">wₑaₑ combines importance and difficulty.</text>
   </g>
 
   <g id="p59-budget" data-qa-block="true" data-x="1230" data-y="175" data-width="500" data-height="250">
     <rect class="card" x="1230" y="175" width="500" height="250" rx="22" fill="#ffffff" stroke="#94a3b8"/>
     <text x="1275" y="222" class="bt">3. Fixed calibration budget</text>
     <text x="1275" y="272" class="math">Σₑ nₑ = N</text>
-    <text x="1275" y="320" class="tx">Every transition cannot be measured</text>
+    <text x="1275" y="320" class="tx">No transition can be measured</text>
     <text x="1275" y="352" class="tx">arbitrarily many times.</text>
     <text x="1275" y="395" class="small">The design decides how to divide N.</text>
   </g>
