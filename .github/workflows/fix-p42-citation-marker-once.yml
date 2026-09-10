@@ -1,0 +1,51 @@
+name: fix-p42-citation-marker-once
+
+on:
+  push:
+    branches:
+      - p42-quantum-regular-bridge-sample-complexity
+    paths:
+      - .github/workflows/fix-p42-citation-marker-once.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          ref: p42-quantum-regular-bridge-sample-complexity
+          fetch-depth: 0
+
+      - name: Correct CITATION marker in release integrator
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('.github/integrate_p42_release.py')
+          text = path.read_text(encoding='utf-8')
+          old = '"trace-ball quantum confidence envelopes,"'
+          new = '"trace-ball quantum envelope certification,"'
+          if text.count(old) != 1:
+              raise SystemExit(f'expected one stale citation marker, found {text.count(old)}')
+          text = text.replace(old, new, 1)
+          old2 = '"trace-ball quantum confidence envelopes, fixed-IC quantum regular-bridge sample complexity,"'
+          new2 = '"trace-ball quantum envelope certification, fixed-IC quantum regular-bridge sample complexity,"'
+          if text.count(old2) != 1:
+              raise SystemExit(f'expected one replacement citation phrase, found {text.count(old2)}')
+          text = text.replace(old2, new2, 1)
+          path.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Remove marker-fix workflow
+        run: rm .github/workflows/fix-p42-citation-marker-once.yml
+
+      - name: Commit correction
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Fix P42 citation release marker"
+          git push origin HEAD:p42-quantum-regular-bridge-sample-complexity
