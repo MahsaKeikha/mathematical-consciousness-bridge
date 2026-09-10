@@ -872,4 +872,4 @@ Regression tests:
 [`test_sequential_witness_graph.py`](../tests/test_sequential_witness_graph.py)
 
 Main visual:
-[`p47_sequential_graph_refinement.svg`](../figures/p47_sequential_graph_refinement.svg)
+[`p47_sequential_graph_refinement.svg`](figures/p47_sequential_graph_refinement.svg)

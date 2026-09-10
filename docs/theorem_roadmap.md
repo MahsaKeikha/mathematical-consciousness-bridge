@@ -24,6 +24,8 @@ This roadmap records the current proved mathematical chain and the open route to
 
 ![P46 budget-constrained witness graph](figures/p46_budget_constrained_witness_graph.svg)
 
+![P47 anytime-valid sequential witness graph](figures/p47_sequential_graph_refinement.svg)
+
 ---
 
 # 1. Complete proposition index
@@ -76,6 +78,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P44](proposition_44_pair_adaptive_sample_allocation.md) | finite-family union bound and simultaneous lower-margin coverage | valid data-dependent witness selection among predeclared candidate pairs | proved post-selection theorem |
 | [P45](proposition_45_shared_preparation_graph_allocation.md) | strictly convex shared-vertex allocation plus incidence-weighted KKT conditions | unique preparation-level sample design for overlapping candidate witness pairs | proved resource-allocation theorem |
 | [P46](proposition_46_budget_constrained_witness_graph.md) | monotone supermodular induced-edge objective, CLIQUE reduction, and fractional degree-knapsack bound | hard-budget preparation selection with certified optimality gap | proved combinatorial design theorem |
+| [P47](proposition_47_anytime_sequential_witness_graph.md) | finite-family all-local-time confidence event plus adaptive local-count substitution and simultaneous edge envelopes | valid non-anticipating adaptive preparation sampling, graph refinement, witness selection, pruning, and stopping | proved anytime-valid sequential-design theorem |
 
 ---
 

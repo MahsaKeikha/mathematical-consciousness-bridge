@@ -628,3 +628,19 @@ This distinction is central to the final proof target: mathematics establishes w
 | \(F^*(B)-F(S)\le U_{\rm deg}(B)-F(S)\) | a posteriori optimality-gap certificate | proved | [P46](proposition_46_budget_constrained_witness_graph.md) |
 
 P46 is a combinatorial experimental-design result. Its graph weights are declared design values, not consciousness scores or evidence of quantum incompleteness.
+
+---
+
+# 36. P47 anytime-valid sequential witness graph
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(\mathcal E_*=\bigcap_i(\mathcal E_{Y,i}\cap\mathcal E_{Q,i})\) | one event covering every declared preparation stream and every local sample size | repository definition | [P47](proposition_47_anytime_sequential_witness_graph.md) |
+| \(\Pr(\mathcal E_*)\ge1-\alpha_Y-\alpha_Q\) | finite-family simultaneous coverage | proved by union bound from preparation-level confidence sequences | [P47](proposition_47_anytime_sequential_witness_graph.md) |
+| \(N_{Y,i}(t),N_{Q,i}(t)\) | history-dependent local sample counts | adaptive design object | [P47](proposition_47_anytime_sequential_witness_graph.md) |
+| \(\underline M_e(t)\le M_e\le\overline M_e(t)\) | simultaneous regularity-margin envelope for every declared edge and global time | proved from metric triangle inequalities on \(\mathcal E_*\) | [P47](proposition_47_anytime_sequential_witness_graph.md) |
+| \(\underline M_{\widehat e_\tau}(\tau)>0\Rightarrow M_{\widehat e_\tau}>0\) | selected-edge stopping-time certificate | proved from the simultaneous event | [P47](proposition_47_anytime_sequential_witness_graph.md) |
+| \(\overline M_e(t)<0\) | safe edge elimination criterion | proved from simultaneous upper coverage | [P47](proposition_47_anytime_sequential_witness_graph.md) |
+
+P47 is a time-uniform statistical and experimental-design result. It does not convert a regularity obstruction into an ontological or experiential conclusion.
+
