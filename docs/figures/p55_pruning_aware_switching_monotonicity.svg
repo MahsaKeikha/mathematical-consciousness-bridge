@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+<title id="title">P55 pruning-aware metric switching-cost monotonicity</title>
+<desc id="desc">Residual demands and active preparation support shrink after sampling or safe pruning, reducing acquisition burden and never increasing the optimal metric switching route.</desc>
+<rect width="1200" height="760" fill="#ffffff"/>
+<text x="60" y="70" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#111827">P55 · Pruning-aware switching-cost monotonicity</text>
+<text x="60" y="110" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#374151">Exact cost release = acquisition release + metric route release</text>
+
+<rect x="60" y="155" width="480" height="230" rx="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+<text x="90" y="198" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#111827">Earlier residual state r</text>
+<text x="90" y="238" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#374151">support S(r) = {A, B, C, D}</text>
+<line x1="110" y1="300" x2="485" y2="300" stroke="#64748b" stroke-width="4"/>
+<circle cx="125" cy="300" r="23" fill="#e2e8f0" stroke="#334155" stroke-width="2"/><text x="117" y="307" font-family="Arial" font-size="18">A</text>
+<circle cx="240" cy="300" r="23" fill="#e2e8f0" stroke="#334155" stroke-width="2"/><text x="232" y="307" font-family="Arial" font-size="18">B</text>
+<circle cx="355" cy="300" r="23" fill="#e2e8f0" stroke="#334155" stroke-width="2"/><text x="347" y="307" font-family="Arial" font-size="18">C</text>
+<circle cx="470" cy="300" r="23" fill="#e2e8f0" stroke="#334155" stroke-width="2"/><text x="462" y="307" font-family="Arial" font-size="18">D</text>
+<text x="90" y="352" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">C*(r;s) = a Σ rᵢ + L*(S(r);s)</text>
+
+<text x="565" y="260" font-family="Arial, Helvetica, sans-serif" font-size="46" fill="#64748b">⇒</text>
+<text x="545" y="310" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#475569">sample / prune</text>
+
+<rect x="650" y="155" width="490" height="230" rx="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+<text x="680" y="198" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#111827">Later residual state r′ ≤ r</text>
+<text x="680" y="238" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#374151">support S(r′) = {A, C}</text>
+<line x1="720" y1="300" x2="1050" y2="300" stroke="#64748b" stroke-width="4"/>
+<circle cx="735" cy="300" r="23" fill="#e2e8f0" stroke="#334155" stroke-width="2"/><text x="727" y="307" font-family="Arial" font-size="18">A</text>
+<circle cx="1035" cy="300" r="23" fill="#e2e8f0" stroke="#334155" stroke-width="2"/><text x="1027" y="307" font-family="Arial" font-size="18">C</text>
+<text x="680" y="352" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">L*(S(r′);s) ≤ L*(S(r);s)</text>
+
+<rect x="60" y="430" width="1080" height="245" rx="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+<text x="90" y="478" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#111827">Exact P55 release identity</text>
+<text x="90" y="530" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#111827">C*(r;s) − C*(r′;s) = a(Σrᵢ − Σr′ᵢ) + [L*(S(r);s) − L*(S(r′);s)]</text>
+<text x="90" y="580" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#374151">Both terms are nonnegative under componentwise residual decrease and a fixed metric/start state.</text>
+<text x="90" y="620" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#374151">If support is unchanged, route release = 0 exactly. If support shrinks, shortcutting can create extra savings.</text>
+<text x="90" y="655" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#64748b">Boundary: same metric and same start state; no claim outside the metric regime or about statistical/experiential ontology.</text>
+</svg>
