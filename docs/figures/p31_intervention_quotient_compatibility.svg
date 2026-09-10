@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1380" viewBox="0 0 1600 1380" role="img" aria-labelledby="title desc">
+  <title id="title">P31 intervention quotient compatibility</title>
+  <desc id="desc">Theorem map for exact intervention-label descent, within-fiber response ambiguity, representative stability, and induced geometry uncertainty.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .title{font:700 36px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 17px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .label{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
+      .head{font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .eq{font:600 17px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .arrow{stroke:#64748b;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+
+  <rect width="1600" height="1380" fill="#ffffff"/>
+  <text x="70" y="64" class="title">P31 - Intervention-Quotient Compatibility</text>
+  <text x="70" y="96" class="subtitle">Several fine intervention labels may become one coarse label only when the induced response law is well defined.</text>
+
+  <rect x="95" y="155" width="420" height="220" rx="18" fill="#eff6ff" stroke="#2563eb"/>
+  <text x="125" y="192" class="label">DECLARED INTERVENTION QUOTIENT</text>
+  <text x="125" y="232" class="head">Fine labels map to coarse labels</text>
+  <text x="125" y="278" class="eq">b: Uf → Uc</text>
+  <text x="125" y="322" class="body">The map is surjective and the response space is fixed.</text>
+  <text x="125" y="350" class="body">Label merging alone does not define a coarse response law.</text>
+
+  <rect x="590" y="155" width="420" height="220" rx="18" fill="#f5f3ff" stroke="#7c3aed"/>
+  <text x="620" y="192" class="label">EXACT DESCENT CRITERION</text>
+  <text x="620" y="232" class="head">Responses must be constant on every fiber</text>
+  <text x="620" y="278" class="eq">b(u)=b(v) ⇒ P̄u,τ=P̄v,τ</text>
+  <text x="620" y="322" class="body">The condition is necessary and sufficient.</text>
+  <text x="620" y="350" class="body">Then the coarse response table is unique.</text>
+
+  <rect x="1085" y="155" width="420" height="220" rx="18" fill="#ecfdf5" stroke="#059669"/>
+  <text x="1115" y="192" class="label">QUOTIENT AMBIGUITY</text>
+  <text x="1115" y="232" class="head">Residual response variation inside a fiber</text>
+  <text x="1115" y="278" class="eq">ηb = supτ supb(u)=b(v) ||P̄u,τ-P̄v,τ||TV</text>
+  <text x="1115" y="322" class="eq">ηb=0 ⇔ exact descent</text>
+  <text x="1115" y="350" class="body">Positive ηb means the quotient hides distinguishability.</text>
+
+  <path class="arrow" d="M515 265 H578"/>
+  <path class="arrow" d="M1010 265 H1073"/>
+
+  <rect x="160" y="475" width="1280" height="225" rx="20" fill="#f8fafc" stroke="#0f172a" stroke-width="1.8"/>
+  <text x="200" y="514" class="label">REPRESENTATIVE DEPENDENCE WHEN EXACT DESCENT FAILS</text>
+  <text x="200" y="556" class="head">Choose one fine representative s(c) from each quotient fiber</text>
+  <text x="200" y="606" class="eq">Qs(c,τ)=P̄s(c),τ</text>
+  <text x="760" y="606" class="eq">supc,τ ||Qs-Qs' ||TV ≤ ηb</text>
+  <text x="200" y="655" class="body">The quotient ambiguity is the worst-case dependence on which fine intervention represents the coarse label.</text>
+
+  <path class="arrow" d="M800 375 V463"/>
+
+  <rect x="250" y="795" width="1100" height="245" rx="22" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="290" y="835" class="label">INDUCED RESPONSE-GEOMETRY UNCERTAINTY</text>
+  <text x="290" y="878" class="head">Pairwise coarse geometry inherits two representative errors</text>
+  <text x="290" y="930" class="eq">Gs(c,d,τ)=||Qs(c,τ)-Qs(d,τ)||TV</text>
+  <text x="290" y="982" class="eq">supc,d,τ |Gs-Gs'| ≤ 2ηb</text>
+  <text x="290" y="1018" class="body">At ηb=0 the quotient response geometry is representative independent.</text>
+
+  <path class="arrow" d="M800 700 V783"/>
+
+  <rect x="155" y="1120" width="1290" height="150" rx="18" fill="#fefce8" stroke="#ca8a04"/>
+  <text x="195" y="1157" class="label">INTERPRETATION GUARD</text>
+  <text x="195" y="1198" class="eq">same coarse intervention label ≠ same physical actuator ≠ simultaneous intervention</text>
+  <text x="195" y="1238" class="body">P31 certifies operational response-law quotienting only within the declared experiment and retained delays.</text>
+
+  <rect x="80" y="1305" width="1440" height="55" rx="14" fill="#0f172a"/>
+  <text x="115" y="1328" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">BOUNDARY</text>
+  <text x="115" y="1349" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">P31 does not establish consciousness, physical completeness, actuator identity, intervention synergy, or time quotienting.</text>
+</svg>
