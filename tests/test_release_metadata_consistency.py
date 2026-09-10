@@ -6,9 +6,9 @@ def test_release_versions_are_synchronized():
     readme = Path("README.md").read_text(encoding="utf-8")
     pyproject = Path("pyproject.toml").read_text(encoding="utf-8")
     citation = Path("CITATION.cff").read_text(encoding="utf-8")
-    assert "version-0.68.0-2563eb" in readme
-    assert re.search(r'^version = "0\.68\.0"$', pyproject, re.MULTILINE)
-    assert re.search(r'^version: 0\.68\.0$', citation, re.MULTILINE)
+    assert "version-0.69.0-2563eb" in readme
+    assert re.search(r'^version = "0\.69\.0"$', pyproject, re.MULTILINE)
+    assert re.search(r'^version: 0\.69\.0$', citation, re.MULTILINE)
 
 
 def test_quantum_publication_paths_are_visible():
@@ -134,5 +134,9 @@ def test_quantum_publication_paths_are_visible():
         "p68_lagrangian_optimality_gap.svg",
         "lagrangian_optimality_gap.py",
         "test_lagrangian_optimality_gap.py",
+        "Proposition 69",
+        "p69_dual_optimal_multiplier.svg",
+        "dual_optimal_multiplier.py",
+        "test_dual_optimal_multiplier.py",
     ):
         assert token in readme
