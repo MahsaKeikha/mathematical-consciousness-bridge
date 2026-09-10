@@ -6,7 +6,7 @@ This page is the reading and reference index for the Mathematical Consciousness 
 
 1. [Main research paper](../README.md) for the complete scientific narrative and embedded figures.
 2. [Bridge problem](bridge_problem.md) for the formal statement of the physical-to-experiential problem.
-3. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P55, including the physical scale branches from P11-P18 to P25-P27.
+3. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P56, including the physical scale branches from P11-P18 to P25-P27.
 4. [Equation and citation map](equation_and_citation_map.md) for equation-level provenance and theorem lineage.
 5. [Proposition 19](proposition_19_fundamental_physical_sufficiency.md) for the population physical-sufficiency theorem.
 6. [Proposition 20](proposition_20_finite_sample_residual_certification.md) for finite-sample certification of the P19 stochastic residual.
@@ -85,6 +85,7 @@ This page is the reading and reference index for the Mathematical Consciousness 
 | P53 | [Residual-demand reoptimization](proposition_53_residual_demand_reoptimization.md) | dynamic P52 reoptimization after sampling and safe edge pruning, with exact released-capacity identity |
 | P54 | [Metric switching-cost residual scheduling](proposition_54_metric_switching_cost_residual_scheduling.md) | one-block metric batching, exact acquisition-routing decomposition, and Held-Karp shortest Hamiltonian path audit |
 | P55 | [Pruning-aware metric switching-cost monotonicity](proposition_55_pruning_aware_switching_monotonicity.md) | exact acquisition-plus-route release, support-deletion monotonicity, and computable old-route shortcut certificate |
+| P56 | [Moving-start metric reoptimization stability](proposition_56_moving_start_metric_reoptimization_stability.md) | sharp start-state Lipschitz bound, P55 saving erosion bound, and strict-decrease certificate under setup motion |
 
 ## Physics, mathematics, and quantitative figures
 

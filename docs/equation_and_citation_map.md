@@ -758,3 +758,16 @@ The metric assumption is structural: without triangle inequality the batching in
 
 P55 compares states under one fixed metric and fixed start/setup state. A moving start requires a separate stability theorem.
 
+---
+
+# 45. P56 moving-start metric reoptimization stability
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(|L^*(S;s)-L^*(S;s')|\le c(s,s')\) | start-state perturbation of the optimal P54 route | proved sharp 1-Lipschitz theorem | [P56](proposition_56_moving_start_metric_reoptimization_stability.md) |
+| \(|C^*(r;s)-C^*(r;s')|\le c(s,s')\) | fixed-residual total-cost start stability | immediate from P56 route theorem | [P56](proposition_56_moving_start_metric_reoptimization_stability.md) |
+| \(C^*(r;s)-C^*(r';s')\ge\Delta_{\rm fixed}-c(s,s')\) | residual decrease with moving setup origin | proved P55-P56 perturbation bound | [P56](proposition_56_moving_start_metric_reoptimization_stability.md) |
+| \(\Delta_{\rm fixed}>c(s,s')\) | sufficient strict-decrease condition | proved consequence | [P56](proposition_56_moving_start_metric_reoptimization_stability.md) |
+
+P56 assumes the metric itself is unchanged. Time-varying switching geometry requires a separate perturbation analysis.
+

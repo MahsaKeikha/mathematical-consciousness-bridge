@@ -10,7 +10,6 @@ def test_p55_is_visible_on_main_page():
         "p55_pruning_aware_switching_monotonicity.svg",
         "pruning_aware_switching_monotonicity.py",
         "test_pruning_aware_switching_monotonicity.py",
-        "**55 proposition-level results",
     ):
         assert token in text
 
