@@ -49,7 +49,12 @@ def validate_metric_costs(
     *,
     tolerance: float = 1e-12,
 ) -> None:
-    """Validate a finite symmetric metric supplied as a complete directed map."""
+    """Validate a finite symmetric metric on the declared point subset.
+
+    ``costs`` may also contain entries for other points. This is useful when a
+    residual task drops zero-demand preparations from the active support while
+    reusing a metric table declared for the larger experimental preparation set.
+    """
     declared = tuple(points)
     if not declared:
         raise ValueError("points must be nonempty")
@@ -59,7 +64,7 @@ def validate_metric_costs(
         raise ValueError("tolerance must be nonnegative and finite")
 
     expected = {(u, v) for u in declared for v in declared}
-    if set(costs) != expected:
+    if not expected.issubset(costs):
         raise ValueError("costs must contain every ordered pair of declared points")
 
     for u in declared:
