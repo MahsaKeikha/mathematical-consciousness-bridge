@@ -1,3 +1,4 @@
+import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -27,9 +28,19 @@ EXACT_TEXT_FILES = {
 }
 
 
+def _tracked_paths() -> list[Path]:
+    result = subprocess.run(
+        ["git", "ls-files", "-z"],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+    )
+    return [ROOT / item.decode() for item in result.stdout.split(b"\0") if item]
+
+
 def _public_text_files():
-    for path in ROOT.rglob("*"):
-        if not path.is_file() or ".git" in path.parts:
+    for path in _tracked_paths():
+        if not path.is_file():
             continue
         relative = path.relative_to(ROOT)
         if path.suffix.lower() in TEXT_SUFFIXES or str(relative) in EXACT_TEXT_FILES:
