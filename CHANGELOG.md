@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.38.0 - 2026-09-09
+
+### Integrated theorem sequence
+- P32 exact delay-quotient compatibility.
+- P33 joint intervention-delay operational quotient and additive ambiguity theorem.
+- P34 joint node/state/intervention/time P11 scale assembly.
+- P35 approximate directed-influence quotient stability.
+- P36 partition-product and irreducibility quotient stability.
+- P37 complete approximate P11 operational-scale distortion theorem.
+- P38 quantum operational sufficiency and exact non-factorization criterion.
+
+### Publication synchronization
+- Main README updated through P38 with equations, scientific boundaries, proof links, code links, and visual maps.
+- Theorem roadmap and research navigation synchronized through P38.
+- P38 publication map added.
+- Package and citation metadata synchronized to 0.38.0.
+- Main-page visibility guards extended through P38.
+
+### Scientific boundary
+- P32-P37 certify a declared candidate physical signature across operational scale; they do not identify consciousness.
+- P38 tests factorization through a declared tomographically complete quantum descriptor; failure of that declared factorization is not by itself evidence that quantum mechanics is incomplete or that consciousness is nonphysical.
+
 This changelog records theorem-level scientific releases. Definitions, proofs, implementations, tests, figures, and documentation remain linked from the main research page.
 
 ## 0.31.0 - 2026-09-09

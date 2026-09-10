@@ -2,7 +2,11 @@
 
 This roadmap records the current proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge.
 
-![P1-P31 theorem roadmap](figures/theorem_roadmap.svg)
+![P1-P31 core theorem roadmap](figures/theorem_roadmap.svg)
+
+![P30-P37 operational scale extension](../figures/p30_p37_operational_scale_map.svg)
+
+![P38 quantum operational sufficiency](figures/p38_quantum_operational_sufficiency.svg)
 
 ---
 
@@ -41,6 +45,13 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P29](proposition_29_response_geometry_node_aggregation.md) | P11 response geometry plus P17 contraction, P18 reconstruction, and P27 node aggregation | complete indexed response-pseudometric transport on a fixed intervention-delay grid | proved physical scale theorem |
 | [P30](proposition_30_full_p11_scale_compatibility.md) | assembly of P27-P29 under one scale declaration | simultaneous declared P11 physical-signature transport with a no-semantic-compensation guard | proved assembly theorem |
 | [P31](proposition_31_intervention_quotient_compatibility.md) | quotient factorization of intervention-conditioned response laws | exact criterion for changing the intervention set plus a representative-ambiguity budget | proved operational quotient theorem |
+| [P32](proposition_32_delay_quotient_compatibility.md) | delay-fiber factorization | exact temporal quotient criterion and ambiguity budget | proved operational quotient theorem |
+| [P33](proposition_33_joint_operational_quotient.md) | product quotient and triangle inequality | joint intervention-delay descent with additive ambiguity | proved joint quotient theorem |
+| [P34](proposition_34_joint_p11_operational_scale.md) | assembly under one complete scale declaration | exact full P11 semantics plus approximate geometry control | proved assembly theorem |
+| [P35](proposition_35_approximate_directed_influence_operational_quotient.md) | metric perturbation of matched response pairs | approximate directed-influence and edge stability | proved perturbation theorem |
+| [P36](proposition_36_partition_irreducibility_operational_quotient.md) | marginal contraction plus product-measure telescoping | partition-reference and irreducibility stability | proved perturbation theorem |
+| [P37](proposition_37_complete_approximate_p11_operational_scale.md) | max-norm assembly of G, A, and K bounds | complete approximate P11 scale certificate | proved complete scale theorem |
+| [P38](proposition_38_quantum_operational_sufficiency.md) | factorization through tomographically complete density-operator fibers | exact quantum descriptor sufficiency and non-factorization witness | proved quantum sufficiency theorem |
 
 ---
 
@@ -630,6 +641,44 @@ Then \(\eta_b=0\) is equivalent to exact quotient descent. If representatives ar
 The quotient is operational and experiment relative. It does not identify distinct physical actuators or define a simultaneous perturbation.
 
 Direct proof: [Proposition 31](proposition_31_intervention_quotient_compatibility.md). Implementation: [intervention_quotient_compatibility.py](../src/consciousness_bridge/intervention_quotient_compatibility.py). Tests: [test_intervention_quotient_compatibility.py](../tests/test_intervention_quotient_compatibility.py).
+
+---
+
+# 7.5 Operational-scale closure and quantum specialization: P32-P38
+
+P32-P37 close the complete operational-scale branch of the P11 physical candidate. The key quantitative chain is
+
+\[
+\boxed{\eta_{a\times b}\le\eta_a+\eta_b}
+\]
+
+followed by
+
+\[
+\boxed{D_G^{\mathrm{full}}\le2\rho_G^*+2\eta_{a\times b}},
+\]
+
+\[
+\boxed{D_A^{\mathrm{full}}\le2\rho_A^*+2\eta_{a\times b}},
+\]
+
+and
+
+\[
+\boxed{D_K^{\mathrm{full}}\le\rho_P^*+\rho_\Pi^*+(m_{\max}+1)\eta_{a\times b}}.
+\]
+
+P37 combines these into one max-norm scale certificate under one shared semantic declaration.
+
+P38 then changes branches. For a tomographically complete quantum operational state \(\rho_x\), a deterministic independent target factors through the declared quantum descriptor iff
+
+\[
+\boxed{\rho_x=\rho_{x'}\Longrightarrow y(x)=y(x').}
+\]
+
+The exact collision \(\rho_x=\rho_{x'}\) with \(y(x)\ne y(x')\) is therefore a non-factorization witness for that declared descriptor. The stochastic analogue is \(I(Y;X\mid\rho_X)=0\). Neither result is an experiential or ontological theorem.
+
+Direct proofs: [P32](proposition_32_delay_quotient_compatibility.md), [P33](proposition_33_joint_operational_quotient.md), [P34](proposition_34_joint_p11_operational_scale.md), [P35](proposition_35_approximate_directed_influence_operational_quotient.md), [P36](proposition_36_partition_irreducibility_operational_quotient.md), [P37](proposition_37_complete_approximate_p11_operational_scale.md), [P38](proposition_38_quantum_operational_sufficiency.md).
 
 ---
 
