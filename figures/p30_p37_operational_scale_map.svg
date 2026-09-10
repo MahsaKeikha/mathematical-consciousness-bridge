@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <rect width="1400" height="900" fill="white"/>
+  <style>
+    .title{font:700 34px Arial,sans-serif;fill:#111827}.sub{font:400 20px Arial,sans-serif;fill:#374151}
+    .h{font:700 22px Arial,sans-serif;fill:#111827}.t{font:400 18px Arial,sans-serif;fill:#1f2937}
+    .eq{font:600 19px 'Courier New',monospace;fill:#111827}.box{fill:#f9fafb;stroke:#374151;stroke-width:2;rx:18}
+    .accent{fill:#eef2ff;stroke:#4338ca;stroke-width:2;rx:18}.final{fill:#ecfdf5;stroke:#047857;stroke-width:3;rx:20}
+    .arrow{stroke:#6b7280;stroke-width:3;fill:none;marker-end:url(#a)}
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#6b7280"/></marker></defs>
+  <text x="700" y="55" text-anchor="middle" class="title">Operational Scale Theorem Chain: P30 → P37</text>
+  <text x="700" y="88" text-anchor="middle" class="sub">One declared transformation of nodes, states, interventions and time</text>
+
+  <rect x="60" y="135" width="300" height="150" class="box"/>
+  <text x="210" y="172" text-anchor="middle" class="h">P30</text>
+  <text x="210" y="204" text-anchor="middle" class="t">Node + state scale</text>
+  <text x="210" y="238" text-anchor="middle" class="eq">DG ≤ 2ρG</text>
+  <text x="210" y="265" text-anchor="middle" class="eq">DA ≤ 2ρA</text>
+
+  <rect x="550" y="125" width="300" height="170" class="accent"/>
+  <text x="700" y="162" text-anchor="middle" class="h">P31 + P32 + P33</text>
+  <text x="700" y="196" text-anchor="middle" class="t">Intervention + delay quotients</text>
+  <text x="700" y="232" text-anchor="middle" class="eq">ηjoint ≤ ηb + ηa</text>
+  <text x="700" y="262" text-anchor="middle" class="t">Exact descent iff ηjoint = 0</text>
+
+  <rect x="1040" y="135" width="300" height="150" class="box"/>
+  <text x="1190" y="172" text-anchor="middle" class="h">P34</text>
+  <text x="1190" y="204" text-anchor="middle" class="t">Exact full-P11 assembly</text>
+  <text x="1190" y="238" text-anchor="middle" class="eq">DGfull ≤ 2ρG + 2η</text>
+  <text x="1190" y="267" text-anchor="middle" class="t">No semantic compensation</text>
+
+  <path d="M360 210 L540 210" class="arrow"/><path d="M860 210 L1030 210" class="arrow"/>
+
+  <rect x="130" y="380" width="330" height="170" class="accent"/>
+  <text x="295" y="418" text-anchor="middle" class="h">P35: Directed influence</text>
+  <text x="295" y="458" text-anchor="middle" class="eq">DAfull ≤ 2ρA + 2η</text>
+  <text x="295" y="495" text-anchor="middle" class="t">Threshold edge survives when</text>
+  <text x="295" y="525" text-anchor="middle" class="eq">|A − θ| &gt; εA</text>
+
+  <rect x="940" y="380" width="330" height="170" class="accent"/>
+  <text x="1105" y="418" text-anchor="middle" class="h">P36: Partition branch</text>
+  <text x="1105" y="458" text-anchor="middle" class="eq">DKfull ≤ ρP + ρΠ + (m+1)η</text>
+  <text x="1105" y="495" text-anchor="middle" class="t">Product-reference movement</text>
+  <text x="1105" y="525" text-anchor="middle" class="eq">≤ mη</text>
+
+  <path d="M1190 295 C1190 330 400 330 400 370" class="arrow"/>
+  <path d="M1190 295 C1190 330 1105 330 1105 370" class="arrow"/>
+
+  <rect x="250" y="650" width="900" height="180" class="final"/>
+  <text x="700" y="695" text-anchor="middle" class="h">P37: Complete approximate P11 scale theorem</text>
+  <text x="700" y="742" text-anchor="middle" class="eq">εP11 = max{ 2ρG+2η , 2ρA+2η , ρP+ρΠ+(mmax+1)η }</text>
+  <text x="700" y="785" text-anchor="middle" class="eq">||DP11full(Σ)||∞ ≤ εP11</text>
+  <text x="700" y="815" text-anchor="middle" class="t">Requires semantic validity + quantitative stability</text>
+
+  <path d="M295 560 C295 610 550 610 600 640" class="arrow"/>
+  <path d="M1105 560 C1105 610 850 610 800 640" class="arrow"/>
+</svg>
