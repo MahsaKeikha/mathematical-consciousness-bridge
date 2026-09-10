@@ -332,7 +332,7 @@ where $G$ denotes gravitational or geometric information, $Q$ denotes quantum-op
 
 A useful diagnostic symbol is $d_{\mathrm{TOE}}^{\perp}$: it denotes target-relevant variation that would remain transverse to the declared complete-physics descriptor under a specified bridge class. It is not an observed new force or dimension. A nonzero certified obstruction would have scientific meaning only after the physical descriptor, target, bridge class, and measurement uncertainty were all independently justified.
 
-The repository also distinguishes scientific sources from speculative antecedents. Thomas W. Campbell's *My Big TOE* is treated, where discussed, as a speculative conceptual antecedent rather than peer-reviewed established fundamental physics. It is not used as an assumption in the theorem chain. The same evidential rule applies to any proposed consciousness-first ontology: conceptual inspiration and established physical evidence are different categories.
+The repository also distinguishes scientific sources from speculative antecedents. Thomas W. Campbell's *My Big TOE* and similar consciousness-first proposals are **not treated as established scientific facts**. They may be discussed as speculative conceptual antecedents, but they are not used as assumptions in the theorem chain. The same evidential rule applies to any proposed consciousness-first ontology: conceptual inspiration and established physical evidence are different categories.
 
 ---
 
