@@ -24,20 +24,20 @@
   <text x="110" y="220" class="head">Physical dynamics</text>
   <text x="110" y="262" class="eq">dXₜ = f(Xₜ,uₜ)dt</text>
   <text x="110" y="290" class="eq">+ G(Xₜ,uₜ)dWₜ</text>
-  <text x="110" y="335" class="body">State variables evolve while exchanging</text>
-  <text x="110" y="359" class="body">energy and matter with an environment.</text>
+  <text x="110" y="335" class="body">States evolve while exchanging energy</text>
+  <text x="110" y="359" class="body">and matter with the environment.</text>
   <text x="110" y="402" class="cite">stochastic / nonequilibrium dynamics</text>
 
   <rect x="505" y="180" width="365" height="255" rx="18" fill="#f8fafc" stroke="#64748b" stroke-width="1.6"/>
   <text x="535" y="220" class="head">Information-bearing states</text>
   <text x="535" y="262" class="eq">H(X) = −Σ p(x) log p(x)</text>
   <text x="535" y="300" class="eq">I(X;Y) = DKL(PXY ‖ PXPY)</text>
-  <text x="535" y="343" class="body">Probability laws quantify uncertainty</text>
+  <text x="535" y="343" class="body">Probability laws encode uncertainty</text>
   <text x="535" y="367" class="body">and statistical dependence.</text>
   <text x="535" y="402" class="cite">Shannon 1948; Cover &amp; Thomas 2006</text>
 
   <rect x="930" y="180" width="365" height="255" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="1.6"/>
-  <text x="960" y="220" class="head">Irreversibility and erasure</text>
+  <text x="960" y="220" class="head">Irreversible erasure</text>
   <text x="960" y="265" class="eq">Werase ≥ kB T ln 2</text>
   <text x="960" y="316" class="body">Logical erasure carries a minimum</text>
   <text x="960" y="340" class="body">thermodynamic cost in the standard</text>
@@ -49,7 +49,7 @@
   <text x="1385" y="262" class="eq">Δstot = Δssys + Δsmed</text>
   <text x="1385" y="300" class="eq">⟨Δstot⟩ ≥ 0</text>
   <text x="1385" y="343" class="body">Work, heat, and entropy production</text>
-  <text x="1385" y="367" class="body">are defined along fluctuating trajectories.</text>
+  <text x="1385" y="367" class="body">are defined on fluctuating trajectories.</text>
   <text x="1385" y="402" class="cite">Seifert 2012</text>
 
   <path class="arrow" d="M445 307 H493"/>
