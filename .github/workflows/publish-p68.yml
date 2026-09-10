@@ -1,3 +1,4 @@
+# Temporary guarded publication workflow. Removed before merge.
 name: publish-p68
 
 on:
