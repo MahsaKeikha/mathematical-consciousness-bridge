@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.43.0 - 2026-09-09
+
+### Added
+- Proposition 43: exact minimum-cost allocation of the P42 quantum and target uncertainty budget.
+- Strict-convexity proof and closed-form cube-root allocation law.
+- Exact minimum continuous weighted sampling cost.
+- Sufficient integer sample counts with at most one weighted sample of rounding overhead per modality and preparation.
+- Universal factor-four upper bound for the balanced P42 allocation relative to the exact continuous optimum.
+- Executable optimizer, dedicated regression tests, theorem map, and full public-paper integration.
+
+### Scientific boundary
+- P43 optimizes declared experimental resources under P42 assumptions and fixed pre-data design weights.
+- The result does not establish physical completeness, quantum incompleteness, or consciousness.
+
 ## 0.42.0 - 2026-09-09
 
 ### Added

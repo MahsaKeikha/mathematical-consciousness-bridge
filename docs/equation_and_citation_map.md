@@ -528,7 +528,22 @@ P42 uses a fixed informationally complete measurement, a declared linear reconst
 
 ---
 
-# 32. Candidate consciousness-theory feature families
+# 32. P43 optimal quantum-target uncertainty allocation
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(C(\lambda)=c_YA_Y/\lambda^2+c_QA_Q/(1-\lambda)^2\) | weighted P42 sampling cost | repository design objective | [P43](proposition_43_optimal_quantum_target_allocation.md) |
+| \(C''(\lambda)>0\) on \((0,1)\) | strict convexity and uniqueness of the optimizer | proved | [P43](proposition_43_optimal_quantum_target_allocation.md) |
+| \(\lambda_*=(c_YA_Y)^{1/3}/[(c_YA_Y)^{1/3}+(c_QA_Q)^{1/3}]\) | exact optimal target-side gap fraction | proved | [P43](proposition_43_optimal_quantum_target_allocation.md) |
+| \(C_*=[(c_YA_Y)^{1/3}+(c_QA_Q)^{1/3}]^3\) | exact minimum continuous weighted cost | proved | [P43](proposition_43_optimal_quantum_target_allocation.md) |
+| \(C_*\le C_{int}\le C_*+c_Y+c_Q\) | sufficient integer-rounding overhead bound | proved | [P43](proposition_43_optimal_quantum_target_allocation.md) |
+| \(1\le C_{1/2}/C_*\le4\) | universal balanced-allocation approximation bound | proved | [P43](proposition_43_optimal_quantum_target_allocation.md) |
+
+P43 optimizes a declared P42 resource objective with design weights fixed before data collection. It does not add evidence for physical completeness, quantum incompleteness, or consciousness.
+
+---
+
+# 33. Candidate consciousness-theory feature families
 
 The following are source-grounded translations into generic feature notation. They are not claims that each named theory reduces to one scalar or one universally agreed implementation.
 
@@ -545,7 +560,7 @@ Detailed caveats and source roles are maintained in [Candidate Theory Families](
 
 ---
 
-# 33. Citation discipline
+# 34. Citation discipline
 
 A result is cited as a repository result when the bridge-specific statement, construction, or counterexample is introduced here.
 
