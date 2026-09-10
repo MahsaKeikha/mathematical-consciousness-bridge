@@ -23,8 +23,9 @@
 
   <rect x="530" y="155" width="740" height="150" rx="20" fill="#f8fafc" stroke="#334155" stroke-width="2"/>
   <text x="900" y="202" class="head" text-anchor="middle">Candidate fundamental relational state</text>
-  <text x="900" y="242" class="math" text-anchor="middle">Ω ∈ 𝓜</text>
-  <text x="900" y="275" class="copy" text-anchor="middle">Theory-neutral primitive: fields, algebraic observables, causal relations, strings, spin networks, tensor data, ...</text>
+  <text x="900" y="238" class="math" text-anchor="middle">Ω ∈ 𝓜</text>
+  <text x="900" y="264" class="copy" text-anchor="middle">Theory-neutral primitive may be fields, algebras, causal relations,</text>
+  <text x="900" y="284" class="copy" text-anchor="middle">strings, spin networks, tensor data, or another declared ontology.</text>
 
   <path class="arrow" d="M900 305 V360 H260 V405"/>
   <path class="arrow" d="M900 305 V360 H690 V405"/>
@@ -37,7 +38,7 @@
   <text x="260" y="525" class="copy" text-anchor="middle">Metric, causal geometry,</text>
   <text x="260" y="550" class="copy" text-anchor="middle">emergent spacetime observables</text>
   <text x="260" y="592" class="small" text-anchor="middle">Example testbeds: holography,</text>
-  <text x="260" y="614" class="small" text-anchor="middle">entanglement equilibrium</text>
+  <text x="260" y="604" class="small" text-anchor="middle">entanglement equilibrium</text>
 
   <rect x="520" y="405" width="340" height="220" rx="18" fill="#f5f3ff" stroke="#7c3aed"/>
   <text x="690" y="448" class="head" text-anchor="middle">Quantum operational</text>
@@ -45,23 +46,23 @@
   <text x="690" y="525" class="copy" text-anchor="middle">States, channels, POVMs,</text>
   <text x="690" y="550" class="copy" text-anchor="middle">trace distance, predictions</text>
   <text x="690" y="592" class="small" text-anchor="middle">Operational equivalence under</text>
-  <text x="690" y="614" class="small" text-anchor="middle">the declared experiment class</text>
+  <text x="690" y="604" class="small" text-anchor="middle">the declared experiment class</text>
 
   <rect x="940" y="405" width="340" height="220" rx="18" fill="#ecfdf5" stroke="#059669"/>
-  <text x="1110" y="448" class="head" text-anchor="middle">Causal / interventional</text>
+  <text x="1110" y="448" class="head" text-anchor="middle">Causal / intervention</text>
   <text x="1110" y="484" class="math" text-anchor="middle">C: 𝓜 → 𝓠_C</text>
   <text x="1110" y="525" class="copy" text-anchor="middle">Response geometry, directed</text>
   <text x="1110" y="550" class="copy" text-anchor="middle">influence, irreducibility</text>
   <text x="1110" y="592" class="small" text-anchor="middle">Connects directly to</text>
-  <text x="1110" y="614" class="small" text-anchor="middle">P11-P18</text>
+  <text x="1110" y="604" class="small" text-anchor="middle">P11-P18</text>
 
   <rect x="1370" y="405" width="340" height="220" rx="18" fill="#fff7ed" stroke="#ea580c"/>
-  <text x="1540" y="448" class="head" text-anchor="middle">Experiential structure</text>
+  <text x="1540" y="448" class="head" text-anchor="middle">Experiential layer</text>
   <text x="1540" y="484" class="math" text-anchor="middle">E: 𝓜 → 𝓠_E</text>
   <text x="1540" y="525" class="copy" text-anchor="middle">Independently formalized</text>
   <text x="1540" y="550" class="copy" text-anchor="middle">phenomenal equivalence</text>
   <text x="1540" y="592" class="small" text-anchor="middle">Must not be defined using</text>
-  <text x="1540" y="614" class="small" text-anchor="middle">the candidate physical signature</text>
+  <text x="1540" y="604" class="small" text-anchor="middle">the candidate physical signature</text>
 
   <path class="arrow" d="M260 625 V705 H760"/>
   <path class="arrow" d="M690 625 V705 H760"/>
@@ -70,7 +71,8 @@
   <rect x="610" y="690" width="580" height="165" rx="20" fill="#f8fafc" stroke="#334155" stroke-width="2"/>
   <text x="900" y="735" class="head" text-anchor="middle">Complete declared physical map</text>
   <text x="900" y="774" class="math" text-anchor="middle">T(Ω) = (G(Ω), Q(Ω), C(Ω))</text>
-  <text x="900" y="815" class="copy" text-anchor="middle">Gauge / representation invariance + finite-data completeness + scale certification</text>
+  <text x="900" y="808" class="copy" text-anchor="middle">Gauge / representation invariance + finite data</text>
+  <text x="900" y="830" class="copy" text-anchor="middle">completeness + scale certification</text>
 
   <path class="arrow" d="M900 855 V930"/>
   <path class="dash" d="M1540 625 V935 H1205"/>
@@ -79,7 +81,7 @@
   <text x="900" y="975" class="head" text-anchor="middle">Bridge factorization / residual test</text>
   <text x="900" y="1017" class="math" text-anchor="middle">H₀:  E = B_T ∘ T</text>
   <text x="900" y="1055" class="math" text-anchor="middle">d_TOE^⊥ = rank D(Ψ_T, Ψ_E) − rank DΨ_T</text>
-  <text x="900" y="1092" class="copy" text-anchor="middle">Exact witness: T(Ω)=T(Ω′) but E(Ω)≠E(Ω′)  ⇒  no bridge depending only on T can fit both.</text>
+  <text x="900" y="1092" class="copy" text-anchor="middle">Exact witness: T(Ω)=T(Ω′) but E(Ω)≠E(Ω′) ⇒ no bridge depending only on T can fit both.</text>
 
   <text x="80" y="1192" class="small">Scientific boundary: a positive residual would indicate non-factorization relative to the declared physical representation.</text>
   <text x="80" y="1218" class="small">It would not by itself prove a fifth spatial dimension, nonphysical substance, simulation ontology, or failure of quantum mechanics.</text>
