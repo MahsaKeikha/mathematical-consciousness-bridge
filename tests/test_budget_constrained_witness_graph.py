@@ -41,7 +41,7 @@ def test_exact_solver_uses_shared_vertex_structure():
         ("a", "b"): 3.0,
         ("a", "c"): 3.0,
         ("b", "c"): 3.0,
-        ("c", "d"): 7.0,
+        ("c", "d"): 5.0,
     }
     result = exact_budgeted_witness_selection(vertices, costs, edges, budget=3.0)
     assert set(result.selected_vertices) == {"a", "b", "c"}
