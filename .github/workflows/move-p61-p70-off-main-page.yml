@@ -1,0 +1,37 @@
+name: move-p61-p70-off-main-page
+
+on:
+  push:
+    branches:
+      - professional-scientific-main-page
+    paths:
+      - scripts/move_p61_p70_off_main_page.py
+      - .github/workflows/move-p61-p70-off-main-page.yml
+
+permissions:
+  contents: write
+
+jobs:
+  refactor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: professional-scientific-main-page
+          fetch-depth: 0
+      - name: Refactor README and publication guards
+        run: python scripts/move_p61_p70_off_main_page.py
+      - name: Validate focused architecture
+        run: |
+          grep -Fq 'docs/calibration_optimization_frontier_p61_p70.md' README.md
+          ! grep -Fq 'p70_primal_dual_gap_decomposition.svg' README.md
+          grep -Fq '# Proposition 70: exact primal-dual gap decomposition' docs/calibration_optimization_frontier_p61_p70.md
+          git diff --check
+      - name: Commit refactor
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md tests/ docs/calibration_optimization_frontier_p61_p70.md
+          git diff --cached --quiet && exit 0
+          git commit -m "docs: move P61-P70 frontier off main page"
+          git push origin HEAD:professional-scientific-main-page
