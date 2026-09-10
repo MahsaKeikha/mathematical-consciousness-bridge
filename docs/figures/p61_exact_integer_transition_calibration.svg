@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">P61 exact integer transition-calibration allocation</title>
+  <desc id="desc">A visual showing the exact greedy allocation of whole calibration measurements by repeatedly choosing the largest current marginal uncertainty reduction.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#334155"/></marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.12"/></filter>
+    <style>
+      .h1{font:700 30px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#0f172a}.sub{font:400 16px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#475569}.bt{font:700 18px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#0f172a}.tx{font:400 14px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#334155}.math{font:600 14px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#0f172a}.small{font:400 12px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#64748b}.arrow{fill:none;stroke:#334155;stroke-width:2.2;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="760" rx="24" fill="#f8fafc"/>
+  <text x="60" y="58" class="h1">P61: Exact whole-measurement calibration allocation</text>
+  <text x="60" y="88" class="sub">Every extra measurement goes where it reduces the declared uncertainty objective the most at that moment.</text>
+
+  <g filter="url(#shadow)"><rect x="70" y="140" width="300" height="160" rx="18" fill="#ffffff" stroke="#94a3b8"/><text x="98" y="177" class="bt">1. Start with one per edge</text><text x="98" y="212" class="math">kₑ = 1 for every e</text><text x="98" y="245" class="tx">This uses m units and makes every</text><text x="98" y="268" class="tx">calibrated transition estimable.</text></g>
+  <g filter="url(#shadow)"><rect x="450" y="140" width="300" height="160" rx="18" fill="#eef2ff" stroke="#6366f1"/><text x="478" y="177" class="bt">2. Compute next-step benefit</text><text x="478" y="212" class="math">Δₑ(k) = bₑ(1/√k - 1/√(k+1))</text><text x="478" y="245" class="tx">This is how much one more measurement</text><text x="478" y="268" class="tx">would reduce uncertainty on edge e.</text></g>
+  <g filter="url(#shadow)"><rect x="830" y="140" width="300" height="160" rx="18" fill="#ffffff" stroke="#94a3b8"/><text x="858" y="177" class="bt">3. Give one unit to the largest gain</text><text x="858" y="212" class="math">e* ∈ arg maxₑ Δₑ(kₑ)</text><text x="858" y="245" class="tx">Update that count and repeat until</text><text x="858" y="268" class="tx">the entire budget is used.</text></g>
+  <path d="M370 220 L450 220" class="arrow"/><path d="M750 220 L830 220" class="arrow"/>
+
+  <g filter="url(#shadow)"><rect x="120" y="390" width="430" height="150" rx="20" fill="#ecfdf5" stroke="#10b981"/><text x="150" y="428" class="bt">Why greedy is exact</text><text x="150" y="464" class="math">Δₑ(k+1) &lt; Δₑ(k)</text><text x="150" y="497" class="tx">Every edge has diminishing marginal gains.</text><text x="150" y="520" class="tx">Selected gains are prefixes of decreasing sequences.</text></g>
+  <g filter="url(#shadow)"><rect x="650" y="390" width="430" height="150" rx="20" fill="#eff6ff" stroke="#3b82f6"/><text x="680" y="428" class="bt">Exact optimality certificate</text><text x="680" y="464" class="math">min selected last gain ≥ max next unused gain</text><text x="680" y="497" class="tx">If this holds, no one-unit exchange can</text><text x="680" y="520" class="tx">reduce the objective any further.</text></g>
+  <path d="M600 300 C520 345 390 355 340 390" class="arrow"/><path d="M980 300 C965 345 900 365 865 390" class="arrow"/>
+
+  <g filter="url(#shadow)"><rect x="245" y="620" width="710" height="90" rx="20" fill="#fff7ed" stroke="#f97316"/><text x="600" y="655" text-anchor="middle" class="bt">P61 solves the integer surrogate globally</text><text x="600" y="686" text-anchor="middle" class="math">U(kP61) ≤ U(k) for every feasible full-budget integer allocation k</text></g>
+  <path d="M600 540 L600 620" class="arrow"/>
+  <text x="60" y="742" class="small">Boundary: exactness applies to the declared separable unit-cost calibration surrogate, not the full combinatorial robust-routing problem.</text>
+</svg>
