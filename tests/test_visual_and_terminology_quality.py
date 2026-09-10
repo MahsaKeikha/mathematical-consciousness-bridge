@@ -33,6 +33,7 @@ FIGURES = (
     "p27_partition_lattice_node_aggregation.svg",
     "p28_intervention_node_aggregation_compatibility.svg",
     "p29_response_geometry_node_aggregation.svg",
+    "p30_full_p11_scale_compatibility.svg",
     "universal_proof_ladder.svg",
     "theory_comparison_map.svg",
 )

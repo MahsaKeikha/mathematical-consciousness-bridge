@@ -2,7 +2,7 @@
 
 This roadmap records the current proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge.
 
-![P1-P29 theorem roadmap](figures/theorem_roadmap.svg)
+![P1-P30 theorem roadmap](figures/theorem_roadmap.svg)
 
 ---
 
@@ -39,6 +39,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P27](proposition_27_partition_lattice_node_aggregation.md) | surjective node quotient plus partition saturation, lattice transport, P17 contraction, and P18 reconstruction | exact criterion for surviving partition semantics under node aggregation and quantitative irreducibility control | proved physical scale theorem |
 | [P28](proposition_28_intervention_node_aggregation_compatibility.md) | P11 matched-pair source incidence plus P25 target contraction and P27 node aggregation | exact source-label descent and directed-influence certification across aggregate nodes | proved physical scale theorem |
 | [P29](proposition_29_response_geometry_node_aggregation.md) | P11 response geometry plus P17 contraction, P18 reconstruction, and P27 node aggregation | complete indexed response-pseudometric transport on a fixed intervention-delay grid | proved physical scale theorem |
+| [P30](proposition_30_full_p11_scale_compatibility.md) | assembly of P27-P29 under one scale declaration | simultaneous declared P11 physical-signature transport with a no-semantic-compensation guard | proved assembly theorem |
 
 ---
 
@@ -564,6 +565,38 @@ With \(\rho_*=\sup_{u,\tau}\rho_{u,\tau}\),
 Exact reconstruction preserves the entire response geometry. P29 deliberately does not merge interventions or resample delays.
 
 Direct proof: [Proposition 29](proposition_29_response_geometry_node_aggregation.md). Implementation: [response_geometry_node_aggregation.py](../src/consciousness_bridge/response_geometry_node_aggregation.py). Tests: [test_response_geometry_node_aggregation.py](../tests/test_response_geometry_node_aggregation.py).
+
+## P30 - full declared P11 scale compatibility
+
+P30 assembles the P27, P28, and P29 changing-node branches only when they refer to one shared scale declaration. Define
+
+\[
+\mathbf D_{P11}(a)=(D_G,D_A,D_K)
+\]
+
+with response-geometry, directed-influence, and partition distortions. The component theorems imply
+
+\[
+D_G\le2\rho_G^*,
+\qquad
+D_A\le2\rho_A^*,
+\qquad
+D_K\le\rho_P^*+\rho_\Pi^*.
+\]
+
+Hence
+
+\[
+\boxed{
+\|\mathbf D_{P11}(a)\|_\infty
+\le
+\max\{2\rho_G^*,2\rho_A^*,\rho_P^*+\rho_\Pi^*\}.
+}
+\]
+
+The theorem requires compatible partition descent, source-pair descent, a common intervention-delay grid, a common state map, and a common reconstruction declaration. Numerical equality alone cannot replace those semantic conditions.
+
+Direct proof: [Proposition 30](proposition_30_full_p11_scale_compatibility.md). Implementation: [full_p11_scale_compatibility.py](../src/consciousness_bridge/full_p11_scale_compatibility.py). Tests: [test_full_p11_scale_compatibility.py](../tests/test_full_p11_scale_compatibility.py).
 
 ---
 
