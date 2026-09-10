@@ -675,3 +675,18 @@ P48 is a sufficient sequential upper bound. It is not a minimax lower bound or a
 
 P49 changes checkpoint frequency only. Statistical validity remains inherited from P47 and finite sign separation remains inherited from P48.
 
+---
+
+# 39. P50 bounded-starvation asynchronous sampling
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(H\)-fairness | every continuously active preparation receives service in each H-round window | repository definition | [P50](proposition_50_bounded_starvation_asynchronous_sampling.md) |
+| \(N_i(T)\ge\lfloor T/H\rfloor\) | deterministic local-count growth from bounded starvation | proved block-counting lemma | [P50](proposition_50_bounded_starvation_asynchronous_sampling.md) |
+| \(\tau_{+,H}\le HK_+\) | positive-witness global-round stopping bound | proved from P47 positive-edge persistence, P48 threshold, and H-fairness | [P50](proposition_50_bounded_starvation_asynchronous_sampling.md) |
+| \(\tau_{0,H}\le HK_-\) | all-negative global-round stopping bound | proved from P48 edge elimination and H-fairness | [P50](proposition_50_bounded_starvation_asynchronous_sampling.md) |
+| unrestricted starvation counterexample | demonstrates that P47 validity alone gives no finite global-time progress bound | proved impossibility construction | [P50](proposition_50_bounded_starvation_asynchronous_sampling.md) |
+| \(H D(N_e)<2HN_e\) | P49 dyadic batching composed with P50 asynchronous fairness | proved composition bound | [P50](proposition_50_bounded_starvation_asynchronous_sampling.md) |
+
+P50 is a progress/scheduling theorem. It does not alter the scientific meaning of the underlying regularity margin.
+
