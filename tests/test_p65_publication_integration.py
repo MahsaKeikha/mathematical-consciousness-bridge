@@ -32,7 +32,7 @@ def test_p65_remains_integrated_in_public_record():
             "Baseline-safe water filling",
         ],
         "website/research-map.html": [
-            "P62-P67",
+            "P62-P68",
             "Heterogeneous-cost calibration",
         ],
         "CITATION.cff": ["lower-bounded heterogeneous calibration"],

@@ -49,6 +49,7 @@ This roadmap records the current proved mathematical chain and the open route to
 ![P65 lower-bounded heterogeneous calibration](figures/p65_lower_bounded_heterogeneous_calibration.svg)
 ![P66 residual-exact calibration augmentation](figures/p66_residual_exact_calibration_augmentation.svg)
 ![P67 global integer optimality certificate](figures/p67_global_integer_optimality_certificate.svg)
+![P68 Lagrangian optimality gap certificate](figures/p68_lagrangian_optimality_gap.svg)
 
 ---
 
@@ -123,6 +124,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P65](proposition_65_lower_bounded_heterogeneous_calibration.md) | lower-bounded strict convexity, active-set water filling, and floor approximation | baseline-safe heterogeneous calibration beyond the P64 one-sample regime restriction | proved continuous theorem plus approximation certificate |
 | [P66](proposition_66_residual_exact_calibration_augmentation.md) | P65 floor, bounded residual budget, and exact residual-spend dynamic programming | best floor-dominating integer augmentation with improved computable certificate | proved restricted-exact augmentation theorem |
 | [P67](proposition_67_global_integer_optimality_certificate.md) | discrete marginal intervals, common Lagrange multiplier, and weak duality | sufficient certificate upgrading a budget-tight candidate to the unrestricted P63 optimum | proved global-optimality certificate |
+| [P68](proposition_68_lagrangian_optimality_gap.md) | exact one-edge integer Lagrangian minimization plus weak duality | quantitative lower bound on the unrestricted P63 optimum and certified candidate optimality gap | proved Lagrangian gap certificate |
 
 ---
 
