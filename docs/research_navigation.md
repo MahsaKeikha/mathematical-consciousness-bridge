@@ -6,7 +6,7 @@ This page is the reading and reference index for the Mathematical Consciousness 
 
 1. [Main research paper](../README.md) for the complete scientific narrative and embedded figures.
 2. [Bridge problem](bridge_problem.md) for the formal statement of the physical-to-experiential problem.
-3. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P61, including the physical scale branches from P11-P18 to P25-P27.
+3. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P62, including the physical scale branches from P11-P18 to P25-P27.
 4. [Equation and citation map](equation_and_citation_map.md) for equation-level provenance and theorem lineage.
 5. [Proposition 19](proposition_19_fundamental_physical_sufficiency.md) for the population physical-sufficiency theorem.
 6. [Proposition 20](proposition_20_finite_sample_residual_certification.md) for finite-sample certification of the P19 stochastic residual.
@@ -91,6 +91,7 @@ This page is the reading and reference index for the Mathematical Consciousness 
 | P59 | [Optimal transition-calibration allocation](proposition_59_optimal_transition_calibration.md) | exact two-thirds-power allocation of a finite calibration budget for the declared P58 route-uncertainty surrogate |
 | P60 | [Integer transition-calibration allocation](proposition_60_integer_transition_calibration.md) | implementable hard-budget whole-measurement allocation with certified rounding overhead relative to P59 |
 | P61 | [Exact integer transition-calibration allocation](proposition_61_exact_integer_transition_calibration.md) | exact hard-budget whole-measurement solution for the declared separable calibration surrogate using diminishing marginal gain |
+| P62 | [Heterogeneous-cost transition-calibration allocation](proposition_62_heterogeneous_cost_transition_calibration.md) | unique continuous calibration optimum when transition observations have different per-measurement costs |
 
 ## Physics, mathematics, and quantitative figures
 
