@@ -326,8 +326,8 @@ text = replace_once(text, "for index in range(1, 32):", "for index in range(1, 3
 path.write_text(text, encoding="utf-8")
 
 # Release consistency guard: prevent badge, metadata, and glance record from drifting apart.
-Path("tests/test_release_metadata_consistency.py").write_text(r'''from pathlib import Path
-import re
+Path("tests/test_release_metadata_consistency.py").write_text(r'''import re
+from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
