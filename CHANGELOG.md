@@ -1,3 +1,13 @@
+# 0.58.0 - 2026-09-10
+
+- Add P58 finite-data switching-metric uncertainty and robust reoptimization.
+- Derive simultaneous pairwise Hoeffding confidence intervals for bounded transition-cost observations under finite-family error spending.
+- Allow the empirical transition table to be nonmetric while retaining the declared unknown true-metric premise needed by P54.
+- Compute exact lower and upper route envelopes over the P54 block-route family using Held-Karp dynamic programming.
+- Add a robust upper-envelope route and certify its true-route regret by the envelope width.
+- Add robust old/new total-cost interval comparison and a sufficient common-sample calibration law.
+- Add implementation, tests, theorem visual, equation provenance, and front-page integration.
+
 # 0.57.0 - 2026-09-10
 
 - Add P57 switching-metric perturbation reoptimization stability.

@@ -39,6 +39,7 @@ This roadmap records the current proved mathematical chain and the open route to
 ![P55 pruning-aware metric switching-cost monotonicity](figures/p55_pruning_aware_switching_monotonicity.svg)
 ![P56 moving-start metric reoptimization stability](figures/p56_moving_start_metric_reoptimization_stability.svg)
 ![P57 switching-metric perturbation stability](figures/p57_switching_metric_perturbation.svg)
+![P58 finite-data switching-metric uncertainty](figures/p58_finite_data_metric_uncertainty.svg)
 
 ---
 
@@ -103,6 +104,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P55](proposition_55_pruning_aware_switching_monotonicity.md) | metric support-deletion shortcutting plus exact P54 cost subtraction | monotone optimal residual execution cost with exact acquisition and route-release decomposition | proved deterministic scheduling theorem |
 | [P56](proposition_56_moving_start_metric_reoptimization_stability.md) | triangle-inequality perturbation of the first route edge plus P55 composition | sharp 1-Lipschitz start-state stability and moving-setup residual cost certificate | proved deterministic perturbation theorem |
 | [P57](proposition_57_switching_metric_perturbation.md) | uniform finite-metric perturbation, route reuse, and P55-P56 composition | sharp q-delta route stability plus residual/start/geometry reoptimization certificate | proved deterministic perturbation theorem |
+| [P58](proposition_58_finite_data_metric_uncertainty.md) | pairwise Hoeffding confidence intervals plus exact lower/upper route-envelope dynamic programs | finite-data bracket for the unknown true switching optimum, robust route-regret certificate, and robust old/new comparison | proved finite-data confidence-envelope theorem |
 
 ---
 
