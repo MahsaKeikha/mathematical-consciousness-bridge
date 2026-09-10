@@ -276,7 +276,7 @@ historical = '''def test_p67_is_preserved_in_public_record():
         "README.md": ["Proposition 67", "p67_global_integer_optimality_certificate.svg"],
         "docs/theorem_roadmap.md": ["P67", "proposition_67_global_integer_optimality_certificate.md"],
         "docs/research_navigation.md": ["proposition_67_global_integer_optimality_certificate.md"],
-        "docs/equation_and_citation_map.md": ["P67 global integer optimality certificate", "\\Delta_e(j)"],
+        "docs/equation_and_citation_map.md": ["P67 global integer optimality certificate", "\\\\Delta_e(j)"],
         "CHANGELOG.md": ["# 0.67.0 - 2026-09-10", "P67 global integer optimality certificate"],
     }
     for path, tokens in required.items():
