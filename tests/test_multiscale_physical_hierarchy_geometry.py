@@ -85,7 +85,7 @@ def test_multiscale_hierarchy_preserves_core_scientific_boundaries():
         "P16",
         "P17",
         "B̄ : QP → QE",
-        "Experiential interpretation is not part of the definition.",
+        "Measurements constrain theory; they do not define experience.",
         "match a formally justified experiential equivalence.",
     ):
         assert phrase in source
