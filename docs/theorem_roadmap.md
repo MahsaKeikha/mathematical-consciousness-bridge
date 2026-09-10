@@ -18,6 +18,8 @@ This roadmap records the current proved mathematical chain and the open route to
 
 ![P43 optimal quantum-target allocation](figures/p43_optimal_quantum_target_allocation.svg)
 
+![P44 finite-family post-selection certificate](figures/p44_pair_adaptive_sample_allocation.svg)
+
 ---
 
 # 1. Complete proposition index
@@ -67,6 +69,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P41](proposition_41_trace_ball_quantum_envelope.md) | trace-distance triangle inequality plus simultaneous quantum and target confidence balls | analytic P40 envelope and end-to-end regularity obstruction | proved confidence-envelope theorem |
 | [P42](proposition_42_quantum_regular_bridge_sample_complexity.md) | IC-measurement Hoeffding concentration plus linear-reconstruction stability | explicit sufficient quantum and target samples for a positive regularity obstruction | proved finite-sample design theorem |
 | [P43](proposition_43_optimal_quantum_target_allocation.md) | strict convexity and closed-form weighted allocation | unique minimum-cost split of the P42 quantum and target uncertainty budget | proved resource-allocation theorem |
+| [P44](proposition_44_pair_adaptive_sample_allocation.md) | finite-family union bound and simultaneous lower-margin coverage | valid data-dependent witness selection among predeclared candidate pairs | proved post-selection theorem |
 
 ---
 
@@ -838,6 +841,41 @@ and
 Upward integer rounding adds at most \(c_Y+c_Q\) weighted cost per preparation. This is a pre-data resource optimization within P42, not a physical-completeness theorem.
 
 Direct proof: [Proposition 43](proposition_43_optimal_quantum_target_allocation.md). Implementation: [optimal_quantum_target_allocation.py](../src/consciousness_bridge/optimal_quantum_target_allocation.py). Tests: [test_optimal_quantum_target_allocation.py](../tests/test_optimal_quantum_target_allocation.py).
+
+---
+
+## P44 - finite-family post-selection certification
+
+Let \(\underline M_j\) be a lower confidence margin for each candidate \(j\) in a finite predeclared family. If the candidate-specific failure allocations satisfy
+
+\[
+\sum_j\alpha_{Q,j}\le\alpha_Q,
+\qquad
+\sum_j\alpha_{Y,j}\le\alpha_Y,
+\]
+
+then
+
+\[
+\boxed{
+\Pr(\underline M_j\le M_j\ \forall j)
+\ge1-\alpha_Q-\alpha_Y.
+}
+\]
+
+Consequently, for any measurable data-dependent selector \(\widehat j\),
+
+\[
+\boxed{
+\underline M_{\widehat j}>0
+\Longrightarrow
+M_{\widehat j}>0
+}
+\]
+
+on that same simultaneous event. Shared preparations and dependent candidate analyses are allowed; independence is not required for the union-bound guarantee.
+
+Direct proof: [Proposition 44](proposition_44_pair_adaptive_sample_allocation.md). Implementation: [pair_adaptive_sample_allocation.py](../src/consciousness_bridge/pair_adaptive_sample_allocation.py). Tests: [test_pair_adaptive_sample_allocation.py](../tests/test_pair_adaptive_sample_allocation.py).
 
 ---
 

@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.44.0 - 2026-09-09
+
+### Added
+- Proposition 44: finite-family simultaneous-confidence and post-selection certification for candidate preparation pairs.
+- Validity for arbitrary measurable data-dependent witness selection inside a predeclared candidate family.
+- Weighted and equal confidence spending with explicit family failure-budget accounting.
+- Pair-specific connection to the P42 sample-complexity and P43 cost-allocation results.
+- Publication theorem map, main-paper section, roadmap integration, provenance entries, and visibility guards.
+
+### Scientific boundary
+- P44 certifies selection among declared finite-family regularity tests.
+- It does not establish physical completeness, quantum incompleteness, or consciousness.
+
 ## 0.43.0 - 2026-09-09
 
 ### Added

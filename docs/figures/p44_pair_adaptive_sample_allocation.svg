@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520">
+  <rect width="960" height="520" fill="white"/>
+  <text x="480" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700">P44: finite-family post-selection certificate</text>
+  <text x="480" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="14">Predeclared candidate family, simultaneous confidence, valid data-dependent witness selection</text>
+
+  <rect x="45" y="115" width="245" height="115" rx="10" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="168" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700">Candidate family</text>
+  <text x="168" y="176" text-anchor="middle" font-family="Arial, sans-serif" font-size="14">j = 1,...,J</text>
+  <text x="168" y="202" text-anchor="middle" font-family="Arial, sans-serif" font-size="14">true margins M_j</text>
+
+  <rect x="358" y="105" width="245" height="135" rx="10" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="480" y="137" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700">Simultaneous lower bounds</text>
+  <text x="480" y="168" text-anchor="middle" font-family="Arial, sans-serif" font-size="14">P(M_lower,j &lt;= M_j for all j)</text>
+  <text x="480" y="194" text-anchor="middle" font-family="Arial, sans-serif" font-size="14">&gt;= 1 - alpha_Q - alpha_Y</text>
+  <text x="480" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="13">No pairwise independence required</text>
+
+  <rect x="670" y="115" width="245" height="115" rx="10" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="792" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700">Post-data selector</text>
+  <text x="792" y="176" text-anchor="middle" font-family="Arial, sans-serif" font-size="14">j_hat in arg max M_lower,j</text>
+  <text x="792" y="202" text-anchor="middle" font-family="Arial, sans-serif" font-size="14">or any measurable selector</text>
+
+  <line x1="290" y1="172" x2="358" y2="172" stroke="#333" stroke-width="2"/>
+  <polygon points="358,172 346,166 346,178" fill="#333"/>
+  <line x1="603" y1="172" x2="670" y2="172" stroke="#333" stroke-width="2"/>
+  <polygon points="670,172 658,166 658,178" fill="#333"/>
+
+  <rect x="235" y="300" width="490" height="105" rx="12" fill="none" stroke="#333" stroke-width="2.5"/>
+  <text x="480" y="333" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="700">Certified selected witness</text>
+  <text x="480" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="15">M_lower,j_hat &gt; 0  implies  M_j_hat &gt; 0</text>
+  <text x="480" y="391" text-anchor="middle" font-family="Arial, sans-serif" font-size="13">at the same simultaneous family confidence level</text>
+
+  <line x1="792" y1="230" x2="620" y2="300" stroke="#333" stroke-width="2"/>
+  <polygon points="620,300 627,289 632,301" fill="#333"/>
+
+  <text x="480" y="454" text-anchor="middle" font-family="Arial, sans-serif" font-size="13">Scientific boundary: this is a finite-family statistical certificate for declared quantum descriptors and bridge regularity classes.</text>
+  <text x="480" y="478" text-anchor="middle" font-family="Arial, sans-serif" font-size="13">It does not establish physical completeness, quantum incompleteness, or consciousness.</text>
+</svg>

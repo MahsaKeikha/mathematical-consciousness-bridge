@@ -543,7 +543,21 @@ P43 optimizes a declared P42 resource objective with design weights fixed before
 
 ---
 
-# 33. Candidate consciousness-theory feature families
+# 33. P44 pair-adaptive finite-family certification
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(M_j=d_{Y,j}-L_jd_{Q,j}\) | candidate population regularity margin | repository design quantity | [P44](proposition_44_pair_adaptive_sample_allocation.md) |
+| \(\sum_j\alpha_{Q,j}\le\alpha_Q,\ \sum_j\alpha_{Y,j}\le\alpha_Y\) | predeclared family failure-budget constraint | declared statistical design condition | [P44](proposition_44_pair_adaptive_sample_allocation.md) |
+| \(\Pr(\underline M_j\le M_j\ \forall j)\ge1-\alpha_Q-\alpha_Y\) | simultaneous finite-family lower-margin coverage | union bound | standard probability; [P44](proposition_44_pair_adaptive_sample_allocation.md) |
+| \(\underline M_{\widehat j}>0\Rightarrow M_{\widehat j}>0\) | post-selection validity for any measurable selector in the predeclared family | proved | [P44](proposition_44_pair_adaptive_sample_allocation.md) |
+| weighted alpha spending | allocates family confidence before viewing certification data | proved to preserve family budget | [P44](proposition_44_pair_adaptive_sample_allocation.md) |
+
+P44 is a finite-family statistical theorem. It does not establish physical completeness, quantum incompleteness, or consciousness.
+
+---
+
+# 34. Candidate consciousness-theory feature families
 
 The following are source-grounded translations into generic feature notation. They are not claims that each named theory reduces to one scalar or one universally agreed implementation.
 
@@ -560,7 +574,7 @@ Detailed caveats and source roles are maintained in [Candidate Theory Families](
 
 ---
 
-# 34. Citation discipline
+# 35. Citation discipline
 
 A result is cited as a repository result when the bridge-specific statement, construction, or counterexample is introduced here.
 
