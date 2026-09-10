@@ -1,3 +1,11 @@
+# 0.65.0 - 2026-09-10
+
+- Add P65 lower-bounded heterogeneous calibration.
+- Solve the continuous unequal-cost calibration problem exactly with mandatory one-observation lower bounds using a thresholded water-filling active set.
+- Prove exact feasibility at B greater than or equal to the mandatory baseline and recovery of P62 when no lower bound is active.
+- Add a baseline-safe floor construction with an instance-specific factor and a universal square-root-of-two objective certificate relative to the exact P63 optimum.
+- Add implementation, regression tests, theorem visual, public navigation, website integration, provenance, and release metadata.
+
 # 0.64.0 - 2026-09-10
 
 - Add P64 fast certified heterogeneous integer approximation.

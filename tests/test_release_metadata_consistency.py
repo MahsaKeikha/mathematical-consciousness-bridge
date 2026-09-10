@@ -6,9 +6,9 @@ def test_release_versions_are_synchronized():
     readme = Path("README.md").read_text(encoding="utf-8")
     pyproject = Path("pyproject.toml").read_text(encoding="utf-8")
     citation = Path("CITATION.cff").read_text(encoding="utf-8")
-    assert "version-0.64.0-2563eb" in readme
-    assert re.search(r'^version = "0\.64\.0"$', pyproject, re.MULTILINE)
-    assert re.search(r'^version: 0\.64\.0$', citation, re.MULTILINE)
+    assert "version-0.65.0-2563eb" in readme
+    assert re.search(r'^version = "0\.65\.0"$', pyproject, re.MULTILINE)
+    assert re.search(r'^version: 0\.65\.0$', citation, re.MULTILINE)
 
 
 def test_quantum_publication_paths_are_visible():
@@ -118,5 +118,9 @@ def test_quantum_publication_paths_are_visible():
         "p64_fast_heterogeneous_integer_approximation.svg",
         "fast_heterogeneous_integer_approximation.py",
         "test_fast_heterogeneous_integer_approximation.py",
+        "Proposition 65",
+        "p65_lower_bounded_heterogeneous_calibration.svg",
+        "lower_bounded_heterogeneous_calibration.py",
+        "test_lower_bounded_heterogeneous_calibration.py",
     ):
         assert token in readme

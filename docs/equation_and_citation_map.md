@@ -890,3 +890,18 @@ P63 does not claim a greedy solution or a complexity-hardness classification for
 
 P64 is a certified regime-specific approximation, not an FPTAS claim.
 
+---
+
+# 54. P65 lower-bounded heterogeneous calibration
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(B_0=\sum_ec_e\), with feasibility exactly when \(B\ge B_0\) | mandatory one-observation baseline cost | proved feasibility threshold | [P65](proposition_65_lower_bounded_heterogeneous_calibration.md) |
+| \(n_e^*=\max\{1,\tau(b_e/c_e)^{2/3}\}\) | unique lower-bounded continuous calibration allocation | proved by strict convexity and KKT conditions | [P65](proposition_65_lower_bounded_heterogeneous_calibration.md) |
+| \(t_e=(c_e/b_e)^{2/3}\) and threshold-sorted active-set scan | identifies pinned and free calibration edges | proved water-filling construction | [P65](proposition_65_lower_bounded_heterogeneous_calibration.md) |
+| \(k_e=\lfloor n_e^*\rfloor\ge1\), \(\sum_ec_ek_e\le B\) | baseline-safe executable integer construction | proved feasibility corollary | [P65](proposition_65_lower_bounded_heterogeneous_calibration.md) |
+| \(r_{\min}=\min_e\lfloor n_e^*\rfloor/n_e^*\) and \(U(k)\le r_{\min}^{-1/2}U_{\rm int}^*(B)\) | instance-specific approximation certificate relative to P63 | proved from termwise floor distortion plus continuous relaxation | [P65](proposition_65_lower_bounded_heterogeneous_calibration.md) |
+| \(\lfloor x\rfloor\ge x/2\) for \(x\ge1\), hence \(U(k)\le\sqrt2\,U_{\rm int}^*(B)\) | universal guarantee for the P65 floor construction | proved approximation corollary | [P65](proposition_65_lower_bounded_heterogeneous_calibration.md) |
+
+P65 solves the lower-bounded continuous version of the declared separable calibration surrogate and provides a certified floor approximation. P63 remains the exact heterogeneous-cost integer solver. P65 does not establish a physical-to-experiential bridge or any quantum-ontological conclusion.
+

@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1180" viewBox="0 0 1800 1180" role="img" aria-labelledby="title desc">
+  <title id="title">P65 lower-bounded heterogeneous calibration</title>
+  <desc id="desc">Scientific block diagram showing how a mandatory one-observation baseline leads to a thresholded water-filling continuous optimum and a baseline-safe integer floor approximation with instance-specific and square-root-of-two guarantees.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0 0 L0 8 L10 4 z" fill="#475569"/>
+    </marker>
+    <style>
+      .title{font:700 40px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 18px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .head{font:700 21px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 16px Inter,Segoe UI,Arial,sans-serif;fill:#334155}
+      .small{font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#64748b}
+      .eq{font:600 18px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .arrow{stroke:#475569;stroke-width:2.4;fill:none;marker-end:url(#arrow)}
+      .card{stroke-width:1.8}
+    </style>
+  </defs>
+
+  <rect width="1800" height="1180" fill="#ffffff"/>
+  <text x="70" y="68" class="title">P65: Lower-Bounded Heterogeneous Calibration</text>
+  <text x="70" y="103" class="subtitle">Mandatory one-sample constraints are solved inside the continuous optimization before integer rounding.</text>
+  <text x="70" y="130" class="subtitle">The result is an exact water-filling optimum plus a scalable baseline-safe integer certificate.</text>
+
+  <g id="p64-limit" data-qa-block="true" data-x="70" data-y="180" data-width="450" data-height="230">
+    <rect class="card" x="70" y="180" width="450" height="230" rx="20" fill="#fff7ed" stroke="#ea580c"/>
+    <text x="295" y="222" text-anchor="middle" class="head">Why P64 can fail</text>
+    <text x="295" y="270" text-anchor="middle" class="eq">P62 may give n*ₑ &lt; 1</text>
+    <text x="295" y="313" text-anchor="middle" class="body">Direct flooring can then produce zero,</text>
+    <text x="295" y="339" text-anchor="middle" class="body">which violates the mandatory</text>
+    <text x="295" y="365" text-anchor="middle" class="body">one-observation baseline.</text>
+  </g>
+
+  <g id="lower-bounded-problem" data-qa-block="true" data-x="675" data-y="180" data-width="450" data-height="230">
+    <rect class="card" x="675" y="180" width="450" height="230" rx="20" fill="#eff6ff" stroke="#2563eb"/>
+    <text x="900" y="222" text-anchor="middle" class="head">P65 continuous problem</text>
+    <text x="900" y="266" text-anchor="middle" class="eq">min Σₑ bₑ / √nₑ</text>
+    <text x="900" y="302" text-anchor="middle" class="eq">Σₑ cₑnₑ ≤ B</text>
+    <text x="900" y="338" text-anchor="middle" class="eq">nₑ ≥ 1</text>
+    <text x="900" y="374" text-anchor="middle" class="small">Feasible exactly when B ≥ B₀ = Σₑ cₑ.</text>
+  </g>
+
+  <g id="active-set" data-qa-block="true" data-x="1280" data-y="180" data-width="450" data-height="230">
+    <rect class="card" x="1280" y="180" width="450" height="230" rx="20" fill="#f5f3ff" stroke="#7c3aed"/>
+    <text x="1505" y="222" text-anchor="middle" class="head">Thresholded active set</text>
+    <text x="1505" y="268" text-anchor="middle" class="eq">aₑ = (bₑ / cₑ)^(2/3)</text>
+    <text x="1505" y="304" text-anchor="middle" class="eq">tₑ = 1 / aₑ</text>
+    <text x="1505" y="340" text-anchor="middle" class="body">Edges below the water level are free.</text>
+    <text x="1505" y="366" text-anchor="middle" class="body">The remaining edges stay pinned at one.</text>
+  </g>
+
+  <path class="arrow" d="M520 295 H663" data-from="p64-limit" data-to="lower-bounded-problem"/>
+  <path class="arrow" d="M1125 295 H1268" data-from="lower-bounded-problem" data-to="active-set"/>
+
+  <g id="water-filling" data-qa-block="true" data-x="250" data-y="510" data-width="1300" data-height="220">
+    <rect class="card" x="250" y="510" width="1300" height="220" rx="22" fill="#ecfdf5" stroke="#059669"/>
+    <text x="900" y="552" text-anchor="middle" class="head">Exact lower-bounded water-filling theorem</text>
+    <text x="900" y="600" text-anchor="middle" class="eq">n*ₑ = max{1, τ (bₑ / cₑ)^(2/3)}</text>
+    <text x="900" y="642" text-anchor="middle" class="eq">Σₑ cₑ max{1, τ (bₑ / cₑ)^(2/3)} = B</text>
+    <text x="900" y="682" text-anchor="middle" class="body">Sort tₑ = (cₑ / bₑ)^(2/3), identify the free prefix, and solve one linear budget equation.</text>
+    <text x="900" y="708" text-anchor="middle" class="small">Strict convexity makes this continuous optimum unique. Sorting gives O(m log m) comparison work.</text>
+  </g>
+
+  <path class="arrow" d="M900 410 V498" data-from="lower-bounded-problem" data-to="water-filling"/>
+  <path class="arrow" d="M1505 410 V455 H1180 V498" data-from="active-set" data-to="water-filling"/>
+
+  <g id="integer-floor" data-qa-block="true" data-x="120" data-y="850" data-width="650" data-height="220">
+    <rect class="card" x="120" y="850" width="650" height="220" rx="22" fill="#f8fafc" stroke="#475569"/>
+    <text x="445" y="892" text-anchor="middle" class="head">Baseline-safe integer construction</text>
+    <text x="445" y="940" text-anchor="middle" class="eq">kₑ = ⌊n*ₑ⌋ ≥ 1</text>
+    <text x="445" y="982" text-anchor="middle" class="eq">Σₑ cₑkₑ ≤ B</text>
+    <text x="445" y="1022" text-anchor="middle" class="body">Flooring is always feasible because P65 solves</text>
+    <text x="445" y="1048" text-anchor="middle" class="body">the one-sample baseline before rounding.</text>
+  </g>
+
+  <g id="certificates" data-qa-block="true" data-x="1030" data-y="850" data-width="650" data-height="220">
+    <rect class="card" x="1030" y="850" width="650" height="220" rx="22" fill="#fefce8" stroke="#ca8a04"/>
+    <text x="1355" y="892" text-anchor="middle" class="head">Certified objective quality</text>
+    <text x="1355" y="940" text-anchor="middle" class="eq">U(k) ≤ U*int(B) / √rmin</text>
+    <text x="1355" y="982" text-anchor="middle" class="eq">rmin ≥ 1/2</text>
+    <text x="1355" y="1024" text-anchor="middle" class="eq">U(k) ≤ √2 U*int(B)</text>
+    <text x="1355" y="1048" text-anchor="middle" class="small">P63 remains the exact integer solver.</text>
+  </g>
+
+  <path class="arrow" d="M650 730 V790 H445 V838" data-from="water-filling" data-to="integer-floor"/>
+  <path class="arrow" d="M1150 730 V790 H1355 V838" data-from="water-filling" data-to="certificates"/>
+
+  <text x="900" y="1134" text-anchor="middle" class="small">Scientific boundary: P65 is a calibration resource-allocation theorem. It makes no claim that a calibration variable is consciousness or that quantum mechanics is incomplete.</text>
+</svg>
