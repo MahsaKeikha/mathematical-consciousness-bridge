@@ -199,7 +199,7 @@ def _validate_inputs(
     if set(sensitivities) != keys or set(unit_costs) != keys:
         raise ValueError("coefficients, sensitivities, and unit_costs must share keys")
     if not isinstance(total_budget, int) or isinstance(total_budget, bool):
-        raise ValueError("total_budget must be an integer")
+        raise TypeError("total_budget must be an integer")
     for edge in coefficients:
         _positive_finite(coefficients[edge], "coefficient")
         _positive_finite(sensitivities[edge], "sensitivity")
