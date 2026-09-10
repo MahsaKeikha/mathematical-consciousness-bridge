@@ -31,7 +31,11 @@ def test_theorem_roadmap_opening_cards_keep_text_inside_safe_regions():
     figure = root / "docs" / "figures" / "theorem_roadmap.svg"
     svg = ET.parse(figure).getroot()
 
-    rects = svg.findall(".//svg:rect", SVG_NS)
+    rects = [
+        rect
+        for rect in svg.findall(".//svg:rect", SVG_NS)
+        if {"x", "y", "width", "height"}.issubset(rect.attrib)
+    ]
     texts = svg.findall(".//svg:text", SVG_NS)
 
     for x, y, width, height in OPENING_CARDS:
