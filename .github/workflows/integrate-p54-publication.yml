@@ -22,6 +22,11 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Correct P54 metadata marker
+        run: |
+          sed -i 's/residual-demand reoptimization after safe pruning, robust experiment design/residual-demand reoptimization, robust experiment design/g' scripts/integrate_p54_publication.py
+          sed -i 's/residual-demand reoptimization after safe pruning, metric switching-cost residual scheduling, robust experiment design/residual-demand reoptimization, metric switching-cost residual scheduling, robust experiment design/g' scripts/integrate_p54_publication.py
+
       - name: Apply P54 publication integration
         run: python scripts/integrate_p54_publication.py
 
