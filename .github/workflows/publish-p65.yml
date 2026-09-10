@@ -1,0 +1,35 @@
+name: publish-p65
+
+on:
+  push:
+    branches:
+      - p65_lower_bounded_heterogeneous_calibration
+    paths:
+      - scripts/publish_p65.py
+      - .github/workflows/publish-p65.yml
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: p65_lower_bounded_heterogeneous_calibration
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Integrate P65 publication record
+        run: python scripts/publish_p65.py
+      - name: Commit publication integration
+        run: |
+          if git diff --quiet; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md docs/theorem_roadmap.md docs/research_navigation.md docs/equation_and_citation_map.md pyproject.toml CITATION.cff CHANGELOG.md website/index.html website/research-map.html tests/test_release_metadata_consistency.py tests/test_research_website_integrity.py
+          git commit -m "Publish P65 across public research record"
+          git push origin HEAD:p65_lower_bounded_heterogeneous_calibration
