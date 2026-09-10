@@ -1,3 +1,12 @@
+# 0.52.0 - 2026-09-10
+
+- Add P52 capacity-optimal service allocation for finite witness-graph threshold demands.
+- Reduce edge thresholds to the componentwise-minimal vertex demand vector.
+- Prove the universal capacity-conservation lower bound.
+- Prove the unique proportional-demand minimax continuous service allocation.
+- Prove the exact unit-capacity integer quota-saturation optimum.
+- Add implementation, regression tests, theorem visual, equation provenance, and front-page integration.
+
 # 0.51.0 - 2026-09-10
 
 - Add P51 heterogeneous finite-window service-rate stopping.

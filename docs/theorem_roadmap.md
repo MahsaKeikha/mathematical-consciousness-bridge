@@ -33,6 +33,7 @@ This roadmap records the current proved mathematical chain and the open route to
 ![P50 bounded-starvation asynchronous sampling](figures/p50_bounded_starvation_asynchronous_sampling.svg)
 
 ![P51 heterogeneous finite-window service-rate stopping](figures/p51_heterogeneous_service_rate_stopping.svg)
+![P52 capacity-optimal service allocation](figures/p52_capacity_optimal_service_allocation.svg)
 
 ---
 
@@ -91,6 +92,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P49](proposition_49_dyadic_stopping_overhead.md) | dyadic ceiling geometry and deterministic checkpoint-count bound | logarithmic complete certification looks with strictly less than twofold stopping-threshold and linear-cost overhead | proved sequential scheduling theorem |
 | [P50](proposition_50_bounded_starvation_asynchronous_sampling.md) | finite-window H-fair service guarantee plus P48 local stopping thresholds | finite global-round stopping for asynchronous priority sampling and a no-progress impossibility result without fairness | proved asynchronous scheduling theorem |
 | [P51](proposition_51_heterogeneous_service_rate_stopping.md) | preparation-specific finite-window quotas and exact endpoint service bottlenecks | instance-dependent positive/all-negative global stopping bounds with P50 as a special case | proved heterogeneous scheduling theorem |
+| [P52](proposition_52_capacity_optimal_service_allocation.md) | capacity-conservation lower bound plus proportional-demand minimax construction | unique capacity-optimal service shares and exact unit-capacity quota completion | proved deterministic scheduling theorem |
 
 ---
 
