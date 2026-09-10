@@ -60,12 +60,20 @@ def integrate_readme() -> None:
     )
     text = text.replace("P1 through P51", "P1 through P52")
 
-    text = insert_after_line(
-        text,
-        "[Proposition 51](docs/proposition_51_heterogeneous_service_rate_stopping.md)",
-        "| capacity-optimal service allocation | [Proposition 52](docs/proposition_52_capacity_optimal_service_allocation.md) | exact minimax service shares for finite vertex demands, capacity lower bound, uniqueness, and discrete quota optimality |",
-        "README proposition navigation",
-    )
+    p51_nav = "| heterogeneous finite-window service-rate stopping | [Proposition 51](docs/proposition_51_heterogeneous_service_rate_stopping.md) | preparation-specific service windows and quotas with endpoint-bottleneck global stopping bounds |"
+    p52_nav = "| capacity-optimal service allocation | [Proposition 52](docs/proposition_52_capacity_optimal_service_allocation.md) | exact minimax service shares for finite vertex demands, capacity lower bound, uniqueness, and discrete quota optimality |"
+    lines = text.splitlines()
+    if p51_nav not in lines:
+        for index, line in enumerate(lines):
+            if "[Proposition 50](docs/proposition_50_bounded_starvation_asynchronous_sampling.md)" in line:
+                lines.insert(index + 1, p51_nav)
+                break
+        else:
+            raise RuntimeError("missing P52 line marker: README P50 proposition navigation")
+    if p52_nav not in lines:
+        p51_index = lines.index(p51_nav)
+        lines.insert(p51_index + 1, p52_nav)
+    text = "\n".join(lines) + ("\n" if text.endswith("\n") else "")
 
     section = r'''
 ## 13.25 P52 - capacity-optimal service allocation
