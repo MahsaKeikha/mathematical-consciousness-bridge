@@ -38,7 +38,7 @@
     <text x="118" y="520" class="eq">dₚτ(u,v)</text>
     <text x="118" y="550" class="eqsmall">= ‖Pₚᵘ,τ − Pₚᵛ,τ‖TV</text>
     <text x="118" y="600" class="label">PHYSICAL CONTENT</text>
-    <text x="118" y="632" class="body">• response distinguishability under intervention</text>
+    <text x="118" y="632" class="body">• intervention-response distinguishability</text>
     <text x="118" y="662" class="body">• time-resolved differentiation of responses</text>
     <text x="118" y="692" class="body">• intervention-response equivalence classes</text>
     <text x="118" y="724" class="label">MINIMALITY RESULT</text>
@@ -48,7 +48,7 @@
 
   <g id="directed-influence" data-qa-block="true" data-x="650" data-y="420" data-width="500" data-height="355">
     <rect x="650" y="420" width="500" height="355" rx="18" fill="#faf8ff" stroke="#7c3aed" stroke-width="1.6"/>
-    <text x="688" y="462" class="head">B. Directed interventional influence</text>
+    <text x="688" y="462" class="head">B. Directed causal influence</text>
     <line x1="688" y1="480" x2="1112" y2="480" class="divider"/>
     <text x="688" y="518" class="eq">Aᵖᵢⱼ(τ)</text>
     <text x="688" y="548" class="eqsmall">= sup₍ᵤ,ᵥ₎∈ℰᵢ ‖Pᵘ,τₚ,ⱼ − Pᵛ,τₚ,ⱼ‖TV</text>
