@@ -88,9 +88,8 @@ def test_instance_factor_bounds_floor_objective_relative_to_p65_continuous():
     approximation = baseline_safe_floor_approximation(
         coefficients, sensitivities, costs, total_budget=20.0
     )
-    assert approximation.objective_value <= pytest.approx(
-        approximation.instance_factor * approximation.continuous_objective
-    )
+    upper_bound = approximation.instance_factor * approximation.continuous_objective
+    assert approximation.objective_value <= upper_bound + 1e-12
 
 
 def test_universal_sqrt_two_factor_holds_against_exact_p63_integer_optimum():
