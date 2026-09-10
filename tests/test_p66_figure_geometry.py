@@ -1,5 +1,5 @@
-from pathlib import Path
 import xml.etree.ElementTree as ET
+from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 FIGURE = ROOT / "docs/figures/p66_residual_exact_calibration_augmentation.svg"
