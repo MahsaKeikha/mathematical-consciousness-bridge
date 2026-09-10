@@ -45,11 +45,11 @@ def test_supergradient_sign_tracks_monotone_selected_spend():
     ]
     assert all(
         first.minimum_spend >= second.minimum_spend
-        for first, second in zip(evaluations, evaluations[1:], strict=True)
+        for first, second in zip(evaluations, evaluations[1:])
     )
     assert all(
         first.maximum_spend >= second.maximum_spend
-        for first, second in zip(evaluations, evaluations[1:], strict=True)
+        for first, second in zip(evaluations, evaluations[1:])
     )
 
 
@@ -92,8 +92,9 @@ def test_certified_search_bounds_dense_grid_dual_maximum():
         )[0]
         for value in grid
     )
-    assert cert.dual_lower_bound <= grid_best + 1e-6
+    assert cert.dual_lower_bound + 1e-4 >= grid_best
     assert cert.dual_optimum_upper_bound + 1e-10 >= grid_best
+    assert cert.dual_optimum_upper_bound + 1e-12 >= cert.dual_lower_bound
     assert cert.dual_value_error_bound <= 1e-8 + 1e-12
     assert cert.dual_optimum_upper_bound - cert.dual_lower_bound == pytest.approx(
         cert.dual_value_error_bound,
