@@ -6,12 +6,12 @@ def test_release_versions_are_synchronized():
     readme = Path("README.md").read_text(encoding="utf-8")
     pyproject = Path("pyproject.toml").read_text(encoding="utf-8")
     citation = Path("CITATION.cff").read_text(encoding="utf-8")
-    assert "version-0.43.0-2563eb" in readme
-    assert re.search(r'^version = "0\.43\.0"$', pyproject, re.MULTILINE)
-    assert re.search(r'^version: 0\.43\.0$', citation, re.MULTILINE)
+    assert "version-0.44.0-2563eb" in readme
+    assert re.search(r'^version = "0\.44\.0"$', pyproject, re.MULTILINE)
+    assert re.search(r'^version: 0\.44\.0$', citation, re.MULTILINE)
 
 
-def test_p39_publication_paths_are_visible():
+def test_quantum_publication_paths_are_visible():
     readme = Path("README.md").read_text(encoding="utf-8")
     for token in (
         "Proposition 39",
@@ -34,5 +34,9 @@ def test_p39_publication_paths_are_visible():
         "p43_optimal_quantum_target_allocation.svg",
         "optimal_quantum_target_allocation.py",
         "test_optimal_quantum_target_allocation.py",
+        "Proposition 44",
+        "p44_pair_adaptive_sample_allocation.svg",
+        "pair_adaptive_sample_allocation.py",
+        "test_pair_adaptive_sample_allocation.py",
     ):
         assert token in readme
