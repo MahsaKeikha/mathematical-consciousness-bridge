@@ -47,6 +47,7 @@ This roadmap records the current proved mathematical chain and the open route to
 ![P63 exact heterogeneous-cost integer calibration](figures/p63_exact_heterogeneous_integer_calibration.svg)
 ![P64 fast certified heterogeneous integer approximation](figures/p64_fast_heterogeneous_integer_approximation.svg)
 ![P65 lower-bounded heterogeneous calibration](figures/p65_lower_bounded_heterogeneous_calibration.svg)
+![P66 residual-exact calibration augmentation](figures/p66_residual_exact_calibration_augmentation.svg)
 
 ---
 
@@ -119,6 +120,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P63](proposition_63_exact_heterogeneous_integer_calibration.md) | exact-spend Bellman recursion with gcd cost compression | globally exact whole-measurement allocation under positive integer unequal costs, with P62 lower bound | proved pseudo-polynomial exact discrete theorem |
 | [P64](proposition_64_fast_heterogeneous_integer_approximation.md) | flooring of the P62 continuous optimum away from the one-sample boundary | O(m) feasible integer design with instance-specific and uniform approximation factors relative to P63 | proved scalable approximation theorem |
 | [P65](proposition_65_lower_bounded_heterogeneous_calibration.md) | lower-bounded strict convexity, active-set water filling, and floor approximation | baseline-safe heterogeneous calibration beyond the P64 one-sample regime restriction | proved continuous theorem plus approximation certificate |
+| [P66](proposition_66_residual_exact_calibration_augmentation.md) | P65 floor, bounded residual budget, and exact residual-spend dynamic programming | best floor-dominating integer augmentation with improved computable certificate | proved restricted-exact augmentation theorem |
 
 ---
 

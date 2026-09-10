@@ -6,7 +6,7 @@ def test_release_versions_are_synchronized():
     readme = Path("README.md").read_text(encoding="utf-8")
     pyproject = Path("pyproject.toml").read_text(encoding="utf-8")
     citation = Path("CITATION.cff").read_text(encoding="utf-8")
-    assert "version-0.65.0-2563eb" in readme
+    assert "version-0.66.0-2563eb" in readme
     assert re.search(r'^version = "0\.65\.0"$', pyproject, re.MULTILINE)
     assert re.search(r'^version: 0\.65\.0$', citation, re.MULTILINE)
 

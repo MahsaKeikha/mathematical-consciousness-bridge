@@ -905,3 +905,19 @@ P64 is a certified regime-specific approximation, not an FPTAS claim.
 
 P65 solves the lower-bounded continuous version of the declared separable calibration surrogate and provides a certified floor approximation. P63 remains the exact heterogeneous-cost integer solver. P65 does not establish a physical-to-experiential bridge or any quantum-ontological conclusion.
 
+---
+
+# 55. P66 residual-exact calibration augmentation
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(f_e=\lfloor n_e^*\rfloor\) | P65 floor used as the executable baseline | proved P65 input | [P65](proposition_65_lower_bounded_heterogeneous_calibration.md) |
+| \(R=B-\sum_ec_ef_e=\sum_ec_e\{n_e^*\}<\sum_ec_e=B_0\) | bounded residual budget identity | proved | [P66](proposition_66_residual_exact_calibration_augmentation.md) |
+| \(k_e=f_e+z_e\), \(z_e\in\mathbb Z_{\ge0}\), \(\sum_ec_ez_e\le R\) | floor-dominating integer augmentation class | definition | [P66](proposition_66_residual_exact_calibration_augmentation.md) |
+| residual Bellman recurrence over exact spend | exact optimizer within the floor-dominating class | proved restricted exactness | [P66](proposition_66_residual_exact_calibration_augmentation.md) |
+| \(U(k^{66})\le U(f)\) | monotone improvement over P65 flooring | proved | [P66](proposition_66_residual_exact_calibration_augmentation.md) |
+| \(r_{66}=\min_e k_e^{66}/n_e^*\ge r_{65}\) | sharpened floor-ratio certificate | proved | [P66](proposition_66_residual_exact_calibration_augmentation.md) |
+| \(U(k^{66})\le r_{66}^{-1/2}U_{\rm int}^*(B)\le\sqrt2 U_{\rm int}^*(B)\) | computable approximation certificate relative to P63 | proved | [P66](proposition_66_residual_exact_calibration_augmentation.md) |
+
+P66 is exact only inside the declared class of integer allocations that dominate the P65 floor. P63 remains the unrestricted exact integer solver. P66 makes no experiential or quantum-ontological claim.
+

@@ -1,3 +1,12 @@
+# 0.66.0 - 2026-09-10
+
+- Add P66 residual-exact calibration augmentation.
+- Prove that the budget left after P65 flooring is strictly smaller than the one-observation baseline cost.
+- Solve the residual integer augmentation exactly within the class that dominates the P65 floor.
+- Prove monotone objective improvement and a sharpened computable approximation certificate relative to the exact P63 optimum.
+- Keep P63 explicitly identified as the unrestricted exact integer theorem.
+- Add implementation, regression tests, geometry-guarded theorem visual, public navigation, website integration, provenance, and release metadata.
+
 # 0.65.0 - 2026-09-10
 
 - Add P65 lower-bounded heterogeneous calibration.

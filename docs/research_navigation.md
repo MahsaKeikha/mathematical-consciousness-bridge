@@ -6,7 +6,7 @@ This page is the reading and reference index for the Mathematical Consciousness 
 
 1. [Main research paper](../README.md) for the complete scientific narrative and embedded figures.
 2. [Bridge problem](bridge_problem.md) for the formal statement of the physical-to-experiential problem.
-3. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P65, including the physical scale branches from P11-P18 to P25-P27.
+3. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P66, including the physical scale branches from P11-P18 to P25-P27.
 4. [Equation and citation map](equation_and_citation_map.md) for equation-level provenance and theorem lineage.
 5. [Proposition 19](proposition_19_fundamental_physical_sufficiency.md) for the population physical-sufficiency theorem.
 6. [Proposition 20](proposition_20_finite_sample_residual_certification.md) for finite-sample certification of the P19 stochastic residual.
@@ -95,6 +95,7 @@ This page is the reading and reference index for the Mathematical Consciousness 
 | P63 | [Exact heterogeneous-cost integer calibration](proposition_63_exact_heterogeneous_integer_calibration.md) | exact Bellman solver for whole transition measurements with unequal positive integer costs, gcd compression, and continuous lower-bound certificate |
 | P64 | [Fast certified heterogeneous integer approximation](proposition_64_fast_heterogeneous_integer_approximation.md) | linear-time floor construction with explicit approximation certificate relative to the exact P63 optimum |
 | P65 | [Lower-bounded heterogeneous calibration](proposition_65_lower_bounded_heterogeneous_calibration.md) | exact thresholded water-filling continuous allocation with baseline-safe floor approximation and universal square-root-of-two certificate |
+| P66 | [Residual-exact calibration augmentation](proposition_66_residual_exact_calibration_augmentation.md) | exact bounded-residual optimization above the P65 floor with monotone objective improvement and a sharpened computable approximation certificate |
 
 ## Physics, mathematics, and quantitative figures
 
