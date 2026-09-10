@@ -46,7 +46,7 @@
     <text x="1275" y="307" class="tx">Best uncertainty using</text>
     <text x="1275" y="337" class="tx">the first i edges with exactly</text>
     <text x="1275" y="367" class="tx">s units of cost spent.</text>
-    <text x="1275" y="388" class="small">Feasible allocations define state paths.</text>
+    <text x="1275" y="388" class="small">Allocations map to state paths.</text>
   </g>
 
   <path d="M570 297.5 H638" class="arrow" data-from="p63-why" data-to="p63-experiment"/>
