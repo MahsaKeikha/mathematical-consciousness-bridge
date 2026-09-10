@@ -21,4 +21,16 @@ if text.count(old) != 1:
     raise RuntimeError("P30 roadmap patch marker not found exactly once")
 text = text.replace(old, new, 1)
 
+old = '''p30_eq = r\'\'\'# 23. P30 full declared P11 scale compatibility'''
+new = '''p30_eq = r\'\'\'# 24. P30 full declared P11 scale compatibility'''
+if text.count(old) != 1:
+    raise RuntimeError("P30 equation-section header patch marker not found exactly once")
+text = text.replace(old, new, 1)
+
+old = '''marker = "# 23. Candidate consciousness-theory feature families"\ntext = replace_once(text, marker, p30_eq + "# 24. Candidate consciousness-theory feature families", "equation map P30")\ntext = replace_once(text, "# 24. Citation discipline", "# 25. Citation discipline", "equation map renumber citation")'''
+new = '''marker = "# 24. Candidate consciousness-theory feature families"\ntext = replace_once(text, marker, p30_eq + "# 25. Candidate consciousness-theory feature families", "equation map P30")\ntext = replace_once(text, "# 25. Citation discipline", "# 26. Citation discipline", "equation map renumber citation")'''
+if text.count(old) != 1:
+    raise RuntimeError("P30 equation-map numbering patch marker not found exactly once")
+text = text.replace(old, new, 1)
+
 path.write_text(text, encoding="utf-8")
