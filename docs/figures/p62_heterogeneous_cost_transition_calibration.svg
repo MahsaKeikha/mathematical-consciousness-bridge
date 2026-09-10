@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">P62 heterogeneous-cost transition-calibration allocation</title>
+  <desc id="desc">A visual explanation of how uncertainty importance and per-measurement cost jointly determine the exact continuous calibration allocation.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#334155"/></marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.12"/></filter>
+    <style>
+      .h1{font:700 30px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#0f172a}.sub{font:400 16px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#475569}.bt{font:700 18px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#0f172a}.tx{font:400 14px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#334155}.math{font:600 14px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#0f172a}.small{font:400 12px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#64748b}.arrow{fill:none;stroke:#334155;stroke-width:2.2;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="760" rx="24" fill="#f8fafc"/>
+  <text x="60" y="58" class="h1">P62: When some measurements cost more than others</text>
+  <text x="60" y="88" class="sub">The optimal design balances uncertainty, scientific importance, and the actual cost of each transition measurement.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="55" y="135" width="310" height="170" rx="18" fill="#ffffff" stroke="#94a3b8"/>
+    <text x="82" y="172" class="bt">1. Why measure an edge?</text>
+    <text x="82" y="207" class="math">bₑ = wₑ aₑ</text>
+    <text x="82" y="238" class="tx">aₑ: how hard it is to estimate</text>
+    <text x="82" y="263" class="tx">wₑ: how much its uncertainty matters</text>
+    <text x="82" y="286" class="small">Large bₑ pushes us toward more measurements.</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="445" y="135" width="310" height="170" rx="18" fill="#fff7ed" stroke="#f97316"/>
+    <text x="472" y="172" class="bt">2. What does it cost?</text>
+    <text x="472" y="207" class="math">cost per observation = cₑ</text>
+    <text x="472" y="238" class="tx">Some transitions may need more setup,</text>
+    <text x="472" y="263" class="tx">stabilization, time, or equipment.</text>
+    <text x="472" y="286" class="small">Large cₑ pushes us toward fewer observations.</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="835" y="135" width="310" height="170" rx="18" fill="#eef2ff" stroke="#6366f1"/>
+    <text x="862" y="172" class="bt">3. Hard total budget</text>
+    <text x="862" y="207" class="math">Σₑ cₑ nₑ = B</text>
+    <text x="862" y="238" class="tx">The design must fit inside one common</text>
+    <text x="862" y="263" class="tx">time, money, or capacity budget.</text>
+    <text x="862" y="286" class="small">Continuous nₑ is the exact design relaxation.</text>
+  </g>
+
+  <path d="M365 220 L445 220" class="arrow"/>
+  <path d="M755 220 L835 220" class="arrow"/>
+
+  <g filter="url(#shadow)">
+    <rect x="145" y="375" width="910" height="150" rx="22" fill="#ecfdf5" stroke="#10b981" stroke-width="1.6"/>
+    <text x="180" y="412" class="bt">4. Exact P62 optimum</text>
+    <text x="180" y="448" class="math">T = Σⱼ bⱼ^(2/3) cⱼ^(1/3)</text>
+    <text x="180" y="482" class="math">nₑ* = (B/T) bₑ^(2/3) cₑ^(-2/3)</text>
+    <text x="650" y="482" class="math">U*(B) = T^(3/2) / √B</text>
+    <text x="180" y="508" class="small">Strict convexity makes this the unique global continuous optimum.</text>
+  </g>
+
+  <path d="M600 305 L600 375" class="arrow"/>
+
+  <g filter="url(#shadow)">
+    <rect x="100" y="590" width="450" height="120" rx="18" fill="#eff6ff" stroke="#3b82f6"/>
+    <text x="128" y="626" class="bt">Measurement count</text>
+    <text x="128" y="659" class="math">nₑ* ∝ bₑ^(2/3) cₑ^(-2/3)</text>
+    <text x="128" y="686" class="tx">More expensive edges get fewer observations.</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="650" y="590" width="450" height="120" rx="18" fill="#fff7ed" stroke="#f97316"/>
+    <text x="678" y="626" class="bt">Budget share</text>
+    <text x="678" y="659" class="math">cₑ nₑ* ∝ bₑ^(2/3) cₑ^(1/3)</text>
+    <text x="678" y="686" class="tx">Yet an expensive edge can still consume more total budget.</text>
+  </g>
+
+  <path d="M435 525 C410 555 350 565 325 590" class="arrow"/>
+  <path d="M765 525 C790 555 850 565 875 590" class="arrow"/>
+
+  <text x="60" y="746" class="small">Boundary: P62 solves a declared continuous calibration surrogate. Heterogeneous-cost integer allocation is a separate discrete problem.</text>
+</svg>
