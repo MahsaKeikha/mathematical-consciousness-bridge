@@ -15,7 +15,7 @@ from __future__ import annotations
 
 from collections.abc import Hashable, Mapping
 from dataclasses import dataclass
-from math import isfinite, sqrt
+from math import floor, isfinite, sqrt
 from typing import TypeVar
 
 Edge = TypeVar("Edge", bound=Hashable)
@@ -172,7 +172,8 @@ def baseline_safe_floor_approximation(
         total_budget,
     )
     integer_allocations = {
-        edge: int(allocation // 1) for edge, allocation in continuous.allocations.items()
+        edge: floor(allocation)
+        for edge, allocation in continuous.allocations.items()
     }
     ratios = [
         integer_allocations[edge] / continuous.allocations[edge]
