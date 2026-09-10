@@ -14,6 +14,8 @@ This roadmap records the current proved mathematical chain and the open route to
 
 ![P41 trace-ball quantum envelope](figures/p41_trace_ball_quantum_envelope.svg)
 
+![P42 quantum regular-bridge sample complexity](figures/p42_quantum_regular_bridge_sample_complexity.svg)
+
 ---
 
 # 1. Complete proposition index
@@ -61,6 +63,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P39](proposition_39_finite_data_quantum_nonfactorization.md) | target-TV confidence bounds plus tomography model-set coverage | finite-data rejection of every surviving exact quantum-state-fiber hypothesis | proved finite-data model-set theorem |
 | [P40](proposition_40_continuous_quantum_region_regularity.md) | injective-image factorization plus confidence-region distance envelopes and bridge moduli | unrestricted-bridge no-go and continuous-region regularity obstruction | proved no-go plus regularity theorem |
 | [P41](proposition_41_trace_ball_quantum_envelope.md) | trace-distance triangle inequality plus simultaneous quantum and target confidence balls | analytic P40 envelope and end-to-end regularity obstruction | proved confidence-envelope theorem |
+| [P42](proposition_42_quantum_regular_bridge_sample_complexity.md) | IC-measurement Hoeffding concentration plus linear-reconstruction stability | explicit sufficient quantum and target samples for a positive regularity obstruction | proved finite-sample design theorem |
 
 ---
 
@@ -778,6 +781,32 @@ For an \(L\)-Lipschitz bridge and symmetric uncertainty, the design inequality i
 \]
 
 Direct proof: [Proposition 41](proposition_41_trace_ball_quantum_envelope.md). Implementation: [trace_ball_quantum_envelope.py](../src/consciousness_bridge/trace_ball_quantum_envelope.py). Tests: [test_trace_ball_quantum_envelope.py](../tests/test_trace_ball_quantum_envelope.py).
+
+---
+
+## P42 - explicit regular-bridge sample complexity
+
+For a fixed IC measurement with \(m\) outcomes and reconstruction stability \(\kappa_R\), P42 obtains
+
+\[
+r_Q=\kappa_Rm\sqrt{\frac{\log(2Km/\alpha_Q)}{2n_Q}}.
+\]
+
+For a categorical target with \(k\) outcomes,
+
+\[
+\varepsilon_Y=\frac{k}{2}\sqrt{\frac{\log(2Kk/\alpha_Y)}{2n_Y}}.
+\]
+
+If \(\Delta=d_Y-Ld_Q>0\), then
+
+\[
+\boxed{\widehat M\ge\Delta-4\varepsilon_Y-4Lr_Q.}
+\]
+
+Allocating fractions \(\lambda\) and \(1-\lambda\) of the gap gives explicit sufficient \(n_Y\) and \(n_Q\), both scaling as \(\Delta^{-2}\). This is a theorem for one declared tomography design and bridge regularity class, not a quantum-incompleteness claim.
+
+Direct proof: [Proposition 42](proposition_42_quantum_regular_bridge_sample_complexity.md). Implementation: [quantum_regular_bridge_sample_complexity.py](../src/consciousness_bridge/quantum_regular_bridge_sample_complexity.py). Tests: [test_quantum_regular_bridge_sample_complexity.py](../tests/test_quantum_regular_bridge_sample_complexity.py).
 
 ---
 
