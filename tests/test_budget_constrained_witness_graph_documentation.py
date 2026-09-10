@@ -15,7 +15,7 @@ def test_p46_document_exposes_core_theorem_chain():
         "P46D: a posteriori optimality certificate",
         "P46E: exact small-instance solution",
         "P46 budgeted witness selection is NP-hard",
-        "fractional degree knapsack",
+        "fractional relaxation",
         "does not establish that quantum mechanics is incomplete",
     ):
         assert token in text
