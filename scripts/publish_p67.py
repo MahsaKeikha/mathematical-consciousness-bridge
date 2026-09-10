@@ -266,3 +266,5 @@ historical = '''def test_p66_is_preserved_in_public_record():
 '''
 text = text[:start] + historical + text[end:]
 write(path, text)
+
+# This script is intentionally temporary and is removed before the clean PR.
