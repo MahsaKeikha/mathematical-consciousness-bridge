@@ -1,3 +1,11 @@
+# 0.70.0 - 2026-09-10
+
+- Added P70 exact primal-dual gap decomposition and diagnostic attribution.
+- Proved that every feasible candidate-to-P68-dual gap decomposes exactly into nonnegative edgewise Lagrangian regrets plus a multiplier-weighted unused-budget penalty.
+- Characterized the zero decomposition as the P67 common-multiplier certificate conditions.
+- Combined P69 and P70 into a certified interval for the candidate-to-best-dual gap while keeping dual optimality distinct from P63 primal exactness.
+- Added proof, implementation, regression tests, theorem visual, geometry guards, README integration, roadmap/navigation updates, equation provenance, and website integration.
+
 # 0.69.0 - 2026-09-10
 
 - Added P69 certified dual-optimal multiplier search.

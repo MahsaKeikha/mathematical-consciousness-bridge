@@ -1021,3 +1021,40 @@ Q_{\rm up}-Q_{\rm low}\le\varepsilon_{\rm dual}.
 
 **Provenance:** repository-original Proposition 69, building on P63, P67, and P68 plus standard concave supporting-line analysis. P69 does not assume \(q^*=U_{\rm int}^*(B)\).
 
+# 59. P70 exact primal-dual gap decomposition
+
+For any feasible integer candidate \(k\) and any \(\lambda>0\), define
+
+\[
+r_e(k_e;\lambda)
+=
+\frac{b_e}{\sqrt{k_e}}+\lambda c_ek_e
+-
+\min_{j\ge1}
+\left(\frac{b_e}{\sqrt j}+\lambda c_ej\right).
+\]
+
+P70 proves the exact nonnegative decomposition
+
+\[
+U(k)-q(\lambda)
+=
+\sum_e r_e(k_e;\lambda)
++
+\lambda\left(B-\sum_e c_ek_e\right).
+\]
+
+The decomposition is zero exactly when the candidate is budget-tight and every coordinate is an edgewise minimizer at the common multiplier, recovering the P67 sufficient global-optimality certificate conditions.
+
+With the P69 bracket \(Q_{\rm low}\le q^*\le Q_{\rm up}\), P70 also gives
+
+\[
+\max\{0,U(k)-Q_{\rm up}\}
+\le
+U(k)-q^*
+\le
+\max\{0,U(k)-Q_{\rm low}\}.
+\]
+
+**Provenance:** repository-original Proposition 70, building on P63, P67, P68, and P69. The edgewise terms diagnose certificate mismatch at a common multiplier; they are not guaranteed one-coordinate primal improvements under the coupled budget constraint.
+

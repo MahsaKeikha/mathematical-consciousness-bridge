@@ -6,7 +6,7 @@ This page is the reading and reference index for the Mathematical Consciousness 
 
 1. [Main research paper](../README.md) for the complete scientific narrative and embedded figures.
 2. [Bridge problem](bridge_problem.md) for the formal statement of the physical-to-experiential problem.
-3. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P69, including the physical scale branches from P11-P18 to P25-P27.
+3. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P70, including the physical scale branches from P11-P18 to P25-P27.
 4. [Equation and citation map](equation_and_citation_map.md) for equation-level provenance and theorem lineage.
 5. [Proposition 19](proposition_19_fundamental_physical_sufficiency.md) for the population physical-sufficiency theorem.
 6. [Proposition 20](proposition_20_finite_sample_residual_certification.md) for finite-sample certification of the P19 stochastic residual.
@@ -99,6 +99,7 @@ This page is the reading and reference index for the Mathematical Consciousness 
 | P67 | [Global integer optimality certificate](proposition_67_global_integer_optimality_certificate.md) | common-multiplier sufficient certificate for unrestricted P63 global optimality of a budget-tight integer candidate |
 | P68 | [Lagrangian optimality gap certificate](proposition_68_lagrangian_optimality_gap.md) | weak-duality lower bound and quantitative additive or multiplicative candidate-quality certificate for the unrestricted P63 problem |
 | P69 | [Certified dual-optimal multiplier search](proposition_69_dual_optimal_multiplier.md) | concave one-dimensional optimization of the P68 dual with exact supergradient intervals and a certified dual-value tolerance |
+| P70 | [Exact primal-dual gap decomposition](proposition_70_primal_dual_gap_decomposition.md) | exact attribution of the P68 candidate-to-dual gap into edgewise Lagrangian regret and unused-budget penalty, with a P69-powered strongest-dual interval |
 
 ## Physics, mathematics, and quantitative figures
 
