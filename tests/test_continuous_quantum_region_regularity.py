@@ -109,7 +109,7 @@ def test_missing_pair_and_invalid_values_are_rejected():
     with pytest.raises(ValueError):
         continuous_region_regularity_certificate(
             PREPARATIONS,
-            {( "x0", "x1"): 0.2},
+            {("x0", "x1"): 0.2},
             QUANTUM_UPPER,
             lipschitz_modulus_values(PREPARATIONS, QUANTUM_UPPER, 1.0),
         )
