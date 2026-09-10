@@ -12,6 +12,8 @@ This roadmap records the current proved mathematical chain and the open route to
 
 ![P40 continuous quantum-region regularity](figures/p40_continuous_quantum_region_regularity.svg)
 
+![P41 trace-ball quantum envelope](figures/p41_trace_ball_quantum_envelope.svg)
+
 ---
 
 # 1. Complete proposition index
@@ -58,6 +60,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P38](proposition_38_quantum_operational_sufficiency.md) | factorization through tomographically complete density-operator fibers | exact quantum descriptor sufficiency and non-factorization witness | proved quantum sufficiency theorem |
 | [P39](proposition_39_finite_data_quantum_nonfactorization.md) | target-TV confidence bounds plus tomography model-set coverage | finite-data rejection of every surviving exact quantum-state-fiber hypothesis | proved finite-data model-set theorem |
 | [P40](proposition_40_continuous_quantum_region_regularity.md) | injective-image factorization plus confidence-region distance envelopes and bridge moduli | unrestricted-bridge no-go and continuous-region regularity obstruction | proved no-go plus regularity theorem |
+| [P41](proposition_41_trace_ball_quantum_envelope.md) | trace-distance triangle inequality plus simultaneous quantum and target confidence balls | analytic P40 envelope and end-to-end regularity obstruction | proved confidence-envelope theorem |
 
 ---
 
@@ -736,6 +739,45 @@ M_*:=\max_{x\ne x'}M_{xx'}>0
 rules out every descriptor in the declared quantum confidence region for every bridge satisfying that modulus, on the joint confidence event.
 
 Direct proof: [Proposition 40](proposition_40_continuous_quantum_region_regularity.md). Implementation: [continuous_quantum_region_regularity.py](../src/consciousness_bridge/continuous_quantum_region_regularity.py). Tests: [test_continuous_quantum_region_regularity.py](../tests/test_continuous_quantum_region_regularity.py).
+
+---
+
+## P41 - trace-ball quantum envelope
+
+If tomography gives simultaneous trace-distance balls
+
+\[
+D(\rho_x,\widehat\rho_x)\le r_x,
+\]
+
+then
+
+\[
+\boxed{
+U_{xx'}
+\le
+U^{\mathrm{ball}}_{xx'}
+=
+\min\{1,D(\widehat\rho_x,\widehat\rho_{x'})+r_x+r_{x'}\}.
+}
+\]
+
+Combining this with target-TV confidence gives a direct P40 obstruction
+
+\[
+\boxed{
+L^{\mathrm{ball}}_{xx'}>
+\omega(U^{\mathrm{ball}}_{xx'}).
+}
+\]
+
+For an \(L\)-Lipschitz bridge and symmetric uncertainty, the design inequality is
+
+\[
+\boxed{d_Y-Ld_Q>2\varepsilon+2Lr.}
+\]
+
+Direct proof: [Proposition 41](proposition_41_trace_ball_quantum_envelope.md). Implementation: [trace_ball_quantum_envelope.py](../src/consciousness_bridge/trace_ball_quantum_envelope.py). Tests: [test_trace_ball_quantum_envelope.py](../tests/test_trace_ball_quantum_envelope.py).
 
 ---
 

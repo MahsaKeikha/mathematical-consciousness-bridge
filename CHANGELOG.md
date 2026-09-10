@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.41.0 - 2026-09-09
+
+### Added
+- Proposition 41: trace-ball quantum envelopes and end-to-end regularity certification.
+- Analytic upper bounds on the P40 continuous quantum confidence-region envelope.
+- Target-TV lower confidence envelopes and a direct Lipschitz obstruction margin.
+- A symmetric finite-error experiment-design inequality.
+- Executable implementation, regression tests, publication map, and public-paper integration.
+
+### Scientific boundary
+- P41 assumes the declared quantum and target confidence balls have valid simultaneous coverage.
+- A positive P41 obstruction rejects only the declared trace-ball region together with the declared bridge regularity class.
+
 ## 0.40.0 - 2026-09-09
 
 ### Added

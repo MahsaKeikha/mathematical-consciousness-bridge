@@ -6,9 +6,9 @@ def test_release_versions_are_synchronized():
     readme = Path("README.md").read_text(encoding="utf-8")
     pyproject = Path("pyproject.toml").read_text(encoding="utf-8")
     citation = Path("CITATION.cff").read_text(encoding="utf-8")
-    assert "version-0.40.0-2563eb" in readme
-    assert re.search(r'^version = "0\.40\.0"$', pyproject, re.MULTILINE)
-    assert re.search(r'^version: 0\.40\.0$', citation, re.MULTILINE)
+    assert "version-0.41.0-2563eb" in readme
+    assert re.search(r'^version = "0\.41\.0"$', pyproject, re.MULTILINE)
+    assert re.search(r'^version: 0\.41\.0$', citation, re.MULTILINE)
 
 
 def test_p39_publication_paths_are_visible():
@@ -22,5 +22,9 @@ def test_p39_publication_paths_are_visible():
         "p40_continuous_quantum_region_regularity.svg",
         "continuous_quantum_region_regularity.py",
         "test_continuous_quantum_region_regularity.py",
+        "Proposition 41",
+        "p41_trace_ball_quantum_envelope.svg",
+        "trace_ball_quantum_envelope.py",
+        "test_trace_ball_quantum_envelope.py",
     ):
         assert token in readme
