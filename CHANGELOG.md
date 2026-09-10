@@ -1,3 +1,13 @@
+# 0.47.0 - 2026-09-10
+
+- Add P47 anytime-valid sequential witness-graph refinement.
+- Prove simultaneous preparation-level confidence coverage over every local sample size.
+- Prove validity under non-anticipating adaptive preparation sampling and random local counts.
+- Add simultaneous lower and upper regularity-margin envelopes for every declared edge and global time.
+- Add valid data-dependent witness selection, stopping, safe edge elimination, and vertex pruning.
+- Connect P24, P44, P45, and P46 into one sequential experimental-design theorem.
+- Add a publication visual, implementation, regression tests, and strict scientific-boundary language.
+
 # 0.46.0 - 2026-09-10
 
 - Add P46 budget-constrained witness-graph selection.
