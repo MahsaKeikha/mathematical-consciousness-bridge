@@ -29,7 +29,7 @@ def test_universal_proof_ladder_text_stays_inside_safe_block_regions():
     svg = ET.parse(figure).getroot()
 
     blocks = svg.findall(".//svg:g[@data-qa-block='true']", SVG_NS)
-    assert len(blocks) == 12
+    assert len(blocks) == 13
 
     for block in blocks:
         x = _value(block, "data-x")
@@ -78,8 +78,18 @@ def test_universal_proof_ladder_preserves_all_twelve_criteria():
     for criterion in ("U1", "U2", "U3", "U4", "U5", "U6", "U7", "U8", "U9", "U10", "U11", "U12"):
         assert criterion in text
 
-    for proposition in range(1, 10):
-        assert f"Proposition {proposition}" in text or f"Propositions {proposition}" in text
+    required_references = (
+        "Proposition 1",
+        "Propositions 2-3",
+        "Proposition 4",
+        "Proposition 5",
+        "Proposition 6",
+        "Proposition 7",
+        "Proposition 8",
+        "Proposition 9",
+    )
+    for reference in required_references:
+        assert reference in text
 
 
 def test_universal_proof_ladder_uses_no_forbidden_unicode_dashes():
