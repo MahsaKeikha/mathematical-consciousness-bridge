@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="930" viewBox="0 0 1500 930" role="img" aria-labelledby="title desc">
+  <title id="title">P42 IC POVM finite-sample obstruction sample complexity</title>
+  <desc id="desc">Informationally complete measurement concentration, target concentration, regularity gap, explicit sample sizes, and scientific boundary.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .title{font:700 34px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .sub{font:400 17px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .head{font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .eq{font:600 17px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .label{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
+      .arrow{stroke:#64748b;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1500" height="930" fill="#ffffff"/>
+  <text x="70" y="65" class="title">P42 - IC-POVM Finite-Sample Obstruction Complexity</text>
+  <text x="70" y="100" class="sub">A transparent concentration theorem turns the corrected P41 uncertainty budget into explicit trial counts.</text>
+
+  <rect x="65" y="155" width="410" height="215" rx="18" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="95" y="190" class="label">QUANTUM TOMOGRAPHY</text>
+  <text x="95" y="225" class="head">Fixed informationally complete POVM</text>
+  <text x="95" y="263" class="eq">||A(v)||₁ ≤ κ||v||₁</text>
+  <text x="95" y="301" class="eq">rQ = κmQ √[log(2NmQ/αQ)/(2nQ)]</text>
+  <text x="95" y="338" class="body">Conditioning κ is explicit in the sample cost.</text>
+
+  <rect x="545" y="155" width="410" height="215" rx="18" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="575" y="190" class="label">TARGET ESTIMATION</text>
+  <text x="575" y="225" class="head">Finite target alphabet</text>
+  <text x="575" y="263" class="eq">εY = (mY/2) √[log(2NmY/αY)/(2nY)]</text>
+  <text x="575" y="305" class="body">The bound is simultaneous over all declared</text>
+  <text x="575" y="330" class="body">preparations by a finite union bound.</text>
+
+  <rect x="1025" y="155" width="410" height="215" rx="18" fill="#fff7ed" stroke="#f97316"/>
+  <text x="1055" y="190" class="label">POPULATION GAP</text>
+  <text x="1055" y="225" class="head">Regularity violation strength</text>
+  <text x="1055" y="263" class="eq">Δ = dY − LdQ</text>
+  <text x="1055" y="301" class="eq">Δ &gt; 4εY + 4LrQ</text>
+  <text x="1055" y="338" class="body">This is the corrected end-to-end P41 budget.</text>
+
+  <path class="arrow" d="M475 265 H533"/>
+  <path class="arrow" d="M955 265 H1013"/>
+
+  <rect x="150" y="455" width="545" height="220" rx="18" fill="#f5f3ff" stroke="#8b5cf6"/>
+  <text x="180" y="490" class="label">EXPLICIT SUFFICIENT SAMPLE SIZES</text>
+  <text x="180" y="525" class="head">Budget split 0 &lt; λ &lt; 1</text>
+  <text x="180" y="565" class="eq">nY ≥ 2mY² log(2NmY/αY)/(λ²Δ²)</text>
+  <text x="180" y="605" class="eq">nQ ≥ 8L²κ²mQ² log(2NmQ/αQ)</text>
+  <text x="180" y="633" class="eq">          /[(1−λ)²Δ²]</text>
+  <text x="180" y="658" class="body">Both branches scale as Δ⁻².</text>
+
+  <rect x="805" y="455" width="545" height="220" rx="18" fill="#fff1f2" stroke="#e11d48"/>
+  <text x="835" y="490" class="label">BALANCED CHOICE λ = 1/2</text>
+  <text x="835" y="525" class="head">Simple publication form</text>
+  <text x="835" y="565" class="eq">nY ≥ 8mY² log(2NmY/αY)/Δ²</text>
+  <text x="835" y="605" class="eq">nQ ≥ 32L²κ²mQ² log(2NmQ/αQ)/Δ²</text>
+  <text x="835" y="643" class="body">Ill-conditioned tomography is penalized by κ².</text>
+
+  <path class="arrow" d="M1230 370 V415 H425 V443"/>
+  <path class="arrow" d="M695 565 H793"/>
+
+  <rect x="70" y="750" width="1360" height="120" rx="18" fill="#0f172a"/>
+  <text x="105" y="790" style="font:700 12px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">SCIENTIFIC BOUNDARY</text>
+  <text x="105" y="828" style="font:600 18px Georgia,'Times New Roman',serif;fill:#f8fafc">finite-sample rejection of one declared IC-POVM + Lipschitz model class ≠ quantum incompleteness</text>
+  <text x="105" y="854" style="font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">Coverage, system boundary, target validity, measurement completeness, and the regularity assumption remain explicit premises.</text>
+</svg>
