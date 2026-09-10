@@ -10,12 +10,30 @@ def test_readme_follows_reader_first_scientific_order():
     plain = text.index("# What this project is trying to achieve, in plain language")
     abstract = text.index("# Abstract")
     status = text.index("# Scientific status discipline")
+    reading = text.index("# How to read this study")
     glance = text.index("# Research at a glance")
     formulation = text.index("# 1. Mathematical formulation of the bridge problem")
+    operational = text.index("# 2. From physical dynamics to operational structure")
+    scale = text.index("# 3. Time, composition, and scale cannot be ignored")
+    finite = text.index("# 4. Turning a population theorem into a finite experiment")
+    fundamental = text.index("# 4.4 Fundamental theory / Theory-of-Everything interface")
+    quantum = text.index("# 5. Quantum mechanics enters as a physical description")
+    adaptive = text.index("# 6. Adaptive experiment design")
+    calibration = text.index("# 7. Calibration and optimization as a downstream experimental layer")
+    established = text.index("# What has actually been established")
     open_section = text.index("# What remains open")
+    falsification = text.index("# Falsification logic")
+    evidence = text.index("# Evidence, references, and provenance")
+    visuals = text.index("# Complete visual evidence without front-page overload")
+    validation = text.index("# Numerical validation facts")
+    reproducibility = text.index("# Reproducibility and audit path")
     detail = text.index("# Detailed proposition record")
+    current = text.index("# Current scientific status")
+    navigation = text.index("# Navigation")
 
-    assert plain < abstract < status < glance < formulation < open_section < detail
+    assert plain < abstract < status < reading < glance < formulation
+    assert formulation < operational < scale < finite < fundamental < quantum < adaptive < calibration
+    assert calibration < established < open_section < falsification < evidence < visuals < validation < reproducibility < detail < current < navigation
 
 
 def test_research_at_a_glance_covers_the_full_scientific_program():

@@ -7,16 +7,21 @@ DETAIL = ROOT / "docs" / "detailed_proposition_record.md"
 
 CURATED_MAIN_PAGE_FIGURES = (
     "research_architecture.svg",
+    "universal_proof_ladder.svg",
     "theorem_roadmap.svg",
+    "conscious_state_measurement_map.svg",
     "fundamental_theory_consciousness_map.svg",
     "causal_structure_anatomy.svg",
+    "information_geometry_response_manifold.svg",
     "p18_scale_sufficiency_certificate.svg",
     "multiscale_physical_hierarchy.svg",
     "p20_finite_sample_residual_certificate.svg",
+    "observer_to_bridge_handoff.svg",
     "quantum_bridge_completeness_map.svg",
     "p38_quantum_operational_sufficiency.svg",
     "p41_trace_ball_quantum_envelope.svg",
     "p47_sequential_graph_refinement.svg",
+    "theory_comparison_map.svg",
     "equation_evidence_map.svg",
 )
 

@@ -81,6 +81,24 @@ This distinction is central. The repository **does not assume that a physical qu
 
 ---
 
+# How to read this study
+
+The main page is organized as a scientific argument rather than a chronological project log. A first-time reader can follow it in four passes: first identify the physical and experiential objects being compared; then inspect the intervention-resolved physical structure; next examine the exact and finite-data sufficiency tests; finally read the quantum, adaptive-experiment, falsification, and open-problem sections. Detailed proposition chronology and downstream calibration mathematics are linked separately so they do not interrupt the core argument.
+
+| Reader question | Where the answer appears |
+| --- | --- |
+| **What is the scientific problem?** | Abstract, Research at a glance, and Section 1. |
+| **What exactly is being measured and compared?** | Sections 1-4 and the measurement / response figures. |
+| **What has actually been proved?** | Scientific status discipline, theorem roadmap, and “What has actually been established.” |
+| **What would falsify the framework or a candidate bridge?** | Falsification logic and the linked falsification program. |
+| **What remains unknown?** | “What remains open,” current scientific status, and the dedicated technical pages. |
+
+![Universal proof ladder](docs/figures/universal_proof_ladder.svg)
+
+**Figure 2. Scientific proof ladder.** A credible consciousness bridge must pass distinct layers: physical well-definedness, experiential well-definedness, non-circular bridge premises, representation invariance, physical-feature sufficiency, experimental recoverability, competing-theory discrimination, finite-data support, and explicit falsification. The figure is a requirements map, not a claim that every layer has already been closed.
+
+---
+
 # Research at a glance
 
 The full program can be read as seven scientific stages. This table is the shortest complete map of the repository.
@@ -99,7 +117,7 @@ The dependency-oriented theorem map covers **P1 through P70 with explicit depend
 
 ![Theorem roadmap](docs/figures/theorem_roadmap.svg)
 
-**Figure 2. Theorem dependency map.** Read from foundational identifiability toward the bridge tests and experimental-design branches. A later optimization theorem does not strengthen an earlier ontology claim. It solves the experimental problem stated at its own layer.
+**Figure 3. Theorem dependency map.** Read from foundational identifiability toward bridge tests and experimental-design branches. Each arrow is a mathematical dependency. Later optimization results improve how experiments are executed or certified; they do not retroactively strengthen an earlier ontological claim.
 
 ---
 
@@ -128,6 +146,22 @@ E:\Omega\to\mathcal E
 $$
 
 represent the target distinctions the proposed bridge claims to determine. The independence requirement matters: if $E$ is defined from $T$, factorization becomes circular and cannot test the physical description.
+
+A useful way to keep the notation straight is:
+
+| Symbol | Role | Scientific requirement |
+| --- | --- | --- |
+| $\Omega$ | admissible physical states or histories | must be declared relative to a physical model and experiment class |
+| $T$ | physical descriptor | must be operationally defined, representation-aware, and recoverable |
+| $E$ | experiential target | must be specified independently enough to avoid definitional circularity |
+| $B$ | candidate bridge law | must state how physical equivalence classes map to target distinctions |
+| $R_{\mathrm{stoch}}$ | residual target information outside $T$ | must be interpreted under an explicit probabilistic model |
+
+The target $E$ is intentionally not equated with verbal report or overt responsiveness. Dreaming, anesthesia, perturbational complexity, and covert command-related brain activation show why behavior, report, neural evidence, and experiential inference must be kept distinct (Casali et al., 2013; Sarasso et al., 2015; Siclari et al., 2017; Claassen et al., 2019; see the references below).
+
+![Conscious-state measurement and dissociation map](docs/figures/conscious_state_measurement_map.svg)
+
+**Figure 4. Measurement and dissociation map.** Behavioral responsiveness, subjective report, perturbational complexity, and command-related brain activation are different evidence channels. A bridge theory must state which pattern of observables it predicts and must remain testable when report or behavior is unavailable. The figure motivates the independent-target requirement; it does not define consciousness by any single measurement.
 
 ## 1.2 Exact deterministic sufficiency
 
@@ -209,7 +243,7 @@ If the target varies locally in more independent directions than the proposed ph
 
 ![Fundamental theory to consciousness map](docs/figures/fundamental_theory_consciousness_map.svg)
 
-**Figure 3. The logical gap being tested.** Fundamental physical theory determines physical structure and operational predictions. A consciousness theory still needs a justified map from physical equivalence classes to experiential equivalence classes. The purpose of the project is to make the required bridge and its possible failure conditions explicit.
+**Figure 5. The logical gap being tested.** Fundamental physical theory determines physical structure and operational predictions. A consciousness theory still requires a justified map from physical equivalence classes to experiential equivalence classes. The project makes that extra bridge explicit so its assumptions, regularity, uncertainty, and failure conditions can be tested rather than hidden inside terminology.
 
 ---
 
@@ -241,9 +275,13 @@ This is deliberately richer than a scalar. Two systems can have similar entropy,
 
 ![Causal structure anatomy](docs/figures/causal_structure_anatomy.svg)
 
-**Figure 4. Anatomy of the operational physical candidate.** Controlled interventions generate response distributions. Distances among those distributions define response geometry; comparisons across sources define directed influence; comparisons with partitioned null models expose irreducibility. These are physical candidates to be tested for sufficiency, not definitions of consciousness.
+**Figure 6. Anatomy of the operational physical candidate.** Controlled interventions generate response distributions. Distances among those distributions define response geometry; comparisons across sources define directed influence; comparisons with partitioned null models expose irreducibility. These are physical candidates to be tested for sufficiency, not definitions of consciousness.
 
-The intervention language is grounded in the causal distinction between observation and intervention developed in Pearl's causal framework. Empirically, perturbational approaches such as Casali et al. motivate direct probing of distributed neural response rather than relying only on passive correlation.
+![Information geometry of intervention-response laws](docs/figures/information_geometry_response_manifold.svg)
+
+**Figure 7. Response laws as a physical geometry.** Parameterized intervention-conditioned probability laws can be studied with local statistical geometry and finite operational distances. Temporal trajectories, composition, and coarse-graining then become transformations of a physical response space. An experiential geometry would still require a separately justified bridge.
+
+The intervention language is grounded in the causal distinction between observation and intervention developed in Pearl's causal framework (Pearl, 2009). Empirically, perturbational approaches such as TMS-EEG motivate direct probing of distributed neural response rather than relying only on passive correlation (Casali et al., 2013).
 
 ---
 
@@ -279,13 +317,13 @@ This converts a vague claim such as "the coarse scale preserves the important st
 
 ![Scale sufficiency certificate](docs/figures/p18_scale_sufficiency_certificate.svg)
 
-**Figure 5. Scale sufficiency logic.** Coarse-graining can erase distinctions, but approximate reconstruction controls how much declared response geometry was lost. This provides a quantitative route to compare neural, subsystem, or experimental resolutions without pretending that all scales are equivalent.
+**Figure 8. Scale sufficiency logic.** Coarse-graining can erase distinctions, but approximate reconstruction controls how much declared response geometry was lost. This provides a quantitative route to compare neural, subsystem, or experimental resolutions without pretending that all scales are equivalent.
 
 The subsequent P25-P37 branch extends this logic to changing node sets, intervention labels, delays, partition structure, directed influence, and joint operational quotients.
 
 ![Multiscale physical hierarchy](docs/figures/multiscale_physical_hierarchy.svg)
 
-**Figure 6. Multiscale hierarchy.** A scientifically credible descriptor must state which objects survive a change of scale, which require compatibility conditions, and which acquire bounded distortion. Zero numerical error cannot rescue a semantically invalid quotient.
+**Figure 9. Multiscale hierarchy.** A scientifically credible descriptor must state which objects survive a change of scale, which require compatibility conditions, and which acquire bounded distortion. Zero numerical error cannot rescue a semantically invalid quotient.
 
 ---
 
@@ -310,7 +348,7 @@ On that event, the population bridge residual can be bounded from empirical data
 
 ![Finite-sample residual certificate](docs/figures/p20_finite_sample_residual_certificate.svg)
 
-**Figure 7. From exact factorization to finite-data evidence.** The theoretical residual is not replaced by a point estimate. The experiment produces an uncertainty set, and a bridge claim is rejected only when the certified lower bound remains positive under the declared statistical assumptions.
+**Figure 10. From exact factorization to finite-data evidence.** The theoretical residual is not replaced by a point estimate. The experiment produces an uncertainty set, and a bridge claim is rejected only when the certified lower bound remains positive under the declared statistical assumptions.
 
 This distinction is essential: numerical closeness is not exact equality, and an apparent residual is not evidence of non-reducibility until estimation uncertainty has been propagated through the bridge test.
 
@@ -334,6 +372,10 @@ A useful diagnostic symbol is $d_{\mathrm{TOE}}^{\perp}$: it denotes target-rele
 
 The repository also distinguishes scientific sources from speculative antecedents. Thomas W. Campbell's *My Big TOE* and similar consciousness-first proposals are **not treated as established scientific facts**. They may be discussed only as a **speculative, falsifiable antecedent**, but they are not used as assumptions in the theorem chain. The same evidential rule applies to any proposed consciousness-first ontology: conceptual inspiration and established physical evidence are different categories.
 
+![Observer-to-bridge research handoff](docs/figures/observer_to_bridge_handoff.svg)
+
+**Figure 11. Research handoff.** The preceding Spatiotemporal Observer Mathematics project identifies and statistically certifies a physical subsystem from measured dynamics. This repository begins only after that physical object has been established and asks what additional causal, temporal, multiscale, and bridge structure is required. No experiential property is inserted at the handoff.
+
 ---
 
 # 5. Quantum mechanics enters as a physical description, not as an assumption about consciousness
@@ -356,15 +398,15 @@ Proposition 38 states the exact non-factorization witness for a tomographically 
 
 ![Quantum bridge completeness map](docs/figures/quantum_bridge_completeness_map.svg)
 
-**Figure 8. What quantum completeness does and does not establish.** Tomographic completeness closes the declared operational description of the quantum state. It does not automatically close the physical-to-experiential map. The open question is whether the independently specified target factors through that operational state under a scientifically justified bridge class.
+**Figure 12. What quantum completeness does and does not establish.** Tomographic completeness closes the declared operational description of the quantum state. It does not automatically close the physical-to-experiential map. The open question is whether the independently specified target factors through that operational state under a scientifically justified bridge class.
 
 ![Quantum operational sufficiency](docs/figures/p38_quantum_operational_sufficiency.svg)
 
-**Figure 9. P38 quantum sufficiency test.** Equal declared quantum descriptors with unequal independently defined targets give an exact non-factorization witness. When descriptors are only approximately known, P39-P44 replace exact equality with uncertainty regions and regularity-aware inequalities.
+**Figure 13. P38 quantum sufficiency test.** Equal declared quantum descriptors with unequal independently defined targets give an exact non-factorization witness. When descriptors are only approximately known, P39-P44 replace exact equality with uncertainty regions and regularity-aware inequalities.
 
 ![Trace-ball quantum envelope](docs/figures/p41_trace_ball_quantum_envelope.svg)
 
-**Figure 10. Finite-data quantum envelope.** Quantum-state confidence regions and target uncertainty are propagated into an end-to-end obstruction. The scientific conclusion is conditional on the tomography model, confidence coverage, and declared regularity of the candidate bridge.
+**Figure 14. Finite-data quantum envelope.** Quantum-state confidence regions and target uncertainty are propagated into an end-to-end obstruction. The scientific conclusion is conditional on the tomography model, confidence coverage, and declared regularity of the candidate bridge.
 
 For the complete quantum visual sequence, including Bloch geometry, channels, entanglement, decoherence, tomography, contextuality, and open-system maps, see the [Quantum foundations and bridge test](docs/quantum_foundations_and_bridge_test.md) and the [Visual atlas](website/visual-atlas.html).
 
@@ -378,7 +420,7 @@ P45 converts pairwise witness requirements into a shared preparation graph, wher
 
 ![Sequential graph refinement](docs/figures/p47_sequential_graph_refinement.svg)
 
-**Figure 11. Adaptive evidence collection.** The experiment may choose what to sample next based on previous observations, but validity is protected by a shared time-uniform confidence event. Adaptation changes efficiency, not the declared error guarantee.
+**Figure 15. Adaptive evidence collection.** The experiment may choose what to sample next based on previous observations, but validity is protected by a shared time-uniform confidence event. Adaptation changes efficiency, not the declared error guarantee.
 
 This branch matters because a bridge theory should not depend on an unrealistic fixed experiment. It should specify how evidence can be gathered efficiently without turning optional stopping or data-dependent witness selection into hidden statistical bias.
 
@@ -408,7 +450,7 @@ The project has established mathematical and computational machinery for testing
 6. **Finite-data uncertainty can be propagated into bridge tests.** Exact equalities are not replaced by numerical approximations without confidence control.
 7. **Adaptive experiments can remain statistically valid.** Candidate selection, pruning, repeated looks, and stopping are handled on shared confidence events under declared assumptions.
 8. **Quantum-state completeness can be separated from experiential completeness.** A complete operational quantum descriptor can be tested for target factorization without assuming the answer.
-9. **Experimental resources can be optimized and certified.** The P45-P70 branches give increasingly realistic allocation, scheduling, calibration, and optimality guarantees.
+9. **Experimental resources can be optimized and certified.** The experiment-design branch develops allocation, scheduling, stopping, and calibration guarantees; the detailed P61-P70 calibration sequence is documented separately so it does not dominate the scientific introduction.
 
 These statements do **not** prove that consciousness is reducible to the current physical descriptors, irreducible to physics, quantum, non-quantum, a field, a state of matter, or an additional dimension.
 
@@ -456,6 +498,10 @@ The framework is designed so that each scientific layer has a failure condition.
 
 This is the intended scientific discipline: every positive claim should bring its own way of being wrong.
 
+![Theory-comparative interface](docs/figures/theory_comparison_map.svg)
+
+**Figure 16. Common interface for competing theory families.** Integrated Information Theory, Global Neuronal Workspace Theory, Recurrent Processing Theory, higher-order approaches, predictive / neurorepresentational families, and the repository's intervention-resolved physical candidate can be compared using the same categories: physical feature family, bridge architecture, measurement interface, and discriminating experiment. This framing follows the broader theory-comparison literature rather than treating any existing theory as the default answer (Seth & Bayne, 2022; Cogitate Consortium et al., 2025).
+
 ---
 
 # Evidence, references, and provenance
@@ -484,6 +530,9 @@ The repository keeps mathematics, physical background, empirical evidence, and s
 9. A. K. Seth and T. Bayne, "Theories of consciousness," *Nature Reviews Neuroscience* 23 (2022), 439-452. [DOI 10.1038/s41583-022-00587-4](https://doi.org/10.1038/s41583-022-00587-4).
 10. Cogitate Consortium et al., "Adversarial testing of global neuronal workspace and integrated information theories of consciousness," *Nature* 642 (2025), 133-142. [DOI 10.1038/s41586-025-08888-1](https://doi.org/10.1038/s41586-025-08888-1).
 11. A. I. Luppi et al., "Convergent transcriptomic and connectomic controllers of information integration and its anaesthetic breakdown across mammalian brains," *Nature Human Behaviour* 10 (2026), 777-802. [DOI 10.1038/s41562-025-02381-5](https://doi.org/10.1038/s41562-025-02381-5).
+12. F. Siclari et al., "The neural correlates of dreaming," *Nature Neuroscience* 20 (2017), 872-878. [DOI 10.1038/nn.4545](https://doi.org/10.1038/nn.4545).
+13. S. Sarasso et al., "Consciousness and Complexity during Unresponsiveness Induced by Propofol, Xenon, and Ketamine," *Current Biology* 25(23) (2015), 3099-3105. [DOI 10.1016/j.cub.2015.10.014](https://doi.org/10.1016/j.cub.2015.10.014).
+14. J. Claassen et al., "Detection of Brain Activation in Unresponsive Patients with Acute Brain Injury," *New England Journal of Medicine* 380(26) (2019), 2497-2505. [DOI 10.1056/NEJMoa1812757](https://doi.org/10.1056/NEJMoa1812757).
 
 The complete bibliography is maintained in the dedicated reference documents above so this page can remain readable while every major scientific dependency stays auditable.
 
@@ -491,7 +540,7 @@ The complete bibliography is maintained in the dedicated reference documents abo
 
 # Complete visual evidence without front-page overload
 
-The main page intentionally shows the figures needed to understand the argument. The complete visual record remains available without forcing a first-time reader through every calibration plot.
+The main page intentionally shows the figures needed to understand the argument in scientific order. The complete visual record remains available for audit without forcing a first-time reader through every theorem-specific or calibration plot.
 
 | Visual collection | What it contains |
 | --- | --- |
@@ -503,7 +552,7 @@ The main page intentionally shows the figures needed to understand the argument.
 
 ![Equation evidence map](docs/figures/equation_evidence_map.svg)
 
-**Figure 13. Evidence provenance.** A mathematical identity, a theorem under assumptions, a numerical result, and an empirical observation are different kinds of evidence. The project keeps those routes explicit so a reader can see what supports each scientific claim.
+**Figure 17. Evidence provenance.** A mathematical identity, a theorem under assumptions, a numerical result, and an empirical observation are different kinds of evidence. The project keeps those routes explicit so a reader can see what supports each scientific claim.
 
 ---
 
@@ -547,9 +596,9 @@ For scientific auditing, use the shortest route appropriate to the question:
 6. **Inspect external evidence:** use the [Foundational bibliography](docs/foundational_physics_mathematics_bibliography.md), [Literature map](docs/literature_map.md), and [Reference audit](docs/reference_audit.md).
 
 <details>
-<summary><strong>Permanent proof, figure, code, and test index: P39-P70</strong></summary>
+<summary><strong>Permanent proof, figure, code, and test index: P39-P60</strong></summary>
 
-This compact index preserves direct public traceability without placing thirty-two additional full-size figures in the main reading flow.
+This compact index preserves direct public traceability for the quantum and experiment-design continuation without placing every technical figure in the main reading flow. The P61-P70 calibration frontier is documented on its dedicated page.
 
 - **Proposition 39**: [p39_finite_data_quantum_nonfactorization.svg](docs/figures/p39_finite_data_quantum_nonfactorization.svg), [`finite_data_quantum_nonfactorization.py`](src/consciousness_bridge/finite_data_quantum_nonfactorization.py), [`test_finite_data_quantum_nonfactorization.py`](tests/test_finite_data_quantum_nonfactorization.py).
 - **Proposition 40**: [p40_continuous_quantum_region_regularity.svg](docs/figures/p40_continuous_quantum_region_regularity.svg), [`continuous_quantum_region_regularity.py`](src/consciousness_bridge/continuous_quantum_region_regularity.py), [`test_continuous_quantum_region_regularity.py`](tests/test_continuous_quantum_region_regularity.py).
