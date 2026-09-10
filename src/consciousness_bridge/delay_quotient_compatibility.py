@@ -26,13 +26,15 @@ ResponseTable = Mapping[Intervention, Mapping[FineDelay, Distribution[Outcome]]]
 
 @dataclass(frozen=True)
 class DelayQuotientCertificate:
-    """Audit of exact or approximate response-law descent through a delay map."""
+    """Audit exact descent separately from a declared approximate tolerance."""
 
     intervention_count: int
     fine_delay_count: int
     coarse_delay_count: int
     quotient_ambiguity: float
+    tolerance: float
     exact_descent_certified: bool
+    within_tolerance_certified: bool
 
 
 def delay_fibers(
@@ -101,9 +103,9 @@ def delay_quotient_certificate(
     coarse_delays: Sequence[CoarseDelay],
     quotient: Mapping[FineDelay, CoarseDelay],
     *,
-    tolerance: float = 1e-12,
+    tolerance: float = 0.0,
 ) -> DelayQuotientCertificate:
-    """Certify exact response-law descent iff within-delay-fiber ambiguity vanishes."""
+    """Report exact descent and tolerance-relative approximation separately."""
     if tolerance < 0.0:
         raise ValueError("tolerance must be nonnegative")
     intervention_tuple = tuple(interventions)
@@ -117,7 +119,9 @@ def delay_quotient_certificate(
         fine_delay_count=len(fine),
         coarse_delay_count=len(coarse),
         quotient_ambiguity=ambiguity,
-        exact_descent_certified=ambiguity <= tolerance,
+        tolerance=tolerance,
+        exact_descent_certified=ambiguity == 0.0,
+        within_tolerance_certified=ambiguity <= tolerance,
     )
 
 
@@ -127,21 +131,14 @@ def descended_response_table(
     fine_delays: Sequence[FineDelay],
     coarse_delays: Sequence[CoarseDelay],
     quotient: Mapping[FineDelay, CoarseDelay],
-    *,
-    tolerance: float = 1e-12,
 ) -> dict[Intervention, dict[CoarseDelay, dict[Outcome, float]]]:
-    """Construct the unique coarse-delay response table when descent is certified."""
+    """Construct the unique coarse-delay response table only under exact descent."""
     intervention_tuple = tuple(interventions)
     fine = tuple(fine_delays)
     coarse = tuple(coarse_delays)
     fibers = delay_fibers(fine, coarse, quotient)
     certificate = delay_quotient_certificate(
-        responses,
-        intervention_tuple,
-        fine,
-        coarse,
-        quotient,
-        tolerance=tolerance,
+        responses, intervention_tuple, fine, coarse, quotient
     )
     if not certificate.exact_descent_certified:
         raise ValueError("response laws do not descend exactly through the delay quotient")
