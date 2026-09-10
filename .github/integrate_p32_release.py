@@ -42,7 +42,7 @@ text = replace_once(
 text = replace_once(text, "| proposition-level results | **30** |", "| proposition-level results | **32** |", "README glance proposition count")
 text = replace_once(text, "| research-software version | **0.30.0** |", "| research-software version | **0.32.0** |", "README glance version")
 # The heading still carries a historical P29 label even though later rows are already present.
-text = replace_once(text, "# 7. Theorem roadmap - P1 through P29", "# 7. Theorem roadmap - P1 through P32", "README theorem heading")
+text = replace_once(text, "# 7. Theorem roadmap - P1 through P31", "# 7. Theorem roadmap - P1 through P32", "README theorem heading")
 text = replace_once(
     text,
     "| **P31** | an intervention quotient descends exactly iff response laws are constant on every intervention fiber; nonzero quotient ambiguity bounds representative-dependent coarse geometry | proved operational quotient theorem | [P31](docs/proposition_31_intervention_quotient_compatibility.md) |",
