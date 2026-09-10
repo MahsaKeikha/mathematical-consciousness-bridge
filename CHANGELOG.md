@@ -1,3 +1,10 @@
+# 0.64.0 - 2026-09-10
+
+- Add P64 fast certified heterogeneous integer approximation.
+- Prove feasibility of flooring the P62 optimum when all continuous counts are at least one.
+- Add instance-specific and uniform approximation factors relative to the exact P63 optimum.
+- Add explicit regime failure, linear-time implementation, tests, visual, provenance, and publication integration.
+
 # 0.63.0 - 2026-09-10
 
 - Add P63 exact heterogeneous-cost integer transition calibration.
