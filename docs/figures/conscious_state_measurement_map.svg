@@ -20,36 +20,39 @@
 
   <rect x="75" y="175" width="350" height="260" rx="18" fill="#f7fbff" stroke="#3b82f6" stroke-width="1.6"/>
   <text x="100" y="214" class="head">Wakeful responsiveness</text>
-  <text x="100" y="255" class="body">Behavioral report and command following</text>
-  <text x="100" y="278" class="body">provide one accessible evidence channel.</text>
-  <text x="100" y="301" class="body">They are not the only possible channel.</text>
+  <text x="100" y="255" class="body">Report and command following</text>
+  <text x="100" y="278" class="body">provide one evidence channel.</text>
+  <text x="100" y="301" class="body">Other evidence channels may exist.</text>
   <text x="100" y="350" class="eq">behavior ≠ bridge definition</text>
-  <text x="100" y="395" class="cite">baseline clinical / experimental reference</text>
+  <text x="100" y="395" class="cite">clinical / experimental baseline</text>
 
   <rect x="500" y="175" width="350" height="260" rx="18" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.6"/>
   <text x="525" y="214" class="head">Sleep and dreaming</text>
-  <text x="525" y="255" class="body">Sleep can contain reported experience</text>
-  <text x="525" y="278" class="body">without ordinary environmental responsiveness.</text>
-  <text x="525" y="320" class="eq">responsiveness ↓ while experience may persist</text>
-  <text x="525" y="368" class="body">High-density EEG can compare dreaming</text>
-  <text x="525" y="391" class="body">with no-experience reports.</text>
-  <text x="525" y="417" class="cite">Siclari et al. 2017</text>
+  <text x="525" y="255" class="body">Sleep can include reported dreams</text>
+  <text x="525" y="278" class="body">without ordinary responsiveness.</text>
+  <text x="525" y="314" class="eq">responsiveness ↓</text>
+  <text x="525" y="338" class="eq">experience may persist</text>
+  <text x="525" y="372" class="body">High-density EEG compares dreaming</text>
+  <text x="525" y="395" class="body">with no-experience reports.</text>
+  <text x="525" y="413" class="cite">Siclari et al. 2017</text>
 
   <rect x="925" y="175" width="350" height="260" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="1.6"/>
-  <text x="950" y="214" class="head">Anesthetic unresponsiveness</text>
-  <text x="950" y="255" class="body">Different anesthetic regimes can produce</text>
-  <text x="950" y="278" class="body">similar unresponsiveness with different</text>
+  <text x="949" y="214" class="head">Anesthetic unresponsiveness</text>
+  <text x="950" y="255" class="body">Anesthetic regimes can produce</text>
+  <text x="950" y="278" class="body">similar response loss with varied</text>
   <text x="950" y="301" class="body">reported experiential profiles.</text>
-  <text x="950" y="342" class="eq">unresponsiveness ≠ uniform experience</text>
-  <text x="950" y="385" class="cite">Sarasso et al. 2015</text>
+  <text x="950" y="340" class="eq">unresponsiveness ≠</text>
+  <text x="950" y="364" class="eq">uniform experience</text>
+  <text x="950" y="395" class="cite">Sarasso et al. 2015</text>
 
   <rect x="1350" y="175" width="375" height="260" rx="18" fill="#fff1f2" stroke="#e11d48" stroke-width="1.6"/>
-  <text x="1375" y="214" class="head">Clinically unresponsive brain injury</text>
-  <text x="1375" y="255" class="body">EEG can reveal command-related activation</text>
+  <text x="1375" y="214" class="head">Unresponsive brain injury</text>
+  <text x="1375" y="255" class="body">EEG can show command-related activity</text>
   <text x="1375" y="278" class="body">in some patients without overt motor</text>
   <text x="1375" y="301" class="body">command following.</text>
-  <text x="1375" y="342" class="eq">motor output ≠ neural command response</text>
-  <text x="1375" y="385" class="cite">Claassen et al. 2019</text>
+  <text x="1375" y="340" class="eq">motor output ≠</text>
+  <text x="1375" y="364" class="eq">neural command response</text>
+  <text x="1375" y="395" class="cite">Claassen et al. 2019</text>
 
   <path class="arrow" d="M425 305 H488"/>
   <path class="arrow" d="M850 305 H913"/>
@@ -73,10 +76,11 @@
 
   <rect x="1205" y="520" width="480" height="250" rx="18" fill="#fefce8" stroke="#ca8a04" stroke-width="1.6"/>
   <text x="1235" y="560" class="head">Multimodal evidence vector</text>
-  <text x="1235" y="602" class="eq">E = (behavior, report, EEG, fMRI, perturbation)</text>
-  <text x="1235" y="642" class="body">No single component defines consciousness.</text>
-  <text x="1235" y="665" class="body">A theory must state which evidence pattern</text>
-  <text x="1235" y="688" class="body">its bridge predicts.</text>
+  <text x="1235" y="598" class="eq">E = (behavior, report, EEG, fMRI,</text>
+  <text x="1235" y="620" class="eq">perturbation)</text>
+  <text x="1235" y="650" class="body">No single component defines consciousness.</text>
+  <text x="1235" y="673" class="body">A theory must state which evidence pattern</text>
+  <text x="1235" y="696" class="body">its bridge predicts.</text>
   <text x="1235" y="734" class="cite">theory discrimination / falsification</text>
 
   <path class="arrow" d="M355 435 V508"/>
