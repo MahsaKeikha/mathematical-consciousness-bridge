@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+  <rect width="900" height="520" fill="white"/>
+  <text x="450" y="42" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">P46 Budget-Constrained Witness-Graph Selection</text>
+  <text x="450" y="70" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14">Discrete preparation choice before P45 continuous precision allocation</text>
+
+  <rect x="60" y="115" width="220" height="105" rx="12" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+  <text x="170" y="145" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Witness graph</text>
+  <text x="170" y="173" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14">vertices = preparations</text>
+  <text x="170" y="197" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14">edges = candidate pairs</text>
+
+  <rect x="340" y="115" width="220" height="105" rx="12" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+  <text x="450" y="145" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Hard budget</text>
+  <text x="450" y="173" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14">sum c_i <= B</text>
+  <text x="450" y="197" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14">not every vertex is measurable</text>
+
+  <rect x="620" y="115" width="220" height="105" rx="12" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+  <text x="730" y="145" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Induced value</text>
+  <text x="730" y="173" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14">F(S) = sum w_e</text>
+  <text x="730" y="197" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14">only completed edges count</text>
+
+  <line x1="280" y1="167" x2="340" y2="167" stroke="#475569" stroke-width="2"/>
+  <polygon points="340,167 330,161 330,173" fill="#475569"/>
+  <line x1="560" y1="167" x2="620" y2="167" stroke="#475569" stroke-width="2"/>
+  <polygon points="620,167 610,161 610,173" fill="#475569"/>
+
+  <rect x="105" y="285" width="190" height="105" rx="12" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+  <text x="200" y="315" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Structure theorem</text>
+  <text x="200" y="343" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14">monotone</text>
+  <text x="200" y="367" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14">supermodular</text>
+
+  <rect x="355" y="285" width="190" height="105" rx="12" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+  <text x="450" y="315" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Complexity theorem</text>
+  <text x="450" y="343" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14">NP-hard optimization</text>
+  <text x="450" y="367" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14">CLIQUE reduction</text>
+
+  <rect x="605" y="285" width="190" height="105" rx="12" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+  <text x="700" y="315" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Certified bound</text>
+  <text x="700" y="343" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14">F* <= U_deg(B)</text>
+  <text x="700" y="367" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14">fractional degree knapsack</text>
+
+  <line x1="200" y1="390" x2="200" y2="430" stroke="#475569" stroke-width="2"/>
+  <line x1="450" y1="390" x2="450" y2="430" stroke="#475569" stroke-width="2"/>
+  <line x1="700" y1="390" x2="700" y2="430" stroke="#475569" stroke-width="2"/>
+  <line x1="200" y1="430" x2="700" y2="430" stroke="#475569" stroke-width="2"/>
+  <polygon points="450,456 443,444 457,444" fill="#475569" transform="rotate(180 450 450)"/>
+
+  <rect x="260" y="440" width="380" height="55" rx="12" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+  <text x="450" y="464" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">P46 selected subgraph -> P45 precision allocation</text>
+  <text x="450" y="486" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12">Scientific scope remains descriptor-relative and model-class-relative</text>
+</svg>
