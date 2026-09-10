@@ -6,6 +6,7 @@ on:
       - p31-intervention-quotient-compatibility
     paths:
       - .github/integrate_p31_release.py
+      - .github/patch_p31_integrator.py
       - .github/workflows/integrate-p31-once.yml
 
 permissions:
@@ -21,12 +22,16 @@ jobs:
           ref: p31-intervention-quotient-compatibility
           fetch-depth: 0
 
+      - name: Correct P31 release copy
+        run: python .github/patch_p31_integrator.py
+
       - name: Apply P31 release integration
         run: python .github/integrate_p31_release.py
 
       - name: Remove one-time integration scaffolding before validation
         run: |
           rm .github/integrate_p31_release.py
+          rm .github/patch_p31_integrator.py
           rm .github/workflows/integrate-p31-once.yml
 
       - name: Validate on Python 3.10
