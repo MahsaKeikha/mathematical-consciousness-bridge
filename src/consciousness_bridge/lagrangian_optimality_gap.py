@@ -189,8 +189,7 @@ def lagrangian_optimality_gap_certificate(
     tolerance = 1e-10 * numerical_scale
     if dual_bound > candidate_objective + tolerance:
         raise RuntimeError("numerical dual bound exceeded feasible candidate objective")
-    if dual_bound > candidate_objective:
-        dual_bound = candidate_objective
+    dual_bound = min(dual_bound, candidate_objective)
 
     gap = max(0.0, candidate_objective - dual_bound)
     factor = inf if dual_bound <= 0.0 else candidate_objective / dual_bound
