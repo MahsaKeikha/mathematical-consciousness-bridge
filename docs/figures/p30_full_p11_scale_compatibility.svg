@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1420" viewBox="0 0 1600 1420" role="img" aria-labelledby="title desc">
+  <title id="title">P30 full declared P11 scale compatibility</title>
+  <desc id="desc">Assembly map combining P27 partition transport, P28 directed-influence semantics, and P29 response geometry under one shared node quotient and reconstruction declaration.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .title{font:700 36px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 17px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .label{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
+      .head{font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .eq{font:600 17px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .arrow{stroke:#64748b;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+
+  <rect width="1600" height="1420" fill="#ffffff"/>
+  <text x="70" y="64" class="title">P30 - Full Declared P11 Scale Compatibility</text>
+  <text x="70" y="96" class="subtitle">One shared scale declaration is required before response geometry, directed influence, and partition structure can be assembled.</text>
+
+  <rect x="145" y="145" width="1310" height="175" rx="20" fill="#f8fafc" stroke="#0f172a" stroke-width="1.8"/>
+  <text x="180" y="182" class="label">SHARED SCALE DECLARATION</text>
+  <text x="180" y="222" class="head">Same node quotient, experiment grid, state map, and reconstruction family</text>
+  <text x="180" y="264" class="eq">a: Vf → Vc   ·   Ca   ·   R   ·   U   ·   T</text>
+  <text x="180" y="298" class="body">P30 rejects assemblies built from incompatible coarse descriptions.</text>
+
+  <rect x="80" y="405" width="430" height="235" rx="18" fill="#eef2ff" stroke="#4f46e5"/>
+  <text x="110" y="442" class="label">P27 · PARTITION BRANCH</text>
+  <text x="110" y="480" class="head">Partition semantics and K</text>
+  <text x="110" y="524" class="body">Only aggregation-saturated partitions descend.</text>
+  <text x="110" y="566" class="eq">DK ≤ ρP* + ρΠ*</text>
+  <text x="110" y="608" class="body">Product references remain separately controlled.</text>
+
+  <rect x="585" y="405" width="430" height="235" rx="18" fill="#ecfeff" stroke="#0891b2"/>
+  <text x="615" y="442" class="label">P28 · INFLUENCE BRANCH</text>
+  <text x="615" y="480" class="head">Source semantics and A</text>
+  <text x="615" y="524" class="body">Matched pairs need unambiguous coarse sources.</text>
+  <text x="615" y="566" class="eq">DA ≤ 2ρA*</text>
+  <text x="615" y="608" class="body">No new simultaneous actuator is inferred.</text>
+
+  <rect x="1090" y="405" width="430" height="235" rx="18" fill="#fff7ed" stroke="#ea580c"/>
+  <text x="1120" y="442" class="label">P29 · GEOMETRY BRANCH</text>
+  <text x="1120" y="480" class="head">Response geometry G</text>
+  <text x="1120" y="524" class="body">All retained pair-delay distances are controlled.</text>
+  <text x="1120" y="566" class="eq">DG ≤ 2ρG*</text>
+  <text x="1120" y="608" class="body">Intervention and delay labels stay fixed.</text>
+
+  <path class="arrow" d="M800 320 V365 H295 V393"/>
+  <path class="arrow" d="M800 365 V393"/>
+  <path class="arrow" d="M800 365 H1305 V393"/>
+
+  <rect x="180" y="735" width="1240" height="250" rx="22" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="220" y="775" class="label">P30 · ASSEMBLY THEOREM</text>
+  <text x="220" y="818" class="head">Simultaneous declared P11 scale distortion</text>
+  <text x="220" y="866" class="eq">DP11(a) = (DG, DA, DK)</text>
+  <text x="220" y="916" class="eq">||DP11(a)||∞ ≤ εP11</text>
+  <text x="780" y="916" class="eq">εP11 = max{2ρG*, 2ρA*, ρP*+ρΠ*}</text>
+  <text x="220" y="958" class="body">Exact reconstruction plus semantic compatibility gives exact simultaneous preservation.</text>
+
+  <path class="arrow" d="M295 640 V690 H800 V723"/>
+  <path class="arrow" d="M800 640 V723"/>
+  <path class="arrow" d="M1305 640 V690 H800 V723"/>
+
+  <rect x="155" y="1060" width="1290" height="180" rx="20" fill="#fefce8" stroke="#ca8a04"/>
+  <text x="195" y="1097" class="label">NO SEMANTIC COMPENSATION</text>
+  <text x="195" y="1138" class="head">Equal numbers do not make incomparable constructions equivalent</text>
+  <text x="195" y="1182" class="eq">DG = DA = DK = 0  ⇏  valid transport if C1-C5 fail</text>
+  <text x="195" y="1218" class="body">Partition descent, source identity, response-grid alignment, and common maps remain mandatory.</text>
+
+  <rect x="80" y="1300" width="1440" height="78" rx="14" fill="#0f172a"/>
+  <text x="115" y="1328" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">BOUNDARY</text>
+  <text x="115" y="1355" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">P30 certifies a declared physical signature. Consciousness, physical completeness, physical fusion, and intervention/time aggregation remain open.</text>
+</svg>

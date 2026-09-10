@@ -2,6 +2,19 @@
 
 This changelog records theorem-level scientific releases. Definitions, proofs, implementations, tests, figures, and documentation remain linked from the main research page.
 
+## 0.30.0 - 2026-09-09
+
+### Proposition 30 - full declared P11 scale compatibility
+
+- Assembled the P27 partition, P28 directed-influence, and P29 response-geometry scale branches under one shared node quotient and experiment declaration.
+- Defined the full declared P11 distortion vector \(\mathbf D_{P11}=(D_G,D_A,D_K)\).
+- Required partition compatibility, source-pair compatibility, a common intervention-delay grid, a common state map, and a common reconstruction declaration before assembly is certified.
+- Proved \(\|\mathbf D_{P11}\|_\infty\le\max\{2\rho_G^*,2\rho_A^*,\rho_P^*+\rho_\Pi^*\}\).
+- Proved exact simultaneous preservation when all relevant reconstruction defects vanish and the semantic compatibility conditions hold.
+- Added the no-semantic-compensation guard: zero numerical component distortion does not certify valid transport when the compared structures are semantically incompatible.
+- Added executable assembly certification, nine regression tests, a publication theorem map, main-paper integration, roadmap, navigation, provenance, release guards, and synchronized 0.30.0 metadata.
+- Preserved the boundary that intervention/time quotienting, physical completeness, genuine physical fusion, and experiential interpretation remain open.
+
 ## 0.29.0 - 2026-09-09
 
 ### Proposition 29 - response-geometry transport under node aggregation

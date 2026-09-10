@@ -412,7 +412,22 @@ P29 fixes intervention and delay semantics. It does not merge intervention label
 
 ---
 
-# 24. Candidate consciousness-theory feature families
+# 24. P30 full declared P11 scale compatibility
+
+| Equation / statement | Role | Provenance | Audit path |
+| --- | --- | --- | --- |
+| \(\mathbf D_{P11}(a)=(D_G,D_A,D_K)\) | combines response-geometry, directed-influence, and partition distortions | repository definition | [P30](proposition_30_full_p11_scale_compatibility.md) |
+| \(D_G\le2\rho_G^*\) | complete response-geometry distortion control | P29 + P18 | [P29](proposition_29_response_geometry_node_aggregation.md); [P30](proposition_30_full_p11_scale_compatibility.md) |
+| \(D_A\le2\rho_A^*\) | compatible directed-influence distortion control | P28/P25 + P18 | [P28](proposition_28_intervention_node_aggregation_compatibility.md); [P30](proposition_30_full_p11_scale_compatibility.md) |
+| \(D_K\le\rho_P^*+\rho_\Pi^*\) | descendable partition-irreducibility distortion control | P27/P26 + P18 | [P27](proposition_27_partition_lattice_node_aggregation.md); [P30](proposition_30_full_p11_scale_compatibility.md) |
+| \(\|\mathbf D_{P11}\|_\infty\le\max\{2\rho_G^*,2\rho_A^*,\rho_P^*+\rho_\Pi^*\}\) | simultaneous declared P11 scale certificate | proved assembly theorem | [P30](proposition_30_full_p11_scale_compatibility.md) |
+| zero component distortion does not replace semantic compatibility | prevents incomparable scale constructions from being declared equivalent | repository no-semantic-compensation result | [P30](proposition_30_full_p11_scale_compatibility.md) |
+
+P30 is a theorem about simultaneous transport of the declared P11 physical candidate. It does not establish consciousness, physical completeness, genuine node fusion, intervention quotienting, or time quotienting.
+
+---
+
+# 25. Candidate consciousness-theory feature families
 
 The following are source-grounded translations into generic feature notation. They are not claims that each named theory reduces to one scalar or one universally agreed implementation.
 
@@ -429,7 +444,7 @@ Detailed caveats and source roles are maintained in [Candidate Theory Families](
 
 ---
 
-# 25. Citation discipline
+# 26. Citation discipline
 
 A result is cited as a repository result when the bridge-specific statement, construction, or counterexample is introduced here.
 
