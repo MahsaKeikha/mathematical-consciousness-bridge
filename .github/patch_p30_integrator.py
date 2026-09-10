@@ -15,4 +15,10 @@ if text.count(old) != 1:
     raise RuntimeError("P30 navigation patch marker not found exactly once")
 text = text.replace(old, new, 1)
 
+old = '''text = replace_once(text, "P1 through P29", "P1 through P30", "roadmap heading range")'''
+new = '''text = replace_once(text, "![P1-P29 theorem roadmap]", "![P1-P30 theorem roadmap]", "roadmap heading range")\ntext = insert_after_line(\n    text,\n    "| [P29](proposition_29_response_geometry_node_aggregation.md)",\n    "| [P30](proposition_30_full_p11_scale_compatibility.md) | assembly of P27-P29 under one scale declaration | simultaneous declared P11 physical-signature transport with a no-semantic-compensation guard | proved assembly theorem |",\n    "roadmap proposition index P30",\n)'''
+if text.count(old) != 1:
+    raise RuntimeError("P30 roadmap patch marker not found exactly once")
+text = text.replace(old, new, 1)
+
 path.write_text(text, encoding="utf-8")
