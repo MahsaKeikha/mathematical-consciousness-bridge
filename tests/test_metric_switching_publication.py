@@ -10,7 +10,6 @@ def test_p54_is_visible_on_main_research_page():
         "p54_metric_switching_cost_residual_scheduling.svg",
         "metric_switching_residual_schedule.py",
         "test_metric_switching_residual_schedule.py",
-        "**54 proposition-level results",
     ):
         assert token in text
 

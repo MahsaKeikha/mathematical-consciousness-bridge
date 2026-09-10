@@ -1,3 +1,12 @@
+# 0.55.0 - 2026-09-10
+
+- Add P55 pruning-aware metric switching-cost monotonicity.
+- Prove shortest metric route monotonicity under active-support deletion.
+- Prove the exact acquisition-plus-route optimal cost-release identity.
+- Prove the support-preserving case has zero route release exactly.
+- Add a computable shortcut certificate lower-bounding route savings after support deletion.
+- Add implementation, tests, theorem visual, equation provenance, and front-page integration.
+
 # 0.54.0 - 2026-09-10
 
 - Add P54 metric switching-cost residual scheduling.
