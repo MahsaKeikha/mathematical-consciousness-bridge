@@ -443,7 +443,24 @@ P31 changes intervention labels only after a common response space is declared. 
 
 ---
 
-# 26. Candidate consciousness-theory feature families
+# 26. P32 delay-quotient compatibility
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(q:\mathcal T_f\twoheadrightarrow\mathcal T_c\) | declared surjective quotient of operational delay labels | repository definition | [P32](proposition_32_delay_quotient_compatibility.md) |
+| \(q(\tau)=q(\tau')\Rightarrow P^{u,\tau}=P^{u,\tau'}\;\forall u\) | exact delay-fiber constancy condition | necessary and sufficient for unique response-law descent | [P32](proposition_32_delay_quotient_compatibility.md) |
+| \(\eta_q=\sup_u\sup_{q(\tau)=q(\tau')}\|P^{u,\tau}-P^{u,\tau'}\|_{\mathrm{TV}}\) | operational delay-quotient ambiguity defect | repository definition | [P32](proposition_32_delay_quotient_compatibility.md) |
+| \(\eta_q=0\iff\) exact delay-quotient descent | exact quotient certificate | proved | [P32](proposition_32_delay_quotient_compatibility.md) |
+| \(\sup_{u,t}\|Q_s^{u,t}-Q_{s'}^{u,t}\|_{\mathrm{TV}}\le\eta_q\) | representative-selection stability | proved | [P32](proposition_32_delay_quotient_compatibility.md) |
+| \(\sup_{u,v,t}|G_s-G_{s'}|\le2\eta_q\) | induced coarse temporal response-geometry ambiguity | proved by reverse triangle inequality | [P32](proposition_32_delay_quotient_compatibility.md) |
+| exact certificate \(\eta_q=0\) versus tolerance certificate \(\eta_q\le\varepsilon\) | prevents approximate numerical agreement from being called exact factorization | implementation and interpretation guard | [P32](proposition_32_delay_quotient_compatibility.md) |
+| same coarse delay label \(\ne\) same physical time | prevents operational time-bin quotienting from being overinterpreted as physical temporal identity | interpretation boundary | [P32](proposition_32_delay_quotient_compatibility.md) |
+
+P32 changes delay labels only after a common response space is declared. It does not establish time quantization, dynamical equivalence, consciousness, or physical completeness. Joint node/intervention/delay assembly remains a separate theorem burden.
+
+---
+
+# 27. Candidate consciousness-theory feature families
 
 The following are source-grounded translations into generic feature notation. They are not claims that each named theory reduces to one scalar or one universally agreed implementation.
 
@@ -460,7 +477,7 @@ Detailed caveats and source roles are maintained in [Candidate Theory Families](
 
 ---
 
-# 27. Citation discipline
+# 28. Citation discipline
 
 A result is cited as a repository result when the bridge-specific statement, construction, or counterexample is introduced here.
 

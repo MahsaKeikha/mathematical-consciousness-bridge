@@ -1,7 +1,7 @@
 # Mathematical Consciousness Bridge
 
 [![tests](https://github.com/MahsaKeikha/mathematical-consciousness-bridge/actions/workflows/test.yml/badge.svg)](https://github.com/MahsaKeikha/mathematical-consciousness-bridge/actions/workflows/test.yml)
-[![version](https://img.shields.io/badge/version-0.31.0-2563eb)](CITATION.cff)
+[![version](https://img.shields.io/badge/version-0.32.0-2563eb)](CITATION.cff)
 [![license](https://img.shields.io/badge/license-MIT-059669)](LICENSE)
 
 **Mahsa Keikha, PhD**
@@ -40,11 +40,11 @@ This project continues **[Spatiotemporal Observer Mathematics](https://github.co
 
 Physics can describe states, fields, probability amplitudes, density operators, spacetime, Hamiltonians, open-system dynamics, thermodynamics, interventions, measurements, and statistical predictions without by itself defining subjective experience. A mathematically serious consciousness theory therefore requires a separately specified bridge between physically meaningful equivalence classes and formally defined experiential equivalence classes.
 
-The program here makes that bridge itself an object of mathematics. Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design. **P11** introduces intervention-resolved causal structure as a structured physical candidate rather than a scalar. **P12-P13** prove constructive insufficiency and component irredundancy results. **P14-P15** formalize temporal continuation and finite-error temporal certification. **P16** gives an independent-composition null model and response-level coupling defect. **P17** proves total-variation contraction and exact refinement ambiguity under deterministic coarse-graining. **P18** proves a quantitative scale-sufficiency certificate based on approximate reconstruction. **P19** proves exact deterministic and stochastic criteria for whether an independently defined target factors through a declared physical descriptor, together with a differential no-go test. **P20** converts the P19 stochastic population residual into an explicit finite-sample confidence certificate under a declared finite-alphabet IID model. **P21** then proves how that residual behaves under nested physical-descriptor refinement: unresolved deterministic collisions can only disappear, while the stochastic residual decreases by exactly the target-relevant information supplied by the added physical detail. **P22** gives a simultaneous finite-sample certificate for the entire declared refinement chain from one shared confidence event on the empirical physical-target law. **P23** proves that the same shared base confidence event also supports fixed-sample data-dependent selection among admissible deterministic refinements, together with an explicit near-optimality bound for the selected refinement. **P24** converts that fixed-sample result into an anytime-valid certificate by allocating the total error budget across all positive sample sizes, giving simultaneous repeated-look and finite stopping-time validity under the declared finite-alphabet IID model. **P25** returns to the P11 physical candidate and proves a directed-influence scale theorem: deterministic target coarse observation cannot increase matched-intervention influence, and P18 reconstruction defect bounds the loss by twice the uniform reconstruction error. **P26** extends the same physical scale program to P11 partition irreducibility: block-compatible coarse observation cannot increase the distance from the declared partition-product null, and P18 reconstruction separately controls the actual response law and its factorized reference. **P27** then allows the node set itself to change: a fine partition descends through a surjective node aggregation exactly when it is saturated by the aggregation fibers, the surviving partitions form a lattice isomorphic to the coarse partition lattice, and P18 controls any remaining irreducibility loss under an aggregation-compatible state map. **P28** transports the P11 directed-influence branch through the same changing node set by giving an exact compatibility criterion for matched intervention-pair source labels, pooling only inherited comparisons within each aggregate source, and applying P25/P18 control to the full fine target fiber before target-state aggregation. **P29** transports the complete P11 response geometry on a fixed intervention-delay grid: every pairwise total-variation response distance contracts under node aggregation, while P18 reconstruction bounds the sup-norm distortion of the entire indexed geometry by twice the uniform reconstruction defect. **P30** then assembles the P27 partition, P28 directed-influence, and P29 response-geometry branches under one shared node quotient, experiment grid, state map, and reconstruction declaration, yielding a simultaneous P11 distortion certificate while proving that zero numerical distortion cannot compensate for failed semantic compatibility. **P31** formalizes intervention-label quotienting itself: a many-to-one intervention map defines a unique coarse response law exactly when every retained response law is constant on each intervention fiber, and the quotient ambiguity defect quantifies representative dependence when exact descent fails.
+The program here makes that bridge itself an object of mathematics. Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design. **P11** introduces intervention-resolved causal structure as a structured physical candidate rather than a scalar. **P12-P13** prove constructive insufficiency and component irredundancy results. **P14-P15** formalize temporal continuation and finite-error temporal certification. **P16** gives an independent-composition null model and response-level coupling defect. **P17** proves total-variation contraction and exact refinement ambiguity under deterministic coarse-graining. **P18** proves a quantitative scale-sufficiency certificate based on approximate reconstruction. **P19** proves exact deterministic and stochastic criteria for whether an independently defined target factors through a declared physical descriptor, together with a differential no-go test. **P20** converts the P19 stochastic population residual into an explicit finite-sample confidence certificate under a declared finite-alphabet IID model. **P21** then proves how that residual behaves under nested physical-descriptor refinement: unresolved deterministic collisions can only disappear, while the stochastic residual decreases by exactly the target-relevant information supplied by the added physical detail. **P22** gives a simultaneous finite-sample certificate for the entire declared refinement chain from one shared confidence event on the empirical physical-target law. **P23** proves that the same shared base confidence event also supports fixed-sample data-dependent selection among admissible deterministic refinements, together with an explicit near-optimality bound for the selected refinement. **P24** converts that fixed-sample result into an anytime-valid certificate by allocating the total error budget across all positive sample sizes, giving simultaneous repeated-look and finite stopping-time validity under the declared finite-alphabet IID model. **P25** returns to the P11 physical candidate and proves a directed-influence scale theorem: deterministic target coarse observation cannot increase matched-intervention influence, and P18 reconstruction defect bounds the loss by twice the uniform reconstruction error. **P26** extends the same physical scale program to P11 partition irreducibility: block-compatible coarse observation cannot increase the distance from the declared partition-product null, and P18 reconstruction separately controls the actual response law and its factorized reference. **P27** then allows the node set itself to change: a fine partition descends through a surjective node aggregation exactly when it is saturated by the aggregation fibers, the surviving partitions form a lattice isomorphic to the coarse partition lattice, and P18 controls any remaining irreducibility loss under an aggregation-compatible state map. **P28** transports the P11 directed-influence branch through the same changing node set by giving an exact compatibility criterion for matched intervention-pair source labels, pooling only inherited comparisons within each aggregate source, and applying P25/P18 control to the full fine target fiber before target-state aggregation. **P29** transports the complete P11 response geometry on a fixed intervention-delay grid: every pairwise total-variation response distance contracts under node aggregation, while P18 reconstruction bounds the sup-norm distortion of the entire indexed geometry by twice the uniform reconstruction defect. **P30** then assembles the P27 partition, P28 directed-influence, and P29 response-geometry branches under one shared node quotient, experiment grid, state map, and reconstruction declaration, yielding a simultaneous P11 distortion certificate while proving that zero numerical distortion cannot compensate for failed semantic compatibility. **P31** formalizes intervention-label quotienting itself: a many-to-one intervention map defines a unique coarse response law exactly when every retained response law is constant on each intervention fiber, and the quotient ambiguity defect quantifies representative dependence when exact descent fails. **P32** proves the temporal analogue: a delay quotient defines a unique coarse response table exactly when the retained response laws are constant on each delay fiber, with a separate tolerance-relative certificate that is never relabeled as exact equality.
 
 A new quantum-foundations layer now asks a sharper question. Suppose the declared quantum description is operationally complete with respect to the state, admissible channels, and all declared measurement statistics. What exact mathematical evidence would be required to show that an independently defined experiential variable does **not** factor through that quantum operational state? This is formulated as an open non-reducibility theorem target. It is not an assumption that consciousness is quantum or that quantum theory is incomplete.
 
-The public research record now contains **31 proposition-level results, 58 equation-driven quantitative figures, quantum and classical physical maps, reproducible numerical examples, counterexamples, and a multi-version Python test matrix**.
+The public research record now contains **32 proposition-level results, 58 equation-driven quantitative figures, quantum and classical physical maps, reproducible numerical examples, counterexamples, and a multi-version Python test matrix**.
 
 ---
 
@@ -81,7 +81,7 @@ A reader should not need to search the repository to understand the argument. Th
 
 | What you want to inspect | Direct link | What is there |
 | --- | --- | --- |
-| complete theorem chain | [Theorem Roadmap](docs/theorem_roadmap.md) | P1 through P31 with explicit dependency branches |
+| complete theorem chain | [Theorem Roadmap](docs/theorem_roadmap.md) | P1 through P32 with explicit dependency branches |
 | equation provenance | [Equation and Citation Map](docs/equation_and_citation_map.md) | standard results, repository definitions, proofs, and external sources separated explicitly |
 | population physical-sufficiency theorem | [Proposition 19](docs/proposition_19_fundamental_physical_sufficiency.md) | deterministic factorization, stochastic sufficiency, and local rank obstruction |
 | finite-sample residual theorem | [Proposition 20](docs/proposition_20_finite_sample_residual_certification.md) | confidence interval for the P19 conditional-information residual |
@@ -96,6 +96,7 @@ A reader should not need to search the repository to understand the argument. Th
 | response-geometry node-aggregation theorem | [Proposition 29](docs/proposition_29_response_geometry_node_aggregation.md) | complete intervention-delay response pseudometric under node aggregation with P18 distortion control |
 | full P11 scale-compatibility theorem | [Proposition 30](docs/proposition_30_full_p11_scale_compatibility.md) | simultaneous G/A/K transport under one shared scale declaration with a no-semantic-compensation guard |
 | intervention-quotient theorem | [Proposition 31](docs/proposition_31_intervention_quotient_compatibility.md) | exact intervention-label descent, quotient ambiguity defect, and representative-stability bound |
+| delay-quotient theorem | [Proposition 32](docs/proposition_32_delay_quotient_compatibility.md) | exact delay-label descent, temporal ambiguity defect, and representative-stability bound |
 | fundamental-theory program | [Fundamental Theory to Consciousness](docs/fundamental_theory_consciousness_program.md) | candidate fundamental state, physical quotients, experiential quotient, and falsifiable bridge program |
 | stochastic extension | [Stochastic Fundamental Bridge](docs/stochastic_fundamental_bridge.md) | Markov-kernel and conditional-information formulation |
 | empirical falsification | [Falsification Program](docs/falsification_program.md) | conditions that would weaken or defeat a bridge claim |
@@ -115,6 +116,7 @@ A reader should not need to search the repository to understand the argument. Th
 | implementation of P29 | [response_geometry_node_aggregation.py](src/consciousness_bridge/response_geometry_node_aggregation.py) | complete indexed response-geometry contraction and P18 reconstruction certificate |
 | implementation of P30 | [full_p11_scale_compatibility.py](src/consciousness_bridge/full_p11_scale_compatibility.py) | assembly certificate for simultaneous declared P11 scale transport |
 | implementation of P31 | [intervention_quotient_compatibility.py](src/consciousness_bridge/intervention_quotient_compatibility.py) | exact intervention-label quotient audit and ambiguity/stability certificate |
+| implementation of P32 | [delay_quotient_compatibility.py](src/consciousness_bridge/delay_quotient_compatibility.py) | exact delay-label quotient audit with distinct tolerance-relative certification |
 
 Every local documentation and figure link is checked by automated tests. Broken internal links therefore fail CI instead of remaining silently in the public research record.
 
@@ -149,6 +151,7 @@ Every local documentation and figure link is checked by automated tests. Broken 
 | **11.5 P29 response geometry under node aggregation** | How much can the complete intervention-delay response pseudometric change under the same node quotient? |
 | **11.6 P30 full P11 scale compatibility** | When can G, A, and K be transported together under one shared scale declaration? |
 | **11.7 P31 intervention quotient compatibility** | When may several fine intervention labels be represented by one coarse intervention without representative-dependent response laws? |
+| **11.8 P32 delay quotient compatibility** | When may several fine delays be represented by one coarse temporal label without representative-dependent response laws? |
 | **12. Observer handoff** | How does world-tube identification feed the bridge program? |
 | **13. Empirical interface** | What do perturbational and state-dependent observations actually constrain? |
 | **14. Competing theories** | How are alternative theories translated into a common empirical interface? |
@@ -162,7 +165,7 @@ Every local documentation and figure link is checked by automated tests. Broken 
 
 | Research record | Current state |
 | --- | ---: |
-| proposition-level results | **30** |
+| proposition-level results | **32** |
 | equation-driven classical/causal quantitative figures | **40** |
 | equation-driven quantum-foundations figures | **18** |
 | total equation-driven quantitative figures | **58** |
@@ -172,7 +175,7 @@ Every local documentation and figure link is checked by automated tests. Broken 
 | fundamental-theory factorization test | **formal open theorem + experiment target** |
 | automated tests | **160+ and expanding** |
 | CI matrix | **Python 3.10, 3.11, 3.12** |
-| research-software version | **0.30.0** |
+| research-software version | **0.32.0** |
 
 ---
 
@@ -1656,7 +1659,7 @@ A complete empirical bridge theory must specify
 
 ---
 
-# 7. Theorem roadmap - P1 through P31
+# 7. Theorem roadmap - P1 through P32
 
 ![Theorem roadmap](docs/figures/theorem_roadmap.svg)
 
@@ -1693,6 +1696,7 @@ A complete empirical bridge theory must specify
 | **P29** | every response-geometry entry on the fixed intervention-delay grid contracts under node aggregation, with complete sup-norm geometry distortion bounded by P18 reconstruction | proved physical scale theorem | [P29](docs/proposition_29_response_geometry_node_aggregation.md) |
 | **P30** | simultaneous response-geometry, directed-influence, and partition transport requires one shared scale declaration; zero numerical distortion cannot replace semantic compatibility | proved assembly theorem | [P30](docs/proposition_30_full_p11_scale_compatibility.md) |
 | **P31** | an intervention quotient descends exactly iff response laws are constant on every intervention fiber; nonzero quotient ambiguity bounds representative-dependent coarse geometry | proved operational quotient theorem | [P31](docs/proposition_31_intervention_quotient_compatibility.md) |
+| **P32** | a delay quotient descends exactly iff response laws are constant on every delay fiber; temporal ambiguity bounds representative-dependent coarse response geometry | proved operational quotient theorem | [P32](docs/proposition_32_delay_quotient_compatibility.md) |
 
 ---
 
@@ -2845,6 +2849,114 @@ A small \(\eta_b\) says only that the declared response experiment is relatively
 P31 therefore supplies the missing theorem needed before extending P30 from a fixed intervention set to a changing intervention set. The next unresolved scale operation is a delay/time quotient: when may several fine delays be represented by one coarse temporal label without representative-dependent response structure?
 
 [Read Proposition 31](docs/proposition_31_intervention_quotient_compatibility.md). The [P31 theorem map](docs/figures/p31_intervention_quotient_compatibility.svg), [implementation](src/consciousness_bridge/intervention_quotient_compatibility.py), and [tests](tests/test_intervention_quotient_compatibility.py) expose the complete proof-to-code path.
+
+## 13.10 P32 - delay-quotient compatibility
+
+![P32 delay-quotient compatibility](docs/figures/p32_delay_quotient_compatibility.svg)
+
+P31 changes the intervention labels while keeping delays fixed. P32 closes the complementary temporal loophole: when may several fine delay labels be represented by one coarse temporal label without making the response law depend on which fine delay was silently chosen?
+
+Let
+
+\[
+\boxed{
+q:\mathcal T_f\twoheadrightarrow\mathcal T_c
+}
+\]
+
+be a declared surjective delay-label quotient, with a fixed intervention set \(\mathcal U\). All response laws must already live on one common physical response space.
+
+There exists a unique coarse-delay response table \(Q^{u,t}\) satisfying
+
+\[
+P^{u,\tau}=Q^{u,q(\tau)}
+\quad\forall u,\tau
+\]
+
+if and only if
+
+\[
+\boxed{
+q(\tau)=q(\tau')
+\Longrightarrow
+P^{u,\tau}=P^{u,\tau'}
+\quad\forall u\in\mathcal U.
+}
+\]
+
+Define the delay-quotient ambiguity defect
+
+\[
+\boxed{
+\eta_q
+=
+\sup_{u\in\mathcal U}
+\sup_{\tau,\tau':q(\tau)=q(\tau')}
+\|P^{u,\tau}-P^{u,\tau'}\|_{\mathrm{TV}}.
+}
+\]
+
+Then
+
+\[
+\boxed{
+\eta_q=0
+\iff
+\text{exact delay-quotient descent}.
+}
+\]
+
+If a representative \(s(t)\in q^{-1}(t)\) is chosen for each coarse delay and
+
+\[
+Q_s^{u,t}=P^{u,s(t)},
+\]
+
+then any two representative choices satisfy
+
+\[
+\boxed{
+\sup_{u,t}
+\|Q_s^{u,t}-Q_{s'}^{u,t}\|_{\mathrm{TV}}
+\le\eta_q.
+}
+\]
+
+For the induced P11 response geometry,
+
+\[
+G_s(u,v,t)=\|Q_s^{u,t}-Q_s^{v,t}\|_{\mathrm{TV}},
+\]
+
+P32 proves
+
+\[
+\boxed{
+\sup_{u,v,t}
+|G_s(u,v,t)-G_{s'}(u,v,t)|
+\le2\eta_q.
+}
+\]
+
+The implementation deliberately distinguishes exact and approximate certification. `exact_descent_certified` requires \(\eta_q=0\). A separate `within_tolerance_certified` field reports only whether \(\eta_q\le\varepsilon\) for a declared numerical tolerance. A positive tolerance is never promoted to an exact factorization statement, and the unique descended response table is constructed only under exact descent.
+
+The interpretation boundary is
+
+\[
+\boxed{
+\text{same coarse delay label}
+\neq
+\text{same physical time}
+\neq
+\text{dynamical equivalence}.
+}
+\]
+
+Thus a small \(\eta_q\) may reflect temporal stability, limited measurement sensitivity, or insufficient temporal resolution. It does not prove a fundamental discretization of time, equality of physical propagators or trajectories, physical completeness, or consciousness.
+
+P31 and P32 now expose the same structural principle on both experiment-grid coordinates: coarse labels are legitimate quotients only when the observable response structure factors through them. The next theorem burden is a joint node/intervention/delay quotient assembly that prevents individually valid but mutually incompatible quotient constructions from being combined into one false scale certificate.
+
+[Read Proposition 32](docs/proposition_32_delay_quotient_compatibility.md). The [P32 theorem map](docs/figures/p32_delay_quotient_compatibility.svg), [implementation](src/consciousness_bridge/delay_quotient_compatibility.py), and [tests](tests/test_delay_quotient_compatibility.py) expose the complete proof-to-code path.
 
 ---
 

@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="3800" viewBox="0 0 1600 3800" role="img" aria-labelledby="title desc">
-  <title id="title">Theorem roadmap through Proposition 31</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="4040" viewBox="0 0 1600 4040" role="img" aria-labelledby="title desc">
+  <title id="title">Theorem roadmap through Proposition 32</title>
   <desc id="desc">Publication-style dependency map from invariance and identifiability through causal structure, scale, physical sufficiency, residual certification, refinement, adaptive selection, and anytime-valid stopping-time control.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
@@ -16,8 +16,8 @@
     </style>
   </defs>
 
-  <rect width="1600" height="3560" fill="#ffffff"/>
-  <text x="70" y="62" class="title">Theorem Roadmap - P1 through P31</text>
+  <rect width="1600" height="4040" fill="#ffffff"/>
+  <text x="70" y="62" class="title">Theorem Roadmap - P1 through P32</text>
   <text x="70" y="94" class="subtitle">The chain separates physical structure, finite-data certification, refinement, adaptive selection, and repeated-look validity.</text>
 
   <rect x="95" y="145" width="420" height="180" rx="18" fill="#eff6ff" stroke="#3b82f6"/>
@@ -184,7 +184,15 @@
   <text x="900" y="3634" class="eq">ηb=0 ⇔ exact descent</text>
   <text x="265" y="3664" class="body">Representative-dependent geometry is bounded by 2ηb.</text>
 
-  <rect x="95" y="3720" width="1410" height="62" rx="14" fill="#0f172a"/>
-  <text x="125" y="3745" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">OPEN BRIDGE FRONTIER</text>
-  <text x="125" y="3768" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Delay/time quotienting, physical completeness, experiential formalization, and the bridge theorem remain open.</text>
+  <rect x="225" y="3720" width="1150" height="190" rx="20" fill="#fff7ed" stroke="#ea580c" stroke-width="1.8"/>
+  <text x="265" y="3757" class="label">DELAY QUOTIENT · P32</text>
+  <text x="265" y="3795" class="head">Coarse delays require fiberwise response agreement</text>
+  <text x="265" y="3829" class="body">Time labels may merge only when retained response laws descend.</text>
+  <text x="265" y="3864" class="eq">ηq = supu supq(τ)=q(τ′) ||Pᵘ,τ−Pᵘ,τ′||TV</text>
+  <text x="930" y="3864" class="eq">ηq=0 ⇔ exact descent</text>
+  <text x="265" y="3894" class="body">Representative-dependent geometry is bounded by 2ηq.</text>
+
+  <rect x="95" y="3960" width="1410" height="62" rx="14" fill="#0f172a"/>
+  <text x="125" y="3985" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">OPEN BRIDGE FRONTIER</text>
+  <text x="125" y="4008" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Joint quotient assembly, physical completeness, experiential formalization, and the bridge theorem remain open.</text>
 </svg>

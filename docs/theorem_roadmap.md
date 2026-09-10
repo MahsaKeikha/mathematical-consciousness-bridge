@@ -2,7 +2,7 @@
 
 This roadmap records the current proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge.
 
-![P1-P31 theorem roadmap](figures/theorem_roadmap.svg)
+![P1-P32 theorem roadmap](figures/theorem_roadmap.svg)
 
 ---
 
@@ -41,6 +41,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P29](proposition_29_response_geometry_node_aggregation.md) | P11 response geometry plus P17 contraction, P18 reconstruction, and P27 node aggregation | complete indexed response-pseudometric transport on a fixed intervention-delay grid | proved physical scale theorem |
 | [P30](proposition_30_full_p11_scale_compatibility.md) | assembly of P27-P29 under one scale declaration | simultaneous declared P11 physical-signature transport with a no-semantic-compensation guard | proved assembly theorem |
 | [P31](proposition_31_intervention_quotient_compatibility.md) | quotient factorization of intervention-conditioned response laws | exact criterion for changing the intervention set plus a representative-ambiguity budget | proved operational quotient theorem |
+| [P32](proposition_32_delay_quotient_compatibility.md) | quotient factorization of delay-conditioned response laws | exact criterion for changing the delay set plus a temporal representative-ambiguity budget | proved operational quotient theorem |
 
 ---
 
@@ -630,6 +631,44 @@ Then \(\eta_b=0\) is equivalent to exact quotient descent. If representatives ar
 The quotient is operational and experiment relative. It does not identify distinct physical actuators or define a simultaneous perturbation.
 
 Direct proof: [Proposition 31](proposition_31_intervention_quotient_compatibility.md). Implementation: [intervention_quotient_compatibility.py](../src/consciousness_bridge/intervention_quotient_compatibility.py). Tests: [test_intervention_quotient_compatibility.py](../tests/test_intervention_quotient_compatibility.py).
+
+## P32 - delay-quotient compatibility
+
+Let \(q:\mathcal T_f\twoheadrightarrow\mathcal T_c\) be a declared many-to-one map on delay labels after the physical response space has been fixed. P32 proves that a unique coarse-delay response table exists if and only if
+
+\[
+\boxed{
+q(\tau)=q(\tau')
+\Longrightarrow
+P^{u,\tau}=P^{u,\tau'}
+\quad\forall u.
+}
+\]
+
+Define
+
+\[
+\boxed{
+\eta_q
+=
+\sup_u\sup_{q(\tau)=q(\tau')}
+\|P^{u,\tau}-P^{u,\tau'}\|_{\mathrm{TV}}.
+}
+\]
+
+Then \(\eta_q=0\) is equivalent to exact quotient descent. Representative selections obey
+
+\[
+\boxed{
+\sup_{u,t}\|Q_s^{u,t}-Q_{s'}^{u,t}\|_{\mathrm{TV}}\le\eta_q,
+\qquad
+\sup_{u,v,t}|G_s-G_{s'}|\le2\eta_q.
+}
+\]
+
+Exact and tolerance-relative certification are reported separately in the executable implementation. The theorem is operational: it does not identify distinct physical times or dynamical states.
+
+Direct proof: [Proposition 32](proposition_32_delay_quotient_compatibility.md). Implementation: [delay_quotient_compatibility.py](../src/consciousness_bridge/delay_quotient_compatibility.py). Tests: [test_delay_quotient_compatibility.py](../tests/test_delay_quotient_compatibility.py).
 
 ---
 

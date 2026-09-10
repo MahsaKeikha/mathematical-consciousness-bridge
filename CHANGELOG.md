@@ -2,6 +2,21 @@
 
 This changelog records theorem-level scientific releases. Definitions, proofs, implementations, tests, figures, and documentation remain linked from the main research page.
 
+## 0.32.0 - 2026-09-09
+
+### Proposition 32 - delay-quotient compatibility
+
+- Introduced a declared surjective delay-label quotient \(q:\mathcal T_f\twoheadrightarrow\mathcal T_c\) after the physical response space has been fixed.
+- Proved that a unique coarse-delay response table exists if and only if all retained response laws are constant on every delay fiber for every intervention.
+- Defined the delay-quotient ambiguity defect \(\eta_q\) as the worst total-variation separation hidden inside a proposed coarse temporal label.
+- Proved \(\eta_q=0\) if and only if exact delay-quotient descent holds.
+- Proved representative-selection stability \(\sup_{u,t}\|Q_s^{u,t}-Q_{s'}^{u,t}\|_{\mathrm{TV}}\le\eta_q\).
+- Proved induced response-geometry ambiguity \(\sup_{u,v,t}|G_s-G_{s'}|\le2\eta_q\).
+- Separated literal exact descent from tolerance-relative approximation in the executable certificate and restricted the unique descended table to exact descent only.
+- Explicitly separated operational delay quotienting from physical time identity, dynamical equivalence, and time quantization.
+- Added executable mathematics, nine dedicated regression tests, a publication theorem map, full main-paper integration, theorem-roadmap integration, navigation, equation provenance, release consistency guards, and synchronized 0.32.0 metadata.
+- Preserved joint node/intervention/delay assembly, physical completeness, and experiential interpretation as separate open theorem burdens.
+
 ## 0.31.0 - 2026-09-09
 
 ### Proposition 31 - intervention-quotient compatibility
