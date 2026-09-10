@@ -6,7 +6,7 @@ This page is the reading and reference index for the Mathematical Consciousness 
 
 1. [Main research paper](../README.md) for the complete scientific narrative and embedded figures.
 2. [Bridge problem](bridge_problem.md) for the formal statement of the physical-to-experiential problem.
-3. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P45, including the physical scale branches from P11-P18 to P25-P27.
+3. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P46, including the physical scale branches from P11-P18 to P25-P27.
 4. [Equation and citation map](equation_and_citation_map.md) for equation-level provenance and theorem lineage.
 5. [Proposition 19](proposition_19_fundamental_physical_sufficiency.md) for the population physical-sufficiency theorem.
 6. [Proposition 20](proposition_20_finite_sample_residual_certification.md) for finite-sample certification of the P19 stochastic residual.
@@ -75,6 +75,7 @@ This page is the reading and reference index for the Mathematical Consciousness 
 | P43 | [Optimal quantum-target allocation](proposition_43_optimal_quantum_target_allocation.md) | cube-root minimum-cost allocation of the P42 uncertainty budget |
 | P44 | [Pair-adaptive sample allocation](proposition_44_pair_adaptive_sample_allocation.md) | simultaneous finite-family confidence and valid post-data witness selection |
 | P45 | [Shared-preparation graph allocation](proposition_45_shared_preparation_graph_allocation.md) | shared preparation-level resource allocation with unique convex optimum and KKT incidence law |
+| P46 | [Budget-constrained witness graph](proposition_46_budget_constrained_witness_graph.md) | discrete preparation selection, NP-hardness, relaxation upper bound, and exact small-instance certification |
 
 ## Physics, mathematics, and quantitative figures
 
