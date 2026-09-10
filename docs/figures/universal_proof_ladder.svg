@@ -125,7 +125,7 @@
     <circle cx="105" cy="1210" r="21" fill="#7c3aed"/><text x="90" y="1215" class="num">U10</text>
     <text x="140" y="1208" class="head">Finite-measurement certification</text>
     <text x="110" y="1250" class="eq">γₛ &gt; 4ε</text>
-    <text x="245" y="1250" class="body">Robust recovery: Proposition 8.</text>
+    <text x="245" y="1250" class="body">Recovery: Proposition 8.</text>
   </g>
 
   <g id="u11" data-qa-block="true" data-x="640" data-y="1172" data-width="520" data-height="145">
