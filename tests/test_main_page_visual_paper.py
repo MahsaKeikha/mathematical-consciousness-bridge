@@ -17,7 +17,6 @@ CURATED_MAIN_PAGE_FIGURES = (
     "p38_quantum_operational_sufficiency.svg",
     "p41_trace_ball_quantum_envelope.svg",
     "p47_sequential_graph_refinement.svg",
-    "p70_primal_dual_gap_decomposition.svg",
     "equation_evidence_map.svg",
 )
 
@@ -34,6 +33,7 @@ def test_main_page_links_complete_visual_atlases_instead_of_embedding_them():
         "website/visual-atlas.html",
         "docs/quantitative_physics_mathematics_atlas.md",
         "docs/quantum_foundations_and_bridge_test.md",
+        "docs/calibration_optimization_frontier_p61_p70.md",
         "Q01-Q40",
         "QM01-QM18",
     )

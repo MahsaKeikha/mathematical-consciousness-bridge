@@ -3,8 +3,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def test_p63_is_visible_on_main_page():
-    text = (ROOT / "README.md").read_text(encoding="utf-8")
+def test_p63_is_visible_on_calibration_frontier_page():
+    text = (ROOT / "docs/calibration_optimization_frontier_p61_p70.md").read_text(encoding="utf-8")
     for token in (
         "P63 exact unequal-cost integer calibration",
         "p63_exact_heterogeneous_integer_calibration.svg",

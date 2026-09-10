@@ -12,12 +12,17 @@ def test_p70_is_integrated_across_public_record():
         "README.md": [
             "version-0.70.0-2563eb",
             "70 proposition-level results",
-            "Latest proved extension: P70 exact primal-dual gap decomposition",
-            "p70_primal_dual_gap_decomposition.svg",
             "P1 through P70 with explicit dependency branches",
             "# Research at a glance",
             "# Detailed proposition record",
             "docs/quantum_foundations_and_bridge_test.md",
+            "docs/calibration_optimization_frontier_p61_p70.md",
+        ],
+        "docs/calibration_optimization_frontier_p61_p70.md": [
+            "Proposition 70: exact primal-dual gap decomposition",
+            "p70_primal_dual_gap_decomposition.svg",
+            "primal_dual_gap_decomposition.py",
+            "test_primal_dual_gap_decomposition.py",
         ],
         "docs/theorem_roadmap.md": [
             "P70",

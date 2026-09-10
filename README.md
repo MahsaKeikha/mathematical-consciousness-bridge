@@ -93,7 +93,7 @@ The full program can be read as seven scientific stages. This table is the short
 | 4. Multiscale operational structure | **P25-P37** | Which causal and response structures survive node, state, intervention, and delay quotients, and how much distortion is introduced? | Proved / implemented / tested | [Theorem roadmap](docs/theorem_roadmap.md) |
 | 5. Quantum sufficiency and falsification | **P38-P44** | What follows from a declared tomographically complete quantum description, and what would count as evidence against factorization through it? | Conditional tests proved; ontology open | [Quantum foundations and bridge test](docs/quantum_foundations_and_bridge_test.md) |
 | 6. Adaptive experiment design and scheduling | **P45-P58** | How should evidence gathering, stopping, service allocation, switching, and noisy transition measurement be organized while preserving statistical validity? | Proved / implemented / tested | [Equation and citation map](docs/equation_and_citation_map.md) |
-| 7. Transition calibration and integer optimization | **P59-P70** | How should finite calibration resources be allocated and certified under discrete counts and heterogeneous costs? | Proved / implemented / tested | [P70 proposition](docs/proposition_70_primal_dual_gap_decomposition.md) |
+| 7. Calibration and integer optimization | Downstream experimental layer | How should finite calibration resources be allocated and certified after the scientific witness and uncertainty model are declared? | Proved / implemented / tested | [Calibration and Optimization Frontier](docs/calibration_optimization_frontier_p61_p70.md) |
 
 The dependency-oriented theorem map covers **P1 through P70 with explicit dependency branches**.
 
@@ -384,72 +384,15 @@ This branch matters because a bridge theory should not depend on an unrealistic 
 
 ---
 
-# 7. Calibration and optimization: the current theorem frontier
+# 7. Calibration and optimization as a downstream experimental layer
 
-The P59-P70 branch addresses a narrower but necessary experimental question: once transition or switching uncertainties matter to a robust experiment, how should finite calibration resources be allocated?
+The later calibration and discrete-optimization results belong to the **experimental implementation layer**, not to the conceptual introduction to the consciousness bridge itself. Their role is to determine how finite calibration measurements should be allocated and how candidate integer designs can be certified once the bridge hypothesis, physical descriptor, witness family, uncertainty model, and experimental constraints have already been declared.
 
-For effective edge coefficient $b_e>0$ and sample count $n_e$, the continuous equal-cost surrogate is
+To keep this main page readable for a first-time scientific reader, the complete P61-P70 theorem sequence, derivations, figures, implementations, tests, assumptions, and primal-dual certificates are documented separately:
 
-$$
-U(n)=\sum_e\frac{b_e}{\sqrt{n_e}}.
-$$
+**[Read the complete Calibration and Optimization Frontier: P61-P70](docs/calibration_optimization_frontier_p61_p70.md).**
 
-With heterogeneous per-observation costs $c_e>0$ and budget $B$,
-
-$$
-\min_{n_e>0}\sum_e\frac{b_e}{\sqrt{n_e}}
-\quad\text{subject to}\quad
-\sum_e c_en_e=B.
-$$
-
-The P62 optimum has the scaling
-
-$$
-\boxed{
-n_e^*\propto b_e^{2/3}c_e^{-2/3}.
-}
-$$
-
-The subsequent results handle whole measurements, lower bounds, fast approximations, baseline constraints, residual exact improvement, Lagrangian certificates, and dual optimization.
-
-## Latest proved extension: P70 exact primal-dual gap decomposition
-
-For a feasible integer candidate $k$ and multiplier $\lambda>0$, P70 decomposes the candidate-to-dual certificate gap into edgewise nonnegative Lagrangian regrets plus a nonnegative unused-budget penalty. Symbolically,
-
-$$
-\boxed{
-U(k)-q(\lambda)
-=
-\sum_e r_e(k_e;\lambda)
-+
-\lambda\left(B-\sum_ec_ek_e\right).
-}
-$$
-
-The decomposition explains *why* a candidate fails to close the dual gap: because particular edges are not Lagrangian minimizers, because budget is unused, or both. The zero-gap case recovers the sufficient P67 global-optimality conditions.
-
-![P70 primal-dual gap decomposition](docs/figures/p70_primal_dual_gap_decomposition.svg)
-
-**Figure 12. Current theorem frontier.** P70 turns a single scalar optimality gap into a diagnostic decomposition. This is an optimization result for experimental calibration. It is not evidence that the calibration objective is consciousness and it does not strengthen the open physical-to-experiential bridge.
-
-### Compact record of the calibration frontier
-
-The table keeps recent proof, visual, code, and test surfaces visible without reproducing every derivation on the front page.
-
-| Result | Role | Proof / visual / implementation |
-| --- | --- | --- |
-| **P59 optimal transition calibration** | Continuous equal-cost allocation | [proof](docs/proposition_59_optimal_transition_calibration.md) / [figure](docs/figures/p59_optimal_transition_calibration.svg) / [`optimal_transition_calibration.py`](src/consciousness_bridge/optimal_transition_calibration.py) / [`test_optimal_transition_calibration.py`](tests/test_optimal_transition_calibration.py) |
-| **P60 integer transition calibration** | Certified whole-count rounding | [proof](docs/proposition_60_integer_transition_calibration.md) / [figure](docs/figures/p60_integer_transition_calibration.svg) / [`integer_transition_calibration.py`](src/consciousness_bridge/integer_transition_calibration.py) / [`test_integer_transition_calibration.py`](tests/test_integer_transition_calibration.py) |
-| **P61 exact integer calibration** | Exact equal-cost whole-count optimum | [proof](docs/proposition_61_exact_integer_transition_calibration.md) / [figure](docs/figures/p61_exact_integer_transition_calibration.svg) / [`exact_integer_transition_calibration.py`](src/consciousness_bridge/exact_integer_transition_calibration.py) / [`test_exact_integer_transition_calibration.py`](tests/test_exact_integer_transition_calibration.py) |
-| **P62 heterogeneous-cost calibration** | Continuous unequal-cost allocation | [proof](docs/proposition_62_heterogeneous_cost_transition_calibration.md) / [figure](docs/figures/p62_heterogeneous_cost_transition_calibration.svg) / [`heterogeneous_cost_transition_calibration.py`](src/consciousness_bridge/heterogeneous_cost_transition_calibration.py) / [`test_heterogeneous_cost_transition_calibration.py`](tests/test_heterogeneous_cost_transition_calibration.py) |
-| **P63 exact unequal-cost integer calibration** | Exact heterogeneous integer allocation | [proof](docs/proposition_63_exact_heterogeneous_integer_calibration.md) / [figure](docs/figures/p63_exact_heterogeneous_integer_calibration.svg) / [`exact_heterogeneous_integer_calibration.py`](src/consciousness_bridge/exact_heterogeneous_integer_calibration.py) / [`test_exact_heterogeneous_integer_calibration.py`](tests/test_exact_heterogeneous_integer_calibration.py) |
-| **P64 fast certified integer approximation** | Scalable certified approximation | [proof](docs/proposition_64_fast_heterogeneous_integer_approximation.md) / [figure](docs/figures/p64_fast_heterogeneous_integer_approximation.svg) / [`fast_heterogeneous_integer_approximation.py`](src/consciousness_bridge/fast_heterogeneous_integer_approximation.py) / [`test_fast_heterogeneous_integer_approximation.py`](tests/test_fast_heterogeneous_integer_approximation.py) |
-| **Proposition 65: lower-bounded heterogeneous calibration** | Baseline-safe continuous water filling and certified integer floor | [proof](docs/proposition_65_lower_bounded_heterogeneous_calibration.md) / [figure](docs/figures/p65_lower_bounded_heterogeneous_calibration.svg) |
-| **Proposition 66: residual-exact calibration augmentation** | Exact improvement inside the floor-dominating class | [proof](docs/proposition_66_residual_exact_calibration_augmentation.md) / [figure](docs/figures/p66_residual_exact_calibration_augmentation.svg) |
-| **Proposition 67: global integer optimality certificate** | Sufficient common-multiplier certificate | [proof](docs/proposition_67_global_integer_optimality_certificate.md) / [figure](docs/figures/p67_global_integer_optimality_certificate.svg) |
-| **Proposition 68: Lagrangian optimality gap certificate** | Rigorous lower bound and candidate gap | [proof](docs/proposition_68_lagrangian_optimality_gap.md) / [figure](docs/figures/p68_lagrangian_optimality_gap.svg) |
-| **Proposition 69: certified dual-optimal multiplier search** | Strongest certified lower bound inside the declared dual family | [proof](docs/proposition_69_dual_optimal_multiplier.md) / [figure](docs/figures/p69_dual_optimal_multiplier.svg) |
-| **Proposition 70: exact primal-dual gap decomposition** | Diagnostic decomposition of the P68/P69 gap | [proof](docs/proposition_70_primal_dual_gap_decomposition.md) / [figure](docs/figures/p70_primal_dual_gap_decomposition.svg) / [`primal_dual_gap_decomposition.py`](src/consciousness_bridge/primal_dual_gap_decomposition.py) / [`test_primal_dual_gap_decomposition.py`](tests/test_primal_dual_gap_decomposition.py) |
+The main scientific conclusion does not depend on reading that optimization branch first. It is supporting machinery for executing and certifying experiments, not a proposed definition or measure of consciousness.
 
 ---
 
@@ -630,16 +573,7 @@ This compact index preserves direct public traceability without placing thirty-t
 - **Proposition 58 - P58 - finite-data switching-metric uncertainty**: [p58_finite_data_metric_uncertainty.svg](docs/figures/p58_finite_data_metric_uncertainty.svg), [`finite_data_metric_uncertainty.py`](src/consciousness_bridge/finite_data_metric_uncertainty.py), [`test_finite_data_metric_uncertainty.py`](tests/test_finite_data_metric_uncertainty.py).
 - **Proposition 59 - P59 - optimal transition-calibration allocation**: [p59_optimal_transition_calibration.svg](docs/figures/p59_optimal_transition_calibration.svg), [`optimal_transition_calibration.py`](src/consciousness_bridge/optimal_transition_calibration.py), [`test_optimal_transition_calibration.py`](tests/test_optimal_transition_calibration.py).
 - **Proposition 60 - P60 - integer transition-calibration allocation**: [p60_integer_transition_calibration.svg](docs/figures/p60_integer_transition_calibration.svg), [`integer_transition_calibration.py`](src/consciousness_bridge/integer_transition_calibration.py), [`test_integer_transition_calibration.py`](tests/test_integer_transition_calibration.py).
-- **Proposition 61**: [p61_exact_integer_transition_calibration.svg](docs/figures/p61_exact_integer_transition_calibration.svg), [`exact_integer_transition_calibration.py`](src/consciousness_bridge/exact_integer_transition_calibration.py), [`test_exact_integer_transition_calibration.py`](tests/test_exact_integer_transition_calibration.py).
-- **Proposition 62**: [p62_heterogeneous_cost_transition_calibration.svg](docs/figures/p62_heterogeneous_cost_transition_calibration.svg), [`heterogeneous_cost_transition_calibration.py`](src/consciousness_bridge/heterogeneous_cost_transition_calibration.py), [`test_heterogeneous_cost_transition_calibration.py`](tests/test_heterogeneous_cost_transition_calibration.py).
-- **Proposition 63**: [p63_exact_heterogeneous_integer_calibration.svg](docs/figures/p63_exact_heterogeneous_integer_calibration.svg), [`exact_heterogeneous_integer_calibration.py`](src/consciousness_bridge/exact_heterogeneous_integer_calibration.py), [`test_exact_heterogeneous_integer_calibration.py`](tests/test_exact_heterogeneous_integer_calibration.py).
-- **Proposition 64**: [p64_fast_heterogeneous_integer_approximation.svg](docs/figures/p64_fast_heterogeneous_integer_approximation.svg), [`fast_heterogeneous_integer_approximation.py`](src/consciousness_bridge/fast_heterogeneous_integer_approximation.py), [`test_fast_heterogeneous_integer_approximation.py`](tests/test_fast_heterogeneous_integer_approximation.py).
-- **Proposition 65**: [p65_lower_bounded_heterogeneous_calibration.svg](docs/figures/p65_lower_bounded_heterogeneous_calibration.svg), [`lower_bounded_heterogeneous_calibration.py`](src/consciousness_bridge/lower_bounded_heterogeneous_calibration.py), [`test_lower_bounded_heterogeneous_calibration.py`](tests/test_lower_bounded_heterogeneous_calibration.py).
-- **Proposition 66**: [p66_residual_exact_calibration_augmentation.svg](docs/figures/p66_residual_exact_calibration_augmentation.svg), [`residual_exact_calibration_augmentation.py`](src/consciousness_bridge/residual_exact_calibration_augmentation.py), [`test_residual_exact_calibration_augmentation.py`](tests/test_residual_exact_calibration_augmentation.py).
-- **Proposition 67**: [p67_global_integer_optimality_certificate.svg](docs/figures/p67_global_integer_optimality_certificate.svg), [`global_integer_optimality_certificate.py`](src/consciousness_bridge/global_integer_optimality_certificate.py), [`test_global_integer_optimality_certificate.py`](tests/test_global_integer_optimality_certificate.py).
-- **Proposition 68**: [p68_lagrangian_optimality_gap.svg](docs/figures/p68_lagrangian_optimality_gap.svg), [`lagrangian_optimality_gap.py`](src/consciousness_bridge/lagrangian_optimality_gap.py), [`test_lagrangian_optimality_gap.py`](tests/test_lagrangian_optimality_gap.py).
-- **Proposition 69**: [p69_dual_optimal_multiplier.svg](docs/figures/p69_dual_optimal_multiplier.svg), [`dual_optimal_multiplier.py`](src/consciousness_bridge/dual_optimal_multiplier.py), [`test_dual_optimal_multiplier.py`](tests/test_dual_optimal_multiplier.py).
-- **Proposition 70**: [p70_primal_dual_gap_decomposition.svg](docs/figures/p70_primal_dual_gap_decomposition.svg), [`primal_dual_gap_decomposition.py`](src/consciousness_bridge/primal_dual_gap_decomposition.py), [`test_primal_dual_gap_decomposition.py`](tests/test_primal_dual_gap_decomposition.py).
+
 
 </details>
 
@@ -678,6 +612,7 @@ The scientific target is therefore precise: continue reducing ambiguity in the p
 | --- | --- |
 | Understand the complete dependency structure | [Theorem roadmap](docs/theorem_roadmap.md) |
 | Read the proposition chronology | [Detailed proposition record](docs/detailed_proposition_record.md) |
+| Inspect the P61-P70 calibration and optimization branch | [Calibration and Optimization Frontier](docs/calibration_optimization_frontier_p61_p70.md) |
 | Follow work by scientific question | [Research navigation](docs/research_navigation.md) |
 | Audit equations and citations | [Equation and citation map](docs/equation_and_citation_map.md) |
 | Inspect all quantitative classical figures | [Quantitative physics and mathematics atlas](docs/quantitative_physics_mathematics_atlas.md) |
