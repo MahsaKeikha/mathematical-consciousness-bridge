@@ -127,7 +127,7 @@ text = path.read_text(encoding="utf-8")
 p64_fig = "![P64 fast certified heterogeneous integer approximation](figures/p64_fast_heterogeneous_integer_approximation.svg)"
 p65_fig = "![P65 lower-bounded heterogeneous calibration](figures/p65_lower_bounded_heterogeneous_calibration.svg)"
 text = replace_once(text, p64_fig, p64_fig + "\n" + p65_fig, "roadmap P65 figure")
-p64_index = "| [P64](proposition_64_fast_heterogeneous_integer_approximation.md) | floor rounding of P62 with instance-specific multiplicative certificate | scalable approximation to P63 in the large-budget regime | proved approximation theorem |"
+p64_index = "| [P64](proposition_64_fast_heterogeneous_integer_approximation.md) | flooring of the P62 continuous optimum away from the one-sample boundary | O(m) feasible integer design with instance-specific and uniform approximation factors relative to P63 | proved scalable approximation theorem |"
 p65_index = "| [P65](proposition_65_lower_bounded_heterogeneous_calibration.md) | lower-bounded strict convexity, active-set water filling, and floor approximation | baseline-safe heterogeneous calibration beyond the P64 one-sample regime restriction | proved continuous theorem plus approximation certificate |"
 text = replace_once(text, p64_index, p64_index + "\n" + p65_index, "roadmap P65 index")
 path.write_text(text, encoding="utf-8")
