@@ -16,6 +16,7 @@ from __future__ import annotations
 
 from collections.abc import Hashable, Mapping, Sequence
 from dataclasses import dataclass
+from itertools import pairwise
 from math import inf, isfinite, log, sqrt
 from typing import TypeVar
 
@@ -75,7 +76,7 @@ def hoeffding_pair_radius(
 ) -> float:
     """Return a two-sided Hoeffding radius for a bounded pairwise mean."""
     if not isinstance(sample_count, int) or isinstance(sample_count, bool):
-        raise ValueError("sample_count must be a positive integer")
+        raise TypeError("sample_count must be a positive integer")
     if sample_count <= 0:
         raise ValueError("sample_count must be a positive integer")
     _positive_finite(range_width, "range_width")
@@ -141,13 +142,13 @@ def pairwise_hoeffding_radii(
     radii: dict[tuple[Point, Point], float] = {}
     for point in declared:
         radii[(point, point)] = 0.0
-    for pair in pairs:
+    for edge in pairs:
         radius = hoeffding_pair_radius(
-            sample_counts[pair],
-            range_widths[pair],
-            allocation[pair],
+            sample_counts[edge],
+            range_widths[edge],
+            allocation[edge],
         )
-        first, second = pair
+        first, second = edge
         radii[(first, second)] = radius
         radii[(second, first)] = radius
     return radii
@@ -181,9 +182,10 @@ def validate_symmetric_envelope(
                 raise ValueError("estimates must be symmetric")
             if abs(radius - radii[(second, first)]) > tolerance:
                 raise ValueError("radii must be symmetric")
-            if first == second:
-                if abs(estimate) > tolerance or abs(radius) > tolerance:
-                    raise ValueError("diagonal estimates and radii must be zero")
+            if first == second and (
+                abs(estimate) > tolerance or abs(radius) > tolerance
+            ):
+                raise ValueError("diagonal estimates and radii must be zero")
 
 
 def route_envelope(
@@ -201,7 +203,7 @@ def route_envelope(
     transitions: list[tuple[Point, Point]] = []
     if start is not None:
         transitions.append((start, route[0]))
-    transitions.extend(zip(route[:-1], route[1:], strict=True))
+    transitions.extend(pairwise(route))
 
     lower = 0.0
     upper = 0.0
