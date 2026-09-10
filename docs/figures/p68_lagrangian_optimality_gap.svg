@@ -48,7 +48,7 @@
 
   <g id="block-gap" data-x="650" data-y="405" data-w="380" data-h="195">
     <rect x="650" y="405" width="380" height="195" rx="18" fill="#ffffff" stroke="#64748b" stroke-width="2"/>
-    <text x="675" y="443" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#0f172a">5. Candidate quality certificate</text>
+    <text x="675" y="443" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#0f172a">5. Quality certificate</text>
     <text x="675" y="482" font-family="Arial, sans-serif" font-size="15" fill="#334155">0 &lt;= U(k)-U* &lt;= U(k)-q</text>
     <text x="675" y="520" font-family="Arial, sans-serif" font-size="15" fill="#334155">If q &gt; 0: U(k)/U* &lt;= U(k)/q</text>
     <text x="675" y="558" font-family="Arial, sans-serif" font-size="14" fill="#475569">P67 success makes gap zero.</text>
