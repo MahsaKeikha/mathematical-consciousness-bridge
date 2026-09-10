@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Proposition 32 delay quotient compatibility</title>
+  <desc id="desc">Fine delay response laws are grouped into coarse temporal fibers. Exact descent requires response constancy inside every temporal fiber for each intervention. Approximate descent is controlled by eta_a.</desc>
+  <rect width="1200" height="720" fill="#ffffff"/>
+  <text x="60" y="62" font-family="Arial,Helvetica,sans-serif" font-size="30" font-weight="700" fill="#111827">P32 · Delay-quotient compatibility</text>
+  <text x="60" y="96" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#4b5563">When can fine response times be represented by a coarser temporal grid without representative dependence?</text>
+
+  <text x="72" y="150" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#1f2937">Fine delay response family</text>
+  <text x="493" y="150" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#1f2937">Temporal quotient</text>
+  <text x="842" y="150" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#1f2937">Coarse response family</text>
+
+  <g font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#111827">
+    <rect x="70" y="185" width="290" height="70" rx="10" fill="#f9fafb" stroke="#9ca3af" stroke-width="2"/>
+    <text x="92" y="215">τ₀ : Pᵘ,τ₀</text><text x="92" y="239" fill="#6b7280">fine response at first retained delay</text>
+    <rect x="70" y="278" width="290" height="70" rx="10" fill="#f9fafb" stroke="#9ca3af" stroke-width="2"/>
+    <text x="92" y="308">τ₁ : Pᵘ,τ₁</text><text x="92" y="332" fill="#6b7280">fine response at neighboring delay</text>
+    <rect x="70" y="398" width="290" height="70" rx="10" fill="#f9fafb" stroke="#9ca3af" stroke-width="2"/>
+    <text x="92" y="428">τ₂ : Pᵘ,τ₂</text><text x="92" y="452" fill="#6b7280">later fine response</text>
+  </g>
+
+  <g stroke="#374151" stroke-width="2.5" fill="none">
+    <path d="M365 220 C430 220,430 250,495 250"/>
+    <path d="M365 313 C430 313,430 270,495 270"/>
+    <path d="M365 433 C430 433,430 425,495 425"/>
+  </g>
+  <g fill="#374151">
+    <polygon points="494,250 482,244 482,256"/>
+    <polygon points="494,270 482,264 482,276"/>
+    <polygon points="494,425 482,419 482,431"/>
+  </g>
+
+  <rect x="510" y="205" width="250" height="125" rx="16" fill="#eef2ff" stroke="#6366f1" stroke-width="2.5"/>
+  <text x="535" y="240" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#312e81">a(τ₀)=a(τ₁)=c₀</text>
+  <text x="535" y="270" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#4338ca">same coarse temporal fiber</text>
+  <text x="535" y="300" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#312e81">must preserve response identity</text>
+
+  <rect x="510" y="385" width="250" height="95" rx="16" fill="#ecfdf5" stroke="#10b981" stroke-width="2.5"/>
+  <text x="535" y="422" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#065f46">a(τ₂)=c₁</text>
+  <text x="535" y="451" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#047857">second coarse temporal fiber</text>
+
+  <g stroke="#374151" stroke-width="2.5" fill="none">
+    <path d="M765 267 L835 267"/>
+    <path d="M765 432 L835 432"/>
+  </g>
+  <g fill="#374151">
+    <polygon points="835,267 823,261 823,273"/>
+    <polygon points="835,432 823,426 823,438"/>
+  </g>
+
+  <rect x="845" y="215" width="285" height="105" rx="14" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2.5"/>
+  <text x="870" y="252" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#4c1d95">Qᵘ,c₀</text>
+  <text x="870" y="282" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#6d28d9">unique iff Pᵘ,τ₀ = Pᵘ,τ₁</text>
+
+  <rect x="845" y="385" width="285" height="95" rx="14" fill="#f0fdf4" stroke="#22c55e" stroke-width="2.5"/>
+  <text x="870" y="422" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#166534">Qᵘ,c₁</text>
+  <text x="870" y="451" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#15803d">representative independent</text>
+
+  <rect x="65" y="535" width="1070" height="125" rx="18" fill="#f9fafb" stroke="#d1d5db" stroke-width="2"/>
+  <text x="90" y="572" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#111827">Exact criterion</text>
+  <text x="245" y="572" font-family="Arial,Helvetica,sans-serif" font-size="18" fill="#111827">a(τ)=a(τ′) ⇒ Pᵘ,τ = Pᵘ,τ′  for every retained intervention u</text>
+  <text x="90" y="608" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#111827">Approximate ambiguity</text>
+  <text x="285" y="608" font-family="Arial,Helvetica,sans-serif" font-size="18" fill="#111827">ηₐ = supᵤ supₐ(τ)=ₐ(τ′) ‖Pᵘ,τ − Pᵘ,τ′‖TV</text>
+  <text x="90" y="640" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#4b5563">Geometry uncertainty ≤ 2ηₐ · Temporal path uncertainty over M transitions ≤ 2Mηₐ</text>
+</svg>
