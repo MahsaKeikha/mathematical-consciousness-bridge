@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="930" viewBox="0 0 1500 930" role="img" aria-labelledby="title desc">
+  <title id="title">P41 trace-ball quantum envelope</title>
+  <desc id="desc">Quantum trace-distance balls and target total-variation balls combine into an end-to-end Lipschitz obstruction certificate.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .title{font:700 34px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .sub{font:400 17px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .head{font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .eq{font:600 17px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .label{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
+      .arrow{stroke:#64748b;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1500" height="930" fill="#ffffff"/>
+  <text x="70" y="65" class="title">P41 - Trace-Ball Quantum Envelope</text>
+  <text x="70" y="100" class="sub">Trace-distance and target-TV confidence balls make the P40 regularity obstruction directly computable.</text>
+
+  <rect x="65" y="155" width="410" height="205" rx="18" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="95" y="190" class="label">QUANTUM CONFIDENCE BALLS</text>
+  <text x="95" y="225" class="head">Per-preparation state control</text>
+  <text x="95" y="266" class="eq">D(ρx,ρ̂x) ≤ rx</text>
+  <text x="95" y="305" class="body">Simultaneously for every preparation.</text>
+  <text x="95" y="332" class="body">Coverage at least 1−αQ.</text>
+
+  <rect x="545" y="155" width="410" height="205" rx="18" fill="#f5f3ff" stroke="#8b5cf6"/>
+  <text x="575" y="190" class="label">PAIRWISE QUANTUM ENVELOPE</text>
+  <text x="575" y="225" class="head">Triangle inequality</text>
+  <text x="575" y="266" class="eq">Uball = min{1,D(ρ̂x,ρ̂x′)+rx+rx′}</text>
+  <text x="575" y="305" class="body">Upper-bounds every true pairwise trace</text>
+  <text x="575" y="332" class="body">distance compatible with the trace balls.</text>
+
+  <rect x="1025" y="155" width="410" height="205" rx="18" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="1055" y="190" class="label">TARGET CONFIDENCE BALLS</text>
+  <text x="1055" y="225" class="head">True-separation lower bound</text>
+  <text x="1055" y="266" class="eq">Lball=[TV(P̂x,P̂x′)−εx−εx′]+</text>
+  <text x="1055" y="305" class="body">Coverage at least 1−αY.</text>
+  <text x="1055" y="332" class="body">Independent definition from the quantum state.</text>
+
+  <path class="arrow" d="M475 258 H533"/>
+  <path class="arrow" d="M955 258 H1013"/>
+
+  <rect x="175" y="450" width="500" height="205" rx="18" fill="#fff7ed" stroke="#f97316"/>
+  <text x="205" y="485" class="label">DECLARED LIPSCHITZ BRIDGE</text>
+  <text x="205" y="520" class="head">Allowed target variation</text>
+  <text x="205" y="560" class="eq">TV(g(ρ),g(σ)) ≤ L D(ρ,σ)</text>
+  <text x="205" y="598" class="eq">allowed pair variation ≤ L Uball</text>
+  <text x="205" y="628" class="body">L is a bridge-model assumption, not a QM law.</text>
+
+  <rect x="825" y="450" width="500" height="205" rx="18" fill="#fff1f2" stroke="#e11d48"/>
+  <text x="855" y="485" class="label">END-TO-END OBSTRUCTION</text>
+  <text x="855" y="520" class="head">Finite-data regularity gap</text>
+  <text x="855" y="560" class="eq">Mball = Lball − L Uball</text>
+  <text x="855" y="598" class="eq">maxx≠x′ Mball &gt; 0 ⇒ obstruction</text>
+  <text x="855" y="628" class="body">Confidence at least max{0,1−αQ−αY}.</text>
+
+  <path class="arrow" d="M750 360 V410 H425 V438"/>
+  <path class="arrow" d="M1230 360 V410 H1075 V438"/>
+  <path class="arrow" d="M675 555 H813"/>
+
+  <rect x="70" y="735" width="1360" height="125" rx="18" fill="#0f172a"/>
+  <text x="105" y="775" style="font:700 12px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">SCIENTIFIC BOUNDARY</text>
+  <text x="105" y="813" style="font:600 18px Georgia,'Times New Roman',serif;fill:#f8fafc">positive trace-ball obstruction  ≠  proof that quantum mechanics is incomplete</text>
+  <text x="105" y="842" style="font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">The certificate applies only to the declared state confidence balls, target confidence bounds, and bridge regularity class.</text>
+</svg>
