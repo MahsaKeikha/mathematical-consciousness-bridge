@@ -443,7 +443,45 @@ P31 changes intervention labels only after a common response space is declared. 
 
 ---
 
-# 26. Candidate consciousness-theory feature families
+# 26. P32-P37 operational-scale closure
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(\eta_{a\times b}\le\eta_a+\eta_b\) | joint intervention-delay ambiguity budget | proved | [P33](proposition_33_joint_operational_quotient.md) |
+| \(D_G^{\mathrm{full}}\le2\rho_G^*+2\eta_{a\times b}\) | complete geometry-scale bound | proved | [P34](proposition_34_joint_p11_operational_scale.md) |
+| \(D_A^{\mathrm{full}}\le2\rho_A^*+2\eta_{a\times b}\) | complete directed-influence bound | proved | [P35](proposition_35_approximate_directed_influence_operational_quotient.md) |
+| \(|\kappa_\pi(P)-\kappa_\pi(Q)|\le(m+1)\|P-Q\|_{\mathrm{TV}}\) | partition-product perturbation bound | proved | [P36](proposition_36_partition_irreducibility_operational_quotient.md) |
+| complete P11 max-norm distortion budget | simultaneous G/A/K scale certificate | proved | [P37](proposition_37_complete_approximate_p11_operational_scale.md) |
+
+---
+
+# 27. P38 quantum operational sufficiency
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(x\mapsto\rho_x\in\mathcal D(\mathcal H)\) | declared finite-dimensional quantum operational descriptor | repository specialization of standard density-operator formalism | [P38](proposition_38_quantum_operational_sufficiency.md) |
+| \(\rho_x=\rho_{x'}\Rightarrow y(x)=y(x')\) | deterministic quantum sufficiency criterion | necessary and sufficient for factorization through the declared descriptor | [P38](proposition_38_quantum_operational_sufficiency.md) |
+| \(I(Y;X\mid\rho_X)=0\) | stochastic quantum sufficiency criterion | population criterion | [P38](proposition_38_quantum_operational_sufficiency.md) |
+| \(\rho_x=\rho_{x'}\) but \(y(x)\ne y(x')\) | exact descriptor-relative non-factorization witness | proved sufficient | [P38](proposition_38_quantum_operational_sufficiency.md) |
+
+---
+
+# 28. P39 finite-data quantum model-set non-factorization
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(\Pr(h_*\in\mathcal C_Q)\ge1-\alpha_Q\) | tomography model-set coverage assumption | declared input | [P39](proposition_39_finite_data_quantum_nonfactorization.md) |
+| \(L_{xx'}=[\|\widehat P_x-\widehat P_{x'}\|_{\mathrm{TV}}-\varepsilon_x-\varepsilon_{x'}]_+\) | lower confidence bound on true target-law separation | proved by triangle inequality | [P39](proposition_39_finite_data_quantum_nonfactorization.md) |
+| \(V(h)=\max_{q_h(x)=q_h(x')}L_{xx'}\) | model-specific P38 violation margin | repository definition | [P39](proposition_39_finite_data_quantum_nonfactorization.md) |
+| \(V_*=\min_{h\in\mathcal C_Q}V(h)\) | worst surviving quantum-model margin | repository definition | [P39](proposition_39_finite_data_quantum_nonfactorization.md) |
+| \(V_*>0\Rightarrow\) P38 non-factorization for the true declared model with confidence \(\ge1-\alpha_Q-\alpha_Y\) | finite-data robust model-set theorem | proved by simultaneous target bound plus union bound | [P39](proposition_39_finite_data_quantum_nonfactorization.md) |
+| small trace distance \(\not\Rightarrow\) exact state equality | blocks false collision certificates from noisy tomography | mathematical boundary | [P39](proposition_39_finite_data_quantum_nonfactorization.md) |
+
+P39 rejects only the declared quantum confidence set as sufficient for the independently defined target. It does not establish that quantum mechanics is incomplete or that the target is nonphysical.
+
+---
+
+# 29. Candidate consciousness-theory feature families
 
 The following are source-grounded translations into generic feature notation. They are not claims that each named theory reduces to one scalar or one universally agreed implementation.
 
@@ -460,7 +498,7 @@ Detailed caveats and source roles are maintained in [Candidate Theory Families](
 
 ---
 
-# 27. Citation discipline
+# 30. Citation discipline
 
 A result is cited as a repository result when the bridge-specific statement, construction, or counterexample is introduced here.
 
