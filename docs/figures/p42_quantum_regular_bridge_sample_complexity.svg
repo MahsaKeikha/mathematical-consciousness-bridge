@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="930" viewBox="0 0 1500 930" role="img" aria-labelledby="title desc">
+  <title id="title">P42 quantum regular-bridge sample complexity</title>
+  <desc id="desc">Finite-sample quantum and target radii, population regularity gap, uncertainty budget, and sufficient sample sizes.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .title{font:700 34px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .sub{font:400 17px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .head{font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .eq{font:600 16px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .label{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
+      .arrow{stroke:#64748b;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1500" height="930" fill="#ffffff"/>
+  <text x="70" y="65" class="title">P42 - Quantum Regular-Bridge Sample Complexity</text>
+  <text x="70" y="100" class="sub">A fixed IC measurement and categorical target model convert P41 uncertainty budgets into explicit per-preparation sample sizes.</text>
+
+  <rect x="65" y="150" width="420" height="215" rx="18" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="95" y="185" class="label">QUANTUM SAMPLING</text>
+  <text x="95" y="220" class="head">IC measurement + linear reconstruction</text>
+  <text x="95" y="260" class="eq">tQ = sqrt[log(2Km/αQ)/(2nQ)]</text>
+  <text x="95" y="297" class="eq">rQ = κR m tQ</text>
+  <text x="95" y="330" class="body">κR exposes conditioning of the chosen reconstruction.</text>
+
+  <rect x="540" y="150" width="420" height="215" rx="18" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="570" y="185" class="label">TARGET SAMPLING</text>
+  <text x="570" y="220" class="head">Categorical IID target observations</text>
+  <text x="570" y="260" class="eq">tY = sqrt[log(2Kk/αY)/(2nY)]</text>
+  <text x="570" y="297" class="eq">εY = (k/2)tY</text>
+  <text x="570" y="330" class="body">Both bounds are simultaneous over all preparations.</text>
+
+  <rect x="1015" y="150" width="420" height="215" rx="18" fill="#f5f3ff" stroke="#8b5cf6"/>
+  <text x="1045" y="185" class="label">POPULATION SIGNAL</text>
+  <text x="1045" y="220" class="head">Regularity gap</text>
+  <text x="1045" y="260" class="eq">Δ = dY − L dQ</text>
+  <text x="1045" y="297" class="eq">Δ &gt; 0</text>
+  <text x="1045" y="330" class="body">A positive gap is the design signal to be resolved.</text>
+
+  <path class="arrow" d="M485 258 H528"/>
+  <path class="arrow" d="M960 258 H1003"/>
+
+  <rect x="180" y="455" width="500" height="205" rx="18" fill="#fff7ed" stroke="#f97316"/>
+  <text x="210" y="490" class="label">FINITE-DATA MARGIN</text>
+  <text x="210" y="525" class="head">Two-sided confidence costs appear twice</text>
+  <text x="210" y="568" class="eq">M̂ ≥ Δ − 4εY − 4LrQ</text>
+  <text x="210" y="608" class="body">The factor 4 includes empirical deviation and the</text>
+  <text x="210" y="633" class="body">confidence envelope used by the actual certificate.</text>
+
+  <rect x="820" y="455" width="500" height="205" rx="18" fill="#fff1f2" stroke="#e11d48"/>
+  <text x="850" y="490" class="label">SUFFICIENT SAMPLE SIZES</text>
+  <text x="850" y="525" class="head">Allocate λΔ to target uncertainty</text>
+  <text x="850" y="568" class="eq">nY ≥ 2k² log(2Kk/αY)/(λ²Δ²)</text>
+  <text x="850" y="605" class="eq">nQ ≥ 8L²κR²m² log(2Km/αQ)/((1−λ)²Δ²)</text>
+  <text x="850" y="635" class="body">Both scale as Δ⁻²; quantum cost scales as L²κR².</text>
+
+  <path class="arrow" d="M750 365 V415 H430 V443"/>
+  <path class="arrow" d="M680 558 H808"/>
+
+  <rect x="70" y="745" width="1360" height="120" rx="18" fill="#0f172a"/>
+  <text x="105" y="782" style="font:700 12px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">SCIENTIFIC BOUNDARY</text>
+  <text x="105" y="818" style="font:600 18px Georgia,'Times New Roman',serif;fill:#f8fafc">enough samples for one declared regularity test ≠ quantum incompleteness</text>
+  <text x="105" y="846" style="font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">The theorem is conditional on the fixed IC measurement, reconstruction map, IID models, system boundary, independent target definition, and declared Lipschitz bridge class.</text>
+</svg>

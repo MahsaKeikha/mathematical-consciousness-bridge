@@ -511,7 +511,24 @@ P41 assumes valid simultaneous confidence balls. It does not itself derive their
 
 ---
 
-# 31. Candidate consciousness-theory feature families
+# 31. P42 quantum regular-bridge sample complexity
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(\frac12\|R(v)\|_1\le\kappa_R\|v\|_1\) | conditioning bound for the declared linear IC reconstruction | declared tomography-design assumption | [P42](proposition_42_quantum_regular_bridge_sample_complexity.md) |
+| \(t_Q=\sqrt{\log(2Km/\alpha_Q)/(2n_Q)}\) | simultaneous coordinate-frequency radius over the IC experiment | Hoeffding plus union bound | standard concentration; [P42](proposition_42_quantum_regular_bridge_sample_complexity.md) |
+| \(r_Q=\kappa_Rmt_Q\) | simultaneous raw-reconstruction half-trace-norm radius | proved from reconstruction stability and the frequency bound | [P42](proposition_42_quantum_regular_bridge_sample_complexity.md) |
+| \(\varepsilon_Y=\frac{k}{2}\sqrt{\log(2Kk/\alpha_Y)/(2n_Y)}\) | simultaneous categorical target-TV radius | Hoeffding plus union bound | standard concentration; [P42](proposition_42_quantum_regular_bridge_sample_complexity.md) |
+| \(\Delta=d_Y-Ld_Q\) | population regularity gap for one preparation pair | repository design quantity | [P42](proposition_42_quantum_regular_bridge_sample_complexity.md) |
+| \(\widehat M\ge\Delta-4\varepsilon_Y-4Lr_Q\) | finite-data lower bound on the empirical P41 obstruction margin | proved | [P42](proposition_42_quantum_regular_bridge_sample_complexity.md) |
+| \(n_Y\ge2k^2\log(2Kk/\alpha_Y)/(\lambda^2\Delta^2)\) | sufficient target samples per preparation | proved by uncertainty-budget allocation | [P42](proposition_42_quantum_regular_bridge_sample_complexity.md) |
+| \(n_Q\ge8L^2\kappa_R^2m^2\log(2Km/\alpha_Q)/((1-\lambda)^2\Delta^2)\) | sufficient quantum samples per preparation | proved by uncertainty-budget allocation | [P42](proposition_42_quantum_regular_bridge_sample_complexity.md) |
+
+P42 uses a fixed informationally complete measurement, a declared linear reconstruction stability constant, and IID categorical sampling. The coordinate Hoeffding construction is conservative. The raw linear reconstruction need not be a physical density operator. The theorem does not establish quantum incompleteness or consciousness.
+
+---
+
+# 32. Candidate consciousness-theory feature families
 
 The following are source-grounded translations into generic feature notation. They are not claims that each named theory reduces to one scalar or one universally agreed implementation.
 
@@ -528,7 +545,7 @@ Detailed caveats and source roles are maintained in [Candidate Theory Families](
 
 ---
 
-# 32. Citation discipline
+# 33. Citation discipline
 
 A result is cited as a repository result when the bridge-specific statement, construction, or counterexample is introduced here.
 

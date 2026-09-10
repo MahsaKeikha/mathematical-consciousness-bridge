@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.42.0 - 2026-09-09
+
+### Added
+- Proposition 42: quantum regular-bridge sample complexity for a fixed informationally complete measurement and categorical IID target model.
+- Explicit simultaneous quantum reconstruction radius controlled by the linear reconstruction stability constant \(\kappa_R\).
+- Explicit simultaneous categorical target total-variation radius.
+- Population regularity-gap theorem \(\widehat M\ge\Delta-4\varepsilon_Y-4Lr_Q\).
+- General gap-allocation sample-size formulas and balanced-allocation corollary.
+- Executable sample-complexity utilities, dedicated regression tests, and a publication theorem map.
+
+### Corrected
+- Repaired two malformed LaTeX escape sequences in the published P41 proof.
+- Clarified that raw linear tomography reconstructions need not be physical density operators and their trace-norm reconstruction radius is not restricted to the unit interval.
+
+### Scientific boundary
+- P42 is conditional on the declared IC measurement, linear reconstruction map, IID sampling model, system boundary, independent target definition, and Lipschitz bridge class.
+- The theorem supplies a sufficient experimental sample size for one declared regularity obstruction. It does not establish quantum incompleteness or consciousness.
+
 ## 0.41.0 - 2026-09-09
 
 ### Added
