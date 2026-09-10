@@ -32,6 +32,8 @@ This roadmap records the current proved mathematical chain and the open route to
 
 ![P50 bounded-starvation asynchronous sampling](figures/p50_bounded_starvation_asynchronous_sampling.svg)
 
+![P51 heterogeneous finite-window service-rate stopping](figures/p51_heterogeneous_service_rate_stopping.svg)
+
 ---
 
 # 1. Complete proposition index
@@ -88,6 +90,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P48](proposition_48_gap_dependent_stopping_complexity.md) | explicit inversion of a logarithmic confidence-sequence envelope plus margin perturbation bounds | gap-dependent positive/all-negative stopping epochs and pruning-aware acquisition-cost upper bound | proved sequential stopping-complexity theorem |
 | [P49](proposition_49_dyadic_stopping_overhead.md) | dyadic ceiling geometry and deterministic checkpoint-count bound | logarithmic complete certification looks with strictly less than twofold stopping-threshold and linear-cost overhead | proved sequential scheduling theorem |
 | [P50](proposition_50_bounded_starvation_asynchronous_sampling.md) | finite-window H-fair service guarantee plus P48 local stopping thresholds | finite global-round stopping for asynchronous priority sampling and a no-progress impossibility result without fairness | proved asynchronous scheduling theorem |
+| [P51](proposition_51_heterogeneous_service_rate_stopping.md) | preparation-specific finite-window quotas and exact endpoint service bottlenecks | instance-dependent positive/all-negative global stopping bounds with P50 as a special case | proved heterogeneous scheduling theorem |
 
 ---
 

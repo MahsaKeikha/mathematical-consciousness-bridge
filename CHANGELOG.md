@@ -1,3 +1,13 @@
+# 0.51.0 - 2026-09-10
+
+- Add P51 heterogeneous finite-window service-rate stopping.
+- Replace one common P50 starvation horizon with preparation-specific windows and quotas.
+- Prove exact finite-time local-count growth and endpoint threshold inversion.
+- Derive edge bottleneck times and instance-dependent positive/all-negative global stopping bounds.
+- Recover P50 exactly as the quota-one common-window special case.
+- Preserve dynamic pruning and distinguish finite-window guarantees from asymptotic service-rate heuristics.
+- Add implementation, regression tests, theorem visual, and equation-map provenance.
+
 # 0.50.0 - 2026-09-10
 
 - Add P50 bounded-starvation asynchronous sampling.

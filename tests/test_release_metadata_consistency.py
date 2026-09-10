@@ -6,9 +6,9 @@ def test_release_versions_are_synchronized():
     readme = Path("README.md").read_text(encoding="utf-8")
     pyproject = Path("pyproject.toml").read_text(encoding="utf-8")
     citation = Path("CITATION.cff").read_text(encoding="utf-8")
-    assert "version-0.50.0-2563eb" in readme
-    assert re.search(r'^version = "0\.50\.0"$', pyproject, re.MULTILINE)
-    assert re.search(r'^version: 0\.50\.0$', citation, re.MULTILINE)
+    assert "version-0.51.0-2563eb" in readme
+    assert re.search(r'^version = "0\.51\.0"$', pyproject, re.MULTILINE)
+    assert re.search(r'^version: 0\.51\.0$', citation, re.MULTILINE)
 
 
 def test_quantum_publication_paths_are_visible():
@@ -62,5 +62,9 @@ def test_quantum_publication_paths_are_visible():
         "p50_bounded_starvation_asynchronous_sampling.svg",
         "bounded_starvation_sampling.py",
         "test_bounded_starvation_sampling.py",
+        "Proposition 51",
+        "p51_heterogeneous_service_rate_stopping.svg",
+        "heterogeneous_service_stopping.py",
+        "test_heterogeneous_service_stopping.py",
     ):
         assert token in readme

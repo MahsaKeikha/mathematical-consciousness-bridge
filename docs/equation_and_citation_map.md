@@ -690,3 +690,16 @@ P49 changes checkpoint frequency only. Statistical validity remains inherited fr
 
 P50 is a progress/scheduling theorem. It does not alter the scientific meaning of the underlying regularity margin.
 
+---
+
+# 40. P51 heterogeneous finite-window service-rate stopping
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \((W_i,q_i)\) | preparation-specific finite-window service guarantee | repository definition | [P51](proposition_51_heterogeneous_service_rate_stopping.md) |
+| \(N_i(T)\ge q_i\lfloor T/W_i\rfloor\) | finite-time local-count growth | proved block-counting theorem | [P51](proposition_51_heterogeneous_service_rate_stopping.md) |
+| \(T_i(N)=W_i\lceil N/q_i\rceil\) | sufficient global rounds for endpoint local threshold | proved inversion of the service bound | [P51](proposition_51_heterogeneous_service_rate_stopping.md) |
+| \(T_e=\max\{T_i(N_e),T_j(N_e)\}\) | edge service bottleneck | proved endpoint assembly | [P51](proposition_51_heterogeneous_service_rate_stopping.md) |
+| \(T_+=\min_{M_e>0}T_e\) | positive-witness global stopping bound | proved from P47-P48 plus P51 service | [P51](proposition_51_heterogeneous_service_rate_stopping.md) |
+| \(T_-=\max_eT_e\) | all-negative global stopping bound | proved from P47-P48 plus P51 service | [P51](proposition_51_heterogeneous_service_rate_stopping.md) |
+
