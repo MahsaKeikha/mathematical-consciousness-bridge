@@ -1,3 +1,13 @@
+# 0.49.0 - 2026-09-10
+
+- Add P49 dyadic certification schedules for P48 stopping thresholds.
+- Prove the exact dyadic ceiling bound N <= D(N) < 2N.
+- Reduce complete certification evaluations to ceil(log2 N)+1 looks.
+- Prove less-than-two positive-witness and all-negative stopping overhead.
+- Preserve the P48 zero-gap boundary and P47 simultaneous-validity guarantee.
+- Extend the less-than-two factor to linear full-family acquisition-cost bounds.
+- Add implementation, regression tests, theorem visual, and equation-map provenance.
+
 # 0.48.0 - 2026-09-10
 
 - Add P48 gap-dependent stopping complexity for the P47 sequential witness graph.
