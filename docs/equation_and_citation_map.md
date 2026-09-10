@@ -745,3 +745,16 @@ P53 quantifies deterministic threshold burden after valid pruning; it does not i
 
 The metric assumption is structural: without triangle inequality the batching inequality and Hamiltonian-path reduction need not hold.
 
+---
+
+# 44. P55 pruning-aware metric switching-cost monotonicity
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(S(r')\subseteq S(r)\) for \(r'\le r\) | support nesting under componentwise residual decrease | immediate consequence | [P55](proposition_55_pruning_aware_switching_monotonicity.md) |
+| \(L^*(S(r');s)\le L^*(S(r);s)\) | optimal metric route monotonicity under support deletion | proved by shortcutting | [P55](proposition_55_pruning_aware_switching_monotonicity.md) |
+| \(C^*(r;s)-C^*(r';s)=a(\sum r_i-\sum r_i')+[L^*(S(r);s)-L^*(S(r');s)]\) | exact deterministic optimal cost-release decomposition | proved by P54 subtraction plus route monotonicity | [P55](proposition_55_pruning_aware_switching_monotonicity.md) |
+| \(0\le\Delta_{\rm shortcut}\le L^*(S(r);s)-L^*(S(r');s)\) | computable lower certificate on route release | proved from retained old optimal route | [P55](proposition_55_pruning_aware_switching_monotonicity.md) |
+
+P55 compares states under one fixed metric and fixed start/setup state. A moving start requires a separate stability theorem.
+
