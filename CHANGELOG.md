@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.39.0 - 2026-09-09
+
+### Added
+- Proposition 39: finite-data quantum model-set non-factorization certification.
+- A target-law separation lower bound with simultaneous total-variation uncertainty.
+- A worst-model violation margin over a tomography-derived quantum confidence set.
+- Explicit proof that numerical quantum-state closeness is not exact state equality.
+- A guard showing that any surviving injective quantum model blocks the collision certificate.
+- Executable implementation, nine regression tests, and a publication theorem map.
+
+### Scientific boundary
+- P39 certifies non-factorization only relative to the declared quantum hypothesis family and its confidence set.
+- It does not prove quantum mechanics incomplete, consciousness nonphysical, or any target experiential without independent justification.
+
 ## 0.38.0 - 2026-09-09
 
 ### Integrated theorem sequence

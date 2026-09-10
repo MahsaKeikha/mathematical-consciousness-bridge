@@ -1,7 +1,7 @@
 # Mathematical Consciousness Bridge
 
 [![tests](https://github.com/MahsaKeikha/mathematical-consciousness-bridge/actions/workflows/test.yml/badge.svg)](https://github.com/MahsaKeikha/mathematical-consciousness-bridge/actions/workflows/test.yml)
-[![version](https://img.shields.io/badge/version-0.38.0-2563eb)](CITATION.cff)
+[![version](https://img.shields.io/badge/version-0.39.0-2563eb)](CITATION.cff)
 [![license](https://img.shields.io/badge/license-MIT-059669)](LICENSE)
 
 **Mahsa Keikha, PhD**
@@ -40,11 +40,11 @@ This project continues **[Spatiotemporal Observer Mathematics](https://github.co
 
 Physics can describe states, fields, probability amplitudes, density operators, spacetime, Hamiltonians, open-system dynamics, thermodynamics, interventions, measurements, and statistical predictions without by itself defining subjective experience. A mathematically serious consciousness theory therefore requires a separately specified bridge between physically meaningful equivalence classes and formally defined experiential equivalence classes.
 
-The program here makes that bridge itself an object of mathematics. Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design. **P11** introduces intervention-resolved causal structure as a structured physical candidate rather than a scalar. **P12-P13** prove constructive insufficiency and component irredundancy results. **P14-P15** formalize temporal continuation and finite-error temporal certification. **P16** gives an independent-composition null model and response-level coupling defect. **P17** proves total-variation contraction and exact refinement ambiguity under deterministic coarse-graining. **P18** proves a quantitative scale-sufficiency certificate based on approximate reconstruction. **P19** proves exact deterministic and stochastic criteria for whether an independently defined target factors through a declared physical descriptor, together with a differential no-go test. **P20** converts the P19 stochastic population residual into an explicit finite-sample confidence certificate under a declared finite-alphabet IID model. **P21** then proves how that residual behaves under nested physical-descriptor refinement: unresolved deterministic collisions can only disappear, while the stochastic residual decreases by exactly the target-relevant information supplied by the added physical detail. **P22** gives a simultaneous finite-sample certificate for the entire declared refinement chain from one shared confidence event on the empirical physical-target law. **P23** proves that the same shared base confidence event also supports fixed-sample data-dependent selection among admissible deterministic refinements, together with an explicit near-optimality bound for the selected refinement. **P24** converts that fixed-sample result into an anytime-valid certificate by allocating the total error budget across all positive sample sizes, giving simultaneous repeated-look and finite stopping-time validity under the declared finite-alphabet IID model. **P25** returns to the P11 physical candidate and proves a directed-influence scale theorem: deterministic target coarse observation cannot increase matched-intervention influence, and P18 reconstruction defect bounds the loss by twice the uniform reconstruction error. **P26** extends the same physical scale program to P11 partition irreducibility: block-compatible coarse observation cannot increase the distance from the declared partition-product null, and P18 reconstruction separately controls the actual response law and its factorized reference. **P27** then allows the node set itself to change: a fine partition descends through a surjective node aggregation exactly when it is saturated by the aggregation fibers, the surviving partitions form a lattice isomorphic to the coarse partition lattice, and P18 controls any remaining irreducibility loss under an aggregation-compatible state map. **P28** transports the P11 directed-influence branch through the same changing node set by giving an exact compatibility criterion for matched intervention-pair source labels, pooling only inherited comparisons within each aggregate source, and applying P25/P18 control to the full fine target fiber before target-state aggregation. **P29** transports the complete P11 response geometry on a fixed intervention-delay grid: every pairwise total-variation response distance contracts under node aggregation, while P18 reconstruction bounds the sup-norm distortion of the entire indexed geometry by twice the uniform reconstruction defect. **P30** then assembles the P27 partition, P28 directed-influence, and P29 response-geometry branches under one shared node quotient, experiment grid, state map, and reconstruction declaration, yielding a simultaneous P11 distortion certificate while proving that zero numerical distortion cannot compensate for failed semantic compatibility. **P31** formalizes intervention-label quotienting itself: a many-to-one intervention map defines a unique coarse response law exactly when every retained response law is constant on each intervention fiber, and the quotient ambiguity defect quantifies representative dependence when exact descent fails. **P32** gives the corresponding exact delay quotient. **P33** proves joint intervention-delay quotient descent and the additive ambiguity bound. **P34** assembles node, state, intervention, and delay scale maps under one declared transformation. **P35** proves approximate directed-influence stability. **P36** propagates response ambiguity through partition-product irreducibility. **P37** combines all three P11 branches into one complete approximate operational-scale certificate. **P38** then specializes the physical-sufficiency program to a tomographically complete finite-dimensional quantum state descriptor and states the exact quantum non-factorization witness.
+The program here makes that bridge itself an object of mathematics. Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design. **P11** introduces intervention-resolved causal structure as a structured physical candidate rather than a scalar. **P12-P13** prove constructive insufficiency and component irredundancy results. **P14-P15** formalize temporal continuation and finite-error temporal certification. **P16** gives an independent-composition null model and response-level coupling defect. **P17** proves total-variation contraction and exact refinement ambiguity under deterministic coarse-graining. **P18** proves a quantitative scale-sufficiency certificate based on approximate reconstruction. **P19** proves exact deterministic and stochastic criteria for whether an independently defined target factors through a declared physical descriptor, together with a differential no-go test. **P20** converts the P19 stochastic population residual into an explicit finite-sample confidence certificate under a declared finite-alphabet IID model. **P21** then proves how that residual behaves under nested physical-descriptor refinement: unresolved deterministic collisions can only disappear, while the stochastic residual decreases by exactly the target-relevant information supplied by the added physical detail. **P22** gives a simultaneous finite-sample certificate for the entire declared refinement chain from one shared confidence event on the empirical physical-target law. **P23** proves that the same shared base confidence event also supports fixed-sample data-dependent selection among admissible deterministic refinements, together with an explicit near-optimality bound for the selected refinement. **P24** converts that fixed-sample result into an anytime-valid certificate by allocating the total error budget across all positive sample sizes, giving simultaneous repeated-look and finite stopping-time validity under the declared finite-alphabet IID model. **P25** returns to the P11 physical candidate and proves a directed-influence scale theorem: deterministic target coarse observation cannot increase matched-intervention influence, and P18 reconstruction defect bounds the loss by twice the uniform reconstruction error. **P26** extends the same physical scale program to P11 partition irreducibility: block-compatible coarse observation cannot increase the distance from the declared partition-product null, and P18 reconstruction separately controls the actual response law and its factorized reference. **P27** then allows the node set itself to change: a fine partition descends through a surjective node aggregation exactly when it is saturated by the aggregation fibers, the surviving partitions form a lattice isomorphic to the coarse partition lattice, and P18 controls any remaining irreducibility loss under an aggregation-compatible state map. **P28** transports the P11 directed-influence branch through the same changing node set by giving an exact compatibility criterion for matched intervention-pair source labels, pooling only inherited comparisons within each aggregate source, and applying P25/P18 control to the full fine target fiber before target-state aggregation. **P29** transports the complete P11 response geometry on a fixed intervention-delay grid: every pairwise total-variation response distance contracts under node aggregation, while P18 reconstruction bounds the sup-norm distortion of the entire indexed geometry by twice the uniform reconstruction defect. **P30** then assembles the P27 partition, P28 directed-influence, and P29 response-geometry branches under one shared node quotient, experiment grid, state map, and reconstruction declaration, yielding a simultaneous P11 distortion certificate while proving that zero numerical distortion cannot compensate for failed semantic compatibility. **P31** formalizes intervention-label quotienting itself: a many-to-one intervention map defines a unique coarse response law exactly when every retained response law is constant on each intervention fiber, and the quotient ambiguity defect quantifies representative dependence when exact descent fails. **P32** gives the corresponding exact delay quotient. **P33** proves joint intervention-delay quotient descent and the additive ambiguity bound. **P34** assembles node, state, intervention, and delay scale maps under one declared transformation. **P35** proves approximate directed-influence stability. **P36** propagates response ambiguity through partition-product irreducibility. **P37** combines all three P11 branches into one complete approximate operational-scale certificate. **P38** then specializes the physical-sufficiency program to a tomographically complete finite-dimensional quantum state descriptor and states the exact quantum non-factorization witness. **P39** converts that exact population criterion into a finite-data model-set certificate that carries tomography-model uncertainty and target-distribution uncertainty without treating numerical closeness as exact quantum-state equality.
 
 A new quantum-foundations layer now asks a sharper question. Suppose the declared quantum description is operationally complete with respect to the state, admissible channels, and all declared measurement statistics. What exact mathematical evidence would be required to show that an independently defined experiential variable does **not** factor through that quantum operational state? This is formulated as an open non-reducibility theorem target. It is not an assumption that consciousness is quantum or that quantum theory is incomplete.
 
-The public research record now contains **38 proposition-level results, 58 equation-driven quantitative figures, quantum and classical physical maps, reproducible numerical examples, counterexamples, and a multi-version Python test matrix**.
+The public research record now contains **39 proposition-level results, 58 equation-driven quantitative figures, quantum and classical physical maps, reproducible numerical examples, counterexamples, and a multi-version Python test matrix**.
 
 ---
 
@@ -81,7 +81,7 @@ A reader should not need to search the repository to understand the argument. Th
 
 | What you want to inspect | Direct link | What is there |
 | --- | --- | --- |
-| complete theorem chain | [Theorem Roadmap](docs/theorem_roadmap.md) | P1 through P38 with explicit dependency branches |
+| complete theorem chain | [Theorem Roadmap](docs/theorem_roadmap.md) | P1 through P39 with explicit dependency branches |
 | equation provenance | [Equation and Citation Map](docs/equation_and_citation_map.md) | standard results, repository definitions, proofs, and external sources separated explicitly |
 | population physical-sufficiency theorem | [Proposition 19](docs/proposition_19_fundamental_physical_sufficiency.md) | deterministic factorization, stochastic sufficiency, and local rank obstruction |
 | finite-sample residual theorem | [Proposition 20](docs/proposition_20_finite_sample_residual_certification.md) | confidence interval for the P19 conditional-information residual |
@@ -103,6 +103,7 @@ A reader should not need to search the repository to understand the argument. Th
 | partition quotient stability | [Proposition 36](docs/proposition_36_partition_irreducibility_operational_quotient.md) | product-reference perturbation and irreducibility stability |
 | complete approximate P11 scale | [Proposition 37](docs/proposition_37_complete_approximate_p11_operational_scale.md) | one quantitative distortion budget for G, A, and K |
 | quantum operational sufficiency | [Proposition 38](docs/proposition_38_quantum_operational_sufficiency.md) | exact factorization and non-factorization criterion for a tomographically complete quantum descriptor |
+| finite-data quantum non-factorization | [Proposition 39](docs/proposition_39_finite_data_quantum_nonfactorization.md) | confidence-set rejection of declared quantum state-fiber models with explicit target uncertainty |
 | fundamental-theory program | [Fundamental Theory to Consciousness](docs/fundamental_theory_consciousness_program.md) | candidate fundamental state, physical quotients, experiential quotient, and falsifiable bridge program |
 | stochastic extension | [Stochastic Fundamental Bridge](docs/stochastic_fundamental_bridge.md) | Markov-kernel and conditional-information formulation |
 | empirical falsification | [Falsification Program](docs/falsification_program.md) | conditions that would weaken or defeat a bridge claim |
@@ -128,6 +129,7 @@ A reader should not need to search the repository to understand the argument. Th
 | implementation of P35 | [directed_influence_operational_quotient.py](src/consciousness_bridge/directed_influence_operational_quotient.py) | directed-influence quotient stability |
 | implementation of P37 | [complete_p11_operational_scale.py](src/consciousness_bridge/complete_p11_operational_scale.py) | complete approximate P11 scale budget |
 | implementation of P38 | [quantum_operational_sufficiency.py](src/consciousness_bridge/quantum_operational_sufficiency.py) | quantum operational factorization and residual utilities |
+| implementation of P39 | [finite_data_quantum_nonfactorization.py](src/consciousness_bridge/finite_data_quantum_nonfactorization.py) | finite-data quantum model-set non-factorization certificate |
 
 Every local documentation and figure link is checked by automated tests. Broken internal links therefore fail CI instead of remaining silently in the public research record.
 
@@ -169,6 +171,7 @@ Every local documentation and figure link is checked by automated tests. Broken 
 | **11.12 P36 partition quotient stability** | How does response ambiguity propagate through a partition-product reference? |
 | **11.13 P37 complete approximate P11 scale** | What is the full simultaneous distortion budget for G, A, and K? |
 | **11.14 P38 quantum operational sufficiency** | Does an independently defined target factor through a tomographically complete quantum state descriptor? |
+| **11.15 P39 finite-data quantum non-factorization** | Can finite data reject every quantum state-fiber hypothesis that survives the declared tomography analysis? |
 | **12. Observer handoff** | How does world-tube identification feed the bridge program? |
 | **13. Empirical interface** | What do perturbational and state-dependent observations actually constrain? |
 | **14. Competing theories** | How are alternative theories translated into a common empirical interface? |
@@ -182,7 +185,7 @@ Every local documentation and figure link is checked by automated tests. Broken 
 
 | Research record | Current state |
 | --- | ---: |
-| proposition-level results | **38** |
+| proposition-level results | **39** |
 | equation-driven classical/causal quantitative figures | **40** |
 | equation-driven quantum-foundations figures | **18** |
 | total equation-driven quantitative figures | **58** |
@@ -192,7 +195,7 @@ Every local documentation and figure link is checked by automated tests. Broken 
 | fundamental-theory factorization test | **formal open theorem + experiment target** |
 | automated tests | **160+ and expanding** |
 | CI matrix | **Python 3.10, 3.11, 3.12** |
-| research-software version | **0.38.0** |
+| research-software version | **0.39.0** |
 
 ---
 
@@ -1676,7 +1679,7 @@ A complete empirical bridge theory must specify
 
 ---
 
-# 7. Theorem roadmap - P1 through P38
+# 7. Theorem roadmap - P1 through P39
 
 ![Theorem roadmap](docs/figures/theorem_roadmap.svg)
 
@@ -1720,6 +1723,7 @@ A complete empirical bridge theory must specify
 | **P36** | m-block partition irreducibility changes by at most (m+1) times response-law ambiguity | proved product-reference perturbation theorem | [P36](docs/proposition_36_partition_irreducibility_operational_quotient.md) |
 | **P37** | response geometry, directed influence, and partition irreducibility admit one complete approximate P11 operational-scale budget | proved complete scale theorem | [P37](docs/proposition_37_complete_approximate_p11_operational_scale.md) |
 | **P38** | an independently defined target factors through a tomographically complete quantum state iff it is constant on quantum-state fibers; an exact collision proves non-factorization through that declared descriptor | proved quantum sufficiency theorem | [P38](docs/proposition_38_quantum_operational_sufficiency.md) |
+| **P39** | simultaneous target-TV lower bounds are checked against every exact state-fiber hypothesis in a tomography confidence set; a positive worst-model margin certifies P38 non-factorization for the true declared model | proved finite-data model-set theorem | [P39](docs/proposition_39_finite_data_quantum_nonfactorization.md) |
 
 ---
 
@@ -3020,6 +3024,88 @@ The next theorem burden is finite-data quantum non-factorization certification: 
 
 [Read Proposition 38](docs/proposition_38_quantum_operational_sufficiency.md). The [P38 theorem map](docs/figures/p38_quantum_operational_sufficiency.svg), [implementation](src/consciousness_bridge/quantum_operational_sufficiency.py), and [tests](tests/test_quantum_operational_sufficiency.py) expose the proof-to-code path.
 
+## 13.12 P39 - finite-data quantum model-set non-factorization
+
+![P39 finite-data quantum model-set non-factorization](docs/figures/p39_finite_data_quantum_nonfactorization.svg)
+
+P38 is exact, but finite noisy tomography does not justify replacing equality of quantum states by a numerical closeness threshold. Distinct density operators can have arbitrarily small trace distance, so
+
+\[
+\boxed{
+\text{small tomography distance}
+\not\Rightarrow
+\text{exact quantum-state equality}.
+}
+\]
+
+P39 therefore uses a declared finite quantum hypothesis family \(\mathfrak H_Q\). Each hypothesis \(h\) explicitly specifies exact operational-state fibers through \(q_h\). A tomography analysis returns a confidence set \(\mathcal C_Q\) with
+
+\[
+\boxed{\Pr(h_*\in\mathcal C_Q)\ge1-\alpha_Q.}
+\]
+
+For independently defined target laws, let simultaneous total-variation confidence radii satisfy
+
+\[
+\Pr\left(\|P_x-\widehat P_x\|_{\mathrm{TV}}\le\varepsilon_x\ \forall x\right)
+\ge1-\alpha_Y.
+\]
+
+Define
+
+\[
+\boxed{
+L_{xx'}=
+\left[\|\widehat P_x-\widehat P_{x'}\|_{\mathrm{TV}}-\varepsilon_x-\varepsilon_{x'}\right]_+.
+}
+\]
+
+For one candidate quantum hypothesis,
+
+\[
+\boxed{V(h)=\max_{q_h(x)=q_h(x')}L_{xx'}.}
+\]
+
+A positive \(V(h)\) certifies a same-state pair whose true target laws differ on the target-confidence event. Over the complete tomography confidence set define
+
+\[
+\boxed{V_*=\min_{h\in\mathcal C_Q}V(h).}
+\]
+
+P39 proves
+
+\[
+\boxed{
+V_*>0
+\Longrightarrow
+\text{the true declared quantum hypothesis fails P38 stochastic factorization}
+}
+\]
+
+with confidence at least
+
+\[
+\boxed{1-\alpha_Q-\alpha_Y.}
+\]
+
+An injective surviving hypothesis has no same-state collision and therefore gives \(V(h)=0\), correctly blocking this certificate. The theorem therefore cannot manufacture non-factorization merely from target differences.
+
+The interpretation boundary is strict:
+
+\[
+\boxed{
+\text{all models in the declared quantum confidence set fail target factorization}
+\neq
+\text{quantum mechanics is incomplete}.
+}
+\]
+
+A positive certificate can still reflect an overly narrow model family, an incorrect system boundary, omitted environmental degrees of freedom, preparation misspecification, target-measurement error, or nonstationarity. For an experiential application, the target must additionally be justified independently of the physical variables under test.
+
+The next theorem target is continuous-region robust quantum sufficiency, replacing the finite hypothesis set by a physically admissible continuous confidence region and minimizing a factorization discrepancy over that entire region.
+
+[Read Proposition 39](docs/proposition_39_finite_data_quantum_nonfactorization.md). The [P39 theorem map](docs/figures/p39_finite_data_quantum_nonfactorization.svg), [implementation](src/consciousness_bridge/finite_data_quantum_nonfactorization.py), and [tests](tests/test_finite_data_quantum_nonfactorization.py) expose the complete proof-to-code path.
+
 ---
 
 # 14. Observer-to-bridge handoff
@@ -3233,7 +3319,7 @@ Regenerate the 18 quantum-foundations figures:
 python scripts/generate_quantum_foundations_atlas.py
 ```
 
-The repository includes separate GitHub Actions workflows for both generated atlases. The main-page tests require the full Q01-Q40 sequence, the full QM01-QM18 sequence, the P1-P29 proposition chain, and the canonical scientific maps to remain visible in this README.
+The repository includes separate GitHub Actions workflows for both generated atlases. The main-page tests require the full Q01-Q40 sequence, the full QM01-QM18 sequence, the P1-P39 proposition chain, and the canonical scientific maps to remain visible in this README.
 
 The code audits representation invariance, theory discrimination, feature sufficiency, experimental recovery, finite-error certification, sample complexity, causal response geometry, directed influence, partition irreducibility, compression collisions, temporal metrics, composition, coupling, coarse-graining, scale sufficiency, fundamental residual certification, quantum normalization, uncertainty, decoherence, entropy, entanglement, Bell bounds, trace-distance contraction, figure inventories, documentation integrity, and visual publication quality.
 

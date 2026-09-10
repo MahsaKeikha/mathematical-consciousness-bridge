@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="930" viewBox="0 0 1500 930" role="img" aria-labelledby="title desc">
+  <title id="title">P39 finite-data quantum model-set non-factorization</title>
+  <desc id="desc">Tomography confidence set, target uncertainty, model-specific violation margins, robust certificate, and scientific boundary.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .title{font:700 34px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .sub{font:400 17px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .head{font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .eq{font:600 17px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .label{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
+      .arrow{stroke:#64748b;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1500" height="930" fill="#ffffff"/>
+  <text x="70" y="65" class="title">P39 - Finite-Data Quantum Model-Set Non-Factorization</text>
+  <text x="70" y="100" class="sub">Finite data certify a model-class-relative contradiction only after quantum and target uncertainty are carried explicitly.</text>
+
+  <rect x="65" y="155" width="410" height="205" rx="18" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="95" y="190" class="label">QUANTUM UNCERTAINTY</text>
+  <text x="95" y="225" class="head">Tomography confidence set</text>
+  <text x="95" y="265" class="eq">CQ ⊂ HQ</text>
+  <text x="95" y="300" class="eq">Pr(h* ∈ CQ) ≥ 1−αQ</text>
+  <text x="95" y="333" class="body">Each h encodes exact operational-state fibers.</text>
+
+  <rect x="545" y="155" width="410" height="205" rx="18" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="575" y="190" class="label">TARGET UNCERTAINTY</text>
+  <text x="575" y="225" class="head">Simultaneous TV confidence</text>
+  <text x="575" y="265" class="eq">||Px−P̂x||TV ≤ εx  for all x</text>
+  <text x="575" y="300" class="eq">Pr(event) ≥ 1−αY</text>
+  <text x="575" y="333" class="body">Target definition remains independent of qh.</text>
+
+  <rect x="1025" y="155" width="410" height="205" rx="18" fill="#fff7ed" stroke="#f97316"/>
+  <text x="1055" y="190" class="label">PAIRWISE LOWER BOUND</text>
+  <text x="1055" y="225" class="head">Certified target separation</text>
+  <text x="1055" y="265" class="eq">Lxx′=[TV(P̂x,P̂x′)−εx−εx′]+</text>
+  <text x="1055" y="305" class="body">Lxx′ &gt; 0 proves the true target laws differ</text>
+  <text x="1055" y="330" class="body">on the simultaneous target-confidence event.</text>
+
+  <path class="arrow" d="M475 258 H533"/>
+  <path class="arrow" d="M955 258 H1013"/>
+
+  <rect x="170" y="445" width="500" height="205" rx="18" fill="#f5f3ff" stroke="#8b5cf6"/>
+  <text x="200" y="480" class="label">MODEL-SPECIFIC P38 VIOLATION</text>
+  <text x="200" y="515" class="head">Search only exact state fibers of h</text>
+  <text x="200" y="558" class="eq">V(h)=maxqh(x)=qh(x′) Lxx′</text>
+  <text x="200" y="595" class="eq">V(h)&gt;0 ⇒ h fails target factorization</text>
+  <text x="200" y="625" class="body">Injective hypotheses correctly give V(h)=0.</text>
+
+  <rect x="830" y="445" width="500" height="205" rx="18" fill="#fff1f2" stroke="#e11d48"/>
+  <text x="860" y="480" class="label">ROBUST MODEL-SET CERTIFICATE</text>
+  <text x="860" y="515" class="head">Every surviving quantum model must fail</text>
+  <text x="860" y="558" class="eq">V*=minh∈CQ V(h)</text>
+  <text x="860" y="595" class="eq">V*&gt;0 ⇒ non-factorization</text>
+  <text x="860" y="625" class="body">Confidence is at least 1−αQ−αY.</text>
+
+  <path class="arrow" d="M1230 360 V405 H420 V433"/>
+  <path class="arrow" d="M670 548 H818"/>
+
+  <rect x="70" y="730" width="1360" height="135" rx="18" fill="#0f172a"/>
+  <text x="105" y="770" style="font:700 12px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">SCIENTIFIC BOUNDARY</text>
+  <text x="105" y="808" style="font:600 18px Georgia,'Times New Roman',serif;fill:#f8fafc">close tomography estimates ≠ exact state equality</text>
+  <text x="105" y="838" style="font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">A positive P39 certificate rejects the declared quantum confidence set as sufficient for the target; it does not prove quantum mechanics incomplete.</text>
+</svg>

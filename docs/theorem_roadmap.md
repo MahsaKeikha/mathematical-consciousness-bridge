@@ -8,6 +8,8 @@ This roadmap records the current proved mathematical chain and the open route to
 
 ![P38 quantum operational sufficiency](figures/p38_quantum_operational_sufficiency.svg)
 
+![P39 finite-data quantum non-factorization](figures/p39_finite_data_quantum_nonfactorization.svg)
+
 ---
 
 # 1. Complete proposition index
@@ -52,6 +54,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P36](proposition_36_partition_irreducibility_operational_quotient.md) | marginal contraction plus product-measure telescoping | partition-reference and irreducibility stability | proved perturbation theorem |
 | [P37](proposition_37_complete_approximate_p11_operational_scale.md) | max-norm assembly of G, A, and K bounds | complete approximate P11 scale certificate | proved complete scale theorem |
 | [P38](proposition_38_quantum_operational_sufficiency.md) | factorization through tomographically complete density-operator fibers | exact quantum descriptor sufficiency and non-factorization witness | proved quantum sufficiency theorem |
+| [P39](proposition_39_finite_data_quantum_nonfactorization.md) | target-TV confidence bounds plus tomography model-set coverage | finite-data rejection of every surviving exact quantum-state-fiber hypothesis | proved finite-data model-set theorem |
 
 ---
 
@@ -679,6 +682,31 @@ P38 then changes branches. For a tomographically complete quantum operational st
 The exact collision \(\rho_x=\rho_{x'}\) with \(y(x)\ne y(x')\) is therefore a non-factorization witness for that declared descriptor. The stochastic analogue is \(I(Y;X\mid\rho_X)=0\). Neither result is an experiential or ontological theorem.
 
 Direct proofs: [P32](proposition_32_delay_quotient_compatibility.md), [P33](proposition_33_joint_operational_quotient.md), [P34](proposition_34_joint_p11_operational_scale.md), [P35](proposition_35_approximate_directed_influence_operational_quotient.md), [P36](proposition_36_partition_irreducibility_operational_quotient.md), [P37](proposition_37_complete_approximate_p11_operational_scale.md), [P38](proposition_38_quantum_operational_sufficiency.md).
+
+---
+
+## P39 - finite-data quantum model-set non-factorization
+
+For simultaneous target-TV radii \(\varepsilon_x\),
+
+\[
+L_{xx'}=
+\left[\|\widehat P_x-\widehat P_{x'}\|_{\mathrm{TV}}-\varepsilon_x-\varepsilon_{x'}\right]_+.
+\]
+
+For each declared quantum hypothesis \(h\),
+
+\[
+V(h)=\max_{q_h(x)=q_h(x')}L_{xx'},
+\qquad
+V_*=\min_{h\in\mathcal C_Q}V(h).
+\]
+
+If the true quantum hypothesis belongs to \(\mathcal C_Q\) with probability at least \(1-\alpha_Q\), the target confidence event has probability at least \(1-\alpha_Y\), and \(V_*>0\), then the true declared quantum hypothesis fails P38 stochastic factorization with confidence at least \(1-\alpha_Q-\alpha_Y\).
+
+The theorem never substitutes numerical state closeness for exact state equality. An injective surviving quantum model correctly blocks the collision-based certificate.
+
+Direct proof: [Proposition 39](proposition_39_finite_data_quantum_nonfactorization.md). Implementation: [finite_data_quantum_nonfactorization.py](../src/consciousness_bridge/finite_data_quantum_nonfactorization.py). Tests: [test_finite_data_quantum_nonfactorization.py](../tests/test_finite_data_quantum_nonfactorization.py).
 
 ---
 
