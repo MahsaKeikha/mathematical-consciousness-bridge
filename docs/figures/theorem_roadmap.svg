@@ -24,7 +24,7 @@
   <text x="125" y="178" class="label">FOUNDATION · P1-P4</text>
   <text x="125" y="212" class="head">Invariance and identifiability</text>
   <text x="125" y="248" class="body">P1 representation invariance</text>
-  <text x="125" y="272" class="body">P2-P3 empirical equivalence and identifiability</text>
+  <text x="125" y="272" class="body">P2-P3 empirical equivalence and tests</text>
   <text x="125" y="296" class="body">P4 discriminating experiment design</text>
 
   <rect x="590" y="145" width="420" height="180" rx="18" fill="#faf5ff" stroke="#8b5cf6"/>
@@ -55,14 +55,14 @@
   <text x="620" y="443" class="label">COMPOSITION · P16</text>
   <text x="620" y="477" class="head">Independent systems and coupling</text>
   <text x="620" y="513" class="body">Product response gives the independence null.</text>
-  <text x="620" y="537" class="body">Cross-system coupling is a factorization defect.</text>
+  <text x="620" y="537" class="body">Cross-system coupling breaks factorization.</text>
   <text x="620" y="566" class="eq">χA|B = κAB(πA|B)</text>
 
   <rect x="1085" y="410" width="420" height="180" rx="18" fill="#fff1f2" stroke="#e11d48"/>
   <text x="1115" y="443" class="label">SCALE · P17-P18</text>
   <text x="1115" y="477" class="head">Loss and recoverable sufficiency</text>
-  <text x="1115" y="513" class="body">P17 coarse-graining contracts distinguishability.</text>
-  <text x="1115" y="537" class="body">P18 reconstruction bounds scale distortion.</text>
+  <text x="1115" y="513" class="body">P17 coarse-graining contracts distinctions.</text>
+  <text x="1115" y="537" class="body">P18 reconstruction bounds distortion.</text>
   <text x="1115" y="566" class="eq">δc ≥ δf − 2ρF</text>
 
   <path class="arrow" d="M1295 325 V360 H305 V398"/>
