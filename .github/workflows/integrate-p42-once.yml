@@ -69,4 +69,4 @@ jobs:
           git commit -m "Integrate P42 quantum regular-bridge sample complexity"
           git push origin HEAD:p42-quantum-regular-bridge-sample-complexity
 
-# retry after guarded citation-marker correction
+# retry after release-metadata guard synchronization
