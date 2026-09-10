@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1040" viewBox="0 0 1600 1040" role="img" aria-labelledby="title desc">
+  <title id="title">Proposition 32 delay-quotient compatibility</title>
+  <desc id="desc">Publication map of exact response-law descent through a delay quotient, its total-variation ambiguity defect, representative stability, and scientific boundary.</desc>
+  <rect width="1600" height="1040" fill="#ffffff"/>
+  <style>
+    .label{font:700 19px Inter,Segoe UI,Arial,sans-serif;letter-spacing:1px;fill:#4c1d95}
+    .head{font:700 28px Inter,Segoe UI,Arial,sans-serif;fill:#111827}
+    .body{font:400 20px Inter,Segoe UI,Arial,sans-serif;fill:#374151}
+    .eq{font:600 22px Georgia,Times New Roman,serif;fill:#111827}
+    .small{font:400 17px Inter,Segoe UI,Arial,sans-serif;fill:#4b5563}
+  </style>
+
+  <text x="95" y="72" class="label">PROPOSITION 32 · OPERATIONAL DELAY QUOTIENT</text>
+  <text x="95" y="118" class="head">When can several measured delays become one coarse temporal label?</text>
+  <text x="95" y="154" class="body">A quotient is valid only when retained response laws are constant on each delay fiber.</text>
+
+  <rect x="95" y="205" width="430" height="190" rx="22" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
+  <text x="130" y="248" class="label">DECLARED QUOTIENT</text>
+  <text x="130" y="294" class="eq">q : T_f ↠ T_c</text>
+  <text x="130" y="334" class="body">Fine delays map onto coarse</text>
+  <text x="130" y="365" class="body">temporal labels.</text>
+
+  <path d="M525 300 H585" stroke="#6b7280" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <rect x="585" y="205" width="470" height="190" rx="22" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="620" y="248" class="label">EXACT DESCENT</text>
+  <text x="620" y="294" class="eq">q(τ)=q(τ′) ⇒ Pᵘ,τ=Pᵘ,τ′</text>
+  <text x="620" y="334" class="body">Required for every intervention u.</text>
+  <text x="620" y="365" class="body">Then Qᵘ,q(τ)=Pᵘ,τ is unique.</text>
+
+  <path d="M1055 300 H1115" stroke="#6b7280" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <rect x="1115" y="205" width="390" height="190" rx="22" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="1150" y="248" class="label">ZERO-DEFECT TEST</text>
+  <text x="1150" y="294" class="eq">η_q = 0 ⇔ exact descent</text>
+  <text x="1150" y="334" class="body">No hidden response variation</text>
+  <text x="1150" y="365" class="body">inside any delay fiber.</text>
+
+  <rect x="95" y="455" width="685" height="225" rx="22" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="130" y="498" class="label">QUOTIENT AMBIGUITY</text>
+  <text x="130" y="548" class="eq">η_q = supᵤ sup_{q(τ)=q(τ′)} ||Pᵘ,τ−Pᵘ,τ′||TV</text>
+  <text x="130" y="594" class="body">η_q measures response variation hidden by one</text>
+  <text x="130" y="626" class="body">coarse temporal label.</text>
+  <text x="130" y="657" class="small">Small η_q is experiment-relative, not temporal identity.</text>
+
+  <rect x="820" y="455" width="685" height="225" rx="22" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text x="855" y="498" class="label">REPRESENTATIVE STABILITY</text>
+  <text x="855" y="548" class="eq">supᵤ,ₜ ||Qₛᵘ,ᵗ−Qₛ′ᵘ,ᵗ||TV ≤ η_q</text>
+  <text x="855" y="594" class="eq">supᵤ,ᵥ,ₜ |Gₛ−Gₛ′| ≤ 2η_q</text>
+  <text x="855" y="636" class="body">Changing the hidden fine-time representative</text>
+  <text x="855" y="668" class="body">cannot move response geometry by more than 2η_q.</text>
+
+  <rect x="95" y="740" width="1410" height="205" rx="22" fill="#0f172a"/>
+  <text x="130" y="786" style="font:700 19px Inter,Segoe UI,Arial,sans-serif;letter-spacing:1px;fill:#c4b5fd">SCIENTIFIC BOUNDARY</text>
+  <text x="130" y="836" style="font:600 23px Georgia,Times New Roman,serif;fill:#f8fafc">same coarse delay label ≠ same physical time ≠ dynamical equivalence</text>
+  <text x="130" y="879" style="font:400 19px Inter,Segoe UI,Arial,sans-serif;fill:#e2e8f0">P32 certifies an operational response quotient on a declared experiment grid.</text>
+  <text x="130" y="913" style="font:400 19px Inter,Segoe UI,Arial,sans-serif;fill:#e2e8f0">It does not discretize time, identify dynamics, establish physical completeness, or imply consciousness.</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#6b7280"/>
+    </marker>
+  </defs>
+</svg>
