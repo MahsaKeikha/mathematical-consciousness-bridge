@@ -876,3 +876,17 @@ P62 solves the continuous heterogeneous-cost version of the declared P59 surroga
 
 P63 does not claim a greedy solution or a complexity-hardness classification for the binary-encoded heterogeneous-cost integer problem.
 
+---
+
+# 53. P64 fast certified heterogeneous integer approximation
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(k_e=\lfloor n_e^*\rfloor\) | fast whole-measurement construction from P62 | repository construction | [P64](proposition_64_fast_heterogeneous_integer_approximation.md) |
+| \(r_{\min}=\min_e \lfloor n_e^*\rfloor/n_e^*\) | instance-specific rounding-retention factor | repository definition | [P64](proposition_64_fast_heterogeneous_integer_approximation.md) |
+| \(U(k)\le r_{\min}^{-1/2}U_{\rm int}^*\) | certified approximation ratio relative to P63 | proved from termwise floor distortion and P62 lower bound | [P64](proposition_64_fast_heterogeneous_integer_approximation.md) |
+| \(n_e^*\ge\nu>1\Rightarrow U(k)/U_{\rm int}^*\le\sqrt{\nu/(\nu-1)}\) | uniform regime guarantee | proved floor inequality | [P64](proposition_64_fast_heterogeneous_integer_approximation.md) |
+| \(O(m)\) | construction cost after P62 closed form | direct complexity bound | [P64](proposition_64_fast_heterogeneous_integer_approximation.md) |
+
+P64 is a certified regime-specific approximation, not an FPTAS claim.
+
