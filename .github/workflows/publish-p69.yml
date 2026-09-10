@@ -1,4 +1,4 @@
-# Temporary guarded publication workflow. Removed before merge.
+# Temporary guarded publication workflow. Removed before merge. Ruff-corrected rerun.
 name: publish-p69
 
 on:
