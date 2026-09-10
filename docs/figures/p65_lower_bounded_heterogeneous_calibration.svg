@@ -79,7 +79,7 @@
     <text x="1355" y="940" text-anchor="middle" class="eq">U(k) ≤ U*int(B) / √rmin</text>
     <text x="1355" y="982" text-anchor="middle" class="eq">rmin ≥ 1/2</text>
     <text x="1355" y="1024" text-anchor="middle" class="eq">U(k) ≤ √2 U*int(B)</text>
-    <text x="1355" y="1052" text-anchor="middle" class="small">P63 remains the exact integer solver.</text>
+    <text x="1355" y="1048" text-anchor="middle" class="small">P63 remains the exact integer solver.</text>
   </g>
 
   <path class="arrow" d="M650 730 V790 H445 V838" data-from="water-filling" data-to="integer-floor"/>
