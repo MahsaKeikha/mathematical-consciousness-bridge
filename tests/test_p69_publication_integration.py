@@ -7,61 +7,18 @@ def _read(path: str) -> str:
     return (ROOT / path).read_text(encoding="utf-8")
 
 
-def test_p69_is_integrated_across_public_record():
+def test_p69_is_preserved_in_public_record():
     required = {
-        "README.md": [
-            "version-0.69.0-2563eb",
-            "69 proposition-level results",
-            "Latest proved extension: P69 certified dual-optimal multiplier search",
-            "p69_dual_optimal_multiplier.svg",
-            "P1 through P69 with explicit dependency branches",
-        ],
-        "docs/theorem_roadmap.md": [
-            "P69",
-            "proposition_69_dual_optimal_multiplier.md",
-            "p69_dual_optimal_multiplier.svg",
-            "proved dual-optimization certificate",
-        ],
-        "docs/research_navigation.md": [
-            "P1 through P69",
-            "proposition_69_dual_optimal_multiplier.md",
-        ],
-        "docs/equation_and_citation_map.md": [
-            "# 58. P69 certified dual-optimal multiplier search",
-            "\\partial^+q(\\lambda)",
-            "Q_{\\rm low}\\le q^*\\le Q_{\\rm up}",
-            "does not assume \\(q^*=U_{\\rm int}^*(B)\\)",
-        ],
-        "website/index.html": [
-            "<strong>69</strong><span>proposition-level results</span>",
-            "<strong>v0.69.0</strong><span>current documented release</span>",
-            "P69",
-            "docs/figures/p69_dual_optimal_multiplier.svg",
-        ],
-        "website/research-map.html": [
-            "Sixty-nine results",
-            "P54-P69",
-            "P62-P69",
-            "P69 certified optimization of the dual multiplier family",
-        ],
-        "CITATION.cff": [
-            "version: 0.69.0",
-            "certified dual multiplier optimization",
-        ],
-        "pyproject.toml": [
-            'version = "0.69.0"',
-            "certified dual multiplier optimization",
-        ],
-        "CHANGELOG.md": [
-            "# 0.69.0 - 2026-09-10",
-            "P69 certified dual-optimal multiplier search",
-        ],
+        "README.md": ["Proposition 69", "p69_dual_optimal_multiplier.svg"],
+        "docs/theorem_roadmap.md": ["P69", "proposition_69_dual_optimal_multiplier.md"],
+        "docs/research_navigation.md": ["proposition_69_dual_optimal_multiplier.md"],
+        "docs/equation_and_citation_map.md": ["P69 certified dual-optimal multiplier search", "Q_{\\rm low}\\le q^*\\le Q_{\\rm up}"],
+        "CHANGELOG.md": ["# 0.69.0 - 2026-09-10", "P69 certified dual-optimal multiplier search"],
     }
-
     for path, tokens in required.items():
         text = _read(path)
         for token in tokens:
-            assert token in text, f"{path} missing P69 publication token: {token}"
+            assert token in text, f"{path} missing historical P69 token: {token}"
 
 
 def test_p69_permanent_proof_code_visual_and_tests_exist():

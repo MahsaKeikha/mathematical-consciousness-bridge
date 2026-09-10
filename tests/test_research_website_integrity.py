@@ -46,7 +46,7 @@ def test_website_release_status_matches_repository():
 
 def test_website_latest_figure_is_real():
     html = WEBSITE.read_text(encoding="utf-8")
-    figure = "docs/figures/p69_dual_optimal_multiplier.svg"
+    figure = "docs/figures/p70_primal_dual_gap_decomposition.svg"
     assert figure in html
     assert (ROOT / figure).exists()
 
