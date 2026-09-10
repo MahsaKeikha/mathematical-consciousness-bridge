@@ -24,7 +24,7 @@
   <text x="125" y="178" class="label">FOUNDATION · P1-P4</text>
   <text x="125" y="212" class="head">Invariance and identifiability</text>
   <text x="125" y="248" class="body">P1 representation invariance</text>
-  <text x="125" y="272" class="body">P2-P3 empirical equivalence and identity tests</text>
+  <text x="125" y="272" class="body">P2-P3 empirical equivalence and tests</text>
   <text x="125" y="296" class="body">P4 discriminating experiment design</text>
 
   <rect x="590" y="145" width="420" height="180" rx="18" fill="#faf5ff" stroke="#8b5cf6"/>
