@@ -1,3 +1,14 @@
+# 0.50.0 - 2026-09-10
+
+- Add P50 bounded-starvation asynchronous sampling.
+- Define H-fair finite-window service for still-active preparations.
+- Prove local-count growth N_i(T) >= floor(T/H).
+- Lift P48 positive and all-negative local thresholds to finite global-round bounds H K_+ and H K_-.
+- Prove that unrestricted starvation prevents any finite global-time theorem from P47 validity alone.
+- Preserve dynamic safe pruning and non-anticipating priority freedom.
+- Compose P49 dyadic batching with P50 fairness via H D(N_e) < 2 H N_e.
+- Add implementation, regression tests, theorem visual, and equation-map provenance.
+
 # 0.49.0 - 2026-09-10
 
 - Add P49 dyadic certification schedules for P48 stopping thresholds.
