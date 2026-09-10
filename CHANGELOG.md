@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.42.0 - 2026-09-09
+
+### Added
+- Proposition 42: finite-sample obstruction sample complexity for a fixed informationally complete POVM.
+- Explicit simultaneous quantum trace-distance radius under a declared linear reconstruction stability constant.
+- Explicit simultaneous finite-alphabet target-TV radius.
+- Sufficient quantum and target sample-size formulas with inverse-square regularity-gap scaling.
+- Executable implementation, regression tests, publication map, and public-paper integration.
+
+### Corrected
+- Proposition 41 population-level planning inequality now carries center-estimation error through the confidence envelopes correctly. The conservative sufficient condition is \(d_Y-Ld_Q>4\varepsilon+4Lr\), not the earlier factor-two expression.
+- Malformed P41 LaTeX control characters in the target and quantum symbols were removed.
+
+### Scientific boundary
+- P42 is conditional on IID sampling, a fixed informationally complete measurement, a declared reconstruction stability constant, and a declared Lipschitz bridge class.
+- The theorem gives a sufficient upper bound on sample complexity. It does not yet prove minimax optimality and does not establish quantum incompleteness or consciousness.
+
 ## 0.41.0 - 2026-09-09
 
 ### Added

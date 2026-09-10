@@ -505,13 +505,30 @@ P40 does not infer bridge regularity from quantum mechanics. The modulus is an i
 | \(L^{\mathrm{ball}}_{xx'}=[\widehat D^Y_{xx'}-\varepsilon_x-\varepsilon_{x'}]_+\) | target-law lower confidence separation | triangle inequality | [P39](proposition_39_finite_data_quantum_nonfactorization.md); [P41](proposition_41_trace_ball_quantum_envelope.md) |
 | \(L^{\mathrm{ball}}_{xx'}>\omega(U^{\mathrm{ball}}_{xx'})\) | end-to-end continuous-region regularity obstruction | proved | [P40](proposition_40_continuous_quantum_region_regularity.md); [P41](proposition_41_trace_ball_quantum_envelope.md) |
 | \(M^{\mathrm{ball}}=L^{\mathrm{ball}}-LU^{\mathrm{ball}}\) | Lipschitz obstruction margin | repository definition | [P41](proposition_41_trace_ball_quantum_envelope.md) |
-| \(d_Y-Ld_Q>2\varepsilon+2Lr\) | symmetric unsaturated experimental design condition | derived sufficient inequality | [P41](proposition_41_trace_ball_quantum_envelope.md) |
+| \(d_Y-Ld_Q>4\varepsilon+4Lr\) | corrected conservative population-level design condition after carrying center-estimation error through the P41 confidence envelopes | derived sufficient inequality | [P41](proposition_41_trace_ball_quantum_envelope.md) |
 
 P41 assumes valid simultaneous confidence balls. It does not itself derive their statistical radii.
 
 ---
 
-# 31. Candidate consciousness-theory feature families
+# 31. P42 IC-POVM finite-sample obstruction sample complexity
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(p_x(j)=\operatorname{Tr}(M_j\rho_x)\) | finite-outcome quantum measurement probabilities | standard Born rule specialized to a fixed POVM | standard quantum measurement theory; [P42](proposition_42_ic_povm_sample_complexity.md) |
+| \(\|A(v)\|_1\le\kappa\|v\|_1\) | declared stability of the IC linear reconstruction map | explicit model assumption | [P42](proposition_42_ic_povm_sample_complexity.md) |
+| \(r_Q(n_Q)=\kappa m_Q\sqrt{\log(2Nm_Q/\alpha_Q)/(2n_Q)}\) | simultaneous trace-distance tomography radius under the declared reconstruction model | proved from coordinatewise Hoeffding, union bound, reconstruction stability, and trace-norm projection | [P42](proposition_42_ic_povm_sample_complexity.md) |
+| \(\varepsilon_Y(n_Y)=\frac{m_Y}{2}\sqrt{\log(2Nm_Y/\alpha_Y)/(2n_Y)}\) | simultaneous target-TV radius | proved from coordinatewise Hoeffding and union bound | [P42](proposition_42_ic_povm_sample_complexity.md) |
+| \(\Delta=d_Y-Ld_Q\) | population regularity gap for one preparation pair | repository definition | [P42](proposition_42_ic_povm_sample_complexity.md) |
+| \(\Delta>4\varepsilon_Y+4Lr_Q\) | sufficient finite-sample condition for a positive P41 obstruction | proved by substitution into corrected P41 population bound | [P41](proposition_41_trace_ball_quantum_envelope.md); [P42](proposition_42_ic_povm_sample_complexity.md) |
+| \(n_Y\ge2m_Y^2\log(2Nm_Y/\alpha_Y)/(\lambda^2\Delta^2)\) | sufficient per-preparation target sample size | algebraic consequence | [P42](proposition_42_ic_povm_sample_complexity.md) |
+| \(n_Q\ge8L^2\kappa^2m_Q^2\log(2Nm_Q/\alpha_Q)/((1-\lambda)^2\Delta^2)\) | sufficient per-preparation quantum sample size | algebraic consequence | [P42](proposition_42_ic_povm_sample_complexity.md) |
+
+P42 is conditional on IID sampling, a fixed informationally complete POVM, a valid reconstruction stability constant, and a declared Lipschitz bridge class. The inverse-square gap law is a sufficient upper bound here, not yet a minimax lower bound.
+
+---
+
+# 32. Candidate consciousness-theory feature families
 
 The following are source-grounded translations into generic feature notation. They are not claims that each named theory reduces to one scalar or one universally agreed implementation.
 
@@ -528,7 +545,7 @@ Detailed caveats and source roles are maintained in [Candidate Theory Families](
 
 ---
 
-# 32. Citation discipline
+# 33. Citation discipline
 
 A result is cited as a repository result when the bridge-specific statement, construction, or counterexample is introduced here.
 

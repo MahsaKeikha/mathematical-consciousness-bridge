@@ -14,6 +14,8 @@ This roadmap records the current proved mathematical chain and the open route to
 
 ![P41 trace-ball quantum envelope](figures/p41_trace_ball_quantum_envelope.svg)
 
+![P42 IC-POVM sample complexity](figures/p42_ic_povm_sample_complexity.svg)
+
 ---
 
 # 1. Complete proposition index
@@ -61,6 +63,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P39](proposition_39_finite_data_quantum_nonfactorization.md) | target-TV confidence bounds plus tomography model-set coverage | finite-data rejection of every surviving exact quantum-state-fiber hypothesis | proved finite-data model-set theorem |
 | [P40](proposition_40_continuous_quantum_region_regularity.md) | injective-image factorization plus confidence-region distance envelopes and bridge moduli | unrestricted-bridge no-go and continuous-region regularity obstruction | proved no-go plus regularity theorem |
 | [P41](proposition_41_trace_ball_quantum_envelope.md) | trace-distance triangle inequality plus simultaneous quantum and target confidence balls | analytic P40 envelope and end-to-end regularity obstruction | proved confidence-envelope theorem |
+| [P42](proposition_42_ic_povm_sample_complexity.md) | finite-outcome Hoeffding concentration plus IC reconstruction stability | explicit sufficient quantum and target sample sizes for the corrected P41 obstruction | proved finite-sample sample-complexity theorem |
 
 ---
 
@@ -771,13 +774,68 @@ L^{\mathrm{ball}}_{xx'}>
 }
 \]
 
-For an \(L\)-Lipschitz bridge and symmetric uncertainty, the design inequality is
+For a population-level planning guarantee, center-estimation error must also be carried through the confidence envelopes. The corrected conservative inequality is
 
 \[
-\boxed{d_Y-Ld_Q>2\varepsilon+2Lr.}
+\boxed{d_Y-Ld_Q>4\varepsilon+4Lr.}
 \]
 
 Direct proof: [Proposition 41](proposition_41_trace_ball_quantum_envelope.md). Implementation: [trace_ball_quantum_envelope.py](../src/consciousness_bridge/trace_ball_quantum_envelope.py). Tests: [test_trace_ball_quantum_envelope.py](../tests/test_trace_ball_quantum_envelope.py).
+
+---
+
+## P42 - IC-POVM finite-sample obstruction sample complexity
+
+For a fixed informationally complete POVM with \(m_Q\) outcomes and reconstruction stability
+
+\[
+\|A(v)\|_1\le\kappa\|v\|_1,
+\]
+
+P42 derives
+
+\[
+r_Q(n_Q)=
+\kappa m_Q
+\sqrt{\frac{\log(2Nm_Q/\alpha_Q)}{2n_Q}}.
+\]
+
+For a target alphabet of size \(m_Y\),
+
+\[
+\varepsilon_Y(n_Y)=
+\frac{m_Y}{2}
+\sqrt{\frac{\log(2Nm_Y/\alpha_Y)}{2n_Y}}.
+\]
+
+Writing \(\Delta=d_Y-Ld_Q\), a sufficient end-to-end condition is
+
+\[
+\boxed{\Delta>4\varepsilon_Y(n_Y)+4Lr_Q(n_Q).}
+\]
+
+With budget split \(0<\lambda<1\), sufficient trial counts are
+
+\[
+\boxed{
+n_Y\ge
+\frac{2m_Y^2\log(2Nm_Y/\alpha_Y)}{\lambda^2\Delta^2}
+}
+\]
+
+and
+
+\[
+\boxed{
+n_Q\ge
+\frac{8L^2\kappa^2m_Q^2\log(2Nm_Q/\alpha_Q)}{(1-\lambda)^2\Delta^2}.
+}
+\]
+
+The theorem is conditional on the declared IC measurement, reconstruction stability, IID sampling, system boundary, target definition, and Lipschitz bridge class.
+
+Direct proof: [Proposition 42](proposition_42_ic_povm_sample_complexity.md). Implementation: [ic_povm_sample_complexity.py](../src/consciousness_bridge/ic_povm_sample_complexity.py). Tests: [test_ic_povm_sample_complexity.py](../tests/test_ic_povm_sample_complexity.py).
+
 
 ---
 
