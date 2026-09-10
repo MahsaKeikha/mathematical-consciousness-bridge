@@ -427,7 +427,23 @@ P30 is a theorem about simultaneous transport of the declared P11 physical candi
 
 ---
 
-# 25. Candidate consciousness-theory feature families
+# 25. P31 intervention-quotient compatibility
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(b:\mathcal U_f\twoheadrightarrow\mathcal U_c\) | declared surjective quotient of operational intervention labels | repository definition | [P31](proposition_31_intervention_quotient_compatibility.md) |
+| \(b(u)=b(v)\Rightarrow\overline P^{u,\tau}=\overline P^{v,\tau}\;\forall\tau\) | exact fiber-constancy condition | necessary and sufficient for unique response-law descent | [P31](proposition_31_intervention_quotient_compatibility.md) |
+| \(\eta_b=\sup_\tau\sup_{b(u)=b(v)}\|\overline P^{u,\tau}-\overline P^{v,\tau}\|_{\mathrm{TV}}\) | operational quotient ambiguity defect | repository definition | [P31](proposition_31_intervention_quotient_compatibility.md) |
+| \(\eta_b=0\iff\) exact intervention-quotient descent | exact quotient certificate | proved | [P31](proposition_31_intervention_quotient_compatibility.md) |
+| \(\sup_{c,\tau}\|Q_s^{c,\tau}-Q_{s'}^{c,\tau}\|_{\mathrm{TV}}\le\eta_b\) | representative-selection stability | proved | [P31](proposition_31_intervention_quotient_compatibility.md) |
+| \(\sup_{c,d,\tau}|G_s-G_{s'}|\le2\eta_b\) | induced coarse response-geometry ambiguity | proved by reverse triangle inequality | [P31](proposition_31_intervention_quotient_compatibility.md) |
+| same coarse intervention label \(\ne\) same physical actuator | prevents operational quotienting from being overinterpreted as mechanism identity | interpretation boundary | [P31](proposition_31_intervention_quotient_compatibility.md) |
+
+P31 changes intervention labels only after a common response space is declared. It does not establish physical actuator identity, simultaneity, consciousness, or physical completeness. Delay/time quotienting remains a separate theorem burden.
+
+---
+
+# 26. Candidate consciousness-theory feature families
 
 The following are source-grounded translations into generic feature notation. They are not claims that each named theory reduces to one scalar or one universally agreed implementation.
 
@@ -444,7 +460,7 @@ Detailed caveats and source roles are maintained in [Candidate Theory Families](
 
 ---
 
-# 26. Citation discipline
+# 27. Citation discipline
 
 A result is cited as a repository result when the bridge-specific statement, construction, or counterexample is introduced here.
 

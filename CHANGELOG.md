@@ -2,6 +2,20 @@
 
 This changelog records theorem-level scientific releases. Definitions, proofs, implementations, tests, figures, and documentation remain linked from the main research page.
 
+## 0.31.0 - 2026-09-09
+
+### Proposition 31 - intervention-quotient compatibility
+
+- Introduced a declared surjective intervention-label quotient \(b:\mathcal U_f\twoheadrightarrow\mathcal U_c\) after the physical response space has been fixed.
+- Proved that a unique coarse response table exists if and only if all fine response laws are constant on every quotient fiber at every retained delay.
+- Defined the intervention-quotient ambiguity defect \(\eta_b\) as the worst total-variation separation between response laws assigned the same coarse intervention label.
+- Proved \(\eta_b=0\) if and only if exact response-law descent holds.
+- Proved representative-selection stability \(\sup_{c,\tau}\|Q_s^{c,\tau}-Q_{s'}^{c,\tau}\|_{\mathrm{TV}}\le\eta_b\).
+- Proved the induced response-geometry ambiguity bound \(\sup_{c,d,\tau}|G_s-G_{s'}|\le2\eta_b\).
+- Explicitly separated operational intervention quotienting from physical actuator identity and simultaneous intervention.
+- Added executable mathematics, nine dedicated regression tests, a publication theorem map, main-paper integration, theorem-roadmap integration, navigation, equation provenance, release guards, and synchronized 0.31.0 metadata.
+- Preserved delay/time quotienting, physical completeness, genuine physical fusion, and experiential interpretation as separate open theorem burdens.
+
 ## 0.30.0 - 2026-09-09
 
 ### Proposition 30 - full declared P11 scale compatibility
