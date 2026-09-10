@@ -1,3 +1,11 @@
+# 0.63.0 - 2026-09-10
+
+- Add P63 exact heterogeneous-cost integer transition calibration.
+- Prove the exact Bellman recurrence for whole measurement counts under unequal positive integer costs.
+- Add exact gcd budget compression and an explicit pseudo-polynomial complexity bound.
+- Use P62 as a rigorous continuous lower bound and report instance-specific integrality gaps.
+- Add implementation, brute-force regression tests, theorem visual, public navigation, provenance, and release integration.
+
 # 0.62.0 - 2026-09-10
 
 - Add P62 heterogeneous-cost transition-calibration allocation.

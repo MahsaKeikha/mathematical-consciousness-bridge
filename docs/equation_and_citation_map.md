@@ -861,3 +861,18 @@ P61 exactness applies to the declared unit-cost separable calibration surrogate.
 
 P62 solves the continuous heterogeneous-cost version of the declared P59 surrogate. The heterogeneous-cost integer problem remains separate.
 
+---
+
+# 52. P63 exact heterogeneous-cost integer calibration
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(\min\sum_e b_e/\sqrt{k_e}\) subject to \(\sum_ec_ek_e\le B\), integer \(k_e\ge1\) | executable unequal-cost calibration problem | repository definition | [P63](proposition_63_exact_heterogeneous_integer_calibration.md) |
+| \(F_i(s)=\min_k[F_{i-1}(s-c_i k)+b_i/\sqrt{k}]\) | exact-spend Bellman recurrence | proved exact by induction over processed edges | [P63](proposition_63_exact_heterogeneous_integer_calibration.md) |
+| \(U_{\rm int}^*(B)=\min_{s\le B}F_m(s)\) | exact hard-budget integer optimum | proved Bellman consequence | [P63](proposition_63_exact_heterogeneous_integer_calibration.md) |
+| \(g=\gcd(c_1,\ldots,c_m)\) and \(B'=\lfloor B/g\rfloor\) | exact budget-axis compression | proved lattice equivalence | [P63](proposition_63_exact_heterogeneous_integer_calibration.md) |
+| \(O(mB'^2)\) | straightforward pseudo-polynomial worst-case time bound | proved counting bound | [P63](proposition_63_exact_heterogeneous_integer_calibration.md) |
+| \(U_{\rm cont}^*(B)\le U_{\rm int}^*(B)\) | P62 continuous relaxation lower bound | proved by feasible-set inclusion | [P63](proposition_63_exact_heterogeneous_integer_calibration.md) |
+
+P63 does not claim a greedy solution or a complexity-hardness classification for the binary-encoded heterogeneous-cost integer problem.
+
