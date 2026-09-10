@@ -7,6 +7,7 @@ on:
     paths:
       - .github/integrate_p32_release.py
       - .github/workflows/integrate-p32-once.yml
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -28,6 +29,7 @@ jobs:
         run: |
           rm .github/integrate_p32_release.py
           rm .github/workflows/integrate-p32-once.yml
+          rm -f .github/workflows/fix-p32-integrator-once.yml
 
       - name: Validate on Python 3.10
         uses: actions/setup-python@v5
