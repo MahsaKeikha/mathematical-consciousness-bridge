@@ -28,7 +28,7 @@
 
   <rect x="500" y="175" width="350" height="260" rx="18" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.6"/>
   <text x="525" y="214" class="head">Sleep and dreaming</text>
-  <text x="525" y="255" class="body">Sleep may include reported experience</text>
+  <text x="525" y="255" class="body">Sleep can include reported dreams</text>
   <text x="525" y="278" class="body">without ordinary responsiveness.</text>
   <text x="525" y="314" class="eq">responsiveness ↓</text>
   <text x="525" y="338" class="eq">experience may persist</text>
