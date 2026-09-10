@@ -26,8 +26,8 @@
     <text x="115" y="222" class="bt">Why P61 is not enough</text>
     <text x="115" y="270" class="math">increment A costs 2</text>
     <text x="115" y="305" class="math">increment B costs 7</text>
-    <text x="115" y="352" class="tx">Largest raw gain is no longer a fair</text>
-    <text x="115" y="384" class="tx">comparison between interchangeable choices.</text>
+    <text x="115" y="352" class="tx">Raw marginal gain is no longer</text>
+    <text x="115" y="384" class="tx">a fair comparison across choices.</text>
   </g>
 
   <g id="p63-experiment" data-qa-block="true" data-x="650" data-y="175" data-width="500" data-height="245">
@@ -35,17 +35,18 @@
     <text x="695" y="222" class="bt">Integer experiment</text>
     <text x="695" y="270" class="math">kₑ ∈ {1,2,3,...}</text>
     <text x="695" y="305" class="math">Σ cₑ kₑ ≤ B</text>
-    <text x="695" y="352" class="tx">Whole observations only, with a hard</text>
-    <text x="695" y="384" class="tx">time, money, or capacity budget.</text>
+    <text x="695" y="352" class="tx">Whole observations only, under</text>
+    <text x="695" y="384" class="tx">a hard resource budget.</text>
   </g>
 
   <g id="p63-state" data-qa-block="true" data-x="1230" data-y="175" data-width="500" data-height="245">
     <rect class="card" x="1230" y="175" width="500" height="245" rx="22" fill="#eef2ff" stroke="#6366f1"/>
     <text x="1275" y="222" class="bt">State of the exact solver</text>
     <text x="1275" y="270" class="math">Fᵢ(s)</text>
-    <text x="1275" y="308" class="tx">Best uncertainty using the first i edges</text>
-    <text x="1275" y="340" class="tx">with exactly s units of cost spent.</text>
-    <text x="1275" y="384" class="small">Every feasible allocation maps to a state path.</text>
+    <text x="1275" y="307" class="tx">Best uncertainty using</text>
+    <text x="1275" y="337" class="tx">the first i edges with exactly</text>
+    <text x="1275" y="367" class="tx">s units of cost spent.</text>
+    <text x="1275" y="397" class="small">Every feasible allocation maps to a state path.</text>
   </g>
 
   <path d="M570 297.5 H638" class="arrow" data-from="p63-why" data-to="p63-experiment"/>
@@ -73,7 +74,7 @@
     <rect class="card" x="970" y="845" width="710" height="145" rx="20" fill="#ffffff" stroke="#94a3b8"/>
     <text x="1015" y="892" class="bt">Continuous benchmark from P62</text>
     <text x="1015" y="938" class="math">U*cont(B) ≤ U*int(B)</text>
-    <text x="1015" y="972" class="tx">The exact integrality gap is reported per instance.</text>
+    <text x="1015" y="972" class="tx">Exact integrality gap reported per instance.</text>
   </g>
 
   <path d="M560 770 C520 815 475 820 475 833" class="arrow" data-from="p63-bellman" data-to="p63-complexity"/>
