@@ -6,6 +6,7 @@ on:
       - p30-full-p11-scale-compatibility
     paths:
       - .github/integrate_p30_release.py
+      - .github/patch_p30_integrator.py
       - .github/workflows/integrate-p30-once.yml
 
 permissions:
@@ -21,12 +22,16 @@ jobs:
           ref: p30-full-p11-scale-compatibility
           fetch-depth: 0
 
+      - name: Correct P30 integration anchors
+        run: python .github/patch_p30_integrator.py
+
       - name: Apply P30 release integration
         run: python .github/integrate_p30_release.py
 
       - name: Remove one-time integration scaffolding before validation
         run: |
           rm .github/integrate_p30_release.py
+          rm .github/patch_p30_integrator.py
           rm .github/workflows/integrate-p30-once.yml
 
       - name: Validate on Python 3.10
