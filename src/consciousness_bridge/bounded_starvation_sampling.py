@@ -97,7 +97,7 @@ def fairness_violations(
             )
 
     violations: list[FairnessViolation] = []
-    for start in range(0, rounds - fairness_horizon + 1):
+    for start in range(rounds - fairness_horizon + 1):
         end = start + fairness_horizon
         common_active = set.intersection(*active_sets[start:end])
         selected_in_block = set(selections[start:end])
