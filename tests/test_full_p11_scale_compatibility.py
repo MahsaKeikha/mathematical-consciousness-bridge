@@ -5,7 +5,6 @@ from consciousness_bridge.full_p11_scale_compatibility import (
     uniform_p11_bound,
 )
 
-
 BASE = {
     "fine_nodes": (0, 1, 2),
     "coarse_nodes": ("A", "B"),
