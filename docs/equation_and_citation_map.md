@@ -817,3 +817,18 @@ P58 assumes an unknown true metric and a valid finite-data observation model. Th
 
 P59 is an exact resource-allocation result for a declared convex uncertainty surrogate. It does not establish optimality for the full combinatorial robust-routing design problem.
 
+---
+
+# P60 integer transition-calibration allocation
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(N_0=B-m\) | effective continuous budget after reserving one possible rounding unit per calibrated edge | repository construction | [P60](proposition_60_integer_transition_calibration.md) |
+| \(k_e=\lceil n_e^*(B-m)\rceil\) | implementable integer calibration allocation | repository construction | [P60](proposition_60_integer_transition_calibration.md) |
+| \(\sum_e k_e\le B\) | hard-budget feasibility guarantee | proved by the ceiling inequality | [P60](proposition_60_integer_transition_calibration.md) |
+| \(U(k)\le U^*(B-m)\) | integer uncertainty guarantee | proved by coordinatewise monotonicity of the P59 surrogate | [P60](proposition_60_integer_transition_calibration.md) |
+| \(U(k)/U^*(B)\le\sqrt{B/(B-m)}\) | multiplicative implementation overhead relative to the full-budget continuous optimum | proved P59-P60 comparison | [P60](proposition_60_integer_transition_calibration.md) |
+| \(B\ge m+\lceil S^3/\varepsilon^2\rceil\) | sufficient hard integer budget for target uncertainty \(\varepsilon\) | proved algebraic consequence | [P60](proposition_60_integer_transition_calibration.md) |
+
+P60 proves a closed-form feasible integer construction and an overhead bound. It does not claim exact discrete optimality.
+

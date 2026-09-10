@@ -1,3 +1,11 @@
+# 0.60.0 - 2026-09-10
+
+- Add P60 integer transition-calibration allocation with hard-budget overhead control.
+- Convert the P59 continuous optimum into whole measurement counts using a reserved-budget ceiling construction.
+- Prove hard-budget feasibility and the explicit multiplicative uncertainty overhead sqrt(B/(B-m)).
+- Derive a sufficient hard integer budget for a target calibration uncertainty.
+- Add implementation, regression tests, theorem visual, equation provenance, and front-page integration.
+
 # 0.59.0 - 2026-09-10
 
 - Add P59 optimal transition-calibration allocation.
