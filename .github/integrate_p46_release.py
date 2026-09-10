@@ -232,7 +232,8 @@ if text.startswith("# 0.46.0"):
 changelog.write_text(entry + text, encoding="utf-8")
 
 release_test = ROOT / "tests" / "test_release_metadata_consistency.py"
-replace_all(release_test, "0.45.0", "0.46.0", 1, "release test version")
+replace_once(release_test, "version-0.45.0-2563eb", "version-0.46.0-2563eb", "release test README badge")
+replace_all(release_test, "0\\.45\\.0", "0\\.46\\.0", 2, "release test regex versions")
 replace_once(
     release_test,
     '        "test_shared_preparation_graph_allocation.py",\n',
