@@ -26,7 +26,7 @@
     <text x="115" y="222" class="bt">1. Solve P62 continuously</text>
     <text x="115" y="265" class="math">nₑ* = (B/T)</text>
     <text x="115" y="298" class="math">× bₑ^(2/3)cₑ^(-2/3)</text>
-    <text x="115" y="343" class="tx">Fast closed-form ideal allocation.</text>
+    <text x="115" y="343" class="tx">Closed-form ideal allocation.</text>
     <text x="115" y="385" class="small">P64 regime: every nₑ* ≥ 1.</text>
   </g>
 
