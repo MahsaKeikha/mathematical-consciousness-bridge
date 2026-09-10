@@ -248,7 +248,15 @@ p.write_text(s, encoding="utf-8")
 p = Path("tests/test_main_page_visual_paper.py")
 s = p.read_text(encoding="utf-8")
 s = one(s, '    "p40_continuous_quantum_region_regularity.svg",', '    "p40_continuous_quantum_region_regularity.svg",\n    "p41_trace_ball_quantum_envelope.svg",', "figure guard")
-s = one(s, "for index in range(1, 41):", "for index in range(1, 42):", "proposition guard")
+old_guard = """def test_main_page_exposes_entire_proposition_chain():
+    text = README.read_text(encoding="utf-8")
+
+    for index in range(1, 41):"""
+new_guard = """def test_main_page_exposes_entire_proposition_chain():
+    text = README.read_text(encoding="utf-8")
+
+    for index in range(1, 42):"""
+s = one(s, old_guard, new_guard, "proposition guard")
 p.write_text(s, encoding="utf-8")
 
 p = Path("tests/test_release_metadata_consistency.py")
