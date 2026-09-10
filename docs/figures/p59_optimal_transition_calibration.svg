@@ -33,7 +33,7 @@
     <text x="695" y="272" class="math">wₑ &gt; 0</text>
     <text x="695" y="320" class="tx">Larger weight means this edge</text>
     <text x="695" y="352" class="tx">matters more to the surrogate.</text>
-    <text x="695" y="395" class="small">wₑaₑ combines importance and difficulty.</text>
+    <text x="695" y="395" class="small">wₑaₑ combines importance and scale.</text>
   </g>
 
   <g id="p59-budget" data-qa-block="true" data-x="1230" data-y="175" data-width="500" data-height="250">
