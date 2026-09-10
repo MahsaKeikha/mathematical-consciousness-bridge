@@ -57,7 +57,7 @@
   <text x="1110" y="604" class="small" text-anchor="middle">P11-P18</text>
 
   <rect x="1370" y="405" width="340" height="220" rx="18" fill="#fff7ed" stroke="#ea580c"/>
-  <text x="1540" y="448" class="head" text-anchor="middle">Experiential structure</text>
+  <text x="1540" y="448" class="head" text-anchor="middle">Experiential layer</text>
   <text x="1540" y="484" class="math" text-anchor="middle">E: 𝓜 → 𝓠_E</text>
   <text x="1540" y="525" class="copy" text-anchor="middle">Independently formalized</text>
   <text x="1540" y="550" class="copy" text-anchor="middle">phenomenal equivalence</text>
@@ -71,8 +71,8 @@
   <rect x="610" y="690" width="580" height="165" rx="20" fill="#f8fafc" stroke="#334155" stroke-width="2"/>
   <text x="900" y="735" class="head" text-anchor="middle">Complete declared physical map</text>
   <text x="900" y="774" class="math" text-anchor="middle">T(Ω) = (G(Ω), Q(Ω), C(Ω))</text>
-  <text x="900" y="808" class="copy" text-anchor="middle">Gauge / representation invariance + finite-data completeness</text>
-  <text x="900" y="830" class="copy" text-anchor="middle">+ scale certification</text>
+  <text x="900" y="808" class="copy" text-anchor="middle">Gauge / representation invariance + finite data</text>
+  <text x="900" y="830" class="copy" text-anchor="middle">completeness + scale certification</text>
 
   <path class="arrow" d="M900 855 V930"/>
   <path class="dash" d="M1540 625 V935 H1205"/>
