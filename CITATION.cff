@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this research program, please cite the repository and the method-specific sources relevant to the result."
 title: "Mathematical Consciousness Bridge"
-version: 0.28.0
+version: 0.29.0
 date-released: 2026-09-09
 authors:
   - family-names: Keikha
@@ -9,4 +9,4 @@ authors:
     suffix: PhD
 type: software
 repository-code: "https://github.com/MahsaKeikha/mathematical-consciousness-bridge"
-abstract: "A formal mathematical-physics research program for physical-to-experiential bridge principles, representation invariance, bridge-complete signatures, intervention-resolved causal structure, component-minimality and pairwise-irredundancy audits, representation-invariant temporal continuation, finite-sample temporal certification, independent composition and coupling analysis, coarse-graining and refinement recoverability, quantitative scale-sufficiency certification by approximate reconstruction, fundamental physical-sufficiency factorization and residual tests, finite-sample residual certification, descriptor-refinement residual-persistence audits, simultaneous refinement-chain certification, adaptive descriptor-selection certification, anytime-valid refinement certification, directed-influence scale certification, partition-irreducibility scale certification, partition-lattice node aggregation, intervention node-aggregation compatibility, robust experiment design, falsification, and conditional consciousness theorems."
+abstract: "A formal mathematical-physics research program for physical-to-experiential bridge principles, representation invariance, bridge-complete signatures, intervention-resolved causal structure, component-minimality and pairwise-irredundancy audits, representation-invariant temporal continuation, finite-sample temporal certification, independent composition and coupling analysis, coarse-graining and refinement recoverability, quantitative scale-sufficiency certification by approximate reconstruction, fundamental physical-sufficiency factorization and residual tests, finite-sample residual certification, descriptor-refinement residual-persistence audits, simultaneous refinement-chain certification, adaptive descriptor-selection certification, anytime-valid refinement certification, directed-influence scale certification, partition-irreducibility scale certification, partition-lattice node aggregation, intervention node-aggregation compatibility, response-geometry node aggregation, robust experiment design, falsification, and conditional consciousness theorems."

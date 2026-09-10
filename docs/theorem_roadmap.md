@@ -2,7 +2,7 @@
 
 This roadmap records the current proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge.
 
-![P1-P28 theorem roadmap](figures/theorem_roadmap.svg)
+![P1-P29 theorem roadmap](figures/theorem_roadmap.svg)
 
 ---
 
@@ -38,6 +38,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P26](proposition_26_partition_irreducibility_scale_certification.md) | P11 partition productization plus P17 contraction and P18 reconstruction | partition-irreducibility preservation and margin certification under block-compatible observation | proved physical scale theorem |
 | [P27](proposition_27_partition_lattice_node_aggregation.md) | surjective node quotient plus partition saturation, lattice transport, P17 contraction, and P18 reconstruction | exact criterion for surviving partition semantics under node aggregation and quantitative irreducibility control | proved physical scale theorem |
 | [P28](proposition_28_intervention_node_aggregation_compatibility.md) | P11 matched-pair source incidence plus P25 target contraction and P27 node aggregation | exact source-label descent and directed-influence certification across aggregate nodes | proved physical scale theorem |
+| [P29](proposition_29_response_geometry_node_aggregation.md) | P11 response geometry plus P17 contraction, P18 reconstruction, and P27 node aggregation | complete indexed response-pseudometric transport on a fixed intervention-delay grid | proved physical scale theorem |
 
 ---
 
@@ -528,6 +529,41 @@ with P18 reconstruction control
 Pooling inherited intervention pairs does not create a simultaneous aggregate actuator. Full P11 scale equivalence still requires response-geometry and intervention-family alignment.
 
 Direct proof: [Proposition 28](proposition_28_intervention_node_aggregation_compatibility.md). Implementation: [intervention_node_aggregation_compatibility.py](../src/consciousness_bridge/intervention_node_aggregation_compatibility.py). Tests: [test_intervention_node_aggregation_compatibility.py](../tests/test_intervention_node_aggregation_compatibility.py).
+
+## P29 - response-geometry transport under node aggregation
+
+For the same declared intervention and delay labels at both scales,
+
+\[
+G_f(u,v,\tau)=\|P^{u,\tau}-P^{v,\tau}\|_{\mathrm{TV}},
+\]
+
+while \(\overline P^{u,\tau}=(C_a)_\#P^{u,\tau}\) gives
+
+\[
+G_c(u,v,\tau)=\|\overline P^{u,\tau}-\overline P^{v,\tau}\|_{\mathrm{TV}}.
+\]
+
+P17 and P18 imply
+
+\[
+\boxed{
+0\le G_f(u,v,\tau)-G_c(u,v,\tau)
+\le\rho_{u,\tau}+\rho_{v,\tau}.
+}
+\]
+
+With \(\rho_*=\sup_{u,\tau}\rho_{u,\tau}\),
+
+\[
+\boxed{
+\|\mathcal G_f-\mathcal G_c\|_\infty\le2\rho_*.
+}
+\]
+
+Exact reconstruction preserves the entire response geometry. P29 deliberately does not merge interventions or resample delays.
+
+Direct proof: [Proposition 29](proposition_29_response_geometry_node_aggregation.md). Implementation: [response_geometry_node_aggregation.py](../src/consciousness_bridge/response_geometry_node_aggregation.py). Tests: [test_response_geometry_node_aggregation.py](../tests/test_response_geometry_node_aggregation.py).
 
 ---
 

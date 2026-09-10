@@ -392,11 +392,27 @@ P27 distinguishes failure of partition semantics from loss of partition signal. 
 | \(0\le A_f-A_c\le2\rho_{c\to d}^{a}\) | reconstruction-controlled aggregate-node influence loss | proved by P18 applied pairwise before the supremum | P18, P25; [P28](proposition_28_intervention_node_aggregation_compatibility.md) |
 | aggregate source label \(\ne\) new aggregate actuator | prevents pair-family pooling from being misread as physical intervention synergy | interpretation boundary | [P28](proposition_28_intervention_node_aggregation_compatibility.md) |
 
-P28 is a theorem about declared intervention comparisons and target response blocks. It does not create simultaneous interventions, establish complete P11 scale equivalence, physical completeness, or experience.
+P28 is a theorem about declared intervention comparisons and target response blocks. P29 supplies the complete response-geometry transport statement on a fixed intervention-delay grid.
 
 ---
 
-# 23. Candidate consciousness-theory feature families
+# 23. P29 - response-geometry transport under node aggregation
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(G_f(u,v,\tau)=\|P^{u,\tau}-P^{v,\tau}\|_{\mathrm{TV}}\) | fine P11 response-geometry entry | P11 definition applied to declared grid | P11; [P29](proposition_29_response_geometry_node_aggregation.md) |
+| \(\overline P^{u,\tau}=(C_a)_\#P^{u,\tau}\) | node-aggregated response law | repository construction using P27 aggregate-state map | P27; [P29](proposition_29_response_geometry_node_aggregation.md) |
+| \(G_c(u,v,\tau)\le G_f(u,v,\tau)\) | entrywise geometry contraction | proved by TV data processing | P17; [P29](proposition_29_response_geometry_node_aggregation.md) |
+| \(0\le G_f-G_c\le\rho_{u,\tau}+\rho_{v,\tau}\) | law-specific reconstruction-controlled geometry loss | proved by P18 | P18; [P29](proposition_29_response_geometry_node_aggregation.md) |
+| \(\rho_*=\sup_{u,\tau}\rho_{u,\tau}\) | uniform reconstruction defect on the declared experiment grid | repository definition | [P29](proposition_29_response_geometry_node_aggregation.md) |
+| \(\|\mathcal G_f-\mathcal G_c\|_\infty\le2\rho_*\) | simultaneous distortion bound for the complete indexed geometry | proved | [P29](proposition_29_response_geometry_node_aggregation.md) |
+| \(0\le\Delta_f-\Delta_c\le2\rho_*\) | response-diameter corollary | proved | [P29](proposition_29_response_geometry_node_aggregation.md) |
+
+P29 fixes intervention and delay semantics. It does not merge intervention labels, resample time, establish full P11 scale equivalence, physical completeness, or experience.
+
+---
+
+# 24. Candidate consciousness-theory feature families
 
 The following are source-grounded translations into generic feature notation. They are not claims that each named theory reduces to one scalar or one universally agreed implementation.
 
@@ -413,7 +429,7 @@ Detailed caveats and source roles are maintained in [Candidate Theory Families](
 
 ---
 
-# 24. Citation discipline
+# 25. Citation discipline
 
 A result is cited as a repository result when the bridge-specific statement, construction, or counterexample is introduced here.
 
