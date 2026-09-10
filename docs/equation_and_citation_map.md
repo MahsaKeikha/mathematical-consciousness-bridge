@@ -644,3 +644,19 @@ P46 is a combinatorial experimental-design result. Its graph weights are declare
 
 P47 is a time-uniform statistical and experimental-design result. It does not convert a regularity obstruction into an ontological or experiential conclusion.
 
+---
+
+# 37. P48 gap-dependent stopping complexity
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(g_e=|M_e|\) | population sign gap for a declared regularity witness | repository definition | [P48](proposition_48_gap_dependent_stopping_complexity.md) |
+| \(U_e(n)\le A_e\sqrt{\log(B_e n^2)/n}\) | common edge-level uncertainty envelope from target and quantum endpoint radii | proved envelope reduction | [P48](proposition_48_gap_dependent_stopping_complexity.md) |
+| \(\underline M_e\ge M_e-2U_e\), \(\overline M_e\le M_e+2U_e\) | deterministic sign-certification perturbation bounds | proved from P47 interval geometry | [P48](proposition_48_gap_dependent_stopping_complexity.md) |
+| \(N_e=\lceil4Q_e\log(4Q_e\sqrt{B_e})\rceil\) | explicit sufficient local count for every nonzero margin | proved elementary inversion bound | [P48](proposition_48_gap_dependent_stopping_complexity.md) |
+| \(K_+=\min_{M_e>0}N_e\) | positive-witness stopping-epoch upper bound | proved on the P47 simultaneous event | [P48](proposition_48_gap_dependent_stopping_complexity.md) |
+| \(K_-=\max_eN_e\) when all \(M_e<0\) | all-negative stopping-epoch upper bound | proved on the P47 simultaneous event | [P48](proposition_48_gap_dependent_stopping_complexity.md) |
+| \(C_{\rm active}(K)\le C_{\rm full}(K)\) | safe-pruning acquisition-cost comparison | proved by active-set inclusion | [P48](proposition_48_gap_dependent_stopping_complexity.md) |
+
+P48 is a sufficient sequential upper bound. It is not a minimax lower bound or an adaptive-optimality theorem.
+
