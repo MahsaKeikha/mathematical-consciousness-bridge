@@ -41,9 +41,9 @@
     <text x="118" y="632" class="body">• intervention-response distinguishability</text>
     <text x="118" y="662" class="body">• time-resolved differentiation of responses</text>
     <text x="118" y="692" class="body">• intervention-response equivalence classes</text>
-    <text x="118" y="724" class="label">MINIMALITY RESULT</text>
-    <text x="118" y="748" class="body">P12: insufficient alone</text>
-    <text x="118" y="768" class="body">P13: not recoverable from A and K</text>
+    <text x="118" y="708" class="label">MINIMALITY RESULT</text>
+    <text x="118" y="732" class="body">P12: insufficient alone</text>
+    <text x="118" y="752" class="body">P13: not recoverable from A and K</text>
   </g>
 
   <g id="directed-influence" data-qa-block="true" data-x="650" data-y="420" data-width="500" data-height="355">
@@ -56,9 +56,9 @@
     <text x="688" y="632" class="body">• source-specific perturbational propagation</text>
     <text x="688" y="662" class="body">• direction and timing of causal influence</text>
     <text x="688" y="692" class="body">• return paths and recurrence structure</text>
-    <text x="688" y="724" class="label">MINIMALITY RESULT</text>
-    <text x="688" y="748" class="body">P12: insufficient alone</text>
-    <text x="688" y="768" class="body">P13: not recoverable from G and K</text>
+    <text x="688" y="708" class="label">MINIMALITY RESULT</text>
+    <text x="688" y="732" class="body">P12: insufficient alone</text>
+    <text x="688" y="752" class="body">P13: not recoverable from G and K</text>
   </g>
 
   <g id="partition-irreducibility" data-qa-block="true" data-x="1220" data-y="420" data-width="500" data-height="355">
@@ -71,9 +71,9 @@
     <text x="1258" y="632" class="body">• departure from block-wise factorization</text>
     <text x="1258" y="662" class="body">• partition-specific joint dependence</text>
     <text x="1258" y="692" class="body">• irreducibility across declared physical cuts</text>
-    <text x="1258" y="724" class="label">MINIMALITY RESULT</text>
-    <text x="1258" y="748" class="body">P12: insufficient alone</text>
-    <text x="1258" y="768" class="body">P13: not recoverable from G and A</text>
+    <text x="1258" y="708" class="label">MINIMALITY RESULT</text>
+    <text x="1258" y="732" class="body">P12: insufficient alone</text>
+    <text x="1258" y="752" class="body">P13: not recoverable from G and A</text>
   </g>
 
   <path class="arrow" d="M330 775 V835 H690"/>
