@@ -1,3 +1,12 @@
+# 0.57.0 - 2026-09-10
+
+- Add P57 switching-metric perturbation reoptimization stability.
+- Prove the exact P54 route optimum is sharply q-Lipschitz under sup-norm perturbations of the declared finite metric.
+- Compose P55 residual release, P56 setup motion, and P57 metric drift into one deterministic lower bound and strict-decrease certificate.
+- Add a tighter instance-specific old-route reuse upper bound.
+- Make the known-metric boundary explicit and identify finite-data metric uncertainty as the next theorem target.
+- Add implementation, tests, theorem visual, equation provenance, and front-page integration.
+
 # 0.56.0 - 2026-09-10
 
 - Add P56 moving-start metric reoptimization stability.
