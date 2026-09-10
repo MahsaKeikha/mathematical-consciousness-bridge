@@ -11,9 +11,10 @@ problem. It solves the strictly convex surrogate exactly.
 
 from __future__ import annotations
 
+from collections.abc import Hashable, Mapping
 from dataclasses import dataclass
 from math import ceil, isfinite, log, sqrt
-from typing import Hashable, Mapping, TypeVar
+from typing import TypeVar
 
 Edge = TypeVar("Edge", bound=Hashable)
 
