@@ -1,14 +1,15 @@
 from pathlib import Path
 import re
-import tomllib
 
 ROOT = Path(__file__).resolve().parents[1]
 WEBSITE = ROOT / "website" / "index.html"
 
 
 def _project_version() -> str:
-    data = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
-    return data["project"]["version"]
+    text = (ROOT / "pyproject.toml").read_text(encoding="utf-8")
+    match = re.search(r'^version\s*=\s*"([^"]+)"', text, flags=re.MULTILINE)
+    assert match is not None
+    return match.group(1)
 
 
 def _max_proposition_number() -> int:
