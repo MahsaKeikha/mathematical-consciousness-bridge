@@ -1,0 +1,39 @@
+name: normalize-repository-typography
+
+on:
+  push:
+    branches: ["repository-wide-no-en-em-dashes"]
+    paths:
+      - ".github/workflows/normalize-repository-typography.yml"
+      - "scripts/normalize_typography.py"
+      - "tests/test_typography_policy.py"
+      - "docs/figure_style_guide.md"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: repository-wide-no-en-em-dashes
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Normalize all tracked UTF-8 text
+        run: python scripts/normalize_typography.py
+      - name: Verify typography policy
+        run: python -m pytest tests/test_typography_policy.py
+      - name: Commit repository-wide normalization
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Normalize repository typography"
+            git push origin HEAD:repository-wide-no-en-em-dashes
+          fi
