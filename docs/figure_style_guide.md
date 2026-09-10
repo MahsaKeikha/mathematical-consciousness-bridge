@@ -56,6 +56,12 @@ Long derivations remain in Markdown/LaTeX. Figures should show only the equation
 
 For a long displayed relation, manual line breaking is preferred to horizontal compression. An equation block should normally contain no more than two visual lines inside one card.
 
+### Repository dash policy
+
+The repository never uses Unicode en dash or Unicode em dash characters in documentation, website copy, figure labels, captions, source comments, metadata, or bibliography text. When a dash is required, use the ASCII hyphen `-`. In polished prose, prefer commas, colons, semicolons, or parentheses when they express the relationship more clearly than a hyphen.
+
+This policy is enforced by an automated repository-wide regression test.
+
 ## 3. Text density
 
 A major card should normally contain:
@@ -84,11 +90,34 @@ Every block diagram should use a predictable geometry:
 - aligned headings and equation baselines;
 - minimum 30 px vertical separation between unrelated text groups;
 - minimum 35 px gap between neighboring cards;
-- arrows terminate in whitespace, never in text;
+- explicit internal padding on all four sides of every text-bearing block;
+- text is manually line-broken so every line remains visibly inside its block;
+- arrows attach to a deliberate edge anchor on the source block and terminate at a deliberate edge anchor on the destination block;
+- arrowheads must touch the intended destination boundary cleanly rather than floating in whitespace or entering the block interior;
+- arrows never terminate on text, equations, captions, or other arrows;
+- crossing arrows are avoided whenever a rerouted orthogonal or curved connector can preserve the same logic;
+- parallel flows use consistent connector spacing and arrowhead size;
+- bidirectional relationships use a clearly distinct connector convention and are explained in the caption;
 - captions and status notes belong below the central content area when possible;
 - long bridge statements should be split over two lines rather than extending across a card.
 
 A figure should not rely on the browser to wrap SVG `<text>` automatically. SVG text does not provide reliable paragraph wrapping across renderers. Line breaks must therefore be explicit in the source.
+
+### Block and connector acceptance rule
+
+A block diagram is not publication-ready unless a reader can identify every source, destination, and direction of flow without guessing. The following are automatic reasons for revision:
+
+- any text crosses or touches a block border;
+- any line of text is visually clipped;
+- an arrow points between two possible destination blocks;
+- an arrowhead is detached from its destination block;
+- a connector passes through text or an equation;
+- two connectors overlap for a meaningful distance without representing the same relation;
+- a connector enters and exits a block without a clearly defined semantic reason;
+- blocks at the same logical level are visibly misaligned without an intentional layout rationale;
+- a diagram requires zooming to discover which arrow belongs to which block.
+
+When the layout becomes crowded, increase the canvas size, change the routing geometry, or split the figure. Do not compress the diagram until it becomes visually awkward.
 
 ## 5. Wording standard
 
@@ -109,10 +138,13 @@ Before a figure is considered canonical:
 1. verify its SVG source contains no unbounded long text line;
 2. inspect the rendered GitHub figure at normal README width;
 3. confirm every equation remains readable without zooming;
-4. confirm no arrow crosses text;
-5. confirm no text touches or leaves a card;
-6. confirm the figure is cited or explained in the relevant Markdown page;
-7. run `pytest` and `ruff check .` on Python 3.10, 3.11, and 3.12.
+4. confirm every text line remains fully inside its intended block;
+5. confirm every arrow is attached to the correct source and destination block;
+6. confirm no arrow crosses text, equations, or unrelated connectors;
+7. confirm no text touches or leaves a card;
+8. confirm the figure is cited or explained in the relevant Markdown page;
+9. confirm the figure contains no Unicode en dash or Unicode em dash characters;
+10. run `pytest` and `ruff check .` on Python 3.10, 3.11, and 3.12.
 
 A canonical visual checkpoint is not complete until the full three-version CI matrix is green on the same repository head.
 
