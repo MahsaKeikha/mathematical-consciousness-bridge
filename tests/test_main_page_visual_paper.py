@@ -2,115 +2,80 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 README = ROOT / "README.md"
+DETAIL = ROOT / "docs" / "detailed_proposition_record.md"
 
 
-CANONICAL_MAIN_PAGE_FIGURES = (
+CURATED_MAIN_PAGE_FIGURES = (
     "research_architecture.svg",
-    "multiscale_physical_hierarchy.svg",
-    "equation_evidence_map.svg",
-    "state_space_dynamics_map.svg",
-    "thermodynamics_information_processing.svg",
-    "quantum_bridge_completeness_map.svg",
-    "physics_mathematics_atlas.svg",
-    "information_geometry_response_manifold.svg",
-    "universal_proof_ladder.svg",
     "theorem_roadmap.svg",
+    "fundamental_theory_consciousness_map.svg",
     "causal_structure_anatomy.svg",
-    "p12_collision_map.svg",
-    "p13_component_irredundancy.svg",
-    "p14_temporal_continuation.svg",
-    "p15_finite_sample_temporal_certification.svg",
-    "p16_composition_coupling.svg",
-    "p17_coarse_graining_refinement.svg",
     "p18_scale_sufficiency_certificate.svg",
-    "p19_fundamental_physical_sufficiency.svg",
+    "multiscale_physical_hierarchy.svg",
     "p20_finite_sample_residual_certificate.svg",
-    "p21_descriptor_refinement_residual_persistence.svg",
-    "p22_simultaneous_refinement_chain_certification.svg",
-    "p23_adaptive_descriptor_selection_certification.svg",
-    "p24_anytime_adaptive_refinement_certification.svg",
-    "p25_directed_influence_scale_certification.svg",
-    "p26_partition_irreducibility_scale_certification.svg",
-    "p27_partition_lattice_node_aggregation.svg",
-    "p28_intervention_node_aggregation_compatibility.svg",
-    "p29_response_geometry_node_aggregation.svg",
-    "p30_full_p11_scale_compatibility.svg",
-    "p31_intervention_quotient_compatibility.svg",
+    "quantum_bridge_completeness_map.svg",
     "p38_quantum_operational_sufficiency.svg",
-    "p39_finite_data_quantum_nonfactorization.svg",
-    "p40_continuous_quantum_region_regularity.svg",
     "p41_trace_ball_quantum_envelope.svg",
-    "p42_quantum_regular_bridge_sample_complexity.svg",
-    "p43_optimal_quantum_target_allocation.svg",
-    "p44_pair_adaptive_sample_allocation.svg",
-    "p45_shared_preparation_graph_allocation.svg",
-    "p46_budget_constrained_witness_graph.svg",
     "p47_sequential_graph_refinement.svg",
-    "p48_gap_dependent_stopping_complexity.svg",
-    "p49_dyadic_stopping_overhead.svg",
-    "p50_bounded_starvation_asynchronous_sampling.svg",
-    "p51_heterogeneous_service_rate_stopping.svg",
-    "p52_capacity_optimal_service_allocation.svg",
-    "p53_residual_demand_reoptimization.svg",
-    "p54_metric_switching_cost_residual_scheduling.svg",
-    "p55_pruning_aware_switching_monotonicity.svg",
-    "p56_moving_start_metric_reoptimization_stability.svg",
-    "p57_switching_metric_perturbation.svg",
-    "p58_finite_data_metric_uncertainty.svg",
-    "p59_optimal_transition_calibration.svg",
-    "p60_integer_transition_calibration.svg",
-    "p61_exact_integer_transition_calibration.svg",
-    "p62_heterogeneous_cost_transition_calibration.svg",
-    "p63_exact_heterogeneous_integer_calibration.svg",
-    "p64_fast_heterogeneous_integer_approximation.svg",
-    "p30_p37_operational_scale_map.svg",
-    "observer_to_bridge_handoff.svg",
-    "conscious_state_measurement_map.svg",
-    "theory_comparison_map.svg",
-    "spaceflight_extreme_environment_map.svg",
+    "p70_primal_dual_gap_decomposition.svg",
+    "equation_evidence_map.svg",
 )
 
 
-def test_main_page_contains_complete_quantitative_figure_sequence():
+def test_main_page_contains_curated_scientific_figure_sequence():
     text = README.read_text(encoding="utf-8")
-
-    for index in range(1, 41):
-        token = f"q{index:02d}_"
-        assert token in text, f"README is missing quantitative figure Q{index:02d}"
+    for figure in CURATED_MAIN_PAGE_FIGURES:
+        assert figure in text, f"README is missing curated figure {figure}"
 
 
-def test_main_page_contains_complete_quantum_figure_sequence():
+def test_main_page_links_complete_visual_atlases_instead_of_embedding_them():
     text = README.read_text(encoding="utf-8")
+    required = (
+        "website/visual-atlas.html",
+        "docs/quantitative_physics_mathematics_atlas.md",
+        "docs/quantum_foundations_and_bridge_test.md",
+        "Q01-Q40",
+        "QM01-QM18",
+    )
+    for token in required:
+        assert token in text
 
-    for index in range(1, 19):
-        token = f"qm{index:02d}_"
-        assert token in text, f"README is missing quantum figure QM{index:02d}"
+    # The landing page should no longer be forced to embed every Q/QM figure.
+    q_tokens = sum(f"q{index:02d}_" in text for index in range(1, 41))
+    qm_tokens = sum(f"qm{index:02d}_" in text for index in range(1, 19))
+    assert q_tokens < 10
+    assert qm_tokens < 10
 
 
-def test_main_page_contains_canonical_scientific_maps():
-    text = README.read_text(encoding="utf-8")
+def test_detailed_proposition_chronology_is_externalized():
+    readme = README.read_text(encoding="utf-8")
+    detail = DETAIL.read_text(encoding="utf-8")
 
-    for figure in CANONICAL_MAIN_PAGE_FIGURES:
-        assert figure in text, f"README is missing canonical figure {figure}"
-
-
-def test_main_page_exposes_entire_proposition_chain():
-    text = README.read_text(encoding="utf-8")
-
-    for index in range(1, 65):
-        assert f"**P{index}**" in text, f"README is missing proposition P{index}"
+    assert "docs/detailed_proposition_record.md" in readme
+    assert "Open the complete P1 to P70 chronology" not in readme
+    assert "Complete P1 to P70 chronology" in detail
+    assert "Propositions **P1-P10**" in detail
+    assert "**P70** makes the resulting certificate diagnostic rather than opaque" in detail
 
 
 def test_main_page_declares_scientific_status_boundaries():
     text = README.read_text(encoding="utf-8")
-
     required_phrases = (
         "Synthetic example",
         "Open bridge problem",
-        "does **not** assume that a physical quantity is consciousness",
+        "does not assume that a physical quantity is consciousness",
         "Quantum mechanics does not by itself imply consciousness",
         "Reproducibility and audit path",
         "Numerical validation facts",
+        "A passing test proves only",
     )
     for phrase in required_phrases:
         assert phrase in text, f"README is missing scientific-boundary text: {phrase}"
+
+
+def test_every_curated_figure_has_reader_interpretation():
+    text = README.read_text(encoding="utf-8")
+    assert text.count("**Figure ") >= len(CURATED_MAIN_PAGE_FIGURES)
+    assert "The arrows are logical dependencies" in text
+    assert "These are physical candidates to be tested for sufficiency" in text
+    assert "The scientific conclusion is conditional" in text
