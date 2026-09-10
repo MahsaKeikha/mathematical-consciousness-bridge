@@ -786,3 +786,20 @@ P56 assumes the metric itself is unchanged. Time-varying switching geometry requ
 
 P57 is a deterministic experimental-scheduling robustness theorem. Uncertain or statistically estimated switching metrics require a separate confidence-set analysis.
 
+---
+
+# 47. P58 finite-data switching-metric uncertainty
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(\rho_e=B_e\sqrt{\log(2/\alpha_e)/(2n_e)}\) | two-sided bounded-mean transition-cost confidence radius | standard Hoeffding consequence under declared pairwise sampling assumptions | [P58](proposition_58_finite_data_metric_uncertainty.md) |
+| \(\Pr(|\widehat c_e-c_e|\le\rho_e\ \forall e)\ge1-\alpha\) | simultaneous finite transition-family coverage | finite-family union-bound theorem | [P58](proposition_58_finite_data_metric_uncertainty.md) |
+| \(\underline c_e=\max\{0,\widehat c_e-\rho_e\},\ \overline c_e=\widehat c_e+\rho_e\) | rectangular pairwise transition envelope | repository definition | [P58](proposition_58_finite_data_metric_uncertainty.md) |
+| \(L^-=\min_\pi\underline\ell(\pi;s),\ L^+=\min_\pi\overline\ell(\pi;s)\) | exact lower and upper route-envelope optima | repository definition plus Held-Karp computation | [P58](proposition_58_finite_data_metric_uncertainty.md) |
+| \(L^-\le L_c^*\le L^+\) | finite-data confidence bracket for the unknown true P54 switching optimum | proved confidence-envelope theorem | [P58](proposition_58_finite_data_metric_uncertainty.md) |
+| \(\ell_c(\pi^{\rm rob};s)-L_c^*\le L^+-L^-\) | robust-route regret certificate | proved deterministic consequence on the shared confidence event | [P58](proposition_58_finite_data_metric_uncertainty.md) |
+| \(C_0^->C_1^+\Rightarrow C_{c_0}^*>C_{c_1}^*\) | robust strict reoptimization comparison | proved interval-separation certificate | [P58](proposition_58_finite_data_metric_uncertainty.md) |
+| \(n\ge 2B^2q_{\rm rect}^2\varepsilon^{-2}\log(2M/\alpha)\) | sufficient common pairwise calibration count for route-envelope width at most \(\varepsilon\) | derived sufficient design inequality, not minimax | [P58](proposition_58_finite_data_metric_uncertainty.md) |
+
+P58 assumes an unknown true metric and a valid finite-data observation model. The empirical center itself need not satisfy the triangle inequality.
+
