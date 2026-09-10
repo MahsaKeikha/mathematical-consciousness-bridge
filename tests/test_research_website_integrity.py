@@ -1,5 +1,5 @@
-from pathlib import Path
 import re
+from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 WEBSITE_DIR = ROOT / "website"
@@ -113,7 +113,7 @@ def test_visual_atlas_referenced_repository_figures_exist():
     html = (WEBSITE_DIR / "visual-atlas.html").read_text(encoding="utf-8")
     figure_pattern = re.compile(
         r"raw\.githubusercontent\.com/MahsaKeikha/"
-        r"mathematical-consciousness-bridge/main/(docs/figures/[^"]+\.svg)"
+        r'mathematical-consciousness-bridge/main/(docs/figures/[^\"]+\.svg)'
     )
     figures = figure_pattern.findall(html)
     assert len(figures) >= 10
