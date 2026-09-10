@@ -44,6 +44,7 @@ This roadmap records the current proved mathematical chain and the open route to
 ![P60 integer transition-calibration allocation](figures/p60_integer_transition_calibration.svg)
 ![P61 exact integer transition-calibration allocation](figures/p61_exact_integer_transition_calibration.svg)
 ![P62 heterogeneous-cost transition-calibration allocation](figures/p62_heterogeneous_cost_transition_calibration.svg)
+![P63 exact heterogeneous-cost integer calibration](figures/p63_exact_heterogeneous_integer_calibration.svg)
 
 ---
 
@@ -113,6 +114,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P60](proposition_60_integer_transition_calibration.md) | ceiling construction applied to the P59 continuous optimum on a reserved budget | feasible whole-measurement calibration under a hard budget with explicit multiplicative overhead and target-budget bound | proved constructive integer-allocation theorem |
 | [P61](proposition_61_exact_integer_transition_calibration.md) | discrete diminishing returns and exchange optimality for the P59 separable surrogate | exact whole-measurement allocation by largest current marginal uncertainty reduction | proved exact discrete allocation theorem |
 | [P62](proposition_62_heterogeneous_cost_transition_calibration.md) | strict convexity and KKT allocation under edge-specific observation costs | exact heterogeneous-cost continuous sample allocation, budget shares, and target-budget formula | proved continuous resource-allocation theorem |
+| [P63](proposition_63_exact_heterogeneous_integer_calibration.md) | exact-spend Bellman recursion with gcd cost compression | globally exact whole-measurement allocation under positive integer unequal costs, with P62 lower bound | proved pseudo-polynomial exact discrete theorem |
 
 ---
 
