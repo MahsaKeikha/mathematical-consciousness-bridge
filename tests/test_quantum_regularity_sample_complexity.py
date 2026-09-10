@@ -35,7 +35,7 @@ def test_sufficient_sample_complexity_satisfies_allocated_budget():
     assert certificate.certified_by_bound
     assert certificate.minimum_target_samples >= 1
     assert certificate.minimum_quantum_samples >= 1
-    assert certificate.uncertainty_budget_at_minimum <= pytest.approx(0.30, abs=1e-12)
+    assert certificate.uncertainty_budget_at_minimum <= 0.30 + 1e-12
 
 
 def test_sample_complexity_has_inverse_square_gap_scaling_before_ceiling():
