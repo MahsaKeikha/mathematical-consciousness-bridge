@@ -84,7 +84,8 @@ def test_p70_figure_keeps_identity_diagnostic_and_scientific_boundaries_visible(
         "Zero decomposition = tight budget + common edgewise minimizer = P67 certificate",
         "G_low &lt;= U(k) - q* &lt;= G_up",
         "Diagnostic mismatch, not one-edge primal improvement",
-        "not evidence about consciousness or quantum ontology",
+        "Optimization diagnostic, not evidence about consciousness",
+        "or quantum ontology",
     ]
     for token in required:
         assert token in text
