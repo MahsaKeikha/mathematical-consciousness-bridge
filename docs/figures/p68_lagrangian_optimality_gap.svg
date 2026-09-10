@@ -23,48 +23,50 @@
     <text x="473" y="177" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">2. Choose lambda &gt; 0</text>
     <text x="473" y="215" font-family="Arial, sans-serif" font-size="15" fill="#334155">User supplied or P67 derived</text>
     <text x="473" y="247" font-family="Arial, sans-serif" font-size="15" fill="#475569">Any positive value is valid.</text>
-    <text x="473" y="284" font-family="Arial, sans-serif" font-size="14" fill="#475569">No dual-maximizer claim is needed.</text>
+    <text x="473" y="284" font-family="Arial, sans-serif" font-size="14" fill="#475569">No dual-maximizer claim.</text>
   </g>
 
   <g id="block-edge" data-x="845" data-y="140" data-w="300" data-h="190">
     <rect x="845" y="140" width="300" height="190" rx="18" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
     <text x="868" y="177" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">3. Exact edge minima</text>
     <text x="868" y="213" font-family="Arial, sans-serif" font-size="14" fill="#334155">x0 = [b/(2 lambda c)]^(2/3)</text>
-    <text x="868" y="246" font-family="Arial, sans-serif" font-size="14" fill="#334155">check floor and ceiling neighbors</text>
-    <text x="868" y="282" font-family="Arial, sans-serif" font-size="15" fill="#475569">Strict convexity makes this exact.</text>
+    <text x="868" y="246" font-family="Arial, sans-serif" font-size="14" fill="#334155">check floor and ceiling</text>
+    <text x="868" y="282" font-family="Arial, sans-serif" font-size="15" fill="#475569">Strict convexity makes it exact.</text>
   </g>
 
   <line id="arrow-1" x1="355" y1="235" x2="450" y2="235" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)" data-source="block-candidate" data-target="block-lambda"/>
   <line id="arrow-2" x1="750" y1="235" x2="845" y2="235" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)" data-source="block-lambda" data-target="block-edge"/>
 
-  <g id="block-dual" data-x="170" data-y="415" data-w="380" data-h="180">
-    <rect x="170" y="415" width="380" height="180" rx="18" fill="#ffffff" stroke="#64748b" stroke-width="2"/>
-    <text x="195" y="453" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#0f172a">4. Weak-duality lower bound</text>
-    <text x="195" y="493" font-family="Arial, sans-serif" font-size="15" fill="#334155">q(lambda) = sum edge minima - lambda B</text>
-    <text x="195" y="531" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#0f172a">q(lambda) &lt;= U*_int(B)</text>
-    <text x="195" y="565" font-family="Arial, sans-serif" font-size="14" fill="#475569">Valid for every positive lambda.</text>
+  <g id="block-dual" data-x="170" data-y="405" data-w="380" data-h="195">
+    <rect x="170" y="405" width="380" height="195" rx="18" fill="#ffffff" stroke="#64748b" stroke-width="2"/>
+    <text x="195" y="443" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#0f172a">4. Weak-duality lower bound</text>
+    <text x="195" y="482" font-family="Arial, sans-serif" font-size="15" fill="#334155">q(lambda) = sum edge minima</text>
+    <text x="195" y="509" font-family="Arial, sans-serif" font-size="15" fill="#334155">- lambda B</text>
+    <text x="195" y="547" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#0f172a">q(lambda) &lt;= U*_int(B)</text>
+    <text x="195" y="577" font-family="Arial, sans-serif" font-size="14" fill="#475569">Valid for every positive lambda.</text>
   </g>
 
-  <g id="block-gap" data-x="650" data-y="415" data-w="380" data-h="180">
-    <rect x="650" y="415" width="380" height="180" rx="18" fill="#ffffff" stroke="#64748b" stroke-width="2"/>
-    <text x="675" y="453" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#0f172a">5. Candidate quality certificate</text>
-    <text x="675" y="493" font-family="Arial, sans-serif" font-size="15" fill="#334155">0 &lt;= U(k) - U* &lt;= U(k) - q(lambda)</text>
-    <text x="675" y="531" font-family="Arial, sans-serif" font-size="15" fill="#334155">If q &gt; 0: U(k)/U* &lt;= U(k)/q</text>
-    <text x="675" y="565" font-family="Arial, sans-serif" font-size="14" fill="#475569">P67 success makes the additive gap zero.</text>
+  <g id="block-gap" data-x="650" data-y="405" data-w="380" data-h="195">
+    <rect x="650" y="405" width="380" height="195" rx="18" fill="#ffffff" stroke="#64748b" stroke-width="2"/>
+    <text x="675" y="443" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#0f172a">5. Candidate quality certificate</text>
+    <text x="675" y="482" font-family="Arial, sans-serif" font-size="15" fill="#334155">0 &lt;= U(k)-U* &lt;= U(k)-q</text>
+    <text x="675" y="520" font-family="Arial, sans-serif" font-size="15" fill="#334155">If q &gt; 0: U(k)/U* &lt;= U(k)/q</text>
+    <text x="675" y="558" font-family="Arial, sans-serif" font-size="14" fill="#475569">P67 success makes gap zero.</text>
   </g>
 
-  <line id="arrow-3" x1="995" y1="330" x2="510" y2="415" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)" data-source="block-edge" data-target="block-dual"/>
-  <line id="arrow-4" x1="550" y1="505" x2="650" y2="505" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)" data-source="block-dual" data-target="block-gap"/>
+  <line id="arrow-3" x1="995" y1="330" x2="510" y2="405" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)" data-source="block-edge" data-target="block-dual"/>
+  <line id="arrow-4" x1="550" y1="502" x2="650" y2="502" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)" data-source="block-dual" data-target="block-gap"/>
 
-  <g id="block-p67" data-x="260" data-y="645" data-w="680" data-h="82">
-    <rect x="260" y="645" width="680" height="82" rx="16" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
-    <text x="285" y="678" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#0f172a">P67 zero-gap special case</text>
-    <text x="285" y="707" font-family="Arial, sans-serif" font-size="14" fill="#475569">Tight budget + common multiplier gives q(lambda) = U(k) = U*_int(B).</text>
+  <g id="block-p67" data-x="260" data-y="640" data-w="680" data-h="82">
+    <rect x="260" y="640" width="680" height="82" rx="16" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
+    <text x="285" y="673" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#0f172a">P67 zero-gap special case</text>
+    <text x="285" y="702" font-family="Arial, sans-serif" font-size="14" fill="#475569">Tight budget + common multiplier gives q(lambda) = U(k) = U*_int(B).</text>
   </g>
-  <line id="arrow-5" x1="840" y1="595" x2="840" y2="645" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)" data-source="block-gap" data-target="block-p67"/>
+  <line id="arrow-5" x1="840" y1="600" x2="840" y2="640" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)" data-source="block-gap" data-target="block-p67"/>
 
-  <g id="block-boundary" data-x="105" data-y="755" data-w="990" data-h="48">
-    <rect x="105" y="755" width="990" height="48" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
-    <text x="130" y="785" font-family="Arial, sans-serif" font-size="14" fill="#334155">Scientific boundary: optimization guarantee for the declared calibration surrogate, not a consciousness or quantum-ontology theorem.</text>
+  <g id="block-boundary" data-x="105" data-y="748" data-w="990" data-h="60">
+    <rect x="105" y="748" width="990" height="60" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="130" y="774" font-family="Arial, sans-serif" font-size="14" fill="#334155">Scientific boundary: optimization guarantee for the declared calibration surrogate.</text>
+    <text x="130" y="797" font-family="Arial, sans-serif" font-size="14" fill="#475569">Not a consciousness theorem, bridge theorem, or quantum-ontology claim.</text>
   </g>
 </svg>
