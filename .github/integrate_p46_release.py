@@ -21,24 +21,9 @@ def replace_all(path: Path, old: str, new: str, minimum: int, label: str) -> Non
 
 
 readme = ROOT / "README.md"
-replace_once(
-    readme,
-    "version-0.45.0-2563eb",
-    "version-0.46.0-2563eb",
-    "README version badge",
-)
-replace_once(
-    readme,
-    "The public research record now contains **45 proposition-level results",
-    "The public research record now contains **46 proposition-level results",
-    "README proposition count",
-)
-replace_once(
-    readme,
-    "P1 through P45 with explicit dependency branches",
-    "P1 through P46 with explicit dependency branches",
-    "README theorem navigation count",
-)
+replace_once(readme, "version-0.45.0-2563eb", "version-0.46.0-2563eb", "README version badge")
+replace_once(readme, "The public research record now contains **45 proposition-level results", "The public research record now contains **46 proposition-level results", "README proposition count")
+replace_once(readme, "P1 through P45 with explicit dependency branches", "P1 through P46 with explicit dependency branches", "README theorem navigation count")
 replace_once(
     readme,
     "**P45** then moves the resource-allocation problem from independent candidate pairs to a shared preparation graph: one preparation-level sample stream can tighten every incident candidate edge, the resulting inverse-square design problem is strictly convex, and the unique optimum obeys an incidence-weighted cube-root KKT law.",
@@ -147,20 +132,10 @@ The scientific boundary remains strict. P46 is an experimental resource-selectio
 [Read Proposition 46](docs/proposition_46_budget_constrained_witness_graph.md). The [P46 theorem map](docs/figures/p46_budget_constrained_witness_graph.svg), [implementation](src/consciousness_bridge/budget_constrained_witness_graph.py), and [tests](tests/test_budget_constrained_witness_graph.py) expose the proof-to-code path.
 
 '''
-replace_once(
-    readme,
-    "---\n\n# 14. Observer-to-bridge handoff",
-    p46_section + "---\n\n# 14. Observer-to-bridge handoff",
-    "README P46 theorem section",
-)
+replace_once(readme, "---\n\n# 14. Observer-to-bridge handoff", p46_section + "---\n\n# 14. Observer-to-bridge handoff", "README P46 theorem section")
 
 roadmap = ROOT / "docs" / "theorem_roadmap.md"
-replace_once(
-    roadmap,
-    "![P45 shared-preparation graph allocation](figures/p45_shared_preparation_graph_allocation.svg)\n",
-    "![P45 shared-preparation graph allocation](figures/p45_shared_preparation_graph_allocation.svg)\n\n![P46 budget-constrained witness graph](figures/p46_budget_constrained_witness_graph.svg)\n",
-    "roadmap P46 figure",
-)
+replace_once(roadmap, "![P45 shared-preparation graph allocation](figures/p45_shared_preparation_graph_allocation.svg)\n", "![P45 shared-preparation graph allocation](figures/p45_shared_preparation_graph_allocation.svg)\n\n![P46 budget-constrained witness graph](figures/p46_budget_constrained_witness_graph.svg)\n", "roadmap P46 figure")
 replace_once(
     roadmap,
     "| [P45](proposition_45_shared_preparation_graph_allocation.md) | strictly convex shared-vertex allocation plus incidence-weighted KKT conditions | unique preparation-level sample design for overlapping candidate witness pairs | proved resource-allocation theorem |",
@@ -211,12 +186,7 @@ if "# 21. P46 budget-constrained witness-graph selection" in text:
 roadmap.write_text(text.rstrip() + roadmap_add + "\n", encoding="utf-8")
 
 nav = ROOT / "docs" / "research_navigation.md"
-replace_once(
-    nav,
-    "P1 through P45",
-    "P1 through P46",
-    "navigation theorem count",
-)
+replace_once(nav, "P1 through P45", "P1 through P46", "navigation theorem count")
 replace_once(
     nav,
     "| P45 | [Shared-preparation graph allocation](proposition_45_shared_preparation_graph_allocation.md) | shared preparation-level resource allocation with unique convex optimum and KKT incidence law |",
@@ -252,12 +222,7 @@ replace_once(pyproject, 'version = "0.45.0"', 'version = "0.46.0"', "pyproject v
 
 citation = ROOT / "CITATION.cff"
 replace_once(citation, "version: 0.45.0", "version: 0.46.0", "citation version")
-replace_once(
-    citation,
-    "shared-preparation graph allocation",
-    "shared-preparation graph allocation, budget-constrained witness-graph selection",
-    "citation P46 abstract",
-)
+replace_once(citation, "shared-preparation graph allocation", "shared-preparation graph allocation, budget-constrained witness-graph selection", "citation P46 abstract")
 
 changelog = ROOT / "CHANGELOG.md"
 text = changelog.read_text(encoding="utf-8")
@@ -267,7 +232,7 @@ if text.startswith("# 0.46.0"):
 changelog.write_text(entry + text, encoding="utf-8")
 
 release_test = ROOT / "tests" / "test_release_metadata_consistency.py"
-replace_all(release_test, "0.45.0", "0.46.0", 3, "release test version")
+replace_all(release_test, "0.45.0", "0.46.0", 1, "release test version")
 replace_once(
     release_test,
     '        "test_shared_preparation_graph_allocation.py",\n',
@@ -276,18 +241,8 @@ replace_once(
 )
 
 main_page_test = ROOT / "tests" / "test_main_page_visual_paper.py"
-replace_once(
-    main_page_test,
-    '    "p45_shared_preparation_graph_allocation.svg",\n',
-    '    "p45_shared_preparation_graph_allocation.svg",\n    "p46_budget_constrained_witness_graph.svg",\n',
-    "main page P46 figure",
-)
-replace_once(
-    main_page_test,
-    "for index in range(1, 46):",
-    "for index in range(1, 47):",
-    "main page proposition range",
-)
+replace_once(main_page_test, '    "p45_shared_preparation_graph_allocation.svg",\n', '    "p45_shared_preparation_graph_allocation.svg",\n    "p46_budget_constrained_witness_graph.svg",\n', "main page P46 figure")
+replace_once(main_page_test, "for index in range(1, 46):", "for index in range(1, 47):", "main page proposition range")
 
 for path in (readme, roadmap, nav, citation_map, pyproject, citation, changelog, release_test, main_page_test):
     text = path.read_text(encoding="utf-8")
