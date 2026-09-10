@@ -46,7 +46,7 @@
     <text x="1275" y="307" class="tx">Best uncertainty using</text>
     <text x="1275" y="337" class="tx">the first i edges with exactly</text>
     <text x="1275" y="367" class="tx">s units of cost spent.</text>
-    <text x="1275" y="397" class="small">Feasible allocations define state paths.</text>
+    <text x="1275" y="388" class="small">Feasible allocations define state paths.</text>
   </g>
 
   <path d="M570 297.5 H638" class="arrow" data-from="p63-why" data-to="p63-experiment"/>
@@ -66,15 +66,15 @@
   <g id="p63-complexity" data-qa-block="true" data-x="120" data-y="845" data-width="710" data-height="145">
     <rect class="card" x="120" y="845" width="710" height="145" rx="20" fill="#eff6ff" stroke="#3b82f6"/>
     <text x="165" y="892" class="bt">Exact computational guarantee</text>
-    <text x="165" y="938" class="math">O(m B′²) straightforward time</text>
-    <text x="165" y="972" class="tx">B′ uses exact gcd cost compression.</text>
+    <text x="165" y="928" class="math">O(m B′²) straightforward time</text>
+    <text x="165" y="958" class="tx">B′ uses exact gcd cost compression.</text>
   </g>
 
   <g id="p63-benchmark" data-qa-block="true" data-x="970" data-y="845" data-width="710" data-height="145">
     <rect class="card" x="970" y="845" width="710" height="145" rx="20" fill="#ffffff" stroke="#94a3b8"/>
     <text x="1015" y="892" class="bt">Continuous benchmark from P62</text>
-    <text x="1015" y="938" class="math">U*cont(B) ≤ U*int(B)</text>
-    <text x="1015" y="972" class="tx">Exact integrality gap reported per instance.</text>
+    <text x="1015" y="928" class="math">U*cont(B) ≤ U*int(B)</text>
+    <text x="1015" y="958" class="tx">Exact integrality gap reported per instance.</text>
   </g>
 
   <path d="M560 770 C520 815 475 820 475 833" class="arrow" data-from="p63-bellman" data-to="p63-complexity"/>
