@@ -68,3 +68,5 @@ jobs:
           git add -A
           git commit -m "Integrate P41 trace-ball quantum envelope"
           git push origin HEAD:p41-trace-ball-quantum-envelope
+
+# retry after context-specific proposition visibility guard fix
