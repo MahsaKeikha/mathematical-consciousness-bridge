@@ -46,7 +46,7 @@ def test_website_release_status_matches_repository():
 
 def test_website_latest_figure_is_real():
     html = WEBSITE.read_text(encoding="utf-8")
-    figure = "docs/figures/p65_lower_bounded_heterogeneous_calibration.svg"
+    figure = "docs/figures/p66_residual_exact_calibration_augmentation.svg"
     assert figure in html
     assert (ROOT / figure).exists()
 
