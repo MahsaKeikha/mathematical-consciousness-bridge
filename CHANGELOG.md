@@ -1,3 +1,12 @@
+# 0.69.0 - 2026-09-10
+
+- Added P69 certified dual-optimal multiplier search.
+- Proved concavity of the P68 one-dimensional Lagrangian dual and derived its exact supergradient interval from edgewise minimizing integer spends.
+- Proved minimizing spend is monotone in the multiplier, enabling a certified sign-changing bracket search.
+- Added supporting-line lower/upper certification of the strongest P68 dual value to a declared additive tolerance.
+- Kept dual optimality distinct from primal exactness and retained P67 as the separate zero-primal-duality-gap certificate.
+- Added proof, implementation, regression tests, theorem visual, geometry guards, README integration, roadmap/navigation updates, equation provenance, and website integration.
+
 # 0.68.0 - 2026-09-10
 
 - Added P68 Lagrangian optimality gap certificate.

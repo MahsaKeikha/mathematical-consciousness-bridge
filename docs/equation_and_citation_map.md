@@ -985,3 +985,39 @@ and strict convexity reduces exact integer minimization to the neighboring integ
 
 **Provenance:** repository-original Proposition 68. The automatic multiplier is a reproducible witness-selection rule, not a claim of dual maximization. The result is an optimization guarantee for the declared calibration surrogate only.
 
+# 58. P69 certified dual-optimal multiplier search
+
+The P68 dual family is
+
+\[
+q(\lambda)
+=
+\sum_e\min_{j\ge1,\;j\in\mathbb N}
+\left(\frac{b_e}{\sqrt j}+\lambda c_ej\right)-\lambda B.
+\]
+
+P69 proves that \(q\) is concave and that, for exact minimizing-count sets \(M_e(\lambda)\),
+
+\[
+\partial^+q(\lambda)
+=
+\left[
+\sum_e c_e\min M_e(\lambda)-B,
+\sum_e c_e\max M_e(\lambda)-B
+\right].
+\]
+
+A zero-containing interval certifies a global dual maximizer. Otherwise monotone minimizing spend provides a sign-changing multiplier bracket. Concave supporting lines at the bracket endpoints give
+
+\[
+Q_{\rm low}\le q^*\le Q_{\rm up},
+\]
+
+and the search stops when
+
+\[
+Q_{\rm up}-Q_{\rm low}\le\varepsilon_{\rm dual}.
+\]
+
+**Provenance:** repository-original Proposition 69, building on P63, P67, and P68 plus standard concave supporting-line analysis. P69 does not assume \(q^*=U_{\rm int}^*(B)\).
+
