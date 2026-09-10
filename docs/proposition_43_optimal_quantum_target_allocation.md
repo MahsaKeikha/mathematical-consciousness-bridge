@@ -201,9 +201,9 @@ s=a^{1/3}+b^{1/3}.
 At the optimizer,
 
 \[
-\lambda_*=rac{a^{1/3}}{s},
+\lambda_*=\frac{a^{1/3}}{s},
 \qquad
-1-\lambda_*=rac{b^{1/3}}{s}.
+1-\lambda_*=\frac{b^{1/3}}{s}.
 \]
 
 Therefore
