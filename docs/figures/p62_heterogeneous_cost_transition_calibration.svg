@@ -65,15 +65,15 @@
   <g id="p62-count" data-qa-block="true" data-x="120" data-y="845" data-width="710" data-height="145">
     <rect class="card" x="120" y="845" width="710" height="145" rx="20" fill="#eff6ff" stroke="#3b82f6"/>
     <text x="165" y="892" class="bt">Measurement count</text>
-    <text x="165" y="938" class="math">nₑ* ∝ bₑ^(2/3) cₑ^(-2/3)</text>
-    <text x="165" y="972" class="tx">More expensive edges receive fewer observations.</text>
+    <text x="165" y="928" class="math">nₑ* ∝ bₑ^(2/3) cₑ^(-2/3)</text>
+    <text x="165" y="958" class="tx">More expensive edges receive fewer observations.</text>
   </g>
 
   <g id="p62-share" data-qa-block="true" data-x="970" data-y="845" data-width="710" data-height="145">
     <rect class="card" x="970" y="845" width="710" height="145" rx="20" fill="#fff7ed" stroke="#f97316"/>
     <text x="1015" y="892" class="bt">Budget share</text>
-    <text x="1015" y="938" class="math">cₑ nₑ* ∝ bₑ^(2/3) cₑ^(1/3)</text>
-    <text x="1015" y="972" class="tx">Expensive edges may still use more total budget.</text>
+    <text x="1015" y="928" class="math">cₑ nₑ* ∝ bₑ^(2/3) cₑ^(1/3)</text>
+    <text x="1015" y="958" class="tx">Expensive edges may still use more total budget.</text>
   </g>
 
   <path d="M560 770 C520 815 475 820 475 833" class="arrow" data-from="p62-optimum" data-to="p62-count"/>
