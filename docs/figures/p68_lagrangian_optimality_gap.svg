@@ -31,7 +31,7 @@
     <text x="868" y="177" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">3. Exact edge minima</text>
     <text x="868" y="213" font-family="Arial, sans-serif" font-size="14" fill="#334155">x0 = [b/(2 lambda c)]^(2/3)</text>
     <text x="868" y="246" font-family="Arial, sans-serif" font-size="14" fill="#334155">check floor and ceiling</text>
-    <text x="868" y="282" font-family="Arial, sans-serif" font-size="15" fill="#475569">Strict convexity gives exactness.</text>
+    <text x="868" y="282" font-family="Arial, sans-serif" font-size="15" fill="#475569">Strict convexity: exact.</text>
   </g>
 
   <line id="arrow-1" x1="355" y1="235" x2="450" y2="235" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)" data-source="block-candidate" data-target="block-lambda"/>
