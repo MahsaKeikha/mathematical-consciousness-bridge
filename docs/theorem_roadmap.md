@@ -34,6 +34,7 @@ This roadmap records the current proved mathematical chain and the open route to
 
 ![P51 heterogeneous finite-window service-rate stopping](figures/p51_heterogeneous_service_rate_stopping.svg)
 ![P52 capacity-optimal service allocation](figures/p52_capacity_optimal_service_allocation.svg)
+![P53 residual-demand reoptimization](figures/p53_residual_demand_reoptimization.svg)
 
 ---
 
@@ -93,6 +94,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P50](proposition_50_bounded_starvation_asynchronous_sampling.md) | finite-window H-fair service guarantee plus P48 local stopping thresholds | finite global-round stopping for asynchronous priority sampling and a no-progress impossibility result without fairness | proved asynchronous scheduling theorem |
 | [P51](proposition_51_heterogeneous_service_rate_stopping.md) | preparation-specific finite-window quotas and exact endpoint service bottlenecks | instance-dependent positive/all-negative global stopping bounds with P50 as a special case | proved heterogeneous scheduling theorem |
 | [P52](proposition_52_capacity_optimal_service_allocation.md) | capacity-conservation lower bound plus proportional-demand minimax construction | unique capacity-optimal service shares and exact unit-capacity quota completion | proved deterministic scheduling theorem |
+| [P53](proposition_53_residual_demand_reoptimization.md) | residual max-envelope demands plus repeated exact P52 optimization | monotone optimal remaining time and exact capacity release after sampling or P47-safe pruning | proved dynamic scheduling theorem |
 
 ---
 

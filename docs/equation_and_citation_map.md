@@ -718,3 +718,17 @@ P50 is a progress/scheduling theorem. It does not alter the scientific meaning o
 
 P52 optimizes deterministic saturation of declared sufficient thresholds; it is not an information-theoretic lower bound on the underlying statistical problem.
 
+---
+
+# 42. P53 residual-demand reoptimization
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(r_i(t)=\max_{e\in E_t:e\ni i}(N_e-n_i(t))_+\) | componentwise-minimal current vertex demand | proved residual reduction | [P53](proposition_53_residual_demand_reoptimization.md) |
+| \(R(t)=\sum_i r_i(t)\) | total residual threshold burden | repository definition | [P53](proposition_53_residual_demand_reoptimization.md) |
+| \(T_{\rm rem}^*(t)=R(t)/C\) | exact optimal remaining deterministic completion time | P52 applied to residual demands | [P53](proposition_53_residual_demand_reoptimization.md) |
+| \(E_b\subseteq E_a,\ n_i(b)\ge n_i(a)\Rightarrow r_i(b)\le r_i(a)\) | residual monotonicity under sampling and safe pruning | proved max-envelope monotonicity | [P53](proposition_53_residual_demand_reoptimization.md) |
+| \(T_{\rm rem}^*(a)-T_{\rm rem}^*(b)=[R(a)-R(b)]/C\) | exact released optimal time | proved identity | [P53](proposition_53_residual_demand_reoptimization.md) |
+
+P53 quantifies deterministic threshold burden after valid pruning; it does not itself justify the statistical pruning decision.
+
