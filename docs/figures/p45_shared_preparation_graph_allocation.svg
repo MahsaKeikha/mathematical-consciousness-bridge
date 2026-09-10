@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="white"/>
+  <text x="480" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700">P45: shared-preparation graph allocation</text>
+  <text x="480" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="14">One preparation-level sample stream can tighten every incident candidate edge</text>
+
+  <circle cx="205" cy="170" r="42" fill="none" stroke="#333" stroke-width="2.5"/>
+  <circle cx="480" cy="125" r="42" fill="none" stroke="#333" stroke-width="2.5"/>
+  <circle cx="755" cy="170" r="42" fill="none" stroke="#333" stroke-width="2.5"/>
+  <circle cx="335" cy="310" r="42" fill="none" stroke="#333" stroke-width="2.5"/>
+  <circle cx="625" cy="310" r="42" fill="none" stroke="#333" stroke-width="2.5"/>
+
+  <line x1="245" y1="164" x2="438" y2="132" stroke="#555" stroke-width="2"/>
+  <line x1="522" y1="132" x2="715" y2="164" stroke="#555" stroke-width="2"/>
+  <line x1="235" y1="199" x2="305" y2="281" stroke="#555" stroke-width="2"/>
+  <line x1="365" y1="281" x2="450" y2="153" stroke="#555" stroke-width="2"/>
+  <line x1="510" y1="153" x2="595" y2="281" stroke="#555" stroke-width="2"/>
+  <line x1="655" y1="281" x2="725" y2="199" stroke="#555" stroke-width="2"/>
+  <line x1="377" y1="310" x2="583" y2="310" stroke="#555" stroke-width="2"/>
+
+  <text x="205" y="166" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700">i</text>
+  <text x="205" y="184" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">eps_i, r_i</text>
+  <text x="480" y="121" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700">j</text>
+  <text x="480" y="139" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">eps_j, r_j</text>
+  <text x="755" y="166" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700">k</text>
+  <text x="755" y="184" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">eps_k, r_k</text>
+  <text x="335" y="306" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700">l</text>
+  <text x="335" y="324" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">eps_l, r_l</text>
+  <text x="625" y="306" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700">m</text>
+  <text x="625" y="324" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">eps_m, r_m</text>
+
+  <rect x="145" y="390" width="670" height="96" rx="12" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="480" y="418" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700">Edge feasibility</text>
+  <text x="480" y="443" text-anchor="middle" font-family="Arial, sans-serif" font-size="14">2(eps_i + eps_j) + 2 L_e(r_i + r_j) &lt;= Delta_e</text>
+  <text x="480" y="469" text-anchor="middle" font-family="Arial, sans-serif" font-size="13">KKT cube-root precision is weighted by active incident edges</text>
+
+  <text x="480" y="520" text-anchor="middle" font-family="Arial, sans-serif" font-size="12">Design theorem only: no claim of physical completeness, quantum incompleteness, or consciousness.</text>
+</svg>

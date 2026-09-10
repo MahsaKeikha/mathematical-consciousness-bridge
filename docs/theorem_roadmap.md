@@ -20,6 +20,8 @@ This roadmap records the current proved mathematical chain and the open route to
 
 ![P44 finite-family post-selection certificate](figures/p44_pair_adaptive_sample_allocation.svg)
 
+![P45 shared-preparation graph allocation](figures/p45_shared_preparation_graph_allocation.svg)
+
 ---
 
 # 1. Complete proposition index
@@ -70,6 +72,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P42](proposition_42_quantum_regular_bridge_sample_complexity.md) | IC-measurement Hoeffding concentration plus linear-reconstruction stability | explicit sufficient quantum and target samples for a positive regularity obstruction | proved finite-sample design theorem |
 | [P43](proposition_43_optimal_quantum_target_allocation.md) | strict convexity and closed-form weighted allocation | unique minimum-cost split of the P42 quantum and target uncertainty budget | proved resource-allocation theorem |
 | [P44](proposition_44_pair_adaptive_sample_allocation.md) | finite-family union bound and simultaneous lower-margin coverage | valid data-dependent witness selection among predeclared candidate pairs | proved post-selection theorem |
+| [P45](proposition_45_shared_preparation_graph_allocation.md) | strictly convex shared-vertex allocation plus incidence-weighted KKT conditions | unique preparation-level sample design for overlapping candidate witness pairs | proved resource-allocation theorem |
 
 ---
 
@@ -876,6 +879,41 @@ M_{\widehat j}>0
 on that same simultaneous event. Shared preparations and dependent candidate analyses are allowed; independence is not required for the union-bound guarantee.
 
 Direct proof: [Proposition 44](proposition_44_pair_adaptive_sample_allocation.md). Implementation: [pair_adaptive_sample_allocation.py](../src/consciousness_bridge/pair_adaptive_sample_allocation.py). Tests: [test_pair_adaptive_sample_allocation.py](../tests/test_pair_adaptive_sample_allocation.py).
+
+---
+
+## P45 - shared-preparation graph allocation
+
+For a preparation graph \(G=(V,E)\), each candidate edge \(e=\{i,j\}\) receives the nonuniform P42 budget
+
+\[
+2(\varepsilon_i+\varepsilon_j)
++2L_e(r_i+r_j)
+\le\Delta_e.
+\]
+
+With inverse-square preparation-level sample cost
+
+\[
+C=\sum_i\frac{w_{Y,i}}{\varepsilon_i^2}
++\sum_i\frac{w_{Q,i}}{r_i^2},
+\]
+
+the design is strictly convex. Under positive feasibility it has a unique global minimizer. The KKT stationarity laws are
+
+\[
+\frac{w_{Y,i}}{\varepsilon_i^3}
+=
+\sum_{e\ni i}\lambda_e,
+\qquad
+\frac{w_{Q,i}}{r_i^3}
+=
+\sum_{e\ni i}\lambda_eL_e.
+\]
+
+These equations generalize the P43 cube-root rule from one pair to a graph in which a preparation-level sample stream can improve every incident candidate edge.
+
+Direct proof: [Proposition 45](proposition_45_shared_preparation_graph_allocation.md). Implementation: [shared_preparation_graph_allocation.py](../src/consciousness_bridge/shared_preparation_graph_allocation.py). Tests: [test_shared_preparation_graph_allocation.py](../tests/test_shared_preparation_graph_allocation.py).
 
 ---
 

@@ -1,7 +1,7 @@
 # Mathematical Consciousness Bridge
 
 [![tests](https://github.com/MahsaKeikha/mathematical-consciousness-bridge/actions/workflows/test.yml/badge.svg)](https://github.com/MahsaKeikha/mathematical-consciousness-bridge/actions/workflows/test.yml)
-[![version](https://img.shields.io/badge/version-0.44.0-2563eb)](CITATION.cff)
+[![version](https://img.shields.io/badge/version-0.45.0-2563eb)](CITATION.cff)
 [![license](https://img.shields.io/badge/license-MIT-059669)](LICENSE)
 
 **Mahsa Keikha, PhD**
@@ -40,11 +40,11 @@ This project continues **[Spatiotemporal Observer Mathematics](https://github.co
 
 Physics can describe states, fields, probability amplitudes, density operators, spacetime, Hamiltonians, open-system dynamics, thermodynamics, interventions, measurements, and statistical predictions without by itself defining subjective experience. A mathematically serious consciousness theory therefore requires a separately specified bridge between physically meaningful equivalence classes and formally defined experiential equivalence classes.
 
-The program here makes that bridge itself an object of mathematics. Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design. **P11** introduces intervention-resolved causal structure as a structured physical candidate rather than a scalar. **P12-P13** prove constructive insufficiency and component irredundancy results. **P14-P15** formalize temporal continuation and finite-error temporal certification. **P16** gives an independent-composition null model and response-level coupling defect. **P17** proves total-variation contraction and exact refinement ambiguity under deterministic coarse-graining. **P18** proves a quantitative scale-sufficiency certificate based on approximate reconstruction. **P19** proves exact deterministic and stochastic criteria for whether an independently defined target factors through a declared physical descriptor, together with a differential no-go test. **P20** converts the P19 stochastic population residual into an explicit finite-sample confidence certificate under a declared finite-alphabet IID model. **P21** then proves how that residual behaves under nested physical-descriptor refinement: unresolved deterministic collisions can only disappear, while the stochastic residual decreases by exactly the target-relevant information supplied by the added physical detail. **P22** gives a simultaneous finite-sample certificate for the entire declared refinement chain from one shared confidence event on the empirical physical-target law. **P23** proves that the same shared base confidence event also supports fixed-sample data-dependent selection among admissible deterministic refinements, together with an explicit near-optimality bound for the selected refinement. **P24** converts that fixed-sample result into an anytime-valid certificate by allocating the total error budget across all positive sample sizes, giving simultaneous repeated-look and finite stopping-time validity under the declared finite-alphabet IID model. **P25** returns to the P11 physical candidate and proves a directed-influence scale theorem: deterministic target coarse observation cannot increase matched-intervention influence, and P18 reconstruction defect bounds the loss by twice the uniform reconstruction error. **P26** extends the same physical scale program to P11 partition irreducibility: block-compatible coarse observation cannot increase the distance from the declared partition-product null, and P18 reconstruction separately controls the actual response law and its factorized reference. **P27** then allows the node set itself to change: a fine partition descends through a surjective node aggregation exactly when it is saturated by the aggregation fibers, the surviving partitions form a lattice isomorphic to the coarse partition lattice, and P18 controls any remaining irreducibility loss under an aggregation-compatible state map. **P28** transports the P11 directed-influence branch through the same changing node set by giving an exact compatibility criterion for matched intervention-pair source labels, pooling only inherited comparisons within each aggregate source, and applying P25/P18 control to the full fine target fiber before target-state aggregation. **P29** transports the complete P11 response geometry on a fixed intervention-delay grid: every pairwise total-variation response distance contracts under node aggregation, while P18 reconstruction bounds the sup-norm distortion of the entire indexed geometry by twice the uniform reconstruction defect. **P30** then assembles the P27 partition, P28 directed-influence, and P29 response-geometry branches under one shared node quotient, experiment grid, state map, and reconstruction declaration, yielding a simultaneous P11 distortion certificate while proving that zero numerical distortion cannot compensate for failed semantic compatibility. **P31** formalizes intervention-label quotienting itself: a many-to-one intervention map defines a unique coarse response law exactly when every retained response law is constant on each intervention fiber, and the quotient ambiguity defect quantifies representative dependence when exact descent fails. **P32** gives the corresponding exact delay quotient. **P33** proves joint intervention-delay quotient descent and the additive ambiguity bound. **P34** assembles node, state, intervention, and delay scale maps under one declared transformation. **P35** proves approximate directed-influence stability. **P36** propagates response ambiguity through partition-product irreducibility. **P37** combines all three P11 branches into one complete approximate operational-scale certificate. **P38** then specializes the physical-sufficiency program to a tomographically complete finite-dimensional quantum state descriptor and states the exact quantum non-factorization witness. **P39** converts that exact population criterion into a finite-data model-set certificate that carries tomography-model uncertainty and target-distribution uncertainty without treating numerical closeness as exact quantum-state equality. **P40** proves the corresponding continuous-region limitation: an injective finite quantum descriptor always permits unrestricted factorization on the sampled preparations, while a valid continuous-region obstruction requires an explicit bridge regularity class and compares target separation against the largest quantum separation allowed anywhere in the confidence region. **P41** makes that continuous-region theorem directly computable for trace-distance tomography balls, converting per-preparation quantum and target confidence radii into an end-to-end regularity obstruction and an explicit uncertainty budget. **P42** derives explicit finite-sample radii for a fixed informationally complete measurement and categorical target model, then solves for sufficient quantum and target sample sizes needed to resolve a positive population regularity gap. **P43** removes the arbitrary P42 quantum-versus-target uncertainty split and proves the unique cube-root allocation that minimizes a declared weighted sampling cost, including an explicit integer-rounding overhead bound. **P44** extends the finite-sample design from one preselected preparation pair to a finite predeclared family, proves simultaneous family coverage, and shows that any measurable data-dependent witness selector remains valid on that shared confidence event.
+The program here makes that bridge itself an object of mathematics. Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design. **P11** introduces intervention-resolved causal structure as a structured physical candidate rather than a scalar. **P12-P13** prove constructive insufficiency and component irredundancy results. **P14-P15** formalize temporal continuation and finite-error temporal certification. **P16** gives an independent-composition null model and response-level coupling defect. **P17** proves total-variation contraction and exact refinement ambiguity under deterministic coarse-graining. **P18** proves a quantitative scale-sufficiency certificate based on approximate reconstruction. **P19** proves exact deterministic and stochastic criteria for whether an independently defined target factors through a declared physical descriptor, together with a differential no-go test. **P20** converts the P19 stochastic population residual into an explicit finite-sample confidence certificate under a declared finite-alphabet IID model. **P21** then proves how that residual behaves under nested physical-descriptor refinement: unresolved deterministic collisions can only disappear, while the stochastic residual decreases by exactly the target-relevant information supplied by the added physical detail. **P22** gives a simultaneous finite-sample certificate for the entire declared refinement chain from one shared confidence event on the empirical physical-target law. **P23** proves that the same shared base confidence event also supports fixed-sample data-dependent selection among admissible deterministic refinements, together with an explicit near-optimality bound for the selected refinement. **P24** converts that fixed-sample result into an anytime-valid certificate by allocating the total error budget across all positive sample sizes, giving simultaneous repeated-look and finite stopping-time validity under the declared finite-alphabet IID model. **P25** returns to the P11 physical candidate and proves a directed-influence scale theorem: deterministic target coarse observation cannot increase matched-intervention influence, and P18 reconstruction defect bounds the loss by twice the uniform reconstruction error. **P26** extends the same physical scale program to P11 partition irreducibility: block-compatible coarse observation cannot increase the distance from the declared partition-product null, and P18 reconstruction separately controls the actual response law and its factorized reference. **P27** then allows the node set itself to change: a fine partition descends through a surjective node aggregation exactly when it is saturated by the aggregation fibers, the surviving partitions form a lattice isomorphic to the coarse partition lattice, and P18 controls any remaining irreducibility loss under an aggregation-compatible state map. **P28** transports the P11 directed-influence branch through the same changing node set by giving an exact compatibility criterion for matched intervention-pair source labels, pooling only inherited comparisons within each aggregate source, and applying P25/P18 control to the full fine target fiber before target-state aggregation. **P29** transports the complete P11 response geometry on a fixed intervention-delay grid: every pairwise total-variation response distance contracts under node aggregation, while P18 reconstruction bounds the sup-norm distortion of the entire indexed geometry by twice the uniform reconstruction defect. **P30** then assembles the P27 partition, P28 directed-influence, and P29 response-geometry branches under one shared node quotient, experiment grid, state map, and reconstruction declaration, yielding a simultaneous P11 distortion certificate while proving that zero numerical distortion cannot compensate for failed semantic compatibility. **P31** formalizes intervention-label quotienting itself: a many-to-one intervention map defines a unique coarse response law exactly when every retained response law is constant on each intervention fiber, and the quotient ambiguity defect quantifies representative dependence when exact descent fails. **P32** gives the corresponding exact delay quotient. **P33** proves joint intervention-delay quotient descent and the additive ambiguity bound. **P34** assembles node, state, intervention, and delay scale maps under one declared transformation. **P35** proves approximate directed-influence stability. **P36** propagates response ambiguity through partition-product irreducibility. **P37** combines all three P11 branches into one complete approximate operational-scale certificate. **P38** then specializes the physical-sufficiency program to a tomographically complete finite-dimensional quantum state descriptor and states the exact quantum non-factorization witness. **P39** converts that exact population criterion into a finite-data model-set certificate that carries tomography-model uncertainty and target-distribution uncertainty without treating numerical closeness as exact quantum-state equality. **P40** proves the corresponding continuous-region limitation: an injective finite quantum descriptor always permits unrestricted factorization on the sampled preparations, while a valid continuous-region obstruction requires an explicit bridge regularity class and compares target separation against the largest quantum separation allowed anywhere in the confidence region. **P41** makes that continuous-region theorem directly computable for trace-distance tomography balls, converting per-preparation quantum and target confidence radii into an end-to-end regularity obstruction and an explicit uncertainty budget. **P42** derives explicit finite-sample radii for a fixed informationally complete measurement and categorical target model, then solves for sufficient quantum and target sample sizes needed to resolve a positive population regularity gap. **P43** removes the arbitrary P42 quantum-versus-target uncertainty split and proves the unique cube-root allocation that minimizes a declared weighted sampling cost, including an explicit integer-rounding overhead bound. **P44** extends the finite-sample design from one preselected preparation pair to a finite predeclared family, proves simultaneous family coverage, and shows that any measurable data-dependent witness selector remains valid on that shared confidence event. **P45** then moves the resource-allocation problem from independent candidate pairs to a shared preparation graph: one preparation-level sample stream can tighten every incident candidate edge, the resulting inverse-square design problem is strictly convex, and the unique optimum obeys an incidence-weighted cube-root KKT law.
 
 A new quantum-foundations layer now asks a sharper question. Suppose the declared quantum description is operationally complete with respect to the state, admissible channels, and all declared measurement statistics. What exact mathematical evidence would be required to show that an independently defined experiential variable does **not** factor through that quantum operational state? This is formulated as an open non-reducibility theorem target. It is not an assumption that consciousness is quantum or that quantum theory is incomplete.
 
-The public research record now contains **44 proposition-level results, 58 equation-driven quantitative figures, quantum and classical physical maps, reproducible numerical examples, counterexamples, and a multi-version Python test matrix**.
+The public research record now contains **45 proposition-level results, 58 equation-driven quantitative figures, quantum and classical physical maps, reproducible numerical examples, counterexamples, and a multi-version Python test matrix**.
 
 ---
 
@@ -81,7 +81,7 @@ A reader should not need to search the repository to understand the argument. Th
 
 | What you want to inspect | Direct link | What is there |
 | --- | --- | --- |
-| complete theorem chain | [Theorem Roadmap](docs/theorem_roadmap.md) | P1 through P44 with explicit dependency branches |
+| complete theorem chain | [Theorem Roadmap](docs/theorem_roadmap.md) | P1 through P45 with explicit dependency branches |
 | equation provenance | [Equation and Citation Map](docs/equation_and_citation_map.md) | standard results, repository definitions, proofs, and external sources separated explicitly |
 | population physical-sufficiency theorem | [Proposition 19](docs/proposition_19_fundamental_physical_sufficiency.md) | deterministic factorization, stochastic sufficiency, and local rank obstruction |
 | finite-sample residual theorem | [Proposition 20](docs/proposition_20_finite_sample_residual_certification.md) | confidence interval for the P19 conditional-information residual |
@@ -109,6 +109,7 @@ A reader should not need to search the repository to understand the argument. Th
 | quantum regular-bridge sample complexity | [Proposition 42](docs/proposition_42_quantum_regular_bridge_sample_complexity.md) | explicit IC-tomography and categorical-target sample sizes for resolving a positive Lipschitz regularity gap |
 | optimal quantum-target allocation | [Proposition 43](docs/proposition_43_optimal_quantum_target_allocation.md) | closed-form cube-root allocation minimizing weighted P42 sampling cost with integer-rounding control |
 | pair-adaptive finite-family certification | [Proposition 44](docs/proposition_44_pair_adaptive_sample_allocation.md) | simultaneous family confidence and valid post-data witness selection for a finite predeclared candidate set |
+| shared-preparation graph allocation | [Proposition 45](docs/proposition_45_shared_preparation_graph_allocation.md) | unique minimum-cost preparation-level allocation for overlapping candidate edges with an incidence-weighted KKT characterization |
 | fundamental-theory program | [Fundamental Theory to Consciousness](docs/fundamental_theory_consciousness_program.md) | candidate fundamental state, physical quotients, experiential quotient, and falsifiable bridge program |
 | stochastic extension | [Stochastic Fundamental Bridge](docs/stochastic_fundamental_bridge.md) | Markov-kernel and conditional-information formulation |
 | empirical falsification | [Falsification Program](docs/falsification_program.md) | conditions that would weaken or defeat a bridge claim |
@@ -140,6 +141,7 @@ A reader should not need to search the repository to understand the argument. Th
 | implementation of P42 | [quantum_regular_bridge_sample_complexity.py](src/consciousness_bridge/quantum_regular_bridge_sample_complexity.py) | explicit fixed-IC finite-sample regularity certificate |
 | implementation of P43 | [optimal_quantum_target_allocation.py](src/consciousness_bridge/optimal_quantum_target_allocation.py) | exact minimum-cost quantum-target uncertainty allocation |
 | implementation of P44 | [pair_adaptive_sample_allocation.py](src/consciousness_bridge/pair_adaptive_sample_allocation.py) | finite-family confidence spending and post-selection certificate |
+| implementation of P45 | [shared_preparation_graph_allocation.py](src/consciousness_bridge/shared_preparation_graph_allocation.py) | shared preparation-level graph allocation, single-edge closed form, and KKT certificate utilities |
 
 Every local documentation and figure link is checked by automated tests. Broken internal links therefore fail CI instead of remaining silently in the public research record.
 
@@ -187,6 +189,7 @@ Every local documentation and figure link is checked by automated tests. Broken 
 | **11.18 P42 quantum regular-bridge sample complexity** | How many IC quantum measurements and categorical target observations are sufficient to resolve a declared positive regularity gap? |
 | **11.19 P43 optimal quantum-target allocation** | How should the P42 uncertainty budget be divided to minimize declared weighted sampling cost? |
 | **11.20 P44 pair-adaptive finite-family certification** | Can a witness pair be selected after seeing the data without losing family-level validity? |
+| **11.21 P45 shared-preparation graph allocation** | How should preparation-level samples be allocated when candidate witness pairs share vertices and data streams? |
 | **12. Observer handoff** | How does world-tube identification feed the bridge program? |
 | **13. Empirical interface** | What do perturbational and state-dependent observations actually constrain? |
 | **14. Competing theories** | How are alternative theories translated into a common empirical interface? |
@@ -200,7 +203,7 @@ Every local documentation and figure link is checked by automated tests. Broken 
 
 | Research record | Current state |
 | --- | ---: |
-| proposition-level results | **44** |
+| proposition-level results | **45** |
 | equation-driven classical/causal quantitative figures | **40** |
 | equation-driven quantum-foundations figures | **18** |
 | total equation-driven quantitative figures | **58** |
@@ -210,7 +213,7 @@ Every local documentation and figure link is checked by automated tests. Broken 
 | fundamental-theory factorization test | **formal open theorem + experiment target** |
 | automated tests | **160+ and expanding** |
 | CI matrix | **Python 3.10, 3.11, 3.12** |
-| research-software version | **0.44.0** |
+| research-software version | **0.45.0** |
 
 ---
 
@@ -1694,7 +1697,7 @@ A complete empirical bridge theory must specify
 
 ---
 
-# 7. Theorem roadmap - P1 through P44
+# 7. Theorem roadmap - P1 through P45
 
 ![Theorem roadmap](docs/figures/theorem_roadmap.svg)
 
@@ -3660,6 +3663,154 @@ The scientific boundary is strict:
 P44 certifies a finite family of declared descriptor and bridge-regularity tests. It does not show that a richer quantum descriptor cannot work, and it does not identify the target with consciousness.
 
 [Read Proposition 44](docs/proposition_44_pair_adaptive_sample_allocation.md). The [P44 theorem map](docs/figures/p44_pair_adaptive_sample_allocation.svg), [implementation](src/consciousness_bridge/pair_adaptive_sample_allocation.py), and [tests](tests/test_pair_adaptive_sample_allocation.py) expose the complete proof-to-code path.
+
+## 13.18 P45 - shared-preparation graph allocation
+
+![P45 shared-preparation graph allocation](docs/figures/p45_shared_preparation_graph_allocation.svg)
+
+P44 allows a final witness pair to be chosen after observing the data, provided the candidate family and simultaneous confidence control were declared in advance. P45 addresses the complementary design problem that appears when several candidate pairs share preparations and therefore share sample streams.
+
+Let the candidate family form an undirected graph
+
+\[
+G=(V,E),
+\]
+
+with preparations as vertices and candidate regularity witnesses as edges. For edge \(e=\{i,j\}\), define the population regularity gap
+
+\[
+\boxed{
+\Delta_e=d_{Y,e}-L_ed_{Q,e}.
+}
+\]
+
+If preparation \(i\) has target uncertainty radius \(\varepsilon_i\) and quantum reconstruction radius \(r_i\), the nonuniform P42 argument yields
+
+\[
+\boxed{
+\widehat M_e
+\ge
+\Delta_e
+-2(\varepsilon_i+\varepsilon_j)
+-2L_e(r_i+r_j).
+}
+\]
+
+Thus the preparation-level design constraint for each candidate edge is
+
+\[
+\boxed{
+2(\varepsilon_i+\varepsilon_j)
++2L_e(r_i+r_j)
+\le
+\Delta_e.
+}
+\]
+
+Assume preparation-specific concentration laws
+
+\[
+\varepsilon_i=\frac{a_{Y,i}}{\sqrt{n_{Y,i}}},
+\qquad
+r_i=\frac{a_{Q,i}}{\sqrt{n_{Q,i}}}.
+\]
+
+With positive weighted sample-cost coefficients \(w_{Y,i}\) and \(w_{Q,i}\), the continuous design objective is
+
+\[
+\boxed{
+C(\varepsilon,r)
+=
+\sum_i\frac{w_{Y,i}}{\varepsilon_i^2}
++
+\sum_i\frac{w_{Q,i}}{r_i^2}.
+}
+\]
+
+P45 proves that, under positive weights, positive edge gaps, graph coverage of the optimized vertices, and nonempty positive feasibility, this objective has a unique global minimizer. The reason is structural: every inverse-square term is strictly convex and every graph edge constraint is affine.
+
+The optimum obeys an incidence-weighted KKT law. If \(\lambda_e\ge0\) is the multiplier for edge \(e\), then
+
+\[
+\boxed{
+\frac{w_{Y,i}}{\varepsilon_i^3}
+=
+\sum_{e\ni i}\lambda_e,
+}
+\]
+
+and
+
+\[
+\boxed{
+\frac{w_{Q,i}}{r_i^3}
+=
+\sum_{e\ni i}\lambda_eL_e.
+}
+\]
+
+Equivalently,
+
+\[
+\varepsilon_i
+=
+\left(
+\frac{w_{Y,i}}{\sum_{e\ni i}\lambda_e}
+\right)^{1/3},
+\qquad
+r_i
+=
+\left(
+\frac{w_{Q,i}}{\sum_{e\ni i}\lambda_eL_e}
+\right)^{1/3}
+\]
+
+whenever the corresponding denominators are positive. This is the graph version of the P43 cube-root allocation law. The required precision at one preparation is determined by all active incident edge constraints, not by one pair in isolation.
+
+For a single edge with coefficient vector \(a=(2,2,2L_e,2L_e)\) and stream weights \(w_l\), define
+
+\[
+S_e=\sum_l a_l^{2/3}w_l^{1/3}.
+\]
+
+The unique continuous optimum is
+
+\[
+\boxed{
+u_l^*
+=
+\frac{\Delta_e}{S_e}
+\left(\frac{w_l}{a_l}\right)^{1/3},
+}
+\]
+
+with exact minimum cost
+
+\[
+\boxed{
+C_e^*=\frac{S_e^3}{\Delta_e^2}.
+}
+\]
+
+Ceiling the resulting continuous sample counts preserves feasibility because increasing sample size decreases every radius of the form \(a/\sqrt n\).
+
+The combined design logic is now
+
+\[
+\boxed{
+\text{P45 shared preparation allocation}
++
+\text{simultaneous confidence}
++
+\text{P44 post-selection}
+\Longrightarrow
+\text{resource-aware valid selected witness}.
+}
+\]
+
+The scientific boundary remains explicit. P45 is an experimental resource-allocation theorem for a declared quantum descriptor family and bridge regularity class. It does not establish physical completeness, quantum incompleteness, or consciousness.
+
+[Read Proposition 45](docs/proposition_45_shared_preparation_graph_allocation.md). The [P45 theorem map](docs/figures/p45_shared_preparation_graph_allocation.svg), [implementation](src/consciousness_bridge/shared_preparation_graph_allocation.py), and [tests](tests/test_shared_preparation_graph_allocation.py) expose the complete proof-to-code path.
 
 ---
 
