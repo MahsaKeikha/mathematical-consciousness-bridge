@@ -803,3 +803,17 @@ P57 is a deterministic experimental-scheduling robustness theorem. Uncertain or 
 
 P58 assumes an unknown true metric and a valid finite-data observation model. The empirical center itself need not satisfy the triangle inequality.
 
+---
+
+# P59 optimal transition-calibration allocation
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(\rho_e(n_e)=a_e/\sqrt{n_e}\) | declared inverse-square-root transition-calibration uncertainty model | repository design model, with Hoeffding coefficient available from P58 | [P58](proposition_58_finite_data_metric_uncertainty.md), [P59](proposition_59_optimal_transition_calibration.md) |
+| \(U(n)=\sum_e w_ea_e/\sqrt{n_e}\) | weighted route-uncertainty surrogate under edge-specific calibration effort | repository definition | [P59](proposition_59_optimal_transition_calibration.md) |
+| \(n_e^*=N(w_ea_e)^{2/3}/\sum_j(w_ja_j)^{2/3}\) | unique minimum-uncertainty continuous allocation | proved by strict convexity and KKT conditions | [P59](proposition_59_optimal_transition_calibration.md) |
+| \(U^*(N)=S^{3/2}/\sqrt N\) | exact minimum value of the declared surrogate | proved by substitution at the unique optimum | [P59](proposition_59_optimal_transition_calibration.md) |
+| \(N\ge S^3/\varepsilon^2\) | exact continuous budget threshold for target surrogate uncertainty \(\varepsilon\) | algebraic consequence of the optimum | [P59](proposition_59_optimal_transition_calibration.md) |
+
+P59 is an exact resource-allocation result for a declared convex uncertainty surrogate. It does not establish optimality for the full combinatorial robust-routing design problem.
+
