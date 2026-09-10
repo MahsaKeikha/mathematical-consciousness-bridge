@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900" role="img" aria-labelledby="title desc">
+  <title id="title">P38 quantum operational sufficiency</title>
+  <desc id="desc">Operational quantum state factorization, collision witness, refinement requirement, and scientific boundary.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .title{font:700 34px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .sub{font:400 17px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .head{font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .eq{font:600 17px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .label{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
+      .arrow{stroke:#64748b;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1500" height="900" fill="#ffffff"/>
+  <text x="70" y="65" class="title">P38 - Quantum Operational Sufficiency</text>
+  <text x="70" y="100" class="sub">The theorem tests factorization through a declared tomographically complete quantum state. It does not assume failure.</text>
+
+  <rect x="70" y="155" width="390" height="195" rx="18" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="100" y="190" class="label">DECLARED PHYSICAL DESCRIPTOR</text>
+  <text x="100" y="225" class="head">Operational quantum state</text>
+  <text x="100" y="262" class="eq">x ↦ ρx ∈ D(H)</text>
+  <text x="100" y="300" class="body">Tomographic completeness identifies equal</text>
+  <text x="100" y="325" class="body">declared statistics with equal density operators.</text>
+
+  <rect x="555" y="155" width="390" height="195" rx="18" fill="#f5f3ff" stroke="#8b5cf6"/>
+  <text x="585" y="190" class="label">SUFFICIENCY THEOREM</text>
+  <text x="585" y="225" class="head">Target factors through ρ</text>
+  <text x="585" y="262" class="eq">y(x)=g(ρx)</text>
+  <text x="585" y="300" class="eq">ρx=ρx′ ⇒ y(x)=y(x′)</text>
+  <text x="585" y="328" class="body">Stochastic form: I(Y;X | ρX)=0.</text>
+
+  <rect x="1040" y="155" width="390" height="195" rx="18" fill="#fff1f2" stroke="#e11d48"/>
+  <text x="1070" y="190" class="label">NON-FACTORIZATION WITNESS</text>
+  <text x="1070" y="225" class="head">Exact operational collision</text>
+  <text x="1070" y="262" class="eq">ρx=ρx′ but y(x)≠y(x′)</text>
+  <text x="1070" y="300" class="body">This refutes sufficiency of the declared ρ,</text>
+  <text x="1070" y="325" class="body">not quantum mechanics as a whole.</text>
+
+  <path class="arrow" d="M460 252 H543"/>
+  <path class="arrow" d="M945 252 H1028"/>
+
+  <rect x="150" y="430" width="540" height="190" rx="18" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="180" y="465" class="label">REFINEMENT BURDEN</text>
+  <text x="180" y="500" class="head">Increase physical completeness explicitly</text>
+  <text x="180" y="540" class="eq">Q1 ⪯ Q2 ⪯ ··· ⪯ QL</text>
+  <text x="180" y="578" class="eq">Rℓ = I(Y;X | Qℓ)</text>
+  <text x="180" y="605" class="body">Persistent residuals matter only after omitted physics is constrained.</text>
+
+  <rect x="810" y="430" width="540" height="190" rx="18" fill="#fff7ed" stroke="#f97316"/>
+  <text x="840" y="465" class="label">STRONG CLAIM TARGET</text>
+  <text x="840" y="500" class="head">Uniform residual over admissible descriptors</text>
+  <text x="840" y="540" class="eq">infQ∈Qadmissible I(Y;X | Q) &gt; 0</text>
+  <text x="840" y="578" class="body">P38 states this target but does not prove it.</text>
+  <text x="840" y="605" class="body">Finite-data tomography and target uncertainty remain next.</text>
+
+  <path class="arrow" d="M750 350 V395 H420 V418"/>
+  <path class="arrow" d="M750 395 H1080 V418"/>
+
+  <rect x="70" y="700" width="1360" height="125" rx="18" fill="#0f172a"/>
+  <text x="105" y="740" style="font:700 12px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">SCIENTIFIC BOUNDARY</text>
+  <text x="105" y="778" style="font:600 18px Georgia,'Times New Roman',serif;fill:#f8fafc">non-factorization through a declared ρ  ≠  proof of nonphysical consciousness</text>
+  <text x="105" y="807" style="font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">Incomplete system boundaries, environment models, tomography, preparation models, and target measurement must be tested first.</text>
+</svg>

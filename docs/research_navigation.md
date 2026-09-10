@@ -6,7 +6,7 @@ This page is the reading and reference index for the Mathematical Consciousness 
 
 1. [Main research paper](../README.md) for the complete scientific narrative and embedded figures.
 2. [Bridge problem](bridge_problem.md) for the formal statement of the physical-to-experiential problem.
-3. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P31, including the physical scale branches from P11-P18 to P25-P27.
+3. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P38, including the physical scale branches from P11-P18 to P25-P27.
 4. [Equation and citation map](equation_and_citation_map.md) for equation-level provenance and theorem lineage.
 5. [Proposition 19](proposition_19_fundamental_physical_sufficiency.md) for the population physical-sufficiency theorem.
 6. [Proposition 20](proposition_20_finite_sample_residual_certification.md) for finite-sample certification of the P19 stochastic residual.
@@ -61,6 +61,13 @@ This page is the reading and reference index for the Mathematical Consciousness 
 | P29 | [Response-geometry node aggregation](proposition_29_response_geometry_node_aggregation.md) | complete intervention-delay response pseudometric under node aggregation with P18 distortion control |
 | P30 | [Full declared P11 scale compatibility](proposition_30_full_p11_scale_compatibility.md) | simultaneous G/A/K transport under one shared scale declaration and no-semantic-compensation guard |
 | P31 | [Intervention-quotient compatibility](proposition_31_intervention_quotient_compatibility.md) | exact intervention-label descent and quantitative representative ambiguity |
+| P32 | [Delay-quotient compatibility](proposition_32_delay_quotient_compatibility.md) | exact temporal descent and ambiguity control |
+| P33 | [Joint operational quotient](proposition_33_joint_operational_quotient.md) | product-grid descent and additive ambiguity |
+| P34 | [Joint P11 operational scale](proposition_34_joint_p11_operational_scale.md) | complete node/state/intervention/time declaration |
+| P35 | [Approximate directed-influence quotient stability](proposition_35_approximate_directed_influence_operational_quotient.md) | influence perturbation and edge-margin control |
+| P36 | [Partition irreducibility quotient stability](proposition_36_partition_irreducibility_operational_quotient.md) | product-reference perturbation bound |
+| P37 | [Complete approximate P11 operational scale](proposition_37_complete_approximate_p11_operational_scale.md) | full G/A/K distortion certificate |
+| P38 | [Quantum operational sufficiency](proposition_38_quantum_operational_sufficiency.md) | quantum factorization and non-factorization criterion |
 
 ## Physics, mathematics, and quantitative figures
 
