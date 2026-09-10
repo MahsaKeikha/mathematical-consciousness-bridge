@@ -1,0 +1,44 @@
+name: p43-notation-fix-once
+
+on:
+  push:
+    branches:
+      - p43-optimal-quantum-target-allocation
+    paths:
+      - .github/workflows/p43-notation-fix-once.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: p43-optimal-quantum-target-allocation
+          fetch-depth: 0
+      - name: Repair P43 LaTeX notation
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('docs/proposition_43_optimal_quantum_target_allocation.md')
+          text = path.read_text(encoding='utf-8')
+          marker = '\nrac{'
+          count = text.count(marker)
+          if count != 2:
+              raise SystemExit(f'expected exactly 2 malformed fraction markers, found {count}')
+          text = text.replace(marker, '\n\\frac{')
+          path.write_text(text, encoding='utf-8')
+          if marker in text:
+              raise SystemExit('malformed fraction marker remains')
+          PY
+      - name: Remove one-time workflow
+        run: rm .github/workflows/p43-notation-fix-once.yml
+      - name: Commit repair
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/proposition_43_optimal_quantum_target_allocation.md .github/workflows/p43-notation-fix-once.yml
+          git commit -m "Repair P43 fraction notation"
+          git push origin HEAD:p43-optimal-quantum-target-allocation
