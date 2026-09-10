@@ -35,6 +35,7 @@ This roadmap records the current proved mathematical chain and the open route to
 ![P51 heterogeneous finite-window service-rate stopping](figures/p51_heterogeneous_service_rate_stopping.svg)
 ![P52 capacity-optimal service allocation](figures/p52_capacity_optimal_service_allocation.svg)
 ![P53 residual-demand reoptimization](figures/p53_residual_demand_reoptimization.svg)
+![P54 metric switching-cost residual scheduling](figures/p54_metric_switching_cost_residual_scheduling.svg)
 
 ---
 
@@ -95,6 +96,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P51](proposition_51_heterogeneous_service_rate_stopping.md) | preparation-specific finite-window quotas and exact endpoint service bottlenecks | instance-dependent positive/all-negative global stopping bounds with P50 as a special case | proved heterogeneous scheduling theorem |
 | [P52](proposition_52_capacity_optimal_service_allocation.md) | capacity-conservation lower bound plus proportional-demand minimax construction | unique capacity-optimal service shares and exact unit-capacity quota completion | proved deterministic scheduling theorem |
 | [P53](proposition_53_residual_demand_reoptimization.md) | residual max-envelope demands plus repeated exact P52 optimization | monotone optimal remaining time and exact capacity release after sampling or P47-safe pruning | proved dynamic scheduling theorem |
+| [P54](proposition_54_metric_switching_cost_residual_scheduling.md) | metric shortcutting plus Hamiltonian-path reduction and Held-Karp recurrence | exact residual execution cost with preparation switching overhead | proved deterministic scheduling theorem |
 
 ---
 

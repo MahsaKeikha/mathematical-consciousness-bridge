@@ -6,7 +6,7 @@ This page is the reading and reference index for the Mathematical Consciousness 
 
 1. [Main research paper](../README.md) for the complete scientific narrative and embedded figures.
 2. [Bridge problem](bridge_problem.md) for the formal statement of the physical-to-experiential problem.
-3. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P53, including the physical scale branches from P11-P18 to P25-P27.
+3. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P54, including the physical scale branches from P11-P18 to P25-P27.
 4. [Equation and citation map](equation_and_citation_map.md) for equation-level provenance and theorem lineage.
 5. [Proposition 19](proposition_19_fundamental_physical_sufficiency.md) for the population physical-sufficiency theorem.
 6. [Proposition 20](proposition_20_finite_sample_residual_certification.md) for finite-sample certification of the P19 stochastic residual.
@@ -83,6 +83,7 @@ This page is the reading and reference index for the Mathematical Consciousness 
 | P51 | [Heterogeneous finite-window service-rate stopping](proposition_51_heterogeneous_service_rate_stopping.md) | preparation-specific service windows and quotas with endpoint-bottleneck global stopping bounds |
 | P52 | [Capacity-optimal service allocation](proposition_52_capacity_optimal_service_allocation.md) | exact proportional-demand minimax service shares, capacity lower bound, uniqueness, and discrete quota optimum |
 | P53 | [Residual-demand reoptimization](proposition_53_residual_demand_reoptimization.md) | dynamic P52 reoptimization after sampling and safe edge pruning, with exact released-capacity identity |
+| P54 | [Metric switching-cost residual scheduling](proposition_54_metric_switching_cost_residual_scheduling.md) | one-block metric batching, exact acquisition-routing decomposition, and Held-Karp shortest Hamiltonian path audit |
 
 ## Physics, mathematics, and quantitative figures
 
