@@ -43,6 +43,7 @@ CANONICAL_MAIN_PAGE_FIGURES = (
     "p42_quantum_regular_bridge_sample_complexity.svg",
     "p43_optimal_quantum_target_allocation.svg",
     "p44_pair_adaptive_sample_allocation.svg",
+    "p45_shared_preparation_graph_allocation.svg",
     "p30_p37_operational_scale_map.svg",
     "observer_to_bridge_handoff.svg",
     "conscious_state_measurement_map.svg",
@@ -77,7 +78,7 @@ def test_main_page_contains_canonical_scientific_maps():
 def test_main_page_exposes_entire_proposition_chain():
     text = README.read_text(encoding="utf-8")
 
-    for index in range(1, 45):
+    for index in range(1, 46):
         assert f"**P{index}**" in text, f"README is missing proposition P{index}"
 
 

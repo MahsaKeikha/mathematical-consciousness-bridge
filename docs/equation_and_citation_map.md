@@ -557,7 +557,23 @@ P44 is a finite-family statistical theorem. It does not establish physical compl
 
 ---
 
-# 34. Candidate consciousness-theory feature families
+# 34. P45 shared-preparation graph allocation
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(\Delta_e=d_{Y,e}-L_ed_{Q,e}\) | candidate edge population regularity gap | repository design quantity | [P45](proposition_45_shared_preparation_graph_allocation.md) |
+| \(2(\varepsilon_i+\varepsilon_j)+2L_e(r_i+r_j)\le\Delta_e\) | preparation-specific sufficient edge budget | nonuniform extension of the P42 power bound | [P42](proposition_42_quantum_regular_bridge_sample_complexity.md); [P45](proposition_45_shared_preparation_graph_allocation.md) |
+| \(C=\sum_iw_{Y,i}/\varepsilon_i^2+\sum_iw_{Q,i}/r_i^2\) | shared preparation-level weighted sampling cost | repository design objective | [P45](proposition_45_shared_preparation_graph_allocation.md) |
+| \(w_{Y,i}/\varepsilon_i^3=\sum_{e\ni i}\lambda_e\) | target-side KKT incidence law | proved | convex KKT conditions applied in [P45](proposition_45_shared_preparation_graph_allocation.md) |
+| \(w_{Q,i}/r_i^3=\sum_{e\ni i}\lambda_eL_e\) | quantum-side KKT incidence law | proved | convex KKT conditions applied in [P45](proposition_45_shared_preparation_graph_allocation.md) |
+| \(C_e^*=S_e^3/\Delta_e^2\) | exact single-edge minimum cost | proved by strict convexity and stationarity | [P45](proposition_45_shared_preparation_graph_allocation.md) |
+| ceiling continuous sample counts preserves edge feasibility | conservative integer conversion | monotonicity of \(a/\sqrt n\) | [P45](proposition_45_shared_preparation_graph_allocation.md) |
+
+P45 is a resource-allocation theorem for a declared statistical design. It does not establish physical completeness, quantum incompleteness, or consciousness.
+
+---
+
+# 35. Candidate consciousness-theory feature families
 
 The following are source-grounded translations into generic feature notation. They are not claims that each named theory reduces to one scalar or one universally agreed implementation.
 
@@ -574,7 +590,7 @@ Detailed caveats and source roles are maintained in [Candidate Theory Families](
 
 ---
 
-# 35. Citation discipline
+# 36. Citation discipline
 
 A result is cited as a repository result when the bridge-specific statement, construction, or counterexample is introduced here.
 

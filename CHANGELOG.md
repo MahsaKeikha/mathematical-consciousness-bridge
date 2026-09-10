@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.45.0 - 2026-09-09
+
+### Added
+- Proposition 45: shared preparation-level graph allocation for overlapping candidate witness pairs.
+- A nonuniform P42 edge budget with preparation-specific target and quantum uncertainty radii.
+- A strictly convex inverse-square sample-cost program with a unique global optimum under positive feasibility.
+- Incidence-weighted KKT cube-root laws showing how active edges jointly determine preparation-level precision.
+- An exact single-edge closed form and conservative integer sample-count conversion.
+- Publication theorem map, main-paper section, roadmap entry, provenance mapping, and release visibility guards.
+
+### Scientific boundary
+- P45 is an experimental resource-allocation theorem for a declared quantum descriptor family and bridge regularity class.
+- It does not establish physical completeness, quantum incompleteness, or consciousness.
+
 ## 0.44.0 - 2026-09-09
 
 ### Added
