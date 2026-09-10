@@ -771,3 +771,18 @@ P55 compares states under one fixed metric and fixed start/setup state. A moving
 
 P56 assumes the metric itself is unchanged. Time-varying switching geometry requires a separate perturbation analysis.
 
+---
+
+# 46. P57 switching-metric perturbation stability
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(\delta=\max_{x,y}|c(x,y)-c'(x,y)|\) | common-point sup distance between two declared finite switching metrics | repository definition | [P57](proposition_57_switching_metric_perturbation.md) |
+| \(q(S;s)\in\{|S|-1,|S|\}\) | exact maximum number of nontrivial metric edges required by the rooted P54 route | repository definition with metric shortcut justification | [P57](proposition_57_switching_metric_perturbation.md) |
+| \(|L_c^*(S;s)-L_{c'}^*(S;s)|\le q(S;s)\delta\) | stability of the exact switching optimum under metric drift | proved sharp perturbation theorem | [P57](proposition_57_switching_metric_perturbation.md) |
+| \(P_{57}=\min\{c(s,s')+q(S';s')\delta,\ q(S';s)\delta+c'(s,s')\}\) | combined start-motion and metric-drift penalty | proved by two valid perturbation orders | [P57](proposition_57_switching_metric_perturbation.md) |
+| \(C_c^*(r;s)-C_{c'}^*(r';s')\ge\Delta_{\rm fixed}-P_{57}\) | full residual/start/metric reoptimization lower bound | proved P55-P56-P57 composition | [P57](proposition_57_switching_metric_perturbation.md) |
+| \(L_{c'}^*(S;s')\le\ell_{c'}(\pi_c^*;s')\) | old-optimal-route reuse certificate under the new geometry | proved feasibility upper bound | [P57](proposition_57_switching_metric_perturbation.md) |
+
+P57 is a deterministic experimental-scheduling robustness theorem. Uncertain or statistically estimated switching metrics require a separate confidence-set analysis.
+
