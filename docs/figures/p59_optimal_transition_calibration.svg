@@ -23,7 +23,7 @@
     <text x="115" y="222" class="bt">1. Transition uncertainty</text>
     <text x="115" y="272" class="math">ρₑ(nₑ) = aₑ / √nₑ</text>
     <text x="115" y="320" class="tx">More data lowers uncertainty.</text>
-    <text x="115" y="352" class="tx">Larger aₑ means harder estimation.</text>
+    <text x="115" y="352" class="tx">Larger aₑ means harder estimates.</text>
     <text x="115" y="395" class="small">Each edge has a calibration scale.</text>
   </g>
 
