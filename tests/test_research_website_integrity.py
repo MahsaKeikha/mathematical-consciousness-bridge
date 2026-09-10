@@ -46,7 +46,7 @@ def test_website_release_status_matches_repository():
 
 def test_website_latest_figure_is_real():
     html = WEBSITE.read_text(encoding="utf-8")
-    figure = "docs/figures/p67_global_integer_optimality_certificate.svg"
+    figure = "docs/figures/p68_lagrangian_optimality_gap.svg"
     assert figure in html
     assert (ROOT / figure).exists()
 

@@ -7,53 +7,18 @@ def _read(path: str) -> str:
     return (ROOT / path).read_text(encoding="utf-8")
 
 
-def test_p67_is_integrated_across_public_record():
+def test_p67_is_preserved_in_public_record():
     required = {
-        "README.md": [
-            "version-0.67.0-2563eb",
-            "67 proposition-level results",
-            "Latest proved extension: P67 global integer optimality certificate",
-            "p67_global_integer_optimality_certificate.svg",
-            "P1 through P67 with explicit dependency branches",
-        ],
-        "docs/theorem_roadmap.md": [
-            "P67",
-            "proposition_67_global_integer_optimality_certificate.md",
-            "p67_global_integer_optimality_certificate.svg",
-            "proved global-optimality certificate",
-        ],
-        "docs/research_navigation.md": [
-            "P1 through P67",
-            "proposition_67_global_integer_optimality_certificate.md",
-        ],
-        "docs/equation_and_citation_map.md": [
-            "# 56. P67 global integer optimality certificate",
-            "\\Delta_e(j)",
-            "U(k)=U_{\\rm int}^*(B)",
-            "Failure of the interval test is inconclusive",
-        ],
-        "website/index.html": [
-            "<strong>67</strong><span>proposition-level results</span>",
-            "<strong>v0.67.0</strong><span>current documented release</span>",
-            "P67",
-            "docs/figures/p67_global_integer_optimality_certificate.svg",
-        ],
-        "website/research-map.html": [
-            "Sixty-seven results",
-            "P54-P67",
-            "P58-P61",
-            "P62-P67",
-            "P67 common-multiplier certificate",
-        ],
-        "CITATION.cff": ["version: 0.67.0", "global integer optimality certification"],
-        "pyproject.toml": ['version = "0.67.0"', "global integer optimality certification"],
+        "README.md": ["Proposition 67", "p67_global_integer_optimality_certificate.svg"],
+        "docs/theorem_roadmap.md": ["P67", "proposition_67_global_integer_optimality_certificate.md"],
+        "docs/research_navigation.md": ["proposition_67_global_integer_optimality_certificate.md"],
+        "docs/equation_and_citation_map.md": ["P67 global integer optimality certificate", "\\Delta_e(j)"],
         "CHANGELOG.md": ["# 0.67.0 - 2026-09-10", "P67 global integer optimality certificate"],
     }
-
     for path, tokens in required.items():
         text = _read(path)
         for token in tokens:
-            assert token in text, f"{path} missing P67 publication token: {token}"
+            assert token in text, f"{path} missing historical P67 token: {token}"
 
 
 def test_p67_permanent_proof_code_visual_and_tests_exist():

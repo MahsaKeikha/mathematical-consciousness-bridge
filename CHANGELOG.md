@@ -1,3 +1,12 @@
+# 0.68.0 - 2026-09-10
+
+- Added P68 Lagrangian optimality gap certificate.
+- Proved that every positive multiplier gives a weak-duality lower bound on the unrestricted P63 integer optimum.
+- Added rigorous additive candidate-gap bounds and multiplicative factors when the dual lower bound is positive.
+- Proved exact one-edge integer Lagrangian minimization by checking the neighboring integers around the strictly convex continuous stationary point.
+- Recovered P67 as the zero-gap special case without claiming that the automatic P68 multiplier maximizes the dual.
+- Added proof, implementation, regression tests, theorem visual, geometry guards, README integration, roadmap/navigation updates, equation provenance, and website integration.
+
 # 0.67.0 - 2026-09-10
 
 - Added P67 global integer optimality certificate.

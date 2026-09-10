@@ -951,3 +951,37 @@ U(k)=U_{\rm int}^*(B).
 
 **Provenance:** repository-original Proposition 67. This is a sufficient integer resource-allocation certificate. Failure of the interval test is inconclusive and is not a proof of suboptimality.
 
+# 57. P68 Lagrangian optimality gap certificate
+
+For any positive multiplier \(\lambda>0\), define
+
+\[
+q(\lambda)
+=
+\sum_e\min_{j\ge1,\ j\in\mathbb N}
+\left(\frac{b_e}{\sqrt j}+\lambda c_ej\right)-\lambda B.
+\]
+
+Weak duality gives
+
+\[
+q(\lambda)\le U_{\rm int}^*(B).
+\]
+
+Hence every feasible candidate \(\widehat k\) satisfies
+
+\[
+0\le U(\widehat k)-U_{\rm int}^*(B)
+\le U(\widehat k)-q(\lambda).
+\]
+
+For a fixed edge, the real Lagrangian stationary point is
+
+\[
+x_e^{(0)}=\left(\frac{b_e}{2\lambda c_e}\right)^{2/3},
+\]
+
+and strict convexity reduces exact integer minimization to the neighboring integers around \(\max\{1,x_e^{(0)}\}\). P67 is the zero-gap special case when its common multiplier exists and the candidate spends the budget tightly.
+
+**Provenance:** repository-original Proposition 68. The automatic multiplier is a reproducible witness-selection rule, not a claim of dual maximization. The result is an optimization guarantee for the declared calibration surrogate only.
+
