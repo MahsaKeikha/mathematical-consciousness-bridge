@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">P52 capacity-optimal service allocation</title>
+  <desc id="desc">A theorem map from edge thresholds to vertex demands, proportional service shares, equalized completion bottlenecks, and exact discrete quota optimality.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.12"/></filter>
+    <style>
+      .title{font:700 30px system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#0f172a}.subtitle{font:400 16px system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#475569}.bt{font:700 18px system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#0f172a}.body{font:400 14px system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#334155}.math{font:600 14px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#0f172a}.small{font:400 12px system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#64748b}.flow{stroke:#334155;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="760" rx="24" fill="#f8fafc"/>
+  <text x="60" y="58" class="title">P52: Capacity-optimal service allocation</text>
+  <text x="60" y="88" class="subtitle">Once local thresholds are known, global sampling capacity can be allocated exactly.</text>
+
+  <g filter="url(#shadow)"><rect x="60" y="130" width="300" height="150" rx="18" fill="#fff" stroke="#94a3b8"/><text x="86" y="166" class="bt">1. Edge thresholds</text><text x="86" y="200" class="math">Nₑ from P48</text><text x="86" y="230" class="body">Every edge needs both endpoints</text><text x="86" y="252" class="body">to reach its declared local count.</text></g>
+  <g filter="url(#shadow)"><rect x="450" y="130" width="300" height="150" rx="18" fill="#fff" stroke="#94a3b8"/><text x="476" y="166" class="bt">2. Vertex demand</text><text x="476" y="200" class="math">dᵢ = max { Nₑ : e ∋ i }</text><text x="476" y="230" class="body">This is the componentwise-minimal</text><text x="476" y="252" class="body">threshold-saturation demand vector.</text></g>
+  <g filter="url(#shadow)"><rect x="840" y="130" width="300" height="150" rx="18" fill="#eef2ff" stroke="#6366f1"/><text x="866" y="166" class="bt">3. Capacity constraint</text><text x="866" y="200" class="math">Σᵢ πᵢ ≤ C</text><text x="866" y="230" class="math">T(π)=maxᵢ dᵢ/πᵢ</text><text x="866" y="252" class="small">Positive demand with zero service means T=∞.</text></g>
+  <path d="M360 205 L450 205" class="flow"/><path d="M750 205 L840 205" class="flow"/>
+
+  <g filter="url(#shadow)"><rect x="120" y="365" width="440" height="180" rx="20" fill="#ecfdf5" stroke="#10b981"/><text x="150" y="405" class="bt">Exact minimax theorem</text><text x="150" y="443" class="math">πᵢ* = C dᵢ / Σⱼ dⱼ</text><text x="150" y="480" class="math">T* = (Σᵢ dᵢ) / C</text><text x="150" y="515" class="body">Every positive-demand bottleneck is equalized:</text><text x="150" y="538" class="math">dᵢ / πᵢ* = T*</text></g>
+
+  <g filter="url(#shadow)"><rect x="640" y="365" width="440" height="180" rx="20" fill="#fff7ed" stroke="#f97316"/><text x="670" y="405" class="bt">Why no allocation can do better</text><text x="670" y="443" class="math">dᵢ ≤ T πᵢ</text><text x="670" y="478" class="math">Σᵢ dᵢ ≤ T Σᵢ πᵢ ≤ TC</text><text x="670" y="515" class="math">⇒ T ≥ (Σᵢ dᵢ)/C</text><text x="670" y="538" class="small">The proportional allocation attains this lower bound exactly.</text></g>
+  <path d="M990 280 C990 325 930 340 860 365" class="flow"/><path d="M600 280 C540 320 420 330 340 365" class="flow"/>
+
+  <g filter="url(#shadow)"><rect x="180" y="610" width="840" height="90" rx="18" fill="#f1f5f9" stroke="#94a3b8"/><text x="210" y="645" class="bt">Exact discrete unit-capacity corollary</text><text x="210" y="676" class="math">Tdiscrete* = Σᵢ dᵢ</text><text x="560" y="676" class="body">Select each preparation exactly dᵢ times; no shorter quota schedule can satisfy all demands.</text></g>
+
+  <text x="60" y="738" class="small">Boundary: P52 optimizes deterministic threshold saturation, not the actual random stopping time and not the scientific meaning of the bridge.</text>
+</svg>
