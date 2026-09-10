@@ -1,3 +1,4 @@
+from itertools import pairwise
 from math import sqrt
 
 import pytest
@@ -45,11 +46,11 @@ def test_supergradient_sign_tracks_monotone_selected_spend():
     ]
     assert all(
         first.minimum_spend >= second.minimum_spend
-        for first, second in zip(evaluations, evaluations[1:])
+        for first, second in pairwise(evaluations)
     )
     assert all(
         first.maximum_spend >= second.maximum_spend
-        for first, second in zip(evaluations, evaluations[1:])
+        for first, second in pairwise(evaluations)
     )
 
 
