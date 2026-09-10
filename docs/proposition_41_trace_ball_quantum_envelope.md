@@ -173,7 +173,7 @@ L^{\mathrm{ball}}_{xx'}
 :=
 \left[
 \|\widehat P_x-\widehat P_{x'}\|_{\mathrm{TV}}
--arepsilon_x-arepsilon_{x'}
+-\varepsilon_x-\varepsilon_{x'}
 \right]_+.
 }
 \]
@@ -195,7 +195,7 @@ where \(\omega\) is nondecreasing and \(\omega(0)=0\).
 For any descriptor in the trace-ball confidence region,
 
 \[
-D(\rho_x,ho_{x'})
+D(\rho_x,\rho_{x'})
 \le
 U^{\mathrm{ball}}_{xx'}.
 \]
@@ -341,15 +341,15 @@ M^{\mathrm{ball}}_{xx'}
 }
 \]
 
-Quantum uncertainty reduces the margin through \(L(r_x+r_{x'})\). Target uncertainty reduces it through \(\varepsilon_x+\varepsilon_{x'}\).
+Quantum uncertainty reduces the observed-data margin through \(L(r_x+r_{x'})\). Target uncertainty reduces it through \(\varepsilon_x+\varepsilon_{x'}\).
 
 This decomposition directly identifies which experiment needs more precision.
 
 ---
 
-## 9. A deterministic sufficient design inequality
+## 9. Correct population-level design inequality
 
-Suppose a planned experiment has anticipated population separations
+Suppose a planned experiment has population separations
 
 \[
 d_Y=\|P_x-P_{x'}\|_{\mathrm{TV}},
@@ -357,7 +357,7 @@ d_Y=\|P_x-P_{x'}\|_{\mathrm{TV}},
 d_Q=D(\rho_x,\rho_{x'}),
 \]
 
-and symmetric error budgets
+and symmetric per-preparation confidence radii
 
 \[
 r_x,r_{x'}\le r,
@@ -365,25 +365,53 @@ r_x,r_{x'}\le r,
 \varepsilon_x,\varepsilon_{x'}\le\varepsilon.
 \]
 
-A conservative sufficient condition for a positive \(L\)-Lipschitz obstruction is
+The center-to-center estimated distances themselves can move relative to the population distances. On the confidence events,
+
+\[
+\widehat D^Y_{xx'}
+\ge d_Y-2\varepsilon,
+\]
+
+and
+
+\[
+\widehat D^Q_{xx'}
+\le d_Q+2r.
+\]
+
+P41 then subtracts another \(2\varepsilon\) in its target lower envelope and adds another \(2r\) in its quantum upper envelope. Therefore
+
+\[
+L^{\mathrm{ball}}_{xx'}
+\ge [d_Y-4\varepsilon]_+,
+\]
+
+while, before saturation at one,
+
+\[
+U^{\mathrm{ball}}_{xx'}
+\le d_Q+4r.
+\]
+
+A conservative population-level sufficient condition for a positive \(L\)-Lipschitz obstruction is therefore
 
 \[
 \boxed{
-d_Y-2\varepsilon>L(d_Q+2r),}
+d_Y-4\varepsilon>L(d_Q+4r),}
 \]
 
-provided the quantum upper envelope does not saturate at one.
+provided the quantum upper envelope remains below one.
 
 Equivalently,
 
 \[
 \boxed{
-d_Y-Ld_Q>2\varepsilon+2Lr.}
+d_Y-Ld_Q>4\varepsilon+4Lr.}
 \]
 
-The left side is the population regularity gap. The right side is the combined uncertainty budget.
+The left side is the population regularity gap. The right side is the complete finite-error budget needed to guarantee that the data-dependent P41 certificate remains positive.
 
-This is the point from which an explicit sample-complexity theorem can be derived once concrete rates for \(r\) and \(\varepsilon\) are declared.
+This corrected population inequality is the starting point for P42 sample complexity.
 
 ---
 
@@ -405,7 +433,7 @@ The result should therefore be interpreted as a rigorous falsification certifica
 
 ## 11. Next theorem target
 
-P41 isolates the remaining statistical ingredient. To obtain a true sample-complexity theorem, one needs explicit finite-sample radii of the form
+P41 isolates the remaining statistical ingredient. To obtain a sample-complexity theorem, one needs explicit finite-sample radii of the form
 
 \[
 r_x=r_x(n_Q,\alpha_Q,d,\mathcal M),
@@ -415,13 +443,14 @@ r_x=r_x(n_Q,\alpha_Q,d,\mathcal M),
 
 for the chosen tomography design and target observation model.
 
-The next theorem should substitute valid concentration radii into
+P42 substitutes valid finite-sample radii into the corrected requirement
 
 \[
-d_Y-Ld_Q>2\varepsilon+2Lr
+\boxed{
+d_Y-Ld_Q>4\varepsilon+4Lr}
 \]
 
-and solve for sufficient quantum and target sample sizes.
+and solves for sufficient quantum and target sample sizes under an explicit informationally complete measurement model.
 
 ---
 
