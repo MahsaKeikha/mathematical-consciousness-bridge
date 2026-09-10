@@ -6,7 +6,7 @@ This page is the reading and reference index for the Mathematical Consciousness 
 
 1. [Main research paper](../README.md) for the complete scientific narrative and embedded figures.
 2. [Bridge problem](bridge_problem.md) for the formal statement of the physical-to-experiential problem.
-3. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P42, including the physical scale branches from P11-P18 to P25-P27.
+3. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P43, including the physical scale branches from P11-P18 to P25-P27.
 4. [Equation and citation map](equation_and_citation_map.md) for equation-level provenance and theorem lineage.
 5. [Proposition 19](proposition_19_fundamental_physical_sufficiency.md) for the population physical-sufficiency theorem.
 6. [Proposition 20](proposition_20_finite_sample_residual_certification.md) for finite-sample certification of the P19 stochastic residual.
@@ -72,6 +72,7 @@ This page is the reading and reference index for the Mathematical Consciousness 
 | P40 | [Continuous quantum-region regularity](proposition_40_continuous_quantum_region_regularity.md) | injective-descriptor no-go and continuous-region regularity obstruction |
 | P41 | [Trace-ball quantum envelope](proposition_41_trace_ball_quantum_envelope.md) | analytic continuous-region envelope and end-to-end Lipschitz certificate |
 | P42 | [Quantum regular-bridge sample complexity](proposition_42_quantum_regular_bridge_sample_complexity.md) | explicit fixed-IC quantum and categorical-target sample-size theorem |
+| P43 | [Optimal quantum-target allocation](proposition_43_optimal_quantum_target_allocation.md) | cube-root minimum-cost allocation of the P42 uncertainty budget |
 
 ## Physics, mathematics, and quantitative figures
 

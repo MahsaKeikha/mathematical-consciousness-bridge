@@ -6,9 +6,9 @@ def test_release_versions_are_synchronized():
     readme = Path("README.md").read_text(encoding="utf-8")
     pyproject = Path("pyproject.toml").read_text(encoding="utf-8")
     citation = Path("CITATION.cff").read_text(encoding="utf-8")
-    assert "version-0.42.0-2563eb" in readme
-    assert re.search(r'^version = "0\.42\.0"$', pyproject, re.MULTILINE)
-    assert re.search(r'^version: 0\.42\.0$', citation, re.MULTILINE)
+    assert "version-0.43.0-2563eb" in readme
+    assert re.search(r'^version = "0\.43\.0"$', pyproject, re.MULTILINE)
+    assert re.search(r'^version: 0\.43\.0$', citation, re.MULTILINE)
 
 
 def test_p39_publication_paths_are_visible():
@@ -30,5 +30,9 @@ def test_p39_publication_paths_are_visible():
         "p42_quantum_regular_bridge_sample_complexity.svg",
         "quantum_regular_bridge_sample_complexity.py",
         "test_quantum_regular_bridge_sample_complexity.py",
+        "Proposition 43",
+        "p43_optimal_quantum_target_allocation.svg",
+        "optimal_quantum_target_allocation.py",
+        "test_optimal_quantum_target_allocation.py",
     ):
         assert token in readme

@@ -16,6 +16,8 @@ This roadmap records the current proved mathematical chain and the open route to
 
 ![P42 quantum regular-bridge sample complexity](figures/p42_quantum_regular_bridge_sample_complexity.svg)
 
+![P43 optimal quantum-target allocation](figures/p43_optimal_quantum_target_allocation.svg)
+
 ---
 
 # 1. Complete proposition index
@@ -64,6 +66,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P40](proposition_40_continuous_quantum_region_regularity.md) | injective-image factorization plus confidence-region distance envelopes and bridge moduli | unrestricted-bridge no-go and continuous-region regularity obstruction | proved no-go plus regularity theorem |
 | [P41](proposition_41_trace_ball_quantum_envelope.md) | trace-distance triangle inequality plus simultaneous quantum and target confidence balls | analytic P40 envelope and end-to-end regularity obstruction | proved confidence-envelope theorem |
 | [P42](proposition_42_quantum_regular_bridge_sample_complexity.md) | IC-measurement Hoeffding concentration plus linear-reconstruction stability | explicit sufficient quantum and target samples for a positive regularity obstruction | proved finite-sample design theorem |
+| [P43](proposition_43_optimal_quantum_target_allocation.md) | strict convexity and closed-form weighted allocation | unique minimum-cost split of the P42 quantum and target uncertainty budget | proved resource-allocation theorem |
 
 ---
 
@@ -807,6 +810,34 @@ If \(\Delta=d_Y-Ld_Q>0\), then
 Allocating fractions \(\lambda\) and \(1-\lambda\) of the gap gives explicit sufficient \(n_Y\) and \(n_Q\), both scaling as \(\Delta^{-2}\). This is a theorem for one declared tomography design and bridge regularity class, not a quantum-incompleteness claim.
 
 Direct proof: [Proposition 42](proposition_42_quantum_regular_bridge_sample_complexity.md). Implementation: [quantum_regular_bridge_sample_complexity.py](../src/consciousness_bridge/quantum_regular_bridge_sample_complexity.py). Tests: [test_quantum_regular_bridge_sample_complexity.py](../tests/test_quantum_regular_bridge_sample_complexity.py).
+
+---
+
+## P43 - optimal quantum-target allocation
+
+For the P42 coefficients \(A_Y,A_Q>0\) and declared sample costs \(c_Y,c_Q>0\), P43 minimizes
+
+\[
+C(\lambda)=c_YA_Y/\lambda^2+c_QA_Q/(1-\lambda)^2.
+\]
+
+Strict convexity gives the unique optimum
+
+\[
+\boxed{
+\lambda_*=\frac{(c_YA_Y)^{1/3}}{(c_YA_Y)^{1/3}+(c_QA_Q)^{1/3}}
+}
+\]
+
+and
+
+\[
+\boxed{C_*=[(c_YA_Y)^{1/3}+(c_QA_Q)^{1/3}]^3.}
+\]
+
+Upward integer rounding adds at most \(c_Y+c_Q\) weighted cost per preparation. This is a pre-data resource optimization within P42, not a physical-completeness theorem.
+
+Direct proof: [Proposition 43](proposition_43_optimal_quantum_target_allocation.md). Implementation: [optimal_quantum_target_allocation.py](../src/consciousness_bridge/optimal_quantum_target_allocation.py). Tests: [test_optimal_quantum_target_allocation.py](../tests/test_optimal_quantum_target_allocation.py).
 
 ---
 
