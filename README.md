@@ -24,7 +24,7 @@ The central problem is therefore not to search for a visually impressive scalar 
 
 > Given a declared physical description, can an independently defined experiential target be determined from it, or can we construct a counterexample showing that physically indistinguishable cases remain experientially distinguishable?
 
-The repository turns that question into mathematics, statistics, and experiment design. A successful bridge theory must survive representation changes, controlled interventions, time, composition, scale changes, finite measurement error, and independently specified falsification tests.
+The repository turns that question into mathematics, statistics, and experiment design. A serious bridge theory must survive representation changes, controlled interventions, temporal continuation, composition, scale changes, finite measurement error, model uncertainty, and independently specified falsification tests.
 
 The working chain is
 
@@ -81,17 +81,57 @@ This distinction is central. The repository **does not assume that a physical qu
 
 ---
 
+# The core scientific thesis in one view
+
+The bridge problem can be stated as a problem of **physical equivalence classes**.
+
+A descriptor $T$ partitions the admissible physical domain into fibers
+
+$$
+[\omega]_T
+=
+\{\omega'\in\Omega:T(\omega')=T(\omega)\}.
+$$
+
+A deterministic bridge through $T$ can exist only if the target $E$ is constant on every such fiber. Therefore the physically decisive question is not whether $T$ correlates with $E$, but whether $T$ preserves every target distinction the theory claims matters.
+
+$$
+\boxed{
+T(\omega_1)=T(\omega_2)
+\quad\text{and}\quad
+E(\omega_1)\ne E(\omega_2)
+\quad\Longrightarrow\quad
+E\ne B\circ T
+}
+$$
+
+That single idea organizes the entire repository. The later theorem branches answer the scientific objections that immediately follow: What is an admissible physical descriptor? How should it be made representation invariant? How should interventions and time enter? What happens under coarse-graining? What if equality is only approximate because the data are finite? What if the physical description is quantum? How can a discriminating experiment be selected adaptively without invalidating inference?
+
+| Layer | Mathematical object | Scientific question | Failure witness |
+| --- | --- | --- | --- |
+| Physical description | $T(\omega)$ | Does the descriptor represent the declared physics without arbitrary coordinate dependence? | Representation or identifiability failure |
+| Operational structure | response laws and causal geometry | Do interventions distinguish physically meaningful structure? | Collision or missing causal distinction |
+| Bridge sufficiency | $E=B\circ T$ | Is the target constant on physical fibers? | Same $T$, different $E$ |
+| Stochastic sufficiency | $I(E;\Omega\mid T)$ | Is target-relevant information left outside $T$? | Certified positive residual |
+| Scale stability | coarse-graining plus reconstruction | Does the relevant physical structure survive a change of resolution? | Uncontrolled reconstruction or distortion |
+| Quantum sufficiency | $\rho$, channels, measurement statistics | Does the target factor through the declared operational quantum state? | Regularity-aware non-factorization witness |
+| Finite experiment | confidence regions and stopping rules | Can the witness survive uncertainty, repeated looks, and adaptive sampling? | Confidence or design assumptions fail |
+
+This is the scientific contribution of the project at its current stage: **a bridge claim is decomposed into separately auditable mathematical obligations instead of being hidden inside a single proposed consciousness quantity.**
+
+---
+
 # How to read this study
 
 The main page is organized as a scientific argument rather than a chronological project log. A first-time reader can follow it in four passes: first identify the physical and experiential objects being compared; then inspect the intervention-resolved physical structure; next examine the exact and finite-data sufficiency tests; finally read the quantum, adaptive-experiment, falsification, and open-problem sections. Detailed proposition chronology and downstream calibration mathematics are linked separately so they do not interrupt the core argument.
 
 | Reader question | Where the answer appears |
 | --- | --- |
-| **What is the scientific problem?** | Abstract, Research at a glance, and Section 1. |
+| **What is the scientific problem?** | Abstract, core scientific thesis, Research at a glance, and Section 1. |
 | **What exactly is being measured and compared?** | Sections 1-4 and the measurement / response figures. |
-| **What has actually been proved?** | Scientific status discipline, theorem roadmap, and “What has actually been established.” |
+| **What has actually been proved?** | Scientific status discipline, theorem roadmap, and "What has actually been established." |
 | **What would falsify the framework or a candidate bridge?** | Falsification logic and the linked falsification program. |
-| **What remains unknown?** | “What remains open,” current scientific status, and the dedicated technical pages. |
+| **What remains unknown?** | "What remains open," current scientific status, and the dedicated technical pages. |
 
 ![Universal proof ladder](docs/figures/universal_proof_ladder.svg)
 
@@ -245,6 +285,8 @@ If the target varies locally in more independent directions than the proposed ph
 
 **Figure 5. The logical gap being tested.** Fundamental physical theory determines physical structure and operational predictions. A consciousness theory still requires a justified map from physical equivalence classes to experiential equivalence classes. The project makes that extra bridge explicit so its assumptions, regularity, uncertainty, and failure conditions can be tested rather than hidden inside terminology.
 
+The mathematical point is deliberately modest but powerful: factorization gives a precise necessary-and-sufficient criterion for the declared descriptor and target. It does not tell us in advance which physical descriptor nature uses, or how an experiential target should ultimately be operationalized. Those are separate scientific obligations addressed by the next layers.
+
 ---
 
 # 2. From physical dynamics to operational structure
@@ -283,13 +325,33 @@ This is deliberately richer than a scalar. Two systems can have similar entropy,
 
 The intervention language is grounded in the causal distinction between observation and intervention developed in Pearl's causal framework (Pearl, 2009). Empirically, perturbational approaches such as TMS-EEG motivate direct probing of distributed neural response rather than relying only on passive correlation (Casali et al., 2013).
 
+## 2.2 Why no single compressed component is enough
+
+A central risk in consciousness research is to compress a rich physical system into one attractive number and then silently treat that number as the explanatory object. Proposition 12 uses constructive collisions to show how that can fail even inside the repository's own operational candidate.
+
+![Constructive component collisions](docs/figures/p12_collision_map.svg)
+
+**Figure 8. Constructive collision tests.** Response geometry, partition irreducibility, and directed marginal influence can each be held fixed while another component of the full intervention-resolved structure changes. The examples therefore demonstrate a general methodological lesson: a compressed feature must earn sufficiency by factorization or reconstruction, not by visual plausibility or correlation.
+
+This collision logic is one reason the project treats causal structure as a structured object before asking whether any further compression is scientifically justified.
+
 ---
 
 # 3. Time, composition, and scale cannot be ignored
 
-A bridge that works only for one arbitrary representation or one resolution is scientifically fragile. The physical structure must be tracked through temporal continuation, subsystem composition, and coarse-graining.
+A bridge that works only for one arbitrary representation, one instant, or one resolution is scientifically fragile. The physical structure must be tracked through temporal continuation, subsystem composition, and coarse-graining.
 
-## 3.1 Coarse-graining and data processing
+## 3.1 Temporal continuation is a path property
+
+The P14 temporal branch compares representation-invariant structure classes across physical time. The key distinction is between endpoint similarity and continuity of the path taken between those endpoints.
+
+![Temporal continuation](docs/figures/p14_temporal_continuation.svg)
+
+**Figure 9. Temporal continuation of the operational structure.** Admissible relabelings are quotiented out, local structural changes are accumulated along the trajectory, and the largest local transition can be bounded. A system may return to the same endpoint after a large excursion, so endpoint equality alone cannot certify temporal continuity.
+
+This does not identify experiential continuity. It establishes the physical bookkeeping that any later continuity claim would have to reference.
+
+## 3.2 Coarse-graining and data processing
 
 If a fine response law is mapped deterministically to a coarse observable, total variation cannot increase:
 
@@ -303,7 +365,7 @@ $$
 
 This is a data-processing fact, not a consciousness result. Its role is to tell us what operational distinctions can disappear under coarse observation.
 
-## 3.2 Approximate reconstruction as a scale certificate
+## 3.3 Approximate reconstruction as a scale certificate
 
 Contraction alone is not enough. If a coarse representation can approximately reconstruct the relevant fine distributions with uniform error $\varepsilon$, Proposition 18 bounds the distortion of total-variation geometry:
 
@@ -317,13 +379,13 @@ This converts a vague claim such as "the coarse scale preserves the important st
 
 ![Scale sufficiency certificate](docs/figures/p18_scale_sufficiency_certificate.svg)
 
-**Figure 8. Scale sufficiency logic.** Coarse-graining can erase distinctions, but approximate reconstruction controls how much declared response geometry was lost. This provides a quantitative route to compare neural, subsystem, or experimental resolutions without pretending that all scales are equivalent.
+**Figure 10. Scale sufficiency logic.** Coarse-graining can erase distinctions, but approximate reconstruction controls how much declared response geometry was lost. This provides a quantitative route to compare neural, subsystem, or experimental resolutions without pretending that all scales are equivalent.
 
 The subsequent P25-P37 branch extends this logic to changing node sets, intervention labels, delays, partition structure, directed influence, and joint operational quotients.
 
 ![Multiscale physical hierarchy](docs/figures/multiscale_physical_hierarchy.svg)
 
-**Figure 9. Multiscale hierarchy.** A scientifically credible descriptor must state which objects survive a change of scale, which require compatibility conditions, and which acquire bounded distortion. Zero numerical error cannot rescue a semantically invalid quotient.
+**Figure 11. Multiscale hierarchy.** A scientifically credible descriptor must state which objects survive a change of scale, which require compatibility conditions, and which acquire bounded distortion. Zero numerical error cannot rescue a semantically invalid quotient.
 
 ---
 
@@ -348,7 +410,7 @@ On that event, the population bridge residual can be bounded from empirical data
 
 ![Finite-sample residual certificate](docs/figures/p20_finite_sample_residual_certificate.svg)
 
-**Figure 10. From exact factorization to finite-data evidence.** The theoretical residual is not replaced by a point estimate. The experiment produces an uncertainty set, and a bridge claim is rejected only when the certified lower bound remains positive under the declared statistical assumptions.
+**Figure 12. From exact factorization to finite-data evidence.** The theoretical residual is not replaced by a point estimate. The experiment produces an uncertainty set, and a bridge claim is rejected only when the certified lower bound remains positive under the declared statistical assumptions.
 
 This distinction is essential: numerical closeness is not exact equality, and an apparent residual is not evidence of non-reducibility until estimation uncertainty has been propagated through the bridge test.
 
@@ -374,7 +436,7 @@ The repository also distinguishes scientific sources from speculative antecedent
 
 ![Observer-to-bridge research handoff](docs/figures/observer_to_bridge_handoff.svg)
 
-**Figure 11. Research handoff.** The preceding Spatiotemporal Observer Mathematics project identifies and statistically certifies a physical subsystem from measured dynamics. This repository begins only after that physical object has been established and asks what additional causal, temporal, multiscale, and bridge structure is required. No experiential property is inserted at the handoff.
+**Figure 13. Research handoff.** The preceding Spatiotemporal Observer Mathematics project identifies and statistically certifies a physical subsystem from measured dynamics. This repository begins only after that physical object has been established and asks what additional causal, temporal, multiscale, and bridge structure is required. No experiential property is inserted at the handoff.
 
 ---
 
@@ -398,15 +460,17 @@ Proposition 38 states the exact non-factorization witness for a tomographically 
 
 ![Quantum bridge completeness map](docs/figures/quantum_bridge_completeness_map.svg)
 
-**Figure 12. What quantum completeness does and does not establish.** Tomographic completeness closes the declared operational description of the quantum state. It does not automatically close the physical-to-experiential map. The open question is whether the independently specified target factors through that operational state under a scientifically justified bridge class.
+**Figure 14. What quantum completeness does and does not establish.** Tomographic completeness closes the declared operational description of the quantum state. It does not automatically close the physical-to-experiential map. The open question is whether the independently specified target factors through that operational state under a scientifically justified bridge class.
 
 ![Quantum operational sufficiency](docs/figures/p38_quantum_operational_sufficiency.svg)
 
-**Figure 13. P38 quantum sufficiency test.** Equal declared quantum descriptors with unequal independently defined targets give an exact non-factorization witness. When descriptors are only approximately known, P39-P44 replace exact equality with uncertainty regions and regularity-aware inequalities.
+**Figure 15. P38 quantum sufficiency test.** Equal declared quantum descriptors with unequal independently defined targets give an exact non-factorization witness. When descriptors are only approximately known, P39-P44 replace exact equality with uncertainty regions and regularity-aware inequalities.
 
 ![Trace-ball quantum envelope](docs/figures/p41_trace_ball_quantum_envelope.svg)
 
-**Figure 14. Finite-data quantum envelope.** Quantum-state confidence regions and target uncertainty are propagated into an end-to-end obstruction. The scientific conclusion is conditional on the tomography model, confidence coverage, and declared regularity of the candidate bridge.
+**Figure 16. Finite-data quantum envelope.** Quantum-state confidence regions and target uncertainty are propagated into an end-to-end obstruction. The scientific conclusion is conditional on the tomography model, confidence coverage, and declared regularity of the candidate bridge.
+
+The significance of the quantum branch is methodological. It asks a difficult question in a form that can fail: even after the operational quantum state is reconstructed as completely as the declared model permits, is there independently supported target structure that cannot be represented by the admissible bridge class? Until such a witness is obtained, quantum incompleteness is not a conclusion of this project.
 
 For the complete quantum visual sequence, including Bloch geometry, channels, entanglement, decoherence, tomography, contextuality, and open-system maps, see the [Quantum foundations and bridge test](docs/quantum_foundations_and_bridge_test.md) and the [Visual atlas](website/visual-atlas.html).
 
@@ -420,7 +484,7 @@ P45 converts pairwise witness requirements into a shared preparation graph, wher
 
 ![Sequential graph refinement](docs/figures/p47_sequential_graph_refinement.svg)
 
-**Figure 15. Adaptive evidence collection.** The experiment may choose what to sample next based on previous observations, but validity is protected by a shared time-uniform confidence event. Adaptation changes efficiency, not the declared error guarantee.
+**Figure 17. Adaptive evidence collection.** The experiment may choose what to sample next based on previous observations, but validity is protected by a shared time-uniform confidence event. Adaptation changes efficiency, not the declared error guarantee.
 
 This branch matters because a bridge theory should not depend on an unrealistic fixed experiment. It should specify how evidence can be gathered efficiently without turning optional stopping or data-dependent witness selection into hidden statistical bias.
 
@@ -446,11 +510,12 @@ The project has established mathematical and computational machinery for testing
 2. **Stochastic insufficiency can be quantified.** Conditional mutual information measures target-relevant information left outside a descriptor under the declared model.
 3. **Smooth factorization can fail for rank reasons.** The differential obstruction supplies a local no-go test.
 4. **Operational structure can be made richer than a scalar.** Intervention response, directed influence, irreducibility, temporal continuation, composition, and scale can be treated explicitly.
-5. **Coarse-graining losses can be bounded.** Reconstruction assumptions give quantitative scale certificates rather than qualitative claims.
-6. **Finite-data uncertainty can be propagated into bridge tests.** Exact equalities are not replaced by numerical approximations without confidence control.
-7. **Adaptive experiments can remain statistically valid.** Candidate selection, pruning, repeated looks, and stopping are handled on shared confidence events under declared assumptions.
-8. **Quantum-state completeness can be separated from experiential completeness.** A complete operational quantum descriptor can be tested for target factorization without assuming the answer.
-9. **Experimental resources can be optimized and certified.** The experiment-design branch develops allocation, scheduling, stopping, and calibration guarantees; the detailed P61-P70 calibration sequence is documented separately so it does not dominate the scientific introduction.
+5. **Compressed physical features can be tested by collision.** Constructive counterexamples show when a projection loses distinctions retained by the fuller operational structure.
+6. **Coarse-graining losses can be bounded.** Reconstruction assumptions give quantitative scale certificates rather than qualitative claims.
+7. **Finite-data uncertainty can be propagated into bridge tests.** Exact equalities are not replaced by numerical approximations without confidence control.
+8. **Adaptive experiments can remain statistically valid.** Candidate selection, pruning, repeated looks, and stopping are handled on shared confidence events under declared assumptions.
+9. **Quantum-state completeness can be separated from experiential completeness.** A complete operational quantum descriptor can be tested for target factorization without assuming the answer.
+10. **Experimental resources can be optimized and certified.** The experiment-design branch develops allocation, scheduling, stopping, and calibration guarantees; the detailed P61-P70 calibration sequence is documented separately so it does not dominate the scientific introduction.
 
 These statements do **not** prove that consciousness is reducible to the current physical descriptors, irreducible to physics, quantum, non-quantum, a field, a state of matter, or an additional dimension.
 
@@ -481,6 +546,8 @@ The open work is therefore not "find a mysterious consciousness number." It is t
 
 A claim of non-reducibility would require a valid obstruction relative to a sufficiently complete physical description and a scientifically defensible bridge class. Failure of one coarse descriptor is not failure of physics.
 
+This is the frontier at which mathematics, physics, neuroscience, and philosophy of science meet in the repository. The project has built increasingly strict conditions for what would count as evidence; it has intentionally not replaced the missing bridge with an assumption.
+
 ---
 
 # Falsification logic
@@ -491,6 +558,7 @@ The framework is designed so that each scientific layer has a failure condition.
 | --- | --- | --- |
 | Descriptor $T$ is exactly sufficient for $E$ | Same $T$, different independently measured $E$ | Mere correlation between $T$ and $E$ |
 | Descriptor $T$ is stochastically sufficient | Certified positive $I(E;\Omega\mid T)$ | Positive empirical estimate without uncertainty control |
+| Compressed causal feature is sufficient | Constructive collision: same compressed feature, different fuller operational structure | High predictive performance on one dataset |
 | Coarse scale preserves relevant response structure | Reconstruction or distortion bounds fail | Visual similarity of coarse and fine plots |
 | Quantum descriptor is sufficient under bridge class $\mathcal B$ | Certified target separation exceeds what every admissible $B\in\mathcal B$ can map from the quantum uncertainty region | Two numerically close tomography estimates |
 | Adaptive experiment is valid | Confidence event or non-anticipation assumptions are violated | Choosing samples adaptively by itself |
@@ -500,7 +568,9 @@ This is the intended scientific discipline: every positive claim should bring it
 
 ![Theory-comparative interface](docs/figures/theory_comparison_map.svg)
 
-**Figure 16. Common interface for competing theory families.** Integrated Information Theory, Global Neuronal Workspace Theory, Recurrent Processing Theory, higher-order approaches, predictive / neurorepresentational families, and the repository's intervention-resolved physical candidate can be compared using the same categories: physical feature family, bridge architecture, measurement interface, and discriminating experiment. This framing follows the broader theory-comparison literature rather than treating any existing theory as the default answer (Seth & Bayne, 2022; Cogitate Consortium et al., 2025).
+**Figure 18. Common interface for competing theory families.** Integrated Information Theory, Global Neuronal Workspace Theory, Recurrent Processing Theory, higher-order approaches, predictive / neurorepresentational families, and the repository's intervention-resolved physical candidate can be compared using the same categories: physical feature family, bridge architecture, measurement interface, and discriminating experiment. This framing follows the broader theory-comparison literature rather than treating any existing theory as the default answer (Seth & Bayne, 2022; Cogitate Consortium et al., 2025).
+
+For the explicit repository-level failure conditions, see the [Falsification program](docs/falsification_program.md).
 
 ---
 
@@ -540,7 +610,9 @@ The complete bibliography is maintained in the dedicated reference documents abo
 
 # Complete visual evidence without front-page overload
 
-The main page intentionally shows the figures needed to understand the argument in scientific order. The complete visual record remains available for audit without forcing a first-time reader through every theorem-specific or calibration plot.
+The main page intentionally shows the figures needed to understand the argument in scientific order. A reader who scans only the figures and captions should still recover the main logic: define the bridge, separate evidence channels, build operational physical structure, expose collisions, preserve structure through time and scale, propagate uncertainty, test the quantum descriptor, and design valid experiments.
+
+The complete visual record remains available for audit without forcing a first-time reader through every theorem-specific or calibration plot.
 
 | Visual collection | What it contains |
 | --- | --- |
@@ -552,7 +624,7 @@ The main page intentionally shows the figures needed to understand the argument 
 
 ![Equation evidence map](docs/figures/equation_evidence_map.svg)
 
-**Figure 17. Evidence provenance.** A mathematical identity, a theorem under assumptions, a numerical result, and an empirical observation are different kinds of evidence. The project keeps those routes explicit so a reader can see what supports each scientific claim.
+**Figure 19. Evidence provenance.** A mathematical identity, a theorem under assumptions, a numerical result, and an empirical observation are different kinds of evidence. The project keeps those routes explicit so a reader can see what supports each scientific claim.
 
 ---
 
@@ -622,7 +694,6 @@ This compact index preserves direct public traceability for the quantum and expe
 - **Proposition 58 - P58 - finite-data switching-metric uncertainty**: [p58_finite_data_metric_uncertainty.svg](docs/figures/p58_finite_data_metric_uncertainty.svg), [`finite_data_metric_uncertainty.py`](src/consciousness_bridge/finite_data_metric_uncertainty.py), [`test_finite_data_metric_uncertainty.py`](tests/test_finite_data_metric_uncertainty.py).
 - **Proposition 59 - P59 - optimal transition-calibration allocation**: [p59_optimal_transition_calibration.svg](docs/figures/p59_optimal_transition_calibration.svg), [`optimal_transition_calibration.py`](src/consciousness_bridge/optimal_transition_calibration.py), [`test_optimal_transition_calibration.py`](tests/test_optimal_transition_calibration.py).
 - **Proposition 60 - P60 - integer transition-calibration allocation**: [p60_integer_transition_calibration.svg](docs/figures/p60_integer_transition_calibration.svg), [`integer_transition_calibration.py`](src/consciousness_bridge/integer_transition_calibration.py), [`test_integer_transition_calibration.py`](tests/test_integer_transition_calibration.py).
-
 
 </details>
 
