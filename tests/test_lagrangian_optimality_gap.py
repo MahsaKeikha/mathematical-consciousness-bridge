@@ -5,7 +5,9 @@ import pytest
 from consciousness_bridge.exact_heterogeneous_integer_calibration import (
     exact_heterogeneous_integer_allocation,
 )
-from consciousness_bridge.global_integer_optimality_certificate import marginal_reduction
+from consciousness_bridge.global_integer_optimality_certificate import (
+    marginal_reduction,
+)
 from consciousness_bridge.lagrangian_optimality_gap import (
     edge_lagrangian_minimum,
     lagrangian_dual_lower_bound,
