@@ -13,6 +13,8 @@ CURATED_MAIN_PAGE_FIGURES = (
     "fundamental_theory_consciousness_map.svg",
     "causal_structure_anatomy.svg",
     "information_geometry_response_manifold.svg",
+    "p12_collision_map.svg",
+    "p14_temporal_continuation.svg",
     "p18_scale_sufficiency_certificate.svg",
     "multiscale_physical_hierarchy.svg",
     "p20_finite_sample_residual_certificate.svg",
@@ -68,7 +70,7 @@ def test_main_page_declares_scientific_status_boundaries():
     required_phrases = (
         "Synthetic example",
         "Open bridge problem",
-        "does not assume that a physical quantity is consciousness",
+        "does **not** assume that a physical quantity is consciousness",
         "Quantum mechanics does not by itself imply consciousness",
         "Reproducibility and audit path",
         "Numerical validation facts",
