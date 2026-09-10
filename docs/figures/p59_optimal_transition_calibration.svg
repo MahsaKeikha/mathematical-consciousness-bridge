@@ -52,7 +52,7 @@
     <rect x="190" y="390" width="820" height="160" rx="22" fill="#ecfdf5" stroke="#10b981" stroke-width="1.7"/>
     <text x="225" y="430" class="bt">Exact P59 optimum</text>
     <text x="225" y="468" class="math">nₑ* = N · (wₑ aₑ)^(2/3) / Σⱼ (wⱼ aⱼ)^(2/3)</text>
-    <text x="225" y="505" class="tx">Harder or more important transitions receive more measurements—but only according to a two-thirds-power law.</text>
+    <text x="225" y="505" class="tx">Harder or more important transitions receive more measurements, but only according to a two-thirds-power law.</text>
     <text x="225" y="531" class="small">Example: 8× larger effective importance/uncertainty → 4× more calibration effort, not 8×.</text>
   </g>
 
