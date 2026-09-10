@@ -63,15 +63,15 @@
   <g id="p64-uniform" data-qa-block="true" data-x="120" data-y="845" data-width="710" data-height="145">
     <rect class="card" x="120" y="845" width="710" height="145" rx="20" fill="#eff6ff" stroke="#3b82f6"/>
     <text x="165" y="892" class="bt">Simple uniform guarantee</text>
-    <text x="165" y="938" class="math">nₑ* ≥ ν &gt; 1 ⇒ factor ≤ √[ν/(ν - 1)]</text>
-    <text x="165" y="972" class="small">The factor approaches 1 as continuous counts grow.</text>
+    <text x="165" y="928" class="math">nₑ* ≥ ν &gt; 1 ⇒ factor ≤ √[ν/(ν - 1)]</text>
+    <text x="165" y="958" class="small">The factor approaches 1 as continuous counts grow.</text>
   </g>
 
   <g id="p64-scale" data-qa-block="true" data-x="970" data-y="845" data-width="710" data-height="145">
     <rect class="card" x="970" y="845" width="710" height="145" rx="20" fill="#ffffff" stroke="#94a3b8"/>
     <text x="1015" y="892" class="bt">Scalability</text>
-    <text x="1015" y="938" class="math">O(m) after the P62 closed form</text>
-    <text x="1015" y="972" class="small">If any nₑ* &lt; 1, P63 remains the exact fallback.</text>
+    <text x="1015" y="928" class="math">O(m) after the P62 closed form</text>
+    <text x="1015" y="958" class="small">If any nₑ* &lt; 1, P63 remains the exact fallback.</text>
   </g>
 
   <path d="M560 770 C520 815 475 820 475 833" class="arrow" data-from="p64-certificate" data-to="p64-uniform"/>
