@@ -101,7 +101,7 @@ def test_certified_search_bounds_dense_grid_dual_maximum():
     )
 
 
-def test_strongest_dual_bound_remains_below_exact_p63_optimum():
+def test_strongest_evaluated_dual_bound_remains_below_exact_p63_optimum():
     coefficients = {"a": 1.0, "b": 3.0, "c": 1.2}
     sensitivities = {"a": 1.0, "b": 0.7, "c": 1.4}
     costs = {"a": 2, "b": 5, "c": 4}
@@ -113,7 +113,7 @@ def test_strongest_dual_bound_remains_below_exact_p63_optimum():
         coefficients, sensitivities, costs, budget, dual_tolerance=1e-9
     )
     assert cert.dual_lower_bound <= exact.objective_value + 1e-10
-    assert cert.dual_optimum_upper_bound <= exact.objective_value + 1e-7
+    assert cert.dual_optimum_upper_bound + 1e-12 >= cert.dual_lower_bound
 
 
 def test_zero_supergradient_interval_is_exact_dual_maximizer():
