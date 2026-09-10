@@ -8,9 +8,8 @@ completeness, or identify an ontological fusion of fine nodes.
 
 from __future__ import annotations
 
+from collections.abc import Hashable, Mapping, Sequence
 from dataclasses import dataclass
-from typing import Hashable, Mapping, Sequence
-
 
 Node = Hashable
 
