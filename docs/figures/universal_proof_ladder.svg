@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1160" viewBox="0 0 1800 1160" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1360" viewBox="0 0 1800 1360" role="img" aria-labelledby="title desc">
   <title id="title">Universal consciousness proof criteria</title>
   <desc id="desc">Twelve required layers grouped into domain definition, physical-signature structure, empirical discrimination, finite-data certification, and generality.</desc>
   <defs>
@@ -16,131 +16,128 @@
     </style>
   </defs>
 
-  <rect width="1800" height="1160" fill="#ffffff"/>
+  <rect width="1800" height="1360" fill="#ffffff"/>
   <text x="70" y="66" class="title">Universal Proof Target - Twelve Required Layers</text>
   <text x="70" y="104" class="subtitle">Mathematical validity, physical interpretation, empirical identifiability, and finite-data support are tracked as separate requirements.</text>
 
   <text x="70" y="158" class="group">I. DEFINE THE PHYSICAL AND EXPERIENTIAL DOMAINS</text>
 
-  <g id="u1" data-qa-block="true" data-x="70" data-y="180" data-width="395" data-height="190">
-    <rect class="card" x="70" y="180" width="395" height="190" rx="16" fill="#f7fbff" stroke="#3b82f6"/>
-    <circle cx="105" cy="218" r="21" fill="#3b82f6"/><text x="94" y="223" class="num">U1</text>
-    <text x="140" y="216" class="head">Physical well-definedness</text>
-    <text x="110" y="258" class="body">State space, dynamics, interventions,</text>
-    <text x="110" y="286" class="body">observables, and representation quotient.</text>
-    <text x="110" y="328" class="eq">Qₚ = P / ∼ₚ</text>
+  <g id="u1" data-qa-block="true" data-x="70" data-y="180" data-width="800" data-height="165">
+    <rect class="card" x="70" y="180" width="800" height="165" rx="16" fill="#f7fbff" stroke="#3b82f6"/>
+    <circle cx="110" cy="220" r="21" fill="#3b82f6"/><text x="99" y="225" class="num">U1</text>
+    <text x="150" y="218" class="head">Physical well-definedness</text>
+    <text x="110" y="260" class="body">State space, dynamics, interventions, observables, and representation quotient.</text>
+    <text x="110" y="305" class="eq">Qₚ = P / ∼ₚ</text>
   </g>
 
-  <g id="u2" data-qa-block="true" data-x="490" data-y="180" data-width="395" data-height="190">
-    <rect class="card" x="490" y="180" width="395" height="190" rx="16" fill="#fffaf7" stroke="#ea580c"/>
-    <circle cx="525" cy="218" r="21" fill="#ea580c"/><text x="514" y="223" class="num">U2</text>
-    <text x="560" y="216" class="head">Experiential definition</text>
-    <text x="530" y="258" class="body">Formal experiential structures and an</text>
-    <text x="530" y="286" class="body">explicit experiential equivalence relation.</text>
-    <text x="530" y="328" class="eq">Qₑ = E / ∼ₑ</text>
+  <g id="u2" data-qa-block="true" data-x="930" data-y="180" data-width="800" data-height="165">
+    <rect class="card" x="930" y="180" width="800" height="165" rx="16" fill="#fffaf7" stroke="#ea580c"/>
+    <circle cx="970" cy="220" r="21" fill="#ea580c"/><text x="959" y="225" class="num">U2</text>
+    <text x="1010" y="218" class="head">Experiential well-definedness</text>
+    <text x="970" y="260" class="body">Formal experiential structures and an explicit experiential equivalence relation.</text>
+    <text x="970" y="305" class="eq">Qₑ = E / ∼ₑ</text>
   </g>
 
-  <g id="u3" data-qa-block="true" data-x="910" data-y="180" data-width="395" data-height="190">
-    <rect class="card" x="910" y="180" width="395" height="190" rx="16" fill="#faf8ff" stroke="#7c3aed"/>
-    <circle cx="945" cy="218" r="21" fill="#7c3aed"/><text x="934" y="223" class="num">U3</text>
-    <text x="980" y="216" class="head">Non-definitional bridge</text>
-    <text x="950" y="258" class="body">Bridge premises need justification</text>
-    <text x="950" y="286" class="body">independent of the conclusion</text>
-    <text x="950" y="314" class="body">they are intended to support.</text>
+  <g id="u3" data-qa-block="true" data-x="70" data-y="370" data-width="800" data-height="165">
+    <rect class="card" x="70" y="370" width="800" height="165" rx="16" fill="#faf8ff" stroke="#7c3aed"/>
+    <circle cx="110" cy="410" r="21" fill="#7c3aed"/><text x="99" y="415" class="num">U3</text>
+    <text x="150" y="408" class="head">Non-definitional bridge</text>
+    <text x="110" y="450" class="body">Bridge premises require justification independent of the conclusion they support.</text>
+    <text x="110" y="493" class="body">The experiential conclusion cannot be hidden inside the physical premise.</text>
   </g>
 
-  <g id="u4" data-qa-block="true" data-x="1330" data-y="180" data-width="400" data-height="190">
-    <rect class="card" x="1330" y="180" width="400" height="190" rx="16" fill="#f5fcfd" stroke="#0891b2"/>
-    <circle cx="1365" cy="218" r="21" fill="#0891b2"/><text x="1354" y="223" class="num">U4</text>
-    <text x="1400" y="216" class="head">Representation invariance</text>
-    <text x="1370" y="258" class="body">Equivalent physical descriptions</text>
-    <text x="1370" y="286" class="body">cannot change the bridge assignment.</text>
-    <text x="1370" y="328" class="body">Supported by Proposition 1.</text>
+  <g id="u4" data-qa-block="true" data-x="930" data-y="370" data-width="800" data-height="165">
+    <rect class="card" x="930" y="370" width="800" height="165" rx="16" fill="#f5fcfd" stroke="#0891b2"/>
+    <circle cx="970" cy="410" r="21" fill="#0891b2"/><text x="959" y="415" class="num">U4</text>
+    <text x="1010" y="408" class="head">Representation invariance</text>
+    <text x="970" y="450" class="body">Equivalent physical descriptions cannot change the bridge assignment.</text>
+    <text x="970" y="493" class="body">Supported by Proposition 1.</text>
   </g>
 
-  <text x="70" y="430" class="group">II. CHARACTERIZE A COMPLETE PHYSICAL SIGNATURE</text>
+  <text x="70" y="590" class="group">II. CHARACTERIZE A COMPLETE PHYSICAL SIGNATURE</text>
 
-  <g id="u5" data-qa-block="true" data-x="70" data-y="452" data-width="520" data-height="185">
-    <rect class="card" x="70" y="452" width="520" height="185" rx="16" fill="#f5fcf8" stroke="#059669"/>
-    <circle cx="105" cy="490" r="21" fill="#059669"/><text x="94" y="495" class="num">U5</text>
-    <text x="140" y="488" class="head">Physical-feature sufficiency</text>
-    <text x="110" y="530" class="body">Feature-matched systems must not split bridge classes.</text>
-    <text x="110" y="570" class="eq">F(p)=F(p′) ⇒ B̄(p)=B̄(p′)</text>
-    <text x="110" y="608" class="body">Exact criterion: Proposition 5.</text>
+  <g id="u5" data-qa-block="true" data-x="70" data-y="612" data-width="520" data-height="185">
+    <rect class="card" x="70" y="612" width="520" height="185" rx="16" fill="#f5fcf8" stroke="#059669"/>
+    <circle cx="105" cy="650" r="21" fill="#059669"/><text x="94" y="655" class="num">U5</text>
+    <text x="140" y="648" class="head">Physical-feature sufficiency</text>
+    <text x="110" y="690" class="body">Feature-matched systems must not</text>
+    <text x="110" y="718" class="body">split canonical bridge classes.</text>
+    <text x="110" y="752" class="eq">F(p)=F(p′) ⇒ B̄(p)=B̄(p′)</text>
+    <text x="110" y="780" class="body">Exact criterion: Proposition 5.</text>
   </g>
 
-  <g id="u6" data-qa-block="true" data-x="640" data-y="452" data-width="520" data-height="185">
-    <rect class="card" x="640" y="452" width="520" height="185" rx="16" fill="#f5fcf8" stroke="#059669"/>
-    <circle cx="675" cy="490" r="21" fill="#059669"/><text x="664" y="495" class="num">U6</text>
-    <text x="710" y="488" class="head">Bridge completeness</text>
-    <text x="680" y="530" class="body">Physical-signature fibers must coincide</text>
-    <text x="680" y="558" class="body">with canonical bridge-equivalence classes.</text>
-    <text x="680" y="608" class="body">Canonical target: Proposition 6.</text>
+  <g id="u6" data-qa-block="true" data-x="640" data-y="612" data-width="520" data-height="185">
+    <rect class="card" x="640" y="612" width="520" height="185" rx="16" fill="#f5fcf8" stroke="#059669"/>
+    <circle cx="675" cy="650" r="21" fill="#059669"/><text x="664" y="655" class="num">U6</text>
+    <text x="710" y="648" class="head">Bridge completeness</text>
+    <text x="680" y="690" class="body">Physical-signature fibers must coincide</text>
+    <text x="680" y="718" class="body">with bridge-equivalence classes.</text>
+    <text x="680" y="766" class="body">Canonical target: Proposition 6.</text>
   </g>
 
-  <g id="u9" data-qa-block="true" data-x="1210" data-y="452" data-width="520" data-height="185">
-    <rect class="card" x="1210" y="452" width="520" height="185" rx="16" fill="#f5fcfd" stroke="#0891b2"/>
-    <circle cx="1245" cy="490" r="21" fill="#0891b2"/><text x="1234" y="495" class="num">U9</text>
-    <text x="1280" y="488" class="head">Experimental recoverability</text>
-    <text x="1250" y="530" class="body">The proposed complete signature must be</text>
-    <text x="1250" y="558" class="body">inferable from the declared experiment class.</text>
-    <text x="1250" y="608" class="body">Exact criterion: Proposition 7.</text>
+  <g id="u9" data-qa-block="true" data-x="1210" data-y="612" data-width="520" data-height="185">
+    <rect class="card" x="1210" y="612" width="520" height="185" rx="16" fill="#f5fcfd" stroke="#0891b2"/>
+    <circle cx="1245" cy="650" r="21" fill="#0891b2"/><text x="1234" y="655" class="num">U9</text>
+    <text x="1280" y="648" class="head">Experimental recoverability</text>
+    <text x="1250" y="690" class="body">The proposed complete signature must be</text>
+    <text x="1250" y="718" class="body">inferable from the experiment class.</text>
+    <text x="1250" y="766" class="body">Exact criterion: Proposition 7.</text>
   </g>
 
-  <text x="70" y="697" class="group">III. EXPOSE THE BRIDGE TO COMPETING THEORIES AND DATA</text>
+  <text x="70" y="855" class="group">III. EXPOSE THE BRIDGE TO COMPETING THEORIES AND DATA</text>
 
-  <g id="u7" data-qa-block="true" data-x="70" data-y="720" data-width="520" data-height="185">
-    <rect class="card" x="70" y="720" width="520" height="185" rx="16" fill="#fffdf5" stroke="#ca8a04"/>
-    <circle cx="105" cy="758" r="21" fill="#ca8a04"/><text x="94" y="763" class="num">U7</text>
-    <text x="140" y="756" class="head">Empirical identifiability</text>
-    <text x="110" y="798" class="body">A bridge disagreement must alter at least</text>
-    <text x="110" y="826" class="body">one observable law in the experiment class.</text>
-    <text x="110" y="874" class="body">Supported by Propositions 2-3.</text>
+  <g id="u7" data-qa-block="true" data-x="70" data-y="877" data-width="520" data-height="185">
+    <rect class="card" x="70" y="877" width="520" height="185" rx="16" fill="#fffdf5" stroke="#ca8a04"/>
+    <circle cx="105" cy="915" r="21" fill="#ca8a04"/><text x="94" y="920" class="num">U7</text>
+    <text x="140" y="913" class="head">Empirical identifiability</text>
+    <text x="110" y="955" class="body">A bridge disagreement must alter</text>
+    <text x="110" y="983" class="body">an observable law in the experiment class.</text>
+    <text x="110" y="1031" class="body">Supported by Propositions 2-3.</text>
   </g>
 
-  <g id="u8" data-qa-block="true" data-x="640" data-y="720" data-width="520" data-height="185">
-    <rect class="card" x="640" y="720" width="520" height="185" rx="16" fill="#fffdf5" stroke="#ca8a04"/>
-    <circle cx="675" cy="758" r="21" fill="#ca8a04"/><text x="664" y="763" class="num">U8</text>
-    <text x="710" y="756" class="head">Cross-theory discrimination</text>
-    <text x="680" y="798" class="body">IIT, GNWT, recurrent, higher-order,</text>
-    <text x="680" y="826" class="body">predictive, and new bridge families</text>
-    <text x="680" y="854" class="body">share one declared test interface.</text>
-    <text x="680" y="882" class="body">Experiment design: Proposition 4.</text>
+  <g id="u8" data-qa-block="true" data-x="640" data-y="877" data-width="520" data-height="185">
+    <rect class="card" x="640" y="877" width="520" height="185" rx="16" fill="#fffdf5" stroke="#ca8a04"/>
+    <circle cx="675" cy="915" r="21" fill="#ca8a04"/><text x="664" y="920" class="num">U8</text>
+    <text x="710" y="913" class="head">Cross-theory discrimination</text>
+    <text x="680" y="955" class="body">IIT, GNWT, recurrent, higher-order,</text>
+    <text x="680" y="983" class="body">predictive, and new bridge families</text>
+    <text x="680" y="1011" class="body">share one declared test interface.</text>
+    <text x="680" y="1039" class="body">Experiment design: Proposition 4.</text>
   </g>
 
-  <g id="u12" data-qa-block="true" data-x="1210" data-y="720" data-width="520" data-height="185">
-    <rect class="card" x="1210" y="720" width="520" height="185" rx="16" fill="#fff8f9" stroke="#e11d48"/>
-    <circle cx="1245" cy="758" r="21" fill="#e11d48"/><text x="1230" y="763" class="num">U12</text>
-    <text x="1280" y="756" class="head">Falsification and generality</text>
-    <text x="1250" y="798" class="body">Temporal, compositional, substrate,</text>
-    <text x="1250" y="826" class="body">and empirical tests must expose</text>
-    <text x="1250" y="854" class="body">the theory to possible failure.</text>
+  <g id="u12" data-qa-block="true" data-x="1210" data-y="877" data-width="520" data-height="185">
+    <rect class="card" x="1210" y="877" width="520" height="185" rx="16" fill="#fff8f9" stroke="#e11d48"/>
+    <circle cx="1245" cy="915" r="21" fill="#e11d48"/><text x="1230" y="920" class="num">U12</text>
+    <text x="1280" y="913" class="head">Falsification and generality</text>
+    <text x="1250" y="955" class="body">Temporal, compositional, substrate,</text>
+    <text x="1250" y="983" class="body">and empirical tests must expose</text>
+    <text x="1250" y="1011" class="body">the theory to possible failure.</text>
   </g>
 
-  <text x="70" y="965" class="group">IV. FINITE-DATA CERTIFICATION</text>
+  <text x="70" y="1120" class="group">IV. FINITE-DATA CERTIFICATION</text>
 
-  <g id="u10" data-qa-block="true" data-x="70" data-y="987" data-width="520" data-height="125">
-    <rect class="card" x="70" y="987" width="520" height="125" rx="16" fill="#faf8ff" stroke="#7c3aed"/>
-    <circle cx="105" cy="1025" r="21" fill="#7c3aed"/><text x="90" y="1030" class="num">U10</text>
-    <text x="140" y="1023" class="head">Finite-measurement certification</text>
-    <text x="110" y="1062" class="eq">γₛ &gt; 4ε</text>
-    <text x="245" y="1062" class="body">Robust recovery: Proposition 8.</text>
+  <g id="u10" data-qa-block="true" data-x="70" data-y="1142" data-width="520" data-height="145">
+    <rect class="card" x="70" y="1142" width="520" height="145" rx="16" fill="#faf8ff" stroke="#7c3aed"/>
+    <circle cx="105" cy="1180" r="21" fill="#7c3aed"/><text x="90" y="1185" class="num">U10</text>
+    <text x="140" y="1178" class="head">Finite-measurement certification</text>
+    <text x="110" y="1220" class="eq">γₛ &gt; 4ε</text>
+    <text x="245" y="1220" class="body">Robust recovery: Proposition 8.</text>
   </g>
 
-  <g id="u11" data-qa-block="true" data-x="640" data-y="987" data-width="520" data-height="125">
-    <rect class="card" x="640" y="987" width="520" height="125" rx="16" fill="#faf8ff" stroke="#7c3aed"/>
-    <circle cx="675" cy="1025" r="21" fill="#7c3aed"/><text x="660" y="1030" class="num">U11</text>
-    <text x="710" y="1023" class="head">Explicit sample complexity</text>
-    <text x="680" y="1062" class="body">Finite trials at confidence 1 - α.</text>
-    <text x="680" y="1090" class="body">Current theorem: Proposition 9.</text>
+  <g id="u11" data-qa-block="true" data-x="640" data-y="1142" data-width="520" data-height="145">
+    <rect class="card" x="640" y="1142" width="520" height="145" rx="16" fill="#faf8ff" stroke="#7c3aed"/>
+    <circle cx="675" cy="1180" r="21" fill="#7c3aed"/><text x="660" y="1185" class="num">U11</text>
+    <text x="710" y="1178" class="head">Explicit sample complexity</text>
+    <text x="680" y="1220" class="body">Finite trials at confidence 1 - α.</text>
+    <text x="680" y="1252" class="body">Current theorem: Proposition 9.</text>
   </g>
 
-  <g id="final-package" data-qa-block="true" data-x="1210" data-y="987" data-width="520" data-height="125">
-    <rect class="card" x="1210" y="987" width="520" height="125" rx="16" fill="#0f172a" stroke="#0f172a"/>
-    <text x="1250" y="1023" class="dark-head">Final theorem-and-evidence package</text>
-    <text x="1250" y="1062" class="dark-body">Connect all layers without defining</text>
-    <text x="1250" y="1090" class="dark-body">the desired conclusion into the physical feature.</text>
+  <g id="final-package" data-qa-block="true" data-x="1210" data-y="1142" data-width="520" data-height="145">
+    <rect class="card" x="1210" y="1142" width="520" height="145" rx="16" fill="#0f172a" stroke="#0f172a"/>
+    <text x="1250" y="1178" class="dark-head">Final theorem-and-evidence package</text>
+    <text x="1250" y="1220" class="dark-body">Connect all layers without defining</text>
+    <text x="1250" y="1252" class="dark-body">the conclusion into the physical feature.</text>
   </g>
 
-  <text x="900" y="1140" text-anchor="middle" class="body">Scientific boundary: these are requirements for a universal proof target, not a claim that the target has already been established.</text>
+  <text x="900" y="1330" text-anchor="middle" class="body">Scientific boundary: these are requirements for a universal proof target, not a claim that the target has already been established.</text>
 </svg>
