@@ -12,28 +12,28 @@
 
   <g id="block-continuous" data-x="60" data-y="145" data-w="330" data-h="210">
     <rect x="60" y="145" width="330" height="210" rx="18" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
-    <text x="84" y="180" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">1. P65 lower-bounded optimum</text>
-    <text x="84" y="216" font-family="Arial, sans-serif" font-size="16" fill="#334155">n*_e = max{1, τ(b_e/c_e)^(2/3)}</text>
-    <text x="84" y="252" font-family="Arial, sans-serif" font-size="15" fill="#475569">Continuous budget is spent tightly.</text>
+    <text x="84" y="180" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">1. P65 bounded optimum</text>
+    <text x="84" y="216" font-family="Arial, sans-serif" font-size="16" fill="#334155">n* = max{1, τ(b/c)^(2/3)}</text>
+    <text x="84" y="252" font-family="Arial, sans-serif" font-size="15" fill="#475569">Continuous budget is tight.</text>
     <text x="84" y="286" font-family="Arial, sans-serif" font-size="15" fill="#475569">Executable floor:</text>
     <text x="84" y="316" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#0f172a">f_e = floor(n*_e) ≥ 1</text>
   </g>
 
   <g id="block-residual" data-x="435" data-y="145" data-w="330" data-h="210">
     <rect x="435" y="145" width="330" height="210" rx="18" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
-    <text x="459" y="180" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">2. Leftover budget is bounded</text>
+    <text x="459" y="180" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">2. Residual budget bound</text>
     <text x="459" y="219" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#0f172a">R = B − Σ c_e f_e</text>
     <text x="459" y="257" font-family="Arial, sans-serif" font-size="16" fill="#334155">= Σ c_e frac(n*_e)</text>
     <text x="459" y="299" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">0 ≤ R &lt; Σ c_e = B₀</text>
-    <text x="459" y="330" font-family="Arial, sans-serif" font-size="14" fill="#475569">Residual scale is independent of the size of B.</text>
+    <text x="459" y="330" font-family="Arial, sans-serif" font-size="14" fill="#475569">Residual scale does not grow with B.</text>
   </g>
 
   <g id="block-dp" data-x="810" data-y="145" data-w="330" data-h="210">
     <rect x="810" y="145" width="330" height="210" rx="18" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
-    <text x="834" y="180" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">3. Exact residual dynamic program</text>
+    <text x="834" y="180" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">3. Exact residual DP</text>
     <text x="834" y="217" font-family="Arial, sans-serif" font-size="15" fill="#334155">k_e = f_e + z_e,  z_e ∈ Z≥0</text>
     <text x="834" y="250" font-family="Arial, sans-serif" font-size="15" fill="#334155">Σ c_e z_e ≤ R</text>
-    <text x="834" y="286" font-family="Arial, sans-serif" font-size="14" fill="#334155">F_i(s) = min_z [F_(i−1)(s−c_i z)</text>
+    <text x="834" y="286" font-family="Arial, sans-serif" font-size="14" fill="#334155">F_i(s)=min_z [F_(i−1)(s−c_i z)</text>
     <text x="834" y="310" font-family="Arial, sans-serif" font-size="14" fill="#334155">+ b_i / sqrt(f_i+z)]</text>
     <text x="834" y="337" font-family="Arial, sans-serif" font-size="14" fill="#475569">Globally exact within k ≥ f.</text>
   </g>
@@ -43,7 +43,7 @@
 
   <g id="block-improvement" data-x="120" data-y="430" data-w="430" data-h="190">
     <rect x="120" y="430" width="430" height="190" rx="18" fill="#ffffff" stroke="#64748b" stroke-width="2"/>
-    <text x="146" y="468" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#0f172a">Certified improvement over the P65 floor</text>
+    <text x="146" y="468" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#0f172a">Improvement over the P65 floor</text>
     <text x="146" y="510" font-family="Arial, sans-serif" font-size="17" fill="#334155">U(k⁶⁶) ≤ U(f)</text>
     <text x="146" y="546" font-family="Arial, sans-serif" font-size="16" fill="#334155">r₆₆ = min_e k⁶⁶_e / n*_e ≥ r₆₅</text>
     <text x="146" y="584" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#0f172a">factor₆₆ ≤ factor₆₅ ≤ √2</text>
@@ -51,7 +51,7 @@
 
   <g id="block-complexity" data-x="650" data-y="430" data-w="430" data-h="190">
     <rect x="650" y="430" width="430" height="190" rx="18" fill="#ffffff" stroke="#64748b" stroke-width="2"/>
-    <text x="676" y="468" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#0f172a">Residual rather than full-budget complexity</text>
+    <text x="676" y="468" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#0f172a">Residual-budget complexity</text>
     <text x="676" y="508" font-family="Arial, sans-serif" font-size="16" fill="#334155">g = gcd{c_e},  R′ = floor(R/g)</text>
     <text x="676" y="546" font-family="Arial, sans-serif" font-size="16" fill="#334155">DP axis uses R′, not B/g.</text>
     <text x="676" y="583" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#0f172a">R &lt; B₀ keeps augmentation localized.</text>
@@ -62,8 +62,7 @@
 
   <g id="block-boundary" data-x="120" data-y="660" data-w="960" data-h="62">
     <rect x="120" y="660" width="960" height="62" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
-    <text x="145" y="687" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#0f172a">Scientific boundary:</text>
-    <text x="286" y="687" font-family="Arial, sans-serif" font-size="15" fill="#334155">resource-allocation theorem for a declared calibration surrogate, not a consciousness or quantum-ontology theorem.</text>
-    <text x="145" y="710" font-family="Arial, sans-serif" font-size="14" fill="#475569">P66 is restricted-exact above the P65 floor; P63 remains globally exact over all positive integer allocations.</text>
+    <text x="145" y="686" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#0f172a">Scientific boundary: resource-allocation theorem for the declared calibration surrogate.</text>
+    <text x="145" y="710" font-family="Arial, sans-serif" font-size="14" fill="#475569">Restricted-exact above P65 floor; P63 remains globally exact; not a consciousness or quantum-ontology theorem.</text>
   </g>
 </svg>
