@@ -16,6 +16,7 @@ from __future__ import annotations
 
 from collections.abc import Hashable, Mapping, Sequence
 from dataclasses import dataclass
+from itertools import pairwise
 from math import inf, isfinite
 from typing import TypeVar
 
@@ -97,7 +98,7 @@ def switching_path_cost(
     total = 0.0
     if start is not None:
         total += costs[(start, route[0])]
-    for first, second in zip(route, route[1:]):
+    for first, second in pairwise(route):
         total += costs[(first, second)]
     return total
 
@@ -115,7 +116,7 @@ def expanded_schedule_cost(
     total = 0.0
     if start is not None:
         total += costs[(start, sequence[0])]
-    for first, second in zip(sequence, sequence[1:]):
+    for first, second in pairwise(sequence):
         total += costs[(first, second)]
     return total
 
