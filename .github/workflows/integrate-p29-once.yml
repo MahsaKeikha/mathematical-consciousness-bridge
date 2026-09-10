@@ -32,7 +32,7 @@ jobs:
           path = Path("docs/figures/theorem_roadmap.svg")
           text = path.read_text(encoding="utf-8")
           old = "Every intervention-pair distance is controlled at every delay"
-          new = "Every pairwise response distance is controlled at every delay"
+          new = "Response geometry controlled across every delay"
           if text.count(old) != 1:
               raise RuntimeError("P29 roadmap heading marker not found exactly once")
           path.write_text(text.replace(old, new, 1), encoding="utf-8")
