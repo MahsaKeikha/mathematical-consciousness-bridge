@@ -131,9 +131,9 @@ def sufficient_integer_budget_for_target(
 def relative_overhead_bound(total_budget: int, edge_count: int) -> float:
     """Return the P60 worst-case ratio to the P59 continuous optimum at B."""
     if not isinstance(total_budget, int) or isinstance(total_budget, bool):
-        raise ValueError("total_budget must be an integer")
+        raise TypeError("total_budget must be an integer")
     if not isinstance(edge_count, int) or isinstance(edge_count, bool):
-        raise ValueError("edge_count must be an integer")
+        raise TypeError("edge_count must be an integer")
     if edge_count <= 0:
         raise ValueError("edge_count must be positive")
     if total_budget <= edge_count:
@@ -149,7 +149,7 @@ def _validate_inputs(
 ) -> None:
     _validate_maps(coefficients, sensitivities)
     if not isinstance(total_budget, int) or isinstance(total_budget, bool):
-        raise ValueError("total_budget must be an integer")
+        raise TypeError("total_budget must be an integer")
     if total_budget <= len(coefficients):
         raise ValueError("total_budget must be strictly larger than edge count")
     if not isfinite(tolerance) or tolerance < 0.0:
