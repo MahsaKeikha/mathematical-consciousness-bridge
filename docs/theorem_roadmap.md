@@ -42,6 +42,7 @@ This roadmap records the current proved mathematical chain and the open route to
 ![P58 finite-data switching-metric uncertainty](figures/p58_finite_data_metric_uncertainty.svg)
 ![P59 optimal transition-calibration allocation](figures/p59_optimal_transition_calibration.svg)
 ![P60 integer transition-calibration allocation](figures/p60_integer_transition_calibration.svg)
+![P61 exact integer transition-calibration allocation](figures/p61_exact_integer_transition_calibration.svg)
 
 ---
 
@@ -109,6 +110,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P58](proposition_58_finite_data_metric_uncertainty.md) | pairwise Hoeffding confidence intervals plus exact lower/upper route-envelope dynamic programs | finite-data bracket for the unknown true switching optimum, robust route-regret certificate, and robust old/new comparison | proved finite-data confidence-envelope theorem |
 | [P59](proposition_59_optimal_transition_calibration.md) | strict convexity plus KKT allocation of inverse-square-root edge uncertainty | unique two-thirds-power calibration allocation, closed-form optimum, and target-budget formula | proved resource-allocation theorem |
 | [P60](proposition_60_integer_transition_calibration.md) | ceiling construction applied to the P59 continuous optimum on a reserved budget | feasible whole-measurement calibration under a hard budget with explicit multiplicative overhead and target-budget bound | proved constructive integer-allocation theorem |
+| [P61](proposition_61_exact_integer_transition_calibration.md) | discrete diminishing returns and exchange optimality for the P59 separable surrogate | exact whole-measurement allocation by largest current marginal uncertainty reduction | proved exact discrete allocation theorem |
 
 ---
 
