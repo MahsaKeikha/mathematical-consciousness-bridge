@@ -1,6 +1,5 @@
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 DOC = ROOT / "docs" / "proposition_46_budget_constrained_witness_graph.md"
 FIGURE = ROOT / "docs" / "figures" / "p46_budget_constrained_witness_graph.svg"
