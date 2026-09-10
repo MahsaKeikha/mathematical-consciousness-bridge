@@ -12,6 +12,9 @@ HORIZONTAL_PADDING = 36.0
 VERTICAL_PADDING = 28.0
 WIDTH_FACTOR = 0.62
 FIGURES = {
+    "P59": ("p59_optimal_transition_calibration.svg", 5),
+    "P60": ("p60_integer_transition_calibration.svg", 6),
+    "P61": ("p61_exact_integer_transition_calibration.svg", 6),
     "P62": ("p62_heterogeneous_cost_transition_calibration.svg", 5),
     "P63": ("p63_exact_heterogeneous_integer_calibration.svg", 6),
     "P64": ("p64_fast_heterogeneous_integer_approximation.svg", 6),
@@ -28,7 +31,44 @@ def _load_figure(filename: str) -> tuple[pathlib.Path, ET.Element]:
     return figure, ET.parse(figure).getroot()
 
 
-def test_p62_p64_text_is_contained_inside_every_declared_block():
+def _assert_text_fits(
+    proposition: str,
+    block: ET.Element,
+    label: ET.Element,
+) -> None:
+    x = _value(block, "data-x")
+    y = _value(block, "data-y")
+    width = _value(block, "data-width")
+    height = _value(block, "data-height")
+    css_class = label.attrib["class"]
+    assert css_class in FONT_SIZE
+
+    label_text = "".join(label.itertext()).strip()
+    label_x = _value(label, "x")
+    label_y = _value(label, "y")
+    estimated_width = len(label_text) * FONT_SIZE[css_class] * WIDTH_FACTOR
+    left_limit = x + HORIZONTAL_PADDING
+    right_limit = x + width - HORIZONTAL_PADDING
+
+    if label.attrib.get("text-anchor") == "middle":
+        left_edge = label_x - estimated_width / 2.0
+        right_edge = label_x + estimated_width / 2.0
+    else:
+        left_edge = label_x
+        right_edge = label_x + estimated_width
+
+    assert left_limit <= left_edge, (
+        f"{proposition} label may overflow left side of block "
+        f"{block.attrib['id']}: {label_text!r}"
+    )
+    assert right_edge <= right_limit, (
+        f"{proposition} label may overflow right side of block "
+        f"{block.attrib['id']}: {label_text!r}"
+    )
+    assert y + VERTICAL_PADDING <= label_y <= y + height - VERTICAL_PADDING
+
+
+def test_p59_p64_text_is_contained_inside_every_declared_block():
     for proposition, (filename, _) in FIGURES.items():
         _, svg = _load_figure(filename)
         blocks = svg.findall(".//svg:g[@data-qa-block='true']", SVG_NS)
@@ -47,22 +87,10 @@ def test_p62_p64_text_is_contained_inside_every_declared_block():
             assert _value(rect, "height") == height
 
             for label in block.findall("svg:text", SVG_NS):
-                css_class = label.attrib["class"]
-                assert css_class in FONT_SIZE
-                label_text = "".join(label.itertext()).strip()
-                label_x = _value(label, "x")
-                label_y = _value(label, "y")
-                estimated_width = len(label_text) * FONT_SIZE[css_class] * WIDTH_FACTOR
-
-                assert x + HORIZONTAL_PADDING <= label_x
-                assert label_x + estimated_width <= x + width - HORIZONTAL_PADDING, (
-                    f"{proposition} label may overflow block "
-                    f"{block.attrib['id']}: {label_text!r}"
-                )
-                assert y + VERTICAL_PADDING <= label_y <= y + height - VERTICAL_PADDING
+                _assert_text_fits(proposition, block, label)
 
 
-def test_p62_p64_connectors_reference_existing_blocks():
+def test_p59_p64_connectors_reference_existing_blocks():
     for proposition, (filename, expected_connectors) in FIGURES.items():
         _, svg = _load_figure(filename)
         block_ids = {
@@ -81,7 +109,7 @@ def test_p62_p64_connectors_reference_existing_blocks():
             assert connector.attrib.get("class") == "arrow"
 
 
-def test_p62_p64_figures_have_no_forbidden_unicode_dashes():
+def test_p59_p64_figures_have_no_forbidden_unicode_dashes():
     for proposition, (filename, _) in FIGURES.items():
         figure, _ = _load_figure(filename)
         text = figure.read_text(encoding="utf-8")
