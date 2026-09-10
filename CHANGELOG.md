@@ -1,3 +1,12 @@
+# 0.56.0 - 2026-09-10
+
+- Add P56 moving-start metric reoptimization stability.
+- Prove the optimal P54 switching route is sharply 1-Lipschitz in the setup origin.
+- Bound erosion of a P55 fixed-start saving by the metric setup displacement.
+- Add a sufficient strict-decrease certificate when fixed-start savings exceed start movement.
+- Add a tightness example and make the fixed-metric boundary explicit.
+- Add implementation, tests, theorem visual, equation provenance, and front-page integration.
+
 # 0.55.0 - 2026-09-10
 
 - Add P55 pruning-aware metric switching-cost monotonicity.

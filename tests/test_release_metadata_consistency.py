@@ -6,9 +6,9 @@ def test_release_versions_are_synchronized():
     readme = Path("README.md").read_text(encoding="utf-8")
     pyproject = Path("pyproject.toml").read_text(encoding="utf-8")
     citation = Path("CITATION.cff").read_text(encoding="utf-8")
-    assert "version-0.55.0-2563eb" in readme
-    assert re.search(r'^version = "0\.55\.0"$', pyproject, re.MULTILINE)
-    assert re.search(r'^version: 0\.55\.0$', citation, re.MULTILINE)
+    assert "version-0.56.0-2563eb" in readme
+    assert re.search(r'^version = "0\.56\.0"$', pyproject, re.MULTILINE)
+    assert re.search(r'^version: 0\.56\.0$', citation, re.MULTILINE)
 
 
 def test_quantum_publication_paths_are_visible():
@@ -82,5 +82,9 @@ def test_quantum_publication_paths_are_visible():
         "p55_pruning_aware_switching_monotonicity.svg",
         "pruning_aware_switching_monotonicity.py",
         "test_pruning_aware_switching_monotonicity.py",
+        "Proposition 56",
+        "p56_moving_start_metric_reoptimization_stability.svg",
+        "moving_start_metric_reoptimization.py",
+        "test_moving_start_metric_reoptimization.py",
     ):
         assert token in readme
