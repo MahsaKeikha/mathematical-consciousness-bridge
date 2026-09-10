@@ -2,7 +2,15 @@ from pathlib import Path
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
-WEBSITE = ROOT / "website" / "index.html"
+WEBSITE_DIR = ROOT / "website"
+WEBSITE = WEBSITE_DIR / "index.html"
+PUBLIC_PAGES = [
+    "index.html",
+    "research-map.html",
+    "physics-mathematics.html",
+    "visual-atlas.html",
+    "sources.html",
+]
 
 
 def _project_version() -> str:
@@ -21,10 +29,11 @@ def _max_proposition_number() -> int:
     return max(numbers)
 
 
-def test_website_assets_exist():
-    assert WEBSITE.exists()
-    assert (ROOT / "website" / "styles.css").exists()
-    assert (ROOT / "website" / "app.js").exists()
+def test_website_assets_and_public_pages_exist():
+    assert (WEBSITE_DIR / "styles.css").exists()
+    assert (WEBSITE_DIR / "app.js").exists()
+    for page in PUBLIC_PAGES:
+        assert (WEBSITE_DIR / page).exists(), page
 
 
 def test_website_release_status_matches_repository():
@@ -80,6 +89,45 @@ def test_website_links_to_existing_core_record_documents():
         "docs/reference_audit.md",
         "docs/theorem_roadmap.md",
         "docs/falsification_program.md",
+        "docs/physics_equation_provenance.md",
+        "docs/foundational_physics_mathematics_bibliography.md",
+        "docs/quantum_foundations_and_bridge_test.md",
+        "docs/quantitative_physics_mathematics_atlas.md",
+        "references.bib",
+        "foundational_physics_mathematics.bib",
+        "empirical_consciousness_measurement.bib",
         "CITATION.cff",
     ]:
         assert (ROOT / path).exists(), path
+
+
+def test_secondary_page_navigation_has_no_missing_local_pages():
+    local_page_pattern = re.compile(r'href="([a-z0-9-]+\.html)"')
+    for page in PUBLIC_PAGES:
+        html = (WEBSITE_DIR / page).read_text(encoding="utf-8")
+        for target in local_page_pattern.findall(html):
+            assert (WEBSITE_DIR / target).exists(), f"{page} -> {target}"
+
+
+def test_visual_atlas_referenced_repository_figures_exist():
+    html = (WEBSITE_DIR / "visual-atlas.html").read_text(encoding="utf-8")
+    figure_pattern = re.compile(
+        r"raw\.githubusercontent\.com/MahsaKeikha/"
+        r"mathematical-consciousness-bridge/main/(docs/figures/[^"]+\.svg)"
+    )
+    figures = figure_pattern.findall(html)
+    assert len(figures) >= 10
+    for figure in figures:
+        assert (ROOT / figure).exists(), figure
+
+
+def test_research_map_covers_full_proposition_frontier():
+    html = (WEBSITE_DIR / "research-map.html").read_text(encoding="utf-8")
+    assert "P1-P10" in html
+    assert "P11-P18" in html
+    assert "P19-P24" in html
+    assert "P25-P37" in html
+    assert "P38-P44" in html
+    assert "P45-P53" in html
+    assert "P54-P64" in html
+    assert _max_proposition_number() == 64
