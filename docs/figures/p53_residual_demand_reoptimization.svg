@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">P53 residual-demand reoptimization</title>
+  <desc id="desc">A theorem map showing active edge thresholds and collected samples producing residual vertex demands, followed by exact capacity reoptimization and monotone reduction after safe pruning.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.12"/></filter>
+    <style>.title{font:700 30px system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#0f172a}.subtitle{font:400 16px system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#475569}.bt{font:700 18px system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#0f172a}.body{font:400 14px system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#334155}.math{font:600 14px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#0f172a}.small{font:400 12px system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#64748b}.flow{stroke:#334155;stroke-width:2.2;fill:none;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="1200" height="760" rx="24" fill="#f8fafc"/>
+  <text x="60" y="58" class="title">P53: Residual-demand reoptimization after safe pruning</text>
+  <text x="60" y="88" class="subtitle">P52 becomes dynamic: samples and valid graph simplification release exact remaining service burden.</text>
+
+  <g filter="url(#shadow)"><rect x="60" y="130" width="300" height="150" rx="18" fill="#fff" stroke="#94a3b8"/><text x="86" y="166" class="bt">Current sequential state</text><text x="86" y="200" class="math">active Eₜ, thresholds Nₑ</text><text x="86" y="230" class="math">collected counts nᵢ(t)</text><text x="86" y="254" class="small">Edges may disappear only through valid pruning.</text></g>
+  <g filter="url(#shadow)"><rect x="450" y="130" width="300" height="150" rx="18" fill="#eef2ff" stroke="#6366f1"/><text x="476" y="166" class="bt">Residual vertex demand</text><text x="476" y="202" class="math">rᵢ(t)=maxₑ∋ᵢ (Nₑ−nᵢ(t))₊</text><text x="476" y="234" class="body">Largest unsatisfied active incident</text><text x="476" y="256" class="body">threshold controls the vertex.</text></g>
+  <g filter="url(#shadow)"><rect x="840" y="130" width="300" height="150" rx="18" fill="#ecfdf5" stroke="#10b981"/><text x="866" y="166" class="bt">Exact P52 reoptimization</text><text x="866" y="200" class="math">R(t)=Σᵢ rᵢ(t)</text><text x="866" y="228" class="math">T*rem(t)=R(t)/C</text><text x="866" y="254" class="math">πᵢ*(t)=C rᵢ(t)/R(t)</text></g>
+  <path d="M360 205 L450 205" class="flow"/><path d="M750 205 L840 205" class="flow"/>
+
+  <g filter="url(#shadow)"><rect x="90" y="380" width="300" height="150" rx="18" fill="#fff" stroke="#3b82f6"/><text x="118" y="416" class="bt">Additional samples</text><text x="118" y="450" class="math">nᵢ(b) ≥ nᵢ(a)</text><text x="118" y="482" class="body">Every retained threshold deficit</text><text x="118" y="504" class="body">can only shrink.</text></g>
+  <g filter="url(#shadow)"><rect x="450" y="380" width="300" height="150" rx="18" fill="#fff7ed" stroke="#f97316"/><text x="478" y="416" class="bt">P47-safe pruning</text><text x="478" y="450" class="math">E_b ⊆ E_a</text><text x="478" y="482" class="body">Maximization occurs over a smaller</text><text x="478" y="504" class="body">active incident-edge family.</text></g>
+  <g filter="url(#shadow)"><rect x="810" y="380" width="300" height="150" rx="18" fill="#f0fdf4" stroke="#22c55e"/><text x="838" y="416" class="bt">Monotone residual theorem</text><text x="838" y="450" class="math">rᵢ(b) ≤ rᵢ(a)</text><text x="838" y="480" class="math">R(b) ≤ R(a)</text><text x="838" y="508" class="math">T*rem(b) ≤ T*rem(a)</text></g>
+  <path d="M390 455 L810 455" class="flow"/><path d="M750 455 L810 455" class="flow"/>
+
+  <g filter="url(#shadow)"><rect x="210" y="610" width="780" height="92" rx="18" fill="#f1f5f9" stroke="#94a3b8"/><text x="240" y="646" class="bt">Exact released optimal time</text><text x="240" y="680" class="math">T*rem(a) − T*rem(b) = [R(a) − R(b)] / C</text></g>
+  <path d="M960 530 C960 575 820 590 760 610" class="flow"/>
+  <text x="60" y="738" class="small">Boundary: P53 quantifies deterministic threshold burden after valid pruning; it does not justify pruning or optimize the actual random stopping time.</text>
+</svg>
