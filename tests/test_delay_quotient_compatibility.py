@@ -10,7 +10,6 @@ from consciousness_bridge.delay_quotient_compatibility import (
     representative_selection_distance,
 )
 
-
 INTERVENTIONS = ("u0", "u1")
 FINE_DELAYS = (0, 1, 2)
 COARSE_DELAYS = ("early", "late")
