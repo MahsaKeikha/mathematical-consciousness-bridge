@@ -281,8 +281,8 @@ text = path.read_text(encoding="utf-8")
 text = replace_once(text, "version: 0.41.0", "version: 0.42.0", "citation version")
 text = replace_once(
     text,
-    "trace-ball quantum confidence envelopes,",
-    "trace-ball quantum confidence envelopes, fixed-IC quantum regular-bridge sample complexity,",
+    "trace-ball quantum envelope certification,",
+    "trace-ball quantum envelope certification, fixed-IC quantum regular-bridge sample complexity,",
     "citation P42 abstract",
 )
 path.write_text(text, encoding="utf-8")
