@@ -34,8 +34,8 @@
     <rect class="card" x="650" y="175" width="500" height="250" rx="22" fill="#fff7ed" stroke="#f97316"/>
     <text x="695" y="222" class="bt">2. What does it cost?</text>
     <text x="695" y="272" class="math">cost per observation = cₑ</text>
-    <text x="695" y="315" class="tx">Some transitions require more setup,</text>
-    <text x="695" y="347" class="tx">stabilization, time, or equipment.</text>
+    <text x="695" y="315" class="tx">Setup and stabilization vary.</text>
+    <text x="695" y="347" class="tx">Time or equipment can differ.</text>
     <text x="695" y="392" class="small">Larger cₑ favors fewer observations.</text>
   </g>
 
@@ -45,7 +45,7 @@
     <text x="1275" y="272" class="math">Σₑ cₑ nₑ = B</text>
     <text x="1275" y="315" class="tx">All measurements share one common</text>
     <text x="1275" y="347" class="tx">time, money, or capacity budget.</text>
-    <text x="1275" y="392" class="small">Continuous nₑ defines the exact relaxation.</text>
+    <text x="1275" y="392" class="small">Continuous nₑ is the exact relaxation.</text>
   </g>
 
   <path d="M570 300 H638" class="arrow" data-from="p62-importance" data-to="p62-cost"/>
