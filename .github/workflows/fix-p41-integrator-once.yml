@@ -1,0 +1,45 @@
+name: fix-p41-integrator-once
+
+on:
+  push:
+    branches:
+      - p41-trace-ball-quantum-envelope
+    paths:
+      - .github/workflows/fix-p41-integrator-once.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          ref: p41-trace-ball-quantum-envelope
+          fetch-depth: 0
+
+      - name: Make proposition guard context-specific
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('.github/integrate_p41_release.py')
+          text = path.read_text(encoding='utf-8')
+          old = 's = one(s, "for index in range(1, 41):", "for index in range(1, 42):", "proposition guard")'
+          new = '''old_guard = """def test_main_page_exposes_entire_proposition_chain():\n    text = README.read_text(encoding=\"utf-8\")\n\n    for index in range(1, 41):"""\nnew_guard = """def test_main_page_exposes_entire_proposition_chain():\n    text = README.read_text(encoding=\"utf-8\")\n\n    for index in range(1, 42):"""\ns = one(s, old_guard, new_guard, "proposition guard")'''
+          if text.count(old) != 1:
+              raise SystemExit(f'expected one generic proposition guard, found {text.count(old)}')
+          path.write_text(text.replace(old, new, 1), encoding='utf-8')
+          PY
+
+      - name: Remove this one-time fixer
+        run: rm .github/workflows/fix-p41-integrator-once.yml
+
+      - name: Commit corrected integrator
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Fix P41 proposition visibility guard"
+          git push origin HEAD:p41-trace-ball-quantum-envelope
