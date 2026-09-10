@@ -442,9 +442,9 @@ This makes the connection to P43 explicit. P43 optimized a two-component uncerta
 The optimization above is continuous in uncertainty radii. Once an optimal continuous radius \(\varepsilon_i^*\) or \(r_i^*\) is obtained, the corresponding nominal sample counts are
 
 \[
- n_{Y,i}^*=rac{a_{Y,i}^2}{(\varepsilon_i^*)^2},
+ n_{Y,i}^*=\frac{a_{Y,i}^2}{(\varepsilon_i^*)^2},
 \qquad
-n_{Q,i}^*=rac{a_{Q,i}^2}{(r_i^*)^2}.
+n_{Q,i}^*=\frac{a_{Q,i}^2}{(r_i^*)^2}.
 \]
 
 A conservative integer design uses
