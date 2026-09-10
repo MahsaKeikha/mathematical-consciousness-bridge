@@ -241,7 +241,7 @@ Let
 T(\pi;s)
 \]
 
-denote the set of transition edges traversed by that route, including the initial edge from a supplied setup state \(s\) to \(v_1\).
+denote the ordered transition sequence traversed by that route, with multiplicity, including the initial transition from a supplied setup state \(s\) to \(v_1\).
 
 Define the pairwise lower and upper transition bounds
 
