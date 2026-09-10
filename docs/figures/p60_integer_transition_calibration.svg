@@ -22,7 +22,7 @@
     <rect class="card" x="70" y="175" width="500" height="245" rx="22" fill="#ffffff" stroke="#94a3b8"/>
     <text x="115" y="222" class="bt">1. Hard integer budget</text>
     <text x="115" y="272" class="math">B measurements, m edges</text>
-    <text x="115" y="320" class="tx">Reserve at most one rounding unit</text>
+    <text x="115" y="320" class="tx">Reserve one rounding unit at most</text>
     <text x="115" y="352" class="tx">per calibrated transition.</text>
   </g>
 
@@ -30,7 +30,7 @@
     <rect class="card" x="650" y="175" width="500" height="245" rx="22" fill="#eef2ff" stroke="#6366f1"/>
     <text x="695" y="222" class="bt">2. Solve P59 on B - m</text>
     <text x="695" y="272" class="math">n~ₑ = n*ₑ(B - m)</text>
-    <text x="695" y="320" class="tx">Use the exact continuous allocation</text>
+    <text x="695" y="320" class="tx">Use the exact P59 allocation</text>
     <text x="695" y="352" class="tx">on the reduced effective budget.</text>
   </g>
 
@@ -38,7 +38,7 @@
     <rect class="card" x="1230" y="175" width="500" height="245" rx="22" fill="#ffffff" stroke="#94a3b8"/>
     <text x="1275" y="222" class="bt">3. Round upward</text>
     <text x="1275" y="272" class="math">kₑ = ceil(n~ₑ)</text>
-    <text x="1275" y="320" class="tx">Every count becomes a whole number.</text>
+    <text x="1275" y="320" class="tx">Every count is a whole number.</text>
     <text x="1275" y="352" class="math">Σₑ kₑ ≤ B</text>
   </g>
 
