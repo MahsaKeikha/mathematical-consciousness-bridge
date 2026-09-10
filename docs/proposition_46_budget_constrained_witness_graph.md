@@ -230,7 +230,7 @@ K_{\rm frac}(B)
 \right\}.
 \]
 
-The fractional problem is solved by sorting vertices by
+This fractional relaxation is solved by sorting vertices by
 
 \[
 \frac{d_i}{c_i}.
