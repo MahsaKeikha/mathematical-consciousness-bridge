@@ -24,10 +24,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+      - name: Install project development dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
       - name: Normalize all tracked UTF-8 text
         run: python scripts/normalize_typography.py
-      - name: Verify typography policy
-        run: python -m pytest tests/test_typography_policy.py
+      - name: Verify typography policy and lint
+        run: |
+          python -m pytest tests/test_typography_policy.py
+          ruff check scripts/normalize_typography.py tests/test_typography_policy.py
       - name: Commit repository-wide normalization
         run: |
           git config user.name "github-actions[bot]"
