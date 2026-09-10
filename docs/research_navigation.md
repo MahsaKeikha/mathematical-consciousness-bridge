@@ -6,7 +6,7 @@ This page is the reading and reference index for the Mathematical Consciousness 
 
 1. [Main research paper](../README.md) for the complete scientific narrative and embedded figures.
 2. [Bridge problem](bridge_problem.md) for the formal statement of the physical-to-experiential problem.
-3. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P58, including the physical scale branches from P11-P18 to P25-P27.
+3. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P59, including the physical scale branches from P11-P18 to P25-P27.
 4. [Equation and citation map](equation_and_citation_map.md) for equation-level provenance and theorem lineage.
 5. [Proposition 19](proposition_19_fundamental_physical_sufficiency.md) for the population physical-sufficiency theorem.
 6. [Proposition 20](proposition_20_finite_sample_residual_certification.md) for finite-sample certification of the P19 stochastic residual.
@@ -88,6 +88,7 @@ This page is the reading and reference index for the Mathematical Consciousness 
 | P56 | [Moving-start metric reoptimization stability](proposition_56_moving_start_metric_reoptimization_stability.md) | sharp start-state Lipschitz bound, P55 saving erosion bound, and strict-decrease certificate under setup motion |
 | P57 | [Switching-metric perturbation stability](proposition_57_switching_metric_perturbation.md) | sharp sup-norm metric-drift control, combined residual/start/metric strict-decrease certificate, and route-reuse upper bound |
 | P58 | [Finite-data switching-metric uncertainty](proposition_58_finite_data_metric_uncertainty.md) | simultaneous pairwise transition confidence intervals, exact robust route envelopes, route-regret bound, and finite-data strict-improvement certificate |
+| P59 | [Optimal transition-calibration allocation](proposition_59_optimal_transition_calibration.md) | exact two-thirds-power allocation of a finite calibration budget for the declared P58 route-uncertainty surrogate |
 
 ## Physics, mathematics, and quantitative figures
 

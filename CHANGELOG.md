@@ -1,3 +1,11 @@
+# 0.59.0 - 2026-09-10
+
+- Add P59 optimal transition-calibration allocation.
+- Prove the unique continuous two-thirds-power allocation law for the declared P58 inverse-square-root uncertainty surrogate.
+- Derive the exact minimum surrogate uncertainty and the exact continuous budget threshold for a target uncertainty level.
+- Add implementation, regression tests, theorem visual, equation provenance, and front-page integration.
+- Preserve the explicit boundary between this convex surrogate result and the unresolved full combinatorial robust-routing design problem.
+
 # 0.58.0 - 2026-09-10
 
 - Add P58 finite-data switching-metric uncertainty and robust reoptimization.
