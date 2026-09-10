@@ -732,3 +732,16 @@ P52 optimizes deterministic saturation of declared sufficient thresholds; it is 
 
 P53 quantifies deterministic threshold burden after valid pruning; it does not itself justify the statistical pruning decision.
 
+---
+
+# 43. P54 metric switching-cost residual scheduling
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(C_{\rm total}(\sigma)=a\sum_i r_i+C_{\rm sw}(\sigma)\) | deterministic acquisition and switching-cost decomposition | repository scheduling definition | [P54](proposition_54_metric_switching_cost_residual_scheduling.md) |
+| \(C_{\rm sw}(\bar\sigma)\le C_{\rm sw}(\sigma)\) | first-visit metric batching inequality | proved by repeated triangle inequality | [P54](proposition_54_metric_switching_cost_residual_scheduling.md) |
+| \(C_{\rm total}^*=a\sum_i r_i+L^*(V_+;s)\) | exact optimum after batching | proved Hamiltonian-path reduction | [P54](proposition_54_metric_switching_cost_residual_scheduling.md) |
+| \(D(S,j)=\min_{k\in S\setminus\{j\}}[D(S\setminus\{j\},k)+c(k,j)]\) | exact finite-instance Held-Karp recurrence | standard subset-DP construction applied here | [P54](proposition_54_metric_switching_cost_residual_scheduling.md) |
+
+The metric assumption is structural: without triangle inequality the batching inequality and Hamiltonian-path reduction need not hold.
+

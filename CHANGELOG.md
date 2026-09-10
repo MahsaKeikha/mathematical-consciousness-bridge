@@ -1,3 +1,12 @@
+# 0.54.0 - 2026-09-10
+
+- Add P54 metric switching-cost residual scheduling.
+- Prove that repeated preparation visits can be removed without increasing metric switching cost.
+- Reduce exact residual execution cost to fixed acquisition burden plus a shortest Hamiltonian path.
+- Add a Held-Karp exact solver for small preparation sets.
+- Make the triangle-inequality boundary explicit and test zero-demand support reduction.
+- Add theorem documentation, publication visual, proof-to-code guards, and front-page integration.
+
 # 0.53.0 - 2026-09-10
 
 - Add P53 residual-demand reoptimization after additional sampling and P47-safe pruning.

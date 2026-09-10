@@ -52,6 +52,7 @@ CANONICAL_MAIN_PAGE_FIGURES = (
     "p51_heterogeneous_service_rate_stopping.svg",
     "p52_capacity_optimal_service_allocation.svg",
     "p53_residual_demand_reoptimization.svg",
+    "p54_metric_switching_cost_residual_scheduling.svg",
     "p30_p37_operational_scale_map.svg",
     "observer_to_bridge_handoff.svg",
     "conscious_state_measurement_map.svg",
@@ -86,7 +87,7 @@ def test_main_page_contains_canonical_scientific_maps():
 def test_main_page_exposes_entire_proposition_chain():
     text = README.read_text(encoding="utf-8")
 
-    for index in range(1, 54):
+    for index in range(1, 55):
         assert f"**P{index}**" in text, f"README is missing proposition P{index}"
 
 
