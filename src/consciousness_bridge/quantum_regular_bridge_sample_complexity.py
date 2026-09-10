@@ -114,7 +114,8 @@ def empirical_lipschitz_obstruction_margin(
     """
     if estimated_quantum_pair_trace_norm_half < 0.0:
         raise ValueError("estimated_quantum_pair_trace_norm_half must be nonnegative")
-    _unit_interval(quantum_radius, "quantum_radius")
+    if quantum_radius < 0.0:
+        raise ValueError("quantum_radius must be nonnegative")
     _unit_interval(estimated_target_tv, "estimated_target_tv")
     _unit_interval(target_radius, "target_radius")
     if lipschitz_constant < 0.0:
@@ -209,7 +210,8 @@ def population_margin_lower_bound(
     if population_regularity_gap < 0.0:
         raise ValueError("population_regularity_gap must be nonnegative")
     _unit_interval(target_radius, "target_radius")
-    _unit_interval(quantum_radius, "quantum_radius")
+    if quantum_radius < 0.0:
+        raise ValueError("quantum_radius must be nonnegative")
     if lipschitz_constant < 0.0:
         raise ValueError("lipschitz_constant must be nonnegative")
     return (

@@ -375,7 +375,7 @@ Consequently, the sufficient condition
 }
 \]
 
-guarantees a positive empirical obstruction margin on the simultaneous confidence event, provided the quantum upper-envelope clipping does not itself erase the planned gap.
+guarantees a positive empirical obstruction margin on the simultaneous confidence event.
 
 ---
 

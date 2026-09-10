@@ -173,7 +173,7 @@ L^{\mathrm{ball}}_{xx'}
 :=
 \left[
 \|\widehat P_x-\widehat P_{x'}\|_{\mathrm{TV}}
--arepsilon_x-arepsilon_{x'}
+-\varepsilon_x-\varepsilon_{x\'}
 \right]_+.
 }
 \]
@@ -195,7 +195,8 @@ where \(\omega\) is nondecreasing and \(\omega(0)=0\).
 For any descriptor in the trace-ball confidence region,
 
 \[
-D(\rho_x,ho_{x'})
+D(\rho_x,
+ho_{x'})
 \le
 U^{\mathrm{ball}}_{xx'}.
 \]
