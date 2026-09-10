@@ -28,10 +28,11 @@
 
   <g id="p61-gain" data-qa-block="true" data-x="650" data-y="175" data-width="500" data-height="245">
     <rect class="card" x="650" y="175" width="500" height="245" rx="22" fill="#eef2ff" stroke="#6366f1"/>
-    <text x="695" y="222" class="bt">2. Compute next-step benefit</text>
-    <text x="695" y="272" class="math">Δₑ(k) = bₑ(1/√k - 1/√(k+1))</text>
-    <text x="695" y="320" class="tx">One more measurement reduces</text>
-    <text x="695" y="352" class="tx">edge uncertainty by Δₑ(k).</text>
+    <text x="695" y="222" class="bt">2. Compute marginal gain</text>
+    <text x="695" y="265" class="math">Δₑ(k) = bₑ [</text>
+    <text x="695" y="298" class="math">1/√k - 1/√(k+1) ]</text>
+    <text x="695" y="342" class="tx">One more measurement reduces</text>
+    <text x="695" y="374" class="tx">edge uncertainty by Δₑ(k).</text>
   </g>
 
   <g id="p61-choose" data-qa-block="true" data-x="1230" data-y="175" data-width="500" data-height="245">
