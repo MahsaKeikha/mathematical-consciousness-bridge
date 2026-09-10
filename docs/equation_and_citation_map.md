@@ -832,3 +832,17 @@ P59 is an exact resource-allocation result for a declared convex uncertainty sur
 
 P60 proves a closed-form feasible integer construction and an overhead bound. It does not claim exact discrete optimality.
 
+---
+
+# 50. P61 exact integer transition-calibration allocation
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(U(k)=\sum_e b_e/\sqrt{k_e}\) with integer \(k_e\ge1\) | hard-budget whole-measurement version of the P59 separable uncertainty surrogate | repository definition | [P61](proposition_61_exact_integer_transition_calibration.md) |
+| \(\Delta_e(k)=b_e(k^{-1/2}-(k+1)^{-1/2})\) | marginal uncertainty reduction from one additional calibration measurement | repository definition | [P61](proposition_61_exact_integer_transition_calibration.md) |
+| \(\Delta_e(k+1)<\Delta_e(k)\) | strict diminishing marginal gain on each calibrated edge | proved discrete-convexity property | [P61](proposition_61_exact_integer_transition_calibration.md) |
+| largest-current-\(\Delta\) allocation rule | exact integer optimizer under \(\sum_e k_e=B\) | proved by prefix representation and exchange argument | [P61](proposition_61_exact_integer_transition_calibration.md) |
+| selected/unselected marginal exchange condition | directly checkable certificate of discrete optimality | proved optimality condition | [P61](proposition_61_exact_integer_transition_calibration.md) |
+
+P61 exactness applies to the declared unit-cost separable calibration surrogate. It is not a proof that the full robust-routing experiment-design problem is greedy-solvable.
+

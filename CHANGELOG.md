@@ -1,3 +1,10 @@
+# 0.61.0 - 2026-09-10
+
+- Add P61 exact integer transition-calibration allocation by diminishing marginal gain.
+- Prove strict diminishing returns for each edge's uncertainty reduction sequence.
+- Prove that the largest-current-marginal-gain allocation rule is globally optimal for the declared hard-budget separable integer surrogate.
+- Add a priority-queue implementation, brute-force regression checks on small instances, theorem visual, public navigation, provenance, and release integration.
+
 # 0.60.0 - 2026-09-10
 
 - Add P60 integer transition-calibration allocation with hard-budget overhead control.
