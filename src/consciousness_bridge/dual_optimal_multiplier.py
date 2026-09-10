@@ -123,12 +123,13 @@ def certified_dual_optimal_multiplier(
     value quality; it does not claim zero primal-dual gap.
     """
     _validate_search_parameters(dual_tolerance, max_iterations)
-    baseline = sum(unit_costs.values())
-    if total_budget < baseline:
-        # The shared P68 validator will also reject this, but fail before any
-        # multiplier search so the reason is explicit here.
-        raise ValueError("total_budget is below the one-observation baseline")
 
+    # This first evaluation delegates all problem validation to P68 before the
+    # P69 search inspects the baseline or any mapping values.
+    initial = evaluate_dual_with_supergradient(
+        coefficients, sensitivities, unit_costs, total_budget, 1.0
+    )
+    baseline = sum(unit_costs.values())
     if total_budget == baseline:
         return _baseline_certificate(
             coefficients,
@@ -137,10 +138,7 @@ def certified_dual_optimal_multiplier(
             total_budget,
         )
 
-    left = evaluate_dual_with_supergradient(
-        coefficients, sensitivities, unit_costs, total_budget, 1.0
-    )
-    right = left
+    left = initial
 
     # Find a point with strictly positive supergradient interval to the left.
     while left.supergradient_lower <= 0:
@@ -154,9 +152,7 @@ def certified_dual_optimal_multiplier(
         )
 
     # Find a point with strictly negative supergradient interval to the right.
-    right = evaluate_dual_with_supergradient(
-        coefficients, sensitivities, unit_costs, total_budget, 1.0
-    )
+    right = initial
     while right.supergradient_upper >= 0:
         if right.supergradient_lower <= 0 <= right.supergradient_upper:
             return _exact_certificate(right, baseline_budget_case=False)
@@ -186,13 +182,9 @@ def certified_dual_optimal_multiplier(
 
         midpoint_lambda = 0.5 * (left.lambda_value + right.lambda_value)
         if midpoint_lambda in {left.lambda_value, right.lambda_value}:
-            return _certificate_from_bracket(
-                best,
-                left,
-                right,
-                upper,
-                error,
-                iteration - 1,
+            raise RuntimeError(
+                "floating-point bracket stalled before dual-value tolerance; "
+                f"remaining certified error is {error}"
             )
         midpoint = evaluate_dual_with_supergradient(
             coefficients,
