@@ -22,6 +22,8 @@ This roadmap records the current proved mathematical chain and the open route to
 
 ![P45 shared-preparation graph allocation](figures/p45_shared_preparation_graph_allocation.svg)
 
+![P46 budget-constrained witness graph](figures/p46_budget_constrained_witness_graph.svg)
+
 ---
 
 # 1. Complete proposition index
@@ -73,6 +75,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P43](proposition_43_optimal_quantum_target_allocation.md) | strict convexity and closed-form weighted allocation | unique minimum-cost split of the P42 quantum and target uncertainty budget | proved resource-allocation theorem |
 | [P44](proposition_44_pair_adaptive_sample_allocation.md) | finite-family union bound and simultaneous lower-margin coverage | valid data-dependent witness selection among predeclared candidate pairs | proved post-selection theorem |
 | [P45](proposition_45_shared_preparation_graph_allocation.md) | strictly convex shared-vertex allocation plus incidence-weighted KKT conditions | unique preparation-level sample design for overlapping candidate witness pairs | proved resource-allocation theorem |
+| [P46](proposition_46_budget_constrained_witness_graph.md) | monotone supermodular induced-edge objective, CLIQUE reduction, and fractional degree-knapsack bound | hard-budget preparation selection with certified optimality gap | proved combinatorial design theorem |
 
 ---
 
@@ -1259,3 +1262,39 @@ The next structural problems are:
 8. search biological and non-biological counterexamples;
 9. formalize experiential space independently of the physical candidate;
 10. attempt a bridge theorem only after the physical, statistical, scale, and falsification layers have been jointly addressed.
+
+---
+
+# 21. P46 budget-constrained witness-graph selection
+
+P45 optimizes continuous preparation-level precision on a fixed candidate graph. P46 asks which preparations should be measured when a hard budget prevents full graph coverage.
+
+For selected preparations \(S\),
+
+\[
+F(S)=\sum_{\{i,j\}\in E}w_{ij}\mathbf 1\{i,j\in S\}.
+\]
+
+P46 proves that \(F\) is monotone and supermodular, and that maximizing \(F\) subject to \(\sum_{i\in S}c_i\le B\) is NP-hard even for unit costs and unit weights. The reduction is from CLIQUE.
+
+The full weighted degree
+
+\[
+d_i=\sum_{j:\{i,j\}\in E}w_{ij}
+\]
+
+gives
+
+\[
+2F(S)\le\sum_{i\in S}d_i.
+\]
+
+A fractional knapsack relaxation therefore gives the certified upper bound
+
+\[
+F^*(B)\le U_{\rm deg}(B).
+\]
+
+Together with any feasible design value \(F(S)\), this yields an explicit a posteriori optimality-gap certificate. Small instances are solved exactly by subset enumeration in the reference implementation.
+
+P46 remains a discrete experimental-design theorem and makes no ontological claim about quantum mechanics or consciousness.

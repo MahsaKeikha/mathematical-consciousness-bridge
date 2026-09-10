@@ -1,3 +1,12 @@
+# 0.46.0 - 2026-09-10
+
+- Add P46 budget-constrained witness-graph selection.
+- Prove monotonicity and supermodularity of the induced-edge design value.
+- Prove NP-hardness by reduction from CLIQUE, even for unit costs and weights.
+- Add a fractional weighted-degree knapsack upper bound and certified optimality gap.
+- Add exact small-instance enumeration, theorem map, proof documentation, and regression tests.
+- Preserve the explicit boundary that this is an experimental-design theorem, not evidence of quantum incompleteness or consciousness.
+
 # Changelog
 
 ## 0.45.0 - 2026-09-09

@@ -613,3 +613,18 @@ The project maintains the distinction
 \]
 
 This distinction is central to the final proof target: mathematics establishes what follows from premises, while the physical-to-experiential premises themselves require independently discriminating evidence.
+
+---
+
+# 35. P46 budget-constrained witness graph
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(F(S)=\sum_{\{i,j\}\in E}w_{ij}\mathbf 1\{i,j\in S\}\) | total value of candidate witness edges induced by measured preparations | repository definition | [P46](proposition_46_budget_constrained_witness_graph.md) |
+| monotonicity and supermodularity of \(F\) | formalizes preparation complementarity | proved from nonnegative edge weights | [P46](proposition_46_budget_constrained_witness_graph.md) |
+| unit-cost, unit-weight threshold \(\binom{k}{2}\) | reduction from CLIQUE | proves NP-hardness of optimization and NP-completeness of decision form | [P46](proposition_46_budget_constrained_witness_graph.md) |
+| \(2F(S)\le\sum_{i\in S}d_i\) | weighted-degree relaxation | proved by comparing internal and full weighted degrees | [P46](proposition_46_budget_constrained_witness_graph.md) |
+| \(F^*(B)\le U_{\rm deg}(B)\) | fractional degree-knapsack upper bound | proved relaxation bound | [P46](proposition_46_budget_constrained_witness_graph.md) |
+| \(F^*(B)-F(S)\le U_{\rm deg}(B)-F(S)\) | a posteriori optimality-gap certificate | proved | [P46](proposition_46_budget_constrained_witness_graph.md) |
+
+P46 is a combinatorial experimental-design result. Its graph weights are declared design values, not consciousness scores or evidence of quantum incompleteness.
