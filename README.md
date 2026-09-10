@@ -361,7 +361,7 @@ A reader should not need to search the repository to understand the argument. Th
 
 | What you want to inspect | Direct link | What is there |
 | --- | --- | --- |
-| complete theorem chain | [Theorem Roadmap](docs/theorem_roadmap.md) | P1 through P60 with explicit dependency branches |
+| complete theorem chain | [Theorem Roadmap](docs/theorem_roadmap.md) | P1 through P64 with explicit dependency branches |
 | equation provenance | [Equation and Citation Map](docs/equation_and_citation_map.md) | standard results, repository definitions, proofs, and external sources separated explicitly |
 | population physical-sufficiency theorem | [Proposition 19](docs/proposition_19_fundamental_physical_sufficiency.md) | deterministic factorization, stochastic sufficiency, and local rank obstruction |
 | finite-sample residual theorem | [Proposition 20](docs/proposition_20_finite_sample_residual_certification.md) | confidence interval for the P19 conditional-information residual |
@@ -405,6 +405,10 @@ A reader should not need to search the repository to understand the argument. Th
 | finite-data switching-metric uncertainty | [Proposition 58](docs/proposition_58_finite_data_metric_uncertainty.md) | simultaneous pairwise confidence envelopes, robust route optimization, route-regret control, and robust old/new cost comparison |
 | optimal transition-calibration allocation | [Proposition 59](docs/proposition_59_optimal_transition_calibration.md) | exact two-thirds-power allocation of a fixed calibration budget for the P58 inverse-square-root uncertainty surrogate |
 | integer transition-calibration allocation | [Proposition 60](docs/proposition_60_integer_transition_calibration.md) | hard-budget whole-measurement construction with explicit rounding overhead and target-budget guarantee |
+| exact integer transition-calibration allocation | [Proposition 61](docs/proposition_61_exact_integer_transition_calibration.md) | exact whole-measurement allocation by decreasing marginal uncertainty gains |
+| heterogeneous-cost transition-calibration allocation | [Proposition 62](docs/proposition_62_heterogeneous_cost_transition_calibration.md) | unique continuous allocation when transition observations have unequal per-measurement costs |
+| exact heterogeneous-cost integer calibration | [Proposition 63](docs/proposition_63_exact_heterogeneous_integer_calibration.md) | exact Bellman allocation with gcd budget compression and the P62 continuous lower bound |
+| fast certified heterogeneous integer approximation | [Proposition 64](docs/proposition_64_fast_heterogeneous_integer_approximation.md) | linear-time floor construction with an explicit approximation certificate relative to P63 |
 | fundamental-theory program | [Fundamental Theory to Consciousness](docs/fundamental_theory_consciousness_program.md) | candidate fundamental state, physical quotients, experiential quotient, and falsifiable bridge program |
 | stochastic extension | [Stochastic Fundamental Bridge](docs/stochastic_fundamental_bridge.md) | Markov-kernel and conditional-information formulation |
 | empirical falsification | [Falsification Program](docs/falsification_program.md) | conditions that would weaken or defeat a bridge claim |
