@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+<title id="title">P56 moving-start metric reoptimization stability</title>
+<desc id="desc">Diagram showing two setup start states in the same metric space, the one-Lipschitz bound on optimal route cost, and the residual-release lower bound after start movement.</desc>
+<rect width="1200" height="760" fill="#ffffff"/>
+<text x="60" y="70" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#111827">P56 · Moving-start metric reoptimization stability</text>
+<text x="60" y="110" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#374151">Setup movement can erode a P55 saving by at most one metric displacement</text>
+
+<rect x="60" y="155" width="1080" height="235" rx="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+<text x="90" y="200" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#111827">Same active support, two setup origins</text>
+<circle cx="150" cy="290" r="24" fill="#e2e8f0" stroke="#334155" stroke-width="2"/><text x="142" y="298" font-family="Arial" font-size="18">s</text>
+<circle cx="300" cy="290" r="24" fill="#e2e8f0" stroke="#334155" stroke-width="2"/><text x="288" y="298" font-family="Arial" font-size="18">s′</text>
+<line x1="174" y1="290" x2="276" y2="290" stroke="#64748b" stroke-width="3" stroke-dasharray="8 7"/>
+<text x="194" y="270" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#475569">c(s,s′)</text>
+<circle cx="520" cy="290" r="24" fill="#e2e8f0" stroke="#334155" stroke-width="2"/><text x="512" y="298" font-family="Arial" font-size="18">A</text>
+<circle cx="720" cy="290" r="24" fill="#e2e8f0" stroke="#334155" stroke-width="2"/><text x="712" y="298" font-family="Arial" font-size="18">B</text>
+<circle cx="920" cy="290" r="24" fill="#e2e8f0" stroke="#334155" stroke-width="2"/><text x="912" y="298" font-family="Arial" font-size="18">C</text>
+<line x1="324" y1="290" x2="496" y2="290" stroke="#64748b" stroke-width="4"/>
+<line x1="544" y1="290" x2="696" y2="290" stroke="#64748b" stroke-width="4"/>
+<line x1="744" y1="290" x2="896" y2="290" stroke="#64748b" stroke-width="4"/>
+<text x="90" y="350" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#111827">|L*(S;s) − L*(S;s′)| ≤ c(s,s′)</text>
+
+<rect x="60" y="435" width="1080" height="245" rx="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+<text x="90" y="480" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#111827">P55 savings corrected for setup motion</text>
+<text x="90" y="535" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#111827">C*(r;s) − C*(r′;s′) ≥ Δfixed − c(s,s′)</text>
+<text x="90" y="582" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#374151">Δfixed = acquisition release + fixed-start route release from P55</text>
+<text x="90" y="620" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#374151">If Δfixed &gt; c(s,s′), strict total-cost decrease remains certified.</text>
+<text x="90" y="654" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#64748b">Boundary: one fixed metric geometry. Time-varying switching metrics require a separate perturbation theorem.</text>
+</svg>
