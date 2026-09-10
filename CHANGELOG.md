@@ -2,6 +2,20 @@
 
 This changelog records theorem-level scientific releases. Definitions, proofs, implementations, tests, figures, and documentation remain linked from the main research page.
 
+## 0.29.0 - 2026-09-09
+
+### Proposition 29 - response-geometry transport under node aggregation
+
+- Extended the P11 physical scale program to the complete response-geometry component under the P27 changing node set.
+- Kept intervention labels and delay labels fixed so every fine geometry entry has one exact coarse counterpart.
+- Defined the complete intervention-delay total-variation response geometry before and after aggregation-compatible state mapping.
+- Proved entrywise total-variation contraction for every intervention pair at every retained delay.
+- Applied P18 to obtain the law-specific bound \(0\le G_f-G_c\le\rho_{u,\tau}+\rho_{v,\tau}\).
+- Proved the uniform whole-geometry certificate \(\|\mathcal G_f-\mathcal G_c\|_\infty\le2\rho_*\).
+- Derived exact geometry preservation, response-diameter control, and per-edge threshold preservation as corollaries.
+- Added executable implementation, nine regression tests, a publication theorem map, main-paper integration, theorem-roadmap integration, navigation, provenance, release guards, and synchronized 0.29.0 metadata.
+- Preserved the boundary that intervention merging, temporal resampling, full P11 assembly, physical completeness, and experiential interpretation remain open.
+
 ## 0.28.0 - 2026-09-09
 
 ### Proposition 28 - intervention compatibility under node aggregation
