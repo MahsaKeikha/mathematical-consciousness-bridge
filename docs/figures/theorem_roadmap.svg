@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="3560" viewBox="0 0 1600 3560" role="img" aria-labelledby="title desc">
-  <title id="title">Theorem roadmap through Proposition 30</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="3800" viewBox="0 0 1600 3800" role="img" aria-labelledby="title desc">
+  <title id="title">Theorem roadmap through Proposition 31</title>
   <desc id="desc">Publication-style dependency map from invariance and identifiability through causal structure, scale, physical sufficiency, residual certification, refinement, adaptive selection, and anytime-valid stopping-time control.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
@@ -17,7 +17,7 @@
   </defs>
 
   <rect width="1600" height="3560" fill="#ffffff"/>
-  <text x="70" y="62" class="title">Theorem Roadmap - P1 through P30</text>
+  <text x="70" y="62" class="title">Theorem Roadmap - P1 through P31</text>
   <text x="70" y="94" class="subtitle">The chain separates physical structure, finite-data certification, refinement, adaptive selection, and repeated-look validity.</text>
 
   <rect x="95" y="145" width="420" height="180" rx="18" fill="#eff6ff" stroke="#3b82f6"/>
@@ -176,7 +176,15 @@
   <text x="820" y="3404" class="eq">zero distortion ≠ semantic compatibility</text>
   <text x="265" y="3434" class="body">The result is a physical-signature certificate, not a consciousness theorem.</text>
 
-  <rect x="95" y="3490" width="1410" height="62" rx="14" fill="#0f172a"/>
-  <text x="125" y="3515" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">OPEN BRIDGE FRONTIER</text>
-  <text x="125" y="3538" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Intervention/time quotienting, physical completeness, experiential formalization, and the bridge theorem remain open.</text>
+  <rect x="225" y="3490" width="1150" height="190" rx="20" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.8"/>
+  <text x="265" y="3527" class="label">INTERVENTION QUOTIENT · P31</text>
+  <text x="265" y="3565" class="head">Coarse interventions require fiberwise response agreement</text>
+  <text x="265" y="3599" class="body">Labels may merge only when response laws descend through the quotient.</text>
+  <text x="265" y="3634" class="eq">ηb = supτ supb(u)=b(v) ||P̄u,τ−P̄v,τ||TV</text>
+  <text x="900" y="3634" class="eq">ηb=0 ⇔ exact descent</text>
+  <text x="265" y="3664" class="body">Representative-dependent geometry is bounded by 2ηb.</text>
+
+  <rect x="95" y="3720" width="1410" height="62" rx="14" fill="#0f172a"/>
+  <text x="125" y="3745" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">OPEN BRIDGE FRONTIER</text>
+  <text x="125" y="3768" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Delay/time quotienting, physical completeness, experiential formalization, and the bridge theorem remain open.</text>
 </svg>

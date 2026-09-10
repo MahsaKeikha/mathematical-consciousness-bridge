@@ -2,7 +2,7 @@
 
 This roadmap records the current proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge.
 
-![P1-P30 theorem roadmap](figures/theorem_roadmap.svg)
+![P1-P31 theorem roadmap](figures/theorem_roadmap.svg)
 
 ---
 
@@ -40,6 +40,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P28](proposition_28_intervention_node_aggregation_compatibility.md) | P11 matched-pair source incidence plus P25 target contraction and P27 node aggregation | exact source-label descent and directed-influence certification across aggregate nodes | proved physical scale theorem |
 | [P29](proposition_29_response_geometry_node_aggregation.md) | P11 response geometry plus P17 contraction, P18 reconstruction, and P27 node aggregation | complete indexed response-pseudometric transport on a fixed intervention-delay grid | proved physical scale theorem |
 | [P30](proposition_30_full_p11_scale_compatibility.md) | assembly of P27-P29 under one scale declaration | simultaneous declared P11 physical-signature transport with a no-semantic-compensation guard | proved assembly theorem |
+| [P31](proposition_31_intervention_quotient_compatibility.md) | quotient factorization of intervention-conditioned response laws | exact criterion for changing the intervention set plus a representative-ambiguity budget | proved operational quotient theorem |
 
 ---
 
@@ -597,6 +598,38 @@ Hence
 The theorem requires compatible partition descent, source-pair descent, a common intervention-delay grid, a common state map, and a common reconstruction declaration. Numerical equality alone cannot replace those semantic conditions.
 
 Direct proof: [Proposition 30](proposition_30_full_p11_scale_compatibility.md). Implementation: [full_p11_scale_compatibility.py](../src/consciousness_bridge/full_p11_scale_compatibility.py). Tests: [test_full_p11_scale_compatibility.py](../tests/test_full_p11_scale_compatibility.py).
+
+## P31 - intervention-quotient compatibility
+
+Let \(b:\mathcal U_f\twoheadrightarrow\mathcal U_c\) be a declared many-to-one map on intervention labels after the physical response space has been fixed. P31 proves that a unique coarse response table exists if and only if
+
+\[
+\boxed{
+b(u)=b(v)\Longrightarrow \overline P^{u,\tau}=\overline P^{v,\tau}\quad\forall\tau.}
+\]
+
+Define
+
+\[
+\boxed{
+\eta_b=\sup_{\tau}\sup_{b(u)=b(v)}
+\|\overline P^{u,\tau}-\overline P^{v,\tau}\|_{\mathrm{TV}}.
+}
+\]
+
+Then \(\eta_b=0\) is equivalent to exact quotient descent. If representatives are used despite nonzero ambiguity, P31 bounds the resulting response-table and geometry dependence by
+
+\[
+\boxed{
+\sup_{c,\tau}\|Q_s^{c,\tau}-Q_{s'}^{c,\tau}\|_{\mathrm{TV}}\le\eta_b,
+\qquad
+\sup_{c,d,\tau}|G_s-G_{s'}|\le2\eta_b.
+}
+\]
+
+The quotient is operational and experiment relative. It does not identify distinct physical actuators or define a simultaneous perturbation.
+
+Direct proof: [Proposition 31](proposition_31_intervention_quotient_compatibility.md). Implementation: [intervention_quotient_compatibility.py](../src/consciousness_bridge/intervention_quotient_compatibility.py). Tests: [test_intervention_quotient_compatibility.py](../tests/test_intervention_quotient_compatibility.py).
 
 ---
 
