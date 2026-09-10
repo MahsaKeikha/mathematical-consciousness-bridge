@@ -24,14 +24,22 @@ jobs:
           from pathlib import Path
           path = Path('docs/proposition_43_optimal_quantum_target_allocation.md')
           text = path.read_text(encoding='utf-8')
-          marker = '\nrac{'
-          count = text.count(marker)
-          if count != 2:
-              raise SystemExit(f'expected exactly 2 malformed fraction markers, found {count}')
-          text = text.replace(marker, '\n\\frac{')
+          replacements = {
+              'rac{a^{1/3}}{s},': r'\frac{a^{1/3}}{s},',
+              'rac{b^{1/3}}{s}.': r'\frac{b^{1/3}}{s}.',
+          }
+          for bad, good in replacements.items():
+              count = text.count(bad)
+              if count != 1:
+                  raise SystemExit(f'expected exactly 1 occurrence of {bad!r}, found {count}')
+              start = text.index(bad)
+              if start > 0 and text[start - 1] == '\x0c':
+                  text = text[:start - 1] + text[start:]
+                  start -= 1
+              text = text[:start] + text[start:].replace(bad, good, 1)
+          if '\x0c' in text:
+              raise SystemExit('form-feed control character remains in P43 proof')
           path.write_text(text, encoding='utf-8')
-          if marker in text:
-              raise SystemExit('malformed fraction marker remains')
           PY
       - name: Remove one-time workflow
         run: rm .github/workflows/p43-notation-fix-once.yml
