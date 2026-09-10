@@ -1,0 +1,60 @@
+name: p42-preflight-fix-once
+
+on:
+  push:
+    branches:
+      - p42-quantum-regular-bridge-sample-complexity
+    paths:
+      - .github/workflows/p42-preflight-fix-once.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          ref: p42-quantum-regular-bridge-sample-complexity
+          fetch-depth: 0
+
+      - name: Repair P41 LaTeX and P42 raw-reconstruction radius semantics
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          p41 = Path('docs/proposition_41_trace_ball_quantum_envelope.md')
+          text = p41.read_text(encoding='utf-8')
+          text = text.replace('\x0barepsilon_x-\x0barepsilon_{x\'}', r'\varepsilon_x-\varepsilon_{x\'}')
+          text = text.replace('D(\\rho_x,\rho_{x\'})', r'D(\rho_x,\rho_{x\'})')
+          if '\x0b' in text:
+              raise SystemExit('vertical-tab corruption remains in P41')
+          p41.write_text(text, encoding='utf-8')
+
+          src = Path('src/consciousness_bridge/quantum_regular_bridge_sample_complexity.py')
+          text = src.read_text(encoding='utf-8')
+          old = '    _unit_interval(quantum_radius, "quantum_radius")\n'
+          new = '    if quantum_radius < 0.0:\n        raise ValueError("quantum_radius must be nonnegative")\n'
+          if text.count(old) != 2:
+              raise SystemExit(f'expected two quantum radius validators, found {text.count(old)}')
+          text = text.replace(old, new)
+          src.write_text(text, encoding='utf-8')
+
+          p42 = Path('docs/proposition_42_quantum_regular_bridge_sample_complexity.md')
+          text = p42.read_text(encoding='utf-8')
+          text = text.replace(', provided the quantum upper-envelope clipping does not itself erase the planned gap', '')
+          p42.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Remove this one-time workflow
+        run: rm .github/workflows/p42-preflight-fix-once.yml
+
+      - name: Commit corrections
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Correct P41 notation and P42 radius semantics"
+          git push origin HEAD:p42-quantum-regular-bridge-sample-complexity
