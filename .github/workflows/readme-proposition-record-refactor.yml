@@ -1,7 +1,11 @@
+# Temporary one-shot documentation workflow.
 name: Refactor README proposition record
 
 on:
+  workflow_dispatch:
   push:
+    branches:
+      - readme-proposition-record-refactor
     paths:
       - '.github/workflows/readme-proposition-record-refactor.yml'
 
@@ -12,9 +16,10 @@ jobs:
   refactor-readme:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository
+      - name: Check out refactor branch
         uses: actions/checkout@v4
         with:
+          ref: readme-proposition-record-refactor
           fetch-depth: 0
 
       - name: Move detailed proposition chronology out of README
@@ -64,6 +69,14 @@ For the dependency-oriented view, see the [Theorem roadmap](theorem_roadmap.md).
           readme_path.write_text(new_text, encoding='utf-8')
           PY
 
+      - name: Validate focused diff
+        shell: bash
+        run: |
+          git diff --check
+          test -f docs/detailed_proposition_record.md
+          grep -Fq '[Read the complete P1-P70 proposition chronology →](docs/detailed_proposition_record.md)' README.md
+          test "$(grep -c '<summary><strong>Open the complete P1 to P70 chronology</strong></summary>' README.md)" -eq 0
+
       - name: Commit focused documentation refactor
         shell: bash
         run: |
@@ -72,4 +85,4 @@ For the dependency-oriented view, see the [Theorem roadmap](theorem_roadmap.md).
           git add README.md docs/detailed_proposition_record.md
           git diff --cached --check
           git commit -m "docs: move detailed proposition chronology out of README"
-          git push
+          git push origin HEAD:readme-proposition-record-refactor
