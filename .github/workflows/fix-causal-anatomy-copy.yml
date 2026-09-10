@@ -1,0 +1,41 @@
+name: Fix causal anatomy copy
+
+on:
+  push:
+    branches: [visual-audit-causal-structure-anatomy]
+    paths:
+      - .github/workflows/fix-causal-anatomy-copy.yml
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: visual-audit-causal-structure-anatomy
+      - name: Tighten two unsafe labels
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('docs/figures/causal_structure_anatomy.svg')
+          text = path.read_text(encoding='utf-8')
+          replacements = {
+              '• response distinguishability under intervention': '• intervention-response distinguishability',
+              'B. Directed interventional influence': 'B. Directed causal influence',
+          }
+          for old, new in replacements.items():
+              if old not in text:
+                  raise SystemExit(f'missing guarded source phrase: {old!r}')
+              text = text.replace(old, new, 1)
+          path.write_text(text, encoding='utf-8')
+          PY
+      - name: Commit repair
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/figures/causal_structure_anatomy.svg
+          git commit -m 'Tighten causal anatomy card copy'
+          git push origin HEAD:visual-audit-causal-structure-anatomy
