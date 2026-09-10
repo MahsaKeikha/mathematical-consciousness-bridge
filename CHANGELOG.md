@@ -1,3 +1,11 @@
+# 0.67.0 - 2026-09-10
+
+- Added P67 global integer optimality certificate.
+- Added an O(m) common-multiplier test for a budget-tight integer candidate.
+- Proved that a successful P67 certificate upgrades the candidate to the unrestricted P63 global optimum by separable Lagrangian minimization and weak duality.
+- Kept certificate failure explicitly inconclusive: it does not prove suboptimality.
+- Added proof, implementation, regression tests, theorem visual, geometry guards, README integration, roadmap/navigation updates, equation provenance, and website integration.
+
 # 0.66.0 - 2026-09-10
 
 - Add P66 residual-exact calibration augmentation.
