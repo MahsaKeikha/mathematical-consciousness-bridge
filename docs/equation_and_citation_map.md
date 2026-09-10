@@ -846,3 +846,18 @@ P60 proves a closed-form feasible integer construction and an overhead bound. It
 
 P61 exactness applies to the declared unit-cost separable calibration surrogate. It is not a proof that the full robust-routing experiment-design problem is greedy-solvable.
 
+---
+
+# 51. P62 heterogeneous-cost transition-calibration allocation
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(\sum_ec_en_e=B\) | heterogeneous calibration-cost constraint | repository design assumption | [P62](proposition_62_heterogeneous_cost_transition_calibration.md) |
+| \(T=\sum_e b_e^{2/3}c_e^{1/3}\) | normalization coupling scientific importance and per-observation cost | repository definition | [P62](proposition_62_heterogeneous_cost_transition_calibration.md) |
+| \(n_e^*=(B/T)b_e^{2/3}c_e^{-2/3}\) | unique continuous sample-count optimum | proved by strict convexity and KKT conditions | [P62](proposition_62_heterogeneous_cost_transition_calibration.md) |
+| \(c_en_e^*=B b_e^{2/3}c_e^{1/3}/T\) | exact optimal budget share | algebraic consequence of P62 optimum | [P62](proposition_62_heterogeneous_cost_transition_calibration.md) |
+| \(U^*(B)=T^{3/2}/\sqrt B\) | exact minimum declared surrogate uncertainty | proved closed-form optimum | [P62](proposition_62_heterogeneous_cost_transition_calibration.md) |
+| \(B\ge T^3/\varepsilon^2\) | exact continuous budget threshold for target uncertainty | proved inversion of optimum | [P62](proposition_62_heterogeneous_cost_transition_calibration.md) |
+
+P62 solves the continuous heterogeneous-cost version of the declared P59 surrogate. The heterogeneous-cost integer problem remains separate.
+

@@ -1,3 +1,11 @@
+# 0.62.0 - 2026-09-10
+
+- Add P62 heterogeneous-cost transition-calibration allocation.
+- Prove the unique continuous optimum when calibration observations have edge-specific positive costs.
+- Distinguish optimal sample-count scaling from optimal budget-share scaling.
+- Recover P59 exactly as the equal-cost special case and derive the exact target-budget threshold.
+- Add implementation, tests, theorem visual, public navigation, provenance, and release integration.
+
 # 0.61.0 - 2026-09-10
 
 - Add P61 exact integer transition-calibration allocation by diminishing marginal gain.

@@ -60,6 +60,7 @@ CANONICAL_MAIN_PAGE_FIGURES = (
     "p59_optimal_transition_calibration.svg",
     "p60_integer_transition_calibration.svg",
     "p61_exact_integer_transition_calibration.svg",
+    "p62_heterogeneous_cost_transition_calibration.svg",
     "p30_p37_operational_scale_map.svg",
     "observer_to_bridge_handoff.svg",
     "conscious_state_measurement_map.svg",
@@ -94,7 +95,7 @@ def test_main_page_contains_canonical_scientific_maps():
 def test_main_page_exposes_entire_proposition_chain():
     text = README.read_text(encoding="utf-8")
 
-    for index in range(1, 62):
+    for index in range(1, 63):
         assert f"**P{index}**" in text, f"README is missing proposition P{index}"
 
 
