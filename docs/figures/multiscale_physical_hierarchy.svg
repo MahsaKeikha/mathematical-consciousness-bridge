@@ -30,33 +30,33 @@
     <rect x="80" y="180" width="500" height="150" rx="18" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
     <text x="115" y="218" class="head">1. Local physical dynamics</text>
     <text x="115" y="258" class="eq">dXₜ = f(Xₜ,uₜ)dt + G(Xₜ,uₜ)dWₜ</text>
-    <text x="115" y="296" class="body">state variables · noise · forces · energy exchange</text>
-    <text x="115" y="318" class="small">stochastic dynamics and nonequilibrium physics</text>
+    <text x="115" y="296" class="body">state · noise · forces · energy exchange</text>
+    <text x="115" y="308" class="small">stochastic dynamics and nonequilibrium physics</text>
   </g>
 
   <g>
     <rect x="80" y="370" width="500" height="150" rx="18" fill="#ecfeff" stroke="#0891b2" stroke-width="1.5"/>
-    <text x="115" y="408" class="head">2. Network state at declared resolution</text>
+    <text x="115" y="408" class="head">2. Network state at chosen scale</text>
     <text x="115" y="448" class="eq">Xₜ₊Δₜ ∼ KΔₜ( · | Xₜ,uₜ )</text>
     <text x="115" y="486" class="body">neural · physiological · engineered variables</text>
-    <text x="115" y="508" class="small">P17 makes the choice of physical scale explicit.</text>
+    <text x="115" y="498" class="small">P17 makes the choice of physical scale explicit.</text>
   </g>
 
   <g>
     <rect x="80" y="560" width="500" height="165" rx="18" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
-    <text x="115" y="598" class="head">3. Dynamically distinguished subsystem</text>
+    <text x="115" y="598" class="head">3. Dynamically distinct subsystem</text>
     <text x="115" y="638" class="eq">W = (S₀, … , Sₜ₋₁)</text>
-    <text x="115" y="676" class="body">integration · insulation · persistence · transport</text>
-    <text x="115" y="700" class="small">Spatiotemporal Observer Mathematics supplies this layer.</text>
+    <text x="115" y="676" class="body">integration · insulation · persistence · flow</text>
+    <text x="115" y="700" class="small">Spatiotemporal Observer Mathematics layer.</text>
   </g>
 
   <g>
     <rect x="80" y="765" width="500" height="190" rx="18" fill="#faf5ff" stroke="#7c3aed" stroke-width="1.5"/>
-    <text x="115" y="803" class="head">4. Intervention-resolved causal structure</text>
+    <text x="115" y="803" class="head">4. Intervention causal structure</text>
     <text x="115" y="843" class="eq">Pₚᵘ,τ = ℒ(Yₜ₊τⱽ | do(u), p)</text>
     <text x="115" y="882" class="body">response geometry G · directed influence A</text>
     <text x="115" y="908" class="body">partition irreducibility K</text>
-    <text x="115" y="936" class="small">P11-P13: construction and minimality audits</text>
+    <text x="115" y="934" class="small">P11-P13: construction and minimality audits</text>
   </g>
 
   <path class="arrow" d="M330 330 V358"/>
@@ -77,7 +77,7 @@
     <text x="685" y="438" class="head">Composition and coupling</text>
     <text x="685" y="478" class="eq">PAB = PA ⊗ PB  under independence</text>
     <text x="685" y="517" class="eq">χAB = sup ‖PAB − PA⊗PB‖TV</text>
-    <text x="685" y="549" class="small">P16: independent null model + measurable coupling defect</text>
+    <text x="685" y="549" class="small">P16: independent null + measurable coupling defect</text>
   </g>
 
   <g>
@@ -92,8 +92,8 @@
     <rect x="650" y="840" width="500" height="160" rx="18" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.5"/>
     <text x="685" y="878" class="head">Finite-data observability</text>
     <text x="685" y="918" class="eq">γS &gt; 4ε</text>
-    <text x="685" y="956" class="body">error · sample size · protocol design · recovery</text>
-    <text x="685" y="982" class="small">P7-P10 and P15 separate population and data claims.</text>
+    <text x="685" y="956" class="body">error · samples · protocol design · recovery</text>
+    <text x="685" y="978" class="small">P7-P10 and P15 separate population and data claims.</text>
   </g>
 
   <path class="dash" d="M580 855 H638"/>
@@ -101,18 +101,18 @@
   <!-- Right column -->
   <g>
     <rect x="1220" y="180" width="500" height="180" rx="18" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.5"/>
-    <text x="1255" y="218" class="head">Measured state and perturbation evidence</text>
+    <text x="1255" y="218" class="head">Measured state and perturbation data</text>
     <text x="1255" y="258" class="body">EEG · MEG · fMRI · intracranial · physiology</text>
     <text x="1255" y="286" class="body">behavior · report · controlled perturbation</text>
-    <text x="1255" y="318" class="small">Casali · Sarasso · Siclari · Claassen · Luppi</text>
-    <text x="1255" y="342" class="small">Measurements constrain theory; they do not define experience.</text>
+    <text x="1255" y="310" class="small">Casali · Sarasso · Siclari · Claassen · Luppi</text>
+    <text x="1255" y="334" class="small">Measurements constrain theory, not experience.</text>
   </g>
 
   <g>
     <rect x="1220" y="405" width="500" height="165" rx="18" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
     <text x="1255" y="443" class="head">Extreme-environment robustness</text>
     <text x="1255" y="483" class="body">sleep disruption · isolation · workload</text>
-    <text x="1255" y="511" class="body">radiation · altered gravity · operational stress</text>
+    <text x="1255" y="511" class="body">radiation · altered gravity · mission stress</text>
     <text x="1255" y="543" class="small">NASA HRP is an application and validation domain.</text>
   </g>
 
