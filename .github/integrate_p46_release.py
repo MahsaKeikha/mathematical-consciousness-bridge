@@ -219,8 +219,8 @@ replace_once(
 )
 replace_once(
     nav,
-    "| P45 | [Shared-preparation graph allocation](proposition_45_shared_preparation_graph_allocation.md) | shared preparation-level precision allocation for overlapping candidate witness edges |",
-    "| P45 | [Shared-preparation graph allocation](proposition_45_shared_preparation_graph_allocation.md) | shared preparation-level precision allocation for overlapping candidate witness edges |\n| P46 | [Budget-constrained witness graph](proposition_46_budget_constrained_witness_graph.md) | discrete preparation selection, NP-hardness, relaxation upper bound, and exact small-instance certification |",
+    "| P45 | [Shared-preparation graph allocation](proposition_45_shared_preparation_graph_allocation.md) | shared preparation-level resource allocation with unique convex optimum and KKT incidence law |",
+    "| P45 | [Shared-preparation graph allocation](proposition_45_shared_preparation_graph_allocation.md) | shared preparation-level resource allocation with unique convex optimum and KKT incidence law |\n| P46 | [Budget-constrained witness graph](proposition_46_budget_constrained_witness_graph.md) | discrete preparation selection, NP-hardness, relaxation upper bound, and exact small-instance certification |",
     "navigation P46 row",
 )
 
