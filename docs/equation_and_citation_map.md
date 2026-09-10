@@ -921,3 +921,33 @@ P65 solves the lower-bounded continuous version of the declared separable calibr
 
 P66 is exact only inside the declared class of integer allocations that dominate the P65 floor. P63 remains the unrestricted exact integer solver. P66 makes no experiential or quantum-ontological claim.
 
+# 56. P67 global integer optimality certificate
+
+For the declared separable integer calibration objective, define the one-step marginal reduction
+
+\[
+\Delta_e(j)=b_e\left(j^{-1/2}-(j+1)^{-1/2}\right).
+\]
+
+A candidate count \(k_e\) minimizes the edgewise Lagrangian term at multiplier \(\lambda>0\) when
+
+\[
+\frac{\Delta_e(k_e)}{c_e}\le\lambda\le\frac{\Delta_e(k_e-1)}{c_e},
+\]
+
+with the upper bound omitted at \(k_e=1\). For a budget-tight feasible candidate, a nonempty common interval
+
+\[
+\max_e\frac{\Delta_e(k_e)}{c_e}
+\le
+\min_{e:k_e>1}\frac{\Delta_e(k_e-1)}{c_e}
+\]
+
+is sufficient, by separable Lagrangian minimization and weak duality, to prove
+
+\[
+U(k)=U_{\rm int}^*(B).
+\]
+
+**Provenance:** repository-original Proposition 67. This is a sufficient integer resource-allocation certificate. Failure of the interval test is inconclusive and is not a proof of suboptimality.
+
