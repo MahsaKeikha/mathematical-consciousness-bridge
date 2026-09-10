@@ -17,6 +17,7 @@ def test_p70_is_integrated_across_public_record():
             "P1 through P70 with explicit dependency branches",
             "# Research at a glance",
             "# Detailed proposition record",
+            "docs/quantum_foundations_and_bridge_test.md",
         ],
         "docs/theorem_roadmap.md": [
             "P70",
@@ -78,11 +79,13 @@ def test_p70_permanent_proof_code_visual_and_tests_exist():
         assert (ROOT / path).exists(), path
 
 
-def test_temporary_p70_publication_and_readme_machinery_is_absent():
+def test_temporary_p70_publication_readme_and_recovery_machinery_is_absent():
     for path in [
         "scripts/publish_p70.py",
         ".github/workflows/publish-p70.yml",
         "scripts/organize_readme_p70.py",
         ".github/workflows/organize-readme-p70.yml",
+        "scripts/restore_readme_after_link_fix.py",
+        ".github/workflows/restore-readme-after-link-fix.yml",
     ]:
         assert not (ROOT / path).exists(), path
