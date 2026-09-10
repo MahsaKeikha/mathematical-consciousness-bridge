@@ -23,17 +23,17 @@ quantum_paragraph = text[quantum_start:record_start].strip()
 record_end = text.index("\n\n", record_start)
 record_paragraph = text[record_start:record_end].strip()
 
-new_abstract = f'''# Abstract
+template = r'''# Abstract
 
-{opening}
+__OPENING__
 
 This repository treats the physical-to-experiential bridge as a sequence of separately testable mathematical questions rather than as a single assumed identity. The program develops representation-invariant physical descriptors, intervention-resolved causal and temporal structure, exact and finite-data sufficiency tests, quantum operational tests, adaptive experiment design, and executable calibration optimization. Each proposition is labeled by what is actually proved, implemented, simulated, empirically supported, or still open.
 
 The current result chain is organized into seven scientific stages: foundations and identifiability (P1-P10), structured causal and temporal candidates (P11-P18), bridge factorization and finite-data inference (P19-P24), multiscale operational structure (P25-P37), quantum sufficiency and falsification tests (P38-P44), adaptive experimental design and scheduling (P45-P58), and transition-calibration optimization and certification (P59-P70).
 
-{quantum_paragraph}
+__QUANTUM__
 
-{record_paragraph}
+__RECORD__
 
 ---
 
@@ -80,18 +80,18 @@ The organizing principle is always the same:
 
 \[
 \boxed{
-\text{{physical description}}
+\text{physical description}
 \longrightarrow
-\text{{operational structure}}
+\text{operational structure}
 \longrightarrow
-\text{{sufficiency / insufficiency test}}
+\text{sufficiency / insufficiency test}
 \longrightarrow
-\text{{finite-data certification}}
+\text{finite-data certification}
 \longrightarrow
-\text{{experimental design}}
+\text{experimental design}
 \longrightarrow
-\text{{open bridge question}}.
-}}
+\text{open bridge question}.
+}
 \]
 
 Nothing later in the repository is allowed to silently strengthen an earlier result. A theorem about calibration remains a calibration theorem. A quantum operational test remains conditional on its declared descriptor and regularity class. An empirical observation remains empirical evidence. The final physical-to-experiential bridge remains open until independently justified mathematics and evidence close it.
@@ -105,7 +105,7 @@ The full chronological record is preserved here for readers who want proposition
 <details>
 <summary><strong>Open the complete P1 to P70 chronology</strong></summary>
 
-{chronology}
+__CHRONOLOGY__
 
 </details>
 
@@ -113,10 +113,15 @@ The full chronological record is preserved here for readers who want proposition
 
 '''
 
+new_abstract = (
+    template.replace("__OPENING__", opening)
+    .replace("__QUANTUM__", quantum_paragraph)
+    .replace("__RECORD__", record_paragraph)
+    .replace("__CHRONOLOGY__", chronology)
+)
+
 text = text[:abstract_start] + new_abstract + text[abstract_end:]
 
-# Remove stale duplicate research-record counts later in the README without
-# removing the useful table itself.
 text = text.replace("# Research record at a glance", "# Repository scale and validation record", 1)
 text = text.replace("| proposition-level results | **45** |", "| proposition-level results | **70** |", 1)
 text = text.replace(
