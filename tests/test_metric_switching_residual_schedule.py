@@ -96,7 +96,6 @@ def test_block_expansion_meets_exact_residual_demands():
 
 
 def test_single_required_vertex_costs_only_start_transition_plus_acquisition():
-    points = ("s", "a")
     costs = {("s", "s"): 0.0, ("a", "a"): 0.0, ("s", "a"): 4.0, ("a", "s"): 4.0}
     result = shortest_block_schedule({"a": 5}, costs, start="s", sample_cost=2.0)
     assert result.order == ("a",)
