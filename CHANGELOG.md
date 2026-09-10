@@ -1,3 +1,12 @@
+# 0.53.0 - 2026-09-10
+
+- Add P53 residual-demand reoptimization after additional sampling and P47-safe pruning.
+- Define the exact max-envelope residual demand at each preparation.
+- Prove componentwise residual monotonicity under nondecreasing counts and edge removal.
+- Prove the exact optimal remaining time R(t)/C by dynamic reuse of P52.
+- Prove the exact released-time identity [R(a)-R(b)]/C.
+- Add sampling-only and pruning-only release accounting, implementation, tests, theorem visual, and front-page integration.
+
 # 0.52.0 - 2026-09-10
 
 - Add P52 capacity-optimal service allocation for finite witness-graph threshold demands.
