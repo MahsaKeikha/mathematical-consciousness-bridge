@@ -1,4 +1,4 @@
-# Temporary guarded publication workflow. Removed before merge. Final geometry recheck.
+# Temporary guarded publication workflow. Removed before merge. Corrected geometry rerun.
 name: publish-p68
 
 on:
