@@ -21,7 +21,6 @@
   <text x="80" y="103" class="subtitle">A representation-invariant physical candidate built from controlled perturbation-response laws.</text>
   <text x="80" y="130" class="subtitle">Experiential interpretation is not part of the definition.</text>
 
-  <!-- Controlled response law -->
   <rect x="80" y="175" width="1640" height="175" rx="18" fill="#f7fbff" stroke="#3b82f6" stroke-width="1.6"/>
   <text x="120" y="216" class="head">Controlled intervention and delayed physical response</text>
   <text x="120" y="260" class="eq">Pₚᵘ,τ = ℒ(Yₜ₊τⱽ | do(u), p)</text>
@@ -32,8 +31,7 @@
 
   <path class="arrow" d="M900 350 V395"/>
 
-  <!-- Response geometry -->
-  <g>
+  <g id="response-geometry" data-qa-block="true" data-x="80" data-y="420" data-width="500" data-height="355">
     <rect x="80" y="420" width="500" height="355" rx="18" fill="#f5fcf8" stroke="#059669" stroke-width="1.6"/>
     <text x="118" y="462" class="head">A. Response geometry</text>
     <line x1="118" y1="480" x2="542" y2="480" class="divider"/>
@@ -43,12 +41,12 @@
     <text x="118" y="632" class="body">• response distinguishability under intervention</text>
     <text x="118" y="662" class="body">• time-resolved differentiation of responses</text>
     <text x="118" y="692" class="body">• intervention-response equivalence classes</text>
-    <text x="118" y="732" class="label">MINIMALITY RESULT</text>
-    <text x="118" y="758" class="body">P12: insufficient alone · P13: not recoverable from A and K</text>
+    <text x="118" y="724" class="label">MINIMALITY RESULT</text>
+    <text x="118" y="748" class="body">P12: insufficient alone</text>
+    <text x="118" y="768" class="body">P13: not recoverable from A and K</text>
   </g>
 
-  <!-- Directed influence -->
-  <g>
+  <g id="directed-influence" data-qa-block="true" data-x="650" data-y="420" data-width="500" data-height="355">
     <rect x="650" y="420" width="500" height="355" rx="18" fill="#faf8ff" stroke="#7c3aed" stroke-width="1.6"/>
     <text x="688" y="462" class="head">B. Directed interventional influence</text>
     <line x1="688" y1="480" x2="1112" y2="480" class="divider"/>
@@ -58,12 +56,12 @@
     <text x="688" y="632" class="body">• source-specific perturbational propagation</text>
     <text x="688" y="662" class="body">• direction and timing of causal influence</text>
     <text x="688" y="692" class="body">• return paths and recurrence structure</text>
-    <text x="688" y="732" class="label">MINIMALITY RESULT</text>
-    <text x="688" y="758" class="body">P12: insufficient alone · P13: not recoverable from G and K</text>
+    <text x="688" y="724" class="label">MINIMALITY RESULT</text>
+    <text x="688" y="748" class="body">P12: insufficient alone</text>
+    <text x="688" y="768" class="body">P13: not recoverable from G and K</text>
   </g>
 
-  <!-- Partition irreducibility -->
-  <g>
+  <g id="partition-irreducibility" data-qa-block="true" data-x="1220" data-y="420" data-width="500" data-height="355">
     <rect x="1220" y="420" width="500" height="355" rx="18" fill="#fffaf7" stroke="#ea580c" stroke-width="1.6"/>
     <text x="1258" y="462" class="head">C. Partition irreducibility</text>
     <line x1="1258" y1="480" x2="1682" y2="480" class="divider"/>
@@ -73,22 +71,21 @@
     <text x="1258" y="632" class="body">• departure from block-wise factorization</text>
     <text x="1258" y="662" class="body">• partition-specific joint dependence</text>
     <text x="1258" y="692" class="body">• irreducibility across declared physical cuts</text>
-    <text x="1258" y="732" class="label">MINIMALITY RESULT</text>
-    <text x="1258" y="758" class="body">P12: insufficient alone · P13: not recoverable from G and A</text>
+    <text x="1258" y="724" class="label">MINIMALITY RESULT</text>
+    <text x="1258" y="748" class="body">P12: insufficient alone</text>
+    <text x="1258" y="768" class="body">P13: not recoverable from G and A</text>
   </g>
 
   <path class="arrow" d="M330 775 V835 H690"/>
   <path class="arrow" d="M900 775 V835"/>
   <path class="arrow" d="M1470 775 V835 H1110"/>
 
-  <!-- Combined signature -->
   <rect x="330" y="855" width="1140" height="155" rx="18" fill="#0f172a"/>
   <text x="375" y="898" style="font:700 21px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Combined physical signature</text>
   <text x="375" y="940" style="font:600 18px Georgia,'Times New Roman',serif;fill:#e2e8f0">Fcausal(p) = [(V, Uₚ, T, Gₚ, Aₚ, Kₚ)]≅</text>
   <text x="375" y="976" style="font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">P11 defines the candidate. P12 tests one-component reductions.</text>
   <text x="375" y="999" style="font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">P13 tests all two-component projections on the declared audit domains.</text>
 
-  <!-- Open problem -->
   <rect x="80" y="1040" width="1640" height="48" rx="12" fill="#fff8f9" stroke="#e11d48"/>
   <text x="112" y="1070" style="font:600 14px Inter,Segoe UI,Arial,sans-serif;fill:#9f1239">Open bridge question: do these physical equivalence classes correspond to independently formalized experiential equivalence classes?</text>
 </svg>
