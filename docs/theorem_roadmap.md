@@ -28,6 +28,8 @@ This roadmap records the current proved mathematical chain and the open route to
 
 ![P48 gap-dependent stopping complexity](figures/p48_gap_dependent_stopping_complexity.svg)
 
+![P49 dyadic stopping overhead](figures/p49_dyadic_stopping_overhead.svg)
+
 ---
 
 # 1. Complete proposition index
@@ -82,6 +84,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P46](proposition_46_budget_constrained_witness_graph.md) | monotone supermodular induced-edge objective, CLIQUE reduction, and fractional degree-knapsack bound | hard-budget preparation selection with certified optimality gap | proved combinatorial design theorem |
 | [P47](proposition_47_anytime_sequential_witness_graph.md) | finite-family all-local-time confidence event plus adaptive local-count substitution and simultaneous edge envelopes | valid non-anticipating adaptive preparation sampling, graph refinement, witness selection, pruning, and stopping | proved anytime-valid sequential-design theorem |
 | [P48](proposition_48_gap_dependent_stopping_complexity.md) | explicit inversion of a logarithmic confidence-sequence envelope plus margin perturbation bounds | gap-dependent positive/all-negative stopping epochs and pruning-aware acquisition-cost upper bound | proved sequential stopping-complexity theorem |
+| [P49](proposition_49_dyadic_stopping_overhead.md) | dyadic ceiling geometry and deterministic checkpoint-count bound | logarithmic complete certification looks with strictly less than twofold stopping-threshold and linear-cost overhead | proved sequential scheduling theorem |
 
 ---
 

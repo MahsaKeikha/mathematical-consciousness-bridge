@@ -660,3 +660,18 @@ P47 is a time-uniform statistical and experimental-design result. It does not co
 
 P48 is a sufficient sequential upper bound. It is not a minimax lower bound or an adaptive-optimality theorem.
 
+---
+
+# 38. P49 dyadic certification schedules
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(D(N)=2^{\lceil\log_2N\rceil}\) | first dyadic checkpoint at or above a finite P48 threshold | repository definition | [P49](proposition_49_dyadic_stopping_overhead.md) |
+| \(N\le D(N)<2N\) | exact sample-threshold overhead bound | proved integer scheduling theorem | [P49](proposition_49_dyadic_stopping_overhead.md) |
+| \(L(N)=\lceil\log_2N\rceil+1\) | complete certification-look count through the dyadic threshold | proved counting identity | [P49](proposition_49_dyadic_stopping_overhead.md) |
+| \(\widetilde K_+=D(K_+)<2K_+\) | positive-witness dyadic stopping bound | proved from P48 plus monotonicity of \(D\) | [P49](proposition_49_dyadic_stopping_overhead.md) |
+| \(\widetilde K_-=D(K_-)<2K_-\) | all-negative dyadic stopping bound | proved from P48 plus monotonicity of \(D\) | [P49](proposition_49_dyadic_stopping_overhead.md) |
+| \(C_{\rm dyad}(K)<2C_{\rm full}(K)\) | linear acquisition-cost overhead | proved by multiplying the dyadic epoch inequality by positive per-epoch cost | [P49](proposition_49_dyadic_stopping_overhead.md) |
+
+P49 changes checkpoint frequency only. Statistical validity remains inherited from P47 and finite sign separation remains inherited from P48.
+

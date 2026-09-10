@@ -6,9 +6,9 @@ def test_release_versions_are_synchronized():
     readme = Path("README.md").read_text(encoding="utf-8")
     pyproject = Path("pyproject.toml").read_text(encoding="utf-8")
     citation = Path("CITATION.cff").read_text(encoding="utf-8")
-    assert "version-0.48.0-2563eb" in readme
-    assert re.search(r'^version = "0\.48\.0"$', pyproject, re.MULTILINE)
-    assert re.search(r'^version: 0\.48\.0$', citation, re.MULTILINE)
+    assert "version-0.49.0-2563eb" in readme
+    assert re.search(r'^version = "0\.49\.0"$', pyproject, re.MULTILINE)
+    assert re.search(r'^version: 0\.49\.0$', citation, re.MULTILINE)
 
 
 def test_quantum_publication_paths_are_visible():
@@ -54,5 +54,9 @@ def test_quantum_publication_paths_are_visible():
         "p48_gap_dependent_stopping_complexity.svg",
         "gap_stopping_complexity.py",
         "test_gap_stopping_complexity.py",
+        "Proposition 49",
+        "p49_dyadic_stopping_overhead.svg",
+        "dyadic_stopping_overhead.py",
+        "test_dyadic_stopping_overhead.py",
     ):
         assert token in readme
