@@ -1,4 +1,4 @@
-from math import isclose
+from math import isclose, log, sqrt
 
 import pytest
 
@@ -74,10 +74,9 @@ def test_target_budget_formula_is_sufficient():
 
 def test_hoeffding_coefficient_matches_radius_scaling():
     coefficient = hoeffding_coefficient(3.0, 0.05)
-    radius_at_100 = coefficient / 10.0
-    expected = 3.0 * (-(pytest.approx(0.0) == 1))
-    assert coefficient > 0.0
-    assert isclose(radius_at_100 * 10.0, coefficient)
+    expected = 3.0 * sqrt(log(2.0 / 0.05) / 2.0)
+    assert coefficient == pytest.approx(expected)
+    assert isclose((coefficient / 10.0) * 10.0, coefficient)
 
 
 def test_invalid_inputs_rejected():
