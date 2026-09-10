@@ -1,4 +1,4 @@
-# Proposition 32 — delay-quotient compatibility
+# Proposition 32 - delay-quotient compatibility
 
 ## Status
 
@@ -8,7 +8,7 @@
 
 ## 1. Problem
 
-P31 establishes when a many-to-one map on intervention labels preserves a unique response law. The remaining coordinate of the P11 experiment grid is delay. A coarse analysis may group several fine delays into one label — for example, several nearby sampling times into one temporal bin — but that relabeling is scientifically legitimate only if it does not make the response law depend on which fine delay was silently chosen.
+P31 establishes when a many-to-one map on intervention labels preserves a unique response law. The remaining coordinate of the P11 experiment grid is delay. A coarse analysis may group several fine delays into one label, for example several nearby sampling times into one temporal bin, but that relabeling is scientifically legitimate only if it does not make the response law depend on which fine delay was silently chosen.
 
 Let
 
@@ -36,7 +36,7 @@ be the response law on one already-declared common response space. Any node/stat
 
 ## 2. Exact delay descent
 
-### Proposition 32A — exact factorization criterion
+### Proposition 32A - exact factorization criterion
 
 There exists a unique coarse-delay response table
 
@@ -97,7 +97,7 @@ Define
 
 This quantity measures the largest response-law variation hidden inside one proposed coarse delay label.
 
-### Corollary 32B — zero ambiguity criterion
+### Corollary 32B - zero ambiguity criterion
 
 \[
 \boxed{
@@ -181,15 +181,21 @@ This is a stability theorem for coarse temporal labeling. It does not assert tha
 
 ---
 
-## 6. Approximate certificate
+## 6. Exact and approximate certificates
 
-For a declared numerical tolerance \(\varepsilon\ge0\), the implementation may report
+The executable certificate reports two logically distinct statements. Exact descent is certified only when
 
 \[
-\eta_q\le\varepsilon
+\boxed{\eta_q=0.}
 \]
 
-as an approximate operational certificate. When \(\varepsilon>0\), this must not be described as literal equality of the fine response laws. The exact mathematical statement remains \(\eta_q=0\).
+Separately, for a declared numerical tolerance \(\varepsilon\ge0\), it may report
+
+\[
+\boxed{\eta_q\le\varepsilon}
+\]
+
+as a tolerance-relative operational certificate. When \(\varepsilon>0\), this second statement must not be described as literal equality of the fine response laws. The unique descended response table is constructed only under exact descent.
 
 ---
 
