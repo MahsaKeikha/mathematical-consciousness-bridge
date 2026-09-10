@@ -33,4 +33,10 @@ if text.count(old) != 1:
     raise RuntimeError("P30 equation-map numbering patch marker not found exactly once")
 text = text.replace(old, new, 1)
 
+old = '''text = replace_once(text, "response-geometry node aggregation, robust experiment design", "response-geometry node aggregation, full P11 scale compatibility, robust experiment design", "pyproject description")'''
+new = '''text = replace_once(text, "response-geometry node aggregation, recoverability, and falsifiable experiment design", "response-geometry node aggregation, full P11 scale compatibility, recoverability, and falsifiable experiment design", "pyproject description")'''
+if text.count(old) != 1:
+    raise RuntimeError("P30 pyproject metadata patch marker not found exactly once")
+text = text.replace(old, new, 1)
+
 path.write_text(text, encoding="utf-8")
