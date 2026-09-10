@@ -481,7 +481,22 @@ P39 rejects only the declared quantum confidence set as sufficient for the indep
 
 ---
 
-# 29. Candidate consciousness-theory feature families
+# 29. P40 continuous quantum-region regularity
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| injective \(Q\) on finite \(\mathcal X\Rightarrow y=g\circ Q\) for arbitrary \(y\) | unrestricted-factorization no-go | proved by defining \(g\) on the finite image | [P40](proposition_40_continuous_quantum_region_regularity.md) |
+| \(\|g(\rho)-g(\sigma)\|_{\mathrm{TV}}\le\omega(D(\rho,\sigma))\) | declared bridge regularity class | explicit additional assumption | [P40](proposition_40_continuous_quantum_region_regularity.md) |
+| \(U_{xx'}=\sup_{Q\in\mathcal C_Q}D(\rho_x^Q,\rho_{x'}^Q)\) | worst allowed quantum separation over the continuous confidence region | repository definition | [P40](proposition_40_continuous_quantum_region_regularity.md) |
+| \(M_{xx'}=L_{xx'}-\omega(U_{xx'})\) | pairwise regularity obstruction margin | repository definition | [P40](proposition_40_continuous_quantum_region_regularity.md) |
+| \(M_*>0\) | robust incompatibility of the whole region with the declared bridge class | proved | [P40](proposition_40_continuous_quantum_region_regularity.md) |
+| \(\omega(r)=Lr\) | Lipschitz special case | standard regularity model specialized here | [P40](proposition_40_continuous_quantum_region_regularity.md) |
+
+P40 does not infer bridge regularity from quantum mechanics. The modulus is an independently declared model restriction.
+
+---
+
+# 30. Candidate consciousness-theory feature families
 
 The following are source-grounded translations into generic feature notation. They are not claims that each named theory reduces to one scalar or one universally agreed implementation.
 
@@ -498,7 +513,7 @@ Detailed caveats and source roles are maintained in [Candidate Theory Families](
 
 ---
 
-# 30. Citation discipline
+# 31. Citation discipline
 
 A result is cited as a repository result when the bridge-specific statement, construction, or counterexample is introduced here.
 

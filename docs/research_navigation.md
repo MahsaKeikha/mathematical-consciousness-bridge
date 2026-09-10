@@ -6,7 +6,7 @@ This page is the reading and reference index for the Mathematical Consciousness 
 
 1. [Main research paper](../README.md) for the complete scientific narrative and embedded figures.
 2. [Bridge problem](bridge_problem.md) for the formal statement of the physical-to-experiential problem.
-3. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P39, including the physical scale branches from P11-P18 to P25-P27.
+3. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P40, including the physical scale branches from P11-P18 to P25-P27.
 4. [Equation and citation map](equation_and_citation_map.md) for equation-level provenance and theorem lineage.
 5. [Proposition 19](proposition_19_fundamental_physical_sufficiency.md) for the population physical-sufficiency theorem.
 6. [Proposition 20](proposition_20_finite_sample_residual_certification.md) for finite-sample certification of the P19 stochastic residual.
@@ -69,6 +69,7 @@ This page is the reading and reference index for the Mathematical Consciousness 
 | P37 | [Complete approximate P11 operational scale](proposition_37_complete_approximate_p11_operational_scale.md) | full G/A/K distortion certificate |
 | P38 | [Quantum operational sufficiency](proposition_38_quantum_operational_sufficiency.md) | quantum factorization and non-factorization criterion |
 | P39 | [Finite-data quantum non-factorization](proposition_39_finite_data_quantum_nonfactorization.md) | model-set confidence certificate for quantum descriptor non-factorization |
+| P40 | [Continuous quantum-region regularity](proposition_40_continuous_quantum_region_regularity.md) | injective-descriptor no-go and continuous-region regularity obstruction |
 
 ## Physics, mathematics, and quantitative figures
 

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="930" viewBox="0 0 1500 930" role="img" aria-labelledby="title desc">
+  <title id="title">P40 continuous quantum confidence region and regularity obstruction</title>
+  <desc id="desc">Injective descriptor no-go, continuous confidence region, declared bridge modulus, and robust obstruction margin.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .title{font:700 34px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .sub{font:400 17px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .head{font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .eq{font:600 17px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .label{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
+      .arrow{stroke:#64748b;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1500" height="930" fill="#ffffff"/>
+  <text x="70" y="65" class="title">P40 - Continuous Quantum Confidence Regions</text>
+  <text x="70" y="100" class="sub">Without collisions or regularity, injective finite descriptors defeat unrestricted non-factorization tests.</text>
+
+  <rect x="70" y="155" width="390" height="205" rx="18" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="100" y="190" class="label">NO-GO LAYER</text>
+  <text x="100" y="225" class="head">Injective finite descriptor</text>
+  <text x="100" y="265" class="eq">ρx ≠ ρx′ for x ≠ x′</text>
+  <text x="100" y="302" class="eq">any target y factors as y=g∘Q</text>
+  <text x="100" y="332" class="body">Unrestricted bridges can memorize the finite image.</text>
+
+  <rect x="555" y="155" width="390" height="205" rx="18" fill="#f5f3ff" stroke="#8b5cf6"/>
+  <text x="585" y="190" class="label">CONTINUOUS QUANTUM REGION</text>
+  <text x="585" y="225" class="head">Confidence-region envelope</text>
+  <text x="585" y="265" class="eq">Uxx′ = supQ∈CQ D(ρxQ,ρx′Q)</text>
+  <text x="585" y="305" class="body">Use the largest quantum separation still</text>
+  <text x="585" y="330" class="body">allowed anywhere in the declared region.</text>
+
+  <rect x="1040" y="155" width="390" height="205" rx="18" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="1070" y="190" class="label">DECLARED BRIDGE REGULARITY</text>
+  <text x="1070" y="225" class="head">Modulus of continuity</text>
+  <text x="1070" y="265" class="eq">TV(g(ρ),g(σ)) ≤ ω(D(ρ,σ))</text>
+  <text x="1070" y="305" class="body">Example: ω(r)=Lr for an L-Lipschitz bridge.</text>
+  <text x="1070" y="330" class="body">This is an extra model assumption, not QM.</text>
+
+  <path class="arrow" d="M460 258 H543"/>
+  <path class="arrow" d="M945 258 H1028"/>
+
+  <rect x="170" y="445" width="500" height="205" rx="18" fill="#fff7ed" stroke="#f97316"/>
+  <text x="200" y="480" class="label">TARGET SEPARATION</text>
+  <text x="200" y="515" class="head">Simultaneous lower confidence bound</text>
+  <text x="200" y="558" class="eq">TV(Px,Px′) ≥ Lxx′</text>
+  <text x="200" y="595" class="body">Target uncertainty is carried explicitly.</text>
+  <text x="200" y="622" class="body">No point-estimate shortcut is used.</text>
+
+  <rect x="830" y="445" width="500" height="205" rx="18" fill="#fff1f2" stroke="#e11d48"/>
+  <text x="860" y="480" class="label">ROBUST OBSTRUCTION</text>
+  <text x="860" y="515" class="head">Continuous-region incompatibility</text>
+  <text x="860" y="558" class="eq">Mxx′ = Lxx′ − ω(Uxx′)</text>
+  <text x="860" y="595" class="eq">M* = maxx≠x′ Mxx′</text>
+  <text x="860" y="625" class="body">M*&gt;0 rules out the declared regular bridge class.</text>
+
+  <path class="arrow" d="M420 650 V690 H1080 V662"/>
+  <path class="arrow" d="M1235 360 V430"/>
+
+  <rect x="70" y="735" width="1360" height="125" rx="18" fill="#0f172a"/>
+  <text x="105" y="775" style="font:700 12px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">SCIENTIFIC BOUNDARY</text>
+  <text x="105" y="813" style="font:600 18px Georgia,'Times New Roman',serif;fill:#f8fafc">no regular bridge in the declared confidence region  ≠  no quantum explanation</text>
+  <text x="105" y="842" style="font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">A positive obstruction may expose the region, system boundary, target model, or regularity assumption rather than quantum theory itself.</text>
+</svg>

@@ -10,6 +10,8 @@ This roadmap records the current proved mathematical chain and the open route to
 
 ![P39 finite-data quantum non-factorization](figures/p39_finite_data_quantum_nonfactorization.svg)
 
+![P40 continuous quantum-region regularity](figures/p40_continuous_quantum_region_regularity.svg)
+
 ---
 
 # 1. Complete proposition index
@@ -55,6 +57,7 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P37](proposition_37_complete_approximate_p11_operational_scale.md) | max-norm assembly of G, A, and K bounds | complete approximate P11 scale certificate | proved complete scale theorem |
 | [P38](proposition_38_quantum_operational_sufficiency.md) | factorization through tomographically complete density-operator fibers | exact quantum descriptor sufficiency and non-factorization witness | proved quantum sufficiency theorem |
 | [P39](proposition_39_finite_data_quantum_nonfactorization.md) | target-TV confidence bounds plus tomography model-set coverage | finite-data rejection of every surviving exact quantum-state-fiber hypothesis | proved finite-data model-set theorem |
+| [P40](proposition_40_continuous_quantum_region_regularity.md) | injective-image factorization plus confidence-region distance envelopes and bridge moduli | unrestricted-bridge no-go and continuous-region regularity obstruction | proved no-go plus regularity theorem |
 
 ---
 
@@ -707,6 +710,32 @@ If the true quantum hypothesis belongs to \(\mathcal C_Q\) with probability at l
 The theorem never substitutes numerical state closeness for exact state equality. An injective surviving quantum model correctly blocks the collision-based certificate.
 
 Direct proof: [Proposition 39](proposition_39_finite_data_quantum_nonfactorization.md). Implementation: [finite_data_quantum_nonfactorization.py](../src/consciousness_bridge/finite_data_quantum_nonfactorization.py). Tests: [test_finite_data_quantum_nonfactorization.py](../tests/test_finite_data_quantum_nonfactorization.py).
+
+---
+
+## P40 - continuous quantum-region regularity obstruction
+
+If a finite quantum descriptor \(Q\) is injective on the sampled preparation set, then any target assignment factors through some unrestricted map on \(\operatorname{Im}(Q)\). Thus continuous quantum-state closeness alone cannot rule out unrestricted factorization.
+
+For a declared bridge modulus \(\omega\), define
+
+\[
+U_{xx'}=\sup_{Q\in\mathcal C_Q}D(\rho_x^Q,\rho_{x'}^Q),
+\qquad
+M_{xx'}=L_{xx'}-\omega(U_{xx'}).
+\]
+
+Then
+
+\[
+\boxed{
+M_*:=\max_{x\ne x'}M_{xx'}>0
+}
+\]
+
+rules out every descriptor in the declared quantum confidence region for every bridge satisfying that modulus, on the joint confidence event.
+
+Direct proof: [Proposition 40](proposition_40_continuous_quantum_region_regularity.md). Implementation: [continuous_quantum_region_regularity.py](../src/consciousness_bridge/continuous_quantum_region_regularity.py). Tests: [test_continuous_quantum_region_regularity.py](../tests/test_continuous_quantum_region_regularity.py).
 
 ---
 

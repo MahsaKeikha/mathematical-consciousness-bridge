@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.40.0 - 2026-09-09
+
+### Added
+- Proposition 40: continuous quantum confidence regions and bridge-regularity obstructions.
+- A no-go theorem showing that injective finite descriptors always permit unrestricted factorization on the sampled image.
+- A continuous confidence-region quantum-distance envelope.
+- A modulus-of-continuity obstruction and Lipschitz corollary.
+- Executable implementation, regression tests, publication map, and public-paper integration.
+
+### Scientific boundary
+- Bridge regularity is an additional modeling assumption and is not derived from quantum mechanics.
+- A positive P40 obstruction rules out only the declared quantum confidence region together with the declared bridge-regularity class.
+
 ## 0.39.0 - 2026-09-09
 
 ### Added
