@@ -24,9 +24,10 @@
   <g id="p64-continuous" data-qa-block="true" data-x="70" data-y="175" data-width="500" data-height="250">
     <rect class="card" x="70" y="175" width="500" height="250" rx="22" fill="#eef2ff" stroke="#6366f1"/>
     <text x="115" y="222" class="bt">1. Solve P62 continuously</text>
-    <text x="115" y="272" class="math">nₑ* = (B/T)bₑ^(2/3)cₑ^(-2/3)</text>
-    <text x="115" y="320" class="tx">Fast closed-form ideal allocation.</text>
-    <text x="115" y="365" class="small">P64 regime: every nₑ* ≥ 1.</text>
+    <text x="115" y="265" class="math">nₑ* = (B/T)</text>
+    <text x="115" y="298" class="math">× bₑ^(2/3)cₑ^(-2/3)</text>
+    <text x="115" y="343" class="tx">Fast closed-form ideal allocation.</text>
+    <text x="115" y="385" class="small">P64 regime: every nₑ* ≥ 1.</text>
   </g>
 
   <g id="p64-floor" data-qa-block="true" data-x="650" data-y="175" data-width="500" data-height="250">
@@ -34,7 +35,7 @@
     <text x="695" y="222" class="bt">2. Round down</text>
     <text x="695" y="272" class="math">kₑ = floor(nₑ*)</text>
     <text x="695" y="312" class="math">Σ cₑkₑ ≤ Σ cₑnₑ* = B</text>
-    <text x="695" y="360" class="small">Whole measurements remain budget feasible.</text>
+    <text x="695" y="360" class="small">Whole counts remain budget feasible.</text>
   </g>
 
   <g id="p64-ratio" data-qa-block="true" data-x="1230" data-y="175" data-width="500" data-height="250">
@@ -42,7 +43,7 @@
     <text x="1275" y="222" class="bt">3. Measure rounding loss</text>
     <text x="1275" y="272" class="math">rₑ = floor(nₑ*) / nₑ*</text>
     <text x="1275" y="312" class="math">rmin = minₑ rₑ</text>
-    <text x="1275" y="360" class="small">Values near 1 mean little rounding loss.</text>
+    <text x="1275" y="360" class="small">Values near 1 mean small rounding loss.</text>
   </g>
 
   <path d="M570 300 H638" class="arrow" data-from="p64-continuous" data-to="p64-floor"/>
