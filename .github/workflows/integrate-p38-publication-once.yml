@@ -1,0 +1,70 @@
+name: integrate-p38-publication-once
+
+on:
+  push:
+    branches:
+      - p38-publication-integration
+    paths:
+      - .github/integrate_p38_publication.py
+      - .github/workflows/integrate-p38-publication-once.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          ref: p38-publication-integration
+          fetch-depth: 0
+
+      - name: Apply publication synchronization
+        run: python .github/integrate_p38_publication.py
+
+      - name: Remove one-time publication scaffolding
+        run: |
+          rm .github/integrate_p38_publication.py
+          rm .github/workflows/integrate-p38-publication-once.yml
+
+      - name: Validate on Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Test on Python 3.10
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+          pytest
+          ruff check .
+
+      - name: Validate on Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test on Python 3.11
+        run: |
+          python -m pip install -e ".[dev]"
+          pytest
+          ruff check .
+
+      - name: Validate on Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test on Python 3.12
+        run: |
+          python -m pip install -e ".[dev]"
+          pytest
+          ruff check .
+
+      - name: Commit verified synchronized publication
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Integrate P32-P38 into the public research paper"
+          git push origin HEAD:p38-publication-integration
