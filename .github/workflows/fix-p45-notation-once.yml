@@ -1,0 +1,35 @@
+name: fix-p45-notation-once
+
+on:
+  push:
+    branches:
+      - p45-shared-preparation-graph-allocation
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          ref: p45-shared-preparation-graph-allocation
+          fetch-depth: 0
+
+      - name: Correct P45 notation
+        run: python .github/fix_p45_notation_once.py
+
+      - name: Remove one-time scaffolding
+        run: |
+          rm .github/fix_p45_notation_once.py
+          rm .github/workflows/fix-p45-notation-once.yml
+
+      - name: Commit correction
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/proposition_45_shared_preparation_graph_allocation.md .github
+          git commit -m "Correct P45 single-edge notation"
+          git push origin p45-shared-preparation-graph-allocation
