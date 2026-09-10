@@ -1,3 +1,4 @@
+from itertools import pairwise
 from math import inf
 
 import pytest
@@ -17,7 +18,7 @@ from consciousness_bridge.residual_exact_calibration_augmentation import (
 def test_marginal_reduction_is_positive_and_decreasing():
     values = [marginal_reduction(2.0, count) for count in range(1, 8)]
     assert all(value > 0.0 for value in values)
-    assert all(left > right for left, right in zip(values[:-1], values[1:], strict=True))
+    assert all(left > right for left, right in pairwise(values))
 
 
 def test_balanced_tight_allocation_is_globally_certified():
