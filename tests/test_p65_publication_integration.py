@@ -7,13 +7,12 @@ def _read(path: str) -> str:
     return (ROOT / path).read_text(encoding="utf-8")
 
 
-def test_p65_is_integrated_across_public_record():
+def test_p65_remains_integrated_in_public_record():
     required = {
         "README.md": [
-            "version-0.65.0-2563eb",
-            "65 proposition-level results",
             "Proposition 65",
             "p65_lower_bounded_heterogeneous_calibration.svg",
+            "lower-bounded heterogeneous calibration",
         ],
         "docs/theorem_roadmap.md": [
             "P65",
@@ -21,7 +20,6 @@ def test_p65_is_integrated_across_public_record():
             "p65_lower_bounded_heterogeneous_calibration.svg",
         ],
         "docs/research_navigation.md": [
-            "P1 through P65",
             "proposition_65_lower_bounded_heterogeneous_calibration.md",
         ],
         "docs/equation_and_citation_map.md": [
@@ -30,23 +28,24 @@ def test_p65_is_integrated_across_public_record():
             "\\sqrt2",
         ],
         "website/index.html": [
-            "<strong>65</strong><span>proposition-level results</span>",
-            "<strong>v0.65.0</strong><span>current documented release</span>",
             "P65",
+            "Baseline-safe water filling",
         ],
         "website/research-map.html": [
-            "P54-P65",
-            "P62-P65",
+            "P62-P66",
         ],
-        "CITATION.cff": ["version: 0.65.0", "lower-bounded heterogeneous calibration"],
-        "pyproject.toml": ['version = "0.65.0"', "lower-bounded heterogeneous calibration"],
-        "CHANGELOG.md": ["# 0.65.0 - 2026-09-10", "P65 lower-bounded heterogeneous calibration"],
+        "CITATION.cff": ["lower-bounded heterogeneous calibration"],
+        "pyproject.toml": ["lower-bounded heterogeneous calibration"],
+        "CHANGELOG.md": [
+            "# 0.65.0 - 2026-09-10",
+            "P65 lower-bounded heterogeneous calibration",
+        ],
     }
 
     for path, tokens in required.items():
         text = _read(path)
         for token in tokens:
-            assert token in text, f"{path} missing P65 publication token: {token}"
+            assert token in text, f"{path} missing historical P65 token: {token}"
 
 
 def test_p65_permanent_proof_code_visual_and_tests_exist():
