@@ -21,6 +21,11 @@ jobs:
       - name: Apply guarded P46 publication integration
         run: python .github/integrate_p46_release.py
 
+      - name: Remove one-time integration scaffolding before validation
+        run: |
+          rm .github/integrate_p46_release.py
+          rm .github/workflows/integrate-p46-once.yml
+
       - name: Validate on Python 3.10
         uses: actions/setup-python@v5
         with:
@@ -51,11 +56,6 @@ jobs:
           python -m pip install -e ".[dev]"
           pytest
           ruff check .
-
-      - name: Remove one-time integration scaffolding
-        run: |
-          rm .github/integrate_p46_release.py
-          rm .github/workflows/integrate-p46-once.yml
 
       - name: Verify repository text discipline
         run: |
