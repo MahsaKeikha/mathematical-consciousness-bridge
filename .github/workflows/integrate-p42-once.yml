@@ -68,3 +68,5 @@ jobs:
           git add -A
           git commit -m "Integrate P42 IC POVM sample complexity"
           git push origin HEAD:p42-ic-povm-sample-complexity
+
+# retry after release-metadata guard synchronization
