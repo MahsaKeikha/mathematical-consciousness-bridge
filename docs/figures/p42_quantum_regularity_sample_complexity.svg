@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="930" viewBox="0 0 1500 930" role="img" aria-labelledby="title desc">
+  <title id="title">P42 quantum regularity sample complexity</title>
+  <desc id="desc">Population regularity gap, declared confidence-radius laws, sufficient target and quantum sample counts, and cost-aware allocation.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .title{font:700 34px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .sub{font:400 17px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .head{font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .eq{font:600 16px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .label{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
+      .arrow{stroke:#64748b;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1500" height="930" fill="#ffffff"/>
+  <text x="70" y="65" class="title">P42 - Quantum Regularity Sample Complexity</text>
+  <text x="70" y="100" class="sub">Explicit sample counts follow only after valid experiment-specific confidence-radius laws are declared.</text>
+
+  <rect x="70" y="155" width="400" height="205" rx="18" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="100" y="190" class="label">POPULATION GAP</text>
+  <text x="100" y="225" class="head">Regularity separation</text>
+  <text x="100" y="265" class="eq">Γ = dY − L dQ</text>
+  <text x="100" y="302" class="eq">Γ &gt; 0 is necessary for this certificate</text>
+  <text x="100" y="332" class="body">No sampling theorem can repair Γ ≤ 0.</text>
+
+  <rect x="550" y="155" width="400" height="205" rx="18" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="580" y="190" class="label">DECLARED RADIUS LAWS</text>
+  <text x="580" y="225" class="head">Square-root concentration form</text>
+  <text x="580" y="265" class="eq">εY=cY√(log(AY/αY)/nY)</text>
+  <text x="580" y="302" class="eq">rQ=cQ√(log(AQ/αQ)/nQ)</text>
+  <text x="580" y="332" class="body">Constants come from the actual experiment.</text>
+
+  <rect x="1030" y="155" width="400" height="205" rx="18" fill="#f5f3ff" stroke="#8b5cf6"/>
+  <text x="1060" y="190" class="label">P41 REQUIREMENT</text>
+  <text x="1060" y="225" class="head">Combined uncertainty budget</text>
+  <text x="1060" y="265" class="eq">2εY + 2LrQ &lt; Γ</text>
+  <text x="1060" y="305" class="body">Allocate λΓ to target uncertainty and</text>
+  <text x="1060" y="332" class="body">(1−λ)Γ to quantum uncertainty.</text>
+
+  <path class="arrow" d="M470 258 H538"/>
+  <path class="arrow" d="M950 258 H1018"/>
+
+  <rect x="115" y="445" width="570" height="210" rx="18" fill="#fff7ed" stroke="#f97316"/>
+  <text x="145" y="480" class="label">SUFFICIENT SAMPLE COUNTS</text>
+  <text x="145" y="515" class="head">Inverse-square gap scaling</text>
+  <text x="145" y="558" class="eq">nY ≥ 4cY² log(AY/αY)/(λ²Γ²)</text>
+  <text x="145" y="600" class="eq">nQ ≥ 4L²cQ² log(AQ/αQ)/((1−λ)²Γ²)</text>
+  <text x="145" y="630" class="body">Integer ceilings give conservative planning counts.</text>
+
+  <rect x="815" y="445" width="570" height="210" rx="18" fill="#fff1f2" stroke="#e11d48"/>
+  <text x="845" y="480" class="label">COST-AWARE ALLOCATION</text>
+  <text x="845" y="515" class="head">Choose λ instead of assuming one-half</text>
+  <text x="845" y="558" class="eq">C(λ)=a/λ²+b/(1−λ)²</text>
+  <text x="845" y="600" class="eq">λ*=a^(1/3)/(a^(1/3)+b^(1/3))</text>
+  <text x="845" y="630" class="body">Sampling cost and statistical difficulty set the optimum.</text>
+
+  <path class="arrow" d="M1230 360 V405 H400 V433"/>
+  <path class="arrow" d="M1230 360 V405 H1100 V433"/>
+
+  <rect x="70" y="735" width="1360" height="125" rx="18" fill="#0f172a"/>
+  <text x="105" y="775" style="font:700 12px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">SCIENTIFIC BOUNDARY</text>
+  <text x="105" y="813" style="font:600 18px Georgia,'Times New Roman',serif;fill:#f8fafc">sample-complexity algebra + unjustified radius constants ≠ valid experimental certificate</text>
+  <text x="105" y="842" style="font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#cbd5e1">P42 is conditional on externally justified tomography and target confidence rates for the declared protocol.</text>
+</svg>
