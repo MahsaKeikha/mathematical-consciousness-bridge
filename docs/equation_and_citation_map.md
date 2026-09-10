@@ -703,3 +703,18 @@ P50 is a progress/scheduling theorem. It does not alter the scientific meaning o
 | \(T_+=\min_{M_e>0}T_e\) | positive-witness global stopping bound | proved from P47-P48 plus P51 service | [P51](proposition_51_heterogeneous_service_rate_stopping.md) |
 | \(T_-=\max_eT_e\) | all-negative global stopping bound | proved from P47-P48 plus P51 service | [P51](proposition_51_heterogeneous_service_rate_stopping.md) |
 
+---
+
+# 41. P52 capacity-optimal service allocation
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(d_i=\max\{N_e:e\ni i\}\) | componentwise-minimal vertex demand sufficient for all incident P48 thresholds | proved threshold reduction | [P52](proposition_52_capacity_optimal_service_allocation.md) |
+| \(T(\pi)=\max_i d_i/\pi_i\) | continuous capacity-constrained threshold makespan | repository optimization definition | [P52](proposition_52_capacity_optimal_service_allocation.md) |
+| \(T\ge(\sum_i d_i)/C\) | universal capacity lower bound | proved by summing \(d_i\le T\pi_i\) | [P52](proposition_52_capacity_optimal_service_allocation.md) |
+| \(\pi_i^*=C d_i/\sum_jd_j\) | unique minimax service allocation on positive demand support | proved exact optimum | [P52](proposition_52_capacity_optimal_service_allocation.md) |
+| \(T^*=(\sum_i d_i)/C\) | exact optimal continuous completion time | proved by lower-bound attainment | [P52](proposition_52_capacity_optimal_service_allocation.md) |
+| \(T_{\rm discrete}^*=\sum_i d_i\) for unit capacity | exact integer quota-saturation length | proved counting lower bound plus construction | [P52](proposition_52_capacity_optimal_service_allocation.md) |
+
+P52 optimizes deterministic saturation of declared sufficient thresholds; it is not an information-theoretic lower bound on the underlying statistical problem.
+

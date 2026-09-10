@@ -6,7 +6,7 @@ This page is the reading and reference index for the Mathematical Consciousness 
 
 1. [Main research paper](../README.md) for the complete scientific narrative and embedded figures.
 2. [Bridge problem](bridge_problem.md) for the formal statement of the physical-to-experiential problem.
-3. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P51, including the physical scale branches from P11-P18 to P25-P27.
+3. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P52, including the physical scale branches from P11-P18 to P25-P27.
 4. [Equation and citation map](equation_and_citation_map.md) for equation-level provenance and theorem lineage.
 5. [Proposition 19](proposition_19_fundamental_physical_sufficiency.md) for the population physical-sufficiency theorem.
 6. [Proposition 20](proposition_20_finite_sample_residual_certification.md) for finite-sample certification of the P19 stochastic residual.
@@ -81,6 +81,7 @@ This page is the reading and reference index for the Mathematical Consciousness 
 | P49 | [Dyadic certification schedule](proposition_49_dyadic_stopping_overhead.md) | logarithmic certification looks with strictly less than twofold stopping-threshold overhead |
 | P50 | [Bounded-starvation asynchronous sampling](proposition_50_bounded_starvation_asynchronous_sampling.md) | H-fair priority sampling with finite global-round stopping and explicit no-starvation necessity |
 | P51 | [Heterogeneous finite-window service-rate stopping](proposition_51_heterogeneous_service_rate_stopping.md) | preparation-specific service windows and quotas with endpoint-bottleneck global stopping bounds |
+| P52 | [Capacity-optimal service allocation](proposition_52_capacity_optimal_service_allocation.md) | exact proportional-demand minimax service shares, capacity lower bound, uniqueness, and discrete quota optimum |
 
 ## Physics, mathematics, and quantitative figures
 
