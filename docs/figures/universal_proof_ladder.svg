@@ -62,8 +62,8 @@
     <text x="140" y="648" class="head">Physical-feature sufficiency</text>
     <text x="110" y="690" class="body">Feature-matched systems must not</text>
     <text x="110" y="718" class="body">split canonical bridge classes.</text>
-    <text x="110" y="752" class="eq">F(p)=F(p′) ⇒ B̄(p)=B̄(p′)</text>
-    <text x="110" y="780" class="body">Exact criterion: Proposition 5.</text>
+    <text x="110" y="746" class="eq">F(p)=F(p′) ⇒ B̄(p)=B̄(p′)</text>
+    <text x="110" y="766" class="body">Exact criterion: Proposition 5.</text>
   </g>
 
   <g id="u6" data-qa-block="true" data-x="640" data-y="612" data-width="520" data-height="185">
@@ -102,7 +102,7 @@
     <text x="680" y="955" class="body">IIT, GNWT, recurrent, higher-order,</text>
     <text x="680" y="983" class="body">predictive, and new bridge families</text>
     <text x="680" y="1011" class="body">share one declared test interface.</text>
-    <text x="680" y="1039" class="body">Experiment design: Proposition 4.</text>
+    <text x="680" y="1031" class="body">Experiment design: Proposition 4.</text>
   </g>
 
   <g id="u12" data-qa-block="true" data-x="1210" data-y="877" data-width="520" data-height="185">
