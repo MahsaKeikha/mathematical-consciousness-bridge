@@ -13,10 +13,11 @@ consciousness.
 
 from __future__ import annotations
 
+from collections.abc import Hashable, Mapping, Sequence
 from dataclasses import dataclass
 from itertools import combinations
 from math import isfinite
-from typing import Hashable, Mapping, Sequence, TypeVar
+from typing import TypeVar
 
 Vertex = TypeVar("Vertex", bound=Hashable)
 Edge = tuple[Vertex, Vertex]
