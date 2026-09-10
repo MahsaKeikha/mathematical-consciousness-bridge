@@ -496,7 +496,22 @@ P40 does not infer bridge regularity from quantum mechanics. The modulus is an i
 
 ---
 
-# 30. Candidate consciousness-theory feature families
+# 30. P41 trace-ball quantum envelope
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(D(\rho_x,\rho_{x'})\le D(\widehat\rho_x,\widehat\rho_{x'})+r_x+r_{x'}\) | true quantum pairwise distance control from simultaneous trace balls | standard triangle inequality applied here | standard trace distance; [P41](proposition_41_trace_ball_quantum_envelope.md) |
+| \(U^{\mathrm{ball}}_{xx'}=\min\{1,\widehat D^Q_{xx'}+r_x+r_{x'}\}\) | analytic outer bound on the P40 confidence-region envelope | repository construction | [P41](proposition_41_trace_ball_quantum_envelope.md) |
+| \(L^{\mathrm{ball}}_{xx'}=[\widehat D^Y_{xx'}-\varepsilon_x-\varepsilon_{x'}]_+\) | target-law lower confidence separation | triangle inequality | [P39](proposition_39_finite_data_quantum_nonfactorization.md); [P41](proposition_41_trace_ball_quantum_envelope.md) |
+| \(L^{\mathrm{ball}}_{xx'}>\omega(U^{\mathrm{ball}}_{xx'})\) | end-to-end continuous-region regularity obstruction | proved | [P40](proposition_40_continuous_quantum_region_regularity.md); [P41](proposition_41_trace_ball_quantum_envelope.md) |
+| \(M^{\mathrm{ball}}=L^{\mathrm{ball}}-LU^{\mathrm{ball}}\) | Lipschitz obstruction margin | repository definition | [P41](proposition_41_trace_ball_quantum_envelope.md) |
+| \(d_Y-Ld_Q>2\varepsilon+2Lr\) | symmetric unsaturated experimental design condition | derived sufficient inequality | [P41](proposition_41_trace_ball_quantum_envelope.md) |
+
+P41 assumes valid simultaneous confidence balls. It does not itself derive their statistical radii.
+
+---
+
+# 31. Candidate consciousness-theory feature families
 
 The following are source-grounded translations into generic feature notation. They are not claims that each named theory reduces to one scalar or one universally agreed implementation.
 
@@ -513,7 +528,7 @@ Detailed caveats and source roles are maintained in [Candidate Theory Families](
 
 ---
 
-# 31. Citation discipline
+# 32. Citation discipline
 
 A result is cited as a repository result when the bridge-specific statement, construction, or counterexample is introduced here.
 
