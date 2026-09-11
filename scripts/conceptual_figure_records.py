@@ -5,6 +5,17 @@ from pathlib import Path
 from typing import Any
 
 RECORDS: dict[str, dict[str, str]] = {
+    "docs/figures/p60_integer_transition_calibration.svg": {
+        "title": "P60 hard-budget integer rounding with certified overhead",
+        "description": (
+            "What this figure shows: P60 converts the exact P59 continuous unit-cost calibration design into executable whole-measurement counts while respecting a hard integer budget. It solves P59 at the deliberately reduced budget N0 = B - m, rounds every edge count upward, and certifies both feasibility and the resulting uncertainty overhead relative to the full-budget continuous optimum. "
+            "How to read it: move left to right across the top row from the hard budget to the reduced P59 allocation and then to ceiling rounding. The center theorem panel combines the budget-feasibility proof with the deterministic uncertainty guarantee. Follow the three lower branches to the full-budget multiplicative overhead, the sufficient target-uncertainty budget, and the distinction between this constructive guarantee and P61 exact integer optimality. "
+            "Main takeaway: P60 gives a closed-form auditable integer construction with an explicit worst-case overhead; it is conservative and is not claimed to be the exact integer optimum."
+        ),
+        "status": (
+            "Deterministic rounding and experimental-budget theorem for the declared calibration surrogate. It does not validate the observation model or sensitivity weights, identify a transition metric with consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness."
+        ),
+    },
     "docs/figures/p61_exact_integer_transition_calibration.svg": {
         "title": "P61 exact unit-cost integer transition calibration",
         "description": (
