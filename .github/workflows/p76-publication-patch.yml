@@ -19,7 +19,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Preflight script guard ordering
+      - name: Preflight script guard ordering and wording
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -34,10 +34,22 @@ jobs:
                   '"**[Read the complete P1 to P76 detailed proposition record](docs/detailed_proposition_record.md).**",\n        "**[Read the complete P1 to P76 detailed proposition record](docs/detailed_proposition_record.md).**",',
                   '"**[Read the complete P1 to P75 detailed proposition record](docs/detailed_proposition_record.md).**",\n        "**[Read the complete P1 to P76 detailed proposition record](docs/detailed_proposition_record.md).**",',
               ),
+              (
+                  '"P76 propagates one shared sixteen-cell Hoeffding event through those polynomial restrictions."',
+                  '"P76 propagates one shared sixteen-cell Hoeffding event through those polynomial restrictions. This is not an acceptance test."',
+              ),
+              (
+                  'If the data do not reject it, P76 deliberately does not call the model validated.',
+                  'If the data do not reject it, P76 deliberately does not call the model validated: non-rejection is not model acceptance.',
+              ),
+              (
+                  'P76 asks when finite experimental data are strong enough to demonstrate that one of those requirements has genuinely failed.',
+                  'P76 asks when finite data are strong enough to demonstrate that one of those requirements has genuinely failed.',
+              ),
           ]
           for old, new in replacements:
               if old not in text:
-                  raise SystemExit(f'expected preflight script token not found: {old[:80]}')
+                  raise SystemExit(f'expected preflight script token not found: {old[:100]}')
               text = text.replace(old, new, 1)
           p.write_text(text, encoding='utf-8')
           PY
