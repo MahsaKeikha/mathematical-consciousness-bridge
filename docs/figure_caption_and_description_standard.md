@@ -105,4 +105,6 @@ The catalog complements, rather than replaces:
 
 Repository tests enforce the minimum mechanical requirements: SVG title/description metadata, catalog coverage, reader-facing README captions, quantitative-atlas explanation fields, and geometry checks for figures whose layout carries theorem meaning. These checks do not replace scientific judgment, but they prevent undocumented, visually orphaned, overflowing, or structurally ambiguous figures from silently entering the public research record.
 
+The figure-documentation generators and their regression tests must also remain lint-clean so that the visual metadata pipeline is reproducible, reviewable, and safe to rerun as the repository evolves.
+
 A figure should be revised whenever a reader could reasonably ask, “What exactly am I supposed to infer from this?” and the answer is not immediately available beside or inside the visual.
