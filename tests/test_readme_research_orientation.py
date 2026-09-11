@@ -5,6 +5,12 @@ README = ROOT / "README.md"
 DETAIL = ROOT / "docs" / "detailed_proposition_record.md"
 
 
+def _plain_language_section(text: str) -> str:
+    start = text.index("# What this project is trying to achieve, in plain language")
+    end = text.index("# Abstract", start)
+    return text[start:end]
+
+
 def test_readme_follows_reader_first_scientific_order():
     text = README.read_text(encoding="utf-8")
     plain = text.index("# What this project is trying to achieve, in plain language")
@@ -43,27 +49,42 @@ def test_readme_follows_reader_first_scientific_order():
 
 def test_plain_language_section_explains_full_program_without_equations():
     text = README.read_text(encoding="utf-8")
-    start = text.index("# What this project is trying to achieve, in plain language")
-    end = text.index("# Abstract")
-    section = text[start:end]
+    section = _plain_language_section(text)
 
     required = (
+        "would that description also be enough to determine what, if anything, is experienced",
         "physical-to-experiential bridge",
-        "not trying to choose an impressive physical quantity and rename it consciousness",
-        "independently justified experiential target",
-        "circularity problem",
-        "measurement noise",
-        "reliability of that target measurement",
-        "statistical uncertainty",
-        "explicit attempts at falsification",
+        "without assuming the answer in advance",
+        "define the physical side clearly",
+        "define the experiential target independently",
+        "P71 formalizes this circularity problem",
+        "P72 therefore separates the underlying target from the way it is observed",
+        "P73 asks when that reliability can be learned",
+        "its reliability must itself be identifiable, independently calibrated, or honestly left uncertain",
+        "does the physical description actually contain enough information",
+        "would not automatically prove that consciousness lies outside physics",
+        "finite data",
+        "complete quantum description",
+        "attempts to expose these alternatives",
+        "capable of proving that rule wrong if it is false",
         "physical-to-experiential bridge itself remains open",
     )
     for phrase in required:
         assert phrase in section, phrase
 
-    assert "$$" not in section
-    assert "\\boxed" not in section
-    assert "\\begin" not in section
+    for forbidden in (
+        "$$",
+        "\\boxed",
+        "\\begin",
+        "\\frac",
+        "I(E;",
+        "E=B",
+        "\\Omega",
+        "\\gamma",
+    ):
+        assert forbidden not in section, forbidden
+
+    assert len(section.split()) >= 850
 
 
 def test_research_at_a_glance_covers_the_full_scientific_program():
