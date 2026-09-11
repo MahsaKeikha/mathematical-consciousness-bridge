@@ -25,6 +25,6 @@ def test_p50_visual_and_proof_to_code_path_are_public():
         "p50_bounded_starvation_asynchronous_sampling.svg",
         "bounded_starvation_sampling.py",
         "test_bounded_starvation_sampling.py",
-        "P50 - bounded-starvation asynchronous sampling",
+        "**Proposition 50**",
     ):
         assert token in readme
