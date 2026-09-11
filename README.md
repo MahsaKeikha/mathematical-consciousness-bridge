@@ -1,14 +1,14 @@
 # Mathematical Consciousness Bridge
 
 [![tests](https://github.com/MahsaKeikha/mathematical-consciousness-bridge/actions/workflows/test.yml/badge.svg)](https://github.com/MahsaKeikha/mathematical-consciousness-bridge/actions/workflows/test.yml)
-[![version](https://img.shields.io/badge/version-0.72.0-2563eb)](CITATION.cff)
+[![version](https://img.shields.io/badge/version-0.73.0-2563eb)](CITATION.cff)
 [![license](https://img.shields.io/badge/license-MIT-059669)](LICENSE)
 
 **Mahsa Keikha, PhD**
 
 > **What mathematical and physical conditions would be required for a complete physical description of a system to support a scientifically testable claim about consciousness?**
 
-This repository is a mathematical-physics research program for the **physical-to-experiential bridge problem**. It does not begin by assuming what consciousness is. It asks what must be true before any proposed physical description can legitimately be called sufficient for an independently specified experiential target, how that sufficiency can be falsified, and how finite experiments can distinguish a real bridge from correlation, representation choice, coarse-graining, target circularity, target-measurement error, or statistical noise.
+This repository is a mathematical-physics research program for the **physical-to-experiential bridge problem**. It does not begin by assuming what consciousness is. It asks what must be true before any proposed physical description can legitimately be called sufficient for an independently specified experiential target, how that sufficiency can be falsified, and how finite experiments can distinguish a real bridge from correlation, representation choice, coarse-graining, target circularity, target-measurement error, unidentified target-channel reliability, or statistical noise.
 
 ![Research architecture](docs/figures/research_architecture.svg)
 
@@ -18,35 +18,31 @@ This repository is a mathematical-physics research program for the **physical-to
 
 # What this project is trying to achieve, in plain language
 
-Physics can tell us how a system changes. Neuroscience can measure electrical, chemical, hemodynamic, behavioral, and perturbational responses. Information theory can quantify dependence. Causal inference can distinguish observation from intervention. Quantum mechanics can specify states, channels, and measurement statistics. None of these facts, by themselves, tell us whether a physical description contains all distinctions required to determine an experiential variable.
+The question behind this project is simple to state, even though answering it rigorously is difficult: **if we describe a physical system in enough detail, is that description also enough to determine every experiential distinction that a theory of consciousness claims to explain?**
 
-The central problem is therefore not to search for an impressive scalar and label it consciousness. It is to ask a stricter question:
+Physics can describe what a system is made of, how it changes, and how it responds to forces, fields, measurements, or interventions. Neuroscience can record electrical, chemical, hemodynamic, behavioral, and perturbational responses. Information theory can measure statistical dependence. Causal inference can distinguish observation from intervention. Quantum mechanics can describe states, transformations, and measurement probabilities. These are powerful descriptions of physical structure and behavior. But none of them, by themselves, establish the missing step from a physical description to experience. That missing step is the **physical-to-experiential bridge**.
 
-> Given a declared physical description, can an independently justified target be determined from it, or can we construct a reproducible counterexample showing that physically indistinguishable cases remain target-distinguishable?
+This research is therefore not trying to choose an impressive physical quantity and rename it consciousness. It is trying to define what would have to be demonstrated before any proposed physical quantity, neural pattern, causal structure, quantum description, or other physical model could reasonably be claimed to contain all the information required for a stated experiential distinction.
 
-The word **independently** is now formalized in two steps. P71 proves that a target constructed from the tested physical descriptor makes the bridge test circular. P72 then shows that even a non-circular latent target may be observed through a noisy channel that attenuates or erases the evidence. A credible bridge experiment must therefore justify both the **target-construction protocol** and the **target-measurement protocol**.
+The basic idea is intuitive. Imagine two cases that are indistinguishable according to the physical description being tested. If an independently justified experiential target can still distinguish those two cases, then that physical description is not sufficient for that target. The correct response would not be to conclude that physics has failed. It would be to conclude that the particular physical description being tested is missing something relevant, is too coarse, is measured incorrectly, or is being used with an inadequate bridge model.
 
-The working chain is
+The opposite result also requires care. Suppose the physical description and the target always agree. That agreement is meaningful only if the target was defined independently. If the target was created from the same physical measurements being tested, then agreement was built into the experiment from the beginning. P71 formalizes this circularity problem. A successful bridge test must not be guaranteed by the way the target was constructed.
 
-$$
-\boxed{
-\text{physical dynamics}
-\to
-\text{operational structure}
-\to
-\text{non-circular target}
-\to
-\text{measurement-aware target observation}
-\to
-\text{sufficiency / insufficiency test}
-\to
-\text{finite-data certificate}
-\to
-\text{bridge law or falsification}
-}
-$$
+Even an independently defined target may not be observed perfectly. Human reports can be incomplete, behavioral responses can fail, clinical labels can be noisy, and any measurement process can lose information. P72 therefore separates the underlying target from the way that target is observed and asks how much of a genuine distinction can survive measurement noise. A negative result is not automatically evidence that no distinction exists if the measurement process could have erased it.
 
-The research currently contains **72 proposition-level results** and **61 equation-driven quantitative figures**. The theorem frontier is P72. The physical-to-experiential bridge itself remains open.
+P73 goes one step further. It asks whether the reliability of that target measurement can itself be learned from the data rather than simply assumed. Under one deliberately narrow three-view statistical model, the answer is yes at the population level: three appropriately independent measurements can identify their latent measurement reliability up to an unavoidable relabeling of the hidden states. Two uncalibrated measurements are not enough in general. This matters because a bridge experiment should not rely on an unknown measurement channel while treating its output as unquestionable ground truth.
+
+Taken together, the target-side logic is straightforward: the target must be defined independently of the physical descriptor, the way it is observed must be modeled explicitly, and the reliability of that observation must be identified, calibrated, or honestly left uncertain. Only then does it make sense to ask whether the physical description is sufficient for the target.
+
+The rest of the project builds the physical and statistical side of the same test. It asks which physical distinctions survive changes of representation and scale, which causal and temporal structures can actually be measured, how quantum descriptions should be treated without assuming that consciousness is quantum, how uncertainty should be propagated, and how experiments can remain valid when data are finite and measurements are chosen adaptively.
+
+In plain language, the research follows one disciplined path: start with a clearly defined physical system, build an operational description that can actually be measured, define the experiential target independently, verify how that target is observed, characterize the reliability of the observation, test whether the physical description really determines the target, and finally require the conclusion to survive statistical uncertainty and explicit attempts at falsification.
+
+A successful outcome could take either of two forms. One possibility is a defensible bridge law that continues to survive increasingly demanding physical, statistical, and experimental tests. The other is a reproducible obstruction showing exactly where a proposed physical description fails to determine the target it claims to explain. Both outcomes are scientifically useful because both replace vague claims with explicit assumptions, measurable consequences, and failure conditions.
+
+The project does **not** currently claim to have solved consciousness, proved that consciousness is reducible to physics, proved that it is irreducible to physics, shown that it is quantum, or identified it with a new field, state of matter, scalar, or extra dimension. Its present contribution is more foundational: it is building the mathematical and experimental architecture required to make those stronger claims precise enough to test.
+
+The research currently contains **73 proposition-level results** and **61 equation-driven quantitative figures**. The theorem frontier is P73. The physical-to-experiential bridge itself remains open.
 
 This project continues [Spatiotemporal Observer Mathematics](https://github.com/MahsaKeikha/spatiotemporal-observer-math), which addresses the prior physical problem of identifying a persistent moving subsystem from measured dynamics.
 
@@ -65,6 +61,8 @@ $$
 $$
 
 Target measurement can therefore attenuate or erase a genuine population witness, but under that model it cannot create a positive observed residual from a latent target already screened off by $T$. P72 also gives total-variation witness bounds, an exact binary symmetric attenuation factor, and a conservative finite-sample target-separation certificate.
+
+P73 addresses the channel-identification problem. In one fixed physical stratum, let a binary latent target $S\in\{-1,+1\}$ generate three conditionally independent binary target views with $\mathbb E[X_j\mid S]=a_j+b_jS$. Under interior prevalence and nonzero loadings, observable pair covariances and the third centered moment identify the latent prevalence and all three view channels up to a common latent-label swap. The P72 single-view stability coefficients are $\gamma_j=|b_j|$ and are invariant under that swap. P73 also gives an exact two-view counterexample showing that individual channel reliabilities are not generally identifiable from only two views.
 
 These results establish a rigorous **test architecture**, not a completed ontology of consciousness.
 
@@ -87,7 +85,7 @@ This distinction is central. The repository **does not assume that a physical qu
 
 **Quantum mechanics does not by itself imply consciousness.** A complete quantum state specifies the outcome statistics of declared measurements, but an experiential conclusion requires an additional bridge statement unless that bridge is independently derived.
 
-Likewise, a latent target symbol such as $E^\star$ is not a declaration of experiential ground truth. P71 and P72 formalize what would have to be true before such a target can carry bridge evidence.
+Likewise, a latent target symbol such as $E^\star$ or $S$ is not a declaration of experiential ground truth. P71-P73 formalize separate requirements on target provenance, observation, and channel identifiability before such a target can carry bridge evidence.
 
 ---
 
@@ -117,14 +115,15 @@ $$
 \boxed{R_{\mathrm{stoch}}(T)=I(E;\Omega\mid T).}
 $$
 
-But those equations have evidential content only after two additional questions are answered: Was $E$ constructed independently of the factorization being tested? If $E$ is latent, does the observation process preserve its distinctions rather than manufacture or erase them?
+But those equations have evidential content only after additional target-side questions are answered: Was $E$ constructed independently of the factorization being tested? If $E$ is latent, does the observation process preserve its distinctions rather than manufacture or erase them? Is the reliability of that observation channel identified, externally calibrated, or merely assumed?
 
 | Layer | Mathematical object | Scientific question | Failure witness |
 | --- | --- | --- | --- |
 | Physical description | $T(\omega)$ | Is the declared physics represented without arbitrary coordinate dependence? | Representation or identifiability failure |
 | Operational structure | response laws and causal geometry | Do interventions expose physically meaningful distinctions? | Collision or missing causal distinction |
 | Target provenance | target-construction protocol | Was the target defined independently of the tested descriptor? | Descriptor-derived target, P71 |
-| Target measurement | $K_t(y\mid e)$ | Does noisy observation preserve the relevant target distinctions? | Erasure, differential measurement, unidentified channel |
+| Target measurement | $K_t(y\mid e)$ | Does noisy observation preserve the relevant target distinctions? | Erasure or differential measurement, P72 |
+| Target-channel identification | multi-view target law | Is target reliability identified or calibrated rather than assumed? | Nonidentifiability or model degeneracy, P73 |
 | Bridge sufficiency | $E=B\circ T$ | Is the target constant on physical fibers? | Same $T$, different $E$ |
 | Stochastic sufficiency | $I(E;\Omega\mid T)$ | Is target-relevant information left outside $T$? | Certified positive residual |
 | Scale stability | coarse-graining plus reconstruction | Does relevant physical structure survive a change of resolution? | Uncontrolled reconstruction or distortion |
@@ -145,6 +144,7 @@ The main page is organized as a scientific argument rather than a chronological 
 | What is being measured? | [Section 2](#2-from-physical-dynamics-to-operational-structure) and [measurement map](docs/figures/conscious_state_measurement_map.svg) |
 | How do we avoid circular targets? | [P71](docs/proposition_71_target_provenance_noncircularity.md) |
 | How do noisy target measurements affect evidence? | [P72](docs/proposition_72_target_measurement_channel_robustness.md) |
+| When can target-channel reliability be identified? | [P73](docs/proposition_73_target_channel_identifiability.md) |
 | What has been proved? | [Theorem roadmap](docs/theorem_roadmap.md) and [What has actually been established](#what-has-actually-been-established) |
 | What remains unknown? | [What remains open](#what-remains-open) |
 | What would falsify a candidate bridge? | [Falsification logic](#falsification-logic) |
@@ -161,17 +161,17 @@ The main page is organized as a scientific argument rather than a chronological 
 | --- | --- | --- | --- | --- |
 | 1. Foundations and identifiability | **P1-P10** | What must be invariant, distinguishable, recoverable, and statistically testable? | Proved / implemented / tested | [Theorem roadmap](docs/theorem_roadmap.md) |
 | 2. Causal, temporal, compositional, and scale structure | **P11-P18** | Which structured physical distinctions survive interventions, time, composition, and coarse-graining? | Proved / implemented / tested | [Quantitative atlas](docs/quantitative_physics_mathematics_atlas.md) |
-| 3. Bridge sufficiency and target validity | **P19-P24, P71-P72** | Does an independently justified and adequately measured target factor through the physical descriptor? | Proved under declared models | [Research navigation](docs/research_navigation.md) |
+| 3. Bridge sufficiency and target validity | **P19-P24, P71-P73** | Does an independently justified, adequately measured, and reliability-characterized target factor through the physical descriptor? | Proved under declared models | [Research navigation](docs/research_navigation.md) |
 | 4. Multiscale operational structure | **P25-P37** | Which causal and response structures survive node, state, intervention, and delay quotients? | Proved / implemented / tested | [Theorem roadmap](docs/theorem_roadmap.md) |
 | 5. Quantum sufficiency and falsification | **P38-P44** | What follows from a declared operational quantum description, and what does not? | Conditional tests proved; ontology open | [Quantum foundations](docs/quantum_foundations_and_bridge_test.md) |
 | 6. Adaptive experiment design and scheduling | **P45-P60** | How should evidence gathering, stopping, service allocation, switching, and calibration be organized? | Proved / implemented / tested | [Equation and citation map](docs/equation_and_citation_map.md) |
 | 7. Calibration and integer optimization | **P61-P70** | How should downstream finite calibration resources be allocated and certified? | Proved / implemented / tested | [Calibration and Optimization Frontier](docs/calibration_optimization_frontier_p61_p70.md) |
 
-The dependency-oriented theorem map covers **P1 through P72 with explicit dependency branches**.
+The dependency-oriented theorem map covers **P1 through P73 with explicit dependency branches**.
 
 ![Theorem roadmap](docs/figures/theorem_roadmap.svg)
 
-**Figure 3. Theorem dependency map.** Proposition numbers preserve development order, while the dependency map shows scientific order. P71 and P72 return to the P19 target-sufficiency lineage; P61-P70 remains a separate downstream optimization branch.
+**Figure 3. Theorem dependency map.** Proposition numbers preserve development order, while the dependency map shows scientific order. P71-P73 return to the P19 target-sufficiency lineage; P61-P70 remains a separate downstream optimization branch.
 
 ---
 
@@ -202,6 +202,8 @@ represent the target distinctions the proposed bridge claims to determine.
 | $E$ | target | justified independently enough to avoid definitional circularity |
 | $E^\star$ | latent target in P72 | not assumed to be consciousness; its provenance and measurement must be justified |
 | $Y$ | observed target measurement | related to $E^\star$ through an explicit observation model |
+| $S$ | binary latent target in P73 | a statistical latent variable whose semantic meaning requires independent justification |
+| $X_j$ | target view in P73 | one of three declared binary observations used to identify channel reliability under the model |
 | $B$ | candidate bridge law | maps physical equivalence classes to target distinctions |
 
 The target is intentionally not equated with verbal report or overt responsiveness. Dreaming, anesthesia, perturbational complexity, and covert command-related brain activation motivate keeping behavior, report, neural evidence, and experiential inference distinct.
@@ -339,6 +341,46 @@ $$
 
 Direct proof: [Proposition 72](docs/proposition_72_target_measurement_channel_robustness.md). Equation classification: [P72 provenance record](docs/p72_equation_provenance.md).
 
+## 1.7 P73: target-channel reliability can sometimes be identified
+
+P72's stability coefficient is useful only if it is scientifically justified. P73 gives an explicit population-identification result for one deliberately narrow model. In a fixed physical stratum $T=t$, let $S\in\{-1,+1\}$ be a binary latent target and let $X_1,X_2,X_3$ be three binary views that are conditionally independent given $S$. Write
+
+$$
+\mathbb E[X_j\mid S]=a_j+b_jS.
+$$
+
+With $m=\mathbb E[S]$ and $v=1-m^2$, the observable moments obey
+
+$$
+\boxed{C_{ij}=b_ib_jv,}
+$$
+
+$$
+\boxed{M_{123}=-2mv\,b_1b_2b_3.}
+$$
+
+For nonzero loadings and interior prevalence,
+
+$$
+q=\frac{M_{123}^2}{C_{12}C_{13}C_{23}},
+\qquad
+\boxed{m^2=\frac{q}{q+4},\quad v=\frac4{q+4}.}
+$$
+
+The remaining channel parameters are then recovered after choosing one algebraic latent-label orientation. The common label swap remains observationally invisible, but the P72 stability coefficients do not depend on that orientation:
+
+$$
+\boxed{\gamma_j=|b_j|.}
+$$
+
+P73 also proves that two views are not enough in general. Under balanced prevalence and zero-intercept channels, the complete two-view law depends only on $b_1b_2$. The parameter pairs $(0.60,0.60)$ and $(0.45,0.80)$ therefore give the same observed law while having different individual channel reliabilities.
+
+![P73 target-channel identifiability](docs/figures/p73_target_channel_identifiability.svg)
+
+**Figure 8. P73 target-channel identifiability theorem.** Three nondegenerate conditionally independent binary views identify the declared latent-channel model up to a common label swap and identify the P72 stability quantities exactly at the population level. The two-view panel shows the constructive non-identifiability boundary. Statistical recovery does not identify the latent class with consciousness.
+
+Direct proof: [Proposition 73](docs/proposition_73_target_channel_identifiability.md). Equation and literature classification: [P73 provenance record](docs/p73_equation_provenance.md).
+
 ---
 
 # 2. From physical dynamics to operational structure
@@ -347,17 +389,17 @@ A useful bridge test cannot depend only on coordinates or passive correlations. 
 
 ![Causal structure anatomy](docs/figures/causal_structure_anatomy.svg)
 
-**Figure 8. Anatomy of the operational physical candidate.** Controlled interventions generate response distributions. Distances define response geometry; matched perturbations define directed influence; comparisons with partition-product nulls expose irreducibility. These are physical candidates to be tested for sufficiency, not definitions of consciousness.
+**Figure 9. Anatomy of the operational physical candidate.** Controlled interventions generate response distributions. Distances define response geometry; matched perturbations define directed influence; comparisons with partition-product nulls expose irreducibility. These are physical candidates to be tested for sufficiency, not definitions of consciousness.
 
 ![Information geometry of intervention-response laws](docs/figures/information_geometry_response_manifold.svg)
 
-**Figure 9. Response laws as a physical geometry.** Parameterized intervention-conditioned probability laws can be studied using operational distances and local statistical geometry. An experiential geometry would still require a separately justified bridge.
+**Figure 10. Response laws as a physical geometry.** Parameterized intervention-conditioned probability laws can be studied using operational distances and local statistical geometry. An experiential geometry would still require a separately justified bridge.
 
 P12 then uses constructive collisions to show why compressed components or attractive scalars cannot simply be assumed sufficient.
 
 ![Constructive component collisions](docs/figures/p12_collision_map.svg)
 
-**Figure 10. Constructive collision tests.** A compressed physical feature must earn sufficiency by factorization or reconstruction, not by visual plausibility or correlation.
+**Figure 11. Constructive collision tests.** A compressed physical feature must earn sufficiency by factorization or reconstruction, not by visual plausibility or correlation.
 
 ---
 
@@ -367,17 +409,17 @@ P14 treats temporal continuation as a path property rather than endpoint identit
 
 ![Temporal continuation](docs/figures/p14_temporal_continuation.svg)
 
-**Figure 11. Temporal continuation.** Representation-equivalent descriptions are quotiented out while local structural changes are accumulated along a trajectory. Endpoint equality alone cannot certify a continuous physical history.
+**Figure 12. Temporal continuation.** Representation-equivalent descriptions are quotiented out while local structural changes are accumulated along a trajectory. Endpoint equality alone cannot certify a continuous physical history.
 
 For deterministic coarse observation, total variation contracts. P18 adds an approximate reconstruction condition that bounds the distortion of the relevant response geometry.
 
 ![Scale sufficiency certificate](docs/figures/p18_scale_sufficiency_certificate.svg)
 
-**Figure 12. Scale sufficiency logic.** Coarse-graining can erase distinctions, but reconstruction control bounds how much declared response geometry was lost.
+**Figure 13. Scale sufficiency logic.** Coarse-graining can erase distinctions, but reconstruction control bounds how much declared response geometry was lost.
 
 ![Multiscale physical hierarchy](docs/figures/multiscale_physical_hierarchy.svg)
 
-**Figure 13. Multiscale hierarchy.** A scientifically credible descriptor must state which objects survive changes of scale, which require compatibility conditions, and which acquire bounded distortion.
+**Figure 14. Multiscale hierarchy.** A scientifically credible descriptor must state which objects survive changes of scale, which require compatibility conditions, and which acquire bounded distortion.
 
 ---
 
@@ -389,9 +431,9 @@ P20 constructs a finite-sample confidence interval for the P19 conditional-infor
 
 ![Finite-sample residual certificate](docs/figures/p20_finite_sample_residual_certificate.svg)
 
-**Figure 14. From exact factorization to finite-data evidence.** A bridge claim is rejected only when a confidence-controlled lower bound remains positive under the declared sampling assumptions.
+**Figure 15. From exact factorization to finite-data evidence.** A bridge claim is rejected only when a confidence-controlled lower bound remains positive under the declared sampling assumptions.
 
-P72 applies the same philosophy on the target side. A positive empirical separation in a noisy target is not enough; the target alphabet, channel premise, and finite-sample uncertainty must be declared.
+P72 applies the same philosophy on the target side. A positive empirical separation in a noisy target is not enough; the target alphabet, channel premise, and finite-sample uncertainty must be declared. P73 is currently a population identifiability theorem, so finite-sample propagation through its nonlinear channel-recovery formulas remains a separate open obligation.
 
 ---
 
@@ -411,7 +453,7 @@ Thomas W. Campbell's *My Big TOE* and similar consciousness-first proposals are 
 
 ![Observer-to-bridge research handoff](docs/figures/observer_to_bridge_handoff.svg)
 
-**Figure 15. Research handoff.** The preceding observer-mathematics project identifies and statistically certifies a physical subsystem. This repository begins after that physical object is declared and asks what additional physical, target, and bridge conditions are required. No experiential property is inserted at the handoff.
+**Figure 16. Research handoff.** The preceding observer-mathematics project identifies and statistically certifies a physical subsystem. This repository begins after that physical object is declared and asks what additional physical, target, and bridge conditions are required. No experiential property is inserted at the handoff.
 
 ---
 
@@ -427,17 +469,17 @@ The bridge question is whether an independently justified target factors through
 
 ![Quantum bridge completeness map](docs/figures/quantum_bridge_completeness_map.svg)
 
-**Figure 16. Quantum completeness versus experiential completeness.** Tomographic completeness closes the declared operational quantum description. It does not automatically close the physical-to-experiential map.
+**Figure 17. Quantum completeness versus experiential completeness.** Tomographic completeness closes the declared operational quantum description. It does not automatically close the physical-to-experiential map.
 
 ![Quantum operational sufficiency](docs/figures/p38_quantum_operational_sufficiency.svg)
 
-**Figure 17. P38 quantum sufficiency test.** Equal declared quantum descriptors with unequal independently defined targets give an exact non-factorization witness. Finite data require uncertainty-aware replacements for exact equality.
+**Figure 18. P38 quantum sufficiency test.** Equal declared quantum descriptors with unequal independently defined targets give an exact non-factorization witness. Finite data require uncertainty-aware replacements for exact equality.
 
 P40 proves that finite sampled-state injectivity alone permits unrestricted lookup-table factorization, so meaningful continuous-region non-factorization requires a declared regularity class.
 
 ![Trace-ball quantum envelope](docs/figures/p41_trace_ball_quantum_envelope.svg)
 
-**Figure 18. Finite-data quantum envelope.** Quantum-state confidence regions and target uncertainty are propagated into an end-to-end regularity obstruction. The scientific conclusion is conditional on tomography coverage, the target measurement model, and the declared bridge regularity.
+**Figure 19. Finite-data quantum envelope.** Quantum-state confidence regions and target uncertainty are propagated into an end-to-end regularity obstruction. The scientific conclusion is conditional on tomography coverage, the target measurement model, and the declared bridge regularity.
 
 For the complete QM01-QM18 visual sequence, see [Quantum foundations and bridge test](docs/quantum_foundations_and_bridge_test.md).
 
@@ -449,7 +491,7 @@ P45-P58 develop shared preparation graphs, time-uniform confidence sequences, ad
 
 ![Sequential graph refinement](docs/figures/p47_sequential_graph_refinement.svg)
 
-**Figure 19. Adaptive evidence collection.** The experiment may choose what to sample next based on previous observations, but validity is protected by a shared time-uniform confidence event.
+**Figure 20. Adaptive evidence collection.** The experiment may choose what to sample next based on previous observations, but validity is protected by a shared time-uniform confidence event.
 
 ---
 
@@ -459,7 +501,7 @@ The detailed P61-P70 sequence belongs to the experimental implementation layer. 
 
 **[Read the complete Calibration and Optimization Frontier: P61-P70](docs/calibration_optimization_frontier_p61_p70.md).**
 
-This branch remains intentionally separate from P71-P72. Better optimization can make an experiment more efficient; it cannot rescue a circular target or an unidentified target-measurement channel.
+This branch remains intentionally separate from P71-P73. Better optimization can make an experiment more efficient; it cannot rescue a circular target, an invalid target-measurement channel, or a nonidentified reliability model.
 
 ---
 
@@ -478,7 +520,9 @@ The strongest current conclusions are methodological and conditional:
 9. P71 proves that descriptor-derived targets cannot independently validate sufficiency of the same descriptor.
 10. P72 proves that, under a nondifferential target channel, $I(Y;\Omega\mid T)\le I(E^\star;\Omega\mid T)$, while an erasing channel can hide a positive latent residual.
 11. P72 also provides target-TV contraction, a channel-stability lower bound, exact binary-symmetric attenuation, and a finite-sample target-separation certificate.
-12. The experiment-design branch provides scheduling, stopping, calibration, integer optimization, and primal-dual certification without promoting those results into consciousness ontology.
+12. P73 proves population identifiability of a nondegenerate binary latent target and three conditionally independent binary target channels up to a global latent-label swap, with explicit recovery of the P72 stability coefficients.
+13. P73 gives a constructive two-view non-identifiability theorem showing that two target views do not generally determine individual channel reliabilities.
+14. The experiment-design branch provides scheduling, stopping, calibration, integer optimization, and primal-dual certification without promoting those results into consciousness ontology.
 
 These statements do **not** prove that consciousness is reducible to the current physical descriptors, irreducible to physics, quantum, non-quantum, a field, a state of matter, or an additional dimension.
 
@@ -490,16 +534,18 @@ The central bridge remains open. Before a strong bridge claim can be made, the p
 
 - define experiential variables independently enough to satisfy P71;
 - justify how those latent targets are observed and whether the P72 channel premise is defensible;
-- identify or bound target-channel stability rather than assuming it;
+- quantify finite-sample uncertainty in the P73 channel recovery rather than confusing population identifiability with reliable estimation;
+- test the P73 conditional-independence and binary latent-class assumptions rather than treating them as automatically valid;
+- provide an independent semantic anchor when latent-label orientation matters scientifically;
 - identify which physical descriptor is justified by experiment rather than convenience;
 - test target distinctions across interventions, time, scale, and composition;
 - quantify uncertainty strongly enough to rule out estimation artifacts;
 - specify the regularity or structural class of admissible bridge laws;
 - design decisive experiments for competing bridge theories.
 
-A particularly immediate next problem is **target-channel identifiability**. P72 conditions on a declared channel or stability bound. It does not yet prove when that channel can be recovered from repeated reports, multiple raters, multiple target views, calibration data, or structural assumptions.
+A particularly immediate next problem is **finite-sample target-channel recovery certification**. P73 identifies the target channels at the population level under explicit nondegeneracy. It does not yet propagate empirical joint-law error through the nonlinear moment inversion into confidence intervals for prevalence, channel parameters, or the P72 stability coefficients.
 
-A claim of non-reducibility would require a valid obstruction relative to a sufficiently complete physical description, a scientifically defensible target, a controlled measurement channel, and an admissible bridge class. Failure of one coarse descriptor is not failure of physics.
+A claim of non-reducibility would require a valid obstruction relative to a sufficiently complete physical description, a scientifically defensible target, a controlled and reliability-characterized measurement channel, and an admissible bridge class. Failure of one coarse descriptor is not failure of physics.
 
 ---
 
@@ -511,6 +557,7 @@ A claim of non-reducibility would require a valid obstruction relative to a suff
 | Descriptor $T$ is stochastically sufficient | Certified positive $I(E;\Omega\mid T)$ | Positive empirical estimate without uncertainty control |
 | Target is independently evidential | Provenance shows it was not constructed from tested $T$ | Train/test separation alone |
 | Observed target faithfully supports latent witness | Channel premise or stability fails | Treating a report or label as transparent ground truth |
+| Target-channel reliability is identified | Multi-view model is degenerate or observationally nonidentifiable | Agreement between only two uncalibrated views |
 | Coarse scale preserves relevant structure | Reconstruction/distortion bounds fail | Visual similarity |
 | Quantum descriptor is sufficient under class $\mathcal B$ | Certified target separation exceeds every admissible bridge image from the quantum confidence region | Numerically close tomography estimates |
 | Adaptive experiment is valid | Confidence or non-anticipation assumptions are violated | Adaptivity by itself |
@@ -518,7 +565,7 @@ A claim of non-reducibility would require a valid obstruction relative to a suff
 
 ![Theory-comparative interface](docs/figures/theory_comparison_map.svg)
 
-**Figure 20. Common interface for competing theory families.** Existing consciousness theories and the repository's intervention-resolved physical candidate can be compared through physical feature family, bridge architecture, target construction, measurement interface, and discriminating experiment rather than by assuming one theory is the default answer.
+**Figure 21. Common interface for competing theory families.** Existing consciousness theories and the repository's intervention-resolved physical candidate can be compared through physical feature family, bridge architecture, target construction, measurement interface, and discriminating experiment rather than by assuming one theory is the default answer.
 
 See the [Falsification program](docs/falsification_program.md) for explicit repository-level failure conditions.
 
@@ -532,13 +579,14 @@ The repository keeps standard mathematics, physical theory, empirical evidence, 
 | --- | --- |
 | [Equation and citation map](docs/equation_and_citation_map.md) | Standard versus repository-derived equations and theorem lineage |
 | [P72 equation and provenance record](docs/p72_equation_provenance.md) | Target-measurement theorem equation classification and external context |
+| [P73 equation and provenance record](docs/p73_equation_provenance.md) | Three-view latent-channel equation classification, literature context, and P72 stability connection |
 | [Foundational physics and mathematics bibliography](docs/foundational_physics_mathematics_bibliography.md) | Mathematics, physics, information theory, and causal inference sources |
 | [Literature map](docs/literature_map.md) | Consciousness theory and empirical comparison literature |
 | [`fundamental_theory_references.bib`](docs/fundamental_theory_references.bib) | Machine-readable fundamental-physics references |
 | [Reference audit](docs/reference_audit.md) | Evidence-role and metadata audit |
 | [Citation and reference policy](docs/citation_and_reference_policy.md) | Attribution and scientific sourcing rules |
 
-Selected foundations include Shannon (1948), Cover and Thomas (2006), Pearl (2009), Lee (2013), Amari (2016), Landauer (1961), Casali et al. (2013), Tegmark (2015), Seth and Bayne (2022), Cogitate Consortium et al. (2025), Luppi et al. (2026), Siclari et al. (2017), Sarasso et al. (2015), and Claassen et al. (2019). P72 also points to noisy-label and repeated-observer identifiability literature as methodological context, while keeping those external methods separate from the P72 theorem proof.
+Selected foundations include Shannon (1948), Cover and Thomas (2006), Pearl (2009), Lee (2013), Amari (2016), Landauer (1961), Casali et al. (2013), Tegmark (2015), Seth and Bayne (2022), Cogitate Consortium et al. (2025), Luppi et al. (2026), Siclari et al. (2017), Sarasso et al. (2015), and Claassen et al. (2019). Dawid and Skene (1979) and Allman, Matias, and Rhodes (2009) provide methodological context for latent observer-error models and latent-structure identifiability. Their general results are not claimed as repository-original contributions.
 
 ---
 
@@ -556,7 +604,7 @@ The main page shows only the figures needed to recover the scientific argument. 
 
 ![Equation evidence map](docs/figures/equation_evidence_map.svg)
 
-**Figure 21. Evidence provenance.** A mathematical identity, a theorem under assumptions, a numerical result, an empirical observation, and a target-measurement premise are different kinds of evidence. The project keeps those routes explicit.
+**Figure 22. Evidence provenance.** A mathematical identity, a theorem under assumptions, a numerical result, an empirical observation, and a target-measurement premise are different kinds of evidence. The project keeps those routes explicit.
 
 ---
 
@@ -619,7 +667,7 @@ This compact index preserves direct traceability for the quantum and experiment-
 
 The proposition-by-proposition development history is intentionally kept off the main scientific reading path.
 
-**[Read the complete P1 to P72 detailed proposition record](docs/detailed_proposition_record.md).**
+**[Read the complete P1 to P73 detailed proposition record](docs/detailed_proposition_record.md).**
 
 ---
 
@@ -627,18 +675,19 @@ The proposition-by-proposition development history is intentionally kept off the
 
 | Item | Current state |
 | --- | --- |
-| Public theorem frontier | **P72** |
-| Documented version | **v0.72.0** |
-| Proposition-level results | **72** |
+| Public theorem frontier | **P73** |
+| Documented version | **v0.73.0** |
+| Proposition-level results | **73** |
 | Equation-driven quantitative figures | **61** |
 | Target-provenance guard | **P71 proved under declared construction model** |
 | Target-measurement robustness | **P72 proved under declared nondifferential channel model** |
+| Target-channel identifiability | **P73 proved at population level under declared nondegenerate binary three-view model** |
 | Physical-to-experiential bridge | **Open physical-to-experiential bridge** |
 | Quantum ontology claim | **Not assumed** |
 | Consciousness identified with a scalar, state of matter, or spacetime coordinate | **Not claimed** |
 | Reproducibility | Python 3.10, 3.11, and 3.12 test matrix plus theorem-specific regression guards |
 
-The scientific target is precise: continue reducing ambiguity in the physical description, target provenance, target measurement, admissible bridge class, and experiment until either a bridge is derived and survives falsification or a valid obstruction demonstrates exactly where the declared description is insufficient.
+The scientific target is precise: continue reducing ambiguity in the physical description, target provenance, target measurement, channel identifiability, admissible bridge class, and experiment until either a bridge is derived and survives falsification or a valid obstruction demonstrates exactly where the declared description is insufficient.
 
 ---
 
@@ -650,7 +699,9 @@ The scientific target is precise: continue reducing ambiguity in the physical de
 | Read the proposition chronology | [Detailed proposition record](docs/detailed_proposition_record.md) |
 | Inspect target non-circularity | [P71](docs/proposition_71_target_provenance_noncircularity.md) |
 | Inspect noisy target measurement | [P72](docs/proposition_72_target_measurement_channel_robustness.md) |
+| Inspect target-channel identifiability | [P73](docs/proposition_73_target_channel_identifiability.md) |
 | Audit P72 equations | [P72 equation and provenance record](docs/p72_equation_provenance.md) |
+| Audit P73 equations and latent-class context | [P73 equation and provenance record](docs/p73_equation_provenance.md) |
 | Inspect P61-P70 calibration | [Calibration and Optimization Frontier](docs/calibration_optimization_frontier_p61_p70.md) |
 | Follow work by scientific question | [Research navigation](docs/research_navigation.md) |
 | Audit equations and citations | [Equation and citation map](docs/equation_and_citation_map.md) |
@@ -676,7 +727,7 @@ If this research program, one of its propositions, figures, algorithms, or imple
 
 ## Preferred scholarly citation
 
-> **Keikha, M. (2026). *Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem* (Version 0.72.0). GitHub research repository. https://github.com/MahsaKeikha/mathematical-consciousness-bridge**
+> **Keikha, M. (2026). *Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem* (Version 0.73.0). GitHub research repository. https://github.com/MahsaKeikha/mathematical-consciousness-bridge**
 
 ## BibTeX
 
@@ -685,10 +736,10 @@ If this research program, one of its propositions, figures, algorithms, or imple
   author       = {Keikha, Mahsa},
   title        = {Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem},
   year         = {2026},
-  version      = {0.72.0},
+  version      = {0.73.0},
   howpublished = {GitHub research repository},
   url          = {https://github.com/MahsaKeikha/mathematical-consciousness-bridge},
-  note         = {Ongoing research program. Current documented theorem frontier: P72.}
+  note         = {Ongoing research program. Current documented theorem frontier: P73.}
 }
 ```
 
