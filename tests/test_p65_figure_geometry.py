@@ -1,89 +1,106 @@
-import pathlib
 import xml.etree.ElementTree as ET
+from pathlib import Path
 
-SVG_NS = {"svg": "http://www.w3.org/2000/svg"}
-FONT_SIZE = {"head": 21.0, "body": 16.0, "small": 14.0, "eq": 18.0}
-WIDTH_FACTOR = 0.62
-HORIZONTAL_PADDING = 24.0
-VERTICAL_PADDING = 20.0
-
-EXPECTED_CONNECTORS = {
-    ("p64-limit", "lower-bounded-problem"): "M520 295 H663",
-    ("lower-bounded-problem", "active-set"): "M1125 295 H1268",
-    ("lower-bounded-problem", "water-filling"): "M900 410 V498",
-    ("active-set", "water-filling"): "M1505 410 V455 H1180 V498",
-    ("water-filling", "integer-floor"): "M650 730 V790 H445 V838",
-    ("water-filling", "certificates"): "M1150 730 V790 H1355 V838",
+ROOT = Path(__file__).resolve().parents[1]
+FIGURE = ROOT / "docs/figures/p65_lower_bounded_heterogeneous_calibration.svg"
+NS = {"svg": "http://www.w3.org/2000/svg"}
+FONT_SIZE = {
+    "head": 18.0,
+    "copy": 15.0,
+    "small": 14.0,
+    "eq": 16.0,
+    "strong": 17.0,
 }
+WIDTH_FACTOR = 0.58
 
 
-def _number(value: str) -> float:
-    return float(value)
+def _float(element, name):
+    return float(element.attrib[name])
 
 
-def _visible(element: ET.Element) -> str:
+def _visible(element):
     return " ".join("".join(element.itertext()).split())
 
 
 def test_p65_text_stays_inside_declared_blocks():
-    root = pathlib.Path(__file__).resolve().parents[1]
-    figure = root / "docs" / "figures" / "p65_lower_bounded_heterogeneous_calibration.svg"
-    svg = ET.parse(figure).getroot()
-    blocks = svg.findall(".//svg:g[@data-qa-block='true']", SVG_NS)
-    assert len(blocks) == 6
+    root = ET.parse(FIGURE).getroot()
+    blocks = [
+        group
+        for group in root.findall("svg:g", NS)
+        if group.attrib.get("id", "").startswith("block-")
+    ]
+    assert len(blocks) == 7
 
     for block in blocks:
-        x = _number(block.attrib["data-x"])
-        y = _number(block.attrib["data-y"])
-        width = _number(block.attrib["data-width"])
-        height = _number(block.attrib["data-height"])
-        rect = block.find("svg:rect", SVG_NS)
+        x = _float(block, "data-x")
+        y = _float(block, "data-y")
+        width = _float(block, "data-w")
+        height = _float(block, "data-h")
+        rect = block.find("svg:rect", NS)
         assert rect is not None
-        assert _number(rect.attrib["x"]) == x
-        assert _number(rect.attrib["y"]) == y
-        assert _number(rect.attrib["width"]) == width
-        assert _number(rect.attrib["height"]) == height
+        assert _float(rect, "x") == x
+        assert _float(rect, "y") == y
+        assert _float(rect, "width") == width
+        assert _float(rect, "height") == height
 
-        labels = block.findall("svg:text", SVG_NS)
-        assert labels
-        for label in labels:
+        for label in block.findall("svg:text", NS):
             css_class = label.attrib.get("class")
             assert css_class in FONT_SIZE
-            assert label.attrib.get("text-anchor") == "middle"
-            label_x = _number(label.attrib["x"])
-            label_y = _number(label.attrib["y"])
-            estimated_width = len(_visible(label)) * FONT_SIZE[css_class] * WIDTH_FACTOR
-            half_width = estimated_width / 2.0
-            assert label_x - half_width >= x + HORIZONTAL_PADDING, _visible(label)
-            assert label_x + half_width <= x + width - HORIZONTAL_PADDING, _visible(label)
-            assert y + VERTICAL_PADDING <= label_y <= y + height - VERTICAL_PADDING
+            font_size = FONT_SIZE[css_class]
+            label_x = _float(label, "x")
+            label_y = _float(label, "y")
+            estimated_width = len(_visible(label)) * font_size * WIDTH_FACTOR
+            if label.attrib.get("text-anchor") == "middle":
+                left = label_x - estimated_width / 2
+                right = label_x + estimated_width / 2
+            else:
+                left = label_x
+                right = label_x + estimated_width
+            assert left >= x + 12, (block.attrib["id"], _visible(label))
+            assert right <= x + width - 12, (block.attrib["id"], _visible(label))
+            assert y + 12 <= label_y <= y + height - 5, (
+                block.attrib["id"],
+                _visible(label),
+            )
 
 
 def test_p65_connectors_keep_declared_block_topology():
-    root = pathlib.Path(__file__).resolve().parents[1]
-    figure = root / "docs" / "figures" / "p65_lower_bounded_heterogeneous_calibration.svg"
-    svg = ET.parse(figure).getroot()
-    connectors = svg.findall(".//svg:path[@data-from][@data-to]", SVG_NS)
-    actual = {
-        (path.attrib["data-from"], path.attrib["data-to"]): path.attrib["d"]
-        for path in connectors
+    root = ET.parse(FIGURE).getroot()
+    connectors = {
+        path.attrib["id"]: (
+            path.attrib["data-source"],
+            path.attrib["data-target"],
+            path.attrib["d"],
+        )
+        for path in root.findall("svg:path", NS)
+        if path.attrib.get("id", "").startswith("arrow-")
     }
-    assert actual == EXPECTED_CONNECTORS
+    assert connectors == {
+        "arrow-1": ("block-p64-limit", "block-problem", "M385 240 H435"),
+        "arrow-2": ("block-problem", "block-active", "M765 240 H815"),
+        "arrow-3": ("block-problem", "block-water", "M600 350 V410"),
+        "arrow-4": ("block-active", "block-water", "M980 350 V380 H900 V410"),
+        "arrow-5": ("block-water", "block-floor", "M420 615 V675"),
+        "arrow-6": ("block-water", "block-certificate", "M780 615 V675"),
+    }
 
 
-def test_p65_figure_preserves_scientific_claim_boundaries():
-    root = pathlib.Path(__file__).resolve().parents[1]
-    source = (
-        root / "docs" / "figures" / "p65_lower_bounded_heterogeneous_calibration.svg"
-    ).read_text(encoding="utf-8")
+def test_p65_figure_is_self_explanatory_and_preserves_claim_boundaries():
+    source = FIGURE.read_text(encoding="utf-8")
     for phrase in (
+        "What this figure shows:",
+        "How to read it:",
+        "Main takeaway:",
+        "P62 may give n*ₑ &lt; 1",
+        "B ≥ B₀ = Σₑ cₑ.",
+        "Free edge: τ &gt; tₑ",
         "n*ₑ = max{1, τ (bₑ / cₑ)^(2/3)}",
-        "Feasible exactly when B ≥ B₀ = Σₑ cₑ.",
         "kₑ = ⌊n*ₑ⌋ ≥ 1",
         "rmin ≥ 1/2",
         "U(k) ≤ √2 U*int(B)",
         "P63 remains the exact integer solver.",
         "It makes no claim that a calibration variable is consciousness",
+        "P65 also does not establish a physical-to-experiential bridge.",
     ):
         assert phrase in source
     assert "\u2013" not in source

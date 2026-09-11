@@ -5,6 +5,17 @@ from pathlib import Path
 from typing import Any
 
 RECORDS: dict[str, dict[str, str]] = {
+    "docs/figures/p65_lower_bounded_heterogeneous_calibration.svg": {
+        "title": "P65 lower-bounded heterogeneous calibration",
+        "description": (
+            "What this figure shows: P65 removes the regime restriction in P64 by solving the heterogeneous-cost continuous allocation problem with the mandatory one-observation lower bound built in before rounding. "
+            "How to read it: move left to right across the top row from the P64 failure mode to the constrained P65 problem and its thresholded active set. The two center arrows then feed the exact lower-bounded water-filling theorem. From that theorem, follow the two lower arrows to the baseline-safe integer floor and its certified objective-quality bound. "
+            "Main takeaway: the continuous P65 allocation is uniquely optimal for the declared lower-bounded problem; flooring it is always feasible and is certified within an instance-specific factor no worse than square-root two, but the floor is not claimed to be the exact unrestricted integer optimum."
+        ),
+        "status": (
+            "Calibration resource-allocation theorem for the declared separable surrogate. It does not identify a calibration variable with consciousness, establish a physical-to-experiential bridge, or imply that quantum mechanics is incomplete."
+        ),
+    },
     "docs/figures/p66_residual_exact_calibration_augmentation.svg": {
         "title": "P66 residual-exact augmentation after P65 flooring",
         "description": (
