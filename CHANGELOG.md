@@ -1,3 +1,16 @@
+# 0.77.0 - 2026-09-10
+
+## Proposition 77: finite-sample full-law model-set separation
+
+- adds a finite-alphabet confidence-region inversion theorem for the complete declared observed-law model set;
+- proves equivalent rejection criteria using empirical distance to the model set in L-infinity or L1;
+- uses the 1-Lipschitz property of distance to a nonempty set to transport empirical model distance into a finite-sample population-distance interval;
+- adds conservative fixed-margin sample-size conditions;
+- makes the optimization-bound direction explicit: a candidate best fit supplies an upper bound on model distance and cannot by itself certify rejection of a continuous family;
+- adds an exact finite-family executable certificate while leaving certified global lower-bounding for the continuous P75 latent family as an open computational problem;
+- adds the P77 proof, provenance record, theorem figure, geometry tests, implementation, regression tests, and public research integration;
+- keeps non-rejection explicitly inconclusive and keeps the physical-to-experiential bridge open.
+
 # 0.76.0 - 2026-09-10
 
 - Added P76 finite-sample target-model adequacy rejection as the finite-data continuation of P75.

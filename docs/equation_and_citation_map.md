@@ -1111,3 +1111,39 @@ Detailed classification and literature boundary: [P76 equation and provenance re
 
 P76 does not assert an ordinary chi-square null law from the P75 dimension count, does not treat non-rejection as model validation, and does not identify a latent state with consciousness. The physical-to-experiential bridge remains open.
 
+# P77 finite-sample full-law model-set separation
+
+P77 extends P76 from selected necessary polynomial restrictions to the complete declared observed-law model set.
+
+- **Simultaneous cell radius:**
+  \[
+  \varepsilon_{n,K}(\alpha)=\sqrt{\frac{\log(2K/\alpha)}{2n}}.
+  \]
+  **Status:** standard Hoeffding plus union bound.
+
+- **Induced full-law radius:**
+  \[
+  \delta_{n,K}(\alpha)=\min\{2,K\varepsilon_{n,K}(\alpha)\}.
+  \]
+  **Status:** standard finite-dimensional norm inequality.
+
+- **Full-law rejection gate:**
+  \[
+  \mathcal C_n(\widehat P)\cap\mathcal M=\varnothing
+  \Longrightarrow P\notin\mathcal M.
+  \]
+  **Status:** standard confidence-region inversion, integrated here into the P71-P77 target-validity architecture.
+
+- **Distance transport:**
+  \[
+  |d(\widehat P,\mathcal M)-d(P,\mathcal M)|
+  \le\|\widehat P-P\|.
+  \]
+  **Status:** standard 1-Lipschitz distance-to-set property.
+
+- **Certified computational interface:** a sound lower bound \(L\le d(\widehat P,\mathcal M)\) rejects when \(L\) exceeds the sampling radius. A candidate best-fit law gives an upper bound and cannot by itself certify rejection of a continuous family.
+  **Status:** standard optimization-bound direction used as an explicit scientific safeguard.
+
+Proof: [P77](proposition_77_full_law_model_set_separation.md). Dedicated provenance: [P77 equation and provenance record](p77_equation_provenance.md). Implementation: [`full_law_model_set_separation.py`](../src/consciousness_bridge/full_law_model_set_separation.py). Tests: [`test_full_law_model_set_separation.py`](../tests/test_full_law_model_set_separation.py).
+
+The physical-to-experiential bridge remains open.

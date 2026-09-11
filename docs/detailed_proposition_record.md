@@ -8,7 +8,7 @@ The scientific status rule is strict throughout: a theorem is only a theorem und
 
 ---
 
-## Complete P1 to P76 chronology
+## Complete P1 to P77 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
@@ -157,6 +157,18 @@ The inference is deliberately asymmetric. A rejection is evidence that the decla
 
 Direct P76 proof: [finite-sample target-model adequacy rejection](proposition_76_finite_sample_target_model_adequacy.md). Equation classification: [P76 equation and provenance record](p76_equation_provenance.md). Implementation: [`finite_sample_target_model_adequacy.py`](../src/consciousness_bridge/finite_sample_target_model_adequacy.py).
 
+**P77** closes the finite-data full-law gap left explicit by P76. Let \(\mathcal M\) be the complete declared observed-law model set and let \(\mathcal C_n(\widehat P)\) be a simultaneous confidence region for the population law. P77 proves that
+
+\[
+\mathcal C_n(\widehat P)\cap\mathcal M=\varnothing
+\]
+
+is a valid finite-sample rejection certificate at the confidence level used to construct \(\mathcal C_n\). For a finite alphabet of size \(K\), the same Hoeffding event used by P76 gives explicit \(L^\infty\) and \(L^1\) radii. Distance to a nonempty set is 1-Lipschitz, so empirical model distance and population model distance differ by at most the corresponding sampling radius on that event.
+
+P77 also makes the computational direction explicit. A candidate model found by numerical optimization provides an upper bound on the minimum distance to a continuous model family. It cannot be treated as a rejection lower bound. Full-law rejection therefore requires a sound global distance lower bound or an equivalent certified feasibility argument. Exhaustive comparison is exact only when the declared model family itself is finite.
+
+Direct P77 proof: [finite-sample full-law model-set separation](proposition_77_full_law_model_set_separation.md). Equation classification: [P77 equation and provenance record](p77_equation_provenance.md). Implementation: [`full_law_model_set_separation.py`](../src/consciousness_bridge/full_law_model_set_separation.py).
+
 
 ---
 
@@ -169,11 +181,11 @@ The proposition numbers preserve development order, not one linear chain. The sc
 - P38-P44 build the quantum operational interface.
 - P45-P60 build adaptive evidence acquisition and execution machinery.
 - P61-P70 build downstream calibration and optimization.
-- P71-P76 return to the target side of the P19 bridge and formalize non-circular target provenance, noisy target measurement, population target-channel identification, finite-sample target-channel recovery, target-model adequacy, and finite-sample model rejection.
+- P71-P77 return to the target side of the P19 bridge and formalize non-circular target provenance, noisy target measurement, population target-channel identification, finite-sample target-channel recovery, target-model adequacy, and finite-sample model rejection.
 
 P75 does not make an experiential ontology claim. Passing its four-view restrictions establishes compatibility with the declared target-measurement model, not uniqueness or truth of that model. Failure identifies inadequacy of the declared conditional-independence model for the observed law; it does not prove that the latent target is nonphysical or that the physical-to-experiential bridge has been solved.
 
-P76 adds a finite-sample rejection layer for a tracked family of necessary P75 polynomial constraints. Its non-rejection output is explicitly inconclusive. The next target-side problem is stronger finite-sample full-law adequacy characterization, sharper power, and robust alternatives for residually dependent or learned target-view systems.
+P76 adds a finite-sample rejection layer for a tracked family of necessary P75 polynomial constraints. Its non-rejection output is explicitly inconclusive. P77 then defines the stronger finite-sample full-law criterion by asking whether the complete confidence region is separated from the complete declared model family. Its next computational problem is certified global lower-bounding or feasibility for the continuous P75 latent model, followed by sharper power and robust alternatives for residually dependent or learned target-view systems.
 
 ---
 
