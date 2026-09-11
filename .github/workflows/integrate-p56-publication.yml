@@ -1,12 +1,10 @@
-name: integrate-p56-publication
+name: p79-reader-publication-carrier
 
 on:
   push:
-    branches: ["p56-publication-integration-run"]
+    branches: ["p79-certified-sampling-radius"]
     paths:
-      - "scripts/integrate_p56_publication.py"
       - ".github/workflows/integrate-p56-publication.yml"
-  workflow_dispatch:
 
 permissions:
   contents: write
@@ -17,21 +15,40 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: p56-publication-integration-run
+          ref: p79-certified-sampling-radius
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
-      - run: python scripts/integrate_p56_publication.py
-      - run: python -m pip install --upgrade pip
-      - run: python -m pip install -e ".[dev]"
-      - run: pytest tests/test_moving_start_metric_reoptimization.py tests/test_moving_start_metric_reoptimization_publication.py tests/test_release_metadata_consistency.py tests/test_main_page_visual_paper.py
-      - run: ruff check scripts/integrate_p56_publication.py tests/test_moving_start_metric_reoptimization_publication.py
-      - name: Commit integrated publication files
+          python-version: "3.12"
+      - name: Extract and run the P79 integration script
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md docs/theorem_roadmap.md docs/research_navigation.md docs/equation_and_citation_map.md pyproject.toml CITATION.cff CHANGELOG.md tests/test_main_page_visual_paper.py tests/test_pruning_aware_switching_publication.py tests/test_release_metadata_consistency.py tests/test_moving_start_metric_reoptimization_publication.py
-          if ! git diff --cached --quiet; then
-            git commit -m "Integrate P56 into the public research record"
-            git push origin HEAD:p56-publication-integration-run
-          fi
+          python - <<'PY'
+          from pathlib import Path
+
+          workflow = Path('.github/workflows/p79-reader-publication-integration.yml').read_text(encoding='utf-8')
+          start_marker = "          python - <<'PY'\n"
+          end_marker = "\n          PY\n"
+          body = workflow.split(start_marker, 1)[1].split(end_marker, 1)[0]
+          lines = []
+          for line in body.splitlines():
+              if line.startswith('          '):
+                  line = line[10:]
+              lines.append(line)
+          Path('/tmp/p79_reader_integration.py').write_text('\n'.join(lines) + '\n', encoding='utf-8')
+          PY
+          python /tmp/p79_reader_integration.py
+      - name: Validate focused publication guards
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+          pytest tests/test_p79_research_integration.py tests/test_reader_navigation_links.py tests/test_p79_figure_geometry.py
+          ruff check tests/test_reader_navigation_links.py tests/test_p79_research_integration.py tests/test_p79_figure_geometry.py
+      - name: Restore permanent workflow set and commit integration
+        run: |
+          git config user.name "MahsaKeikha"
+          git config user.email "mahsa.keikha@gmail.com"
+          git checkout origin/main -- .github/workflows/integrate-p56-publication.yml
+          git rm .github/workflows/p79-reader-publication-integration.yml
+          git add -A
+          git commit -m "Integrate P79 across reader-facing research surfaces"
+          git push origin HEAD:p79-certified-sampling-radius
