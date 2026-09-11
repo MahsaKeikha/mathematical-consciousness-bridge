@@ -1,77 +1,110 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1050" viewBox="0 0 1800 1050" role="img" aria-labelledby="title desc">
-  <title id="title">Proposition 60: integer transition-calibration allocation with hard-budget overhead control</title>
-  <desc id="desc">What this figure shows: Proved constructive integer-rounding theorem. P59 gives the unique optimal continuous allocation for a declared inverse-square-root transition-calibration uncertainty surrogate. P60 converts that fractional design into whole measurement counts while respecting a hard integer budget and quantifying the worst-case loss relative to the P59 continuous optimum.. Visible guideposts include: P59 gives fractional counts. P60 gives a hard-budget integer construction and an explicit worst-case overhead bound.; 1. Hard integer budget; B measurements, m edges; Reserve one rounding unit at most; per calibrated transition.; 2. Solve P59 on B - m. How to read it: follow the diagram in the direction of its arrows and use each box, panel, inequality, or highlighted region only with the meaning printed beside it. Main takeaway: this is the visual companion to Proposition 60; the proposition document supplies the assumptions, proof, and exact scope of every implication. Scientific status: Proposition 60 theorem/certificate visual. It is not independent empirical evidence and does not, by itself, identify a physical or latent variable with consciousness.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1000" viewBox="0 0 1200 1000" role="img" aria-labelledby="title desc">
+  <title id="title">P60 hard-budget integer rounding with certified overhead</title>
+  <desc id="desc">What this figure shows: P60 converts the exact P59 continuous unit-cost calibration design into executable whole-measurement counts while respecting a hard integer budget. It solves P59 at the deliberately reduced budget N0 = B - m, rounds every edge count upward, and certifies both feasibility and the resulting uncertainty overhead relative to the full-budget continuous optimum. How to read it: move left to right across the top row from the hard budget to the reduced P59 allocation and then to ceiling rounding. The center theorem panel combines the budget-feasibility proof with the deterministic uncertainty guarantee. Follow the three lower branches to the full-budget multiplicative overhead, the sufficient target-uncertainty budget, and the distinction between this constructive guarantee and P61 exact integer optimality. Main takeaway: P60 gives a closed-form auditable integer construction with an explicit worst-case overhead; it is conservative and is not claimed to be the exact integer optimum. Scientific status: Deterministic rounding and experimental-budget theorem for the declared calibration surrogate. It does not validate the observation model or sensitivity weights, identify a transition metric with consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness.</desc>
   <defs>
-    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12 Z" fill="#334155"/></marker>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
     <style>
-      .h1{font:700 40px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#0f172a}
-      .sub{font:400 21px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#475569}
-      .bt{font:700 25px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#0f172a}
-      .tx{font:400 20px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#334155}
-      .math{font:600 20px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#0f172a}
-      .small{font:400 17px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#64748b}
-      .arrow{fill:none;stroke:#334155;stroke-width:3;stroke-linecap:round;marker-end:url(#arrow)}
-      .card{stroke-width:2}
+      .title{font:700 30px Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 16px Arial,sans-serif;fill:#475569}
+      .head{font:700 18px Arial,sans-serif;fill:#0f172a}
+      .copy{font:400 15px Arial,sans-serif;fill:#334155}
+      .small{font:400 14px Arial,sans-serif;fill:#475569}
+      .eq{font:600 16px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .strong{font:700 17px Arial,sans-serif;fill:#0f172a}
+      .route{font:700 13px Arial,sans-serif;fill:#475569}
+      .arrow{stroke:#334155;stroke-width:2.5;fill:none;marker-end:url(#arrow)}
     </style>
   </defs>
-  <rect width="1800" height="1050" rx="28" fill="#f8fafc"/>
-  <text x="70" y="70" class="h1">P60: Turn the ideal allocation into whole measurements</text>
-  <text x="70" y="112" class="sub">P59 gives fractional counts. P60 gives a hard-budget integer construction and an explicit worst-case overhead bound.</text>
 
-  <g id="p60-budget" data-qa-block="true" data-x="70" data-y="175" data-width="500" data-height="245">
-    <rect class="card" x="70" y="175" width="500" height="245" rx="22" fill="#ffffff" stroke="#94a3b8"/>
-    <text x="115" y="222" class="bt">1. Hard integer budget</text>
-    <text x="115" y="272" class="math">B measurements, m edges</text>
-    <text x="115" y="320" class="tx">Reserve one rounding unit at most</text>
-    <text x="115" y="352" class="tx">per calibrated transition.</text>
+  <rect width="1200" height="1000" rx="24" fill="#f8fafc"/>
+  <text x="60" y="58" class="title">P60  Hard-budget integer rounding with certified overhead</text>
+  <text x="60" y="90" class="subtitle">Turn the P59 fractional optimum into whole measurements without exceeding the declared budget.</text>
+
+  <g id="block-budget" data-x="55" data-y="130" data-w="330" data-h="200">
+    <rect x="55" y="130" width="330" height="200" rx="18" fill="#ffffff" stroke="#64748b" stroke-width="2"/>
+    <text x="80" y="168" class="head">1. Hard integer budget</text>
+    <text x="80" y="207" class="strong">B &gt; m = |E|</text>
+    <text x="80" y="239" class="copy">m calibrated transition edges</text>
+    <text x="80" y="274" class="eq">N₀ = B - m &gt; 0</text>
+    <text x="80" y="303" class="small">Reserve at most one rounding</text>
+    <text x="80" y="324" class="small">unit per calibrated edge.</text>
   </g>
 
-  <g id="p60-reduced" data-qa-block="true" data-x="650" data-y="175" data-width="500" data-height="245">
-    <rect class="card" x="650" y="175" width="500" height="245" rx="22" fill="#eef2ff" stroke="#6366f1"/>
-    <text x="695" y="222" class="bt">2. Solve P59 on B - m</text>
-    <text x="695" y="272" class="math">n~ₑ = n*ₑ(B - m)</text>
-    <text x="695" y="320" class="tx">Use the exact P59 allocation</text>
-    <text x="695" y="352" class="tx">on the reduced effective budget.</text>
+  <g id="block-continuous" data-x="435" data-y="130" data-w="330" data-h="200">
+    <rect x="435" y="130" width="330" height="200" rx="18" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+    <text x="460" y="168" class="head">2. Reduced P59 optimum</text>
+    <text x="460" y="204" class="eq">S = Σₑ bₑ^(2/3)</text>
+    <text x="460" y="236" class="eq">ñₑ = N₀ bₑ^(2/3) / S</text>
+    <text x="460" y="270" class="eq">U*(N₀) = S^(3/2)</text>
+    <text x="460" y="296" class="eq">/ √N₀</text>
+    <text x="460" y="322" class="small">Exact continuous design at N₀.</text>
   </g>
 
-  <g id="p60-round" data-qa-block="true" data-x="1230" data-y="175" data-width="500" data-height="245">
-    <rect class="card" x="1230" y="175" width="500" height="245" rx="22" fill="#ffffff" stroke="#94a3b8"/>
-    <text x="1275" y="222" class="bt">3. Round upward</text>
-    <text x="1275" y="272" class="math">kₑ = ceil(n~ₑ)</text>
-    <text x="1275" y="320" class="tx">Every count is a whole number.</text>
-    <text x="1275" y="352" class="math">Σₑ kₑ ≤ B</text>
+  <g id="block-round" data-x="815" data-y="130" data-w="330" data-h="200">
+    <rect x="815" y="130" width="330" height="200" rx="18" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+    <text x="840" y="168" class="head">3. Ceiling to whole counts</text>
+    <text x="840" y="210" class="strong">kₑ = ceil(ñₑ)</text>
+    <text x="840" y="249" class="copy">Every kₑ is executable.</text>
+    <text x="840" y="284" class="eq">Σₑ kₑ ≤ B - 1 &lt; B</text>
+    <text x="840" y="315" class="small">Hence the hard budget is respected.</text>
   </g>
 
-  <path d="M570 297.5 H638" class="arrow" data-from="p60-budget" data-to="p60-reduced"/>
-  <path d="M1150 297.5 H1218" class="arrow" data-from="p60-reduced" data-to="p60-round"/>
+  <path id="arrow-1" class="arrow" d="M385 230 H435" data-source="block-budget" data-target="block-continuous"/>
+  <path id="arrow-2" class="arrow" d="M765 230 H815" data-source="block-continuous" data-target="block-round"/>
 
-  <g id="p60-uncertainty" data-qa-block="true" data-x="245" data-y="515" data-width="620" data-height="250">
-    <rect class="card" x="245" y="515" width="620" height="250" rx="24" fill="#ecfdf5" stroke="#10b981"/>
-    <text x="295" y="565" class="bt">Certified uncertainty</text>
-    <text x="295" y="625" class="math">U(k) ≤ U*(B - m)</text>
-    <text x="295" y="680" class="tx">Rounding upward adds measurements,</text>
-    <text x="295" y="712" class="tx">so the surrogate cannot worsen.</text>
+  <text x="600" y="370" class="route" text-anchor="middle">ceiling monotonicity gives a deterministic implementability certificate</text>
+
+  <g id="block-certificate" data-x="120" data-y="390" data-w="960" data-h="225">
+    <rect x="120" y="390" width="960" height="225" rx="20" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
+    <text x="600" y="428" text-anchor="middle" class="head">4. Feasible integer design with certified uncertainty</text>
+    <text x="600" y="469" text-anchor="middle" class="copy">Because ceil(x) &lt; x + 1 and Σₑ ñₑ = B - m, the rounded total is strictly below B.</text>
+    <text x="600" y="507" text-anchor="middle" class="copy">Because every surrogate term bₑ / √nₑ decreases as its count increases, rounding upward cannot worsen it.</text>
+    <text x="600" y="548" text-anchor="middle" class="strong">U(k) ≤ U*(B - m) = S^(3/2) / √(B - m)</text>
+    <text x="600" y="585" text-anchor="middle" class="small">This is an implementability guarantee, not a proof of exact integer optimality.</text>
   </g>
 
-  <g id="p60-loss" data-qa-block="true" data-x="935" data-y="515" data-width="620" data-height="250">
-    <rect class="card" x="935" y="515" width="620" height="250" rx="24" fill="#eff6ff" stroke="#3b82f6"/>
-    <text x="985" y="565" class="bt">Loss relative to ideal full budget</text>
-    <text x="985" y="625" class="math">U(k) / U*(B) ≤ √[B/(B-m)]</text>
-    <text x="985" y="680" class="tx">The ratio approaches 1 as B grows</text>
-    <text x="985" y="712" class="tx">relative to the edge count m.</text>
+  <path id="arrow-3" class="arrow" d="M600 330 V390" data-source="block-continuous" data-target="block-certificate"/>
+  <path id="arrow-4" class="arrow" d="M980 330 V360 H900 V390" data-source="block-round" data-target="block-certificate"/>
+
+  <g id="block-overhead" data-x="55" data-y="680" data-w="330" data-h="170">
+    <rect x="55" y="680" width="330" height="170" rx="18" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="80" y="718" class="head">5. Full-budget overhead</text>
+    <text x="80" y="757" class="eq">U(k) / U*(B) ≤</text>
+    <text x="80" y="789" class="strong">√[B / (B - m)]</text>
+    <text x="80" y="821" class="small">For fixed m, this tends to 1</text>
+    <text x="80" y="843" class="small">as B becomes large.</text>
   </g>
 
-  <path d="M1480 420 C1440 470 1320 485 1245 515" class="arrow" data-from="p60-round" data-to="p60-loss"/>
-  <path d="M1480 420 C1280 470 690 480 555 515" class="arrow" data-from="p60-round" data-to="p60-uncertainty"/>
-
-  <g id="p60-target" data-qa-block="true" data-x="420" data-y="855" data-width="960" data-height="130">
-    <rect class="card" x="420" y="855" width="960" height="130" rx="22" fill="#fff7ed" stroke="#f97316"/>
-    <text x="470" y="902" class="bt">Target uncertainty ε: sufficient hard integer budget</text>
-    <text x="900" y="950" text-anchor="middle" class="math">B ≥ m + ceil(S³ / ε²)</text>
+  <g id="block-target" data-x="435" data-y="680" data-w="330" data-h="170">
+    <rect x="435" y="680" width="330" height="170" rx="18" fill="#fefce8" stroke="#ca8a04" stroke-width="2"/>
+    <text x="460" y="718" class="head">6. Target ε budget</text>
+    <text x="460" y="757" class="eq">B ≥ m + ceil(</text>
+    <text x="460" y="788" class="strong">S³ / ε² )</text>
+    <text x="460" y="821" class="small">is sufficient to guarantee</text>
+    <text x="460" y="843" class="small">U(k) ≤ ε.</text>
   </g>
 
-  <path d="M900 765 V843" class="arrow" data-from="p60-uncertainty" data-to="p60-target"/>
-  <path d="M1245 765 C1180 810 1040 820 1000 855" class="arrow" data-from="p60-loss" data-to="p60-target"/>
+  <g id="block-scope" data-x="815" data-y="680" data-w="330" data-h="170">
+    <rect x="815" y="680" width="330" height="170" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+    <text x="840" y="718" class="head">7. Guarantee, not optimum</text>
+    <text x="840" y="758" class="copy">Unused budget can remain.</text>
+    <text x="840" y="792" class="small">P60 favors a closed-form bound.</text>
+    <text x="840" y="818" class="small">P61 gives the exact integer</text>
+    <text x="840" y="840" class="small">optimum for unit costs.</text>
+  </g>
 
-  <text x="900" y="1025" text-anchor="middle" class="small">Boundary: P60 proves a feasible integer design with a certified overhead bound. Exact integer optimality is established only in P61.</text>
+  <path id="arrow-5" class="arrow" d="M300 615 V650 H220 V680" data-source="block-certificate" data-target="block-overhead"/>
+  <path id="arrow-6" class="arrow" d="M600 615 V680" data-source="block-certificate" data-target="block-target"/>
+  <path id="arrow-7" class="arrow" d="M900 615 V650 H980 V680" data-source="block-certificate" data-target="block-scope"/>
+
+  <g id="block-boundary" data-x="90" data-y="870" data-w="1020" data-h="125">
+    <rect x="90" y="870" width="1020" height="125" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="118" y="898" class="head">Theorem and scientific boundary</text>
+    <text x="118" y="922" class="small">P60 certifies a conservative integer implementation of the declared P59 separable calibration surrogate.</text>
+    <text x="118" y="944" class="small">It does not prove that this rounded allocation is the exact integer optimum; that stronger result is P61.</text>
+    <text x="118" y="966" class="small">It does not validate the observation model or sensitivity weights, or identify a transition metric with consciousness.</text>
+    <text x="118" y="988" class="small">It does not establish a physical-to-experiential bridge or imply quantum incompleteness.</text>
+  </g>
 </svg>
