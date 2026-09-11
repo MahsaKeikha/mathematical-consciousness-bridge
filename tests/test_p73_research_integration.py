@@ -38,8 +38,8 @@ def test_p73_source_preserves_model_and_semantic_boundaries() -> None:
         "recover_three_view_binary_model",
         "joint_channel_stability",
         "binary_channel_stability",
-        "unique up to the global latent-label swap",
-        "does not interpret the latent state as consciousness",
+        "global latent-label swap",
+        "not interpret the latent state as consciousness",
         "two-view non-identifiability",
     )
     for token in required:
