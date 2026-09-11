@@ -1,3 +1,12 @@
+# 0.76.0 - 2026-09-10
+
+- Added P76 finite-sample target-model adequacy rejection as the finite-data continuation of P75.
+- Built one simultaneous sixteen-cell Hoeffding event and propagated it to all binary raw monomial moments used by the P75 adequacy system.
+- Derived an explicit covariance-tetrad perturbation radius and a conservative sufficient sample-size bound for a known tetrad violation margin.
+- Rewrote the P75 cross-triple and fourth-moment obligations as denominator-free polynomial constraints and added simultaneous interval propagation for finite-data rejection.
+- Added a synthetic residual-dependence stress test, formal proof, implementation, regression tests, theorem visual, geometry guards, provenance record, v0.76.0 metadata, README integration, navigation/roadmap updates, and website integration.
+- Kept the inference one-sided: rejection can certify incompatibility, while non-rejection is explicitly inconclusive and is not model acceptance or an experiential ontology claim.
+
 # 0.75.0 - 2026-09-10
 
 - Added P75 target-model adequacy and four-view overidentification as the population-level adequacy continuation of the P71-P74 target-side branch.

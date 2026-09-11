@@ -1090,3 +1090,24 @@ The target-side methodological chain is therefore:
 
 This sequence does not identify the latent target with consciousness and does not close the physical-to-experiential bridge. It specifies additional obligations that any target-side evidence must satisfy before it can support a bridge claim.
 
+---
+
+# P76 finite-sample target-model adequacy rejection
+
+P76 is the finite-data continuation of the P75 target-model adequacy theorem. It uses one shared finite-alphabet confidence event and deterministic polynomial interval propagation.
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| \(\varepsilon_n(\alpha)=\sqrt{\log(32/\alpha)/(2n)}\) | simultaneous sixteen-cell empirical-frequency radius | standard Hoeffding inequality specialized by union bound | Hoeffding 1963; P76A |
+| \(\delta_n(\alpha)=\min\{2,16\varepsilon_n(\alpha)\}\) | induced sixteen-cell \(L^1\) radius | repository bookkeeping consequence | P76A |
+| \(|\widehat r_A-r_A|\le\delta_n\) | simultaneous raw binary-monomial transport | standard \(L^1\) expectation bound applied here | P76B |
+| \(|\widehat C_{ij}-C_{ij}|\le3\delta_n\) | covariance perturbation radius | repository derivation | P76C |
+| \(|\widehat D-D|\le12\delta_n\) | explicit tetrad residual radius | repository derivation from P75 tetrads | P76C |
+| denominator-free \(G_1,G_2,G_3=0\) | cross-triple adequacy constraints without uncertain division | algebraic reformulation of P75 equal-\(q\) obligations | P75; P76D |
+| denominator-free \(H\)-constraints | fourth-moment adequacy constraints without uncertain division | algebraic reformulation of P75 fourth-moment obligations | P75; P76E |
+| zero excluded from any simultaneous necessary-constraint interval | finite-sample target-model rejection witness | repository theorem assembly | P76F |
+
+Detailed classification and literature boundary: [P76 equation and provenance record](p76_equation_provenance.md).
+
+P76 does not assert an ordinary chi-square null law from the P75 dimension count, does not treat non-rejection as model validation, and does not identify a latent state with consciousness. The physical-to-experiential bridge remains open.
+

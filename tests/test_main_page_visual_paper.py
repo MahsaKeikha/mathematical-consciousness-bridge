@@ -23,6 +23,7 @@ CURATED_MAIN_PAGE_FIGURES = (
     "p73_target_channel_identifiability.svg",
     "p74_finite_sample_target_channel_recovery.svg",
     "p75_target_model_adequacy_overidentification.svg",
+    "p76_finite_sample_target_model_adequacy.svg",
     "observer_to_bridge_handoff.svg",
     "quantum_bridge_completeness_map.svg",
     "p38_quantum_operational_sufficiency.svg",
@@ -63,8 +64,8 @@ def test_detailed_proposition_chronology_is_externalized():
     detail = DETAIL.read_text(encoding="utf-8")
 
     assert "docs/detailed_proposition_record.md" in readme
-    assert "Open the complete P1 to P75 chronology" not in readme
-    assert "Complete P1 to P75 chronology" in detail
+    assert "Open the complete P1 to P76 chronology" not in readme
+    assert "Complete P1 to P76 chronology" in detail
     assert "Propositions **P1-P10**" in detail
     assert "**P70** makes the resulting certificate diagnostic rather than opaque" in detail
     assert "**P71** returns from the downstream calibration branch" in detail
@@ -72,6 +73,7 @@ def test_detailed_proposition_chronology_is_externalized():
     assert "**P73** closes the population identifiability step" in detail
     assert "**P74** converts the P73 population inversion into a finite-sample confidence certificate" in detail
     assert "**P75** separates target-channel identifiability from target-model adequacy" in detail
+    assert "**P76** converts the tracked P75 population adequacy restrictions" in detail
 
 
 def test_main_page_declares_scientific_status_boundaries():
@@ -90,6 +92,7 @@ def test_main_page_declares_scientific_status_boundaries():
         "not certified by the current data",
         "generically just-identified",
         "Passing means compatibility with the declared model",
+        "non-rejection is not model acceptance",
     )
     for phrase in required_phrases:
         assert phrase in text, f"README is missing scientific-boundary text: {phrase}"

@@ -1,8 +1,7 @@
 """P76 finite-sample rejection certificate for P75 target-model adequacy.
 
 P75 gives population restrictions for a binary latent target observed through
-four conditionally independent binary views. P76 propagates one simultaneous
-sixteen-cell confidence event through those polynomial restrictions.
+four conditionally independent binary views. P76 propagates one shared sixteen-cell Hoeffding event through those polynomial restrictions. This is not an acceptance test.
 
 The resulting procedure is deliberately one-sided: if a confidence interval
 for a necessary P75 constraint excludes zero, the declared model is rejected at

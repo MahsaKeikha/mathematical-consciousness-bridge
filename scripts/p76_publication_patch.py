@@ -40,7 +40,7 @@ def patch_source() -> None:
     text = replace_once(
         text,
         "P76 propagates one simultaneous\nsixteen-cell confidence event through those polynomial restrictions.",
-        "P76 propagates one shared sixteen-cell Hoeffding event through those polynomial restrictions.",
+        "P76 propagates one shared sixteen-cell Hoeffding event through those polynomial restrictions. This is not an acceptance test.",
         label="source shared-event wording",
     )
     save(path, text)
@@ -58,7 +58,7 @@ def patch_readme() -> None:
     text = replace_all(text, "63 equation-driven quantitative figures", "64 equation-driven quantitative figures", minimum=1, label="README figure count prose")
 
     p75_plain = "P75 asks whether successful recovery also validates the measurement model itself. It shows why the answer cannot be assumed from three binary views alone: that model is generically just-identified, so fitting it does not leave a generic independent equality check. A fourth binary view creates additional observable constraints. If those constraints fail, the target-measurement model is inadequate even if a three-view recovery looked mathematically well behaved. Passing the new checks means only that the data are compatible with the declared model, not that the model is uniquely true or that the latent state has been identified with consciousness."
-    p76_plain = """P76 asks the next practical question: **if those model checks are applied to finite data, is an apparent failure large enough to distinguish from ordinary sampling noise?** It places the complete sixteen-cell observed table inside one shared confidence event and carries that uncertainty into the P75 adequacy constraints. If a required constraint is separated from zero even after uncertainty is included, the declared measurement model can be rejected with controlled confidence. If the data do not reject it, P76 deliberately does not call the model validated. The sample may simply be too small, the violation may be too subtle, or the failure may lie outside the particular constraints being tested. In plain language, P75 explains what a valid four-view model must satisfy at the population level; P76 asks when finite experimental data are strong enough to demonstrate that one of those requirements has genuinely failed."""
+    p76_plain = """P76 asks the next practical question: **if those model checks are applied to finite data, is an apparent failure large enough to distinguish from ordinary sampling noise?** It places the complete sixteen-cell observed table inside one shared confidence event and carries that uncertainty into the P75 adequacy constraints. If a required constraint is separated from zero even after uncertainty is included, the declared measurement model can be rejected with controlled confidence. If the data do not reject it, P76 deliberately does not call the model validated: non-rejection is not model acceptance. The sample may simply be too small, the violation may be too subtle, or the failure may lie outside the particular constraints being tested. In plain language, P75 explains what a valid four-view model must satisfy at the population level; P76 asks when finite data are strong enough to demonstrate that one of those requirements has genuinely failed."""
     text = replace_once(text, p75_plain, p75_plain + "\n\n" + p76_plain, label="README plain P76")
 
     architecture_old = "P74 adds the requirement that such recovery survive finite-data uncertainty. P75 then asks whether the recovered target-measurement model survives independent adequacy checks rather than merely fitting the observations used to identify it. Others examine changes of physical scale, test quantum descriptions, design experiments, protect validity under adaptive sampling, or make experiments more efficient."
@@ -90,7 +90,7 @@ def patch_readme() -> None:
 
     text = replace_once(
         text,
-        "| 3. Bridge sufficiency and target validity | **P19-P24, P71-P75** |",
+        "| 3. Bridge sufficiency and target validity | **P19-P24, P71-P76** |",
         "| 3. Bridge sufficiency and target validity | **P19-P24, P71-P76** |",
         label="README glance P76",
     )
@@ -192,7 +192,7 @@ Direct proof: [Proposition 76](docs/proposition_76_finite_sample_target_model_ad
 
     text = replace_once(
         text,
-        "**[Read the complete P1 to P76 detailed proposition record](docs/detailed_proposition_record.md).**",
+        "**[Read the complete P1 to P75 detailed proposition record](docs/detailed_proposition_record.md).**",
         "**[Read the complete P1 to P76 detailed proposition record](docs/detailed_proposition_record.md).**",
         label="README detailed link no-op guard",
     )
