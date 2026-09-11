@@ -2,26 +2,28 @@
 
 This page is the reading and reference index for the **Mathematical Consciousness Bridge** repository. It is organized by scientific dependency rather than by development chronology so that a reader can move from the research question to proofs, figures, code, falsification conditions, and citation resources without searching through the repository manually.
 
-The current documented theorem frontier is **P72**. The complete proposition record runs from **P1 through P72**. P71 and P72 form a target-side methodology branch descending from the P19 physical-sufficiency question. They are not extensions of the P61-P70 calibration branch.
+The current documented theorem frontier is **P73**. The complete proposition record runs from **P1 through P73**. P71, P72, and P73 form a target-side methodology branch descending from the P19 physical-sufficiency question. They are not extensions of the P61-P70 calibration branch.
 
 ## Recommended reading order
 
 1. [Main research study](../README.md) for the complete scientific narrative and curated figures.
 2. [Bridge problem](bridge_problem.md) for the formal physical-to-experiential question.
 3. [Scientific status discipline](../README.md#scientific-status-discipline) for the distinction among definitions, proved results, implementations, numerical checks, empirical inputs, hypotheses, and open bridge claims.
-4. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P72.
+4. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P73.
 5. [P19 fundamental physical sufficiency](proposition_19_fundamental_physical_sufficiency.md) for the exact, stochastic, and differential bridge criteria.
 6. [P20-P24 finite and adaptive residual certification](theorem_roadmap.md) for finite-data and repeated-look validity.
 7. [P71 target-provenance non-circularity](proposition_71_target_provenance_noncircularity.md) for the theorem showing when a target construction makes a bridge test vacuous by design.
 8. [P72 target-measurement channel robustness](proposition_72_target_measurement_channel_robustness.md) for noisy-target residual transfer, witness erasure, target-channel stability, and the finite-sample target-separation certificate.
-9. [P11-P18 and P25-P37 operational physical structure](theorem_roadmap.md) for intervention, temporal, compositional, and multiscale requirements.
-10. [P38-P44 quantum foundations and bridge tests](quantum_foundations_and_bridge_test.md) for quantum operational sufficiency under explicit bridge classes.
-11. [P45-P60 adaptive experiment design and scheduling](theorem_roadmap.md) for valid evidence collection and transition-calibration setup.
-12. [P61-P70 Calibration and Optimization Frontier](calibration_optimization_frontier_p61_p70.md) for downstream integer resource-allocation mathematics.
-13. [Equation and citation map](equation_and_citation_map.md) for equation-level provenance and theorem lineage.
-14. [P72 equation and provenance record](p72_equation_provenance.md) for the standard-versus-repository classification of the noisy-target theorem.
-15. [Falsification program](falsification_program.md) for the empirical burden required before any bridge claim can be accepted.
-16. [Citation guide](../CITATION.md) for citing the whole research program or a specific proposition, figure, algorithm, or implementation.
+9. [P73 three-view target-channel identifiability](proposition_73_three_view_target_channel_identifiability.md) for the two-view non-identifiability boundary, three-view stability formulas, global orientation ambiguity, and finite repeated-view stability certificate.
+10. [P11-P18 and P25-P37 operational physical structure](theorem_roadmap.md) for intervention, temporal, compositional, and multiscale requirements.
+11. [P38-P44 quantum foundations and bridge tests](quantum_foundations_and_bridge_test.md) for quantum operational sufficiency under explicit bridge classes.
+12. [P45-P60 adaptive experiment design and scheduling](theorem_roadmap.md) for valid evidence collection and transition-calibration setup.
+13. [P61-P70 Calibration and Optimization Frontier](calibration_optimization_frontier_p61_p70.md) for downstream integer resource-allocation mathematics.
+14. [Equation and citation map](equation_and_citation_map.md) for equation-level provenance and theorem lineage.
+15. [P72 equation and provenance record](p72_equation_provenance.md) for the standard-versus-repository classification of the noisy-target theorem.
+16. [P73 equation and provenance record](p73_equation_provenance.md) for the standard-versus-repository classification of repeated-view target-channel identifiability.
+17. [Falsification program](falsification_program.md) for the empirical burden required before any bridge claim can be accepted.
+18. [Citation guide](../CITATION.md) for citing the whole research program or a specific proposition, figure, algorithm, or implementation.
 
 ## Scientific branch map
 
@@ -36,6 +38,7 @@ The current documented theorem frontier is **P72**. The complete proposition rec
 | Calibration and optimization | P61-P70 | Solves and certifies downstream finite-resource allocation after the scientific witness is declared | [Calibration and Optimization Frontier](calibration_optimization_frontier_p61_p70.md) |
 | Target provenance | P71 | Prevents descriptor-derived targets from being mistaken for independent evidence of bridge sufficiency | [P71](proposition_71_target_provenance_noncircularity.md) |
 | Target measurement | P72 | Quantifies what noisy target observation can preserve, attenuate, erase, or falsely contaminate under an explicit channel model | [P72](proposition_72_target_measurement_channel_robustness.md) |
+| Target-channel identifiability | P73 | Identifies P72 binary channel-stability magnitudes from three nondegenerate repeated views under explicit independence and symmetry assumptions | [P73](proposition_73_three_view_target_channel_identifiability.md) |
 
 ## Complete proposition index
 
@@ -113,6 +116,7 @@ The current documented theorem frontier is **P72**. The complete proposition rec
 | P70 | [Exact primal-dual gap decomposition](proposition_70_primal_dual_gap_decomposition.md) | exact attribution of candidate-to-dual certificate gap |
 | P71 | [Target-provenance non-circularity](proposition_71_target_provenance_noncircularity.md) | descriptor-derived target vacuity, learned-target corollary, and provenance non-identifiability |
 | P72 | [Target-measurement channel robustness](proposition_72_target_measurement_channel_robustness.md) | conditional residual attenuation, erasure counterexample, target-channel stability, and finite target-separation certification |
+| P73 | [Three-view target-channel identifiability](proposition_73_three_view_target_channel_identifiability.md) | two-view non-identifiability, three-view stability recovery, orientation ambiguity, and finite stability certification |
 
 ## Core bridge interface
 
@@ -144,6 +148,14 @@ we have
 
 So a certified positive observed residual can transfer to the latent target, while a null observed residual remains inconclusive because a noisy channel may erase the witness.
 
+P73 asks how a P72 binary stability magnitude can be calibrated without observing the latent target directly. Under its declared three-view model,
+
+\[
+m_{ij}=r_ir_j,
+\]
+
+which identifies \(\gamma_i=|r_i|\) from three nonzero pairwise moments but not from two heterogeneous views. The latent-label orientation remains ambiguous, and the result does not survive arbitrary correlated or state-dependent target errors.
+
 ## Figures and reproducibility
 
 | Resource | What it contains |
@@ -153,11 +165,12 @@ So a certified positive observed residual can transfer to the latent target, whi
 | [Quantum foundations and bridge test](quantum_foundations_and_bridge_test.md) | quantum foundations sequence and P38-P44 bridge tests |
 | [P71 figure](figures/p71_target_provenance_noncircularity.svg) | descriptor-derived target vacuity and independently declared synthetic counterexample |
 | [P72 figure](figures/p72_target_measurement_channel_robustness.svg) | latent-target measurement, residual attenuation, erasure, and finite-sample witness transfer |
+| [P73 figure](figures/p73_three_view_target_channel_identifiability.svg) | two-view non-identifiability, three-view stability recovery, and finite calibration handoff |
 | [`src/consciousness_bridge/`](../src/consciousness_bridge/) | executable theorem implementations |
 | [`tests/`](../tests/) | theorem, documentation, geometry, and publication regression tests |
 
 ## Evidence and citation
 
-Use the [Equation and citation map](equation_and_citation_map.md) to distinguish standard identities, repository derivations, and externally supported scientific claims. Use the [P72 equation and provenance record](p72_equation_provenance.md) for the noisy-target theorem. Use the [Foundational bibliography](foundational_physics_mathematics_bibliography.md), [Literature map](literature_map.md), and [Reference audit](reference_audit.md) for external evidence. Use the [Citation guide](../CITATION.md) when citing the overall project or a specific proposition.
+Use the [Equation and citation map](equation_and_citation_map.md) to distinguish standard identities, repository derivations, and externally supported scientific claims. Use the [P72 equation and provenance record](p72_equation_provenance.md) for the noisy-target theorem and the [P73 equation and provenance record](p73_equation_provenance.md) for repeated-view target-channel identifiability. Use the [Foundational bibliography](foundational_physics_mathematics_bibliography.md), [Literature map](literature_map.md), and [Reference audit](reference_audit.md) for external evidence. Use the [Citation guide](../CITATION.md) when citing the overall project or a specific proposition.
 
-The research remains an ongoing mathematical-physics program. The current theorem frontier is P72, but the physical-to-experiential bridge itself remains open.
+The research remains an ongoing mathematical-physics program. The current theorem frontier is P73, but the physical-to-experiential bridge itself remains open.
