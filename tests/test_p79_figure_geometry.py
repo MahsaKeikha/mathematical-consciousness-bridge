@@ -53,7 +53,8 @@ def test_p79_visual_contains_the_three_certification_stages() -> None:
         "Certify log and square root",
         "Safe rejection comparison",
         "Positive atanh series",
-        "Integer-certified dyadic sqrt",
+        "Integer-certified dyadic",
+        "square-root enclosure",
         "Strict certified gate",
         "physical-to-experiential bridge remains open",
     )
