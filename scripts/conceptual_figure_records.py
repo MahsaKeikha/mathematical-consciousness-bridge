@@ -5,6 +5,17 @@ from pathlib import Path
 from typing import Any
 
 RECORDS: dict[str, dict[str, str]] = {
+    "docs/figures/p62_heterogeneous_cost_transition_calibration.svg": {
+        "title": "P62 exact heterogeneous-cost continuous calibration",
+        "description": (
+            "What this figure shows: P62 solves the declared separable inverse-square-root calibration surrogate exactly in the continuous domain when each transition edge has its own positive per-observation cost. "
+            "How to read it: the two upper input cards feed the central constrained problem, which then feeds the unique strict-convexity optimum. From the theorem panel, follow the three lower branches to the optimal measurement-count law, the distinct optimal budget-share law, and the exact target-budget threshold. "
+            "Main takeaway: expensive edges receive fewer observations all else equal, yet can still consume more total budget because sample count and budget share scale with different powers of cost. P62 is a continuous theorem; heterogeneous integer counts are a separate P63 problem."
+        ),
+        "status": (
+            "Continuous resource-allocation theorem for the declared calibration surrogate. It does not validate the full robust-route uncertainty model, identify an operational variable with consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness."
+        ),
+    },
     "docs/figures/p63_exact_heterogeneous_integer_calibration.svg": {
         "title": "P63 exact heterogeneous-cost integer calibration",
         "description": (
