@@ -1,51 +1,82 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
   <title id="title">P73 target-channel identifiability</title>
-  <desc id="desc">What this figure shows: Figure 8. P73 target-channel identifiability theorem. Three nondegenerate conditionally independent binary views identify the declared latent-channel model up to a common label swap and identify the P72 stability quantities exactly at the population level. The two-view panel shows the constructive non-identifiability boundary. Statistical recovery does not identify the latent class with consciousness. How to read it: follow only the labeled arrows, axes, panels, set relations, or inequalities shown in the visual and interpret them using the adjacent research text. Main takeaway: the figure summarizes the stated mathematical or scientific dependency; visual proximity alone does not add a claim. Scientific status: Reader-facing research figure; formal status is controlled by the linked proof or source record.</desc>
-  <rect x="0" y="0" width="1200" height="760" fill="#ffffff"/>
-  <text x="60" y="60" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#111827">P73 Three-View Target-Channel Identifiability</text>
-  <text x="60" y="92" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#475569">Population theorem in one fixed physical stratum T = t. Latent labels remain exchangeable without an external semantic anchor.</text>
+  <desc id="desc">What this figure shows: P73 identifies the parameters of one declared nondegenerate three-view binary latent target-channel model at the population level, up to a common latent-label swap. The upper-left panel defines the model, the upper-right panel gives the observable moment inversion, the lower-left panel shows that P72 stability becomes identifiable, and the lower-right panel gives a constructive two-view non-identifiability example. How to read it: follow the attached latent-to-view connectors in panel A, then move clockwise through recovery, stability, and the two-view boundary. Main takeaway: three suitable views can identify this declared measurement model, but two views generally cannot identify individual reliabilities. Scientific status: population identifiability theorem figure. Statistical identification does not identify the latent class with consciousness, validate the model assumptions, or solve the physical-to-experiential bridge.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .title{font:700 29px Arial,Helvetica,sans-serif;fill:#0f172a}
+      .subtitle{font:400 15.5px Arial,Helvetica,sans-serif;fill:#475569}
+      .panelTitle{font:700 18px Arial,Helvetica,sans-serif;fill:#0f172a}
+      .body{font:400 14px Arial,Helvetica,sans-serif;fill:#334155}
+      .eq{font:600 15px Arial,Helvetica,sans-serif;fill:#0f172a}
+      .small{font:400 12.5px Arial,Helvetica,sans-serif;fill:#64748b}
+      .boundary{font:600 12.5px Arial,Helvetica,sans-serif;fill:#475569}
+    </style>
+  </defs>
 
-  <rect x="55" y="125" width="525" height="270" rx="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
-  <text x="80" y="160" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#111827">A. Declared three-view model</text>
-  <rect x="260" y="190" width="110" height="64" rx="12" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
-  <text x="315" y="218" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#065f46">S</text>
-  <text x="315" y="239" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#047857">latent target</text>
-  <line x1="280" y1="254" x2="155" y2="310" stroke="#64748b" stroke-width="2"/>
-  <line x1="315" y1="254" x2="315" y2="310" stroke="#64748b" stroke-width="2"/>
-  <line x1="350" y1="254" x2="475" y2="310" stroke="#64748b" stroke-width="2"/>
-  <rect x="105" y="310" width="100" height="58" rx="10" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
-  <rect x="265" y="310" width="100" height="58" rx="10" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
-  <rect x="425" y="310" width="100" height="58" rx="10" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
-  <text x="155" y="345" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#312e81">X1</text>
-  <text x="315" y="345" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#312e81">X2</text>
-  <text x="475" y="345" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#312e81">X3</text>
-  <text x="315" y="383" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#475569">P(x1,x2,x3 | s,t) = product of the three declared view channels</text>
+  <rect width="1200" height="760" fill="#f8fafc"/>
+  <rect x="32" y="26" width="1136" height="708" rx="22" fill="#ffffff" stroke="#d7e0ea" stroke-width="2"/>
+  <text x="60" y="64" class="title">P73 Three-View Target-Channel Identifiability</text>
+  <text x="60" y="94" class="subtitle">Population theorem in one fixed physical stratum T = t; latent labels remain exchangeable without an external semantic anchor.</text>
 
-  <rect x="620" y="125" width="525" height="270" rx="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
-  <text x="645" y="160" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#111827">B. Observable moments recover the model</text>
-  <text x="645" y="205" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#0f172a">Cij = bi bj v</text>
-  <text x="645" y="238" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#0f172a">M123 = -2 m v b1 b2 b3</text>
-  <text x="645" y="276" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#334155">q = M123² / (C12 C13 C23)</text>
-  <text x="645" y="308" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#065f46">m² = q / (q + 4),   v = 4 / (q + 4)</text>
-  <text x="645" y="342" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#334155">Choose one loading orientation, then recover b1, b2, b3 and aj.</text>
-  <text x="645" y="374" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#7c2d12">Nondegenerate requirement: interior prevalence and b1 b2 b3 ≠ 0.</text>
+  <g id="declared-model-panel">
+    <rect x="60" y="126" width="520" height="266" rx="16" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="84" y="160" class="panelTitle">A. Declared three-view model</text>
 
-  <rect x="55" y="430" width="525" height="265" rx="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
-  <text x="80" y="465" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#111827">C. P72 stability becomes identifiable</text>
-  <text x="80" y="510" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#065f46">gamma_j = |b_j|</text>
-  <text x="80" y="542" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#475569">The global latent-label swap sends bj to -bj, so gamma_j is unchanged.</text>
-  <text x="80" y="588" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#0f172a">gamma_123 ≥ max{gamma_1, gamma_2, gamma_3}</text>
-  <text x="80" y="620" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#475569">The recovered joint three-view channel is at least as TV-stable as each marginal view.</text>
-  <text x="80" y="665" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#7c2d12">Statistical identification does not identify the latent class with consciousness.</text>
+    <rect x="266" y="190" width="108" height="62" rx="11" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+    <text x="320" y="216" text-anchor="middle" class="eq" fill="#065f46">S</text>
+    <text x="320" y="238" text-anchor="middle" class="small" fill="#047857">latent target</text>
 
-  <rect x="620" y="430" width="525" height="265" rx="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
-  <text x="645" y="465" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#111827">D. Two views are not enough in general</text>
-  <text x="645" y="505" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#334155">Balanced latent state, zero-intercept channels:</text>
-  <text x="645" y="540" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#0f172a">P(x1,x2) = 1/4 [1 + b1 b2 x1 x2]</text>
-  <text x="645" y="579" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#334155">(b1,b2) = (0.60,0.60)  and  (0.45,0.80)</text>
-  <text x="645" y="610" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#9a3412">same product 0.36, same observed law</text>
-  <text x="645" y="641" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#475569">but different individual stability coefficients.</text>
-  <text x="645" y="671" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#7c2d12">A third independent view or another scientifically justified anchor is required.</text>
+    <path d="M284 252 L166 302" stroke="#64748b" stroke-width="2.3" fill="none" marker-end="url(#arrow)"/>
+    <path d="M320 252 L320 296" stroke="#64748b" stroke-width="2.3" fill="none" marker-end="url(#arrow)"/>
+    <path d="M356 252 L474 302" stroke="#64748b" stroke-width="2.3" fill="none" marker-end="url(#arrow)"/>
 
-  <text x="60" y="735" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#64748b">Scientific boundary: P73 identifies parameters of a declared latent measurement model. Target meaning, model validity, and finite-sample uncertainty remain separate obligations.</text>
+    <rect x="116" y="306" width="100" height="54" rx="10" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+    <rect x="270" y="306" width="100" height="54" rx="10" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+    <rect x="424" y="306" width="100" height="54" rx="10" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+    <text x="166" y="339" text-anchor="middle" class="eq" fill="#312e81">X1</text>
+    <text x="320" y="339" text-anchor="middle" class="eq" fill="#312e81">X2</text>
+    <text x="474" y="339" text-anchor="middle" class="eq" fill="#312e81">X3</text>
+    <text x="320" y="382" text-anchor="middle" class="small">Conditionally independent declared view channels given (S,T).</text>
+  </g>
+
+  <g id="moment-recovery-panel">
+    <rect x="620" y="126" width="520" height="266" rx="16" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="644" y="160" class="panelTitle">B. Observable moments recover the model</text>
+    <text x="644" y="204" class="eq">Cij = bi bj v</text>
+    <text x="644" y="234" class="eq">M123 = -2 m v b1 b2 b3</text>
+    <text x="644" y="270" class="body">q = M123^2 / (C12 C13 C23)</text>
+    <text x="644" y="304" class="eq" fill="#065f46">m² = q / (q + 4),   v = 4 / (q + 4)</text>
+    <text x="644" y="340" class="body">Choose one loading orientation; then recover</text>
+    <text x="644" y="362" class="body">b1, b2, b3 and the channel intercepts aj.</text>
+    <text x="644" y="384" class="small" fill="#7c2d12">Requires interior prevalence and b1 b2 b3 != 0.</text>
+  </g>
+
+  <g id="stability-panel">
+    <rect x="60" y="424" width="520" height="276" rx="16" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="84" y="458" class="panelTitle">C. P72 stability becomes identifiable</text>
+    <text x="84" y="502" class="eq" fill="#065f46">gamma_j = |b_j|</text>
+    <text x="84" y="536" class="body">The global latent-label swap sends bj to -bj,</text>
+    <text x="84" y="558" class="body">so gamma_j is unchanged.</text>
+    <text x="84" y="596" class="eq">gamma_123 ≥ max{gamma_1, gamma_2, gamma_3}</text>
+    <text x="84" y="628" class="body">The joint three-view channel is at least as</text>
+    <text x="84" y="650" class="body">TV-stable as each marginal view.</text>
+    <text x="84" y="682" class="small" fill="#7c2d12">Statistical identification does not identify the latent class with consciousness.</text>
+  </g>
+
+  <g id="two-view-boundary-panel">
+    <rect x="620" y="424" width="520" height="276" rx="16" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="644" y="458" class="panelTitle">D. Two views are not enough in general</text>
+    <text x="644" y="498" class="body">Balanced latent state, zero-intercept channels:</text>
+    <text x="644" y="534" class="eq">P(x1,x2) = 1/4 [1 + b1 b2 x1 x2]</text>
+    <text x="644" y="572" class="body">(b1,b2) = (0.60,0.60) and (0.45,0.80)</text>
+    <text x="644" y="606" class="eq" fill="#9a3412">same product 0.36, same observed law</text>
+    <text x="644" y="636" class="body">but different individual stability coefficients.</text>
+    <text x="644" y="668" class="small" fill="#7c2d12">A third independent view or another justified anchor</text>
+    <text x="644" y="688" class="small" fill="#7c2d12">is required.</text>
+  </g>
+
+  <text x="60" y="728" class="boundary">Scientific boundary: P73 identifies parameters of a declared latent measurement model. Target meaning, model validity, finite-sample uncertainty, and the physical-to-experiential bridge remain separate obligations.</text>
 </svg>
