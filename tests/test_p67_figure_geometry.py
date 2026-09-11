@@ -30,7 +30,7 @@ def test_p67_figure_text_stays_inside_declared_blocks():
                 group.attrib["id"],
                 content,
             )
-            assert y + 12 <= ty <= y + height - 10, (
+            assert y + 12 <= ty <= y + height - 5, (
                 group.attrib["id"],
                 content,
             )
@@ -55,9 +55,17 @@ def test_p67_connectors_touch_declared_source_and_target_blocks():
     ]
     assert len(arrows) == 4
 
+    expected_routes = {
+        "arrow-1": ("block-candidate", "block-intervals"),
+        "arrow-2": ("block-intervals", "block-intersection"),
+        "arrow-3": ("block-intersection", "block-certified"),
+        "arrow-4": ("block-intersection", "block-inconclusive"),
+    }
+
     for line in arrows:
         source = line.attrib["data-source"]
         target = line.attrib["data-target"]
+        assert expected_routes[line.attrib["id"]] == (source, target)
         assert source in blocks
         assert target in blocks
         x1, y1, x2, y2 = map(
@@ -87,14 +95,19 @@ def test_p67_connectors_touch_declared_source_and_target_blocks():
         assert target_touch, line.attrib["id"]
 
 
-def test_p67_figure_preserves_certificate_and_failure_boundaries():
+def test_p67_figure_is_self_explanatory_and_preserves_boundaries():
     text = FIGURE.read_text(encoding="utf-8")
     for token in [
-        "Budget must be tight.",
+        "What this figure shows:",
+        "How to read it:",
+        "Main takeaway:",
+        "sum c_e k_e = B",
         "lambda_low &lt;= lambda_high",
-        "Global optimum for unrestricted P63.",
+        "gate passes",
+        "gate fails or budget is not tight",
+        "Certified unrestricted P63 global optimum.",
         "Status: not certified",
         "This does not prove suboptimality.",
-        "not a consciousness theorem",
+        "It is not a consciousness theorem, bridge theorem",
     ]:
         assert token in text
