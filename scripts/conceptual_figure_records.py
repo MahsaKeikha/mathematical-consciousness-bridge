@@ -5,6 +5,17 @@ from pathlib import Path
 from typing import Any
 
 RECORDS: dict[str, dict[str, str]] = {
+    "docs/figures/p64_fast_heterogeneous_integer_approximation.svg": {
+        "title": "P64 fast certified heterogeneous-cost integer approximation",
+        "description": (
+            "What this figure shows: P64 gives a scalable certified integer approximation by flooring the exact P62 continuous heterogeneous-cost allocation, but only in the regime where every continuous count is at least one. "
+            "How to read it: move left to right across the top row from the P62 continuous solution to the explicit P64 applicability gate and then to the feasible integer floor. The center panel defines the instance-specific floor ratios and transfers the continuous optimum into a certified multiplicative bound relative to the exact P63 integer optimum. The lower panels show the simpler uniform guarantee and the scalability/regime boundary. "
+            "Main takeaway: P64 is a fast approximation theorem, not an exact-integer theorem; when its at-least-one gate fails, P65 provides the baseline-safe continuous route and P63 remains the unrestricted exact integer solver."
+        ),
+        "status": (
+            "Calibration resource-allocation theorem for the declared separable surrogate. It does not identify a calibration variable with consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness."
+        ),
+    },
     "docs/figures/p65_lower_bounded_heterogeneous_calibration.svg": {
         "title": "P65 lower-bounded heterogeneous calibration",
         "description": (

@@ -1,81 +1,99 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1050" viewBox="0 0 1800 1050" role="img" aria-labelledby="title desc">
-  <title id="title">Proposition 64: fast certified heterogeneous-cost integer approximation</title>
-  <desc id="desc">What this figure shows: Proved scalable approximation theorem. P63 computes the exact heterogeneous-cost whole-measurement optimum by dynamic programming, but its running time grows with the numeric budget. P64 gives a much cheaper certified alternative in the regime where the P62 continuous optimum already assigns at least one measurement to every calibrated transition.. Visible guideposts include: Floor the P62 continuous optimum, preserve feasibility automatically, and quantify the resulting objective loss.; 1. Solve P62 continuously; nₑ* = (B/T); × bₑ^(2/3)cₑ^(-2/3); Closed-form ideal allocation.; P64 regime: every nₑ* ≥ 1.. How to read it: follow the diagram in the direction of its arrows and use each box, panel, inequality, or highlighted region only with the meaning printed beside it. Main takeaway: this is the visual companion to Proposition 64; the proposition document supplies the assumptions, proof, and exact scope of every implication. Scientific status: Proposition 64 theorem/certificate visual. It is not independent empirical evidence and does not, by itself, identify a physical or latent variable with consciousness.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="960" viewBox="0 0 1200 960" role="img" aria-labelledby="title desc">
+  <title id="title">P64 fast certified heterogeneous-cost integer approximation</title>
+  <desc id="desc">What this figure shows: P64 gives a scalable certified integer approximation by flooring the exact P62 continuous heterogeneous-cost allocation, but only in the regime where every continuous count is at least one. How to read it: move left to right across the top row from the P62 continuous solution to the explicit P64 applicability gate and then to the feasible integer floor. The center panel defines the instance-specific floor ratios and transfers the continuous optimum into a certified multiplicative bound relative to the exact P63 integer optimum. The lower panels show the simpler uniform guarantee and the scalability/regime boundary. Main takeaway: P64 is a fast approximation theorem, not an exact-integer theorem; when its at-least-one gate fails, P65 provides the baseline-safe continuous route and P63 remains the unrestricted exact integer solver. Scientific status: Calibration resource-allocation theorem for the declared separable surrogate. It does not identify a calibration variable with consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness.</desc>
   <defs>
-    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
-      <path d="M0 0 L12 6 L0 12 Z" fill="#334155"/>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
     </marker>
     <style>
-      .h1{font:700 40px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#0f172a}
-      .sub{font:400 21px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#475569}
-      .bt{font:700 25px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#0f172a}
-      .tx{font:400 20px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#334155}
-      .math{font:600 20px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#0f172a}
-      .small{font:400 17px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#64748b}
-      .arrow{fill:none;stroke:#334155;stroke-width:3;stroke-linecap:round;marker-end:url(#arrow)}
-      .card{stroke-width:2}
+      .title{font:700 30px Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 16px Arial,sans-serif;fill:#475569}
+      .head{font:700 18px Arial,sans-serif;fill:#0f172a}
+      .copy{font:400 15px Arial,sans-serif;fill:#334155}
+      .small{font:400 14px Arial,sans-serif;fill:#475569}
+      .eq{font:600 16px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .strong{font:700 17px Arial,sans-serif;fill:#0f172a}
+      .route{font:700 13px Arial,sans-serif;fill:#475569}
+      .arrow{stroke:#334155;stroke-width:2.5;fill:none;marker-end:url(#arrow)}
     </style>
   </defs>
 
-  <rect width="1800" height="1050" rx="28" fill="#f8fafc"/>
-  <text x="70" y="70" class="h1">P64: Fast certified approximation when exact integer DP is expensive</text>
-  <text x="70" y="112" class="sub">Floor the P62 continuous optimum, preserve feasibility automatically, and quantify the resulting objective loss.</text>
+  <rect width="1200" height="960" rx="24" fill="#f8fafc"/>
+  <text x="60" y="58" class="title">P64  Fast certified heterogeneous-cost integer approximation</text>
+  <text x="60" y="90" class="subtitle">Floor the P62 continuous optimum only after checking the P64 regime, then certify the loss.</text>
 
-  <g id="p64-continuous" data-qa-block="true" data-x="70" data-y="175" data-width="500" data-height="250">
-    <rect class="card" x="70" y="175" width="500" height="250" rx="22" fill="#eef2ff" stroke="#6366f1"/>
-    <text x="115" y="222" class="bt">1. Solve P62 continuously</text>
-    <text x="115" y="265" class="math">nₑ* = (B/T)</text>
-    <text x="115" y="298" class="math">× bₑ^(2/3)cₑ^(-2/3)</text>
-    <text x="115" y="343" class="tx">Closed-form ideal allocation.</text>
-    <text x="115" y="385" class="small">P64 regime: every nₑ* ≥ 1.</text>
+  <g id="block-continuous" data-x="55" data-y="130" data-w="330" data-h="220">
+    <rect x="55" y="130" width="330" height="220" rx="18" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+    <text x="80" y="168" class="head">1. Solve P62 continuously</text>
+    <text x="80" y="207" class="eq">nₑ* = (B/T)</text>
+    <text x="80" y="235" class="eq">× bₑ^(2/3)cₑ^(-2/3)</text>
+    <text x="80" y="275" class="copy">Closed-form ideal allocation.</text>
+    <text x="80" y="311" class="small">Continuous optimum gives the</text>
+    <text x="80" y="334" class="small">lower benchmark U*cont(B).</text>
   </g>
 
-  <g id="p64-floor" data-qa-block="true" data-x="650" data-y="175" data-width="500" data-height="250">
-    <rect class="card" x="650" y="175" width="500" height="250" rx="22" fill="#ecfdf5" stroke="#10b981"/>
-    <text x="695" y="222" class="bt">2. Round down</text>
-    <text x="695" y="272" class="math">kₑ = floor(nₑ*)</text>
-    <text x="695" y="312" class="math">Σ cₑkₑ ≤ Σ cₑnₑ* = B</text>
-    <text x="695" y="360" class="small">Whole counts remain budget feasible.</text>
+  <g id="block-gate" data-x="435" data-y="130" data-w="330" data-h="220">
+    <rect x="435" y="130" width="330" height="220" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+    <text x="460" y="168" class="head">2. P64 applicability gate</text>
+    <text x="460" y="213" class="strong">nₑ* ≥ 1 for every edge</text>
+    <text x="460" y="254" class="copy">Only then does flooring keep</text>
+    <text x="460" y="278" class="copy">every integer count positive.</text>
+    <text x="460" y="314" class="small">Gate failure means P64 is</text>
+    <text x="460" y="337" class="small">not applicable, not that P63 fails.</text>
   </g>
 
-  <g id="p64-ratio" data-qa-block="true" data-x="1230" data-y="175" data-width="500" data-height="250">
-    <rect class="card" x="1230" y="175" width="500" height="250" rx="22" fill="#ffffff" stroke="#94a3b8"/>
-    <text x="1275" y="222" class="bt">3. Measure rounding loss</text>
-    <text x="1275" y="272" class="math">rₑ = floor(nₑ*) / nₑ*</text>
-    <text x="1275" y="312" class="math">rmin = minₑ rₑ</text>
-    <text x="1275" y="360" class="small">Values near 1 mean small rounding loss.</text>
+  <g id="block-floor" data-x="815" data-y="130" data-w="330" data-h="220">
+    <rect x="815" y="130" width="330" height="220" rx="18" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+    <text x="840" y="168" class="head">3. Feasible integer floor</text>
+    <text x="840" y="211" class="eq">kₑ = floor(nₑ*) ≥ 1</text>
+    <text x="840" y="247" class="eq">Σ cₑkₑ ≤ Σ cₑnₑ* = B</text>
+    <text x="840" y="290" class="copy">Whole counts remain inside</text>
+    <text x="840" y="314" class="copy">the original budget.</text>
   </g>
 
-  <path d="M570 300 H638" class="arrow" data-from="p64-continuous" data-to="p64-floor"/>
-  <path d="M1150 300 H1218" class="arrow" data-from="p64-floor" data-to="p64-ratio"/>
+  <path id="arrow-1" class="arrow" d="M385 240 H435" data-source="block-continuous" data-target="block-gate"/>
+  <path id="arrow-2" class="arrow" d="M765 240 H815" data-source="block-gate" data-target="block-floor"/>
 
-  <g id="p64-certificate" data-qa-block="true" data-x="245" data-y="520" data-width="1310" data-height="250">
-    <rect class="card" x="245" y="520" width="1310" height="250" rx="24" fill="#fff7ed" stroke="#f97316"/>
-    <text x="295" y="570" class="bt">4. Certified approximation to the exact P63 optimum</text>
-    <text x="295" y="630" class="math">U(kfloor) ≤ (1 / √rmin) U*cont(B)</text>
-    <text x="295" y="675" class="math">U(kfloor) ≤ (1 / √rmin) U*int(B)</text>
-    <text x="295" y="725" class="tx">The certificate requires no budget-scale dynamic program.</text>
+  <text x="600" y="390" class="route" text-anchor="middle">instance-specific approximation certificate</text>
+
+  <g id="block-certificate" data-x="120" data-y="410" data-w="960" data-h="225">
+    <rect x="120" y="410" width="960" height="225" rx="20" fill="#fefce8" stroke="#ca8a04" stroke-width="2"/>
+    <text x="600" y="449" text-anchor="middle" class="head">4. Certified approximation to the exact P63 optimum</text>
+    <text x="600" y="489" text-anchor="middle" class="eq">rₑ = floor(nₑ*) / nₑ* ,    rmin = minₑ rₑ</text>
+    <text x="600" y="528" text-anchor="middle" class="eq">U(kfloor) ≤ (1 / √rmin) U*cont(B)</text>
+    <text x="600" y="562" text-anchor="middle" class="eq">U(kfloor) ≤ (1 / √rmin) U*int(B)</text>
+    <text x="600" y="598" text-anchor="middle" class="copy">The ratio is computable directly from the P62 solution; no budget-scale integer dynamic program is needed.</text>
   </g>
 
-  <path d="M900 425 V508" class="arrow" data-from="p64-floor" data-to="p64-certificate"/>
-  <path d="M1480 425 C1450 480 1325 490 1240 520" class="arrow" data-from="p64-ratio" data-to="p64-certificate"/>
+  <path id="arrow-3" class="arrow" d="M980 350 V380 H780 V410" data-source="block-floor" data-target="block-certificate"/>
 
-  <g id="p64-uniform" data-qa-block="true" data-x="120" data-y="845" data-width="710" data-height="145">
-    <rect class="card" x="120" y="845" width="710" height="145" rx="20" fill="#eff6ff" stroke="#3b82f6"/>
-    <text x="165" y="892" class="bt">Simple uniform guarantee</text>
-    <text x="165" y="928" class="math">nₑ* ≥ ν &gt; 1 ⇒ factor ≤ √[ν/(ν - 1)]</text>
-    <text x="165" y="958" class="small">The factor approaches 1 as continuous counts grow.</text>
+  <text x="350" y="674" class="route" text-anchor="middle">simplify the factor</text>
+  <text x="850" y="674" class="route" text-anchor="middle">interpret cost and scope</text>
+
+  <g id="block-uniform" data-x="100" data-y="695" data-w="455" data-h="160">
+    <rect x="100" y="695" width="455" height="160" rx="18" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="128" y="733" class="head">5. Uniform guarantee</text>
+    <text x="128" y="774" class="eq">nₑ* ≥ ν &gt; 1 for all e</text>
+    <text x="128" y="808" class="strong">factor ≤ √[ν / (ν - 1)]</text>
+    <text x="128" y="836" class="small">The factor tends to 1 as counts grow.</text>
   </g>
 
-  <g id="p64-scale" data-qa-block="true" data-x="970" data-y="845" data-width="710" data-height="145">
-    <rect class="card" x="970" y="845" width="710" height="145" rx="20" fill="#ffffff" stroke="#94a3b8"/>
-    <text x="1015" y="892" class="bt">Scalability</text>
-    <text x="1015" y="928" class="math">O(m) after the P62 closed form</text>
-    <text x="1015" y="958" class="small">If any nₑ* &lt; 1, P63 remains the exact fallback.</text>
+  <g id="block-scope" data-x="645" data-y="695" data-w="455" data-h="160">
+    <rect x="645" y="695" width="455" height="160" rx="18" fill="#ffffff" stroke="#64748b" stroke-width="2"/>
+    <text x="673" y="733" class="head">6. Scalability and regime boundary</text>
+    <text x="673" y="770" class="eq">O(m) after the P62 closed form</text>
+    <text x="673" y="803" class="small">If any nₑ* &lt; 1, P64 is not applicable.</text>
+    <text x="673" y="827" class="small">Use P65 for a baseline-safe continuous route;</text>
+    <text x="673" y="849" class="small">P63 remains the unrestricted exact integer solver.</text>
   </g>
 
-  <path d="M560 770 C520 815 475 820 475 833" class="arrow" data-from="p64-certificate" data-to="p64-uniform"/>
-  <path d="M1240 770 C1280 815 1325 820 1325 833" class="arrow" data-from="p64-certificate" data-to="p64-scale"/>
+  <path id="arrow-4" class="arrow" d="M420 635 V695" data-source="block-certificate" data-target="block-uniform"/>
+  <path id="arrow-5" class="arrow" d="M780 635 V695" data-source="block-certificate" data-target="block-scope"/>
 
-  <text x="900" y="1025" text-anchor="middle" class="small">Boundary: P64 is a certified approximation for the declared calibration surrogate, not a claim about consciousness or quantum incompleteness.</text>
+  <g id="block-boundary" data-x="90" data-y="862" data-w="1020" data-h="78">
+    <rect x="90" y="862" width="1020" height="78" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="118" y="889" class="head">Scientific boundary</text>
+    <text x="118" y="913" class="small">P64 is an approximation theorem for the declared calibration surrogate.</text>
+    <text x="118" y="934" class="small">It does not identify consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness.</text>
+  </g>
 </svg>
