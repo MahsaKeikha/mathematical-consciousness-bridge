@@ -1,65 +1,102 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
   <title id="title">P74 finite-sample target-channel recovery</title>
-  <desc id="desc">What this figure shows: Figure 9. P74 finite-sample recovery certificate. A single empirical-law confidence event feeds a covariance nondegeneracy gate and then the P73 inversion. Certified outputs include latent-prevalence, stability, channel-offset, and binary-channel probability intervals. Failure of the gate means the current finite data do not safely support inversion; it is not evidence that the true population is degenerate. How to read it: follow only the labeled arrows, axes, panels, set relations, or inequalities shown in the visual and interpret them using the adjacent research text. Main takeaway: the figure summarizes the stated mathematical or scientific dependency; visual proximity alone does not add a claim. Scientific status: Reader-facing research figure; formal status is controlled by the linked proof or source record.</desc>
-  <rect x="0" y="0" width="1200" height="760" rx="24" fill="#ffffff"/>
-  <text x="60" y="62" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" fill="#111827">P74 Finite-Sample Target-Channel Recovery</text>
-  <text x="60" y="96" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#475569">Finite data are allowed to certify the P73 inversion only when uncertainty stays away from its singular covariance boundary.</text>
+  <desc id="desc">What this figure shows: P74 converts one finite-sample confidence event for the observed eight-cell law into a guarded version of the P73 target-channel inversion. How to read it: follow the four attached top-row stages from observed data to the shared confidence event, then to the nondegeneracy gate, and finally to certified output. The lower-left panel shows the interval inversion formulas; the lower-right panel states what successful certification and gate failure mean. Main takeaway: recovery is reported only when finite-sample uncertainty stays away from the covariance singularity. Gate failure means not certified by the current data, not population degeneracy. Scientific status: Finite-sample certification theorem figure conditional on the P73 model. It does not validate conditional independence, identify the latent state with consciousness, or close the physical-to-experiential bridge.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .title{font:700 30px Arial,Helvetica,sans-serif;fill:#0f172a}
+      .subtitle{font:400 16px Arial,Helvetica,sans-serif;fill:#475569}
+      .step{font:700 17px Arial,Helvetica,sans-serif;fill:#0f172a}
+      .body{font:400 14px Arial,Helvetica,sans-serif;fill:#334155}
+      .eq{font:600 14px Arial,Helvetica,sans-serif;fill:#0f172a}
+      .small{font:400 12.5px Arial,Helvetica,sans-serif;fill:#64748b}
+      .panelTitle{font:700 19px Arial,Helvetica,sans-serif;fill:#0f172a}
+      .boundary{font:600 13px Arial,Helvetica,sans-serif;fill:#334155}
+    </style>
+  </defs>
 
-  <rect x="55" y="135" width="250" height="205" rx="18" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
-  <text x="80" y="170" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#0f172a">1. Observed data</text>
-  <text x="80" y="206" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#334155">n IID triples</text>
-  <text x="80" y="234" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="600" fill="#0f172a">(X1, X2, X3) in {-1,+1}^3</text>
-  <text x="80" y="272" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#334155">8-cell empirical law P_hat</text>
-  <text x="80" y="305" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#64748b">No latent labels are observed.</text>
+  <rect width="1200" height="760" fill="#f8fafc"/>
+  <rect x="32" y="26" width="1136" height="708" rx="22" fill="#ffffff" stroke="#d7e0ea" stroke-width="2"/>
+  <text x="60" y="64" class="title">P74 Finite-Sample Target-Channel Recovery</text>
+  <text x="60" y="94" class="subtitle">Finite data support the P73 inversion only when uncertainty stays away from the singular covariance boundary.</text>
 
-  <line x1="305" y1="237" x2="350" y2="237" stroke="#475569" stroke-width="3"/>
-  <polygon points="350,237 338,230 338,244" fill="#475569"/>
+  <g id="observed-data-panel">
+    <rect x="60" y="130" width="240" height="220" rx="16" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+    <text x="82" y="162" class="step">1. Observed data</text>
+    <text x="82" y="198" class="body">n IID triples</text>
+    <text x="82" y="224" class="eq">(X1, X2, X3) in {-1,+1}^3</text>
+    <text x="82" y="258" class="eq">8-cell empirical law P_hat</text>
+    <text x="82" y="292" class="small">No latent labels are observed.</text>
+    <text x="82" y="316" class="small">Sampling starts from the observed law.</text>
+  </g>
 
-  <rect x="350" y="135" width="250" height="205" rx="18" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
-  <text x="375" y="170" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#0f172a">2. One confidence event</text>
-  <text x="375" y="208" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#334155">eps = sqrt(log(16/alpha)/(2n))</text>
-  <text x="375" y="240" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#334155">delta = min{2, 8 eps}</text>
-  <text x="375" y="278" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#0f172a">|C_hat - C| &lt;= 3 delta</text>
-  <text x="375" y="308" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#0f172a">|M_hat - M| &lt;= 13 delta</text>
+  <path d="M300 240 L334 240" stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
 
-  <line x1="600" y1="237" x2="645" y2="237" stroke="#475569" stroke-width="3"/>
-  <polygon points="645,237 633,230 633,244" fill="#475569"/>
+  <g id="confidence-event-panel">
+    <rect x="340" y="130" width="240" height="220" rx="16" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
+    <text x="362" y="158" class="step">2. One shared</text>
+    <text x="362" y="180" class="step">confidence event</text>
+    <text x="362" y="216" class="body">eps = sqrt(log(16/alpha)/(2n))</text>
+    <text x="362" y="244" class="body">delta = min{2, 8 eps}</text>
+    <text x="362" y="278" class="eq">|C_hat - C| &lt;= 3 delta</text>
+    <text x="362" y="306" class="eq">|M_hat - M| &lt;= 13 delta</text>
+    <text x="362" y="330" class="small">One event controls all reported bounds.</text>
+  </g>
 
-  <rect x="645" y="135" width="250" height="205" rx="18" fill="#fff7ed" stroke="#f59e0b" stroke-width="2"/>
-  <text x="670" y="170" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#7c2d12">3. Nondegeneracy gate</text>
-  <text x="670" y="210" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="600" fill="#7c2d12">L12 &gt; 0, L13 &gt; 0, L23 &gt; 0</text>
-  <text x="670" y="246" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#7c2d12">and covariance sign product &gt; 0</text>
-  <text x="670" y="286" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#7c2d12">If not: NOT CERTIFIED</text>
-  <text x="670" y="315" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#9a3412">Do not invert through a near-zero denominator.</text>
+  <path d="M580 240 L614 240" stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
 
-  <line x1="895" y1="237" x2="940" y2="237" stroke="#475569" stroke-width="3"/>
-  <polygon points="940,237 928,230 928,244" fill="#475569"/>
+  <g id="nondegeneracy-gate-panel">
+    <rect x="620" y="130" width="240" height="220" rx="16" fill="#fff7ed" stroke="#f59e0b" stroke-width="2"/>
+    <text x="642" y="158" class="step" fill="#7c2d12">3. Nondegeneracy</text>
+    <text x="642" y="180" class="step" fill="#7c2d12">gate</text>
+    <text x="642" y="216" class="eq" fill="#7c2d12">L12 &gt; 0, L13 &gt; 0, L23 &gt; 0</text>
+    <text x="642" y="246" class="body" fill="#7c2d12">covariance sign product &gt; 0</text>
+    <text x="642" y="282" class="step" fill="#9a3412">If not: NOT CERTIFIED</text>
+    <text x="642" y="310" class="small" fill="#9a3412">Do not invert through a</text>
+    <text x="642" y="330" class="small" fill="#9a3412">near-zero denominator.</text>
+  </g>
 
-  <rect x="940" y="135" width="205" height="205" rx="18" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
-  <text x="962" y="170" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#14532d">4. Certified output</text>
-  <text x="962" y="208" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#166534">q in [qL, qU]</text>
-  <text x="962" y="238" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#166534">|m| and v intervals</text>
-  <text x="962" y="268" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#166534">prevalence orbit</text>
-  <text x="962" y="300" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#14532d">gamma_j in [Lj, Uj]</text>
+  <path d="M860 240 L894 240" stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
 
-  <rect x="55" y="385" width="525" height="245" rx="18" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
-  <text x="80" y="423" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#0f172a">P73 inversion with finite-data intervals</text>
-  <text x="80" y="465" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#0f172a">qL = LM^2 / (U12 U13 U23)</text>
-  <text x="80" y="497" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#0f172a">qU = UM^2 / (L12 L13 L23)</text>
-  <text x="80" y="536" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#0f172a">v in [ 4/(qU+4), 4/(qL+4) ]</text>
-  <text x="80" y="575" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="600" fill="#0f172a">gamma_1,L = sqrt( L12 L13 / (vU U23) )</text>
-  <text x="80" y="606" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#475569">and cyclic permutations for gamma_2 and gamma_3</text>
+  <g id="certified-output-panel">
+    <rect x="900" y="130" width="240" height="220" rx="16" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+    <text x="922" y="158" class="step" fill="#14532d">4. Certified output</text>
+    <text x="922" y="204" class="body" fill="#166534">q in [qL, qU]</text>
+    <text x="922" y="232" class="body" fill="#166534">|m| and v intervals</text>
+    <text x="922" y="260" class="body" fill="#166534">prevalence orbit</text>
+    <text x="922" y="294" class="eq" fill="#14532d">gamma_j in [Lj, Uj]</text>
+    <text x="922" y="322" class="small" fill="#166534">All intervals hold together</text>
+    <text x="922" y="340" class="small" fill="#166534">on the shared event.</text>
+  </g>
 
-  <rect x="620" y="385" width="525" height="245" rx="18" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
-  <text x="645" y="423" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#1e3a8a">What the certificate means</text>
-  <text x="645" y="464" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1e40af">With probability at least 1-alpha, all reported intervals hold together.</text>
-  <text x="645" y="501" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1e40af">gamma_123 &gt;= max_j gamma_j,L</text>
-  <text x="645" y="540" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1e40af">Away from covariance degeneracy, intervals contract as n grows.</text>
-  <text x="645" y="578" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1e40af">Gate failure means insufficient finite-data resolution, not proof of</text>
-  <text x="645" y="603" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1e40af">population degeneracy or failure of physics.</text>
+  <g id="inversion-panel">
+    <rect x="60" y="390" width="520" height="250" rx="16" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+    <text x="84" y="426" class="panelTitle">P73 inversion with finite-data intervals</text>
+    <text x="84" y="466" class="eq">qL = LM^2 / (U12 U13 U23)</text>
+    <text x="84" y="496" class="eq">qU = UM^2 / (L12 L13 L23)</text>
+    <text x="84" y="534" class="eq">v in [ 4/(qU+4), 4/(qL+4) ]</text>
+    <text x="84" y="574" class="eq">gamma_1,L = sqrt( L12 L13 / (vU U23) )</text>
+    <text x="84" y="604" class="small">Use cyclic permutations for gamma_2 and gamma_3.</text>
+    <text x="84" y="626" class="small">Every denominator is protected by the top-row gate.</text>
+  </g>
 
-  <rect x="55" y="663" width="1090" height="58" rx="14" fill="#f1f5f9"/>
-  <text x="78" y="689" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#334155">Scientific boundary:</text>
-  <text x="225" y="689" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#334155">P74 quantifies sampling uncertainty conditional on the P73 model. It does not validate conditional independence,</text>
-  <text x="78" y="711" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#334155">does not identify the latent state with consciousness, and does not establish the physical-to-experiential bridge.</text>
+  <g id="meaning-panel">
+    <rect x="620" y="390" width="520" height="250" rx="16" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
+    <text x="644" y="426" class="panelTitle" fill="#1e3a8a">What the certificate means</text>
+    <text x="644" y="466" class="body" fill="#1e40af">With probability at least 1-alpha, all reported</text>
+    <text x="644" y="488" class="body" fill="#1e40af">intervals hold simultaneously.</text>
+    <text x="644" y="526" class="eq" fill="#1e40af">gamma_123 &gt;= max_j gamma_j,L</text>
+    <text x="644" y="564" class="body" fill="#1e40af">Away from covariance degeneracy, the intervals</text>
+    <text x="644" y="586" class="body" fill="#1e40af">contract as n grows.</text>
+    <text x="644" y="616" class="small" fill="#7c2d12">Gate failure = insufficient current resolution,</text>
+    <text x="644" y="634" class="small" fill="#7c2d12">not proof of population degeneracy.</text>
+  </g>
+
+  <g id="scientific-boundary">
+    <rect x="60" y="672" width="1080" height="48" rx="12" fill="#f1f5f9"/>
+    <text x="82" y="696" class="boundary">Scientific boundary: P74 quantifies sampling uncertainty conditional on the P73 model. It does not validate conditional independence,</text>
+    <text x="82" y="714" class="boundary">does not identify the latent state with consciousness, and does not establish the physical-to-experiential bridge.</text>
+  </g>
 </svg>
