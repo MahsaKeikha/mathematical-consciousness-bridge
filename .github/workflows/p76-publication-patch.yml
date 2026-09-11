@@ -25,11 +25,21 @@ jobs:
           from pathlib import Path
           p = Path('scripts/p76_publication_patch.py')
           text = p.read_text(encoding='utf-8')
-          old = '"| 3. Bridge sufficiency and target validity | **P19-P24, P71-P75** |"'
-          new = '"| 3. Bridge sufficiency and target validity | **P19-P24, P71-P76** |"'
-          if old not in text:
-              raise SystemExit('expected preflight script token not found')
-          p.write_text(text.replace(old, new, 1), encoding='utf-8')
+          replacements = [
+              (
+                  '"| 3. Bridge sufficiency and target validity | **P19-P24, P71-P75** |"',
+                  '"| 3. Bridge sufficiency and target validity | **P19-P24, P71-P76** |"',
+              ),
+              (
+                  '"**[Read the complete P1 to P76 detailed proposition record](docs/detailed_proposition_record.md).**",\n        "**[Read the complete P1 to P76 detailed proposition record](docs/detailed_proposition_record.md).**",',
+                  '"**[Read the complete P1 to P75 detailed proposition record](docs/detailed_proposition_record.md).**",\n        "**[Read the complete P1 to P76 detailed proposition record](docs/detailed_proposition_record.md).**",',
+              ),
+          ]
+          for old, new in replacements:
+              if old not in text:
+                  raise SystemExit(f'expected preflight script token not found: {old[:80]}')
+              text = text.replace(old, new, 1)
+          p.write_text(text, encoding='utf-8')
           PY
       - name: Apply guarded publication patch
         run: python scripts/p76_publication_patch.py
