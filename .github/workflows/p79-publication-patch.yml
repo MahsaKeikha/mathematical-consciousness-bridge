@@ -20,62 +20,87 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Align temporary helper with current P78 abstract
+      - name: Apply guarded P79 navigation cleanup
         run: |
           python - <<'PY'
           from pathlib import Path
 
-          path = Path("scripts/p79_publication_patch.py")
+          path = Path("docs/research_navigation.md")
           text = path.read_text(encoding="utf-8")
-          old = (
-              "P78 closes the continuous-family computational gap left by P77 for the P75 model. "
-              "Its nine-parameter observed-law map is multi-affine, so every parameter box yields exact "
-              "coordinatewise cell intervals and a rigorous L-infinity lower bound on distance from the "
-              "empirical law to all model laws generated inside that box. The minimum lower bound over a "
-              "complete box partition is therefore a valid global lower bound on distance to the continuous "
-              "model family. Explicit parameter points provide upper bounds, an explicit mesh-width bound "
-              "controls the optimization gap, and the implementation uses exact rational arithmetic for "
-              "empirical count laws and dyadic branch points. Full-law rejection still requires the certified "
-              "P78 lower bound to exceed a separately valid upper bound on the P77 sampling radius.\\n\\n"
-          )
-          new = (
-              "P78 supplies a certified continuous-family lower bound for the P75 four-view binary latent model. "
-              "Its sixteen observed cell probabilities are multi-affine functions of nine parameters. On every "
-              "axis-aligned parameter box, exact coordinatewise cell ranges give a rigorous lower bound "
-              "$L_\\infty(B;\\widehat P)$ on the distance from the empirical law to every model law generated in "
-              "that box. For any finite box partition $\\mathcal B$ of the complete parameter cube, "
-              "$L_{\\mathcal B}=\\min_{B\\in\\mathcal B}L_\\infty(B;\\widehat P)$ is therefore a valid global lower "
-              "bound on $d_\\infty(\\widehat P,\\mathcal M_{4,2})$. An explicit parameter point gives an upper bound, "
-              "and a parameter-space Lipschitz argument gives the mesh guarantee "
-              "$0\\le d_\\infty-L_{\\mathcal B}\\le\\eta(\\mathcal B)$. The implementation uses exact rational "
-              "arithmetic for empirical counts and dyadic box refinement. P78 is a computational certification "
-              "theorem under the declared P75 model, not an experiential ontology.\\n\\n"
-          )
-          if old not in text:
-              raise SystemExit("expected temporary P78 abstract anchor not found")
-          path.write_text(text.replace(old, new, 1), encoding="utf-8")
+
+          replacements = {
+              "13. [P79 bounded target-view dependence]": "15. [P79 bounded target-view dependence]",
+              "15. [P11-P18 and P25-P37 operational physical structure]": "16. [P11-P18 and P25-P37 operational physical structure]",
+              "16. [P38-P44 quantum foundations and bridge tests]": "17. [P38-P44 quantum foundations and bridge tests]",
+              "17. [P45-P60 adaptive experiment design and scheduling]": "18. [P45-P60 adaptive experiment design and scheduling]",
+              "18. [P61-P70 Calibration and Optimization Frontier]": "19. [P61-P70 Calibration and Optimization Frontier]",
+              "19. [Equation and citation map]": "20. [Equation and citation map]",
+              "20. [P72 equation and provenance record]": "21. [P72 equation and provenance record]",
+              "21. [P73 equation and provenance record]": "22. [P73 equation and provenance record]",
+              "22. [P74 equation and provenance record]": "23. [P74 equation and provenance record]",
+              "23. [P75 equation and provenance record]": "24. [P75 equation and provenance record]",
+              "24. [Falsification program]": "25. [Falsification program]",
+              "25. [P78 equation and provenance record]": "26. [P78 equation and provenance record]",
+              "26. [Citation guide]": "27. [Citation guide]",
+          }
+          for old, new in replacements.items():
+              if text.count(old) != 1:
+                  raise SystemExit(f"navigation numbering anchor mismatch: {old!r}")
+              text = text.replace(old, new, 1)
+
+          p78_branch = "| Certified continuous target-model separation | P78 | Supplies exact-rational global lower bounds for distance to the continuous P75 model family and a convergent mesh certificate | [P78](proposition_78_certified_continuous_model_separation.md) |"
+          p79_branch = "| Bounded target-view dependence robustness | P79 | Enlarges the P75 family by an independently justified local-dependence allowance and preserves rejection beyond sampling plus dependence margins | [P79](proposition_79_bounded_target_view_dependence.md) |"
+          if p79_branch not in text:
+              if text.count(p78_branch) != 1:
+                  raise SystemExit("P78 branch-map anchor mismatch")
+              text = text.replace(p78_branch, p78_branch + "\n" + p79_branch, 1)
+
+          p76_paragraph = "P76 adds finite-data discipline to that adequacy check. One simultaneous sixteen-cell confidence event is propagated to the tracked P75 polynomial constraints. Excluding zero from any necessary-constraint interval certifies model incompatibility at the stated confidence level. If no interval excludes zero, P76 reports only non-rejection, never model acceptance.\n"
+          continuation = """
+
+P77 strengthens finite-data adequacy from selected necessary constraints to the complete declared observed-law model set. A full-law rejection requires the simultaneous empirical-law confidence region to be separated from the entire model family. A candidate numerical fit supplies an upper bound on model distance, so it cannot by itself certify rejection of a continuous family.
+
+P78 supplies the missing certified global lower-bound mechanism for the continuous P75 family. Exact-rational multi-affine box refinement lower-bounds the distance to every model in the complete parameter cube, while explicit parameter points provide upper bounds. The lower bound converges under refinement and hands directly into the P77 rejection gate.
+
+P79 weakens exact conditional independence of the target views by adding an independently justified residual-dependence allowance. The resulting population law must stay within that allowance of the P75 family, so robust rejection requires the certified P78 separation to exceed both P77 sampling uncertainty and the P79 dependence budget. The allowance must not be chosen post hoc from the same discrepancy merely to prevent rejection.
+"""
+          if "P79 weakens exact conditional independence of the target views" not in text:
+              if text.count(p76_paragraph) != 1:
+                  raise SystemExit("P76 interface paragraph anchor mismatch")
+              text = text.replace(p76_paragraph, p76_paragraph + continuation, 1)
+
+          p76_figure = "| [P76 figure](figures/p76_finite_sample_target_model_adequacy.svg) | shared finite-sample confidence event, polynomial adequacy intervals, certified rejection, and the non-rejection boundary |"
+          extra_figures = """| [P77 figure](figures/p77_full_law_model_set_separation.svg) | full-law confidence-region separation and the lower-bound versus best-fit distinction |
+| [P78 figure](figures/p78_certified_continuous_model_separation.svg) | exact-rational box refinement, global lower bounds, upper bounds, and the P77 handoff |
+| [P79 figure](figures/p79_bounded_target_view_dependence.svg) | local-dependence defect, robustness envelope, and the sampling-plus-dependence rejection margin |"""
+          if "[P79 figure](figures/p79_bounded_target_view_dependence.svg)" not in text:
+              if text.count(p76_figure) != 1:
+                  raise SystemExit("P76 figure-table anchor mismatch")
+              text = text.replace(p76_figure, p76_figure + "\n" + extra_figures, 1)
+
+          old_evidence = "Use the [Equation and citation map](equation_and_citation_map.md) to distinguish standard identities, repository derivations, and externally supported scientific claims. Use the [P72 provenance record](p72_equation_provenance.md), [P73 provenance record](p73_equation_provenance.md), [P74 provenance record](p74_equation_provenance.md), [P75 provenance record](p75_equation_provenance.md), and [P76 provenance record](p76_equation_provenance.md) for target-side equation classification."
+          new_evidence = "Use the [Equation and citation map](equation_and_citation_map.md) to distinguish standard identities, repository derivations, and externally supported scientific claims. Use the [P72 provenance record](p72_equation_provenance.md), [P73 provenance record](p73_equation_provenance.md), [P74 provenance record](p74_equation_provenance.md), [P75 provenance record](p75_equation_provenance.md), [P76 provenance record](p76_equation_provenance.md), [P77 provenance record](p77_equation_provenance.md), [P78 provenance record](p78_equation_provenance.md), and [P79 provenance record](p79_equation_provenance.md) for target-side equation classification."
+          if text.count(old_evidence) != 1:
+              raise SystemExit("evidence paragraph anchor mismatch")
+          text = text.replace(old_evidence, new_evidence, 1)
+
+          old_frontier = "The research remains an ongoing mathematical-physics program. The current theorem frontier is P76, but the physical-to-experiential bridge itself remains open."
+          new_frontier = "The research remains an ongoing mathematical-physics program. The current theorem frontier is P79, but the physical-to-experiential bridge itself remains open."
+          if text.count(old_frontier) != 1:
+              raise SystemExit("navigation frontier anchor mismatch")
+          text = text.replace(old_frontier, new_frontier, 1)
+
+          path.write_text(text, encoding="utf-8")
           PY
-      - name: Apply guarded P79 publication patch
-        run: python scripts/p79_publication_patch.py
       - name: Install test dependencies
         run: python -m pip install -e ".[dev]"
-      - name: Run focused P79 publication regressions
-        run: >-
-          pytest
-          tests/test_bounded_target_view_dependence.py
-          tests/test_p79_figure_geometry.py
-          tests/test_citation_surface.py
-          tests/test_public_reader_navigation_frontier.py
-          tests/test_readme_research_orientation.py
-          tests/test_main_page_visual_paper.py
-          tests/test_research_website_integrity.py
-          tests/test_document_link_integrity.py
-          tests/test_release_metadata_consistency.py
-      - name: Commit publication integration
+      - name: Verify permanent P79 navigation contract
+        run: pytest tests/test_p79_research_integration.py tests/test_readme_research_orientation.py tests/test_document_link_integrity.py
+      - name: Commit navigation cleanup
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md CITATION.md CHANGELOG.md docs/theorem_roadmap.md docs/research_navigation.md docs/detailed_proposition_record.md docs/equation_and_citation_map.md website/index.html website/research-map.html website/visual-atlas.html
-          git diff --cached --quiet && { echo "No publication changes produced"; exit 1; }
-          git commit -m "Integrate P79 across public research surfaces"
+          git add docs/research_navigation.md
+          git diff --cached --quiet && { echo "No navigation changes produced"; exit 1; }
+          git commit -m "Complete P79 research navigation"
           git push origin HEAD:p79-bounded-target-view-dependence
