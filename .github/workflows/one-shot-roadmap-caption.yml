@@ -1,0 +1,67 @@
+name: one-shot-roadmap-caption
+
+on:
+  push:
+    branches:
+      - clarify-theorem-roadmap-caption
+
+permissions:
+  contents: write
+
+jobs:
+  update-caption:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: clarify-theorem-roadmap-caption
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Update roadmap caption and permanent metadata
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          old_caption = (
+              "**Figure 3. Theorem dependency map.** Proposition numbers preserve development order, "
+              "while the dependency map shows scientific order. P71-P80 return to the P19 target-sufficiency "
+              "lineage; P61-P70 remains a separate downstream optimization branch."
+          )
+          new_caption = (
+              "**Figure 3. Theorem dependency map for P1-P31.** Proposition numbers preserve development order, "
+              "while arrows show actual mathematical and scientific prerequisites. The central target-sufficiency "
+              "chain runs from P19 through P24; P25-P31 are physical-scale and quotient branches whose prerequisites "
+              "are given by the arrows rather than by vertical placement alone. An absent arrow means no dependency "
+              "is being asserted. Later P61-P70 and P71-P80 are separate continuations documented in the theorem index."
+          )
+
+          readme = Path("README.md")
+          text = readme.read_text(encoding="utf-8")
+          if old_caption not in text:
+              raise SystemExit("Expected Figure 3 caption not found in README.md")
+          readme.write_text(text.replace(old_caption, new_caption, 1), encoding="utf-8")
+
+          records = Path("scripts/conceptual_figure_records.py")
+          rtext = records.read_text(encoding="utf-8")
+          key = '    "docs/figures/theorem_roadmap.svg": {'
+          if key not in rtext:
+              marker = "RECORDS: dict[str, dict[str, str]] = {\n"
+              record = '''    "docs/figures/theorem_roadmap.svg": {\n        "title": "Theorem dependency map for P1-P31",\n        "description": (\n            "What this figure shows: the theorem roadmap for Propositions 1 through 31, with arrows encoding actual mathematical or scientific prerequisites rather than mere numerical sequence or vertical proximity. "\n            "How to read it: follow the arrows, not just the page order. The central target-sufficiency lineage runs from P19 through P24. P25-P31 are physical-scale, aggregation, metric, and quotient branches whose prerequisites are shown explicitly by the connectors. An absent arrow means that the figure is not asserting a prerequisite. "\n            "Main takeaway: proposition numbering records development order, whereas the arrow topology records dependency structure. Later P61-P70 and P71-P80 are separate continuations documented in the theorem index."\n        ),\n        "status": (\n            "Research-orientation figure. It summarizes dependency structure among the displayed theorem branches; it does not add a theorem, empirical consciousness result, or physical-to-experiential bridge claim."\n        ),\n    },\n'''
+              if marker not in rtext:
+                  raise SystemExit("RECORDS marker not found")
+              rtext = rtext.replace(marker, marker + record, 1)
+              records.write_text(rtext, encoding="utf-8")
+          PY
+      - name: Regenerate figure documentation
+        run: python scripts/enrich_figure_documentation.py
+      - name: Remove one-shot workflow
+        run: rm .github/workflows/one-shot-roadmap-caption.yml
+      - name: Commit generated documentation changes
+        run: |
+          git config user.name "Mahsa Keikha"
+          git config user.email "mahsa.keikha@gmail.com"
+          git add README.md scripts/conceptual_figure_records.py docs/figures/theorem_roadmap.svg docs/figure_catalog.md .github/workflows/one-shot-roadmap-caption.yml
+          git commit -m "Clarify theorem roadmap caption and dependency reading"
+          git push origin HEAD:clarify-theorem-roadmap-caption
