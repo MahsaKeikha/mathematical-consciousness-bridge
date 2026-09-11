@@ -81,8 +81,8 @@ def test_main_page_declares_scientific_status_boundaries():
         "Numerical validation facts",
         "A passing test proves only",
         "target-construction protocol",
-        "the way that target is observed",
-        "reliability of that observation",
+        "the way it is observed",
+        "reliability of the measurement itself",
     )
     for phrase in required_phrases:
         assert phrase in text, f"README is missing scientific-boundary text: {phrase}"
