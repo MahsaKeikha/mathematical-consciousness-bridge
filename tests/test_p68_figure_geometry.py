@@ -5,10 +5,27 @@ ROOT = Path(__file__).resolve().parents[1]
 FIGURE = ROOT / "docs/figures/p68_lagrangian_optimality_gap.svg"
 CATALOG = ROOT / "docs/figure_catalog.md"
 NS = {"svg": "http://www.w3.org/2000/svg"}
+CLASS_FONT_SIZES = {
+    "title": 30.0,
+    "subtitle": 16.0,
+    "stageTitle": 18.0,
+    "body": 14.0,
+    "note": 13.0,
+    "math": 14.0,
+}
 
 
 def _float(element, name):
     return float(element.attrib[name])
+
+
+def _font_size(text):
+    if "font-size" in text.attrib:
+        return float(text.attrib["font-size"])
+    for class_name in text.attrib.get("class", "").split():
+        if class_name in CLASS_FONT_SIZES:
+            return CLASS_FONT_SIZES[class_name]
+    return 16.0
 
 
 def test_p68_figure_has_self_explanatory_accessible_description():
@@ -45,7 +62,7 @@ def test_p68_figure_text_stays_inside_declared_blocks():
         for text in group.findall("svg:text", NS):
             tx = _float(text, "x")
             ty = _float(text, "y")
-            font_size = float(text.attrib.get("font-size", "16"))
+            font_size = _font_size(text)
             content = "".join(text.itertext())
             conservative_width = len(content) * font_size * 0.58
             assert tx >= x + 12
