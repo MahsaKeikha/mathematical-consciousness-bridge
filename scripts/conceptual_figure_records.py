@@ -5,6 +5,17 @@ from pathlib import Path
 from typing import Any
 
 RECORDS: dict[str, dict[str, str]] = {
+    "docs/figures/p66_residual_exact_calibration_augmentation.svg": {
+        "title": "P66 residual-exact augmentation after P65 flooring",
+        "description": (
+            "What this figure shows: P66 starts from the exact lower-bounded continuous P65 optimum, floors it to an executable baseline-safe integer design, proves that the leftover budget R is strictly smaller than one baseline cost B0, and solves the best floor-dominating integer augmentation exactly by dynamic programming on that residual budget. "
+            "How to read it: move left to right across the three upper cards from the P65 optimum to the residual-budget identity and then to the exact residual dynamic program. From the DP card, follow the two attached lower branches: the left panel records objective and approximation improvements over the P65 floor; the right panel records why the computation stays localized to the residual scale. "
+            "Main takeaway: P66 is globally exact only inside the class k greater than or equal to the P65 floor f; it does not replace P63 as the unrestricted exact integer solver."
+        ),
+        "status": (
+            "Discrete resource-allocation theorem for the declared calibration surrogate. It is not a consciousness theorem, empirical consciousness result, physical-to-experiential bridge theorem, or quantum-ontology claim."
+        ),
+    },
     "docs/figures/theorem_roadmap.svg": {
         "title": "Theorem dependency map for P1-P31",
         "description": (
