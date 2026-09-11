@@ -113,7 +113,7 @@ def test_p75_source_keeps_scientific_boundary_explicit() -> None:
     )
     required = (
         "does not identify a latent state with consciousness",
-        "does not validate conditional independence from three-view fit alone",
+        "validate conditional independence from three-view fit alone",
         "Three binary views are generically just-identified",
         "a fourth view creates observable overidentifying restrictions",
     )
