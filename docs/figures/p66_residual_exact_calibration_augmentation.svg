@@ -38,9 +38,9 @@
     <text x="460" y="211" class="copy">R = B - sum c_e f_e</text>
     <text x="460" y="245" class="copy">R = sum c_e frac(n*_e)</text>
     <text x="460" y="289" class="strong">0 ≤ R &lt; Σ c_e = B₀</text>
-    <text x="460" y="317" class="small">Leftover scale is bounded by</text>
-    <text x="460" y="337" class="small">one mandatory-observation</text>
-    <text x="460" y="352" class="small">baseline.</text>
+    <text x="460" y="312" class="small">Leftover scale is bounded by</text>
+    <text x="460" y="330" class="small">one mandatory-observation</text>
+    <text x="460" y="348" class="small">baseline.</text>
   </g>
 
   <g id="block-dp" data-x="815" data-y="135" data-w="330" data-h="220">
