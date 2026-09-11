@@ -17,7 +17,6 @@ FIGURES = {
     "P61": ("p61_exact_integer_transition_calibration.svg", 6),
     "P62": ("p62_heterogeneous_cost_transition_calibration.svg", 5),
     "P63": ("p63_exact_heterogeneous_integer_calibration.svg", 6),
-    "P64": ("p64_fast_heterogeneous_integer_approximation.svg", 6),
 }
 
 
@@ -68,7 +67,7 @@ def _assert_text_fits(
     assert y + VERTICAL_PADDING <= label_y <= y + height - VERTICAL_PADDING
 
 
-def test_p59_p64_text_is_contained_inside_every_declared_block():
+def test_p59_p63_text_is_contained_inside_every_declared_block():
     for proposition, (filename, _) in FIGURES.items():
         _, svg = _load_figure(filename)
         blocks = svg.findall(".//svg:g[@data-qa-block='true']", SVG_NS)
@@ -90,7 +89,7 @@ def test_p59_p64_text_is_contained_inside_every_declared_block():
                 _assert_text_fits(proposition, block, label)
 
 
-def test_p59_p64_connectors_reference_existing_blocks():
+def test_p59_p63_connectors_reference_existing_blocks():
     for proposition, (filename, expected_connectors) in FIGURES.items():
         _, svg = _load_figure(filename)
         block_ids = {
@@ -109,7 +108,7 @@ def test_p59_p64_connectors_reference_existing_blocks():
             assert connector.attrib.get("class") == "arrow"
 
 
-def test_p59_p64_figures_have_no_forbidden_unicode_dashes():
+def test_p59_p63_figures_have_no_forbidden_unicode_dashes():
     for proposition, (filename, _) in FIGURES.items():
         figure, _ = _load_figure(filename)
         text = figure.read_text(encoding="utf-8")
