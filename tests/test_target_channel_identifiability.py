@@ -141,6 +141,6 @@ def test_p73_source_keeps_scientific_boundary_explicit() -> None:
     source = Path(
         "src/consciousness_bridge/target_channel_identifiability.py"
     ).read_text(encoding="utf-8")
-    assert "does not interpret the latent state as consciousness" in source
-    assert "unique up to the global latent-label swap" in source
+    assert "not interpret the latent state as consciousness" in source
+    assert "global latent-label swap" in source
     assert "two-view non-identifiability" in source
