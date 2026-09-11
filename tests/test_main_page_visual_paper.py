@@ -11,6 +11,9 @@ CURATED_MAIN_PAGE_FIGURES = (
     "theorem_roadmap.svg",
     "conscious_state_measurement_map.svg",
     "fundamental_theory_consciousness_map.svg",
+    "p71_target_provenance_noncircularity.svg",
+    "p72_target_measurement_channel_robustness.svg",
+    "p73_three_view_target_channel_identifiability.svg",
     "causal_structure_anatomy.svg",
     "information_geometry_response_manifold.svg",
     "p12_collision_map.svg",
@@ -18,8 +21,6 @@ CURATED_MAIN_PAGE_FIGURES = (
     "p18_scale_sufficiency_certificate.svg",
     "multiscale_physical_hierarchy.svg",
     "p20_finite_sample_residual_certificate.svg",
-    "p71_target_provenance_noncircularity.svg",
-    "p72_target_measurement_channel_robustness.svg",
     "observer_to_bridge_handoff.svg",
     "quantum_bridge_completeness_map.svg",
     "p38_quantum_operational_sufficiency.svg",
@@ -60,12 +61,13 @@ def test_detailed_proposition_chronology_is_externalized():
     detail = DETAIL.read_text(encoding="utf-8")
 
     assert "docs/detailed_proposition_record.md" in readme
-    assert "Open the complete P1 to P72 chronology" not in readme
-    assert "Complete P1 to P72 chronology" in detail
+    assert "Open the complete P1 to P73 chronology" not in readme
+    assert "Complete P1 to P73 chronology" in detail
     assert "Propositions **P1-P10**" in detail
     assert "**P70** makes the resulting certificate diagnostic rather than opaque" in detail
     assert "**P71** returns from the downstream calibration branch" in detail
     assert "**P72** adds the next target-side obligation" in detail
+    assert "**P73** addresses one assumption left open by P72" in detail
 
 
 def test_main_page_declares_scientific_status_boundaries():
