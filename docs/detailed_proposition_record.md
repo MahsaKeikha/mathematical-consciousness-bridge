@@ -8,7 +8,7 @@ The scientific status rule is strict throughout: a theorem is only a theorem und
 
 ---
 
-## Complete P1 to P72 chronology
+## Complete P1 to P73 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
@@ -65,6 +65,28 @@ For a binary symmetric target channel, the exact attenuation factor is \(|1-2\et
 
 Direct P72 proof: [target-measurement channel robustness](proposition_72_target_measurement_channel_robustness.md). Equation classification: [P72 equation and provenance record](p72_equation_provenance.md).
 
+**P73** addresses one assumption left open by P72: whether a binary target-channel stability can be identified without directly observing the latent target. Under the declared three-view model \(Y_i=ZN_i\), with mutually independent binary noises independent of \(Z\), the observable pair moments satisfy
+
+\[
+m_{ij}=\mathbb E[Y_iY_j]=r_ir_j,
+\qquad
+r_i=\mathbb E[N_i].
+\]
+
+P73 first proves a negative result: two heterogeneous views identify only the product \(|m_{12}|=\gamma_1\gamma_2\), leaving a continuum of compatible individual stabilities. With three nonzero compatible views, however,
+
+\[
+\gamma_1=\sqrt{\frac{m_{12}m_{13}}{m_{23}}},
+\qquad
+\gamma_2=\sqrt{\frac{m_{12}m_{23}}{m_{13}}},
+\qquad
+\gamma_3=\sqrt{\frac{m_{13}m_{23}}{m_{12}}}.
+\]
+
+The stability magnitudes are unique, while the signed reliability vector remains ambiguous under one simultaneous global sign flip. P73 also gives simultaneous finite-sample intervals for the three stability magnitudes using Hoeffding bounds on the pairwise moments, and it states the confidence accounting required to hand an independently calibrated lower stability bound into the P72 bridge experiment.
+
+Direct P73 proof: [three-view target-channel identifiability](proposition_73_three_view_target_channel_identifiability.md). Equation classification: [P73 equation and provenance record](p73_equation_provenance.md).
+
 ---
 
 ## Scientific interpretation of the chronology
@@ -76,9 +98,9 @@ The proposition numbers preserve development order, not one linear chain. The sc
 - P38-P44 build the quantum operational interface.
 - P45-P60 build adaptive evidence acquisition and execution machinery.
 - P61-P70 build downstream calibration and optimization.
-- P71-P72 return to the target side of the P19 bridge and formalize non-circular target provenance and noisy target measurement.
+- P71-P73 return to the target side of the P19 bridge and formalize non-circular target provenance, noisy target measurement, and three-view binary channel-stability identifiability.
 
-The next target-side problem is not another optimization theorem. It is to identify conditions under which an unknown target-measurement channel, or at least a lower bound on its witness-stability coefficient, can be recovered from repeated reports, multiple raters, multiple target views, calibration information, or explicit structural assumptions.
+P73 closes only a narrow identifiability model. The next target-side problem is **model adequacy and correlated-error robustness**: determine how shared bias, conditional dependence, class-asymmetric errors, temporal drift, or physical-state-dependent measurement can distort the P73 stability reconstruction, and develop diagnostics or sensitivity bounds that make those violations visible.
 
 ---
 
