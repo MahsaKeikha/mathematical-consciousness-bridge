@@ -19,6 +19,7 @@ def test_p80_figure_has_accessible_title_and_description() -> None:
     assert description is not None
     assert description.text is not None
     assert "simplex" in description.text.lower()
+    assert "coordinate-overlap radius" in description.text
     assert "P79" in description.text
 
 
@@ -56,13 +57,17 @@ def test_p80_text_baselines_remain_inside_canvas() -> None:
         assert 0 <= y <= 760
 
 
-def test_p80_visual_contains_core_certification_logic() -> None:
+def test_p80_visual_contains_complete_certification_logic() -> None:
     text = FIGURE.read_text(encoding="utf-8")
     required = (
         "P78 box enclosure",
         "Intersect with the simplex",
-        "Strongly certified bound" if False else "Stronger certified bound",
+        "Stronger certified bound",
         "R_delta subset R_box",
+        "r &gt;= r_box = L78(B)",
+        "sum max(l_i, p_i-r) &lt;= 1",
+        "1 &lt;= sum min(u_i, p_i+r)",
+        "L80 = max(r_box, r_A, r_C)",
         "L80(B) &gt;= L78(B)",
         "L80 &gt; epsilon_upper  =&gt;  reject",
         "physical-to-experiential bridge remains open",
