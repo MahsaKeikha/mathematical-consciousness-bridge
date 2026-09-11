@@ -4,6 +4,7 @@ import re
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 README = ROOT / "README.md"
 DOCS = ROOT / "docs"
+FRONTIER = DOCS / "calibration_optimization_frontier_p61_p70.md"
 
 
 def _max_proposition_number() -> int:
@@ -22,16 +23,24 @@ def test_readme_theorem_roadmap_advertises_current_frontier():
     assert f"P1 through P{frontier} with explicit dependency branches" in readme
 
 
-def test_readme_links_every_proposition_at_current_calibration_frontier():
+def test_readme_routes_calibration_frontier_to_complete_proposition_links():
     readme = README.read_text(encoding="utf-8")
+    frontier = FRONTIER.read_text(encoding="utf-8")
+    assert "docs/calibration_optimization_frontier_p61_p70.md" in readme
     required = (
-        "docs/proposition_61_exact_integer_transition_calibration.md",
-        "docs/proposition_62_heterogeneous_cost_transition_calibration.md",
-        "docs/proposition_63_exact_heterogeneous_integer_calibration.md",
-        "docs/proposition_64_fast_heterogeneous_integer_approximation.md",
+        "proposition_61_exact_integer_transition_calibration.md",
+        "proposition_62_heterogeneous_cost_transition_calibration.md",
+        "proposition_63_exact_heterogeneous_integer_calibration.md",
+        "proposition_64_fast_heterogeneous_integer_approximation.md",
+        "proposition_65_lower_bounded_heterogeneous_calibration.md",
+        "proposition_66_residual_exact_calibration_augmentation.md",
+        "proposition_67_global_integer_optimality_certificate.md",
+        "proposition_68_lagrangian_optimality_gap.md",
+        "proposition_69_dual_optimal_multiplier.md",
+        "proposition_70_primal_dual_gap_decomposition.md",
     )
     for link in required:
-        assert link in readme
+        assert link in frontier
 
 
 def test_public_navigation_documents_agree_on_current_frontier():
