@@ -160,7 +160,7 @@ def test_front_page_has_current_research_record_counts():
     assert "proposition-level results | **45**" not in text
     assert "total equation-driven quantitative figures | **58**" not in text
     assert f"{frontier} proposition-level results" in text
-    assert f"**P{frontier}**" in text
+    assert f"The theorem frontier is P{frontier}." in text
 
     match = re.search(r"\| Equation-driven quantitative figures \| \*\*(\d+)\*\* \|", text)
     assert match is not None
