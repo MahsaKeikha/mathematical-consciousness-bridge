@@ -24,7 +24,7 @@ def test_main_page_ends_with_professional_citation_section() -> None:
 def test_machine_readable_citation_metadata_has_preferred_research_citation() -> None:
     text = CFF.read_text(encoding="utf-8")
     assert "cff-version: 1.2.0" in text
-    assert 'version: "0.70.0"' in text
+    assert "version: 0.70.0" in text
     assert "license: MIT" in text
     assert "family-names: Keikha" in text
     assert "given-names: Mahsa" in text
@@ -32,6 +32,8 @@ def test_machine_readable_citation_metadata_has_preferred_research_citation() ->
     assert "type: generic" in text
     assert "year: 2026" in text
     assert "Physical-to-Experiential Bridge Problem" in text
+    assert "lower-bounded heterogeneous calibration" in text
+    assert "primal-dual gap decomposition" in text
     assert 'url: "https://github.com/MahsaKeikha/mathematical-consciousness-bridge"' in text
 
 
