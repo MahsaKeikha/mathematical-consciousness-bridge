@@ -108,6 +108,7 @@ def test_p67_figure_is_self_explanatory_and_preserves_boundaries():
         "Certified unrestricted P63 global optimum.",
         "Status: not certified",
         "This does not prove suboptimality.",
-        "It is not a consciousness theorem, bridge theorem",
+        "It is not a consciousness theorem or physical-to-experiential bridge theorem.",
+        "It is not an empirical consciousness result or quantum-completeness claim.",
     ]:
         assert token in text
