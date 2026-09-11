@@ -12,6 +12,14 @@ QUANTUM_GUIDE = ROOT / "docs" / "quantum_visual_guide.md"
 QUANTUM_MANIFEST = FIGURE_ROOT / "quantum" / "quantum_figure_manifest.json"
 VISUAL_ATLAS = ROOT / "website" / "visual-atlas.html"
 
+SPECIAL_CONCEPTUAL_FIGURES = {
+    "physics_mathematics_atlas.svg": "[Main research narrative](../README.md)",
+    "proposition_32_delay_quotient.svg": "[Proposition 32](proposition_32_delay_quotient_compatibility.md)",
+    "spaceflight_extreme_environment_map.svg": "[Main research narrative](../README.md)",
+    "state_space_dynamics_map.svg": "[Main research narrative](../README.md)",
+    "thermodynamics_information_processing.svg": "[Main research narrative](../README.md)",
+}
+
 
 def _svg_title_and_description(path: Path) -> tuple[str, str]:
     root = ET.parse(path).getroot()
@@ -39,6 +47,11 @@ def test_every_svg_has_substantive_accessible_metadata() -> None:
         if len(description) < 140:
             failures.append(
                 f"{figure}: <desc> is too short to explain the visual ({len(description)} chars)"
+            )
+        if description.count("Scientific status:") != 1:
+            failures.append(
+                f"{figure}: expected exactly one scientific-status boundary, found "
+                f"{description.count('Scientific status:')}"
             )
 
     assert not failures, "\n".join(failures)
@@ -157,6 +170,43 @@ def test_quantum_figures_have_literal_physics_reading_guides() -> None:
                 failures.append(f"{filename}: catalog row is not semantically self-explanatory")
             if "[Quantum visual guide](quantum_visual_guide.md)" not in row:
                 failures.append(f"{filename}: catalog row lacks direct quantum-guide context")
+
+    assert not failures, "\n".join(failures)
+
+
+def test_special_conceptual_figures_are_self_explanatory_and_clickable() -> None:
+    catalog = CATALOG.read_text(encoding="utf-8")
+    failures = []
+
+    for filename, context_link in SPECIAL_CONCEPTUAL_FIGURES.items():
+        figure = FIGURE_ROOT / filename
+        title, description = _svg_title_and_description(figure)
+        if not title:
+            failures.append(f"{filename}: missing title")
+        for token in (
+            "What this figure shows:",
+            "How to read it:",
+            "Main takeaway:",
+            "Scientific status:",
+        ):
+            if token not in description:
+                failures.append(f"{filename}: missing {token!r}")
+        if description.count("Scientific status:") != 1:
+            failures.append(f"{filename}: duplicate scientific-status wording")
+        if len(description) < 500:
+            failures.append(f"{filename}: description is too short ({len(description)} chars)")
+
+        catalog_link = f"(figures/{filename})"
+        matching_rows = [line for line in catalog.splitlines() if catalog_link in line]
+        if len(matching_rows) != 1:
+            failures.append(f"{filename}: expected exactly one catalog row")
+        else:
+            row = matching_rows[0]
+            for token in ("What this figure shows:", "How to read it:", "Main takeaway:"):
+                if token not in row:
+                    failures.append(f"{filename}: catalog row missing {token!r}")
+            if context_link not in row:
+                failures.append(f"{filename}: catalog row missing direct formal-context link")
 
     assert not failures, "\n".join(failures)
 
