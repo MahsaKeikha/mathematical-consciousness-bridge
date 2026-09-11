@@ -230,7 +230,7 @@ def test_visual_atlas_never_presents_an_unexplained_image() -> None:
         segment = text[match.end() : end]
         paragraphs = [
             re.sub(r"<[^>]+>", " ", paragraph)
-            for paragraph in re.findall(r"<p[^>]*>(.*?)</p>", segment, flags=re.I | re.S)
+            for paragraph in re.findall(r"<p[^>]*>(.*?)</p>", segment, flags=re.IGNORECASE | re.DOTALL)
         ]
         paragraphs = [" ".join(paragraph.split()) for paragraph in paragraphs]
         if not any(len(paragraph) >= 90 for paragraph in paragraphs):

@@ -57,7 +57,7 @@ def _humanize_filename(path: Path) -> str:
     stem = re.sub(r"^p(\d+)_", lambda m: f"P{int(m.group(1))} ", stem)
     words = stem.replace("_", " ").replace("-", " ")
     return " ".join(
-        word.upper() if re.fullmatch(r"[pq]\d+", word, re.I) else word
+        word.upper() if re.fullmatch(r"[pq]\d+", word, re.IGNORECASE) else word
         for word in words.split()
     ).strip().title()
 
@@ -86,13 +86,13 @@ def _escape_invalid_svg_text(svg: str) -> str:
         r"(<(?:text|tspan)\b[^>]*>)(.*?)(</(?:text|tspan)>)",
         repair,
         svg,
-        flags=re.I | re.S,
+        flags=re.IGNORECASE | re.DOTALL,
     )
 
 
 def _svg_labels(svg: str, limit: int = 8) -> list[str]:
     labels: list[str] = []
-    for raw in re.findall(r"<text\b[^>]*>(.*?)</text>", svg, flags=re.I | re.S):
+    for raw in re.findall(r"<text\b[^>]*>(.*?)</text>", svg, flags=re.IGNORECASE | re.DOTALL):
         label = _plain(raw)
         if not label or len(label) > 150:
             continue
@@ -104,9 +104,9 @@ def _svg_labels(svg: str, limit: int = 8) -> list[str]:
 
 
 def _first_prose_summary(markdown: str) -> str:
-    text = re.sub(r"```.*?```", "\n", markdown, flags=re.S)
-    text = re.sub(r"\$\$.*?\$\$", "\n", text, flags=re.S)
-    text = re.sub(r"\\\[.*?\\\]", "\n", text, flags=re.S)
+    text = re.sub(r"```.*?```", "\n", markdown, flags=re.DOTALL)
+    text = re.sub(r"\$\$.*?\$\$", "\n", text, flags=re.DOTALL)
+    text = re.sub(r"\\\[.*?\\\]", "\n", text, flags=re.DOTALL)
     blocks = re.split(r"\n\s*\n", text)
     for block in blocks:
         block = block.strip()
@@ -119,8 +119,8 @@ def _first_prose_summary(markdown: str) -> str:
 
 
 def _existing_metadata(svg: str) -> tuple[str | None, str | None]:
-    title_match = re.search(r"<title\b[^>]*>(.*?)</title>", svg, flags=re.I | re.S)
-    desc_match = re.search(r"<desc\b[^>]*>(.*?)</desc>", svg, flags=re.I | re.S)
+    title_match = re.search(r"<title\b[^>]*>(.*?)</title>", svg, flags=re.IGNORECASE | re.DOTALL)
+    desc_match = re.search(r"<desc\b[^>]*>(.*?)</desc>", svg, flags=re.IGNORECASE | re.DOTALL)
     title = _plain(title_match.group(1)) if title_match else None
     desc = _plain(desc_match.group(1)) if desc_match else None
     return title, desc
@@ -154,7 +154,7 @@ def _visual_atlas_records() -> dict[str, FigureRecord]:
     records: dict[str, FigureRecord] = {}
     pattern = re.compile(
         r'<img[^>]+src="[^"]*/docs/figures/([^"]+\.svg)"[^>]+alt="([^"]*)"[^>]*/?>',
-        flags=re.I,
+        flags=re.IGNORECASE,
     )
     matches = list(pattern.finditer(text))
     for index, match in enumerate(matches):
@@ -162,8 +162,8 @@ def _visual_atlas_records() -> dict[str, FigureRecord]:
         alt = _plain(match.group(2))
         end = matches[index + 1].start() if index + 1 < len(matches) else min(len(text), match.end() + 3500)
         tail = text[match.end() : end]
-        heading_match = re.search(r"<h[23][^>]*>(.*?)</h[23]>", tail, flags=re.I | re.S)
-        paragraphs = re.findall(r"<p(?![^>]*class=\"eyebrow\")[^>]*>(.*?)</p>", tail, flags=re.I | re.S)
+        heading_match = re.search(r"<h[23][^>]*>(.*?)</h[23]>", tail, flags=re.IGNORECASE | re.DOTALL)
+        paragraphs = re.findall(r"<p(?![^>]*class=\"eyebrow\")[^>]*>(.*?)</p>", tail, flags=re.IGNORECASE | re.DOTALL)
         heading = _plain(heading_match.group(1)) if heading_match else alt
         paragraph = next((_plain(p) for p in paragraphs if len(_plain(p)) >= 60), "")
         if paragraph:
@@ -200,7 +200,7 @@ def _quantitative_records() -> dict[str, FigureRecord]:
 
 
 def _proposition_record(path: Path, svg: str) -> FigureRecord | None:
-    match = re.match(r"p(\d+)_", path.name, flags=re.I)
+    match = re.match(r"p(\d+)_", path.name, flags=re.IGNORECASE)
     if not match:
         return None
     number = int(match.group(1))
@@ -265,32 +265,32 @@ def _replace_or_insert_metadata(svg: str, record: FigureRecord) -> str:
     full_description = f"{record.description} Scientific status: {record.status}"
     desc_xml = html.escape(full_description, quote=False)
 
-    if re.search(r"<title\b[^>]*>.*?</title>", svg, flags=re.I | re.S):
+    if re.search(r"<title\b[^>]*>.*?</title>", svg, flags=re.IGNORECASE | re.DOTALL):
         svg = re.sub(
             r"(<title\b[^>]*>).*?(</title>)",
             lambda m: f"{m.group(1)}{title_xml}{m.group(2)}",
             svg,
             count=1,
-            flags=re.I | re.S,
+            flags=re.IGNORECASE | re.DOTALL,
         )
     else:
-        root = re.search(r"<svg\b[^>]*>", svg, flags=re.I | re.S)
+        root = re.search(r"<svg\b[^>]*>", svg, flags=re.IGNORECASE | re.DOTALL)
         if root is None:
             raise RuntimeError("SVG root tag not found")
         title_attr = ' id="title"' if 'aria-labelledby="title desc"' in root.group(0) else ""
         svg = svg[: root.end()] + f"\n  <title{title_attr}>{title_xml}</title>" + svg[root.end() :]
 
-    if re.search(r"<desc\b[^>]*>.*?</desc>", svg, flags=re.I | re.S):
+    if re.search(r"<desc\b[^>]*>.*?</desc>", svg, flags=re.IGNORECASE | re.DOTALL):
         svg = re.sub(
             r"(<desc\b[^>]*>).*?(</desc>)",
             lambda m: f"{m.group(1)}{desc_xml}{m.group(2)}",
             svg,
             count=1,
-            flags=re.I | re.S,
+            flags=re.IGNORECASE | re.DOTALL,
         )
     else:
-        title_end = re.search(r"</title>", svg, flags=re.I)
-        root = re.search(r"<svg\b[^>]*>", svg, flags=re.I | re.S)
+        title_end = re.search(r"</title>", svg, flags=re.IGNORECASE)
+        root = re.search(r"<svg\b[^>]*>", svg, flags=re.IGNORECASE | re.DOTALL)
         if title_end is None or root is None:
             raise RuntimeError("SVG description insertion failed")
         desc_attr = ' id="desc"' if 'aria-labelledby="title desc"' in root.group(0) else ""
@@ -306,7 +306,7 @@ def _context_link(relative: str) -> str:
         return "[Quantum visual guide](quantum_visual_guide.md)"
     if path.name == "proposition_32_delay_quotient.svg":
         return "[Proposition 32](proposition_32_delay_quotient_compatibility.md)"
-    match = re.match(r"p(\d+)_", path.name, flags=re.I)
+    match = re.match(r"p(\d+)_", path.name, flags=re.IGNORECASE)
     if match:
         number = int(match.group(1))
         candidates = sorted((ROOT / "docs").glob(f"proposition_{number}_*.md"))
@@ -431,10 +431,10 @@ def _write_catalog(rows: list[tuple[str, FigureRecord]]) -> None:
         row for row in rows
         if "/quantitative/" not in row[0]
         and "/quantum/" not in row[0]
-        and not re.match(r"docs/figures/p\d+_", row[0], flags=re.I)
+        and not re.match(r"docs/figures/p\d+_", row[0], flags=re.IGNORECASE)
     ]
     quantum = [row for row in rows if "/quantum/" in row[0]]
-    propositions = [row for row in rows if re.match(r"docs/figures/p\d+_", row[0], flags=re.I)]
+    propositions = [row for row in rows if re.match(r"docs/figures/p\d+_", row[0], flags=re.IGNORECASE)]
     quantitative = [row for row in rows if "/quantitative/" in row[0]]
 
     lines = [

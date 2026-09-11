@@ -1,8 +1,8 @@
 from __future__ import annotations
 
+from collections.abc import Callable
 from pathlib import Path
-from typing import Any, Callable
-
+from typing import Any
 
 RECORDS: dict[str, dict[str, str]] = {
     "docs/figures/fundamental_theory_consciousness_map.svg": {

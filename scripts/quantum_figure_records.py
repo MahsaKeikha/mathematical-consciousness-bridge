@@ -1,9 +1,9 @@
 from __future__ import annotations
 
 import json
+from collections.abc import Callable
 from pathlib import Path
-from typing import Any, Callable
-
+from typing import Any
 
 READING_GUIDES: dict[str, str] = {
     "qm01_free_gaussian_wavepacket.svg": (
