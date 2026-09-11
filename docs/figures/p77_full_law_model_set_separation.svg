@@ -1,66 +1,92 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
   <title id="title">P77 finite-sample full-law model-set separation</title>
-  <desc id="desc">What this figure shows: Figure 12. P77 full-law model-set separation. P76 provides interpretable finite-sample rejection through selected necessary constraints. P77 defines the stronger full-law criterion: the entire confidence region must be separated from the entire declared model set. An ordinary best-fit candidate is not a rejection certificate because it gives an upper bound on model distance. How to read it: follow only the labeled arrows, axes, panels, set relations, or inequalities shown in the visual and interpret them using the adjacent research text. Main takeaway: the figure summarizes the stated mathematical or scientific dependency; visual proximity alone does not add a claim. Scientific status: Reader-facing research figure; formal status is controlled by the linked proof or source record.</desc>
-
-  <rect x="0" y="0" width="1200" height="760" rx="22" fill="#f8fafc"/>
-  <rect x="36" y="32" width="1128" height="696" rx="20" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
-
-  <text x="70" y="84" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700" fill="#0f172a">P77 Finite-Sample Full-Law Model-Set Separation</text>
-  <text x="70" y="116" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#475569">From selected necessary constraints to confidence-region separation from the complete declared model set</text>
-
-  <rect x="70" y="152" width="470" height="410" rx="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
-  <text x="98" y="190" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#0f172a">P76: interpretable necessary constraints</text>
-  <text x="98" y="220" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#475569">Reject when a tracked P75 polynomial interval excludes zero.</text>
-
-  <rect x="110" y="254" width="170" height="70" rx="12" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
-  <text x="132" y="283" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#312e81">Tetrads</text>
-  <text x="132" y="307" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#4338ca">D1 = 0, D2 = 0</text>
-
-  <rect x="330" y="254" width="170" height="70" rx="12" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
-  <text x="348" y="283" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#164e63">Cross-triple</text>
-  <text x="348" y="307" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#0e7490">G1, G2, G3 = 0</text>
-
-  <rect x="220" y="352" width="170" height="70" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
-  <text x="241" y="381" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#14532d">Fourth moment</text>
-  <text x="247" y="405" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#15803d">H123, H124, H134</text>
-
-  <path d="M195 326 C195 338 243 340 279 352" fill="none" stroke="#94a3b8" stroke-width="2"/>
-  <path d="M415 326 C415 338 367 340 331 352" fill="none" stroke="#94a3b8" stroke-width="2"/>
-
-  <rect x="118" y="462" width="374" height="66" rx="12" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
-  <text x="141" y="488" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#9a3412">Limitation</text>
-  <text x="141" y="512" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#7c2d12">A law may satisfy tracked constraints yet fail full model membership.</text>
-
-  <rect x="575" y="152" width="555" height="410" rx="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
-  <text x="603" y="190" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#0f172a">P77: complete declared model-set separation</text>
-  <text x="603" y="220" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#475569">Reject only when the whole confidence region is disjoint from the model set.</text>
-
-  <path d="M651 372 C665 287 754 257 839 273 C920 288 986 347 1019 431 C947 480 867 502 788 487 C710 473 650 435 651 372 Z" fill="#e0f2fe" stroke="#0284c7" stroke-width="3"/>
-  <text x="754" y="360" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#075985">Declared model set M</text>
-  <text x="730" y="385" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#0369a1">all four-view laws allowed by the stated model</text>
-
-  <circle cx="1060" cy="294" r="11" fill="#dc2626"/>
-  <text x="1020" y="268" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#991b1b">empirical law P_hat</text>
-  <circle cx="1060" cy="294" r="56" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8 7"/>
-  <text x="997" y="372" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#991b1b">confidence region Cn</text>
-
-  <line x1="1005" y1="329" x2="964" y2="357" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
-  <text x="950" y="322" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#334155">gap remains after uncertainty</text>
-
-  <rect x="615" y="462" width="475" height="66" rx="12" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
-  <text x="637" y="489" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#065f46">Full-law rejection condition</text>
-  <text x="637" y="513" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#047857">certified lower bound L &gt; sampling radius  =>  Cn intersect M = empty</text>
-
-  <rect x="70" y="594" width="1060" height="104" rx="16" fill="#0f172a"/>
-  <text x="98" y="627" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#ffffff">Critical optimization direction</text>
-  <text x="98" y="654" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#e2e8f0">A candidate best-fit model gives an upper bound on distance. It cannot by itself certify rejection of a continuous model family.</text>
-  <text x="98" y="679" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#cbd5e1">P77 requires a sound lower bound or equivalent certified feasibility result. Non-rejection is not model acceptance.</text>
-
-  <text x="70" y="718" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#64748b">Schematic geometry, not metric scale. P77 does not identify the latent state with consciousness; the physical-to-experiential bridge remains open.</text>
-
+  <desc id="desc">What this figure shows: P77 strengthens the P76 finite-sample adequacy audit from selected necessary polynomial constraints to separation of the entire simultaneous confidence region from the entire declared model set. The left panel summarizes the P76 constraint route and its limitation; the right panel shows the full-law geometric separation condition. How to read it: move from the P76 panel through the attached stronger-audit arrow to the P77 panel, then use the lower optimization-direction band to distinguish certified lower bounds from ordinary best-fit upper bounds. Main takeaway: full-law rejection requires a sound lower bound proving that every admissible model is farther away than the sampling radius; a candidate best fit alone cannot certify rejection. Scientific status: Finite-sample model-set separation theorem figure. Non-rejection is not model acceptance; the theorem does not identify the latent state with consciousness, and the physical-to-experiential bridge remains open.</desc>
   <defs>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
       <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
     </marker>
+    <style>
+      .title { font: 700 30px Arial, Helvetica, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 16px Arial, Helvetica, sans-serif; fill: #475569; }
+      .panelTitle { font: 700 20px Arial, Helvetica, sans-serif; fill: #0f172a; }
+      .body { font: 400 14px Arial, Helvetica, sans-serif; fill: #334155; }
+      .small { font: 400 12px Arial, Helvetica, sans-serif; fill: #64748b; }
+      .eq { font: 600 14px Arial, Helvetica, sans-serif; fill: #0f172a; }
+      .white { font: 400 14px Arial, Helvetica, sans-serif; fill: #e2e8f0; }
+      .whiteBold { font: 700 17px Arial, Helvetica, sans-serif; fill: #ffffff; }
+    </style>
   </defs>
+
+  <rect x="0" y="0" width="1200" height="760" fill="#f8fafc"/>
+  <rect x="34" y="28" width="1132" height="704" rx="22" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+
+  <text x="68" y="76" class="title">P77 Finite-Sample Full-Law Model-Set Separation</text>
+  <text x="68" y="106" class="subtitle">From interpretable necessary constraints to certified separation from the complete declared model family</text>
+
+  <!-- P76 panel -->
+  <rect x="68" y="138" width="456" height="400" rx="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="94" y="176" class="panelTitle">P76: interpretable necessary constraints</text>
+  <text x="94" y="204" class="body">Reject when a tracked P75 polynomial interval excludes zero.</text>
+
+  <rect x="96" y="236" width="126" height="70" rx="12" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+  <text x="116" y="264" class="eq">Tetrads</text>
+  <text x="116" y="288" class="body">D1 = 0, D2 = 0</text>
+
+  <rect x="234" y="236" width="132" height="70" rx="12" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
+  <text x="254" y="264" class="eq">Cross-triple</text>
+  <text x="254" y="288" class="body">G1, G2, G3 = 0</text>
+
+  <rect x="378" y="236" width="118" height="70" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text x="394" y="264" class="eq">Fourth moment</text>
+  <text x="394" y="288" class="body">H123, H124,</text>
+  <text x="394" y="304" class="body">H134</text>
+
+  <line x1="159" y1="306" x2="159" y2="342" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="300" y1="306" x2="300" y2="342" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="437" y1="306" x2="437" y2="342" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="96" y="352" width="400" height="76" rx="12" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
+  <text x="116" y="380" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#9a3412">Limitation of selected constraints</text>
+  <text x="116" y="404" class="body">A law may satisfy every tracked equation and still fail</text>
+  <text x="116" y="422" class="body">membership in the complete declared model set.</text>
+
+  <rect x="96" y="452" width="400" height="56" rx="11" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="116" y="478" class="eq">Question left open:</text>
+  <text x="116" y="498" class="body">does any full model law remain compatible with the data?</text>
+
+  <!-- Attached transition -->
+  <line x1="524" y1="338" x2="574" y2="338" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="549" y="318" text-anchor="middle" class="small">stronger</text>
+  <text x="549" y="333" text-anchor="middle" class="small">audit</text>
+
+  <!-- P77 panel -->
+  <rect x="574" y="138" width="558" height="400" rx="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="600" y="176" class="panelTitle">P77: complete declared model-set separation</text>
+  <text x="600" y="204" class="body">Reject only when the whole confidence region is disjoint from the whole model set.</text>
+
+  <path d="M640 365 C653 291 728 250 809 261 C895 273 954 330 982 407 C913 452 835 470 761 457 C686 444 630 413 640 365 Z" fill="#e0f2fe" stroke="#0284c7" stroke-width="3"/>
+  <text x="714" y="350" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#075985">Declared model set M</text>
+  <text x="690" y="375" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#0369a1">all laws allowed by the stated model</text>
+
+  <circle cx="1040" cy="280" r="10" fill="#dc2626"/>
+  <circle cx="1040" cy="280" r="54" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8 7"/>
+  <text x="988" y="214" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#991b1b">empirical law P_hat</text>
+  <text x="986" y="352" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#991b1b">confidence region Cn</text>
+
+  <line x1="1002" y1="319" x2="967" y2="343" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="905" y="313" class="small">certified gap after</text>
+  <text x="905" y="329" class="small">sampling uncertainty</text>
+
+  <rect x="610" y="462" width="486" height="54" rx="11" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+  <text x="630" y="486" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#065f46">Full-law rejection condition</text>
+  <text x="630" y="506" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#047857">certified lower bound L &gt; sampling radius  =&gt;  Cn intersect M = empty</text>
+
+  <!-- Optimization direction -->
+  <rect x="68" y="570" width="1064" height="116" rx="16" fill="#0f172a"/>
+  <text x="94" y="604" class="whiteBold">Critical optimization direction</text>
+  <text x="94" y="632" class="white">A candidate best-fit model gives an upper bound on distance.</text>
+  <text x="94" y="655" class="white">It cannot by itself certify rejection of a continuous model family; P77 needs a sound lower bound or equivalent infeasibility proof.</text>
+  <text x="94" y="678" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#86efac">Non-rejection is not model acceptance.</text>
+
+  <text x="68" y="716" class="small">Schematic geometry, not metric scale. P77 does not identify the latent state with consciousness; the physical-to-experiential bridge remains open.</text>
 </svg>
