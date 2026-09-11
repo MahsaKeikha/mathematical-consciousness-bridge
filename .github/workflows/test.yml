@@ -4,47 +4,7 @@ on:
   push:
   pull_request:
 
-permissions:
-  contents: write
-
 jobs:
-  finalize-figure-docs:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/p80-simplex-coupled-box-certificate'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: p80-simplex-coupled-box-certificate
-          fetch-depth: 0
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - name: Finalize permanent figure enricher
-        run: python scripts/finalize_figure_documentation_patch.py
-      - name: Regenerate all figure documentation
-        run: python scripts/enrich_figure_documentation.py
-      - name: Validate strict SVG XML
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          import xml.etree.ElementTree as ET
-          for path in sorted(Path("docs/figures").rglob("*.svg")):
-              ET.parse(path)
-          PY
-      - name: Remove one-shot finalization helper
-        run: rm scripts/finalize_figure_documentation_patch.py
-      - name: Commit finalized figure documentation
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          if git diff --cached --quiet; then
-            echo "No figure-documentation changes to commit."
-            exit 0
-          fi
-          git commit -m "Finalize self-explanatory figure documentation"
-          git push origin HEAD:p80-simplex-coupled-box-certificate
-
   test:
     runs-on: ubuntu-latest
     strategy:
