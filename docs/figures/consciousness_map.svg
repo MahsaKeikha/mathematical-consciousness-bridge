@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Consciousness map: theory, measurement, dynamics, and sufficiency bridge</title>
+  <desc id="desc">What this figure shows: a high-level separation of four scientific obligations in consciousness research: theory, measurement, dynamics, and the sufficiency bridge. How to read it: begin at Theory, follow the labeled theoretical-sufficiency route to Measurement and the model-implied-evolution route to Dynamics, then read Measurement and Dynamics as independent constraints on the Sufficiency bridge. The arrows are logical research dependencies and do not identify physical variables with experience. Main takeaway: theoretical adequacy, measurement validity, and dynamical sufficiency are distinct requirements; satisfying them can support or falsify a declared model but does not by itself close the physical-to-experiential bridge. Scientific status: Research-architecture figure. It separates physical, measurement, and sufficiency obligations; it is not an empirical consciousness result or a theorem identifying any physical state with consciousness. The physical-to-experiential bridge remains open.</desc>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+    <style>
+      .title { font: 700 31px Arial, Helvetica, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 16px Arial, Helvetica, sans-serif; fill: #475569; }
+      .cardTitle { font: 700 22px Arial, Helvetica, sans-serif; fill: #0f172a; }
+      .body { font: 400 14px Arial, Helvetica, sans-serif; fill: #334155; }
+      .small { font: 400 12.5px Arial, Helvetica, sans-serif; fill: #64748b; }
+      .label { font: 700 13px Arial, Helvetica, sans-serif; fill: #334155; }
+      .tag { font: 700 11px Arial, Helvetica, sans-serif; letter-spacing: .5px; }
+      .boundaryTitle { font: 700 17px Arial, Helvetica, sans-serif; fill: #ffffff; }
+      .boundaryText { font: 400 13.5px Arial, Helvetica, sans-serif; fill: #e2e8f0; }
+      .boundaryMuted { font: 400 12.5px Arial, Helvetica, sans-serif; fill: #94a3b8; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="720" fill="#f8fafc"/>
+  <rect x="34" y="26" width="1132" height="668" rx="24" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
+
+  <text x="68" y="72" class="title">Consciousness Map</text>
+  <text x="68" y="101" class="subtitle">Keep theory, measurement, dynamics, and the physical-to-experiential sufficiency question logically separate</text>
+
+  <!-- THEORY -->
+  <rect id="theory-card" x="70" y="145" width="430" height="170" rx="18" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="70" y="145" width="430" height="54" rx="18" fill="#ede9fe"/>
+  <rect x="70" y="181" width="430" height="18" fill="#ede9fe"/>
+  <text x="96" y="180" class="cardTitle" fill="#4c1d95">Theory</text>
+  <text x="96" y="226" class="body">Declare the physical state space, laws, interventions,</text>
+  <text x="96" y="248" class="body">equivalence relations, and bridge-dependent predictions.</text>
+  <rect x="96" y="269" width="153" height="25" rx="8" fill="#ddd6fe"/>
+  <text x="109" y="286" class="tag" fill="#6d28d9">FORMAL ASSUMPTIONS</text>
+
+  <!-- MEASUREMENT -->
+  <rect id="measurement-card" x="700" y="145" width="430" height="170" rx="18" fill="#ecfdf5" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="700" y="145" width="430" height="54" rx="18" fill="#d1fae5"/>
+  <rect x="700" y="181" width="430" height="18" fill="#d1fae5"/>
+  <text x="726" y="180" class="cardTitle" fill="#065f46">Measurement</text>
+  <text x="726" y="226" class="body">Declare what is observed, how target variables are built,</text>
+  <text x="726" y="248" class="body">and how calibration, noise, and uncertainty are handled.</text>
+  <rect x="726" y="269" width="170" height="25" rx="8" fill="#a7f3d0"/>
+  <text x="739" y="286" class="tag" fill="#047857">EMPIRICAL INTERFACE</text>
+
+  <!-- TOP CONNECTOR -->
+  <line id="theory-measurement-arrow" x1="500" y1="230" x2="700" y2="230" stroke="#334155" stroke-width="2.6" marker-end="url(#arrow)"/>
+  <rect x="522" y="198" width="152" height="25" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="598" y="215" text-anchor="middle" class="label">Theoretical sufficiency</text>
+
+  <!-- DYNAMICS -->
+  <rect id="dynamics-card" x="70" y="390" width="430" height="170" rx="18" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="70" y="390" width="430" height="54" rx="18" fill="#dbeafe"/>
+  <rect x="70" y="426" width="430" height="18" fill="#dbeafe"/>
+  <text x="96" y="425" class="cardTitle" fill="#1e3a8a">Dynamics</text>
+  <text x="96" y="471" class="body">Track state evolution, perturbation responses, temporal</text>
+  <text x="96" y="493" class="body">continuation, composition, and model-sensitive change.</text>
+  <rect x="96" y="514" width="151" height="25" rx="8" fill="#bfdbfe"/>
+  <text x="109" y="531" class="tag" fill="#1d4ed8">PHYSICAL EVOLUTION</text>
+
+  <!-- THEORY TO DYNAMICS -->
+  <line id="theory-dynamics-arrow" x1="285" y1="315" x2="285" y2="390" stroke="#334155" stroke-width="2.6" marker-end="url(#arrow)"/>
+  <rect x="303" y="334" width="157" height="25" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="381.5" y="351" text-anchor="middle" class="label">model-implied evolution</text>
+
+  <!-- SUFFICIENCY BRIDGE -->
+  <rect id="bridge-card" x="700" y="390" width="430" height="170" rx="18" fill="#fff7ed" stroke="#f97316" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="700" y="390" width="430" height="54" rx="18" fill="#ffedd5"/>
+  <rect x="700" y="426" width="430" height="18" fill="#ffedd5"/>
+  <text x="726" y="425" class="cardTitle" fill="#9a3412">Sufficiency bridge</text>
+  <text x="726" y="471" class="body">Test whether the declared physical description preserves</text>
+  <text x="726" y="493" class="body">all independently specified target distinctions.</text>
+  <rect x="726" y="514" width="205" height="25" rx="8" fill="#fed7aa"/>
+  <text x="739" y="531" class="tag" fill="#c2410c">OPEN BRIDGE OBLIGATION</text>
+
+  <!-- MEASUREMENT TO BRIDGE -->
+  <line id="measurement-bridge-arrow" x1="915" y1="315" x2="915" y2="390" stroke="#334155" stroke-width="2.6" marker-end="url(#arrow)"/>
+  <rect x="933" y="334" width="150" height="25" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="1008" y="351" text-anchor="middle" class="label">measurement validity</text>
+
+  <!-- DYNAMICS TO BRIDGE -->
+  <line id="dynamics-bridge-arrow" x1="500" y1="475" x2="700" y2="475" stroke="#334155" stroke-width="2.6" marker-end="url(#arrow)"/>
+  <rect x="522" y="443" width="152" height="25" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="598" y="460" text-anchor="middle" class="label">Dynamical sufficiency</text>
+
+  <!-- SCIENTIFIC BOUNDARY -->
+  <rect x="70" y="600" width="1060" height="70" rx="14" fill="#0f172a"/>
+  <text x="96" y="627" class="boundaryTitle">Interpretation boundary</text>
+  <text x="96" y="651" class="boundaryText">Agreement among theory, measurement, and dynamics can support or reject a declared model; it does not identify a physical state with consciousness.</text>
+  <text x="96" y="668" class="boundaryMuted">The physical-to-experiential bridge remains open.</text>
+</svg>
