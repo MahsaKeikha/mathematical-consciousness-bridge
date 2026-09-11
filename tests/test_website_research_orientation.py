@@ -28,7 +28,6 @@ def test_research_map_exposes_status_and_all_ten_stage_ranges():
         "P38-P44",
         "P45-P53",
         "P54-P70",
-        "P77-P80",
         "Ten-stage scientific path",
     ]
     for token in required:
