@@ -16,12 +16,12 @@ model law generated inside the box.
 A finite box partition of the full parameter cube gives a certified global
 lower bound by taking the minimum box lower bound. Any explicit parameter
 vector gives an upper bound. The implementation uses exact ``Fraction`` arithmetic
-for empirical count laws and dyadic branch points, so the returned optimization
+for empirical count laws and dyadic branch points. The returned optimization
 bracket is algebraic rather than a floating-point optimizer claim.
 
-This module does not identify the latent state with consciousness, does not
-validate the target-measurement model when the lower bound is small, and does
-not solve the physical-to-experiential bridge.
+This module does not identify the latent state with consciousness.
+It does not validate the target-measurement model when the lower bound is small.
+It does not solve the physical-to-experiential bridge.
 """
 
 from __future__ import annotations
