@@ -21,9 +21,10 @@ solve the physical-to-experiential bridge.
 
 from __future__ import annotations
 
+from collections.abc import Sequence
 from dataclasses import dataclass
 from itertools import product
-from typing import Literal, Sequence
+from typing import Literal
 
 import numpy as np
 
