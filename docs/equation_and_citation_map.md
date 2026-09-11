@@ -1058,3 +1058,35 @@ U(k)-q^*
 
 **Provenance:** repository-original Proposition 70, building on P63, P67, P68, and P69. The edgewise terms diagnose certificate mismatch at a common multiplier; they are not guaranteed one-coordinate primal improvements under the coupled budget constraint.
 
+---
+
+# 60. P71-P75 target-side provenance routing
+
+P71-P75 return from the downstream calibration branch to the target side of the P19 physical-sufficiency problem. Their detailed equation classifications are maintained in dedicated proposition/provenance records because the target-side branch combines information theory, latent-variable identification, finite-sample inference, and algebraic model diagnostics.
+
+| Result | Core equation or object | Status | Detailed provenance |
+| --- | --- | --- | --- |
+| P71 | \(E=h(T)\Rightarrow I(E;\Omega\mid T)=0\) for descriptor-derived targets | repository theorem assembled from standard factorization/CMI facts | [P71 proof](proposition_71_target_provenance_noncircularity.md) and [P71 equation/citation map](p71_equation_and_citation_map.md) |
+| P72 | \(I(Y;\Omega\mid T)\le I(E^\star;\Omega\mid T)\) under the declared nondifferential measurement channel | conditional data-processing consequence plus repository target-measurement synthesis | [P72 provenance](p72_equation_provenance.md) |
+| P73 | \(q=M_{123}^2/(C_{12}C_{13}C_{23})\), with explicit three-view latent-channel inversion | conditional population-identification theorem using standard latent-class/moment methodology | [P73 provenance](p73_equation_provenance.md) |
+| P74 | simultaneous finite-sample confidence propagation through the P73 inversion and covariance nondegeneracy gate | repository finite-data certificate built from standard concentration plus explicit nonlinear interval propagation | [P74 provenance](p74_equation_provenance.md) |
+| P75 | three-view just-identification, four-view six-degree overidentification, tetrads, cross-triple consistency, fourth-moment consistency, and full-law reconstruction | conditional model-adequacy theorem with established algebraic-statistics context | [P75 provenance](p75_equation_provenance.md) |
+
+The target-side methodological chain is therefore:
+
+\[
+\boxed{
+\text{non-circular provenance}
+\to
+\text{measurement robustness}
+\to
+\text{channel identifiability}
+\to
+\text{finite recovery}
+\to
+\text{model adequacy}
+}
+\]
+
+This sequence does not identify the latent target with consciousness and does not close the physical-to-experiential bridge. It specifies additional obligations that any target-side evidence must satisfy before it can support a bridge claim.
+
