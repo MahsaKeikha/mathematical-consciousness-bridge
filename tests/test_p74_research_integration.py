@@ -23,6 +23,9 @@ def test_p74_document_states_finite_sample_theorem_and_boundary() -> None:
         "q_L",
         "q_U",
         "\\gamma_{1,L}",
+        "b_jm=-\\frac{M_{123}}{2C_{k\\ell}}",
+        "channel offset",
+        "unordered pair of latent-conditioned probabilities",
         "1152\\log(16/\\alpha)",
         "not an optimal sample-complexity theorem",
         "does not test the conditional-independence assumption itself",
@@ -43,13 +46,15 @@ def test_p74_provenance_separates_standard_tools_from_local_assembly() -> None:
         "P72 measurement stability",
         "P73 population channel identification",
         "P74 finite-sample channel certification",
+        "b_jm=-M_{123}/(2C_{k\\ell})",
+        "unordered column orbits",
         "not certified by the current data",
     )
     for token in required:
         assert token in text, f"P74 provenance missing: {token}"
 
 
-def test_p74_source_exposes_certificate_api_and_scope() -> None:
+def test_p74_source_exposes_certificate_api_and_full_channel_scope() -> None:
     text = SOURCE.read_text(encoding="utf-8")
     required = (
         "FiniteSampleTargetChannelCertificate",
@@ -57,6 +62,10 @@ def test_p74_source_exposes_certificate_api_and_scope() -> None:
         "categorical_joint_l1_radius",
         "finite_sample_three_view_certificate",
         "sufficient_nondegeneracy_sample_size",
+        "loading_times_latent_mean_bounds",
+        "channel_offset_bounds",
+        "channel_probability_orbit_bounds",
+        "global latent-label swap",
         "does not validate conditional independence",
         "identify the latent state with consciousness",
     )
