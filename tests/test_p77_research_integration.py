@@ -13,6 +13,12 @@ def _plain_language_section(text: str) -> str:
     return text[start:end]
 
 
+def _project_version(pyproject: str) -> tuple[int, int, int]:
+    match = re.search(r'^version = "(\d+)\.(\d+)\.(\d+)"$', pyproject, re.MULTILINE)
+    assert match is not None
+    return tuple(int(value) for value in match.groups())
+
+
 def test_p77_core_artifacts_exist() -> None:
     required = (
         DOCS / "proposition_77_full_law_model_set_separation.md",
@@ -81,27 +87,14 @@ def test_p77_plain_language_explains_full_law_logic_without_equations() -> None:
         assert token not in plain, token
 
 
-def test_p77_release_metadata_and_counts_are_consistent() -> None:
-    readme = README.read_text(encoding="utf-8")
+def test_p77_release_history_survives_later_frontiers() -> None:
     pyproject = (ROOT / "pyproject.toml").read_text(encoding="utf-8")
-    cff = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
-    bib = (ROOT / "CITATION.bib").read_text(encoding="utf-8")
-    citation = (ROOT / "CITATION.md").read_text(encoding="utf-8")
     changelog = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
 
-    assert 'version = "0.77.0"' in pyproject
-    assert "version: 0.77.0" in cff
-    assert "Current documented theorem frontier: P77" in cff
-    assert "version      = {0.77.0}" in bib
-    assert "P77" in citation
+    assert _project_version(pyproject) >= (0, 77, 0)
     assert "# 0.77.0 - 2026-09-10" in changelog
-    assert "77 proposition-level results" in readme
-    assert "65 equation-driven quantitative figures" in readme
-    assert "The theorem frontier is P77." in readme
-
-    match = re.search(r"P1 through P(\d+) with explicit dependency branches", readme)
-    assert match is not None
-    assert int(match.group(1)) == 77
+    assert "Proposition 77" in changelog
+    assert "full-law" in changelog
 
 
 def test_p77_certification_boundary_is_preserved() -> None:

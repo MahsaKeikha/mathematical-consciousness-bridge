@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P77**. The proposition record runs from **P1 through P77 with explicit dependency branches**. P71-P77 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P78**. The proposition record runs from **P1 through P78 with explicit dependency branches**. P71-P78 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -29,7 +29,9 @@ The current documented theorem frontier is **P77**. The proposition record runs 
 &\Downarrow\\
 &\text{P76: finite data must separate adequacy failure from sampling noise}\\
 &\Downarrow\\
-&\text{P77: full-law confidence regions must be separated from the complete declared model set}
+&\text{P77: full-law confidence regions must be separated from the complete declared model set}\\
+&\Downarrow\\
+&\text{P78: continuous P75 model distance must be lower-bounded globally and certifiably}
 \end{aligned}
 }
 \]
@@ -47,7 +49,7 @@ Separate but connected branches refine the physical representation and experimen
 }
 \]
 
-The proposition number records development order. It does not imply that P77 depends on P70. P77 depends scientifically on P76 and P75, which in turn descend from P19 and the P71-P74 target-side lineage.
+The proposition number records development order. It does not imply that P78 depends on P70. P78 depends scientifically on P77 and the P75 continuous target-model family, which descend from P19 and the P71-P76 target-side lineage.
 
 ## 2. Target-side bridge lineage
 
@@ -325,6 +327,37 @@ with confidence at least \(1-\alpha\). Equivalently, a sound lower bound on dist
 
 Direct proof: [P77](proposition_77_full_law_model_set_separation.md). Provenance: [P77 equation record](p77_equation_provenance.md). Implementation: [`full_law_model_set_separation.py`](../src/consciousness_bridge/full_law_model_set_separation.py). Tests: [`test_full_law_model_set_separation.py`](../tests/test_full_law_model_set_separation.py).
 
+### P78: certified continuous separation for the P75 model family
+
+P77 requires a certified lower bound on empirical distance to the complete model family. For the continuous P75 four-view binary latent model, P78 writes the observed-law map as a nine-parameter multi-affine map \(F:[0,1]^9	o\Delta_{15}\). On each parameter box \(B\), exact cell intervals produce
+
+\[
+L_\infty(B;\widehat P)
+=
+\max_x\operatorname{dist}(\widehat P(x),I_x(B))
+\le
+\inf_{	heta\in B}\|\widehat P-F(	heta)\|_\infty.
+\]
+
+For any finite partition \(\mathcal B\) of the full parameter cube,
+
+\[
+oxed{L_{\mathcal B}:=\min_{B\in\mathcal B}L_\infty(B;\widehat P)
+\le d_\infty(\widehat P,\mathcal M_{4,2}).}
+\]
+
+An explicit admissible parameter point provides an upper bound. The cell maps are 1-Lipschitz in parameter \(L^1\), giving
+
+\[
+oxed{0\le d_\infty-L_{\mathcal B}\le\eta(\mathcal B).}
+\]
+
+The implementation uses exact rational arithmetic for empirical counts and dyadic box refinement. A P77 rejection is certified only when the P78 lower bound exceeds a separately valid upper bound on the P77 sampling radius.
+
+![P78 certified continuous model separation](figures/p78_certified_continuous_model_separation.svg)
+
+Direct proof: [P78](proposition_78_certified_continuous_model_separation.md). Provenance: [P78 equation record](p78_equation_provenance.md). Implementation: [`certified_continuous_model_separation.py`](../src/consciousness_bridge/certified_continuous_model_separation.py). Tests: [`test_certified_continuous_model_separation.py`](../tests/test_certified_continuous_model_separation.py).
+
 
 ## 3. Complete proposition index
 
@@ -407,6 +440,7 @@ Direct proof: [P77](proposition_77_full_law_model_set_separation.md). Provenance
 | [P75](proposition_75_target_model_adequacy_overidentification.md) | dimension count, tetrads, cross-triple moments, full-law reconstruction | target-model adequacy and four-view overidentification | proved conditional theorem |
 | [P76](proposition_76_finite_sample_target_model_adequacy.md) | sixteen-cell concentration and polynomial interval propagation | finite-sample target-model adequacy rejection | proved conditional theorem |
 | [P77](proposition_77_full_law_model_set_separation.md) | confidence-region/model-set separation | finite-sample full-law rejection with certified distance lower bounds | proved conditional theorem |
+| [P78](proposition_78_certified_continuous_model_separation.md) | multi-affine box lower bounds and mesh-gap convergence | certified continuous P75 full-law model separation | proved conditional computational theorem |
 
 ## 4. Calibration branch remains separate
 
@@ -429,25 +463,17 @@ These results optimize downstream experimental resources. They do not define con
 
 ## 5. Current open frontier
 
-After P76, the target side has six explicit requirements:
+After P78, the target side has eight explicit requirements:
 
 1. the target must have non-circular provenance relative to the tested physical descriptor;
 2. its observation channel must be valid and sufficiently informative for the claimed witness;
 3. channel reliability must be identified or externally calibrated under a defensible target-measurement model;
 4. finite data must resolve the channel parameters far enough from the model singularity to support a confidence-certified reliability statement;
 5. the target-measurement model itself must survive adequacy tests rather than being accepted because it can be fit;
-6. finite data must separate a genuine adequacy violation from sampling uncertainty before model rejection is claimed.
+6. finite data must separate a genuine adequacy violation from sampling uncertainty before model rejection is claimed;
+7. complete full-law rejection must be defined against the whole declared model family, not only selected necessary constraints;
+8. when the declared family is continuous, the required separation distance must be lower-bounded globally rather than inferred from a local best fit.
 
-P76 closes the sixth item for a tracked family of necessary P75 polynomial constraints under IID sampling. It supplies simultaneous rejection intervals, but it does not yet give a complete finite-sample confidence characterization of the full sixteen-cell model image or an optimal-power test. The next structural question is therefore **stronger finite-sample full-law adequacy and power under dependent-view alternatives**.
+P78 closes the eighth item for the specific P75 four-view binary latent family in L-infinity distance. It supplies an exact-rational multi-affine box certificate and an explicit mesh-gap guarantee. The remaining computational problem is efficiency: stronger pruning, tighter relaxations, or moment-SOS lower bounds may reduce the number of boxes required for a decisive certificate. The remaining statistical problems include sharper power and target-view models that allow residual dependence, shared bias, temporal drift, or learned measurement pipelines.
 
-Beyond that, the broader open program remains:
-
-- strengthen finite-sample target-model adequacy beyond the tracked necessary polynomials and characterize power under residual dependence;
-- define and justify experiential variables independently of the physical candidate;
-- test descriptor sufficiency across interventions, time, composition, and scale;
-- sharpen finite-data guarantees for continuous, dependent, hidden-state, and learned-descriptor settings;
-- compare competing bridge theories on shared adversarial experiment families;
-- search for biological and non-biological counterexamples;
-- attempt a bridge theorem only after the physical, target, measurement, statistical, scale, and falsification layers are jointly defensible.
-
-The physical-to-experiential bridge remains open.
+None of these results identifies a latent variable with consciousness. The physical-to-experiential bridge remains open.
