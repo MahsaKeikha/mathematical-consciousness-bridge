@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">P71 target-provenance non-circularity</title>
+  <desc id="desc">A two-panel theorem diagram and residual comparison. A descriptor-derived target E equals h of T and has zero conditional mutual information. A separately declared synthetic target produces same-T different-E collisions and a conditional residual of log 2 nats.</desc>
+  <rect width="1200" height="720" fill="#ffffff"/>
+
+  <text x="600" y="44" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#0f172a">P71 Target-Provenance Non-Circularity</text>
+  <text x="600" y="72" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#475569">A bridge test is informative only when target construction does not already impose factorization through the physical descriptor.</text>
+
+  <rect x="55" y="100" width="520" height="285" rx="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="315" y="132" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#0f172a">Descriptor-derived target</text>
+  <text x="315" y="158" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#475569">Factorization is guaranteed by construction</text>
+
+  <rect x="95" y="190" width="110" height="54" rx="10" fill="#e2e8f0" stroke="#64748b"/>
+  <text x="150" y="213" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#0f172a">Omega</text>
+  <text x="150" y="232" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#334155">0,1,2,3</text>
+
+  <line x1="205" y1="217" x2="283" y2="217" stroke="#334155" stroke-width="2.2"/>
+  <polygon points="283,217 272,211 272,223" fill="#334155"/>
+
+  <rect x="285" y="190" width="110" height="54" rx="10" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="340" y="213" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#1e3a8a">T</text>
+  <text x="340" y="232" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#1e40af">Omega mod 2</text>
+
+  <line x1="395" y1="217" x2="473" y2="217" stroke="#334155" stroke-width="2.2"/>
+  <polygon points="473,217 462,211 462,223" fill="#334155"/>
+  <text x="434" y="204" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#475569">h</text>
+
+  <rect x="475" y="190" width="65" height="54" rx="10" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="507" y="223" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#166534">E</text>
+
+  <text x="315" y="288" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="21" fill="#0f172a">E = h(T)</text>
+  <text x="315" y="320" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#166534">I(E; Omega | T) = 0</text>
+  <text x="315" y="352" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#475569">No same-T / different-E collision can occur.</text>
+
+  <rect x="625" y="100" width="520" height="285" rx="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="885" y="132" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#0f172a">Separately declared synthetic target</text>
+  <text x="885" y="158" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#475569">The target can challenge the descriptor</text>
+
+  <rect x="665" y="188" width="88" height="46" rx="9" fill="#e2e8f0" stroke="#64748b"/>
+  <text x="709" y="216" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#0f172a">Omega=0</text>
+  <rect x="665" y="256" width="88" height="46" rx="9" fill="#e2e8f0" stroke="#64748b"/>
+  <text x="709" y="284" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#0f172a">Omega=2</text>
+
+  <line x1="753" y1="211" x2="810" y2="234" stroke="#2563eb" stroke-width="2"/>
+  <line x1="753" y1="279" x2="810" y2="250" stroke="#2563eb" stroke-width="2"/>
+  <rect x="812" y="220" width="80" height="54" rx="10" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="852" y="243" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#1e3a8a">same T</text>
+  <text x="852" y="262" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#1e40af">T = 0</text>
+
+  <line x1="753" y1="211" x2="980" y2="203" stroke="#16a34a" stroke-width="2" stroke-dasharray="7 5"/>
+  <line x1="753" y1="279" x2="980" y2="291" stroke="#dc2626" stroke-width="2" stroke-dasharray="7 5"/>
+  <rect x="982" y="181" width="110" height="46" rx="9" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="1037" y="209" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#166534">E = 0</text>
+  <rect x="982" y="269" width="110" height="46" rx="9" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="1037" y="297" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#991b1b">E = 1</text>
+
+  <text x="885" y="338" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#991b1b">same T, different E</text>
+  <text x="885" y="366" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="18" fill="#0f172a">I(E; Omega | T) = log 2 = 0.6931 nats</text>
+
+  <text x="600" y="425" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#0f172a">Synthetic conditional-residual comparison</text>
+  <line x1="180" y1="635" x2="1025" y2="635" stroke="#334155" stroke-width="2"/>
+  <line x1="180" y1="470" x2="180" y2="635" stroke="#334155" stroke-width="2"/>
+
+  <line x1="173" y1="635" x2="180" y2="635" stroke="#334155"/>
+  <text x="163" y="640" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#475569">0.0</text>
+  <line x1="173" y1="564" x2="180" y2="564" stroke="#94a3b8"/>
+  <text x="163" y="569" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#475569">0.3</text>
+  <line x1="173" y1="493" x2="180" y2="493" stroke="#94a3b8"/>
+  <text x="163" y="498" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#475569">0.6</text>
+  <text x="54" y="555" transform="rotate(-90 54 555)" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#334155">I(E; Omega | T), nats</text>
+
+  <rect x="330" y="631" width="170" height="4" fill="#16a34a"/>
+  <circle cx="415" cy="631" r="6" fill="#16a34a"/>
+  <text x="415" y="615" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#166534">0</text>
+  <text x="415" y="665" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#334155">descriptor-derived</text>
+
+  <rect x="700" y="471" width="170" height="164" fill="#2563eb" opacity="0.88"/>
+  <text x="785" y="458" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#1e3a8a">0.6931</text>
+  <text x="785" y="665" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#334155">separately declared synthetic</text>
+
+  <text x="600" y="700" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#64748b">The right-hand target is a synthetic counterexample variable, not a claim about measured experience.</text>
+</svg>
