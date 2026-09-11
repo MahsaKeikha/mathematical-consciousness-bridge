@@ -21,7 +21,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Harden P80 citation migration
+      - name: Harden P80 publication migration
         if: hashFiles('scripts/integrate_p80_publication.py') != ''
         run: |
           python - <<'PY'
@@ -29,10 +29,19 @@ jobs:
 
           path = Path("scripts/integrate_p80_publication.py")
           text = path.read_text(encoding="utf-8")
+
+          # Keep the P79 sampling-radius record distinct from the P80 frontier.
           unsafe = 'text = replace(text, "P79", "P80") if "Current documented theorem frontier: P79" in text else text'
           safe = 'text = replace(text, "Current documented theorem frontier: P79", "Current documented theorem frontier: P80")'
           if unsafe in text:
               text = text.replace(unsafe, safe, 1)
+
+          # The theorem and provenance files on this branch already contain the
+          # corrected r_square edge condition. Do not re-run an older migration
+          # whose textual insertion markers are intentionally no longer present.
+          text = text.replace("    update_proposition80()\n", "")
+          text = text.replace("    update_p80_provenance()\n", "")
+
           path.write_text(text, encoding="utf-8")
           PY
       - name: Apply P80 publication integration
