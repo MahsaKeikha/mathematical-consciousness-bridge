@@ -18,6 +18,7 @@ CURATED_MAIN_PAGE_FIGURES = (
     "p18_scale_sufficiency_certificate.svg",
     "multiscale_physical_hierarchy.svg",
     "p20_finite_sample_residual_certificate.svg",
+    "p71_target_provenance_noncircularity.svg",
     "observer_to_bridge_handoff.svg",
     "quantum_bridge_completeness_map.svg",
     "p38_quantum_operational_sufficiency.svg",
@@ -47,7 +48,6 @@ def test_main_page_links_complete_visual_atlases_instead_of_embedding_them():
     for token in required:
         assert token in text
 
-    # The landing page should no longer be forced to embed every Q/QM figure.
     q_tokens = sum(f"q{index:02d}_" in text for index in range(1, 41))
     qm_tokens = sum(f"qm{index:02d}_" in text for index in range(1, 19))
     assert q_tokens < 10
@@ -59,10 +59,11 @@ def test_detailed_proposition_chronology_is_externalized():
     detail = DETAIL.read_text(encoding="utf-8")
 
     assert "docs/detailed_proposition_record.md" in readme
-    assert "Open the complete P1 to P70 chronology" not in readme
-    assert "Complete P1 to P70 chronology" in detail
+    assert "Open the complete P1 to P71 chronology" not in readme
+    assert "Complete P1 to P71 chronology" in detail
     assert "Propositions **P1-P10**" in detail
     assert "**P70** makes the resulting certificate diagnostic rather than opaque" in detail
+    assert "**P71** returns from the downstream calibration branch" in detail
 
 
 def test_main_page_declares_scientific_status_boundaries():
@@ -75,6 +76,7 @@ def test_main_page_declares_scientific_status_boundaries():
         "Reproducibility and audit path",
         "Numerical validation facts",
         "A passing test proves only",
+        "target-construction protocol",
     )
     for phrase in required_phrases:
         assert phrase in text, f"README is missing scientific-boundary text: {phrase}"

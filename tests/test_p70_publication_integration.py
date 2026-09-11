@@ -7,16 +7,13 @@ def _read(path: str) -> str:
     return (ROOT / path).read_text(encoding="utf-8")
 
 
-def test_p70_is_integrated_across_public_record():
+def test_p70_remains_integrated_as_historical_calibration_frontier():
     required = {
         "README.md": [
-            "version-0.70.0-2563eb",
-            "70 proposition-level results",
-            "P1 through P70 with explicit dependency branches",
+            "docs/calibration_optimization_frontier_p61_p70.md",
             "# Research at a glance",
             "# Detailed proposition record",
             "docs/quantum_foundations_and_bridge_test.md",
-            "docs/calibration_optimization_frontier_p61_p70.md",
         ],
         "docs/calibration_optimization_frontier_p61_p70.md": [
             "Proposition 70: exact primal-dual gap decomposition",
@@ -25,40 +22,19 @@ def test_p70_is_integrated_across_public_record():
             "test_primal_dual_gap_decomposition.py",
         ],
         "docs/theorem_roadmap.md": [
-            "P70",
-            "proposition_70_primal_dual_gap_decomposition.md",
+            "[P70](proposition_70_primal_dual_gap_decomposition.md)",
             "p70_primal_dual_gap_decomposition.svg",
             "proved primal-dual diagnostic decomposition",
         ],
         "docs/research_navigation.md": [
-            "P1 through P70",
             "proposition_70_primal_dual_gap_decomposition.md",
+            "P61-P70",
         ],
         "docs/equation_and_citation_map.md": [
             "# 59. P70 exact primal-dual gap decomposition",
             "r_e(k_e;\\lambda)",
             "U(k)-q(\\lambda)",
             "P67 sufficient global-optimality certificate conditions",
-        ],
-        "website/index.html": [
-            "<strong>70</strong><span>proposition-level results</span>",
-            "<strong>v0.70.0</strong><span>current documented release</span>",
-            "P70",
-            "docs/figures/p70_primal_dual_gap_decomposition.svg",
-        ],
-        "website/research-map.html": [
-            "Seventy results",
-            "P54-P70",
-            "P62-P70",
-            "P70 exact decomposition of the candidate-to-dual certificate gap",
-        ],
-        "CITATION.cff": [
-            "version: 0.70.0",
-            "primal-dual gap decomposition",
-        ],
-        "pyproject.toml": [
-            'version = "0.70.0"',
-            "primal-dual gap decomposition",
         ],
         "CHANGELOG.md": [
             "# 0.70.0 - 2026-09-10",
@@ -69,7 +45,7 @@ def test_p70_is_integrated_across_public_record():
     for path, tokens in required.items():
         text = _read(path)
         for token in tokens:
-            assert token in text, f"{path} missing P70 publication token: {token}"
+            assert token in text, f"{path} missing historical P70 token: {token}"
 
 
 def test_p70_permanent_proof_code_visual_and_tests_exist():

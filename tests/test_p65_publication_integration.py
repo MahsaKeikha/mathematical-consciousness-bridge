@@ -27,10 +27,6 @@ def test_p65_remains_integrated_in_public_record():
             "n_e^*=\\max",
             "\\sqrt2",
         ],
-        "website/index.html": [
-            "P65",
-            "Baseline-safe water filling",
-        ],
         "website/research-map.html": [
             "P62-P70",
             "Heterogeneous-cost calibration",

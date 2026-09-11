@@ -1,61 +1,60 @@
 # Theorem Roadmap
 
-This roadmap records the current proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge.
+This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-![P1-P31 core theorem roadmap](figures/theorem_roadmap.svg)
+The current documented theorem frontier is **P71**. The proposition record runs from **P1 through P71 with explicit dependency branches**. P71 returns to the core P19 bridge-sufficiency lineage; it does not extend the P61-P70 calibration branch.
 
-![P30-P37 operational scale extension](../figures/p30_p37_operational_scale_map.svg)
-
-![P38 quantum operational sufficiency](figures/p38_quantum_operational_sufficiency.svg)
-
-![P39 finite-data quantum non-factorization](figures/p39_finite_data_quantum_nonfactorization.svg)
-
-![P40 continuous quantum-region regularity](figures/p40_continuous_quantum_region_regularity.svg)
-
-![P41 trace-ball quantum envelope](figures/p41_trace_ball_quantum_envelope.svg)
-
-![P42 quantum regular-bridge sample complexity](figures/p42_quantum_regular_bridge_sample_complexity.svg)
-
-![P43 optimal quantum-target allocation](figures/p43_optimal_quantum_target_allocation.svg)
-
-![P44 finite-family post-selection certificate](figures/p44_pair_adaptive_sample_allocation.svg)
-
-![P45 shared-preparation graph allocation](figures/p45_shared_preparation_graph_allocation.svg)
-
-![P46 budget-constrained witness graph](figures/p46_budget_constrained_witness_graph.svg)
-
-![P47 anytime-valid sequential witness graph](figures/p47_sequential_graph_refinement.svg)
-
-![P48 gap-dependent stopping complexity](figures/p48_gap_dependent_stopping_complexity.svg)
-
-![P49 dyadic stopping overhead](figures/p49_dyadic_stopping_overhead.svg)
-
-![P50 bounded-starvation asynchronous sampling](figures/p50_bounded_starvation_asynchronous_sampling.svg)
-
-![P51 heterogeneous finite-window service-rate stopping](figures/p51_heterogeneous_service_rate_stopping.svg)
-![P52 capacity-optimal service allocation](figures/p52_capacity_optimal_service_allocation.svg)
-![P53 residual-demand reoptimization](figures/p53_residual_demand_reoptimization.svg)
-![P54 metric switching-cost residual scheduling](figures/p54_metric_switching_cost_residual_scheduling.svg)
-![P55 pruning-aware metric switching-cost monotonicity](figures/p55_pruning_aware_switching_monotonicity.svg)
-![P56 moving-start metric reoptimization stability](figures/p56_moving_start_metric_reoptimization_stability.svg)
-![P57 switching-metric perturbation stability](figures/p57_switching_metric_perturbation.svg)
-![P58 finite-data switching-metric uncertainty](figures/p58_finite_data_metric_uncertainty.svg)
-![P59 optimal transition-calibration allocation](figures/p59_optimal_transition_calibration.svg)
-![P60 integer transition-calibration allocation](figures/p60_integer_transition_calibration.svg)
-![P61 exact integer transition-calibration allocation](figures/p61_exact_integer_transition_calibration.svg)
-![P62 heterogeneous-cost transition-calibration allocation](figures/p62_heterogeneous_cost_transition_calibration.svg)
-![P63 exact heterogeneous-cost integer calibration](figures/p63_exact_heterogeneous_integer_calibration.svg)
-![P64 fast certified heterogeneous integer approximation](figures/p64_fast_heterogeneous_integer_approximation.svg)
-![P65 lower-bounded heterogeneous calibration](figures/p65_lower_bounded_heterogeneous_calibration.svg)
-![P66 residual-exact calibration augmentation](figures/p66_residual_exact_calibration_augmentation.svg)
-![P67 global integer optimality certificate](figures/p67_global_integer_optimality_certificate.svg)
-![P68 Lagrangian optimality gap certificate](figures/p68_lagrangian_optimality_gap.svg)
-![P69 certified dual-optimal multiplier search](figures/p69_dual_optimal_multiplier.svg)
-![P70 exact primal-dual gap decomposition](figures/p70_primal_dual_gap_decomposition.svg)
+![Core theorem roadmap](figures/theorem_roadmap.svg)
 
 ---
 
-# 1. Complete proposition index
+# 1. Scientific dependency map
+
+The main logical structure is
+
+\[
+\boxed{
+\begin{aligned}
+&\text{P1-P10: invariance, identifiability, recovery, robust design}\\
+&\Downarrow\\
+&\text{P11-P18: intervention, time, composition, and scale}\\
+&\Downarrow\\
+&\text{P19: exact, stochastic, and differential physical sufficiency}\\
+&\Downarrow\\
+&\text{P20-P24: finite-data, refinement, selection, and anytime validity}\\
+&\Downarrow\\
+&\text{P71: target-provenance non-circularity}.
+\end{aligned}
+}
+\]
+
+Three major supporting branches attach to that core:
+
+\[
+\boxed{
+\text{P25-P37: operational scale compatibility}
+}
+\]
+
+\[
+\boxed{
+\text{P38-P44: quantum operational sufficiency and finite-data bridge tests}
+}
+\]
+
+\[
+\boxed{
+\text{P45-P60: adaptive experiment design and scheduling}
+\longrightarrow
+\text{P61-P70: calibration and optimization}.
+}
+\]
+
+The branches answer different questions. A later proposition number does not imply that its result is ontologically deeper. In particular, P61-P70 improves how a declared experiment is executed and certified; P71 addresses whether the target used by the bridge test was constructed in a scientifically non-circular way.
+
+---
+
+# 2. Complete proposition index
 
 | Proposition | Mathematical role | Scientific role | Status |
 | --- | --- | --- | --- |
@@ -63,919 +62,107 @@ This roadmap records the current proved mathematical chain and the open route to
 | [P2](proposition_2_bridge_identifiability.md) | total-variation discriminability | exact theory non-identifiability criterion | proved |
 | [P3](proposition_3_bridge_equivalence_classes.md) | quotient by observable fingerprints | identifies what an experiment class can resolve | proved |
 | [P4](proposition_4_discriminating_experiment_design.md) | maximin and set-cover design | adversarial theory-discriminating experiments | proved |
-| [P5](proposition_5_feature_sufficiency.md) | bridge factorization through physical features | exact sufficiency / counterexample criterion | proved |
+| [P5](proposition_5_feature_sufficiency.md) | bridge factorization through physical features | exact sufficiency and counterexample criterion | proved |
 | [P6](proposition_6_canonical_bridge_signature.md) | canonical bridge quotient | defines the exact completeness target | proved |
-| [P7](proposition_7_experimental_signature_recovery.md) | observable-fingerprint factorization | exact recoverability / no-go condition | proved |
+| [P7](proposition_7_experimental_signature_recovery.md) | observable-fingerprint factorization | exact recoverability and no-go condition | proved |
 | [P8](proposition_8_robust_signature_recovery.md) | deterministic perturbation bound | finite-error signature recovery | proved |
-| [P9](proposition_9_categorical_sample_complexity.md) | Hoeffding + union bound | explicit finite trial requirement | proved |
+| [P9](proposition_9_categorical_sample_complexity.md) | concentration plus union control | explicit finite trial requirement | proved |
 | [P10](proposition_10_robust_experiment_design.md) | robust protocol optimization | separates discrimination from nuisance variation | proved |
-| [P11](proposition_11_intervention_resolved_causal_structure.md) | structured intervention-response object | first original candidate physical signature | proved construction / candidate |
-| [P12](proposition_12_component_insufficiency.md) | projection-collision theorem | one-component and scalar reductions lose information | proved minimality / no-go |
-| [P13](proposition_13_pairwise_component_irredundancy.md) | pairwise projection collisions | every major component is irredundant relative to the other two on the audit domain | proved irredundancy |
-| [P14](proposition_14_temporal_continuation.md) | quotient metric and path variation | representation-invariant temporal continuation | proved temporal-structure theorem |
-| [P15](proposition_15_finite_sample_temporal_certification.md) | perturbation bounds for quotient distances and paths | finite-error certification of temporal change | proved certification theorem |
-| [P16](proposition_16_independent_composition_and_coupling.md) | product-response composition and factorization defect | distinguishes independent coexistence from observed cross-system coupling | proved composition theorem |
-| [P17](proposition_17_coarse_graining_and_refinement.md) | deterministic pushforward and data processing | quantifies information loss under coarse-graining and refinement ambiguity | proved scale-loss theorem |
-| [P18](proposition_18_scale_sufficiency_certification.md) | approximate reconstruction and separation margin | certifies when a coarse scale preserves a declared response family | proved scale-sufficiency theorem |
-| [P19](proposition_19_fundamental_physical_sufficiency.md) | quotient factorization, conditional mutual information, and differential rank obstruction | tests whether an independent target is fixed by the declared physical descriptor | proved physical-sufficiency theorem |
-| [P20](proposition_20_finite_sample_residual_certification.md) | Hoeffding joint-TV concentration plus finite-alphabet entropy continuity | finite-sample confidence interval for the P19 conditional-information residual | proved finite-sample certification theorem |
-| [P21](proposition_21_descriptor_refinement_residual_persistence.md) | nested descriptor factorization and conditional-information chain rule | explicit omitted-physics audit and residual-persistence trajectory | proved descriptor-refinement theorem |
-| [P22](proposition_22_simultaneous_refinement_chain_certification.md) | shared base-TV confidence event plus deterministic pushforward contraction | simultaneous finite-data confidence family for P21 residuals and gains | proved simultaneous-certification theorem |
-| [P23](proposition_23_adaptive_descriptor_selection_certification.md) | universal pushforward control plus post-selection regret analysis | adaptive fixed-sample physical-refinement selection with valid coverage | proved post-selection theorem |
-| [P24](proposition_24_anytime_adaptive_refinement_certification.md) | summable alpha spending plus countable union control | repeated-look adaptive refinement and finite stopping-time validity | proved anytime-valid theorem |
-| [P25](proposition_25_directed_influence_scale_certification.md) | P11 influence plus P18 reconstruction distortion | directed-influence preservation and edge-margin certification across target observation scale | proved physical scale theorem |
-| [P26](proposition_26_partition_irreducibility_scale_certification.md) | P11 partition productization plus P17 contraction and P18 reconstruction | partition-irreducibility preservation and margin certification under block-compatible observation | proved physical scale theorem |
-| [P27](proposition_27_partition_lattice_node_aggregation.md) | surjective node quotient plus partition saturation, lattice transport, P17 contraction, and P18 reconstruction | exact criterion for surviving partition semantics under node aggregation and quantitative irreducibility control | proved physical scale theorem |
-| [P28](proposition_28_intervention_node_aggregation_compatibility.md) | P11 matched-pair source incidence plus P25 target contraction and P27 node aggregation | exact source-label descent and directed-influence certification across aggregate nodes | proved physical scale theorem |
-| [P29](proposition_29_response_geometry_node_aggregation.md) | P11 response geometry plus P17 contraction, P18 reconstruction, and P27 node aggregation | complete indexed response-pseudometric transport on a fixed intervention-delay grid | proved physical scale theorem |
-| [P30](proposition_30_full_p11_scale_compatibility.md) | assembly of P27-P29 under one scale declaration | simultaneous declared P11 physical-signature transport with a no-semantic-compensation guard | proved assembly theorem |
-| [P31](proposition_31_intervention_quotient_compatibility.md) | quotient factorization of intervention-conditioned response laws | exact criterion for changing the intervention set plus a representative-ambiguity budget | proved operational quotient theorem |
-| [P32](proposition_32_delay_quotient_compatibility.md) | delay-fiber factorization | exact temporal quotient criterion and ambiguity budget | proved operational quotient theorem |
-| [P33](proposition_33_joint_operational_quotient.md) | product quotient and triangle inequality | joint intervention-delay descent with additive ambiguity | proved joint quotient theorem |
-| [P34](proposition_34_joint_p11_operational_scale.md) | assembly under one complete scale declaration | exact full P11 semantics plus approximate geometry control | proved assembly theorem |
-| [P35](proposition_35_approximate_directed_influence_operational_quotient.md) | metric perturbation of matched response pairs | approximate directed-influence and edge stability | proved perturbation theorem |
-| [P36](proposition_36_partition_irreducibility_operational_quotient.md) | marginal contraction plus product-measure telescoping | partition-reference and irreducibility stability | proved perturbation theorem |
-| [P37](proposition_37_complete_approximate_p11_operational_scale.md) | max-norm assembly of G, A, and K bounds | complete approximate P11 scale certificate | proved complete scale theorem |
-| [P38](proposition_38_quantum_operational_sufficiency.md) | factorization through tomographically complete density-operator fibers | exact quantum descriptor sufficiency and non-factorization witness | proved quantum sufficiency theorem |
-| [P39](proposition_39_finite_data_quantum_nonfactorization.md) | target-TV confidence bounds plus tomography model-set coverage | finite-data rejection of every surviving exact quantum-state-fiber hypothesis | proved finite-data model-set theorem |
-| [P40](proposition_40_continuous_quantum_region_regularity.md) | injective-image factorization plus confidence-region distance envelopes and bridge moduli | unrestricted-bridge no-go and continuous-region regularity obstruction | proved no-go plus regularity theorem |
-| [P41](proposition_41_trace_ball_quantum_envelope.md) | trace-distance triangle inequality plus simultaneous quantum and target confidence balls | analytic P40 envelope and end-to-end regularity obstruction | proved confidence-envelope theorem |
-| [P42](proposition_42_quantum_regular_bridge_sample_complexity.md) | IC-measurement Hoeffding concentration plus linear-reconstruction stability | explicit sufficient quantum and target samples for a positive regularity obstruction | proved finite-sample design theorem |
-| [P43](proposition_43_optimal_quantum_target_allocation.md) | strict convexity and closed-form weighted allocation | unique minimum-cost split of the P42 quantum and target uncertainty budget | proved resource-allocation theorem |
-| [P44](proposition_44_pair_adaptive_sample_allocation.md) | finite-family union bound and simultaneous lower-margin coverage | valid data-dependent witness selection among predeclared candidate pairs | proved post-selection theorem |
-| [P45](proposition_45_shared_preparation_graph_allocation.md) | strictly convex shared-vertex allocation plus incidence-weighted KKT conditions | unique preparation-level sample design for overlapping candidate witness pairs | proved resource-allocation theorem |
-| [P46](proposition_46_budget_constrained_witness_graph.md) | monotone supermodular induced-edge objective, CLIQUE reduction, and fractional degree-knapsack bound | hard-budget preparation selection with certified optimality gap | proved combinatorial design theorem |
-| [P47](proposition_47_anytime_sequential_witness_graph.md) | finite-family all-local-time confidence event plus adaptive local-count substitution and simultaneous edge envelopes | valid non-anticipating adaptive preparation sampling, graph refinement, witness selection, pruning, and stopping | proved anytime-valid sequential-design theorem |
-| [P48](proposition_48_gap_dependent_stopping_complexity.md) | explicit inversion of a logarithmic confidence-sequence envelope plus margin perturbation bounds | gap-dependent positive/all-negative stopping epochs and pruning-aware acquisition-cost upper bound | proved sequential stopping-complexity theorem |
-| [P49](proposition_49_dyadic_stopping_overhead.md) | dyadic ceiling geometry and deterministic checkpoint-count bound | logarithmic complete certification looks with strictly less than twofold stopping-threshold and linear-cost overhead | proved sequential scheduling theorem |
-| [P50](proposition_50_bounded_starvation_asynchronous_sampling.md) | finite-window H-fair service guarantee plus P48 local stopping thresholds | finite global-round stopping for asynchronous priority sampling and a no-progress impossibility result without fairness | proved asynchronous scheduling theorem |
-| [P51](proposition_51_heterogeneous_service_rate_stopping.md) | preparation-specific finite-window quotas and exact endpoint service bottlenecks | instance-dependent positive/all-negative global stopping bounds with P50 as a special case | proved heterogeneous scheduling theorem |
-| [P52](proposition_52_capacity_optimal_service_allocation.md) | capacity-conservation lower bound plus proportional-demand minimax construction | unique capacity-optimal service shares and exact unit-capacity quota completion | proved deterministic scheduling theorem |
-| [P53](proposition_53_residual_demand_reoptimization.md) | residual max-envelope demands plus repeated exact P52 optimization | monotone optimal remaining time and exact capacity release after sampling or P47-safe pruning | proved dynamic scheduling theorem |
-| [P54](proposition_54_metric_switching_cost_residual_scheduling.md) | metric shortcutting plus Hamiltonian-path reduction and Held-Karp recurrence | exact residual execution cost with preparation switching overhead | proved deterministic scheduling theorem |
-| [P55](proposition_55_pruning_aware_switching_monotonicity.md) | metric support-deletion shortcutting plus exact P54 cost subtraction | monotone optimal residual execution cost with exact acquisition and route-release decomposition | proved deterministic scheduling theorem |
-| [P56](proposition_56_moving_start_metric_reoptimization_stability.md) | triangle-inequality perturbation of the first route edge plus P55 composition | sharp 1-Lipschitz start-state stability and moving-setup residual cost certificate | proved deterministic perturbation theorem |
-| [P57](proposition_57_switching_metric_perturbation.md) | uniform finite-metric perturbation, route reuse, and P55-P56 composition | sharp q-delta route stability plus residual/start/geometry reoptimization certificate | proved deterministic perturbation theorem |
-| [P58](proposition_58_finite_data_metric_uncertainty.md) | pairwise Hoeffding confidence intervals plus exact lower/upper route-envelope dynamic programs | finite-data bracket for the unknown true switching optimum, robust route-regret certificate, and robust old/new comparison | proved finite-data confidence-envelope theorem |
-| [P59](proposition_59_optimal_transition_calibration.md) | strict convexity plus KKT allocation of inverse-square-root edge uncertainty | unique two-thirds-power calibration allocation, closed-form optimum, and target-budget formula | proved resource-allocation theorem |
-| [P60](proposition_60_integer_transition_calibration.md) | ceiling construction applied to the P59 continuous optimum on a reserved budget | feasible whole-measurement calibration under a hard budget with explicit multiplicative overhead and target-budget bound | proved constructive integer-allocation theorem |
-| [P61](proposition_61_exact_integer_transition_calibration.md) | discrete diminishing returns and exchange optimality for the P59 separable surrogate | exact whole-measurement allocation by largest current marginal uncertainty reduction | proved exact discrete allocation theorem |
-| [P62](proposition_62_heterogeneous_cost_transition_calibration.md) | strict convexity and KKT allocation under edge-specific observation costs | exact heterogeneous-cost continuous sample allocation, budget shares, and target-budget formula | proved continuous resource-allocation theorem |
-| [P63](proposition_63_exact_heterogeneous_integer_calibration.md) | exact-spend Bellman recursion with gcd cost compression | globally exact whole-measurement allocation under positive integer unequal costs, with P62 lower bound | proved pseudo-polynomial exact discrete theorem |
-| [P64](proposition_64_fast_heterogeneous_integer_approximation.md) | flooring of the P62 continuous optimum away from the one-sample boundary | O(m) feasible integer design with instance-specific and uniform approximation factors relative to P63 | proved scalable approximation theorem |
-| [P65](proposition_65_lower_bounded_heterogeneous_calibration.md) | lower-bounded strict convexity, active-set water filling, and floor approximation | baseline-safe heterogeneous calibration beyond the P64 one-sample regime restriction | proved continuous theorem plus approximation certificate |
-| [P66](proposition_66_residual_exact_calibration_augmentation.md) | P65 floor, bounded residual budget, and exact residual-spend dynamic programming | best floor-dominating integer augmentation with improved computable certificate | proved restricted-exact augmentation theorem |
-| [P67](proposition_67_global_integer_optimality_certificate.md) | discrete marginal intervals, common Lagrange multiplier, and weak duality | sufficient certificate upgrading a budget-tight candidate to the unrestricted P63 optimum | proved global-optimality certificate |
-| [P68](proposition_68_lagrangian_optimality_gap.md) | exact one-edge integer Lagrangian minimization plus weak duality | quantitative lower bound on the unrestricted P63 optimum and certified candidate optimality gap | proved Lagrangian gap certificate |
-| [P69](proposition_69_dual_optimal_multiplier.md) | concave dual supergradient bracketing plus supporting-line certification | strongest P68 dual lower bound to declared additive tolerance without assuming strong duality | proved dual-optimization certificate |
-| [P70](proposition_70_primal_dual_gap_decomposition.md) | exact algebraic decomposition of candidate-to-dual gap | edgewise Lagrangian mismatch plus unused-budget penalty, with P67 as the zero case | proved primal-dual diagnostic decomposition |
+| [P11](proposition_11_intervention_resolved_causal_structure.md) | structured intervention-response object | first structured candidate physical signature | proved construction and candidate |
+| [P12](proposition_12_component_insufficiency.md) | projection-collision theorem | one-component and scalar reductions lose information | proved minimality and no-go |
+| [P13](proposition_13_pairwise_component_irredundancy.md) | pairwise projection collisions | every major component is irredundant on the audit domain | proved irredundancy |
+| [P14](proposition_14_temporal_continuation.md) | quotient metric and path variation | representation-invariant temporal continuation | proved temporal theorem |
+| [P15](proposition_15_finite_sample_temporal_certification.md) | perturbation bounds | finite-error certification of temporal change | proved certification theorem |
+| [P16](proposition_16_independent_composition_and_coupling.md) | product-response composition | distinguishes independent coexistence from coupling | proved composition theorem |
+| [P17](proposition_17_coarse_graining_and_refinement.md) | deterministic pushforward and data processing | information loss under coarse-graining | proved scale-loss theorem |
+| [P18](proposition_18_scale_sufficiency_certification.md) | approximate reconstruction | quantitative scale-sufficiency certificate | proved scale theorem |
+| [P19](proposition_19_fundamental_physical_sufficiency.md) | fiber factorization, conditional mutual information, rank obstruction | tests whether an independently declared target is fixed by the physical descriptor | proved physical-sufficiency theorem |
+| [P20](proposition_20_finite_sample_residual_certification.md) | finite-alphabet concentration and entropy continuity | finite-sample confidence interval for the P19 residual | proved finite-sample theorem |
+| [P21](proposition_21_descriptor_refinement_residual_persistence.md) | nested descriptor factorization and CMI chain rule | omitted-physics audit and residual-persistence trajectory | proved refinement theorem |
+| [P22](proposition_22_simultaneous_refinement_chain_certification.md) | shared confidence event | simultaneous finite-data confidence family for P21 | proved simultaneous theorem |
+| [P23](proposition_23_adaptive_descriptor_selection_certification.md) | post-selection control | adaptive fixed-sample physical refinement with valid coverage | proved post-selection theorem |
+| [P24](proposition_24_anytime_adaptive_refinement_certification.md) | time-uniform error control | repeated-look refinement and finite stopping-time validity | proved anytime-valid theorem |
+| [P25](proposition_25_directed_influence_scale_certification.md) | influence plus reconstruction distortion | directed-influence preservation across scale | proved physical scale theorem |
+| [P26](proposition_26_partition_irreducibility_scale_certification.md) | partition productization plus reconstruction | irreducibility preservation across scale | proved physical scale theorem |
+| [P27](proposition_27_partition_lattice_node_aggregation.md) | node quotient and lattice transport | exact partition semantics under node aggregation | proved physical scale theorem |
+| [P28](proposition_28_intervention_node_aggregation_compatibility.md) | source-incidence descent | intervention compatibility across aggregate nodes | proved physical scale theorem |
+| [P29](proposition_29_response_geometry_node_aggregation.md) | response geometry transport | indexed response-pseudometric preservation | proved physical scale theorem |
+| [P30](proposition_30_full_p11_scale_compatibility.md) | scale assembly | simultaneous declared P11 structure transport | proved assembly theorem |
+| [P31](proposition_31_intervention_quotient_compatibility.md) | intervention quotient factorization | intervention-set change with ambiguity control | proved operational quotient theorem |
+| [P32](proposition_32_delay_quotient_compatibility.md) | delay-fiber factorization | temporal quotient criterion and ambiguity budget | proved operational quotient theorem |
+| [P33](proposition_33_joint_operational_quotient.md) | product quotient | joint intervention-delay descent | proved joint quotient theorem |
+| [P34](proposition_34_joint_p11_operational_scale.md) | complete scale assembly | full P11 semantics under one declaration | proved assembly theorem |
+| [P35](proposition_35_approximate_directed_influence_operational_quotient.md) | metric perturbation | approximate influence and edge stability | proved perturbation theorem |
+| [P36](proposition_36_partition_irreducibility_operational_quotient.md) | marginal contraction and product telescoping | partition-reference stability | proved perturbation theorem |
+| [P37](proposition_37_complete_approximate_p11_operational_scale.md) | max-norm assembly | complete approximate P11 scale certificate | proved complete scale theorem |
+| [P38](proposition_38_quantum_operational_sufficiency.md) | factorization through density-operator fibers | exact quantum descriptor sufficiency and non-factorization witness | proved quantum sufficiency theorem |
+| [P39](proposition_39_finite_data_quantum_nonfactorization.md) | tomography model-set coverage plus target confidence | finite-data quantum non-factorization test | proved finite-data model-set theorem |
+| [P40](proposition_40_continuous_quantum_region_regularity.md) | injective-image factorization and bridge moduli | unrestricted-bridge no-go and regularity obstruction | proved no-go plus regularity theorem |
+| [P41](proposition_41_trace_ball_quantum_envelope.md) | trace-distance uncertainty envelope | end-to-end regularity obstruction | proved confidence-envelope theorem |
+| [P42](proposition_42_quantum_regular_bridge_sample_complexity.md) | tomography concentration plus reconstruction stability | explicit samples for a positive regularity obstruction | proved finite-sample design theorem |
+| [P43](proposition_43_optimal_quantum_target_allocation.md) | strict convexity and weighted allocation | minimum-cost quantum-target uncertainty split | proved resource-allocation theorem |
+| [P44](proposition_44_pair_adaptive_sample_allocation.md) | simultaneous finite-family coverage | valid data-dependent witness selection | proved post-selection theorem |
+| [P45](proposition_45_shared_preparation_graph_allocation.md) | shared-vertex convex allocation | preparation-level resource design for overlapping witnesses | proved resource-allocation theorem |
+| [P46](proposition_46_budget_constrained_witness_graph.md) | combinatorial selection and relaxation | hard-budget preparation selection with certified gap | proved combinatorial design theorem |
+| [P47](proposition_47_anytime_sequential_witness_graph.md) | time-uniform graph confidence | adaptive sampling, pruning, witness selection, and stopping | proved sequential-design theorem |
+| [P48](proposition_48_gap_dependent_stopping_complexity.md) | confidence-sequence inversion | gap-dependent stopping complexity | proved stopping-complexity theorem |
+| [P49](proposition_49_dyadic_stopping_overhead.md) | dyadic checkpoint geometry | logarithmic certification schedule | proved scheduling theorem |
+| [P50](proposition_50_bounded_starvation_asynchronous_sampling.md) | finite-window fairness | finite global stopping under asynchronous sampling | proved asynchronous theorem |
+| [P51](proposition_51_heterogeneous_service_rate_stopping.md) | preparation-specific quotas | heterogeneous global stopping bounds | proved scheduling theorem |
+| [P52](proposition_52_capacity_optimal_service_allocation.md) | capacity lower bound and minimax allocation | capacity-optimal service shares | proved scheduling theorem |
+| [P53](proposition_53_residual_demand_reoptimization.md) | residual max-envelope demands | dynamic capacity reoptimization | proved scheduling theorem |
+| [P54](proposition_54_metric_switching_cost_residual_scheduling.md) | metric shortcutting and Held-Karp recurrence | exact residual execution cost with switching overhead | proved scheduling theorem |
+| [P55](proposition_55_pruning_aware_switching_monotonicity.md) | support-deletion shortcutting | pruning-aware route and acquisition release | proved scheduling theorem |
+| [P56](proposition_56_moving_start_metric_reoptimization_stability.md) | first-edge perturbation | sharp moving-start stability | proved perturbation theorem |
+| [P57](proposition_57_switching_metric_perturbation.md) | uniform finite-metric perturbation | switching-metric reoptimization stability | proved perturbation theorem |
+| [P58](proposition_58_finite_data_metric_uncertainty.md) | transition confidence intervals and route envelopes | finite-data switching-metric uncertainty | proved finite-data theorem |
+| [P59](proposition_59_optimal_transition_calibration.md) | strict convexity and KKT allocation | optimal transition-calibration allocation | proved resource-allocation theorem |
+| [P60](proposition_60_integer_transition_calibration.md) | reserved-budget ceiling construction | whole-measurement calibration with overhead bound | proved integer-allocation theorem |
+| [P61](proposition_61_exact_integer_transition_calibration.md) | discrete diminishing returns | exact equal-cost whole-measurement allocation | proved exact discrete theorem |
+| [P62](proposition_62_heterogeneous_cost_transition_calibration.md) | unequal-cost KKT allocation | heterogeneous-cost continuous calibration | proved continuous theorem |
+| [P63](proposition_63_exact_heterogeneous_integer_calibration.md) | Bellman recursion with gcd compression | exact unequal-cost integer calibration | proved pseudo-polynomial theorem |
+| [P64](proposition_64_fast_heterogeneous_integer_approximation.md) | floor approximation | scalable heterogeneous integer certificate | proved approximation theorem |
+| [P65](proposition_65_lower_bounded_heterogeneous_calibration.md) | active-set water filling | lower-bounded heterogeneous calibration | proved continuous theorem plus approximation certificate |
+| [P66](proposition_66_residual_exact_calibration_augmentation.md) | bounded residual dynamic program | exact floor-dominating augmentation | proved restricted-exact theorem |
+| [P67](proposition_67_global_integer_optimality_certificate.md) | common multiplier and marginal intervals | unrestricted integer global-optimality certificate | proved sufficient certificate theorem |
+| [P68](proposition_68_lagrangian_optimality_gap.md) | Lagrangian weak duality | quantitative candidate-to-optimum upper certificate | proved dual lower-bound theorem |
+| [P69](proposition_69_dual_optimal_multiplier.md) | concave dual and supergradient bracket | certified strongest P68 dual value | proved dual-optimization theorem |
+| [P70](proposition_70_primal_dual_gap_decomposition.md) | exact primal-dual diagnostic decomposition | attributes certificate gap to edge regret and unused budget | proved primal-dual diagnostic decomposition |
+| [P71](proposition_71_target_provenance_noncircularity.md) | deterministic factorization, Markov screening-off, and provenance non-identifiability | prevents descriptor-derived targets from being mistaken for independent bridge evidence | proved target-provenance non-circularity theorem |
 
 ---
 
-# 2. Foundation layer: P1-P4
+# 3. Foundations and identifiability: P1-P10
 
-P1 makes the bridge representation independent:
+The first ten propositions establish the requirements that precede any consciousness interpretation: representation invariance, theory distinguishability, experimental equivalence classes, discriminating protocol design, feature sufficiency, canonical signatures, recoverability, robust recovery, finite sampling, and nuisance-aware experimental design.
 
-\[
-\boxed{
-p\sim_Pp'\Longrightarrow B(p)=B(p').
-}
-\]
-
-P2 defines experiment-class discriminability
-
-\[
-\boxed{
-\Delta_\Pi
-=
-\sup_{\pi\in\Pi}
-\|P_1^{\pi,q}-P_2^{\pi,q}\|_{\mathrm{TV}}
-}
-\]
-
-and proves exact non-identifiability when \(\Delta_\Pi=0\).
-
-P3 quotients theory space by complete observable fingerprints:
-
-\[
-\boxed{
-\Theta/{\sim_{\Pi,q}}
-\cong
-\operatorname{Im}(\Phi_{\Pi,q}).
-}
-\]
-
-P4 turns theory discrimination into protocol design:
-
-\[
-\boxed{
-U(S)>0
-\iff
-\bigcup_{\pi\in S}C_\pi=\mathcal U.
-}
-\]
+Their role is methodological. They make it possible to state what an experiment can identify before asking what the identified object means experientially.
 
 ---
 
-# 3. Sufficiency and completeness: P5-P6
+# 4. Structured physical candidate: P11-P18
 
-For a proposed physical feature \(F\), P5 proves
+P11 defines an intervention-resolved physical candidate built from response geometry, directed intervention influence, and partition irreducibility. P12 and P13 prove constructive insufficiency results for compressed projections. P14-P15 add representation-invariant temporal continuation and uncertainty propagation. P16 handles independent composition and coupling. P17-P18 quantify coarse-graining loss and reconstruction-controlled scale sufficiency.
 
-\[
-\boxed{
-\bar B=g\circ F
-\iff
-F(p)=F(p')\Rightarrow\bar B(p)=\bar B(p').
-}
-\]
-
-P6 defines the canonical bridge signature
-
-\[
-C_B(p)=[p]_{\sim_B}
-\]
-
-and proves
+A representative scale certificate is
 
 \[
 \boxed{
-C_B(p)=C_B(p')
-\iff
-\bar B(p)=\bar B(p').
-}
-\]
-
-This gives the exact equivalence-class target a complete physical signature would need to match.
-
----
-
-# 4. Recoverability and finite data: P7-P10
-
-P7 characterizes exact experimental recoverability:
-
-\[
-\boxed{
-\Psi_\Pi(p)=\Psi_\Pi(p')
-\Longrightarrow
-F_*(p)=F_*(p').
-}
-\]
-
-P8 introduces the robust signature gap
-
-\[
-\boxed{
-\gamma_S=\delta_S-\omega_S
-}
-\]
-
-and proves exact recovery under uniform error when
-
-\[
-\boxed{
-\gamma_S>4\varepsilon.
-}
-\]
-
-P9 gives an explicit categorical finite-sample sufficient condition:
-
-\[
-\boxed{
-n
-\ge
-\frac{8K^2}{\gamma_S^2}
-\log\left(\frac{2N_PN_\pi K}{\alpha}\right).
-}
-\]
-
-P10 proves that an added protocol is useful only when its between-signature gain exceeds its within-signature inflation.
-
----
-
-# 5. Physical candidate and internal falsification: P11-P13
-
-P11 defines the intervention-resolved causal structure
-
-\[
-\boxed{
-F_{\mathrm{causal}}(p)
-=
-[\mathfrak C_p]_{\cong},
-\qquad
-\mathfrak C_p
-=
-(V,\mathcal U_p,\mathcal T,\mathcal G_p,\mathcal A_p,\mathcal K_p).
-}
-\]
-
-The three retained structures are:
-
-\[
-\mathcal G_p
-\quad\text{response geometry},
-\qquad
-\mathcal A_p
-\quad\text{directed influence},
-\qquad
-\mathcal K_p
-\quad\text{partition irreducibility}.
-\]
-
-P12 proves that each component alone, and several scalar reductions, are incomplete by explicit projection collisions.
-
-P13 strengthens the minimality result:
-
-\[
-\boxed{
-(\mathcal G,\mathcal A),
-\quad
-(\mathcal G,\mathcal K),
-\quad
-(\mathcal A,\mathcal K)
-}
-\]
-
-are each incomplete on the declared audit domain.
-
----
-
-# 6. Temporal structure and certification: P14-P15
-
-P14 defines a weighted metric on component fingerprints and then quotients admissible relabelings:
-
-\[
-\boxed{
-\overline D_w([c],[c'])
-=
-\min_{h\in\mathcal H}D_w(c,hc').
-}
-\]
-
-It also defines temporal path variation
-
-\[
-\boxed{
-V_{0:T}
-=
-\sum_{t=0}^{T-1}
-\overline D_w([c_t],[c_{t+1}])
-}
-\]
-
-and proves endpoint and relabeling-invariance results.
-
-P15 propagates finite fingerprint error through this geometry:
-
-\[
-\boxed{
-|\widehat d_{st}-d_{st}|
-\le
-\varepsilon_s+\varepsilon_t.
-}
-\]
-
-The same theorem yields certified intervals for cumulative path variation and the maximum adjacent structural jump.
-
----
-
-# 7. Composition and scale structure: P16-P18
-
-## P16 - independent composition and coupling
-
-For exact independent product-response composition,
-
-\[
-\boxed{
-P_{A\otimes B}^{(u_A,u_B),\tau}
-=
-P_A^{u_A,\tau}\otimes P_B^{u_B,\tau}.
-}
-\]
-
-P16 proves:
-
-- subsystem response geometry is preserved when the other factor is held fixed;
-- cross-system directed influence is zero;
-- irreducibility across the \(A|B\) partition is zero;
-- response-level coupling is detected by departure from the product-factorization null.
-
-The coupling defect is
-
-\[
-\boxed{
-\chi_{A|B}(\tau)
-=
-\kappa_{AB}^{\tau}(\pi_{A|B}).
-}
-\]
-
-## P17 - coarse-graining and refinement loss
-
-For deterministic coarse map
-
-\[
-C:\Omega_f\to\Omega_c,
-\]
-
-P17 proves total-variation contraction:
-
-\[
-\boxed{
-\|C_{\#}P-C_{\#}Q\|_{\mathrm{TV}}
-\le
-\|P-Q\|_{\mathrm{TV}}.
-}
-\]
-
-If \(C\) is bijective on observed support, equality holds.
-
-If \(C\) is many-to-one, there exist distinct fine laws with identical coarse pushforwards. Thus coarse structure does not generally determine a unique refinement.
-
-This establishes the baseline distinction
-
-\[
-\boxed{
-\text{descriptive coarse-graining}
-\neq
-\text{physical fusion}.
-}
-\]
-
-## P18 - scale sufficiency by approximate reconstruction
-
-P18 asks when the coarse description is nevertheless sufficient for a declared finite family \(\mathcal F\).
-
-Let \(R\) be a fiber-consistent stochastic decoder and define
-
-\[
-\boxed{
-\rho_{\mathcal F}
-=
-\sup_{P\in\mathcal F}
-\|P-R_{\#}C_{\#}P\|_{\mathrm{TV}}.
-}
-\]
-
-Then for every \(P,Q\in\mathcal F\),
-
-\[
-\boxed{
-0
-\le
+0\le
 \|P-Q\|_{\mathrm{TV}}
 -
 \|C_{\#}P-C_{\#}Q\|_{\mathrm{TV}}
-\le
-2\rho_{\mathcal F}.
+\le2\rho_{\mathcal F}.
 }
 \]
 
-For minimum pairwise separations \(\delta_f\) and \(\delta_c\),
-
-\[
-\boxed{
-\delta_c
-\ge
-\delta_f-2\rho_{\mathcal F}.
-}
-\]
-
-Therefore
-
-\[
-\boxed{
-\delta_f>2\rho_{\mathcal F}
-\Longrightarrow
-\delta_c>0,
-}
-\]
-
-so all response laws in the declared family remain identifiable at the coarse scale.
-
-If \(\rho_{\mathcal F}=0\), pairwise response geometry is preserved exactly even when \(C\) is globally many-to-one. The relevant requirement is family sufficiency, not microscopic invertibility everywhere.
-
-## P25 - directed-influence scale certification from P11 + P18
-
-P25 is a branch extension of the physical scale program, not a consequence of P24. It combines the P11 directed-influence definition with the P18 reconstruction theorem.
-
-For fixed source \(i\), target \(j\), delay \(\tau\), and matched intervention family \(\mathcal E_i\),
-
-\[
-A_{i\to j}^{f}(\tau)
-=
-\sup_{(u,v)\in\mathcal E_i}
-\|P_j^{u,\tau}-P_j^{v,\tau}\|_{\mathrm{TV}}.
-\]
-
-A deterministic target map \(C_j\) gives
-
-\[
-\boxed{A_{i\to j}^{c}(\tau)\le A_{i\to j}^{f}(\tau).}
-\]
-
-If a P18 decoder reconstructs all relevant target response laws with uniform defect \(\rho_{i\to j}(\tau)\), then
-
-\[
-\boxed{
-0\le
-A_{i\to j}^{f}(\tau)-A_{i\to j}^{c}(\tau)
-\le2\rho_{i\to j}(\tau).
-}
-\]
-
-Hence for threshold \(\theta\),
-
-\[
-\boxed{
-A_{i\to j}^{f}(\tau)>\theta+2\rho_{i\to j}(\tau)
-\Longrightarrow
-A_{i\to j}^{c}(\tau)>\theta.
-}
-\]
-
-The theorem controls observation loss for \(\mathcal A\). It does not yet solve block aggregation, changing intervention semantics, or scale behavior of \(\mathcal K\).
-
-Direct proof: [Proposition 25](proposition_25_directed_influence_scale_certification.md). Implementation: [directed_influence_scale_certification.py](../src/consciousness_bridge/directed_influence_scale_certification.py). Tests: [test_directed_influence_scale_certification.py](../tests/test_directed_influence_scale_certification.py).
-
-## P26 - partition-irreducibility scale certification from P11 + P17 + P18
-
-P26 applies the scale theorem to the P11 partition component. For a declared partition \(\pi\),
-
-\[
-\kappa_f^{u,\tau}(\pi)
-=
-\|P^{u,\tau}-P_{\pi}^{u,\tau}\|_{\mathrm{TV}},
-\qquad
-P_{\pi}^{u,\tau}
-=
-\bigotimes_{B\in\pi}P_B^{u,\tau}.
-\]
-
-Under a block-compatible deterministic observation map \(C\), productization commutes with pushforward and therefore
-
-\[
-\boxed{
-\kappa_c^{u,\tau}(\pi)
-\le
-\kappa_f^{u,\tau}(\pi).
-}
-\]
-
-If \(D=R_\#C_\#\) is the P18 reconstruction operator, then
-
-\[
-\boxed{
-0\le
-\kappa_f^{u,\tau}(\pi)-\kappa_c^{u,\tau}(\pi)
-\le
-\rho(P^{u,\tau})+\rho(P_{\pi}^{u,\tau}).
-}
-\]
-
-Exact reconstruction of both laws gives exact preservation. A fine margin larger than the reconstruction budget guarantees survival of a declared coarse threshold.
-
-The theorem does not yet transport the entire partition lattice through physical node aggregation. It certifies one declared partition under observation-compatible scale change.
-
-Direct proof: [Proposition 26](proposition_26_partition_irreducibility_scale_certification.md). Implementation: [partition_irreducibility_scale_certification.py](../src/consciousness_bridge/partition_irreducibility_scale_certification.py). Tests: [test_partition_irreducibility_scale_certification.py](../tests/test_partition_irreducibility_scale_certification.py).
-
-## P27 - partition-lattice transport under node aggregation
-
-Let \(a:V_f\twoheadrightarrow V_c\) be a surjective node map. A fine partition \(\pi_f\) descends exactly when every aggregation fiber lies wholly within one fine block:
-
-\[
-\boxed{
-\pi_f\text{ descends}
-\iff
-\forall c\in V_c\;\exists B\in\pi_f:\;a^{-1}(c)\subseteq B.
-}
-\]
-
-Coarse partitions and aggregation-saturated fine partitions are in bijection through lift and descent, and the correspondence preserves refinement, meet, and join:
-
-\[
-\boxed{
-\operatorname{Part}(V_c)
-\simeq_{\mathrm{lattice}}
-\operatorname{Part}_{\mathrm{sat}}(V_f;a).
-}
-\]
-
-For an aggregation-compatible state map \(C_a\), partition productization commutes with pushforward for every descendable partition. Therefore
-
-\[
-\boxed{
-\kappa_c(\pi_c)\le\kappa_f(L_a\pi_c)
-}
-\]
-
-and P18 gives
-
-\[
-\boxed{
-0\le\kappa_f-\kappa_c\le\rho(P)+\rho(P_{\pi_f}).
-}
-\]
-
-P27 separates structural non-descendability from ordinary information loss. It does not yet transport intervention channels or directed influence through source-node aggregation.
-
-Direct proof: [Proposition 27](proposition_27_partition_lattice_node_aggregation.md). Implementation: [partition_lattice_node_aggregation.py](../src/consciousness_bridge/partition_lattice_node_aggregation.py). Tests: [test_partition_lattice_node_aggregation.py](../tests/test_partition_lattice_node_aggregation.py).
-
-## P28 - intervention compatibility under node aggregation
-
-For each matched intervention pair \(e\), let \(S_f(e)=\{i:e\in\mathcal E_i\}\). Exact coarse source labeling exists iff
-
-\[
-\boxed{
-|\{a(i):i\in S_f(e)\}|\le1
-\quad\forall e.
-}
-\]
-
-Then the coarse source family is the inherited union
-
-\[
-\mathcal E_c^a=\bigcup_{i\in a^{-1}(c)}\mathcal E_i.
-\]
-
-For target fiber \(F_d=a^{-1}(d)\), P28 defines the inherited fine block influence and proves
-
-\[
-\boxed{
-A_{c\to d}^{c,a}(\tau)
-\le
-A_{c\to d}^{f,a}(\tau),
-}
-\]
-
-with P18 reconstruction control
-
-\[
-\boxed{
-0\le A_{c\to d}^{f,a}-A_{c\to d}^{c,a}
-\le2\rho_{c\to d}^{a}.
-}
-\]
-
-Pooling inherited intervention pairs does not create a simultaneous aggregate actuator. Full P11 scale equivalence still requires response-geometry and intervention-family alignment.
-
-Direct proof: [Proposition 28](proposition_28_intervention_node_aggregation_compatibility.md). Implementation: [intervention_node_aggregation_compatibility.py](../src/consciousness_bridge/intervention_node_aggregation_compatibility.py). Tests: [test_intervention_node_aggregation_compatibility.py](../tests/test_intervention_node_aggregation_compatibility.py).
-
-## P29 - response-geometry transport under node aggregation
-
-For the same declared intervention and delay labels at both scales,
-
-\[
-G_f(u,v,\tau)=\|P^{u,\tau}-P^{v,\tau}\|_{\mathrm{TV}},
-\]
-
-while \(\overline P^{u,\tau}=(C_a)_\#P^{u,\tau}\) gives
-
-\[
-G_c(u,v,\tau)=\|\overline P^{u,\tau}-\overline P^{v,\tau}\|_{\mathrm{TV}}.
-\]
-
-P17 and P18 imply
-
-\[
-\boxed{
-0\le G_f(u,v,\tau)-G_c(u,v,\tau)
-\le\rho_{u,\tau}+\rho_{v,\tau}.
-}
-\]
-
-With \(\rho_*=\sup_{u,\tau}\rho_{u,\tau}\),
-
-\[
-\boxed{
-\|\mathcal G_f-\mathcal G_c\|_\infty\le2\rho_*.
-}
-\]
-
-Exact reconstruction preserves the entire response geometry. P29 deliberately does not merge interventions or resample delays.
-
-Direct proof: [Proposition 29](proposition_29_response_geometry_node_aggregation.md). Implementation: [response_geometry_node_aggregation.py](../src/consciousness_bridge/response_geometry_node_aggregation.py). Tests: [test_response_geometry_node_aggregation.py](../tests/test_response_geometry_node_aggregation.py).
-
-## P30 - full declared P11 scale compatibility
-
-P30 assembles the P27, P28, and P29 changing-node branches only when they refer to one shared scale declaration. Define
-
-\[
-\mathbf D_{P11}(a)=(D_G,D_A,D_K)
-\]
-
-with response-geometry, directed-influence, and partition distortions. The component theorems imply
-
-\[
-D_G\le2\rho_G^*,
-\qquad
-D_A\le2\rho_A^*,
-\qquad
-D_K\le\rho_P^*+\rho_\Pi^*.
-\]
-
-Hence
-
-\[
-\boxed{
-\|\mathbf D_{P11}(a)\|_\infty
-\le
-\max\{2\rho_G^*,2\rho_A^*,\rho_P^*+\rho_\Pi^*\}.
-}
-\]
-
-The theorem requires compatible partition descent, source-pair descent, a common intervention-delay grid, a common state map, and a common reconstruction declaration. Numerical equality alone cannot replace those semantic conditions.
-
-Direct proof: [Proposition 30](proposition_30_full_p11_scale_compatibility.md). Implementation: [full_p11_scale_compatibility.py](../src/consciousness_bridge/full_p11_scale_compatibility.py). Tests: [test_full_p11_scale_compatibility.py](../tests/test_full_p11_scale_compatibility.py).
-
-## P31 - intervention-quotient compatibility
-
-Let \(b:\mathcal U_f\twoheadrightarrow\mathcal U_c\) be a declared many-to-one map on intervention labels after the physical response space has been fixed. P31 proves that a unique coarse response table exists if and only if
-
-\[
-\boxed{
-b(u)=b(v)\Longrightarrow \overline P^{u,\tau}=\overline P^{v,\tau}\quad\forall\tau.}
-\]
-
-Define
-
-\[
-\boxed{
-\eta_b=\sup_{\tau}\sup_{b(u)=b(v)}
-\|\overline P^{u,\tau}-\overline P^{v,\tau}\|_{\mathrm{TV}}.
-}
-\]
-
-Then \(\eta_b=0\) is equivalent to exact quotient descent. If representatives are used despite nonzero ambiguity, P31 bounds the resulting response-table and geometry dependence by
-
-\[
-\boxed{
-\sup_{c,\tau}\|Q_s^{c,\tau}-Q_{s'}^{c,\tau}\|_{\mathrm{TV}}\le\eta_b,
-\qquad
-\sup_{c,d,\tau}|G_s-G_{s'}|\le2\eta_b.
-}
-\]
-
-The quotient is operational and experiment relative. It does not identify distinct physical actuators or define a simultaneous perturbation.
-
-Direct proof: [Proposition 31](proposition_31_intervention_quotient_compatibility.md). Implementation: [intervention_quotient_compatibility.py](../src/consciousness_bridge/intervention_quotient_compatibility.py). Tests: [test_intervention_quotient_compatibility.py](../tests/test_intervention_quotient_compatibility.py).
+This branch builds physical structure. It does not define consciousness.
 
 ---
 
-# 7.5 Operational-scale closure and quantum specialization: P32-P38
+# 5. Core bridge sufficiency: P19
 
-P32-P37 close the complete operational-scale branch of the P11 physical candidate. The key quantitative chain is
-
-\[
-\boxed{\eta_{a\times b}\le\eta_a+\eta_b}
-\]
-
-followed by
-
-\[
-\boxed{D_G^{\mathrm{full}}\le2\rho_G^*+2\eta_{a\times b}},
-\]
-
-\[
-\boxed{D_A^{\mathrm{full}}\le2\rho_A^*+2\eta_{a\times b}},
-\]
-
-and
-
-\[
-\boxed{D_K^{\mathrm{full}}\le\rho_P^*+\rho_\Pi^*+(m_{\max}+1)\eta_{a\times b}}.
-\]
-
-P37 combines these into one max-norm scale certificate under one shared semantic declaration.
-
-P38 then changes branches. For a tomographically complete quantum operational state \(\rho_x\), a deterministic independent target factors through the declared quantum descriptor iff
-
-\[
-\boxed{\rho_x=\rho_{x'}\Longrightarrow y(x)=y(x').}
-\]
-
-The exact collision \(\rho_x=\rho_{x'}\) with \(y(x)\ne y(x')\) is therefore a non-factorization witness for that declared descriptor. The stochastic analogue is \(I(Y;X\mid\rho_X)=0\). Neither result is an experiential or ontological theorem.
-
-Direct proofs: [P32](proposition_32_delay_quotient_compatibility.md), [P33](proposition_33_joint_operational_quotient.md), [P34](proposition_34_joint_p11_operational_scale.md), [P35](proposition_35_approximate_directed_influence_operational_quotient.md), [P36](proposition_36_partition_irreducibility_operational_quotient.md), [P37](proposition_37_complete_approximate_p11_operational_scale.md), [P38](proposition_38_quantum_operational_sufficiency.md).
-
----
-
-## P39 - finite-data quantum model-set non-factorization
-
-For simultaneous target-TV radii \(\varepsilon_x\),
-
-\[
-L_{xx'}=
-\left[\|\widehat P_x-\widehat P_{x'}\|_{\mathrm{TV}}-\varepsilon_x-\varepsilon_{x'}\right]_+.
-\]
-
-For each declared quantum hypothesis \(h\),
-
-\[
-V(h)=\max_{q_h(x)=q_h(x')}L_{xx'},
-\qquad
-V_*=\min_{h\in\mathcal C_Q}V(h).
-\]
-
-If the true quantum hypothesis belongs to \(\mathcal C_Q\) with probability at least \(1-\alpha_Q\), the target confidence event has probability at least \(1-\alpha_Y\), and \(V_*>0\), then the true declared quantum hypothesis fails P38 stochastic factorization with confidence at least \(1-\alpha_Q-\alpha_Y\).
-
-The theorem never substitutes numerical state closeness for exact state equality. An injective surviving quantum model correctly blocks the collision-based certificate.
-
-Direct proof: [Proposition 39](proposition_39_finite_data_quantum_nonfactorization.md). Implementation: [finite_data_quantum_nonfactorization.py](../src/consciousness_bridge/finite_data_quantum_nonfactorization.py). Tests: [test_finite_data_quantum_nonfactorization.py](../tests/test_finite_data_quantum_nonfactorization.py).
-
----
-
-## P40 - continuous quantum-region regularity obstruction
-
-If a finite quantum descriptor \(Q\) is injective on the sampled preparation set, then any target assignment factors through some unrestricted map on \(\operatorname{Im}(Q)\). Thus continuous quantum-state closeness alone cannot rule out unrestricted factorization.
-
-For a declared bridge modulus \(\omega\), define
-
-\[
-U_{xx'}=\sup_{Q\in\mathcal C_Q}D(\rho_x^Q,\rho_{x'}^Q),
-\qquad
-M_{xx'}=L_{xx'}-\omega(U_{xx'}).
-\]
-
-Then
-
-\[
-\boxed{
-M_*:=\max_{x\ne x'}M_{xx'}>0
-}
-\]
-
-rules out every descriptor in the declared quantum confidence region for every bridge satisfying that modulus, on the joint confidence event.
-
-Direct proof: [Proposition 40](proposition_40_continuous_quantum_region_regularity.md). Implementation: [continuous_quantum_region_regularity.py](../src/consciousness_bridge/continuous_quantum_region_regularity.py). Tests: [test_continuous_quantum_region_regularity.py](../tests/test_continuous_quantum_region_regularity.py).
-
----
-
-## P41 - trace-ball quantum envelope
-
-If tomography gives simultaneous trace-distance balls
-
-\[
-D(\rho_x,\widehat\rho_x)\le r_x,
-\]
-
-then
-
-\[
-\boxed{
-U_{xx'}
-\le
-U^{\mathrm{ball}}_{xx'}
-=
-\min\{1,D(\widehat\rho_x,\widehat\rho_{x'})+r_x+r_{x'}\}.
-}
-\]
-
-Combining this with target-TV confidence gives a direct P40 obstruction
-
-\[
-\boxed{
-L^{\mathrm{ball}}_{xx'}>
-\omega(U^{\mathrm{ball}}_{xx'}).
-}
-\]
-
-For an \(L\)-Lipschitz bridge and symmetric uncertainty, the design inequality is
-
-\[
-\boxed{d_Y-Ld_Q>2\varepsilon+2Lr.}
-\]
-
-Direct proof: [Proposition 41](proposition_41_trace_ball_quantum_envelope.md). Implementation: [trace_ball_quantum_envelope.py](../src/consciousness_bridge/trace_ball_quantum_envelope.py). Tests: [test_trace_ball_quantum_envelope.py](../tests/test_trace_ball_quantum_envelope.py).
-
----
-
-## P42 - explicit regular-bridge sample complexity
-
-For a fixed IC measurement with \(m\) outcomes and reconstruction stability \(\kappa_R\), P42 obtains
-
-\[
-r_Q=\kappa_Rm\sqrt{\frac{\log(2Km/\alpha_Q)}{2n_Q}}.
-\]
-
-For a categorical target with \(k\) outcomes,
-
-\[
-\varepsilon_Y=\frac{k}{2}\sqrt{\frac{\log(2Kk/\alpha_Y)}{2n_Y}}.
-\]
-
-If \(\Delta=d_Y-Ld_Q>0\), then
-
-\[
-\boxed{\widehat M\ge\Delta-4\varepsilon_Y-4Lr_Q.}
-\]
-
-Allocating fractions \(\lambda\) and \(1-\lambda\) of the gap gives explicit sufficient \(n_Y\) and \(n_Q\), both scaling as \(\Delta^{-2}\). This is a theorem for one declared tomography design and bridge regularity class, not a quantum-incompleteness claim.
-
-Direct proof: [Proposition 42](proposition_42_quantum_regular_bridge_sample_complexity.md). Implementation: [quantum_regular_bridge_sample_complexity.py](../src/consciousness_bridge/quantum_regular_bridge_sample_complexity.py). Tests: [test_quantum_regular_bridge_sample_complexity.py](../tests/test_quantum_regular_bridge_sample_complexity.py).
-
----
-
-## P43 - optimal quantum-target allocation
-
-For the P42 coefficients \(A_Y,A_Q>0\) and declared sample costs \(c_Y,c_Q>0\), P43 minimizes
-
-\[
-C(\lambda)=c_YA_Y/\lambda^2+c_QA_Q/(1-\lambda)^2.
-\]
-
-Strict convexity gives the unique optimum
-
-\[
-\boxed{
-\lambda_*=\frac{(c_YA_Y)^{1/3}}{(c_YA_Y)^{1/3}+(c_QA_Q)^{1/3}}
-}
-\]
-
-and
-
-\[
-\boxed{C_*=[(c_YA_Y)^{1/3}+(c_QA_Q)^{1/3}]^3.}
-\]
-
-Upward integer rounding adds at most \(c_Y+c_Q\) weighted cost per preparation. This is a pre-data resource optimization within P42, not a physical-completeness theorem.
-
-Direct proof: [Proposition 43](proposition_43_optimal_quantum_target_allocation.md). Implementation: [optimal_quantum_target_allocation.py](../src/consciousness_bridge/optimal_quantum_target_allocation.py). Tests: [test_optimal_quantum_target_allocation.py](../tests/test_optimal_quantum_target_allocation.py).
-
----
-
-## P44 - finite-family post-selection certification
-
-Let \(\underline M_j\) be a lower confidence margin for each candidate \(j\) in a finite predeclared family. If the candidate-specific failure allocations satisfy
-
-\[
-\sum_j\alpha_{Q,j}\le\alpha_Q,
-\qquad
-\sum_j\alpha_{Y,j}\le\alpha_Y,
-\]
-
-then
-
-\[
-\boxed{
-\Pr(\underline M_j\le M_j\ \forall j)
-\ge1-\alpha_Q-\alpha_Y.
-}
-\]
-
-Consequently, for any measurable data-dependent selector \(\widehat j\),
-
-\[
-\boxed{
-\underline M_{\widehat j}>0
-\Longrightarrow
-M_{\widehat j}>0
-}
-\]
-
-on that same simultaneous event. Shared preparations and dependent candidate analyses are allowed; independence is not required for the union-bound guarantee.
-
-Direct proof: [Proposition 44](proposition_44_pair_adaptive_sample_allocation.md). Implementation: [pair_adaptive_sample_allocation.py](../src/consciousness_bridge/pair_adaptive_sample_allocation.py). Tests: [test_pair_adaptive_sample_allocation.py](../tests/test_pair_adaptive_sample_allocation.py).
-
----
-
-## P45 - shared-preparation graph allocation
-
-For a preparation graph \(G=(V,E)\), each candidate edge \(e=\{i,j\}\) receives the nonuniform P42 budget
-
-\[
-2(\varepsilon_i+\varepsilon_j)
-+2L_e(r_i+r_j)
-\le\Delta_e.
-\]
-
-With inverse-square preparation-level sample cost
-
-\[
-C=\sum_i\frac{w_{Y,i}}{\varepsilon_i^2}
-+\sum_i\frac{w_{Q,i}}{r_i^2},
-\]
-
-the design is strictly convex. Under positive feasibility it has a unique global minimizer. The KKT stationarity laws are
-
-\[
-\frac{w_{Y,i}}{\varepsilon_i^3}
-=
-\sum_{e\ni i}\lambda_e,
-\qquad
-\frac{w_{Q,i}}{r_i^3}
-=
-\sum_{e\ni i}\lambda_eL_e.
-\]
-
-These equations generalize the P43 cube-root rule from one pair to a graph in which a preparation-level sample stream can improve every incident candidate edge.
-
-Direct proof: [Proposition 45](proposition_45_shared_preparation_graph_allocation.md). Implementation: [shared_preparation_graph_allocation.py](../src/consciousness_bridge/shared_preparation_graph_allocation.py). Tests: [test_shared_preparation_graph_allocation.py](../tests/test_shared_preparation_graph_allocation.py).
-
----
-
-# 8. Fundamental physical sufficiency: P19
-
-P19 asks whether an independently defined target descriptor \(E\) is already fixed by the declared physical descriptor \(T\).
+P19 asks whether an independently specified target descriptor \(E\) is determined by the declared physical descriptor \(T\).
 
 The deterministic criterion is
 
@@ -983,19 +170,19 @@ The deterministic criterion is
 \boxed{
 E=B_T\circ T
 \iff
-T(\Omega)=T(\Omega')\Rightarrow E(\Omega)=E(\Omega').
+T(\omega)=T(\omega')\Rightarrow E(\omega)=E(\omega').
 }
 \]
 
-For finite stochastic variables, physical sufficiency is equivalent to
+The stochastic residual is
 
 \[
 \boxed{
-I(E;\Omega\mid T)=0.
+R_{\mathrm{stoch}}(T)=I(E;\Omega\mid T).
 }
 \]
 
-For differentiable local coordinates, any smooth factorization requires
+For differentiable local coordinates, smooth factorization requires
 
 \[
 \boxed{
@@ -1003,351 +190,192 @@ For differentiable local coordinates, any smooth factorization requires
 }
 \]
 
-A positive rank residual is therefore a sufficient local no-factorization certificate. Neither a positive information residual nor a positive rank residual establishes a nonphysical ontology. Both first challenge the completeness of the declared physical descriptor.
-
-Direct proof: [Proposition 19](proposition_19_fundamental_physical_sufficiency.md). Provenance: [Equation and Citation Map](equation_and_citation_map.md). Empirical burden: [Falsification Program](falsification_program.md).
+A failure of these conditions challenges the declared descriptor. It does not, without further controls, establish a nonphysical ontology.
 
 ---
 
-# 9. Finite-sample residual certification: P20
+# 6. Finite and adaptive residual certification: P20-P24
 
-P20 converts the P19 population condition into a finite-data statement. For IID categorical samples on a declared joint alphabet of size
+P20 propagates finite-sample uncertainty into the P19 conditional-information residual. P21 decomposes residual reduction across nested physical refinements. P22 supplies simultaneous confidence over a refinement chain. P23 permits fixed-sample data-dependent descriptor selection. P24 makes repeated looks and finite stopping times valid under its declared anytime construction.
+
+These results control inference after the physical descriptor and target have been declared. They do not determine whether the target itself was constructed non-circularly.
+
+---
+
+# 7. Target-provenance non-circularity: P71
+
+P71 closes that logical gap.
+
+If the target is constructed as
 
 \[
-M=d_\Omega d_T d_E,
+\boxed{E_h=h(T),}
 \]
 
-it defines the conservative total-variation radius
+then exact factorization is automatic and
+
+\[
+\boxed{I(E_h;\Omega\mid T)=0.}
+\]
+
+If a stochastic target is generated by a descriptor-only channel
+
+\[
+P(\omega,t,e)=P(\omega,t)K(e\mid t),
+\]
+
+then
+
+\[
+\boxed{E\perp\!\!\!\perp\Omega\mid T}
+\]
+
+by construction.
+
+P71 further proves that a fixed learned target \(\widehat E=h_D(T)\) remains descriptor-derived conditional on the training artifact, and that an observed joint law with zero conditional residual can itself be represented using the channel \(K(e\mid t)=P(E=e\mid T=t)\). Therefore target provenance cannot be recovered from the observed joint law alone.
+
+![P71 target-provenance non-circularity](figures/p71_target_provenance_noncircularity.svg)
+
+**P71 scientific meaning:** successful factorization has evidential content only when the target-construction protocol did not already impose the factorization. This is a necessary non-circularity condition, not a solution to the measurement problem of consciousness.
+
+Direct proof: [Proposition 71](proposition_71_target_provenance_noncircularity.md). Implementation: [target_provenance_noncircularity.py](../src/consciousness_bridge/target_provenance_noncircularity.py). Tests: [test_target_provenance_noncircularity.py](../tests/test_target_provenance_noncircularity.py).
+
+---
+
+# 8. Operational scale branch: P25-P37
+
+P25-P37 extend the structured P11 candidate through observation scale, node aggregation, intervention quotients, delay quotients, and approximate joint operational quotients. The branch distinguishes semantic compatibility from numerical closeness: zero numerical reconstruction error cannot repair an invalid quotient of interventions, nodes, or partitions.
+
+Key branch figure links:
+
+- [P30-P37 operational scale map](../figures/p30_p37_operational_scale_map.svg)
+
+---
+
+# 9. Quantum operational sufficiency: P38-P44
+
+P38 asks whether a declared operationally complete quantum descriptor is sufficient for an independently declared target. P39-P44 add finite tomography, continuous-region regularity, trace-distance envelopes, sample-complexity requirements, optimal quantum-target resource allocation, and simultaneous candidate-pair validity.
+
+This branch does not assume that consciousness is quantum and does not infer that quantum mechanics is incomplete.
+
+The theorem figures are:
+
+- [P38 quantum operational sufficiency](figures/p38_quantum_operational_sufficiency.svg)
+- [P39 finite-data quantum non-factorization](figures/p39_finite_data_quantum_nonfactorization.svg)
+- [P40 continuous quantum-region regularity](figures/p40_continuous_quantum_region_regularity.svg)
+- [P41 trace-ball quantum envelope](figures/p41_trace_ball_quantum_envelope.svg)
+- [P42 quantum regular-bridge sample complexity](figures/p42_quantum_regular_bridge_sample_complexity.svg)
+- [P43 optimal quantum-target allocation](figures/p43_optimal_quantum_target_allocation.svg)
+- [P44 pair-adaptive sample allocation](figures/p44_pair_adaptive_sample_allocation.svg)
+
+---
+
+# 10. Adaptive experiment-design branch: P45-P60
+
+P45-P60 address how evidence can be gathered after a candidate witness family has been declared. The branch covers shared preparation graphs, hard-budget selection, anytime-valid sequential sampling, gap-dependent stopping, asynchronous fairness, heterogeneous service rates, capacity allocation, pruning-aware reoptimization, switching costs, metric uncertainty, and transition calibration.
+
+The corresponding theorem figures are:
+
+- [P45 shared-preparation graph allocation](figures/p45_shared_preparation_graph_allocation.svg)
+- [P46 budget-constrained witness graph](figures/p46_budget_constrained_witness_graph.svg)
+- [P47 sequential graph refinement](figures/p47_sequential_graph_refinement.svg)
+- [P48 gap-dependent stopping complexity](figures/p48_gap_dependent_stopping_complexity.svg)
+- [P49 dyadic stopping overhead](figures/p49_dyadic_stopping_overhead.svg)
+- [P50 bounded-starvation asynchronous sampling](figures/p50_bounded_starvation_asynchronous_sampling.svg)
+- [P51 heterogeneous service-rate stopping](figures/p51_heterogeneous_service_rate_stopping.svg)
+- [P52 capacity-optimal service allocation](figures/p52_capacity_optimal_service_allocation.svg)
+- [P53 residual-demand reoptimization](figures/p53_residual_demand_reoptimization.svg)
+- [P54 metric switching-cost residual scheduling](figures/p54_metric_switching_cost_residual_scheduling.svg)
+- [P55 pruning-aware switching monotonicity](figures/p55_pruning_aware_switching_monotonicity.svg)
+- [P56 moving-start reoptimization stability](figures/p56_moving_start_metric_reoptimization_stability.svg)
+- [P57 switching-metric perturbation](figures/p57_switching_metric_perturbation.svg)
+- [P58 finite-data metric uncertainty](figures/p58_finite_data_metric_uncertainty.svg)
+- [P59 optimal transition calibration](figures/p59_optimal_transition_calibration.svg)
+- [P60 integer transition calibration](figures/p60_integer_transition_calibration.svg)
+
+---
+
+# 11. Calibration and optimization branch: P61-P70
+
+P61-P70 is a downstream implementation branch. It assumes that the scientific witness, uncertainty model, and experimental objective have already been declared. The branch improves resource allocation and certification; it does not define consciousness or strengthen the ontology of the earlier bridge claim.
+
+The complete derivations are kept in the dedicated [Calibration and Optimization Frontier](calibration_optimization_frontier_p61_p70.md).
+
+The theorem figures are:
+
+- [P61 exact integer transition calibration](figures/p61_exact_integer_transition_calibration.svg)
+- [P62 heterogeneous-cost transition calibration](figures/p62_heterogeneous_cost_transition_calibration.svg)
+- [P63 exact heterogeneous-cost integer calibration](figures/p63_exact_heterogeneous_integer_calibration.svg)
+- [P64 fast heterogeneous integer approximation](figures/p64_fast_heterogeneous_integer_approximation.svg)
+- [P65 lower-bounded heterogeneous calibration](figures/p65_lower_bounded_heterogeneous_calibration.svg)
+- [P66 residual-exact calibration augmentation](figures/p66_residual_exact_calibration_augmentation.svg)
+- [P67 global integer optimality certificate](figures/p67_global_integer_optimality_certificate.svg)
+- [P68 Lagrangian optimality gap](figures/p68_lagrangian_optimality_gap.svg)
+- [P69 dual-optimal multiplier](figures/p69_dual_optimal_multiplier.svg)
+- [P70 primal-dual gap decomposition](figures/p70_primal_dual_gap_decomposition.svg)
+
+P70 proves the exact identity
 
 \[
 \boxed{
-\tau_n(\alpha)
+U(k)-q(\lambda)
 =
-\min\left\{1,
-\frac M2\sqrt{\frac1{2n}\log\frac{2M}{\alpha}}
-\right\}.
+\sum_e r_e(k_e;\lambda)
++\lambda\left(B-\sum_e c_ek_e\right),
 }
 \]
 
-Finite-alphabet entropy continuity gives a deterministic function \(\Delta_{\mathrm{CMI}}\) such that, with probability at least \(1-\alpha\),
-
-\[
-\boxed{
-|I_P(E;\Omega\mid T)-\widehat I_n|
-\le
-\Delta_{\mathrm{CMI}}(\tau_n(\alpha)).
-}
-\]
-
-Thus the lower bound
-
-\[
-L_n=\max\{0,\widehat I_n-\Delta_{\mathrm{CMI}}(\tau_n)\}
-\]
-
-satisfies
-
-\[
-\boxed{L_n>0\Longrightarrow I_P(E;\Omega\mid T)>0}
-\]
-
-with the declared confidence. This certifies failure of screening-off by the declared \(T\), not a nonphysical ontology.
-
-Direct proof: [Proposition 20](proposition_20_finite_sample_residual_certification.md). Implementation: [finite_sample_residual_certification.py](../src/consciousness_bridge/finite_sample_residual_certification.py). Tests: [test_finite_sample_residual_certification.py](../tests/test_finite_sample_residual_certification.py).
+which is a diagnostic decomposition of the declared integer calibration certificate.
 
 ---
 
-# 10. Descriptor refinement and omitted-physics control: P21
+# 12. What P71 changes in the bridge program
 
-Let \(T_f=f(\Omega)\) refine \(T_c\) through
+Before P71, P19 required an independently defined target as a scientific premise. P71 turns one major failure mode of that premise into an explicit theorem.
 
-\[
-\boxed{T_c=c(T_f).}
-\]
-
-For deterministic target collisions, P21 proves
+The resulting logic is
 
 \[
 \boxed{
-\mathcal C(T_f,E)
-\subseteq
-\mathcal C(T_c,E).
+\begin{array}{c}
+\text{declare physical descriptor }T\\
+\Downarrow\\
+\text{declare target protocol independently of the tested factorization}\\
+\Downarrow\\
+\text{apply P19 exact or stochastic sufficiency test}\\
+\Downarrow\\
+\text{apply P20-P24 finite/adaptive certification as needed}\\
+\Downarrow\\
+\text{attempt falsification across interventions, time, scale, and theory families.}
+\end{array}
 }
 \]
 
-For the P19 stochastic residual
-
-\[
-R(T)=I(E;\Omega\mid T),
-\]
-
-the conditional-information chain rule gives
-
-\[
-\boxed{
-R(T_c)
-=
-I(E;T_f\mid T_c)
-+
-R(T_f).
-}
-\]
-
-Therefore
-
-\[
-\boxed{R(T_f)\le R(T_c).}
-\]
-
-For a nested chain \(T_0\preceq\cdots\preceq T_m\),
-
-\[
-\boxed{
-R_0-R_m
-=
-\sum_{k=1}^{m}I(E;T_k\mid T_{k-1}),
-}
-\]
-
-so every residual decrease is assigned exactly to target-relevant information added by one physical refinement step. A positive terminal residual remains descriptor relative; it does not establish physical completeness or a nonphysical ontology.
-
-Direct proof: [Proposition 21](proposition_21_descriptor_refinement_residual_persistence.md). Implementation: [descriptor_refinement_residual.py](../src/consciousness_bridge/descriptor_refinement_residual.py). Tests: [test_descriptor_refinement_residual.py](../tests/test_descriptor_refinement_residual.py).
+A zero residual is not enough to establish target provenance. A positive residual is not enough to establish nonphysicality. Both conclusions require the scientific provenance and physical-completeness assumptions to be audited separately.
 
 ---
 
-# 11. Simultaneous finite-sample refinement certification: P22
+# 13. Current frontier after P71
 
-Let the finite-alphabet IID base law be \(P_{\Omega E}\), and let every descriptor \(T_k=f_k(\Omega)\) be predeclared and nested.
+P71 closes the **descriptor-derived target vacuity** failure mode. It does not yet define a scientifically adequate experiential space. The next structural problems are therefore:
 
-P22 constructs one base event
+1. formalize target-side experiential equivalence classes from observations whose construction does not use the tested physical descriptor;
+2. define target reliability and inter-observer or repeated-measurement consistency without collapsing the target into a physical proxy by definition;
+3. distinguish target measurement error from genuine within-fiber experiential variation;
+4. extend P20-P24 to continuous, dependent, hidden-state, noisy-descriptor, and learned-descriptor settings;
+5. model genuine physical split and merge dynamics where state variables and intervention channels change;
+6. formalize the moving world-tube and causal-structure interface;
+7. normalize temporal geometry under irregular observation time;
+8. run cross-theory adversarial experiments on shared perturbational protocol families;
+9. search biological and non-biological counterexamples with preregistered target provenance;
+10. attempt a bridge theorem only after physical completeness, target validity, finite-data control, scale compatibility, and falsification have been jointly addressed.
 
-\[
-\boxed{
-\|P_{\Omega E}-\widehat P_{\Omega E}\|_{\mathrm{TV}}
-\le
-\tau_n(\alpha)
-}
-\]
-
-with probability at least \(1-\alpha\). Because every residual and gain law is a deterministic pushforward of this base law, the same event implies
-
-\[
-\boxed{
-|R_k-\widehat R_k|
-\le
-\Delta_k(\tau_n)
-\qquad
-\forall k
-}
-\]
-
-and
-
-\[
-\boxed{
-|G_k-\widehat G_k|
-\le
-\Gamma_k(\tau_n)
-\qquad
-\forall k.
-}
-\]
-
-Using the P21 identity \(G_k=R_{k-1}-R_k\), P22 also intersects each direct gain interval with the difference interval implied by adjacent residual bounds.
-
-Therefore
-
-\[
-\boxed{
-\Pr\left(
-R_k\in\mathcal I_k^R\ \forall k,
-\quad
-G_k\in\mathcal I_k^G\ \forall k
-\right)
-\ge1-\alpha.
-}
-\]
-
-No additional confidence split over the number of descriptor levels is required for this shared-base-event construction. The bound can nevertheless become weak as the declared physical-target and descriptor alphabets grow.
-
-Direct proof: [Proposition 22](proposition_22_simultaneous_refinement_chain_certification.md). Implementation: [refinement_chain_certification.py](../src/consciousness_bridge/refinement_chain_certification.py). Tests: [test_refinement_chain_certification.py](../tests/test_refinement_chain_certification.py).
+The next core theorem should therefore address **target-side measurement reliability and noise** rather than return immediately to calibration optimization.
 
 ---
 
-# 12. Adaptive physical-descriptor selection: P23
+# 14. Scientific boundary
 
-Let \(T_c=c(\Omega)\) be a common coarse physical descriptor and let every admissible \(T_f=f(\Omega)\) refine \(T_c\).
+The roadmap contains proved mathematical results, implementations, numerical checks, and open scientific targets. None of P1-P71 establishes that consciousness is a scalar, a state of matter, an additional spacetime coordinate, intrinsically quantum, or nonphysical.
 
-On the one P22 base confidence event,
-
-\[
-\boxed{
-\|P-\widehat P\|_{\mathrm{TV}}
-\le\tau_n(\alpha),
-}
-\]
-
-total-variation contraction implies uniform control for every deterministic candidate pushforward. Hence the simultaneous gain and residual bounds remain valid even after selecting
-
-\[
-\boxed{
-\widehat f\in\operatorname*{arg\,max}_f\widehat G_f.
-}
-\]
-
-If \(G^*=\max_fG_f\), then P23 proves
-
-\[
-\boxed{
-0\le G^*-G_{\widehat f}
-\le\max_fU_f^G-L_{\widehat f}^G
-\le2\Gamma_{\max}.
-}
-\]
-
-By P21,
-
-\[
-\boxed{
-R_{\widehat f}-\min_fR_f
-=G^*-G_{\widehat f}.
-}
-\]
-
-Thus fixed-sample adaptive selection retains coverage and receives a quantitative near-optimality certificate relative to the declared admissible descriptor class.
-
-P23 does not cover optional stopping across sample sizes, and statistical post-selection validity does not by itself establish that a selected map is a scientifically meaningful physical descriptor.
-
-Direct proof: [Proposition 23](proposition_23_adaptive_descriptor_selection_certification.md). Implementation: [adaptive_descriptor_selection.py](../src/consciousness_bridge/adaptive_descriptor_selection.py). Tests: [test_adaptive_descriptor_selection.py](../tests/test_adaptive_descriptor_selection.py).
-
----
-
-# 13. Anytime-valid adaptive refinement: P24
-
-P24 distributes the global error budget over all positive sample sizes using
-
-\[
-\boxed{
-\alpha_n=\frac{6\alpha}{\pi^2n^2},
-\qquad
-\sum_{n\ge1}\alpha_n=\alpha.
-}
-\]
-
-The resulting time-indexed P20 radius is
-
-\[
-\boxed{
-\tau_n^{\mathrm{any}}(\alpha)
-=
-\min\left\{
-1,
-\frac M2
-\sqrt{\frac1{2n}\log\left(\frac{M\pi^2n^2}{3\alpha}\right)}
-\right\}.
-}
-\]
-
-A countable union bound gives
-
-\[
-\boxed{
-\Pr\left(
-\forall n\ge1:
-\|P-\widehat P_n\|_{\mathrm{TV}}
-\le\tau_n^{\mathrm{any}}(\alpha)
-\right)
-\ge1-\alpha.
-}
-\]
-
-P23's post-selection bounds are deterministic consequences of the base-law event. They therefore hold at every time simultaneously and at any realized finite stopping time.
-
-Direct proof: [Proposition 24](proposition_24_anytime_adaptive_refinement_certification.md). Implementation: [anytime_refinement_certification.py](../src/consciousness_bridge/anytime_refinement_certification.py). Tests: [test_anytime_refinement_certification.py](../tests/test_anytime_refinement_certification.py).
-
----
-
-# 14. Dependency chain
-
-\[
-\boxed{
-\begin{aligned}
-&\text{P1-P4: invariance + identifiability}\\
-&\Downarrow\\
-&\text{P5-P10: sufficiency + recovery + finite data}\\
-&\Downarrow\\
-&\text{P11-P13: physical candidate + minimality}\\
-&\Downarrow\\
-&\text{P14-P15: temporal continuation + certification}\\
-&\Downarrow\\
-&\text{P16: composition + coupling}\\
-&\Downarrow\\
-&\text{P17-P18: scale loss + scale sufficiency}\\
-&\Downarrow\\
-&\text{P19: population physical sufficiency}\\
-&\Downarrow\\
-&\text{P20: finite-sample residual certification}\\
-&\Downarrow\\
-&\text{P21: physical-descriptor refinement + residual persistence}\\
-&\Downarrow\\
-&\text{P22: simultaneous finite-sample refinement certification}\\
-&\Downarrow\\
-&\text{P23: fixed-sample adaptive descriptor selection}\\
-&\Downarrow\\
-&\text{P24: anytime-valid adaptive selection + finite stopping-time control}.
-\end{aligned}
-}
-\]
-
----
-
-# 15. Current frontier
-
-The next structural problems are:
-
-1. extend P25-P26 from observation-compatible scale change to genuine block aggregation with source/intervention compatibility;
-2. characterize the induced map between fine and coarse partition lattices and determine when the full \(\mathcal A,\mathcal K\) structure survives node aggregation;
-3. sharpen P24 beyond conservative alpha spending and extend the refinement program to continuous, dependent, hidden-state, noisy-descriptor, and learned-descriptor settings;
-4. model genuine physical split/merge dynamics where state variables and intervention channels change;
-5. formalize the moving world-tube / causal-structure interface;
-6. normalize temporal geometry under irregular observation time;
-7. run cross-theory adversarial experiments on a shared perturbational protocol family;
-8. search biological and non-biological counterexamples;
-9. formalize experiential space independently of the physical candidate;
-10. attempt a bridge theorem only after the physical, statistical, scale, and falsification layers have been jointly addressed.
-
----
-
-# 21. P46 budget-constrained witness-graph selection
-
-P45 optimizes continuous preparation-level precision on a fixed candidate graph. P46 asks which preparations should be measured when a hard budget prevents full graph coverage.
-
-For selected preparations \(S\),
-
-\[
-F(S)=\sum_{\{i,j\}\in E}w_{ij}\mathbf 1\{i,j\in S\}.
-\]
-
-P46 proves that \(F\) is monotone and supermodular, and that maximizing \(F\) subject to \(\sum_{i\in S}c_i\le B\) is NP-hard even for unit costs and unit weights. The reduction is from CLIQUE.
-
-The full weighted degree
-
-\[
-d_i=\sum_{j:\{i,j\}\in E}w_{ij}
-\]
-
-gives
-
-\[
-2F(S)\le\sum_{i\in S}d_i.
-\]
-
-A fractional knapsack relaxation therefore gives the certified upper bound
-
-\[
-F^*(B)\le U_{\rm deg}(B).
-\]
-
-Together with any feasible design value \(F(S)\), this yields an explicit a posteriori optimality-gap certificate. Small instances are solved exactly by subset enumeration in the reference implementation.
-
-P46 remains a discrete experimental-design theorem and makes no ontological claim about quantum mechanics or consciousness.
+The central physical-to-experiential bridge remains open. The purpose of the theorem chain is to make any future bridge claim more explicit, falsifiable, and difficult to obtain by circular definition or uncontrolled inference.

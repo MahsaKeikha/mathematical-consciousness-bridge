@@ -2,13 +2,19 @@ import re
 from pathlib import Path
 
 
-def test_release_versions_are_synchronized():
-    readme = Path("README.md").read_text(encoding="utf-8")
+def _project_version() -> str:
     pyproject = Path("pyproject.toml").read_text(encoding="utf-8")
+    match = re.search(r'^version = "([0-9]+\.[0-9]+\.[0-9]+)"$', pyproject, re.MULTILINE)
+    assert match is not None
+    return match.group(1)
+
+
+def test_release_versions_are_synchronized():
+    version = _project_version()
+    readme = Path("README.md").read_text(encoding="utf-8")
     citation = Path("CITATION.cff").read_text(encoding="utf-8")
-    assert "version-0.70.0-2563eb" in readme
-    assert re.search(r'^version = "0\.70\.0"$', pyproject, re.MULTILINE)
-    assert re.search(r'^version: 0\.70\.0$', citation, re.MULTILINE)
+    assert f"version-{version}-2563eb" in readme
+    assert re.search(rf"^version: {re.escape(version)}$", citation, re.MULTILINE)
 
 
 def test_quantum_and_experiment_publication_paths_are_visible_on_reader_appropriate_surfaces():
