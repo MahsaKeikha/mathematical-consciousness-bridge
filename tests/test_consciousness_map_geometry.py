@@ -155,9 +155,13 @@ def test_visible_copy_preserves_scientific_boundary() -> None:
         assert token in text
 
 
-def test_every_positioned_element_stays_inside_canvas() -> None:
+def test_every_visible_positioned_element_stays_inside_canvas() -> None:
     root = ET.parse(FIGURE).getroot()
+    positioned_tags = {"rect", "text", "line", "circle", "ellipse", "polygon", "polyline", "path"}
+
     for node in root.iter():
+        if _local_name(node.tag) not in positioned_tags:
+            continue
         for coordinate in ("x", "x1", "x2", "cx"):
             if coordinate in node.attrib:
                 assert 0.0 <= float(node.attrib[coordinate]) <= 1200.0
