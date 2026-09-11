@@ -1,0 +1,45 @@
+name: P80 publication integration
+
+on:
+  push:
+    branches: ["p80-simplex-coupled-box-certificate"]
+    paths:
+      - ".github/workflows/p80-publication-integration.yml"
+      - "scripts/integrate_p80_publication.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: p80-simplex-coupled-box-certificate
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Apply P80 publication integration
+        run: python scripts/integrate_p80_publication.py
+      - name: Install project
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+      - name: Apply safe lint fixes
+        run: ruff check . --fix
+      - name: Run complete test suite
+        run: pytest -q
+      - name: Verify lint
+        run: ruff check .
+      - name: Commit integrated P80 publication record
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Integrate P80 across public research surfaces"
+            git push origin HEAD:p80-simplex-coupled-box-certificate
+          fi
