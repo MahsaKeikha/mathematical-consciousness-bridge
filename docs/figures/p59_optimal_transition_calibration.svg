@@ -1,77 +1,110 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1050" viewBox="0 0 1800 1050" role="img" aria-labelledby="title desc">
-  <title id="title">Proposition 59: optimal transition-calibration allocation</title>
-  <desc id="desc">What this figure shows: P58 gives simultaneous confidence intervals for unknown pairwise switching costs and propagates those intervals into a certified lower and upper route cost. P59 asks the next experimental-design question:. Visible guideposts include: P58 quantifies transition uncertainty. P59 divides a fixed measurement budget optimally across those transitions.; 1. Transition uncertainty; ρₑ(nₑ) = aₑ / √nₑ; More data lowers uncertainty.; Larger aₑ means harder estimates.; Each edge has a calibration scale.. How to read it: follow the diagram in the direction of its arrows and use each box, panel, inequality, or highlighted region only with the meaning printed beside it. Main takeaway: this is the visual companion to Proposition 59; the proposition document supplies the assumptions, proof, and exact scope of every implication. Scientific status: Proposition 59 theorem/certificate visual. It is not independent empirical evidence and does not, by itself, identify a physical or latent variable with consciousness.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1000" viewBox="0 0 1200 1000" role="img" aria-labelledby="title desc">
+  <title id="title">P59 exact continuous transition-calibration allocation</title>
+  <desc id="desc">What this figure shows: P59 solves one declared continuous calibration resource-allocation problem exactly. P58 supplies an inverse-square-root uncertainty law for each calibrated transition, a predeclared positive sensitivity weight converts that uncertainty into the chosen separable route surrogate, and a fixed continuous budget must be divided across the edges. Strict convexity then gives a unique two-thirds-power allocation, the exact minimum surrogate uncertainty, and an exact target-budget threshold. How to read it: read the three upper cards as the declared ingredients: P58 uncertainty scale, scientific sensitivity weight, and continuous total budget. Their attached arrows feed the central optimization theorem. From that theorem, follow the three lower branches to the two-thirds allocation law, the necessary-and-sufficient target-budget condition, and the continuous-to-integer handoff to P60 and P61. Main takeaway: P59 is an exact continuous optimum for the stated separable surrogate; the weights must be justified independently and fractional allocations require a separate integer implementation. Scientific status: Continuous convex resource-allocation theorem for experimental calibration. It does not establish that the declared weights are uniquely scientifically correct, solve the full minimax robust-routing design problem, identify a physical quantity with consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness.</desc>
   <defs>
-    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12 Z" fill="#334155"/></marker>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
     <style>
-      .h1{font:700 40px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#0f172a}
-      .sub{font:400 21px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#475569}
-      .bt{font:700 25px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#0f172a}
-      .tx{font:400 20px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#334155}
-      .math{font:600 20px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#0f172a}
-      .small{font:400 17px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#64748b}
-      .arrow{fill:none;stroke:#334155;stroke-width:3;stroke-linecap:round;marker-end:url(#arrow)}
-      .card{stroke-width:2}
+      .title{font:700 30px Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 16px Arial,sans-serif;fill:#475569}
+      .head{font:700 18px Arial,sans-serif;fill:#0f172a}
+      .copy{font:400 15px Arial,sans-serif;fill:#334155}
+      .small{font:400 14px Arial,sans-serif;fill:#475569}
+      .eq{font:600 16px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .strong{font:700 17px Arial,sans-serif;fill:#0f172a}
+      .route{font:700 13px Arial,sans-serif;fill:#475569}
+      .arrow{stroke:#334155;stroke-width:2.5;fill:none;marker-end:url(#arrow)}
     </style>
   </defs>
-  <rect width="1800" height="1050" rx="28" fill="#f8fafc"/>
-  <text x="70" y="70" class="h1">P59: Spend calibration effort where it matters most</text>
-  <text x="70" y="112" class="sub">P58 quantifies transition uncertainty. P59 divides a fixed measurement budget optimally across those transitions.</text>
 
-  <g id="p59-uncertainty" data-qa-block="true" data-x="70" data-y="175" data-width="500" data-height="250">
-    <rect class="card" x="70" y="175" width="500" height="250" rx="22" fill="#ffffff" stroke="#94a3b8"/>
-    <text x="115" y="222" class="bt">1. Transition uncertainty</text>
-    <text x="115" y="272" class="math">ρₑ(nₑ) = aₑ / √nₑ</text>
-    <text x="115" y="320" class="tx">More data lowers uncertainty.</text>
-    <text x="115" y="352" class="tx">Larger aₑ means harder estimates.</text>
-    <text x="115" y="395" class="small">Each edge has a calibration scale.</text>
+  <rect width="1200" height="1000" rx="24" fill="#f8fafc"/>
+  <text x="60" y="58" class="title">P59  Exact continuous transition-calibration allocation</text>
+  <text x="60" y="90" class="subtitle">Allocate a fixed calibration budget across transitions to minimize one declared separable uncertainty surrogate.</text>
+
+  <g id="block-uncertainty" data-x="55" data-y="130" data-w="330" data-h="200">
+    <rect x="55" y="130" width="330" height="200" rx="18" fill="#ffffff" stroke="#64748b" stroke-width="2"/>
+    <text x="80" y="168" class="head">1. P58 uncertainty law</text>
+    <text x="80" y="207" class="strong">ρₑ(nₑ) = aₑ / √nₑ</text>
+    <text x="80" y="241" class="eq">aₑ &gt; 0</text>
+    <text x="80" y="275" class="copy">More calibration effort lowers</text>
+    <text x="80" y="300" class="copy">the certified edge radius.</text>
+    <text x="80" y="324" class="small">P58 supplies the uncertainty scale.</text>
   </g>
 
-  <g id="p59-importance" data-qa-block="true" data-x="650" data-y="175" data-width="500" data-height="250">
-    <rect class="card" x="650" y="175" width="500" height="250" rx="22" fill="#eef2ff" stroke="#6366f1"/>
-    <text x="695" y="222" class="bt">2. Transition importance</text>
-    <text x="695" y="272" class="math">wₑ &gt; 0</text>
-    <text x="695" y="320" class="tx">Larger weight means this edge</text>
-    <text x="695" y="352" class="tx">matters more to the surrogate.</text>
-    <text x="695" y="395" class="small">wₑaₑ combines importance and scale.</text>
+  <g id="block-weight" data-x="435" data-y="130" data-w="330" data-h="200">
+    <rect x="435" y="130" width="330" height="200" rx="18" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+    <text x="460" y="168" class="head">2. Declared edge weight</text>
+    <text x="460" y="207" class="strong">wₑ &gt; 0</text>
+    <text x="460" y="241" class="eq">bₑ = wₑ aₑ</text>
+    <text x="460" y="276" class="copy">Weight must be declared before</text>
+    <text x="460" y="301" class="copy">optimization is interpreted.</text>
+    <text x="460" y="324" class="small">bₑ combines importance and scale.</text>
   </g>
 
-  <g id="p59-budget" data-qa-block="true" data-x="1230" data-y="175" data-width="500" data-height="250">
-    <rect class="card" x="1230" y="175" width="500" height="250" rx="22" fill="#ffffff" stroke="#94a3b8"/>
-    <text x="1275" y="222" class="bt">3. Fixed calibration budget</text>
-    <text x="1275" y="272" class="math">Σₑ nₑ = N</text>
-    <text x="1275" y="320" class="tx">No transition can be measured</text>
-    <text x="1275" y="352" class="tx">arbitrarily many times.</text>
-    <text x="1275" y="395" class="small">The design decides how to divide N.</text>
+  <g id="block-budget" data-x="815" data-y="130" data-w="330" data-h="200">
+    <rect x="815" y="130" width="330" height="200" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+    <text x="840" y="168" class="head">3. Continuous budget</text>
+    <text x="840" y="207" class="strong">Σₑ nₑ = N</text>
+    <text x="840" y="241" class="eq">nₑ &gt; 0</text>
+    <text x="840" y="276" class="copy">Continuous effort is divided</text>
+    <text x="840" y="301" class="copy">across the calibrated edges.</text>
+    <text x="840" y="324" class="small">Whole counts are a later problem.</text>
   </g>
 
-  <path d="M570 300 H638" class="arrow" data-from="p59-uncertainty" data-to="p59-importance"/>
-  <path d="M1150 300 H1218" class="arrow" data-from="p59-importance" data-to="p59-budget"/>
+  <path id="arrow-1" class="arrow" d="M220 330 V360 H380 V390" data-source="block-uncertainty" data-target="block-optimum"/>
+  <path id="arrow-2" class="arrow" d="M600 330 V390" data-source="block-weight" data-target="block-optimum"/>
+  <path id="arrow-3" class="arrow" d="M980 330 V360 H820 V390" data-source="block-budget" data-target="block-optimum"/>
 
-  <g id="p59-optimum" data-qa-block="true" data-x="245" data-y="520" data-width="1310" data-height="250">
-    <rect class="card" x="245" y="520" width="1310" height="250" rx="24" fill="#ecfdf5" stroke="#10b981"/>
-    <text x="295" y="570" class="bt">Exact P59 optimum</text>
-    <text x="295" y="630" class="math">nₑ* = N (wₑaₑ)^(2/3) / Σⱼ (wⱼaⱼ)^(2/3)</text>
-    <text x="295" y="680" class="tx">Harder or more important transitions receive more measurements.</text>
-    <text x="295" y="725" class="small">The dependence is a two-thirds-power law, not a linear allocation rule.</text>
+  <text x="600" y="370" class="route" text-anchor="middle">strict convexity and one shared Lagrange multiplier</text>
+
+  <g id="block-optimum" data-x="120" data-y="390" data-w="960" data-h="225">
+    <rect x="120" y="390" width="960" height="225" rx="20" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+    <text x="600" y="428" text-anchor="middle" class="head">4. Unique exact continuous optimum</text>
+    <text x="600" y="466" text-anchor="middle" class="eq">U(n) = Σₑ bₑ / √nₑ</text>
+    <text x="600" y="500" text-anchor="middle" class="eq">S = Σⱼ bⱼ^(2/3)</text>
+    <text x="600" y="535" text-anchor="middle" class="strong">nₑ* = N bₑ^(2/3) / S</text>
+    <text x="600" y="570" text-anchor="middle" class="strong">U*(N) = S^(3/2) / √N</text>
+    <text x="600" y="598" text-anchor="middle" class="small">Strict convexity makes this stationary point the unique global optimum.</text>
   </g>
 
-  <path d="M900 425 V508" class="arrow" data-from="p59-importance" data-to="p59-optimum"/>
-
-  <g id="p59-best" data-qa-block="true" data-x="120" data-y="845" data-width="710" data-height="145">
-    <rect class="card" x="120" y="845" width="710" height="145" rx="20" fill="#eff6ff" stroke="#3b82f6"/>
-    <text x="165" y="892" class="bt">Best achievable surrogate uncertainty</text>
-    <text x="165" y="938" class="math">U*(N) = S^(3/2) / √N</text>
+  <g id="block-law" data-x="55" data-y="680" data-w="330" data-h="170">
+    <rect x="55" y="680" width="330" height="170" rx="18" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="80" y="718" class="head">5. Two-thirds allocation law</text>
+    <text x="80" y="758" class="eq">nₑ* ∝ (wₑaₑ)^(2/3)</text>
+    <text x="80" y="796" class="small">If bₑ is 8x larger, its</text>
+    <text x="80" y="820" class="small">continuous allocation is 4x larger.</text>
+    <text x="80" y="842" class="small">The response is sublinear.</text>
   </g>
 
-  <g id="p59-target" data-qa-block="true" data-x="970" data-y="845" data-width="710" data-height="145">
-    <rect class="card" x="970" y="845" width="710" height="145" rx="20" fill="#fff7ed" stroke="#f97316"/>
-    <text x="1015" y="892" class="bt">Budget needed for target ε</text>
-    <text x="1015" y="938" class="math">N ≥ S³ / ε²</text>
+  <g id="block-target" data-x="435" data-y="680" data-w="330" data-h="170">
+    <rect x="435" y="680" width="330" height="170" rx="18" fill="#fefce8" stroke="#ca8a04" stroke-width="2"/>
+    <text x="460" y="718" class="head">6. Exact target threshold</text>
+    <text x="460" y="757" class="eq">U*(N) ≤ ε</text>
+    <text x="460" y="789" class="strong">iff N ≥ S³ / ε²</text>
+    <text x="460" y="821" class="small">Necessary and sufficient for</text>
+    <text x="460" y="843" class="small">this continuous surrogate optimum.</text>
   </g>
 
-  <path d="M560 770 C520 815 475 820 475 833" class="arrow" data-from="p59-optimum" data-to="p59-best"/>
-  <path d="M1240 770 C1280 815 1325 820 1325 833" class="arrow" data-from="p59-optimum" data-to="p59-target"/>
+  <g id="block-handoff" data-x="815" data-y="680" data-w="330" data-h="170">
+    <rect x="815" y="680" width="330" height="170" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+    <text x="840" y="718" class="head">7. Continuous-scope handoff</text>
+    <text x="840" y="756" class="copy">Fractional nₑ are design values.</text>
+    <text x="840" y="790" class="small">P60 gives hard-budget integer</text>
+    <text x="840" y="814" class="small">rounding; P61 gives the exact</text>
+    <text x="840" y="838" class="small">unit-cost integer allocation.</text>
+  </g>
 
-  <text x="900" y="1025" text-anchor="middle" class="small">Boundary: P59 exactly solves a declared convex uncertainty surrogate. It does not solve the full combinatorial robust-routing design problem.</text>
+  <path id="arrow-4" class="arrow" d="M300 615 V650 H220 V680" data-source="block-optimum" data-target="block-law"/>
+  <path id="arrow-5" class="arrow" d="M600 615 V680" data-source="block-optimum" data-target="block-target"/>
+  <path id="arrow-6" class="arrow" d="M900 615 V650 H980 V680" data-source="block-optimum" data-target="block-handoff"/>
+
+  <g id="block-boundary" data-x="90" data-y="870" data-w="1020" data-h="125">
+    <rect x="90" y="870" width="1020" height="125" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="118" y="898" class="head">Theorem and scientific boundary</text>
+    <text x="118" y="922" class="small">P59 is exact for the declared separable inverse-square-root calibration surrogate with predeclared positive weights.</text>
+    <text x="118" y="944" class="small">It does not prove the weights uniquely correct or solve adaptive edge discovery or the full minimax robust-route design.</text>
+    <text x="118" y="966" class="small">It does not identify a physical quantity with consciousness or establish a physical-to-experiential bridge.</text>
+    <text x="118" y="988" class="small">It does not imply quantum incompleteness.</text>
+  </g>
 </svg>
