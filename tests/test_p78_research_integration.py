@@ -91,6 +91,10 @@ def test_p78_release_metadata_and_counts_are_consistent() -> None:
     assert "78 proposition-level results" in readme
     assert "66 equation-driven quantitative figures" in readme
     assert "The theorem frontier is P78." in readme
+    assert "| Public theorem frontier | **P78** |" in readme
+    assert "Read the complete P1 to P78 detailed proposition record" in readme
+    assert "make the P77 full-law criterion computationally decisive" not in readme
+    assert "extend P78's certified continuous-family computation" in readme
 
     match = re.search(r"P1 through P(\d+) with explicit dependency branches", readme)
     assert match is not None
@@ -136,10 +140,13 @@ def test_p78_figure_sequence_is_unique_around_frontier() -> None:
     readme = README.read_text(encoding="utf-8")
     assert "**Figure 12. P77 full-law model-set separation.**" in readme
     assert "**Figure 13. P78 certified continuous model separation.**" in readme
+    assert "**Figure 26. Common interface for competing theory families.**" in readme
+    assert "**Figure 27. Evidence provenance.**" in readme
     figure_numbers = [int(value) for value in re.findall(r"\*\*Figure (\d+)\.", readme)]
     assert len(figure_numbers) == len(set(figure_numbers))
 
 
 def test_p78_publication_contains_only_permanent_artifacts() -> None:
     assert not (ROOT / ".github" / "workflows" / "p78-publication-patch.yml").exists()
+    assert not (ROOT / ".github" / "workflows" / "p78-readme-cleanup.yml").exists()
     assert not (ROOT / "scripts" / "p78_publication_patch.py").exists()
