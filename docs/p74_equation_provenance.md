@@ -2,7 +2,7 @@
 
 This page classifies the equations used in Proposition 74 so that standard probability tools are not confused with repository-specific bridge methodology.
 
-P74 is a finite-sample extension of the P73 target-channel identifiability result. It does not claim invention of Hoeffding concentration, the union bound, elementary moment perturbation, or interval arithmetic.
+P74 is a finite-sample extension of the P73 target-channel identifiability result. It does not claim invention of Hoeffding concentration, the union bound, elementary moment perturbation, interval arithmetic, or binary-channel reparameterization.
 
 ---
 
@@ -14,6 +14,7 @@ P74 is a finite-sample extension of the P73 target-channel identifiability resul
 | \(\Pr(\max_x|\widehat P(x)-P(x)|>\varepsilon)\le16e^{-2n\varepsilon^2}\) | simultaneous eight-cell event | standard union-bound application assembled for the P74 alphabet | Hoeffding plus union bound |
 | \(\varepsilon_n=\sqrt{\log(16/\alpha)/(2n)}\) | simultaneous cell radius | direct inversion of the preceding bound | P74 application of standard concentration |
 | \(\delta_n=\min\{2,8\varepsilon_n\}\) | joint-law \(L^1\) radius | elementary finite-alphabet consequence | P74 application |
+| \(|\widehat\mu_j-\mu_j|\le\delta_n\) | first-moment control | elementary bounded-expectation consequence | P74 application |
 | \(|\widehat C_{ij}-C_{ij}|\le3\delta_n\) | covariance perturbation | repository derivation from bounded raw moments | P74 |
 | \(|\widehat M_{123}-M_{123}|\le13\delta_n\) | third-centered-moment perturbation | repository derivation from the centered-moment expansion | P74 |
 | \(L_{ij}=\max\{|\widehat C_{ij}|-3\delta_n,0\}\) | finite-data nondegeneracy margin | repository confidence construction | P74 |
@@ -22,6 +23,9 @@ P74 is a finite-sample extension of the P73 target-channel identifiability resul
 | \(v\in[4/(q_U+4),4/(q_L+4)]\) | latent variance interval | repository finite-sample extension | P74 built on P73 |
 | prevalence two-interval orbit | preserves global latent-label ambiguity | repository reporting construction | P74 built on P73 label symmetry |
 | \(\gamma_{1,L}=\sqrt{L_{12}L_{13}/(v_UU_{23})}\) and cyclic bounds | P72 stability confidence intervals | repository finite-sample bridge-methodology assembly | P74 built on P72-P73 |
+| \(b_jm=-M_{123}/(2C_{k\ell})\) | label-invariant recovery of the loading-times-latent-mean product | repository algebraic consequence of P73 moment identities | P74 built on P73 |
+| \(a_j=\mu_j-b_jm\) | recovery of the binary-channel offset | standard binary-channel reparameterization applied to the P73 model | P73-P74 |
+| \(\{P(X_j=+1\mid S=-1),P(X_j=+1\mid S=+1)\}=\{(1+a_j-\gamma_j)/2,(1+a_j+\gamma_j)/2\}\) | full channel reported as a label-swap-invariant unordered orbit | direct binary-channel algebra plus repository confidence reporting | P74 built on P73 |
 | \(\gamma_{123}\ge\max_j\gamma_{j,L}\) | joint-view certified lower bound | direct consequence of P73 plus simultaneous P74 bounds | P73-P74 |
 | \(n>1152\log(16/\alpha)/c_{\min}^2\) | sufficient covariance-gate design condition | repository conservative derivation | P74 |
 
@@ -36,7 +40,9 @@ The following ingredients are standard and are not claimed as new:
 - total probability and finite-alphabet empirical distributions;
 - triangle inequalities;
 - elementary product perturbation bounds for bounded quantities;
-- monotone interval propagation through positive algebraic expressions.
+- interval arithmetic for a denominator interval bounded away from zero;
+- monotone interval propagation through positive algebraic expressions;
+- the conversion between a binary conditional mean and its Bernoulli response probability.
 
 The repository already uses Hoeffding-style finite-data control in earlier propositions, including P9, P20, and P58. P74 applies the same general concentration discipline to a different object: the eight-cell joint law needed for the P73 three-view latent-channel inversion.
 
@@ -59,12 +65,16 @@ The repository-specific contribution is the assembly of those standard tools aro
 In particular, P74 contributes:
 
 1. one simultaneous empirical-law event that controls every downstream target-channel quantity used in the theorem;
-2. explicit conservative constants for covariance and third-centered-moment perturbation;
+2. explicit conservative constants for first moments, covariances, and the third centered moment;
 3. a finite-data nondegeneracy gate that refuses inversion when covariance confidence intervals touch zero;
 4. a confidence set for latent prevalence that preserves the P73 global label-swap symmetry rather than silently selecting a semantic orientation;
 5. simultaneous finite-sample confidence intervals for the P72 stability coefficients \(\gamma_1,\gamma_2,\gamma_3\);
-6. a finite-sample lower bound for the joint three-view stability;
-7. an explicit sufficient sample-size condition for separating a population covariance margin from the P73 singular set.
+6. finite-sample recovery of the invariant products \(b_jm\) and the binary-channel offsets \(a_j\);
+7. confidence sets for the full latent-conditioned binary response channels, reported as unordered column orbits because the common latent-label swap is observationally invisible;
+8. a finite-sample lower bound for the joint three-view stability;
+9. an explicit sufficient sample-size condition for separating a population covariance margin from the P73 singular set.
+
+The identity \(b_jm=-M_{123}/(2C_{k\ell})\) is not presented as a new general statistical law. It is a direct algebraic consequence of the P73 moment factorization and is used here because it exposes the exact label-invariant quantity needed to recover the channel offset without inventing a semantic label orientation.
 
 These are finite-sample statements about a declared latent statistical model. They are not empirical evidence that the model describes consciousness.
 
@@ -79,6 +89,7 @@ P74 requires the assumptions of P73 plus IID sampling within the fixed physical 
 - semantic meaning of either latent label;
 - independence of target provenance from the physical descriptor beyond the separate P71 requirement;
 - the P72 nondifferential measurement condition in a real experiment;
+- invariance of the channel across people, time, physical strata, interventions, or contexts;
 - a physical-to-experiential bridge.
 
 If the finite-data nondegeneracy gate fails, P74 reports that safe inversion is **not certified by the current data**. That is not a population nonidentifiability theorem.
