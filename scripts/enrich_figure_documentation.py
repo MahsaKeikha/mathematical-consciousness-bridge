@@ -6,6 +6,7 @@ import re
 from dataclasses import dataclass
 from pathlib import Path
 
+from conceptual_figure_records import build_special_conceptual_records
 from quantum_figure_records import build_quantum_records, write_quantum_visual_guide
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -240,7 +241,10 @@ def _fallback_record(path: Path, svg: str) -> FigureRecord:
     labels = _svg_labels(svg)
     label_text = "; ".join(labels[:7])
     if existing_desc and len(existing_desc) >= 160:
-        description = existing_desc
+        # Existing SVG metadata may already contain the status suffix from a
+        # previous enrichment run. Strip it before rebuilding metadata so the
+        # generator is idempotent rather than appending duplicate status text.
+        description = existing_desc.split(" Scientific status:", 1)[0].strip()
     else:
         guideposts = f" Visible guideposts include: {label_text}." if label_text else ""
         description = (
@@ -299,6 +303,8 @@ def _context_link(relative: str) -> str:
         return "[Quantitative atlas](quantitative_physics_mathematics_atlas.md)"
     if "quantum" in path.parts:
         return "[Quantum visual guide](quantum_visual_guide.md)"
+    if path.name == "proposition_32_delay_quotient.svg":
+        return "[Proposition 32](proposition_32_delay_quotient_compatibility.md)"
     match = re.match(r"p(\d+)_", path.name, flags=re.I)
     if match:
         number = int(match.group(1))
@@ -314,6 +320,7 @@ def _enrich_svgs() -> list[tuple[str, FigureRecord]]:
         **_readme_records(),
         **_quantitative_records(),
         **build_quantum_records(ROOT, FigureRecord, _plain),
+        **build_special_conceptual_records(ROOT, FigureRecord, _plain),
     }
     rows: list[tuple[str, FigureRecord]] = []
 
