@@ -1,5 +1,13 @@
 # Research Architecture
 
+## High-level consciousness map
+
+![High-level consciousness map](figures/consciousness_map.svg)
+
+**High-level map.** Theory, measurement, dynamics, and the sufficiency bridge are deliberately separated so that theoretical adequacy, measurement validity, and dynamical sufficiency cannot be mistaken for the still-open physical-to-experiential bridge.
+
+## Detailed research architecture
+
 ![Mathematical Consciousness Bridge research architecture](figures/research_architecture.svg)
 
 The program separates physical modeling, candidate physical signatures, temporal physical organization, experiential formalization, bridge principles, observable predictions, finite-data certification, and falsification. This prevents a theorem about a physical quantity from being mistaken for independent support of a physical-to-experiential bridge.

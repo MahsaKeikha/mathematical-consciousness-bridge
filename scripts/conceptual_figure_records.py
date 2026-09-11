@@ -5,6 +5,17 @@ from pathlib import Path
 from typing import Any
 
 RECORDS: dict[str, dict[str, str]] = {
+    "docs/figures/consciousness_map.svg": {
+        "title": "Consciousness map: theory, measurement, dynamics, and sufficiency bridge",
+        "description": (
+            "What this figure shows: a high-level separation of four scientific obligations in consciousness research: theory, measurement, dynamics, and the sufficiency bridge. "
+            "How to read it: begin at Theory, follow the labeled theoretical-sufficiency route to Measurement and the model-implied-evolution route to Dynamics, then read Measurement and Dynamics as independent constraints on the Sufficiency bridge. The arrows are logical research dependencies and do not identify physical variables with experience. "
+            "Main takeaway: theoretical adequacy, measurement validity, and dynamical sufficiency are distinct requirements; satisfying them can support or falsify a declared model but does not by itself close the physical-to-experiential bridge."
+        ),
+        "status": (
+            "Research-architecture figure. It separates physical, measurement, and sufficiency obligations; it is not an empirical consciousness result or a theorem identifying any physical state with consciousness. The physical-to-experiential bridge remains open."
+        ),
+    },
     "docs/figures/fundamental_theory_consciousness_map.svg": {
         "title": "Fundamental Theory to Consciousness map",
         "description": (
