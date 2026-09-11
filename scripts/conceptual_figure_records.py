@@ -5,6 +5,17 @@ from pathlib import Path
 from typing import Any
 
 RECORDS: dict[str, dict[str, str]] = {
+    "docs/figures/p63_exact_heterogeneous_integer_calibration.svg": {
+        "title": "P63 exact heterogeneous-cost integer calibration",
+        "description": (
+            "What this figure shows: P63 solves the declared heterogeneous-cost whole-measurement calibration problem exactly when transition costs and the total budget are positive integers. It replaces the equal-cost P61 greedy argument with an exact-spend Bellman dynamic program because unequal costs destroy the exchange proof behind the equal-unit rule. "
+            "How to read it: move left to right across the top row from the failure of the P61 greedy argument to the exact integer problem and its exact-spend Bellman state. The two attached center arrows feed the exact Bellman recurrence and final hard-budget optimum. From that theorem panel, follow the three lower branches to exact gcd cost compression, pseudo-polynomial complexity, and the P62 continuous lower bound. "
+            "Main takeaway: P63 is an exact unrestricted integer solver for the declared integer-cost separable calibration problem; its straightforward running time is pseudo-polynomial in the compressed numeric budget, which by itself is not an NP-hardness claim."
+        ),
+        "status": (
+            "Discrete optimization theorem for the declared calibration surrogate. It does not validate the uncertainty model as an experiential law, identify a calibration variable with consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness."
+        ),
+    },
     "docs/figures/p64_fast_heterogeneous_integer_approximation.svg": {
         "title": "P64 fast certified heterogeneous-cost integer approximation",
         "description": (
