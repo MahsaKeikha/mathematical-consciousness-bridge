@@ -74,31 +74,15 @@ def test_p78_plain_language_explains_certificate_without_equations() -> None:
         assert forbidden not in plain, forbidden
 
 
-def test_p78_release_metadata_and_counts_are_consistent() -> None:
-    readme = README.read_text(encoding="utf-8")
-    pyproject = (ROOT / "pyproject.toml").read_text(encoding="utf-8")
-    cff = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
-    bib = (ROOT / "CITATION.bib").read_text(encoding="utf-8")
-    citation = (ROOT / "CITATION.md").read_text(encoding="utf-8")
+def test_p78_release_history_is_preserved_after_later_frontiers() -> None:
     changelog = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
+    readme = README.read_text(encoding="utf-8")
+    roadmap = (DOCS / "theorem_roadmap.md").read_text(encoding="utf-8")
 
-    assert 'version = "0.78.0"' in pyproject
-    assert "version: 0.78.0" in cff
-    assert "Current documented theorem frontier: P78" in cff
-    assert "version      = {0.78.0}" in bib
-    assert "Proposition 78" in citation
     assert "# 0.78.0 - 2026-09-10" in changelog
-    assert "78 proposition-level results" in readme
-    assert "66 equation-driven quantitative figures" in readme
-    assert "The theorem frontier is P78." in readme
-    assert "| Public theorem frontier | **P78** |" in readme
-    assert "Read the complete P1 to P78 detailed proposition record" in readme
-    assert "make the P77 full-law criterion computationally decisive" not in readme
-    assert "extend P78's certified continuous-family computation" in readme
-
-    match = re.search(r"P1 through P(\d+) with explicit dependency branches", readme)
-    assert match is not None
-    assert int(match.group(1)) == 78
+    assert "Proposition 78" in changelog
+    assert "## 1.12 P78: certified continuous separation for the P75 model family" in readme
+    assert "| [P78]" in roadmap
 
 
 def test_p78_certification_boundary_is_preserved() -> None:

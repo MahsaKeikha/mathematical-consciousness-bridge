@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">P79 Certified Rational Sampling-Radius Envelope</title>
+  <desc id="desc">A schematic of the P79 exact-rational certification chain. Exact sample size, alphabet size, and rational alpha define the P77 Hoeffding radius. Power-of-two argument reduction and a positive atanh series with an explicit tail produce rational logarithm bounds. Integer-certified dyadic square-root floor and ceiling operations produce a rational sampling-radius envelope. The upper radius is compared with the P78 certified model-distance lower bound to trigger the strict P77 rejection gate.</desc>
+
+  <rect x="0" y="0" width="1200" height="760" rx="22" fill="#f8fafc"/>
+  <rect x="36" y="32" width="1128" height="696" rx="20" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+
+  <text x="70" y="82" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700" fill="#0f172a">P79 Certified Rational Sampling-Radius Envelope</text>
+  <text x="70" y="114" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#475569">Exact one-sided numerical certification for the P77/P78 rejection handoff</text>
+
+  <rect x="70" y="150" width="300" height="384" rx="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="94" y="188" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#0f172a">1. Exact statistical inputs</text>
+  <text x="94" y="216" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#475569">n and K are integers; alpha is rational.</text>
+
+  <rect x="104" y="252" width="232" height="74" rx="12" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+  <text x="123" y="281" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#312e81">P77 radius</text>
+  <text x="123" y="306" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#4338ca">epsilon = sqrt(log(2K/alpha)/(2n))</text>
+
+  <rect x="104" y="350" width="232" height="76" rx="12" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
+  <text x="123" y="379" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#164e63">Exact reduction</text>
+  <text x="123" y="404" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#0e7490">x = 2^k r,   1 &lt;= r &lt; 2</text>
+
+  <text x="104" y="462" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#475569">No floating logarithm is used to</text>
+  <text x="104" y="484" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#475569">choose the power-of-two reduction.</text>
+
+  <path d="M378 342 L423 342" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <rect x="435" y="150" width="330" height="384" rx="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="459" y="188" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#0f172a">2. Certify log and square root</text>
+  <text x="459" y="216" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#475569">All bounds remain rational.</text>
+
+  <rect x="462" y="248" width="276" height="96" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text x="482" y="278" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#14532d">Positive atanh series</text>
+  <text x="482" y="306" font-family="Arial, Helvetica, sans-serif" font-size="13.5" fill="#15803d">S_m(t) &lt;= log(t) &lt;= S_m(t)+R_m(t)</text>
+  <text x="482" y="328" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#15803d">y=(t-1)/(t+1) &lt;= 1/3</text>
+
+  <path d="M600 348 L600 369" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="462" y="382" width="276" height="100" rx="12" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
+  <text x="482" y="410" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="700" fill="#9a3412">Integer-certified dyadic</text>
+  <text x="482" y="430" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="700" fill="#9a3412">square-root enclosure</text>
+  <text x="482" y="454" font-family="Arial, Helvetica, sans-serif" font-size="13.5" fill="#c2410c">a^2 q compared with p D^2</text>
+  <text x="482" y="473" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#c2410c">D = 2^b</text>
+
+  <text x="476" y="510" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="700" fill="#0f172a">Result: exact rational radius bracket</text>
+
+  <path d="M773 342 L818 342" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <rect x="830" y="150" width="300" height="384" rx="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="854" y="188" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#0f172a">3. Safe rejection comparison</text>
+  <text x="854" y="216" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#475569">The inequality directions are explicit.</text>
+
+  <rect x="864" y="252" width="232" height="76" rx="12" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+  <text x="883" y="281" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#312e81">P78 model distance</text>
+  <text x="883" y="306" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#4338ca">L_model &lt;= d_inf(P_hat,M)</text>
+
+  <rect x="864" y="352" width="232" height="76" rx="12" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+  <text x="883" y="381" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#065f46">P79 sampling radius</text>
+  <text x="883" y="406" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#047857">epsilon &lt;= epsilon_upper</text>
+
+  <text x="874" y="467" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#0f172a">Strict certified gate</text>
+  <text x="874" y="494" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#334155">L_model &gt; epsilon_upper</text>
+  <text x="874" y="516" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#64748b">No decimal rounding assumption is needed.</text>
+
+  <rect x="70" y="566" width="1060" height="114" rx="16" fill="#0f172a"/>
+  <text x="98" y="601" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#ffffff">Certified P77/P78/P79 chain</text>
+  <text x="98" y="630" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#e2e8f0">P78 lower-bounds model distance  +  P79 upper-bounds sampling uncertainty</text>
+  <text x="98" y="657" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#86efac">only a strict lower-bound &gt; upper-bound comparison certifies full-law rejection</text>
+
+  <text x="70" y="716" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#64748b">P79 closes a numerical certification gap. Non-rejection is not model acceptance. The physical-to-experiential bridge remains open.</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
+  </defs>
+</svg>

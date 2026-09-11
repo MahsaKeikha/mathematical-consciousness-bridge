@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P78**. The proposition record runs from **P1 through P78 with explicit dependency branches**. P71-P78 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P79**. The proposition record runs from **P1 through P79 with explicit dependency branches**. P71-P79 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -359,6 +359,30 @@ The implementation uses exact rational arithmetic for empirical counts and dyadi
 Direct proof: [P78](proposition_78_certified_continuous_model_separation.md). Provenance: [P78 equation record](p78_equation_provenance.md). Implementation: [`certified_continuous_model_separation.py`](../src/consciousness_bridge/certified_continuous_model_separation.py). Tests: [`test_certified_continuous_model_separation.py`](../tests/test_certified_continuous_model_separation.py).
 
 
+
+### P79: certified rational sampling-radius envelope
+
+P77 supplies the analytic finite-alphabet sampling radius and P78 supplies a certified lower bound on distance to the continuous P75 model family. P79 makes the remaining comparison numerically one-sided rather than relying on floating-point rounding direction.
+
+For
+
+\[
+\varepsilon_{n,K}(\alpha)=\sqrt{\frac{\log(2K/\alpha)}{2n}},
+\]
+
+P79 constructs exact rational values satisfying
+
+\[
+\boxed{\underline\varepsilon\le\varepsilon_{n,K}(\alpha)\le\overline\varepsilon.}
+\]
+
+The strict P77 handoff is certified whenever the P78 lower bound satisfies $L_{\mathrm{model}}>\overline\varepsilon$. Failure of this strict inequality is inconclusive and is not model acceptance.
+
+![P79 certified rational sampling-radius envelope](figures/p79_certified_sampling_radius.svg)
+
+Direct proof: [P79](proposition_79_certified_sampling_radius.md). Provenance: [P79 equation record](p79_equation_provenance.md). Implementation: [`certified_sampling_radius.py`](../src/consciousness_bridge/certified_sampling_radius.py). Tests: [`test_certified_sampling_radius.py`](../tests/test_certified_sampling_radius.py).
+
+
 ## 3. Complete proposition index
 
 | Proposition | Mathematical role | Scientific role | Status |
@@ -441,6 +465,7 @@ Direct proof: [P78](proposition_78_certified_continuous_model_separation.md). Pr
 | [P76](proposition_76_finite_sample_target_model_adequacy.md) | sixteen-cell concentration and polynomial interval propagation | finite-sample target-model adequacy rejection | proved conditional theorem |
 | [P77](proposition_77_full_law_model_set_separation.md) | confidence-region/model-set separation | finite-sample full-law rejection with certified distance lower bounds | proved conditional theorem |
 | [P78](proposition_78_certified_continuous_model_separation.md) | multi-affine box lower bounds and mesh-gap convergence | certified continuous P75 full-law model separation | proved conditional computational theorem |
+| [P79](proposition_79_certified_sampling_radius.md) | exact-rational logarithm and dyadic square-root enclosure | one-sided numerical certification of the P77 sampling radius | proved numerical-certification theorem |
 
 ## 4. Calibration branch remains separate
 
@@ -463,7 +488,7 @@ These results optimize downstream experimental resources. They do not define con
 
 ## 5. Current open frontier
 
-After P78, the target side has eight explicit requirements:
+After P79, the target side has nine explicit requirements:
 
 1. the target must have non-circular provenance relative to the tested physical descriptor;
 2. its observation channel must be valid and sufficiently informative for the claimed witness;
@@ -473,7 +498,8 @@ After P78, the target side has eight explicit requirements:
 6. finite data must separate a genuine adequacy violation from sampling uncertainty before model rejection is claimed;
 7. complete full-law rejection must be defined against the whole declared model family, not only selected necessary constraints;
 8. when the declared family is continuous, the required separation distance must be lower-bounded globally rather than inferred from a local best fit.
+9. the sampling-radius side of the rejection inequality must be upper-bounded with certified numerical direction rather than an unqualified rounded decimal.
 
-P78 closes the eighth item for the specific P75 four-view binary latent family in L-infinity distance. It supplies an exact-rational multi-affine box certificate and an explicit mesh-gap guarantee. The remaining computational problem is efficiency: stronger pruning, tighter relaxations, or moment-SOS lower bounds may reduce the number of boxes required for a decisive certificate. The remaining statistical problems include sharper power and target-view models that allow residual dependence, shared bias, temporal drift, or learned measurement pipelines.
+P78 closes the eighth item for the specific P75 four-view binary latent family in L-infinity distance. P79 closes the ninth item for the P77 finite-alphabet sampling radius by exact-rational one-sided numerical enclosure. It supplies an exact-rational multi-affine box certificate and an explicit mesh-gap guarantee. The remaining computational problem is efficiency: stronger pruning, tighter relaxations, or moment-SOS lower bounds may reduce the number of boxes required for a decisive certificate. The remaining statistical problems include sharper power and target-view models that allow residual dependence, shared bias, temporal drift, or learned measurement pipelines.
 
 None of these results identifies a latent variable with consciousness. The physical-to-experiential bridge remains open.

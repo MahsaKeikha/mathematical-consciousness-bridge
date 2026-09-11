@@ -1,5 +1,7 @@
 # Detailed proposition record
 
+## Complete P1 to P79 chronology
+
 This page preserves the proposition-by-proposition development history of the Mathematical Consciousness Bridge research program. It is intentionally separate from the main README so a first-time reader can follow the scientific argument without first learning the internal chronology of the project.
 
 The proposition record is an audit trail, not a substitute for the scientific narrative. For dependency structure, see the [Theorem roadmap](theorem_roadmap.md). For topic-oriented navigation, see [Research navigation](research_navigation.md). For equation provenance and external references, see the [Equation and citation map](equation_and_citation_map.md).
@@ -207,3 +209,12 @@ Each proposition should be read through the same four-way distinction:
 4. **Scientific interpretation:** the result is not promoted beyond its scope.
 
 The complete dependency graph is maintained in the [Theorem roadmap](theorem_roadmap.md), equation provenance in the [Equation and citation map](equation_and_citation_map.md), and cross-disciplinary sources in the [Foundational physics and mathematics bibliography](foundational_physics_mathematics_bibliography.md) and [Literature map](literature_map.md).
+
+
+## Proposition 79: Certified Rational Sampling-Radius Envelope
+
+**P79** closes the numerical-direction gap in the P77/P78 rejection handoff. P78 supplies a certified lower bound on empirical distance to the complete continuous P75 model family. P79 supplies a mathematically valid exact-rational upper envelope for the P77 sampling radius by combining rational logarithm brackets with an integer-certified dyadic square-root enclosure. A strict lower-bound versus upper-bound comparison can therefore certify rejection without assuming the direction of floating-point rounding.
+
+Proof: [Proposition 79](proposition_79_certified_sampling_radius.md). Provenance: [P79 equation record](p79_equation_provenance.md). Figure: [P79 theorem figure](figures/p79_certified_sampling_radius.svg). Implementation: [`certified_sampling_radius.py`](../src/consciousness_bridge/certified_sampling_radius.py). Tests: [`test_certified_sampling_radius.py`](../tests/test_certified_sampling_radius.py).
+
+P79 does not validate non-rejected models and does not close the physical-to-experiential bridge.
