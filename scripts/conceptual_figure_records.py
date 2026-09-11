@@ -71,6 +71,39 @@ RECORDS: dict[str, dict[str, str]] = {
             "Physics-synthesis figure based on standard thermodynamics/information theory plus repository operational structure. It is not evidence that thermodynamic information equals consciousness."
         ),
     },
+    "docs/figures/p72_target_measurement_channel_robustness.svg": {
+        "title": "P72 target-measurement channel robustness",
+        "description": (
+            "What this figure shows: P72 separates an independently declared latent target from the noisy process used to observe it. The top-left panel gives conditional data processing, the top-right panel shows that measurement noise can erase a real witness, the lower-left panel gives the binary symmetric channel stability factor, and the lower-right panel transfers an observed finite-sample witness back to the latent target. "
+            "How to read it: read each panel as a distinct theorem component; inside panel A, follow the attached state-to-target-to-observation arrows. "
+            "Main takeaway: nondifferential target noise can weaken or erase evidence but cannot create a positive population residual from a screened-off latent target."
+        ),
+        "status": (
+            "Target-measurement robustness theorem figure. The latent target is declared for testing and is not an assumed definition of consciousness; channel validity and the physical-to-experiential bridge remain separate obligations."
+        ),
+    },
+    "docs/figures/p73_target_channel_identifiability.svg": {
+        "title": "P73 target-channel identifiability",
+        "description": (
+            "What this figure shows: P73 identifies the parameters of one declared nondegenerate three-view binary latent target-channel model at the population level, up to a common latent-label swap. The upper-left panel defines the model, the upper-right panel gives the observable moment inversion, the lower-left panel shows that P72 stability becomes identifiable, and the lower-right panel gives a constructive two-view non-identifiability example. "
+            "How to read it: follow the attached latent-to-view connectors in panel A, then move clockwise through recovery, stability, and the two-view boundary. "
+            "Main takeaway: three suitable views can identify this declared measurement model, but two views generally cannot identify individual reliabilities."
+        ),
+        "status": (
+            "Population identifiability theorem figure. Statistical identification does not identify the latent class with consciousness, validate the model assumptions, or solve the physical-to-experiential bridge."
+        ),
+    },
+    "docs/figures/p74_finite_sample_target_channel_recovery.svg": {
+        "title": "P74 finite-sample target-channel recovery",
+        "description": (
+            "What this figure shows: P74 converts one finite-sample confidence event for the observed eight-cell law into a guarded version of the P73 target-channel inversion. "
+            "How to read it: follow the four attached top-row stages from observed data to the shared confidence event, then to the nondegeneracy gate, and finally to certified output. The lower-left panel shows the interval inversion formulas; the lower-right panel states what successful certification and gate failure mean. "
+            "Main takeaway: recovery is reported only when finite-sample uncertainty stays away from the covariance singularity. Gate failure means not certified by the current data, not population degeneracy."
+        ),
+        "status": (
+            "Finite-sample certification theorem figure conditional on the P73 model. It does not validate conditional independence, identify the latent state with consciousness, or close the physical-to-experiential bridge."
+        ),
+    },
     "docs/figures/p75_target_model_adequacy_overidentification.svg": {
         "title": "P75 target-model adequacy and four-view overidentification",
         "description": (
@@ -80,6 +113,17 @@ RECORDS: dict[str, dict[str, str]] = {
         ),
         "status": (
             "Theorem-summary figure for the declared P75 latent model. Passing means compatibility with that model, not proof of truth and not identification of the latent state with consciousness."
+        ),
+    },
+    "docs/figures/p76_finite_sample_target_model_adequacy.svg": {
+        "title": "P76 finite-sample target-model adequacy rejection",
+        "description": (
+            "What this figure shows: P76 carries one simultaneous sixteen-cell confidence event into denominator-free intervals for the P75 adequacy constraints. "
+            "How to read it: follow the four attached top-row stages from observed data through the shared confidence event and moment box into the P75 polynomial intervals. Then compare the two lower outcomes: excluding zero from any required interval certifies incompatibility, while retaining zero in every tracked interval means only that the current certificate does not reject. "
+            "Main takeaway: P76 is a one-sided finite-sample falsification procedure, not a model-acceptance rule."
+        ),
+        "status": (
+            "Finite-sample theorem figure. It does not prove conditional independence, validate latent semantics, identify the latent state with consciousness, or close the physical-to-experiential bridge."
         ),
     },
     "docs/figures/p79_certified_sampling_radius.svg": {
