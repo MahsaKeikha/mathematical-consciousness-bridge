@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">P76 Finite-Sample Target-Model Adequacy Rejection</title>
+  <desc id="desc">A publication figure showing how one simultaneous sixteen-cell confidence event propagates through raw moments to P75 polynomial adequacy intervals, producing a one-sided finite-sample rejection rule while keeping non-rejection distinct from model acceptance.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
+    <style>
+      .title { font: 700 28px Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 15px Arial, sans-serif; fill: #475569; }
+      .boxTitle { font: 700 18px Arial, sans-serif; fill: #0f172a; }
+      .body { font: 400 14px Arial, sans-serif; fill: #334155; }
+      .eq { font: 600 14px Arial, sans-serif; fill: #111827; }
+      .small { font: 400 12px Arial, sans-serif; fill: #475569; }
+      .reject { font: 700 18px Arial, sans-serif; fill: #7f1d1d; }
+      .caution { font: 700 18px Arial, sans-serif; fill: #78350f; }
+      .boundary { font: 600 14px Arial, sans-serif; fill: #1e293b; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="760" fill="#ffffff"/>
+  <text x="60" y="54" class="title">P76 Finite-Sample Target-Model Adequacy Rejection</text>
+  <text x="60" y="82" class="subtitle">One finite-data confidence event, denominator-free adequacy constraints, and a one-sided falsification rule</text>
+
+  <rect x="50" y="125" width="245" height="165" rx="14" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="70" y="158" class="boxTitle">1. Sixteen-cell IID data</text>
+  <text x="70" y="190" class="body">Observed table on {-1,+1}^4</text>
+  <text x="70" y="218" class="eq">n = total observations</text>
+  <text x="70" y="246" class="body">No latent-model fit is assumed</text>
+  <text x="70" y="270" class="small">Sampling layer only</text>
+
+  <line x1="300" y1="208" x2="330" y2="208" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="340" y="125" width="245" height="165" rx="14" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
+  <text x="360" y="158" class="boxTitle">2. Shared confidence event</text>
+  <text x="360" y="190" class="eq">eps = sqrt(log(32/alpha)/(2n))</text>
+  <text x="360" y="218" class="eq">delta = min(2, 16 eps)</text>
+  <text x="360" y="246" class="body">||P_hat - P||_1 &lt;= delta</text>
+  <text x="360" y="270" class="small">Coverage at least 1 - alpha</text>
+
+  <line x1="590" y1="208" x2="620" y2="208" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="630" y="125" width="245" height="165" rx="14" fill="#f0fdf4" stroke="#4ade80" stroke-width="2"/>
+  <text x="650" y="158" class="boxTitle">3. Moment confidence box</text>
+  <text x="650" y="190" class="body">All raw binary monomials</text>
+  <text x="650" y="218" class="eq">|r_hat_A - r_A| &lt;= delta</text>
+  <text x="650" y="246" class="body">Means, covariances, M3, M4</text>
+  <text x="650" y="270" class="small">One event, no repeated alpha spending</text>
+
+  <line x1="880" y1="208" x2="910" y2="208" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="920" y="125" width="230" height="165" rx="14" fill="#faf5ff" stroke="#c084fc" stroke-width="2"/>
+  <text x="940" y="158" class="boxTitle">4. P75 polynomial intervals</text>
+  <text x="940" y="190" class="body">2 tetrad constraints</text>
+  <text x="940" y="216" class="body">3 cross-triple constraints</text>
+  <text x="940" y="242" class="body">3 fourth-moment constraints</text>
+  <text x="940" y="270" class="small">No uncertain covariance division</text>
+
+  <rect x="70" y="345" width="500" height="210" rx="16" fill="#fef2f2" stroke="#f87171" stroke-width="2"/>
+  <text x="95" y="382" class="reject">Certified rejection</text>
+  <text x="95" y="416" class="body">If any simultaneous necessary-constraint interval excludes 0:</text>
+  <text x="95" y="450" class="eq">0 not in I  =&gt;  declared P75 model incompatible</text>
+  <text x="95" y="486" class="body">Explicit tetrad rule:</text>
+  <text x="95" y="516" class="eq">|D_hat| &gt; 12 delta  =&gt;  D != 0</text>
+  <text x="95" y="542" class="small">Confidence at least 1 - alpha</text>
+
+  <rect x="630" y="345" width="500" height="210" rx="16" fill="#fffbeb" stroke="#fbbf24" stroke-width="2"/>
+  <text x="655" y="382" class="caution">No rejection is not acceptance</text>
+  <text x="655" y="416" class="body">If every tracked interval still contains 0:</text>
+  <text x="655" y="450" class="eq">result = not rejected by the current certificate</text>
+  <text x="655" y="486" class="body">Possible reasons:</text>
+  <text x="655" y="516" class="small">finite sample | small violation | invariant-compliant misspecification</text>
+  <text x="655" y="542" class="small">P75 full-law adequacy remains a stronger population audit</text>
+
+  <rect x="70" y="600" width="1060" height="105" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="95" y="635" class="boundary">Scientific boundary</text>
+  <text x="95" y="663" class="body">P76 is a finite-sample target-model falsification layer. It does not prove conditional independence, does not validate latent semantics,</text>
+  <text x="95" y="688" class="body">and does not identify the latent state with consciousness. The physical-to-experiential bridge remains open.</text>
+</svg>
