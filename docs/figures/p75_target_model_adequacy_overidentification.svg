@@ -1,51 +1,69 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
-  <title id="title">P75 Target-Model Adequacy and Four-View Overidentification</title>
-  <desc id="desc">Scientific diagram contrasting three-view just-identification with four-view overidentification and showing observable falsification constraints and full-law reconstruction.</desc>
-  <rect x="0" y="0" width="1200" height="760" fill="#f7fafc"/>
-  <text x="60" y="58" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#102a43">P75 Target-Model Adequacy and Four-View Overidentification</text>
-  <text x="60" y="92" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#486581">Identifiability is not the same as validating the target-measurement model</text>
+  <title id="title">P75 target-model adequacy and four-view overidentification</title>
+  <desc id="desc">What this figure shows: P75 separates parameter identifiability from model adequacy. Three binary views provide seven observable degrees of freedom for seven latent-model parameters and are therefore generically just-identified. A fourth binary view provides fifteen observable degrees of freedom for nine parameters, creating six overidentifying degrees of freedom and independent observable restrictions. How to read it: compare the two upper panels first, then follow the attached arrows into the lower adequacy panel. The three lower cards list covariance-tetrad, cross-triple, and fourth-moment obligations; the bottom audit band states the full-law reconstruction check. Main takeaway: the fourth view makes the declared target model falsifiable beyond mere parameter fitting. Scientific status: Theorem-summary figure for the declared P75 latent model. Passing means compatibility with that model, not proof of truth and not identification of the latent state with consciousness.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#64748b"/>
+    </marker>
+  </defs>
 
-  <rect x="55" y="125" width="520" height="245" rx="18" fill="#ffffff" stroke="#9fb3c8" stroke-width="2"/>
-  <text x="85" y="165" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#334e68">Three binary views</text>
-  <text x="85" y="202" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#243b53">Observed law: 2^3 - 1 = 7 degrees</text>
-  <text x="85" y="234" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#243b53">Latent model: 1 + 2(3) = 7 parameters</text>
-  <rect x="85" y="260" width="455" height="54" rx="12" fill="#e8f1fb"/>
-  <text x="105" y="294" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1f5f99">7 = 7  |  generically just-identified</text>
-  <text x="85" y="342" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#627d98">P73 can recover parameters on the admissible nondegenerate region.</text>
-  <text x="85" y="365" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#9b2c2c">But fit alone leaves no generic equality reserve for adequacy testing.</text>
+  <rect x="0" y="0" width="1200" height="760" fill="#f8fafc"/>
+  <rect x="34" y="28" width="1132" height="704" rx="22" fill="#ffffff" stroke="#d7e0ea" stroke-width="2"/>
 
-  <rect x="625" y="125" width="520" height="245" rx="18" fill="#ffffff" stroke="#7fb7a4" stroke-width="2"/>
-  <text x="655" y="165" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#285e61">Four binary views</text>
-  <text x="655" y="202" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#243b53">Observed law: 2^4 - 1 = 15 degrees</text>
-  <text x="655" y="234" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#243b53">Latent model: 1 + 2(4) = 9 parameters</text>
-  <rect x="655" y="260" width="455" height="54" rx="12" fill="#e3f8f0"/>
-  <text x="675" y="294" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#147d64">15 - 9 = 6 overidentifying degrees</text>
-  <text x="655" y="342" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#486581">The fourth view creates independent observable restrictions.</text>
-  <text x="655" y="365" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#486581">The declared target model can now be falsified rather than only fitted.</text>
+  <text x="68" y="72" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700" fill="#0f2d4a">P75 Target-Model Adequacy and Four-View Overidentification</text>
+  <text x="68" y="105" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#4f6b86">Identifiability is not the same as validating the target-measurement model</text>
 
-  <line x1="315" y1="397" x2="315" y2="430" stroke="#829ab1" stroke-width="3"/>
-  <line x1="885" y1="397" x2="885" y2="430" stroke="#829ab1" stroke-width="3"/>
+  <g id="three-view-panel">
+    <rect x="68" y="138" width="495" height="250" rx="18" fill="#fbfdff" stroke="#9fb3c8" stroke-width="2"/>
+    <text x="96" y="176" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#334e68">Three binary views</text>
+    <text x="96" y="210" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#243b53">Observed law: 2^3 - 1 = 7 degrees</text>
+    <text x="96" y="239" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#243b53">Latent model: 1 + 2(3) = 7 parameters</text>
+    <rect x="96" y="262" width="439" height="52" rx="12" fill="#e8f1fb"/>
+    <text x="118" y="295" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#1f5f99">7 = 7 | generically just-identified</text>
+    <text x="96" y="338" font-family="Arial, Helvetica, sans-serif" font-size="15.5" fill="#5d748b">P73 can recover parameters on the admissible</text>
+    <text x="96" y="355" font-family="Arial, Helvetica, sans-serif" font-size="15.5" fill="#5d748b">nondegenerate region.</text>
+    <text x="96" y="375" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#9b2c2c">Fit alone leaves no generic equality reserve for adequacy testing.</text>
+  </g>
 
-  <rect x="55" y="430" width="1090" height="208" rx="18" fill="#ffffff" stroke="#bcccdc" stroke-width="2"/>
-  <text x="85" y="468" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#102a43">Observable P75 adequacy obligations</text>
+  <g id="four-view-panel">
+    <rect x="637" y="138" width="495" height="250" rx="18" fill="#fbfffd" stroke="#7fb7a4" stroke-width="2"/>
+    <text x="665" y="176" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#285e61">Four binary views</text>
+    <text x="665" y="210" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#243b53">Observed law: 2^4 - 1 = 15 degrees</text>
+    <text x="665" y="239" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#243b53">Latent model: 1 + 2(4) = 9 parameters</text>
+    <rect x="665" y="262" width="439" height="52" rx="12" fill="#e3f8f0"/>
+    <text x="687" y="295" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#147d64">15 - 9 = 6 overidentifying degrees</text>
+    <text x="665" y="338" font-family="Arial, Helvetica, sans-serif" font-size="15.5" fill="#486581">The fourth view creates independent observable restrictions.</text>
+    <text x="665" y="356" font-family="Arial, Helvetica, sans-serif" font-size="15.5" fill="#486581">The declared target model can now be falsified,</text>
+    <text x="665" y="375" font-family="Arial, Helvetica, sans-serif" font-size="15.5" fill="#486581">rather than only fitted.</text>
+  </g>
 
-  <rect x="85" y="493" width="310" height="105" rx="12" fill="#f0f4f8"/>
-  <text x="105" y="523" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#334e68">1. Covariance tetrads</text>
-  <text x="105" y="553" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#243b53">C12 C34 = C13 C24</text>
-  <text x="105" y="579" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#243b53">= C14 C23</text>
+  <path d="M316 388 L316 424" stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <path d="M884 388 L884 424" stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
 
-  <rect x="445" y="493" width="310" height="105" rx="12" fill="#f0f4f8"/>
-  <text x="465" y="523" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#334e68">2. Cross-triple agreement</text>
-  <text x="465" y="553" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#243b53">q123 = q124 = q134 = q234</text>
-  <text x="465" y="579" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#486581">qijk = Mijk^2 / (Cij Cik Cjk)</text>
+  <g id="adequacy-obligations-panel">
+    <rect x="68" y="430" width="1064" height="194" rx="18" fill="#ffffff" stroke="#bcccdc" stroke-width="2"/>
+    <text x="96" y="467" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#102a43">Observable P75 adequacy obligations</text>
 
-  <rect x="805" y="493" width="310" height="105" rx="12" fill="#f0f4f8"/>
-  <text x="825" y="523" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#334e68">3. Fourth-moment consistency</text>
-  <text x="825" y="553" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#243b53">M1234 = (1 + q) C12 C34</text>
-  <text x="825" y="579" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#486581">and equivalent covariance pairings</text>
+    <rect x="96" y="490" width="305" height="108" rx="12" fill="#f0f4f8"/>
+    <text x="116" y="520" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#334e68">1. Covariance tetrads</text>
+    <text x="116" y="549" font-family="Arial, Helvetica, sans-serif" font-size="16.5" fill="#243b53">C12 C34 = C13 C24</text>
+    <text x="116" y="575" font-family="Arial, Helvetica, sans-serif" font-size="16.5" fill="#243b53">= C14 C23</text>
 
-  <rect x="185" y="654" width="830" height="66" rx="14" fill="#fff5f5" stroke="#e6a3a3" stroke-width="2"/>
-  <text x="215" y="682" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#9b2c2c">Full-law audit:</text>
-  <text x="340" y="682" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#243b53">recover an anchor triple, infer view 4, reconstruct all 16 cells</text>
-  <text x="215" y="707" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#627d98">Passing means model compatibility, not truth. P75 does not identify the latent state with consciousness.</text>
+    <rect x="448" y="490" width="305" height="108" rx="12" fill="#f0f4f8"/>
+    <text x="468" y="520" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#334e68">2. Cross-triple agreement</text>
+    <text x="468" y="549" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#243b53">q123 = q124 = q134 = q234</text>
+    <text x="468" y="575" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#486581">qijk = Mijk^2 / (Cij Cik Cjk)</text>
+
+    <rect x="800" y="490" width="304" height="108" rx="12" fill="#f0f4f8"/>
+    <text x="820" y="518" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#334e68">3. Fourth-moment consistency</text>
+    <text x="820" y="549" font-family="Arial, Helvetica, sans-serif" font-size="15.8" fill="#243b53">M1234 = (1 + q) C12 C34</text>
+    <text x="820" y="575" font-family="Arial, Helvetica, sans-serif" font-size="14.8" fill="#486581">and equivalent covariance pairings</text>
+  </g>
+
+  <g id="full-law-audit">
+    <rect x="176" y="646" width="848" height="68" rx="14" fill="#fff7f7" stroke="#e7a2a2" stroke-width="2"/>
+    <text x="204" y="674" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#9b2c2c">Full-law audit</text>
+    <text x="326" y="674" font-family="Arial, Helvetica, sans-serif" font-size="16.5" fill="#243b53">recover an anchor triple, infer view 4, reconstruct all 16 cells</text>
+    <text x="204" y="699" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#627d98">Passing means model compatibility, not truth, and does not identify the latent state with consciousness.</text>
+  </g>
 </svg>

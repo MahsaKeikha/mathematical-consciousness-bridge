@@ -2,6 +2,8 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="413.458672pt" height="255.09957pt" viewBox="0 0 413.458672 255.09957" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <title>Hilbert-space dimension scaling</title>
+  <desc>What this figure shows: The state-vector dimension of N qubits grows exponentially with subsystem count. Governing relation: dim[(C^2)^(tensor N)] = 2^N. How to read it: Read qubit count N horizontally and state-space dimension vertically. Each added qubit doubles the tensor-product dimension, so the plotted growth follows 2^N rather than a linear law; the figure concerns representation size, not computational hardness by itself. Main takeaway: Tensor-product state spaces grow exponentially with qubit count. Scientific status: Standard tensor-product dimension fact. This is a standard quantum-mechanics or quantum-information figure. It does not show that consciousness is quantum, that consciousness causes wave-function collapse, that quantum mechanics is incomplete, or that consciousness is an additional physical dimension.</desc>
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>

@@ -1,6 +1,6 @@
 # Detailed proposition record
 
-## Complete P1 to P79 chronology
+## Complete P1 to P80 chronology
 
 This page preserves the proposition-by-proposition development history of the Mathematical Consciousness Bridge research program. It is intentionally separate from the main README so a first-time reader can follow the scientific argument without first learning the internal chronology of the project.
 
@@ -218,3 +218,12 @@ The complete dependency graph is maintained in the [Theorem roadmap](theorem_roa
 Proof: [Proposition 79](proposition_79_certified_sampling_radius.md). Provenance: [P79 equation record](p79_equation_provenance.md). Figure: [P79 theorem figure](figures/p79_certified_sampling_radius.svg). Implementation: [`certified_sampling_radius.py`](../src/consciousness_bridge/certified_sampling_radius.py). Tests: [`test_certified_sampling_radius.py`](../tests/test_certified_sampling_radius.py).
 
 P79 does not validate non-rejected models and does not close the physical-to-experiential bridge.
+
+
+## Proposition 80: Simplex-Coupled Box Certificate for Continuous P75 Separation
+
+**P80** strengthens the P78 boxwise lower-bound relaxation without changing the P75 model family. P78 supplies exact coordinate intervals for every observed-law cell over a parameter box. P80 intersects those intervals with the probability-simplex constraint, computes the exact L-infinity distance to that interval-simplex relaxation in rational arithmetic, and proves that the resulting box lower bound is never weaker than P78's coordinatewise bound. The active-box minimum remains a valid global lower bound on distance to the complete continuous P75 family, while P79 continues to supply the one-sided sampling-radius upper certificate used for strict finite-data rejection.
+
+Proof: [Proposition 80](proposition_80_simplex_coupled_model_separation.md). Provenance: [P80 equation record](p80_equation_provenance.md). Figure: [P80 theorem figure](figures/p80_simplex_coupled_model_separation.svg). Implementation: [`simplex_coupled_model_separation.py`](../src/consciousness_bridge/simplex_coupled_model_separation.py). Tests: [`test_simplex_coupled_model_separation.py`](../tests/test_simplex_coupled_model_separation.py).
+
+P80 is a computational tightening of a declared observed-law model test. It does not identify the P75 latent variable with consciousness and does not close the physical-to-experiential bridge.

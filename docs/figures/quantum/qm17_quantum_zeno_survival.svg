@@ -2,6 +2,8 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="424.540566pt" height="255.09957pt" viewBox="0 0 424.540566 255.09957" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <title>Quantum Zeno effect</title>
+  <desc>What this figure shows: In the ideal projective limit, increasingly frequent survival measurements suppress coherent transition away from the initial state. Governing relation: P_N(t)=cos^(2N)(Omega t/(2N)). How to read it: Read the number or frequency of ideal survival measurements together with the plotted survival probability. For a fixed total evolution time, increasing the number of projective checks drives the ideal survival probability upward, illustrating suppression of coherent departure from the initial state in the Zeno limit. Main takeaway: In the ideal projective model, sufficiently frequent interrogation can suppress coherent transitions. Scientific status: Idealized repeated-projective-measurement result. This is a standard quantum-mechanics or quantum-information figure. It does not show that consciousness is quantum, that consciousness causes wave-function collapse, that quantum mechanics is incomplete, or that consciousness is an additional physical dimension.</desc>
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>

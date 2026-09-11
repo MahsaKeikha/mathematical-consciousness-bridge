@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="930" viewBox="0 0 1500 930" role="img" aria-labelledby="title desc">
-  <title id="title">P42 quantum regular-bridge sample complexity</title>
-  <desc id="desc">Finite-sample quantum and target radii, population regularity gap, uncertainty budget, and sufficient sample sizes.</desc>
+  <title id="title">Proposition 42: Quantum regular-bridge sample complexity under fixed IC measurement</title>
+  <desc id="desc">What this figure shows: Proved finite-sample design theorem under a declared informationally complete measurement and categorical IID target model. P42 substitutes explicit concentration radii into the P41 trace-ball obstruction and solves for sufficient quantum and target sample sizes.. Visible guideposts include: A fixed IC measurement and categorical target model convert P41 uncertainty budgets into explicit per-preparation sample sizes.; QUANTUM SAMPLING; IC measurement + linear reconstruction; tQ = sqrt[log(2Km/αQ)/(2nQ)]; rQ = κR m tQ; κR exposes conditioning of the chosen reconstruction.. How to read it: follow the diagram in the direction of its arrows and use each box, panel, inequality, or highlighted region only with the meaning printed beside it. Main takeaway: this is the visual companion to Proposition 42; the proposition document supplies the assumptions, proof, and exact scope of every implication. Scientific status: Proposition 42 theorem/certificate visual. It is not independent empirical evidence and does not, by itself, identify a physical or latent variable with consciousness.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
       <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>

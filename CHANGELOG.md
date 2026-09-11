@@ -1,3 +1,13 @@
+# 0.80.0 - 2026-09-11
+
+- Added Proposition 80, Simplex-Coupled Box Certificate for Continuous P75 Separation.
+- Tightened each P78 parameter-box relaxation by intersecting exact observed-cell intervals with the probability simplex.
+- Added an exact-rational L-infinity interval-simplex distance calculation using the P78 coordinatewise threshold plus two monotone piecewise-linear mass crossings.
+- Proved the boxwise dominance relation `L80(B) >= L78(B)` while preserving the lower-bound direction required for global P77 rejection.
+- Preserved the P79 one-sided sampling-radius upper certificate for the strict P80/P79 rejection handoff.
+- Added the P80 proof, provenance record, implementation, theorem figure, geometry guards, navigation, website integration, and release metadata.
+- Preserved the scientific boundary that non-rejection is inconclusive and the physical-to-experiential bridge remains open.
+
 # 0.79.0 - 2026-09-11
 
 - Added Proposition 79, Certified Rational Sampling-Radius Envelope.

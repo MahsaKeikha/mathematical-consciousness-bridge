@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1040" viewBox="0 0 1600 1040" role="img" aria-labelledby="title desc">
-  <title id="title">P22 simultaneous finite-sample certification of physical-refinement chains</title>
-  <desc id="desc">Publication-style theorem map showing one base confidence event, deterministic pushforward control, simultaneous residual intervals, and simultaneous refinement-gain intervals.</desc>
+  <title id="title">Proposition 22 - Simultaneous Finite-Sample Certification of Physical-Refinement Chains</title>
+  <desc id="desc">What this figure shows: Proved finite-alphabet IID simultaneous-certification theorem for nested deterministic physical descriptors.. Visible guideposts include: One confidence event for the base physical-target law controls the entire declared descriptor chain.; ONE BASE EVENT; Certify the empirical base law once; ‖PΩE − P̂ΩE‖TV ≤ τn(α); Pr(event) ≥ 1 − α; The radius depends on the base alphabet dΩ dE, not on the number of descriptor levels.. How to read it: follow the diagram in the direction of its arrows and use each box, panel, inequality, or highlighted region only with the meaning printed beside it. Main takeaway: this is the visual companion to Proposition 22; the proposition document supplies the assumptions, proof, and exact scope of every implication. Scientific status: Proposition 22 theorem/certificate visual. It is not independent empirical evidence and does not, by itself, identify a physical or latent variable with consciousness.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
       <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>

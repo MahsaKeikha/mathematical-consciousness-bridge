@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="930" viewBox="0 0 1600 930" role="img" aria-labelledby="title desc">
-  <title id="title">Proposition 12 constructive collision tests</title>
-  <desc id="desc">Three explicit collision families proving that response geometry, partition irreducibility, and directed marginal influence are each incomplete descriptions of the full intervention-resolved causal structure.</desc>
+  <title id="title">Constructive component collisions</title>
+  <desc id="desc">What this figure shows: Figure 16. Constructive collision tests. A compressed physical feature must earn sufficiency by factorization or reconstruction, not by visual plausibility or correlation. How to read it: follow only the labeled arrows, axes, panels, set relations, or inequalities shown in the visual and interpret them using the adjacent research text. Main takeaway: the figure summarizes the stated mathematical or scientific dependency; visual proximity alone does not add a claim. Scientific status: Reader-facing research figure; formal status is controlled by the linked proof or source record.</desc>
   <defs><style>.title{font:700 37px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}.subtitle{font:400 18px Inter,Segoe UI,Arial,sans-serif;fill:#475569}.head{font:700 19px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}.body{font:400 14.5px Inter,Segoe UI,Arial,sans-serif;fill:#334155}.label{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}.eq{font:600 17px Georgia,'Times New Roman',serif;fill:#0f172a}.divider{stroke:#cbd5e1;stroke-width:1}</style></defs>
   <rect width="1600" height="930" fill="#ffffff"/>
   <text x="70" y="64" class="title">Proposition 12 - Constructive Component Collisions</text>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
   <title id="title">P71 target-provenance non-circularity</title>
-  <desc id="desc">A two-panel theorem diagram and residual comparison. A descriptor-derived target E equals h of T and has zero conditional mutual information. A separately declared synthetic target produces same-T different-E collisions and a conditional residual of log 2 nats.</desc>
+  <desc id="desc">What this figure shows: Figure 6. P71 non-circularity theorem. A descriptor-derived target automatically respects descriptor fibers, whereas a separately declared synthetic target can expose same-descriptor/different-target collisions. The synthetic example illustrates theorem logic; it is not claimed to be an experiential variable. How to read it: follow only the labeled arrows, axes, panels, set relations, or inequalities shown in the visual and interpret them using the adjacent research text. Main takeaway: the figure summarizes the stated mathematical or scientific dependency; visual proximity alone does not add a claim. Scientific status: Reader-facing research figure; formal status is controlled by the linked proof or source record.</desc>
   <rect width="1200" height="720" fill="#ffffff"/>
 
   <text x="600" y="44" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#0f172a">P71 Target-Provenance Non-Circularity</text>

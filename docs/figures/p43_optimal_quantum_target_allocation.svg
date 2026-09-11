@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900" role="img" aria-labelledby="title desc">
-  <title id="title">P43 optimal quantum-target uncertainty allocation</title>
-  <desc id="desc">P42 sampling coefficients, weighted cost, cube-root optimum, integer rounding bound, and scientific boundary.</desc>
+  <title id="title">Proposition 43: Optimal quantum-target uncertainty allocation</title>
+  <desc id="desc">What this figure shows: Proved resource-allocation theorem for the P42 finite-sample design. P43 removes the arbitrary choice of the P42 gap-allocation parameter and derives the unique allocation that minimizes a declared weighted sampling cost.. Visible guideposts include: The arbitrary P42 gap split is replaced by the unique weighted-cost optimum.; P42 TARGET BURDEN; Target coefficient; AY = 2k² log(2Kk/αY) / Δ²; nY ≥ AY / λ²; Weighted by declared target cost cY.. How to read it: follow the diagram in the direction of its arrows and use each box, panel, inequality, or highlighted region only with the meaning printed beside it. Main takeaway: this is the visual companion to Proposition 43; the proposition document supplies the assumptions, proof, and exact scope of every implication. Scientific status: Proposition 43 theorem/certificate visual. It is not independent empirical evidence and does not, by itself, identify a physical or latent variable with consciousness.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
       <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>

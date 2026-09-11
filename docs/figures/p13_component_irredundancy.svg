@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="930" viewBox="0 0 1600 930" role="img" aria-labelledby="title desc">
-  <title id="title">Proposition 13 pairwise component irredundancy</title>
-  <desc id="desc">Three pairwise projection collisions show that each component of the intervention-resolved causal structure carries information that the other two do not reconstruct on the declared audit domain.</desc>
+  <title id="title">Proposition 13: pairwise causal-structure component insufficiency and irredundancy</title>
+  <desc id="desc">What this figure shows: Proposition 12 proves that each major component of the intervention-resolved causal-structure candidate is individually insufficient to reconstruct the three-component physical fingerprint. Visible guideposts include: Every two-component projection loses information carried by the omitted component.; Full component-level physical fingerprint; F_C(p) = (G_p, A_p, K_p); response geometry · directed influence · partition irreducibility; Keep (G, A); omit K; MATCHED PAIRWISE PROJECTION. How to read it: follow the diagram in the direction of its arrows and use each box, panel, inequality, or highlighted region only with the meaning printed beside it. Main takeaway: this is the visual companion to Proposition 13; the proposition document supplies the assumptions, proof, and exact scope of every implication. Scientific status: Proposition 13 theorem/certificate visual. It is not independent empirical evidence and does not, by itself, identify a physical or latent variable with consciousness.</desc>
   <defs>
     <style>
       .title{font:700 37px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}

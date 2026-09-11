@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1260" viewBox="0 0 1800 1260" role="img" aria-labelledby="title desc">
-  <title id="title">Fundamental Theory to Consciousness Research Architecture</title>
-  <desc id="desc">A publication-style map from a candidate fundamental relational state to geometry, quantum operational physics, causal structure, and experiential structure, followed by factorization and falsification tests.</desc>
+  <title id="title">Fundamental Theory to Consciousness map</title>
+  <desc id="desc">What this figure shows: the logical gap between a complete declared physical theory, its physical equivalence classes and operational predictions, and an independently defined experiential or target structure. How to read it: move from fundamental physical law to the physical state/observable layer and then to equivalence classes induced by the chosen physical descriptor. The final arrow toward target equivalence classes is intentionally a separate bridge requirement, not something supplied automatically by the physical equations. Main takeaway: physical completeness and operational predictability do not by themselves establish experiential completeness; a justified, testable physical-to-target map is still required. Scientific status: Research-architecture figure. It formalizes a sufficiency question and an open bridge requirement; it does not assert a fifth spatial dimension, nonphysical substance, simulation ontology, or failure of quantum mechanics.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
       <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>

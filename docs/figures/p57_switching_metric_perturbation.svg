@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
-  <title id="title">P57 switching-metric perturbation reoptimization stability</title>
-  <desc id="desc">A theorem map showing residual release, setup motion, metric drift, the uniform metric perturbation bound, and the combined strict-decrease certificate.</desc>
+  <title id="title">Proposition 57: Switching-metric perturbation reoptimization stability</title>
+  <desc id="desc">What this figure shows: Proved deterministic metric-perturbation theorem. P57 removes the fixed-metric limitation stated explicitly in P56. It quantifies how much the exact P54 switching optimum can change when the declared transition metric itself changes between sequential reoptimization steps.. Visible guideposts include: Sequential reoptimization remains quantitatively controlled when residual demand, setup origin, and transition geometry all change.; Old experiment state; (r, s, c); Residual demand r; Current setup s, switching metric c; New experiment state. How to read it: follow the diagram in the direction of its arrows and use each box, panel, inequality, or highlighted region only with the meaning printed beside it. Main takeaway: this is the visual companion to Proposition 57; the proposition document supplies the assumptions, proof, and exact scope of every implication. Scientific status: Proposition 57 theorem/certificate visual. It is not independent empirical evidence and does not, by itself, identify a physical or latent variable with consciousness.</desc>
   <defs>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
       <path d="M0 0 L10 5 L0 10 z" fill="#334155"/>

@@ -2,6 +2,8 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="413.739062pt" height="255.09957pt" viewBox="0 0 413.739062 255.09957" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <title>Robust signature gap</title>
+  <desc>What this figure shows: Increasing nuisance spread reduces the robust gap one-for-one; positive gap is necessary before finite-error recovery margins can be positive. The plotted object is generated from gamma_S=delta_S-omega_S. How to read it: compare the labeled axes, curves, contours, matrix entries, bars, or markers exactly as defined in the atlas entry; the visible trend is the numerical realization of the stated equation or construction. Scientific status: Direct visualization of Proposition 8 quantities. Unless explicitly identified otherwise, this is not empirical consciousness data.</desc>
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>

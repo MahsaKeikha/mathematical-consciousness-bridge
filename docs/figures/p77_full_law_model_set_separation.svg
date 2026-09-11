@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
-  <title id="title">P77 Finite-Sample Full-Law Model-Set Separation</title>
-  <desc id="desc">Schematic comparison between partial polynomial rejection and full-law confidence-region separation. A confidence ball around the empirical law is disjoint from the declared model set, which certifies rejection when a sound lower bound on distance exceeds the sampling radius. An ordinary best-fit candidate supplies only an upper bound and cannot certify rejection.</desc>
+  <title id="title">P77 finite-sample full-law model-set separation</title>
+  <desc id="desc">What this figure shows: Figure 12. P77 full-law model-set separation. P76 provides interpretable finite-sample rejection through selected necessary constraints. P77 defines the stronger full-law criterion: the entire confidence region must be separated from the entire declared model set. An ordinary best-fit candidate is not a rejection certificate because it gives an upper bound on model distance. How to read it: follow only the labeled arrows, axes, panels, set relations, or inequalities shown in the visual and interpret them using the adjacent research text. Main takeaway: the figure summarizes the stated mathematical or scientific dependency; visual proximity alone does not add a claim. Scientific status: Reader-facing research figure; formal status is controlled by the linked proof or source record.</desc>
 
   <rect x="0" y="0" width="1200" height="760" rx="22" fill="#f8fafc"/>
   <rect x="36" y="32" width="1128" height="696" rx="20" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>

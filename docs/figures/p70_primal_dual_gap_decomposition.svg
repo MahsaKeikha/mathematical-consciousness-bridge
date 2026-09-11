@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1400" height="920" viewBox="0 0 1400 920">
+  <title>P70 certificate diagnostics</title>
+  <desc>What this figure shows: Read the decomposition as an audit trail for the final optimization gap. Each component shows where remaining suboptimality or uncertainty enters, so a small total gap has an explicit mathematical explanation rather than being inferred from solver output alone. How to read it: use the labels, axes, panels, arrows, and legends as explicit guides; do not infer an unstated physical or experiential identity from the drawing. Scientific status: Visual-atlas explanation; theorem and provenance pages control formal claims.</desc>
   <defs>
     <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
       <polygon points="0 0, 10 3.5, 0 7" fill="#334155"/>

@@ -2,6 +2,8 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="413.816328pt" height="255.09957pt" viewBox="0 0 413.816328 255.09957" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <title>Von Neumann entropy</title>
+  <desc>What this figure shows: For eigenvalues p and 1-p, entropy is zero for a pure state and one bit for a maximally mixed qubit. Governing relation: S(rho)=-Tr(rho log2 rho). How to read it: Read one eigenvalue p horizontally; the other is 1-p. The vertical axis is entropy in bits. Entropy is zero at p=0 or p=1 because the state is pure, and it reaches one bit at p=1/2 because a qubit with equal eigenvalues is maximally mixed. Main takeaway: For a qubit, spectral balance maximizes von Neumann entropy and spectral certainty minimizes it. Scientific status: Standard quantum-information entropy. This is a standard quantum-mechanics or quantum-information figure. It does not show that consciousness is quantum, that consciousness causes wave-function collapse, that quantum mechanics is incomplete, or that consciousness is an additional physical dimension.</desc>
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>

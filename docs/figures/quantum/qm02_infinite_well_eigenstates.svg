@@ -2,6 +2,8 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="413.514922pt" height="255.240898pt" viewBox="0 0 413.514922 255.240898" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <title>Infinite square-well eigenstates</title>
+  <desc>What this figure shows: Boundary conditions discretize the allowed stationary energies and eigenmodes. Governing relation: E_n = n^2 pi^2 hbar^2/(2mL^2), psi_n=sqrt(2/L) sin(n pi x/L). How to read it: Read position from 0 to L along the horizontal axis and compare the stationary eigenfunctions by mode number n. Each higher n adds nodes inside the well, while the associated energy increases as n squared; the wavefunction vanishes at both walls. Main takeaway: Confining boundary conditions produce discrete stationary modes and an n-squared energy spectrum. Scientific status: Standard quantum-mechanical eigenvalue problem. This is a standard quantum-mechanics or quantum-information figure. It does not show that consciousness is quantum, that consciousness causes wave-function collapse, that quantum mechanics is incomplete, or that consciousness is an additional physical dimension.</desc>
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
