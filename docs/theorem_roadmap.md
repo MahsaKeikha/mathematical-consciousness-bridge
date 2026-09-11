@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P72**. The proposition record runs from **P1 through P72 with explicit dependency branches**. P71 and P72 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P73**. The proposition record runs from **P1 through P73 with explicit dependency branches**. P71, P72, and P73 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -19,7 +19,9 @@ The current documented theorem frontier is **P72**. The proposition record runs 
 &\Downarrow\\
 &\text{P71: target provenance must not impose the bridge}\\
 &\Downarrow\\
-&\text{P72: noisy target observation must preserve the claimed target distinction}
+&\text{P72: noisy target observation must preserve the claimed target distinction}\\
+&\Downarrow\\
+&\text{P73: repeated target views can identify channel stability under a declared model}
 \end{aligned}
 }
 \]
@@ -37,7 +39,7 @@ Separate but connected branches refine the physical representation and experimen
 }
 \]
 
-The proposition number records development order. It does not imply that P72 depends on P70. P72 depends scientifically on P17, P19, P20, and P71.
+The proposition number records development order. It does not imply that P73 depends on P70. P72 depends scientifically on P17, P19, P20, and P71. P73 then addresses one measurement-channel assumption left open by P72.
 
 ## 2. Target-side bridge lineage
 
@@ -122,6 +124,42 @@ For a binary symmetric target channel, \(\gamma=|1-2\eta|\). P72 also provides a
 
 Direct proof: [P72](proposition_72_target_measurement_channel_robustness.md). Provenance: [P72 equation record](p72_equation_provenance.md). Implementation: [`target_measurement_channel_robustness.py`](../src/consciousness_bridge/target_measurement_channel_robustness.py). Tests: [`test_target_measurement_channel_robustness.py`](../tests/test_target_measurement_channel_robustness.py).
 
+### P73: three-view target-channel identifiability
+
+P73 asks whether the stability coefficient used by P72 can be identified from repeated target measurements rather than assumed. In the declared binary symmetric three-view model,
+
+\[
+Y_i=ZN_i,
+\qquad
+r_i=\mathbb E[N_i],
+\qquad
+\gamma_i=|r_i|,
+\]
+
+with mutually independent noises independent of the latent binary target \(Z\). The observable pairwise moments satisfy
+
+\[
+\boxed{m_{ij}=\mathbb E[Y_iY_j]=r_ir_j.}
+\]
+
+Two heterogeneous views identify only the product \(\gamma_1\gamma_2\), so individual stabilities are not identifiable. With three nonzero compatible views,
+
+\[
+\boxed{
+\gamma_1=\sqrt{\frac{m_{12}m_{13}}{m_{23}}},
+\quad
+\gamma_2=\sqrt{\frac{m_{12}m_{23}}{m_{13}}},
+\quad
+\gamma_3=\sqrt{\frac{m_{13}m_{23}}{m_{12}}}.
+}
+\]
+
+The signed reliabilities remain ambiguous under one simultaneous global sign flip, but the stability magnitudes needed by P72 are unique. P73 also gives simultaneous finite-sample intervals from Hoeffding bounds on the three empirical pair moments and shows how an independently calibrated lower stability bound can be handed to P72 with explicit confidence accounting.
+
+![P73 three-view target-channel identifiability](figures/p73_three_view_target_channel_identifiability.svg)
+
+Direct proof: [P73](proposition_73_three_view_target_channel_identifiability.md). Provenance: [P73 equation record](p73_equation_provenance.md). Implementation: [`three_view_target_channel_identifiability.py`](../src/consciousness_bridge/three_view_target_channel_identifiability.py). Tests: [`test_three_view_target_channel_identifiability.py`](../tests/test_three_view_target_channel_identifiability.py).
+
 ## 3. Complete proposition index
 
 | Proposition | Mathematical role | Scientific role | Status |
@@ -198,6 +236,7 @@ Direct proof: [P72](proposition_72_target_measurement_channel_robustness.md). Pr
 | [P70](proposition_70_primal_dual_gap_decomposition.md) | exact gap identity | certificate attribution | proved primal-dual diagnostic decomposition |
 | [P71](proposition_71_target_provenance_noncircularity.md) | descriptor-derived target vacuity | independent target provenance guard | proved |
 | [P72](proposition_72_target_measurement_channel_robustness.md) | conditional DPI, TV stability, finite target confidence | noisy target-measurement robustness | proved |
+| [P73](proposition_73_three_view_target_channel_identifiability.md) | three-view moment factorization and finite stability intervals | target-channel stability identifiability | proved under declared binary symmetric repeated-view model |
 
 ## 4. Calibration branch remains separate
 
@@ -220,16 +259,18 @@ These results optimize downstream experimental resources. They do not define con
 
 ## 5. Current open frontier
 
-After P72, the target side has two explicit requirements:
+After P73, the target-side chain now makes three separate obligations explicit:
 
 1. the target must have non-circular provenance relative to the tested physical descriptor;
-2. its observation channel must be valid and sufficiently informative for the claimed witness.
+2. its observation channel must preserve enough of the claimed target distinction to support the inference;
+3. when stability is estimated from repeated views, the assumptions that make the repeated-view channel identifiable must themselves be justified or tested.
 
-The next structural question is therefore **target-channel identifiability**: under what repeated-rater, multi-view, calibration, intervention, or structural assumptions can the target-measurement channel, or at least a lower bound on its stability coefficient, be identified from data?
+P73 closes target-channel stability identification only for a narrow binary symmetric, conditionally independent three-view model. The immediate next structural problem is therefore **target-channel model adequacy and correlated-error robustness**: how much can shared bias, conditional dependence, class asymmetry, or state-dependent measurement distort the inferred stability, and what observable diagnostics or sensitivity bounds can expose that failure?
 
 Beyond that, the broader open program remains:
 
 - define and justify experiential variables independently of the physical candidate;
+- extend target-channel identification beyond the binary symmetric independent-view setting where scientifically justified;
 - test descriptor sufficiency across interventions, time, composition, and scale;
 - sharpen finite-data guarantees for continuous, dependent, hidden-state, and learned-descriptor settings;
 - compare competing bridge theories on shared adversarial experiment families;
