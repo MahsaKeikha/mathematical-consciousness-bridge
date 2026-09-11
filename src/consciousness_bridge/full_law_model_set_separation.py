@@ -28,9 +28,9 @@ It does not solve the physical-to-experiential bridge.
 
 from __future__ import annotations
 
+from collections.abc import Iterable, Sequence
 from dataclasses import dataclass
 from math import log, sqrt
-from typing import Iterable, Sequence
 
 import numpy as np
 
