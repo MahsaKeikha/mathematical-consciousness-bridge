@@ -1,0 +1,68 @@
+name: one-shot-p62-figure-docs
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [visual-polish-p62]
+    paths:
+      - .github/workflows/one-shot-p62-figure-docs.yml
+
+permissions:
+  contents: write
+
+jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: visual-polish-p62
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Separate modern P62 from legacy guards and add metadata
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          test_path = Path('tests/test_p63_figure_geometry.py')
+          test_text = test_path.read_text(encoding='utf-8')
+          test_text = test_text.replace(
+              '    "P62": ("p62_heterogeneous_cost_transition_calibration.svg", 5),\n',
+              '',
+          )
+          test_text = test_text.replace('test_p59_p62_legacy_', 'test_p59_p61_legacy_')
+          test_path.write_text(test_text, encoding='utf-8')
+
+          path = Path('scripts/conceptual_figure_records.py')
+          text = path.read_text(encoding='utf-8')
+          key = '"docs/figures/p62_heterogeneous_cost_transition_calibration.svg"'
+          if key not in text:
+              marker = 'RECORDS: dict[str, dict[str, str]] = {\n'
+              record = '''    "docs/figures/p62_heterogeneous_cost_transition_calibration.svg": {
+                  "title": "P62 exact heterogeneous-cost continuous calibration",
+                  "description": (
+                      "What this figure shows: P62 solves the declared separable inverse-square-root calibration surrogate exactly in the continuous domain when each transition edge has its own positive per-observation cost. "
+                      "How to read it: the two upper input cards feed the central constrained problem, which then feeds the unique strict-convexity optimum. From the theorem panel, follow the three lower branches to the optimal measurement-count law, the distinct optimal budget-share law, and the exact target-budget threshold. "
+                      "Main takeaway: expensive edges receive fewer observations all else equal, yet can still consume more total budget because sample count and budget share scale with different powers of cost. P62 is a continuous theorem; heterogeneous integer counts are a separate P63 problem."
+                  ),
+                  "status": (
+                      "Continuous resource-allocation theorem for the declared calibration surrogate. It does not validate the full robust-route uncertainty model, identify an operational variable with consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness."
+                  ),
+              },
+          '''
+              if marker not in text:
+                  raise SystemExit('RECORDS marker not found')
+              text = text.replace(marker, marker + record, 1)
+              path.write_text(text, encoding='utf-8')
+          PY
+      - name: Regenerate figure documentation
+        run: python scripts/enrich_figure_documentation.py
+      - name: Remove one-shot workflow and commit
+        run: |
+          rm .github/workflows/one-shot-p62-figure-docs.yml
+          git config user.name "Mahsa Keikha"
+          git config user.email "mahsa.keikha@gmail.com"
+          git add tests/test_p63_figure_geometry.py scripts/conceptual_figure_records.py docs/figure_catalog.md docs/figures/p62_heterogeneous_cost_transition_calibration.svg .github/workflows/one-shot-p62-figure-docs.yml
+          git commit -m "Integrate P62 figure documentation metadata"
+          git push origin HEAD:visual-polish-p62
