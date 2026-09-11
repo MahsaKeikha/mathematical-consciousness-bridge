@@ -154,7 +154,7 @@ def test_validation_errors_are_explicit() -> None:
         product_projection_from_conditional_law([1.0, 0.0])
     with pytest.raises(ValueError, match="nonnegative"):
         product_projection_from_conditional_law([1.0] + [-0.1] + [0.0] * 14)
-    with pytest.raises(ValueError, match="\[0, 1\]"):
+    with pytest.raises(ValueError, match=r"\[0, 1\]"):
         observed_mixture_law(1.2, [1.0] + [0.0] * 15, [1.0] + [0.0] * 15)
     with pytest.raises(ValueError, match="metric"):
         conditional_dependence_defect([1.0] + [0.0] * 15, metric="tv")  # type: ignore[arg-type]
