@@ -8,7 +8,7 @@ The scientific status rule is strict throughout: a theorem is only a theorem und
 
 ---
 
-## Complete P1 to P74 chronology
+## Complete P1 to P75 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
@@ -109,6 +109,40 @@ where \(k,\ell\) are the complementary views. The product \(b_jm\) is invariant 
 
 Direct P74 proof: [finite-sample target-channel recovery](proposition_74_finite_sample_target_channel_recovery.md). Equation classification: [P74 equation and provenance record](p74_equation_provenance.md). Implementation: [`finite_sample_target_channel_recovery.py`](../src/consciousness_bridge/finite_sample_target_channel_recovery.py).
 
+**P75** separates target-channel identifiability from target-model adequacy. For one binary latent state and three binary observed views, the observable simplex has \(2^3-1=7\) free probabilities and the declared conditional-independence latent model has \(1+2(3)=7\) continuous parameters. Thus the nondegenerate three-view model is generically just-identified: P73 can identify its parameters, but successful recovery does not create a generic independent equality-based goodness-of-fit test for the model assumption itself.
+
+Adding a fourth binary view changes the count to
+
+\[
+2^4-1=15,
+\qquad
+1+2(4)=9,
+\qquad
+15-9=6,
+\]
+
+so the four-view model has six generic overidentifying degrees of freedom. P75 derives observable covariance tetrads
+
+\[
+C_{12}C_{34}=C_{13}C_{24}=C_{14}C_{23},
+\]
+
+requires all four three-view subsets to agree on the latent-imbalance ratio
+
+\[
+q_{ijk}=\frac{M_{ijk}^2}{C_{ij}C_{ik}C_{jk}}=\frac{4m^2}{1-m^2},
+\]
+
+and obtains the fourth-centered-moment relation
+
+\[
+M_{1234}=(1+q)C_{12}C_{34},
+\]
+
+with the equivalent covariance pairings. The executable P75 audit goes further than those displayed moment restrictions: it applies P73 to an anchor triple, infers the fourth channel, reconstructs the entire sixteen-cell observable law, and rejects compatibility when that full reconstruction fails. A synthetic direct-dependence perturbation between target views is required to fail this audit.
+
+Direct P75 proof: [target-model adequacy and four-view overidentification](proposition_75_target_model_adequacy_overidentification.md). Equation classification: [P75 equation and provenance record](p75_equation_provenance.md). Implementation: [`target_model_adequacy.py`](../src/consciousness_bridge/target_model_adequacy.py).
+
 ---
 
 ## Scientific interpretation of the chronology
@@ -120,11 +154,11 @@ The proposition numbers preserve development order, not one linear chain. The sc
 - P38-P44 build the quantum operational interface.
 - P45-P60 build adaptive evidence acquisition and execution machinery.
 - P61-P70 build downstream calibration and optimization.
-- P71-P74 return to the target side of the P19 bridge and formalize non-circular target provenance, noisy target measurement, population target-channel identification, and finite-sample target-channel recovery.
+- P71-P75 return to the target side of the P19 bridge and formalize non-circular target provenance, noisy target measurement, population target-channel identification, finite-sample target-channel recovery, and target-model adequacy.
 
-P74 does not make an experiential ontology claim. It quantifies uncertainty only under the P73 latent model and IID sampling. A failed nondegeneracy gate means the current data do not safely resolve the inversion; it is not proof that the population channel is degenerate. The global latent-label orientation still requires an external semantic anchor if the labels are to be interpreted scientifically.
+P75 does not make an experiential ontology claim. Passing its four-view restrictions establishes compatibility with the declared target-measurement model, not uniqueness or truth of that model. Failure identifies inadequacy of the declared conditional-independence model for the observed law; it does not prove that the latent target is nonphysical or that the physical-to-experiential bridge has been solved.
 
-The next target-side problem is model adequacy: develop falsifiable diagnostics for the P73-P74 conditional-independence assumption and characterize what remains identifiable when the target views have residual dependence beyond the proposed latent target.
+The next target-side problem is finite-sample adequacy certification: turn the P75 population tetrad, cross-triple, fourth-moment, and full-law reconstruction residuals into simultaneous uncertainty-aware tests.
 
 ---
 
