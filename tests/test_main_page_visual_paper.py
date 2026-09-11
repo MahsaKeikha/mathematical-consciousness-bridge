@@ -26,6 +26,7 @@ CURATED_MAIN_PAGE_FIGURES = (
     "p75_target_model_adequacy_overidentification.svg",
     "p76_finite_sample_target_model_adequacy.svg",
     "p77_full_law_model_set_separation.svg",
+    "p78_certified_continuous_model_separation.svg",
     "observer_to_bridge_handoff.svg",
     "quantum_bridge_completeness_map.svg",
     "p38_quantum_operational_sufficiency.svg",
@@ -87,6 +88,7 @@ def test_detailed_proposition_chronology_is_externalized():
     assert "**P75** separates target-channel identifiability from target-model adequacy" in detail
     assert "**P76** converts the tracked P75 population adequacy restrictions" in detail
     assert "**P77** closes the finite-data full-law gap left explicit by P76" in detail
+    assert "**P78** supplies the continuous-family optimization certificate required by P77" in detail
 
 
 def test_main_page_declares_scientific_status_boundaries():
@@ -109,6 +111,8 @@ def test_main_page_declares_scientific_status_boundaries():
         "candidate best-fit model",
         "upper bound",
         "cannot by itself certify rejection",
+        "exact rational arithmetic",
+        "separately valid upper bound on the P77 sampling radius",
     )
     for phrase in required_phrases:
         assert phrase in text, f"README is missing scientific-boundary text: {phrase}"
