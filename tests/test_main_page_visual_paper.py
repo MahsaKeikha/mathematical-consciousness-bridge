@@ -70,7 +70,7 @@ def test_main_page_declares_scientific_status_boundaries():
     required_phrases = (
         "Synthetic example",
         "Open bridge problem",
-        "does **not** assume that a physical quantity is consciousness",
+        "**does not assume that a physical quantity is consciousness**",
         "Quantum mechanics does not by itself imply consciousness",
         "Reproducibility and audit path",
         "Numerical validation facts",
