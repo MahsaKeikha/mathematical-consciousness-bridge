@@ -128,7 +128,7 @@ The main page is organized as a scientific argument rather than a chronological 
 
 | Reader question | Where the answer appears |
 | --- | --- |
-| **What is the scientific problem?** | [Abstract](#abstract), [core scientific thesis](#the-core-scientific-thesis-in-one-view), [Research at a glance](#research-at-a-glance), and [Section 1](#1-mathematical-formulation-of-the-bridge-problem) |
+| **What is the scientific problem?** | [Abstract](#abstract), [core scientific thesis](#the-core-scientific-thesis-in-one-view), [Research at a glance](#research-at-a-glance), and [Section 1: Mathematical formulation of the bridge problem](#1-mathematical-formulation-of-the-bridge-problem) |
 | **What exactly is being measured and compared?** | [Section 1](#1-mathematical-formulation-of-the-bridge-problem), [Section 2](#2-from-physical-dynamics-to-operational-structure), [Section 3](#3-time-composition-and-scale-cannot-be-ignored), [Section 4](#4-turning-a-population-theorem-into-a-finite-experiment), [measurement map](docs/figures/conscious_state_measurement_map.svg), and [response-geometry map](docs/figures/information_geometry_response_manifold.svg) |
 | **How do we avoid circular targets?** | [P71](docs/proposition_71_target_provenance_noncircularity.md) |
 | **How does noisy target measurement affect evidence?** | [P72](docs/proposition_72_target_measurement_channel_robustness.md) |
@@ -382,6 +382,7 @@ The repository keeps standard mathematics, physical theory, empirical evidence, 
 | [P73 equation and provenance record](docs/p73_equation_provenance.md) | Repeated-view identifiability, finite stability calibration, and methodological provenance |
 | [Foundational physics and mathematics bibliography](docs/foundational_physics_mathematics_bibliography.md) | Mathematics, physics, information theory, and causal inference sources |
 | [Literature map](docs/literature_map.md) | Consciousness theory and empirical comparison literature |
+| [`fundamental_theory_references.bib`](docs/fundamental_theory_references.bib) | Machine-readable fundamental-physics references |
 | [Reference audit](docs/reference_audit.md) | Evidence-role and metadata audit |
 | [Citation and reference policy](docs/citation_and_reference_policy.md) | Attribution and scientific sourcing rules |
 
