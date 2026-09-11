@@ -12,7 +12,7 @@ validate conditional independence from three-view fit alone.
 from __future__ import annotations
 
 from dataclasses import dataclass
-from itertools import combinations, product
+from itertools import product
 
 import numpy as np
 
@@ -292,7 +292,10 @@ def four_view_overidentification_diagnostics(
         0.5 * (1.0 + fourth_intercept - fourth_loading),
         0.5 * (1.0 + fourth_intercept + fourth_loading),
     )
-    if any(value < -100.0 * tolerance or value > 1.0 + 100.0 * tolerance for value in fourth_channel):
+    if any(
+        value < -100.0 * tolerance or value > 1.0 + 100.0 * tolerance
+        for value in fourth_channel
+    ):
         return FourViewAdequacyDiagnostics(
             observed_dimension=15,
             model_parameter_dimension=9,
