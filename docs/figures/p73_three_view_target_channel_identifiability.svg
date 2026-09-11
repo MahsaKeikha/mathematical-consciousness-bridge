@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
+  <title id="title">P73 three-view target-channel identifiability</title>
+  <desc id="desc">Scientific diagram showing two-view non-identifiability, three-view recovery of channel stability magnitudes, and finite-sample confidence propagation into the P72 measurement-aware bridge test.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#ffffff;stroke:#cbd5e1;stroke-width:2}.soft{fill:#eef2ff;stroke:#a5b4fc;stroke-width:2}.warn{fill:#fff7ed;stroke:#fdba74;stroke-width:2}.good{fill:#ecfdf5;stroke:#6ee7b7;stroke-width:2}.ink{fill:#0f172a}.muted{fill:#475569}.accent{fill:#3730a3}.head{font:700 30px Arial,sans-serif}.sub{font:700 21px Arial,sans-serif}.body{font:16px Arial,sans-serif}.small{font:14px Arial,sans-serif}.eq{font:18px Georgia,serif}.axis{stroke:#64748b;stroke-width:2}.grid{stroke:#e2e8f0;stroke-width:1}.curve{fill:none;stroke:#3730a3;stroke-width:4}.dot{fill:#0f766e;stroke:#ffffff;stroke-width:2}.arrow{stroke:#475569;stroke-width:3;fill:none;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/></marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1600" height="980"/>
+  <text class="ink head" x="80" y="70">P73. Three-view target-channel identifiability</text>
+  <text class="muted body" x="80" y="104">Repeated target views can identify P72 channel stability under explicit binary symmetric and conditional-independence assumptions.</text>
+
+  <rect class="panel" x="70" y="135" rx="18" width="700" height="555"/>
+  <text class="ink sub" x="105" y="180">Two views: one product, a continuum of channels</text>
+  <text class="muted body" x="105" y="212">Observable constraint: |m12| = gamma1 gamma2. Example shown for |m12| = 0.36.</text>
+  <line class="axis" x1="145" y1="650" x2="650" y2="650"/>
+  <line class="axis" x1="145" y1="650" x2="145" y2="360"/>
+  <line class="grid" x1="246" y1="650" x2="246" y2="360"/><line class="grid" x1="347" y1="650" x2="347" y2="360"/><line class="grid" x1="448" y1="650" x2="448" y2="360"/><line class="grid" x1="549" y1="650" x2="549" y2="360"/><line class="grid" x1="650" y1="650" x2="650" y2="360"/>
+  <line class="grid" x1="145" y1="592" x2="650" y2="592"/><line class="grid" x1="145" y1="534" x2="650" y2="534"/><line class="grid" x1="145" y1="476" x2="650" y2="476"/><line class="grid" x1="145" y1="418" x2="650" y2="418"/><line class="grid" x1="145" y1="360" x2="650" y2="360"/>
+  <polyline class="curve" points="326.8,360.0 340.3,380.0 353.7,397.4 367.2,412.7 380.7,426.3 394.1,438.4 407.6,449.2 421.1,459.0 434.5,467.9 448.0,476.0 461.5,483.4 474.9,490.2 488.4,496.5 501.9,502.3 515.3,507.6 528.8,512.6 542.3,517.3 555.7,521.6 569.2,525.7 582.7,529.5 596.1,533.1 609.6,536.5 623.1,539.7 636.5,542.7 650.0,545.6"/>
+  <circle class="dot" cx="448" cy="476" r="8"/><circle class="dot" cx="599.5" cy="534" r="8"/>
+  <text class="ink small" x="457" y="467">(0.60, 0.60)</text>
+  <text class="ink small" x="610" y="525">(0.90, 0.40)</text>
+  <text class="muted small" x="380" y="680">gamma1</text><text class="muted small" x="92" y="505" transform="rotate(-90 92 505)">gamma2</text>
+  <text class="ink eq" x="105" y="285">gamma2 = 0.36 / gamma1</text>
+  <text class="accent body" x="105" y="320">Same observable moment, different individual stabilities: not identifiable.</text>
+
+  <rect class="panel" x="810" y="135" rx="18" width="720" height="555"/>
+  <text class="ink sub" x="845" y="180">Three views: three products identify stability magnitudes</text>
+  <rect class="soft" x="855" y="225" rx="14" width="190" height="90"/>
+  <rect class="soft" x="1075" y="225" rx="14" width="190" height="90"/>
+  <rect class="soft" x="1295" y="225" rx="14" width="190" height="90"/>
+  <text class="ink body" x="910" y="260">View 1</text><text class="ink eq" x="895" y="289">Y1 = Z N1</text>
+  <text class="ink body" x="1130" y="260">View 2</text><text class="ink eq" x="1115" y="289">Y2 = Z N2</text>
+  <text class="ink body" x="1350" y="260">View 3</text><text class="ink eq" x="1335" y="289">Y3 = Z N3</text>
+  <path class="arrow" d="M1045 270 L1070 270"/><path class="arrow" d="M1265 270 L1290 270"/>
+  <text class="muted body" x="865" y="355">Pair moments:</text>
+  <text class="ink eq" x="865" y="390">m12 = r1 r2,   m13 = r1 r3,   m23 = r2 r3</text>
+  <rect class="good" x="855" y="425" rx="14" width="630" height="170"/>
+  <text class="ink eq" x="885" y="470">gamma1 = sqrt(m12 m13 / m23)</text>
+  <text class="ink eq" x="885" y="510">gamma2 = sqrt(m12 m23 / m13)</text>
+  <text class="ink eq" x="885" y="550">gamma3 = sqrt(m13 m23 / m12)</text>
+  <text class="accent body" x="865" y="630">Unique magnitudes. Signed reliabilities remain ambiguous under one global sign flip.</text>
+  <text class="muted small" x="865" y="662">With an external better-than-chance orientation: eta_i = (1 - gamma_i) / 2.</text>
+
+  <rect class="panel" x="70" y="730" rx="18" width="1460" height="190"/>
+  <text class="ink sub" x="105" y="775">Finite-data certificate and handoff to P72</text>
+  <rect class="warn" x="110" y="805" rx="12" width="330" height="78"/>
+  <text class="ink body" x="135" y="838">n repeated triples</text><text class="muted small" x="135" y="864">estimate m12, m13, m23</text>
+  <path class="arrow" d="M445 844 L515 844"/>
+  <rect class="soft" x="520" y="805" rx="12" width="430" height="78"/>
+  <text class="ink eq" x="545" y="838">eps = sqrt(2 log(6/alpha) / n)</text>
+  <text class="muted small" x="545" y="864">simultaneous Hoeffding moment bands</text>
+  <path class="arrow" d="M955 844 L1025 844"/>
+  <rect class="good" x="1030" y="805" rx="12" width="450" height="78"/>
+  <text class="ink body" x="1055" y="838">confidence interval for each gamma_i</text>
+  <text class="muted small" x="1055" y="864">certified lower stability bound for P72 design</text>
+  <text class="muted small" x="105" y="950">Scientific boundary: identification fails if the repeated-view independence or symmetric-channel assumptions fail. The physical-to-experiential bridge remains open.</text>
+</svg>
