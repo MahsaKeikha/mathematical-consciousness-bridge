@@ -13,7 +13,7 @@ def test_main_page_exposes_fundamental_theory_interface():
     required = (
         "# 4.4 Fundamental theory / Theory-of-Everything interface",
         "fundamental_theory_consciousness_map.svg",
-        "There is currently **no experimentally established Theory of Everything**",
+        "There is currently no experimentally established Theory of Everything",
         "T(\\Omega)=\\bigl(G(\\Omega),Q(\\Omega),C(\\Omega)\\bigr)",
         "d_{\\mathrm{TOE}}^{\\perp}",
     )
@@ -26,8 +26,8 @@ def test_my_big_toe_is_not_presented_as_scientific_fact():
     program = PROGRAM.read_text(encoding="utf-8")
 
     assert "Thomas W. Campbell" in text
-    assert "not treated as established scientific facts" in text
-    assert "speculative, falsifiable antecedent" in text
+    assert "speculative falsifiable antecedents" in text
+    assert "not as established premises" in text
     assert "not established scientific facts" in program
     assert "speculative falsifiable proposal" in program
 
