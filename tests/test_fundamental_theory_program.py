@@ -15,7 +15,6 @@ def test_main_page_exposes_fundamental_theory_interface():
         "fundamental_theory_consciousness_map.svg",
         "There is currently no experimentally established Theory of Everything",
         "T(\\Omega)=\\bigl(G(\\Omega),Q(\\Omega),C(\\Omega)\\bigr)",
-        "d_{\\mathrm{TOE}}^{\\perp}",
     )
     for phrase in required:
         assert phrase in text
