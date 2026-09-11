@@ -1,76 +1,94 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
   <title id="title">P78 certified continuous model separation</title>
-  <desc id="desc">What this figure shows: Figure 13. P78 certified continuous model separation. The complete nine-parameter P75 cube is covered by adaptive boxes. Exact multi-affine cell enclosures produce boxwise lower bounds, their minimum is a global lower bound, and explicit admissible parameters supply upper bounds. P77 rejection is triggered only when the certified global lower bound exceeds a valid sampling-radius upper bound. How to read it: follow only the labeled arrows, axes, panels, set relations, or inequalities shown in the visual and interpret them using the adjacent research text. Main takeaway: the figure summarizes the stated mathematical or scientific dependency; visual proximity alone does not add a claim. Scientific status: Reader-facing research figure; formal status is controlled by the linked proof or source record.</desc>
-
-  <rect x="0" y="0" width="1200" height="760" rx="22" fill="#f8fafc"/>
-  <rect x="36" y="32" width="1128" height="696" rx="20" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
-
-  <text x="70" y="82" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700" fill="#0f172a">P78 Certified Continuous Model Separation</text>
-  <text x="70" y="114" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#475569">Exact-rational lower bounds for the continuous P75 four-view latent model family</text>
-
-  <rect x="70" y="150" width="315" height="384" rx="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
-  <text x="96" y="188" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#0f172a">1. Partition parameter space</text>
-  <text x="96" y="216" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#475569">P75 parameter cube: [0,1]^9</text>
-
-  <rect x="113" y="250" width="220" height="220" rx="8" fill="#eef2ff" stroke="#6366f1" stroke-width="3"/>
-  <line x1="168" y1="250" x2="168" y2="470" stroke="#818cf8" stroke-width="2"/>
-  <line x1="223" y1="250" x2="223" y2="470" stroke="#818cf8" stroke-width="2"/>
-  <line x1="278" y1="250" x2="278" y2="470" stroke="#818cf8" stroke-width="2"/>
-  <line x1="113" y1="305" x2="333" y2="305" stroke="#818cf8" stroke-width="2"/>
-  <line x1="113" y1="360" x2="333" y2="360" stroke="#818cf8" stroke-width="2"/>
-  <line x1="113" y1="415" x2="333" y2="415" stroke="#818cf8" stroke-width="2"/>
-  <rect x="223" y="305" width="55" height="55" fill="#ddd6fe" stroke="#7c3aed" stroke-width="3"/>
-  <text x="235" y="338" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#5b21b6">B*</text>
-  <text x="96" y="501" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#475569">Each drawn tile represents a box in a</text>
-  <text x="96" y="522" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#475569">nine-dimensional adaptive partition.</text>
-
-  <path d="M392 342 L438 342" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
-
-  <rect x="450" y="150" width="310" height="384" rx="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
-  <text x="476" y="188" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#0f172a">2. Bound every box</text>
-  <text x="476" y="216" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#475569">Multi-affine cell ranges are exact.</text>
-
-  <rect x="486" y="250" width="238" height="70" rx="12" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
-  <text x="505" y="279" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#164e63">Exact cell enclosure</text>
-  <text x="505" y="303" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#0e7490">I_x(B) = [m_x(B), M_x(B)]</text>
-
-  <path d="M605 324 L605 348" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
-
-  <rect x="486" y="360" width="238" height="82" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
-  <text x="505" y="389" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#14532d">Certified box lower bound</text>
-  <text x="505" y="414" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#15803d">L(B) = max_x dist(P_hat(x), I_x(B))</text>
-
-  <rect x="486" y="466" width="238" height="42" rx="10" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
-  <text x="503" y="492" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#9a3412">Exact Fraction arithmetic</text>
-
-  <path d="M767 342 L813 342" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
-
-  <rect x="825" y="150" width="305" height="384" rx="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
-  <text x="851" y="188" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#0f172a">3. Certify global distance</text>
-  <text x="851" y="216" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#475569">All active boxes still cover [0,1]^9.</text>
-
-  <rect x="857" y="250" width="241" height="76" rx="12" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
-  <text x="876" y="280" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#312e81">Global certified lower bound</text>
-  <text x="876" y="305" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#4338ca">L_global = min_B L(B)</text>
-
-  <rect x="857" y="352" width="241" height="76" rx="12" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
-  <text x="876" y="382" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#065f46">Candidate upper bound</text>
-  <text x="876" y="407" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#047857">U = ||P_hat - F(theta_c)||_inf</text>
-
-  <text x="867" y="458" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#0f172a">Certified bracket</text>
-  <text x="867" y="484" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#334155">L_global  &lt;=  d_inf(P_hat,M)  &lt;=  U</text>
-  <text x="867" y="510" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#64748b">A best fit alone supplies only the upper side.</text>
-
-  <rect x="70" y="566" width="1060" height="114" rx="16" fill="#0f172a"/>
-  <text x="98" y="601" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#ffffff">P77 rejection handoff</text>
-  <text x="98" y="630" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#e2e8f0">certified global lower bound  L_global  &gt;  valid sampling-radius upper bound  epsilon_bar</text>
-  <text x="98" y="657" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#86efac">then the complete continuous P75 model family is separated from the finite-sample confidence region</text>
-
-  <text x="70" y="716" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#64748b">P78 certifies an optimization bound under the declared P75 model. Non-rejection is not model acceptance. The physical-to-experiential bridge remains open.</text>
-
+  <desc id="desc">What this figure shows: P78 turns the P77 full-law rejection criterion into a certified global optimization procedure for the continuous nine-parameter P75 model. The left panel covers the entire parameter cube with adaptive boxes, the center panel computes exact multi-affine cell enclosures and boxwise lower bounds in rational arithmetic, and the right panel combines all active boxes into a global lower bound while any explicit admissible parameter supplies an upper bound. How to read it: follow the attached arrows from partitioning to box certification to the global bracket, then use the lower P77 handoff only when the certified lower bound strictly exceeds a valid sampling-radius upper bound. Main takeaway: a best fit gives only the upper side of the distance bracket; rejection requires the certified lower side. Scientific status: exact-rational continuous-family optimization certificate under the declared P75 model. Non-rejection is not model acceptance and the physical-to-experiential bridge remains open.</desc>
   <defs>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
       <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
     </marker>
+    <style>
+      .title { font: 700 30px Arial, Helvetica, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 16px Arial, Helvetica, sans-serif; fill: #475569; }
+      .panelTitle { font: 700 19px Arial, Helvetica, sans-serif; fill: #0f172a; }
+      .body { font: 400 14px Arial, Helvetica, sans-serif; fill: #334155; }
+      .small { font: 400 12px Arial, Helvetica, sans-serif; fill: #64748b; }
+      .eq { font: 600 14px Arial, Helvetica, sans-serif; fill: #0f172a; }
+      .white { font: 400 14px Arial, Helvetica, sans-serif; fill: #e2e8f0; }
+      .whiteBold { font: 700 17px Arial, Helvetica, sans-serif; fill: #ffffff; }
+    </style>
   </defs>
+
+  <rect x="0" y="0" width="1200" height="760" fill="#f8fafc"/>
+  <rect x="34" y="28" width="1132" height="704" rx="22" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="68" y="76" class="title">P78 Certified Continuous Model Separation</text>
+  <text x="68" y="106" class="subtitle">Exact-rational global lower bounds for the continuous P75 four-view latent model family</text>
+
+  <!-- Stage 1 -->
+  <rect x="68" y="140" width="318" height="394" rx="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="92" y="176" class="panelTitle">1. Partition parameter space</text>
+  <text x="92" y="204" class="body">P75 parameter cube: [0,1]^9</text>
+  <text x="92" y="226" class="small">Every admissible parameter remains inside an active box.</text>
+
+  <rect x="116" y="254" width="220" height="220" rx="8" fill="#eef2ff" stroke="#6366f1" stroke-width="3"/>
+  <line x1="171" y1="254" x2="171" y2="474" stroke="#818cf8" stroke-width="2"/>
+  <line x1="226" y1="254" x2="226" y2="474" stroke="#818cf8" stroke-width="2"/>
+  <line x1="281" y1="254" x2="281" y2="474" stroke="#818cf8" stroke-width="2"/>
+  <line x1="116" y1="309" x2="336" y2="309" stroke="#818cf8" stroke-width="2"/>
+  <line x1="116" y1="364" x2="336" y2="364" stroke="#818cf8" stroke-width="2"/>
+  <line x1="116" y1="419" x2="336" y2="419" stroke="#818cf8" stroke-width="2"/>
+  <rect x="226" y="309" width="55" height="55" fill="#ddd6fe" stroke="#7c3aed" stroke-width="3"/>
+  <text x="242" y="343" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#5b21b6">B*</text>
+  <text x="92" y="502" class="small">The drawing is a 2-D guide to a nine-dimensional</text>
+  <text x="92" y="519" class="small">adaptive box cover.</text>
+
+  <!-- Attached connector 1 -->
+  <line x1="386" y1="337" x2="432" y2="337" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- Stage 2 -->
+  <rect x="432" y="140" width="328" height="394" rx="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="456" y="176" class="panelTitle">2. Bound every box</text>
+  <text x="456" y="204" class="body">Multi-affinity makes every cell range exact on a box.</text>
+
+  <rect x="468" y="244" width="256" height="72" rx="12" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
+  <text x="488" y="272" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#164e63">Exact cell enclosure</text>
+  <text x="488" y="296" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#0e7490">I_x(B) = [m_x(B), M_x(B)]</text>
+
+  <line x1="596" y1="316" x2="596" y2="344" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="468" y="344" width="256" height="86" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text x="488" y="372" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#14532d">Certified box lower bound</text>
+  <text x="488" y="396" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#15803d">L(B) = max_x dist(P_hat(x), I_x(B))</text>
+  <text x="488" y="416" class="small">Every model law in B is at least L(B) away.</text>
+
+  <rect x="468" y="458" width="256" height="50" rx="11" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
+  <text x="488" y="489" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#9a3412">Exact Fraction arithmetic</text>
+
+  <!-- Attached connector 2 -->
+  <line x1="760" y1="337" x2="806" y2="337" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- Stage 3 -->
+  <rect x="806" y="140" width="326" height="394" rx="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="830" y="176" class="panelTitle">3. Certify global distance</text>
+  <text x="830" y="204" class="body">All active boxes together still cover [0,1]^9.</text>
+
+  <rect x="840" y="242" width="258" height="72" rx="12" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+  <text x="860" y="270" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#312e81">Global certified lower bound</text>
+  <text x="860" y="294" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#4338ca">L_global = min_B L(B)</text>
+
+  <rect x="840" y="332" width="258" height="72" rx="12" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+  <text x="860" y="360" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#065f46">Candidate upper bound</text>
+  <text x="860" y="384" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#047857">U = ||P_hat - F(theta_c)||_inf</text>
+
+  <rect x="840" y="424" width="258" height="84" rx="12" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="860" y="449" class="eq">Certified bracket</text>
+  <text x="860" y="473" class="body">L_global &lt;= d_inf(P_hat,M) &lt;= U</text>
+  <text x="860" y="496" class="small">A best fit alone supplies only the upper side.</text>
+
+  <!-- Handoff -->
+  <rect x="68" y="566" width="1064" height="116" rx="16" fill="#0f172a"/>
+  <text x="94" y="600" class="whiteBold">P77 rejection handoff</text>
+  <text x="94" y="628" class="white">certified global lower bound L_global &gt; valid sampling-radius upper bound epsilon_bar</text>
+  <text x="94" y="652" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#86efac">then the complete continuous P75 model family is separated from the finite-sample confidence region</text>
+  <text x="94" y="674" class="small" fill="#cbd5e1">Strict separation is required; a small lower bound is inconclusive.</text>
+
+  <text x="68" y="716" class="small">P78 certifies an optimization bound under the declared P75 model. Non-rejection is not model acceptance. The physical-to-experiential bridge remains open.</text>
 </svg>
