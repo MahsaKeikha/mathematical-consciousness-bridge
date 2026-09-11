@@ -33,12 +33,14 @@
 
   <g id="block-intervals" data-x="435" data-y="135" data-w="330" data-h="220">
     <rect x="435" y="135" width="330" height="220" rx="18" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
-    <text x="460" y="173" class="head">2. Edgewise multiplier intervals</text>
-    <text x="460" y="211" class="copy">Delta_e(j)=b_e[j^(-1/2)</text>
-    <text x="460" y="235" class="copy">- (j+1)^(-1/2)]</text>
-    <text x="460" y="272" class="copy">L_e = Delta_e(k_e)/c_e</text>
-    <text x="460" y="300" class="copy">H_e = Delta_e(k_e-1)/c_e</text>
-    <text x="460" y="329" class="small">At k_e=1, only the lower gate applies.</text>
+    <text x="460" y="169" class="head">2. Edgewise multiplier</text>
+    <text x="460" y="192" class="head">intervals</text>
+    <text x="460" y="224" class="copy">Delta_e(j)=b_e[j^(-1/2)</text>
+    <text x="460" y="247" class="copy">- (j+1)^(-1/2)]</text>
+    <text x="460" y="278" class="copy">L_e = Delta_e(k_e)/c_e</text>
+    <text x="460" y="303" class="copy">H_e = Delta_e(k_e-1)/c_e</text>
+    <text x="460" y="328" class="small">At k_e=1, only the lower</text>
+    <text x="460" y="348" class="small">gate applies.</text>
   </g>
 
   <g id="block-intersection" data-x="815" data-y="135" data-w="330" data-h="220">
@@ -47,7 +49,8 @@
     <text x="840" y="216" class="copy">lambda_low = max_e L_e</text>
     <text x="840" y="250" class="copy">lambda_high = min_e H_e</text>
     <text x="840" y="293" class="strong">lambda_low &lt;= lambda_high</text>
-    <text x="840" y="329" class="small">Any common positive lambda is a witness.</text>
+    <text x="840" y="324" class="small">Any common positive lambda</text>
+    <text x="840" y="346" class="small">is a valid witness.</text>
   </g>
 
   <line id="arrow-1" class="arrow" x1="385" y1="245" x2="435" y2="245" data-source="block-candidate" data-target="block-intervals"/>
