@@ -68,6 +68,7 @@ def test_research_map_presents_p77_through_p80_in_dependency_order():
     p80 = text.index("IV-J · Tighter continuous-family relaxation")
     assert p77 < p78 < p79 < p80
 
-    assert text.count("P78: How is P77 made rigorous for the continuous P75 family?") == 1
+    assert text.count("P78: Certified continuous P75 model separation") == 1
+    assert text.count("How is P77 made rigorous for the continuous P75 family?") == 1
     assert "only the certified global lower bound can feed the P77 rejection gate" in text
     assert "P80 tightens the continuous lower bound" in text
