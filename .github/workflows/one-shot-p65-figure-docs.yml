@@ -1,0 +1,47 @@
+name: one-shot-p65-figure-docs
+
+on:
+  push:
+    branches:
+      - visual-polish-p65
+
+permissions:
+  contents: write
+
+jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: visual-polish-p65
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Add permanent P65 figure metadata
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("scripts/conceptual_figure_records.py")
+          text = path.read_text(encoding="utf-8")
+          key = '    "docs/figures/p65_lower_bounded_heterogeneous_calibration.svg": {'
+          if key not in text:
+              marker = "RECORDS: dict[str, dict[str, str]] = {\n"
+              record = '''    "docs/figures/p65_lower_bounded_heterogeneous_calibration.svg": {\n        "title": "P65 lower-bounded heterogeneous calibration",\n        "description": (\n            "What this figure shows: P65 removes the regime restriction in P64 by solving the heterogeneous-cost continuous allocation problem with the mandatory one-observation lower bound built in before rounding. "\n            "How to read it: move left to right across the top row from the P64 failure mode to the constrained P65 problem and its thresholded active set. The two center arrows then feed the exact lower-bounded water-filling theorem. From that theorem, follow the two lower arrows to the baseline-safe integer floor and its certified objective-quality bound. "\n            "Main takeaway: the continuous P65 allocation is uniquely optimal for the declared lower-bounded problem; flooring it is always feasible and is certified within an instance-specific factor no worse than square-root two, but the floor is not claimed to be the exact unrestricted integer optimum."\n        ),\n        "status": (\n            "Calibration resource-allocation theorem for the declared separable surrogate. It does not identify a calibration variable with consciousness, establish a physical-to-experiential bridge, or imply that quantum mechanics is incomplete."\n        ),\n    },\n'''
+              if marker not in text:
+                  raise SystemExit("RECORDS marker not found")
+              path.write_text(text.replace(marker, marker + record, 1), encoding="utf-8")
+          PY
+      - name: Regenerate figure documentation
+        run: python scripts/enrich_figure_documentation.py
+      - name: Remove one-shot workflow
+        run: rm .github/workflows/one-shot-p65-figure-docs.yml
+      - name: Commit integrated documentation
+        run: |
+          git config user.name "Mahsa Keikha"
+          git config user.email "mahsa.keikha@gmail.com"
+          git add scripts/conceptual_figure_records.py docs/figures/p65_lower_bounded_heterogeneous_calibration.svg docs/figure_catalog.md .github/workflows/one-shot-p65-figure-docs.yml
+          git commit -m "Integrate P65 figure documentation metadata"
+          git push origin HEAD:visual-polish-p65
