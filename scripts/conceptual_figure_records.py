@@ -5,6 +5,17 @@ from pathlib import Path
 from typing import Any
 
 RECORDS: dict[str, dict[str, str]] = {
+    "docs/figures/p61_exact_integer_transition_calibration.svg": {
+        "title": "P61 exact unit-cost integer transition calibration",
+        "description": (
+            "What this figure shows: P61 solves the declared equal-unit-cost whole-measurement calibration problem exactly. It starts from one mandatory measurement per calibrated edge, assigns each remaining unit to the edge with the largest current marginal reduction in the separable uncertainty objective, and proves global optimality from strictly diminishing per-edge gains and prefix feasibility. "
+            "How to read it: move left to right across the top row from the mandatory baseline to the current marginal gain and the greedy allocation step. The center theorem panel explains why diminishing gain sequences make that rule exact. Follow the three lower branches to the checkable exchange certificate, the exact global optimum and tie behavior, and the priority-queue complexity. "
+            "Main takeaway: P61 closes the equal-unit-cost integer allocation problem for the declared separable surrogate; it does not extend the same greedy proof to heterogeneous costs."
+        ),
+        "status": (
+            "Exact discrete resource-allocation theorem for experimental calibration. It does not validate the full robust-route model, identify a calibration quantity with consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness."
+        ),
+    },
     "docs/figures/p62_heterogeneous_cost_transition_calibration.svg": {
         "title": "P62 exact heterogeneous-cost continuous calibration",
         "description": (
