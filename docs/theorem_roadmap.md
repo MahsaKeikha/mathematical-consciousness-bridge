@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P73**. The proposition record runs from **P1 through P73 with explicit dependency branches**. P71-P73 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P74**. The proposition record runs from **P1 through P74 with explicit dependency branches**. P71-P74 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -21,7 +21,9 @@ The current documented theorem frontier is **P73**. The proposition record runs 
 &\Downarrow\\
 &\text{P72: noisy target observation must preserve the claimed target distinction}\\
 &\Downarrow\\
-&\text{P73: target-channel stability can be identified under a declared three-view model}
+&\text{P73: target-channel stability can be identified under a declared three-view model}\\
+&\Downarrow\\
+&\text{P74: finite data can certify or refuse that channel recovery}
 \end{aligned}
 }
 \]
@@ -39,7 +41,7 @@ Separate but connected branches refine the physical representation and experimen
 }
 \]
 
-The proposition number records development order. It does not imply that P73 depends on P70. P73 depends scientifically on P17, P19, P20, P71, and P72.
+The proposition number records development order. It does not imply that P74 depends on P70. P74 depends scientifically on P20, P71, P72, and P73, together with the P73 latent-model assumptions.
 
 ## 2. Target-side bridge lineage
 
@@ -176,6 +178,36 @@ P73 also gives a constructive two-view no-go result: in the balanced zero-interc
 
 Direct proof: [P73](proposition_73_target_channel_identifiability.md). Provenance: [P73 equation record](p73_equation_provenance.md). Implementation: [`target_channel_identifiability.py`](../src/consciousness_bridge/target_channel_identifiability.py). Tests: [`test_target_channel_identifiability.py`](../tests/test_target_channel_identifiability.py).
 
+### P74: finite-sample target-channel recovery
+
+P73 is a population inversion. P74 adds an explicit finite-sample layer. From \(n\) IID observed triples, the empirical eight-cell law \(\widehat P\) satisfies one simultaneous Hoeffding event. Defining
+
+\[
+\delta_n(\alpha)
+=
+\min\left\{2,8\sqrt{\frac{\log(16/\alpha)}{2n}}\right\},
+\]
+
+P74 proves on that event
+
+\[
+\boxed{|\widehat C_{ij}-C_{ij}|\le3\delta_n}
+\]
+
+and
+
+\[
+\boxed{|\widehat M_{123}-M_{123}|\le13\delta_n.}
+\]
+
+The theorem then introduces a finite-data nondegeneracy gate. The P73 inversion is certified only when every absolute covariance confidence interval is bounded away from zero and the covariance sign product is compatible with the P73 model. If the gate fails, the output is "not certified by the current data," not a forced latent estimate.
+
+When the gate passes, P74 propagates the simultaneous event through the P73 formulas to obtain confidence intervals for the latent imbalance, latent variance, the prevalence orbit under global label swapping, and all three P72 stability coefficients \(\gamma_j\). It also gives a certified lower bound for joint three-view stability and a conservative sufficient sample-size condition for clearing a known population covariance margin.
+
+![P74 finite-sample target-channel recovery](figures/p74_finite_sample_target_channel_recovery.svg)
+
+Direct proof: [P74](proposition_74_finite_sample_target_channel_recovery.md). Provenance: [P74 equation record](p74_equation_provenance.md). Implementation: [`finite_sample_target_channel_recovery.py`](../src/consciousness_bridge/finite_sample_target_channel_recovery.py). Tests: [`test_finite_sample_target_channel_recovery.py`](../tests/test_finite_sample_target_channel_recovery.py).
+
 ## 3. Complete proposition index
 
 | Proposition | Mathematical role | Scientific role | Status |
@@ -186,7 +218,7 @@ Direct proof: [P73](proposition_73_target_channel_identifiability.md). Provenanc
 | [P4](proposition_4_discriminating_experiment_design.md) | maximin and set cover | adversarial experiment design | proved |
 | [P5](proposition_5_feature_sufficiency.md) | feature factorization | exact feature sufficiency | proved |
 | [P6](proposition_6_canonical_bridge_signature.md) | canonical quotient | completeness target | proved |
-| [P7](proposition_7_experimental_signature_recovery.md) | observable recovery | exact recoverability | proved |
+| [P7](proposition_7_experimental_signature_recovery.md) | observable recovery | exact recoverability criterion | proved |
 | [P8](proposition_8_robust_signature_recovery.md) | perturbation bounds | finite-error recovery | proved |
 | [P9](proposition_9_categorical_sample_complexity.md) | Hoeffding plus union bound | finite trial requirement | proved |
 | [P10](proposition_10_robust_experiment_design.md) | robust protocol optimization | nuisance-aware discrimination | proved |
@@ -253,6 +285,7 @@ Direct proof: [P73](proposition_73_target_channel_identifiability.md). Provenanc
 | [P71](proposition_71_target_provenance_noncircularity.md) | descriptor-derived target vacuity | independent target provenance guard | proved |
 | [P72](proposition_72_target_measurement_channel_robustness.md) | conditional DPI, TV stability, finite target confidence | noisy target-measurement robustness | proved |
 | [P73](proposition_73_target_channel_identifiability.md) | three-view moment inversion and two-view no-go | target-channel stability identifiability under a declared latent model | proved conditional theorem |
+| [P74](proposition_74_finite_sample_target_channel_recovery.md) | simultaneous concentration and nonlinear interval propagation | finite-data target-channel stability certification with a nondegeneracy gate | proved conditional theorem |
 
 ## 4. Calibration branch remains separate
 
@@ -275,13 +308,14 @@ These results optimize downstream experimental resources. They do not define con
 
 ## 5. Current open frontier
 
-After P73, the target side has three explicit requirements:
+After P74, the target side has four explicit requirements:
 
 1. the target must have non-circular provenance relative to the tested physical descriptor;
 2. its observation channel must be valid and sufficiently informative for the claimed witness;
-3. channel reliability must be identified or externally calibrated under a defensible target-measurement model.
+3. channel reliability must be identified or externally calibrated under a defensible target-measurement model;
+4. finite data must resolve the channel parameters far enough from the model singularity to support a confidence-certified reliability statement.
 
-P73 solves the third item only at the population level for a binary latent target with three conditionally independent binary views and explicit nondegeneracy. The next quantitative question is therefore **finite-sample target-channel recovery certification**: how does empirical error in the observed three-view distribution propagate through the nonlinear P73 inversion into confidence regions for latent prevalence, view channels, and the P72 stability coefficients?
+P74 closes the fourth item for the declared binary three-view IID model using a conservative simultaneous confidence construction. The next structural question is no longer simply estimation. It is **model adequacy**: how can the conditional-independence assumption behind P73-P74 be tested or falsified, and how should the framework respond when residual dependence among target views remains?
 
 Beyond that, the broader open program remains:
 
