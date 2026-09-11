@@ -15,7 +15,7 @@ def test_readme_follows_reader_first_scientific_order():
     formulation = text.index("# 1. Mathematical formulation of the bridge problem")
     p71 = text.index("## 1.5 P71: target provenance cannot be circular")
     p72 = text.index("## 1.6 P72: noisy target observation is a separate scientific layer")
-    p73 = text.index("## 1.7 P73: three target views can identify channel stability")
+    p73 = text.index("## 1.7 P73: target-channel reliability can sometimes be identified")
     operational = text.index("# 2. From physical dynamics to operational structure")
     scale = text.index("# 3. Time, composition, and scale cannot be ignored")
     finite = text.index("# 4. Turning a population theorem into a finite experiment")
@@ -39,6 +39,31 @@ def test_readme_follows_reader_first_scientific_order():
     assert fundamental < quantum < adaptive < calibration
     assert calibration < established < open_section < falsification < evidence
     assert evidence < visuals < validation < reproducibility < detail < current < navigation
+
+
+def test_plain_language_section_explains_full_program_without_equations():
+    text = README.read_text(encoding="utf-8")
+    start = text.index("# What this project is trying to achieve, in plain language")
+    end = text.index("# Abstract")
+    section = text[start:end]
+
+    required = (
+        "physical-to-experiential bridge",
+        "not trying to choose an impressive physical quantity and rename it consciousness",
+        "independently justified experiential target",
+        "circularity problem",
+        "measurement noise",
+        "reliability of that target measurement",
+        "statistical uncertainty",
+        "explicit attempts at falsification",
+        "physical-to-experiential bridge itself remains open",
+    )
+    for phrase in required:
+        assert phrase in section, phrase
+
+    assert "$$" not in section
+    assert "\\boxed" not in section
+    assert "\\begin" not in section
 
 
 def test_research_at_a_glance_covers_the_full_scientific_program():
