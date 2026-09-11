@@ -126,6 +126,28 @@ RECORDS: dict[str, dict[str, str]] = {
             "Finite-sample theorem figure. It does not prove conditional independence, validate latent semantics, identify the latent state with consciousness, or close the physical-to-experiential bridge."
         ),
     },
+    "docs/figures/p77_full_law_model_set_separation.svg": {
+        "title": "P77 finite-sample full-law model-set separation",
+        "description": (
+            "What this figure shows: P77 strengthens the P76 finite-sample adequacy audit from selected necessary polynomial constraints to separation of the entire simultaneous confidence region from the entire declared model set. The left panel summarizes the P76 constraint route and its limitation; the right panel shows the full-law geometric separation condition. "
+            "How to read it: move from the P76 panel through the attached stronger-audit arrow to the P77 panel, then use the lower optimization-direction band to distinguish certified lower bounds from ordinary best-fit upper bounds. "
+            "Main takeaway: full-law rejection requires a sound lower bound proving that every admissible model is farther away than the sampling radius; a candidate best fit alone cannot certify rejection."
+        ),
+        "status": (
+            "Finite-sample model-set separation theorem figure. Non-rejection is not model acceptance; the theorem does not identify the latent state with consciousness, and the physical-to-experiential bridge remains open."
+        ),
+    },
+    "docs/figures/p78_certified_continuous_model_separation.svg": {
+        "title": "P78 certified continuous model separation",
+        "description": (
+            "What this figure shows: P78 turns the P77 full-law rejection requirement into a certified global optimization procedure for the continuous nine-parameter P75 model. Adaptive boxes cover the full parameter cube, exact multi-affine cell enclosures produce boxwise lower bounds, and the minimum active-box bound gives a global lower bound while any explicit admissible parameter gives an upper bound. "
+            "How to read it: follow the attached stage arrows from parameter partitioning to exact box certification to the final global distance bracket, then use the P77 handoff only when the certified lower bound strictly exceeds a valid sampling-radius upper bound. "
+            "Main takeaway: a best fit supplies only the upper side of the distance bracket; a formal rejection requires the certified lower side."
+        ),
+        "status": (
+            "Exact-rational continuous-family optimization certificate under the declared P75 model. Non-rejection is not model acceptance, and the physical-to-experiential bridge remains open."
+        ),
+    },
     "docs/figures/p79_certified_sampling_radius.svg": {
         "title": "P79 certified rational sampling-radius envelope",
         "description": (
