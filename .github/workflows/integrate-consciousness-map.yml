@@ -1,0 +1,101 @@
+name: integrate-consciousness-map
+
+on:
+  push:
+    branches:
+      - visual-polish-consciousness-map
+    paths:
+      - .github/workflows/integrate-consciousness-map.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  integrate-regenerate-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: visual-polish-consciousness-map
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -e ".[dev]"
+
+      - name: Integrate high-level map into research architecture
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("docs/research_architecture.md")
+          text = path.read_text(encoding="utf-8")
+          marker = "![High-level consciousness map](figures/consciousness_map.svg)"
+          if marker not in text:
+              anchor = "# Research Architecture\n\n"
+              insert = (
+                  "# Research Architecture\n\n"
+                  "## High-level consciousness map\n\n"
+                  "![High-level consciousness map](figures/consciousness_map.svg)\n\n"
+                  "**High-level map.** Theory, measurement, dynamics, and the sufficiency bridge are deliberately separated so that theoretical adequacy, measurement validity, and dynamical sufficiency cannot be mistaken for the still-open physical-to-experiential bridge.\n\n"
+                  "## Detailed research architecture\n\n"
+              )
+              if anchor not in text:
+                  raise SystemExit("Research architecture heading not found")
+              text = text.replace(anchor, insert, 1)
+              path.write_text(text, encoding="utf-8")
+          PY
+
+      - name: Add permanent conceptual figure record
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("scripts/conceptual_figure_records.py")
+          text = path.read_text(encoding="utf-8")
+          figure_path = '"docs/figures/consciousness_map.svg"'
+          if figure_path not in text:
+              anchor = "RECORDS: dict[str, dict[str, str]] = {\n"
+              block = '''    "docs/figures/consciousness_map.svg": {
+        "title": "Consciousness map: theory, measurement, dynamics, and sufficiency bridge",
+        "description": (
+            "What this figure shows: a high-level separation of four scientific obligations in consciousness research: theory, measurement, dynamics, and the sufficiency bridge. "
+            "How to read it: begin at Theory, follow the labeled theoretical-sufficiency route to Measurement and the model-implied-evolution route to Dynamics, then read Measurement and Dynamics as independent constraints on the Sufficiency bridge. The arrows are logical research dependencies and do not identify physical variables with experience. "
+            "Main takeaway: theoretical adequacy, measurement validity, and dynamical sufficiency are distinct requirements; satisfying them can support or falsify a declared model but does not by itself close the physical-to-experiential bridge."
+        ),
+        "status": (
+            "Research-architecture figure. It separates physical, measurement, and sufficiency obligations; it is not an empirical consciousness result or a theorem identifying any physical state with consciousness."
+        ),
+    },
+'''
+              if anchor not in text:
+                  raise SystemExit("Conceptual record anchor not found")
+              text = text.replace(anchor, anchor + block, 1)
+              path.write_text(text, encoding="utf-8")
+          PY
+
+      - name: Regenerate figure documentation
+        run: python scripts/enrich_figure_documentation.py
+
+      - name: Validate map and documentation
+        run: |
+          pytest -q tests/test_consciousness_map_geometry.py tests/test_figure_documentation_integrity.py
+          ruff check .
+          grep -F "figures/consciousness_map.svg" docs/figure_catalog.md
+          grep -F "High-level consciousness map" docs/research_architecture.md
+          grep -F '"docs/figures/consciousness_map.svg"' scripts/conceptual_figure_records.py
+
+      - name: Commit audited map record and remove one-shot workflow
+        run: |
+          rm .github/workflows/integrate-consciousness-map.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit"
+          else
+            git commit -m "Integrate audited consciousness-map documentation"
+            git push origin HEAD:visual-polish-consciousness-map
+          fi
