@@ -1,3 +1,15 @@
+# 0.79.0 - 2026-09-10
+
+## Proposition 79: robust rejection under bounded target-view dependence
+
+- adds a quantitative local-dependence defect comparing each latent-state joint target-view law with the product of its own marginals;
+- proves a prevalence-weighted observed-law neighborhood bound around the P75 conditionally independent model family;
+- adds the robust P77/P78 rejection rule requiring certified separation beyond both sampling uncertainty and an independently justified dependence allowance;
+- explicitly forbids tuning the dependence allowance from the same discrepancy merely to avoid rejection;
+- keeps non-rejection inconclusive and does not promote bounded local dependence into a latent ontology;
+- adds the P79 proof, provenance record, implementation, tests, theorem figure, and public research integration;
+- keeps the physical-to-experiential bridge open.
+
 # 0.78.0 - 2026-09-10
 
 ## Proposition 78: certified continuous model separation

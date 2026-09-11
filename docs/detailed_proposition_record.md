@@ -8,7 +8,7 @@ The scientific status rule is strict throughout: a theorem is only a theorem und
 
 ---
 
-## Complete P1 to P78 chronology
+## Complete P1 to P79 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
@@ -177,6 +177,12 @@ The P77 handoff remains directional: full-law rejection requires the P78 global 
 
 Direct P78 proof: [certified continuous model separation](proposition_78_certified_continuous_model_separation.md). Equation classification: [P78 equation and provenance record](p78_equation_provenance.md). Implementation: [`certified_continuous_model_separation.py`](../src/consciousness_bridge/certified_continuous_model_separation.py).
 
+**P79** weakens the exact conditional-independence assumption in the P75 target-view model by introducing an explicit residual-dependence budget. For each latent state, the true conditional four-view law is compared with the product of its own one-view marginals. The prevalence-weighted discrepancy bounds how far the observed population law can move away from the P75 conditionally independent model family.
+
+If a scientifically independent protocol supplies a dependence allowance $\bar\rho_p$, P78 supplies a certified empirical model-distance lower bound $L_p$, and P77 supplies sampling uncertainty $\varepsilon_p$, then $L_p>\varepsilon_p+\bar\rho_p$ rejects every population law satisfying that bounded-dependence allowance. The allowance cannot be chosen after observing the same discrepancy merely to avoid rejection, and failure to reject remains inconclusive.
+
+Direct P79 proof: [bounded target-view dependence robustness](proposition_79_bounded_target_view_dependence.md). Equation classification: [P79 equation and provenance record](p79_equation_provenance.md). Implementation: [`bounded_target_view_dependence.py`](../src/consciousness_bridge/bounded_target_view_dependence.py).
+
 
 ---
 
@@ -189,11 +195,11 @@ The proposition numbers preserve development order, not one linear chain. The sc
 - P38-P44 build the quantum operational interface.
 - P45-P60 build adaptive evidence acquisition and execution machinery.
 - P61-P70 build downstream calibration and optimization.
-- P71-P78 return to the target side of the P19 bridge and formalize non-circular target provenance, noisy target measurement, population target-channel identification, finite-sample target-channel recovery, target-model adequacy, and finite-sample model rejection.
+- P71-P79 return to the target side of the P19 bridge and formalize non-circular target provenance, noisy target measurement, population target-channel identification, finite-sample target-channel recovery, target-model adequacy, and finite-sample model rejection.
 
 P75 does not make an experiential ontology claim. Passing its four-view restrictions establishes compatibility with the declared target-measurement model, not uniqueness or truth of that model. Failure identifies inadequacy of the declared conditional-independence model for the observed law; it does not prove that the latent target is nonphysical or that the physical-to-experiential bridge has been solved.
 
-P76 adds a finite-sample rejection layer for a tracked family of necessary P75 polynomial constraints. Its non-rejection output is explicitly inconclusive. P77 then defines the stronger finite-sample full-law criterion by asking whether the complete confidence region is separated from the complete declared model family. P78 supplies the missing global lower-bound certificate for the continuous P75 latent family using exact-rational multi-affine box refinement. The next problems are computational efficiency, sharper power, and robust alternatives for residually dependent or learned target-view systems.
+P76 adds a finite-sample rejection layer for a tracked family of necessary P75 polynomial constraints. Its non-rejection output is explicitly inconclusive. P77 then defines the stronger finite-sample full-law criterion by asking whether the complete confidence region is separated from the complete declared model family. P78 supplies the missing global lower-bound certificate for the continuous P75 latent family using exact-rational multi-affine box refinement. P79 then makes rejection robust to an independently justified bounded amount of residual target-view dependence. The next problems are independent calibration or identification of that dependence budget, computational efficiency, sharper robust power, and richer structured dependent-view or learned target-view systems.
 
 ---
 

@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P78**. The proposition record runs from **P1 through P78 with explicit dependency branches**. P71-P78 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P79**. The proposition record runs from **P1 through P79 with explicit dependency branches**. P71-P79 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -31,7 +31,9 @@ The current documented theorem frontier is **P78**. The proposition record runs 
 &\Downarrow\\
 &\text{P77: full-law confidence regions must be separated from the complete declared model set}\\
 &\Downarrow\\
-&\text{P78: continuous P75 model distance must be lower-bounded globally and certifiably}
+&\text{P78: continuous P75 model distance must be lower-bounded globally and certifiably}\\
+&\Downarrow\\
+&\text{P79: bounded residual target-view dependence must be included in the rejection margin}
 \end{aligned}
 }
 \]
@@ -49,7 +51,7 @@ Separate but connected branches refine the physical representation and experimen
 }
 \]
 
-The proposition number records development order. It does not imply that P78 depends on P70. P78 depends scientifically on P77 and the P75 continuous target-model family, which descend from P19 and the P71-P76 target-side lineage.
+The proposition number records development order. It does not imply that P79 depends on P70. P79 depends scientifically on the P75-P78 target-measurement and full-law adequacy lineage, which descends from P19 and P71-P74.
 
 ## 2. Target-side bridge lineage
 
@@ -358,6 +360,35 @@ The implementation uses exact rational arithmetic for empirical counts and dyadi
 
 Direct proof: [P78](proposition_78_certified_continuous_model_separation.md). Provenance: [P78 equation record](p78_equation_provenance.md). Implementation: [`certified_continuous_model_separation.py`](../src/consciousness_bridge/certified_continuous_model_separation.py). Tests: [`test_certified_continuous_model_separation.py`](../tests/test_certified_continuous_model_separation.py).
 
+### P79: robust rejection under bounded target-view dependence
+
+Let $R_s$ be the true conditional four-view law under latent target state $s$ and let $\Pi_s$ be the product of its own one-view marginals. Define
+
+\[
+\delta_s^{(p)}=\|R_s-\Pi_s\|_p,
+\qquad
+\rho_p=(1-\pi)\delta_-^{(p)}+\pi\delta_+^{(p)}.
+\]
+
+The observed law $P=(1-\pi)R_-+\pi R_+$ has a P75 counterpart $Q=(1-\pi)\Pi_-+\pi\Pi_+$, so
+
+\[
+\boxed{d_p(P,\mathcal M_{4,2})\le\rho_p.}
+\]
+
+If an independently justified allowance gives $\rho_p\le\bar\rho_p$, P78 supplies a certified empirical lower bound $L_p$, and P77 supplies a valid sampling-radius upper bound $\varepsilon_p$, then
+
+\[
+\boxed{L_p>\varepsilon_p+\bar\rho_p
+\Longrightarrow\text{ reject the bounded-dependence extension}.}
+\]
+
+The dependence allowance must be declared or independently calibrated rather than selected post hoc from the same rejection discrepancy. Non-rejection remains inconclusive.
+
+![P79 bounded target-view dependence](figures/p79_bounded_target_view_dependence.svg)
+
+Direct proof: [P79](proposition_79_bounded_target_view_dependence.md). Provenance: [P79 equation record](p79_equation_provenance.md). Implementation: [`bounded_target_view_dependence.py`](../src/consciousness_bridge/bounded_target_view_dependence.py). Tests: [`test_bounded_target_view_dependence.py`](../tests/test_bounded_target_view_dependence.py).
+
 
 ## 3. Complete proposition index
 
@@ -441,6 +472,7 @@ Direct proof: [P78](proposition_78_certified_continuous_model_separation.md). Pr
 | [P76](proposition_76_finite_sample_target_model_adequacy.md) | sixteen-cell concentration and polynomial interval propagation | finite-sample target-model adequacy rejection | proved conditional theorem |
 | [P77](proposition_77_full_law_model_set_separation.md) | confidence-region/model-set separation | finite-sample full-law rejection with certified distance lower bounds | proved conditional theorem |
 | [P78](proposition_78_certified_continuous_model_separation.md) | multi-affine box lower bounds and mesh-gap convergence | certified continuous P75 full-law model separation | proved conditional computational theorem |
+| [P79](proposition_79_bounded_target_view_dependence.md) | bounded-dependence robustness envelope | robust target-model rejection under independently justified local-dependence allowance | proved conditional theorem |
 
 ## 4. Calibration branch remains separate
 

@@ -1187,3 +1187,41 @@ P78 supplies a computable global lower-bound mechanism for the continuous P75 fo
 Proof: [P78](proposition_78_certified_continuous_model_separation.md). Dedicated provenance: [P78 equation and provenance record](p78_equation_provenance.md). Implementation: [`certified_continuous_model_separation.py`](../src/consciousness_bridge/certified_continuous_model_separation.py). Tests: [`test_certified_continuous_model_separation.py`](../tests/test_certified_continuous_model_separation.py).
 
 The physical-to-experiential bridge remains open.
+
+# P79 bounded target-view dependence robustness
+
+P79 weakens exact conditional independence of the P75 target views by introducing an explicit, independently justified local-dependence allowance.
+
+- **Product projection:**
+  \[
+  \Pi_s(x)=\prod_{j=1}^4R_{s,j}(x_j).
+  \]
+  **Status:** standard product construction from fixed marginals.
+
+- **Conditional dependence defect:**
+  \[
+  \delta_s^{(p)}=\|R_s-\Pi_s\|_p.
+  \]
+  **Status:** standard norm discrepancy.
+
+- **Observed-law robustness envelope:**
+  \[
+  \rho_p=(1-\pi)\delta_-^{(p)}+\pi\delta_+^{(p)},
+  \qquad
+  d_p(P,\mathcal M_{4,2})\le\rho_p.
+  \]
+  **Status:** standard triangle inequality and mixture convexity assembled for the P75 target-view model.
+
+- **Robust rejection gate:**
+  \[
+  L_p>\varepsilon_p+\bar\rho_p
+  \Longrightarrow
+  \text{reject the bounded-dependence extension}.
+  \]
+  **Status:** standard distance-to-set transport combined with the repository's P77/P78 certification chain and an independently justified P79 dependence allowance.
+
+The allowance must not be chosen post hoc from the same rejection discrepancy. Non-rejection remains inconclusive.
+
+Proof: [P79](proposition_79_bounded_target_view_dependence.md). Dedicated provenance: [P79 equation and provenance record](p79_equation_provenance.md). Implementation: [`bounded_target_view_dependence.py`](../src/consciousness_bridge/bounded_target_view_dependence.py). Tests: [`test_bounded_target_view_dependence.py`](../tests/test_bounded_target_view_dependence.py).
+
+The physical-to-experiential bridge remains open.
