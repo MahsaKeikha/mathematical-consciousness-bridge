@@ -1,0 +1,31 @@
+name: Patch P78 research-map heading
+
+on:
+  push:
+    branches:
+      - p80-simplex-coupled-box-certificate
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: p80-simplex-coupled-box-certificate
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Patch P78 research-map heading
+        run: python scripts/patch_p78_research_map_heading.py
+      - name: Commit permanent heading repair
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Restore P78 public title while preserving reader question"
+          git push origin HEAD:p80-simplex-coupled-box-certificate
