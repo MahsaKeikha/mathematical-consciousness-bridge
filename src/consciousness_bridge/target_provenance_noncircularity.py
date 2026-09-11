@@ -15,9 +15,10 @@ conditioning on the training artifact, ``E_hat = h_D(T)`` still factors through
 ``T`` exactly. Train/test separation can protect statistical generalization, but
 it does not by itself supply independent target provenance.
 
-This module provides finite reference constructions for the theorem. It does
-not infer conceptual independence from observed data, because target provenance
-is a design declaration rather than a statistic of the observed joint law.
+This module does not infer conceptual independence from observed data. Target
+provenance is a design declaration rather than a statistic of the observed
+joint law. The utilities below provide finite reference constructions for the
+theorem.
 """
 
 from __future__ import annotations
