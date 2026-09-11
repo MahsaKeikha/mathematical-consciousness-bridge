@@ -1,0 +1,41 @@
+name: figure-documentation-regeneration-p79-p80
+
+on:
+  push:
+    branches:
+      - visual-polish-p79-p80
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate-and-validate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -e ".[dev]"
+      - name: Regenerate figure metadata and catalog
+        run: python scripts/enrich_figure_documentation.py
+      - name: Validate regenerated record
+        run: |
+          pytest -q
+          ruff check .
+      - name: Commit regenerated record and remove one-shot workflow
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm .github/workflows/figure-doc-regenerate-p79-p80.yml
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Figure documentation is already current."
+          else
+            git commit -m "Regenerate audited P79-P80 figure documentation"
+            git push origin HEAD:${{ github.ref_name }}
+          fi
