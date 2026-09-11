@@ -39,6 +39,7 @@ def _plain(text: str) -> str:
     text = text.replace("**", "").replace("__", "").replace("`", "")
     text = text.replace("$", "")
     text = html.unescape(text)
+    text = text.replace("\u2013", "-").replace("\u2014", "-")
     return re.sub(r"\s+", " ", text).strip()
 
 
@@ -347,6 +348,11 @@ def _update_quantitative_atlas() -> None:
     for old in ("**Fact / interpretation:**", "**Fact:**", "**Interpretation:**"):
         text = text.replace(old, "**What the figure shows:**")
 
+    text = text.replace(
+        "**Object:** a local multiscale variation statistic on a deterministic test signal.  \n**Boundary:** this is a stress-test signal, not a validated consciousness measure.  \n**Status:** synthetic test signal.",
+        "**Object:** a local multiscale variation statistic on a deterministic test signal.  \n**What the figure shows:** the local complexity trace rises and falls where the deterministic test signal changes its multiscale variation, providing a controlled stress test for the statistic rather than a biological measurement.  \n**Boundary:** this is a stress-test signal, not a validated consciousness measure.  \n**Status:** synthetic test signal.",
+    )
+
     marker = "## Scientific-status rule\n\n"
     addition = (
         "Each figure entry is intentionally self-explanatory: the generating equation or definition is stated first, "
@@ -401,6 +407,11 @@ def _update_visual_atlas() -> None:
         if hero not in text:
             raise RuntimeError("visual atlas hero marker not found")
         text = text.replace(hero, hero + reading_key, 1)
+
+    text = text.replace(
+        '<h3>Theorem roadmap</h3><p>Dependency-aware visual summary of the proposition program.</p>',
+        '<h3>Theorem roadmap</h3><p>Read the roadmap from prerequisite blocks toward later certificates: each connector marks a declared dependency, while separate branches show results that solve different subproblems before rejoining the bridge-sufficiency lineage. Proposition order records development history, not a claim that later numbers automatically strengthen every earlier scientific conclusion.</p>',
+    )
 
     replacements = {
         '<h3>Gaussian geometry</h3></article>': '<h3>Gaussian geometry</h3><p>Read the contour orientation and elongation as the visible effect of covariance: zero off-diagonal covariance keeps principal axes aligned, while correlation rotates the equal-density ellipses. This is an equation-driven probability example, not empirical consciousness data.</p></article>',
