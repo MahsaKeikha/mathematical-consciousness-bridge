@@ -206,7 +206,7 @@ The main page is organized as a scientific argument rather than a chronological 
 | 6. Adaptive experiment design and scheduling | **P45-P60** | How should evidence gathering, stopping, service allocation, switching, and calibration be organized? | Proved / implemented / tested | [Equation and citation map](docs/equation_and_citation_map.md) |
 | 7. Calibration and integer optimization | **P61-P70** | How should downstream finite calibration resources be allocated and certified? | Proved / implemented / tested | [Calibration and Optimization Frontier](docs/calibration_optimization_frontier_p61_p70.md) |
 
-The dependency-oriented theorem map covers **P1 through P80 with explicit dependency branches**.
+The displayed dependency roadmap covers **P1 through P31**; the theorem index extends the research through **P80** with later branches documented separately.
 
 ![Theorem roadmap](docs/figures/theorem_roadmap.svg)
 
