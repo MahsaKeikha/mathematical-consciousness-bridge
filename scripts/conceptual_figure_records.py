@@ -71,6 +71,17 @@ RECORDS: dict[str, dict[str, str]] = {
             "Physics-synthesis figure based on standard thermodynamics/information theory plus repository operational structure. It is not evidence that thermodynamic information equals consciousness."
         ),
     },
+    "docs/figures/p75_target_model_adequacy_overidentification.svg": {
+        "title": "P75 target-model adequacy and four-view overidentification",
+        "description": (
+            "What this figure shows: P75 separates parameter identifiability from model adequacy. Three binary views provide seven observable degrees of freedom for seven latent-model parameters and are therefore generically just-identified. A fourth binary view provides fifteen observable degrees of freedom for nine parameters, creating six overidentifying degrees of freedom and independent observable restrictions. "
+            "How to read it: compare the two upper panels first, then follow the attached arrows into the lower adequacy panel. The three lower cards list covariance-tetrad, cross-triple, and fourth-moment obligations; the bottom audit band states the full-law reconstruction check. "
+            "Main takeaway: the fourth view makes the declared target model falsifiable beyond mere parameter fitting."
+        ),
+        "status": (
+            "Theorem-summary figure for the declared P75 latent model. Passing means compatibility with that model, not proof of truth and not identification of the latent state with consciousness."
+        ),
+    },
     "docs/figures/p79_certified_sampling_radius.svg": {
         "title": "P79 certified rational sampling-radius envelope",
         "description": (
