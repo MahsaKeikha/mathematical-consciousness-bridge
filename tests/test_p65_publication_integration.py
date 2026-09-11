@@ -9,7 +9,7 @@ def _read(path: str) -> str:
 
 def test_p65_remains_integrated_in_public_record():
     required = {
-        "README.md": [
+        "docs/calibration_optimization_frontier_p61_p70.md": [
             "Proposition 65",
             "p65_lower_bounded_heterogeneous_calibration.svg",
             "lower-bounded heterogeneous calibration",

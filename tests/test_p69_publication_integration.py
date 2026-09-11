@@ -9,7 +9,7 @@ def _read(path: str) -> str:
 
 def test_p69_is_preserved_in_public_record():
     required = {
-        "README.md": ["Proposition 69", "p69_dual_optimal_multiplier.svg"],
+        "docs/calibration_optimization_frontier_p61_p70.md": ["Proposition 69", "p69_dual_optimal_multiplier.svg"],
         "docs/theorem_roadmap.md": ["P69", "proposition_69_dual_optimal_multiplier.md"],
         "docs/research_navigation.md": ["proposition_69_dual_optimal_multiplier.md"],
         "docs/equation_and_citation_map.md": ["P69 certified dual-optimal multiplier search", "Q_{\\rm low}\\le q^*\\le Q_{\\rm up}"],

@@ -9,7 +9,7 @@ def _read(path: str) -> str:
 
 def test_p66_is_preserved_in_public_record():
     required = {
-        "README.md": ["Proposition 66", "p66_residual_exact_calibration_augmentation.svg"],
+        "docs/calibration_optimization_frontier_p61_p70.md": ["Proposition 66", "p66_residual_exact_calibration_augmentation.svg"],
         "docs/theorem_roadmap.md": ["P66", "proposition_66_residual_exact_calibration_augmentation.md"],
         "docs/research_navigation.md": ["proposition_66_residual_exact_calibration_augmentation.md"],
         "docs/equation_and_citation_map.md": ["P66 residual-exact calibration augmentation", "r_{66}"],

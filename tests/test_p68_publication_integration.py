@@ -9,7 +9,7 @@ def _read(path: str) -> str:
 
 def test_p68_is_preserved_in_public_record():
     required = {
-        "README.md": ["Proposition 68", "p68_lagrangian_optimality_gap.svg"],
+        "docs/calibration_optimization_frontier_p61_p70.md": ["Proposition 68", "p68_lagrangian_optimality_gap.svg"],
         "docs/theorem_roadmap.md": ["P68", "proposition_68_lagrangian_optimality_gap.md"],
         "docs/research_navigation.md": ["proposition_68_lagrangian_optimality_gap.md"],
         "docs/equation_and_citation_map.md": ["P68 Lagrangian optimality gap certificate", "q(\\lambda)"],
