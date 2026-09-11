@@ -37,6 +37,7 @@ def test_readme_follows_reader_first_scientific_order():
     p76 = text.index("## 1.10 P76: finite data must separate model failure from sampling noise")
     p77 = text.index("## 1.11 P77: full-law confidence regions can reject the complete declared model set")
     p78 = text.index("## 1.12 P78: certified continuous separation for the P75 model family")
+    p79 = text.index("## 1.13 P79: bounded target-view dependence does not automatically erase rejection")
     operational = text.index("# 2. From physical dynamics to operational structure")
     scale = text.index("# 3. Time, composition, and scale cannot be ignored")
     finite = text.index("# 4. Turning a population theorem into a finite experiment")
@@ -56,7 +57,7 @@ def test_readme_follows_reader_first_scientific_order():
     navigation = text.index("# Navigation")
 
     assert plain < abstract < status < reading < glance < formulation
-    assert formulation < p71 < p72 < p73 < p74 < p75 < p76 < p77 < p78 < operational < scale < finite < fundamental
+    assert formulation < p71 < p72 < p73 < p74 < p75 < p76 < p77 < p78 < p79 < operational < scale < finite < fundamental
     assert fundamental < quantum < adaptive < calibration
     assert calibration < established < open_section < falsification < evidence
     assert evidence < visuals < validation < reproducibility < detail < current < navigation
@@ -93,6 +94,10 @@ def test_plain_language_section_explains_full_program_without_equations():
         "exact rational arithmetic",
         "separately valid upper bound on the P77 sampling radius",
         "does not turn failure to reject into model validation",
+        "P79 addresses another assumption behind that target-measurement model",
+        "declare or independently calibrate a quantitative dependence allowance",
+        "ordinary sampling uncertainty and the allowed residual dependence",
+        "must not be chosen from the same discrepancy merely to avoid rejection",
         "does the physical description actually contain enough information",
         "would not automatically prove that consciousness lies outside physics",
         "finite data",
@@ -160,6 +165,7 @@ def test_detailed_record_preserves_full_chronology_off_main_page():
     assert "**P76** converts the tracked P75 population adequacy restrictions" in detail
     assert "**P77** closes the finite-data full-law gap left explicit by P76" in detail
     assert "**P78** supplies the continuous-family optimization certificate required by P77" in detail
+    assert "**P79** weakens the exact conditional-independence assumption" in detail
     assert f"Open the complete P1 to P{frontier} chronology" not in readme
 
 
