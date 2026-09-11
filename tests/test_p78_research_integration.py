@@ -120,12 +120,14 @@ def test_p78_certification_boundary_is_preserved() -> None:
         "A candidate model gives the **upper** side of the bracket",
         "a mathematically valid upper bound on the P77 simultaneous sampling radius",
         "Converting an ordinary floating approximation",
-        "A small lower bound is inconclusive",
+        "a failure to reject validates the P75 model",
         "The physical-to-experiential bridge remains open.",
     )
     for token in proof_required:
         assert token in proof, token
 
+    assert "P78 establishes a computational certification theorem" in proof
+    assert "It does **not** establish that:" in proof
     assert "any explicit candidate model supplies an upper bound" in readme
     assert "separately valid upper bound on the P77 sampling radius" in readme
 
