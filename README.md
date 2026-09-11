@@ -769,7 +769,7 @@ The central bridge remains open. Before a strong bridge claim can be made, the p
 
 - define experiential variables independently enough to satisfy P71;
 - justify how those latent targets are observed and whether the P72 channel premise is defensible;
-- make the P77 full-law criterion computationally decisive for the continuous P75 latent family using certified global lower bounds or equivalent feasibility certificates;
+- extend P78's certified continuous-family computation with tighter pruning, sharper relaxations, and power-aware stopping criteria;
 - develop diagnostics or alternative designs for correlated target-view errors and model misspecification;
 - provide an independent semantic anchor when latent-label orientation matters scientifically;
 - determine how target channels change across people, time, physical strata, interventions, and contexts;
@@ -850,7 +850,7 @@ The main page shows only the figures needed to recover the scientific argument. 
 
 ![Equation evidence map](docs/figures/equation_evidence_map.svg)
 
-**Figure 26. Evidence provenance.** A mathematical identity, a theorem under assumptions, a numerical result, an empirical observation, and a target-measurement premise are different kinds of evidence. The project keeps those routes explicit.
+**Figure 27. Evidence provenance.** A mathematical identity, a theorem under assumptions, a numerical result, an empirical observation, and a target-measurement premise are different kinds of evidence. The project keeps those routes explicit.
 
 ---
 
@@ -913,7 +913,7 @@ This compact index preserves direct traceability for the quantum and experiment-
 
 The proposition-by-proposition development history is intentionally kept off the main scientific reading path.
 
-**[Read the complete P1 to P76 detailed proposition record](docs/detailed_proposition_record.md).**
+**[Read the complete P1 to P78 detailed proposition record](docs/detailed_proposition_record.md).**
 
 ---
 
@@ -921,7 +921,7 @@ The proposition-by-proposition development history is intentionally kept off the
 
 | Item | Current state |
 | --- | --- |
-| Public theorem frontier | **P76** |
+| Public theorem frontier | **P78** |
 | Documented version | **v0.78.0** |
 | Proposition-level results | **78** |
 | Equation-driven quantitative figures | **66** |
