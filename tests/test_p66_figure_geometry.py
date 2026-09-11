@@ -3,6 +3,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 FIGURE = ROOT / "docs/figures/p66_residual_exact_calibration_augmentation.svg"
+CATALOG = ROOT / "docs/figure_catalog.md"
 NS = {"svg": "http://www.w3.org/2000/svg"}
 
 
@@ -111,3 +112,10 @@ def test_p66_figure_is_self_explanatory_and_preserves_boundaries():
         "not a consciousness, bridge, or quantum-ontology theorem",
     ]:
         assert token in text
+
+
+def test_p66_catalog_explains_restricted_exactness_without_guessing():
+    text = CATALOG.read_text(encoding="utf-8")
+    assert "P66 residual-exact augmentation after P65 flooring" in text
+    assert "P66 is globally exact only inside the class k greater than or equal to the P65 floor f" in text
+    assert "it does not replace P63 as the unrestricted exact integer solver" in text
