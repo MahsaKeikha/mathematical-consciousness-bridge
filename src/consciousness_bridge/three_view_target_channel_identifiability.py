@@ -101,13 +101,13 @@ def identify_three_view_stabilities(
     )
     if any(value == 0.0 for value in moments):
         raise ValueError("P73 exact identification requires nonzero pairwise moments")
-    if moment_12 * moment_13 * moment_23 <= 0.0:
+    if moments[0] * moments[1] * moments[2] <= 0.0:
         raise ValueError("pairwise moments are incompatible with the P73 three-view model")
 
     squared = (
-        moment_12 * moment_13 / moment_23,
-        moment_12 * moment_23 / moment_13,
-        moment_13 * moment_23 / moment_12,
+        moments[0] * moments[1] / moments[2],
+        moments[0] * moments[2] / moments[1],
+        moments[1] * moments[2] / moments[0],
     )
     tolerance = 1e-12
     if any(value <= 0.0 or value > 1.0 + tolerance for value in squared):
@@ -115,9 +115,9 @@ def identify_three_view_stabilities(
 
     stability = tuple(min(1.0, sqrt(value)) for value in squared)
     return ThreeViewStabilityIdentification(
-        moment_12=moment_12,
-        moment_13=moment_13,
-        moment_23=moment_23,
+        moment_12=moments[0],
+        moment_13=moments[1],
+        moment_23=moments[2],
         stability_1=stability[0],
         stability_2=stability[1],
         stability_3=stability[2],
@@ -264,13 +264,15 @@ def _ratio_sqrt_interval(
         lower = 0.0
     else:
         lower = sqrt(max(0.0, low_a * low_b / high_d))
+    lower = min(1.0, lower)
 
     if low_d <= 0.0:
         upper = 1.0
     else:
         upper = min(1.0, sqrt(max(0.0, high_a * high_b / low_d)))
+    upper = max(lower, upper)
 
-    return StabilityInterval(lower=min(1.0, lower), upper=max(lower, upper))
+    return StabilityInterval(lower=lower, upper=upper)
 
 
 def _moment(value: float, name: str) -> float:
