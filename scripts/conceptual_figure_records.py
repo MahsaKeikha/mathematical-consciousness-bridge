@@ -60,6 +60,17 @@ RECORDS: dict[str, dict[str, str]] = {
             "Schematic state-space research figure. Region placement and geometry are illustrative, not fitted empirical boundaries and not a universal consciousness scale."
         ),
     },
+    "docs/figures/theorem_roadmap.svg": {
+        "title": "Theorem roadmap: P1 through P31 dependency architecture",
+        "description": (
+            "What this figure shows: the dependency architecture of Propositions P1 through P31. Proposition numbers preserve development order, but the arrows show mathematical dependency rather than simple numerical succession. "
+            "How to read it: follow the solid arrows for the main dependency chain. After P24, do not infer a P24-to-P25 dependency: P25 and P26 branch independently from the earlier P11 physical candidate together with the P17-P18 scale-control results, shown by the dashed right-side scale branch. P27 extends the P26 node/partition branch; P28 requires both the P25 directed-influence result and the P27 node quotient; P29 uses the P27 node quotient as a sibling response-geometry branch rather than depending on P28. P30 then assembles the distinct P27 partition, P28 influence, and P29 response-geometry components, and P31 follows from the P30 shared-scale declaration. "
+            "Main takeaway: visual adjacency is not theorem dependency; the explicit arrows and branch rails are the dependency statement."
+        ),
+        "status": (
+            "Theorem-dependency map for declared physical, statistical, and operational results. It does not identify any physical descriptor with consciousness, and the physical-to-experiential bridge remains open."
+        ),
+    },
     "docs/figures/thermodynamics_information_processing.svg": {
         "title": "Thermodynamics of information processing and consciousness research",
         "description": (
