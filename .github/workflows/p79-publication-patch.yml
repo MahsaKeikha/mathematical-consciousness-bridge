@@ -20,6 +20,41 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Align temporary helper with current P78 abstract
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("scripts/p79_publication_patch.py")
+          text = path.read_text(encoding="utf-8")
+          old = (
+              "P78 closes the continuous-family computational gap left by P77 for the P75 model. "
+              "Its nine-parameter observed-law map is multi-affine, so every parameter box yields exact "
+              "coordinatewise cell intervals and a rigorous L-infinity lower bound on distance from the "
+              "empirical law to all model laws generated inside that box. The minimum lower bound over a "
+              "complete box partition is therefore a valid global lower bound on distance to the continuous "
+              "model family. Explicit parameter points provide upper bounds, an explicit mesh-width bound "
+              "controls the optimization gap, and the implementation uses exact rational arithmetic for "
+              "empirical count laws and dyadic branch points. Full-law rejection still requires the certified "
+              "P78 lower bound to exceed a separately valid upper bound on the P77 sampling radius.\\n\\n"
+          )
+          new = (
+              "P78 supplies a certified continuous-family lower bound for the P75 four-view binary latent model. "
+              "Its sixteen observed cell probabilities are multi-affine functions of nine parameters. On every "
+              "axis-aligned parameter box, exact coordinatewise cell ranges give a rigorous lower bound "
+              "$L_\\infty(B;\\widehat P)$ on the distance from the empirical law to every model law generated in "
+              "that box. For any finite box partition $\\mathcal B$ of the complete parameter cube, "
+              "$L_{\\mathcal B}=\\min_{B\\in\\mathcal B}L_\\infty(B;\\widehat P)$ is therefore a valid global lower "
+              "bound on $d_\\infty(\\widehat P,\\mathcal M_{4,2})$. An explicit parameter point gives an upper bound, "
+              "and a parameter-space Lipschitz argument gives the mesh guarantee "
+              "$0\\le d_\\infty-L_{\\mathcal B}\\le\\eta(\\mathcal B)$. The implementation uses exact rational "
+              "arithmetic for empirical counts and dyadic box refinement. P78 is a computational certification "
+              "theorem under the declared P75 model, not an experiential ontology.\\n\\n"
+          )
+          if old not in text:
+              raise SystemExit("expected temporary P78 abstract anchor not found")
+          path.write_text(text.replace(old, new, 1), encoding="utf-8")
+          PY
       - name: Apply guarded P79 publication patch
         run: python scripts/p79_publication_patch.py
       - name: Install test dependencies
