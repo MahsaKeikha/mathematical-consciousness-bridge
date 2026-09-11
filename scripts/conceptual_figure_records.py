@@ -5,6 +5,17 @@ from pathlib import Path
 from typing import Any
 
 RECORDS: dict[str, dict[str, str]] = {
+    "docs/figures/p59_optimal_transition_calibration.svg": {
+        "title": "P59 exact continuous transition-calibration allocation",
+        "description": (
+            "What this figure shows: P59 solves one declared continuous calibration resource-allocation problem exactly. P58 supplies an inverse-square-root uncertainty law for each calibrated transition, a predeclared positive sensitivity weight converts that uncertainty into the chosen separable route surrogate, and a fixed continuous budget must be divided across the edges. Strict convexity then gives a unique two-thirds-power allocation, the exact minimum surrogate uncertainty, and an exact target-budget threshold. "
+            "How to read it: read the three upper cards as the declared ingredients: P58 uncertainty scale, scientific sensitivity weight, and continuous total budget. Their attached arrows feed the central optimization theorem. From that theorem, follow the three lower branches to the two-thirds allocation law, the necessary-and-sufficient target-budget condition, and the continuous-to-integer handoff to P60 and P61. "
+            "Main takeaway: P59 is an exact continuous optimum for the stated separable surrogate; the weights must be justified independently and fractional allocations require a separate integer implementation."
+        ),
+        "status": (
+            "Continuous convex resource-allocation theorem for experimental calibration. It does not establish that the declared weights are uniquely scientifically correct, solve the full minimax robust-routing design problem, identify a physical quantity with consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness."
+        ),
+    },
     "docs/figures/p60_integer_transition_calibration.svg": {
         "title": "P60 hard-budget integer rounding with certified overhead",
         "description": (
