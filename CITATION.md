@@ -6,9 +6,9 @@ If this research program, one of its propositions, figures, algorithms, or imple
 
 ## Preferred scholarly citation
 
-> Keikha, M. (2026). *Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem* (Version 0.72.0). GitHub research repository. https://github.com/MahsaKeikha/mathematical-consciousness-bridge
+> Keikha, M. (2026). *Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem* (Version 0.73.0). GitHub research repository. https://github.com/MahsaKeikha/mathematical-consciousness-bridge
 
-This is the preferred citation for the research program at the current documented frontier, P72.
+This is the preferred citation for the research program at the current documented frontier, P73.
 
 ## BibTeX
 
@@ -17,10 +17,10 @@ This is the preferred citation for the research program at the current documente
   author       = {Keikha, Mahsa},
   title        = {Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem},
   year         = {2026},
-  version      = {0.72.0},
+  version      = {0.73.0},
   howpublished = {GitHub research repository},
   url          = {https://github.com/MahsaKeikha/mathematical-consciousness-bridge},
-  note         = {Ongoing research program. Current documented theorem frontier: P72.}
+  note         = {Ongoing research program. Current documented theorem frontier: P73.}
 }
 ```
 
@@ -30,11 +30,11 @@ A machine-readable BibTeX record is also available in [`CITATION.bib`](CITATION.
 
 For theorem-level attribution, cite the research program and identify the proposition explicitly. A recommended form is:
 
-> Keikha, M. (2026). Proposition PXX, "Proposition title." In *Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem* (Version 0.72.0). GitHub research repository. Direct proposition URL.
+> Keikha, M. (2026). Proposition PXX, "Proposition title." In *Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem* (Version 0.73.0). GitHub research repository. Direct proposition URL.
 
 Replace `PXX`, the title, and the URL with the proposition actually used. The [Detailed proposition record](docs/detailed_proposition_record.md) and [Theorem roadmap](docs/theorem_roadmap.md) provide the proposition titles, dependency structure, and direct proof links.
 
-For target-side bridge methodology, cite [Proposition 71](docs/proposition_71_target_provenance_noncircularity.md) when relying on the non-circularity result for descriptor-derived targets. Cite [Proposition 72](docs/proposition_72_target_measurement_channel_robustness.md) when relying on the noisy-target measurement theorem, conditional residual attenuation, target-channel witness stability, or its finite-sample target-separation certificate.
+For target-side bridge methodology, cite [Proposition 71](docs/proposition_71_target_provenance_noncircularity.md) when relying on the non-circularity result for descriptor-derived targets. Cite [Proposition 72](docs/proposition_72_target_measurement_channel_robustness.md) when relying on the noisy-target measurement theorem, conditional residual attenuation, target-channel witness stability, or its finite-sample target-separation certificate. Cite [Proposition 73](docs/proposition_73_three_view_target_channel_identifiability.md) when relying on the two-view non-identifiability boundary, three-view binary channel-stability identification, global orientation ambiguity, or finite repeated-view stability certificate.
 
 ## Citing a figure, algorithm, or implementation
 
@@ -42,7 +42,7 @@ When a figure, numerical result, or implementation is used directly, include the
 
 For example:
 
-> Keikha, M. (2026). Figure or implementation associated with Proposition PXX. *Mathematical Consciousness Bridge* (Version 0.72.0). GitHub research repository. Direct artifact URL.
+> Keikha, M. (2026). Figure or implementation associated with Proposition PXX. *Mathematical Consciousness Bridge* (Version 0.73.0). GitHub research repository. Direct artifact URL.
 
 ## Version-specific reproducibility
 
@@ -53,7 +53,7 @@ This repository is an evolving research program. For reproducible scholarly use:
 3. Cite the individual proposition or artifact when your argument depends on a specific theorem, figure, algorithm, or test.
 4. Do not attribute later propositions or later numerical results to an earlier version of the repository.
 
-The current citation metadata identify Version **0.72.0** and theorem frontier **P72**. Future research versions should update the version number, theorem frontier, citation metadata, and archival record together.
+The current citation metadata identify Version **0.73.0** and theorem frontier **P73**. Future research versions should update the version number, theorem frontier, citation metadata, and archival record together.
 
 ## DOI and archival status
 
@@ -72,7 +72,9 @@ Citation of this work should preserve its scientific status. The repository esta
 
 P71 separates successful factorization from independent target provenance. A target constructed from the tested descriptor can satisfy a bridge condition by construction.
 
-P72 then separates latent target structure from target observation. Under the declared nondifferential measurement condition, target measurement can attenuate or erase a genuine bridge witness but cannot create a positive population residual from a latent target that is already screened off by the physical descriptor. This remains a conditional measurement theorem. It does not identify the latent target with consciousness, prove a target channel from data, or establish physical incompleteness.
+P72 then separates latent target structure from target observation. Under the declared nondifferential measurement condition, target measurement can attenuate or erase a genuine bridge witness but cannot create a positive population residual from a latent target that is already screened off by the physical descriptor.
+
+P73 addresses a narrower assumption left open by P72. Under a declared three-view binary symmetric measurement model with conditionally independent errors, two heterogeneous views do not identify individual stability magnitudes, while three nondegenerate views do. The signed reliabilities remain ambiguous under a global latent-label orientation, but the P72 stability magnitudes are identifiable. P73 does not establish that real reports, raters, behavioral measures, or neural measures satisfy this model.
 
 When citing a theorem, readers should consult the proposition document for its assumptions and scope rather than citing the theorem statement without its declared conditions.
 
@@ -80,8 +82,9 @@ When citing a theorem, readers should consult the proposition document for its a
 
 - [`CITATION.cff`](CITATION.cff): machine-readable Citation File Format metadata used by GitHub citation tools.
 - [`CITATION.bib`](CITATION.bib): ready-to-import BibTeX record.
-- [Detailed proposition record](docs/detailed_proposition_record.md): P1 through P72 chronological theorem record.
+- [Detailed proposition record](docs/detailed_proposition_record.md): P1 through P73 chronological theorem record.
 - [Theorem roadmap](docs/theorem_roadmap.md): dependency-oriented theorem map.
 - [P72 equation and provenance record](docs/p72_equation_provenance.md): equation-level classification for the noisy-target theorem.
+- [P73 equation and provenance record](docs/p73_equation_provenance.md): equation-level classification for repeated-view target-channel identifiability.
 - [Equation and citation map](docs/equation_and_citation_map.md): provenance of equations, assumptions, and external sources.
 - [Citation and reference policy](docs/citation_and_reference_policy.md): repository rules for attribution and scientific sourcing.
