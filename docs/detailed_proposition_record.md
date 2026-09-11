@@ -8,7 +8,7 @@ The scientific status rule is strict throughout: a theorem is only a theorem und
 
 ---
 
-## Complete P1 to P72 chronology
+## Complete P1 to P73 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
@@ -65,6 +65,30 @@ For a binary symmetric target channel, the exact attenuation factor is \(|1-2\et
 
 Direct P72 proof: [target-measurement channel robustness](proposition_72_target_measurement_channel_robustness.md). Equation classification: [P72 equation and provenance record](p72_equation_provenance.md).
 
+**P73** closes the population identifiability step for one explicit target-measurement model. Inside a fixed physical stratum, let a binary latent target \(S\in\{-1,+1\}\) generate three binary target views \(X_1,X_2,X_3\) that are conditionally independent given \(S\), with
+
+\[
+\mathbb E[X_j\mid S]=a_j+b_jS.
+\]
+
+Writing \(m=\mathbb E[S]\), P73 derives the observable identities
+
+\[
+C_{ij}=b_ib_j(1-m^2),
+\qquad
+M_{123}=-2m(1-m^2)b_1b_2b_3.
+\]
+
+When all three pair covariances are nonzero, these moments recover the latent prevalence and all three binary view channels up to the unavoidable global latent-label swap. The P72 single-view stability coefficients are
+
+\[
+\gamma_j=|b_j|,
+\]
+
+so they are identifiable despite that label ambiguity. P73 also proves that the joint three-view channel has stability at least as large as the strongest single view and gives a constructive two-view non-identifiability result: with balanced latent prevalence and zero intercepts, the full two-view law depends only on \(b_1b_2\), so distinct individual reliabilities can produce the same observed distribution.
+
+Direct P73 proof: [three-view target-channel identifiability](proposition_73_target_channel_identifiability.md). Equation classification: [P73 equation and provenance record](p73_equation_provenance.md). Implementation: [`target_channel_identifiability.py`](../src/consciousness_bridge/target_channel_identifiability.py).
+
 ---
 
 ## Scientific interpretation of the chronology
@@ -76,9 +100,11 @@ The proposition numbers preserve development order, not one linear chain. The sc
 - P38-P44 build the quantum operational interface.
 - P45-P60 build adaptive evidence acquisition and execution machinery.
 - P61-P70 build downstream calibration and optimization.
-- P71-P72 return to the target side of the P19 bridge and formalize non-circular target provenance and noisy target measurement.
+- P71-P73 return to the target side of the P19 bridge and formalize non-circular target provenance, noisy target measurement, and one explicit population channel-identifiability theorem.
 
-The next target-side problem is not another optimization theorem. It is to identify conditions under which an unknown target-measurement channel, or at least a lower bound on its witness-stability coefficient, can be recovered from repeated reports, multiple raters, multiple target views, calibration information, or explicit structural assumptions.
+P73 does not make an experiential ontology claim. The latent binary state is a declared statistical target. Conditional independence of the three views is an assumption to be tested or justified in an application, and the global latent-label orientation still requires an external semantic anchor if the labels are to be interpreted scientifically.
+
+The next target-side problem is finite-sample channel recovery: determine how empirical uncertainty in the three-view joint law propagates through the nonlinear P73 inversion to confidence sets or lower confidence bounds for the P72 stability coefficients.
 
 ---
 
