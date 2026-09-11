@@ -1,0 +1,38 @@
+name: one-shot-roadmap-intro
+
+on:
+  push:
+    branches:
+      - clarify-theorem-roadmap-caption
+
+permissions:
+  contents: write
+
+jobs:
+  fix-intro:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: clarify-theorem-roadmap-caption
+      - name: Align roadmap intro with displayed figure scope
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path("README.md")
+          text = path.read_text(encoding="utf-8")
+          old = "The dependency-oriented theorem map covers **P1 through P80 with explicit dependency branches**."
+          new = "The displayed dependency roadmap covers **P1 through P31**; the theorem index extends the research through **P80** with later branches documented separately."
+          if old not in text:
+              raise SystemExit("Expected roadmap intro not found")
+          path.write_text(text.replace(old, new, 1), encoding="utf-8")
+          PY
+      - name: Remove one-shot workflow
+        run: rm .github/workflows/one-shot-roadmap-intro.yml
+      - name: Commit consistency fix
+        run: |
+          git config user.name "Mahsa Keikha"
+          git config user.email "mahsa.keikha@gmail.com"
+          git add README.md .github/workflows/one-shot-roadmap-intro.yml
+          git commit -m "Align theorem roadmap intro with displayed scope"
+          git push origin HEAD:clarify-theorem-roadmap-caption
