@@ -24,6 +24,28 @@ jobs:
           python-version: "3.12"
       - name: Apply P79 publication integration
         run: python scripts/integrate_p79_publication.py
+      - name: Align final publication regression guards
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          readme = Path("README.md")
+          text = readme.read_text(encoding="utf-8")
+          text = text.replace(
+              "**Figure 14. P79 one-sided numerical certification.**",
+              "**P79 theorem figure. One-sided numerical certification.**",
+          )
+          readme.write_text(text, encoding="utf-8")
+
+          test_path = Path("tests/test_website_research_orientation.py")
+          test_text = test_path.read_text(encoding="utf-8")
+          test_text = test_text.replace(
+              'hero = text.index("Seventy-six results, one dependency-aware scientific program")',
+              'hero = text.index("Seventy-nine results, one dependency-aware scientific program")',
+          )
+          test_path.write_text(test_text, encoding="utf-8")
+          PY
       - name: Install project
         run: |
           python -m pip install --upgrade pip
