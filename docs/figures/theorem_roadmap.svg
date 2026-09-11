@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="3840" viewBox="0 0 1600 3840" role="img" aria-labelledby="title desc">
-  <title id="title">Theorem roadmap</title>
-  <desc id="desc">What this figure shows: Figure 3. Theorem dependency map. Proposition numbers preserve development order, while the dependency map shows scientific order. P71-P80 return to the P19 target-sufficiency lineage; P61-P70 remains a separate downstream optimization branch. How to read it: follow only the labeled arrows, axes, panels, set relations, or inequalities shown in the visual and interpret them using the adjacent research text. Main takeaway: the figure summarizes the stated mathematical or scientific dependency; visual proximity alone does not add a claim. Scientific status: Reader-facing research figure; formal status is controlled by the linked proof or source record.</desc>
+  <title id="title">Theorem roadmap: P1 through P31 dependency architecture</title>
+  <desc id="desc">What this figure shows: the dependency architecture of Propositions P1 through P31. Proposition numbers preserve development order, but the arrows show mathematical dependency rather than simple numerical succession. How to read it: follow the solid arrows for the main dependency chain. After P24, do not infer a P24-to-P25 dependency: P25 and P26 branch independently from the earlier P11 physical candidate together with the P17-P18 scale-control results, shown by the dashed right-side scale branch. P27 extends the P26 node/partition branch; P28 requires both the P25 directed-influence result and the P27 node quotient; P29 uses the P27 node quotient as a sibling response-geometry branch rather than depending on P28. P30 then assembles the distinct P27 partition, P28 influence, and P29 response-geometry components, and P31 follows from the P30 shared-scale declaration. Main takeaway: visual adjacency is not theorem dependency; the explicit arrows and branch rails are the dependency statement. Scientific status: Theorem-dependency map for declared physical, statistical, and operational results. It does not identify any physical descriptor with consciousness, and the physical-to-experiential bridge remains open.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
       <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
@@ -13,6 +13,8 @@
       .eq{font:600 15px Georgia,'Times New Roman',serif;fill:#0f172a}
       .label{font:700 10px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
       .arrow{stroke:#64748b;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+      .branch{stroke:#94a3b8;stroke-width:2.1;stroke-dasharray:8 7;fill:none;marker-end:url(#arrow)}
+      .branchLine{stroke:#94a3b8;stroke-width:2.1;stroke-dasharray:8 7;fill:none}
     </style>
   </defs>
 
@@ -127,6 +129,11 @@
   <text x="805" y="2011" class="eq">Pr(∀n: ‖P−P̂n‖TV ≤ τnany) ≥ 1−α</text>
   <text x="265" y="2041" class="body">P23 selection and regret remain valid at every finite stopping time.</text>
 
+  <!-- P25 and P26 are a separate physical-scale branch from P11 + P17/P18. -->
+  <path id="scale-branch-trunk" class="branchLine" d="M1505 500 H1545 V2415"/>
+  <path id="branch-scale-p25" class="branch" d="M1545 2195 H1375" data-source="p17-p18" data-target="p25"/>
+  <path id="branch-scale-p26" class="branch" d="M1545 2415 H1375" data-source="p17-p18" data-target="p26"/>
+
   <rect x="225" y="2100" width="1150" height="190" rx="20" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.8"/>
   <text x="265" y="2137" class="label">PHYSICAL SCALE BRANCH · P25</text>
   <text x="265" y="2175" class="head">P11 directed influence + P18 reconstruction control</text>
@@ -143,6 +150,8 @@
   <text x="790" y="2464" class="eq">κf &gt; θ + ε ⇒ κc &gt; θ</text>
   <text x="265" y="2494" class="body">Partition-lattice transport under node aggregation remains open.</text>
 
+  <path id="arrow-p26-p27" class="arrow" d="M800 2510 V2550" data-source="p26" data-target="p27"/>
+
   <rect x="225" y="2550" width="1150" height="190" rx="20" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.8"/>
   <text x="265" y="2587" class="label">NODE-AGGREGATION BRANCH · P27</text>
   <text x="265" y="2625" class="head">Exact partition descent through a surjective node quotient</text>
@@ -150,6 +159,15 @@
   <text x="265" y="2694" class="eq">Part(Vc) ≅ Partsat(Vf;a)</text>
   <text x="765" y="2694" class="eq">0 ≤ κf − κc ≤ ρ(P)+ρ(Pπf)</text>
   <text x="265" y="2724" class="body">Intervention and source aggregation remain separate theorem burdens.</text>
+
+  <!-- P27 supplies the node quotient to P28, P29, and directly to the P30 assembly. -->
+  <path id="node-quotient-trunk" class="branchLine" d="M225 2645 H165 V3355"/>
+  <path id="arrow-p27-p28" class="arrow" d="M800 2740 V2790" data-source="p27" data-target="p28"/>
+  <path id="branch-p27-p29" class="branch" d="M165 3125 H225" data-source="p27" data-target="p29"/>
+  <path id="branch-p27-p30" class="branch" d="M165 3355 H225" data-source="p27" data-target="p30"/>
+
+  <!-- P28 additionally requires the P25 source/influence semantics. -->
+  <path id="branch-p25-p28" class="branch" d="M1375 2195 H1460 V2885 H1375" data-source="p25" data-target="p28"/>
 
   <rect x="225" y="2790" width="1150" height="190" rx="20" fill="#ecfeff" stroke="#0891b2" stroke-width="1.8"/>
   <text x="265" y="2827" class="label">INTERVENTION AGGREGATION · P28</text>
@@ -167,6 +185,10 @@
   <text x="765" y="3174" class="eq">ρ*=0 ⇒ Gf=Gc</text>
   <text x="265" y="3204" class="body">P27, P28, and P29 now cover K, A, and G separately.</text>
 
+  <!-- P30 assembles the three independently certified changing-node components. -->
+  <path id="arrow-p29-p30" class="arrow" d="M800 3220 V3260" data-source="p29" data-target="p30"/>
+  <path id="branch-p28-p30" class="branch" d="M1375 2885 H1460 V3355 H1375" data-source="p28" data-target="p30"/>
+
   <rect x="225" y="3260" width="1150" height="190" rx="20" fill="#ecfdf5" stroke="#059669" stroke-width="1.8"/>
   <text x="265" y="3297" class="label">FULL P11 ASSEMBLY · P30</text>
   <text x="265" y="3335" class="head">One shared declaration controls G, A, and K</text>
@@ -174,6 +196,8 @@
   <text x="265" y="3404" class="eq">||DP11||∞ ≤ max{2ρG*,2ρA*,ρP*+ρΠ*}</text>
   <text x="820" y="3404" class="eq">zero distortion ≠ semantic compatibility</text>
   <text x="265" y="3434" class="body">The result is a physical-signature certificate, not a consciousness theorem.</text>
+
+  <path id="arrow-p30-p31" class="arrow" d="M800 3450 V3490" data-source="p30" data-target="p31"/>
 
   <rect x="225" y="3490" width="1150" height="190" rx="20" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.8"/>
   <text x="265" y="3527" class="label">INTERVENTION QUOTIENT · P31</text>
