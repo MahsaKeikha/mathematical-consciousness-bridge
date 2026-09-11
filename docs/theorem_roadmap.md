@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P72**. The proposition record runs from **P1 through P72 with explicit dependency branches**. P71 and P72 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P73**. The proposition record runs from **P1 through P73 with explicit dependency branches**. P71-P73 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -19,7 +19,9 @@ The current documented theorem frontier is **P72**. The proposition record runs 
 &\Downarrow\\
 &\text{P71: target provenance must not impose the bridge}\\
 &\Downarrow\\
-&\text{P72: noisy target observation must preserve the claimed target distinction}
+&\text{P72: noisy target observation must preserve the claimed target distinction}\\
+&\Downarrow\\
+&\text{P73: target-channel stability can be identified under a declared three-view model}
 \end{aligned}
 }
 \]
@@ -37,7 +39,7 @@ Separate but connected branches refine the physical representation and experimen
 }
 \]
 
-The proposition number records development order. It does not imply that P72 depends on P70. P72 depends scientifically on P17, P19, P20, and P71.
+The proposition number records development order. It does not imply that P73 depends on P70. P73 depends scientifically on P17, P19, P20, P71, and P72.
 
 ## 2. Target-side bridge lineage
 
@@ -122,6 +124,58 @@ For a binary symmetric target channel, \(\gamma=|1-2\eta|\). P72 also provides a
 
 Direct proof: [P72](proposition_72_target_measurement_channel_robustness.md). Provenance: [P72 equation record](p72_equation_provenance.md). Implementation: [`target_measurement_channel_robustness.py`](../src/consciousness_bridge/target_measurement_channel_robustness.py). Tests: [`test_target_measurement_channel_robustness.py`](../tests/test_target_measurement_channel_robustness.py).
 
+### P73: three-view target-channel identifiability
+
+Fix one physical stratum \(T=t\), let \(S\in\{-1,+1\}\) be a declared binary latent target, and let \(X_1,X_2,X_3\) be binary target views that are conditionally independent given \(S\). Write
+
+\[
+\mathbb E[X_j\mid S]=a_j+b_jS.
+\]
+
+With interior latent prevalence and nonzero loadings, P73 derives
+
+\[
+\boxed{C_{ij}=b_ib_j(1-m^2)}
+\]
+
+and
+
+\[
+\boxed{M_{123}=-2m(1-m^2)b_1b_2b_3.}
+\]
+
+The observable ratio
+
+\[
+q=\frac{M_{123}^2}{C_{12}C_{13}C_{23}}
+\]
+
+then gives
+
+\[
+\boxed{m^2=\frac{q}{q+4},\qquad 1-m^2=\frac4{q+4}.}
+\]
+
+Choosing one algebraic loading orientation recovers the three view channels and latent prevalence. The remaining global latent-label swap is an exact model symmetry and cannot be removed without an independent semantic anchor.
+
+For each binary view, the P72 stability coefficient becomes
+
+\[
+\boxed{\gamma_j=|b_j|,}
+\]
+
+which is invariant under the label swap and is therefore identifiable from the observed three-view law in the declared nondegenerate model. The recovered joint channel also obeys
+
+\[
+\boxed{\gamma_{123}\ge\max\{\gamma_1,\gamma_2,\gamma_3\}.}
+\]
+
+P73 also gives a constructive two-view no-go result: in the balanced zero-intercept model, the full observed two-view law depends only on \(b_1b_2\), so different individual channel stabilities can produce exactly the same observable distribution.
+
+![P73 target-channel identifiability](figures/p73_target_channel_identifiability.svg)
+
+Direct proof: [P73](proposition_73_target_channel_identifiability.md). Provenance: [P73 equation record](p73_equation_provenance.md). Implementation: [`target_channel_identifiability.py`](../src/consciousness_bridge/target_channel_identifiability.py). Tests: [`test_target_channel_identifiability.py`](../tests/test_target_channel_identifiability.py).
+
 ## 3. Complete proposition index
 
 | Proposition | Mathematical role | Scientific role | Status |
@@ -198,6 +252,7 @@ Direct proof: [P72](proposition_72_target_measurement_channel_robustness.md). Pr
 | [P70](proposition_70_primal_dual_gap_decomposition.md) | exact gap identity | certificate attribution | proved primal-dual diagnostic decomposition |
 | [P71](proposition_71_target_provenance_noncircularity.md) | descriptor-derived target vacuity | independent target provenance guard | proved |
 | [P72](proposition_72_target_measurement_channel_robustness.md) | conditional DPI, TV stability, finite target confidence | noisy target-measurement robustness | proved |
+| [P73](proposition_73_target_channel_identifiability.md) | three-view moment inversion and two-view no-go | target-channel stability identifiability under a declared latent model | proved conditional theorem |
 
 ## 4. Calibration branch remains separate
 
@@ -220,15 +275,17 @@ These results optimize downstream experimental resources. They do not define con
 
 ## 5. Current open frontier
 
-After P72, the target side has two explicit requirements:
+After P73, the target side has three explicit requirements:
 
 1. the target must have non-circular provenance relative to the tested physical descriptor;
-2. its observation channel must be valid and sufficiently informative for the claimed witness.
+2. its observation channel must be valid and sufficiently informative for the claimed witness;
+3. channel reliability must be identified or externally calibrated under a defensible target-measurement model.
 
-The next structural question is therefore **target-channel identifiability**: under what repeated-rater, multi-view, calibration, intervention, or structural assumptions can the target-measurement channel, or at least a lower bound on its stability coefficient, be identified from data?
+P73 solves the third item only at the population level for a binary latent target with three conditionally independent binary views and explicit nondegeneracy. The next quantitative question is therefore **finite-sample target-channel recovery certification**: how does empirical error in the observed three-view distribution propagate through the nonlinear P73 inversion into confidence regions for latent prevalence, view channels, and the P72 stability coefficients?
 
 Beyond that, the broader open program remains:
 
+- test the conditional-independence and latent-class assumptions rather than treating them as automatically valid;
 - define and justify experiential variables independently of the physical candidate;
 - test descriptor sufficiency across interventions, time, composition, and scale;
 - sharpen finite-data guarantees for continuous, dependent, hidden-state, and learned-descriptor settings;
