@@ -124,7 +124,7 @@ def test_detailed_record_preserves_full_p1_to_p74_chronology_off_main_page():
     assert "**P71** returns from the downstream calibration branch" in detail
     assert "**P72** adds the next target-side obligation" in detail
     assert "**P73** closes the population identifiability step" in detail
-    assert "**P74** adds finite-sample certification" in detail
+    assert "**P74** converts the P73 population inversion into a finite-sample confidence certificate" in detail
     assert "Open the complete P1 to P74 chronology" not in readme
 
 
