@@ -2,79 +2,107 @@
   <title id="title">P80 simplex-coupled model separation</title>
   <desc id="desc">What this figure shows: P80 tightens each P78 parameter-box relaxation by intersecting its exact coordinate intervals with probability normalization. The complete feasibility radius is the maximum of the coordinate-overlap radius r_box and the two normalization-crossing radii r_A and r_C. How to read it: move from the P78 box enclosure to the simplex-coupled set, then read L80(B)=max(r_box,r_A,r_C) as a certified lower bound that is never weaker than L78(B). At the rejection handoff, compare the P80 lower bound with the P79 certified upper sampling radius; rejection requires a strict separation. Main takeaway: simplex coupling strengthens continuous-family separation while preserving the one-sided logic of the P78-P79 certificate chain. Scientific status: Exact-rational computational-certification theorem figure. It does not establish that the P75 latent variable is experiential, and non-rejection remains inconclusive; the physical-to-experiential bridge remains open.</desc>
 
-  <rect x="0" y="0" width="1200" height="760" rx="22" fill="#f8fafc"/>
-  <rect x="36" y="32" width="1128" height="696" rx="20" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
-
-  <text x="70" y="82" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700" fill="#0f172a">P80 Simplex-Coupled Model Separation Certificate</text>
-  <text x="70" y="114" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#475569">A tighter exact-rational relaxation for the P78 continuous P75 search</text>
-
-  <rect x="70" y="150" width="300" height="390" rx="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
-  <text x="94" y="188" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#0f172a">1. P78 box enclosure</text>
-  <text x="94" y="216" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#475569">Each observed cell has an exact interval.</text>
-
-  <rect x="104" y="250" width="232" height="86" rx="12" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
-  <text x="123" y="280" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#312e81">True P75 box image</text>
-  <text x="123" y="305" font-family="Arial, Helvetica, sans-serif" font-size="13.5" fill="#4338ca">M(B) = { q(theta) : theta in B }</text>
-  <text x="123" y="325" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#6366f1">nonlinear and normalized</text>
-
-  <path d="M220 342 L220 367" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)"/>
-
-  <rect x="104" y="380" width="232" height="98" rx="12" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
-  <text x="123" y="410" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#9a3412">P78 product relaxation</text>
-  <text x="123" y="435" font-family="Arial, Helvetica, sans-serif" font-size="13.5" fill="#c2410c">R_box = product_i [l_i, u_i]</text>
-  <text x="123" y="458" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#c2410c">valid, but normalization is forgotten</text>
-
-  <text x="104" y="510" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#64748b">P78 lower bound = distance to</text>
-  <text x="104" y="529" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#64748b">the uncoupled coordinate box.</text>
-
-  <path d="M378 346 L423 346" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
-
-  <rect x="435" y="150" width="330" height="390" rx="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
-  <text x="459" y="188" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#0f172a">2. Intersect with the simplex</text>
-  <text x="459" y="216" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#475569">Every probability law must satisfy sum q_i = 1.</text>
-
-  <rect x="462" y="248" width="276" height="98" rx="12" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
-  <text x="482" y="278" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#065f46">P80 coupled relaxation</text>
-  <text x="482" y="303" font-family="Arial, Helvetica, sans-serif" font-size="13.5" fill="#047857">R_delta = { l_i &lt;= q_i &lt;= u_i,</text>
-  <text x="482" y="326" font-family="Arial, Helvetica, sans-serif" font-size="13.5" fill="#047857">sum_i q_i = 1 }</text>
-
-  <text x="474" y="376" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#0f172a">Exact radius feasibility</text>
-  <text x="474" y="399" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#334155">r &gt;= r_box = L78(B)</text>
-  <text x="474" y="422" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#334155">sum max(l_i, p_i-r) &lt;= 1</text>
-  <text x="474" y="445" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#334155">1 &lt;= sum min(u_i, p_i+r)</text>
-
-  <rect x="462" y="468" width="276" height="54" rx="11" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
-  <text x="482" y="491" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#164e63">L80 = max(r_box, r_A, r_C)</text>
-  <text x="482" y="511" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#0e7490">Exact rational crossings; no float optimizer.</text>
-
-  <path d="M773 346 L818 346" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
-
-  <rect x="830" y="150" width="300" height="390" rx="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
-  <text x="854" y="188" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#0f172a">3. Stronger certified bound</text>
-  <text x="854" y="216" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#475569">Nested sets fix the inequality direction.</text>
-
-  <rect x="864" y="250" width="232" height="88" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
-  <text x="883" y="280" font-family="Arial, Helvetica, sans-serif" font-size="15.5" font-weight="700" fill="#14532d">Set inclusion</text>
-  <text x="883" y="305" font-family="Arial, Helvetica, sans-serif" font-size="13.5" fill="#15803d">M(B) subset R_delta</text>
-  <text x="883" y="326" font-family="Arial, Helvetica, sans-serif" font-size="13.5" fill="#15803d">R_delta subset R_box</text>
-
-  <rect x="864" y="366" width="232" height="82" rx="12" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
-  <text x="883" y="396" font-family="Arial, Helvetica, sans-serif" font-size="15.5" font-weight="700" fill="#312e81">Dominance certificate</text>
-  <text x="883" y="424" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#4338ca">L80(B) &gt;= L78(B)</text>
-
-  <text x="874" y="486" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="700" fill="#0f172a">P79 handoff</text>
-  <text x="874" y="513" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#334155">L80 &gt; epsilon_upper  =&gt;  reject</text>
-
-  <rect x="70" y="570" width="1060" height="108" rx="16" fill="#0f172a"/>
-  <text x="98" y="604" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#ffffff">Why P80 matters</text>
-  <text x="98" y="633" font-family="Arial, Helvetica, sans-serif" font-size="15.5" fill="#e2e8f0">The true model family is unchanged; only the relaxation is tighter.</text>
-  <text x="98" y="657" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#86efac">A smaller certified superset can prove separation earlier while preserving the lower-bound direction.</text>
-
-  <text x="70" y="716" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#64748b">P80 is a computational certificate, not a consciousness identification theorem. The physical-to-experiential bridge remains open.</text>
-
   <defs>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
       <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
     </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
   </defs>
+
+  <rect x="0" y="0" width="1200" height="760" fill="#f8fafc"/>
+  <rect x="34" y="28" width="1132" height="704" rx="24" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
+
+  <text x="70" y="78" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#0f172a">P80 Simplex-Coupled Model Separation Certificate</text>
+  <text x="70" y="110" font-family="Arial, Helvetica, sans-serif" font-size="16.5" fill="#475569">A normalization-aware exact-rational tightening of the P78 continuous P75 search</text>
+
+  <!-- STEP 1 -->
+  <rect x="70" y="145" width="310" height="408" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="70" y="145" width="310" height="82" rx="18" fill="#eef2ff"/>
+  <rect x="70" y="209" width="310" height="18" fill="#eef2ff"/>
+  <circle cx="101" cy="178" r="17" fill="#4f46e5"/>
+  <text x="101" y="184" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff">1</text>
+  <text x="128" y="174" font-family="Arial, Helvetica, sans-serif" font-size="18.5" font-weight="700" fill="#1e1b4b">P78 box enclosure</text>
+  <text x="94" y="205" font-family="Arial, Helvetica, sans-serif" font-size="13.5" fill="#475569">Exact cell intervals, before normalization coupling</text>
+
+  <rect x="94" y="248" width="262" height="92" rx="12" fill="#f8faff" stroke="#818cf8" stroke-width="1.8"/>
+  <text x="114" y="277" font-family="Arial, Helvetica, sans-serif" font-size="15.5" font-weight="700" fill="#312e81">True P75 box image</text>
+  <text x="114" y="303" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#4338ca">M(B) = { q(theta) : theta in B }</text>
+  <text x="114" y="325" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#6366f1">nonlinear and probability-normalized</text>
+
+  <path d="M225 340 L225 370" stroke="#334155" stroke-width="2.4" marker-end="url(#arrow)"/>
+
+  <rect x="94" y="370" width="262" height="98" rx="12" fill="#fff7ed" stroke="#fb923c" stroke-width="1.8"/>
+  <text x="114" y="400" font-family="Arial, Helvetica, sans-serif" font-size="15.5" font-weight="700" fill="#9a3412">P78 product relaxation</text>
+  <text x="114" y="427" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#c2410c">R_box = product_i [l_i, u_i]</text>
+  <text x="114" y="450" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#c2410c">valid superset; normalization is omitted</text>
+
+  <text x="96" y="500" font-family="Arial, Helvetica, sans-serif" font-size="12.8" fill="#64748b">P78 measures distance to the uncoupled</text>
+  <text x="96" y="520" font-family="Arial, Helvetica, sans-serif" font-size="12.8" fill="#64748b">coordinate box, so its bound can be conservative.</text>
+
+  <!-- CONNECTOR 1: attached panel-to-panel -->
+  <path d="M380 349 L445 349" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- STEP 2 -->
+  <rect x="445" y="145" width="310" height="408" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="445" y="145" width="310" height="82" rx="18" fill="#ecfdf5"/>
+  <rect x="445" y="209" width="310" height="18" fill="#ecfdf5"/>
+  <circle cx="476" cy="178" r="17" fill="#059669"/>
+  <text x="476" y="184" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff">2</text>
+  <text x="503" y="171" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#064e3b" aria-label="2. Intersect with the simplex">Intersect with the</text>
+  <text x="503" y="194" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#064e3b">simplex</text>
+  <text x="469" y="218" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#475569">Enforce the probability law: sum q_i = 1</text>
+
+  <rect x="469" y="248" width="262" height="96" rx="12" fill="#f0fdf4" stroke="#34d399" stroke-width="1.8"/>
+  <text x="489" y="277" font-family="Arial, Helvetica, sans-serif" font-size="15.5" font-weight="700" fill="#065f46">P80 coupled relaxation</text>
+  <text x="489" y="303" font-family="Arial, Helvetica, sans-serif" font-size="12.8" fill="#047857">R_delta = { l_i &lt;= q_i &lt;= u_i,</text>
+  <text x="489" y="326" font-family="Arial, Helvetica, sans-serif" font-size="12.8" fill="#047857">sum_i q_i = 1 }</text>
+
+  <path d="M600 344 L600 369" stroke="#334155" stroke-width="2.4" marker-end="url(#arrow)"/>
+
+  <rect x="469" y="369" width="262" height="118" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.6"/>
+  <text x="489" y="396" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="700" fill="#0f172a">Exact radius feasibility</text>
+  <text x="489" y="419" font-family="Arial, Helvetica, sans-serif" font-size="12.7" fill="#334155">r &gt;= r_box = L78(B)</text>
+  <text x="489" y="442" font-family="Arial, Helvetica, sans-serif" font-size="12.7" fill="#334155">sum max(l_i, p_i-r) &lt;= 1</text>
+  <text x="489" y="465" font-family="Arial, Helvetica, sans-serif" font-size="12.7" fill="#334155">1 &lt;= sum min(u_i, p_i+r)</text>
+
+  <rect x="469" y="499" width="262" height="38" rx="10" fill="#ecfeff" stroke="#22d3ee" stroke-width="1.6"/>
+  <text x="600" y="523" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.4" font-weight="700" fill="#155e75">L80 = max(r_box, r_A, r_C)</text>
+
+  <!-- CONNECTOR 2: attached panel-to-panel -->
+  <path d="M755 349 L820 349" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- STEP 3 -->
+  <rect x="820" y="145" width="310" height="408" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="820" y="145" width="310" height="82" rx="18" fill="#fff7ed"/>
+  <rect x="820" y="209" width="310" height="18" fill="#fff7ed"/>
+  <circle cx="851" cy="178" r="17" fill="#ea580c"/>
+  <text x="851" y="184" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff">3</text>
+  <text x="878" y="171" font-family="Arial, Helvetica, sans-serif" font-size="17.5" font-weight="700" fill="#7c2d12" aria-label="3. Stronger certified bound">Stronger certified</text>
+  <text x="878" y="194" font-family="Arial, Helvetica, sans-serif" font-size="17.5" font-weight="700" fill="#7c2d12">bound</text>
+  <text x="844" y="218" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#475569">Nested sets fix the inequality direction</text>
+
+  <rect x="844" y="248" width="262" height="94" rx="12" fill="#f0fdf4" stroke="#4ade80" stroke-width="1.8"/>
+  <text x="864" y="277" font-family="Arial, Helvetica, sans-serif" font-size="15.5" font-weight="700" fill="#14532d">Set inclusion</text>
+  <text x="864" y="303" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#15803d">M(B) subset R_delta</text>
+  <text x="864" y="326" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#15803d">R_delta subset R_box</text>
+
+  <path d="M975 342 L975 365" stroke="#334155" stroke-width="2.4" marker-end="url(#arrow)"/>
+
+  <rect x="844" y="365" width="262" height="82" rx="12" fill="#eef2ff" stroke="#818cf8" stroke-width="1.8"/>
+  <text x="864" y="394" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#312e81">Dominance certificate</text>
+  <text x="864" y="423" font-family="Arial, Helvetica, sans-serif" font-size="14.5" fill="#4338ca">L80(B) &gt;= L78(B)</text>
+
+  <rect x="844" y="468" width="262" height="69" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.6"/>
+  <text x="864" y="493" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="700" fill="#0f172a">P79 rejection handoff</text>
+  <text x="864" y="519" font-family="Arial, Helvetica, sans-serif" font-size="13.6" fill="#334155">L80 &gt; epsilon_upper  =&gt;  reject</text>
+
+  <!-- BOTTOM INTERPRETATION BAND -->
+  <rect x="70" y="578" width="1060" height="108" rx="16" fill="#0f172a"/>
+  <text x="98" y="611" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#ffffff">Why P80 matters</text>
+  <text x="98" y="639" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#e2e8f0">The true P75 model family is unchanged. P80 tightens only the certified relaxation around it.</text>
+  <text x="98" y="664" font-family="Arial, Helvetica, sans-serif" font-size="14.6" fill="#86efac">A smaller valid superset can certify separation earlier without reversing the required lower-bound logic.</text>
+
+  <text x="70" y="718" font-family="Arial, Helvetica, sans-serif" font-size="12.8" fill="#64748b">P80 is a computational certificate, not a consciousness-identification theorem. The physical-to-experiential bridge remains open.</text>
 </svg>
