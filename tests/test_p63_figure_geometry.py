@@ -15,7 +15,6 @@ LEGACY_FIGURES = {
     "P59": ("p59_optimal_transition_calibration.svg", 5),
     "P60": ("p60_integer_transition_calibration.svg", 6),
     "P61": ("p61_exact_integer_transition_calibration.svg", 6),
-    "P62": ("p62_heterogeneous_cost_transition_calibration.svg", 5),
 }
 
 P63_FIGURE = ROOT / "docs/figures/p63_exact_heterogeneous_integer_calibration.svg"
@@ -88,7 +87,7 @@ def _assert_legacy_text_fits(
     assert y + 28.0 <= label_y <= y + height - 28.0
 
 
-def test_p59_p62_legacy_text_is_contained_inside_every_declared_block():
+def test_p59_p61_legacy_text_is_contained_inside_every_declared_block():
     for proposition, (filename, _) in LEGACY_FIGURES.items():
         _, svg = _load_legacy(filename)
         blocks = svg.findall(".//svg:g[@data-qa-block='true']", SVG_NS)
@@ -104,7 +103,7 @@ def test_p59_p62_legacy_text_is_contained_inside_every_declared_block():
                 _assert_legacy_text_fits(proposition, block, label)
 
 
-def test_p59_p62_legacy_connectors_reference_existing_blocks():
+def test_p59_p61_legacy_connectors_reference_existing_blocks():
     for proposition, (filename, expected_connectors) in LEGACY_FIGURES.items():
         _, svg = _load_legacy(filename)
         block_ids = {
@@ -122,7 +121,7 @@ def test_p59_p62_legacy_connectors_reference_existing_blocks():
             assert connector.attrib.get("class") == "arrow"
 
 
-def test_p59_p62_legacy_figures_have_no_forbidden_unicode_dashes():
+def test_p59_p61_legacy_figures_have_no_forbidden_unicode_dashes():
     for proposition, (filename, _) in LEGACY_FIGURES.items():
         figure, _ = _load_legacy(filename)
         text = figure.read_text(encoding="utf-8")
