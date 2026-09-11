@@ -56,3 +56,18 @@ def test_research_map_gives_direct_audit_paths():
     ]
     for token in required:
         assert token in text, token
+
+
+def test_research_map_presents_p77_through_p80_in_dependency_order():
+    text = MAP.read_text(encoding="utf-8")
+    assert "through Proposition 80" in text
+
+    p77 = text.index("IV-G · Full-law model-set separation")
+    p78 = text.index("IV-H · Certified continuous-family separation")
+    p79 = text.index("IV-I · Certified sampling radius")
+    p80 = text.index("IV-J · Tighter continuous-family relaxation")
+    assert p77 < p78 < p79 < p80
+
+    assert text.count("P78: How is P77 made rigorous for the continuous P75 family?") == 1
+    assert "only the certified global lower bound can feed the P77 rejection gate" in text
+    assert "P80 tightens the continuous lower bound" in text
