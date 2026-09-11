@@ -167,12 +167,29 @@ def test_p77_certified_gap_touches_both_geometric_boundaries() -> None:
     assert circle_left == 994.0
     assert float(gap.attrib["x2"]) == circle_left
 
-    note = _find_by_id(root, "gap-note")
-    note_right = float(note.attrib["x"]) + float(note.attrib["width"])
-    assert note_right < float(confidence.attrib["cx"])
+
+def test_p77_annotation_cards_are_separate_and_text_is_centered() -> None:
+    root = ET.parse(FIGURE).getroot()
+    gap_note = _find_by_id(root, "gap-note")
+    empirical_label = _find_by_id(root, "empirical-label")
+
+    gap_right = float(gap_note.attrib["x"]) + float(gap_note.attrib["width"])
+    empirical_left = float(empirical_label.attrib["x"])
+    assert gap_right + 12 <= empirical_left
+
+    for token, card in (
+        ("Certified separation gap", gap_note),
+        ("after sampling uncertainty", gap_note),
+        ("empirical law P_hat", empirical_label),
+    ):
+        node = _find_text(root, token)
+        card_left = float(card.attrib["x"])
+        card_right = card_left + float(card.attrib["width"])
+        assert card_left + 20 <= float(node.attrib["x"]) <= card_right - 20
+        assert node.attrib.get("text-anchor") == "middle"
 
 
-def test_p77_p77_panel_uses_deliberate_wrapping_for_long_explanations() -> None:
+def test_p77_panel_uses_deliberate_wrapping_for_long_explanations() -> None:
     root = ET.parse(FIGURE).getroot()
     right_panel = _find_by_id(root, "p77-panel")
     panel_left = float(right_panel.attrib["x"])
