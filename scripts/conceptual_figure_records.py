@@ -71,6 +71,17 @@ RECORDS: dict[str, dict[str, str]] = {
             "Physics-synthesis figure based on standard thermodynamics/information theory plus repository operational structure. It is not evidence that thermodynamic information equals consciousness."
         ),
     },
+    "docs/figures/p68_lagrangian_optimality_gap.svg": {
+        "title": "P68 Lagrangian lower bounds and quantitative integer optimality gaps",
+        "description": (
+            "What this figure shows: P68 gives a rigorous quality certificate for any feasible integer calibration candidate even when P67 does not prove exact optimality. The top row starts from a feasible candidate, chooses any positive Lagrange multiplier, and solves every one-edge integer Lagrangian subproblem exactly by strict convexity. Those exact edge minima assemble the weak-duality lower bound q(lambda), which is no larger than the unrestricted P63 optimum. Comparing that lower bound with the candidate objective yields a certified additive optimality-gap upper bound and, only when q(lambda) is positive, a multiplicative factor bound. "
+            "How to read it: follow the attached arrows through stages 1 to 4, then split into the additive and multiplicative certificates. The P67 band shows the zero-gap special case: tight budget plus one common edgewise multiplier makes q(lambda), the candidate objective, and the unrestricted optimum coincide. "
+            "Main takeaway: every positive multiplier gives a valid lower bound; multiplier quality affects tightness, not validity, and no dual-maximizer claim is needed for P68."
+        ),
+        "status": (
+            "Optimization-certificate figure for the declared heterogeneous-cost separable calibration surrogate. It is not a consciousness theorem, does not validate the surrogate as an experiential law, and the physical-to-experiential bridge remains open."
+        ),
+    },
     "docs/figures/p71_target_provenance_noncircularity.svg": {
         "title": "P71 target-provenance non-circularity",
         "description": (
