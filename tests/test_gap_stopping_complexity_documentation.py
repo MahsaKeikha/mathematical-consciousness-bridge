@@ -25,6 +25,6 @@ def test_p48_visual_and_proof_to_code_path_are_public():
         "p48_gap_dependent_stopping_complexity.svg",
         "gap_stopping_complexity.py",
         "test_gap_stopping_complexity.py",
-        "P48 - gap-dependent sequential stopping complexity",
+        "**Proposition 48**",
     ):
         assert token in readme
