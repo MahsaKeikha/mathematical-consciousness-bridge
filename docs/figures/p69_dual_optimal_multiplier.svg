@@ -1,71 +1,90 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="840" viewBox="0 0 1200 840" role="img" aria-labelledby="title desc">
-  <title id="title">Proposition 69: certified dual-optimal multiplier search</title>
-  <desc id="desc">What this figure shows: P68 proves that every positive Lagrange multiplier gives a valid lower bound on the unrestricted P63 integer calibration optimum. That raises a precise next question:. Visible guideposts include: Optimize the P68 lower-bound family without assuming strong duality.; 1. P68 dual family; q(lambda) = sum edge minima; - lambda B; Every lambda &gt; 0 gives a valid; P63 lower bound.. How to read it: follow the diagram in the direction of its arrows and use each box, panel, inequality, or highlighted region only with the meaning printed beside it. Main takeaway: this is the visual companion to Proposition 69; the proposition document supplies the assumptions, proof, and exact scope of every implication. Scientific status: Proposition 69 theorem/certificate visual. It is not independent empirical evidence and does not, by itself, identify a physical or latent variable with consciousness.</desc>
+  <title id="title">P69 certified dual-optimal multiplier search</title>
+  <desc id="desc">What this figure shows: P69 turns the P68 family of valid dual lower bounds into a certified one-dimensional search for the strongest dual value. The five numbered stages move from the dual function, through exact minimizing spends and the supergradient interval, into a sign-changing multiplier bracket and a supporting-line enclosure of the optimum. How to read it: follow the attached arrows from stages 1 through 5. The supergradient interval determines the search direction; bisection keeps the dual optimizer inside the bracket; evaluated values provide Q_low while supporting lines provide Q_up. Main takeaway: when Q_up minus Q_low is below tolerance, the strongest P68 dual value is certified to that tolerance without assuming strong duality. Scientific status: exact optimization-certificate visual for Proposition 69. Dual optimality is not primal exactness, is not evidence about consciousness or quantum ontology, and the physical-to-experiential bridge remains open.</desc>
   <defs>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
       <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
     </marker>
+    <style>
+      .title { font: 700 30px Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 16px Arial, sans-serif; fill: #475569; }
+      .stageTitle { font: 700 18px Arial, sans-serif; fill: #0f172a; }
+      .body { font: 400 14px Arial, sans-serif; fill: #334155; }
+      .note { font: 400 14px Arial, sans-serif; fill: #475569; }
+    </style>
   </defs>
-  <rect x="0" y="0" width="1200" height="840" rx="24" fill="#f8fafc"/>
-  <text x="58" y="58" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#0f172a">P69  Certified dual-optimal multiplier search</text>
-  <text x="58" y="92" font-family="Arial, sans-serif" font-size="16" fill="#475569">Optimize the P68 lower-bound family without assuming strong duality.</text>
 
+  <rect x="0" y="0" width="1200" height="840" fill="#f8fafc"/>
+  <rect x="30" y="24" width="1140" height="792" rx="22" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+
+  <text x="58" y="64" class="title">P69: Certified Dual-Optimal Multiplier Search</text>
+  <text x="58" y="96" class="subtitle">Optimize the P68 lower-bound family without assuming strong duality.</text>
+
+  <!-- Stage 1 -->
   <g id="block-dual" data-x="45" data-y="135" data-w="310" data-h="190">
-    <rect x="45" y="135" width="310" height="190" rx="18" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
-    <text x="68" y="172" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">1. P68 dual family</text>
-    <text x="68" y="211" font-family="Arial, sans-serif" font-size="14" fill="#334155">q(lambda) = sum edge minima</text>
-    <text x="68" y="238" font-family="Arial, sans-serif" font-size="14" fill="#334155">- lambda B</text>
-    <text x="68" y="278" font-family="Arial, sans-serif" font-size="14" fill="#475569">Every lambda &gt; 0 gives a valid</text>
-    <text x="68" y="301" font-family="Arial, sans-serif" font-size="14" fill="#475569">P63 lower bound.</text>
+    <rect x="45" y="135" width="310" height="190" rx="18" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+    <text x="68" y="172" class="stageTitle">1. P68 dual family</text>
+    <text x="68" y="211" class="body">q(lambda) = sum edge minima</text>
+    <text x="68" y="238" class="body">- lambda B</text>
+    <text x="68" y="278" class="note">Every lambda &gt; 0 gives a valid</text>
+    <text x="68" y="301" class="note">P63 lower bound.</text>
   </g>
 
+  <!-- Stage 2 -->
   <g id="block-spend" data-x="445" data-y="135" data-w="310" data-h="190">
-    <rect x="445" y="135" width="310" height="190" rx="18" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
-    <text x="468" y="172" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">2. Exact minimizing spends</text>
-    <text x="468" y="210" font-family="Arial, sans-serif" font-size="14" fill="#334155">M_e(lambda): exact integer minima</text>
-    <text x="468" y="244" font-family="Arial, sans-serif" font-size="14" fill="#334155">S_min = sum c_e min M_e</text>
-    <text x="468" y="274" font-family="Arial, sans-serif" font-size="14" fill="#334155">S_max = sum c_e max M_e</text>
-    <text x="468" y="302" font-family="Arial, sans-serif" font-size="14" fill="#475569">Both decrease with lambda.</text>
+    <rect x="445" y="135" width="310" height="190" rx="18" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
+    <text x="468" y="172" class="stageTitle">2. Exact minimizing spends</text>
+    <text x="468" y="210" class="body">M_e(lambda): exact integer minima</text>
+    <text x="468" y="244" class="body">S_min = sum c_e min M_e</text>
+    <text x="468" y="274" class="body">S_max = sum c_e max M_e</text>
+    <text x="468" y="302" class="note">Both decrease with lambda.</text>
   </g>
 
+  <!-- Stage 3 -->
   <g id="block-gradient" data-x="845" data-y="135" data-w="310" data-h="190">
-    <rect x="845" y="135" width="310" height="190" rx="18" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
-    <text x="868" y="172" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">3. Supergradient interval</text>
-    <text x="868" y="213" font-family="Arial, sans-serif" font-size="14" fill="#334155">[S_min - B, S_max - B]</text>
-    <text x="868" y="251" font-family="Arial, sans-serif" font-size="14" fill="#475569">Contains 0: exact dual optimum.</text>
-    <text x="868" y="282" font-family="Arial, sans-serif" font-size="14" fill="#475569">Positive: move right.</text>
-    <text x="868" y="306" font-family="Arial, sans-serif" font-size="14" fill="#475569">Negative: move left.</text>
+    <rect x="845" y="135" width="310" height="190" rx="18" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+    <text x="868" y="172" class="stageTitle">3. Supergradient interval</text>
+    <text x="868" y="213" class="body">[S_min - B, S_max - B]</text>
+    <text x="868" y="251" class="note">Contains 0: exact dual optimum.</text>
+    <text x="868" y="282" class="note">Positive: move right.</text>
+    <text x="868" y="306" class="note">Negative: move left.</text>
   </g>
 
   <line id="arrow-1" x1="355" y1="230" x2="445" y2="230" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)" data-source="block-dual" data-target="block-spend"/>
   <line id="arrow-2" x1="755" y1="230" x2="845" y2="230" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)" data-source="block-spend" data-target="block-gradient"/>
 
+  <text x="600" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#64748b">SUPERGRADIENT SIGN LOCATES THE DUAL OPTIMIZER</text>
+
+  <!-- Stage 4 -->
   <g id="block-bracket" data-x="120" data-y="400" data-w="400" data-h="190">
-    <rect x="120" y="400" width="400" height="190" rx="18" fill="#ffffff" stroke="#64748b" stroke-width="2"/>
-    <text x="145" y="438" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#0f172a">4. Sign-changing bracket</text>
+    <rect x="120" y="400" width="400" height="190" rx="18" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
+    <text x="145" y="438" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#9a3412">4. Sign-changing bracket</text>
     <text x="145" y="478" font-family="Arial, sans-serif" font-size="15" fill="#334155">g_L &gt; 0 at lambda_L</text>
     <text x="145" y="510" font-family="Arial, sans-serif" font-size="15" fill="#334155">g_R &lt; 0 at lambda_R</text>
-    <text x="145" y="548" font-family="Arial, sans-serif" font-size="14" fill="#475569">Bisection preserves the optimizer</text>
-    <text x="145" y="571" font-family="Arial, sans-serif" font-size="14" fill="#475569">inside the bracket.</text>
+    <text x="145" y="548" class="note">Bisection preserves the optimizer</text>
+    <text x="145" y="571" class="note">inside the bracket.</text>
   </g>
 
+  <!-- Stage 5 -->
   <g id="block-support" data-x="680" data-y="400" data-w="400" data-h="190">
-    <rect x="680" y="400" width="400" height="190" rx="18" fill="#ffffff" stroke="#64748b" stroke-width="2"/>
-    <text x="705" y="438" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#0f172a">5. Supporting-line certificate</text>
+    <rect x="680" y="400" width="400" height="190" rx="18" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="705" y="438" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#6d28d9">5. Supporting-line certificate</text>
     <text x="705" y="478" font-family="Arial, sans-serif" font-size="15" fill="#334155">Q_low = best evaluated q</text>
     <text x="705" y="510" font-family="Arial, sans-serif" font-size="15" fill="#334155">Q_up = intersecting supports</text>
     <text x="705" y="548" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#0f172a">Q_low &lt;= q* &lt;= Q_up</text>
-    <text x="705" y="575" font-family="Arial, sans-serif" font-size="14" fill="#475569">Stop when Q_up - Q_low &lt;= eps.</text>
+    <text x="705" y="575" class="note">Stop when Q_up - Q_low &lt;= eps.</text>
   </g>
 
   <line id="arrow-3" x1="1000" y1="325" x2="455" y2="400" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)" data-source="block-gradient" data-target="block-bracket"/>
   <line id="arrow-4" x1="520" y1="495" x2="680" y2="495" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)" data-source="block-bracket" data-target="block-support"/>
 
-  <g id="block-boundary" data-x="135" data-y="655" data-w="930" data-h="130">
-    <rect x="135" y="655" width="930" height="130" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
-    <text x="160" y="691" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#0f172a">Scientific and mathematical boundary</text>
-    <text x="160" y="727" font-family="Arial, sans-serif" font-size="14" fill="#334155">P69 certifies the strongest P68 dual value to tolerance. It does not assume q* = U*_int.</text>
-    <text x="160" y="754" font-family="Arial, sans-serif" font-size="13" fill="#475569">Dual optimality is not, by itself, primal exactness and is not evidence about consciousness or quantum ontology.</text>
+  <!-- Scientific boundary -->
+  <g id="block-boundary" data-x="135" data-y="640" data-w="930" data-h="145">
+    <rect x="135" y="640" width="930" height="145" rx="18" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+    <text x="160" y="676" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#0f172a">Scientific and mathematical boundary</text>
+    <text x="160" y="710" class="body">P69 certifies the strongest P68 dual value to tolerance. It does not assume q* = U*_int.</text>
+    <text x="160" y="738" font-family="Arial, sans-serif" font-size="13" fill="#475569">Dual optimality is not, by itself, primal exactness and is not evidence about consciousness or quantum ontology.</text>
+    <text x="160" y="766" font-family="Arial, sans-serif" font-size="13" fill="#475569">The physical-to-experiential bridge remains open.</text>
   </g>
-  <line id="arrow-5" x1="880" y1="590" x2="880" y2="655" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)" data-source="block-support" data-target="block-boundary"/>
+  <line id="arrow-5" x1="880" y1="590" x2="880" y2="640" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)" data-source="block-support" data-target="block-boundary"/>
 </svg>
