@@ -2,6 +2,7 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 FIGURE = Path("docs/figures/p75_target_model_adequacy_overidentification.svg")
+CATALOG = Path("docs/figure_catalog.md")
 SVG_NS = "http://www.w3.org/2000/svg"
 
 
@@ -131,3 +132,18 @@ def test_p75_connectors_are_attached_to_panels_and_lower_stage() -> None:
     lower_rect = lower_panel.find(f"{{{SVG_NS}}}rect")
     assert lower_rect is not None
     assert _number(lower_rect.attrib["y"]) == 430
+
+
+def test_p75_catalog_entry_is_self_explanatory_and_matches_the_visual() -> None:
+    text = CATALOG.read_text(encoding="utf-8")
+    required = (
+        "P75 target-model adequacy and four-view overidentification",
+        "P75 separates parameter identifiability from model adequacy",
+        "follow the attached arrows into the lower adequacy panel",
+        "covariance-tetrad, cross-triple, and fourth-moment obligations",
+        "the fourth view makes the declared target model falsifiable beyond mere parameter fitting",
+        "Passing means compatibility with that model, not proof of truth",
+        "[Proposition 75](proposition_75_target_model_adequacy_overidentification.md)",
+    )
+    for token in required:
+        assert token in text, token
