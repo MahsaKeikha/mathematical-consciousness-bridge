@@ -1,6 +1,5 @@
 from pathlib import Path
 
-
 DOC = Path("docs/proposition_71_target_provenance_noncircularity.md")
 SOURCE = Path("src/consciousness_bridge/target_provenance_noncircularity.py")
 TEST = Path("tests/test_target_provenance_noncircularity.py")
