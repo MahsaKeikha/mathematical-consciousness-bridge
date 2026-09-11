@@ -37,7 +37,7 @@
     <rect x="450" y="135" width="300" height="185" rx="18" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"/>
     <text x="473" y="172" class="stageTitle">2. Choose any lambda &gt; 0</text>
     <text x="473" y="211" class="body">Explicit or reproducible.</text>
-    <text x="473" y="244" class="body">Every positive value is valid.</text>
+    <text x="473" y="244" class="body">Any positive value is valid.</text>
     <text x="473" y="279" class="note">Better lambda, tighter bound.</text>
     <text x="473" y="302" class="note">No dual-maximizer claim.</text>
   </g>
