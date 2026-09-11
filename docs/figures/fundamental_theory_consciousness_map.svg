@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1260" viewBox="0 0 1800 1260" role="img" aria-labelledby="title desc">
   <title id="title">Fundamental Theory to Consciousness map</title>
-  <desc id="desc">What this figure shows: the logical gap between a complete declared physical theory, its physical equivalence classes and operational predictions, and an independently defined experiential or target structure. How to read it: move from fundamental physical law to the physical state/observable layer and then to equivalence classes induced by the chosen physical descriptor. The final arrow toward target equivalence classes is intentionally a separate bridge requirement, not something supplied automatically by the physical equations. Main takeaway: physical completeness and operational predictability do not by themselves establish experiential completeness; a justified, testable physical-to-target map is still required. Scientific status: Research-architecture figure. It formalizes a sufficiency question and an open bridge requirement; it does not assert a fifth spatial dimension, nonphysical substance, simulation ontology, or failure of quantum mechanics.</desc>
+  <desc id="desc">What this figure shows: a declared candidate fundamental relational state can be projected into geometry/spacetime, quantum-operational, causal/intervention, and independently formalized experiential structures. How to read it: follow the four solid arrows from the candidate fundamental state to the four declared projections. The geometry, quantum, and causal projections then converge through three separate solid arrows into the complete declared physical map T=(G,Q,C). The experiential projection does not enter T; instead, its dashed independent route joins the final bridge factorization/residual test from the right, while T enters that test from above. Main takeaway: the bridge test compares an independently specified experiential structure against a complete declared physical descriptor rather than silently folding experience into the physical descriptor. Scientific status: research-architecture figure. It formalizes a sufficiency question and an open bridge requirement; it does not assert a fifth spatial dimension, nonphysical substance, simulation ontology, failure of quantum mechanics, or that the physical-to-experiential bridge has been solved.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
       <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
@@ -12,6 +12,7 @@
       .copy{font:400 15px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
       .math{font:600 18px Georgia,'Times New Roman',serif;fill:#0f172a}
       .small{font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#64748b}
+      .routeLabel{font:600 13px Inter,Segoe UI,Arial,sans-serif;fill:#64748b}
       .arrow{stroke:#64748b;stroke-width:2.4;fill:none;marker-end:url(#arrow)}
       .dash{stroke:#94a3b8;stroke-width:2.2;stroke-dasharray:9 8;fill:none;marker-end:url(#arrow)}
     </style>
@@ -27,10 +28,10 @@
   <text x="900" y="264" class="copy" text-anchor="middle">Theory-neutral primitive may be fields, algebras, causal relations,</text>
   <text x="900" y="284" class="copy" text-anchor="middle">strings, spin networks, tensor data, or another declared ontology.</text>
 
-  <path class="arrow" d="M900 305 V360 H260 V405"/>
-  <path class="arrow" d="M900 305 V360 H690 V405"/>
-  <path class="arrow" d="M900 305 V360 H1110 V405"/>
-  <path class="arrow" d="M900 305 V360 H1540 V405"/>
+  <path id="arrow-fundamental-geometry" class="arrow" d="M900 305 V360 H260 V405" data-source="fundamental" data-target="geometry"/>
+  <path id="arrow-fundamental-quantum" class="arrow" d="M900 305 V360 H690 V405" data-source="fundamental" data-target="quantum"/>
+  <path id="arrow-fundamental-causal" class="arrow" d="M900 305 V360 H1110 V405" data-source="fundamental" data-target="causal"/>
+  <path id="arrow-fundamental-experiential" class="arrow" d="M900 305 V360 H1540 V405" data-source="fundamental" data-target="experiential"/>
 
   <rect x="90" y="405" width="340" height="220" rx="18" fill="#f0f9ff" stroke="#0284c7"/>
   <text x="260" y="448" class="head" text-anchor="middle">Geometry / spacetime</text>
@@ -64,9 +65,10 @@
   <text x="1540" y="592" class="small" text-anchor="middle">Must not be defined using</text>
   <text x="1540" y="604" class="small" text-anchor="middle">the candidate physical signature</text>
 
-  <path class="arrow" d="M260 625 V705 H760"/>
-  <path class="arrow" d="M690 625 V705 H760"/>
-  <path class="arrow" d="M1110 625 V705 H1040"/>
+  <text x="900" y="672" class="routeLabel" text-anchor="middle">Three physical projections enter T; the experiential route stays separate.</text>
+  <path id="arrow-geometry-physical" class="arrow" d="M260 625 V655 H760 V690" data-source="geometry" data-target="physical-map"/>
+  <path id="arrow-quantum-physical" class="arrow" d="M690 625 V690" data-source="quantum" data-target="physical-map"/>
+  <path id="arrow-causal-physical" class="arrow" d="M1110 625 V690" data-source="causal" data-target="physical-map"/>
 
   <rect x="610" y="690" width="580" height="165" rx="20" fill="#f8fafc" stroke="#334155" stroke-width="2"/>
   <text x="900" y="735" class="head" text-anchor="middle">Complete declared physical map</text>
@@ -74,8 +76,9 @@
   <text x="900" y="808" class="copy" text-anchor="middle">Gauge / representation invariance + finite data</text>
   <text x="900" y="830" class="copy" text-anchor="middle">completeness + scale certification</text>
 
-  <path class="arrow" d="M900 855 V930"/>
-  <path class="dash" d="M1540 625 V935 H1205"/>
+  <path id="arrow-physical-bridge" class="arrow" d="M900 855 V930" data-source="physical-map" data-target="bridge-test"/>
+  <path id="arrow-experiential-bridge" class="dash" d="M1540 625 V1032 H1380" data-source="experiential" data-target="bridge-test"/>
+  <text x="1460" y="1012" class="routeLabel" text-anchor="middle">independent E route</text>
 
   <rect x="420" y="930" width="960" height="205" rx="22" fill="#fffdf5" stroke="#ca8a04" stroke-width="2"/>
   <text x="900" y="975" class="head" text-anchor="middle">Bridge factorization / residual test</text>
