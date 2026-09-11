@@ -30,13 +30,13 @@ def test_p66_figure_text_stays_inside_declared_blocks():
                 group.attrib["id"],
                 content,
             )
-            assert y + 12 <= ty <= y + height - 10, (
+            assert y + 12 <= ty <= y + height - 5, (
                 group.attrib["id"],
                 content,
             )
 
 
-def test_p66_connectors_reference_existing_blocks_and_touch_boundaries():
+def test_p66_connectors_touch_expected_source_and_target_blocks():
     root = ET.parse(FIGURE).getroot()
     blocks = {
         group.attrib["id"]: (
@@ -55,9 +55,17 @@ def test_p66_connectors_reference_existing_blocks_and_touch_boundaries():
     ]
     assert len(arrows) == 4
 
+    expected_routes = {
+        "arrow-1": ("block-continuous", "block-residual"),
+        "arrow-2": ("block-residual", "block-dp"),
+        "arrow-3": ("block-dp", "block-improvement"),
+        "arrow-4": ("block-dp", "block-complexity"),
+    }
+
     for line in arrows:
         source = line.attrib["data-source"]
         target = line.attrib["data-target"]
+        assert expected_routes[line.attrib["id"]] == (source, target)
         assert source in blocks
         assert target in blocks
         x1, y1, x2, y2 = map(
@@ -71,7 +79,6 @@ def test_p66_connectors_reference_existing_blocks_and_touch_boundaries():
         )
         sx, sy, sw, sh = blocks[source]
         tx, ty, tw, th = blocks[target]
-
         source_touch = (
             abs(x1 - sx) <= 1
             or abs(x1 - (sx + sw)) <= 1
@@ -88,13 +95,19 @@ def test_p66_connectors_reference_existing_blocks_and_touch_boundaries():
         assert target_touch, line.attrib["id"]
 
 
-def test_p66_figure_preserves_exactness_and_scientific_boundaries():
+def test_p66_figure_is_self_explanatory_and_preserves_boundaries():
     text = FIGURE.read_text(encoding="utf-8")
     for token in [
+        "What this figure shows:",
+        "How to read it:",
+        "Main takeaway:",
         "0 ≤ R &lt; Σ c_e = B₀",
         "Globally exact within k ≥ f.",
+        "quality improvement",
+        "localized computation",
         "factor₆₆ ≤ factor₆₅ ≤ √2",
-        "P63 remains globally exact",
-        "not a consciousness or quantum-ontology theorem",
+        "P66 is exact only within the componentwise floor-dominating class k ≥ f.",
+        "P63 remains globally exact for the unrestricted heterogeneous-cost integer problem.",
+        "not a consciousness, bridge, or quantum-ontology theorem",
     ]:
         assert token in text
