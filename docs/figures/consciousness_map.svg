@@ -19,6 +19,7 @@
       .tag { font: 700 11px Arial, Helvetica, sans-serif; letter-spacing: .5px; }
       .boundaryTitle { font: 700 17px Arial, Helvetica, sans-serif; fill: #ffffff; }
       .boundaryText { font: 400 13.5px Arial, Helvetica, sans-serif; fill: #e2e8f0; }
+      .boundaryMuted { font: 400 12.5px Arial, Helvetica, sans-serif; fill: #94a3b8; }
     </style>
   </defs>
 
@@ -29,7 +30,7 @@
   <text x="68" y="101" class="subtitle">Keep theory, measurement, dynamics, and the physical-to-experiential sufficiency question logically separate</text>
 
   <!-- THEORY -->
-  <rect x="70" y="145" width="430" height="170" rx="18" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2" filter="url(#shadow)"/>
+  <rect id="theory-card" x="70" y="145" width="430" height="170" rx="18" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2" filter="url(#shadow)"/>
   <rect x="70" y="145" width="430" height="54" rx="18" fill="#ede9fe"/>
   <rect x="70" y="181" width="430" height="18" fill="#ede9fe"/>
   <text x="96" y="180" class="cardTitle" fill="#4c1d95">Theory</text>
@@ -39,7 +40,7 @@
   <text x="109" y="286" class="tag" fill="#6d28d9">FORMAL ASSUMPTIONS</text>
 
   <!-- MEASUREMENT -->
-  <rect x="700" y="145" width="430" height="170" rx="18" fill="#ecfdf5" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+  <rect id="measurement-card" x="700" y="145" width="430" height="170" rx="18" fill="#ecfdf5" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
   <rect x="700" y="145" width="430" height="54" rx="18" fill="#d1fae5"/>
   <rect x="700" y="181" width="430" height="18" fill="#d1fae5"/>
   <text x="726" y="180" class="cardTitle" fill="#065f46">Measurement</text>
@@ -49,12 +50,12 @@
   <text x="739" y="286" class="tag" fill="#047857">EMPIRICAL INTERFACE</text>
 
   <!-- TOP CONNECTOR -->
-  <line x1="500" y1="230" x2="692" y2="230" stroke="#334155" stroke-width="2.6" marker-end="url(#arrow)"/>
-  <rect x="526" y="198" width="144" height="25" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <line id="theory-measurement-arrow" x1="500" y1="230" x2="700" y2="230" stroke="#334155" stroke-width="2.6" marker-end="url(#arrow)"/>
+  <rect x="522" y="198" width="152" height="25" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
   <text x="598" y="215" text-anchor="middle" class="label">Theoretical sufficiency</text>
 
   <!-- DYNAMICS -->
-  <rect x="70" y="390" width="430" height="170" rx="18" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)"/>
+  <rect id="dynamics-card" x="70" y="390" width="430" height="170" rx="18" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)"/>
   <rect x="70" y="390" width="430" height="54" rx="18" fill="#dbeafe"/>
   <rect x="70" y="426" width="430" height="18" fill="#dbeafe"/>
   <text x="96" y="425" class="cardTitle" fill="#1e3a8a">Dynamics</text>
@@ -64,12 +65,12 @@
   <text x="109" y="531" class="tag" fill="#1d4ed8">PHYSICAL EVOLUTION</text>
 
   <!-- THEORY TO DYNAMICS -->
-  <line x1="285" y1="315" x2="285" y2="382" stroke="#334155" stroke-width="2.6" marker-end="url(#arrow)"/>
-  <rect x="303" y="334" width="151" height="25" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
-  <text x="378.5" y="351" text-anchor="middle" class="label">model-implied evolution</text>
+  <line id="theory-dynamics-arrow" x1="285" y1="315" x2="285" y2="390" stroke="#334155" stroke-width="2.6" marker-end="url(#arrow)"/>
+  <rect x="303" y="334" width="157" height="25" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="381.5" y="351" text-anchor="middle" class="label">model-implied evolution</text>
 
   <!-- SUFFICIENCY BRIDGE -->
-  <rect x="700" y="390" width="430" height="170" rx="18" fill="#fff7ed" stroke="#f97316" stroke-width="2" filter="url(#shadow)"/>
+  <rect id="bridge-card" x="700" y="390" width="430" height="170" rx="18" fill="#fff7ed" stroke="#f97316" stroke-width="2" filter="url(#shadow)"/>
   <rect x="700" y="390" width="430" height="54" rx="18" fill="#ffedd5"/>
   <rect x="700" y="426" width="430" height="18" fill="#ffedd5"/>
   <text x="726" y="425" class="cardTitle" fill="#9a3412">Sufficiency bridge</text>
@@ -79,18 +80,18 @@
   <text x="739" y="531" class="tag" fill="#c2410c">OPEN BRIDGE OBLIGATION</text>
 
   <!-- MEASUREMENT TO BRIDGE -->
-  <line x1="915" y1="315" x2="915" y2="382" stroke="#334155" stroke-width="2.6" marker-end="url(#arrow)"/>
+  <line id="measurement-bridge-arrow" x1="915" y1="315" x2="915" y2="390" stroke="#334155" stroke-width="2.6" marker-end="url(#arrow)"/>
   <rect x="933" y="334" width="150" height="25" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
   <text x="1008" y="351" text-anchor="middle" class="label">measurement validity</text>
 
   <!-- DYNAMICS TO BRIDGE -->
-  <line x1="500" y1="475" x2="692" y2="475" stroke="#334155" stroke-width="2.6" marker-end="url(#arrow)"/>
-  <rect x="526" y="443" width="144" height="25" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <line id="dynamics-bridge-arrow" x1="500" y1="475" x2="700" y2="475" stroke="#334155" stroke-width="2.6" marker-end="url(#arrow)"/>
+  <rect x="522" y="443" width="152" height="25" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
   <text x="598" y="460" text-anchor="middle" class="label">Dynamical sufficiency</text>
 
   <!-- SCIENTIFIC BOUNDARY -->
   <rect x="70" y="600" width="1060" height="70" rx="14" fill="#0f172a"/>
   <text x="96" y="627" class="boundaryTitle">Interpretation boundary</text>
   <text x="96" y="651" class="boundaryText">Agreement among theory, measurement, and dynamics can support or reject a declared model; it does not identify a physical state with consciousness.</text>
-  <text x="96" y="668" class="small" fill="#94a3b8">The physical-to-experiential bridge remains open.</text>
+  <text x="96" y="668" class="boundaryMuted">The physical-to-experiential bridge remains open.</text>
 </svg>
