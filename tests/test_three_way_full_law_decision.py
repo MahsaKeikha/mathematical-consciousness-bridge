@@ -3,7 +3,9 @@ from pathlib import Path
 
 import pytest
 
-from consciousness_bridge.certified_continuous_model_separation import P78DistanceBracket
+from consciousness_bridge.certified_continuous_model_separation import (
+    P78DistanceBracket,
+)
 from consciousness_bridge.three_way_full_law_decision import (
     margin_resolution_is_guaranteed,
     p78_three_way_full_law_decision,
