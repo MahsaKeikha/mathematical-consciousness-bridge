@@ -1,78 +1,109 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1050" viewBox="0 0 1800 1050" role="img" aria-labelledby="title desc">
-  <title id="title">Proposition 61: exact integer transition-calibration allocation by diminishing marginal gain</title>
-  <desc id="desc">What this figure shows: Proved exact discrete resource-allocation theorem. P60 gives a constructive whole-measurement allocation with a certified overhead relative to the P59 continuous optimum. P61 closes that gap for the declared separable calibration surrogate by solving the integer problem exactly.. Visible guideposts include: Each extra measurement is assigned where it produces the largest current reduction in the declared uncertainty objective.; 1. Start with one per edge; kₑ = 1 for every e; This uses m units and makes every; calibrated transition estimable.; 2. Compute marginal gain. How to read it: follow the diagram in the direction of its arrows and use each box, panel, inequality, or highlighted region only with the meaning printed beside it. Main takeaway: this is the visual companion to Proposition 61; the proposition document supplies the assumptions, proof, and exact scope of every implication. Scientific status: Proposition 61 theorem/certificate visual. It is not independent empirical evidence and does not, by itself, identify a physical or latent variable with consciousness.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1000" viewBox="0 0 1200 1000" role="img" aria-labelledby="title desc">
+  <title id="title">P61 exact unit-cost integer transition calibration</title>
+  <desc id="desc">What this figure shows: P61 solves the declared equal-unit-cost whole-measurement calibration problem exactly. It starts from one mandatory measurement per calibrated edge, assigns each remaining unit to the edge with the largest current marginal reduction in the separable uncertainty objective, and proves global optimality from strictly diminishing per-edge gains and prefix feasibility. How to read it: move left to right across the top row from the mandatory baseline to the current marginal gain and the greedy allocation step. The center theorem panel explains why diminishing gain sequences make that rule exact. Follow the three lower branches to the checkable exchange certificate, the exact global optimum and tie behavior, and the priority-queue complexity. Main takeaway: P61 closes the equal-unit-cost integer allocation problem for the declared separable surrogate; it does not extend the same greedy proof to heterogeneous costs. Scientific status: exact discrete resource-allocation theorem for experimental calibration. It does not validate the full robust-route model, identify a calibration quantity with consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness.</desc>
   <defs>
-    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12 Z" fill="#334155"/></marker>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
     <style>
-      .h1{font:700 40px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#0f172a}
-      .sub{font:400 21px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#475569}
-      .bt{font:700 25px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#0f172a}
-      .tx{font:400 20px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#334155}
-      .math{font:600 20px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#0f172a}
-      .small{font:400 17px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#64748b}
-      .arrow{fill:none;stroke:#334155;stroke-width:3;stroke-linecap:round;marker-end:url(#arrow)}
-      .card{stroke-width:2}
+      .title{font:700 30px Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 16px Arial,sans-serif;fill:#475569}
+      .head{font:700 18px Arial,sans-serif;fill:#0f172a}
+      .copy{font:400 15px Arial,sans-serif;fill:#334155}
+      .small{font:400 14px Arial,sans-serif;fill:#475569}
+      .eq{font:600 16px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .strong{font:700 17px Arial,sans-serif;fill:#0f172a}
+      .route{font:700 13px Arial,sans-serif;fill:#475569}
+      .arrow{stroke:#334155;stroke-width:2.5;fill:none;marker-end:url(#arrow)}
     </style>
   </defs>
-  <rect width="1800" height="1050" rx="28" fill="#f8fafc"/>
-  <text x="70" y="70" class="h1">P61: Exact whole-measurement calibration allocation</text>
-  <text x="70" y="112" class="sub">Each extra measurement is assigned where it produces the largest current reduction in the declared uncertainty objective.</text>
 
-  <g id="p61-start" data-qa-block="true" data-x="70" data-y="175" data-width="500" data-height="245">
-    <rect class="card" x="70" y="175" width="500" height="245" rx="22" fill="#ffffff" stroke="#94a3b8"/>
-    <text x="115" y="222" class="bt">1. Start with one per edge</text>
-    <text x="115" y="272" class="math">kₑ = 1 for every e</text>
-    <text x="115" y="320" class="tx">This uses m units and makes every</text>
-    <text x="115" y="352" class="tx">calibrated transition estimable.</text>
+  <rect width="1200" height="1000" rx="24" fill="#f8fafc"/>
+  <text x="60" y="58" class="title">P61  Exact unit-cost integer transition calibration</text>
+  <text x="60" y="90" class="subtitle">Allocate each remaining measurement where its current marginal uncertainty reduction is largest.</text>
+
+  <g id="block-baseline" data-x="55" data-y="130" data-w="330" data-h="200">
+    <rect x="55" y="130" width="330" height="200" rx="18" fill="#ffffff" stroke="#64748b" stroke-width="2"/>
+    <text x="80" y="168" class="head">1. Mandatory baseline</text>
+    <text x="80" y="207" class="eq">B ≥ m = |E|</text>
+    <text x="80" y="239" class="strong">kₑ = 1 for every edge</text>
+    <text x="80" y="275" class="eq">R = B - m</text>
+    <text x="80" y="309" class="small">R extra unit-cost measurements remain.</text>
   </g>
 
-  <g id="p61-gain" data-qa-block="true" data-x="650" data-y="175" data-width="500" data-height="245">
-    <rect class="card" x="650" y="175" width="500" height="245" rx="22" fill="#eef2ff" stroke="#6366f1"/>
-    <text x="695" y="222" class="bt">2. Compute marginal gain</text>
-    <text x="695" y="265" class="math">Δₑ(k) = bₑ [</text>
-    <text x="695" y="298" class="math">1/√k - 1/√(k+1) ]</text>
-    <text x="695" y="342" class="tx">One more measurement reduces</text>
-    <text x="695" y="374" class="tx">edge uncertainty by Δₑ(k).</text>
+  <g id="block-gain" data-x="435" data-y="130" data-w="330" data-h="200">
+    <rect x="435" y="130" width="330" height="200" rx="18" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+    <text x="460" y="168" class="head">2. Current marginal gain</text>
+    <text x="460" y="211" class="eq">Δₑ(k) = bₑ [</text>
+    <text x="460" y="239" class="eq">1/√k - 1/√(k+1) ]</text>
+    <text x="460" y="278" class="copy">This is the uncertainty reduction</text>
+    <text x="460" y="303" class="copy">from one more measurement.</text>
   </g>
 
-  <g id="p61-choose" data-qa-block="true" data-x="1230" data-y="175" data-width="500" data-height="245">
-    <rect class="card" x="1230" y="175" width="500" height="245" rx="22" fill="#ffffff" stroke="#94a3b8"/>
-    <text x="1275" y="222" class="bt">3. Choose the largest gain</text>
-    <text x="1275" y="272" class="math">e* ∈ arg maxₑ Δₑ(kₑ)</text>
-    <text x="1275" y="320" class="tx">Increase that edge count by one,</text>
-    <text x="1275" y="352" class="tx">then repeat until B is exhausted.</text>
+  <g id="block-greedy" data-x="815" data-y="130" data-w="330" data-h="200">
+    <rect x="815" y="130" width="330" height="200" rx="18" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+    <text x="840" y="168" class="head">3. Greedy allocation step</text>
+    <text x="840" y="211" class="eq">eₜ ∈ arg maxₑ Δₑ(kₑ)</text>
+    <text x="840" y="249" class="strong">kₑₜ ← kₑₜ + 1</text>
+    <text x="840" y="286" class="copy">Recompute that edge's next gain</text>
+    <text x="840" y="311" class="copy">and repeat for all R units.</text>
   </g>
 
-  <path d="M570 297.5 H638" class="arrow" data-from="p61-start" data-to="p61-gain"/>
-  <path d="M1150 297.5 H1218" class="arrow" data-from="p61-gain" data-to="p61-choose"/>
+  <path id="arrow-1" class="arrow" d="M385 230 H435" data-source="block-baseline" data-target="block-gain"/>
+  <path id="arrow-2" class="arrow" d="M765 230 H815" data-source="block-gain" data-target="block-greedy"/>
 
-  <g id="p61-diminishing" data-qa-block="true" data-x="245" data-y="515" data-width="620" data-height="250">
-    <rect class="card" x="245" y="515" width="620" height="250" rx="24" fill="#ecfdf5" stroke="#10b981"/>
-    <text x="295" y="565" class="bt">Why greedy is exact</text>
-    <text x="295" y="625" class="math">Δₑ(k+1) &lt; Δₑ(k)</text>
-    <text x="295" y="680" class="tx">Each edge has diminishing gains.</text>
-    <text x="295" y="712" class="tx">Chosen gains form valid prefixes.</text>
+  <text x="600" y="370" class="route" text-anchor="middle">diminishing gains plus prefix feasibility give exactness</text>
+
+  <g id="block-exactness" data-x="120" data-y="390" data-w="960" data-h="225">
+    <rect x="120" y="390" width="960" height="225" rx="20" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
+    <text x="600" y="428" text-anchor="middle" class="head">4. Why the greedy rule is exact</text>
+    <text x="600" y="470" text-anchor="middle" class="strong">Δₑ(k+1) &lt; Δₑ(k) for every edge and k ≥ 1</text>
+    <text x="600" y="507" text-anchor="middle" class="copy">A final count kₑ = 1 + rₑ collects exactly the first rₑ gains from edge e.</text>
+    <text x="600" y="538" text-anchor="middle" class="copy">Every feasible allocation therefore selects decreasing prefixes with total length R.</text>
+    <text x="600" y="575" text-anchor="middle" class="strong">Repeatedly taking the largest available next gain is globally optimal.</text>
+    <text x="600" y="600" text-anchor="middle" class="small">This exchange argument depends on equal unit measurement cost.</text>
   </g>
 
-  <g id="p61-certificate" data-qa-block="true" data-x="935" data-y="515" data-width="620" data-height="250">
-    <rect class="card" x="935" y="515" width="620" height="250" rx="24" fill="#eff6ff" stroke="#3b82f6"/>
-    <text x="985" y="565" class="bt">Exact optimality certificate</text>
-    <text x="985" y="625" class="math">min selected last gain</text>
-    <text x="985" y="660" class="math">≥ max next unused gain</text>
-    <text x="985" y="712" class="tx">Then no one-unit exchange improves U.</text>
+  <path id="arrow-3" class="arrow" d="M600 330 V390" data-source="block-gain" data-target="block-exactness"/>
+  <path id="arrow-4" class="arrow" d="M980 330 V360 H900 V390" data-source="block-greedy" data-target="block-exactness"/>
+
+  <g id="block-certificate" data-x="55" data-y="680" data-w="330" data-h="170">
+    <rect x="55" y="680" width="330" height="170" rx="18" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="80" y="718" class="head">5. Optimality certificate</text>
+    <text x="80" y="758" class="small">Smallest selected last gain</text>
+    <text x="80" y="782" class="strong">≥ largest next unused gain</text>
+    <text x="80" y="816" class="small">If this fails, a profitable</text>
+    <text x="80" y="838" class="small">one-unit exchange exists.</text>
   </g>
 
-  <path d="M900 420 C780 475 590 480 555 515" class="arrow" data-from="p61-gain" data-to="p61-diminishing"/>
-  <path d="M1480 420 C1450 470 1320 485 1245 515" class="arrow" data-from="p61-choose" data-to="p61-certificate"/>
-
-  <g id="p61-global" data-qa-block="true" data-x="330" data-y="855" data-width="1140" data-height="130">
-    <rect class="card" x="330" y="855" width="1140" height="130" rx="22" fill="#fff7ed" stroke="#f97316"/>
-    <text x="900" y="902" text-anchor="middle" class="bt">P61 solves the declared integer surrogate globally</text>
-    <text x="900" y="950" text-anchor="middle" class="math">U(kP61) ≤ U(k) for every feasible full-budget integer allocation k</text>
+  <g id="block-global" data-x="435" data-y="680" data-w="330" data-h="170">
+    <rect x="435" y="680" width="330" height="170" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+    <text x="460" y="718" class="head">6. Exact global optimum</text>
+    <text x="460" y="758" class="eq">Σₑ kₑ = B</text>
+    <text x="460" y="790" class="strong">U(kᴾ⁶¹) ≤ U(k)</text>
+    <text x="460" y="818" class="small">for every feasible full-budget k.</text>
+    <text x="460" y="842" class="small">Ties can give multiple optimal allocations.</text>
   </g>
 
-  <path d="M555 765 C620 820 760 825 830 855" class="arrow" data-from="p61-diminishing" data-to="p61-global"/>
-  <path d="M1245 765 C1180 820 1040 825 970 855" class="arrow" data-from="p61-certificate" data-to="p61-global"/>
+  <g id="block-complexity" data-x="815" data-y="680" data-w="330" data-h="170">
+    <rect x="815" y="680" width="330" height="170" rx="18" fill="#ffffff" stroke="#64748b" stroke-width="2"/>
+    <text x="840" y="718" class="head">7. Priority-queue cost</text>
+    <text x="840" y="758" class="strong">O(m + (B-m) log m)</text>
+    <text x="840" y="791" class="eq">memory O(m)</text>
+    <text x="840" y="824" class="small">P60 remains a simpler closed-form</text>
+    <text x="840" y="846" class="small">approximation with an explicit ratio.</text>
+  </g>
 
-  <text x="900" y="1025" text-anchor="middle" class="small">Boundary: exactness applies to the declared separable unit-cost calibration surrogate, not the full combinatorial robust-routing problem.</text>
+  <path id="arrow-5" class="arrow" d="M300 615 V650 H220 V680" data-source="block-exactness" data-target="block-certificate"/>
+  <path id="arrow-6" class="arrow" d="M600 615 V680" data-source="block-exactness" data-target="block-global"/>
+  <path id="arrow-7" class="arrow" d="M900 615 V650 H980 V680" data-source="block-exactness" data-target="block-complexity"/>
+
+  <g id="block-boundary" data-x="90" data-y="870" data-w="1020" data-h="125">
+    <rect x="90" y="870" width="1020" height="125" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="118" y="898" class="head">Exactness and scientific boundary</text>
+    <text x="118" y="922" class="small">P61 is exact for the declared equal-unit-cost separable integer calibration surrogate.</text>
+    <text x="118" y="944" class="small">The same greedy proof is not asserted for heterogeneous costs; P62 and P63 treat that extension.</text>
+    <text x="118" y="966" class="small">P61 does not validate the full robust-route model or identify a calibration quantity with consciousness.</text>
+    <text x="118" y="988" class="small">It does not establish a physical-to-experiential bridge or imply quantum incompleteness.</text>
+  </g>
 </svg>
