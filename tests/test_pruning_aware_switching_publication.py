@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def test_p55_is_visible_on_main_page():
     text = (ROOT / "README.md").read_text(encoding="utf-8")
     for token in (
-        "P55 - pruning-aware metric switching-cost monotonicity",
+        "**Proposition 55**",
         "p55_pruning_aware_switching_monotonicity.svg",
         "pruning_aware_switching_monotonicity.py",
         "test_pruning_aware_switching_monotonicity.py",

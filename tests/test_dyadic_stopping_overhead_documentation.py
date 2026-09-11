@@ -25,6 +25,6 @@ def test_p49_visual_and_proof_to_code_path_are_public():
         "p49_dyadic_stopping_overhead.svg",
         "dyadic_stopping_overhead.py",
         "test_dyadic_stopping_overhead.py",
-        "P49 - dyadic certification schedules",
+        "**Proposition 49**",
     ):
         assert token in readme

@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def test_p60_is_visible_on_main_page():
     text = (ROOT / "README.md").read_text(encoding="utf-8")
     for token in (
-        "P60 - integer transition-calibration allocation",
+        "**Proposition 60**",
         "p60_integer_transition_calibration.svg",
         "integer_transition_calibration.py",
         "test_integer_transition_calibration.py",

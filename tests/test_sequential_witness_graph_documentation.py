@@ -25,4 +25,4 @@ def test_p47_publication_visual_exists_and_is_linked():
     assert FIGURE.exists()
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     assert "p47_sequential_graph_refinement.svg" in readme
-    assert "P47 sequential graph refinement and stopping" in readme
+    assert "**Proposition 47**" in readme

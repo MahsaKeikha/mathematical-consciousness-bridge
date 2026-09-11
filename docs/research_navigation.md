@@ -2,24 +2,26 @@
 
 This page is the reading and reference index for the **Mathematical Consciousness Bridge** repository. It is organized by scientific dependency rather than by development chronology so that a reader can move from the research question to proofs, figures, code, falsification conditions, and citation resources without searching through the repository manually.
 
-The current documented theorem frontier is **P71**. The complete proposition record runs from **P1 through P71**. P71 is a core bridge-methodology result descending from P19; it is not an extension of the P61-P70 calibration branch.
+The current documented theorem frontier is **P72**. The complete proposition record runs from **P1 through P72**. P71 and P72 form a target-side methodology branch descending from the P19 physical-sufficiency question. They are not extensions of the P61-P70 calibration branch.
 
 ## Recommended reading order
 
 1. [Main research study](../README.md) for the complete scientific narrative and curated figures.
 2. [Bridge problem](bridge_problem.md) for the formal physical-to-experiential question.
 3. [Scientific status discipline](../README.md#scientific-status-discipline) for the distinction among definitions, proved results, implementations, numerical checks, empirical inputs, hypotheses, and open bridge claims.
-4. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P71.
+4. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P72.
 5. [P19 fundamental physical sufficiency](proposition_19_fundamental_physical_sufficiency.md) for the exact, stochastic, and differential bridge criteria.
 6. [P20-P24 finite and adaptive residual certification](theorem_roadmap.md) for finite-data and repeated-look validity.
 7. [P71 target-provenance non-circularity](proposition_71_target_provenance_noncircularity.md) for the theorem showing when a target construction makes a bridge test vacuous by design.
-8. [P11-P18 and P25-P37 operational physical structure](theorem_roadmap.md) for intervention, temporal, compositional, and multiscale requirements.
-9. [P38-P44 quantum foundations and bridge tests](quantum_foundations_and_bridge_test.md) for quantum operational sufficiency under explicit bridge classes.
-10. [P45-P60 adaptive experiment design and scheduling](theorem_roadmap.md) for valid evidence collection and transition-calibration setup.
-11. [P61-P70 Calibration and Optimization Frontier](calibration_optimization_frontier_p61_p70.md) for downstream integer resource-allocation mathematics.
-12. [Equation and citation map](equation_and_citation_map.md) for equation-level provenance and theorem lineage.
-13. [Falsification program](falsification_program.md) for the empirical burden required before any bridge claim can be accepted.
-14. [Citation guide](../CITATION.md) for citing the whole research program or a specific proposition, figure, algorithm, or implementation.
+8. [P72 target-measurement channel robustness](proposition_72_target_measurement_channel_robustness.md) for noisy-target residual transfer, witness erasure, target-channel stability, and the finite-sample target-separation certificate.
+9. [P11-P18 and P25-P37 operational physical structure](theorem_roadmap.md) for intervention, temporal, compositional, and multiscale requirements.
+10. [P38-P44 quantum foundations and bridge tests](quantum_foundations_and_bridge_test.md) for quantum operational sufficiency under explicit bridge classes.
+11. [P45-P60 adaptive experiment design and scheduling](theorem_roadmap.md) for valid evidence collection and transition-calibration setup.
+12. [P61-P70 Calibration and Optimization Frontier](calibration_optimization_frontier_p61_p70.md) for downstream integer resource-allocation mathematics.
+13. [Equation and citation map](equation_and_citation_map.md) for equation-level provenance and theorem lineage.
+14. [P72 equation and provenance record](p72_equation_provenance.md) for the standard-versus-repository classification of the noisy-target theorem.
+15. [Falsification program](falsification_program.md) for the empirical burden required before any bridge claim can be accepted.
+16. [Citation guide](../CITATION.md) for citing the whole research program or a specific proposition, figure, algorithm, or implementation.
 
 ## Scientific branch map
 
@@ -32,7 +34,8 @@ The current documented theorem frontier is **P71**. The complete proposition rec
 | Quantum sufficiency | P38-P44 | Tests factorization through declared operational quantum descriptions with finite uncertainty and regularity control | [Quantum foundations and bridge test](quantum_foundations_and_bridge_test.md) |
 | Adaptive experiment design | P45-P60 | Designs valid sequential evidence collection, scheduling, switching, and transition calibration | [Theorem roadmap](theorem_roadmap.md) |
 | Calibration and optimization | P61-P70 | Solves and certifies downstream finite-resource allocation after the scientific witness is declared | [Calibration and Optimization Frontier](calibration_optimization_frontier_p61_p70.md) |
-| Target-provenance non-circularity | P71 | Prevents descriptor-derived targets from being mistaken for independent evidence of bridge sufficiency | [P71](proposition_71_target_provenance_noncircularity.md) |
+| Target provenance | P71 | Prevents descriptor-derived targets from being mistaken for independent evidence of bridge sufficiency | [P71](proposition_71_target_provenance_noncircularity.md) |
+| Target measurement | P72 | Quantifies what noisy target observation can preserve, attenuate, erase, or falsely contaminate under an explicit channel model | [P72](proposition_72_target_measurement_channel_robustness.md) |
 
 ## Complete proposition index
 
@@ -109,6 +112,7 @@ The current documented theorem frontier is **P71**. The complete proposition rec
 | P69 | [Certified dual-optimal multiplier](proposition_69_dual_optimal_multiplier.md) | certified optimization of the P68 dual family |
 | P70 | [Exact primal-dual gap decomposition](proposition_70_primal_dual_gap_decomposition.md) | exact attribution of candidate-to-dual certificate gap |
 | P71 | [Target-provenance non-circularity](proposition_71_target_provenance_noncircularity.md) | descriptor-derived target vacuity, learned-target corollary, and provenance non-identifiability |
+| P72 | [Target-measurement channel robustness](proposition_72_target_measurement_channel_robustness.md) | conditional residual attenuation, erasure counterexample, target-channel stability, and finite target-separation certification |
 
 ## Core bridge interface
 
@@ -124,9 +128,21 @@ with stochastic residual
 R_{\mathrm{stoch}}(T)=I(E;\Omega\mid T).
 \]
 
-P19 makes those criteria exact. P20-P24 make the stochastic test finite-data and selection aware. P71 adds a logically prior evidential guard: if the target construction already forces \(E=h(T)\) or a descriptor-only channel \(\Omega\to T\to E\), then success of the corresponding bridge test is structurally vacuous as evidence for an independently specified target.
+P19 makes those criteria exact. P20-P24 make the stochastic test finite-data and selection aware. P71 adds a logically prior evidential guard: if the target construction already forces \(E=h(T)\) or a descriptor-only channel \(\Omega\to T\to E\), then success is structurally vacuous as independent bridge evidence.
 
-This does **not** require \(E\) to be statistically independent of \(T\). A genuine bridge could make the two highly dependent. The requirement concerns how the target was constructed and justified.
+P72 adds the next target-side obligation. If \(E^\star\) is latent and observed through \(Y\), then under
+
+\[
+Y\perp\!\!\!\perp\Omega\mid(E^\star,T)
+\]
+
+we have
+
+\[
+\boxed{I(Y;\Omega\mid T)\le I(E^\star;\Omega\mid T).}
+\]
+
+So a certified positive observed residual can transfer to the latent target, while a null observed residual remains inconclusive because a noisy channel may erase the witness.
 
 ## Figures and reproducibility
 
@@ -135,12 +151,13 @@ This does **not** require \(E\) to be statistically independent of \(T\). A genu
 | [Visual atlas](../website/visual-atlas.html) | browser-oriented scientific figure gallery |
 | [Quantitative physics and mathematics atlas](quantitative_physics_mathematics_atlas.md) | classical, statistical, causal, dynamical, and multiscale quantitative figures |
 | [Quantum foundations and bridge test](quantum_foundations_and_bridge_test.md) | quantum foundations sequence and P38-P44 bridge tests |
-| [P71 figure](figures/p71_target_provenance_noncircularity.svg) | synthetic comparison of a descriptor-derived target and a separately declared target |
+| [P71 figure](figures/p71_target_provenance_noncircularity.svg) | descriptor-derived target vacuity and independently declared synthetic counterexample |
+| [P72 figure](figures/p72_target_measurement_channel_robustness.svg) | latent-target measurement, residual attenuation, erasure, and finite-sample witness transfer |
 | [`src/consciousness_bridge/`](../src/consciousness_bridge/) | executable theorem implementations |
 | [`tests/`](../tests/) | theorem, documentation, geometry, and publication regression tests |
 
 ## Evidence and citation
 
-Use the [Equation and citation map](equation_and_citation_map.md) to distinguish standard identities, repository derivations, and externally supported scientific claims. Use the [Foundational bibliography](foundational_physics_mathematics_bibliography.md), [Literature map](literature_map.md), and [Reference audit](reference_audit.md) for external evidence. Use the [Citation guide](../CITATION.md) when citing the overall project or a specific proposition.
+Use the [Equation and citation map](equation_and_citation_map.md) to distinguish standard identities, repository derivations, and externally supported scientific claims. Use the [P72 equation and provenance record](p72_equation_provenance.md) for the noisy-target theorem. Use the [Foundational bibliography](foundational_physics_mathematics_bibliography.md), [Literature map](literature_map.md), and [Reference audit](reference_audit.md) for external evidence. Use the [Citation guide](../CITATION.md) when citing the overall project or a specific proposition.
 
-The research remains an ongoing mathematical-physics program. The current theorem frontier is P71, but the physical-to-experiential bridge itself remains open.
+The research remains an ongoing mathematical-physics program. The current theorem frontier is P72, but the physical-to-experiential bridge itself remains open.

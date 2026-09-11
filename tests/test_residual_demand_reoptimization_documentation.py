@@ -25,6 +25,6 @@ def test_p53_visual_and_proof_to_code_path_are_public():
         "p53_residual_demand_reoptimization.svg",
         "residual_demand_reoptimization.py",
         "test_residual_demand_reoptimization.py",
-        "P53 - residual-demand reoptimization after safe pruning",
+        "**Proposition 53**",
     ):
         assert token in readme

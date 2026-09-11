@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def test_p56_is_visible_on_main_page():
     text = (ROOT / "README.md").read_text(encoding="utf-8")
     for token in (
-        "P56 - moving-start metric reoptimization stability",
+        "**Proposition 56**",
         "p56_moving_start_metric_reoptimization_stability.svg",
         "moving_start_metric_reoptimization.py",
         "test_moving_start_metric_reoptimization.py",

@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def test_p54_is_visible_on_main_research_page():
     text = (ROOT / "README.md").read_text(encoding="utf-8")
     for token in (
-        "P54 - metric switching-cost residual scheduling",
+        "**Proposition 54**",
         "p54_metric_switching_cost_residual_scheduling.svg",
         "metric_switching_residual_schedule.py",
         "test_metric_switching_residual_schedule.py",

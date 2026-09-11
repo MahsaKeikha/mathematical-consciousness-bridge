@@ -46,9 +46,11 @@ def test_website_release_status_matches_repository():
 
 def test_website_latest_figure_is_real():
     html = WEBSITE.read_text(encoding="utf-8")
-    figure = "docs/figures/p71_target_provenance_noncircularity.svg"
-    assert figure in html
-    assert (ROOT / figure).exists()
+    frontier = _max_proposition_number()
+    figures = sorted((ROOT / "docs" / "figures").glob(f"p{frontier}_*.svg"))
+    assert figures, f"no figure found for P{frontier}"
+    relative_paths = [figure.relative_to(ROOT).as_posix() for figure in figures]
+    assert any(path in html for path in relative_paths)
 
 
 def test_website_has_scientific_boundary_and_provenance_paths():
@@ -123,6 +125,7 @@ def test_visual_atlas_referenced_repository_figures_exist():
 
 def test_research_map_covers_full_proposition_frontier_without_branch_conflation():
     html = (WEBSITE_DIR / "research-map.html").read_text(encoding="utf-8")
+    frontier = _max_proposition_number()
     assert "P1-P10" in html
     assert "P11-P18" in html
     assert "P19-P24" in html
@@ -131,4 +134,6 @@ def test_research_map_covers_full_proposition_frontier_without_branch_conflation
     assert "P45-P53" in html
     assert "P54-P70" in html
     assert "P71: When is a successful bridge test non-circular?" in html
-    assert _max_proposition_number() == 71
+    assert "P72: What survives noisy target measurement?" in html
+    assert f"P{frontier}" in html
+    assert "P71-P72 are target-side methodology results, not calibration theorems" in html

@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def test_p58_is_visible_on_main_page():
     text = (ROOT / "README.md").read_text(encoding="utf-8")
     for token in (
-        "P58 - finite-data switching-metric uncertainty",
+        "**Proposition 58**",
         "p58_finite_data_metric_uncertainty.svg",
         "finite_data_metric_uncertainty.py",
         "test_finite_data_metric_uncertainty.py",
