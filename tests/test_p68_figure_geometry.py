@@ -3,6 +3,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 FIGURE = ROOT / "docs/figures/p68_lagrangian_optimality_gap.svg"
+CATALOG = ROOT / "docs/figure_catalog.md"
 NS = {"svg": "http://www.w3.org/2000/svg"}
 
 
@@ -136,3 +137,23 @@ def test_p68_figure_preserves_weak_duality_gap_and_positivity_gate():
         "physical-to-experiential bridge remains open",
     ):
         assert token in text
+
+
+def test_p68_catalog_row_is_self_explanatory_and_linked():
+    catalog = CATALOG.read_text(encoding="utf-8")
+    matching_rows = [
+        line
+        for line in catalog.splitlines()
+        if "(figures/p68_lagrangian_optimality_gap.svg)" in line
+    ]
+    assert len(matching_rows) == 1
+    row = matching_rows[0]
+    for token in (
+        "What this figure shows:",
+        "How to read it:",
+        "Main takeaway:",
+        "every positive multiplier gives a valid lower bound",
+        "physical-to-experiential bridge remains open",
+        "[Proposition 68](proposition_68_lagrangian_optimality_gap.md)",
+    ):
+        assert token in row
