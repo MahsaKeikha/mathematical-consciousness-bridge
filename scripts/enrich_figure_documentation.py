@@ -6,6 +6,8 @@ import re
 from dataclasses import dataclass
 from pathlib import Path
 
+from quantum_figure_records import build_quantum_records, write_quantum_visual_guide
+
 ROOT = Path(__file__).resolve().parents[1]
 FIGURE_ROOT = ROOT / "docs" / "figures"
 README = ROOT / "README.md"
@@ -295,6 +297,8 @@ def _context_link(relative: str) -> str:
     path = Path(relative)
     if "quantitative" in path.parts:
         return "[Quantitative atlas](quantitative_physics_mathematics_atlas.md)"
+    if "quantum" in path.parts:
+        return "[Quantum visual guide](quantum_visual_guide.md)"
     match = re.match(r"p(\d+)_", path.name, flags=re.I)
     if match:
         number = int(match.group(1))
@@ -305,7 +309,12 @@ def _context_link(relative: str) -> str:
 
 
 def _enrich_svgs() -> list[tuple[str, FigureRecord]]:
-    combined = {**_visual_atlas_records(), **_readme_records(), **_quantitative_records()}
+    combined = {
+        **_visual_atlas_records(),
+        **_readme_records(),
+        **_quantitative_records(),
+        **build_quantum_records(ROOT, FigureRecord, _plain),
+    }
     rows: list[tuple[str, FigureRecord]] = []
 
     for path in sorted(FIGURE_ROOT.rglob("*.svg")):
@@ -400,7 +409,13 @@ def _update_visual_atlas() -> None:
 
 
 def _write_catalog(rows: list[tuple[str, FigureRecord]]) -> None:
-    conceptual = [row for row in rows if "/quantitative/" not in row[0] and not re.match(r"docs/figures/p\d+_", row[0], flags=re.I)]
+    conceptual = [
+        row for row in rows
+        if "/quantitative/" not in row[0]
+        and "/quantum/" not in row[0]
+        and not re.match(r"docs/figures/p\d+_", row[0], flags=re.I)
+    ]
+    quantum = [row for row in rows if "/quantum/" in row[0]]
     propositions = [row for row in rows if re.match(r"docs/figures/p\d+_", row[0], flags=re.I)]
     quantitative = [row for row in rows if "/quantitative/" in row[0]]
 
@@ -409,7 +424,7 @@ def _write_catalog(rows: list[tuple[str, FigureRecord]]) -> None:
         "",
         "This is the single visual index for the **Mathematical Consciousness Bridge** repository. Every SVG is listed with a direct link, an explicit description, a reading instruction, a scientific-status statement, and a route to formal context. A reader should not need to guess from a filename, search another folder, or infer an unstated meaning from visual appearance.",
         "",
-        f"**Current catalog:** {len(rows)} SVG figures: {len(conceptual)} architecture/conceptual visuals, {len(propositions)} proposition/theorem visuals, and {len(quantitative)} quantitative figures.",
+        f"**Current catalog:** {len(rows)} SVG figures: {len(conceptual)} architecture/conceptual visuals, {len(quantum)} foundational quantum-physics visuals, {len(propositions)} proposition/theorem visuals, and {len(quantitative)} quantitative figures.",
         "",
         "Every SVG also carries an embedded `<title>` and substantive `<desc>` for direct viewing and accessibility. Caption requirements are defined in the [Figure Caption and Description Standard](figure_caption_and_description_standard.md).",
         "",
@@ -437,6 +452,7 @@ def _write_catalog(rows: list[tuple[str, FigureRecord]]) -> None:
         lines.append("")
 
     add_section("Architecture and conceptual figures", conceptual)
+    add_section("Foundational quantum-physics figures", quantum)
     add_section("Proposition and theorem figures", propositions)
     add_section("Quantitative physics and mathematics figures", quantitative)
 
@@ -460,6 +476,7 @@ def main() -> None:
     _update_readme()
     _update_visual_atlas()
     rows = _enrich_svgs()
+    write_quantum_visual_guide(ROOT)
     _write_catalog(rows)
 
 

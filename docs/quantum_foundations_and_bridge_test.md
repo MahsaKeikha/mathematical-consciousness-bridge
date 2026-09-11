@@ -4,6 +4,8 @@
 
 This document formalizes the role of quantum mechanics in the Mathematical Consciousness Bridge program. Quantum theory is treated as part of the physical description to be tested for sufficiency. It is **not** assumed that consciousness is quantum, that consciousness causes wave-function collapse, or that quantum mechanics is incomplete.
 
+For a figure-by-figure visual explanation of the quantum background, including the governing equation, how to read each plot, the exact takeaway, and the scientific boundary, use the [Quantum Figure Visual Guide](quantum_visual_guide.md).
+
 ## Quantum operational object
 
 For a declared experiment class, define
