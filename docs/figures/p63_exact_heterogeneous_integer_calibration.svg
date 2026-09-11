@@ -1,84 +1,109 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1050" viewBox="0 0 1800 1050" role="img" aria-labelledby="title desc">
-  <title id="title">Proposition 63: exact heterogeneous-cost integer transition calibration</title>
-  <desc id="desc">What this figure shows: Proved exact pseudo-polynomial discrete optimization theorem. P62 gives the unique continuous transition-calibration allocation when different transition measurements have different positive costs. P63 converts that model to executable whole-measurement counts when costs and the total budget are positive integers.. Visible guideposts include: Unequal costs break the P61 equal-unit greedy proof, so P63 solves the discrete problem exactly with Bellman dynamic programming.; Why P61 is not enough; increment A costs 2; increment B costs 7; Raw marginal gain is no longer; a fair comparison across choices.. How to read it: follow the diagram in the direction of its arrows and use each box, panel, inequality, or highlighted region only with the meaning printed beside it. Main takeaway: this is the visual companion to Proposition 63; the proposition document supplies the assumptions, proof, and exact scope of every implication. Scientific status: Proposition 63 theorem/certificate visual. It is not independent empirical evidence and does not, by itself, identify a physical or latent variable with consciousness.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1000" viewBox="0 0 1200 1000" role="img" aria-labelledby="title desc">
+  <title id="title">P63 exact heterogeneous-cost integer calibration</title>
+  <desc id="desc">What this figure shows: P63 solves the declared heterogeneous-cost whole-measurement calibration problem exactly when transition costs and the total budget are positive integers. It replaces the equal-cost P61 greedy argument with an exact-spend Bellman dynamic program because unequal costs destroy the exchange proof behind the equal-unit rule. How to read it: move left to right across the top row from the failure of the P61 greedy argument to the exact integer problem and its exact-spend Bellman state. The two attached center arrows feed the exact Bellman recurrence and final hard-budget optimum. From that theorem panel, follow the three lower branches to exact gcd cost compression, pseudo-polynomial complexity, and the P62 continuous lower bound. Main takeaway: P63 is an exact unrestricted integer solver for the declared integer-cost separable calibration problem; its straightforward running time is pseudo-polynomial in the compressed numeric budget, which by itself is not an NP-hardness claim. Scientific status: discrete optimization theorem for the declared calibration surrogate. It does not validate the uncertainty model as an experiential law, identify a calibration variable with consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness.</desc>
   <defs>
-    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
-      <path d="M0 0 L12 6 L0 12 Z" fill="#334155"/>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
     </marker>
     <style>
-      .h1{font:700 40px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#0f172a}
-      .sub{font:400 21px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#475569}
-      .bt{font:700 25px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#0f172a}
-      .tx{font:400 20px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#334155}
-      .math{font:600 20px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#0f172a}
-      .small{font:400 17px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#64748b}
-      .arrow{fill:none;stroke:#334155;stroke-width:3;stroke-linecap:round;marker-end:url(#arrow)}
-      .card{stroke-width:2}
+      .title{font:700 30px Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 16px Arial,sans-serif;fill:#475569}
+      .head{font:700 18px Arial,sans-serif;fill:#0f172a}
+      .copy{font:400 15px Arial,sans-serif;fill:#334155}
+      .small{font:400 14px Arial,sans-serif;fill:#475569}
+      .eq{font:600 16px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .strong{font:700 17px Arial,sans-serif;fill:#0f172a}
+      .route{font:700 13px Arial,sans-serif;fill:#475569}
+      .arrow{stroke:#334155;stroke-width:2.5;fill:none;marker-end:url(#arrow)}
     </style>
   </defs>
 
-  <rect width="1800" height="1050" rx="28" fill="#f8fafc"/>
-  <text x="70" y="70" class="h1">P63: Exact whole-measurement allocation when costs differ</text>
-  <text x="70" y="112" class="sub">Unequal costs break the P61 equal-unit greedy proof, so P63 solves the discrete problem exactly with Bellman dynamic programming.</text>
+  <rect width="1200" height="1000" rx="24" fill="#f8fafc"/>
+  <text x="60" y="58" class="title">P63  Exact heterogeneous-cost integer calibration</text>
+  <text x="60" y="90" class="subtitle">Unequal costs require an exact discrete solver; P61's equal-unit greedy proof does not carry over.</text>
 
-  <g id="p63-why" data-qa-block="true" data-x="70" data-y="175" data-width="500" data-height="245">
-    <rect class="card" x="70" y="175" width="500" height="245" rx="22" fill="#fff7ed" stroke="#f97316"/>
-    <text x="115" y="222" class="bt">Why P61 is not enough</text>
-    <text x="115" y="270" class="math">increment A costs 2</text>
-    <text x="115" y="305" class="math">increment B costs 7</text>
-    <text x="115" y="352" class="tx">Raw marginal gain is no longer</text>
-    <text x="115" y="384" class="tx">a fair comparison across choices.</text>
+  <g id="block-greedy" data-x="55" data-y="130" data-w="330" data-h="220">
+    <rect x="55" y="130" width="330" height="220" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+    <text x="80" y="168" class="head">1. Why P61 cannot be reused</text>
+    <text x="80" y="207" class="eq">one increment may cost 2</text>
+    <text x="80" y="235" class="eq">another may cost 7</text>
+    <text x="80" y="274" class="copy">Raw marginal gain is not an</text>
+    <text x="80" y="298" class="copy">equal-resource comparison.</text>
+    <text x="80" y="330" class="small">Gain-per-cost has no proved P61 exchange rule.</text>
   </g>
 
-  <g id="p63-experiment" data-qa-block="true" data-x="650" data-y="175" data-width="500" data-height="245">
-    <rect class="card" x="650" y="175" width="500" height="245" rx="22" fill="#ffffff" stroke="#94a3b8"/>
-    <text x="695" y="222" class="bt">Integer experiment</text>
-    <text x="695" y="270" class="math">kₑ ∈ {1,2,3,...}</text>
-    <text x="695" y="305" class="math">Σ cₑ kₑ ≤ B</text>
-    <text x="695" y="352" class="tx">Whole observations only, under</text>
-    <text x="695" y="384" class="tx">a hard resource budget.</text>
+  <g id="block-problem" data-x="435" data-y="130" data-w="330" data-h="220">
+    <rect x="435" y="130" width="330" height="220" rx="18" fill="#ffffff" stroke="#64748b" stroke-width="2"/>
+    <text x="460" y="168" class="head">2. Exact integer problem</text>
+    <text x="460" y="207" class="eq">kₑ ∈ {1,2,3,...}</text>
+    <text x="460" y="239" class="eq">Σₑ cₑkₑ ≤ B</text>
+    <text x="460" y="276" class="copy">Minimize Σₑ bₑ / √kₑ.</text>
+    <text x="460" y="310" class="small">Feasible exactly when</text>
+    <text x="460" y="334" class="small">B ≥ Σₑ cₑ.</text>
   </g>
 
-  <g id="p63-state" data-qa-block="true" data-x="1230" data-y="175" data-width="500" data-height="245">
-    <rect class="card" x="1230" y="175" width="500" height="245" rx="22" fill="#eef2ff" stroke="#6366f1"/>
-    <text x="1275" y="222" class="bt">State of the exact solver</text>
-    <text x="1275" y="270" class="math">Fᵢ(s)</text>
-    <text x="1275" y="307" class="tx">Best uncertainty using</text>
-    <text x="1275" y="337" class="tx">the first i edges with exactly</text>
-    <text x="1275" y="367" class="tx">s units of cost spent.</text>
-    <text x="1275" y="388" class="small">Allocations map to state paths.</text>
+  <g id="block-state" data-x="815" data-y="130" data-w="330" data-h="220">
+    <rect x="815" y="130" width="330" height="220" rx="18" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+    <text x="840" y="168" class="head">3. Exact-spend state</text>
+    <text x="840" y="208" class="strong">Fᵢ(s)</text>
+    <text x="840" y="244" class="copy">Best uncertainty for the first</text>
+    <text x="840" y="268" class="copy">i edges at exact spend s.</text>
+    <text x="840" y="302" class="eq">F₀(0)=0</text>
+    <text x="840" y="331" class="small">F₀(s)=+∞ for s &gt; 0.</text>
   </g>
 
-  <path d="M570 297.5 H638" class="arrow" data-from="p63-why" data-to="p63-experiment"/>
-  <path d="M1150 297.5 H1218" class="arrow" data-from="p63-experiment" data-to="p63-state"/>
+  <path id="arrow-1" class="arrow" d="M385 240 H435" data-source="block-greedy" data-target="block-problem"/>
+  <path id="arrow-2" class="arrow" d="M765 240 H815" data-source="block-problem" data-target="block-state"/>
 
-  <g id="p63-bellman" data-qa-block="true" data-x="245" data-y="515" data-width="1310" data-height="255">
-    <rect class="card" x="245" y="515" width="1310" height="255" rx="24" fill="#ecfdf5" stroke="#10b981"/>
-    <text x="295" y="565" class="bt">Exact Bellman recurrence</text>
-    <text x="295" y="625" class="math">Fᵢ(s) = min over k ≥ 1 of [ Fᵢ₋₁(s - cᵢk) + bᵢ/√k ]</text>
-    <text x="295" y="675" class="math">U*int(B) = min over 0 ≤ s ≤ B of Fₘ(s)</text>
-    <text x="295" y="725" class="small">Predecessor states reconstruct the globally optimal whole-measurement allocation.</text>
+  <text x="600" y="390" class="route" text-anchor="middle">exact Bellman optimization over the integer cost lattice</text>
+
+  <g id="block-bellman" data-x="120" data-y="410" data-w="960" data-h="220">
+    <rect x="120" y="410" width="960" height="220" rx="20" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+    <text x="600" y="448" text-anchor="middle" class="head">4. Exact Bellman recurrence and hard-budget optimum</text>
+    <text x="600" y="487" text-anchor="middle" class="eq">Fᵢ(s) = min over k ≥ 1, cᵢk ≤ s of</text>
+    <text x="600" y="520" text-anchor="middle" class="eq">[ Fᵢ₋₁(s - cᵢk) + bᵢ / √k ]</text>
+    <text x="600" y="560" text-anchor="middle" class="strong">U*int(B) = min over 0 ≤ s ≤ B of Fₘ(s)</text>
+    <text x="600" y="596" text-anchor="middle" class="copy">Predecessor states reconstruct a globally optimal whole-measurement allocation.</text>
   </g>
 
-  <path d="M900 420 V503" class="arrow" data-from="p63-experiment" data-to="p63-bellman"/>
-  <path d="M1480 420 C1450 475 1325 485 1240 515" class="arrow" data-from="p63-state" data-to="p63-bellman"/>
+  <path id="arrow-3" class="arrow" d="M600 350 V410" data-source="block-problem" data-target="block-bellman"/>
+  <path id="arrow-4" class="arrow" d="M980 350 V380 H900 V410" data-source="block-state" data-target="block-bellman"/>
 
-  <g id="p63-complexity" data-qa-block="true" data-x="120" data-y="845" data-width="710" data-height="145">
-    <rect class="card" x="120" y="845" width="710" height="145" rx="20" fill="#eff6ff" stroke="#3b82f6"/>
-    <text x="165" y="892" class="bt">Exact computational guarantee</text>
-    <text x="165" y="928" class="math">O(m B′²) straightforward time</text>
-    <text x="165" y="958" class="tx">B′ uses exact gcd cost compression.</text>
+  <g id="block-gcd" data-x="55" data-y="690" data-w="330" data-h="170">
+    <rect x="55" y="690" width="330" height="170" rx="18" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="80" y="728" class="head">5. Exact gcd compression</text>
+    <text x="80" y="767" class="eq">g = gcd{cₑ}</text>
+    <text x="80" y="797" class="eq">B' = floor(B/g)</text>
+    <text x="80" y="830" class="small">A remainder below g is unusable</text>
+    <text x="80" y="851" class="small">on the declared cost lattice.</text>
   </g>
 
-  <g id="p63-benchmark" data-qa-block="true" data-x="970" data-y="845" data-width="710" data-height="145">
-    <rect class="card" x="970" y="845" width="710" height="145" rx="20" fill="#ffffff" stroke="#94a3b8"/>
-    <text x="1015" y="892" class="bt">Continuous benchmark from P62</text>
-    <text x="1015" y="928" class="math">U*cont(B) ≤ U*int(B)</text>
-    <text x="1015" y="958" class="tx">Exact integrality gap reported per instance.</text>
+  <g id="block-complexity" data-x="435" data-y="690" data-w="330" data-h="170">
+    <rect x="435" y="690" width="330" height="170" rx="18" fill="#fefce8" stroke="#ca8a04" stroke-width="2"/>
+    <text x="460" y="728" class="head">6. Exact computational cost</text>
+    <text x="460" y="770" class="strong">O(m B'^2)</text>
+    <text x="460" y="804" class="small">Pseudo-polynomial in numeric B'.</text>
+    <text x="460" y="831" class="small">Working objective arrays use O(B').</text>
+    <text x="460" y="852" class="small">This alone is not an NP-hardness claim.</text>
   </g>
 
-  <path d="M560 770 C520 815 475 820 475 833" class="arrow" data-from="p63-bellman" data-to="p63-complexity"/>
-  <path d="M1240 770 C1280 815 1325 820 1325 833" class="arrow" data-from="p63-bellman" data-to="p63-benchmark"/>
+  <g id="block-benchmark" data-x="815" data-y="690" data-w="330" data-h="170">
+    <rect x="815" y="690" width="330" height="170" rx="18" fill="#ffffff" stroke="#64748b" stroke-width="2"/>
+    <text x="840" y="728" class="head">7. P62 lower benchmark</text>
+    <text x="840" y="770" class="strong">U*cont(B) ≤ U*int(B)</text>
+    <text x="840" y="806" class="small">Additive and multiplicative gaps</text>
+    <text x="840" y="829" class="small">are instance-specific certificates.</text>
+    <text x="840" y="852" class="small">No universal small-gap claim is made.</text>
+  </g>
 
-  <text x="900" y="1025" text-anchor="middle" class="small">Boundary: P63 solves the declared separable calibration surrogate for integer costs. It makes no claim about consciousness or quantum incompleteness.</text>
+  <path id="arrow-5" class="arrow" d="M300 630 V660 H220 V690" data-source="block-bellman" data-target="block-gcd"/>
+  <path id="arrow-6" class="arrow" d="M600 630 V690" data-source="block-bellman" data-target="block-complexity"/>
+  <path id="arrow-7" class="arrow" d="M900 630 V660 H980 V690" data-source="block-bellman" data-target="block-benchmark"/>
+
+  <g id="block-boundary" data-x="90" data-y="885" data-w="1020" data-h="95">
+    <rect x="90" y="885" width="1020" height="95" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="118" y="914" class="head">Exactness and scientific boundary</text>
+    <text x="118" y="939" class="small">P63 is exact for the declared integer-cost separable calibration problem; unspent budget is allowed when the cost lattice cannot fund another increment.</text>
+    <text x="118" y="963" class="small">It does not validate the uncertainty model, identify consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness.</text>
+  </g>
 </svg>
