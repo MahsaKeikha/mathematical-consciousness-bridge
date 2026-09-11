@@ -1,0 +1,63 @@
+name: one-shot-p60-figure-docs
+
+on:
+  push:
+    branches: [visual-polish-p60]
+    paths:
+      - .github/workflows/one-shot-p60-figure-docs.yml
+
+permissions:
+  contents: write
+
+jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: visual-polish-p60
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -e ".[dev]"
+      - name: Integrate permanent P60 figure record
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("scripts/conceptual_figure_records.py")
+          text = path.read_text(encoding="utf-8")
+          marker = '    "docs/figures/p61_exact_integer_transition_calibration.svg": {'
+          if '"docs/figures/p60_integer_transition_calibration.svg"' not in text:
+              record = '''    "docs/figures/p60_integer_transition_calibration.svg": {
+                  "title": "P60 hard-budget integer rounding with certified overhead",
+                  "description": (
+                      "What this figure shows: P60 converts the exact P59 continuous unit-cost calibration design into executable whole-measurement counts while respecting a hard integer budget. It solves P59 at the deliberately reduced budget N0 = B - m, rounds every edge count upward, and certifies both feasibility and the resulting uncertainty overhead relative to the full-budget continuous optimum. "
+                      "How to read it: move left to right across the top row from the hard budget to the reduced P59 allocation and then to ceiling rounding. The center theorem panel combines the budget-feasibility proof with the deterministic uncertainty guarantee. Follow the three lower branches to the full-budget multiplicative overhead, the sufficient target-uncertainty budget, and the distinction between this constructive guarantee and P61 exact integer optimality. "
+                      "Main takeaway: P60 gives a closed-form auditable integer construction with an explicit worst-case overhead; it is conservative and is not claimed to be the exact integer optimum."
+                  ),
+                  "status": (
+                      "Deterministic rounding and experimental-budget theorem for the declared calibration surrogate. It does not validate the observation model or sensitivity weights, identify a transition metric with consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness."
+                  ),
+              },
+          '''
+              if marker not in text:
+                  raise SystemExit("P61 insertion marker not found")
+              text = text.replace(marker, record + marker, 1)
+              path.write_text(text, encoding="utf-8")
+          PY
+      - name: Regenerate figure metadata and catalog
+        run: python scripts/enrich_figure_documentation.py
+      - run: pytest -q
+      - run: ruff check .
+      - name: Commit audited P60 integration and remove one-shot workflow
+        run: |
+          rm .github/workflows/one-shot-p60-figure-docs.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "Integrate P60 figure documentation metadata"
+          git push origin HEAD:visual-polish-p60
