@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P74**. The proposition record runs from **P1 through P74 with explicit dependency branches**. P71-P74 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P75**. The proposition record runs from **P1 through P75 with explicit dependency branches**. P71-P75 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -23,7 +23,9 @@ The current documented theorem frontier is **P74**. The proposition record runs 
 &\Downarrow\\
 &\text{P73: target-channel stability can be identified under a declared three-view model}\\
 &\Downarrow\\
-&\text{P74: finite data can certify or refuse that channel recovery}
+&\text{P74: finite data can certify or refuse that channel recovery}\\
+&\Downarrow\\
+&\text{P75: the target-measurement model must face overidentifying adequacy tests}
 \end{aligned}
 }
 \]
@@ -41,7 +43,7 @@ Separate but connected branches refine the physical representation and experimen
 }
 \]
 
-The proposition number records development order. It does not imply that P74 depends on P70. P74 depends scientifically on P20, P71, P72, and P73, together with the P73 latent-model assumptions.
+The proposition number records development order. It does not imply that P75 depends on P70. P75 depends scientifically on P19 and the P71-P74 target-side lineage, especially the P73 binary latent model whose adequacy it tests.
 
 ## 2. Target-side bridge lineage
 
@@ -202,11 +204,69 @@ and
 
 The theorem then introduces a finite-data nondegeneracy gate. The P73 inversion is certified only when every absolute covariance confidence interval is bounded away from zero and the covariance sign product is compatible with the P73 model. If the gate fails, the output is "not certified by the current data," not a forced latent estimate.
 
-When the gate passes, P74 propagates the simultaneous event through the P73 formulas to obtain confidence intervals for the latent imbalance, latent variance, the prevalence orbit under global label swapping, and all three P72 stability coefficients \(\gamma_j\). It also gives a certified lower bound for joint three-view stability and a conservative sufficient sample-size condition for clearing a known population covariance margin.
+When the gate passes, P74 propagates the simultaneous event through the P73 formulas to obtain confidence intervals for the latent imbalance, latent variance, the prevalence orbit under global label swapping, all three P72 stability coefficients, the label-invariant products \(b_jm\), the channel offsets, and the full unordered latent-conditioned binary response-probability pairs. It also gives a certified lower bound for joint three-view stability and a conservative sufficient sample-size condition for clearing a known population covariance margin.
 
 ![P74 finite-sample target-channel recovery](figures/p74_finite_sample_target_channel_recovery.svg)
 
 Direct proof: [P74](proposition_74_finite_sample_target_channel_recovery.md). Provenance: [P74 equation record](p74_equation_provenance.md). Implementation: [`finite_sample_target_channel_recovery.py`](../src/consciousness_bridge/finite_sample_target_channel_recovery.py). Tests: [`test_finite_sample_target_channel_recovery.py`](../tests/test_finite_sample_target_channel_recovery.py).
+
+### P75: target-model adequacy and four-view overidentification
+
+P73 identifies parameters under a declared three-view conditional-independence model, and P74 certifies that recovery from finite data. P75 asks whether successful recovery also validates that model. It does not.
+
+For \(k\) binary observed views, the full observed law has
+
+\[
+d_{\mathrm{obs}}(k)=2^k-1
+\]
+
+continuous degrees of freedom, while one binary latent state with \(k\) binary view channels has
+
+\[
+d_{\mathrm{model}}(k)=1+2k.
+\]
+
+Therefore
+
+\[
+\boxed{d_{\mathrm{obs}}(3)=7=d_{\mathrm{model}}(3),}
+\]
+
+so the nondegenerate three-view model is generically just-identified. This does not mean every three-view distribution belongs to the real stochastic model; positivity, nondegeneracy, and valid-channel inequalities still matter. It means there is no generic dimension-based reserve of equality constraints after fitting the model.
+
+With a fourth binary view,
+
+\[
+\boxed{d_{\mathrm{obs}}(4)=15,\qquad d_{\mathrm{model}}(4)=9,\qquad d_{\mathrm{over}}=6.}
+\]
+
+The fourth view therefore creates six generic overidentifying degrees of freedom. Under the declared conditional-independence model, P75 derives
+
+\[
+\boxed{C_{12}C_{34}=C_{13}C_{24}=C_{14}C_{23}}
+\]
+
+and requires all nondegenerate three-view subsets to recover the same latent-imbalance quantity
+
+\[
+\boxed{
+q_{ijk}=\frac{M_{ijk}^2}{C_{ij}C_{ik}C_{jk}}=\frac{4m^2}{1-m^2}.
+}
+\]
+
+It also derives the higher-order consistency relation
+
+\[
+\boxed{M_{1234}=(1+q)C_{12}C_{34},}
+\]
+
+with the equivalent covariance pairings.
+
+The executable P75 audit does not treat those displayed moments as a complete algebraic characterization. It recovers an anchor P73 triple, infers the fourth binary channel, reconstructs all 16 cells of the four-view observable law, and checks exact population compatibility. A synthetic residual-dependence example is required to fail this full-law reconstruction and the transparent moment diagnostics.
+
+![P75 target-model adequacy and four-view overidentification](figures/p75_target_model_adequacy_overidentification.svg)
+
+Direct proof: [P75](proposition_75_target_model_adequacy_overidentification.md). Provenance: [P75 equation record](p75_equation_provenance.md). Implementation: [`target_model_adequacy.py`](../src/consciousness_bridge/target_model_adequacy.py). Tests: [`test_target_model_adequacy.py`](../tests/test_target_model_adequacy.py).
 
 ## 3. Complete proposition index
 
@@ -285,7 +345,8 @@ Direct proof: [P74](proposition_74_finite_sample_target_channel_recovery.md). Pr
 | [P71](proposition_71_target_provenance_noncircularity.md) | descriptor-derived target vacuity | independent target provenance guard | proved |
 | [P72](proposition_72_target_measurement_channel_robustness.md) | conditional DPI, TV stability, finite target confidence | noisy target-measurement robustness | proved |
 | [P73](proposition_73_target_channel_identifiability.md) | three-view moment inversion and two-view no-go | target-channel stability identifiability under a declared latent model | proved conditional theorem |
-| [P74](proposition_74_finite_sample_target_channel_recovery.md) | simultaneous concentration and nonlinear interval propagation | finite-data target-channel stability certification with a nondegeneracy gate | proved conditional theorem |
+| [P74](proposition_74_finite_sample_target_channel_recovery.md) | simultaneous concentration and nonlinear interval propagation | finite-data target-channel recovery with a nondegeneracy gate | proved conditional theorem |
+| [P75](proposition_75_target_model_adequacy_overidentification.md) | dimension count, tetrads, cross-triple moments, full-law reconstruction | target-model adequacy and four-view overidentification | proved conditional theorem |
 
 ## 4. Calibration branch remains separate
 
@@ -308,18 +369,19 @@ These results optimize downstream experimental resources. They do not define con
 
 ## 5. Current open frontier
 
-After P74, the target side has four explicit requirements:
+After P75, the target side has five explicit requirements:
 
 1. the target must have non-circular provenance relative to the tested physical descriptor;
 2. its observation channel must be valid and sufficiently informative for the claimed witness;
 3. channel reliability must be identified or externally calibrated under a defensible target-measurement model;
-4. finite data must resolve the channel parameters far enough from the model singularity to support a confidence-certified reliability statement.
+4. finite data must resolve the channel parameters far enough from the model singularity to support a confidence-certified reliability statement;
+5. the target-measurement model itself must survive adequacy tests rather than being accepted because it can be fit.
 
-P74 closes the fourth item for the declared binary three-view IID model using a conservative simultaneous confidence construction. The next structural question is no longer simply estimation. It is **model adequacy**: how can the conditional-independence assumption behind P73-P74 be tested or falsified, and how should the framework respond when residual dependence among target views remains?
+P75 closes the population-level fifth item for one binary four-view extension of the P73 model. It provides explicit observable restrictions and full-law reconstruction, but it does not yet attach finite-sample simultaneous uncertainty to those adequacy residuals. The next structural question is therefore **finite-sample model-adequacy certification**.
 
 Beyond that, the broader open program remains:
 
-- test the conditional-independence and latent-class assumptions rather than treating them as automatically valid;
+- test target-model adequacy under finite data and residual dependence;
 - define and justify experiential variables independently of the physical candidate;
 - test descriptor sufficiency across interventions, time, composition, and scale;
 - sharpen finite-data guarantees for continuous, dependent, hidden-state, and learned-descriptor settings;
