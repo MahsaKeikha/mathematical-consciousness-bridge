@@ -135,5 +135,6 @@ def test_research_map_covers_full_proposition_frontier_without_branch_conflation
     assert "P54-P70" in html
     assert "P71: When is a successful bridge test non-circular?" in html
     assert "P72: What survives noisy target measurement?" in html
+    assert "P73: When can target-channel stability be identified?" in html
     assert f"P{frontier}" in html
-    assert "P71-P72 are target-side methodology results, not calibration theorems" in html
+    assert "P71-P73 are target-side methodology results, not calibration theorems" in html
