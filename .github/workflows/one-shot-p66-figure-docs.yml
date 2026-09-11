@@ -1,0 +1,47 @@
+name: one-shot-p66-figure-docs
+
+on:
+  push:
+    branches:
+      - visual-polish-p66
+
+permissions:
+  contents: write
+
+jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: visual-polish-p66
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Add permanent P66 figure metadata
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("scripts/conceptual_figure_records.py")
+          text = path.read_text(encoding="utf-8")
+          key = '    "docs/figures/p66_residual_exact_calibration_augmentation.svg": {'
+          if key not in text:
+              marker = "RECORDS: dict[str, dict[str, str]] = {\n"
+              record = '''    "docs/figures/p66_residual_exact_calibration_augmentation.svg": {\n        "title": "P66 residual-exact augmentation after P65 flooring",\n        "description": (\n            "What this figure shows: P66 starts from the exact lower-bounded continuous P65 optimum, floors it to an executable baseline-safe integer design, proves that the leftover budget R is strictly smaller than one baseline cost B0, and solves the best floor-dominating integer augmentation exactly by dynamic programming on that residual budget. "\n            "How to read it: move left to right across the three upper cards from the P65 optimum to the residual-budget identity and then to the exact residual dynamic program. From the DP card, follow the two attached lower branches: the left panel records objective and approximation improvements over the P65 floor; the right panel records why the computation stays localized to the residual scale. "\n            "Main takeaway: P66 is globally exact only inside the class k greater than or equal to the P65 floor f; it does not replace P63 as the unrestricted exact integer solver."\n        ),\n        "status": (\n            "Discrete resource-allocation theorem for the declared calibration surrogate. It is not a consciousness theorem, empirical consciousness result, physical-to-experiential bridge theorem, or quantum-ontology claim."\n        ),\n    },\n'''
+              if marker not in text:
+                  raise SystemExit("RECORDS marker not found")
+              path.write_text(text.replace(marker, marker + record, 1), encoding="utf-8")
+          PY
+      - name: Regenerate figure documentation
+        run: python scripts/enrich_figure_documentation.py
+      - name: Remove one-shot workflow
+        run: rm .github/workflows/one-shot-p66-figure-docs.yml
+      - name: Commit generated documentation changes
+        run: |
+          git config user.name "Mahsa Keikha"
+          git config user.email "mahsa.keikha@gmail.com"
+          git add scripts/conceptual_figure_records.py docs/figures/p66_residual_exact_calibration_augmentation.svg docs/figure_catalog.md .github/workflows/one-shot-p66-figure-docs.yml
+          git commit -m "Integrate P66 figure documentation metadata"
+          git push origin HEAD:visual-polish-p66
