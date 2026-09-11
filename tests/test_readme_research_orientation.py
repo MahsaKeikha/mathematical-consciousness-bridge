@@ -5,6 +5,12 @@ README = ROOT / "README.md"
 DETAIL = ROOT / "docs" / "detailed_proposition_record.md"
 
 
+def _plain_language_section(text: str) -> str:
+    start = text.index("# What this project is trying to achieve, in plain language")
+    end = text.index("# Abstract", start)
+    return text[start:end]
+
+
 def test_readme_follows_reader_first_scientific_order():
     text = README.read_text(encoding="utf-8")
     plain = text.index("# What this project is trying to achieve, in plain language")
@@ -39,6 +45,33 @@ def test_readme_follows_reader_first_scientific_order():
     assert fundamental < quantum < adaptive < calibration
     assert calibration < established < open_section < falsification < evidence
     assert evidence < visuals < validation < reproducibility < detail < current < navigation
+
+
+def test_plain_language_section_is_self_contained_and_equation_free():
+    text = README.read_text(encoding="utf-8")
+    section = _plain_language_section(text)
+
+    for forbidden in ("$$", "\\boxed", "\\begin{", "\\frac", "I(E;", "E=B"):
+        assert forbidden not in section
+
+    required_ideas = (
+        "would that description also be enough to determine what, if anything, is experienced",
+        "without assuming the answer in advance",
+        "define the physical side clearly",
+        "define the target independently",
+        "P71 formalizes this problem",
+        "P72 shows why this matters",
+        "P73 addresses one carefully defined case",
+        "reliability must itself be justified, estimated, or challenged scientifically",
+        "does the physical description actually contain enough information",
+        "It would not automatically prove that consciousness lies outside physics",
+        "finite data",
+        "quantum description",
+        "capable of proving that rule wrong if it is false",
+        "physical-to-experiential bridge itself remains open",
+    )
+    for phrase in required_ideas:
+        assert phrase in section, phrase
 
 
 def test_research_at_a_glance_covers_the_full_scientific_program():
