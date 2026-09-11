@@ -15,7 +15,7 @@ The current documented theorem frontier is **P74**. The complete proposition rec
 7. [P71 target-provenance non-circularity](proposition_71_target_provenance_noncircularity.md) for the theorem showing when a target construction makes a bridge test vacuous by design.
 8. [P72 target-measurement channel robustness](proposition_72_target_measurement_channel_robustness.md) for noisy-target residual transfer, witness erasure, target-channel stability, and the finite-sample target-separation certificate.
 9. [P73 three-view target-channel identifiability](proposition_73_target_channel_identifiability.md) for population recovery of binary target channels and P72 stability coefficients under a declared three-view latent model, together with the two-view non-identifiability boundary.
-10. [P74 finite-sample target-channel recovery](proposition_74_finite_sample_target_channel_recovery.md) for simultaneous confidence bounds, the covariance nondegeneracy gate, and finite-data certification of P72/P73 stability quantities.
+10. [P74 finite-sample target-channel recovery](proposition_74_finite_sample_target_channel_recovery.md) for simultaneous confidence bounds, the covariance nondegeneracy gate, full binary-channel confidence orbits, and finite-data certification of P72/P73 target-channel quantities.
 11. [P11-P18 and P25-P37 operational physical structure](theorem_roadmap.md) for intervention, temporal, compositional, and multiscale requirements.
 12. [P38-P44 quantum foundations and bridge tests](quantum_foundations_and_bridge_test.md) for quantum operational sufficiency under explicit bridge classes.
 13. [P45-P60 adaptive experiment design and scheduling](theorem_roadmap.md) for valid evidence collection and transition-calibration setup.
@@ -23,7 +23,7 @@ The current documented theorem frontier is **P74**. The complete proposition rec
 15. [Equation and citation map](equation_and_citation_map.md) for equation-level provenance and theorem lineage.
 16. [P72 equation and provenance record](p72_equation_provenance.md) for the standard-versus-repository classification of the noisy-target theorem.
 17. [P73 equation and provenance record](p73_equation_provenance.md) for latent-class context, moment inversion, and the P72 stability connection.
-18. [P74 equation and provenance record](p74_equation_provenance.md) for the finite-sample concentration and nonlinear confidence construction.
+18. [P74 equation and provenance record](p74_equation_provenance.md) for finite-sample concentration, nonlinear interval propagation, and full-channel recovery.
 19. [Falsification program](falsification_program.md) for the empirical burden required before any bridge claim can be accepted.
 20. [Citation guide](../CITATION.md) for citing the whole research program or a specific proposition, figure, algorithm, or implementation.
 
@@ -41,7 +41,7 @@ The current documented theorem frontier is **P74**. The complete proposition rec
 | Target provenance | P71 | Prevents descriptor-derived targets from being mistaken for independent evidence of bridge sufficiency | [P71](proposition_71_target_provenance_noncircularity.md) |
 | Target measurement | P72 | Quantifies what noisy target observation can preserve, attenuate, erase, or falsely contaminate under an explicit channel model | [P72](proposition_72_target_measurement_channel_robustness.md) |
 | Target-channel identifiability | P73 | Identifies binary target channels and P72 stability coefficients from three conditionally independent views under explicit nondegeneracy | [P73](proposition_73_target_channel_identifiability.md) |
-| Finite-sample target-channel certification | P74 | Propagates one simultaneous empirical-law event through the P73 inversion and refuses unstable recovery near the covariance singularity | [P74](proposition_74_finite_sample_target_channel_recovery.md) |
+| Finite-sample target-channel recovery | P74 | Propagates one simultaneous empirical-law event through the P73 inversion, certifies stability and full binary-channel probability orbits, and refuses unstable recovery near the covariance singularity | [P74](proposition_74_finite_sample_target_channel_recovery.md) |
 
 ## Complete proposition index
 
@@ -96,8 +96,8 @@ The current documented theorem frontier is **P74**. The complete proposition rec
 | P47 | [Anytime sequential witness graph](proposition_47_anytime_sequential_witness_graph.md) | adaptive preparation sampling, pruning, selection, and stopping |
 | P48 | [Gap-dependent stopping complexity](proposition_48_gap_dependent_stopping_complexity.md) | explicit margin-dependent sequential stopping bounds |
 | P49 | [Dyadic certification schedule](proposition_49_dyadic_stopping_overhead.md) | logarithmic certification looks with bounded overhead |
-| P50 | [Bounded-starvation asynchronous sampling](proposition_50_bounded_starvation_sampling.md) | fairness-controlled asynchronous stopping |
-| P51 | [Heterogeneous service-rate stopping](proposition_51_heterogeneous_service_stopping.md) | preparation-specific service windows and stopping bounds |
+| P50 | [Bounded-starvation asynchronous sampling](proposition_50_bounded_starvation_asynchronous_sampling.md) | fairness-controlled asynchronous stopping |
+| P51 | [Heterogeneous service-rate stopping](proposition_51_heterogeneous_service_rate_stopping.md) | preparation-specific service windows and stopping bounds |
 | P52 | [Capacity-optimal service allocation](proposition_52_capacity_optimal_service_allocation.md) | exact minimax service shares |
 | P53 | [Residual-demand reoptimization](proposition_53_residual_demand_reoptimization.md) | dynamic reoptimization after sampling and safe pruning |
 | P54 | [Metric switching-cost residual scheduling](proposition_54_metric_switching_cost_residual_scheduling.md) | exact acquisition-routing decomposition |
@@ -120,7 +120,7 @@ The current documented theorem frontier is **P74**. The complete proposition rec
 | P71 | [Target-provenance non-circularity](proposition_71_target_provenance_noncircularity.md) | descriptor-derived target vacuity, learned-target corollary, and provenance non-identifiability |
 | P72 | [Target-measurement channel robustness](proposition_72_target_measurement_channel_robustness.md) | conditional residual attenuation, erasure counterexample, target-channel stability, and finite target-separation certification |
 | P73 | [Three-view target-channel identifiability](proposition_73_target_channel_identifiability.md) | population channel recovery, label-swap-invariant stability, and two-view non-identifiability boundary |
-| P74 | [Finite-sample target-channel recovery](proposition_74_finite_sample_target_channel_recovery.md) | simultaneous channel-stability confidence certification and covariance nondegeneracy gate |
+| P74 | [Finite-sample target-channel recovery](proposition_74_finite_sample_target_channel_recovery.md) | simultaneous confidence certification for latent quantities, channel offsets, stability, and full binary-channel probability orbits |
 
 ## Core bridge interface
 
@@ -154,7 +154,7 @@ So a certified positive observed residual can transfer to the latent target, whi
 
 P73 addresses when the target channel itself can be recovered rather than assumed. Under its declared binary three-view model, observable second- and third-order moments identify the latent prevalence and channel parameters up to a global label swap. The stability quantities \(\gamma_j=|b_j|\) and \(\gamma_{123}\) survive that symmetry and are therefore identifiable population quantities. This does not validate the latent target's experiential meaning.
 
-P74 adds finite-data discipline to that recovery. It propagates a simultaneous confidence event for the eight-cell observed law through the P73 nonlinear inversion and refuses certification when pair-covariance confidence margins reach the singular boundary. When the gate passes, P74 supplies simultaneous confidence intervals for the P72 stability coefficients rather than treating plug-in reliability estimates as exact.
+P74 adds finite-data discipline to that recovery. It propagates one simultaneous confidence event for the eight-cell observed law through the P73 nonlinear inversion and refuses certification when pair-covariance confidence margins reach the singular boundary. When the gate passes, P74 certifies the latent prevalence orbit, the P72 stability coefficients, channel offsets, and the unordered latent-conditioned binary response probabilities. The unordered form preserves the exact global latent-label symmetry instead of manufacturing a semantic orientation.
 
 ## Figures and reproducibility
 
@@ -166,7 +166,7 @@ P74 adds finite-data discipline to that recovery. It propagates a simultaneous c
 | [P71 figure](figures/p71_target_provenance_noncircularity.svg) | descriptor-derived target vacuity and independently declared synthetic counterexample |
 | [P72 figure](figures/p72_target_measurement_channel_robustness.svg) | latent-target measurement, residual attenuation, erasure, and finite-sample witness transfer |
 | [P73 figure](figures/p73_target_channel_identifiability.svg) | three-view channel recovery, label-swap-invariant stability, and two-view non-identifiability |
-| [P74 figure](figures/p74_finite_sample_target_channel_recovery.svg) | finite-sample concentration, nondegeneracy gating, and stability confidence intervals |
+| [P74 figure](figures/p74_finite_sample_target_channel_recovery.svg) | finite-sample concentration, nondegeneracy gating, and full binary-channel confidence recovery |
 | [`src/consciousness_bridge/`](../src/consciousness_bridge/) | executable theorem implementations |
 | [`tests/`](../tests/) | theorem, documentation, geometry, and publication regression tests |
 
