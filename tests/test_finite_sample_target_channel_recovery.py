@@ -17,6 +17,8 @@ from consciousness_bridge.target_channel_identifiability import (
 PREVALENCE = 0.70
 CHANNELS = ((0.20, 0.80), (0.10, 0.60), (0.70, 0.30))
 TRUE_GAMMA = (0.60, 0.50, 0.40)
+TRUE_OFFSETS = (0.0, -0.30, 0.0)
+TRUE_CHANNEL_ORBITS = ((0.20, 0.80), (0.10, 0.60), (0.30, 0.70))
 
 
 def _exact_model_counts(sample_size: int) -> np.ndarray:
@@ -51,6 +53,51 @@ def test_large_exact_population_table_certifies_true_stabilities() -> None:
         assert 0.0 <= interval[0] <= interval[1] <= 1.0
 
 
+def test_large_exact_population_table_certifies_full_channel_orbits() -> None:
+    certificate = finite_sample_three_view_certificate(
+        _exact_model_counts(100_000_000), alpha=0.05
+    )
+
+    assert certificate.channel_offset_bounds is not None
+    assert certificate.channel_probability_orbit_bounds is not None
+
+    for truth, interval in zip(
+        TRUE_OFFSETS,
+        certificate.channel_offset_bounds,
+        strict=True,
+    ):
+        assert interval[0] <= truth <= interval[1]
+        assert -1.0 <= interval[0] <= interval[1] <= 1.0
+
+    for truth_orbit, certified_orbit in zip(
+        TRUE_CHANNEL_ORBITS,
+        certificate.channel_probability_orbit_bounds,
+        strict=True,
+    ):
+        smaller_interval, larger_interval = certified_orbit
+        assert smaller_interval[0] <= truth_orbit[0] <= smaller_interval[1]
+        assert larger_interval[0] <= truth_orbit[1] <= larger_interval[1]
+        assert 0.0 <= smaller_interval[0] <= smaller_interval[1] <= 1.0
+        assert 0.0 <= larger_interval[0] <= larger_interval[1] <= 1.0
+
+
+def test_loading_times_latent_mean_identity_is_certified() -> None:
+    certificate = finite_sample_three_view_certificate(
+        _exact_model_counts(100_000_000), alpha=0.05
+    )
+
+    # m = 0.4 for prevalence 0.7. The signed P73 loadings are
+    # b = (0.6, 0.5, -0.4) for the declared channel orientation.
+    truth = (0.24, 0.20, -0.16)
+    assert certificate.loading_times_latent_mean_bounds is not None
+    for expected, interval in zip(
+        truth,
+        certificate.loading_times_latent_mean_bounds,
+        strict=True,
+    ):
+        assert interval[0] <= expected <= interval[1]
+
+
 def test_label_invariant_latent_prevalence_orbit_contains_both_orientations() -> None:
     certificate = finite_sample_three_view_certificate(
         _exact_model_counts(100_000_000), alpha=0.05
@@ -74,9 +121,11 @@ def test_small_sample_refuses_unstable_p73_inversion() -> None:
     assert "not certified" in certificate.reason
     assert certificate.q_bounds is None
     assert certificate.stability_bounds is None
+    assert certificate.channel_offset_bounds is None
+    assert certificate.channel_probability_orbit_bounds is None
 
 
-def test_more_data_shrinks_radius_and_stability_intervals() -> None:
+def test_more_data_shrinks_stability_offset_and_channel_intervals() -> None:
     moderate = finite_sample_three_view_certificate(
         _exact_model_counts(10_000_000), alpha=0.05
     )
@@ -89,12 +138,40 @@ def test_more_data_shrinks_radius_and_stability_intervals() -> None:
     assert large.joint_l1_radius < moderate.joint_l1_radius
     assert moderate.stability_bounds is not None
     assert large.stability_bounds is not None
+    assert moderate.channel_offset_bounds is not None
+    assert large.channel_offset_bounds is not None
+    assert moderate.channel_probability_orbit_bounds is not None
+    assert large.channel_probability_orbit_bounds is not None
+
     for moderate_interval, large_interval in zip(
         moderate.stability_bounds, large.stability_bounds, strict=True
     ):
         moderate_width = moderate_interval[1] - moderate_interval[0]
         large_width = large_interval[1] - large_interval[0]
         assert large_width < moderate_width
+
+    for moderate_interval, large_interval in zip(
+        moderate.channel_offset_bounds,
+        large.channel_offset_bounds,
+        strict=True,
+    ):
+        moderate_width = moderate_interval[1] - moderate_interval[0]
+        large_width = large_interval[1] - large_interval[0]
+        assert large_width < moderate_width
+
+    for moderate_orbit, large_orbit in zip(
+        moderate.channel_probability_orbit_bounds,
+        large.channel_probability_orbit_bounds,
+        strict=True,
+    ):
+        for moderate_interval, large_interval in zip(
+            moderate_orbit,
+            large_orbit,
+            strict=True,
+        ):
+            moderate_width = moderate_interval[1] - moderate_interval[0]
+            large_width = large_interval[1] - large_interval[0]
+            assert large_width < moderate_width
 
 
 def test_joint_stability_lower_bound_dominates_certified_single_view_lowers() -> None:
@@ -141,6 +218,7 @@ def test_p74_source_keeps_scientific_boundary_explicit() -> None:
         "identify the latent state with consciousness",
         "finite data do not certify safe inversion",
         "does not prove that the population model is degenerate",
+        "global latent-label swap",
     )
     for token in required:
         assert token in source
