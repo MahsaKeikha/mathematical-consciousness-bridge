@@ -2,14 +2,14 @@
 
 This page is the reading and reference index for the **Mathematical Consciousness Bridge** repository. It is organized by scientific dependency rather than by development chronology so that a reader can move from the research question to proofs, figures, code, falsification conditions, and citation resources without searching through the repository manually.
 
-The current documented theorem frontier is **P76**. The complete proposition record runs from **P1 through P76**. P71-P76 form a target-side methodology branch descending from the P19 physical-sufficiency question. They are not extensions of the P61-P70 calibration branch.
+The current documented theorem frontier is **P77**. The complete proposition record runs from **P1 through P77**. P71-P77 form a target-side methodology branch descending from the P19 physical-sufficiency question. They are not extensions of the P61-P70 calibration branch.
 
 ## Recommended reading order
 
 1. [Main research study](../README.md) for the complete scientific narrative and curated figures.
 2. [Bridge problem](bridge_problem.md) for the formal physical-to-experiential question.
 3. [Scientific status discipline](../README.md#scientific-status-discipline) for the distinction among definitions, proved results, implementations, numerical checks, empirical inputs, hypotheses, and open bridge claims.
-4. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P76.
+4. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P77.
 5. [P19 fundamental physical sufficiency](proposition_19_fundamental_physical_sufficiency.md) for the exact, stochastic, and differential bridge criteria.
 6. [P20-P24 finite and adaptive residual certification](theorem_roadmap.md) for finite-data and repeated-look validity.
 7. [P71 target-provenance non-circularity](proposition_71_target_provenance_noncircularity.md) for the theorem showing when a target construction makes a bridge test vacuous by design.
@@ -18,17 +18,18 @@ The current documented theorem frontier is **P76**. The complete proposition rec
 10. [P74 finite-sample target-channel recovery](proposition_74_finite_sample_target_channel_recovery.md) for simultaneous confidence bounds, the covariance nondegeneracy gate, full binary-channel confidence orbits, and finite-data certification of P72/P73 target-channel quantities.
 11. [P75 target-model adequacy and four-view overidentification](proposition_75_target_model_adequacy_overidentification.md) for the distinction between target-channel identifiability and model adequacy, six generic four-view overidentifying degrees of freedom, observable moment constraints, and full-law reconstruction.
 12. [P76 finite-sample target-model adequacy rejection](proposition_76_finite_sample_target_model_adequacy.md) for simultaneous sixteen-cell uncertainty, denominator-free polynomial adequacy intervals, and the distinction between certified rejection and inconclusive non-rejection.
-13. [P11-P18 and P25-P37 operational physical structure](theorem_roadmap.md) for intervention, temporal, compositional, and multiscale requirements.
-14. [P38-P44 quantum foundations and bridge tests](quantum_foundations_and_bridge_test.md) for quantum operational sufficiency under explicit bridge classes.
-15. [P45-P60 adaptive experiment design and scheduling](theorem_roadmap.md) for valid evidence collection and transition-calibration setup.
-16. [P61-P70 Calibration and Optimization Frontier](calibration_optimization_frontier_p61_p70.md) for downstream integer resource-allocation mathematics.
-17. [Equation and citation map](equation_and_citation_map.md) for equation-level provenance and theorem lineage.
-18. [P72 equation and provenance record](p72_equation_provenance.md) for the standard-versus-repository classification of the noisy-target theorem.
-19. [P73 equation and provenance record](p73_equation_provenance.md) for latent-class context, moment inversion, and the P72 stability connection.
-20. [P74 equation and provenance record](p74_equation_provenance.md) for finite-sample concentration, nonlinear interval propagation, and full-channel recovery.
-21. [P75 equation and provenance record](p75_equation_provenance.md) for just-identification, overidentification, algebraic adequacy constraints, and full-law reconstruction provenance.
-22. [Falsification program](falsification_program.md) for the empirical burden required before any bridge claim can be accepted.
-23. [Citation guide](../CITATION.md) for citing the whole research program or a specific proposition, figure, algorithm, or implementation.
+13. [P77 finite-sample full-law model-set separation](proposition_77_full_law_model_set_separation.md) for confidence-region separation from the complete declared model family, model-distance transport, and the certified-lower-bound requirement for continuous-family rejection.
+14. [P11-P18 and P25-P37 operational physical structure](theorem_roadmap.md) for intervention, temporal, compositional, and multiscale requirements.
+15. [P38-P44 quantum foundations and bridge tests](quantum_foundations_and_bridge_test.md) for quantum operational sufficiency under explicit bridge classes.
+16. [P45-P60 adaptive experiment design and scheduling](theorem_roadmap.md) for valid evidence collection and transition-calibration setup.
+17. [P61-P70 Calibration and Optimization Frontier](calibration_optimization_frontier_p61_p70.md) for downstream integer resource-allocation mathematics.
+18. [Equation and citation map](equation_and_citation_map.md) for equation-level provenance and theorem lineage.
+19. [P72 equation and provenance record](p72_equation_provenance.md) for the standard-versus-repository classification of the noisy-target theorem.
+20. [P73 equation and provenance record](p73_equation_provenance.md) for latent-class context, moment inversion, and the P72 stability connection.
+21. [P74 equation and provenance record](p74_equation_provenance.md) for finite-sample concentration, nonlinear interval propagation, and full-channel recovery.
+22. [P75 equation and provenance record](p75_equation_provenance.md) for just-identification, overidentification, algebraic adequacy constraints, and full-law reconstruction provenance.
+23. [Falsification program](falsification_program.md) for the empirical burden required before any bridge claim can be accepted.
+24. [Citation guide](../CITATION.md) for citing the whole research program or a specific proposition, figure, algorithm, or implementation.
 
 ## Scientific branch map
 
@@ -47,6 +48,7 @@ The current documented theorem frontier is **P76**. The complete proposition rec
 | Finite-sample target-channel recovery | P74 | Propagates one simultaneous empirical-law event through the P73 inversion, certifies stability and full binary-channel probability orbits, and refuses unstable recovery near the covariance singularity | [P74](proposition_74_finite_sample_target_channel_recovery.md) |
 | Target-model adequacy | P75 | Separates identifiability from adequacy and gives four-view overidentifying restrictions plus full-law model reconstruction | [P75](proposition_75_target_model_adequacy_overidentification.md) |
 | Finite-sample target-model adequacy | P76 | Turns tracked P75 population restrictions into simultaneous one-sided finite-data rejection certificates | [P76](proposition_76_finite_sample_target_model_adequacy.md) |
+| Full-law finite-sample target-model adequacy | P77 | Inverts the complete empirical-law confidence region against the declared model set and requires certified global separation for rejection | [P77](proposition_77_full_law_model_set_separation.md) |
 
 ## Complete proposition index
 
@@ -128,6 +130,7 @@ The current documented theorem frontier is **P76**. The complete proposition rec
 | P74 | [Finite-sample target-channel recovery](proposition_74_finite_sample_target_channel_recovery.md) | simultaneous confidence certification for latent quantities, channel offsets, stability, and full binary-channel probability orbits |
 | P75 | [Target-model adequacy and four-view overidentification](proposition_75_target_model_adequacy_overidentification.md) | just-identification boundary, four-view adequacy constraints, and full-law reconstruction |
 | P76 | [Finite-sample target-model adequacy rejection](proposition_76_finite_sample_target_model_adequacy.md) | sixteen-cell concentration and simultaneous polynomial adequacy rejection |
+| P77 | [Full-law model-set separation](proposition_77_full_law_model_set_separation.md) | finite-sample confidence-region separation from the complete declared model family |
 
 ## Core bridge interface
 

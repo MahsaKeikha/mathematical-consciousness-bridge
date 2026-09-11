@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P76**. The proposition record runs from **P1 through P76 with explicit dependency branches**. P71-P76 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P77**. The proposition record runs from **P1 through P77 with explicit dependency branches**. P71-P77 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -27,7 +27,9 @@ The current documented theorem frontier is **P76**. The proposition record runs 
 &\Downarrow\\
 &\text{P75: the target-measurement model must face overidentifying adequacy tests}\\
 &\Downarrow\\
-&\text{P76: finite data must separate adequacy failure from sampling noise}
+&\text{P76: finite data must separate adequacy failure from sampling noise}\\
+&\Downarrow\\
+&\text{P77: full-law confidence regions must be separated from the complete declared model set}
 \end{aligned}
 }
 \]
@@ -45,7 +47,7 @@ Separate but connected branches refine the physical representation and experimen
 }
 \]
 
-The proposition number records development order. It does not imply that P76 depends on P70. P76 depends scientifically on P75, which in turn depends on P19 and the P71-P74 target-side lineage.
+The proposition number records development order. It does not imply that P77 depends on P70. P77 depends scientifically on P76 and P75, which in turn descend from P19 and the P71-P74 target-side lineage.
 
 ## 2. Target-side bridge lineage
 
@@ -300,6 +302,29 @@ The conclusion is one-sided. Exclusion of zero by any necessary-constraint inter
 
 Direct proof: [P76](proposition_76_finite_sample_target_model_adequacy.md). Provenance: [P76 equation record](p76_equation_provenance.md). Implementation: [`finite_sample_target_model_adequacy.py`](../src/consciousness_bridge/finite_sample_target_model_adequacy.py). Tests: [`test_finite_sample_target_model_adequacy.py`](../tests/test_finite_sample_target_model_adequacy.py).
 
+### P77: finite-sample full-law model-set separation
+
+P76 provides finite-data rejection through selected necessary P75 polynomial constraints. P77 states the stronger confidence-set inversion criterion for the complete declared observed-law model family. For an alphabet of size \(K\),
+
+\[
+\varepsilon_{n,K}(\alpha)=\sqrt{\frac{\log(2K/\alpha)}{2n}},
+\qquad
+\delta_{n,K}(\alpha)=\min\{2,K\varepsilon_{n,K}(\alpha)\}.
+\]
+
+If \(\mathcal C_n(\widehat P)\) is the corresponding simultaneous empirical-law confidence region and \(\mathcal M\) is the declared model set, then
+
+\[
+\boxed{\mathcal C_n(\widehat P)\cap\mathcal M=\varnothing
+\Longrightarrow P\notin\mathcal M}
+\]
+
+with confidence at least \(1-\alpha\). Equivalently, a sound lower bound on distance from \(\widehat P\) to \(\mathcal M\) that exceeds the sampling radius certifies rejection. A numerical candidate model supplies an upper bound on the minimum distance and cannot by itself certify incompatibility of a continuous family.
+
+![P77 full-law model-set separation](figures/p77_full_law_model_set_separation.svg)
+
+Direct proof: [P77](proposition_77_full_law_model_set_separation.md). Provenance: [P77 equation record](p77_equation_provenance.md). Implementation: [`full_law_model_set_separation.py`](../src/consciousness_bridge/full_law_model_set_separation.py). Tests: [`test_full_law_model_set_separation.py`](../tests/test_full_law_model_set_separation.py).
+
 
 ## 3. Complete proposition index
 
@@ -381,6 +406,7 @@ Direct proof: [P76](proposition_76_finite_sample_target_model_adequacy.md). Prov
 | [P74](proposition_74_finite_sample_target_channel_recovery.md) | simultaneous concentration and nonlinear interval propagation | finite-data target-channel recovery with a nondegeneracy gate | proved conditional theorem |
 | [P75](proposition_75_target_model_adequacy_overidentification.md) | dimension count, tetrads, cross-triple moments, full-law reconstruction | target-model adequacy and four-view overidentification | proved conditional theorem |
 | [P76](proposition_76_finite_sample_target_model_adequacy.md) | sixteen-cell concentration and polynomial interval propagation | finite-sample target-model adequacy rejection | proved conditional theorem |
+| [P77](proposition_77_full_law_model_set_separation.md) | confidence-region/model-set separation | finite-sample full-law rejection with certified distance lower bounds | proved conditional theorem |
 
 ## 4. Calibration branch remains separate
 

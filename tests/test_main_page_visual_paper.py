@@ -1,3 +1,4 @@
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -24,6 +25,7 @@ CURATED_MAIN_PAGE_FIGURES = (
     "p74_finite_sample_target_channel_recovery.svg",
     "p75_target_model_adequacy_overidentification.svg",
     "p76_finite_sample_target_model_adequacy.svg",
+    "p77_full_law_model_set_separation.svg",
     "observer_to_bridge_handoff.svg",
     "quantum_bridge_completeness_map.svg",
     "p38_quantum_operational_sufficiency.svg",
@@ -32,6 +34,15 @@ CURATED_MAIN_PAGE_FIGURES = (
     "theory_comparison_map.svg",
     "equation_evidence_map.svg",
 )
+
+
+def _frontier() -> int:
+    numbers = []
+    for path in (ROOT / "docs").glob("proposition_*.md"):
+        match = re.match(r"proposition_(\d+)_", path.name)
+        if match:
+            numbers.append(int(match.group(1)))
+    return max(numbers)
 
 
 def test_main_page_contains_curated_scientific_figure_sequence():
@@ -62,10 +73,11 @@ def test_main_page_links_complete_visual_atlases_instead_of_embedding_them():
 def test_detailed_proposition_chronology_is_externalized():
     readme = README.read_text(encoding="utf-8")
     detail = DETAIL.read_text(encoding="utf-8")
+    frontier = _frontier()
 
     assert "docs/detailed_proposition_record.md" in readme
-    assert "Open the complete P1 to P76 chronology" not in readme
-    assert "Complete P1 to P76 chronology" in detail
+    assert f"Open the complete P1 to P{frontier} chronology" not in readme
+    assert f"Complete P1 to P{frontier} chronology" in detail
     assert "Propositions **P1-P10**" in detail
     assert "**P70** makes the resulting certificate diagnostic rather than opaque" in detail
     assert "**P71** returns from the downstream calibration branch" in detail
@@ -74,6 +86,7 @@ def test_detailed_proposition_chronology_is_externalized():
     assert "**P74** converts the P73 population inversion into a finite-sample confidence certificate" in detail
     assert "**P75** separates target-channel identifiability from target-model adequacy" in detail
     assert "**P76** converts the tracked P75 population adequacy restrictions" in detail
+    assert "**P77** closes the finite-data full-law gap left explicit by P76" in detail
 
 
 def test_main_page_declares_scientific_status_boundaries():
@@ -93,6 +106,9 @@ def test_main_page_declares_scientific_status_boundaries():
         "generically just-identified",
         "Passing means compatibility with the declared model",
         "non-rejection is not model acceptance",
+        "candidate best-fit model",
+        "upper bound",
+        "cannot by itself certify rejection",
     )
     for phrase in required_phrases:
         assert phrase in text, f"README is missing scientific-boundary text: {phrase}"
