@@ -46,7 +46,7 @@ def test_website_release_status_matches_repository():
 
 def test_website_latest_figure_is_real():
     html = WEBSITE.read_text(encoding="utf-8")
-    figure = "docs/figures/p70_primal_dual_gap_decomposition.svg"
+    figure = "docs/figures/p71_target_provenance_noncircularity.svg"
     assert figure in html
     assert (ROOT / figure).exists()
 
@@ -121,7 +121,7 @@ def test_visual_atlas_referenced_repository_figures_exist():
         assert (ROOT / figure).exists(), figure
 
 
-def test_research_map_covers_full_proposition_frontier():
+def test_research_map_covers_full_proposition_frontier_without_branch_conflation():
     html = (WEBSITE_DIR / "research-map.html").read_text(encoding="utf-8")
     assert "P1-P10" in html
     assert "P11-P18" in html
@@ -129,5 +129,6 @@ def test_research_map_covers_full_proposition_frontier():
     assert "P25-P37" in html
     assert "P38-P44" in html
     assert "P45-P53" in html
-    frontier = _max_proposition_number()
-    assert f"P54-P{frontier}" in html
+    assert "P54-P70" in html
+    assert "P71: When is a successful bridge test non-circular?" in html
+    assert _max_proposition_number() == 71
