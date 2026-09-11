@@ -1,36 +1,44 @@
 # Research Navigation
 
-This page is the reading and reference index for the Mathematical Consciousness Bridge repository. It is designed so that a reader can move from the research question to the theorem chain, proofs, figures, code, empirical boundaries, and references without searching through the repository manually.
+This page is the reading and reference index for the **Mathematical Consciousness Bridge** repository. It is organized by scientific dependency rather than by development chronology so that a reader can move from the research question to proofs, figures, code, falsification conditions, and citation resources without searching the repository manually.
+
+The current documented theorem frontier is **P71**. The complete proposition record runs from **P1 through P71**. P71 is a core bridge-methodology result descending from P19; it is not an extension of the P61-P70 calibration branch.
 
 ## Recommended reading order
 
-1. [Main research paper](../README.md) for the complete scientific narrative and embedded figures.
-2. [Bridge problem](bridge_problem.md) for the formal statement of the physical-to-experiential problem.
-3. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P70, including the physical scale branches from P11-P18 to P25-P27.
-4. [Equation and citation map](equation_and_citation_map.md) for equation-level provenance and theorem lineage.
-5. [Proposition 19](proposition_19_fundamental_physical_sufficiency.md) for the population physical-sufficiency theorem.
-6. [Proposition 20](proposition_20_finite_sample_residual_certification.md) for finite-sample certification of the P19 stochastic residual.
-7. [Proposition 21](proposition_21_descriptor_refinement_residual_persistence.md) for the omitted-physics refinement audit and residual-persistence theorem.
-8. [Proposition 22](proposition_22_simultaneous_refinement_chain_certification.md) for simultaneous finite-data certification of the full P21 refinement trajectory.
-9. [Proposition 23](proposition_23_adaptive_descriptor_selection_certification.md) for fixed-sample adaptive descriptor selection and post-selection regret certification.
-10. [Proposition 24](proposition_24_anytime_adaptive_refinement_certification.md) for time-uniform repeated-look and finite stopping-time validity.
-11. [Proposition 25](proposition_25_directed_influence_scale_certification.md) for P11 directed-influence preservation under P18 reconstruction-controlled target coarse observation.
-12. [Proposition 26](proposition_26_partition_irreducibility_scale_certification.md) for P11 partition-irreducibility preservation under block-compatible observation with P18 reconstruction control.
-13. [Proposition 27](proposition_27_partition_lattice_node_aggregation.md) for exact partition descent and lattice transport under node aggregation.
-14. [Proposition 28](proposition_28_intervention_node_aggregation_compatibility.md) for source-label descent and directed-influence certification under node aggregation.
-15. [Proposition 29](proposition_29_response_geometry_node_aggregation.md) for complete response-geometry transport under node aggregation on a fixed intervention-delay grid.
-16. [Proposition 30](proposition_30_full_p11_scale_compatibility.md) for simultaneous P11 scale compatibility under one shared declaration.
-17. [Proposition 31](proposition_31_intervention_quotient_compatibility.md) for exact intervention-label quotienting and representative-ambiguity control.
-18. [Fundamental Theory to Consciousness program](fundamental_theory_consciousness_program.md) for the candidate fundamental-state framework.
-19. [Stochastic fundamental bridge](stochastic_fundamental_bridge.md) for the conditional-information formulation.
-20. [Falsification program](falsification_program.md) for the empirical burden required before any bridge claim can be accepted.
-21. [Citation and Reference Policy](citation_and_reference_policy.md) and [Reference Audit](reference_audit.md) for evidence classification and source standards.
+1. [Main research study](../README.md) for the complete scientific narrative and curated figures.
+2. [Bridge problem](bridge_problem.md) for the formal physical-to-experiential question.
+3. [Scientific status discipline](../README.md#scientific-status-discipline) for the distinction among definitions, proved results, implementations, numerical checks, empirical inputs, hypotheses, and open bridge claims.
+4. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P71.
+5. [P19 fundamental physical sufficiency](proposition_19_fundamental_physical_sufficiency.md) for the exact, stochastic, and differential bridge criteria.
+6. [P20-P24 finite and adaptive residual certification](theorem_roadmap.md#9-finite-sample-residual-certification-p20) for finite-data and repeated-look validity.
+7. [P71 target-provenance non-circularity](proposition_71_target_provenance_noncircularity.md) for the theorem showing when a target construction makes a bridge test vacuous by design.
+8. [P11-P18 and P25-P37 operational physical structure](theorem_roadmap.md) for intervention, temporal, compositional, and multiscale requirements.
+9. [P38-P44 quantum foundations and bridge tests](quantum_foundations_and_bridge_test.md) for quantum operational sufficiency under explicit bridge classes.
+10. [P45-P60 adaptive experiment design and scheduling](theorem_roadmap.md) for valid evidence collection and transition-calibration setup.
+11. [P61-P70 Calibration and Optimization Frontier](calibration_optimization_frontier_p61_p70.md) for downstream integer resource-allocation mathematics.
+12. [Equation and citation map](equation_and_citation_map.md) for equation-level provenance and theorem lineage.
+13. [Falsification program](falsification_program.md) for the empirical burden required before any bridge claim can be accepted.
+14. [Citation guide](../CITATION.md) for citing the whole research program or a specific proposition, figure, algorithm, or implementation.
+
+## Scientific branch map
+
+| Branch | Results | Scientific role | Main entry point |
+| --- | --- | --- | --- |
+| Foundations and identifiability | P1-P10 | Defines invariance, distinguishability, recoverability, and robust protocol design | [Theorem roadmap](theorem_roadmap.md) |
+| Operational physical structure | P11-P18 | Builds intervention-resolved causal, temporal, compositional, and scale-aware physical structure | [P11](proposition_11_intervention_resolved_causal_structure.md) |
+| Physical sufficiency and finite inference | P19-P24 | Tests exact and stochastic factorization and certifies residuals with finite/adaptive data | [P19](proposition_19_fundamental_physical_sufficiency.md) |
+| Operational scale compatibility | P25-P37 | Determines which structured physical distinctions survive node, intervention, delay, and response quotients | [P25](proposition_25_directed_influence_scale_certification.md) |
+| Quantum sufficiency | P38-P44 | Tests factorization through declared operational quantum descriptions with finite uncertainty and regularity control | [Quantum foundations and bridge test](quantum_foundations_and_bridge_test.md) |
+| Adaptive experiment design | P45-P60 | Designs valid sequential evidence collection, scheduling, switching, and transition calibration | [Theorem roadmap](theorem_roadmap.md) |
+| Calibration and optimization | P61-P70 | Solves and certifies downstream finite-resource allocation after the scientific witness is declared | [Calibration and Optimization Frontier](calibration_optimization_frontier_p61_p70.md) |
+| Target-provenance non-circularity | P71 | Prevents descriptor-derived targets from being mistaken for independent evidence of bridge sufficiency | [P71](proposition_71_target_provenance_noncircularity.md) |
 
 ## Complete proposition index
 
 | Proposition | Direct proof | Main role |
 | --- | --- | --- |
-| P1 | [Representation invariance](proposition_1_representation_invariance.md) | bridge objects must descend to the physical quotient |
+| P1 | [Representation invariance](proposition_1_representation_invariance.md) | quotient factorization and representation-independent bridge objects |
 | P2 | [Bridge identifiability](proposition_2_bridge_identifiability.md) | exact experiment-class discriminability |
 | P3 | [Bridge equivalence classes](proposition_3_bridge_equivalence_classes.md) | observable theory quotient |
 | P4 | [Discriminating experiment design](proposition_4_discriminating_experiment_design.md) | maximin and set-cover protocol design |
@@ -41,7 +49,7 @@ This page is the reading and reference index for the Mathematical Consciousness 
 | P9 | [Categorical sample complexity](proposition_9_categorical_sample_complexity.md) | explicit finite trial requirement |
 | P10 | [Robust experiment design](proposition_10_robust_experiment_design.md) | discrimination under nuisance variation |
 | P11 | [Intervention-resolved causal structure](proposition_11_intervention_resolved_causal_structure.md) | structured candidate physical signature |
-| P12 | [Component insufficiency](proposition_12_component_insufficiency.md) | single-component and scalar no-go results |
+| P12 | [Component insufficiency](proposition_12_component_insufficiency.md) | projection-collision no-go results |
 | P13 | [Pairwise component irredundancy](proposition_13_pairwise_component_irredundancy.md) | pairwise projection no-go results |
 | P14 | [Temporal continuation](proposition_14_temporal_continuation.md) | representation-invariant temporal geometry |
 | P15 | [Finite-sample temporal certification](proposition_15_finite_sample_temporal_certification.md) | uncertainty propagation through temporal structure |
@@ -50,109 +58,89 @@ This page is the reading and reference index for the Mathematical Consciousness 
 | P18 | [Scale sufficiency certification](proposition_18_scale_sufficiency_certification.md) | approximate reconstruction and scale certificate |
 | P19 | [Fundamental physical sufficiency](proposition_19_fundamental_physical_sufficiency.md) | deterministic, stochastic, and differential sufficiency tests |
 | P20 | [Finite-sample residual certification](proposition_20_finite_sample_residual_certification.md) | confidence interval for the P19 conditional-information residual |
-| P21 | [Descriptor refinement and residual persistence](proposition_21_descriptor_refinement_residual_persistence.md) | omitted-physics audit, residual monotonicity, and exact refinement gain |
-| P22 | [Simultaneous refinement-chain certification](proposition_22_simultaneous_refinement_chain_certification.md) | one shared finite-sample confidence event for all P21 residuals and gains |
-| P23 | [Adaptive descriptor selection certification](proposition_23_adaptive_descriptor_selection_certification.md) | fixed-sample post-selection validity and near-optimal refinement selection |
-| P24 | [Anytime adaptive refinement certification](proposition_24_anytime_adaptive_refinement_certification.md) | repeated-look validity, adaptive selection, and finite stopping-time control |
-| P25 | [Directed-influence scale certification](proposition_25_directed_influence_scale_certification.md) | P11 directed-influence distortion and edge preservation under P18 reconstruction control |
-| P26 | [Partition-irreducibility scale certification](proposition_26_partition_irreducibility_scale_certification.md) | P11 partition-product distortion and threshold preservation under block-compatible scale observation |
-| P27 | [Partition-lattice node aggregation](proposition_27_partition_lattice_node_aggregation.md) | exact saturated-partition descent, lattice transport, and irreducibility control across changing node sets |
-| P28 | [Intervention node-aggregation compatibility](proposition_28_intervention_node_aggregation_compatibility.md) | exact matched-pair source descent and aggregate-node directed-influence control |
-| P29 | [Response-geometry node aggregation](proposition_29_response_geometry_node_aggregation.md) | complete intervention-delay response pseudometric under node aggregation with P18 distortion control |
-| P30 | [Full declared P11 scale compatibility](proposition_30_full_p11_scale_compatibility.md) | simultaneous G/A/K transport under one shared scale declaration and no-semantic-compensation guard |
-| P31 | [Intervention-quotient compatibility](proposition_31_intervention_quotient_compatibility.md) | exact intervention-label descent and quantitative representative ambiguity |
-| P32 | [Delay-quotient compatibility](proposition_32_delay_quotient_compatibility.md) | exact temporal descent and ambiguity control |
+| P21 | [Descriptor refinement and residual persistence](proposition_21_descriptor_refinement_residual_persistence.md) | omitted-physics audit and exact refinement gain |
+| P22 | [Simultaneous refinement-chain certification](proposition_22_simultaneous_refinement_chain_certification.md) | shared finite-sample confidence event for refinement residuals and gains |
+| P23 | [Adaptive descriptor selection certification](proposition_23_adaptive_descriptor_selection_certification.md) | fixed-sample post-selection validity and refinement selection |
+| P24 | [Anytime adaptive refinement certification](proposition_24_anytime_adaptive_refinement_certification.md) | repeated-look and finite stopping-time validity |
+| P25 | [Directed-influence scale certification](proposition_25_directed_influence_scale_certification.md) | directed-influence preservation under reconstruction-controlled scale change |
+| P26 | [Partition-irreducibility scale certification](proposition_26_partition_irreducibility_scale_certification.md) | partition-product distortion control |
+| P27 | [Partition-lattice node aggregation](proposition_27_partition_lattice_node_aggregation.md) | partition descent and lattice transport under node aggregation |
+| P28 | [Intervention node-aggregation compatibility](proposition_28_intervention_node_aggregation_compatibility.md) | source-label descent and aggregate-node influence control |
+| P29 | [Response-geometry node aggregation](proposition_29_response_geometry_node_aggregation.md) | response-pseudometric transport under node aggregation |
+| P30 | [Full P11 scale compatibility](proposition_30_full_p11_scale_compatibility.md) | simultaneous operational-structure transport under one scale declaration |
+| P31 | [Intervention-quotient compatibility](proposition_31_intervention_quotient_compatibility.md) | intervention-label descent and ambiguity control |
+| P32 | [Delay-quotient compatibility](proposition_32_delay_quotient_compatibility.md) | temporal descent and ambiguity control |
 | P33 | [Joint operational quotient](proposition_33_joint_operational_quotient.md) | product-grid descent and additive ambiguity |
 | P34 | [Joint P11 operational scale](proposition_34_joint_p11_operational_scale.md) | complete node/state/intervention/time declaration |
 | P35 | [Approximate directed-influence quotient stability](proposition_35_approximate_directed_influence_operational_quotient.md) | influence perturbation and edge-margin control |
 | P36 | [Partition irreducibility quotient stability](proposition_36_partition_irreducibility_operational_quotient.md) | product-reference perturbation bound |
-| P37 | [Complete approximate P11 operational scale](proposition_37_complete_approximate_p11_operational_scale.md) | full G/A/K distortion certificate |
-| P38 | [Quantum operational sufficiency](proposition_38_quantum_operational_sufficiency.md) | quantum factorization and non-factorization criterion |
-| P39 | [Finite-data quantum non-factorization](proposition_39_finite_data_quantum_nonfactorization.md) | model-set confidence certificate for quantum descriptor non-factorization |
-| P40 | [Continuous quantum-region regularity](proposition_40_continuous_quantum_region_regularity.md) | injective-descriptor no-go and continuous-region regularity obstruction |
-| P41 | [Trace-ball quantum envelope](proposition_41_trace_ball_quantum_envelope.md) | analytic continuous-region envelope and end-to-end Lipschitz certificate |
-| P42 | [Quantum regular-bridge sample complexity](proposition_42_quantum_regular_bridge_sample_complexity.md) | explicit fixed-IC quantum and categorical-target sample-size theorem |
-| P43 | [Optimal quantum-target allocation](proposition_43_optimal_quantum_target_allocation.md) | cube-root minimum-cost allocation of the P42 uncertainty budget |
-| P44 | [Pair-adaptive sample allocation](proposition_44_pair_adaptive_sample_allocation.md) | simultaneous finite-family confidence and valid post-data witness selection |
-| P45 | [Shared-preparation graph allocation](proposition_45_shared_preparation_graph_allocation.md) | shared preparation-level resource allocation with unique convex optimum and KKT incidence law |
-| P46 | [Budget-constrained witness graph](proposition_46_budget_constrained_witness_graph.md) | discrete preparation selection, NP-hardness, relaxation upper bound, and exact small-instance certification |
-| P47 | [Anytime sequential witness graph](proposition_47_anytime_sequential_witness_graph.md) | time-uniform adaptive preparation sampling, graph refinement, witness selection, safe pruning, and stopping |
-| P48 | [Gap-dependent stopping complexity](proposition_48_gap_dependent_stopping_complexity.md) | explicit nonzero-margin sequential stopping counts, all-negative certification, zero-gap boundary, and acquisition-cost control |
-| P49 | [Dyadic certification schedule](proposition_49_dyadic_stopping_overhead.md) | logarithmic certification looks with strictly less than twofold stopping-threshold overhead |
-| P50 | [Bounded-starvation asynchronous sampling](proposition_50_bounded_starvation_asynchronous_sampling.md) | H-fair priority sampling with finite global-round stopping and explicit no-starvation necessity |
-| P51 | [Heterogeneous finite-window service-rate stopping](proposition_51_heterogeneous_service_rate_stopping.md) | preparation-specific service windows and quotas with endpoint-bottleneck global stopping bounds |
-| P52 | [Capacity-optimal service allocation](proposition_52_capacity_optimal_service_allocation.md) | exact proportional-demand minimax service shares, capacity lower bound, uniqueness, and discrete quota optimum |
-| P53 | [Residual-demand reoptimization](proposition_53_residual_demand_reoptimization.md) | dynamic P52 reoptimization after sampling and safe edge pruning, with exact released-capacity identity |
-| P54 | [Metric switching-cost residual scheduling](proposition_54_metric_switching_cost_residual_scheduling.md) | one-block metric batching, exact acquisition-routing decomposition, and Held-Karp shortest Hamiltonian path audit |
-| P55 | [Pruning-aware metric switching-cost monotonicity](proposition_55_pruning_aware_switching_monotonicity.md) | exact acquisition-plus-route release, support-deletion monotonicity, and computable old-route shortcut certificate |
-| P56 | [Moving-start metric reoptimization stability](proposition_56_moving_start_metric_reoptimization_stability.md) | sharp start-state Lipschitz bound, P55 saving erosion bound, and strict-decrease certificate under setup motion |
-| P57 | [Switching-metric perturbation stability](proposition_57_switching_metric_perturbation.md) | sharp sup-norm metric-drift control, combined residual/start/metric strict-decrease certificate, and route-reuse upper bound |
-| P58 | [Finite-data switching-metric uncertainty](proposition_58_finite_data_metric_uncertainty.md) | simultaneous pairwise transition confidence intervals, exact robust route envelopes, route-regret bound, and finite-data strict-improvement certificate |
-| P59 | [Optimal transition-calibration allocation](proposition_59_optimal_transition_calibration.md) | exact two-thirds-power allocation of a finite calibration budget for the declared P58 route-uncertainty surrogate |
-| P60 | [Integer transition-calibration allocation](proposition_60_integer_transition_calibration.md) | implementable hard-budget whole-measurement allocation with certified rounding overhead relative to P59 |
-| P61 | [Exact integer transition-calibration allocation](proposition_61_exact_integer_transition_calibration.md) | exact hard-budget whole-measurement solution for the declared separable calibration surrogate using diminishing marginal gain |
-| P62 | [Heterogeneous-cost transition-calibration allocation](proposition_62_heterogeneous_cost_transition_calibration.md) | unique continuous calibration optimum when transition observations have different per-measurement costs |
-| P63 | [Exact heterogeneous-cost integer calibration](proposition_63_exact_heterogeneous_integer_calibration.md) | exact Bellman solver for whole transition measurements with unequal positive integer costs, gcd compression, and continuous lower-bound certificate |
-| P64 | [Fast certified heterogeneous integer approximation](proposition_64_fast_heterogeneous_integer_approximation.md) | linear-time floor construction with explicit approximation certificate relative to the exact P63 optimum |
-| P65 | [Lower-bounded heterogeneous calibration](proposition_65_lower_bounded_heterogeneous_calibration.md) | exact thresholded water-filling continuous allocation with baseline-safe floor approximation and universal square-root-of-two certificate |
-| P66 | [Residual-exact calibration augmentation](proposition_66_residual_exact_calibration_augmentation.md) | exact bounded-residual optimization above the P65 floor with monotone objective improvement and a sharpened computable approximation certificate |
-| P67 | [Global integer optimality certificate](proposition_67_global_integer_optimality_certificate.md) | common-multiplier sufficient certificate for unrestricted P63 global optimality of a budget-tight integer candidate |
-| P68 | [Lagrangian optimality gap certificate](proposition_68_lagrangian_optimality_gap.md) | weak-duality lower bound and quantitative additive or multiplicative candidate-quality certificate for the unrestricted P63 problem |
-| P69 | [Certified dual-optimal multiplier search](proposition_69_dual_optimal_multiplier.md) | concave one-dimensional optimization of the P68 dual with exact supergradient intervals and a certified dual-value tolerance |
-| P70 | [Exact primal-dual gap decomposition](proposition_70_primal_dual_gap_decomposition.md) | exact attribution of the P68 candidate-to-dual gap into edgewise Lagrangian regret and unused-budget penalty, with a P69-powered strongest-dual interval |
+| P37 | [Complete approximate P11 operational scale](proposition_37_complete_approximate_p11_operational_scale.md) | complete operational-scale distortion certificate |
+| P38 | [Quantum operational sufficiency](proposition_38_quantum_operational_sufficiency.md) | quantum factorization and exact non-factorization criterion |
+| P39 | [Finite-data quantum non-factorization](proposition_39_finite_data_quantum_nonfactorization.md) | model-set confidence certificate for quantum non-factorization |
+| P40 | [Continuous quantum-region regularity](proposition_40_continuous_quantum_region_regularity.md) | unrestricted-bridge no-go and continuous-region regularity obstruction |
+| P41 | [Trace-ball quantum envelope](proposition_41_trace_ball_quantum_envelope.md) | analytic quantum uncertainty envelope |
+| P42 | [Quantum regular-bridge sample complexity](proposition_42_quantum_regular_bridge_sample_complexity.md) | fixed-IC quantum and target sample-size theorem |
+| P43 | [Optimal quantum-target allocation](proposition_43_optimal_quantum_target_allocation.md) | minimum-cost split of quantum and target uncertainty budgets |
+| P44 | [Pair-adaptive sample allocation](proposition_44_pair_adaptive_sample_allocation.md) | simultaneous finite-family confidence and post-data witness selection |
+| P45 | [Shared-preparation graph allocation](proposition_45_shared_preparation_graph_allocation.md) | shared preparation-level resource allocation |
+| P46 | [Budget-constrained witness graph](proposition_46_budget_constrained_witness_graph.md) | discrete preparation selection and optimality-gap certification |
+| P47 | [Anytime sequential witness graph](proposition_47_anytime_sequential_witness_graph.md) | adaptive preparation sampling, pruning, selection, and stopping |
+| P48 | [Gap-dependent stopping complexity](proposition_48_gap_dependent_stopping_complexity.md) | explicit margin-dependent sequential stopping bounds |
+| P49 | [Dyadic certification schedule](proposition_49_dyadic_stopping_overhead.md) | logarithmic certification looks with bounded overhead |
+| P50 | [Bounded-starvation asynchronous sampling](proposition_50_bounded_starvation_asynchronous_sampling.md) | fairness-controlled asynchronous stopping |
+| P51 | [Heterogeneous service-rate stopping](proposition_51_heterogeneous_service_rate_stopping.md) | preparation-specific service windows and stopping bounds |
+| P52 | [Capacity-optimal service allocation](proposition_52_capacity_optimal_service_allocation.md) | exact minimax service shares |
+| P53 | [Residual-demand reoptimization](proposition_53_residual_demand_reoptimization.md) | dynamic reoptimization after sampling and safe pruning |
+| P54 | [Metric switching-cost residual scheduling](proposition_54_metric_switching_cost_residual_scheduling.md) | exact acquisition-routing decomposition |
+| P55 | [Pruning-aware switching monotonicity](proposition_55_pruning_aware_switching_monotonicity.md) | exact acquisition and route release after pruning |
+| P56 | [Moving-start reoptimization stability](proposition_56_moving_start_metric_reoptimization_stability.md) | setup-origin perturbation control |
+| P57 | [Switching-metric perturbation stability](proposition_57_switching_metric_perturbation.md) | metric-drift reoptimization control |
+| P58 | [Finite-data metric uncertainty](proposition_58_finite_data_metric_uncertainty.md) | transition confidence intervals and robust route envelopes |
+| P59 | [Optimal transition calibration](proposition_59_optimal_transition_calibration.md) | continuous two-thirds-power calibration allocation |
+| P60 | [Integer transition calibration](proposition_60_integer_transition_calibration.md) | whole-measurement calibration with rounding overhead control |
+| P61 | [Exact integer transition calibration](proposition_61_exact_integer_transition_calibration.md) | exact equal-cost discrete allocation by diminishing marginal gain |
+| P62 | [Heterogeneous-cost transition calibration](proposition_62_heterogeneous_cost_transition_calibration.md) | unequal-cost continuous resource allocation |
+| P63 | [Exact heterogeneous-cost integer calibration](proposition_63_exact_heterogeneous_integer_calibration.md) | exact Bellman solver under unequal integer costs |
+| P64 | [Fast heterogeneous integer approximation](proposition_64_fast_heterogeneous_integer_approximation.md) | scalable certified integer approximation |
+| P65 | [Lower-bounded heterogeneous calibration](proposition_65_lower_bounded_heterogeneous_calibration.md) | baseline-safe water filling and approximation certificate |
+| P66 | [Residual-exact calibration augmentation](proposition_66_residual_exact_calibration_augmentation.md) | exact bounded-residual augmentation above the P65 floor |
+| P67 | [Global integer optimality certificate](proposition_67_global_integer_optimality_certificate.md) | common-multiplier sufficient certificate for global integer optimality |
+| P68 | [Lagrangian optimality gap certificate](proposition_68_lagrangian_optimality_gap.md) | weak-duality lower bound and candidate-quality certificate |
+| P69 | [Certified dual-optimal multiplier](proposition_69_dual_optimal_multiplier.md) | certified optimization of the P68 dual family |
+| P70 | [Exact primal-dual gap decomposition](proposition_70_primal_dual_gap_decomposition.md) | exact attribution of candidate-to-dual certificate gap |
+| P71 | [Target-provenance non-circularity](proposition_71_target_provenance_noncircularity.md) | descriptor-derived target vacuity, learned-target corollary, and provenance non-identifiability |
 
-## Physics, mathematics, and quantitative figures
+## Core bridge interface
+
+The core bridge question is
+
+\[
+E=B\circ T\ ?
+\]
+
+with stochastic residual
+
+\[
+R_{\mathrm{stoch}}(T)=I(E;\Omega\mid T).
+\]
+
+P19 makes those criteria exact. P20-P24 make the stochastic test finite-data and selection aware. P71 adds a logically prior evidential guard: if the target construction already forces \(E=h(T)\) or a descriptor-only channel \(\Omega\to T\to E\), then success of the corresponding bridge test is structurally vacuous as evidence for an independently specified target.
+
+This does **not** require \(E\) to be statistically independent of \(T\). A genuine bridge could make the two highly dependent. The requirement concerns how the target was constructed and justified.
+
+## Figures and reproducibility
 
 | Resource | What it contains |
 | --- | --- |
-| [Quantitative Physics and Mathematics Atlas](quantitative_physics_mathematics_atlas.md) | Q01 through Q40 with equations, numerical checks, and generated figures |
-| [Advanced Physics Visual Atlas](advanced_physics_visual_atlas.md) | additional physics maps and equation-focused visual context |
-| [Conscious State Measurement Atlas](conscious_state_measurement_atlas.md) | measured signals, derived features, and empirical-state boundaries |
-| [Quantitative Atlas Validation Report](quantitative_atlas_validation_report.md) | numerical checkpoints and reproducibility checks |
-| [Figure Style Guide](figure_style_guide.md) | publication layout, typography, scale, and interpretation rules |
+| [Visual atlas](../website/visual-atlas.html) | browser-oriented scientific figure gallery |
+| [Quantitative physics and mathematics atlas](quantitative_physics_mathematics_atlas.md) | classical, statistical, causal, dynamical, and multiscale quantitative figures |
+| [Quantum foundations and bridge test](quantum_foundations_and_bridge_test.md) | quantum foundations sequence and P38-P44 bridge tests |
+| [P71 figure](figures/p71_target_provenance_noncircularity.svg) | synthetic comparison of a descriptor-derived target and a separately declared target |
+| [`src/consciousness_bridge/`](../src/consciousness_bridge/) | executable theorem implementations |
+| [`tests/`](../tests/) | theorem, documentation, geometry, and publication regression tests |
 
-The quantitative figures are generated by [generate_quantitative_atlas.py](../scripts/generate_quantitative_atlas.py). Quantum-foundations figures are generated by [generate_quantum_foundations_atlas.py](../scripts/generate_quantum_foundations_atlas.py).
+## Evidence and citation
 
-## Fundamental theory and consciousness interface
+Use the [Equation and citation map](equation_and_citation_map.md) to distinguish standard identities, repository derivations, and externally supported scientific claims. Use the [Foundational bibliography](foundational_physics_mathematics_bibliography.md), [Literature map](literature_map.md), and [Reference audit](reference_audit.md) for external evidence. Use the [Citation guide](../CITATION.md) when citing the overall project or a specific proposition.
 
-| Resource | Scientific role |
-| --- | --- |
-| [Fundamental Theory to Consciousness program](fundamental_theory_consciousness_program.md) | common candidate-state framework for geometry, quantum structure, causal structure, and experiential structure |
-| [Stochastic fundamental bridge](stochastic_fundamental_bridge.md) | Markov-kernel and conditional-information version of physical sufficiency |
-| [P19 fundamental physical sufficiency](proposition_19_fundamental_physical_sufficiency.md) | exact factorization theorem, stochastic criterion, and local rank obstruction |
-| [P20 finite-sample residual certification](proposition_20_finite_sample_residual_certification.md) | finite-data confidence certificate for the P19 stochastic residual |
-| [P21 descriptor refinement and residual persistence](proposition_21_descriptor_refinement_residual_persistence.md) | nested physical-description audit that quantifies how added physical detail removes or fails to remove the residual |
-| [P22 simultaneous refinement-chain certification](proposition_22_simultaneous_refinement_chain_certification.md) | simultaneous finite-sample confidence family for the full declared refinement trajectory |
-| [P23 adaptive descriptor selection certification](proposition_23_adaptive_descriptor_selection_certification.md) | post-selection coverage and refinement-regret bounds for adaptive fixed-sample physical descriptor choice |
-| [P24 anytime adaptive refinement certification](proposition_24_anytime_adaptive_refinement_certification.md) | time-uniform coverage for repeated inspection and finite stopping times |
-| [P25 directed-influence scale certification](proposition_25_directed_influence_scale_certification.md) | P11 directed influence under target observation coarse-graining with P18 reconstruction control |
-| [P26 partition-irreducibility scale certification](proposition_26_partition_irreducibility_scale_certification.md) | P11 partition structure under block-compatible coarse observation with P18 reconstruction control |
-| [P27 partition-lattice node aggregation](proposition_27_partition_lattice_node_aggregation.md) | partition semantics and irreducibility under explicit many-to-one node aggregation |
-| [P28 intervention node-aggregation compatibility](proposition_28_intervention_node_aggregation_compatibility.md) | matched intervention semantics and directed influence across aggregate source and target nodes |
-| [P29 response-geometry node aggregation](proposition_29_response_geometry_node_aggregation.md) | full response geometry on the fixed intervention-delay grid under aggregate response states |
-| [P30 full P11 scale compatibility](proposition_30_full_p11_scale_compatibility.md) | simultaneous P11 physical-signature transport under one auditable scale declaration |
-| [P31 intervention-quotient compatibility](proposition_31_intervention_quotient_compatibility.md) | exact operational intervention quotient and representative-stability bounds |
-| [Candidate theory families](candidate_theory_families.md) | source-grounded translations of major consciousness-theory families into a common comparison language |
-| [Axiom ledger](axiom_ledger.md) | explicit assumptions and open commitments |
-
-## Evidence, falsification, and references
-
-| Resource | Scientific role |
-| --- | --- |
-| [Equation and Citation Map](equation_and_citation_map.md) | tells the reader which equations are standard, repository-defined, proved here, or externally motivated |
-| [Foundational Physics and Mathematics Bibliography](foundational_physics_mathematics_bibliography.md) | primary physics, mathematics, statistics, and empirical sources |
-| [Literature Map](literature_map.md) | consciousness-theory and empirical literature with stated source roles |
-| [Fundamental Theory References](fundamental_theory_references.bib) | machine-readable bibliography for the fundamental-theory layer |
-| [Reference Audit](reference_audit.md) | evidence-classification audit for high-impact sources |
-| [Citation and Reference Policy](citation_and_reference_policy.md) | citation, attribution, DOI, evidence-class, and writing rules |
-| [Falsification Program](falsification_program.md) | conditions that would defeat or weaken a proposed bridge claim |
-
-## Implementation and reproducibility
-
-The executable P19 implementation is [fundamental_physical_sufficiency.py](../src/consciousness_bridge/fundamental_physical_sufficiency.py), with regression tests in [test_fundamental_physical_sufficiency.py](../tests/test_fundamental_physical_sufficiency.py) and the publication figure in [p19_fundamental_physical_sufficiency.svg](figures/p19_fundamental_physical_sufficiency.svg). The P20 finite-sample layer is implemented in [finite_sample_residual_certification.py](../src/consciousness_bridge/finite_sample_residual_certification.py), tested in [test_finite_sample_residual_certification.py](../tests/test_finite_sample_residual_certification.py), and summarized by [p20_finite_sample_residual_certificate.svg](figures/p20_finite_sample_residual_certificate.svg). The P21 omitted-physics audit is implemented in [descriptor_refinement_residual.py](../src/consciousness_bridge/descriptor_refinement_residual.py), tested in [test_descriptor_refinement_residual.py](../tests/test_descriptor_refinement_residual.py), and summarized by [p21_descriptor_refinement_residual_persistence.svg](figures/p21_descriptor_refinement_residual_persistence.svg). The P22 simultaneous finite-data layer is implemented in [refinement_chain_certification.py](../src/consciousness_bridge/refinement_chain_certification.py), tested in [test_refinement_chain_certification.py](../tests/test_refinement_chain_certification.py), and summarized by [p22_simultaneous_refinement_chain_certification.svg](figures/p22_simultaneous_refinement_chain_certification.svg). The P23 adaptive-selection layer is implemented in [adaptive_descriptor_selection.py](../src/consciousness_bridge/adaptive_descriptor_selection.py), tested in [test_adaptive_descriptor_selection.py](../tests/test_adaptive_descriptor_selection.py), and summarized by [p23_adaptive_descriptor_selection_certification.svg](figures/p23_adaptive_descriptor_selection_certification.svg). The P24 anytime-valid layer is implemented in [anytime_refinement_certification.py](../src/consciousness_bridge/anytime_refinement_certification.py), tested in [test_anytime_refinement_certification.py](../tests/test_anytime_refinement_certification.py), and summarized by [p24_anytime_adaptive_refinement_certification.svg](figures/p24_anytime_adaptive_refinement_certification.svg). The P25 physical scale layer is implemented in [directed_influence_scale_certification.py](../src/consciousness_bridge/directed_influence_scale_certification.py), tested in [test_directed_influence_scale_certification.py](../tests/test_directed_influence_scale_certification.py), and summarized by [p25_directed_influence_scale_certification.svg](figures/p25_directed_influence_scale_certification.svg). The P26 partition-scale layer is implemented in [partition_irreducibility_scale_certification.py](../src/consciousness_bridge/partition_irreducibility_scale_certification.py), tested in [test_partition_irreducibility_scale_certification.py](../tests/test_partition_irreducibility_scale_certification.py), and summarized by [p26_partition_irreducibility_scale_certification.svg](figures/p26_partition_irreducibility_scale_certification.svg). The P27 node-aggregation layer is implemented in [partition_lattice_node_aggregation.py](../src/consciousness_bridge/partition_lattice_node_aggregation.py), tested in [test_partition_lattice_node_aggregation.py](../tests/test_partition_lattice_node_aggregation.py), and summarized by [p27_partition_lattice_node_aggregation.svg](figures/p27_partition_lattice_node_aggregation.svg). The P28 intervention-aggregation layer is implemented in [intervention_node_aggregation_compatibility.py](../src/consciousness_bridge/intervention_node_aggregation_compatibility.py), tested in [test_intervention_node_aggregation_compatibility.py](../tests/test_intervention_node_aggregation_compatibility.py), and summarized by [p28_intervention_node_aggregation_compatibility.svg](figures/p28_intervention_node_aggregation_compatibility.svg). The P29 response-geometry layer is implemented in [response_geometry_node_aggregation.py](../src/consciousness_bridge/response_geometry_node_aggregation.py), tested in [test_response_geometry_node_aggregation.py](../tests/test_response_geometry_node_aggregation.py), and summarized by [p29_response_geometry_node_aggregation.svg](figures/p29_response_geometry_node_aggregation.svg). The P30 assembly layer is implemented in [full_p11_scale_compatibility.py](../src/consciousness_bridge/full_p11_scale_compatibility.py), tested in [test_full_p11_scale_compatibility.py](../tests/test_full_p11_scale_compatibility.py), and summarized by [p30_full_p11_scale_compatibility.svg](figures/p30_full_p11_scale_compatibility.svg). The P31 intervention-quotient layer is implemented in [intervention_quotient_compatibility.py](../src/consciousness_bridge/intervention_quotient_compatibility.py), tested in [test_intervention_quotient_compatibility.py](../tests/test_intervention_quotient_compatibility.py), and summarized by [p31_intervention_quotient_compatibility.svg](figures/p31_intervention_quotient_compatibility.svg).
-
-The repository-wide test workflow is [test.yml](../.github/workflows/test.yml). Local documentation, figure, and anchor integrity is enforced by [test_document_link_integrity.py](../tests/test_document_link_integrity.py). The quantitative figure generators and tests are linked directly from their atlas pages.
-
-## Interpretation rule
-
-A reader should never infer a stronger claim than the linked source establishes. Standard physics is labeled as standard physics. Repository propositions are labeled as repository results. Empirical findings are labeled as empirical findings. Open bridge claims remain open until their assumptions, measurement models, finite-data bounds, and falsification tests are satisfied.
+The research remains an ongoing mathematical-physics program. The current theorem frontier is P71, but the physical-to-experiential bridge itself remains open.
