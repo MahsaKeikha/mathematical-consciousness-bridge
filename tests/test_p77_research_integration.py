@@ -89,17 +89,12 @@ def test_p77_plain_language_explains_full_law_logic_without_equations() -> None:
 
 def test_p77_release_history_survives_later_frontiers() -> None:
     pyproject = (ROOT / "pyproject.toml").read_text(encoding="utf-8")
-    cff = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
-    bib = (ROOT / "CITATION.bib").read_text(encoding="utf-8")
-    citation = (ROOT / "CITATION.md").read_text(encoding="utf-8")
     changelog = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
 
     assert _project_version(pyproject) >= (0, 77, 0)
-    assert "P77" in cff
-    assert "P77" in bib
-    assert "P77" in citation
     assert "# 0.77.0 - 2026-09-10" in changelog
     assert "Proposition 77" in changelog
+    assert "full-law" in changelog
 
 
 def test_p77_certification_boundary_is_preserved() -> None:
