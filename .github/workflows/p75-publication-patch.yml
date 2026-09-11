@@ -1,0 +1,34 @@
+name: p75-publication-patch
+
+on:
+  push:
+    branches:
+      - p75-target-model-adequacy-overidentification
+    paths:
+      - scripts/p75_publication_patch.py
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: p75-target-model-adequacy-overidentification
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/p75_publication_patch.py
+      - name: Commit publication integration
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "Integrate P75 into main research page"
+          git push origin HEAD:p75-target-model-adequacy-overidentification
