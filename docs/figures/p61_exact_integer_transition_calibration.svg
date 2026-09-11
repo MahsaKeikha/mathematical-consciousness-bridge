@@ -28,7 +28,8 @@
     <text x="80" y="207" class="eq">B ≥ m = |E|</text>
     <text x="80" y="239" class="strong">kₑ = 1 for every edge</text>
     <text x="80" y="275" class="eq">R = B - m</text>
-    <text x="80" y="309" class="small">R extra unit-cost measurements remain.</text>
+    <text x="80" y="303" class="small">R extra unit-cost</text>
+    <text x="80" y="324" class="small">measurements remain.</text>
   </g>
 
   <g id="block-gain" data-x="435" data-y="130" data-w="330" data-h="200">
