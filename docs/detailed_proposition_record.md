@@ -8,7 +8,7 @@ The scientific status rule is strict throughout: a theorem is only a theorem und
 
 ---
 
-## Complete P1 to P75 chronology
+## Complete P1 to P76 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
@@ -143,6 +143,21 @@ with the equivalent covariance pairings. The executable P75 audit goes further t
 
 Direct P75 proof: [target-model adequacy and four-view overidentification](proposition_75_target_model_adequacy_overidentification.md). Equation classification: [P75 equation and provenance record](p75_equation_provenance.md). Implementation: [`target_model_adequacy.py`](../src/consciousness_bridge/target_model_adequacy.py).
 
+**P76** converts the tracked P75 population adequacy restrictions into a finite-sample rejection certificate. From \(n\) IID four-view observations it places the entire sixteen-cell empirical law inside one simultaneous Hoeffding event. The induced \(L^1\) radius \(\delta_n\) controls every binary raw monomial moment simultaneously, which in turn gives conservative intervals for the centered moments used by P75.
+
+For the two displayed covariance tetrads, P76 proves the explicit perturbation bound
+
+\[
+|\widehat D-D|\le12\delta_n.
+\]
+
+Thus \(|\widehat D|>12\delta_n\) certifies a nonzero population tetrad and rejects the declared four-view conditional-independence model with the shared confidence level. For the P75 cross-triple and fourth-moment conditions, P76 avoids unstable empirical ratios by cross-multiplying them into denominator-free polynomial equalities and propagating the same raw-moment confidence box through interval arithmetic. Any reported necessary-constraint interval that excludes zero is a valid rejection witness on the shared event.
+
+The inference is deliberately asymmetric. A rejection is evidence that the declared P75 model is incompatible with the population under the stated IID sampling assumption. A failure to reject is not model acceptance: finite power may be inadequate, the violation may be small, or a misspecified law may satisfy the tracked necessary polynomials while failing the stronger P75 full-law membership audit.
+
+Direct P76 proof: [finite-sample target-model adequacy rejection](proposition_76_finite_sample_target_model_adequacy.md). Equation classification: [P76 equation and provenance record](p76_equation_provenance.md). Implementation: [`finite_sample_target_model_adequacy.py`](../src/consciousness_bridge/finite_sample_target_model_adequacy.py).
+
+
 ---
 
 ## Scientific interpretation of the chronology
@@ -154,11 +169,11 @@ The proposition numbers preserve development order, not one linear chain. The sc
 - P38-P44 build the quantum operational interface.
 - P45-P60 build adaptive evidence acquisition and execution machinery.
 - P61-P70 build downstream calibration and optimization.
-- P71-P75 return to the target side of the P19 bridge and formalize non-circular target provenance, noisy target measurement, population target-channel identification, finite-sample target-channel recovery, and target-model adequacy.
+- P71-P76 return to the target side of the P19 bridge and formalize non-circular target provenance, noisy target measurement, population target-channel identification, finite-sample target-channel recovery, target-model adequacy, and finite-sample model rejection.
 
 P75 does not make an experiential ontology claim. Passing its four-view restrictions establishes compatibility with the declared target-measurement model, not uniqueness or truth of that model. Failure identifies inadequacy of the declared conditional-independence model for the observed law; it does not prove that the latent target is nonphysical or that the physical-to-experiential bridge has been solved.
 
-The next target-side problem is finite-sample adequacy certification: turn the P75 population tetrad, cross-triple, fourth-moment, and full-law reconstruction residuals into simultaneous uncertainty-aware tests.
+P76 adds a finite-sample rejection layer for a tracked family of necessary P75 polynomial constraints. Its non-rejection output is explicitly inconclusive. The next target-side problem is stronger finite-sample full-law adequacy characterization, sharper power, and robust alternatives for residually dependent or learned target-view systems.
 
 ---
 

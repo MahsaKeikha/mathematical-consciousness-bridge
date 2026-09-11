@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P75**. The proposition record runs from **P1 through P75 with explicit dependency branches**. P71-P75 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P76**. The proposition record runs from **P1 through P76 with explicit dependency branches**. P71-P76 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -25,7 +25,9 @@ The current documented theorem frontier is **P75**. The proposition record runs 
 &\Downarrow\\
 &\text{P74: finite data can certify or refuse that channel recovery}\\
 &\Downarrow\\
-&\text{P75: the target-measurement model must face overidentifying adequacy tests}
+&\text{P75: the target-measurement model must face overidentifying adequacy tests}\\
+&\Downarrow\\
+&\text{P76: finite data must separate adequacy failure from sampling noise}
 \end{aligned}
 }
 \]
@@ -43,7 +45,7 @@ Separate but connected branches refine the physical representation and experimen
 }
 \]
 
-The proposition number records development order. It does not imply that P75 depends on P70. P75 depends scientifically on P19 and the P71-P74 target-side lineage, especially the P73 binary latent model whose adequacy it tests.
+The proposition number records development order. It does not imply that P76 depends on P70. P76 depends scientifically on P75, which in turn depends on P19 and the P71-P74 target-side lineage.
 
 ## 2. Target-side bridge lineage
 
@@ -268,6 +270,37 @@ The executable P75 audit does not treat those displayed moments as a complete al
 
 Direct proof: [P75](proposition_75_target_model_adequacy_overidentification.md). Provenance: [P75 equation record](p75_equation_provenance.md). Implementation: [`target_model_adequacy.py`](../src/consciousness_bridge/target_model_adequacy.py). Tests: [`test_target_model_adequacy.py`](../tests/test_target_model_adequacy.py).
 
+### P76: finite-sample target-model adequacy rejection
+
+P75 is a population adequacy theorem. P76 places the empirical sixteen-cell four-view law inside one simultaneous finite-sample event. With
+
+\[
+\varepsilon_n(\alpha)=\sqrt{\frac{\log(32/\alpha)}{2n}},
+\qquad
+\delta_n(\alpha)=\min\{2,16\varepsilon_n(\alpha)\},
+\]
+
+all binary raw monomial moments are simultaneously controlled by \(\delta_n\) with probability at least \(1-\alpha\). This gives
+
+\[
+\boxed{|\widehat C_{ij}-C_{ij}|\le3\delta_n}
+\]
+
+and, for each displayed P75 tetrad residual \(D\),
+
+\[
+\boxed{|\widehat D-D|\le12\delta_n.}
+\]
+
+Therefore \(|\widehat D|>12\delta_n\) certifies a nonzero population tetrad and rejects the declared P75 model on the same confidence event. P76 also cross-multiplies the P75 equal-\(q\) and fourth-moment conditions into denominator-free polynomial equalities and propagates the shared empirical-law uncertainty through interval arithmetic.
+
+The conclusion is one-sided. Exclusion of zero by any necessary-constraint interval certifies model incompatibility. Failure to exclude zero is inconclusive and is not model acceptance.
+
+![P76 finite-sample target-model adequacy rejection](figures/p76_finite_sample_target_model_adequacy.svg)
+
+Direct proof: [P76](proposition_76_finite_sample_target_model_adequacy.md). Provenance: [P76 equation record](p76_equation_provenance.md). Implementation: [`finite_sample_target_model_adequacy.py`](../src/consciousness_bridge/finite_sample_target_model_adequacy.py). Tests: [`test_finite_sample_target_model_adequacy.py`](../tests/test_finite_sample_target_model_adequacy.py).
+
+
 ## 3. Complete proposition index
 
 | Proposition | Mathematical role | Scientific role | Status |
@@ -347,6 +380,7 @@ Direct proof: [P75](proposition_75_target_model_adequacy_overidentification.md).
 | [P73](proposition_73_target_channel_identifiability.md) | three-view moment inversion and two-view no-go | target-channel stability identifiability under a declared latent model | proved conditional theorem |
 | [P74](proposition_74_finite_sample_target_channel_recovery.md) | simultaneous concentration and nonlinear interval propagation | finite-data target-channel recovery with a nondegeneracy gate | proved conditional theorem |
 | [P75](proposition_75_target_model_adequacy_overidentification.md) | dimension count, tetrads, cross-triple moments, full-law reconstruction | target-model adequacy and four-view overidentification | proved conditional theorem |
+| [P76](proposition_76_finite_sample_target_model_adequacy.md) | sixteen-cell concentration and polynomial interval propagation | finite-sample target-model adequacy rejection | proved conditional theorem |
 
 ## 4. Calibration branch remains separate
 
@@ -369,19 +403,20 @@ These results optimize downstream experimental resources. They do not define con
 
 ## 5. Current open frontier
 
-After P75, the target side has five explicit requirements:
+After P76, the target side has six explicit requirements:
 
 1. the target must have non-circular provenance relative to the tested physical descriptor;
 2. its observation channel must be valid and sufficiently informative for the claimed witness;
 3. channel reliability must be identified or externally calibrated under a defensible target-measurement model;
 4. finite data must resolve the channel parameters far enough from the model singularity to support a confidence-certified reliability statement;
-5. the target-measurement model itself must survive adequacy tests rather than being accepted because it can be fit.
+5. the target-measurement model itself must survive adequacy tests rather than being accepted because it can be fit;
+6. finite data must separate a genuine adequacy violation from sampling uncertainty before model rejection is claimed.
 
-P75 closes the population-level fifth item for one binary four-view extension of the P73 model. It provides explicit observable restrictions and full-law reconstruction, but it does not yet attach finite-sample simultaneous uncertainty to those adequacy residuals. The next structural question is therefore **finite-sample model-adequacy certification**.
+P76 closes the sixth item for a tracked family of necessary P75 polynomial constraints under IID sampling. It supplies simultaneous rejection intervals, but it does not yet give a complete finite-sample confidence characterization of the full sixteen-cell model image or an optimal-power test. The next structural question is therefore **stronger finite-sample full-law adequacy and power under dependent-view alternatives**.
 
 Beyond that, the broader open program remains:
 
-- test target-model adequacy under finite data and residual dependence;
+- strengthen finite-sample target-model adequacy beyond the tracked necessary polynomials and characterize power under residual dependence;
 - define and justify experiential variables independently of the physical candidate;
 - test descriptor sufficiency across interventions, time, composition, and scale;
 - sharpen finite-data guarantees for continuous, dependent, hidden-state, and learned-descriptor settings;

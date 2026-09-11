@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If this research program, one of its theorem results, figures, algorithms, or implementations contributes to your work, please cite the research program and the method-specific source relevant to the result."
 title: "Mathematical Consciousness Bridge"
-version: 0.75.0
+version: 0.76.0
 date-released: 2026-09-10
 authors:
   - family-names: Keikha
@@ -26,6 +26,8 @@ keywords:
   - target-model adequacy
   - four-view overidentification
   - algebraic model diagnostics
+  - finite-sample model rejection
+  - polynomial adequacy certification
   - confidence certification
   - causal inference
   - information theory
@@ -33,7 +35,7 @@ keywords:
   - finite-sample inference
   - falsification
   - experimental design
-abstract: "An ongoing mathematical-physics research program developing a falsifiable test architecture for physical-to-experiential bridge claims. The repository formalizes deterministic and stochastic factorization tests, intervention-resolved causal structure, temporal and multiscale compatibility, finite-data certification, target-provenance non-circularity, target-measurement channel robustness, target-channel identifiability, finite-sample target-channel recovery, target-model adequacy and four-view overidentification, quantum operational sufficiency tests, adaptive experiment design, and certified calibration and optimization. Proposition 71 proves that targets constructed as functions or descriptor-only channels of the tested physical descriptor satisfy the corresponding bridge or screening-off condition by construction. Proposition 72 adds the noisy-target layer and proves one-way residual transfer, witness erasure, target-TV contraction, channel-stability bounds, and a conservative finite-sample target-separation certificate. Proposition 73 gives an explicit population inversion for a nondegenerate binary latent target observed through three conditionally independent binary views, identifies the P72 stability coefficients up to the unavoidable latent-label symmetry, and proves by construction that two views do not generally identify individual channel reliabilities. Proposition 74 propagates one simultaneous eight-cell finite-sample confidence event through the P73 inversion, adds a covariance nondegeneracy gate, and gives conservative confidence intervals for the latent target-channel quantities. Proposition 75 separates identifiability from model adequacy: it shows that three binary views are generically just-identified, while a fourth binary view creates six generic overidentifying degrees of freedom, observable covariance-tetrad and cross-triple consistency obligations, a fourth-centered-moment relation, and a full-law reconstruction audit. The downstream calibration branch includes lower-bounded heterogeneous calibration and exact primal-dual gap decomposition through P70. Current documented theorem frontier: P75. The physical-to-experiential bridge remains open, and the project does not assume that consciousness is a scalar, state of matter, quantum variable, or additional spacetime dimension."
+abstract: "An ongoing mathematical-physics research program developing a falsifiable test architecture for physical-to-experiential bridge claims. The repository formalizes deterministic and stochastic factorization tests, intervention-resolved causal structure, temporal and multiscale compatibility, finite-data certification, target-provenance non-circularity, target-measurement channel robustness, target-channel identifiability, finite-sample target-channel recovery, target-model adequacy and four-view overidentification, finite-sample target-model adequacy rejection, quantum operational sufficiency tests, adaptive experiment design, and certified calibration and optimization. Proposition 71 proves that targets constructed as functions or descriptor-only channels of the tested physical descriptor satisfy the corresponding bridge or screening-off condition by construction. Proposition 72 adds the noisy-target layer and proves one-way residual transfer, witness erasure, target-TV contraction, channel-stability bounds, and a conservative finite-sample target-separation certificate. Proposition 73 gives an explicit population inversion for a nondegenerate binary latent target observed through three conditionally independent binary views, identifies the P72 stability coefficients up to the unavoidable latent-label symmetry, and proves by construction that two views do not generally identify individual channel reliabilities. Proposition 74 propagates one simultaneous eight-cell finite-sample confidence event through the P73 inversion, adds a covariance nondegeneracy gate, and gives conservative confidence intervals for the latent target-channel quantities. Proposition 75 separates identifiability from model adequacy: it shows that three binary views are generically just-identified, while a fourth binary view creates six generic overidentifying degrees of freedom, observable covariance-tetrad and cross-triple consistency obligations, a fourth-centered-moment relation, and a full-law reconstruction audit. Proposition 76 propagates one simultaneous sixteen-cell Hoeffding event through denominator-free P75 polynomial constraints to obtain finite-sample rejection certificates for target-model inadequacy; non-rejection remains explicitly inconclusive and is not model acceptance. The downstream calibration branch includes lower-bounded heterogeneous calibration and exact primal-dual gap decomposition through P70. Current documented theorem frontier: P76. The physical-to-experiential bridge remains open, and the project does not assume that consciousness is a scalar, state of matter, quantum variable, or additional spacetime dimension."
 preferred-citation:
   type: generic
   authors:
@@ -43,4 +45,4 @@ preferred-citation:
   title: "Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem"
   year: 2026
   url: "https://github.com/MahsaKeikha/mathematical-consciousness-bridge"
-  notes: "Version 0.75.0. Ongoing mathematical-physics research program. Current documented theorem frontier: P75."
+  notes: "Version 0.76.0. Ongoing mathematical-physics research program. Current documented theorem frontier: P76."

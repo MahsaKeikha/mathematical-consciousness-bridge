@@ -4,6 +4,7 @@ ROOT = Path(__file__).resolve().parents[1]
 README = ROOT / "README.md"
 DOCS = ROOT / "docs"
 WEBSITE = ROOT / "website"
+CHANGELOG = ROOT / "CHANGELOG.md"
 
 
 def test_p75_core_artifacts_exist() -> None:
@@ -18,7 +19,7 @@ def test_p75_core_artifacts_exist() -> None:
         assert path.exists(), path
 
 
-def test_p75_public_research_surfaces_expose_the_current_frontier() -> None:
+def test_p75_public_research_surfaces_preserve_the_result() -> None:
     readme = README.read_text(encoding="utf-8")
     roadmap = (DOCS / "theorem_roadmap.md").read_text(encoding="utf-8")
     navigation = (DOCS / "research_navigation.md").read_text(encoding="utf-8")
@@ -26,16 +27,16 @@ def test_p75_public_research_surfaces_expose_the_current_frontier() -> None:
     website = (WEBSITE / "index.html").read_text(encoding="utf-8")
     research_map = (WEBSITE / "research-map.html").read_text(encoding="utf-8")
     atlas = (WEBSITE / "visual-atlas.html").read_text(encoding="utf-8")
+    changelog = CHANGELOG.read_text(encoding="utf-8")
 
     for text in (readme, roadmap, navigation, detail, website, research_map, atlas):
         assert "P75" in text
 
-    assert "0.75.0" in readme
-    assert "75 proposition-level results" in readme
-    assert "P1 through P75 with explicit dependency branches" in readme
+    assert "# 0.75.0" in changelog
+    assert "proposition_75_target_model_adequacy_overidentification.md" in readme
     assert "proposition_75_target_model_adequacy_overidentification.md" in roadmap
     assert "| P75 |" in navigation
-    assert "Complete P1 to P75 chronology" in detail
+    assert "**P75**" in detail
     assert "docs/figures/p75_target_model_adequacy_overidentification.svg" in website
 
 
