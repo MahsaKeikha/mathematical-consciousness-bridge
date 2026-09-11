@@ -2,6 +2,12 @@
 
 **Status:** proved mathematical measurement-robustness theorem under a declared nondifferential target-observation channel, with a conservative finite-sample certificate.
 
+![P72 target-measurement channel robustness](figures/p72_target_measurement_channel_robustness.svg)
+
+**P72 theorem map.** An independently declared latent target \(E^\star\) is observed through \(Y\). Under the declared nondifferential measurement condition, the observed residual cannot exceed the latent residual. Target noise may attenuate or erase a real witness, and the amount of pairwise separation that survives can be controlled by a channel-stability coefficient.
+
+For equation classification and external context, see the [P72 equation and provenance record](p72_equation_provenance.md).
+
 ## 1. Purpose
 
 P71 establishes a logically prior requirement for a meaningful bridge test: the target must not be constructed from the same physical descriptor in a way that makes factorization true by definition.
@@ -12,9 +18,7 @@ P72 asks:
 
 > If an independently declared latent target is observed through a noisy measurement channel, what conclusions about physical sufficiency survive the measurement process?
 
-The answer is asymmetric.
-
-Under an explicit nondifferential measurement condition, target-side noise cannot create population-level residual target information that was absent from the latent target. It can, however, attenuate or completely erase a genuine latent residual.
+The answer is asymmetric. Under an explicit nondifferential measurement condition, target-side noise cannot create population-level residual target information that was absent from the latent target. It can, however, attenuate or completely erase a genuine latent residual.
 
 P72 formalizes that asymmetry with conditional mutual information and total variation, then gives a finite-sample lower confidence bound for a measured target separation.
 
@@ -24,35 +28,15 @@ The theorem does not declare the latent target to be consciousness. The notation
 
 ## 2. Setup
 
-Let
-
-\[
-\Omega
-\]
-
-be the underlying admissible state or history variable, let
+Let \(\Omega\) be the underlying admissible state or history variable, let
 
 \[
 T=T(\Omega)
 \]
 
-be the declared physical descriptor, and let
+be the declared physical descriptor, and let \(E^\star\) be an independently specified latent target satisfying the P71 provenance requirement.
 
-\[
-E^\star
-\]
-
-be an independently specified latent target satisfying the P71 provenance requirement.
-
-The experiment does not necessarily observe \(E^\star\) directly. Instead it observes
-
-\[
-Y
-\]
-
-through a target-measurement channel.
-
-P72 assumes the channel is **nondifferential relative to the underlying state once the latent target and physical descriptor are fixed**:
+The experiment observes \(Y\) through a target-measurement channel. P72 assumes the channel is nondifferential relative to the underlying state once the latent target and physical descriptor are fixed:
 
 \[
 \boxed{
@@ -68,9 +52,7 @@ P(y\mid\omega,e,t)=K_t(y\mid e).
 }
 \]
 
-The channel is allowed to depend on \(T\). This permits measurement quality or reporting noise to vary across declared physical conditions. What is excluded is additional dependence on \(\Omega\) after \((E^\star,T)\) have already been fixed.
-
-That exclusion is scientifically consequential. If it fails, the measurement process itself can carry extra state information and can manufacture an apparent observed residual.
+The channel may depend on \(T\). What is excluded is additional dependence on \(\Omega\) after \((E^\star,T)\) have been fixed. If that exclusion fails, the measurement mechanism itself may carry extra state information and can manufacture an apparent observed residual.
 
 ---
 
@@ -96,18 +78,14 @@ I(E^\star;\Omega\mid T).
 
 ### Proof
 
-Condition on a fixed value \(T=t\) with positive probability. The P72 measurement premise gives the conditional Markov chain
+Condition on a fixed \(T=t\) with positive probability. The measurement premise gives the conditional Markov chain
 
 \[
-\Omega
-\longrightarrow
-E^\star
-\longrightarrow
-Y
+\Omega\longrightarrow E^\star\longrightarrow Y
 \qquad\text{given }T=t.
 \]
 
-The ordinary data-processing inequality therefore gives
+The standard data-processing inequality gives
 
 \[
 I(Y;\Omega\mid T=t)
@@ -115,39 +93,22 @@ I(Y;\Omega\mid T=t)
 I(E^\star;\Omega\mid T=t).
 \]
 
-Average over \(t\):
+Averaging over \(t\),
 
 \[
 \begin{aligned}
 I(Y;\Omega\mid T)
-&=
-\sum_t P(t)I(Y;\Omega\mid T=t)\\
-&\le
-\sum_t P(t)I(E^\star;\Omega\mid T=t)\\
-&=
-I(E^\star;\Omega\mid T).
+&=\sum_tP(t)I(Y;\Omega\mid T=t)\\
+&\le\sum_tP(t)I(E^\star;\Omega\mid T=t)\\
+&=I(E^\star;\Omega\mid T).
 \end{aligned}
-\]
-
-Hence
-
-\[
-\boxed{
-I(Y;\Omega\mid T)
-\le
-I(E^\star;\Omega\mid T).
-}
 \]
 
 \(\square\)
 
-The information-theoretic data-processing step is standard. P72's contribution is its explicit placement in the target-measurement layer of the repository's physical-sufficiency program.
+The information-theoretic step is standard. P72's repository-specific role is to place it explicitly in the target-measurement layer of the P19/P71 bridge architecture. See [Cover and Thomas](foundational_physics_mathematics_bibliography.md#cover-and-thomas-2006) for standard information theory.
 
-See [Cover and Thomas](foundational_physics_mathematics_bibliography.md#cover-and-thomas-2006) for standard information theory and [P19](proposition_19_fundamental_physical_sufficiency.md) for the bridge residual used here.
-
----
-
-## 4. P72A corollary: population no-false-positive transfer
+### Population no-false-positive corollary
 
 Because conditional mutual information is nonnegative,
 
@@ -163,23 +124,13 @@ I(E^\star;\Omega\mid T)>0.
 }
 \]
 
-Therefore, under the P72 measurement premise, a genuine positive **population** residual in the observed target cannot have been created solely by nondifferential target-measurement noise.
+Thus, under the P72 premise, a positive observed **population** residual cannot be created solely by nondifferential target-measurement noise. It transfers to the latent target.
 
-It transfers upward to a positive latent-target residual.
-
-This is a statement about population quantities. A positive empirical estimate is not enough. Finite-sample uncertainty must still be controlled, as in P20 and the P72D certificate below.
-
-The scientific conclusion is also descriptor-relative:
-
-\[
-I(E^\star;\Omega\mid T)>0
-\]
-
-means that the declared \(T\) does not screen off the declared latent target under the declared model. It does not show that physics in general is incomplete.
+This does not justify a positive empirical residual without uncertainty control, and it does not imply that the declared physical descriptor is physically complete.
 
 ---
 
-## 5. P72B: the converse fails because target noise can erase a real residual
+## 4. P72B: the converse fails because measurement can erase a witness
 
 The implication
 
@@ -189,44 +140,36 @@ I(Y;\Omega\mid T)=0
 I(E^\star;\Omega\mid T)=0
 \]
 
-is false in general.
-
-### Exact erasure counterexample
+is false.
 
 Let \(T\) be constant, let
 
 \[
 \Omega\sim\operatorname{Bernoulli}(1/2),
+\qquad
+E^\star=\Omega,
 \]
 
-and define
+so
 
 \[
-E^\star=\Omega.
+I(E^\star;\Omega\mid T)=\log2.
 \]
 
-Then
-
-\[
-I(E^\star;\Omega\mid T)
-=H(\Omega)
-=\log 2.
-\]
-
-Now let the measurement channel erase the target completely:
+Now use a complete erasure channel,
 
 \[
 Y=y_0
 \qquad\text{with probability }1.
 \]
 
-This channel satisfies the P72 conditional-independence premise because it contains no additional dependence on \(\Omega\). Yet
+The P72 premise still holds, but
 
 \[
 I(Y;\Omega\mid T)=0.
 \]
 
-Thus
+Therefore
 
 \[
 \boxed{
@@ -236,47 +179,35 @@ I(Y;\Omega\mid T)=0.
 }
 \]
 
-A zero observed residual is therefore inconclusive unless the target-measurement channel is known to preserve the distinctions relevant to the bridge test.
+A null observed target residual is therefore inconclusive unless the target-measurement channel is known to preserve the distinctions relevant to the bridge test.
 
 ---
 
-## 6. Why the measurement premise matters
+## 5. Failure of the measurement premise can create a false observed residual
 
-P72 does not claim that every real reporting or measurement process satisfies
+P72 does not assume that every real reporting process satisfies
 
 \[
 Y\perp\!\!\!\perp\Omega\mid(E^\star,T).
 \]
 
-If the measurement process retains extra dependence on the underlying state, a false observed residual can be created.
-
-For example, let \(T\) be constant and let \(E^\star\) also be constant, so
+If the measurement mechanism retains extra dependence on the underlying state, the P72 direction can fail. Let \(T\) and \(E^\star\) both be constant, so
 
 \[
 I(E^\star;\Omega\mid T)=0.
 \]
 
-If an invalid measurement mechanism directly sets
-
-\[
-Y=\Omega,
-\]
-
-then
+If an invalid measurement mechanism directly sets \(Y=\Omega\), then
 
 \[
 I(Y;\Omega\mid T)=H(\Omega)>0.
 \]
 
-The apparent residual now comes from the measurement mechanism, not from the latent target.
-
-This is why P72 treats target measurement as part of the scientific model rather than as a transparent readout.
+The observed residual is now a property of the measurement mechanism rather than evidence of latent-target variation. This is why the target observation process must be modeled explicitly.
 
 ---
 
-## 7. P72C: total-variation contraction for target witnesses
-
-Conditional mutual information is useful for a global stochastic residual. Pairwise witness experiments often use a direct target-distribution separation.
+## 6. P72C: total-variation witness transfer
 
 Fix a physical descriptor value \(T=t\). Let two underlying cases have latent target laws
 
@@ -284,21 +215,9 @@ Fix a physical descriptor value \(T=t\). Let two underlying cases have latent ta
 p,q\in\Delta(\mathcal E),
 \]
 
-and let the shared target-measurement channel at this descriptor value be
+and let their common target-measurement channel be \(K_t(y\mid e)\). The observed laws are \(K_tp\) and \(K_tq\).
 
-\[
-K_t(y\mid e).
-\]
-
-Their observed target laws are
-
-\[
-K_tp,
-\qquad
-K_tq.
-\]
-
-Every stochastic channel contracts total variation, so
+Stochastic kernels contract total variation:
 
 \[
 \boxed{
@@ -308,7 +227,7 @@ Every stochastic channel contracts total variation, so
 }
 \]
 
-Therefore a measured target separation is itself a lower bound on the corresponding latent target separation:
+Hence
 
 \[
 \boxed{
@@ -318,24 +237,19 @@ Therefore a measured target separation is itself a lower bound on the correspond
 }
 \]
 
-This is the target-side analogue of the data-processing logic used elsewhere in the repository, including P17.
+A measured target separation is therefore a lower bound on the latent separation under the declared shared channel.
 
----
+### Target-channel stability coefficient
 
-## 8. Target-channel stability coefficient
-
-Contraction gives only an upper bound on what survives measurement. To quantify how much latent separation is guaranteed to remain visible, define the zero-mass subspace
+Define the zero-sum subspace
 
 \[
 \mathcal H
 =
-\left\{
-v\in\mathbb R^{|\mathcal E|}:
-\mathbf 1^\top v=0
-\right\}.
+\{v\in\mathbb R^{|\mathcal E|}:\mathbf1^\top v=0\}
 \]
 
-For a finite channel matrix \(K_t\), define
+and
 
 \[
 \boxed{
@@ -346,21 +260,7 @@ For a finite channel matrix \(K_t\), define
 }
 \]
 
-Because stochastic channels contract \(L^1\) differences of probability vectors,
-
-\[
-0\le\gamma_t\le1.
-\]
-
-For any two latent probability laws \(p,q\), their difference belongs to \(\mathcal H\), and therefore
-
-\[
-\|K_t(p-q)\|_1
-\ge
-\gamma_t\|p-q\|_1.
-\]
-
-Dividing by two gives the two-sided witness transfer bound
+Then \(0\le\gamma_t\le1\), and for every pair of latent target laws,
 
 \[
 \boxed{
@@ -372,8 +272,6 @@ Dividing by two gives the two-sided witness transfer bound
 }
 \]
 
-### When is \(\gamma_t>0\)?
-
 In finite dimension,
 
 \[
@@ -384,29 +282,15 @@ In finite dimension,
 }
 \]
 
-If the restricted channel is injective on target-distribution differences, the continuous function
+If the channel is injective on zero-sum target-distribution differences, the continuous function \(v\mapsto\|K_tv\|_1\) has a strictly positive minimum on the compact unit \(L^1\) sphere in \(\mathcal H\). Conversely, a nonzero zero-sum vector in the kernel makes the infimum zero. Full column rank is sufficient, but injectivity on \(\mathcal H\) is the exact condition required here.
 
-\[
-v\mapsto\|K_tv\|_1
-\]
-
-has a strictly positive minimum on the compact set
-
-\[
-\{v\in\mathcal H:\|v\|_1=1\}.
-\]
-
-Conversely, if a nonzero zero-sum vector lies in the channel kernel, then its ratio is zero and \(\gamma_t=0\).
-
-Full column rank of \(K_t\) is sufficient for \(\gamma_t>0\), but the exact condition needed here is only injectivity on the zero-sum difference subspace.
-
-This coefficient does not establish that the target channel is known. Estimating or identifying an unknown target-noise channel is a separate scientific problem.
+The coefficient is conditional on a known or justified channel. P72 does not infer an unknown general \(K_t\) from one noisy label stream.
 
 ---
 
-## 9. Binary symmetric target measurement
+## 7. Exact binary symmetric channel
 
-For a binary latent target, consider
+For
 
 \[
 Y=E^\star\oplus N,
@@ -414,27 +298,13 @@ Y=E^\star\oplus N,
 N\sim\operatorname{Bernoulli}(\eta),
 \]
 
-with \(N\) conditionally independent of the underlying state under the P72 premise.
-
-If two latent target laws are Bernoulli with parameters \(p\) and \(q\), then
+let two latent Bernoulli targets have parameters \(p\) and \(q\). Since
 
 \[
-P(Y=1)=\eta+(1-2\eta)p.
+P(Y=1)=\eta+(1-2\eta)p,
 \]
 
-Therefore
-
-\[
-\begin{aligned}
-\operatorname{TV}(P_Y^{(p)},P_Y^{(q)})
-&=
-|\eta+(1-2\eta)p-\eta-(1-2\eta)q|\\
-&=
-|1-2\eta|\,|p-q|.
-\end{aligned}
-\]
-
-Since total variation between Bernoulli laws is \(|p-q|\),
+we obtain
 
 \[
 \boxed{
@@ -443,15 +313,11 @@ Since total variation between Bernoulli laws is \(|p-q|\),
 }
 \]
 
-Hence the exact binary stability factor is
+Thus the exact binary stability factor is
 
 \[
-\boxed{
-\gamma=|1-2\eta|.
-}
+\boxed{\gamma=|1-2\eta|.}
 \]
-
-Important regimes are:
 
 | Error rate \(\eta\) | Stability \(\gamma\) | Interpretation |
 | ---: | ---: | --- |
@@ -460,63 +326,34 @@ Important regimes are:
 | 0.25 | 0.50 | half of the latent TV separation survives |
 | 0.50 | 0 | complete erasure |
 
-The symmetric channel becomes informative again for \(\eta>1/2\) if the reversal rate is known, because the labels are systematically flipped rather than erased. The singular point is \(\eta=1/2\).
+For \(\eta>1/2\), a known symmetric channel becomes informative again because labels are systematically reversed rather than erased. The singular point is \(\eta=1/2\).
 
 ---
 
-## 10. P72D: finite-sample lower confidence bound for observed target separation
+## 8. P72D: finite-sample lower confidence bound
 
-Consider two cases \(a,b\) with the same declared physical descriptor value \(T=t\). Suppose the observed target \(Y\) has a predeclared finite alphabet of size
+Consider two same-\(T\) cases \(a,b\), with observed target \(Y\) on a predeclared alphabet of size \(d_Y\). Collect independent IID measurements of sizes \(n_a,n_b\), with empirical laws \(\widehat P_a,\widehat P_b\).
 
-\[
-d_Y.
-\]
-
-Collect independent IID target measurements within each case:
-
-\[
-Y_{a,1},\ldots,Y_{a,n_a},
-\qquad
-Y_{b,1},\ldots,Y_{b,n_b}.
-\]
-
-Let the empirical target laws be
-
-\[
-\widehat P_a,
-\qquad
-\widehat P_b.
-\]
-
-Allocate total error probability \(\alpha\) across both samples and all \(d_Y\) categories. Coordinate-wise Hoeffding plus a union bound gives
+Coordinate-wise Hoeffding plus a union bound across both samples and all declared categories gives
 
 \[
 \boxed{
 a_s
-=
-\sqrt{
-\frac{1}{2n_s}
-\log\frac{4d_Y}{\alpha}
-},
-\qquad s\in\{a,b\}.
+=\sqrt{\frac{1}{2n_s}\log\frac{4d_Y}{\alpha}},
+\qquad
+\tau_s
+=\min\left\{1,\frac{d_Y}{2}a_s\right\},
+\quad s\in\{a,b\}.
 }
 \]
 
-Then, simultaneously for both samples with probability at least \(1-\alpha\),
+With probability at least \(1-\alpha\), both
 
 \[
-\operatorname{TV}(P_s,\widehat P_s)
-\le
-\tau_s,
-\qquad
-\boxed{
-\tau_s
-=
-\min\left\{1,\frac{d_Y}{2}a_s\right\}.
-}
+\operatorname{TV}(P_s,\widehat P_s)\le\tau_s.
 \]
 
-By the triangle inequality,
+The triangle inequality then yields
 
 \[
 \left|
@@ -524,8 +361,7 @@ By the triangle inequality,
 -
 \operatorname{TV}(\widehat P_a,\widehat P_b)
 \right|
-\le
-\tau_a+\tau_b.
+\le\tau_a+\tau_b.
 \]
 
 Therefore
@@ -534,10 +370,8 @@ Therefore
 \boxed{
 L_Y
 =
-\max\left\{
-0,
-\operatorname{TV}(\widehat P_a,\widehat P_b)
--\tau_a-\tau_b
+\max\left\{0,
+\operatorname{TV}(\widehat P_a,\widehat P_b)-\tau_a-\tau_b
 \right\}
 }
 \]
@@ -545,267 +379,140 @@ L_Y
 satisfies
 
 \[
-\boxed{
-P\left(
-\operatorname{TV}(P_a,P_b)\ge L_Y
-\right)
-\ge1-\alpha.
-}
+\Pr\left(\operatorname{TV}(P_a,P_b)\ge L_Y\right)\ge1-\alpha.
 \]
 
-Because the target channel contracts total variation,
+By target-channel contraction, on the same event,
 
 \[
+\boxed{
 \operatorname{TV}(P_{E^\star,a},P_{E^\star,b})
 \ge
-\operatorname{TV}(P_a,P_b),
-\]
-
-so on the same confidence event,
-
-\[
-\boxed{
-\operatorname{TV}(P_{E^\star,a},P_{E^\star,b})
+\operatorname{TV}(P_{Y,a},P_{Y,b})
 \ge L_Y.
 }
 \]
 
-Thus a strictly positive \(L_Y\), together with equal declared physical descriptor and a valid P72 channel premise, certifies that a latent target distinction survives behind the noisy observation process.
-
-This is a finite-data target-side witness. It does not by itself establish that the declared \(T\) is physically complete.
+A positive \(L_Y\), together with equal declared physical descriptor and a valid shared P72 channel, therefore certifies a latent target distinction behind the noisy observation process.
 
 ---
 
-## 11. P72E: sufficient sample size under a known channel-stability lower bound
+## 9. P72E: sufficient sample size under channel stability
 
-Suppose a planned experiment assumes a latent target separation
-
-\[
-\operatorname{TV}(p,q)\ge\Delta_E>0
-\]
-
-and a known channel-stability lower bound
+Suppose the planned experiment assumes
 
 \[
+\operatorname{TV}(p,q)\ge\Delta_E>0,
+\qquad
 \gamma_t\ge\gamma_0>0.
 \]
 
-Then
+Then the population observed separation obeys
 
 \[
-D_Y
-:=
-\operatorname{TV}(K_tp,K_tq)
-\ge
-\gamma_0\Delta_E.
+D_Y\ge\gamma_0\Delta_E.
 \]
 
-For equal sample sizes \(n_a=n_b=n\), define
+For equal sample sizes \(n_a=n_b=n\), let
 
 \[
 \tau_n
-=
-\frac{d_Y}{2}
-\sqrt{
-\frac{1}{2n}
-\log\frac{4d_Y}{\alpha}
-}
+=\frac{d_Y}{2}
+\sqrt{\frac{1}{2n}\log\frac{4d_Y}{\alpha}}
 \]
 
-in the nontrivial regime before the cap at one is active.
-
-On the simultaneous confidence event,
+in the nontrivial uncapped regime. On the simultaneous confidence event,
 
 \[
-\widehat D_Y
-\ge
-D_Y-2\tau_n.
+\widehat D_Y\ge D_Y-2\tau_n,
 \]
 
-The P72D lower bound therefore obeys
+so
 
 \[
-L_Y
-=
-\max\{0,\widehat D_Y-2\tau_n\}
-\ge
-\max\{0,\gamma_0\Delta_E-4\tau_n\}.
+L_Y\ge\max\{0,\gamma_0\Delta_E-4\tau_n\}.
 \]
 
-Hence the strict condition
+Thus
 
 \[
 4\tau_n<\gamma_0\Delta_E
 \]
 
-is sufficient for \(L_Y>0\) on the confidence event.
-
-Solving for \(n\) gives
+is sufficient for a positive lower bound. Solving gives
 
 \[
 \boxed{
-n
->
-\frac{
-2d_Y^2\log(4d_Y/\alpha)
-}{
-\gamma_0^2\Delta_E^2
-}.
+n>
+\frac{2d_Y^2\log(4d_Y/\alpha)}
+{\gamma_0^2\Delta_E^2}.
 }
 \]
 
-The integer implementation returns the smallest integer strictly above the right-hand side.
+This is a conservative sufficient design condition, not a minimax-optimal or necessary sample complexity.
 
-This is a conservative sufficient design bound. It is not claimed to be minimax-optimal or necessary.
-
-The scaling is nevertheless scientifically informative:
+For the binary symmetric channel, \(\gamma_0=|1-2\eta|\), so the target-measurement penalty scales as
 
 \[
-\boxed{
-n
-=O\!\left(
-\frac{1}{\gamma_0^2\Delta_E^2}
-\log\frac{d_Y}{\alpha}
-\right)
-}
+\boxed{(1-2\eta)^{-2}}
 \]
 
-up to the explicit alphabet-size prefactor generated by the coordinate-wise union bound.
-
-As the measurement channel approaches erasure,
-
-\[
-\gamma_0\to0,
-\]
-
-the sufficient sample burden diverges.
-
-For the binary symmetric channel,
-
-\[
-\gamma_0=|1-2\eta|,
-\]
-
-so the measurement-noise penalty scales as
-
-\[
-\boxed{
-\frac{1}{(1-2\eta)^2}
-}
-\]
-
-away from the singular point \(\eta=1/2\).
+away from \(\eta=1/2\).
 
 ---
 
-## 12. Relation to P17, P19, P20, and P71
+## 10. Dependency and scientific role
 
-P72 is a target-side branch assembled from earlier mathematical obligations.
+P72 connects four established layers:
 
-### P17
+- [P17](proposition_17_coarse_graining_and_refinement.md): stochastic-map contraction and loss of distinguishability;
+- [P19](proposition_19_fundamental_physical_sufficiency.md): the latent physical-sufficiency residual;
+- [P20](proposition_20_finite_sample_residual_certification.md): finite-data discipline for bridge residuals;
+- [P71](proposition_71_target_provenance_noncircularity.md): independent target provenance.
 
-P17 uses stochastic-map contraction to quantify what physical distinctions can be lost under coarse observation. P72 applies the same data-processing discipline to the target measurement channel.
-
-### P19
-
-P19 supplies the latent physical-sufficiency residual
-
-\[
-I(E^\star;\Omega\mid T).
-\]
-
-P72 proves how an observed target residual
-
-\[
-I(Y;\Omega\mid T)
-\]
-
-relates to it under an explicit measurement model.
-
-### P20
-
-P20 shows why a population residual must not be replaced by an unqualified empirical estimate. P72D applies the same finite-data philosophy to pairwise observed target separations.
-
-### P71
-
-P71 asks whether the target was specified independently enough for a bridge test to have evidential content. P72 assumes that provenance hurdle has been addressed and asks whether the measurement process preserves or hides the independently declared target distinctions.
-
-The logical sequence is therefore
+The target-side logical sequence is
 
 \[
 \boxed{
 \text{independent target provenance}
-\xrightarrow{\text{P71}}
+\xrightarrow{\mathrm{P71}}
 \text{declared target-measurement channel}
-\xrightarrow{\text{P72}}
+\xrightarrow{\mathrm{P72}}
 \text{measurement-aware bridge witness}.
 }
 \]
 
----
-
-## 13. Target-channel identifiability is a separate obligation
-
-P72 conditions on a declared target-measurement channel or on a defensible lower bound for its stability.
-
-It does not claim that such a channel can always be inferred from one noisy label stream.
-
-This is a recognized identifiability problem in noisy-label and repeated-observer models. For example, Liu, Cheng, and Zhang (ICML 2023) analyze when a label-noise transition matrix is identifiable and show that instance-dependent transition identification can require multiple noisy labels or additional structural assumptions. Earlier repeated-observer work by Dawid and Skene models observer error rates when the latent response is unavailable.
-
-Those works provide methodological context, not premises for P72's data-processing proof.
-
-External context:
-
-- Yang Liu, Hao Cheng, and Kun Zhang, "Identifiability of Label Noise Transition Matrix," *Proceedings of the 40th International Conference on Machine Learning*, PMLR 202, 2023, 21475-21496. https://proceedings.mlr.press/v202/liu23g.html
-- A. P. Dawid and A. M. Skene, "Maximum Likelihood Estimation of Observer Error-Rates Using the EM Algorithm," *Journal of the Royal Statistical Society: Series C*, 28(1), 1979, 20-28. DOI: 10.2307/2346806.
-
-A natural next theorem is therefore to ask under what repeated-rater, multi-view, calibration, or structural assumptions the target channel itself is identifiable well enough to support P72's stability parameter.
+P72 assumes that provenance hurdle has been addressed. It does not replace P71.
 
 ---
 
-## 14. Numerical implementation
+## 11. Channel identifiability remains separate
 
-The reference implementation is
+P72 conditions on a declared target-measurement channel or on a defensible lower bound for its stability. It does not claim that such a channel can always be inferred from noisy observations.
 
-[`target_measurement_channel_robustness.py`](../src/consciousness_bridge/target_measurement_channel_robustness.py).
+This is a recognized identifiability problem in noisy-label and repeated-observer models. Liu, Cheng, and Zhang, *Identifiability of Label Noise Transition Matrix*, ICML 2023, study conditions under which transition matrices are identifiable and emphasize the difficulty of instance-dependent noise without additional information or assumptions. Dawid and Skene's classical repeated-observer model estimates observer error rates when a latent response is unavailable.
 
-It provides:
-
-- construction and verification of the conditional residual inequality under a declared finite target channel;
-- exact total-variation pushforward and contraction checks;
-- exact binary-symmetric target-channel attenuation;
-- a conservative finite-sample lower confidence bound for observed target separation;
-- a sufficient equal-sample-size design bound under a declared latent TV gap and channel-stability lower bound.
-
-The implementation intentionally does not infer conceptual target independence from data and does not estimate an unknown general channel-stability coefficient without an identifiability model.
+These works are methodological context, not premises for the P72 proof. Their role points to a natural next theorem: identify conditions under which the target channel, or at least a certified lower bound on \(\gamma_t\), can itself be recovered from repeated or multi-view measurements.
 
 ---
 
-## 15. Regression tests
+## 12. Numerical implementation and tests
 
-The P72 regression suite checks:
+The implementation is [`target_measurement_channel_robustness.py`](../src/consciousness_bridge/target_measurement_channel_robustness.py).
 
-1. equality of latent and observed residuals under perfect measurement;
-2. strict residual attenuation under a noisy informative channel;
-3. complete erasure of an otherwise positive latent residual;
-4. impossibility of creating a population residual from a zero latent residual under the declared nondifferential channel;
-5. exact total-variation contraction through a finite target channel;
-6. exact binary-symmetric attenuation by \(|1-2\eta|\);
-7. complete binary witness erasure at \(\eta=1/2\);
-8. finite-sample target-TV lower-bound arithmetic;
-9. the derived sufficient sample-size inequality;
-10. increasing sample burden as channel stability decreases; and
-11. rejection of malformed channels, post-hoc alphabet mismatch, zero stability, and zero declared gap.
+It computes the latent and observed conditional residuals under a declared channel, verifies the data-processing inequality, pushes finite target distributions through channels, checks TV contraction, evaluates exact binary-symmetric attenuation, constructs the finite-sample TV lower bound, and returns the sufficient equal-sample-size design threshold.
+
+The regression suite is [`test_target_measurement_channel_robustness.py`](../tests/test_target_measurement_channel_robustness.py). It checks perfect measurement, noisy attenuation, complete erasure, zero-latent-residual preservation, exact binary attenuation, finite confidence arithmetic, sample-size scaling, and malformed-input rejection.
 
 These tests validate the executable theorem contract. They are not empirical evidence about consciousness.
 
 ---
 
-## 16. Scientific boundary
+## 13. Scientific boundary
 
 P72 establishes a measurement theorem, not an ontology.
 
-It does **not** prove that \(E^\star\) is consciousness. It does not prove that self-report is infallible, that behavior is an experiential ground truth, or that any clinical or neural label is privileged. It does not prove that the target channel is known. It does not establish that the physical descriptor \(T\) is complete. It does not imply that a surviving residual is nonphysical.
+It does **not** prove that \(E^\star\) is consciousness. It does not prove that self-report is infallible, that behavior is experiential ground truth, or that any clinical or neural label is privileged. It does not prove that the target channel is known. It does not establish that the physical descriptor \(T\) is complete. It does not imply that a surviving residual is nonphysical.
 
 Its contribution is narrower:
 
@@ -817,4 +524,4 @@ Its contribution is narrower:
 }
 \]
 
-A positive measurement-aware witness can therefore be transferred to the latent target under the theorem's assumptions. A null observed witness remains inconclusive unless the target channel is sufficiently informative and scientifically justified.
+A positive measurement-aware witness can therefore transfer to the latent target under the theorem assumptions. A null observed witness remains inconclusive unless the target channel is sufficiently informative and scientifically justified.
