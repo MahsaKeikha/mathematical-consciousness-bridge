@@ -39,8 +39,8 @@
     <text x="460" y="202" class="eq">ρₑ = Bₑ √[log(2/αₑ)/(2nₑ)]</text>
     <text x="460" y="233" class="eq">Σₑ αₑ ≤ α</text>
     <text x="460" y="269" class="strong">P(|ĉₑ-cₑ| ≤ ρₑ  ∀e) ≥ 1-α</text>
-    <text x="460" y="304" class="small">Finite-family union bound.</text>
-    <text x="460" y="327" class="small">No between-pair independence is needed.</text>
+    <text x="460" y="304" class="small">No independence between different</text>
+    <text x="460" y="327" class="small">transition pairs is needed.</text>
   </g>
 
   <g id="block-envelope" data-x="815" data-y="130" data-w="330" data-h="215">
@@ -75,7 +75,7 @@
     <text x="80" y="752" class="eq">πrob ∈ arg minπ ℓ⁺(π;s)</text>
     <text x="80" y="784" class="eq">0 ≤ ℓc(πrob)-L*c</text>
     <text x="80" y="810" class="strong">≤ Groute = L⁺-L⁻</text>
-    <text x="80" y="839" class="small">If Groute = 0, the route is certified optimal.</text>
+    <text x="80" y="839" class="small">Groute = 0 certifies route optimality.</text>
   </g>
 
   <g id="block-compare" data-x="435" data-y="680" data-w="330" data-h="170">
@@ -84,16 +84,17 @@
     <text x="460" y="756" class="strong">C₀⁻ &gt; C₁⁺</text>
     <text x="460" y="788" class="eq">⇒ C*c0(r₀;s₀) &gt; C*c1(r₁;s₁)</text>
     <text x="460" y="818" class="eq">Δrobust = C₀⁻ - C₁⁺</text>
-    <text x="460" y="841" class="small">Requires joint coverage, not independence.</text>
+    <text x="460" y="841" class="small">Joint coverage; no independence needed.</text>
   </g>
 
   <g id="block-sample" data-x="815" data-y="680" data-w="330" data-h="170">
     <rect x="815" y="680" width="330" height="170" rx="18" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
     <text x="840" y="718" class="head">7. Width and sample certificate</text>
-    <text x="840" y="750" class="eq">ρₑ ≤ η ⇒ L⁺-L⁻ ≤ 2qrect η</text>
-    <text x="840" y="780" class="eq">n ≥ 2B²qrect² / ε²</text>
-    <text x="840" y="806" class="eq">× log(2M/α)</text>
-    <text x="840" y="838" class="small">Sufficient common-sample condition, not minimax.</text>
+    <text x="840" y="748" class="eq">ρₑ ≤ η ⇒ L⁺-L⁻ ≤ 2qrect η</text>
+    <text x="840" y="776" class="eq">n ≥ 2B²qrect² / ε²</text>
+    <text x="840" y="802" class="eq">× log(2M/α)</text>
+    <text x="840" y="824" class="small">Sufficient common-sample condition.</text>
+    <text x="840" y="844" class="small">Not a minimax lower bound.</text>
   </g>
 
   <path id="arrow-4" class="arrow" d="M300 617 V650 H220 V680" data-source="block-bracket" data-target="block-regret"/>
