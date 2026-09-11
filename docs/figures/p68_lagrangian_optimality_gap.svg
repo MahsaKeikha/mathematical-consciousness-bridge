@@ -21,7 +21,6 @@
   <text x="58" y="64" class="title">P68: Lagrangian Optimality-Gap Certificate</text>
   <text x="58" y="96" class="subtitle">Quantify candidate quality even when the P67 zero-gap test does not close.</text>
 
-  <!-- Stage 1 -->
   <g id="block-candidate" data-x="45" data-y="135" data-w="300" data-h="185">
     <rect x="45" y="135" width="300" height="185" rx="18" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
     <text x="68" y="168" class="stageTitle">1. Feasible integer</text>
@@ -32,7 +31,6 @@
     <text x="68" y="304" class="body">/ sqrt(k_e).</text>
   </g>
 
-  <!-- Stage 2 -->
   <g id="block-lambda" data-x="450" data-y="135" data-w="300" data-h="185">
     <rect x="450" y="135" width="300" height="185" rx="18" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"/>
     <text x="473" y="172" class="stageTitle">2. Choose any lambda &gt; 0</text>
@@ -42,7 +40,6 @@
     <text x="473" y="302" class="note">No dual-maximizer claim.</text>
   </g>
 
-  <!-- Stage 3 -->
   <g id="block-edge" data-x="855" data-y="135" data-w="300" data-h="185">
     <rect x="855" y="135" width="300" height="185" rx="18" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
     <text x="878" y="172" class="stageTitle">3. Exact one-edge minima</text>
@@ -57,7 +54,6 @@
 
   <text x="600" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#64748b">EXACT EDGE MINIMA ASSEMBLE A GLOBAL LOWER BOUND</text>
 
-  <!-- Stage 4 -->
   <g id="block-dual" data-x="110" data-y="380" data-w="980" data-h="150">
     <rect x="110" y="380" width="980" height="150" rx="18" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
     <text x="135" y="418" class="stageTitle">4. Weak-duality lower bound</text>
@@ -67,7 +63,6 @@
   </g>
   <line id="arrow-3" x1="1005" y1="320" x2="1005" y2="380" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)" data-source="block-edge" data-target="block-dual"/>
 
-  <!-- Stage 5A -->
   <g id="block-additive" data-x="110" data-y="570" data-w="465" data-h="125">
     <rect x="110" y="570" width="465" height="125" rx="18" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
     <text x="135" y="607" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#9a3412">5A. Additive gap certificate</text>
@@ -75,28 +70,25 @@
     <text x="135" y="674" class="note">Always valid; q need not be positive.</text>
   </g>
 
-  <!-- Stage 5B -->
   <g id="block-multiplicative" data-x="625" data-y="570" data-w="465" data-h="125">
     <rect x="625" y="570" width="465" height="125" rx="18" fill="#fefce8" stroke="#ca8a04" stroke-width="2"/>
     <text x="650" y="607" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#854d0e">5B. Multiplicative certificate</text>
     <text x="650" y="640" class="math">If q(lambda) &gt; 0:</text>
-    <text x="650" y="666" class="math">U(k)/U* &lt;= U(k)/q(lambda)</text>
-    <text x="650" y="687" class="note">If q &lt;= 0, keep the additive certificate.</text>
+    <text x="650" y="662" class="math">U(k)/U* &lt;= U(k)/q(lambda)</text>
+    <text x="650" y="682" class="note">If q &lt;= 0, keep the additive certificate.</text>
   </g>
 
   <line id="arrow-4" x1="430" y1="530" x2="342" y2="570" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)" data-source="block-dual" data-target="block-additive"/>
   <line id="arrow-5" x1="770" y1="530" x2="858" y2="570" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)" data-source="block-dual" data-target="block-multiplicative"/>
 
-  <!-- P67 special case -->
   <g id="block-p67" data-x="220" data-y="735" data-w="760" data-h="88">
     <rect x="220" y="735" width="760" height="88" rx="16" fill="#f8fafc" stroke="#64748b" stroke-width="2"/>
     <text x="245" y="766" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#0f172a">P67 zero-gap special case</text>
-    <text x="245" y="793" class="body">Tight budget + one common edgewise multiplier</text>
-    <text x="245" y="815" class="body">=&gt; q(lambda) = U(k) = U*_int(B).</text>
+    <text x="245" y="791" class="body">Tight budget + one common edgewise multiplier</text>
+    <text x="245" y="812" class="body">=&gt; q(lambda) = U(k) = U*_int(B).</text>
   </g>
   <line id="arrow-6" x1="342" y1="695" x2="342" y2="735" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)" data-source="block-additive" data-target="block-p67"/>
 
-  <!-- Scientific boundary -->
   <g id="block-boundary" data-x="95" data-y="847" data-w="1010" data-h="49">
     <rect x="95" y="847" width="1010" height="49" rx="14" fill="#0f172a"/>
     <text x="120" y="867" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff">Scientific boundary: optimization guarantee for the declared calibration surrogate only.</text>
