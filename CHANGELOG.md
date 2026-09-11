@@ -1,3 +1,44 @@
+# 0.75.0 - 2026-09-10
+
+- Added P75 target-model adequacy and four-view overidentification as the population-level adequacy continuation of the P71-P74 target-side branch.
+- Separated parameter identifiability from model validation by showing that the nondegenerate three-binary-view latent model is generically just-identified, while four binary views provide six generic overidentifying degrees of freedom.
+- Derived observable covariance-tetrad, cross-triple latent-imbalance, and fourth-centered-moment consistency obligations and added a full sixteen-cell reconstruction audit.
+- Added a synthetic residual-dependence counterexample that must fail the declared four-view target-measurement model.
+- Added proof, implementation, regression tests, theorem visual, geometry guards, provenance record, v0.75.0 citation metadata, README integration, navigation/roadmap updates, and website integration.
+- Kept the scientific boundary explicit: passing P75 establishes compatibility with the declared target-measurement model, not uniqueness, experiential semantics, or a physical-to-experiential bridge.
+
+# 0.74.0 - 2026-09-10
+
+- Added P74 finite-sample target-channel recovery certification as the finite-data continuation of P73.
+- Propagated one simultaneous confidence event for the observed eight-cell law through the nonlinear P73 inversion.
+- Added a covariance nondegeneracy gate that refuses unstable recovery near the P73 singular set.
+- Certified latent-prevalence orbits, P72 stability coefficients, label-invariant loading-times-latent-mean products, channel offsets, and unordered latent-conditioned binary response-probability pairs.
+- Added proof, implementation, tests, theorem visual, publication integration, and v0.74.0 release metadata while keeping semantic latent-label orientation external to the statistical recovery.
+
+# 0.73.0 - 2026-09-10
+
+- Added P73 three-view target-channel identifiability under a declared nondegenerate binary latent conditional-independence model.
+- Derived explicit population moment inversion for latent prevalence and all three binary view channels up to the unavoidable global latent-label swap.
+- Identified the P72 single-view target-channel stability coefficients despite that label symmetry.
+- Added a constructive two-view non-identifiability boundary showing that two uncalibrated binary views do not generally determine their individual reliabilities.
+- Added proof, implementation, tests, theorem visual, provenance, navigation, and v0.73.0 publication integration.
+
+# 0.72.0 - 2026-09-10
+
+- Added P72 target-measurement channel robustness, separating an independently justified latent target from its noisy observation.
+- Proved one-way conditional-information residual transfer under the declared nondifferential target-channel condition and gave an explicit witness-erasure counterexample for the converse.
+- Added total-variation contraction and target-channel stability bounds, including exact binary-symmetric attenuation.
+- Added a conservative finite-sample target-separation certificate and explicit scientific boundaries on latent-target interpretation.
+- Added proof, implementation, tests, theorem visual, provenance, navigation, and v0.72.0 publication integration.
+
+# 0.71.0 - 2026-09-10
+
+- Added P71 target-provenance non-circularity as a return from downstream calibration to the core P19 bridge-sufficiency problem.
+- Proved deterministic descriptor-derived target vacuity, stochastic descriptor-only channel vacuity, and the learned-target corollary.
+- Proved provenance non-identifiability: a zero observed conditional residual is observationally compatible with a descriptor-only target-generation mechanism.
+- Added the non-vacuity rule that target provenance is a protocol/design requirement rather than a statistic inferred from the observed joint law alone.
+- Added proof, implementation, tests, theorem visual, provenance, navigation, and v0.71.0 publication integration.
+
 # 0.70.0 - 2026-09-10
 
 - Added P70 exact primal-dual gap decomposition and diagnostic attribution.
