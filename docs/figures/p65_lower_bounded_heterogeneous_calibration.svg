@@ -91,10 +91,11 @@
   <path id="arrow-5" class="arrow" d="M420 615 V675" data-source="block-water" data-target="block-floor"/>
   <path id="arrow-6" class="arrow" d="M780 615 V675" data-source="block-water" data-target="block-certificate"/>
 
-  <g id="block-boundary" data-x="90" data-y="850" data-w="1020" data-h="90">
-    <rect x="90" y="850" width="1020" height="90" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
-    <text x="118" y="880" class="head">Exactness and scientific boundary</text>
-    <text x="118" y="905" class="small">P63 remains the exact integer solver. It makes no claim that a calibration variable is consciousness or that quantum mechanics is incomplete.</text>
-    <text x="118" y="928" class="small">P65 also does not establish a physical-to-experiential bridge.</text>
+  <g id="block-boundary" data-x="90" data-y="835" data-w="1020" data-h="110">
+    <rect x="90" y="835" width="1020" height="110" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="118" y="865" class="head">Exactness and scientific boundary</text>
+    <text x="118" y="890" class="small">P63 remains the exact integer solver.</text>
+    <text x="118" y="914" class="small">It makes no claim that a calibration variable is consciousness or that quantum mechanics is incomplete.</text>
+    <text x="118" y="938" class="small">P65 also does not establish a physical-to-experiential bridge.</text>
   </g>
 </svg>
