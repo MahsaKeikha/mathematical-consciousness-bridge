@@ -24,6 +24,6 @@ def test_p52_visual_and_proof_to_code_path_are_public():
         "p52_capacity_optimal_service_allocation.svg",
         "capacity_optimal_service_allocation.py",
         "test_capacity_optimal_service_allocation.py",
-        "P52 - capacity-optimal service allocation",
+        "**Proposition 52**",
     ):
         assert token in readme
