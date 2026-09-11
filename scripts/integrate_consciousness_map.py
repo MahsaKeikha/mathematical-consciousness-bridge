@@ -38,7 +38,7 @@ def integrate_conceptual_record() -> None:
         '            "Main takeaway: theoretical adequacy, measurement validity, and dynamical sufficiency are distinct requirements; satisfying them can support or falsify a declared model but does not by itself close the physical-to-experiential bridge."\n'
         '        ),\n'
         '        "status": (\n'
-        '            "Research-architecture figure. It separates physical, measurement, and sufficiency obligations; it is not an empirical consciousness result or a theorem identifying any physical state with consciousness."\n'
+        '            "Research-architecture figure. It separates physical, measurement, and sufficiency obligations; it is not an empirical consciousness result or a theorem identifying any physical state with consciousness. The physical-to-experiential bridge remains open."\n'
         '        ),\n'
         '    },\n'
     )
