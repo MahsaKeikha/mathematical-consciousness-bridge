@@ -29,7 +29,8 @@
     <text x="80" y="235" class="eq">another may cost 7</text>
     <text x="80" y="274" class="copy">Raw marginal gain is not an</text>
     <text x="80" y="298" class="copy">equal-resource comparison.</text>
-    <text x="80" y="330" class="small">Gain-per-cost has no proved P61 exchange rule.</text>
+    <text x="80" y="322" class="small">Gain-per-cost ranking also lacks</text>
+    <text x="80" y="343" class="small">a proved P61 exchange rule.</text>
   </g>
 
   <g id="block-problem" data-x="435" data-y="130" data-w="330" data-h="220">
@@ -82,9 +83,9 @@
     <rect x="435" y="690" width="330" height="170" rx="18" fill="#fefce8" stroke="#ca8a04" stroke-width="2"/>
     <text x="460" y="728" class="head">6. Exact computational cost</text>
     <text x="460" y="770" class="strong">O(m B'^2)</text>
-    <text x="460" y="804" class="small">Pseudo-polynomial in numeric B'.</text>
-    <text x="460" y="831" class="small">Working objective arrays use O(B').</text>
-    <text x="460" y="852" class="small">This alone is not an NP-hardness claim.</text>
+    <text x="460" y="801" class="small">Pseudo-polynomial in numeric B'.</text>
+    <text x="460" y="826" class="small">O(B') working objective memory.</text>
+    <text x="460" y="851" class="small">Not an NP-hardness claim by itself.</text>
   </g>
 
   <g id="block-benchmark" data-x="815" data-y="690" data-w="330" data-h="170">
@@ -100,10 +101,12 @@
   <path id="arrow-6" class="arrow" d="M600 630 V690" data-source="block-bellman" data-target="block-complexity"/>
   <path id="arrow-7" class="arrow" d="M900 630 V660 H980 V690" data-source="block-bellman" data-target="block-benchmark"/>
 
-  <g id="block-boundary" data-x="90" data-y="885" data-w="1020" data-h="95">
-    <rect x="90" y="885" width="1020" height="95" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
-    <text x="118" y="914" class="head">Exactness and scientific boundary</text>
-    <text x="118" y="939" class="small">P63 is exact for the declared integer-cost separable calibration problem; unspent budget is allowed when the cost lattice cannot fund another increment.</text>
-    <text x="118" y="963" class="small">It does not validate the uncertainty model, identify consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness.</text>
+  <g id="block-boundary" data-x="90" data-y="870" data-w="1020" data-h="125">
+    <rect x="90" y="870" width="1020" height="125" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="118" y="898" class="head">Exactness and scientific boundary</text>
+    <text x="118" y="922" class="small">P63 is exact for the declared integer-cost separable calibration problem.</text>
+    <text x="118" y="944" class="small">Unspent budget is allowed when the cost lattice cannot fund another admissible increment.</text>
+    <text x="118" y="966" class="small">It does not validate the uncertainty model or identify a calibration variable with consciousness.</text>
+    <text x="118" y="988" class="small">It does not establish a physical-to-experiential bridge or imply quantum incompleteness.</text>
   </g>
 </svg>
