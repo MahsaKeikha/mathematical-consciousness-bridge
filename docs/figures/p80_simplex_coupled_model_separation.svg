@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
   <title id="title">P80 Simplex-Coupled Model Separation Certificate</title>
-  <desc id="desc">P80 tightens the P78 parameter-box relaxation by intersecting exact observed-cell probability intervals with the probability simplex. The coupled relaxation remains a superset of the true P75 box image but a subset of the P78 Cartesian product, so its L-infinity distance is a valid and never weaker lower bound. Exact rational endpoint-sum feasibility computes the coupled distance, which can then be compared with the P79 sampling-radius upper certificate.</desc>
+  <desc id="desc">P80 tightens the P78 parameter-box relaxation by intersecting exact observed-cell probability intervals with the probability simplex. The coupled relaxation remains a superset of the true P75 box image but a subset of the P78 Cartesian product. Exact feasibility requires the P78 coordinate-overlap radius together with lower-mass and upper-mass endpoint conditions. The resulting exact-rational L-infinity distance is a valid and never weaker lower bound and can be compared with the P79 sampling-radius upper certificate.</desc>
 
   <rect x="0" y="0" width="1200" height="760" rx="22" fill="#f8fafc"/>
   <rect x="36" y="32" width="1128" height="696" rx="20" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
@@ -38,13 +38,14 @@
   <text x="482" y="303" font-family="Arial, Helvetica, sans-serif" font-size="13.5" fill="#047857">R_delta = { l_i &lt;= q_i &lt;= u_i,</text>
   <text x="482" y="326" font-family="Arial, Helvetica, sans-serif" font-size="13.5" fill="#047857">sum_i q_i = 1 }</text>
 
-  <text x="474" y="378" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#0f172a">Exact radius feasibility</text>
-  <text x="474" y="404" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#334155">sum max(l_i, p_i-r) &lt;= 1</text>
-  <text x="474" y="426" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#334155">1 &lt;= sum min(u_i, p_i+r)</text>
+  <text x="474" y="376" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#0f172a">Exact radius feasibility</text>
+  <text x="474" y="399" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#334155">r &gt;= r_box = L78(B)</text>
+  <text x="474" y="422" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#334155">sum max(l_i, p_i-r) &lt;= 1</text>
+  <text x="474" y="445" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#334155">1 &lt;= sum min(u_i, p_i+r)</text>
 
-  <rect x="462" y="454" width="276" height="58" rx="11" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
-  <text x="482" y="480" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#164e63">Rational piecewise-linear crossing</text>
-  <text x="482" y="500" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#0e7490">No floating optimizer is required.</text>
+  <rect x="462" y="468" width="276" height="54" rx="11" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
+  <text x="482" y="491" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#164e63">L80 = max(r_box, r_A, r_C)</text>
+  <text x="482" y="511" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#0e7490">Exact rational crossings; no float optimizer.</text>
 
   <path d="M773 346 L818 346" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
 
@@ -62,7 +63,7 @@
   <text x="883" y="424" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#4338ca">L80(B) &gt;= L78(B)</text>
 
   <text x="874" y="486" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="700" fill="#0f172a">P79 handoff</text>
-  <text x="874" y="513" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#334155">L80 &gt; epsilon_upper  =>  reject</text>
+  <text x="874" y="513" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#334155">L80 &gt; epsilon_upper  =&gt;  reject</text>
 
   <rect x="70" y="570" width="1060" height="108" rx="16" fill="#0f172a"/>
   <text x="98" y="604" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#ffffff">Why P80 matters</text>
