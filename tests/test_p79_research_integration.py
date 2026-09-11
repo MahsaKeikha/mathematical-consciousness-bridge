@@ -115,7 +115,7 @@ def test_p79_certification_boundary_is_preserved() -> None:
 
     proof_required = (
         "independently justified upper bound",
-        "must not be tuned from the same data merely to force rejection",
+        "It must not be tuned from the same observed discrepancy merely to avoid rejection",
         "L_p>\\varepsilon_p+\\bar\\rho_p",
         "A failure to reject under the enlarged dependence allowance is inconclusive",
         "The physical-to-experiential bridge remains open.",
