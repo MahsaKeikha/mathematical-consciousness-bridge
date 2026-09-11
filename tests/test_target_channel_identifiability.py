@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import numpy as np
 import pytest
 
@@ -136,8 +138,8 @@ def test_invalid_probability_inputs_are_rejected() -> None:
 
 
 def test_p73_source_keeps_scientific_boundary_explicit() -> None:
-    source = (
-        __import__("pathlib").Path("src/consciousness_bridge/target_channel_identifiability.py")
+    source = Path(
+        "src/consciousness_bridge/target_channel_identifiability.py"
     ).read_text(encoding="utf-8")
     assert "does not interpret the latent state as consciousness" in source
     assert "unique up to the global latent-label swap" in source
