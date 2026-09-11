@@ -159,9 +159,11 @@ def test_p80_source_states_scope_and_scientific_boundary() -> None:
         "sum to one",
         "always dominates the P78",
         "can be strictly stronger",
-        "``fractions.Fraction`` arithmetic",
+        "fractions.Fraction",
+        "no floating optimizer is used",
         "does not validate the latent target model",
-        "identify a latent state with consciousness",
+        "does not identify a latent state",
+        "with consciousness",
         "physical-to-experiential bridge",
     )
     for token in required:
