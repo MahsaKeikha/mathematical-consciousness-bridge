@@ -18,8 +18,8 @@ from math import log, sqrt
 import numpy as np
 
 from consciousness_bridge.target_channel_identifiability import (
-    ThreeViewMoments,
     three_view_moments,
+    ThreeViewMoments,
 )
 
 
