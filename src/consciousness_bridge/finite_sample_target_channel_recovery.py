@@ -18,10 +18,9 @@ from math import log, sqrt
 import numpy as np
 
 from consciousness_bridge.target_channel_identifiability import (
-    three_view_moments,
     ThreeViewMoments,
+    three_view_moments,
 )
-
 
 Interval = tuple[float, float]
 ChannelProbabilityOrbit = tuple[Interval, Interval]
