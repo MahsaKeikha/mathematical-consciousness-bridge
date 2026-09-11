@@ -6,7 +6,7 @@ MAP = ROOT / "website/research-map.html"
 
 def test_research_map_starts_with_orientation_before_stage_details():
     text = MAP.read_text(encoding="utf-8")
-    hero = text.index("Seventy-nine results, one dependency-aware scientific program")
+    hero = text.index("Eighty results, one dependency-aware scientific program")
     orientation = text.index("How to read this research")
     stage_one = text.index("I · Formal bridge foundations")
     assert hero < orientation < stage_one
@@ -28,6 +28,7 @@ def test_research_map_exposes_status_and_all_ten_stage_ranges():
         "P38-P44",
         "P45-P53",
         "P54-P70",
+        "P77-P80",
         "Ten-stage scientific path",
     ]
     for token in required:
@@ -49,6 +50,10 @@ def test_research_map_gives_direct_audit_paths():
         "proposition_74_finite_sample_target_channel_recovery.md",
         "proposition_75_target_model_adequacy_overidentification.md",
         "proposition_76_finite_sample_target_model_adequacy.md",
+        "proposition_77_full_law_model_set_separation.md",
+        "proposition_78_certified_continuous_model_separation.md",
+        "proposition_79_certified_sampling_radius.md",
+        "proposition_80_simplex_coupled_model_separation.md",
     ]
     for token in required:
         assert token in text, token
