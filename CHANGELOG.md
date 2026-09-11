@@ -1,3 +1,11 @@
+# 0.79.0 - 2026-09-11
+
+- Added Proposition 79, Certified Rational Sampling-Radius Envelope.
+- Added exact-rational logarithm bracketing and integer-certified dyadic square-root enclosure for the P77 finite-alphabet sampling radius.
+- Completed the directionally safe P77/P78/P79 rejection handoff: P78 lower-bounds model distance and P79 upper-bounds sampling uncertainty.
+- Added the P79 theorem figure, proof, provenance record, implementation, tests, public navigation, website integration, and release metadata.
+- Preserved the scientific boundary that non-rejection is not model acceptance and the physical-to-experiential bridge remains open.
+
 # 0.78.0 - 2026-09-10
 
 ## Proposition 78: certified continuous model separation

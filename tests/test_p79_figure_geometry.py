@@ -1,6 +1,5 @@
-from pathlib import Path
 import xml.etree.ElementTree as ET
-
+from pathlib import Path
 
 FIGURE = Path("docs/figures/p79_certified_sampling_radius.svg")
 

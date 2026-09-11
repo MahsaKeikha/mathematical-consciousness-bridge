@@ -2,14 +2,14 @@
 
 This page is the reading and reference index for the **Mathematical Consciousness Bridge** repository. It is organized by scientific dependency rather than by development chronology so that a reader can move from the research question to proofs, figures, code, falsification conditions, and citation resources without searching through the repository manually.
 
-The current documented theorem frontier is **P78**. The complete proposition record runs from **P1 through P78**. P71-P78 form a target-side methodology branch descending from the P19 physical-sufficiency question. They are not extensions of the P61-P70 calibration branch.
+The current documented theorem frontier is **P79**. The complete proposition record runs from **P1 through P79**. P71-P79 form a target-side methodology branch descending from the P19 physical-sufficiency question. They are not extensions of the P61-P70 calibration branch.
 
 ## Recommended reading order
 
 1. [Main research study](../README.md) for the complete scientific narrative and curated figures.
 2. [Bridge problem](bridge_problem.md) for the formal physical-to-experiential question.
 3. [Scientific status discipline](../README.md#scientific-status-discipline) for the distinction among definitions, proved results, implementations, numerical checks, empirical inputs, hypotheses, and open bridge claims.
-4. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P78.
+4. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P79.
 5. [P19 fundamental physical sufficiency](proposition_19_fundamental_physical_sufficiency.md) for the exact, stochastic, and differential bridge criteria.
 6. [P20-P24 finite and adaptive residual certification](theorem_roadmap.md) for finite-data and repeated-look validity.
 7. [P71 target-provenance non-circularity](proposition_71_target_provenance_noncircularity.md) for the theorem showing when a target construction makes a bridge test vacuous by design.
@@ -20,6 +20,7 @@ The current documented theorem frontier is **P78**. The complete proposition rec
 12. [P76 finite-sample target-model adequacy rejection](proposition_76_finite_sample_target_model_adequacy.md) for simultaneous sixteen-cell uncertainty, denominator-free polynomial adequacy intervals, and the distinction between certified rejection and inconclusive non-rejection.
 13. [P77 finite-sample full-law model-set separation](proposition_77_full_law_model_set_separation.md) for confidence-region separation from the complete declared model family, model-distance transport, and the certified-lower-bound requirement for continuous-family rejection.
 14. [P78 certified continuous P75 model separation](proposition_78_certified_continuous_model_separation.md) for exact multi-affine box enclosures, global L-infinity distance lower bounds, mesh-gap convergence, and the strict P77 rejection handoff.
+15. [P79 certified rational sampling-radius envelope](proposition_79_certified_sampling_radius.md) for exact-rational logarithm brackets, integer-certified dyadic square-root enclosure, and the one-sided P78/P79 rejection comparison.
 15. [P11-P18 and P25-P37 operational physical structure](theorem_roadmap.md) for intervention, temporal, compositional, and multiscale requirements.
 16. [P38-P44 quantum foundations and bridge tests](quantum_foundations_and_bridge_test.md) for quantum operational sufficiency under explicit bridge classes.
 17. [P45-P60 adaptive experiment design and scheduling](theorem_roadmap.md) for valid evidence collection and transition-calibration setup.
@@ -52,6 +53,7 @@ The current documented theorem frontier is **P78**. The complete proposition rec
 | Finite-sample target-model adequacy | P76 | Turns tracked P75 population restrictions into simultaneous one-sided finite-data rejection certificates | [P76](proposition_76_finite_sample_target_model_adequacy.md) |
 | Full-law finite-sample target-model adequacy | P77 | Inverts the complete empirical-law confidence region against the declared model set and requires certified global separation for rejection | [P77](proposition_77_full_law_model_set_separation.md) |
 | Certified continuous target-model separation | P78 | Supplies exact-rational global lower bounds for distance to the continuous P75 model family and a convergent mesh certificate | [P78](proposition_78_certified_continuous_model_separation.md) |
+| Certified sampling-radius envelope | P79 | Supplies an exact-rational upper bound for the P77 sampling radius so the P78 rejection comparison has certified numerical direction | [P79](proposition_79_certified_sampling_radius.md) |
 
 ## Complete proposition index
 

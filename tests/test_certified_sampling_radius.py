@@ -4,7 +4,9 @@ from pathlib import Path
 
 import pytest
 
-from consciousness_bridge.certified_continuous_model_separation import P78DistanceBracket
+from consciousness_bridge.certified_continuous_model_separation import (
+    P78DistanceBracket,
+)
 from consciousness_bridge.certified_sampling_radius import (
     certified_finite_alphabet_sampling_radius,
     natural_log_rational_bracket,

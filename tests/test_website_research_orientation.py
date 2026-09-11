@@ -6,7 +6,7 @@ MAP = ROOT / "website/research-map.html"
 
 def test_research_map_starts_with_orientation_before_stage_details():
     text = MAP.read_text(encoding="utf-8")
-    hero = text.index("Seventy-six results, one dependency-aware scientific program")
+    hero = text.index("Seventy-nine results, one dependency-aware scientific program")
     orientation = text.index("How to read this research")
     stage_one = text.index("I · Formal bridge foundations")
     assert hero < orientation < stage_one

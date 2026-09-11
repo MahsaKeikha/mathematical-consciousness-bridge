@@ -1187,3 +1187,16 @@ P78 supplies a computable global lower-bound mechanism for the continuous P75 fo
 Proof: [P78](proposition_78_certified_continuous_model_separation.md). Dedicated provenance: [P78 equation and provenance record](p78_equation_provenance.md). Implementation: [`certified_continuous_model_separation.py`](../src/consciousness_bridge/certified_continuous_model_separation.py). Tests: [`test_certified_continuous_model_separation.py`](../tests/test_certified_continuous_model_separation.py).
 
 The physical-to-experiential bridge remains open.
+
+
+# P79 certified rational sampling-radius envelope
+
+| Object | Equation or certificate | Provenance | Direct route |
+| --- | --- | --- | --- |
+| P77 sampling radius | $\varepsilon_{n,K}(\alpha)=\sqrt{\log(2K/\alpha)/(2n)}$ | Standard finite-alphabet concentration quantity inherited from P77 | [P77](proposition_77_full_law_model_set_separation.md) |
+| Rational logarithm bracket | $\underline L_m(x)\le\log x\le\overline L_m(x)$ | Positive atanh series with explicit rational tail after exact power-of-two reduction | [P79 provenance](p79_equation_provenance.md) |
+| Dyadic square-root bracket | $\underline\varepsilon\le\varepsilon\le\overline\varepsilon$ | Integer comparison on a power-of-two denominator | [P79 proof](proposition_79_certified_sampling_radius.md) |
+| Certified rejection handoff | $L_{\mathrm{model}}>\overline\varepsilon$ | P78 lower-bounds model distance; P79 upper-bounds sampling uncertainty | [P79 figure](figures/p79_certified_sampling_radius.svg) |
+| Executable certificate | exact `Fraction` arithmetic | Repository implementation and regression tests | [`certified_sampling_radius.py`](../src/consciousness_bridge/certified_sampling_radius.py), [`tests`](../tests/test_certified_sampling_radius.py) |
+
+Scientific boundary: P79 closes a numerical certification gap only. It does not identify a latent state with consciousness and does not solve the physical-to-experiential bridge.

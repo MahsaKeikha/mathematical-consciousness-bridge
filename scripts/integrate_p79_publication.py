@@ -317,7 +317,7 @@ def update_website() -> None:
 def update_p78_history_test() -> None:
     path = "tests/test_p78_research_integration.py"
     text = read(path)
-    pattern = re.compile(r"def test_p78_release_metadata_and_counts_are_consistent\(\) -> None:\n.*?\n\ndef test_p78_certification_boundary_is_preserved", re.S)
+    pattern = re.compile(r"def test_p78_release_metadata_and_counts_are_consistent\(\) -> None:\n.*?\n\ndef test_p78_certification_boundary_is_preserved", re.DOTALL)
     replacement = '''def test_p78_release_history_is_preserved_after_later_frontiers() -> None:
     changelog = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
     readme = README.read_text(encoding="utf-8")
