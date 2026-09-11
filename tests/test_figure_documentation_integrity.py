@@ -1,3 +1,4 @@
+import json
 import re
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -7,6 +8,8 @@ FIGURE_ROOT = ROOT / "docs" / "figures"
 README = ROOT / "README.md"
 CATALOG = ROOT / "docs" / "figure_catalog.md"
 QUANTITATIVE_ATLAS = ROOT / "docs" / "quantitative_physics_mathematics_atlas.md"
+QUANTUM_GUIDE = ROOT / "docs" / "quantum_visual_guide.md"
+QUANTUM_MANIFEST = FIGURE_ROOT / "quantum" / "quantum_figure_manifest.json"
 VISUAL_ATLAS = ROOT / "website" / "visual-atlas.html"
 
 
@@ -93,6 +96,67 @@ def test_quantitative_atlas_explains_visible_pattern_and_status_for_each_figure(
             failures.append(f"{heading}: missing scientific status")
         if not re.search(r"!\[Q\d+\]\(figures/quantitative/[^)]+\.svg\)", block):
             failures.append(f"{heading}: missing direct quantitative SVG")
+
+    assert not failures, "\n".join(failures)
+
+
+def test_quantum_figures_have_literal_physics_reading_guides() -> None:
+    manifest = json.loads(QUANTUM_MANIFEST.read_text(encoding="utf-8"))
+    assert manifest["figure_count"] == 18
+    assert len(manifest["figures"]) == 18
+    assert QUANTUM_GUIDE.exists()
+
+    guide = QUANTUM_GUIDE.read_text(encoding="utf-8")
+    catalog = CATALOG.read_text(encoding="utf-8")
+    assert "## Foundational quantum-physics figures" in catalog
+    assert "# Quantum Figure Visual Guide" in guide
+
+    failures = []
+    for index, item in enumerate(manifest["figures"], start=1):
+        filename = item["file"]
+        figure = FIGURE_ROOT / "quantum" / filename
+        title, description = _svg_title_and_description(figure)
+
+        required_description_tokens = (
+            "What this figure shows:",
+            "Governing relation:",
+            "How to read it:",
+            "Main takeaway:",
+            "Scientific status:",
+        )
+        for token in required_description_tokens:
+            if token not in description:
+                failures.append(f"{filename}: SVG description missing {token!r}")
+
+        if "Visible guideposts include" in description:
+            failures.append(f"{filename}: still uses generic tick-label fallback wording")
+        if len(description) < 500:
+            failures.append(f"{filename}: quantum SVG explanation is too short ({len(description)} chars)")
+        if not title or item["title"].lower() not in title.lower():
+            failures.append(f"{filename}: SVG title does not match manifest title")
+
+        heading = f"## QM{index:02d}. {item['title']}"
+        if heading not in guide:
+            failures.append(f"{filename}: missing visual-guide heading")
+        if f"(figures/quantum/{filename})" not in guide:
+            failures.append(f"{filename}: visual guide does not embed SVG")
+        if f"**Figure QM{index:02d}. What this figure shows.**" not in guide:
+            failures.append(f"{filename}: visual guide lacks literal figure caption")
+        if "**How to read it.**" not in guide[guide.find(heading) : guide.find(heading) + 2500]:
+            failures.append(f"{filename}: visual guide lacks reading instructions")
+        if "**Scientific status.**" not in guide[guide.find(heading) : guide.find(heading) + 2500]:
+            failures.append(f"{filename}: visual guide lacks scientific-status boundary")
+
+        catalog_link = f"(figures/quantum/{filename})"
+        matching_rows = [line for line in catalog.splitlines() if catalog_link in line]
+        if len(matching_rows) != 1:
+            failures.append(f"{filename}: expected exactly one catalog row")
+        else:
+            row = matching_rows[0]
+            if "How to read it:" not in row or "Governing relation:" not in row:
+                failures.append(f"{filename}: catalog row is not semantically self-explanatory")
+            if "[Quantum visual guide](quantum_visual_guide.md)" not in row:
+                failures.append(f"{filename}: catalog row lacks direct quantum-guide context")
 
     assert not failures, "\n".join(failures)
 
