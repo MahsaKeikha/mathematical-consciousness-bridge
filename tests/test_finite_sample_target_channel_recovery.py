@@ -9,9 +9,7 @@ from consciousness_bridge.finite_sample_target_channel_recovery import (
     finite_sample_three_view_certificate,
     sufficient_nondegeneracy_sample_size,
 )
-from consciousness_bridge.target_channel_identifiability import (
-    joint_distribution_from_model,
-)
+from consciousness_bridge.target_channel_identifiability import joint_distribution_from_model
 
 
 PREVALENCE = 0.70
