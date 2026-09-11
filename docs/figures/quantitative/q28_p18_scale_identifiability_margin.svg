@@ -2,6 +2,8 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="413.816328pt" height="255.09957pt" viewBox="0 0 413.816328 255.09957" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <title>P18 scale-identifiability margin</title>
+  <desc>What this figure shows: The coarse family is certified identifiable whenever fine-family separation exceeds twice the reconstruction defect. The plotted object is generated from delta_c &gt;= max(0, delta_f - 2 rho_F). How to read it: compare the labeled axes, curves, contours, matrix entries, bars, or markers exactly as defined in the atlas entry; the visible trend is the numerical realization of the stated equation or construction. Scientific status: Direct visualization of Proposition 18. Unless explicitly identified otherwise, this is not empirical consciousness data.</desc>
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>

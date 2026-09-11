@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
-  <title id="title">P80 Simplex-Coupled Model Separation Certificate</title>
-  <desc id="desc">P80 tightens the P78 parameter-box relaxation by intersecting exact observed-cell probability intervals with the probability simplex. The coupled relaxation remains a superset of the true P75 box image but a subset of the P78 Cartesian product. Exact feasibility requires the P78 coordinate-overlap radius together with lower-mass and upper-mass endpoint conditions. The resulting exact-rational L-infinity distance is a valid and never weaker lower bound and can be compared with the P79 sampling-radius upper certificate.</desc>
+  <title id="title">P80 simplex-coupled model separation</title>
+  <desc id="desc">What this figure shows: P80 theorem figure. Simplex-coupled continuous-model certification. P80 intersects the P78 exact coordinate intervals with probability normalization, producing a smaller certified superset of the true P75 box image and therefore a lower bound that is never weaker than P78's coordinatewise relaxation. How to read it: follow only the labeled arrows, axes, panels, set relations, or inequalities shown in the visual and interpret them using the adjacent research text. Main takeaway: the figure summarizes the stated mathematical or scientific dependency; visual proximity alone does not add a claim. Scientific status: Reader-facing research figure; formal status is controlled by the linked proof or source record.</desc>
 
   <rect x="0" y="0" width="1200" height="760" rx="22" fill="#f8fafc"/>
   <rect x="36" y="32" width="1128" height="696" rx="20" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>

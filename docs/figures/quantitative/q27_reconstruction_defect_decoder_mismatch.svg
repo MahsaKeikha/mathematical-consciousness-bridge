@@ -2,6 +2,8 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="416.145566pt" height="255.136758pt" viewBox="0 0 416.145566 255.136758" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <title>Reconstruction defect versus decoder mismatch</title>
+  <desc>What this figure shows: With fixed coarse mass, reconstruction error is governed by mismatch between the decoder and the true within-fiber conditional structure. The plotted object is generated from rho(P)=TV(P, R#C#P). How to read it: compare the labeled axes, curves, contours, matrix entries, bars, or markers exactly as defined in the atlas entry; the visible trend is the numerical realization of the stated equation or construction. Scientific status: Closed-form Proposition 18 example. Unless explicitly identified otherwise, this is not empirical consciousness data.</desc>
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>

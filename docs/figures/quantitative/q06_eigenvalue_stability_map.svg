@@ -2,6 +2,8 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="413.897891pt" height="255.09957pt" viewBox="0 0 413.897891 255.09957" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <title>Continuous-time eigenvalue stability map</title>
+  <desc>What this figure shows: All eigenvalues in the open left half-plane imply asymptotic stability for a linear autonomous system. The plotted object is generated from Re(lambda_i(A))&lt;0 for all i implies asymptotic stability. How to read it: compare the labeled axes, curves, contours, matrix entries, bars, or markers exactly as defined in the atlas entry; the visible trend is the numerical realization of the stated equation or construction. Scientific status: Standard linear-systems fact. Unless explicitly identified otherwise, this is not empirical consciousness data.</desc>
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>

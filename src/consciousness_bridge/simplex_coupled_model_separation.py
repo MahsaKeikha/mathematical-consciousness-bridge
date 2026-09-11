@@ -23,8 +23,7 @@ The nonempty-coordinate requirement is exactly the ordinary product-box
 L-infinity distance used by P78. The two mass conditions are monotone
 piecewise-linear functions with rational breakpoints. The implementation below
 solves both crossing radii exactly and takes their maximum together with the
-P78 coordinatewise radius. All certification arithmetic uses
-``fractions.Fraction``; no floating optimizer is used.
+P78 coordinatewise radius. All certification paths use ``fractions.Fraction`` arithmetic; no floating optimizer is used.
 
 This is a tighter computational relaxation of the P75 observed-law family. It
 does not validate the latent target model. It does not identify a latent state

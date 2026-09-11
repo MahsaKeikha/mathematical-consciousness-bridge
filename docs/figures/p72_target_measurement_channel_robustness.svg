@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
-  <title id="title">P72 Target Measurement Channel Robustness</title>
-  <desc id="desc">Scientific diagram showing conditional data processing from a latent target to a noisy observed target, witness erasure, exact binary symmetric attenuation, and the finite-sample measurement-aware certificate.</desc>
+  <title id="title">P72 target-measurement channel robustness</title>
+  <desc id="desc">What this figure shows: Figure 7. P72 target-measurement theorem. Nondifferential target noise can attenuate or erase a real bridge witness, but cannot create a positive population residual from a screened-off latent target. The binary channel exposes the exact erasure point, and the finite-data panel shows how measurement stability enters the sample burden. How to read it: follow only the labeled arrows, axes, panels, set relations, or inequalities shown in the visual and interpret them using the adjacent research text. Main takeaway: the figure summarizes the stated mathematical or scientific dependency; visual proximity alone does not add a claim. Scientific status: Reader-facing research figure; formal status is controlled by the linked proof or source record.</desc>
   <rect x="0" y="0" width="1200" height="760" fill="#ffffff"/>
 
   <text x="60" y="62" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#111827">P72 Target Measurement Channel Robustness</text>

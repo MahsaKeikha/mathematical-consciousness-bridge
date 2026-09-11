@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1180" viewBox="0 0 1800 1180" role="img" aria-labelledby="title desc">
-  <title id="title">Quantum operational completeness and physical-to-experiential bridge test</title>
-  <desc id="desc">Publication-style map separating Hilbert-space quantum structure, interventions, Born probabilities, operational equivalence, and the still-open experiential bridge. It states a precise no-go criterion without assuming quantum consciousness.</desc>
+  <title id="title">Quantum bridge completeness map</title>
+  <desc id="desc">What this figure shows: Figure 22. Quantum completeness versus experiential completeness. Tomographic completeness closes the declared operational quantum description. It does not automatically close the physical-to-experiential map. How to read it: follow only the labeled arrows, axes, panels, set relations, or inequalities shown in the visual and interpret them using the adjacent research text. Main takeaway: the figure summarizes the stated mathematical or scientific dependency; visual proximity alone does not add a claim. Scientific status: Reader-facing research figure; formal status is controlled by the linked proof or source record.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
       <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>

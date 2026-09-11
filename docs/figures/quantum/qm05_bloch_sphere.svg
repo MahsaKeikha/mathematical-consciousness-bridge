@@ -2,6 +2,8 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="518.814604pt" height="514.440898pt" viewBox="0 0 518.814604 514.440898" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <title>Qm05 Bloch Sphere</title>
+  <desc>What this figure shows: Qm05 Bloch Sphere. Visible guideposts include: −1.00; −0.75; −0.50; −0.25; 0.00; 0.25; 0.50. How to read it: use the explicitly printed labels, arrows, axes, panels, regions, and legends; do not assign meaning from color, proximity, or shape unless the figure says so. Main takeaway: this visual organizes a declared mathematical, physical, statistical, or research-architecture relationship and should be read with its linked context. Scientific status: Conceptual or architecture figure; formal conclusions require the linked research context.</desc>
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>

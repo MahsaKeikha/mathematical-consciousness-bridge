@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1180" viewBox="0 0 1600 1180" role="img" aria-labelledby="title desc">
-  <title id="title">P26 partition-irreducibility scale certification</title>
-  <desc id="desc">Publication-style theorem map showing block-compatible coarse observation, total-variation contraction, reconstruction-controlled loss, threshold preservation, and the distinction between observation loss and physical fusion.</desc>
+  <title id="title">Proposition 26: Partition-Irreducibility Scale Certification</title>
+  <desc id="desc">What this figure shows: Repository theorem. This proposition extends the P11 partition-irreducibility component through the P18 scale-reconstruction framework.. Visible guideposts include: P11 partition structure + P17 contraction + P18 reconstruction, under block-compatible observation.; FINE PHYSICAL RESPONSE; Declared partition π; Pπ = ⊗B∈π PB; κf(π) = ‖P − Pπ‖TV; Irreducibility is distance from the partition-product null.. How to read it: follow the diagram in the direction of its arrows and use each box, panel, inequality, or highlighted region only with the meaning printed beside it. Main takeaway: this is the visual companion to Proposition 26; the proposition document supplies the assumptions, proof, and exact scope of every implication. Scientific status: Proposition 26 theorem/certificate visual. It is not independent empirical evidence and does not, by itself, identify a physical or latent variable with consciousness.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
       <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>

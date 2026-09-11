@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="930" viewBox="0 0 1500 930" role="img" aria-labelledby="title desc">
-  <title id="title">P39 finite-data quantum model-set non-factorization</title>
-  <desc id="desc">Tomography confidence set, target uncertainty, model-specific violation margins, robust certificate, and scientific boundary.</desc>
+  <title id="title">Proposition 39: Finite-data quantum model-set non-factorization certification</title>
+  <desc id="desc">What this figure shows: Proved finite-data model-set theorem. P39 converts the exact P38 quantum factorization criterion into a confidence statement that remains valid when the quantum operational description and the independently defined target are both uncertain.. Visible guideposts include: Finite data certify a model-class-relative contradiction only after quantum and target uncertainty are carried explicitly.; QUANTUM UNCERTAINTY; Tomography confidence set; CQ ⊂ HQ; Pr(h* ∈ CQ) ≥ 1−αQ; Each h encodes exact operational-state fibers.. How to read it: follow the diagram in the direction of its arrows and use each box, panel, inequality, or highlighted region only with the meaning printed beside it. Main takeaway: this is the visual companion to Proposition 39; the proposition document supplies the assumptions, proof, and exact scope of every implication. Scientific status: Proposition 39 theorem/certificate visual. It is not independent empirical evidence and does not, by itself, identify a physical or latent variable with consciousness.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
       <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>

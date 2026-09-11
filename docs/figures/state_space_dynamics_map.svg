@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900" role="img" aria-labelledby="title desc">
-  <title id="title">State-space dynamics, perturbations, and empirical regimes</title>
-  <desc id="desc">A clean publication-style schematic showing four empirical dynamical regimes in measured state space, controlled perturbation, spontaneous transition, and a separate measurement-to-inference chain. The regimes are schematic and are not universal experiential classes.</desc>
+  <title id="title">State-space dynamics</title>
+  <desc id="desc">What this figure shows: Physical states and dynamical descriptions are kept distinct from experiential interpretation. How to read it: use the labels, axes, panels, arrows, and legends as explicit guides; do not infer an unstated physical or experiential identity from the drawing. Scientific status: Visual-atlas explanation; theorem and provenance pages control formal claims.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
       <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>

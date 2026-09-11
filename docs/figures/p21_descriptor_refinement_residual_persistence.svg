@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
-  <title id="title">P21 physical-descriptor refinement and residual persistence</title>
-  <desc id="desc">Publication-style theorem map showing nested physical descriptors, deterministic collision monotonicity, stochastic residual decomposition, and the omitted-physics interpretation boundary.</desc>
+  <title id="title">Proposition 21 - Physical-Descriptor Refinement and Residual Persistence</title>
+  <desc id="desc">What this figure shows: Proved descriptor-refinement theorem for deterministic nested physical descriptors and finite stochastic variables.. Visible guideposts include: A residual is audited by adding physical detail, not interpreted in isolation.; NESTED PHYSICAL DESCRIPTION; Fine descriptors refine coarse descriptors; Ω → T_f → T_c; T_f = f(Ω), T_c = c(T_f); Every fine fiber lies inside one coarse fiber; refinement adds declared physical detail.. How to read it: follow the diagram in the direction of its arrows and use each box, panel, inequality, or highlighted region only with the meaning printed beside it. Main takeaway: this is the visual companion to Proposition 21; the proposition document supplies the assumptions, proof, and exact scope of every implication. Scientific status: Proposition 21 theorem/certificate visual. It is not independent empirical evidence and does not, by itself, identify a physical or latent variable with consciousness.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
       <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>

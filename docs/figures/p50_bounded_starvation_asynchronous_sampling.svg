@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
-  <title id="title">P50 bounded-starvation asynchronous sampling</title>
-  <desc id="desc">Theorem map showing priority-based one-preparation-at-a-time sampling, H-fair bounded starvation, local count growth, finite positive and all-negative global stopping bounds, and the no-fairness impossibility branch.</desc>
+  <title id="title">Proposition 50: Bounded-starvation asynchronous sampling</title>
+  <desc id="desc">What this figure shows: Proved global-round stopping theorem for asynchronous priority-based sampling under an explicit bounded-starvation condition.. Visible guideposts include: Priority-based sampling remains finite-time certifiable when every still-active preparation receives service within H rounds.; Adaptive priority scheduler; One active preparation is selected per global round.; a; b; c. How to read it: follow the diagram in the direction of its arrows and use each box, panel, inequality, or highlighted region only with the meaning printed beside it. Main takeaway: this is the visual companion to Proposition 50; the proposition document supplies the assumptions, proof, and exact scope of every implication. Scientific status: Proposition 50 theorem/certificate visual. It is not independent empirical evidence and does not, by itself, identify a physical or latent variable with consciousness.</desc>
   <defs>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
       <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>

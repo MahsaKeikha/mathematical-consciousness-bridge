@@ -2,6 +2,8 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="331.849322pt" height="255.240898pt" viewBox="0 0 331.849322 255.240898" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <title>Directed interventional influence matrix</title>
+  <desc>What this figure shows: Directed influence is generally asymmetric; source-to-target effects need not equal target-to-source effects. The plotted object is generated from A_ij^p(tau)=sup TV(P_j^u, P_j^v) over source-i intervention pairs. How to read it: compare the labeled axes, curves, contours, matrix entries, bars, or markers exactly as defined in the atlas entry; the visible trend is the numerical realization of the stated equation or construction. Scientific status: Synthetic causal-structure example. Unless explicitly identified otherwise, this is not empirical consciousness data.</desc>
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1050" viewBox="0 0 1800 1050" role="img" aria-labelledby="title desc">
-  <title id="title">P62 heterogeneous cost transition calibration allocation</title>
-  <desc id="desc">A publication-safe diagram showing how uncertainty importance and per-measurement cost determine the exact continuous calibration allocation.</desc>
+  <title id="title">P62 cost-aware calibration</title>
+  <desc id="desc">What this figure shows: Read allocation changes against heterogeneous measurement costs: an expensive transition receives resources only when its contribution to the certified objective justifies that cost. The figure illustrates the proved optimization rule, not an empirical consciousness measurement. How to read it: use the labels, axes, panels, arrows, and legends as explicit guides; do not infer an unstated physical or experiential identity from the drawing. Scientific status: Visual-atlas explanation; theorem and provenance pages control formal claims.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
       <path d="M0 0 L12 6 L0 12 Z" fill="#334155"/>

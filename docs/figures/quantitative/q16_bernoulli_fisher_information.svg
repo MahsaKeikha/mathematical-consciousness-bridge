@@ -2,6 +2,8 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="413.514922pt" height="255.240898pt" viewBox="0 0 413.514922 255.240898" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <title>Bernoulli Fisher information</title>
+  <desc>What this figure shows: Under direct Bernoulli parameterization, Fisher information is smallest at p=1/2 and diverges toward the boundaries. The plotted object is generated from I(p)=1/[p(1-p)]. How to read it: compare the labeled axes, curves, contours, matrix entries, bars, or markers exactly as defined in the atlas entry; the visible trend is the numerical realization of the stated equation or construction. Scientific status: Closed-form information-geometry fact. Unless explicitly identified otherwise, this is not empirical consciousness data.</desc>
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>

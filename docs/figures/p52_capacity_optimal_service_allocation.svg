@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
-  <title id="title">P52 capacity-optimal service allocation</title>
-  <desc id="desc">A theorem map from edge thresholds to vertex demands, proportional service shares, equalized completion bottlenecks, and exact discrete quota optimality.</desc>
+  <title id="title">Proposition 52: Capacity-optimal service allocation</title>
+  <desc id="desc">What this figure shows: Proved exact minimax service-allocation theorem for satisfying finite witness-graph sampling demands under a fixed global sampling capacity.. Visible guideposts include: Once local thresholds are known, global sampling capacity can be allocated exactly.; 1. Edge thresholds; Nₑ from P48; Every edge needs both endpoints; to reach its declared local count.; 2. Vertex demand. How to read it: follow the diagram in the direction of its arrows and use each box, panel, inequality, or highlighted region only with the meaning printed beside it. Main takeaway: this is the visual companion to Proposition 52; the proposition document supplies the assumptions, proof, and exact scope of every implication. Scientific status: Proposition 52 theorem/certificate visual. It is not independent empirical evidence and does not, by itself, identify a physical or latent variable with consciousness.</desc>
   <defs>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker>
     <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.12"/></filter>

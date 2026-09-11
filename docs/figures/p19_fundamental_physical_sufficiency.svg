@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
-  <title id="title">Proposition 19 fundamental physical sufficiency and residual tests</title>
-  <desc id="desc">A publication-style theorem map showing a candidate fundamental state, a declared physical descriptor, an independently defined target descriptor, exact factorization, conditional-information residuals, and a differential no-go criterion.</desc>
+  <title id="title">P19: factorization and nonfactorization</title>
+  <desc id="desc">What this figure shows: The central mathematical distinction: whether an independently defined target is determined by a declared physical descriptor. How to read it: use the labels, axes, panels, arrows, and legends as explicit guides; do not infer an unstated physical or experiential identity from the drawing. Scientific status: Visual-atlas explanation; theorem and provenance pages control formal claims.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
       <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>

@@ -2,6 +2,8 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="413.816328pt" height="255.136758pt" viewBox="0 0 413.816328 255.136758" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <title>Gaussian total variation under mean shift</title>
+  <desc>What this figure shows: Total variation rises from zero toward one as two equal-variance Gaussian laws separate. The plotted object is generated from TV(P,Q)=1/2 integral |p-q| dx. How to read it: compare the labeled axes, curves, contours, matrix entries, bars, or markers exactly as defined in the atlas entry; the visible trend is the numerical realization of the stated equation or construction. Scientific status: Numerically integrated mathematical example. Unless explicitly identified otherwise, this is not empirical consciousness data.</desc>
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>

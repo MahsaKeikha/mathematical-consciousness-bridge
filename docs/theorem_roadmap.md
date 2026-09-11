@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P79**. The proposition record runs from **P1 through P79 with explicit dependency branches**. P71-P79 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P80**. The proposition record runs from **P1 through P80 with explicit dependency branches**. P71-P80 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -31,7 +31,11 @@ The current documented theorem frontier is **P79**. The proposition record runs 
 &\Downarrow\\
 &\text{P77: full-law confidence regions must be separated from the complete declared model set}\\
 &\Downarrow\\
-&\text{P78: continuous P75 model distance must be lower-bounded globally and certifiably}
+&\text{P78: continuous P75 model distance must be lower-bounded globally and certifiably}\\
+&\Downarrow\\
+&\text{P79: the sampling-radius side of the rejection gate must have certified numerical direction}\\
+&\Downarrow\\
+&\text{P80: probability-simplex coupling tightens the continuous-family box certificate}
 \end{aligned}
 }
 \]
@@ -49,7 +53,7 @@ Separate but connected branches refine the physical representation and experimen
 }
 \]
 
-The proposition number records development order. It does not imply that P78 depends on P70. P78 depends scientifically on P77 and the P75 continuous target-model family, which descend from P19 and the P71-P76 target-side lineage.
+The proposition number records development order. It does not imply that P80 depends on P70. P80 depends scientifically on P78's continuous-family certificate and uses the P79 one-sided sampling-radius handoff; both descend from P77, the P75 continuous target-model family, P19, and the P71-P76 target-side lineage.
 
 ## 2. Target-side bridge lineage
 
@@ -383,6 +387,48 @@ The strict P77 handoff is certified whenever the P78 lower bound satisfies $L_{\
 Direct proof: [P79](proposition_79_certified_sampling_radius.md). Provenance: [P79 equation record](p79_equation_provenance.md). Implementation: [`certified_sampling_radius.py`](../src/consciousness_bridge/certified_sampling_radius.py). Tests: [`test_certified_sampling_radius.py`](../tests/test_certified_sampling_radius.py).
 
 
+
+### P80: simplex-coupled continuous P75 separation
+
+P78's exact cell intervals define a Cartesian-product relaxation for each P75 parameter box. P80 intersects those same intervals with the probability-simplex constraint and computes the exact L-infinity distance to the resulting smaller certified superset:
+
+\[
+\mathcal R_\Delta(B)
+=
+\{q:\ell_i(B)\le q_i\le u_i(B),\ \sum_i q_i=1\}.
+\]
+
+The set inclusions
+
+\[
+\mathcal M(B)\subseteq\mathcal R_\Delta(B)\subseteq\mathcal R_\square(B)
+\]
+
+imply
+
+\[
+\boxed{L_{80}(B)\ge L_{78}(B)}
+\]
+
+while $L_{80}(B)$ remains a valid lower bound on distance to the true P75 box image. Exact radius feasibility combines the P78 coordinatewise threshold $r_\square$ with two rational monotone mass crossings:
+
+\[
+\boxed{
+r\ge r_\square,
+\quad
+\sum_i\max(\ell_i,\widehat p_i-r)\le1
+\le
+\sum_i\min(u_i,\widehat p_i+r).
+}
+\]
+
+The global active-box minimum is therefore a certified continuous-family lower bound that is never weaker than the P78 bound on the same partition. P79 supplies the independent sampling-radius upper certificate for the strict rejection handoff.
+
+![P80 simplex-coupled model separation](figures/p80_simplex_coupled_model_separation.svg)
+
+Direct proof: [P80](proposition_80_simplex_coupled_model_separation.md). Provenance: [P80 equation record](p80_equation_provenance.md). Implementation: [`simplex_coupled_model_separation.py`](../src/consciousness_bridge/simplex_coupled_model_separation.py). Tests: [`test_simplex_coupled_model_separation.py`](../tests/test_simplex_coupled_model_separation.py).
+
+
 ## 3. Complete proposition index
 
 | Proposition | Mathematical role | Scientific role | Status |
@@ -466,6 +512,7 @@ Direct proof: [P79](proposition_79_certified_sampling_radius.md). Provenance: [P
 | [P77](proposition_77_full_law_model_set_separation.md) | confidence-region/model-set separation | finite-sample full-law rejection with certified distance lower bounds | proved conditional theorem |
 | [P78](proposition_78_certified_continuous_model_separation.md) | multi-affine box lower bounds and mesh-gap convergence | certified continuous P75 full-law model separation | proved conditional computational theorem |
 | [P79](proposition_79_certified_sampling_radius.md) | exact-rational logarithm and dyadic square-root enclosure | one-sided numerical certification of the P77 sampling radius | proved numerical-certification theorem |
+| [P80](proposition_80_simplex_coupled_model_separation.md) | probability-simplex interval relaxation and exact rational feasibility crossings | tighter certified continuous P75 full-law model separation | proved conditional computational theorem |
 
 ## 4. Calibration branch remains separate
 
@@ -488,7 +535,7 @@ These results optimize downstream experimental resources. They do not define con
 
 ## 5. Current open frontier
 
-After P79, the target side has nine explicit requirements:
+After P80, the target side retains nine explicit requirements:
 
 1. the target must have non-circular provenance relative to the tested physical descriptor;
 2. its observation channel must be valid and sufficiently informative for the claimed witness;
@@ -500,6 +547,6 @@ After P79, the target side has nine explicit requirements:
 8. when the declared family is continuous, the required separation distance must be lower-bounded globally rather than inferred from a local best fit.
 9. the sampling-radius side of the rejection inequality must be upper-bounded with certified numerical direction rather than an unqualified rounded decimal.
 
-P78 closes the eighth item for the specific P75 four-view binary latent family in L-infinity distance. P79 closes the ninth item for the P77 finite-alphabet sampling radius by exact-rational one-sided numerical enclosure. It supplies an exact-rational multi-affine box certificate and an explicit mesh-gap guarantee. The remaining computational problem is efficiency: stronger pruning, tighter relaxations, or moment-SOS lower bounds may reduce the number of boxes required for a decisive certificate. The remaining statistical problems include sharper power and target-view models that allow residual dependence, shared bias, temporal drift, or learned measurement pipelines.
+P78 closes the eighth item for the specific P75 four-view binary latent family in L-infinity distance, and P80 strengthens that same item by retaining probability-simplex normalization inside each exact interval relaxation. P79 closes the ninth item for the P77 finite-alphabet sampling radius by exact-rational one-sided numerical enclosure. P78 still supplies the explicit mesh-gap guarantee; P80 supplies a never-weaker boxwise lower bound on the same active partition. The remaining computational problem is efficiency: stronger pruning, still tighter convex or semialgebraic relaxations, or moment-SOS lower bounds may further reduce the number of boxes required for a decisive certificate. The remaining statistical problems include sharper power and target-view models that allow residual dependence, shared bias, temporal drift, or learned measurement pipelines.
 
 None of these results identifies a latent variable with consciousness. The physical-to-experiential bridge remains open.

@@ -1200,3 +1200,18 @@ The physical-to-experiential bridge remains open.
 | Executable certificate | exact `Fraction` arithmetic | Repository implementation and regression tests | [`certified_sampling_radius.py`](../src/consciousness_bridge/certified_sampling_radius.py), [`tests`](../tests/test_certified_sampling_radius.py) |
 
 Scientific boundary: P79 closes a numerical certification gap only. It does not identify a latent state with consciousness and does not solve the physical-to-experiential bridge.
+
+
+# P80 simplex-coupled continuous-model certificate
+
+| Object | Equation or certificate | Provenance | Direct route |
+| --- | --- | --- | --- |
+| P78 exact cell ranges | $\ell_i(B)\le q_i(\theta)\le u_i(B)$ | Inherited exact multi-affine coordinate enclosure | [P78](proposition_78_certified_continuous_model_separation.md) |
+| P80 relaxation | $\mathcal R_\Delta(B)=\{q:\ell_i\le q_i\le u_i,\sum_iq_i=1\}$ | P78 intervals intersected with the standard probability simplex | [P80](proposition_80_simplex_coupled_model_separation.md) |
+| Nested-set dominance | $\mathcal M(B)\subseteq\mathcal R_\Delta(B)\subseteq\mathcal R_\square(B)$ | Exact set inclusion | [P80 provenance](p80_equation_provenance.md) |
+| Exact radius gate | $r\ge r_\square$ and $\sum_i\max(\ell_i,\widehat p_i-r)\le1\le\sum_i\min(u_i,\widehat p_i+r)$ | Coordinatewise overlap plus interval-sum feasibility | [P80 proof](proposition_80_simplex_coupled_model_separation.md) |
+| Boxwise improvement | $L_{80}(B)\ge L_{78}(B)$ | Distance monotonicity under nested feasible sets | [P80 figure](figures/p80_simplex_coupled_model_separation.svg) |
+| Statistical handoff | $L_{80}>\overline\varepsilon_{79}$ | P80 lower-bounds model distance; P79 upper-bounds sampling uncertainty | [P79](proposition_79_certified_sampling_radius.md), [P80](proposition_80_simplex_coupled_model_separation.md) |
+| Executable certificate | exact `Fraction` arithmetic | Repository implementation and tests | [`simplex_coupled_model_separation.py`](../src/consciousness_bridge/simplex_coupled_model_separation.py), [`tests`](../tests/test_simplex_coupled_model_separation.py) |
+
+Scientific boundary: P80 tightens one declared continuous-family numerical certificate. It does not identify a latent state with consciousness and does not solve the physical-to-experiential bridge.

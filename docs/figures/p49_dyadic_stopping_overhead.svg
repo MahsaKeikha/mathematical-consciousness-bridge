@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
-  <title id="title">P49 dyadic stopping overhead</title>
-  <desc id="desc">A theorem map showing a P48 threshold N, the first dyadic checkpoint D(N), the strict less-than-two overshoot, and logarithmic certification-look count.</desc>
+  <title id="title">Proposition 49: Dyadic certification schedules with less-than-two stopping overhead</title>
+  <desc id="desc">What this figure shows: P48 gives an explicit sufficient local sample threshold \(N_e\) for each nonzero-margin edge. P49 shows that the experiment does not need to recompute the full P47 certification state after every new sample. If certification is checked only at dyadic sample counts. Visible guideposts include: Logarithmically many certification looks with less than a factor of two stopping-threshold overhead.; P48 sufficient threshold; N ≥ 1; Correct sign is guaranteed for every local count n ≥ N.; First dyadic checkpoint; D(N)=2^⌈log₂N⌉. How to read it: follow the diagram in the direction of its arrows and use each box, panel, inequality, or highlighted region only with the meaning printed beside it. Main takeaway: this is the visual companion to Proposition 49; the proposition document supplies the assumptions, proof, and exact scope of every implication. Scientific status: Proposition 49 theorem/certificate visual. It is not independent empirical evidence and does not, by itself, identify a physical or latent variable with consciousness.</desc>
   <defs>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
       <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>

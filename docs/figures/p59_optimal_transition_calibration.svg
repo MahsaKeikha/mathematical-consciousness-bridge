@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1050" viewBox="0 0 1800 1050" role="img" aria-labelledby="title desc">
-  <title id="title">P59 optimal transition calibration allocation</title>
-  <desc id="desc">A publication-safe diagram showing how a fixed calibration budget is optimally divided across transition measurements according to uncertainty and scientific importance.</desc>
+  <title id="title">Proposition 59: optimal transition-calibration allocation</title>
+  <desc id="desc">What this figure shows: P58 gives simultaneous confidence intervals for unknown pairwise switching costs and propagates those intervals into a certified lower and upper route cost. P59 asks the next experimental-design question:. Visible guideposts include: P58 quantifies transition uncertainty. P59 divides a fixed measurement budget optimally across those transitions.; 1. Transition uncertainty; ρₑ(nₑ) = aₑ / √nₑ; More data lowers uncertainty.; Larger aₑ means harder estimates.; Each edge has a calibration scale.. How to read it: follow the diagram in the direction of its arrows and use each box, panel, inequality, or highlighted region only with the meaning printed beside it. Main takeaway: this is the visual companion to Proposition 59; the proposition document supplies the assumptions, proof, and exact scope of every implication. Scientific status: Proposition 59 theorem/certificate visual. It is not independent empirical evidence and does not, by itself, identify a physical or latent variable with consciousness.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12 Z" fill="#334155"/></marker>
     <style>

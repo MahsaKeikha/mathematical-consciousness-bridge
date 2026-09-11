@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
-  <title id="title">Proposition 17 coarse-graining and refinement</title>
-  <desc id="desc">A publication-style diagram showing deterministic coarse-graining, total-variation contraction, exact preservation under bijections, and non-recoverability under many-to-one maps.</desc>
+  <title id="title">Proposition 17: coarse-graining, refinement, and recoverability</title>
+  <desc id="desc">What this figure shows: Proposition 16 characterizes independent composition and response-level coupling for two systems with fixed block identities. The next structural problem arises when the physical description itself changes granularity:. Visible guideposts include: Reducing physical-response granularity can erase distinctions; bijective relabeling preserves them exactly.; Fine response description; P, Q on Ωf; Intervention-conditioned laws retain all; distinctions visible at the chosen fine scale.; df = ‖P − Q‖TV. How to read it: follow the diagram in the direction of its arrows and use each box, panel, inequality, or highlighted region only with the meaning printed beside it. Main takeaway: this is the visual companion to Proposition 17; the proposition document supplies the assumptions, proof, and exact scope of every implication. Scientific status: Proposition 17 theorem/certificate visual. It is not independent empirical evidence and does not, by itself, identify a physical or latent variable with consciousness.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0 0 L0 8 L10 4 z" fill="#64748b"/></marker>
     <style>
