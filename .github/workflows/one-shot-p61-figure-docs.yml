@@ -1,0 +1,68 @@
+name: one-shot-p61-figure-docs
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [visual-polish-p61]
+    paths:
+      - .github/workflows/one-shot-p61-figure-docs.yml
+
+permissions:
+  contents: write
+
+jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: visual-polish-p61
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Separate modern P61 from legacy guards and add metadata
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          test_path = Path('tests/test_p63_figure_geometry.py')
+          test_text = test_path.read_text(encoding='utf-8')
+          test_text = test_text.replace(
+              '    "P61": ("p61_exact_integer_transition_calibration.svg", 6),\n',
+              '',
+          )
+          test_text = test_text.replace('test_p59_p61_legacy_', 'test_p59_p60_legacy_')
+          test_path.write_text(test_text, encoding='utf-8')
+
+          path = Path('scripts/conceptual_figure_records.py')
+          text = path.read_text(encoding='utf-8')
+          key = '"docs/figures/p61_exact_integer_transition_calibration.svg"'
+          if key not in text:
+              marker = 'RECORDS: dict[str, dict[str, str]] = {\n'
+              record = '''    "docs/figures/p61_exact_integer_transition_calibration.svg": {
+                  "title": "P61 exact unit-cost integer transition calibration",
+                  "description": (
+                      "What this figure shows: P61 solves the declared equal-unit-cost whole-measurement calibration problem exactly. It starts from one mandatory measurement per calibrated edge, assigns each remaining unit to the edge with the largest current marginal reduction in the separable uncertainty objective, and proves global optimality from strictly diminishing per-edge gains and prefix feasibility. "
+                      "How to read it: move left to right across the top row from the mandatory baseline to the current marginal gain and the greedy allocation step. The center theorem panel explains why diminishing gain sequences make that rule exact. Follow the three lower branches to the checkable exchange certificate, the exact global optimum and tie behavior, and the priority-queue complexity. "
+                      "Main takeaway: P61 closes the equal-unit-cost integer allocation problem for the declared separable surrogate; it does not extend the same greedy proof to heterogeneous costs."
+                  ),
+                  "status": (
+                      "Exact discrete resource-allocation theorem for experimental calibration. It does not validate the full robust-route model, identify a calibration quantity with consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness."
+                  ),
+              },
+          '''
+              if marker not in text:
+                  raise SystemExit('RECORDS marker not found')
+              text = text.replace(marker, marker + record, 1)
+              path.write_text(text, encoding='utf-8')
+          PY
+      - name: Regenerate figure documentation
+        run: python scripts/enrich_figure_documentation.py
+      - name: Remove one-shot workflow and commit
+        run: |
+          rm .github/workflows/one-shot-p61-figure-docs.yml
+          git config user.name "Mahsa Keikha"
+          git config user.email "mahsa.keikha@gmail.com"
+          git add tests/test_p63_figure_geometry.py scripts/conceptual_figure_records.py docs/figure_catalog.md docs/figures/p61_exact_integer_transition_calibration.svg .github/workflows/one-shot-p61-figure-docs.yml
+          git commit -m "Integrate P61 figure documentation metadata"
+          git push origin HEAD:visual-polish-p61
