@@ -18,37 +18,29 @@ This repository is a mathematical-physics research program for the **physical-to
 
 # What this project is trying to achieve, in plain language
 
-Physics can tell us how a system changes. Neuroscience can measure electrical, chemical, hemodynamic, behavioral, and perturbational responses. Information theory can quantify dependence. Causal inference can distinguish observation from intervention. Quantum mechanics can specify states, channels, and measurement statistics. None of these facts, by themselves, tell us whether a physical description contains all distinctions required to determine an experiential variable.
+The question behind this project is simple to state, even though answering it rigorously is difficult: **if we describe a physical system in enough detail, is that description also enough to determine every experiential distinction that a theory of consciousness claims to explain?**
 
-The central problem is therefore not to search for an impressive scalar and label it consciousness. It is to ask a stricter question:
+Physics can describe what a system is made of, how it changes, and how it responds to forces, fields, measurements, or interventions. Neuroscience can record electrical, chemical, hemodynamic, behavioral, and perturbational responses. Information theory can measure statistical dependence. Causal inference can distinguish observation from intervention. Quantum mechanics can describe states, transformations, and measurement probabilities. These are powerful descriptions of physical structure and behavior. But none of them, by themselves, establish the missing step from a physical description to experience. That missing step is the **physical-to-experiential bridge**.
 
-> Given a declared physical description, can an independently justified target be determined from it, or can we construct a reproducible counterexample showing that physically indistinguishable cases remain target-distinguishable?
+This research is therefore not trying to choose an impressive physical quantity and rename it consciousness. It is trying to define what would have to be demonstrated before any proposed physical quantity, neural pattern, causal structure, quantum description, or other physical model could reasonably be claimed to contain all the information required for a stated experiential distinction.
 
-The word **independently** is now formalized through a target-side sequence. P71 proves that a target constructed from the tested physical descriptor makes the bridge test circular. P72 shows that even a non-circular latent target may be observed through a noisy channel that attenuates or erases evidence. P73 then asks when the reliability of that target channel can itself be identified rather than merely assumed. Under a declared nondegenerate binary three-view model, P73 gives an explicit population recovery up to the unavoidable latent-label swap and identifies the P72 stability coefficients.
+The basic idea is intuitive. Imagine two cases that are indistinguishable according to the physical description being tested. If an independently justified experiential target can still distinguish those two cases, then that physical description is not sufficient for that target. The correct response would not be to conclude that physics has failed. It would be to conclude that the particular physical description being tested is missing something relevant, is too coarse, is measured incorrectly, or is being used with an inadequate bridge model.
 
-A credible bridge experiment must therefore justify the **target-construction protocol**, the **target-measurement protocol**, and the **identifiability or external calibration of target-channel reliability**.
+The opposite result also requires care. Suppose the physical description and the target always agree. That agreement is meaningful only if the target was defined independently. If the target was created from the same physical measurements being tested, then agreement was built into the experiment from the beginning. P71 formalizes this circularity problem. A successful bridge test must not be guaranteed by the way the target was constructed.
 
-The working chain is
+Even an independently defined target may not be observed perfectly. Human reports can be incomplete, behavioral responses can fail, clinical labels can be noisy, and any measurement process can lose information. P72 therefore separates the underlying target from the way that target is observed and asks how much of a genuine distinction can survive measurement noise. A negative result is not automatically evidence that no distinction exists if the measurement process could have erased it.
 
-$$
-\boxed{
-\text{physical dynamics}
-\to
-\text{operational structure}
-\to
-\text{non-circular target}
-\to
-\text{measurement-aware target observation}
-\to
-\text{identified or calibrated target reliability}
-\to
-\text{sufficiency / insufficiency test}
-\to
-\text{finite-data certificate}
-\to
-\text{bridge law or falsification}
-}
-$$
+P73 goes one step further. It asks whether the reliability of that target measurement can itself be learned from the data rather than simply assumed. Under one deliberately narrow three-view statistical model, the answer is yes at the population level: three appropriately independent measurements can identify their latent measurement reliability up to an unavoidable relabeling of the hidden states. Two uncalibrated measurements are not enough in general. This matters because a bridge experiment should not rely on an unknown measurement channel while treating its output as unquestionable ground truth.
+
+Taken together, the target-side logic is straightforward: the target must be defined independently of the physical descriptor, the way it is observed must be modeled explicitly, and the reliability of that observation must be identified, calibrated, or honestly left uncertain. Only then does it make sense to ask whether the physical description is sufficient for the target.
+
+The rest of the project builds the physical and statistical side of the same test. It asks which physical distinctions survive changes of representation and scale, which causal and temporal structures can actually be measured, how quantum descriptions should be treated without assuming that consciousness is quantum, how uncertainty should be propagated, and how experiments can remain valid when data are finite and measurements are chosen adaptively.
+
+In plain language, the research follows one disciplined path: start with a clearly defined physical system, build an operational description that can actually be measured, define the experiential target independently, verify how that target is observed, characterize the reliability of the observation, test whether the physical description really determines the target, and finally require the conclusion to survive statistical uncertainty and explicit attempts at falsification.
+
+A successful outcome could take either of two forms. One possibility is a defensible bridge law that continues to survive increasingly demanding physical, statistical, and experimental tests. The other is a reproducible obstruction showing exactly where a proposed physical description fails to determine the target it claims to explain. Both outcomes are scientifically useful because both replace vague claims with explicit assumptions, measurable consequences, and failure conditions.
+
+The project does **not** currently claim to have solved consciousness, proved that consciousness is reducible to physics, proved that it is irreducible to physics, shown that it is quantum, or identified it with a new field, state of matter, scalar, or extra dimension. Its present contribution is more foundational: it is building the mathematical and experimental architecture required to make those stronger claims precise enough to test.
 
 The research currently contains **73 proposition-level results** and **61 equation-driven quantitative figures**. The theorem frontier is P73. The physical-to-experiential bridge itself remains open.
 
