@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def test_p59_is_visible_on_main_page():
     text = (ROOT / "README.md").read_text(encoding="utf-8")
     for token in (
-        "P59 - optimal transition-calibration allocation",
+        "**Proposition 59**",
         "p59_optimal_transition_calibration.svg",
         "optimal_transition_calibration.py",
         "test_optimal_transition_calibration.py",
