@@ -6,6 +6,9 @@ on:
     paths:
       - ".github/workflows/p80-publication-integration.yml"
       - "scripts/integrate_p80_publication.py"
+      - "scripts/enrich_figure_documentation.py"
+      - "docs/figure_caption_and_description_standard.md"
+      - "tests/test_figure_documentation_integrity.py"
   workflow_dispatch:
 
 permissions:
@@ -71,8 +74,8 @@ jobs:
               text = text.replace(old_scope, new_scope, 1)
 
           text = text.replace(
-              "[P79 equation and provenance record](docs/p78_equation_provenance.md): multi-affine box enclosures, exact-rational global lower bounds, mesh-gap convergence, and P77 rejection handoff provenance.",
-              "[P78 equation and provenance record](docs/p78_equation_provenance.md): multi-affine box enclosures, exact-rational global lower bounds, mesh-gap convergence, and P77 rejection handoff provenance.\n"
+              "- [P79 equation and provenance record](docs/p78_equation_provenance.md): multi-affine box enclosures, exact-rational global lower bounds, mesh-gap convergence, and P77 rejection handoff provenance.",
+              "- [P78 equation and provenance record](docs/p78_equation_provenance.md): multi-affine box enclosures, exact-rational global lower bounds, mesh-gap convergence, and P77 rejection handoff provenance.\n"
               "- [P79 equation and provenance record](docs/p79_equation_provenance.md): one-sided exact-rational sampling-radius certification and safe numerical handoff.\n"
               "- [P80 equation and provenance record](docs/p80_equation_provenance.md): probability-simplex coupling, exact interval-simplex distance, and P80/P78 dominance.",
           )
@@ -103,6 +106,9 @@ jobs:
           source.write_text(text, encoding="utf-8")
           PY
 
+      - name: Apply repository-wide figure documentation
+        run: python scripts/enrich_figure_documentation.py
+
       - name: Verify public research surfaces
         run: |
           python - <<'PY'
@@ -116,6 +122,8 @@ jobs:
                   "docs/figures/p80_simplex_coupled_model_separation.svg",
                   "docs/proposition_80_simplex_coupled_model_separation.md",
                   "docs/p80_equation_provenance.md",
+                  "[Complete Figure Catalog](docs/figure_catalog.md)",
+                  "[Figure Caption and Description Standard](docs/figure_caption_and_description_standard.md)",
               ],
               "docs/theorem_roadmap.md": [
                   "frontier is **P80**",
@@ -135,6 +143,20 @@ jobs:
                   "# P80 simplex-coupled continuous-model certificate",
                   "L_{80}(B)",
               ],
+              "docs/figure_catalog.md": [
+                  "# Complete Figure Catalog",
+                  "What it shows and how to interpret it",
+                  "Quantitative physics and mathematics figures",
+              ],
+              "docs/figure_caption_and_description_standard.md": [
+                  "Required information for every figure",
+                  "SVG accessibility requirement",
+                  "Automated quality guards",
+              ],
+              "docs/quantitative_physics_mathematics_atlas.md": [
+                  "**What the figure shows:**",
+                  "[Complete Figure Catalog](figure_catalog.md)",
+              ],
               "CITATION.md": [
                   "Version 0.80.0",
                   "theorem frontier **P80**",
@@ -145,7 +167,12 @@ jobs:
               "CHANGELOG.md": ["# 0.80.0 - 2026-09-11"],
               "website/index.html": ["P80: Simplex-coupled continuous-family certificate"],
               "website/research-map.html": ["P80: Simplex-coupled continuous P75 separation"],
-              "website/visual-atlas.html": ["P80", "p80_simplex_coupled_model_separation.svg"],
+              "website/visual-atlas.html": [
+                  "P80",
+                  "p80_simplex_coupled_model_separation.svg",
+                  "How to read every figure",
+                  "Complete Figure Catalog",
+              ],
               "docs/proposition_80_simplex_coupled_model_separation.md": [
                   "r_\\square",
                   "L_{80}(B)=\\max(r_\\square,r_A,r_C)",
@@ -184,12 +211,12 @@ jobs:
       - name: Verify lint
         run: ruff check .
 
-      - name: Commit integrated P80 publication record
+      - name: Commit integrated P80 publication and figure record
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
           if ! git diff --cached --quiet; then
-            git commit -m "Integrate P80 across public research surfaces"
+            git commit -m "Integrate P80 and complete figure documentation"
             git push origin HEAD:p80-simplex-coupled-box-certificate
           fi
