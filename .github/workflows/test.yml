@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 jobs:
-  integrate-p80:
+  integrate-figure-docs:
     if: >-
       (github.event_name == 'pull_request' && github.head_ref == 'p80-simplex-coupled-box-certificate') ||
       (github.event_name == 'push' && github.ref == 'refs/heads/p80-simplex-coupled-box-certificate')
@@ -21,93 +21,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Harden P80 publication migration
-        if: hashFiles('scripts/integrate_p80_publication.py') != ''
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-
-          path = Path("scripts/integrate_p80_publication.py")
-          text = path.read_text(encoding="utf-8")
-
-          # Keep the P79 sampling-radius record distinct from the P80 frontier.
-          unsafe = 'text = replace(text, "P79", "P80") if "Current documented theorem frontier: P79" in text else text'
-          safe = 'text = replace(text, "Current documented theorem frontier: P79", "Current documented theorem frontier: P80")'
-          if unsafe in text:
-              text = text.replace(unsafe, safe, 1)
-
-          # The theorem and provenance files on this branch already contain the
-          # corrected r_square edge condition. Do not re-run an older migration
-          # whose textual insertion markers are intentionally no longer present.
-          text = text.replace("    update_proposition80()\n", "")
-          text = text.replace("    update_p80_provenance()\n", "")
-
-          path.write_text(text, encoding="utf-8")
-          PY
-      - name: Apply P80 publication integration
-        if: hashFiles('scripts/integrate_p80_publication.py') != ''
-        run: python scripts/integrate_p80_publication.py
-      - name: Correct P78-P80 citation lineage
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-
-          citation = Path("CITATION.md")
-          text = citation.read_text(encoding="utf-8")
-
-          wrong = (
-              "P79 supplies that missing continuous-family lower-bound mechanism for the specific P75 four-view binary latent model. "
-              "It exploits the model's multi-affine nine-parameter map to compute exact rational cell enclosures on parameter boxes, "
-              "aggregates those into a global L-infinity lower bound, and proves a mesh-width convergence guarantee. "
-              "P79 remains a computational certificate under the declared P75 model; it does not turn non-rejection into model validation "
-              "or identify the latent state with consciousness."
-          )
-          right = (
-              "P78 supplies the continuous-family lower-bound mechanism for the specific P75 four-view binary latent model. "
-              "It exploits the model's multi-affine nine-parameter map to compute exact rational cell enclosures on parameter boxes, "
-              "aggregates those into a global L-infinity lower bound, and proves a mesh-width convergence guarantee.\n\n"
-              "P79 certifies the finite-alphabet sampling-radius side of the P77 rejection gate with one-sided exact-rational numerical "
-              "enclosures, so the comparison against the model-distance lower bound does not depend on unsafe floating-point rounding direction.\n\n"
-              "P80 tightens the P78 parameter-box relaxation by intersecting the exact observed-cell intervals with probability normalization. "
-              "The resulting interval-simplex distance is never weaker than the corresponding P78 coordinatewise bound, while it remains a "
-              "lower bound on distance to the true continuous P75 box image. None of P78-P80 turns non-rejection into model validation or "
-              "identifies the latent state with consciousness."
-          )
-          if wrong in text:
-              text = text.replace(wrong, right, 1)
-
-          text = text.replace(
-              "- [P79 equation and provenance record](docs/p78_equation_provenance.md): multi-affine box enclosures, exact-rational global lower bounds, mesh-gap convergence, and P77 rejection handoff provenance.",
-              "- [P78 equation and provenance record](docs/p78_equation_provenance.md): multi-affine box enclosures, exact-rational global lower bounds, mesh-gap convergence, and P77 rejection handoff provenance.\n"
-              "- [P79 equation and provenance record](docs/p79_equation_provenance.md): one-sided exact-rational sampling-radius certification and safe numerical handoff.\n"
-              "- [P80 equation and provenance record](docs/p80_equation_provenance.md): probability-simplex coupling, exact interval-simplex distance, and P80/P78 dominance.",
-          )
-          text = text.replace(
-              "[Detailed proposition record](docs/detailed_proposition_record.md): P1 through P79 chronological theorem record.",
-              "[Detailed proposition record](docs/detailed_proposition_record.md): P1 through P80 chronological theorem record.",
-          )
-
-          p78_sentence = (
-              "Cite [Proposition 78](docs/proposition_78_certified_continuous_model_separation.md) when relying on the exact multi-affine box enclosure for the P75 model, "
-              "the certified continuous-family L-infinity lower bound, the mesh-gap convergence guarantee, the exact-rational branch-and-bound implementation, or its strict P77 rejection handoff."
-          )
-          additions = (
-              " Cite [Proposition 79](docs/proposition_79_certified_sampling_radius.md) when relying on exact-rational one-sided certification of the finite-alphabet sampling radius or the rounding-direction-safe rejection comparison."
-              " Cite [Proposition 80](docs/proposition_80_simplex_coupled_model_separation.md) when relying on probability-simplex coupling of the P78 cell intervals, the exact interval-simplex L-infinity distance, or the never-weaker P80 box lower bound."
-          )
-          if p78_sentence in text and "Cite [Proposition 80]" not in text:
-              text = text.replace(p78_sentence, p78_sentence + additions, 1)
-
-          citation.write_text(text, encoding="utf-8")
-
-          source = Path("src/consciousness_bridge/simplex_coupled_model_separation.py")
-          source_text = source.read_text(encoding="utf-8")
-          source_text = source_text.replace(
-              "All certification arithmetic uses\n``fractions.Fraction``; no floating optimizer is used.",
-              "All certification paths use ``fractions.Fraction`` arithmetic; no floating optimizer is used.",
-          )
-          source.write_text(source_text, encoding="utf-8")
-          PY
+      - name: Add quantum semantics to the permanent figure enricher
+        if: hashFiles('scripts/patch_figure_enricher_for_quantum.py') != ''
+        run: python scripts/patch_figure_enricher_for_quantum.py
       - name: Apply complete figure documentation
         run: python scripts/enrich_figure_documentation.py
       - name: Validate strict SVG XML
@@ -119,20 +35,22 @@ jobs:
           for path in sorted(Path("docs/figures").rglob("*.svg")):
               ET.parse(path)
           PY
-      - name: Commit integrated publication artifacts
+      - name: Remove one-shot patch helper
+        run: rm -f scripts/patch_figure_enricher_for_quantum.py
+      - name: Commit integrated figure artifacts
         run: |
           if git diff --quiet && git diff --cached --quiet; then
-            echo "No publication changes to commit."
+            echo "No figure-documentation changes to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
           if git diff --cached --quiet; then
-            echo "No staged publication changes to commit."
+            echo "No staged figure-documentation changes to commit."
             exit 0
           fi
-          git commit -m "Integrate P80 publication and complete figure documentation"
+          git commit -m "Make all quantum figures visually self-explanatory"
           git push origin HEAD:p80-simplex-coupled-box-certificate
 
   test:
