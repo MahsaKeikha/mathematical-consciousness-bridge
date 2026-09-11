@@ -101,7 +101,8 @@ def test_p64_figure_preserves_applicability_and_scientific_boundaries():
         "factor ≤ √[ν / (ν - 1)]",
         "Use P65 for a baseline-safe continuous route;",
         "P63 remains the unrestricted exact integer solver.",
-        "not a consciousness, bridge, or quantum-incompleteness claim",
+        "does not identify consciousness, establish a physical-to-experiential bridge",
+        "or imply quantum incompleteness",
     ]:
         assert token in text
 
