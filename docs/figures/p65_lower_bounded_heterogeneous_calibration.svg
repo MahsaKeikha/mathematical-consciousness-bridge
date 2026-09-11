@@ -49,7 +49,7 @@
     <text x="840" y="239" class="eq">tₑ = (cₑ / bₑ)^(2/3)</text>
     <text x="840" y="276" class="copy">Free edge: τ &gt; tₑ</text>
     <text x="840" y="304" class="copy">Otherwise: n*ₑ = 1</text>
-    <text x="840" y="332" class="small">Sort thresholds to find the free set.</text>
+    <text x="840" y="332" class="small">Sort thresholds; find free edges.</text>
   </g>
 
   <path id="arrow-1" class="arrow" d="M385 240 H435" data-source="block-p64-limit" data-target="block-problem"/>
