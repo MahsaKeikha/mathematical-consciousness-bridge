@@ -5,6 +5,17 @@ from pathlib import Path
 from typing import Any
 
 RECORDS: dict[str, dict[str, str]] = {
+    "docs/figures/theorem_roadmap.svg": {
+        "title": "Theorem dependency map for P1-P31",
+        "description": (
+            "What this figure shows: the theorem roadmap for Propositions 1 through 31, with arrows encoding actual mathematical or scientific prerequisites rather than mere numerical sequence or vertical proximity. "
+            "How to read it: follow the arrows, not just the page order. The central target-sufficiency lineage runs from P19 through P24. P25-P31 are physical-scale, aggregation, metric, and quotient branches whose prerequisites are shown explicitly by the connectors. An absent arrow means that the figure is not asserting a prerequisite. "
+            "Main takeaway: proposition numbering records development order, whereas the arrow topology records dependency structure. Later P61-P70 and P71-P80 are separate continuations documented in the theorem index."
+        ),
+        "status": (
+            "Research-orientation figure. It summarizes dependency structure among the displayed theorem branches; it does not add a theorem, empirical consciousness result, or physical-to-experiential bridge claim."
+        ),
+    },
     "docs/figures/fundamental_theory_consciousness_map.svg": {
         "title": "Fundamental Theory to Consciousness map",
         "description": (
