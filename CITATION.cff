@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If this research program, one of its theorem results, figures, algorithms, or implementations contributes to your work, please cite the research program and the method-specific source relevant to the result."
 title: "Mathematical Consciousness Bridge"
-version: 0.71.0
+version: 0.72.0
 date-released: 2026-09-10
 authors:
   - family-names: Keikha
@@ -18,13 +18,15 @@ keywords:
   - factorization
   - target provenance
   - non-circularity
+  - target measurement
+  - measurement noise
   - causal inference
   - information theory
   - quantum foundations
   - finite-sample inference
   - falsification
   - experimental design
-abstract: "An ongoing mathematical-physics research program developing a falsifiable test architecture for physical-to-experiential bridge claims. The repository formalizes deterministic and stochastic factorization tests, intervention-resolved causal structure, temporal and multiscale compatibility, finite-data certification, target-provenance non-circularity, quantum operational sufficiency tests, adaptive experiment design, and certified calibration and optimization. Proposition 71 proves that targets constructed as functions or descriptor-only channels of the tested physical descriptor satisfy the corresponding bridge or screening-off condition by construction, and that observed zero residual alone cannot establish independent target provenance. The current calibration branch includes lower-bounded heterogeneous calibration and exact primal-dual gap decomposition through P70. The current documented theorem frontier is P71. The physical-to-experiential bridge remains open, and the project does not assume that consciousness is a scalar, state of matter, quantum variable, or additional spacetime dimension."
+abstract: "An ongoing mathematical-physics research program developing a falsifiable test architecture for physical-to-experiential bridge claims. The repository formalizes deterministic and stochastic factorization tests, intervention-resolved causal structure, temporal and multiscale compatibility, finite-data certification, target-provenance non-circularity, target-measurement channel robustness, quantum operational sufficiency tests, adaptive experiment design, and certified calibration and optimization. Proposition 71 proves that targets constructed as functions or descriptor-only channels of the tested physical descriptor satisfy the corresponding bridge or screening-off condition by construction. Proposition 72 adds the noisy-target layer: under an explicit nondifferential target-measurement channel, the observed conditional residual cannot exceed the latent-target residual, measurement can erase a genuine witness, total-variation witness attenuation can be bounded by a channel-stability coefficient, and a conservative finite-sample target-separation certificate follows. The current calibration branch remains P61-P70. The current documented theorem frontier is P72. The physical-to-experiential bridge remains open, and the project does not assume that consciousness is a scalar, state of matter, quantum variable, or additional spacetime dimension."
 preferred-citation:
   type: generic
   authors:
@@ -34,4 +36,4 @@ preferred-citation:
   title: "Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem"
   year: 2026
   url: "https://github.com/MahsaKeikha/mathematical-consciousness-bridge"
-  notes: "Version 0.71.0. Ongoing mathematical-physics research program. Current documented theorem frontier: P71."
+  notes: "Version 0.72.0. Ongoing mathematical-physics research program. Current documented theorem frontier: P72."
