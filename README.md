@@ -127,11 +127,11 @@ The main page is organized as a scientific argument rather than a chronological 
 
 | Reader question | Where the answer appears |
 | --- | --- |
-| **What is the scientific problem?** | Abstract, core scientific thesis, Research at a glance, and Section 1. |
-| **What exactly is being measured and compared?** | Sections 1-4 and the measurement / response figures. |
-| **What has actually been proved?** | Scientific status discipline, theorem roadmap, and "What has actually been established." |
-| **What would falsify the framework or a candidate bridge?** | Falsification logic and the linked falsification program. |
-| **What remains unknown?** | "What remains open," current scientific status, and the dedicated technical pages. |
+| **What is the scientific problem?** | [Abstract](#abstract), [core scientific thesis](#the-core-scientific-thesis-in-one-view), [Research at a glance](#research-at-a-glance), and [Section 1: Mathematical formulation of the bridge problem](#1-mathematical-formulation-of-the-bridge-problem). |
+| **What exactly is being measured and compared?** | [Section 1](#1-mathematical-formulation-of-the-bridge-problem), [Section 2](#2-from-physical-dynamics-to-operational-structure), [Section 3](#3-time-composition-and-scale-cannot-be-ignored), [Section 4](#4-turning-a-population-theorem-into-a-finite-experiment), the [measurement map](docs/figures/conscious_state_measurement_map.svg), and the [response-geometry map](docs/figures/information_geometry_response_manifold.svg). |
+| **What has actually been proved?** | [Scientific status discipline](#scientific-status-discipline), [Theorem roadmap](docs/theorem_roadmap.md), and [What has actually been established](#what-has-actually-been-established). |
+| **What would falsify the framework or a candidate bridge?** | [Falsification logic](#falsification-logic) and the [Falsification program](docs/falsification_program.md). |
+| **What remains unknown?** | [What remains open](#what-remains-open), [Current scientific status](#current-scientific-status), [Research navigation](docs/research_navigation.md), [Detailed proposition record](docs/detailed_proposition_record.md), and the [Calibration and Optimization Frontier](docs/calibration_optimization_frontier_p61_p70.md). |
 
 ![Universal proof ladder](docs/figures/universal_proof_ladder.svg)
 
