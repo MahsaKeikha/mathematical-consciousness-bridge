@@ -74,7 +74,7 @@ def test_p79_plain_language_explains_why_rounding_direction_matters() -> None:
         assert forbidden not in plain, forbidden
 
 
-def test_p79_release_metadata_and_counts_are_consistent() -> None:
+def test_p79_release_history_survives_p80_frontier() -> None:
     readme = README.read_text(encoding="utf-8")
     pyproject = (ROOT / "pyproject.toml").read_text(encoding="utf-8")
     cff = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
@@ -82,21 +82,26 @@ def test_p79_release_metadata_and_counts_are_consistent() -> None:
     citation = (ROOT / "CITATION.md").read_text(encoding="utf-8")
     changelog = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
 
-    assert 'version = "0.79.0"' in pyproject
-    assert "version: 0.79.0" in cff
-    assert "Current documented theorem frontier: P79" in cff
-    assert "version      = {0.79.0}" in bib
+    # Current release metadata follows the P80 frontier.
+    assert 'version = "0.80.0"' in pyproject
+    assert "version: 0.80.0" in cff
+    assert "Current documented theorem frontier: P80" in cff
+    assert "version      = {0.80.0}" in bib
+    assert "80 proposition-level results" in readme
+    assert "68 equation-driven quantitative figures" in readme
+    assert "The theorem frontier is P80." in readme
+    assert "| Public theorem frontier | **P80** |" in readme
+    assert "Read the complete P1 to P80 detailed proposition record" in readme
+
+    # P79 remains part of the permanent citable history after the frontier advances.
     assert "Proposition 79" in citation
     assert "# 0.79.0 - 2026-09-11" in changelog
-    assert "79 proposition-level results" in readme
-    assert "67 equation-driven quantitative figures" in readme
-    assert "The theorem frontier is P79." in readme
-    assert "| Public theorem frontier | **P79** |" in readme
-    assert "Read the complete P1 to P79 detailed proposition record" in readme
+    assert "# 0.80.0 - 2026-09-11" in changelog
+    assert "Proposition 79" in changelog
 
     match = re.search(r"P1 through P(\d+) with explicit dependency branches", readme)
     assert match is not None
-    assert int(match.group(1)) == 79
+    assert int(match.group(1)) == 80
 
 
 def test_p79_preserves_one_sided_certification_logic() -> None:
