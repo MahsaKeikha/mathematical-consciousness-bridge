@@ -97,7 +97,15 @@ Direct P73 proof: [three-view target-channel identifiability](proposition_73_tar
 |\widehat M_{123}-M_{123}|\le13\delta_n,
 \]
 
-and propagates those intervals through the P73 nonlinear formulas. P74 introduces an explicit covariance nondegeneracy gate: if any lower confidence bound for \(|C_{12}|,|C_{13}|,|C_{23}|\) reaches zero, the P73 inversion is not certified from those finite data. When the gate passes and the covariance sign pattern is compatible with P73, the theorem gives simultaneous confidence bounds for the label-invariant latent imbalance, latent variance, the prevalence orbit under global label swapping, all three P72 stability coefficients, and a lower bound for joint three-view stability. It also provides a conservative sufficient sample-size condition for separating a known population covariance margin from the P73 singular boundary.
+and propagates those intervals through the P73 nonlinear formulas. P74 introduces an explicit covariance nondegeneracy gate: if any lower confidence bound for \(|C_{12}|,|C_{13}|,|C_{23}|\) reaches zero, the P73 inversion is not certified from those finite data. When the gate passes and the covariance sign pattern is compatible with P73, the theorem gives simultaneous confidence bounds for the label-invariant latent imbalance, latent variance, the prevalence orbit under global label swapping, all three P72 stability coefficients, and a lower bound for joint three-view stability.
+
+P74 then completes the finite-sample binary-channel recovery. Combining the P73 identities gives
+
+\[
+ b_jm=-\frac{M_{123}}{2C_{k\ell}},
+\]
+
+where \(k,\ell\) are the complementary views. The product \(b_jm\) is invariant under the common latent-label swap, so finite confidence intervals for the signed third centered moment and complementary covariance yield an interval for \(b_jm\). Together with \(a_j=\mu_j-b_jm\), this gives a confidence interval for each binary-channel offset. Combining that offset with \(\gamma_j=|b_j|\) produces simultaneous confidence sets for the unordered pair of latent-conditioned response probabilities. Reporting the pair as an unordered orbit is essential: it certifies the full binary measurement channel without pretending that the data determine which latent label has which experiential meaning. P74 also provides a conservative sufficient sample-size condition for separating a known population covariance margin from the P73 singular boundary.
 
 Direct P74 proof: [finite-sample target-channel recovery](proposition_74_finite_sample_target_channel_recovery.md). Equation classification: [P74 equation and provenance record](p74_equation_provenance.md). Implementation: [`finite_sample_target_channel_recovery.py`](../src/consciousness_bridge/finite_sample_target_channel_recovery.py).
 
@@ -112,7 +120,7 @@ The proposition numbers preserve development order, not one linear chain. The sc
 - P38-P44 build the quantum operational interface.
 - P45-P60 build adaptive evidence acquisition and execution machinery.
 - P61-P70 build downstream calibration and optimization.
-- P71-P74 return to the target side of the P19 bridge and formalize non-circular target provenance, noisy target measurement, population target-channel identification, and finite-sample target-channel certification.
+- P71-P74 return to the target side of the P19 bridge and formalize non-circular target provenance, noisy target measurement, population target-channel identification, and finite-sample target-channel recovery.
 
 P74 does not make an experiential ontology claim. It quantifies uncertainty only under the P73 latent model and IID sampling. A failed nondegeneracy gate means the current data do not safely resolve the inversion; it is not proof that the population channel is degenerate. The global latent-label orientation still requires an external semantic anchor if the labels are to be interpreted scientifically.
 
