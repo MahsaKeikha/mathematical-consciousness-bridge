@@ -275,7 +275,7 @@ def sufficient_joint_linf_sample_size(
         + sqrt(log(2.0 * alphabet_size / beta))
     ) ** 2
     threshold = numerator / (2.0 * remaining**2)
-    sample_size = max(1, int(floor(threshold)) + 1)
+    sample_size = max(1, floor(threshold) + 1)
 
     while (
         joint_linf_required_population_separation(
