@@ -5,6 +5,17 @@ from typing import Any, Callable
 
 
 RECORDS: dict[str, dict[str, str]] = {
+    "docs/figures/fundamental_theory_consciousness_map.svg": {
+        "title": "Fundamental Theory to Consciousness map",
+        "description": (
+            "What this figure shows: the logical gap between a complete declared physical theory, its physical equivalence classes and operational predictions, and an independently defined experiential or target structure. "
+            "How to read it: move from fundamental physical law to the physical state/observable layer and then to equivalence classes induced by the chosen physical descriptor. The final arrow toward target equivalence classes is intentionally a separate bridge requirement, not something supplied automatically by the physical equations. "
+            "Main takeaway: physical completeness and operational predictability do not by themselves establish experiential completeness; a justified, testable physical-to-target map is still required."
+        ),
+        "status": (
+            "Research-architecture figure. It formalizes a sufficiency question and an open bridge requirement; it does not assert a fifth spatial dimension, nonphysical substance, simulation ontology, or failure of quantum mechanics."
+        ),
+    },
     "docs/figures/physics_mathematics_atlas.svg": {
         "title": "Physics and mathematics atlas for consciousness research",
         "description": (
@@ -58,6 +69,28 @@ RECORDS: dict[str, dict[str, str]] = {
         ),
         "status": (
             "Physics-synthesis figure based on standard thermodynamics/information theory plus repository operational structure. It is not evidence that thermodynamic information equals consciousness."
+        ),
+    },
+    "docs/figures/p79_certified_sampling_radius.svg": {
+        "title": "P79 certified rational sampling-radius envelope",
+        "description": (
+            "What this figure shows: the one-sided exact-rational certification of the P77 finite-alphabet sampling radius and its safe comparison with the P78 continuous-model distance lower bound. "
+            "How to read it: start with the exact statistical inputs, follow the positive atanh-series and integer-certified dyadic square-root steps to the certified upper radius, then compare that upper bound only against the P78 lower bound. A strict lower-bound-greater-than-upper-bound inequality certifies rejection; failure of that strict gate is inconclusive. "
+            "Main takeaway: P79 removes unsafe floating-point rounding direction from the rejection handoff without changing the statistical model or turning non-rejection into model acceptance."
+        ),
+        "status": (
+            "Numerical-certification theorem figure. It certifies an exact-rational upper bound on sampling uncertainty; it does not validate the P75 latent model or close the physical-to-experiential bridge."
+        ),
+    },
+    "docs/figures/p80_simplex_coupled_model_separation.svg": {
+        "title": "P80 simplex-coupled model separation",
+        "description": (
+            "What this figure shows: P80 tightens each P78 parameter-box relaxation by intersecting its exact coordinate intervals with probability normalization. The complete feasibility radius is the maximum of the coordinate-overlap radius r_box and the two normalization-crossing radii r_A and r_C. "
+            "How to read it: move from the P78 box enclosure to the simplex-coupled set, then read L80(B)=max(r_box,r_A,r_C) as a certified lower bound that is never weaker than L78(B). At the rejection handoff, compare the P80 lower bound with the P79 certified upper sampling radius; rejection requires a strict separation. "
+            "Main takeaway: simplex coupling strengthens continuous-family separation while preserving the one-sided logic of the P78-P79 certificate chain."
+        ),
+        "status": (
+            "Exact-rational computational-certification theorem figure. It does not establish that the P75 latent variable is experiential, and non-rejection remains inconclusive; the physical-to-experiential bridge remains open."
         ),
     },
 }
