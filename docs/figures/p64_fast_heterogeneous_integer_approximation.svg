@@ -90,9 +90,10 @@
   <path id="arrow-4" class="arrow" d="M420 635 V695" data-source="block-certificate" data-target="block-uniform"/>
   <path id="arrow-5" class="arrow" d="M780 635 V695" data-source="block-certificate" data-target="block-scope"/>
 
-  <g id="block-boundary" data-x="90" data-y="875" data-w="1020" data-h="60">
-    <rect x="90" y="875" width="1020" height="60" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
-    <text x="118" y="903" class="head">Scientific boundary</text>
-    <text x="118" y="926" class="small">P64 is an approximation theorem for a calibration surrogate, not a consciousness, bridge, or quantum-incompleteness claim.</text>
+  <g id="block-boundary" data-x="90" data-y="862" data-w="1020" data-h="78">
+    <rect x="90" y="862" width="1020" height="78" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="118" y="889" class="head">Scientific boundary</text>
+    <text x="118" y="913" class="small">P64 is an approximation theorem for the declared calibration surrogate.</text>
+    <text x="118" y="934" class="small">It does not identify consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness.</text>
   </g>
 </svg>
