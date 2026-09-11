@@ -10,6 +10,16 @@ def _float(element: ET.Element, name: str) -> float:
     return float(element.attrib[name])
 
 
+def _font_size(text: ET.Element) -> float:
+    if "font-size" in text.attrib:
+        return float(text.attrib["font-size"])
+    return {
+        "body": 15.0,
+        "note": 13.0,
+        "blockTitle": 19.0,
+    }.get(text.attrib.get("class", ""), 16.0)
+
+
 def _point_on_boundary(
     point_x: float,
     point_y: float,
@@ -54,7 +64,7 @@ def test_p70_figure_text_stays_inside_declared_blocks():
         for text in group.findall("svg:text", NS):
             tx = _float(text, "x")
             ty = _float(text, "y")
-            font_size = float(text.attrib.get("font-size", "16"))
+            font_size = _font_size(text)
             content = "".join(text.itertext())
             conservative_width = len(content) * font_size * 0.58
             assert tx >= x + 12
