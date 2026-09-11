@@ -22,8 +22,8 @@ model family.
 The theorem is generic finite-alphabet statistics. Its repository-specific role
 is to close the logical gap between P75 full-law model membership and P76
 partial finite-sample polynomial rejection without assuming a chi-square null
-law. It does not identify a latent state with consciousness. It does not solve
-the physical-to-experiential bridge.
+law. It does not identify a latent state with consciousness.
+It does not solve the physical-to-experiential bridge.
 """
 
 from __future__ import annotations
