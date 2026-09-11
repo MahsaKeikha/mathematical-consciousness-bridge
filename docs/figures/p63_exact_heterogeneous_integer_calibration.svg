@@ -94,7 +94,7 @@
     <text x="840" y="770" class="strong">U*cont(B) ≤ U*int(B)</text>
     <text x="840" y="806" class="small">Additive and multiplicative gaps</text>
     <text x="840" y="829" class="small">are instance-specific certificates.</text>
-    <text x="840" y="852" class="small">No universal small-gap claim is made.</text>
+    <text x="840" y="852" class="small">No universal small-gap guarantee.</text>
   </g>
 
   <path id="arrow-5" class="arrow" d="M300 630 V660 H220 V690" data-source="block-bellman" data-target="block-gcd"/>
