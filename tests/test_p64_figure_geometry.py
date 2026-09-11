@@ -90,6 +90,7 @@ def test_p64_connectors_keep_the_declared_dependency_topology():
 def test_p64_figure_preserves_applicability_and_scientific_boundaries():
     text = FIGURE.read_text(encoding="utf-8")
     for token in [
+        "<title id=\"title\">P64 fast certified heterogeneous-cost integer approximation</title>",
         "What this figure shows:",
         "How to read it:",
         "Main takeaway:",
