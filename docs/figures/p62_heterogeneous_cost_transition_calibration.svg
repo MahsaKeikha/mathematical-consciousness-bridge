@@ -38,12 +38,13 @@
     <text x="460" y="208" class="eq">min Σₑ bₑ / √nₑ</text>
     <text x="460" y="242" class="eq">Σₑ cₑnₑ = B</text>
     <text x="460" y="276" class="eq">nₑ &gt; 0,  B &gt; 0</text>
-    <text x="460" y="310" class="small">Strictly convex on the positive orthant.</text>
+    <text x="460" y="304" class="small">Strictly convex on the</text>
+    <text x="460" y="324" class="small">positive orthant.</text>
   </g>
 
   <g id="block-cost" data-x="815" data-y="130" data-w="330" data-h="200">
     <rect x="815" y="130" width="330" height="200" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
-    <text x="840" y="168" class="head">Input B: per-observation cost</text>
+    <text x="840" y="168" class="head">Input B: observation cost</text>
     <text x="840" y="210" class="strong">cₑ &gt; 0</text>
     <text x="840" y="249" class="copy">Time, equipment, stabilization,</text>
     <text x="840" y="274" class="copy">or operator burden may differ.</text>
