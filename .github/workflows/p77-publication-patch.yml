@@ -27,33 +27,14 @@ jobs:
 
           path = Path("scripts/p77_publication_patch.py")
           text = path.read_text(encoding="utf-8")
-          old = '''    p76_prov = "[P76 equation and provenance record](p76_equation_provenance.md)"
-              require(text, p76_prov, "navigation P76 provenance")
-              if "[P77 equation and provenance record](p77_equation_provenance.md)" not in text:
-                  insert_at = text.find("[P76 equation and provenance record](p76_equation_provenance.md)")
-                  line_end = text.find("\\n", insert_at)
-                  text = text[: line_end + 1] + "23. [P77 equation and provenance record](p77_equation_provenance.md) for full-law confidence-region inversion, model-distance transport, and certification-bound direction.\\n" + text[line_end + 1 :]
-          '''
-          # The exact source block uses four spaces rather than the visual indentation above.
-          old = old.replace("              ", "    ")
-          new = '''    if "[P77 equation and provenance record](p77_equation_provenance.md)" not in text:
-              marker = "## Complete proposition index"
-              provenance_note = (
-                  "P77 provenance: [P77 equation and provenance record]"
-                  "(p77_equation_provenance.md) for full-law confidence-region inversion, "
-                  "model-distance transport, and certification-bound direction.\\n\\n"
-              )
-              text = replace_once(
-                  text,
-                  marker,
-                  provenance_note + marker,
-                  "navigation P77 provenance",
-              )
-          '''
-          new = new.replace("              ", "    ")
-          if old not in text:
-              raise SystemExit("expected navigation preflight block not found")
-          path.write_text(text.replace(old, new, 1), encoding="utf-8")
+          start_token = '    p76_prov = "[P76 equation and provenance record](p76_equation_provenance.md)"\n'
+          end_token = '    write(path, text)\n\n\ndef patch_detail() -> None:\n'
+          start = text.find(start_token)
+          end = text.find(end_token, start)
+          if start < 0 or end < 0:
+              raise SystemExit("expected navigation provenance block not found")
+          text = text[:start] + end_token + text[end + len(end_token):]
+          path.write_text(text, encoding="utf-8")
           PY
       - name: Apply guarded P77 publication patch
         run: python scripts/p77_publication_patch.py
