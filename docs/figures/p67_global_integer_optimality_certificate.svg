@@ -80,10 +80,11 @@
   <line id="arrow-3" class="arrow" x1="900" y1="355" x2="470" y2="430" data-source="block-intersection" data-target="block-certified"/>
   <line id="arrow-4" class="arrow" x1="1035" y1="355" x2="850" y2="430" data-source="block-intersection" data-target="block-inconclusive"/>
 
-  <g id="block-boundary" data-x="90" data-y="665" data-w="1020" data-h="88">
-    <rect x="90" y="665" width="1020" height="88" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
-    <text x="118" y="696" class="head">Scientific boundary</text>
-    <text x="118" y="724" class="small">P67 certifies only the integer resource-allocation optimum for the declared calibration surrogate.</text>
-    <text x="118" y="747" class="small">It is not a consciousness theorem, bridge theorem, empirical consciousness result, or quantum-completeness claim.</text>
+  <g id="block-boundary" data-x="90" data-y="650" data-w="1020" data-h="120">
+    <rect x="90" y="650" width="1020" height="120" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="118" y="682" class="head">Scientific boundary</text>
+    <text x="118" y="710" class="small">P67 certifies only the integer resource-allocation optimum for the declared calibration surrogate.</text>
+    <text x="118" y="735" class="small">It is not a consciousness theorem or physical-to-experiential bridge theorem.</text>
+    <text x="118" y="760" class="small">It is not an empirical consciousness result or quantum-completeness claim.</text>
   </g>
 </svg>
