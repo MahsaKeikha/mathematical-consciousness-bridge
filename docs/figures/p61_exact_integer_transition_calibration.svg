@@ -82,7 +82,7 @@
     <text x="460" y="758" class="eq">Σₑ kₑ = B</text>
     <text x="460" y="790" class="strong">U(kᴾ⁶¹) ≤ U(k)</text>
     <text x="460" y="818" class="small">for every feasible full-budget k.</text>
-    <text x="460" y="842" class="small">Ties can give multiple optimal allocations.</text>
+    <text x="460" y="842" class="small">Ties can produce nonunique optima.</text>
   </g>
 
   <g id="block-complexity" data-x="815" data-y="680" data-w="330" data-h="170">
