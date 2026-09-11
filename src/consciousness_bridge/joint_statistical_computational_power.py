@@ -32,8 +32,7 @@ floating-point proof. Formal handoff uses externally certified radius upper
 bounds and exact ``Fraction`` comparisons.
 
 P79 does not validate the P75 target-measurement model when rejection fails,
-does not identify any latent state with consciousness, and does not solve the
-physical-to-experiential bridge.
+does not identify any latent state with consciousness, and does not solve the physical-to-experiential bridge.
 """
 
 from __future__ import annotations
