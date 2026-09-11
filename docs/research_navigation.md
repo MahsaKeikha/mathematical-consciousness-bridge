@@ -1,6 +1,6 @@
 # Research Navigation
 
-This page is the reading and reference index for the **Mathematical Consciousness Bridge** repository. It is organized by scientific dependency rather than by development chronology so that a reader can move from the research question to proofs, figures, code, falsification conditions, and citation resources without searching the repository manually.
+This page is the reading and reference index for the **Mathematical Consciousness Bridge** repository. It is organized by scientific dependency rather than by development chronology so that a reader can move from the research question to proofs, figures, code, falsification conditions, and citation resources without searching through the repository manually.
 
 The current documented theorem frontier is **P71**. The complete proposition record runs from **P1 through P71**. P71 is a core bridge-methodology result descending from P19; it is not an extension of the P61-P70 calibration branch.
 
@@ -11,7 +11,7 @@ The current documented theorem frontier is **P71**. The complete proposition rec
 3. [Scientific status discipline](../README.md#scientific-status-discipline) for the distinction among definitions, proved results, implementations, numerical checks, empirical inputs, hypotheses, and open bridge claims.
 4. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P71.
 5. [P19 fundamental physical sufficiency](proposition_19_fundamental_physical_sufficiency.md) for the exact, stochastic, and differential bridge criteria.
-6. [P20-P24 finite and adaptive residual certification](theorem_roadmap.md#9-finite-sample-residual-certification-p20) for finite-data and repeated-look validity.
+6. [P20-P24 finite and adaptive residual certification](theorem_roadmap.md) for finite-data and repeated-look validity.
 7. [P71 target-provenance non-circularity](proposition_71_target_provenance_noncircularity.md) for the theorem showing when a target construction makes a bridge test vacuous by design.
 8. [P11-P18 and P25-P37 operational physical structure](theorem_roadmap.md) for intervention, temporal, compositional, and multiscale requirements.
 9. [P38-P44 quantum foundations and bridge tests](quantum_foundations_and_bridge_test.md) for quantum operational sufficiency under explicit bridge classes.
@@ -92,16 +92,16 @@ The current documented theorem frontier is **P71**. The complete proposition rec
 | P52 | [Capacity-optimal service allocation](proposition_52_capacity_optimal_service_allocation.md) | exact minimax service shares |
 | P53 | [Residual-demand reoptimization](proposition_53_residual_demand_reoptimization.md) | dynamic reoptimization after sampling and safe pruning |
 | P54 | [Metric switching-cost residual scheduling](proposition_54_metric_switching_cost_residual_scheduling.md) | exact acquisition-routing decomposition |
-| P55 | [Pruning-aware switching monotonicity](proposition_55_pruning_aware_switching_monotonicity.md) | exact acquisition and route release after pruning |
-| P56 | [Moving-start reoptimization stability](proposition_56_moving_start_metric_reoptimization_stability.md) | setup-origin perturbation control |
+| P55 | [Pruning-aware metric switching-cost monotonicity](proposition_55_pruning_aware_switching_monotonicity.md) | exact acquisition and route release after pruning |
+| P56 | [Moving-start metric reoptimization stability](proposition_56_moving_start_metric_reoptimization_stability.md) | setup-origin perturbation control |
 | P57 | [Switching-metric perturbation stability](proposition_57_switching_metric_perturbation.md) | metric-drift reoptimization control |
-| P58 | [Finite-data metric uncertainty](proposition_58_finite_data_metric_uncertainty.md) | transition confidence intervals and robust route envelopes |
-| P59 | [Optimal transition calibration](proposition_59_optimal_transition_calibration.md) | continuous two-thirds-power calibration allocation |
-| P60 | [Integer transition calibration](proposition_60_integer_transition_calibration.md) | whole-measurement calibration with rounding overhead control |
-| P61 | [Exact integer transition calibration](proposition_61_exact_integer_transition_calibration.md) | exact equal-cost discrete allocation by diminishing marginal gain |
-| P62 | [Heterogeneous-cost transition calibration](proposition_62_heterogeneous_cost_transition_calibration.md) | unequal-cost continuous resource allocation |
+| P58 | [Finite-data switching-metric uncertainty](proposition_58_finite_data_metric_uncertainty.md) | transition confidence intervals and robust route envelopes |
+| P59 | [Optimal transition-calibration allocation](proposition_59_optimal_transition_calibration.md) | continuous two-thirds-power calibration allocation |
+| P60 | [Integer transition-calibration allocation](proposition_60_integer_transition_calibration.md) | whole-measurement calibration with rounding overhead control |
+| P61 | [Exact integer transition-calibration allocation](proposition_61_exact_integer_transition_calibration.md) | exact equal-cost discrete allocation by diminishing marginal gain |
+| P62 | [Heterogeneous-cost transition-calibration allocation](proposition_62_heterogeneous_cost_transition_calibration.md) | unequal-cost continuous resource allocation |
 | P63 | [Exact heterogeneous-cost integer calibration](proposition_63_exact_heterogeneous_integer_calibration.md) | exact Bellman solver under unequal integer costs |
-| P64 | [Fast heterogeneous integer approximation](proposition_64_fast_heterogeneous_integer_approximation.md) | scalable certified integer approximation |
+| P64 | [Fast certified heterogeneous integer approximation](proposition_64_fast_heterogeneous_integer_approximation.md) | scalable certified integer approximation |
 | P65 | [Lower-bounded heterogeneous calibration](proposition_65_lower_bounded_heterogeneous_calibration.md) | baseline-safe water filling and approximation certificate |
 | P66 | [Residual-exact calibration augmentation](proposition_66_residual_exact_calibration_augmentation.md) | exact bounded-residual augmentation above the P65 floor |
 | P67 | [Global integer optimality certificate](proposition_67_global_integer_optimality_certificate.md) | common-multiplier sufficient certificate for global integer optimality |
