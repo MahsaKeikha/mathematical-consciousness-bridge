@@ -147,3 +147,25 @@ def test_theorem_roadmap_description_explains_branch_semantics_and_boundary():
         "physical-to-experiential bridge remains open",
     ):
         assert phrase in text
+
+
+def test_theorem_roadmap_catalog_row_explains_the_nonsequential_branches():
+    root = pathlib.Path(__file__).resolve().parents[1]
+    catalog = root / "docs" / "figure_catalog.md"
+    rows = [
+        line
+        for line in catalog.read_text(encoding="utf-8").splitlines()
+        if "(figures/theorem_roadmap.svg)" in line
+    ]
+    assert len(rows) == 1
+    row = rows[0]
+    for phrase in (
+        "What this figure shows:",
+        "How to read it:",
+        "Main takeaway:",
+        "P24-to-P25 dependency",
+        "P30 then assembles",
+        "physical-to-experiential bridge remains open",
+        "[Main research narrative](../README.md)",
+    ):
+        assert phrase in row
