@@ -8,7 +8,7 @@ The scientific status rule is strict throughout: a theorem is only a theorem und
 
 ---
 
-## Complete P1 to P73 chronology
+## Complete P1 to P74 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
@@ -89,6 +89,18 @@ so they are identifiable despite that label ambiguity. P73 also proves that the 
 
 Direct P73 proof: [three-view target-channel identifiability](proposition_73_target_channel_identifiability.md). Equation classification: [P73 equation and provenance record](p73_equation_provenance.md). Implementation: [`target_channel_identifiability.py`](../src/consciousness_bridge/target_channel_identifiability.py).
 
+**P74** converts the P73 population inversion into a finite-sample confidence certificate. From \(n\) IID observed triples it controls the full eight-cell empirical distribution on one simultaneous event, derives conservative perturbation bounds
+
+\[
+|\widehat C_{ij}-C_{ij}|\le3\delta_n,
+\qquad
+|\widehat M_{123}-M_{123}|\le13\delta_n,
+\]
+
+and propagates those intervals through the P73 nonlinear formulas. P74 introduces an explicit covariance nondegeneracy gate: if any lower confidence bound for \(|C_{12}|,|C_{13}|,|C_{23}|\) reaches zero, the P73 inversion is not certified from those finite data. When the gate passes and the covariance sign pattern is compatible with P73, the theorem gives simultaneous confidence bounds for the label-invariant latent imbalance, latent variance, the prevalence orbit under global label swapping, all three P72 stability coefficients, and a lower bound for joint three-view stability. It also provides a conservative sufficient sample-size condition for separating a known population covariance margin from the P73 singular boundary.
+
+Direct P74 proof: [finite-sample target-channel recovery](proposition_74_finite_sample_target_channel_recovery.md). Equation classification: [P74 equation and provenance record](p74_equation_provenance.md). Implementation: [`finite_sample_target_channel_recovery.py`](../src/consciousness_bridge/finite_sample_target_channel_recovery.py).
+
 ---
 
 ## Scientific interpretation of the chronology
@@ -100,11 +112,11 @@ The proposition numbers preserve development order, not one linear chain. The sc
 - P38-P44 build the quantum operational interface.
 - P45-P60 build adaptive evidence acquisition and execution machinery.
 - P61-P70 build downstream calibration and optimization.
-- P71-P73 return to the target side of the P19 bridge and formalize non-circular target provenance, noisy target measurement, and one explicit population channel-identifiability theorem.
+- P71-P74 return to the target side of the P19 bridge and formalize non-circular target provenance, noisy target measurement, population target-channel identification, and finite-sample target-channel certification.
 
-P73 does not make an experiential ontology claim. The latent binary state is a declared statistical target. Conditional independence of the three views is an assumption to be tested or justified in an application, and the global latent-label orientation still requires an external semantic anchor if the labels are to be interpreted scientifically.
+P74 does not make an experiential ontology claim. It quantifies uncertainty only under the P73 latent model and IID sampling. A failed nondegeneracy gate means the current data do not safely resolve the inversion; it is not proof that the population channel is degenerate. The global latent-label orientation still requires an external semantic anchor if the labels are to be interpreted scientifically.
 
-The next target-side problem is finite-sample channel recovery: determine how empirical uncertainty in the three-view joint law propagates through the nonlinear P73 inversion to confidence sets or lower confidence bounds for the P72 stability coefficients.
+The next target-side problem is model adequacy: develop falsifiable diagnostics for the P73-P74 conditional-independence assumption and characterize what remains identifiable when the target views have residual dependence beyond the proposed latent target.
 
 ---
 
