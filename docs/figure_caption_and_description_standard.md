@@ -41,6 +41,25 @@ The embedded description matters because figures are often opened directly, reus
 
 ---
 
+## Visual layout and connector standard
+
+The geometry of a research figure must communicate the same structure as its mathematics. A technically correct figure is not publication-ready if labels escape their containers, arrows float between unrelated objects, or dense text forces the reader to reconstruct the intended hierarchy.
+
+For box-and-arrow theorem figures, the following rules are mandatory:
+
+- **Text containment:** every visible label, equation, qualifier, and boundary statement must remain inside its intended panel or card. Long prose must be deliberately wrapped into separate lines rather than allowed to bleed across a border.
+- **Internal padding:** text must have visible breathing room from every card edge. The last text baseline must leave a safe lower margin, and headings must not collide with the first body line.
+- **Connector attachment:** a dependency arrow must start at the boundary of its source object and terminate at, or immediately against, the boundary of its destination object. Floating arrows with unexplained gaps are not acceptable.
+- **Connector meaning:** arrows must be used only for an explicit logical, computational, temporal, set-inclusion, or data-flow relation. Decorative arrows that could be mistaken for a theorem implication are prohibited.
+- **No collisions:** arrowheads, text, equations, card borders, and neighboring panels must not overlap. Connectors should occupy dedicated whitespace whenever possible.
+- **Consistent hierarchy:** peer panels should use aligned edges, comparable padding, and consistent typography. A stronger conclusion may be emphasized visually, but not by making the rest of the diagram difficult to read.
+- **Equation legibility:** equations must be short enough for the available width or split across logically meaningful lines. Font reduction is a last resort and must not make the mathematics harder to inspect than the surrounding prose.
+- **Canvas safety:** all rectangles, text baselines, paths, markers, and other explicit coordinates must remain inside the declared viewBox. Nothing should depend on browser clipping to appear correct.
+
+Where geometry is important to interpretation, regression tests should encode the intended layout, for example by checking panel bounds, safe text baselines, connector endpoints, canvas containment, or required visual stages. The goal is not pixel-perfect styling. The goal is to prevent a future edit or automated regeneration from reintroducing ambiguity, overflow, disconnected arrows, or accidental visual claims.
+
+---
+
 ## Caption style for theorem and conceptual figures
 
 A theorem or conceptual caption should answer four questions in plain technical language:
@@ -84,6 +103,6 @@ The catalog complements, rather than replaces:
 
 ## Automated quality guards
 
-Repository tests enforce the minimum mechanical requirements: SVG title/description metadata, catalog coverage, reader-facing README captions, and quantitative-atlas explanation fields. These checks do not replace scientific judgment, but they prevent undocumented or visually orphaned figures from silently entering the public research record.
+Repository tests enforce the minimum mechanical requirements: SVG title/description metadata, catalog coverage, reader-facing README captions, quantitative-atlas explanation fields, and geometry checks for figures whose layout carries theorem meaning. These checks do not replace scientific judgment, but they prevent undocumented, visually orphaned, overflowing, or structurally ambiguous figures from silently entering the public research record.
 
 A figure should be revised whenever a reader could reasonably ask, “What exactly am I supposed to infer from this?” and the answer is not immediately available beside or inside the visual.
