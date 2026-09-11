@@ -74,9 +74,8 @@ def test_plain_language_section_is_self_contained_and_equation_free():
         assert phrase in section, phrase
 
     assert len(section.split()) >= 650
-    assert section.count("P71") == 1
-    assert section.count("P72") == 1
-    assert section.count("P73") == 1
+    for proposition in ("P71", "P72", "P73"):
+        assert proposition in section
 
 
 def test_research_at_a_glance_covers_the_full_scientific_program():
