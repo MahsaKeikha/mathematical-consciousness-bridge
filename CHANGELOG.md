@@ -1,3 +1,19 @@
+# 0.78.0 - 2026-09-10
+
+## Proposition 78: certified continuous model separation
+
+- closes the continuous-model optimization gap left explicit by P77 for the P75 four-view binary latent family;
+- exposes the exact nine-parameter multi-affine structure of the sixteen-cell P75 observed-law map;
+- derives exact coordinatewise cell enclosures on axis-aligned parameter boxes;
+- converts those enclosures into certified L-infinity lower bounds on distance to every model law inside each box;
+- aggregates active-box bounds into a global lower bound over the complete continuous parameter cube;
+- derives an explicit mesh-gap convergence guarantee from the parameter-to-law Lipschitz bound;
+- implements exact-rational branch-and-bound for empirical count laws and dyadic box refinement;
+- preserves the P77 distinction between certified lower bounds and candidate-model upper bounds;
+- keeps the statistical sampling-radius certificate separate from the optimization certificate;
+- adds the P78 proof, provenance record, theorem figure, geometry guard, implementation, tests, and public research integration;
+- keeps non-rejection explicitly inconclusive and keeps the physical-to-experiential bridge open.
+
 # 0.77.0 - 2026-09-10
 
 ## Proposition 77: finite-sample full-law model-set separation

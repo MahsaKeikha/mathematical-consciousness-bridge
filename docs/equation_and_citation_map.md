@@ -1147,3 +1147,43 @@ P77 extends P76 from selected necessary polynomial restrictions to the complete 
 Proof: [P77](proposition_77_full_law_model_set_separation.md). Dedicated provenance: [P77 equation and provenance record](p77_equation_provenance.md). Implementation: [`full_law_model_set_separation.py`](../src/consciousness_bridge/full_law_model_set_separation.py). Tests: [`test_full_law_model_set_separation.py`](../tests/test_full_law_model_set_separation.py).
 
 The physical-to-experiential bridge remains open.
+
+# P78 certified continuous model separation
+
+P78 supplies a computable global lower-bound mechanism for the continuous P75 four-view binary latent family required by the P77 rejection theorem.
+
+- **Multi-affine observed-law map:** each of the sixteen P75 cell probabilities is affine in each of the nine parameters with all others held fixed.
+  **Status:** direct algebraic property of the standard latent-class parameterization; multi-affine box-extremum principles are standard.
+
+- **Exact box cell enclosure:**
+  \[
+  I_x(B)=[m_x(B),M_x(B)].
+  \]
+  **Status:** standard endpoint/vertex extremum property specialized to the P75 product structure.
+
+- **Certified box lower bound:**
+  \[
+  L_\infty(B;\widehat P)=\max_x\operatorname{dist}(\widehat P(x),I_x(B))
+  \le\inf_{	heta\in B}\|\widehat P-F(	heta)\|_\infty.
+  \]
+  **Status:** elementary interval lower bound.
+
+- **Global partition lower bound:**
+  \[
+  L_{\mathcal B}=\min_{B\in\mathcal B}L_\infty(B;\widehat P)
+  \le d_\infty(\widehat P,\mathcal M_{4,2}).
+  \]
+  **Status:** standard branch-and-bound aggregation, integrated here with P77.
+
+- **Mesh-gap certificate:**
+  \[
+  0\le d_\infty(\widehat P,\mathcal M_{4,2})-L_{\mathcal B}\le\eta(\mathcal B).
+  \]
+  **Status:** repository-specific specialization from the P75 derivative bounds and box enclosure.
+
+- **P77 handoff:** a certified P78 lower bound may trigger P77 only when it exceeds a separately valid upper bound on the sampling radius.
+  **Status:** repository-specific composition preserving the required inequality directions.
+
+Proof: [P78](proposition_78_certified_continuous_model_separation.md). Dedicated provenance: [P78 equation and provenance record](p78_equation_provenance.md). Implementation: [`certified_continuous_model_separation.py`](../src/consciousness_bridge/certified_continuous_model_separation.py). Tests: [`test_certified_continuous_model_separation.py`](../tests/test_certified_continuous_model_separation.py).
+
+The physical-to-experiential bridge remains open.
