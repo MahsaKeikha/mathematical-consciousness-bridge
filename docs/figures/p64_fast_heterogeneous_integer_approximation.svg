@@ -44,7 +44,7 @@
 
   <g id="block-floor" data-x="815" data-y="130" data-w="330" data-h="220">
     <rect x="815" y="130" width="330" height="220" rx="18" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
-    <text x="840" y="168" class="head">3. Floor and preserve feasibility</text>
+    <text x="840" y="168" class="head">3. Feasible integer floor</text>
     <text x="840" y="211" class="eq">kₑ = floor(nₑ*) ≥ 1</text>
     <text x="840" y="247" class="eq">Σ cₑkₑ ≤ Σ cₑnₑ* = B</text>
     <text x="840" y="290" class="copy">Whole counts remain inside</text>
