@@ -1,12 +1,35 @@
 cff-version: 1.2.0
-message: "If you use this research program, please cite the repository and the method-specific sources relevant to the result."
+message: "If this research program, one of its theorem results, figures, algorithms, or implementations contributes to your work, please cite the research program and the method-specific source relevant to the result."
 title: "Mathematical Consciousness Bridge"
 version: 0.70.0
 date-released: 2026-09-10
 authors:
   - family-names: Keikha
     given-names: Mahsa
-    suffix: PhD
+    name-suffix: PhD
 type: software
+license: MIT
 repository-code: "https://github.com/MahsaKeikha/mathematical-consciousness-bridge"
-abstract: "A formal mathematical-physics research program for physical-to-experiential bridge principles, representation invariance, bridge-complete signatures, intervention-resolved causal structure, component-minimality and pairwise-irredundancy audits, representation-invariant temporal continuation, finite-sample temporal certification, independent composition and coupling analysis, coarse-graining and refinement recoverability, quantitative scale-sufficiency certification by approximate reconstruction, fundamental physical-sufficiency factorization and residual tests, finite-sample residual certification, descriptor-refinement residual-persistence audits, simultaneous refinement-chain certification, adaptive descriptor-selection certification, anytime-valid refinement certification, directed-influence scale certification, partition-irreducibility scale certification, partition-lattice node aggregation, intervention node-aggregation compatibility, response-geometry node aggregation, full P11 scale compatibility, intervention and temporal quotient compatibility, complete approximate operational-scale certification, quantum operational sufficiency, finite-data quantum model-set non-factorization, continuous quantum-region regularity obstruction, trace-ball quantum envelope certification, fixed-IC quantum regular-bridge sample complexity, optimal quantum-target resource allocation, finite-family post-selection certification, shared-preparation graph allocation, budget-constrained witness-graph selection, anytime-valid sequential witness-graph refinement, gap-dependent sequential stopping complexity, dyadic certification scheduling, bounded-starvation asynchronous sampling, heterogeneous finite-window service-rate stopping, capacity-optimal service allocation, residual-demand reoptimization, metric switching-cost residual scheduling, pruning-aware metric switching-cost monotonicity, moving-start metric reoptimization stability, switching-metric perturbation stability, finite-data switching-metric uncertainty, optimal transition-calibration allocation, integer transition-calibration allocation, exact integer transition-calibration allocation, heterogeneous-cost transition-calibration allocation, exact heterogeneous-cost integer calibration, fast certified heterogeneous integer approximation, lower-bounded heterogeneous calibration, residual-exact calibration augmentation, global integer optimality certification, Lagrangian optimality gap certification, certified dual multiplier optimization, primal-dual gap decomposition, robust experiment design, falsification, and conditional consciousness theorems."
+url: "https://github.com/MahsaKeikha/mathematical-consciousness-bridge"
+keywords:
+  - consciousness
+  - mathematical physics
+  - physical-to-experiential bridge
+  - factorization
+  - causal inference
+  - information theory
+  - quantum foundations
+  - finite-sample inference
+  - falsification
+  - experimental design
+abstract: "An ongoing mathematical-physics research program developing a falsifiable test architecture for physical-to-experiential bridge claims. The repository formalizes deterministic and stochastic factorization tests, intervention-resolved causal structure, temporal and multiscale compatibility, finite-data certification, quantum operational sufficiency tests, adaptive experiment design, and certified calibration and optimization. The current experimental-design frontier includes lower-bounded heterogeneous calibration and exact primal-dual gap decomposition. The current documented theorem frontier is P70. The physical-to-experiential bridge remains open, and the project does not assume that consciousness is a scalar, state of matter, quantum variable, or additional spacetime dimension."
+preferred-citation:
+  type: generic
+  authors:
+    - family-names: Keikha
+      given-names: Mahsa
+      name-suffix: PhD
+  title: "Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem"
+  year: 2026
+  url: "https://github.com/MahsaKeikha/mathematical-consciousness-bridge"
+  notes: "Version 0.70.0. Ongoing mathematical-physics research program. Current documented theorem frontier: P70."

@@ -714,7 +714,7 @@ The dedicated record preserves the complete lineage from P1 through P70, while t
 | Item | Current state |
 | --- | --- |
 | Public theorem frontier | **P70** |
-| Documented release | **v0.70.0** |
+| Documented version | **v0.70.0** |
 | Proposition-level results | **70** |
 | Equation-driven quantitative figures | **61** |
 | Physical-to-experiential bridge | **Open physical-to-experiential bridge** |
@@ -741,10 +741,40 @@ The scientific target is therefore precise: continue reducing ambiguity in the p
 | Browse the public research website | [Website entry point](website/index.html) |
 | Browse every visual | [Visual atlas](website/visual-atlas.html) |
 | Audit code and tests | [`src/consciousness_bridge/`](src/consciousness_bridge/) and [`tests/`](tests/) |
-| Cite the project | [`CITATION.cff`](CITATION.cff) |
+| Cite the research | [Citation guide](CITATION.md), [`CITATION.cff`](CITATION.cff), and [`CITATION.bib`](CITATION.bib) |
 
 ---
 
 ## Scope statement
 
 This repository is an ongoing research program. Its purpose is to make physical-to-experiential claims harder to state vaguely and easier to test rigorously. It should be read as a sequence of explicit mathematical conditions, counterexample constructions, finite-data certificates, and experimental design tools. The final bridge remains a scientific target, not a conclusion assumed in advance.
+
+---
+
+# Citation
+
+If this research program, one of its propositions, figures, algorithms, or implementations contributes to your work, please cite it. When a specific theorem or artifact is central to an argument, cite both the overall research program and the proposition or artifact used.
+
+## Preferred scholarly citation
+
+> **Keikha, M. (2026). *Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem* (Version 0.70.0). GitHub research repository. https://github.com/MahsaKeikha/mathematical-consciousness-bridge**
+
+## BibTeX
+
+```bibtex
+@misc{keikha2026mathematicalconsciousnessbridge,
+  author       = {Keikha, Mahsa},
+  title        = {Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem},
+  year         = {2026},
+  version      = {0.70.0},
+  howpublished = {GitHub research repository},
+  url          = {https://github.com/MahsaKeikha/mathematical-consciousness-bridge},
+  note         = {Ongoing research program. Current documented theorem frontier: P70.}
+}
+```
+
+For theorem-level attribution, identify the proposition explicitly, for example: `Proposition PXX, "Proposition title," in Mathematical Consciousness Bridge, Version 0.70.0`, together with the direct proposition URL. The [Detailed proposition record](docs/detailed_proposition_record.md) and [Theorem roadmap](docs/theorem_roadmap.md) provide the canonical proposition titles and proof links.
+
+Because the repository is an evolving scientific record, reproducible citations should include the **documented version** and, when a result depends on an exact repository state, the **Git commit SHA** used in the analysis. No DOI is currently asserted. A DOI should be added only after a versioned archival deposit has actually issued one.
+
+Citation resources: **[full citation guide](CITATION.md)** | **[machine-readable CFF](CITATION.cff)** | **[BibTeX](CITATION.bib)**
