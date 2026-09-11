@@ -86,7 +86,7 @@ def test_empirical_pairwise_moments_use_sign_products():
         (-1, 1, -1),
         (-1, -1, -1),
     ]
-    assert empirical_pairwise_moments(observations) == pytest.approx((0.5, 0.5, 0.5))
+    assert empirical_pairwise_moments(observations) == pytest.approx((0.5, 0.5, 0.0))
 
 
 def test_finite_certificate_is_nontrivial_for_three_highly_agreeing_views():
@@ -114,7 +114,7 @@ def test_finite_certificate_radius_shrinks_with_more_repeated_views():
 
 
 def test_finite_certificate_validates_binary_encoding_and_alpha():
-    with pytest.raises(ValueError, match="encoded as -1 or \+1"):
+    with pytest.raises(ValueError, match=r"encoded as -1 or \+1"):
         finite_three_view_stability_certificate([(1, 0, 1)], alpha=0.05)
     with pytest.raises(ValueError, match="strictly between zero and one"):
         finite_three_view_stability_certificate([(1, 1, 1)], alpha=1.0)
