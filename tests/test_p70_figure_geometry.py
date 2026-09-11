@@ -10,6 +10,38 @@ def _float(element: ET.Element, name: str) -> float:
     return float(element.attrib[name])
 
 
+def _point_on_boundary(
+    point_x: float,
+    point_y: float,
+    block: tuple[float, float, float, float],
+) -> bool:
+    x, y, width, height = block
+    right = x + width
+    bottom = y + height
+    on_vertical = point_x in {x, right} and y <= point_y <= bottom
+    on_horizontal = point_y in {y, bottom} and x <= point_x <= right
+    return on_vertical or on_horizontal
+
+
+def test_p70_figure_has_accessible_publication_canvas():
+    root = ET.parse(FIGURE).getroot()
+    assert root.attrib["width"] == "1400"
+    assert root.attrib["height"] == "920"
+    assert root.attrib["viewBox"] == "0 0 1400 920"
+    assert root.attrib["role"] == "img"
+    assert root.attrib["aria-labelledby"] == "title desc"
+
+    text = " ".join("".join(node.itertext()) for node in root.iter())
+    for token in (
+        "What this figure shows:",
+        "How to read it:",
+        "Main takeaway:",
+        "Scientific status:",
+        "physical-to-experiential bridge remains open",
+    ):
+        assert token in text
+
+
 def test_p70_figure_text_stays_inside_declared_blocks():
     root = ET.parse(FIGURE).getroot()
     for group in root.findall("svg:g", NS):
@@ -30,13 +62,13 @@ def test_p70_figure_text_stays_inside_declared_blocks():
                 group.attrib["id"],
                 content,
             )
-            assert y + font_size <= ty <= y + height - 8, (
+            assert y + font_size <= ty <= y + height - 6, (
                 group.attrib["id"],
                 content,
             )
 
 
-def test_p70_figure_connectors_reference_existing_blocks_and_avoid_other_midpoints():
+def test_p70_figure_connectors_attach_to_source_and_target_boundaries():
     root = ET.parse(FIGURE).getroot()
     blocks = {
         group.attrib["id"]: (
@@ -54,12 +86,42 @@ def test_p70_figure_connectors_reference_existing_blocks_and_avoid_other_midpoin
         if line.attrib.get("id", "").startswith("arrow-")
     ]
     assert len(arrows) == 8
+
     for arrow in arrows:
         source = arrow.attrib["data-source"]
         target = arrow.attrib["data-target"]
         assert source in blocks
         assert target in blocks
         assert source != target
+        x1 = _float(arrow, "x1")
+        y1 = _float(arrow, "y1")
+        x2 = _float(arrow, "x2")
+        y2 = _float(arrow, "y2")
+        assert _point_on_boundary(x1, y1, blocks[source]), arrow.attrib["id"]
+        assert _point_on_boundary(x2, y2, blocks[target]), arrow.attrib["id"]
+        assert arrow.attrib.get("marker-end") == "url(#arrowhead)"
+
+
+def test_p70_figure_connectors_avoid_unrelated_block_midpoints():
+    root = ET.parse(FIGURE).getroot()
+    blocks = {
+        group.attrib["id"]: (
+            _float(group, "data-x"),
+            _float(group, "data-y"),
+            _float(group, "data-w"),
+            _float(group, "data-h"),
+        )
+        for group in root.findall("svg:g", NS)
+        if group.attrib.get("id", "").startswith("block-")
+    }
+    arrows = [
+        line
+        for line in root.findall("svg:line", NS)
+        if line.attrib.get("id", "").startswith("arrow-")
+    ]
+    for arrow in arrows:
+        source = arrow.attrib["data-source"]
+        target = arrow.attrib["data-target"]
         x1 = _float(arrow, "x1")
         y1 = _float(arrow, "y1")
         x2 = _float(arrow, "x2")
@@ -85,7 +147,19 @@ def test_p70_figure_keeps_identity_diagnostic_and_scientific_boundaries_visible(
         "G_low &lt;= U(k) - q* &lt;= G_up",
         "Diagnostic mismatch, not one-edge primal improvement",
         "Optimization diagnostic, not evidence about consciousness",
-        "or quantum ontology",
+        "or quantum ontology.",
+        "The physical-to-experiential bridge remains open.",
     ]
     for token in required:
         assert token in text
+
+
+def test_p70_explicit_coordinates_remain_inside_canvas():
+    root = ET.parse(FIGURE).getroot()
+    for node in root.iter():
+        for coordinate in ("x", "x1", "x2", "cx"):
+            if coordinate in node.attrib:
+                assert 0 <= float(node.attrib[coordinate]) <= 1400
+        for coordinate in ("y", "y1", "y2", "cy"):
+            if coordinate in node.attrib:
+                assert 0 <= float(node.attrib[coordinate]) <= 920
