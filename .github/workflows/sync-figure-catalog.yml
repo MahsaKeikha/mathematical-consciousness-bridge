@@ -1,0 +1,57 @@
+name: sync-figure-catalog
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/sync-figure-catalog.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - name: Install pinned reproducibility environment
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+          python -m pip install -r requirements-reproducibility.txt
+      - name: Regenerate complete figure publication surfaces
+        run: python scripts/generate_all_figures.py
+      - name: Require catalog-only synchronization
+        run: |
+          python - <<'PY'
+          import subprocess
+
+          changed = subprocess.check_output(
+              ["git", "diff", "--name-only"], text=True
+          ).splitlines()
+          allowed = {"docs/figure_catalog.md"}
+          unexpected = set(changed) - allowed
+          if unexpected:
+              raise SystemExit(
+                  "unexpected generated changes: " + ", ".join(sorted(unexpected))
+              )
+          print("generated changes:", changed or "none")
+          PY
+          git diff --check
+      - name: Commit exact generated catalog
+        run: |
+          if git diff --quiet -- docs/figure_catalog.md; then
+            echo "Figure catalog already synchronized."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/figure_catalog.md
+          git commit -m "Synchronize generated P85 figure catalog"
+          git push origin HEAD:main
