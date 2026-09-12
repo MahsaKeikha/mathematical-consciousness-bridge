@@ -21,6 +21,34 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Make repair helper idempotent
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("scripts/repair_p85_reader_contract.py")
+          source = path.read_text(encoding="utf-8")
+          marker = "    if 'CURRENT_FRONTIER = \"P85\"' not in text or \"range(1, 86)\" not in text:\n"
+          if "    p85_core = (\n" not in source:
+              addition = '''    p85_core = (
+                  '    "docs/proposition_85_exact_triple_projection_parity_functional.md",\\n'
+                  '    "docs/p85_equation_provenance.md",\\n'
+              )
+              while p85_core + p85_core in text:
+                  text = text.replace(p85_core + p85_core, p85_core)
+              p84_stale = (
+                  '        "current P84 frontier",\\n'
+                  '        "through Proposition 84",\\n'
+                  '        "Eighty-four results",\\n'
+              )
+              while p84_stale + p84_stale in text:
+                  text = text.replace(p84_stale + p84_stale, p84_stale)
+          '''
+              if marker not in source:
+                  raise RuntimeError("could not locate verifier-promotion guard in repair helper")
+              source = source.replace(marker, addition + marker, 1)
+              path.write_text(source, encoding="utf-8")
+          PY
       - name: Repair P85 reader contract
         run: python scripts/repair_p85_reader_contract.py
       - name: Normalize P84 and P85 Research Map semantics
@@ -63,6 +91,6 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add website/index.html website/visual-atlas.html website/start-here.html website/research-map.html scripts/verify_repository.py tests/test_reader_experience.py
+          git add website/index.html website/visual-atlas.html website/start-here.html website/research-map.html scripts/verify_repository.py scripts/repair_p85_reader_contract.py tests/test_reader_experience.py
           git commit -m "Repair P85 reader and verification contract"
           git push origin HEAD:main
