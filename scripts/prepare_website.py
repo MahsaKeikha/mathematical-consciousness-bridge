@@ -2,9 +2,10 @@
 
 The repository keeps page content as plain HTML files. This build step copies the
 website into a deployment directory and guarantees that every page loads the
-shared navigation behavior, publication typography, reader-link behavior, and
-author attribution. Keeping cross-page behavior centralized prevents page-to-
-page drift while preserving a fully auditable static-site build.
+shared navigation behavior, publication typography, reader-link behavior,
+research-guide interaction styling, and author attribution. Keeping cross-page
+behavior centralized prevents page-to-page drift while preserving a fully
+auditable static-site build.
 """
 
 from __future__ import annotations
@@ -14,7 +15,7 @@ import re
 import shutil
 from pathlib import Path
 
-ASSET_VERSION = "20260912-nav3"
+ASSET_VERSION = "20260912-nav4"
 SCRIPT_TAG = f'<script defer src="app.js?v={ASSET_VERSION}"></script>'
 READER_LINKS_SCRIPT_TAG = '<script defer src="reader-links.js"></script>'
 FOOTER_SCRIPT_TAG = '<script defer src="footer.js"></script>'
@@ -24,12 +25,18 @@ NAVIGATION_V2_STYLE_TAG = (
 )
 PUBLICATION_STYLE_TAG = '<link rel="stylesheet" href="publication.css" />'
 PUBLICATION_V2_STYLE_TAG = '<link rel="stylesheet" href="publication-v2.css" />'
+RESEARCH_GUIDE_STYLE_TAG = (
+    f'<link rel="stylesheet" href="research-guide-v2.css?v={ASSET_VERSION}" />'
+)
 
 APP_SCRIPT_PATTERN = re.compile(
     r'<script\s+defer\s+src="app\.js(?:\?v=[^"]+)?"></script>'
 )
 NAVIGATION_V2_STYLE_PATTERN = re.compile(
     r'<link\s+rel="stylesheet"\s+href="navigation-v2\.css(?:\?v=[^"]+)?"\s*/?>'
+)
+RESEARCH_GUIDE_STYLE_PATTERN = re.compile(
+    r'<link\s+rel="stylesheet"\s+href="research-guide-v2\.css(?:\?v=[^"]+)?"\s*/?>'
 )
 TOPBAR_NAV_PATTERN = re.compile(
     r'(<header\s+class="topbar">.*?<nav(?:\s[^>]*)?>).*?(</nav>)',
@@ -46,10 +53,11 @@ FALLBACK_NAV = (
 
 
 def _normalize_navigation_assets(text: str) -> str:
-    """Replace stale shared-navigation URLs with cache-busted canonical URLs."""
+    """Replace stale shared asset URLs with cache-busted canonical URLs."""
 
     text = APP_SCRIPT_PATTERN.sub(SCRIPT_TAG, text)
     text = NAVIGATION_V2_STYLE_PATTERN.sub(NAVIGATION_V2_STYLE_TAG, text)
+    text = RESEARCH_GUIDE_STYLE_PATTERN.sub(RESEARCH_GUIDE_STYLE_TAG, text)
     return text
 
 
@@ -94,6 +102,8 @@ def prepare_website(source: Path, output: Path) -> None:
             additions.append(PUBLICATION_STYLE_TAG)
         if PUBLICATION_V2_STYLE_TAG not in text:
             additions.append(PUBLICATION_V2_STYLE_TAG)
+        if RESEARCH_GUIDE_STYLE_TAG not in text:
+            additions.append(RESEARCH_GUIDE_STYLE_TAG)
         if SCRIPT_TAG not in text:
             additions.append(SCRIPT_TAG)
         if READER_LINKS_SCRIPT_TAG not in text:
@@ -113,6 +123,7 @@ def prepare_website(source: Path, output: Path) -> None:
         "navigation-v2.css",
         "publication.css",
         "publication-v2.css",
+        "research-guide-v2.css",
     )
     for asset in required_assets:
         if not (output / asset).is_file():
