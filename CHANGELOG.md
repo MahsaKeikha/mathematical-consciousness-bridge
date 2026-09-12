@@ -331,6 +331,14 @@
 
 # Changelog
 
+## 0.82.0 - 2026-09-12 - P82 exact nested projection-contrast certificate
+
+- Added exact P75 parameter-box intervals for nested residual events A\B.
+- Added 256 genuinely new nested projection contrasts and P82 >= P81 dominance.
+- Added an exact-rational strict witness with P80=0, P81=1/16, and P82=1/12.
+- Added the P82 proof, equation-provenance record, theorem figure, and regression tests.
+- Retained the P78 mesh-width upper certificate and P79 one-sided sampling-radius handoff.
+
 ## 0.45.0 - 2026-09-09
 
 ### Added

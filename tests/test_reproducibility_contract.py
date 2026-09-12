@@ -1,3 +1,4 @@
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -7,6 +8,17 @@ def _read(relative: str) -> str:
     return (ROOT / relative).read_text(encoding="utf-8")
 
 
+def _project_version() -> str:
+    source = _read("pyproject.toml")
+    match = re.search(
+        r'^version = "([0-9]+\.[0-9]+\.[0-9]+)"$',
+        source,
+        re.MULTILINE,
+    )
+    assert match is not None
+    return match.group(1)
+
+
 def test_publication_figure_environment_is_pinned() -> None:
     lock = _read("requirements-figures.txt")
     assert "matplotlib==3.11.2" in lock
@@ -14,14 +26,18 @@ def test_publication_figure_environment_is_pinned() -> None:
 
 
 def test_plot_generators_use_deterministic_svg_metadata_and_ids() -> None:
+    version = _project_version()
     for path in (
         "scripts/generate_quantitative_atlas.py",
         "scripts/generate_quantum_foundations_atlas.py",
     ):
         source = _read(path)
-        assert '"svg.hashsalt": "mathematical-consciousness-bridge-v0.81.0"' in source
+        assert (
+            f'"svg.hashsalt": "mathematical-consciousness-bridge-v{version}"'
+            in source
+        )
         assert '"Date": None' in source
-        assert '"Creator": "Mathematical Consciousness Bridge v0.81.0"' in source
+        assert f'"Creator": "Mathematical Consciousness Bridge v{version}"' in source
 
 
 def test_unified_figure_build_reapplies_documentation_metadata() -> None:

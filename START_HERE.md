@@ -1,6 +1,6 @@
 # Start Here: Mathematical Consciousness Bridge
 
-**A reader-first guide to the research question, the 81-result theorem program, the code, and the scientific boundaries.**
+**A reader-first guide to the research question, the 82-result theorem program, the code, and the scientific boundaries.**
 
 If this is your first time in the repository, start on this page before opening the full README or individual theorem files.
 
@@ -10,7 +10,7 @@ If this is your first time in the repository, start on this page before opening 
 
 The project does **not** begin by choosing a favorite formula for consciousness. It begins by asking what a scientifically defensible bridge claim would have to survive: representation changes, hidden variables, coarse-graining, target circularity, noisy measurement, non-identifiability, finite data, model inadequacy, and uncertified optimization.
 
-The current release is **v0.81.0**. The repository contains **81 proposition-level results**. The current theorem frontier is **P81**. The physical-to-experiential bridge itself remains open.
+The current release is **v0.82.0**. The repository contains **82 proposition-level results**. The current theorem frontier is **P82**. The physical-to-experiential bridge itself remains open.
 
 ---
 
@@ -21,7 +21,7 @@ flowchart LR
     A[Physical system\nstate, dynamics, interventions] --> B[Operational physical description\ninvariance, causality, time, scale]
     B --> C[Physical sufficiency test\nP19-P24]
     C --> D[Target integrity\nprovenance + measurement\nP71-P74]
-    D --> E[Target-model adequacy\nP75-P81]
+    D --> E[Target-model adequacy\nP75-P82]
     E --> F[Finite-data decision\ncertified rejection / inconclusive]
     F --> G[Physical-to-experiential bridge\nSTILL OPEN]
 
@@ -63,14 +63,14 @@ The repository therefore makes a deliberate distinction between **mathematical c
 | **A first-time reader** | this page | [README](README.md) → [Research Navigation](docs/research_navigation.md) |
 | **A mathematician** | [Theorem Roadmap](docs/theorem_roadmap.md) | [Detailed Proposition Record](docs/detailed_proposition_record.md) → proposition proofs → [Equation and Citation Map](docs/equation_and_citation_map.md) |
 | **A physicist** | [Bridge Problem](docs/bridge_problem.md) | P11-P19 → [Quantum Foundations and Bridge Test](docs/quantum_foundations_and_bridge_test.md) → P38-P44 |
-| **A consciousness researcher** | [Bridge Problem](docs/bridge_problem.md) | P19 → P71-P81 → [Falsification Program](docs/falsification_program.md) |
-| **An experimentalist or statistician** | P20-P24 | P39-P44 → P47-P60 → P74-P81 |
+| **A consciousness researcher** | [Bridge Problem](docs/bridge_problem.md) | P19 → P71-P82 → [Falsification Program](docs/falsification_program.md) |
+| **An experimentalist or statistician** | P20-P24 | P39-P44 → P47-P60 → P74-P82 |
 | **A software reviewer** | [pyproject.toml](pyproject.toml) | [`src/consciousness_bridge/`](src/consciousness_bridge/) → [`tests/`](tests/) → theorem/provenance files |
 | **A visual reader** | [Figure Catalog](docs/figure_catalog.md) | [Visual Atlas](website/visual-atlas.html) → theorem figures linked from the roadmap |
 
 ---
 
-## The 81 results, organized by scientific role
+## The 82 results, organized by scientific role
 
 The proposition numbers record development order. They do **not** imply that every later proposition depends on every earlier one.
 
@@ -84,13 +84,13 @@ The proposition numbers record development order. They do **not** imply that eve
 | **P45-P60** | Adaptive experiment design, scheduling, switching, and transition calibration | Collect evidence efficiently while preserving validity. |
 | **P61-P70** | Calibration and optimization | Solve downstream finite-resource allocation problems once the scientific witness is already defined. |
 | **P71-P74** | Target provenance and target measurement | Prevent circular targets and quantify whether noisy target measurements are identifiable and reliable. |
-| **P75-P81** | Target-model adequacy and certified continuous-family separation | Test the declared target-measurement model itself, including finite-data rejection and exact-rational global separation certificates. |
+| **P75-P82** | Target-model adequacy and certified continuous-family separation | Test the declared target-measurement model itself, including finite-data rejection and exact-rational global separation certificates. |
 
 For the complete one-row-per-proposition index, use the [Theorem Roadmap](docs/theorem_roadmap.md) and [Research Navigation](docs/research_navigation.md).
 
 ---
 
-## The current frontier: P71-P81 in plain language
+## The current frontier: P71-P82 in plain language
 
 The newest branch returns directly to a basic scientific problem: before a physical descriptor can be judged sufficient for an experiential target, how do we know the **target itself** and the **way we measure it** are scientifically defensible?
 
@@ -155,7 +155,7 @@ This structure is designed so that a skeptical reader can audit the mathematics 
 | \(I(E;\Omega\mid T)\) | residual conditional information used in the stochastic sufficiency formulation |
 | \(E^\star\) | latent target before target-measurement noise |
 | \(Y\) | observed target measurement |
-| \(P75\) model | declared four-view binary latent target-measurement family used in P75-P81 |
+| \(P75\) model | declared four-view binary latent target-measurement family used in P75-P82 |
 | \(L_{78},L_{80},L_{81}\) | progressively tighter certified lower bounds used in continuous-model separation |
 
 Notation is proposition-specific when needed; every proof file defines its local objects explicitly.
@@ -192,10 +192,14 @@ A reader should leave the repository with five boundaries completely clear:
 
 ## Current research status
 
-**Version:** 0.81.0  
+**Version:** 0.82.0  
 **Proposition frontier:** P81  
 **Proposition-level results:** 81  
 **Scientific status of the bridge:** open  
 **Repository standard:** theorem + proof + implementation + tests + provenance + explicit scientific boundary where applicable
 
 The project is intended to remain difficult to overclaim. A result is strongest when a reader can see not only what it establishes, but also exactly what it leaves unresolved.
+
+## Current theorem frontier: P82
+
+[P82: Exact Nested Projection-Contrast Certificate](docs/proposition_82_exact_nested_projection_contrast.md) strengthens P81 by computing exact P75 parameter-box ranges for non-cylinder residual events formed from nested projected cylinders. It preserves the one-sided model-rejection logic and does not identify any latent state with consciousness.

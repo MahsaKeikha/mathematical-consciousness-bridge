@@ -13,6 +13,23 @@ def _plain_language_section(text: str) -> str:
     return text[start:end]
 
 
+def _frontier() -> int:
+    numbers: list[int] = []
+    for path in DOCS.glob("proposition_*_*.md"):
+        match = re.match(r"proposition_(\d+)_", path.name)
+        if match:
+            numbers.append(int(match.group(1)))
+    assert numbers
+    return max(numbers)
+
+
+def _project_version() -> str:
+    pyproject = (ROOT / "pyproject.toml").read_text(encoding="utf-8")
+    match = re.search(r'^version\s*=\s*"([^"]+)"', pyproject, flags=re.MULTILINE)
+    assert match is not None
+    return match.group(1)
+
+
 def test_p79_core_artifacts_exist() -> None:
     required = (
         DOCS / "proposition_79_certified_sampling_radius.md",
@@ -74,26 +91,37 @@ def test_p79_plain_language_explains_why_rounding_direction_matters() -> None:
         assert forbidden not in plain, forbidden
 
 
-def test_p79_release_history_survives_p81_frontier() -> None:
+def test_p79_release_history_survives_later_frontiers() -> None:
     readme = README.read_text(encoding="utf-8")
-    pyproject = (ROOT / "pyproject.toml").read_text(encoding="utf-8")
     cff = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
     bib = (ROOT / "CITATION.bib").read_text(encoding="utf-8")
     citation = (ROOT / "CITATION.md").read_text(encoding="utf-8")
     changelog = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
+    frontier = _frontier()
+    version = _project_version()
 
-    # Current release metadata follows the P81 frontier.
-    assert 'version = "0.81.0"' in pyproject
-    assert "version: 0.81.0" in cff
-    assert "Current documented theorem frontier: P81" in cff
-    assert "version      = {0.81.0}" in bib
-    assert "81 proposition-level results" in readme
-    assert "69 equation-driven quantitative figures" in readme
-    assert "The theorem frontier is P81." in readme
-    assert "| Public theorem frontier | **P81** |" in readme
-    assert "Read the complete P1 to P81 detailed proposition record" in readme
+    # Current release metadata and the current theorem frontier are separate
+    # concepts. During theorem development the frontier may advance before the
+    # next formal release version is cut, but all public metadata must agree on
+    # each concept independently.
+    assert f"version: {version}" in cff
+    assert f"version      = {{{version}}}" in bib
+    assert f"v{version}" in readme
+    assert f"Current documented theorem frontier: P{frontier}" in cff
+    assert f"{frontier} proposition-level results" in readme
+    assert f"The theorem frontier is P{frontier}." in readme
+    assert f"| Public theorem frontier | **P{frontier}** |" in readme
+    assert f"Read the complete P1 to P{frontier} detailed proposition record" in readme
 
-    # P79 remains part of the permanent citable history after the frontier advances.
+    figure_match = re.search(
+        r"(\d+) equation-driven quantitative figures",
+        readme,
+    )
+    assert figure_match is not None
+    assert int(figure_match.group(1)) >= 69
+
+    # P79 and intervening formal releases remain part of the permanent citable
+    # history after the theorem frontier advances.
     assert "Proposition 79" in citation
     assert "# 0.79.0 - 2026-09-11" in changelog
     assert "# 0.81.0 - 2026-09-11" in changelog
@@ -101,7 +129,7 @@ def test_p79_release_history_survives_p81_frontier() -> None:
 
     match = re.search(r"P1 through P(\d+) with explicit dependency branches", readme)
     assert match is not None
-    assert int(match.group(1)) == 81
+    assert int(match.group(1)) == frontier
 
 
 def test_p79_preserves_one_sided_certification_logic() -> None:
