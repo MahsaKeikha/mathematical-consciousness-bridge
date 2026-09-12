@@ -4,6 +4,7 @@ from pathlib import Path
 
 from consciousness_bridge.certified_continuous_model_separation import (
     P78ParameterBox,
+    linf_distance_exact,
     p75_four_view_law_exact,
 )
 from consciousness_bridge.nested_projection_contrast_separation import (
@@ -188,6 +189,24 @@ def test_p83_strictly_improves_p82_on_clean_exact_rational_witness() -> None:
     assert witness.negative_interval_lower <= witness.negative_empirical_probability
     assert witness.negative_empirical_probability <= witness.negative_interval_upper
 
+    exact_upper_parameters = (
+        Fraction(5, 16),
+        Fraction(1, 4),
+        Fraction(0),
+        Fraction(1),
+        Fraction(3, 4),
+        Fraction(0),
+        Fraction(3, 4),
+        Fraction(1, 2),
+        Fraction(3, 4),
+    )
+    exact_upper = linf_distance_exact(
+        empirical,
+        p75_four_view_law_exact(exact_upper_parameters),
+    )
+    assert exact_upper == Fraction(5, 128)
+    assert p83 == exact_upper
+
 
 def test_p83_always_dominates_p82_on_same_box() -> None:
     empirical = tuple(Fraction(1, 16) for _ in range(16))
@@ -241,7 +260,7 @@ def test_p83_source_states_exactness_scope_and_scientific_boundary() -> None:
         "P80=P81=P82=0",
         "P83=5/128",
         "does not validate",
-        "latent state with consciousness",
+        "identify a latent state",
         "physical-to-experiential bridge",
     )
     for token in required:
