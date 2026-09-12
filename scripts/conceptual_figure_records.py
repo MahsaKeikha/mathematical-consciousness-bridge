@@ -5,6 +5,17 @@ from pathlib import Path
 from typing import Any
 
 RECORDS: dict[str, dict[str, str]] = {
+    "docs/figures/p58_finite_data_metric_uncertainty.svg": {
+        "title": "P58 finite-data switching-metric uncertainty and robust routing",
+        "description": (
+            "What this figure shows: P58 turns noisy pairwise transition measurements into a simultaneous confidence envelope for an unknown true switching metric and propagates that envelope through the exact P54 block-route family. The empirical pairwise center is allowed to violate triangle inequalities; the true metric property remains a declared physical/model assumption. "
+            "How to read it: move left to right across the upper row from the bounded pairwise observation model, to the simultaneous Hoeffding event, to lower and upper transition envelopes. The center theorem panel brackets the unknown exact P54 route optimum with lower and upper envelope optima computed over the same fixed route family. Follow the three lower branches to the robust-route regret certificate, the strict comparison of two reoptimization states, and the common-radius sample-size certificate. "
+            "Main takeaway: finite noisy transition data can support valid route-level uncertainty and regret statements without treating the empirical cost table as an exact metric. The common-sample inequality is sufficient, not a minimax lower bound, and adaptive pair selection requires separate statistical accounting."
+        ),
+        "status": (
+            "Finite-data scheduling and confidence-envelope theorem under the declared bounded pairwise observation model. It does not validate the transition-cost measurement model, infer metric truth from noisy observations, justify unrestricted adaptive pruning, identify a scheduling variable with consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness."
+        ),
+    },
     "docs/figures/p59_optimal_transition_calibration.svg": {
         "title": "P59 exact continuous transition-calibration allocation",
         "description": (

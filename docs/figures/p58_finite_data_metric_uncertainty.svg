@@ -1,88 +1,113 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
-  <title id="title">P58 uncertainty envelopes</title>
-  <desc id="desc">What this figure shows: Read each interval as the finite-data uncertainty attached to a transition or switching quantity. Robust routing must respect the complete certified envelope rather than treating a point estimate as exact. How to read it: use the labels, axes, panels, arrows, and legends as explicit guides; do not infer an unstated physical or experiential identity from the drawing. Scientific status: Visual-atlas explanation; theorem and provenance pages control formal claims.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1000" viewBox="0 0 1200 1000" role="img" aria-labelledby="title desc">
+  <title id="title">P58 finite-data switching-metric uncertainty and robust routing</title>
+  <desc id="desc">What this figure shows: P58 turns noisy pairwise transition measurements into a simultaneous confidence envelope for an unknown true switching metric and propagates that envelope through the exact P54 block-route family. The empirical pairwise center is allowed to violate triangle inequalities; the true metric property remains a declared physical/model assumption. How to read it: move left to right across the upper row from the bounded pairwise observation model, to the simultaneous Hoeffding event, to lower and upper transition envelopes. The center theorem panel brackets the unknown exact P54 route optimum with lower and upper envelope optima computed over the same fixed route family. Follow the three lower branches to the robust-route regret certificate, the strict comparison of two reoptimization states, and the common-radius sample-size certificate. Main takeaway: finite noisy transition data can support valid route-level uncertainty and regret statements without treating the empirical cost table as an exact metric. The common-sample inequality is sufficient, not a minimax lower bound, and adaptive pair selection requires separate statistical accounting. Scientific status: Finite-data scheduling and confidence-envelope theorem under the declared bounded pairwise observation model. It does not validate the transition-cost measurement model, infer metric truth from noisy observations, justify unrestricted adaptive pruning, identify a scheduling variable with consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness.</desc>
   <defs>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
-      <path d="M0 0 L10 5 L0 10 z" fill="#334155"/>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
     </marker>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.13"/>
-    </filter>
     <style>
-      .h1{font:700 30px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#0f172a}
-      .sub{font:400 16px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#475569}
-      .bt{font:700 18px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#0f172a}
-      .tx{font:400 14px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#334155}
-      .math{font:600 14px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#0f172a}
-      .small{font:400 12px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#64748b}
-      .arrow{fill:none;stroke:#334155;stroke-width:2.2;marker-end:url(#arrow)}
+      .title{font:700 30px Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 16px Arial,sans-serif;fill:#475569}
+      .head{font:700 18px Arial,sans-serif;fill:#0f172a}
+      .copy{font:400 15px Arial,sans-serif;fill:#334155}
+      .small{font:400 14px Arial,sans-serif;fill:#475569}
+      .eq{font:600 15px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .strong{font:700 17px Arial,sans-serif;fill:#0f172a}
+      .route{font:700 13px Arial,sans-serif;fill:#475569}
+      .arrow{stroke:#334155;stroke-width:2.5;fill:none;marker-end:url(#arrow)}
     </style>
   </defs>
 
-  <rect width="1200" height="780" rx="24" fill="#f8fafc"/>
-  <text x="60" y="58" class="h1">P58: Finite-data switching-metric uncertainty</text>
-  <text x="60" y="88" class="sub">Noisy transition measurements become a simultaneous confidence envelope for the unknown true P54 routing optimum.</text>
+  <rect width="1200" height="1000" rx="24" fill="#f8fafc"/>
+  <text x="60" y="58" class="title">P58  Finite-data switching-metric uncertainty and robust routing</text>
+  <text x="60" y="90" class="subtitle">Propagate simultaneous pairwise measurement uncertainty to the unknown exact P54 route optimum without assuming the empirical center is metric.</text>
 
-  <g filter="url(#shadow)">
-    <rect x="55" y="135" width="270" height="160" rx="18" fill="#ffffff" stroke="#94a3b8"/>
-    <text x="82" y="170" class="bt">1. Pairwise calibration</text>
-    <text x="82" y="203" class="math">Zₑ,1 … Zₑ,n</text>
-    <text x="82" y="232" class="tx">Bounded transition observations</text>
-    <text x="82" y="257" class="math">ĉₑ = sample mean</text>
-    <text x="82" y="279" class="small">The empirical table may be nonmetric.</text>
+  <g id="block-model" data-x="55" data-y="130" data-w="330" data-h="215">
+    <rect x="55" y="130" width="330" height="215" rx="18" fill="#ffffff" stroke="#64748b" stroke-width="2"/>
+    <text x="80" y="168" class="head">1. Declared finite-data model</text>
+    <text x="80" y="202" class="strong">true c is a finite metric</text>
+    <text x="80" y="233" class="eq">E[Zₑ,k] = cₑ</text>
+    <text x="80" y="261" class="small">Within each pair: independent</text>
+    <text x="80" y="283" class="small">observations in a width Bₑ interval.</text>
+    <text x="80" y="314" class="copy">ĉₑ = pairwise sample mean</text>
+    <text x="80" y="337" class="small">The empirical table may be nonmetric.</text>
   </g>
 
-  <g filter="url(#shadow)">
-    <rect x="365" y="135" width="310" height="160" rx="18" fill="#eef2ff" stroke="#6366f1" stroke-width="1.5"/>
-    <text x="392" y="170" class="bt">2. Simultaneous edge event</text>
-    <text x="392" y="203" class="math">ρₑ = Bₑ √[log(2/αₑ)/(2nₑ)]</text>
-    <text x="392" y="232" class="math">|ĉₑ − cₑ| ≤ ρₑ  ∀e</text>
-    <text x="392" y="257" class="math">P(Ec) ≥ 1 − α</text>
-    <text x="392" y="279" class="small">Finite-family union bound; no pair independence needed.</text>
+  <g id="block-event" data-x="435" data-y="130" data-w="330" data-h="215">
+    <rect x="435" y="130" width="330" height="215" rx="18" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+    <text x="460" y="168" class="head">2. Simultaneous pair event</text>
+    <text x="460" y="202" class="eq">ρₑ = Bₑ √[log(2/αₑ)/(2nₑ)]</text>
+    <text x="460" y="233" class="eq">Σₑ αₑ ≤ α</text>
+    <text x="460" y="269" class="strong">P(|ĉₑ-cₑ| ≤ ρₑ  ∀e) ≥ 1-α</text>
+    <text x="460" y="304" class="small">No independence between different</text>
+    <text x="460" y="327" class="small">transition pairs is needed.</text>
   </g>
 
-  <g filter="url(#shadow)">
-    <rect x="715" y="135" width="430" height="160" rx="18" fill="#ffffff" stroke="#94a3b8"/>
-    <text x="742" y="170" class="bt">3. Routewise lower / upper envelopes</text>
-    <text x="742" y="203" class="math">cₑ⁻ = max(0, ĉₑ−ρₑ)</text>
-    <text x="742" y="230" class="math">cₑ⁺ = ĉₑ+ρₑ</text>
-    <text x="742" y="257" class="math">ℓ⁻(π) ≤ ℓc(π) ≤ ℓ⁺(π)  for every route π</text>
-    <text x="742" y="279" class="small">The auxiliary envelope tables do not need triangle inequalities.</text>
+  <g id="block-envelope" data-x="815" data-y="130" data-w="330" data-h="215">
+    <rect x="815" y="130" width="330" height="215" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+    <text x="840" y="168" class="head">3. Edge and route envelopes</text>
+    <text x="840" y="202" class="eq">cₑ⁻ = max(0, ĉₑ-ρₑ)</text>
+    <text x="840" y="230" class="eq">cₑ⁺ = ĉₑ+ρₑ</text>
+    <text x="840" y="264" class="eq">ℓ⁻(π;s) ≤ ℓc(π;s) ≤ ℓ⁺(π;s)</text>
+    <text x="840" y="299" class="copy">simultaneously for every route π</text>
+    <text x="840" y="327" class="small">Envelope tables need not be metrics.</text>
   </g>
 
-  <path d="M325 215 L365 215" class="arrow"/>
-  <path d="M675 215 L715 215" class="arrow"/>
+  <path id="arrow-1" class="arrow" d="M385 237 H435" data-source="block-model" data-target="block-event"/>
+  <path id="arrow-2" class="arrow" d="M765 237 H815" data-source="block-event" data-target="block-envelope"/>
 
-  <g filter="url(#shadow)">
-    <rect x="135" y="370" width="410" height="170" rx="20" fill="#ecfdf5" stroke="#10b981"/>
-    <text x="165" y="407" class="bt">4. Unknown optimum is bracketed</text>
-    <text x="165" y="442" class="math">L⁻ = minπ ℓ⁻(π)</text>
-    <text x="165" y="470" class="math">L⁺ = minπ ℓ⁺(π)</text>
-    <text x="165" y="505" class="math">L⁻ ≤ L*c ≤ L⁺</text>
-    <text x="165" y="526" class="small">Exact Held-Karp optimization over the fixed block-route family.</text>
+  <text x="600" y="382" class="route" text-anchor="middle">optimize the two envelope tables over the fixed P54 block-route family</text>
+
+  <g id="block-bracket" data-x="120" data-y="402" data-w="960" data-h="215">
+    <rect x="120" y="402" width="960" height="215" rx="20" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+    <text x="600" y="440" text-anchor="middle" class="head">4. Unknown exact P54 route optimum is bracketed</text>
+    <text x="600" y="478" text-anchor="middle" class="eq">L⁻(S;s) = minπ ℓ⁻(π;s)      L⁺(S;s) = minπ ℓ⁺(π;s)</text>
+    <text x="600" y="518" text-anchor="middle" class="strong">L⁻(S;s) ≤ L*c(S;s) ≤ L⁺(S;s)</text>
+    <text x="600" y="554" text-anchor="middle" class="strong">P( L⁻ ≤ L*c ≤ L⁺ ) ≥ 1-α</text>
+    <text x="600" y="590" text-anchor="middle" class="small">Exact Held-Karp optimization is valid on the fixed route family; no empirical triangle inequality is used.</text>
   </g>
 
-  <g filter="url(#shadow)">
-    <rect x="655" y="370" width="410" height="170" rx="20" fill="#eff6ff" stroke="#3b82f6"/>
-    <text x="685" y="407" class="bt">5. Robust route and regret</text>
-    <text x="685" y="442" class="math">πrob ∈ arg minπ ℓ⁺(π)</text>
-    <text x="685" y="470" class="math">ℓc(πrob) − L*c ≤ L⁺ − L⁻</text>
-    <text x="685" y="505" class="tx">Interval width becomes a certified upper bound</text>
-    <text x="685" y="527" class="tx">on route regret under the unknown true metric.</text>
+  <path id="arrow-3" class="arrow" d="M980 345 V372 H900 V402" data-source="block-envelope" data-target="block-bracket"/>
+
+  <g id="block-regret" data-x="55" data-y="680" data-w="330" data-h="170">
+    <rect x="55" y="680" width="330" height="170" rx="18" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="80" y="718" class="head">5. Robust-route regret</text>
+    <text x="80" y="752" class="eq">πrob ∈ arg minπ ℓ⁺(π;s)</text>
+    <text x="80" y="784" class="eq">0 ≤ ℓc(πrob)-L*c</text>
+    <text x="80" y="810" class="strong">≤ Groute = L⁺-L⁻</text>
+    <text x="80" y="839" class="small">Groute = 0 certifies route optimality.</text>
   </g>
 
-  <path d="M850 295 C810 330 590 345 470 370" class="arrow"/>
-  <path d="M930 295 C930 330 910 345 885 370" class="arrow"/>
-
-  <g filter="url(#shadow)">
-    <rect x="250" y="615" width="700" height="115" rx="22" fill="#fff7ed" stroke="#f97316"/>
-    <text x="282" y="650" class="bt">6. Robust sequential comparison</text>
-    <text x="282" y="684" class="math">C₀⁻ &gt; C₁⁺  ⇒  true new reoptimized cost is strictly lower</text>
-    <text x="282" y="710" class="small">This remains a scheduling statement. Valid pruning and adaptive calibration require their own statistical premises.</text>
+  <g id="block-compare" data-x="435" data-y="680" data-w="330" data-h="170">
+    <rect x="435" y="680" width="330" height="170" rx="18" fill="#fefce8" stroke="#ca8a04" stroke-width="2"/>
+    <text x="460" y="718" class="head">6. Two-state comparison</text>
+    <text x="460" y="754" class="strong">C₀⁻ &gt; C₁⁺</text>
+    <text x="460" y="786" class="eq">⇒ C*c0(r₀;s₀) &gt; C*c1(r₁;s₁)</text>
+    <text x="460" y="812" class="eq">Δrobust = C₀⁻ - C₁⁺</text>
+    <text x="460" y="832" class="small">Joint coverage;</text>
+    <text x="460" y="844" class="small">no state independence needed.</text>
   </g>
 
-  <path d="M340 540 C365 585 470 595 520 615" class="arrow"/>
-  <path d="M860 540 C835 585 730 595 680 615" class="arrow"/>
+  <g id="block-sample" data-x="815" data-y="680" data-w="330" data-h="170">
+    <rect x="815" y="680" width="330" height="170" rx="18" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
+    <text x="840" y="718" class="head">7. Sample-size certificate</text>
+    <text x="840" y="748" class="eq">ρₑ ≤ η ⇒ L⁺-L⁻ ≤ 2qrect η</text>
+    <text x="840" y="776" class="eq">n ≥ 2B²qrect² / ε²</text>
+    <text x="840" y="802" class="eq">× log(2M/α)</text>
+    <text x="840" y="824" class="small">Sufficient common-sample condition.</text>
+    <text x="840" y="844" class="small">Not a minimax lower bound.</text>
+  </g>
 
-  <text x="60" y="760" class="small">P58 boundary: the unknown true transition cost is assumed metric; the noisy empirical center is not required to be metric.</text>
+  <path id="arrow-4" class="arrow" d="M300 617 V650 H220 V680" data-source="block-bracket" data-target="block-regret"/>
+  <path id="arrow-5" class="arrow" d="M600 617 V680" data-source="block-bracket" data-target="block-compare"/>
+  <path id="arrow-6" class="arrow" d="M900 617 V650 H980 V680" data-source="block-bracket" data-target="block-sample"/>
+
+  <g id="block-boundary" data-x="90" data-y="870" data-w="1020" data-h="125">
+    <rect x="90" y="870" width="1020" height="125" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="118" y="898" class="head">Statistical and scientific boundary</text>
+    <text x="118" y="922" class="small">The true-metric property is assumed; it is not inferred from noisy sample means or from the envelope optimization.</text>
+    <text x="118" y="944" class="small">Unrestricted drift, adaptive pair selection, adaptive sample sizes, or pruning require their own valid statistical accounting.</text>
+    <text x="118" y="966" class="small">P58 concerns operational scheduling costs only; it does not identify a scheduling variable with consciousness.</text>
+    <text x="118" y="988" class="small">It does not establish a physical-to-experiential bridge or imply quantum incompleteness.</text>
+  </g>
 </svg>
