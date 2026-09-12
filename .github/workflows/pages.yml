@@ -3,7 +3,7 @@ name: deploy-research-website
 on:
   push:
     branches: ["main"]
-    # Workflow-file changes explicitly resynchronize Pages after P85 publication-contract repairs.
+    # Workflow-file changes explicitly resynchronize Pages after the final P85 reproducibility pass.
     paths:
       - "website/**"
       - "scripts/prepare_website.py"
