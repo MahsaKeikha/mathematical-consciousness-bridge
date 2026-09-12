@@ -30,6 +30,11 @@ main > section {
   padding-bottom: 52px;
 }
 
+main h2,
+main h3 {
+  scroll-margin-top: 86px;
+}
+
 .hero {
   padding-top: 64px !important;
   padding-bottom: 54px !important;
@@ -130,6 +135,47 @@ main > section {
   font-size: 0.86rem;
 }
 
+.heading-anchor {
+  display: inline-block;
+  margin-left: 0.42em;
+  color: var(--accent2);
+  font-family: var(--font-body);
+  font-size: 0.5em;
+  font-weight: 650;
+  line-height: 1;
+  opacity: 0;
+  vertical-align: middle;
+  transform: translateY(-0.08em);
+  transition: opacity 120ms ease;
+}
+
+h2:hover > .heading-anchor,
+h3:hover > .heading-anchor,
+.heading-anchor:focus-visible {
+  opacity: 0.72;
+}
+
+.heading-anchor:hover {
+  opacity: 1 !important;
+  text-decoration: none;
+}
+
+.openable-figure {
+  cursor: zoom-in;
+  transition: opacity 120ms ease, box-shadow 120ms ease;
+}
+
+.openable-figure:hover {
+  opacity: 0.96;
+  box-shadow: 0 8px 22px rgba(30, 40, 60, 0.07);
+}
+
+.openable-figure:focus-visible,
+.heading-anchor:focus-visible {
+  outline: 2px solid rgba(45, 70, 127, 0.28);
+  outline-offset: 3px;
+}
+
 .hero-actions {
   margin-top: 22px;
 }
@@ -179,6 +225,13 @@ main > section {
   padding-bottom: 58px;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .heading-anchor,
+  .openable-figure {
+    transition: none;
+  }
+}
+
 @media (max-width: 720px) {
   body {
     font-size: 0.95rem;
@@ -222,5 +275,9 @@ main > section {
 
   .lede {
     font-size: 0.96rem;
+  }
+
+  .heading-anchor {
+    opacity: 0.45;
   }
 }
