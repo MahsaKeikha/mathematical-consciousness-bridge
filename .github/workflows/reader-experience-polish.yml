@@ -1,0 +1,35 @@
+name: reader-experience-polish
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "scripts/polish_reader_experience.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Apply reader experience polish
+        run: python scripts/polish_reader_experience.py
+      - name: Commit polished reader experience
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add website docs START_HERE.md README.md scripts/prepare_website.py tests
+          if git diff --cached --quiet; then
+            echo "No reader-experience changes to commit."
+            exit 0
+          fi
+          git commit -m "Polish reader experience and figure sizing"
+          git push
