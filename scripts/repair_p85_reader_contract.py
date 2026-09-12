@@ -246,6 +246,8 @@ def update_verifier() -> None:
 def update_reader_test() -> None:
     path = "tests/test_reader_experience.py"
     text = read(path)
+    if "test_first_reader_surfaces_match_p85_frontier" in text:
+        return
     replacements = {
         "test_first_reader_surfaces_match_p84_frontier": "test_first_reader_surfaces_match_p85_frontier",
         '"The 84 propositions by scientific role"': '"The 85 propositions by scientific role"',
