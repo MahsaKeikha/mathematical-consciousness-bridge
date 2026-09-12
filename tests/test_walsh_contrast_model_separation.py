@@ -244,7 +244,8 @@ def test_p84_source_states_exactness_scope_and_scientific_boundary() -> None:
         "certificate at zero",
         "3/256",
         "does not validate",
-        "identify a latent state with consciousness",
+        "does not identify a latent state",
+        "with consciousness",
         "physical-to-experiential bridge",
     )
     for token in required:
