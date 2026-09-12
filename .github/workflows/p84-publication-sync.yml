@@ -1,0 +1,36 @@
+name: p84-publication-sync
+
+on:
+  push:
+    branches:
+      - research/p84-walsh-contrast
+    paths:
+      - .github/workflows/p84-publication-sync.yml
+
+permissions:
+  contents: write
+
+jobs:
+  synchronize:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout P84 branch
+        uses: actions/checkout@v4
+        with:
+          ref: research/p84-walsh-contrast
+          fetch-depth: 0
+
+      - name: Synchronize publication surfaces
+        run: python scripts/sync_p84_publication.py
+
+      - name: Remove one-shot synchronization script
+        run: rm scripts/sync_p84_publication.py
+
+      - name: Commit synchronized P84 surfaces
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --stat
+          git commit -m "Synchronize P84 publication surfaces"
+          git push origin HEAD:research/p84-walsh-contrast

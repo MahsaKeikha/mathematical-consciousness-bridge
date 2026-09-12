@@ -1,4 +1,4 @@
-# Current visual frontier: P71-P83
+# Current visual frontier: P71-P84
 
 This page is a compact visual entry point for the current target-side research branch.
 
@@ -38,7 +38,7 @@ Finite-sample confidence bounds are propagated through the P73 inversion, includ
 
 [Read the P74 proposition](../docs/proposition_74_finite_sample_target_channel_recovery.md)
 
-## P75-P83: target-model adequacy and certified separation
+## P75-P84: target-model adequacy and certified separation
 
 ### P75: overidentification and model adequacy
 
@@ -128,6 +128,21 @@ P83 adds 22 parity observables. The branchwise parity probability is an exact mu
 
 [Open the P83 numerical tests](../tests/test_projection_parity_model_separation.py)
 
+### P84: exact pairwise Walsh contrasts
+
+P84 keeps the shared P75 response coordinates inside signed combinations of two Walsh parity characters. It audits 210 predeclared pairwise contrasts. The strict exact-rational witness keeps the complete P82 and P83 certificates at zero while `chi_{1,2} - chi_{1,3}` is forced to zero by the model box and has empirical expectation `3/16`, yielding `L84 = 3/256`.
+
+![P84 exact pairwise Walsh contrast](../docs/figures/p84_exact_pairwise_walsh_contrast.svg)
+
+[Read the P84 proposition](../docs/proposition_84_exact_pairwise_walsh_contrast.md)
+
+[Open the P84 equation provenance](../docs/p84_equation_provenance.md)
+
+[Open the P84 implementation](../src/consciousness_bridge/walsh_contrast_model_separation.py)
+
+[Open the P84 numerical tests](../tests/test_walsh_contrast_model_separation.py)
+
+[Open the P84 figure geometry tests](../tests/test_p84_figure_geometry.py)
 
 ## Run the current research stack
 
@@ -146,4 +161,4 @@ To regenerate the computational atlases:
 python scripts/generate_all_figures.py
 ```
 
-The project does not claim that P71-P83 derives consciousness from physics. These results strengthen the methodology required before a physical-to-experiential bridge claim could be treated as scientifically credible. The bridge itself remains open.
+The project does not claim that P71-P84 derives consciousness from physics. These results strengthen the methodology required before a physical-to-experiential bridge claim could be treated as scientifically credible. The bridge itself remains open.

@@ -30,7 +30,7 @@ Each generated atlas has a JSON manifest stored beside its SVG outputs. The unif
 
 ## 2. Source-controlled theorem and architecture figures
 
-SVG files stored directly in `docs/figures/` include theorem diagrams, dependency maps, structural illustrations, and explanatory publication graphics. Examples include:
+SVG files stored directly in `docs/figures/` include theorem diagrams, dependency maps, structural illustrations, and explanatory publication graphics. Current examples include:
 
 ```text
 p75_target_model_adequacy_overidentification.svg
@@ -40,6 +40,9 @@ p78_certified_continuous_model_separation.svg
 p79_certified_sampling_radius.svg
 p80_simplex_coupled_model_separation.svg
 p81_projection_event_model_separation.svg
+p82_exact_nested_projection_contrast.svg
+p83_exact_projection_parity.svg
+p84_exact_pairwise_walsh_contrast.svg
 ```
 
 These figures communicate mathematical structure, assumptions, inequalities, or proof logic. They are not claimed to be simulation results merely because they are SVG files.
@@ -48,21 +51,23 @@ The unified figure validator parses every SVG under this directory and fails if 
 
 ## 3. Current frontier figure
 
-The current theorem frontier is **P81**:
+The current theorem frontier is **P84**:
 
 ```text
-docs/figures/p81_projection_event_model_separation.svg
+docs/figures/p84_exact_pairwise_walsh_contrast.svg
 ```
 
 Its corresponding records are:
 
 ```text
-docs/proposition_81_projection_event_model_separation.md
-docs/p81_equation_provenance.md
-src/consciousness_bridge/projection_event_model_separation.py
-tests/test_projection_event_model_separation.py
-tests/test_p81_figure_geometry.py
+docs/proposition_84_exact_pairwise_walsh_contrast.md
+docs/p84_equation_provenance.md
+src/consciousness_bridge/walsh_contrast_model_separation.py
+tests/test_walsh_contrast_model_separation.py
+tests/test_p84_figure_geometry.py
 ```
+
+P84 is a conditional exact-rational model-distance theorem. Its visual does not identify a latent state with consciousness, and the physical-to-experiential bridge remains open.
 
 ## 4. Validate without regenerating
 
@@ -78,8 +83,4 @@ make figures-check
 
 ## 5. Reproduce through GitHub Actions
 
-The `.github/workflows/figures.yml` workflow regenerates both computational atlases, validates the complete figure tree, runs repository verification, and uploads the generated atlas directories as a workflow artifact.
-
-A successful figure workflow means the repository's declared generation and validation path executed successfully. It does not convert a theorem illustration, synthetic benchmark, or model calculation into empirical evidence about consciousness.
-
-For the curated reader-facing index, see [`docs/figure_catalog.md`](../figure_catalog.md). For full setup instructions, see [`docs/reproducibility.md`](../reproducibility.md).
+The `figures` workflow regenerates and validates the computational atlases in the pinned figure environment. The `reproducibility` workflow runs the complete publication audit, including tests, Ruff, repository verification, two full deterministic atlas generations, and a clean-tree check.

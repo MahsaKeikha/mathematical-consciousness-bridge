@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
+  <title id="title">P84 exact pairwise Walsh-contrast certificate</title>
+  <desc id="desc">What this figure shows: P84 strengthens P83 by testing 210 predeclared signed pairwise Walsh contrasts built from the 15 nonconstant Walsh characters on four binary views. How to read it: conditional independence inside each P75 latent branch makes every Walsh character expectation a product of one minus twice the response probabilities. A signed sum of two such products is multi-affine, so its exact rational box range is obtained at endpoint vertices. Empirical expectation mismatch divided by the discrete L1 norm of the contrast gives a full-law L-infinity lower bound. The strict exact-rational witness keeps all P82 and P83 certificates at zero while the contrast chi12 minus chi13 is forced to zero by the P75 box and has empirical expectation three sixteenths, yielding L84 equals three over 256. Scientific status: conditional exact-rational computational-certification theorem. It does not identify a latent variable with consciousness, does not validate non-rejected models, and the physical-to-experiential bridge remains open.</desc>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="780" fill="#f8fafc"/>
+  <rect x="34" y="28" width="1132" height="724" rx="24" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
+
+  <text x="70" y="76" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700" fill="#0f172a">P84 Exact Pairwise Walsh-Contrast Certificate</text>
+  <text x="70" y="108" font-family="Arial, Helvetica, sans-serif" font-size="16.2" fill="#475569">Retaining shared parameter dependence across parity characters strengthens exact P75 model separation</text>
+
+  <!-- STEP 1 -->
+  <rect x="70" y="145" width="310" height="430" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="70" y="145" width="310" height="82" rx="18" fill="#eef2ff"/>
+  <rect x="70" y="209" width="310" height="18" fill="#eef2ff"/>
+  <circle cx="101" cy="178" r="17" fill="#4f46e5"/>
+  <text x="101" y="184" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff">1</text>
+  <text x="128" y="173" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#1e1b4b">Couple two characters</text>
+  <text x="94" y="205" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#475569">Do not extremize their parity intervals separately</text>
+
+  <rect x="94" y="248" width="262" height="119" rx="12" fill="#f8faff" stroke="#818cf8" stroke-width="1.8"/>
+  <text x="114" y="277" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#312e81">Walsh characters</text>
+  <text x="114" y="306" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#4338ca">chi_J(x) = (-1)^[sum(j in J) x_j]</text>
+  <text x="114" y="333" font-family="Arial, Helvetica, sans-serif" font-size="12.8" fill="#4338ca">15 nonconstant characters on four bits</text>
+  <text x="114" y="355" font-family="Arial, Helvetica, sans-serif" font-size="12.6" fill="#4338ca">phi = chi_A + s chi_B,  s in {-1,+1}</text>
+
+  <path d="M225 367 L225 392" stroke="#334155" stroke-width="2.4" marker-end="url(#arrow)"/>
+
+  <rect x="94" y="392" width="262" height="108" rx="12" fill="#fff7ed" stroke="#fb923c" stroke-width="1.8"/>
+  <text x="114" y="421" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#9a3412">Finite declared family</text>
+  <text x="114" y="449" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#c2410c">2 C(15,2) = 210 signed contrasts</text>
+  <text x="114" y="476" font-family="Arial, Helvetica, sans-serif" font-size="12.7" fill="#c2410c">for every distinct pair: ||phi||_1 = 16</text>
+
+  <text x="96" y="533" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#64748b">P83 sees each parity character separately.</text>
+  <text x="96" y="554" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#64748b">P84 preserves one exact cross-character relation.</text>
+
+  <!-- CONNECTOR 1 -->
+  <path d="M380 360 L445 360" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- STEP 2 -->
+  <rect x="445" y="145" width="310" height="430" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="445" y="145" width="310" height="82" rx="18" fill="#ecfdf5"/>
+  <rect x="445" y="209" width="310" height="18" fill="#ecfdf5"/>
+  <circle cx="476" cy="178" r="17" fill="#059669"/>
+  <text x="476" y="184" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff">2</text>
+  <text x="503" y="173" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#064e3b">Extremize jointly</text>
+  <text x="469" y="205" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#475569">Use the common P75 response coordinates</text>
+
+  <rect x="469" y="248" width="262" height="122" rx="12" fill="#f0fdf4" stroke="#34d399" stroke-width="1.8"/>
+  <text x="489" y="277" font-family="Arial, Helvetica, sans-serif" font-size="14.8" font-weight="700" fill="#065f46">Branch expectation</text>
+  <text x="489" y="306" font-family="Arial, Helvetica, sans-serif" font-size="12.1" fill="#047857">E_t[chi_J] = product(j in J)(1 - 2 q_jt)</text>
+  <text x="489" y="332" font-family="Arial, Helvetica, sans-serif" font-size="12.1" fill="#047857">E_t[phi] = product_A + s product_B</text>
+  <text x="489" y="356" font-family="Arial, Helvetica, sans-serif" font-size="12.1" fill="#047857">multi-affine: exact extrema occur at vertices</text>
+
+  <path d="M600 370 L600 395" stroke="#334155" stroke-width="2.4" marker-end="url(#arrow)"/>
+
+  <rect x="469" y="395" width="262" height="105" rx="12" fill="#ecfeff" stroke="#22d3ee" stroke-width="1.8"/>
+  <text x="489" y="424" font-family="Arial, Helvetica, sans-serif" font-size="14.8" font-weight="700" fill="#155e75">Exact dual lower bound</text>
+  <text x="489" y="451" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#155e75">L_phi = distance(empirical E, model interval)</text>
+  <text x="489" y="474" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#155e75">divided by sum_x |phi(x)|</text>
+  <text x="489" y="493" font-family="Arial, Helvetica, sans-serif" font-size="11.9" fill="#155e75">Fraction arithmetic throughout; no floating optimizer</text>
+
+  <rect x="469" y="518" width="262" height="36" rx="9" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.4"/>
+  <text x="600" y="542" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#334155">L84(B) = max(L83(B), L_Walsh(B))</text>
+
+  <!-- CONNECTOR 2 -->
+  <path d="M755 360 L820 360" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- STEP 3 -->
+  <rect x="820" y="145" width="310" height="430" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="820" y="145" width="310" height="82" rx="18" fill="#fff7ed"/>
+  <rect x="820" y="209" width="310" height="18" fill="#fff7ed"/>
+  <circle cx="851" cy="178" r="17" fill="#ea580c"/>
+  <text x="851" y="184" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff">3</text>
+  <text x="878" y="173" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#7c2d12">Strictly strengthen P83</text>
+  <text x="844" y="205" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#475569">Exact witness isolates shared-parameter coupling</text>
+
+  <rect x="844" y="248" width="262" height="120" rx="12" fill="#eef2ff" stroke="#818cf8" stroke-width="1.8"/>
+  <text x="864" y="277" font-family="Arial, Helvetica, sans-serif" font-size="14.7" font-weight="700" fill="#312e81">Matched branch channels</text>
+  <text x="864" y="304" font-family="Arial, Helvetica, sans-serif" font-size="12.2" fill="#4338ca">q2- = q2+ = q3- = q3+ = 1/4</text>
+  <text x="864" y="329" font-family="Arial, Helvetica, sans-serif" font-size="12.2" fill="#4338ca">q4- = q4+ = 1/2; q1 in [3/8,5/8]</text>
+  <text x="864" y="353" font-family="Arial, Helvetica, sans-serif" font-size="12.1" fill="#4338ca">model forces E[chi12 - chi13] = 0</text>
+
+  <path d="M975 368 L975 393" stroke="#334155" stroke-width="2.4" marker-end="url(#arrow)"/>
+
+  <rect x="844" y="393" width="262" height="107" rx="12" fill="#fff7ed" stroke="#fb923c" stroke-width="1.8"/>
+  <text x="864" y="422" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="700" fill="#9a3412">Exact-rational witness</text>
+  <text x="864" y="449" font-family="Arial, Helvetica, sans-serif" font-size="12.3" fill="#c2410c">empirical E[chi12 - chi13] = 3/16</text>
+  <text x="864" y="473" font-family="Arial, Helvetica, sans-serif" font-size="12.3" fill="#c2410c">||phi||_1 = 16</text>
+  <text x="864" y="493" font-family="Arial, Helvetica, sans-serif" font-size="13.1" font-weight="700" fill="#c2410c">L82 = L83 = 0,  L84 = 3/256</text>
+
+  <rect x="844" y="518" width="262" height="36" rx="9" fill="#f0fdf4" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="975" y="542" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.3" font-weight="700" fill="#14532d">P79 gate: L84 &gt; epsilon_upper =&gt; reject</text>
+
+  <!-- BOTTOM BAND -->
+  <rect x="70" y="600" width="1060" height="105" rx="16" fill="#0f172a"/>
+  <text x="98" y="632" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#ffffff">What P84 adds</text>
+  <text x="98" y="660" font-family="Arial, Helvetica, sans-serif" font-size="14.7" fill="#e2e8f0">Two parity intervals can each remain compatible while their shared P75 parameter relation is already impossible.</text>
+  <text x="98" y="684" font-family="Arial, Helvetica, sans-serif" font-size="14.4" fill="#86efac">P84 detects that incompatibility with 210 exact signed contrasts and preserves the established one-sided rejection logic.</text>
+
+  <text x="70" y="736" font-family="Arial, Helvetica, sans-serif" font-size="12.7" fill="#64748b">P84 certifies a declared model-distance bound. It is not a consciousness-identification theorem. The physical-to-experiential bridge remains open.</text>
+</svg>
