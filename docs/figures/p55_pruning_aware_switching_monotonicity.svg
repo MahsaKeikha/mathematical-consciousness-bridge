@@ -25,7 +25,7 @@
   <g id="block-regime" data-x="55" data-y="130" data-w="330" data-h="185">
     <rect x="55" y="130" width="330" height="185" rx="18" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
     <text x="80" y="168" class="head">1. Fixed comparison regime</text>
-    <text x="80" y="205" class="strong">same a, same metric c, same start s</text>
+    <text x="80" y="205" class="strong">same a, metric c, start s</text>
     <text x="80" y="239" class="copy">a is per-sample acquisition cost.</text>
     <text x="80" y="269" class="copy">c is a finite switching metric.</text>
     <text x="80" y="296" class="small">Triangle inequality drives shortcutting.</text>
@@ -97,8 +97,8 @@
   <g id="block-boundary" data-x="90" data-y="885" data-w="1020" data-h="110">
     <rect x="90" y="885" width="1020" height="110" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
     <text x="118" y="913" class="head">Deterministic and scientific boundary</text>
-    <text x="118" y="937" class="small">P55 requires a fixed metric and fixed start; nonmetric costs can lose monotonicity, and a moving start requires P56.</text>
-    <text x="118" y="959" class="small">Pruning validity and statistical optimality of residual thresholds remain external to this deterministic theorem.</text>
-    <text x="118" y="981" class="small">No graph, route, metric, or cost is identified with consciousness; the physical-to-experiential bridge remains open and quantum incompleteness is not implied.</text>
+    <text x="118" y="937" class="small">P55 requires fixed metric and fixed start; nonmetric costs can lose monotonicity, and a moving start requires P56.</text>
+    <text x="118" y="959" class="small">Pruning validity and threshold optimality remain external. Quantum incompleteness is not implied.</text>
+    <text x="118" y="981" class="small">No scheduling quantity is identified with consciousness; the physical-to-experiential bridge remains open.</text>
   </g>
 </svg>
