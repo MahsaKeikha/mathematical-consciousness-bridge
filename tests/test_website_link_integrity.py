@@ -1,11 +1,8 @@
 """Internal link-integrity checks for the public research website."""
 
-from __future__ import annotations
-
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
-
 
 ROOT = Path(__file__).resolve().parents[1]
 WEBSITE = ROOT / "website"
