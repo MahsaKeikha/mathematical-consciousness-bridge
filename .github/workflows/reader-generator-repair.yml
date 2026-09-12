@@ -1,0 +1,29 @@
+name: reader-generator-repair
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "scripts/repair_reader_generator.py"
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Repair canonical Visual Atlas generation
+        run: python scripts/repair_reader_generator.py
+      - name: Commit repair and remove one-time runner
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/enrich_figure_documentation.py
+          git rm scripts/repair_reader_generator.py .github/workflows/reader-generator-repair.yml
+          git commit -m "Make reader atlas regeneration idempotent"
+          git push
