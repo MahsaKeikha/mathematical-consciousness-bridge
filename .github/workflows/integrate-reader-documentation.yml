@@ -22,7 +22,9 @@ jobs:
         with:
           python-version: "3.12"
       - name: Apply reader documentation integration
-        run: python scripts/integrate_reader_documentation.py
+        run: |
+          python scripts/integrate_reader_documentation.py
+          python scripts/fix_reader_validation.py
       - name: Install development dependencies
         run: |
           python -m pip install --upgrade pip
@@ -39,6 +41,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git rm .github/workflows/integrate-reader-documentation.yml
           git rm scripts/integrate_reader_documentation.py
+          git rm scripts/fix_reader_validation.py
           git add -A
           git commit -m "Complete first-reader and reproducibility documentation"
           git push origin HEAD:docs-first-reader-experience-p81
