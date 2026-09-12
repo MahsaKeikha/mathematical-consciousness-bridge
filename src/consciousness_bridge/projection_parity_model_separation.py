@@ -49,10 +49,8 @@ cylinder intervals remain broad. An empirical law supported only on equal-bit
 pairs has P82 lower bound zero but P83 lower bound 1/16.
 
 The P78 mesh-width upper certificate is retained unchanged for global
-branch-and-bound. P83 does not claim a new convergence theorem. This is a
-computational certificate for the declared P75 latent model; it does not
-validate that model, identify a latent state with consciousness, or close the
-physical-to-experiential bridge.
+branch-and-bound. P83 does not claim a new convergence theorem. This certificate does not validate the P75 model, does not identify a latent
+state with consciousness, and does not close the physical-to-experiential bridge.
 """
 
 from __future__ import annotations

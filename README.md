@@ -14,6 +14,13 @@
 > [!NOTE]
 > **Reproduce the complete computational record:** use Python 3.12.14, install `requirements-reproducibility.txt`, and run `python scripts/reproducibility_audit.py` (or `make reproduce`). The audit fails unless tests/static checks pass and two full generated-figure rebuilds leave the Git tree byte-for-byte clean.
 
+| Research status | Current value |
+| --- | --- |
+| Formal release | **v0.82.0** |
+| Public theorem frontier | **P83** |
+| Proposition-level results | **83** |
+| Physical-to-experiential bridge | **Open** |
+
 > **What mathematical and physical conditions would be required for a complete physical description of a system to support a scientifically testable claim about consciousness?**
 
 This repository is a mathematical-physics research program for the **physical-to-experiential bridge problem**. It does not begin by assuming what consciousness is. It asks what must be true before any proposed physical description can legitimately be called sufficient for an independently specified experiential target, how that sufficiency can be falsified, and how finite experiments can distinguish a real bridge from correlation, representation choice, coarse-graining, target circularity, target-measurement error, unidentified target-channel reliability, or statistical noise.
