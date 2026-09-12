@@ -94,3 +94,12 @@ def test_p83_frontier_is_unique_and_structurally_inside_main():
     assert text.count('id="p83-frontier"') == 1
     assert main_open < p83 < main_close
     assert "Open P83 →" not in text[main_close:]
+
+
+def test_continuous_frontier_keeps_p82_and_p83_provenance_auditable():
+    text = MAP.read_text(encoding="utf-8")
+    frontier = text.index('id="continuous-model-frontier"')
+    main_close = text.index("</main>", frontier)
+    frontier_text = text[frontier:main_close]
+    assert "p82_equation_provenance.md" in frontier_text
+    assert "p83_equation_provenance.md" in frontier_text
