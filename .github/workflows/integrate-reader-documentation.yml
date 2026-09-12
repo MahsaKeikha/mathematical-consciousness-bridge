@@ -47,9 +47,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git rm .github/workflows/integrate-reader-documentation.yml
-          git rm scripts/integrate_reader_documentation.py
-          git rm scripts/fix_reader_validation.py
+          git rm -f .github/workflows/integrate-reader-documentation.yml
+          git rm -f scripts/integrate_reader_documentation.py
+          git rm -f scripts/fix_reader_validation.py
           git add -A
           git commit -m "Complete first-reader and reproducibility documentation"
           git push origin HEAD:docs-first-reader-experience-p81
