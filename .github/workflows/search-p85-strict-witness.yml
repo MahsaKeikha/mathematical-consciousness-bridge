@@ -1,0 +1,23 @@
+name: search-p85-strict-witness
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "scripts/search_p85_strict_witness.py"
+
+permissions:
+  contents: read
+
+jobs:
+  search:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install package
+        run: python -m pip install -e .
+      - name: Search exact strict witness
+        run: python scripts/search_p85_strict_witness.py
