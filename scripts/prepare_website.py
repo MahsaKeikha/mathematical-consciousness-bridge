@@ -18,6 +18,7 @@ READER_LINKS_SCRIPT_TAG = '<script defer src="reader-links.js"></script>'
 FOOTER_SCRIPT_TAG = '<script defer src="footer.js"></script>'
 NAVIGATION_STYLE_TAG = '<link rel="stylesheet" href="navigation.css" />'
 PUBLICATION_STYLE_TAG = '<link rel="stylesheet" href="publication.css" />'
+PUBLICATION_V2_STYLE_TAG = '<link rel="stylesheet" href="publication-v2.css" />'
 
 
 def prepare_website(source: Path, output: Path) -> None:
@@ -44,6 +45,8 @@ def prepare_website(source: Path, output: Path) -> None:
             additions.append(NAVIGATION_STYLE_TAG)
         if PUBLICATION_STYLE_TAG not in text:
             additions.append(PUBLICATION_STYLE_TAG)
+        if PUBLICATION_V2_STYLE_TAG not in text:
+            additions.append(PUBLICATION_V2_STYLE_TAG)
         if SCRIPT_TAG not in text:
             additions.append(SCRIPT_TAG)
         if READER_LINKS_SCRIPT_TAG not in text:
@@ -61,6 +64,7 @@ def prepare_website(source: Path, output: Path) -> None:
         "styles.css",
         "navigation.css",
         "publication.css",
+        "publication-v2.css",
     )
     for asset in required_assets:
         if not (output / asset).is_file():
