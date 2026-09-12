@@ -1,0 +1,47 @@
+name: p83-publication-integration
+
+on:
+  push:
+    branches:
+      - research/p83-exact-projection-parity
+    paths:
+      - scripts/apply_p83_publication_integration.py
+      - .github/workflows/p83-publication-integration.yml
+
+permissions:
+  contents: write
+
+jobs:
+  integrate:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout P83 branch
+        uses: actions/checkout@v4
+        with:
+          ref: research/p83-exact-projection-parity
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+
+      - name: Apply P83 publication integration
+        run: python scripts/apply_p83_publication_integration.py
+
+      - name: Regenerate deterministic figure catalog
+        run: python scripts/enrich_figure_documentation.py
+
+      - name: Remove one-shot integration machinery
+        run: |
+          rm scripts/apply_p83_publication_integration.py
+          rm .github/workflows/p83-publication-integration.yml
+
+      - name: Commit synchronized P83 publication surfaces
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "Integrate P83 across research and publication surfaces"
+          git push origin HEAD:research/p83-exact-projection-parity
