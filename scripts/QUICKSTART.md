@@ -2,23 +2,31 @@
 
 This page is for readers who want to run the repository instead of only reading it.
 
-## Fastest complete validation
+## Strongest reproducibility audit
 
-From the repository root:
+For the exact v0.81.0 reference environment, use Python 3.12.14 and run:
 
 ```bash
 python -m pip install -e ".[dev]"
-python -m pytest
-python -m ruff check .
-python scripts/generate_all_figures.py --validate-only
-python scripts/verify_repository.py
+python -m pip install -r requirements-reproducibility.txt
+python scripts/reproducibility_audit.py
 ```
 
-The same validation is available through:
+Or, after installation:
+
+```bash
+make reproduce
+```
+
+This is stronger than a normal test run: it runs the test/static checks, imports the package modules, rebuilds the generated atlases, reapplies figure documentation metadata, and requires two consecutive rebuilds to leave a clean Git tree.
+
+## Fast compatibility validation
 
 ```bash
 make check
 ```
+
+The compatibility path is also exercised in CI on Python 3.10, 3.11, and 3.12.
 
 ## Regenerate the computational figures
 
@@ -39,7 +47,8 @@ and then validates the complete SVG tree.
 
 | Script | Purpose | Output or check |
 | --- | --- | --- |
-| `generate_all_figures.py` | Canonical figure entry point | Regenerates computational atlases and validates all SVG assets |
+| `reproducibility_audit.py` | Exact reference audit | Runs tests/static checks, imports modules, regenerates figures twice, and requires a byte-clean Git tree |
+| `generate_all_figures.py` | Canonical figure entry point | Regenerates computational atlases, reapplies SVG documentation metadata, and validates all SVG assets |
 | `generate_quantitative_atlas.py` | Quantitative physics and mathematics atlas | `docs/figures/quantitative/` plus manifest |
 | `generate_quantum_foundations_atlas.py` | Quantum foundations atlas | `docs/figures/quantum/` plus manifest |
 | `verify_repository.py` | Repository-wide consistency audit | Checks release/frontier markers, proposition coverage, principal links, workflows, source and test surfaces |

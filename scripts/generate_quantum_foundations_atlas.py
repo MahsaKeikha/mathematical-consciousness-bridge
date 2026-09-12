@@ -25,15 +25,27 @@ plt.rcParams.update(
         "axes.spines.right": False,
         "legend.frameon": False,
         "svg.fonttype": "none",
+        "svg.hashsalt": "mathematical-consciousness-bridge-v0.81.0",
+        "font.family": "DejaVu Sans",
     }
 )
+
+SVG_METADATA = {
+    "Date": None,
+    "Creator": "Mathematical Consciousness Bridge v0.81.0",
+}
 
 META = []
 
 
 def finish(fig, filename, title, equation, fact, status):
     fig.tight_layout()
-    fig.savefig(OUT / filename, format="svg", bbox_inches="tight")
+    fig.savefig(
+        OUT / filename,
+        format="svg",
+        bbox_inches="tight",
+        metadata=SVG_METADATA,
+    )
     plt.close(fig)
     META.append(
         {

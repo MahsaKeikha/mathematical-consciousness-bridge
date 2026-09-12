@@ -8,7 +8,7 @@ figure regeneration, and byte-level idempotence of the generated atlases.
 Run from the repository root with::
 
     python -m pip install -e ".[dev]"
-    python -m pip install -r requirements-figures.txt
+    python -m pip install -r requirements-reproducibility.txt
     python scripts/reproducibility_audit.py
 
 The command intentionally uses only local files after dependencies are installed.
@@ -20,6 +20,7 @@ import argparse
 import hashlib
 import importlib
 import importlib.metadata
+import pkgutil
 import subprocess
 import sys
 from pathlib import Path
@@ -29,9 +30,12 @@ GENERATED_DIRS = (
     ROOT / "docs" / "figures" / "quantitative",
     ROOT / "docs" / "figures" / "quantum",
 )
+REFERENCE_PYTHON = (3, 12, 14)
 PINNED_RUNTIME = {
     "matplotlib": "3.11.2",
     "numpy": "2.5.3",
+    "pytest": "9.1.1",
+    "ruff": "0.16.7",
 }
 
 
@@ -93,17 +97,21 @@ def _verify_pinned_figure_environment() -> None:
     if failures:
         raise RuntimeError(
             "publication figure environment is not pinned correctly; run "
-            "`python -m pip install -r requirements-figures.txt`.\n"
+            "`python -m pip install -r requirements-reproducibility.txt`.\n"
             + "\n".join(failures)
         )
     print("[reproduce] pinned publication figure environment verified")
 
 
-def _verify_package_import() -> None:
-    module = importlib.import_module("consciousness_bridge")
-    if module is None:
-        raise RuntimeError("failed to import consciousness_bridge")
-    print("[reproduce] package import verified")
+def _verify_package_imports() -> None:
+    package = importlib.import_module("consciousness_bridge")
+    imported = ["consciousness_bridge"]
+    for module_info in pkgutil.iter_modules(
+        package.__path__, prefix="consciousness_bridge."
+    ):
+        importlib.import_module(module_info.name)
+        imported.append(module_info.name)
+    print(f"[reproduce] imported {len(imported)} package modules successfully")
 
 
 def main() -> None:
@@ -117,21 +125,23 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    if sys.version_info < (3, 10):
-        raise RuntimeError("Python 3.10 or newer is required")
+    if tuple(sys.version_info[:3]) != REFERENCE_PYTHON:
+        actual = ".".join(str(part) for part in sys.version_info[:3])
+        expected = ".".join(str(part) for part in REFERENCE_PYTHON)
+        raise RuntimeError(
+            f"exact reference audit requires Python {expected}; found {actual}. "
+            "Compatibility tests still cover Python 3.10, 3.11, and 3.12."
+        )
 
     _require_clean_tree("audit start")
     _verify_pinned_figure_environment()
     _run_external("git", "--version")
     _run("-m", "compileall", "-q", "src", "scripts")
-    _verify_package_import()
+    _verify_package_imports()
 
     if not args.skip_tests:
         _run("-m", "pytest")
         _run("-m", "ruff", "check", ".")
-
-    _run("scripts/normalize_typography.py")
-    _require_clean_tree("typography normalization")
 
     _run("scripts/verify_repository.py")
     _run("scripts/generate_all_figures.py")

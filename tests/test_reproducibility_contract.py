@@ -45,3 +45,20 @@ def test_one_command_reproducibility_audit_is_exposed() -> None:
     assert "scripts/reproducibility_audit.py" in makefile
     assert "reproducibility_audit.py" in scripts_readme
     assert "make reproduce" in guide
+
+def test_figure_enrichment_preserves_curated_theorem_metadata() -> None:
+    source = _read("scripts/enrich_figure_documentation.py")
+    assert "def _has_curated_metadata" in source
+    assert "if _has_curated_metadata(svg):" in source
+    assert 'enriched = svg' in source
+
+def test_generated_catalog_preserves_p55_scope_language() -> None:
+    catalog = _read("docs/figure_catalog.md")
+    for token in (
+        "metric shortcutting",
+        "support-preserving",
+        "shortcut lower certificate",
+        "physical-to-experiential bridge",
+    ):
+        assert token in catalog
+

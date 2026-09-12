@@ -1,7 +1,7 @@
 [
   {
     "file": "q01_ornstein_uhlenbeck_trajectories.svg",
-    "title": "Ornstein\u2013Uhlenbeck mean-reverting trajectories",
+    "title": "Ornstein-Uhlenbeck mean-reverting trajectories",
     "equation": "dX = theta(mu-X)dt + sigma dW",
     "fact": "Linear drift pulls trajectories toward equilibrium while diffusion sustains fluctuations.",
     "status": "Equation-driven stochastic simulation"

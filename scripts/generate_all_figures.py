@@ -7,8 +7,10 @@ The repository contains two kinds of visual assets:
 2. source-controlled theorem and architecture SVGs under ``docs/figures``.
 
 This command regenerates the two computational atlases using their canonical
-scripts and then validates every SVG in the figure tree as parseable vector
-content. Source-authored theorem SVGs are validated rather than rewritten.
+scripts, reapplies the repository's embedded SVG title/description metadata,
+and then validates every SVG in the figure tree as parseable vector content.
+Source-authored theorem SVGs are validated and enriched from their maintained
+documentation records rather than being recreated by a plotting script.
 
 Run from the repository root with::
 
@@ -35,6 +37,7 @@ GENERATORS = (
     ROOT / "scripts" / "generate_quantitative_atlas.py",
     ROOT / "scripts" / "generate_quantum_foundations_atlas.py",
 )
+ENRICHER = ROOT / "scripts" / "enrich_figure_documentation.py"
 
 
 def _run_generator(path: Path) -> None:
@@ -141,6 +144,11 @@ def main() -> None:
                     f"missing generator: {generator.relative_to(ROOT)}"
                 )
             _run_generator(generator)
+        if not ENRICHER.is_file():
+            raise FileNotFoundError(
+                f"missing figure documentation enricher: {ENRICHER.relative_to(ROOT)}"
+            )
+        _run_generator(ENRICHER)
 
     validate_figures()
 

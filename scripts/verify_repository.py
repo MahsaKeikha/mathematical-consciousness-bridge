@@ -29,6 +29,9 @@ CORE_FILES = (
     "CITATION.cff",
     "CITATION.md",
     "pyproject.toml",
+    ".python-version",
+    "requirements-figures.txt",
+    "requirements-reproducibility.txt",
     "docs/glossary.md",
     "docs/reproducibility.md",
     "docs/research_navigation.md",
@@ -42,6 +45,7 @@ CORE_FILES = (
     "scripts/generate_all_figures.py",
     "scripts/generate_quantitative_atlas.py",
     "scripts/generate_quantum_foundations_atlas.py",
+    "scripts/reproducibility_audit.py",
 )
 
 LINK_SURFACES = (
@@ -155,6 +159,8 @@ def _verify_test_and_source_surfaces() -> None:
         raise RuntimeError("missing GitHub Actions test workflow")
     if not (ROOT / ".github" / "workflows" / "figures.yml").is_file():
         raise RuntimeError("missing GitHub Actions figure workflow")
+    if not (ROOT / ".github" / "workflows" / "reproducibility.yml").is_file():
+        raise RuntimeError("missing GitHub Actions reproducibility workflow")
     print(
         f"[verify] discovered {len(test_files)} pytest modules and "
         f"{len(source_files)} package modules"

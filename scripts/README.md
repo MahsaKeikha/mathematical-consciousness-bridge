@@ -10,9 +10,29 @@ From the repository root:
 python scripts/generate_all_figures.py
 python scripts/generate_all_figures.py --validate-only
 python scripts/verify_repository.py
+python scripts/reproducibility_audit.py
 ```
 
-These commands are also exposed through the root `Makefile` as `make figures`, `make figures-check`, and `make verify`.
+These commands are also exposed through the root `Makefile`. Use `make reproduce` for the strongest end-to-end audit from a clean checkout.
+
+## End-to-end reproducibility
+
+### `reproducibility_audit.py`
+
+Canonical full audit for the reference environment. It imports every package module, runs pytest and Ruff, verifies repository structure, regenerates and enriches all computational figures twice, and fails unless both regeneration passes leave the Git working tree byte-for-byte clean.
+
+Install the exact reference environment first with:
+
+```bash
+python -m pip install -e ".[dev]"
+python -m pip install -r requirements-reproducibility.txt
+```
+
+Then run:
+
+```bash
+python scripts/reproducibility_audit.py
+```
 
 ## Figure generation
 

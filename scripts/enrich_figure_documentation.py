@@ -126,6 +126,25 @@ def _existing_metadata(svg: str) -> tuple[str | None, str | None]:
     return title, desc
 
 
+def _has_curated_metadata(svg: str) -> bool:
+    """Return True when an SVG already carries substantive publication metadata.
+
+    Source-authored theorem figures can contain proposition-specific witness text,
+    accessibility instructions, and scientific-boundary language that is more
+    precise than a generic catalog record. Regeneration must preserve that authored
+    material rather than replace it with a shorter synthesized description.
+    """
+
+    title, desc = _existing_metadata(svg)
+    return bool(
+        title
+        and desc
+        and len(desc) >= 160
+        and "What this figure shows:" in desc
+        and "Scientific status:" in desc
+    )
+
+
 def _readme_records() -> dict[str, FigureRecord]:
     text = _read(README)
     records: dict[str, FigureRecord] = {}
@@ -330,13 +349,25 @@ def _enrich_svgs() -> list[tuple[str, FigureRecord]]:
         original = _read(path)
         svg = _escape_invalid_svg_text(original)
 
-        record = combined.get(rel)
-        if record is None:
-            record = _proposition_record(path, svg)
-        if record is None:
-            record = _fallback_record(path, svg)
+        existing_title, existing_desc = _existing_metadata(svg)
+        if _has_curated_metadata(svg):
+            assert existing_title is not None
+            assert existing_desc is not None
+            description, status = existing_desc.split("Scientific status:", 1)
+            record = FigureRecord(
+                title=existing_title,
+                description=description.strip(),
+                status=status.strip(),
+            )
+            enriched = svg
+        else:
+            record = combined.get(rel)
+            if record is None:
+                record = _proposition_record(path, svg)
+            if record is None:
+                record = _fallback_record(path, svg)
+            enriched = _replace_or_insert_metadata(svg, record)
 
-        enriched = _replace_or_insert_metadata(svg, record)
         if enriched != original:
             _write(path, enriched)
         rows.append((rel, record))
@@ -464,6 +495,15 @@ def _write_catalog(rows: list[tuple[str, FigureRecord]]) -> None:
             safe_title = record.title.replace("|", "\\|")
             safe_desc = record.description.replace("|", "\\|")
             safe_status = record.status.replace("|", "\\|")
+            if Path(rel).name == "p55_pruning_aware_switching_monotonicity.svg":
+                p55_scope = (
+                    " Scope guide: metric shortcutting proves the route monotonicity; "
+                    "the support-preserving case has zero route release; the shortcut lower "
+                    "certificate quantifies guaranteed switching savings after support deletion; "
+                    "and the physical-to-experiential bridge remains open."
+                )
+                if "metric shortcutting" not in safe_desc:
+                    safe_desc += p55_scope
             lines.append(
                 f"| [{safe_title}]({docs_rel}) | {safe_desc} | {safe_status} | {_context_link(rel)} |"
             )
