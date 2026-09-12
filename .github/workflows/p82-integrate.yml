@@ -25,10 +25,11 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -e '.[dev]'
           python -m pip install -r requirements-reproducibility.txt
-      - name: Synchronize P82 publication surfaces
+      - name: Synchronize P82 publication and release surfaces
         run: |
           python scripts/_integrate_p82_publication.py
           python scripts/_integrate_p82_reader_frontier.py
+          python scripts/_finalize_p82_release.py
           sed -i '/^import re$/d' scripts/_integrate_p82_publication.py
       - name: Regenerate and enrich figures
         run: python scripts/generate_all_figures.py
@@ -37,14 +38,22 @@ jobs:
           python -m pytest
           python -m ruff check .
           python scripts/verify_repository.py
-      - name: Commit synchronized P82 publication record
+      - name: Commit release candidate locally
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add README.md START_HERE.md CHANGELOG.md CITATION.cff CITATION.md CITATION.bib docs figures website src tests scripts
+          git add README.md START_HERE.md CHANGELOG.md CITATION.cff CITATION.md CITATION.bib pyproject.toml docs figures website src tests scripts
           if git diff --cached --quiet; then
-            echo 'No publication changes to commit.'
-            exit 0
+            echo 'No synchronized release changes to commit.'
+          else
+            git commit -m 'Finalize v0.82.0 P82 publication frontier'
           fi
-          git commit -m 'Synchronize P82 publication frontier'
-          git push origin HEAD:p82-exact-nested-projection-contrast
+      - name: Run exact reproducibility audit on committed candidate
+        run: python scripts/reproducibility_audit.py
+      - name: Push validated release candidate
+        run: |
+          if git diff --quiet origin/p82-exact-nested-projection-contrast..HEAD; then
+            echo 'Branch already contains the validated candidate.'
+          else
+            git push origin HEAD:p82-exact-nested-projection-contrast
+          fi
