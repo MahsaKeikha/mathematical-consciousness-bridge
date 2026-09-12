@@ -30,6 +30,7 @@ jobs:
           python scripts/_integrate_p82_publication.py
           python scripts/_integrate_p82_reader_frontier.py
           python scripts/_finalize_p82_release.py
+          python scripts/_patch_p82_release_guards.py
           sed -i '/^import re$/d' scripts/_integrate_p82_publication.py
       - name: Regenerate and enrich figures
         run: python scripts/generate_all_figures.py
