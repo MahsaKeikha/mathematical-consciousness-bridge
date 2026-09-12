@@ -8,13 +8,14 @@ The goal is simple: a reader should not have to guess which commands were used t
 
 ## 1. Supported environment
 
-- **Python:** 3.10, 3.11, or 3.12
+- **Compatibility:** Python 3.10, 3.11, or 3.12
+- **Exact reference environment:** Python 3.12.14, recorded in `.python-version`
 - **Primary test framework:** `pytest`
 - **Static checks:** `ruff`
 - **Numerical/figure dependencies:** `numpy`, `matplotlib`
 - **Package installation:** editable install from `pyproject.toml`
 
-The continuous-integration matrix runs the main test suite and Ruff on Python **3.10, 3.11, and 3.12**.
+The continuous-integration matrix runs the main test suite and Ruff on Python **3.10, 3.11, and 3.12**. Exact publication-artifact reproduction is additionally checked on Python **3.12.14** with the pinned versions in `requirements-reproducibility.txt`.
 
 ---
 
@@ -25,15 +26,36 @@ git clone https://github.com/MahsaKeikha/mathematical-consciousness-bridge.git
 cd mathematical-consciousness-bridge
 python -m pip install --upgrade pip
 python -m pip install -e ".[dev]"
+python -m pip install -r requirements-reproducibility.txt
 ```
 
-The `dev` extra contains the dependencies needed for tests, linting, and the generated figure atlases.
+The `dev` extra contains the development tools. The pinned reproducibility file fixes the exact numerical and plotting versions used to reproduce the publication artifacts. `requirements-figures.txt` contains the exact plotting stack and can be used separately when only the figures are needed.
 
 If your system provides `python3` rather than `python`, substitute `python3` in the commands below.
 
 ---
 
-## 3. One-command verification
+## 3. Exact one-command reproduction
+
+After installing the exact reference environment above, run:
+
+```bash
+python scripts/reproducibility_audit.py
+```
+
+Or:
+
+```bash
+make reproduce
+```
+
+This is the strongest repository-level check. It starts from a clean Git tree, compiles the source and scripts, imports every package module, runs pytest and Ruff, verifies repository structure, regenerates both computational atlases, reapplies embedded SVG descriptions, requires the rebuild to match the committed artifacts exactly, regenerates a second time, and requires the second build to be byte-identical to the first. Any changed tracked file is a reproducibility failure.
+
+The exact reference environment is intentionally narrower than the compatibility matrix. This separates two questions cleanly: **does the software work on the supported Python versions?** and **can the published computational artifacts be rebuilt identically?**
+
+---
+
+## 4. Fast verification without regeneration
 
 On systems with `make`:
 
@@ -54,7 +76,7 @@ The direct commands are the canonical fallback when `make` is unavailable.
 
 ---
 
-## 4. Run the full tests
+## 5. Run the full tests
 
 ```bash
 python -m pytest
@@ -79,7 +101,7 @@ A passing test suite confirms that the declared implementation and regression ch
 
 ---
 
-## 5. Run static checks
+## 6. Run static checks
 
 ```bash
 python -m ruff check .
@@ -95,7 +117,7 @@ Ruff checks the Python source, scripts, and tests according to the repository co
 
 ---
 
-## 6. Generate the reproducible figure atlases
+## 7. Generate the reproducible figure atlases
 
 Use the unified command:
 
@@ -119,7 +141,7 @@ scripts/generate_quantum_foundations_atlas.py
     -> docs/figures/quantum/
 ```
 
-It then validates the complete SVG figure tree.
+It then reapplies embedded SVG title/description metadata and validates the complete SVG figure tree. In the exact reference environment, regeneration must leave `git status --porcelain` empty.
 
 ### Figure provenance matters
 
@@ -132,7 +154,7 @@ A theorem diagram should not be mistaken for simulated evidence, and a simulatio
 
 ---
 
-## 7. Validate figures without regenerating them
+## 8. Validate figures without regenerating them
 
 ```bash
 python scripts/generate_all_figures.py --validate-only
@@ -153,7 +175,7 @@ The validator checks that:
 
 ---
 
-## 8. Verify repository publication consistency
+## 9. Verify repository publication consistency
 
 ```bash
 python scripts/verify_repository.py
@@ -179,7 +201,7 @@ The repository verifier is deliberately network-free so it can run in CI and in 
 
 ---
 
-## 9. GitHub Actions: see the results without installing locally
+## 10. GitHub Actions: see the results without installing locally
 
 The repository exposes two primary validation workflows.
 
@@ -195,6 +217,10 @@ install package + dev dependencies
 ```
 
 Open the repository's **Actions** tab and select the `tests` workflow to inspect the run matrix, individual steps, and failures.
+
+### `reproducibility`
+
+Runs the exact reference environment on Python 3.12.14 and executes `python scripts/reproducibility_audit.py`. This is the release-level proof that the maintained code, tests, repository checks, and generated computational artifacts can be reproduced from the committed record.
 
 ### `figures`
 
@@ -212,7 +238,7 @@ This lets a reviewer reproduce and inspect generated outputs without writing int
 
 ---
 
-## 10. Reproduce the current P81 implementation checks directly
+## 11. Reproduce the current P81 implementation checks directly
 
 The current theorem frontier is P81. Its primary files are:
 
@@ -237,7 +263,7 @@ The focused suite is useful for auditing P81, but the full test matrix remains t
 
 ---
 
-## 11. Interpreting a successful run
+## 12. Interpreting a successful run
 
 A green test or figure-generation run means the **repository's formal and computational checks completed successfully** under the declared environment. It does not mean:
 
@@ -251,7 +277,7 @@ The repository deliberately keeps **software reproducibility**, **mathematical p
 
 ---
 
-## 12. Recommended audit sequence for external reviewers
+## 13. Recommended audit sequence for external reviewers
 
 For a result you want to scrutinize closely:
 

@@ -1,4 +1,4 @@
-.PHONY: install test lint figures figures-check verify check
+.PHONY: install test lint figures figures-check verify check reproduce
 
 PYTHON ?= python
 
@@ -22,3 +22,6 @@ verify:
 	$(PYTHON) scripts/verify_repository.py
 
 check: test lint figures-check verify
+
+reproduce:
+	$(PYTHON) scripts/reproducibility_audit.py
