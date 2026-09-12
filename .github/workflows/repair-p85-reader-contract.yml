@@ -23,6 +23,31 @@ jobs:
           python-version: "3.12"
       - name: Repair P85 reader contract
         run: python scripts/repair_p85_reader_contract.py
+      - name: Normalize P84 and P85 Research Map semantics
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("website/research-map.html")
+          text = path.read_text(encoding="utf-8")
+          text = text.replace(
+              '<a class="button primary" href="#p84">Continue to the current P85 frontier</a>',
+              '<a class="button primary" href="index.html#p85-frontier">Continue to the current P85 frontier</a>',
+              1,
+          )
+          text = text.replace(
+              '<p class="eyebrow">Current certified frontier</p>\n      <h2>P84:',
+              '<p class="eyebrow">Previous certified frontier · P84</p>\n      <h2>P84:',
+              1,
+          )
+          if 'href="index.html#p85-frontier">Continue to the current P85 frontier</a>' not in text:
+              raise RuntimeError("P85 frontier navigation was not normalized")
+          if '<p class="eyebrow">Previous certified frontier · P84</p>' not in text:
+              raise RuntimeError("P84 historical frontier label was not normalized")
+          if '<p class="eyebrow">Current certified frontier</p>\n      <h2>P84:' in text:
+              raise RuntimeError("stale P84 current-frontier label remains")
+          path.write_text(text, encoding="utf-8")
+          PY
       - name: Verify targeted publication tests
         run: |
           python -m pip install -e ".[dev]"
