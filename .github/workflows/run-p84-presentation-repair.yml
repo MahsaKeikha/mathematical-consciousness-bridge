@@ -34,3 +34,5 @@ jobs:
             git commit -m "Polish P84 website and documentation presentation"
             git push origin HEAD:main
           fi
+
+# Touch after registration so the path-filtered workflow runs on the default branch.
