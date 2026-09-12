@@ -1,3 +1,4 @@
+import ast
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -38,6 +39,7 @@ def test_visual_atlas_uses_public_paths_and_readable_display_rules() -> None:
     assert "p81_projection_event_model_separation.svg" in atlas
     assert 'loading="lazy"' in atlas
     assert "theorem-figure-shell" in atlas
+    assert atlas.count("<h2>How to read every figure</h2>") == 1
 
 
 def test_reader_and_figure_standards_are_documented() -> None:
@@ -47,3 +49,21 @@ def test_reader_and_figure_standards_are_documented() -> None:
     assert "## Display-size standard" in figures
     assert "760 to 980 CSS pixels" in reader
     assert "Never solve overflow by making text tiny" in reader
+
+
+def test_figure_enrichment_generator_preserves_canonical_reader_key() -> None:
+    source = _text("scripts/enrich_figure_documentation.py")
+    ast.parse(source)
+    assert "legacy_reading_key" in source
+    assert "reading_key" in source
+    assert "Figures are intentionally capped at a readable page size" in source
+    assert "reader_experience_and_visual_standard.md" in source
+    assert 'text.replace(legacy_reading_key, reading_key, 1)' in source
+
+
+def test_repository_verifier_tracks_p84_and_all_84_propositions() -> None:
+    verifier = _text("scripts/verify_repository.py")
+    assert 'CURRENT_FRONTIER = "P84"' in verifier
+    assert "for number in range(1, 85):" in verifier
+    assert '"docs/reader_experience_and_visual_standard.md"' in verifier
+    assert '"docs/proposition_84_exact_projection_parity_contrast.md"' in verifier
