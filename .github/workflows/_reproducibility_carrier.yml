@@ -51,8 +51,8 @@ jobs:
       - name: Prepare validated non-workflow commit for bot push
         run: |
           git reset --soft HEAD^
-          git restore --staged .github/workflows
-          git restore .github/workflows
+          git restore --source=HEAD --staged --worktree .github/workflows
+          git clean -f .github/workflows
           git add -A
           git commit -m "Harden deterministic end-to-end reproducibility"
       - name: Push validated code, scripts, tests, docs, and artifacts
