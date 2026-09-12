@@ -6,19 +6,20 @@
     document.querySelectorAll('footer').forEach((footer) => {
       let attribution = footer.querySelector('.footer-attribution');
       if (!attribution) {
-        attribution = document.createElement('p');
-        attribution.className = 'footer-attribution';
-        footer.insertBefore(attribution, footer.firstChild);
+        attribution = footer.querySelector('p') || document.createElement('p');
+        attribution.classList.add('footer-attribution');
+        if (!attribution.isConnected) footer.prepend(attribution);
       }
 
-      attribution.replaceChildren(
-        document.createTextNode('Research by '),
-      );
+      attribution.replaceChildren(document.createTextNode('Research by '));
       const author = document.createElement('a');
       author.href = AUTHOR_URL;
       author.textContent = AUTHOR_NAME;
       author.rel = 'author';
-      attribution.append(author, document.createTextNode(' · Mathematical Consciousness Bridge'));
+      attribution.append(
+        author,
+        document.createTextNode(' · Mathematical Consciousness Bridge'),
+      );
     });
   }
 
