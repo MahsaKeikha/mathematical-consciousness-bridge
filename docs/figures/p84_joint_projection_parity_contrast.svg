@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
+  <title id="title">P84 exact joint projection-parity contrast certificate</title>
+  <desc id="desc">What this figure shows: P84 strengthens P83 by preserving shared P75 response-parameter compatibility between pairs of projection-parity observables instead of checking each parity probability separately. How to read it: the left panel shows the limitation of separate scalar P83 intervals, the center panel shows exact common-endpoint multi-affine extremization for 220 genuinely coupled parity contrasts, and the right panel shows the exact rational strict witness where P83 is zero but P84 equals one thirty-second. Scientific status: conditional exact-rational computational-certification theorem for the declared P75 model family. It does not identify a latent variable with consciousness, does not validate a non-rejected model, and the physical-to-experiential bridge remains open.</desc>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="780" fill="#f8fafc"/>
+  <rect x="34" y="28" width="1132" height="724" rx="24" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
+
+  <text x="70" y="77" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700" fill="#0f172a">P84 Exact Joint Projection-Parity Contrast Certificate</text>
+  <text x="70" y="108" font-family="Arial, Helvetica, sans-serif" font-size="16.2" fill="#475569">Shared-parameter compatibility can fail even when every P83 parity probability is separately feasible</text>
+
+  <!-- STEP 1 -->
+  <rect x="70" y="145" width="310" height="430" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="70" y="145" width="310" height="82" rx="18" fill="#eef2ff"/>
+  <rect x="70" y="209" width="310" height="18" fill="#eef2ff"/>
+  <circle cx="101" cy="178" r="17" fill="#4f46e5"/>
+  <text x="101" y="184" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff">1</text>
+  <text x="128" y="173" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#1e1b4b">What P83 can miss</text>
+  <text x="94" y="205" font-family="Arial, Helvetica, sans-serif" font-size="13.1" fill="#475569">Separate feasibility is not joint feasibility</text>
+
+  <rect x="94" y="248" width="262" height="126" rx="12" fill="#f8faff" stroke="#818cf8" stroke-width="1.8"/>
+  <text x="114" y="276" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#312e81">Two exact P83 intervals</text>
+  <text x="114" y="304" font-family="Arial, Helvetica, sans-serif" font-size="12.8" fill="#4338ca">P(H1) in I1(B)</text>
+  <text x="114" y="329" font-family="Arial, Helvetica, sans-serif" font-size="12.8" fill="#4338ca">P(H2) in I2(B)</text>
+  <text x="114" y="353" font-family="Arial, Helvetica, sans-serif" font-size="12.2" fill="#4338ca">both can pass using different endpoint assignments</text>
+
+  <path d="M225 374 L225 399" stroke="#334155" stroke-width="2.4" marker-end="url(#arrow)"/>
+
+  <rect x="94" y="399" width="262" height="104" rx="12" fill="#fff7ed" stroke="#fb923c" stroke-width="1.8"/>
+  <text x="114" y="427" font-family="Arial, Helvetica, sans-serif" font-size="14.7" font-weight="700" fill="#9a3412">Missing requirement</text>
+  <text x="114" y="454" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#c2410c">Can one shared P75 parameter assignment</text>
+  <text x="114" y="477" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#c2410c">realize their observed relationship?</text>
+
+  <text x="96" y="536" font-family="Arial, Helvetica, sans-serif" font-size="12.4" fill="#64748b">P84 tests the relationship directly instead of</text>
+  <text x="96" y="557" font-family="Arial, Helvetica, sans-serif" font-size="12.4" fill="#64748b">subtracting independently optimized scalar ranges.</text>
+
+  <!-- CONNECTOR 1 -->
+  <path d="M380 360 L445 360" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- STEP 2 -->
+  <rect x="445" y="145" width="310" height="430" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="445" y="145" width="310" height="82" rx="18" fill="#ecfdf5"/>
+  <rect x="445" y="209" width="310" height="18" fill="#ecfdf5"/>
+  <circle cx="476" cy="178" r="17" fill="#059669"/>
+  <text x="476" y="184" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff">2</text>
+  <text x="503" y="173" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#064e3b">Keep parameters coupled</text>
+  <text x="469" y="205" font-family="Arial, Helvetica, sans-serif" font-size="13.1" fill="#475569">Extremize the contrast at common vertices</text>
+
+  <rect x="469" y="248" width="262" height="126" rx="12" fill="#f0fdf4" stroke="#34d399" stroke-width="1.8"/>
+  <text x="489" y="276" font-family="Arial, Helvetica, sans-serif" font-size="14.8" font-weight="700" fill="#065f46">Joint parity contrast</text>
+  <text x="489" y="303" font-family="Arial, Helvetica, sans-serif" font-size="12.4" fill="#047857">C = P(H1) - P(H2)</text>
+  <text x="489" y="329" font-family="Arial, Helvetica, sans-serif" font-size="12.1" fill="#047857">C_s = 1/2 [sign1 product a_j - sign2 product a_k]</text>
+  <text x="489" y="353" font-family="Arial, Helvetica, sans-serif" font-size="12.1" fill="#047857">multi-affine on the union of both view sets</text>
+
+  <path d="M600 374 L600 399" stroke="#334155" stroke-width="2.4" marker-end="url(#arrow)"/>
+
+  <rect x="469" y="399" width="262" height="104" rx="12" fill="#ecfeff" stroke="#22d3ee" stroke-width="1.8"/>
+  <text x="489" y="427" font-family="Arial, Helvetica, sans-serif" font-size="14.6" font-weight="700" fill="#155e75">Exact common-endpoint range</text>
+  <text x="489" y="453" font-family="Arial, Helvetica, sans-serif" font-size="12.1" fill="#155e75">at most 2^4 union vertices per latent branch</text>
+  <text x="489" y="476" font-family="Arial, Helvetica, sans-serif" font-size="12.1" fill="#155e75">then affine prevalence endpoints; Fraction arithmetic</text>
+
+  <rect x="469" y="520" width="262" height="39" rx="9" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.4"/>
+  <text x="600" y="545" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.4" font-weight="700" fill="#334155">220 genuinely coupled standard contrasts</text>
+
+  <!-- CONNECTOR 2 -->
+  <path d="M755 360 L820 360" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- STEP 3 -->
+  <rect x="820" y="145" width="310" height="430" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="820" y="145" width="310" height="82" rx="18" fill="#fff7ed"/>
+  <rect x="820" y="209" width="310" height="18" fill="#fff7ed"/>
+  <circle cx="851" cy="178" r="17" fill="#ea580c"/>
+  <text x="851" y="184" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff">3</text>
+  <text x="878" y="173" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#7c2d12">Strict exact witness</text>
+  <text x="844" y="205" font-family="Arial, Helvetica, sans-serif" font-size="13.1" fill="#475569">P83 accepts; the joint contrast rejects the box</text>
+
+  <rect x="844" y="248" width="262" height="126" rx="12" fill="#eef2ff" stroke="#818cf8" stroke-width="1.8"/>
+  <text x="864" y="276" font-family="Arial, Helvetica, sans-serif" font-size="14.6" font-weight="700" fill="#312e81">Named coupled pair</text>
+  <text x="864" y="303" font-family="Arial, Helvetica, sans-serif" font-size="12.4" fill="#4338ca">H1 = H({2,4}, 0)</text>
+  <text x="864" y="328" font-family="Arial, Helvetica, sans-serif" font-size="12.4" fill="#4338ca">H2 = H({2,3,4}, 1)</text>
+  <text x="864" y="352" font-family="Arial, Helvetica, sans-serif" font-size="12.2" fill="#4338ca">exact model contrast range: [0, 1/2]</text>
+
+  <path d="M975 374 L975 399" stroke="#334155" stroke-width="2.4" marker-end="url(#arrow)"/>
+
+  <rect x="844" y="399" width="262" height="104" rx="12" fill="#fff7ed" stroke="#fb923c" stroke-width="1.8"/>
+  <text x="864" y="427" font-family="Arial, Helvetica, sans-serif" font-size="14.6" font-weight="700" fill="#9a3412">Observed contrast is outside</text>
+  <text x="864" y="453" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#c2410c">empirical C = -1/4; interval gap = 1/4</text>
+  <text x="864" y="477" font-family="Arial, Helvetica, sans-serif" font-size="13.2" font-weight="700" fill="#c2410c">support = 8:  L83 = 0,  L84 = 1/32</text>
+
+  <rect x="844" y="520" width="262" height="39" rx="9" fill="#f0fdf4" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="975" y="545" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.2" font-weight="700" fill="#14532d">L84(B) = max(L83(B), L_joint-parity(B))</text>
+
+  <!-- BOTTOM BAND -->
+  <rect x="70" y="602" width="1060" height="106" rx="16" fill="#0f172a"/>
+  <text x="98" y="634" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#ffffff">What P84 adds</text>
+  <text x="98" y="662" font-family="Arial, Helvetica, sans-serif" font-size="14.6" fill="#e2e8f0">P83 can certify each parity event separately while losing the requirement that two observables share one P75 parameter assignment.</text>
+  <text x="98" y="687" font-family="Arial, Helvetica, sans-serif" font-size="14.4" fill="#86efac">P84 restores that coupling exactly, strengthens the lower bound when needed, and preserves the established P77-P79 rejection logic.</text>
+
+  <text x="70" y="738" font-family="Arial, Helvetica, sans-serif" font-size="12.7" fill="#64748b">P84 certifies a declared model-distance bound. It is not a consciousness-identification theorem. The physical-to-experiential bridge remains open.</text>
+</svg>
