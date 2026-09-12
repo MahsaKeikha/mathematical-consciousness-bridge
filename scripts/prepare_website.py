@@ -15,7 +15,7 @@ import re
 import shutil
 from pathlib import Path
 
-ASSET_VERSION = "20260912-nav9"
+ASSET_VERSION = "20260912-nav10"
 SCRIPT_TAG = f'<script defer src="app.js?v={ASSET_VERSION}"></script>'
 READER_LINKS_SCRIPT_TAG = '<script defer src="reader-links.js"></script>'
 FOOTER_SCRIPT_TAG = '<script defer src="footer.js"></script>'
