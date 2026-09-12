@@ -10,16 +10,57 @@ page drift while preserving a fully auditable static-site build.
 from __future__ import annotations
 
 import argparse
+import re
 import shutil
 from pathlib import Path
 
-SCRIPT_TAG = '<script defer src="app.js"></script>'
+ASSET_VERSION = "20260912-nav3"
+SCRIPT_TAG = f'<script defer src="app.js?v={ASSET_VERSION}"></script>'
 READER_LINKS_SCRIPT_TAG = '<script defer src="reader-links.js"></script>'
 FOOTER_SCRIPT_TAG = '<script defer src="footer.js"></script>'
 NAVIGATION_STYLE_TAG = '<link rel="stylesheet" href="navigation.css" />'
-NAVIGATION_V2_STYLE_TAG = '<link rel="stylesheet" href="navigation-v2.css" />'
+NAVIGATION_V2_STYLE_TAG = (
+    f'<link rel="stylesheet" href="navigation-v2.css?v={ASSET_VERSION}" />'
+)
 PUBLICATION_STYLE_TAG = '<link rel="stylesheet" href="publication.css" />'
 PUBLICATION_V2_STYLE_TAG = '<link rel="stylesheet" href="publication-v2.css" />'
+
+APP_SCRIPT_PATTERN = re.compile(
+    r'<script\s+defer\s+src="app\.js(?:\?v=[^"]+)?"></script>'
+)
+NAVIGATION_V2_STYLE_PATTERN = re.compile(
+    r'<link\s+rel="stylesheet"\s+href="navigation-v2\.css(?:\?v=[^"]+)?"\s*/?>'
+)
+TOPBAR_NAV_PATTERN = re.compile(
+    r'(<header\s+class="topbar">.*?<nav(?:\s[^>]*)?>).*?(</nav>)',
+    flags=re.DOTALL,
+)
+
+FALLBACK_NAV = (
+    '<a href="index.html">Overview</a>'
+    '<a href="start-here.html">Start Here</a>'
+    '<a href="research-map.html">Research</a>'
+    '<a href="visual-atlas.html">Explore</a>'
+    '<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge">GitHub ↗</a>'
+)
+
+
+def _normalize_navigation_assets(text: str) -> str:
+    """Replace stale shared-navigation URLs with cache-busted canonical URLs."""
+
+    text = APP_SCRIPT_PATTERN.sub(SCRIPT_TAG, text)
+    text = NAVIGATION_V2_STYLE_PATTERN.sub(NAVIGATION_V2_STYLE_TAG, text)
+    return text
+
+
+def _normalize_topbar_fallback(text: str) -> str:
+    """Keep the no-JavaScript fallback compact instead of exposing the old flat bar."""
+
+    return TOPBAR_NAV_PATTERN.sub(
+        lambda match: f"{match.group(1)}{FALLBACK_NAV}{match.group(2)}",
+        text,
+        count=1,
+    )
 
 
 def prepare_website(source: Path, output: Path) -> None:
@@ -41,6 +82,9 @@ def prepare_website(source: Path, output: Path) -> None:
         if "</head>" not in text:
             raise RuntimeError(f"missing </head> in {path}")
 
+        text = _normalize_navigation_assets(text)
+        text = _normalize_topbar_fallback(text)
+
         additions: list[str] = []
         if NAVIGATION_STYLE_TAG not in text:
             additions.append(NAVIGATION_STYLE_TAG)
@@ -58,7 +102,7 @@ def prepare_website(source: Path, output: Path) -> None:
             additions.append(FOOTER_SCRIPT_TAG)
         if additions:
             text = text.replace("</head>", "".join(additions) + "</head>", 1)
-            path.write_text(text, encoding="utf-8")
+        path.write_text(text, encoding="utf-8")
 
     required_assets = (
         "app.js",
