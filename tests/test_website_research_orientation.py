@@ -84,3 +84,13 @@ def test_research_map_presents_p77_through_p83_in_dependency_order():
     assert "P81 = 1/16 to P82 = 1/12" in text
     assert "L82 = 0 and L83 = 1/16" in text
     assert text.index('id="p83-frontier"') < text.index("</main>")
+
+
+def test_p83_frontier_is_unique_and_structurally_inside_main():
+    text = MAP.read_text(encoding="utf-8")
+    main_open = text.index("<main>")
+    main_close = text.index("</main>")
+    p83 = text.index('id="p83-frontier"')
+    assert text.count('id="p83-frontier"') == 1
+    assert main_open < p83 < main_close
+    assert "Open P83 →" not in text[main_close:]
