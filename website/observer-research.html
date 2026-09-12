@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Research I: the Spatiotemporal Observer Mathematics program that provides the physical and operational groundwork preceding Mathematical Consciousness Bridge." />
-  <title>Research I · Spatiotemporal Observer Mathematics</title>
+  <meta name="description" content="Research I: Spatiotemporal Observer Mathematics, the moving-boundary physical subsystem identification program that provides the operational foundation preceding Mathematical Consciousness Bridge." />
+  <title>Research I | Spatiotemporal Observer Mathematics</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="research-guide-v2.css" />
   <script defer src="app.js"></script>
   <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};</script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
@@ -19,167 +20,221 @@
 
   <main id="top">
     <section class="hero compact-hero">
-      <p class="eyebrow">Research I · Previous repository · Physical and operational groundwork</p>
-      <h1>Spatiotemporal observer mathematics</h1>
-      <p class="lede">This is the dedicated reader page for the research developed in <strong>spatiotemporal-observer-math</strong>. It builds an observer-centered mathematical architecture from spacetime geometry, causal accessibility, finite-horizon physical readouts, subsystem comparison, uncertainty, interventions, and robustness. It is the physical and operational program that precedes the present bridge project.</p>
+      <p class="eyebrow">Research I · Physical subsystem identification</p>
+      <h1>Spatiotemporal Observer Mathematics</h1>
+      <p class="lede">This is the dedicated website guide to the earlier <strong>spatiotemporal-observer-math</strong> repository. The project asks whether a subsystem whose measured coordinates change through time can be inferred from stochastic dynamics rather than fixed in advance. Its object of inference is a moving world-tube, supported by integration, insulation, persistence, transport, identifiability, finite-sample certification, physical-time calibration, and reproducible computation.</p>
+
       <div class="hero-actions">
-        <a class="button primary" href="https://github.com/MahsaKeikha/spatiotemporal-observer-math">Open Research I repository</a>
+        <a class="button primary" href="https://github.com/MahsaKeikha/spatiotemporal-observer-math">Open the Research I repository</a>
+        <a class="button" href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/visual_research_guide.md">Open its visual guide</a>
         <a class="button" href="research-lineage.html">See the handoff to Research II</a>
-        <a class="button" href="research-map.html">Open Research II map</a>
       </div>
-      <div class="status-grid" aria-label="Research I status">
-        <div><strong>v1.9.0</strong><span>documented Research I release</span></div>
-        <div><strong>258</strong><span>tests reported in Research I</span></div>
-        <div><strong>54</strong><span>simulation pipelines</span></div>
-        <div><strong>Physical</strong><span>observer-defined operational architecture</span></div>
+
+      <div class="status-grid" aria-label="Research I verified public record">
+        <a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/research_index.md"><strong>58</strong><span>proposition-level statements</span></a>
+        <a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/reproducible_results.md"><strong>45</strong><span>reproducible experiments</span></a>
+        <a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/visual_research_guide.md"><strong>33</strong><span>scientific result figures</span></a>
+        <a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/tree/main/tests"><strong>223</strong><span>claim-level tests</span></a>
+      </div>
+
+      <div class="research-jumpbar" aria-label="Research I page guide">
+        <a href="#question"><span>01 · Question</span><strong>What is being inferred?</strong><small>Begin with the moving-boundary problem.</small></a>
+        <a href="#mathematics"><span>02 · Mathematics</span><strong>How is the observer scored?</strong><small>Follow the stochastic model and world-tube objective.</small></a>
+        <a href="#evidence"><span>03 · Evidence</span><strong>What was actually tested?</strong><small>Open representative figures and reproducibility records.</small></a>
+        <a href="#handoff"><span>04 · Handoff</span><strong>Why Research II follows</strong><small>See exactly where physical subsystem inference stops.</small></a>
       </div>
     </section>
 
-    <section>
+    <section id="question">
       <div class="section-head">
-        <p class="eyebrow">The question of Research I</p>
-        <h2>How can an observer-centered physical description be made mathematically explicit without defining consciousness into the model?</h2>
-        <p>The first repository develops a precise language for moving observers, physical subsystems, causal accessibility, multimodal measurements, comparison metrics, interventions, and uncertainty. Its purpose is operational: specify what a physical observer can access, measure, compare, perturb, and infer over time.</p>
+        <p class="eyebrow">The Research I question</p>
+        <h2>Can a moving subsystem boundary be inferred from the dynamics rather than assumed in advance?</h2>
+        <p>Let the measured state at time \(t\) be \(X_t=(X_t^{(1)},\ldots,X_t^{(n)})\). A candidate subsystem is a time-dependent subset \(S_t\subseteq\{1,\ldots,n\}\). Research I asks whether the measured dynamics distinguish one moving sequence of subsets from competing paths after identifiability and finite-data uncertainty are taken into account.</p>
       </div>
+
+      <div class="figure-card">
+        <a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/physics_guide.md" aria-label="Open the authoritative Research I physics guide">
+          <img src="https://raw.githubusercontent.com/MahsaKeikha/spatiotemporal-observer-math/main/docs/physics_pipeline.svg" alt="Research I physics-to-inference pipeline" />
+        </a>
+        <div>
+          <p class="eyebrow">Authoritative Research I pipeline</p>
+          <h3>Measured observables → stochastic dynamics → candidate boundary → world-tube recovery</h3>
+          <p>The prior repository moves from measured physical observables to an effective stochastic model, then to covariance geometry, candidate boundaries, dynamical scores, global path optimization, and finite-sample certification.</p>
+          <div class="research-section-actions">
+            <a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/physics_guide.md">Physics guide →</a>
+            <a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/physics_mathematics_citation_map.md">Equation + citation map →</a>
+            <a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/research_overview.md">Research overview →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="research-flowline" aria-label="Research I inference flow">
+        <a href="#dynamics">Measured observables</a>
+        <a href="#dynamics">Stochastic dynamics</a>
+        <a href="#mathematics">Covariance geometry</a>
+        <a href="#mathematics">Candidate boundary</a>
+        <a href="#scores">Four dynamical scores</a>
+        <a href="#objective">World-tube objective</a>
+        <a href="#evidence">Finite-data certification</a>
+      </div>
+    </section>
+
+    <section id="dynamics">
+      <div class="section-head">
+        <p class="eyebrow">Physical observation model</p>
+        <h2>The mathematics begins from an explicit effective stochastic dynamical model</h2>
+        <p>The main analytical observation model in Research I is</p>
+      </div>
+
+      <p class="equation">\[X_{t+1}=A_tX_t+\varepsilon_t,\qquad \varepsilon_t\sim\mathcal N(0,Q_t),\qquad \varepsilon_t\perp X_t.\]</p>
+
       <div class="two-col">
         <div>
-          <h2>The core observer object</h2>
-          <p>The program organizes an observer through a structured object</p>
-          <p class="equation">\[O=(W,\Sigma(\tau),\Pi,F,M,C),\]</p>
-          <p>where \(W\) is the observer world-tube, \(\Sigma(\tau)\) is its evolving physical state or history, \(\Pi\) is a subsystem partition, \(F\) is a family of observable extractors, \(M\) is a metric family, and \(C\) records event and causal structure.</p>
-          <p>This makes the observer an auditable mathematical object rather than a verbal placeholder. Each component can be changed, tested, or falsified independently.</p>
+          <h2>What the model provides</h2>
+          <p>With \(\Sigma_t=\operatorname{Cov}(X_t)\), the model determines the adjacent-state fluctuation geometry used to compute Gaussian information and canonical-correlation quantities. Research I treats this as an <strong>effective statistical model</strong>, not as a universal microscopic physical law.</p>
+          <p>The interpretation of coordinates, units, sampling schedule, nuisance structure, covariance geometry, and candidate boundaries must therefore be declared and validated for each physical application.</p>
         </div>
         <aside class="card">
-          <h3>Scientific boundary</h3>
-          <p>Research I does <strong>not</strong> insert consciousness as a scalar, state variable, field, material phase, or extra spacetime dimension. It studies operational invariants and observer-defined physical structure.</p>
-          <p>Agreement between operational metrics is evidence of robustness of the physical description. It is not ontological proof about subjective experience.</p>
-          <a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/conceptual_scope.md">Read the original conceptual scope →</a>
+          <h3>Read the original derivation</h3>
+          <p>The previous repository keeps the physical assumptions, units, equations, provenance, and model limitations in dedicated audit documents.</p>
+          <p><a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/physics_guide.md">Physics Guide →</a></p>
+          <p><a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/derivations.md">Derivations →</a></p>
+          <p><a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/assumption_ledger.md">Assumption Ledger →</a></p>
         </aside>
       </div>
     </section>
 
-    <section>
+    <section id="mathematics">
       <div class="section-head">
-        <p class="eyebrow">Physics → observer pipeline</p>
-        <h2>From spacetime events to the information physically available to an observer</h2>
-        <p>The architecture begins with standard spacetime and causal structure, then asks what portion of the physical world is accessible to a specific observer at a specific proper time.</p>
+        <p class="eyebrow">The inferred object</p>
+        <h2>The observer is represented operationally as a moving world-tube</h2>
+        <p>At each time, the candidate boundary is \(S_t\). Across a finite horizon, the moving subsystem is the path</p>
       </div>
-      <div class="figure-card">
-        <a href="https://raw.githubusercontent.com/MahsaKeikha/spatiotemporal-observer-math/main/docs/figures/physics_to_observer_pipeline.svg">
-          <img src="https://raw.githubusercontent.com/MahsaKeikha/spatiotemporal-observer-math/main/docs/figures/physics_to_observer_pipeline.svg" alt="Research I physics-to-observer pipeline" />
-        </a>
-        <p class="caption">Research I visual pipeline: physical events and causal structure are converted into observer-indexed accessible descriptions. This figure belongs to the previous repository.</p>
+
+      <p class="equation">\[\mathcal W=(S_0,S_1,\ldots,S_{T-1}).\]</p>
+      <p class="research-note">The word <strong>observer</strong> is operational in Research I: it denotes the candidate subsystem supported by the declared dynamical criterion. Recovering a world-tube is a physical subsystem-identification result, not a conclusion about subjective experience.</p>
+
+      <div id="scores" class="research-card-grid">
+        <a class="research-card-link" href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/README.md#32-integration-and-insulation"><span>Score 1</span><strong>Integration</strong><p>Do internal parts add predictive information about one another?</p><small>Open the exact definition and information-theoretic construction.</small></a>
+        <a class="research-card-link" href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/README.md#32-integration-and-insulation"><span>Score 2</span><strong>Insulation</strong><p>Does the measured exterior add limited next-step prediction once the candidate state is known?</p><small>Open the environmental-leakage definition.</small></a>
+        <a class="research-card-link" href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/README.md#33-persistence-and-transport"><span>Score 3</span><strong>Persistence</strong><p>Does collective organization remain predictively stable through time?</p><small>Open the canonical-correlation persistence functional.</small></a>
+        <a class="research-card-link" href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/README.md#33-persistence-and-transport"><span>Score 4</span><strong>Transport</strong><p>Can organization persist while the measured coordinates carrying it change?</p><small>Open the cross-boundary transport construction.</small></a>
       </div>
+    </section>
+
+    <section id="objective">
+      <div class="section-head">
+        <p class="eyebrow">Global recovery objective</p>
+        <h2>The preferred observer path is a finite-horizon optimization problem</h2>
+        <p>The local score combines integration, insulation, and persistence; the path objective then rewards transport and penalizes excessive boundary discontinuity.</p>
+      </div>
+
+      <p class="equation">\[\Omega_t(S)=\left[G_t(S)K_t(S)P(X_S^t,X_S^{t+1})\right]^{1/3}.\]</p>
+      <p class="equation">\[A(p)=\sum_{t=0}^{T-1}\Omega_t(S^{(j_t)})+\chi\sum_{t=0}^{T-2}\Theta_t(S^{(j_t)}\to S^{(j_{t+1})})-\lambda\sum_{t=0}^{T-2}d_J(S^{(j_t)},S^{(j_{t+1})}).\]</p>
+
       <div class="two-col">
         <div>
-          <h2>Causal accessibility</h2>
-          <p>For an observer worldline \(\gamma_O(\tau)\), an event or physical occurrence \(X\) is accessible when it lies on or within the observer's past light cone:</p>
-          <p class="equation">\[A_O(\tau;X)=\mathbf 1\!\left[X\text{ occurs before or on the past light cone at }\gamma_O(\tau)\right].\]</p>
-          <p>This separates what exists in the modeled physical system from what can physically enter the observer's information history at time \(\tau\).</p>
+          <h2>Why the path formulation matters</h2>
+          <p>The problem is global: a plausible boundary at one time is not enough. Dynamic programming selects a complete trajectory through the candidate family and also provides the runner-up needed to define the population action margin \(\Delta_A=A(p_*)-A(p_{(2)})\).</p>
+          <p>That separation margin becomes central when finite-sample uncertainty is propagated back to path recovery.</p>
         </div>
-        <div>
-          <h2>Instantaneous and finite-horizon readouts</h2>
-          <p>A multimodal instantaneous physical readout can be written as</p>
-          <p class="equation">\[X_O(\tau)=\sum_k w_k\,\phi_k(\tau),\]</p>
-          <p>while a finite-horizon observer history is</p>
-          <p class="equation">\[\mathcal X_O[\tau_a,\tau_b]=\{X_O(\tau)\mid \tau\in[\tau_a,\tau_b]\}.\]</p>
-          <p>The finite-horizon form matters because observer identity and physical organization are generally dynamical rather than single-frame objects.</p>
-        </div>
+        <aside class="card">
+          <h3>Audit the theorem layer</h3>
+          <p><a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/proofs_and_conjectures.md">Proofs and conjectures →</a></p>
+          <p><a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/research_index.md">Complete Research Index →</a></p>
+          <p><a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/physics_mathematics_citation_map.md">Physics + Mathematics + Citation Map →</a></p>
+        </aside>
       </div>
     </section>
 
-    <section class="dark-section">
+    <section id="evidence">
       <div class="section-head">
-        <p class="eyebrow">Comparison geometry</p>
-        <h2>Observers can be compared without pretending one metric is an ontology</h2>
-        <p>Research I combines observable, causal, and decision-level discrepancies into a declared metric family rather than hiding modeling choices inside a single unexplained score.</p>
+        <p class="eyebrow">Visual evidence and reproducibility</p>
+        <h2>Representative outputs link directly to their original theorem or reproducibility records</h2>
+        <p>The original repository contains 33 scientific result figures. These three show the progression from moving-boundary recovery to finite-sample physical-time certification and finally to the observer-scale bottleneck.</p>
       </div>
-      <p class="equation">\[S_{\theta}(O_i,O_j)=\alpha d_{\mathrm{obs}}+\beta d_{\mathrm{causal}}+\gamma d_{\mathrm{dec}},\]</p>
-      <p>with a normalized default form</p>
-      <p class="equation">\[S_{\theta}=\frac{\alpha d_{\mathrm{obs}}+\beta d_{\mathrm{causal}}+\gamma d_{\mathrm{dec}}}{\alpha+\beta+\gamma}.\]</p>
-      <p>The parameters make the comparison rule visible. Sensitivity to those choices can therefore be measured rather than ignored.</p>
-    </section>
 
-    <section>
-      <div class="section-head">
-        <p class="eyebrow">Mathematical results</p>
-        <h2>What Research I established inside its declared physical model</h2>
-        <p>The original repository records theorem-like and computational results across spacetime consistency, causal accessibility, observer comparison, covariance, and perturbational analysis.</p>
+      <div class="research-figure-grid">
+        <a class="evidence-card" href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/reproducible_results.md">
+          <img src="https://raw.githubusercontent.com/MahsaKeikha/spatiotemporal-observer-math/main/docs/worldtube_baseline.png" alt="Research I baseline world-tube recovery figure" />
+          <div class="evidence-copy"><span>Moving-boundary recovery</span><strong>World-tube baseline</strong><small>Open the reproducible-results record and controlled planted-path benchmark.</small></div>
+        </a>
+        <a class="evidence-card" href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/proposition_56_innovation_whitened_target.md">
+          <img src="https://raw.githubusercontent.com/MahsaKeikha/spatiotemporal-observer-math/main/docs/innovation_whitened_target.svg" alt="Research I innovation-whitened target covariance figure" />
+          <div class="evidence-copy"><span>Physical-time inference</span><strong>Innovation-whitened target covariance</strong><small>Open Proposition 56 and its exact local innovation target-inference result.</small></div>
+        </a>
+        <a class="evidence-card" href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/proposition_58_observer_bridge.md">
+          <img src="https://raw.githubusercontent.com/MahsaKeikha/spatiotemporal-observer-math/main/docs/observer_bridge_dimension_audit.svg" alt="Research I observer-scale covariance-to-world-tube audit" />
+          <div class="evidence-copy"><span>Current physical bottleneck</span><strong>Covariance uncertainty → world-tube recovery</strong><small>Open Proposition 58 and the dimension/simultaneous-coverage diagnostic.</small></div>
+        </a>
       </div>
-      <div class="result-grid">
-        <article class="result"><span>01</span><h3>Exact worldline consistency</h3><p>Constant-velocity worldline calculations agree with the declared relativistic geometry and provide a controlled reference case.</p></article>
-        <article class="result"><span>02</span><h3>Accessibility monotonicity</h3><p>The causal-accessibility construction has a mathematically controlled ordering as the observer's physically available history grows.</p></article>
-        <article class="result"><span>03</span><h3>Well-posed observer score</h3><p>The normalized composite score is defined under explicit nonnegative weights and exposes the dependence on the chosen metric family.</p></article>
-        <article class="result"><span>04</span><h3>Zero-distance verification</h3><p>Matched observer descriptions return the expected zero-separation behavior under the implemented metric definitions.</p></article>
-        <article class="result"><span>05</span><h3>Positive mismatch separation</h3><p>Physically or operationally mismatched observer descriptions can be separated by the declared comparison geometry.</p></article>
-        <article class="result"><span>06</span><h3>Lorentz-covariant event classification</h3><p>The causal classification of events is checked against the relevant Lorentz transformations rather than tied to one arbitrary inertial coordinate frame.</p></article>
-        <article class="result"><span>07</span><h3>Directional causal-drift proxy</h3><p>Perturbational changes are tracked directionally to distinguish simple descriptive difference from intervention-sensitive causal drift.</p></article>
-      </div>
-    </section>
 
-    <section>
-      <div class="section-head">
-        <p class="eyebrow">Inference and validation</p>
-        <h2>The physical architecture was built with separate deterministic, statistical, intervention, and robustness layers</h2>
-      </div>
-      <div class="flow">
-        <div class="flow-node"><span>01</span><h3>Deterministic geometry</h3><p>Worldlines, world-tubes, Lorentz transformations, proper time, null-cone accessibility, and exact reference cases.</p></div>
-        <div class="flow-node"><span>02</span><h3>Observation layer</h3><p>Finite-horizon multimodal readouts and explicit estimators distinguish the physical state from the data available to inference.</p></div>
-        <div class="flow-node"><span>03</span><h3>Intervention profile</h3><p>Perturbations test whether apparent similarity persists when the modeled system is actively changed rather than passively observed.</p></div>
-        <div class="flow-node"><span>04</span><h3>Reliability and uncertainty</h3><p>Noise, estimation uncertainty, parameter dependence, and representation robustness are treated as scientific quantities rather than presentation details.</p></div>
-        <div class="flow-node"><span>05</span><h3>Adversarial counterexamples</h3><p>Counterexamples expose conditions under which an intuitively attractive observer score or structural interpretation can fail.</p></div>
-        <div class="flow-node"><span>06</span><h3>Preregistration</h3><p>Claims, expected signatures, and failure conditions are separated from post-hoc interpretation wherever the program makes empirical-facing proposals.</p></div>
+      <div class="research-section-actions">
+        <a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/visual_research_guide.md">Browse all 33 figures →</a>
+        <a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/reproducible_results.md">Reproducible results →</a>
+        <a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/tree/main/tests">Inspect the tests →</a>
+        <a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/actions">Open CI history →</a>
       </div>
     </section>
 
     <section class="boundary">
-      <h2>What Research I did not establish</h2>
-      <p>It did not prove that an observer object is conscious, that operational persistence is subjective identity, that causal integration is experience, or that a robust physical metric is a consciousness measure. The program supplies a disciplined physical and observer-indexed description. The physical-to-experiential step is a different scientific obligation.</p>
+      <p class="eyebrow">Scientific boundary</p>
+      <h2>What Research I established, and what it deliberately did not establish</h2>
+      <p>Research I develops a mathematical and computational framework for time-dependent physical subsystem identification. It studies moving-boundary recovery, identifiability, finite-sample uncertainty, temporal dependence, nuisance structure, physical-time calibration, innovation whitening, and propagation of covariance uncertainty back to the world-tube objective. It does <strong>not</strong> prove that the recovered subsystem is conscious, that dynamical persistence is subjective identity, or that a successful physical observer model solves the physical-to-experiential bridge.</p>
+      <div class="research-section-actions">
+        <a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/assumption_ledger.md">Assumptions and failure conditions →</a>
+        <a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/bibliography.md">Bibliography and lineage →</a>
+      </div>
     </section>
 
-    <section>
+    <section id="handoff">
       <div class="section-head">
-        <p class="eyebrow">Why Research II exists</p>
-        <h2>A strong physical description is the starting point of the bridge question, not its answer</h2>
-        <p>Research I can provide an observer-indexed physical descriptor, schematically \(\Sigma_O\). The present repository then asks a distinct question: under what independently justified assumptions could a target variable \(C\) depend only on that physical description?</p>
+        <p class="eyebrow">Research I → Research II</p>
+        <h2>A well-specified physical subsystem is the starting point of the bridge problem, not its answer</h2>
+        <p>Research II preserves the physical discipline of Research I and then asks a different question: what additional representation, target, measurement, model-adequacy, finite-data, and falsification conditions must be satisfied before a physical description can support an independently specified experiential claim?</p>
       </div>
-      <p class="equation">\[\Sigma_O \quad\longrightarrow\quad ? \quad\longrightarrow\quad C\]</p>
-      <p class="equation">\[C=G(\Sigma_O)\quad\text{is a bridge hypothesis, not a consequence of defining }\Sigma_O.\]</p>
+
       <div class="lineage-callout-actions">
-        <a class="lineage-mini-card current" href="observer-research.html"><span>Research I</span><strong>Physical observer mathematics</strong><small>The page you are reading</small></a>
-        <a class="lineage-mini-card" href="research-lineage.html"><span>Handoff</span><strong>Research lineage</strong><small>See exactly what transfers and what remains open →</small></a>
+        <a class="lineage-mini-card current" href="observer-research.html"><span>Research I</span><strong>Physical subsystem identification</strong><small>Moving-boundary observer mathematics</small></a>
+        <a class="lineage-mini-card" href="research-lineage.html"><span>Scientific handoff</span><strong>Research lineage</strong><small>See exactly what carries forward and what remains open →</small></a>
         <a class="lineage-mini-card" href="research-map.html"><span>Research II</span><strong>Bridge-test theorem program</strong><small>Follow the current proposition architecture →</small></a>
       </div>
     </section>
 
-    <section>
+    <section id="record">
       <div class="section-head">
-        <p class="eyebrow">Original Research I record</p>
-        <h2>Read the prior repository directly</h2>
-        <p>This page is an orientation layer. The original repository remains the authoritative source for Research I code, mathematics, simulations, provenance, and detailed documentation.</p>
+        <p class="eyebrow">Authoritative Research I record</p>
+        <h2>Everything important is one click away</h2>
+        <p>This website page is an orientation layer. The previous repository remains the authoritative source for its mathematics, code, experiments, figures, assumptions, provenance, and tests.</p>
       </div>
-      <div class="source-grid">
-        <a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math"><strong>Repository root</strong><span>Code, README, releases, and complete project tree</span></a>
-        <a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/scientific_foundations.md"><strong>Scientific foundations</strong><span>Physical and mathematical foundations of the observer architecture</span></a>
-        <a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/mathematics.md"><strong>Mathematics</strong><span>Equations and formal structure used by Research I</span></a>
-        <a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/architecture.md"><strong>Architecture</strong><span>How the mathematical and computational layers fit together</span></a>
-        <a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/detailed_proposition_record.md"><strong>Detailed proposition record</strong><span>The theorem-level development history</span></a>
-        <a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/theorem_roadmap.md"><strong>Theorem roadmap</strong><span>Dependencies and result organization</span></a>
-        <a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/falsification.md"><strong>Falsification</strong><span>Ways the operational claims can fail</span></a>
-        <a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/reproducibility.md"><strong>Reproducibility</strong><span>How to reproduce the computational record</span></a>
-        <a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/conceptual_bridge.md"><strong>Conceptual bridge</strong><span>The original project's discussion of the boundary beyond physical description</span></a>
+
+      <div class="record-grid">
+        <a class="record-link" href="https://github.com/MahsaKeikha/spatiotemporal-observer-math"><span>Repository</span><strong>Research I root</strong><small>README, source code, releases, issues, and full project tree.</small></a>
+        <a class="record-link" href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/visual_research_guide.md"><span>Figures</span><strong>Visual Research Guide</strong><small>Navigate the complete scientific figure record.</small></a>
+        <a class="record-link" href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/physics_guide.md"><span>Physics</span><strong>Physics Guide</strong><small>Physical interpretation, units, assumptions, and dynamical model.</small></a>
+        <a class="record-link" href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/physics_mathematics_citation_map.md"><span>Provenance</span><strong>Physics + Mathematics + Citation Map</strong><small>Trace equations to definitions, proofs, and literature.</small></a>
+        <a class="record-link" href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/research_overview.md"><span>Narrative</span><strong>Research Overview</strong><small>Read the complete scientific progression.</small></a>
+        <a class="record-link" href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/research_index.md"><span>Audit</span><strong>Research Index</strong><small>Audit every proposition, experiment, and result.</small></a>
+        <a class="record-link" href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/assumption_ledger.md"><span>Boundaries</span><strong>Assumption Ledger</strong><small>Declared assumptions, limitations, and failure conditions.</small></a>
+        <a class="record-link" href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/bibliography.md"><span>Literature</span><strong>Bibliography and Citation Map</strong><small>Follow the scientific sources and intellectual lineage.</small></a>
+        <a class="record-link" href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/reproducible_results.md"><span>Reproduce</span><strong>Reproducible Results</strong><small>Inspect experiment definitions and computational outputs.</small></a>
       </div>
     </section>
 
     <section class="closing">
-      <p class="eyebrow">Two programs, one explicit boundary</p>
-      <h2>Research I asks what physical observer structure can be identified. Research II asks what more a testable experiential bridge would require.</h2>
-      <p>Keeping those questions on separate pages prevents physical modeling success from being mistaken for a result about experience.</p>
+      <p class="eyebrow">Continue the research path</p>
+      <h2>Research I identifies the physical subsystem. Research II tests what more a scientifically defensible bridge would require.</h2>
       <div class="hero-actions">
-        <a class="button primary" href="research-lineage.html">Continue to the research lineage</a>
-        <a class="button" href="https://github.com/MahsaKeikha/spatiotemporal-observer-math">Open Research I on GitHub</a>
+        <a class="button primary" href="research-lineage.html">Continue to the Research Lineage</a>
+        <a class="button" href="research-map.html">Go directly to Research II</a>
+        <a class="button" href="index.html">Return to Overview</a>
       </div>
     </section>
   </main>
+
+  <footer>
+    <p>Mathematical Consciousness Bridge · Research I</p>
+    <p><a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math">Original Research I repository</a> · <a href="research-lineage.html">Research lineage</a> · <a href="research-map.html">Research II</a></p>
+  </footer>
 </body>
 </html>
