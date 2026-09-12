@@ -4,6 +4,7 @@ from scripts.prepare_website import (
     FOOTER_SCRIPT_TAG,
     NAVIGATION_STYLE_TAG,
     PUBLICATION_STYLE_TAG,
+    PUBLICATION_V2_STYLE_TAG,
     READER_LINKS_SCRIPT_TAG,
     SCRIPT_TAG,
     prepare_website,
@@ -17,6 +18,7 @@ def _write_assets(source: Path) -> None:
     (source / "styles.css").write_text("body{}", encoding="utf-8")
     (source / "navigation.css").write_text("nav{}", encoding="utf-8")
     (source / "publication.css").write_text("h1{}", encoding="utf-8")
+    (source / "publication-v2.css").write_text("main h1{}", encoding="utf-8")
 
 
 def test_prepare_website_injects_shared_publication_assets(tmp_path: Path) -> None:
@@ -42,6 +44,8 @@ def test_prepare_website_injects_shared_publication_assets(tmp_path: Path) -> No
         assert built.count(FOOTER_SCRIPT_TAG) == 1
         assert built.count(NAVIGATION_STYLE_TAG) == 1
         assert built.count(PUBLICATION_STYLE_TAG) == 1
+        assert built.count(PUBLICATION_V2_STYLE_TAG) == 1
+        assert built.index(PUBLICATION_V2_STYLE_TAG) > built.index(PUBLICATION_STYLE_TAG)
 
 
 def test_prepare_website_is_idempotent(tmp_path: Path) -> None:
@@ -51,8 +55,9 @@ def test_prepare_website_is_idempotent(tmp_path: Path) -> None:
     source.mkdir()
     _write_assets(source)
     (source / "index.html").write_text(
-        f"<html><head>{NAVIGATION_STYLE_TAG}{PUBLICATION_STYLE_TAG}{SCRIPT_TAG}"
-        f"{READER_LINKS_SCRIPT_TAG}{FOOTER_SCRIPT_TAG}</head><body></body></html>",
+        f"<html><head>{NAVIGATION_STYLE_TAG}{PUBLICATION_STYLE_TAG}"
+        f"{PUBLICATION_V2_STYLE_TAG}{SCRIPT_TAG}{READER_LINKS_SCRIPT_TAG}"
+        f"{FOOTER_SCRIPT_TAG}</head><body></body></html>",
         encoding="utf-8",
     )
 
@@ -65,12 +70,20 @@ def test_prepare_website_is_idempotent(tmp_path: Path) -> None:
 
 
 def test_publication_type_scale_stays_restrained() -> None:
-    css = Path("website/publication.css").read_text(encoding="utf-8")
+    css = Path("website/publication-v2.css").read_text(encoding="utf-8")
 
-    assert "clamp(2rem, 3.5vw, 3rem)" in css
-    assert "clamp(1.9rem, 3vw, 2.65rem)" in css
-    assert "clamp(1.45rem, 2vw, 1.95rem)" in css
-    assert "clamp(1.4rem, 1.95vw, 1.82rem)" in css
+    assert "--publication-title-max: 2.2rem" in css
+    assert "--publication-section-max: 1.6rem" in css
+    assert "font-size: clamp(1.72rem, 2.25vw, var(--publication-title-max)) !important" in css
+    assert "font-size: clamp(1.28rem, 1.65vw, var(--publication-section-max)) !important" in css
+    assert "max-width: 42ch !important" in css
+
+
+def test_every_html_page_uses_shared_heading_classes_without_inline_font_sizes() -> None:
+    for path in sorted(Path("website").glob("*.html")):
+        text = path.read_text(encoding="utf-8")
+        assert "font-size:" not in text, f"inline font sizing found in {path}"
+        assert "style=\"font-size" not in text, f"inline title sizing found in {path}"
 
 
 def test_footer_identifies_research_author() -> None:
