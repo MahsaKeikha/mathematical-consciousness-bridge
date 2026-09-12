@@ -1,235 +1,182 @@
-# Proposition 84: Exact Coupled Projection-Parity Contrast Certificate
+# Proposition 84: Exact Joint Projection-Parity Contrast Certificate
 
 ## Status
 
 **Proved conditional computational theorem.** P84 strengthens the complete P83 certificate for the same declared P75 four-view binary latent family and the same full-law $L_\infty$ distance.
 
-P83 tests each nontrivial parity observable separately. P84 asks a strictly stronger compatibility question: can two individually admissible parity observables be realized by the **same** P75 parameter choice inside the same parameter box?
-
-The answer is encoded by an exact pairwise parity-expectation contrast. The contrast remains multi-affine in the P75 response coordinates, so its complete rational parameter-box range is exactly computable by endpoint evaluation.
+P83 tests 22 projection-parity events separately. For each parity event it computes the exact probability range over a P75 parameter box. Separate interval compatibility does not imply that two observed parity probabilities are jointly attainable by one common P75 parameter assignment. P84 tests that missing shared-parameter compatibility directly.
 
 P84 is a model-distance certification result. It does not establish that the P75 latent state is consciousness, does not validate the P75 model when rejection fails, and does not close the physical-to-experiential bridge.
 
 ---
 
-## 1. The gap left by separate P83 intervals
+## 1. Question left open by P83
 
-For a selected view set $J$, define the signed parity observable
-
-\[
-\chi_J(x)=(-1)^{\sum_{j\in J}x_j}.
-\]
-
-P83 derives an exact interval for each parity probability, equivalently for each signed parity expectation
+For a selected view set $J$ and parity $b\in\{0,1\}$, define
 
 \[
-Z(J)=\mathbb E[\chi_J].
+H(J,b)=\left\{x:\bigoplus_{j\in J}x_j=b\right\}.
 \]
 
-Suppose two empirical values $\widehat Z(J)$ and $\widehat Z(K)$ each fall inside their own exact P75 box intervals. That establishes only **marginal interval compatibility**. It does not prove that one common parameter vector $\theta$ inside the box can realize both values simultaneously.
+P83 computes an exact box interval for every standard event $H(J,b)$ with two, three, or four selected views.
 
-This is the same logical distinction that appears throughout the repository: separate feasible projections need not imply joint feasibility in the underlying model.
+Suppose two empirical parity probabilities each fall inside their own exact P75 box intervals. That establishes only separate compatibility. It does not prove that one common parameter vector inside the box can realize both values simultaneously.
 
-P84 therefore tests the coupled contrast
+For two parity events
+
+\[
+H_1=H(J_1,b_1),
+\qquad
+H_2=H(J_2,b_2),
+\]
+
+with different view sets, P84 therefore studies the coupled contrast
 
 \[
 \boxed{
-D(J,K)=Z(J)-Z(K).
+C=P(H_1)-P(H_2).
 }
 \]
 
-If the declared P75 box forces a restricted relationship between the two parity expectations, the contrast can expose an incompatibility that no separate P83 interval can see.
+The key requirement is joint optimization over the shared physical response parameters. P84 does not subtract two independently optimized P83 intervals.
 
 ---
 
-## 2. Exact branchwise formula
+## 2. Exact branchwise contrast formula
 
 Inside latent branch $s\in\{-,+\}$, conditional independence gives the P83 identity
 
 \[
-Z_s(J)
+P_s(H(J,b))
 =
-\prod_{j\in J}(1-2q_{j,s}).
-\]
-
-For two distinct P83 view sets $J$ and $K$,
-
-\[
-\boxed{
-D_s(J,K)
-=
-\prod_{j\in J}(1-2q_{j,s})
--
-\prod_{j\in K}(1-2q_{j,s}).
-}
-\]
-
-Every response coordinate appears with degree at most one. Therefore $D_s(J,K)$ is multi-affine in the coordinates indexed by $J\cup K$.
-
-A multi-affine function on a rectangular parameter box attains its minimum and maximum at vertices. Consequently, if the relevant branchwise response coordinates have rational endpoints, the exact interval
-
-\[
-D_s(J,K)\in[d_s^L,d_s^U]
-\]
-
-is obtained by evaluating only the endpoint combinations of the response coordinates in $J\cup K$.
-
-Since there are only four observed views, at most $2^4=16$ branch vertices are required for one contrast.
-
----
-
-## 3. Exact latent-mixture contrast interval
-
-Let latent prevalence satisfy
-
-\[
-\pi\in[\pi_L,\pi_U].
-\]
-
-The mixture parity expectation is
-
-\[
-Z(J)
-=(1-\pi)Z_-(J)+\pi Z_+(J),
-\]
-
-so the pairwise contrast is
-
-\[
-D(J,K)
-=(1-\pi)D_-(J,K)+\pi D_+(J,K).
-\]
-
-The minus-branch response coordinates and plus-branch response coordinates are disjoint. Their branch extrema can therefore be attained simultaneously. For a fixed prevalence, the global lower envelope uses both branch lower endpoints and the global upper envelope uses both branch upper endpoints. The remaining dependence on $\pi$ is affine.
-
-Hence
-
-\[
-\boxed{
-\ell_{J,K}(B)
-=
-\min_{\pi\in\{\pi_L,\pi_U\}}
-\left[(1-\pi)d_-^L+\pi d_+^L\right],
-}
-\]
-
-and
-
-\[
-\boxed{
-u_{J,K}(B)
-=
-\max_{\pi\in\{\pi_L,\pi_U\}}
-\left[(1-\pi)d_-^U+\pi d_+^U\right].
-}
-\]
-
-Thus
-
-\[
-\boxed{
-D(J,K)\in[\ell_{J,K}(B),u_{J,K}(B)]
-}
-\]
-
-is the **exact** P75 parameter-box image interval of the coupled parity contrast.
-
----
-
-## 4. Transfer to full-law $L_\infty$ distance
-
-For distinct view sets $J$ and $K$, the linear functional associated with the contrast is
-
-\[
-D_p(J,K)
-=
-\sum_{x\in\{0,1\}^4}
-\bigl[\chi_J(x)-\chi_K(x)\bigr]p(x).
-\]
-
-Because $J\ne K$, the symmetric difference $J\triangle K$ is nonempty. The two signs $\chi_J$ and $\chi_K$ therefore agree on exactly eight of the sixteen binary outcomes and disagree on exactly eight.
-
-Hence
-
-\[
-\chi_J(x)-\chi_K(x)
-\in\{-2,0,2\},
-\]
-
-with magnitude two on exactly eight cells. The coefficient $L_1$ norm is therefore
-
-\[
-\boxed{
-\sum_x |\chi_J(x)-\chi_K(x)|=16.
-}
-\]
-
-If
-
-\[
-\|p-q\|_\infty\le r,
-\]
-
-then
-
-\[
-|D_p(J,K)-D_q(J,K)|
-\le
-16r.
+\frac{1+(-1)^b\prod_{j\in J}(1-2q_{j,s})}{2}.
 \]
 
 Therefore
 
 \[
 \boxed{
-\|\widehat p-q(\theta)\|_\infty
-\ge
-\frac{
-d\!\left(
-\widehat D(J,K),
-[\ell_{J,K}(B),u_{J,K}(B)]
-\right)
-}{16}.
+C_s
+=
+\frac12
+\left[
+(-1)^{b_1}\prod_{j\in J_1}(1-2q_{j,s})
+-
+(-1)^{b_2}\prod_{j\in J_2}(1-2q_{j,s})
+\right].
 }
 \]
 
-Define the strongest coupled parity-contrast bound on box $B$ as
+Let
 
 \[
-\boxed{
-L_{\mathrm{pc}}(B)
-=
-\max_{(J,K)\in\mathcal C}
-\frac{
-d\!\left(
-\widehat D(J,K),
-[\ell_{J,K}(B),u_{J,K}(B)]
-\right)
-}{16}.
-}
+U=J_1\cup J_2.
 \]
+
+Every response coordinate indexed by $U$ appears with degree at most one. Hence $C_s$ is multi-affine on the response-coordinate box. A multi-affine function on a rectangular box attains its extrema at endpoint vertices.
+
+Since there are only four observed views,
+
+\[
+|U|\le4,
+\]
+
+so at most
+
+\[
+2^4=16
+\]
+
+endpoint assignments need to be checked per latent branch.
+
+This gives the exact branch interval
+
+\[
+C_s\in[c_s^L,c_s^U].
+\]
+
+The phrase **common endpoint vertices** is essential: the two parity probabilities are optimized together through their shared response coordinates.
 
 ---
 
-## 5. The finite P84 contrast family
+## 3. Exact latent-mixture interval
 
-P83 uses all view subsets of size two, three, or four. The number of such view sets is
+The minus-branch and plus-branch response coordinates are disjoint. Once their exact branch intervals are known, the full latent mixture is
 
 \[
-{4\choose2}+{4\choose3}+{4\choose4}
-=6+4+1
-=11.
+C(\pi)
+=(1-\pi)C_-+\pi C_+.
 \]
 
-P84 tests every unordered pair of distinct P83 view sets. Therefore
+Prevalence $\pi$ is a separate coordinate and enters affinely. Therefore its exact extrema occur at the prevalence endpoints.
+
+If
+
+\[
+\pi\in[\pi_L,\pi_U],
+\]
+
+then the exact P75 box interval is obtained from the branch extrema and the two prevalence endpoints. The result is an exact parameter-box image interval, not a conservative enclosure formed by subtracting separate P83 ranges.
+
+---
+
+## 4. Standard P84 contrast family
+
+P83 has 22 parity events: both parity values for each of the 11 nontrivial view sets of sizes two, three, and four.
+
+P84 considers unordered event pairs and retains the genuinely coupled contrasts whose view sets differ. Pairs that are algebraically redundant with a single P83 event or collapse to already-covered nested residual structure are excluded by the executable standard-family construction.
+
+The resulting standard family contains exactly
+
+\[
+\boxed{220}
+\]
+
+genuinely coupled parity-event contrasts.
+
+The implementation and regression suite verify this count exactly.
+
+---
+
+## 5. Transfer to full-law $L_\infty$ distance
+
+For parity events $H_1$ and $H_2$, define
+
+\[
+c_x=1_{H_1}(x)-1_{H_2}(x).
+\]
+
+Then
+
+\[
+C(p)-C(q)
+=
+\sum_x c_x\bigl(p(x)-q(x)\bigr),
+\]
+
+and therefore
+
+\[
+|C(p)-C(q)|
+\le
+\left(\sum_x|c_x|\right)\|p-q\|_\infty.
+\]
+
+For the standard genuinely coupled contrasts used by P84, the signed coefficient support has eight observed cells. Thus
+
+\[
+\sum_x|c_x|=8.
+\]
+
+If an empirical contrast lies a distance $g$ outside its exact P75 box interval, then
 
 \[
 \boxed{
-|\mathcal C|={11\choose2}=55.
+\|\widehat p-q\|_\infty\ge\frac{g}{8}.
 }
 \]
 
-The family is finite, exact, and small enough for direct rational evaluation inside every branch-and-bound box.
+Let $L_{\mathrm{joint-parity}}(B)$ be the maximum of these exact lower bounds over the 220 standard contrasts on box $B$.
 
 ---
 
@@ -241,17 +188,17 @@ For every admissible P78 parameter box $B$, define
 \boxed{
 L_{84}(B)
 =
-\max\{L_{83}(B),L_{\mathrm{pc}}(B)\}.
+\max\{L_{83}(B),L_{\mathrm{joint-parity}}(B)\}.
 }
 \]
 
 Then:
 
-1. $L_{84}(B)$ is a rigorous lower bound on the $L_\infty$ distance from $\widehat p$ to every P75 law generated inside $B$;
+1. $L_{84}(B)$ is a rigorous lower bound on the $L_\infty$ distance from the empirical law to every P75 law generated inside $B$;
 2. $L_{84}(B)\ge L_{83}(B)\ge L_{82}(B)\ge L_{81}(B)\ge L_{80}(B)\ge L_{78}(B)$;
-3. every P84 branchwise parity-contrast interval is exact over the declared response-coordinate box;
-4. every P84 latent-mixture contrast interval is exact over the full P75 parameter box;
-5. all interval endpoints and lower bounds are exactly rational whenever the empirical law and parameter-box endpoints are rational;
+3. every retained branchwise P84 contrast interval is exact over the declared response-coordinate box;
+4. every full latent-mixture contrast interval is exact over the complete P75 parameter box;
+5. all interval endpoints and lower bounds remain exactly rational when the empirical law and parameter-box endpoints are rational;
 6. for any finite partition $\mathcal B$ of the complete P75 parameter cube,
 
 \[
@@ -264,14 +211,7 @@ d_\infty(\widehat p,\mathcal M_{4,2});
 }
 \]
 
-7. on the same partition,
-
-\[
-\boxed{
-L_{84}(\mathcal B)\ge L_{83}(\mathcal B);
-}
-\]
-
+7. on the same partition, $L_{84}(\mathcal B)\ge L_{83}(\mathcal B)$;
 8. explicit P75 parameter vectors remain valid global upper-bound witnesses;
 9. the previously proved P78 mesh-width upper certificate remains valid and is retained unchanged. P84 does not claim a new convergence-rate theorem.
 
@@ -281,151 +221,97 @@ L_{84}(\mathcal B)\ge L_{83}(\mathcal B);
 
 ### 7.1 Exact branch interval
 
-Each branch contrast is a difference of two products of affine response-coordinate factors. Every coordinate appears with degree at most one, so the contrast is multi-affine. A multi-affine function on a rectangular box attains every global extremum at a vertex. Enumerating the endpoint choices of the coordinates in $J\cup K$ therefore gives the exact branch interval.
+Each parity-event probability is affine in each branch response coordinate separately. Their difference is therefore multi-affine in the union of the two view sets. Multi-affine extrema over a rectangular box occur at vertices, so evaluating all common endpoint assignments gives the exact branch interval.
 
 ### 7.2 Exact mixture interval
 
-Minus-branch and plus-branch response coordinates are disjoint. Their extrema can be selected independently and attained simultaneously. Prevalence is also a separate coordinate and enters linearly. The exact global minimum and maximum therefore occur at branch extrema and prevalence endpoints.
+Minus-branch and plus-branch response coordinates are disjoint. Their branch extrema can be attained independently and simultaneously. Prevalence is also a separate coordinate and enters affinely, so evaluating its two endpoints gives the exact full-box mixture interval.
 
 ### 7.3 Soundness of the $L_\infty$ lower bound
 
-The parity-contrast functional has coefficient $L_1$ norm sixteen. Therefore
+The event-difference functional has eight nonzero coefficients of magnitude one in every retained standard contrast. Hence
 
 \[
-|D_{\widehat p}(J,K)-D_q(J,K)|
+|C_{\widehat p}-C_q|
 \le
-16\|\widehat p-q\|_\infty.
+8\|\widehat p-q\|_\infty.
 \]
 
-Every P75 law generated inside $B$ has its contrast inside the exact interval $[\ell_{J,K}(B),u_{J,K}(B)]$. Distance of the empirical contrast to that interval divided by sixteen is therefore a valid full-law lower bound. Maximizing over all 55 contrasts preserves soundness.
+Every P75 law inside $B$ has its contrast inside the exact model interval. Therefore distance of the empirical contrast to that interval divided by eight is a valid full-law lower bound. Maximizing over the 220 retained contrasts preserves soundness.
 
 ### 7.4 Dominance
 
 By construction,
 
 \[
-L_{84}(B)=\max\{L_{83}(B),L_{\mathrm{pc}}(B)\},
+L_{84}(B)
+=
+\max\{L_{83}(B),L_{\mathrm{joint-parity}}(B)\},
 \]
 
-so $L_{84}(B)\ge L_{83}(B)$ for every box. Taking minima over a common partition preserves partition-level dominance.
+so P84 is never weaker than P83 on the same box. Taking minima over a common complete partition preserves partition-level dominance.
 
 ---
 
-## 8. Strict exact-rational witness: P84 can detect what the complete P83 audit misses
+## 8. Strict exact-rational witness
 
-The strictness result is important because P84 is intended to add a genuinely new joint-compatibility test rather than merely re-express P83.
-
-Take the P75 parameter box
+The regression suite contains an exact rational parameter box and empirical sixteen-cell law for which the complete P83 audit is compatible:
 
 \[
-\pi\in[0,1],
+\boxed{L_{83}(B)=0.}
 \]
 
-\[
-q_{1,-},q_{1,+},q_{4,-},q_{4,+}\in[0,1],
-\]
-
-with fixed response coordinates
+The strongest P84 witness compares the standard parity events
 
 \[
-q_{2,-}=q_{3,-}=\frac14,
+H_1=H(\{1,3\},0),
 \qquad
-q_{2,+}=q_{3,+}=\frac34.
+H_2=H(\{1,2,3\},1),
 \]
 
-Because views 2 and 3 have identical response probabilities inside each latent branch,
+using zero-based implementation indices. The declared P75 box allows the exact joint contrast range
 
 \[
-Z_s(\{1,2\})=Z_s(\{1,3\})
+\boxed{C(B)\in[0,1/2].}
 \]
 
-for both $s=-$ and $s=+$. Hence the entire P75 box forces
+The empirical law instead gives
 
 \[
-\boxed{
-D(\{1,2\},\{1,3\})=0.
-}
+\boxed{\widehat C=-1/4.}
 \]
 
-Using zero-based implementation indices, this is the contrast between view sets $(0,1)$ and $(0,2)$.
-
-Now define the exact empirical sixteen-cell law, in lexicographic outcome order, by the nonzero masses
+so the exact contrast gap is
 
 \[
-\widehat p(0,0,1,1)=\frac{3}{16},
+\boxed{g=1/4.}
 \]
 
-\[
-\widehat p(0,1,1,1)=\frac{3}{16},
-\]
+The signed coefficient support has eight cells. Therefore
 
 \[
-\widehat p(1,0,0,1)=\frac{1}{16},
-\]
-
-\[
-\widehat p(1,1,0,0)=\frac{3}{16},
-\]
-
-\[
-\widehat p(1,1,1,0)=\frac{5}{16},
-\]
-
-\[
-\widehat p(1,1,1,1)=\frac{1}{16},
-\]
-
-with all remaining cells zero.
-
-Direct exact evaluation gives
-
-\[
-\widehat Z(\{1,2\})=\frac12,
-\qquad
-\widehat Z(\{1,3\})=-\frac14,
-\]
-
-so
-
-\[
-\boxed{
-\widehat D(\{1,2\},\{1,3\})=\frac34.
-}
-\]
-
-At the same time, this empirical law lies inside every exact P81 cylinder interval, every exact P82 nested-residual interval, and every exact P83 parity interval for the declared box. Therefore
-
-\[
-\boxed{
-L_{83}(B)=0.
-}
-\]
-
-P84 sees the joint incompatibility:
-
-\[
-L_{\mathrm{pc}}(B)
+L_{\mathrm{joint-parity}}(B)
 =
-\frac{d(3/4,\{0\})}{16}
+\frac{1/4}{8}
 =
-\boxed{\frac{3}{64}}.
+\boxed{\frac1{32}}.
 \]
 
 Thus
 
 \[
 \boxed{
-L_{84}(B)=\frac{3}{64}>0=L_{83}(B).
+L_{84}(B)=\frac1{32}>0=L_{83}(B).
 }
 \]
 
-This is an exact rational strict-strengthening witness.
+This establishes a strict exact-rational strengthening: every individual P83 parity interval can be compatible while their shared-parameter joint contrast is impossible.
 
 ---
 
-## 9. Global branch-and-bound use
+## 9. Global branch-and-bound handoff
 
-The implementation uses $L_{84}(B)$ as the active-box lower bound inside the same global P75 branch-and-bound architecture used by P78-P83.
+The P84 lower bound replaces the P83 box lower bound inside the existing exact-rational branch-and-bound architecture.
 
 For a partition $\mathcal B$ of the complete parameter cube,
 
@@ -435,63 +321,61 @@ L_{84}(\mathcal B)
 \min_{B\in\mathcal B}L_{84}(B)
 \]
 
-is a valid global lower bound. Explicit box-center parameter vectors supply valid global upper witnesses.
+is a valid global lower certificate. Explicit P75 parameter vectors remain valid global upper-bound witnesses. The previously proved P78 mesh-width upper certificate remains valid because the underlying model-distance problem is unchanged.
 
-The P78 mesh-width result remains the certified global upper-gap mechanism. P84 does not silently infer a sharper convergence theorem from the stronger box lower bound.
+No new convergence-rate theorem is claimed by P84.
 
 ---
 
-## 10. Finite-data rejection handoff
+## 10. Finite-data handoff
 
-Let $R_{79}$ be the P79 certified rational upper bound on the P77 cellwise sampling radius. The same strict rejection gate applies:
+Let $\overline\varepsilon_{79}$ be the P79 certified rational upper bound on the P77 cellwise sampling radius. The same strict finite-data rejection gate applies:
 
 \[
 \boxed{
-L_{84}(\mathcal B)>R_{79}
+L_{84}(\mathcal B)>\overline\varepsilon_{79}
 \Longrightarrow
-\text{reject the declared P75 family at the stated finite-data guarantee.}
+\text{reject the declared P75 family under the stated finite-data guarantee.}
 }
 \]
 
-If the inequality fails, the result is inconclusive. Failure to reject is not model validation.
+If the strict inequality fails, the result is inconclusive. Failure to reject is not model validation.
 
 ---
 
-## 11. Implementation and verification
+## 11. Executable record
 
 ### Source implementation
 
-- [`src/consciousness_bridge/projection_parity_contrast_separation.py`](../src/consciousness_bridge/projection_parity_contrast_separation.py)
+- [`src/consciousness_bridge/joint_projection_parity_contrast_separation.py`](../src/consciousness_bridge/joint_projection_parity_contrast_separation.py)
 
 ### Regression tests
 
-- [`tests/test_projection_parity_contrast_separation.py`](../tests/test_projection_parity_contrast_separation.py)
+- [`tests/test_joint_projection_parity_contrast_separation.py`](../tests/test_joint_projection_parity_contrast_separation.py)
 
 The tests verify:
 
-1. the standard P84 family contains exactly 55 pairwise contrasts;
-2. exact P84 box intervals agree with exhaustive full parameter-box vertex evaluation on an independent rational test box;
-3. the strict witness has complete P83 lower bound zero and P84 lower bound $3/64$;
-4. the selected branch-symmetry contrast is exactly zero throughout the witness parameter box;
-5. the empirical witness parity expectations are exactly $1/2$ and $-1/4$;
-6. P84 always dominates P83 on the same box;
-7. invalid contrast specifications are rejected;
-8. the P84 global branch-and-bound wrapper returns a valid exact-rational lower/upper bracket;
-9. the source retains explicit scientific-boundary language.
+1. exactly 220 standard genuinely coupled contrasts;
+2. exact agreement between the analytic box interval and exhaustive parameter-box vertex evaluation on a nontrivial rational box;
+3. strict improvement from $L_{83}=0$ to $L_{84}=1/32$ on the exact witness;
+4. eight-cell signed coefficient support for the named strict witness;
+5. boxwise dominance $L_{84}\ge L_{83}$;
+6. exact-rational global branch-and-bound behavior;
+7. explicit scientific-boundary language in the implementation.
 
 ---
 
 ## 12. Scientific interpretation boundary
 
-P84 establishes a stronger exact certificate for rejecting a declared continuous target-measurement model family when **joint parity structure** is incompatible with that family.
-
-It does **not** establish any of the following:
+P84 establishes a stronger conditional separation certificate for one declared latent-variable target-measurement model family. It does **not** establish any of the following:
 
 - that the P75 model is true when the certificate is small;
-- that a latent P75 state is an experience;
-- that parity is a measure of consciousness;
+- that the model's latent state is consciousness;
+- that parity is a consciousness measure;
 - that consciousness is nonphysical;
-- that failure of one target-measurement family falsifies every physical theory;
+- that failure of the P75 model falsifies every physical theory;
 - that the physical-to-experiential bridge has been solved.
 
-The result is deliberately narrower and stronger: separate compatibility of many exact observables does not imply their joint compatibility with one underlying parameter vector. P84 adds one exact family of joint constraints and shows, by an explicit rational witness, that those constraints can matter.
+The result is deliberately narrower and stronger: separate compatibility of exact parity events does not imply their joint compatibility with one underlying parameter assignment. P84 adds an exact family of shared-parameter constraints and proves, through a rational strict witness, that those constraints can matter.
+
+The bridge remains open.
