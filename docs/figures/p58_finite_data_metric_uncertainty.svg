@@ -90,7 +90,7 @@
 
   <g id="block-sample" data-x="815" data-y="680" data-w="330" data-h="170">
     <rect x="815" y="680" width="330" height="170" rx="18" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
-    <text x="840" y="718" class="head">7. Width and sample certificate</text>
+    <text x="840" y="718" class="head">7. Sample-size certificate</text>
     <text x="840" y="748" class="eq">ρₑ ≤ η ⇒ L⁺-L⁻ ≤ 2qrect η</text>
     <text x="840" y="776" class="eq">n ≥ 2B²qrect² / ε²</text>
     <text x="840" y="802" class="eq">× log(2M/α)</text>
