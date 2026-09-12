@@ -1,6 +1,7 @@
 (() => {
   const PAGES = [
     { file: 'index.html', label: 'Overview' },
+    { file: 'plain-language.html', label: 'Plain Language' },
     { file: 'start-here.html', label: 'Start Here' },
     { file: 'observer-research.html', label: 'Research I · Observer Mathematics' },
     { file: 'research-lineage.html', label: 'Research Lineage' },
@@ -31,7 +32,7 @@
           file: 'research-map.html',
           kicker: 'Research II',
           label: 'Bridge theorem map',
-          description: 'The current physical-to-experiential test architecture through P81.',
+          description: 'The current physical-to-experiential test architecture through P83.',
         },
         {
           file: 'physics-mathematics.html',
@@ -77,6 +78,8 @@
     79: `${REPO}/blob/main/docs/proposition_79_certified_sampling_radius.md`,
     80: `${REPO}/blob/main/docs/proposition_80_simplex_coupled_model_separation.md`,
     81: `${REPO}/blob/main/docs/proposition_81_projection_event_model_separation.md`,
+    82: `${REPO}/blob/main/docs/proposition_82_exact_nested_projection_contrast.md`,
+    83: `${REPO}/blob/main/docs/proposition_83_exact_projection_parity.md`,
   };
 
   function currentFile() {
@@ -133,6 +136,7 @@
     nav.replaceChildren();
     const file = currentFile();
     nav.append(createSimpleNavLink('index.html', 'Overview', file));
+    nav.append(createSimpleNavLink('plain-language.html', 'Plain Language', file));
     nav.append(createSimpleNavLink('start-here.html', 'Start Here', file));
     NAV_GROUPS.forEach((group) => nav.append(createDropdown(group, file)));
 
