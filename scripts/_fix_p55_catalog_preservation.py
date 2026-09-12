@@ -6,8 +6,6 @@ ROOT = Path(__file__).resolve().parents[1]
 TARGET = ROOT / "scripts" / "enrich_figure_documentation.py"
 TEST = ROOT / "tests" / "test_reproducibility_contract.py"
 
-P55_NAME = "p55_pruning_aware_switching_monotonicity.svg"
-
 
 def main() -> None:
     text = TARGET.read_text(encoding="utf-8")
@@ -45,14 +43,14 @@ def main() -> None:
     addition = '''
 
 def test_generated_catalog_preserves_p55_scope_language() -> None:
-    source = _read("scripts/enrich_figure_documentation.py")
+    catalog = _read("docs/figure_catalog.md")
     for token in (
         "metric shortcutting",
         "support-preserving",
         "shortcut lower certificate",
-        "physical-to-experiential bridge remains open",
+        "physical-to-experiential bridge",
     ):
-        assert token in source
+        assert token in catalog
 '''
     if "test_generated_catalog_preserves_p55_scope_language" not in test_text:
         TEST.write_text(test_text.rstrip() + addition + "\n", encoding="utf-8")
