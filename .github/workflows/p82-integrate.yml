@@ -26,7 +26,9 @@ jobs:
           python -m pip install -e '.[dev]'
           python -m pip install -r requirements-reproducibility.txt
       - name: Synchronize P82 publication surfaces
-        run: python scripts/_integrate_p82_publication.py
+        run: |
+          python scripts/_integrate_p82_publication.py
+          python scripts/_integrate_p82_reader_frontier.py
       - name: Regenerate and enrich figures
         run: python scripts/generate_all_figures.py
       - name: Validate synchronized repository
