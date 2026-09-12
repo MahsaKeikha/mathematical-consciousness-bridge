@@ -1,4 +1,4 @@
-# Current visual frontier: P71-P82
+# Current visual frontier: P71-P83
 
 This page is a compact visual entry point for the current target-side research branch.
 
@@ -38,7 +38,7 @@ Finite-sample confidence bounds are propagated through the P73 inversion, includ
 
 [Read the P74 proposition](../docs/proposition_74_finite_sample_target_channel_recovery.md)
 
-## P75-P81: target-model adequacy and certified separation
+## P75-P83: target-model adequacy and certified separation
 
 ### P75: overidentification and model adequacy
 
@@ -104,6 +104,31 @@ P81 retains exact box ranges for all nonempty projected binary events and transf
 
 [Open the P81 figure geometry tests](../tests/test_p81_figure_geometry.py)
 
+### P82: exact nested projection contrasts
+
+P82 preserves shared-parameter dependence for 256 nested residual events rather than subtracting separate projected-event intervals. Its exact witness strengthens P81 from `1/16` to `1/12` on the declared box.
+
+![P82 exact nested projection contrasts](../docs/figures/p82_exact_nested_projection_contrast.svg)
+
+[Read the P82 proposition](../docs/proposition_82_exact_nested_projection_contrast.md)
+
+[Open the P82 equation provenance](../docs/p82_equation_provenance.md)
+
+### P83: exact projection parity
+
+P83 adds 22 parity observables. The branchwise parity probability is an exact multi-affine product transform, so rational box extrema are certified at vertices. A strict witness leaves the entire P82 family compatible while P83 certifies a full-law lower bound of `1/16`.
+
+![P83 exact projection parity](../docs/figures/p83_exact_projection_parity.svg)
+
+[Read the P83 proposition](../docs/proposition_83_exact_projection_parity.md)
+
+[Open the P83 equation provenance](../docs/p83_equation_provenance.md)
+
+[Open the P83 implementation](../src/consciousness_bridge/projection_parity_model_separation.py)
+
+[Open the P83 numerical tests](../tests/test_projection_parity_model_separation.py)
+
+
 ## Run the current research stack
 
 From the repository root:
@@ -121,4 +146,4 @@ To regenerate the computational atlases:
 python scripts/generate_all_figures.py
 ```
 
-The project does not claim that P71-P82 derives consciousness from physics. These results strengthen the methodology required before a physical-to-experiential bridge claim could be treated as scientifically credible. The bridge itself remains open.
+The project does not claim that P71-P83 derives consciousness from physics. These results strengthen the methodology required before a physical-to-experiential bridge claim could be treated as scientifically credible. The bridge itself remains open.

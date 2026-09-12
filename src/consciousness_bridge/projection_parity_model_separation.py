@@ -20,8 +20,7 @@ a rational interval. The product is multi-affine in the response coordinates,
 so its extrema occur at endpoint vertices. The minus-branch coordinates,
 plus-branch coordinates, and prevalence are disjoint; after exact branchwise
 extremization, the latent mixture is affine in prevalence and its extrema occur
-at the two prevalence endpoints. Therefore every P83 parity interval is exact,
-not merely an enclosure.
+at the two prevalence endpoints. Therefore every P83 parity interval is exact, not merely an enclosure.
 
 If ||p-q||_inf <= r, every event S obeys
 

@@ -1224,3 +1224,17 @@ P81 is documented in the [proof](proposition_81_projection_event_model_separatio
 ## P82 exact nested projection-contrast certificate
 
 Formal theorem: [P82](proposition_82_exact_nested_projection_contrast.md). Equation provenance: [P82 equation record](p82_equation_provenance.md). Implementation: [`nested_projection_contrast_separation.py`](../src/consciousness_bridge/nested_projection_contrast_separation.py).
+
+
+## P83: exact projection-parity certificate
+
+| Equation or object | Role | Provenance |
+| --- | --- | --- |
+| $H(J,b)=\{x:igoplus_{j\in J}x_j=b\}$ | finite projection-parity event | standard binary parity definition; P83 observable family |
+| $P_s(H(J,b))=[1+(-1)^b\prod_{j\in J}(1-2q_{j,s})]/2$ | exact latent-branch parity law | standard Bernoulli character identity applied to P75 conditional independence |
+| vertex extrema of $\prod_j(1-2q_{j,s})$ | exact rational branch interval | standard multi-affine box-extremum principle; new P83 certification use |
+| $L_{\mathrm{par}}=\max d(\hat p(H),[\ell_H,u_H])/8$ | event-to-full-law lower bound | P81 event-mass transfer plus exact P83 parity intervals |
+| $L_{83}=\max\{L_{82},L_{\mathrm{par}}\}$ | combined certificate | repository-original P83 construction |
+| $L_{82}=0<L_{83}=1/16$ witness | proves strict improvement is possible | repository-original exact-rational constructive witness |
+
+Full classification: [P83 equation and provenance record](p83_equation_provenance.md). The parity observable is a model diagnostic, not a definition or measure of consciousness.

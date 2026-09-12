@@ -140,3 +140,10 @@ For the exact nested projection-contrast certificate, cite the repository togeth
 ## P82 frontier citation note
 
 P82 strengthens the P81 continuous P75 separation chain through exact nested residual-event intervals. It is a conditional model-distance certificate and should not be cited as an identification of consciousness.
+
+
+## Proposition 83 method citation
+
+For work that specifically uses the newest continuous-family certificate, cite the program together with **Proposition 83: Exact Projection-Parity Certificate for Continuous P75 Separation**. P83 adds 22 parity observables, exact rational box extremization through the Bernoulli parity identity, and a strict witness with `L82 = 0 < L83 = 1/16`.
+
+The result is a conditional model-distance certificate for the declared P75 latent family. It should not be cited as an identification, definition, or measurement of consciousness, and non-rejection remains inconclusive.

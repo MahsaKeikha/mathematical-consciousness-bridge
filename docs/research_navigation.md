@@ -4,14 +4,14 @@ This page is the reading and reference index for the **Mathematical Consciousnes
 
 **First-time reader:** begin with [Start Here](../START_HERE.md) for the shortest orientation, keep the [Glossary and Reader Vocabulary](glossary.md) nearby for terminology, and use the [Reproducibility Guide](reproducibility.md) when you want to run the code, tests, or generated figure atlases.
 
-The current documented theorem frontier is **P82**. The complete proposition record runs from **P1 through P82**. P71-P82 form a target-side methodology branch descending from the P19 physical-sufficiency question. They are not extensions of the P61-P70 calibration branch.
+The current documented theorem frontier is **P83**. The complete proposition record runs from **P1 through P83**. P71-P83 form a target-side methodology branch descending from the P19 physical-sufficiency question. They are not extensions of the P61-P70 calibration branch.
 
 ## Recommended reading order
 
 1. [Main research study](../README.md) for the complete scientific narrative and curated figures.
 2. [Bridge problem](bridge_problem.md) for the formal physical-to-experiential question.
 3. [Scientific status discipline](../README.md#scientific-status-discipline) for the distinction among definitions, proved results, implementations, numerical checks, empirical inputs, hypotheses, and open bridge claims.
-4. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P82.
+4. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P83.
 5. [P19 fundamental physical sufficiency](proposition_19_fundamental_physical_sufficiency.md) for the exact, stochastic, and differential bridge criteria.
 6. [P20-P24 finite and adaptive residual certification](theorem_roadmap.md) for finite-data and repeated-look validity.
 7. [P71 target-provenance non-circularity](proposition_71_target_provenance_noncircularity.md) for the theorem showing when a target construction makes a bridge test vacuous by design.
@@ -26,6 +26,7 @@ The current documented theorem frontier is **P82**. The complete proposition rec
 16. [P80 simplex-coupled continuous P75 separation](proposition_80_simplex_coupled_model_separation.md) for exact probability-simplex interval relaxation, P80 >= P78 dominance, and the strict P80/P79 rejection handoff.
 17. [P81 projection-event continuous P75 separation](proposition_81_projection_event_model_separation.md) for exact projected-event box intervals, event-size distance transfer, P81 >= P80 dominance, and the strict-improvement witness.
 19. [P82 exact nested projection-contrast separation](proposition_82_exact_nested_projection_contrast.md) for exact nested residual-event box intervals, the 256-contrast audit, P82 >= P81 dominance, and the strict 1/12 versus 1/16 witness.
+19. [P83 exact projection-parity separation](proposition_83_exact_projection_parity.md) for the 22-event parity audit, exact multi-affine box intervals, P83 >= P82 dominance, and the strict `1/16` versus zero witness.
 18. [P11-P18 and P25-P37 operational physical structure](theorem_roadmap.md) for intervention, temporal, compositional, and multiscale requirements.
 20. [P38-P44 quantum foundations and bridge tests](quantum_foundations_and_bridge_test.md) for quantum operational sufficiency under explicit bridge classes.
 21. [P45-P60 adaptive experiment design and scheduling](theorem_roadmap.md) for valid evidence collection and transition-calibration setup.
@@ -63,6 +64,7 @@ The current documented theorem frontier is **P82**. The complete proposition rec
 | Simplex-coupled continuous target-model separation | P80 | Tightens each P78 box lower bound by intersecting exact cell intervals with probability normalization while preserving the global lower-bound direction | [P80](proposition_80_simplex_coupled_model_separation.md) |
 | Projection-event continuous target-model separation | P81 | Adds exact parameter-box ranges for every nonempty projected binary event and transfers event mismatch into a never-weaker full-law distance certificate | [P81](proposition_81_projection_event_model_separation.md) |
 | Nested projection-contrast continuous target-model separation | P82 | Adds exact residual-event ranges for nested projected cylinders and retains common-parameter structure beyond separate P81 event tests | [P82](proposition_82_exact_nested_projection_contrast.md) |
+| Projection-parity continuous target-model separation | P83 | Adds 22 exact parity-event ranges whose multi-affine branch structure can expose dependence incompatibility invisible to the complete P82 event family | [P83](proposition_83_exact_projection_parity.md) |
 
 ## Complete proposition index
 
@@ -215,3 +217,6 @@ The research remains an ongoing mathematical-physics program. The current theore
 | Proposition | Reader question | Direct proof |
 | --- | --- | --- |
 | P81 | Can exact projected-event constraints strengthen P80 while preserving a certified full-law lower bound? | [Projection-event model separation](proposition_81_projection_event_model_separation.md) |
+
+
+**Current frontier provenance:** [P83 equation and provenance record](p83_equation_provenance.md).

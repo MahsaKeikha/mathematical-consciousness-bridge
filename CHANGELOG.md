@@ -1,3 +1,14 @@
+# Unreleased research frontier - P83
+
+- Added Proposition 83, Exact Projection-Parity Certificate for Continuous P75 Separation.
+- Added 22 predeclared parity observables across all two-, three-, and four-view subsets of the P75 observed variables.
+- Derived the exact branch identity `P_s(H(J,b)) = [1 + (-1)^b product_j(1 - 2 q_(j,s))]/2` and exact rational box extrema by multi-affine vertex evaluation.
+- Defined `L83(B) = max(L82(B), L_parity(B))`, so the new certificate is never weaker than P82 on the same box.
+- Added an exact strict witness with `L82(B)=0` and `L83(B)=1/16`, exposing dependence structure that the complete P82 event family can leave compatible.
+- Added implementation, regression tests, proof, equation provenance, theorem figure, navigation, citation guidance, and website integration.
+- Kept v0.82.0 as the latest formal release while P83 is under review; the documented theorem frontier and release version are intentionally distinct during development.
+- Preserved the P78 mesh-width upper certificate, the P79 one-sided rejection gate, and the explicit boundary that the physical-to-experiential bridge remains open.
+
 # 0.81.0 - 2026-09-11
 
 - Added a first-reader `START_HERE.md`, glossary, reproducibility guide, contribution guide, unified figure-generation command, repository verifier, and reproducible figure GitHub Actions workflow.
