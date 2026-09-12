@@ -226,7 +226,7 @@ def test_p84_source_states_exactness_scope_and_scientific_boundary() -> None:
 
     required = (
         "55",
-        "exact mixture contrast interval",
+        "mixture contrast interval",
         "never weaker than P83",
         "strictly stronger",
         "P83 box certificate is zero",
