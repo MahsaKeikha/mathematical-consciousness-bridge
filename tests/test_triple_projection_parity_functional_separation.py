@@ -5,8 +5,8 @@ from pathlib import Path
 import pytest
 
 from consciousness_bridge.certified_continuous_model_separation import (
-    p75_four_view_law_exact,
     P78ParameterBox,
+    p75_four_view_law_exact,
 )
 from consciousness_bridge.joint_projection_parity_contrast_separation import (
     p75_box_p84_linf_lower_bound_exact,
@@ -22,7 +22,6 @@ from consciousness_bridge.triple_projection_parity_functional_separation import 
     p85_standard_triple_count,
     parity_triple_centered_coefficient_norm_exact,
 )
-
 
 STRICT_TERMS = (
     ((0, 2), 1),
