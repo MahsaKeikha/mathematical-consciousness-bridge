@@ -25,32 +25,32 @@ from consciousness_bridge.triple_projection_parity_functional_separation import 
 
 
 STRICT_TERMS = (
-    ((0, 3), 1),
-    ((1, 3), 1),
-    ((0, 1, 3), 1),
+    ((0, 2), 1),
+    ((0, 1, 2), 1),
+    ((0, 1, 2, 3), 1),
 )
 
 
 def _strict_witness_box() -> P78ParameterBox:
     return P78ParameterBox(
         lower=(
+            Fraction(0),
+            Fraction(0),
+            Fraction(0),
+            Fraction(1, 2),
+            Fraction(1, 2),
+            Fraction(0),
+            Fraction(0),
+            Fraction(0),
             Fraction(1),
-            Fraction(0),
-            Fraction(0),
-            Fraction(1),
-            Fraction(0),
-            Fraction(1, 2),
-            Fraction(0),
-            Fraction(1, 2),
-            Fraction(1, 2),
         ),
         upper=(
-            Fraction(1),
-            Fraction(1),
-            Fraction(1),
-            Fraction(1),
-            Fraction(1),
             Fraction(1, 2),
+            Fraction(1),
+            Fraction(1),
+            Fraction(1),
+            Fraction(1),
+            Fraction(1),
             Fraction(1),
             Fraction(1, 2),
             Fraction(1),
@@ -60,10 +60,11 @@ def _strict_witness_box() -> P78ParameterBox:
 
 def _strict_witness_empirical_law() -> tuple[Fraction, ...]:
     masses = {
-        (0, 0, 0, 0): Fraction(3, 8),
-        (0, 0, 1, 0): Fraction(1, 8),
+        (0, 0, 1, 0): Fraction(1, 4),
         (0, 1, 0, 0): Fraction(1, 8),
-        (0, 1, 0, 1): Fraction(3, 8),
+        (1, 0, 0, 0): Fraction(1, 8),
+        (1, 1, 0, 1): Fraction(1, 8),
+        (1, 1, 1, 0): Fraction(3, 8),
     }
     return tuple(masses.get(outcome, Fraction(0)) for outcome in product((0, 1), repeat=4))
 
@@ -140,25 +141,26 @@ def test_p85_is_strictly_stronger_than_p84_on_exact_rational_witness() -> None:
     assert p85 > p84
     assert witness.lower_bound == Fraction(1, 32)
     assert witness.terms == STRICT_TERMS
-    assert witness.empirical_value == Fraction(19, 8)
+    assert witness.empirical_value == Fraction(5, 8)
     assert (witness.interval_lower, witness.interval_upper) == (
-        Fraction(0),
+        Fraction(1),
         Fraction(2),
     )
     assert witness.interval_gap == Fraction(3, 8)
     assert witness.centered_coefficient_norm == Fraction(12)
+    assert witness.centering_constant == Fraction(1)
 
 
-def test_named_strict_triple_has_exact_19_over_8_vs_zero_to_two_gap() -> None:
+def test_named_strict_triple_has_exact_five_over_eight_vs_one_to_two_gap() -> None:
     box = _strict_witness_box()
     empirical = _strict_witness_empirical_law()
 
     interval = p75_signed_parity_triple_interval_exact(box, STRICT_TERMS)
     observed = empirical_signed_parity_triple_exact(empirical, STRICT_TERMS)
 
-    assert interval == (Fraction(0), Fraction(2))
-    assert observed == Fraction(19, 8)
-    assert observed - interval[1] == Fraction(3, 8)
+    assert interval == (Fraction(1), Fraction(2))
+    assert observed == Fraction(5, 8)
+    assert interval[0] - observed == Fraction(3, 8)
 
 
 def test_p85_always_dominates_p84_on_same_box() -> None:
@@ -220,7 +222,7 @@ def test_p85_source_states_exactness_strictness_and_scientific_boundary() -> Non
         "exact P75 box interval",
         "never weaker than P84",
         "strictly stronger",
-        "19/8",
+        "5/8",
         "3/8",
         "1/32",
         "rejects only the",
