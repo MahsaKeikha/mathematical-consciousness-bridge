@@ -70,7 +70,7 @@ def _validate_quantum_manifest() -> int:
     manifest_path = QUANTUM_DIR / "quantum_figure_manifest.json"
     manifest = _load_json(manifest_path)
     if not isinstance(manifest, dict):
-        raise ValueError("quantum figure manifest must be an object")
+        raise TypeError("quantum figure manifest must be an object")
     figures = manifest.get("figures")
     if not isinstance(figures, list) or not figures:
         raise ValueError("quantum figure manifest must contain a nonempty figures list")
