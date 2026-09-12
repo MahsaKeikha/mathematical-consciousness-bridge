@@ -5,6 +5,7 @@ on:
     branches: ["main"]
     paths:
       - ".github/workflows/repair-p85-reader-contract.yml"
+      - "scripts/repair_p85_reader_contract.py"
   workflow_dispatch:
 
 permissions:
