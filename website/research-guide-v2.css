@@ -22,8 +22,8 @@
 }
 
 .research-jumpbar a {
-  min-height: 108px;
-  padding: 15px 16px 14px;
+  min-height: 120px;
+  padding: 15px 16px 42px;
 }
 
 .research-jumpbar a:hover,
@@ -35,9 +35,9 @@
 .record-link:hover,
 .record-link:focus-visible {
   transform: translateY(-2px);
-  border-color: #aeb8ce;
+  border-color: #8f9db7;
   background: #fbfcff;
-  box-shadow: 0 9px 24px rgba(31, 45, 84, 0.08);
+  box-shadow: 0 9px 24px rgba(31, 45, 84, 0.09);
   outline: none;
 }
 
@@ -48,7 +48,7 @@
   display: block;
   margin-bottom: 5px;
   color: var(--accent2);
-  font-size: 0.61rem;
+  font-size: 0.64rem;
   font-weight: 780;
   letter-spacing: 0.09em;
   line-height: 1.3;
@@ -61,8 +61,8 @@
 .record-link strong {
   display: block;
   font-family: var(--font-display);
-  font-size: 0.98rem;
-  font-weight: 620;
+  font-size: 1rem;
+  font-weight: 650;
   line-height: 1.28;
 }
 
@@ -71,23 +71,73 @@
 .evidence-card small,
 .record-link small {
   display: block;
-  margin-top: 6px;
+  margin-top: 7px;
   color: var(--muted);
-  font-size: 0.75rem;
-  line-height: 1.45;
+  font-size: 0.79rem;
+  line-height: 1.48;
 }
 
+/* Every research card ends with a real, readable destination cue.
+   The full card remains clickable; this label removes any need to guess. */
 .research-jumpbar a::after,
 .research-card-link::after,
 .evidence-card::after,
-.record-link::after {
-  content: "→";
+.record-link::after,
+.status-grid > a::after {
   position: absolute;
-  right: 14px;
-  bottom: 11px;
-  color: var(--accent2);
-  font-size: 0.86rem;
-  opacity: 0.75;
+  left: 16px;
+  bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #e8eefc;
+  color: #1f3a7a;
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  font-weight: 760;
+  letter-spacing: 0.005em;
+  line-height: 1.25;
+  opacity: 1;
+  transition: background-color 140ms ease, color 140ms ease, transform 140ms ease;
+}
+
+.research-jumpbar a[href^="#"]::after {
+  content: "Open section →";
+}
+
+.research-jumpbar a[href$=".html"]::after,
+.record-link[href$=".html"]::after {
+  content: "Open page →";
+}
+
+.research-card-link[href^="http"]::after,
+.evidence-card[href^="http"]::after,
+.record-link[href^="http"]::after,
+.status-grid > a[href^="http"]::after {
+  content: "Open source ↗";
+}
+
+.research-card-link:not([href^="http"])::after,
+.evidence-card:not([href^="http"])::after,
+.record-link:not([href^="http"]):not([href$=".html"])::after {
+  content: "Open result →";
+}
+
+.research-jumpbar a:hover::after,
+.research-jumpbar a:focus-visible::after,
+.research-card-link:hover::after,
+.research-card-link:focus-visible::after,
+.evidence-card:hover::after,
+.evidence-card:focus-visible::after,
+.record-link:hover::after,
+.record-link:focus-visible::after,
+.status-grid > a:hover::after,
+.status-grid > a:focus-visible::after {
+  background: #1f3a7a;
+  color: #ffffff;
+  transform: translateX(2px);
 }
 
 .research-overview-strip {
@@ -103,8 +153,8 @@
   border-radius: 11px;
   background: var(--soft);
   color: var(--ink);
-  font-size: 0.77rem;
-  font-weight: 660;
+  font-size: 0.79rem;
+  font-weight: 680;
   line-height: 1.35;
   text-align: center;
   text-decoration: none;
@@ -112,7 +162,7 @@
 
 .research-overview-strip a:hover,
 .research-overview-strip a:focus-visible {
-  border-color: #aeb8ce;
+  border-color: #8f9db7;
   background: var(--paper);
   text-decoration: none;
 }
@@ -125,14 +175,14 @@
 }
 
 .research-card-link {
-  min-height: 185px;
-  padding: 18px 18px 35px;
+  min-height: 200px;
+  padding: 18px 18px 48px;
 }
 
 .research-card-link p {
   margin: 8px 0 0;
   color: var(--muted);
-  font-size: 0.84rem;
+  font-size: 0.86rem;
   line-height: 1.55;
 }
 
@@ -157,7 +207,7 @@
 }
 
 .evidence-card .evidence-copy {
-  padding: 14px 15px 34px;
+  padding: 14px 15px 48px;
   border-top: 1px solid var(--line);
 }
 
@@ -179,8 +229,8 @@
   border-radius: 10px;
   background: var(--paper);
   color: var(--ink);
-  font-size: 0.72rem;
-  font-weight: 650;
+  font-size: 0.76rem;
+  font-weight: 680;
   line-height: 1.35;
   text-align: center;
   text-decoration: none;
@@ -198,7 +248,7 @@
 
 .research-flowline a:hover,
 .research-flowline a:focus-visible {
-  border-color: #aeb8ce;
+  border-color: #8f9db7;
   background: var(--soft);
   text-decoration: none;
 }
@@ -211,8 +261,8 @@
 }
 
 .record-link {
-  min-height: 122px;
-  padding: 16px 17px 32px;
+  min-height: 136px;
+  padding: 16px 17px 45px;
 }
 
 .research-note {
@@ -222,35 +272,36 @@
   border-radius: 0 10px 10px 0;
   background: var(--soft);
   color: var(--muted);
-  font-size: 0.86rem;
+  font-size: 0.88rem;
   line-height: 1.58;
 }
 
 .research-section-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 9px;
   margin-top: 18px;
 }
 
 .research-section-actions a {
   display: inline-flex;
   align-items: center;
-  min-height: 36px;
-  padding: 8px 11px;
-  border: 1px solid var(--line);
+  min-height: 40px;
+  padding: 9px 13px;
+  border: 1px solid #9eabc0;
   border-radius: 8px;
   background: var(--paper);
-  color: var(--ink);
-  font-size: 0.76rem;
-  font-weight: 650;
+  color: #1f3a7a;
+  font-size: 0.81rem;
+  font-weight: 720;
   text-decoration: none;
 }
 
 .research-section-actions a:hover,
 .research-section-actions a:focus-visible {
-  border-color: #aeb8ce;
-  background: var(--soft);
+  border-color: #1f3a7a;
+  background: #eef2fb;
+  color: #162c60;
   text-decoration: none;
 }
 
@@ -271,7 +322,9 @@
 }
 
 .status-grid > a {
-  padding: 18px 19px;
+  position: relative;
+  min-height: 130px;
+  padding: 18px 19px 46px;
   border: 1px solid var(--line);
   border-radius: 13px;
   background: var(--paper);
@@ -280,8 +333,8 @@
 .status-grid > a:hover,
 .status-grid > a:focus-visible {
   transform: translateY(-2px);
-  border-color: #aeb8ce;
-  box-shadow: 0 8px 20px rgba(31, 45, 84, 0.07);
+  border-color: #8f9db7;
+  box-shadow: 0 8px 20px rgba(31, 45, 84, 0.08);
 }
 
 @media (max-width: 980px) {
@@ -320,12 +373,13 @@
 
   .research-jumpbar a,
   .research-card-link,
-  .record-link {
-    min-height: 0;
+  .record-link,
+  .status-grid > a {
+    min-height: auto;
   }
 
   .evidence-card img {
     height: auto;
-    max-height: 280px;
+    max-height: 250px;
   }
 }
