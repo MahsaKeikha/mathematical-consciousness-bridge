@@ -1,0 +1,73 @@
+name: one-shot-p54-figure-docs
+
+on:
+  push:
+    branches: [visual-polish-p54]
+    paths:
+      - .github/workflows/one-shot-p54-figure-docs.yml
+
+permissions:
+  contents: write
+
+jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: visual-polish-p54
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -e ".[dev]"
+      - name: Integrate permanent P54 figure record and catalog row
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          records = Path("scripts/conceptual_figure_records.py")
+          text = records.read_text(encoding="utf-8")
+          marker = '    "docs/figures/p55_pruning_aware_switching_monotonicity.svg": {'
+          if '"docs/figures/p54_metric_switching_cost_residual_scheduling.svg"' not in text:
+              record = '''    "docs/figures/p54_metric_switching_cost_residual_scheduling.svg": {
+                  "title": "P54 metric switching-cost residual scheduling",
+                  "description": (
+                      "What this figure shows: P54 proves that when preparation-switching costs form a declared finite metric, repeated alternation between positive-demand preparations is never required for an optimal deterministic residual schedule. Any expanded feasible schedule can be converted to its first-visit block order without increasing switching cost, so the exact optimum separates into fixed acquisition burden plus a shortest Hamiltonian path through the positive-demand preparations. "
+                      "How to read it: the three upper cards specify the residual workload, the metric switching geometry, and an arbitrary expanded schedule. Their attached arrows feed the central metric batching theorem, where repeated visits are deleted and shortcut by triangle inequality, then each retained preparation is expanded into one contiguous zero-self-cost block. The lower cards show the exact shortest Hamiltonian path reduction, the Held-Karp finite-instance audit, and the operational interpretation. "
+                      "Main takeaway: residual magnitudes determine acquisition burden while support geometry and the declared metric determine switching burden; the metric assumption is essential to the batching reduction."
+                  ),
+                  "status": (
+                      "Deterministic experimental scheduling theorem conditional on a declared residual-demand vector and valid finite metric. It does not establish statistical minimaxity of upstream thresholds, validate pruning, identify any route or scheduling quantity with consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness."
+                  ),
+              },
+          '''
+              if marker not in text:
+                  raise SystemExit("P55 insertion marker not found")
+              records.write_text(text.replace(marker, record + marker, 1), encoding="utf-8")
+
+          catalog = Path("docs/figure_catalog.md")
+          lines = catalog.read_text(encoding="utf-8").splitlines()
+          replacement = "| [P54 metric switching-cost residual scheduling](figures/p54_metric_switching_cost_residual_scheduling.svg) | What this figure shows: P54 proves that when preparation-switching costs form a declared finite metric, repeated alternation between positive-demand preparations is never required for an optimal deterministic residual schedule. Any expanded feasible schedule can be converted to its first-visit block order without increasing switching cost, so the exact optimum separates into fixed acquisition burden plus a shortest Hamiltonian path through the positive-demand preparations. How to read it: the three upper cards specify the residual workload, the metric switching geometry, and an arbitrary expanded schedule. Their attached arrows feed the central metric batching theorem, where repeated visits are deleted and shortcut by triangle inequality, then each retained preparation is expanded into one contiguous zero-self-cost block. The lower cards show the exact shortest Hamiltonian path reduction, the Held-Karp finite-instance audit, and the operational interpretation. Main takeaway: residual magnitudes determine acquisition burden while support geometry and the declared metric determine switching burden; the metric assumption is essential to the batching reduction. | Deterministic experimental scheduling theorem conditional on a declared residual-demand vector and valid finite metric. It does not establish statistical minimaxity of upstream thresholds, validate pruning, identify any route or scheduling quantity with consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness. | [Proposition 54](proposition_54_metric_switching_cost_residual_scheduling.md) |"
+          found = False
+          for index, line in enumerate(lines):
+              if "(figures/p54_metric_switching_cost_residual_scheduling.svg)" in line:
+                  lines[index] = replacement
+                  found = True
+                  break
+          if not found:
+              raise SystemExit("P54 catalog row not found")
+          catalog.write_text("\n".join(lines) + "\n", encoding="utf-8")
+          PY
+      - run: pytest -q
+      - run: ruff check .
+      - name: Commit audited P54 integration and remove one-shot workflow
+        run: |
+          rm .github/workflows/one-shot-p54-figure-docs.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "Integrate P54 figure documentation metadata"
+          git push origin HEAD:visual-polish-p54
