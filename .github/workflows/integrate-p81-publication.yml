@@ -1,0 +1,278 @@
+name: Integrate P81 publication surfaces
+
+on:
+  push:
+    branches: [p81-projection-event-certificate]
+    paths:
+      - ".github/workflows/integrate-p81-publication.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  integrate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: p81-projection-event-certificate
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Integrate P81 into permanent reader surfaces
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          def read(path: str) -> str:
+              return Path(path).read_text(encoding="utf-8")
+
+          def write(path: str, text: str) -> None:
+              Path(path).write_text(text, encoding="utf-8")
+
+          def replace_required(text: str, old: str, new: str, *, label: str, count: int | None = None) -> str:
+              found = text.count(old)
+              if found == 0:
+                  raise RuntimeError(f"missing required integration marker for {label}: {old!r}")
+              if count is not None and found != count:
+                  raise RuntimeError(f"unexpected marker count for {label}: expected {count}, found {found}")
+              return text.replace(old, new)
+
+          # Source wording guard: keep the scientific boundary readable as one phrase.
+          path = "src/consciousness_bridge/projection_event_model_separation.py"
+          text = read(path)
+          text = replace_required(
+              text,
+              "This is a numerical\nand statistical certification result for the declared P75 latent model. It does\nnot validate that model, does not identify any latent state with consciousness,",
+              "This is a numerical and statistical certification result for the declared P75\nlatent model. It does not validate that model, does not identify any latent state\nwith consciousness,",
+              label="P81 source scientific boundary",
+              count=1,
+          )
+          write(path, text)
+
+          # README: release metadata and current-frontier statements.
+          path = "README.md"
+          text = read(path)
+          text = replace_required(text, "0.80.0", "0.81.0", label="README release version")
+          text = replace_required(text, "80 proposition-level results", "81 proposition-level results", label="README proposition count", count=1)
+          text = replace_required(text, "68 equation-driven quantitative figures", "69 equation-driven quantitative figures", label="README figure count", count=1)
+          text = replace_required(text, "The theorem frontier is P80.", "The theorem frontier is P81.", label="README frontier sentence", count=1)
+          text = replace_required(text, "P19-P24, P71-P80", "P19-P24, P71-P81", label="README target branch")
+          text = replace_required(text, "P1 through P80 with explicit dependency branches", "P1 through P81 with explicit dependency branches", label="README roadmap frontier", count=1)
+          text = replace_required(text, "P71-P80 return to the P19 target-sufficiency lineage", "P71-P81 return to the P19 target-sufficiency lineage", label="README roadmap caption", count=1)
+          text = replace_required(text, "P61-P70 and P71-P80 are separate continuations", "P61-P70 and P71-P81 are separate continuations", label="README roadmap context")
+          text = replace_required(text, "complete P1 to P80 detailed proposition record", "complete P1 to P81 detailed proposition record", label="README detailed record link", count=1)
+          text = replace_required(text, "| Public theorem frontier | **P80** |", "| Public theorem frontier | **P81** |", label="README status frontier", count=1)
+          text = replace_required(text, "| Proposition-level results | **80** |", "| Proposition-level results | **81** |", label="README status proposition count", count=1)
+          text = replace_required(text, "| Equation-driven quantitative figures | **68** |", "| Equation-driven quantitative figures | **69** |", label="README status figure count", count=1)
+          text = replace_required(text, "Current documented theorem frontier: P80", "Current documented theorem frontier: P81", label="README BibTeX frontier")
+
+          p80_plain = "P80 tightens the continuous-family certificate itself. P78 encloses each observed probability cell over a parameter box, but its original lower bound treats those cell intervals independently. Every admissible probability law must also sum to one. P80 intersects the exact P78 intervals with that probability-simplex constraint and computes the resulting L-infinity distance exactly in rational arithmetic. The tightened relaxation still contains every P75 law in the parameter box, so the bound remains conservative, while the smaller feasible set can only make the lower bound stronger. The P80 bound therefore dominates the corresponding P78 box bound and can certify separation with fewer refinements in cases where normalization coupling matters. This is a computational tightening of the declared P75 model test, not a new consciousness assumption."
+          p81_plain = "P81 asks what P80 still leaves out. A P75 parameter box can force exact probabilities for one-view marginals and higher-order projected events even when every individual sixteen-cell interval, together with normalization, still overlaps the empirical law. P81 computes the exact rational interval for every nonempty projected binary event and converts any event mismatch into a lower bound on the full sixteen-cell L-infinity distance. The combined P81 certificate is never weaker than P80 and can be strictly stronger. This remains a test of the declared target-measurement model, not an identification of a latent state with consciousness."
+          text = replace_required(text, p80_plain, p80_plain + "\n\n" + p81_plain, label="README plain-language P81 insertion", count=1)
+
+          old_arch = "P80 then strengthens the P78 continuous-family lower bound by retaining probability-simplex normalization inside every exact interval relaxation. Together they are intended to remove hidden assumptions one by one."
+          new_arch = "P80 then strengthens the P78 continuous-family lower bound by retaining probability-simplex normalization inside every exact interval relaxation. P81 further retains exact projected-event constraints implied by each parameter box and transfers those mismatches back to the full observed law. Together they are intended to remove hidden assumptions one by one."
+          text = replace_required(text, old_arch, new_arch, label="README architecture P81 insertion", count=1)
+
+          boundary = "\n\n---\n\n# 2. From physical dynamics to operational structure"
+          if boundary not in text:
+              raise RuntimeError("README P81 theorem insertion boundary missing")
+          p81_section = r'''
+
+## 1.15 P81: projection-event continuous-family lower bound
+
+P80 uses exact cell intervals together with probability normalization. P81 retains additional linear consequences of the same P75 parameter box: exact probabilities of projected binary events.
+
+For a nonempty subset of observed views $J$ and assignment $a$, let $C(J,a)$ be the corresponding cylinder event. If it contains $m=2^{4-|J|}$ of the sixteen full cells, then
+
+$$
+\left|\widehat p(C)-q(C)\right|\le m\,\|\widehat p-q\|_\infty.
+$$
+
+The P75 event probability has an exact parameter-box interval $[\ell_{J,a}(B),u_{J,a}(B)]$. Therefore
+
+$$
+\boxed{
+L_{\mathrm{proj}}(B)
+=
+\max_{J,a}
+\frac{d\!\left(\widehat p(C(J,a)),[\ell_{J,a}(B),u_{J,a}(B)]\right)}{2^{4-|J|}}
+}
+$$
+
+is a valid lower bound on full-law distance inside the box. P81 combines it with P80:
+
+$$
+\boxed{L_{81}(B)=\max\{L_{80}(B),L_{\mathrm{proj}}(B)\}.}
+$$
+
+Hence $L_{81}(B)\ge L_{80}(B)\ge L_{78}(B)$. The strict witness in the proof has $L_{80}=0$ but $L_{81}=1/80$, showing that projected-event information can be genuinely new.
+
+![P81 projection-event model separation](docs/figures/p81_projection_event_model_separation.svg)
+
+**P81 theorem figure. Projection-event continuous-model certification.** Exact marginal and higher-order cylinder-event ranges can expose parameter-box incompatibility that is invisible to cell intervals plus normalization. The P77/P79 handoff remains one-sided: rejection requires the certified P81 model-distance lower bound to exceed the P79 sampling-radius upper bound.
+
+Direct proof: [Proposition 81](docs/proposition_81_projection_event_model_separation.md). Equation and literature classification: [P81 provenance record](docs/p81_equation_provenance.md). Implementation: [`projection_event_model_separation.py`](src/consciousness_bridge/projection_event_model_separation.py). Tests: [`test_projection_event_model_separation.py`](tests/test_projection_event_model_separation.py) and [`test_p81_figure_geometry.py`](tests/test_p81_figure_geometry.py).
+'''
+          text = text.replace(boundary, p81_section + boundary, 1)
+
+          old_target = "P80 tightens the P78 box relaxation by enforcing probability-simplex normalization while preserving exact-rational certification. The remaining challenges are still tighter global relaxations, sharper statistical power, and broader dependent-view alternatives."
+          new_target = "P80 tightens the P78 box relaxation by enforcing probability-simplex normalization while preserving exact-rational certification. P81 adds exact projected-event constraints, including marginals and higher-order cylinder events, while preserving the same lower-bound direction. The remaining challenges are still tighter global relaxations, sharper statistical power, and broader dependent-view alternatives."
+          text = replace_required(text, old_target, new_target, label="README target-side P81 continuation", count=1)
+
+          p80_table = "| Continuous P75 separation uses the tighter simplex-coupled certificate | A P80 global lower bound exceeds the P79 sampling-radius upper certificate | Treating probability-cell intervals as independent when normalization coupling can strengthen the certified lower bound |"
+          p81_table = "| Continuous P75 separation uses projected-event constraints | A P81 global lower bound exceeds the P79 sampling-radius upper certificate | Ignoring exact parameter-box marginals or cylinder events when they can strengthen the certified lower bound |"
+          text = replace_required(text, p80_table, p80_table + "\n" + p81_table, label="README falsification table P81", count=1)
+
+          p80_prov = "| [P80 equation and provenance record](docs/p80_equation_provenance.md) | Interval-simplex relaxation, exact rational feasibility crossings, P80 >= P78 dominance, and the P79 rejection handoff |"
+          p81_prov = "| [P81 equation and provenance record](docs/p81_equation_provenance.md) | Exact projection-event intervals, event-size L-infinity transfer, P81 >= P80 dominance, strict-improvement witness, and P79 rejection handoff |"
+          text = replace_required(text, p80_prov, p80_prov + "\n" + p81_prov, label="README provenance table P81", count=1)
+
+          p80_status = "| Simplex-coupled continuous-family certificate | **P80 proved for the P75 family by intersecting exact P78 cell intervals with probability normalization and solving the resulting L-infinity relaxation exactly in rational arithmetic** |"
+          p81_status = "| Projection-event continuous-family certificate | **P81 proved for the P75 family by adding exact marginal and cylinder-event box constraints and transferring event mismatch back to full-law L-infinity distance** |"
+          text = replace_required(text, p80_status, p80_status + "\n" + p81_status, label="README status P81", count=1)
+          write(path, text)
+
+          # Citation files.
+          path = "CITATION.bib"
+          text = read(path).replace("0.80.0", "0.81.0").replace("frontier: P80", "frontier: P81")
+          write(path, text)
+
+          path = "CITATION.md"
+          text = read(path)
+          text = text.replace("0.80.0", "0.81.0")
+          text = text.replace("current documented frontier, P79.", "current documented frontier, P81.")
+          text = text.replace("theorem frontier **P79**", "theorem frontier **P81**")
+          text = text.replace("frontier: P80", "frontier: P81")
+          text = text.replace("P1 through P80 chronological theorem record", "P1 through P81 chronological theorem record")
+          p80_cite = "Cite [Proposition 80](docs/proposition_80_simplex_coupled_model_separation.md) when relying on probability-simplex coupling of the P78 cell intervals, the exact interval-simplex L-infinity distance, or the never-weaker P80 box lower bound."
+          p81_cite = "Cite [Proposition 81](docs/proposition_81_projection_event_model_separation.md) when relying on exact projected-event parameter-box intervals, the event-size transfer to full-law L-infinity distance, the P81 never-weaker-than-P80 certificate, or its strict-improvement witness."
+          text = replace_required(text, p80_cite, p80_cite + " " + p81_cite, label="citation guide P81 method citation", count=1)
+          p80_scope = "P80 tightens the P78 parameter-box relaxation by intersecting the exact observed-cell intervals with probability normalization. The resulting interval-simplex distance is never weaker than the corresponding P78 coordinatewise bound, while it remains a lower bound on distance to the true continuous P75 box image. None of P78-P80 turns non-rejection into model validation or identifies the latent state with consciousness."
+          p81_scope = "P81 further tightens the declared continuous-family test by retaining exact parameter-box ranges for every nonempty projected binary event. Event-level mismatch is divided by the number of full observed cells in that event to obtain a sound full-law L-infinity lower bound. The combined P81 certificate is never weaker than P80 and can be strictly stronger. None of P78-P81 turns non-rejection into model validation or identifies the latent state with consciousness."
+          text = replace_required(text, p80_scope, p80_scope.replace("None of P78-P80 turns non-rejection into model validation or identifies the latent state with consciousness.", "") + "\n\n" + p81_scope, label="citation guide P81 scope", count=1)
+          p80_resource = "- [P80 equation and provenance record](docs/p80_equation_provenance.md): probability-simplex coupling, exact interval-simplex distance, and P80/P78 dominance."
+          p81_resource = "- [P81 equation and provenance record](docs/p81_equation_provenance.md): projected-event box intervals, event-size distance transfer, dominance, and the P79 rejection handoff."
+          text = replace_required(text, p80_resource, p80_resource + "\n" + p81_resource, label="citation guide P81 resource", count=1)
+          if "## Proposition 81" not in text:
+              text += "\n\n## Proposition 81\n\nFor the projection-event continuous-model certificate, cite the repository together with [Proposition 81](docs/proposition_81_projection_event_model_separation.md) and its [equation provenance record](docs/p81_equation_provenance.md). P81 is a computational tightening of the P80/P78 continuous P75 separation chain and should not be cited as an identification of consciousness.\n"
+          write(path, text)
+
+          # Changelog.
+          path = "CHANGELOG.md"
+          text = read(path)
+          if not text.startswith("# 0.80.0"):
+              raise RuntimeError("unexpected changelog frontier")
+          entry = """# 0.81.0 - 2026-09-11\n\n- Added Proposition 81, Projection-Event Certificate for Continuous P75 Separation.\n- Added exact-rational parameter-box intervals for every nonempty projected binary cylinder event of the four observed views.\n- Proved the event-size transfer bound from projected-event mismatch to full sixteen-cell L-infinity model distance.\n- Defined `L81(B) = max(L80(B), L_proj(B))` and proved `L81(B) >= L80(B) >= L78(B)`.\n- Added an exact strict-improvement witness with `L80(B)=0` and `L81(B)=1/80`.\n- Preserved the one-sided P77/P79 rejection handoff and the existing P78 mesh-width upper certificate.\n- Added implementation, tests, proof, provenance record, theorem figure, reader navigation, website integration, and v0.81.0 citation metadata.\n- Preserved the scientific boundary that model rejection is not an experiential ontology and the physical-to-experiential bridge remains open.\n\n"""
+          write(path, entry + text)
+
+          # Detailed chronological record.
+          path = "docs/detailed_proposition_record.md"
+          text = read(path)
+          text = replace_required(text, "## Complete P1 to P80 chronology", "## Complete P1 to P81 chronology", label="detailed chronology heading", count=1)
+          if "**P81**" not in text:
+              text += """\n\n### P81: projection-event continuous-family certificate\n\n**P81** strengthens P80 by retaining exact parameter-box ranges for all nonempty projected binary events of the four observed views. For each cylinder event, its empirical mismatch from the exact box interval is divided by the event's number of full cells to obtain a valid full-law L-infinity lower bound. The combined P81 certificate is the maximum of this projection bound and the P80 simplex-coupled bound, so it is never weaker than P80. A fixed-marginal witness gives `L80=0` but `L81=1/80`, proving strict improvement is possible. [Proof](proposition_81_projection_event_model_separation.md) | [provenance](p81_equation_provenance.md) | [figure](figures/p81_projection_event_model_separation.svg). P81 does not identify the P75 latent variable with consciousness and does not close the physical-to-experiential bridge.\n"""
+          write(path, text)
+
+          # Theorem roadmap.
+          path = "docs/theorem_roadmap.md"
+          text = read(path)
+          text = text.replace("P1 through P80", "P1 through P81")
+          if "proposition_81_projection_event_model_separation.md" not in text:
+              text += """\n\n### P81: projection-event continuous-family certificate\n\n[P81](proposition_81_projection_event_model_separation.md) continues the P75-P80 target-model adequacy branch. It adds exact parameter-box ranges for all nonempty projected binary events and combines their full-law distance lower bound with P80.\n\n| Result | Depends on | Adds |\n| --- | --- | --- |\n| [P81](proposition_81_projection_event_model_separation.md) | P75, P77, P78, P79, P80 | Exact projection-event intervals, event-size distance transfer, P81 >= P80 dominance, and strict-improvement witness |\n"""
+          write(path, text)
+
+          # Research navigation.
+          path = "docs/research_navigation.md"
+          text = read(path)
+          text = text.replace("P1 through P80", "P1 through P81")
+          if "| P81 |" not in text:
+              text += """\n\n## P81 frontier update\n\n| Proposition | Reader question | Direct proof |\n| --- | --- | --- |\n| P81 | Can exact projected-event constraints strengthen P80 while preserving a certified full-law lower bound? | [Projection-event model separation](proposition_81_projection_event_model_separation.md) |\n"""
+          write(path, text)
+
+          # Equation/citation map.
+          path = "docs/equation_and_citation_map.md"
+          text = read(path)
+          if "# P81 projection-event model separation" not in text:
+              text += """\n\n# P81 projection-event model separation\n\nP81 is documented in the [proof](proposition_81_projection_event_model_separation.md) and [equation/provenance record](p81_equation_provenance.md). Its new equations are the exact cylinder-event parameter-box interval, the event-size L-infinity transfer inequality, the maximized projection lower bound, and the combined `L81(B)=max(L80(B),L_proj(B))` certificate. The model definition is inherited from P75; the parameter-box endpoint principle is inherited from P78; the simplex-coupled lower bound is inherited from P80; and the strict finite-data rejection handoff uses P79.\n"""
+          write(path, text)
+
+          # Figure catalog.
+          path = "docs/figure_catalog.md"
+          text = read(path)
+          if "figures/p81_projection_event_model_separation.svg" not in text:
+              text += """\n\n## P81 projection-event model separation\n\n[![P81 projection-event model separation](figures/p81_projection_event_model_separation.svg)](proposition_81_projection_event_model_separation.md)\n\n**What it shows and how to interpret it.** P81 begins with exact projected-event intervals implied by a P75 parameter box, transfers empirical event mismatch back to a full-law L-infinity lower bound through the event-size inequality, and combines that bound with P80. The strict witness displays `L80=0` but `L81=1/80`. The figure is an exact-rational computational-certification diagram, not a consciousness-identification claim.\n\n**Scientific status:** proved conditional computational theorem; the physical-to-experiential bridge remains open.\n"""
+          write(path, text)
+
+          # Citation-release history regression test must advance with the frontier while preserving P79 history.
+          path = "tests/test_p79_research_integration.py"
+          text = read(path)
+          text = replace_required(text, "def test_p79_release_history_survives_p80_frontier() -> None:", "def test_p79_release_history_survives_p81_frontier() -> None:", label="P79 history test name", count=1)
+          text = replace_required(text, "# Current release metadata follows the P80 frontier.", "# Current release metadata follows the P81 frontier.", label="P79 history comment", count=1)
+          text = text.replace("0.80.0", "0.81.0")
+          text = text.replace("Current documented theorem frontier: P80", "Current documented theorem frontier: P81")
+          text = text.replace("80 proposition-level results", "81 proposition-level results")
+          text = text.replace("68 equation-driven quantitative figures", "69 equation-driven quantitative figures")
+          text = text.replace("The theorem frontier is P80.", "The theorem frontier is P81.")
+          text = text.replace("| Public theorem frontier | **P80** |", "| Public theorem frontier | **P81** |")
+          text = text.replace("Read the complete P1 to P80 detailed proposition record", "Read the complete P1 to P81 detailed proposition record")
+          text = replace_required(text, "assert int(match.group(1)) == 80", "assert int(match.group(1)) == 81", label="P79 history roadmap frontier", count=1)
+          # Preserve explicit checks that both P80 and P79 remain in history.
+          if 'assert "# 0.81.0 - 2026-09-11" in changelog' not in text:
+              text = text.replace('assert "# 0.80.0 - 2026-09-11" in changelog\n', 'assert "# 0.80.0 - 2026-09-11" in changelog\n    assert "# 0.81.0 - 2026-09-11" in changelog\n')
+          write(path, text)
+
+          # Website home: synchronize release and expose the real P81 figure.
+          path = "website/index.html"
+          text = read(path).replace("v0.80.0", "v0.81.0")
+          p81_html = '''\n<section class="panel">\n  <h2>P81: Projection-event continuous-family certificate</h2>\n  <p>P81 adds exact marginal and higher-order projected-event constraints to the P80 continuous P75 separation certificate. The combined lower bound is never weaker than P80, while non-rejection remains inconclusive.</p>\n  <a href="../docs/proposition_81_projection_event_model_separation.md"><img src="../docs/figures/p81_projection_event_model_separation.svg" alt="P81 projection-event model separation theorem figure" /></a>\n</section>\n'''
+          if "p81_projection_event_model_separation.svg" not in text:
+              marker = "</main>"
+              if marker not in text:
+                  raise RuntimeError("website/index.html missing </main>")
+              text = text.replace(marker, p81_html + marker, 1)
+          write(path, text)
+
+          # Website research map.
+          path = "website/research-map.html"
+          text = read(path).replace("P71-P80", "P71-P81")
+          if "P81: Projection-event continuous-family certificate" not in text:
+              card = '''\n<section class="panel">\n  <h2>P81: Projection-event continuous-family certificate</h2>\n  <p>Exact projected-event box intervals strengthen the P80 target-model separation branch while preserving the P77/P79 one-sided rejection logic.</p>\n  <p><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_81_projection_event_model_separation.md">Read P81</a></p>\n</section>\n'''
+              marker = "</main>"
+              if marker not in text:
+                  raise RuntimeError("website/research-map.html missing </main>")
+              text = text.replace(marker, card + marker, 1)
+          write(path, text)
+
+          # Website visual atlas.
+          path = "website/visual-atlas.html"
+          text = read(path)
+          if "p81_projection_event_model_separation.svg" not in text:
+              card = '''\n<section class="panel">\n  <h2>P81 projection-event model separation</h2>\n  <a href="../docs/proposition_81_projection_event_model_separation.md"><img src="../docs/figures/p81_projection_event_model_separation.svg" alt="P81 projection-event model separation theorem figure" /></a>\n  <p>Exact projected-event constraints can strengthen the P80 lower bound without changing the declared P75 model.</p>\n</section>\n'''
+              marker = "</main>"
+              if marker not in text:
+                  raise RuntimeError("website/visual-atlas.html missing </main>")
+              text = text.replace(marker, card + marker, 1)
+          write(path, text)
+          PY
+      - name: Install project
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+      - name: Validate integrated publication
+        run: |
+          pytest
+          ruff check .
+      - name: Commit validated permanent integration
+        shell: bash
+        run: |
+          rm .github/workflows/integrate-p81-publication.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Integrate P81 across publication surfaces"
+          git push origin HEAD:p81-projection-event-certificate
