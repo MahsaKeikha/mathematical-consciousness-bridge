@@ -3,222 +3,178 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="How the Mathematical Consciousness Bridge research program is implemented, tested, visualized, and reproduced." />
-  <title>How It Works & Implementation · Mathematical Consciousness Bridge</title>
+  <meta name="description" content="How the Mathematical Consciousness Bridge research program is implemented, tested, visualized, and reproduced, including the P84 joint projection-parity frontier." />
+  <title>How It Works &amp; Implementation | Mathematical Consciousness Bridge</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
     .implementation-intro { max-width: 980px; }
-    .implementation-index { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.5rem 0 2.5rem; }
-    .implementation-index a { display: block; padding: 1rem; border: 1px solid rgba(100,116,139,.28); border-radius: 14px; text-decoration: none; background: rgba(255,255,255,.55); }
-    .implementation-index strong { display: block; margin-bottom: .25rem; }
-    .implementation-stage { scroll-margin-top: 7rem; }
-    .implementation-stage .stage-number { letter-spacing: .08em; text-transform: uppercase; font-weight: 800; opacity: .75; }
-    .implementation-flow { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: .8rem; margin: 1.2rem 0; }
-    .implementation-flow > div { padding: 1rem; border-radius: 14px; border: 1px solid rgba(100,116,139,.25); background: rgba(255,255,255,.55); }
+    .implementation-index { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; margin:1.5rem 0 2.5rem; }
+    .implementation-index a { display:block; padding:1rem; border:1px solid rgba(100,116,139,.28); border-radius:14px; text-decoration:none; background:rgba(255,255,255,.55); }
+    .implementation-index strong { display:block; margin-bottom:.25rem; }
+    .implementation-stage { scroll-margin-top:7rem; }
+    .implementation-stage .stage-number { letter-spacing:.08em; text-transform:uppercase; font-weight:800; opacity:.75; }
+    .implementation-flow { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.8rem; margin:1.2rem 0; }
+    .implementation-flow > div { padding:1rem; border-radius:14px; border:1px solid rgba(100,116,139,.25); background:rgba(255,255,255,.55); }
     .implementation-flow strong { display:block; margin-bottom:.35rem; }
-    .implementation-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: .75rem; margin-top: 1rem; }
-    .implementation-links a { display: block; padding: .85rem 1rem; border-radius: 12px; border: 1px solid rgba(100,116,139,.25); text-decoration: none; }
+    .implementation-links { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:.75rem; margin-top:1rem; }
+    .implementation-links a { display:block; padding:.85rem 1rem; border-radius:12px; border:1px solid rgba(100,116,139,.25); text-decoration:none; }
     .implementation-links small { display:block; margin-top:.3rem; opacity:.75; }
-    .scientific-boundary { margin-top: 1rem; padding: .9rem 1rem; border-left: 4px solid currentColor; background: rgba(148,163,184,.10); }
+    .scientific-boundary { margin-top:1rem; padding:.9rem 1rem; border-left:4px solid currentColor; background:rgba(148,163,184,.10); }
     .audit-pipeline { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:.55rem; align-items:stretch; margin:1.3rem 0; }
     .audit-pipeline div { padding:.85rem; text-align:center; border:1px solid rgba(100,116,139,.25); border-radius:12px; }
     pre { overflow-x:auto; }
-    @media (max-width: 820px) { .implementation-flow, .audit-pipeline { grid-template-columns:1fr; } }
+    @media (max-width:820px) { .implementation-flow, .audit-pipeline { grid-template-columns:1fr; } }
   </style>
 </head>
 <body>
-<header class="topbar"><a class="brand" href="index.html">Mathematical Consciousness Bridge</a><nav><a href="start-here.html">Start Here</a><a href="index.html">Overview</a><a href="research-map.html">Research Map</a><a href="physics-mathematics.html">Physics & Math</a><a href="visual-atlas.html">Visual Atlas</a><a href="sources.html">Sources</a></nav></header>
+<header class="topbar">
+  <a class="brand" href="index.html">Mathematical Consciousness Bridge</a>
+  <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
+  <nav><a href="start-here.html">Start Here</a><a href="index.html">Overview</a><a href="research-map.html">Research Map</a><a href="physics-mathematics.html">Physics &amp; Math</a><a href="visual-atlas.html">Visual Atlas</a><a href="sources.html">Sources</a></nav>
+</header>
+
 <main>
 <section class="hero compact-hero implementation-intro">
   <p class="eyebrow">Implementation guide</p>
   <h1>How the research actually works</h1>
-  <p class="lede">This page connects the conceptual research map to the repository that executes and audits it. Each stage below shows the scientific question, the computational transformation, representative source modules, and the proof/test/reproducibility surfaces a reader can inspect directly.</p>
+  <p class="lede">This page connects the conceptual research map to the repository that executes and audits it. Each stage shows the scientific question, the computational transformation, representative source modules, and the proof/test/reproducibility surfaces a reader can inspect directly.</p>
   <p><strong>Important scientific boundary:</strong> executable mathematics is not evidence that the physical-to-experiential bridge has been solved. The code implements declared mathematical objects, tests, bounds, optimization procedures, and falsification criteria under stated assumptions. The bridge target remains open.</p>
 </section>
 
 <section class="boundary">
   <div class="section-head"><p class="eyebrow">Repository architecture</p><h2>From theorem to reproducible result</h2></div>
   <div class="audit-pipeline" aria-label="Repository verification pipeline">
-    <div><strong>1 · Proof</strong><br><code>docs/</code></div>
-    <div><strong>2 · Implementation</strong><br><code>src/consciousness_bridge/</code></div>
-    <div><strong>3 · Regression tests</strong><br><code>tests/</code></div>
-    <div><strong>4 · Visual output</strong><br><code>docs/figures/</code></div>
-    <div><strong>5 · Full audit</strong><br><code>scripts/reproducibility_audit.py</code></div>
+    <div><strong>1 | Proof</strong><br><code>docs/</code></div>
+    <div><strong>2 | Implementation</strong><br><code>src/consciousness_bridge/</code></div>
+    <div><strong>3 | Regression tests</strong><br><code>tests/</code></div>
+    <div><strong>4 | Visual output</strong><br><code>docs/figures/</code></div>
+    <div><strong>5 | Full audit</strong><br><code>scripts/reproducibility_audit.py</code></div>
   </div>
-  <p>The repository is designed so that the public theorem statement, executable routine, tests, figures, and reproducibility audit remain separate but cross-checkable. Computational atlases are regenerated; source-controlled explanatory diagrams are validated without pretending they were numerically generated.</p>
+  <p>The theorem statement, executable routine, tests, figures, and reproducibility audit are separate but cross-checkable. A proof can be mathematically valid without being empirical evidence, and an implementation can be correct without validating the assumptions it implements.</p>
   <div class="implementation-links">
     <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/reproducibility.md"><strong>Reproducibility guide</strong><small>Environment, commands, and audit procedure</small></a>
     <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/scripts/README.md"><strong>Executable scripts</strong><small>Figure generation, verification, and full audit</small></a>
     <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/tree/main/tests"><strong>Regression tests</strong><small>Executable theorem and integrity checks</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/detailed_proposition_record.md"><strong>P1-P83 proposition record</strong><small>Assumptions, statements, implementations, tests, and boundaries</small></a>
+    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/detailed_proposition_record.md"><strong>P1-P84 proposition record</strong><small>Assumptions, statements, implementations, tests, and boundaries</small></a>
   </div>
 </section>
 
 <section>
   <div class="section-head"><p class="eyebrow">Jump to a stage</p><h2>The ten-stage scientific path</h2></div>
   <div class="implementation-index">
-    <a href="#stage-01"><strong>1 · P1-P10</strong>Foundations</a>
-    <a href="#stage-02"><strong>2 · P11-P18</strong>Structured physical candidates</a>
-    <a href="#stage-03"><strong>3 · P19-P24</strong>Bridge sufficiency tests</a>
-    <a href="#stage-04"><strong>4 · P71</strong>Target provenance</a>
-    <a href="#stage-05"><strong>5 · P72</strong>Target measurement</a>
-    <a href="#stage-06"><strong>6 · P73-P76</strong>Channel recovery & adequacy</a>
-    <a href="#stage-07"><strong>7 · P25-P37</strong>Operational scale</a>
-    <a href="#stage-08"><strong>8 · P38-P44</strong>Quantum interface</a>
-    <a href="#stage-09"><strong>9 · P45-P53</strong>Adaptive evidence acquisition</a>
-    <a href="#stage-10"><strong>10 · P54-P70</strong>Execution & calibration</a>
+    <a href="#stage-01"><strong>1 | P1-P10</strong>Foundations</a>
+    <a href="#stage-02"><strong>2 | P11-P18</strong>Structured physical candidates</a>
+    <a href="#stage-03"><strong>3 | P19-P24</strong>Bridge sufficiency tests</a>
+    <a href="#stage-04"><strong>4 | P71</strong>Target provenance</a>
+    <a href="#stage-05"><strong>5 | P72</strong>Target measurement</a>
+    <a href="#stage-06"><strong>6 | P73-P84</strong>Channel recovery, adequacy, and certified model separation</a>
+    <a href="#stage-07"><strong>7 | P25-P37</strong>Operational scale</a>
+    <a href="#stage-08"><strong>8 | P38-P44</strong>Quantum interface</a>
+    <a href="#stage-09"><strong>9 | P45-P53</strong>Adaptive evidence acquisition</a>
+    <a href="#stage-10"><strong>10 | P54-P70</strong>Execution and calibration</a>
   </div>
 </section>
 
 <section class="implementation-stage" id="stage-01">
-  <p class="stage-number">Stage 01 · P1-P10</p><h2>Foundations: make a bridge claim mathematically testable</h2>
-  <p>The first layer turns broad claims into objects that can be compared, identified, recovered, and falsified. The implementation represents observational equivalence, identifiable signatures, experimental discrimination, feature sufficiency, and finite-data recovery as explicit functions rather than prose-only concepts.</p>
-  <div class="implementation-flow"><div><strong>Input</strong>Candidate states, descriptors, observations, tolerances, or finite samples.</div><div><strong>Operation</strong>Construct equivalence classes/signatures, compare distinguishability, and quantify recovery or sample requirements.</div><div><strong>Output</strong>An identifiable object, a recovery result, a finite-data certificate, or an explicit failure condition.</div></div>
+  <p class="stage-number">Stage 01 | P1-P10</p><h2>Foundations: make a bridge claim mathematically testable</h2>
+  <div class="implementation-flow"><div><strong>Input</strong>Candidate states, descriptors, observations, tolerances, or finite samples.</div><div><strong>Operation</strong>Construct equivalence/signature objects, compare distinguishability, and quantify recovery or sample requirements.</div><div><strong>Output</strong>An identifiable object, recovery result, finite-data certificate, or explicit failure condition.</div></div>
   <div class="implementation-links">
     <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/identifiability.py"><strong>identifiability.py</strong><small>Executable identifiability logic</small></a>
     <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/equivalence.py"><strong>equivalence.py</strong><small>Observational equivalence machinery</small></a>
     <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/experiment_design.py"><strong>experiment_design.py</strong><small>Discriminating experiment construction</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/feature_sufficiency.py"><strong>feature_sufficiency.py</strong><small>Feature-level sufficiency tests</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/canonical_signature.py"><strong>canonical_signature.py</strong><small>Canonical bridge signature representation</small></a>
+    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/feature_sufficiency.py"><strong>feature_sufficiency.py</strong><small>Feature-level sufficiency</small></a>
+    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/canonical_signature.py"><strong>canonical_signature.py</strong><small>Canonical signature representation</small></a>
     <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/robust_signature_recovery.py"><strong>robust_signature_recovery.py</strong><small>Finite-error recovery</small></a>
   </div>
 </section>
 
 <section class="implementation-stage" id="stage-02">
-  <p class="stage-number">Stage 02 · P11-P18</p><h2>Structured physical candidates: causal, temporal, compositional, and scale-aware structure</h2>
-  <p>This stage asks what information a proposed physical descriptor actually retains. Code constructs intervention-resolved causal structure, temporal structure, compositions, and controlled coarse-grainings so later bridge tests operate on declared physical objects rather than an undefined notion of “the brain” or “the physical state.”</p>
-  <div class="implementation-flow"><div><strong>Input</strong>Interventions, responses, delays, components, partitions, and aggregation maps.</div><div><strong>Operation</strong>Build causal/temporal structure, compose subsystems, then quantify what changes or survives under coarse-graining.</div><div><strong>Output</strong>A structured physical descriptor with explicit invariance and information-loss boundaries.</div></div>
+  <p class="stage-number">Stage 02 | P11-P18</p><h2>Structured physical candidates</h2>
+  <div class="implementation-flow"><div><strong>Input</strong>Interventions, responses, delays, components, partitions, and aggregation maps.</div><div><strong>Operation</strong>Build causal/temporal structure, compose subsystems, and quantify changes under coarse-graining.</div><div><strong>Output</strong>A structured physical descriptor with explicit invariance and information-loss boundaries.</div></div>
   <div class="implementation-links">
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/intervention_causal_structure.py"><strong>intervention_causal_structure.py</strong><small>Intervention-resolved physical structure</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/temporal_causal_structure.py"><strong>temporal_causal_structure.py</strong><small>Temporal extension of the causal object</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/causal_structure_composition.py"><strong>causal_structure_composition.py</strong><small>Composition of structured candidates</small></a>
+    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/intervention_causal_structure.py"><strong>intervention_causal_structure.py</strong><small>Intervention-resolved structure</small></a>
+    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/temporal_causal_structure.py"><strong>temporal_causal_structure.py</strong><small>Temporal extension</small></a>
+    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/causal_structure_composition.py"><strong>causal_structure_composition.py</strong><small>Composition</small></a>
     <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/causal_structure_coarse_graining.py"><strong>causal_structure_coarse_graining.py</strong><small>Controlled coarse-graining</small></a>
   </div>
 </section>
 
 <section class="implementation-stage" id="stage-03">
-  <p class="stage-number">Stage 03 · P19-P24</p><h2>Bridge sufficiency tests: does the target factor through the declared physics?</h2>
-  <p>The central operational test is not “does physics correlate with the target?” but whether the declared target is determined by, or statistically factors through, the declared physical descriptor under the chosen bridge class. Residuals expose distinctions the descriptor fails to capture; finite-sample and repeated-look modules decide when that failure is statistically certifiable.</p>
-  <div class="implementation-flow"><div><strong>Input</strong>A physical descriptor X, an independently declared target Y, a bridge class, and observed samples.</div><div><strong>Operation</strong>Test exact or approximate factorization, compute residual witnesses, refine descriptors, and control adaptive/repeated inference.</div><div><strong>Output</strong>A sufficiency certificate, a nonfactorization witness, or an inconclusive finite-data result.</div></div>
+  <p class="stage-number">Stage 03 | P19-P24</p><h2>Bridge sufficiency tests</h2>
+  <div class="implementation-flow"><div><strong>Input</strong>A physical descriptor, an independently declared target, a bridge class, and samples.</div><div><strong>Operation</strong>Test factorization, compute residual witnesses, refine descriptors, and control adaptive/repeated inference.</div><div><strong>Output</strong>A sufficiency certificate, nonfactorization witness, or inconclusive finite-data result.</div></div>
   <div class="implementation-links">
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/fundamental_physical_sufficiency.py"><strong>fundamental_physical_sufficiency.py</strong><small>Core P19-style factorization interface</small></a>
+    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/fundamental_physical_sufficiency.py"><strong>fundamental_physical_sufficiency.py</strong><small>Core P19 interface</small></a>
     <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/finite_sample_residual_certification.py"><strong>finite_sample_residual_certification.py</strong><small>Finite-data residual certificate</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/descriptor_refinement_residual.py"><strong>descriptor_refinement_residual.py</strong><small>Residual behavior under descriptor refinement</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/adaptive_descriptor_selection.py"><strong>adaptive_descriptor_selection.py</strong><small>Validity under data-dependent descriptor choice</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/anytime_refinement_certification.py"><strong>anytime_refinement_certification.py</strong><small>Repeated-look / anytime certification</small></a>
+    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/descriptor_refinement_residual.py"><strong>descriptor_refinement_residual.py</strong><small>Descriptor refinement</small></a>
+    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/adaptive_descriptor_selection.py"><strong>adaptive_descriptor_selection.py</strong><small>Post-selection validity</small></a>
+    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/anytime_refinement_certification.py"><strong>anytime_refinement_certification.py</strong><small>Repeated-look validity</small></a>
   </div>
   <p class="scientific-boundary"><strong>Interpretation:</strong> failure of one descriptor does not prove that experience is nonphysical. It proves only that the declared descriptor/bridge class is insufficient for the independently declared target under the tested conditions.</p>
 </section>
 
 <section class="implementation-stage" id="stage-04">
-  <p class="stage-number">Stage 04 · P71</p><h2>Target provenance: prevent a bridge from succeeding by construction</h2>
-  <p>P71 audits where the target came from. If the target is itself constructed from the same descriptor being tested, factorization can become circular. The implementation records target-construction dependencies and tests whether the alleged evidence is independent of the physical descriptor whose sufficiency is under examination.</p>
-  <div class="implementation-flow"><div><strong>Input</strong>Descriptor, target, and target-construction protocol.</div><div><strong>Operation</strong>Trace provenance and detect target definitions that encode the tested factorization.</div><div><strong>Output</strong>A non-circularity status or an explicit circularity warning.</div></div>
-  <div class="implementation-links">
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_71_target_provenance_noncircularity.md"><strong>P71 proof & assumptions</strong><small>Formal proposition and scientific boundary</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/target_provenance_noncircularity.py"><strong>target_provenance_noncircularity.py</strong><small>Executable provenance audit</small></a>
-  </div>
+  <p class="stage-number">Stage 04 | P71</p><h2>Target provenance: prevent success by construction</h2>
+  <div class="implementation-flow"><div><strong>Input</strong>Descriptor, target, and target-construction protocol.</div><div><strong>Operation</strong>Trace provenance and detect target definitions that encode the tested factorization.</div><div><strong>Output</strong>A non-circularity status or explicit circularity warning.</div></div>
+  <div class="implementation-links"><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_71_target_provenance_noncircularity.md"><strong>P71 proof</strong><small>Formal proposition</small></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/target_provenance_noncircularity.py"><strong>target_provenance_noncircularity.py</strong><small>Executable provenance audit</small></a></div>
 </section>
 
 <section class="implementation-stage" id="stage-05">
-  <p class="stage-number">Stage 05 · P72</p><h2>Target measurement: model what the observation channel can hide</h2>
-  <p>The target and the measured report are not treated as identical. P72 inserts an explicit observation channel between them and quantifies how noise can attenuate or erase a real target-side distinction. This prevents “no measured difference” from being silently equated with “no latent difference.”</p>
-  <div class="implementation-flow"><div><strong>Input</strong>Latent target distinction plus a declared noisy measurement channel.</div><div><strong>Operation</strong>Propagate the target distribution through the channel and compute retained/attenuated separation.</div><div><strong>Output</strong>Observed witness strength and channel-stability bounds.</div></div>
-  <div class="implementation-links">
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_72_target_measurement_channel_robustness.md"><strong>P72 proof & assumptions</strong><small>Formal noisy-channel robustness statement</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/target_measurement_channel_robustness.py"><strong>target_measurement_channel_robustness.py</strong><small>Executable channel propagation and bounds</small></a>
-  </div>
+  <p class="stage-number">Stage 05 | P72</p><h2>Target measurement: model what observation can hide</h2>
+  <div class="implementation-flow"><div><strong>Input</strong>Latent target distinction plus a declared noisy measurement channel.</div><div><strong>Operation</strong>Propagate the target through the channel and compute retained/attenuated separation.</div><div><strong>Output</strong>Observed witness strength and channel-stability bounds.</div></div>
+  <div class="implementation-links"><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_72_target_measurement_channel_robustness.md"><strong>P72 proof</strong><small>Formal noisy-target theorem</small></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/target_measurement_channel_robustness.py"><strong>target_measurement_channel_robustness.py</strong><small>Target-channel calculations</small></a></div>
 </section>
 
 <section class="implementation-stage" id="stage-06">
-  <p class="stage-number">Stage 06 · P73-P76</p><h2>Channel recovery and model adequacy: learn the measurement model, then try to falsify it</h2>
-  <p>P73-P76 separate four questions that are easy to conflate: population identifiability, finite-sample recovery, independent model adequacy, and finite-sample rejection. Three nondegenerate conditionally independent binary views can identify the declared latent channel up to label swap; a fourth view creates overidentifying constraints that can expose model failure.</p>
-  <div class="implementation-flow"><div><strong>Input</strong>Three- or four-view binary observations and a declared latent conditional-independence model.</div><div><strong>Operation</strong>Recover moments/channel parameters, apply nondegeneracy gates, reconstruct the observed law, and test adequacy constraints with finite-sample intervals.</div><div><strong>Output</strong>Certified recovery, model rejection, or an explicitly inconclusive result.</div></div>
+  <p class="stage-number">Stage 06 | P73-P84</p><h2>Recover the target channel, challenge the model, and certify continuous-family separation</h2>
+  <p>P73-P76 move from target-channel recovery to model adequacy. P77-P84 then ask whether the complete empirical law is separated from the complete continuous P75 family and progressively tighten the certified lower bound without changing the one-sided rejection logic.</p>
+  <div class="implementation-flow"><div><strong>Input</strong>Multiple target views or a sixteen-cell four-view empirical law with finite counts.</div><div><strong>Operation</strong>Recover channels, audit overidentifying restrictions, certify full-law distance, then tighten the box lower bound using normalization, projected events, nested residuals, parity, and joint parity contrasts.</div><div><strong>Output</strong>Confidence sets, adequacy rejection, or an exact-rational global model-distance bracket.</div></div>
   <div class="implementation-links">
     <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/target_channel_identifiability.py"><strong>target_channel_identifiability.py</strong><small>P73 population recovery</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/finite_sample_target_channel_recovery.py"><strong>finite_sample_target_channel_recovery.py</strong><small>P74 finite-sample recovery and gates</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/target_model_adequacy.py"><strong>target_model_adequacy.py</strong><small>P75 overidentifying adequacy constraints</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/finite_sample_target_model_adequacy.py"><strong>finite_sample_target_model_adequacy.py</strong><small>P76 finite-sample rejection</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_73_target_channel_identifiability.md"><strong>Read P73</strong><small>Identifiability assumptions and boundary</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_76_finite_sample_target_model_adequacy.md"><strong>Read P76</strong><small>Finite-data adequacy rejection</small></a>
+    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/finite_sample_target_channel_recovery.py"><strong>finite_sample_target_channel_recovery.py</strong><small>P74 finite-data recovery</small></a>
+    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/target_model_adequacy.py"><strong>target_model_adequacy.py</strong><small>P75 adequacy</small></a>
+    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/finite_sample_target_model_adequacy.py"><strong>finite_sample_target_model_adequacy.py</strong><small>P76 finite-data inadequacy</small></a>
+    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_84_exact_joint_projection_parity_contrast.md"><strong>P84 proof</strong><small>Exact joint projection-parity contrast theorem</small></a>
+    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/p84_equation_provenance.md"><strong>P84 provenance</strong><small>Equation lineage and exactness argument</small></a>
+    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/joint_projection_parity_contrast_separation.py"><strong>joint_projection_parity_contrast_separation.py</strong><small>220 coupled contrasts and exact branch-and-bound lower bound</small></a>
+    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/tests/test_joint_projection_parity_contrast_separation.py"><strong>P84 regression tests</strong><small>220-count audit, exhaustive vertex equality, dominance, and strict 1/32 witness</small></a>
+    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/figures/p84_joint_projection_parity_contrast.svg"><strong>P84 frontier figure</strong><small>Visual proof-to-witness path</small></a>
   </div>
-  <p class="scientific-boundary"><strong>Frontier continuation:</strong> P77-P83 strengthen this branch from individual adequacy constraints to certified separation from the complete continuous model family, including exact rational parameter-box, simplex, projected-event, nested-residual, and parity certificates. See the <a href="research-map.html#continuous-model-frontier">P77-P83 frontier</a>.</p>
+  <p class="scientific-boundary"><strong>P84 interpretation:</strong> the exact witness `L83 = 0 < L84 = 1/32` proves that separate parity compatibility can be weaker than common-parameter compatibility for the declared P75 box. It does not identify the latent state with consciousness.</p>
 </section>
 
 <section class="implementation-stage" id="stage-07">
-  <p class="stage-number">Stage 07 · P25-P37</p><h2>Operational scale: test whether structure survives changes of resolution</h2>
-  <p>A bridge claim should not depend unknowingly on an arbitrary microscopic labeling. These modules aggregate nodes/states, construct operational quotients, and test compatibility of intervention, influence, irreducibility, response geometry, and delay information across controlled changes of scale.</p>
-  <div class="implementation-flow"><div><strong>Input</strong>Fine-scale physical structure plus a declared aggregation or quotient map.</div><div><strong>Operation</strong>Push operational quantities through the map and compare fine/coarse representations.</div><div><strong>Output</strong>Compatibility, quantified loss, or a scale-dependent failure witness.</div></div>
-  <div class="implementation-links">
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/intervention_node_aggregation_compatibility.py"><strong>intervention_node_aggregation_compatibility.py</strong><small>Interventions under aggregation</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/directed_influence_operational_quotient.py"><strong>directed_influence_operational_quotient.py</strong><small>Influence on operational quotients</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/joint_operational_quotient.py"><strong>joint_operational_quotient.py</strong><small>Joint quotient compatibility</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/delay_quotient_compatibility.py"><strong>delay_quotient_compatibility.py</strong><small>Delay information across quotients</small></a>
-  </div>
+  <p class="stage-number">Stage 07 | P25-P37</p><h2>Operational scale: preserve structure under aggregation</h2>
+  <div class="implementation-flow"><div><strong>Input</strong>Fine-scale causal/response structure plus node, intervention, state, or delay quotient maps.</div><div><strong>Operation</strong>Compute descent, ambiguity, and approximation errors under quotienting.</div><div><strong>Output</strong>A scale-compatibility certificate or an explicit structure-loss bound.</div></div>
+  <div class="implementation-links"><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/intervention_node_aggregation_compatibility.py"><strong>intervention_node_aggregation_compatibility.py</strong><small>Node aggregation</small></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/directed_influence_operational_quotient.py"><strong>directed_influence_operational_quotient.py</strong><small>Influence quotient</small></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/joint_operational_quotient.py"><strong>joint_operational_quotient.py</strong><small>Joint quotient</small></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/delay_quotient_compatibility.py"><strong>delay_quotient_compatibility.py</strong><small>Temporal quotient</small></a></div>
 </section>
 
 <section class="implementation-stage" id="stage-08">
-  <p class="stage-number">Stage 08 · P38-P44</p><h2>Quantum interface: separate operational quantum completeness from experiential completeness</h2>
-  <p>The quantum branch treats density operators, measurement statistics, tomography uncertainty, and regular bridge classes as physical/operational objects. It deliberately does not infer that a complete quantum description is already a theory of experience. The executable routines ask what can be certified from finite quantum data and what remains dependent on an explicit bridge assumption.</p>
-  <div class="implementation-flow"><div><strong>Input</strong>Quantum states/regions, measurement data, tomography error, and a declared regular bridge class.</div><div><strong>Operation</strong>Test operational sufficiency, propagate trace-distance uncertainty, construct envelopes, and derive finite-sample requirements.</div><div><strong>Output</strong>Quantum-operational certificates and explicit limits on what they imply about the bridge.</div></div>
-  <div class="implementation-links">
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/quantum_operational_sufficiency.py"><strong>quantum_operational_sufficiency.py</strong><small>Operational quantum sufficiency</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/continuous_quantum_region_regularity.py"><strong>continuous_quantum_region_regularity.py</strong><small>Regularity over continuous quantum regions</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/finite_data_quantum_nonfactorization.py"><strong>finite_data_quantum_nonfactorization.py</strong><small>Finite-data quantum nonfactorization tests</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/trace_ball_quantum_envelope.py"><strong>trace_ball_quantum_envelope.py</strong><small>Trace-ball uncertainty envelope</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/quantum_regular_bridge_sample_complexity.py"><strong>quantum_regular_bridge_sample_complexity.py</strong><small>Sample-complexity bounds</small></a>
-  </div>
+  <p class="stage-number">Stage 08 | P38-P44</p><h2>Quantum interface: test operational sufficiency without assuming experiential completeness</h2>
+  <div class="implementation-flow"><div><strong>Input</strong>Quantum states/regions, operational measurements, and an independent target.</div><div><strong>Operation</strong>Test operational factorization/nonfactorization under trace-distance and finite-data uncertainty.</div><div><strong>Output</strong>A quantum sufficiency/nonfactorization certificate under the declared bridge class.</div></div>
+  <div class="implementation-links"><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/quantum_operational_sufficiency.py"><strong>quantum_operational_sufficiency.py</strong><small>Core quantum bridge test</small></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/continuous_quantum_region_regularity.py"><strong>continuous_quantum_region_regularity.py</strong><small>Continuous-region regularity</small></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/finite_data_quantum_nonfactorization.py"><strong>finite_data_quantum_nonfactorization.py</strong><small>Finite-data certificate</small></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/trace_ball_quantum_envelope.py"><strong>trace_ball_quantum_envelope.py</strong><small>Trace-distance uncertainty</small></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/quantum_regular_bridge_sample_complexity.py"><strong>quantum_regular_bridge_sample_complexity.py</strong><small>Sample requirements</small></a></div>
 </section>
 
 <section class="implementation-stage" id="stage-09">
-  <p class="stage-number">Stage 09 · P45-P53</p><h2>Adaptive evidence acquisition: decide where the next measurement should go</h2>
-  <p>Once multiple candidate witnesses share experimental resources, the problem becomes sequential. These modules allocate samples across witness graphs, protect validity under adaptive selection/stopping, and update residual demand as evidence accumulates.</p>
-  <div class="implementation-flow"><div><strong>Input</strong>Candidate witnesses, uncertainty/gaps, shared preparation resources, budgets, and current evidence.</div><div><strong>Operation</strong>Allocate measurements, update confidence states, schedule service, and re-optimize remaining demand.</div><div><strong>Output</strong>A valid next-sample policy, stopping status, or resource/service guarantee.</div></div>
-  <div class="implementation-links">
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/pair_adaptive_sample_allocation.py"><strong>pair_adaptive_sample_allocation.py</strong><small>Adaptive pair allocation</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/shared_preparation_graph_allocation.py"><strong>shared_preparation_graph_allocation.py</strong><small>Shared-resource witness graph</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/sequential_witness_graph.py"><strong>sequential_witness_graph.py</strong><small>Sequential evidence graph</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/heterogeneous_service_stopping.py"><strong>heterogeneous_service_stopping.py</strong><small>Service/stopping guarantees</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/residual_demand_reoptimization.py"><strong>residual_demand_reoptimization.py</strong><small>Dynamic re-optimization</small></a>
-  </div>
+  <p class="stage-number">Stage 09 | P45-P53</p><h2>Adaptive evidence acquisition</h2>
+  <div class="implementation-flow"><div><strong>Input</strong>Candidate witnesses, preparation costs, uncertainty, and stopping requirements.</div><div><strong>Operation</strong>Allocate samples, update witness graphs, and stop only when declared evidence criteria are met.</div><div><strong>Output</strong>A valid adaptive allocation/stopping policy plus auditable evidence state.</div></div>
+  <div class="implementation-links"><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/pair_adaptive_sample_allocation.py"><strong>pair_adaptive_sample_allocation.py</strong><small>Pairwise allocation</small></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/shared_preparation_graph_allocation.py"><strong>shared_preparation_graph_allocation.py</strong><small>Shared-preparation optimization</small></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/sequential_witness_graph.py"><strong>sequential_witness_graph.py</strong><small>Sequential evidence graph</small></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/heterogeneous_service_stopping.py"><strong>heterogeneous_service_stopping.py</strong><small>Stopping under heterogeneous service</small></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/residual_demand_reoptimization.py"><strong>residual_demand_reoptimization.py</strong><small>Reoptimization after evidence updates</small></a></div>
 </section>
 
 <section class="implementation-stage" id="stage-10">
-  <p class="stage-number">Stage 10 · P54-P70</p><h2>Execution and calibration: make the experimental schedule itself certifiable</h2>
-  <p>The final stage makes switching, transition measurement, metric uncertainty, and calibration costs explicit optimization variables. Continuous relaxations, exact integer allocation, heterogeneous costs, and primal-dual diagnostics are implemented separately so computational convenience does not silently replace a certificate.</p>
-  <div class="implementation-flow"><div><strong>Input</strong>Transition/switching costs, calibration uncertainty, integer measurement counts, lower bounds, and heterogeneous resource costs.</div><div><strong>Operation</strong>Optimize routes/allocations, propagate metric uncertainty, solve exact integer calibration, and compute primal-dual/global optimality diagnostics.</div><div><strong>Output</strong>An executable allocation/schedule plus a certificate or quantified optimality gap.</div></div>
-  <div class="implementation-links">
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/switching_metric_perturbation.py"><strong>switching_metric_perturbation.py</strong><small>Metric uncertainty in switching costs</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/optimal_transition_calibration.py"><strong>optimal_transition_calibration.py</strong><small>Continuous calibration allocation</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/exact_integer_transition_calibration.py"><strong>exact_integer_transition_calibration.py</strong><small>Exact integer solution</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/heterogeneous_cost_transition_calibration.py"><strong>heterogeneous_cost_transition_calibration.py</strong><small>Unequal-cost calibration</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/exact_heterogeneous_integer_calibration.py"><strong>exact_heterogeneous_integer_calibration.py</strong><small>Exact heterogeneous integer allocation</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/primal_dual_gap_decomposition.py"><strong>primal_dual_gap_decomposition.py</strong><small>Certificate diagnostics and gap decomposition</small></a>
-  </div>
+  <p class="stage-number">Stage 10 | P54-P70</p><h2>Execution and calibration under finite resources</h2>
+  <div class="implementation-flow"><div><strong>Input</strong>Witness demand, transition metrics, integer constraints, resource costs, and calibration targets.</div><div><strong>Operation</strong>Bound switching perturbations, solve exact/approximate integer calibration, and compute primal-dual diagnostics.</div><div><strong>Output</strong>A resource allocation, optimality certificate, or explicit gap decomposition.</div></div>
+  <div class="implementation-links"><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/switching_metric_perturbation.py"><strong>switching_metric_perturbation.py</strong><small>Switching perturbation</small></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/optimal_transition_calibration.py"><strong>optimal_transition_calibration.py</strong><small>Continuous calibration</small></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/exact_integer_transition_calibration.py"><strong>exact_integer_transition_calibration.py</strong><small>Exact integer solution</small></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/heterogeneous_cost_transition_calibration.py"><strong>heterogeneous_cost_transition_calibration.py</strong><small>Heterogeneous costs</small></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/exact_heterogeneous_integer_calibration.py"><strong>exact_heterogeneous_integer_calibration.py</strong><small>Exact heterogeneous integer calibration</small></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/primal_dual_gap_decomposition.py"><strong>primal_dual_gap_decomposition.py</strong><small>Diagnostic gap decomposition</small></a></div>
 </section>
 
-<section class="boundary" id="reproduce">
-  <div class="section-head"><p class="eyebrow">Reproduce it</p><h2>Run the complete computational audit</h2></div>
-  <p>The repository’s strongest end-to-end check uses the reference Python environment, imports every package module, runs the test/static-check suite, verifies repository structure, regenerates and enriches all computational figures twice, and requires the second rebuild to leave the Git tree unchanged.</p>
+<section class="boundary">
+  <div class="section-head"><p class="eyebrow">Reproduce the repository</p><h2>One command path from source to audit</h2></div>
   <pre><code>python -m pip install -e ".[dev]"
 python -m pip install -r requirements-reproducibility.txt
 python scripts/reproducibility_audit.py</code></pre>
-  <p>Equivalent Make target:</p>
-  <pre><code>make reproduce</code></pre>
-  <div class="implementation-links">
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/scripts/reproducibility_audit.py"><strong>Open reproducibility_audit.py</strong><small>See the actual orchestration code</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/scripts/generate_all_figures.py"><strong>Open generate_all_figures.py</strong><small>See computational figure generation/validation</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/scripts/verify_repository.py"><strong>Open verify_repository.py</strong><small>See repository consistency checks</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/tree/main/src/consciousness_bridge"><strong>Browse all implementation modules</strong><small>Complete executable theorem package</small></a>
-  </div>
-</section>
-
-<section class="panel">
-  <h2>Reading rule</h2>
-  <p>Use this page to understand the implementation path, then open the proposition proof for the precise assumptions and claim. Code demonstrates that a declared mathematical procedure has been implemented; tests check that the implementation behaves as specified; neither one upgrades a conditional theorem into an empirical fact about consciousness.</p>
-  <p><a class="button primary" href="research-map.html">← Return to the Research Map</a> <a class="button" href="visual-atlas.html">Open the Visual Atlas</a></p>
+  <p>Equivalent Make target: <code>make reproduce</code>.</p>
+  <div class="implementation-links"><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/scripts/reproducibility_audit.py"><strong>scripts/reproducibility_audit.py</strong><small>Full end-to-end audit</small></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/scripts/generate_all_figures.py"><strong>scripts/generate_all_figures.py</strong><small>Generated figure pipeline</small></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/scripts/verify_repository.py"><strong>scripts/verify_repository.py</strong><small>Repository integrity verification</small></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/tree/main/src/consciousness_bridge/"><strong>All package modules</strong><small>Complete executable theorem package</small></a></div>
+  <p class="scientific-boundary"><strong>Reading rule:</strong> source code and tests establish that a declared mathematical procedure was implemented and that specified regression cases behave as asserted. Proof and implementation reinforce one another, but neither one upgrades a conditional theorem into an empirical fact about consciousness.</p>
 </section>
 </main>
-<footer><p>Mathematical Consciousness Bridge · How It Works & Implementation</p><p><a href="research-map.html">Research Map</a> · <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge">GitHub repository</a></p></footer>
 </body>
 </html>
