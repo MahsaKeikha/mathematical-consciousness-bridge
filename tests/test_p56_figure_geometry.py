@@ -1,6 +1,7 @@
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
+# Publication regression guard for the finalized P56 visual certificate.
 ROOT = Path(__file__).resolve().parents[1]
 FIGURE = ROOT / "docs/figures/p56_moving_start_metric_reoptimization_stability.svg"
 CATALOG = ROOT / "docs/figure_catalog.md"
