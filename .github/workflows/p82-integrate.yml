@@ -29,6 +29,7 @@ jobs:
         run: |
           python scripts/_integrate_p82_publication.py
           python scripts/_integrate_p82_reader_frontier.py
+          sed -i '/^import re$/d' scripts/_integrate_p82_publication.py
       - name: Regenerate and enrich figures
         run: python scripts/generate_all_figures.py
       - name: Validate synchronized repository
