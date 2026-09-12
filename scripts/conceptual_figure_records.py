@@ -5,6 +5,17 @@ from pathlib import Path
 from typing import Any
 
 RECORDS: dict[str, dict[str, str]] = {
+    "docs/figures/p55_pruning_aware_switching_monotonicity.svg": {
+        "title": "P55 pruning-aware metric switching-cost monotonicity",
+        "description": (
+            "What this figure shows: P55 proves deterministic monotonicity of the exact P54 execution optimum when a valid sequential update makes every residual demand weakly smaller, while acquisition cost, switching metric, and setup start remain fixed. The metric shortcutting argument makes the optimal route value nonincreasing under support deletion, so total cost release decomposes exactly into nonnegative acquisition release plus nonnegative route release. "
+            "How to read it: the three upper cards specify the fixed comparison regime, the earlier residual state, and the later componentwise-smaller state. Their attached arrows feed the central support-deletion theorem and exact cost-release identity. The lower cards separate the support-preserving case, the computable shortcut lower certificate, and the sequential experimental implication. "
+            "Main takeaway: every released residual sample saves its acquisition cost, while deleting a preparation from the positive-demand support can add further switching savings. This monotonicity depends on a fixed metric and fixed start."
+        ),
+        "status": (
+            "Deterministic scheduling theorem conditional on valid residual demands and valid pruning decisions. It does not justify pruning, prove statistical minimaxity of the underlying thresholds, identify a route or graph quantity with consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness."
+        ),
+    },
     "docs/figures/p56_moving_start_metric_reoptimization_stability.svg": {
         "title": "P56 moving-start metric reoptimization stability",
         "description": (
