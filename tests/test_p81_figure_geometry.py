@@ -1,7 +1,6 @@
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-
 FIGURE = Path("docs/figures/p81_projection_event_model_separation.svg")
 SVG_NS = "{http://www.w3.org/2000/svg}"
 
