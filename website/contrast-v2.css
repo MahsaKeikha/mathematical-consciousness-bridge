@@ -1,0 +1,235 @@
+/* Contrast v2: site-wide readability and interaction contrast.
+   These values are intentionally conservative for long-form scientific reading. */
+
+:root {
+  --bg: #f5f7fa;
+  --paper: #ffffff;
+  --ink: #111827;
+  --muted: #4b5563;
+  --line: #cbd3df;
+  --accent: #1f3a7a;
+  --accent2: #38539a;
+  --dark: #111827;
+  --soft: #eef2f7;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+p,
+li,
+dd,
+dt,
+td,
+th {
+  color: inherit;
+}
+
+.lede,
+.section-head > p:last-child,
+.two-col > div > p,
+.closing p,
+.flow-node p,
+.result p,
+.source-grid p,
+.card p,
+.falsify-grid p,
+.status-grid span,
+.research-jumpbar small,
+.research-card-link p,
+.research-card-link small,
+.evidence-card small,
+.record-link small {
+  color: var(--muted) !important;
+}
+
+/* Ordinary reading links should look like links. Cards/buttons deliberately override this. */
+main p a:not(.button),
+main li a,
+footer a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+main p a:not(.button):hover,
+main li a:hover,
+footer a:hover {
+  color: #162c60;
+  text-decoration-thickness: 2px;
+}
+
+/* Equations must stay dark-on-light even when nested inside a dark section. */
+.equation,
+.dark-section .equation {
+  border-color: #c5cedb !important;
+  background: #ffffff !important;
+  color: #111827 !important;
+  box-shadow: 0 1px 0 rgba(17, 24, 39, 0.03);
+}
+
+.equation mjx-container,
+.dark-section .equation mjx-container,
+.equation mjx-container[jax="SVG"],
+.dark-section .equation mjx-container[jax="SVG"] {
+  color: #111827 !important;
+}
+
+.equation mjx-container[jax="SVG"] svg,
+.dark-section .equation mjx-container[jax="SVG"] svg {
+  color: #111827 !important;
+}
+
+.dark-section {
+  background: #111827;
+  color: #f9fafb;
+}
+
+.dark-section > p:not(.eyebrow),
+.dark-section .section-head > p:last-child,
+.dark-section li {
+  color: #d7dde8 !important;
+}
+
+.dark-section a:not(.button) {
+  color: #cddaff;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.dark-section .eyebrow {
+  color: #bac8ff !important;
+}
+
+/* Buttons use explicit foreground/background pairs rather than inherited link colors. */
+.button {
+  border-color: #9eabc0 !important;
+  background: #ffffff !important;
+  color: #172033 !important;
+  text-decoration: none !important;
+  box-shadow: 0 1px 2px rgba(17, 24, 39, 0.04);
+}
+
+.button:hover {
+  border-color: #6f7f99 !important;
+  background: #eef2f7 !important;
+  color: #111827 !important;
+  text-decoration: none !important;
+}
+
+.button.primary {
+  border-color: #1f3a7a !important;
+  background: #1f3a7a !important;
+  color: #ffffff !important;
+}
+
+.button.primary:hover {
+  border-color: #162c60 !important;
+  background: #162c60 !important;
+  color: #ffffff !important;
+}
+
+.button.light {
+  border-color: #ffffff !important;
+  background: #ffffff !important;
+  color: #111827 !important;
+}
+
+.button.light:hover {
+  border-color: #d6dce6 !important;
+  background: #eef2f7 !important;
+}
+
+/* Cards and navigation preserve a clear boundary from the page background. */
+.card,
+.result,
+.flow-node,
+.figure-card,
+.source-grid a,
+.status-grid div,
+.status-grid > a,
+.research-jumpbar a,
+.research-card-link,
+.evidence-card,
+.record-link,
+.lineage-mini-card,
+.trail-card,
+.nav-dropdown-menu {
+  border-color: var(--line) !important;
+}
+
+.interactive-card:hover,
+.interactive-card:focus-visible,
+.source-grid a:hover,
+.source-grid a:focus-visible,
+.lineage-mini-card:hover,
+.lineage-mini-card:focus-visible,
+.trail-card:hover,
+.trail-card:focus-visible {
+  border-color: #8d9bb2 !important;
+}
+
+/* Focus is visible for keyboard readers everywhere, including custom card links. */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+[role="link"]:focus-visible,
+.interactive-card:focus-visible {
+  outline: 3px solid #5272c7 !important;
+  outline-offset: 3px !important;
+  border-radius: 7px;
+}
+
+.top-level-link,
+.nav-dropbtn {
+  color: #4b5563 !important;
+}
+
+.top-level-link:hover,
+.nav-dropbtn:hover,
+.nav-dropdown[open] > .nav-dropbtn,
+.nav-dropdown.contains-current > .nav-dropbtn,
+.top-level-link[aria-current="page"] {
+  color: #111827 !important;
+}
+
+.nav-dropdown-item > small {
+  color: #4b5563 !important;
+}
+
+.eyebrow,
+.research-jumpbar span,
+.research-card-link > span,
+.evidence-card > span,
+.record-link > span {
+  color: #38539a !important;
+}
+
+::selection {
+  background: #dbe5ff;
+  color: #111827;
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --line: #9ca8ba;
+    --muted: #374151;
+    --accent: #17306d;
+    --accent2: #2f4784;
+  }
+
+  .button,
+  .card,
+  .result,
+  .flow-node,
+  .figure-card,
+  .source-grid a,
+  .research-card-link,
+  .record-link,
+  .evidence-card {
+    border-width: 2px;
+  }
+}
