@@ -22,8 +22,10 @@ jobs:
         run: |
           python scripts/_integrate_reproducibility_hardening.py
           python scripts/_fix_enrichment_preservation.py
+          python scripts/_fix_p55_catalog_preservation.py
           rm scripts/_integrate_reproducibility_hardening.py
           rm scripts/_fix_enrichment_preservation.py
+          rm scripts/_fix_p55_catalog_preservation.py
           rm .github/workflows/_reproducibility_carrier.yml
       - name: Install exact reference environment
         run: |
