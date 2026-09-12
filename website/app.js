@@ -2,11 +2,63 @@
   const PAGES = [
     { file: 'index.html', label: 'Overview' },
     { file: 'start-here.html', label: 'Start Here' },
+    { file: 'observer-research.html', label: 'Research I · Observer Mathematics' },
     { file: 'research-lineage.html', label: 'Research Lineage' },
-    { file: 'research-map.html', label: 'Research Map' },
+    { file: 'research-map.html', label: 'Research II · Bridge Map' },
     { file: 'physics-mathematics.html', label: 'Physics & Math' },
     { file: 'visual-atlas.html', label: 'Visual Atlas' },
     { file: 'sources.html', label: 'Sources' },
+  ];
+
+  const NAV_GROUPS = [
+    {
+      label: 'Research',
+      className: 'research-menu',
+      items: [
+        {
+          file: 'observer-research.html',
+          kicker: 'Research I',
+          label: 'Observer mathematics',
+          description: 'Spacetime, causal access, observer readouts, metrics, interventions, and robustness.',
+        },
+        {
+          file: 'research-lineage.html',
+          kicker: 'Scientific handoff',
+          label: 'Research lineage',
+          description: 'What carries from the physical observer program into the bridge program, and what does not.',
+        },
+        {
+          file: 'research-map.html',
+          kicker: 'Research II',
+          label: 'Bridge theorem map',
+          description: 'The current physical-to-experiential test architecture through P81.',
+        },
+        {
+          file: 'physics-mathematics.html',
+          kicker: 'Foundations',
+          label: 'Physics & mathematics',
+          description: 'The physical, information-theoretic, statistical, and quantum foundations used by Research II.',
+        },
+      ],
+    },
+    {
+      label: 'Explore',
+      className: 'explore-menu',
+      items: [
+        {
+          file: 'visual-atlas.html',
+          kicker: 'Figures',
+          label: 'Visual atlas',
+          description: 'Browse the theorem figures and computational visual record.',
+        },
+        {
+          file: 'sources.html',
+          kicker: 'Provenance',
+          label: 'Sources',
+          description: 'Follow equations, references, provenance records, and citation boundaries.',
+        },
+      ],
+    },
   ];
 
   const REPO = 'https://github.com/MahsaKeikha/mathematical-consciousness-bridge';
@@ -32,6 +84,42 @@
     return file || 'index.html';
   }
 
+  function createSimpleNavLink(file, label, current) {
+    const link = document.createElement('a');
+    link.href = file;
+    link.textContent = label;
+    link.className = 'top-level-link';
+    if (file === current) link.setAttribute('aria-current', 'page');
+    return link;
+  }
+
+  function createDropdown(group, current) {
+    const details = document.createElement('details');
+    details.className = `nav-dropdown ${group.className}`;
+    if (group.items.some((item) => item.file === current)) {
+      details.classList.add('contains-current');
+    }
+
+    const summary = document.createElement('summary');
+    summary.className = 'nav-dropbtn';
+    summary.textContent = group.label;
+    summary.setAttribute('aria-label', `${group.label} navigation`);
+    details.append(summary);
+
+    const menu = document.createElement('div');
+    menu.className = 'nav-dropdown-menu';
+    group.items.forEach((item) => {
+      const link = document.createElement('a');
+      link.href = item.file;
+      link.className = 'nav-dropdown-item';
+      if (item.file === current) link.setAttribute('aria-current', 'page');
+      link.innerHTML = `<span>${item.kicker}</span><strong>${item.label}</strong><small>${item.description}</small>`;
+      menu.append(link);
+    });
+    details.append(menu);
+    return details;
+  }
+
   function ensureNavigation() {
     const topbar = document.querySelector('.topbar');
     if (!topbar) return;
@@ -44,18 +132,14 @@
 
     nav.replaceChildren();
     const file = currentFile();
-    PAGES.forEach((page) => {
-      const link = document.createElement('a');
-      link.href = page.file;
-      link.textContent = page.label;
-      if (page.file === file) link.setAttribute('aria-current', 'page');
-      nav.append(link);
-    });
+    nav.append(createSimpleNavLink('index.html', 'Overview', file));
+    nav.append(createSimpleNavLink('start-here.html', 'Start Here', file));
+    NAV_GROUPS.forEach((group) => nav.append(createDropdown(group, file)));
 
     const repo = document.createElement('a');
     repo.href = REPO;
     repo.textContent = 'GitHub';
-    repo.className = 'external-nav';
+    repo.className = 'external-nav top-level-link';
     nav.append(repo);
 
     let button = topbar.querySelector('.nav-toggle');
@@ -73,12 +157,24 @@
       const open = nav.classList.toggle('open');
       button.setAttribute('aria-expanded', String(open));
     });
+
     nav.querySelectorAll('a').forEach((link) =>
       link.addEventListener('click', () => {
         nav.classList.remove('open');
         button.setAttribute('aria-expanded', 'false');
       }),
     );
+
+    document.addEventListener('click', (event) => {
+      nav.querySelectorAll('.nav-dropdown[open]').forEach((dropdown) => {
+        if (!dropdown.contains(event.target)) dropdown.removeAttribute('open');
+      });
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') return;
+      nav.querySelectorAll('.nav-dropdown[open]').forEach((dropdown) => dropdown.removeAttribute('open'));
+    });
   }
 
   function addBreadcrumbs() {
@@ -108,10 +204,10 @@
       <div class="lineage-callout-copy">
         <p class="eyebrow">Two connected research programs</p>
         <h2>Begin with the physical subsystem, then follow the bridge question</h2>
-        <p><strong>Research I: Spatiotemporal Observer Mathematics</strong> develops time-dependent physical subsystem identification from stochastic dynamics. <strong>Research II: Mathematical Consciousness Bridge</strong> begins after that physical-description problem and asks what additional sufficiency, target, measurement, model-adequacy, and falsification conditions a physical-to-experiential claim must satisfy.</p>
+        <p><strong>Research I: Spatiotemporal Observer Mathematics</strong> develops the physical and operational observer architecture. <strong>Research II: Mathematical Consciousness Bridge</strong> begins after that physical-description problem and asks what additional sufficiency, target, measurement, model-adequacy, and falsification conditions a physical-to-experiential claim must satisfy.</p>
       </div>
       <div class="lineage-callout-actions">
-        <a class="lineage-mini-card" href="${OBSERVER_REPO}"><span>Research I</span><strong>Spatiotemporal Observer Mathematics</strong><small>Physical subsystem identification →</small></a>
+        <a class="lineage-mini-card" href="observer-research.html"><span>Research I</span><strong>Spatiotemporal Observer Mathematics</strong><small>Dedicated previous-research page →</small></a>
         <a class="lineage-mini-card current" href="research-lineage.html"><span>Research lineage</span><strong>See the scientific handoff</strong><small>What carries forward and what remains open →</small></a>
         <a class="lineage-mini-card" href="research-map.html"><span>Research II</span><strong>Mathematical Consciousness Bridge</strong><small>Current bridge-test program →</small></a>
       </div>`;
@@ -144,7 +240,7 @@
       </div>
       <div class="reader-trail-grid">
         ${previousHtml}
-        <a class="trail-card map" href="research-lineage.html"><span>Lineage</span><strong>Research I → Research II</strong><small>See how the physical-subsystem work leads into the bridge program</small></a>
+        <a class="trail-card map" href="research-lineage.html"><span>Lineage</span><strong>Research I → Research II</strong><small>See how the physical-observer work leads into the bridge program</small></a>
         ${nextHtml}
       </div>`;
     main.append(trail);
