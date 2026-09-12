@@ -15,7 +15,7 @@ import re
 import shutil
 from pathlib import Path
 
-ASSET_VERSION = "20260912-nav7"
+ASSET_VERSION = "20260912-nav8"
 SCRIPT_TAG = f'<script defer src="app.js?v={ASSET_VERSION}"></script>'
 READER_LINKS_SCRIPT_TAG = '<script defer src="reader-links.js"></script>'
 FOOTER_SCRIPT_TAG = '<script defer src="footer.js"></script>'
@@ -51,6 +51,7 @@ TOPBAR_NAV_PATTERN = re.compile(
 
 FALLBACK_NAV = (
     '<a href="index.html">Overview</a>'
+    '<a href="plain-language.html">Plain Language</a>'
     '<a href="start-here.html">Start Here</a>'
     '<a href="research-map.html">Research</a>'
     '<a href="visual-atlas.html">Explore</a>'
