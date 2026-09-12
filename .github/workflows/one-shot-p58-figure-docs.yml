@@ -1,5 +1,5 @@
 name: one-shot-p58-figure-docs
-# One-shot retry after final P58 geometry and guard corrections.
+# One-shot retry after final P58 containment correction.
 
 on:
   push:
