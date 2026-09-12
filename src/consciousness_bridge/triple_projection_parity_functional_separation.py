@@ -59,8 +59,7 @@ P84 certificate does not detect on the same box.
 P85 remains a conditional model-separation theorem. It rejects only the
 declared P75 latent measurement family under its stated assumptions. It does
 not identify the latent state with consciousness, validate an alternative
-model, prove consciousness is nonphysical, or solve the physical-to-
-experiential bridge.
+model, prove consciousness is nonphysical, or solve the physical-to-experiential bridge.
 """
 
 from __future__ import annotations
