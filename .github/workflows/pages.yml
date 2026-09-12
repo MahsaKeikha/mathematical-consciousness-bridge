@@ -5,6 +5,7 @@ on:
     branches: ["main"]
     paths:
       - "website/**"
+      - "scripts/prepare_website.py"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -28,10 +29,12 @@ jobs:
         uses: actions/checkout@v4
       - name: Configure Pages
         uses: actions/configure-pages@v5
+      - name: Prepare navigable website
+        run: python scripts/prepare_website.py --source website --output _site
       - name: Upload website artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: website
+          path: _site
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
