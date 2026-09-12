@@ -1,4 +1,4 @@
-name: Promote P84 publication surfaces once
+name: Repair P84 implementation placement once
 
 on:
   push:
@@ -9,290 +9,42 @@ permissions:
   contents: write
 
 jobs:
-  promote:
+  repair:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Synchronize P84 reader and publication surfaces
+      - name: Move P84 implementation links into Stage 06
         run: |
           python - <<'PY'
           from pathlib import Path
 
-          ROOT = Path('.')
+          path = Path('website/implementation.html')
+          text = path.read_text(encoding='utf-8')
 
-          def read(path: str) -> str:
-              return (ROOT / path).read_text(encoding='utf-8')
+          stray = '<p>P84 implementation: <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/joint_projection_parity_contrast_separation.py">joint_projection_parity_contrast_separation.py</a> with <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/tests/test_joint_projection_parity_contrast_separation.py">regression tests</a>.</p>'
+          text = text.replace('\n' + stray, '').replace(stray + '\n', '')
 
-          def write(path: str, text: str) -> None:
-              (ROOT / path).write_text(text, encoding='utf-8')
+          old = '''    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_76_finite_sample_target_model_adequacy.md"><strong>Read P76</strong><small>Finite-data adequacy rejection</small></a>\n  </div>\n  <p class="scientific-boundary"><strong>Frontier continuation:</strong> P77-P84 strengthen this branch from individual adequacy constraints to certified separation from the complete continuous model family, including exact rational parameter-box, simplex, projected-event, nested-residual, and parity certificates. See the <a href="research-map.html#continuous-model-frontier">P77-P84 frontier</a>.</p>'''
+          new = '''    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_76_finite_sample_target_model_adequacy.md"><strong>Read P76</strong><small>Finite-data adequacy rejection</small></a>\n    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_84_exact_projection_parity_contrast.md"><strong>Read P84</strong><small>Current joint shared-parameter parity frontier</small></a>\n    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/joint_projection_parity_contrast_separation.py"><strong>joint_projection_parity_contrast_separation.py</strong><small>P84 exact 220-contrast implementation</small></a>\n    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/tests/test_joint_projection_parity_contrast_separation.py"><strong>P84 regression tests</strong><small>Exact interval, strict witness, dominance, and branch-and-bound checks</small></a>\n  </div>\n  <p class="scientific-boundary"><strong>Frontier continuation:</strong> P77-P84 strengthen this branch from individual adequacy constraints to certified separation from the complete continuous model family, including exact rational parameter-box, simplex, projected-event, nested-residual, parity, and joint parity-contrast certificates. P84 preserves shared-parameter compatibility across pairs of P83 parity events and has an exact strict witness with L83 = 0 and L84 = 1/32. See the <a href="research-map.html#p84">P84 frontier</a>.</p>'''
+          if old not in text:
+              raise RuntimeError('Stage 06 insertion anchor was not found')
+          text = text.replace(old, new, 1)
+          text = text.replace('<strong>P1-P83 proposition record</strong>', '<strong>P1-P84 proposition record</strong>')
 
-          def replace(path: str, old: str, new: str, *, required: bool = True) -> None:
-              text = read(path)
-              if old not in text:
-                  if required:
-                      raise RuntimeError(f'missing replacement anchor in {path}: {old!r}')
-                  return
-              write(path, text.replace(old, new))
-
-          def append_once(path: str, marker: str, block: str) -> None:
-              text = read(path)
-              if marker in text:
-                  return
-              if not text.endswith('\n'):
-                  text += '\n'
-              write(path, text + '\n' + block.rstrip() + '\n')
-
-          # Citation metadata: release remains v0.82.0, theorem frontier advances.
-          replace('CITATION.cff', 'Current documented theorem frontier: P83.', 'Current documented theorem frontier: P84.')
-          cff = read('CITATION.cff')
-          p84_sentence = (
-              ' Proposition 84 adds 220 exact joint projection-parity contrasts that preserve shared-parameter coupling between P83 parity events; '
-              'its exact-rational strict witness has P83 equal to zero while P84 equals one thirty-second.'
-          )
-          anchor = ' The downstream calibration branch includes lower-bounded heterogeneous calibration and exact primal-dual gap decomposition through P70.'
-          if 'Proposition 84 adds 220 exact joint projection-parity contrasts' not in cff:
-              if anchor not in cff:
-                  raise RuntimeError('CITATION.cff P84 abstract anchor missing')
-              cff = cff.replace(anchor, p84_sentence + anchor)
-              write('CITATION.cff', cff)
-
-          replace('CITATION.bib', 'Current documented theorem frontier: P82.', 'Current documented theorem frontier: P84.')
-
-          citation = read('CITATION.md')
-          citation = citation.replace('current documented frontier, P82.', 'current documented frontier, P84.')
-          citation = citation.replace('Current documented theorem frontier: P82.', 'Current documented theorem frontier: P84.')
-          citation = citation.replace('theorem frontier **P82**', 'theorem frontier **P84**')
-          citation = citation.replace('P1 through P82 chronological theorem record', 'P1 through P84 chronological theorem record')
-          citation = citation.replace('None of P78-P82 turns non-rejection', 'None of P78-P84 turns non-rejection')
-          if 'Proposition 84 method citation' not in citation:
-              citation += '''\n\n## Proposition 84 method citation\n\nFor work that specifically uses the current joint parity certificate, cite the program together with **Proposition 84: Exact Joint Projection-Parity Contrast Certificate** and its [equation provenance record](docs/p84_equation_provenance.md). P84 retains all of P83 and adds 220 exact coupled parity-event contrasts that preserve one shared P75 parameter assignment. Its exact-rational strict witness has `L83 = 0 < L84 = 1/32`.\n\nThe result is a conditional model-distance certificate for the declared P75 latent family. It should not be cited as an identification, definition, or measurement of consciousness, and non-rejection remains inconclusive.\n'''
-          if '[P84 equation and provenance record]' not in citation:
-              citation = citation.replace(
-                  '- [P82 equation and provenance record](docs/p82_equation_provenance.md): exact nested residual-event intervals, direct residual extremization, dominance, and the P79 rejection handoff.\n',
-                  '- [P82 equation and provenance record](docs/p82_equation_provenance.md): exact nested residual-event intervals, direct residual extremization, dominance, and the P79 rejection handoff.\n'
-                  '- [P83 equation and provenance record](docs/p83_equation_provenance.md): exact projection-parity identities, parity box intervals, dominance, and strict improvement over P82.\n'
-                  '- [P84 equation and provenance record](docs/p84_equation_provenance.md): exact joint parity-event contrasts, common-vertex extremization, 220-contrast audit, and strict improvement over P83.\n'
-              )
-          write('CITATION.md', citation)
-
-          # Main README: preserve full history while making the current frontier explicit.
-          readme = read('README.md')
-          readme = readme.replace('the P1-P83 program map, and the current P83 frontier', 'the P1-P84 program map, and the current P84 frontier')
-          readme = readme.replace('| Public theorem frontier | **P83** |', '| Public theorem frontier | **P84** |')
-          readme = readme.replace('| Proposition-level results | **83** |', '| Proposition-level results | **84** |')
-          readme = readme.replace('Read the complete P1 to P83 detailed proposition record', 'Read the complete P1 to P84 detailed proposition record')
-          readme = readme.replace('**P19-P24, P71-P83**', '**P19-P24, P71-P84**')
-          readme = readme.replace('The complete theorem index spans P1 through P83 with explicit dependency branches.', 'The complete theorem index spans P1 through P84 with explicit dependency branches.')
-          readme = readme.replace('Later P61-P70 and P71-P83 are separate continuations documented in the theorem index.', 'Later P61-P70 and P71-P84 are separate continuations documented in the theorem index.')
-          readme = readme.replace('The theorem frontier is P83.', 'The theorem frontier is P84.')
-          readme = readme.replace('83 proposition-level results', '84 proposition-level results')
-          p83_caption = '**P83 frontier figure.** P83 adds 22 exact parity observables to the complete P82 certificate. The figure shows the Bernoulli parity identity, exact multi-affine box extremization, the eight-cell event-mass transfer, and the strict exact-rational witness with `L82 = 0` and `L83 = 1/16`. The result is conditional on the declared P75 model and does not identify the latent state with experience.\n'
-          p84_readme = '''\nP84 asks the next joint-compatibility question: even if two P83 parity events are each individually compatible with a P75 parameter box, can one **shared** P75 parameter assignment realize both probabilities at once? It therefore evaluates exact differences between parity-event probabilities at common response-coordinate vertices rather than subtracting independently optimized intervals. The standard audit contains 220 genuinely coupled contrasts. An exact-rational witness has the complete `L83 = 0` certificate while one joint contrast lies `1/4` outside its exact model interval; the eight-cell signed support gives `L84 = 1/32`. This proves that separate parity compatibility need not imply shared-parameter compatibility. P84 remains a conditional rejection certificate for the declared P75 model family and does not identify the latent state with consciousness.\n\n![P84 exact joint projection-parity contrast certificate](docs/figures/p84_exact_joint_projection_parity_contrast.svg)\n\n**P84 frontier figure.** P84 preserves the common parameter geometry of pairs of P83 parity events. The strict witness `L83 = 0 < L84 = 1/32` demonstrates a genuine strengthening while retaining the P78 mesh upper certificate and P79 one-sided finite-data rejection gate.\n'''
-          if 'P84 frontier figure.' not in readme:
-              if p83_caption not in readme:
-                  raise RuntimeError('README P83 frontier caption anchor missing')
-              readme = readme.replace(p83_caption, p83_caption + p84_readme)
-          if 'The repository now contains 84 proposition-level results. The theorem frontier is P84.' not in readme:
-              marker = '# Current scientific status'
-              if marker in readme:
-                  readme = readme.replace(marker, marker + '\n\nThe repository now contains 84 proposition-level results. The theorem frontier is P84.', 1)
-              else:
-                  readme += '\n\nThe repository now contains 84 proposition-level results. The theorem frontier is P84.\n'
-          write('README.md', readme)
-
-          # First-reader Markdown guide.
-          start = read('START_HERE.md')
-          start = start.replace('the 83-result theorem program', 'the 84-result theorem program')
-          start = start.replace('83 proposition-level results', '84 proposition-level results')
-          start = start.replace('current theorem frontier is **P83**', 'current theorem frontier is **P84**')
-          start = start.replace('P75-P83', 'P75-P84')
-          start = start.replace('P71-P83', 'P71-P84')
-          start = start.replace('P74-P83', 'P74-P84')
-          start = start.replace('## The 83 results', '## The 84 results')
-          start = start.replace('## The current frontier: P71-P83', '## The current frontier: P71-P84')
-          start = start.replace('used in P75-P83', 'used in P75-P84')
-          start = start.replace('\\(L_{78},L_{80},L_{81},L_{82},L_{83}\\)', '\\(L_{78},L_{80},L_{81},L_{82},L_{83},L_{84}\\)')
-          start = start.replace('**Proposition frontier:** P83', '**Proposition frontier:** P84')
-          start = start.replace('**Proposition-level results:** 83', '**Proposition-level results:** 84')
-          old_frontier = '''## Current theorem frontier: P83\n\n[P83: Exact Projection-Parity Certificate](docs/proposition_83_exact_projection_parity.md) strengthens the complete P82 lower bound with 22 exact parity observables. Its strict witness has `L82 = 0` and `L83 = 1/16`. The theorem remains a conditional model-distance certificate and does not identify any latent state with consciousness.'''
-          new_frontier = '''## Current theorem frontier: P84\n\n[P84: Exact Joint Projection-Parity Contrast Certificate](docs/proposition_84_exact_projection_parity_contrast.md) strengthens the complete P83 lower bound with 220 genuinely coupled parity-event contrasts evaluated under one shared P75 parameter assignment. Its exact-rational strict witness has `L83 = 0` and `L84 = 1/32`. The theorem remains a conditional model-distance certificate and does not identify any latent state with consciousness.\n\nImplementation: [`joint_projection_parity_contrast_separation.py`](src/consciousness_bridge/joint_projection_parity_contrast_separation.py). Tests: [`test_joint_projection_parity_contrast_separation.py`](tests/test_joint_projection_parity_contrast_separation.py). Provenance: [`p84_equation_provenance.md`](docs/p84_equation_provenance.md).'''
-          if old_frontier in start:
-              start = start.replace(old_frontier, new_frontier)
-          if '**P84: exact joint projection parity.**' not in start:
-              anchor = '**P83: exact projection parity.** P83 adds 22 parity observables on two, three, and four views. The branchwise parity probability has a closed product form whose extrema on a rational box occur at vertices. A strict exact-rational witness has `L82 = 0` but `L83 = 1/16`, showing that parity can expose a dependency constraint invisible to all predeclared P82 events.\n'
-              block = '''\n**P84: exact joint projection parity.** P84 asks whether separately compatible P83 parity events are jointly realizable by one shared P75 parameter assignment. It audits 220 exact pairwise parity-event contrasts using common response-coordinate vertices. A strict exact-rational witness has `L83 = 0` but `L84 = 1/32`, proving a genuine shared-parameter incompatibility invisible to the complete P83 scalar parity audit.\n'''
-              if anchor not in start:
-                  raise RuntimeError('START_HERE P83 anchor missing')
-              start = start.replace(anchor, anchor + block)
-          write('START_HERE.md', start)
-
-          # Detailed chronology.
-          detail = read('docs/detailed_proposition_record.md')
-          detail = detail.replace('Complete P1 to P83 chronology', 'Complete P1 to P84 chronology')
-          if '## P84: Exact Joint Projection-Parity Contrast Certificate' not in detail:
-              detail += '''\n\n## P84: Exact Joint Projection-Parity Contrast Certificate\n\nP84 strengthens the complete P83 continuous-family lower bound by preserving **joint shared-parameter compatibility** between pairs of P83 parity events. It audits 220 genuinely coupled parity-event contrasts. Each branchwise contrast is multi-affine in the union of the two view sets, so its exact range on a rational P75 parameter box is obtained at common endpoint vertices; affine prevalence mixing then gives the exact full-box interval. The signed event-difference functional has eight-cell support, so an empirical contrast gap transfers to a full-law L-infinity lower bound by division by eight. An exact-rational witness has `L83 = 0` and `L84 = 1/32`, proving strict improvement on the same parameter box. P84 retains the P78 mesh-width upper certificate and P79 rejection direction unchanged and does not identify the latent state with consciousness.\n\n- Proof: [Proposition 84](proposition_84_exact_projection_parity_contrast.md)\n- Provenance: [P84 equation record](p84_equation_provenance.md)\n- Implementation: [`joint_projection_parity_contrast_separation.py`](../src/consciousness_bridge/joint_projection_parity_contrast_separation.py)\n- Tests: [`test_joint_projection_parity_contrast_separation.py`](../tests/test_joint_projection_parity_contrast_separation.py)\n- Figure: [P84 exact joint projection-parity contrast certificate](figures/p84_exact_joint_projection_parity_contrast.svg)\n'''
-          write('docs/detailed_proposition_record.md', detail)
-
-          # Theorem roadmap.
-          roadmap = read('docs/theorem_roadmap.md')
-          roadmap = roadmap.replace('current documented theorem frontier is **P83**', 'current documented theorem frontier is **P84**')
-          roadmap = roadmap.replace('P1 through P83 with explicit dependency branches', 'P1 through P84 with explicit dependency branches')
-          roadmap = roadmap.replace('P71-P83 return to the core P19', 'P71-P84 return to the core P19')
-          roadmap = roadmap.replace('\\text{P83: projection-parity constraints expose additional exact dependence structure}', '\\text{P83: projection-parity constraints expose additional exact dependence structure}\\\\\n&\\Downarrow\\\\\n&\\text{P84: joint parity contrasts test shared-parameter compatibility across P83 observables}')
-          p82_row = '| [P82](proposition_82_exact_nested_projection_contrast.md) | exact nested residual-event box intervals and event-size distance transfer | never-weaker nested-contrast continuous P75 model separation | proved conditional computational theorem |'
-          if p82_row in roadmap and '| [P84](proposition_84_exact_projection_parity_contrast.md)' not in roadmap:
-              roadmap = roadmap.replace(
-                  p82_row,
-                  p82_row + '\n'
-                  '| [P83](proposition_83_exact_projection_parity.md) | exact projection-parity box intervals and event-size distance transfer | never-weaker parity-aware continuous P75 model separation | proved conditional computational theorem |\n'
-                  '| [P84](proposition_84_exact_projection_parity_contrast.md) | exact joint parity-event contrasts at common response-coordinate vertices | shared-parameter compatibility test that strictly strengthens P83 | proved conditional computational theorem |'
-              )
-          if '## P84 frontier: exact joint projection-parity contrast separation' not in roadmap:
-              roadmap += '''\n\n## P84 frontier: exact joint projection-parity contrast separation\n\nP83 tests 22 parity events separately. P84 tests whether pairs of those observables can be realized by the **same** P75 parameter assignment. For two parity events with different view sets, the branchwise probability contrast is multi-affine in the union of their response coordinates, so exact extrema occur at common endpoint vertices. P84 evaluates 220 genuinely coupled standard contrasts and defines\n\n\\[\n\\boxed{L_{84}(B)=\\max\\{L_{83}(B),L_{\\mathrm{joint-parity}}(B)\\}.}\n\\]\n\nAn exact-rational strict witness has\n\n\\[\n\\boxed{L_{83}(B)=0<L_{84}(B)=1/32.}\n\\]\n\nThe result proves that separate parity compatibility does not imply joint compatibility with one underlying parameter vector. P84 retains the P78 mesh-width upper certificate and the P79 one-sided sampling-radius rejection gate. It does not identify the P75 latent state with consciousness and does not close the physical-to-experiential bridge.\n\nDirect proof: [P84](proposition_84_exact_projection_parity_contrast.md). Provenance: [P84 equation record](p84_equation_provenance.md). Implementation: [`joint_projection_parity_contrast_separation.py`](../src/consciousness_bridge/joint_projection_parity_contrast_separation.py). Tests: [`test_joint_projection_parity_contrast_separation.py`](../tests/test_joint_projection_parity_contrast_separation.py).\n'''
-          write('docs/theorem_roadmap.md', roadmap)
-
-          # Research navigation.
-          nav = read('docs/research_navigation.md')
-          nav = nav.replace('current documented theorem frontier is **P83**', 'current documented theorem frontier is **P84**')
-          nav = nav.replace('P1 through P83', 'P1 through P84')
-          nav = nav.replace('P71-P83 form a target-side methodology branch', 'P71-P84 form a target-side methodology branch')
-          nav = nav.replace('current theorem frontier is P76', 'current theorem frontier is P84')
-          nav = nav.replace('**Current frontier provenance:** [P83 equation and provenance record](p83_equation_provenance.md).', '**Current frontier provenance:** [P84 equation and provenance record](p84_equation_provenance.md).')
-          if '20. [P84 exact joint projection-parity separation]' not in nav:
-              for n in range(33, 19, -1):
-                  nav = nav.replace(f'\n{n}. [', f'\n{n+1}. [')
-              anchor = '19. [P83 exact projection-parity separation](proposition_83_exact_projection_parity.md) for the 22-event parity audit, exact multi-affine box intervals, P83 >= P82 dominance, and the strict `1/16` versus zero witness.\n'
-              addition = '20. [P84 exact joint projection-parity separation](proposition_84_exact_projection_parity_contrast.md) for the 220 coupled parity-event contrasts, common-vertex exact box intervals, P84 >= P83 dominance, and the strict `1/32` versus zero witness.\n'
-              if anchor not in nav:
-                  raise RuntimeError('research_navigation P83 reading-order anchor missing')
-              nav = nav.replace(anchor, anchor + addition)
-          branch_anchor = '| Projection-parity continuous target-model separation | P83 | Adds 22 exact parity-event ranges whose multi-affine branch structure can expose dependence incompatibility invisible to the complete P82 event family | [P83](proposition_83_exact_projection_parity.md) |'
-          if branch_anchor in nav and 'Joint projection-parity continuous target-model separation' not in nav:
-              nav = nav.replace(branch_anchor, branch_anchor + '\n| Joint projection-parity continuous target-model separation | P84 | Adds 220 exact coupled parity-event contrasts that preserve shared-parameter compatibility beyond separate P83 ranges | [P84](proposition_84_exact_projection_parity_contrast.md) |')
-          if '| P84 | [Exact joint projection-parity contrast]' not in nav:
-              insertion = '\n| P84 | [Exact joint projection-parity contrast](proposition_84_exact_projection_parity_contrast.md) | exact shared-parameter parity-event contrast separation beyond the complete P83 scalar audit |\n'
-              nav = nav.replace('\n## Core bridge interface', insertion + '\n## Core bridge interface', 1)
-          if '[P84 equation and provenance record]' not in nav:
-              nav += '\n\n[P84 equation and provenance record](p84_equation_provenance.md) documents the exact coupled parity-event construction, the 220-contrast family, the strict `L83 = 0 < L84 = 1/32` witness, and the scientific interpretation boundary.\n'
-          write('docs/research_navigation.md', nav)
-
-          # Equation/citation map gets an explicit P84 provenance entry.
-          eqmap = read('docs/equation_and_citation_map.md')
-          if '## P84 exact joint projection-parity contrast certificate' not in eqmap:
-              eqmap += '''\n\n## P84 exact joint projection-parity contrast certificate\n\n- **Canonical proof:** [Proposition 84](proposition_84_exact_projection_parity_contrast.md)\n- **Equation provenance:** [P84 equation and provenance record](p84_equation_provenance.md)\n- **Implementation:** [`joint_projection_parity_contrast_separation.py`](../src/consciousness_bridge/joint_projection_parity_contrast_separation.py)\n- **Tests:** [`test_joint_projection_parity_contrast_separation.py`](../tests/test_joint_projection_parity_contrast_separation.py)\n- **Figure:** [P84 exact joint projection-parity contrast certificate](figures/p84_exact_joint_projection_parity_contrast.svg)\n- **New mathematical step:** exact common-vertex extremization of differences between two P83 parity-event probabilities under one shared P75 parameter assignment, followed by an eight-cell L-infinity transfer.\n- **Strict witness:** `L83 = 0 < L84 = 1/32`.\n- **Boundary:** this strengthens rejection of the declared P75 target-measurement model family. It does not identify a latent state with consciousness or close the physical-to-experiential bridge.\n'''
-              write('docs/equation_and_citation_map.md', eqmap)
-
-          # Changelog: P84 becomes the unreleased research frontier while P83 history remains below it.
-          changelog = read('CHANGELOG.md')
-          if changelog.startswith('# Unreleased research frontier - P83'):
-              changelog = changelog.replace('# Unreleased research frontier - P83', '# Unreleased research frontier - P84', 1)
-          if '- Added Proposition 84, Exact Joint Projection-Parity Contrast Certificate.' not in changelog:
-              header = '# Unreleased research frontier - P84\n\n'
-              bullets = '''- Added Proposition 84, Exact Joint Projection-Parity Contrast Certificate.\n- Added 220 genuinely coupled parity-event contrasts that preserve one shared P75 parameter assignment instead of checking P83 parity ranges independently.\n- Proved exact common-vertex multi-affine extremization and exact affine prevalence mixing for every retained contrast.\n- Defined `L84(B) = max(L83(B), L_joint_parity(B))`, so P84 is never weaker than P83 on the same parameter box.\n- Added an exact-rational strict witness with `L83(B)=0` and `L84(B)=1/32`.\n- Added canonical proof, equation provenance, implementation, regression tests, theorem figure, reader navigation, citation guidance, and website integration.\n- Kept v0.82.0 as the latest formal release while the documented theorem frontier advances independently to P84.\n- Preserved the P78 mesh-width upper certificate, the P79 one-sided rejection gate, and the explicit boundary that the physical-to-experiential bridge remains open.\n\n### P83 predecessor frontier\n\n'''
-              if header not in changelog:
-                  raise RuntimeError('CHANGELOG P84 header missing after rename')
-              changelog = changelog.replace(header, header + bullets, 1)
-          write('CHANGELOG.md', changelog)
-
-          # Package description records the new computational capability without changing release version.
-          pyproject = read('pyproject.toml')
-          if 'exact joint projection-parity contrast certification' not in pyproject:
-              pyproject = pyproject.replace(
-                  'exact projection-parity certification, dependency-aware parity box bounds,',
-                  'exact projection-parity certification, dependency-aware parity box bounds, exact joint projection-parity contrast certification, shared-parameter parity compatibility bounds,'
-              )
-              write('pyproject.toml', pyproject)
-
-          # Public website index.
-          web = read('website/index.html')
-          web = web.replace('Explore all 83 results', 'Explore all 84 results')
-          web = web.replace('<strong>83</strong><span>proposition-level results</span>', '<strong>84</strong><span>proposition-level results</span>')
-          web = web.replace('<strong>P83</strong><span>current theorem frontier</span>', '<strong>P84</strong><span>current theorem frontier</span>')
-          web = web.replace('83 proposition-level results through P83', '84 proposition-level results through P84')
-          web = web.replace('P73-P83 progressively distinguish', 'P73-P84 progressively distinguish')
-          web = web.replace('The 83 results form several dependency branches.', 'The 84 results form several dependency branches.')
-          if 'p84_exact_joint_projection_parity_contrast.svg' not in web:
-              insertion = '''\n    <section id="p84-frontier">\n      <div class="section-head">\n        <p class="eyebrow">Current theorem frontier · P84</p>\n        <h2>Separate parity compatibility is not the same as joint shared-parameter compatibility</h2>\n        <p>P83 checks 22 parity events individually. P84 asks whether pairs of those events can be realized by one common P75 parameter assignment. It evaluates 220 exact joint contrasts at common response-coordinate vertices and retains the complete P83 certificate.</p>\n      </div>\n      <div class="two-col">\n        <div>\n          <img src="https://raw.githubusercontent.com/MahsaKeikha/mathematical-consciousness-bridge/main/docs/figures/p84_exact_joint_projection_parity_contrast.svg" alt="P84 exact joint projection-parity contrast certificate" />\n        </div>\n        <aside class="card">\n          <h3>Strict exact-rational witness</h3>\n          <p>The complete P83 certificate is zero on the declared witness box, yet one joint parity-event contrast is one quarter outside its exact model range. With eight nonzero signed cell coefficients, P84 certifies <strong>L84 = 1/32</strong>.</p>\n          <p><strong>Scientific boundary:</strong> this rejects only the declared P75 model family under the stated assumptions. It does not identify a latent state with consciousness and does not close the physical-to-experiential bridge.</p>\n          <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_84_exact_projection_parity_contrast.md">Read Proposition 84 →</a>\n        </aside>\n      </div>\n    </section>\n'''
-              web = web.replace('    <section class="boundary">\n      <h2>Scientific boundary</h2>', insertion + '\n    <section class="boundary">\n      <h2>Scientific boundary</h2>', 1)
-          write('website/index.html', web)
-
-          # Public website Start Here.
-          wh = read('website/start-here.html')
-          wh = wh.replace('83-result theorem program', '84-result theorem program')
-          wh = wh.replace('<strong>83</strong><span>proposition-level results</span>', '<strong>84</strong><span>proposition-level results</span>')
-          wh = wh.replace('<strong>P83</strong><span>current theorem frontier</span>', '<strong>P84</strong><span>current theorem frontier</span>')
-          wh = wh.replace('all 83 results', 'all 84 results')
-          wh = wh.replace('P75-P83', 'P75-P84')
-          wh = wh.replace('P78-P83 progressively tighten', 'P78-P84 progressively tighten')
-          wh = wh.replace('P75-P83 test the declared', 'P75-P84 test the declared')
-          if 'P84 now preserves shared-parameter compatibility' not in wh:
-              anchor = '<p>The important logical direction is one-sided. These results can strengthen rejection of the declared P75 model family. They do not identify a latent state with consciousness, do not validate the model when rejection fails, and do not close the physical-to-experiential bridge.</p>'
-              addition = '<p><strong>P84 now preserves shared-parameter compatibility between pairs of P83 parity events.</strong> Its 220 exact joint contrasts can reject a P75 box even when every individual P83 parity interval is compatible; the strict exact-rational witness has L83 = 0 and L84 = 1/32.</p>'
-              if anchor not in wh:
-                  raise RuntimeError('website/start-here P83 boundary anchor missing')
-              wh = wh.replace(anchor, addition + '\n      ' + anchor)
-          wh = wh.replace('proposition_83_exact_projection_parity.md">Read P83', 'proposition_84_exact_projection_parity_contrast.md">Read P84')
-          write('website/start-here.html', wh)
-
-          # Plain-language page.
-          pl = read('website/plain-language.html')
-          pl = pl.replace('<strong>83</strong><span>proposition-level results</span>', '<strong>84</strong><span>proposition-level results</span>')
-          pl = pl.replace('<strong>P83</strong><span>current theorem frontier</span>', '<strong>P84</strong><span>current theorem frontier</span>')
-          pl = pl.replace('What the 83 results are doing', 'What the 84 results are doing')
-          pl = pl.replace('P75-P83', 'P75-P84')
-          pl = pl.replace('Move from intuition to the actual research', 'Move from intuition to the actual P84 research frontier')
-          write('website/plain-language.html', pl)
-
-          # Research map receives an explicit P84 frontier card/section.
-          rm = read('website/research-map.html')
-          rm = rm.replace('P77-P83', 'P77-P84')
-          if 'P84: When do separately compatible parity events fail jointly?' not in rm:
-              block = '''\n  <section id="p84">\n    <div class="section-head">\n      <p class="eyebrow">Current certified frontier</p>\n      <h2>P84: When do separately compatible parity events fail jointly?</h2>\n      <p>P83 checks each parity event separately. P84 retains the same P75 model and exact-rational branch-and-bound architecture but evaluates 220 coupled differences between parity-event probabilities under one shared parameter assignment.</p>\n    </div>\n    <div class="result-grid">\n      <article class="result"><span>Input</span><h3>Two P83 parity events</h3><p>The two events have different view sets and share some P75 response parameters.</p></article>\n      <article class="result"><span>Exact operation</span><h3>Common-vertex contrast extremization</h3><p>The joint contrast is multi-affine in the union of shared response coordinates, so exact extrema occur at common box vertices and prevalence endpoints.</p></article>\n      <article class="result"><span>Strict witness</span><h3>L83 = 0, L84 = 1/32</h3><p>Every P83 scalar interval is compatible, while one shared-parameter contrast is impossible for the declared box.</p></article>\n    </div>\n    <p><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_84_exact_projection_parity_contrast.md">P84 proof</a> · <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/joint_projection_parity_contrast_separation.py">implementation</a> · <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/tests/test_joint_projection_parity_contrast_separation.py">tests</a></p>\n  </section>\n'''
-              rm = rm.replace('</main>', block + '\n</main>', 1)
-          write('website/research-map.html', rm)
-
-          # Implementation guide connects P84 to source and tests.
-          impl = read('website/implementation.html')
-          impl = impl.replace('P77-P83', 'P77-P84')
-          if 'joint_projection_parity_contrast_separation.py' not in impl:
-              needle = 'projection_parity_model_separation.py'
-              if needle in impl:
-                  impl = impl.replace(needle, needle + '</a>, <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/joint_projection_parity_contrast_separation.py">joint_projection_parity_contrast_separation.py', 1)
-              else:
-                  impl += '\n<p>P84 implementation: <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/joint_projection_parity_contrast_separation.py">joint_projection_parity_contrast_separation.py</a> with <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/tests/test_joint_projection_parity_contrast_separation.py">regression tests</a>.</p>\n'
-          write('website/implementation.html', impl)
-
-          # Shared navigation knows the new proposition and frontier.
-          app = read('website/app.js')
-          app = app.replace("83: `${REPO}/blob/main/docs/proposition_83_exact_projection_parity.md`,", "83: `${REPO}/blob/main/docs/proposition_83_exact_projection_parity.md`,\n    84: `${REPO}/blob/main/docs/proposition_84_exact_projection_parity_contrast.md`,")
-          app = app.replace('through P83.', 'through P84.')
-          write('website/app.js', app)
-
-          # Build script cache bust after navigation/frontier changes.
-          prep = read('scripts/prepare_website.py')
-          prep = prep.replace('ASSET_VERSION = "20260912-nav8"', 'ASSET_VERSION = "20260912-nav9"')
-          write('scripts/prepare_website.py', prep)
-
-          # Let the repository's own figure documentation system normalize the P84 SVG and catalog.
+          if not text.rstrip().endswith('</html>'):
+              raise RuntimeError('implementation page still has content after closing html')
+          path.write_text(text, encoding='utf-8')
           PY
-          python scripts/enrich_figure_documentation.py
-      - name: Commit synchronized P84 promotion
+      - name: Commit implementation repair
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md START_HERE.md CHANGELOG.md CITATION.cff CITATION.bib CITATION.md pyproject.toml \
-            docs/detailed_proposition_record.md docs/theorem_roadmap.md docs/research_navigation.md \
-            docs/equation_and_citation_map.md docs/figure_catalog.md docs/figures/p84_exact_joint_projection_parity_contrast.svg \
-            website/index.html website/start-here.html website/plain-language.html website/research-map.html \
-            website/implementation.html website/app.js website/visual-atlas.html scripts/prepare_website.py
+          git add website/implementation.html
           if git diff --cached --quiet; then
-            echo "No P84 synchronization changes were needed."
+            echo "No implementation repair was needed."
             exit 0
           fi
-          git commit -m "Synchronize P84 research frontier across publication surfaces"
+          git commit -m "Place P84 implementation links inside Stage 06"
           git push origin HEAD:main
