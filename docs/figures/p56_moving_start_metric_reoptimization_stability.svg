@@ -1,28 +1,107 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
-<title id="title">Proposition 56: Moving-start metric reoptimization stability</title>
-<desc id="desc">What this figure shows: Proved deterministic perturbation theorem. P56 removes the fixed-start limitation stated explicitly in P55. It quantifies how much the exact P54 switching optimum can change when the current apparatus/setup state moves from one metric point to another between sequential reoptimization steps.. Visible guideposts include: Setup movement can erode a P55 saving by at most one metric displacement; Same active support, two setup origins; s; s′; c(s,s′); A. How to read it: follow the diagram in the direction of its arrows and use each box, panel, inequality, or highlighted region only with the meaning printed beside it. Main takeaway: this is the visual companion to Proposition 56; the proposition document supplies the assumptions, proof, and exact scope of every implication. Scientific status: Proposition 56 theorem/certificate visual. It is not independent empirical evidence and does not, by itself, identify a physical or latent variable with consciousness.</desc>
-<rect width="1200" height="760" fill="#ffffff"/>
-<text x="60" y="70" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#111827">P56 · Moving-start metric reoptimization stability</text>
-<text x="60" y="110" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#374151">Setup movement can erode a P55 saving by at most one metric displacement</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1000" viewBox="0 0 1200 1000" role="img" aria-labelledby="title desc">
+  <title id="title">P56 moving-start metric reoptimization stability</title>
+  <desc id="desc">What this figure shows: P56 controls exact P54 reoptimization when the apparatus or setup start moves from s to s-prime while one declared finite switching metric remains fixed. The optimal route value is one-Lipschitz in the start state, and the coefficient one is sharp. How to read it: the three upper cards specify the fixed metric geometry and the two alternative start states for the same active support. Their attached arrows feed the central Lipschitz theorem and its route-reuse proof idea. The three lower cards then propagate that theorem to fixed residual demand, combine it with the P55 fixed-start release after residual demand decreases, and state a sufficient strict-decrease certificate. Main takeaway: start motion can erase at most one metric displacement worth of the saving certified by P55, so a fixed-start release larger than c(s,s-prime) guarantees that the new exact total cost is still strictly lower; the converse is not claimed. Scientific status: Deterministic one-metric scheduling perturbation theorem. It assumes the same valid switching metric before and after reoptimization. It does not validate pruning, prove statistical minimaxity, identify a scheduling quantity with consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
+    <style>
+      .title{font:700 30px Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 16px Arial,sans-serif;fill:#475569}
+      .head{font:700 18px Arial,sans-serif;fill:#0f172a}
+      .copy{font:400 15px Arial,sans-serif;fill:#334155}
+      .small{font:400 13.5px Arial,sans-serif;fill:#475569}
+      .eq{font:600 15px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .strong{font:700 16px Arial,sans-serif;fill:#0f172a}
+      .route{font:700 13px Arial,sans-serif;fill:#475569}
+      .arrow{stroke:#334155;stroke-width:2.5;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
 
-<rect x="60" y="155" width="1080" height="235" rx="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
-<text x="90" y="200" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#111827">Same active support, two setup origins</text>
-<circle cx="150" cy="290" r="24" fill="#e2e8f0" stroke="#334155" stroke-width="2"/><text x="142" y="298" font-family="Arial" font-size="18">s</text>
-<circle cx="300" cy="290" r="24" fill="#e2e8f0" stroke="#334155" stroke-width="2"/><text x="288" y="298" font-family="Arial" font-size="18">s′</text>
-<line x1="174" y1="290" x2="276" y2="290" stroke="#64748b" stroke-width="3" stroke-dasharray="8 7"/>
-<text x="194" y="270" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#475569">c(s,s′)</text>
-<circle cx="520" cy="290" r="24" fill="#e2e8f0" stroke="#334155" stroke-width="2"/><text x="512" y="298" font-family="Arial" font-size="18">A</text>
-<circle cx="720" cy="290" r="24" fill="#e2e8f0" stroke="#334155" stroke-width="2"/><text x="712" y="298" font-family="Arial" font-size="18">B</text>
-<circle cx="920" cy="290" r="24" fill="#e2e8f0" stroke="#334155" stroke-width="2"/><text x="912" y="298" font-family="Arial" font-size="18">C</text>
-<line x1="324" y1="290" x2="496" y2="290" stroke="#64748b" stroke-width="4"/>
-<line x1="544" y1="290" x2="696" y2="290" stroke="#64748b" stroke-width="4"/>
-<line x1="744" y1="290" x2="896" y2="290" stroke="#64748b" stroke-width="4"/>
-<text x="90" y="350" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#111827">|L*(S;s) − L*(S;s′)| ≤ c(s,s′)</text>
+  <rect width="1200" height="1000" rx="24" fill="#f8fafc"/>
+  <text x="60" y="58" class="title">P56  Moving-start metric reoptimization stability</text>
+  <text x="60" y="90" class="subtitle">A change of setup origin perturbs the exact P54 route value by at most one distance in the same declared switching metric.</text>
 
-<rect x="60" y="435" width="1080" height="245" rx="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
-<text x="90" y="480" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#111827">P55 savings corrected for setup motion</text>
-<text x="90" y="535" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#111827">C*(r;s) − C*(r′;s′) ≥ Δfixed − c(s,s′)</text>
-<text x="90" y="582" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#374151">Δfixed = acquisition release + fixed-start route release from P55</text>
-<text x="90" y="620" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#374151">If Δfixed &gt; c(s,s′), strict total-cost decrease remains certified.</text>
-<text x="90" y="654" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#64748b">Boundary: one fixed metric geometry. Time-varying switching metrics require a separate perturbation theorem.</text>
+  <g id="block-metric" data-x="55" data-y="130" data-w="330" data-h="185">
+    <rect x="55" y="130" width="330" height="185" rx="18" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+    <text x="80" y="168" class="head">1. Fixed switching geometry</text>
+    <text x="80" y="205" class="strong">one finite metric c</text>
+    <text x="80" y="238" class="copy">Same metric before and after</text>
+    <text x="80" y="263" class="copy">reoptimization.</text>
+    <text x="80" y="292" class="small">Triangle inequality is essential.</text>
+  </g>
+
+  <g id="block-old" data-x="435" data-y="130" data-w="330" data-h="185">
+    <rect x="435" y="130" width="330" height="185" rx="18" fill="#ffffff" stroke="#64748b" stroke-width="2"/>
+    <text x="460" y="168" class="head">2. Old setup start</text>
+    <text x="460" y="205" class="strong">start s, active support S</text>
+    <text x="460" y="239" class="eq">L*(S;s)</text>
+    <text x="460" y="271" class="copy">Exact P54 minimum route value.</text>
+    <text x="460" y="296" class="small">No return to the start is required.</text>
+  </g>
+
+  <g id="block-new" data-x="815" data-y="130" data-w="330" data-h="185">
+    <rect x="815" y="130" width="330" height="185" rx="18" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+    <text x="840" y="168" class="head">3. New setup start</text>
+    <text x="840" y="205" class="strong">start s′, same support S</text>
+    <text x="840" y="239" class="eq">L*(S;s′)</text>
+    <text x="840" y="271" class="copy">Only the setup origin has moved.</text>
+    <text x="840" y="296" class="small">Support and metric stay fixed here.</text>
+  </g>
+
+  <path id="arrow-1" class="arrow" d="M220 315 V350 H360 V385" data-source="block-metric" data-target="block-lipschitz"/>
+  <path id="arrow-2" class="arrow" d="M600 315 V385" data-source="block-old" data-target="block-lipschitz"/>
+  <path id="arrow-3" class="arrow" d="M980 315 V350 H840 V385" data-source="block-new" data-target="block-lipschitz"/>
+
+  <text x="600" y="367" class="route" text-anchor="middle">reuse one optimal preparation order and change only its first route edge</text>
+
+  <g id="block-lipschitz" data-x="120" data-y="385" data-w="960" data-h="250">
+    <rect x="120" y="385" width="960" height="250" rx="20" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+    <text x="600" y="425" text-anchor="middle" class="head">4. One-Lipschitz start-state theorem</text>
+    <text x="600" y="469" text-anchor="middle" class="strong">|L*(S;s) - L*(S;s′)| ≤ c(s,s′)</text>
+    <text x="600" y="510" text-anchor="middle" class="eq">c(s′,v₁) ≤ c(s′,s) + c(s,v₁)</text>
+    <text x="600" y="545" text-anchor="middle" class="copy">Reuse the same route order from the other start; only the first edge changes.</text>
+    <text x="600" y="578" text-anchor="middle" class="copy">Swap s and s′ to obtain the reverse inequality.</text>
+    <text x="600" y="610" text-anchor="middle" class="small">Coefficient one is sharp: a one-preparation line-metric example attains equality.</text>
+  </g>
+
+  <g id="block-fixed" data-x="55" data-y="685" data-w="330" data-h="170">
+    <rect x="55" y="685" width="330" height="170" rx="18" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="80" y="723" class="head">5. Fixed residual demand</text>
+    <text x="80" y="759" class="eq">|C*(r;s)-C*(r;s′)|</text>
+    <text x="80" y="787" class="strong">≤ c(s,s′)</text>
+    <text x="80" y="818" class="small">The acquisition term cancels.</text>
+    <text x="80" y="842" class="small">Only the switching route changes.</text>
+  </g>
+
+  <g id="block-combined" data-x="435" data-y="685" data-w="330" data-h="170">
+    <rect x="435" y="685" width="330" height="170" rx="18" fill="#fefce8" stroke="#ca8a04" stroke-width="2"/>
+    <text x="460" y="723" class="head">6. P55 + P56 certificate</text>
+    <text x="460" y="755" class="eq">Δfixed=C*(r;s)-C*(r′;s) ≥ 0</text>
+    <text x="460" y="789" class="eq">C*(r;s)-C*(r′;s′)</text>
+    <text x="460" y="817" class="strong">≥ Δfixed-c(s,s′)</text>
+    <text x="460" y="843" class="small">Start motion subtracts at most one distance.</text>
+  </g>
+
+  <g id="block-strict" data-x="815" data-y="685" data-w="330" data-h="170">
+    <rect x="815" y="685" width="330" height="170" rx="18" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+    <text x="840" y="723" class="head">7. Strict-decrease certificate</text>
+    <text x="840" y="760" class="strong">Δfixed &gt; c(s,s′)</text>
+    <text x="840" y="796" class="eq">⇒ C*(r′;s′) &lt; C*(r;s)</text>
+    <text x="840" y="826" class="small">Sufficient only; converse not claimed.</text>
+    <text x="840" y="848" class="small">The bound is a guarantee, not an iff test.</text>
+  </g>
+
+  <path id="arrow-4" class="arrow" d="M300 635 V660 H220 V685" data-source="block-lipschitz" data-target="block-fixed"/>
+  <path id="arrow-5" class="arrow" d="M600 635 V685" data-source="block-lipschitz" data-target="block-combined"/>
+  <path id="arrow-6" class="arrow" d="M900 635 V660 H980 V685" data-source="block-lipschitz" data-target="block-strict"/>
+
+  <g id="block-boundary" data-x="90" data-y="875" data-w="1020" data-h="120">
+    <rect x="90" y="875" width="1020" height="120" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="118" y="904" class="head">Deterministic and scientific boundary</text>
+    <text x="118" y="928" class="small">P56 assumes one fixed valid metric geometry; a changing metric requires the separate P57 perturbation theorem.</text>
+    <text x="118" y="950" class="small">Pruning validity and statistical optimality of residual thresholds are external to this deterministic result.</text>
+    <text x="118" y="972" class="small">P56 concerns operational scheduling cost; it does not identify setup distance, route length, or acquisition cost with consciousness.</text>
+    <text x="118" y="991" class="small">It does not establish a physical-to-experiential bridge or imply quantum incompleteness.</text>
+  </g>
 </svg>
