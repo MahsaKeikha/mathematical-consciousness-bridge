@@ -1,0 +1,52 @@
+name: p83-finalize-publication
+
+on:
+  push:
+    branches:
+      - research/p83-exact-projection-parity
+    paths:
+      - scripts/finalize_p83_publication_gate.py
+      - .github/workflows/p83-finalize-publication.yml
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout P83 branch
+        uses: actions/checkout@v4
+        with:
+          ref: research/p83-exact-projection-parity
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+
+      - name: Apply final publication repairs
+        run: python scripts/finalize_p83_publication_gate.py
+
+      - name: Validate changed text
+        run: |
+          python scripts/normalize_typography.py --check
+          git diff --check
+          grep -q '| Public theorem frontier | \*\*P83\*\* |' README.md
+          grep -q '^# 0.82.0 - 2026-09-12$' CHANGELOG.md
+          grep -q 'P77-P83: from full-law rejection to exact dependency-aware certification' website/research-map.html
+
+      - name: Remove one-shot machinery
+        run: |
+          rm scripts/finalize_p83_publication_gate.py
+          rm .github/workflows/p83-finalize-publication.yml
+
+      - name: Commit finalized P83 publication state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "Finalize P83 publication gate"
+          git push origin HEAD:research/p83-exact-projection-parity
