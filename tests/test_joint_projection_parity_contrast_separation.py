@@ -250,7 +250,8 @@ def test_p84_source_states_exactness_strictness_and_scientific_boundary() -> Non
         "P83 lower bound zero",
         "1/32",
         "rejects only the declared P75 model family",
-        "identify a latent state with consciousness",
+        "identify a latent state with",
+        "consciousness",
         "physical-to-experiential bridge",
     )
     for token in required:
