@@ -1,0 +1,5 @@
+# Exact reference environment for reproducing the v0.81.0 repository record.
+# Use with Python 3.12.14 (recorded in .python-version).
+-r requirements-figures.txt
+pytest==9.1.1
+ruff==0.16.7
