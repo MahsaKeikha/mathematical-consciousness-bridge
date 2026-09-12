@@ -80,8 +80,8 @@
     <text x="460" y="738" class="head">6. Strict-decrease certificate</text>
     <text x="460" y="775" class="strong">Δfixed &gt; P57</text>
     <text x="460" y="809" class="eq">⇒ C*c′(r′;s′) &lt; C*c(r;s)</text>
-    <text x="460" y="836" class="small">Sufficient only; converse not claimed.</text>
-    <text x="460" y="856" class="small">P57 is a worst-case perturbation penalty.</text>
+    <text x="460" y="834" class="small">Sufficient only; converse not claimed.</text>
+    <text x="460" y="854" class="small">P57 is a worst-case perturbation penalty.</text>
   </g>
 
   <g id="block-reuse" data-x="815" data-y="700" data-w="330" data-h="160">
@@ -101,8 +101,8 @@
     <rect x="90" y="880" width="1020" height="115" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
     <text x="118" y="908" class="head">Deterministic and scientific boundary</text>
     <text x="118" y="932" class="small">Both c and c′ must be valid finite metrics on the common relevant point set; metric estimation is a separate statistical problem.</text>
-    <text x="118" y="953" class="small">Pruning validity and adaptive statistical efficiency are external to this deterministic perturbation theorem.</text>
-    <text x="118" y="974" class="small">P57 concerns operational scheduling geometry; it does not identify a metric or route quantity with consciousness.</text>
-    <text x="118" y="992" class="small">It does not establish a physical-to-experiential bridge or imply quantum incompleteness.</text>
+    <text x="118" y="952" class="small">Pruning validity and adaptive statistical efficiency are external to this deterministic perturbation theorem.</text>
+    <text x="118" y="971" class="small">P57 concerns operational scheduling geometry; it does not identify a metric or route quantity with consciousness.</text>
+    <text x="118" y="988" class="small">It does not establish a physical-to-experiential bridge or imply quantum incompleteness.</text>
   </g>
 </svg>
