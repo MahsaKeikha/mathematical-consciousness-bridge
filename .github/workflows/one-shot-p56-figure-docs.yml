@@ -1,0 +1,73 @@
+name: one-shot-p56-figure-docs
+
+on:
+  push:
+    branches: [visual-polish-p56]
+    paths:
+      - .github/workflows/one-shot-p56-figure-docs.yml
+
+permissions:
+  contents: write
+
+jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: visual-polish-p56
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -e ".[dev]"
+      - name: Integrate permanent P56 figure record and catalog row
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          records = Path("scripts/conceptual_figure_records.py")
+          text = records.read_text(encoding="utf-8")
+          marker = '    "docs/figures/p57_switching_metric_perturbation.svg": {'
+          if '"docs/figures/p56_moving_start_metric_reoptimization_stability.svg"' not in text:
+              record = '''    "docs/figures/p56_moving_start_metric_reoptimization_stability.svg": {
+                  "title": "P56 moving-start metric reoptimization stability",
+                  "description": (
+                      "What this figure shows: P56 controls exact P54 reoptimization when the apparatus or setup start moves from s to s-prime while one declared finite switching metric remains fixed. The exact route optimum is one-Lipschitz in the start state, and the coefficient one is sharp. "
+                      "How to read it: the three upper cards specify the fixed metric geometry and the two alternative start states for the same active support. Their attached arrows feed the central route-reuse proof and one-Lipschitz theorem. The lower cards then transfer the bound to fixed residual demand, combine it with the P55 fixed-start release after componentwise residual decrease, and state a sufficient strict-decrease certificate. "
+                      "Main takeaway: start motion can erase at most one metric displacement worth of the saving certified by P55. Therefore a fixed-start release larger than c(s,s-prime) guarantees that the new exact total cost remains strictly lower, while failure of that sufficient inequality is inconclusive."
+                  ),
+                  "status": (
+                      "Deterministic one-metric scheduling perturbation theorem. It assumes the same valid finite switching metric before and after reoptimization. It does not validate pruning, establish statistical minimaxity of residual thresholds, identify a scheduling quantity with consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness."
+                  ),
+              },
+          '''
+              if marker not in text:
+                  raise SystemExit("P57 insertion marker not found")
+              records.write_text(text.replace(marker, record + marker, 1), encoding="utf-8")
+
+          catalog = Path("docs/figure_catalog.md")
+          lines = catalog.read_text(encoding="utf-8").splitlines()
+          replacement = "| [P56 moving-start metric reoptimization stability](figures/p56_moving_start_metric_reoptimization_stability.svg) | What this figure shows: P56 controls exact P54 reoptimization when the apparatus or setup start moves from s to s-prime while one declared finite switching metric remains fixed. The exact route optimum is one-Lipschitz in the start state, and the coefficient one is sharp. How to read it: the three upper cards specify the fixed metric geometry and the two alternative start states for the same active support. Their attached arrows feed the central route-reuse proof and one-Lipschitz theorem. The lower cards then transfer the bound to fixed residual demand, combine it with the P55 fixed-start release after componentwise residual decrease, and state a sufficient strict-decrease certificate. Main takeaway: start motion can erase at most one metric displacement worth of the saving certified by P55. Therefore a fixed-start release larger than c(s,s-prime) guarantees that the new exact total cost remains strictly lower, while failure of that sufficient inequality is inconclusive. | Deterministic one-metric scheduling perturbation theorem. It assumes the same valid finite switching metric before and after reoptimization. It does not validate pruning, establish statistical minimaxity of residual thresholds, identify a scheduling quantity with consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness. | [Proposition 56](proposition_56_moving_start_metric_reoptimization_stability.md) |"
+          found = False
+          for index, line in enumerate(lines):
+              if "(figures/p56_moving_start_metric_reoptimization_stability.svg)" in line:
+                  lines[index] = replacement
+                  found = True
+                  break
+          if not found:
+              raise SystemExit("P56 catalog row not found")
+          catalog.write_text("\n".join(lines) + "\n", encoding="utf-8")
+          PY
+      - run: pytest -q
+      - run: ruff check .
+      - name: Commit audited P56 integration and remove one-shot workflow
+        run: |
+          rm .github/workflows/one-shot-p56-figure-docs.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "Integrate P56 figure documentation metadata"
+          git push origin HEAD:visual-polish-p56
