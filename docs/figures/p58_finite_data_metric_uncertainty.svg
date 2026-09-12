@@ -81,10 +81,11 @@
   <g id="block-compare" data-x="435" data-y="680" data-w="330" data-h="170">
     <rect x="435" y="680" width="330" height="170" rx="18" fill="#fefce8" stroke="#ca8a04" stroke-width="2"/>
     <text x="460" y="718" class="head">6. Two-state comparison</text>
-    <text x="460" y="756" class="strong">C₀⁻ &gt; C₁⁺</text>
-    <text x="460" y="788" class="eq">⇒ C*c0(r₀;s₀) &gt; C*c1(r₁;s₁)</text>
-    <text x="460" y="818" class="eq">Δrobust = C₀⁻ - C₁⁺</text>
-    <text x="460" y="841" class="small">Joint coverage; no independence needed.</text>
+    <text x="460" y="754" class="strong">C₀⁻ &gt; C₁⁺</text>
+    <text x="460" y="786" class="eq">⇒ C*c0(r₀;s₀) &gt; C*c1(r₁;s₁)</text>
+    <text x="460" y="812" class="eq">Δrobust = C₀⁻ - C₁⁺</text>
+    <text x="460" y="832" class="small">Joint coverage;</text>
+    <text x="460" y="844" class="small">no state independence needed.</text>
   </g>
 
   <g id="block-sample" data-x="815" data-y="680" data-w="330" data-h="170">
