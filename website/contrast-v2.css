@@ -84,24 +84,82 @@ footer a:hover {
 }
 
 .dark-section {
-  background: #111827;
-  color: #f9fafb;
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+.dark-section h2,
+.dark-section h3,
+.dark-section strong {
+  color: #f8fafc !important;
 }
 
 .dark-section > p:not(.eyebrow),
 .dark-section .section-head > p:last-child,
-.dark-section li {
-  color: #d7dde8 !important;
+.dark-section li,
+.dark-section .falsify-grid p {
+  color: #dbe5f1 !important;
 }
 
 .dark-section a:not(.button) {
-  color: #cddaff;
+  color: #dbe8ff;
   text-decoration: underline;
-  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.2em;
+}
+
+.dark-section a:not(.button):hover {
+  color: #ffffff;
+  text-decoration-thickness: 2px;
 }
 
 .dark-section .eyebrow {
-  color: #bac8ff !important;
+  color: #bfd0ff !important;
+}
+
+/* Falsification cards need stronger separation than generic dark cards. */
+.dark-section .falsify-grid > div {
+  background: #18243a !important;
+  border-color: #40516d !important;
+  box-shadow: 0 8px 24px rgba(2, 6, 23, 0.18);
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.dark-section .falsify-grid > div:hover {
+  background: #1d2b44 !important;
+  border-color: #6f89b4 !important;
+  transform: translateY(-2px);
+}
+
+.dark-section .falsify-grid h3 {
+  color: #ffffff !important;
+}
+
+.dark-section .falsify-grid p {
+  color: #dbe5f1 !important;
+  line-height: 1.62;
+}
+
+/* The section-level action should read as an intentional CTA, not a faint text link. */
+#falsification > p:last-child a:not(.button) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  padding: 0.72rem 1rem;
+  border: 1px solid #7f9bc8;
+  border-radius: 999px;
+  background: #eaf1ff;
+  color: #10244d !important;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(2, 6, 23, 0.16);
+}
+
+#falsification > p:last-child a:not(.button):hover {
+  background: #ffffff;
+  border-color: #a9bee0;
+  color: #0b1d40 !important;
+  text-decoration: none;
 }
 
 /* Buttons use explicit foreground/background pairs rather than inherited link colors. */
@@ -229,7 +287,8 @@ summary:focus-visible,
   .source-grid a,
   .research-card-link,
   .record-link,
-  .evidence-card {
+  .evidence-card,
+  .dark-section .falsify-grid > div {
     border-width: 2px;
   }
 }
