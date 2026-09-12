@@ -53,7 +53,7 @@ def update_reproducibility_guard() -> None:
             "def _project_version() -> str:\n"
             "    source = _read(\"pyproject.toml\")\n"
             "    match = re.search(\n"
-            "        r'^version = \\\"([0-9]+\\\\.[0-9]+\\\\.[0-9]+)\\\"$',\n"
+            "        r'^version = \"([0-9]+\\.[0-9]+\\.[0-9]+)\"$',\n"
             "        source,\n"
             "        re.MULTILINE,\n"
             "    )\n"
@@ -144,7 +144,7 @@ def update_website_orientation_guard() -> None:
         "    assert text.count(\"P78: Certified continuous P75 model separation\") == 1\n"
         "    assert text.count(\"How is P77 made rigorous for the continuous P75 family?\") == 1\n"
         "    assert \"only the certified global lower bound can feed the P77 rejection gate\" in text\n"
-        "    assert \"P80 tightens the continuous lower bound\" in text\n"
+        "    assert \"Simplex coupling\" in text\n"
         "    assert \"256 genuinely new residual events\" in text\n"
         "    assert \"P81 = 1/16 to P82 = 1/12\" in text\n"
     )
