@@ -1,9 +1,6 @@
 """Accessibility/readability contract for the public research website."""
 
-from __future__ import annotations
-
 from pathlib import Path
-
 
 ROOT = Path(__file__).resolve().parents[1]
 CSS = (ROOT / "website" / "contrast-v2.css").read_text(encoding="utf-8")
