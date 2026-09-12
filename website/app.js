@@ -1,1 +1,223 @@
-const button=document.querySelector('.nav-toggle');const nav=document.querySelector('.topbar nav');if(button&&nav){button.addEventListener('click',()=>{const open=nav.classList.toggle('open');button.setAttribute('aria-expanded',String(open));});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));}
+(() => {
+  const PAGES = [
+    { file: 'index.html', label: 'Overview' },
+    { file: 'start-here.html', label: 'Start Here' },
+    { file: 'research-map.html', label: 'Research Map' },
+    { file: 'physics-mathematics.html', label: 'Physics & Math' },
+    { file: 'visual-atlas.html', label: 'Visual Atlas' },
+    { file: 'sources.html', label: 'Sources' },
+  ];
+
+  const REPO = 'https://github.com/MahsaKeikha/mathematical-consciousness-bridge';
+
+  const propositionLinks = {
+    19: `${REPO}/blob/main/docs/proposition_19_fundamental_physical_sufficiency.md`,
+    71: `${REPO}/blob/main/docs/proposition_71_target_provenance_noncircularity.md`,
+    72: `${REPO}/blob/main/docs/proposition_72_target_measurement_channel_robustness.md`,
+    73: `${REPO}/blob/main/docs/proposition_73_target_channel_identifiability.md`,
+    74: `${REPO}/blob/main/docs/proposition_74_finite_sample_target_channel_recovery.md`,
+    75: `${REPO}/blob/main/docs/proposition_75_target_model_adequacy_overidentification.md`,
+    76: `${REPO}/blob/main/docs/proposition_76_finite_sample_target_model_adequacy.md`,
+    77: `${REPO}/blob/main/docs/proposition_77_full_law_model_set_separation.md`,
+    78: `${REPO}/blob/main/docs/proposition_78_certified_continuous_model_separation.md`,
+    79: `${REPO}/blob/main/docs/proposition_79_certified_sampling_radius.md`,
+    80: `${REPO}/blob/main/docs/proposition_80_simplex_coupled_model_separation.md`,
+    81: `${REPO}/blob/main/docs/proposition_81_projection_event_model_separation.md`,
+  };
+
+  function currentFile() {
+    const file = window.location.pathname.split('/').pop();
+    return file || 'index.html';
+  }
+
+  function ensureNavigation() {
+    const topbar = document.querySelector('.topbar');
+    if (!topbar) return;
+
+    let nav = topbar.querySelector('nav');
+    if (!nav) {
+      nav = document.createElement('nav');
+      topbar.append(nav);
+    }
+
+    nav.replaceChildren();
+    const file = currentFile();
+    PAGES.forEach((page) => {
+      const link = document.createElement('a');
+      link.href = page.file;
+      link.textContent = page.label;
+      if (page.file === file) link.setAttribute('aria-current', 'page');
+      nav.append(link);
+    });
+
+    const repo = document.createElement('a');
+    repo.href = REPO;
+    repo.textContent = 'GitHub';
+    repo.className = 'external-nav';
+    nav.append(repo);
+
+    let button = topbar.querySelector('.nav-toggle');
+    if (!button) {
+      button = document.createElement('button');
+      button.className = 'nav-toggle';
+      button.type = 'button';
+      button.textContent = 'Menu';
+      button.setAttribute('aria-label', 'Toggle navigation');
+      topbar.insertBefore(button, nav);
+    }
+    button.setAttribute('aria-expanded', 'false');
+
+    button.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      button.setAttribute('aria-expanded', String(open));
+    });
+    nav.querySelectorAll('a').forEach((link) =>
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        button.setAttribute('aria-expanded', 'false');
+      }),
+    );
+  }
+
+  function addBreadcrumbs() {
+    const main = document.querySelector('main');
+    if (!main || main.querySelector('.breadcrumbs')) return;
+    const file = currentFile();
+    const current = PAGES.find((page) => page.file === file) || PAGES[0];
+    if (current.file === 'index.html') return;
+
+    const trail = document.createElement('nav');
+    trail.className = 'breadcrumbs';
+    trail.setAttribute('aria-label', 'Breadcrumb');
+    trail.innerHTML = `<a href="index.html">Overview</a><span aria-hidden="true">/</span><span>${current.label}</span>`;
+    main.insertBefore(trail, main.firstChild);
+  }
+
+  function addReaderTrail() {
+    const main = document.querySelector('main');
+    if (!main || main.querySelector('.reader-trail')) return;
+    const file = currentFile();
+    const index = PAGES.findIndex((page) => page.file === file);
+    if (index < 0) return;
+
+    const trail = document.createElement('section');
+    trail.className = 'reader-trail';
+    const previous = PAGES[index - 1];
+    const next = PAGES[index + 1];
+
+    const previousHtml = previous
+      ? `<a class="trail-card previous" href="${previous.file}"><span>Previous</span><strong>${previous.label}</strong><small>Move back in the guided reading path</small></a>`
+      : `<a class="trail-card previous" href="${REPO}"><span>Repository</span><strong>Open GitHub</strong><small>Inspect code, proofs, tests, and releases</small></a>`;
+    const nextHtml = next
+      ? `<a class="trail-card next" href="${next.file}"><span>Next</span><strong>${next.label}</strong><small>Continue through the guided research path</small></a>`
+      : `<a class="trail-card next" href="research-map.html"><span>Continue</span><strong>Research Map</strong><small>Return to the complete theorem program</small></a>`;
+
+    trail.innerHTML = `
+      <div class="reader-trail-head">
+        <p class="eyebrow">Continue reading</p>
+        <h2>Follow the research without losing your place</h2>
+      </div>
+      <div class="reader-trail-grid">
+        ${previousHtml}
+        <a class="trail-card map" href="research-map.html"><span>Orientation</span><strong>Research Map</strong><small>See how the propositions and evidence layers connect</small></a>
+        ${nextHtml}
+      </div>`;
+    main.append(trail);
+  }
+
+  function propositionNumber(text) {
+    const match = text.match(/\bP(\d{1,2})\b/i);
+    return match ? Number(match[1]) : null;
+  }
+
+  function inferredCardHref(card) {
+    const direct = card.querySelector('a[href]');
+    if (direct) return direct.href;
+
+    const number = propositionNumber(card.textContent || '');
+    if (number && propositionLinks[number]) return propositionLinks[number];
+    if (number) return `research-map.html#p${number}`;
+
+    const image = card.querySelector('img[src]');
+    if (image) return image.src;
+    return null;
+  }
+
+  function activateCard(card) {
+    if (card.dataset.clickableReady === 'true') return;
+    const href = inferredCardHref(card);
+    if (!href) return;
+
+    card.dataset.clickableReady = 'true';
+    card.classList.add('interactive-card');
+    card.tabIndex = 0;
+    card.setAttribute('role', 'link');
+
+    const go = () => {
+      window.location.href = href;
+    };
+    card.addEventListener('click', (event) => {
+      if (event.target.closest('a, button, input, select, textarea')) return;
+      go();
+    });
+    card.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        go();
+      }
+    });
+  }
+
+  function activateCards() {
+    document
+      .querySelectorAll('.result, .flow-node, .figure-card, .card')
+      .forEach(activateCard);
+  }
+
+  function addResearchAnchors() {
+    if (currentFile() !== 'research-map.html') return;
+    document.querySelectorAll('section').forEach((section) => {
+      if (section.id) return;
+      const text = section.textContent || '';
+      const number = propositionNumber(text);
+      if (number) section.id = `p${number}`;
+    });
+
+    if (window.location.hash) {
+      const target = document.querySelector(window.location.hash);
+      if (target) requestAnimationFrame(() => target.scrollIntoView({ block: 'start' }));
+    }
+  }
+
+  function addBackToTop() {
+    if (document.querySelector('.back-to-top')) return;
+    const link = document.createElement('a');
+    link.className = 'back-to-top';
+    link.href = '#top';
+    link.textContent = 'Top';
+    link.setAttribute('aria-label', 'Back to top');
+    document.body.append(link);
+
+    const update = () => link.classList.toggle('visible', window.scrollY > 600);
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  }
+
+  function markExternalLinks() {
+    document.querySelectorAll('a[href^="http"]').forEach((link) => {
+      if (!link.href.startsWith(window.location.origin)) {
+        link.rel = 'noopener noreferrer';
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    ensureNavigation();
+    addBreadcrumbs();
+    addResearchAnchors();
+    activateCards();
+    addReaderTrail();
+    addBackToTop();
+    markExternalLinks();
+  });
+})();
