@@ -90,7 +90,7 @@
     <text x="840" y="760" class="strong">Δfixed &gt; c(s,s′)</text>
     <text x="840" y="796" class="eq">⇒ C*(r′;s′) &lt; C*(r;s)</text>
     <text x="840" y="826" class="small">Sufficient only; converse not claimed.</text>
-    <text x="840" y="848" class="small">The bound is a guarantee, not an iff test.</text>
+    <text x="840" y="848" class="small">Guarantee only; not an iff test.</text>
   </g>
 
   <path id="arrow-4" class="arrow" d="M300 635 V660 H220 V685" data-source="block-lipschitz" data-target="block-fixed"/>
