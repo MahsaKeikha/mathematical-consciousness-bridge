@@ -59,9 +59,7 @@ def normalize_research_navigation() -> None:
     path = "docs/research_navigation.md"
     text = load(path)
     replacements = {
-        "17. [P81 projection-event continuous P75 separation]": "17. [P81 projection-event continuous P75 separation]",
         "19. [P82 exact nested projection-contrast separation]": "18. [P82 exact nested projection-contrast separation]",
-        "19. [P83 exact projection-parity separation]": "19. [P83 exact projection-parity separation]",
         "18. [P11-P18 and P25-P37 operational physical structure]": "20. [P11-P18 and P25-P37 operational physical structure]",
         "20. [P38-P44 quantum foundations and bridge tests]": "21. [P38-P44 quantum foundations and bridge tests]",
         "21. [P45-P60 adaptive experiment design and scheduling]": "22. [P45-P60 adaptive experiment design and scheduling]",
@@ -77,7 +75,7 @@ def normalize_research_navigation() -> None:
         "31. [Citation guide]": "32. [Citation guide]",
     }
     for old, new in replacements.items():
-        if old != new and old not in text:
+        if old not in text:
             raise RuntimeError(f"navigation numbering anchor missing: {old}")
         text = text.replace(old, new, 1)
 
@@ -90,7 +88,7 @@ def normalize_research_navigation() -> None:
 
 def add_v082_release_archive() -> None:
     release_path = ROOT / "docs/releases/v0.82.0.md"
-    release_text = """# v0.82.0 - P82 Exact Nested Projection-Contrast Certification
+    release_text = r"""# v0.82.0 - P82 Exact Nested Projection-Contrast Certification
 
 **Release date:** 12 September 2026
 **Research frontier:** P82
@@ -100,7 +98,7 @@ def add_v082_release_archive() -> None:
 
 Version 0.82.0 advances the documented theorem frontier to **Proposition 82: Exact Nested Projection-Contrast Certificate for Continuous P75 Separation**.
 
-P82 strengthens the continuous four-view P75 target-measurement model-separation chain by using residual events formed from nested projected cylinders. For a parent cylinder $A$ and a stricter child cylinder $B$, the residual event $A\\setminus B$ is generally not itself a cylinder. Under the declared P75 conditional-independence model, P82 computes its parameter-box range directly from the branchwise factorization rather than conservatively subtracting two separate P81 event intervals.
+P82 strengthens the continuous four-view P75 target-measurement model-separation chain by using residual events formed from nested projected cylinders. For a parent cylinder $A$ and a stricter child cylinder $B$, the residual event $A\setminus B$ is generally not itself a cylinder. Under the declared P75 conditional-independence model, P82 computes its parameter-box range directly from the branchwise factorization rather than conservatively subtracting two separate P81 event intervals.
 
 The release adds **256 genuinely new nested residual contrasts** while retaining every P81 lower bound. The certified dominance chain is
 
@@ -155,12 +153,12 @@ P82 is a conditional computational theorem about separation from the **declared 
 
     path = "CHANGELOG.md"
     text = load(path)
-    heading = "# Release v0.82.0 - P82 Exact Nested Projection-Contrast Certification"
+    heading = "# 0.82.0 - 2026-09-12"
     if heading not in text:
-        marker = "# Release v0.81.0"
+        marker = "# 0.81.0 - 2026-09-11"
         if marker not in text:
             raise RuntimeError("v0.81.0 changelog anchor missing")
-        section = """# Release v0.82.0 - P82 Exact Nested Projection-Contrast Certification
+        section = """# 0.82.0 - 2026-09-12
 
 - Advanced the formal release frontier to P82 with 82 proposition-level results.
 - Added exact nested residual-event ranges for 256 genuinely new parent-child projection contrasts in the P75 model family.
