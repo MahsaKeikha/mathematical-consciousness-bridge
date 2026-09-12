@@ -331,7 +331,7 @@
 
 # Changelog
 
-## Unreleased - P82 exact nested projection-contrast certificate
+## 0.82.0 - 2026-09-12 - P82 exact nested projection-contrast certificate
 
 - Added exact P75 parameter-box intervals for nested residual events A\B.
 - Added 256 genuinely new nested projection contrasts and P82 >= P81 dominance.

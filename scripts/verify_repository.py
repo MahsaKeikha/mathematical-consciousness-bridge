@@ -19,8 +19,8 @@ from pathlib import Path
 from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
-CURRENT_VERSION = "0.81.0"
-CURRENT_FRONTIER = "P81"
+CURRENT_VERSION = "0.82.0"
+CURRENT_FRONTIER = "P82"
 
 CORE_FILES = (
     "README.md",
@@ -112,7 +112,7 @@ def _verify_release_consistency() -> None:
 def _verify_proposition_files() -> None:
     missing: list[int] = []
     duplicates: dict[int, list[str]] = {}
-    for number in range(1, 82):
+    for number in range(1, 83):
         matches = sorted((ROOT / "docs").glob(f"proposition_{number}_*.md"))
         if not matches:
             missing.append(number)

@@ -3,7 +3,7 @@
 [![tests](https://github.com/MahsaKeikha/mathematical-consciousness-bridge/actions/workflows/test.yml/badge.svg)](https://github.com/MahsaKeikha/mathematical-consciousness-bridge/actions/workflows/test.yml)
 [![reproducibility](https://github.com/MahsaKeikha/mathematical-consciousness-bridge/actions/workflows/reproducibility.yml/badge.svg)](https://github.com/MahsaKeikha/mathematical-consciousness-bridge/actions/workflows/reproducibility.yml)
 [![figures](https://github.com/MahsaKeikha/mathematical-consciousness-bridge/actions/workflows/figures.yml/badge.svg)](https://github.com/MahsaKeikha/mathematical-consciousness-bridge/actions/workflows/figures.yml)
-[![version](https://img.shields.io/badge/version-0.81.0-2563eb)](CITATION.cff)
+[![version](https://img.shields.io/badge/version-0.82.0-2563eb)](CITATION.cff)
 [![license](https://img.shields.io/badge/license-MIT-059669)](LICENSE)
 
 **Mahsa Keikha, PhD**
@@ -1062,7 +1062,7 @@ The proposition-by-proposition development history is intentionally kept off the
 | Item | Current state |
 | --- | --- |
 | Public theorem frontier | **P82** |
-| Documented version | **v0.81.0** |
+| Documented version | **v0.82.0** |
 | Proposition-level results | **81** |
 | Equation-driven quantitative figures | **70** |
 | Target-provenance guard | **P71 proved under declared construction model** |
@@ -1126,6 +1126,8 @@ This repository is an ongoing research program. Its purpose is to make physical-
 ---
 
 # Citation
+
+Current release: **Version 0.82.0**. Current theorem frontier: **P82**.
 
 If this research program, one of its propositions, figures, algorithms, or implementations contributes to your work, please cite it. When a specific theorem or artifact is central to an argument, cite both the overall research program and the proposition or artifact used.
 

@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If this research program, one of its theorem results, figures, algorithms, or implementations contributes to your work, please cite the research program and the method-specific source relevant to the result."
 title: "Mathematical Consciousness Bridge"
-version: 0.81.0
-date-released: 2026-09-11
+version: 0.82.0
+date-released: 2026-09-12
 authors:
   - family-names: Keikha
     given-names: Mahsa
@@ -54,4 +54,4 @@ preferred-citation:
   title: "Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem"
   year: 2026
   url: "https://github.com/MahsaKeikha/mathematical-consciousness-bridge"
-  notes: "Version 0.81.0. Ongoing mathematical-physics research program. Current documented theorem frontier: P82."
+  notes: "Version 0.82.0. Ongoing mathematical-physics research program. Current documented theorem frontier: P82."

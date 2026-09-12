@@ -10,7 +10,7 @@ If this is your first time in the repository, start on this page before opening 
 
 The project does **not** begin by choosing a favorite formula for consciousness. It begins by asking what a scientifically defensible bridge claim would have to survive: representation changes, hidden variables, coarse-graining, target circularity, noisy measurement, non-identifiability, finite data, model inadequacy, and uncertified optimization.
 
-The current release is **v0.81.0**. The repository contains **82 proposition-level results**. The current theorem frontier is **P82**. The physical-to-experiential bridge itself remains open.
+The current release is **v0.82.0**. The repository contains **82 proposition-level results**. The current theorem frontier is **P82**. The physical-to-experiential bridge itself remains open.
 
 ---
 
@@ -192,7 +192,7 @@ A reader should leave the repository with five boundaries completely clear:
 
 ## Current research status
 
-**Version:** 0.81.0  
+**Version:** 0.82.0  
 **Proposition frontier:** P81  
 **Proposition-level results:** 81  
 **Scientific status of the bridge:** open  

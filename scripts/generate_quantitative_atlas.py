@@ -25,14 +25,14 @@ plt.rcParams.update(
         "axes.spines.right": False,
         "legend.frameon": False,
         "svg.fonttype": "none",
-        "svg.hashsalt": "mathematical-consciousness-bridge-v0.81.0",
+        "svg.hashsalt": "mathematical-consciousness-bridge-v0.82.0",
         "font.family": "DejaVu Sans",
     }
 )
 
 SVG_METADATA = {
     "Date": None,
-    "Creator": "Mathematical Consciousness Bridge v0.81.0",
+    "Creator": "Mathematical Consciousness Bridge v0.82.0",
 }
 
 META = []
