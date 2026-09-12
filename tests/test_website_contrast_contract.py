@@ -4,6 +4,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CSS = (ROOT / "website" / "contrast-v2.css").read_text(encoding="utf-8")
+RESEARCH_CSS = (ROOT / "website" / "research-guide-v2.css").read_text(encoding="utf-8")
 BUILD = (ROOT / "scripts" / "prepare_website.py").read_text(encoding="utf-8")
 
 
@@ -47,6 +48,15 @@ def test_buttons_and_keyboard_focus_have_explicit_contrast_states() -> None:
     assert "color: #ffffff !important" in CSS
     assert "a:focus-visible" in CSS
     assert "outline: 3px solid #5272c7 !important" in CSS
+
+
+def test_clickable_research_cards_have_explicit_destination_labels() -> None:
+    assert 'content: "Open section →"' in RESEARCH_CSS
+    assert 'content: "Open page →"' in RESEARCH_CSS
+    assert 'content: "Open source ↗"' in RESEARCH_CSS
+    assert "font-size: 0.76rem" in RESEARCH_CSS
+    assert "font-weight: 760" in RESEARCH_CSS
+    assert "background: #e8eefc" in RESEARCH_CSS
 
 
 def test_contrast_layer_is_injected_into_every_deployed_page() -> None:
