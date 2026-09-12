@@ -90,7 +90,7 @@
     <text x="840" y="772" class="eq">L*c′(S;s′) ≤ ℓc′(π*c;s′)</text>
     <text x="840" y="802" class="eq">L*c′ - L*c ≤</text>
     <text x="840" y="827" class="eq">ℓc′(π*c;s′) - L*c</text>
-    <text x="840" y="853" class="small">Can be tighter than the uniform qδ bound.</text>
+    <text x="840" y="853" class="small">Tighter than the uniform qδ bound.</text>
   </g>
 
   <path id="arrow-4" class="arrow" d="M300 650 V675 H220 V700" data-source="block-combined" data-target="block-q"/>
