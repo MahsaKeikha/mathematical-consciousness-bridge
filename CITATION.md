@@ -8,7 +8,7 @@ If this research program, one of its propositions, figures, algorithms, or imple
 
 > Keikha, M. (2026). *Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem* (Version 0.82.0). GitHub research repository. https://github.com/MahsaKeikha/mathematical-consciousness-bridge
 
-This is the preferred citation for the research program at the current documented frontier, P82.
+This is the preferred citation for the research program at the current documented theorem frontier, **P84**.
 
 ## BibTeX
 
@@ -20,11 +20,11 @@ This is the preferred citation for the research program at the current documente
   version      = {0.82.0},
   howpublished = {GitHub research repository},
   url          = {https://github.com/MahsaKeikha/mathematical-consciousness-bridge},
-  note         = {Ongoing research program. Current documented theorem frontier: P82.}
+  note         = {Ongoing research program. Current documented theorem frontier: P84.}
 }
 ```
 
-A machine-readable BibTeX record is also available in [`CITATION.bib`](CITATION.bib), and GitHub-compatible citation metadata are maintained in [`CITATION.cff`](CITATION.cff).
+A machine-readable BibTeX record is maintained in [`CITATION.bib`](CITATION.bib), and GitHub-compatible metadata are maintained in [`CITATION.cff`](CITATION.cff).
 
 ## Citing a specific proposition
 
@@ -32,17 +32,36 @@ For theorem-level attribution, cite the research program and identify the propos
 
 > Keikha, M. (2026). Proposition PXX, "Proposition title." In *Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem* (Version 0.82.0). GitHub research repository. Direct proposition URL.
 
-Replace `PXX`, the title, and the URL with the proposition actually used. The [Detailed proposition record](docs/detailed_proposition_record.md) and [Theorem roadmap](docs/theorem_roadmap.md) provide the proposition titles, dependency structure, and direct proof links.
+Replace `PXX`, the title, and the URL with the proposition actually used. The [Detailed Proposition Record](docs/detailed_proposition_record.md), [Theorem Roadmap](docs/theorem_roadmap.md), and [Research Navigation](docs/research_navigation.md) provide titles, dependency structure, implementations, and direct proof links.
 
-For target-side bridge methodology, cite [Proposition 71](docs/proposition_71_target_provenance_noncircularity.md) when relying on the non-circularity result for descriptor-derived targets. Cite [Proposition 72](docs/proposition_72_target_measurement_channel_robustness.md) when relying on noisy-target residual attenuation, target-channel witness stability, or its finite-sample target-separation certificate. Cite [Proposition 73](docs/proposition_73_target_channel_identifiability.md) when relying on the three-view binary latent-target population identifiability theorem, recovery of P72 channel-stability coefficients, the joint-view stability consequence, or the constructive two-view non-identifiability result. Cite [Proposition 74](docs/proposition_74_finite_sample_target_channel_recovery.md) when relying on the simultaneous finite-data recovery certificate, covariance nondegeneracy gate, confidence intervals for target-channel quantities, or the conservative covariance-margin sample-size condition. Cite [Proposition 75](docs/proposition_75_target_model_adequacy_overidentification.md) when relying on the distinction between three-view just-identification and four-view overidentification, the covariance-tetrad or cross-triple adequacy constraints, the fourth-centered-moment relation, or the full-law target-model reconstruction audit. Cite [Proposition 76](docs/proposition_76_finite_sample_target_model_adequacy.md) when relying on the sixteen-cell finite-sample adequacy rejection theorem, the explicit tetrad confidence radius, denominator-free polynomial adequacy intervals, or the one-sided rule separating certified model rejection from inconclusive non-rejection. Cite [Proposition 77](docs/proposition_77_full_law_model_set_separation.md) when relying on finite-sample confidence-region separation from the complete declared model set, 1-Lipschitz transport of model distance, fixed-margin design bounds, or the requirement that rejection of a continuous family use a certified distance lower bound or equivalent feasibility proof rather than an ordinary best-fit upper bound. Cite [Proposition 78](docs/proposition_78_certified_continuous_model_separation.md) when relying on the exact multi-affine box enclosure for the P75 model, the certified continuous-family L-infinity lower bound, the mesh-gap convergence guarantee, the exact-rational branch-and-bound implementation, or its strict P77 rejection handoff. Cite [Proposition 79](docs/proposition_79_certified_sampling_radius.md) when relying on exact-rational one-sided certification of the finite-alphabet sampling radius or the rounding-direction-safe rejection comparison. Cite [Proposition 80](docs/proposition_80_simplex_coupled_model_separation.md) when relying on probability-simplex coupling of the P78 cell intervals, the exact interval-simplex L-infinity distance, or the never-weaker P80 box lower bound. Cite [Proposition 81](docs/proposition_81_projection_event_model_separation.md) when relying on exact projected-event parameter-box intervals, the event-size transfer to full-law L-infinity distance, the P81 never-weaker-than-P80 certificate, or its strict-improvement witness. Cite [Proposition 82](docs/proposition_82_exact_nested_projection_contrast.md) when relying on exact nested residual-event parameter-box intervals, the 256-contrast audit, the P82 never-weaker-than-P81 certificate, the direct residual extremization theorem, or the exact 1/12 versus 1/16 strict-improvement witness.
+### Target-side and continuous-family methods
+
+- Cite [P71](docs/proposition_71_target_provenance_noncircularity.md) for descriptor-derived target circularity and non-circular target provenance.
+- Cite [P72](docs/proposition_72_target_measurement_channel_robustness.md) for noisy-target residual transfer, witness attenuation/erasure, and target-channel stability.
+- Cite [P73](docs/proposition_73_target_channel_identifiability.md) for the three-view binary latent-target population inversion and two-view non-identifiability boundary.
+- Cite [P74](docs/proposition_74_finite_sample_target_channel_recovery.md) for finite-sample target-channel recovery and the covariance nondegeneracy gate.
+- Cite [P75](docs/proposition_75_target_model_adequacy_overidentification.md) for four-view overidentification, adequacy constraints, and full-law reconstruction.
+- Cite [P76](docs/proposition_76_finite_sample_target_model_adequacy.md) for finite-data inadequacy rejection based on simultaneous sixteen-cell uncertainty.
+- Cite [P77](docs/proposition_77_full_law_model_set_separation.md) for full-law confidence-region separation from the complete declared model set and the requirement for a certified distance lower bound.
+- Cite [P78](docs/proposition_78_certified_continuous_model_separation.md) for exact-rational multi-affine box enclosures, global branch-and-bound, and the P77 continuous-family rejection handoff.
+- Cite [P79](docs/proposition_79_certified_sampling_radius.md) for the exact-rational one-sided sampling-radius upper certificate.
+- Cite [P80](docs/proposition_80_simplex_coupled_model_separation.md) for probability-simplex coupling of P78 cell intervals and the never-weaker P80 box lower bound.
+- Cite [P81](docs/proposition_81_projection_event_model_separation.md) for exact projected-event box intervals and event-mass transfer to full-law L-infinity distance.
+- Cite [P82](docs/proposition_82_exact_nested_projection_contrast.md) for 256 exact nested residual-event intervals and the strict `1/12` versus `1/16` witness.
+- Cite [P83](docs/proposition_83_exact_projection_parity.md) for 22 exact projection-parity observables and the strict `L82 = 0 < L83 = 1/16` witness.
+- Cite [P84](docs/proposition_84_exact_joint_projection_parity_contrast.md) for 220 genuinely coupled projection-parity contrasts, exact common-endpoint extremization under shared P75 response parameters, and the strict `L83 = 0 < L84 = 1/32` witness.
+
+For P84 equation-level attribution, also cite the [P84 equation and provenance record](docs/p84_equation_provenance.md). The executable implementation is [`src/consciousness_bridge/joint_projection_parity_contrast_separation.py`](src/consciousness_bridge/joint_projection_parity_contrast_separation.py), with regression tests in [`tests/test_joint_projection_parity_contrast_separation.py`](tests/test_joint_projection_parity_contrast_separation.py).
 
 ## Citing a figure, algorithm, or implementation
 
-When a figure, numerical result, or implementation is used directly, include the repository citation and identify the artifact by its repository path or proposition number. The [Equation and citation map](docs/equation_and_citation_map.md), [Visual atlas](website/visual-atlas.html), and proposition records connect equations and figures to their assumptions, proofs, source files, and tests.
+When a figure, numerical result, or implementation is used directly, include the repository citation and identify the artifact by repository path or proposition number. The [Equation and Citation Map](docs/equation_and_citation_map.md), [Complete Figure Catalog](docs/figure_catalog.md), and [Visual Atlas](website/visual-atlas.html) connect equations and figures to assumptions, proofs, source files, and tests.
 
 For example:
 
 > Keikha, M. (2026). Figure or implementation associated with Proposition PXX. *Mathematical Consciousness Bridge* (Version 0.82.0). GitHub research repository. Direct artifact URL.
+
+For the current frontier visual, cite [P84 joint projection-parity contrast certificate](docs/figures/p84_joint_projection_parity_contrast.svg) together with the P84 proposition.
 
 ## Version-specific reproducibility
 
@@ -51,9 +70,9 @@ This repository is an evolving research program. For reproducible scholarly use:
 1. Cite the documented version used in your analysis.
 2. Record the exact Git commit SHA when results depend on a particular repository state.
 3. Cite the individual proposition or artifact when your argument depends on a specific theorem, figure, algorithm, or test.
-4. Do not attribute later propositions or later numerical results to an earlier version of the repository.
+4. Do not attribute later propositions or later numerical results to an earlier repository state.
 
-The current citation metadata identify Version **0.82.0** and theorem frontier **P82**. Future research versions should update the version number, theorem frontier, citation metadata, and archival record together.
+The current citation metadata identify Version **0.82.0** and theorem frontier **P84**. The release version and theorem frontier are intentionally tracked as separate concepts: theorem development can advance before the next formal release is cut, but public metadata must agree on both.
 
 ## DOI and archival status
 
@@ -70,80 +89,37 @@ Once an archival DOI exists, it should be added consistently to:
 
 Citation of this work should preserve its scientific status. The repository establishes a mathematical and computational **test architecture** for physical-to-experiential bridge claims under explicit assumptions. It does not presently claim that the final physical-to-experiential bridge has been derived, that consciousness has been identified with a scalar or state of matter, or that quantum mechanics has been shown to be incomplete.
 
-P71 separates successful factorization from independent target provenance. A target constructed from the tested descriptor can satisfy a bridge condition by construction.
+P71-P74 protect target provenance and target measurement. P75-P77 separate target-channel identifiability from model adequacy and then define a full-law finite-data rejection standard. P78-P84 progressively tighten the certified continuous-family separation side while preserving the one-sided interpretation of rejection.
 
-P72 separates latent target structure from target observation. Under the declared nondifferential measurement condition, target measurement can attenuate or erase a genuine bridge witness but cannot create a positive population residual from a latent target already screened off by the physical descriptor.
+P84's new statement is specifically about **shared-parameter compatibility**. Separate P83 parity probabilities can each lie inside their exact box ranges even when their signed contrast is outside the exact range attainable by one common P75 response-parameter assignment. The exact strict witness has `L83 = 0` and `L84 = 1/32`. This strengthens rejection of one declared statistical model family. It is not evidence that the latent state is consciousness and is not evidence that experience lies outside physics.
 
-P73 asks when target-channel reliability can be identified rather than assumed. Under one fixed physical stratum, a binary latent target, three conditionally independent binary target views, interior prevalence, and nonzero view loadings, P73 gives explicit population recovery up to a common latent-label swap. The P72 stability coefficients are invariant under that swap. P73 also proves constructively that two views alone do not generally identify the individual view reliabilities.
-
-P74 separates population identifiability from finite-data certifiability. Under the P73 model and IID sampling, it propagates a simultaneous confidence event for the eight-cell observed law into conservative bounds for the P73 latent quantities and the P72 stability coefficients. The covariance nondegeneracy gate prevents finite-data noise near the P73 singular set from being reported as a stable latent recovery.
-
-P75 then separates identifiability from **model adequacy**. Three binary views and one binary latent state have equal generic continuous dimension, so successful three-view recovery does not by itself supply an independent equality-based goodness-of-fit test. Adding a fourth binary view produces six generic overidentifying degrees of freedom. P75 derives observable covariance-tetrad, cross-triple, and fourth-centered-moment consistency obligations and supplements them with full four-view law reconstruction. Passing these tests establishes compatibility with the declared target-measurement model, not uniqueness or truth of that model.
-
-P76 adds finite-data model falsification to that adequacy layer. It places the sixteen-cell empirical law inside one simultaneous Hoeffding event, propagates that event to denominator-free P75 polynomial constraints, and permits model rejection when any necessary-constraint confidence interval excludes zero. P76 deliberately does not infer an ordinary chi-square null law from the P75 dimension count, and a failure to reject remains inconclusive rather than model acceptance.
-
-P77 then extends finite-data adequacy from selected necessary constraints to the complete declared observed-law model set. It inverts the simultaneous empirical-law confidence region against that model set and permits rejection only when the confidence region is certified disjoint from the model family. For continuous latent models, an ordinary candidate fit is only an upper bound on the minimum model distance, so P77 requires a sound lower bound or equivalent certified feasibility result before claiming full-law incompatibility.
-
-P78 supplies the continuous-family lower-bound mechanism for the specific P75 four-view binary latent model. It exploits the model's multi-affine nine-parameter map to compute exact rational cell enclosures on parameter boxes, aggregates those into a global L-infinity lower bound, and proves a mesh-width convergence guarantee.
-
-P79 certifies the finite-alphabet sampling-radius side of the P77 rejection gate with one-sided exact-rational numerical enclosures, so the comparison against the model-distance lower bound does not depend on unsafe floating-point rounding direction.
-
-P80 tightens the P78 parameter-box relaxation by intersecting the exact observed-cell intervals with probability normalization. The resulting interval-simplex distance is never weaker than the corresponding P78 coordinatewise bound, while it remains a lower bound on distance to the true continuous P75 box image. 
-
-P81 further tightens the declared continuous-family test by retaining exact parameter-box ranges for every nonempty projected binary event. Event-level mismatch is divided by the number of full observed cells in that event to obtain a sound full-law L-infinity lower bound. The combined P81 certificate is never weaker than P80 and can be strictly stronger. None of P78-P82 turns non-rejection into model validation or identifies the latent state with consciousness.
-
-P82 strengthens that chain again by retaining exact common-parameter structure for residual events formed from nested projected cylinders. It computes each residual interval directly from the P75 branchwise factorization rather than by subtracting separate P81 event intervals, audits 256 genuinely new residual events, and preserves the one-sided model-rejection interpretation. Its exact witness gives P80 = 0, P81 = 1/16, and P82 = 1/12. This is a stronger certificate against the declared P75 family, not evidence that its latent variable is consciousness.
-
-These remain conditional statistical target-measurement results, not validation of an experiential ontology or a privileged consciousness label.
-
-When citing a theorem, readers should consult the proposition document for its assumptions and scope rather than citing the theorem statement without its declared conditions.
+Non-rejection remains inconclusive throughout the chain. Passing a model test means compatibility with the declared assumptions and current data, not truth of the model or closure of the physical-to-experiential bridge.
 
 ## Citation metadata resources
 
 - [`CITATION.cff`](CITATION.cff): machine-readable Citation File Format metadata used by GitHub citation tools.
 - [`CITATION.bib`](CITATION.bib): ready-to-import BibTeX record.
-- [Detailed proposition record](docs/detailed_proposition_record.md): P1 through P82 chronological theorem record.
-- [Theorem roadmap](docs/theorem_roadmap.md): dependency-oriented theorem map.
-- [P72 equation and provenance record](docs/p72_equation_provenance.md): equation-level classification for the noisy-target theorem.
-- [P73 equation and provenance record](docs/p73_equation_provenance.md): equation-level classification and external latent-class context for the target-channel identifiability theorem.
-- [P74 equation and provenance record](docs/p74_equation_provenance.md): finite-sample concentration, perturbation, and target-channel confidence construction.
-- [P75 equation and provenance record](docs/p75_equation_provenance.md): just-identification, four-view overidentification, moment-adequacy constraints, and full-law reconstruction provenance.
-- [P76 equation and provenance record](docs/p76_equation_provenance.md): sixteen-cell concentration, denominator-free polynomial intervals, and finite-sample adequacy rejection provenance.
-- [P77 equation and provenance record](docs/p77_equation_provenance.md): full-law confidence-region inversion, model-distance transport, and certified lower-bound rejection provenance.
-- [P78 equation and provenance record](docs/p78_equation_provenance.md): multi-affine box enclosures, exact-rational global lower bounds, mesh-gap convergence, and P77 rejection handoff provenance.
-- [P79 equation and provenance record](docs/p79_equation_provenance.md): one-sided exact-rational sampling-radius certification and safe numerical handoff.
-- [P80 equation and provenance record](docs/p80_equation_provenance.md): probability-simplex coupling, exact interval-simplex distance, and P80/P78 dominance.
-- [P81 equation and provenance record](docs/p81_equation_provenance.md): projected-event box intervals, event-size distance transfer, dominance, and the P79 rejection handoff.
-- [P82 equation and provenance record](docs/p82_equation_provenance.md): exact nested residual-event intervals, direct residual extremization, dominance, and the P79 rejection handoff.
-- [Equation and citation map](docs/equation_and_citation_map.md): provenance of equations, assumptions, and external sources.
-- [Citation and reference policy](docs/citation_and_reference_policy.md): repository rules for attribution and scientific sourcing.
+- [Detailed Proposition Record](docs/detailed_proposition_record.md): P1 through P84 chronological theorem record.
+- [Theorem Roadmap](docs/theorem_roadmap.md): dependency-oriented theorem map.
+- [Research Navigation](docs/research_navigation.md): reader-oriented proof/code/figure paths.
+- [P72 equation and provenance record](docs/p72_equation_provenance.md): noisy-target theorem provenance.
+- [P73 equation and provenance record](docs/p73_equation_provenance.md): target-channel identifiability provenance.
+- [P74 equation and provenance record](docs/p74_equation_provenance.md): finite-sample target-channel recovery provenance.
+- [P75 equation and provenance record](docs/p75_equation_provenance.md): model-adequacy provenance.
+- [P76 equation and provenance record](docs/p76_equation_provenance.md): finite-data inadequacy provenance.
+- [P77 equation and provenance record](docs/p77_equation_provenance.md): full-law model-set separation provenance.
+- [P78 equation and provenance record](docs/p78_equation_provenance.md): continuous-model separation provenance.
+- [P79 equation and provenance record](docs/p79_equation_provenance.md): exact-rational sampling-radius provenance.
+- [P80 equation and provenance record](docs/p80_equation_provenance.md): simplex-coupled separation provenance.
+- [P81 equation and provenance record](docs/p81_equation_provenance.md): projection-event provenance.
+- [P82 equation and provenance record](docs/p82_equation_provenance.md): nested projection-contrast provenance.
+- [P83 equation and provenance record](docs/p83_equation_provenance.md): projection-parity provenance.
+- [P84 equation and provenance record](docs/p84_equation_provenance.md): joint projection-parity contrast provenance.
+- [Equation and Citation Map](docs/equation_and_citation_map.md): equation/source classification across the program.
+- [Citation and Reference Policy](docs/citation_and_reference_policy.md): repository attribution rules.
 
+## Proposition 84 method citation
 
-## Proposition 79
-
-For the exact-rational sampling-radius certificate, cite the repository together with [Proposition 79](docs/proposition_79_certified_sampling_radius.md) and its [equation provenance record](docs/p79_equation_provenance.md).
-
-
-## Proposition 80
-
-For the simplex-coupled continuous-model certificate, cite the repository together with [Proposition 80](docs/proposition_80_simplex_coupled_model_separation.md) and its [equation provenance record](docs/p80_equation_provenance.md). P80 is a computational tightening of the P78 continuous P75 separation certificate and should not be cited as an identification of consciousness.
-
-
-## Proposition 81
-
-For the projection-event continuous-model certificate, cite the repository together with [Proposition 81](docs/proposition_81_projection_event_model_separation.md) and its [equation provenance record](docs/p81_equation_provenance.md). P81 is a computational tightening of the P80/P78 continuous P75 separation chain and should not be cited as an identification of consciousness.
-
-## Proposition 82
-
-For the exact nested projection-contrast certificate, cite the repository together with [Proposition 82](docs/proposition_82_exact_nested_projection_contrast.md) and its [equation provenance record](docs/p82_equation_provenance.md). P82 is a conditional computational model-distance theorem for the declared P75 family. It should not be cited as an identification of consciousness.
-
-## P82 frontier citation note
-
-P82 strengthens the P81 continuous P75 separation chain through exact nested residual-event intervals. It is a conditional model-distance certificate and should not be cited as an identification of consciousness.
-
-
-## Proposition 83 method citation
-
-For work that specifically uses the newest continuous-family certificate, cite the program together with **Proposition 83: Exact Projection-Parity Certificate for Continuous P75 Separation**. P83 adds 22 parity observables, exact rational box extremization through the Bernoulli parity identity, and a strict witness with `L82 = 0 < L83 = 1/16`.
+For work that specifically uses the current continuous-family frontier, cite the program together with **Proposition 84: Exact Joint Projection-Parity Contrast Certificate for Continuous P75 Separation**. P84 adds 220 genuinely coupled parity contrasts, exact common-endpoint rational box extremization, and the strict witness `L83 = 0 < L84 = 1/32`.
 
 The result is a conditional model-distance certificate for the declared P75 latent family. It should not be cited as an identification, definition, or measurement of consciousness, and non-rejection remains inconclusive.
