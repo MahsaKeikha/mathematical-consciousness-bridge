@@ -1,5 +1,5 @@
-from pathlib import Path
 import xml.etree.ElementTree as ET
+from pathlib import Path
 
 
 FIGURE = Path("docs/figures/p81_projection_event_model_separation.svg")
