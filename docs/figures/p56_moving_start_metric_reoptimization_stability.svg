@@ -80,7 +80,8 @@
     <text x="460" y="755" class="eq">Δfixed=C*(r;s)-C*(r′;s) ≥ 0</text>
     <text x="460" y="789" class="eq">C*(r;s)-C*(r′;s′)</text>
     <text x="460" y="817" class="strong">≥ Δfixed-c(s,s′)</text>
-    <text x="460" y="843" class="small">Start motion subtracts at most one distance.</text>
+    <text x="460" y="837" class="small">Start motion subtracts at most</text>
+    <text x="460" y="853" class="small">one metric distance.</text>
   </g>
 
   <g id="block-strict" data-x="815" data-y="685" data-w="330" data-h="170">
