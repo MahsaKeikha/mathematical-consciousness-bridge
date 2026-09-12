@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from scripts.prepare_website import (
+    ASSET_VERSION,
     FOOTER_SCRIPT_TAG,
     NAVIGATION_STYLE_TAG,
     NAVIGATION_V2_STYLE_TAG,
@@ -71,6 +72,43 @@ def test_prepare_website_is_idempotent(tmp_path: Path) -> None:
     assert (first / "index.html").read_text(encoding="utf-8") == (
         second / "index.html"
     ).read_text(encoding="utf-8")
+
+
+def test_prepare_website_replaces_stale_navigation_assets_and_fallback(
+    tmp_path: Path,
+) -> None:
+    source = tmp_path / "website"
+    output = tmp_path / "_site"
+    source.mkdir()
+    _write_assets(source)
+    (source / "index.html").write_text(
+        "<html><head>"
+        '<script defer src="app.js"></script>'
+        '<link rel="stylesheet" href="navigation-v2.css" />'
+        "</head><body>"
+        '<header class="topbar"><a class="brand">Brand</a><nav>'
+        '<a href="research-lineage.html">Research Lineage</a>'
+        '<a href="research-map.html">Research Map</a>'
+        '<a href="physics-mathematics.html">Physics &amp; Math</a>'
+        '<a href="visual-atlas.html">Visual Atlas</a>'
+        "</nav></header>"
+        "</body></html>",
+        encoding="utf-8",
+    )
+
+    prepare_website(source, output)
+    built = (output / "index.html").read_text(encoding="utf-8")
+
+    assert f'app.js?v={ASSET_VERSION}' in built
+    assert f'navigation-v2.css?v={ASSET_VERSION}' in built
+    assert '<script defer src="app.js"></script>' not in built
+    assert 'href="navigation-v2.css"' not in built
+    assert '>Research Lineage</a>' not in built
+    assert '>Research Map</a>' not in built
+    assert '>Physics &amp; Math</a>' not in built
+    assert '>Visual Atlas</a>' not in built
+    assert '>Research</a>' in built
+    assert '>Explore</a>' in built
 
 
 def test_publication_type_scale_stays_restrained() -> None:
