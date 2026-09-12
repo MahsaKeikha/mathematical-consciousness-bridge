@@ -51,6 +51,37 @@ jobs:
           PY
       - name: Repair P85 reader contract
         run: python scripts/repair_p85_reader_contract.py
+      - name: Normalize Plain Language P85 status
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("website/plain-language.html")
+          text = path.read_text(encoding="utf-8")
+          replacements = {
+              "<strong>84</strong><span>proposition-level results</span>": "<strong>85</strong><span>proposition-level results</span>",
+              "<strong>P84</strong><span>current theorem frontier</span>": "<strong>P85</strong><span>current theorem frontier</span>",
+              "What the 84 results are doing": "What the 85 results are doing",
+              "P75-P84": "P75-P85",
+              "actual P84 research frontier": "actual P85 research frontier",
+              "shows how all 83 results connect": "shows how all 85 results connect",
+              "shows how all 84 results connect": "shows how all 85 results connect",
+          }
+          for old, new in replacements.items():
+              text = text.replace(old, new)
+          required = (
+              "<strong>85</strong><span>proposition-level results</span>",
+              "<strong>P85</strong><span>current theorem frontier</span>",
+              "What the 85 results are doing",
+              "P75-P85",
+              "actual P85 research frontier",
+              "shows how all 85 results connect",
+          )
+          for token in required:
+              if token not in text:
+                  raise RuntimeError(f"Plain Language page missing P85 status token: {token}")
+          path.write_text(text, encoding="utf-8")
+          PY
       - name: Normalize P84 and P85 Research Map semantics
         run: |
           python - <<'PY'
@@ -91,6 +122,6 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add website/index.html website/visual-atlas.html website/start-here.html website/research-map.html scripts/verify_repository.py scripts/repair_p85_reader_contract.py tests/test_reader_experience.py
+          git add website/index.html website/plain-language.html website/visual-atlas.html website/start-here.html website/research-map.html scripts/verify_repository.py scripts/repair_p85_reader_contract.py tests/test_reader_experience.py
           git commit -m "Repair P85 reader and verification contract"
           git push origin HEAD:main
