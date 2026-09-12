@@ -2,9 +2,9 @@
 
 The repository keeps page content as plain HTML files. This build step copies the
 website into a deployment directory and guarantees that every page loads the
-shared navigation behavior, navigation styles, and final publication typography.
-Keeping cross-page behavior centralized prevents page-to-page drift while
-preserving a fully auditable static-site build.
+shared navigation behavior, publication typography, reader-link behavior, and
+author attribution. Keeping cross-page behavior centralized prevents page-to-
+page drift while preserving a fully auditable static-site build.
 """
 
 from __future__ import annotations
@@ -14,6 +14,8 @@ import shutil
 from pathlib import Path
 
 SCRIPT_TAG = '<script defer src="app.js"></script>'
+READER_LINKS_SCRIPT_TAG = '<script defer src="reader-links.js"></script>'
+FOOTER_SCRIPT_TAG = '<script defer src="footer.js"></script>'
 NAVIGATION_STYLE_TAG = '<link rel="stylesheet" href="navigation.css" />'
 PUBLICATION_STYLE_TAG = '<link rel="stylesheet" href="publication.css" />'
 
@@ -44,11 +46,22 @@ def prepare_website(source: Path, output: Path) -> None:
             additions.append(PUBLICATION_STYLE_TAG)
         if SCRIPT_TAG not in text:
             additions.append(SCRIPT_TAG)
+        if READER_LINKS_SCRIPT_TAG not in text:
+            additions.append(READER_LINKS_SCRIPT_TAG)
+        if FOOTER_SCRIPT_TAG not in text:
+            additions.append(FOOTER_SCRIPT_TAG)
         if additions:
             text = text.replace("</head>", "".join(additions) + "</head>", 1)
             path.write_text(text, encoding="utf-8")
 
-    required_assets = ("app.js", "styles.css", "navigation.css", "publication.css")
+    required_assets = (
+        "app.js",
+        "reader-links.js",
+        "footer.js",
+        "styles.css",
+        "navigation.css",
+        "publication.css",
+    )
     for asset in required_assets:
         if not (output / asset).is_file():
             raise RuntimeError(f"website build is missing {asset}")
