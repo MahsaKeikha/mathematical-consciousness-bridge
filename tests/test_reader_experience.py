@@ -42,6 +42,31 @@ def test_first_reader_surfaces_match_p85_frontier() -> None:
     assert "actual P84 research frontier" not in plain
 
 
+def test_no_reader_facing_html_page_advertises_p84_as_current() -> None:
+    stale_current_frontier_tokens = (
+        "<strong>84</strong><span>proposition-level results</span>",
+        "<strong>P84</strong><span>current theorem frontier</span>",
+        "current P84 frontier",
+        "actual P84 research frontier",
+        "What the 84 results are doing",
+        "shows how all 84 results connect",
+        "shows how all 83 results connect",
+        "through Proposition 84",
+        "Eighty-four results",
+        "Open all 84 results",
+        "The 84 propositions by scientific role",
+        "complete 84-result dependency structure",
+        "You do not need to read 84 proofs in order",
+    )
+    offenders: dict[str, list[str]] = {}
+    for path in sorted((ROOT / "website").glob("*.html")):
+        text = path.read_text(encoding="utf-8")
+        hits = [token for token in stale_current_frontier_tokens if token in text]
+        if hits:
+            offenders[path.name] = hits
+    assert not offenders, offenders
+
+
 def test_visual_atlas_uses_public_paths_and_readable_display_rules() -> None:
     atlas = _text("website/visual-atlas.html")
     assert "../docs/" not in atlas
