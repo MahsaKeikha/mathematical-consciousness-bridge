@@ -1,6 +1,5 @@
 from pathlib import Path
 
-
 PAGE = Path("website/observer-research.html")
 
 
