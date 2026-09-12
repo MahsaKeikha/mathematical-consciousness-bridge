@@ -20,7 +20,7 @@ from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
 CURRENT_VERSION = "0.82.0"
-CURRENT_FRONTIER = "P84"
+CURRENT_FRONTIER = "P85"
 
 CORE_FILES = (
     "README.md",
@@ -43,6 +43,8 @@ CORE_FILES = (
     "docs/figure_catalog.md",
     "docs/falsification_program.md",
     "docs/proposition_84_exact_projection_parity_contrast.md",
+    "docs/proposition_85_exact_triple_projection_parity_functional.md",
+    "docs/p85_equation_provenance.md",
     "website/index.html",
     "website/start-here.html",
     "website/research-map.html",
@@ -120,6 +122,9 @@ def _verify_release_consistency() -> None:
         "current P83 frontier",
         "through Proposition 83",
         "Eighty-three results",
+        "current P84 frontier",
+        "through Proposition 84",
+        "Eighty-four results",
     )
     for marker in stale_frontier_markers:
         if marker in website_start or marker in research_map:
@@ -132,7 +137,7 @@ def _verify_release_consistency() -> None:
 def _verify_proposition_files() -> None:
     missing: list[int] = []
     duplicates: dict[int, list[str]] = {}
-    for number in range(1, 85):
+    for number in range(1, 86):
         matches = sorted((ROOT / "docs").glob(f"proposition_{number}_*.md"))
         if not matches:
             missing.append(number)

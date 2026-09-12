@@ -18,18 +18,18 @@ def test_shared_reader_experience_style_is_built_into_pages() -> None:
     assert '"reader-experience-v2.css"' in prepare
 
 
-def test_first_reader_surfaces_match_p84_frontier() -> None:
+def test_first_reader_surfaces_match_p85_frontier() -> None:
     start = _text("website/start-here.html")
     research_map = _text("website/research-map.html")
-    assert "The 84 propositions by scientific role" in start
-    assert "You do not need to read 84 proofs in order" in start
-    assert "complete 84-result dependency structure" in start
+    assert "The 85 propositions by scientific role" in start
+    assert "You do not need to read 85 proofs in order" in start
+    assert "complete 85-result dependency structure" in start
     assert "Physical descriptor" in start
     assert "Observation channel" in start
-    assert "through Proposition 84" in research_map
-    assert "Eighty-four results" in research_map
-    assert "<strong>84</strong>" in research_map
-    assert "P73-P84" in research_map
+    assert "through Proposition 85" in research_map
+    assert "Eighty-five results" in research_map
+    assert "<strong>85</strong>" in research_map
+    assert "P73-P85" in research_map
 
 
 def test_visual_atlas_uses_public_paths_and_readable_display_rules() -> None:
@@ -61,9 +61,9 @@ def test_figure_enrichment_generator_preserves_canonical_reader_key() -> None:
     assert 'text.replace(legacy_reading_key, reading_key, 1)' in source
 
 
-def test_repository_verifier_tracks_p84_and_all_84_propositions() -> None:
+def test_repository_verifier_tracks_p85_and_all_85_propositions() -> None:
     verifier = _text("scripts/verify_repository.py")
-    assert 'CURRENT_FRONTIER = "P84"' in verifier
-    assert "for number in range(1, 85):" in verifier
+    assert 'CURRENT_FRONTIER = "P85"' in verifier
+    assert "for number in range(1, 86):" in verifier
     assert '"docs/reader_experience_and_visual_standard.md"' in verifier
-    assert '"docs/proposition_84_exact_projection_parity_contrast.md"' in verifier
+    assert '"docs/proposition_85_exact_triple_projection_parity_functional.md"' in verifier
