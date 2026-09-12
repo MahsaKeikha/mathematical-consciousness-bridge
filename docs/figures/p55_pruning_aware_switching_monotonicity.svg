@@ -71,7 +71,7 @@
     <text x="80" y="743" class="head">5. Support preserved</text>
     <text x="80" y="778" class="eq">S(r′)=S(r)</text>
     <text x="80" y="810" class="strong">route release = 0 exactly</text>
-    <text x="80" y="839" class="small">Total release is acquisition release only.</text>
+    <text x="80" y="839" class="small">Total release is acquisition only.</text>
   </g>
 
   <g id="block-shortcut" data-x="435" data-y="705" data-w="330" data-h="160">
