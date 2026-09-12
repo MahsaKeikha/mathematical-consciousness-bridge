@@ -24,23 +24,26 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           RELEASE_TAG: v0.81.0
           RELEASE_TARGET: 9667001be66995a65f97a31b99fe9611d9ab0ca1
-          RELEASE_TITLE: v0.81.0 — P81 Projection-Event Model Separation
+          RELEASE_TITLE: v0.81.0 - P81 Projection-Event Model Separation
           RELEASE_NOTES: docs/releases/v0.81.0.md
         run: |
           set -euo pipefail
 
-          if gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
-            echo "$RELEASE_TAG is already published; leaving the existing release unchanged."
-            exit 0
-          fi
-
           test -f "$RELEASE_NOTES"
 
-          gh release create "$RELEASE_TAG" \
-            --repo "$GITHUB_REPOSITORY" \
-            --target "$RELEASE_TARGET" \
-            --title "$RELEASE_TITLE" \
-            --notes-file "$RELEASE_NOTES" \
-            --latest
+          if gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit "$RELEASE_TAG" \
+              --repo "$GITHUB_REPOSITORY" \
+              --title "$RELEASE_TITLE" \
+              --notes-file "$RELEASE_NOTES" \
+              --latest
+          else
+            gh release create "$RELEASE_TAG" \
+              --repo "$GITHUB_REPOSITORY" \
+              --target "$RELEASE_TARGET" \
+              --title "$RELEASE_TITLE" \
+              --notes-file "$RELEASE_NOTES" \
+              --latest
+          fi
 
           gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY"
