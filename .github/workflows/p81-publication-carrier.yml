@@ -45,11 +45,49 @@ jobs:
           python /tmp/p81_integration.py
           python - <<'PY'
           from pathlib import Path
+
+          # Repair stale README citation example that predates the P80 release.
           path = Path('README.md')
           text = path.read_text(encoding='utf-8')
           text = text.replace('version      = {0.78.0}', 'version      = {0.81.0}')
           text = text.replace('Current documented theorem frontier: P78.', 'Current documented theorem frontier: P81.')
           path.write_text(text, encoding='utf-8')
+
+          # Keep both scientific-boundary phrases explicit and line-wrap independent.
+          path = Path('src/consciousness_bridge/projection_event_model_separation.py')
+          text = path.read_text(encoding='utf-8')
+          old = (
+              'All certification arithmetic uses ``fractions.Fraction``. This is a numerical and statistical certification result for the declared P75\n'
+              'latent model. It does not validate that model, does not identify any latent state\n'
+              'with consciousness, and does not solve the physical-to-experiential bridge.\n'
+          )
+          new = (
+              'All certification arithmetic uses ``fractions.Fraction``. This is a numerical\n'
+              'and statistical certification result for the declared P75 latent model.\n'
+              'It does not validate that model.\n'
+              'It does not identify any latent state with consciousness.\n'
+              'It does not solve the physical-to-experiential bridge.\n'
+          )
+          if old not in text:
+              raise RuntimeError('P81 scientific-boundary integration marker missing')
+          path.write_text(text.replace(old, new, 1), encoding='utf-8')
+
+          # Synchronize website counts and frontier wording with the actual theorem files.
+          path = Path('website/index.html')
+          text = path.read_text(encoding='utf-8')
+          text = text.replace('<strong>80</strong><span>proposition-level results</span>', '<strong>81</strong><span>proposition-level results</span>')
+          text = text.replace('See all 80 results grouped by scientific role', 'See all 81 results grouped by scientific role')
+          text = text.replace('P71-P80 strengthen the target side of the bridge test', 'P71-P81 strengthen the target side of the bridge test')
+          path.write_text(text, encoding='utf-8')
+
+          # Advance the release-level README caption guard; the static figure remains P1-P31.
+          path = Path('tests/test_theorem_roadmap_caption.py')
+          text = path.read_text(encoding='utf-8')
+          old = 'assert "P1 through P80 with explicit dependency branches" in text'
+          new = 'assert "P1 through P81 with explicit dependency branches" in text'
+          if old not in text:
+              raise RuntimeError('roadmap-caption release guard marker missing')
+          path.write_text(text.replace(old, new, 1), encoding='utf-8')
           PY
       - name: Validate complete P81 publication
         run: |
