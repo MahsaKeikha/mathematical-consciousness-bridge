@@ -56,6 +56,21 @@ The repository therefore makes a deliberate distinction between **mathematical c
 
 ---
 
+## A ten-minute first read
+
+If you want the shortest coherent path before opening proofs:
+
+1. Read the central question and project-in-one-picture above.
+2. Read the six recurring terms on the public [Start Here page](website/start-here.html#reader-primer), or keep the [Glossary](docs/glossary.md) open.
+3. Read P19 in plain language as the core sufficiency question.
+4. Read P71-P76 as target integrity and model-adequacy safeguards.
+5. Read P77-P84 as the progression from finite-data model-set separation to exact shared-parameter parity incompatibility.
+6. Finish with the scientific boundaries: rejection of a declared model is not an ontological conclusion about consciousness.
+
+For the presentation rules used across the website and documentation, see the [Reader Experience and Visual Presentation Standard](docs/reader_experience_and_visual_standard.md).
+
+---
+
 ## Choose the reading path that fits you
 
 | If you are... | Start with | Then read |
@@ -188,6 +203,7 @@ A reader should leave the repository with five boundaries completely clear:
 - **Every proposition in compact form:** [Detailed Proposition Record](docs/detailed_proposition_record.md)
 - **Equation-level provenance:** [Equation and Citation Map](docs/equation_and_citation_map.md)
 - **All curated visuals:** [Figure Catalog](docs/figure_catalog.md)
+- **Reader and visual presentation standard:** [Reader Experience and Visual Presentation Standard](docs/reader_experience_and_visual_standard.md)
 - **What would count as failure:** [Falsification Program](docs/falsification_program.md)
 - **How to cite the work:** [Citation Guide](CITATION.md)
 - **Reproduce everything:** [Reproducibility Guide](docs/reproducibility.md)

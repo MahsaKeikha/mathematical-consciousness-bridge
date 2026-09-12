@@ -15,7 +15,7 @@ import re
 import shutil
 from pathlib import Path
 
-ASSET_VERSION = "20260912-nav12-p84"
+ASSET_VERSION = "20260912-nav13-reader"
 SCRIPT_TAG = f'<script defer src="app.js?v={ASSET_VERSION}"></script>'
 READER_LINKS_SCRIPT_TAG = '<script defer src="reader-links.js"></script>'
 FOOTER_SCRIPT_TAG = '<script defer src="footer.js"></script>'
@@ -31,6 +31,9 @@ RESEARCH_GUIDE_STYLE_TAG = (
 CONTRAST_STYLE_TAG = (
     f'<link rel="stylesheet" href="contrast-v2.css?v={ASSET_VERSION}" />'
 )
+READER_EXPERIENCE_STYLE_TAG = (
+    f'<link rel="stylesheet" href="reader-experience-v2.css?v={ASSET_VERSION}" />'
+)
 
 APP_SCRIPT_PATTERN = re.compile(
     r'<script\s+defer\s+src="app\.js(?:\?v=[^"]+)?"></script>'
@@ -43,6 +46,9 @@ RESEARCH_GUIDE_STYLE_PATTERN = re.compile(
 )
 CONTRAST_STYLE_PATTERN = re.compile(
     r'<link\s+rel="stylesheet"\s+href="contrast-v2\.css(?:\?v=[^"]+)?"\s*/?>'
+)
+READER_EXPERIENCE_STYLE_PATTERN = re.compile(
+    r'<link\s+rel="stylesheet"\s+href="reader-experience-v2\.css(?:\?v=[^"]+)?"\s*/?>'
 )
 TOPBAR_NAV_PATTERN = re.compile(
     r'(<header\s+class="topbar">.*?<nav(?:\s[^>]*)?>).*?(</nav>)',
@@ -66,6 +72,7 @@ def _normalize_navigation_assets(text: str) -> str:
     text = NAVIGATION_V2_STYLE_PATTERN.sub(NAVIGATION_V2_STYLE_TAG, text)
     text = RESEARCH_GUIDE_STYLE_PATTERN.sub(RESEARCH_GUIDE_STYLE_TAG, text)
     text = CONTRAST_STYLE_PATTERN.sub(CONTRAST_STYLE_TAG, text)
+    text = READER_EXPERIENCE_STYLE_PATTERN.sub(READER_EXPERIENCE_STYLE_TAG, text)
     return text
 
 
@@ -114,6 +121,8 @@ def prepare_website(source: Path, output: Path) -> None:
             additions.append(RESEARCH_GUIDE_STYLE_TAG)
         if CONTRAST_STYLE_TAG not in text:
             additions.append(CONTRAST_STYLE_TAG)
+        if READER_EXPERIENCE_STYLE_TAG not in text:
+            additions.append(READER_EXPERIENCE_STYLE_TAG)
         if SCRIPT_TAG not in text:
             additions.append(SCRIPT_TAG)
         if READER_LINKS_SCRIPT_TAG not in text:
@@ -135,6 +144,7 @@ def prepare_website(source: Path, output: Path) -> None:
         "publication-v2.css",
         "research-guide-v2.css",
         "contrast-v2.css",
+        "reader-experience-v2.css",
     )
     for asset in required_assets:
         if not (output / asset).is_file():

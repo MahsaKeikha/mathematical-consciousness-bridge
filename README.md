@@ -33,6 +33,8 @@ This repository is a mathematical-physics research program for the **physical-to
 
 > **Visual reading standard.** Every reader-facing figure now has a clear title, an embedded SVG description, a nearby caption or atlas explanation, a scientific-status boundary, and a direct route to the proof or source context. Use the [Complete Figure Catalog](docs/figure_catalog.md) to understand every visual without searching the repository, and the [Figure Caption and Description Standard](docs/figure_caption_and_description_standard.md) for the enforced documentation rules.
 
+> **Reader experience standard.** The public record uses progressive disclosure: plain-language question, formal result, audit trail, and interpretation boundary. Figure sizes are capped for readability rather than page dominance, and complex theorem graphics always retain a full-resolution route. See the [Reader Experience and Visual Presentation Standard](docs/reader_experience_and_visual_standard.md).
+
 ---
 
 # What this project is trying to achieve, in plain language

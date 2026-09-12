@@ -8,6 +8,10 @@ The proposition record is an audit trail, not a substitute for the scientific na
 
 The scientific status rule is strict throughout: a theorem is only a theorem under its declared assumptions, an implementation is not empirical evidence, a simulation is not an ontological result, and the physical-to-experiential bridge remains open unless separately established.
 
+### How to use this record
+
+A first-time reader should not read this page as 84 disconnected proofs. Use it as an audit index: identify the scientific role of a proposition, open its direct proof when needed, then follow implementation/tests/provenance links for verification. For the shortest conceptual path, begin with [Start Here](../START_HERE.md) and [Research Navigation](research_navigation.md). The [Reader Experience and Visual Presentation Standard](reader_experience_and_visual_standard.md) explains the repository-wide explanation and visual hierarchy.
+
 ---
 
 ## Complete P1 to P84 chronology

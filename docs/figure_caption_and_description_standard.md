@@ -39,6 +39,14 @@ Every SVG under [`docs/figures/`](figures/) must contain:
 
 The embedded description matters because figures are often opened directly, reused outside the README, viewed with assistive technology, or encountered through the visual atlas rather than through the paragraph that originally introduced them.
 
+## Display-size standard
+
+Reader-facing figures must be sized for inspection rather than spectacle. The website uses three display classes: theorem/architecture figures at a preferred reading width of roughly 760 to 980 CSS pixels, figure-and-text cards with a typical figure area of roughly 520 to 720 CSS pixels, and simple atlas thumbnails around 205 to 250 CSS pixels high. On smaller screens, figures use the available width while preserving aspect ratio.
+
+No theorem figure should normally consume more than about 72 percent of the viewport height when the surrounding explanation can remain visible. Full-resolution SVGs remain directly available from the figure link. If a figure becomes unreadable at these sizes, the correct fix is to rewrap labels, simplify the composition, or split the visual into panels. Shrinking text until it technically fits is not an acceptable layout repair.
+
+All web figure containers must preserve the complete image with containment rather than cropping. Complex theorem figures should use the wider theorem presentation instead of being forced into a thumbnail slot. These display rules are mirrored in the [Reader Experience and Visual Presentation Standard](reader_experience_and_visual_standard.md).
+
 ---
 
 ## Visual layout and connector standard

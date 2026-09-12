@@ -2,7 +2,7 @@
 
 This page is the reading and reference index for the **Mathematical Consciousness Bridge** repository. It is organized by scientific dependency rather than by development chronology so that a reader can move from the research question to proofs, figures, code, falsification conditions, and citation resources without searching through the repository manually.
 
-**First-time reader:** begin with [Start Here](../START_HERE.md) for the shortest orientation, keep the [Glossary and Reader Vocabulary](glossary.md) nearby for terminology, and use the [Reproducibility Guide](reproducibility.md) when you want to run the code, tests, or generated figure atlases.
+**First-time reader:** begin with [Start Here](../START_HERE.md) for the shortest orientation, keep the [Glossary and Reader Vocabulary](glossary.md) nearby for terminology, use the [Reader Experience and Visual Presentation Standard](reader_experience_and_visual_standard.md) to understand how the public record is organized, and use the [Reproducibility Guide](reproducibility.md) when you want to run the code, tests, or generated figure atlases.
 
 The current documented theorem frontier is **P84**. The complete proposition record runs from **P1 through P84**. P71-P84 form a target-side methodology branch descending from the P19 physical-sufficiency question. They are not extensions of the P61-P70 calibration branch.
 

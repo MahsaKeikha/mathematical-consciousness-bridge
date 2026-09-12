@@ -1,0 +1,175 @@
+/* Reader experience v2: publication-safe image sizing and first-reader structure. */
+
+:root {
+  --figure-reading-max: 980px;
+  --figure-card-media-max: 720px;
+  --figure-card-height-max: 500px;
+  --figure-theorem-height-max: 640px;
+}
+
+/* Images should be large enough to inspect, but never dominate the page. */
+.figure-card {
+  grid-template-columns: minmax(0, 1.42fr) minmax(250px, 0.58fr);
+  align-items: center;
+}
+
+.figure-card > *,
+.theorem-figure-shell > *,
+.result,
+.evidence-card,
+.reader-primer-card,
+.reader-step-card {
+  min-width: 0;
+}
+
+.figure-card img {
+  display: block;
+  width: min(100%, var(--figure-card-media-max));
+  max-width: 100%;
+  height: auto;
+  max-height: min(64vh, var(--figure-card-height-max));
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.theorem-figure-shell {
+  width: min(100%, var(--figure-reading-max));
+  margin: 24px auto 0;
+  padding: clamp(8px, 1.4vw, 16px);
+}
+
+.theorem-figure-shell img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: min(72vh, var(--figure-theorem-height-max));
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.atlas-thumb,
+.result .atlas-thumb {
+  width: 100%;
+  height: clamp(205px, 21vw, 250px);
+  max-height: 250px;
+  object-fit: contain;
+}
+
+.evidence-card img {
+  height: clamp(205px, 20vw, 245px);
+  max-height: 245px;
+  object-fit: contain;
+}
+
+.figure-card a:has(img),
+.theorem-figure-shell a,
+.panel a:has(img) {
+  display: block;
+  min-width: 0;
+}
+
+.figure-display-note {
+  max-width: 78ch;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.58;
+}
+
+.reader-primer-grid,
+.reader-step-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+  margin-top: 24px;
+}
+
+.reader-step-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.reader-primer-card,
+.reader-step-card {
+  padding: 19px 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--paper);
+}
+
+.reader-primer-card strong,
+.reader-step-card strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--ink);
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.reader-primer-card p,
+.reader-step-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.58;
+}
+
+.reader-step-card span {
+  display: inline-grid;
+  width: 26px;
+  height: 26px;
+  margin-bottom: 10px;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+/* Long equations and labels may wrap or scroll, but may never widen a card. */
+.equation,
+pre,
+code,
+.figure-card,
+.frontier-summary-card,
+.reader-primer-card,
+.reader-step-card {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 900px) {
+  .figure-card,
+  .reader-primer-grid,
+  .reader-step-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .figure-card img {
+    width: min(100%, 820px);
+    max-height: min(66vh, 540px);
+  }
+
+  .reader-primer-grid,
+  .reader-step-grid {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 680px) {
+  .theorem-figure-shell img {
+    max-height: min(62vh, 500px);
+  }
+
+  .atlas-thumb,
+  .result .atlas-thumb,
+  .evidence-card img {
+    height: auto;
+    max-height: 230px;
+  }
+
+  .reader-primer-card,
+  .reader-step-card {
+    padding: 16px 17px;
+  }
+}
