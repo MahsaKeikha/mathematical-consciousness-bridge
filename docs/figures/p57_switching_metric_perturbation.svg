@@ -1,98 +1,108 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
-  <title id="title">Proposition 57: Switching-metric perturbation reoptimization stability</title>
-  <desc id="desc">What this figure shows: Proved deterministic metric-perturbation theorem. P57 removes the fixed-metric limitation stated explicitly in P56. It quantifies how much the exact P54 switching optimum can change when the declared transition metric itself changes between sequential reoptimization steps.. Visible guideposts include: Sequential reoptimization remains quantitatively controlled when residual demand, setup origin, and transition geometry all change.; Old experiment state; (r, s, c); Residual demand r; Current setup s, switching metric c; New experiment state. How to read it: follow the diagram in the direction of its arrows and use each box, panel, inequality, or highlighted region only with the meaning printed beside it. Main takeaway: this is the visual companion to Proposition 57; the proposition document supplies the assumptions, proof, and exact scope of every implication. Scientific status: Proposition 57 theorem/certificate visual. It is not independent empirical evidence and does not, by itself, identify a physical or latent variable with consciousness.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1000" viewBox="0 0 1200 1000" role="img" aria-labelledby="title desc">
+  <title id="title">P57 deterministic switching-metric perturbation stability</title>
+  <desc id="desc">What this figure shows: P57 controls exact P54 reoptimization when residual demand, setup origin, and a declared finite switching metric all change. The theorem assumes two valid finite metrics on one common relevant point set and measures their uniform difference by delta. How to read it: the three upper input cards specify the old exact state, the new exact state, and the sharp q-times-delta stability bound for changing only the metric at a fixed support and start. All three feed the central P55-P56-P57 certificate, where the fixed-geometry release is reduced by the smaller of two valid start-motion-plus-metric-drift penalties. The lower cards explain the sharp route-edge factor, the sufficient strict-decrease condition, and a route-reuse upper bound that can be tighter than the uniform perturbation penalty. Main takeaway: if the fixed-geometry release exceeds the certified perturbation penalty then the new exact total cost is strictly smaller, but the converse is not claimed because the penalty is worst-case. Scientific status: Deterministic robustness theorem for operational scheduling under two declared finite metrics. It does not estimate a metric from data, validate pruning, prove minimax adaptive efficiency, identify a metric or route quantity with consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness.</desc>
   <defs>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
-      <path d="M0 0 L10 5 L0 10 z" fill="#334155"/>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
     </marker>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.13"/>
-    </filter>
     <style>
-      .h1 { font: 700 30px system-ui,-apple-system,"Segoe UI",sans-serif; fill:#0f172a; }
-      .sub { font: 400 16px system-ui,-apple-system,"Segoe UI",sans-serif; fill:#475569; }
-      .bt { font: 700 18px system-ui,-apple-system,"Segoe UI",sans-serif; fill:#0f172a; }
-      .tx { font: 400 14px system-ui,-apple-system,"Segoe UI",sans-serif; fill:#334155; }
-      .math { font: 600 14px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; fill:#0f172a; }
-      .small { font: 400 12px system-ui,-apple-system,"Segoe UI",sans-serif; fill:#64748b; }
-      .arrow { fill:none; stroke:#334155; stroke-width:2.2; marker-end:url(#arrow); }
-      .thin { fill:none; stroke:#64748b; stroke-width:1.5; }
+      .title{font:700 30px Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 16px Arial,sans-serif;fill:#475569}
+      .head{font:700 18px Arial,sans-serif;fill:#0f172a}
+      .copy{font:400 15px Arial,sans-serif;fill:#334155}
+      .small{font:400 13.5px Arial,sans-serif;fill:#475569}
+      .eq{font:600 15px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .strong{font:700 16px Arial,sans-serif;fill:#0f172a}
+      .route{font:700 13px Arial,sans-serif;fill:#475569}
+      .arrow{stroke:#334155;stroke-width:2.5;fill:none;marker-end:url(#arrow)}
     </style>
   </defs>
 
-  <rect width="1200" height="760" rx="24" fill="#f8fafc"/>
-  <text x="60" y="58" class="h1">P57: Switching-metric perturbation stability</text>
-  <text x="60" y="88" class="sub">Sequential reoptimization remains quantitatively controlled when residual demand, setup origin, and transition geometry all change.</text>
+  <rect width="1200" height="1000" rx="24" fill="#f8fafc"/>
+  <text x="60" y="58" class="title">P57  Deterministic switching-metric perturbation stability</text>
+  <text x="60" y="90" class="subtitle">Exact reoptimization remains auditable when residual demand shrinks, the setup origin moves, and the declared switching geometry changes.</text>
 
-  <g filter="url(#shadow)">
-    <rect x="55" y="135" width="300" height="150" rx="18" fill="#ffffff" stroke="#94a3b8"/>
-    <text x="82" y="170" class="bt">Old experiment state</text>
-    <text x="82" y="202" class="math">(r, s, c)</text>
-    <text x="82" y="232" class="tx">Residual demand r</text>
-    <text x="82" y="255" class="tx">Current setup s, switching metric c</text>
+  <g id="block-old" data-x="55" data-y="130" data-w="330" data-h="190">
+    <rect x="55" y="130" width="330" height="190" rx="18" fill="#ffffff" stroke="#64748b" stroke-width="2"/>
+    <text x="80" y="168" class="head">1. Old exact state</text>
+    <text x="80" y="207" class="strong">(r, s, c)</text>
+    <text x="80" y="240" class="eq">C*c(r;s)</text>
+    <text x="80" y="271" class="copy">Residual demand r; setup start s.</text>
+    <text x="80" y="298" class="small">c is a declared valid finite metric.</text>
   </g>
 
-  <g filter="url(#shadow)">
-    <rect x="845" y="135" width="300" height="150" rx="18" fill="#ffffff" stroke="#94a3b8"/>
-    <text x="872" y="170" class="bt">New experiment state</text>
-    <text x="872" y="202" class="math">(r′, s′, c′)</text>
-    <text x="872" y="232" class="tx">r′ ≤ r after new evidence / safe pruning</text>
-    <text x="872" y="255" class="tx">Setup and metric may both move</text>
+  <g id="block-new" data-x="435" data-y="130" data-w="330" data-h="190">
+    <rect x="435" y="130" width="330" height="190" rx="18" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+    <text x="460" y="168" class="head">2. New exact state</text>
+    <text x="460" y="207" class="strong">(r′, s′, c′)</text>
+    <text x="460" y="240" class="eq">r′ ≤ r</text>
+    <text x="460" y="271" class="copy">Demand may shrink; setup may move.</text>
+    <text x="460" y="298" class="small">c′ is another valid finite metric.</text>
   </g>
 
-  <g filter="url(#shadow)">
-    <rect x="430" y="120" width="340" height="180" rx="20" fill="#eef2ff" stroke="#6366f1" stroke-width="1.6"/>
-    <text x="458" y="157" class="bt">Uniform metric drift</text>
-    <text x="458" y="191" class="math">δ = maxₓ,ᵧ |c(x,y) − c′(x,y)|</text>
-    <text x="458" y="226" class="tx">A feasible route uses at most q(S;s)</text>
-    <text x="458" y="250" class="tx">nontrivial transition edges.</text>
-    <text x="458" y="278" class="math">|L*c − L*c′| ≤ q δ</text>
+  <g id="block-metric" data-x="815" data-y="130" data-w="330" data-h="190">
+    <rect x="815" y="130" width="330" height="190" rx="18" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+    <text x="840" y="168" class="head">3. Uniform metric drift</text>
+    <text x="840" y="205" class="eq">δ = maxₓ,ᵧ |c(x,y)-c′(x,y)|</text>
+    <text x="840" y="239" class="eq">|L*c(S;s)-L*c′(S;s)|</text>
+    <text x="840" y="267" class="strong">≤ q(S;s) δ</text>
+    <text x="840" y="298" class="small">Common relevant point set is required.</text>
   </g>
 
-  <path d="M355 210 L430 210" class="arrow"/>
-  <path d="M770 210 L845 210" class="arrow"/>
+  <path id="arrow-1" class="arrow" d="M220 320 V365 H360 V390" data-source="block-old" data-target="block-combined"/>
+  <path id="arrow-2" class="arrow" d="M600 320 V390" data-source="block-new" data-target="block-combined"/>
+  <path id="arrow-3" class="arrow" d="M980 320 V365 H840 V390" data-source="block-metric" data-target="block-combined"/>
 
-  <g filter="url(#shadow)">
-    <rect x="70" y="365" width="310" height="150" rx="18" fill="#ecfdf5" stroke="#10b981"/>
-    <text x="97" y="400" class="bt">P55 residual release</text>
-    <text x="97" y="433" class="math">Δfixed = C*c(r;s) − C*c(r′;s)</text>
-    <text x="97" y="463" class="math">Δfixed ≥ 0</text>
-    <text x="97" y="490" class="small">Acquisition release + support-deletion route release.</text>
+  <text x="600" y="372" class="route" text-anchor="middle">combine P55 fixed-geometry release with the two valid P56-P57 perturbation orders</text>
+
+  <g id="block-combined" data-x="120" data-y="390" data-w="960" data-h="260">
+    <rect x="120" y="390" width="960" height="260" rx="20" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+    <text x="600" y="430" text-anchor="middle" class="head">4. Combined deterministic reoptimization certificate</text>
+    <text x="600" y="469" text-anchor="middle" class="eq">Δfixed = C*c(r;s) - C*c(r′;s) ≥ 0</text>
+    <text x="600" y="505" text-anchor="middle" class="eq">A = c(s,s′) + q(S′;s′)δ</text>
+    <text x="600" y="536" text-anchor="middle" class="eq">B = q(S′;s)δ + c′(s,s′)</text>
+    <text x="600" y="569" text-anchor="middle" class="strong">P57 = min{A, B}</text>
+    <text x="600" y="607" text-anchor="middle" class="strong">C*c(r;s) - C*c′(r′;s′) ≥ Δfixed - P57</text>
+    <text x="600" y="635" text-anchor="middle" class="small">S′ = S(r′). The minimum keeps the better of the two valid perturbation orders.</text>
   </g>
 
-  <g filter="url(#shadow)">
-    <rect x="445" y="365" width="310" height="150" rx="18" fill="#fff7ed" stroke="#f97316"/>
-    <text x="472" y="400" class="bt">P56 start-motion term</text>
-    <text x="472" y="433" class="math">|L*(S;s) − L*(S;s′)| ≤ c(s,s′)</text>
-    <text x="472" y="463" class="tx">Moving the apparatus origin can erode</text>
-    <text x="472" y="487" class="tx">a fixed-start saving by at most one distance.</text>
+  <g id="block-q" data-x="55" data-y="700" data-w="330" data-h="160">
+    <rect x="55" y="700" width="330" height="160" rx="18" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="80" y="738" class="head">5. Sharp qδ stability</text>
+    <text x="80" y="772" class="eq">q=|S|-1: no start or s∈S</text>
+    <text x="80" y="802" class="eq">q=|S|: s∉S</text>
+    <text x="80" y="832" class="small">q counts nontrivial route edges.</text>
+    <text x="80" y="852" class="small">The coefficient is sharp in general.</text>
   </g>
 
-  <g filter="url(#shadow)">
-    <rect x="820" y="365" width="310" height="150" rx="18" fill="#eff6ff" stroke="#3b82f6"/>
-    <text x="847" y="400" class="bt">P57 metric-drift term</text>
-    <text x="847" y="433" class="math">|L*c − L*c′| ≤ q δ</text>
-    <text x="847" y="463" class="tx">The route optimum is Lipschitz in the</text>
-    <text x="847" y="487" class="tx">finite metric under sup-norm perturbation.</text>
+  <g id="block-strict" data-x="435" data-y="700" data-w="330" data-h="160">
+    <rect x="435" y="700" width="330" height="160" rx="18" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+    <text x="460" y="738" class="head">6. Strict-decrease certificate</text>
+    <text x="460" y="775" class="strong">Δfixed &gt; P57</text>
+    <text x="460" y="809" class="eq">⇒ C*c′(r′;s′) &lt; C*c(r;s)</text>
+    <text x="460" y="836" class="small">Sufficient only; converse not claimed.</text>
+    <text x="460" y="856" class="small">P57 is a worst-case perturbation penalty.</text>
   </g>
 
-  <path d="M205 285 C205 320 220 335 225 365" class="arrow"/>
-  <path d="M600 300 L600 365" class="arrow"/>
-  <path d="M995 285 C995 320 980 335 975 365" class="arrow"/>
-
-  <g filter="url(#shadow)">
-    <rect x="190" y="585" width="820" height="120" rx="22" fill="#ffffff" stroke="#475569" stroke-width="1.8"/>
-    <text x="225" y="620" class="bt">Combined P55 + P56 + P57 certificate</text>
-    <text x="225" y="654" class="math">C*c(r;s) − C*c′(r′;s′) ≥ Δfixed − P57</text>
-    <text x="225" y="682" class="math">P57 = min{ c(s,s′)+q(S′;s′)δ , q(S′;s)δ+c′(s,s′) }</text>
+  <g id="block-reuse" data-x="815" data-y="700" data-w="330" data-h="160">
+    <rect x="815" y="700" width="330" height="160" rx="18" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
+    <text x="840" y="738" class="head">7. Route-reuse upper bound</text>
+    <text x="840" y="772" class="eq">L*c′(S;s′) ≤ ℓc′(π*c;s′)</text>
+    <text x="840" y="802" class="eq">L*c′ - L*c ≤</text>
+    <text x="840" y="827" class="eq">ℓc′(π*c;s′) - L*c</text>
+    <text x="840" y="853" class="small">Can be tighter than the uniform qδ bound.</text>
   </g>
 
-  <path d="M225 515 C225 555 360 565 440 585" class="arrow"/>
-  <path d="M600 515 L600 585" class="arrow"/>
-  <path d="M975 515 C975 555 840 565 760 585" class="arrow"/>
+  <path id="arrow-4" class="arrow" d="M300 650 V675 H220 V700" data-source="block-combined" data-target="block-q"/>
+  <path id="arrow-5" class="arrow" d="M600 650 V700" data-source="block-combined" data-target="block-strict"/>
+  <path id="arrow-6" class="arrow" d="M900 650 V675 H980 V700" data-source="block-combined" data-target="block-reuse"/>
 
-  <rect x="425" y="715" width="350" height="30" rx="15" fill="#ecfdf5" stroke="#10b981"/>
-  <text x="600" y="735" text-anchor="middle" class="math">Δfixed &gt; P57  ⇒  strict total-cost decrease</text>
-
-  <text x="60" y="742" class="small">Boundary: c and c′ are declared valid metrics. Metric-estimation uncertainty is a separate theorem target.</text>
+  <g id="block-boundary" data-x="90" data-y="880" data-w="1020" data-h="115">
+    <rect x="90" y="880" width="1020" height="115" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="118" y="908" class="head">Deterministic and scientific boundary</text>
+    <text x="118" y="932" class="small">Both c and c′ must be valid finite metrics on the common relevant point set; metric estimation is a separate statistical problem.</text>
+    <text x="118" y="953" class="small">Pruning validity and adaptive statistical efficiency are external to this deterministic perturbation theorem.</text>
+    <text x="118" y="974" class="small">P57 concerns operational scheduling geometry; it does not identify a metric or route quantity with consciousness.</text>
+    <text x="118" y="992" class="small">It does not establish a physical-to-experiential bridge or imply quantum incompleteness.</text>
+  </g>
 </svg>
