@@ -53,7 +53,7 @@ jobs:
               text = read(path)
           '''
           guarded_reader_test = reader_test_guard + '''    if "test_first_reader_surfaces_match_p85_frontier" in text:
-              return
+                  return
           '''
           if 'if "test_first_reader_surfaces_match_p85_frontier" in text:' not in source:
               if reader_test_guard not in source:
