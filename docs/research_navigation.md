@@ -2,7 +2,9 @@
 
 This page is the reading and reference index for the **Mathematical Consciousness Bridge** repository. It is organized by scientific dependency rather than by development chronology so that a reader can move from the research question to proofs, figures, code, falsification conditions, and citation resources without searching through the repository manually.
 
-The current documented theorem frontier is **P80**. The complete proposition record runs from **P1 through P81**. P71-P80 form a target-side methodology branch descending from the P19 physical-sufficiency question. They are not extensions of the P61-P70 calibration branch.
+**First-time reader:** begin with [Start Here](../START_HERE.md) for the shortest orientation, keep the [Glossary and Reader Vocabulary](glossary.md) nearby for terminology, and use the [Reproducibility Guide](reproducibility.md) when you want to run the code, tests, or generated figure atlases.
+
+The current documented theorem frontier is **P81**. The complete proposition record runs from **P1 through P81**. P71-P81 form a target-side methodology branch descending from the P19 physical-sufficiency question. They are not extensions of the P61-P70 calibration branch.
 
 ## Recommended reading order
 
@@ -22,19 +24,20 @@ The current documented theorem frontier is **P80**. The complete proposition rec
 14. [P78 certified continuous P75 model separation](proposition_78_certified_continuous_model_separation.md) for exact multi-affine box enclosures, global L-infinity distance lower bounds, mesh-gap convergence, and the strict P77 rejection handoff.
 15. [P79 certified rational sampling-radius envelope](proposition_79_certified_sampling_radius.md) for exact-rational logarithm brackets, integer-certified dyadic square-root enclosure, and the one-sided P78/P79 rejection comparison.
 16. [P80 simplex-coupled continuous P75 separation](proposition_80_simplex_coupled_model_separation.md) for exact probability-simplex interval relaxation, P80 >= P78 dominance, and the strict P80/P79 rejection handoff.
-17. [P11-P18 and P25-P37 operational physical structure](theorem_roadmap.md) for intervention, temporal, compositional, and multiscale requirements.
-18. [P38-P44 quantum foundations and bridge tests](quantum_foundations_and_bridge_test.md) for quantum operational sufficiency under explicit bridge classes.
-19. [P45-P60 adaptive experiment design and scheduling](theorem_roadmap.md) for valid evidence collection and transition-calibration setup.
-20. [P61-P70 Calibration and Optimization Frontier](calibration_optimization_frontier_p61_p70.md) for downstream integer resource-allocation mathematics.
-21. [Equation and citation map](equation_and_citation_map.md) for equation-level provenance and theorem lineage.
-22. [P72 equation and provenance record](p72_equation_provenance.md) for the standard-versus-repository classification of the noisy-target theorem.
-23. [P73 equation and provenance record](p73_equation_provenance.md) for latent-class context, moment inversion, and the P72 stability connection.
-24. [P74 equation and provenance record](p74_equation_provenance.md) for finite-sample concentration, nonlinear interval propagation, and full-channel recovery.
-25. [P75 equation and provenance record](p75_equation_provenance.md) for just-identification, overidentification, algebraic adequacy constraints, and full-law reconstruction provenance.
-26. [Falsification program](falsification_program.md) for the empirical burden required before any bridge claim can be accepted.
-27. [P78 equation and provenance record](p78_equation_provenance.md) for multi-affine box bounds, global distance certification, and the P77 handoff.
-28. [P80 equation and provenance record](p80_equation_provenance.md) for the simplex-coupled interval relaxation, exact feasibility crossings, and P80/P78 dominance.
-29. [Citation guide](../CITATION.md) for citing the whole research program or a specific proposition, figure, algorithm, or implementation.
+17. [P81 projection-event continuous P75 separation](proposition_81_projection_event_model_separation.md) for exact projected-event box intervals, event-size distance transfer, P81 >= P80 dominance, and the strict-improvement witness.
+18. [P11-P18 and P25-P37 operational physical structure](theorem_roadmap.md) for intervention, temporal, compositional, and multiscale requirements.
+19. [P38-P44 quantum foundations and bridge tests](quantum_foundations_and_bridge_test.md) for quantum operational sufficiency under explicit bridge classes.
+20. [P45-P60 adaptive experiment design and scheduling](theorem_roadmap.md) for valid evidence collection and transition-calibration setup.
+21. [P61-P70 Calibration and Optimization Frontier](calibration_optimization_frontier_p61_p70.md) for downstream integer resource-allocation mathematics.
+22. [Equation and citation map](equation_and_citation_map.md) for equation-level provenance and theorem lineage.
+23. [P72 equation and provenance record](p72_equation_provenance.md) for the standard-versus-repository classification of the noisy-target theorem.
+24. [P73 equation and provenance record](p73_equation_provenance.md) for latent-class context, moment inversion, and the P72 stability connection.
+25. [P74 equation and provenance record](p74_equation_provenance.md) for finite-sample concentration, nonlinear interval propagation, and full-channel recovery.
+26. [P75 equation and provenance record](p75_equation_provenance.md) for just-identification, overidentification, algebraic adequacy constraints, and full-law reconstruction provenance.
+27. [Falsification program](falsification_program.md) for the empirical burden required before any bridge claim can be accepted.
+28. [P78 equation and provenance record](p78_equation_provenance.md) for multi-affine box bounds, global distance certification, and the P77 handoff.
+29. [P80 equation and provenance record](p80_equation_provenance.md) for the simplex-coupled interval relaxation, exact feasibility crossings, and P80/P78 dominance.
+30. [Citation guide](../CITATION.md) for citing the whole research program or a specific proposition, figure, algorithm, or implementation.
 
 ## Scientific branch map
 
@@ -57,6 +60,7 @@ The current documented theorem frontier is **P80**. The complete proposition rec
 | Certified continuous target-model separation | P78 | Supplies exact-rational global lower bounds for distance to the continuous P75 model family and a convergent mesh certificate | [P78](proposition_78_certified_continuous_model_separation.md) |
 | Certified sampling-radius envelope | P79 | Supplies an exact-rational upper bound for the P77 sampling radius so the P78 rejection comparison has certified numerical direction | [P79](proposition_79_certified_sampling_radius.md) |
 | Simplex-coupled continuous target-model separation | P80 | Tightens each P78 box lower bound by intersecting exact cell intervals with probability normalization while preserving the global lower-bound direction | [P80](proposition_80_simplex_coupled_model_separation.md) |
+| Projection-event continuous target-model separation | P81 | Adds exact parameter-box ranges for every nonempty projected binary event and transfers event mismatch into a never-weaker full-law distance certificate | [P81](proposition_81_projection_event_model_separation.md) |
 
 ## Complete proposition index
 

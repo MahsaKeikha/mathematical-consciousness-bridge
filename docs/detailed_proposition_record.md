@@ -10,7 +10,7 @@ The scientific status rule is strict throughout: a theorem is only a theorem und
 
 ---
 
-## Complete P1 to P78 chronology
+## Complete P1 to P81 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
@@ -182,35 +182,6 @@ Direct P78 proof: [certified continuous model separation](proposition_78_certifi
 
 ---
 
-## Scientific interpretation of the chronology
-
-The proposition numbers preserve development order, not one linear chain. The scientific dependency structure has several branches:
-
-- P1-P24 build the formal bridge, physical-sufficiency, finite-data, and adaptive-refinement core.
-- P25-P37 build operational scale compatibility.
-- P38-P44 build the quantum operational interface.
-- P45-P60 build adaptive evidence acquisition and execution machinery.
-- P61-P70 build downstream calibration and optimization.
-- P71-P78 return to the target side of the P19 bridge and formalize non-circular target provenance, noisy target measurement, population target-channel identification, finite-sample target-channel recovery, target-model adequacy, and finite-sample model rejection.
-
-P75 does not make an experiential ontology claim. Passing its four-view restrictions establishes compatibility with the declared target-measurement model, not uniqueness or truth of that model. Failure identifies inadequacy of the declared conditional-independence model for the observed law; it does not prove that the latent target is nonphysical or that the physical-to-experiential bridge has been solved.
-
-P76 adds a finite-sample rejection layer for a tracked family of necessary P75 polynomial constraints. Its non-rejection output is explicitly inconclusive. P77 then defines the stronger finite-sample full-law criterion by asking whether the complete confidence region is separated from the complete declared model family. P78 supplies the missing global lower-bound certificate for the continuous P75 latent family using exact-rational multi-affine box refinement. The next problems are computational efficiency, sharper power, and robust alternatives for residually dependent or learned target-view systems.
-
----
-
-## How to audit any proposition
-
-Each proposition should be read through the same four-way distinction:
-
-1. **Statement and assumptions:** the proposition document states the exact mathematical claim and its domain.
-2. **Proof:** derivations establish what follows from those assumptions.
-3. **Implementation and tests:** executable code checks the declared computational construction and regression behavior.
-4. **Scientific interpretation:** the result is not promoted beyond its scope.
-
-The complete dependency graph is maintained in the [Theorem roadmap](theorem_roadmap.md), equation provenance in the [Equation and citation map](equation_and_citation_map.md), and cross-disciplinary sources in the [Foundational physics and mathematics bibliography](foundational_physics_mathematics_bibliography.md) and [Literature map](literature_map.md).
-
-
 ## Proposition 79: Certified Rational Sampling-Radius Envelope
 
 **P79** closes the numerical-direction gap in the P77/P78 rejection handoff. P78 supplies a certified lower bound on empirical distance to the complete continuous P75 model family. P79 supplies a mathematically valid exact-rational upper envelope for the P77 sampling radius by combining rational logarithm brackets with an integer-certified dyadic square-root enclosure. A strict lower-bound versus upper-bound comparison can therefore certify rejection without assuming the direction of floating-point rounding.
@@ -229,6 +200,38 @@ Proof: [Proposition 80](proposition_80_simplex_coupled_model_separation.md). Pro
 P80 is a computational tightening of a declared observed-law model test. It does not identify the P75 latent variable with consciousness and does not close the physical-to-experiential bridge.
 
 
-### P81: projection-event continuous-family certificate
+## Proposition 81: Projection-Event Certificate for Continuous P75 Separation
 
 **P81** strengthens P80 by retaining exact parameter-box ranges for all nonempty projected binary events of the four observed views. For each cylinder event, its empirical mismatch from the exact box interval is divided by the event's number of full cells to obtain a valid full-law L-infinity lower bound. The combined P81 certificate is the maximum of this projection bound and the P80 simplex-coupled bound, so it is never weaker than P80. A fixed-marginal witness gives `L80=0` but `L81=1/80`, proving strict improvement is possible. [Proof](proposition_81_projection_event_model_separation.md) | [provenance](p81_equation_provenance.md) | [figure](figures/p81_projection_event_model_separation.svg). P81 does not identify the P75 latent variable with consciousness and does not close the physical-to-experiential bridge.
+
+---
+
+## Scientific interpretation of the chronology
+
+The proposition numbers preserve development order, not one linear chain. The scientific dependency structure has several branches:
+
+- P1-P24 build the formal bridge, physical-sufficiency, finite-data, and adaptive-refinement core.
+- P25-P37 build operational scale compatibility.
+- P38-P44 build the quantum operational interface.
+- P45-P60 build adaptive evidence acquisition and execution machinery.
+- P61-P70 build downstream calibration and optimization.
+- P71-P81 return to the target side of the P19 bridge and formalize non-circular target provenance, noisy target measurement, population target-channel identification, finite-sample target-channel recovery, target-model adequacy, and finite-sample model rejection.
+
+P75 does not make an experiential ontology claim. Passing its four-view restrictions establishes compatibility with the declared target-measurement model, not uniqueness or truth of that model. Failure identifies inadequacy of the declared conditional-independence model for the observed law; it does not prove that the latent target is nonphysical or that the physical-to-experiential bridge has been solved.
+
+P76 adds a finite-sample rejection layer for a tracked family of necessary P75 polynomial constraints. Its non-rejection output is explicitly inconclusive. P77 defines the stronger full-law criterion. P78 supplies the global exact-rational lower-bound certificate for the continuous P75 family. P79 gives the sampling-radius side a certified upper direction. P80 retains probability-simplex coupling, and P81 adds exact projected-event constraints that can strictly strengthen P80. The next problems are tighter simultaneous event coupling, computational efficiency, sharper power, and robust alternatives for residually dependent or learned target-view systems.
+
+---
+
+## How to audit any proposition
+
+Each proposition should be read through the same four-way distinction:
+
+1. **Statement and assumptions:** the proposition document states the exact mathematical claim and its domain.
+2. **Proof:** derivations establish what follows from those assumptions.
+3. **Implementation and tests:** executable code checks the declared computational construction and regression behavior.
+4. **Scientific interpretation:** the result is not promoted beyond its scope.
+
+The complete dependency graph is maintained in the [Theorem roadmap](theorem_roadmap.md), equation provenance in the [Equation and citation map](equation_and_citation_map.md), and cross-disciplinary sources in the [Foundational physics and mathematics bibliography](foundational_physics_mathematics_bibliography.md) and [Literature map](literature_map.md).
+
+

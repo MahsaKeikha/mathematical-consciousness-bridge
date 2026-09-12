@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P80**. The proposition record runs from **P1 through P81 with explicit dependency branches**. P71-P80 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P81**. The proposition record runs from **P1 through P81 with explicit dependency branches**. P71-P81 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -35,7 +35,9 @@ The current documented theorem frontier is **P80**. The proposition record runs 
 &\Downarrow\\
 &\text{P79: the sampling-radius side of the rejection gate must have certified numerical direction}\\
 &\Downarrow\\
-&\text{P80: probability-simplex coupling tightens the continuous-family box certificate}
+&\text{P80: probability-simplex coupling tightens the continuous-family box certificate}\\
+&\Downarrow\\
+&\text{P81: projected-event constraints tighten the same certified model-distance lower bound}
 \end{aligned}
 }
 \]
@@ -53,7 +55,7 @@ Separate but connected branches refine the physical representation and experimen
 }
 \]
 
-The proposition number records development order. It does not imply that P80 depends on P70. P80 depends scientifically on P78's continuous-family certificate and uses the P79 one-sided sampling-radius handoff; both descend from P77, the P75 continuous target-model family, P19, and the P71-P76 target-side lineage.
+The proposition number records development order. It does not imply that P81 depends on P70. P81 strengthens P80's box certificate, uses P78's continuous-family construction and the P79 one-sided sampling-radius handoff, and ultimately descends from P77, the P75 continuous target-model family, P19, and the P71-P76 target-side lineage.
 
 ## 2. Target-side bridge lineage
 
@@ -429,6 +431,14 @@ The global active-box minimum is therefore a certified continuous-family lower b
 Direct proof: [P80](proposition_80_simplex_coupled_model_separation.md). Provenance: [P80 equation record](p80_equation_provenance.md). Implementation: [`simplex_coupled_model_separation.py`](../src/consciousness_bridge/simplex_coupled_model_separation.py). Tests: [`test_simplex_coupled_model_separation.py`](../tests/test_simplex_coupled_model_separation.py).
 
 
+### P81: projection-event continuous-family certificate
+
+[P81](proposition_81_projection_event_model_separation.md) continues the P75-P80 target-model adequacy branch. It adds exact parameter-box ranges for all nonempty projected binary events and combines their full-law distance lower bound with P80.
+
+| Result | Depends on | Adds |
+| --- | --- | --- |
+| [P81](proposition_81_projection_event_model_separation.md) | P75, P77, P78, P79, P80 | Exact projection-event intervals, event-size distance transfer, P81 >= P80 dominance, and strict-improvement witness |
+
 ## 3. Complete proposition index
 
 | Proposition | Mathematical role | Scientific role | Status |
@@ -513,6 +523,7 @@ Direct proof: [P80](proposition_80_simplex_coupled_model_separation.md). Provena
 | [P78](proposition_78_certified_continuous_model_separation.md) | multi-affine box lower bounds and mesh-gap convergence | certified continuous P75 full-law model separation | proved conditional computational theorem |
 | [P79](proposition_79_certified_sampling_radius.md) | exact-rational logarithm and dyadic square-root enclosure | one-sided numerical certification of the P77 sampling radius | proved numerical-certification theorem |
 | [P80](proposition_80_simplex_coupled_model_separation.md) | probability-simplex interval relaxation and exact rational feasibility crossings | tighter certified continuous P75 full-law model separation | proved conditional computational theorem |
+| [P81](proposition_81_projection_event_model_separation.md) | exact projected-event box intervals and event-size distance transfer | never-weaker projection-aware continuous P75 model separation | proved conditional computational theorem |
 
 ## 4. Calibration branch remains separate
 
@@ -535,27 +546,21 @@ These results optimize downstream experimental resources. They do not define con
 
 ## 5. Current open frontier
 
-After P80, the target side retains nine explicit requirements:
+After P81, the target-side chain has a substantially clearer scientific burden:
 
-1. the target must have non-circular provenance relative to the tested physical descriptor;
-2. its observation channel must be valid and sufficiently informative for the claimed witness;
-3. channel reliability must be identified or externally calibrated under a defensible target-measurement model;
-4. finite data must resolve the channel parameters far enough from the model singularity to support a confidence-certified reliability statement;
-5. the target-measurement model itself must survive adequacy tests rather than being accepted because it can be fit;
-6. finite data must separate a genuine adequacy violation from sampling uncertainty before model rejection is claimed;
-7. complete full-law rejection must be defined against the whole declared model family, not only selected necessary constraints;
-8. when the declared family is continuous, the required separation distance must be lower-bounded globally rather than inferred from a local best fit.
-9. the sampling-radius side of the rejection inequality must be upper-bounded with certified numerical direction rather than an unqualified rounded decimal.
+1. target provenance must be non-circular relative to the physical descriptor being tested;
+2. the target-observation channel must be scientifically defensible and sufficiently informative for the claimed witness;
+3. channel reliability must be identified or externally calibrated under a declared measurement model;
+4. finite data must resolve the channel far enough from singularity for recovery to be certified;
+5. the target-measurement model must survive adequacy tests rather than being accepted because it can be fit;
+6. finite data must separate genuine adequacy failure from sampling noise before rejection is claimed;
+7. full-law rejection must be defined against the complete declared model family;
+8. continuous-family separation must use a certified global lower bound rather than a local optimizer value;
+9. the sampling-radius side of the rejection gate must have a certified upper direction; and
+10. computational relaxations should retain as much exact probability structure as possible without invalidating the lower-bound direction.
 
-P78 closes the eighth item for the specific P75 four-view binary latent family in L-infinity distance, and P80 strengthens that same item by retaining probability-simplex normalization inside each exact interval relaxation. P79 closes the ninth item for the P77 finite-alphabet sampling radius by exact-rational one-sided numerical enclosure. P78 still supplies the explicit mesh-gap guarantee; P80 supplies a never-weaker boxwise lower bound on the same active partition. The remaining computational problem is efficiency: stronger pruning, still tighter convex or semialgebraic relaxations, or moment-SOS lower bounds may further reduce the number of boxes required for a decisive certificate. The remaining statistical problems include sharper power and target-view models that allow residual dependence, shared bias, temporal drift, or learned measurement pipelines.
+P78 closes the global-lower-bound gap for the specific continuous P75 four-view binary latent family. P79 certifies the one-sided sampling-radius envelope. P80 strengthens the box relaxation by retaining probability normalization. P81 strengthens it again by retaining exact marginal and projected-event constraints implied by each parameter box.
 
-None of these results identifies a latent variable with consciousness. The physical-to-experiential bridge remains open.
+The next computational question is therefore not another cosmetic bound. A substantive continuation would retain **simultaneous dependence among overlapping projected events** or introduce a demonstrably tighter convex or semialgebraic relaxation while preserving exact certification. Statistical extensions remain open as well, including sharper power analysis and target-view models with residual dependence, shared bias, temporal drift, or learned measurement pipelines.
 
-
-### P81: projection-event continuous-family certificate
-
-[P81](proposition_81_projection_event_model_separation.md) continues the P75-P80 target-model adequacy branch. It adds exact parameter-box ranges for all nonempty projected binary events and combines their full-law distance lower bound with P80.
-
-| Result | Depends on | Adds |
-| --- | --- | --- |
-| [P81](proposition_81_projection_event_model_separation.md) | P75, P77, P78, P79, P80 | Exact projection-event intervals, event-size distance transfer, P81 >= P80 dominance, and strict-improvement witness |
+None of P71-P81 identifies a latent variable with consciousness. None proves that a failed descriptor implies nonphysical consciousness. The physical-to-experiential bridge remains open.

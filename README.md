@@ -6,6 +6,9 @@
 
 **Mahsa Keikha, PhD**
 
+> [!TIP]
+> **First time here?** Begin with **[START_HERE.md](START_HERE.md)** for a short orientation, audience-specific reading paths, the P1-P81 program map, and the current P81 frontier. Keep the **[Glossary](docs/glossary.md)** open for terminology, and use the **[Reproducibility Guide](docs/reproducibility.md)** when you want to run the tests or regenerate the computational figure atlases.
+
 > **What mathematical and physical conditions would be required for a complete physical description of a system to support a scientifically testable claim about consciousness?**
 
 This repository is a mathematical-physics research program for the **physical-to-experiential bridge problem**. It does not begin by assuming what consciousness is. It asks what must be true before any proposed physical description can legitimately be called sufficient for an independently specified experiential target, how that sufficiency can be falsified, and how finite experiments can distinguish a real bridge from correlation, representation choice, coarse-graining, target circularity, target-measurement error, unidentified target-channel reliability, or statistical noise.

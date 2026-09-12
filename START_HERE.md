@@ -94,27 +94,27 @@ For the complete one-row-per-proposition index, use the [Theorem Roadmap](docs/t
 
 The newest branch returns directly to a basic scientific problem: before a physical descriptor can be judged sufficient for an experiential target, how do we know the **target itself** and the **way we measure it** are scientifically defensible?
 
-**P71 — target provenance.** If the target is constructed from the same descriptor being tested, successful prediction can be circular by construction. P71 formalizes that failure mode.
+**P71: target provenance.** If the target is constructed from the same descriptor being tested, successful prediction can be circular by construction. P71 formalizes that failure mode.
 
-**P72 — noisy target measurement.** An independently justified latent target can be observed through a noisy channel. Under the declared nondifferential channel model, measurement can attenuate or erase a real witness. It does not license treating a null observation as proof of no latent distinction.
+**P72: noisy target measurement.** An independently justified latent target can be observed through a noisy channel. Under the declared nondifferential channel model, measurement can attenuate or erase a real witness. It does not license treating a null observation as proof of no latent distinction.
 
-**P73 — target-channel identifiability.** Under a restricted nondegenerate three-view binary latent model, the target-measurement channels can be recovered up to the unavoidable global latent-label swap. Two views are insufficient in general.
+**P73: target-channel identifiability.** Under a restricted nondegenerate three-view binary latent model, the target-measurement channels can be recovered up to the unavoidable global latent-label swap. Two views are insufficient in general.
 
-**P74 — finite-sample recovery.** Population identifiability is not enough. P74 adds simultaneous uncertainty bounds and refuses to certify recovery near the inversion singularity.
+**P74: finite-sample recovery.** Population identifiability is not enough. P74 adds simultaneous uncertainty bounds and refuses to certify recovery near the inversion singularity.
 
-**P75 — model adequacy.** Successfully recovering parameters does not prove the model is right. A fourth binary view creates overidentifying restrictions and a full-law reconstruction audit.
+**P75: model adequacy.** Successfully recovering parameters does not prove the model is right. A fourth binary view creates overidentifying restrictions and a full-law reconstruction audit.
 
-**P76 — finite-sample adequacy rejection.** P75 constraints are moved into finite data. A violation must remain separated from zero after uncertainty is propagated before the model is rejected.
+**P76: finite-sample adequacy rejection.** P75 constraints are moved into finite data. A violation must remain separated from zero after uncertainty is propagated before the model is rejected.
 
-**P77 — full-law model-set separation.** Instead of checking only selected necessary constraints, P77 asks whether the entire empirical confidence region is separated from the entire declared model family.
+**P77: full-law model-set separation.** Instead of checking only selected necessary constraints, P77 asks whether the entire empirical confidence region is separated from the entire declared model family.
 
-**P78 — certified continuous separation.** The P75 family is continuous, so an ordinary numerical best fit cannot certify separation from every allowed model. P78 uses exact-rational branch-and-bound to produce a global lower bound.
+**P78: certified continuous separation.** The P75 family is continuous, so an ordinary numerical best fit cannot certify separation from every allowed model. P78 uses exact-rational branch-and-bound to produce a global lower bound.
 
-**P79 — certified sampling radius.** The statistical side of the rejection inequality also needs the correct numerical direction. P79 gives an exact-rational upper certificate for the sampling radius.
+**P79: certified sampling radius.** The statistical side of the rejection inequality also needs the correct numerical direction. P79 gives an exact-rational upper certificate for the sampling radius.
 
-**P80 — simplex-coupled tightening.** P78 cellwise intervals ignore the fact that probabilities must sum to one. P80 retains normalization inside each box relaxation and therefore cannot weaken the P78 lower bound.
+**P80: simplex-coupled tightening.** P78 cellwise intervals ignore the fact that probabilities must sum to one. P80 retains normalization inside each box relaxation and therefore cannot weaken the P78 lower bound.
 
-**P81 — projection-event tightening.** P80 still omits exact constraints on marginal and projected event probabilities implied by a parameter box. P81 adds all nonempty projected binary events and transfers any event mismatch back to a certified full-law L-infinity lower bound. P81 is never weaker than P80 and can be strictly stronger.
+**P81: projection-event tightening.** P80 still omits exact constraints on marginal and projected event probabilities implied by a parameter box. P81 adds all nonempty projected binary events and transfers any event mismatch back to a certified full-law L-infinity lower bound. P81 is never weaker than P80 and can be strictly stronger.
 
 The direct P81 proof is [here](docs/proposition_81_projection_event_model_separation.md), with its [equation/provenance record](docs/p81_equation_provenance.md), [implementation](src/consciousness_bridge/projection_event_model_separation.py), and [tests](tests/test_projection_event_model_separation.py).
 
@@ -184,6 +184,8 @@ A reader should leave the repository with five boundaries completely clear:
 - **All curated visuals:** [Figure Catalog](docs/figure_catalog.md)
 - **What would count as failure:** [Falsification Program](docs/falsification_program.md)
 - **How to cite the work:** [Citation Guide](CITATION.md)
+- **Reproduce everything:** [Reproducibility Guide](docs/reproducibility.md)
+- **Contribute or review changes:** [CONTRIBUTING.md](CONTRIBUTING.md)
 - **Public visual site:** [website](website/index.html)
 
 ---

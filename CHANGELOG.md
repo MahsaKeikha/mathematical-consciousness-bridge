@@ -1,5 +1,7 @@
 # 0.81.0 - 2026-09-11
 
+- Added a first-reader `START_HERE.md`, glossary, reproducibility guide, contribution guide, unified figure-generation command, repository verifier, and reproducible figure GitHub Actions workflow.
+- Reorganized reader-facing navigation so the P81 frontier, proof/code/test paths, and scientific boundaries are consistent across GitHub and the public website.
 - Added Proposition 81, Projection-Event Certificate for Continuous P75 Separation.
 - Added exact-rational parameter-box intervals for every nonempty projected binary cylinder event of the four observed views.
 - Proved the event-size transfer bound from projected-event mismatch to full sixteen-cell L-infinity model distance.
