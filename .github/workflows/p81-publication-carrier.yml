@@ -1,4 +1,4 @@
-# Retrigger after final Ruff import-order fix.
+# Retrigger after matching P81 import spacing to repository style.
 name: p81-reader-publication-carrier
 
 on:
