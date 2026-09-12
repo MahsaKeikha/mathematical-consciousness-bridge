@@ -1,4 +1,5 @@
 name: one-shot-p57-figure-docs
+# Retry after final P57 text-containment correction.
 
 on:
   push:
