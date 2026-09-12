@@ -17,6 +17,15 @@ def update(path: str, replacements: tuple[tuple[str, str], ...]) -> None:
 
 def main() -> None:
     update(
+        "README.md",
+        (
+            ("| Public theorem frontier | **P81** |", "| Public theorem frontier | **P82** |"),
+            ("Read the complete P1 to P81 detailed proposition record", "Read the complete P1 to P82 detailed proposition record"),
+            ("P1 to P81 detailed proposition record", "P1 to P82 detailed proposition record"),
+        ),
+    )
+
+    update(
         "START_HERE.md",
         (
             ("the 81-result theorem program", "the 82-result theorem program"),
