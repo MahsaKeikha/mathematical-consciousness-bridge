@@ -2,6 +2,7 @@
   const PAGES = [
     { file: 'index.html', label: 'Overview' },
     { file: 'start-here.html', label: 'Start Here' },
+    { file: 'research-lineage.html', label: 'Research Lineage' },
     { file: 'research-map.html', label: 'Research Map' },
     { file: 'physics-mathematics.html', label: 'Physics & Math' },
     { file: 'visual-atlas.html', label: 'Visual Atlas' },
@@ -9,6 +10,7 @@
   ];
 
   const REPO = 'https://github.com/MahsaKeikha/mathematical-consciousness-bridge';
+  const OBSERVER_REPO = 'https://github.com/MahsaKeikha/spatiotemporal-observer-math';
 
   const propositionLinks = {
     19: `${REPO}/blob/main/docs/proposition_19_fundamental_physical_sufficiency.md`,
@@ -93,6 +95,29 @@
     main.insertBefore(trail, main.firstChild);
   }
 
+  function addLineageCallout() {
+    const file = currentFile();
+    if (!['index.html', 'start-here.html', 'research-map.html'].includes(file)) return;
+    const main = document.querySelector('main');
+    const hero = main?.querySelector('.hero');
+    if (!main || !hero || main.querySelector('.lineage-callout')) return;
+
+    const section = document.createElement('section');
+    section.className = 'lineage-callout';
+    section.innerHTML = `
+      <div class="lineage-callout-copy">
+        <p class="eyebrow">Two connected research programs</p>
+        <h2>Begin with the physical subsystem, then follow the bridge question</h2>
+        <p><strong>Research I: Spatiotemporal Observer Mathematics</strong> develops time-dependent physical subsystem identification from stochastic dynamics. <strong>Research II: Mathematical Consciousness Bridge</strong> begins after that physical-description problem and asks what additional sufficiency, target, measurement, model-adequacy, and falsification conditions a physical-to-experiential claim must satisfy.</p>
+      </div>
+      <div class="lineage-callout-actions">
+        <a class="lineage-mini-card" href="${OBSERVER_REPO}"><span>Research I</span><strong>Spatiotemporal Observer Mathematics</strong><small>Physical subsystem identification →</small></a>
+        <a class="lineage-mini-card current" href="research-lineage.html"><span>Research lineage</span><strong>See the scientific handoff</strong><small>What carries forward and what remains open →</small></a>
+        <a class="lineage-mini-card" href="research-map.html"><span>Research II</span><strong>Mathematical Consciousness Bridge</strong><small>Current bridge-test program →</small></a>
+      </div>`;
+    hero.insertAdjacentElement('afterend', section);
+  }
+
   function addReaderTrail() {
     const main = document.querySelector('main');
     if (!main || main.querySelector('.reader-trail')) return;
@@ -107,7 +132,7 @@
 
     const previousHtml = previous
       ? `<a class="trail-card previous" href="${previous.file}"><span>Previous</span><strong>${previous.label}</strong><small>Move back in the guided reading path</small></a>`
-      : `<a class="trail-card previous" href="${REPO}"><span>Repository</span><strong>Open GitHub</strong><small>Inspect code, proofs, tests, and releases</small></a>`;
+      : `<a class="trail-card previous" href="${OBSERVER_REPO}"><span>Research I</span><strong>Observer Mathematics</strong><small>See the physical-subsystem foundation</small></a>`;
     const nextHtml = next
       ? `<a class="trail-card next" href="${next.file}"><span>Next</span><strong>${next.label}</strong><small>Continue through the guided research path</small></a>`
       : `<a class="trail-card next" href="research-map.html"><span>Continue</span><strong>Research Map</strong><small>Return to the complete theorem program</small></a>`;
@@ -119,7 +144,7 @@
       </div>
       <div class="reader-trail-grid">
         ${previousHtml}
-        <a class="trail-card map" href="research-map.html"><span>Orientation</span><strong>Research Map</strong><small>See how the propositions and evidence layers connect</small></a>
+        <a class="trail-card map" href="research-lineage.html"><span>Lineage</span><strong>Research I → Research II</strong><small>See how the physical-subsystem work leads into the bridge program</small></a>
         ${nextHtml}
       </div>`;
     main.append(trail);
@@ -214,6 +239,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     ensureNavigation();
     addBreadcrumbs();
+    addLineageCallout();
     addResearchAnchors();
     activateCards();
     addReaderTrail();
