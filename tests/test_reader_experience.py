@@ -21,6 +21,7 @@ def test_shared_reader_experience_style_is_built_into_pages() -> None:
 def test_first_reader_surfaces_match_p85_frontier() -> None:
     start = _text("website/start-here.html")
     research_map = _text("website/research-map.html")
+    plain = _text("website/plain-language.html")
     assert "The 85 propositions by scientific role" in start
     assert "You do not need to read 85 proofs in order" in start
     assert "complete 85-result dependency structure" in start
@@ -30,6 +31,15 @@ def test_first_reader_surfaces_match_p85_frontier() -> None:
     assert "Eighty-five results" in research_map
     assert "<strong>85</strong>" in research_map
     assert "P73-P85" in research_map
+    assert "<strong>85</strong><span>proposition-level results</span>" in plain
+    assert "<strong>P85</strong><span>current theorem frontier</span>" in plain
+    assert "What the 85 results are doing" in plain
+    assert "P75-P85" in plain
+    assert "actual P85 research frontier" in plain
+    assert "shows how all 85 results connect" in plain
+    assert "<strong>84</strong><span>proposition-level results</span>" not in plain
+    assert "<strong>P84</strong><span>current theorem frontier</span>" not in plain
+    assert "actual P84 research frontier" not in plain
 
 
 def test_visual_atlas_uses_public_paths_and_readable_display_rules() -> None:
