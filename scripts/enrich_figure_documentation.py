@@ -424,8 +424,7 @@ def _update_visual_atlas() -> None:
         'They do not replace proofs, and each should be read together with its theorem, assumptions, and provenance.</p></section>'
     )
     legacy_reading_key = (
-        '
-<section class="boundary"><h2>How to read every figure</h2>'
+        '\n<section class="boundary"><h2>How to read every figure</h2>'
         '<p><strong>What you are seeing:</strong> identify the mathematical objects, panels, axes, or regions. '
         '<strong>How to read it:</strong> follow arrows only as the declared logical, temporal, set-inclusion, or computational relation; compare plotted quantities using the labeled axes and legends. '
         '<strong>Main takeaway:</strong> use the accompanying text to identify the precise conclusion the visual supports. '
@@ -433,12 +432,10 @@ def _update_visual_atlas() -> None:
         '<p>For a direct index of every SVG, including figures not selected for this web page, open the '
         '<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/figure_catalog.md">Complete Figure Catalog</a>. '
         'The repository-wide rules are in the '
-        '<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/figure_caption_and_description_standard.md">Figure Caption and Description Standard</a>.</p></section>
-'
+        '<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/figure_caption_and_description_standard.md">Figure Caption and Description Standard</a>.</p></section>\n'
     )
     reading_key = (
-        '
-<section class="boundary"><h2>How to read every figure</h2>'
+        '\n<section class="boundary"><h2>How to read every figure</h2>'
         '<p><strong>What you are seeing:</strong> identify the mathematical objects, panels, axes, or regions. '
         '<strong>How to read it:</strong> follow arrows only as the declared logical, temporal, set-inclusion, or computational relation; compare plotted quantities using the labeled axes and legends. '
         '<strong>Main takeaway:</strong> use the accompanying text to identify the precise conclusion the visual supports. '
@@ -448,8 +445,7 @@ def _update_visual_atlas() -> None:
         '<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/figure_catalog.md">Complete Figure Catalog</a>. '
         'The repository-wide rules are in the '
         '<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/figure_caption_and_description_standard.md">Figure Caption and Description Standard</a> and the '
-        '<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/reader_experience_and_visual_standard.md">Reader Experience and Visual Presentation Standard</a>.</p></section>
-'
+        '<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/reader_experience_and_visual_standard.md">Reader Experience and Visual Presentation Standard</a>.</p></section>\n'
     )
     if legacy_reading_key.strip() in text and reading_key.strip() in text:
         text = text.replace(legacy_reading_key, "", 1)
