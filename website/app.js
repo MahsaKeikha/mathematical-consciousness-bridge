@@ -32,7 +32,7 @@
           file: 'research-map.html',
           kicker: 'Research II',
           label: 'Bridge theorem map',
-          description: 'The current physical-to-experiential test architecture through P83.',
+          description: 'The current physical-to-experiential test architecture through P84.',
         },
         {
           file: 'physics-mathematics.html',
@@ -80,6 +80,7 @@
     81: `${REPO}/blob/main/docs/proposition_81_projection_event_model_separation.md`,
     82: `${REPO}/blob/main/docs/proposition_82_exact_nested_projection_contrast.md`,
     83: `${REPO}/blob/main/docs/proposition_83_exact_projection_parity.md`,
+    84: `${REPO}/blob/main/docs/proposition_84_exact_projection_parity_contrast.md`,
   };
 
   function currentFile() {

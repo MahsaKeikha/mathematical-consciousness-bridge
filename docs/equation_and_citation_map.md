@@ -1238,3 +1238,15 @@ Formal theorem: [P82](proposition_82_exact_nested_projection_contrast.md). Equat
 | $L_{82}=0<L_{83}=1/16$ witness | proves strict improvement is possible | repository-original exact-rational constructive witness |
 
 Full classification: [P83 equation and provenance record](p83_equation_provenance.md). The parity observable is a model diagnostic, not a definition or measure of consciousness.
+
+
+## P84 exact joint projection-parity contrast certificate
+
+- **Canonical proof:** [Proposition 84](proposition_84_exact_projection_parity_contrast.md)
+- **Equation provenance:** [P84 equation and provenance record](p84_equation_provenance.md)
+- **Implementation:** [`joint_projection_parity_contrast_separation.py`](../src/consciousness_bridge/joint_projection_parity_contrast_separation.py)
+- **Tests:** [`test_joint_projection_parity_contrast_separation.py`](../tests/test_joint_projection_parity_contrast_separation.py)
+- **Figure:** [P84 exact joint projection-parity contrast certificate](figures/p84_exact_joint_projection_parity_contrast.svg)
+- **New mathematical step:** exact common-vertex extremization of differences between two P83 parity-event probabilities under one shared P75 parameter assignment, followed by an eight-cell L-infinity transfer.
+- **Strict witness:** `L83 = 0 < L84 = 1/32`.
+- **Boundary:** this strengthens rejection of the declared P75 target-measurement model family. It does not identify a latent state with consciousness or close the physical-to-experiential bridge.

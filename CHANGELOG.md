@@ -1,4 +1,15 @@
-# Unreleased research frontier - P83
+# Unreleased research frontier - P84
+
+- Added Proposition 84, Exact Joint Projection-Parity Contrast Certificate.
+- Added 220 genuinely coupled parity-event contrasts that preserve one shared P75 parameter assignment instead of checking P83 parity ranges independently.
+- Proved exact common-vertex multi-affine extremization and exact affine prevalence mixing for every retained contrast.
+- Defined `L84(B) = max(L83(B), L_joint_parity(B))`, so P84 is never weaker than P83 on the same parameter box.
+- Added an exact-rational strict witness with `L83(B)=0` and `L84(B)=1/32`.
+- Added canonical proof, equation provenance, implementation, regression tests, theorem figure, reader navigation, citation guidance, and website integration.
+- Kept v0.82.0 as the latest formal release while the documented theorem frontier advances independently to P84.
+- Preserved the P78 mesh-width upper certificate, the P79 one-sided rejection gate, and the explicit boundary that the physical-to-experiential bridge remains open.
+
+### P83 predecessor frontier
 
 - Added Proposition 83, Exact Projection-Parity Certificate for Continuous P75 Separation.
 - Added 22 predeclared parity observables across all two-, three-, and four-view subsets of the P75 observed variables.

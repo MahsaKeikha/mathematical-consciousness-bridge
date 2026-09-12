@@ -1,6 +1,6 @@
 # Detailed proposition record
 
-## Complete P1 to P83 chronology
+## Complete P1 to P84 chronology
 
 This page preserves the proposition-by-proposition development history of the Mathematical Consciousness Bridge research program. It is intentionally separate from the main README so a first-time reader can follow the scientific argument without first learning the internal chronology of the project.
 
@@ -10,7 +10,7 @@ The scientific status rule is strict throughout: a theorem is only a theorem und
 
 ---
 
-## Complete P1 to P83 chronology
+## Complete P1 to P84 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
@@ -249,3 +249,14 @@ P83 strengthens the complete P82 continuous-family lower bound with 22 parity ob
 - Implementation: [`projection_parity_model_separation.py`](../src/consciousness_bridge/projection_parity_model_separation.py)
 - Tests: [`test_projection_parity_model_separation.py`](../tests/test_projection_parity_model_separation.py)
 - Figure: [P83 exact projection-parity certificate](figures/p83_exact_projection_parity.svg)
+
+
+## P84: Exact Joint Projection-Parity Contrast Certificate
+
+P84 strengthens the complete P83 continuous-family lower bound by preserving **joint shared-parameter compatibility** between pairs of P83 parity events. It audits 220 genuinely coupled parity-event contrasts. Each branchwise contrast is multi-affine in the union of the two view sets, so its exact range on a rational P75 parameter box is obtained at common endpoint vertices; affine prevalence mixing then gives the exact full-box interval. The signed event-difference functional has eight-cell support, so an empirical contrast gap transfers to a full-law L-infinity lower bound by division by eight. An exact-rational witness has `L83 = 0` and `L84 = 1/32`, proving strict improvement on the same parameter box. P84 retains the P78 mesh-width upper certificate and P79 rejection direction unchanged and does not identify the latent state with consciousness.
+
+- Proof: [Proposition 84](proposition_84_exact_projection_parity_contrast.md)
+- Provenance: [P84 equation record](p84_equation_provenance.md)
+- Implementation: [`joint_projection_parity_contrast_separation.py`](../src/consciousness_bridge/joint_projection_parity_contrast_separation.py)
+- Tests: [`test_joint_projection_parity_contrast_separation.py`](../tests/test_joint_projection_parity_contrast_separation.py)
+- Figure: [P84 exact joint projection-parity contrast certificate](figures/p84_exact_joint_projection_parity_contrast.svg)

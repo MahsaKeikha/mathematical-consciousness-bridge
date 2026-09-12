@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P83**. The proposition record runs from **P1 through P83 with explicit dependency branches**. P71-P83 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P84**. The proposition record runs from **P1 through P84 with explicit dependency branches**. P71-P84 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -41,7 +41,9 @@ The current documented theorem frontier is **P83**. The proposition record runs 
 &\Downarrow\\
 &\text{P82: exact nested residual-event constraints tighten P81 while preserving certification}\\
 &\Downarrow\\
-&\text{P83: projection-parity constraints expose additional exact dependence structure}
+&\text{P83: projection-parity constraints expose additional exact dependence structure}\\
+&\Downarrow\\
+&\text{P84: joint parity contrasts test shared-parameter compatibility across P83 observables}
 \end{aligned}
 }
 \]
@@ -537,6 +539,8 @@ Direct proof: [P80](proposition_80_simplex_coupled_model_separation.md). Provena
 | [P80](proposition_80_simplex_coupled_model_separation.md) | probability-simplex interval relaxation and exact rational feasibility crossings | tighter certified continuous P75 full-law model separation | proved conditional computational theorem |
 | [P81](proposition_81_projection_event_model_separation.md) | exact projected-event box intervals and event-size distance transfer | never-weaker projection-aware continuous P75 model separation | proved conditional computational theorem |
 | [P82](proposition_82_exact_nested_projection_contrast.md) | exact nested residual-event box intervals and event-size distance transfer | never-weaker nested-contrast continuous P75 model separation | proved conditional computational theorem |
+| [P83](proposition_83_exact_projection_parity.md) | exact projection-parity box intervals and event-size distance transfer | never-weaker parity-aware continuous P75 model separation | proved conditional computational theorem |
+| [P84](proposition_84_exact_projection_parity_contrast.md) | exact joint parity-event contrasts at common response-coordinate vertices | shared-parameter compatibility test that strictly strengthens P83 | proved conditional computational theorem |
 
 ## 4. Calibration branch remains separate
 
@@ -612,3 +616,22 @@ A strict exact-rational witness fixes one observed channel at Bernoulli one half
 P83 retains the already-proved P78 mesh-width upper certificate for branch-and-bound and the P79 one-sided sampling-radius rejection handoff. It does not claim a new convergence-rate theorem and does not identify the P75 latent state with consciousness.
 
 Direct proof: [P83](proposition_83_exact_projection_parity.md). Provenance: [P83 equation record](p83_equation_provenance.md). Implementation: [`projection_parity_model_separation.py`](../src/consciousness_bridge/projection_parity_model_separation.py). Tests: [`test_projection_parity_model_separation.py`](../tests/test_projection_parity_model_separation.py).
+
+
+## P84 frontier: exact joint projection-parity contrast separation
+
+P83 tests 22 parity events separately. P84 tests whether pairs of those observables can be realized by the **same** P75 parameter assignment. For two parity events with different view sets, the branchwise probability contrast is multi-affine in the union of their response coordinates, so exact extrema occur at common endpoint vertices. P84 evaluates 220 genuinely coupled standard contrasts and defines
+
+\[
+\boxed{L_{84}(B)=\max\{L_{83}(B),L_{\mathrm{joint-parity}}(B)\}.}
+\]
+
+An exact-rational strict witness has
+
+\[
+\boxed{L_{83}(B)=0<L_{84}(B)=1/32.}
+\]
+
+The result proves that separate parity compatibility does not imply joint compatibility with one underlying parameter vector. P84 retains the P78 mesh-width upper certificate and the P79 one-sided sampling-radius rejection gate. It does not identify the P75 latent state with consciousness and does not close the physical-to-experiential bridge.
+
+Direct proof: [P84](proposition_84_exact_projection_parity_contrast.md). Provenance: [P84 equation record](p84_equation_provenance.md). Implementation: [`joint_projection_parity_contrast_separation.py`](../src/consciousness_bridge/joint_projection_parity_contrast_separation.py). Tests: [`test_joint_projection_parity_contrast_separation.py`](../tests/test_joint_projection_parity_contrast_separation.py).

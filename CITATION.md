@@ -8,7 +8,7 @@ If this research program, one of its propositions, figures, algorithms, or imple
 
 > Keikha, M. (2026). *Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem* (Version 0.82.0). GitHub research repository. https://github.com/MahsaKeikha/mathematical-consciousness-bridge
 
-This is the preferred citation for the research program at the current documented frontier, P82.
+This is the preferred citation for the research program at the current documented frontier, P84.
 
 ## BibTeX
 
@@ -20,7 +20,7 @@ This is the preferred citation for the research program at the current documente
   version      = {0.82.0},
   howpublished = {GitHub research repository},
   url          = {https://github.com/MahsaKeikha/mathematical-consciousness-bridge},
-  note         = {Ongoing research program. Current documented theorem frontier: P82.}
+  note         = {Ongoing research program. Current documented theorem frontier: P84.}
 }
 ```
 
@@ -53,7 +53,7 @@ This repository is an evolving research program. For reproducible scholarly use:
 3. Cite the individual proposition or artifact when your argument depends on a specific theorem, figure, algorithm, or test.
 4. Do not attribute later propositions or later numerical results to an earlier version of the repository.
 
-The current citation metadata identify Version **0.82.0** and theorem frontier **P82**. Future research versions should update the version number, theorem frontier, citation metadata, and archival record together.
+The current citation metadata identify Version **0.82.0** and theorem frontier **P84**. Future research versions should update the version number, theorem frontier, citation metadata, and archival record together.
 
 ## DOI and archival status
 
@@ -90,7 +90,7 @@ P79 certifies the finite-alphabet sampling-radius side of the P77 rejection gate
 
 P80 tightens the P78 parameter-box relaxation by intersecting the exact observed-cell intervals with probability normalization. The resulting interval-simplex distance is never weaker than the corresponding P78 coordinatewise bound, while it remains a lower bound on distance to the true continuous P75 box image. 
 
-P81 further tightens the declared continuous-family test by retaining exact parameter-box ranges for every nonempty projected binary event. Event-level mismatch is divided by the number of full observed cells in that event to obtain a sound full-law L-infinity lower bound. The combined P81 certificate is never weaker than P80 and can be strictly stronger. None of P78-P82 turns non-rejection into model validation or identifies the latent state with consciousness.
+P81 further tightens the declared continuous-family test by retaining exact parameter-box ranges for every nonempty projected binary event. Event-level mismatch is divided by the number of full observed cells in that event to obtain a sound full-law L-infinity lower bound. The combined P81 certificate is never weaker than P80 and can be strictly stronger. None of P78-P84 turns non-rejection into model validation or identifies the latent state with consciousness.
 
 P82 strengthens that chain again by retaining exact common-parameter structure for residual events formed from nested projected cylinders. It computes each residual interval directly from the P75 branchwise factorization rather than by subtracting separate P81 event intervals, audits 256 genuinely new residual events, and preserves the one-sided model-rejection interpretation. Its exact witness gives P80 = 0, P81 = 1/16, and P82 = 1/12. This is a stronger certificate against the declared P75 family, not evidence that its latent variable is consciousness.
 
@@ -102,7 +102,7 @@ When citing a theorem, readers should consult the proposition document for its a
 
 - [`CITATION.cff`](CITATION.cff): machine-readable Citation File Format metadata used by GitHub citation tools.
 - [`CITATION.bib`](CITATION.bib): ready-to-import BibTeX record.
-- [Detailed proposition record](docs/detailed_proposition_record.md): P1 through P82 chronological theorem record.
+- [Detailed proposition record](docs/detailed_proposition_record.md): P1 through P84 chronological theorem record.
 - [Theorem roadmap](docs/theorem_roadmap.md): dependency-oriented theorem map.
 - [P72 equation and provenance record](docs/p72_equation_provenance.md): equation-level classification for the noisy-target theorem.
 - [P73 equation and provenance record](docs/p73_equation_provenance.md): equation-level classification and external latent-class context for the target-channel identifiability theorem.
@@ -115,6 +115,8 @@ When citing a theorem, readers should consult the proposition document for its a
 - [P80 equation and provenance record](docs/p80_equation_provenance.md): probability-simplex coupling, exact interval-simplex distance, and P80/P78 dominance.
 - [P81 equation and provenance record](docs/p81_equation_provenance.md): projected-event box intervals, event-size distance transfer, dominance, and the P79 rejection handoff.
 - [P82 equation and provenance record](docs/p82_equation_provenance.md): exact nested residual-event intervals, direct residual extremization, dominance, and the P79 rejection handoff.
+- [P83 equation and provenance record](docs/p83_equation_provenance.md): exact projection-parity identities, parity box intervals, dominance, and strict improvement over P82.
+- [P84 equation and provenance record](docs/p84_equation_provenance.md): exact joint parity-event contrasts, common-vertex extremization, 220-contrast audit, and strict improvement over P83.
 - [Equation and citation map](docs/equation_and_citation_map.md): provenance of equations, assumptions, and external sources.
 - [Citation and reference policy](docs/citation_and_reference_policy.md): repository rules for attribution and scientific sourcing.
 
@@ -145,5 +147,12 @@ P82 strengthens the P81 continuous P75 separation chain through exact nested res
 ## Proposition 83 method citation
 
 For work that specifically uses the newest continuous-family certificate, cite the program together with **Proposition 83: Exact Projection-Parity Certificate for Continuous P75 Separation**. P83 adds 22 parity observables, exact rational box extremization through the Bernoulli parity identity, and a strict witness with `L82 = 0 < L83 = 1/16`.
+
+The result is a conditional model-distance certificate for the declared P75 latent family. It should not be cited as an identification, definition, or measurement of consciousness, and non-rejection remains inconclusive.
+
+
+## Proposition 84 method citation
+
+For work that specifically uses the current joint parity certificate, cite the program together with **Proposition 84: Exact Joint Projection-Parity Contrast Certificate** and its [equation provenance record](docs/p84_equation_provenance.md). P84 retains all of P83 and adds 220 exact coupled parity-event contrasts that preserve one shared P75 parameter assignment. Its exact-rational strict witness has `L83 = 0 < L84 = 1/32`.
 
 The result is a conditional model-distance certificate for the declared P75 latent family. It should not be cited as an identification, definition, or measurement of consciousness, and non-rejection remains inconclusive.
