@@ -25,21 +25,22 @@ The current documented theorem frontier is **P83**. The complete proposition rec
 15. [P79 certified rational sampling-radius envelope](proposition_79_certified_sampling_radius.md) for exact-rational logarithm brackets, integer-certified dyadic square-root enclosure, and the one-sided P78/P79 rejection comparison.
 16. [P80 simplex-coupled continuous P75 separation](proposition_80_simplex_coupled_model_separation.md) for exact probability-simplex interval relaxation, P80 >= P78 dominance, and the strict P80/P79 rejection handoff.
 17. [P81 projection-event continuous P75 separation](proposition_81_projection_event_model_separation.md) for exact projected-event box intervals, event-size distance transfer, P81 >= P80 dominance, and the strict-improvement witness.
-19. [P82 exact nested projection-contrast separation](proposition_82_exact_nested_projection_contrast.md) for exact nested residual-event box intervals, the 256-contrast audit, P82 >= P81 dominance, and the strict 1/12 versus 1/16 witness.
+18. [P82 exact nested projection-contrast separation](proposition_82_exact_nested_projection_contrast.md) for exact nested residual-event box intervals, the 256-contrast audit, P82 >= P81 dominance, and the strict 1/12 versus 1/16 witness.
 19. [P83 exact projection-parity separation](proposition_83_exact_projection_parity.md) for the 22-event parity audit, exact multi-affine box intervals, P83 >= P82 dominance, and the strict `1/16` versus zero witness.
-18. [P11-P18 and P25-P37 operational physical structure](theorem_roadmap.md) for intervention, temporal, compositional, and multiscale requirements.
-20. [P38-P44 quantum foundations and bridge tests](quantum_foundations_and_bridge_test.md) for quantum operational sufficiency under explicit bridge classes.
-21. [P45-P60 adaptive experiment design and scheduling](theorem_roadmap.md) for valid evidence collection and transition-calibration setup.
-22. [P61-P70 Calibration and Optimization Frontier](calibration_optimization_frontier_p61_p70.md) for downstream integer resource-allocation mathematics.
-23. [Equation and citation map](equation_and_citation_map.md) for equation-level provenance and theorem lineage.
-24. [P72 equation and provenance record](p72_equation_provenance.md) for the standard-versus-repository classification of the noisy-target theorem.
-25. [P73 equation and provenance record](p73_equation_provenance.md) for latent-class context, moment inversion, and the P72 stability connection.
-26. [P74 equation and provenance record](p74_equation_provenance.md) for finite-sample concentration, nonlinear interval propagation, and full-channel recovery.
-27. [P75 equation and provenance record](p75_equation_provenance.md) for just-identification, overidentification, algebraic adequacy constraints, and full-law reconstruction provenance.
-28. [Falsification program](falsification_program.md) for the empirical burden required before any bridge claim can be accepted.
-29. [P78 equation and provenance record](p78_equation_provenance.md) for multi-affine box bounds, global distance certification, and the P77 handoff.
-30. [P80 equation and provenance record](p80_equation_provenance.md) for the simplex-coupled interval relaxation, exact feasibility crossings, and P80/P78 dominance.
-31. [Citation guide](../CITATION.md) for citing the whole research program or a specific proposition, figure, algorithm, or implementation.
+20. [P11-P18 and P25-P37 operational physical structure](theorem_roadmap.md) for intervention, temporal, compositional, and multiscale requirements.
+21. [P38-P44 quantum foundations and bridge tests](quantum_foundations_and_bridge_test.md) for quantum operational sufficiency under explicit bridge classes.
+22. [P45-P60 adaptive experiment design and scheduling](theorem_roadmap.md) for valid evidence collection and transition-calibration setup.
+23. [P61-P70 Calibration and Optimization Frontier](calibration_optimization_frontier_p61_p70.md) for downstream integer resource-allocation mathematics.
+24. [Equation and citation map](equation_and_citation_map.md) for equation-level provenance and theorem lineage.
+25. [P72 equation and provenance record](p72_equation_provenance.md) for the standard-versus-repository classification of the noisy-target theorem.
+26. [P73 equation and provenance record](p73_equation_provenance.md) for latent-class context, moment inversion, and the P72 stability connection.
+27. [P74 equation and provenance record](p74_equation_provenance.md) for finite-sample concentration, nonlinear interval propagation, and full-channel recovery.
+28. [P75 equation and provenance record](p75_equation_provenance.md) for just-identification, overidentification, algebraic adequacy constraints, and full-law reconstruction provenance.
+29. [Falsification program](falsification_program.md) for the empirical burden required before any bridge claim can be accepted.
+30. [P78 equation and provenance record](p78_equation_provenance.md) for multi-affine box bounds, global distance certification, and the P77 handoff.
+31. [P80 equation and provenance record](p80_equation_provenance.md) for the simplex-coupled interval relaxation, exact feasibility crossings, and P80/P78 dominance.
+32. [Citation guide](../CITATION.md) for citing the whole research program or a specific proposition, figure, algorithm, or implementation.
+33. [P83 equation and provenance record](p83_equation_provenance.md) for exact parity identities, multi-affine box extrema, the strict P83 > P82 witness, and the scientific interpretation boundary.
 
 ## Scientific branch map
 
