@@ -27,7 +27,7 @@
     <text x="80" y="168" class="head">1. Residual workload</text>
     <text x="80" y="205" class="strong">rᵢ ∈ Z≥0, V+={i:rᵢ&gt;0}</text>
     <text x="80" y="239" class="eq">R=Σᵢrᵢ, fixed acquisition=aR</text>
-    <text x="80" y="271" class="copy">Only switching order remains to optimize.</text>
+    <text x="80" y="271" class="copy">Only switching order is optimized.</text>
     <text x="80" y="296" class="small">Residual demands are declared inputs.</text>
   </g>
 
@@ -45,7 +45,7 @@
     <text x="840" y="168" class="head">3. Arbitrary feasible schedule</text>
     <text x="840" y="205" class="strong">σ=(σ₁,...,σR)</text>
     <text x="840" y="239" class="copy">i appears exactly rᵢ times.</text>
-    <text x="840" y="269" class="copy">Repeated visits are allowed initially.</text>
+    <text x="840" y="269" class="copy">Repeated visits allowed initially.</text>
     <text x="840" y="296" class="small">Acquisition count remains R.</text>
   </g>
 
