@@ -46,14 +46,15 @@ The final P85 box certificate is
 
     max(P84 lower bound, strongest exact triple-functional lower bound).
 
-It is never weaker than P84 and can be strictly stronger. The exact-rational
-regression witness has P84 lower bound zero while the triple
+It is never weaker than P84 and can be strictly stronger. A deterministic
+exact-rational regression witness has P84 lower bound zero while the triple
 
-    H_(0,3) + H_(1,3) + H_(0,1,3)
+    H_(0,2) + H_(0,1,2) + H_(0,1,2,3)
 
-has empirical value 19/8 and exact P75 box range [0,2]. The gap is 3/8 and the
+has empirical value 5/8 and exact P75 box range [1,2]. The gap is 3/8 and the
 centered coefficient norm is 12, producing the certified L-infinity lower bound
-1/32.
+1/32. Thus the example isolates a genuine three-event constraint that the full
+P84 certificate does not detect on the same box.
 
 P85 remains a conditional model-separation theorem. It rejects only the
 declared P75 latent measurement family under its stated assumptions. It does
