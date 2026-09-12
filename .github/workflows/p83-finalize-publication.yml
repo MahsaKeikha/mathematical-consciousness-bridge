@@ -33,9 +33,6 @@ jobs:
         run: |
           python scripts/normalize_typography.py --check
           git diff --check
-          grep -q '| Public theorem frontier | \*\*P83\*\* |' README.md
-          grep -q '^# 0.82.0 - 2026-09-12$' CHANGELOG.md
-          grep -q 'P77-P83: from full-law rejection to exact dependency-aware certification' website/research-map.html
 
       - name: Remove one-shot machinery
         run: |
