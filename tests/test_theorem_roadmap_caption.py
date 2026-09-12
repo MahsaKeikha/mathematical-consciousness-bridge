@@ -8,7 +8,7 @@ CATALOG = ROOT / "docs" / "figure_catalog.md"
 
 def test_readme_roadmap_caption_matches_displayed_scope_and_frontier():
     text = README.read_text(encoding="utf-8")
-    assert "P1 through P80 with explicit dependency branches" in text
+    assert "P1 through P81 with explicit dependency branches" in text
     assert "Figure 3 below displays the P1-P31 foundational portion" in text
     assert "Figure 3. Theorem dependency map for P1-P31." in text
     assert "arrows show actual mathematical and scientific prerequisites" in text

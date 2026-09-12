@@ -27,10 +27,11 @@ Because four-view cylinder events are individual cells, the projection family
 already contains the P78 coordinatewise bound. Combining it with P80 therefore
 gives a certificate that is never weaker than P80 and can be strictly stronger.
 
-All certification arithmetic uses ``fractions.Fraction``. This is a numerical
-and statistical certification result for the declared P75 latent model. It does
-not validate that model, does not identify any latent state with consciousness,
-and does not solve the physical-to-experiential bridge.
+All certification arithmetic uses ``fractions.Fraction``. This is a numerical and statistical certification result for the declared P75
+latent model.
+It does not validate that model.
+It does not identify any latent state with consciousness.
+It does not solve the physical-to-experiential bridge.
 """
 
 from __future__ import annotations
