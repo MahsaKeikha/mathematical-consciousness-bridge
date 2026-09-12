@@ -1,0 +1,32 @@
+name: reproducibility
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - name: Install exact reference environment
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+          python -m pip install -r requirements-reproducibility.txt
+      - name: Run end-to-end reproducibility audit
+        run: python scripts/reproducibility_audit.py
+      - name: Upload reproduced computational atlases
+        uses: actions/upload-artifact@v4
+        with:
+          name: reproduced-computational-atlases-v0.81.0
+          path: |
+            docs/figures/quantitative
+            docs/figures/quantum
+          if-no-files-found: error
