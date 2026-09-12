@@ -1,0 +1,243 @@
+.topbar nav a[aria-current="page"] {
+  color: var(--ink);
+  font-weight: 680;
+}
+
+.topbar nav a[aria-current="page"]::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  margin-top: 4px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.external-nav::after {
+  content: " ↗";
+  font-size: 0.78em;
+}
+
+.breadcrumbs {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 22px 24px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.breadcrumbs a {
+  color: var(--muted);
+}
+
+.breadcrumbs a:hover {
+  color: var(--accent);
+}
+
+.interactive-card {
+  position: relative;
+  cursor: pointer;
+  transition:
+    transform 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    background-color 150ms ease;
+}
+
+.interactive-card:hover {
+  transform: translateY(-2px);
+  border-color: #b8c0d0;
+  box-shadow: 0 9px 24px rgba(28, 38, 61, 0.07);
+}
+
+.interactive-card:focus-visible,
+.trail-card:focus-visible,
+.back-to-top:focus-visible,
+.topbar a:focus-visible,
+.button:focus-visible {
+  outline: 3px solid rgba(40, 63, 130, 0.24);
+  outline-offset: 3px;
+}
+
+.interactive-card::after {
+  content: "Open →";
+  position: absolute;
+  right: 16px;
+  bottom: 13px;
+  color: var(--accent2);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  opacity: 0;
+  transform: translateY(3px);
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.interactive-card:hover::after,
+.interactive-card:focus-visible::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.figure-card.interactive-card {
+  padding-bottom: 31px;
+}
+
+.reader-trail {
+  max-width: var(--max);
+  margin: 24px auto 0;
+  padding-top: 56px;
+  padding-bottom: 72px;
+  border-top: 1px solid var(--line);
+}
+
+.reader-trail-head {
+  max-width: 720px;
+  margin-bottom: 22px;
+}
+
+.reader-trail-head h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 2.4vw, 2.15rem);
+  font-weight: 600;
+  line-height: 1.16;
+  letter-spacing: -0.025em;
+}
+
+.reader-trail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.trail-card {
+  display: flex;
+  min-height: 138px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--paper);
+  color: var(--ink);
+  transition:
+    transform 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.trail-card:hover {
+  transform: translateY(-2px);
+  border-color: #b8c0d0;
+  box-shadow: 0 9px 24px rgba(28, 38, 61, 0.07);
+  text-decoration: none;
+}
+
+.trail-card span {
+  color: var(--accent2);
+  font-size: 0.66rem;
+  font-weight: 760;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.trail-card strong {
+  display: block;
+  margin: 9px 0 6px;
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+.trail-card small {
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.trail-card.next {
+  text-align: right;
+}
+
+.trail-card.map {
+  background: var(--soft);
+}
+
+.back-to-top {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 30;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--ink);
+  box-shadow: 0 7px 22px rgba(28, 38, 61, 0.1);
+  font-size: 0.7rem;
+  font-weight: 700;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(6px);
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  text-decoration: none;
+  border-color: #b8c0d0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interactive-card,
+  .interactive-card::after,
+  .trail-card,
+  .back-to-top {
+    transition: none;
+  }
+
+  .interactive-card:hover,
+  .trail-card:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .reader-trail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trail-card.next {
+    text-align: left;
+  }
+
+  .reader-trail {
+    padding-top: 44px;
+    padding-bottom: 56px;
+  }
+
+  .breadcrumbs {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .back-to-top {
+    right: 16px;
+    bottom: 16px;
+  }
+}
