@@ -1,6 +1,6 @@
 # Start Here: Mathematical Consciousness Bridge
 
-**A reader-first guide to the research question, the 84-result theorem program, the code, and the scientific boundaries.**
+**A reader-first guide to the research question, the 85-result theorem program, the code, and the scientific boundaries.**
 
 If this is your first time in the repository, start on this page before opening the full README or individual theorem files.
 
@@ -10,7 +10,7 @@ If this is your first time in the repository, start on this page before opening 
 
 The project does **not** begin by choosing a favorite formula for consciousness. It begins by asking what a scientifically defensible bridge claim would have to survive: representation changes, hidden variables, coarse-graining, target circularity, noisy measurement, non-identifiability, finite data, model inadequacy, and uncertified optimization.
 
-The current release is **v0.82.0**. The repository contains **84 proposition-level results**. The current theorem frontier is **P84**. The physical-to-experiential bridge itself remains open.
+The current release is **v0.82.0**. The repository contains **85 proposition-level results**. The current theorem frontier is **P84**. The physical-to-experiential bridge itself remains open.
 
 ---
 
@@ -78,7 +78,7 @@ For the presentation rules used across the website and documentation, see the [R
 | **A first-time reader** | this page | [README](README.md) → [Research Navigation](docs/research_navigation.md) |
 | **A mathematician** | [Theorem Roadmap](docs/theorem_roadmap.md) | [Detailed Proposition Record](docs/detailed_proposition_record.md) → proposition proofs → [Equation and Citation Map](docs/equation_and_citation_map.md) |
 | **A physicist** | [Bridge Problem](docs/bridge_problem.md) | P11-P19 → [Quantum Foundations and Bridge Test](docs/quantum_foundations_and_bridge_test.md) → P38-P44 |
-| **A consciousness researcher** | [Bridge Problem](docs/bridge_problem.md) | P19 → P71-P84 → [Falsification Program](docs/falsification_program.md) |
+| **A consciousness researcher** | [Bridge Problem](docs/bridge_problem.md) | P19 → P71-P85 → [Falsification Program](docs/falsification_program.md) |
 | **An experimentalist or statistician** | P20-P24 | P39-P44 → P47-P60 → P74-P84 |
 | **A software reviewer** | [pyproject.toml](pyproject.toml) | [`src/consciousness_bridge/`](src/consciousness_bridge/) → [`tests/`](tests/) → theorem/provenance files |
 | **A visual reader** | [Figure Catalog](docs/figure_catalog.md) | [Visual Atlas](website/visual-atlas.html) → theorem figures linked from the roadmap |
@@ -105,7 +105,7 @@ For the complete one-row-per-proposition index, use the [Theorem Roadmap](docs/t
 
 ---
 
-## The current frontier: P71-P84 in plain language
+## The current frontier: P71-P85 in plain language
 
 The newest branch returns directly to a basic scientific problem: before a physical descriptor can be judged sufficient for an experiential target, how do we know the **target itself** and the **way we measure it** are scientifically defensible?
 
@@ -227,3 +227,16 @@ The project is intended to remain difficult to overclaim. A result is strongest 
 [P84: Exact Joint Projection-Parity Contrast Certificate](docs/proposition_84_exact_projection_parity_contrast.md) strengthens the complete P83 lower bound with 220 genuinely coupled parity-event contrasts evaluated under one shared P75 parameter assignment. Its exact-rational strict witness has `L83 = 0` and `L84 = 1/32`. The theorem remains a conditional model-distance certificate and does not identify any latent state with consciousness.
 
 Implementation: [`joint_projection_parity_contrast_separation.py`](src/consciousness_bridge/joint_projection_parity_contrast_separation.py). Tests: [`test_joint_projection_parity_contrast_separation.py`](tests/test_joint_projection_parity_contrast_separation.py). Provenance: [`p84_equation_provenance.md`](docs/p84_equation_provenance.md).
+
+
+## Current frontier: P85
+
+P85 is the current documented theorem frontier. It strengthens P84 by testing exact signed functionals of three distinct canonical even-parity observables under one shared P75 parameter assignment. The exact regression witness has the complete P84 lower bound equal to zero while P85 certifies a full-law L-infinity lower bound of `1/32`.
+
+This remains a conditional model-separation result. The physical-to-experiential bridge itself remains open.
+
+- [P85 proof](docs/proposition_85_exact_triple_projection_parity_functional.md)
+- [P85 equation provenance](docs/p85_equation_provenance.md)
+- [P85 source](src/consciousness_bridge/triple_projection_parity_functional_separation.py)
+- [P85 tests](tests/test_triple_projection_parity_functional_separation.py)
+- [P85 figure](docs/figures/p85_exact_triple_projection_parity_functional.svg)

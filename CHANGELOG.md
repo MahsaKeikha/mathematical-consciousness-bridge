@@ -353,6 +353,11 @@
 
 # Changelog
 
+## Unreleased - P85 frontier synchronization
+
+- Promoted the verified P85 exact three-event projection-parity functional certificate across proof provenance, reader navigation, figures, citation metadata, and the public website.
+- Recorded the exact strict witness `L84 = 0 < L85 = 1/32` while preserving the explicit boundary that the physical-to-experiential bridge remains open.
+
 ## 0.82.0 - 2026-09-12 - P82 exact nested projection-contrast certificate
 
 - Added exact P75 parameter-box intervals for nested residual events A\B.

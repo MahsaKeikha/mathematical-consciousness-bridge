@@ -83,3 +83,5 @@ The `.github/workflows/figures.yml` workflow regenerates both computational atla
 A successful figure workflow means the repository's declared generation and validation path executed successfully. It does not convert a theorem illustration, synthetic benchmark, or model calculation into empirical evidence about consciousness.
 
 For the curated reader-facing index, see [`docs/figure_catalog.md`](../figure_catalog.md). For full setup instructions, see [`docs/reproducibility.md`](../reproducibility.md).
+
+- `p85_exact_triple_projection_parity_functional.svg` - P85 exact three-event shared-parameter parity-functional certificate; conditional on the declared P75 family.

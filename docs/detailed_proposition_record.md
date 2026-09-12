@@ -1,6 +1,6 @@
 # Detailed proposition record
 
-## Complete P1 to P84 chronology
+## Complete P1 to P85 chronology
 
 This page preserves the proposition-by-proposition development history of the Mathematical Consciousness Bridge research program. It is intentionally separate from the main README so a first-time reader can follow the scientific argument without first learning the internal chronology of the project.
 
@@ -14,7 +14,7 @@ A first-time reader should not read this page as 84 disconnected proofs. Use it 
 
 ---
 
-## Complete P1 to P84 chronology
+## Complete P1 to P85 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
@@ -264,3 +264,16 @@ P84 strengthens the complete P83 continuous-family lower bound by preserving **j
 - Implementation: [`joint_projection_parity_contrast_separation.py`](../src/consciousness_bridge/joint_projection_parity_contrast_separation.py)
 - Tests: [`test_joint_projection_parity_contrast_separation.py`](../tests/test_joint_projection_parity_contrast_separation.py)
 - Figure: [P84 exact joint projection-parity contrast certificate](figures/p84_exact_joint_projection_parity_contrast.svg)
+
+
+## Proposition P85 - Exact three-event projection-parity functional certificate
+
+**P85** strengthens P84 for the same declared P75 four-view binary latent family. It asks whether three canonical even-parity observables can be compatible with one shared parameter assignment even when the complete P84 pairwise certificate is silent. The standard family contains 660 sign-normalized three-event functionals. Exact multi-affine endpoint evaluation gives each functional's P75 box interval, and an exact centered coefficient norm transfers interval mismatch to a full-law L-infinity lower bound.
+
+The exact regression witness has `L84 = 0`, empirical functional value `5/8`, exact P75 interval `[1,2]`, gap `3/8`, centered coefficient norm `12`, and `L85 = 1/32`. Thus P85 is strictly stronger than P84 on that box. This remains a conditional model-separation certificate; it does not identify a latent state with consciousness or close the physical-to-experiential bridge.
+
+- Proof: [Proposition 85](proposition_85_exact_triple_projection_parity_functional.md)
+- Provenance: [P85 equation and provenance record](p85_equation_provenance.md)
+- Figure: [P85 exact three-event projection-parity functional](figures/p85_exact_triple_projection_parity_functional.svg)
+- Implementation: [`triple_projection_parity_functional_separation.py`](../src/consciousness_bridge/triple_projection_parity_functional_separation.py)
+- Tests: [`test_triple_projection_parity_functional_separation.py`](../tests/test_triple_projection_parity_functional_separation.py)

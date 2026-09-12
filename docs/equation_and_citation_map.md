@@ -1250,3 +1250,12 @@ Full classification: [P83 equation and provenance record](p83_equation_provenanc
 - **New mathematical step:** exact common-vertex extremization of differences between two P83 parity-event probabilities under one shared P75 parameter assignment, followed by an eight-cell L-infinity transfer.
 - **Strict witness:** `L83 = 0 < L84 = 1/32`.
 - **Boundary:** this strengthens rejection of the declared P75 target-measurement model family. It does not identify a latent state with consciousness or close the physical-to-experiential bridge.
+
+
+## P85 - Exact three-event projection-parity functional certificate
+
+**New repository result.** P85 strengthens the P84 pairwise parity audit by retaining one shared P75 parameter assignment across three canonical even-parity observables. The exact branch range follows from multi-affinity and common endpoint evaluation. The full-law transfer uses the standard centered finite-dimensional norm inequality, with the exact coefficient center chosen by median absolute-deviation minimization.
+
+The standard audit contains 660 sign-normalized functionals. The exact strict witness has `L84 = 0 < L85 = 1/32`. See [Proposition 85](proposition_85_exact_triple_projection_parity_functional.md), [P85 equation provenance](p85_equation_provenance.md), and the [P85 theorem figure](figures/p85_exact_triple_projection_parity_functional.svg).
+
+**Boundary:** this is a conditional adequacy/model-separation result for the declared P75 family. It neither identifies the latent state with consciousness nor closes the physical-to-experiential bridge.

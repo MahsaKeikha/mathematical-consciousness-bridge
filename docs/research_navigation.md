@@ -4,14 +4,14 @@ This page is the reading and reference index for the **Mathematical Consciousnes
 
 **First-time reader:** begin with [Start Here](../START_HERE.md) for the shortest orientation, keep the [Glossary and Reader Vocabulary](glossary.md) nearby for terminology, use the [Reader Experience and Visual Presentation Standard](reader_experience_and_visual_standard.md) to understand how the public record is organized, and use the [Reproducibility Guide](reproducibility.md) when you want to run the code, tests, or generated figure atlases.
 
-The current documented theorem frontier is **P84**. The complete proposition record runs from **P1 through P84**. P71-P84 form a target-side methodology branch descending from the P19 physical-sufficiency question. They are not extensions of the P61-P70 calibration branch.
+The current documented theorem frontier is **P85**. The complete proposition record runs from **P1 through P85**. P71-P85 form a target-side methodology branch descending from the P19 physical-sufficiency question. They are not extensions of the P61-P70 calibration branch.
 
 ## Recommended reading order
 
 1. [Main research study](../README.md) for the complete scientific narrative and curated figures.
 2. [Bridge problem](bridge_problem.md) for the formal physical-to-experiential question.
 3. [Scientific status discipline](../README.md#scientific-status-discipline) for the distinction among definitions, proved results, implementations, numerical checks, empirical inputs, hypotheses, and open bridge claims.
-4. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P84.
+4. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P85.
 5. [P19 fundamental physical sufficiency](proposition_19_fundamental_physical_sufficiency.md) for the exact, stochastic, and differential bridge criteria.
 6. [P20-P24 finite and adaptive residual certification](theorem_roadmap.md) for finite-data and repeated-look validity.
 7. [P71 target-provenance non-circularity](proposition_71_target_provenance_noncircularity.md) for the theorem showing when a target construction makes a bridge test vacuous by design.
@@ -28,6 +28,7 @@ The current documented theorem frontier is **P84**. The complete proposition rec
 18. [P82 exact nested projection-contrast separation](proposition_82_exact_nested_projection_contrast.md) for exact nested residual-event box intervals, the 256-contrast audit, P82 >= P81 dominance, and the strict 1/12 versus 1/16 witness.
 19. [P83 exact projection-parity separation](proposition_83_exact_projection_parity.md) for the 22-event parity audit, exact multi-affine box intervals, P83 >= P82 dominance, and the strict `1/16` versus zero witness.
 20. [P84 exact joint projection-parity separation](proposition_84_exact_projection_parity_contrast.md) for the stronger shared-parameter question: whether two individually compatible P83 parity observations can be realized simultaneously. It covers 220 exact coupled contrasts, P84 >= P83 dominance, and the strict `L83 = 0 < L84 = 1/32` witness.
+21. [P85 exact three-event projection-parity functional](proposition_85_exact_triple_projection_parity_functional.md) for the next shared-parameter question: whether the complete P84 pairwise certificate can remain silent while a three-event relation is incompatible. It covers 660 exact sign-normalized functionals, P85 >= P84 dominance, and the strict `L84 = 0 < L85 = 1/32` witness.
 21. [P11-P18 and P25-P37 operational physical structure](theorem_roadmap.md) for intervention, temporal, compositional, and multiscale requirements.
 22. [P38-P44 quantum foundations and bridge tests](quantum_foundations_and_bridge_test.md) for quantum operational sufficiency under explicit bridge classes.
 23. [P45-P60 adaptive experiment design and scheduling](theorem_roadmap.md) for valid evidence collection and transition-calibration setup.
@@ -43,6 +44,7 @@ The current documented theorem frontier is **P84**. The complete proposition rec
 33. [Citation guide](../CITATION.md) for citing the whole research program or a specific proposition, figure, algorithm, or implementation.
 34. [P83 equation and provenance record](p83_equation_provenance.md) for exact parity identities, multi-affine box extrema, the strict P83 > P82 witness, and the scientific interpretation boundary.
 35. [P84 equation and provenance record](p84_equation_provenance.md) for common-vertex joint parity contrasts, the 220-contrast family, the strict P84 > P83 witness, and the scientific interpretation boundary.
+36. [P85 equation and provenance record](p85_equation_provenance.md) for exact three-event shared-parameter parity functionals, the 660-functional family, the strict P85 > P84 witness, and the scientific interpretation boundary.
 
 ## Scientific branch map
 
@@ -69,6 +71,7 @@ The current documented theorem frontier is **P84**. The complete proposition rec
 | Nested projection-contrast continuous target-model separation | P82 | Adds exact residual-event ranges for nested projected cylinders and retains common-parameter structure beyond separate P81 event tests | [P82](proposition_82_exact_nested_projection_contrast.md) |
 | Projection-parity continuous target-model separation | P83 | Adds 22 exact parity-event ranges whose multi-affine branch structure can expose dependence incompatibility invisible to the complete P82 event family | [P83](proposition_83_exact_projection_parity.md) |
 | Joint projection-parity continuous target-model separation | P84 | Adds 220 exact coupled parity-event contrasts that preserve shared-parameter compatibility beyond separate P83 ranges | [P84](proposition_84_exact_projection_parity_contrast.md) |
+| Three-event projection-parity functional separation | P85 | Adds 660 exact signed three-event parity functionals that test shared-parameter compatibility beyond the complete P84 pairwise certificate | [P85](proposition_85_exact_triple_projection_parity_functional.md) |
 
 ## Complete proposition index
 
@@ -158,6 +161,7 @@ The current documented theorem frontier is **P84**. The complete proposition rec
 | P82 | [Exact nested projection contrast](proposition_82_exact_nested_projection_contrast.md) | exact non-cylinder residual-event constraints from nested projections |
 | P83 | [Exact projection parity](proposition_83_exact_projection_parity.md) | exact parity-event constraints beyond the complete P82 nested audit |
 | P84 | [Exact joint projection-parity contrast](proposition_84_exact_projection_parity_contrast.md) | exact shared-parameter parity-event contrast separation beyond the complete P83 scalar audit |
+| P85 | [Exact three-event projection-parity functional](proposition_85_exact_triple_projection_parity_functional.md) | exact three-event shared-parameter parity-functional separation beyond the complete P84 pairwise certificate |
 
 ## Core bridge interface
 
@@ -210,7 +214,8 @@ P76 adds finite-data discipline to that adequacy check. One simultaneous sixteen
 | [P74 figure](figures/p74_finite_sample_target_channel_recovery.svg) | finite-sample concentration, nondegeneracy gating, and full binary-channel confidence recovery |
 | [P75 figure](figures/p75_target_model_adequacy_overidentification.svg) | three-view just-identification, four-view overidentification, observable adequacy restrictions, and full-law reconstruction |
 | [P76 figure](figures/p76_finite_sample_target_model_adequacy.svg) | shared finite-sample confidence event, polynomial adequacy intervals, certified rejection, and the non-rejection boundary |
-| [P84 figure](figures/p84_exact_joint_projection_parity_contrast.svg) | current frontier: exact shared-parameter parity-event contrast certification with the strict L83 = 0, L84 = 1/32 witness |
+| [P84 figure](figures/p84_exact_joint_projection_parity_contrast.svg) | previous frontier: exact shared-parameter pairwise parity-event contrast certification |
+| [P85 figure](figures/p85_exact_triple_projection_parity_functional.svg) | current frontier: exact three-event shared-parameter parity-functional certification with the strict L84 = 0, L85 = 1/32 witness |
 | [`src/consciousness_bridge/`](../src/consciousness_bridge/) | executable theorem implementations |
 | [`tests/`](../tests/) | theorem, documentation, geometry, and publication regression tests |
 
@@ -218,7 +223,7 @@ P76 adds finite-data discipline to that adequacy check. One simultaneous sixteen
 
 Use the [Equation and citation map](equation_and_citation_map.md) to distinguish standard identities, repository derivations, and externally supported scientific claims. Use the [P72 provenance record](p72_equation_provenance.md), [P73 provenance record](p73_equation_provenance.md), [P74 provenance record](p74_equation_provenance.md), [P75 provenance record](p75_equation_provenance.md), and [P76 provenance record](p76_equation_provenance.md) for target-side equation classification. Use the [Foundational bibliography](foundational_physics_mathematics_bibliography.md), [Literature map](literature_map.md), and [Reference audit](reference_audit.md) for external evidence. Use the [Citation guide](../CITATION.md) when citing the overall project or a specific proposition.
 
-The research remains an ongoing mathematical-physics program. The current theorem frontier is P84, but the physical-to-experiential bridge itself remains open.
+The research remains an ongoing mathematical-physics program. The current theorem frontier is P85, but the physical-to-experiential bridge itself remains open.
 
 
 ## Frontier resources
@@ -229,5 +234,6 @@ The research remains an ongoing mathematical-physics program. The current theore
 | P82 | exact nested residual-event constraints | [P82](proposition_82_exact_nested_projection_contrast.md) |
 | P83 | exact projection-parity constraints | [P83](proposition_83_exact_projection_parity.md) |
 | P84 | exact joint parity-event shared-parameter constraints | [P84](proposition_84_exact_projection_parity_contrast.md) |
+| P85 | exact three-event parity-functional shared-parameter constraints | [P85](proposition_85_exact_triple_projection_parity_functional.md) |
 
-**Current frontier provenance:** [P84 equation and provenance record](p84_equation_provenance.md).
+**Current frontier provenance:** [P85 equation and provenance record](p85_equation_provenance.md).

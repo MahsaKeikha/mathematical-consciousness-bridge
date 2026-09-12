@@ -156,3 +156,8 @@ The result is a conditional model-distance certificate for the declared P75 late
 For work that specifically uses the current joint parity certificate, cite the program together with **Proposition 84: Exact Joint Projection-Parity Contrast Certificate** and its [equation provenance record](docs/p84_equation_provenance.md). P84 retains all of P83 and adds 220 exact coupled parity-event contrasts that preserve one shared P75 parameter assignment. Its exact-rational strict witness has `L83 = 0 < L84 = 1/32`.
 
 The result is a conditional model-distance certificate for the declared P75 latent family. It should not be cited as an identification, definition, or measurement of consciousness, and non-rejection remains inconclusive.
+
+
+## Current theorem frontier: P85
+
+The current documented theorem frontier is **P85**, the exact three-event projection-parity functional certificate. When citing this frontier result specifically, cite [Proposition 85](docs/proposition_85_exact_triple_projection_parity_functional.md) together with its [equation and provenance record](docs/p85_equation_provenance.md), implementation, tests, and exact theorem figure. P85 is conditional on the declared P75 model and does not claim that the physical-to-experiential bridge has been solved.
