@@ -9,10 +9,19 @@
 **Mahsa Keikha, PhD**
 
 > [!TIP]
-> **First time here?** Begin with **[START_HERE.md](START_HERE.md)** for a short orientation, audience-specific reading paths, the P1-P82 program map, and the current P82 frontier. Keep the **[Glossary](docs/glossary.md)** open for terminology, and use the **[Reproducibility Guide](docs/reproducibility.md)** when you want to run the tests or regenerate the computational figure atlases.
+> **First time here?** Begin with **[START_HERE.md](START_HERE.md)** for a short orientation, audience-specific reading paths, the P1-P83 program map, and the current P83 frontier. Keep the **[Glossary](docs/glossary.md)** open for terminology, and use the **[Reproducibility Guide](docs/reproducibility.md)** when you want to run the tests or regenerate the computational figure atlases.
 
 > [!NOTE]
 > **Reproduce the complete computational record:** use Python 3.12.14, install `requirements-reproducibility.txt`, and run `python scripts/reproducibility_audit.py` (or `make reproduce`). The audit fails unless tests/static checks pass and two full generated-figure rebuilds leave the Git tree byte-for-byte clean.
+
+| Research status | Current value |
+| --- | --- |
+| Formal release | **v0.82.0** |
+| Public theorem frontier | **P83** |
+| Proposition-level results | **83** |
+| Physical-to-experiential bridge | **Open** |
+
+Read the complete P1 to P83 detailed proposition record in [docs/detailed_proposition_record.md](docs/detailed_proposition_record.md) for proposition-by-proposition assumptions, statements, proofs, implementations, tests, and scientific boundaries.
 
 > **What mathematical and physical conditions would be required for a complete physical description of a system to support a scientifically testable claim about consciousness?**
 
@@ -62,6 +71,12 @@ P81 asks what P80 still leaves out. A P75 parameter box can force exact probabil
 
 P82 asks what nested projected events can reveal that separate P81 event tests still discard. For a parent cylinder and a stricter child cylinder, their difference is a generally non-cylinder residual event. Under the declared P75 conditional-independence model, P82 derives the exact parameter-box range of that residual directly from disjoint parent and added-view response coordinates, rather than conservatively subtracting two separate event intervals. The resulting certificate retains all of P81 and adds 256 genuinely new nested contrasts. An exact-rational witness gives P80 = 0, P81 = 1/16, and P82 = 1/12. This is a stronger model-distance certificate, not evidence that the latent state is consciousness.
 
+P83 asks whether a simple dependency observable can expose incompatibility that remains hidden even after the P82 nested-residual audit. For every two-, three-, and four-view subset, it tests both binary parity events. Conditional independence inside each P75 latent branch gives the exact identity `P_s(H(J,b)) = [1 + (-1)^b product_j(1 - 2 q_{j,s})]/2`. The product is multi-affine, so its complete range on a rational parameter box is attained at response-coordinate vertices; prevalence then enters affinely and is extremized at its endpoints. The standard P83 family contains only 22 genuinely new parity observables, and every event mismatch transfers to a full-law L-infinity lower bound by dividing by the eight cells in a parity event. An exact-rational witness fixes one observed channel at one half in both latent branches and uses an empirical law supported on equal-bit pairs: the complete P82 audit remains zero, while P83 certifies `1/16`. P83 is therefore a strict strengthening of the declared P75 model-distance certificate on that witness, not a consciousness-identification result.
+
+![P83 exact projection-parity certificate](docs/figures/p83_exact_projection_parity.svg)
+
+**P83 frontier figure.** P83 adds 22 exact parity observables to the complete P82 certificate. The figure shows the Bernoulli parity identity, exact multi-affine box extremization, the eight-cell event-mass transfer, and the strict exact-rational witness with `L82 = 0` and `L83 = 1/16`. The result is conditional on the declared P75 model and does not identify the latent state with experience.
+
 Only after the physical description, the target, and the way the target is measured are all scientifically defensible does the central bridge question become meaningful: **does the physical description actually contain enough information to account for the target distinction?** One of the clearest ways to challenge a proposed bridge is to find two cases that are indistinguishable according to the declared physical description but remain distinguishable according to the independently justified target. Such a result would show that the declared physical description is not sufficient for that target.
 
 That conclusion must also be interpreted carefully. Showing that one physical description is insufficient would not automatically prove that consciousness lies outside physics. The description may be too coarse, may omit a relevant physical variable, may use the wrong system boundary or scale, may rely on an inadequate measurement process, or may assume a bridge rule that is too restrictive. The aim is to identify exactly which assumption fails rather than turning one failed model into a metaphysical conclusion.
@@ -76,7 +91,7 @@ A successful outcome would therefore not be a single impressive equation labeled
 
 That is the purpose of the **Mathematical Consciousness Bridge**: **to transform the broad question of how physical reality relates to experience into a sequence of precise scientific obligations that can be examined, tested, falsified, and improved one by one, without hiding the hardest part of the problem inside an assumption.**
 
-The research currently contains **82 proposition-level results** and **70 equation-driven quantitative figures**. The theorem frontier is P82. These results build the test architecture and close specific mathematical gaps, but the physical-to-experiential bridge itself remains open.
+The research currently contains **83 proposition-level results** and **71 equation-driven quantitative figures**. The theorem frontier is P83. These results build the test architecture and close specific mathematical gaps, but the physical-to-experiential bridge itself remains open.
 
 This project continues [Spatiotemporal Observer Mathematics](https://github.com/MahsaKeikha/spatiotemporal-observer-math), which addresses the prior physical problem of identifying a persistent moving subsystem from measured dynamics.
 
@@ -212,17 +227,17 @@ The main page is organized as a scientific argument rather than a chronological 
 | --- | --- | --- | --- | --- |
 | 1. Foundations and identifiability | **P1-P10** | What must be invariant, distinguishable, recoverable, and statistically testable? | Proved / implemented / tested | [Theorem roadmap](docs/theorem_roadmap.md) |
 | 2. Causal, temporal, compositional, and scale structure | **P11-P18** | Which physical distinctions survive interventions, time, composition, and coarse-graining? | Proved / implemented / tested | [Quantitative atlas](docs/quantitative_physics_mathematics_atlas.md) |
-| 3. Bridge sufficiency and target validity | **P19-P24, P71-P82** | Does an independently justified, adequately measured, reliability-characterized, and finite-data-certified target factor through the physical descriptor? | Proved under declared models | [Research navigation](docs/research_navigation.md) |
+| 3. Bridge sufficiency and target validity | **P19-P24, P71-P83** | Does an independently justified, adequately measured, reliability-characterized, and finite-data-certified target factor through the physical descriptor? | Proved under declared models | [Research navigation](docs/research_navigation.md) |
 | 4. Multiscale operational structure | **P25-P37** | Which causal and response structures survive node, state, intervention, and delay quotients? | Proved / implemented / tested | [Theorem roadmap](docs/theorem_roadmap.md) |
 | 5. Quantum sufficiency and falsification | **P38-P44** | What follows from a declared operational quantum description, and what does not? | Conditional tests proved; ontology open | [Quantum foundations](docs/quantum_foundations_and_bridge_test.md) |
 | 6. Adaptive experiment design and scheduling | **P45-P60** | How should evidence gathering, stopping, service allocation, switching, and calibration be organized? | Proved / implemented / tested | [Equation and citation map](docs/equation_and_citation_map.md) |
 | 7. Calibration and integer optimization | **P61-P70** | How should downstream finite calibration resources be allocated and certified? | Proved / implemented / tested | [Calibration and Optimization Frontier](docs/calibration_optimization_frontier_p61_p70.md) |
 
-The complete theorem index spans P1 through P82 with explicit dependency branches. Figure 3 below displays the P1-P31 foundational portion; later branches are documented separately.
+The complete theorem index spans P1 through P83 with explicit dependency branches. Figure 3 below displays the P1-P31 foundational portion; later branches are documented separately.
 
 ![Theorem roadmap](docs/figures/theorem_roadmap.svg)
 
-**Figure 3. Theorem dependency map for P1-P31.** Proposition numbers preserve development order, while arrows show actual mathematical and scientific prerequisites. The central target-sufficiency chain runs from P19 through P24; P25-P31 are physical-scale and quotient branches whose prerequisites are given by the arrows rather than by vertical placement alone. An absent arrow means no dependency is being asserted. Later P61-P70 and P71-P82 are separate continuations documented in the theorem index.
+**Figure 3. Theorem dependency map for P1-P31.** Proposition numbers preserve development order, while arrows show actual mathematical and scientific prerequisites. The central target-sufficiency chain runs from P19 through P24; P25-P31 are physical-scale and quotient branches whose prerequisites are given by the arrows rather than by vertical placement alone. An absent arrow means no dependency is being asserted. Later P61-P70 and P71-P83 are separate continuations documented in the theorem index.
 
 ---
 

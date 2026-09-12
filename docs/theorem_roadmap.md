@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P82**. The proposition record runs from **P1 through P82 with explicit dependency branches**. P71-P82 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P83**. The proposition record runs from **P1 through P83 with explicit dependency branches**. P71-P83 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -39,7 +39,9 @@ The current documented theorem frontier is **P82**. The proposition record runs 
 &\Downarrow\\
 &\text{P81: projected-event constraints tighten the same certified model-distance lower bound}\\
 &\Downarrow\\
-&\text{P82: exact nested residual-event constraints tighten P81 while preserving certification}
+&\text{P82: exact nested residual-event constraints tighten P81 while preserving certification}\\
+&\Downarrow\\
+&\text{P83: projection-parity constraints expose additional exact dependence structure}
 \end{aligned}
 }
 \]
@@ -575,3 +577,38 @@ P78 closes the global-lower-bound gap for the specific continuous P75 four-view 
 The next computational question is therefore not another cosmetic bound. A substantive continuation beyond P82 would retain broader **simultaneous dependence among multiple overlapping events** or introduce a demonstrably tighter exact-rational convex or semialgebraic relaxation while preserving the certified lower-bound direction. Statistical extensions remain open as well, including sharper power analysis and target-view models with residual dependence, shared bias, temporal drift, or learned measurement pipelines.
 
 None of P71-P82 identifies a latent variable with consciousness. None proves that a failed descriptor implies nonphysical consciousness. The physical-to-experiential bridge remains open.
+
+
+## P83 frontier: exact projection-parity separation
+
+P82 retains common-parameter structure for nested residual events. P83 adds a complementary dependency observable. For selected views $J$ and parity $b$,
+
+\[
+H(J,b)=\{x:\bigoplus_{j\in J}x_j=b\},
+\]
+
+and P75 conditional independence gives
+
+\[
+\boxed{
+P_s(H(J,b))
+=
+\frac{1+(-1)^b\prod_{j\in J}(1-2q_{j,s})}{2}.
+}
+\]
+
+The product is multi-affine in the selected response coordinates. Exact branch extrema therefore occur at box vertices, and the latent mixture is then affine in prevalence. P83 audits both parities on every two-, three-, and four-view subset, for 22 genuinely new events, and defines
+
+\[
+\boxed{L_{83}(B)=\max\{L_{82}(B),L_{\mathrm{par}}(B)\}.}
+\]
+
+A strict exact-rational witness fixes one observed channel at Bernoulli one half in both latent branches. Every P75 law in that box then has pair parity one half, while an empirical equal-bit law has parity one. The complete P82 event family remains compatible, giving
+
+\[
+\boxed{L_{82}(B)=0<L_{83}(B)=1/16.}
+\]
+
+P83 retains the already-proved P78 mesh-width upper certificate for branch-and-bound and the P79 one-sided sampling-radius rejection handoff. It does not claim a new convergence-rate theorem and does not identify the P75 latent state with consciousness.
+
+Direct proof: [P83](proposition_83_exact_projection_parity.md). Provenance: [P83 equation record](p83_equation_provenance.md). Implementation: [`projection_parity_model_separation.py`](../src/consciousness_bridge/projection_parity_model_separation.py). Tests: [`test_projection_parity_model_separation.py`](../tests/test_projection_parity_model_separation.py).

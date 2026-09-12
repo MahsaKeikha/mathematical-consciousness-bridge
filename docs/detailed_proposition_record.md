@@ -1,6 +1,6 @@
 # Detailed proposition record
 
-## Complete P1 to P82 chronology
+## Complete P1 to P83 chronology
 
 This page preserves the proposition-by-proposition development history of the Mathematical Consciousness Bridge research program. It is intentionally separate from the main README so a first-time reader can follow the scientific argument without first learning the internal chronology of the project.
 
@@ -10,7 +10,7 @@ The scientific status rule is strict throughout: a theorem is only a theorem und
 
 ---
 
-## Complete P1 to P82 chronology
+## Complete P1 to P83 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
@@ -238,3 +238,14 @@ Each proposition should be read through the same four-way distinction:
 The complete dependency graph is maintained in the [Theorem roadmap](theorem_roadmap.md), equation provenance in the [Equation and citation map](equation_and_citation_map.md), and cross-disciplinary sources in the [Foundational physics and mathematics bibliography](foundational_physics_mathematics_bibliography.md) and [Literature map](literature_map.md).
 
 
+
+
+## P83: Exact Projection-Parity Certificate for Continuous P75 Separation
+
+P83 strengthens the complete P82 continuous-family lower bound with 22 parity observables on all two-, three-, and four-view subsets. Conditional independence inside each P75 latent branch yields an exact Bernoulli parity identity. Its response-coordinate product is multi-affine, so exact rational box extrema occur at endpoint vertices; affine prevalence mixing then gives the exact full-box parity interval. Event mismatch transfers to full-law L-infinity distance through the eight-cell support size. A constructive exact-rational witness has `L82 = 0` and `L83 = 1/16`, proving strict improvement on the same parameter box. P83 keeps the P78 upper certificate and P79 rejection direction unchanged and does not identify the latent state with consciousness.
+
+- Proof: [Proposition 83](proposition_83_exact_projection_parity.md)
+- Provenance: [P83 equation record](p83_equation_provenance.md)
+- Implementation: [`projection_parity_model_separation.py`](../src/consciousness_bridge/projection_parity_model_separation.py)
+- Tests: [`test_projection_parity_model_separation.py`](../tests/test_projection_parity_model_separation.py)
+- Figure: [P83 exact projection-parity certificate](figures/p83_exact_projection_parity.svg)

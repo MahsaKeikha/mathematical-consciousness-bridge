@@ -6,7 +6,7 @@ MAP = ROOT / "website/research-map.html"
 
 def test_research_map_starts_with_orientation_before_stage_details():
     text = MAP.read_text(encoding="utf-8")
-    hero = text.index("Eighty-two results, one dependency-aware scientific program")
+    hero = text.index("Eighty-three results, one dependency-aware scientific program")
     orientation = text.index("How to read this research")
     stage_one = text.index("I · Formal bridge foundations")
     assert hero < orientation < stage_one
@@ -56,14 +56,16 @@ def test_research_map_gives_direct_audit_paths():
         "p82_equation_provenance.md",
         "proposition_82_exact_nested_projection_contrast.md",
         "proposition_81_projection_event_model_separation.md",
+        "p83_equation_provenance.md",
+        "proposition_83_exact_projection_parity.md",
     ]
     for token in required:
         assert token in text, token
 
 
-def test_research_map_presents_p77_through_p82_in_dependency_order():
+def test_research_map_presents_p77_through_p83_in_dependency_order():
     text = MAP.read_text(encoding="utf-8")
-    assert "through Proposition 82" in text
+    assert "through Proposition 83" in text
     frontier = text.index('id="continuous-model-frontier"')
     p77 = text.index("Open P77 →", frontier)
     p78 = text.index("Open P78 →", frontier)
@@ -71,7 +73,8 @@ def test_research_map_presents_p77_through_p82_in_dependency_order():
     p80 = text.index("Open P80 →", frontier)
     p81 = text.index("Open P81 →", frontier)
     p82 = text.index("Open P82 →", frontier)
-    assert p77 < p78 < p79 < p80 < p81 < p82
+    p83 = text.index("Open P83 →", frontier)
+    assert p77 < p78 < p79 < p80 < p81 < p82 < p83
 
     assert text.count("P78: Certified continuous P75 model separation") == 1
     assert text.count("How is P77 made rigorous for the continuous P75 family?") == 1
@@ -79,3 +82,24 @@ def test_research_map_presents_p77_through_p82_in_dependency_order():
     assert "Simplex coupling" in text
     assert "256 genuinely new residual events" in text
     assert "P81 = 1/16 to P82 = 1/12" in text
+    assert "L82 = 0 and L83 = 1/16" in text
+    assert text.index('id="p83-frontier"') < text.index("</main>")
+
+
+def test_p83_frontier_is_unique_and_structurally_inside_main():
+    text = MAP.read_text(encoding="utf-8")
+    main_open = text.index("<main>")
+    main_close = text.index("</main>")
+    p83 = text.index('id="p83-frontier"')
+    assert text.count('id="p83-frontier"') == 1
+    assert main_open < p83 < main_close
+    assert "Open P83 →" not in text[main_close:]
+
+
+def test_continuous_frontier_keeps_p82_and_p83_provenance_auditable():
+    text = MAP.read_text(encoding="utf-8")
+    frontier = text.index('id="continuous-model-frontier"')
+    main_close = text.index("</main>", frontier)
+    frontier_text = text[frontier:main_close]
+    assert "p82_equation_provenance.md" in frontier_text
+    assert "p83_equation_provenance.md" in frontier_text
