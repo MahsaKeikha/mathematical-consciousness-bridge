@@ -14,17 +14,17 @@ P85 is a model-separation result. It does not identify the P75 latent state with
 
 ## Plain-language meaning
 
-A collection of measurements can look consistent when each measurement is checked by itself. The same collection can still look consistent when every pair is checked. That does not guarantee that all three measurements can be produced together by one common model parameter choice.
+A collection of measurements can look consistent when each measurement is checked by itself. The same collection can still escape every pairwise certificate. That does not guarantee that three measurements can be produced together by one common model parameter choice.
 
 P85 detects this three-way incompatibility.
 
-A useful analogy is three overlapping constraints on one mechanism. Constraint A can coexist with B. A can coexist with C. B can coexist with C. Yet there may be no single mechanism setting that satisfies A, B, and C simultaneously. P85 converts that possibility into an exact, auditable certificate for the P75 parity-observable family.
+A useful analogy is three overlapping constraints on one mechanism. Lower-order checks can all remain silent, yet there may be no setting inside the declared model box that reproduces the three-event relation. P85 converts that possibility into an exact, auditable certificate for the P75 parity-observable family.
 
 For the strict rational witness in the repository:
 
 - the complete P84 lower bound is exactly $0$;
-- one P85 three-event functional has empirical value $19/8$;
-- its exact P75 box range is $[0,2]$;
+- one P85 three-event functional has empirical value $5/8$;
+- its exact P75 box range is $[1,2]$;
 - the exact interval gap is $3/8$;
 - the centered coefficient norm is $12$;
 - therefore the certified full-law lower bound is
@@ -33,7 +33,7 @@ For the strict rational witness in the repository:
 \frac{3/8}{12}=\boxed{\frac{1}{32}}.
 \]
 
-So P85 proves a positive separation on a box where P84 proves none.
+So P85 proves a positive separation on a box where the complete P84 certificate proves none.
 
 ---
 
@@ -305,7 +305,7 @@ P85 is defined as the maximum of the complete P84 certificate and the new triple
 
 ### Step 6: strictness
 
-The exact rational witness below has $L_{84}(B)=0$ and $L_{85}(B)=1/32$. Therefore dominance is strict on at least one admissible input.
+The deterministic exact rational witness below has $L_{84}(B)=0$ and $L_{85}(B)=1/32$. Therefore dominance is strict on at least one admissible input.
 
 $\square$
 
@@ -324,32 +324,32 @@ Take
 \[
 B_L=
 \left(
-1,0,0,1,0,\frac12,0,\frac12,\frac12
+0,0,0,\frac12,\frac12,0,0,0,1
 \right),
 \]
 
 \[
 B_U=
 \left(
-1,1,1,1,1,\frac12,1,\frac12,1
+\frac12,1,1,1,1,1,1,\frac12,1
 \right).
 \]
-
-The prevalence is fixed at $\pi=1$, so only the plus branch contributes to the observed law. The unused minus-branch coordinates remain in the box because the theorem is stated in the common nine-parameter P75 representation.
 
 Let the empirical law place mass
 
 \[
-\widehat p(0000)=\frac38,
-\qquad
-\widehat p(0010)=\frac18,
+\widehat p(0010)=\frac14,
 \qquad
 \widehat p(0100)=\frac18,
 \qquad
-\widehat p(0101)=\frac38,
+\widehat p(1000)=\frac18,
+\qquad
+\widehat p(1101)=\frac18,
+\qquad
+\widehat p(1110)=\frac38,
 \]
 
-and zero mass on the other twelve cells.
+and zero mass on the other eleven cells.
 
 The complete P84 certificate gives
 
@@ -362,29 +362,29 @@ Now use
 \[
 T
 =
-P(H_{\{0,3\}})
+P(H_{\{0,2\}})
 +
-P(H_{\{1,3\}})
+P(H_{\{0,1,2\}})
 +
-P(H_{\{0,1,3\}}).
+P(H_{\{0,1,2,3\}}).
 \]
 
 For the empirical law,
 
 \[
-T(\widehat p)=\frac{19}{8}.
+T(\widehat p)=\frac58.
 \]
 
 Exact endpoint enumeration gives
 
 \[
-I_B(T)=[0,2].
+I_B(T)=[1,2].
 \]
 
-Thus
+Thus the empirical value lies below the model interval by
 
 \[
-\Delta_T=\frac{19}{8}-2=\frac38.
+\Delta_T=1-\frac58=\frac38.
 \]
 
 Across the sixteen observed cells, the uncentered coefficient values are distributed as
@@ -402,6 +402,8 @@ Centering at either $c=1$ or $c=2$ gives
 D(T)=12.
 \]
 
+The implementation deterministically returns the smaller optimal center, $c=1$.
+
 Therefore
 
 \[
@@ -412,11 +414,13 @@ L_{85}(B)
 \boxed{\frac1{32}}.
 \]
 
-Since the implemented exhaustive P85 family attains this value and P84 is zero on the same box,
+The implementation exhausts the full 660-function P85 family and attains this value. Since the complete P84 certificate is zero on the same exact rational box,
 
 \[
 \boxed{L_{84}(B)=0<L_{85}(B)=\frac1{32}}.
 \]
+
+This is the strict hierarchy witness used by the regression tests.
 
 ---
 
@@ -437,16 +441,11 @@ P85 does not require a new convergence principle. Its lower bound contains P84, 
 
 ## 9. Why P85 is scientifically useful
 
-P85 isolates a specific logical weakness in pairwise checking.
+P85 isolates a specific logical weakness in lower-order checking.
 
-A model can survive:
+A model can survive the complete P84 certificate on a parameter box and still fail a three-observable shared-parameter requirement.
 
-- every one-observable test;
-- every two-observable shared-parameter test;
-
-and still fail a three-observable shared-parameter requirement.
-
-This matters whenever a latent physical model is judged by a collection of derived observables. Compatibility of low-order subsets should not be silently promoted to compatibility of the complete collection.
+This matters whenever a latent physical model is judged by a collection of derived observables. Compatibility or non-rejection by lower-order certificates should not be silently promoted to compatibility of a larger collection.
 
 P85 makes that failure mode explicit and computationally testable.
 
@@ -464,7 +463,7 @@ P85 does **not** prove that:
 - quantum mechanics is incomplete;
 - the physical-to-experiential bridge has been solved.
 
-It proves a narrower statement: under the declared P75 model and the stated exact box assumptions, three parity-derived observables can expose a shared-parameter incompatibility that all P84 checks miss.
+It proves a narrower statement: under the declared P75 model and the stated exact box assumptions, three parity-derived observables can expose a shared-parameter incompatibility that the complete P84 certificate misses.
 
 ---
 
@@ -477,6 +476,10 @@ Implementation:
 Regression tests:
 
 `tests/test_triple_projection_parity_functional_separation.py`
+
+Deterministic strict-witness search:
+
+`scripts/search_p85_strict_witness.py`
 
 The tests verify:
 
