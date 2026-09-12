@@ -20,7 +20,7 @@ from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
 CURRENT_VERSION = "0.82.0"
-CURRENT_FRONTIER = "P83"
+CURRENT_FRONTIER = "P84"
 
 CORE_FILES = (
     "README.md",
@@ -35,16 +35,23 @@ CORE_FILES = (
     "docs/glossary.md",
     "docs/reproducibility.md",
     "docs/research_navigation.md",
+    "docs/reader_experience_and_visual_standard.md",
+    "docs/figure_caption_and_description_standard.md",
     "docs/theorem_roadmap.md",
     "docs/detailed_proposition_record.md",
     "docs/equation_and_citation_map.md",
     "docs/figure_catalog.md",
     "docs/falsification_program.md",
+    "docs/proposition_84_exact_projection_parity_contrast.md",
     "website/index.html",
     "website/start-here.html",
+    "website/research-map.html",
+    "website/visual-atlas.html",
+    "website/reader-experience-v2.css",
     "scripts/generate_all_figures.py",
     "scripts/generate_quantitative_atlas.py",
     "scripts/generate_quantum_foundations_atlas.py",
+    "scripts/enrich_figure_documentation.py",
     "scripts/reproducibility_audit.py",
 )
 
@@ -55,6 +62,8 @@ LINK_SURFACES = (
     "docs/glossary.md",
     "docs/reproducibility.md",
     "docs/research_navigation.md",
+    "docs/reader_experience_and_visual_standard.md",
+    "docs/figure_caption_and_description_standard.md",
     "docs/theorem_roadmap.md",
 )
 
@@ -80,6 +89,7 @@ def _verify_release_consistency() -> None:
     roadmap = _read("docs/theorem_roadmap.md")
     website = _read("website/index.html")
     website_start = _read("website/start-here.html")
+    research_map = _read("website/research-map.html")
 
     expected_version_markers = (
         ("pyproject.toml", pyproject, f'version = "{CURRENT_VERSION}"'),
@@ -100,10 +110,20 @@ def _verify_release_consistency() -> None:
         ("docs/theorem_roadmap.md", roadmap),
         ("website/index.html", website),
         ("website/start-here.html", website_start),
+        ("website/research-map.html", research_map),
     )
     for path, source in frontier_markers:
         if CURRENT_FRONTIER not in source:
             raise RuntimeError(f"{path} does not mention frontier {CURRENT_FRONTIER}")
+
+    stale_frontier_markers = (
+        "current P83 frontier",
+        "through Proposition 83",
+        "Eighty-three results",
+    )
+    for marker in stale_frontier_markers:
+        if marker in website_start or marker in research_map:
+            raise RuntimeError(f"reader-facing surface contains stale frontier text: {marker}")
 
     if "P80**" in navigation or "P80**" in roadmap:
         raise RuntimeError("a reader-facing frontier marker is still pinned to P80")
@@ -112,7 +132,7 @@ def _verify_release_consistency() -> None:
 def _verify_proposition_files() -> None:
     missing: list[int] = []
     duplicates: dict[int, list[str]] = {}
-    for number in range(1, 84):
+    for number in range(1, 85):
         matches = sorted((ROOT / "docs").glob(f"proposition_{number}_*.md"))
         if not matches:
             missing.append(number)
