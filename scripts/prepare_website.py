@@ -2,8 +2,9 @@
 
 The repository keeps page content as plain HTML files. This build step copies the
 website into a deployment directory and guarantees that every page loads the
-shared navigation script. Keeping the navigation behavior centralized prevents
-page-to-page drift while preserving a fully auditable static-site build.
+shared navigation script and navigation stylesheet. Keeping cross-page behavior
+centralized prevents page-to-page drift while preserving a fully auditable
+static-site build.
 """
 
 from __future__ import annotations
@@ -13,10 +14,11 @@ import shutil
 from pathlib import Path
 
 SCRIPT_TAG = '<script defer src="app.js"></script>'
+NAVIGATION_STYLE_TAG = '<link rel="stylesheet" href="navigation.css" />'
 
 
 def prepare_website(source: Path, output: Path) -> None:
-    """Copy ``source`` to ``output`` and inject the shared app script as needed."""
+    """Copy ``source`` to ``output`` and inject shared navigation assets."""
 
     if not source.is_dir():
         raise FileNotFoundError(f"website source directory not found: {source}")
@@ -31,16 +33,22 @@ def prepare_website(source: Path, output: Path) -> None:
 
     for path in html_files:
         text = path.read_text(encoding="utf-8")
+        if "</head>" not in text:
+            raise RuntimeError(f"missing </head> in {path}")
+
+        additions: list[str] = []
+        if NAVIGATION_STYLE_TAG not in text:
+            additions.append(NAVIGATION_STYLE_TAG)
         if SCRIPT_TAG not in text:
-            if "</head>" not in text:
-                raise RuntimeError(f"missing </head> in {path}")
-            text = text.replace("</head>", f"{SCRIPT_TAG}</head>", 1)
+            additions.append(SCRIPT_TAG)
+        if additions:
+            text = text.replace("</head>", "".join(additions) + "</head>", 1)
             path.write_text(text, encoding="utf-8")
 
-    if not (output / "app.js").is_file():
-        raise RuntimeError("website build is missing app.js")
-    if not (output / "styles.css").is_file():
-        raise RuntimeError("website build is missing styles.css")
+    required_assets = ("app.js", "styles.css", "navigation.css")
+    for asset in required_assets:
+        if not (output / asset).is_file():
+            raise RuntimeError(f"website build is missing {asset}")
 
 
 def main() -> None:
