@@ -6,7 +6,7 @@ MAP = ROOT / "website/research-map.html"
 
 def test_research_map_starts_with_orientation_before_stage_details():
     text = MAP.read_text(encoding="utf-8")
-    hero = text.index("Eighty-four results, one dependency-aware scientific program")
+    hero = text.index("Eighty-five results, one dependency-aware scientific program")
     orientation = text.index("How to read this research")
     stage_one = text.index("I · Formal bridge foundations")
     assert hero < orientation < stage_one
@@ -23,7 +23,7 @@ def test_research_map_exposes_status_and_all_ten_stage_ranges():
         "P19-P24",
         "P71",
         "P72",
-        "P73-P84",
+        "P73-P85",
         "P25-P37",
         "P38-P44",
         "P45-P53",
@@ -61,14 +61,15 @@ def test_research_map_gives_direct_audit_paths():
         "proposition_84_exact_projection_parity_contrast.md",
         "joint_projection_parity_contrast_separation.py",
         "test_joint_projection_parity_contrast_separation.py",
+        'index.html#p85-frontier',
     ]
     for token in required:
         assert token in text, token
 
 
-def test_research_map_presents_p77_through_p84_in_dependency_order():
+def test_research_map_presents_p77_through_p85_with_p84_history():
     text = MAP.read_text(encoding="utf-8")
-    assert "through Proposition 84" in text
+    assert "through Proposition 85" in text
     frontier = text.index('id="continuous-model-frontier"')
     p77 = text.index("Open P77 →", frontier)
     p78 = text.index("Open P78 →", frontier)
@@ -77,9 +78,14 @@ def test_research_map_presents_p77_through_p84_in_dependency_order():
     p81 = text.index("Open P81 →", frontier)
     p82 = text.index("Open P82 →", frontier)
     p83 = text.index("Open P83 →", frontier)
+    p85_navigation = text.index(
+        'href="index.html#p85-frontier">Continue to the current P85 frontier</a>',
+        frontier,
+    )
     p84 = text.index('id="p84"', p83)
-    assert p77 < p78 < p79 < p80 < p81 < p82 < p83 < p84
+    assert p77 < p78 < p79 < p80 < p81 < p82 < p83 < p85_navigation < p84
 
+    assert "P77-P85: from full-law rejection to exact dependency-aware certification" in text
     assert text.count("P78: Certified continuous P75 model separation") == 1
     assert text.count("How is P77 made rigorous for the continuous P75 family?") == 1
     assert "only the certified global lower bound can feed the P77 rejection gate" in text
@@ -88,18 +94,21 @@ def test_research_map_presents_p77_through_p84_in_dependency_order():
     assert "P81 = 1/16 to P82 = 1/12" in text
     assert "L82 = 0 and L83 = 1/16" in text
     assert "L83 = 0, L84 = 1/32" in text
+    assert "P85 tests exact three-event shared-parameter parity functionals" in text
     assert p84 < text.index("</main>")
 
 
-def test_p84_frontier_is_unique_and_structurally_inside_main():
+def test_p84_previous_frontier_is_unique_and_structurally_inside_main():
     text = MAP.read_text(encoding="utf-8")
     main_open = text.index("<main>")
     main_close = text.index("</main>")
     p84 = text.index('id="p84"')
+    p84_text = text[p84:main_close]
     assert text.count('id="p84"') == 1
     assert main_open < p84 < main_close
-    assert "Current certified frontier" in text[p84:main_close]
-    assert "P84 proof" in text[p84:main_close]
+    assert "Previous certified frontier · P84" in p84_text
+    assert "Current certified frontier" not in p84_text
+    assert "P84 proof" in p84_text
     assert "P84 proof" not in text[main_close:]
 
 
