@@ -225,6 +225,19 @@ def update_verifier() -> None:
         '        "Eighty-four results",\n',
         1,
     )
+    p85_core = (
+        '    "docs/proposition_85_exact_triple_projection_parity_functional.md",\n'
+        '    "docs/p85_equation_provenance.md",\n'
+    )
+    while p85_core + p85_core in text:
+        text = text.replace(p85_core + p85_core, p85_core)
+    p84_stale = (
+        '        "current P84 frontier",\n'
+        '        "through Proposition 84",\n'
+        '        "Eighty-four results",\n'
+    )
+    while p84_stale + p84_stale in text:
+        text = text.replace(p84_stale + p84_stale, p84_stale)
     if 'CURRENT_FRONTIER = "P85"' not in text or "range(1, 86)" not in text:
         raise RuntimeError("verifier frontier promotion failed")
     write(path, text)
