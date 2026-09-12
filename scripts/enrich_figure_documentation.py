@@ -423,8 +423,9 @@ def _update_visual_atlas() -> None:
         '<p class="lede">The figures below are selected entry points into the formal record. They are diagrams, quantitative illustrations, or computational visualizations. '
         'They do not replace proofs, and each should be read together with its theorem, assumptions, and provenance.</p></section>'
     )
-    reading_key = (
-        '\n<section class="boundary"><h2>How to read every figure</h2>'
+    legacy_reading_key = (
+        '
+<section class="boundary"><h2>How to read every figure</h2>'
         '<p><strong>What you are seeing:</strong> identify the mathematical objects, panels, axes, or regions. '
         '<strong>How to read it:</strong> follow arrows only as the declared logical, temporal, set-inclusion, or computational relation; compare plotted quantities using the labeled axes and legends. '
         '<strong>Main takeaway:</strong> use the accompanying text to identify the precise conclusion the visual supports. '
@@ -432,9 +433,29 @@ def _update_visual_atlas() -> None:
         '<p>For a direct index of every SVG, including figures not selected for this web page, open the '
         '<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/figure_catalog.md">Complete Figure Catalog</a>. '
         'The repository-wide rules are in the '
-        '<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/figure_caption_and_description_standard.md">Figure Caption and Description Standard</a>.</p></section>\n'
+        '<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/figure_caption_and_description_standard.md">Figure Caption and Description Standard</a>.</p></section>
+'
     )
-    if reading_key.strip() not in text:
+    reading_key = (
+        '
+<section class="boundary"><h2>How to read every figure</h2>'
+        '<p><strong>What you are seeing:</strong> identify the mathematical objects, panels, axes, or regions. '
+        '<strong>How to read it:</strong> follow arrows only as the declared logical, temporal, set-inclusion, or computational relation; compare plotted quantities using the labeled axes and legends. '
+        '<strong>Main takeaway:</strong> use the accompanying text to identify the precise conclusion the visual supports. '
+        '<strong>Scientific boundary:</strong> diagrams, synthetic examples, and simulations do not become empirical consciousness evidence merely because they are visually compelling.</p>'
+        '<p>Figures are intentionally capped at a readable page size: large enough to inspect, but not so large that the explanatory text disappears below the fold. Complex theorem figures use a wider presentation than simple atlas thumbnails, and the full-resolution SVG remains available from the figure link.</p>'
+        '<p>For a direct index of every SVG, including figures not selected for this web page, open the '
+        '<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/figure_catalog.md">Complete Figure Catalog</a>. '
+        'The repository-wide rules are in the '
+        '<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/figure_caption_and_description_standard.md">Figure Caption and Description Standard</a> and the '
+        '<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/reader_experience_and_visual_standard.md">Reader Experience and Visual Presentation Standard</a>.</p></section>
+'
+    )
+    if legacy_reading_key.strip() in text and reading_key.strip() in text:
+        text = text.replace(legacy_reading_key, "", 1)
+    elif legacy_reading_key.strip() in text:
+        text = text.replace(legacy_reading_key, reading_key, 1)
+    elif reading_key.strip() not in text:
         if hero not in text:
             raise RuntimeError("visual atlas hero marker not found")
         text = text.replace(hero, hero + reading_key, 1)
