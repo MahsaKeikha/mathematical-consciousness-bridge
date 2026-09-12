@@ -6,6 +6,9 @@ WEBSITE_DIR = ROOT / "website"
 WEBSITE = WEBSITE_DIR / "index.html"
 PUBLIC_PAGES = [
     "index.html",
+    "start-here.html",
+    "observer-research.html",
+    "research-lineage.html",
     "research-map.html",
     "physics-mathematics.html",
     "visual-atlas.html",
