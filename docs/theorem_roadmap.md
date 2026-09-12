@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P81**. The proposition record runs from **P1 through P81 with explicit dependency branches**. P71-P81 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P82**. The proposition record runs from **P1 through P82 with explicit dependency branches**. P71-P82 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -37,7 +37,9 @@ The current documented theorem frontier is **P81**. The proposition record runs 
 &\Downarrow\\
 &\text{P80: probability-simplex coupling tightens the continuous-family box certificate}\\
 &\Downarrow\\
-&\text{P81: projected-event constraints tighten the same certified model-distance lower bound}
+&\text{P81: projected-event constraints tighten the same certified model-distance lower bound}\\
+&\Downarrow\\
+&\text{P82: exact nested residual-event constraints tighten P81 while preserving certification}
 \end{aligned}
 }
 \]
@@ -439,6 +441,14 @@ Direct proof: [P80](proposition_80_simplex_coupled_model_separation.md). Provena
 | --- | --- | --- |
 | [P81](proposition_81_projection_event_model_separation.md) | P75, P77, P78, P79, P80 | Exact projection-event intervals, event-size distance transfer, P81 >= P80 dominance, and strict-improvement witness |
 
+### P82: exact nested projection-contrast certificate
+
+[P82](proposition_82_exact_nested_projection_contrast.md) retains every P81 lower bound and adds exact residual-event constraints from nested cylinder pairs. The direct residual extremization can be strictly tighter than subtracting the separate P81 intervals because it preserves the shared P75 parameter structure.
+
+| Result | Depends on | Adds |
+| --- | --- | --- |
+| [P82](proposition_82_exact_nested_projection_contrast.md) | P75, P77, P78, P79, P80, P81 | Exact nested-residual intervals, 256 new contrasts, P82 >= P81 dominance, and a strict 1/12 versus 1/16 witness |
+
 ## 3. Complete proposition index
 
 | Proposition | Mathematical role | Scientific role | Status |
@@ -524,6 +534,7 @@ Direct proof: [P80](proposition_80_simplex_coupled_model_separation.md). Provena
 | [P79](proposition_79_certified_sampling_radius.md) | exact-rational logarithm and dyadic square-root enclosure | one-sided numerical certification of the P77 sampling radius | proved numerical-certification theorem |
 | [P80](proposition_80_simplex_coupled_model_separation.md) | probability-simplex interval relaxation and exact rational feasibility crossings | tighter certified continuous P75 full-law model separation | proved conditional computational theorem |
 | [P81](proposition_81_projection_event_model_separation.md) | exact projected-event box intervals and event-size distance transfer | never-weaker projection-aware continuous P75 model separation | proved conditional computational theorem |
+| [P82](proposition_82_exact_nested_projection_contrast.md) | exact nested residual-event box intervals and event-size distance transfer | never-weaker nested-contrast continuous P75 model separation | proved conditional computational theorem |
 
 ## 4. Calibration branch remains separate
 
@@ -546,7 +557,7 @@ These results optimize downstream experimental resources. They do not define con
 
 ## 5. Current open frontier
 
-After P81, the target-side chain has a substantially clearer scientific burden:
+After P82, the target-side chain has a substantially clearer scientific burden:
 
 1. target provenance must be non-circular relative to the physical descriptor being tested;
 2. the target-observation channel must be scientifically defensible and sufficiently informative for the claimed witness;
@@ -559,8 +570,8 @@ After P81, the target-side chain has a substantially clearer scientific burden:
 9. the sampling-radius side of the rejection gate must have a certified upper direction; and
 10. computational relaxations should retain as much exact probability structure as possible without invalidating the lower-bound direction.
 
-P78 closes the global-lower-bound gap for the specific continuous P75 four-view binary latent family. P79 certifies the one-sided sampling-radius envelope. P80 strengthens the box relaxation by retaining probability normalization. P81 strengthens it again by retaining exact marginal and projected-event constraints implied by each parameter box.
+P78 closes the global-lower-bound gap for the specific continuous P75 four-view binary latent family. P79 certifies the one-sided sampling-radius envelope. P80 strengthens the box relaxation by retaining probability normalization. P81 strengthens it again by retaining exact marginal and projected-event constraints implied by each parameter box. P82 then adds exact non-cylinder residual constraints from nested projected events, retaining common-parameter structure that separate event intervals discard.
 
-The next computational question is therefore not another cosmetic bound. A substantive continuation would retain **simultaneous dependence among overlapping projected events** or introduce a demonstrably tighter convex or semialgebraic relaxation while preserving exact certification. Statistical extensions remain open as well, including sharper power analysis and target-view models with residual dependence, shared bias, temporal drift, or learned measurement pipelines.
+The next computational question is therefore not another cosmetic bound. A substantive continuation beyond P82 would retain broader **simultaneous dependence among multiple overlapping events** or introduce a demonstrably tighter exact-rational convex or semialgebraic relaxation while preserving the certified lower-bound direction. Statistical extensions remain open as well, including sharper power analysis and target-view models with residual dependence, shared bias, temporal drift, or learned measurement pipelines.
 
-None of P71-P81 identifies a latent variable with consciousness. None proves that a failed descriptor implies nonphysical consciousness. The physical-to-experiential bridge remains open.
+None of P71-P82 identifies a latent variable with consciousness. None proves that a failed descriptor implies nonphysical consciousness. The physical-to-experiential bridge remains open.

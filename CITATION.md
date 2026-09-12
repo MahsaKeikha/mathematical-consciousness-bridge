@@ -8,7 +8,7 @@ If this research program, one of its propositions, figures, algorithms, or imple
 
 > Keikha, M. (2026). *Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem* (Version 0.81.0). GitHub research repository. https://github.com/MahsaKeikha/mathematical-consciousness-bridge
 
-This is the preferred citation for the research program at the current documented frontier, P81.
+This is the preferred citation for the research program at the current documented frontier, P82.
 
 ## BibTeX
 
@@ -129,3 +129,7 @@ For the simplex-coupled continuous-model certificate, cite the repository togeth
 ## Proposition 81
 
 For the projection-event continuous-model certificate, cite the repository together with [Proposition 81](docs/proposition_81_projection_event_model_separation.md) and its [equation provenance record](docs/p81_equation_provenance.md). P81 is a computational tightening of the P80/P78 continuous P75 separation chain and should not be cited as an identification of consciousness.
+
+## P82 frontier citation note
+
+P82 strengthens the P81 continuous P75 separation chain through exact nested residual-event intervals. It is a conditional model-distance certificate and should not be cited as an identification of consciousness.

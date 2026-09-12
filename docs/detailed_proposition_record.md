@@ -1,6 +1,6 @@
 # Detailed proposition record
 
-## Complete P1 to P81 chronology
+## Complete P1 to P82 chronology
 
 This page preserves the proposition-by-proposition development history of the Mathematical Consciousness Bridge research program. It is intentionally separate from the main README so a first-time reader can follow the scientific argument without first learning the internal chronology of the project.
 
@@ -10,7 +10,7 @@ The scientific status rule is strict throughout: a theorem is only a theorem und
 
 ---
 
-## Complete P1 to P81 chronology
+## Complete P1 to P82 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
@@ -204,6 +204,9 @@ P80 is a computational tightening of a declared observed-law model test. It does
 
 **P81** strengthens P80 by retaining exact parameter-box ranges for all nonempty projected binary events of the four observed views. For each cylinder event, its empirical mismatch from the exact box interval is divided by the event's number of full cells to obtain a valid full-law L-infinity lower bound. The combined P81 certificate is the maximum of this projection bound and the P80 simplex-coupled bound, so it is never weaker than P80. A fixed-marginal witness gives `L80=0` but `L81=1/80`, proving strict improvement is possible. [Proof](proposition_81_projection_event_model_separation.md) | [provenance](p81_equation_provenance.md) | [figure](figures/p81_projection_event_model_separation.svg). P81 does not identify the P75 latent variable with consciousness and does not close the physical-to-experiential bridge.
 
+**P82** strengthens P81 by retaining exact structure from nested projected events. For a parent cylinder A and strict child B, it computes the exact P75 parameter-box interval of the generally non-cylinder residual A\B directly from the branchwise factorization P_s(A\B)=P_s(A)[1-P_s(D)]. Because parent and added-view factors use disjoint response coordinates, the residual box extrema are jointly attainable and prevalence is handled by affine endpoint evaluation. P82 audits 256 genuinely new nested contrasts, satisfies L82 >= L81 >= L80 >= L78, and has an exact-rational strict witness with L80=0, L81=1/16, and L82=1/12. The P78 mesh-width upper certificate and P79 one-sided sampling handoff are retained unchanged.
+
+
 ---
 
 ## Scientific interpretation of the chronology
@@ -215,7 +218,7 @@ The proposition numbers preserve development order, not one linear chain. The sc
 - P38-P44 build the quantum operational interface.
 - P45-P60 build adaptive evidence acquisition and execution machinery.
 - P61-P70 build downstream calibration and optimization.
-- P71-P81 return to the target side of the P19 bridge and formalize non-circular target provenance, noisy target measurement, population target-channel identification, finite-sample target-channel recovery, target-model adequacy, and finite-sample model rejection.
+- P71-P82 return to the target side of the P19 bridge and formalize non-circular target provenance, noisy target measurement, population target-channel identification, finite-sample target-channel recovery, target-model adequacy, and finite-sample model rejection.
 
 P75 does not make an experiential ontology claim. Passing its four-view restrictions establishes compatibility with the declared target-measurement model, not uniqueness or truth of that model. Failure identifies inadequacy of the declared conditional-independence model for the observed law; it does not prove that the latent target is nonphysical or that the physical-to-experiential bridge has been solved.
 

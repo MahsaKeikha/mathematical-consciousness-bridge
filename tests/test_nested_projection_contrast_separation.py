@@ -281,7 +281,7 @@ def test_p82_source_states_exactness_scope_and_scientific_boundary() -> None:
         "never weaker than P81",
         "strictly stronger",
         "exact global residual interval",
-        "does not validate",
+        "not validate",
         "identify any latent state with consciousness",
         "physical-to-experiential bridge",
     )

@@ -1,4 +1,4 @@
-# Current visual frontier: P71-P81
+# Current visual frontier: P71-P82
 
 This page is a compact visual entry point for the current target-side research branch.
 
@@ -121,4 +121,4 @@ To regenerate the computational atlases:
 python scripts/generate_all_figures.py
 ```
 
-The project does not claim that P71-P81 derives consciousness from physics. These results strengthen the methodology required before a physical-to-experiential bridge claim could be treated as scientifically credible. The bridge itself remains open.
+The project does not claim that P71-P82 derives consciousness from physics. These results strengthen the methodology required before a physical-to-experiential bridge claim could be treated as scientifically credible. The bridge itself remains open.

@@ -1220,3 +1220,7 @@ Scientific boundary: P80 tightens one declared continuous-family numerical certi
 # P81 projection-event model separation
 
 P81 is documented in the [proof](proposition_81_projection_event_model_separation.md) and [equation/provenance record](p81_equation_provenance.md). Its new equations are the exact cylinder-event parameter-box interval, the event-size L-infinity transfer inequality, the maximized projection lower bound, and the combined `L81(B)=max(L80(B),L_proj(B))` certificate. The model definition is inherited from P75; the parameter-box endpoint principle is inherited from P78; the simplex-coupled lower bound is inherited from P80; and the strict finite-data rejection handoff uses P79.
+
+## P82 exact nested projection-contrast certificate
+
+Formal theorem: [P82](proposition_82_exact_nested_projection_contrast.md). Equation provenance: [P82 equation record](p82_equation_provenance.md). Implementation: [`nested_projection_contrast_separation.py`](../src/consciousness_bridge/nested_projection_contrast_separation.py).
