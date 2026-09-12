@@ -46,6 +46,7 @@ CORE_FILES = (
     "docs/proposition_85_exact_triple_projection_parity_functional.md",
     "docs/p85_equation_provenance.md",
     "website/index.html",
+    "website/plain-language.html",
     "website/start-here.html",
     "website/research-map.html",
     "website/visual-atlas.html",
@@ -71,6 +72,22 @@ LINK_SURFACES = (
 
 MARKDOWN_LINK = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 
+STALE_READER_FRONTIER_MARKERS = (
+    "<strong>84</strong><span>proposition-level results</span>",
+    "<strong>P84</strong><span>current theorem frontier</span>",
+    "current P84 frontier",
+    "actual P84 research frontier",
+    "What the 84 results are doing",
+    "shows how all 84 results connect",
+    "shows how all 83 results connect",
+    "through Proposition 84",
+    "Eighty-four results",
+    "Open all 84 results",
+    "The 84 propositions by scientific role",
+    "complete 84-result dependency structure",
+    "You do not need to read 84 proofs in order",
+)
+
 
 def _read(relative_path: str) -> str:
     return (ROOT / relative_path).read_text(encoding="utf-8")
@@ -82,6 +99,17 @@ def _require_core_files() -> None:
         raise RuntimeError(f"missing core repository files: {missing}")
 
 
+def _verify_reader_frontier_freshness() -> None:
+    offenders: dict[str, list[str]] = {}
+    for path in sorted((ROOT / "website").glob("*.html")):
+        source = path.read_text(encoding="utf-8")
+        hits = [marker for marker in STALE_READER_FRONTIER_MARKERS if marker in source]
+        if hits:
+            offenders[path.name] = hits
+    if offenders:
+        raise RuntimeError(f"reader-facing website contains stale frontier text: {offenders}")
+
+
 def _verify_release_consistency() -> None:
     pyproject = _read("pyproject.toml")
     citation = _read("CITATION.cff")
@@ -90,6 +118,7 @@ def _verify_release_consistency() -> None:
     navigation = _read("docs/research_navigation.md")
     roadmap = _read("docs/theorem_roadmap.md")
     website = _read("website/index.html")
+    website_plain = _read("website/plain-language.html")
     website_start = _read("website/start-here.html")
     research_map = _read("website/research-map.html")
 
@@ -111,6 +140,7 @@ def _verify_release_consistency() -> None:
         ("docs/research_navigation.md", navigation),
         ("docs/theorem_roadmap.md", roadmap),
         ("website/index.html", website),
+        ("website/plain-language.html", website_plain),
         ("website/start-here.html", website_start),
         ("website/research-map.html", research_map),
     )
@@ -118,17 +148,7 @@ def _verify_release_consistency() -> None:
         if CURRENT_FRONTIER not in source:
             raise RuntimeError(f"{path} does not mention frontier {CURRENT_FRONTIER}")
 
-    stale_frontier_markers = (
-        "current P83 frontier",
-        "through Proposition 83",
-        "Eighty-three results",
-        "current P84 frontier",
-        "through Proposition 84",
-        "Eighty-four results",
-    )
-    for marker in stale_frontier_markers:
-        if marker in website_start or marker in research_map:
-            raise RuntimeError(f"reader-facing surface contains stale frontier text: {marker}")
+    _verify_reader_frontier_freshness()
 
     if "P80**" in navigation or "P80**" in roadmap:
         raise RuntimeError("a reader-facing frontier marker is still pinned to P80")
