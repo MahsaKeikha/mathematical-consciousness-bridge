@@ -1,6 +1,7 @@
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
+# Reader-facing P57 geometry is part of the theorem audit surface.
 ROOT = Path(__file__).resolve().parents[1]
 FIGURE = ROOT / "docs/figures/p57_switching_metric_perturbation.svg"
 CATALOG = ROOT / "docs/figure_catalog.md"
