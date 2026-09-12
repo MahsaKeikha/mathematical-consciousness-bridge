@@ -1,5 +1,5 @@
 name: one-shot-p56-figure-docs
-# Retry after final P56 vertical-padding correction.
+# Retry after final P56 width and padding corrections.
 
 on:
   push:
