@@ -6,25 +6,26 @@ The complete canonical figure archive lives in [`docs/figures/`](../docs/figures
 
 ## Start with the current frontier
 
-Open [`CURRENT_FRONTIER.md`](CURRENT_FRONTIER.md) for a compact visual walkthrough of P71-P81, including the current P81 projection-event certificate.
+Open [`CURRENT_FRONTIER.md`](CURRENT_FRONTIER.md) for a compact visual walkthrough of P71-P84, including the current exact pairwise Walsh-contrast certificate.
 
 Current theorem frontier:
 
 ```text
-P81 - Projection-Event Certificate for Continuous P75 Separation
+P84 - Exact Pairwise Walsh-Contrast Certificate for Continuous P75 Separation
 ```
 
-Canonical P81 figure:
+Canonical P84 figure:
 
-[`docs/figures/p81_projection_event_model_separation.svg`](../docs/figures/p81_projection_event_model_separation.svg)
+[`docs/figures/p84_exact_pairwise_walsh_contrast.svg`](../docs/figures/p84_exact_pairwise_walsh_contrast.svg)
 
 Corresponding theorem and executable records:
 
 ```text
-docs/proposition_81_projection_event_model_separation.md
-src/consciousness_bridge/projection_event_model_separation.py
-tests/test_projection_event_model_separation.py
-tests/test_p81_figure_geometry.py
+docs/proposition_84_exact_pairwise_walsh_contrast.md
+docs/p84_equation_provenance.md
+src/consciousness_bridge/walsh_contrast_model_separation.py
+tests/test_walsh_contrast_model_separation.py
+tests/test_p84_figure_geometry.py
 ```
 
 ## Figure organization
