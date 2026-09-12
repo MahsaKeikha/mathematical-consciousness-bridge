@@ -55,8 +55,9 @@ def update_readme() -> None:
 def sharpen_p83_source_boundary() -> None:
     path = "src/consciousness_bridge/projection_parity_model_separation.py"
     text = read(path)
-    old = """This is a computational certificate for the declared P75 latent model. It does
-not validate that model, identify a latent state with consciousness, or close the
+    old = """This is a
+computational certificate for the declared P75 latent model. It does not
+validate that model, identify a latent state with consciousness, or close the
 physical-to-experiential bridge."""
     new = """This certificate does not validate the P75 model, does not identify a latent
 state with consciousness, and does not close the physical-to-experiential bridge."""
