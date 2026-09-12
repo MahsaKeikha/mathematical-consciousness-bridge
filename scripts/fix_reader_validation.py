@@ -6,9 +6,11 @@ ROOT = Path(__file__).resolve().parents[1]
 def fix_start_here_typography() -> None:
     path = ROOT / "START_HERE.md"
     text = path.read_text(encoding="utf-8")
-    text = text.replace(" — ", ": ")
-    text = text.replace("–", "-")
-    text = text.replace("—", "-")
+    en_dash = chr(0x2013)
+    em_dash = chr(0x2014)
+    text = text.replace(f" {em_dash} ", ": ")
+    text = text.replace(en_dash, "-")
+    text = text.replace(em_dash, "-")
     path.write_text(text, encoding="utf-8")
 
 
