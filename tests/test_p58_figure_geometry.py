@@ -109,6 +109,7 @@ def test_p58_figure_preserves_confidence_regret_and_scope_boundaries():
         "C₀⁻ &gt; C₁⁺",
         "Joint coverage;",
         "no state independence needed.",
+        "7. Sample-size certificate",
         "L⁺-L⁻ ≤ 2qrect η",
         "Sufficient common-sample condition.",
         "Not a minimax lower bound.",
