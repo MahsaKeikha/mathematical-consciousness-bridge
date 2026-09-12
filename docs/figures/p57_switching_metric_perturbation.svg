@@ -81,7 +81,7 @@
     <text x="460" y="775" class="strong">Δfixed &gt; P57</text>
     <text x="460" y="809" class="eq">⇒ C*c′(r′;s′) &lt; C*c(r;s)</text>
     <text x="460" y="834" class="small">Sufficient only; converse not claimed.</text>
-    <text x="460" y="854" class="small">P57 is a worst-case perturbation penalty.</text>
+    <text x="460" y="854" class="small">Worst-case perturbation penalty.</text>
   </g>
 
   <g id="block-reuse" data-x="815" data-y="700" data-w="330" data-h="160">
