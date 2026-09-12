@@ -6,6 +6,7 @@ on:
     paths:
       - ".github/workflows/promote-p85.yml"
       - "scripts/promote_p85_publication.py"
+      - "scripts/patch_p85_promotion_runner.py"
   workflow_dispatch:
 
 permissions:
@@ -21,6 +22,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Apply one-shot runner correction
+        run: python scripts/patch_p85_promotion_runner.py
       - name: Synchronize P85 publication surfaces
         run: python scripts/promote_p85_publication.py
       - name: Check patch formatting
