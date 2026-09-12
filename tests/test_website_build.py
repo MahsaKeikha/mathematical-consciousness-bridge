@@ -2,12 +2,14 @@ from pathlib import Path
 
 from scripts.prepare_website import (
     ASSET_VERSION,
+    CONTRAST_STYLE_TAG,
     FOOTER_SCRIPT_TAG,
     NAVIGATION_STYLE_TAG,
     NAVIGATION_V2_STYLE_TAG,
     PUBLICATION_STYLE_TAG,
     PUBLICATION_V2_STYLE_TAG,
     READER_LINKS_SCRIPT_TAG,
+    RESEARCH_GUIDE_STYLE_TAG,
     SCRIPT_TAG,
     prepare_website,
 )
@@ -22,6 +24,8 @@ def _write_assets(source: Path) -> None:
     (source / "navigation-v2.css").write_text(".nav-dropdown{}", encoding="utf-8")
     (source / "publication.css").write_text("h1{}", encoding="utf-8")
     (source / "publication-v2.css").write_text("main h1{}", encoding="utf-8")
+    (source / "research-guide-v2.css").write_text(".research-jumpbar{}", encoding="utf-8")
+    (source / "contrast-v2.css").write_text(".equation{}", encoding="utf-8")
 
 
 def test_prepare_website_injects_shared_publication_assets(tmp_path: Path) -> None:
@@ -49,8 +53,11 @@ def test_prepare_website_injects_shared_publication_assets(tmp_path: Path) -> No
         assert built.count(NAVIGATION_V2_STYLE_TAG) == 1
         assert built.count(PUBLICATION_STYLE_TAG) == 1
         assert built.count(PUBLICATION_V2_STYLE_TAG) == 1
+        assert built.count(RESEARCH_GUIDE_STYLE_TAG) == 1
+        assert built.count(CONTRAST_STYLE_TAG) == 1
         assert built.index(NAVIGATION_V2_STYLE_TAG) > built.index(NAVIGATION_STYLE_TAG)
         assert built.index(PUBLICATION_V2_STYLE_TAG) > built.index(PUBLICATION_STYLE_TAG)
+        assert built.index(CONTRAST_STYLE_TAG) > built.index(RESEARCH_GUIDE_STYLE_TAG)
 
 
 def test_prepare_website_is_idempotent(tmp_path: Path) -> None:
@@ -61,8 +68,9 @@ def test_prepare_website_is_idempotent(tmp_path: Path) -> None:
     _write_assets(source)
     (source / "index.html").write_text(
         f"<html><head>{NAVIGATION_STYLE_TAG}{NAVIGATION_V2_STYLE_TAG}"
-        f"{PUBLICATION_STYLE_TAG}{PUBLICATION_V2_STYLE_TAG}{SCRIPT_TAG}"
-        f"{READER_LINKS_SCRIPT_TAG}{FOOTER_SCRIPT_TAG}</head><body></body></html>",
+        f"{PUBLICATION_STYLE_TAG}{PUBLICATION_V2_STYLE_TAG}{RESEARCH_GUIDE_STYLE_TAG}"
+        f"{CONTRAST_STYLE_TAG}{SCRIPT_TAG}{READER_LINKS_SCRIPT_TAG}{FOOTER_SCRIPT_TAG}"
+        "</head><body></body></html>",
         encoding="utf-8",
     )
 
@@ -101,6 +109,8 @@ def test_prepare_website_replaces_stale_navigation_assets_and_fallback(
 
     assert f'app.js?v={ASSET_VERSION}' in built
     assert f'navigation-v2.css?v={ASSET_VERSION}' in built
+    assert f'research-guide-v2.css?v={ASSET_VERSION}' in built
+    assert f'contrast-v2.css?v={ASSET_VERSION}' in built
     assert '<script defer src="app.js"></script>' not in built
     assert 'href="navigation-v2.css"' not in built
     assert '>Research Lineage</a>' not in built
