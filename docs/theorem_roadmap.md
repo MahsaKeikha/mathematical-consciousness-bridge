@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P80**. The proposition record runs from **P1 through P80 with explicit dependency branches**. P71-P80 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P80**. The proposition record runs from **P1 through P81 with explicit dependency branches**. P71-P80 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -550,3 +550,12 @@ After P80, the target side retains nine explicit requirements:
 P78 closes the eighth item for the specific P75 four-view binary latent family in L-infinity distance, and P80 strengthens that same item by retaining probability-simplex normalization inside each exact interval relaxation. P79 closes the ninth item for the P77 finite-alphabet sampling radius by exact-rational one-sided numerical enclosure. P78 still supplies the explicit mesh-gap guarantee; P80 supplies a never-weaker boxwise lower bound on the same active partition. The remaining computational problem is efficiency: stronger pruning, still tighter convex or semialgebraic relaxations, or moment-SOS lower bounds may further reduce the number of boxes required for a decisive certificate. The remaining statistical problems include sharper power and target-view models that allow residual dependence, shared bias, temporal drift, or learned measurement pipelines.
 
 None of these results identifies a latent variable with consciousness. The physical-to-experiential bridge remains open.
+
+
+### P81: projection-event continuous-family certificate
+
+[P81](proposition_81_projection_event_model_separation.md) continues the P75-P80 target-model adequacy branch. It adds exact parameter-box ranges for all nonempty projected binary events and combines their full-law distance lower bound with P80.
+
+| Result | Depends on | Adds |
+| --- | --- | --- |
+| [P81](proposition_81_projection_event_model_separation.md) | P75, P77, P78, P79, P80 | Exact projection-event intervals, event-size distance transfer, P81 >= P80 dominance, and strict-improvement witness |

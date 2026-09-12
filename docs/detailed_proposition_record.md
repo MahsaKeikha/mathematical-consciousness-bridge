@@ -1,6 +1,6 @@
 # Detailed proposition record
 
-## Complete P1 to P80 chronology
+## Complete P1 to P81 chronology
 
 This page preserves the proposition-by-proposition development history of the Mathematical Consciousness Bridge research program. It is intentionally separate from the main README so a first-time reader can follow the scientific argument without first learning the internal chronology of the project.
 
@@ -227,3 +227,8 @@ P79 does not validate non-rejected models and does not close the physical-to-exp
 Proof: [Proposition 80](proposition_80_simplex_coupled_model_separation.md). Provenance: [P80 equation record](p80_equation_provenance.md). Figure: [P80 theorem figure](figures/p80_simplex_coupled_model_separation.svg). Implementation: [`simplex_coupled_model_separation.py`](../src/consciousness_bridge/simplex_coupled_model_separation.py). Tests: [`test_simplex_coupled_model_separation.py`](../tests/test_simplex_coupled_model_separation.py).
 
 P80 is a computational tightening of a declared observed-law model test. It does not identify the P75 latent variable with consciousness and does not close the physical-to-experiential bridge.
+
+
+### P81: projection-event continuous-family certificate
+
+**P81** strengthens P80 by retaining exact parameter-box ranges for all nonempty projected binary events of the four observed views. For each cylinder event, its empirical mismatch from the exact box interval is divided by the event's number of full cells to obtain a valid full-law L-infinity lower bound. The combined P81 certificate is the maximum of this projection bound and the P80 simplex-coupled bound, so it is never weaker than P80. A fixed-marginal witness gives `L80=0` but `L81=1/80`, proving strict improvement is possible. [Proof](proposition_81_projection_event_model_separation.md) | [provenance](p81_equation_provenance.md) | [figure](figures/p81_projection_event_model_separation.svg). P81 does not identify the P75 latent variable with consciousness and does not close the physical-to-experiential bridge.

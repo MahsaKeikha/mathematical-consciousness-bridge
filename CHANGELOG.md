@@ -1,3 +1,14 @@
+# 0.81.0 - 2026-09-11
+
+- Added Proposition 81, Projection-Event Certificate for Continuous P75 Separation.
+- Added exact-rational parameter-box intervals for every nonempty projected binary cylinder event of the four observed views.
+- Proved the event-size transfer bound from projected-event mismatch to full sixteen-cell L-infinity model distance.
+- Defined `L81(B) = max(L80(B), L_proj(B))` and proved `L81(B) >= L80(B) >= L78(B)`.
+- Added an exact strict-improvement witness with `L80(B)=0` and `L81(B)=1/80`.
+- Preserved the one-sided P77/P79 rejection handoff and the existing P78 mesh-width upper certificate.
+- Added implementation, tests, proof, provenance record, theorem figure, reader navigation, website integration, and v0.81.0 citation metadata.
+- Preserved the scientific boundary that model rejection is not an experiential ontology and the physical-to-experiential bridge remains open.
+
 # 0.80.0 - 2026-09-11
 
 - Added Proposition 80, Simplex-Coupled Box Certificate for Continuous P75 Separation.
