@@ -6,6 +6,8 @@ on:
       - docs-first-reader-experience-p81
     paths:
       - .github/workflows/integrate-reader-documentation.yml
+      - scripts/integrate_reader_documentation.py
+      - scripts/fix_reader_validation.py
 
 permissions:
   contents: write
