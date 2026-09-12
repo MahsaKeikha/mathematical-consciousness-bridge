@@ -32,6 +32,17 @@ jobs:
       - name: Regenerate deterministic figure catalog
         run: python scripts/enrich_figure_documentation.py
 
+      - name: Normalize changed Start Here status lines
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('START_HERE.md')
+          text = path.read_text(encoding='utf-8')
+          text = text.replace('**Proposition frontier:** P83  \n', '**Proposition frontier:** P83\n')
+          text = text.replace('**Proposition-level results:** 83  \n', '**Proposition-level results:** 83\n')
+          path.write_text(text, encoding='utf-8')
+          PY
+
       - name: Remove one-shot integration machinery
         run: |
           rm scripts/apply_p83_publication_integration.py
