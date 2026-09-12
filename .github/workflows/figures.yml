@@ -5,11 +5,13 @@ on:
   push:
     branches:
       - main
-      - docs-first-reader-experience-p81
     paths:
       - "scripts/generate_all_figures.py"
       - "scripts/generate_quantitative_atlas.py"
       - "scripts/generate_quantum_foundations_atlas.py"
+      - "scripts/enrich_figure_documentation.py"
+      - "requirements-figures.txt"
+      - "requirements-reproducibility.txt"
       - "docs/figures/**"
       - "docs/reproducibility.md"
       - "pyproject.toml"
@@ -19,6 +21,9 @@ on:
       - "scripts/generate_all_figures.py"
       - "scripts/generate_quantitative_atlas.py"
       - "scripts/generate_quantum_foundations_atlas.py"
+      - "scripts/enrich_figure_documentation.py"
+      - "requirements-figures.txt"
+      - "requirements-reproducibility.txt"
       - "docs/figures/**"
       - "docs/reproducibility.md"
       - "pyproject.toml"
@@ -26,26 +31,34 @@ on:
 
 jobs:
   generate-and-validate:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
-      - name: Install repository and figure dependencies
+          python-version: "3.12.14"
+      - name: Install repository and exact figure environment
         run: |
           python -m pip install --upgrade pip
           python -m pip install -e ".[dev]"
-      - name: Regenerate computational figure atlases
+          python -m pip install -r requirements-figures.txt
+      - name: Regenerate and enrich computational figure atlases
         run: python scripts/generate_all_figures.py
+      - name: Require byte-identical regeneration
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "Generated artifacts differ from the committed publication record."
+            git status --short
+            git diff --stat
+            git diff
+            exit 1
+          fi
       - name: Verify repository publication surfaces
         run: python scripts/verify_repository.py
-      - name: Show generated working-tree changes
-        run: git status --short
       - name: Upload generated figure atlases
         uses: actions/upload-artifact@v4
         with:
-          name: generated-figure-atlases-python-3.12
+          name: generated-figure-atlases-python-3.12.14
           path: |
             docs/figures/quantitative
             docs/figures/quantum
