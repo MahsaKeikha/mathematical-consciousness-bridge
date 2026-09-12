@@ -42,6 +42,7 @@ The current documented theorem frontier is **P84**. The complete proposition rec
 32. [P80 equation and provenance record](p80_equation_provenance.md) for the simplex-coupled interval relaxation, exact feasibility crossings, and P80/P78 dominance.
 33. [Citation guide](../CITATION.md) for citing the whole research program or a specific proposition, figure, algorithm, or implementation.
 34. [P83 equation and provenance record](p83_equation_provenance.md) for exact parity identities, multi-affine box extrema, the strict P83 > P82 witness, and the scientific interpretation boundary.
+35. [P84 equation and provenance record](p84_equation_provenance.md) for common-vertex joint parity contrasts, the 220-contrast family, the strict P84 > P83 witness, and the scientific interpretation boundary.
 
 ## Scientific branch map
 
@@ -151,7 +152,11 @@ The current documented theorem frontier is **P84**. The complete proposition rec
 | P76 | [Finite-sample target-model adequacy rejection](proposition_76_finite_sample_target_model_adequacy.md) | sixteen-cell concentration and simultaneous polynomial adequacy rejection |
 | P77 | [Full-law model-set separation](proposition_77_full_law_model_set_separation.md) | finite-sample confidence-region separation from the complete declared model family |
 | P78 | [Certified continuous model separation](proposition_78_certified_continuous_model_separation.md) | exact-rational global lower bound for the continuous P75 model family |
-
+| P79 | [Certified rational sampling-radius envelope](proposition_79_certified_sampling_radius.md) | exact-rational one-sided upper certificate for finite-data sampling uncertainty |
+| P80 | [Simplex-coupled model separation](proposition_80_simplex_coupled_model_separation.md) | exact probability-normalization tightening of each continuous-family box certificate |
+| P81 | [Projection-event model separation](proposition_81_projection_event_model_separation.md) | exact projected-event constraints and full-law distance transfer |
+| P82 | [Exact nested projection contrast](proposition_82_exact_nested_projection_contrast.md) | exact non-cylinder residual-event constraints from nested projections |
+| P83 | [Exact projection parity](proposition_83_exact_projection_parity.md) | exact parity-event constraints beyond the complete P82 nested audit |
 | P84 | [Exact joint projection-parity contrast](proposition_84_exact_projection_parity_contrast.md) | exact shared-parameter parity-event contrast separation beyond the complete P83 scalar audit |
 
 ## Core bridge interface
@@ -205,6 +210,7 @@ P76 adds finite-data discipline to that adequacy check. One simultaneous sixteen
 | [P74 figure](figures/p74_finite_sample_target_channel_recovery.svg) | finite-sample concentration, nondegeneracy gating, and full binary-channel confidence recovery |
 | [P75 figure](figures/p75_target_model_adequacy_overidentification.svg) | three-view just-identification, four-view overidentification, observable adequacy restrictions, and full-law reconstruction |
 | [P76 figure](figures/p76_finite_sample_target_model_adequacy.svg) | shared finite-sample confidence event, polynomial adequacy intervals, certified rejection, and the non-rejection boundary |
+| [P84 figure](figures/p84_exact_joint_projection_parity_contrast.svg) | current frontier: exact shared-parameter parity-event contrast certification with the strict L83 = 0, L84 = 1/32 witness |
 | [`src/consciousness_bridge/`](../src/consciousness_bridge/) | executable theorem implementations |
 | [`tests/`](../tests/) | theorem, documentation, geometry, and publication regression tests |
 
@@ -215,13 +221,13 @@ Use the [Equation and citation map](equation_and_citation_map.md) to distinguish
 The research remains an ongoing mathematical-physics program. The current theorem frontier is P84, but the physical-to-experiential bridge itself remains open.
 
 
-| P82 | [Exact nested projection-contrast certificate](proposition_82_exact_nested_projection_contrast.md) | exact non-cylinder residual-event constraints from nested projections |
+## Frontier resources
 
-## P81 frontier update
-
-| Proposition | Reader question | Direct proof |
+| Proposition | What it adds | Direct proof |
 | --- | --- | --- |
-| P81 | Can exact projected-event constraints strengthen P80 while preserving a certified full-law lower bound? | [Projection-event model separation](proposition_81_projection_event_model_separation.md) |
-
+| P81 | exact projected-event constraints | [P81](proposition_81_projection_event_model_separation.md) |
+| P82 | exact nested residual-event constraints | [P82](proposition_82_exact_nested_projection_contrast.md) |
+| P83 | exact projection-parity constraints | [P83](proposition_83_exact_projection_parity.md) |
+| P84 | exact joint parity-event shared-parameter constraints | [P84](proposition_84_exact_projection_parity_contrast.md) |
 
 **Current frontier provenance:** [P84 equation and provenance record](p84_equation_provenance.md).

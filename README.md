@@ -150,7 +150,7 @@ This distinction is central. The repository **does not assume that a physical qu
 
 **Quantum mechanics does not by itself imply consciousness.** A complete quantum state specifies the outcome statistics of declared measurements, but an experiential conclusion requires an additional bridge statement unless that bridge is independently derived.
 
-Likewise, a latent target symbol such as $E^\star$ or $S$ is not a declaration of experiential ground truth. P71-P78 formalize separate requirements on target provenance, observation, channel identifiability, finite-data recovery, model adequacy, and finite-sample model rejection before such a target can carry bridge evidence.
+Likewise, a latent target symbol such as $E^\star$ or $S$ is not a declaration of experiential ground truth. P71-P84 formalize separate requirements on target provenance, observation, channel identifiability, finite-data recovery, model adequacy, full-law separation, and increasingly strong exact-rational continuous-family certificates before such a target can carry bridge evidence.
 
 ---
 

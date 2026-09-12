@@ -563,7 +563,7 @@ These results optimize downstream experimental resources. They do not define con
 
 ## 5. Current open frontier
 
-After P82, the target-side chain has a substantially clearer scientific burden:
+After P84, the target-side chain has a substantially clearer scientific burden:
 
 1. target provenance must be non-circular relative to the physical descriptor being tested;
 2. the target-observation channel must be scientifically defensible and sufficiently informative for the claimed witness;
@@ -576,14 +576,14 @@ After P82, the target-side chain has a substantially clearer scientific burden:
 9. the sampling-radius side of the rejection gate must have a certified upper direction; and
 10. computational relaxations should retain as much exact probability structure as possible without invalidating the lower-bound direction.
 
-P78 closes the global-lower-bound gap for the specific continuous P75 four-view binary latent family. P79 certifies the one-sided sampling-radius envelope. P80 strengthens the box relaxation by retaining probability normalization. P81 strengthens it again by retaining exact marginal and projected-event constraints implied by each parameter box. P82 then adds exact non-cylinder residual constraints from nested projected events, retaining common-parameter structure that separate event intervals discard. P82 then adds exact non-cylinder residual constraints from nested projected events, retaining common-parameter structure that separate event intervals discard.
+P78 closes the global-lower-bound gap for the specific continuous P75 four-view binary latent family. P79 certifies the one-sided sampling-radius envelope. P80 strengthens the box relaxation by retaining probability normalization. P81 adds exact marginal and projected-event constraints. P82 adds exact non-cylinder residual constraints from nested projected events. P83 adds exact projection-parity observables. P84 then preserves shared-parameter compatibility across pairs of those parity observables through 220 exact joint contrasts.
 
-The next computational question is therefore not another cosmetic bound. A substantive continuation beyond P82 would retain broader **simultaneous dependence among multiple overlapping events** or introduce a demonstrably tighter exact-rational convex or semialgebraic relaxation while preserving the certified lower-bound direction. Statistical extensions remain open as well, including sharper power analysis and target-view models with residual dependence, shared bias, temporal drift, or learned measurement pipelines.
+The next computational question is therefore not another cosmetic bound. A substantive continuation beyond P84 should retain **higher-order simultaneous dependence among three or more overlapping observables**, or introduce a demonstrably tighter exact-rational convex or semialgebraic relaxation while preserving the certified lower-bound direction. Any P85 candidate should come with a strict witness showing information not already captured by the complete P84 audit. Statistical extensions remain open as well, including sharper power analysis and target-view models with residual dependence, shared bias, temporal drift, or learned measurement pipelines.
 
-None of P71-P82 identifies a latent variable with consciousness. None proves that a failed descriptor implies nonphysical consciousness. The physical-to-experiential bridge remains open.
+None of P71-P84 identifies a latent variable with consciousness. None proves that a failed descriptor implies nonphysical consciousness. The physical-to-experiential bridge remains open.
 
 
-## P83 frontier: exact projection-parity separation
+## P83 predecessor frontier: exact projection-parity separation
 
 P82 retains common-parameter structure for nested residual events. P83 adds a complementary dependency observable. For selected views $J$ and parity $b$,
 
