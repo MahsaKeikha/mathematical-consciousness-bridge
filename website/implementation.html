@@ -62,7 +62,7 @@
     <a href="#stage-03"><strong>3 · P19-P24</strong>Bridge sufficiency tests</a>
     <a href="#stage-04"><strong>4 · P71</strong>Target provenance</a>
     <a href="#stage-05"><strong>5 · P72</strong>Target measurement</a>
-    <a href="#stage-06"><strong>6 · P73-P76</strong>Channel recovery & adequacy</a>
+    <a href="#stage-06"><strong>6 · P73-P84</strong>Channel recovery, adequacy & certified separation</a>
     <a href="#stage-07"><strong>7 · P25-P37</strong>Operational scale</a>
     <a href="#stage-08"><strong>8 · P38-P44</strong>Quantum interface</a>
     <a href="#stage-09"><strong>9 · P45-P53</strong>Adaptive evidence acquisition</a>
@@ -131,9 +131,9 @@
 </section>
 
 <section class="implementation-stage" id="stage-06">
-  <p class="stage-number">Stage 06 · P73-P76</p><h2>Channel recovery and model adequacy: learn the measurement model, then try to falsify it</h2>
-  <p>P73-P76 separate four questions that are easy to conflate: population identifiability, finite-sample recovery, independent model adequacy, and finite-sample rejection. Three nondegenerate conditionally independent binary views can identify the declared latent channel up to label swap; a fourth view creates overidentifying constraints that can expose model failure.</p>
-  <div class="implementation-flow"><div><strong>Input</strong>Three- or four-view binary observations and a declared latent conditional-independence model.</div><div><strong>Operation</strong>Recover moments/channel parameters, apply nondegeneracy gates, reconstruct the observed law, and test adequacy constraints with finite-sample intervals.</div><div><strong>Output</strong>Certified recovery, model rejection, or an explicitly inconclusive result.</div></div>
+  <p class="stage-number">Stage 06 · P73-P84</p><h2>Channel recovery and model adequacy: learn the measurement model, then try to falsify it</h2>
+  <p>P73-P84 build a continuous chain from channel recovery to certified model-family separation. P73-P76 separate four questions that are easy to conflate: population identifiability, finite-sample recovery, independent model adequacy, and finite-sample rejection. Three nondegenerate conditionally independent binary views can identify the declared latent channel up to label swap; a fourth view creates overidentifying constraints that can expose model failure.</p>
+  <div class="implementation-flow"><div><strong>Input</strong>Three- or four-view binary observations, a declared latent conditional-independence model, and the parameter boxes used for certified full-law separation.</div><div><strong>Operation</strong>Recover channel parameters, test model adequacy, certify full-law distance, and progressively retain simplex, projection, nested-event, parity, and joint shared-parameter constraints.</div><div><strong>Output</strong>Certified recovery, model rejection, or an explicitly inconclusive result.</div></div>
   <div class="implementation-links">
     <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/target_channel_identifiability.py"><strong>target_channel_identifiability.py</strong><small>P73 population recovery</small></a>
     <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/finite_sample_target_channel_recovery.py"><strong>finite_sample_target_channel_recovery.py</strong><small>P74 finite-sample recovery and gates</small></a>

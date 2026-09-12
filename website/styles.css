@@ -621,3 +621,129 @@ footer {
     flex-direction: column;
   }
 }
+
+/* Publication-safe theorem figures */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.two-col > *,
+.figure-card > * {
+  min-width: 0;
+}
+
+.two-col img,
+.figure-card img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.theorem-frontier {
+  scroll-margin-top: 92px;
+}
+
+.theorem-frontier .section-head {
+  max-width: 900px;
+}
+
+.theorem-figure-shell {
+  width: 100%;
+  margin-top: 26px;
+  padding: 16px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--paper);
+}
+
+.theorem-figure-shell a {
+  display: block;
+  min-width: 0;
+}
+
+.theorem-figure-shell img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.frontier-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.frontier-summary-card {
+  min-width: 0;
+  padding: 19px 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--paper);
+}
+
+.frontier-summary-card h3 {
+  margin: 0 0 0.45em;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.frontier-summary-card p {
+  margin-bottom: 0.7em;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.62;
+}
+
+.frontier-summary-card p:last-child {
+  margin-bottom: 0;
+}
+
+.frontier-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.frontier-metrics span {
+  display: inline-block;
+  padding: 5px 8px;
+  border-radius: 7px;
+  background: var(--soft);
+  color: var(--accent);
+  font-size: 0.77rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.frontier-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+@media (max-width: 900px) {
+  .frontier-summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .theorem-figure-shell {
+    padding: 8px;
+    border-radius: 13px;
+  }
+
+  .frontier-summary-card {
+    padding: 17px;
+  }
+}

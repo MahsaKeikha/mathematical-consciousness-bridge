@@ -620,6 +620,8 @@ Direct proof: [P83](proposition_83_exact_projection_parity.md). Provenance: [P83
 
 ## P84 frontier: exact joint projection-parity contrast separation
 
+**Plain-language interpretation.** P83 can say that two observations are each possible somewhere inside the same parameter box. P84 asks whether they are possible **together at one common parameter choice**. Its strict witness shows that these are not equivalent requirements.
+
 P83 tests 22 parity events separately. P84 tests whether pairs of those observables can be realized by the **same** P75 parameter assignment. For two parity events with different view sets, the branchwise probability contrast is multi-affine in the union of their response coordinates, so exact extrema occur at common endpoint vertices. P84 evaluates 220 genuinely coupled standard contrasts and defines
 
 \[

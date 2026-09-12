@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
-  <title id="title">P84 exact joint projection-parity contrast certificate</title>
+  <title id="title">P84 joint parity compatibility certificate</title>
   <desc id="desc">What this figure shows: P84 frontier figure. P84 preserves the common parameter geometry of pairs of P83 parity events. The strict witness L83 = 0 &lt; L84 = 1/32 demonstrates a genuine strengthening while retaining the P78 mesh upper certificate and P79 one-sided finite-data rejection gate. How to read it: follow only the labeled arrows, axes, panels, set relations, or inequalities shown in the visual and interpret them using the adjacent research text. Main takeaway: the figure summarizes the stated mathematical or scientific dependency; visual proximity alone does not add a claim. Scientific status: Reader-facing research figure; formal status is controlled by the linked proof or source record.</desc>
 
   <defs>
@@ -14,8 +14,8 @@
   <rect x="0" y="0" width="1200" height="780" fill="#f8fafc"/>
   <rect x="34" y="28" width="1132" height="724" rx="24" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
 
-  <text x="70" y="76" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#0f172a">P84 Exact Joint Projection-Parity Contrast Certificate</text>
-  <text x="70" y="108" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#475569">Separate parity compatibility does not guarantee joint compatibility with one shared P75 parameter assignment</text>
+  <text x="70" y="76" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#0f172a">P84 Joint Parity Compatibility Certificate</text>
+  <text x="70" y="108" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#475569">Two parity checks can pass separately yet fail under one shared P75 parameter assignment</text>
 
   <!-- PANEL 1 -->
   <rect x="70" y="145" width="310" height="430" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>

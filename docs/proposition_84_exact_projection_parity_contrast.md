@@ -8,6 +8,14 @@ P83 tests 22 projection-parity events separately. For each parity event it compu
 
 P84 is a model-distance certification result. It does not establish that the P75 latent state is consciousness, does not validate the P75 model when rejection fails, and does not close the physical-to-experiential bridge.
 
+## Plain-language meaning
+
+P83 asks whether each parity-based observation is individually compatible with a parameter box. P84 asks a stricter question: **can the same parameter choice explain two such observations at once?**
+
+This matters because separate tests can hide a contradiction. One observation may be explainable by one point in the parameter box and a second observation by another point, even though no single point explains both together. P84 keeps the shared parameters coupled and tests that joint requirement directly.
+
+The strict witness makes the difference concrete: the complete P83 certificate is zero, while P84 certifies the positive lower bound `1/32`. The conclusion is narrow and precise: the declared P75 model family is farther from the empirical law than P83 alone can prove on that box.
+
 ---
 
 ## 1. Question left open by P83
