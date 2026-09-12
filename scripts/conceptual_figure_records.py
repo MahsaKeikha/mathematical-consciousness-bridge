@@ -5,6 +5,17 @@ from pathlib import Path
 from typing import Any
 
 RECORDS: dict[str, dict[str, str]] = {
+    "docs/figures/p56_moving_start_metric_reoptimization_stability.svg": {
+        "title": "P56 moving-start metric reoptimization stability",
+        "description": (
+            "What this figure shows: P56 controls exact P54 reoptimization when the apparatus or setup start moves from s to s-prime while one declared finite switching metric remains fixed. The exact route optimum is one-Lipschitz in the start state, and the coefficient one is sharp. "
+            "How to read it: the three upper cards specify the fixed metric geometry and the two alternative start states for the same active support. Their attached arrows feed the central route-reuse proof and one-Lipschitz theorem. The lower cards then transfer the bound to fixed residual demand, combine it with the P55 fixed-start release after componentwise residual decrease, and state a sufficient strict-decrease certificate. "
+            "Main takeaway: start motion can erase at most one metric displacement worth of the saving certified by P55. Therefore a fixed-start release larger than c(s,s-prime) guarantees that the new exact total cost remains strictly lower, while failure of that sufficient inequality is inconclusive."
+        ),
+        "status": (
+            "Deterministic one-metric scheduling perturbation theorem. It assumes the same valid finite switching metric before and after reoptimization. It does not validate pruning, establish statistical minimaxity of residual thresholds, identify a scheduling quantity with consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness."
+        ),
+    },
     "docs/figures/p57_switching_metric_perturbation.svg": {
         "title": "P57 deterministic switching-metric perturbation stability",
         "description": (
