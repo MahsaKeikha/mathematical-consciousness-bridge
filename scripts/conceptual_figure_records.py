@@ -5,6 +5,17 @@ from pathlib import Path
 from typing import Any
 
 RECORDS: dict[str, dict[str, str]] = {
+    "docs/figures/p57_switching_metric_perturbation.svg": {
+        "title": "P57 deterministic switching-metric perturbation stability",
+        "description": (
+            "What this figure shows: P57 controls exact P54 reoptimization when residual demand, setup origin, and a declared finite switching metric all change. The theorem assumes two valid finite metrics on one common relevant point set and measures their uniform difference by delta. "
+            "How to read it: the three upper input cards specify the old exact state, the new exact state, and the sharp q-times-delta stability bound for changing only the metric at a fixed support and start. All three feed the central P55-P56-P57 certificate, where the fixed-geometry release is reduced by the smaller of two valid start-motion-plus-metric-drift penalties. The lower cards explain the sharp route-edge factor, the sufficient strict-decrease condition, and a route-reuse upper bound that can be tighter than the uniform perturbation penalty. "
+            "Main takeaway: if the fixed-geometry release exceeds the certified perturbation penalty then the new exact total cost is strictly smaller, but the converse is not claimed because the penalty is worst-case."
+        ),
+        "status": (
+            "Deterministic robustness theorem for operational scheduling under two declared finite metrics. It does not estimate a metric from data, validate pruning, prove minimax adaptive efficiency, identify a metric or route quantity with consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness."
+        ),
+    },
     "docs/figures/p58_finite_data_metric_uncertainty.svg": {
         "title": "P58 finite-data switching-metric uncertainty and robust routing",
         "description": (
