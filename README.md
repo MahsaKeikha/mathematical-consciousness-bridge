@@ -21,6 +21,8 @@
 | Proposition-level results | **83** |
 | Physical-to-experiential bridge | **Open** |
 
+Read the complete P1 to P83 detailed proposition record in [docs/detailed_proposition_record.md](docs/detailed_proposition_record.md) for proposition-by-proposition assumptions, statements, proofs, implementations, tests, and scientific boundaries.
+
 > **What mathematical and physical conditions would be required for a complete physical description of a system to support a scientifically testable claim about consciousness?**
 
 This repository is a mathematical-physics research program for the **physical-to-experiential bridge problem**. It does not begin by assuming what consciousness is. It asks what must be true before any proposed physical description can legitimately be called sufficient for an independently specified experiential target, how that sufficiency can be falsified, and how finite experiments can distinguish a real bridge from correlation, representation choice, coarse-graining, target circularity, target-measurement error, unidentified target-channel reliability, or statistical noise.
