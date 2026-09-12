@@ -1,0 +1,31 @@
+name: fix-reader-generator-syntax
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "scripts/fix_reader_generator_syntax.py"
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Repair escaped newlines
+        run: python scripts/fix_reader_generator_syntax.py
+      - name: Compile repaired generator
+        run: python -m py_compile scripts/enrich_figure_documentation.py
+      - name: Commit repair and remove runner
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/enrich_figure_documentation.py
+          git rm scripts/fix_reader_generator_syntax.py .github/workflows/fix-reader-generator-syntax.yml
+          git commit -m "Fix reader atlas generator string escaping"
+          git push
