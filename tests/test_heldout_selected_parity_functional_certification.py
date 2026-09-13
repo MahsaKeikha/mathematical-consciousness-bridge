@@ -184,6 +184,7 @@ def test_p88_source_keeps_selection_and_scientific_boundaries_explicit() -> None
     source = Path(
         "src/consciousness_bridge/heldout_selected_parity_functional_certification.py"
     ).read_text(encoding="utf-8")
+    source_normalized = " ".join(source.split())
     required = (
         "independent discovery sample",
         "There is no union bound over the 39,600 candidate functionals.",
@@ -195,4 +196,4 @@ def test_p88_source_keeps_selection_and_scientific_boundaries_explicit() -> None
         "solve the physical-to-experiential bridge",
     )
     for token in required:
-        assert token in source
+        assert token in source_normalized
