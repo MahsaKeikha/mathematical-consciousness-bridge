@@ -4,7 +4,7 @@
 
 > ## The central question
 >
-> **When can a physical description be said to explain an experience-related difference, rather than simply correlate with it?**
+> **When can a physical description be said to explain a difference related to experience, rather than simply correlate with it?**
 
 This project does not begin by choosing a formula for consciousness. It begins by asking what a scientific bridge from physics to experience would have to demonstrate before we should trust it.
 
@@ -22,15 +22,15 @@ What information about the system are we actually using?
 
 A claim cannot be stronger than the description it begins with. The project therefore asks what is measured, what changes over time, what can be intervened on, and what information may have been left out.
 
-**[See where this fits in the Research Map →](docs/research_map.md#chapter-1--what-physical-system-are-we-talking-about)**
+**[See where this fits in the Research Map](docs/research_map.md#chapter-1-what-physical-system-are-we-talking-about)**
 
 ### 2. Keep the target independent
 
-If we want to know whether physics explains an experience-related distinction, we should not secretly build that distinction from the same physical variables and then call the match an explanation.
+If we want to know whether physics explains a distinction related to experience, we should not secretly build that distinction from the same physical variables and then call the match an explanation.
 
 The target needs its own scientific justification.
 
-**[See where this fits in the Research Map →](docs/research_map.md#chapter-3--is-the-target-independent-or-did-we-build-the-answer-into-it)**
+**[See where this fits in the Research Map](docs/research_map.md#chapter-3-is-the-target-independent-or-did-we-build-the-answer-into-it)**
 
 ### 3. Test the measurement and the model
 
@@ -38,7 +38,7 @@ Reports, behavior, labels, and other observations can be incomplete or noisy. A 
 
 The research therefore asks whether the observations are trustworthy and whether the proposed model makes constraints that can genuinely fail.
 
-**[See where this fits in the Research Map →](docs/research_map.md#chapter-4--can-the-proposed-model-be-wrong)**
+**[See where this fits in the Research Map](docs/research_map.md#chapter-4-can-the-proposed-model-be-wrong)**
 
 ### 4. Ask whether the result survives uncertainty
 
@@ -46,13 +46,13 @@ A promising pattern is not enough by itself. Finite data, numerical approximatio
 
 The later work develops ways to make those conclusions auditable and reproducible.
 
-**[See where this fits in the Research Map →](docs/research_map.md#chapter-5--does-the-conclusion-survive-uncertainty)**
+**[See where this fits in the Research Map](docs/research_map.md#chapter-5-does-the-conclusion-survive-uncertainty)**
 
 ---
 
 ## What has this project built so far?
 
-The repository contains a large mathematical and computational framework for turning the broad physics-to-experience question into smaller scientific questions that can be tested separately.
+The repository contains a large mathematical and computational framework for turning the broad question from physics to experience into smaller scientific questions that can be tested separately.
 
 Those results include methods for:
 
@@ -60,10 +60,10 @@ Those results include methods for:
 - asking whether a physical description leaves out a distinction relevant to an independent target;
 - checking whether the target and its measurements are scientifically usable;
 - testing whether a proposed model can reproduce the observed data;
-- controlling finite-data and numerical uncertainty;
+- controlling uncertainty from finite data and numerical computation;
 - making the complete reasoning chain reproducible and auditable.
 
-The public theorem frontier is **P87**. The formal release is **v0.82.0**. The physical-to-experiential bridge itself remains **open**.
+The public theorem frontier is **P87**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains **open**.
 
 You do not need to read 87 propositions to understand the project.
 
@@ -91,7 +91,7 @@ This repository is building a **test framework**, not announcing that consciousn
 
 A physical model may fail because it is incomplete. A statistical model may fail without telling us which alternative is correct. A latent variable may be useful without being consciousness. A theorem may be correct under assumptions that still need empirical justification.
 
-The final physical-to-experiential bridge therefore remains an open question.
+The final bridge from physical description to experience therefore remains an open question.
 
 That openness is intentional. The purpose of the project is to make the path toward stronger claims more precise, more falsifiable, and easier for other researchers to inspect.
 
@@ -103,7 +103,7 @@ For the best next step, continue to the **[Research Map](docs/research_map.md)**
 
 When you are ready for the formal structure, continue to **[Technical Research Architecture](docs/research_architecture.md)** or the **[Theorem Roadmap](docs/theorem_roadmap.md)**.
 
-For the full proposition-by-proposition audit trail, open the **[Detailed Proposition Record](docs/detailed_proposition_record.md)**.
+For the full proposition audit trail, open the **[Detailed Proposition Record](docs/detailed_proposition_record.md)**.
 
 For figures first, open the **[Figure Catalog](docs/figure_catalog.md)**.
 
