@@ -15,14 +15,20 @@ on:
       - "src/consciousness_bridge/radius_three_bounded_primitive_quad_projection_parity_functional_separation.py"
       - "tests/test_radius_three_bounded_primitive_quad_projection_parity_functional_separation.py"
       - "tests/test_figure_publication_sync.py"
+      - "tests/test_p88_reader_surface_coherence.py"
   workflow_dispatch:
 
 permissions:
   contents: write
 
+concurrency:
+  group: p88-public-frontier-main
+  cancel-in-progress: true
+
 jobs:
   promote:
     runs-on: ubuntu-24.04
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
@@ -38,8 +44,16 @@ jobs:
         run: python scripts/sync_figure_publication.py
       - name: Validate exact P88 theorem and publication contract
         run: |
-          python -m pytest -q tests/test_radius_three_bounded_primitive_quad_projection_parity_functional_separation.py tests/test_figure_publication_sync.py
-          python -m py_compile src/consciousness_bridge/radius_three_bounded_primitive_quad_projection_parity_functional_separation.py scripts/promote_p88_public_frontier.py scripts/sync_figure_publication.py scripts/prepare_website.py scripts/verify_repository.py
+          python -m pytest -q \
+            tests/test_radius_three_bounded_primitive_quad_projection_parity_functional_separation.py \
+            tests/test_figure_publication_sync.py \
+            tests/test_p88_reader_surface_coherence.py
+          python -m py_compile \
+            src/consciousness_bridge/radius_three_bounded_primitive_quad_projection_parity_functional_separation.py \
+            scripts/promote_p88_public_frontier.py \
+            scripts/sync_figure_publication.py \
+            scripts/prepare_website.py \
+            scripts/verify_repository.py
           python scripts/sync_figure_publication.py --check
           python scripts/verify_repository.py
           git diff --check
