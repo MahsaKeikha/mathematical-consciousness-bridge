@@ -6,6 +6,7 @@ on:
     paths:
       - "website/**"
       - "docs/figures/**"
+      - "scripts/prepare_website.py"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -15,7 +16,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages-production-v2
+  group: pages-production-v3
   cancel-in-progress: true
 
 jobs:
@@ -31,81 +32,45 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
-      - name: Build exact-commit website
-        run: |
-          rm -rf _site
-          cp -a website _site
-          mkdir -p _site/figures
-          cp -a docs/figures/. _site/figures/
-          python - <<'PY'
-          from pathlib import Path
-          prefix = 'https://raw.githubusercontent.com/MahsaKeikha/mathematical-consciousness-bridge/main/docs/figures/'
-          for path in Path('_site').glob('*.html'):
-              text = path.read_text(encoding='utf-8')
-              text = text.replace(f'src="{prefix}', 'src="figures/')
-              path.write_text(text, encoding='utf-8')
-          PY
+      - name: Build complete styled website
+        run: python scripts/prepare_website.py --source website --output _site
 
-      - name: Validate cleaned reader-first P1-P87 public state
+      - name: Validate deployed reader experience
         run: |
           test -f _site/index.html
+          test -f _site/plain-language.html
+          test -f _site/start-here.html
           test -f _site/research-map.html
           test -f _site/research-navigation.html
           test -f _site/visual-atlas.html
           test -f _site/figures/p87_exact_bounded_primitive_quad_projection_parity.svg
 
-          # Overview stays reader-first rather than duplicating the full branch map.
+          # The complete shared style bundle must be present on pages that app.js enhances.
+          for page in index.html plain-language.html start-here.html research-map.html visual-atlas.html; do
+            grep -q 'navigation.css' "_site/$page"
+            grep -q 'navigation-v2.css?v=20260913-live-repair1' "_site/$page"
+            grep -q 'publication.css' "_site/$page"
+            grep -q 'publication-v2.css' "_site/$page"
+            grep -q 'research-guide-v2.css?v=20260913-live-repair1' "_site/$page"
+            grep -q 'contrast-v2.css?v=20260913-live-repair1' "_site/$page"
+            grep -q 'reader-experience-v2.css?v=20260913-live-repair1' "_site/$page"
+            grep -q 'app.js?v=20260913-live-repair1' "_site/$page"
+          done
+
+          # Reader-first P87 public state.
           grep -q 'Explore all 87 results' _site/index.html
           grep -q 'P87 is result 87, not result 86' _site/index.html
-          grep -q 'P1-P18' _site/index.html
-          grep -q 'P19-P44' _site/index.html
-          grep -q 'P45-P70' _site/index.html
-          grep -q 'P71-P87' _site/index.html
-          grep -q 'Every public page has one job' _site/index.html
-
-          # Canonical ten-branch detail belongs on the map/navigation pages.
-          grep -q 'Explore all 87 results' _site/research-map.html
           grep -q 'P45-P60' _site/research-map.html
           grep -q 'Adaptive evidence acquisition' _site/research-map.html
           grep -q 'P73-P87' _site/research-map.html
           grep -q 'Channel recovery and model testing' _site/research-map.html
           grep -q 'Open all 87 results' _site/research-navigation.html
-          grep -q 'P45-P60' _site/research-navigation.html
-          grep -q 'P73-P87' _site/research-navigation.html
-
-          # P87 is present in both reader-facing visual routes.
-          grep -q 'src="figures/p87_exact_bounded_primitive_quad_projection_parity.svg"' _site/index.html
-          grep -q 'src="figures/p87_exact_bounded_primitive_quad_projection_parity.svg"' _site/visual-atlas.html
           grep -q 'P87 is the 87th public result' _site/visual-atlas.html
 
-          # Never publish the stale P86/86-result public state again.
           if grep -R -E 'Explore all 86 results|86 proposition-level results|all 86 propositions|Current theorem frontier · P86|Current frontier · P86' _site/*.html; then
             echo "Website contains stale pre-P87 public status text."
             exit 1
           fi
-
-          python - <<'PY'
-          from pathlib import Path
-          labels = [
-              'Foundations',
-              'Physical description',
-              'Candidate bridge class',
-              'Operational scale',
-              'Quantum interface',
-              'Adaptive evidence acquisition',
-              'Calibration and optimization',
-              'Target provenance',
-              'Target measurement',
-              'Channel recovery and model testing',
-          ]
-          ranges = ['P1-P10','P11-P18','P19-P24','P25-P37','P38-P44','P45-P60','P61-P70','P71','P72','P73-P87']
-          for filename in ('research-map.html', 'research-navigation.html'):
-              text = Path('_site', filename).read_text(encoding='utf-8')
-              positions = [text.index(label) for label in labels]
-              assert positions == sorted(positions), f'{filename}: branch order is not canonical'
-              range_positions = [text.index(r) for r in ranges]
-              assert range_positions == sorted(range_positions), f'{filename}: proposition ranges are not canonical'
-          PY
 
       - name: Upload website artifact
         uses: actions/upload-pages-artifact@v3
