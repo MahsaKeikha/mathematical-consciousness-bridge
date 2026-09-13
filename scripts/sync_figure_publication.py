@@ -1,16 +1,16 @@
-"""Synchronize every public figure surface with the canonical docs/figures tree.
+"""Synchronize public figure surfaces with the canonical ``docs/figures`` tree.
 
-The repository deliberately keeps one canonical SVG tree under ``docs/figures``.
-This command derives the reader-facing ``figures/`` gateway, a machine-readable
-SHA-256 manifest, and the current-frontier placement on the Visual Atlas from
-that canonical tree.  It prevents the GitHub figure gateway and the website from
-silently lagging behind the theorem frontier.
+There is one canonical SVG archive in this repository: ``docs/figures``.  This
+command derives the GitHub-facing ``figures/`` gateway, its SHA-256 manifest,
+the current-frontier documentation, and the placement of the current theorem
+figure on the Visual Atlas.  CI can therefore detect figure-publication drift
+instead of relying on folder timestamps or manual inspection.
 
-Run from the repository root with::
+Run from the repository root::
 
     python scripts/sync_figure_publication.py
 
-Use ``--check`` in CI to fail on publication drift without modifying files.
+Use ``--check`` in CI to fail on drift without rewriting files.
 """
 
 from __future__ import annotations
@@ -29,7 +29,6 @@ VISUAL_ATLAS = ROOT / "website" / "visual-atlas.html"
 VERIFIER = ROOT / "scripts" / "verify_repository.py"
 
 FRONTIER_RE = re.compile(r'^CURRENT_FRONTIER = "P(?P<number>\d+)"$', re.MULTILINE)
-SECTION_RE_TEMPLATE = r'<section id="{section_id}"\b.*?</section>'
 RAW_FIGURE_PREFIX = (
     "https://raw.githubusercontent.com/MahsaKeikha/"
     "mathematical-consciousness-bridge/main/docs/figures/"
@@ -83,17 +82,21 @@ def _svg_metadata(path: Path) -> tuple[str, str]:
     root = ET.parse(path).getroot()
     namespace = {"svg": "http://www.w3.org/2000/svg"}
     title = root.find("svg:title", namespace)
-    desc = root.find("svg:desc", namespace)
+    description = root.find("svg:desc", namespace)
     title_text = "" if title is None or title.text is None else " ".join(title.text.split())
-    desc_text = "" if desc is None or desc.text is None else " ".join(desc.text.split())
-    return title_text, desc_text
+    description_text = (
+        ""
+        if description is None or description.text is None
+        else " ".join(description.text.split())
+    )
+    return title_text, description_text
 
 
 def _figure_manifest(frontier: int) -> str:
     records: list[dict[str, object]] = []
     for path in sorted(DOC_FIGURES.rglob("*.svg")):
         raw = path.read_bytes()
-        title, desc = _svg_metadata(path)
+        title, description = _svg_metadata(path)
         relative = path.relative_to(ROOT).as_posix()
         if "/quantitative/" in relative:
             category = "quantitative"
@@ -108,7 +111,7 @@ def _figure_manifest(frontier: int) -> str:
                 "bytes": len(raw),
                 "category": category,
                 "title": title,
-                "description_chars": len(desc),
+                "description_chars": len(description),
             }
         )
 
@@ -122,7 +125,7 @@ def _figure_manifest(frontier: int) -> str:
         "hash_algorithm": "sha256",
         "figures": records,
     }
-    return json.dumps(payload, indent=2, sort_keys=False) + "\n"
+    return json.dumps(payload, indent=2) + "\n"
 
 
 def _gateway_readme(frontier: int) -> str:
@@ -131,7 +134,7 @@ def _gateway_readme(frontier: int) -> str:
     return f"""# Visual research gateway
 
 This top-level `figures/` directory is the GitHub-facing entry point for the
-visual record of the Mathematical Consciousness Bridge project.  The canonical
+visual record of the Mathematical Consciousness Bridge project. The canonical
 SVG archive lives in [`docs/figures/`](../docs/figures/); this gateway is derived
 from that archive by code so it cannot silently remain on an older proposition.
 
@@ -149,8 +152,8 @@ For the full P71-P{frontier} visual progression, open
 ## Complete reproducible figure record
 
 [`manifest.json`](manifest.json) is generated from **every SVG under
-`docs/figures/`**.  Each record contains the canonical path, SHA-256 digest,
-byte size, category, SVG title, and description length.  This makes figure drift
+`docs/figures/`**. Each record contains its canonical path, SHA-256 digest, byte
+size, category, SVG title, and description length. This makes figure drift
 machine-auditable rather than relying on folder timestamps or manual inspection.
 
 The curated human-readable index remains
@@ -165,18 +168,16 @@ python scripts/sync_figure_publication.py --check
 python scripts/verify_repository.py
 ```
 
-`generate_all_figures.py` regenerates the quantitative and quantum atlases,
-enriches the SVG documentation, synchronizes this gateway, and validates the
-canonical tree.  `--check` fails if this gateway, the manifest, or the current
-Visual Atlas frontier has drifted from the canonical repository state.
+`generate_all_figures.py` regenerates the computational atlases and validates
+the canonical SVG tree. The publication synchronizer keeps this gateway, its
+manifest, and the Visual Atlas current-frontier ordering synchronized.
 
 ## Scientific boundary
 
-The generated atlases, theorem diagrams, and architecture illustrations have
-different evidential meanings.  A figure is not empirical consciousness evidence
-merely because it is visually compelling.  The scientific status of each visual
-comes from its theorem, assumptions, data provenance, tests, and declared evidence
-class.
+Generated atlases, theorem diagrams, and architecture illustrations have
+different evidential meanings. A figure is not empirical consciousness evidence
+merely because it is visual. Its scientific status comes from the associated
+theorem, assumptions, data provenance, tests, and declared evidence class.
 
 The legacy file `p30_p37_operational_scale_map.svg` is retained for continuity;
 new theorem figures are maintained canonically under `docs/figures/`.
@@ -189,7 +190,7 @@ def _frontier_page(frontier: int) -> str:
     lines = [
         f"# Current visual frontier: P71-P{frontier}",
         "",
-        "This page is generated from the canonical proposition and figure tree. ",
+        "This page is generated from the canonical proposition and figure tree.",
         "It is the compact GitHub-facing visual route through the current target-side branch.",
         "",
         f"## Current theorem frontier: P{frontier}",
@@ -261,10 +262,15 @@ def _frontier_page(frontier: int) -> str:
 def _docs_figure_readme(frontier: int) -> str:
     current = _one_match(f"p{frontier}_*.svg", root=DOC_FIGURES)
     recent = _frontier_records(max(71, frontier - 3), frontier)
-    recent_lines = "\n".join(f"- `{Path(record['figure']).name}`" for record in recent)
+    recent_lines = "\n".join(
+        f"- `{Path(record['figure']).name}`" for record in recent
+    )
     return f"""# Figure provenance and regeneration
 
-`docs/figures/` is the canonical visual archive for the Mathematical Consciousness Bridge research program.  The repository distinguishes generated computational atlases from source-controlled theorem and architecture diagrams because they have different scientific meanings.
+`docs/figures/` is the canonical visual archive for the Mathematical
+Consciousness Bridge research program. The repository distinguishes generated
+computational atlases from source-controlled theorem and architecture diagrams
+because they have different scientific meanings.
 
 ## Generated computational atlases
 
@@ -280,15 +286,15 @@ python scripts/generate_all_figures.py
 ```
 
 The canonical generators are `scripts/generate_quantitative_atlas.py` and
-`scripts/generate_quantum_foundations_atlas.py`.  Their JSON manifests are
+`scripts/generate_quantum_foundations_atlas.py`. Their JSON manifests are
 validated against the generated SVG sets.
 
 ## Source-controlled theorem and architecture figures
 
 SVGs stored directly in this directory communicate theorem structure,
-assumptions, inequalities, dependencies, or scientific boundaries.  They are
+assumptions, inequalities, dependencies, or scientific boundaries. They are
 validated as SVG documents and enriched with accessible `<title>` and `<desc>`
-metadata; they are not reclassified as empirical evidence simply because they
+metadata. They are not reclassified as empirical evidence simply because they
 are visual.
 
 ## Current frontier: P{frontier}
@@ -313,11 +319,12 @@ python scripts/sync_figure_publication.py --check
 ```
 
 The `.github/workflows/figures.yml` workflow regenerates the computational
-atlases, validates byte-identical reproducibility, checks figure publication
-synchronization, runs repository verification, and uploads the generated atlas
+atlases, validates byte-identical reproducibility, checks figure-publication
+synchronization, runs repository verification, and uploads generated figure
 artifacts.
 
-For the curated reader-facing index, see [`docs/figure_catalog.md`](../figure_catalog.md). For complete setup instructions, see [`docs/reproducibility.md`](../reproducibility.md).
+For the curated reader-facing index, see [`docs/figure_catalog.md`](../figure_catalog.md).
+For complete setup instructions, see [`docs/reproducibility.md`](../reproducibility.md).
 
 ## Scientific boundary
 
@@ -345,15 +352,13 @@ def _p86_visual_section() -> str:
     <article class="frontier-summary-card"><h3>Reproducible record</h3><p>The theorem, equation provenance, implementation, exhaustive regression suite, SVG, and SHA-256 figure manifest are all source controlled.</p></article>
   </div>
   <div class="boundary"><p><strong>Scientific boundary:</strong> P86 is a conditional exact model-separation theorem for the declared P75 family. It does not identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.</p></div>
-  <p><a href="{BLOB_PREFIX}docs/proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md">Open the P86 theorem</a> · <a href="{BLOB_PREFIX}docs/p86_equation_provenance.md">Equation provenance</a> · <a href="{BLOB_PREFIX}src/consciousness_bridge/minimally_weighted_quad_projection_parity_functional_separation.py">Implementation</a> · <a href="{BLOB_PREFIX}tests/test_minimally_weighted_quad_projection_parity_functional_separation.py">Exact tests</a></p>
+  <p><a href="{BLOB_PREFIX}docs/proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md">Open the P86 theorem</a> · <a href="{BLOB_PREFIX}docs/p86_equation_provenance.md">Equation provenance</a> · <a href="{BLOB_PREFIX}src/consciousness_bridge/weighted_quad_projection_parity_functional_separation.py">Implementation</a> · <a href="{BLOB_PREFIX}tests/test_weighted_quad_projection_parity_functional_separation.py">Exact tests</a></p>
 </section>'''
 
 
 def _normalize_visual_atlas(text: str) -> str:
-    p86_pattern = re.compile(
-        SECTION_RE_TEMPLATE.format(section_id="p86-frontier"), re.DOTALL
-    )
-    text, count = p86_pattern.subn("", text, count=1)
+    pattern = re.compile(r'<section id="p86-frontier"\b.*?</section>', re.DOTALL)
+    text, count = pattern.subn("", text, count=1)
     if count != 1:
         raise RuntimeError(f"expected exactly one P86 Visual Atlas section, found {count}")
 
@@ -362,13 +367,13 @@ def _normalize_visual_atlas(text: str) -> str:
     boundary = re.search(r'<section class="boundary">.*?</section>', text, re.DOTALL)
     if boundary is None:
         raise RuntimeError("could not locate Visual Atlas reading-boundary section")
+
     insertion = "\n" + marker + "\n" + _p86_visual_section() + "\n"
     return text[: boundary.end()] + insertion + text[boundary.end() :]
 
 
 def _expected_outputs() -> dict[Path, str]:
     frontier = _current_frontier()
-    GATEWAY.mkdir(parents=True, exist_ok=True)
     visual_source = VISUAL_ATLAS.read_text(encoding="utf-8")
     return {
         GATEWAY / "README.md": _gateway_readme(frontier),
