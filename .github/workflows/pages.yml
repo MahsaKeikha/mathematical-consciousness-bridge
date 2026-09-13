@@ -48,7 +48,6 @@ jobs:
           ! grep -q 'Current record:</strong> 86 proposition-level results through P86' _site/index.html
 
           grep -q 'What are we actually trying to find out?' _site/plain-language.html
-          grep -q 'Explain it in 60 seconds' _site/plain-language.html
           grep -q 'Seven questions have to be kept separate' _site/plain-language.html
           grep -q 'What the 88 results are doing' _site/plain-language.html
           grep -q '<strong>88</strong><span>proposition-level results</span>' _site/plain-language.html
@@ -56,8 +55,22 @@ jobs:
           grep -q 'Current exact frontier · P88' _site/plain-language.html
           ! grep -q '<strong>P87</strong><span>current theorem frontier</span>' _site/plain-language.html
 
+          grep -q 'the 88-result theorem program and current P88 frontier' _site/start-here.html
+          grep -q '<strong>88</strong><span>proposition-level results</span>' _site/start-here.html
+          grep -q '<strong>P88</strong><span>current theorem frontier</span>' _site/start-here.html
+          grep -q 'You do not need to read 88 proofs in order' _site/start-here.html
+          ! grep -q 'the 87-result theorem program and current P87 frontier' _site/start-here.html
+
+          grep -q 'Eighty-eight results, one dependency-aware scientific program' _site/research-map.html
+          grep -q '<strong>88</strong><span>proposition-level results</span>' _site/research-map.html
+          grep -q 'P88: Does the next complete coefficient radius expose a stronger incompatibility?' _site/research-map.html
+          ! grep -q 'Eighty-seven results, one dependency-aware scientific program' _site/research-map.html
+
+          grep -q '<!-- current-frontier-visual: P88 -->' _site/visual-atlas.html
           grep -q 'Current theorem frontier · P88' _site/visual-atlas.html
           grep -q 'p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg' _site/visual-atlas.html
+          ! grep -q '<!-- current-frontier-visual: P87 -->' _site/visual-atlas.html
+          ! grep -q '<section id="p86-frontier" class="theorem-frontier current-frontier-visual">' _site/visual-atlas.html
 
       - name: Upload website artifact
         uses: actions/upload-pages-artifact@v3
