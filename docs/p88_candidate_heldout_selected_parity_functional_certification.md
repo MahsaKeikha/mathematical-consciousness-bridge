@@ -1,40 +1,46 @@
-# Candidate P88: Held-Out Certification for a Discovery-Selected P87 Parity Functional
+# Candidate P88: Held-Out Certification for a Discovery-Selected P87 Box/Functional Test
 
 ## Status
 
 **Candidate theorem under exact regression audit.** This document does not promote the public theorem frontier beyond P87 yet.
 
-P87 can exhaust 39,600 exact four-event parity functionals and choose the strongest incompatibility witness for a declared P75 parameter box. That creates a new finite-sample question: if the same data select the best functional and test it, a naive single-functional confidence interval ignores selection.
+P87 can exhaust 39,600 exact four-event parity functionals and choose the strongest incompatibility witness for a declared P75 parameter box. That creates a finite-sample selection question: if the same data choose the tested P75 box or functional and then validate that choice, a naive single-functional confidence statement ignores selection.
 
-Candidate P88 closes that gap under an explicit sample-splitting design. A discovery sample may choose any P87 functional by any rule. The chosen functional is then frozen and evaluated on an **independent validation sample**. Conditional on the discovery sample, the validation score is fixed, so ordinary scalar Hoeffding concentration applies without a union bound over all 39,600 candidates.
+Candidate P88 closes that gap under an explicit sample-splitting design. A discovery sample may choose a P75 parameter box and a P87 functional by any discovery-only rule. The **pair is then frozen before an independent validation sample is examined**. Conditional on discovery, both the model interval and validation score are fixed, so scalar Hoeffding concentration applies without a 39,600-way functional multiplicity penalty.
 
-The theorem is conditional on the declared P75 model family and on genuine discovery/validation independence. It does not identify the P75 latent state with consciousness, prove consciousness is nonphysical, validate an alternative ontology, or solve the physical-to-experiential bridge.
+The theorem is conditional on the declared P75 family, the frozen tested box, and genuine discovery/validation independence. It certifies separation from the P75 laws generated inside the frozen box. It is a global P75-family rejection only if that box itself covers the full admissible family or a separately valid covering argument extends the certificate. It does not identify the P75 latent state with consciousness, prove consciousness is nonphysical, validate an alternative ontology, or solve the physical-to-experiential bridge.
 
 ---
 
 ## 1. Selection-validity gap after P87
 
-Let the discovery data be `D` and let a possibly complicated selection rule return one P87 functional
+Let discovery data be `D`, and let an arbitrary discovery-only rule return a pair
 
 \[
-Q_D(p)=E_p[g_D(X)].
+(B_D,Q_D),
 \]
 
-The selection rule may search the complete P87 family, use a P87 witness routine, or apply any other discovery-only criterion. The only statistical requirement for this proposition is that the subsequent validation sample
+where `B_D` is a P75 parameter box and
+
+\[
+Q_D(p)=E_p[g_D(X)]
+\]
+
+is one P87 functional. The selection rule may search the complete P87 family, tune the tested parameter region, use a P87 witness routine, or apply another discovery-only criterion. The subsequent validation sample
 
 \[
 V=(X_1,\ldots,X_n)
 \]
 
-is IID from the target population law `p` and independent of `D`.
+must be IID from the target population law `p` and independent of `D`.
 
-A confidence statement computed from the same observations that optimized `Q_D` would generally require selection-aware correction. Sample splitting avoids that problem by making `Q_D` fixed when conditioning on `D`.
+Conditional on `D`, both `B_D` and `Q_D` are fixed. Reusing the validation observations to alter either the box or the functional after seeing the validation result would invalidate this proof unless an additional selection correction were supplied.
 
 ---
 
-## 2. Exact P75 interval and score range
+## 2. Exact frozen-box interval and score range
 
-For the selected functional `Q`, P87 provides an exact rational P75 box interval
+For the discovery-frozen pair `(B,Q)`, P87 provides an exact rational P75 box interval
 
 \[
 I_B(Q)=[L_B(Q),U_B(Q)]
@@ -66,13 +72,13 @@ The validation empirical functional is
 
 ## 3. Conditional Hoeffding theorem after discovery selection
 
-Conditional on `D`, the selected `Q_D` is fixed. The normalized score
+Conditional on `D`, the selected pair `(B_D,Q_D)` is fixed. The normalized score
 
 \[
-Y_k=\frac{g_D(X_k)-g_{\min}}{R_D}
+Y_k=\frac{g_D(X_k)-g_{\min,D}}{R_D}
 \]
 
-lies in `[0,1]`. Hoeffding therefore gives, conditional on `D`,
+lies in `[0,1]`. Hoeffding therefore gives
 
 \[
 \Pr\left(
@@ -82,7 +88,7 @@ lies in `[0,1]`. Hoeffding therefore gives, conditional on `D`,
 \le \alpha.
 \]
 
-Because the right side does not depend on the realized discovery sample, averaging over `D` gives the same unconditional guarantee. No union bound over the 39,600 P87 candidates is required: only one functional is evaluated after it has been selected on independent data.
+The bound holds for every discovery realization. Averaging over `D` therefore gives the same unconditional coverage. There is no union bound over the 39,600 candidate functionals because only one discovery-frozen functional is evaluated on validation data. The box may also have been selected on discovery data because its interval is frozen before validation is inspected.
 
 Candidate P88 reuses P79 with `alphabet_size=1` to construct a rational upper bound
 
@@ -103,9 +109,9 @@ is a certified rational upper bound on the validation functional error.
 
 ---
 
-## 4. Finite-sample P75 rejection and population-distance lower bound
+## 4. Finite-sample frozen-box rejection and population-distance lower bound
 
-Define the observed interval gap
+Define
 
 \[
 \widehat\Delta_Q
@@ -120,17 +126,15 @@ On the held-out Hoeffding event,
 \left[\widehat\Delta_Q-\overline\varepsilon_Q\right]_+.
 \]
 
-Therefore a strict finite-sample rejection condition is
+Therefore the strict finite-sample rejection condition is
 
 \[
-\boxed{
-\widehat\Delta_Q>\overline\varepsilon_Q.
-}
+\boxed{\widehat\Delta_Q>\overline\varepsilon_Q.}
 \]
 
-Under the null `p` generated by some P75 parameter in box `B`, the population functional must lie inside `I_B(Q)`, so this rule has type-I error at most `alpha` under the sample-splitting assumption.
+Under the null that `p` is generated by a P75 parameter inside the discovery-frozen box `B`, the population functional lies in `I_B(Q)`. The rejection rule therefore has type-I error at most `alpha` under the stated independence assumption.
 
-P87 also gives the centered transfer norm
+P87 also gives
 
 \[
 D(Q)=\min_a\sum_x|g_Q(x)-a|.
@@ -142,66 +146,61 @@ For every P75 law `q` generated inside `B`,
 |Q(p)-Q(q)|\le D(Q)\|p-q\|_\infty.
 \]
 
-Combining the inequalities gives the confidence lower bound
+Thus with probability at least `1-alpha`,
 
 \[
 \boxed{
 \inf_{q\in\mathcal M_B}\|p-q\|_\infty
 \ge
-\frac{[\widehat\Delta_Q-\overline\varepsilon_Q]_+}{D(Q)}
+\frac{[\widehat\Delta_Q-\overline\varepsilon_Q]_+}{D(Q)}.
 }
 \]
 
-with probability at least `1-alpha`, conditional and unconditional over discovery selection.
+This is a lower confidence bound on distance to the P75 law set generated by `B`; no statement about parameters outside `B` follows without a separate covering argument.
 
 ---
 
 ## 5. Exact rational regression witness
 
-Use the exact P87 witness functional
+Use the P87 witness functional
 
 \[
 Q=P(H_{\{0,2\}})-P(H_{\{1,3\}})-2P(H_{\{1,2,3\}})+2P(H_{\{0,1,2,3\}}).
 \]
 
-For its sixteen outcome cells the score range is
+Its sixteen-cell score range is
 
 \[
 g_{\min}=-3,\qquad g_{\max}=2,\qquad R_Q=5.
 \]
 
-Use an independent validation sample of size
+Use the stored strict P87 box and an independent validation sample of size
 
 \[
 n=2400
 \]
 
-whose exact empirical proportions equal the stored P87 rational witness law, and choose
+whose exact empirical proportions equal the stored P87 rational witness law, with
 
 \[
 \alpha=1/20.
 \]
 
-With 12 P79 logarithm-series terms and a 24-bit dyadic square-root ceiling, the exact certified unit-range radius is
+With 12 P79 logarithm-series terms and a 24-bit dyadic square-root ceiling,
 
 \[
-\overline r=\frac{465101}{16777216}.
+\overline r=\frac{465101}{16777216},
+\qquad
+\overline\varepsilon_Q=\frac{2325505}{16777216}.
 \]
 
-Hence
-
-\[
-\overline\varepsilon_Q
-=\frac{2325505}{16777216}.
-\]
-
-The empirical P87 interval gap is
+The empirical interval gap is
 
 \[
 \widehat\Delta_Q=\frac5{24},
 \]
 
-so the exact population gap lower certificate is
+so
 
 \[
 \widehat\Delta_Q-\overline\varepsilon_Q
@@ -219,7 +218,7 @@ With `D(Q)=20`, candidate P88 certifies
 }
 \]
 
-at confidence at least 95%, under the held-out selection assumption.
+at confidence at least 95%, under the frozen-pair held-out assumption.
 
 For comparison, the P79 simultaneous sixteen-cell radius on the same validation sample is
 
@@ -227,21 +226,21 @@ For comparison, the P79 simultaneous sixteen-cell radius on the same validation 
 \frac{615553}{16777216},
 \]
 
-while the available P87 empirical model-distance lower bound is only
+while the available P87 empirical model-distance lower bound for this box is
 
 \[
 \frac1{96}.
 \]
 
-Thus that particular P87-to-P77 global-radius handoff is inconclusive because `1/96` is below the sixteen-cell radius, whereas the held-out scalar functional certificate rejects. This is a strict operational advantage of the selected-functional validation route; it is not a claim that the exact P77 full-model test itself can never reject this empirical law.
+Thus that particular P87-lower-bound-to-P77-global-radius handoff is inconclusive because `1/96` is below the sixteen-cell radius, whereas the discovery-frozen scalar functional certificate rejects the tested box. This is a strict operational advantage of the held-out scalar route; it is not a claim that the exact P77 full-model test itself can never reject this empirical law.
 
 ---
 
 ## 6. What the candidate theorem does and does not solve
 
-Candidate P88 does solve a real post-P87 statistical problem: a functional selected from a large family can be validated without paying a family-size union bound when selection and validation use independent samples.
+Candidate P88 solves a real post-P87 statistical problem: a box/functional test chosen from discovery data can be validated on independent held-out data without paying a family-size union bound over the functional search.
 
-It does **not** make arbitrary reuse of the same data valid. If discovery and validation overlap, the proof does not apply. It does not certify that an asserted split was genuinely independent; that is a data-provenance obligation. It does not make non-rejection into model acceptance, and it does not identify a statistical latent variable with consciousness.
+It does **not** make arbitrary reuse of the same data valid. If discovery and validation overlap, or if the box/function is revised after validation is inspected, the proof does not apply. The software cannot certify experimental independence; that is a data-provenance obligation. A rejection applies to the law set inside the frozen box, not automatically to the entire P75 family. Non-rejection remains inconclusive, and no statistical latent variable is identified with consciousness.
 
 Implementation: `src/consciousness_bridge/heldout_selected_parity_functional_certification.py`
 

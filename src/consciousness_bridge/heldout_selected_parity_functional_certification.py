@@ -1,27 +1,33 @@
-"""Candidate P88 held-out certification for a selected P87 parity functional.
+"""Candidate P88 held-out certification for a discovery-selected P87 test.
 
 P87 can search 39,600 exact four-event parity functionals and return a strong
-shared-parameter incompatibility witness.  If the same finite sample is used
-both to select a functional and to test it, however, a naive single-functional
-confidence statement ignores selection.  This module closes that statistical
-gap under an explicit sample-splitting assumption: the functional may be
-chosen arbitrarily from an independent discovery sample, then it is frozen and
-evaluated on an independent validation sample.
+shared-parameter incompatibility witness for a declared P75 parameter box. If
+the same finite sample is used both to select the tested box/functional pair
+and to validate it, however, a naive single-functional confidence statement
+ignores selection. This module closes that statistical gap under an explicit
+sample-splitting assumption: the P75 parameter box and P87 functional may be
+chosen arbitrarily using an independent discovery sample, after which both are
+frozen before an independent validation sample is examined.
 
-Conditional on the discovery data, the selected score is fixed.  Hoeffding's
-inequality therefore applies directly to the validation-sample mean, with no
-union bound over the 39,600 candidate functionals.  The P79 rational logarithm
-and dyadic square-root machinery is reused with alphabet_size=1 to produce a
-mathematically certified rational upper bound on the scalar Hoeffding radius.
-The resulting population functional gap is transferred to a full-law
-L-infinity distance lower bound using the exact P87 centered coefficient norm.
+Conditional on the discovery data, the selected box and score are fixed.
+Hoeffding's inequality therefore applies directly to the validation-sample
+mean. There is no union bound over the 39,600 candidate functionals. The P79
+rational logarithm and dyadic square-root machinery is reused with
+``alphabet_size=1`` to produce a mathematically certified rational upper bound
+on the scalar Hoeffding radius. The resulting population functional gap is
+transferred to a full-law L-infinity distance lower bound using the exact P87
+centered coefficient norm.
 
 The implementation cannot verify that discovery and validation data were
 actually independent; that is a scientific data-provenance assumption that
-must be established by the caller.  This result remains conditional on the
-P75 model family and does not identify a latent state with consciousness,
-prove consciousness is nonphysical, validate an alternative ontology, or
-solve the physical-to-experiential bridge.
+must be established by the caller. It likewise cannot verify that the box and
+functional were frozen before validation was inspected. The certificate is for
+the declared P75 law set generated inside that frozen box; it is a certificate
+against the entire P75 family only when the box itself covers the entire
+admissible family, or when a separately valid covering argument extends the
+result. This result does not identify a latent state with consciousness, prove
+consciousness is nonphysical, validate an alternative ontology, or solve the
+physical-to-experiential bridge.
 """
 
 from __future__ import annotations
@@ -46,7 +52,7 @@ _OUTCOME_COUNT = 16
 
 @dataclass(frozen=True)
 class P88HeldOutParityFunctionalCertificate:
-    """Exact-rational held-out certificate for one discovery-selected P87 score."""
+    """Exact-rational held-out certificate for one discovery-frozen box and score."""
 
     terms: PrimitiveQuadFunctional
     validation_sample_size: int
@@ -139,19 +145,24 @@ def p88_heldout_selected_p87_certificate_exact(
     series_terms: int = 12,
     sqrt_bits: int = 48,
 ) -> P88HeldOutParityFunctionalCertificate:
-    """Certify one independently selected P87 functional on held-out data.
+    """Certify one discovery-frozen P75-box/P87-functional pair on held-out data.
 
-    Statistical validity requires ``terms`` to have been fixed independently of
-    the validation sample, for example by selecting it using a disjoint discovery
-    sample.  Conditional on that discovery sample the score is fixed, so the
-    two-sided Hoeffding radius is
+    Statistical validity requires both ``box`` and ``terms`` to have been fixed
+    independently of the validation sample, for example by selecting them using
+    a disjoint discovery sample or by specifying them before data collection.
+    Conditional on that information the tested interval and score are fixed, so
+    the two-sided Hoeffding radius is
 
         R * sqrt(log(2 / alpha) / (2 n)),
 
-    where ``R`` is the exact score range.  P79 is called with ``alphabet_size=1``
+    where ``R`` is the exact score range. P79 is called with ``alphabet_size=1``
     to obtain a rigorous rational upper envelope for the unit-range square-root
-    factor.  No 39,600-way union bound is needed because validation is performed
-    only after the independently selected functional has been frozen.
+    factor. No family-size multiplicity correction is needed because exactly one
+    frozen box/functional test is evaluated on the held-out validation sample.
+
+    The returned lower bound is against the P75 law set generated inside
+    ``box``. It is not automatically a lower bound against parameter values
+    outside that box.
     """
 
     validation_sample_size = _positive_integer(
@@ -219,7 +230,8 @@ def p88_heldout_selected_p87_certificate_exact(
         linf_distance_lower_confidence_bound=linf_lower,
         rejects_box=rejects_box,
         validity_statement=(
-            "valid at confidence at least 1-alpha when the selected functional is "
-            "fixed using data independent of the validation sample"
+            "valid at confidence at least 1-alpha when the tested P75 parameter box "
+            "and selected P87 functional are both fixed independently of the "
+            "validation sample; the lower bound applies to the law set inside that box"
         ),
     )

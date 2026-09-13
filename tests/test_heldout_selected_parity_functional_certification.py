@@ -91,7 +91,10 @@ def test_p88_heldout_witness_has_exact_certified_values() -> None:
         201326592,
     )
     assert certificate.rejects_box
-    assert "independent" in certificate.validity_statement
+    assert "P75 parameter box" in certificate.validity_statement
+    assert "selected P87 functional" in certificate.validity_statement
+    assert "independently" in certificate.validity_statement
+    assert "inside that box" in certificate.validity_statement
 
 
 def test_p88_can_trigger_when_p87_global_radius_handoff_is_inconclusive() -> None:
@@ -152,10 +155,13 @@ def test_p88_source_keeps_selection_and_scientific_boundaries_explicit() -> None
     ).read_text(encoding="utf-8")
     required = (
         "independent discovery sample",
-        "no union bound over the 39,600 candidate functionals",
+        "There is no union bound over the 39,600 candidate functionals.",
+        "box and score are fixed",
         "cannot verify that discovery and validation data were actually independent",
+        "cannot verify that the box and functional were frozen before validation was inspected",
+        "not automatically a lower bound against parameter values outside that box",
         "does not identify a latent state with consciousness",
-        "does not solve the physical-to-experiential bridge",
+        "solve the physical-to-experiential bridge",
     )
     for token in required:
         assert token in source
