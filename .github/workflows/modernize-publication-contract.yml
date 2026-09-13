@@ -6,6 +6,8 @@ on:
     paths:
       - "scripts/modernize_publication_contract.py"
       - "scripts/finalize_publication_contract.py"
+      - "scripts/migrate_layered_publication_tests.py"
+      - "scripts/sync_figure_publication.py"
       - "docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg"
       - ".github/workflows/modernize-publication-contract.yml"
   workflow_dispatch:
@@ -31,10 +33,12 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Apply publication-contract migration
+      - name: Apply publication-contract migrations
         run: |
           python scripts/modernize_publication_contract.py
           python scripts/finalize_publication_contract.py
+          python scripts/migrate_layered_publication_tests.py
+          python scripts/sync_figure_publication.py
 
       - name: Normalize generated text endings
         run: |
@@ -44,16 +48,21 @@ jobs:
           path.write_text(path.read_text(encoding="utf-8").rstrip() + "\n", encoding="utf-8")
           PY
 
-      - name: Verify migration script and website scripts compile
+      - name: Verify maintained scripts compile
         run: |
           python -m py_compile \
             scripts/modernize_publication_contract.py \
             scripts/finalize_publication_contract.py \
+            scripts/migrate_layered_publication_tests.py \
+            scripts/sync_figure_publication.py \
             scripts/synchronize_research_three_website.py \
             scripts/prepare_website.py
 
       - name: Verify synchronized Research III source
         run: python scripts/synchronize_research_three_website.py --check
+
+      - name: Verify P88 figure publication mirror
+        run: python scripts/sync_figure_publication.py --check
 
       - name: Run targeted reader-contract tests
         run: |
@@ -65,7 +74,21 @@ jobs:
             tests/test_public_reader_punctuation.py \
             tests/test_website_research_orientation.py \
             tests/test_scholarly_provenance_surface.py \
-            tests/test_reader_experience.py
+            tests/test_reader_experience.py \
+            tests/test_document_link_integrity.py \
+            tests/test_reader_guide_links.py \
+            tests/test_citation_surface.py \
+            tests/test_release_metadata_consistency.py \
+            tests/test_fundamental_theory_program.py \
+            tests/test_theorem_roadmap_caption.py \
+            tests/test_website_build.py \
+            tests/test_website_research_lineage.py \
+            tests/test_figure_publication_sync.py \
+            tests/test_p75_research_integration.py \
+            tests/test_p76_research_integration.py \
+            tests/test_p77_research_integration.py \
+            tests/test_p78_research_integration.py \
+            tests/test_p79_research_integration.py
 
       - name: Verify diff hygiene
         run: git diff --check
@@ -78,27 +101,8 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add \
-            CITATION.cff \
-            CITATION.md \
-            docs/detailed_proposition_record.md \
-            docs/reproducibility.md \
-            docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg \
-            docs/figure_catalog.md \
-            docs/claim_source_matrix.md \
-            website/sources.html \
-            website/research-lineage.html \
-            website/start-here.html \
-            website/research-map.html \
-            scripts/prepare_website.py \
-            tests/test_readme_research_orientation.py \
-            tests/test_main_page_visual_paper.py \
-            tests/test_website_research_orientation.py \
-            tests/test_scholarly_provenance_surface.py \
-            tests/test_public_reader_layering.py \
-            tests/test_public_reader_punctuation.py \
-            tests/test_reader_experience.py
-          git commit -m "Modernize P88 publication and reader contracts"
+          git add -A
+          git commit -m "Modernize layered P88 publication contracts"
           git fetch origin "${GITHUB_REF_NAME}"
           git rebase "origin/${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
