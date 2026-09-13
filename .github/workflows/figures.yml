@@ -1,6 +1,6 @@
 name: figures
 
-# Final repaired P86 visual publication gate.
+# Certified final P86 visual publication gate.
 on:
   workflow_dispatch:
   push:
