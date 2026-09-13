@@ -29,6 +29,9 @@ jobs:
       - name: Apply guarded P88 frontier migration
         run: python scripts/promote_p88_website.py
 
+      - name: Keep Pages workflow connector-managed
+        run: git checkout -- .github/workflows/pages.yml
+
       - name: Remove false-positive generic stale token
         run: |
           python - <<'PY'
@@ -57,7 +60,6 @@ jobs:
               "website/implementation.html",
               "website/sources.html",
               "scripts/prepare_website.py",
-              ".github/workflows/pages.yml",
           }
           changed = set(subprocess.check_output(["git", "diff", "--name-only"], text=True).splitlines())
           unexpected = sorted(changed - allowed)
@@ -132,7 +134,6 @@ jobs:
             website/visual-atlas.html \
             website/implementation.html \
             website/sources.html \
-            scripts/prepare_website.py \
-            .github/workflows/pages.yml
+            scripts/prepare_website.py
           git commit -m "Promote restored website frontier to P88"
           git push origin HEAD:research/p88-bounded-primitive-four-event
