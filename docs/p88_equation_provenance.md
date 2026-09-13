@@ -4,329 +4,342 @@ This record separates inherited mathematics, elementary derivations, standard ex
 
 ## Scope
 
-P88 uses the same declared P75 four-view binary latent target-measurement family as P75-P87. It introduces no new consciousness ontology and no new empirical assumption.
+P88 uses the same declared P75 four-view binary latent target-measurement family and the same full-law $L_\infty$ distance as P75-P87. It introduces no new consciousness ontology and no new empirical assumption.
 
-Its new mathematical component is the complete real linear span of the eleven nontrivial parity coordinates, together with an exact primal-dual linear-program representation of the strongest lower bound in that class.
+Its new object is the **convex hull of the complete sixteen-cell P75 law over one rational parameter box**. Because the P75 law map is vector-valued multi-affine, every law generated inside the box is a convex combination of box-vertex laws. Distance to this convex hull is therefore a rigorous lower bound on distance to the nonlinear model image.
 
-The **full** P88 hierarchy retains the recursive P87 certificate:
+P88 also proves that this convex-hull distance is the strongest possible certificate obtainable from arbitrary linear functionals of the full observed law, modulo constant shifts forced by probability-mass conservation.
+
+The full hierarchy retains the recursive P87 baseline:
 
 \[
-\boxed{
-L_{88}(B)=\max\{L_{87}(B),L_{88}^{\mathrm{par}}(B)\}.
-}
+L_{88}(B)=\max\{L_{87}(B),L_{88}^{\mathrm{ch}}(B)\}.
 \]
-
-This is necessary because P87 inherits earlier non-parity P78-P82 lower bounds. P88 does not claim that its parity feature map subsumes those non-parity certificates.
 
 Canonical dependencies:
 
 - P75: declared four-view binary latent target-measurement family;
-- P78-P82: earlier continuous-model and non-parity lower-bound layers retained recursively by P87;
-- P83: exact P75 parity probability identity;
-- P85: mass-conservation centering for parity-functional transfer to full-law $L_\infty$ distance;
-- P86-P87: increasingly complete finite parity-functional families;
-- P88: complete parity-linear optimization, exact dual certification, and the retained P87 baseline.
+- P77: full-law model-set separation target;
+- P78: exact multi-affine box structure and cellwise lower bounds;
+- P79-P82: coupled and event-based box lower-bound refinements;
+- P83-P87: parity-functional refinements;
+- P88: complete full-law convex-hull linear certificate.
 
-See [Proposition 88](proposition_88_complete_parity_linear_certificate.md), the [Claim-to-Source Scientific Audit Matrix](claim_source_matrix.md), and the [Claim, Evidence, and Citation Standard](claim_evidence_standard.md).
+See [Proposition 88](proposition_88_exact_full_law_convex_hull_certificate.md), the [Claim-to-Source Scientific Audit Matrix](claim_source_matrix.md), and the [Claim, Evidence, and Citation Standard](claim_evidence_standard.md).
 
-## 1. Parity feature coordinates
-
-For each canonical view set $J$ of size two, three, or four,
-
-\[
-h_J(p)=P_p(H_J),
-\qquad
-H_J=\left\{x:\sum_{j\in J}x_j\equiv0\pmod2\right\}.
-\]
-
-There are
-
-\[
-\binom42+\binom43+\binom44=11
-\]
-
-such even-parity coordinates.
-
-The eleven-dimensional feature vector $h(p)$ is inherited from P83-P87. P88's new step is to allow arbitrary $c\in\mathbb R^{11}$ rather than a predeclared finite integer family.
-
-## 2. Incidence representation
-
-Let $A\in\{0,1\}^{16\times11}$ satisfy
-
-\[
-A_{x,J}=\mathbf1_{H_J}(x).
-\]
+## 1. Inherited P75 law
 
 For
 
 \[
-Q_c(p)=c^\top h(p),
+\theta=(\pi,q_{1,-},q_{1,+},\ldots,q_{4,-},q_{4,+}),
 \]
 
-the sixteen outcome coefficients are
+P75 defines
 
 \[
-g_c=Ac.
-\]
-
-This is an elementary finite re-indexing.
-
-## 3. Centered transfer norm
-
-Mass conservation gives
-
-\[
-\mathbf1^\top(p-q)=0.
-\]
-
-Thus for every scalar $a$,
-
-\[
-Q_c(p)-Q_c(q)
-=(Ac-a\mathbf1)^\top(p-q).
-\]
-
-By the $\ell_1$-$\ell_\infty$ inequality,
-
-\[
-|Q_c(p)-Q_c(q)|
-\le
-\|Ac-a\mathbf1\|_1\|p-q\|_\infty.
-\]
-
-Minimizing over $a$ yields
-
-\[
-\boxed{D(c)=\min_a\|Ac-a\mathbf1\|_1.}
-\]
-
-This is the P85-P87 centering principle generalized to the full eleven-dimensional coefficient vector.
-
-For finitely many scalar entries of $Ac$, a median minimizes the absolute-deviation objective. The implementation evaluates the exact finite coefficient values.
-
-## 4. Why $D$ is a norm
-
-For nonempty $J$, define the Walsh character
-
-\[
-\chi_J(x)=(-1)^{\sum_{j\in J}x_j}.
-\]
-
-Then
-
-\[
-\mathbf1_{H_J}(x)=\frac{1+\chi_J(x)}2.
-\]
-
-If $Ac$ is constant, then $\sum_Jc_J\chi_J$ is constant. Distinct Walsh characters are orthogonal on the Boolean cube, and each nonempty character is orthogonal to the constant character. Therefore every coefficient must vanish.
-
-Hence
-
-\[
-D(c)=0\iff c=0.
-\]
-
-Walsh-character orthogonality is standard finite harmonic analysis; its use here to prove positivity of the P88 centered transfer norm is a local derivation.
-
-## 5. Exact P75 box support
-
-Inside branch $s$,
-
-\[
-P_s(H_J)
+F_x(\theta)
 =
-\frac{1+\prod_{j\in J}(1-2q_{j,s})}{2}.
+(1-\pi)\prod_{j=1}^4q_{j,-}^{x_j}(1-q_{j,-})^{1-x_j}
++
+\pi\prod_{j=1}^4q_{j,+}^{x_j}(1-q_{j,+})^{1-x_j}.
 \]
 
-This identity is inherited from P83.
+This model assumption is inherited unchanged. P88 makes no new empirical assertion about the latent state.
 
-For fixed $c$, $Q_c$ is multi-affine in the prevalence and eight branchwise response parameters. Therefore
+## 2. Vector-valued multi-affinity
+
+P78 already uses the fact that each scalar cell probability $F_x$ is multi-affine in the nine P75 parameters.
+
+P88 uses the corresponding vector identity. On a box
 
 \[
-\max_{\theta\in B}Q_c(\theta)
-=
-\max_{v\in V(B)}Q_c(v),
+B=\prod_r[\ell_r,u_r],
 \]
 
-with the analogous minimum identity.
+define the usual multilinear interpolation weights $w_v(\theta)$ on the box vertices. They satisfy
 
-This is an elementary exact endpoint derivation, not a numerical optimization claim.
+\[
+w_v(\theta)\ge0,
+\qquad
+\sum_vw_v(\theta)=1.
+\]
 
-## 6. Complete parity-linear primal LP
-
-Let $z_v=h(p_v)$ for parameter-box vertices $v\in V(B)$ and let $\widehat h=h(\widehat p)$.
-
-P88 defines the new parity component
+Coordinatewise multi-affinity gives, simultaneously for all sixteen cells,
 
 \[
 \boxed{
-L_{88}^{\mathrm{par}}(B)
-=
-\sup_{D(c)\le1}
-\left[c^\top\widehat h-\max_vc^\top z_v\right].
+F(\theta)=\sum_{v\in\operatorname{Vert}(B)}w_v(\theta)F(v).
 }
 \]
 
-Introducing a support variable $t$, centering scalar $a$, and absolute-value variables $u_x$ gives
+Therefore
+
+\[
+F(B)\subseteq C_B:=\operatorname{conv}\{F(v):v\in\operatorname{Vert}(B)\}.
+\]
+
+Since every vertex image belongs to $F(B)$,
+
+\[
+\operatorname{conv}(F(B))=C_B.
+\]
+
+This vector-valued use of multi-affine interpolation is the structural basis of P88.
+
+## 3. Convex-hull distance lower bound
+
+Define
+
+\[
+L_{88}^{\mathrm{ch}}(B)
+=
+\inf_{Q\in C_B}\|\widehat P-Q\|_\infty.
+\]
+
+Because $F(B)\subseteq C_B$,
+
+\[
+\boxed{
+L_{88}^{\mathrm{ch}}(B)
+\le
+\inf_{\theta\in B}\|\widehat P-F(\theta)\|_\infty.
+}
+\]
+
+This is elementary set inclusion under distance minimization. It is a lower-bound statement, not an approximation of the nonlinear model family by equality.
+
+## 4. Finite convex-combination LP
+
+If the distinct vertex laws are $P^{(1)},\ldots,P^{(m)}$, then
+
+\[
+Q=\sum_k\lambda_kP^{(k)},
+\qquad
+\lambda_k\ge0,
+\qquad
+\sum_k\lambda_k=1
+\]
+
+parameterizes $C_B$.
+
+Thus $L_{88}^{\mathrm{ch}}$ is exactly the LP
 
 \[
 \begin{aligned}
-\max\;&t\\
-\text{s.t. }&t\le c^\top(\widehat h-z_v),\quad v\in V(B),\\
-&-u_x\le(Ac)_x-a\le u_x,\\
-&u_x\ge0,\qquad\sum_xu_x\le1.
+\min\;&t\\
+\text{s.t. }&
+-t\le\widehat P(x)-\sum_k\lambda_kP^{(k)}(x)\le t,
+&&x\in\{0,1\}^4,\\
+&\lambda_k\ge0,\\
+&\sum_k\lambda_k=1.
 \end{aligned}
 \]
 
-The conversion is repository-local algebra.
+Finite-dimensional linear programming is standard external mathematics. The use of this LP as an exact P75 box lower bound is the P88 construction.
 
-## 7. Exact dual LP
+## 5. Complete linear full-law support form
 
-Finite-dimensional linear-program duality gives the equivalent dual
-
-\[
-\min\mu
-\]
-
-subject to
+For arbitrary $g\in\mathbb R^{16}$ define
 
 \[
-\lambda_v\ge0,
-\qquad
-\sum_v\lambda_v=1,
+Q_g(P)=g^\top P.
 \]
+
+Probability-mass conservation gives
 
 \[
-\mathbf1^\top r=0,
+\mathbf1^\top(P-Q)=0.
 \]
+
+Therefore, for any scalar $a$,
 
 \[
-A^\top r
-=
-\widehat h-\sum_v\lambda_vz_v,
+Q_g(P)-Q_g(Q)
+=(g-a\mathbf1)^\top(P-Q).
 \]
 
-and
+The $\ell_1$-$\ell_\infty$ inequality yields
 
 \[
-|r_x|\le\mu.
+|Q_g(P)-Q_g(Q)|
+\le
+\|g-a\mathbf1\|_1\|P-Q\|_\infty.
 \]
 
-Finite-dimensional weak/strong LP duality is standard external mathematics. The particular P88 primal, the reduced zero-mass dual, and their parity-feature interpretation are repository-original applications.
-
-The exact strict-witness claim does not require trusting a floating-point optimizer: the repository stores rational primal and dual certificates and verifies their feasibility exactly.
-
-## 8. Geometric interpretation
-
-The dual chooses a convex combination
-
-\[
-\bar z=\sum_v\lambda_vz_v
-\]
-
-of P75 box-vertex parity features and a zero-mass sixteen-cell perturbation $r$ such that
-
-\[
-A^\top r=\widehat h-\bar z.
-\]
-
-The objective minimizes $\|r\|_\infty$.
-
-Thus $L_{88}^{\mathrm{par}}$ is a quotient distance from the empirical parity feature vector to the convex hull of the box-vertex parity features. This does **not** say that the convex hull equals the nonlinear P75 model family in full-law space.
-
-## 9. Correct relationship to the P87 hierarchy
-
-Every P83-P87 **parity functional** embeds into P88's eleven-dimensional parity coefficient space. Therefore $L_{88}^{\mathrm{par}}$ closes the linear parity-functional class generated by those propositions.
-
-But P87 itself is recursively defined and retains non-parity predecessors. P86 retains P85, P85 retains P84, and the chain reaches P83, which retains P82. P82 and earlier certificates contain non-parity event/model-distance information.
-
-Therefore feasible-set inclusion supports the statement
-
-> P88's parity component contains all earlier parity-functional candidates,
-
-but does not by itself support the stronger universal statement
-
-\[
-L_{88}^{\mathrm{par}}\ge L_{87}.
-\]
-
-The full P88 hierarchy is consequently
+Define
 
 \[
 \boxed{
-L_{88}(B)=\max\{L_{87}(B),L_{88}^{\mathrm{par}}(B)\}.
+D(g)=\min_a\|g-a\mathbf1\|_1.
 }
 \]
 
-Pointwise dominance $L_{88}\ge L_{87}$ is then definitional after validity of the parity component has been proved.
+For nonconstant $g$, $D(g)>0$. Adding a constant to $g$ changes neither the separation nor $D(g)$, leaving a fifteen-dimensional quotient space.
 
-## 10. Exact strict witness
-
-For the same exact rational box and empirical law used by P86-P87, take
-
-\[
-c=(0,2,1,-1,-1,-1,2,1,3,-2,3)
-\]
-
-in canonical coordinate order
-
-\[
-(01,02,03,12,13,23,012,013,023,123,0123).
-\]
-
-The exact implementation verifies
-
-\[
-Q_c(\widehat p)=\frac{13}{6},
-\]
-
-\[
-I_B(Q_c)=\left[3,\frac{51}{8}\right],
-\]
-
-\[
-\Delta_c=\frac56,
-\qquad
-D(c)=28,
-\qquad
-a=3.
-\]
-
-Hence the primal value is
+Finite LP duality gives
 
 \[
 \boxed{
-\ell=\frac{5/6}{28}=\frac5{168}.
+L_{88}^{\mathrm{ch}}(B)
+=
+\sup_{D(g)\le1}
+\left[g^\top\widehat P-\max_vg^\top F(v)\right].
 }
 \]
 
-A sparse rational dual certificate uses seven parameter-box vertices. The exact verifier checks
+This is the complete linear-support representation. It contains every individual cell indicator, event indicator, parity event, and finite linear combination thereof as a special case.
+
+## 6. Exact certificate logic
+
+A rational $g$ gives the exact lower witness
 
 \[
-\sum_v\lambda_v=1,
-\qquad
-\mathbf1^\top r=0,
-\]
-
-\[
-A^\top r
+\ell
 =
-\widehat h-\sum_v\lambda_vz_v,
+\frac{
+\operatorname{dist}(g^\top\widehat P,
+[\min_vg^\top F(v),\max_vg^\top F(v)])
+}{D(g)}.
 \]
 
-and
+Thus
 
 \[
-\|r\|_\infty=\frac5{168}.
+L_{88}^{\mathrm{ch}}(B)\ge\ell.
 \]
 
-Matching primal and dual values prove
+A rational convex combination of vertex laws gives $\bar P\in C_B$ and therefore
 
 \[
-\boxed{L_{88}^{\mathrm{par}}(B)=\frac5{168}.}
+L_{88}^{\mathrm{ch}}(B)
+\le
+\|\widehat P-\bar P\|_\infty.
 \]
 
-The recursive P87 value on the same witness is
+Matching exact rational values prove the optimum without requiring a floating-point solver to be trusted.
+
+## 7. Why the P87 baseline is retained
+
+$L_{88}^{\mathrm{ch}}$ is the strongest **linear-support** certificate against the convexified box image. P87 is a recursive published hierarchy containing a variety of earlier specialized lower bounds.
+
+Rather than require a separate proof that every recursive predecessor is analytically dominated, P88 defines
+
+\[
+\boxed{
+L_{88}(B)=\max\{L_{87}(B),L_{88}^{\mathrm{ch}}(B)\}.
+}
+\]
+
+This preserves all previous guarantees and makes
+
+\[
+L_{88}(B)\ge L_{87}(B)
+\]
+
+pointwise by construction.
+
+## 8. Exact strict linear witness
+
+Use the common P86-P87 exact witness box and empirical law. In lexicographic four-bit outcome order, let
+
+\[
+g=\mathbf1_{1000}-\mathbf1_{1010}.
+\]
+
+The empirical law has
+
+\[
+\widehat P(1000)=\frac18,
+\qquad
+\widehat P(1010)=0,
+\]
+
+so
+
+\[
+g^\top\widehat P=\frac18.
+\]
+
+On the witness box $\pi=0$, and
+
+\[
+F_{1000}-F_{1010}
+=q_{1,-}(1-q_{2,-})(1-q_{4,-})(1-2q_{3,-}).
+\]
+
+Because
+
+\[
+q_{3,-}\in\left[\frac12,1\right],
+\]
+
+this contrast is nonpositive throughout the box. Exact vertex enumeration gives
+
+\[
+[\min_vg^\top F(v),\max_vg^\top F(v)]
+=
+\left[-\frac9{16},0\right].
+\]
+
+The support gap is $1/8$.
+
+The coefficient vector has one $+1$, one $-1$, and fourteen zeros. A median is zero, giving
+
+\[
+D(g)=2.
+\]
+
+Therefore
+
+\[
+\boxed{
+ell=\frac{1/8}{2}=\frac1{16}.}
+\]
+
+## 9. Exact strict convex-hull point
+
+P88 stores seven rational box vertices with weights
+
+\[
+\left(
+\frac{10}{27},
+\frac2{27},
+\frac29,
+\frac7{54},
+\frac1{18},
+\frac1{27},
+\frac19
+\right).
+\]
+
+They sum exactly to one. Their weighted law is
+
+\[
+\bar P=
+\left(
+0,\frac5{48},0,\frac5{48},
+0,\frac1{16},0,\frac1{16},
+\frac1{16},\frac5{48},\frac1{16},\frac7{48},
+\frac1{48},\frac1{16},\frac1{48},\frac3{16}
+\right).
+\]
+
+Direct exact evaluation gives
+
+\[
+\boxed{
+\|\widehat P-\bar P\|_\infty=\frac1{16}.
+}
+\]
+
+Thus the lower and upper witnesses match:
+
+\[
+\boxed{L_{88}^{\mathrm{ch}}(B)=\frac1{16}.}
+\]
+
+The recursive P87 value on the same box is
 
 \[
 L_{87}(B)=\frac1{96},
@@ -336,54 +349,47 @@ so
 
 \[
 \boxed{
-L_{88}(B)=\max\left\{\frac1{96},\frac5{168}\right\}=\frac5{168}.
+L_{88}(B)=\frac1{16}>\frac1{96}=L_{87}(B).
 }
 \]
 
-Thus
-
-\[
-\boxed{L_{88}-L_{87}=\frac{13}{672}>0.}
-\]
-
-## 11. Evidence classification
+## 10. Evidence classification
 
 | P88 ingredient | Scientific role | Support |
 | --- | --- | --- |
 | P75 latent family | declared modeling assumption | P75 definition and implementation |
-| parity identity | inherited exact model algebra | P83-P87 |
-| eleven-coordinate parity feature map | inherited finite construction | P83 and direct counting |
-| centered transfer norm | inherited principle generalized to all eleven coordinates | P85-P87 plus direct derivation |
-| positivity of $D(c)$ | local theorem using standard Walsh orthogonality | direct P88 proof |
-| box-vertex support equality | elementary multi-affine endpoint theorem | direct derivation |
-| primal LP | repository-original formulation | P88 derivation and implementation |
-| finite LP duality | standard external mathematics | finite-dimensional LP duality |
-| reduced zero-mass dual | repository-original specialization | P88 derivation |
-| exact $5/168$ primal witness | repository-original exact construction | `Fraction` implementation/tests |
-| exact $5/168$ dual witness | repository-original exact certificate | rational weights/residual/tests |
-| full $L_{88}=\max(L_{87},L_{88}^{par})$ | hierarchy definition preserving non-parity predecessors | P88 definition |
-| strict $L_{87}<L_{88}$ on common witness | repository-original exact result | P87 regression plus P88 primal-dual certificate |
+| scalar multi-affinity | inherited exact structure | P78 |
+| vector convex-hull interpolation | elementary extension of multi-affinity | direct P88 derivation |
+| convex-hull distance lower bound | elementary set inclusion | direct derivation |
+| finite convex-combination LP | standard finite-dimensional optimization | direct P88 formulation |
+| centered full-law transfer norm | mass conservation plus $\ell_1$-$\ell_\infty$ inequality | direct derivation; analogous to P85-P87 |
+| equality with complete linear support optimum | standard finite LP duality | P88 dual derivation |
+| two-cell $1/16$ lower witness | repository-original exact construction | exact implementation/tests |
+| seven-vertex $1/16$ upper witness | repository-original exact construction | exact implementation/tests |
+| strict $L_{87}<L_{88}$ | repository-original exact result | P87 regression plus matching P88 witnesses |
 
-## 12. Reproducibility
+## 11. Reproducibility
 
 Implementation:
 
-`src/consciousness_bridge/complete_parity_linear_certificate.py`
+`src/consciousness_bridge/full_law_convex_hull_certificate.py`
 
 Tests:
 
-`tests/test_complete_parity_linear_certificate.py`
+`tests/test_full_law_convex_hull_certificate.py`
 
-Direct proposition:
+Proposition:
 
-`docs/proposition_88_complete_parity_linear_certificate.md`
+`docs/proposition_88_exact_full_law_convex_hull_certificate.md`
 
-Theorem figure:
+Figure:
 
-`docs/figures/p88_complete_parity_linear_certificate.svg`
+`docs/figures/p88_exact_full_law_convex_hull_certificate.svg`
 
-All strict-witness quantities are represented and checked with exact `fractions.Fraction` arithmetic.
+All strict-witness values are represented and verified with exact `fractions.Fraction` arithmetic.
 
-## 13. Interpretation boundary
+## 12. Interpretation boundary
 
-P88 is a conditional theorem about the declared P75 family and the complete linear span of eleven parity observables. It does not establish that those observables contain all physically or experientially relevant information, that the P75 latent variable is consciousness, that every physical description has been exhausted, that consciousness is nonphysical, or that the physical-to-experiential bridge has been solved.
+P88 is a conditional theorem about separation from the declared P75 model family. The convex hull is an outer relaxation of the nonlinear P75 box image, not a claim about ontology or consciousness.
+
+P88 does not identify the P75 latent state with experience, prove consciousness nonphysical, establish that the convex hull equals the true model family, exhaust all possible physical descriptions, or solve the physical-to-experiential bridge.
