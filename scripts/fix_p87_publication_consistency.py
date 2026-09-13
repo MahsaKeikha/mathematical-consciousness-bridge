@@ -1,7 +1,7 @@
 """One-time P87 reader/publication consistency cleanup.
 
 This script repairs the small set of stale P86 reader/citation strings exposed by
-the full P87 publication test run.  It is intentionally deterministic and is
+the full P87 publication test run. It is intentionally deterministic and is
 removed by the guarded cleanup workflow after validation succeeds.
 """
 
@@ -98,6 +98,19 @@ The result remains conditional on the declared P75 target-measurement family. It
             ("P75-P86", "P75-P87"),
         ),
     )
+
+    implementation_sentence = (
+        "P73-P87 build a continuous chain from channel recovery to certified model-family separation."
+    )
+    implementation_text = read("website/implementation.html")
+    if "P77-P87" not in implementation_text:
+        implementation_text = implementation_text.replace(
+            implementation_sentence,
+            implementation_sentence
+            + " The certified full-law separation subchain P77-P87 progressively strengthens exact rejection certificates while preserving the same declared target-measurement family.",
+            1,
+        )
+    write("website/implementation.html", implementation_text)
 
 
 def update_legacy_test_contract() -> None:
