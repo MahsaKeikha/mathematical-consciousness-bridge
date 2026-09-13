@@ -48,7 +48,7 @@
 
   <rect class="warn" x="78" y="442" rx="10" ry="10" width="290" height="76"/>
   <text class="ink label" x="98" y="471">Open same-order question</text>
-  <text class="muted body" x="98" y="496">Do other primitive |c_i| <= 2 relations add power?</text>
+  <text class="muted body" x="98" y="496">Do other primitive |c_i| &lt;= 2 relations add power?</text>
 
   <rect class="success" x="78" y="534" rx="10" ry="10" width="290" height="36"/>
   <text class="ink label" x="98" y="557">P87 answers this exactly.</text>
