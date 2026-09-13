@@ -171,3 +171,8 @@ For work using the minimally weighted four-event shared-parameter parity certifi
 - [P86 equation provenance](docs/p86_equation_provenance.md)
 
 P86 is conditional on the declared P75 model and should not be cited as an identification or definition of consciousness.
+
+
+## Current theorem frontier
+
+The current documented theorem frontier is **P87**. Proposition 87 completes the sign-normalized primitive nonzero four-event coefficient box with `0 < |c_i| <= 2`, auditing 39,600 exact functionals. On the stored exact rational witness, the complete P86 certificate is `1/192` and P87 certifies `1/96`. This is a conditional model-separation result for the declared P75 family, not an identification or definition of consciousness.

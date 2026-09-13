@@ -260,3 +260,16 @@ This is a stronger conditional model-separation certificate, not an identificati
 - [P86 source](src/consciousness_bridge/weighted_quad_projection_parity_functional_separation.py)
 - [P86 tests](tests/test_weighted_quad_projection_parity_functional_separation.py)
 - [P86 figure](docs/figures/p86_exact_minimally_weighted_quad_projection_parity.svg)
+
+
+## Current frontier: P87
+
+P87 is the current exact theorem frontier. It exhausts every sign-normalized primitive nonzero four-event integer coefficient pattern with `0 < |c_i| <= 2` across the eleven canonical even-parity observables. The complete family contains 39,600 exact functionals and gives the exact strict hierarchy witness `L86 = 1/192 < L87 = 1/96` on the stored rational example.
+
+- [P87 proof](docs/proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md)
+- [P87 equation provenance](docs/p87_equation_provenance.md)
+- [P87 implementation](src/consciousness_bridge/bounded_primitive_quad_projection_parity_functional_separation.py)
+- [P87 tests](tests/test_bounded_primitive_quad_projection_parity_functional_separation.py)
+- [P87 figure](docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg)
+
+The result remains conditional on the declared P75 target-measurement family. It does not identify the latent state with consciousness, validate an alternative ontology, or close the physical-to-experiential bridge.

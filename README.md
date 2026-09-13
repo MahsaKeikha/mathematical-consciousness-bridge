@@ -253,17 +253,17 @@ The main page is organized as a scientific argument rather than a chronological 
 | --- | --- | --- | --- | --- |
 | 1. Foundations and identifiability | **P1-P10** | What must be invariant, distinguishable, recoverable, and statistically testable? | Proved / implemented / tested | [Theorem roadmap](docs/theorem_roadmap.md) |
 | 2. Causal, temporal, compositional, and scale structure | **P11-P18** | Which physical distinctions survive interventions, time, composition, and coarse-graining? | Proved / implemented / tested | [Quantitative atlas](docs/quantitative_physics_mathematics_atlas.md) |
-| 3. Bridge sufficiency and target validity | **P19-P24, P71-P86** | Does an independently justified, adequately measured, reliability-characterized, and finite-data-certified target factor through the physical descriptor? | Proved under declared models | [Research navigation](docs/research_navigation.md) |
+| 3. Bridge sufficiency and target validity | **P19-P24, P71-P87** | Does an independently justified, adequately measured, reliability-characterized, and finite-data-certified target factor through the physical descriptor? | Proved under declared models | [Research navigation](docs/research_navigation.md) |
 | 4. Multiscale operational structure | **P25-P37** | Which causal and response structures survive node, state, intervention, and delay quotients? | Proved / implemented / tested | [Theorem roadmap](docs/theorem_roadmap.md) |
 | 5. Quantum sufficiency and falsification | **P38-P44** | What follows from a declared operational quantum description, and what does not? | Conditional tests proved; ontology open | [Quantum foundations](docs/quantum_foundations_and_bridge_test.md) |
 | 6. Adaptive experiment design and scheduling | **P45-P60** | How should evidence gathering, stopping, service allocation, switching, and calibration be organized? | Proved / implemented / tested | [Equation and citation map](docs/equation_and_citation_map.md) |
 | 7. Calibration and integer optimization | **P61-P70** | How should downstream finite calibration resources be allocated and certified? | Proved / implemented / tested | [Calibration and Optimization Frontier](docs/calibration_optimization_frontier_p61_p70.md) |
 
-The complete theorem index spans P1 through P86 with explicit dependency branches. Figure 3 below displays the P1-P31 foundational portion; later branches are documented separately.
+The complete theorem index spans P1 through P87 with explicit dependency branches. Figure 3 below displays the P1-P31 foundational portion; later branches are documented separately.
 
 ![Theorem roadmap](docs/figures/theorem_roadmap.svg)
 
-**Figure 3. Theorem dependency map for P1-P31.** Proposition numbers preserve development order, while arrows show actual mathematical and scientific prerequisites. The central target-sufficiency chain runs from P19 through P24; P25-P31 are physical-scale and quotient branches whose prerequisites are given by the arrows rather than by vertical placement alone. An absent arrow means no dependency is being asserted. Later P61-P70 and P71-P86 are separate continuations documented in the theorem index.
+**Figure 3. Theorem dependency map for P1-P31.** Proposition numbers preserve development order, while arrows show actual mathematical and scientific prerequisites. The central target-sufficiency chain runs from P19 through P24; P25-P31 are physical-scale and quotient branches whose prerequisites are given by the arrows rather than by vertical placement alone. An absent arrow means no dependency is being asserted. Later P61-P70 and P71-P87 are separate continuations documented in the theorem index.
 
 ---
 

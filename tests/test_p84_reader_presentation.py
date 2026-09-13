@@ -64,9 +64,14 @@ def test_p84_reader_documentation_explains_the_shared_parameter_question() -> No
     assert "## Plain-language meaning" in proposition
     assert "can the same parameter choice explain two such observations at once?" in proposition
     assert "**Plain-language interpretation.**" in roadmap
-    assert "Stage 06 · P73-P86" in implementation
+    frontier = max(
+        int(path.name.split("_")[1])
+        for path in (ROOT / "docs").glob("proposition_*.md")
+    )
+    target_range = f"P73-P{frontier}"
+    assert f"Stage 06 · {target_range}" in implementation
     assert implementation.count(
-        "P73-P86 build a continuous chain from channel recovery to certified model-family separation."
+        f"{target_range} build a continuous chain from channel recovery to certified model-family separation."
     ) == 1
     assert "P84" in implementation
     assert "joint shared-parameter" in implementation

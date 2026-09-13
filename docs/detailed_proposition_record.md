@@ -1,6 +1,6 @@
 # Detailed proposition record
 
-## Complete P1 to P86 chronology
+## Complete P1 to P87 chronology
 
 This page preserves the proposition-by-proposition development history of the Mathematical Consciousness Bridge research program. It is intentionally separate from the main README so a first-time reader can follow the scientific argument without first learning the internal chronology of the project.
 
@@ -14,7 +14,7 @@ A first-time reader should not read this page as 84 disconnected proofs. Use it 
 
 ---
 
-## Complete P1 to P86 chronology
+## Complete P1 to P87 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
