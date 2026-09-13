@@ -59,6 +59,13 @@ jobs:
                   text = text.replace(old, new)
               path.write_text(text, encoding="utf-8")
 
+          plain_path = Path("website/plain-language.html")
+          plain_text = plain_path.read_text(encoding="utf-8")
+          plain_path.write_text(
+              "\n".join(line.rstrip() for line in plain_text.splitlines()) + "\n",
+              encoding="utf-8",
+          )
+
           stale = {
               "website/implementation.html": ("current P86 frontier",),
               "website/index.html": (
