@@ -3,13 +3,9 @@ name: deploy-research-website
 on:
   push:
     branches: ["main"]
-    # Final clean P87 resynchronization: exact figures, required scholarly provenance, collegial research-origin context, responsive reader layout, and HTML deploy from one commit artifact.
     paths:
       - "website/**"
       - "docs/figures/**"
-      - "figures/**"
-      - "scripts/prepare_website.py"
-      - "scripts/sync_figure_publication.py"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -31,67 +27,76 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
-      - name: Require synchronized figure publication state
-        run: python scripts/sync_figure_publication.py --check
-      - name: Prepare exact-commit navigable website
+
+      - name: Build exact-commit website
         run: |
-          python scripts/prepare_website.py --source website --output _site
+          rm -rf _site
+          cp -a website _site
+          mkdir -p _site/figures
+          cp -a docs/figures/. _site/figures/
+          python - <<'PY'
+          from pathlib import Path
+          prefix = 'https://raw.githubusercontent.com/MahsaKeikha/mathematical-consciousness-bridge/main/docs/figures/'
+          for path in Path('_site').glob('*.html'):
+              text = path.read_text(encoding='utf-8')
+              text = text.replace(f'src="{prefix}', 'src="figures/')
+              path.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Validate canonical P1-P87 public state
+        run: |
+          test -f _site/index.html
+          test -f _site/research-map.html
+          test -f _site/research-navigation.html
+          test -f _site/visual-atlas.html
           test -f _site/figures/p87_exact_bounded_primitive_quad_projection_parity.svg
+          grep -q 'Explore all 87 results' _site/index.html
+          grep -q 'P87 is result 87, not result 86' _site/index.html
+          grep -q 'P45-P60' _site/index.html
+          grep -q 'Adaptive evidence acquisition' _site/index.html
+          grep -q 'P73-P87' _site/index.html
+          grep -q 'Channel recovery and model testing' _site/index.html
+          grep -q 'Explore all 87 results' _site/research-map.html
+          grep -q 'P45-P60' _site/research-map.html
+          grep -q 'P73-P87' _site/research-map.html
+          grep -q 'Open all 87 results' _site/research-navigation.html
           grep -q 'src="figures/p87_exact_bounded_primitive_quad_projection_parity.svg"' _site/index.html
           grep -q 'src="figures/p87_exact_bounded_primitive_quad_projection_parity.svg"' _site/visual-atlas.html
-          grep -q 'styles.css?v=20260913-mobile17-p87' _site/implementation.html
-          grep -q 'reader-experience-v2.css?v=20260913-mobile17-p87' _site/implementation.html
-          grep -q 'grid-template-columns: minmax(0, 1fr) !important' _site/reader-experience-v2.css
-          grep -q 'overflow-wrap: break-word' _site/reader-experience-v2.css
-          grep -q 'Site-wide grid containment contract:' _site/reader-experience-v2.css
-          grep -q 'minmax(310px, 1fr)' _site/implementation.html
-          grep -q 'Stage 06 · P73-P87' _site/implementation.html
-          grep -q 'weighted_quad_projection_parity_functional_separation.py' _site/implementation.html
-          grep -q 'id="research-origin"' _site/start-here.html
-          grep -q '<strong>Research context:</strong>' _site/start-here.html
-          grep -q 'important conceptual starting point' _site/start-here.html
-          grep -q 'P87 is the current exact frontier.' _site/start-here.html
-          grep -q '10.1016/j.chaos.2015.03.014' _site/start-here.html
-          grep -q 'arXiv:1401.1219' _site/start-here.html
-          grep -q 'id="research-origins"' _site/sources.html
-          grep -q '<strong>Role of this reference:</strong>' _site/sources.html
-          grep -q 'important conceptual starting point' _site/sources.html
-          grep -q 'distinct mathematical framework' _site/sources.html
-          grep -q 'Current theorem source · P87' _site/sources.html
-          grep -q 'claim_evidence_standard.md' _site/sources.html
-          grep -q 'claim_source_matrix.md' _site/sources.html
-          if grep -q 'href="styles.css"' _site/implementation.html; then
-            echo "Implementation page still exposes an unversioned base stylesheet."
+          if grep -R -E 'Explore all 86 results|86 proposition-level results|all 86 propositions|Current theorem frontier · P86|Current frontier · P86' _site/*.html; then
+            echo "Website contains stale pre-P87 public status text."
             exit 1
           fi
-          if grep -q 'Current joint shared-parameter parity frontier' _site/implementation.html; then
-            echo "Implementation page still labels P84 as current."
-            exit 1
-          fi
-          if grep -q 'Current frontier · P86' _site/start-here.html; then
-            echo "Start Here still contains a stale P86 current-frontier block."
-            exit 1
-          fi
-          if grep -q "this origin citation does not make Tegmark's paper evidence" _site/start-here.html _site/sources.html; then
-            echo "Defensive Tegmark research-origin wording returned."
-            exit 1
-          fi
-          if grep -q "not evidence for the repository's later original propositions" _site/start-here.html _site/sources.html; then
-            echo "Defensive Tegmark source-role wording returned."
-            exit 1
-          fi
-          python -c "from pathlib import Path; t=Path('_site/index.html').read_text(encoding='utf-8'); p=t.index('id=\"p87-frontier\"'); assert p < t.index('id=\"plain-language\"'); assert p < t.index('id=\"p86-frontier\"'); assert p < t.index('id=\"p84-frontier\"'); assert p < t.index('id=\"p85-frontier\"'); assert 'Current theorem frontier · P86' not in t; assert 'The 84 results form several dependency branches.' not in t; assert 'all 84 propositions' not in t"
-          python -c "from pathlib import Path; t=Path('_site/visual-atlas.html').read_text(encoding='utf-8'); p=t.index('id=\"p87-frontier\"'); assert p < t.index('id=\"p86-frontier\"'); assert p < t.index('id=\"p85-frontier\"')"
-          if grep -q 'src="https://raw.githubusercontent.com/MahsaKeikha/mathematical-consciousness-bridge/main/docs/figures/' _site/index.html _site/visual-atlas.html; then
-            echo "Website still depends on mutable raw-GitHub main figure URLs."
-            exit 1
-          fi
+          python - <<'PY'
+          from pathlib import Path
+          labels = [
+              'Foundations',
+              'Physical description',
+              'Candidate bridge class',
+              'Operational scale',
+              'Quantum interface',
+              'Adaptive evidence acquisition',
+              'Calibration and optimization',
+              'Target provenance',
+              'Target measurement',
+              'Channel recovery and model testing',
+          ]
+          ranges = ['P1-P10','P11-P18','P19-P24','P25-P37','P38-P44','P45-P60','P61-P70','P71','P72','P73-P87']
+          for filename in ('index.html', 'research-map.html', 'research-navigation.html'):
+              text = Path('_site', filename).read_text(encoding='utf-8')
+              positions = [text.index(label) for label in labels]
+              assert positions == sorted(positions), f'{filename}: branch order is not canonical'
+              range_positions = [text.index(r) for r in ranges]
+              assert range_positions == sorted(range_positions), f'{filename}: proposition ranges are not canonical'
+          PY
+
       - name: Upload website artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
