@@ -1,0 +1,50 @@
+name: refine-tegmark-research-origin
+
+on:
+  push:
+    paths:
+      - ".github/workflows/refine-tegmark-research-origin.yml"
+      - "scripts/refine_tegmark_research_origin.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Refine research-origin wording
+        run: python scripts/refine_tegmark_research_origin.py
+      - name: Install test environment
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+      - name: Run scholarly and reader tests
+        run: >-
+          python -m pytest
+          tests/test_scholarly_provenance_surface.py
+          tests/test_reader_experience.py
+          tests/test_reference_and_prose_style.py
+          tests/test_typography_policy.py
+          tests/test_website_build.py
+          tests/test_website_link_integrity.py
+      - name: Verify repository contract
+        run: python scripts/verify_repository.py
+      - name: Check patch formatting
+        run: git diff --check
+      - name: Commit collegial research-origin wording
+        run: |
+          if git diff --quiet; then
+            echo "No wording changes needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add website/start-here.html website/sources.html docs/claim_evidence_standard.md docs/literature_map.md docs/reference_audit.md docs/claim_source_matrix.md tests/test_scholarly_provenance_surface.py scripts/verify_repository.py
+          git commit -m "Refine Tegmark research-origin context"
+          git push
