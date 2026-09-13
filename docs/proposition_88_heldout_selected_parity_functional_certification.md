@@ -1,14 +1,31 @@
 # Proposition 88: Held-Out Certification for a Discovery-Frozen P75 Box/P87 Functional Test
 
-## Status
+## Why this result matters
 
-**Proved conditional finite-sample theorem with exact computational certificate.**
+P87 can search **39,600 exact four-event parity functionals** and identify a strong incompatibility witness for a declared P75 parameter box. That creates a statistical problem: if the same observations are used both to discover the strongest-looking witness and to validate it, an ordinary single-test confidence statement ignores the selection step.
 
-P87 can exhaust 39,600 exact four-event parity functionals and choose the strongest incompatibility witness for a declared P75 parameter box. That creates a finite-sample selection question: if the same data choose the tested P75 box or functional and then validate that choice, a naive single-functional confidence statement ignores selection.
+**P88 asks whether a discovered incompatibility can survive fresh data.**
 
-P88 closes that gap under an explicit sample-splitting design. A discovery sample may choose a P75 parameter box and a P87 functional by any discovery-only rule. The **pair is then frozen before an independent validation sample is examined**. Conditional on discovery, both the model interval and validation score are fixed, so scalar Hoeffding concentration applies without a 39,600-way functional multiplicity penalty.
+The answer is yes under an explicit sample-splitting design. Discovery data may choose the P75 box and P87 functional by any discovery-only rule. The chosen pair is then frozen before an independent validation sample is examined. Conditional on discovery, one fixed scalar score is tested, so scalar Hoeffding concentration applies without a 39,600-way functional multiplicity penalty.
 
-The theorem is conditional on the declared P75 family, the frozen tested box, and genuine discovery/validation independence. It certifies separation from the P75 laws generated inside the frozen box. It is a global P75-family rejection only if that box itself covers the full admissible family or a separately valid covering argument extends the certificate. It does not identify the P75 latent state with consciousness, prove consciousness is nonphysical, validate an alternative ontology, or solve the physical-to-experiential bridge.
+> **Status:** proved conditional finite-sample theorem with exact computational certificate.
+
+> **Scientific boundary:** the certificate is for the P75 laws inside the frozen box unless a separate covering argument extends it. P88 does not identify the P75 latent state with consciousness, prove consciousness is nonphysical, validate an alternative ontology, or solve the physical-to-experiential bridge.
+
+### Result at a glance
+
+| Question | P88 answer |
+| --- | --- |
+| Can discovery search many P87 functionals? | Yes, if selection uses discovery data only. |
+| Can the selected box and functional be changed after validation is seen? | No, not under this proof. |
+| Is a 39,600-way validation union bound required? | No. One discovery-frozen scalar score is evaluated on independent validation data. |
+| What does the stored witness certify? | A positive 95% lower-confidence bound on distance from the P75 laws inside the frozen box. |
+| Minimum certified held-out size for the stored target gap | 1063 observations under the declared P79 settings. |
+| Does rejection establish a theory of consciousness? | No. It rejects only the declared statistical model set covered by the certificate. |
+
+### Audit trail
+
+[Equation provenance](p88_equation_provenance.md) · [Implementation](../src/consciousness_bridge/heldout_selected_parity_functional_certification.py) · [Regression tests](../tests/test_heldout_selected_parity_functional_certification.py) · [Frontier figure](figures/p88_heldout_selected_parity_functional_certification.svg) · [Reproducibility guide](reproducibility.md)
 
 ---
 
@@ -236,18 +253,17 @@ Thus that particular P87-lower-bound-to-P77-global-radius handoff is inconclusiv
 
 ---
 
-## 6. What the candidate theorem does and does not solve
+## 6. What P88 does and does not solve
 
 P88 solves a real post-P87 statistical problem: a box/functional test chosen from discovery data can be validated on independent held-out data without paying a family-size union bound over the functional search.
 
 It does **not** make arbitrary reuse of the same data valid. If discovery and validation overlap, or if the box/function is revised after validation is inspected, the proof does not apply. The software cannot certify experimental independence; that is a data-provenance obligation. A rejection applies to the law set inside the frozen box, not automatically to the entire P75 family. Non-rejection remains inconclusive, and no statistical latent variable is identified with consciousness.
 
-Implementation: `src/consciousness_bridge/heldout_selected_parity_functional_certification.py`
+Implementation: [`src/consciousness_bridge/heldout_selected_parity_functional_certification.py`](../src/consciousness_bridge/heldout_selected_parity_functional_certification.py)
 
-Regression tests: `tests/test_heldout_selected_parity_functional_certification.py`
+Regression tests: [`tests/test_heldout_selected_parity_functional_certification.py`](../tests/test_heldout_selected_parity_functional_certification.py)
 
-Equation provenance: `docs/p88_candidate_equation_provenance.md`
-
+Equation provenance: [`docs/p88_equation_provenance.md`](p88_equation_provenance.md)
 
 ---
 
@@ -269,12 +285,12 @@ n>\frac{R^2\log(2/\alpha)}{2\Delta^2}.
 \]
 
 P88 does not use a floating-point approximation to decide the implemented
-threshold.  The function `p88_minimum_validation_sample_size_for_gap_exact`
+threshold. The function `p88_minimum_validation_sample_size_for_gap_exact`
 searches for the smallest integer $n$ for which the P79-certified rational
 upper radius satisfies the strict inequality.
 
 For the stored witness, $R=5$, $\Delta=5/24$, and $\alpha=1/20$, so the ideal
-expression is $n>288\log 40$.  With the declared P79 settings (12 logarithm
+expression is $n>288\log 40$. With the declared P79 settings (12 logarithm
 series terms and a 24-bit dyadic square-root ceiling), the exact certified
 threshold is
 
@@ -283,8 +299,8 @@ threshold is
 \]
 
 At $n=1062$ the certified unit-range radius is $349591/8388608$ and the strict
-rejection inequality still fails.  At $n=1063$ the unit-range radius is
-$698853/16777216$ and the strict inequality holds.  This is a deterministic
+rejection inequality still fails. At $n=1063$ the unit-range radius is
+$698853/16777216$ and the strict inequality holds. This is a deterministic
 design threshold for a *specified* gap; it is not a prospective guarantee that
 a random validation sample will realize that gap.
 
@@ -293,12 +309,12 @@ a random validation sample will realize that gap.
 ## 8. Proposition 88
 
 Let discovery data $D$ determine a P75 parameter box $B_D$ and one P87
-functional $Q_D$.  Let an IID validation sample of size $n$ from population law
-$p$ be independent of $D$.  Conditional on $D$, define the exact P75 interval
+functional $Q_D$. Let an IID validation sample of size $n$ from population law
+$p$ be independent of $D$. Conditional on $D$, define the exact P75 interval
 $I_{B_D}(Q_D)$, exact score width $R_D$, empirical validation value
 $\widehat Q_D$, exact centered transfer norm $D(Q_D)$, and a P79-certified
 rational upper bound $\bar r_{n,\alpha}$ on
-$\sqrt{\log(2/\alpha)/(2n)}$.  Then with probability at least $1-\alpha$,
+$\sqrt{\log(2/\alpha)/(2n)}$. Then with probability at least $1-\alpha$,
 
 \[
 \boxed{
@@ -319,11 +335,11 @@ Consequently, under the null $p\in\mathcal M_{B_D}$, the rejection rule
 \]
 
 has conditional type-I error at most $\alpha$, and the same coverage holds
-unconditionally after averaging over discovery data.  No union bound over the
+unconditionally after averaging over discovery data. No union bound over the
 39,600-function discovery family is required because exactly one box/functional
 pair is frozen before validation.
 
-The theorem is box-specific.  It becomes a statement about the full admissible
+The theorem is box-specific. It becomes a statement about the full admissible
 P75 family only when the frozen box covers that family or a separately certified
 covering argument extends the result to every required box.
 
@@ -337,3 +353,13 @@ prove consciousness is nonphysical; it does not validate an alternative model
 after rejection; and it does not close the physical-to-experiential bridge.
 The software also cannot establish experimental independence or prove that the
 tested box/function was genuinely frozen before validation was inspected.
+
+---
+
+## Continue reading
+
+- [Previous result: P87 complete bounded primitive four-event functionals](proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md)
+- [P88 equation provenance](p88_equation_provenance.md)
+- [Research Traceability Index](research_traceability_index.md)
+- [Theorem Roadmap](theorem_roadmap.md)
+- [Reproducibility Guide](reproducibility.md)
