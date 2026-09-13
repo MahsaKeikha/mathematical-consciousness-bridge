@@ -24,6 +24,42 @@ jobs:
           python-version: "3.12"
       - name: Synchronize P86 publication surfaces
         run: python scripts/promote_p86_publication.py
+      - name: Preserve reader layout contracts
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          roadmap = Path("docs/theorem_roadmap.md")
+          text = roadmap.read_text(encoding="utf-8")
+          proof = "proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md"
+          text = text.replace(
+              f"- Proof: [{proof}]({proof})",
+              f"- Proof: [P86]({proof})",
+          )
+          roadmap.write_text(text, encoding="utf-8")
+
+          readme = Path("README.md")
+          text = readme.read_text(encoding="utf-8")
+          block_marker = "\n\n---\n\n## Current theorem frontier: P86"
+          citation_marker = "\n# Citation\n"
+          if block_marker in text:
+              start = text.index(block_marker)
+              p86_block = text[start:].strip()
+              text = text[:start].rstrip() + "\n"
+              if citation_marker not in text:
+                  raise RuntimeError("README citation section marker missing")
+              citation_start = text.index(citation_marker)
+              text = (
+                  text[:citation_start].rstrip()
+                  + "\n\n---\n\n"
+                  + p86_block.removeprefix("---\n\n")
+                  + "\n\n"
+                  + text[citation_start:].lstrip("\n")
+              )
+          if not text.rstrip().endswith("**[BibTeX](CITATION.bib)**"):
+              raise RuntimeError("README citation block is no longer the final section")
+          readme.write_text(text, encoding="utf-8")
+          PY
       - name: Install test environment
         run: python -m pip install -e ".[dev]"
       - name: Verify P86 mathematics and reader contract
