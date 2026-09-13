@@ -3,12 +3,11 @@
     { file: 'index.html', label: 'Overview' },
     { file: 'plain-language.html', label: 'Plain Language' },
     { file: 'start-here.html', label: 'Start Here' },
-    { file: 'observer-research.html', label: 'Research I: Observer Mathematics' },
+    { file: 'observer-research.html', label: 'Research I · Observer Mathematics' },
     { file: 'research-lineage.html', label: 'Research Lineage' },
-    { file: 'research-map.html', label: 'Research II: Bridge Map' },
+    { file: 'research-map.html', label: 'Research II · Bridge Map' },
     { file: 'physics-mathematics.html', label: 'Physics & Math' },
     { file: 'visual-atlas.html', label: 'Visual Atlas' },
-    { file: 'implementation.html', label: 'Implementation' },
     { file: 'sources.html', label: 'Sources' },
   ];
 
@@ -32,14 +31,14 @@
         {
           file: 'research-map.html',
           kicker: 'Research II',
-          label: 'Bridge research map',
-          description: 'The physical to experiential test architecture through the current public frontier P87.',
+          label: 'Bridge theorem map',
+          description: 'The current physical-to-experiential test architecture through P84.',
         },
         {
           file: 'physics-mathematics.html',
           kicker: 'Foundations',
           label: 'Physics & mathematics',
-          description: 'The physical, information theoretic, statistical, and quantum foundations used by Research II.',
+          description: 'The physical, information-theoretic, statistical, and quantum foundations used by Research II.',
         },
       ],
     },
@@ -51,13 +50,7 @@
           file: 'visual-atlas.html',
           kicker: 'Figures',
           label: 'Visual atlas',
-          description: 'Browse a curated visual path through the research program.',
-        },
-        {
-          file: 'implementation.html',
-          kicker: 'Audit',
-          label: 'Implementation',
-          description: 'Follow a result from theorem statement to code, tests, figures, and reproducibility.',
+          description: 'Browse the theorem figures and computational visual record.',
         },
         {
           file: 'sources.html',
@@ -88,9 +81,6 @@
     82: `${REPO}/blob/main/docs/proposition_82_exact_nested_projection_contrast.md`,
     83: `${REPO}/blob/main/docs/proposition_83_exact_projection_parity.md`,
     84: `${REPO}/blob/main/docs/proposition_84_exact_projection_parity_contrast.md`,
-    85: `${REPO}/blob/main/docs/proposition_85_exact_triple_projection_parity_functional.md`,
-    86: `${REPO}/blob/main/docs/proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md`,
-    87: `${REPO}/blob/main/docs/proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md`,
   };
 
   function currentFile() {
@@ -219,12 +209,12 @@
       <div class="lineage-callout-copy">
         <p class="eyebrow">Two connected research programs</p>
         <h2>Begin with the physical subsystem, then follow the bridge question</h2>
-        <p><strong>Research I: Spatiotemporal Observer Mathematics</strong> develops the physical and operational observer architecture. <strong>Research II: Mathematical Consciousness Bridge</strong> begins after that physical description problem and asks what additional sufficiency, target, measurement, model adequacy, and falsification conditions a physical to experiential claim must satisfy.</p>
+        <p><strong>Research I: Spatiotemporal Observer Mathematics</strong> develops the physical and operational observer architecture. <strong>Research II: Mathematical Consciousness Bridge</strong> begins after that physical-description problem and asks what additional sufficiency, target, measurement, model-adequacy, and falsification conditions a physical-to-experiential claim must satisfy.</p>
       </div>
       <div class="lineage-callout-actions">
-        <a class="lineage-mini-card" href="observer-research.html"><span>Research I</span><strong>Spatiotemporal Observer Mathematics</strong><small>Dedicated previous research page</small></a>
-        <a class="lineage-mini-card current" href="research-lineage.html"><span>Research lineage</span><strong>See the scientific handoff</strong><small>What carries forward and what remains open</small></a>
-        <a class="lineage-mini-card" href="research-map.html"><span>Research II</span><strong>Mathematical Consciousness Bridge</strong><small>Current bridge test program</small></a>
+        <a class="lineage-mini-card" href="observer-research.html"><span>Research I</span><strong>Spatiotemporal Observer Mathematics</strong><small>Dedicated previous-research page →</small></a>
+        <a class="lineage-mini-card current" href="research-lineage.html"><span>Research lineage</span><strong>See the scientific handoff</strong><small>What carries forward and what remains open →</small></a>
+        <a class="lineage-mini-card" href="research-map.html"><span>Research II</span><strong>Mathematical Consciousness Bridge</strong><small>Current bridge-test program →</small></a>
       </div>`;
     hero.insertAdjacentElement('afterend', section);
   }
@@ -243,7 +233,7 @@
 
     const previousHtml = previous
       ? `<a class="trail-card previous" href="${previous.file}"><span>Previous</span><strong>${previous.label}</strong><small>Move back in the guided reading path</small></a>`
-      : `<a class="trail-card previous" href="${OBSERVER_REPO}"><span>Research I</span><strong>Observer Mathematics</strong><small>See the physical subsystem foundation</small></a>`;
+      : `<a class="trail-card previous" href="${OBSERVER_REPO}"><span>Research I</span><strong>Observer Mathematics</strong><small>See the physical-subsystem foundation</small></a>`;
     const nextHtml = next
       ? `<a class="trail-card next" href="${next.file}"><span>Next</span><strong>${next.label}</strong><small>Continue through the guided research path</small></a>`
       : `<a class="trail-card next" href="research-map.html"><span>Continue</span><strong>Research Map</strong><small>Return to the complete theorem program</small></a>`;
@@ -255,7 +245,7 @@
       </div>
       <div class="reader-trail-grid">
         ${previousHtml}
-        <a class="trail-card map" href="research-lineage.html"><span>Lineage</span><strong>Research I to Research II</strong><small>See how the physical observer work leads into the bridge program</small></a>
+        <a class="trail-card map" href="research-lineage.html"><span>Lineage</span><strong>Research I → Research II</strong><small>See how the physical-observer work leads into the bridge program</small></a>
         ${nextHtml}
       </div>`;
     main.append(trail);
@@ -347,21 +337,6 @@
     });
   }
 
-  function normalizePublicPunctuation(root = document.body) {
-    if (!root) return;
-    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
-    const textNodes = [];
-    while (walker.nextNode()) textNodes.push(walker.currentNode);
-    textNodes.forEach((node) => {
-      const parent = node.parentElement;
-      if (parent && parent.closest('script, style, pre, code')) return;
-      let text = node.nodeValue || '';
-      text = text.replace(/[\u2013\u2014]/g, ', ');
-      text = text.replace(/([A-Za-z])-([A-Za-z])/g, '$1 $2');
-      node.nodeValue = text;
-    });
-  }
-
   document.addEventListener('DOMContentLoaded', () => {
     ensureNavigation();
     addBreadcrumbs();
@@ -371,6 +346,5 @@
     addReaderTrail();
     addBackToTop();
     markExternalLinks();
-    normalizePublicPunctuation();
   });
 })();
