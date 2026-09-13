@@ -3,7 +3,7 @@ name: deploy-research-website
 on:
   push:
     branches: ["main"]
-    # Certified P86 figures, reader layout, and HTML deploy from one exact commit artifact.
+    # Certified P86 figures, responsive reader layout, and HTML deploy from one exact commit artifact.
     paths:
       - "website/**"
       - "docs/figures/**"
@@ -41,10 +41,17 @@ jobs:
           test -f _site/figures/p86_exact_minimally_weighted_quad_projection_parity.svg
           grep -q 'src="figures/p86_exact_minimally_weighted_quad_projection_parity.svg"' _site/index.html
           grep -q 'src="figures/p86_exact_minimally_weighted_quad_projection_parity.svg"' _site/visual-atlas.html
+          grep -q 'styles.css?v=20260913-mobile16-p86' _site/implementation.html
+          grep -q 'reader-experience-v2.css?v=20260913-mobile16-p86' _site/implementation.html
+          grep -q 'grid-template-columns: minmax(0, 1fr) !important' _site/reader-experience-v2.css
+          grep -q 'overflow-wrap: break-word' _site/reader-experience-v2.css
           grep -q 'minmax(310px, 1fr)' _site/implementation.html
-          grep -q 'overflow-wrap: anywhere' _site/implementation.html
           grep -q 'Stage 06 · P73-P86' _site/implementation.html
           grep -q 'weighted_quad_projection_parity_functional_separation.py' _site/implementation.html
+          if grep -q 'href="styles.css"' _site/implementation.html; then
+            echo "Implementation page still exposes an unversioned base stylesheet."
+            exit 1
+          fi
           if grep -q 'Current joint shared-parameter parity frontier' _site/implementation.html; then
             echo "Implementation page still labels P84 as current."
             exit 1
