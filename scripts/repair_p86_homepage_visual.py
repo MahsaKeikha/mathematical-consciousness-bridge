@@ -33,12 +33,24 @@ def patch_syncer() -> None:
     function = '''
 
 def _normalize_homepage(text: str) -> str:
-    """Make P86 the first substantive theorem visual on the homepage."""
+    """Make P86 the first theorem visual and demote older homepage frontiers."""
 
     pattern = re.compile(r'\\s*<section id="p86-frontier".*?</section>\\s*', re.DOTALL)
     text, count = pattern.subn("\\n", text, count=1)
     if count != 1:
         raise RuntimeError(f"expected exactly one P86 homepage section, found {count}")
+
+    replacements = (
+        ("Current theorem frontier · P85", "Previous theorem frontier · P85"),
+        ("The 84 results form several dependency branches.", "The 86 results form several dependency branches."),
+        ("You do not need to read all 84 propositions in numerical order", "You do not need to read all 86 propositions in numerical order"),
+        ("Focus on P19 and P71-P84, then read the falsification program.", "Focus on P19 and P71-P86, then read the falsification program."),
+    )
+    for old, new in replacements:
+        if old in text:
+            text = text.replace(old, new, 1)
+        elif new not in text:
+            raise RuntimeError(f"homepage frontier normalization could not resolve: {old!r}")
 
     marker = "<!-- current-frontier-home: P86 -->"
     text = re.sub(r"\\s*" + re.escape(marker) + r"\\s*", "\\n", text)
@@ -105,6 +117,12 @@ def test_homepage_leads_with_p86_before_historical_frontiers() -> None:
     assert "test_weighted_quad_projection_parity_functional_separation.py" in current
     assert "Previous theorem frontier · P84" in text[p84:]
     assert "Previous theorem frontier · P85" in text[p85:]
+    assert "Current theorem frontier · P85" not in text
+    assert "The 84 results form several dependency branches." not in text
+    assert "all 84 propositions" not in text
+    assert "P71-P84, then read the falsification program" not in text
+    assert "The 86 results form several dependency branches." in text
+    assert "all 86 propositions" in text
 '''
     anchor = "\n\ndef test_figure_publication_synchronizer_reports_zero_drift() -> None:"
     if "def test_homepage_leads_with_p86_before_historical_frontiers" not in text:
@@ -154,7 +172,7 @@ def patch_workflow(path: Path, *, add_index_trigger: bool) -> None:
         addition = build_token + (
             "          # homepage P86 ordering gate\n"
             "          grep -q 'src=\"figures/p86_exact_minimally_weighted_quad_projection_parity.svg\"' _site/index.html\n"
-            "          python -c \"from pathlib import Path; t=Path('_site/index.html').read_text(encoding='utf-8'); p=t.index('id=\\\"p86-frontier\\\"'); assert p < t.index('id=\\\"plain-language\\\"'); assert p < t.index('id=\\\"p84-frontier\\\"'); assert p < t.index('id=\\\"p85-frontier\\\"')\"\n"
+            "          python -c \"from pathlib import Path; t=Path('_site/index.html').read_text(encoding='utf-8'); p=t.index('id=\\\"p86-frontier\\\"'); assert p < t.index('id=\\\"plain-language\\\"'); assert p < t.index('id=\\\"p84-frontier\\\"'); assert p < t.index('id=\\\"p85-frontier\\\"'); assert 'Current theorem frontier · P85' not in t\"\n"
         )
         text = text.replace(build_token, addition, 1)
     path.write_text(text, encoding="utf-8")
