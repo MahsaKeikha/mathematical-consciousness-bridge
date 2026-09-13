@@ -21,33 +21,34 @@ def test_shared_reader_experience_style_is_built_into_pages() -> None:
     assert "overflow-wrap: anywhere" in css
 
 
-def test_first_reader_surfaces_match_p86_frontier() -> None:
+def test_first_reader_surfaces_match_p87_frontier() -> None:
     start = _text("website/start-here.html")
     research_map = _text("website/research-map.html")
     plain = _text("website/plain-language.html")
-    assert "86-result theorem program and current P86 frontier" in start
-    assert "P78-P86 progressively tighten global separation" in start
-    assert "P86 is the current exact frontier." in start
+    assert "87-result theorem program and current P87 frontier" in start
+    assert "P78-P87 progressively tighten global separation" in start
+    assert "P87 is the current exact frontier." in start
     assert "Current frontier · P85" not in start
+    assert "Current theorem frontier · P86" not in start
     assert "L85 = 0 &lt; L86 = 1/192" in start
-    assert ">Read P86</a>" in start
+    assert ">Read P87</a>" in start
     assert 'id="research-origin"' in start
     assert "10.1016/j.chaos.2015.03.014" in start
-    assert "The 86 propositions by scientific role" in start
-    assert "You do not need to read 86 proofs in order" in start
-    assert "complete 86-result dependency structure" in start
+    assert "The 87 propositions by scientific role" in start
+    assert "You do not need to read 87 proofs in order" in start
+    assert "complete 87-result dependency structure" in start
     assert "Physical descriptor" in start
     assert "Observation channel" in start
-    assert "through Proposition 86" in research_map
-    assert "Eighty-six results" in research_map
-    assert "<strong>86</strong>" in research_map
-    assert "P73-P86" in research_map
-    assert "<strong>86</strong><span>proposition-level results</span>" in plain
-    assert "<strong>P86</strong><span>current theorem frontier</span>" in plain
-    assert "What the 86 results are doing" in plain
-    assert "P75-P86" in plain
-    assert "actual P86 research frontier" in plain
-    assert "shows how all 86 results connect" in plain
+    assert "through Proposition 87" in research_map
+    assert "Eighty-seven results" in research_map
+    assert "<strong>87</strong>" in research_map
+    assert "P73-P87" in research_map
+    assert "<strong>87</strong><span>proposition-level results</span>" in plain
+    assert "<strong>P87</strong><span>current theorem frontier</span>" in plain
+    assert "What the 87 results are doing" in plain
+    assert "P75-P87" in plain
+    assert "actual P87 research frontier" in plain
+    assert "shows how all 87 results connect" in plain
     assert "<strong>84</strong><span>proposition-level results</span>" not in plain
     assert "<strong>P84</strong><span>current theorem frontier</span>" not in plain
     assert "actual P84 research frontier" not in plain
@@ -55,7 +56,7 @@ def test_first_reader_surfaces_match_p86_frontier() -> None:
 
 def test_no_reader_facing_html_page_advertises_pre_p86_as_current() -> None:
     stale_current_frontier_tokens = (
-        "85-result theorem program and current P86 frontier",
+        "85-result theorem program and current P87 frontier",
         "<h2>P78-P85 progressively tighten global separation from the declared continuous model family</h2>",
         "Current frontier · P85",
         "<strong>85</strong><span>proposition-level results</span>",
@@ -123,7 +124,7 @@ def test_figure_enrichment_generator_preserves_canonical_reader_key() -> None:
 
 def test_repository_verifier_tracks_p86_and_all_86_propositions() -> None:
     verifier = _text("scripts/verify_repository.py")
-    assert 'CURRENT_FRONTIER = "P86"' in verifier
-    assert "for number in range(1, 87):" in verifier
+    assert 'CURRENT_FRONTIER = "P87"' in verifier
+    assert "for number in range(1, 88):" in verifier
     assert '"docs/reader_experience_and_visual_standard.md"' in verifier
-    assert '"docs/proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md"' in verifier
+    assert '"docs/proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md"' in verifier

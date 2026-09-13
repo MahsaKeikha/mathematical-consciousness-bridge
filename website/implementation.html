@@ -62,7 +62,7 @@
     <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/reproducibility.md"><strong>Reproducibility guide</strong><small>Environment, commands, and audit procedure</small></a>
     <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/scripts/README.md"><strong>Executable scripts</strong><small>Figure generation, verification, and full audit</small></a>
     <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/tree/main/tests"><strong>Regression tests</strong><small>Executable theorem and integrity checks</small></a>
-    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/detailed_proposition_record.md"><strong>P1-P86 proposition record</strong><small>Assumptions, statements, implementations, tests, and boundaries</small></a>
+    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/detailed_proposition_record.md"><strong>P1-P87 proposition record</strong><small>Assumptions, statements, implementations, tests, and boundaries</small></a>
   </div>
 </section>
 
@@ -74,7 +74,7 @@
     <a href="#stage-03"><strong>3 · P19-P24</strong>Bridge sufficiency tests</a>
     <a href="#stage-04"><strong>4 · P71</strong>Target provenance</a>
     <a href="#stage-05"><strong>5 · P72</strong>Target measurement</a>
-    <a href="#stage-06"><strong>6 · P73-P86</strong>Channel recovery, adequacy & certified separation</a>
+    <a href="#stage-06"><strong>6 · P73-P87</strong>Channel recovery, adequacy & certified separation</a>
     <a href="#stage-07"><strong>7 · P25-P37</strong>Operational scale</a>
     <a href="#stage-08"><strong>8 · P38-P44</strong>Quantum interface</a>
     <a href="#stage-09"><strong>9 · P45-P53</strong>Adaptive evidence acquisition</a>
@@ -143,8 +143,8 @@
 </section>
 
 <section class="implementation-stage" id="stage-06">
-  <p class="stage-number">Stage 06 · P73-P86</p><h2>Channel recovery and model adequacy: learn the measurement model, then try to falsify it</h2>
-  <p>P73-P86 build a continuous chain from channel recovery to certified model-family separation. P73-P76 separate four questions that are easy to conflate: population identifiability, finite-sample recovery, independent model adequacy, and finite-sample rejection. Three nondegenerate conditionally independent binary views can identify the declared latent channel up to label swap; a fourth view creates overidentifying constraints that can expose model failure.</p>
+  <p class="stage-number">Stage 06 · P73-P87</p><h2>Channel recovery and model adequacy: learn the measurement model, then try to falsify it</h2>
+  <p>P73-P87 build a continuous chain from channel recovery to certified model-family separation. P73-P76 separate four questions that are easy to conflate: population identifiability, finite-sample recovery, independent model adequacy, and finite-sample rejection. Three nondegenerate conditionally independent binary views can identify the declared latent channel up to label swap; a fourth view creates overidentifying constraints that can expose model failure.</p>
   <div class="implementation-flow"><div><strong>Input</strong>Three- or four-view binary observations, a declared latent conditional-independence model, and the parameter boxes used for certified full-law separation.</div><div><strong>Operation</strong>Recover channel parameters, test model adequacy, certify full-law distance, and progressively retain simplex, projection, nested-event, parity, and joint shared-parameter constraints.</div><div><strong>Output</strong>Certified recovery, model rejection, or an explicitly inconclusive result.</div></div>
   <div class="implementation-links">
     <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/target_channel_identifiability.py"><strong>target_channel_identifiability.py</strong><small>P73 population recovery</small></a>
@@ -158,8 +158,9 @@
     <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/tests/test_joint_projection_parity_contrast_separation.py"><strong>P84 regression tests</strong><small>Exact interval, strict witness, dominance, and branch-and-bound checks</small></a>
     <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/triple_projection_parity_functional_separation.py"><strong>triple_projection_parity_functional_separation.py</strong><small>P85 three-event exact parity-functional implementation</small></a>
     <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/weighted_quad_projection_parity_functional_separation.py"><strong>weighted_quad_projection_parity_functional_separation.py</strong><small>P86 current four-event exact parity-functional implementation</small></a>
+    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/bounded_primitive_quad_projection_parity_functional_separation.py"><strong>bounded_primitive_quad_projection_parity_functional_separation.py</strong><small>P87 exact 39,600-function bounded primitive four-event separation</small></a>
   </div>
-  <p class="scientific-boundary"><strong>Frontier continuation:</strong> P77-P86 strengthen this branch from individual adequacy constraints to certified separation from the complete continuous model family. P84 adds pairwise shared-parameter parity compatibility, P85 adds three-event functionals, and the current P86 frontier adds 10,560 minimally weighted four-event functionals with the strict exact hierarchy <strong>L85 = 0 &lt; L86 = 1/192</strong>. See the <a href="index.html#p86-frontier">current P86 frontier</a> and the <a href="research-map.html">Research Map</a> for the full lineage.</p>
+  <p class="scientific-boundary"><strong>Frontier continuation:</strong> P77-P86 strengthen this branch from individual adequacy constraints to certified separation from the complete continuous model family. P84 adds pairwise shared-parameter parity compatibility, P85 adds three-event functionals, and the current P87 frontier adds 10,560 minimally weighted four-event functionals with the strict exact hierarchy <strong>L85 = 0 &lt; L86 = 1/192</strong>. See the <a href="index.html#p86-frontier">current P87 frontier</a> and the <a href="research-map.html">Research Map</a> for the full lineage.</p>
 </section>
 
 <section class="implementation-stage" id="stage-07">

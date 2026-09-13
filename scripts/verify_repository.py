@@ -25,7 +25,7 @@ from verify_frontier_publication import verify_frontier_publication
 
 ROOT = Path(__file__).resolve().parents[1]
 CURRENT_VERSION = "0.82.0"
-CURRENT_FRONTIER = "P86"
+CURRENT_FRONTIER = "P87"
 
 CORE_FILES = (
     "README.md",
@@ -55,11 +55,14 @@ CORE_FILES = (
     "docs/figures/p84_exact_joint_projection_parity_contrast.svg",
     "docs/figures/p85_exact_triple_projection_parity_functional.svg",
     "docs/figures/p86_exact_minimally_weighted_quad_projection_parity.svg",
+    "docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg",
     "docs/proposition_84_exact_projection_parity_contrast.md",
     "docs/proposition_85_exact_triple_projection_parity_functional.md",
     "docs/p85_equation_provenance.md",
     "docs/proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md",
     "docs/p86_equation_provenance.md",
+    "docs/proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md",
+    "docs/p87_equation_provenance.md",
     "figures/README.md",
     "figures/CURRENT_FRONTIER.md",
     "figures/manifest.json",
@@ -102,6 +105,19 @@ LINK_SURFACES = (
 MARKDOWN_LINK = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 
 STALE_READER_FRONTIER_MARKERS = (
+    "86-result theorem program and current P86 frontier",
+    "Current theorem frontier · P86",
+    "<strong>86</strong><span>proposition-level results</span>",
+    "<strong>P86</strong><span>current theorem frontier</span>",
+    "current P86 frontier",
+    "actual P86 research frontier",
+    "What the 86 results are doing",
+    "shows how all 86 results connect",
+    "through Proposition 86",
+    "Eighty-six results",
+    "The 86 propositions by scientific role",
+    "complete 86-result dependency structure",
+    "You do not need to read 86 proofs in order",
     "85-result theorem program and current P86 frontier",
     "<h2>P78-P85 progressively tighten global separation from the declared continuous model family</h2>",
     "Current frontier · P85",
@@ -235,7 +251,7 @@ def _verify_release_consistency() -> None:
 def _verify_proposition_files() -> None:
     missing: list[int] = []
     duplicates: dict[int, list[str]] = {}
-    for number in range(1, 87):
+    for number in range(1, 88):
         matches = sorted((ROOT / "docs").glob(f"proposition_{number}_*.md"))
         if not matches:
             missing.append(number)
@@ -277,7 +293,7 @@ def _verify_figure_publication_sync() -> None:
         raise RuntimeError("figure manifest does not report the current theorem frontier")
     current_figure = str(manifest.get("current_frontier_figure", ""))
     if not current_figure.endswith(
-        "p86_exact_minimally_weighted_quad_projection_parity.svg"
+        "p87_exact_bounded_primitive_quad_projection_parity.svg"
     ):
         raise RuntimeError("figure manifest does not point to the canonical P86 SVG")
 
@@ -293,11 +309,12 @@ def _verify_figure_publication_sync() -> None:
         raise RuntimeError("complete figure manifest is not aligned with docs/figures")
 
     visual_atlas = _read("website/visual-atlas.html")
+    p87 = visual_atlas.index('id="p87-frontier"')
     p86 = visual_atlas.index('id="p86-frontier"')
     p84 = visual_atlas.index('id="p84-frontier"')
     p85 = visual_atlas.index('id="p85-frontier"')
-    if not p86 < p84 < p85:
-        raise RuntimeError("Visual Atlas does not lead with the current P86 figure")
+    if not (p87 < p86 and p87 < p84 and p87 < p85):
+        raise RuntimeError("Visual Atlas does not lead with the current P87 figure")
 
     subprocess.run(
         [sys.executable, str(ROOT / "scripts" / "sync_figure_publication.py"), "--check"],

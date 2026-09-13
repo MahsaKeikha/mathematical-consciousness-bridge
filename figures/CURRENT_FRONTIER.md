@@ -1,29 +1,29 @@
-# Current visual frontier: P71-P86
+# Current visual frontier: P71-P87
 
 This page is generated from the canonical proposition and figure tree.
 It is the compact GitHub-facing visual route through the current target-side branch.
 
-## Current theorem frontier: P86
+## Current theorem frontier: P87
 
-![P86 current theorem frontier](../docs/figures/p86_exact_minimally_weighted_quad_projection_parity.svg)
+![P87 current theorem frontier](../docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg)
 
-[Read Proposition 86](../docs/proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md)
+[Read Proposition 87](../docs/proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md)
 
-[Open P86 equation provenance](../docs/p86_equation_provenance.md)
+[Open P87 equation provenance](../docs/p87_equation_provenance.md)
 
-### Exact P86 hierarchy witness
+### Exact P87 hierarchy witness
 
-The current exact rational witness preserves the complete P85 certificate at zero while the minimally weighted four-event family is strictly positive:
+P87 completes the primitive four-event coefficient box with nonzero integer coefficients satisfying `|c_i| <= 2` and strictly strengthens the complete P86 certificate on the exact rational witness:
 
 ```text
-L85 = 0 < L86 = 1/192
-10,560 standard P86 functionals
-primitive coefficient magnitudes {1,1,1,2}
+L85 = 0 < L86 = 1/192 < L87 = 1/96
+120 primitive sign-normalized coefficient patterns per four-event subset
+39,600 standard P87 functionals
 ```
 
 This is a conditional model-separation result inside the declared P75 family. It is not an identification of a latent state with conscious experience.
 
-## P71-P86 canonical theorem-figure index
+## P71-P87 canonical theorem-figure index
 
 | Proposition | Canonical figure | Proof | Provenance |
 | --- | --- | --- | --- |
@@ -43,6 +43,7 @@ This is a conditional model-separation result inside the declared P75 family. It
 | P84 | [figure](../docs/figures/p84_exact_joint_projection_parity_contrast.svg) | [proof](../docs/proposition_84_exact_projection_parity_contrast.md) | [equations](../docs/p84_equation_provenance.md) |
 | P85 | [figure](../docs/figures/p85_exact_triple_projection_parity_functional.svg) | [proof](../docs/proposition_85_exact_triple_projection_parity_functional.md) | [equations](../docs/p85_equation_provenance.md) |
 | P86 | [figure](../docs/figures/p86_exact_minimally_weighted_quad_projection_parity.svg) | [proof](../docs/proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md) | [equations](../docs/p86_equation_provenance.md) |
+| P87 | [figure](../docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg) | [proof](../docs/proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md) | [equations](../docs/p87_equation_provenance.md) |
 
 ## Reproduce the visual record
 
@@ -56,4 +57,4 @@ The complete machine-readable SHA-256 inventory is in [`manifest.json`](manifest
 
 ## Interpretation boundary
 
-P71-P86 strengthens the methodology for testing a declared physical-to-target model. It does not derive consciousness from physics, prove nonphysicality, or close the physical-to-experiential bridge.
+P71-P87 strengthens the methodology for testing a declared physical-to-target model. It does not derive consciousness from physics, prove nonphysicality, or close the physical-to-experiential bridge.
