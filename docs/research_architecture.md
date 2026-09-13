@@ -1,24 +1,30 @@
-# Research Architecture
+# Technical Research Architecture
+
+**This page is the formal layer beneath the [Research Map](research_map.md).**
+
+The Research Map explains the scientific story without equations. This page introduces the mathematical objects that support that story and shows how the formal layers connect.
+
+If you want theorem dependencies rather than architecture, use the **[Theorem Roadmap](theorem_roadmap.md)**. If you want every proposition in chronological order, use the **[Detailed Proposition Record](detailed_proposition_record.md)**.
 
 ![Mathematical Consciousness Bridge research architecture](figures/research_architecture.svg)
 
-The program separates physical modeling, candidate physical signatures, temporal physical organization, experiential formalization, bridge principles, observable predictions, finite-data certification, and falsification. This prevents a theorem about a physical quantity from being mistaken for independent support of a physical-to-experiential bridge.
+> **Reading rule:** each layer answers one question. A result at one layer does not automatically establish the next layer.
 
 ---
 
-## Layer 1 - physical realization
+## 1. What physical system is being described?
 
-A physical description specifies
+A physical model must first say what counts as the system, how it changes, what can be done to it, and what can be observed.
+
+A compact formal declaration is
 
 \[
-\boxed{
-p=(\mathcal X,\mathcal D,\mathfrak I,\mathcal O),
-}
+\boxed{p=(\mathcal X,\mathcal D,\mathfrak I,\mathcal O)}
 \]
 
-with state space, dynamics, admissible interventions, and observable map.
+where \(\mathcal X\) is the state space, \(\mathcal D\) the dynamics, \(\mathfrak I\) the admissible interventions, and \(\mathcal O\) the observable map.
 
-Examples include
+Typical dynamical descriptions include
 
 \[
 \dot x(t)=F(x(t),u(t)),
@@ -26,54 +32,49 @@ Examples include
 y(t)=h(x(t)),
 \]
 
-or
+or stochastic evolution
 
 \[
-X_{t+\Delta t}
-\sim
-K_{\Delta t}(\cdot\mid X_t,u_t).
+X_{t+\Delta t}\sim K_{\Delta t}(\cdot\mid X_t,u_t).
 \]
+
+When a time-dependent subsystem has already been identified, the related project [Spatiotemporal Observer Mathematics](https://github.com/MahsaKeikha/spatiotemporal-observer-math) can supply a physical world-tube
+
+\[
+\boxed{\mathcal W=(S_0,\ldots,S_{T-1}).}
+\]
+
+**Boundary:** identifying a physical subsystem is not yet an experiential conclusion.
+
+**Go deeper:** [P1 representation invariance](proposition_1_representation_invariance.md) · [Theorem Roadmap](theorem_roadmap.md)
 
 ---
 
-## Layer 2 - certified physical subsystem
+## 2. Which descriptions count as the same physical situation?
 
-When applicable, [Spatiotemporal Observer Mathematics](https://github.com/MahsaKeikha/spatiotemporal-observer-math) can supply a statistically certified time-dependent physical subsystem or world-tube
+A scientifically meaningful bridge should not change merely because we relabel variables or choose an equivalent representation.
+
+Declare an equivalence relation
 
 \[
-\boxed{
-\mathcal W=(S_0,\ldots,S_{T-1}).
-}
+\boxed{p\sim_P p'}
 \]
 
-The world-tube is a physical domain candidate, not an experiential conclusion.
+and work with the physical quotient
+
+\[
+\boxed{\mathcal Q_P=\mathcal P/{\sim_P}.}
+\]
+
+P1 gives the exact condition under which a bridge descends consistently to this quotient.
+
+This layer protects the research from confusing **representation choice** with **physical difference**.
+
+**Go deeper:** [P1](proposition_1_representation_invariance.md)
 
 ---
 
-## Layer 3 - physical equivalence
-
-Declare which representation changes leave the physically relevant system unchanged:
-
-\[
-\boxed{
-p\sim_Pp'.}
-\]
-
-Then
-
-\[
-\boxed{
-\mathcal Q_P
-=
-\mathcal P/{\sim_P}.
-}
-\]
-
-[Proposition 1](proposition_1_representation_invariance.md) gives the exact condition under which a bridge descends to this quotient.
-
----
-
-## Layer 4 - candidate physical signature
+## 3. What physical structure might matter?
 
 A candidate physical signature is a representation-independent feature
 
@@ -81,228 +82,257 @@ A candidate physical signature is a representation-independent feature
 F_*:\mathcal Q_P\to\mathcal Z_*.
 \]
 
-The first original candidate is [intervention-resolved causal structure](proposition_11_intervention_resolved_causal_structure.md):
+One structured candidate developed in the repository is intervention-resolved causal structure:
 
 \[
-\boxed{
-F_{\mathrm{causal}}(p)
-=
-[\mathfrak C_p]_{\cong},
-}
+\boxed{F_{\mathrm{causal}}(p)=[\mathfrak C_p]_{\cong}}
 \]
 
 with
 
 \[
-\mathfrak C_p
-=
-(V,\mathcal U_p,\mathcal T,\mathcal G_p,\mathcal A_p,\mathcal K_p).
+\mathfrak C_p=(V,\mathcal U_p,\mathcal T,\mathcal G_p,\mathcal A_p,\mathcal K_p).
 \]
 
-The three components encode intervention-response geometry, directed perturbational influence, and partition-specific response irreducibility.
+Its components encode intervention-response geometry, directed perturbational influence, and partition-sensitive response irreducibility.
 
-[Proposition 12](proposition_12_component_insufficiency.md) proves that each component alone, and several scalar summaries, are incomplete. [Proposition 13](proposition_13_pairwise_component_irredundancy.md) proves that each component remains irredundant relative to the other two on an explicit finite audit domain.
+P12 and P13 then attack this candidate rather than protecting it: they show that individual components and several reduced summaries can lose information.
+
+**Why this layer exists:** a single convenient scalar should not be promoted to a complete physical signature without surviving collision and insufficiency tests.
+
+**Go deeper:** [P11](proposition_11_intervention_resolved_causal_structure.md) · [P12](proposition_12_component_insufficiency.md) · [P13](proposition_13_pairwise_component_irredundancy.md)
 
 ---
 
-## Layer 5 - temporal physical organization
+## 4. How does physical organization persist through time and scale?
 
-A static signature does not yet specify how physical organization persists or changes through time.
+A static physical signature is not enough when the system evolves.
 
-For finite causal-structure fingerprint
+For a finite fingerprint
 
 \[
 c_t=(g_t,a_t,k_t),
 \]
 
-[Proposition 14](proposition_14_temporal_continuation.md) defines the relabeling-invariant quotient metric
+P14 defines a relabeling-invariant distance
 
 \[
-\boxed{
-\overline D_w([c],[c'])
-=
-\min_{h\in\mathcal H}D_w(c,hc'),
-}
+\boxed{\overline D_w([c],[c'])=\min_{h\in\mathcal H}D_w(c,hc')}
 \]
 
-and temporal path quantities
+and path quantities such as
 
 \[
 \boxed{
-V_{0:T}
-=
-\sum_{t=0}^{T-1}\overline D_w([c_t],[c_{t+1}]),
+V_{0:T}=\sum_{t=0}^{T-1}\overline D_w([c_t],[c_{t+1}]),
 \qquad
-J_{0:T}
-=
-\max_t\overline D_w([c_t],[c_{t+1}]).
+J_{0:T}=\max_t\overline D_w([c_t],[c_{t+1}]).
 }
 \]
 
-P14 proves that these quantities are invariant under time-dependent admissible relabelings and that endpoint equality does not replace path analysis.
-
-[Proposition 15](proposition_15_finite_sample_temporal_certification.md) then propagates declared fingerprint-error radii through this geometry:
+P15 then propagates finite estimation error:
 
 \[
-\boxed{
-|\widehat d_{st}-d_{st}|
-\le
-\varepsilon_s+\varepsilon_t.
-}
+\boxed{|\widehat d_{st}-d_{st}|\le\varepsilon_s+\varepsilon_t.}
 \]
 
-Thus temporal physical organization is both representation aware and finite-error certifiable under stated assumptions.
+Later physical branches study composition, coarse-graining, aggregation, intervention quotients, delay quotients, and multiscale compatibility.
 
-This layer remains physical. Temporal continuation is not identified with experiential continuity.
+**Boundary:** continuity of a physical structure is not automatically continuity of experience.
+
+**Go deeper:** [P14](proposition_14_temporal_continuation.md) · [P15](proposition_15_finite_sample_temporal_certification.md) · [P25-P37 via the Theorem Roadmap](theorem_roadmap.md)
 
 ---
 
-## Layer 6 - experiential formalization
+## 5. What is the target, and is it independent?
 
-Define
+The physical side alone does not define what is being explained.
 
-\[
-\mathcal E
-\]
-
-and experiential equivalence
+Let \(\mathcal E\) denote a declared target or experiential domain, with equivalence relation
 
 \[
-e\sim_Ee'.
+e\sim_E e'.
 \]
 
-The experiential quotient is
+The corresponding quotient is
 
 \[
-\boxed{
-\mathcal Q_E
-=
-\mathcal E/{\sim_E}.
-}
+\boxed{\mathcal Q_E=\mathcal E/{\sim_E}.}
 \]
 
-This remains an essential open formalization problem. A convenient physical score or a smooth physical trajectory does not substitute for a definition of the experiential target.
+The key scientific requirement is not merely to write down \(\mathcal E\), but to justify the target independently of the physical descriptor being tested.
+
+This is why the later target-side branch returns explicitly to target provenance, noisy measurement, identifiability, and finite-data recovery.
+
+**Boundary:** a latent variable, report channel, label, or learned target is not automatically an experiential ground truth.
+
+**Go deeper:** [Bridge Problem](bridge_problem.md) · [P71-P74 via Research Navigation](research_navigation.md)
 
 ---
 
-## Layer 7 - bridge
+## 6. What would a bridge actually be?
 
 The most general bridge begins as a relation
 
 \[
-\mathcal B
-\subseteq
-\mathcal P\times\mathcal E.
+\mathcal B\subseteq\mathcal P\times\mathcal E.
 \]
 
-When single-valuedness and invariance are justified,
+When single-valuedness and invariance are justified, it can be represented as
 
 \[
-\boxed{
-\bar B:
-\mathcal Q_P
-\longrightarrow
-\mathcal Q_E.
-}
+\boxed{\bar B:\mathcal Q_P\longrightarrow\mathcal Q_E.}
 \]
 
-Propositions 5 and 6 formalize physical-feature sufficiency and bridge completeness. The strongest physical-signature target is
+The strongest physical-signature goal would be a signature that preserves exactly the distinctions the bridge preserves:
 
 \[
-\boxed{
-F_*(p)=F_*(p')
-\iff
-\bar B(p)=\bar B(p').
-}
+\boxed{F_*(p)=F_*(p')\iff\bar B(p)=\bar B(p').}
 \]
+
+Propositions 5 and 6 formalize feature sufficiency and canonical bridge completeness in this sense.
+
+P19 later asks a more directly testable sufficiency question: does an independently declared target factor through the chosen physical descriptor?
+
+**Go deeper:** [P5](proposition_5_feature_sufficiency.md) · [P6](proposition_6_canonical_bridge_signature.md) · [P19](proposition_19_fundamental_physical_sufficiency.md)
 
 ---
 
-## Layer 8 - empirical interface
+## 7. How does the theory meet observable data?
 
-A complete theory must generate observable probability laws under declared protocols:
+A scientific theory must imply observable probability laws under declared experimental protocols.
+
+Write those laws schematically as
 
 \[
 P_{\mathfrak T}^{\pi,q}.
 \]
 
-Propositions 2-4 establish exact identifiability and experiment-design results. [Candidate Theory Families](candidate_theory_families.md) translates IIT, GNWT, recurrent-processing, higher-order, predictive/neurorepresentational, and repository candidate families into a common comparison interface.
+The early identifiability results ask whether competing theories or physical signatures can be distinguished by available experiments.
+
+For a family of protocols \(\Pi\), an experimental fingerprint can be written as
+
+\[
+\Psi_\Pi(p)=(P^{\pi,p})_{\pi\in\Pi}.
+\]
+
+P7-P10 study recoverability, finite error, sample complexity, and robust experimental design.
+
+One representative finite-data condition takes the form
+
+\[
+\boxed{\gamma_S=\delta_S-\omega_S>4\varepsilon}
+\]
+
+with corresponding sample-size guarantees under the declared finite-alphabet setting.
+
+**Why this layer exists:** a bridge that cannot be connected to observable consequences cannot yet be scientifically tested.
+
+**Go deeper:** [P2-P10 via the Theorem Roadmap](theorem_roadmap.md) · [Candidate Theory Families](candidate_theory_families.md)
 
 ---
 
-## Layer 9 - experimental recoverability and finite-data certification
+## 8. Can the physical descriptor fail a sufficiency test?
 
-For physical fingerprint
+This is the core transition from architecture to falsifiable bridge methodology.
 
-\[
-\Psi_\Pi(p)
-=
-(P^{\pi,p})_{\pi\in\Pi},
-\]
+P19 asks whether the target depends on the underlying state only through the declared physical descriptor. If not, the descriptor is insufficient for that target under the stated model.
 
-Proposition 7 gives the exact recoverability criterion. Propositions 8-10 add finite-error certification, explicit sample complexity, and robust protocol design:
+Later results add finite-data confidence, refinement tests, adaptive selection protection, and repeated-look validity.
 
-\[
-\boxed{
-\gamma_S
-=
-\delta_S-\omega_S
->4\varepsilon,
-}
-\]
+The important asymmetry is:
 
-and
+> **failure of a descriptor is evidence against that descriptor's sufficiency, not proof that no physical description could ever be sufficient.**
 
-\[
-\boxed{
-n
-\ge
-\frac{8K^2}{\gamma_S^2}
-\log\left(
-\frac{2N_PN_\pi K}{\alpha}
-\right).
-}
-\]
-
-P15 adds a separate temporal-certification layer. Given valid simultaneous fingerprint radii, it converts estimated temporal separations into certified intervals and explicitly preserves an unresolved region when the data do not determine whether a structural threshold is crossed.
+**Go deeper:** [P19](proposition_19_fundamental_physical_sufficiency.md) · [P20-P24 via the Theorem Roadmap](theorem_roadmap.md)
 
 ---
 
-## Layer 10 - falsification and counterexample search
+## 9. Can the target-measurement model itself fail?
 
-Every candidate signature or bridge is exposed to:
+A clean physical descriptor and an independently motivated target are still not enough if the measurement model is wrong.
 
-1. representation counterexamples;
-2. feature-sufficiency collisions;
-3. observational non-identifiability;
-4. recoverability failures;
-5. one-component and pairwise-component collisions;
-6. endpoint-only temporal failures;
-7. finite-data overclaiming and unresolved temporal comparisons;
-8. composition, splitting, merging, or coupling inconsistencies;
-9. empirical prediction failures;
-10. biological and artificial substrate counterexamples.
+P71-P74 protect target provenance and measurement. P75-P87 then progressively strengthen model-adequacy and model-separation tests.
 
-P12-P15 illustrate the architecture in practice: the physical candidate is attacked internally, temporally, and statistically before an experiential equivalence claim is attached.
+The logic is:
+
+**identify the model → test its restrictions → test the whole model family → strengthen the separating observables when weaker tests remain silent.**
+
+This is where the current theorem frontier sits.
+
+**Current frontier:** [P87](proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md)
+
+**Audit route:** [Research Navigation](research_navigation.md)
 
 ---
 
-## Layer 11 - conditional bridge theorem
+## 10. How are uncertainty and computation certified?
 
-Only after the physical domain, experiential domain, bridge principles, complete physical signature, empirical identifiability, recoverability, finite-data uncertainty, temporal consistency, composition rules, and falsification conditions are explicit should the program state a final bridge theorem.
+Finite data and numerical optimization can create false confidence if their error direction is not controlled.
 
-The schematic target is
+The repository therefore distinguishes:
+
+- empirical point estimates from finite-sample certificates;
+- numerical candidates from certified lower or upper bounds;
+- model non-rejection from model validation;
+- exploratory search from formally protected inference.
+
+The reproducibility layer connects theorem statements to implementation, tests, figure generation, and repository-wide verification.
+
+**Go deeper:** [Reproducibility Guide](reproducibility.md) · [Equation and Citation Map](equation_and_citation_map.md)
+
+---
+
+## 11. What would count as a completed bridge result?
+
+Only after the physical domain, target domain, bridge premises, empirical interface, identifiability, finite-data uncertainty, model adequacy, and falsification conditions are explicit should a final bridge theorem be considered.
+
+The schematic target remains
 
 \[
 \boxed{
 \text{physical first principles}
 +
-\text{validated bridge premises}
+\text{independently justified bridge premises}
 +
-\text{finite-data certification}
+\text{empirical and finite-data certification}
 \Longrightarrow
 \text{formal experiential property}.
 }
 \]
 
-See [Universal Consciousness Proof Target](universal_proof_target.md).
+The repository has not established that final implication.
+
+**Go deeper:** [Universal Consciousness Proof Target](universal_proof_target.md)
+
+---
+
+## Architecture at a glance
+
+| Layer | Question | Status |
+| --- | --- | --- |
+| Physical realization | What system and dynamics are declared? | Formalized |
+| Representation invariance | Which descriptions count as physically equivalent? | Formalized |
+| Physical signature | What structured physical features are candidates? | Partially developed and stress-tested |
+| Time / scale / composition | Which structures persist under change of description? | Developed across multiple branches |
+| Target definition | What distinction is being explained? | Requires independent scientific justification |
+| Bridge | What connects physical and target structure? | Open |
+| Empirical interface | What observable laws follow? | Formalized for declared model classes |
+| Sufficiency testing | Is the descriptor enough for the target? | Theorem and finite-data machinery developed |
+| Target-model adequacy | Does the declared measurement model fit? | Active theorem frontier through P87 |
+| Reproducibility | Can the reasoning and computation be audited? | Implemented repository-wide |
+| Final physical-to-experiential bridge | Has the bridge itself been established? | **Open** |
+
+---
+
+## Where to go next
+
+**Need less technical context?** Go back to the [Research Map](research_map.md).
+
+**Want dependency structure?** Open the [Theorem Roadmap](theorem_roadmap.md).
+
+**Want one proposition at a time?** Open the [Detailed Proposition Record](detailed_proposition_record.md).
+
+**Want equations, sources, code, and tests?** Use [Research Navigation](research_navigation.md) and the [Equation and Citation Map](equation_and_citation_map.md).
+
+**Want to reproduce the work?** Use the [Reproducibility Guide](reproducibility.md).
