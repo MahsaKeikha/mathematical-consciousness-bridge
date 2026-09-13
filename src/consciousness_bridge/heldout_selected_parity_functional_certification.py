@@ -135,6 +135,55 @@ def primitive_parity_quad_score_range_exact(
     return min(values), max(values)
 
 
+def p88_minimum_validation_sample_size_for_gap_exact(
+    *,
+    terms: PrimitiveQuadFunctional,
+    target_gap: Fraction,
+    alpha: Fraction,
+    series_terms: int = 12,
+    sqrt_bits: int = 48,
+) -> int:
+    """Return the smallest held-out ``n`` whose certified radius is below a gap.
+
+    The result is a deterministic design threshold for a *specified* functional
+    gap. It is not a prospective power guarantee that a random validation sample
+    will realize that gap. The strict inequality matches the P88 rejection rule.
+    """
+
+    if not isinstance(target_gap, Fraction):
+        raise TypeError("target_gap must be a fractions.Fraction")
+    if target_gap <= 0:
+        raise ValueError("target_gap must be positive")
+
+    score_minimum, score_maximum = primitive_parity_quad_score_range_exact(terms)
+    score_width = score_maximum - score_minimum
+    if score_width <= 0:
+        raise ValueError("selected P87 functional must have a positive score range")
+
+    def sufficient(sample_size: int) -> bool:
+        radius = certified_finite_alphabet_sampling_radius(
+            sample_size=sample_size,
+            alphabet_size=1,
+            alpha=alpha,
+            series_terms=series_terms,
+            sqrt_bits=sqrt_bits,
+        ).cell_linf_radius_upper
+        return score_width * radius < target_gap
+
+    upper = 1
+    while not sufficient(upper):
+        upper *= 2
+
+    lower = 0
+    while upper - lower > 1:
+        midpoint = (lower + upper) // 2
+        if sufficient(midpoint):
+            upper = midpoint
+        else:
+            lower = midpoint
+    return upper
+
+
 def p88_heldout_selected_p87_certificate_exact(
     validation_empirical_law: tuple[Fraction, ...],
     *,

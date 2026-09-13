@@ -12,6 +12,7 @@ from consciousness_bridge.certified_sampling_radius import (
 )
 from consciousness_bridge.heldout_selected_parity_functional_certification import (
     p88_heldout_selected_p87_certificate_exact,
+    p88_minimum_validation_sample_size_for_gap_exact,
     primitive_parity_quad_score_range_exact,
 )
 
@@ -62,6 +63,36 @@ def test_selected_p87_score_has_exact_range_minus3_to2() -> None:
         Fraction(-3),
         Fraction(2),
     )
+
+
+def test_p88_exact_design_threshold_for_strict_witness_is_1063() -> None:
+    minimum = p88_minimum_validation_sample_size_for_gap_exact(
+        terms=_selected_terms(),
+        target_gap=Fraction(5, 24),
+        alpha=Fraction(1, 20),
+        series_terms=12,
+        sqrt_bits=24,
+    )
+    assert minimum == 1063
+
+    radius_1062 = certified_finite_alphabet_sampling_radius(
+        sample_size=1062,
+        alphabet_size=1,
+        alpha=Fraction(1, 20),
+        series_terms=12,
+        sqrt_bits=24,
+    ).cell_linf_radius_upper
+    radius_1063 = certified_finite_alphabet_sampling_radius(
+        sample_size=1063,
+        alphabet_size=1,
+        alpha=Fraction(1, 20),
+        series_terms=12,
+        sqrt_bits=24,
+    ).cell_linf_radius_upper
+    assert radius_1062 == Fraction(349591, 8388608)
+    assert radius_1063 == Fraction(698853, 16777216)
+    assert 5 * radius_1062 >= Fraction(5, 24)
+    assert 5 * radius_1063 < Fraction(5, 24)
 
 
 def test_p88_heldout_witness_has_exact_certified_values() -> None:
