@@ -33,20 +33,14 @@ jobs:
           text = text.replace(matcher_old, matcher_new, 1)
 
           whitespace_old = '    text = text.replace(marker, "")'
-          whitespace_new = (
-              '    text = re.sub(r"\\s*" + re.escape(marker) + r"\\s*", "", text)'
-          )
+          whitespace_new = '    text = re.sub(r"\\s*" + re.escape(marker) + r"\\s*", "", text)'
           if whitespace_old in text:
               text = text.replace(whitespace_old, whitespace_new, 1)
           elif whitespace_new not in text:
               raise SystemExit("could not locate Visual Atlas marker normalization")
 
-          layout_old = '''    insertion = "\\n" + marker + "\\n" + _p86_visual_section() + "\\n"
-    return text[: boundary.end()] + insertion + text[boundary.end() :]'''
-          layout_new = '''    prefix = text[: boundary.end()].rstrip()
-    suffix = text[boundary.end() :].lstrip()
-    insertion = "\\n\\n" + marker + "\\n" + _p86_visual_section() + "\\n\\n"
-    return prefix + insertion + suffix'''
+          layout_old = '    insertion = "\\n" + marker + "\\n" + _p86_visual_section() + "\\n"\n    return text[: boundary.end()] + insertion + text[boundary.end() :]'
+          layout_new = '    prefix = text[: boundary.end()].rstrip()\n    suffix = text[boundary.end() :].lstrip()\n    insertion = "\\n\\n" + marker + "\\n" + _p86_visual_section() + "\\n\\n"\n    return prefix + insertion + suffix'
           if layout_old in text:
               text = text.replace(layout_old, layout_new, 1)
           elif layout_new not in text:
