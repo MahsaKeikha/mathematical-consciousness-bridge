@@ -109,5 +109,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
+          git reset .github/workflows/pages.yml
+          if git diff --cached --quiet; then
+            echo "Only the privileged pages workflow remains for direct update."
+            exit 0
+          fi
           git commit -m "Promote P87 across publication surfaces"
           git push origin HEAD:p87-publication
