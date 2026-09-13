@@ -31,6 +31,49 @@ jobs:
           python-version: "3.12"
       - name: Apply P87 publication migration
         run: python scripts/run_p87_promotion.py
+      - name: Normalize post-sync P87 reader fragments
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          replacements = {
+              "website/implementation.html": [
+                  ("current P86 frontier", "current P87 frontier"),
+              ],
+              "website/index.html": [
+                  (
+                      "<strong>86</strong><span>proposition-level results</span>",
+                      "<strong>87</strong><span>proposition-level results</span>",
+                  ),
+                  (
+                      "<strong>P86</strong><span>current theorem frontier</span>",
+                      "<strong>P87</strong><span>current theorem frontier</span>",
+                  ),
+              ],
+          }
+
+          for filename, pairs in replacements.items():
+              path = Path(filename)
+              text = path.read_text(encoding="utf-8")
+              for old, new in pairs:
+                  text = text.replace(old, new)
+              path.write_text(text, encoding="utf-8")
+
+          stale = {
+              "website/implementation.html": ("current P86 frontier",),
+              "website/index.html": (
+                  "<strong>86</strong><span>proposition-level results</span>",
+                  "<strong>P86</strong><span>current theorem frontier</span>",
+              ),
+          }
+          offenders = {
+              filename: [token for token in tokens if token in Path(filename).read_text(encoding="utf-8")]
+              for filename, tokens in stale.items()
+          }
+          offenders = {filename: tokens for filename, tokens in offenders.items() if tokens}
+          if offenders:
+              raise RuntimeError(f"post-sync P87 reader normalization failed: {offenders}")
+          PY
       - name: Install test environment
         run: |
           python -m pip install --upgrade pip
