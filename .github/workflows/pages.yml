@@ -38,16 +38,15 @@ jobs:
           cp -a website website-deploy
           python scripts/prepare_website.py --source website-deploy --output _site
 
-      - name: Verify restored homepage identity
+      - name: Verify restored full-site identity
         run: |
-          grep -q 'The project in one minute' _site/index.html
-          grep -q 'Choose your depth' _site/index.html
-          grep -q 'public theorem frontier' _site/index.html
-          grep -q 'v0.82.0' _site/index.html
-          grep -q 'Reproducible' _site/index.html
-          grep -q 'navigation-v2.css' _site/index.html
-          grep -q 'publication-v2.css' _site/index.html
-          grep -q 'reader-experience-v2.css' _site/index.html
+          grep -q 'What would a scientifically testable bridge from physical description to experience actually require?' _site/index.html
+          grep -q 'Explore all 87 results' _site/index.html
+          grep -q 'What are we actually trying to find out?' _site/plain-language.html
+          grep -q 'Explain it in 60 seconds' _site/plain-language.html
+          grep -q 'Seven questions have to be kept separate' _site/plain-language.html
+          grep -q 'What the 87 results are doing' _site/plain-language.html
+          grep -q 'P87' _site/plain-language.html
 
       - name: Upload website artifact
         uses: actions/upload-pages-artifact@v3
