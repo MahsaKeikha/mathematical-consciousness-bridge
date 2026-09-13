@@ -86,11 +86,17 @@ def replace_many(text: str, replacements: tuple[tuple[str, str], ...]) -> str:
 def upsert_section(text: str, section_id: str, replacement: str, before_id: str) -> str:
     pattern = re.compile(
         rf'(?:<!--[^>]*{re.escape(section_id)}[^>]*-->\s*)?'
-        rf'<section id="{re.escape(section_id)}"\b.*?</section>\s*',
+        rf'<section id="{re.escape(section_id)}"(?=[\s>]).*?</section>\s*',
         flags=re.DOTALL,
     )
-    if pattern.search(text):
-        return pattern.sub(replacement, text, count=1)
+    matches = tuple(pattern.finditer(text))
+    if matches:
+        # Collapse any inherited duplicate copies to one canonical section.
+        text = pattern.sub("", text)
+        marker = f'<section id="{before_id}"'
+        if marker not in text:
+            raise RuntimeError(f"cannot place {section_id}: missing {before_id} marker")
+        return text.replace(marker, replacement + marker, 1)
     marker = f'<section id="{before_id}"'
     if marker not in text:
         raise RuntimeError(f"cannot insert {section_id}: missing {before_id} marker")
@@ -200,9 +206,12 @@ def promote_research_map() -> None:
             ("while P87 completes every nonzero primitive four-event coefficient vector with magnitude at most two and strictly strengthens the P86 certificate.", "while P87 completes every nonzero primitive four-event coefficient vector with magnitude at most two and strictly strengthens the P86 certificate, and P88 enlarges that complete primitive coefficient radius to three and raises the same exact witness bound from 1/96 to 1/64."),
         ),
     )
-    section_pattern = re.compile(r'<section id="p88-research-map"\b.*?</section>\s*', re.DOTALL)
+    section_pattern = re.compile(r'<section id="p88-research-map"(?=[\s>]).*?</section>\s*', re.DOTALL)
     if section_pattern.search(text):
-        text = section_pattern.sub(P88_RESEARCH_MAP_SECTION + "\n", text, count=1)
+        text = section_pattern.sub("", text)
+        if "</main>" not in text:
+            raise RuntimeError("website/research-map.html has no closing main marker")
+        text = text.replace("</main>", P88_RESEARCH_MAP_SECTION + "\n</main>", 1)
     elif "P88: Does the next complete coefficient radius expose a stronger incompatibility?" not in text:
         if "</main>" not in text:
             raise RuntimeError("website/research-map.html has no closing main marker")
@@ -350,6 +359,13 @@ def verify_reader_coherence() -> None:
 
     index = texts["website/index.html"]
     atlas = texts["website/visual-atlas.html"]
+    research_map = texts["website/research-map.html"]
+    if index.count('id="p88-frontier"') != 1:
+        raise RuntimeError("homepage must contain exactly one P88 frontier section")
+    if atlas.count('id="p88-frontier"') != 1:
+        raise RuntimeError("Visual Atlas must contain exactly one P88 frontier section")
+    if research_map.count('id="p88-research-map"') != 1:
+        raise RuntimeError("Research Map must contain exactly one P88 result section")
     if index.index('id="p88-frontier"') > index.index('id="p87-frontier"'):
         raise RuntimeError("homepage does not lead with P88")
     if atlas.index('id="p88-frontier"') > atlas.index('id="p87-frontier"'):
