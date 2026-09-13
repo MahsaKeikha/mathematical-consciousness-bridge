@@ -1,4 +1,5 @@
-# Exact reference environment for reproducing the v0.81.0 repository record.
+# Exact reference environment for the current repository development record.
+# Formal release baseline: v0.82.0; the theorem frontier may advance independently.
 # Use with Python 3.12.14 (recorded in .python-version).
 -r requirements-figures.txt
 pytest==9.1.1
