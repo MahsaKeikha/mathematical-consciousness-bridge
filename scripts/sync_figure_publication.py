@@ -26,6 +26,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DOC_FIGURES = ROOT / "docs" / "figures"
 GATEWAY = ROOT / "figures"
 VISUAL_ATLAS = ROOT / "website" / "visual-atlas.html"
+HOME = ROOT / "website" / "index.html"
 VERIFIER = ROOT / "scripts" / "verify_repository.py"
 
 FRONTIER_RE = re.compile(r'^CURRENT_FRONTIER = "P(?P<number>\d+)"$', re.MULTILINE)
@@ -377,15 +378,52 @@ def _normalize_visual_atlas(text: str) -> str:
     return result + ("\n" if had_final_newline else "")
 
 
+def _normalize_homepage(text: str) -> str:
+    """Make P86 the first theorem visual and demote older homepage frontiers."""
+
+    pattern = re.compile(r'\s*<section id="p86-frontier".*?</section>\s*', re.DOTALL)
+    text, count = pattern.subn("\n", text, count=1)
+    if count != 1:
+        raise RuntimeError(f"expected exactly one P86 homepage section, found {count}")
+
+    replacements = (
+        ("Current theorem frontier · P85", "Previous theorem frontier · P85"),
+        ("The 84 results form several dependency branches.", "The 86 results form several dependency branches."),
+        ("You do not need to read all 84 propositions in numerical order", "You do not need to read all 86 propositions in numerical order"),
+        ("Focus on P19 and P71-P84, then read the falsification program.", "Focus on P19 and P71-P86, then read the falsification program."),
+    )
+    for old, new in replacements:
+        if old in text:
+            text = text.replace(old, new, 1)
+        elif new not in text:
+            raise RuntimeError(f"homepage frontier normalization could not resolve: {old!r}")
+
+    marker = "<!-- current-frontier-home: P86 -->"
+    text = re.sub(r"\s*" + re.escape(marker) + r"\s*", "\n", text)
+    hero = re.search(r'<section class="hero">.*?</section>', text, re.DOTALL)
+    if hero is None:
+        raise RuntimeError("could not locate homepage hero section")
+
+    prefix = text[: hero.end()].rstrip()
+    suffix = text[hero.end() :].lstrip()
+    insertion = "\n\n" + marker + "\n" + _p86_visual_section() + "\n\n"
+    result = prefix + insertion + suffix
+    had_final_newline = result.endswith("\n")
+    result = "\n".join(line.rstrip() for line in result.splitlines())
+    return result + ("\n" if had_final_newline else "")
+
+
 def _expected_outputs() -> dict[Path, str]:
     frontier = _current_frontier()
     visual_source = VISUAL_ATLAS.read_text(encoding="utf-8")
+    home_source = HOME.read_text(encoding="utf-8")
     return {
         GATEWAY / "README.md": _gateway_readme(frontier),
         GATEWAY / "CURRENT_FRONTIER.md": _frontier_page(frontier),
         GATEWAY / "manifest.json": _figure_manifest(frontier),
         DOC_FIGURES / "README.md": _docs_figure_readme(frontier),
         VISUAL_ATLAS: _normalize_visual_atlas(visual_source),
+        HOME: _normalize_homepage(home_source),
     }
 
 
