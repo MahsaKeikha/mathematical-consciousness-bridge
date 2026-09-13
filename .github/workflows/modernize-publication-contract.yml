@@ -5,6 +5,7 @@ on:
     branches: ["website-research-iii-sync"]
     paths:
       - "scripts/modernize_publication_contract.py"
+      - "scripts/finalize_publication_contract.py"
       - "docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg"
       - ".github/workflows/modernize-publication-contract.yml"
   workflow_dispatch:
@@ -31,12 +32,15 @@ jobs:
           python-version: "3.12"
 
       - name: Apply publication-contract migration
-        run: python scripts/modernize_publication_contract.py
+        run: |
+          python scripts/modernize_publication_contract.py
+          python scripts/finalize_publication_contract.py
 
       - name: Verify migration script and website scripts compile
         run: |
           python -m py_compile \
             scripts/modernize_publication_contract.py \
+            scripts/finalize_publication_contract.py \
             scripts/synchronize_research_three_website.py \
             scripts/prepare_website.py
 
@@ -76,6 +80,8 @@ jobs:
             docs/claim_source_matrix.md \
             website/sources.html \
             website/research-lineage.html \
+            website/start-here.html \
+            website/research-map.html \
             scripts/prepare_website.py \
             tests/test_readme_research_orientation.py \
             tests/test_main_page_visual_paper.py \
