@@ -1,5 +1,6 @@
 name: promote-p88-public-frontier
 
+# One-shot guarded synchronization for the P88 frontier publication.
 on:
   push:
     branches: ["main"]
