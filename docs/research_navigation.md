@@ -2,11 +2,28 @@
 
 **Use this page when you know what kind of detail you want and need the shortest route to it.**
 
-This page is an index, not another chapter. If you are still learning the overall story, go one layer up to the **[Research Map](research_map.md)**.
+This is an index, not another chapter. For the public story first, use the **[Research Map](research_map.md)** or the **[public Research Navigation page](../website/research-navigation.html)**.
 
-The public theorem frontier is **P87**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains open.
+The public proposition record contains **87 proposition-level results, P1 through P87**. The current theorem frontier is **P87**. The formal release is **v0.82.0**. The final physical-to-experiential bridge remains open.
 
----
+## Canonical branch order
+
+The public website and technical navigation use the same branch names, order, and proposition ranges. Conceptual card numbers are intentionally not used.
+
+| Proposition range | Branch | Best starting point |
+| --- | --- | --- |
+| **P1-P10** | **Foundations** | [Theorem Roadmap](theorem_roadmap.md) |
+| **P11-P18** | **Physical description** | [Technical Research Architecture](research_architecture.md) |
+| **P19-P24** | **Candidate bridge class** | [P19: Fundamental Physical Sufficiency](proposition_19_fundamental_physical_sufficiency.md) |
+| **P25-P37** | **Operational scale** | [Theorem Roadmap](theorem_roadmap.md) |
+| **P38-P44** | **Quantum interface** | [Quantum Foundations and Bridge Test](quantum_foundations_and_bridge_test.md) |
+| **P45-P60** | **Adaptive evidence acquisition** | [Theorem Roadmap](theorem_roadmap.md) |
+| **P61-P70** | **Calibration and optimization** | [Calibration and Optimization Frontier](calibration_optimization_frontier_p61_p70.md) |
+| **P71** | **Target provenance** | [P71: Target Provenance Noncircularity](proposition_71_target_provenance_noncircularity.md) |
+| **P72** | **Target measurement** | [P72: Target Measurement Channel Robustness](proposition_72_target_measurement_channel_robustness.md) |
+| **P73-P87** | **Channel recovery and model testing** | [P73](proposition_73_target_channel_identifiability.md) through [P87](proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md) |
+
+This ordering is both conceptually readable and numerically monotone. The proposition number remains the formal result identifier; the branch label explains the scientific role of that range.
 
 ## Choose by question
 
@@ -24,81 +41,9 @@ The public theorem frontier is **P87**. The formal release is **v0.82.0**. The f
 | Definitions of recurring terms | [Glossary](glossary.md) |
 | Citation guidance | [Citation Guide](../CITATION.md) |
 
----
+## Current frontier: P87
 
-## Choose by scientific branch
-
-### Physical foundations
-
-**Question:** What physical structure is actually being described, and which parts are invariant, identifiable, causal, temporal, compositional, or dependent on scale?
-
-**Results:** P1 through P18, and P25 through P37
-
-**Start with:** [Technical Research Architecture](research_architecture.md) · [Theorem Roadmap](theorem_roadmap.md)
-
----
-
-### Physical sufficiency
-
-**Question:** Does the declared physical descriptor preserve every distinction required by an independently specified target?
-
-**Results:** P19 through P24
-
-**Start with:** [P19: Fundamental Physical Sufficiency](proposition_19_fundamental_physical_sufficiency.md)
-
-Then use the [Theorem Roadmap](theorem_roadmap.md) for the extensions involving finite data, refinement, selection, and repeated analysis.
-
----
-
-### Quantum operational branch
-
-**Question:** What can a complete operational quantum description establish, and what still requires an independent bridge principle?
-
-**Results:** P38 through P44
-
-**Start with:** [Quantum Foundations and Bridge Test](quantum_foundations_and_bridge_test.md)
-
----
-
-### Experiment design and calibration
-
-**Question:** How should evidence be collected, scheduled, and allocated without losing statistical validity or wasting resources?
-
-**Results:** P45 through P70
-
-**Start with:** [Theorem Roadmap](theorem_roadmap.md) · [Calibration and Optimization Frontier](calibration_optimization_frontier_p61_p70.md)
-
----
-
-### Target integrity and measurement
-
-**Question:** Is the target independent of the physical descriptor, and can its measurement be trusted?
-
-**Results:** P71 through P74
-
-This branch addresses circular targets, noisy observation, identifiability of the measurement channel, and recovery from finite data.
-
-**Start with:** [P71: Target Provenance Noncircularity](proposition_71_target_provenance_noncircularity.md)
-
-Then follow P72 through P74 in the [Detailed Proposition Record](detailed_proposition_record.md).
-
----
-
-### Model adequacy and exact separation
-
-**Question:** Can the declared model of the target and its measurement actually reproduce the observations, or can it be rejected under its own assumptions?
-
-**Results:** P75 through P87
-
-This branch moves from model adequacy to rejection with finite data, separation from the complete declared model set, certified bounds for continuous families, and increasingly strong exact tests that preserve shared parameters.
-
-**Start with:** [P75: Target Model Adequacy](proposition_75_target_model_adequacy_overidentification.md)
-
-**Current frontier:** [P87: Exact Bounded Primitive Four Event Projection Parity Functional Certificate](proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md)
-
----
-
-## Audit the current frontier without searching folders
+P87 sits in **Channel recovery and model testing**, the final public branch, whose canonical proposition range is **P73-P87**.
 
 For P87:
 
@@ -111,56 +56,19 @@ For P87:
 | Figure | [P87 theorem figure](figures/p87_exact_bounded_primitive_quad_projection_parity.svg) |
 | Repository reproduction | [Reproducibility Guide](reproducibility.md) |
 
-P87 is a conditional model separation result for the declared P75 family. It does not identify the latent state with consciousness or close the final bridge from physical description to experience.
-
----
-
 ## How to audit any proposition
 
 Every mature result is intended to follow the same chain:
 
-**question → assumptions → theorem → proof → implementation → tests → provenance → scientific boundary**
+**question -> assumptions -> theorem -> proof -> implementation -> tests -> provenance -> scientific boundary**
 
-You do not need every link for every purpose.
+Use the [Detailed Proposition Record](detailed_proposition_record.md) for the complete P1-P87 chronological audit trail, the [Theorem Roadmap](theorem_roadmap.md) for dependencies, the [Figure Catalog](figure_catalog.md) for visuals, and the [Reproducibility Guide](reproducibility.md) for code and verification.
 
-- If you want the **idea**, read the proposition introduction and conclusion.
-- If you want the **mathematics**, read the theorem and proof.
-- If you want to **verify the computation**, inspect the source and tests.
-- If you want to know **where an equation came from**, open its provenance record.
-- If you want to know **what the result does not establish**, read the scientific boundary section.
+## Public scientific boundary
 
-The [Detailed Proposition Record](detailed_proposition_record.md) is the complete proposition audit trail.
+**P87 is a conditional model-separation result for the declared P75 target-measurement family. It does not identify a latent state with consciousness, prove that consciousness is nonphysical, or complete the physical-to-experiential bridge. The final bridge remains open.**
 
----
-
-## Choose by background
-
-| Your background | Suggested path |
-| --- | --- |
-| Physics | [Research Map](research_map.md) → [Technical Research Architecture](research_architecture.md) → [Quantum branch](quantum_foundations_and_bridge_test.md) |
-| Mathematics | [Research Map](research_map.md) → [Theorem Roadmap](theorem_roadmap.md) → proposition proofs |
-| Statistics and inference | [P19](proposition_19_fundamental_physical_sufficiency.md) → P20 through P24 → P74 through P87 via [Detailed Proposition Record](detailed_proposition_record.md) |
-| Consciousness science | [Bridge Problem](bridge_problem.md) → [Falsification Program](falsification_program.md) → P71 through P87 |
-| Software and reproducibility | [Reproducibility Guide](reproducibility.md) → [`src/`](../src/) → [`tests/`](../tests/) |
-| Visual learner | [Figure Catalog](figure_catalog.md) → [Visual Atlas](../website/visual-atlas.html) |
-
----
-
-## Where the complete detail lives
-
-This page intentionally does **not** duplicate the full 87 proposition index.
-
-Use:
-
-- **[Detailed Proposition Record](detailed_proposition_record.md)** for the complete chronological record;
-- **[Theorem Roadmap](theorem_roadmap.md)** for mathematical dependencies;
-- **[Equation and Citation Map](equation_and_citation_map.md)** for provenance;
-- **[Figure Catalog](figure_catalog.md)** for the complete visual record;
-- **[Reproducibility Guide](reproducibility.md)** for code and verification.
-
-That separation is deliberate: each page should have one job.
-
----
+That same boundary wording is used on the public Overview, Plain Language, Start Here, Research Map, Research Navigation, Visual Atlas, and Reproducibility pages so the scientific claim does not change with the entry point.
 
 **One layer up:** [Research Map](research_map.md)  
 **Formal dependency layer:** [Theorem Roadmap](theorem_roadmap.md)  
