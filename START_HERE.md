@@ -22,7 +22,7 @@ What information about the system are we actually using?
 
 A claim cannot be stronger than the description it begins with. The project therefore asks what is measured, what changes over time, what can be intervened on, and what information may have been left out.
 
-**[Explore the physical side →](docs/research_architecture.md)**
+**[See where this fits in the Research Map →](docs/research_map.md#chapter-1--what-physical-system-are-we-talking-about)**
 
 ### 2. Keep the target independent
 
@@ -30,15 +30,15 @@ If we want to know whether physics explains an experience-related distinction, w
 
 The target needs its own scientific justification.
 
-**[Explore the bridge problem →](docs/bridge_problem.md)**
+**[See where this fits in the Research Map →](docs/research_map.md#chapter-3--is-the-target-independent-or-did-we-build-the-answer-into-it)**
 
 ### 3. Test the measurement and the model
 
-Reports, behavior, labels, and other observations can be incomplete or noisy. A mathematical model can also fit some features of the data while still being wrong.
+Reports, behavior, labels, and other observations can be incomplete or noisy. A mathematical model can also fit some features of the data while still be wrong.
 
 The research therefore asks whether the observations are trustworthy and whether the proposed model makes constraints that can genuinely fail.
 
-**[See the falsification program →](docs/falsification_program.md)**
+**[See where this fits in the Research Map →](docs/research_map.md#chapter-4--can-the-proposed-model-be-wrong)**
 
 ### 4. Ask whether the result survives uncertainty
 
@@ -46,7 +46,7 @@ A promising pattern is not enough by itself. Finite data, numerical approximatio
 
 The later work develops ways to make those conclusions auditable and reproducible.
 
-**[See the reproducibility guide →](docs/reproducibility.md)**
+**[See where this fits in the Research Map →](docs/research_map.md#chapter-5--does-the-conclusion-survive-uncertainty)**
 
 ---
 
@@ -73,9 +73,10 @@ You do not need to read 87 propositions to understand the project.
 
 | I want to... | Open this |
 | --- | --- |
-| See the whole scientific structure visually | **[Research Architecture](docs/research_architecture.md)** |
+| See the whole research story without equations | **[Research Map](docs/research_map.md)** |
 | Understand the central bridge question more formally | **[Bridge Problem](docs/bridge_problem.md)** |
 | Browse the research through figures | **[Figure Catalog](docs/figure_catalog.md)** |
+| Move into the formal scientific architecture | **[Technical Research Architecture](docs/research_architecture.md)** |
 | See how the mathematical results depend on one another | **[Theorem Roadmap](docs/theorem_roadmap.md)** |
 | Read the current frontier result | **[P87](docs/proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md)** |
 | Inspect every proposition in the complete technical record | **[Detailed Proposition Record](docs/detailed_proposition_record.md)** |
@@ -98,9 +99,9 @@ That openness is intentional. The purpose of the project is to make the path tow
 
 ## Where to go next
 
-For a conceptual overview, continue to **[Research Architecture](docs/research_architecture.md)**.
+For the best next step, continue to the **[Research Map](docs/research_map.md)**. It explains how the major scientific questions connect without requiring equations or theorem numbers.
 
-For the complete mathematics, go to the **[Theorem Roadmap](docs/theorem_roadmap.md)**.
+When you are ready for the formal structure, continue to **[Technical Research Architecture](docs/research_architecture.md)** or the **[Theorem Roadmap](docs/theorem_roadmap.md)**.
 
 For the full proposition-by-proposition audit trail, open the **[Detailed Proposition Record](docs/detailed_proposition_record.md)**.
 
