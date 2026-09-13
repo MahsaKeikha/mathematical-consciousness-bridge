@@ -8,6 +8,7 @@
     { file: 'research-map.html', label: 'Research II: Bridge Map' },
     { file: 'physics-mathematics.html', label: 'Physics & Math' },
     { file: 'visual-atlas.html', label: 'Visual Atlas' },
+    { file: 'implementation.html', label: 'Implementation' },
     { file: 'sources.html', label: 'Sources' },
   ];
 
