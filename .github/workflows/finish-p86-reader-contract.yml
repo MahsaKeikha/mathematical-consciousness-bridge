@@ -1,0 +1,131 @@
+name: finish-p86-reader-contract
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/finish-p86-reader-contract.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  finish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Normalize P86 Research Map and regression expectations
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("website/research-map.html")
+          text = path.read_text(encoding="utf-8")
+          text = text.replace(
+              "while P85 tests exact three-event shared-parameter parity functionals beyond that complete pairwise certificate.",
+              "while P85 tests exact three-event shared-parameter parity functionals beyond that complete pairwise certificate, and P86 adds exact minimally weighted four-event functionals with primitive coefficient magnitudes {1,1,1,2} beyond the complete P85 certificate.",
+          )
+          text = text.replace(
+              "culminating in P85 exact three-event shared-parameter parity-functional separation.",
+              "culminating in P86 exact minimally weighted four-event shared-parameter parity-functional separation.",
+          )
+          text = text.replace(
+              'href="index.html#p85-frontier">Continue to the current P86 frontier</a>',
+              'href="index.html#p86-frontier">Continue to the current P86 frontier</a>',
+          )
+          text = text.replace(
+              "P77-P85: from full-law rejection to exact dependency-aware certification",
+              "P77-P86: from full-law rejection to exact dependency-aware certification",
+          )
+          for token in (
+              "P86 adds exact minimally weighted four-event functionals",
+              "culminating in P86 exact minimally weighted four-event",
+              'href="index.html#p86-frontier">Continue to the current P86 frontier</a>',
+              "P77-P86: from full-law rejection to exact dependency-aware certification",
+          ):
+              if token not in text:
+                  raise RuntimeError(f"research map missing {token!r}")
+          path.write_text(text, encoding="utf-8")
+
+          path = Path("tests/test_reader_experience.py")
+          text = path.read_text(encoding="utf-8")
+          replacements = {
+              "test_first_reader_surfaces_match_p85_frontier": "test_first_reader_surfaces_match_p86_frontier",
+              "The 85 propositions by scientific role": "The 86 propositions by scientific role",
+              "You do not need to read 85 proofs in order": "You do not need to read 86 proofs in order",
+              "complete 85-result dependency structure": "complete 86-result dependency structure",
+              "through Proposition 85": "through Proposition 86",
+              "Eighty-five results": "Eighty-six results",
+              '"<strong>85</strong>"': '"<strong>86</strong>"',
+              "P73-P85": "P73-P86",
+              "<strong>85</strong><span>proposition-level results</span>": "<strong>86</strong><span>proposition-level results</span>",
+              "<strong>P85</strong><span>current theorem frontier</span>": "<strong>P86</strong><span>current theorem frontier</span>",
+              "What the 85 results are doing": "What the 86 results are doing",
+              "P75-P85": "P75-P86",
+              "actual P85 research frontier": "actual P86 research frontier",
+              "shows how all 85 results connect": "shows how all 86 results connect",
+              "test_no_reader_facing_html_page_advertises_p84_as_current": "test_no_reader_facing_html_page_advertises_pre_p86_as_current",
+              "test_repository_verifier_tracks_p85_and_all_85_propositions": "test_repository_verifier_tracks_p86_and_all_86_propositions",
+              'CURRENT_FRONTIER = \"P85\"': 'CURRENT_FRONTIER = \"P86\"',
+              "range(1, 86)": "range(1, 87)",
+              "proposition_85_exact_triple_projection_parity_functional.md": "proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md",
+          }
+          for old, new in replacements.items():
+              text = text.replace(old, new)
+          stale_insert = '''        "<strong>85</strong><span>proposition-level results</span>",
+                  "<strong>P85</strong><span>current theorem frontier</span>",
+                  "current P85 frontier",
+                  "actual P85 research frontier",
+                  "What the 85 results are doing",
+                  "shows how all 85 results connect",
+                  "through Proposition 85",
+                  "Eighty-five results",
+                  "The 85 propositions by scientific role",
+                  "complete 85-result dependency structure",
+                  "You do not need to read 85 proofs in order",
+          '''
+          marker = '        "<strong>84</strong><span>proposition-level results</span>",\n'
+          if "current P85 frontier" not in text[text.index("stale_current_frontier_tokens"):]:
+              text = text.replace(marker, stale_insert + marker, 1)
+          path.write_text(text, encoding="utf-8")
+
+          path = Path("tests/test_website_research_orientation.py")
+          text = path.read_text(encoding="utf-8")
+          replacements = {
+              "Eighty-five results, one dependency-aware scientific program": "Eighty-six results, one dependency-aware scientific program",
+              "P73-P85": "P73-P86",
+              "index.html#p85-frontier": "index.html#p86-frontier",
+              "test_research_map_presents_p77_through_p85_with_p84_history": "test_research_map_presents_p77_through_p86_with_p84_history",
+              "through Proposition 85": "through Proposition 86",
+              "p85_navigation": "p86_navigation",
+              'href="index.html#p85-frontier">Continue to the current P85 frontier</a>': 'href="index.html#p86-frontier">Continue to the current P86 frontier</a>',
+              "P77-P85: from full-law rejection to exact dependency-aware certification": "P77-P86: from full-law rejection to exact dependency-aware certification",
+          }
+          for old, new in replacements.items():
+              text = text.replace(old, new)
+          text = text.replace(
+              '    assert "P85 tests exact three-event shared-parameter parity functionals" in text\n',
+              '    assert "P85 tests exact three-event shared-parameter parity functionals" in text\n    assert "P86 adds exact minimally weighted four-event functionals" in text\n',
+          )
+          path.write_text(text, encoding="utf-8")
+          PY
+      - name: Install test environment
+        run: python -m pip install -e ".[dev]"
+      - name: Verify P86 reader contract
+        run: |
+          python -m pytest tests/test_reader_experience.py tests/test_website_research_orientation.py tests/test_frontier_reader_narrative.py tests/test_public_reader_navigation_frontier.py tests/test_weighted_quad_projection_parity_functional_separation.py
+          python scripts/verify_repository.py
+          git diff --check
+      - name: Commit fixes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add website/research-map.html tests/test_reader_experience.py tests/test_website_research_orientation.py
+          git commit -m "Complete P86 reader regression contract"
+          git push origin HEAD:main
