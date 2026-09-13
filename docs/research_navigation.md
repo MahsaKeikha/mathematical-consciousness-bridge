@@ -4,7 +4,7 @@
 
 This page is an index, not another chapter. If you are still learning the overall story, go one layer up to the **[Research Map](research_map.md)**.
 
-The public theorem frontier is **P87**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains open.
+The current documented theorem frontier is **P88**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains open.
 
 ---
 
@@ -88,30 +88,36 @@ Then follow P72 through P74 in the [Detailed Proposition Record](detailed_propos
 
 **Question:** Can the declared model of the target and its measurement actually reproduce the observations, or can it be rejected under its own assumptions?
 
-**Results:** P75 through P87
+**Results:** P75 through P88
 
 This branch moves from model adequacy to rejection with finite data, separation from the complete declared model set, certified bounds for continuous families, and increasingly strong exact tests that preserve shared parameters.
 
 **Start with:** [P75: Target Model Adequacy](proposition_75_target_model_adequacy_overidentification.md)
 
-**Current frontier:** [P87: Exact Bounded Primitive Four Event Projection Parity Functional Certificate](proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md)
+**Current frontier:** [P88: Exact Radius-3 Bounded Primitive Four-Event Projection-Parity Functional Certificate](proposition_88_exact_radius3_bounded_primitive_quad_projection_parity_functional.md)
 
 ---
 
 ## Audit the current frontier without searching folders
 
-For P87:
+For P88:
 
 | What you want | Direct link |
 | --- | --- |
-| The theorem and proof | [P87 proposition](proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md) |
-| Equation and method provenance | [P87 provenance](p87_equation_provenance.md) |
-| Implementation | [`bounded_primitive_quad_projection_parity_functional_separation.py`](../src/consciousness_bridge/bounded_primitive_quad_projection_parity_functional_separation.py) |
-| Regression tests | [`test_bounded_primitive_quad_projection_parity_functional_separation.py`](../tests/test_bounded_primitive_quad_projection_parity_functional_separation.py) |
-| Figure | [P87 theorem figure](figures/p87_exact_bounded_primitive_quad_projection_parity.svg) |
+| The theorem and proof | [P88 proposition](proposition_88_exact_radius3_bounded_primitive_quad_projection_parity_functional.md) |
+| Equation and method provenance | [P88 provenance](p88_equation_provenance.md) |
+| Implementation | [`bounded_primitive_radius3_quad_projection_parity_functional_separation.py`](../src/consciousness_bridge/bounded_primitive_radius3_quad_projection_parity_functional_separation.py) |
+| Regression tests | [`test_bounded_primitive_radius3_quad_projection_parity_functional_separation.py`](../tests/test_bounded_primitive_radius3_quad_projection_parity_functional_separation.py) |
+| Figure | [P88 theorem figure](figures/p88_exact_radius3_bounded_primitive_quad_projection_parity.svg) |
 | Repository reproduction | [Reproducibility Guide](reproducibility.md) |
 
-P87 is a conditional model separation result for the declared P75 family. It does not identify the latent state with consciousness or close the final bridge from physical description to experience.
+P88 is a conditional exact model-separation result for the declared P75 family. It keeps the event order fixed, enlarges the complete primitive coefficient box to `0 < |c_i| <= 3`, and gives the exact shared-witness hierarchy
+
+\[
+L_{85}=0<L_{86}=\frac1{192}<L_{87}=\frac1{96}<L_{88}=\frac1{64}.
+\]
+
+It does not identify the latent state with consciousness or close the final bridge from physical description to experience.
 
 ---
 
@@ -139,8 +145,8 @@ The [Detailed Proposition Record](detailed_proposition_record.md) is the complet
 | --- | --- |
 | Physics | [Research Map](research_map.md) → [Technical Research Architecture](research_architecture.md) → [Quantum branch](quantum_foundations_and_bridge_test.md) |
 | Mathematics | [Research Map](research_map.md) → [Theorem Roadmap](theorem_roadmap.md) → proposition proofs |
-| Statistics and inference | [P19](proposition_19_fundamental_physical_sufficiency.md) → P20 through P24 → P74 through P87 via [Detailed Proposition Record](detailed_proposition_record.md) |
-| Consciousness science | [Bridge Problem](bridge_problem.md) → [Falsification Program](falsification_program.md) → P71 through P87 |
+| Statistics and inference | [P19](proposition_19_fundamental_physical_sufficiency.md) → P20 through P24 → P74 through P88 via [Detailed Proposition Record](detailed_proposition_record.md) |
+| Consciousness science | [Bridge Problem](bridge_problem.md) → [Falsification Program](falsification_program.md) → P71 through P88 |
 | Software and reproducibility | [Reproducibility Guide](reproducibility.md) → [`src/`](../src/) → [`tests/`](../tests/) |
 | Visual learner | [Figure Catalog](figure_catalog.md) → [Visual Atlas](../website/visual-atlas.html) |
 
@@ -148,7 +154,7 @@ The [Detailed Proposition Record](detailed_proposition_record.md) is the complet
 
 ## Where the complete detail lives
 
-This page intentionally does **not** duplicate the full 87 proposition index.
+This page intentionally does **not** duplicate the full 88 proposition index.
 
 Use:
 
