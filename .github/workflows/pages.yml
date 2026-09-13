@@ -42,6 +42,8 @@ jobs:
         run: |
           grep -q 'What would a scientifically testable bridge from physical description to experience actually require?' _site/index.html
           grep -q 'Explore all 87 results' _site/index.html
+          grep -q 'Current record:</strong> 87 proposition-level results through P87' _site/index.html
+          ! grep -q 'Current record:</strong> 86 proposition-level results through P86' _site/index.html
           grep -q 'What are we actually trying to find out?' _site/plain-language.html
           grep -q 'Explain it in 60 seconds' _site/plain-language.html
           grep -q 'Seven questions have to be kept separate' _site/plain-language.html
