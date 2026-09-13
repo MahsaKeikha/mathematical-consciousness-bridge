@@ -6,6 +6,7 @@ on:
     paths:
       - ".github/workflows/promote-p88-public-frontier.yml"
       - "scripts/promote_p88_public_frontier.py"
+      - "tests/test_figure_publication_sync.py"
   workflow_dispatch:
 
 permissions:
