@@ -1,76 +1,58 @@
 (() => {
+  const PROGRAM = Object.freeze({
+    resultCount: 87,
+    frontier: 'P87',
+    release: 'v0.82.0',
+    boundary:
+      'P87 is a conditional model-separation result for the declared P75 target-measurement family. It does not identify a latent state with consciousness, prove that consciousness is nonphysical, or complete the physical-to-experiential bridge. The final bridge remains open.',
+  });
+
   const PAGES = [
     { file: 'index.html', label: 'Overview' },
     { file: 'plain-language.html', label: 'Plain Language' },
     { file: 'start-here.html', label: 'Start Here' },
-    { file: 'observer-research.html', label: 'Research I: Observer Mathematics' },
-    { file: 'research-lineage.html', label: 'Research Lineage' },
-    { file: 'research-map.html', label: 'Research II: Bridge Map' },
-    { file: 'physics-mathematics.html', label: 'Physics & Math' },
+    { file: 'research-map.html', label: 'Research Map' },
+    { file: 'research-navigation.html', label: 'Research Navigation' },
     { file: 'visual-atlas.html', label: 'Visual Atlas' },
-    { file: 'implementation.html', label: 'Implementation' },
+    { file: 'physics-mathematics.html', label: 'Physics & Mathematics' },
+    { file: 'implementation.html', label: 'Reproducibility' },
     { file: 'sources.html', label: 'Sources' },
   ];
 
-  const NAV_GROUPS = [
+  const EXPLORE_ITEMS = [
     {
-      label: 'Research',
-      className: 'research-menu',
-      items: [
-        {
-          file: 'observer-research.html',
-          kicker: 'Research I',
-          label: 'Observer mathematics',
-          description: 'Spacetime, causal access, observer readouts, metrics, interventions, and robustness.',
-        },
-        {
-          file: 'research-lineage.html',
-          kicker: 'Scientific handoff',
-          label: 'Research lineage',
-          description: 'What carries from the physical observer program into the bridge program, and what does not.',
-        },
-        {
-          file: 'research-map.html',
-          kicker: 'Research II',
-          label: 'Bridge research map',
-          description: 'The physical to experiential test architecture through the current public frontier P87.',
-        },
-        {
-          file: 'physics-mathematics.html',
-          kicker: 'Foundations',
-          label: 'Physics & mathematics',
-          description: 'The physical, information theoretic, statistical, and quantum foundations used by Research II.',
-        },
-      ],
+      file: 'research-navigation.html',
+      kicker: 'Index',
+      label: 'Research navigation',
+      description: 'Choose the shortest route to a branch, theorem range, proof, figure, or audit record.',
     },
     {
-      label: 'Explore',
-      className: 'explore-menu',
-      items: [
-        {
-          file: 'visual-atlas.html',
-          kicker: 'Figures',
-          label: 'Visual atlas',
-          description: 'Browse a curated visual path through the research program.',
-        },
-        {
-          file: 'implementation.html',
-          kicker: 'Audit',
-          label: 'Implementation',
-          description: 'Follow a result from theorem statement to code, tests, figures, and reproducibility.',
-        },
-        {
-          file: 'sources.html',
-          kicker: 'Provenance',
-          label: 'Sources',
-          description: 'Follow equations, references, provenance records, and citation boundaries.',
-        },
-      ],
+      file: 'visual-atlas.html',
+      kicker: 'Figures',
+      label: 'Visual atlas',
+      description: 'Browse a curated visual path through the same research program.',
+    },
+    {
+      file: 'physics-mathematics.html',
+      kicker: 'Formal layer',
+      label: 'Physics & mathematics',
+      description: 'Open the definitions, equations, assumptions, and theorem structure.',
+    },
+    {
+      file: 'implementation.html',
+      kicker: 'Audit',
+      label: 'Reproducibility',
+      description: 'Follow claims into code, tests, figures, provenance, and reproducible checks.',
+    },
+    {
+      file: 'sources.html',
+      kicker: 'Provenance',
+      label: 'Sources',
+      description: 'Trace references, equation provenance, source roles, and citation boundaries.',
     },
   ];
 
   const REPO = 'https://github.com/MahsaKeikha/mathematical-consciousness-bridge';
-  const OBSERVER_REPO = 'https://github.com/MahsaKeikha/spatiotemporal-observer-math';
 
   const propositionLinks = {
     19: `${REPO}/blob/main/docs/proposition_19_fundamental_physical_sufficiency.md`,
@@ -107,22 +89,22 @@
     return link;
   }
 
-  function createDropdown(group, current) {
+  function createExploreDropdown(current) {
     const details = document.createElement('details');
-    details.className = `nav-dropdown ${group.className}`;
-    if (group.items.some((item) => item.file === current)) {
+    details.className = 'nav-dropdown explore-menu';
+    if (EXPLORE_ITEMS.some((item) => item.file === current)) {
       details.classList.add('contains-current');
     }
 
     const summary = document.createElement('summary');
     summary.className = 'nav-dropbtn';
-    summary.textContent = group.label;
-    summary.setAttribute('aria-label', `${group.label} navigation`);
+    summary.textContent = 'Explore';
+    summary.setAttribute('aria-label', 'Explore navigation');
     details.append(summary);
 
     const menu = document.createElement('div');
     menu.className = 'nav-dropdown-menu';
-    group.items.forEach((item) => {
+    EXPLORE_ITEMS.forEach((item) => {
       const link = document.createElement('a');
       link.href = item.file;
       link.className = 'nav-dropdown-item';
@@ -149,7 +131,8 @@
     nav.append(createSimpleNavLink('index.html', 'Overview', file));
     nav.append(createSimpleNavLink('plain-language.html', 'Plain Language', file));
     nav.append(createSimpleNavLink('start-here.html', 'Start Here', file));
-    NAV_GROUPS.forEach((group) => nav.append(createDropdown(group, file)));
+    nav.append(createSimpleNavLink('research-map.html', 'Research Map', file));
+    nav.append(createExploreDropdown(file));
 
     const repo = document.createElement('a');
     repo.href = REPO;
@@ -192,12 +175,49 @@
     });
   }
 
+  function ensureProgramStatus() {
+    const hero = document.querySelector('main .hero');
+    if (!hero) return;
+
+    let grid = hero.querySelector('[data-program-status]');
+    if (!grid) {
+      grid = document.createElement('div');
+      grid.className = 'status-grid program-status';
+      grid.setAttribute('data-program-status', 'true');
+      grid.setAttribute('aria-label', 'Current research status');
+      hero.append(grid);
+    }
+
+    grid.innerHTML = `
+      <div><strong>${PROGRAM.resultCount}</strong><span>proposition-level results</span></div>
+      <div><strong>${PROGRAM.frontier}</strong><span>current theorem frontier</span></div>
+      <div><strong>${PROGRAM.release}</strong><span>formal release</span></div>
+      <div><strong>Open</strong><span>final physical-to-experiential bridge</span></div>`;
+
+    let note = hero.querySelector('.program-boundary-note');
+    if (!note) {
+      note = document.createElement('p');
+      note.className = 'program-boundary-note';
+      grid.insertAdjacentElement('afterend', note);
+    }
+    note.innerHTML = `<strong>Scientific boundary:</strong> ${PROGRAM.boundary}`;
+  }
+
+  function normalizeBoundaryBlocks() {
+    document.querySelectorAll('[data-public-boundary]').forEach((block) => {
+      block.innerHTML = `
+        <p class="eyebrow">Scientific boundary</p>
+        <h2>What the current frontier does and does not establish</h2>
+        <p>${PROGRAM.boundary}</p>`;
+    });
+  }
+
   function addBreadcrumbs() {
     const main = document.querySelector('main');
     if (!main || main.querySelector('.breadcrumbs')) return;
     const file = currentFile();
-    const current = PAGES.find((page) => page.file === file) || PAGES[0];
-    if (current.file === 'index.html') return;
+    const current = PAGES.find((page) => page.file === file);
+    if (!current || current.file === 'index.html') return;
 
     const trail = document.createElement('nav');
     trail.className = 'breadcrumbs';
@@ -206,56 +226,30 @@
     main.insertBefore(trail, main.firstChild);
   }
 
-  function addLineageCallout() {
-    const file = currentFile();
-    if (!['index.html', 'start-here.html', 'research-map.html'].includes(file)) return;
-    const main = document.querySelector('main');
-    const hero = main?.querySelector('.hero');
-    if (!main || !hero || main.querySelector('.lineage-callout')) return;
-
-    const section = document.createElement('section');
-    section.className = 'lineage-callout';
-    section.innerHTML = `
-      <div class="lineage-callout-copy">
-        <p class="eyebrow">Two connected research programs</p>
-        <h2>Begin with the physical subsystem, then follow the bridge question</h2>
-        <p><strong>Research I: Spatiotemporal Observer Mathematics</strong> develops the physical and operational observer architecture. <strong>Research II: Mathematical Consciousness Bridge</strong> begins after that physical description problem and asks what additional sufficiency, target, measurement, model adequacy, and falsification conditions a physical to experiential claim must satisfy.</p>
-      </div>
-      <div class="lineage-callout-actions">
-        <a class="lineage-mini-card" href="observer-research.html"><span>Research I</span><strong>Spatiotemporal Observer Mathematics</strong><small>Dedicated previous research page</small></a>
-        <a class="lineage-mini-card current" href="research-lineage.html"><span>Research lineage</span><strong>See the scientific handoff</strong><small>What carries forward and what remains open</small></a>
-        <a class="lineage-mini-card" href="research-map.html"><span>Research II</span><strong>Mathematical Consciousness Bridge</strong><small>Current bridge test program</small></a>
-      </div>`;
-    hero.insertAdjacentElement('afterend', section);
-  }
-
   function addReaderTrail() {
     const main = document.querySelector('main');
     if (!main || main.querySelector('.reader-trail')) return;
     const file = currentFile();
     const index = PAGES.findIndex((page) => page.file === file);
-    if (index < 0) return;
+    if (index <= 0) return;
 
-    const trail = document.createElement('section');
-    trail.className = 'reader-trail';
     const previous = PAGES[index - 1];
     const next = PAGES[index + 1];
+    const trail = document.createElement('section');
+    trail.className = 'reader-trail';
 
-    const previousHtml = previous
-      ? `<a class="trail-card previous" href="${previous.file}"><span>Previous</span><strong>${previous.label}</strong><small>Move back in the guided reading path</small></a>`
-      : `<a class="trail-card previous" href="${OBSERVER_REPO}"><span>Research I</span><strong>Observer Mathematics</strong><small>See the physical subsystem foundation</small></a>`;
     const nextHtml = next
       ? `<a class="trail-card next" href="${next.file}"><span>Next</span><strong>${next.label}</strong><small>Continue through the guided research path</small></a>`
-      : `<a class="trail-card next" href="research-map.html"><span>Continue</span><strong>Research Map</strong><small>Return to the complete theorem program</small></a>`;
+      : `<a class="trail-card next" href="research-map.html"><span>Continue</span><strong>Research Map</strong><small>Return to the complete research structure</small></a>`;
 
     trail.innerHTML = `
       <div class="reader-trail-head">
         <p class="eyebrow">Continue reading</p>
-        <h2>Follow the research without losing your place</h2>
+        <h2>Follow one coherent public research path</h2>
       </div>
       <div class="reader-trail-grid">
-        ${previousHtml}
-        <a class="trail-card map" href="research-lineage.html"><span>Lineage</span><strong>Research I to Research II</strong><small>See how the physical observer work leads into the bridge program</small></a>
+        <a class="trail-card previous" href="${previous.file}"><span>Previous</span><strong>${previous.label}</strong><small>Move back one layer</small></a>
+        <a class="trail-card map" href="research-map.html"><span>Map</span><strong>Research Map</strong><small>See all ten branches in proposition order</small></a>
         ${nextHtml}
       </div>`;
     main.append(trail);
@@ -312,11 +306,10 @@
 
   function addResearchAnchors() {
     if (currentFile() !== 'research-map.html') return;
-    document.querySelectorAll('section').forEach((section) => {
-      if (section.id) return;
-      const text = section.textContent || '';
-      const number = propositionNumber(text);
-      if (number) section.id = `p${number}`;
+    document.querySelectorAll('[data-range]').forEach((element) => {
+      if (element.id) return;
+      const first = (element.getAttribute('data-range') || '').match(/P(\d+)/i);
+      if (first) element.id = `p${first[1]}`;
     });
 
     if (window.location.hash) {
@@ -357,15 +350,15 @@
       if (parent && parent.closest('script, style, pre, code')) return;
       let text = node.nodeValue || '';
       text = text.replace(/[\u2013\u2014]/g, ', ');
-      text = text.replace(/([A-Za-z])-([A-Za-z])/g, '$1 $2');
       node.nodeValue = text;
     });
   }
 
   document.addEventListener('DOMContentLoaded', () => {
     ensureNavigation();
+    ensureProgramStatus();
+    normalizeBoundaryBlocks();
     addBreadcrumbs();
-    addLineageCallout();
     addResearchAnchors();
     activateCards();
     addReaderTrail();
