@@ -20,20 +20,55 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12.14"
-      - name: Correct the permanent P86 section matcher
+      - name: Permanently harden Visual Atlas synchronization
         run: |
           python - <<'PY'
           from pathlib import Path
 
           path = Path("scripts/sync_figure_publication.py")
           text = path.read_text(encoding="utf-8")
-          old = r'''r'<section id="p86-frontier"\b.*?</section>' '''.strip()
-          new = r'''r'<section id="p86-frontier".*?</section>' '''.strip()
-          if old in text:
-              text = text.replace(old, new, 1)
-              path.write_text(text, encoding="utf-8")
-          elif new not in text:
-              raise SystemExit("could not locate the P86 section matcher")
+
+          matcher_old = r'''r'<section id="p86-frontier"\b.*?</section>' '''.strip()
+          matcher_new = r'''r'<section id="p86-frontier".*?</section>' '''.strip()
+          text = text.replace(matcher_old, matcher_new, 1)
+
+          start = text.index("def _normalize_visual_atlas(text: str) -> str:")
+          end = text.index("\ndef _expected_outputs()", start)
+          replacement = '''def _normalize_visual_atlas(text: str) -> str:
+    start_marker = "<!-- current-frontier-visual: P86:start -->"
+    end_marker = "<!-- current-frontier-visual: P86:end -->"
+    block = start_marker + "\\n" + _p86_visual_section() + "\\n" + end_marker
+
+    has_start = start_marker in text
+    has_end = end_marker in text
+    if has_start or has_end:
+        if not (has_start and has_end):
+            raise RuntimeError("incomplete P86 Visual Atlas synchronization markers")
+        pattern = re.compile(
+            re.escape(start_marker) + r".*?" + re.escape(end_marker),
+            re.DOTALL,
+        )
+        text, count = pattern.subn(block, text, count=1)
+        if count != 1:
+            raise RuntimeError(
+                f"expected exactly one marked P86 Visual Atlas block, found {count}"
+            )
+        return text
+
+    legacy = re.compile(r'<section id="p86-frontier".*?</section>', re.DOTALL)
+    text, count = legacy.subn("", text, count=1)
+    if count != 1:
+        raise RuntimeError(f"expected exactly one P86 Visual Atlas section, found {count}")
+
+    boundary = re.search(r'<section class="boundary">.*?</section>', text, re.DOTALL)
+    if boundary is None:
+        raise RuntimeError("could not locate Visual Atlas reading-boundary section")
+
+    return text[: boundary.end()] + "\\n" + block + "\\n" + text[boundary.end() :]
+
+'''
+          text = text[:start] + replacement + text[end + 1 :]
+          path.write_text(text, encoding="utf-8")
           PY
       - name: Validate synchronizer syntax
         run: python -m py_compile scripts/sync_figure_publication.py
@@ -65,8 +100,7 @@ jobs:
                   "unexpected synchronization changes: "
                   + ", ".join(sorted(unexpected))
               )
-          required = allowed
-          missing = required - changed
+          missing = allowed - changed
           if missing:
               raise SystemExit(
                   "expected synchronization changes were absent: "
@@ -104,7 +138,8 @@ jobs:
           p84 = atlas.index('id="p84-frontier"')
           p85 = atlas.index('id="p85-frontier"')
           assert p86 < p84 < p85
-          assert 'current-frontier-visual: P86' in atlas
+          assert 'current-frontier-visual: P86:start' in atlas
+          assert 'current-frontier-visual: P86:end' in atlas
           assert 'L85 = 0 &lt; L86 = 1/192' in atlas
           assert 'weighted_quad_projection_parity_functional_separation.py' in atlas
           assert 'test_weighted_quad_projection_parity_functional_separation.py' in atlas
