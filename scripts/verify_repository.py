@@ -88,6 +88,9 @@ LINK_SURFACES = (
     "docs/reader_experience_and_visual_standard.md",
     "docs/figure_caption_and_description_standard.md",
     "docs/claim_evidence_standard.md",
+    "docs/claim_source_matrix.md",
+    "docs/reference_audit.md",
+    "docs/literature_map.md",
     "docs/theorem_roadmap.md",
     "figures/README.md",
     "figures/CURRENT_FRONTIER.md",
@@ -200,6 +203,25 @@ def _verify_release_consistency() -> None:
         raise RuntimeError("sources page does not expose the verified Tegmark research-origin citation")
     if "important conceptual starting point" not in sources_page or "distinct mathematical framework" not in sources_page:
         raise RuntimeError("sources page does not expose the collegial Tegmark research-origin context")
+
+    scholarly_origin_files = (
+        "website/start-here.html",
+        "website/sources.html",
+        "docs/claim_evidence_standard.md",
+        "docs/literature_map.md",
+        "docs/reference_audit.md",
+        "docs/claim_source_matrix.md",
+    )
+    defensive_origin_phrases = (
+        "this origin citation does not make Tegmark's paper evidence",
+        "not evidence for the repository's later original propositions",
+        "not evidential support for later repository-original propositions",
+    )
+    for relative_path in scholarly_origin_files:
+        source = _read(relative_path)
+        hits = [phrase for phrase in defensive_origin_phrases if phrase in source]
+        if hits:
+            raise RuntimeError(f"{relative_path} contains defensive research-origin wording: {hits}")
 
     _verify_reader_frontier_freshness()
 
