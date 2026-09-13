@@ -38,15 +38,39 @@ jobs:
           cp -a website website-deploy
           python scripts/prepare_website.py --source website-deploy --output _site
 
-      - name: Verify restored full-site identity
+      - name: Verify restored full-site identity and P88 frontier
         run: |
           grep -q 'What would a scientifically testable bridge from physical description to experience actually require?' _site/index.html
-          grep -q 'Explore all 87 results' _site/index.html
+          grep -q 'Explore all 88 results' _site/index.html
+          grep -q 'Current theorem frontier · P88' _site/index.html
+          grep -q 'Previous theorem frontier · P87' _site/index.html
+          grep -q '208,560' _site/index.html
+          grep -q 'figures/p88_exact_radius3_bounded_primitive_quad_projection_parity.svg' _site/index.html
+
           grep -q 'What are we actually trying to find out?' _site/plain-language.html
           grep -q 'Explain it in 60 seconds' _site/plain-language.html
           grep -q 'Seven questions have to be kept separate' _site/plain-language.html
-          grep -q 'What the 87 results are doing' _site/plain-language.html
-          grep -q 'P87' _site/plain-language.html
+          grep -q 'Pass, fail, and inconclusive mean different things' _site/plain-language.html
+          grep -q 'What the 88 results are doing' _site/plain-language.html
+          grep -q 'Current exact frontier · P88' _site/plain-language.html
+          grep -q 'L88 = 1/64' _site/plain-language.html
+
+          grep -q 'Open all 88 results' _site/start-here.html
+          grep -q 'P88 is the current exact frontier' _site/start-here.html
+          grep -q 'Eighty-eight results' _site/research-map.html
+          grep -q 'P77-P88' _site/research-map.html
+          grep -q 'Current exact frontier · P88' _site/research-map.html
+
+          grep -q 'Current theorem frontier · P88' _site/visual-atlas.html
+          grep -q 'Previous theorem frontier · P87' _site/visual-atlas.html
+          grep -q 'figures/p88_exact_radius3_bounded_primitive_quad_projection_parity.svg' _site/visual-atlas.html
+
+          grep -q 'P73-P88' _site/implementation.html
+          grep -q 'bounded_primitive_radius3_quad_projection_parity_functional_separation.py' _site/implementation.html
+          grep -q 'Current theorem source · P88' _site/sources.html
+
+          if grep -q 'Current theorem frontier · P87' _site/index.html; then exit 1; fi
+          if grep -q 'Current exact frontier · P87' _site/plain-language.html; then exit 1; fi
 
       - name: Upload website artifact
         uses: actions/upload-pages-artifact@v3
