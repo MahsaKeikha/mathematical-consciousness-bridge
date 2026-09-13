@@ -33,9 +33,10 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Apply publication-contract migrations
+      - name: Apply layered publication migrations
         run: |
-          python scripts/modernize_publication_contract.py
+          # modernize_publication_contract.py was the completed one-shot P88 migration.
+          # From this staging state, apply only idempotent finalization and layering.
           python scripts/finalize_publication_contract.py
           python scripts/migrate_layered_publication_tests.py
           python scripts/sync_figure_publication.py
