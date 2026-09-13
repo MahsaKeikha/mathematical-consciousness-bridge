@@ -132,14 +132,19 @@ def promote_research_map_current_frontier() -> None:
         "and P86 adds exact minimally weighted four-event functionals with primitive coefficient magnitudes {1,1,1,2} beyond the complete P85 certificate.",
         "P86 adds exact minimally weighted four-event functionals with primitive coefficient magnitudes {1,1,1,2}, while P87 completes every nonzero primitive four-event coefficient vector with magnitude at most two and strictly strengthens the P86 certificate.",
     )
+    text = text.replace("index.html#p86-frontier", "index.html#p87-frontier")
     text = text.replace(
-        'href="index.html#p86-frontier">Continue to the current P86 frontier</a>',
-        'href="index.html#p87-frontier">Continue to the current P87 frontier</a>',
+        "Continue to the current P86 frontier",
+        "Continue to the current P87 frontier",
     )
     text = text.replace(
         "P77-P86: from full-law rejection to exact dependency-aware certification",
         "P77-P87: from full-law rejection to exact dependency-aware certification",
     )
+    if "index.html#p87-frontier" not in text:
+        raise RuntimeError("Research Map did not acquire the P87 current-frontier link")
+    if "Continue to the current P86 frontier" in text:
+        raise RuntimeError("Research Map retained the stale P86 current-frontier label")
     promotion._write(path, text)
 
 
@@ -147,6 +152,10 @@ def promote_regression_tests() -> None:
     reader_path = "tests/test_reader_experience.py"
     reader = promotion._read(reader_path)
     reader = reader.replace("through Proposition 86", "through Proposition 87")
+    reader = reader.replace(
+        '    assert "<strong>86</strong>" in research_map\n',
+        '    assert "<strong>87</strong>" in research_map\n',
+    )
     promotion._write(reader_path, reader)
 
     scholarly_path = "tests/test_scholarly_provenance_surface.py"
@@ -198,16 +207,16 @@ def promote_regression_tests() -> None:
     )
     orientation = orientation.replace("P73-P86", "P73-P87")
     orientation = orientation.replace("through Proposition 86", "through Proposition 87")
-    orientation = orientation.replace("index.html#p86-frontier", "index.html#p87-frontier")
     orientation = orientation.replace(
         "test_research_map_presents_p77_through_p86_with_p84_history",
         "test_research_map_presents_p77_through_p87_with_p84_history",
     )
     orientation = orientation.replace("P77-P86:", "P77-P87:")
     orientation = orientation.replace("p86_navigation", "p87_navigation")
+    orientation = orientation.replace("index.html#p86-frontier", "index.html#p87-frontier")
     orientation = orientation.replace(
-        'href="index.html#p86-frontier">Continue to the current P86 frontier</a>',
-        'href="index.html#p87-frontier">Continue to the current P87 frontier</a>',
+        "Continue to the current P86 frontier",
+        "Continue to the current P87 frontier",
     )
     p86_assert = '    assert "P86 adds exact minimally weighted four-event functionals" in text\n'
     if '    assert \'id="p87-reader-frontier"\' in text\n' not in orientation:
