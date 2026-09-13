@@ -3,7 +3,7 @@ name: deploy-research-website
 on:
   push:
     branches: ["main"]
-    # Workflow-file changes explicitly resynchronize Pages after the complete P85 reader-frontier audit.
+    # Workflow-file changes explicitly resynchronize Pages after the complete P86 theorem-frontier audit.
     paths:
       - "website/**"
       - "scripts/prepare_website.py"
