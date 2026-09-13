@@ -3,6 +3,7 @@ name: promote-p86-publication
 on:
   push:
     branches: ["main"]
+    # Re-run from the current main after retiring the obsolete P85 repair workflow.
     paths:
       - ".github/workflows/promote-p86-publication.yml"
       - "scripts/promote_p86_publication.py"
