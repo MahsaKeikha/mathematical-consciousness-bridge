@@ -98,6 +98,7 @@ MARKDOWN_LINK = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 STALE_READER_FRONTIER_MARKERS = (
     "85-result theorem program and current P86 frontier",
     "<h2>P78-P85 progressively tighten global separation from the declared continuous model family</h2>",
+    "Current frontier · P85",
     "<strong>85</strong><span>proposition-level results</span>",
     "<strong>P85</strong><span>current theorem frontier</span>",
     "current P85 frontier",

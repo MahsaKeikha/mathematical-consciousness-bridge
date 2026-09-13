@@ -28,6 +28,7 @@ def test_first_reader_surfaces_match_p86_frontier() -> None:
     assert "86-result theorem program and current P86 frontier" in start
     assert "P78-P86 progressively tighten global separation" in start
     assert "P86 is the current exact frontier." in start
+    assert "Current frontier · P85" not in start
     assert "L85 = 0 &lt; L86 = 1/192" in start
     assert ">Read P86</a>" in start
     assert 'id="research-origin"' in start
@@ -56,6 +57,7 @@ def test_no_reader_facing_html_page_advertises_pre_p86_as_current() -> None:
     stale_current_frontier_tokens = (
         "85-result theorem program and current P86 frontier",
         "<h2>P78-P85 progressively tighten global separation from the declared continuous model family</h2>",
+        "Current frontier · P85",
         "<strong>85</strong><span>proposition-level results</span>",
         "<strong>P85</strong><span>current theorem frontier</span>",
         "current P85 frontier",
