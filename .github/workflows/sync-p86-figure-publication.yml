@@ -59,11 +59,17 @@ jobs:
           python - <<'PY'
           import subprocess
 
-          changed = set(
+          tracked = set(
               subprocess.check_output(
                   ["git", "diff", "--name-only"], text=True
               ).splitlines()
           )
+          untracked = set(
+              subprocess.check_output(
+                  ["git", "ls-files", "--others", "--exclude-standard"], text=True
+              ).splitlines()
+          )
+          changed = tracked | untracked
           required = {
               "scripts/sync_figure_publication.py",
               "figures/README.md",
