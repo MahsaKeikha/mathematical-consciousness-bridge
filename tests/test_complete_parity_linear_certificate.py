@@ -6,16 +6,18 @@ from consciousness_bridge.bounded_primitive_quad_projection_parity_functional_se
 )
 from consciousness_bridge.complete_parity_linear_certificate import (
     P88DualCertificate,
-    certify_p88_optimality_exact,
+    certify_p88_hierarchy_exact,
+    certify_p88_parity_optimality_exact,
     empirical_even_parity_feature_vector_exact,
     p75_box_parity_feature_vertices_exact,
     p75_box_parity_linear_interval_exact,
     p75_box_parity_linear_witness_exact,
-    p88_dominates_p87_for_certified_optimum,
+    p88_dominates_p87_for_certified_hierarchy,
     p88_standard_even_view_sets,
     p88_standard_parity_dimension,
     p88_strict_dual_certificate,
-    p88_strict_optimality_certificate_exact,
+    p88_strict_hierarchy_certificate_exact,
+    p88_strict_parity_optimality_certificate_exact,
     p88_strict_witness_box,
     p88_strict_witness_coefficients,
     p88_strict_witness_empirical_law,
@@ -91,23 +93,25 @@ def test_p88_dual_certificate_is_exactly_feasible():
     )
 
 
-def test_p88_matching_primal_and_dual_certify_complete_optimum():
-    certificate = p88_strict_optimality_certificate_exact()
+def test_p88_matching_primal_and_dual_certify_complete_parity_optimum():
+    certificate = p88_strict_parity_optimality_certificate_exact()
     assert certificate.optimum == Fraction(5, 168)
     assert certificate.primal.lower_bound == certificate.dual.bound
 
 
-def test_p88_is_strictly_stronger_than_p87_on_same_exact_witness():
+def test_p88_full_hierarchy_retains_p87_and_is_strict_on_common_witness():
     empirical = p88_strict_witness_empirical_law()
     box = p88_strict_witness_box()
     p87 = p75_box_p87_linf_lower_bound_exact(empirical, box)
-    p88 = p88_strict_optimality_certificate_exact()
+    p88 = p88_strict_hierarchy_certificate_exact()
 
     assert p87 == Fraction(1, 96)
-    assert p88.optimum == Fraction(5, 168)
-    assert p88.optimum > p87
-    assert p88.optimum - p87 == Fraction(13, 672)
-    assert p88_dominates_p87_for_certified_optimum(empirical, box, p88)
+    assert p88.p87_lower_bound == p87
+    assert p88.parity_optimum == Fraction(5, 168)
+    assert p88.lower_bound == max(p87, p88.parity_optimum)
+    assert p88.lower_bound == Fraction(5, 168)
+    assert p88.lower_bound - p87 == Fraction(13, 672)
+    assert p88_dominates_p87_for_certified_hierarchy(p88)
 
 
 def test_p88_feature_vertices_are_exact_and_finite():
@@ -133,7 +137,8 @@ def test_p88_rejects_corrupted_dual_weight():
     weight, vertex = dual.vertex_weights[0]
     corrupted = P88DualCertificate(
         bound=dual.bound,
-        vertex_weights=((weight + Fraction(1, 1000), vertex),) + dual.vertex_weights[1:],
+        vertex_weights=((weight + Fraction(1, 1000), vertex),)
+        + dual.vertex_weights[1:],
         residual=dual.residual,
     )
     assert not verify_p88_dual_certificate_exact(
@@ -143,14 +148,24 @@ def test_p88_rejects_corrupted_dual_weight():
     )
 
 
-def test_p88_direct_certifier_matches_strict_helper():
-    direct = certify_p88_optimality_exact(
+def test_p88_direct_parity_certifier_matches_strict_helper():
+    direct = certify_p88_parity_optimality_exact(
         p88_strict_witness_empirical_law(),
         p88_strict_witness_box(),
         p88_strict_witness_coefficients(),
         p88_strict_dual_certificate(),
     )
-    assert direct == p88_strict_optimality_certificate_exact()
+    assert direct == p88_strict_parity_optimality_certificate_exact()
+
+
+def test_p88_direct_hierarchy_certifier_matches_strict_helper():
+    direct = certify_p88_hierarchy_exact(
+        p88_strict_witness_empirical_law(),
+        p88_strict_witness_box(),
+        p88_strict_witness_coefficients(),
+        p88_strict_dual_certificate(),
+    )
+    assert direct == p88_strict_hierarchy_certificate_exact()
 
 
 def test_p88_source_keeps_scientific_interpretation_boundary():
@@ -163,6 +178,6 @@ def test_p88_source_keeps_scientific_interpretation_boundary():
     ).lower()
     assert "conditional model-separation theorem" in source
     assert "linear parity-witness class" in source
-    assert "does not prove" in source
+    assert "non-parity lower bounds" in source
     assert "consciousness" in source
     assert "physical-to-experiential bridge" in source
