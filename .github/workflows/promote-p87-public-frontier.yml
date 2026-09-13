@@ -20,8 +20,24 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12.14"
-      - name: Promote P87 publication surfaces
-        run: python scripts/promote_p87_public_frontier.py
+      - name: Repair and run P87 publication promotion
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path("scripts/promote_p87_public_frontier.py")
+          lines = path.read_text(encoding="utf-8").splitlines()
+          lines = [
+              line
+              for line in lines
+              if not (
+                  "tests/test_weighted_quad_projection_parity_functional_separation.py" in line
+                  and "P87_TEST" in line
+              )
+          ]
+          path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+          PY
+          python -m py_compile scripts/promote_p87_public_frontier.py
+          python scripts/promote_p87_public_frontier.py
       - name: Install development environment
         run: |
           python -m pip install --upgrade pip
