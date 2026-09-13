@@ -36,6 +36,14 @@ jobs:
           python scripts/modernize_publication_contract.py
           python scripts/finalize_publication_contract.py
 
+      - name: Normalize generated text endings
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path("docs/detailed_proposition_record.md")
+          path.write_text(path.read_text(encoding="utf-8").rstrip() + "\n", encoding="utf-8")
+          PY
+
       - name: Verify migration script and website scripts compile
         run: |
           python -m py_compile \
