@@ -27,52 +27,22 @@ jobs:
 
           path = Path("scripts/sync_figure_publication.py")
           text = path.read_text(encoding="utf-8")
-
           matcher_old = r'''r'<section id="p86-frontier"\b.*?</section>' '''.strip()
           matcher_new = r'''r'<section id="p86-frontier".*?</section>' '''.strip()
           text = text.replace(matcher_old, matcher_new, 1)
-
-          start = text.index("def _normalize_visual_atlas(text: str) -> str:")
-          end = text.index("\ndef _expected_outputs()", start)
-          replacement = '''def _normalize_visual_atlas(text: str) -> str:
-    start_marker = "<!-- current-frontier-visual: P86:start -->"
-    end_marker = "<!-- current-frontier-visual: P86:end -->"
-    block = start_marker + "\\n" + _p86_visual_section() + "\\n" + end_marker
-
-    has_start = start_marker in text
-    has_end = end_marker in text
-    if has_start or has_end:
-        if not (has_start and has_end):
-            raise RuntimeError("incomplete P86 Visual Atlas synchronization markers")
-        pattern = re.compile(
-            re.escape(start_marker) + r".*?" + re.escape(end_marker),
-            re.DOTALL,
-        )
-        text, count = pattern.subn(block, text, count=1)
-        if count != 1:
-            raise RuntimeError(
-                f"expected exactly one marked P86 Visual Atlas block, found {count}"
-            )
-        return text
-
-    legacy = re.compile(r'<section id="p86-frontier".*?</section>', re.DOTALL)
-    text, count = legacy.subn("", text, count=1)
-    if count != 1:
-        raise RuntimeError(f"expected exactly one P86 Visual Atlas section, found {count}")
-
-    boundary = re.search(r'<section class="boundary">.*?</section>', text, re.DOTALL)
-    if boundary is None:
-        raise RuntimeError("could not locate Visual Atlas reading-boundary section")
-
-    return text[: boundary.end()] + "\\n" + block + "\\n" + text[boundary.end() :]
-
-'''
-          text = text[:start] + replacement + text[end + 1 :]
+          whitespace_old = '    text = text.replace(marker, "")'
+          whitespace_new = (
+              '    text = re.sub(r"\\s*" + re.escape(marker) + r"\\s*", "", text)'
+          )
+          if whitespace_old in text:
+              text = text.replace(whitespace_old, whitespace_new, 1)
+          elif whitespace_new not in text:
+              raise SystemExit("could not locate Visual Atlas marker normalization")
           path.write_text(text, encoding="utf-8")
           PY
       - name: Validate synchronizer syntax
         run: python -m py_compile scripts/sync_figure_publication.py
-      - name: Synchronize every public figure surface
+      - name: Synchronize every public figure surface twice
         run: |
           python scripts/sync_figure_publication.py
           python scripts/sync_figure_publication.py --check
@@ -86,7 +56,7 @@ jobs:
                   ["git", "diff", "--name-only"], text=True
               ).splitlines()
           )
-          allowed = {
+          required = {
               "scripts/sync_figure_publication.py",
               "figures/README.md",
               "figures/CURRENT_FRONTIER.md",
@@ -94,13 +64,13 @@ jobs:
               "docs/figures/README.md",
               "website/visual-atlas.html",
           }
-          unexpected = changed - allowed
+          unexpected = changed - required
+          missing = required - changed
           if unexpected:
               raise SystemExit(
                   "unexpected synchronization changes: "
                   + ", ".join(sorted(unexpected))
               )
-          missing = allowed - changed
           if missing:
               raise SystemExit(
                   "expected synchronization changes were absent: "
@@ -138,8 +108,7 @@ jobs:
           p84 = atlas.index('id="p84-frontier"')
           p85 = atlas.index('id="p85-frontier"')
           assert p86 < p84 < p85
-          assert 'current-frontier-visual: P86:start' in atlas
-          assert 'current-frontier-visual: P86:end' in atlas
+          assert 'current-frontier-visual: P86' in atlas
           assert 'L85 = 0 &lt; L86 = 1/192' in atlas
           assert 'weighted_quad_projection_parity_functional_separation.py' in atlas
           assert 'test_weighted_quad_projection_parity_functional_separation.py' in atlas
