@@ -1,11 +1,8 @@
 """Prepare the static research website for GitHub Pages deployment.
 
-The repository keeps page content as plain HTML files. This build step copies the
-website into a deployment directory, injects shared publication assets, and
-bundles the canonical ``docs/figures`` tree into the same Pages artifact. Image
-``src`` URLs that point at raw GitHub ``main`` figures are rewritten to the local
-artifact copy, so the HTML and SVGs shown by one deployment come from the exact
-same checked-out commit.
+The build copies the canonical HTML source, injects the same shared design/navigation
+assets into every page, bundles the exact-commit figure tree, localizes raw figure
+URLs, and validates the public P1-P87 research state before deployment.
 """
 
 from __future__ import annotations
@@ -24,7 +21,7 @@ RAW_FIGURE_PREFIX = (
 )
 CURRENT_FRONTIER_FIGURE = "p87_exact_bounded_primitive_quad_projection_parity.svg"
 
-ASSET_VERSION = "20260913-mobile17-p87"
+ASSET_VERSION = "20260913-coherent-p87-r87"
 SCRIPT_TAG = f'<script defer src="app.js?v={ASSET_VERSION}"></script>'
 READER_LINKS_SCRIPT_TAG = '<script defer src="reader-links.js"></script>'
 FOOTER_SCRIPT_TAG = '<script defer src="footer.js"></script>'
@@ -72,15 +69,43 @@ FALLBACK_NAV = (
     '<a href="index.html">Overview</a>'
     '<a href="plain-language.html">Plain Language</a>'
     '<a href="start-here.html">Start Here</a>'
-    '<a href="research-map.html">Research</a>'
+    '<a href="research-map.html">Research Map</a>'
     '<a href="visual-atlas.html">Explore</a>'
-    '<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge">GitHub ↗</a>'
+    '<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge">GitHub</a>'
+)
+
+PUBLIC_BOUNDARY = (
+    "P87 is a conditional model-separation result for the declared P75 "
+    "target-measurement family. It does not identify a latent state with "
+    "consciousness, prove that consciousness is nonphysical, or complete the "
+    "physical-to-experiential bridge. The final bridge remains open."
+)
+
+CANONICAL_BRANCHES = (
+    ("Foundations", "P1-P10"),
+    ("Physical description", "P11-P18"),
+    ("Candidate bridge class", "P19-P24"),
+    ("Operational scale", "P25-P37"),
+    ("Quantum interface", "P38-P44"),
+    ("Adaptive evidence acquisition", "P45-P60"),
+    ("Calibration and optimization", "P61-P70"),
+    ("Target provenance", "P71"),
+    ("Target measurement", "P72"),
+    ("Channel recovery and model testing", "P73-P87"),
+)
+
+PUBLIC_PAGES = (
+    "index.html",
+    "plain-language.html",
+    "start-here.html",
+    "research-map.html",
+    "research-navigation.html",
+    "visual-atlas.html",
+    "implementation.html",
 )
 
 
 def _normalize_navigation_assets(text: str) -> str:
-    """Replace stale shared asset URLs with cache-busted canonical URLs."""
-
     text = APP_SCRIPT_PATTERN.sub(SCRIPT_TAG, text)
     text = BASE_STYLE_PATTERN.sub(BASE_STYLE_TAG, text)
     text = NAVIGATION_V2_STYLE_PATTERN.sub(NAVIGATION_V2_STYLE_TAG, text)
@@ -91,8 +116,6 @@ def _normalize_navigation_assets(text: str) -> str:
 
 
 def _normalize_topbar_fallback(text: str) -> str:
-    """Keep the no-JavaScript fallback compact instead of exposing the old flat bar."""
-
     return TOPBAR_NAV_PATTERN.sub(
         lambda match: f"{match.group(1)}{FALLBACK_NAV}{match.group(2)}",
         text,
@@ -101,8 +124,6 @@ def _normalize_topbar_fallback(text: str) -> str:
 
 
 def _localize_figure_sources(text: str) -> str:
-    """Use the exact-commit figure copies bundled into the Pages artifact."""
-
     return text.replace(f'src="{RAW_FIGURE_PREFIX}', 'src="figures/')
 
 
@@ -114,64 +135,71 @@ def _copy_canonical_figures(output: Path) -> None:
     shutil.copytree(CANONICAL_FIGURES, output / "figures", dirs_exist_ok=True)
 
 
-def _validate_current_frontier_pages(output: Path) -> None:
-    """Require P87 to be the primary visual frontier in the canonical website."""
+def _assert_order(text: str, labels: tuple[str, ...], page: str) -> None:
+    cursor = -1
+    for label in labels:
+        position = text.find(label)
+        if position < 0:
+            raise RuntimeError(f"{page} is missing canonical label: {label}")
+        if position <= cursor:
+            raise RuntimeError(f"{page} has branch labels out of canonical order")
+        cursor = position
 
+
+def _validate_public_state(output: Path) -> None:
     frontier_figure = output / "figures" / CURRENT_FRONTIER_FIGURE
     if not frontier_figure.is_file():
-        raise RuntimeError(
-            "website build is missing the current P87 theorem figure: "
-            f"{frontier_figure}"
-        )
-
-    local_frontier_src = f'src="figures/{CURRENT_FRONTIER_FIGURE}"'
-
-    visual_atlas_path = output / "visual-atlas.html"
-    if not visual_atlas_path.is_file():
-        raise RuntimeError("website build is missing visual-atlas.html")
-    visual_atlas = visual_atlas_path.read_text(encoding="utf-8")
-    if local_frontier_src not in visual_atlas:
-        raise RuntimeError("Visual Atlas does not use the bundled P87 theorem figure")
-    if f'src="{RAW_FIGURE_PREFIX}' in visual_atlas:
-        raise RuntimeError("Visual Atlas still depends on raw GitHub main for figures")
-    p87_atlas = visual_atlas.index('id="p87-frontier"')
-    for marker in ('id="p86-frontier"', 'id="p85-frontier"'):
-        if p87_atlas >= visual_atlas.index(marker):
-            raise RuntimeError(f"Visual Atlas does not present P87 before {marker}")
-
-    homepage_path = output / "index.html"
-    if not homepage_path.is_file():
-        raise RuntimeError("website build is missing index.html")
-    homepage = homepage_path.read_text(encoding="utf-8")
-    if local_frontier_src not in homepage:
-        raise RuntimeError("Homepage does not use the bundled P87 theorem figure")
-    if f'src="{RAW_FIGURE_PREFIX}' in homepage:
-        raise RuntimeError("Homepage still depends on raw GitHub main for figures")
-
-    p87 = homepage.index('id="p87-frontier"')
-    for marker in (
-        'id="plain-language"',
-        'id="p84-frontier"',
-        'id="p85-frontier"',
-        'id="p86-frontier"',
-    ):
-        if p87 >= homepage.index(marker):
-            raise RuntimeError(f"Homepage P87 frontier appears too late, after {marker}")
+        raise RuntimeError(f"missing current P87 theorem figure: {frontier_figure}")
 
     stale_tokens = (
-        "Current theorem frontier · P86",
-        "The 86 results form several dependency branches.",
+        "Explore all 86 results",
+        "86 proposition-level results",
         "all 86 propositions",
-        "P71-P86, then read the falsification program",
+        "Current theorem frontier · P86",
+        "Current frontier · P86",
+        "current theorem frontier is P86",
     )
-    stale = [token for token in stale_tokens if token in homepage]
-    if stale:
-        raise RuntimeError(f"Homepage contains stale pre-P87 reader text: {stale}")
+
+    for name in PUBLIC_PAGES:
+        path = output / name
+        if not path.is_file():
+            raise RuntimeError(f"website build is missing required public page: {name}")
+        text = path.read_text(encoding="utf-8")
+        if "P87" not in text:
+            raise RuntimeError(f"{name} does not expose current theorem frontier P87")
+        if "87" not in text:
+            raise RuntimeError(f"{name} does not expose the 87-result public state")
+        if PUBLIC_BOUNDARY not in text:
+            raise RuntimeError(f"{name} does not use the canonical public scientific boundary")
+        stale = [token for token in stale_tokens if token in text]
+        if stale:
+            raise RuntimeError(f"{name} contains stale pre-P87 reader text: {stale}")
+
+    homepage = (output / "index.html").read_text(encoding="utf-8")
+    if "Explore all 87 results" not in homepage:
+        raise RuntimeError("homepage must expose the exact 'Explore all 87 results' action")
+
+    branch_labels = tuple(label for label, _ in CANONICAL_BRANCHES)
+    branch_ranges = tuple(result_range for _, result_range in CANONICAL_BRANCHES)
+    for name in ("research-map.html", "research-navigation.html"):
+        text = (output / name).read_text(encoding="utf-8")
+        _assert_order(text, branch_labels, name)
+        _assert_order(text, branch_ranges, name)
+
+    research_map = (output / "research-map.html").read_text(encoding="utf-8")
+    if "Chapter 1" in research_map or "Chapter 2" in research_map:
+        raise RuntimeError("Research Map must not mix conceptual card numbers with proposition ranges")
+
+    local_frontier_src = f'src="figures/{CURRENT_FRONTIER_FIGURE}"'
+    for name in ("index.html", "visual-atlas.html"):
+        text = (output / name).read_text(encoding="utf-8")
+        if local_frontier_src not in text:
+            raise RuntimeError(f"{name} does not use the exact-commit P87 theorem figure")
+        if f'src="{RAW_FIGURE_PREFIX}' in text:
+            raise RuntimeError(f"{name} still depends on mutable raw-GitHub main figures")
 
 
 def prepare_website(source: Path, output: Path) -> None:
-    """Copy ``source`` and canonical figures into one auditable Pages build."""
-
     if not source.is_dir():
         raise FileNotFoundError(f"website source directory not found: {source}")
 
@@ -196,28 +224,21 @@ def prepare_website(source: Path, output: Path) -> None:
         text = _localize_figure_sources(text)
 
         additions: list[str] = []
-        if BASE_STYLE_TAG not in text:
-            additions.append(BASE_STYLE_TAG)
-        if NAVIGATION_STYLE_TAG not in text:
-            additions.append(NAVIGATION_STYLE_TAG)
-        if NAVIGATION_V2_STYLE_TAG not in text:
-            additions.append(NAVIGATION_V2_STYLE_TAG)
-        if PUBLICATION_STYLE_TAG not in text:
-            additions.append(PUBLICATION_STYLE_TAG)
-        if PUBLICATION_V2_STYLE_TAG not in text:
-            additions.append(PUBLICATION_V2_STYLE_TAG)
-        if RESEARCH_GUIDE_STYLE_TAG not in text:
-            additions.append(RESEARCH_GUIDE_STYLE_TAG)
-        if CONTRAST_STYLE_TAG not in text:
-            additions.append(CONTRAST_STYLE_TAG)
-        if READER_EXPERIENCE_STYLE_TAG not in text:
-            additions.append(READER_EXPERIENCE_STYLE_TAG)
-        if SCRIPT_TAG not in text:
-            additions.append(SCRIPT_TAG)
-        if READER_LINKS_SCRIPT_TAG not in text:
-            additions.append(READER_LINKS_SCRIPT_TAG)
-        if FOOTER_SCRIPT_TAG not in text:
-            additions.append(FOOTER_SCRIPT_TAG)
+        for tag in (
+            BASE_STYLE_TAG,
+            NAVIGATION_STYLE_TAG,
+            NAVIGATION_V2_STYLE_TAG,
+            PUBLICATION_STYLE_TAG,
+            PUBLICATION_V2_STYLE_TAG,
+            RESEARCH_GUIDE_STYLE_TAG,
+            CONTRAST_STYLE_TAG,
+            READER_EXPERIENCE_STYLE_TAG,
+            SCRIPT_TAG,
+            READER_LINKS_SCRIPT_TAG,
+            FOOTER_SCRIPT_TAG,
+        ):
+            if tag not in text:
+                additions.append(tag)
         if additions:
             text = text.replace("</head>", "".join(additions) + "</head>", 1)
         path.write_text(text, encoding="utf-8")
@@ -240,7 +261,7 @@ def prepare_website(source: Path, output: Path) -> None:
             raise RuntimeError(f"website build is missing {asset}")
 
     if canonical_build:
-        _validate_current_frontier_pages(output)
+        _validate_public_state(output)
 
 
 def main() -> None:
@@ -249,7 +270,7 @@ def main() -> None:
     parser.add_argument("--output", type=Path, default=Path("_site"))
     args = parser.parse_args()
     prepare_website(args.source, args.output)
-    print(f"prepared website with exact-commit figures: {args.output}")
+    print(f"prepared coherent P1-P87 website: {args.output}")
 
 
 if __name__ == "__main__":
