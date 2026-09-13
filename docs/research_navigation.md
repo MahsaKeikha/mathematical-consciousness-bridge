@@ -4,14 +4,14 @@ This page is the reading and reference index for the **Mathematical Consciousnes
 
 **First-time reader:** begin with [Start Here](../START_HERE.md) for the shortest orientation, keep the [Glossary and Reader Vocabulary](glossary.md) nearby for terminology, use the [Reader Experience and Visual Presentation Standard](reader_experience_and_visual_standard.md) to understand how the public record is organized, and use the [Reproducibility Guide](reproducibility.md) when you want to run the code, tests, or generated figure atlases.
 
-The current documented theorem frontier is **P85**. The complete proposition record runs from **P1 through P85**. P71-P85 form a target-side methodology branch descending from the P19 physical-sufficiency question. They are not extensions of the P61-P70 calibration branch.
+The current documented theorem frontier is **P86**. The complete proposition record runs from **P1 through P86**. P71-P86 form a target-side methodology branch descending from the P19 physical-sufficiency question. They are not extensions of the P61-P70 calibration branch.
 
 ## Recommended reading order
 
 1. [Main research study](../README.md) for the complete scientific narrative and curated figures.
 2. [Bridge problem](bridge_problem.md) for the formal physical-to-experiential question.
 3. [Scientific status discipline](../README.md#scientific-status-discipline) for the distinction among definitions, proved results, implementations, numerical checks, empirical inputs, hypotheses, and open bridge claims.
-4. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P85.
+4. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P86.
 5. [P19 fundamental physical sufficiency](proposition_19_fundamental_physical_sufficiency.md) for the exact, stochastic, and differential bridge criteria.
 6. [P20-P24 finite and adaptive residual certification](theorem_roadmap.md) for finite-data and repeated-look validity.
 7. [P71 target-provenance non-circularity](proposition_71_target_provenance_noncircularity.md) for the theorem showing when a target construction makes a bridge test vacuous by design.
@@ -236,4 +236,20 @@ The research remains an ongoing mathematical-physics program. The current theore
 | P84 | exact joint parity-event shared-parameter constraints | [P84](proposition_84_exact_projection_parity_contrast.md) |
 | P85 | exact three-event parity-functional shared-parameter constraints | [P85](proposition_85_exact_triple_projection_parity_functional.md) |
 
-**Current frontier provenance:** [P85 equation and provenance record](p85_equation_provenance.md).
+**Previous frontier provenance:** [P85 equation and provenance record](p85_equation_provenance.md).
+
+**Current frontier provenance:** [P86 equation and provenance record](p86_equation_provenance.md).
+
+
+## P86 current frontier record
+
+| Proposition | Direct proof | Main role |
+| --- | --- | --- |
+| P86 | [Exact minimally weighted four-event projection-parity functional](proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md) | 10,560 exact `{1,1,1,2}` weighted four-event shared-parameter functionals; strict `L85 = 0 < L86 = 1/192` hierarchy witness |
+
+- [P86 equation and provenance record](p86_equation_provenance.md)
+- [P86 implementation](../src/consciousness_bridge/weighted_quad_projection_parity_functional_separation.py)
+- [P86 regression tests](../tests/test_weighted_quad_projection_parity_functional_separation.py)
+- [P86 theorem figure](figures/p86_exact_minimally_weighted_quad_projection_parity.svg)
+
+P85 remains the previous theorem frontier and its proof, figure, implementation, and exact witness remain part of the permanent scientific record.

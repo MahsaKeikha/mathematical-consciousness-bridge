@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P85**. The proposition record runs from **P1 through P85 with explicit dependency branches**. P71-P85 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P86**. The proposition record runs from **P1 through P86 with explicit dependency branches**. P71-P86 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -584,7 +584,7 @@ P85 is a conditional model-separation theorem for the declared P75 family. It do
 
 ## 5. Current open frontier
 
-After P85, the target-side chain has a substantially clearer scientific burden:
+After P86, the target-side chain has a substantially clearer scientific burden:
 
 1. target provenance must be non-circular relative to the physical descriptor being tested;
 2. the target-observation channel must be scientifically defensible and sufficiently informative for the claimed witness;
@@ -601,7 +601,7 @@ P78 closes the global-lower-bound gap for the specific continuous P75 four-view 
 
 The next computational question is therefore not another cosmetic bound. A substantive continuation beyond P84 should retain **higher-order simultaneous dependence among three or more overlapping observables**, or introduce a demonstrably tighter exact-rational convex or semialgebraic relaxation while preserving the certified lower-bound direction. Any P85 candidate should come with a strict witness showing information not already captured by the complete P84 audit. Statistical extensions remain open as well, including sharper power analysis and target-view models with residual dependence, shared bias, temporal drift, or learned measurement pipelines.
 
-None of P71-P85 identifies a latent variable with consciousness. None proves that a failed descriptor implies nonphysical consciousness. The physical-to-experiential bridge remains open.
+None of P71-P86 identifies a latent variable with consciousness. None proves that a failed descriptor implies nonphysical consciousness. The physical-to-experiential bridge remains open.
 
 
 ## P83 predecessor frontier: exact projection-parity separation
@@ -658,3 +658,20 @@ An exact-rational strict witness has
 The result proves that separate parity compatibility does not imply joint compatibility with one underlying parameter vector. P84 retains the P78 mesh-width upper certificate and the P79 one-sided sampling-radius rejection gate. It does not identify the P75 latent state with consciousness and does not close the physical-to-experiential bridge.
 
 Direct proof: [P84](proposition_84_exact_projection_parity_contrast.md). Provenance: [P84 equation record](p84_equation_provenance.md). Implementation: [`joint_projection_parity_contrast_separation.py`](../src/consciousness_bridge/joint_projection_parity_contrast_separation.py). Tests: [`test_joint_projection_parity_contrast_separation.py`](../tests/test_joint_projection_parity_contrast_separation.py).
+
+
+## P86: minimally weighted four-event parity-functional separation
+
+P86 extends the shared-parameter parity hierarchy beyond the complete P85 triple-functional certificate. For four distinct canonical even-parity observables it uses the smallest non-uniform primitive coefficient magnitude multiset `{1,1,1,2}`, yielding 10,560 sign-normalized functionals. Every functional remains multi-affine in the P75 branch response coordinates, so its rational parameter-box interval is exact at common endpoint vertices; mass-conservation centering transfers any interval mismatch to a sound full-law L-infinity lower bound.
+
+The exact strict witness has `L85 = 0 < L86 = 1/192`. P86 is a conditional model-separation theorem and does not identify the latent variable with consciousness.
+
+- Proof: [P86](proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md)
+- Provenance: [p86_equation_provenance.md](p86_equation_provenance.md)
+- Figure: [P86 weighted four-event certificate](figures/p86_exact_minimally_weighted_quad_projection_parity.svg)
+- Source: [`weighted_quad_projection_parity_functional_separation.py`](../src/consciousness_bridge/weighted_quad_projection_parity_functional_separation.py)
+- Tests: [`test_weighted_quad_projection_parity_functional_separation.py`](../tests/test_weighted_quad_projection_parity_functional_separation.py)
+
+## After P86
+
+The next frontier should not be inferred merely by increasing functional order. Any P87 claim must close a separately stated mathematical or scientific gap and must include a strict or otherwise informative certificate that is not already implied by P86.

@@ -20,7 +20,7 @@ from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
 CURRENT_VERSION = "0.82.0"
-CURRENT_FRONTIER = "P85"
+CURRENT_FRONTIER = "P86"
 
 CORE_FILES = (
     "README.md",
@@ -45,6 +45,8 @@ CORE_FILES = (
     "docs/proposition_84_exact_projection_parity_contrast.md",
     "docs/proposition_85_exact_triple_projection_parity_functional.md",
     "docs/p85_equation_provenance.md",
+    "docs/proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md",
+    "docs/p86_equation_provenance.md",
     "website/index.html",
     "website/plain-language.html",
     "website/start-here.html",
@@ -73,6 +75,18 @@ LINK_SURFACES = (
 MARKDOWN_LINK = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 
 STALE_READER_FRONTIER_MARKERS = (
+    "<strong>85</strong><span>proposition-level results</span>",
+    "<strong>P85</strong><span>current theorem frontier</span>",
+    "current P85 frontier",
+    "actual P85 research frontier",
+    "What the 85 results are doing",
+    "shows how all 85 results connect",
+    "through Proposition 85",
+    "Eighty-five results",
+    "Open all 85 results",
+    "The 85 propositions by scientific role",
+    "complete 85-result dependency structure",
+    "You do not need to read 85 proofs in order",
     "<strong>84</strong><span>proposition-level results</span>",
     "<strong>P84</strong><span>current theorem frontier</span>",
     "current P84 frontier",
@@ -157,7 +171,7 @@ def _verify_release_consistency() -> None:
 def _verify_proposition_files() -> None:
     missing: list[int] = []
     duplicates: dict[int, list[str]] = {}
-    for number in range(1, 86):
+    for number in range(1, 87):
         matches = sorted((ROOT / "docs").glob(f"proposition_{number}_*.md"))
         if not matches:
             missing.append(number)

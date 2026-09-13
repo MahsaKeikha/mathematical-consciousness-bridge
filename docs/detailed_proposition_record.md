@@ -1,6 +1,6 @@
 # Detailed proposition record
 
-## Complete P1 to P85 chronology
+## Complete P1 to P86 chronology
 
 This page preserves the proposition-by-proposition development history of the Mathematical Consciousness Bridge research program. It is intentionally separate from the main README so a first-time reader can follow the scientific argument without first learning the internal chronology of the project.
 
@@ -14,7 +14,7 @@ A first-time reader should not read this page as 84 disconnected proofs. Use it 
 
 ---
 
-## Complete P1 to P85 chronology
+## Complete P1 to P86 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
@@ -277,3 +277,18 @@ The exact regression witness has `L84 = 0`, empirical functional value `5/8`, ex
 - Figure: [P85 exact three-event projection-parity functional](figures/p85_exact_triple_projection_parity_functional.svg)
 - Implementation: [`triple_projection_parity_functional_separation.py`](../src/consciousness_bridge/triple_projection_parity_functional_separation.py)
 - Tests: [`test_triple_projection_parity_functional_separation.py`](../tests/test_triple_projection_parity_functional_separation.py)
+
+
+## Proposition 86: Exact minimally weighted four-event projection-parity functional certificate
+
+**Scientific question.** Can the complete P85 unit-weight one-, pair-, and triple-parity certificate remain silent while a minimally non-uniform weighted relation among four parity observables is incompatible with one shared P75 parameter assignment?
+
+**Result.** Yes. P86 exhausts 10,560 exact four-event functionals with primitive coefficient magnitudes `{1,1,1,2}`. Multi-affinity gives exact rational P75 box intervals at endpoint vertices, and exact mass-conservation centering transfers functional mismatch to full-law L-infinity distance. The strict rational witness satisfies `L85 = 0 < L86 = 1/192`.
+
+**Boundary.** This rejects only the declared P75 family under its assumptions. It does not identify a latent state with consciousness or close the physical-to-experiential bridge.
+
+- Proof: [`proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md`](proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md)
+- Provenance: [`p86_equation_provenance.md`](p86_equation_provenance.md)
+- Implementation: [`weighted_quad_projection_parity_functional_separation.py`](../src/consciousness_bridge/weighted_quad_projection_parity_functional_separation.py)
+- Tests: [`test_weighted_quad_projection_parity_functional_separation.py`](../tests/test_weighted_quad_projection_parity_functional_separation.py)
+- Figure: [`p86_exact_minimally_weighted_quad_projection_parity.svg`](figures/p86_exact_minimally_weighted_quad_projection_parity.svg)

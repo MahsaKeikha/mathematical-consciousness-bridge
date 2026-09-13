@@ -1259,3 +1259,12 @@ Full classification: [P83 equation and provenance record](p83_equation_provenanc
 The standard audit contains 660 sign-normalized functionals. The exact strict witness has `L84 = 0 < L85 = 1/32`. See [Proposition 85](proposition_85_exact_triple_projection_parity_functional.md), [P85 equation provenance](p85_equation_provenance.md), and the [P85 theorem figure](figures/p85_exact_triple_projection_parity_functional.svg).
 
 **Boundary:** this is a conditional adequacy/model-separation result for the declared P75 family. It neither identifies the latent state with consciousness nor closes the physical-to-experiential bridge.
+
+
+## P86 minimally weighted four-event parity certificate
+
+- Proof: [proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md](proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md)
+- Provenance: [p86_equation_provenance.md](p86_equation_provenance.md)
+- Exact family: 10,560 primitive `{1,1,1,2}` weighted four-event parity functionals.
+- Strict hierarchy witness: `L85 = 0 < L86 = 1/192`.
+- Interpretation: conditional P75 model separation only; physical-to-experiential bridge remains open.
