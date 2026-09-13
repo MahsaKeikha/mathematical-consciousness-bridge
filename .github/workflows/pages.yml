@@ -3,7 +3,7 @@ name: deploy-research-website
 on:
   push:
     branches: ["main"]
-    # Certified P86 figures and HTML deploy from one exact commit artifact.
+    # Certified P86 figures, reader layout, and HTML deploy from one exact commit artifact.
     paths:
       - "website/**"
       - "docs/figures/**"
@@ -41,6 +41,14 @@ jobs:
           test -f _site/figures/p86_exact_minimally_weighted_quad_projection_parity.svg
           grep -q 'src="figures/p86_exact_minimally_weighted_quad_projection_parity.svg"' _site/index.html
           grep -q 'src="figures/p86_exact_minimally_weighted_quad_projection_parity.svg"' _site/visual-atlas.html
+          grep -q 'minmax(310px, 1fr)' _site/implementation.html
+          grep -q 'overflow-wrap: anywhere' _site/implementation.html
+          grep -q 'Stage 06 · P73-P86' _site/implementation.html
+          grep -q 'weighted_quad_projection_parity_functional_separation.py' _site/implementation.html
+          if grep -q 'Current joint shared-parameter parity frontier' _site/implementation.html; then
+            echo "Implementation page still labels P84 as current."
+            exit 1
+          fi
           python -c "from pathlib import Path; t=Path('_site/index.html').read_text(encoding='utf-8'); p=t.index('id=\"p86-frontier\"'); assert p < t.index('id=\"plain-language\"'); assert p < t.index('id=\"p84-frontier\"'); assert p < t.index('id=\"p85-frontier\"'); assert 'Current theorem frontier · P85' not in t; assert 'The 84 results form several dependency branches.' not in t; assert 'all 84 propositions' not in t"
           python -c "from pathlib import Path; t=Path('_site/visual-atlas.html').read_text(encoding='utf-8'); assert t.index('id=\"p86-frontier\"') < t.index('id=\"p85-frontier\"')"
           if grep -q 'src="https://raw.githubusercontent.com/MahsaKeikha/mathematical-consciousness-bridge/main/docs/figures/' _site/index.html _site/visual-atlas.html; then
