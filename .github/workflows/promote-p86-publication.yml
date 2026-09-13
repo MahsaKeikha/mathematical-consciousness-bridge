@@ -24,7 +24,7 @@ jobs:
           python-version: "3.12"
       - name: Synchronize P86 publication surfaces
         run: python scripts/promote_p86_publication.py
-      - name: Preserve reader layout contracts
+      - name: Preserve reader layout and freshness contracts
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -59,6 +59,27 @@ jobs:
           if not text.rstrip().endswith("**[BibTeX](CITATION.bib)**"):
               raise RuntimeError("README citation block is no longer the final section")
           readme.write_text(text, encoding="utf-8")
+
+          reader_replacements = {
+              "website/plain-language.html": {
+                  "actual P85 research frontier": "actual P86 research frontier",
+              },
+              "website/research-map.html": {
+                  "current P85 frontier": "current P86 frontier",
+              },
+              "website/start-here.html": {
+                  "current P85 frontier": "current P86 frontier",
+                  "The 85 propositions by scientific role": "The 86 propositions by scientific role",
+                  "complete 85-result dependency structure": "complete 86-result dependency structure",
+                  "You do not need to read 85 proofs in order": "You do not need to read 86 proofs in order",
+              },
+          }
+          for filename, replacements in reader_replacements.items():
+              path = Path(filename)
+              text = path.read_text(encoding="utf-8")
+              for old, new in replacements.items():
+                  text = text.replace(old, new)
+              path.write_text(text, encoding="utf-8")
           PY
       - name: Install test environment
         run: python -m pip install -e ".[dev]"
