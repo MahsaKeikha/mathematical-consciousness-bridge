@@ -6,6 +6,7 @@
     { file: 'observer-research.html', label: 'Research I · Observer Mathematics' },
     { file: 'research-lineage.html', label: 'Research Lineage' },
     { file: 'research-map.html', label: 'Research II · Bridge Map' },
+    { file: 'measurement-science.html', label: 'Research III · Measurement Science' },
     { file: 'physics-mathematics.html', label: 'Physics & Math' },
     { file: 'visual-atlas.html', label: 'Visual Atlas' },
     { file: 'sources.html', label: 'Sources' },
@@ -26,13 +27,19 @@
           file: 'research-lineage.html',
           kicker: 'Scientific handoff',
           label: 'Research lineage',
-          description: 'What carries from the physical observer program into the bridge program, and what does not.',
+          description: 'The handoff from physical observer mathematics to bridge testing and then to measurement science.',
         },
         {
           file: 'research-map.html',
           kicker: 'Research II',
           label: 'Bridge theorem map',
-          description: 'The current physical-to-experiential test architecture through P84.',
+          description: 'The current physical-to-experiential test architecture through P88.',
+        },
+        {
+          file: 'measurement-science.html',
+          kicker: 'Research III',
+          label: 'Consciousness measurement science',
+          description: 'Multimodal inference, causal tests, phenomenal structure, calibration, and explicit uncertainty.',
         },
         {
           file: 'physics-mathematics.html',
@@ -64,6 +71,7 @@
 
   const REPO = 'https://github.com/MahsaKeikha/mathematical-consciousness-bridge';
   const OBSERVER_REPO = 'https://github.com/MahsaKeikha/spatiotemporal-observer-math';
+  const MEASUREMENT_REPO = 'https://github.com/MahsaKeikha/consciousness-measurement-science';
 
   const propositionLinks = {
     19: `${REPO}/blob/main/docs/proposition_19_fundamental_physical_sufficiency.md`,
@@ -207,14 +215,15 @@
     section.className = 'lineage-callout';
     section.innerHTML = `
       <div class="lineage-callout-copy">
-        <p class="eyebrow">Two connected research programs</p>
-        <h2>Begin with the physical subsystem, then follow the bridge question</h2>
-        <p><strong>Research I: Spatiotemporal Observer Mathematics</strong> develops the physical and operational observer architecture. <strong>Research II: Mathematical Consciousness Bridge</strong> begins after that physical-description problem and asks what additional sufficiency, target, measurement, model-adequacy, and falsification conditions a physical-to-experiential claim must satisfy.</p>
+        <p class="eyebrow">Three connected research stages</p>
+        <h2>From physical observer identification to bridge tests to consciousness measurement</h2>
+        <p><strong>Research I: Spatiotemporal Observer Mathematics</strong> identifies and tests the physical observer subsystem. <strong>Research II: Mathematical Consciousness Bridge</strong> asks what a physical-to-experiential claim must survive before it is scientifically defensible. <strong>Research III: Consciousness Measurement Science</strong> then asks what can actually be identified, bounded, predicted, or falsified about experiential targets from multimodal evidence under explicit assumptions.</p>
       </div>
       <div class="lineage-callout-actions">
-        <a class="lineage-mini-card" href="observer-research.html"><span>Research I</span><strong>Spatiotemporal Observer Mathematics</strong><small>Dedicated previous-research page →</small></a>
-        <a class="lineage-mini-card current" href="research-lineage.html"><span>Research lineage</span><strong>See the scientific handoff</strong><small>What carries forward and what remains open →</small></a>
-        <a class="lineage-mini-card" href="research-map.html"><span>Research II</span><strong>Mathematical Consciousness Bridge</strong><small>Current bridge-test program →</small></a>
+        <a class="lineage-mini-card" href="observer-research.html"><span>Research I</span><strong>Spatiotemporal Observer Mathematics</strong><small>Physical observer architecture →</small></a>
+        <a class="lineage-mini-card" href="research-map.html"><span>Research II</span><strong>Mathematical Consciousness Bridge</strong><small>Bridge-test program through P88 →</small></a>
+        <a class="lineage-mini-card current" href="measurement-science.html"><span>Research III</span><strong>Consciousness Measurement Science</strong><small>Multimodal measurement program →</small></a>
+        <a class="lineage-mini-card" href="research-lineage.html"><span>Research lineage</span><strong>See the full scientific handoff</strong><small>What carries forward and what remains open →</small></a>
       </div>`;
     hero.insertAdjacentElement('afterend', section);
   }
@@ -236,7 +245,7 @@
       : `<a class="trail-card previous" href="${OBSERVER_REPO}"><span>Research I</span><strong>Observer Mathematics</strong><small>See the physical-subsystem foundation</small></a>`;
     const nextHtml = next
       ? `<a class="trail-card next" href="${next.file}"><span>Next</span><strong>${next.label}</strong><small>Continue through the guided research path</small></a>`
-      : `<a class="trail-card next" href="research-map.html"><span>Continue</span><strong>Research Map</strong><small>Return to the complete theorem program</small></a>`;
+      : `<a class="trail-card next" href="${MEASUREMENT_REPO}"><span>Research III</span><strong>Measurement Science Repository</strong><small>Continue into the experimental measurement program</small></a>`;
 
     trail.innerHTML = `
       <div class="reader-trail-head">
@@ -245,7 +254,7 @@
       </div>
       <div class="reader-trail-grid">
         ${previousHtml}
-        <a class="trail-card map" href="research-lineage.html"><span>Lineage</span><strong>Research I → Research II</strong><small>See how the physical-observer work leads into the bridge program</small></a>
+        <a class="trail-card map" href="research-lineage.html"><span>Lineage</span><strong>Research I → II → III</strong><small>See the full handoff from observer physics to bridge tests to measurement science</small></a>
         ${nextHtml}
       </div>`;
     main.append(trail);
