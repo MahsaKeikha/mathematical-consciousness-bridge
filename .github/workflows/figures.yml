@@ -23,8 +23,7 @@ on:
       - "website/visual-atlas.html"
       - "tests/test_figure_publication_sync.py"
       - "pyproject.toml"
-      - ".github/workflows/figures.yml"
-      - ".github/workflows/pages.yml"
+      - ".github/workflows/**"
   pull_request:
     paths:
       - "scripts/generate_all_figures.py"
@@ -43,8 +42,7 @@ on:
       - "website/visual-atlas.html"
       - "tests/test_figure_publication_sync.py"
       - "pyproject.toml"
-      - ".github/workflows/figures.yml"
-      - ".github/workflows/pages.yml"
+      - ".github/workflows/**"
 
 jobs:
   generate-and-validate:
