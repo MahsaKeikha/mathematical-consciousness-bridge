@@ -1089,14 +1089,14 @@ The proposition-by-proposition development history is intentionally kept off the
 
 # Current scientific status
 
-The repository now contains 85 proposition-level results. The theorem frontier is P86.
+The repository now contains 86 proposition-level results. The theorem frontier is P86.
 
 | Item | Current state |
 | --- | --- |
-| Public theorem frontier | **P82** |
+| Public theorem frontier | **P86** |
 | Documented version | **v0.82.0** |
-| Proposition-level results | **81** |
-| Equation-driven quantitative figures | **70** |
+| Proposition-level results | **86** |
+| Equation-driven quantitative figures | **71** |
 | Target-provenance guard | **P71 proved under declared construction model** |
 | Target-measurement robustness | **P72 proved under declared nondifferential channel model** |
 | Target-channel identifiability | **P73 proved at population level under declared nondegenerate binary three-view model** |
@@ -1174,7 +1174,7 @@ P86 strengthens the complete P85 certificate with the smallest non-uniform primi
 
 # Citation
 
-Current release: **Version 0.82.0**. Current theorem frontier: **P82**.
+Current release: **Version 0.82.0**. Current theorem frontier: **P86**.
 
 If this research program, one of its propositions, figures, algorithms, or implementations contributes to your work, please cite it. When a specific theorem or artifact is central to an argument, cite both the overall research program and the proposition or artifact used.
 

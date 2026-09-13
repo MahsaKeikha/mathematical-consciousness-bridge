@@ -29,22 +29,23 @@ The current documented theorem frontier is **P86**. The complete proposition rec
 19. [P83 exact projection-parity separation](proposition_83_exact_projection_parity.md) for the 22-event parity audit, exact multi-affine box intervals, P83 >= P82 dominance, and the strict `1/16` versus zero witness.
 20. [P84 exact joint projection-parity separation](proposition_84_exact_projection_parity_contrast.md) for the stronger shared-parameter question: whether two individually compatible P83 parity observations can be realized simultaneously. It covers 220 exact coupled contrasts, P84 >= P83 dominance, and the strict `L83 = 0 < L84 = 1/32` witness.
 21. [P85 exact three-event projection-parity functional](proposition_85_exact_triple_projection_parity_functional.md) for the next shared-parameter question: whether the complete P84 pairwise certificate can remain silent while a three-event relation is incompatible. It covers 660 exact sign-normalized functionals, P85 >= P84 dominance, and the strict `L84 = 0 < L85 = 1/32` witness.
-21. [P11-P18 and P25-P37 operational physical structure](theorem_roadmap.md) for intervention, temporal, compositional, and multiscale requirements.
-22. [P38-P44 quantum foundations and bridge tests](quantum_foundations_and_bridge_test.md) for quantum operational sufficiency under explicit bridge classes.
-23. [P45-P60 adaptive experiment design and scheduling](theorem_roadmap.md) for valid evidence collection and transition-calibration setup.
-24. [P61-P70 Calibration and Optimization Frontier](calibration_optimization_frontier_p61_p70.md) for downstream integer resource-allocation mathematics.
-25. [Equation and citation map](equation_and_citation_map.md) for equation-level provenance and theorem lineage.
-26. [P72 equation and provenance record](p72_equation_provenance.md) for the standard-versus-repository classification of the noisy-target theorem.
-27. [P73 equation and provenance record](p73_equation_provenance.md) for latent-class context, moment inversion, and the P72 stability connection.
-28. [P74 equation and provenance record](p74_equation_provenance.md) for finite-sample concentration, nonlinear interval propagation, and full-channel recovery.
-29. [P75 equation and provenance record](p75_equation_provenance.md) for just-identification, overidentification, algebraic adequacy constraints, and full-law reconstruction provenance.
-30. [Falsification program](falsification_program.md) for the empirical burden required before any bridge claim can be accepted.
-31. [P78 equation and provenance record](p78_equation_provenance.md) for multi-affine box bounds, global distance certification, and the P77 handoff.
-32. [P80 equation and provenance record](p80_equation_provenance.md) for the simplex-coupled interval relaxation, exact feasibility crossings, and P80/P78 dominance.
-33. [Citation guide](../CITATION.md) for citing the whole research program or a specific proposition, figure, algorithm, or implementation.
-34. [P83 equation and provenance record](p83_equation_provenance.md) for exact parity identities, multi-affine box extrema, the strict P83 > P82 witness, and the scientific interpretation boundary.
-35. [P84 equation and provenance record](p84_equation_provenance.md) for common-vertex joint parity contrasts, the 220-contrast family, the strict P84 > P83 witness, and the scientific interpretation boundary.
-36. [P85 equation and provenance record](p85_equation_provenance.md) for exact three-event shared-parameter parity functionals, the 660-functional family, the strict P85 > P84 witness, and the scientific interpretation boundary.
+22. [P86 exact minimally weighted four-event projection-parity functional](proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md) for the minimally non-uniform four-event shared-parameter audit, 10,560 exact `{1,1,1,2}` weighted functionals, P86 >= P85 dominance, and the strict `L85 = 0 < L86 = 1/192` witness.
+23. [P11-P18 and P25-P37 operational physical structure](theorem_roadmap.md) for intervention, temporal, compositional, and multiscale requirements.
+24. [P38-P44 quantum foundations and bridge tests](quantum_foundations_and_bridge_test.md) for quantum operational sufficiency under explicit bridge classes.
+25. [P45-P60 adaptive experiment design and scheduling](theorem_roadmap.md) for valid evidence collection and transition-calibration setup.
+26. [P61-P70 Calibration and Optimization Frontier](calibration_optimization_frontier_p61_p70.md) for downstream integer resource-allocation mathematics.
+27. [Equation and citation map](equation_and_citation_map.md) for equation-level provenance and theorem lineage.
+28. [P72 equation and provenance record](p72_equation_provenance.md) for the standard-versus-repository classification of the noisy-target theorem.
+29. [P73 equation and provenance record](p73_equation_provenance.md) for latent-class context, moment inversion, and the P72 stability connection.
+30. [P74 equation and provenance record](p74_equation_provenance.md) for finite-sample concentration, nonlinear interval propagation, and full-channel recovery.
+31. [P75 equation and provenance record](p75_equation_provenance.md) for just-identification, overidentification, algebraic adequacy constraints, and full-law reconstruction provenance.
+32. [Falsification program](falsification_program.md) for the empirical burden required before any bridge claim can be accepted.
+33. [P78 equation and provenance record](p78_equation_provenance.md) for multi-affine box bounds, global distance certification, and the P77 handoff.
+34. [P80 equation and provenance record](p80_equation_provenance.md) for the simplex-coupled interval relaxation, exact feasibility crossings, and P80/P78 dominance.
+35. [Citation guide](../CITATION.md) for citing the whole research program or a specific proposition, figure, algorithm, or implementation.
+36. [P83 equation and provenance record](p83_equation_provenance.md) for exact parity identities, multi-affine box extrema, the strict P83 > P82 witness, and the scientific interpretation boundary.
+37. [P84 equation and provenance record](p84_equation_provenance.md) for common-vertex joint parity contrasts, the 220-contrast family, the strict P84 > P83 witness, and the scientific interpretation boundary.
+38. [P85 equation and provenance record](p85_equation_provenance.md) for exact three-event shared-parameter parity functionals, the 660-functional family, the strict P85 > P84 witness, and the scientific interpretation boundary.
 
 ## Scientific branch map
 
@@ -72,6 +73,7 @@ The current documented theorem frontier is **P86**. The complete proposition rec
 | Projection-parity continuous target-model separation | P83 | Adds 22 exact parity-event ranges whose multi-affine branch structure can expose dependence incompatibility invisible to the complete P82 event family | [P83](proposition_83_exact_projection_parity.md) |
 | Joint projection-parity continuous target-model separation | P84 | Adds 220 exact coupled parity-event contrasts that preserve shared-parameter compatibility beyond separate P83 ranges | [P84](proposition_84_exact_projection_parity_contrast.md) |
 | Three-event projection-parity functional separation | P85 | Adds 660 exact signed three-event parity functionals that test shared-parameter compatibility beyond the complete P84 pairwise certificate | [P85](proposition_85_exact_triple_projection_parity_functional.md) |
+| Minimally weighted four-event projection-parity functional separation | P86 | Adds 10,560 exact `{1,1,1,2}` weighted four-event shared-parameter functionals beyond the complete P85 triple-functional certificate | [P86](proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md) |
 
 ## Complete proposition index
 

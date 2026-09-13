@@ -21,6 +21,8 @@ import sys
 from pathlib import Path
 from urllib.parse import unquote
 
+from verify_frontier_publication import verify_frontier_publication
+
 ROOT = Path(__file__).resolve().parents[1]
 CURRENT_VERSION = "0.82.0"
 CURRENT_FRONTIER = "P86"
@@ -70,6 +72,7 @@ CORE_FILES = (
     "scripts/sync_figure_publication.py",
     "scripts/prepare_website.py",
     "scripts/reproducibility_audit.py",
+    "scripts/verify_frontier_publication.py",
     "tests/test_figure_publication_sync.py",
 )
 
@@ -294,6 +297,7 @@ def _verify_test_and_source_surfaces() -> None:
 def main() -> None:
     _require_core_files()
     _verify_release_consistency()
+    verify_frontier_publication(ROOT)
     _verify_proposition_files()
     _verify_local_markdown_links()
     _verify_figure_publication_sync()

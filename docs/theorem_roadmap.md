@@ -45,7 +45,9 @@ The current documented theorem frontier is **P86**. The proposition record runs 
 &\Downarrow\\
 &\text{P84: joint parity contrasts test shared-parameter compatibility across P83 observables}
 &\Downarrow\\
-&\text{P85: three-event parity functionals test compatibility beyond the complete P84 pairwise certificate}
+&\text{P85: three-event parity functionals test compatibility beyond the complete P84 pairwise certificate}\\
+&\Downarrow\\
+&\text{P86: minimally weighted four-event parity functionals test compatibility beyond the complete P85 triple certificate}
 \end{aligned}
 }
 \]
@@ -599,7 +601,7 @@ After P86, the target-side chain has a substantially clearer scientific burden:
 
 P78 closes the global-lower-bound gap for the specific continuous P75 four-view binary latent family. P79 certifies the one-sided sampling-radius envelope. P80 strengthens the box relaxation by retaining probability normalization. P81 adds exact marginal and projected-event constraints. P82 adds exact non-cylinder residual constraints from nested projected events. P83 adds exact projection-parity observables. P84 then preserves shared-parameter compatibility across pairs of those parity observables through 220 exact joint contrasts.
 
-The next computational question is therefore not another cosmetic bound. A substantive continuation beyond P84 should retain **higher-order simultaneous dependence among three or more overlapping observables**, or introduce a demonstrably tighter exact-rational convex or semialgebraic relaxation while preserving the certified lower-bound direction. Any P85 candidate should come with a strict witness showing information not already captured by the complete P84 audit. Statistical extensions remain open as well, including sharper power analysis and target-view models with residual dependence, shared bias, temporal drift, or learned measurement pipelines.
+P86 closes the first minimally non-uniform four-event weighting step beyond the complete P85 triple-functional audit. The next computational question should not be chosen merely by increasing functional order or proposition number. A substantive continuation beyond P86 must close a separately stated mathematical or statistical gap and preserve the certified lower-bound direction. Natural candidates include an exact-rational support-function or convex relaxation of the full parity-coordinate image, with a certificate not already implied by P86, or an observable-specific finite-sample rejection theorem that propagates uncertainty through a selected P86 score rather than only through the global sixteen-cell radius. Target-view models with residual dependence, shared bias, temporal drift, or learned measurement pipelines also remain open.
 
 None of P71-P86 identifies a latent variable with consciousness. None proves that a failed descriptor implies nonphysical consciousness. The physical-to-experiential bridge remains open.
 
