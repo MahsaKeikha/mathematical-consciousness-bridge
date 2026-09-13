@@ -142,8 +142,8 @@ from that archive by code so it cannot silently remain on an older proposition.
 
 ![P{frontier} current theorem frontier](../{current_figure.relative_to(ROOT).as_posix()})
 
-Canonical figure: [`{current_figure.name}`](../{current_figure.relative_to(ROOT).as_posix()})  
-Theorem: [`{current_prop.name}`](../{current_prop.relative_to(ROOT).as_posix()})  
+Canonical figure: [`{current_figure.name}`](../{current_figure.relative_to(ROOT).as_posix()})
+Theorem: [`{current_prop.name}`](../{current_prop.relative_to(ROOT).as_posix()})
 Equation provenance: [`p{frontier}_equation_provenance.md`](../docs/p{frontier}_equation_provenance.md)
 
 For the full P71-P{frontier} visual progression, open
@@ -357,19 +357,24 @@ def _p86_visual_section() -> str:
 
 
 def _normalize_visual_atlas(text: str) -> str:
-    pattern = re.compile(r'<section id="p86-frontier"\b.*?</section>', re.DOTALL)
+    pattern = re.compile(r'<section id="p86-frontier".*?</section>', re.DOTALL)
     text, count = pattern.subn("", text, count=1)
     if count != 1:
         raise RuntimeError(f"expected exactly one P86 Visual Atlas section, found {count}")
 
     marker = "<!-- current-frontier-visual: P86 -->"
-    text = text.replace(marker, "")
+    text = re.sub(r"\s*" + re.escape(marker) + r"\s*", "", text)
     boundary = re.search(r'<section class="boundary">.*?</section>', text, re.DOTALL)
     if boundary is None:
         raise RuntimeError("could not locate Visual Atlas reading-boundary section")
 
-    insertion = "\n" + marker + "\n" + _p86_visual_section() + "\n"
-    return text[: boundary.end()] + insertion + text[boundary.end() :]
+    prefix = text[: boundary.end()].rstrip()
+    suffix = text[boundary.end() :].lstrip()
+    insertion = "\n\n" + marker + "\n" + _p86_visual_section() + "\n\n"
+    result = prefix + insertion + suffix
+    had_final_newline = result.endswith("\n")
+    result = "\n".join(line.rstrip() for line in result.splitlines())
+    return result + ("\n" if had_final_newline else "")
 
 
 def _expected_outputs() -> dict[Path, str]:
