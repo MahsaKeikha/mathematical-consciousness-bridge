@@ -1,0 +1,76 @@
+name: fix-implementation-layout
+
+on:
+  push:
+    paths:
+      - ".github/workflows/fix-implementation-layout.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Repair implementation page layout and frontier labels
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("website/implementation.html")
+          text = path.read_text(encoding="utf-8")
+
+          replacements = {
+              ".implementation-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: .75rem; margin-top: 1rem; }": ".implementation-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 1rem; margin-top: 1rem; align-items: stretch; }",
+              ".implementation-links a { display: block; padding: .85rem 1rem; border-radius: 12px; border: 1px solid rgba(100,116,139,.25); text-decoration: none; }": ".implementation-links a { display: flex; min-width: 0; min-height: 108px; padding: 1rem 1.05rem; border-radius: 12px; border: 1px solid rgba(100,116,139,.25); text-decoration: none; flex-direction: column; justify-content: flex-start; gap: .2rem; }",
+              ".implementation-links small { display:block; margin-top:.3rem; opacity:.75; }": ".implementation-links strong { display: block; min-width: 0; font-size: .94rem; line-height: 1.35; overflow-wrap: anywhere; word-break: normal; }\n    .implementation-links small { display:block; margin-top:.35rem; opacity:.75; line-height:1.5; }",
+              "@media (max-width: 820px) { .implementation-flow, .audit-pipeline { grid-template-columns:1fr; } }": "@media (max-width: 1040px) { .implementation-links { grid-template-columns: repeat(2, minmax(0, 1fr)); } }\n    @media (max-width: 820px) { .implementation-flow, .audit-pipeline, .implementation-links { grid-template-columns:1fr; } .implementation-links a { min-height: 0; } }",
+              "<strong>P1-P84 proposition record</strong>": "<strong>P1-P86 proposition record</strong>",
+              "<strong>6 · P73-P84</strong>": "<strong>6 · P73-P86</strong>",
+              "Stage 06 · P73-P84": "Stage 06 · P73-P86",
+              "P73-P84 build a continuous chain from channel recovery to certified model-family separation.": "P73-P86 build a continuous chain from channel recovery to certified model-family separation.",
+              "<strong>Read P84</strong><small>Current joint shared-parameter parity frontier</small>": "<strong>Read P84</strong><small>Historical pairwise shared-parameter frontier</small>",
+              "<p class=\"eyebrow\">P85 executable frontier</p>": "<p class=\"eyebrow\">Previous theorem implementation · P85</p>",
+          }
+          for old, new in replacements.items():
+              if old not in text:
+                  raise SystemExit(f"expected text not found: {old}")
+              text = text.replace(old, new, 1)
+
+          old_boundary = '<p class="scientific-boundary"><strong>Frontier continuation:</strong> P77-P86 strengthen this branch from individual adequacy constraints to certified separation from the complete continuous model family, including exact rational parameter-box, simplex, projected-event, nested-residual, parity, and joint parity-contrast certificates. P84 preserves shared-parameter compatibility across pairs of P83 parity events and has an exact strict witness with L83 = 0 and L84 = 1/32. See the <a href="research-map.html#p84">P84 frontier</a>.</p>'
+          new_boundary = '<p class="scientific-boundary"><strong>Frontier continuation:</strong> P77-P86 strengthen this branch from individual adequacy constraints to certified separation from the complete continuous model family. P84 adds pairwise shared-parameter parity compatibility, P85 adds three-event functionals, and the current P86 frontier adds 10,560 minimally weighted four-event functionals with the strict exact hierarchy <strong>L85 = 0 &lt; L86 = 1/192</strong>. See the <a href="index.html#p86-frontier">current P86 frontier</a> and the <a href="research-map.html">Research Map</a> for the full lineage.</p>'
+          if old_boundary not in text:
+              raise SystemExit("expected Stage 06 frontier paragraph not found")
+          text = text.replace(old_boundary, new_boundary, 1)
+
+          p84_tests = '    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/tests/test_joint_projection_parity_contrast_separation.py"><strong>P84 regression tests</strong><small>Exact interval, strict witness, dominance, and branch-and-bound checks</small></a>\n'
+          p86_cards = p84_tests + '    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/triple_projection_parity_functional_separation.py"><strong>triple_projection_parity_functional_separation.py</strong><small>P85 three-event exact parity-functional implementation</small></a>\n    <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/weighted_quad_projection_parity_functional_separation.py"><strong>weighted_quad_projection_parity_functional_separation.py</strong><small>P86 current four-event exact parity-functional implementation</small></a>\n'
+          if p84_tests not in text:
+              raise SystemExit("expected P84 regression card not found")
+          text = text.replace(p84_tests, p86_cards, 1)
+
+          path.write_text(text, encoding="utf-8")
+          PY
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -e ".[dev]"
+      - name: Run targeted website tests
+        run: python -m pytest tests/test_implementation_reader_path.py tests/test_website_build.py tests/test_website_link_integrity.py
+      - name: Verify repository contract
+        run: python scripts/verify_repository.py
+      - run: git diff --check
+      - name: Commit repaired implementation page
+        run: |
+          if git diff --quiet -- website/implementation.html; then
+            echo "No implementation-page changes needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add website/implementation.html
+          git commit -m "Polish implementation card layout and P86 labels"
+          git push
