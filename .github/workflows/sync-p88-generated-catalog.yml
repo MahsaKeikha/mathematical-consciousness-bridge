@@ -1,0 +1,56 @@
+name: sync-p88-generated-catalog
+
+on:
+  push:
+    branches: ["research/p88-bounded-primitive-four-event"]
+    paths:
+      - ".github/workflows/sync-p88-generated-catalog.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout P88 branch
+        uses: actions/checkout@v4
+        with:
+          ref: research/p88-bounded-primitive-four-event
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+
+      - name: Install exact figure environment
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+          python -m pip install -r requirements-figures.txt
+
+      - name: Regenerate canonical visual publication record
+        run: python scripts/generate_all_figures.py
+
+      - name: Verify publication synchronizer
+        run: python scripts/sync_figure_publication.py --check
+
+      - name: Require catalog-only deterministic diff
+        run: |
+          python - <<'PY'
+          import subprocess
+          changed = set(subprocess.check_output(["git", "diff", "--name-only"], text=True).splitlines())
+          expected = {"docs/figure_catalog.md"}
+          if changed != expected:
+              raise SystemExit(f"expected only {sorted(expected)}, got {sorted(changed)}")
+          PY
+
+      - name: Commit canonical P88 figure catalog
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/figure_catalog.md
+          git commit -m "Synchronize canonical P88 figure catalog"
+          git push origin HEAD:research/p88-bounded-primitive-four-event
