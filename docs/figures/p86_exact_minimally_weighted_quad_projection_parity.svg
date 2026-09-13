@@ -50,30 +50,40 @@
   <text class="ink label" x="98" y="471">All 660 P85 triples</text>
   <text class="muted body" x="98" y="496">Complete lower bound can still be zero</text>
 
-  <rect class="warn" x="78" y="534" rx="10" ry="10" width="290" height="36"/>
-  <text class="ink label" x="98" y="557">Lower-order silence is not full compatibility.</text>
+  <rect class="warn" x="78" y="530" rx="10" ry="10" width="290" height="52"/>
+  <text class="ink label" x="98" y="551">
+    <tspan x="98" dy="0">Lower-order silence is not</tspan>
+    <tspan x="98" dy="19">full compatibility.</tspan>
+  </text>
 
   <path class="arrow" d="M406 368 C430 368, 438 368, 462 368"/>
 
   <rect class="panel" x="470" y="144" rx="16" ry="16" width="350" height="448"/>
   <text class="ink section" x="494" y="181">2. P86 adds minimal weighting</text>
   <text class="muted body" x="494" y="207">Use four distinct canonical even-parity events.</text>
-  <text class="muted body" x="494" y="228">Smallest non-uniform primitive magnitudes: {1,1,1,2}.</text>
+  <text class="muted body" x="494" y="228">
+    <tspan x="494" dy="0">Smallest non-uniform primitive magnitudes:</tspan>
+    <tspan x="494" dy="19">{1,1,1,2}.</tspan>
+  </text>
 
   <rect class="accentSoft" x="500" y="258" rx="12" ry="12" width="290" height="94"/>
-  <text class="ink formula" x="520" y="289">Q = c1P(H1)+c2P(H2)+c3P(H3)+c4P(H4)</text>
-  <text class="muted body" x="520" y="316">|c| multiset = {1,1,1,2}</text>
-  <text class="muted body" x="520" y="338">10,560 standard weighted functionals</text>
+  <text class="ink formula" x="520" y="279">
+    <tspan x="520" dy="0">Q = c1P(H1)+c2P(H2)</tspan>
+    <tspan x="520" dy="20">+c3P(H3)+c4P(H4)</tspan>
+  </text>
+  <text class="muted body" x="520" y="323">|c| multiset = {1,1,1,2}</text>
+  <text class="muted body" x="520" y="344">10,560 standard weighted functionals</text>
 
-  <rect class="panelSoft" x="500" y="368" rx="12" ry="12" width="290" height="88"/>
+  <rect class="panelSoft" x="500" y="368" rx="12" ry="12" width="290" height="96"/>
   <text class="ink label" x="520" y="397">Exact P75 box interval</text>
-  <text class="muted body" x="520" y="422">Each branch is multi-affine.</text>
-  <text class="muted body" x="520" y="444">Response and prevalence endpoints suffice.</text>
+  <text class="muted body" x="520" y="421">Each branch is multi-affine.</text>
+  <text class="muted body" x="520" y="441">Response and prevalence</text>
+  <text class="muted body" x="520" y="459">endpoints suffice.</text>
 
-  <rect class="panelSoft" x="500" y="472" rx="12" ry="12" width="290" height="91"/>
-  <text class="ink label" x="520" y="501">Exact full-law transfer</text>
-  <text class="muted body" x="520" y="526">D(Q) = min_a sum_x |g(x) - a|</text>
-  <text class="muted body" x="520" y="548">L86 = max(L85, gap / D(Q))</text>
+  <rect class="panelSoft" x="500" y="480" rx="12" ry="12" width="290" height="91"/>
+  <text class="ink label" x="520" y="509">Exact full-law transfer</text>
+  <text class="muted body" x="520" y="534">D(Q) = min_a sum_x |g(x) - a|</text>
+  <text class="muted body" x="520" y="556">L86 = max(L85, gap / D(Q))</text>
 
   <path class="arrow" d="M828 368 C850 368, 862 368, 884 368"/>
 
