@@ -1,11 +1,11 @@
 """Prepare the static research website for GitHub Pages deployment.
 
 The repository keeps page content as plain HTML files. This build step copies the
-website into a deployment directory and guarantees that every page loads the
-shared navigation behavior, publication typography, reader-link behavior,
-research-guide interaction styling, contrast/readability rules, and author
-attribution. Keeping cross-page behavior centralized prevents page-to-page drift
-while preserving a fully auditable static-site build.
+website into a deployment directory, injects shared publication assets, and
+bundles the canonical ``docs/figures`` tree into the same Pages artifact. Image
+``src`` URLs that point at raw GitHub ``main`` figures are rewritten to the local
+artifact copy, so the HTML and SVGs shown by one deployment come from the exact
+same checked-out commit.
 """
 
 from __future__ import annotations
@@ -14,6 +14,14 @@ import argparse
 import re
 import shutil
 from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+CANONICAL_FIGURES = ROOT / "docs" / "figures"
+RAW_FIGURE_PREFIX = (
+    "https://raw.githubusercontent.com/MahsaKeikha/"
+    "mathematical-consciousness-bridge/main/docs/figures/"
+)
+CURRENT_FRONTIER_FIGURE = "p86_exact_minimally_weighted_quad_projection_parity.svg"
 
 ASSET_VERSION = "20260912-nav14-reader"
 SCRIPT_TAG = f'<script defer src="app.js?v={ASSET_VERSION}"></script>'
@@ -86,8 +94,22 @@ def _normalize_topbar_fallback(text: str) -> str:
     )
 
 
+def _localize_figure_sources(text: str) -> str:
+    """Use the exact-commit figure copies bundled into the Pages artifact."""
+
+    return text.replace(f'src="{RAW_FIGURE_PREFIX}', 'src="figures/')
+
+
+def _copy_canonical_figures(output: Path) -> None:
+    if not CANONICAL_FIGURES.is_dir():
+        raise FileNotFoundError(
+            f"canonical figure directory not found: {CANONICAL_FIGURES}"
+        )
+    shutil.copytree(CANONICAL_FIGURES, output / "figures", dirs_exist_ok=True)
+
+
 def prepare_website(source: Path, output: Path) -> None:
-    """Copy ``source`` to ``output`` and inject shared publication assets."""
+    """Copy ``source`` and the canonical figures into one auditable Pages build."""
 
     if not source.is_dir():
         raise FileNotFoundError(f"website source directory not found: {source}")
@@ -95,6 +117,7 @@ def prepare_website(source: Path, output: Path) -> None:
     if output.exists():
         shutil.rmtree(output)
     shutil.copytree(source, output)
+    _copy_canonical_figures(output)
 
     html_files = sorted(output.glob("*.html"))
     if not html_files:
@@ -107,6 +130,7 @@ def prepare_website(source: Path, output: Path) -> None:
 
         text = _normalize_navigation_assets(text)
         text = _normalize_topbar_fallback(text)
+        text = _localize_figure_sources(text)
 
         additions: list[str] = []
         if NAVIGATION_STYLE_TAG not in text:
@@ -150,6 +174,20 @@ def prepare_website(source: Path, output: Path) -> None:
         if not (output / asset).is_file():
             raise RuntimeError(f"website build is missing {asset}")
 
+    frontier_figure = output / "figures" / CURRENT_FRONTIER_FIGURE
+    if not frontier_figure.is_file():
+        raise RuntimeError(
+            "website build is missing the current P86 theorem figure: "
+            f"{frontier_figure}"
+        )
+
+    visual_atlas = (output / "visual-atlas.html").read_text(encoding="utf-8")
+    local_frontier_src = f'src="figures/{CURRENT_FRONTIER_FIGURE}"'
+    if local_frontier_src not in visual_atlas:
+        raise RuntimeError("Visual Atlas does not use the bundled P86 theorem figure")
+    if f'src="{RAW_FIGURE_PREFIX}' in visual_atlas:
+        raise RuntimeError("Visual Atlas still depends on raw GitHub main for figures")
+
 
 def main() -> None:
     parser = argparse.ArgumentParser()
@@ -157,7 +195,7 @@ def main() -> None:
     parser.add_argument("--output", type=Path, default=Path("_site"))
     args = parser.parse_args()
     prepare_website(args.source, args.output)
-    print(f"prepared website: {args.output}")
+    print(f"prepared website with exact-commit figures: {args.output}")
 
 
 if __name__ == "__main__":
