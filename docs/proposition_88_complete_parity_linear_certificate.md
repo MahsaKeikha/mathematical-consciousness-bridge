@@ -2,119 +2,116 @@
 
 ## Status
 
-**Proved conditional computational theorem with exact rational optimality certificate.** P88 strengthens P87 for the same declared P75 four-view binary latent target-measurement family and the same full-law $L_\infty$ distance.
+**Proved conditional theorem with an exact rational strict-witness certificate.** P88 strengthens the published P87 hierarchy for the same declared P75 four-view binary latent target-measurement family and the same full-law $L_\infty$ distance.
 
-P83-P87 build a hierarchy of increasingly strong exact linear combinations of the eleven nontrivial parity coordinates on four binary views. P87 completes one important finite family: every primitive four-event integer coefficient vector with $0<|c_i|\le2$.
+P83-P87 introduce increasingly strong parity-based lower bounds, while each published proposition also retains the earlier certificate hierarchy. P87 completes the finite primitive four-event coefficient box $0<|c_i|\le2$.
 
-P88 removes the remaining **sparsity and coefficient-box restriction altogether**. It optimizes over every real linear combination of all eleven parity coordinates and derives an exact finite-dimensional primal-dual linear program. A matching rational primal witness and rational dual feasible point certify the optimum without trusting floating-point optimization.
+P88 makes a different step: it removes the four-term sparsity and finite coefficient restrictions and optimizes over **every real linear combination of all eleven nontrivial parity coordinates**. That complete parity-linear problem is a finite linear program with an exact dual. The full P88 hierarchy is then defined by retaining the recursive P87 baseline:
 
-On the same exact rational witness used for P86 and P87,
+\[
+\boxed{
+L_{88}(B)=\max\{L_{87}(B),L_{88}^{\mathrm{par}}(B)\}.
+}
+\]
+
+This distinction matters. P88 closes the linear parity-witness class, but it does **not** claim that parity coordinates subsume the earlier non-parity P78-P82 certificates.
+
+On the common exact rational P86-P88 witness,
 
 \[
 \boxed{
 L_{87}(B)=\frac1{96}
 <
-L_{88}^{\mathrm{par}}(B)=\frac5{168}.
+L_{88}^{\mathrm{par}}(B)=L_{88}(B)=\frac5{168}.
 }
 \]
 
-P88 is a model-separation theorem. It does not identify the P75 latent state with consciousness, prove that parity observables are complete for the full law, establish nonphysicality, or close the physical-to-experiential bridge.
+P88 is a model-separation theorem. It does not identify the P75 latent state with consciousness, prove parity completeness for the full observed law, establish nonphysicality, or close the physical-to-experiential bridge.
 
 ---
 
 ## 1. The gap left after P87
 
-P87 closes the bounded primitive four-event family
+P87 closes one precisely declared finite family: four distinct parity events with primitive nonzero integer coefficients bounded by two in magnitude.
 
-\[
-0<|c_i|\le2.
-\]
+Two restrictions remain:
 
-That is a mathematically complete finite box, but it still imposes two restrictions:
-
-1. only four of the eleven canonical parity coordinates may appear at once;
+1. at most four of the eleven canonical parity coordinates enter one functional;
 2. coefficients are restricted to a finite integer alphabet.
 
-Neither restriction is intrinsic to the transfer inequality used by P85-P87. The full class of linear parity witnesses is finite-dimensional, so the natural next question is:
+Neither restriction is required by the centered transfer inequality used in P85-P87. P88 therefore asks:
 
-> What is the strongest certified full-law $L_\infty$ lower bound obtainable from **any** linear combination of the eleven parity observables?
+> What is the strongest certified full-law $L_\infty$ lower bound obtainable from any real linear combination of the eleven parity observables?
 
-P88 answers this question exactly.
+This is the **complete parity-linear subproblem**. The full P88 certificate retains P87 in parallel because the P87 hierarchy also contains earlier non-parity lower bounds.
 
 ---
 
-## 2. The eleven-dimensional parity feature map
+## 2. Eleven-dimensional parity feature map
 
-Use the canonical view-set order
+Use canonical view-set order
 
 \[
-\mathcal J=
-(01,02,03,12,13,23,012,013,023,123,0123).
+\mathcal J=(01,02,03,12,13,23,012,013,023,123,0123).
 \]
 
-For a probability law $p$ on the sixteen four-bit outcomes, define
+For a probability law $p$ on the sixteen four-bit outcomes define
 
 \[
-h_J(p)=P_p(H_J),
-\qquad
 H_J=\left\{x:\sum_{j\in J}x_j\equiv0\pmod2\right\},
+\qquad
+h_J(p)=P_p(H_J),
 \]
 
-and collect the eleven coordinates into
+and collect the coordinates into
 
 \[
 h(p)\in\mathbb R^{11}.
 \]
 
-For any coefficient vector
+For arbitrary
 
 \[
 c\in\mathbb R^{11},
 \]
 
-define the parity-linear functional
+define
 
 \[
 Q_c(p)=c^\top h(p).
 \]
 
-Let $A\in\{0,1\}^{16\times11}$ be the parity-incidence matrix,
+Let $A\in\{0,1\}^{16\times11}$ be the incidence matrix
 
 \[
 A_{x,J}=\mathbf1_{H_J}(x).
 \]
 
-Then the sixteen outcome coefficients of $Q_c$ are
-
-\[
-g_c=Ac.
-\]
+Then the sixteen outcome coefficients of $Q_c$ are $Ac$.
 
 ---
 
 ## 3. Exact centered transfer norm
 
-For probability laws $p$ and $q$,
+For probability laws $p,q$,
 
 \[
 \mathbf1^\top(p-q)=0.
 \]
 
-Therefore for every scalar $a$,
+Hence for any scalar $a$,
 
 \[
 Q_c(p)-Q_c(q)
-=
-\sum_x\bigl[(Ac)_x-a\bigr](p_x-q_x).
+=(Ac-a\mathbf1)^\top(p-q).
 \]
 
-Hence
+Therefore
 
 \[
 |Q_c(p)-Q_c(q)|
 \le
-\left(\sum_x|(Ac)_x-a|\right)
-\|p-q\|_\infty.
+\|Ac-a\mathbf1\|_1\|p-q\|_\infty.
 \]
 
 Define
@@ -133,9 +130,11 @@ Then
 }
 \]
 
-### Why $D$ is a genuine norm
+For finite $Ac$, a median minimizes the absolute-deviation objective.
 
-For each nonempty parity view set $J$, write the Walsh character
+### Positivity of $D$
+
+For nonempty $J$, let
 
 \[
 \chi_J(x)=(-1)^{\sum_{j\in J}x_j}.
@@ -147,49 +146,35 @@ Because
 \mathbf1_{H_J}(x)=\frac{1+\chi_J(x)}2,
 \]
 
-$Ac$ can be constant only if
+$Ac$ can be constant only if $\sum_Jc_J\chi_J$ is constant. The eleven nonempty Walsh characters used here are mutually orthogonal and each is orthogonal to the constant character on $\{0,1\}^4$. Thus $Ac$ is constant only for $c=0$.
+
+Consequently
 
 \[
-\sum_{J\in\mathcal J}c_J\chi_J
+\boxed{D(c)>0\quad\text{for }c\ne0.}
 \]
 
-is constant. The eleven nonempty Walsh characters used here are mutually orthogonal and orthogonal to the constant character on the sixteen-point hypercube. Therefore $Ac$ is constant only when $c=0$.
-
-Thus
-
-\[
-\boxed{D(c)>0\quad\text{for every }c\ne0.}
-\]
-
-The normalization $D(c)\le1$ is therefore well posed.
+So $D$ is a norm on the eleven-dimensional parity coefficient space.
 
 ---
 
-## 4. Exact support over a P75 parameter box
+## 4. Exact P75 box support
 
-Inside latent branch $s\in\{-,+\}$, write
+Inside latent branch $s\in\{-,+\}$ write
 
 \[
 a_{j,s}=1-2q_{j,s}.
 \]
 
-For each canonical even-parity event,
+P83 gives
 
 \[
 P_s(H_J)=\frac{1+\prod_{j\in J}a_{j,s}}2.
 \]
 
-For fixed $c$,
+For fixed $c$, $Q_c$ is multi-affine in the eight response parameters and the latent prevalence $\pi$. Thus every extremum on an axis-aligned rational P75 box $B$ occurs at a parameter-box vertex.
 
-\[
-Q_c
-=
-(1-\pi)Q_{c,-}+\pi Q_{c,+}
-\]
-
-is multi-affine in the nine P75 parameters: prevalence and the eight branchwise response probabilities. Consequently every minimum and maximum over an axis-aligned rational box $B$ occurs at a parameter-box vertex.
-
-Let $V(B)$ be that finite vertex set and let
+Let $V(B)$ denote those vertices and
 
 \[
 z_v=h(p_v),\qquad v\in V(B).
@@ -201,17 +186,15 @@ Then
 \boxed{
 \max_{p\in\mathcal M_{75}(B)}Q_c(p)
 =
-\max_{v\in V(B)}c^\top z_v
+\max_{v\in V(B)}c^\top z_v,
 }
 \]
 
-and analogously for the minimum.
-
-No numerical enclosure is needed for the support function.
+with the analogous minimum identity.
 
 ---
 
-## 5. The complete P88 primal program
+## 5. Complete parity-linear primal program
 
 Let
 
@@ -219,7 +202,7 @@ Let
 \widehat h=h(\widehat p).
 \]
 
-Because both $c$ and $-c$ are allowed, two-sided interval separation is captured by one oriented support problem. Define
+Because both $c$ and $-c$ are available, two-sided interval separation can be written as one oriented support problem:
 
 \[
 \boxed{
@@ -234,31 +217,19 @@ L_{88}^{\mathrm{par}}(B)
 }
 \]
 
-The zero vector is feasible, so the optimum is nonnegative.
-
-Introduce auxiliary variables $a$, $u_x\ge0$, and $t$. The optimization is exactly the finite linear program
+Introducing $t$, a center $a$, and $u_x\ge0$ gives the finite LP
 
 \[
 \begin{aligned}
 \text{maximize }&t\\
 \text{subject to }&
- t\le c^\top(\widehat h-z_v),
- &&v\in V(B),\\
-&-u_x\le (Ac)_x-a\le u_x,
- &&x\in\{0,1\}^4,\\
+ t\le c^\top(\widehat h-z_v), &&v\in V(B),\\
+&-u_x\le(Ac)_x-a\le u_x, &&x\in\{0,1\}^4,\\
 &\sum_xu_x\le1.
 \end{aligned}
 \]
 
-For every feasible $c$ and every P75 law $q$ generated inside $B$,
-
-\[
-Q_c(\widehat p)-Q_c(q)
-\le
-D(c)\|\widehat p-q\|_\infty.
-\]
-
-Therefore
+Every feasible $c$ produces a valid full-law lower bound, so
 
 \[
 \boxed{
@@ -273,13 +244,11 @@ L_{88}^{\mathrm{par}}(B).
 
 ## 6. Exact dual program
 
-Finite-dimensional linear-program duality gives the exact dual representation
+Finite-dimensional LP duality gives
 
 \[
 \boxed{
-L_{88}^{\mathrm{par}}(B)
-=
-\min_{\lambda,r,\mu}\mu
+L_{88}^{\mathrm{par}}(B)=\min_{\lambda,r,\mu}\mu
 }
 \]
 
@@ -300,7 +269,7 @@ subject to
 A^\top r
 =
 \widehat h-
-\sum_{v\in V(B)}\lambda_v z_v,
+\sum_{v\in V(B)}\lambda_vz_v,
 }
 \]
 
@@ -308,44 +277,34 @@ and
 
 \[
 |r_x|\le\mu
-\qquad
-\text{for every observed cell }x.
+\qquad\text{for all sixteen cells.}
 \]
 
 Equivalently,
 
 \[
-\boxed{
 L_{88}^{\mathrm{par}}(B)
 =
 \min_{\lambda\in\Delta(V(B))}
-\min_{\substack{\mathbf1^\top r=0\\
-A^\top r=\widehat h-\sum_v\lambda_vz_v}}
+\min_{\substack{\mathbf1^\top r=0\\A^\top r=\widehat h-\sum_v\lambda_vz_v}}
 \|r\|_\infty.
-}
 \]
 
-This dual has a useful interpretation. It asks how small a zero-mass sixteen-cell perturbation can reproduce the empirical parity-feature discrepancy after comparing the empirical feature vector with the convex hull of the P75 box-vertex feature vectors.
-
-It is a **parity-feature quotient distance**, not the full-law distance itself.
+This dual describes a parity-feature quotient distance. It does not assert that the convex hull of parity-feature box vertices equals the full nonlinear P75 law family.
 
 ---
 
 ## 7. Exact rational optimality certification
 
-P88 does not require trusting a floating-point optimizer to establish a reported optimum.
-
-A rational primal witness supplies a coefficient vector $c$ and therefore an exact lower bound
+A rational primal coefficient vector gives an exact lower bound
 
 \[
 \ell
 =
-\frac{
-\operatorname{dist}(Q_c(\widehat p),I_B(Q_c))
-}{D(c)}.
+\frac{\operatorname{dist}(Q_c(\widehat p),I_B(Q_c))}{D(c)}.
 \]
 
-A rational dual feasible point $(\lambda,r,\mu)$ supplies an exact upper bound
+A rational dual feasible point $(\lambda,r,\mu)$ gives
 
 \[
 L_{88}^{\mathrm{par}}(B)\le\mu.
@@ -357,45 +316,57 @@ If
 \ell=\mu,
 \]
 
-then weak duality alone certifies
+then weak duality alone proves the exact optimum
 
 \[
-\boxed{
-L_{88}^{\mathrm{par}}(B)=\ell=\mu
-}
+\boxed{L_{88}^{\mathrm{par}}(B)=\ell=\mu.}
 \]
 
-exactly.
-
-The repository implementation verifies both sides using `fractions.Fraction` arithmetic.
+The repository verifies all displayed strict-witness quantities with `fractions.Fraction` arithmetic.
 
 ---
 
-## 8. Pointwise dominance over P87
+## 8. Relationship to P87
 
-Every P87 functional is an eleven-dimensional parity coefficient vector with seven zero coordinates and four primitive nonzero integer coordinates satisfying $|c_i|\le2$.
+Every parity functional used by P83-P87 embeds in the eleven-dimensional P88 parity coefficient space. Therefore the new parity component contains all of those **parity-functional** candidates.
 
-Therefore the P87 family is a subset of the P88 optimization domain after homogeneous normalization. Hence for every empirical law and every admissible rational P75 box,
+However, the published P87 quantity is recursive:
+
+\[
+L_{87}=\max\{L_{86},L_{\mathrm{bp4}}\},
+\]
+
+and the earlier chain ultimately retains P78-P82 non-parity lower bounds. It would therefore be incorrect to infer solely from parity feasible-set inclusion that
+
+\[
+L_{88}^{\mathrm{par}}\ge L_{87}
+\]
+
+for every box.
+
+P88 instead defines
 
 \[
 \boxed{
-L_{88}^{\mathrm{par}}(B)
-\ge
-L_{87}(B).
+L_{88}(B)=\max\{L_{87}(B),L_{88}^{\mathrm{par}}(B)\}.
 }
 \]
 
-The same inclusion also subsumes the linear parity-functional families introduced in P83-P86.
+Thus
 
-P88 therefore closes the entire **linear parity-witness hierarchy** built in P83-P87. It does not close the full-law model-separation problem because the eleven parity coordinates do not constitute all fifteen independent coordinates of a general four-bit probability law.
+\[
+\boxed{L_{88}(B)\ge L_{87}(B)}
+\]
+
+pointwise by construction, while the stronger conceptual statement remains precise: $L_{88}^{\mathrm{par}}$ closes the complete **linear parity** witness class.
 
 ---
 
 ## 9. Exact strict witness
 
-Use the same exact rational P75 box and empirical sixteen-cell law used for the P86 and P87 strict witnesses.
+Use the same exact rational box and empirical sixteen-cell law used for the P86-P87 strict witness.
 
-The P87 value is
+The recursive P87 certificate is
 
 \[
 \boxed{L_{87}(B)=\frac1{96}}.
@@ -410,20 +381,7 @@ In canonical coordinate order
 choose
 
 \[
-\boxed{
-c=(0,2,1,-1,-1,-1,2,1,3,-2,3).}
-\]
-
-Thus
-
-\[
-\begin{aligned}
-Q_c={}&
-2P(H_{02})+P(H_{03})
--P(H_{12})-P(H_{13})-P(H_{23})\\
-&+2P(H_{012})+P(H_{013})+3P(H_{023})\\
-&-2P(H_{123})+3P(H_{0123}).
-\end{aligned}
+\boxed{c=(0,2,1,-1,-1,-1,2,1,3,-2,3).}
 \]
 
 The exact empirical value is
@@ -435,12 +393,10 @@ The exact empirical value is
 Exact parameter-box vertex enumeration gives
 
 \[
-\boxed{
-I_B(Q_c)=\left[3,\frac{51}{8}\right].
-}
+\boxed{I_B(Q_c)=\left[3,\frac{51}{8}\right].}
 \]
 
-The empirical value lies below the model interval by
+Hence
 
 \[
 \Delta_c
@@ -448,36 +404,33 @@ The empirical value lies below the model interval by
 =\boxed{\frac56}.
 \]
 
-The exact centered outcome-coefficient calculation gives
+The exact centered norm is
 
 \[
-\boxed{D(c)=28}
-\]
-
-with minimizing center
-
-\[
+\boxed{D(c)=28},
+\qquad
 \boxed{a=3}.
 \]
 
-Therefore this primal witness gives
+Therefore the primal witness gives
 
 \[
+\boxed{
 \frac{\Delta_c}{D(c)}
 =
 \frac{5/6}{28}
 =
-\boxed{\frac5{168}}.
+\frac5{168}.
+}
 \]
 
 ---
 
-## 10. Exact dual certificate for the same witness
+## 10. Matching exact dual witness
 
-The implementation stores a sparse rational dual feasible point supported on seven P75 parameter-box vertices with weights
+The stored dual certificate uses seven nonzero rational box-vertex weights
 
 \[
-\boxed{
 \left(
 \frac4{189},
 \frac{16}{189},
@@ -487,12 +440,11 @@ The implementation stores a sparse rational dual feasible point supported on sev
 \frac{40}{189},
 \frac7{54}
 \right),
-}
 \]
 
 which sum exactly to one.
 
-It also stores the exact zero-mass residual vector, in lexicographic four-bit outcome order,
+Its sixteen-cell residual vector, in lexicographic four-bit outcome order, is
 
 \[
 \begin{aligned}
@@ -503,7 +455,7 @@ r=(&-5/168,-5/168,5/168,5/168,\\
 \end{aligned}
 \]
 
-The regression suite verifies exactly that
+The exact verifier checks
 
 \[
 \mathbf1^\top r=0,
@@ -528,88 +480,76 @@ Thus the dual gives
 L_{88}^{\mathrm{par}}(B)\le\frac5{168}.
 \]
 
-The primal witness in Section 9 attains the same value, so
+Together with the primal witness,
+
+\[
+\boxed{L_{88}^{\mathrm{par}}(B)=\frac5{168}.}
+\]
+
+Since this exceeds the recursive P87 baseline on the same box,
+
+\[
+\boxed{L_{88}(B)=\frac5{168}>\frac1{96}=L_{87}(B).}
+\]
+
+The exact improvement is
 
 \[
 \boxed{
-L_{88}^{\mathrm{par}}(B)=\frac5{168}
+L_{88}-L_{87}=\frac{13}{672}
 }
 \]
 
-is the exact optimum over **all real linear combinations of the eleven parity coordinates**.
+and
+
+\[
+\boxed{
+\frac{L_{88}}{L_{87}}=\frac{20}{7}.
+}
+\]
 
 ---
 
-## 11. Strict hierarchy on the common exact witness
-
-For the same box and empirical law,
-
-\[
-\boxed{
-L_{85}(B)=0
-<
-L_{86}(B)=\frac1{192}
-<
-L_{87}(B)=\frac1{96}
-<
-L_{88}^{\mathrm{par}}(B)=\frac5{168}.
-}
-\]
-
-The P88 improvement over P87 is
-
-\[
-\boxed{
-\frac5{168}-\frac1{96}
-=\frac{13}{672}.
-}
-\]
-
-The multiplicative improvement is
-
-\[
-\boxed{
-\frac{L_{88}^{\mathrm{par}}}{L_{87}}
-=\frac{20}{7}.
-}
-\]
-
-So the gain is not produced by merely adding one more bounded coefficient pattern. It comes from removing the finite four-term search restriction and solving the complete linear parity support problem.
-
----
-
-## 12. Proposition 88
+## 11. Proposition 88
 
 For every empirical sixteen-cell law $\widehat p$ and rational P75 parameter box $B$:
 
 1. the eleven canonical nontrivial even-parity probabilities define a finite feature map $h$;
-2. the centered transfer quantity $D(c)=\min_a\|Ac-a\mathbf1\|_1$ is a norm on parity coefficient space;
+2. $D(c)=\min_a\|Ac-a\mathbf1\|_1$ is a norm on parity coefficient space;
 3. every parity-linear P75 box support extremum occurs at a parameter-box vertex;
-4. the strongest parity-linear full-law $L_\infty$ lower bound is the finite primal linear program in Section 5;
-5. its exact dual is the zero-mass parity-residual program in Section 6;
-6. every P87 witness is feasible inside the P88 class, so $L_{88}^{\mathrm{par}}(B)\ge L_{87}(B)$ pointwise;
-7. there exist exact rational boxes and empirical laws for which the dominance is strict;
-8. on the explicit common P86-P88 witness, matching exact rational primal and dual certificates prove
+4. the strongest parity-linear full-law lower bound is the finite primal LP in Section 5;
+5. its exact dual is the zero-mass residual program in Section 6;
+6. matching exact rational primal and dual feasible points certify the parity-linear optimum without reliance on floating-point optimality claims;
+7. the full hierarchy
+
+\[
+L_{88}(B)=\max\{L_{87}(B),L_{88}^{\mathrm{par}}(B)\}
+\]
+
+is a valid lower bound and satisfies $L_{88}(B)\ge L_{87}(B)$ pointwise;
+8. on the explicit common P86-P88 witness,
 
 \[
 \boxed{
-L_{88}^{\mathrm{par}}(B)=\frac5{168}>\frac1{96}=L_{87}(B).
+L_{87}(B)=\frac1{96}
+<
+L_{88}^{\mathrm{par}}(B)=L_{88}(B)=\frac5{168}.
 }
 \]
 
 ---
 
-## 13. Why P88 is a conceptual step rather than another enumeration
+## 12. Why P88 is a conceptual step
 
-P86 and P87 answer finite-family questions. P88 changes the mathematical object.
+P86 and P87 answer finite enumeration questions. P88 changes the mathematical object: it replaces coefficient-box enumeration with the support-function optimum over the entire eleven-dimensional real parity-linear space.
 
-Instead of asking which coefficient box to enumerate next, P88 asks for the support-function optimum over the entire real eleven-dimensional parity-linear space. The dual then exposes the geometry hidden by the earlier enumerations: the certificate is a distance between the empirical parity feature vector and the convex hull of box-vertex parity features, measured through the smallest zero-mass sixteen-cell perturbation compatible with those feature differences.
+The dual exposes the geometry behind the earlier searches: the parity component is controlled by the smallest zero-mass full-law perturbation that reproduces the empirical parity-feature discrepancy relative to the convex hull of P75 box-vertex parity features.
 
-This gives a natural stopping point for the P83-P87 linear parity hierarchy. Future strengthening must add genuinely new observable information or leave the linear parity class, rather than merely increasing an integer coefficient bound.
+This is a natural closure point for the **linear parity** branch. A future strengthening should add genuinely new observable information, nonlinear witnesses, or a tighter full-law relaxation rather than simply increase an integer coefficient bound.
 
 ---
 
-## 14. Reproducibility record
+## 13. Reproducibility record
 
 Implementation:
 
@@ -623,12 +563,12 @@ Equation provenance:
 
 `docs/p88_equation_provenance.md`
 
-The implementation uses exact `fractions.Fraction` arithmetic for empirical features, parameter-box vertices, parity-functional intervals, centered norms, dual weights, dual residuals, and the strict optimality certificate.
+Theorem figure:
+
+`docs/figures/p88_complete_parity_linear_certificate.svg`
 
 ---
 
-## 15. Scientific interpretation boundary
+## 14. Scientific interpretation boundary
 
-P88 is a conditional theorem about the declared P75 target-measurement family and the information carried by eleven parity observables. It establishes the strongest lower bound available from their linear span under the exact centered transfer norm.
-
-It does **not** show that parity observables are complete for consciousness, that the P75 latent variable is experience, that every physical description has been exhausted, that quantum mechanics is incomplete, that consciousness is nonphysical, or that the physical-to-experiential bridge has been solved.
+P88 is a conditional theorem about the declared P75 target-measurement family and the complete linear span of eleven parity observables. It does not show that parity observables contain all physically or experientially relevant information, that the P75 latent variable is experience, that all possible physical descriptors have been exhausted, that consciousness is nonphysical, or that the physical-to-experiential bridge has been solved.
