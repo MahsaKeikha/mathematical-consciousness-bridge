@@ -45,6 +45,33 @@ def test_claim_evidence_standard_separates_evidential_roles() -> None:
         assert marker in standard
 
 
+def test_claim_source_matrix_maps_public_claims_to_support_and_boundaries() -> None:
+    matrix = _read("docs/claim_source_matrix.md")
+    required = (
+        "Claim-to-Source Scientific Audit Matrix",
+        "Research origin",
+        "Formal consciousness modeling",
+        "External methodological background plus repository formulation",
+        "P75 model family",
+        "P86 weighted four-event compatibility",
+        "L85 = 0 < L86 = 1/192",
+        "P86 mathematical backbone",
+        "Reader-facing status claims",
+        "passing CI supports internal consistency and reproducibility; it is not external peer review",
+    )
+    for marker in required:
+        assert marker in matrix
+
+
+def test_reference_audit_classifies_tegmark_as_origin_not_validation() -> None:
+    audit = _read("docs/reference_audit.md")
+    assert "Tegmark, 2015" in audit
+    assert "10.1016/j.chaos.2015.03.014" in audit
+    assert "arXiv:1401.1219" in audit
+    assert "intellectual starting point" in audit
+    assert "not evidential support for later repository-original propositions" in audit
+
+
 def test_sources_page_points_to_current_p86_audit_record() -> None:
     sources = _read("website/sources.html")
     assert 'id="p86-source"' in sources
@@ -54,10 +81,16 @@ def test_sources_page_points_to_current_p86_audit_record() -> None:
     assert "p86_equation_provenance.md" in sources
     assert "weighted_quad_projection_parity_functional_separation.py" in sources
     assert "test_weighted_quad_projection_parity_functional_separation.py" in sources
+    assert "claim_source_matrix.md" in sources
+    assert "Claim-to-source matrix" in sources
 
 
 def test_public_provenance_does_not_make_priority_or_ontology_claims() -> None:
-    public = _read("website/sources.html") + _read("docs/claim_evidence_standard.md")
+    public = (
+        _read("website/sources.html")
+        + _read("docs/claim_evidence_standard.md")
+        + _read("docs/claim_source_matrix.md")
+    )
     forbidden = (
         "first theory of consciousness",
         "first proof of consciousness",
