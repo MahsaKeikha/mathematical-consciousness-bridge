@@ -3,7 +3,7 @@ name: deploy-research-website
 on:
   push:
     branches: ["main"]
-    # Certified P86 figures, scholarly provenance, collegial research-origin context, responsive reader layout, and HTML deploy from one exact commit artifact.
+    # Final clean P86 resynchronization: exact figures, required scholarly provenance, collegial research-origin context, responsive reader layout, and HTML deploy from one commit artifact.
     paths:
       - "website/**"
       - "docs/figures/**"
