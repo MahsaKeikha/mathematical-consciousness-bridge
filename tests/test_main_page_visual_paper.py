@@ -1,126 +1,52 @@
-import re
 from pathlib import Path
+
 
 ROOT = Path(__file__).resolve().parents[1]
 README = ROOT / "README.md"
-DETAIL = ROOT / "docs" / "detailed_proposition_record.md"
+DETAILED_RECORD = ROOT / "docs" / "detailed_proposition_record.md"
+VISUAL_ATLAS = ROOT / "website" / "visual-atlas.html"
 
 
-CURATED_MAIN_PAGE_FIGURES = (
-    "research_architecture.svg",
-    "universal_proof_ladder.svg",
-    "theorem_roadmap.svg",
-    "conscious_state_measurement_map.svg",
-    "fundamental_theory_consciousness_map.svg",
-    "causal_structure_anatomy.svg",
-    "information_geometry_response_manifold.svg",
-    "p12_collision_map.svg",
-    "p14_temporal_continuation.svg",
-    "p18_scale_sufficiency_certificate.svg",
-    "multiscale_physical_hierarchy.svg",
-    "p20_finite_sample_residual_certificate.svg",
-    "p71_target_provenance_noncircularity.svg",
-    "p72_target_measurement_channel_robustness.svg",
-    "p73_target_channel_identifiability.svg",
-    "p74_finite_sample_target_channel_recovery.svg",
-    "p75_target_model_adequacy_overidentification.svg",
-    "p76_finite_sample_target_model_adequacy.svg",
-    "p77_full_law_model_set_separation.svg",
-    "p78_certified_continuous_model_separation.svg",
-    "observer_to_bridge_handoff.svg",
-    "quantum_bridge_completeness_map.svg",
-    "p38_quantum_operational_sufficiency.svg",
-    "p41_trace_ball_quantum_envelope.svg",
-    "p47_sequential_graph_refinement.svg",
-    "theory_comparison_map.svg",
-    "equation_evidence_map.svg",
-)
-
-
-def _frontier() -> int:
-    numbers = []
-    for path in (ROOT / "docs").glob("proposition_*.md"):
-        match = re.match(r"proposition_(\d+)_", path.name)
-        if match:
-            numbers.append(int(match.group(1)))
-    return max(numbers)
-
-
-def test_main_page_contains_curated_scientific_figure_sequence():
+def test_readme_is_a_concise_reader_first_front_door() -> None:
     text = README.read_text(encoding="utf-8")
-    for figure in CURATED_MAIN_PAGE_FIGURES:
-        assert figure in text, f"README is missing curated figure {figure}"
 
-
-def test_main_page_links_complete_visual_atlases_instead_of_embedding_them():
-    text = README.read_text(encoding="utf-8")
     required = (
+        "# Mathematical Consciousness Bridge",
+        "website/plain-language.html",
+        "START_HERE.md",
+        "website/research-map.html",
+        "docs/detailed_proposition_record.md",
+        "docs/research_navigation.md",
         "website/visual-atlas.html",
-        "docs/quantitative_physics_mathematics_atlas.md",
-        "docs/quantum_foundations_and_bridge_test.md",
-        "docs/calibration_optimization_frontier_p61_p70.md",
-        "Q01-Q40",
-        "QM01-QM18",
+        "87 proposition-level results through P87",
+        "v0.82.0",
+        "physical-to-experiential bridge remains open",
     )
-    for token in required:
-        assert token in text
-
-    q_tokens = sum(f"q{index:02d}_" in text for index in range(1, 41))
-    qm_tokens = sum(f"qm{index:02d}_" in text for index in range(1, 19))
-    assert q_tokens < 10
-    assert qm_tokens < 10
+    for marker in required:
+        assert marker in text
 
 
-def test_detailed_proposition_chronology_is_externalized():
-    readme = README.read_text(encoding="utf-8")
-    detail = DETAIL.read_text(encoding="utf-8")
-    frontier = _frontier()
+def test_complete_proposition_chronology_lives_in_detailed_record() -> None:
+    text = DETAILED_RECORD.read_text(encoding="utf-8")
 
-    assert "docs/detailed_proposition_record.md" in readme
-    assert f"Open the complete P1 to P{frontier} chronology" not in readme
-    assert f"Complete P1 to P{frontier} chronology" in detail
-    assert "Propositions **P1-P10**" in detail
-    assert "**P70** makes the resulting certificate diagnostic rather than opaque" in detail
-    assert "**P71** returns from the downstream calibration branch" in detail
-    assert "**P72** adds the next target-side obligation" in detail
-    assert "**P73** closes the population identifiability step" in detail
-    assert "**P74** converts the P73 population inversion into a finite-sample confidence certificate" in detail
-    assert "**P75** separates target-channel identifiability from target-model adequacy" in detail
-    assert "**P76** converts the tracked P75 population adequacy restrictions" in detail
-    assert "**P77** closes the finite-data full-law gap left explicit by P76" in detail
-    assert "**P78** supplies the continuous-family optimization certificate required by P77" in detail
+    assert "Complete P1 to P87 chronology" in text
+    for i in range(1, 88):
+        assert f"P{i}" in text, f"Detailed proposition record is missing P{i}"
 
 
-def test_main_page_declares_scientific_status_boundaries():
+def test_visual_atlas_carries_the_figure_publication_layer() -> None:
+    text = VISUAL_ATLAS.read_text(encoding="utf-8")
+
+    assert "P87" in text
+    assert "p87_exact_bounded_primitive_quad_projection_parity.svg" in text
+    assert "Scientific boundary" in text
+
+
+def test_readme_does_not_duplicate_the_full_technical_record() -> None:
     text = README.read_text(encoding="utf-8")
-    required_phrases = (
-        "Synthetic example",
-        "Open bridge problem",
-        "**does not assume that a physical quantity is consciousness**",
-        "Quantum mechanics does not by itself imply consciousness",
-        "Reproducibility and audit path",
-        "Numerical validation facts",
-        "A passing test proves only",
-        "target-construction protocol",
-        "the way it is observed",
-        "reliability of the measurement itself",
-        "not certified by the current data",
-        "generically just-identified",
-        "Passing means compatibility with the declared model",
-        "non-rejection is not model acceptance",
-        "candidate best-fit model",
-        "upper bound",
-        "cannot by itself certify rejection",
-        "exact rational arithmetic",
-        "separately valid upper bound on the P77 sampling radius",
-    )
-    for phrase in required_phrases:
-        assert phrase in text, f"README is missing scientific-boundary text: {phrase}"
 
-
-def test_every_curated_figure_has_reader_interpretation():
-    text = README.read_text(encoding="utf-8")
-    assert text.count("**Figure ") >= len(CURATED_MAIN_PAGE_FIGURES)
-    assert "The arrows are logical dependencies" in text
-    assert "These are physical candidates to be tested for sufficiency" in text
-    assert "The scientific conclusion is conditional" in text
+    # The README is intentionally a front door. The complete chronology and
+    # visual publication record are linked from it rather than duplicated there.
+    assert "docs/detailed_proposition_record.md" in text
+    assert "website/visual-atlas.html" in text
+    assert text.count("## ") < 20
