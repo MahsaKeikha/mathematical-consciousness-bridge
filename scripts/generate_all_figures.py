@@ -11,14 +11,9 @@ source-authored theorem diagrams are validated and enriched from maintained
 scientific records rather than falsely presented as plotting-script output.
 After the canonical figure tree is ready, ``sync_figure_publication.py`` derives
 the GitHub-facing figure gateway, SHA-256 manifest, and current Visual Atlas
-frontier from the same tree.
-
-Run from the repository root with::
-
-    python scripts/generate_all_figures.py
-
-Use ``--validate-only`` to validate the existing SVG tree and require all public
-figure surfaces to be synchronized without regenerating atlas outputs.
+frontier from the same tree. A stable ``figures/current_frontier.svg`` mirror is
+kept byte-identical to the canonical current theorem figure so the top-level
+GitHub folder itself always exposes the active visual frontier.
 """
 
 from __future__ import annotations
@@ -34,6 +29,8 @@ ROOT = Path(__file__).resolve().parents[1]
 FIGURE_ROOT = ROOT / "docs" / "figures"
 QUANTITATIVE_DIR = FIGURE_ROOT / "quantitative"
 QUANTUM_DIR = FIGURE_ROOT / "quantum"
+PUBLICATION_MANIFEST = ROOT / "figures" / "manifest.json"
+CURRENT_FRONTIER_MIRROR = ROOT / "figures" / "current_frontier.svg"
 GENERATORS = (
     ROOT / "scripts" / "generate_quantitative_atlas.py",
     ROOT / "scripts" / "generate_quantum_foundations_atlas.py",
@@ -54,6 +51,42 @@ def _load_json(path: Path) -> object:
     if not path.is_file():
         raise FileNotFoundError(f"missing figure manifest: {path.relative_to(ROOT)}")
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _canonical_current_frontier_figure() -> Path:
+    manifest = _load_json(PUBLICATION_MANIFEST)
+    if not isinstance(manifest, dict):
+        raise TypeError("complete figure publication manifest must be an object")
+    relative = manifest.get("current_frontier_figure")
+    if not isinstance(relative, str) or not relative:
+        raise RuntimeError("figure manifest does not declare current_frontier_figure")
+    path = ROOT / relative
+    if not path.is_file():
+        raise FileNotFoundError(f"missing canonical current frontier figure: {relative}")
+    return path
+
+
+def _synchronize_current_frontier_mirror(*, check: bool) -> None:
+    source = _canonical_current_frontier_figure()
+    expected = source.read_bytes()
+    current = (
+        CURRENT_FRONTIER_MIRROR.read_bytes()
+        if CURRENT_FRONTIER_MIRROR.is_file()
+        else None
+    )
+    if current == expected:
+        print("[figures] top-level current_frontier.svg matches canonical frontier")
+        return
+    if check:
+        raise RuntimeError(
+            "figures/current_frontier.svg does not match the canonical current frontier"
+        )
+    CURRENT_FRONTIER_MIRROR.parent.mkdir(parents=True, exist_ok=True)
+    CURRENT_FRONTIER_MIRROR.write_bytes(expected)
+    print(
+        "[figures] synchronized figures/current_frontier.svg from "
+        f"{source.relative_to(ROOT)}"
+    )
 
 
 def _validate_quantitative_manifest() -> int:
@@ -78,10 +111,10 @@ def _validate_quantum_manifest() -> int:
     manifest_path = QUANTUM_DIR / "quantum_figure_manifest.json"
     manifest = _load_json(manifest_path)
     if not isinstance(manifest, dict):
-        raise TypeError("quantum figure manifest must be an object")
+        raise TypeError("quantum manifest must be an object")
     figures = manifest.get("figures")
     if not isinstance(figures, list) or not figures:
-        raise ValueError("quantum figure manifest must contain a nonempty figures list")
+        raise ValueError("quantum manifest must contain a nonempty figures list")
 
     expected = {str(item["file"]) for item in figures if isinstance(item, dict)}
     actual = {path.name for path in QUANTUM_DIR.glob("qm*.svg")}
@@ -127,7 +160,7 @@ def validate_figures() -> None:
         f"{quantitative_count} quantitative atlas SVGs, "
         f"{quantum_count} quantum atlas SVGs, "
         f"{source_authored_count} source-authored SVGs, "
-        f"{svg_count} total SVGs"
+        f"{svg_count} total canonical SVGs"
     )
 
 
@@ -151,14 +184,17 @@ def main() -> None:
     if args.validate_only:
         validate_figures()
         _run_script(PUBLICATION_SYNCER, "--check")
+        _synchronize_current_frontier_mirror(check=True)
         return
 
     for generator in GENERATORS:
         _run_script(generator)
     _run_script(ENRICHER)
     _run_script(PUBLICATION_SYNCER)
+    _synchronize_current_frontier_mirror(check=False)
     validate_figures()
     _run_script(PUBLICATION_SYNCER, "--check")
+    _synchronize_current_frontier_mirror(check=True)
 
 
 if __name__ == "__main__":
