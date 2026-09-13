@@ -27,7 +27,7 @@ This is a conditional model-separation result inside the declared P75 family. It
 
 | Proposition | Canonical figure | Proof | Provenance |
 | --- | --- | --- | --- |
-| P71 | [figure](../docs/figures/p71_target_provenance_noncircularity.svg) | [proof](../docs/proposition_71_target_provenance_noncircularity.md) | — |
+| P71 | [figure](../docs/figures/p71_target_provenance_noncircularity.svg) | [proof](../docs/proposition_71_target_provenance_noncircularity.md) | N/A |
 | P72 | [figure](../docs/figures/p72_target_measurement_channel_robustness.svg) | [proof](../docs/proposition_72_target_measurement_channel_robustness.md) | [equations](../docs/p72_equation_provenance.md) |
 | P73 | [figure](../docs/figures/p73_target_channel_identifiability.svg) | [proof](../docs/proposition_73_target_channel_identifiability.md) | [equations](../docs/p73_equation_provenance.md) |
 | P74 | [figure](../docs/figures/p74_finite_sample_target_channel_recovery.svg) | [proof](../docs/proposition_74_finite_sample_target_channel_recovery.md) | [equations](../docs/p74_equation_provenance.md) |

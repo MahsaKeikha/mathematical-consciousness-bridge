@@ -174,19 +174,21 @@ def prepare_website(source: Path, output: Path) -> None:
         if not (output / asset).is_file():
             raise RuntimeError(f"website build is missing {asset}")
 
-    frontier_figure = output / "figures" / CURRENT_FRONTIER_FIGURE
-    if not frontier_figure.is_file():
-        raise RuntimeError(
-            "website build is missing the current P86 theorem figure: "
-            f"{frontier_figure}"
-        )
+    visual_atlas_path = output / "visual-atlas.html"
+    if visual_atlas_path.is_file():
+        frontier_figure = output / "figures" / CURRENT_FRONTIER_FIGURE
+        if not frontier_figure.is_file():
+            raise RuntimeError(
+                "website build is missing the current P86 theorem figure: "
+                f"{frontier_figure}"
+            )
 
-    visual_atlas = (output / "visual-atlas.html").read_text(encoding="utf-8")
-    local_frontier_src = f'src="figures/{CURRENT_FRONTIER_FIGURE}"'
-    if local_frontier_src not in visual_atlas:
-        raise RuntimeError("Visual Atlas does not use the bundled P86 theorem figure")
-    if f'src="{RAW_FIGURE_PREFIX}' in visual_atlas:
-        raise RuntimeError("Visual Atlas still depends on raw GitHub main for figures")
+        visual_atlas = visual_atlas_path.read_text(encoding="utf-8")
+        local_frontier_src = f'src="figures/{CURRENT_FRONTIER_FIGURE}"'
+        if local_frontier_src not in visual_atlas:
+            raise RuntimeError("Visual Atlas does not use the bundled P86 theorem figure")
+        if f'src="{RAW_FIGURE_PREFIX}' in visual_atlas:
+            raise RuntimeError("Visual Atlas still depends on raw GitHub main for figures")
 
 
 def main() -> None:

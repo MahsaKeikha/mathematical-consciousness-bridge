@@ -43,7 +43,9 @@ def test_plot_generators_use_deterministic_svg_metadata_and_ids() -> None:
 def test_unified_figure_build_reapplies_documentation_metadata() -> None:
     source = _read("scripts/generate_all_figures.py")
     assert "enrich_figure_documentation.py" in source
-    assert "_run_generator(ENRICHER)" in source
+    assert "_run_script(ENRICHER)" in source
+    assert "_run_script(PUBLICATION_SYNCER)" in source
+    assert '_run_script(PUBLICATION_SYNCER, "--check")' in source
 
 
 def test_figure_ci_requires_clean_regeneration() -> None:

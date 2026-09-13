@@ -230,7 +230,7 @@ def _frontier_page(frontier: int) -> str:
     )
     for record in records:
         provenance = (
-            f"[equations](../{record['provenance']})" if record["provenance"] else "—"
+            f"[equations](../{record['provenance']})" if record["provenance"] else "N/A"
         )
         lines.append(
             f"| P{record['number']} | [figure](../{record['figure']}) | "
