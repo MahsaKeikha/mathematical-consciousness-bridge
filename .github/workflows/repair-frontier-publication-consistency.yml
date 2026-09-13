@@ -1,0 +1,44 @@
+name: repair-frontier-publication-consistency
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/repair-frontier-publication-consistency.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - name: Apply deterministic frontier repair
+        run: python scripts/repair_frontier_publication_consistency.py
+      - name: Install development environment
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+      - name: Validate repaired frontier publication contract
+        run: |
+          python scripts/verify_frontier_publication.py
+          python scripts/verify_repository.py
+          python -m pytest -q tests/test_frontier_publication_consistency.py tests/test_readme_research_orientation.py tests/test_reader_documentation_consistency.py tests/test_frontier_reader_narrative.py
+          python -m ruff check scripts/verify_frontier_publication.py scripts/verify_repository.py tests/test_frontier_publication_consistency.py
+          git diff --check
+      - name: Commit guarded frontier repair
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md docs/theorem_roadmap.md docs/research_navigation.md scripts/verify_frontier_publication.py scripts/verify_repository.py tests/test_frontier_publication_consistency.py
+          git commit -m "Synchronize current P86 frontier publication surfaces"
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
