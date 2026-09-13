@@ -85,3 +85,8 @@ A successful figure workflow means the repository's declared generation and vali
 For the curated reader-facing index, see [`docs/figure_catalog.md`](../figure_catalog.md). For full setup instructions, see [`docs/reproducibility.md`](../reproducibility.md).
 
 - `p85_exact_triple_projection_parity_functional.svg` - P85 exact three-event shared-parameter parity-functional certificate; conditional on the declared P75 family.
+
+
+### P86 exact four-event projection-parity functional certificate
+
+`p86_exact_quadruple_projection_parity_functional.svg` visualizes the current P86 theorem frontier: 2640 exact four-event shared-parameter functionals and the strict complete-certificate hierarchy witness `L85 = 5/48 < L86 = 9/64`.

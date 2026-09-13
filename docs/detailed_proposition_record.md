@@ -1,6 +1,6 @@
 # Detailed proposition record
 
-## Complete P1 to P85 chronology
+## Complete P1 to P86 chronology
 
 This page preserves the proposition-by-proposition development history of the Mathematical Consciousness Bridge research program. It is intentionally separate from the main README so a first-time reader can follow the scientific argument without first learning the internal chronology of the project.
 
@@ -14,7 +14,7 @@ A first-time reader should not read this page as 84 disconnected proofs. Use it 
 
 ---
 
-## Complete P1 to P85 chronology
+## Complete P1 to P86 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
@@ -277,3 +277,18 @@ The exact regression witness has `L84 = 0`, empirical functional value `5/8`, ex
 - Figure: [P85 exact three-event projection-parity functional](figures/p85_exact_triple_projection_parity_functional.svg)
 - Implementation: [`triple_projection_parity_functional_separation.py`](../src/consciousness_bridge/triple_projection_parity_functional_separation.py)
 - Tests: [`test_triple_projection_parity_functional_separation.py`](../tests/test_triple_projection_parity_functional_separation.py)
+
+
+## P86: exact four-event projection-parity functional certificate
+
+**Question.** Can exact four-event shared-parameter parity relations sharpen the complete P85 certificate on the same rational P75 parameter box?
+
+**Result.** Yes. P86 audits 2640 sign-normalized four-event functionals and defines `L86` as the maximum of the complete P85 lower bound and the strongest new four-event transfer. The construction is pointwise never weaker than P85. An exact-rational witness has `L85 = 5/48`, while one four-event functional has empirical value `-9/8`, exact P75 interval `[0,0]`, centered coefficient norm `8`, and therefore `L86 = 9/64`, with exact gain `7/192`.
+
+**Scientific boundary.** This is a conditional model-separation theorem for the declared P75 family. It does not identify a latent state with consciousness, validate an alternative model, or close the physical-to-experiential bridge.
+
+- Proof: [`proposition_86_exact_quadruple_projection_parity_functional.md`](proposition_86_exact_quadruple_projection_parity_functional.md)
+- Provenance: [`p86_equation_provenance.md`](p86_equation_provenance.md)
+- Source: [`quadruple_projection_parity_functional_separation.py`](../src/consciousness_bridge/quadruple_projection_parity_functional_separation.py)
+- Tests: [`test_quadruple_projection_parity_functional_separation.py`](../tests/test_quadruple_projection_parity_functional_separation.py)
+- Search: [`search_p86_strict_witness.py`](../scripts/search_p86_strict_witness.py)

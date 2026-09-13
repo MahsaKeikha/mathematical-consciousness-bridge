@@ -9,7 +9,7 @@
 **Mahsa Keikha, PhD**
 
 > [!TIP]
-> **First time here?** Begin with **[START_HERE.md](START_HERE.md)** for a short orientation, audience-specific reading paths, the P1-P85 program map, and the current P85 frontier. Keep the **[Glossary](docs/glossary.md)** open for terminology, and use the **[Reproducibility Guide](docs/reproducibility.md)** when you want to run the tests or regenerate the computational figure atlases.
+> **First time here?** Begin with **[START_HERE.md](START_HERE.md)** for a short orientation, audience-specific reading paths, the P1-P86 program map, and the current P86 frontier. Keep the **[Glossary](docs/glossary.md)** open for terminology, and use the **[Reproducibility Guide](docs/reproducibility.md)** when you want to run the tests or regenerate the computational figure atlases.
 
 > [!NOTE]
 > **Reproduce the complete computational record:** use Python 3.12.14, install `requirements-reproducibility.txt`, and run `python scripts/reproducibility_audit.py` (or `make reproduce`). The audit fails unless tests/static checks pass and two full generated-figure rebuilds leave the Git tree byte-for-byte clean.
@@ -17,11 +17,13 @@
 | Research status | Current value |
 | --- | --- |
 | Formal release | **v0.82.0** |
-| Public theorem frontier | **P85** |
-| Proposition-level results | **85** |
+| Public theorem frontier | **P86** |
+| Proposition-level results | **86** |
 | Physical-to-experiential bridge | **Open** |
 
-Read the complete P1 to P85 detailed proposition record in [docs/detailed_proposition_record.md](docs/detailed_proposition_record.md) for proposition-by-proposition assumptions, statements, proofs, implementations, tests, and scientific boundaries.
+The theorem frontier is P86.
+
+Read the complete P1 to P86 detailed proposition record in [docs/detailed_proposition_record.md](docs/detailed_proposition_record.md) for proposition-by-proposition assumptions, statements, proofs, implementations, tests, and scientific boundaries.
 
 > **What mathematical and physical conditions would be required for a complete physical description of a system to support a scientifically testable claim about consciousness?**
 
@@ -90,8 +92,15 @@ P85 asks whether pairwise silence can still hide a higher-order shared-parameter
 
 ![P85 exact three-event projection-parity functional certificate](docs/figures/p85_exact_triple_projection_parity_functional.svg)
 
-**P85 frontier figure.** P85 tests exact three-event shared-parameter compatibility beyond the complete P84 certificate. The displayed exact-rational witness gives `L84 = 0 < L85 = 1/32`. Read the [P85 proof](docs/proposition_85_exact_triple_projection_parity_functional.md) and [P85 equation provenance](docs/p85_equation_provenance.md) for the assumptions, derivation, executable audit, and interpretation boundary.
+**P85 previous-frontier figure.** P85 tests exact three-event shared-parameter compatibility beyond the complete P84 certificate. The displayed exact-rational witness gives `L84 = 0 < L85 = 1/32`. Read the [P85 proof](docs/proposition_85_exact_triple_projection_parity_functional.md) and [P85 equation provenance](docs/p85_equation_provenance.md) for the assumptions, derivation, executable audit, and interpretation boundary.
 
+
+
+P86 asks whether exact four-event shared-parameter parity functionals can sharpen the complete P85 certificate on the same P75 parameter box. The standard P86 audit contains 2640 sign-normalized four-event functionals. Its exact-rational strict witness has the complete `L85 = 5/48` lower bound while `Q = P(H02) - P(H23) + P(H012) - P(H123)` has empirical value `-9/8`, exact P75 interval `[0,0]`, centered coefficient norm `8`, and therefore `L86 = 9/64`. The exact hierarchy gain is `7/192`. This is a stronger conditional model-distance certificate, not an identification of the latent state with consciousness.
+
+![P86 exact four-event projection-parity functional certificate](docs/figures/p86_exact_quadruple_projection_parity_functional.svg)
+
+**P86 frontier figure.** P86 retains the complete P85 hierarchy and adds exact four-event shared-parameter functionals. The strict witness gives `L85 = 5/48 < L86 = 9/64`. Read the [P86 proof](docs/proposition_86_exact_quadruple_projection_parity_functional.md) and [P86 equation provenance](docs/p86_equation_provenance.md) for the exact derivation, deterministic witness search, executable audit, and interpretation boundary.
 Only after the physical description, the target, and the way the target is measured are all scientifically defensible does the central bridge question become meaningful: **does the physical description actually contain enough information to account for the target distinction?** One of the clearest ways to challenge a proposed bridge is to find two cases that are indistinguishable according to the declared physical description but remain distinguishable according to the independently justified target. Such a result would show that the declared physical description is not sufficient for that target.
 
 That conclusion must also be interpreted carefully. Showing that one physical description is insufficient would not automatically prove that consciousness lies outside physics. The description may be too coarse, may omit a relevant physical variable, may use the wrong system boundary or scale, may rely on an inadequate measurement process, or may assume a bridge rule that is too restrictive. The aim is to identify exactly which assumption fails rather than turning one failed model into a metaphysical conclusion.
@@ -106,7 +115,7 @@ A successful outcome would therefore not be a single impressive equation labeled
 
 That is the purpose of the **Mathematical Consciousness Bridge**: **to transform the broad question of how physical reality relates to experience into a sequence of precise scientific obligations that can be examined, tested, falsified, and improved one by one, without hiding the hardest part of the problem inside an assumption.**
 
-The research currently contains **85 proposition-level results** and **71 equation-driven quantitative figures**. The theorem frontier is P85. These results build the test architecture and close specific mathematical gaps, but the physical-to-experiential bridge itself remains open.
+The research currently contains **86 proposition-level results** and **71 equation-driven quantitative figures**. The theorem frontier is P85. These results build the test architecture and close specific mathematical gaps, but the physical-to-experiential bridge itself remains open.
 
 This project continues [Spatiotemporal Observer Mathematics](https://github.com/MahsaKeikha/spatiotemporal-observer-math), which addresses the prior physical problem of identifying a persistent moving subsystem from measured dynamics.
 
@@ -159,7 +168,7 @@ This distinction is central. The repository **does not assume that a physical qu
 
 **Quantum mechanics does not by itself imply consciousness.** A complete quantum state specifies the outcome statistics of declared measurements, but an experiential conclusion requires an additional bridge statement unless that bridge is independently derived.
 
-Likewise, a latent target symbol such as $E^\star$ or $S$ is not a declaration of experiential ground truth. P71-P85 formalize separate requirements on target provenance, observation, channel identifiability, finite-data recovery, model adequacy, full-law separation, and increasingly strong exact-rational continuous-family certificates before such a target can carry bridge evidence.
+Likewise, a latent target symbol such as $E^\star$ or $S$ is not a declaration of experiential ground truth. P71-P86 formalize separate requirements on target provenance, observation, channel identifiability, finite-data recovery, model adequacy, full-law separation, and increasingly strong exact-rational continuous-family certificates before such a target can carry bridge evidence.
 
 ---
 
@@ -242,17 +251,17 @@ The main page is organized as a scientific argument rather than a chronological 
 | --- | --- | --- | --- | --- |
 | 1. Foundations and identifiability | **P1-P10** | What must be invariant, distinguishable, recoverable, and statistically testable? | Proved / implemented / tested | [Theorem roadmap](docs/theorem_roadmap.md) |
 | 2. Causal, temporal, compositional, and scale structure | **P11-P18** | Which physical distinctions survive interventions, time, composition, and coarse-graining? | Proved / implemented / tested | [Quantitative atlas](docs/quantitative_physics_mathematics_atlas.md) |
-| 3. Bridge sufficiency and target validity | **P19-P24, P71-P85** | Does an independently justified, adequately measured, reliability-characterized, and finite-data-certified target factor through the physical descriptor? | Proved under declared models | [Research navigation](docs/research_navigation.md) |
+| 3. Bridge sufficiency and target validity | **P19-P24, P71-P86** | Does an independently justified, adequately measured, reliability-characterized, and finite-data-certified target factor through the physical descriptor? | Proved under declared models | [Research navigation](docs/research_navigation.md) |
 | 4. Multiscale operational structure | **P25-P37** | Which causal and response structures survive node, state, intervention, and delay quotients? | Proved / implemented / tested | [Theorem roadmap](docs/theorem_roadmap.md) |
 | 5. Quantum sufficiency and falsification | **P38-P44** | What follows from a declared operational quantum description, and what does not? | Conditional tests proved; ontology open | [Quantum foundations](docs/quantum_foundations_and_bridge_test.md) |
 | 6. Adaptive experiment design and scheduling | **P45-P60** | How should evidence gathering, stopping, service allocation, switching, and calibration be organized? | Proved / implemented / tested | [Equation and citation map](docs/equation_and_citation_map.md) |
 | 7. Calibration and integer optimization | **P61-P70** | How should downstream finite calibration resources be allocated and certified? | Proved / implemented / tested | [Calibration and Optimization Frontier](docs/calibration_optimization_frontier_p61_p70.md) |
 
-The complete theorem index spans P1 through P85 with explicit dependency branches. Figure 3 below displays the P1-P31 foundational portion; later branches are documented separately.
+The complete theorem index spans P1 through P86 with explicit dependency branches. Figure 3 below displays the P1-P31 foundational portion; later branches are documented separately.
 
 ![Theorem roadmap](docs/figures/theorem_roadmap.svg)
 
-**Figure 3. Theorem dependency map for P1-P31.** Proposition numbers preserve development order, while arrows show actual mathematical and scientific prerequisites. The central target-sufficiency chain runs from P19 through P24; P25-P31 are physical-scale and quotient branches whose prerequisites are given by the arrows rather than by vertical placement alone. An absent arrow means no dependency is being asserted. Later P61-P70 and P71-P85 are separate continuations documented in the theorem index.
+**Figure 3. Theorem dependency map for P1-P31.** Proposition numbers preserve development order, while arrows show actual mathematical and scientific prerequisites. The central target-sufficiency chain runs from P19 through P24; P25-P31 are physical-scale and quotient branches whose prerequisites are given by the arrows rather than by vertical placement alone. An absent arrow means no dependency is being asserted. Later P61-P70 and P71-P86 are separate continuations documented in the theorem index.
 
 ---
 
@@ -1089,7 +1098,7 @@ The proposition-by-proposition development history is intentionally kept off the
 
 # Current scientific status
 
-The repository now contains 85 proposition-level results. The theorem frontier is P85.
+The repository now contains 86 proposition-level results. The theorem frontier is P85.
 
 | Item | Current state |
 | --- | --- |
