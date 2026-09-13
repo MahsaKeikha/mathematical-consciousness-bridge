@@ -52,12 +52,11 @@ def test_navigation_and_roadmap_report_current_frontier() -> None:
     roadmap = _read("docs/theorem_roadmap.md")
     frontier = _frontier()
 
-    assert f"current documented theorem frontier is **P{frontier}**" in navigation
+    assert f"public theorem frontier is **P{frontier}**" in navigation
     assert f"current documented theorem frontier is **P{frontier}**" in roadmap
-    assert f"P{frontier}" in navigation
-    assert f"P{frontier}" in roadmap
-    assert f"P71-P{frontier}" in navigation
+    assert f"P75 through P{frontier}" in navigation
     assert f"P71-P{frontier}" in roadmap
+    assert "final bridge from physical description to experience remains open" in navigation
 
 
 def test_public_start_page_is_reader_oriented_and_scientifically_bounded() -> None:
