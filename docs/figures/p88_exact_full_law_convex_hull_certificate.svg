@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="p88-title p88-desc">
+  <title id="p88-title">P88 Exact Full-Law Convex-Hull Certificate</title>
+  <desc id="p88-desc">Proposition 88 uses vector-valued multi-affinity of the P75 sixteen-cell law to place every model law inside the convex hull of parameter-box vertex laws. Distance to this convex hull is the strongest complete linear full-law support certificate. On the common P86-P87 witness, the signed cell contrast P(1000) minus P(1010) gives an exact lower bound one over sixteen, and a seven-vertex rational convex combination achieves exactly one over sixteen. Therefore the convex-hull optimum is one over sixteen, strictly larger than the P87 lower bound one over ninety-six. This is a conditional model-separation theorem and does not identify consciousness or solve the physical-to-experiential bridge.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f9fc; }
+      .panel { fill: #ffffff; stroke: #cfd8e6; stroke-width: 1.5; }
+      .panelSoft { fill: #f3f7fb; stroke: #cfd8e6; stroke-width: 1.2; }
+      .accent { fill: #173b65; }
+      .accentSoft { fill: #eaf2fb; stroke: #8fb0d4; stroke-width: 1.3; }
+      .success { fill: #eef8f1; stroke: #8eb89a; stroke-width: 1.3; }
+      .warn { fill: #fff7e8; stroke: #d6b267; stroke-width: 1.3; }
+      .ink { fill: #172235; font-family: Arial, Helvetica, sans-serif; }
+      .muted { fill: #5d6a7c; font-family: Arial, Helvetica, sans-serif; }
+      .white { fill: #ffffff; font-family: Arial, Helvetica, sans-serif; }
+      .title { font-size: 30px; font-weight: 700; }
+      .subtitle { font-size: 16px; }
+      .section { font-size: 20px; font-weight: 700; }
+      .label { font-size: 15px; font-weight: 700; }
+      .body { font-size: 14px; }
+      .formula { font-size: 16px; font-weight: 700; }
+      .metric { font-size: 23px; font-weight: 700; }
+      .tiny { font-size: 12px; }
+      .arrow { stroke: #6c87a7; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#6c87a7"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1280" height="760"/>
+  <rect class="accent" x="0" y="0" width="1280" height="112"/>
+  <text class="white title" x="54" y="50">P88 Exact Full-Law Convex-Hull Certificate</text>
+  <text class="white subtitle" x="54" y="79">From finite parity searches to the complete 15-dimensional linear witness class of the observed four-bit law.</text>
+
+  <rect class="panel" x="48" y="144" rx="16" ry="16" width="350" height="448"/>
+  <text class="ink section" x="72" y="181">1. What remains after P87</text>
+  <text class="muted body" x="72" y="207">P87 closes a finite four-event parity family.</text>
+
+  <rect class="panelSoft" x="78" y="236" rx="10" ry="10" width="290" height="74"/>
+  <text class="ink label" x="98" y="264">P87 exact frontier</text>
+  <text class="muted body" x="98" y="288">39,600 bounded primitive functionals</text>
+
+  <rect class="panelSoft" x="78" y="322" rx="10" ry="10" width="290" height="94"/>
+  <text class="ink label" x="98" y="350">But the observed law has 16 cells</text>
+  <text class="muted body" x="98" y="374">Probability mass removes one degree:</text>
+  <text class="ink formula" x="98" y="398">15 independent linear directions</text>
+
+  <rect class="warn" x="78" y="428" rx="10" ry="10" width="290" height="82"/>
+  <text class="ink label" x="98" y="456">P88 question</text>
+  <text class="muted body" x="98" y="480">What is the strongest certificate from</text>
+  <text class="muted body" x="98" y="500">any linear functional of the full law?</text>
+
+  <rect class="success" x="78" y="522" rx="10" ry="10" width="290" height="50"/>
+  <text class="ink label" x="98" y="552">Answer: one finite convex-hull LP.</text>
+
+  <path class="arrow" d="M406 368 C430 368, 438 368, 462 368"/>
+
+  <rect class="panel" x="470" y="144" rx="16" ry="16" width="350" height="448"/>
+  <text class="ink section" x="494" y="181">2. Vector multi-affinity closes it</text>
+  <text class="muted body" x="494" y="207">The complete P75 law F(theta) is multi-affine.</text>
+
+  <rect class="accentSoft" x="500" y="230" rx="12" ry="12" width="290" height="92"/>
+  <text class="ink label" x="520" y="257">Exact box inclusion</text>
+  <text class="ink formula" x="520" y="284">F(B) subset conv{F(v): v vertex}</text>
+  <text class="muted body" x="520" y="307">One shared convex weight vector couples all cells.</text>
+
+  <rect class="panelSoft" x="500" y="336" rx="12" ry="12" width="290" height="100"/>
+  <text class="ink label" x="520" y="363">Convex-hull lower bound</text>
+  <text class="muted body" x="520" y="388">L88_ch = dist_inf(empirical, vertex hull)</text>
+  <text class="muted body" x="520" y="410">This is a finite rational linear program.</text>
+
+  <rect class="panelSoft" x="500" y="450" rx="12" ry="12" width="290" height="114"/>
+  <text class="ink label" x="520" y="477">Complete linear dual</text>
+  <text class="muted body" x="520" y="501">D(g) = min_a sum_x |g_x - a|</text>
+  <text class="muted body" x="520" y="523">Optimize over every g in R^16 modulo</text>
+  <text class="muted body" x="520" y="545">constant shifts: all 15 linear directions.</text>
+
+  <path class="arrow" d="M828 368 C850 368, 862 368, 884 368"/>
+
+  <rect class="panel" x="892" y="144" rx="16" ry="16" width="340" height="448"/>
+  <text class="ink section" x="916" y="181">3. Exact strict witness</text>
+  <text class="muted body" x="916" y="207">Same rational box and empirical law as P86-P87.</text>
+
+  <rect class="success" x="920" y="232" rx="11" ry="11" width="284" height="62"/>
+  <text class="ink label" x="940" y="258">Previous hierarchy value</text>
+  <text class="ink metric" x="940" y="286">L87 = 1/96</text>
+
+  <rect class="accentSoft" x="920" y="308" rx="11" ry="11" width="284" height="108"/>
+  <text class="ink label" x="940" y="335">Two-cell full-law witness</text>
+  <text class="ink formula" x="940" y="360">g = 1_(1000) - 1_(1010)</text>
+  <text class="muted body" x="940" y="383">empirical = 1/8; model support &lt;= 0</text>
+  <text class="muted body" x="940" y="403">D(g) = 2</text>
+
+  <rect class="warn" x="920" y="430" rx="11" ry="11" width="284" height="62"/>
+  <text class="ink label" x="940" y="456">Exact linear lower witness</text>
+  <text class="ink metric" x="940" y="483">(1/8) / 2 = 1/16</text>
+
+  <rect class="success" x="920" y="506" rx="11" ry="11" width="284" height="66"/>
+  <text class="ink label" x="940" y="532">Seven-vertex upper witness matches</text>
+  <text class="ink metric" x="940" y="560">L88 = 1/16 = 6 x L87</text>
+
+  <rect class="accent" x="48" y="620" rx="14" ry="14" width="1184" height="92"/>
+  <text class="white label" x="72" y="650">Scientific boundary</text>
+  <text class="white body" x="72" y="676">P88 certifies distance to a convex outer relaxation of the declared P75 model box; it does not make that hull the true nonlinear model.</text>
+  <text class="white body" x="72" y="697">It does not identify consciousness, establish nonphysicality, or solve the physical-to-experiential bridge.</text>
+
+  <text class="muted tiny" x="48" y="742">Mathematical Consciousness Bridge | Proposition 88 | exact rational full-law convex-hull certificate</text>
+</svg>
