@@ -8,1212 +8,192 @@
 
 **Mahsa Keikha, PhD**
 
-> [!TIP]
-> **First time here?** Begin with **[START_HERE.md](START_HERE.md)** for a short orientation, audience-specific reading paths, the P1-P88 program map, and the current P88 frontier. Keep the **[Glossary](docs/glossary.md)** open for terminology, and use the **[Reproducibility Guide](docs/reproducibility.md)** when you want to run the tests or regenerate the computational figure atlases.
+> ## The question
+>
+> **What would have to be true before a physical description of a system could support a scientifically testable claim about experience?**
 
-> [!NOTE]
-> **Reproduce the complete computational record:** use Python 3.12.14, install `requirements-reproducibility.txt`, and run `python scripts/reproducibility_audit.py` (or `make reproduce`). The audit fails unless tests/static checks pass and two full generated-figure rebuilds leave the Git tree byte-for-byte clean.
+This repository develops a rigorous mathematical framework for that question. It does **not** begin by declaring a brain pattern, information measure, quantum effect, latent variable, or mathematical object to be consciousness. Instead, it asks what any proposed physical-to-experiential bridge would have to survive before the claim deserves scientific weight.
+
+The program separates several questions that are often mixed together: Is the physical description well defined? Is the experience-related target independent rather than circular? Is the target measurable? Is the measurement model identifiable? Does the declared model actually fit the observations? Can a finite-data rejection be certified without hiding numerical or selection error?
+
+**If this is your first visit, do not read the repository folder by folder.** Start with the guided routes below.
+
+## Start in one click
+
+| I want to... | Open this |
+| --- | --- |
+| Understand the idea without technical background | **[Start Here](START_HERE.md)** |
+| See the research as a visual scientific program | **[Research Architecture](docs/research_architecture.md)** |
+| Find a theorem, figure, source file, test, or provenance record | **[Research Traceability Index](docs/research_traceability_index.md)** |
+| Follow the proposition dependencies | **[Theorem Roadmap](docs/theorem_roadmap.md)** |
+| Browse the figures first | **[Figure Catalog](docs/figure_catalog.md)** |
+| Reproduce the computational record | **[Reproducibility Guide](docs/reproducibility.md)** |
+| Read the complete proposition record | **[Detailed Proposition Record](docs/detailed_proposition_record.md)** |
+
+---
+
+## The project in one picture
+
+![Research architecture](docs/figures/research_architecture.svg)
+
+The architecture is deliberately layered. A theorem about physical structure is not automatically a theorem about experience. A successful fit is not automatically a bridge. A non-rejection is not model validation. Each layer must earn the right to support the next one.
+
+The complete theorem roadmap covers **P1 through P88 with explicit dependency branches**, but the landing page does not require you to read 88 results in sequence.
+
+---
+
+## What the research is building
+
+The program can be read as five scientific questions.
+
+### 1. What counts as the same physical system?
+
+The early results formalize representation invariance, identifiability, intervention-resolved structure, temporal continuation, composition, and scale. The goal is to prevent arbitrary coordinates or coarse descriptions from being mistaken for physical facts.
+
+**Go deeper:** [Research Architecture](docs/research_architecture.md) · [P1-P18 in the theorem roadmap](docs/theorem_roadmap.md)
+
+### 2. When is a physical description sufficient for a target?
+
+P19-P24 formulate and test physical sufficiency: whether an independently defined target contains distinctions that the proposed physical descriptor loses. The framework is designed so that an inadequate descriptor can fail.
+
+**Go deeper:** [P19 fundamental physical sufficiency](docs/proposition_19_fundamental_physical_sufficiency.md) · [Falsification Program](docs/falsification_program.md)
+
+### 3. Can the target and its measurement be trusted?
+
+P71-P74 address target circularity, noisy observation, identifiability, and finite-sample recovery. This prevents an experience-related target from being quietly constructed out of the same physical variables that are then claimed to explain it.
+
+**Go deeper:** [P71-P74 research path](docs/research_traceability_index.md#target-integrity-and-measurement-p71-p74)
+
+### 4. Does the declared target model actually fit the data?
+
+P75-P87 move from overidentifying restrictions to increasingly strong exact-rational model-separation certificates. The point is not to produce a more complicated formula. It is to make model inadequacy mathematically visible when simpler checks remain silent.
+
+**Go deeper:** [P75-P87 model-adequacy path](docs/research_traceability_index.md#model-adequacy-and-exact-separation-p75-p87)
+
+### 5. Can a discovered incompatibility survive independent validation?
+
+P88 adds a held-out validation layer. A model box and one P87 functional may be selected using discovery data, but the pair must be frozen before an independent validation sample is examined. Under that design, the selected scalar test can be certified without a 39,600-way functional union bound.
+
+**Go deeper:** [P88 theorem](docs/proposition_88_heldout_selected_parity_functional_certification.md) · [P88 provenance](docs/p88_equation_provenance.md) · [implementation](src/consciousness_bridge/heldout_selected_parity_functional_certification.py) · [tests](tests/test_heldout_selected_parity_functional_certification.py)
+
+---
+
+## Current frontier: P88
+
+![P88 held-out selected parity functional certification](docs/figures/p88_heldout_selected_parity_functional_certification.svg)
+
+P88 asks a narrow but important statistical question: after a large discovery search finds a promising exact P87 incompatibility, can that selected result be tested on fresh data without pretending the selection never happened?
+
+For the stored exact witness, the discovery-selected P75 box and P87 functional are frozen before validation. With `n = 2400` held-out observations and `alpha = 0.05`, the exact certificate gives a positive population lower-confidence bound on distance from the P75 laws inside the frozen box:
+
+\[
+\inf_{q\in\mathcal M_B}\|p-q\|_\infty
+\ge
+\frac{701849}{201326592}
+\approx 0.00348612.
+\]
+
+The exact P79-certified design threshold for the stored functional gap is **1063 held-out observations**; 1062 is insufficient under the same certificate settings.
+
+> **Interpretation boundary:** this is a box-specific finite-sample rejection result under genuine discovery/validation independence. It is not, by itself, a rejection of every P75 parameter value. It does not identify the latent state with consciousness, prove nonphysicality, or close the physical-to-experiential bridge.
+
+### Audit P88 without searching the repository
+
+| Question | Direct record |
+| --- | --- |
+| What is proved? | [P88 theorem](docs/proposition_88_heldout_selected_parity_functional_certification.md) |
+| Where do the equations come from? | [P88 equation provenance](docs/p88_equation_provenance.md) |
+| What code computes the certificate? | [P88 implementation](src/consciousness_bridge/heldout_selected_parity_functional_certification.py) |
+| What regression tests protect it? | [P88 tests](tests/test_heldout_selected_parity_functional_certification.py) |
+| What does the result look like visually? | [P88 figure](docs/figures/p88_heldout_selected_parity_functional_certification.svg) |
+| How do I reproduce the repository? | [Reproducibility Guide](docs/reproducibility.md) |
+
+---
+
+## Scientific status
+
+The research currently contains **88 proposition-level results** and **72 equation-driven quantitative figures**. The theorem frontier is P88. These results build a test architecture and close specific mathematical gaps; the physical-to-experiential bridge itself remains open.
+
+The repository now contains 88 proposition-level results. The theorem frontier is P88.
 
 | Research status | Current value |
 | --- | --- |
 | Formal release | **v0.82.0** |
 | Public theorem frontier | **P88** |
 | Proposition-level results | **88** |
+| Equation-driven quantitative figures | **72** |
 | Physical-to-experiential bridge | **Open** |
 
-Read the complete P1 to P88 detailed proposition record in [docs/detailed_proposition_record.md](docs/detailed_proposition_record.md) for proposition-by-proposition assumptions, statements, proofs, implementations, tests, and scientific boundaries.
+The formal release number and theorem frontier are intentionally separate concepts. New theorem work may advance before a new formal release is cut.
 
-> **What mathematical and physical conditions would be required for a complete physical description of a system to support a scientifically testable claim about consciousness?**
-
-This repository is a mathematical-physics research program for the **physical-to-experiential bridge problem**. It does not begin by assuming what consciousness is. It asks what must be true before any proposed physical description can legitimately be called sufficient for an independently specified experiential target, how that sufficiency can be falsified, and how finite experiments can distinguish a real bridge from correlation, representation choice, coarse-graining, target circularity, target-measurement error, unidentified target-channel reliability, or statistical noise.
-
-![Research architecture](docs/figures/research_architecture.svg)
-
-**Figure 1. Scientific architecture of the project.** The research moves from physical dynamics to operationally measurable structure, then to mathematical sufficiency tests, target-side validity, finite-data certification, experimental design, and finally the still-open physical-to-experiential bridge. The arrows are logical dependencies, not claims that one layer has already been identified with consciousness.
-
-> **Visual reading standard.** Every reader-facing figure now has a clear title, an embedded SVG description, a nearby caption or atlas explanation, a scientific-status boundary, and a direct route to the proof or source context. Use the [Complete Figure Catalog](docs/figure_catalog.md) to understand every visual without searching the repository, and the [Figure Caption and Description Standard](docs/figure_caption_and_description_standard.md) for the enforced documentation rules.
-
-> **Reader experience standard.** The public record uses progressive disclosure: plain-language question, formal result, audit trail, and interpretation boundary. Figure sizes are capped for readability rather than page dominance, and complex theorem graphics always retain a full-resolution route. See the [Reader Experience and Visual Presentation Standard](docs/reader_experience_and_visual_standard.md).
+Read the complete P1 to P88 detailed proposition record in [docs/detailed_proposition_record.md](docs/detailed_proposition_record.md). For a more navigable entry point, use the [Research Traceability Index](docs/research_traceability_index.md).
 
 ---
 
-# What this project is trying to achieve, in plain language
+## What this repository does not claim
 
-The question behind this project is simple to state, even though answering it rigorously is difficult: **if science could describe the physical state and behavior of a system in complete detail, would that description also be enough to determine what, if anything, is experienced by that system?**
-
-Modern physics and neuroscience give us extraordinarily powerful ways to describe what physical systems are doing. We can measure electrical activity, chemistry, blood flow, behavior, responses to stimulation, information flow, causal influence, and many other properties. Quantum mechanics gives us an even more fundamental language for physical states, transformations, and measurement probabilities. These descriptions can tell us an enormous amount about structure and behavior. But none of them, by itself, establishes why a particular physical condition should correspond to a particular experience, or whether the physical description we chose contains every distinction that would matter for experience. That missing connection is what this project calls the **physical-to-experiential bridge**.
-
-The purpose of this research is to study that missing connection without assuming the answer in advance. It does not begin by selecting one number, neural pattern, information measure, field, quantum effect, level of complexity, or other physical quantity and declaring that quantity to be consciousness. Instead, it treats every proposed connection between physical description and experience as a scientific claim that has to earn its validity step by step.
-
-The first requirement is to define the physical side clearly. What exactly are we claiming to know about the system? Which variables, measurements, interventions, time scales, spatial scales, and physical relationships are included? The project then asks whether that description remains meaningful when we change coordinates, describe the same system at a different level of detail, examine it over time, or actively intervene on it. A serious bridge claim should not depend on an arbitrary representation, and it should not quietly lose important information when the system is coarse-grained or viewed at another scale.
-
-The second requirement is to define the experiential target independently. If we want to test whether a physical description is sufficient for some distinction that is intended to represent experience, that distinction cannot simply be manufactured from the same physical data and then used as evidence that the physical data explain it. P71 formalizes this circularity problem. It shows why a target derived from the physical descriptor being tested can make a bridge appear successful even when the conclusion was built into the target from the beginning.
-
-The third requirement is to ask how that target is actually observed. Experience is not a laboratory instrument reading that we can simply assume to be perfect. Reports can be incomplete, behavioral responses can fail, clinical judgments can be noisy, and any measurement process can lose or distort information. P72 therefore separates the underlying target from the way it is observed. Its broader lesson is important: a measurement process can weaken or even erase a real distinction. Failing to observe a difference is not automatically evidence that no difference exists.
-
-The fourth requirement is to justify the reliability of the measurement itself. P73 asks when that reliability can be learned from several imperfect observations rather than simply assumed. In one deliberately restricted model, three conditionally independent binary views can identify the hidden measurement model and the reliability of the individual views, up to an unavoidable relabeling of the hidden states, provided the model is nondegenerate. Two views are not enough in general. The larger lesson is not that three measurements solve the consciousness problem. It is that **before a measurement is used as evidence for a physical-to-experiential claim, its reliability must itself be identifiable, independently calibrated, or honestly left uncertain.** Agreement between measurements is not enough if they can share the same bias or if the assumptions connecting them are wrong.
-
-P74 asks the practical follow-up: **when those observations come from a finite experiment, are the data strong enough to trust the recovered measurement model?** It surrounds the recovered target-channel quantities with explicit uncertainty bounds and refuses to claim recovery when the data lie too close to a mathematically unstable boundary. When the data do support recovery under the declared model, P74 certifies not only measurement stability but also the underlying binary measurement-channel probabilities, while preserving the unavoidable ambiguity about which hidden label should receive which semantic meaning. In plain language, P73 asks when recovery is possible in principle; P74 asks when the available finite data justify trusting that recovery.
-
-P75 asks whether successful recovery also validates the measurement model itself. It shows why the answer cannot be assumed from three binary views alone: that model is generically just-identified, so fitting it does not leave a generic independent equality check. A fourth binary view creates additional observable constraints. If those constraints fail, the target-measurement model is inadequate even if a three-view recovery looked mathematically well behaved. Passing the new checks means only that the data are compatible with the declared model, not that the model is uniquely true or that the latent state has been identified with consciousness.
-
-P76 asks the next practical question: **if those model checks are applied to finite data, is an apparent failure large enough to distinguish from ordinary sampling noise?** It places the complete sixteen-cell observed table inside one shared confidence event and carries that uncertainty into the P75 adequacy constraints. If a required constraint is separated from zero even after uncertainty is included, the declared measurement model can be rejected with controlled confidence. If the data do not reject it, P76 deliberately does not call the model validated: non-rejection is not model acceptance. The sample may simply be too small, the violation may be too subtle, or the failure may lie outside the particular constraints being tested. In plain language, P75 explains what a valid four-view model must satisfy at the population level; P76 asks when finite data are strong enough to demonstrate that one of those requirements has genuinely failed.
-
-P77 closes the next logical gap. P76 can reject the measurement model when one of its tracked mathematical requirements fails, but a model can in principle pass those selected checks and still fail to reproduce the complete pattern of observed outcomes. P77 therefore asks a stronger question: **after finite-sample uncertainty is included, is there any distribution allowed by the entire declared measurement model that is still compatible with the data?** If the whole confidence region around the observed distribution is separated from the whole model family, the model can be rejected. If the regions still overlap, the result remains inconclusive. P77 also makes a computational safeguard explicit: finding one imperfect best-fitting model is not enough to prove separation from every model in the family. A rejection requires a mathematically certified lower bound on the distance to the model set, or an equivalent certified proof that no admissible model lies inside the confidence region. In plain language, P76 tests interpretable necessary requirements; P77 defines the stronger full-distribution standard that a complete finite-data adequacy test must satisfy.
-
-P78 addresses the computational problem that P77 deliberately leaves open for the continuous four-view target model. The P75 model does not contain a finite list of candidate distributions; it contains a continuous family generated by nine parameters. Testing a few parameter choices, or even finding an excellent numerical fit, cannot prove that every allowed model is far from the data. P78 therefore partitions the entire parameter region into boxes and computes a mathematically guaranteed lower bound for every box. Because those boxes still cover every allowed parameter choice, the smallest box bound is a genuine lower bound on the distance to the whole continuous model family. At the same time, any explicit candidate model supplies an upper bound. Refining the boxes narrows the gap between the two. The implementation keeps the empirical count law and the adaptive box boundaries in exact rational arithmetic so the global optimization certificate is not created by rounding a local floating-point optimizer. When the certified global lower bound is larger than a separately valid upper bound on the P77 sampling radius, the full continuous model family is rejected with the P77 statistical guarantee. A small lower bound remains inconclusive; P78 does not turn failure to reject into model validation.
-
-
-P79 closes a smaller but important numerical-certification gap. P77's sampling radius contains a logarithm and a square root. An ordinary floating-point evaluation may be numerically excellent, but a formal rejection certificate needs the inequality direction to be guaranteed. P79 therefore constructs an exact rational upper bound on that radius: it brackets the logarithm with a positive convergent series and an explicit tail, then encloses the square root using integer arithmetic. The P77/P78/P79 rejection handoff is valid only when the P78 lower bound is strictly larger than the P79 upper bound. This closes a numerical-direction gap, does not make non-rejection into model acceptance, and the physical-to-experiential bridge remains open.
-
-
-P80 tightens the continuous-family certificate itself. P78 encloses each observed probability cell over a parameter box, but its original lower bound treats those cell intervals independently. Every admissible probability law must also sum to one. P80 intersects the exact P78 intervals with that probability-simplex constraint and computes the resulting L-infinity distance exactly in rational arithmetic. The tightened relaxation still contains every P75 law in the parameter box, so the bound remains conservative, while the smaller feasible set can only make the lower bound stronger. The P80 bound therefore dominates the corresponding P78 box bound and can certify separation with fewer refinements in cases where normalization coupling matters. This is a computational tightening of the declared P75 model test, not a new consciousness assumption.
-
-P81 asks what P80 still leaves out. A P75 parameter box can force exact probabilities for one-view marginals and higher-order projected events even when every individual sixteen-cell interval, together with normalization, still overlaps the empirical law. P81 computes the exact rational interval for every nonempty projected binary event and converts any event mismatch into a lower bound on the full sixteen-cell L-infinity distance. The combined P81 certificate is never weaker than P80 and can be strictly stronger. This remains a test of the declared target-measurement model, not an identification of a latent state with consciousness.
-
-P82 asks what nested projected events can reveal that separate P81 event tests still discard. For a parent cylinder and a stricter child cylinder, their difference is a generally non-cylinder residual event. Under the declared P75 conditional-independence model, P82 derives the exact parameter-box range of that residual directly from disjoint parent and added-view response coordinates, rather than conservatively subtracting two separate event intervals. The resulting certificate retains all of P81 and adds 256 genuinely new nested contrasts. An exact-rational witness gives P80 = 0, P81 = 1/16, and P82 = 1/12. This is a stronger model-distance certificate, not evidence that the latent state is consciousness.
-
-P83 asks whether a simple dependency observable can expose incompatibility that remains hidden even after the P82 nested-residual audit. For every two-, three-, and four-view subset, it tests both binary parity events. Conditional independence inside each P75 latent branch gives the exact identity `P_s(H(J,b)) = [1 + (-1)^b product_j(1 - 2 q_{j,s})]/2`. The product is multi-affine, so its complete range on a rational parameter box is attained at response-coordinate vertices; prevalence then enters affinely and is extremized at its endpoints. The standard P83 family contains only 22 genuinely new parity observables, and every event mismatch transfers to a full-law L-infinity lower bound by dividing by the eight cells in a parity event. An exact-rational witness fixes one observed channel at one half in both latent branches and uses an empirical law supported on equal-bit pairs: the complete P82 audit remains zero, while P83 certifies `1/16`. P83 is therefore a strict strengthening of the declared P75 model-distance certificate on that witness, not a consciousness-identification result.
-
-![P83 exact projection-parity certificate](docs/figures/p83_exact_projection_parity.svg)
-
-**P83 frontier figure.** P83 adds 22 exact parity observables to the complete P82 certificate. The figure shows the Bernoulli parity identity, exact multi-affine box extremization, the eight-cell event-mass transfer, and the strict exact-rational witness with `L82 = 0` and `L83 = 1/16`. The result is conditional on the declared P75 model and does not identify the latent state with experience.
-
-P84 asks the next joint-compatibility question: even if two P83 parity events are each individually compatible with a P75 parameter box, can one **shared** P75 parameter assignment realize both probabilities at once? It therefore evaluates exact differences between parity-event probabilities at common response-coordinate vertices rather than subtracting independently optimized intervals. The standard audit contains 220 genuinely coupled contrasts. An exact-rational witness has the complete `L83 = 0` certificate while one joint contrast lies `1/4` outside its exact model interval; the eight-cell signed support gives `L84 = 1/32`. This proves that separate parity compatibility need not imply shared-parameter compatibility. P84 remains a conditional rejection certificate for the declared P75 model family and does not identify the latent state with consciousness.
-
-![P84 exact joint projection-parity contrast certificate](docs/figures/p84_exact_joint_projection_parity_contrast.svg)
-
-**P84 frontier figure.** P84 preserves the common parameter geometry of pairs of P83 parity events. The strict witness `L83 = 0 < L84 = 1/32` demonstrates a genuine strengthening while retaining the P78 mesh upper certificate and P79 one-sided finite-data rejection gate.
-
-
-P85 asks whether pairwise silence can still hide a higher-order shared-parameter incompatibility. It keeps three distinct canonical even-parity observables tied to one P75 parameter assignment and audits 660 sign-normalized three-event functionals. Because each branch functional is multi-affine, its exact rational box range is obtained at common response-coordinate endpoints. A centered coefficient transfer then converts a functional interval gap into a full-law L-infinity lower bound. The exact regression witness has the complete `L84 = 0` certificate, empirical functional value `5/8`, exact P75 interval `[1,2]`, gap `3/8`, centered coefficient norm `12`, and therefore `L85 = 1/32`. This is a strict certificate improvement on that box, not a claim that the latent state is consciousness or that the physical-to-experiential bridge has been solved.
-
-![P85 exact three-event projection-parity functional certificate](docs/figures/p85_exact_triple_projection_parity_functional.svg)
-
-**P85 frontier figure.** P85 tests exact three-event shared-parameter compatibility beyond the complete P84 certificate. The displayed exact-rational witness gives `L84 = 0 < L85 = 1/32`. Read the [P85 proof](docs/proposition_85_exact_triple_projection_parity_functional.md) and [P85 equation provenance](docs/p85_equation_provenance.md) for the assumptions, derivation, executable audit, and interpretation boundary.
-
-Only after the physical description, the target, and the way the target is measured are all scientifically defensible does the central bridge question become meaningful: **does the physical description actually contain enough information to account for the target distinction?** One of the clearest ways to challenge a proposed bridge is to find two cases that are indistinguishable according to the declared physical description but remain distinguishable according to the independently justified target. Such a result would show that the declared physical description is not sufficient for that target.
-
-That conclusion must also be interpreted carefully. Showing that one physical description is insufficient would not automatically prove that consciousness lies outside physics. The description may be too coarse, may omit a relevant physical variable, may use the wrong system boundary or scale, may rely on an inadequate measurement process, or may assume a bridge rule that is too restrictive. The aim is to identify exactly which assumption fails rather than turning one failed model into a metaphysical conclusion.
-
-The opposite result also requires caution. If the physical description appears to predict the target perfectly, that is not automatically proof of a complete bridge. The target may have been defined circularly, the measurements may share hidden biases, the experiment may not have explored the cases that would separate competing explanations, or finite data may make two genuinely different situations look the same. A convincing positive result therefore has to survive attempts to expose these alternatives.
-
-This is why the project treats uncertainty and falsification as part of the science rather than as afterthoughts. Real experiments contain finite data, noisy measurements, imperfect reconstructions, adaptive decisions, and competing explanations. The mathematics in the repository asks when an apparent result is strong enough to survive those uncertainties and when the scientifically correct conclusion is simply that the evidence is not yet sufficient. The same discipline applies to the quantum part of the project. A complete quantum description of a declared experiment is still not, by itself, a theory of experience. The additional connection between the physical description and the experiential target still has to be stated, justified, and tested.
-
-The many equations, theorems, simulations, figures, and optimization results in this repository therefore serve one larger purpose. They are not separate attempts to invent a formula for consciousness. They are pieces of a scientific **test architecture**. Some results establish what a valid physical description must preserve. Some determine whether a target has been defined circularly. Some quantify what noisy observation can hide. Some ask whether measurement reliability can be identified. P74 adds the requirement that such recovery survive finite-data uncertainty. P75 then asks whether the recovered target-measurement model survives independent adequacy checks rather than merely fitting the observations used to identify it. P76 adds the requirement that an apparent adequacy failure survive finite-sample uncertainty before it is called a model rejection. P77 then asks the stronger full-law question: whether the complete finite-sample confidence region is separated from the entire declared target-measurement model, while refusing to treat an uncertified local best fit as proof of global incompatibility. P78 supplies a certified continuous-family lower-bound procedure for the specific P75 model by exploiting its multi-affine parameterization and exact-rational box refinement. Others examine changes of physical scale, test quantum descriptions, design experiments, protect validity under adaptive sampling, or make experiments more efficient. P80 then strengthens the P78 continuous-family lower bound by retaining probability-simplex normalization inside every exact interval relaxation. P81 further retains exact projected-event constraints implied by each parameter box and transfers those mismatches back to the full observed law. Together they are intended to remove hidden assumptions one by one.
-
-A successful outcome would therefore not be a single impressive equation labeled "consciousness." It would be a defensible chain of inference: a clearly specified physical system, a physical description that is operationally meaningful and robust to representation and scale, an independently justified experiential target, a trustworthy and reliability-characterized way of observing that target, a bridge rule that survives uncertainty and competing explanations, and experiments capable of proving that rule wrong if it is false. A strong negative result would be equally valuable if it showed precisely where a proposed physical description or bridge fails.
-
-That is the purpose of the **Mathematical Consciousness Bridge**: **to transform the broad question of how physical reality relates to experience into a sequence of precise scientific obligations that can be examined, tested, falsified, and improved one by one, without hiding the hardest part of the problem inside an assumption.**
-
-The research currently contains **88 proposition-level results** and **72 equation-driven quantitative figures**. The theorem frontier is P88. These results build the test architecture and close specific mathematical gaps, but the physical-to-experiential bridge itself remains open.
-
-This project continues [Spatiotemporal Observer Mathematics](https://github.com/MahsaKeikha/spatiotemporal-observer-math), which addresses the prior physical problem of identifying a persistent moving subsystem from measured dynamics.
-
----
-
-# Abstract
-
-Let $\Omega$ denote the physically admissible state or history space, let $T:\Omega\to\mathcal T$ be a declared physical descriptor, and let $E:\Omega\to\mathcal E$ be an independently specified target representing the distinctions a proposed bridge claims to explain. The deterministic bridge question is whether there exists a map $B$ such that $E=B\circ T$. The stochastic version asks whether the conditional target law factors through $T$, equivalently whether the residual $I(E;\Omega\mid T)$ vanishes under the declared probabilistic model. The smooth version yields a differential rank obstruction.
-
-The program then develops the structures required to make those tests scientifically meaningful: intervention-conditioned response laws, causal influence, temporal continuation, composition defects, coarse-graining and reconstruction bounds, multiscale operational quotients, finite-sample confidence certificates, quantum-state model-set tests, adaptive experiment design, scheduling, and certified resource allocation.
-
-P71 adds a non-circularity theorem: if a target is constructed as $E=h(T)$, or through a descriptor-only stochastic channel, successful factorization is guaranteed by construction and has no independent evidential force. P72 adds a target-measurement theorem. If an independently justified latent target $E^\star$ is observed as $Y$ through a declared nondifferential channel satisfying $Y\perp\!\!\!\perp\Omega\mid(E^\star,T)$, then
-
-$$
-\boxed{I(Y;\Omega\mid T)\le I(E^\star;\Omega\mid T).}
-$$
-
-Target measurement can therefore attenuate or erase a genuine population witness, but under that model it cannot create a positive observed residual from a latent target already screened off by $T$. P72 also gives total-variation witness bounds, an exact binary symmetric attenuation factor, and a conservative finite-sample target-separation certificate.
-
-P73 addresses the channel-identification problem. In one fixed physical stratum, let a binary latent target $S\in\{-1,+1\}$ generate three conditionally independent binary target views with $\mathbb E[X_j\mid S]=a_j+b_jS$. Under interior prevalence and nonzero loadings, observable pair covariances and the third centered moment identify the latent prevalence and all three view channels up to a common latent-label swap. The P72 single-view stability coefficients are $\gamma_j=|b_j|$ and are invariant under that swap. P73 also gives an exact two-view counterexample showing that individual channel reliabilities are not generally identifiable from only two views.
-
-P74 adds finite-sample certification to the P73 inversion. One simultaneous Hoeffding event for the eight-cell observed law yields conservative bounds on means, pair covariances, and the third centered moment. A nondegeneracy gate refuses inversion when covariance confidence intervals reach zero. When the gate passes and the P73 sign structure is compatible, the same confidence event propagates to the latent-prevalence orbit, all three stability coefficients, channel offsets, and the full binary target-view channels reported up to the unavoidable common latent-label swap. P74 is conditional on the P73 model and IID sampling; it does not validate conditional independence or the semantic meaning of the latent target.
-
-P75 separates identifiability from target-model adequacy. Three binary views and one binary latent state have equal generic continuous dimension, so successful P73 recovery does not by itself provide an independent equality-based goodness-of-fit test. A fourth binary view creates six generic overidentifying degrees of freedom. P75 derives covariance tetrads, cross-triple latent-imbalance consistency, a fourth-centered-moment relation, and a full sixteen-cell reconstruction audit. These are conditional statistical model checks, not an experiential ontology.
-
-P76 adds finite-sample target-model rejection. From one IID sample of the sixteen-cell four-view law, a shared Hoeffding event controls the full empirical distribution and every binary raw moment simultaneously. The theorem propagates that event to covariance tetrads and to denominator-free polynomial forms of the P75 cross-triple and fourth-moment constraints. If any necessary-constraint interval excludes zero, the declared P75 target-measurement model is rejected with confidence at least $1-\alpha$. Non-rejection remains inconclusive and is not model acceptance.
-
-P77 strengthens that finite-data adequacy layer from selected necessary constraints to the complete declared observed-law model set. For a finite alphabet of size $K$, one simultaneous empirical-law event gives $\|\widehat P-P\|_\infty\le\varepsilon_{n,K}$ and $\|\widehat P-P\|_1\le\delta_{n,K}$ with probability at least $1-\alpha$. If the corresponding confidence region is disjoint from the declared model family $\mathcal M$, equivalently if a sound lower bound on empirical distance to $\mathcal M$ exceeds the sampling radius, the model is rejected at the same confidence level. A numerical candidate fit supplies only an upper bound on distance and cannot by itself certify rejection of a continuous model family.
-
-P78 supplies a certified continuous-family lower bound for the P75 four-view binary latent model. Its sixteen observed cell probabilities are multi-affine functions of nine parameters. On every axis-aligned parameter box, exact coordinatewise cell ranges give a rigorous lower bound $L_\infty(B;\widehat P)$ on the distance from the empirical law to every model law generated in that box. For any finite box partition $\mathcal B$ of the complete parameter cube, $L_{\mathcal B}=\min_{B\in\mathcal B}L_\infty(B;\widehat P)$ is therefore a valid global lower bound on $d_\infty(\widehat P,\mathcal M_{4,2})$. An explicit parameter point gives an upper bound, and a parameter-space Lipschitz argument gives the mesh guarantee $0\le d_\infty-L_{\mathcal B}\le\eta(\mathcal B)$. The implementation uses exact rational arithmetic for empirical counts and dyadic box refinement. P78 is a computational certification theorem under the declared P75 model, not an experiential ontology.
-
-
-P87 closes the next same-order completeness gap. P86 proves that the minimal non-uniform primitive four-event magnitude pattern `{1,1,1,2}` can expose shared-parameter incompatibility beyond P85. P87 exhausts the entire nonzero primitive integer coefficient box `|c_i| <= 2` at four-event order: 120 sign-normalized coefficient patterns for each of 330 four-event subsets, or **39,600 exact functionals**. On the same exact rational witness, the complete P86 value is `1/192`, while P87 attains `1/96` with coefficients `(1,-1,-2,2)`. Thus
-
-\[
-oxed{L_{85}=0<L_{86}=1/192<L_{87}=1/96.}
-\]
-
-![P87 exact bounded primitive four-event projection-parity functional certificate](docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg)
-
-**P87 previous-frontier figure.** P87 completes a mathematically declared bounded primitive coefficient family rather than merely increasing proposition number or event order. The result remains conditional on the declared P75 model family and does not identify a latent state with consciousness.
-
-P88 closes the post-selection finite-sample gap created by the much larger P87 search family. A discovery sample may choose a P75 parameter box and one P87 functional, but the pair must then be frozen before an independent validation sample is examined. Conditional on discovery, scalar Hoeffding concentration applies to the single fixed score, so no 39,600-way multiplicity penalty is required. P79 supplies an exact rational one-sided radius, and the P87 centered coefficient norm transfers the held-out functional mismatch to a full-law $L_\infty$ lower confidence bound. For the exact stored witness, the score width is 5 and the interval gap is $5/24$; the certified 95% validation-size threshold is **1063**, and at $n=2400$ the exact lower confidence bound is $701849/201326592>0$.
-
-![P88 held-out selected parity-functional certificate](docs/figures/p88_heldout_selected_parity_functional_certification.svg)
-
-**P88 current-frontier figure.** P88 is a selection-valid finite-sample theorem for a discovery-frozen P75 box/P87 functional pair. The result is box-specific unless a separate certified covering argument extends it to the complete P75 family, and it does not identify a latent state with consciousness.
-
-
-These results establish a rigorous **test architecture**, not a completed ontology of consciousness.
-
----
-
-# Scientific status discipline
-
-| Status | Meaning in this project |
+| The repository can establish | It does not automatically establish |
 | --- | --- |
-| **Definition** | A mathematical object introduced for the framework. |
-| **Proved** | A theorem derived from explicit assumptions. |
-| **Implemented** | Executable code mirrors a stated theorem or procedure. |
-| **Numerically verified** | A simulation or computation checks an implementation or example. |
-| **Empirically supported** | The statement depends on external published experimental evidence. |
-| **Synthetic example** | A controlled example used to expose logic, failure modes, or calibration behavior. |
-| **Hypothesis** | A scientifically motivated proposal not yet established by theorem or experiment. |
-| **Open bridge problem** | A physical-to-experiential identification has not been derived. |
+| A theorem under declared assumptions | That the assumptions are true in nature |
+| Identifiability of a declared latent model | That the latent state is consciousness |
+| Rejection of a declared model or parameter box | That consciousness is nonphysical |
+| Compatibility with observed data | That the model is uniquely correct |
+| A physical descriptor with useful predictive structure | A completed physical-to-experiential bridge |
 
-This distinction is central. The repository **does not assume that a physical quantity is consciousness**. It does not identify consciousness with entropy, integration, complexity, synchronization, entanglement, coherence, measurement, a state of matter, or an additional spacetime coordinate.
-
-**Quantum mechanics does not by itself imply consciousness.** A complete quantum state specifies the outcome statistics of declared measurements, but an experiential conclusion requires an additional bridge statement unless that bridge is independently derived.
-
-Likewise, a latent target symbol such as $E^\star$ or $S$ is not a declaration of experiential ground truth. P71-P88 formalize separate requirements on target provenance, observation, channel identifiability, finite-data recovery, model adequacy, full-law separation, and increasingly strong exact-rational continuous-family certificates before such a target can carry bridge evidence.
+This distinction is central to the project. The aim is to make stronger claims **harder to make casually and easier to audit scientifically**.
 
 ---
 
-# The core scientific thesis in one view
+## Reproduce the work
 
-A descriptor $T$ partitions the admissible physical domain into fibers
-
-$$
-[\omega]_T=\{\omega'\in\Omega:T(\omega')=T(\omega)\}.
-$$
-
-A deterministic bridge through $T$ can exist only if the target is constant on every fiber:
-
-$$
-\boxed{
-T(\omega_1)=T(\omega_2),
-\quad
-E(\omega_1)\ne E(\omega_2)
-\quad\Longrightarrow\quad
-E\ne B\circ T.
-}
-$$
-
-The stochastic analogue uses
-
-$$
-\boxed{R_{\mathrm{stoch}}(T)=I(E;\Omega\mid T).}
-$$
-
-But those equations have evidential content only after additional target-side questions are answered: Was $E$ constructed independently of the factorization being tested? If $E$ is latent, does the observation process preserve its distinctions rather than manufacture or erase them? Is the reliability of that observation channel identified, externally calibrated, or merely assumed? If it is estimated from data, is that recovery itself certified under finite uncertainty?
-
-| Layer | Mathematical object | Scientific question | Failure witness |
-| --- | --- | --- | --- |
-| Physical description | $T(\omega)$ | Is the declared physics represented without arbitrary coordinate dependence? | Representation or identifiability failure |
-| Operational structure | response laws and causal geometry | Do interventions expose physically meaningful distinctions? | Collision or missing causal distinction |
-| Target provenance | target-construction protocol | Was the target defined independently of the tested descriptor? | Descriptor-derived target, P71 |
-| Target measurement | $K_t(y\mid e)$ | Does noisy observation preserve the relevant target distinctions? | Erasure or differential measurement, P72 |
-| Target-channel identification | multi-view target law | Is target reliability identified rather than assumed? | Nonidentifiability or model degeneracy, P73 |
-| Finite target-channel recovery | confidence set for latent and channel parameters | Are the recovered target-channel quantities supported away from the inversion singularity? | Nondegeneracy gate failure or model incompatibility, P74 |
-| Target-model adequacy | four-view latent-model restrictions | Does the identified target-measurement model survive independent observable constraints? | Tetrad, cross-triple, fourth-moment, or full-law reconstruction failure, P75 |
-| Finite target-model adequacy | simultaneous P75 constraint intervals | Is an apparent adequacy failure larger than finite-sample uncertainty? | Any necessary-constraint interval excludes zero, P76 |
-| Bridge sufficiency | $E=B\circ T$ | Is the target constant on physical fibers? | Same $T$, different $E$ |
-| Stochastic sufficiency | $I(E;\Omega\mid T)$ | Is target-relevant information left outside $T$? | Certified positive residual |
-| Scale stability | coarse-graining plus reconstruction | Does relevant physical structure survive a change of resolution? | Uncontrolled reconstruction or distortion |
-| Quantum sufficiency | $\rho$, channels, measurement statistics | Does the target factor through the declared operational quantum state? | Regularity-aware non-factorization witness |
-| Finite experiment | confidence regions and stopping rules | Can a witness survive uncertainty and adaptive sampling? | Confidence or design assumptions fail |
-
-This is the scientific contribution of the project at its current stage: **a bridge claim is decomposed into separately auditable mathematical obligations instead of being hidden inside a single proposed consciousness quantity.**
-
----
-
-# How to read this study
-
-The main page is organized as a scientific argument rather than a chronological project log. Detailed proposition chronology and downstream calibration mathematics are linked separately.
-
-| Reader question | Main entry point |
-| --- | --- |
-| What is the scientific problem? | [Abstract](#abstract) and [Section 1](#1-mathematical-formulation-of-the-bridge-problem) |
-| What is being measured? | [Section 2](#2-from-physical-dynamics-to-operational-structure) and [measurement map](docs/figures/conscious_state_measurement_map.svg) |
-| How do we avoid circular targets? | [P71](docs/proposition_71_target_provenance_noncircularity.md) |
-| How do noisy target measurements affect evidence? | [P72](docs/proposition_72_target_measurement_channel_robustness.md) |
-| When can target-channel reliability be identified? | [P73](docs/proposition_73_target_channel_identifiability.md) |
-| When is finite-sample target-channel recovery trustworthy? | [P74](docs/proposition_74_finite_sample_target_channel_recovery.md) |
-| How is the target-measurement model itself tested? | [P75](docs/proposition_75_target_model_adequacy_overidentification.md) |
-| When can finite data actually reject that target model? | [P76](docs/proposition_76_finite_sample_target_model_adequacy.md) |
-| What has been proved? | [Theorem roadmap](docs/theorem_roadmap.md) and [What has actually been established](#what-has-actually-been-established) |
-| What remains unknown? | [What remains open](#what-remains-open), [Research navigation](docs/research_navigation.md), and [Detailed proposition record](docs/detailed_proposition_record.md) |
-| What would falsify a candidate bridge? | [Falsification logic](#falsification-logic) |
-| Where is the downstream calibration mathematics? | [Calibration and Optimization Frontier](docs/calibration_optimization_frontier_p61_p70.md) |
-
-![Universal proof ladder](docs/figures/universal_proof_ladder.svg)
-
-**Figure 2. Scientific proof ladder.** A credible consciousness bridge must pass distinct layers: physical well-definedness, experiential well-definedness, non-circular bridge premises, representation invariance, physical-feature sufficiency, experimental recoverability, competing-theory discrimination, finite-data support, and explicit falsification. The figure is a requirements map, not a claim that every layer has already been closed.
-
----
-
-# Research at a glance
-
-| Stage | Results | Scientific question | Status | Main entry point |
-| --- | --- | --- | --- | --- |
-| 1. Foundations and identifiability | **P1-P10** | What must be invariant, distinguishable, recoverable, and statistically testable? | Proved / implemented / tested | [Theorem roadmap](docs/theorem_roadmap.md) |
-| 2. Causal, temporal, compositional, and scale structure | **P11-P18** | Which physical distinctions survive interventions, time, composition, and coarse-graining? | Proved / implemented / tested | [Quantitative atlas](docs/quantitative_physics_mathematics_atlas.md) |
-| 3. Bridge sufficiency and target validity | **P19-P24, P71-P88** | Does an independently justified, adequately measured, reliability-characterized, and finite-data-certified target factor through the physical descriptor? | Proved under declared models | [Research navigation](docs/research_navigation.md) |
-| 4. Multiscale operational structure | **P25-P37** | Which causal and response structures survive node, state, intervention, and delay quotients? | Proved / implemented / tested | [Theorem roadmap](docs/theorem_roadmap.md) |
-| 5. Quantum sufficiency and falsification | **P38-P44** | What follows from a declared operational quantum description, and what does not? | Conditional tests proved; ontology open | [Quantum foundations](docs/quantum_foundations_and_bridge_test.md) |
-| 6. Adaptive experiment design and scheduling | **P45-P60** | How should evidence gathering, stopping, service allocation, switching, and calibration be organized? | Proved / implemented / tested | [Equation and citation map](docs/equation_and_citation_map.md) |
-| 7. Calibration and integer optimization | **P61-P70** | How should downstream finite calibration resources be allocated and certified? | Proved / implemented / tested | [Calibration and Optimization Frontier](docs/calibration_optimization_frontier_p61_p70.md) |
-
-The complete theorem index spans P1 through P88 with explicit dependency branches. Figure 3 below displays the P1-P31 foundational portion; later branches are documented separately.
-
-![Theorem roadmap](docs/figures/theorem_roadmap.svg)
-
-**Figure 3. Theorem dependency map for P1-P31.** Proposition numbers preserve development order, while arrows show actual mathematical and scientific prerequisites. The central target-sufficiency chain runs from P19 through P24; P25-P31 are physical-scale and quotient branches whose prerequisites are given by the arrows rather than by vertical placement alone. An absent arrow means no dependency is being asserted. Later P61-P70 and P71-P88 are separate continuations documented in the theorem index.
-
----
-
-# 1. Mathematical formulation of the bridge problem
-
-## 1.1 Physical states, descriptors, and targets
-
-Let
-
-$$
-\Omega=\{\text{physically admissible states or histories}\},
-\qquad
-T:\Omega\to\mathcal T.
-$$
-
-Independently, let
-
-$$
-E:\Omega\to\mathcal E
-$$
-
-represent the target distinctions the proposed bridge claims to determine.
-
-| Symbol | Role | Scientific requirement |
-| --- | --- | --- |
-| $\Omega$ | admissible states or histories | declared relative to a physical model and experiment class |
-| $T$ | physical descriptor | operationally defined, representation-aware, and recoverable |
-| $E$ | target | justified independently enough to avoid definitional circularity |
-| $E^\star$ | latent target in P72 | not assumed to be consciousness; its provenance and measurement must be justified |
-| $Y$ | observed target measurement | related to $E^\star$ through an explicit observation model |
-| $S$ | binary latent target in P73-P76 | statistical latent variable whose semantic meaning requires independent justification |
-| $X_j$ | target view in P73-P76 | one of the declared binary observations used to identify, certify, and test target-channel models under explicit assumptions |
-| $B$ | candidate bridge law | maps physical equivalence classes to target distinctions |
-
-The target is intentionally not equated with verbal report or overt responsiveness. Dreaming, anesthesia, perturbational complexity, and covert command-related brain activation motivate keeping behavior, report, neural evidence, and experiential inference distinct.
-
-![Conscious-state measurement and dissociation map](docs/figures/conscious_state_measurement_map.svg)
-
-**Figure 4. Measurement and dissociation map.** Behavioral responsiveness, subjective report, perturbational complexity, and command-related brain activation are different evidence channels. A bridge theory must state which observable pattern it predicts and what target those observations are claimed to measure.
-
-## 1.2 Exact deterministic sufficiency
-
-The physical descriptor is exactly sufficient for the target if
-
-$$
-\boxed{E=B\circ T.}
-$$
-
-Equivalently,
-
-$$
-\boxed{
-T(\omega_1)=T(\omega_2)
-\Longrightarrow
-E(\omega_1)=E(\omega_2).
-}
-$$
-
-One exact same-$T$/different-$E$ pair rules out factorization through the declared descriptor.
-
-## 1.3 Stochastic sufficiency
-
-For finite stochastic variables,
-
-$$
-\boxed{R_{\mathrm{stoch}}(T)=I(E;\Omega\mid T).}
-$$
-
-If $T_f$ refines $T_c$ through $T_c=c\circ T_f$, P21 gives
-
-$$
-\boxed{
-R_{\mathrm{stoch}}(T_c)-R_{\mathrm{stoch}}(T_f)
-=I(E;T_f\mid T_c).
-}
-$$
-
-## 1.4 Smooth differential obstruction
-
-If a differentiable local bridge exists, then
-
-$$
-dE_x=dB_{T(x)}\circ dT_x,
-$$
-
-so
-
-$$
-\boxed{\operatorname{rank}(dE_x)\le\operatorname{rank}(dT_x).}
-$$
-
-A positive rank excess supplies a local obstruction to the declared smooth factorization.
-
-![Fundamental theory to consciousness map](docs/figures/fundamental_theory_consciousness_map.svg)
-
-**Figure 5. The logical gap being tested.** Fundamental physical theory determines physical structure and operational predictions. A consciousness theory still requires a justified map from physical equivalence classes to target equivalence classes.
-
-## 1.5 P71: target provenance cannot be circular
-
-If the target is defined from the tested descriptor,
-
-$$
-E_h=h(T),
-$$
-
-then
-
-$$
-E_h=h\circ T,
-\qquad
-I(E_h;\Omega\mid T)=0
-$$
-
-hold by construction. A held-out learned rule $h_D(T)$ remains descriptor-derived after training. P71 also proves that an observed zero residual cannot, from the joint law alone, establish that the target had independent provenance.
-
-![P71 target-provenance non-circularity](docs/figures/p71_target_provenance_noncircularity.svg)
-
-**Figure 6. P71 non-circularity theorem.** A descriptor-derived target automatically respects descriptor fibers, whereas a separately declared synthetic target can expose same-descriptor/different-target collisions. The synthetic example illustrates theorem logic; it is not claimed to be an experiential variable.
-
-Direct proof: [Proposition 71](docs/proposition_71_target_provenance_noncircularity.md).
-
-## 1.6 P72: noisy target observation is a separate scientific layer
-
-Let $E^\star$ be a latent target that has passed the P71 provenance requirement and let $Y$ be its observation. Under
-
-$$
-\boxed{Y\perp\!\!\!\perp\Omega\mid(E^\star,T),}
-$$
-
-P72 proves
-
-$$
-\boxed{I(Y;\Omega\mid T)\le I(E^\star;\Omega\mid T).}
-$$
-
-Thus a certified positive observed population residual transfers to the latent target under the measurement model. A zero observed residual does not transfer in the opposite direction because an erasing channel can hide a positive latent residual.
-
-For a finite target channel $K_t$, P72 defines a stability coefficient $\gamma_t$ and obtains a two-sided total-variation stability relation. For binary symmetric measurement noise with error rate $\eta$,
-
-$$
-\boxed{\gamma=|1-2\eta|.}
-$$
-
-![P72 target-measurement channel robustness](docs/figures/p72_target_measurement_channel_robustness.svg)
-
-**Figure 7. P72 target-measurement theorem.** Nondifferential target noise can attenuate or erase a real bridge witness, but cannot create a positive population residual from a screened-off latent target. The binary channel exposes the exact erasure point, and the finite-data panel shows how measurement stability enters the sample burden.
-
-Direct proof: [Proposition 72](docs/proposition_72_target_measurement_channel_robustness.md). Equation classification: [P72 provenance record](docs/p72_equation_provenance.md).
-
-## 1.7 P73: target-channel reliability can sometimes be identified
-
-P72's stability coefficient is useful only if it is scientifically justified. P73 gives an explicit population-identification result for one deliberately narrow model. In a fixed physical stratum $T=t$, let $S\in\{-1,+1\}$ be a binary latent target and let $X_1,X_2,X_3$ be three binary views that are conditionally independent given $S$. Write
-
-$$
-\mathbb E[X_j\mid S]=a_j+b_jS.
-$$
-
-With $m=\mathbb E[S]$ and $v=1-m^2$, the observable moments obey
-
-$$
-\boxed{C_{ij}=b_ib_jv,}
-\qquad
-\boxed{M_{123}=-2mv\,b_1b_2b_3.}
-$$
-
-For nonzero loadings and interior prevalence,
-
-$$
-q=\frac{M_{123}^2}{C_{12}C_{13}C_{23}},
-\qquad
-\boxed{m^2=\frac{q}{q+4},\quad v=\frac4{q+4}.}
-$$
-
-The remaining channel parameters are recovered after choosing one algebraic latent-label orientation. The common label swap remains observationally invisible, but the P72 stability coefficients do not depend on that orientation:
-
-$$
-\boxed{\gamma_j=|b_j|.}
-$$
-
-P73 also proves that two views are not enough in general. Under balanced prevalence and zero-intercept channels, the complete two-view law depends only on $b_1b_2$, so different individual reliabilities can generate exactly the same observed law.
-
-![P73 target-channel identifiability](docs/figures/p73_target_channel_identifiability.svg)
-
-**Figure 8. P73 target-channel identifiability theorem.** Three nondegenerate conditionally independent binary views identify the declared latent-channel model up to a common label swap and identify the P72 stability quantities exactly at the population level. The two-view panel shows the constructive non-identifiability boundary. Statistical recovery does not identify the latent class with consciousness.
-
-Direct proof: [Proposition 73](docs/proposition_73_target_channel_identifiability.md). Equation and literature classification: [P73 provenance record](docs/p73_equation_provenance.md).
-
-## 1.8 P74: finite samples must certify target-channel recovery
-
-P73 is a population theorem. P74 asks whether its nonlinear recovery can be trusted from a finite IID sample of the three observed views. Let $\widehat P$ be the empirical law on the eight possible binary triples. P74 builds one simultaneous confidence event for the complete observed law and derives conservative moment radii, including
-
-$$
-\boxed{|\widehat C_{ij}-C_{ij}|\le3\delta_n,}
-\qquad
-\boxed{|\widehat M_{123}-M_{123}|\le13\delta_n.}
-$$
-
-The theorem does not invert P73 whenever the empirical covariances merely happen to be nonzero. It requires lower confidence margins on all three absolute pair covariances to remain strictly positive. If that gate fails, the result is **not certified by the current data**, rather than an extrapolation through a singular inverse problem.
-
-When the gate passes, P74 propagates the same confidence event through the P73 inversion to obtain simultaneous intervals for the latent-prevalence orbit and all three stability coefficients. It also uses
-
-$$
-\boxed{b_jm=-\frac{M_{123}}{2C_{k\ell}}}
-$$
-
-for the complementary pair $k,\ell$ to recover the label-invariant product $b_jm$, then the channel offset $a_j=\mu_j-b_jm$. Together with $\gamma_j=|b_j|$, this yields a confidence set for the full binary target-view channel as an unordered pair of latent-conditioned response probabilities. The unordered form preserves the P73 global label-swap symmetry instead of inventing a semantic orientation.
-
-![P74 finite-sample target-channel recovery](docs/figures/p74_finite_sample_target_channel_recovery.svg)
-
-**Figure 9. P74 finite-sample recovery certificate.** A single empirical-law confidence event feeds a covariance nondegeneracy gate and then the P73 inversion. Certified outputs include latent-prevalence, stability, channel-offset, and binary-channel probability intervals. Failure of the gate means the current finite data do not safely support inversion; it is not evidence that the true population is degenerate.
-
-Direct proof: [Proposition 74](docs/proposition_74_finite_sample_target_channel_recovery.md). Equation classification: [P74 provenance record](docs/p74_equation_provenance.md).
-
-## 1.9 P75: identifiability does not by itself validate the target model
-
-P73 identifies a nondegenerate three-view binary latent model, and P74 asks when finite data certify that recovery. P75 asks the logically separate adequacy question: does a recovered model satisfy observable constraints that were not already consumed by identification?
-
-For \(k\) binary observed target views, the complete observed law has
-
-$$
-d_{\mathrm{obs}}(k)=2^k-1
-$$
-
-free probabilities. One binary latent state with \(k\) binary view channels has
-
-$$
-d_{\mathrm{model}}(k)=1+2k
-$$
-
-continuous parameters. Therefore
-
-$$
-\boxed{d_{\mathrm{obs}}(3)=7=d_{\mathrm{model}}(3),}
-$$
-
-so the nondegenerate three-view model is generically just-identified. This does not mean every three-view probability law belongs to the real stochastic model. Positivity, nondegeneracy, and valid-channel restrictions still matter. It means successful three-view parameter recovery does not generically leave an independent equality constraint with which to validate the conditional-independence assumption.
-
-A fourth binary view changes the dimension count to
-
-$$
-\boxed{15-9=6}
-$$
-
-generic overidentifying degrees of freedom. Under the declared conditional-independence model, observable pair covariances must satisfy
-
-$$
-\boxed{C_{12}C_{34}=C_{13}C_{24}=C_{14}C_{23}.}
-$$
-
-Every nondegenerate three-view subset must also recover the same latent-imbalance ratio,
-
-$$
-\boxed{
-q_{ijk}=\frac{M_{ijk}^2}{C_{ij}C_{ik}C_{jk}}
-=\frac{4m^2}{1-m^2},
-}
-$$
-
-and the fourth centered moment must satisfy
-
-$$
-\boxed{M_{1234}=(1+q)C_{12}C_{34}}
-$$
-
-with the equivalent covariance pairings.
-
-The executable P75 audit is stricter than checking only those displayed moment identities. It recovers an anchor P73 triple, infers the fourth binary channel, reconstructs all sixteen cells of the four-view observable law, and compares that complete reconstruction with the observed law. A synthetic residual-dependence perturbation is required to fail the audit.
-
-![P75 target-model adequacy and four-view overidentification](docs/figures/p75_target_model_adequacy_overidentification.svg)
-
-**Figure 10. P75 target-model adequacy theorem.** Three binary views are generically just-identified under the declared latent model. A fourth view creates six generic overidentifying degrees of freedom and observable adequacy obligations. Passing means compatibility with the declared model, not proof that the model is uniquely true, and not identification of the latent state with consciousness.
-
-Direct proof: [Proposition 75](docs/proposition_75_target_model_adequacy_overidentification.md). Equation and literature classification: [P75 provenance record](docs/p75_equation_provenance.md).
-
-## 1.10 P76: finite data must separate model failure from sampling noise
-
-P75 gives population-level restrictions. P76 asks when a finite IID sample is already strong enough to reject the declared four-view target-measurement model.
-
-For the empirical sixteen-cell law $\widehat P$, define
-
-$$
-\varepsilon_n(\alpha)=\sqrt{\frac{\log(32/\alpha)}{2n}},
-\qquad
-\boxed{\delta_n(\alpha)=\min\{2,16\varepsilon_n(\alpha)\}.}
-$$
-
-With probability at least $1-\alpha$, the same event controls every binary raw monomial moment. In particular, every pair covariance satisfies
-
-$$
-\boxed{|\widehat C_{ij}-C_{ij}|\le3\delta_n.}
-$$
-
-For either P75 tetrad residual $D$, P76 obtains
-
-$$
-\boxed{|\widehat D-D|\le12\delta_n.}
-$$
-
-Therefore
-
-$$
-\boxed{|\widehat D|>12\delta_n\quad\Longrightarrow\quad D\ne0}
-$$
-
-on the shared confidence event, which certifies incompatibility with the declared P75 model. P76 also rewrites the P75 cross-triple and fourth-moment consistency conditions as denominator-free polynomials and propagates the same empirical-law event through interval arithmetic. This avoids unstable division by uncertain covariance products.
-
-![P76 finite-sample target-model adequacy rejection](docs/figures/p76_finite_sample_target_model_adequacy.svg)
-
-**Figure 11. P76 finite-sample adequacy rejection.** One simultaneous sixteen-cell confidence event controls the raw moments and the P75 polynomial constraints. Excluding zero from any necessary-constraint interval certifies model incompatibility. If no interval excludes zero, the result remains inconclusive; it is not model acceptance and does not identify the latent state with consciousness.
-
-Direct proof: [Proposition 76](docs/proposition_76_finite_sample_target_model_adequacy.md). Equation and literature classification: [P76 provenance record](docs/p76_equation_provenance.md).
-
-## 1.11 P77: full-law confidence regions can reject the complete declared model set
-
-P76 tests a transparent family of necessary P75 polynomial constraints. P77 asks the stronger finite-data question: does the complete confidence region for the observed law intersect the complete declared model family at all?
-
-For a finite alphabet of size $K$, define
-
-$$
-\boxed{\varepsilon_{n,K}(\alpha)=\sqrt{\frac{\log(2K/\alpha)}{2n}}}
-$$
-
-and
-
-$$
-\boxed{\delta_{n,K}(\alpha)=\min\{2,K\varepsilon_{n,K}(\alpha)\}.}
-$$
-
-With probability at least $1-\alpha$,
-
-$$
-\|\widehat P-P\|_\infty\le\varepsilon_{n,K},
-\qquad
-\|\widehat P-P\|_1\le\delta_{n,K}.
-$$
-
-Let $\mathcal M$ be the complete declared observed-law model set. P77 gives the full-law rejection rule
-
-$$
-\boxed{\mathcal C_n(\widehat P)\cap\mathcal M=\varnothing
-\quad\Longrightarrow\quad
-P\notin\mathcal M.}
-$$
-
-Equivalently, if a mathematically certified lower bound on $d(\widehat P,\mathcal M)$ exceeds the sampling radius in the same norm, the model is rejected on the shared confidence event. Distance to a nonempty set is 1-Lipschitz, so the same event also transports empirical model distance into a confidence interval for population distance to the model family.
-
-The optimization direction is scientifically important. A candidate best-fit model $Q^\star\in\mathcal M$ gives $d(\widehat P,\mathcal M)\le\|\widehat P-Q^\star\|$, which is an upper bound on the unknown minimum distance. It cannot by itself certify rejection. P77 requires a sound lower bound or an equivalent certified feasibility result before declaring a continuous model family incompatible.
-
-![P77 finite-sample full-law model-set separation](docs/figures/p77_full_law_model_set_separation.svg)
-
-**Figure 12. P77 full-law model-set separation.** P76 provides interpretable finite-sample rejection through selected necessary constraints. P77 defines the stronger full-law criterion: the entire confidence region must be separated from the entire declared model set. An ordinary best-fit candidate is not a rejection certificate because it gives an upper bound on model distance.
-
-Direct proof: [Proposition 77](docs/proposition_77_full_law_model_set_separation.md). Equation and literature classification: [P77 provenance record](docs/p77_equation_provenance.md). Implementation: [`full_law_model_set_separation.py`](src/consciousness_bridge/full_law_model_set_separation.py). Tests: [`test_full_law_model_set_separation.py`](tests/test_full_law_model_set_separation.py).
-
-## 1.12 P78: certified continuous separation for the P75 model family
-
-P77 says that full-law rejection requires a sound lower bound on distance to the complete declared model set. P78 constructs such a bound for the continuous P75 four-view binary latent family.
-
-Let
-
-$$
-\theta=(\pi,q_{1,-},q_{1,+},\ldots,q_{4,-},q_{4,+})\in[0,1]^9
-$$
-
-parameterize the P75 model law $F(\theta)$. Every observed cell probability is multi-affine in these nine parameters. For an axis-aligned parameter box $B$, P78 computes the exact cell interval
-
-$$
-I_x(B)=[m_x(B),M_x(B)]
-$$
-
-and defines
-
-$$
-\boxed{L_\infty(B;\widehat P)=\max_x\operatorname{dist}(\widehat P(x),I_x(B)).}
-$$
-
-For every $\theta\in B$,
-
-$$
-\|\widehat P-F(\theta)\|_\infty\ge L_\infty(B;\widehat P).
-$$
-
-If $\mathcal B$ is any finite partition of the complete parameter cube, then
-
-$$
-\boxed{L_{\mathcal B}(\widehat P):=\min_{B\in\mathcal B}L_\infty(B;\widehat P)\le d_\infty(\widehat P,\mathcal M_{4,2}).}
-$$
-
-Any explicit admissible parameter vector supplies an upper bound on the same minimum distance. In addition, every cell map is 1-Lipschitz with respect to parameter $L^1$, giving the mesh certificate
-
-$$
-\boxed{0\le d_\infty(\widehat P,\mathcal M_{4,2})-L_{\mathcal B}(\widehat P)\le\eta(\mathcal B),}
-$$
-
-where $\eta(\mathcal B)$ is the largest summed side width among active boxes. Refinement therefore closes the certified optimization gap.
-
-The implementation uses exact `Fraction` arithmetic for empirical count laws and dyadic branch points. This protects the optimization lower-bound direction from ordinary floating-point local-fit claims. Statistical rejection still requires a separately valid upper bound on the P77 sampling radius.
-
-![P78 certified continuous model separation](docs/figures/p78_certified_continuous_model_separation.svg)
-
-**Figure 13. P78 certified continuous model separation.** The complete nine-parameter P75 cube is covered by adaptive boxes. Exact multi-affine cell enclosures produce boxwise lower bounds, their minimum is a global lower bound, and explicit admissible parameters supply upper bounds. P77 rejection is triggered only when the certified global lower bound exceeds a valid sampling-radius upper bound.
-
-Direct proof: [Proposition 78](docs/proposition_78_certified_continuous_model_separation.md). Equation and literature classification: [P78 provenance record](docs/p78_equation_provenance.md). Implementation: [`certified_continuous_model_separation.py`](src/consciousness_bridge/certified_continuous_model_separation.py). Tests: [`test_certified_continuous_model_separation.py`](tests/test_certified_continuous_model_separation.py).
-
-
-
-
-## 1.13 P79: certified rational sampling-radius envelope
-
-P77 defines the simultaneous finite-alphabet sampling radius and P78 supplies a certified lower bound on distance to the complete continuous P75 model family. The remaining rejection comparison has to preserve its inequality direction numerically: **P78 lower-bounds model distance**, while **P79 upper-bounds the P77 sampling radius**.
-
-For alphabet size $K$, sample size $n$, and confidence level $1-\alpha$,
-
-$$
-\varepsilon_{n,K}(\alpha)
-=
-\sqrt{\frac{\log(2K/\alpha)}{2n}}.
-$$
-
-P79 constructs exact rational values $\underline\varepsilon$ and $\overline\varepsilon$ satisfying
-
-$$
-\boxed{\underline\varepsilon\le\varepsilon_{n,K}(\alpha)\le\overline\varepsilon.}
-$$
-
-The logarithm is enclosed after exact power-of-two reduction by a positive atanh series with an explicit rational remainder bound. The square root is then enclosed by integer-certified dyadic floor and ceiling operations. Consequently,
-
-$$
-\boxed{L_{\mathrm{model}}>\overline\varepsilon\Longrightarrow L_{\mathrm{model}}>\varepsilon_{n,K}(\alpha),}
-$$
-
-where $L_{\mathrm{model}}$ is a certified P78 lower bound. This closes a numerical-certification gap in the P77/P78 chain. It does not validate a model when rejection fails, does not identify the P75 latent state with consciousness, and does not solve the physical-to-experiential bridge.
-
-![P79 certified rational sampling-radius envelope](docs/figures/p79_certified_sampling_radius.svg)
-
-**P79 theorem figure. One-sided numerical certification.** Exact statistical inputs are reduced to rational logarithm bounds and an integer-certified dyadic square-root enclosure. The final decision compares a lower bound on model distance with an upper bound on sampling uncertainty, so decimal rounding cannot silently reverse the rejection inequality.
-
-Direct proof: [Proposition 79](docs/proposition_79_certified_sampling_radius.md). Equation and literature classification: [P79 provenance record](docs/p79_equation_provenance.md). Implementation: [`certified_sampling_radius.py`](src/consciousness_bridge/certified_sampling_radius.py). Tests: [`test_certified_sampling_radius.py`](tests/test_certified_sampling_radius.py) and [`test_p79_figure_geometry.py`](tests/test_p79_figure_geometry.py).
-
-
-
-## 1.14 P80: simplex-coupled continuous-family lower bound
-
-P78 encloses each of the sixteen observed probabilities over a P75 parameter box by exact rational intervals. P80 retains one additional fact that the uncoupled P78 box relaxation discards: every observed law is normalized.
-
-For a parameter box $B$, define
-
-$$
-\mathcal R_\Delta(B)
-=
-\left\{q:\ell_i(B)\le q_i\le u_i(B),\ \sum_i q_i=1\right\}.
-$$
-
-Because the true P75 box image satisfies
-
-$$
-\mathcal M(B)\subseteq\mathcal R_\Delta(B)
-\subseteq
-\prod_i[\ell_i(B),u_i(B)],
-$$
-
-its exact interval-simplex distance obeys
-
-$$
-\boxed{L_{80}(B)\ge L_{78}(B)}
-$$
-
-while still remaining a valid lower bound on distance to the true box image. For radius $r$, feasibility requires both coordinatewise overlap and
-
-$$
-\sum_i\max(\ell_i,\widehat p_i-r)\le1
-\le
-\sum_i\min(u_i,\widehat p_i+r).
-$$
-
-The coordinatewise threshold is exactly the P78 product-box distance. The two mass thresholds are monotone piecewise-linear functions with rational breakpoints, so P80 computes the coupled distance exactly using `Fraction` arithmetic. A strict P79 handoff remains unchanged: full-law rejection requires the certified P80 lower bound to exceed the P79 sampling-radius upper bound.
-
-![P80 simplex-coupled model separation](docs/figures/p80_simplex_coupled_model_separation.svg)
-
-**P80 theorem figure. Simplex-coupled continuous-model certification.** P80 intersects the P78 exact coordinate intervals with probability normalization, producing a smaller certified superset of the true P75 box image and therefore a lower bound that is never weaker than P78's coordinatewise relaxation.
-
-Direct proof: [Proposition 80](docs/proposition_80_simplex_coupled_model_separation.md). Equation and literature classification: [P80 provenance record](docs/p80_equation_provenance.md). Implementation: [`simplex_coupled_model_separation.py`](src/consciousness_bridge/simplex_coupled_model_separation.py). Tests: [`test_simplex_coupled_model_separation.py`](tests/test_simplex_coupled_model_separation.py) and [`test_p80_figure_geometry.py`](tests/test_p80_figure_geometry.py).
-
-
-## 1.15 P81: projection-event continuous-family lower bound
-
-P80 uses exact cell intervals together with probability normalization. P81 retains additional linear consequences of the same P75 parameter box: exact probabilities of projected binary events.
-
-For a nonempty subset of observed views $J$ and assignment $a$, let $C(J,a)$ be the corresponding cylinder event. If it contains $m=2^{4-|J|}$ of the sixteen full cells, then
-
-$$
-\left|\widehat p(C)-q(C)\right|\le m\,\|\widehat p-q\|_\infty.
-$$
-
-The P75 event probability has an exact parameter-box interval $[\ell_{J,a}(B),u_{J,a}(B)]$. Therefore
-
-$$
-\boxed{
-L_{\mathrm{proj}}(B)
-=
-\max_{J,a}
-\frac{d\!\left(\widehat p(C(J,a)),[\ell_{J,a}(B),u_{J,a}(B)]\right)}{2^{4-|J|}}
-}
-$$
-
-is a valid lower bound on full-law distance inside the box. P81 combines it with P80:
-
-$$
-\boxed{L_{81}(B)=\max\{L_{80}(B),L_{\mathrm{proj}}(B)\}.}
-$$
-
-Hence $L_{81}(B)\ge L_{80}(B)\ge L_{78}(B)$. The strict witness in the proof has $L_{80}=0$ but $L_{81}=1/80$, showing that projected-event information can be genuinely new.
-
-![P81 projection-event model separation](docs/figures/p81_projection_event_model_separation.svg)
-
-**P81 theorem figure. Projection-event continuous-model certification.** Exact marginal and higher-order cylinder-event ranges can expose parameter-box incompatibility that is invisible to cell intervals plus normalization. The P77/P79 handoff remains one-sided: rejection requires the certified P81 model-distance lower bound to exceed the P79 sampling-radius upper bound.
-
-Direct proof: [Proposition 81](docs/proposition_81_projection_event_model_separation.md). Equation and literature classification: [P81 provenance record](docs/p81_equation_provenance.md). Implementation: [`projection_event_model_separation.py`](src/consciousness_bridge/projection_event_model_separation.py). Tests: [`test_projection_event_model_separation.py`](tests/test_projection_event_model_separation.py) and [`test_p81_figure_geometry.py`](tests/test_p81_figure_geometry.py).
-
-
----
-
-# 2. From physical dynamics to operational structure
-
-A useful bridge test cannot depend only on coordinates or passive correlations. P11 builds an intervention-resolved physical candidate from response geometry, directed influence, and partition irreducibility.
-
-![Causal structure anatomy](docs/figures/causal_structure_anatomy.svg)
-
-**Figure 14. Anatomy of the operational physical candidate.** Controlled interventions generate response distributions. Distances define response geometry; matched perturbations define directed influence; comparisons with partition-product nulls expose irreducibility. These are physical candidates to be tested for sufficiency, not definitions of consciousness.
-
-![Information geometry of intervention-response laws](docs/figures/information_geometry_response_manifold.svg)
-
-**Figure 15. Response laws as a physical geometry.** Parameterized intervention-conditioned probability laws can be studied using operational distances and local statistical geometry. An experiential geometry would still require a separately justified bridge.
-
-P12 then uses constructive collisions to show why compressed components or attractive scalars cannot simply be assumed sufficient.
-
-![Constructive component collisions](docs/figures/p12_collision_map.svg)
-
-**Figure 16. Constructive collision tests.** A compressed physical feature must earn sufficiency by factorization or reconstruction, not by visual plausibility or correlation.
-
----
-
-# 3. Time, composition, and scale cannot be ignored
-
-P14 treats temporal continuation as a path property rather than endpoint identity.
-
-![Temporal continuation](docs/figures/p14_temporal_continuation.svg)
-
-**Figure 17. Temporal continuation.** Representation-equivalent descriptions are quotiented out while local structural changes are accumulated along a trajectory. Endpoint equality alone cannot certify a continuous physical history.
-
-For deterministic coarse observation, total variation contracts. P18 adds an approximate reconstruction condition that bounds the distortion of the relevant response geometry.
-
-![Scale sufficiency certificate](docs/figures/p18_scale_sufficiency_certificate.svg)
-
-**Figure 18. Scale sufficiency logic.** Coarse-graining can erase distinctions, but reconstruction control bounds how much declared response geometry was lost.
-
-![Multiscale physical hierarchy](docs/figures/multiscale_physical_hierarchy.svg)
-
-**Figure 19. Multiscale hierarchy.** A scientifically credible descriptor must state which objects survive changes of scale, which require compatibility conditions, and which acquire bounded distortion.
-
----
-
-# 4. Turning a population theorem into a finite experiment
-
-Exact mathematical insufficiency becomes scientifically useful only when finite observations support it with controlled error.
-
-P20 constructs a finite-sample confidence interval for the P19 conditional-information residual under a declared finite-alphabet IID model. P22-P24 extend the same discipline across refinement families, adaptive selection, repeated looks, and finite stopping times.
-
-![Finite-sample residual certificate](docs/figures/p20_finite_sample_residual_certificate.svg)
-
-**Figure 20. From exact factorization to finite-data evidence.** A bridge claim is rejected only when a confidence-controlled lower bound remains positive under the declared sampling assumptions.
-
-P72 applies the same philosophy on the target side. P73 establishes population identifiability for its declared three-view model, and P74 propagates finite empirical-law uncertainty through that nonlinear inversion. P75 then makes the conditional-independence model itself falsifiable at population level by adding a fourth view and overidentifying restrictions. P76 adds a simultaneous finite-sample rejection certificate for the tracked P75 polynomial constraints. P77 upgrades the finite-data target to the complete declared observed-law model set through confidence-region separation. P78 then supplies an exact-rational branch-and-bound lower-bound certificate for the continuous P75 latent family. P79 completes the one-sided numerical handoff by certifying an exact-rational upper envelope for the P77 sampling radius. P80 tightens the P78 box relaxation by enforcing probability-simplex normalization while preserving exact-rational certification. P81 adds exact projected-event constraints, including marginals and higher-order cylinder events, while preserving the same lower-bound direction. The remaining challenges are still tighter global relaxations, sharper statistical power, and broader dependent-view alternatives.
-
----
-
-# 4.4 Fundamental theory / Theory-of-Everything interface
-
-The bridge framework remains compatible with future changes in fundamental physics. There is currently no experimentally established Theory of Everything that has separately been shown to determine experiential variables.
-
-For bookkeeping, a broad physical descriptor may be written schematically as
-
-$$
-\boxed{T(\Omega)=\bigl(G(\Omega),Q(\Omega),C(\Omega)\bigr),}
-$$
-
-where $G$ denotes geometric information, $Q$ quantum-operational information, and $C$ effective causal or classical structure under the declared model. This notation is an interface, not a claim that these components are fundamental or complete.
-
-Thomas W. Campbell's *My Big TOE* and similar consciousness-first proposals are treated, if mentioned, only as speculative falsifiable antecedents, not as established premises in the theorem chain.
-
-![Observer-to-bridge research handoff](docs/figures/observer_to_bridge_handoff.svg)
-
-**Figure 21. Research handoff.** The preceding observer-mathematics project identifies and statistically certifies a physical subsystem. This repository begins after that physical object is declared and asks what additional physical, target, and bridge conditions are required. No experiential property is inserted at the handoff.
-
----
-
-# 5. Quantum mechanics enters as a physical description, not as an assumption about consciousness
-
-For a finite-dimensional quantum system, a state is represented by a density operator $\rho$. A POVM $\{M_a\}$ gives
-
-$$
-\boxed{p(a\mid M)=\operatorname{Tr}(\rho M_a).}
-$$
-
-The bridge question is whether an independently justified target factors through the declared operational quantum state under an explicitly declared bridge class.
-
-![Quantum bridge completeness map](docs/figures/quantum_bridge_completeness_map.svg)
-
-**Figure 22. Quantum completeness versus experiential completeness.** Tomographic completeness closes the declared operational quantum description. It does not automatically close the physical-to-experiential map.
-
-![Quantum operational sufficiency](docs/figures/p38_quantum_operational_sufficiency.svg)
-
-**Figure 23. P38 quantum sufficiency test.** Equal declared quantum descriptors with unequal independently defined targets give an exact non-factorization witness. Finite data require uncertainty-aware replacements for exact equality.
-
-P40 proves that finite sampled-state injectivity alone permits unrestricted lookup-table factorization, so meaningful continuous-region non-factorization requires a declared regularity class.
-
-![Trace-ball quantum envelope](docs/figures/p41_trace_ball_quantum_envelope.svg)
-
-**Figure 24. Finite-data quantum envelope.** Quantum-state confidence regions and target uncertainty are propagated into an end-to-end regularity obstruction. The scientific conclusion is conditional on tomography coverage, the target measurement model, and the declared bridge regularity.
-
-For the complete QM01-QM18 visual sequence, see [Quantum foundations and bridge test](docs/quantum_foundations_and_bridge_test.md).
-
----
-
-# 6. Adaptive experiment design: collecting evidence without invalidating it
-
-P45-P58 develop shared preparation graphs, time-uniform confidence sequences, adaptive sampling, safe pruning, stopping complexity, service allocation, switching costs, and finite-data transition uncertainty. P59-P60 begin the transition-calibration branch.
-
-![Sequential graph refinement](docs/figures/p47_sequential_graph_refinement.svg)
-
-**Figure 25. Adaptive evidence collection.** The experiment may choose what to sample next based on previous observations, but validity is protected by a shared time-uniform confidence event.
-
----
-
-# 7. Calibration and optimization as a downstream experimental layer
-
-The detailed P61-P70 sequence belongs to the experimental implementation layer. It allocates and certifies finite calibration resources after the bridge hypothesis, physical descriptor, target protocol, witness family, uncertainty model, and experimental constraints have been declared.
-
-**[Read the complete Calibration and Optimization Frontier: P61-P70](docs/calibration_optimization_frontier_p61_p70.md).**
-
-This branch remains intentionally separate from P71-P78. Better optimization can make an experiment more efficient; it cannot rescue a circular target, an invalid target-measurement channel, a nonidentified reliability model, a finite-data recovery whose nondegeneracy gate has failed, or a target model rejected by finite-sample adequacy evidence.
-
----
-
-# What has actually been established
-
-The strongest current conclusions are methodological and conditional:
-
-1. Exact physical sufficiency is equivalent to constancy of the target on descriptor fibers.
-2. Stochastic insufficiency can be quantified with $I(E;\Omega\mid T)$ under a declared model.
-3. Smooth factorization has a local rank obstruction.
-4. Operational physical structure can include intervention response, directed influence, irreducibility, temporal continuation, composition, and scale.
-5. Coarse-graining loss can be bounded under explicit reconstruction assumptions.
-6. Finite-data uncertainty can be propagated into bridge tests.
-7. Adaptive evidence collection can remain valid under declared non-anticipating procedures.
-8. Quantum operational completeness can be separated from experiential completeness.
-9. P71 proves that descriptor-derived targets cannot independently validate sufficiency of the same descriptor.
-10. P72 proves that, under a nondifferential target channel, $I(Y;\Omega\mid T)\le I(E^\star;\Omega\mid T)$, while an erasing channel can hide a positive latent residual.
-11. P72 also provides target-TV contraction, a channel-stability lower bound, exact binary-symmetric attenuation, and a finite-sample target-separation certificate.
-12. P73 proves population identifiability of a nondegenerate binary latent target and three conditionally independent binary target channels up to a global latent-label swap, with explicit recovery of the P72 stability coefficients.
-13. P73 gives a constructive two-view non-identifiability theorem showing that two target views do not generally determine individual channel reliabilities.
-14. P74 supplies one simultaneous finite-sample confidence construction for the P73 inversion, with an explicit covariance nondegeneracy gate rather than unstable plug-in recovery.
-15. P74 certifies the latent-prevalence orbit, stability coefficients, channel offsets, and unordered latent-conditioned binary response probabilities under the declared P73 model.
-16. P75 proves that the three-view binary latent model is generically just-identified, while a fourth binary view creates six generic overidentifying degrees of freedom.
-17. P75 derives observable tetrad, cross-triple, and fourth-moment adequacy constraints and implements a full sixteen-cell reconstruction audit for the declared four-view model.
-18. P76 turns the tracked P75 population constraints into simultaneous finite-sample rejection intervals from one sixteen-cell Hoeffding event, while keeping non-rejection explicitly inconclusive.
-19. P77 strengthens finite-sample adequacy to the complete declared observed-law model set: confidence-region/model-set separation certifies rejection, but only when model distance or infeasibility is lower-bounded soundly.
-20. P78 supplies a certified global L-infinity lower bound for the continuous P75 family by exact-rational multi-affine box refinement, with an explicit mesh-gap guarantee and a direct P77 rejection handoff.
-21. The experiment-design branch provides scheduling, stopping, calibration, integer optimization, and primal-dual certification without promoting those results into consciousness ontology.
-
-These statements do **not** prove that consciousness is reducible to the current physical descriptors, irreducible to physics, quantum, non-quantum, a field, a state of matter, or an additional dimension.
-
----
-
-# What remains open
-
-The central bridge remains open. Before a strong bridge claim can be made, the project still needs to close several distinct gaps:
-
-- define experiential variables independently enough to satisfy P71;
-- justify how those latent targets are observed and whether the P72 channel premise is defensible;
-- extend the P78-P79 certified full-law pipeline with tighter pruning, sharper relaxations, and power-aware stopping criteria;
-- develop diagnostics or alternative designs for correlated target-view errors and model misspecification;
-- provide an independent semantic anchor when latent-label orientation matters scientifically;
-- determine how target channels change across people, time, physical strata, interventions, and contexts;
-- identify which physical descriptor is justified by experiment rather than convenience;
-- test target distinctions across interventions, time, scale, and composition;
-- sharpen finite-sample power and uncertainty control for broader dependent-view and learned target-measurement models;
-- specify the regularity or structural class of admissible bridge laws;
-- design decisive experiments for competing bridge theories.
-
-The most immediate target-side problem after P78 is **tighter certified computation and power for full-law adequacy**. P78 supplies a rigorous exact-rational branch-and-bound lower bound for the continuous P75 family, but the nine-dimensional search can be expensive. The next methodological target is stronger certified pruning or relaxation, potentially using interval tightening or polynomial moment-SOS lower bounds, together with sharper power analysis and broader target-view dependence models.
-
-A claim of non-reducibility would require a valid obstruction relative to a sufficiently complete physical description, a scientifically defensible target, a controlled and reliability-characterized measurement channel, and an admissible bridge class. Failure of one coarse descriptor is not failure of physics.
-
----
-
-# Falsification logic
-
-| Claim being tested | What would count against it? | What would not be enough? |
-| --- | --- | --- |
-| Descriptor $T$ is exactly sufficient for $E$ | Same $T$, different independently justified $E$ | Mere correlation |
-| Descriptor $T$ is stochastically sufficient | Certified positive $I(E;\Omega\mid T)$ | Positive empirical estimate without uncertainty control |
-| Target is independently evidential | Provenance shows it was not constructed from tested $T$ | Train/test separation alone |
-| Observed target faithfully supports latent witness | Channel premise or stability fails | Treating a report or label as transparent ground truth |
-| Target-channel reliability is identified | Multi-view model is degenerate or observationally nonidentifiable | Agreement between only two uncalibrated views |
-| Finite target-channel recovery is certified | P74 covariance gate fails, sign structure is incompatible, or confidence sets remain too wide | Nonzero plug-in covariance or a precise-looking point estimate |
-| Target-measurement model is adequate | P75 tetrad, cross-triple, fourth-moment, or full-law reconstruction constraints fail | Successful three-view parameter recovery by itself |
-| Finite data reject the target model | A P76 simultaneous necessary-constraint interval excludes zero | Treating non-rejection as model acceptance |
-| Full-law finite data reject the target model | A P77 confidence region is certified disjoint from the complete declared model set | Treating a local best-fit optimizer value as a certified global distance lower bound |
-| Continuous P75 full-law separation is certified | A P78 global lower bound exceeds a valid P77 sampling-radius upper bound | Treating an incomplete parameter search or ordinary floating approximation as a formal certificate |
-| P77/P78 rejection comparison is numerically certified | A P78 model-distance lower bound is strictly larger than the P79 exact-rational sampling-radius upper bound | Comparing rounded decimal approximations without a one-sided enclosure |
-| Continuous P75 separation uses the tighter simplex-coupled certificate | A P80 global lower bound exceeds the P79 sampling-radius upper certificate | Treating probability-cell intervals as independent when normalization coupling can strengthen the certified lower bound |
-| Continuous P75 separation uses projected-event constraints | A P81 global lower bound exceeds the P79 sampling-radius upper certificate | Ignoring exact parameter-box marginals or cylinder events when they can strengthen the certified lower bound |
-| Coarse scale preserves relevant structure | Reconstruction/distortion bounds fail | Visual similarity |
-| Quantum descriptor is sufficient under class $\mathcal B$ | Certified target separation exceeds every admissible bridge image from the quantum confidence region | Numerically close tomography estimates |
-| Adaptive experiment is valid | Confidence or non-anticipation assumptions are violated | Adaptivity by itself |
-| Integer calibration candidate is optimal | Better feasible allocation or exact solver disproves it | Failure of a sufficient certificate alone |
-
-![Theory-comparative interface](docs/figures/theory_comparison_map.svg)
-
-**Figure 26. Common interface for competing theory families.** Existing consciousness theories and the repository's intervention-resolved physical candidate can be compared through physical feature family, bridge architecture, target construction, measurement interface, and discriminating experiment rather than by assuming one theory is the default answer.
-
-See the [Falsification program](docs/falsification_program.md) for explicit repository-level failure conditions.
-
----
-
-# Evidence, references, and provenance
-
-The repository keeps standard mathematics, physical theory, empirical evidence, repository-original derivations, and speculative antecedents distinct.
-
-| Resource | Purpose |
-| --- | --- |
-| [Equation and citation map](docs/equation_and_citation_map.md) | Standard versus repository-derived equations and theorem lineage |
-| [P72 equation and provenance record](docs/p72_equation_provenance.md) | Target-measurement theorem equation classification and external context |
-| [P73 equation and provenance record](docs/p73_equation_provenance.md) | Three-view latent-channel equation classification, literature context, and P72 stability connection |
-| [P74 equation and provenance record](docs/p74_equation_provenance.md) | Finite-sample concentration, nondegeneracy, full-channel interval recovery, and equation classification |
-| [P75 equation and provenance record](docs/p75_equation_provenance.md) | Just-identification, four-view overidentification, model-invariant context, moment consistency, and full-law reconstruction provenance |
-| [P76 equation and provenance record](docs/p76_equation_provenance.md) | Sixteen-cell concentration, denominator-free polynomial intervals, and finite-sample adequacy rejection provenance |
-| [P77 equation and provenance record](docs/p77_equation_provenance.md) | Full-law confidence-region inversion, model-set distance transport, and certified lower-bound rejection provenance |
-| [P78 equation and provenance record](docs/p78_equation_provenance.md) | Multi-affine box enclosures, global branch-and-bound lower bounds, mesh-gap certification, and P77 handoff provenance |
-| [P79 equation and provenance record](docs/p79_equation_provenance.md) | Exact-rational logarithm bounds, dyadic square-root enclosure, and the directionally safe P78/P79 rejection handoff |
-| [P80 equation and provenance record](docs/p80_equation_provenance.md) | Interval-simplex relaxation, exact rational feasibility crossings, P80 >= P78 dominance, and the P79 rejection handoff |
-| [P81 equation and provenance record](docs/p81_equation_provenance.md) | Exact projection-event intervals, event-size L-infinity transfer, P81 >= P80 dominance, strict-improvement witness, and P79 rejection handoff |
-| [Foundational physics and mathematics bibliography](docs/foundational_physics_mathematics_bibliography.md) | Mathematics, physics, information theory, and causal inference sources |
-| [Literature map](docs/literature_map.md) | Consciousness theory and empirical comparison literature |
-| [`fundamental_theory_references.bib`](docs/fundamental_theory_references.bib) | Machine-readable fundamental-physics references |
-| [Reference audit](docs/reference_audit.md) | Evidence-role and metadata audit |
-| [Citation and reference policy](docs/citation_and_reference_policy.md) | Attribution and scientific sourcing rules |
-
-Selected foundations include Shannon (1948), Cover and Thomas (2006), Pearl (2009), Lee (2013), Amari (2016), Landauer (1961), Casali et al. (2013), Tegmark (2015), Seth and Bayne (2022), Cogitate Consortium et al. (2025), Luppi et al. (2026), Siclari et al. (2017), Sarasso et al. (2015), and Claassen et al. (2019). Dawid and Skene (1979) and Allman, Matias, and Rhodes (2009) provide methodological context for latent observer-error models and latent-structure identifiability. Garcia, Stillman, and Sturmfels (2005) and Drton, Sturmfels, and Sullivant (2009) provide algebraic-statistics context for hidden-variable model constraints and invariants. Their general results are not claimed as repository-original contributions.
-
----
-
-# Complete visual evidence without front-page overload
-
-The main page shows only the figures needed to recover the scientific argument. The complete visual record remains available separately.
-
-| Visual collection | What it contains |
-| --- | --- |
-| [Visual atlas](website/visual-atlas.html) | Browser-oriented gallery of scientific figures |
-| [Quantitative physics and mathematics atlas](docs/quantitative_physics_mathematics_atlas.md) | Full Q01-Q40 classical/statistical/causal sequence |
-| [Quantum foundations and bridge test](docs/quantum_foundations_and_bridge_test.md) | Full QM01-QM18 quantum sequence plus P38-P44 |
-| [Theorem roadmap](docs/theorem_roadmap.md) | Proposition dependencies and proof links |
-| [Equation evidence map](docs/figures/equation_evidence_map.svg) | Visual provenance from equations to assumptions and evidence |
-
-![Equation evidence map](docs/figures/equation_evidence_map.svg)
-
-**Figure 27. Evidence provenance.** A mathematical identity, a theorem under assumptions, a numerical result, an empirical observation, and a target-measurement premise are different kinds of evidence. The project keeps those routes explicit.
-
----
-
-# Numerical validation facts
-
-The repository is executable rather than purely expository. The numerical layer verifies algorithms, finite examples, geometry, and regression behavior; it is not treated as empirical proof of a consciousness theory.
-
-The reproducibility surface includes Python 3.10, 3.11, and 3.12 CI coverage, theorem-specific tests, figure geometry tests, link integrity tests, publication-integration guards, and source implementations under [`src/consciousness_bridge/`](src/consciousness_bridge/).
-
-A passing test proves only that the declared code and repository invariants behave as tested. It does not convert a mathematical or synthetic result into biological evidence.
-
----
-
-# Reproducibility and audit path
+Recommended development environment: Python **3.12.14**.
 
 ```bash
-git clone https://github.com/MahsaKeikha/mathematical-consciousness-bridge.git
-cd mathematical-consciousness-bridge
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install -e ".[dev]"
-pytest
+python -m pip install -r requirements-reproducibility.txt
+make reproduce
 ```
 
-For scientific auditing, use the shortest route appropriate to the question: the [Theorem roadmap](docs/theorem_roadmap.md) for dependencies, [Research navigation](docs/research_navigation.md) for topic-oriented entry points, [Equation and citation map](docs/equation_and_citation_map.md) for provenance, [Visual atlas](website/visual-atlas.html) for figures, and the source/tests directories for executable contracts.
+For the full verification suite:
 
-<details>
-<summary><strong>Permanent proof, figure, code, and test index: P39-P60</strong></summary>
-
-This compact index preserves direct traceability for the quantum and experiment-design continuation. The P61-P70 calibration frontier is documented on its dedicated page.
-
-- **Proposition 39**: [figure](docs/figures/p39_finite_data_quantum_nonfactorization.svg), [`code`](src/consciousness_bridge/finite_data_quantum_nonfactorization.py), [`tests`](tests/test_finite_data_quantum_nonfactorization.py).
-- **Proposition 40**: [figure](docs/figures/p40_continuous_quantum_region_regularity.svg), [`code`](src/consciousness_bridge/continuous_quantum_region_regularity.py), [`tests`](tests/test_continuous_quantum_region_regularity.py).
-- **Proposition 41**: [figure](docs/figures/p41_trace_ball_quantum_envelope.svg), [`code`](src/consciousness_bridge/trace_ball_quantum_envelope.py), [`tests`](tests/test_trace_ball_quantum_envelope.py).
-- **Proposition 42**: [figure](docs/figures/p42_quantum_regular_bridge_sample_complexity.svg), [`code`](src/consciousness_bridge/quantum_regular_bridge_sample_complexity.py), [`tests`](tests/test_quantum_regular_bridge_sample_complexity.py).
-- **Proposition 43**: [figure](docs/figures/p43_optimal_quantum_target_allocation.svg), [`code`](src/consciousness_bridge/optimal_quantum_target_allocation.py), [`tests`](tests/test_optimal_quantum_target_allocation.py).
-- **Proposition 44**: [figure](docs/figures/p44_pair_adaptive_sample_allocation.svg), [`code`](src/consciousness_bridge/pair_adaptive_sample_allocation.py), [`tests`](tests/test_pair_adaptive_sample_allocation.py).
-- **Proposition 45**: [figure](docs/figures/p45_shared_preparation_graph_allocation.svg), [`code`](src/consciousness_bridge/shared_preparation_graph_allocation.py), [`tests`](tests/test_shared_preparation_graph_allocation.py).
-- **Proposition 46**: [figure](docs/figures/p46_budget_constrained_witness_graph.svg), [`code`](src/consciousness_bridge/budget_constrained_witness_graph.py), [`tests`](tests/test_budget_constrained_witness_graph.py).
-- **Proposition 47**: [figure](docs/figures/p47_sequential_graph_refinement.svg), [`code`](src/consciousness_bridge/sequential_witness_graph.py), [`tests`](tests/test_sequential_witness_graph.py).
-- **Proposition 48**: [figure](docs/figures/p48_gap_dependent_stopping_complexity.svg), [`code`](src/consciousness_bridge/gap_stopping_complexity.py), [`tests`](tests/test_gap_stopping_complexity.py).
-- **Proposition 49**: [figure](docs/figures/p49_dyadic_stopping_overhead.svg), [`code`](src/consciousness_bridge/dyadic_stopping_overhead.py), [`tests`](tests/test_dyadic_stopping_overhead.py).
-- **Proposition 50**: [figure](docs/figures/p50_bounded_starvation_asynchronous_sampling.svg), [`code`](src/consciousness_bridge/bounded_starvation_sampling.py), [`tests`](tests/test_bounded_starvation_sampling.py).
-- **Proposition 51**: [figure](docs/figures/p51_heterogeneous_service_rate_stopping.svg), [`code`](src/consciousness_bridge/heterogeneous_service_stopping.py), [`tests`](tests/test_heterogeneous_service_stopping.py).
-- **Proposition 52**: [figure](docs/figures/p52_capacity_optimal_service_allocation.svg), [`code`](src/consciousness_bridge/capacity_optimal_service_allocation.py), [`tests`](tests/test_capacity_optimal_service_allocation.py).
-- **Proposition 53**: [figure](docs/figures/p53_residual_demand_reoptimization.svg), [`code`](src/consciousness_bridge/residual_demand_reoptimization.py), [`tests`](tests/test_residual_demand_reoptimization.py).
-- **Proposition 54**: [figure](docs/figures/p54_metric_switching_cost_residual_scheduling.svg), [`code`](src/consciousness_bridge/metric_switching_residual_schedule.py), [`tests`](tests/test_metric_switching_residual_schedule.py).
-- **Proposition 55**: [figure](docs/figures/p55_pruning_aware_switching_monotonicity.svg), [`code`](src/consciousness_bridge/pruning_aware_switching_monotonicity.py), [`tests`](tests/test_pruning_aware_switching_monotonicity.py).
-- **Proposition 56**: [figure](docs/figures/p56_moving_start_metric_reoptimization_stability.svg), [`code`](src/consciousness_bridge/moving_start_metric_reoptimization.py), [`tests`](tests/test_moving_start_metric_reoptimization.py).
-- **Proposition 57**: [figure](docs/figures/p57_switching_metric_perturbation.svg), [`code`](src/consciousness_bridge/switching_metric_perturbation.py), [`tests`](tests/test_switching_metric_perturbation.py).
-- **Proposition 58**: [figure](docs/figures/p58_finite_data_metric_uncertainty.svg), [`code`](src/consciousness_bridge/finite_data_metric_uncertainty.py), [`tests`](tests/test_finite_data_metric_uncertainty.py).
-- **Proposition 59**: [figure](docs/figures/p59_optimal_transition_calibration.svg), [`code`](src/consciousness_bridge/optimal_transition_calibration.py), [`tests`](tests/test_optimal_transition_calibration.py).
-- **Proposition 60**: [figure](docs/figures/p60_integer_transition_calibration.svg), [`code`](src/consciousness_bridge/integer_transition_calibration.py), [`tests`](tests/test_integer_transition_calibration.py).
-
-</details>
-
----
-
-# Detailed proposition record
-
-The proposition-by-proposition development history is intentionally kept off the main scientific reading path.
-
-**[Read the complete P1 to P82 detailed proposition record](docs/detailed_proposition_record.md).**
-
----
-
-# Current scientific status
-
-The repository now contains 88 proposition-level results. The theorem frontier is P88.
-
-| Item | Current state |
-| --- | --- |
-| Public theorem frontier | **P88** |
-| Documented version | **v0.82.0** |
-| Proposition-level results | **88** |
-| Equation-driven quantitative figures | **72** |
-| Target-provenance guard | **P71 proved under declared construction model** |
-| Target-measurement robustness | **P72 proved under declared nondifferential channel model** |
-| Target-channel identifiability | **P73 proved at population level under declared nondegenerate binary three-view model** |
-| Finite-sample target-channel recovery | **P74 proved under the P73 model plus IID sampling, with explicit nondegeneracy gating** |
-| Target-model adequacy | **P75 proved at population level for the declared binary four-view extension, with six generic overidentifying degrees of freedom and full-law reconstruction** |
-| Finite-sample target-model adequacy | **P76 proved under IID sampling as a simultaneous one-sided rejection certificate for tracked P75 necessary constraints** |
-| Full-law finite-sample target-model adequacy | **P77 proved as a confidence-region/model-set separation theorem, conditional on a sound distance lower bound or equivalent certified feasibility result** |
-| Continuous-family full-law optimization certificate | **P78 proved for the P75 four-view binary latent family using exact-rational multi-affine box lower bounds and an explicit mesh-gap guarantee** |
-| One-sided sampling-radius numerical certificate | **P79 proved with exact-rational logarithm bracketing and integer-certified dyadic square-root enclosure for the P77 radius** |
-| Simplex-coupled continuous-family certificate | **P80 proved for the P75 family by intersecting exact P78 cell intervals with probability normalization and solving the resulting L-infinity relaxation exactly in rational arithmetic** |
-| Projection-event continuous-family certificate | **P81 proved for the P75 family by adding exact marginal and cylinder-event box constraints and transferring event mismatch back to full-law L-infinity distance** |
-| Physical-to-experiential bridge | **Open physical-to-experiential bridge** |
-| Quantum ontology claim | **Not assumed** |
-| Consciousness identified with a scalar, state of matter, or spacetime coordinate | **Not claimed** |
-| Reproducibility | Python 3.10, 3.11, and 3.12 test matrix plus theorem-specific regression guards |
-
-The scientific target is precise: continue reducing ambiguity in the physical description, target provenance, target measurement, channel identifiability, finite-data recovery, target-model adequacy, finite-sample adequacy, full-law model-set separation, certified continuous model separation, admissible bridge class, and experiment until either a bridge is derived and survives falsification or a valid obstruction demonstrates exactly where the declared description is insufficient.
-
----
-
-# Navigation
-
-| If you want to... | Go here |
-| --- | --- |
-| Understand theorem dependencies | [Theorem roadmap](docs/theorem_roadmap.md) |
-| Read the proposition chronology | [Detailed proposition record](docs/detailed_proposition_record.md) |
-| Inspect target non-circularity | [P71](docs/proposition_71_target_provenance_noncircularity.md) |
-| Inspect noisy target measurement | [P72](docs/proposition_72_target_measurement_channel_robustness.md) |
-| Inspect population target-channel identifiability | [P73](docs/proposition_73_target_channel_identifiability.md) |
-| Inspect finite-sample target-channel recovery | [P74](docs/proposition_74_finite_sample_target_channel_recovery.md) |
-| Inspect target-model adequacy and four-view overidentification | [P75](docs/proposition_75_target_model_adequacy_overidentification.md) |
-| Inspect finite-sample target-model adequacy rejection | [P76](docs/proposition_76_finite_sample_target_model_adequacy.md) |
-| Inspect finite-sample full-law model-set separation | [P77](docs/proposition_77_full_law_model_set_separation.md) |
-| Inspect certified continuous P75 model separation | [P78](docs/proposition_78_certified_continuous_model_separation.md) |
-| Audit P72 equations | [P72 equation and provenance record](docs/p72_equation_provenance.md) |
-| Audit P73 equations and latent-class context | [P73 equation and provenance record](docs/p73_equation_provenance.md) |
-| Audit P74 finite-data recovery equations | [P74 equation and provenance record](docs/p74_equation_provenance.md) |
-| Audit P75 model-adequacy equations | [P75 equation and provenance record](docs/p75_equation_provenance.md) |
-| Audit P76 finite-sample adequacy equations | [P76 equation and provenance record](docs/p76_equation_provenance.md) |
-| Audit P77 full-law separation equations | [P77 equation and provenance record](docs/p77_equation_provenance.md) |
-| Audit P78 continuous-separation equations | [P78 equation and provenance record](docs/p78_equation_provenance.md) |
-| Inspect P61-P70 calibration | [Calibration and Optimization Frontier](docs/calibration_optimization_frontier_p61_p70.md) |
-| Follow work by scientific question | [Research navigation](docs/research_navigation.md) |
-| Audit equations and citations | [Equation and citation map](docs/equation_and_citation_map.md) |
-| Inspect classical quantitative figures | [Quantitative physics and mathematics atlas](docs/quantitative_physics_mathematics_atlas.md) |
-| Inspect the quantum branch | [Quantum foundations and bridge test](docs/quantum_foundations_and_bridge_test.md) |
-| Inspect falsification conditions | [Falsification program](docs/falsification_program.md) |
-| Browse the website | [Website entry point](website/index.html) |
-| Browse every visual | [Visual atlas](website/visual-atlas.html) |
-| Audit code and tests | [`src/consciousness_bridge/`](src/consciousness_bridge/) and [`tests/`](tests/) |
-| Cite the research | [Citation guide](CITATION.md), [`CITATION.cff`](CITATION.cff), and [`CITATION.bib`](CITATION.bib) |
-
----
-
-## Scope statement
-
-This repository is an ongoing research program. Its purpose is to make physical-to-experiential claims harder to state vaguely and easier to test rigorously. It should be read as a sequence of explicit mathematical conditions, counterexample constructions, finite-data certificates, target-validity requirements, and experimental design tools. The final bridge remains a scientific target, not a conclusion assumed in advance.
-
----
-
----
-
-## Current theorem frontier: P86
-
-P86 strengthens the complete P85 certificate with the smallest non-uniform primitive weighted four-event parity family. It exhausts 10,560 exact functionals with coefficient magnitudes `{1,1,1,2}`. On the exact rational hierarchy witness, the complete P85 certificate is silent while P86 certifies `L85 = 0 < L86 = 1/192`. This remains a conditional rejection certificate for the declared P75 latent measurement family and does not identify any latent state with consciousness or close the physical-to-experiential bridge.
-
-![P86 exact minimally weighted four-event projection-parity certificate](docs/figures/p86_exact_minimally_weighted_quad_projection_parity.svg)
-
-**P86 frontier figure.** The figure shows why lower-order unit-weight compatibility need not exhaust shared-parameter linear structure, the exact multi-affine box interval, centered full-law transfer, and the strict rational witness.
-
-- [P86 proof](docs/proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md)
-- [P86 equation provenance](docs/p86_equation_provenance.md)
-- [P86 implementation](src/consciousness_bridge/weighted_quad_projection_parity_functional_separation.py)
-- [P86 tests](tests/test_weighted_quad_projection_parity_functional_separation.py)
-
-# Citation
-
-Current release: **Version 0.82.0**. Current theorem frontier: **P88**.
-
-If this research program, one of its propositions, figures, algorithms, or implementations contributes to your work, please cite it. When a specific theorem or artifact is central to an argument, cite both the overall research program and the proposition or artifact used.
-
-## Preferred scholarly citation
-
-> **Keikha, M. (2026). *Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem* (Version 0.81.0). GitHub research repository. https://github.com/MahsaKeikha/mathematical-consciousness-bridge**
-
-## BibTeX
-
-```bibtex
-@misc{keikha2026mathematicalconsciousnessbridge,
-  author       = {Keikha, Mahsa},
-  title        = {Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem},
-  year         = {2026},
-  version      = {0.81.0},
-  howpublished = {GitHub research repository},
-  url          = {https://github.com/MahsaKeikha/mathematical-consciousness-bridge},
-  note         = {Ongoing research program. Current documented theorem frontier: P81.}
-}
+```bash
+make check
 ```
 
-For theorem-level attribution, identify the proposition explicitly and preserve its declared assumptions. Because the repository evolves, reproducible citations should include the documented version and, when relevant, the exact Git commit SHA. No DOI is currently asserted.
+The repository also supports Python 3.10, 3.11, and 3.12 in continuous integration. See [docs/reproducibility.md](docs/reproducibility.md) for exact commands and the scope of each audit.
 
-Citation resources: **[full citation guide](CITATION.md)** | **[machine-readable CFF](CITATION.cff)** | **[BibTeX](CITATION.bib)**
+---
+
+## Explore by depth, not by folder
+
+**Five minutes:** [Start Here](START_HERE.md)
+
+**Thirty minutes:** [Research Architecture](docs/research_architecture.md) → [P19](docs/proposition_19_fundamental_physical_sufficiency.md) → [P71-P88 traceability path](docs/research_traceability_index.md#target-side-research-frontier-p71-p88)
+
+**Technical review:** [Theorem Roadmap](docs/theorem_roadmap.md) → proposition proof → equation provenance → source → tests
+
+**Visual review:** [Figure Catalog](docs/figure_catalog.md) → [Visual Atlas](website/visual-atlas.html)
+
+**Full audit:** [Detailed Proposition Record](docs/detailed_proposition_record.md) → [Equation and Citation Map](docs/equation_and_citation_map.md) → [Reproducibility Guide](docs/reproducibility.md)
+
+The full theorem program is preserved. The landing page is intentionally selective so that a reader can understand the research before encountering its complete technical depth.
+
+---
+
+## Related physical foundation
+
+This project continues [Spatiotemporal Observer Mathematics](https://github.com/MahsaKeikha/spatiotemporal-observer-math), which studies the prior physical problem of identifying a persistent moving subsystem from measured dynamics. That repository is a separate completed research record; this repository addresses the subsequent bridge methodology.
+
+---
+
+## Citation
+
+See [CITATION.md](CITATION.md) and [CITATION.cff](CITATION.cff) for repository and proposition-level citation guidance.
+
+Current theorem frontier: **P88**  
+Formal release: **v0.82.0**
+
+---
+
+## License
+
+MIT. See [LICENSE](LICENSE).
