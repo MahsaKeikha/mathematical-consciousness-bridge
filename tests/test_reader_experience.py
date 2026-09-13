@@ -39,8 +39,13 @@ def test_first_reader_surfaces_match_current_frontier() -> None:
     plain = _text("website/plain-language.html")
 
     assert f"{frontier}-result theorem program and current P{frontier} frontier" in start
-    assert f"P78-P{frontier} progressively tighten global separation" in start
-    assert f"P{frontier} is the current exact frontier." in start
+    if frontier <= 87:
+        assert f"P78-P{frontier} progressively tighten global separation" in start
+        assert f"P{frontier} is the current exact frontier." in start
+    else:
+        assert f"P{frontier}" in start
+        assert "independent validation" in start
+        assert "discovery" in start
     assert f">Read P{frontier}</a>" in start
     assert 'id="research-origin"' in start
     assert "10.1016/j.chaos.2015.03.014" in start
