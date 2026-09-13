@@ -1,31 +1,26 @@
-"""P87 exact bounded-primitive four-event parity-functional certificates.
+"""P87 exact bounded primitive four-event parity-functional certificates.
 
-P87 completes the primitive nonzero integer coefficient box ``0 < |c_i| <= 2``
-for four distinct canonical even-parity observables, modulo one global sign.  It
-therefore extends P86 from the single primitive magnitude multiset ``{1,1,1,2}``
-to every primitive four-coefficient pattern whose entries lie in
-``{-2,-1,1,2}``.
+P86 audits the minimal non-uniform primitive magnitude multiset {1, 1, 1, 2}.
+P87 closes the remaining bounded-coefficient gap at the same four-event order by
+exhausting every nonzero primitive integer coefficient vector with |c_i| <= 2 for
+four distinct canonical parity observables, modulo one global sign.
 
-There are 120 sign-normalized primitive coefficient patterns per four-event
-subset:
+There are 120 sign-normalized primitive coefficient patterns per four-event subset:
 
-    (4**4 - 2**4) / 2 = 120,
+    (4^4 - 2^4) / 2 = 120,
 
-because all 4**4 nonzero vectors over ``{-2,-1,1,2}`` are considered, the 2**4
-vectors with every magnitude equal to 2 are non-primitive, and one global sign
-is removed.  Across ``C(11,4)`` four-event subsets this gives 39,600 exact
-functionals.
+because all 4^4 nonzero vectors over {-2,-1,1,2} are considered, the 2^4 vectors
+with every magnitude equal to 2 are non-primitive, and one global sign is removed.
+Across C(11, 4) four-event subsets this gives 39,600 exact functionals.
 
-The P75 interval calculation is exact: each latent-branch functional is
-multi-affine in the response coordinates, so extrema on an axis-aligned
-parameter box occur at endpoint vertices; latent prevalence then enters
-affinely and is also extremized at endpoints.  Functional mismatch transfers
-to full-law L-infinity distance by exact mass-conservation centering.
+The exact P75 interval argument is the same multi-affine endpoint argument used in
+P86. The transfer to full-law L-infinity distance uses mass-conservation centering.
+The implementation is exact over fractions.Fraction and exhausts the declared
+finite family.
 
-P87 is a proved conditional computational theorem for the declared P75 model
-family.  It does not identify the P75 latent state with consciousness, validate
-an alternative model, prove consciousness is nonphysical, or solve the
-physical-to-experiential bridge.
+P87 is a conditional model-separation theorem. It does not identify the P75 latent
+state with consciousness, validate an alternative model, prove consciousness is
+nonphysical, or solve the physical-to-experiential bridge.
 """
 
 from __future__ import annotations
@@ -280,7 +275,7 @@ def p87_standard_primitive_weight_pattern_count() -> int:
 
 
 def p87_standard_primitive_quad_count() -> int:
-    """Return the 39,600 standard P87 bounded primitive four-event functionals."""
+    """Return the 39,600 bounded primitive four-event P87 functionals."""
 
     return _STANDARD_PRIMITIVE_QUAD_COUNT
 
@@ -289,7 +284,7 @@ def p75_primitive_parity_quad_interval_exact(
     box: P78ParameterBox,
     terms: PrimitiveQuadFunctional,
 ) -> tuple[Fraction, Fraction]:
-    """Return the exact P75 box interval of one P87 primitive functional."""
+    """Return the exact P75 box interval of one bounded primitive functional."""
 
     _validate_functional(terms)
     view_quad = tuple(views for views, _ in terms)
@@ -316,7 +311,7 @@ def empirical_primitive_parity_quad_exact(
     empirical_law: tuple[Fraction, ...],
     terms: PrimitiveQuadFunctional,
 ) -> Fraction:
-    """Return the exact empirical value of one P87 primitive functional."""
+    """Return the exact empirical value of one bounded primitive functional."""
 
     _validate_functional(terms)
     if len(empirical_law) != _OUTCOME_COUNT:
@@ -378,7 +373,11 @@ def p75_box_bounded_primitive_quad_parity_witness_exact(
             empirical_value = sum(
                 (
                     coefficient * value
-                    for coefficient, value in zip(coefficients, empirical_vector, strict=True)
+                    for coefficient, value in zip(
+                        coefficients,
+                        empirical_vector,
+                        strict=True,
+                    )
                 ),
                 start=Fraction(0),
             )
@@ -398,7 +397,7 @@ def p75_box_bounded_primitive_quad_parity_witness_exact(
                 incidence_vectors,
             )
             if centered_norm <= 0:
-                raise RuntimeError("P87 primitive functional unexpectedly has zero norm")
+                raise RuntimeError("bounded primitive functional unexpectedly has zero norm")
             lower_bound = interval_gap / centered_norm
             terms: PrimitiveQuadFunctional = tuple(
                 (views, coefficient)
@@ -418,7 +417,7 @@ def p75_box_bounded_primitive_quad_parity_witness_exact(
                 best = witness
 
     if best is None:
-        raise RuntimeError("P87 bounded primitive four-event family unexpectedly empty")
+        raise RuntimeError("bounded primitive four-event P87 family unexpectedly empty")
     return best
 
 
@@ -438,7 +437,7 @@ def p75_box_p87_linf_lower_bound_exact(
     empirical_law: tuple[Fraction, ...],
     box: P78ParameterBox,
 ) -> Fraction:
-    """Return the complete P87 bound ``max(P86, bounded-primitive four-event)``."""
+    """Return max(P86, bounded primitive four-event P87 lower bound)."""
 
     p86 = p75_box_p86_linf_lower_bound_exact(empirical_law, box)
     primitive_quad = p75_box_bounded_primitive_quad_parity_linf_lower_bound_exact(
@@ -452,7 +451,7 @@ def p87_dominates_p86_on_box(
     empirical_law: tuple[Fraction, ...],
     box: P78ParameterBox,
 ) -> bool:
-    """Return the exact pointwise dominance check ``L87 >= L86``."""
+    """Return the exact pointwise dominance check P87(B) >= P86(B)."""
 
     return p75_box_p87_linf_lower_bound_exact(
         empirical_law,
@@ -460,21 +459,6 @@ def p87_dominates_p86_on_box(
     ) >= p75_box_p86_linf_lower_bound_exact(empirical_law, box)
 
 
-# Compatibility aliases retained for commits and downstream code written while P87
-# was still being audited as a candidate theorem.
-def p75_box_p87_candidate_linf_lower_bound_exact(
-    empirical_law: tuple[Fraction, ...],
-    box: P78ParameterBox,
-) -> Fraction:
-    """Compatibility alias for :func:`p75_box_p87_linf_lower_bound_exact`."""
-
-    return p75_box_p87_linf_lower_bound_exact(empirical_law, box)
-
-
-def p87_candidate_dominates_p86_on_box(
-    empirical_law: tuple[Fraction, ...],
-    box: P78ParameterBox,
-) -> bool:
-    """Compatibility alias for :func:`p87_dominates_p86_on_box`."""
-
-    return p87_dominates_p86_on_box(empirical_law, box)
+# Compatibility aliases retained for the short candidate-validation phase.
+p75_box_p87_candidate_linf_lower_bound_exact = p75_box_p87_linf_lower_bound_exact
+p87_candidate_dominates_p86_on_box = p87_dominates_p86_on_box

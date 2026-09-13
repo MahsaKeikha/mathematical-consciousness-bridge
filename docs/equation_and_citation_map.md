@@ -1268,3 +1268,21 @@ The standard audit contains 660 sign-normalized functionals. The exact strict wi
 - Exact family: 10,560 primitive `{1,1,1,2}` weighted four-event parity functionals.
 - Strict hierarchy witness: `L85 = 0 < L86 = 1/192`.
 - Interpretation: conditional P75 model separation only; physical-to-experiential bridge remains open.
+
+
+---
+
+# P87 - bounded primitive four-event parity-functional separation
+
+| Equation or object | Role | Status | Primary provenance |
+| --- | --- | --- | --- |
+| `c_i in {-2,-1,1,2}`, `gcd(|c_1|,...,|c_4|)=1` | bounded primitive four-event coefficient family | repository definition | P87 |
+| `(4^4 - 2^4)/2 = 120` | sign-normalized primitive coefficient-pattern count | elementary finite counting | P87 provenance |
+| `C(11,4) * 120 = 39,600` | complete P87 functional-family size | repository finite construction | P87 |
+| `Q(p)=sum_i c_i P(H_{J_i})` | bounded primitive four-event parity functional | repository construction using inherited parity events | P83-P87 |
+| exact P75 interval by common endpoint vertices | exact functional model range | elementary multi-affine endpoint derivation | P78/P86/P87 provenance |
+| `D(Q)=min_a sum_x |g(x)-a|` | centered full-law transfer denominator | inherited exact transfer construction | P85-P87 |
+| `L87(B)=max(L86(B),L_bp4(B))` | current bounded primitive lower-bound hierarchy | repository definition | P87 |
+| `L86=1/192 < L87=1/96` | strict exact rational hierarchy witness | repository-original exact construction | P87 proof, implementation, tests |
+
+P87 is a conditional model-separation theorem for the declared P75 family. Its equations do not identify the latent state with consciousness or supply the still-open physical-to-experiential bridge.

@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "canonical_root": "docs/figures",
-  "current_frontier": "P86",
-  "current_frontier_figure": "docs/figures/p86_exact_minimally_weighted_quad_projection_parity.svg",
-  "figure_count": 144,
+  "current_frontier": "P87",
+  "current_frontier_figure": "docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg",
+  "figure_count": 145,
   "hash_algorithm": "sha256",
   "figures": [
     {
@@ -613,6 +613,14 @@
       "category": "theorem-or-architecture",
       "title": "P86 Minimally Weighted Four-Event Parity Certificate",
       "description_chars": 931
+    },
+    {
+      "path": "docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg",
+      "sha256": "2db40b90183db151137c3ae50505c9daa938084c062c430d3b95fe34081a0389",
+      "bytes": 7385,
+      "category": "theorem-or-architecture",
+      "title": "P87 Bounded Primitive Four-Event Parity Certificate",
+      "description_chars": 890
     },
     {
       "path": "docs/figures/physics_mathematics_atlas.svg",

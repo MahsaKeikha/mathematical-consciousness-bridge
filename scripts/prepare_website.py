@@ -22,9 +22,9 @@ RAW_FIGURE_PREFIX = (
     "https://raw.githubusercontent.com/MahsaKeikha/"
     "mathematical-consciousness-bridge/main/docs/figures/"
 )
-CURRENT_FRONTIER_FIGURE = "p86_exact_minimally_weighted_quad_projection_parity.svg"
+CURRENT_FRONTIER_FIGURE = "p87_exact_bounded_primitive_quad_projection_parity.svg"
 
-ASSET_VERSION = "20260913-mobile16-p86"
+ASSET_VERSION = "20260913-mobile17-p87"
 SCRIPT_TAG = f'<script defer src="app.js?v={ASSET_VERSION}"></script>'
 READER_LINKS_SCRIPT_TAG = '<script defer src="reader-links.js"></script>'
 FOOTER_SCRIPT_TAG = '<script defer src="footer.js"></script>'
@@ -115,12 +115,12 @@ def _copy_canonical_figures(output: Path) -> None:
 
 
 def _validate_current_frontier_pages(output: Path) -> None:
-    """Require P86 to be the primary visual frontier in the canonical website."""
+    """Require P87 to be the primary visual frontier in the canonical website."""
 
     frontier_figure = output / "figures" / CURRENT_FRONTIER_FIGURE
     if not frontier_figure.is_file():
         raise RuntimeError(
-            "website build is missing the current P86 theorem figure: "
+            "website build is missing the current P87 theorem figure: "
             f"{frontier_figure}"
         )
 
@@ -131,41 +131,46 @@ def _validate_current_frontier_pages(output: Path) -> None:
         raise RuntimeError("website build is missing visual-atlas.html")
     visual_atlas = visual_atlas_path.read_text(encoding="utf-8")
     if local_frontier_src not in visual_atlas:
-        raise RuntimeError("Visual Atlas does not use the bundled P86 theorem figure")
+        raise RuntimeError("Visual Atlas does not use the bundled P87 theorem figure")
     if f'src="{RAW_FIGURE_PREFIX}' in visual_atlas:
         raise RuntimeError("Visual Atlas still depends on raw GitHub main for figures")
-    if visual_atlas.index('id="p86-frontier"') >= visual_atlas.index(
-        'id="p85-frontier"'
-    ):
-        raise RuntimeError("Visual Atlas does not present P86 before historical P85")
+    p87_atlas = visual_atlas.index('id="p87-frontier"')
+    for marker in ('id="p86-frontier"', 'id="p85-frontier"'):
+        if p87_atlas >= visual_atlas.index(marker):
+            raise RuntimeError(f"Visual Atlas does not present P87 before {marker}")
 
     homepage_path = output / "index.html"
     if not homepage_path.is_file():
         raise RuntimeError("website build is missing index.html")
     homepage = homepage_path.read_text(encoding="utf-8")
     if local_frontier_src not in homepage:
-        raise RuntimeError("Homepage does not use the bundled P86 theorem figure")
+        raise RuntimeError("Homepage does not use the bundled P87 theorem figure")
     if f'src="{RAW_FIGURE_PREFIX}' in homepage:
         raise RuntimeError("Homepage still depends on raw GitHub main for figures")
 
-    p86 = homepage.index('id="p86-frontier"')
-    for marker in ('id="plain-language"', 'id="p84-frontier"', 'id="p85-frontier"'):
-        if p86 >= homepage.index(marker):
-            raise RuntimeError(f"Homepage P86 frontier appears too late, after {marker}")
+    p87 = homepage.index('id="p87-frontier"')
+    for marker in (
+        'id="plain-language"',
+        'id="p84-frontier"',
+        'id="p85-frontier"',
+        'id="p86-frontier"',
+    ):
+        if p87 >= homepage.index(marker):
+            raise RuntimeError(f"Homepage P87 frontier appears too late, after {marker}")
 
     stale_tokens = (
-        "Current theorem frontier · P85",
-        "The 84 results form several dependency branches.",
-        "all 84 propositions",
-        "P71-P84, then read the falsification program",
+        "Current theorem frontier · P86",
+        "The 86 results form several dependency branches.",
+        "all 86 propositions",
+        "P71-P86, then read the falsification program",
     )
     stale = [token for token in stale_tokens if token in homepage]
     if stale:
-        raise RuntimeError(f"Homepage contains stale pre-P86 reader text: {stale}")
+        raise RuntimeError(f"Homepage contains stale pre-P87 reader text: {stale}")
 
 
 def prepare_website(source: Path, output: Path) -> None:
-    """Copy ``source`` and the canonical figures into one auditable Pages build."""
+    """Copy ``source`` and canonical figures into one auditable Pages build."""
 
     if not source.is_dir():
         raise FileNotFoundError(f"website source directory not found: {source}")

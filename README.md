@@ -9,7 +9,7 @@
 **Mahsa Keikha, PhD**
 
 > [!TIP]
-> **First time here?** Begin with **[START_HERE.md](START_HERE.md)** for a short orientation, audience-specific reading paths, the P1-P86 program map, and the current P86 frontier. Keep the **[Glossary](docs/glossary.md)** open for terminology, and use the **[Reproducibility Guide](docs/reproducibility.md)** when you want to run the tests or regenerate the computational figure atlases.
+> **First time here?** Begin with **[START_HERE.md](START_HERE.md)** for a short orientation, audience-specific reading paths, the P1-P87 program map, and the current P87 frontier. Keep the **[Glossary](docs/glossary.md)** open for terminology, and use the **[Reproducibility Guide](docs/reproducibility.md)** when you want to run the tests or regenerate the computational figure atlases.
 
 > [!NOTE]
 > **Reproduce the complete computational record:** use Python 3.12.14, install `requirements-reproducibility.txt`, and run `python scripts/reproducibility_audit.py` (or `make reproduce`). The audit fails unless tests/static checks pass and two full generated-figure rebuilds leave the Git tree byte-for-byte clean.
@@ -17,11 +17,11 @@
 | Research status | Current value |
 | --- | --- |
 | Formal release | **v0.82.0** |
-| Public theorem frontier | **P86** |
-| Proposition-level results | **86** |
+| Public theorem frontier | **P87** |
+| Proposition-level results | **87** |
 | Physical-to-experiential bridge | **Open** |
 
-Read the complete P1 to P86 detailed proposition record in [docs/detailed_proposition_record.md](docs/detailed_proposition_record.md) for proposition-by-proposition assumptions, statements, proofs, implementations, tests, and scientific boundaries.
+Read the complete P1 to P87 detailed proposition record in [docs/detailed_proposition_record.md](docs/detailed_proposition_record.md) for proposition-by-proposition assumptions, statements, proofs, implementations, tests, and scientific boundaries.
 
 > **What mathematical and physical conditions would be required for a complete physical description of a system to support a scientifically testable claim about consciousness?**
 
@@ -106,7 +106,7 @@ A successful outcome would therefore not be a single impressive equation labeled
 
 That is the purpose of the **Mathematical Consciousness Bridge**: **to transform the broad question of how physical reality relates to experience into a sequence of precise scientific obligations that can be examined, tested, falsified, and improved one by one, without hiding the hardest part of the problem inside an assumption.**
 
-The research currently contains **86 proposition-level results** and **71 equation-driven quantitative figures**. The theorem frontier is P86. These results build the test architecture and close specific mathematical gaps, but the physical-to-experiential bridge itself remains open.
+The research currently contains **87 proposition-level results** and **71 equation-driven quantitative figures**. The theorem frontier is P86. These results build the test architecture and close specific mathematical gaps, but the physical-to-experiential bridge itself remains open.
 
 This project continues [Spatiotemporal Observer Mathematics](https://github.com/MahsaKeikha/spatiotemporal-observer-math), which addresses the prior physical problem of identifying a persistent moving subsystem from measured dynamics.
 
@@ -138,6 +138,17 @@ P77 strengthens that finite-data adequacy layer from selected necessary constrai
 
 P78 supplies a certified continuous-family lower bound for the P75 four-view binary latent model. Its sixteen observed cell probabilities are multi-affine functions of nine parameters. On every axis-aligned parameter box, exact coordinatewise cell ranges give a rigorous lower bound $L_\infty(B;\widehat P)$ on the distance from the empirical law to every model law generated in that box. For any finite box partition $\mathcal B$ of the complete parameter cube, $L_{\mathcal B}=\min_{B\in\mathcal B}L_\infty(B;\widehat P)$ is therefore a valid global lower bound on $d_\infty(\widehat P,\mathcal M_{4,2})$. An explicit parameter point gives an upper bound, and a parameter-space Lipschitz argument gives the mesh guarantee $0\le d_\infty-L_{\mathcal B}\le\eta(\mathcal B)$. The implementation uses exact rational arithmetic for empirical counts and dyadic box refinement. P78 is a computational certification theorem under the declared P75 model, not an experiential ontology.
 
+
+P87 closes the next same-order completeness gap. P86 proves that the minimal non-uniform primitive four-event magnitude pattern `{1,1,1,2}` can expose shared-parameter incompatibility beyond P85. P87 exhausts the entire nonzero primitive integer coefficient box `|c_i| <= 2` at four-event order: 120 sign-normalized coefficient patterns for each of 330 four-event subsets, or **39,600 exact functionals**. On the same exact rational witness, the complete P86 value is `1/192`, while P87 attains `1/96` with coefficients `(1,-1,-2,2)`. Thus
+
+\[
+oxed{L_{85}=0<L_{86}=1/192<L_{87}=1/96.}
+\]
+
+![P87 exact bounded primitive four-event projection-parity functional certificate](docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg)
+
+**P87 current-frontier figure.** P87 completes a mathematically declared bounded primitive coefficient family rather than merely increasing proposition number or event order. The result remains conditional on the declared P75 model family and does not identify a latent state with consciousness.
+
 These results establish a rigorous **test architecture**, not a completed ontology of consciousness.
 
 ---
@@ -159,7 +170,7 @@ This distinction is central. The repository **does not assume that a physical qu
 
 **Quantum mechanics does not by itself imply consciousness.** A complete quantum state specifies the outcome statistics of declared measurements, but an experiential conclusion requires an additional bridge statement unless that bridge is independently derived.
 
-Likewise, a latent target symbol such as $E^\star$ or $S$ is not a declaration of experiential ground truth. P71-P86 formalize separate requirements on target provenance, observation, channel identifiability, finite-data recovery, model adequacy, full-law separation, and increasingly strong exact-rational continuous-family certificates before such a target can carry bridge evidence.
+Likewise, a latent target symbol such as $E^\star$ or $S$ is not a declaration of experiential ground truth. P71-P87 formalize separate requirements on target provenance, observation, channel identifiability, finite-data recovery, model adequacy, full-law separation, and increasingly strong exact-rational continuous-family certificates before such a target can carry bridge evidence.
 
 ---
 
@@ -1089,13 +1100,13 @@ The proposition-by-proposition development history is intentionally kept off the
 
 # Current scientific status
 
-The repository now contains 86 proposition-level results. The theorem frontier is P86.
+The repository now contains 87 proposition-level results. The theorem frontier is P87.
 
 | Item | Current state |
 | --- | --- |
-| Public theorem frontier | **P86** |
+| Public theorem frontier | **P87** |
 | Documented version | **v0.82.0** |
-| Proposition-level results | **86** |
+| Proposition-level results | **87** |
 | Equation-driven quantitative figures | **71** |
 | Target-provenance guard | **P71 proved under declared construction model** |
 | Target-measurement robustness | **P72 proved under declared nondifferential channel model** |
@@ -1174,7 +1185,7 @@ P86 strengthens the complete P85 certificate with the smallest non-uniform primi
 
 # Citation
 
-Current release: **Version 0.82.0**. Current theorem frontier: **P86**.
+Current release: **Version 0.82.0**. Current theorem frontier: **P87**.
 
 If this research program, one of its propositions, figures, algorithms, or implementations contributes to your work, please cite it. When a specific theorem or artifact is central to an argument, cite both the overall research program and the proposition or artifact used.
 

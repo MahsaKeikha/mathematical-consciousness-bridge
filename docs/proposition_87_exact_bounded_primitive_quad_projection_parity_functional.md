@@ -1,108 +1,134 @@
-# Proposition 87: Exact Bounded-Primitive Four-Event Projection-Parity Functional Certificate
+# Proposition 87: Exact Bounded Primitive Four-Event Projection-Parity Functional Certificate
 
 ## Status
 
-**Proved conditional computational theorem.** P87 strengthens P86 for the same declared P75 four-view binary latent family and the same full-law $L_\infty$ distance.
+**Proved conditional computational theorem.** P87 strengthens P86 for the same declared P75 four-view binary latent target-measurement family and the same full-law $L_\infty$ distance.
 
-P86 audits the smallest non-uniform primitive magnitude multiset $\{1,1,1,2\}$ across four distinct canonical parity observables. P87 closes the next finite combinatorial gap: it exhausts **every** primitive nonzero integer coefficient vector satisfying
-
-\[
-0<|c_i|\le 2,
-\]
-
-modulo one irrelevant global sign.
-
-The resulting standard family contains **39,600 exact four-event functionals**. On an exact rational witness, the complete P86 lower bound is $1/192$ while P87 certifies $1/96$.
-
-P87 is a model-separation theorem. It does not identify the P75 latent state with consciousness, validate an alternative model after rejection, prove consciousness is nonphysical, or close the physical-to-experiential bridge.
-
----
-
-## 1. Scientific question
-
-Can the complete P86 certificate remain suboptimal because its four-event coefficient family contains only the magnitude pattern $\{1,1,1,2\}$, even though a different primitive weighting with the same coefficient cap $|c_i|\le2$ gives a strictly stronger exact separation certificate?
+P86 audits the smallest non-uniform primitive magnitude pattern, `{1,1,1,2}`. P87 asks a different and stronger question at the **same four-event order**: if all nonzero primitive integer coefficient vectors with $|c_i|\le2$ are exhausted, can that completed bounded family detect a shared-parameter incompatibility that the full P86 certificate still underestimates?
 
 The answer is yes.
 
-P87 therefore replaces a single hand-selected magnitude pattern with the complete primitive four-coefficient box at radius two.
+P87 is a model-separation theorem. It does not identify the P75 latent state with consciousness, validate an alternative model after rejection, or close the physical-to-experiential bridge.
 
 ---
 
-## 2. Canonical parity coordinates
+## 1. The mathematical gap closed by P87
 
-For
-
-\[
-J\subseteq\{0,1,2,3\},\qquad |J|\in\{2,3,4\},
-\]
-
-define the canonical even-parity event
+P86 deliberately restricts the four-event coefficient magnitudes to
 
 \[
-H_J=\left\{x:\sum_{j\in J}x_j\equiv0\pmod2\right\}.
+\{1,1,1,2\}.
 \]
+
+That is the smallest non-uniform primitive pattern, but it is not the complete primitive coefficient family with entries bounded in magnitude by two.
+
+P87 therefore fixes the finite coefficient alphabet
+
+\[
+\{-2,-1,1,2\}
+\]
+
+and retains exactly those vectors
+
+\[
+c=(c_1,c_2,c_3,c_4)
+\]
+
+with
+
+\[
+\gcd(|c_1|,|c_2|,|c_3|,|c_4|)=1.
+\]
+
+Vectors differing only by one global sign represent the same separating direction, so one global sign is removed by requiring the first coefficient to be positive.
+
+This closes the complete nonzero primitive coefficient box
+
+\[
+0<|c_i|\le2
+\]
+
+at four-event order.
+
+---
+
+## 2. Exact family size
 
 There are
 
 \[
-\binom42+\binom43+\binom44=6+4+1=11
+4^4=256
 \]
 
-such coordinates.
+nonzero coefficient vectors over `{-2,-1,1,2}`.
 
-Choose four distinct view sets $J_1,J_2,J_3,J_4$ and a primitive coefficient vector
+A vector is non-primitive exactly when all four coefficients have magnitude two. There are
 
 \[
-c=(c_1,c_2,c_3,c_4)\in\{-2,-1,1,2\}^4,
-\qquad
-\gcd(|c_1|,|c_2|,|c_3|,|c_4|)=1.
+2^4=16
 \]
 
-Define
-
-\[
-Q_c(p)=\sum_{i=1}^4 c_iP_p(H_{J_i}).
-\]
-
-Multiplying all coefficients by $-1$ changes neither the interval-distance numerator nor the centered transfer denominator, so one global sign is redundant. P87 fixes the first coefficient positive.
-
----
-
-## 3. Exact enumeration of the P87 family
-
-There are $4^4=256$ nonzero vectors in $\{-2,-1,1,2\}^4$. A vector is non-primitive exactly when all four magnitudes equal two. There are $2^4=16$ such vectors. Hence the number of primitive vectors before global-sign normalization is
+such vectors. Therefore the primitive vectors number
 
 \[
 256-16=240.
 \]
 
-Every primitive vector occurs in a distinct pair $\{c,-c\}$, so fixing one global sign gives
+Quotienting by one global sign leaves
 
 \[
-\boxed{240/2=120}
+\boxed{120}
 \]
 
 standard coefficient patterns per four-event subset.
 
-There are
+The P83 parity coordinate family contains eleven canonical even-parity events. Hence the number of unordered four-event subsets is
 
 \[
-\binom{11}{4}=330
+\binom{11}{4}=330.
 \]
 
-four-element subsets of the canonical parity coordinates. Therefore the complete P87 family has
+Therefore the complete P87 bounded primitive family contains
 
 \[
 \boxed{330\times120=39{,}600}
 \]
 
-standard functionals.
-
-This is exhaustive for the declared class: four distinct canonical even-parity observables, four nonzero primitive integer coefficients, and coefficient cap $|c_i|\le2$.
+exact functionals.
 
 ---
 
-## 4. Exact P75 box interval
+## 3. Canonical functional
+
+For each
+
+\[
+J\subseteq\{0,1,2,3\},\qquad |J|\in\{2,3,4\},
+\]
+
+define the even-parity event
+
+\[
+H_J=\left\{x:\sum_{j\in J}x_j\equiv0\pmod2\right\}.
+\]
+
+Choose four distinct canonical view sets $J_1,J_2,J_3,J_4$ and a primitive coefficient vector satisfying
+
+\[
+0<|c_i|\le2.
+\]
+
+Define
+
+\[
+Q(p)=\sum_{i=1}^4 c_iP_p(H_{J_i}).
+\]
+
+The P87 family is the set of all such standard sign-normalized functionals.
+
+---
+
+## 4. Exact P75 parameter-box interval
 
 Inside latent branch $s\in\{-,+\}$ write
 
@@ -110,48 +136,48 @@ Inside latent branch $s\in\{-,+\}$ write
 a_{j,s}=1-2q_{j,s}.
 \]
 
-Conditional independence in the declared P75 model gives
+Conditional independence in the declared P75 model gives the inherited parity identity
 
 \[
 P_s(H_J)=\frac{1+\prod_{j\in J}a_{j,s}}2.
 \]
 
-Thus
+Therefore
 
 \[
-Q_{c,s}
+Q_s
 =
 \frac12\sum_{i=1}^4c_i
 +
 \frac12\sum_{i=1}^4c_i\prod_{j\in J_i}a_{j,s}.
 \]
 
-Each response coordinate appears with degree at most one, so $Q_{c,s}$ is multi-affine. Holding all but one coordinate fixed leaves an affine function of the remaining coordinate; its extrema on an interval occur at the endpoints. Repeating coordinate by coordinate proves that every branch extremum on an axis-aligned rational response box occurs at a vertex.
+Each response coordinate enters with degree at most one. Thus $Q_s$ is multi-affine. Holding all but one coordinate fixed makes $Q_s$ affine in the remaining coordinate, so its minimum and maximum over that coordinate occur at the interval endpoints. Repeating coordinate by coordinate proves that every branch extremum over an axis-aligned rational box occurs at a vertex.
 
 For latent prevalence $\pi$,
 
 \[
-Q_c=(1-\pi)Q_{c,-}+\pi Q_{c,+}.
+Q=(1-\pi)Q_-+\pi Q_+,
 \]
 
-After branchwise extremization, both lower and upper envelopes are affine in $\pi$, so prevalence endpoints suffice as well.
+which is affine in $\pi$. Hence the prevalence endpoints also suffice.
 
-Therefore every P87 functional has an exact rational P75 box interval
+Every P87 functional therefore has an exact rational model interval
 
 \[
-I_B(Q_c)=[Q_{c,B}^L,Q_{c,B}^U].
+I_B(Q)=[Q_B^L,Q_B^U]
 \]
 
-No local floating-point optimizer is used.
+obtained by finite endpoint enumeration.
 
 ---
 
-## 5. Exact transfer to full-law $L_\infty$ distance
+## 5. Transfer to full-law distance
 
 Define the sixteen-cell outcome coefficient
 
 \[
-g_c(x)=\sum_{i=1}^4c_i\mathbf1_{H_{J_i}}(x).
+g(x)=\sum_{i=1}^4c_i\mathbf1_{H_{J_i}}(x).
 \]
 
 For probability laws $p$ and $q$,
@@ -160,71 +186,75 @@ For probability laws $p$ and $q$,
 \sum_x[p(x)-q(x)]=0.
 \]
 
-Hence for any constant $a$,
+Therefore for any constant $a$,
 
 \[
-Q_c(p)-Q_c(q)
+Q(p)-Q(q)
 =
-\sum_x[g_c(x)-a][p(x)-q(x)].
+\sum_x[g(x)-a][p(x)-q(x)].
 \]
 
-The triangle inequality gives
+By the triangle inequality,
 
 \[
-|Q_c(p)-Q_c(q)|
+|Q(p)-Q(q)|
 \le
-\left(\sum_x|g_c(x)-a|\right)\|p-q\|_\infty.
+\left(\sum_x|g(x)-a|\right)\|p-q\|_\infty.
 \]
 
 Define
 
 \[
-D(Q_c)=\min_a\sum_x|g_c(x)-a|.
+D(Q)=\min_a\sum_x|g(x)-a|.
 \]
 
-For finitely many scalar values the absolute-deviation objective is minimized by any median; evaluating the finitely many exact integer coefficient values therefore gives $D(Q_c)$ exactly.
+The finite absolute-deviation objective is minimized by a median of the sixteen coefficient values. Thus $D(Q)$ is exactly computable in integer/rational arithmetic.
 
-If the empirical functional value lies a distance
+If
 
 \[
-\Delta_c=
-\operatorname{dist}\!\left(Q_c(\widehat p),I_B(Q_c)\right)
+\Delta_Q
+=
+\operatorname{dist}(Q(\widehat p),I_B(Q)),
 \]
 
-outside the P75 box interval, then every P75 law $q$ generated in $B$ obeys
+then every P75 law $q$ generated in $B$ satisfies
 
 \[
 \boxed{
-\|\widehat p-q\|_\infty\ge\frac{\Delta_c}{D(Q_c)}.
+\|\widehat p-q\|_\infty
+\ge
+\frac{\Delta_Q}{D(Q)}.
 }
 \]
 
 ---
 
-## 6. Complete P87 certificate
+## 6. P87 certificate and dominance
 
 Let
 
 \[
-L_{\mathrm{bp4}}(B)=
-\max_{Q_c\in\mathcal Q_{87}}
-\frac{\operatorname{dist}(Q_c(\widehat p),I_B(Q_c))}{D(Q_c)},
+L_{\mathrm{bp4}}(B)
+=
+\max_{Q\in\mathcal Q_{87}}
+\frac{\operatorname{dist}(Q(\widehat p),I_B(Q))}{D(Q)},
 \]
 
-where $\mathcal Q_{87}$ is the complete 39,600-function family.
+where $\mathcal Q_{87}$ is the complete 39,600-function bounded primitive family.
 
 Define
 
 \[
-\boxed{L_{87}(B)=\max\{L_{86}(B),L_{\mathrm{bp4}}(B)\}.}
+\boxed{
+L_{87}(B)=\max\{L_{86}(B),L_{\mathrm{bp4}}(B)\}.
+}
 \]
 
-The explicit maximum retains the full inherited P86 chain, including the lower-order P83-P85 certificates, while adding the complete bounded-primitive four-event family.
-
-Therefore
+Then
 
 \[
-\boxed{L_{87}(B)\ge L_{86}(B)}
+L_{87}(B)\ge L_{86}(B)
 \]
 
 for every empirical law and every admissible rational P75 box.
@@ -233,52 +263,25 @@ for every empirical law and every admissible rational P75 box.
 
 For every empirical sixteen-cell law $\widehat p$ and rational P75 parameter box $B$:
 
-1. the standard P87 family contains exactly 39,600 sign-normalized primitive four-event functionals with $0<|c_i|\le2$;
-2. every P87 functional has an exact rational P75 box interval obtained by endpoint enumeration;
-3. every interval mismatch transfers to a valid full-law $L_\infty$ lower bound through the exact centered coefficient norm;
-4. $L_{87}(B)$ is a valid lower bound on the distance from $\widehat p$ to every P75 law generated in $B$;
-5. $L_{87}(B)\ge L_{86}(B)$ pointwise;
-6. there exist exact rational boxes and empirical laws for which $L_{87}(B)>L_{86}(B)$.
+1. all 39,600 standard P87 functional intervals are computed exactly;
+2. every interval mismatch produces a valid full-law $L_\infty$ lower bound;
+3. $L_{87}(B)$ is a valid lower bound on the distance from $\widehat p$ to every P75 law generated in $B$;
+4. $L_{87}(B)\ge L_{86}(B)$ pointwise;
+5. there exist exact rational boxes and empirical laws for which $L_{87}(B)>L_{86}(B)$.
 
 ---
 
-## 7. Exact rational strict witness
+## 7. Exact strict witness
 
-Use the P75 parameter order
+Use the same exact rational box and empirical sixteen-cell law used in the P86 strict witness.
 
-\[
-(\pi,q_{1,-},q_{1,+},q_{2,-},q_{2,+},q_{3,-},q_{3,+},q_{4,-},q_{4,+}).
-\]
-
-Take
-
-\[
-B_L=
-\left(
-0,\frac14,\frac12,\frac14,\frac34,\frac12,\frac12,\frac14,\frac34
-\right),
-\]
-
-\[
-B_U=
-\left(
-0,1,1,1,\frac34,1,\frac34,1,1
-\right).
-\]
-
-Let the empirical sixteen-cell law be the exact count law
-
-\[
-(0,1,0,2,0,2,1,3,3,1,0,5,0,3,0,3)/24.
-\]
-
-The complete P86 certificate on this box is
+The P86 certificate on this box is
 
 \[
 \boxed{L_{86}(B)=\frac1{192}}.
 \]
 
-Now use the primitive P87 functional
+P87 exhaustively selects the functional
 
 \[
 Q=
@@ -288,21 +291,19 @@ P(H_{\{0,2\}})
 +2P(H_{\{0,1,2,3\}}).
 \]
 
-Its coefficient magnitudes are $\{1,1,2,2\}$, so it is outside the P86 $\{1,1,1,2\}$ family while remaining primitive and inside the P87 coefficient box.
-
-For the empirical law,
+Its empirical value is
 
 \[
 Q(\widehat p)=-\frac{17}{24}.
 \]
 
-Exact endpoint enumeration gives
+Exact endpoint enumeration over the P75 box gives
 
 \[
 I_B(Q)=\left[-\frac12,2\right].
 \]
 
-Hence
+Therefore the empirical value lies below the admissible interval by
 
 \[
 \Delta_Q
@@ -316,20 +317,25 @@ The exact centered coefficient calculation gives
 
 \[
 D(Q)=20,
-\qquad a=0
 \]
 
-for the deterministic minimizing center returned by the implementation. Therefore
+with deterministic center
 
 \[
-L_{\mathrm{bp4}}(B)
-\ge
+a=0.
+\]
+
+Hence
+
+\[
+\frac{\Delta_Q}{D(Q)}
+=
 \frac{5/24}{20}
 =
 \boxed{\frac1{96}}.
 \]
 
-Exhausting all 39,600 P87 functionals attains this value, so
+Exhaustion of the complete 39,600-function P87 family attains this value. Consequently
 
 \[
 \boxed{
@@ -339,45 +345,37 @@ L_{87}(B)=\frac1{96}.
 }
 \]
 
-This is an exact factor-of-two improvement on the same box and empirical law.
+Together with the same witness's P85 value,
+
+\[
+\boxed{
+L_{85}(B)=0
+<
+L_{86}(B)=\frac1{192}
+<
+L_{87}(B)=\frac1{96}.
+}
+\]
 
 ---
 
-## 8. Why P87 is not merely a larger search
+## 8. Why this is not just a larger brute-force list
 
-P87 closes a precisely declared finite family rather than adding an isolated successful functional. Every primitive nonzero four-coefficient vector with maximum magnitude two is included, and global-sign duplicates are removed exactly.
+P87 closes a specific completeness gap left intentionally open by P86. P86 establishes that the first non-uniform primitive four-event coefficient pattern can reveal information beyond P85. P87 asks whether that one magnitude pattern already exhausts all primitive four-event relations with coefficient magnitudes bounded by two.
 
-The strict witness uses the magnitude pattern $\{1,1,2,2\}$, which P86 does not contain. Thus the improvement demonstrates a genuine gap in the P86 coefficient family rather than numerical retuning of the same certificate.
+The strict witness answers no.
 
-At the same time P87 makes no claim of optimality over arbitrary integer coefficients. Primitive patterns such as $\{1,1,1,3\}$ lie outside the declared coefficient cap and remain available for later study. The proposition is complete for its stated bounded family, not for all linear functionals.
+The improvement comes from the primitive coefficient pattern
 
----
+\[
+(1,-1,-2,2),
+\]
 
-## 9. Global branch-and-bound use
-
-P87 can be inserted into the same certified P78-P86 parameter-box branch-and-bound architecture. At every finite iteration, active boxes cover all unpruned candidate minimizer regions; each active box has a rigorous P87 lower bound; and evaluated parameter points provide valid upper bounds.
-
-P87 changes only the box lower-bound oracle. It does not alter the P75 model family, the P78 coverage invariant, the P79 one-sided sampling-radius direction, or the global convergence logic.
+which is not in the P86 `{1,1,1,2}` family because it contains two coefficients of magnitude two. Thus P87 adds a mathematically defined completion at the same functional order rather than merely increasing event count.
 
 ---
 
-## 10. Scientific interpretation boundary
-
-P87 does **not** prove that:
-
-- consciousness is nonphysical;
-- the P75 latent variable is a conscious state;
-- parity coordinates are privileged experiential observables;
-- failure of the P75 latent model validates another latent model;
-- a stronger four-event certificate implies an extra physical or experiential dimension;
-- quantum mechanics is incomplete;
-- the physical-to-experiential bridge has been solved.
-
-It proves a narrower statement: under the declared P75 model and exact rational box assumptions, the complete primitive four-event coefficient family with $0<|c_i|\le2$ can expose shared-parameter incompatibility more strongly than the complete P86 certificate.
-
----
-
-## 11. Executable record
+## 9. Reproducibility record
 
 Implementation:
 
@@ -391,6 +389,12 @@ Equation provenance:
 
 `docs/p87_equation_provenance.md`
 
-Frontier figure:
+The implementation uses exact `fractions.Fraction` arithmetic for the empirical law, P75 box endpoints, functional intervals, centered norms, and strict witness value. The standard family is exhaustively enumerated rather than sampled.
 
-`docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg`
+---
+
+## 10. Scientific interpretation boundary
+
+P87 proves a narrower statement than an ontology of consciousness. Under the declared P75 model and exact parameter-box assumptions, completing the primitive four-event coefficient family for $0<|c_i|\le2$ yields a strictly stronger certified model-distance lower bound on an exact witness.
+
+It does not establish that consciousness is nonphysical, that a latent variable is experience, that parity observables are privileged experiential observables, that quantum mechanics is incomplete, or that the physical-to-experiential bridge has been solved.

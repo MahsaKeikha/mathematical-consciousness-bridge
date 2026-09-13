@@ -7,7 +7,6 @@ import pytest
 from consciousness_bridge.bounded_primitive_quad_projection_parity_functional_separation import (
     empirical_primitive_parity_quad_exact,
     p75_box_bounded_primitive_quad_parity_witness_exact,
-    p75_box_p87_candidate_linf_lower_bound_exact,
     p75_box_p87_linf_lower_bound_exact,
     p75_primitive_parity_quad_interval_exact,
     p87_dominates_p86_on_box,
@@ -150,14 +149,6 @@ def test_p87_is_strictly_stronger_than_complete_p86_on_same_box():
     assert p87_dominates_p86_on_box(empirical, box)
 
 
-def test_p87_legacy_candidate_alias_matches_public_theorem_api():
-    empirical = _strict_empirical_law()
-    box = _strict_box()
-    assert p75_box_p87_candidate_linf_lower_bound_exact(
-        empirical, box
-    ) == p75_box_p87_linf_lower_bound_exact(empirical, box)
-
-
 def test_p87_rejects_nonprimitive_all_even_coefficients():
     terms = (
         ((0, 1), 2),
@@ -177,7 +168,7 @@ def test_p87_source_keeps_scientific_interpretation_boundary():
         ).__doc__
         or ""
     ).lower()
-    assert "proved conditional computational theorem" in source
+    assert "conditional model-separation theorem" in source
     assert "does not identify" in source
     assert "consciousness" in source
     assert "physical-to-experiential bridge" in source

@@ -1,191 +1,185 @@
 # P87 Equation Provenance
 
-This record separates inherited model algebra, elementary derivations, and repository-original P87 constructions. P87 is a conditional model-separation theorem inside the declared P75 four-view binary latent family; it introduces no new claim about the ontology of consciousness.
+This record separates inherited mathematics, elementary derivations, repository-original constructions, and interpretation boundaries for Proposition 87.
 
-## Dependencies
+## Scope
 
-P87 depends on:
+P87 uses the same declared P75 four-view binary latent target-measurement family as P75-P86. It introduces no new consciousness ontology and no new empirical assumption. Its contribution is a complete bounded primitive four-event parity-functional audit for nonzero integer coefficients with magnitude at most two.
 
-- **P75** for the declared four-view binary latent target-measurement family;
-- **P78** for exact axis-aligned parameter-box certification and the global lower-bound architecture;
-- **P83** for the canonical even-parity identity;
-- **P84-P85** for the shared-parameter parity-functional hierarchy;
-- **P86** for the inherited complete lower bound and the minimally non-uniform four-event certificate.
+Canonical dependencies:
 
-Direct proof: [Proposition 87](proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md).
+- P75: declared four-view binary latent target-measurement family;
+- P78: certified exact parameter-box lower-bound architecture;
+- P83: exact parity identity inside the P75 model;
+- P85: centered functional transfer to full-law $L_\infty$ distance;
+- P86: minimally weighted four-event parity-functional certificate;
+- P87: complete primitive coefficient box $0<|c_i|\le2$ at four-event order.
 
----
+See [Proposition 87](proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md), the [Claim-to-Source Scientific Audit Matrix](claim_source_matrix.md), and the [Claim, Evidence, and Citation Standard](claim_evidence_standard.md).
 
 ## 1. Inherited parity identity
 
-For latent branch $s$ and nonempty view set $J$ used by P87,
+For latent branch $s$ and canonical even-parity view set $J$,
 
 \[
-P_s(H_J)=\frac{1+\prod_{j\in J}(1-2q_{j,s})}{2}.
-\]
-
-This identity is inherited from P83 and follows directly from the product of binary parity responses under the P75 conditional-independence assumption. P87 uses only the canonical view sets with $|J|\in\{2,3,4\}$.
-
-## 2. Inherited latent mixture
-
-For prevalence $\pi$,
-
-\[
-P(H_J)=(1-\pi)P_-(H_J)+\pi P_+(H_J).
-\]
-
-This is inherited from the P75 two-branch latent mixture.
-
-## 3. P87 coefficient family
-
-P87 defines
-
-\[
-\mathcal C_2
+P_s(H_J)
 =
-\left\{
-c\in\{-2,-1,1,2\}^4:
-\gcd(|c_1|,|c_2|,|c_3|,|c_4|)=1
-\right\}/\{c\sim-c\}.
+\frac{1+\prod_{j\in J}(1-2q_{j,s})}{2}.
 \]
 
-The quotient means that one global sign is removed.
+This identity is inherited from P83-P86 and follows directly from conditional independence of the binary views inside the declared P75 model. It is model algebra, not an empirical claim about consciousness.
 
-There are $4^4=256$ nonzero vectors in the ambient coefficient box. The only non-primitive vectors are those with all four magnitudes equal to two, of which there are $2^4=16$. Hence
+## 2. P87 bounded primitive coefficient family
+
+P87 defines the coefficient alphabet
 
 \[
-|\mathcal C_2|
-=\frac{256-16}{2}
-=120.
+\{-2,-1,1,2\}.
 \]
 
-This enumeration is an elementary finite counting argument and a repository-original declaration of the P87 search family.
-
-## 4. Number of P87 functionals
-
-The canonical P87 parity-coordinate set has
+All entries are nonzero. A vector is retained only when
 
 \[
-\binom42+\binom43+\binom44=11
+\gcd(|c_1|,|c_2|,|c_3|,|c_4|)=1.
 \]
 
-members. Four distinct coordinates can be selected in
+There are $4^4=256$ nonzero vectors in the alphabet. The only non-primitive vectors are those with every magnitude equal to two, of which there are $2^4=16$. Therefore there are
 
 \[
-\binom{11}{4}=330
+256-16=240
 \]
 
-ways. Therefore
+primitive vectors before global-sign normalization. Quotienting by $c\sim-c$ gives
 
 \[
-330\times120=39{,}600
+\boxed{120}
 \]
 
-standard P87 functionals.
+standard coefficient patterns.
 
-The implementation constructs the same family exactly and the regression suite asserts both counts.
+Across the eleven canonical parity coordinates,
 
-## 5. Exact box range
+\[
+\binom{11}{4}\times120
+=
+330\times120
+=
+\boxed{39{,}600}.
+\]
 
-For a fixed coefficient vector and four selected parity events,
+This 39,600-element family is a repository-original finite construction.
+
+## 3. Weighted four-event functional
+
+For four distinct canonical parity events,
+
+\[
+Q(p)=\sum_{i=1}^4c_iP_p(H_{J_i}),
+\]
+
+with primitive nonzero integer coefficients satisfying $|c_i|\le2$.
+
+P87's novelty is not the use of a linear functional itself. The new object is the complete declared finite coefficient family and its exact model-separation certificate relative to P86.
+
+## 4. Exact P75 box range
+
+Inside branch $s$, write
+
+\[
+a_{j,s}=1-2q_{j,s}.
+\]
+
+Then
 
 \[
 Q_s
 =
 \frac12\sum_i c_i
 +
-\frac12\sum_i c_i\prod_{j\in J_i}(1-2q_{j,s}).
+\frac12\sum_i c_i\prod_{j\in J_i}a_{j,s}.
 \]
 
-Each response coordinate has degree at most one, so the branch functional is multi-affine.
+Each response coordinate enters affinely when all others are fixed. Therefore repeated one-coordinate endpoint reduction proves that every branch extremum over an axis-aligned box occurs at a vertex.
 
-The endpoint result is derived locally. Hold every coordinate except $z$ fixed. Then
+The final mixture
 
 \[
-f(z)=az+b
+Q(\pi)=(1-\pi)Q_-+\pi Q_+
 \]
 
-on its interval, so a minimum and maximum occur at the interval endpoints. Repeating this reduction coordinate by coordinate yields a full response-box vertex. After branchwise extrema are known, prevalence enters as
+is affine in prevalence, so its extrema occur at prevalence endpoints.
+
+This is an elementary exact derivation from the P75 parameterization. No floating-point optimizer is used.
+
+## 5. Centered transfer norm
+
+Define the sixteen-cell coefficient function
 
 \[
-Q(\pi)=(1-\pi)Q_-+\pi Q_+,
+g(x)=\sum_i c_i\mathbf1_{H_{J_i}}(x).
 \]
 
-which is affine; prevalence endpoints therefore suffice. This proves exact endpoint enumeration without importing a black-box nonlinear optimizer.
-
-## 6. Mass-conservation centering
-
-For probability laws $p$ and $q$,
+For probability laws $p,q$,
 
 \[
 \sum_x[p(x)-q(x)]=0.
 \]
 
-With
+Thus for any scalar $a$,
 
 \[
-g_c(x)=\sum_i c_i\mathbf1_{H_{J_i}}(x),
-\]
-
-any scalar center $a$ satisfies
-
-\[
-Q_c(p)-Q_c(q)
+Q(p)-Q(q)
 =
-\sum_x[g_c(x)-a][p(x)-q(x)].
+\sum_x[g(x)-a][p(x)-q(x)].
 \]
 
-Thus
+The triangle inequality gives
 
 \[
-|Q_c(p)-Q_c(q)|
+|Q(p)-Q(q)|
 \le
-\left(\sum_x|g_c(x)-a|\right)\|p-q\|_\infty.
+\left(\sum_x|g(x)-a|\right)
+\|p-q\|_\infty.
 \]
 
-P87 minimizes the coefficient factor exactly:
+P87 uses
 
 \[
-D(Q_c)=\min_a\sum_x|g_c(x)-a|.
+D(Q)=\min_a\sum_x|g(x)-a|.
 \]
 
-For a finite scalar sample the sum of absolute deviations is minimized by any median. This can be checked directly from the piecewise-linear slope: below the median region more terms decrease than increase when $a$ moves right; above the median region the reverse holds. Evaluating the distinct exact integer coefficient values therefore finds an exact minimizer.
+As documented for P86, a median minimizes the finite absolute-deviation objective. The implementation evaluates the finitely many exact coefficient values and returns a deterministic minimizing center.
 
-## 7. P87 lower bound
+## 6. P87 hierarchy definition
 
-For a P75 box $B$ let
+Let
 
 \[
-\Delta_c
+L_{\mathrm{bp4}}(B)
 =
-\operatorname{dist}\left(Q_c(\widehat p),I_B(Q_c)\right).
+\max_{Q\in\mathcal Q_{87}}
+\frac{\operatorname{dist}(Q(\widehat p),I_B(Q))}{D(Q)}.
 \]
 
-Every model law $q$ generated in $B$ has $Q_c(q)\in I_B(Q_c)$, so
+P87 defines
 
 \[
-|Q_c(\widehat p)-Q_c(q)|\ge\Delta_c.
+\boxed{
+L_{87}(B)=\max\{L_{86}(B),L_{\mathrm{bp4}}(B)\}.
+}
 \]
 
-Combining this with the centered transfer inequality gives
+Hence pointwise dominance
 
 \[
-\|\widehat p-q\|_\infty
-\ge
-\frac{\Delta_c}{D(Q_c)}.
+L_{87}(B)\ge L_{86}(B)
 \]
 
-Maximizing over the 39,600-function family gives $L_{\mathrm{bp4}}(B)$. P87 defines
+is definitional once the validity of each bounded primitive functional lower bound has been established.
 
-\[
-L_{87}(B)=\max\{L_{86}(B),L_{\mathrm{bp4}}(B)\},
-\]
+## 7. Exact strict witness
 
-so pointwise dominance $L_{87}\ge L_{86}$ is immediate once validity of each new functional lower bound has been established.
-
-## 8. Exact strict witness
-
-The repository's exact rational witness uses
+For the exact rational P86 witness box and empirical law, P87 exhaustively selects
 
 \[
 Q=
@@ -195,64 +189,61 @@ P(H_{\{0,2\}})
 +2P(H_{\{0,1,2,3\}}).
 \]
 
-For the stored empirical law and P75 box,
+The exact quantities are
 
 \[
 Q(\widehat p)=-\frac{17}{24},
 \qquad
-I_B(Q)=\left[-\frac12,2\right].
+I_B(Q)=\left[-\frac12,2\right],
+\]
+
+\[
+\Delta_Q=\frac5{24},
+\qquad
+D(Q)=20,
+\qquad
+a=0.
 \]
 
 Therefore
 
 \[
-\Delta_Q=\frac5{24}.
-\]
-
-The exact centered coefficient norm is
-
-\[
-D(Q)=20,
-\]
-
-with one minimizing center $a=0$. Hence
-
-\[
-\frac{\Delta_Q}{D(Q)}
+L_{87}(B)
 =
 \frac{5/24}{20}
 =
-\frac1{96}.
+\boxed{\frac1{96}}.
 \]
 
-On the same law and box the complete P86 bound is exactly
+The complete P86 value on the same box is
 
 \[
-L_{86}=\frac1{192}.
+L_{86}(B)=\frac1{192},
 \]
 
-The regression suite exhausts all 39,600 P87 functionals and verifies
+so
 
 \[
-\boxed{L_{86}=1/192<L_{87}=1/96}.
+\boxed{
+L_{86}(B)=\frac1{192}<L_{87}(B)=\frac1{96}.
+}
 \]
 
-The witness is synthetic and exact. It is not measured biological or experiential data.
+The implementation and regression suite use exact `fractions.Fraction` arithmetic and exhaust all 39,600 standard P87 functionals.
 
-## 9. Evidence classification
+## 8. Evidence classification
 
 | P87 ingredient | Scientific role | Support |
 | --- | --- | --- |
-| P75 latent family | declared model assumption | P75 definition and implementation |
-| parity identity | inherited exact model algebra | P83 and local substitution |
-| 120 coefficient patterns | finite combinatorial derivation | explicit primitive-count argument plus implementation |
-| 39,600 functionals | finite combinatorial derivation | $\binom{11}{4}\times120$ plus implementation |
-| box-vertex extremization | elementary exact derivation | coordinatewise affine endpoint proof |
-| prevalence endpoints | elementary exact derivation | one-dimensional affine endpoint proof |
-| centered transfer denominator | elementary finite-dimensional derivation | mass conservation, triangle inequality, median property |
-| $L_{87}\ge L_{86}$ | theorem construction | explicit maximum definition |
-| $L_{86}=1/192<L_{87}=1/96$ | repository-original strict witness | exact rational exhaustive regression tests |
+| P75 latent family | declared modeling assumption | P75 definition and implementation |
+| parity probability identity | inherited exact model algebra | P83-P86 |
+| 120 normalized primitive patterns | elementary finite counting plus repository convention | direct count above and implementation |
+| 39,600-function family | repository-original finite construction | exact enumeration and tests |
+| box-vertex extremization | elementary derivation | coordinatewise affine endpoint argument |
+| centered transfer inequality | elementary probability-law derivation | mass conservation plus triangle inequality |
+| median center | standard finite-dimensional fact with local P86 proof | P86 provenance and exact implementation |
+| `L86 = 1/192 < L87 = 1/96` | repository-original exact strict witness | exact implementation and exhaustive regression tests |
 
-## 10. Interpretation boundary
+## 9. Interpretation boundary
 
-No P87 equation identifies the latent P75 state with conscious experience. P87 does not establish nonphysicality, validate a competing ontology, privilege parity observables as experiential variables, imply an extra dimension of consciousness, or solve the physical-to-experiential bridge. Its result is an exact conditional rejection certificate for one declared latent measurement family.
+P87 is a conditional theorem about separation from the declared P75 model family. It does not identify the latent P75 state with experience, prove consciousness nonphysical, validate another ontology, establish that parity coordinates are phenomenological variables, or solve the physical-to-experiential bridge.
