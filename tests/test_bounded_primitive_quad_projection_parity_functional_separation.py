@@ -7,7 +7,10 @@ import pytest
 from consciousness_bridge.bounded_primitive_quad_projection_parity_functional_separation import (
     empirical_primitive_parity_quad_exact,
     p75_box_bounded_primitive_quad_parity_witness_exact,
+    p75_box_p87_candidate_linf_lower_bound_exact,
+    p75_box_p87_linf_lower_bound_exact,
     p75_primitive_parity_quad_interval_exact,
+    p87_dominates_p86_on_box,
     p87_standard_primitive_quad_count,
     p87_standard_primitive_weight_pattern_count,
     primitive_parity_quad_centered_coefficient_norm_exact,
@@ -77,19 +80,19 @@ def _vertex_functional_value(parameters, terms):
 
 
 @lru_cache(maxsize=1)
-def _exhaustive_candidate_witness():
+def _exhaustive_p87_witness():
     return p75_box_bounded_primitive_quad_parity_witness_exact(
         _strict_empirical_law(),
         _strict_box(),
     )
 
 
-def test_p87_candidate_family_has_120_patterns_and_39600_functionals():
+def test_p87_family_has_120_patterns_and_39600_functionals():
     assert p87_standard_primitive_weight_pattern_count() == 120
     assert p87_standard_primitive_quad_count() == 39600
 
 
-def test_p87_candidate_strict_functional_has_exact_value_interval_and_norm():
+def test_p87_strict_functional_has_exact_value_interval_and_norm():
     empirical = _strict_empirical_law()
     box = _strict_box()
     terms = _strict_terms()
@@ -105,7 +108,7 @@ def test_p87_candidate_strict_functional_has_exact_value_interval_and_norm():
     )
 
 
-def test_p87_candidate_interval_matches_exhaustive_parameter_vertices():
+def test_p87_interval_matches_exhaustive_parameter_vertices():
     box = _strict_box()
     terms = _strict_terms()
     endpoints = tuple(
@@ -122,8 +125,8 @@ def test_p87_candidate_interval_matches_exhaustive_parameter_vertices():
     )
 
 
-def test_p87_candidate_exhaustive_family_attains_exact_1_over_96_witness():
-    witness = _exhaustive_candidate_witness()
+def test_p87_exhaustive_family_attains_exact_1_over_96_witness():
+    witness = _exhaustive_p87_witness()
 
     assert witness.lower_bound == Fraction(1, 96)
     assert witness.terms == _strict_terms()
@@ -135,18 +138,27 @@ def test_p87_candidate_exhaustive_family_attains_exact_1_over_96_witness():
     assert witness.centering_constant == Fraction(0)
 
 
-def test_p87_candidate_is_strictly_stronger_than_complete_p86_on_same_box():
+def test_p87_is_strictly_stronger_than_complete_p86_on_same_box():
     empirical = _strict_empirical_law()
     box = _strict_box()
     p86 = p75_box_p86_linf_lower_bound_exact(empirical, box)
-    candidate = _exhaustive_candidate_witness().lower_bound
+    p87 = p75_box_p87_linf_lower_bound_exact(empirical, box)
 
     assert p86 == Fraction(1, 192)
-    assert candidate == Fraction(1, 96)
-    assert candidate > p86
+    assert p87 == Fraction(1, 96)
+    assert p87 > p86
+    assert p87_dominates_p86_on_box(empirical, box)
 
 
-def test_p87_candidate_rejects_nonprimitive_all_even_coefficients():
+def test_p87_legacy_candidate_alias_matches_public_theorem_api():
+    empirical = _strict_empirical_law()
+    box = _strict_box()
+    assert p75_box_p87_candidate_linf_lower_bound_exact(
+        empirical, box
+    ) == p75_box_p87_linf_lower_bound_exact(empirical, box)
+
+
+def test_p87_rejects_nonprimitive_all_even_coefficients():
     terms = (
         ((0, 1), 2),
         ((0, 2), -2),
@@ -157,7 +169,7 @@ def test_p87_candidate_rejects_nonprimitive_all_even_coefficients():
         p75_primitive_parity_quad_interval_exact(_strict_box(), terms)
 
 
-def test_p87_candidate_source_keeps_scientific_interpretation_boundary():
+def test_p87_source_keeps_scientific_interpretation_boundary():
     source = (
         __import__(
             "consciousness_bridge.bounded_primitive_quad_projection_parity_functional_separation",
@@ -165,8 +177,7 @@ def test_p87_candidate_source_keeps_scientific_interpretation_boundary():
         ).__doc__
         or ""
     ).lower()
-    assert "candidate research extension" in source
-    assert "not yet the public theorem frontier" in source
+    assert "proved conditional computational theorem" in source
     assert "does not identify" in source
     assert "consciousness" in source
     assert "physical-to-experiential bridge" in source

@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="p87-title p87-desc">
+  <title id="p87-title">P87 Complete Bounded-Primitive Four-Event Parity Certificate</title>
+  <desc id="p87-desc">Proposition 87 completes every primitive nonzero four-coefficient pattern with absolute coefficient at most two across four distinct canonical even-parity observables. There are 120 sign-normalized coefficient patterns per four-event subset and 39,600 exact functionals in total. On the exact rational witness, the complete P86 lower bound is one over 192 while P87 finds a primitive 1,-1,-2,2 functional with empirical value minus 17 over 24 outside the exact P75 interval minus one half to two. The gap is five over 24, the centered coefficient norm is 20, and the certified full-law L-infinity lower bound is one over 96. This is a conditional model-separation theorem and does not identify the latent state with consciousness or solve the physical-to-experiential bridge.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f9fc; }
+      .panel { fill: #ffffff; stroke: #cfd8e6; stroke-width: 1.5; }
+      .panelSoft { fill: #f3f7fb; stroke: #cfd8e6; stroke-width: 1.2; }
+      .accent { fill: #173b65; }
+      .accentSoft { fill: #eaf2fb; stroke: #8fb0d4; stroke-width: 1.3; }
+      .success { fill: #eef8f1; stroke: #8eb89a; stroke-width: 1.3; }
+      .warn { fill: #fff7e8; stroke: #d6b267; stroke-width: 1.3; }
+      .ink { fill: #172235; font-family: Arial, Helvetica, sans-serif; }
+      .muted { fill: #5d6a7c; font-family: Arial, Helvetica, sans-serif; }
+      .white { fill: #ffffff; font-family: Arial, Helvetica, sans-serif; }
+      .title { font-size: 30px; font-weight: 700; }
+      .subtitle { font-size: 16px; }
+      .section { font-size: 20px; font-weight: 700; }
+      .label { font-size: 15px; font-weight: 700; }
+      .body { font-size: 14px; }
+      .formula { font-size: 16px; font-weight: 700; }
+      .metric { font-size: 23px; font-weight: 700; }
+      .tiny { font-size: 12px; }
+      .arrow { stroke: #6c87a7; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#6c87a7"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1280" height="760"/>
+  <rect class="accent" x="0" y="0" width="1280" height="112"/>
+  <text class="white title" x="54" y="50">P87 Complete Bounded-Primitive Four-Event Certificate</text>
+  <text class="white subtitle" x="54" y="79">The full primitive coefficient box |cᵢ| ≤ 2 closes a finite gap left by P86 and doubles the strict witness bound.</text>
+
+  <rect class="panel" x="48" y="144" rx="16" ry="16" width="350" height="448"/>
+  <text class="ink section" x="72" y="181">1. Complete the coefficient box</text>
+  <text class="muted body" x="72" y="210">Four distinct canonical even-parity observables</text>
+  <text class="muted body" x="72" y="232">with primitive nonzero coefficients in {−2,−1,1,2}.</text>
+
+  <rect class="accentSoft" x="78" y="262" rx="12" ry="12" width="290" height="92"/>
+  <text class="ink label" x="98" y="290">Primitive pattern count</text>
+  <text class="ink formula" x="98" y="318">(4⁴ − 2⁴) / 2 = 120</text>
+  <text class="muted body" x="98" y="340">global-sign duplicates removed</text>
+
+  <rect class="panelSoft" x="78" y="374" rx="12" ry="12" width="290" height="88"/>
+  <text class="ink label" x="98" y="402">Four-event subsets</text>
+  <text class="ink formula" x="98" y="430">C(11,4) = 330</text>
+  <text class="muted body" x="98" y="451">11 canonical parity coordinates</text>
+
+  <rect class="success" x="78" y="482" rx="12" ry="12" width="290" height="74"/>
+  <text class="ink label" x="98" y="510">Complete P87 family</text>
+  <text class="ink metric" x="98" y="541">39,600 exact functionals</text>
+
+  <path class="arrow" d="M406 368 C430 368, 438 368, 462 368"/>
+
+  <rect class="panel" x="470" y="144" rx="16" ry="16" width="350" height="448"/>
+  <text class="ink section" x="494" y="181">2. Exact certification</text>
+  <text class="muted body" x="494" y="210">Each branch functional is multi-affine.</text>
+  <text class="muted body" x="494" y="232">Response endpoints and prevalence endpoints suffice.</text>
+
+  <rect class="panelSoft" x="500" y="262" rx="12" ry="12" width="290" height="92"/>
+  <text class="ink label" x="520" y="290">Exact P75 interval</text>
+  <text class="ink formula" x="520" y="318">Iᴮ(Q) = [Qᴸ, Qᵁ]</text>
+  <text class="muted body" x="520" y="340">rational endpoint enumeration only</text>
+
+  <rect class="panelSoft" x="500" y="374" rx="12" ry="12" width="290" height="96"/>
+  <text class="ink label" x="520" y="402">Mass-conservation transfer</text>
+  <text class="ink formula" x="520" y="430">D(Q)=minₐ Σₓ |g(x)−a|</text>
+  <text class="muted body" x="520" y="453">gap / D(Q) lower-bounds full-law L∞</text>
+
+  <rect class="accentSoft" x="500" y="490" rx="12" ry="12" width="290" height="66"/>
+  <text class="ink label" x="520" y="518">Complete hierarchy</text>
+  <text class="ink formula" x="520" y="544">L87 = max(L86, Lbp4)</text>
+
+  <path class="arrow" d="M828 368 C850 368, 862 368, 884 368"/>
+
+  <rect class="panel" x="892" y="144" rx="16" ry="16" width="340" height="448"/>
+  <text class="ink section" x="916" y="181">3. Exact strict witness</text>
+  <text class="muted body" x="916" y="210">Q = P(H02) − P(H13) − 2P(H123) + 2P(H0123)</text>
+
+  <rect class="panelSoft" x="920" y="246" rx="11" ry="11" width="284" height="76"/>
+  <text class="ink label" x="940" y="272">Empirical / P75 interval</text>
+  <text class="ink formula" x="940" y="298">Q(emp) = −17/24</text>
+  <text class="ink formula" x="940" y="316">Q(P75 box) ∈ [−1/2, 2]</text>
+
+  <rect class="warn" x="920" y="338" rx="11" ry="11" width="284" height="62"/>
+  <text class="ink label" x="940" y="364">Exact mismatch</text>
+  <text class="ink metric" x="940" y="391">gap = 5/24</text>
+
+  <rect class="panelSoft" x="920" y="416" rx="11" ry="11" width="284" height="62"/>
+  <text class="ink label" x="940" y="442">Centered norm</text>
+  <text class="ink metric" x="940" y="469">D(Q) = 20</text>
+
+  <rect class="success" x="920" y="494" rx="11" ry="11" width="284" height="70"/>
+  <text class="ink label" x="940" y="520">Strict hierarchy improvement</text>
+  <text class="ink metric" x="940" y="551">1/192 &lt; 1/96</text>
+
+  <rect class="accent" x="48" y="620" rx="14" ry="14" width="1184" height="92"/>
+  <text class="white label" x="72" y="650">Scientific boundary</text>
+  <text class="white body" x="72" y="676">P87 strengthens rejection of the declared P75 latent measurement family. It does not identify the latent state with consciousness,</text>
+  <text class="white body" x="72" y="697">prove consciousness is nonphysical, validate an alternative model, or solve the physical-to-experiential bridge.</text>
+
+  <text class="muted tiny" x="48" y="742">Mathematical Consciousness Bridge | Proposition 87 | exact rational certificate</text>
+</svg>
