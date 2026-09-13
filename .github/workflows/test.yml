@@ -1,6 +1,5 @@
 name: tests
 
-# Final P86 publication gate: run the compatibility matrix on every pushed HEAD.
 on:
   push:
   pull_request:
@@ -25,5 +24,7 @@ jobs:
         run: python -m pytest
       - name: Run Ruff
         run: python -m ruff check .
+      - name: Verify reader-first publication surfaces
+        run: python scripts/verify_reader_linkability.py
       - name: Verify publication and reproducibility surfaces
         run: python scripts/verify_repository.py
