@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="p86-title p86-desc">
-  <title id="p86-title">P86 Minimally Weighted Four-Event Parity Certificate</title>
-  <desc id="p86-desc">What this figure shows: Proposition 86 strengthens the complete P85 certificate with four-event parity functionals using the smallest non-uniform primitive integer magnitude pattern 1,1,1,2. How to read it: move left to right from P85 silence, through the weighted shared-parameter functional family, to the exact rational strict witness. Main takeaway: on the displayed witness the complete P85 lower bound is zero while one P86 functional has empirical value minus 13 over 12 outside the exact P75 interval minus 1 to 1. The exact gap is 1 over 12 and the centered coefficient norm is 16, producing the certified full-law L-infinity lower bound 1 over 192. Scientific status: this is a conditional exact model-separation theorem for the declared P75 family. It does not identify a latent variable with consciousness, prove consciousness is nonphysical, validate an alternative model, or solve the physical-to-experiential bridge.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="p87-title p87-desc">
+  <title id="p87-title">P87 Bounded Primitive Four-Event Parity Certificate</title>
+  <desc id="p87-desc">What this figure shows: Proposition 87 completes the nonzero primitive four-event coefficient box with absolute coefficient values at most two and strictly strengthens P86 on the exact rational witness. How to read it: move left to right from the restricted P86 coefficient family, through the complete 39,600-function P87 audit, to the exact strict witness. Main takeaway: the complete P86 lower bound is one over 192, while the strongest P87 functional has empirical value minus 17 over 24 outside the exact P75 interval minus one half to two. The exact gap is five over 24 and the centered coefficient norm is 20, producing the certified full-law L-infinity lower bound one over 96. Scientific status: this is a conditional exact model-separation theorem for the declared P75 family. It does not identify a latent variable with consciousness or solve the physical-to-experiential bridge.</desc>
   <defs>
     <style>
       .bg { fill: #f7f9fc; }
@@ -30,78 +30,78 @@
 
   <rect class="bg" x="0" y="0" width="1280" height="760"/>
   <rect class="accent" x="0" y="0" width="1280" height="112"/>
-  <text class="white title" x="54" y="50">P86 Minimally Weighted Four-Event Parity Certificate</text>
-  <text class="white subtitle" x="54" y="79">A four-observable weighted relation can fail even when the complete P85 certificate remains silent.</text>
+  <text class="white title" x="54" y="50">P87 Bounded Primitive Four-Event Parity Certificate</text>
+  <text class="white subtitle" x="54" y="79">Completing the primitive coefficient box at four-event order reveals a stronger exact separation than P86.</text>
 
   <rect class="panel" x="48" y="144" rx="16" ry="16" width="350" height="448"/>
-  <text class="ink section" x="72" y="181">1. What P85 certifies</text>
-  <text class="muted body" x="72" y="207">P85 exhausts 660 signed three-event functionals.</text>
-  <text class="muted body" x="72" y="228">Every term has unit coefficient magnitude.</text>
+  <text class="ink section" x="72" y="181">1. What P86 leaves open</text>
+  <text class="muted body" x="72" y="207">P86 uses the minimal non-uniform magnitudes {1,1,1,2}.</text>
+  <text class="muted body" x="72" y="228">That family is strict, but not coefficient-complete.</text>
 
   <rect class="panelSoft" x="78" y="258" rx="10" ry="10" width="290" height="76"/>
-  <text class="ink label" x="98" y="287">One-event checks</text>
-  <text class="muted body" x="98" y="312">Already contained through P83</text>
+  <text class="ink label" x="98" y="287">P86 coefficient patterns</text>
+  <text class="muted body" x="98" y="312">32 patterns per four-event subset</text>
 
   <rect class="panelSoft" x="78" y="350" rx="10" ry="10" width="290" height="76"/>
-  <text class="ink label" x="98" y="379">Pairwise shared-parameter checks</text>
-  <text class="muted body" x="98" y="404">Already contained through P84</text>
+  <text class="ink label" x="98" y="379">P86 standard family</text>
+  <text class="muted body" x="98" y="404">10,560 exact four-event functionals</text>
 
-  <rect class="panelSoft" x="78" y="442" rx="10" ry="10" width="290" height="76"/>
-  <text class="ink label" x="98" y="471">All 660 P85 triples</text>
-  <text class="muted body" x="98" y="496">Complete lower bound can still be zero</text>
+  <rect class="warn" x="78" y="442" rx="10" ry="10" width="290" height="76"/>
+  <text class="ink label" x="98" y="471">Open same-order question</text>
+  <text class="muted body" x="98" y="496">Do other primitive |c_i| &lt;= 2 relations add power?</text>
 
-  <rect class="warn" x="78" y="534" rx="10" ry="10" width="290" height="36"/>
-  <text class="ink label" x="98" y="557">Lower-order silence is not full compatibility.</text>
+  <rect class="success" x="78" y="534" rx="10" ry="10" width="290" height="36"/>
+  <text class="ink label" x="98" y="557">P87 answers this exactly.</text>
 
   <path class="arrow" d="M406 368 C430 368, 438 368, 462 368"/>
 
   <rect class="panel" x="470" y="144" rx="16" ry="16" width="350" height="448"/>
-  <text class="ink section" x="494" y="181">2. P86 adds minimal weighting</text>
-  <text class="muted body" x="494" y="207">Use four distinct canonical even-parity events.</text>
-  <text class="muted body" x="494" y="228">Smallest non-uniform primitive magnitudes: {1,1,1,2}.</text>
+  <text class="ink section" x="494" y="181">2. P87 completes the box</text>
+  <text class="muted body" x="494" y="207">Use c_i in {-2,-1,1,2}, all nonzero and primitive.</text>
+  <text class="muted body" x="494" y="228">Normalize one global sign.</text>
 
   <rect class="accentSoft" x="500" y="258" rx="12" ry="12" width="290" height="94"/>
-  <text class="ink formula" x="520" y="289">Q = c1P(H1)+c2P(H2)+c3P(H3)+c4P(H4)</text>
-  <text class="muted body" x="520" y="316">|c| multiset = {1,1,1,2}</text>
-  <text class="muted body" x="520" y="338">10,560 standard weighted functionals</text>
+  <text class="ink formula" x="520" y="289">(4^4 - 2^4) / 2 = 120</text>
+  <text class="muted body" x="520" y="316">primitive sign-normalized coefficient patterns</text>
+  <text class="muted body" x="520" y="338">330 subsets x 120 = 39,600 functionals</text>
 
   <rect class="panelSoft" x="500" y="368" rx="12" ry="12" width="290" height="88"/>
-  <text class="ink label" x="520" y="397">Exact P75 box interval</text>
-  <text class="muted body" x="520" y="422">Each branch is multi-affine.</text>
-  <text class="muted body" x="520" y="444">Response and prevalence endpoints suffice.</text>
+  <text class="ink label" x="520" y="397">Exact P75 model interval</text>
+  <text class="muted body" x="520" y="422">Multi-affinity sends extrema to box vertices.</text>
+  <text class="muted body" x="520" y="444">Prevalence remains affine at endpoints.</text>
 
   <rect class="panelSoft" x="500" y="472" rx="12" ry="12" width="290" height="91"/>
   <text class="ink label" x="520" y="501">Exact full-law transfer</text>
   <text class="muted body" x="520" y="526">D(Q) = min_a sum_x |g(x) - a|</text>
-  <text class="muted body" x="520" y="548">L86 = max(L85, gap / D(Q))</text>
+  <text class="muted body" x="520" y="548">L87 = max(L86, gap / D(Q))</text>
 
   <path class="arrow" d="M828 368 C850 368, 862 368, 884 368"/>
 
   <rect class="panel" x="892" y="144" rx="16" ry="16" width="340" height="448"/>
   <text class="ink section" x="916" y="181">3. Exact strict witness</text>
-  <text class="muted body" x="916" y="207">Q = P(H02) - P(H13) - 2P(H123) + P(H0123)</text>
+  <text class="muted body" x="916" y="207">Q = P(H02) - P(H13) - 2P(H123) + 2P(H0123)</text>
 
   <rect class="success" x="920" y="244" rx="11" ry="11" width="284" height="62"/>
-  <text class="ink label" x="940" y="270">Complete P85 certificate</text>
-  <text class="ink metric" x="940" y="295">L85 = 0</text>
+  <text class="ink label" x="940" y="270">Complete P86 certificate</text>
+  <text class="ink metric" x="940" y="295">L86 = 1/192</text>
 
   <rect class="accentSoft" x="920" y="320" rx="11" ry="11" width="284" height="82"/>
-  <text class="ink label" x="940" y="347">Weighted four-event functional</text>
-  <text class="ink formula" x="940" y="374">Q(empirical) = -13/12</text>
-  <text class="ink formula" x="940" y="394">Q(P75 box) in [-1, 1]</text>
+  <text class="ink label" x="940" y="347">P87 four-event functional</text>
+  <text class="ink formula" x="940" y="374">Q(empirical) = -17/24</text>
+  <text class="ink formula" x="940" y="394">Q(P75 box) in [-1/2, 2]</text>
 
   <rect class="warn" x="920" y="416" rx="11" ry="11" width="284" height="62"/>
   <text class="ink label" x="940" y="442">Exact mismatch</text>
-  <text class="ink metric" x="940" y="469">gap = 1/12</text>
+  <text class="ink metric" x="940" y="469">gap = 5/24</text>
 
   <rect class="panelSoft" x="920" y="492" rx="11" ry="11" width="284" height="72"/>
-  <text class="ink body" x="940" y="518">Centered coefficient norm D(Q) = 16</text>
-  <text class="ink metric" x="940" y="551">L86 = (1/12)/16 = 1/192</text>
+  <text class="ink body" x="940" y="518">Centered coefficient norm D(Q) = 20</text>
+  <text class="ink metric" x="940" y="551">L87 = (5/24)/20 = 1/96</text>
 
   <rect class="accent" x="48" y="620" rx="14" ry="14" width="1184" height="92"/>
   <text class="white label" x="72" y="650">Scientific boundary</text>
-  <text class="white body" x="72" y="676">P86 strengthens rejection of the declared P75 latent measurement family. It does not identify the latent state with consciousness,</text>
-  <text class="white body" x="72" y="697">prove consciousness is nonphysical, validate an alternative model, or solve the physical-to-experiential bridge.</text>
+  <text class="white body" x="72" y="676">P87 strengthens rejection of the declared P75 latent measurement family by completing a bounded primitive coefficient family.</text>
+  <text class="white body" x="72" y="697">It does not identify the latent state with consciousness or solve the physical-to-experiential bridge.</text>
 
-  <text class="muted tiny" x="48" y="742">Mathematical Consciousness Bridge | Proposition 86 | exact rational certificate</text>
+  <text class="muted tiny" x="48" y="742">Mathematical Consciousness Bridge | Proposition 87 | exact rational certificate</text>
 </svg>

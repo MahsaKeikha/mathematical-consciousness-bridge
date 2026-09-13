@@ -20,6 +20,7 @@ DOC_FIGURES = ROOT / "docs" / "figures"
 GATEWAY = ROOT / "figures"
 VISUAL_ATLAS = ROOT / "website" / "visual-atlas.html"
 HOME = ROOT / "website" / "index.html"
+GATEWAY_CURRENT_FIGURE = GATEWAY / "current_frontier.svg"
 VERIFIER = ROOT / "scripts" / "verify_repository.py"
 
 FRONTIER_RE = re.compile(r'^CURRENT_FRONTIER = "P(?P<number>\d+)"$', re.MULTILINE)
@@ -388,7 +389,9 @@ def _expected_outputs() -> dict[Path, str]:
     frontier = _current_frontier()
     if frontier != 87:
         raise RuntimeError(f"P87 synchronizer expected frontier 87, found {frontier}")
+    current_figure = _one_match(f"p{frontier}_*.svg", root=DOC_FIGURES)
     return {
+        GATEWAY_CURRENT_FIGURE: current_figure.read_text(encoding="utf-8"),
         GATEWAY / "README.md": _gateway_readme(frontier),
         GATEWAY / "CURRENT_FRONTIER.md": _frontier_page(frontier),
         GATEWAY / "manifest.json": _figure_manifest(frontier),

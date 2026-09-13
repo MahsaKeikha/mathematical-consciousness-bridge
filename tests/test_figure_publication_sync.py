@@ -9,6 +9,7 @@ DOC_FIGURES = ROOT / "docs" / "figures"
 MANIFEST = ROOT / "figures" / "manifest.json"
 GATEWAY = ROOT / "figures" / "README.md"
 CURRENT = ROOT / "figures" / "CURRENT_FRONTIER.md"
+CURRENT_SVG = ROOT / "figures" / "current_frontier.svg"
 VISUAL_ATLAS = ROOT / "website" / "visual-atlas.html"
 HOME = ROOT / "website" / "index.html"
 SYNCER = ROOT / "scripts" / "sync_figure_publication.py"
@@ -48,6 +49,7 @@ def test_github_figure_gateway_tracks_p87() -> None:
     gateway = GATEWAY.read_text(encoding="utf-8")
     current = CURRENT.read_text(encoding="utf-8")
 
+    assert CURRENT_SVG.read_bytes() == (DOC_FIGURES / P87_FIGURE).read_bytes()
     assert "## Current theorem frontier: P87" in gateway
     assert P87_FIGURE in gateway
     assert "manifest.json" in gateway
