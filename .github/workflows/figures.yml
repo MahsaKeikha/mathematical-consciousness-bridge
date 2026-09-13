@@ -1,6 +1,6 @@
 name: figures
 
-# Certified final P87 visual publication gate.
+# P87 visual publication gate.
 on:
   workflow_dispatch:
   push:
@@ -19,11 +19,12 @@ on:
       - "docs/figure_catalog.md"
       - "docs/reproducibility.md"
       - "figures/**"
-      - "website/index.html"
-      - "website/visual-atlas.html"
+      - "website/**"
       - "tests/test_figure_publication_sync.py"
+      - "tests/test_figure_documentation_integrity.py"
+      - "tests/test_svg_layout_integrity.py"
       - "pyproject.toml"
-      - ".github/workflows/**"
+      - ".github/workflows/figures.yml"
   pull_request:
     paths:
       - "scripts/generate_all_figures.py"
@@ -38,11 +39,12 @@ on:
       - "docs/figure_catalog.md"
       - "docs/reproducibility.md"
       - "figures/**"
-      - "website/index.html"
-      - "website/visual-atlas.html"
+      - "website/**"
       - "tests/test_figure_publication_sync.py"
+      - "tests/test_figure_documentation_integrity.py"
+      - "tests/test_svg_layout_integrity.py"
       - "pyproject.toml"
-      - ".github/workflows/**"
+      - ".github/workflows/figures.yml"
 
 jobs:
   generate-and-validate:
@@ -66,22 +68,29 @@ jobs:
             echo "Generated or synchronized figure artifacts differ from the committed publication record."
             git status --short
             git diff --stat
-            git diff
             exit 1
           fi
-      - name: Run permanent figure publication contract
-        run: python -m pytest -q tests/test_figure_publication_sync.py tests/test_figure_documentation_integrity.py
-      - name: Build exact-commit website figure artifact
+      - name: Run visual publication and layout contracts
+        run: |
+          python -m pytest -q \
+            tests/test_figure_publication_sync.py \
+            tests/test_figure_documentation_integrity.py \
+            tests/test_svg_layout_integrity.py
+      - name: Build exact commit website artifact
         run: |
           python scripts/prepare_website.py --source website --output _site
+          test -f _site/research-navigation.html
           test -f _site/figures/p87_exact_bounded_primitive_quad_projection_parity.svg
-          grep -q 'src="figures/p87_exact_bounded_primitive_quad_projection_parity.svg"' _site/visual-atlas.html
-          grep -q 'src="figures/p87_exact_bounded_primitive_quad_projection_parity.svg"' _site/index.html
-          python -c "from pathlib import Path; t=Path('_site/index.html').read_text(encoding='utf-8'); p=t.index('id=\"p87-frontier\"'); assert p < t.index('id=\"plain-language\"'); assert p < t.index('id=\"p86-frontier\"'); assert p < t.index('id=\"p84-frontier\"'); assert p < t.index('id=\"p85-frontier\"'); assert 'Current theorem frontier · P86' not in t"
-          python -c "from pathlib import Path; t=Path('_site/visual-atlas.html').read_text(encoding='utf-8'); p=t.index('id=\"p87-frontier\"'); assert p < t.index('id=\"p86-frontier\"'); assert p < t.index('id=\"p85-frontier\"')"
+          grep -q 'Explore all 87 results' _site/index.html
+          grep -q 'P73-P87' _site/research-map.html
+          grep -q 'Current theorem frontier' _site/visual-atlas.html
+          if grep -R -E 'Explore all 86 results|86 proposition-level results|Current theorem frontier · P86|Current frontier · P86' _site/*.html; then
+            echo "Stale pre-P87 public state found in website artifact."
+            exit 1
+          fi
       - name: Verify repository publication surfaces
         run: python scripts/verify_repository.py
-      - name: Upload complete reproduced visual record
+      - name: Upload reproduced visual record
         uses: actions/upload-artifact@v4
         with:
           name: complete-figure-record-python-3.12.14
@@ -95,5 +104,6 @@ jobs:
             figures/manifest.json
             _site/figures/p87_exact_bounded_primitive_quad_projection_parity.svg
             _site/index.html
+            _site/research-map.html
             _site/visual-atlas.html
           if-no-files-found: error
