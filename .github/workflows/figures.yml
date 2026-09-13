@@ -10,10 +10,16 @@ on:
       - "scripts/generate_quantitative_atlas.py"
       - "scripts/generate_quantum_foundations_atlas.py"
       - "scripts/enrich_figure_documentation.py"
+      - "scripts/sync_figure_publication.py"
+      - "scripts/prepare_website.py"
       - "requirements-figures.txt"
       - "requirements-reproducibility.txt"
       - "docs/figures/**"
+      - "docs/figure_catalog.md"
       - "docs/reproducibility.md"
+      - "figures/**"
+      - "website/visual-atlas.html"
+      - "tests/test_figure_publication_sync.py"
       - "pyproject.toml"
       - ".github/workflows/figures.yml"
   pull_request:
@@ -22,10 +28,16 @@ on:
       - "scripts/generate_quantitative_atlas.py"
       - "scripts/generate_quantum_foundations_atlas.py"
       - "scripts/enrich_figure_documentation.py"
+      - "scripts/sync_figure_publication.py"
+      - "scripts/prepare_website.py"
       - "requirements-figures.txt"
       - "requirements-reproducibility.txt"
       - "docs/figures/**"
+      - "docs/figure_catalog.md"
       - "docs/reproducibility.md"
+      - "figures/**"
+      - "website/visual-atlas.html"
+      - "tests/test_figure_publication_sync.py"
       - "pyproject.toml"
       - ".github/workflows/figures.yml"
 
@@ -42,24 +54,37 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -e ".[dev]"
           python -m pip install -r requirements-figures.txt
-      - name: Regenerate and enrich computational figure atlases
+      - name: Regenerate and synchronize complete visual publication record
         run: python scripts/generate_all_figures.py
-      - name: Require byte-identical regeneration
+      - name: Require byte-identical regeneration and publication sync
         run: |
+          python scripts/sync_figure_publication.py --check
           if [ -n "$(git status --porcelain)" ]; then
-            echo "Generated artifacts differ from the committed publication record."
+            echo "Generated or synchronized figure artifacts differ from the committed publication record."
             git status --short
             git diff --stat
             git diff
             exit 1
           fi
+      - name: Run permanent figure publication contract
+        run: python -m pytest -q tests/test_figure_publication_sync.py tests/test_figure_documentation_integrity.py
+      - name: Build exact-commit website figure artifact
+        run: |
+          python scripts/prepare_website.py --source website --output _site
+          test -f _site/figures/p86_exact_minimally_weighted_quad_projection_parity.svg
+          grep -q 'src="figures/p86_exact_minimally_weighted_quad_projection_parity.svg"' _site/visual-atlas.html
       - name: Verify repository publication surfaces
         run: python scripts/verify_repository.py
-      - name: Upload generated figure atlases
+      - name: Upload complete reproduced visual record
         uses: actions/upload-artifact@v4
         with:
-          name: generated-figure-atlases-python-3.12.14
+          name: complete-figure-record-python-3.12.14
           path: |
             docs/figures/quantitative
             docs/figures/quantum
+            docs/figures/p86_exact_minimally_weighted_quad_projection_parity.svg
+            figures/README.md
+            figures/CURRENT_FRONTIER.md
+            figures/manifest.json
+            _site/figures/p86_exact_minimally_weighted_quad_projection_parity.svg
           if-no-files-found: error
