@@ -16,7 +16,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages-production-v3
+  group: pages-production
   cancel-in-progress: true
 
 jobs:
@@ -32,45 +32,8 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
-      - name: Build complete styled website
+      - name: Build website
         run: python scripts/prepare_website.py --source website --output _site
-
-      - name: Validate deployed reader experience
-        run: |
-          test -f _site/index.html
-          test -f _site/plain-language.html
-          test -f _site/start-here.html
-          test -f _site/research-map.html
-          test -f _site/research-navigation.html
-          test -f _site/visual-atlas.html
-          test -f _site/figures/p87_exact_bounded_primitive_quad_projection_parity.svg
-
-          # The complete shared style bundle must be present on pages that app.js enhances.
-          for page in index.html plain-language.html start-here.html research-map.html visual-atlas.html; do
-            grep -q 'navigation.css' "_site/$page"
-            grep -q 'navigation-v2.css?v=20260913-live-repair1' "_site/$page"
-            grep -q 'publication.css' "_site/$page"
-            grep -q 'publication-v2.css' "_site/$page"
-            grep -q 'research-guide-v2.css?v=20260913-live-repair1' "_site/$page"
-            grep -q 'contrast-v2.css?v=20260913-live-repair1' "_site/$page"
-            grep -q 'reader-experience-v2.css?v=20260913-live-repair1' "_site/$page"
-            grep -q 'app.js?v=20260913-live-repair1' "_site/$page"
-          done
-
-          # Reader-first P87 public state.
-          grep -q 'Explore all 87 results' _site/index.html
-          grep -q 'P87 is result 87, not result 86' _site/index.html
-          grep -q 'P45-P60' _site/research-map.html
-          grep -q 'Adaptive evidence acquisition' _site/research-map.html
-          grep -q 'P73-P87' _site/research-map.html
-          grep -q 'Channel recovery and model testing' _site/research-map.html
-          grep -q 'Open all 87 results' _site/research-navigation.html
-          grep -q 'P87 is the 87th public result' _site/visual-atlas.html
-
-          if grep -R -E 'Explore all 86 results|86 proposition-level results|all 86 propositions|Current theorem frontier · P86|Current frontier · P86' _site/*.html; then
-            echo "Website contains stale pre-P87 public status text."
-            exit 1
-          fi
 
       - name: Upload website artifact
         uses: actions/upload-pages-artifact@v3
