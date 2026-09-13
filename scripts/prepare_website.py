@@ -16,6 +16,7 @@ import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+CANONICAL_WEBSITE = ROOT / "website"
 CANONICAL_FIGURES = ROOT / "docs" / "figures"
 RAW_FIGURE_PREFIX = (
     "https://raw.githubusercontent.com/MahsaKeikha/"
@@ -109,7 +110,7 @@ def _copy_canonical_figures(output: Path) -> None:
 
 
 def _validate_current_frontier_pages(output: Path) -> None:
-    """Require P86 to be the primary visual frontier in the built website."""
+    """Require P86 to be the primary visual frontier in the canonical website."""
 
     frontier_figure = output / "figures" / CURRENT_FRONTIER_FIGURE
     if not frontier_figure.is_file():
@@ -163,6 +164,8 @@ def prepare_website(source: Path, output: Path) -> None:
 
     if not source.is_dir():
         raise FileNotFoundError(f"website source directory not found: {source}")
+
+    canonical_build = source.resolve() == CANONICAL_WEBSITE.resolve()
 
     if output.exists():
         shutil.rmtree(output)
@@ -224,7 +227,8 @@ def prepare_website(source: Path, output: Path) -> None:
         if not (output / asset).is_file():
             raise RuntimeError(f"website build is missing {asset}")
 
-    _validate_current_frontier_pages(output)
+    if canonical_build:
+        _validate_current_frontier_pages(output)
 
 
 def main() -> None:
