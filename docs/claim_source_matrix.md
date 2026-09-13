@@ -61,3 +61,6 @@ Before a consequential claim is promoted to the public website, at least one of 
 5. it is an open question and is explicitly labeled unresolved.
 
 If a statement does not fit one of these classes, it should not be presented as an established scientific claim.
+
+
+| P88 expanded bounded primitive four-event certificate | repository-original exact finite construction | [P88 proof](proposition_88_exact_expanded_bounded_primitive_quad_projection_parity_functional.md), [equation provenance](p88_equation_provenance.md), [implementation](../src/consciousness_bridge/expanded_bounded_primitive_quad_projection_parity_functional_separation.py), [tests](../tests/test_expanded_bounded_primitive_quad_projection_parity_functional_separation.py) | `632` primitive sign-normalized patterns per four-event subset, `208,560` exact functionals, and strict exact witness `L87=1/96 < L88=1/64` | conditional separation from the declared P75 family only; does not identify consciousness or solve the physical-to-experiential bridge |

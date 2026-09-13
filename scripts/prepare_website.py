@@ -22,10 +22,10 @@ RAW_FIGURE_PREFIX = (
     "https://raw.githubusercontent.com/MahsaKeikha/"
     "mathematical-consciousness-bridge/main/docs/figures/"
 )
-CURRENT_FRONTIER_FIGURE = "p87_exact_bounded_primitive_quad_projection_parity.svg"
-CURRENT_RECORD_TEXT = "Current record:</strong> 87 proposition-level results through P87"
+CURRENT_FRONTIER_FIGURE = "p88_exact_expanded_bounded_primitive_quad_projection_parity.svg"
+CURRENT_RECORD_TEXT = "Current record:</strong> 88 proposition-level results through P88"
 
-ASSET_VERSION = "20260913-mobile17-p87"
+ASSET_VERSION = "20260913-mobile18-p88"
 SCRIPT_TAG = f'<script defer src="app.js?v={ASSET_VERSION}"></script>'
 READER_LINKS_SCRIPT_TAG = '<script defer src="reader-links.js"></script>'
 FOOTER_SCRIPT_TAG = '<script defer src="footer.js"></script>'
@@ -116,12 +116,12 @@ def _copy_canonical_figures(output: Path) -> None:
 
 
 def _validate_current_frontier_pages(output: Path) -> None:
-    """Require the deployed site to be internally consistent with P87."""
+    """Require the deployed site to be internally consistent with P88."""
 
     frontier_figure = output / "figures" / CURRENT_FRONTIER_FIGURE
     if not frontier_figure.is_file():
         raise RuntimeError(
-            "website build is missing the current P87 theorem figure: "
+            "website build is missing the current P88 theorem figure: "
             f"{frontier_figure}"
         )
 
@@ -132,34 +132,36 @@ def _validate_current_frontier_pages(output: Path) -> None:
         raise RuntimeError("website build is missing visual-atlas.html")
     visual_atlas = visual_atlas_path.read_text(encoding="utf-8")
     if local_frontier_src not in visual_atlas:
-        raise RuntimeError("Visual Atlas does not use the bundled P87 theorem figure")
+        raise RuntimeError("Visual Atlas does not use the bundled P88 theorem figure")
     if f'src="{RAW_FIGURE_PREFIX}' in visual_atlas:
         raise RuntimeError("Visual Atlas still depends on raw GitHub main for figures")
-    p87_atlas = visual_atlas.index('id="p87-frontier"')
-    for marker in ('id="p86-frontier"', 'id="p85-frontier"'):
-        if p87_atlas >= visual_atlas.index(marker):
-            raise RuntimeError(f"Visual Atlas does not present P87 before {marker}")
+    p88_atlas = visual_atlas.index('id="p88-frontier"')
+    for marker in ('id="p87-frontier"', 'id="p87-frontier"',
+        'id="p86-frontier"', 'id="p85-frontier"'):
+        if p88_atlas >= visual_atlas.index(marker):
+            raise RuntimeError(f"Visual Atlas does not present P88 before {marker}")
 
     homepage_path = output / "index.html"
     if not homepage_path.is_file():
         raise RuntimeError("website build is missing index.html")
     homepage = homepage_path.read_text(encoding="utf-8")
     if local_frontier_src not in homepage:
-        raise RuntimeError("Homepage does not use the bundled P87 theorem figure")
+        raise RuntimeError("Homepage does not use the bundled P88 theorem figure")
     if f'src="{RAW_FIGURE_PREFIX}' in homepage:
         raise RuntimeError("Homepage still depends on raw GitHub main for figures")
     if CURRENT_RECORD_TEXT not in homepage:
-        raise RuntimeError("Homepage Project at a glance is not synchronized to 87/P87")
+        raise RuntimeError("Homepage Project at a glance is not synchronized to 88/P88")
 
-    p87 = homepage.index('id="p87-frontier"')
+    p88 = homepage.index('id="p88-frontier"')
     for marker in (
         'id="plain-language"',
         'id="p84-frontier"',
         'id="p85-frontier"',
+        'id="p87-frontier"',
         'id="p86-frontier"',
     ):
-        if p87 >= homepage.index(marker):
-            raise RuntimeError(f"Homepage P87 frontier appears too late, after {marker}")
+        if p88 >= homepage.index(marker):
+            raise RuntimeError(f"Homepage P88 frontier appears too late, after {marker}")
 
     stale_tokens = (
         "Current theorem frontier · P86",

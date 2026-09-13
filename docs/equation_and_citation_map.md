@@ -1286,3 +1286,15 @@ The standard audit contains 660 sign-normalized functionals. The exact strict wi
 | `L86=1/192 < L87=1/96` | strict exact rational hierarchy witness | repository-original exact construction | P87 proof, implementation, tests |
 
 P87 is a conditional model-separation theorem for the declared P75 family. Its equations do not identify the latent state with consciousness or supply the still-open physical-to-experiential bridge.
+
+
+## P88: expanded bounded primitive four-event parity-functional separation
+
+P88 exhausts the sign-normalized primitive nonzero coefficient box `0 < |c_i| <= 3` over four distinct canonical even-parity observables. The 632 coefficient patterns across 330 four-event subsets give **208,560 exact functionals**. Exact multi-affine endpoint evaluation and mass-conservation centering produce the strict exact-rational hierarchy `L87 = 1/96 < L88 = 1/64` on the stored witness.
+
+- Proof: [proposition_88_exact_expanded_bounded_primitive_quad_projection_parity_functional.md](proposition_88_exact_expanded_bounded_primitive_quad_projection_parity_functional.md)
+- Provenance: [p88_equation_provenance.md](p88_equation_provenance.md)
+- Implementation: [`expanded_bounded_primitive_quad_projection_parity_functional_separation.py`](../src/consciousness_bridge/expanded_bounded_primitive_quad_projection_parity_functional_separation.py)
+- Tests: [`test_expanded_bounded_primitive_quad_projection_parity_functional_separation.py`](../tests/test_expanded_bounded_primitive_quad_projection_parity_functional_separation.py)
+
+Scientific boundary: this is a conditional model-separation theorem for the declared P75 family, not an identification of a latent variable with consciousness.
