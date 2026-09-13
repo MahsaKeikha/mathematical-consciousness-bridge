@@ -7,6 +7,7 @@ from consciousness_bridge.certified_continuous_model_separation import (
     p75_four_view_law_exact,
 )
 from consciousness_bridge.quadruple_projection_parity_functional_separation import (
+    certified_p75_linf_branch_and_bound_quadruple_parity,
     empirical_signed_parity_quadruple_exact,
     p75_box_p86_linf_lower_bound_exact,
     p75_box_quadruple_parity_witness_exact,
@@ -32,6 +33,7 @@ STRICT_TERMS = (
     ((0, 1, 2), 1),
     ((1, 2, 3), -1),
 )
+STRICT_COUNTS = (0, 0, 0, 3, 0, 0, 0, 0, 6, 0, 0, 0, 3, 4, 0, 0)
 
 
 def audit_box() -> P78ParameterBox:
@@ -180,6 +182,23 @@ def test_p86_strictly_improves_complete_p85() -> None:
 
 def test_p86_dominates_p85_by_construction() -> None:
     assert p86_dominates_p85_on_box(strict_empirical_law(), strict_box())
+
+
+def test_p86_global_wrapper_returns_a_certified_root_bracket() -> None:
+    result = certified_p75_linf_branch_and_bound_quadruple_parity(
+        STRICT_COUNTS,
+        max_leaves=1,
+    )
+    assert result.leaf_count == 1
+    assert result.evaluated_boxes == 1
+    assert result.iterations == 0
+    assert result.lower_bound == result.root_p86_bound
+    assert result.root_p86_bound == max(
+        result.root_p85_bound,
+        result.root_quadruple_bound,
+    )
+    assert result.root_tightening_over_p85 >= 0
+    assert result.lower_bound <= result.upper_bound
 
 
 def test_p86_source_keeps_scientific_interpretation_boundary() -> None:
