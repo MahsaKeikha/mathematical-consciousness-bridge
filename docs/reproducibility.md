@@ -15,7 +15,7 @@ You do not need every command at once. Choose the route that matches your goal.
 | Regenerate the complete visual record | `make figures` |
 | Inspect CI without installing locally | GitHub Actions |
 
-The current public theorem frontier is **P87**. The formal release remains **v0.82.0**.
+The current public theorem frontier is **P88**. The formal release remains **v0.82.0**.
 
 ---
 

@@ -308,3 +308,16 @@ The exact regression witness has `L84 = 0`, empirical functional value `5/8`, ex
 - Implementation: [`bounded_primitive_quad_projection_parity_functional_separation.py`](../src/consciousness_bridge/bounded_primitive_quad_projection_parity_functional_separation.py)
 - Tests: [`test_bounded_primitive_quad_projection_parity_functional_separation.py`](../tests/test_bounded_primitive_quad_projection_parity_functional_separation.py)
 - Figure: [`p87_exact_bounded_primitive_quad_projection_parity.svg`](figures/p87_exact_bounded_primitive_quad_projection_parity.svg)
+
+
+## Proposition 88: Exact Radius-Three Bounded Primitive Four-Event Projection-Parity Functional Certificate
+
+P88 enlarges the completed P87 primitive coefficient box to `0 < |c_i| <= 3`, exhausts 632 sign-normalized primitive coefficient patterns across 330 four-event subsets (208,560 exact functionals), and on the established rational witness strengthens the full-law `L_infinity` lower bound from `1/96` to `1/64`.
+
+- [Proof](proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md)
+- [Equation provenance](p88_equation_provenance.md)
+- Implementation: `src/consciousness_bridge/radius_three_bounded_primitive_quad_projection_parity_functional_separation.py`
+- Tests: `tests/test_radius_three_bounded_primitive_quad_projection_parity_functional_separation.py`
+- Figure: `figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg`
+
+**Boundary:** conditional model separation only; the physical-to-experiential bridge remains open.

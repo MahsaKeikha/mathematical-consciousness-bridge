@@ -4,7 +4,7 @@
 
 This page is an index, not another chapter. If you are still learning the overall story, go one layer up to the **[Research Map](research_map.md)**.
 
-The public theorem frontier is **P87**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains open.
+The public theorem frontier is **P88**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains open.
 
 ---
 
