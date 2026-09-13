@@ -18,6 +18,8 @@ from consciousness_bridge.radius_three_bounded_primitive_quad_projection_parity_
     radius_three_primitive_parity_quad_centered_coefficient_norm_exact,
 )
 
+# This regression file is also a watched source for the guarded P88 publication sync.
+
 
 def _strict_box() -> P78ParameterBox:
     return P78ParameterBox(
