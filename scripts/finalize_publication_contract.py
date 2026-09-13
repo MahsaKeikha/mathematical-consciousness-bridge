@@ -82,7 +82,7 @@ def fix_generated_contract_tests() -> None:
     path = "tests/test_reader_experience.py"
     text = read(path)
     first_pattern = re.compile(
-        r"def test_first_reader_surfaces_match_p87_frontier\(\) -> None:.*?\n\ndef test_no_reader_facing_html_page_advertises_pre_p86_as_current",
+        r"def test_first_reader_surfaces_match_p88_frontier\(\) -> None:.*?\n\ndef test_no_reader_facing_html_page_advertises_pre_p86_as_current",
         flags=re.DOTALL,
     )
     first_replacement = '''def test_first_reader_surfaces_match_p88_frontier() -> None:
