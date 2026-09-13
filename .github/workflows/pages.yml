@@ -3,7 +3,7 @@ name: deploy-research-website
 on:
   push:
     branches: ["main"]
-    # Certified P86 figures, scholarly provenance, ASCII-safe publication typography, responsive reader layout, and HTML deploy from one exact commit artifact.
+    # Certified P86 figures, scholarly provenance, collegial research-origin context, responsive reader layout, and HTML deploy from one exact commit artifact.
     paths:
       - "website/**"
       - "docs/figures/**"
@@ -50,13 +50,18 @@ jobs:
           grep -q 'Stage 06 · P73-P86' _site/implementation.html
           grep -q 'weighted_quad_projection_parity_functional_separation.py' _site/implementation.html
           grep -q 'id="research-origin"' _site/start-here.html
+          grep -q '<strong>Research context:</strong>' _site/start-here.html
+          grep -q 'important conceptual starting point' _site/start-here.html
           grep -q 'P86 is the current exact frontier.' _site/start-here.html
           grep -q '10.1016/j.chaos.2015.03.014' _site/start-here.html
           grep -q 'arXiv:1401.1219' _site/start-here.html
           grep -q 'id="research-origins"' _site/sources.html
+          grep -q '<strong>Role of this reference:</strong>' _site/sources.html
+          grep -q 'important conceptual starting point' _site/sources.html
+          grep -q 'distinct mathematical framework' _site/sources.html
           grep -q 'Current theorem source · P86' _site/sources.html
           grep -q 'claim_evidence_standard.md' _site/sources.html
-          grep -q 'intellectual and physical-context background' _site/sources.html
+          grep -q 'claim_source_matrix.md' _site/sources.html
           if grep -q 'href="styles.css"' _site/implementation.html; then
             echo "Implementation page still exposes an unversioned base stylesheet."
             exit 1
@@ -67,6 +72,14 @@ jobs:
           fi
           if grep -q 'Current frontier · P85' _site/start-here.html; then
             echo "Start Here still contains a stale P85 current-frontier block."
+            exit 1
+          fi
+          if grep -q "this origin citation does not make Tegmark's paper evidence" _site/start-here.html _site/sources.html; then
+            echo "Defensive Tegmark research-origin wording returned."
+            exit 1
+          fi
+          if grep -q "not evidence for the repository's later original propositions" _site/start-here.html _site/sources.html; then
+            echo "Defensive Tegmark source-role wording returned."
             exit 1
           fi
           python -c "from pathlib import Path; t=Path('_site/index.html').read_text(encoding='utf-8'); p=t.index('id=\"p86-frontier\"'); assert p < t.index('id=\"plain-language\"'); assert p < t.index('id=\"p84-frontier\"'); assert p < t.index('id=\"p85-frontier\"'); assert 'Current theorem frontier · P85' not in t; assert 'The 84 results form several dependency branches.' not in t; assert 'all 84 propositions' not in t"
