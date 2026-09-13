@@ -71,7 +71,7 @@ jobs:
             exit 1
           fi
           if grep -q 'Current frontier · P86' _site/start-here.html; then
-            echo "Start Here still contains a stale P85 current-frontier block."
+            echo "Start Here still contains a stale P86 current-frontier block."
             exit 1
           fi
           if grep -q "this origin citation does not make Tegmark's paper evidence" _site/start-here.html _site/sources.html; then
@@ -82,8 +82,8 @@ jobs:
             echo "Defensive Tegmark source-role wording returned."
             exit 1
           fi
-          python -c "from pathlib import Path; t=Path('_site/index.html').read_text(encoding='utf-8'); p=t.index('id=\"p87-frontier\"'); assert p < t.index('id=\"plain-language\"'); assert p < t.index('id=\"p84-frontier\"'); assert p < t.index('id=\"p85-frontier\"'); assert 'Current theorem frontier · P86' not in t; assert 'The 84 results form several dependency branches.' not in t; assert 'all 84 propositions' not in t"
-          python -c "from pathlib import Path; t=Path('_site/visual-atlas.html').read_text(encoding='utf-8'); assert t.index('id=\"p87-frontier\"') < t.index('id=\"p85-frontier\"')"
+          python -c "from pathlib import Path; t=Path('_site/index.html').read_text(encoding='utf-8'); p=t.index('id=\"p87-frontier\"'); assert p < t.index('id=\"plain-language\"'); assert p < t.index('id=\"p86-frontier\"'); assert p < t.index('id=\"p84-frontier\"'); assert p < t.index('id=\"p85-frontier\"'); assert 'Current theorem frontier · P86' not in t; assert 'The 84 results form several dependency branches.' not in t; assert 'all 84 propositions' not in t"
+          python -c "from pathlib import Path; t=Path('_site/visual-atlas.html').read_text(encoding='utf-8'); p=t.index('id=\"p87-frontier\"'); assert p < t.index('id=\"p86-frontier\"'); assert p < t.index('id=\"p85-frontier\"')"
           if grep -q 'src="https://raw.githubusercontent.com/MahsaKeikha/mathematical-consciousness-bridge/main/docs/figures/' _site/index.html _site/visual-atlas.html; then
             echo "Website still depends on mutable raw-GitHub main figure URLs."
             exit 1
