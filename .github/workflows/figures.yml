@@ -83,6 +83,7 @@ jobs:
             docs/figures/quantitative
             docs/figures/quantum
             docs/figures/p86_exact_minimally_weighted_quad_projection_parity.svg
+            figures/current_frontier.svg
             figures/README.md
             figures/CURRENT_FRONTIER.md
             figures/manifest.json

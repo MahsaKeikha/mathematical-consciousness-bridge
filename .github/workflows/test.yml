@@ -1,5 +1,6 @@
 name: tests
 
+# Final P86 publication gate: run the compatibility matrix on every pushed HEAD.
 on:
   push:
   pull_request:

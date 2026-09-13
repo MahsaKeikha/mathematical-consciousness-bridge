@@ -1,5 +1,6 @@
 name: reproducibility
 
+# Exact-reference P86 release audit on the same commit used by the publication gate.
 on:
   workflow_dispatch:
   push:
@@ -22,11 +23,14 @@ jobs:
           python -m pip install -r requirements-reproducibility.txt
       - name: Run end-to-end reproducibility audit
         run: python scripts/reproducibility_audit.py
-      - name: Upload reproduced computational atlases
+      - name: Upload reproduced P86 visual record
         uses: actions/upload-artifact@v4
         with:
-          name: reproduced-computational-atlases-v0.81.0
+          name: reproduced-visual-record-v0.82.0-p86
           path: |
             docs/figures/quantitative
             docs/figures/quantum
+            docs/figures/p86_exact_minimally_weighted_quad_projection_parity.svg
+            figures/current_frontier.svg
+            figures/manifest.json
           if-no-files-found: error
