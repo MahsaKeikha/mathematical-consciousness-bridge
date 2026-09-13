@@ -1,4 +1,4 @@
-"""Run the guarded P87 publication migration with the current navigation layout."""
+"""Run the guarded P87 publication migration with current reader layouts."""
 
 from __future__ import annotations
 
@@ -120,7 +120,111 @@ P87 is the current theorem frontier. The physical-to-experiential bridge remains
     promotion._write(path, text)
 
 
+def promote_research_map_current_frontier() -> None:
+    path = "website/research-map.html"
+    text = promotion._read(path)
+    text = text.replace("P71-P86", "P71-P87")
+    text = text.replace(
+        "culminating in P86 exact minimally weighted four-event shared-parameter parity-functional separation.",
+        "culminating in P87 exact bounded primitive four-event shared-parameter parity-functional separation.",
+    )
+    text = text.replace(
+        "and P86 adds exact minimally weighted four-event functionals with primitive coefficient magnitudes {1,1,1,2} beyond the complete P85 certificate.",
+        "P86 adds exact minimally weighted four-event functionals with primitive coefficient magnitudes {1,1,1,2}, while P87 completes every nonzero primitive four-event coefficient vector with magnitude at most two and strictly strengthens the P86 certificate.",
+    )
+    text = text.replace(
+        'href="index.html#p86-frontier">Continue to the current P86 frontier</a>',
+        'href="index.html#p87-frontier">Continue to the current P87 frontier</a>',
+    )
+    text = text.replace(
+        "P77-P86: from full-law rejection to exact dependency-aware certification",
+        "P77-P87: from full-law rejection to exact dependency-aware certification",
+    )
+    promotion._write(path, text)
+
+
+def promote_regression_tests() -> None:
+    reader_path = "tests/test_reader_experience.py"
+    reader = promotion._read(reader_path)
+    reader = reader.replace("through Proposition 86", "through Proposition 87")
+    promotion._write(reader_path, reader)
+
+    scholarly_path = "tests/test_scholarly_provenance_surface.py"
+    scholarly = promotion._read(scholarly_path)
+    old_block = '''def test_sources_page_points_to_current_p86_audit_record() -> None:
+    sources = _read("website/sources.html")
+    assert 'id="p86-source"' in sources
+    assert "Current theorem source · P86" in sources
+    assert "L85 = 0 &lt; L86 = 1/192" in sources
+    assert "proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md" in sources
+    assert "p86_equation_provenance.md" in sources
+    assert "weighted_quad_projection_parity_functional_separation.py" in sources
+    assert "test_weighted_quad_projection_parity_functional_separation.py" in sources
+    assert "claim_source_matrix.md" in sources
+    assert "Claim-to-source matrix" in sources
+'''
+    new_block = '''def test_sources_page_points_to_current_p87_and_previous_p86_audit_records() -> None:
+    sources = _read("website/sources.html")
+    assert 'id="p87-source"' in sources
+    assert "Current theorem source · P87" in sources
+    assert "L86 = 1/192 &lt; L87 = 1/96" in sources
+    assert "proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md" in sources
+    assert "p87_equation_provenance.md" in sources
+    assert "bounded_primitive_quad_projection_parity_functional_separation.py" in sources
+    assert "test_bounded_primitive_quad_projection_parity_functional_separation.py" in sources
+    assert 'id="p86-source"' in sources
+    assert "Previous theorem source · P86" in sources
+    assert "L85 = 0 &lt; L86 = 1/192" in sources
+    assert "claim_source_matrix.md" in sources
+    assert "Claim-to-source matrix" in sources
+'''
+    scholarly = promotion._replace_once(
+        scholarly,
+        old_block,
+        new_block,
+        "scholarly P87 current-source regression",
+    )
+    scholarly = scholarly.replace(
+        '        "P86 mathematical backbone",\n',
+        '        "P86 mathematical backbone",\n        "P87 bounded primitive four-event compatibility",\n        "L86 = 1/192 < L87 = 1/96",\n',
+    )
+    promotion._write(scholarly_path, scholarly)
+
+    orientation_path = "tests/test_website_research_orientation.py"
+    orientation = promotion._read(orientation_path)
+    orientation = orientation.replace(
+        "Eighty-six results, one dependency-aware scientific program",
+        "Eighty-seven results, one dependency-aware scientific program",
+    )
+    orientation = orientation.replace("P73-P86", "P73-P87")
+    orientation = orientation.replace("through Proposition 86", "through Proposition 87")
+    orientation = orientation.replace("index.html#p86-frontier", "index.html#p87-frontier")
+    orientation = orientation.replace(
+        "test_research_map_presents_p77_through_p86_with_p84_history",
+        "test_research_map_presents_p77_through_p87_with_p84_history",
+    )
+    orientation = orientation.replace("P77-P86:", "P77-P87:")
+    orientation = orientation.replace("p86_navigation", "p87_navigation")
+    orientation = orientation.replace(
+        'href="index.html#p86-frontier">Continue to the current P86 frontier</a>',
+        'href="index.html#p87-frontier">Continue to the current P87 frontier</a>',
+    )
+    p86_assert = '    assert "P86 adds exact minimally weighted four-event functionals" in text\n'
+    if '    assert \'id="p87-reader-frontier"\' in text\n' not in orientation:
+        orientation = orientation.replace(
+            p86_assert,
+            p86_assert
+            + '    assert \'id="p87-reader-frontier"\' in text\n'
+            + '    assert "39,600" in text\n'
+            + '    assert "L85 = 0 &lt; L86 = 1/192 &lt; L87 = 1/96" in text\n',
+            1,
+        )
+    promotion._write(orientation_path, orientation)
+
+
 promotion.promote_navigation = promote_navigation
 
 if __name__ == "__main__":
     promotion.main()
+    promote_research_map_current_frontier()
+    promote_regression_tests()
