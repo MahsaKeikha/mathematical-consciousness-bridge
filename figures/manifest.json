@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "canonical_root": "docs/figures",
-  "current_frontier": "P87",
-  "current_frontier_figure": "docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg",
-  "figure_count": 145,
+  "current_frontier": "P88",
+  "current_frontier_figure": "docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg",
+  "figure_count": 146,
   "hash_algorithm": "sha256",
   "figures": [
     {
@@ -608,19 +608,27 @@
     },
     {
       "path": "docs/figures/p86_exact_minimally_weighted_quad_projection_parity.svg",
-      "sha256": "ad8817c0a3df26d0352452fdd44c1657a850c6d734d0380e635608a89144486c",
-      "bytes": 7418,
+      "sha256": "dfd0388410696e7b03fce7b4691fdb5ef949d9c615594fa8586bf7f41767f0d1",
+      "bytes": 7686,
       "category": "theorem-or-architecture",
       "title": "P86 Minimally Weighted Four-Event Parity Certificate",
       "description_chars": 931
     },
     {
       "path": "docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg",
-      "sha256": "2db40b90183db151137c3ae50505c9daa938084c062c430d3b95fe34081a0389",
-      "bytes": 7385,
+      "sha256": "1b1c6583f5811b63b651c2b162048fec19bd16cc43a4dc8e1b8a06258e9d3bc5",
+      "bytes": 7651,
       "category": "theorem-or-architecture",
       "title": "P87 Bounded Primitive Four-Event Parity Certificate",
       "description_chars": 890
+    },
+    {
+      "path": "docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg",
+      "sha256": "ce8e77630229f8992749cd20d6b4a52a8850507fb7b52bea1ae88f66897de89b",
+      "bytes": 6369,
+      "category": "theorem-or-architecture",
+      "title": "P88 Radius-Three Bounded-Primitive Four-Event Parity Certificate",
+      "description_chars": 546
     },
     {
       "path": "docs/figures/physics_mathematics_atlas.svg",
