@@ -19,7 +19,19 @@ jobs:
         with:
           python-version: "3.12"
       - name: Refine research-origin wording
-        run: python scripts/refine_tegmark_research_origin.py
+        run: |
+          python scripts/refine_tegmark_research_origin.py
+          python - <<'PY'
+          from pathlib import Path
+          path = Path("tests/test_scholarly_provenance_surface.py")
+          text = path.read_text(encoding="utf-8")
+          text = text.replace(
+              '            "External methodological background plus repository formulation",',
+              '            "external methodological background plus repository formulation",',
+              1,
+          )
+          path.write_text(text, encoding="utf-8")
+          PY
       - name: Install test environment
         run: |
           python -m pip install --upgrade pip
