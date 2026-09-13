@@ -21,8 +21,18 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12.14"
-      - name: Promote P88 in the guarded checkout
+      - name: Repair migration helper and promote P88 in guarded checkout
         run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path("scripts/promote_p88_public_frontier.py")
+          text = path.read_text(encoding="utf-8")
+          old = 'text, count = pattern.subn(replacement.rstrip() + "\\n\\n", text, count=1)'
+          new = 'text, count = pattern.subn(lambda _: replacement.rstrip() + "\\n\\n", text, count=1)'
+          if old not in text:
+              raise SystemExit("promotion helper replacement anchor not found")
+          path.write_text(text.replace(old, new, 1), encoding="utf-8")
+          PY
           python -m py_compile scripts/promote_p88_public_frontier.py
           python scripts/promote_p88_public_frontier.py
       - name: Install development and reproducibility environment
