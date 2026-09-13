@@ -25,11 +25,14 @@ def _write(relative: str, text: str) -> None:
 
 
 def _replace_once(text: str, old: str, new: str, *, label: str) -> str:
+    # Check the historical form first. Some repaired blocks are strict prefixes
+    # of the historical block, so checking `new in text` first can incorrectly
+    # treat an unrepaired source as already migrated.
+    if old in text:
+        return text.replace(old, new, 1)
     if new in text:
         return text
-    if old not in text:
-        raise RuntimeError(f"repair anchor missing: {label}")
-    return text.replace(old, new, 1)
+    raise RuntimeError(f"repair anchor missing: {label}")
 
 
 def repair_migration_generator() -> None:
@@ -67,12 +70,30 @@ def repair_migration_generator() -> None:
         label="historical theorem archive layering",
     )
 
-    text = _replace_once(
-        text,
-        '        assert phrase in program',
-        '        assert phrase in program.replace("**", "")',
-        label="fundamental-theory markdown-insensitive wording",
-    )
+    old_fundamental = '''    for phrase in (
+        "There is currently no experimentally established Theory of Everything",
+        "T(\\\\Omega)=\\\\bigl(G(\\\\Omega),Q(\\\\Omega),C(\\\\Omega)\\\\bigr)",
+        "fundamental_theory_consciousness_map.svg",
+    ):
+        assert phrase in program'''
+    intermediate_fundamental = '''    for phrase in (
+        "There is currently no experimentally established Theory of Everything",
+        "T(\\\\Omega)=\\\\bigl(G(\\\\Omega),Q(\\\\Omega),C(\\\\Omega)\\\\bigr)",
+        "fundamental_theory_consciousness_map.svg",
+    ):
+        assert phrase in program.replace("**", "")'''
+    new_fundamental = '''    for phrase in (
+        "There is currently no experimentally established Theory of Everything",
+        "T(\\\\Omega)=\\\\bigl(G(\\\\Omega),Q(\\\\Omega),C(\\\\Omega)\\\\bigr)",
+    ):
+        assert phrase in program.replace("**", "")
+    assert MAP.is_file()'''
+    if old_fundamental in text:
+        text = text.replace(old_fundamental, new_fundamental, 1)
+    elif intermediate_fundamental in text:
+        text = text.replace(intermediate_fundamental, new_fundamental, 1)
+    elif new_fundamental not in text:
+        raise RuntimeError("repair anchor missing: fundamental-theory interface test")
 
     text = _replace_once(
         text,
