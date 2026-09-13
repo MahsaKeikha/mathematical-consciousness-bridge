@@ -1,8 +1,17 @@
-"""Verify that all current-frontier publication surfaces agree."""
+"""Verify that current-frontier publication surfaces agree.
+
+The README is intentionally reader-first. Frontier verification therefore checks
+its compact current-status declarations and current-theorem link rather than
+requiring the older monolithic count table that was removed from the public
+landing page. Detailed counts remain machine-verifiable from the proposition
+and figure trees.
+"""
 
 from __future__ import annotations
 
+import json
 import re
+import tomllib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -24,67 +33,65 @@ def _require(condition: bool, message: str) -> None:
         raise RuntimeError(message)
 
 
+def _package_version(root: Path) -> str:
+    data = tomllib.loads((root / "pyproject.toml").read_text(encoding="utf-8"))
+    version = data.get("project", {}).get("version")
+    if not isinstance(version, str) or not version:
+        raise RuntimeError("pyproject.toml is missing project.version")
+    return version
+
+
+def _current_proposition(root: Path, frontier: int) -> Path:
+    matches = sorted((root / "docs").glob(f"proposition_{frontier}_*.md"))
+    _require(
+        len(matches) == 1,
+        f"expected exactly one proposition file for P{frontier}, found {len(matches)}",
+    )
+    return matches[0]
+
+
 def verify_frontier_publication(root: Path = ROOT) -> None:
     frontier = _frontier(root)
     pfrontier = f"P{frontier}"
+    version = _package_version(root)
+    proposition = _current_proposition(root, frontier)
 
     readme = (root / "README.md").read_text(encoding="utf-8")
-    summary = re.search(
-        r"The research currently contains \*\*(\d+) proposition-level results\*\* "
-        r"and \*\*(\d+) equation-driven quantitative figures\*\*\.",
-        readme,
-    )
-    _require(summary is not None, "README is missing the current research-count summary")
-    assert summary is not None
-    summary_results = int(summary.group(1))
-    summary_figures = int(summary.group(2))
-    _require(summary_results == frontier, "README summary proposition count is stale")
-
-    status = re.search(
-        r"The repository now contains (\d+) proposition-level results\. "
-        r"The theorem frontier is P(\d+)\.",
-        readme,
-    )
-    _require(status is not None, "README current scientific status sentence is missing")
-    assert status is not None
     _require(
-        int(status.group(1)) == frontier and int(status.group(2)) == frontier,
-        "README current scientific status sentence disagrees with the proposition tree",
+        f"The current public theorem frontier is **{pfrontier}**." in readme,
+        "README current public theorem-frontier declaration is stale or missing",
     )
-
-    public_rows = re.findall(
-        r"\| Public theorem frontier \| \*\*P(\d+)\*\* \|", readme
-    )
-    _require(bool(public_rows), "README has no public theorem frontier row")
     _require(
-        all(int(value) == frontier for value in public_rows),
-        "README contains a stale public theorem frontier row",
+        f"The formal release remains **v{version}**." in readme,
+        "README formal-release declaration disagrees with pyproject.toml",
+    )
+    _require(
+        f"**Public theorem frontier:** {pfrontier}" in readme,
+        "README citation/footer frontier declaration is stale or missing",
+    )
+    _require(
+        f"**Formal release:** v{version}" in readme,
+        "README citation/footer release declaration disagrees with pyproject.toml",
+    )
+    expected_frontier_link = (
+        f"[Read the current frontier](docs/{proposition.name})"
+    )
+    _require(
+        expected_frontier_link in readme,
+        "README current-frontier link does not point to the canonical proposition",
     )
 
-    result_rows = re.findall(
-        r"\| Proposition-level results \| \*\*(\d+)\*\* \|", readme
-    )
-    _require(bool(result_rows), "README has no proposition-level result row")
+    manifest_path = root / "figures" / "manifest.json"
+    _require(manifest_path.is_file(), "figure publication manifest is missing")
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     _require(
-        all(int(value) == frontier for value in result_rows),
-        "README contains a stale proposition-level result row",
+        manifest.get("current_frontier") == pfrontier,
+        "figure publication manifest current frontier is stale",
     )
-
-    figure_rows = re.findall(
-        r"\| Equation-driven quantitative figures \| \*\*(\d+)\*\* \|",
-        readme,
-    )
-    _require(bool(figure_rows), "README has no equation-driven figure-count row")
+    figure_count = manifest.get("figure_count")
     _require(
-        all(int(value) == summary_figures for value in figure_rows),
-        "README equation-driven figure count disagrees with its research summary",
-    )
-
-    citation_frontiers = re.findall(r"Current theorem frontier: \*\*P(\d+)\*\*", readme)
-    _require(bool(citation_frontiers), "README citation section has no current frontier")
-    _require(
-        all(int(value) == frontier for value in citation_frontiers),
-        "README citation section contains a stale current frontier",
+        isinstance(figure_count, int) and figure_count > 0,
+        "figure publication manifest has no valid figure count",
     )
 
     roadmap = (root / "docs" / "theorem_roadmap.md").read_text(encoding="utf-8")
@@ -117,16 +124,16 @@ def verify_frontier_publication(root: Path = ROOT) -> None:
         f"The current documented theorem frontier is **{pfrontier}**." in navigation,
         "research navigation current-frontier declaration is stale",
     )
-    recommended = navigation.split("## Recommended reading order", 1)[1].split(
-        "## Scientific branch map", 1
-    )[0]
+    recommended_parts = navigation.split("## Recommended reading order", 1)
+    _require(len(recommended_parts) == 2, "research navigation lacks recommended reading order")
+    recommended = recommended_parts[1].split("## Scientific branch map", 1)[0]
     _require(
         f"[P{frontier} " in recommended,
         "recommended reading order omits the current frontier",
     )
-    branch = navigation.split("## Scientific branch map", 1)[1].split(
-        "## Complete proposition index", 1
-    )[0]
+    branch_parts = navigation.split("## Scientific branch map", 1)
+    _require(len(branch_parts) == 2, "research navigation lacks scientific branch map")
+    branch = branch_parts[1].split("## Complete proposition index", 1)[0]
     _require(
         re.search(rf"^\| [^|]+ \| P{frontier} \|", branch, re.MULTILINE)
         is not None,
@@ -146,7 +153,7 @@ def verify_frontier_publication(root: Path = ROOT) -> None:
 
     print(
         f"[frontier] publication surfaces agree with {pfrontier}; "
-        f"README equation-driven figure count={summary_figures}"
+        f"formal release=v{version}; figure manifest count={figure_count}"
     )
 
 
