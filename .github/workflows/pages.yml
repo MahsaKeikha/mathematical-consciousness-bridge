@@ -44,6 +44,7 @@ jobs:
           grep -q 'Explore all 88 results' _site/index.html
           grep -q 'Current record:</strong> 88 proposition-level results through P88' _site/index.html
           grep -q 'Current theorem frontier · P88' _site/index.html
+          test "$(grep -o 'id=\"p88-frontier\"' _site/index.html | wc -l)" -eq 1
           ! grep -q 'Current record:</strong> 87 proposition-level results through P87' _site/index.html
           ! grep -q 'Current record:</strong> 86 proposition-level results through P86' _site/index.html
 
@@ -64,11 +65,13 @@ jobs:
           grep -q 'Eighty-eight results, one dependency-aware scientific program' _site/research-map.html
           grep -q '<strong>88</strong><span>proposition-level results</span>' _site/research-map.html
           grep -q 'P88: Does the next complete coefficient radius expose a stronger incompatibility?' _site/research-map.html
+          test "$(grep -o 'id=\"p88-research-map\"' _site/research-map.html | wc -l)" -eq 1
           ! grep -q 'Eighty-seven results, one dependency-aware scientific program' _site/research-map.html
 
           grep -q '<!-- current-frontier-visual: P88 -->' _site/visual-atlas.html
           grep -q 'Current theorem frontier · P88' _site/visual-atlas.html
           grep -q 'p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg' _site/visual-atlas.html
+          test "$(grep -o 'id=\"p88-frontier\"' _site/visual-atlas.html | wc -l)" -eq 1
           ! grep -q '<!-- current-frontier-visual: P87 -->' _site/visual-atlas.html
           ! grep -q '<section id="p86-frontier" class="theorem-frontier current-frontier-visual">' _site/visual-atlas.html
 
