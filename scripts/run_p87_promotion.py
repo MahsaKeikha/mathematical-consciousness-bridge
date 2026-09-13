@@ -156,6 +156,10 @@ def promote_regression_tests() -> None:
         '    assert "<strong>86</strong>" in research_map\n',
         '    assert "<strong>87</strong>" in research_map\n',
     )
+    reader = reader.replace(
+        '    assert "<strong>86</strong><span>proposition-level results</span>" in plain\n',
+        '    assert "<strong>87</strong><span>proposition-level results</span>" in plain\n',
+    )
     promotion._write(reader_path, reader)
 
     scholarly_path = "tests/test_scholarly_provenance_surface.py"
