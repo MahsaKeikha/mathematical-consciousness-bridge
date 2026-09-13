@@ -10,12 +10,12 @@ You do not need every command at once. Choose the route that matches your goal.
 | --- | --- |
 | Reproduce the maintained repository as strictly as possible | `make reproduce` |
 | Run the normal verification suite | `make check` |
-| Run only the current P87 theorem checks | focused P87 commands below |
+| Run only the current P88 theorem checks | focused P88 commands below |
 | Validate figures without rebuilding them | `make figures-check` |
 | Regenerate the complete visual record | `make figures` |
 | Inspect CI without installing locally | GitHub Actions |
 
-The current public theorem frontier is **P87**. The formal release remains **v0.82.0**.
+The current public theorem frontier is **P88**. The formal release remains **v0.82.0**.
 
 ---
 
@@ -104,18 +104,18 @@ Use this route when you want to verify the current committed state without regen
 
 ---
 
-## 5. Focused audit of the current P87 frontier
+## 5. Focused audit of the current P88 frontier
 
 The current theorem frontier is **P88**.
 
 Its direct technical record is:
 
 ```text
-docs/proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md
-docs/p87_equation_provenance.md
-src/consciousness_bridge/bounded_primitive_quad_projection_parity_functional_separation.py
-tests/test_bounded_primitive_quad_projection_parity_functional_separation.py
-docs/figures/p87_exact_bounded_primitive_quad_projection_parity_functional.svg
+docs/proposition_88_exact_radius3_bounded_primitive_quad_projection_parity_functional.md
+docs/p88_equation_provenance.md
+src/consciousness_bridge/bounded_primitive_radius3_quad_projection_parity_functional_separation.py
+tests/test_bounded_primitive_radius3_quad_projection_parity_functional_separation.py
+docs/figures/p88_exact_radius3_bounded_primitive_quad_projection_parity.svg
 figures/manifest.json
 ```
 
@@ -123,37 +123,43 @@ Run the focused theorem and figure publication checks with:
 
 ```bash
 python -m pytest \
-  tests/test_bounded_primitive_quad_projection_parity_functional_separation.py \
+  tests/test_bounded_primitive_radius3_quad_projection_parity_functional_separation.py \
   tests/test_figure_publication_sync.py
 ```
 
-P87 completes the declared sign normalized primitive nonzero four event coefficient family with coefficient magnitudes at most 2. The exact family contains 39,600 functionals.
+P88 completes the declared sign-normalized primitive nonzero four-event coefficient family with coefficient magnitudes at most 3. The exact family contains 632 sign-normalized primitive coefficient patterns per four-event subset and 208,560 functionals across the 330 subsets.
 
-For the published witness, the empirical functional value is
+For the published shared witness, the empirical functional value is
 
 \[
--\frac{17}{24},
+-\frac{11}{8},
 \]
 
 while the exact P75 box interval is
 
 \[
-\left[-\frac12,2\right],
+[-1,2],
 \]
 
 giving an exact functional gap
 
 \[
-\frac{5}{24}.
+\frac{3}{8}.
 \]
 
-The centered coefficient norm is 20, which yields the P87 empirical full law lower bound
+The centered coefficient norm is 24, which yields the P88 empirical full-law lower bound
 
 \[
-\frac{1}{96}.
+\frac{1}{64}.
 \]
 
-These are conditional model separation results for the declared P75 family. They do not identify the latent state with consciousness or complete the physical to experiential bridge.
+Together with the earlier exact frontiers, the shared witness gives
+
+\[
+L_{85}=0<L_{86}=\frac1{192}<L_{87}=\frac1{96}<L_{88}=\frac1{64}.
+\]
+
+These are conditional model-separation results for the declared P75 family. They do not identify the latent state with consciousness, establish nonphysicality, validate an alternative ontology, or complete the physical-to-experiential bridge.
 
 ---
 
@@ -167,12 +173,12 @@ Useful variants include:
 
 ```bash
 python -m pytest -q
-python -m pytest tests/test_bounded_primitive_quad_projection_parity_functional_separation.py
+python -m pytest tests/test_bounded_primitive_radius3_quad_projection_parity_functional_separation.py
 python -m pytest tests/test_figure_publication_sync.py
 python -m pytest -k strict_improvement
 ```
 
-The test suite covers theorem implementations, exact witnesses, numerical certificates, finite data logic, figure guards, publication synchronization, reader experience contracts, and regression behavior.
+The test suite covers theorem implementations, exact witnesses, numerical certificates, finite-data logic, figure guards, publication synchronization, reader experience contracts, and regression behavior.
 
 A passing test suite confirms that the declared implementation and repository checks pass. It is not empirical evidence about consciousness.
 
@@ -248,8 +254,10 @@ The validation path checks the generated manifests, SVG parseability, canonical 
 The current frontier figure is:
 
 ```text
-docs/figures/p87_exact_bounded_primitive_quad_projection_parity_functional.svg
+docs/figures/p88_exact_radius3_bounded_primitive_quad_projection_parity.svg
 ```
+
+The P87 figure remains in the repository as the previous exact frontier rather than being overwritten.
 
 ---
 
@@ -292,7 +300,7 @@ or:
 python scripts/verify_repository.py
 ```
 
-This checks publication and reader facing consistency that is broader than an individual theorem unit test.
+This checks publication and reader-facing consistency that is broader than an individual theorem unit test.
 
 The repository verifier is designed to run without network access so it can be used in CI and in a fresh clone.
 
@@ -308,11 +316,11 @@ Runs the supported Python matrix and performs installation, pytest, Ruff, and re
 
 ### Reproducibility
 
-Runs the exact reference environment and executes the end to end reproducibility audit.
+Runs the exact reference environment and executes the end-to-end reproducibility audit.
 
 ### Figures and website publication
 
-Regenerates or validates the maintained visual surfaces, checks synchronization, builds the exact commit website figure artifact, and verifies that public figure references are consistent with the checked out commit.
+Regenerates or validates the maintained visual surfaces, checks synchronization, builds the exact-commit website figure artifact, and verifies that public figure references are consistent with the checked-out commit.
 
 These workflows let a reader inspect current verification results without installing the repository locally.
 
@@ -328,7 +336,7 @@ It does not mean:
 - a latent target has been identified with consciousness
 - a model that was not rejected has been validated as true
 - a quantum description has been shown to be experiential
-- the physical to experiential bridge has been solved
+- the physical-to-experiential bridge has been solved
 
 The repository deliberately keeps software reproducibility, mathematical proof, model adequacy, empirical evidence, and ontological interpretation separate.
 
@@ -364,4 +372,3 @@ python scripts/sync_figure_publication.py --check
 ```
 
 The P88 test exhausts the declared radius-three primitive family and verifies the exact shared-witness value `L88 = 1/64`. The figure synchronization check validates the canonical theorem figure, gateway, and SHA-256 manifest without editing the website.
-
