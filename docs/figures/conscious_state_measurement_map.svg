@@ -1,93 +1,47 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1140" viewBox="0 0 1800 1140" role="img" aria-labelledby="title desc">
-  <title id="title">Conscious-state measurement and dissociation map</title>
-  <desc id="desc">What this figure shows: Figure 4. Measurement and dissociation map. Behavioral responsiveness, subjective report, perturbational complexity, and command-related brain activation are different evidence channels. A bridge theory must state which observable pattern it predicts and what target those observations are claimed to measure. How to read it: follow only the labeled arrows, axes, panels, set relations, or inequalities shown in the visual and interpret them using the adjacent research text. Main takeaway: the figure summarizes the stated mathematical or scientific dependency; visual proximity alone does not add a claim. Scientific status: Reader-facing research figure; formal status is controlled by the linked proof or source record.</desc>
+  <title id="title">Conscious state measurement and dissociation map</title>
+  <desc id="desc">What this figure shows: Figure 4. Measurement and dissociation map. Behavioral responsiveness, subjective report, perturbational complexity, and command related brain activation are different evidence channels. A bridge theory must state which observable pattern it predicts and what target those observations are claimed to measure. How to read it: follow the connected blocks from clinical and experimental conditions into perturbational and repository response measurements, then into the multimodal evidence vector. Main takeaway: no single observation channel is automatically an experiential definition. Scientific status: Reader-facing research figure; formal status is controlled by the linked proof or source record.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0 0 L0 8 L10 4 z" fill="#64748b"/></marker>
     <style>
-      .title{font:700 40px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
-      .subtitle{font:400 18px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
-      .head{font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
-      .body{font:400 13.8px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
-      .eq{font:600 16px Georgia,'Times New Roman',serif;fill:#0f172a}
-      .cite{font:600 12px Inter,Segoe UI,Arial,sans-serif;fill:#64748b}
-      .arrow{stroke:#64748b;stroke-width:2.1;fill:none;marker-end:url(#arrow)}
+      .title{font:700 40px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}.subtitle{font:400 18px Inter,Segoe UI,Arial,sans-serif;fill:#475569}.head{font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}.body{font:400 13.8px Inter,Segoe UI,Arial,sans-serif;fill:#475569}.eq{font:600 16px Georgia,'Times New Roman',serif;fill:#0f172a}.cite{font:600 12px Inter,Segoe UI,Arial,sans-serif;fill:#64748b}.arrow{stroke:#64748b;stroke-width:2.1;fill:none;marker-end:url(#arrow)}
     </style>
   </defs>
   <rect width="1800" height="1140" fill="#ffffff"/>
-  <text x="75" y="66" class="title">Conscious-State Measurement: Dissociations Matter</text>
+  <text x="75" y="66" class="title">Conscious State Measurement: Dissociations Matter</text>
   <text x="75" y="102" class="subtitle">Behavior, report, neural activation, and perturbational complexity are distinct observables.</text>
   <text x="75" y="130" class="subtitle">They should not be collapsed into a single experiential axis.</text>
 
-  <rect x="75" y="175" width="350" height="260" rx="18" fill="#f7fbff" stroke="#3b82f6" stroke-width="1.6"/>
-  <text x="100" y="214" class="head">Wakeful responsiveness</text>
-  <text x="100" y="255" class="body">Report and command following</text>
-  <text x="100" y="278" class="body">provide one evidence channel.</text>
-  <text x="100" y="301" class="body">Other evidence channels may exist.</text>
-  <text x="100" y="350" class="eq">behavior ≠ bridge definition</text>
-  <text x="100" y="395" class="cite">clinical / experimental baseline</text>
+  <rect id="wakeful" x="75" y="175" width="350" height="260" rx="18" fill="#f7fbff" stroke="#3b82f6" stroke-width="1.6"/>
+  <text x="100" y="214" class="head">Wakeful responsiveness</text><text x="100" y="255" class="body">Report and command following</text><text x="100" y="278" class="body">provide one evidence channel.</text><text x="100" y="301" class="body">Other evidence channels may exist.</text><text x="100" y="350" class="eq">behavior ≠ bridge definition</text><text x="100" y="395" class="cite">clinical / experimental baseline</text>
 
-  <rect x="500" y="175" width="350" height="260" rx="18" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.6"/>
-  <text x="525" y="214" class="head">Sleep and dreaming</text>
-  <text x="525" y="255" class="body">Sleep can include reported dreams</text>
-  <text x="525" y="278" class="body">without ordinary responsiveness.</text>
-  <text x="525" y="314" class="eq">responsiveness ↓</text>
-  <text x="525" y="338" class="eq">experience may persist</text>
-  <text x="525" y="372" class="body">High-density EEG compares dreaming</text>
-  <text x="525" y="395" class="body">with no-experience reports.</text>
-  <text x="525" y="413" class="cite">Siclari et al. 2017</text>
+  <rect id="sleep" x="500" y="175" width="350" height="260" rx="18" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.6"/>
+  <text x="525" y="214" class="head">Sleep and dreaming</text><text x="525" y="255" class="body">Sleep can include reported dreams</text><text x="525" y="278" class="body">without ordinary responsiveness.</text><text x="525" y="314" class="eq">responsiveness ↓</text><text x="525" y="338" class="eq">experience may persist</text><text x="525" y="372" class="body">High density EEG compares dreaming</text><text x="525" y="395" class="body">with no experience reports.</text><text x="525" y="413" class="cite">Siclari et al. 2017</text>
 
-  <rect x="925" y="175" width="350" height="260" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="1.6"/>
-  <text x="949" y="214" class="head">Anesthetic unresponsiveness</text>
-  <text x="950" y="255" class="body">Anesthetic regimes can produce</text>
-  <text x="950" y="278" class="body">similar response loss with varied</text>
-  <text x="950" y="301" class="body">reported experiential profiles.</text>
-  <text x="950" y="340" class="eq">unresponsiveness ≠</text>
-  <text x="950" y="364" class="eq">uniform experience</text>
-  <text x="950" y="395" class="cite">Sarasso et al. 2015</text>
+  <rect id="anesthesia" x="925" y="175" width="350" height="260" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="1.6"/>
+  <text x="949" y="214" class="head">Anesthetic unresponsiveness</text><text x="950" y="255" class="body">Anesthetic regimes can produce</text><text x="950" y="278" class="body">similar response loss with varied</text><text x="950" y="301" class="body">reported experiential profiles.</text><text x="950" y="340" class="eq">unresponsiveness ≠</text><text x="950" y="364" class="eq">uniform experience</text><text x="950" y="395" class="cite">Sarasso et al. 2015</text>
 
-  <rect x="1350" y="175" width="375" height="260" rx="18" fill="#fff1f2" stroke="#e11d48" stroke-width="1.6"/>
-  <text x="1375" y="214" class="head">Unresponsive brain injury</text>
-  <text x="1375" y="255" class="body">EEG can show command-related activity</text>
-  <text x="1375" y="278" class="body">in some patients without overt motor</text>
-  <text x="1375" y="301" class="body">command following.</text>
-  <text x="1375" y="340" class="eq">motor output ≠</text>
-  <text x="1375" y="364" class="eq">neural command response</text>
-  <text x="1375" y="395" class="cite">Claassen et al. 2019</text>
+  <rect id="brain-injury" x="1350" y="175" width="375" height="260" rx="18" fill="#fff1f2" stroke="#e11d48" stroke-width="1.6"/>
+  <text x="1375" y="214" class="head">Unresponsive brain injury</text><text x="1375" y="255" class="body">EEG can show command related activity</text><text x="1375" y="278" class="body">in some patients without overt motor</text><text x="1375" y="301" class="body">command following.</text><text x="1375" y="340" class="eq">motor output ≠</text><text x="1375" y="364" class="eq">neural command response</text><text x="1375" y="395" class="cite">Claassen et al. 2019</text>
 
-  <path class="arrow" d="M425 305 H488"/>
-  <path class="arrow" d="M850 305 H913"/>
-  <path class="arrow" d="M1275 305 H1338"/>
+  <path class="arrow" data-source="wakeful" data-target="sleep" d="M425 305 H500"/>
+  <path class="arrow" data-source="sleep" data-target="anesthesia" d="M850 305 H925"/>
+  <path class="arrow" data-source="anesthesia" data-target="brain-injury" d="M1275 305 H1350"/>
 
-  <rect x="115" y="520" width="480" height="250" rx="18" fill="#ecfeff" stroke="#0891b2" stroke-width="1.6"/>
-  <text x="145" y="560" class="head">Perturbational measurement</text>
-  <text x="145" y="602" class="eq">stimulus → distributed neural response</text>
-  <text x="145" y="642" class="body">TMS-EEG perturbational complexity probes</text>
-  <text x="145" y="665" class="body">how differentiated and distributed a cortical</text>
-  <text x="145" y="688" class="body">response is after direct perturbation.</text>
-  <text x="145" y="734" class="cite">Casali et al. 2013</text>
+  <rect id="perturbation" x="115" y="520" width="480" height="250" rx="18" fill="#ecfeff" stroke="#0891b2" stroke-width="1.6"/>
+  <text x="145" y="560" class="head">Perturbational measurement</text><text x="145" y="602" class="eq">stimulus → distributed neural response</text><text x="145" y="642" class="body">TMS EEG perturbational complexity probes</text><text x="145" y="665" class="body">how differentiated and distributed a cortical</text><text x="145" y="688" class="body">response is after direct perturbation.</text><text x="145" y="734" class="cite">Casali et al. 2013</text>
 
-  <rect x="660" y="520" width="480" height="250" rx="18" fill="#ecfdf5" stroke="#059669" stroke-width="1.6"/>
-  <text x="690" y="560" class="head">Repository causal-response layer</text>
-  <text x="690" y="602" class="eq">Pₚᵘ,τ = ℒ(Yₜ₊τ | do(u), p)</text>
-  <text x="690" y="642" class="body">The repository generalizes perturbation into</text>
-  <text x="690" y="665" class="body">response geometry, influence, irreducibility,</text>
-  <text x="690" y="688" class="body">time, composition, and scale.</text>
-  <text x="690" y="734" class="cite">repository P11-P17</text>
+  <rect id="causal-response" x="660" y="520" width="480" height="250" rx="18" fill="#ecfdf5" stroke="#059669" stroke-width="1.6"/>
+  <text x="690" y="560" class="head">Repository causal response layer</text><text x="690" y="602" class="eq">Pₚᵘ,τ = ℒ(Yₜ₊τ | do(u), p)</text><text x="690" y="642" class="body">The repository generalizes perturbation into</text><text x="690" y="665" class="body">response geometry, influence, irreducibility,</text><text x="690" y="688" class="body">time, composition, and scale.</text><text x="690" y="734" class="cite">repository P11 to P17</text>
 
-  <rect x="1205" y="520" width="480" height="250" rx="18" fill="#fefce8" stroke="#ca8a04" stroke-width="1.6"/>
-  <text x="1235" y="560" class="head">Multimodal evidence vector</text>
-  <text x="1235" y="598" class="eq">E = (behavior, report, EEG, fMRI,</text>
-  <text x="1235" y="620" class="eq">perturbation)</text>
-  <text x="1235" y="650" class="body">No single component defines consciousness.</text>
-  <text x="1235" y="673" class="body">A theory must state which evidence pattern</text>
-  <text x="1235" y="696" class="body">its bridge predicts.</text>
-  <text x="1235" y="734" class="cite">theory discrimination / falsification</text>
+  <rect id="evidence-vector" x="1205" y="520" width="480" height="250" rx="18" fill="#fefce8" stroke="#ca8a04" stroke-width="1.6"/>
+  <text x="1235" y="560" class="head">Multimodal evidence vector</text><text x="1235" y="598" class="eq">E = (behavior, report, EEG, fMRI,</text><text x="1235" y="620" class="eq">perturbation)</text><text x="1235" y="650" class="body">No single component defines consciousness.</text><text x="1235" y="673" class="body">A theory must state which evidence pattern</text><text x="1235" y="696" class="body">its bridge predicts.</text><text x="1235" y="734" class="cite">theory discrimination / falsification</text>
 
-  <path class="arrow" d="M355 435 V508"/>
-  <path class="arrow" d="M900 435 V508"/>
-  <path class="arrow" d="M1537 435 V508"/>
-  <path class="arrow" d="M595 645 H648"/>
-  <path class="arrow" d="M1140 645 H1193"/>
+  <path class="arrow" data-source="wakeful" data-target="perturbation" d="M355 435 V520"/>
+  <path class="arrow" data-source="sleep" data-target="causal-response" d="M675 435 V476 H900 V520"/>
+  <path class="arrow" data-source="brain-injury" data-target="evidence-vector" d="M1537 435 V520"/>
+  <path class="arrow" data-source="perturbation" data-target="causal-response" d="M595 645 H660"/>
+  <path class="arrow" data-source="causal-response" data-target="evidence-vector" d="M1140 645 H1205"/>
 
   <rect x="170" y="865" width="1460" height="195" rx="20" fill="#0f172a"/>
   <text x="205" y="907" style="font:700 19px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Scientific consequence</text>
