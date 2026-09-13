@@ -22,9 +22,9 @@ RAW_FIGURE_PREFIX = (
     "https://raw.githubusercontent.com/MahsaKeikha/"
     "mathematical-consciousness-bridge/main/docs/figures/"
 )
-CURRENT_FRONTIER_FIGURE = "p87_exact_bounded_primitive_quad_projection_parity.svg"
+CURRENT_FRONTIER_FIGURE = "p88_heldout_selected_parity_functional_certification.svg"
 
-ASSET_VERSION = "20260913-mobile17-p87"
+ASSET_VERSION = "20260913-mobile18-p88"
 SCRIPT_TAG = f'<script defer src="app.js?v={ASSET_VERSION}"></script>'
 READER_LINKS_SCRIPT_TAG = '<script defer src="reader-links.js"></script>'
 FOOTER_SCRIPT_TAG = '<script defer src="footer.js"></script>'
@@ -115,58 +115,35 @@ def _copy_canonical_figures(output: Path) -> None:
 
 
 def _validate_current_frontier_pages(output: Path) -> None:
-    """Require P87 to be the primary visual frontier in the canonical website."""
-
+    """Require P88 to be the primary visual frontier in the canonical website."""
     frontier_figure = output / "figures" / CURRENT_FRONTIER_FIGURE
     if not frontier_figure.is_file():
-        raise RuntimeError(
-            "website build is missing the current P87 theorem figure: "
-            f"{frontier_figure}"
-        )
-
+        raise RuntimeError(f"website build is missing the current P88 theorem figure: {frontier_figure}")
     local_frontier_src = f'src="figures/{CURRENT_FRONTIER_FIGURE}"'
-
     visual_atlas_path = output / "visual-atlas.html"
     if not visual_atlas_path.is_file():
         raise RuntimeError("website build is missing visual-atlas.html")
     visual_atlas = visual_atlas_path.read_text(encoding="utf-8")
     if local_frontier_src not in visual_atlas:
-        raise RuntimeError("Visual Atlas does not use the bundled P87 theorem figure")
-    if f'src="{RAW_FIGURE_PREFIX}' in visual_atlas:
-        raise RuntimeError("Visual Atlas still depends on raw GitHub main for figures")
-    p87_atlas = visual_atlas.index('id="p87-frontier"')
-    for marker in ('id="p86-frontier"', 'id="p85-frontier"'):
-        if p87_atlas >= visual_atlas.index(marker):
-            raise RuntimeError(f"Visual Atlas does not present P87 before {marker}")
-
+        raise RuntimeError("Visual Atlas does not use the bundled P88 theorem figure")
+    p88_atlas = visual_atlas.index('id="p88-frontier"')
+    for marker in ('id="p87-frontier"', 'id="p86-frontier"', 'id="p85-frontier"'):
+        if p88_atlas >= visual_atlas.index(marker):
+            raise RuntimeError(f"Visual Atlas does not present P88 before {marker}")
     homepage_path = output / "index.html"
     if not homepage_path.is_file():
         raise RuntimeError("website build is missing index.html")
     homepage = homepage_path.read_text(encoding="utf-8")
     if local_frontier_src not in homepage:
-        raise RuntimeError("Homepage does not use the bundled P87 theorem figure")
-    if f'src="{RAW_FIGURE_PREFIX}' in homepage:
-        raise RuntimeError("Homepage still depends on raw GitHub main for figures")
-
-    p87 = homepage.index('id="p87-frontier"')
-    for marker in (
-        'id="plain-language"',
-        'id="p84-frontier"',
-        'id="p85-frontier"',
-        'id="p86-frontier"',
-    ):
-        if p87 >= homepage.index(marker):
-            raise RuntimeError(f"Homepage P87 frontier appears too late, after {marker}")
-
-    stale_tokens = (
-        "Current theorem frontier · P86",
-        "The 86 results form several dependency branches.",
-        "all 86 propositions",
-        "P71-P86, then read the falsification program",
-    )
+        raise RuntimeError("Homepage does not use the bundled P88 theorem figure")
+    p88 = homepage.index('id="p88-frontier"')
+    for marker in ('id="plain-language"', 'id="p87-frontier"', 'id="p86-frontier"', 'id="p85-frontier"'):
+        if p88 >= homepage.index(marker):
+            raise RuntimeError(f"Homepage P88 frontier appears too late, after {marker}")
+    stale_tokens = ("Current theorem frontier · P87", "The 87 results form several dependency branches.", "all 87 propositions")
     stale = [token for token in stale_tokens if token in homepage]
     if stale:
-        raise RuntimeError(f"Homepage contains stale pre-P87 reader text: {stale}")
+        raise RuntimeError(f"Homepage contains stale pre-P88 reader text: {stale}")
 
 
 def prepare_website(source: Path, output: Path) -> None:

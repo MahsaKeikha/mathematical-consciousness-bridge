@@ -1286,3 +1286,5 @@ The standard audit contains 660 sign-normalized functionals. The exact strict wi
 | `L86=1/192 < L87=1/96` | strict exact rational hierarchy witness | repository-original exact construction | P87 proof, implementation, tests |
 
 P87 is a conditional model-separation theorem for the declared P75 family. Its equations do not identify the latent state with consciousness or supply the still-open physical-to-experiential bridge.
+
+P88 held-out validation freezes a discovery-selected P75 box/P87 functional pair before independent validation and provides a selection-valid exact-rational finite-sample certificate.

@@ -5,15 +5,15 @@ visual record of the Mathematical Consciousness Bridge project. The canonical
 SVG archive lives in [`docs/figures/`](../docs/figures/); this gateway is derived
 from that archive by code so it cannot silently remain on an older proposition.
 
-## Current theorem frontier: P87
+## Current theorem frontier: P88
 
-![P87 current theorem frontier](../docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg)
+![P88 current theorem frontier](../docs/figures/p88_heldout_selected_parity_functional_certification.svg)
 
-Canonical figure: [`p87_exact_bounded_primitive_quad_projection_parity.svg`](../docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg)
-Theorem: [`proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md`](../docs/proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md)
-Equation provenance: [`p87_equation_provenance.md`](../docs/p87_equation_provenance.md)
+Canonical figure: [`p88_heldout_selected_parity_functional_certification.svg`](../docs/figures/p88_heldout_selected_parity_functional_certification.svg)
+Theorem: [`proposition_88_heldout_selected_parity_functional_certification.md`](../docs/proposition_88_heldout_selected_parity_functional_certification.md)
+Equation provenance: [`p88_equation_provenance.md`](../docs/p88_equation_provenance.md)
 
-For the full P71-P87 visual progression, open
+For the full P71-P88 visual progression, open
 [`CURRENT_FRONTIER.md`](CURRENT_FRONTIER.md).
 
 ## Complete reproducible figure record

@@ -4,14 +4,14 @@ This page is the reading and reference index for the **Mathematical Consciousnes
 
 **First-time reader:** begin with [Start Here](../START_HERE.md) for the shortest orientation, keep the [Glossary and Reader Vocabulary](glossary.md) nearby for terminology, use the [Reader Experience and Visual Presentation Standard](reader_experience_and_visual_standard.md) to understand how the public record is organized, and use the [Reproducibility Guide](reproducibility.md) when you want to run the code, tests, or generated figure atlases.
 
-The current documented theorem frontier is **P87**. The complete proposition record runs from **P1 through P87**. P71-P87 form a target-side methodology branch descending from the P19 physical-sufficiency question. They are not extensions of the P61-P70 calibration branch.
+The current documented theorem frontier is **P88**. The complete proposition record runs from **P1 through P88**. P71-P88 form a target-side methodology branch descending from the P19 physical-sufficiency question. They are not extensions of the P61-P70 calibration branch.
 
 ## Recommended reading order
 
 1. [Main research study](../README.md) for the complete scientific narrative and curated figures.
 2. [Bridge problem](bridge_problem.md) for the formal physical-to-experiential question.
 3. [Scientific status discipline](../README.md#scientific-status-discipline) for the distinction among definitions, proved results, implementations, numerical checks, empirical inputs, hypotheses, and open bridge claims.
-4. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P87.
+4. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P88.
 5. [P19 fundamental physical sufficiency](proposition_19_fundamental_physical_sufficiency.md) for the exact, stochastic, and differential bridge criteria.
 6. [P20-P24 finite and adaptive residual certification](theorem_roadmap.md) for finite-data and repeated-look validity.
 7. [P71 target-provenance non-circularity](proposition_71_target_provenance_noncircularity.md) for the theorem showing when a target construction makes a bridge test vacuous by design.
@@ -48,6 +48,8 @@ The current documented theorem frontier is **P87**. The complete proposition rec
 37. [P84 equation and provenance record](p84_equation_provenance.md) for common-vertex joint parity contrasts, the 220-contrast family, the strict P84 > P83 witness, and the scientific interpretation boundary.
 38. [P85 equation and provenance record](p85_equation_provenance.md) for exact three-event shared-parameter parity functionals, the 660-functional family, the strict P85 > P84 witness, and the scientific interpretation boundary.
 
+
+1. [P88 held-out selection-valid certification](proposition_88_heldout_selected_parity_functional_certification.md) for independent discovery/validation, the exact 1063-observation threshold, and the box-specific lower confidence bound.
 ## Scientific branch map
 
 | Branch | Results | Scientific role | Main entry point |
@@ -77,6 +79,8 @@ The current documented theorem frontier is **P87**. The complete proposition rec
 | Minimally weighted four-event projection-parity functional separation | P86 | Adds 10,560 exact `{1,1,1,2}` weighted four-event shared-parameter functionals beyond the complete P85 triple-functional certificate | [P86](proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md) |
 | Bounded primitive four-event projection-parity functional separation | P87 | Completes all nonzero primitive four-event coefficient vectors with `|c_i| <= 2`, yielding 39,600 exact functionals and a strict strengthening of P86 | [P87](proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md) |
 
+
+| Held-out selected-functional finite-sample certification | P88 | Freezes a discovery-selected P75 box/P87 score and validates it on independent data without a 39,600-way functional penalty | [P88](proposition_88_heldout_selected_parity_functional_certification.md) |
 ## Complete proposition index
 
 | Proposition | Direct proof | Main role |
@@ -274,3 +278,13 @@ P86 remains the previous theorem frontier and its proof, figure, implementation,
 - [P87 theorem figure](figures/p87_exact_bounded_primitive_quad_projection_parity.svg)
 
 P87 is the current theorem frontier. The physical-to-experiential bridge remains open.
+
+| P88 | [Held-out selection-valid certification](proposition_88_heldout_selected_parity_functional_certification.md) | independent held-out validation for a discovery-frozen P75 box/P87 functional |
+
+
+### P88 frontier audit links
+
+- [P88 formal proof](proposition_88_heldout_selected_parity_functional_certification.md)
+- [P88 equation provenance](p88_equation_provenance.md)
+- [P88 implementation](../src/consciousness_bridge/heldout_selected_parity_functional_certification.py)
+- [P88 exact regression tests](../tests/test_heldout_selected_parity_functional_certification.py)

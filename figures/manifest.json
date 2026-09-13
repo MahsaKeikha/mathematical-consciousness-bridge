@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "canonical_root": "docs/figures",
-  "current_frontier": "P87",
-  "current_frontier_figure": "docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg",
-  "figure_count": 145,
+  "current_frontier": "P88",
+  "current_frontier_figure": "docs/figures/p88_heldout_selected_parity_functional_certification.svg",
+  "figure_count": 146,
   "hash_algorithm": "sha256",
   "figures": [
     {
@@ -621,6 +621,14 @@
       "category": "theorem-or-architecture",
       "title": "P87 Bounded Primitive Four-Event Parity Certificate",
       "description_chars": 890
+    },
+    {
+      "path": "docs/figures/p88_heldout_selected_parity_functional_certification.svg",
+      "sha256": "ed14f67618a09be7485fb48f1cb715d885aa0f0f819426eb446643268e2a610c",
+      "bytes": 5555,
+      "category": "theorem-or-architecture",
+      "title": "P88 held-out certification for a discovery-frozen P75 box and P87 functional",
+      "description_chars": 785
     },
     {
       "path": "docs/figures/physics_mathematics_atlas.svg",

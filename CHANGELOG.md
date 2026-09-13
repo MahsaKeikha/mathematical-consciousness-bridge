@@ -353,6 +353,14 @@
 
 # Changelog
 
+## Unreleased
+
+### Promote P88 held-out selection-valid certification
+
+- Freeze discovery-selected P75 box/P87 functional pairs before independent validation and certify scalar Hoeffding error without a 39,600-way functional penalty.
+- Add exact sample-size design threshold `n=1063` for the stored 95% gap and a positive full-law lower confidence bound at `n=2400`.
+- Keep rejection explicitly box-specific unless a separate global covering argument is supplied.
+
 ## Unreleased - P85 frontier synchronization
 
 - Promoted the verified P85 exact three-event projection-parity functional certificate across proof provenance, reader navigation, figures, citation metadata, and the public website.

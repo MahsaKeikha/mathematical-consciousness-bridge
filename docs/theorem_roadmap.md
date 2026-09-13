@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P87**. The proposition record runs from **P1 through P87 with explicit dependency branches**. P71-P87 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P88**. The proposition record runs from **P1 through P88 with explicit dependency branches**. P71-P88 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -49,7 +49,9 @@ The current documented theorem frontier is **P87**. The proposition record runs 
 &\Downarrow\\
 &\text{P86: minimally weighted four-event parity functionals test compatibility beyond the complete P85 triple certificate}\\
 &\Downarrow\\
-&\text{P87: bounded primitive four-event parity functionals complete the nonzero coefficient box with |c_i| <= 2}
+&\text{P87: bounded primitive four-event parity functionals complete the nonzero coefficient box with |c_i| <= 2}\\
+&\Downarrow\\
+&\text{P88: held-out validation gives selection-valid finite-sample certification for a discovery-frozen P75 box/P87 functional}
 \end{aligned}
 }
 \]
@@ -606,9 +608,9 @@ After P87, the target-side chain has a substantially clearer scientific burden:
 
 P78 closes the global-lower-bound gap for the specific continuous P75 four-view binary latent family. P79 certifies the one-sided sampling-radius envelope. P80 strengthens the box relaxation by retaining probability normalization. P81 adds exact marginal and projected-event constraints. P82 adds exact non-cylinder residual constraints from nested projected events. P83 adds exact projection-parity observables. P84 then preserves shared-parameter compatibility across pairs of those parity observables through 220 exact joint contrasts.
 
-P86 closes the first minimally non-uniform four-event weighting step beyond the complete P85 triple-functional audit. The next computational question should not be chosen merely by increasing functional order or proposition number. A substantive continuation beyond P87 must close a separately stated mathematical or statistical gap and preserve the certified lower-bound direction. Natural candidates include an exact-rational support-function or convex relaxation of the full parity-coordinate image, with a certificate not already implied by P86, or an observable-specific finite-sample rejection theorem that propagates uncertainty through a selected P86 score rather than only through the global sixteen-cell radius. Target-view models with residual dependence, shared bias, temporal drift, or learned measurement pipelines also remain open.
+P86 closes the first minimally non-uniform four-event weighting step beyond the complete P85 triple-functional audit. The next computational question should not be chosen merely by increasing functional order or proposition number. A substantive continuation beyond P88 must close a separately stated mathematical or statistical gap and preserve the certified lower-bound direction. Natural candidates include an exact-rational support-function or convex relaxation of the full parity-coordinate image, with a certificate not already implied by P86, or an observable-specific finite-sample rejection theorem that propagates uncertainty through a selected P86 score rather than only through the global sixteen-cell radius. Target-view models with residual dependence, shared bias, temporal drift, or learned measurement pipelines also remain open.
 
-None of P71-P87 identifies a latent variable with consciousness. None proves that a failed descriptor implies nonphysical consciousness. The physical-to-experiential bridge remains open.
+None of P71-P88 identifies a latent variable with consciousness. None proves that a failed descriptor implies nonphysical consciousness. The physical-to-experiential bridge remains open.
 
 
 ## P83 predecessor frontier: exact projection-parity separation
@@ -701,6 +703,17 @@ The stronger functional uses coefficients `(1,-1,-2,2)`, empirical value `-17/24
 
 P87 remains a conditional model-separation theorem for the declared P75 family. It does not identify the latent state with consciousness or close the physical-to-experiential bridge.
 
-## After P87
+## Previous frontier boundary: P87
 
-The next frontier should not be inferred merely by increasing functional order. Any P88 claim must close a separately stated mathematical or scientific gap and must include a strict or otherwise informative certificate that is not already implied by P86.
+The next frontier should not be inferred merely by increasing functional order. P88 closes the held-out selection-validity gap. Any P89 claim must close a separately stated mathematical or scientific gap not already resolved through P88.
+
+
+## P88: held-out selection-valid finite-sample certification
+
+P88 closes a statistical gap left by the deterministic P87 search. A discovery-only rule may choose a P75 parameter box and one of the 39,600 P87 functionals, after which the pair is frozen and evaluated on independent validation data. Conditional Hoeffding concentration, certified through P79 with `K=1`, gives a box-specific full-law lower confidence bound without a functional-family union bound. The exact witness has `n_min=1063` for its specified 95% gap and a positive exact lower confidence bound at `n=2400`.
+
+Direct proof: [P88](proposition_88_heldout_selected_parity_functional_certification.md). Provenance: [P88 equation record](p88_equation_provenance.md). Implementation: [`heldout_selected_parity_functional_certification.py`](../src/consciousness_bridge/heldout_selected_parity_functional_certification.py). Tests: [`test_heldout_selected_parity_functional_certification.py`](../tests/test_heldout_selected_parity_functional_certification.py).
+
+## After P88
+
+The next statistical gap is global held-out coverage over a certified family of parameter boxes or a selection-valid procedure that controls adaptive reuse of validation information without requiring a single pre-frozen box. Any continuation must preserve the distinction between box-specific model rejection and rejection of the complete admissible P75 family.

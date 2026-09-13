@@ -176,3 +176,5 @@ P86 is conditional on the declared P75 model and should not be cited as an ident
 ## Current theorem frontier
 
 The current documented theorem frontier is **P87**. Proposition 87 completes the sign-normalized primitive nonzero four-event coefficient box with `0 < |c_i| <= 2`, auditing 39,600 exact functionals. On the stored exact rational witness, the complete P86 certificate is `1/192` and P87 certifies `1/96`. This is a conditional model-separation result for the declared P75 family, not an identification or definition of consciousness.
+
+P88 held-out validation freezes a discovery-selected P75 box/P87 functional pair before independent validation and provides a selection-valid exact-rational finite-sample certificate.

@@ -1,6 +1,6 @@
-# Candidate P88 Equation Provenance
+# P88 Equation Provenance
 
-This record separates inherited concentration machinery, inherited P87 algebra, and the new sample-splitting argument. Candidate P88 remains unpromoted until its implementation and full repository regression gates are green.
+This record separates inherited concentration machinery, inherited P87 algebra, and the new sample-splitting argument. P88 is the proved conditional finite-sample frontier theorem after full repository regression audit.
 
 ## 1. Inherited P87 functional algebra
 
@@ -26,7 +26,7 @@ For IID variables `Y_k` in `[0,1]`, the standard two-sided Hoeffding inequality 
 \Pr\left(\left|\frac1n\sum_kY_k-EY_k\right|>t\right)\le2e^{-2nt^2}.
 \]
 
-Candidate P88 does not alter Hoeffding. It applies the bound to one held-out score after the entire tested box/functional pair has been frozen independently of the validation data.
+P88 does not alter Hoeffding. It applies the bound to one held-out score after the entire tested box/functional pair has been frozen independently of the validation data.
 
 ## 3. Conditional-on-discovery frozen-pair argument
 
@@ -66,7 +66,7 @@ P79 constructs an exact rational upper envelope for
 \sqrt{\frac{\log(2K/\alpha)}{2n}}.
 \]
 
-Candidate P88 invokes the same implementation with `K=1`, producing a certified rational upper bound on
+P88 invokes the same implementation with `K=1`, producing a certified rational upper bound on
 
 \[
 \sqrt{\frac{\log(2/\alpha)}{2n}}.
@@ -154,8 +154,24 @@ The exact sixteen-cell P79 radius on the same sample is `615553/16777216`, while
 | rational upper radius | inherited one-sided numerical certification | P79 implementation |
 | conditioning on an independent discovery-frozen box/functional pair | new statistical argument | conditional Hoeffding plus tower property |
 | held-out population gap lower bound | new theorem consequence | interval-distance 1-Lipschitz property |
-| `701849/201326592` strict witness | repository-original exact regression result | candidate P88 tests |
+| `701849/201326592` strict witness | repository-original exact regression result | P88 tests |
 
 ## 9. Scientific boundary
 
 The implementation cannot establish that discovery and validation datasets were truly independent, nor can it prove that the tested box and functional were frozen before validation was inspected; those are experimental-provenance obligations. The result is box-specific unless a valid global covering argument is supplied. It does not define consciousness, identify the P75 latent variable with experience, establish nonphysicality, or solve the physical-to-experiential bridge.
+
+
+## 10. Exact design-threshold provenance
+
+The ideal scalar Hoeffding inequality $R\sqrt{\log(2/\alpha)/(2n)}<\Delta$
+rearranges to
+
+\[
+n>\frac{R^2\log(2/\alpha)}{2\Delta^2}.
+\]
+
+The repository implementation does not round this expression to decide the
+certificate.  It searches integer $n$ and evaluates the P79 rational upper
+envelope at each candidate.  For $R=5$, $\Delta=5/24$, $\alpha=1/20$, 12
+series terms, and 24 square-root bits, exact regression checks prove $n=1062$
+is insufficient and $n=1063$ is sufficient.

@@ -1,12 +1,12 @@
-# Candidate P88: Held-Out Certification for a Discovery-Selected P87 Box/Functional Test
+# Proposition 88: Held-Out Certification for a Discovery-Frozen P75 Box/P87 Functional Test
 
 ## Status
 
-**Candidate theorem under exact regression audit.** This document does not promote the public theorem frontier beyond P87 yet.
+**Proved conditional finite-sample theorem with exact computational certificate.**
 
 P87 can exhaust 39,600 exact four-event parity functionals and choose the strongest incompatibility witness for a declared P75 parameter box. That creates a finite-sample selection question: if the same data choose the tested P75 box or functional and then validate that choice, a naive single-functional confidence statement ignores selection.
 
-Candidate P88 closes that gap under an explicit sample-splitting design. A discovery sample may choose a P75 parameter box and a P87 functional by any discovery-only rule. The **pair is then frozen before an independent validation sample is examined**. Conditional on discovery, both the model interval and validation score are fixed, so scalar Hoeffding concentration applies without a 39,600-way functional multiplicity penalty.
+P88 closes that gap under an explicit sample-splitting design. A discovery sample may choose a P75 parameter box and a P87 functional by any discovery-only rule. The **pair is then frozen before an independent validation sample is examined**. Conditional on discovery, both the model interval and validation score are fixed, so scalar Hoeffding concentration applies without a 39,600-way functional multiplicity penalty.
 
 The theorem is conditional on the declared P75 family, the frozen tested box, and genuine discovery/validation independence. It certifies separation from the P75 laws generated inside the frozen box. It is a global P75-family rejection only if that box itself covers the full admissible family or a separately valid covering argument extends the certificate. It does not identify the P75 latent state with consciousness, prove consciousness is nonphysical, validate an alternative ontology, or solve the physical-to-experiential bridge.
 
@@ -90,7 +90,7 @@ lies in `[0,1]`. Hoeffding therefore gives
 
 The bound holds for every discovery realization. Averaging over `D` therefore gives the same unconditional coverage. There is no union bound over the 39,600 candidate functionals because only one discovery-frozen functional is evaluated on validation data. The box may also have been selected on discovery data because its interval is frozen before validation is inspected.
 
-Candidate P88 reuses P79 with `alphabet_size=1` to construct a rational upper bound
+P88 reuses P79 with `alphabet_size=1` to construct a rational upper bound
 
 \[
 \overline r_{n,\alpha}
@@ -207,7 +207,7 @@ so
 =\frac{3509245}{50331648}>0.
 \]
 
-With `D(Q)=20`, candidate P88 certifies
+With `D(Q)=20`, P88 certifies
 
 \[
 \boxed{
@@ -238,7 +238,7 @@ Thus that particular P87-lower-bound-to-P77-global-radius handoff is inconclusiv
 
 ## 6. What the candidate theorem does and does not solve
 
-Candidate P88 solves a real post-P87 statistical problem: a box/functional test chosen from discovery data can be validated on independent held-out data without paying a family-size union bound over the functional search.
+P88 solves a real post-P87 statistical problem: a box/functional test chosen from discovery data can be validated on independent held-out data without paying a family-size union bound over the functional search.
 
 It does **not** make arbitrary reuse of the same data valid. If discovery and validation overlap, or if the box/function is revised after validation is inspected, the proof does not apply. The software cannot certify experimental independence; that is a data-provenance obligation. A rejection applies to the law set inside the frozen box, not automatically to the entire P75 family. Non-rejection remains inconclusive, and no statistical latent variable is identified with consciousness.
 
@@ -247,3 +247,93 @@ Implementation: `src/consciousness_bridge/heldout_selected_parity_functional_cer
 Regression tests: `tests/test_heldout_selected_parity_functional_certification.py`
 
 Equation provenance: `docs/p88_candidate_equation_provenance.md`
+
+
+---
+
+## 7. Exact held-out sample-size design threshold
+
+For a discovery-frozen functional with exact score width $R$ and a specified
+functional interval gap $\Delta>0$, the ideal Hoeffding rejection inequality is
+
+\[
+R\sqrt{\frac{\log(2/\alpha)}{2n}}<\Delta.
+\]
+
+Equivalently,
+
+\[
+\boxed{
+n>\frac{R^2\log(2/\alpha)}{2\Delta^2}.
+}
+\]
+
+P88 does not use a floating-point approximation to decide the implemented
+threshold.  The function `p88_minimum_validation_sample_size_for_gap_exact`
+searches for the smallest integer $n$ for which the P79-certified rational
+upper radius satisfies the strict inequality.
+
+For the stored witness, $R=5$, $\Delta=5/24$, and $\alpha=1/20$, so the ideal
+expression is $n>288\log 40$.  With the declared P79 settings (12 logarithm
+series terms and a 24-bit dyadic square-root ceiling), the exact certified
+threshold is
+
+\[
+\boxed{n_{\min}=1063.}
+\]
+
+At $n=1062$ the certified unit-range radius is $349591/8388608$ and the strict
+rejection inequality still fails.  At $n=1063$ the unit-range radius is
+$698853/16777216$ and the strict inequality holds.  This is a deterministic
+design threshold for a *specified* gap; it is not a prospective guarantee that
+a random validation sample will realize that gap.
+
+---
+
+## 8. Proposition 88
+
+Let discovery data $D$ determine a P75 parameter box $B_D$ and one P87
+functional $Q_D$.  Let an IID validation sample of size $n$ from population law
+$p$ be independent of $D$.  Conditional on $D$, define the exact P75 interval
+$I_{B_D}(Q_D)$, exact score width $R_D$, empirical validation value
+$\widehat Q_D$, exact centered transfer norm $D(Q_D)$, and a P79-certified
+rational upper bound $\bar r_{n,\alpha}$ on
+$\sqrt{\log(2/\alpha)/(2n)}$.  Then with probability at least $1-\alpha$,
+
+\[
+\boxed{
+\inf_{q\in\mathcal M_{B_D}}\|p-q\|_\infty
+\ge
+\frac{
+[\operatorname{dist}(\widehat Q_D,I_{B_D}(Q_D))
+-R_D\bar r_{n,\alpha}]_+
+}{D(Q_D)}.
+}
+\]
+
+Consequently, under the null $p\in\mathcal M_{B_D}$, the rejection rule
+
+\[
+\operatorname{dist}(\widehat Q_D,I_{B_D}(Q_D))
+>R_D\bar r_{n,\alpha}
+\]
+
+has conditional type-I error at most $\alpha$, and the same coverage holds
+unconditionally after averaging over discovery data.  No union bound over the
+39,600-function discovery family is required because exactly one box/functional
+pair is frozen before validation.
+
+The theorem is box-specific.  It becomes a statement about the full admissible
+P75 family only when the frozen box covers that family or a separately certified
+covering argument extends the result to every required box.
+
+---
+
+## 9. Scientific interpretation boundary
+
+P88 is a finite-sample validation theorem for a declared statistical model set.
+It does not establish that the P75 latent variable is consciousness; it does not
+prove consciousness is nonphysical; it does not validate an alternative model
+after rejection; and it does not close the physical-to-experiential bridge.
+The software also cannot establish experimental independence or prove that the
+tested box/function was genuinely frozen before validation was inspected.

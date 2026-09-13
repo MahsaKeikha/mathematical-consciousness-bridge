@@ -1,6 +1,6 @@
 # Detailed proposition record
 
-## Complete P1 to P87 chronology
+## Complete P1 to P88 chronology
 
 This page preserves the proposition-by-proposition development history of the Mathematical Consciousness Bridge research program. It is intentionally separate from the main README so a first-time reader can follow the scientific argument without first learning the internal chronology of the project.
 
@@ -14,7 +14,7 @@ A first-time reader should not read this page as 84 disconnected proofs. Use it 
 
 ---
 
-## Complete P1 to P87 chronology
+## Complete P1 to P88 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
@@ -308,3 +308,16 @@ The exact regression witness has `L84 = 0`, empirical functional value `5/8`, ex
 - Implementation: [`bounded_primitive_quad_projection_parity_functional_separation.py`](../src/consciousness_bridge/bounded_primitive_quad_projection_parity_functional_separation.py)
 - Tests: [`test_bounded_primitive_quad_projection_parity_functional_separation.py`](../tests/test_bounded_primitive_quad_projection_parity_functional_separation.py)
 - Figure: [`p87_exact_bounded_primitive_quad_projection_parity.svg`](figures/p87_exact_bounded_primitive_quad_projection_parity.svg)
+
+
+## Proposition 88: Held-out certification for a discovery-frozen P75 box/P87 functional test
+
+P88 freezes a P75 parameter box and one P87 functional using information independent of a subsequent validation sample. Conditional on discovery, one scalar score is fixed, so P79-certified Hoeffding concentration gives a selection-valid held-out radius without a 39,600-function union bound. The exact P87 centered norm transfers the resulting population functional gap into a full-law L-infinity lower confidence bound against the law set generated inside the frozen box.
+
+For the stored exact witness, score width `R=5`, observed gap `5/24`, and `alpha=1/20`. The exact certified design threshold is `n=1063`; at `n=2400`, the full-law lower confidence bound is `701849/201326592 > 0`. The box and functional must be frozen before validation is inspected, and box-specific rejection is not automatically global P75 rejection.
+
+- Proof: [proposition_88_heldout_selected_parity_functional_certification.md](proposition_88_heldout_selected_parity_functional_certification.md)
+- Provenance: [p88_equation_provenance.md](p88_equation_provenance.md)
+- Implementation: [`heldout_selected_parity_functional_certification.py`](../src/consciousness_bridge/heldout_selected_parity_functional_certification.py)
+- Tests: [`test_heldout_selected_parity_functional_certification.py`](../tests/test_heldout_selected_parity_functional_certification.py)
+- Figure: [`p88_heldout_selected_parity_functional_certification.svg`](figures/p88_heldout_selected_parity_functional_certification.svg)

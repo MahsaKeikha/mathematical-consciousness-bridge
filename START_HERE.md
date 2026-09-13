@@ -1,6 +1,6 @@
 # Start Here: Mathematical Consciousness Bridge
 
-**A reader-first guide to the research question, the 87-result theorem program, the code, and the scientific boundaries.**
+**A reader-first guide to the research question, the 88-result theorem program, the code, and the scientific boundaries.**
 
 If this is your first time in the repository, start on this page before opening the full README or individual theorem files.
 
@@ -10,7 +10,7 @@ If this is your first time in the repository, start on this page before opening 
 
 The project does **not** begin by choosing a favorite formula for consciousness. It begins by asking what a scientifically defensible bridge claim would have to survive: representation changes, hidden variables, coarse-graining, target circularity, noisy measurement, non-identifiability, finite data, model inadequacy, and uncertified optimization.
 
-The current release is **v0.82.0**. The repository contains **87 proposition-level results**. The current theorem frontier is **P87**. The physical-to-experiential bridge itself remains open.
+The current release is **v0.82.0**. The repository contains **88 proposition-level results**. The current theorem frontier is **P88**. The physical-to-experiential bridge itself remains open.
 
 ---
 
@@ -21,7 +21,7 @@ flowchart LR
     A[Physical system\nstate, dynamics, interventions] --> B[Operational physical description\ninvariance, causality, time, scale]
     B --> C[Physical sufficiency test\nP19-P24]
     C --> D[Target integrity\nprovenance + measurement\nP71-P74]
-    D --> E[Target-model adequacy\nP75-P87]
+    D --> E[Target-model adequacy\nP75-P88]
     E --> F[Finite-data decision\ncertified rejection / inconclusive]
     F --> G[Physical-to-experiential bridge\nSTILL OPEN]
 
@@ -64,7 +64,7 @@ If you want the shortest coherent path before opening proofs:
 2. Read the six recurring terms on the public [Start Here page](website/start-here.html#reader-primer), or keep the [Glossary](docs/glossary.md) open.
 3. Read P19 in plain language as the core sufficiency question.
 4. Read P71-P76 as target integrity and model-adequacy safeguards.
-5. Read P77-P87 as the progression from finite-data model-set separation to exact shared-parameter parity incompatibility.
+5. Read P77-P88 as the progression from finite-data model-set separation to exact shared-parameter parity incompatibility.
 6. Finish with the scientific boundaries: rejection of a declared model is not an ontological conclusion about consciousness.
 
 For the presentation rules used across the website and documentation, see the [Reader Experience and Visual Presentation Standard](docs/reader_experience_and_visual_standard.md).
@@ -99,13 +99,13 @@ The proposition numbers record development order. They do **not** imply that eve
 | **P45-P60** | Adaptive experiment design, scheduling, switching, and transition calibration | Collect evidence efficiently while preserving validity. |
 | **P61-P70** | Calibration and optimization | Solve downstream finite-resource allocation problems once the scientific witness is already defined. |
 | **P71-P74** | Target provenance and target measurement | Prevent circular targets and quantify whether noisy target measurements are identifiable and reliable. |
-| **P75-P87** | Target-model adequacy and certified continuous-family separation | Test the declared target-measurement model itself, including finite-data rejection and exact-rational global separation certificates. |
+| **P75-P88** | Target-model adequacy and certified continuous-family separation | Test the declared target-measurement model itself, including finite-data rejection and exact-rational global separation certificates. |
 
 For the complete one-row-per-proposition index, use the [Theorem Roadmap](docs/theorem_roadmap.md) and [Research Navigation](docs/research_navigation.md).
 
 ---
 
-## The current frontier: P71-P87 in plain language
+## The current frontier: P71-P88 in plain language
 
 The newest branch returns directly to a basic scientific problem: before a physical descriptor can be judged sufficient for an experiential target, how do we know the **target itself** and the **way we measure it** are scientifically defensible?
 
@@ -183,7 +183,7 @@ This structure is designed so that a skeptical reader can audit the mathematics 
 | \(I(E;\Omega\mid T)\) | residual conditional information used in the stochastic sufficiency formulation |
 | \(E^\star\) | latent target before target-measurement noise |
 | \(Y\) | observed target measurement |
-| \(P75\) model | declared four-view binary latent target-measurement family used in P75-P87 |
+| \(P75\) model | declared four-view binary latent target-measurement family used in P75-P88 |
 | \(L_{78},L_{80},L_{81},L_{82},L_{83},L_{84}\) | progressively tighter certified lower bounds used in continuous-model separation |
 
 Notation is proposition-specific when needed; every proof file defines its local objects explicitly.
@@ -222,8 +222,8 @@ A reader should leave the repository with five boundaries completely clear:
 ## Current research status
 
 **Version:** 0.82.0  
-**Proposition frontier:** P87
-**Proposition-level results:** 87
+**Proposition frontier:** P88
+**Proposition-level results:** 88
 **Scientific status of the bridge:** open  
 **Repository standard:** theorem + proof + implementation + tests + provenance + explicit scientific boundary where applicable
 
@@ -273,3 +273,14 @@ P87 is the current exact theorem frontier. It exhausts every sign-normalized pri
 - [P87 figure](docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg)
 
 The result remains conditional on the declared P75 target-measurement family. It does not identify the latent state with consciousness, validate an alternative ontology, or close the physical-to-experiential bridge.
+
+
+## Current frontier: P88
+
+P88 gives selection-valid finite-sample certification for a discovery-frozen P75 box/P87 functional pair evaluated once on independent validation data. The exact witness has a 95% certified validation threshold of **1063** observations for the specified gap and a positive exact lower confidence bound at `n=2400`. The result applies to the frozen box unless a separate global covering argument is supplied.
+
+- [P88 proof](docs/proposition_88_heldout_selected_parity_functional_certification.md)
+- [P88 equation provenance](docs/p88_equation_provenance.md)
+- [P88 implementation](src/consciousness_bridge/heldout_selected_parity_functional_certification.py)
+- [P88 exact tests](tests/test_heldout_selected_parity_functional_certification.py)
+- [P88 figure](docs/figures/p88_heldout_selected_parity_functional_certification.svg)
