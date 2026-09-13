@@ -26,8 +26,8 @@ jobs:
           path = Path("tests/test_scholarly_provenance_surface.py")
           text = path.read_text(encoding="utf-8")
           text = text.replace(
-              '            "External methodological background plus repository formulation",',
-              '            "external methodological background plus repository formulation",',
+              "External methodological background plus repository formulation",
+              "external methodological background plus repository formulation",
               1,
           )
           path.write_text(text, encoding="utf-8")
