@@ -1,0 +1,198 @@
+name: fix-p86-homepage-visual
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/fix-p86-homepage-visual.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - name: Extend canonical figure publication contract to homepage
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          root = Path('.')
+          syncer = root / 'scripts' / 'sync_figure_publication.py'
+          text = syncer.read_text(encoding='utf-8')
+
+          old = 'VISUAL_ATLAS = ROOT / "website" / "visual-atlas.html"\nVERIFIER = ROOT / "scripts" / "verify_repository.py"'
+          new = 'VISUAL_ATLAS = ROOT / "website" / "visual-atlas.html"\nHOME = ROOT / "website" / "index.html"\nVERIFIER = ROOT / "scripts" / "verify_repository.py"'
+          if old in text:
+              text = text.replace(old, new, 1)
+          elif 'HOME = ROOT / "website" / "index.html"' not in text:
+              raise SystemExit('could not add HOME constant')
+
+          function = r'''
+
+def _normalize_homepage(text: str) -> str:
+    """Make P86 the first substantive theorem visual on the homepage."""
+
+    pattern = re.compile(r'\s*<section id="p86-frontier".*?</section>\s*', re.DOTALL)
+    text, count = pattern.subn("\n", text, count=1)
+    if count != 1:
+        raise RuntimeError(f"expected exactly one P86 homepage section, found {count}")
+
+    marker = "<!-- current-frontier-home: P86 -->"
+    text = re.sub(r"\s*" + re.escape(marker) + r"\s*", "\n", text)
+    hero = re.search(r'<section class="hero">.*?</section>', text, re.DOTALL)
+    if hero is None:
+        raise RuntimeError("could not locate homepage hero section")
+
+    prefix = text[: hero.end()].rstrip()
+    suffix = text[hero.end() :].lstrip()
+    insertion = "\n\n" + marker + "\n" + _p86_visual_section() + "\n\n"
+    result = prefix + insertion + suffix
+    had_final_newline = result.endswith("\n")
+    result = "\n".join(line.rstrip() for line in result.splitlines())
+    return result + ("\n" if had_final_newline else "")
+'''
+          anchor = '\n\ndef _expected_outputs() -> dict[Path, str]:'
+          if 'def _normalize_homepage' not in text:
+              if anchor not in text:
+                  raise SystemExit('could not locate expected outputs anchor')
+              text = text.replace(anchor, function + anchor, 1)
+
+          old = '''    visual_source = VISUAL_ATLAS.read_text(encoding="utf-8")\n    return {'''
+          new = '''    visual_source = VISUAL_ATLAS.read_text(encoding="utf-8")\n    home_source = HOME.read_text(encoding="utf-8")\n    return {'''
+          if old in text:
+              text = text.replace(old, new, 1)
+          elif 'home_source = HOME.read_text' not in text:
+              raise SystemExit('could not add homepage source')
+
+          old = '''        VISUAL_ATLAS: _normalize_visual_atlas(visual_source),\n    }'''
+          new = '''        VISUAL_ATLAS: _normalize_visual_atlas(visual_source),\n        HOME: _normalize_homepage(home_source),\n    }'''
+          if old in text:
+              text = text.replace(old, new, 1)
+          elif 'HOME: _normalize_homepage(home_source)' not in text:
+              raise SystemExit('could not add homepage expected output')
+
+          syncer.write_text(text, encoding='utf-8')
+
+          tests = root / 'tests' / 'test_figure_publication_sync.py'
+          text = tests.read_text(encoding='utf-8')
+          old = 'VISUAL_ATLAS = ROOT / "website" / "visual-atlas.html"\nSYNCER ='
+          new = 'VISUAL_ATLAS = ROOT / "website" / "visual-atlas.html"\nHOME = ROOT / "website" / "index.html"\nSYNCER ='
+          if old in text:
+              text = text.replace(old, new, 1)
+          elif 'HOME = ROOT / "website" / "index.html"' not in text:
+              raise SystemExit('could not add HOME to tests')
+
+          test_block = r'''
+
+def test_homepage_leads_with_p86_before_historical_frontiers() -> None:
+    text = HOME.read_text(encoding="utf-8")
+    p86 = text.index('id="p86-frontier"')
+    plain = text.index('id="plain-language"')
+    p84 = text.index('id="p84-frontier"')
+    p85 = text.index('id="p85-frontier"')
+
+    assert p86 < plain
+    assert p86 < p84
+    assert p86 < p85
+    current = text[p86:plain]
+    assert "Current theorem frontier · P86" in current
+    assert P86_FIGURE in current
+    assert "L85 = 0 &lt; L86 = 1/192" in current
+    assert "weighted_quad_projection_parity_functional_separation.py" in current
+    assert "test_weighted_quad_projection_parity_functional_separation.py" in current
+    assert "Previous theorem frontier · P84" in text[p84:]
+    assert "Previous theorem frontier · P85" in text[p85:]
+'''
+          anchor = '\n\ndef test_figure_publication_synchronizer_reports_zero_drift() -> None:'
+          if 'def test_homepage_leads_with_p86_before_historical_frontiers' not in text:
+              if anchor not in text:
+                  raise SystemExit('could not add homepage test')
+              text = text.replace(anchor, test_block + anchor, 1)
+
+          old = '''    atlas = (site / "visual-atlas.html").read_text(encoding="utf-8")\n    assert f'src="figures/{P86_FIGURE}"' in atlas\n    assert f'src="{RAW_PREFIX}' not in atlas'''
+          new = '''    atlas = (site / "visual-atlas.html").read_text(encoding="utf-8")\n    assert f'src="figures/{P86_FIGURE}"' in atlas\n    assert f'src="{RAW_PREFIX}' not in atlas\n\n    home = (site / "index.html").read_text(encoding="utf-8")\n    assert f'src="figures/{P86_FIGURE}"' in home\n    assert f'src="{RAW_PREFIX}' not in home\n    assert home.index('id="p86-frontier"') < home.index('id="plain-language"')\n    assert home.index('id="p86-frontier"') < home.index('id="p85-frontier"')'''
+          if old in text:
+              text = text.replace(old, new, 1)
+          elif "home.index('id=\"p86-frontier\"')" not in text:
+              raise SystemExit('could not extend deployment test')
+          tests.write_text(text, encoding='utf-8')
+
+          workflow = root / '.github' / 'workflows' / 'figures.yml'
+          text = workflow.read_text(encoding='utf-8')
+          token = '      - "website/visual-atlas.html"\n'
+          replacement = '      - "website/index.html"\n      - "website/visual-atlas.html"\n'
+          if '      - "website/index.html"\n' not in text:
+              text = text.replace(token, replacement)
+          build_token = '''          grep -q 'src="figures/p86_exact_minimally_weighted_quad_projection_parity.svg"' _site/visual-atlas.html\n'''
+          build_replacement = build_token + '''          grep -q 'src="figures/p86_exact_minimally_weighted_quad_projection_parity.svg"' _site/index.html\n          python - <<'PY2'\n          from pathlib import Path\n          text = Path('_site/index.html').read_text(encoding='utf-8')\n          p86 = text.index('id="p86-frontier"')\n          assert p86 < text.index('id="plain-language"')\n          assert p86 < text.index('id="p84-frontier"')\n          assert p86 < text.index('id="p85-frontier"')\n          PY2\n'''
+          if "Path('_site/index.html')" not in text:
+              if build_token not in text:
+                  raise SystemExit('could not extend figure workflow build gate')
+              text = text.replace(build_token, build_replacement, 1)
+          workflow.write_text(text, encoding='utf-8')
+
+          pages = root / '.github' / 'workflows' / 'pages.yml'
+          text = pages.read_text(encoding='utf-8')
+          build_token = '''          grep -q 'src="figures/p86_exact_minimally_weighted_quad_projection_parity.svg"' _site/visual-atlas.html\n'''
+          build_replacement = build_token + '''          grep -q 'src="figures/p86_exact_minimally_weighted_quad_projection_parity.svg"' _site/index.html\n          python - <<'PY2'\n          from pathlib import Path\n          text = Path('_site/index.html').read_text(encoding='utf-8')\n          p86 = text.index('id="p86-frontier"')\n          assert p86 < text.index('id="plain-language"')\n          assert p86 < text.index('id="p84-frontier"')\n          assert p86 < text.index('id="p85-frontier"')\n          PY2\n'''
+          if "Path('_site/index.html')" not in text:
+              if build_token not in text:
+                  raise SystemExit('could not extend Pages gate')
+              text = text.replace(build_token, build_replacement, 1)
+          pages.write_text(text, encoding='utf-8')
+
+          for obsolete in (
+              root / 'scripts' / 'sync_visual_frontier.py',
+              root / 'tests' / 'test_visual_frontier_sync.py',
+          ):
+              if obsolete.exists():
+                  obsolete.unlink()
+          PY
+      - name: Synchronize P86 visual publication surfaces
+        run: python scripts/sync_figure_publication.py
+      - name: Install repository test environment
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+      - name: Verify figure and reader contracts
+        run: |
+          python scripts/sync_figure_publication.py --check
+          python -m pytest -q tests/test_figure_publication_sync.py tests/test_figure_documentation_integrity.py tests/test_reader_experience.py tests/test_website_research_orientation.py
+          python scripts/verify_repository.py
+      - name: Verify exact Pages build ordering
+        run: |
+          python scripts/prepare_website.py --source website --output _site
+          test -f _site/figures/p86_exact_minimally_weighted_quad_projection_parity.svg
+          grep -q 'src="figures/p86_exact_minimally_weighted_quad_projection_parity.svg"' _site/index.html
+          grep -q 'src="figures/p86_exact_minimally_weighted_quad_projection_parity.svg"' _site/visual-atlas.html
+          python - <<'PY'
+          from pathlib import Path
+          for name in ('index.html', 'visual-atlas.html'):
+              text = (Path('_site') / name).read_text(encoding='utf-8')
+              p86 = text.index('id="p86-frontier"')
+              assert p86 < text.index('id="p85-frontier"')
+          home = Path('_site/index.html').read_text(encoding='utf-8')
+          assert home.index('id="p86-frontier"') < home.index('id="plain-language"')
+          PY
+          git diff --check
+      - name: Commit synchronized homepage visual contract
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/sync_figure_publication.py scripts/prepare_website.py tests/test_figure_publication_sync.py .github/workflows/figures.yml .github/workflows/pages.yml website/index.html website/visual-atlas.html figures docs/figures/README.md
+          git add -u scripts/sync_visual_frontier.py tests/test_visual_frontier_sync.py
+          if git diff --cached --quiet; then
+            echo "No synchronized changes required."
+            exit 0
+          fi
+          git commit -m "Make P86 the primary website theorem visual"
+          git push
