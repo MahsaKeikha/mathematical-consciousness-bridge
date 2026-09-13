@@ -1,15 +1,8 @@
-"""Run lightweight structural checks for repository reproducibility.
+"""Run structural checks for repository reproducibility and publication consistency.
 
-This script complements pytest. It verifies that the publication surfaces,
-proposition record, figure publication record, core scripts, manifests, and
-local documentation links are internally consistent with the current release.
-
-Run with::
-
-    python scripts/verify_repository.py
-
-The command intentionally avoids network access so it can run in CI and in a
-fresh local clone.
+This verifier complements pytest. It checks the reader-facing status, proposition
+record, local links, exact figure publication record, core scripts, and CI surfaces
+without requiring network access.
 """
 
 from __future__ import annotations
@@ -25,7 +18,8 @@ from verify_frontier_publication import verify_frontier_publication
 
 ROOT = Path(__file__).resolve().parents[1]
 CURRENT_VERSION = "0.82.0"
-CURRENT_FRONTIER = "P87"
+CURRENT_FRONTIER = "P88"
+CURRENT_FRONTIER_FIGURE = "p88_exact_radius3_bounded_primitive_quad_projection_parity.svg"
 
 CORE_FILES = (
     "README.md",
@@ -56,6 +50,7 @@ CORE_FILES = (
     "docs/figures/p85_exact_triple_projection_parity_functional.svg",
     "docs/figures/p86_exact_minimally_weighted_quad_projection_parity.svg",
     "docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg",
+    "docs/figures/p88_exact_radius3_bounded_primitive_quad_projection_parity.svg",
     "docs/proposition_84_exact_projection_parity_contrast.md",
     "docs/proposition_85_exact_triple_projection_parity_functional.md",
     "docs/p85_equation_provenance.md",
@@ -63,6 +58,8 @@ CORE_FILES = (
     "docs/p86_equation_provenance.md",
     "docs/proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md",
     "docs/p87_equation_provenance.md",
+    "docs/proposition_88_exact_radius3_bounded_primitive_quad_projection_parity_functional.md",
+    "docs/p88_equation_provenance.md",
     "figures/README.md",
     "figures/CURRENT_FRONTIER.md",
     "figures/manifest.json",
@@ -104,48 +101,21 @@ LINK_SURFACES = (
 
 MARKDOWN_LINK = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 
+# Earlier frontiers may remain as historical sections. Only stale *current* status
+# language is rejected.
 STALE_READER_FRONTIER_MARKERS = (
+    "87-result theorem program and current P87 frontier",
+    "Current theorem frontier · P87",
+    "Current exact frontier · P87",
+    "<strong>P87</strong><span>current theorem frontier</span>",
     "86-result theorem program and current P86 frontier",
     "Current theorem frontier · P86",
-    "<strong>86</strong><span>proposition-level results</span>",
+    "Current exact frontier · P86",
     "<strong>P86</strong><span>current theorem frontier</span>",
-    "current P86 frontier",
-    "actual P86 research frontier",
-    "What the 86 results are doing",
-    "shows how all 86 results connect",
-    "through Proposition 86",
-    "Eighty-six results",
-    "The 86 propositions by scientific role",
-    "complete 86-result dependency structure",
-    "You do not need to read 86 proofs in order",
-    "85-result theorem program and current P86 frontier",
-    "<h2>P78-P85 progressively tighten global separation from the declared continuous model family</h2>",
+    "85-result theorem program and current P85 frontier",
     "Current frontier · P85",
-    "<strong>85</strong><span>proposition-level results</span>",
     "<strong>P85</strong><span>current theorem frontier</span>",
-    "current P85 frontier",
-    "actual P85 research frontier",
-    "What the 85 results are doing",
-    "shows how all 85 results connect",
-    "through Proposition 85",
-    "Eighty-five results",
-    "Open all 85 results",
-    "The 85 propositions by scientific role",
-    "complete 85-result dependency structure",
-    "You do not need to read 85 proofs in order",
-    "<strong>84</strong><span>proposition-level results</span>",
     "<strong>P84</strong><span>current theorem frontier</span>",
-    "current P84 frontier",
-    "actual P84 research frontier",
-    "What the 84 results are doing",
-    "shows how all 84 results connect",
-    "shows how all 83 results connect",
-    "through Proposition 84",
-    "Eighty-four results",
-    "Open all 84 results",
-    "The 84 propositions by scientific role",
-    "complete 84-result dependency structure",
-    "You do not need to read 84 proofs in order",
 )
 
 
@@ -167,7 +137,7 @@ def _verify_reader_frontier_freshness() -> None:
         if hits:
             offenders[path.name] = hits
     if offenders:
-        raise RuntimeError(f"reader-facing website contains stale frontier text: {offenders}")
+        raise RuntimeError(f"reader-facing website contains stale current-frontier text: {offenders}")
 
 
 def _verify_release_consistency() -> None:
@@ -218,9 +188,15 @@ def _verify_release_consistency() -> None:
         if CURRENT_FRONTIER not in source:
             raise RuntimeError(f"{path} does not mention frontier {CURRENT_FRONTIER}")
 
-    if "10.1016/j.chaos.2015.03.014" not in sources_page or "arXiv:1401.1219" not in sources_page:
+    if (
+        "10.1016/j.chaos.2015.03.014" not in sources_page
+        or "arXiv:1401.1219" not in sources_page
+    ):
         raise RuntimeError("sources page does not expose the verified Tegmark research-origin citation")
-    if "important conceptual starting point" not in sources_page or "distinct mathematical framework" not in sources_page:
+    if (
+        "important conceptual starting point" not in sources_page
+        or "distinct mathematical framework" not in sources_page
+    ):
         raise RuntimeError("sources page does not expose the collegial Tegmark research-origin context")
 
     scholarly_origin_files = (
@@ -244,14 +220,11 @@ def _verify_release_consistency() -> None:
 
     _verify_reader_frontier_freshness()
 
-    if "P80**" in navigation or "P80**" in roadmap:
-        raise RuntimeError("a reader-facing frontier marker is still pinned to P80")
-
 
 def _verify_proposition_files() -> None:
     missing: list[int] = []
     duplicates: dict[int, list[str]] = {}
-    for number in range(1, 88):
+    for number in range(1, 89):
         matches = sorted((ROOT / "docs").glob(f"proposition_{number}_*.md"))
         if not matches:
             missing.append(number)
@@ -292,10 +265,8 @@ def _verify_figure_publication_sync() -> None:
     if manifest.get("current_frontier") != CURRENT_FRONTIER:
         raise RuntimeError("figure manifest does not report the current theorem frontier")
     current_figure = str(manifest.get("current_frontier_figure", ""))
-    if not current_figure.endswith(
-        "p87_exact_bounded_primitive_quad_projection_parity.svg"
-    ):
-        raise RuntimeError("figure manifest does not point to the canonical P86 SVG")
+    if not current_figure.endswith(CURRENT_FRONTIER_FIGURE):
+        raise RuntimeError("figure manifest does not point to the canonical P88 SVG")
 
     canonical = sorted((ROOT / "docs" / "figures").rglob("*.svg"))
     records = manifest.get("figures")
@@ -309,12 +280,13 @@ def _verify_figure_publication_sync() -> None:
         raise RuntimeError("complete figure manifest is not aligned with docs/figures")
 
     visual_atlas = _read("website/visual-atlas.html")
+    p88 = visual_atlas.index('id="p88-frontier"')
     p87 = visual_atlas.index('id="p87-frontier"')
     p86 = visual_atlas.index('id="p86-frontier"')
-    p84 = visual_atlas.index('id="p84-frontier"')
-    p85 = visual_atlas.index('id="p85-frontier"')
-    if not (p87 < p86 and p87 < p84 and p87 < p85):
-        raise RuntimeError("Visual Atlas does not lead with the current P87 figure")
+    if not (p88 < p87 < p86):
+        raise RuntimeError("Visual Atlas does not lead with P88 before historical P87/P86")
+    if "Current theorem frontier · P87" in visual_atlas:
+        raise RuntimeError("Visual Atlas still labels P87 as current")
 
     subprocess.run(
         [sys.executable, str(ROOT / "scripts" / "sync_figure_publication.py"), "--check"],

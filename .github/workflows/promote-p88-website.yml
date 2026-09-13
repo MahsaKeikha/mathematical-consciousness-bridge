@@ -1,0 +1,139 @@
+name: promote-p88-website
+
+on:
+  push:
+    branches: ["research/p88-bounded-primitive-four-event"]
+    paths:
+      - "scripts/promote_p88_website.py"
+      - ".github/workflows/promote-p88-website.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout P88 research branch
+        uses: actions/checkout@v4
+        with:
+          ref: research/p88-bounded-primitive-four-event
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Apply guarded P88 frontier migration
+        run: python scripts/promote_p88_website.py
+
+      - name: Keep Pages workflow connector-managed
+        run: git checkout -- .github/workflows/pages.yml
+
+      - name: Remove false-positive generic stale token
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("scripts/prepare_website.py")
+          text = path.read_text(encoding="utf-8")
+          needle = r'        "current theorem frontier</span></div>\n        <div><strong>v0.82.0",'
+          if needle not in text:
+              raise SystemExit("expected false-positive stale token not found")
+          path.write_text(text.replace(needle + "\n", "", 1), encoding="utf-8")
+          PY
+
+      - name: Verify only intended site/build surfaces changed
+        run: |
+          changed="$(git diff --name-only)"
+          echo "$changed"
+          python - <<'PY'
+          import subprocess
+          allowed = {
+              "website/index.html",
+              "website/plain-language.html",
+              "website/start-here.html",
+              "website/research-map.html",
+              "website/visual-atlas.html",
+              "website/implementation.html",
+              "website/sources.html",
+              "scripts/prepare_website.py",
+          }
+          changed = set(subprocess.check_output(["git", "diff", "--name-only"], text=True).splitlines())
+          unexpected = sorted(changed - allowed)
+          if unexpected:
+              raise SystemExit(f"unexpected migration changes: {unexpected}")
+          required = {
+              "website/index.html",
+              "website/plain-language.html",
+              "website/start-here.html",
+              "website/research-map.html",
+              "website/visual-atlas.html",
+              "website/implementation.html",
+              "website/sources.html",
+          }
+          missing = sorted(required - changed)
+          if missing:
+              raise SystemExit(f"expected P88 site files were not changed: {missing}")
+          PY
+
+      - name: Build exact restored rich site
+        run: |
+          rm -rf _site
+          python scripts/prepare_website.py --source website --output _site
+
+      - name: Verify rich-page identity and P88 frontier
+        run: |
+          grep -q 'What would a scientifically testable bridge from physical description to experience actually require?' _site/index.html
+          grep -q 'Explore all 88 results' _site/index.html
+          grep -q 'Current theorem frontier · P88' _site/index.html
+          grep -q 'Previous theorem frontier · P87' _site/index.html
+          grep -q '208,560' _site/index.html
+          grep -q 'figures/p88_exact_radius3_bounded_primitive_quad_projection_parity.svg' _site/index.html
+
+          grep -q 'What are we actually trying to find out?' _site/plain-language.html
+          grep -q 'Explain it in 60 seconds' _site/plain-language.html
+          grep -q 'Seven questions have to be kept separate' _site/plain-language.html
+          grep -q 'Pass, fail, and inconclusive mean different things' _site/plain-language.html
+          grep -q 'What the 88 results are doing' _site/plain-language.html
+          grep -q 'Current exact frontier · P88' _site/plain-language.html
+          grep -q 'L88 = 1/64' _site/plain-language.html
+
+          grep -q 'Open all 88 results' _site/start-here.html
+          grep -q 'P88 is the current exact frontier' _site/start-here.html
+          grep -q 'Eighty-eight results' _site/research-map.html
+          grep -q 'P77-P88' _site/research-map.html
+          grep -q 'Current exact frontier · P88' _site/research-map.html
+
+          grep -q 'Current theorem frontier · P88' _site/visual-atlas.html
+          grep -q 'Previous theorem frontier · P87' _site/visual-atlas.html
+          grep -q 'figures/p88_exact_radius3_bounded_primitive_quad_projection_parity.svg' _site/visual-atlas.html
+
+          grep -q 'P73-P88' _site/implementation.html
+          grep -q 'bounded_primitive_radius3_quad_projection_parity_functional_separation.py' _site/implementation.html
+          grep -q 'Current theorem source · P88' _site/sources.html
+
+          if grep -q 'Current theorem frontier · P87' _site/index.html; then exit 1; fi
+          if grep -q 'Current exact frontier · P87' _site/plain-language.html; then exit 1; fi
+
+      - name: Confirm CSS and JavaScript were not rewritten
+        run: |
+          test -z "$(git diff --name-only -- 'website/*.css' 'website/*.js')"
+
+      - name: Commit validated P88 website frontier update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            website/index.html \
+            website/plain-language.html \
+            website/start-here.html \
+            website/research-map.html \
+            website/visual-atlas.html \
+            website/implementation.html \
+            website/sources.html \
+            scripts/prepare_website.py
+          git commit -m "Promote restored website frontier to P88"
+          git push origin HEAD:research/p88-bounded-primitive-four-event

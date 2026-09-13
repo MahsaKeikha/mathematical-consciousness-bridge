@@ -14,6 +14,7 @@ VISUAL_ATLAS = ROOT / "website" / "visual-atlas.html"
 HOME = ROOT / "website" / "index.html"
 SYNCER = ROOT / "scripts" / "sync_figure_publication.py"
 PREPARE_WEBSITE = ROOT / "scripts" / "prepare_website.py"
+P88_FIGURE = "p88_exact_radius3_bounded_primitive_quad_projection_parity.svg"
 P87_FIGURE = "p87_exact_bounded_primitive_quad_projection_parity.svg"
 RAW_PREFIX = (
     "https://raw.githubusercontent.com/MahsaKeikha/"
@@ -25,8 +26,8 @@ def test_figure_manifest_is_complete_and_byte_exact() -> None:
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
     assert manifest["schema_version"] == 1
     assert manifest["canonical_root"] == "docs/figures"
-    assert manifest["current_frontier"] == "P87"
-    assert manifest["current_frontier_figure"].endswith(P87_FIGURE)
+    assert manifest["current_frontier"] == "P88"
+    assert manifest["current_frontier_figure"].endswith(P88_FIGURE)
     assert manifest["hash_algorithm"] == "sha256"
 
     figures = sorted(DOC_FIGURES.rglob("*.svg"))
@@ -45,67 +46,66 @@ def test_figure_manifest_is_complete_and_byte_exact() -> None:
         assert record["description_chars"] >= 140
 
 
-def test_github_figure_gateway_tracks_p87() -> None:
+def test_github_figure_gateway_tracks_p88_and_preserves_p87_history() -> None:
     gateway = GATEWAY.read_text(encoding="utf-8")
     current = CURRENT.read_text(encoding="utf-8")
 
-    assert CURRENT_SVG.read_bytes() == (DOC_FIGURES / P87_FIGURE).read_bytes()
-    assert "## Current theorem frontier: P87" in gateway
-    assert P87_FIGURE in gateway
+    assert CURRENT_SVG.read_bytes() == (DOC_FIGURES / P88_FIGURE).read_bytes()
+    assert "## Current theorem frontier: P88" in gateway
+    assert P88_FIGURE in gateway
     assert "manifest.json" in gateway
 
-    assert current.startswith("# Current visual frontier: P71-P87")
-    assert "## Current theorem frontier: P87" in current
-    assert "L85 = 0 < L86 = 1/192 < L87 = 1/96" in current
+    assert current.startswith("# Current visual frontier: P71-P88")
+    assert "## Current theorem frontier: P88" in current
+    assert "L85 = 0 < L86 = 1/192 < L87 = 1/96 < L88 = 1/64" in current
     assert "| P85 |" in current
     assert "| P86 |" in current
     assert "| P87 |" in current
+    assert "| P88 |" in current
+    assert P87_FIGURE in current
 
 
-def test_visual_atlas_leads_with_p87_before_historical_frontiers() -> None:
+def test_visual_atlas_leads_with_p88_then_preserves_p87_history() -> None:
     text = VISUAL_ATLAS.read_text(encoding="utf-8")
+    p88 = text.index('id="p88-frontier"')
     p87 = text.index('id="p87-frontier"')
     p86 = text.index('id="p86-frontier"')
     p84 = text.index('id="p84-frontier"')
     p85 = text.index('id="p85-frontier"')
 
-    assert p87 < p86
-    assert p87 < p84
-    assert p87 < p85
-    current = text[p87:p86]
-    assert "Current theorem frontier · P87" in current
-    assert P87_FIGURE in current
-    assert "L85 = 0 &lt; L86 = 1/192 &lt; L87 = 1/96" in current
-    assert "bounded_primitive_quad_projection_parity_functional_separation.py" in current
-    assert "test_bounded_primitive_quad_projection_parity_functional_separation.py" in current
-    assert "Previous theorem frontier · P86" in text[p86:]
+    assert p88 < p87 < p86
+    assert p88 < p84
+    assert p88 < p85
+    current = text[p88:p87]
+    assert "Current theorem frontier · P88" in current
+    assert P88_FIGURE in current
+    assert "L85 = 0 &lt; L86 = 1/192 &lt; L87 = 1/96 &lt; L88 = 1/64" in current
+    assert "bounded_primitive_radius3_quad_projection_parity_functional_separation.py" in current
+    assert "test_bounded_primitive_radius3_quad_projection_parity_functional_separation.py" in current
+    assert "Previous theorem frontier · P87" in text[p87:p86]
+    assert P87_FIGURE in text[p87:]
+    assert "Current theorem frontier · P87" not in text
 
 
-def test_homepage_leads_with_p87_before_historical_frontiers() -> None:
+def test_homepage_leads_with_p88_and_keeps_reader_first_structure() -> None:
     text = HOME.read_text(encoding="utf-8")
+    p88 = text.index('id="p88-frontier"')
     p87 = text.index('id="p87-frontier"')
     plain = text.index('id="plain-language"')
     p86 = text.index('id="p86-frontier"')
-    p84 = text.index('id="p84-frontier"')
-    p85 = text.index('id="p85-frontier"')
 
-    assert p87 < plain
-    assert p87 < p86
-    assert p87 < p84
-    assert p87 < p85
-    current = text[p87:plain]
-    assert "Current theorem frontier · P87" in current
-    assert P87_FIGURE in current
-    assert "L85 = 0 &lt; L86 = 1/192 &lt; L87 = 1/96" in current
-    assert "bounded_primitive_quad_projection_parity_functional_separation.py" in current
-    assert "test_bounded_primitive_quad_projection_parity_functional_separation.py" in current
-    assert "Previous theorem frontier · P86" in text[p86:]
-    assert "Current theorem frontier · P86" not in text
-    assert "The 86 results form several dependency branches." not in text
-    assert "all 86 propositions" not in text
-    assert "P71-P86, then read the falsification program" not in text
-    assert "The 87 results form several dependency branches." in text
-    assert "all 87 propositions" in text
+    assert p88 < p87 < plain
+    assert p88 < p86
+    current = text[p88:p87]
+    assert "Current theorem frontier · P88" in current
+    assert P88_FIGURE in current
+    assert "L85 = 0 &lt; L86 = 1/192 &lt; L87 = 1/96 &lt; L88 = 1/64" in current
+    assert "bounded_primitive_radius3_quad_projection_parity_functional_separation.py" in current
+    assert "test_bounded_primitive_radius3_quad_projection_parity_functional_separation.py" in current
+    assert "Previous theorem frontier · P87" in text[p87:plain]
+    assert "Current theorem frontier · P87" not in text
+    assert "Explore all 88 results" in text
+    assert "What would a scientifically testable bridge from physical description to experience actually require?" in text
 
 
 def test_figure_publication_synchronizer_reports_zero_drift() -> None:
@@ -116,7 +116,7 @@ def test_figure_publication_synchronizer_reports_zero_drift() -> None:
     )
 
 
-def test_pages_build_bundles_exact_commit_p87_figure(tmp_path: Path) -> None:
+def test_pages_build_bundles_exact_commit_p88_and_p87_figures(tmp_path: Path) -> None:
     site = tmp_path / "site"
     subprocess.run(
         [
@@ -131,15 +131,18 @@ def test_pages_build_bundles_exact_commit_p87_figure(tmp_path: Path) -> None:
         check=True,
     )
 
-    deployed_p87 = site / "figures" / P87_FIGURE
-    assert deployed_p87.read_bytes() == (DOC_FIGURES / P87_FIGURE).read_bytes()
+    for figure in (P88_FIGURE, P87_FIGURE):
+        deployed = site / "figures" / figure
+        assert deployed.read_bytes() == (DOC_FIGURES / figure).read_bytes()
 
     atlas = (site / "visual-atlas.html").read_text(encoding="utf-8")
+    assert f'src="figures/{P88_FIGURE}"' in atlas
     assert f'src="figures/{P87_FIGURE}"' in atlas
     assert f'src="{RAW_PREFIX}' not in atlas
 
     home = (site / "index.html").read_text(encoding="utf-8")
+    assert f'src="figures/{P88_FIGURE}"' in home
     assert f'src="figures/{P87_FIGURE}"' in home
     assert f'src="{RAW_PREFIX}' not in home
-    assert home.index('id="p87-frontier"') < home.index('id="plain-language"')
-    assert home.index('id="p87-frontier"') < home.index('id="p86-frontier"')
+    assert home.index('id="p88-frontier"') < home.index('id="p87-frontier"')
+    assert home.index('id="p88-frontier"') < home.index('id="plain-language"')
