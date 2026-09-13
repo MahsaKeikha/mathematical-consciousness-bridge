@@ -1,0 +1,90 @@
+name: fix-p87-current-frontier-gateway
+
+on:
+  push:
+    branches: ["p87-publication"]
+    paths:
+      - ".github/workflows/fix-p87-current-frontier-gateway.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: p87-publication
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - name: Make current-frontier SVG a deterministic synchronizer output
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import shutil
+
+          root = Path.cwd()
+          sync_path = root / "scripts" / "sync_figure_publication.py"
+          text = sync_path.read_text(encoding="utf-8")
+
+          def replace_once(source: str, old: str, new: str, label: str) -> str:
+              count = source.count(old)
+              if count != 1:
+                  raise RuntimeError(f"expected one {label}, found {count}")
+              return source.replace(old, new, 1)
+
+          text = replace_once(
+              text,
+              'HOME = ROOT / "website" / "index.html"\nVERIFIER = ROOT / "scripts" / "verify_repository.py"',
+              'HOME = ROOT / "website" / "index.html"\nGATEWAY_CURRENT_FIGURE = GATEWAY / "current_frontier.svg"\nVERIFIER = ROOT / "scripts" / "verify_repository.py"',
+              "gateway current-figure constant",
+          )
+          text = replace_once(
+              text,
+              '''    frontier = _current_frontier()\n    if frontier != 87:\n        raise RuntimeError(f"P87 synchronizer expected frontier 87, found {frontier}")\n    return {\n        GATEWAY / "README.md": _gateway_readme(frontier),''',
+              '''    frontier = _current_frontier()\n    if frontier != 87:\n        raise RuntimeError(f"P87 synchronizer expected frontier 87, found {frontier}")\n    current_figure = _one_match(f"p{frontier}_*.svg", root=DOC_FIGURES)\n    return {\n        GATEWAY_CURRENT_FIGURE: current_figure.read_text(encoding="utf-8"),\n        GATEWAY / "README.md": _gateway_readme(frontier),''',
+              "current-frontier SVG expected output",
+          )
+          sync_path.write_text(text, encoding="utf-8")
+
+          test_path = root / "tests" / "test_figure_publication_sync.py"
+          tests = test_path.read_text(encoding="utf-8")
+          tests = replace_once(
+              tests,
+              'CURRENT = ROOT / "figures" / "CURRENT_FRONTIER.md"\nVISUAL_ATLAS = ROOT / "website" / "visual-atlas.html"',
+              'CURRENT = ROOT / "figures" / "CURRENT_FRONTIER.md"\nCURRENT_SVG = ROOT / "figures" / "current_frontier.svg"\nVISUAL_ATLAS = ROOT / "website" / "visual-atlas.html"',
+              "current SVG test constant",
+          )
+          tests = replace_once(
+              tests,
+              '    current = CURRENT.read_text(encoding="utf-8")\n\n    assert "## Current theorem frontier: P87" in gateway',
+              '    current = CURRENT.read_text(encoding="utf-8")\n\n    assert CURRENT_SVG.read_bytes() == (DOC_FIGURES / P87_FIGURE).read_bytes()\n    assert "## Current theorem frontier: P87" in gateway',
+              "byte-identical gateway assertion",
+          )
+          test_path.write_text(tests, encoding="utf-8")
+
+          shutil.copyfile(
+              root / "docs" / "figures" / "p87_exact_bounded_primitive_quad_projection_parity.svg",
+              root / "figures" / "current_frontier.svg",
+          )
+          PY
+      - name: Install development environment
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+      - name: Validate repaired gateway contract
+        run: |
+          python scripts/sync_figure_publication.py --check
+          python -m pytest -q tests/test_figure_publication_sync.py
+          python scripts/verify_repository.py
+          git diff --check
+      - name: Commit permanent gateway repair
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/sync_figure_publication.py tests/test_figure_publication_sync.py figures/current_frontier.svg
+          git commit -m "Synchronize current frontier SVG with P87"
+          git push origin HEAD:p87-publication
