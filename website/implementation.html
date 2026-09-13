@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="How the Mathematical Consciousness Bridge turns mathematical claims into code, tests, figures, and reproducible research records." />
-  <title>Implementation | Mathematical Consciousness Bridge</title>
+  <meta name="description" content="Reproducibility and audit trail for the Mathematical Consciousness Bridge research program through P87." />
+  <title>Reproducibility | Mathematical Consciousness Bridge</title>
   <link rel="stylesheet" href="styles.css" />
   <script defer src="app.js"></script>
 </head>
@@ -13,137 +13,99 @@
     <a class="brand" href="index.html">Mathematical Consciousness Bridge</a>
     <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
     <nav>
-      <a href="start-here.html">Start Here</a>
-      <a href="research-map.html">Research Map</a>
-      <a href="physics-mathematics.html">Physics &amp; Math</a>
-      <a href="visual-atlas.html">Visual Atlas</a>
-      <a href="sources.html">Sources</a>
+      <a href="index.html">Overview</a><a href="plain-language.html">Plain Language</a><a href="start-here.html">Start Here</a><a href="research-map.html">Research Map</a><a href="visual-atlas.html">Explore</a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge">GitHub</a>
     </nav>
   </header>
 
   <main id="top">
     <section class="hero compact-hero">
-      <p class="eyebrow">Implementation and audit</p>
+      <p class="eyebrow">Reproducibility and audit</p>
       <h1>How does a mathematical claim become a reproducible research result?</h1>
-      <p class="lede">This page connects theorem statements to executable mathematics, tests, figures, and provenance. It is the engineering layer of the research, not a separate source of scientific meaning.</p>
+      <p class="lede">This page connects theorem statements to executable mathematics, tests, figures, and provenance. It is the audit layer of the same P1-P87 research program, not a separate scientific story.</p>
       <div class="hero-actions">
         <a class="button primary" href="#pipeline">Follow the audit pipeline</a>
+        <a class="button" href="research-navigation.html">Explore all 87 results</a>
         <a class="button" href="sources.html">Open Sources</a>
-        <a class="button" href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge">Open GitHub</a>
       </div>
     </section>
 
     <section id="pipeline">
       <div class="section-head">
-        <p class="eyebrow">The pipeline</p>
+        <p class="eyebrow">The audit pipeline</p>
         <h2>Five stages connect an idea to an auditable result</h2>
-        <p>Readers can stop at any stage or continue all the way to the source code.</p>
+        <p>Readers can stop at any stage or continue all the way to source code and regression tests.</p>
       </div>
       <div class="flow">
-        <div class="flow-node"><span>1</span><h3>Question and assumptions</h3><p>State exactly what is being tested and what must be true for the result to apply.</p></div>
-        <div class="flow-node"><span>2</span><h3>Formal result</h3><p>Write the theorem, proof, bound, or optimization problem in a form that can be inspected independently.</p></div>
-        <div class="flow-node"><span>3</span><h3>Executable object</h3><p>Implement the declared mathematical object without silently changing the theorem.</p></div>
-        <div class="flow-node"><span>4</span><h3>Verification</h3><p>Use tests, exact arithmetic where appropriate, and consistency checks to catch implementation or publication errors.</p></div>
-        <div class="flow-node"><span>5</span><h3>Publication record</h3><p>Connect the theorem, code, tests, figure, provenance, and scientific boundary through stable links.</p></div>
+        <div class="flow-node"><span>Question</span><h3>Question and assumptions</h3><p>State exactly what is being tested and what must be true for the result to apply.</p></div>
+        <div class="flow-node"><span>Theorem</span><h3>Formal result</h3><p>Write the theorem, proof, bound, or optimization problem in a form that can be inspected independently.</p></div>
+        <div class="flow-node"><span>Code</span><h3>Executable object</h3><p>Implement the declared mathematical object without silently changing the theorem.</p></div>
+        <div class="flow-node"><span>Tests</span><h3>Verification</h3><p>Use tests, exact arithmetic where appropriate, and consistency checks to catch implementation or publication errors.</p></div>
+        <div class="flow-node"><span>Record</span><h3>Publication trail</h3><p>Connect theorem, code, tests, figure, provenance, and scientific boundary through stable links.</p></div>
       </div>
     </section>
 
     <section class="two-col">
       <div>
-        <p class="eyebrow">Stage 1</p>
-        <h2>Start with the scientific question, not the code</h2>
-        <p>The implementation should never decide what the theorem means. The theorem page defines the objects, assumptions, and permitted conclusion first.</p>
-        <p>That makes it possible to compare the source code with a fixed mathematical target instead of interpreting whatever the program happens to output.</p>
+        <p class="eyebrow">The current example</p>
+        <h2>P87 is the current theorem frontier and result 87</h2>
+        <p>P87 gives one complete audit trail for the current public frontier. The formal theorem, provenance, implementation, tests, and figure are all directly linked below.</p>
+        <p>The same audit principle applies to earlier mature results across the P1-P87 record.</p>
       </div>
       <aside class="card">
-        <h3>Where to inspect this layer</h3>
-        <p><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/detailed_proposition_record.md">Detailed Proposition Record</a></p>
-        <p><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/theorem_roadmap.md">Theorem Roadmap</a></p>
-      </aside>
-    </section>
-
-    <section class="two-col">
-      <div>
-        <p class="eyebrow">Stage 2</p>
-        <h2>Make the mathematics explicit enough to audit</h2>
-        <p>A mature result should distinguish the theorem from supporting examples, standard identities, numerical demonstrations, and modeling assumptions.</p>
-        <p>When computation is part of the proof strategy, the direction of every numerical bound matters. A useful numerical estimate is not automatically a certificate.</p>
-      </div>
-      <aside class="card">
-        <h3>Where to inspect this layer</h3>
-        <p><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/equation_and_citation_map.md">Equation and Citation Map</a></p>
-        <p><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/physics_equation_provenance.md">Physics Equation Provenance</a></p>
-      </aside>
-    </section>
-
-    <section class="two-col">
-      <div>
-        <p class="eyebrow">Stage 3</p>
-        <h2>Turn the formal object into executable mathematics</h2>
-        <p>Repository source modules live under <code>src/consciousness_bridge/</code>. Their job is to implement declared mathematical constructions, estimators, optimization procedures, certificates, and exact finite families.</p>
-        <p>Code is treated as an implementation of a scientific object, not as a substitute for defining that object.</p>
-      </div>
-      <aside class="card">
-        <h3>Open the source tree</h3>
-        <p><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/tree/main/src/consciousness_bridge">Source modules</a></p>
-        <p><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/scripts/README.md">Research scripts guide</a></p>
-      </aside>
-    </section>
-
-    <section class="two-col">
-      <div>
-        <p class="eyebrow">Stage 4</p>
-        <h2>Try to break the implementation</h2>
-        <p>Regression tests protect exact values, family counts, edge cases, scientific boundaries, documentation consistency, and publication contracts.</p>
-        <p>The purpose is not only to show that one example runs. It is to make accidental changes visible before they become part of the public research record.</p>
-      </div>
-      <aside class="card">
-        <h3>Open the verification layer</h3>
-        <p><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/tree/main/tests">Test suite</a></p>
-        <p><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/reproducibility.md">Reproducibility Guide</a></p>
-      </aside>
-    </section>
-
-    <section class="two-col">
-      <div>
-        <p class="eyebrow">Stage 5</p>
-        <h2>Publish the result as a connected record</h2>
-        <p>A theorem should not be isolated from its code, tests, figure, and source history. The repository links these pieces so a reader can move from explanation to proof to reproduction without guessing filenames.</p>
-        <p>Figures are also treated as research artifacts. Their captions and descriptions state what they show, how to read them, and what they do not establish.</p>
-      </div>
-      <aside class="card">
-        <h3>Open the publication layer</h3>
-        <p><a href="visual-atlas.html">Curated Visual Atlas</a></p>
-        <p><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/figure_catalog.md">Complete Figure Catalog</a></p>
-        <p><a href="sources.html">Sources and Provenance</a></p>
+        <h3>Branch placement</h3>
+        <p><strong>Channel recovery and model testing</strong></p>
+        <p>Canonical range: P73-P87</p>
+        <p><a href="research-map.html#p73">See the branch on the Research Map</a></p>
       </aside>
     </section>
 
     <section>
       <div class="section-head">
-        <p class="eyebrow">Example audit</p>
-        <h2>Follow the current public frontier without searching folders</h2>
-        <p>P87 provides a concrete example of the complete implementation trail.</p>
+        <p class="eyebrow">P87 audit trail</p>
+        <h2>Follow the current frontier without searching folders</h2>
       </div>
       <div class="source-grid">
         <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md"><h3>Theorem</h3><p>Question, assumptions, formal statement, proof, and scientific boundary.</p></a>
-        <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/p87_equation_provenance.md"><h3>Provenance</h3><p>Source roles and mathematical lineage.</p></a>
-        <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/bounded_primitive_quad_projection_parity_functional_separation.py"><h3>Source</h3><p>Executable exact construction.</p></a>
-        <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/tests/test_bounded_primitive_quad_projection_parity_functional_separation.py"><h3>Tests</h3><p>Regression and boundary checks.</p></a>
-        <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/figures/p87_exact_bounded_primitive_quad_projection_parity_functional.svg"><h3>Figure</h3><p>Visual summary of the theorem certificate.</p></a>
+        <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/p87_equation_provenance.md"><h3>Provenance</h3><p>Equation roles, source roles, and mathematical lineage.</p></a>
+        <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/bounded_primitive_quad_projection_parity_functional_separation.py"><h3>Source</h3><p>Executable exact construction for the P87 family.</p></a>
+        <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/tests/test_bounded_primitive_quad_projection_parity_functional_separation.py"><h3>Tests</h3><p>Regression, exactness, family-count, and boundary checks.</p></a>
+        <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg"><h3>Figure</h3><p>Visual summary of the current theorem certificate.</p></a>
+        <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/reproducibility.md"><h3>Reproduction guide</h3><p>Repository setup, commands, verification surfaces, and audit expectations.</p></a>
       </div>
     </section>
 
-    <section class="boundary">
+    <section class="two-col">
+      <div>
+        <p class="eyebrow">What reproducibility protects</p>
+        <h2>Code does not decide what the science means</h2>
+        <p>The theorem page defines the object, assumptions, and permitted conclusion first. The implementation is checked against that fixed target, rather than interpreting whatever the program happens to output.</p>
+        <p>Numerical estimates are distinguished from certified bounds, and successful execution is distinguished from empirical validation.</p>
+      </div>
+      <aside class="card">
+        <h3>Direct technical routes</h3>
+        <p><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/detailed_proposition_record.md">Detailed Proposition Record, P1-P87</a></p>
+        <p><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/equation_and_citation_map.md">Equation and Citation Map</a></p>
+        <p><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/tree/main/tests">Test suite</a></p>
+      </aside>
+    </section>
+
+    <section class="boundary" data-public-boundary>
       <p class="eyebrow">Scientific boundary</p>
-      <h2>Executable mathematics is not experiential evidence by itself</h2>
-      <p>The code implements declared mathematical objects and tests under stated assumptions. Successful execution does not identify consciousness or complete the physical to experiential bridge.</p>
+      <h2>What the current frontier does and does not establish</h2>
+      <p>P87 is a conditional model-separation result for the declared P75 target-measurement family. It does not identify a latent state with consciousness, prove that consciousness is nonphysical, or complete the physical-to-experiential bridge. The final bridge remains open.</p>
+    </section>
+
+    <section class="dark-section">
+      <p class="eyebrow">Continue</p>
+      <h2>Choose the same program at a different depth</h2>
+      <div class="hero-actions">
+        <a class="button primary" href="research-navigation.html">Research Navigation</a>
+        <a class="button" href="visual-atlas.html">Visual Atlas</a>
+        <a class="button" href="sources.html">Sources and Provenance</a>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p><strong>Mathematical Consciousness Bridge</strong> | Implementation</p>
-    <p><a href="index.html">Home</a> · <a href="research-map.html">Research Map</a> · <a href="sources.html">Sources</a></p>
-  </footer>
+  <footer><p><strong>Mathematical Consciousness Bridge</strong></p></footer>
 </body>
 </html>
