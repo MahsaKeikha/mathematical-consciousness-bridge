@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="p86-title p86-desc">
+  <title id="p86-title">P86 Four-Event Shared-Parameter Parity Certificate</title>
+  <desc id="p86-desc">Proposition 86 adds 2640 exact sign-normalized four-event parity functionals to the complete P85 certificate. The exact rational witness shown here has complete P85 lower bound 5/48. The four-event functional P(H02)-P(H23)+P(H012)-P(H123) has empirical value -9/8 and exact P75 box interval [0,0]. Its centered coefficient norm is 8, giving the certified lower bound 9/64 and a strict improvement of 7/192 over P85. This is a conditional P75 model-separation result and does not identify a latent variable with consciousness or close the physical-to-experiential bridge.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f9fc; }
+      .panel { fill: #ffffff; stroke: #cfd8e6; stroke-width: 1.5; }
+      .panelSoft { fill: #f3f7fb; stroke: #cfd8e6; stroke-width: 1.2; }
+      .accent { fill: #173b65; }
+      .accentSoft { fill: #eaf2fb; stroke: #8fb0d4; stroke-width: 1.3; }
+      .success { fill: #eef8f1; stroke: #8eb89a; stroke-width: 1.3; }
+      .warn { fill: #fff7e8; stroke: #d6b267; stroke-width: 1.3; }
+      .ink { fill: #172235; font-family: Arial, Helvetica, sans-serif; }
+      .muted { fill: #5d6a7c; font-family: Arial, Helvetica, sans-serif; }
+      .white { fill: #ffffff; font-family: Arial, Helvetica, sans-serif; }
+      .title { font-size: 31px; font-weight: 700; }
+      .subtitle { font-size: 16px; }
+      .section { font-size: 20px; font-weight: 700; }
+      .label { font-size: 15px; font-weight: 700; }
+      .body { font-size: 14px; }
+      .formula { font-size: 16px; font-weight: 700; }
+      .metric { font-size: 23px; font-weight: 700; }
+      .tiny { font-size: 12px; }
+      .arrow { stroke: #6c87a7; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#6c87a7"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1280" height="760"/>
+  <rect class="accent" x="0" y="0" width="1280" height="112"/>
+  <text class="white title" x="54" y="50">P86 Four-Event Shared-Parameter Parity Certificate</text>
+  <text class="white subtitle" x="54" y="79">A four-event relation can sharpen the complete P85 lower bound on the same exact P75 parameter box.</text>
+
+  <rect class="panel" x="48" y="144" rx="16" ry="16" width="350" height="448"/>
+  <text class="ink section" x="72" y="181">1. Start from complete P85</text>
+  <text class="muted body" x="72" y="207">P85 already contains the earlier P80-P84 hierarchy</text>
+  <text class="muted body" x="72" y="228">plus all 660 standard three-event functionals.</text>
+
+  <rect class="success" x="78" y="262" rx="11" ry="11" width="290" height="86"/>
+  <text class="ink label" x="98" y="291">Exact witness box</text>
+  <text class="muted body" x="98" y="316">Complete inherited certificate</text>
+  <text class="ink metric" x="98" y="341">L85 = 5/48</text>
+
+  <rect class="panelSoft" x="78" y="368" rx="11" ry="11" width="290" height="112"/>
+  <text class="ink label" x="98" y="396">What P86 adds</text>
+  <text class="muted body" x="98" y="421">Choose four distinct canonical parity events.</text>
+  <text class="muted body" x="98" y="444">Keep one shared P75 parameter assignment.</text>
+  <text class="ink formula" x="98" y="469">C(11,4) x 2^3 = 2640 functionals</text>
+
+  <rect class="warn" x="78" y="500" rx="10" ry="10" width="290" height="60"/>
+  <text class="ink label" x="98" y="526">Hierarchy question</text>
+  <text class="muted body" x="98" y="548">Can any four-event bound exceed 5/48?</text>
+
+  <path class="arrow" d="M406 368 C430 368, 438 368, 462 368"/>
+
+  <rect class="panel" x="470" y="144" rx="16" ry="16" width="350" height="448"/>
+  <text class="ink section" x="494" y="181">2. Exact four-event functional</text>
+  <text class="muted body" x="494" y="207">The strict witness uses zero-based view indices:</text>
+
+  <rect class="accentSoft" x="500" y="244" rx="12" ry="12" width="290" height="120"/>
+  <text class="ink formula" x="520" y="274">Q = P(H02) - P(H23)</text>
+  <text class="ink formula" x="520" y="299">    + P(H012) - P(H123)</text>
+  <text class="muted body" x="520" y="329">Q(empirical) = -9/8</text>
+  <text class="muted body" x="520" y="350">Q(P75 box) in [0, 0]</text>
+
+  <rect class="panelSoft" x="500" y="386" rx="12" ry="12" width="290" height="88"/>
+  <text class="ink label" x="520" y="414">Why the model value is fixed</text>
+  <text class="muted body" x="520" y="438">pi = 0 and one shared centered response is 0.</text>
+  <text class="muted body" x="520" y="459">All four parity products vanish exactly.</text>
+
+  <rect class="panelSoft" x="500" y="492" rx="12" ry="12" width="290" height="72"/>
+  <text class="ink label" x="520" y="519">Exact transfer</text>
+  <text class="muted body" x="520" y="543">gap = 9/8; centered coefficient norm D(Q) = 8</text>
+
+  <path class="arrow" d="M828 368 C850 368, 862 368, 884 368"/>
+
+  <rect class="panel" x="892" y="144" rx="16" ry="16" width="340" height="448"/>
+  <text class="ink section" x="916" y="181">3. Strict hierarchy gain</text>
+  <text class="muted body" x="916" y="207">The four-event transfer gives an exact bound:</text>
+
+  <rect class="accentSoft" x="920" y="246" rx="11" ry="11" width="284" height="84"/>
+  <text class="ink label" x="940" y="274">Four-event certificate</text>
+  <text class="ink metric" x="940" y="307">(9/8) / 8 = 9/64</text>
+
+  <rect class="success" x="920" y="350" rx="11" ry="11" width="284" height="96"/>
+  <text class="ink label" x="940" y="378">Complete hierarchy comparison</text>
+  <text class="ink formula" x="940" y="405">L85 = 5/48</text>
+  <text class="ink metric" x="940" y="433">L86 = 9/64</text>
+
+  <rect class="warn" x="920" y="466" rx="11" ry="11" width="284" height="88"/>
+  <text class="ink label" x="940" y="494">Certified improvement</text>
+  <text class="ink metric" x="940" y="526">L86 - L85 = 7/192</text>
+  <text class="muted body" x="940" y="547">Same empirical law. Same P75 box.</text>
+
+  <rect class="accent" x="48" y="620" rx="14" ry="14" width="1184" height="92"/>
+  <text class="white label" x="72" y="650">Scientific boundary</text>
+  <text class="white body" x="72" y="676">P86 strengthens the certified rejection bound for the declared P75 latent measurement family. It does not identify the latent state with</text>
+  <text class="white body" x="72" y="697">consciousness, prove consciousness is nonphysical, validate an alternative model, or solve the physical-to-experiential bridge.</text>
+
+  <text class="muted tiny" x="48" y="742">Mathematical Consciousness Bridge | Proposition 86 | exact rational certificate</text>
+</svg>
