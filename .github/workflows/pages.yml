@@ -32,8 +32,22 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
-      - name: Build website
-        run: python scripts/prepare_website.py --source website --output _site
+      - name: Build restored website
+        run: |
+          rm -rf website-deploy _site
+          cp -a website website-deploy
+          python scripts/prepare_website.py --source website-deploy --output _site
+
+      - name: Verify restored homepage identity
+        run: |
+          grep -q 'The project in one minute' _site/index.html
+          grep -q 'Choose your depth' _site/index.html
+          grep -q 'public theorem frontier' _site/index.html
+          grep -q 'v0.82.0' _site/index.html
+          grep -q 'Reproducible' _site/index.html
+          grep -q 'navigation-v2.css' _site/index.html
+          grep -q 'publication-v2.css' _site/index.html
+          grep -q 'reader-experience-v2.css' _site/index.html
 
       - name: Upload website artifact
         uses: actions/upload-pages-artifact@v3
