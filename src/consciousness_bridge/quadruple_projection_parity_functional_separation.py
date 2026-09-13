@@ -33,15 +33,23 @@ model law q in the box satisfies
 
     ||p-q||_infinity >= Delta / D(Q).
 
-The final P86 box certificate is max(P85, strongest four-event bound). It is
-never weaker than P85. The regression suite contains an exact rational witness
-for which the complete P85 certificate is zero while a four-event functional
-has empirical value 3/4, exact P75 interval [-1,1/2], interval gap 1/4, centered
-coefficient norm 12, and certified L-infinity lower bound 1/48.
+The final P86 box certificate is max(P85, strongest four-event bound), so it is
+never weaker than P85. An exact-rational regression witness has complete P85
+lower bound 5/48, while
 
-P86 is a conditional model-separation theorem only. It does not identify the
-P75 latent state with consciousness, validate an alternative model, prove
-consciousness is nonphysical, or close the physical-to-experiential bridge.
+    P(H_(0,2)) - P(H_(2,3)) + P(H_(0,1,2)) - P(H_(1,2,3))
+
+has empirical value -9/8 and exact P75 box range [0,0]. The exact functional
+gap is 9/8 and the centered coefficient norm is 8, yielding 9/64. Therefore
+
+    5/48 < 9/64,
+
+with strict certified improvement 7/192 on the same rational parameter box.
+
+P86 is a conditional model-separation theorem only.
+It does not identify the P75 latent state with consciousness.
+It does not validate an alternative model or prove consciousness is nonphysical.
+It does not close the physical-to-experiential bridge.
 """
 
 from __future__ import annotations
