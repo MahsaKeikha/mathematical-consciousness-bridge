@@ -1,0 +1,79 @@
+name: synchronize-research-three-website
+
+on:
+  push:
+    branches:
+      - "website-research-iii-sync"
+      - "main"
+    paths:
+      - "website/index.html"
+      - "website/measurement-science.html"
+      - "website/research-lineage.html"
+      - "scripts/synchronize_research_three_website.py"
+      - "scripts/prepare_website.py"
+      - ".github/workflows/pages.yml"
+      - ".github/workflows/synchronize-research-three-website.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: research-three-website-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  synchronize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Synchronize Research III reader surfaces
+        run: python scripts/synchronize_research_three_website.py
+
+      - name: Verify synchronization is idempotent
+        run: python scripts/synchronize_research_three_website.py --check
+
+      - name: Verify scripts compile
+        run: |
+          python -m py_compile \
+            scripts/synchronize_research_three_website.py \
+            scripts/prepare_website.py
+
+      - name: Build and validate website locally
+        run: |
+          rm -rf website-deploy _site
+          cp -a website website-deploy
+          python scripts/prepare_website.py --source website-deploy --output _site
+          node --check _site/app.js
+          test "$(grep -o '<!-- current-frontier-home: P88 -->' _site/index.html | wc -l)" -eq 1
+          grep -q '7a106820158e0d33ea651f7cdeaa505206f1ccc7' _site/measurement-science.html
+          grep -q 'Implemented now' _site/measurement-science.html
+          grep -q 'Not yet established' _site/measurement-science.html
+          grep -q '<strong>23</strong><span>automated tests</span>' _site/measurement-science.html
+          grep -q '23-test suite' _site/research-lineage.html
+          ! grep -q '8bbb7b029d70c43cc6a9dbf8b44dfe5069d0993d' _site/measurement-science.html
+          ! grep -q '8bbb7b029d70c43cc6a9dbf8b44dfe5069d0993d' _site/research-lineage.html
+          git diff --check
+
+      - name: Commit synchronized website source
+        run: |
+          if git diff --quiet; then
+            echo "Research III website source already synchronized."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add website/index.html website/measurement-science.html website/research-lineage.html
+          git commit -m "Synchronize website to completed Research III snapshot"
+          git fetch origin "${GITHUB_REF_NAME}"
+          git rebase "origin/${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
