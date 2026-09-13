@@ -1,17 +1,19 @@
 name: promote-p88-public-frontier
 
-# One-shot guarded synchronization for the P88 frontier publication.
 on:
   push:
     branches: ["main"]
     paths:
       - ".github/workflows/promote-p88-public-frontier.yml"
       - "scripts/promote_p88_public_frontier.py"
+      - "scripts/sync_figure_publication.py"
+      - "scripts/verify_repository.py"
       - "docs/proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md"
       - "docs/p88_equation_provenance.md"
       - "docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg"
       - "src/consciousness_bridge/radius_three_bounded_primitive_quad_projection_parity_functional_separation.py"
       - "tests/test_radius_three_bounded_primitive_quad_projection_parity_functional_separation.py"
+      - "tests/test_figure_publication_sync.py"
   workflow_dispatch:
 
 permissions:
@@ -27,22 +29,25 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12.14"
-      - name: Promote reader-facing state to 88/P88
-        run: python scripts/promote_p88_public_frontier.py
       - name: Install development environment
         run: |
           python -m pip install --upgrade pip
           python -m pip install -e ".[dev]"
-      - name: Validate exact P88 theorem
+      - name: Synchronize reader and figure publication surfaces to P88
+        run: python scripts/sync_figure_publication.py
+      - name: Validate exact P88 theorem and publication contract
         run: |
-          python -m pytest -q tests/test_radius_three_bounded_primitive_quad_projection_parity_functional_separation.py
-          python -m py_compile src/consciousness_bridge/radius_three_bounded_primitive_quad_projection_parity_functional_separation.py scripts/promote_p88_public_frontier.py
+          python -m pytest -q tests/test_radius_three_bounded_primitive_quad_projection_parity_functional_separation.py tests/test_figure_publication_sync.py
+          python -m py_compile src/consciousness_bridge/radius_three_bounded_primitive_quad_projection_parity_functional_separation.py scripts/promote_p88_public_frontier.py scripts/sync_figure_publication.py scripts/verify_repository.py
+          python scripts/sync_figure_publication.py --check
+          python scripts/verify_repository.py
           git diff --check
           grep -q 'Explore all 88 results' website/index.html
           grep -q '<strong>P88</strong><span>current theorem frontier</span>' website/index.html
           grep -q 'id="p88-frontier" class="theorem-frontier current-frontier-visual"' website/index.html
           grep -q '208,560 exact P88 functionals' website/index.html
-          grep -q 'P88' README.md START_HERE.md
+          grep -q '"current_frontier": "P88"' figures/manifest.json
+          grep -q 'P88' README.md START_HERE.md figures/README.md figures/CURRENT_FRONTIER.md
       - name: Commit P88 public-frontier synchronization
         run: |
           if git diff --quiet; then
