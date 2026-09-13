@@ -24,6 +24,7 @@ on:
       - "tests/test_figure_publication_sync.py"
       - "pyproject.toml"
       - ".github/workflows/figures.yml"
+      - ".github/workflows/pages.yml"
   pull_request:
     paths:
       - "scripts/generate_all_figures.py"
@@ -43,6 +44,7 @@ on:
       - "tests/test_figure_publication_sync.py"
       - "pyproject.toml"
       - ".github/workflows/figures.yml"
+      - ".github/workflows/pages.yml"
 
 jobs:
   generate-and-validate:
