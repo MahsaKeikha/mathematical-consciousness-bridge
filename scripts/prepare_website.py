@@ -3,7 +3,8 @@
 The website is copied into an auditable deployment directory, canonical figures
 from ``docs/figures`` are bundled into that artifact, shared publication assets
 are injected consistently, and the deployed reader surfaces are validated
-against the current Research II frontier and the Research III handoff.
+against the current Research II frontier and the completed Research III
+measurement-science repository snapshot.
 """
 
 from __future__ import annotations
@@ -25,9 +26,10 @@ CURRENT_FRONTIER_FIGURE = (
 )
 CURRENT_RECORD_TEXT = "Current record:</strong> 88 proposition-level results through P88"
 MEASUREMENT_REPO = "https://github.com/MahsaKeikha/consciousness-measurement-science"
-MEASUREMENT_PIN = "8bbb7b029d70c43cc6a9dbf8b44dfe5069d0993d"
+MEASUREMENT_PIN = "7a106820158e0d33ea651f7cdeaa505206f1ccc7"
+STALE_MEASUREMENT_PINS = ("8bbb7b029d70c43cc6a9dbf8b44dfe5069d0993d",)
 
-ASSET_VERSION = "20260913-r3-fix1"
+ASSET_VERSION = "20260913-r3-complete"
 SCRIPT_TAG = f'<script defer src="app.js?v={ASSET_VERSION}"></script>'
 READER_LINKS_SCRIPT_TAG = '<script defer src="reader-links.js"></script>'
 FOOTER_SCRIPT_TAG = '<script defer src="footer.js"></script>'
@@ -159,6 +161,12 @@ def _validate_current_frontier_pages(output: Path) -> None:
     if CURRENT_RECORD_TEXT not in homepage:
         raise RuntimeError("Homepage Project at a glance is not synchronized to 88/P88")
     _require_once(homepage, 'id="p88-frontier"', "Homepage")
+    _require_once(
+        homepage,
+        "<!-- current-frontier-home: P88 -->",
+        "Homepage P88 source marker",
+    )
+
     reader_css = (output / "reader-experience-v2.css").read_text(encoding="utf-8")
     for token in ("#reproduce .equation", "contain: inline-size", "#reproduce.two-col > *"):
         if token not in reader_css:
@@ -186,10 +194,37 @@ def _validate_research_three(output: Path) -> None:
         "what can be identified, bounded, predicted, or falsified",
         "M0-M7",
         f"consciousness-measurement-science/{MEASUREMENT_PIN}/docs/figures/measurement_architecture.svg",
+        "<!-- research-iii-snapshot:start -->",
+        "Implemented now",
+        "Not yet established",
+        "23</strong><span>automated tests</span>",
+        "3</strong><span>Python versions validated</span>",
+        "schemas/cep.schema.json",
+        "schemas/claim.schema.json",
+        "docs/start-here.md",
+        "docs/assumption-registry.md",
+        "docs/failure-modes.md",
+        "docs/reproducibility.md",
+        "docs/software-guide.md",
     )
     missing = [token for token in required if token not in measurement]
     if missing:
         raise RuntimeError(f"Research III page is missing required content: {missing}")
+    for stale_pin in STALE_MEASUREMENT_PINS:
+        if stale_pin in measurement:
+            raise RuntimeError(f"Research III page contains stale snapshot pin: {stale_pin}")
+    if f"{MEASUREMENT_REPO}/blob/main/" in measurement:
+        raise RuntimeError("Research III page contains unpinned documentation links")
+    _require_once(
+        measurement,
+        "<!-- research-iii-snapshot:start -->",
+        "Research III snapshot",
+    )
+    _require_once(
+        measurement,
+        "<!-- research-iii-snapshot:end -->",
+        "Research III snapshot",
+    )
 
     lineage_path = output / "research-lineage.html"
     if not lineage_path.is_file():
@@ -201,12 +236,31 @@ def _validate_research_three(output: Path) -> None:
         "<strong>P88</strong><span>current theorem frontier</span>",
         "<strong>v0.82.0</strong><span>current documented release</span>",
         "The three repositories form a research progression",
+        MEASUREMENT_PIN,
+        "<!-- research-iii-lineage-snapshot:start -->",
+        "23-test suite",
+        "Python 3.10, 3.11, and 3.12",
     ):
         if token not in lineage:
             raise RuntimeError(f"Research lineage is missing current stage content: {token}")
     for stale in ("<strong>81</strong>", "<strong>P81</strong>", "v0.81.0"):
         if stale in lineage:
             raise RuntimeError(f"Research lineage contains stale Research II state: {stale}")
+    for stale_pin in STALE_MEASUREMENT_PINS:
+        if stale_pin in lineage:
+            raise RuntimeError(f"Research lineage contains stale Research III pin: {stale_pin}")
+    if f"{MEASUREMENT_REPO}/blob/main/" in lineage:
+        raise RuntimeError("Research lineage contains unpinned Research III documentation links")
+    _require_once(
+        lineage,
+        "<!-- research-iii-lineage-snapshot:start -->",
+        "Research III lineage snapshot",
+    )
+    _require_once(
+        lineage,
+        "<!-- research-iii-lineage-snapshot:end -->",
+        "Research III lineage snapshot",
+    )
 
     app = (output / "app.js").read_text(encoding="utf-8")
     if "measurement-science.html" not in app or "Research III" not in app:
