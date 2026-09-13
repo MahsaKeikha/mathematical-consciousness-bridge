@@ -139,7 +139,7 @@ def _validate_functional(terms: ParityWeightedQuadFunctional) -> None:
     for views, coefficient in terms:
         _validate_view_set(views)
         if isinstance(coefficient, bool) or not isinstance(coefficient, int):
-            raise ValueError("P86 functional coefficients must be nonzero integers")
+            raise TypeError("P86 functional coefficients must be nonzero integers")
         if coefficient == 0:
             raise ValueError("P86 functional coefficients must be nonzero integers")
         view_sets.append(views)

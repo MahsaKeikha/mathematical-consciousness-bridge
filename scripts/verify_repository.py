@@ -243,7 +243,7 @@ def _verify_figure_publication_sync() -> None:
     canonical = sorted((ROOT / "docs" / "figures").rglob("*.svg"))
     records = manifest.get("figures")
     if not isinstance(records, list):
-        raise RuntimeError("figure manifest does not contain a figure record list")
+        raise TypeError("figure manifest does not contain a figure record list")
     declared_paths = {
         str(record.get("path")) for record in records if isinstance(record, dict)
     }
