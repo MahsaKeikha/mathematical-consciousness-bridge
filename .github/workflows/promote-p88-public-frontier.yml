@@ -71,6 +71,29 @@ jobs:
           if "continuation beyond P87" in roadmap:
               raise SystemExit("stale P87 future-work language remains")
           roadmap_path.write_text(roadmap, encoding="utf-8")
+
+          reader_replacements = (
+              ("current P87 frontier", "current P88 frontier"),
+              ("actual P87 research frontier", "actual P88 research frontier"),
+              ("<strong>P87</strong><span>current theorem frontier</span>", "<strong>P88</strong><span>current theorem frontier</span>"),
+              ("P1-P87 proposition record", "P1-P88 proposition record"),
+              ("Stage 06 · P73-P87", "Stage 06 · P73-P88"),
+              ("P73-P87 build a continuous chain", "P73-P88 build a continuous chain"),
+              ("P77-P87", "P77-P88"),
+              ("P75-P87", "P75-P88"),
+              ("P71-P87", "P71-P88"),
+          )
+          for relative in (
+              "website/implementation.html",
+              "website/plain-language.html",
+              "website/research-map.html",
+              "website/start-here.html",
+          ):
+              page_path = Path(relative)
+              page = page_path.read_text(encoding="utf-8")
+              for old, new in reader_replacements:
+                  page = page.replace(old, new)
+              page_path.write_text(page, encoding="utf-8")
           PY
       - name: Install development and reproducibility environment
         run: |
