@@ -6,7 +6,7 @@ MAP = ROOT / "website/research-map.html"
 
 def test_research_map_starts_with_orientation_before_stage_details():
     text = MAP.read_text(encoding="utf-8")
-    hero = text.index("Eighty-six results, one dependency-aware scientific program")
+    hero = text.index("Eighty-seven results, one dependency-aware scientific program")
     orientation = text.index("How to read this research")
     stage_one = text.index("I · Formal bridge foundations")
     assert hero < orientation < stage_one
@@ -23,7 +23,7 @@ def test_research_map_exposes_status_and_all_ten_stage_ranges():
         "P19-P24",
         "P71",
         "P72",
-        "P73-P86",
+        "P73-P87",
         "P25-P37",
         "P38-P44",
         "P45-P53",
@@ -61,15 +61,15 @@ def test_research_map_gives_direct_audit_paths():
         "proposition_84_exact_projection_parity_contrast.md",
         "joint_projection_parity_contrast_separation.py",
         "test_joint_projection_parity_contrast_separation.py",
-        'index.html#p86-frontier',
+        'index.html#p87-frontier',
     ]
     for token in required:
         assert token in text, token
 
 
-def test_research_map_presents_p77_through_p86_with_p84_history():
+def test_research_map_presents_p77_through_p87_with_p84_history():
     text = MAP.read_text(encoding="utf-8")
-    assert "through Proposition 86" in text
+    assert "through Proposition 87" in text
     frontier = text.index('id="continuous-model-frontier"')
     p77 = text.index("Open P77 →", frontier)
     p78 = text.index("Open P78 →", frontier)
@@ -78,14 +78,14 @@ def test_research_map_presents_p77_through_p86_with_p84_history():
     p81 = text.index("Open P81 →", frontier)
     p82 = text.index("Open P82 →", frontier)
     p83 = text.index("Open P83 →", frontier)
-    p86_navigation = text.index(
-        'href="index.html#p86-frontier">Continue to the current P86 frontier</a>',
+    p87_navigation = text.index(
+        'href="index.html#p87-frontier">Continue to the current P87 frontier</a>',
         frontier,
     )
     p84 = text.index('id="p84"', p83)
-    assert p77 < p78 < p79 < p80 < p81 < p82 < p83 < p86_navigation < p84
+    assert p77 < p78 < p79 < p80 < p81 < p82 < p83 < p87_navigation < p84
 
-    assert "P77-P86: from full-law rejection to exact dependency-aware certification" in text
+    assert "P77-P87: from full-law rejection to exact dependency-aware certification" in text
     assert text.count("P78: Certified continuous P75 model separation") == 1
     assert text.count("How is P77 made rigorous for the continuous P75 family?") == 1
     assert "only the certified global lower bound can feed the P77 rejection gate" in text
@@ -96,6 +96,9 @@ def test_research_map_presents_p77_through_p86_with_p84_history():
     assert "L83 = 0, L84 = 1/32" in text
     assert "P85 tests exact three-event shared-parameter parity functionals" in text
     assert "P86 adds exact minimally weighted four-event functionals" in text
+    assert 'id="p87-reader-frontier"' in text
+    assert "39,600" in text
+    assert "L85 = 0 &lt; L86 = 1/192 &lt; L87 = 1/96" in text
     assert p84 < text.index("</main>")
 
 

@@ -292,3 +292,19 @@ The exact regression witness has `L84 = 0`, empirical functional value `5/8`, ex
 - Implementation: [`weighted_quad_projection_parity_functional_separation.py`](../src/consciousness_bridge/weighted_quad_projection_parity_functional_separation.py)
 - Tests: [`test_weighted_quad_projection_parity_functional_separation.py`](../tests/test_weighted_quad_projection_parity_functional_separation.py)
 - Figure: [`p86_exact_minimally_weighted_quad_projection_parity.svg`](figures/p86_exact_minimally_weighted_quad_projection_parity.svg)
+
+
+
+## Proposition 87: Exact bounded primitive four-event projection-parity functional certificate
+
+**Scientific question.** Does the P86 `{1,1,1,2}` family exhaust all primitive four-event shared-parameter relations with coefficient magnitudes at most two?
+
+**Result.** No. P87 exhausts every nonzero primitive coefficient vector with `|c_i| <= 2`, modulo one global sign. This gives 120 coefficient patterns per four-event subset and 39,600 exact functionals. On the same exact rational witness used for P86, the complete P86 lower bound is `1/192`, while P87 attains `1/96` with coefficients `(1,-1,-2,2)`, empirical value `-17/24`, exact P75 interval `[-1/2,2]`, gap `5/24`, and centered coefficient norm `20`.
+
+**Boundary.** This is a conditional separation theorem for the declared P75 family. It does not identify a latent state with consciousness or close the physical-to-experiential bridge.
+
+- Proof: [`proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md`](proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md)
+- Provenance: [`p87_equation_provenance.md`](p87_equation_provenance.md)
+- Implementation: [`bounded_primitive_quad_projection_parity_functional_separation.py`](../src/consciousness_bridge/bounded_primitive_quad_projection_parity_functional_separation.py)
+- Tests: [`test_bounded_primitive_quad_projection_parity_functional_separation.py`](../tests/test_bounded_primitive_quad_projection_parity_functional_separation.py)
+- Figure: [`p87_exact_bounded_primitive_quad_projection_parity.svg`](figures/p87_exact_bounded_primitive_quad_projection_parity.svg)

@@ -56,6 +56,8 @@ def test_claim_source_matrix_maps_public_claims_to_support_and_boundaries() -> N
         "P86 weighted four-event compatibility",
         "L85 = 0 < L86 = 1/192",
         "P86 mathematical backbone",
+        "P87 bounded primitive four-event compatibility",
+        "L86 = 1/192 < L87 = 1/96",
         "Reader-facing status claims",
         "passing CI supports internal consistency and reproducibility; it is not external peer review",
     )
@@ -72,15 +74,18 @@ def test_reference_audit_records_tegmark_as_research_origin() -> None:
     assert "distinct mathematical framework" in audit
 
 
-def test_sources_page_points_to_current_p86_audit_record() -> None:
+def test_sources_page_points_to_current_p87_and_previous_p86_audit_records() -> None:
     sources = _read("website/sources.html")
+    assert 'id="p87-source"' in sources
+    assert "Current theorem source · P87" in sources
+    assert "L86 = 1/192 &lt; L87 = 1/96" in sources
+    assert "proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md" in sources
+    assert "p87_equation_provenance.md" in sources
+    assert "bounded_primitive_quad_projection_parity_functional_separation.py" in sources
+    assert "test_bounded_primitive_quad_projection_parity_functional_separation.py" in sources
     assert 'id="p86-source"' in sources
-    assert "Current theorem source · P86" in sources
+    assert "Previous theorem source · P86" in sources
     assert "L85 = 0 &lt; L86 = 1/192" in sources
-    assert "proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md" in sources
-    assert "p86_equation_provenance.md" in sources
-    assert "weighted_quad_projection_parity_functional_separation.py" in sources
-    assert "test_weighted_quad_projection_parity_functional_separation.py" in sources
     assert "claim_source_matrix.md" in sources
     assert "Claim-to-source matrix" in sources
 

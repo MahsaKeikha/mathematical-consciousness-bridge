@@ -4,14 +4,14 @@ This page is the reading and reference index for the **Mathematical Consciousnes
 
 **First-time reader:** begin with [Start Here](../START_HERE.md) for the shortest orientation, keep the [Glossary and Reader Vocabulary](glossary.md) nearby for terminology, use the [Reader Experience and Visual Presentation Standard](reader_experience_and_visual_standard.md) to understand how the public record is organized, and use the [Reproducibility Guide](reproducibility.md) when you want to run the code, tests, or generated figure atlases.
 
-The current documented theorem frontier is **P86**. The complete proposition record runs from **P1 through P86**. P71-P86 form a target-side methodology branch descending from the P19 physical-sufficiency question. They are not extensions of the P61-P70 calibration branch.
+The current documented theorem frontier is **P87**. The complete proposition record runs from **P1 through P87**. P71-P87 form a target-side methodology branch descending from the P19 physical-sufficiency question. They are not extensions of the P61-P70 calibration branch.
 
 ## Recommended reading order
 
 1. [Main research study](../README.md) for the complete scientific narrative and curated figures.
 2. [Bridge problem](bridge_problem.md) for the formal physical-to-experiential question.
 3. [Scientific status discipline](../README.md#scientific-status-discipline) for the distinction among definitions, proved results, implementations, numerical checks, empirical inputs, hypotheses, and open bridge claims.
-4. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P86.
+4. [Theorem roadmap](theorem_roadmap.md) for the dependency structure from P1 through P87.
 5. [P19 fundamental physical sufficiency](proposition_19_fundamental_physical_sufficiency.md) for the exact, stochastic, and differential bridge criteria.
 6. [P20-P24 finite and adaptive residual certification](theorem_roadmap.md) for finite-data and repeated-look validity.
 7. [P71 target-provenance non-circularity](proposition_71_target_provenance_noncircularity.md) for the theorem showing when a target construction makes a bridge test vacuous by design.
@@ -30,6 +30,7 @@ The current documented theorem frontier is **P86**. The complete proposition rec
 20. [P84 exact joint projection-parity separation](proposition_84_exact_projection_parity_contrast.md) for the stronger shared-parameter question: whether two individually compatible P83 parity observations can be realized simultaneously. It covers 220 exact coupled contrasts, P84 >= P83 dominance, and the strict `L83 = 0 < L84 = 1/32` witness.
 21. [P85 exact three-event projection-parity functional](proposition_85_exact_triple_projection_parity_functional.md) for the next shared-parameter question: whether the complete P84 pairwise certificate can remain silent while a three-event relation is incompatible. It covers 660 exact sign-normalized functionals, P85 >= P84 dominance, and the strict `L84 = 0 < L85 = 1/32` witness.
 22. [P86 exact minimally weighted four-event projection-parity functional](proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md) for the minimally non-uniform four-event shared-parameter audit, 10,560 exact `{1,1,1,2}` weighted functionals, P86 >= P85 dominance, and the strict `L85 = 0 < L86 = 1/192` witness.
+23. [P87 exact bounded primitive four-event projection-parity functional](proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md) for the complete nonzero primitive coefficient box `|c_i| <= 2`, 39,600 exact four-event functionals, P87 >= P86 dominance, and the strict `L86 = 1/192 < L87 = 1/96` witness.
 23. [P11-P18 and P25-P37 operational physical structure](theorem_roadmap.md) for intervention, temporal, compositional, and multiscale requirements.
 24. [P38-P44 quantum foundations and bridge tests](quantum_foundations_and_bridge_test.md) for quantum operational sufficiency under explicit bridge classes.
 25. [P45-P60 adaptive experiment design and scheduling](theorem_roadmap.md) for valid evidence collection and transition-calibration setup.
@@ -74,6 +75,7 @@ The current documented theorem frontier is **P86**. The complete proposition rec
 | Joint projection-parity continuous target-model separation | P84 | Adds 220 exact coupled parity-event contrasts that preserve shared-parameter compatibility beyond separate P83 ranges | [P84](proposition_84_exact_projection_parity_contrast.md) |
 | Three-event projection-parity functional separation | P85 | Adds 660 exact signed three-event parity functionals that test shared-parameter compatibility beyond the complete P84 pairwise certificate | [P85](proposition_85_exact_triple_projection_parity_functional.md) |
 | Minimally weighted four-event projection-parity functional separation | P86 | Adds 10,560 exact `{1,1,1,2}` weighted four-event shared-parameter functionals beyond the complete P85 triple-functional certificate | [P86](proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md) |
+| Bounded primitive four-event projection-parity functional separation | P87 | Completes all nonzero primitive four-event coefficient vectors with `|c_i| <= 2`, yielding 39,600 exact functionals and a strict strengthening of P86 | [P87](proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md) |
 
 ## Complete proposition index
 
@@ -225,7 +227,7 @@ P76 adds finite-data discipline to that adequacy check. One simultaneous sixteen
 
 Use the [Equation and citation map](equation_and_citation_map.md) to distinguish standard identities, repository derivations, and externally supported scientific claims. Use the [P72 provenance record](p72_equation_provenance.md), [P73 provenance record](p73_equation_provenance.md), [P74 provenance record](p74_equation_provenance.md), [P75 provenance record](p75_equation_provenance.md), and [P76 provenance record](p76_equation_provenance.md) for target-side equation classification. Use the [Foundational bibliography](foundational_physics_mathematics_bibliography.md), [Literature map](literature_map.md), and [Reference audit](reference_audit.md) for external evidence. Use the [Citation guide](../CITATION.md) when citing the overall project or a specific proposition.
 
-The research remains an ongoing mathematical-physics program. The current theorem frontier is P85, but the physical-to-experiential bridge itself remains open.
+The research remains an ongoing mathematical-physics program. The current theorem frontier is P87, but the physical-to-experiential bridge itself remains open.
 
 
 ## Frontier resources
@@ -237,13 +239,15 @@ The research remains an ongoing mathematical-physics program. The current theore
 | P83 | exact projection-parity constraints | [P83](proposition_83_exact_projection_parity.md) |
 | P84 | exact joint parity-event shared-parameter constraints | [P84](proposition_84_exact_projection_parity_contrast.md) |
 | P85 | exact three-event parity-functional shared-parameter constraints | [P85](proposition_85_exact_triple_projection_parity_functional.md) |
+| P86 | minimally weighted four-event shared-parameter constraints | [P86](proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md) |
+| P87 | complete bounded primitive four-event shared-parameter constraints | [P87](proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md) |
 
-**Previous frontier provenance:** [P85 equation and provenance record](p85_equation_provenance.md).
+**Previous frontier provenance:** [P86 equation and provenance record](p86_equation_provenance.md).
 
-**Current frontier provenance:** [P86 equation and provenance record](p86_equation_provenance.md).
+**Current frontier provenance:** [P87 equation and provenance record](p87_equation_provenance.md).
 
 
-## P86 current frontier record
+## P86 previous frontier record
 
 | Proposition | Direct proof | Main role |
 | --- | --- | --- |
@@ -254,4 +258,19 @@ The research remains an ongoing mathematical-physics program. The current theore
 - [P86 regression tests](../tests/test_weighted_quad_projection_parity_functional_separation.py)
 - [P86 theorem figure](figures/p86_exact_minimally_weighted_quad_projection_parity.svg)
 
-P85 remains the previous theorem frontier and its proof, figure, implementation, and exact witness remain part of the permanent scientific record.
+P86 remains the previous theorem frontier and its proof, figure, implementation, and exact witness remain part of the permanent scientific record.
+
+
+
+## P87 current frontier record
+
+| Proposition | Direct proof | Main role |
+| --- | --- | --- |
+| P87 | [Exact bounded primitive four-event projection-parity functional](proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md) | 39,600 exact bounded primitive four-event shared-parameter functionals; strict `L86 = 1/192 < L87 = 1/96` hierarchy witness |
+
+- [P87 equation and provenance record](p87_equation_provenance.md)
+- [P87 implementation](../src/consciousness_bridge/bounded_primitive_quad_projection_parity_functional_separation.py)
+- [P87 regression tests](../tests/test_bounded_primitive_quad_projection_parity_functional_separation.py)
+- [P87 theorem figure](figures/p87_exact_bounded_primitive_quad_projection_parity.svg)
+
+P87 is the current theorem frontier. The physical-to-experiential bridge remains open.

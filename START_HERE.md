@@ -1,6 +1,6 @@
 # Start Here: Mathematical Consciousness Bridge
 
-**A reader-first guide to the research question, the 86-result theorem program, the code, and the scientific boundaries.**
+**A reader-first guide to the research question, the 87-result theorem program, the code, and the scientific boundaries.**
 
 If this is your first time in the repository, start on this page before opening the full README or individual theorem files.
 
@@ -10,7 +10,7 @@ If this is your first time in the repository, start on this page before opening 
 
 The project does **not** begin by choosing a favorite formula for consciousness. It begins by asking what a scientifically defensible bridge claim would have to survive: representation changes, hidden variables, coarse-graining, target circularity, noisy measurement, non-identifiability, finite data, model inadequacy, and uncertified optimization.
 
-The current release is **v0.82.0**. The repository contains **86 proposition-level results**. The current theorem frontier is **P86**. The physical-to-experiential bridge itself remains open.
+The current release is **v0.82.0**. The repository contains **87 proposition-level results**. The current theorem frontier is **P87**. The physical-to-experiential bridge itself remains open.
 
 ---
 
@@ -21,7 +21,7 @@ flowchart LR
     A[Physical system\nstate, dynamics, interventions] --> B[Operational physical description\ninvariance, causality, time, scale]
     B --> C[Physical sufficiency test\nP19-P24]
     C --> D[Target integrity\nprovenance + measurement\nP71-P74]
-    D --> E[Target-model adequacy\nP75-P86]
+    D --> E[Target-model adequacy\nP75-P87]
     E --> F[Finite-data decision\ncertified rejection / inconclusive]
     F --> G[Physical-to-experiential bridge\nSTILL OPEN]
 
@@ -64,7 +64,7 @@ If you want the shortest coherent path before opening proofs:
 2. Read the six recurring terms on the public [Start Here page](website/start-here.html#reader-primer), or keep the [Glossary](docs/glossary.md) open.
 3. Read P19 in plain language as the core sufficiency question.
 4. Read P71-P76 as target integrity and model-adequacy safeguards.
-5. Read P77-P86 as the progression from finite-data model-set separation to exact shared-parameter parity incompatibility.
+5. Read P77-P87 as the progression from finite-data model-set separation to exact shared-parameter parity incompatibility.
 6. Finish with the scientific boundaries: rejection of a declared model is not an ontological conclusion about consciousness.
 
 For the presentation rules used across the website and documentation, see the [Reader Experience and Visual Presentation Standard](docs/reader_experience_and_visual_standard.md).
@@ -85,7 +85,7 @@ For the presentation rules used across the website and documentation, see the [R
 
 ---
 
-## The 86 results, organized by scientific role
+## The 87 results, organized by scientific role
 
 The proposition numbers record development order. They do **not** imply that every later proposition depends on every earlier one.
 
@@ -99,13 +99,13 @@ The proposition numbers record development order. They do **not** imply that eve
 | **P45-P60** | Adaptive experiment design, scheduling, switching, and transition calibration | Collect evidence efficiently while preserving validity. |
 | **P61-P70** | Calibration and optimization | Solve downstream finite-resource allocation problems once the scientific witness is already defined. |
 | **P71-P74** | Target provenance and target measurement | Prevent circular targets and quantify whether noisy target measurements are identifiable and reliable. |
-| **P75-P86** | Target-model adequacy and certified continuous-family separation | Test the declared target-measurement model itself, including finite-data rejection and exact-rational global separation certificates. |
+| **P75-P87** | Target-model adequacy and certified continuous-family separation | Test the declared target-measurement model itself, including finite-data rejection and exact-rational global separation certificates. |
 
 For the complete one-row-per-proposition index, use the [Theorem Roadmap](docs/theorem_roadmap.md) and [Research Navigation](docs/research_navigation.md).
 
 ---
 
-## The current frontier: P71-P86 in plain language
+## The current frontier: P71-P87 in plain language
 
 The newest branch returns directly to a basic scientific problem: before a physical descriptor can be judged sufficient for an experiential target, how do we know the **target itself** and the **way we measure it** are scientifically defensible?
 
@@ -138,6 +138,13 @@ The direct P81 proof is [here](docs/proposition_81_projection_event_model_separa
 **P83: exact projection parity.** P83 adds 22 parity observables on two, three, and four views. The branchwise parity probability has a closed product form whose extrema on a rational box occur at vertices. A strict exact-rational witness has `L82 = 0` but `L83 = 1/16`, showing that parity can expose a dependency constraint invisible to all predeclared P82 events.
 
 **P84: exact joint projection parity.** P84 asks whether separately compatible P83 parity events are jointly realizable by one shared P75 parameter assignment. It audits 220 exact pairwise parity-event contrasts using common response-coordinate vertices. A strict exact-rational witness has `L83 = 0` but `L84 = 1/32`, proving a genuine shared-parameter incompatibility invisible to the complete P83 scalar parity audit.
+
+
+**P85: three-event shared-parameter functionals.** P85 exhausts 660 sign-normalized three-event unit-weight functionals and can detect incompatibility beyond the complete P84 pairwise audit.
+
+**P86: minimally weighted four-event functionals.** P86 introduces the smallest non-uniform primitive magnitude pattern `{1,1,1,2}` across four parity events. Its exact witness gives `L85 = 0 < L86 = 1/192`.
+
+**P87: complete bounded primitive four-event functionals.** P87 keeps the same four-event order but completes every nonzero primitive integer coefficient vector with `|c_i| <= 2`, modulo one global sign. The exact family has 39,600 functionals and the same rational witness gives `L86 = 1/192 < L87 = 1/96`. This is the current theorem frontier.
 
 ---
 
@@ -176,7 +183,7 @@ This structure is designed so that a skeptical reader can audit the mathematics 
 | \(I(E;\Omega\mid T)\) | residual conditional information used in the stochastic sufficiency formulation |
 | \(E^\star\) | latent target before target-measurement noise |
 | \(Y\) | observed target measurement |
-| \(P75\) model | declared four-view binary latent target-measurement family used in P75-P86 |
+| \(P75\) model | declared four-view binary latent target-measurement family used in P75-P87 |
 | \(L_{78},L_{80},L_{81},L_{82},L_{83},L_{84}\) | progressively tighter certified lower bounds used in continuous-model separation |
 
 Notation is proposition-specific when needed; every proof file defines its local objects explicitly.
@@ -215,8 +222,8 @@ A reader should leave the repository with five boundaries completely clear:
 ## Current research status
 
 **Version:** 0.82.0  
-**Proposition frontier:** P86
-**Proposition-level results:** 86
+**Proposition frontier:** P87
+**Proposition-level results:** 87
 **Scientific status of the bridge:** open  
 **Repository standard:** theorem + proof + implementation + tests + provenance + explicit scientific boundary where applicable
 

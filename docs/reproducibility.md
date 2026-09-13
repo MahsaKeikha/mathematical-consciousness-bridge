@@ -87,7 +87,7 @@ Useful pytest variants:
 
 ```bash
 python -m pytest -q
-python -m pytest tests/test_weighted_quad_projection_parity_functional_separation.py
+python -m pytest tests/test_bounded_primitive_quad_projection_parity_functional_separation.py
 python -m pytest tests/test_figure_publication_sync.py
 python -m pytest -k strict_improvement
 ```
@@ -266,15 +266,15 @@ Pages deployment is also triggered by canonical figure changes. Before deploymen
 
 ---
 
-## 12. Reproduce the current P86 implementation checks directly
+## 12. Reproduce the current P87 implementation checks directly
 
-The current theorem frontier is **P86**. Its primary records are:
+The current theorem frontier is **P87**. Its primary records are:
 
 ```text
 docs/proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md
 docs/p86_equation_provenance.md
 src/consciousness_bridge/weighted_quad_projection_parity_functional_separation.py
-tests/test_weighted_quad_projection_parity_functional_separation.py
+tests/test_bounded_primitive_quad_projection_parity_functional_separation.py
 docs/figures/p86_exact_minimally_weighted_quad_projection_parity.svg
 figures/manifest.json
 ```
@@ -283,7 +283,7 @@ Run the focused theorem and figure-publication checks with:
 
 ```bash
 python -m pytest \
-  tests/test_weighted_quad_projection_parity_functional_separation.py \
+  tests/test_bounded_primitive_quad_projection_parity_functional_separation.py \
   tests/test_figure_publication_sync.py
 ```
 
