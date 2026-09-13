@@ -1,0 +1,89 @@
+name: modernize-publication-contract
+
+on:
+  push:
+    branches: ["website-research-iii-sync"]
+    paths:
+      - "scripts/modernize_publication_contract.py"
+      - ".github/workflows/modernize-publication-contract.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: modernize-publication-contract-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  modernize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Apply publication-contract migration
+        run: python scripts/modernize_publication_contract.py
+
+      - name: Verify migration script and website scripts compile
+        run: |
+          python -m py_compile \
+            scripts/modernize_publication_contract.py \
+            scripts/synchronize_research_three_website.py \
+            scripts/prepare_website.py
+
+      - name: Verify synchronized Research III source
+        run: python scripts/synchronize_research_three_website.py --check
+
+      - name: Run targeted reader-contract tests
+        run: |
+          python -m pip install -e ".[dev]"
+          pytest -q \
+            tests/test_readme_research_orientation.py \
+            tests/test_main_page_visual_paper.py \
+            tests/test_public_reader_layering.py \
+            tests/test_public_reader_punctuation.py \
+            tests/test_website_research_orientation.py \
+            tests/test_scholarly_provenance_surface.py \
+            tests/test_reader_experience.py
+
+      - name: Verify diff hygiene
+        run: git diff --check
+
+      - name: Commit modernization
+        run: |
+          if git diff --quiet; then
+            echo "Publication contract already modernized."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            CITATION.cff \
+            CITATION.md \
+            docs/detailed_proposition_record.md \
+            docs/reproducibility.md \
+            docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg \
+            docs/figure_catalog.md \
+            docs/claim_source_matrix.md \
+            website/sources.html \
+            website/research-lineage.html \
+            scripts/prepare_website.py \
+            tests/test_readme_research_orientation.py \
+            tests/test_main_page_visual_paper.py \
+            tests/test_website_research_orientation.py \
+            tests/test_scholarly_provenance_surface.py \
+            tests/test_public_reader_layering.py \
+            tests/test_public_reader_punctuation.py \
+            tests/test_reader_experience.py
+          git commit -m "Modernize P88 publication and reader contracts"
+          git fetch origin "${GITHUB_REF_NAME}"
+          git rebase "origin/${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
