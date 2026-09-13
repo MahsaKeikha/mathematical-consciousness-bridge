@@ -3,22 +3,24 @@ from functools import lru_cache
 
 import pytest
 
-from consciousness_bridge.certified_continuous_model_separation import P78ParameterBox
+import consciousness_bridge.radius_three_bounded_primitive_quad_projection_parity_functional_separation as p88_module
 from consciousness_bridge.bounded_primitive_quad_projection_parity_functional_separation import (
     p75_box_p87_linf_lower_bound_exact,
 )
+from consciousness_bridge.certified_continuous_model_separation import P78ParameterBox
 from consciousness_bridge.radius_three_bounded_primitive_quad_projection_parity_functional_separation import (
     empirical_radius_three_primitive_parity_quad_exact,
-    p75_box_p88_linf_lower_bound_exact,
     p75_box_radius_three_bounded_primitive_quad_parity_witness_exact,
     p75_radius_three_primitive_parity_quad_interval_exact,
-    p88_dominates_p87_on_box,
     p88_standard_primitive_quad_count,
     p88_standard_primitive_weight_pattern_count,
     radius_three_primitive_parity_quad_centered_coefficient_norm_exact,
 )
 
 # This regression file is also a watched source for the guarded P88 publication sync.
+# The full 208,560-functional P88 audit is intentionally executed exactly once here.
+# Wrapper/dominance algebra is tested separately with patched exact values so CI does
+# not repeat the same deterministic exhaustive search several times.
 
 
 def _strict_box() -> P78ParameterBox:
@@ -81,15 +83,31 @@ def test_p88_exhaustive_family_attains_exact_1_over_64_witness():
     assert witness.centering_constant == Fraction(-1)
 
 
-def test_p88_is_strictly_stronger_than_p87_on_same_box():
-    empirical = _strict_empirical_law()
-    box = _strict_box()
-    p87 = p75_box_p87_linf_lower_bound_exact(empirical, box)
-    p88 = p75_box_p88_linf_lower_bound_exact(empirical, box)
+def test_p88_exact_witness_is_strictly_stronger_than_p87_on_same_box():
+    p87 = p75_box_p87_linf_lower_bound_exact(_strict_empirical_law(), _strict_box())
+    p88 = _exhaustive_p88_witness().lower_bound
     assert p87 == Fraction(1, 96)
     assert p88 == Fraction(1, 64)
     assert p88 > p87
-    assert p88_dominates_p87_on_box(empirical, box)
+
+
+def test_p88_wrapper_and_dominance_use_exact_max_logic(monkeypatch):
+    empirical = _strict_empirical_law()
+    box = _strict_box()
+
+    monkeypatch.setattr(
+        p88_module,
+        "p75_box_p87_linf_lower_bound_exact",
+        lambda *_: Fraction(1, 96),
+    )
+    monkeypatch.setattr(
+        p88_module,
+        "p75_box_radius_three_bounded_primitive_quad_parity_linf_lower_bound_exact",
+        lambda *_: Fraction(1, 64),
+    )
+
+    assert p88_module.p75_box_p88_linf_lower_bound_exact(empirical, box) == Fraction(1, 64)
+    assert p88_module.p88_dominates_p87_on_box(empirical, box)
 
 
 def test_p88_rejects_nonprimitive_all_three_coefficients():
