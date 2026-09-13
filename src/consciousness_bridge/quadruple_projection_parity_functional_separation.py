@@ -2,9 +2,9 @@
 
 P85 tests all standard sign-normalized three-event functionals built from the
 11 canonical even-parity observables on two, three, or four of the four observed
-views. Three-event compatibility still does not imply four-event compatibility
-under one shared P75 parameter assignment. P86 closes that next finite
-relaxation gap.
+views. P86 asks whether adding exact four-event shared-parameter functionals can
+strictly sharpen the complete P85 certificate on the same P75 parameter box.
+The exact-rational regression witness below shows that it can.
 
 For four distinct canonical view sets J_1,...,J_4 and signs sigma_i in {-1,+1},
 with the first sign normalized to +1, define
