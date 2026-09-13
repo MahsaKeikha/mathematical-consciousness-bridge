@@ -32,56 +32,74 @@ def test_shared_reader_experience_style_is_built_into_pages() -> None:
     assert "overflow-wrap: anywhere" in css
 
 
-def test_first_reader_surfaces_match_current_frontier() -> None:
+def test_reader_first_surfaces_match_current_frontier_without_becoming_archives() -> None:
     frontier = _frontier()
-    start = _text("website/start-here.html")
+    readme = _text("README.md")
+    start = _text("START_HERE.md")
+    website_home = _text("website/index.html")
+    website_start = _text("website/start-here.html")
     research_map = _text("website/research-map.html")
-    plain = _text("website/plain-language.html")
 
-    assert f"{frontier}-result theorem program and current P{frontier} frontier" in start
-    if frontier <= 87:
-        assert f"P78-P{frontier} progressively tighten global separation" in start
-        assert f"P{frontier} is the current exact frontier." in start
-    else:
-        assert f"P{frontier}" in start
-        assert "independent validation" in start
-        assert "discovery" in start
-    assert f">Read P{frontier}</a>" in start
-    assert 'id="research-origin"' in start
-    assert "10.1016/j.chaos.2015.03.014" in start
-    assert f"The {frontier} propositions by scientific role" in start
-    assert f"You do not need to read {frontier} proofs in order" in start
-    assert f"complete {frontier}-result dependency structure" in start
-    assert "Physical descriptor" in start
-    assert "Observation channel" in start
+    for source in (readme, start, website_home, website_start, research_map):
+        assert f"P{frontier}" in source
+        assert "physical-to-experiential bridge" in source.lower()
 
-    assert f"through Proposition {frontier}" in research_map
-    assert f"<strong>{frontier}</strong>" in research_map
-    assert f"P73-P{frontier}" in research_map
+    assert len(readme.encode("utf-8")) < 25000
+    assert len(start.encode("utf-8")) < 25000
+    assert "Start in one click" in readme
+    assert "Start with the question, not the 88 propositions" in website_start
+    assert "See the scientific structure without reading 88 proofs in order" in research_map
 
-    assert f"<strong>{frontier}</strong><span>proposition-level results</span>" in plain
-    assert f"<strong>P{frontier}</strong><span>current theorem frontier</span>" in plain
-    assert f"What the {frontier} results are doing" in plain
-    assert f"P75-P{frontier}" in plain
-    assert f"actual P{frontier} research frontier" in plain
-    assert f"shows how all {frontier} results connect" in plain
+    # The public landing pages should feature the current frontier, not stack
+    # several historical frontier graphics at equal visual weight.
+    assert website_home.count("p88_heldout_selected_parity_functional_certification.svg") >= 1
+    assert "p87_exact_bounded_primitive_quad_projection_parity.svg" not in website_home
+    assert "p86_exact_minimally_weighted_quad_projection_parity.svg" not in website_home
+
+
+def test_first_reader_surfaces_offer_progressive_disclosure_routes() -> None:
+    readme = _text("README.md")
+    start = _text("START_HERE.md")
+    home = _text("website/index.html")
+
+    required_readme_routes = (
+        "START_HERE.md",
+        "docs/research_architecture.md",
+        "docs/research_traceability_index.md",
+        "docs/theorem_roadmap.md",
+        "docs/figure_catalog.md",
+        "docs/reproducibility.md",
+    )
+    for route in required_readme_routes:
+        assert route in readme
+
+    for token in (
+        "scientific question",
+        "assumptions",
+        "theorem",
+        "implementation",
+        "tests",
+        "provenance",
+        "scientific boundary",
+    ):
+        assert token in start.lower()
+
+    assert "Start with the idea" in home
+    assert "Explore the research map" in home
+    assert "Browse the visual atlas" in home
+    assert "Traceability Index" in home
 
 
 def test_no_reader_facing_html_page_advertises_older_frontier_as_current() -> None:
     frontier = _frontier()
     stale_current_frontier_tokens: list[str] = []
-    for number in range(84, frontier):
+    for number in range(1, frontier):
         stale_current_frontier_tokens.extend(
             (
-                f"{number}-result theorem program and current P{number} frontier",
-                f"<strong>P{number}</strong><span>current theorem frontier</span>",
                 f"current P{number} frontier",
-                f"actual P{number} research frontier",
-                f"What the {number} results are doing",
-                f"shows how all {number} results connect",
-                f"The {number} propositions by scientific role",
-                f"complete {number}-result dependency structure",
-                f"You do not need to read {number} proofs in order",
+                f"current theorem frontier · P{number}",
+                f"Current theorem frontier: P{number}",
+                f"<strong>P{number}</strong><span>current theorem frontier</span>",
             )
         )
 
@@ -94,23 +112,26 @@ def test_no_reader_facing_html_page_advertises_older_frontier_as_current() -> No
     assert not offenders, offenders
 
 
-def test_visual_atlas_uses_public_paths_and_readable_display_rules() -> None:
+def test_reader_and_publication_standards_are_documented() -> None:
+    reader = _text("docs/reader_experience_and_visual_standard.md")
+    figures = _text("docs/figure_caption_and_description_standard.md")
+    publication = _text("docs/publication_page_standard.md")
+
+    assert "## Visual size standard" in reader
+    assert "## Display-size standard" in figures
+    assert "rigor should increase as the reader goes deeper" in publication
+    assert "## 2. Use progressive disclosure" in publication
+    assert "theorem → provenance → implementation → tests → figure → reproduction" in publication
+    assert "## 12. The homepage is not the archive" in publication
+
+
+def test_visual_atlas_remains_the_deep_visual_archive() -> None:
     atlas = _text("website/visual-atlas.html")
     assert "../docs/" not in atlas
     assert "Figures are intentionally capped at a readable page size" in atlas
     assert "p81_projection_event_model_separation.svg" in atlas
     assert 'loading="lazy"' in atlas
     assert "theorem-figure-shell" in atlas
-    assert atlas.count("<h2>How to read every figure</h2>") == 1
-
-
-def test_reader_and_figure_standards_are_documented() -> None:
-    reader = _text("docs/reader_experience_and_visual_standard.md")
-    figures = _text("docs/figure_caption_and_description_standard.md")
-    assert "## Visual size standard" in reader
-    assert "## Display-size standard" in figures
-    assert "760 to 980 CSS pixels" in reader
-    assert "Never solve overflow by making text tiny" in reader
 
 
 def test_figure_enrichment_generator_preserves_canonical_reader_key() -> None:
@@ -120,10 +141,9 @@ def test_figure_enrichment_generator_preserves_canonical_reader_key() -> None:
     assert "reading_key" in source
     assert "Figures are intentionally capped at a readable page size" in source
     assert "reader_experience_and_visual_standard.md" in source
-    assert 'text.replace(legacy_reading_key, reading_key, 1)' in source
 
 
-def test_repository_verifier_tracks_current_frontier_and_all_propositions() -> None:
+def test_repository_verifier_tracks_current_frontier_and_reader_standards() -> None:
     frontier = _frontier()
     verifier = _text("scripts/verify_repository.py")
     assert f'CURRENT_FRONTIER = "P{frontier}"' in verifier
@@ -132,4 +152,3 @@ def test_repository_verifier_tracks_current_frontier_and_all_propositions() -> N
         or "for number in range(1, int(CURRENT_FRONTIER[1:]) + 1):" in verifier
     )
     assert '"docs/reader_experience_and_visual_standard.md"' in verifier
-    assert f'"docs/proposition_{frontier}_' in verifier
