@@ -1,4 +1,6 @@
 from pathlib import Path
+import subprocess
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 THEOREM = ROOT / "docs/proposition_86_exact_quadruple_projection_parity_functional.md"
@@ -23,7 +25,7 @@ def test_p86_theorem_records_exact_hierarchy_and_scope() -> None:
         "\\frac7{192}",
         "Q(\\widehat p)=-\\frac98",
         "I_B(Q)=[0,0]",
-        "D(Q)=8",
+        "D(Q)=2\\cdot2+12\\cdot0+2\\cdot2=\\boxed8",
         "does not identify the P75 latent state with consciousness",
         "physical-to-experiential bridge",
     ):
@@ -55,3 +57,23 @@ def test_p86_search_requires_strict_improvement_over_complete_p85() -> None:
         "strict_gain",
     ):
         assert token in text, token
+
+
+def test_p86_seeded_search_reproduces_the_strict_record() -> None:
+    completed = subprocess.run(
+        [sys.executable, str(SEARCH)],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        check=True,
+        timeout=60,
+    )
+    output = completed.stdout
+    for token in (
+        "FOUND_P86_STRICT_WITNESS",
+        "iteration=1",
+        "p85_bound=Fraction(5, 48)",
+        "p86_quadruple_bound=Fraction(9, 64)",
+        "strict_gain=Fraction(7, 192)",
+    ):
+        assert token in output, output
