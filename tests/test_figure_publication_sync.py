@@ -11,6 +11,12 @@ GATEWAY = ROOT / "figures" / "README.md"
 CURRENT = ROOT / "figures" / "CURRENT_FRONTIER.md"
 VISUAL_ATLAS = ROOT / "website" / "visual-atlas.html"
 SYNCER = ROOT / "scripts" / "sync_figure_publication.py"
+PREPARE_WEBSITE = ROOT / "scripts" / "prepare_website.py"
+P86_FIGURE = "p86_exact_minimally_weighted_quad_projection_parity.svg"
+RAW_PREFIX = (
+    "https://raw.githubusercontent.com/MahsaKeikha/"
+    "mathematical-consciousness-bridge/main/docs/figures/"
+)
 
 
 def test_figure_manifest_is_complete_and_byte_exact() -> None:
@@ -18,9 +24,7 @@ def test_figure_manifest_is_complete_and_byte_exact() -> None:
     assert manifest["schema_version"] == 1
     assert manifest["canonical_root"] == "docs/figures"
     assert manifest["current_frontier"] == "P86"
-    assert manifest["current_frontier_figure"].endswith(
-        "p86_exact_minimally_weighted_quad_projection_parity.svg"
-    )
+    assert manifest["current_frontier_figure"].endswith(P86_FIGURE)
     assert manifest["hash_algorithm"] == "sha256"
 
     figures = sorted(DOC_FIGURES.rglob("*.svg"))
@@ -44,7 +48,7 @@ def test_github_figure_gateway_tracks_p86() -> None:
     current = CURRENT.read_text(encoding="utf-8")
 
     assert "## Current theorem frontier: P86" in gateway
-    assert "p86_exact_minimally_weighted_quad_projection_parity.svg" in gateway
+    assert P86_FIGURE in gateway
     assert "manifest.json" in gateway
     assert "P81 - Projection-Event Certificate" not in gateway
 
@@ -64,7 +68,7 @@ def test_visual_atlas_leads_with_p86_before_historical_frontiers() -> None:
 
     assert p86 < p84 < p85
     assert "Current theorem frontier · P86" in text[p86:p84]
-    assert "p86_exact_minimally_weighted_quad_projection_parity.svg" in text[p86:p84]
+    assert P86_FIGURE in text[p86:p84]
     assert "L85 = 0 &lt; L86 = 1/192" in text[p86:p84]
     assert "weighted_quad_projection_parity_functional_separation.py" in text[p86:p84]
     assert "test_weighted_quad_projection_parity_functional_separation.py" in text[
@@ -78,3 +82,26 @@ def test_figure_publication_synchronizer_reports_zero_drift() -> None:
         cwd=ROOT,
         check=True,
     )
+
+
+def test_pages_build_bundles_exact_commit_p86_figure(tmp_path: Path) -> None:
+    site = tmp_path / "site"
+    subprocess.run(
+        [
+            sys.executable,
+            str(PREPARE_WEBSITE),
+            "--source",
+            "website",
+            "--output",
+            str(site),
+        ],
+        cwd=ROOT,
+        check=True,
+    )
+
+    deployed_p86 = site / "figures" / P86_FIGURE
+    assert deployed_p86.read_bytes() == (DOC_FIGURES / P86_FIGURE).read_bytes()
+
+    atlas = (site / "visual-atlas.html").read_text(encoding="utf-8")
+    assert f'src="figures/{P86_FIGURE}"' in atlas
+    assert f'src="{RAW_PREFIX}' not in atlas
