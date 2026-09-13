@@ -38,17 +38,26 @@ jobs:
           cp -a website website-deploy
           python scripts/prepare_website.py --source website-deploy --output _site
 
-      - name: Verify restored full-site identity
+      - name: Verify canonical 88/P88 site identity
         run: |
           grep -q 'What would a scientifically testable bridge from physical description to experience actually require?' _site/index.html
-          grep -q 'Explore all 87 results' _site/index.html
-          grep -q 'Current record:</strong> 87 proposition-level results through P87' _site/index.html
+          grep -q 'Explore all 88 results' _site/index.html
+          grep -q 'Current record:</strong> 88 proposition-level results through P88' _site/index.html
+          grep -q 'Current theorem frontier · P88' _site/index.html
+          ! grep -q 'Current record:</strong> 87 proposition-level results through P87' _site/index.html
           ! grep -q 'Current record:</strong> 86 proposition-level results through P86' _site/index.html
+
           grep -q 'What are we actually trying to find out?' _site/plain-language.html
           grep -q 'Explain it in 60 seconds' _site/plain-language.html
           grep -q 'Seven questions have to be kept separate' _site/plain-language.html
-          grep -q 'What the 87 results are doing' _site/plain-language.html
-          grep -q 'P87' _site/plain-language.html
+          grep -q 'What the 88 results are doing' _site/plain-language.html
+          grep -q '<strong>88</strong><span>proposition-level results</span>' _site/plain-language.html
+          grep -q '<strong>P88</strong><span>current theorem frontier</span>' _site/plain-language.html
+          grep -q 'Current exact frontier · P88' _site/plain-language.html
+          ! grep -q '<strong>P87</strong><span>current theorem frontier</span>' _site/plain-language.html
+
+          grep -q 'Current theorem frontier · P88' _site/visual-atlas.html
+          grep -q 'p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg' _site/visual-atlas.html
 
       - name: Upload website artifact
         uses: actions/upload-pages-artifact@v3
