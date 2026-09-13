@@ -23,6 +23,7 @@ RAW_FIGURE_PREFIX = (
     "mathematical-consciousness-bridge/main/docs/figures/"
 )
 CURRENT_FRONTIER_FIGURE = "p87_exact_bounded_primitive_quad_projection_parity.svg"
+CURRENT_RECORD_TEXT = "Current record:</strong> 87 proposition-level results through P87"
 
 ASSET_VERSION = "20260913-mobile17-p87"
 SCRIPT_TAG = f'<script defer src="app.js?v={ASSET_VERSION}"></script>'
@@ -115,7 +116,7 @@ def _copy_canonical_figures(output: Path) -> None:
 
 
 def _validate_current_frontier_pages(output: Path) -> None:
-    """Require P87 to be the primary visual frontier in the canonical website."""
+    """Require the deployed site to be internally consistent with P87."""
 
     frontier_figure = output / "figures" / CURRENT_FRONTIER_FIGURE
     if not frontier_figure.is_file():
@@ -147,6 +148,8 @@ def _validate_current_frontier_pages(output: Path) -> None:
         raise RuntimeError("Homepage does not use the bundled P87 theorem figure")
     if f'src="{RAW_FIGURE_PREFIX}' in homepage:
         raise RuntimeError("Homepage still depends on raw GitHub main for figures")
+    if CURRENT_RECORD_TEXT not in homepage:
+        raise RuntimeError("Homepage Project at a glance is not synchronized to 87/P87")
 
     p87 = homepage.index('id="p87-frontier"')
     for marker in (
@@ -163,6 +166,12 @@ def _validate_current_frontier_pages(output: Path) -> None:
         "The 86 results form several dependency branches.",
         "all 86 propositions",
         "P71-P86, then read the falsification program",
+        "Current record:</strong> 86 proposition-level results through P86",
+        "P86 is the current exact continuous-model frontier",
+        "P73-P86 progressively distinguish",
+        "P74-P86.",
+        "P75 → P86 certification ladder",
+        "Current theorem asset: docs/figures/p86_exact_minimally_weighted_quad_projection_parity.svg",
     )
     stale = [token for token in stale_tokens if token in homepage]
     if stale:
@@ -174,8 +183,6 @@ def prepare_website(source: Path, output: Path) -> None:
 
     if not source.is_dir():
         raise FileNotFoundError(f"website source directory not found: {source}")
-
-    canonical_build = source.resolve() == CANONICAL_WEBSITE.resolve()
 
     if output.exists():
         shutil.rmtree(output)
@@ -239,8 +246,7 @@ def prepare_website(source: Path, output: Path) -> None:
         if not (output / asset).is_file():
             raise RuntimeError(f"website build is missing {asset}")
 
-    if canonical_build:
-        _validate_current_frontier_pages(output)
+    _validate_current_frontier_pages(output)
 
 
 def main() -> None:
