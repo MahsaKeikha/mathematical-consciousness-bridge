@@ -1,6 +1,6 @@
 # Detailed proposition record
 
-## Complete P1 to P87 chronology
+## Complete P1 to P88 chronology
 
 This page preserves the proposition-by-proposition development history of the Mathematical Consciousness Bridge research program. It is intentionally separate from the main README so a first-time reader can follow the scientific argument without first learning the internal chronology of the project.
 
@@ -10,11 +10,11 @@ The scientific status rule is strict throughout: a theorem is only a theorem und
 
 ### How to use this record
 
-A first-time reader should not read this page as 84 disconnected proofs. Use it as an audit index: identify the scientific role of a proposition, open its direct proof when needed, then follow implementation/tests/provenance links for verification. For the shortest conceptual path, begin with [Start Here](../START_HERE.md) and [Research Navigation](research_navigation.md). The [Reader Experience and Visual Presentation Standard](reader_experience_and_visual_standard.md) explains the repository-wide explanation and visual hierarchy.
+A first-time reader should not read this page as 88 disconnected proofs. Use it as an audit index: identify the scientific role of a proposition, open its direct proof when needed, then follow implementation/tests/provenance links for verification. For the shortest conceptual path, begin with [Start Here](../START_HERE.md) and [Research Navigation](research_navigation.md). The [Reader Experience and Visual Presentation Standard](reader_experience_and_visual_standard.md) explains the repository-wide explanation and visual hierarchy.
 
 ---
 
-## Complete P1 to P87 chronology
+## Complete P1 to P88 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
@@ -321,3 +321,28 @@ P88 enlarges the completed P87 primitive coefficient box to `0 < |c_i| <= 3`, ex
 - Figure: `figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg`
 
 **Boundary:** conditional model separation only; the physical-to-experiential bridge remains open.
+
+### P88 - Radius-three bounded primitive four-event parity certificate
+
+**P88** extends the complete primitive four-event parity audit from the
+coefficient box `|c_i| <= 2` to every nonzero integer coefficient vector with
+`|c_i| <= 3`, after primitive reduction and sign normalization. For each
+four-event subset, the exact family contains **632** primitive coefficient
+patterns. Across the 330 four-event subsets of the 11 canonical P83 parity
+coordinates, this gives **208,560 exact functionals**.
+
+The strict exact witness uses
+
+`((0,2),1), ((1,3),-1), ((1,2,3),-3), ((0,1,2,3),2)`.
+
+For that witness, the empirical functional value is `-11/8`, the exact P75
+model interval is `[-1,2]`, the interval gap is `3/8`, the centered coefficient
+norm is `24`, and the certified separation lower bound is `1/64`. Consequently,
+
+`L85 = 0 < L86 = 1/192 < L87 = 1/96 < L88 = 1/64`.
+
+**Scientific status.** P88 is an exact conditional model-separation theorem for
+the declared P75 target-measurement family. It does not identify consciousness,
+establish nonphysicality, or close the physical-to-experiential bridge.
+
+Audit path: [P88 proof](proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md), [P88 equation provenance](p88_equation_provenance.md), [implementation](../src/consciousness_bridge/radius_three_bounded_primitive_quad_projection_parity_functional_separation.py), [exact tests](../tests/test_radius_three_bounded_primitive_quad_projection_parity_functional_separation.py), and [theorem figure](figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg).

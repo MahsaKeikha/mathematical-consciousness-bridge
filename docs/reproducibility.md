@@ -133,7 +133,7 @@ P88 extends the sign-normalized primitive nonzero four-event coefficient family 
 For the published strict witness, the coefficient pattern is `(1,-1,-3,2)`. The empirical functional value is
 
 \[
--rac{11}{8},
+-\frac{11}{8},
 \]
 
 while the exact P75 box interval is
@@ -145,19 +145,19 @@ while the exact P75 box interval is
 giving an exact functional gap
 
 \[
-rac{3}{8}.
+\frac{3}{8}.
 \]
 
 The centering constant is `-1` and the centered coefficient norm is 24, which yields the P88 empirical full-law lower bound
 
 \[
-rac{1}{64}.
+\frac{1}{64}.
 \]
 
 On this strict witness the certified hierarchy is
 
 \[
-L_{85}=0<L_{86}=rac{1}{192}<L_{87}=rac{1}{96}<L_{88}=rac{1}{64}.
+L_{85}=0<L_{86}=\frac{1}{192}<L_{87}=\frac{1}{96}<L_{88}=\frac{1}{64}.
 \]
 
 These are conditional model-separation results for the declared P75 target-measurement family. They do not identify the latent state with consciousness, establish nonphysicality, or complete the physical-to-experiential bridge.

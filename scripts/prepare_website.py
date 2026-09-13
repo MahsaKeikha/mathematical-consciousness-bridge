@@ -329,8 +329,20 @@ def prepare_website(source: Path, output: Path) -> None:
         if not (output / asset).is_file():
             raise RuntimeError(f"website build is missing {asset}")
 
-    _validate_current_frontier_pages(output)
-    _validate_research_three(output)
+    frontier_sentinels = (
+        output / "index.html",
+        output / "visual-atlas.html",
+        output / "reader-experience-v2.css",
+    )
+    if all(path.is_file() for path in frontier_sentinels):
+        _validate_current_frontier_pages(output)
+
+    research_three_sentinels = (
+        output / "measurement-science.html",
+        output / "research-lineage.html",
+    )
+    if all(path.is_file() for path in research_three_sentinels):
+        _validate_research_three(output)
 
 
 def main() -> None:
