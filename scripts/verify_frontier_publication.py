@@ -1,10 +1,9 @@
-"""Verify that current-frontier publication surfaces agree.
+"""Verify that canonical current-frontier publication surfaces agree.
 
-The README is intentionally reader-first. Frontier verification therefore checks
-its compact current-status declarations and current-theorem link rather than
-requiring the older monolithic count table that was removed from the public
-landing page. Detailed counts remain machine-verifiable from the proposition
-and figure trees.
+The repository uses reader-first navigation rather than one monolithic status
+page. This verifier therefore checks each canonical surface in the structure it
+actually publishes: README, figure manifest, theorem roadmap, research
+navigation, and reproducibility guide.
 """
 
 from __future__ import annotations
@@ -53,6 +52,7 @@ def _current_proposition(root: Path, frontier: int) -> Path:
 def verify_frontier_publication(root: Path = ROOT) -> None:
     frontier = _frontier(root)
     pfrontier = f"P{frontier}"
+    previous = f"P{frontier - 1}"
     version = _package_version(root)
     proposition = _current_proposition(root, frontier)
 
@@ -73,11 +73,8 @@ def verify_frontier_publication(root: Path = ROOT) -> None:
         f"**Formal release:** v{version}" in readme,
         "README citation/footer release declaration disagrees with pyproject.toml",
     )
-    expected_frontier_link = (
-        f"[Read the current frontier](docs/{proposition.name})"
-    )
     _require(
-        expected_frontier_link in readme,
+        f"[Read the current frontier](docs/{proposition.name})" in readme,
         "README current-frontier link does not point to the canonical proposition",
     )
 
@@ -93,11 +90,25 @@ def verify_frontier_publication(root: Path = ROOT) -> None:
         isinstance(figure_count, int) and figure_count > 0,
         "figure publication manifest has no valid figure count",
     )
+    current_figure = manifest.get("current_frontier_figure")
+    _require(
+        isinstance(current_figure, str) and current_figure.startswith("docs/figures/"),
+        "figure publication manifest has no canonical current-frontier figure",
+    )
+    _require(
+        (root / current_figure).is_file(),
+        "manifest current-frontier figure does not exist",
+    )
+    current_figure_name = Path(current_figure).name
 
     roadmap = (root / "docs" / "theorem_roadmap.md").read_text(encoding="utf-8")
     _require(
         f"The current documented theorem frontier is **{pfrontier}**." in roadmap,
         "theorem roadmap current-frontier declaration is stale",
+    )
+    _require(
+        f"P1 through P{frontier} with explicit dependency branches" in roadmap,
+        "theorem roadmap proposition-range declaration is stale",
     )
     dependency = roadmap.split("## 2. Target-side bridge lineage", 1)[0]
     _require(
@@ -105,50 +116,98 @@ def verify_frontier_publication(root: Path = ROOT) -> None:
         "theorem roadmap dependency map omits the current frontier",
     )
     _require(
+        f"[{pfrontier}]({proposition.name})" in roadmap,
+        "theorem roadmap proposition index omits the canonical current theorem",
+    )
+    _require(
+        f"## {pfrontier}:" in roadmap,
+        "theorem roadmap lacks a dedicated current-frontier section",
+    )
+    _require(
         f"## After {pfrontier}" in roadmap,
         "theorem roadmap lacks a current-frontier future-work boundary",
     )
-    for value in re.findall(r"Any P(\d+) candidate", roadmap):
+    for value in re.findall(r"Any P(\d+) (?:candidate|claim)", roadmap):
         _require(
             int(value) > frontier,
-            f"theorem roadmap still describes closed P{value} as a future candidate",
+            f"theorem roadmap still describes closed P{value} as future work",
         )
     for value in re.findall(r"continuation beyond P(\d+)", roadmap):
         _require(
             int(value) >= frontier,
-            f"theorem roadmap future-work language is still pinned below {pfrontier}",
+            f"theorem roadmap future-work language is pinned below {pfrontier}",
         )
+    _require(
+        f"The current documented theorem frontier is **{previous}**." not in roadmap,
+        "theorem roadmap still marks the previous proposition as current",
+    )
 
     navigation = (root / "docs" / "research_navigation.md").read_text(encoding="utf-8")
     _require(
-        f"The current documented theorem frontier is **{pfrontier}**." in navigation,
-        "research navigation current-frontier declaration is stale",
+        f"The public theorem frontier is **{pfrontier}**." in navigation,
+        "research navigation public-frontier declaration is stale",
     )
-    recommended_parts = navigation.split("## Recommended reading order", 1)
-    _require(len(recommended_parts) == 2, "research navigation lacks recommended reading order")
-    recommended = recommended_parts[1].split("## Scientific branch map", 1)[0]
     _require(
-        f"[P{frontier} " in recommended,
-        "recommended reading order omits the current frontier",
+        f"**Results:** P75 through P{frontier}" in navigation,
+        "research navigation model-adequacy range is stale",
     )
-    branch_parts = navigation.split("## Scientific branch map", 1)
-    _require(len(branch_parts) == 2, "research navigation lacks scientific branch map")
-    branch = branch_parts[1].split("## Complete proposition index", 1)[0]
     _require(
-        re.search(rf"^\| [^|]+ \| P{frontier} \|", branch, re.MULTILINE)
+        re.search(
+            rf"\*\*Current frontier:\*\* \[{pfrontier}:[^\]]+\]\({re.escape(proposition.name)}\)",
+            navigation,
+        )
         is not None,
-        "scientific branch map omits the current frontier",
+        "research navigation current-frontier link is stale",
+    )
+    _require(
+        f"For {pfrontier}:" in navigation,
+        "research navigation current-frontier audit block is stale",
+    )
+    _require(
+        proposition.name in navigation,
+        "research navigation audit block omits the canonical proposition",
+    )
+    _require(
+        f"p{frontier}_equation_provenance.md" in navigation,
+        "research navigation audit block omits current equation provenance",
+    )
+    _require(
+        current_figure_name in navigation,
+        "research navigation audit block omits the canonical current figure",
+    )
+    _require(
+        f"the full {frontier} proposition index" in navigation,
+        "research navigation proposition-count wording is stale",
+    )
+    _require(
+        f"**Current frontier:** [{previous}:" not in navigation,
+        "research navigation still marks the previous proposition as current",
     )
 
     reproducibility = (root / "docs" / "reproducibility.md").read_text(encoding="utf-8")
     _require(
-        f"The current theorem frontier is **{pfrontier}**." in reproducibility,
-        "reproducibility guide current-frontier declaration is stale",
+        f"The current public theorem frontier is **{pfrontier}**." in reproducibility,
+        "reproducibility guide public-frontier declaration is stale",
     )
     _require(
-        f"## 12. Reproduce the current {pfrontier} implementation checks directly"
-        in reproducibility,
+        f"## 5. Focused audit of the current {pfrontier} frontier" in reproducibility,
         "reproducibility guide focused-audit section is stale",
+    )
+    _require(
+        f"The current theorem frontier is **{pfrontier}**." in reproducibility,
+        "reproducibility guide current-theorem declaration is stale",
+    )
+    _require(
+        f"docs/{proposition.name}" in reproducibility,
+        "reproducibility guide omits the canonical current proposition",
+    )
+    _require(
+        current_figure in reproducibility,
+        "reproducibility guide omits the canonical current figure",
+    )
+    _require(
+        f"The current theorem frontier is **{previous}**." not in reproducibility,
+        "reproducibility guide still marks the previous proposition as current",
     )
 
     print(
