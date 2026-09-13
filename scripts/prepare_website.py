@@ -1,11 +1,9 @@
 """Prepare the static research website for GitHub Pages deployment.
 
-The repository keeps page content as plain HTML files. This build step copies the
-website into a deployment directory, injects shared publication assets, and
-bundles the canonical ``docs/figures`` tree into the same Pages artifact. Image
-``src`` URLs that point at raw GitHub ``main`` figures are rewritten to the local
-artifact copy, so the HTML and SVGs shown by one deployment come from the exact
-same checked-out commit.
+The website is copied into an auditable deployment directory, canonical figures
+from ``docs/figures`` are bundled into that artifact, shared publication assets
+are injected consistently, and the deployed reader surfaces are validated
+against the current Research II frontier and the Research III handoff.
 """
 
 from __future__ import annotations
@@ -22,10 +20,14 @@ RAW_FIGURE_PREFIX = (
     "https://raw.githubusercontent.com/MahsaKeikha/"
     "mathematical-consciousness-bridge/main/docs/figures/"
 )
-CURRENT_FRONTIER_FIGURE = "p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg"
+CURRENT_FRONTIER_FIGURE = (
+    "p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg"
+)
 CURRENT_RECORD_TEXT = "Current record:</strong> 88 proposition-level results through P88"
+MEASUREMENT_REPO = "https://github.com/MahsaKeikha/consciousness-measurement-science"
+MEASUREMENT_PIN = "8bbb7b029d70c43cc6a9dbf8b44dfe5069d0993d"
 
-ASSET_VERSION = "20260913-mobile18-p88"
+ASSET_VERSION = "20260913-r3-fix1"
 SCRIPT_TAG = f'<script defer src="app.js?v={ASSET_VERSION}"></script>'
 READER_LINKS_SCRIPT_TAG = '<script defer src="reader-links.js"></script>'
 FOOTER_SCRIPT_TAG = '<script defer src="footer.js"></script>'
@@ -73,9 +75,10 @@ FALLBACK_NAV = (
     '<a href="index.html">Overview</a>'
     '<a href="plain-language.html">Plain Language</a>'
     '<a href="start-here.html">Start Here</a>'
-    '<a href="research-map.html">Research</a>'
+    '<a href="research-map.html">Research II</a>'
+    '<a href="measurement-science.html">Research III</a>'
     '<a href="visual-atlas.html">Explore</a>'
-    '<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge">GitHub ↗</a>'
+    '<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge">GitHub</a>'
 )
 
 
@@ -92,7 +95,7 @@ def _normalize_navigation_assets(text: str) -> str:
 
 
 def _normalize_topbar_fallback(text: str) -> str:
-    """Keep the no-JavaScript fallback compact instead of exposing the old flat bar."""
+    """Keep the no-JavaScript fallback compact and Research III aware."""
 
     return TOPBAR_NAV_PATTERN.sub(
         lambda match: f"{match.group(1)}{FALLBACK_NAV}{match.group(2)}",
@@ -102,7 +105,7 @@ def _normalize_topbar_fallback(text: str) -> str:
 
 
 def _localize_figure_sources(text: str) -> str:
-    """Use the exact-commit figure copies bundled into the Pages artifact."""
+    """Use exact-commit copies of Research II figures bundled into Pages."""
 
     return text.replace(f'src="{RAW_FIGURE_PREFIX}', 'src="figures/')
 
@@ -113,6 +116,14 @@ def _copy_canonical_figures(output: Path) -> None:
             f"canonical figure directory not found: {CANONICAL_FIGURES}"
         )
     shutil.copytree(CANONICAL_FIGURES, output / "figures", dirs_exist_ok=True)
+
+
+def _require_once(text: str, token: str, surface: str) -> None:
+    count = text.count(token)
+    if count != 1:
+        raise RuntimeError(
+            f"{surface} must contain exactly one {token!r}; observed {count}"
+        )
 
 
 def _validate_current_frontier_pages(output: Path) -> None:
@@ -135,10 +146,7 @@ def _validate_current_frontier_pages(output: Path) -> None:
         raise RuntimeError("Visual Atlas does not use the bundled P88 theorem figure")
     if f'src="{RAW_FIGURE_PREFIX}' in visual_atlas:
         raise RuntimeError("Visual Atlas still depends on raw GitHub main for figures")
-    p88_atlas = visual_atlas.index('id="p88-frontier"')
-    for marker in ('id="p87-frontier"', 'id="p86-frontier"', 'id="p85-frontier"'):
-        if p88_atlas >= visual_atlas.index(marker):
-            raise RuntimeError(f"Visual Atlas does not present P88 before {marker}")
+    _require_once(visual_atlas, 'id="p88-frontier"', "Visual Atlas")
 
     homepage_path = output / "index.html"
     if not homepage_path.is_file():
@@ -150,48 +158,65 @@ def _validate_current_frontier_pages(output: Path) -> None:
         raise RuntimeError("Homepage still depends on raw GitHub main for figures")
     if CURRENT_RECORD_TEXT not in homepage:
         raise RuntimeError("Homepage Project at a glance is not synchronized to 88/P88")
-
-    p88 = homepage.index('id="p88-frontier"')
-    for marker in (
-        'id="plain-language"',
-        'id="p87-frontier"',
-        'id="p86-frontier"',
-        'id="p85-frontier"',
-        'id="p84-frontier"',
-    ):
-        if p88 >= homepage.index(marker):
-            raise RuntimeError(f"Homepage P88 frontier appears too late, after {marker}")
+    _require_once(homepage, 'id="p88-frontier"', "Homepage")
+    reader_css = (output / "reader-experience-v2.css").read_text(encoding="utf-8")
+    for token in ("#reproduce .equation", "contain: inline-size", "#reproduce.two-col > *"):
+        if token not in reader_css:
+            raise RuntimeError(f"reproducibility containment CSS is missing: {token}")
 
     stale_tokens = (
         "Current theorem frontier · P87",
-        "The 87 results form several dependency branches.",
-        "The 87-result program",
-        "all 87 propositions",
-        "P71-P87, then read the falsification program",
         "Current record:</strong> 87 proposition-level results through P87",
-        "P87 is the current exact frontier",
-        "P73-P87 progressively distinguish",
-        "P74-P87.",
-        "P75 → P87 certification ladder",
-        "Current theorem asset: docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg",
         "Current theorem frontier · P86",
-        "The 86 results form several dependency branches.",
-        "all 86 propositions",
-        "P71-P86, then read the falsification program",
         "Current record:</strong> 86 proposition-level results through P86",
-        "P86 is the current exact continuous-model frontier",
-        "P73-P86 progressively distinguish",
-        "P74-P86.",
-        "P75 → P86 certification ladder",
-        "Current theorem asset: docs/figures/p86_exact_minimally_weighted_quad_projection_parity.svg",
     )
     stale = [token for token in stale_tokens if token in homepage]
     if stale:
         raise RuntimeError(f"Homepage contains stale pre-P88 reader text: {stale}")
 
 
+def _validate_research_three(output: Path) -> None:
+    measurement_path = output / "measurement-science.html"
+    if not measurement_path.is_file():
+        raise RuntimeError("website build is missing measurement-science.html")
+    measurement = measurement_path.read_text(encoding="utf-8")
+    required = (
+        "Research III · Consciousness Measurement Science",
+        MEASUREMENT_REPO,
+        "what can be identified, bounded, predicted, or falsified",
+        "M0-M7",
+        f"consciousness-measurement-science/{MEASUREMENT_PIN}/docs/figures/measurement_architecture.svg",
+    )
+    missing = [token for token in required if token not in measurement]
+    if missing:
+        raise RuntimeError(f"Research III page is missing required content: {missing}")
+
+    lineage_path = output / "research-lineage.html"
+    if not lineage_path.is_file():
+        raise RuntimeError("website build is missing research-lineage.html")
+    lineage = lineage_path.read_text(encoding="utf-8")
+    for token in (
+        "Research III · consciousness measurement science",
+        "<strong>88</strong><span>proposition-level results</span>",
+        "<strong>P88</strong><span>current theorem frontier</span>",
+        "<strong>v0.82.0</strong><span>current documented release</span>",
+        "The three repositories form a research progression",
+    ):
+        if token not in lineage:
+            raise RuntimeError(f"Research lineage is missing current stage content: {token}")
+    for stale in ("<strong>81</strong>", "<strong>P81</strong>", "v0.81.0"):
+        if stale in lineage:
+            raise RuntimeError(f"Research lineage contains stale Research II state: {stale}")
+
+    app = (output / "app.js").read_text(encoding="utf-8")
+    if "measurement-science.html" not in app or "Research III" not in app:
+        raise RuntimeError("app.js does not expose Research III navigation")
+    if app.count("const direct = card.querySelector('a[href]');") != 1:
+        raise RuntimeError("app.js contains the clickable-card declaration more than once")
+
+
 def prepare_website(source: Path, output: Path) -> None:
-    """Copy ``source`` and canonical figures into one auditable Pages build."""
+    """Copy source and canonical figures into one auditable Pages build."""
 
     if not source.is_dir():
         raise FileNotFoundError(f"website source directory not found: {source}")
@@ -205,6 +230,20 @@ def prepare_website(source: Path, output: Path) -> None:
     if not html_files:
         raise RuntimeError("website build contains no HTML pages")
 
+    required_tags = (
+        BASE_STYLE_TAG,
+        NAVIGATION_STYLE_TAG,
+        NAVIGATION_V2_STYLE_TAG,
+        PUBLICATION_STYLE_TAG,
+        PUBLICATION_V2_STYLE_TAG,
+        RESEARCH_GUIDE_STYLE_TAG,
+        CONTRAST_STYLE_TAG,
+        READER_EXPERIENCE_STYLE_TAG,
+        SCRIPT_TAG,
+        READER_LINKS_SCRIPT_TAG,
+        FOOTER_SCRIPT_TAG,
+    )
+
     for path in html_files:
         text = path.read_text(encoding="utf-8")
         if "</head>" not in text:
@@ -214,29 +253,7 @@ def prepare_website(source: Path, output: Path) -> None:
         text = _normalize_topbar_fallback(text)
         text = _localize_figure_sources(text)
 
-        additions: list[str] = []
-        if BASE_STYLE_TAG not in text:
-            additions.append(BASE_STYLE_TAG)
-        if NAVIGATION_STYLE_TAG not in text:
-            additions.append(NAVIGATION_STYLE_TAG)
-        if NAVIGATION_V2_STYLE_TAG not in text:
-            additions.append(NAVIGATION_V2_STYLE_TAG)
-        if PUBLICATION_STYLE_TAG not in text:
-            additions.append(PUBLICATION_STYLE_TAG)
-        if PUBLICATION_V2_STYLE_TAG not in text:
-            additions.append(PUBLICATION_V2_STYLE_TAG)
-        if RESEARCH_GUIDE_STYLE_TAG not in text:
-            additions.append(RESEARCH_GUIDE_STYLE_TAG)
-        if CONTRAST_STYLE_TAG not in text:
-            additions.append(CONTRAST_STYLE_TAG)
-        if READER_EXPERIENCE_STYLE_TAG not in text:
-            additions.append(READER_EXPERIENCE_STYLE_TAG)
-        if SCRIPT_TAG not in text:
-            additions.append(SCRIPT_TAG)
-        if READER_LINKS_SCRIPT_TAG not in text:
-            additions.append(READER_LINKS_SCRIPT_TAG)
-        if FOOTER_SCRIPT_TAG not in text:
-            additions.append(FOOTER_SCRIPT_TAG)
+        additions = [tag for tag in required_tags if tag not in text]
         if additions:
             text = text.replace("</head>", "".join(additions) + "</head>", 1)
         path.write_text(text, encoding="utf-8")
@@ -259,6 +276,7 @@ def prepare_website(source: Path, output: Path) -> None:
             raise RuntimeError(f"website build is missing {asset}")
 
     _validate_current_frontier_pages(output)
+    _validate_research_three(output)
 
 
 def main() -> None:
@@ -267,7 +285,7 @@ def main() -> None:
     parser.add_argument("--output", type=Path, default=Path("_site"))
     args = parser.parse_args()
     prepare_website(args.source, args.output)
-    print(f"prepared website with exact-commit figures: {args.output}")
+    print(f"prepared website with Research II P88 and Research III: {args.output}")
 
 
 if __name__ == "__main__":
