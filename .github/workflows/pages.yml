@@ -3,7 +3,7 @@ name: deploy-research-website
 on:
   push:
     branches: ["main"]
-    # Final clean P86 resynchronization: exact figures, required scholarly provenance, collegial research-origin context, responsive reader layout, and HTML deploy from one commit artifact.
+    # Final clean P87 resynchronization: exact figures, required scholarly provenance, collegial research-origin context, responsive reader layout, and HTML deploy from one commit artifact.
     paths:
       - "website/**"
       - "docs/figures/**"
@@ -38,28 +38,28 @@ jobs:
       - name: Prepare exact-commit navigable website
         run: |
           python scripts/prepare_website.py --source website --output _site
-          test -f _site/figures/p86_exact_minimally_weighted_quad_projection_parity.svg
-          grep -q 'src="figures/p86_exact_minimally_weighted_quad_projection_parity.svg"' _site/index.html
-          grep -q 'src="figures/p86_exact_minimally_weighted_quad_projection_parity.svg"' _site/visual-atlas.html
-          grep -q 'styles.css?v=20260913-mobile16-p86' _site/implementation.html
-          grep -q 'reader-experience-v2.css?v=20260913-mobile16-p86' _site/implementation.html
+          test -f _site/figures/p87_exact_bounded_primitive_quad_projection_parity.svg
+          grep -q 'src="figures/p87_exact_bounded_primitive_quad_projection_parity.svg"' _site/index.html
+          grep -q 'src="figures/p87_exact_bounded_primitive_quad_projection_parity.svg"' _site/visual-atlas.html
+          grep -q 'styles.css?v=20260913-mobile17-p87' _site/implementation.html
+          grep -q 'reader-experience-v2.css?v=20260913-mobile17-p87' _site/implementation.html
           grep -q 'grid-template-columns: minmax(0, 1fr) !important' _site/reader-experience-v2.css
           grep -q 'overflow-wrap: break-word' _site/reader-experience-v2.css
           grep -q 'Site-wide grid containment contract:' _site/reader-experience-v2.css
           grep -q 'minmax(310px, 1fr)' _site/implementation.html
-          grep -q 'Stage 06 · P73-P86' _site/implementation.html
+          grep -q 'Stage 06 · P73-P87' _site/implementation.html
           grep -q 'weighted_quad_projection_parity_functional_separation.py' _site/implementation.html
           grep -q 'id="research-origin"' _site/start-here.html
           grep -q '<strong>Research context:</strong>' _site/start-here.html
           grep -q 'important conceptual starting point' _site/start-here.html
-          grep -q 'P86 is the current exact frontier.' _site/start-here.html
+          grep -q 'P87 is the current exact frontier.' _site/start-here.html
           grep -q '10.1016/j.chaos.2015.03.014' _site/start-here.html
           grep -q 'arXiv:1401.1219' _site/start-here.html
           grep -q 'id="research-origins"' _site/sources.html
           grep -q '<strong>Role of this reference:</strong>' _site/sources.html
           grep -q 'important conceptual starting point' _site/sources.html
           grep -q 'distinct mathematical framework' _site/sources.html
-          grep -q 'Current theorem source · P86' _site/sources.html
+          grep -q 'Current theorem source · P87' _site/sources.html
           grep -q 'claim_evidence_standard.md' _site/sources.html
           grep -q 'claim_source_matrix.md' _site/sources.html
           if grep -q 'href="styles.css"' _site/implementation.html; then
@@ -70,7 +70,7 @@ jobs:
             echo "Implementation page still labels P84 as current."
             exit 1
           fi
-          if grep -q 'Current frontier · P85' _site/start-here.html; then
+          if grep -q 'Current frontier · P86' _site/start-here.html; then
             echo "Start Here still contains a stale P85 current-frontier block."
             exit 1
           fi
@@ -82,8 +82,8 @@ jobs:
             echo "Defensive Tegmark source-role wording returned."
             exit 1
           fi
-          python -c "from pathlib import Path; t=Path('_site/index.html').read_text(encoding='utf-8'); p=t.index('id=\"p86-frontier\"'); assert p < t.index('id=\"plain-language\"'); assert p < t.index('id=\"p84-frontier\"'); assert p < t.index('id=\"p85-frontier\"'); assert 'Current theorem frontier · P85' not in t; assert 'The 84 results form several dependency branches.' not in t; assert 'all 84 propositions' not in t"
-          python -c "from pathlib import Path; t=Path('_site/visual-atlas.html').read_text(encoding='utf-8'); assert t.index('id=\"p86-frontier\"') < t.index('id=\"p85-frontier\"')"
+          python -c "from pathlib import Path; t=Path('_site/index.html').read_text(encoding='utf-8'); p=t.index('id=\"p87-frontier\"'); assert p < t.index('id=\"plain-language\"'); assert p < t.index('id=\"p84-frontier\"'); assert p < t.index('id=\"p85-frontier\"'); assert 'Current theorem frontier · P86' not in t; assert 'The 84 results form several dependency branches.' not in t; assert 'all 84 propositions' not in t"
+          python -c "from pathlib import Path; t=Path('_site/visual-atlas.html').read_text(encoding='utf-8'); assert t.index('id=\"p87-frontier\"') < t.index('id=\"p85-frontier\"')"
           if grep -q 'src="https://raw.githubusercontent.com/MahsaKeikha/mathematical-consciousness-bridge/main/docs/figures/' _site/index.html _site/visual-atlas.html; then
             echo "Website still depends on mutable raw-GitHub main figure URLs."
             exit 1
