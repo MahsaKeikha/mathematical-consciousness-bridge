@@ -25,7 +25,7 @@ from verify_frontier_publication import verify_frontier_publication
 
 ROOT = Path(__file__).resolve().parents[1]
 CURRENT_VERSION = "0.82.0"
-CURRENT_FRONTIER = "P87"
+CURRENT_FRONTIER = "P88"
 
 CORE_FILES = (
     "README.md",
@@ -56,6 +56,7 @@ CORE_FILES = (
     "docs/figures/p85_exact_triple_projection_parity_functional.svg",
     "docs/figures/p86_exact_minimally_weighted_quad_projection_parity.svg",
     "docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg",
+    "docs/figures/p88_exact_radius3_bounded_primitive_quad_projection_parity.svg",
     "docs/proposition_84_exact_projection_parity_contrast.md",
     "docs/proposition_85_exact_triple_projection_parity_functional.md",
     "docs/p85_equation_provenance.md",
@@ -63,6 +64,8 @@ CORE_FILES = (
     "docs/p86_equation_provenance.md",
     "docs/proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md",
     "docs/p87_equation_provenance.md",
+    "docs/proposition_88_exact_radius3_bounded_primitive_quad_projection_parity_functional.md",
+    "docs/p88_equation_provenance.md",
     "figures/README.md",
     "figures/CURRENT_FRONTIER.md",
     "figures/manifest.json",

@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P87**. The proposition record runs from **P1 through P87 with explicit dependency branches**. P71-P87 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P88**. The proposition record runs from **P1 through P88 with explicit dependency branches**. P71-P88 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -49,7 +49,9 @@ The current documented theorem frontier is **P87**. The proposition record runs 
 &\Downarrow\\
 &\text{P86: minimally weighted four-event parity functionals test compatibility beyond the complete P85 triple certificate}\\
 &\Downarrow\\
-&\text{P87: bounded primitive four-event parity functionals complete the nonzero coefficient box with |c_i| <= 2}
+&\text{P87: bounded primitive four-event parity functionals complete the nonzero coefficient box with |c_i| <= 2}\\
+&\Downarrow\\
+&\text{P88: radius-3 bounded primitive four-event parity functionals complete the nonzero coefficient box with |c_i| <= 3}
 \end{aligned}
 }
 \]
@@ -701,6 +703,50 @@ The stronger functional uses coefficients `(1,-1,-2,2)`, empirical value `-17/24
 
 P87 remains a conditional model-separation theorem for the declared P75 family. It does not identify the latent state with consciousness or close the physical-to-experiential bridge.
 
-## After P87
+## P88: radius-3 bounded primitive four-event parity-functional separation
 
-The next frontier should not be inferred merely by increasing functional order. Any P88 claim must close a separately stated mathematical or scientific gap and must include a strict or otherwise informative certificate that is not already implied by P86.
+P88 asks whether P87's complete primitive radius-two coefficient box already exhausts the useful same-order four-event parity directions. It keeps the event order fixed and enlarges the coefficient alphabet to `{-3,-2,-1,1,2,3}`, retaining only primitive nonzero vectors and quotienting one global sign.
+
+There are
+
+\[
+\frac{6^4-2^4-2^4}{2}=632
+\]
+
+sign-normalized primitive coefficient patterns per four-event subset. Across the 330 unordered four-event subsets of the eleven canonical P83 parity coordinates, P88 therefore exhausts
+
+\[
+330\times632=208{,}560
+\]
+
+exact functionals. The same multi-affine endpoint argument used in P87 gives exact rational P75 box intervals, and the same mass-conservation centering transfers a functional mismatch to a sound full-law \(L_\infty\) lower bound.
+
+On the shared exact rational P86/P87 witness, exhaustive P88 enumeration selects
+
+\[
+Q=P(H_{\{0,2\}})-P(H_{\{1,3\}})-3P(H_{\{1,2,3\}})+2P(H_{\{0,1,2,3\}}),
+\]
+
+with
+
+\[
+Q(\widehat p)=-\frac{11}{8},\qquad I_B(Q)=[-1,2],\qquad \Delta_Q=\frac38,\qquad D(Q)=24.
+\]
+
+Hence
+
+\[
+\boxed{L_{85}=0<L_{86}=\frac1{192}<L_{87}=\frac1{96}<L_{88}=\frac1{64}.}
+\]
+
+- Proof: [P88](proposition_88_exact_radius3_bounded_primitive_quad_projection_parity_functional.md)
+- Provenance: [p88_equation_provenance.md](p88_equation_provenance.md)
+- Figure: [P88 radius-3 bounded primitive certificate](figures/p88_exact_radius3_bounded_primitive_quad_projection_parity.svg)
+- Source: [`bounded_primitive_radius3_quad_projection_parity_functional_separation.py`](../src/consciousness_bridge/bounded_primitive_radius3_quad_projection_parity_functional_separation.py)
+- Tests: [`test_bounded_primitive_radius3_quad_projection_parity_functional_separation.py`](../tests/test_bounded_primitive_radius3_quad_projection_parity_functional_separation.py)
+
+P88 remains a conditional exact model-separation theorem for the declared P75 family. It does not identify the latent state with consciousness, establish nonphysicality, validate an alternative ontology, or close the physical-to-experiential bridge.
+
+## After P88
+
+The next frontier should not be inferred merely by increasing coefficient radius or functional order. Any P89 claim must close a separately stated mathematical or scientific gap and must include a strict or otherwise informative certificate that is not already implied by P88.

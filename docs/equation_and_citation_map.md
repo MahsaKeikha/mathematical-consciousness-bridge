@@ -1286,3 +1286,31 @@ The standard audit contains 660 sign-normalized functionals. The exact strict wi
 | `L86=1/192 < L87=1/96` | strict exact rational hierarchy witness | repository-original exact construction | P87 proof, implementation, tests |
 
 P87 is a conditional model-separation theorem for the declared P75 family. Its equations do not identify the latent state with consciousness or supply the still-open physical-to-experiential bridge.
+
+## P88: radius-3 bounded primitive four-event parity certificate
+
+P88 inherits the P75 conditional-independence parity identity and P87 exact multi-affine endpoint argument, but enlarges the complete primitive coefficient box to `0 < |c_i| <= 3` at fixed four-event order. The finite family has 632 sign-normalized primitive patterns per subset and 208,560 exact functionals total.
+
+The repository-original exact strict witness is
+
+\[
+Q=P(H_{02})-P(H_{13})-3P(H_{123})+2P(H_{0123}),
+\]
+
+with
+
+\[
+Q(\widehat p)=-\frac{11}{8},\quad I_B(Q)=[-1,2],\quad \Delta_Q=\frac38,\quad D(Q)=24,
+\]
+
+and therefore
+
+\[
+L_{88}=\frac1{64}>L_{87}=\frac1{96}.
+\]
+
+- Direct proof: [P88](proposition_88_exact_radius3_bounded_primitive_quad_projection_parity_functional.md)
+- Equation provenance: [P88 provenance](p88_equation_provenance.md)
+- Implementation: [`bounded_primitive_radius3_quad_projection_parity_functional_separation.py`](../src/consciousness_bridge/bounded_primitive_radius3_quad_projection_parity_functional_separation.py)
+- Regression tests: [`test_bounded_primitive_radius3_quad_projection_parity_functional_separation.py`](../tests/test_bounded_primitive_radius3_quad_projection_parity_functional_separation.py)
+

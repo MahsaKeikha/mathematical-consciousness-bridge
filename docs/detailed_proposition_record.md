@@ -1,6 +1,6 @@
 # Detailed proposition record
 
-## Complete P1 to P87 chronology
+## Complete P1 to P88 chronology
 
 This page preserves the proposition-by-proposition development history of the Mathematical Consciousness Bridge research program. It is intentionally separate from the main README so a first-time reader can follow the scientific argument without first learning the internal chronology of the project.
 
@@ -14,7 +14,7 @@ A first-time reader should not read this page as 84 disconnected proofs. Use it 
 
 ---
 
-## Complete P1 to P87 chronology
+## Complete P1 to P88 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
@@ -308,3 +308,16 @@ The exact regression witness has `L84 = 0`, empirical functional value `5/8`, ex
 - Implementation: [`bounded_primitive_quad_projection_parity_functional_separation.py`](../src/consciousness_bridge/bounded_primitive_quad_projection_parity_functional_separation.py)
 - Tests: [`test_bounded_primitive_quad_projection_parity_functional_separation.py`](../tests/test_bounded_primitive_quad_projection_parity_functional_separation.py)
 - Figure: [`p87_exact_bounded_primitive_quad_projection_parity.svg`](figures/p87_exact_bounded_primitive_quad_projection_parity.svg)
+
+**P88** keeps the P87 four-event parity order fixed but enlarges the complete primitive integer coefficient box from `0 < |c_i| <= 2` to `0 < |c_i| <= 3`. The six-symbol coefficient alphabet contains 1,296 nonzero four-vectors. The only nonprimitive vectors are the 16 all-even `±2` vectors and the 16 all-`±3` vectors; after removing those and quotienting one global sign, 632 standard primitive coefficient patterns remain per four-event subset. Across the 330 unordered four-event subsets of the eleven canonical parity coordinates, the complete P88 family therefore contains 208,560 exact functionals.
+
+The exact P75 interval calculation remains multi-affine and is certified at common parameter-box vertices. On the shared rational P86/P87 witness, exhaustive P88 search selects coefficients `(1,-1,-3,2)` on `(H02,H13,H123,H0123)`, with empirical value `-11/8`, exact model interval `[-1,2]`, gap `3/8`, centered transfer norm `24`, and lower bound `1/64`. Thus the shared witness gives
+
+\[
+L_{85}=0<L_{86}=\frac1{192}<L_{87}=\frac1{96}<L_{88}=\frac1{64}.
+\]
+
+Direct P88 proof: [radius-3 bounded primitive four-event parity-functional separation](proposition_88_exact_radius3_bounded_primitive_quad_projection_parity_functional.md). Equation classification: [P88 equation and provenance record](p88_equation_provenance.md). Implementation: [`bounded_primitive_radius3_quad_projection_parity_functional_separation.py`](../src/consciousness_bridge/bounded_primitive_radius3_quad_projection_parity_functional_separation.py). Tests: [`test_bounded_primitive_radius3_quad_projection_parity_functional_separation.py`](../tests/test_bounded_primitive_radius3_quad_projection_parity_functional_separation.py).
+
+P88 is a conditional model-separation theorem for the declared P75 family. It does not identify a latent state with consciousness or close the physical-to-experiential bridge.
+

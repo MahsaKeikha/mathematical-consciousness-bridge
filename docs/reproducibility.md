@@ -106,7 +106,7 @@ Use this route when you want to verify the current committed state without regen
 
 ## 5. Focused audit of the current P87 frontier
 
-The current theorem frontier is **P87**.
+The current theorem frontier is **P88**.
 
 Its direct technical record is:
 
@@ -355,3 +355,13 @@ For terminology, use the [Glossary](glossary.md).
 For the theorem dependency structure, use the [Theorem Roadmap](theorem_roadmap.md).
 
 For every proposition in chronological order, use the [Detailed Proposition Record](detailed_proposition_record.md).
+
+### P88 exact frontier check
+
+```bash
+pytest -q tests/test_bounded_primitive_radius3_quad_projection_parity_functional_separation.py
+python scripts/sync_figure_publication.py --check
+```
+
+The P88 test exhausts the declared radius-three primitive family and verifies the exact shared-witness value `L88 = 1/64`. The figure synchronization check validates the canonical theorem figure, gateway, and SHA-256 manifest without editing the website.
+
