@@ -29,6 +29,19 @@ jobs:
       - name: Apply guarded P88 frontier migration
         run: python scripts/promote_p88_website.py
 
+      - name: Remove false-positive generic stale token
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("scripts/prepare_website.py")
+          text = path.read_text(encoding="utf-8")
+          needle = r'        "current theorem frontier</span></div>\n        <div><strong>v0.82.0",'
+          if needle not in text:
+              raise SystemExit("expected false-positive stale token not found")
+          path.write_text(text.replace(needle + "\n", "", 1), encoding="utf-8")
+          PY
+
       - name: Verify only intended site/build surfaces changed
         run: |
           changed="$(git diff --name-only)"
