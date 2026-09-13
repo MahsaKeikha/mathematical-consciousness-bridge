@@ -37,15 +37,32 @@ jobs:
           python scripts/promote_p88_public_frontier.py
           python - <<'PY'
           from pathlib import Path
-          path = Path("README.md")
-          text = path.read_text(encoding="utf-8")
-          old = "| Equation-driven quantitative figures | **71** |"
-          new = "| Equation-driven quantitative figures | **72** |"
-          if old in text:
-              text = text.replace(old, new)
-          if new not in text:
+
+          readme_path = Path("README.md")
+          readme = readme_path.read_text(encoding="utf-8")
+          old_count = "| Equation-driven quantitative figures | **71** |"
+          new_count = "| Equation-driven quantitative figures | **72** |"
+          if old_count in readme:
+              readme = readme.replace(old_count, new_count)
+          if new_count not in readme:
               raise SystemExit("README equation-driven figure row was not synchronized to 72")
-          path.write_text(text, encoding="utf-8")
+          readme_path.write_text(readme, encoding="utf-8")
+
+          roadmap_path = Path("docs/theorem_roadmap.md")
+          roadmap = roadmap_path.read_text(encoding="utf-8")
+          p87 = r"&\text{P87: bounded primitive four-event parity functionals complete the nonzero coefficient box with |c_i| <= 2}"
+          p88 = r"&\text{P88: held-out validation gives selection-valid finite-sample certification for a discovery-frozen P75 box/P87 functional}"
+          if r"\text{P88:" not in roadmap:
+              if p87 not in roadmap:
+                  raise SystemExit("P87 dependency-map anchor was not found")
+              roadmap = roadmap.replace(
+                  p87,
+                  p87 + "\\\\\n&\\Downarrow\\\\\n" + p88,
+                  1,
+              )
+          if r"\text{P88:" not in roadmap:
+              raise SystemExit("P88 dependency-map node was not created")
+          roadmap_path.write_text(roadmap, encoding="utf-8")
           PY
       - name: Install development and reproducibility environment
         run: |
