@@ -4,6 +4,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 MAP = ROOT / "website/research-map.html"
+HOME = ROOT / "website/index.html"
+START = ROOT / "website/start-here.html"
 
 
 def _frontier() -> int:
@@ -16,15 +18,17 @@ def _frontier() -> int:
     return max(numbers)
 
 
-def test_research_map_starts_with_orientation_before_stage_details():
+def test_research_map_starts_with_orientation_before_deep_layers():
     text = MAP.read_text(encoding="utf-8")
     hero = text.index('<section class="hero compact-hero">')
-    orientation = text.index("How to read this research")
-    stage_one = text.index("I · Formal bridge foundations")
-    assert hero < orientation < stage_one
+    orientation = text.index('id="orientation"')
+    physical = text.index('id="physical-foundation"')
+    target = text.index('id="target-side"')
+    frontier = text.index('id="p88-reader-frontier"')
+    assert hero < orientation < physical < target < frontier
 
 
-def test_research_map_exposes_status_and_all_ten_stage_ranges():
+def test_research_map_exposes_status_and_major_scientific_layers():
     text = MAP.read_text(encoding="utf-8")
     frontier = _frontier()
     required = [
@@ -34,113 +38,78 @@ def test_research_map_exposes_status_and_all_ten_stage_ranges():
         "P1-P10",
         "P11-P18",
         "P19-P24",
-        "P71",
-        "P72",
-        f"P73-P{frontier}",
-        "P25-P37",
-        "P38-P44",
-        "P45-P53",
-        "P54-P70",
-        "Ten-stage scientific path",
+        "P25-P44",
+        "P45-P70",
+        "P71-P74",
+        "P75-P87",
+        f"P{frontier}",
+        "physical-to-experiential bridge",
     ]
     for token in required:
         assert token in text, token
 
 
-def test_research_map_gives_direct_audit_paths():
+def test_research_map_is_question_led_not_proposition_dump():
     text = MAP.read_text(encoding="utf-8")
-    frontier = _frontier()
+    assert "What physical description are we actually talking about?" in text
+    assert "Does the declared physical descriptor preserve every distinction" in text
+    assert "Before testing a bridge, can the target itself be trusted?" in text
+    assert "Can the declared target-measurement model actually reproduce the observed law?" in text
+    assert "Can a discovery-selected result survive independent data?" in text
+    assert "Complete proposition index" not in text
+
+
+def test_research_map_gives_direct_audit_paths_without_listing_every_file():
+    text = MAP.read_text(encoding="utf-8")
     required = [
+        "research_traceability_index.md",
         "theorem_roadmap.md",
         "research_navigation.md",
         "equation_and_citation_map.md",
         "visual-atlas.html",
-        "tests/",
-        "src/consciousness_bridge/",
+        "src/consciousness_bridge",
+        "proposition_19_fundamental_physical_sufficiency.md",
         "proposition_71_target_provenance_noncircularity.md",
-        "proposition_72_target_measurement_channel_robustness.md",
-        "proposition_73_target_channel_identifiability.md",
-        "proposition_74_finite_sample_target_channel_recovery.md",
         "proposition_75_target_model_adequacy_overidentification.md",
-        "proposition_76_finite_sample_target_model_adequacy.md",
-        "proposition_77_full_law_model_set_separation.md",
         "proposition_78_certified_continuous_model_separation.md",
         "proposition_79_certified_sampling_radius.md",
-        "proposition_80_simplex_coupled_model_separation.md",
-        "proposition_81_projection_event_model_separation.md",
         "p82_equation_provenance.md",
-        "proposition_82_exact_nested_projection_contrast.md",
         "p83_equation_provenance.md",
-        "proposition_83_exact_projection_parity.md",
-        "proposition_84_exact_projection_parity_contrast.md",
-        "joint_projection_parity_contrast_separation.py",
-        "test_joint_projection_parity_contrast_separation.py",
-        f"index.html#p{frontier}-frontier",
+        "proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md",
+        "proposition_88_heldout_selected_parity_functional_certification.md",
     ]
     for token in required:
         assert token in text, token
 
 
-def test_research_map_presents_current_continuous_frontier_with_p84_history():
+def test_current_frontier_is_visually_unique_on_home_and_start_pages():
+    frontier = _frontier()
+    home = HOME.read_text(encoding="utf-8")
+    start = START.read_text(encoding="utf-8")
+
+    assert f"Current theorem frontier · P{frontier}" in home
+    assert f"Current theorem frontier · P{frontier}" in start
+    assert "p88_heldout_selected_parity_functional_certification.svg" in home
+    assert "p88_heldout_selected_parity_functional_certification.svg" in start
+    assert "p87_exact_bounded_primitive_quad_projection_parity.svg" not in home
+    assert "p86_exact_minimally_weighted_quad_projection_parity.svg" not in home
+
+
+def test_p88_reader_frontier_preserves_selection_and_box_specific_boundaries():
     text = MAP.read_text(encoding="utf-8")
-    frontier_number = _frontier()
-    assert f"through Proposition {frontier_number}" in text
-    frontier = text.index('id="continuous-model-frontier"')
-    p77 = text.index("Open P77 →", frontier)
-    p78 = text.index("Open P78 →", frontier)
-    p79 = text.index("Open P79 →", frontier)
-    p80 = text.index("Open P80 →", frontier)
-    p81 = text.index("Open P81 →", frontier)
-    p82 = text.index("Open P82 →", frontier)
-    p83 = text.index("Open P83 →", frontier)
-    current_navigation = text.index(
-        f'href="index.html#p{frontier_number}-frontier">Continue to the current P{frontier_number} frontier</a>',
-        frontier,
-    )
-    p84 = text.index('id="p84"', p83)
-    assert p77 < p78 < p79 < p80 < p81 < p82 < p83 < current_navigation < p84
-
-    assert (
-        f"P77-P{frontier_number}: from full-law rejection to exact dependency-aware certification"
-        in text
-    )
-    assert text.count("P78: Certified continuous P75 model separation") == 1
-    assert text.count("How is P77 made rigorous for the continuous P75 family?") == 1
-    assert "only the certified global lower bound can feed the P77 rejection gate" in text
-    assert "Simplex coupling" in text
-    assert "256 genuinely new residual events" in text
-    assert "P81 = 1/16 to P82 = 1/12" in text
-    assert "L82 = 0 and L83 = 1/16" in text
-    assert "L83 = 0, L84 = 1/32" in text
-    assert "P85 tests exact three-event shared-parameter parity functionals" in text
-    assert "P86 adds exact minimally weighted four-event functionals" in text
-    assert 'id="p87-reader-frontier"' in text
-    assert "39,600" in text
-    assert "L85 = 0 &lt; L86 = 1/192 &lt; L87 = 1/96" in text
-    if frontier_number >= 88:
-        assert "Current theorem frontier: P88" in text
-        assert "independent validation" in text
-    assert p84 < text.index("</main>")
+    section = text[text.index('id="p88-reader-frontier"') : text.index("</main>")]
+    assert "independent validation" in section
+    assert "39,600-way functional union bound" in section
+    assert "1063" in section
+    assert "box-specific" in section
+    assert "discovery/validation independence" in section
 
 
-def test_p84_previous_frontier_is_unique_and_structurally_inside_main():
-    text = MAP.read_text(encoding="utf-8")
-    main_open = text.index("<main>")
-    main_close = text.index("</main>")
-    p84 = text.index('id="p84"')
-    p84_text = text[p84:main_close]
-    assert text.count('id="p84"') == 1
-    assert main_open < p84 < main_close
-    assert "Previous certified frontier · P84" in p84_text
-    assert "Current certified frontier" not in p84_text
-    assert "P84 proof" in p84_text
-    assert "P84 proof" not in text[main_close:]
-
-
-def test_continuous_frontier_keeps_p82_and_p83_provenance_auditable():
-    text = MAP.read_text(encoding="utf-8")
-    frontier = text.index('id="continuous-model-frontier"')
-    main_close = text.index("</main>", frontier)
-    frontier_text = text[frontier:main_close]
-    assert "p82_equation_provenance.md" in frontier_text
-    assert "p83_equation_provenance.md" in frontier_text
+def test_start_page_preserves_research_origin_and_reader_primer():
+    text = START.read_text(encoding="utf-8")
+    assert 'id="reader-primer"' in text
+    assert 'id="research-origin"' in text
+    assert "10.1016/j.chaos.2015.03.014" in text
+    assert "arXiv:1401.1219" in text
+    assert "Physical descriptor" in text
+    assert "Observation channel" in text
