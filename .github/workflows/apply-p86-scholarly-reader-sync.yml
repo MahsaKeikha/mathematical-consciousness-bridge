@@ -1,0 +1,51 @@
+name: apply-p86-scholarly-reader-sync
+
+on:
+  push:
+    paths:
+      - ".github/workflows/apply-p86-scholarly-reader-sync.yml"
+      - "scripts/apply_p86_scholarly_reader_sync.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Apply scholarly reader synchronization
+        run: python scripts/apply_p86_scholarly_reader_sync.py
+      - name: Install test environment
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+      - name: Run scholarly and reader regression tests
+        run: >-
+          python -m pytest
+          tests/test_scholarly_provenance_surface.py
+          tests/test_reader_experience.py
+          tests/test_p84_reader_presentation.py
+          tests/test_implementation_reader_path.py
+          tests/test_website_build.py
+          tests/test_website_link_integrity.py
+          tests/test_website_research_orientation.py
+      - name: Verify repository contract
+        run: python scripts/verify_repository.py
+      - name: Check patch formatting
+        run: git diff --check
+      - name: Commit synchronized scholarly surfaces
+        run: |
+          if git diff --quiet; then
+            echo "No scholarly synchronization changes needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add website/start-here.html website/reader-experience-v2.css docs/literature_map.md tests/test_reader_experience.py scripts/verify_repository.py
+          git commit -m "Synchronize P86 scholarly reader record"
+          git push
