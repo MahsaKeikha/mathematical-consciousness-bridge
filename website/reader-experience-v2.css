@@ -138,6 +138,140 @@ code,
   overflow-wrap: anywhere;
 }
 
+/*
+ * Overview hierarchy: the current frontier remains publication-scale.
+ * Prior certified frontiers stay visible and auditable, but no longer
+ * repeat full-size theorem artwork beneath the current P86 result.
+ */
+#p84-frontier,
+#p85-frontier {
+  margin-top: 26px;
+  padding: clamp(22px, 3vw, 34px);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--paper) 94%, var(--soft) 6%),
+    var(--paper)
+  );
+}
+
+#p84-frontier .section-head,
+#p85-frontier .section-head {
+  max-width: 880px;
+}
+
+#p84-frontier .section-head h2,
+#p85-frontier .section-head h2 {
+  margin-bottom: 10px;
+  font-size: clamp(1.45rem, 2.1vw, 1.9rem);
+  line-height: 1.18;
+}
+
+#p84-frontier .section-head p:last-child,
+#p85-frontier .section-head p:last-child {
+  max-width: 78ch;
+  margin-bottom: 0;
+}
+
+/* Historical figures stay one click away instead of dominating Overview. */
+#p84-frontier .theorem-figure-shell,
+#p85-frontier .theorem-figure-shell {
+  width: auto;
+  max-width: none;
+  margin: 16px 0 0;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+#p84-frontier .theorem-figure-shell img,
+#p85-frontier .theorem-figure-shell img {
+  display: none;
+}
+
+#p84-frontier .theorem-figure-shell a,
+#p85-frontier .theorem-figure-shell a {
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  min-height: 38px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+  color: var(--accent);
+  font-size: 0.86rem;
+  font-weight: 750;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+#p84-frontier .theorem-figure-shell a::after {
+  content: "Open the full P84 theorem figure ↗";
+}
+
+#p85-frontier .theorem-figure-shell a::after {
+  content: "Open the full P85 theorem figure ↗";
+}
+
+#p84-frontier .theorem-figure-shell a:hover,
+#p85-frontier .theorem-figure-shell a:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+#p84-frontier .frontier-summary-grid,
+#p85-frontier .frontier-summary-grid {
+  gap: 10px;
+  margin-top: 14px;
+}
+
+#p84-frontier .frontier-summary-card,
+#p85-frontier .result {
+  padding: 15px 16px;
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+#p84-frontier .frontier-summary-card h3,
+#p85-frontier .result h3 {
+  margin-bottom: 6px;
+  font-size: 0.96rem;
+}
+
+#p84-frontier .frontier-summary-card p,
+#p85-frontier .result p,
+#p85-frontier .two-col p {
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+#p85-frontier .result > span {
+  margin-bottom: 5px;
+  font-size: 1.15rem;
+}
+
+#p85-frontier .two-col {
+  gap: 12px;
+  margin-top: 14px;
+}
+
+#p85-frontier .two-col > div,
+#p85-frontier .two-col > .card {
+  padding: 16px 17px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+}
+
+#p85-frontier > p:last-child {
+  margin: 14px 0 0;
+  font-size: 0.86rem;
+}
+
 @media (max-width: 900px) {
   .figure-card,
   .reader-primer-grid,
@@ -153,6 +287,19 @@ code,
   .reader-primer-grid,
   .reader-step-grid {
     gap: 10px;
+  }
+}
+
+@media (max-width: 760px) {
+  #p84-frontier,
+  #p85-frontier {
+    padding: 19px 17px;
+  }
+
+  #p84-frontier .frontier-summary-grid,
+  #p85-frontier .frontier-summary-grid,
+  #p85-frontier .two-col {
+    grid-template-columns: 1fr;
   }
 }
 
