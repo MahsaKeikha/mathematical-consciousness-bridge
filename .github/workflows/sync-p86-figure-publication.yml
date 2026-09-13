@@ -20,7 +20,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12.14"
-      - name: Permanently harden Visual Atlas synchronization
+      - name: Permanently harden figure publication synchronization
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -40,11 +40,14 @@ jobs:
               raise SystemExit("could not locate Visual Atlas marker normalization")
 
           layout_old = '    insertion = "\\n" + marker + "\\n" + _p86_visual_section() + "\\n"\n    return text[: boundary.end()] + insertion + text[boundary.end() :]'
-          layout_new = '    prefix = text[: boundary.end()].rstrip()\n    suffix = text[boundary.end() :].lstrip()\n    insertion = "\\n\\n" + marker + "\\n" + _p86_visual_section() + "\\n\\n"\n    return prefix + insertion + suffix'
+          layout_new = '    prefix = text[: boundary.end()].rstrip()\n    suffix = text[boundary.end() :].lstrip()\n    insertion = "\\n\\n" + marker + "\\n" + _p86_visual_section() + "\\n\\n"\n    result = prefix + insertion + suffix\n    had_final_newline = result.endswith("\\n")\n    result = "\\n".join(line.rstrip() for line in result.splitlines())\n    return result + ("\\n" if had_final_newline else "")'
           if layout_old in text:
               text = text.replace(layout_old, layout_new, 1)
           elif layout_new not in text:
               raise SystemExit("could not locate Visual Atlas insertion layout")
+
+          text = text.replace(')  \nTheorem:', ')\nTheorem:', 1)
+          text = text.replace(')  \nEquation provenance:', ')\nEquation provenance:', 1)
 
           path.write_text(text, encoding="utf-8")
           PY
