@@ -104,7 +104,7 @@ jobs:
               "test_research_map_presents_p77_through_p85_with_p84_history": "test_research_map_presents_p77_through_p86_with_p84_history",
               "through Proposition 85": "through Proposition 86",
               "p85_navigation": "p86_navigation",
-              'href="index.html#p85-frontier">Continue to the current P85 frontier</a>': 'href="index.html#p86-frontier">Continue to the current P86 frontier</a>',
+              "Continue to the current P85 frontier": "Continue to the current P86 frontier",
               "P77-P85: from full-law rejection to exact dependency-aware certification": "P77-P86: from full-law rejection to exact dependency-aware certification",
           }
           for old, new in replacements.items():
