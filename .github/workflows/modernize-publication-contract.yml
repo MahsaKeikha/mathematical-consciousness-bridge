@@ -34,6 +34,22 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Repair layered migration generator escaping
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("scripts/migrate_layered_publication_tests.py")
+          text = path.read_text(encoding="utf-8")
+          old = '    combined = "\\n".join((proof, provenance, source)).lower()'
+          new = '    combined = "\\\\n".join((proof, provenance, source)).lower()'
+          if old in text:
+              text = text.replace(old, new, 1)
+              path.write_text(text, encoding="utf-8")
+          elif new not in text:
+              raise RuntimeError("P75-P79 generator escaping anchor not found")
+          PY
+
       - name: Apply layered publication migration
         run: |
           # The earlier modernize/finalize scripts are completed one-shot migrations.
@@ -50,7 +66,7 @@ jobs:
           path.write_text(path.read_text(encoding="utf-8").rstrip() + "\n", encoding="utf-8")
           PY
 
-      - name: Verify maintained scripts compile
+      - name: Verify maintained scripts and generated integration tests compile
         run: |
           python -m py_compile \
             scripts/modernize_publication_contract.py \
@@ -58,7 +74,12 @@ jobs:
             scripts/migrate_layered_publication_tests.py \
             scripts/sync_figure_publication.py \
             scripts/synchronize_research_three_website.py \
-            scripts/prepare_website.py
+            scripts/prepare_website.py \
+            tests/test_p75_research_integration.py \
+            tests/test_p76_research_integration.py \
+            tests/test_p77_research_integration.py \
+            tests/test_p78_research_integration.py \
+            tests/test_p79_research_integration.py
 
       - name: Verify synchronized Research III source
         run: python scripts/synchronize_research_three_website.py --check
@@ -69,7 +90,7 @@ jobs:
       - name: Run targeted reader-contract tests
         run: |
           python -m pip install -e ".[dev]"
-          pytest -q \
+          python -m pytest -q \
             tests/test_readme_research_orientation.py \
             tests/test_main_page_visual_paper.py \
             tests/test_public_reader_layering.py \
