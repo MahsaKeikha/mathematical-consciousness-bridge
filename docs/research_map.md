@@ -18,7 +18,7 @@ The arrows in this figure show **research dependencies**. They do not mean that 
 
 ---
 
-## Chapter 1 — What physical system are we talking about?
+## Chapter 1: What physical system are we talking about?
 
 Before asking whether a physical description explains anything, we need to know what the description actually contains.
 
@@ -36,7 +36,7 @@ The goal is to prevent a convenient representation from being mistaken for the p
 
 ---
 
-## Chapter 2 — Is the physical description actually enough?
+## Chapter 2: Is the physical description actually enough?
 
 A description can be extremely useful and still leave something out.
 
@@ -52,7 +52,7 @@ If the answer is yes, the chosen physical description is not sufficient for that
 
 ---
 
-## Chapter 3 — Is the target independent, or did we build the answer into it?
+## Chapter 3: Is the target independent, or did we build the answer into it?
 
 A bridge test can become circular if the target is created from the same physical information that is then claimed to explain it.
 
@@ -66,7 +66,7 @@ The target also needs a clear relationship to what is actually observed. Reports
 
 ---
 
-## Chapter 4 — Can the proposed model be wrong?
+## Chapter 4: Can the proposed model be wrong?
 
 A model becomes scientifically interesting when it risks failure.
 
@@ -84,7 +84,7 @@ This is where much of the later proposition sequence becomes mathematically deta
 
 ---
 
-## Chapter 5 — Does the conclusion survive uncertainty?
+## Chapter 5: Does the conclusion survive uncertainty?
 
 Real data are finite. Numerical calculations have approximation error. A result found after searching many possibilities can look stronger than it really is.
 
@@ -100,7 +100,7 @@ The goal is not merely to obtain a striking number. It is to know **which direct
 
 ---
 
-## Chapter 6 — What remains open?
+## Chapter 6: What remains open?
 
 Even a mathematically correct rejection of a model does not tell us automatically what consciousness is.
 
