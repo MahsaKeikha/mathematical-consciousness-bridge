@@ -3,9 +3,9 @@
     { file: 'index.html', label: 'Overview' },
     { file: 'plain-language.html', label: 'Plain Language' },
     { file: 'start-here.html', label: 'Start Here' },
-    { file: 'observer-research.html', label: 'Research I · Observer Mathematics' },
+    { file: 'observer-research.html', label: 'Research I: Observer Mathematics' },
     { file: 'research-lineage.html', label: 'Research Lineage' },
-    { file: 'research-map.html', label: 'Research II · Bridge Map' },
+    { file: 'research-map.html', label: 'Research II: Bridge Map' },
     { file: 'physics-mathematics.html', label: 'Physics & Math' },
     { file: 'visual-atlas.html', label: 'Visual Atlas' },
     { file: 'sources.html', label: 'Sources' },
@@ -51,6 +51,12 @@
           kicker: 'Figures',
           label: 'Visual atlas',
           description: 'Browse a curated visual path through the research program.',
+        },
+        {
+          file: 'implementation.html',
+          kicker: 'Audit',
+          label: 'Implementation',
+          description: 'Follow a result from theorem statement to code, tests, figures, and reproducibility.',
         },
         {
           file: 'sources.html',
@@ -340,7 +346,7 @@
     });
   }
 
-  function removeLongDashes(root = document.body) {
+  function normalizePublicPunctuation(root = document.body) {
     if (!root) return;
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
     const textNodes = [];
@@ -348,9 +354,10 @@
     textNodes.forEach((node) => {
       const parent = node.parentElement;
       if (parent && parent.closest('script, style, pre, code')) return;
-      if (/[\u2013\u2014]/.test(node.nodeValue || '')) {
-        node.nodeValue = node.nodeValue.replace(/[\u2013\u2014]/g, '-');
-      }
+      let text = node.nodeValue || '';
+      text = text.replace(/[\u2013\u2014]/g, ', ');
+      text = text.replace(/([A-Za-z])-([A-Za-z])/g, '$1 $2');
+      node.nodeValue = text;
     });
   }
 
@@ -363,6 +370,6 @@
     addReaderTrail();
     addBackToTop();
     markExternalLinks();
-    removeLongDashes();
+    normalizePublicPunctuation();
   });
 })();
