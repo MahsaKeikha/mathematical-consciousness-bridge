@@ -1,6 +1,6 @@
-from pathlib import Path
 import subprocess
 import sys
+from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 THEOREM = ROOT / "docs/proposition_86_exact_quadruple_projection_parity_functional.md"
