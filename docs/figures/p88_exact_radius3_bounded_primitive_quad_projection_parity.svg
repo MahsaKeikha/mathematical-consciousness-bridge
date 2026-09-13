@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="p88-title p88-desc">
+  <title id="p88-title">P88 Radius-3 Bounded Primitive Four-Event Parity Certificate</title>
+  <desc id="p88-desc">Proposition 88 enlarges the complete primitive four-event coefficient box from absolute coefficient at most two to absolute coefficient at most three. The exact family contains 632 sign-normalized primitive coefficient patterns per four-event subset and 208,560 functionals total. On the same rational witness used for P86 and P87, the strongest P88 functional has empirical value minus eleven over eight, exact P75 interval minus one to two, mismatch three over eight, centered coefficient norm twenty-four, and certified lower bound one over sixty-four. This strictly strengthens the hierarchy from zero at P85 to one over 192 at P86, one over 96 at P87, and one over 64 at P88. The result is a conditional model-separation theorem for the declared P75 family and does not solve the physical-to-experiential bridge.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f9fc; }
+      .panel { fill: #ffffff; stroke: #cfd8e6; stroke-width: 1.5; }
+      .panelSoft { fill: #f3f7fb; stroke: #cfd8e6; stroke-width: 1.2; }
+      .accent { fill: #173b65; }
+      .accentSoft { fill: #eaf2fb; stroke: #8fb0d4; stroke-width: 1.3; }
+      .success { fill: #eef8f1; stroke: #8eb89a; stroke-width: 1.3; }
+      .warn { fill: #fff7e8; stroke: #d6b267; stroke-width: 1.3; }
+      .ink { fill: #172235; font-family: Arial, Helvetica, sans-serif; }
+      .muted { fill: #5d6a7c; font-family: Arial, Helvetica, sans-serif; }
+      .white { fill: #ffffff; font-family: Arial, Helvetica, sans-serif; }
+      .title { font-size: 30px; font-weight: 700; }
+      .subtitle { font-size: 16px; }
+      .section { font-size: 20px; font-weight: 700; }
+      .label { font-size: 15px; font-weight: 700; }
+      .body { font-size: 14px; }
+      .formula { font-size: 16px; font-weight: 700; }
+      .metric { font-size: 23px; font-weight: 700; }
+      .tiny { font-size: 12px; }
+      .arrow { stroke: #6c87a7; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#6c87a7"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1280" height="760"/>
+  <rect class="accent" x="0" y="0" width="1280" height="112"/>
+  <text class="white title" x="54" y="50">P88 Radius-3 Bounded Primitive Four-Event Parity Certificate</text>
+  <text class="white subtitle" x="54" y="79">Increasing coefficient radius at fixed event order reveals a new exact layer of P75 model separation.</text>
+
+  <rect class="panel" x="48" y="144" rx="16" ry="16" width="350" height="448"/>
+  <text class="ink section" x="72" y="181">1. What P87 leaves open</text>
+  <text class="muted body" x="72" y="207">P87 completes every primitive vector with</text>
+  <text class="ink formula" x="72" y="232">0 &lt; |c_i| &lt;= 2</text>
+  <text class="muted body" x="72" y="260">at the same four-event order.</text>
+
+  <rect class="panelSoft" x="78" y="286" rx="10" ry="10" width="290" height="76"/>
+  <text class="ink label" x="98" y="313">P87 complete family</text>
+  <text class="muted body" x="98" y="338">120 patterns per subset</text>
+  <text class="muted body" x="98" y="357">39,600 exact functionals</text>
+
+  <rect class="warn" x="78" y="382" rx="10" ry="10" width="290" height="92"/>
+  <text class="ink label" x="98" y="409">Next same-order question</text>
+  <text class="muted body" x="98" y="434">Does the complete primitive radius-3</text>
+  <text class="muted body" x="98" y="454">box add certified separation power?</text>
+
+  <rect class="success" x="78" y="494" rx="10" ry="10" width="290" height="60"/>
+  <text class="ink label" x="98" y="520">P88 answers yes.</text>
+  <text class="muted body" x="98" y="542">The gain occurs without increasing event order.</text>
+
+  <path class="arrow" d="M406 368 C430 368, 438 368, 462 368"/>
+
+  <rect class="panel" x="470" y="144" rx="16" ry="16" width="350" height="448"/>
+  <text class="ink section" x="494" y="181">2. P88 completes radius 3</text>
+  <text class="muted body" x="494" y="207">Use c_i in {-3,-2,-1,1,2,3}, primitive and nonzero.</text>
+  <text class="muted body" x="494" y="228">Normalize one global sign.</text>
+
+  <rect class="accentSoft" x="500" y="258" rx="12" ry="12" width="290" height="108"/>
+  <text class="ink formula" x="520" y="286">(6^4 - 2^4 - 2^4) / 2 = 632</text>
+  <text class="muted body" x="520" y="312">primitive sign-normalized patterns</text>
+  <text class="muted body" x="520" y="338">330 subsets x 632</text>
+  <text class="ink formula" x="520" y="360">= 208,560 exact functionals</text>
+
+  <rect class="panelSoft" x="500" y="386" rx="12" ry="12" width="290" height="84"/>
+  <text class="ink label" x="520" y="414">Exact P75 interval</text>
+  <text class="muted body" x="520" y="439">Multi-affinity sends response extrema</text>
+  <text class="muted body" x="520" y="459">to box vertices; prevalence uses endpoints.</text>
+
+  <rect class="panelSoft" x="500" y="490" rx="12" ry="12" width="290" height="72"/>
+  <text class="ink label" x="520" y="518">Exact full-law transfer</text>
+  <text class="muted body" x="520" y="542">L88 = max(L87, gap / D(Q))</text>
+
+  <path class="arrow" d="M828 368 C850 368, 862 368, 884 368"/>
+
+  <rect class="panel" x="892" y="144" rx="16" ry="16" width="340" height="448"/>
+  <text class="ink section" x="916" y="181">3. Exact strict witness</text>
+  <text class="muted body" x="916" y="207">Q = P(H02) - P(H13) - 3P(H123)</text>
+  <text class="muted body" x="916" y="227">    + 2P(H0123)</text>
+
+  <rect class="success" x="920" y="252" rx="11" ry="11" width="284" height="72"/>
+  <text class="ink label" x="940" y="278">Earlier hierarchy</text>
+  <text class="ink formula" x="940" y="302">L86 = 1/192, L87 = 1/96</text>
+
+  <rect class="accentSoft" x="920" y="340" rx="11" ry="11" width="284" height="84"/>
+  <text class="ink label" x="940" y="367">P88 functional</text>
+  <text class="ink formula" x="940" y="394">Q(empirical) = -11/8</text>
+  <text class="ink formula" x="940" y="416">Q(P75 box) in [-1, 2]</text>
+
+  <rect class="warn" x="920" y="440" rx="11" ry="11" width="284" height="58"/>
+  <text class="ink label" x="940" y="465">Exact mismatch</text>
+  <text class="ink metric" x="940" y="491">gap = 3/8</text>
+
+  <rect class="panelSoft" x="920" y="514" rx="11" ry="11" width="284" height="62"/>
+  <text class="ink body" x="940" y="538">D(Q) = 24, center = -1</text>
+  <text class="ink metric" x="940" y="566">L88 = 1/64</text>
+
+  <rect class="accent" x="48" y="620" rx="14" ry="14" width="1184" height="92"/>
+  <text class="white label" x="72" y="650">Scientific boundary</text>
+  <text class="white body" x="72" y="676">P88 strengthens rejection of the declared P75 latent measurement family by enlarging a complete primitive coefficient box.</text>
+  <text class="white body" x="72" y="697">It does not identify the latent state with consciousness or solve the physical-to-experiential bridge.</text>
+
+  <text class="muted tiny" x="48" y="742">Mathematical Consciousness Bridge | Proposition 88 | exact rational certificate</text>
+</svg>
