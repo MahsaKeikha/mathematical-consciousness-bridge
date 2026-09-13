@@ -3,7 +3,7 @@ name: deploy-research-website
 on:
   push:
     branches: ["main"]
-    # Certified P86 figures, scholarly provenance, responsive reader layout, and HTML deploy from one exact commit artifact.
+    # Certified P86 figures, scholarly provenance, ASCII-safe publication typography, responsive reader layout, and HTML deploy from one exact commit artifact.
     paths:
       - "website/**"
       - "docs/figures/**"
