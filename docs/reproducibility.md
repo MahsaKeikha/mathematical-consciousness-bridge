@@ -106,15 +106,15 @@ Use this route when you want to verify the current committed state without regen
 
 ## 5. Focused audit of the current P87 frontier
 
-The current theorem frontier is **P87**.
+The current theorem frontier is **P88**.
 
 Its direct technical record is:
 
 ```text
-docs/proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md
-docs/p87_equation_provenance.md
-src/consciousness_bridge/bounded_primitive_quad_projection_parity_functional_separation.py
-tests/test_bounded_primitive_quad_projection_parity_functional_separation.py
+docs/proposition_88_exact_expanded_bounded_primitive_quad_projection_parity_functional.md
+docs/p88_equation_provenance.md
+src/consciousness_bridge/expanded_bounded_primitive_quad_projection_parity_functional_separation.py
+tests/test_expanded_bounded_primitive_quad_projection_parity_functional_separation.py
 docs/figures/p87_exact_bounded_primitive_quad_projection_parity_functional.svg
 figures/manifest.json
 ```
@@ -123,7 +123,7 @@ Run the focused theorem and figure publication checks with:
 
 ```bash
 python -m pytest \
-  tests/test_bounded_primitive_quad_projection_parity_functional_separation.py \
+  tests/test_expanded_bounded_primitive_quad_projection_parity_functional_separation.py \
   tests/test_figure_publication_sync.py
 ```
 
@@ -167,7 +167,7 @@ Useful variants include:
 
 ```bash
 python -m pytest -q
-python -m pytest tests/test_bounded_primitive_quad_projection_parity_functional_separation.py
+python -m pytest tests/test_expanded_bounded_primitive_quad_projection_parity_functional_separation.py
 python -m pytest tests/test_figure_publication_sync.py
 python -m pytest -k strict_improvement
 ```

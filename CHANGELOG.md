@@ -353,6 +353,15 @@
 
 # Changelog
 
+
+## Unreleased
+
+### Promote P88 expanded bounded-primitive four-event certificate
+
+- Prove P88 by completing the primitive coefficient box `0 < |c_i| <= 3` at the same four-event order: 632 sign-normalized patterns per subset and 208,560 exact functionals.
+- Add the exact strict witness `L87 = 1/96 < L88 = 1/64`, with proof, provenance, exact implementation, exhaustive tests, and canonical SVG theorem figure.
+- Promote reader, navigation, reproducibility, figure-publication, and website surfaces to the P88 / 88-result frontier while retaining v0.82.0 as the formal release and the physical-to-experiential bridge as open.
+
 ## Unreleased - P85 frontier synchronization
 
 - Promoted the verified P85 exact three-event projection-parity functional certificate across proof provenance, reader navigation, figures, citation metadata, and the public website.

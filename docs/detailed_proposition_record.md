@@ -1,6 +1,6 @@
 # Detailed proposition record
 
-## Complete P1 to P87 chronology
+## Complete P1 to P88 chronology
 
 This page preserves the proposition-by-proposition development history of the Mathematical Consciousness Bridge research program. It is intentionally separate from the main README so a first-time reader can follow the scientific argument without first learning the internal chronology of the project.
 
@@ -14,7 +14,7 @@ A first-time reader should not read this page as 84 disconnected proofs. Use it 
 
 ---
 
-## Complete P1 to P87 chronology
+## Complete P1 to P88 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
@@ -308,3 +308,22 @@ The exact regression witness has `L84 = 0`, empirical functional value `5/8`, ex
 - Implementation: [`bounded_primitive_quad_projection_parity_functional_separation.py`](../src/consciousness_bridge/bounded_primitive_quad_projection_parity_functional_separation.py)
 - Tests: [`test_bounded_primitive_quad_projection_parity_functional_separation.py`](../tests/test_bounded_primitive_quad_projection_parity_functional_separation.py)
 - Figure: [`p87_exact_bounded_primitive_quad_projection_parity.svg`](figures/p87_exact_bounded_primitive_quad_projection_parity.svg)
+
+
+## Proposition 88: Exact expanded bounded primitive four-event projection-parity functional certificate
+
+**P88** enlarges the complete primitive nonzero four-coefficient box from `0 < |c_i| <= 2` to `0 < |c_i| <= 3` while holding fixed the four-event order, the eleven canonical P83 parity coordinates, the P75 latent measurement family, and the full-law L-infinity target metric. The expanded box has **632 sign-normalized primitive coefficient patterns per four-event subset** and therefore **208,560 exact functionals** across `C(11,4)=330` subsets.
+
+The exact interval calculation remains multi-affine in the P75 response coordinates, so parameter-box extrema occur at endpoints. Mass-conservation centering supplies the exact full-law transfer norm. On the same rational hierarchy witness used by P86 and P87, the P88 functional `P(H02) - P(H13) - 3P(H123) + 2P(H0123)` has empirical value `-11/8`, exact P75 interval `[-1,2]`, gap `3/8`, centered coefficient norm `24`, and therefore lower bound `1/64`.
+
+Exhausting all 208,560 P88 functionals attains that value, giving the strict hierarchy
+
+`L85 = 0 < L86 = 1/192 < L87 = 1/96 < L88 = 1/64`.
+
+**Boundary.** P88 is a conditional rejection certificate for the declared P75 family. It does not identify a latent state with consciousness, validate an alternative ontology, or close the physical-to-experiential bridge.
+
+- Proof: [proposition_88_exact_expanded_bounded_primitive_quad_projection_parity_functional.md](proposition_88_exact_expanded_bounded_primitive_quad_projection_parity_functional.md)
+- Provenance: [p88_equation_provenance.md](p88_equation_provenance.md)
+- Implementation: [`expanded_bounded_primitive_quad_projection_parity_functional_separation.py`](../src/consciousness_bridge/expanded_bounded_primitive_quad_projection_parity_functional_separation.py)
+- Tests: [`test_expanded_bounded_primitive_quad_projection_parity_functional_separation.py`](../tests/test_expanded_bounded_primitive_quad_projection_parity_functional_separation.py)
+- Figure: [`p88_exact_expanded_bounded_primitive_quad_projection_parity.svg`](figures/p88_exact_expanded_bounded_primitive_quad_projection_parity.svg)

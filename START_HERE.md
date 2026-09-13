@@ -63,9 +63,9 @@ Those results include methods for:
 - controlling uncertainty from finite data and numerical computation;
 - making the complete reasoning chain reproducible and auditable.
 
-The public theorem frontier is **P87**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains **open**.
+The public theorem frontier is **P88**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains **open**.
 
-You do not need to read 87 propositions to understand the project.
+You do not need to read 88 propositions to understand the project.
 
 ---
 
@@ -78,7 +78,7 @@ You do not need to read 87 propositions to understand the project.
 | Browse the research through figures | **[Figure Catalog](docs/figure_catalog.md)** |
 | Move into the formal scientific architecture | **[Technical Research Architecture](docs/research_architecture.md)** |
 | See how the mathematical results depend on one another | **[Theorem Roadmap](docs/theorem_roadmap.md)** |
-| Read the current frontier result | **[P87](docs/proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md)** |
+| Read the current frontier result | **[P88](docs/proposition_88_exact_expanded_bounded_primitive_quad_projection_parity_functional.md)** |
 | Inspect every proposition in the complete technical record | **[Detailed Proposition Record](docs/detailed_proposition_record.md)** |
 | Trace equations, sources, implementations, and tests | **[Research Navigation](docs/research_navigation.md)** |
 | Reproduce the computational work | **[Reproducibility Guide](docs/reproducibility.md)** |

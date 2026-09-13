@@ -26,18 +26,18 @@ validated as SVG documents and enriched with accessible `<title>` and `<desc>`
 metadata. They are not reclassified as empirical evidence simply because they
 are visual.
 
-## Current frontier: P87
+## Current frontier: P88
 
-![P87 current theorem frontier](p87_exact_bounded_primitive_quad_projection_parity.svg)
+![P88 current theorem frontier](p88_exact_expanded_bounded_primitive_quad_projection_parity.svg)
 
-Canonical current-frontier figure: `p87_exact_bounded_primitive_quad_projection_parity.svg`
+Canonical current-frontier figure: `p88_exact_expanded_bounded_primitive_quad_projection_parity.svg`
 
 Recent exact frontier figures:
 
-- `p84_exact_joint_projection_parity_contrast.svg`
 - `p85_exact_triple_projection_parity_functional.svg`
 - `p86_exact_minimally_weighted_quad_projection_parity.svg`
 - `p87_exact_bounded_primitive_quad_projection_parity.svg`
+- `p88_exact_expanded_bounded_primitive_quad_projection_parity.svg`
 
 The GitHub-facing [`figures/`](../../figures/) gateway and its SHA-256
 [`manifest.json`](../../figures/manifest.json) are deterministically synchronized

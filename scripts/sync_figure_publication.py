@@ -189,17 +189,17 @@ def _frontier_page(frontier: int) -> str:
         f"[Open P{frontier} equation provenance](../docs/p{frontier}_equation_provenance.md)",
         "",
     ]
-    if frontier == 87:
+    if frontier == 88:
         lines.extend(
             [
-                "### Exact P87 hierarchy witness",
+                "### Exact P88 hierarchy witness",
                 "",
-                "P87 completes the primitive four-event coefficient box with nonzero integer coefficients satisfying `|c_i| <= 2` and strictly strengthens the complete P86 certificate on the exact rational witness:",
+                "P88 completes the first larger primitive four-event coefficient box with nonzero integer coefficients satisfying `|c_i| <= 3` and strictly strengthens the complete P87 certificate on the exact rational witness:",
                 "",
                 "```text",
-                "L85 = 0 < L86 = 1/192 < L87 = 1/96",
-                "120 primitive sign-normalized coefficient patterns per four-event subset",
-                "39,600 standard P87 functionals",
+                "L85 = 0 < L86 = 1/192 < L87 = 1/96 < L88 = 1/64",
+                "632 primitive sign-normalized coefficient patterns per four-event subset",
+                "208,560 standard P88 functionals",
                 "```",
                 "",
                 "This is a conditional model-separation result inside the declared P75 family. It is not an identification of a latent state with conscious experience.",
@@ -310,25 +310,25 @@ benchmark, or model calculation into empirical evidence about consciousness.
 """
 
 
-def _p87_visual_section() -> str:
-    return f'''<section id="p87-frontier" class="theorem-frontier current-frontier-visual">
+def _p88_visual_section() -> str:
+    return f'''<section id="p88-frontier" class="theorem-frontier current-frontier-visual">
   <div class="section-head">
-    <p class="eyebrow">Current theorem frontier · P87</p>
-    <h2>Complete bounded primitive four-event parity certificate</h2>
-    <p>P87 completes the nonzero primitive coefficient box with |c_i| at most 2 at the same four-event order. Its 39,600-function exact audit strictly strengthens the complete P86 certificate on the same rational witness.</p>
+    <p class="eyebrow">Current theorem frontier · P88</p>
+    <h2>Expanded bounded primitive four-event parity certificate</h2>
+    <p>P88 completes the primitive coefficient box with |c_i| at most 3 at the same four-event order. Its 208,560-function exact audit strictly strengthens the complete P87 certificate on the same rational witness.</p>
   </div>
   <div class="theorem-figure-shell">
-    <a href="{BLOB_PREFIX}docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg" aria-label="Open the full P87 theorem figure">
-      <img loading="eager" decoding="async" src="{RAW_FIGURE_PREFIX}p87_exact_bounded_primitive_quad_projection_parity.svg" alt="P87 bounded primitive four-event parity certificate showing L86 equals one over 192 and L87 equals one over 96" />
+    <a href="{BLOB_PREFIX}docs/figures/p88_exact_expanded_bounded_primitive_quad_projection_parity.svg" aria-label="Open the full P88 theorem figure">
+      <img loading="eager" decoding="async" src="{RAW_FIGURE_PREFIX}p88_exact_expanded_bounded_primitive_quad_projection_parity.svg" alt="P88 expanded bounded primitive four-event parity certificate showing L87 equals one over 96 and L88 equals one over 64" />
     </a>
   </div>
   <div class="frontier-summary-grid">
-    <article class="frontier-summary-card"><h3>Complete bounded family</h3><p>120 primitive sign-normalized coefficient patterns per four-event subset yield 39,600 exact P87 functionals.</p></article>
-    <article class="frontier-summary-card"><h3>Strict hierarchy</h3><p>The exact witness has <strong>L85 = 0 &lt; L86 = 1/192 &lt; L87 = 1/96</strong>.</p></article>
-    <article class="frontier-summary-card"><h3>Reproducible record</h3><p>The proof, equation provenance, exact implementation, exhaustive tests, theorem SVG, and figure manifest are source controlled.</p></article>
+    <article class="frontier-summary-card"><h3>Complete expanded family</h3><p>632 primitive sign-normalized coefficient patterns per four-event subset yield 208,560 exact P88 functionals.</p></article>
+    <article class="frontier-summary-card"><h3>Strict hierarchy</h3><p>The exact witness has <strong>L85 = 0 &lt; L86 = 1/192 &lt; L87 = 1/96 &lt; L88 = 1/64</strong>.</p></article>
+    <article class="frontier-summary-card"><h3>Reproducible record</h3><p>The proof, provenance, exact implementation, exhaustive tests, theorem SVG, and figure manifest are source controlled.</p></article>
   </div>
-  <div class="boundary"><p><strong>Scientific boundary:</strong> P87 is a conditional exact model-separation theorem for the declared P75 family. It does not identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.</p></div>
-  <p><a href="{BLOB_PREFIX}docs/proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md">Open the P87 theorem</a> · <a href="{BLOB_PREFIX}docs/p87_equation_provenance.md">Equation provenance</a> · <a href="{BLOB_PREFIX}src/consciousness_bridge/bounded_primitive_quad_projection_parity_functional_separation.py">Implementation</a> · <a href="{BLOB_PREFIX}tests/test_bounded_primitive_quad_projection_parity_functional_separation.py">Exact tests</a></p>
+  <div class="boundary"><p><strong>Scientific boundary:</strong> P88 is a conditional exact model-separation theorem for the declared P75 family. It does not identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.</p></div>
+  <p><a href="{BLOB_PREFIX}docs/proposition_88_exact_expanded_bounded_primitive_quad_projection_parity_functional.md">Open the P88 theorem</a> · <a href="{BLOB_PREFIX}docs/p88_equation_provenance.md">Equation provenance</a> · <a href="{BLOB_PREFIX}src/consciousness_bridge/expanded_bounded_primitive_quad_projection_parity_functional_separation.py">Implementation</a> · <a href="{BLOB_PREFIX}tests/test_expanded_bounded_primitive_quad_projection_parity_functional_separation.py">Exact tests</a></p>
 </section>'''
 
 
@@ -343,34 +343,40 @@ def _remove_section(text: str, section_id: str) -> str:
     return text
 
 
-def _demote_p86(text: str) -> str:
+def _demote_p87(text: str) -> str:
     return text.replace(
-        "Current theorem frontier · P86",
-        "Previous theorem frontier · P86",
+        "Current theorem frontier · P87",
+        "Previous theorem frontier · P87",
     )
 
 
 def _normalize_visual_atlas(text: str) -> str:
-    text = _remove_section(text, "p87-frontier")
-    text = _demote_p86(text)
+    text = _remove_section(text, "p88-frontier")
+    text = _demote_p87(text)
     text = re.sub(r"\s*<!-- current-frontier-visual: P\d+ -->\s*", "\n", text)
     boundary = re.search(r'<section class="boundary">.*?</section>', text, re.DOTALL)
     if boundary is None:
         raise RuntimeError("could not locate Visual Atlas reading-boundary section")
     prefix = text[: boundary.end()].rstrip()
     suffix = text[boundary.end() :].lstrip()
-    insertion = "\n\n<!-- current-frontier-visual: P87 -->\n" + _p87_visual_section() + "\n\n"
+    insertion = "\n\n<!-- current-frontier-visual: P88 -->\n" + _p88_visual_section() + "\n\n"
     result = prefix + insertion + suffix
     return "\n".join(line.rstrip() for line in result.splitlines()) + "\n"
 
 
 def _normalize_homepage(text: str) -> str:
-    text = _remove_section(text, "p87-frontier")
-    text = _demote_p86(text)
+    text = _remove_section(text, "p88-frontier")
+    text = _demote_p87(text)
     replacements = (
-        ("The 86 results form several dependency branches.", "The 87 results form several dependency branches."),
-        ("all 86 propositions", "all 87 propositions"),
-        ("P71-P86, then read the falsification program", "P71-P87, then read the falsification program"),
+        ("The 87 results form several dependency branches.", "The 88 results form several dependency branches."),
+        ("all 87 propositions", "all 88 propositions"),
+        ("P71-P87, then read the falsification program", "P71-P88, then read the falsification program"),
+        ("Explore all 87 results", "Explore all 88 results"),
+        ("<strong>87</strong><span>proposition-level results</span>", "<strong>88</strong><span>proposition-level results</span>"),
+        ("<strong>P87</strong><span>current theorem frontier</span>", "<strong>P88</strong><span>current theorem frontier</span>"),
+        ("The 87-result program", "The 88-result program"),
+        ("P75-P87", "P75-P88"),
+        ("P71-P87:", "P71-P88:"),
     )
     for old, new in replacements:
         text = text.replace(old, new)
@@ -380,15 +386,15 @@ def _normalize_homepage(text: str) -> str:
         raise RuntimeError("could not locate homepage hero section")
     prefix = text[: hero.end()].rstrip()
     suffix = text[hero.end() :].lstrip()
-    insertion = "\n\n<!-- current-frontier-home: P87 -->\n" + _p87_visual_section() + "\n\n"
+    insertion = "\n\n<!-- current-frontier-home: P88 -->\n" + _p88_visual_section() + "\n\n"
     result = prefix + insertion + suffix
     return "\n".join(line.rstrip() for line in result.splitlines()) + "\n"
 
 
 def _expected_outputs() -> dict[Path, str]:
     frontier = _current_frontier()
-    if frontier != 87:
-        raise RuntimeError(f"P87 synchronizer expected frontier 87, found {frontier}")
+    if frontier != 88:
+        raise RuntimeError(f"P88 synchronizer expected frontier 88, found {frontier}")
     current_figure = _one_match(f"p{frontier}_*.svg", root=DOC_FIGURES)
     return {
         GATEWAY_CURRENT_FIGURE: current_figure.read_text(encoding="utf-8"),

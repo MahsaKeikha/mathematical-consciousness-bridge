@@ -25,7 +25,7 @@ from verify_frontier_publication import verify_frontier_publication
 
 ROOT = Path(__file__).resolve().parents[1]
 CURRENT_VERSION = "0.82.0"
-CURRENT_FRONTIER = "P87"
+CURRENT_FRONTIER = "P88"
 
 CORE_FILES = (
     "README.md",
@@ -56,6 +56,7 @@ CORE_FILES = (
     "docs/figures/p85_exact_triple_projection_parity_functional.svg",
     "docs/figures/p86_exact_minimally_weighted_quad_projection_parity.svg",
     "docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg",
+    "docs/figures/p88_exact_expanded_bounded_primitive_quad_projection_parity.svg",
     "docs/proposition_84_exact_projection_parity_contrast.md",
     "docs/proposition_85_exact_triple_projection_parity_functional.md",
     "docs/p85_equation_provenance.md",
@@ -63,6 +64,8 @@ CORE_FILES = (
     "docs/p86_equation_provenance.md",
     "docs/proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md",
     "docs/p87_equation_provenance.md",
+    "docs/proposition_88_exact_expanded_bounded_primitive_quad_projection_parity_functional.md",
+    "docs/p88_equation_provenance.md",
     "figures/README.md",
     "figures/CURRENT_FRONTIER.md",
     "figures/manifest.json",
@@ -251,7 +254,7 @@ def _verify_release_consistency() -> None:
 def _verify_proposition_files() -> None:
     missing: list[int] = []
     duplicates: dict[int, list[str]] = {}
-    for number in range(1, 88):
+    for number in range(1, 89):
         matches = sorted((ROOT / "docs").glob(f"proposition_{number}_*.md"))
         if not matches:
             missing.append(number)
@@ -293,7 +296,7 @@ def _verify_figure_publication_sync() -> None:
         raise RuntimeError("figure manifest does not report the current theorem frontier")
     current_figure = str(manifest.get("current_frontier_figure", ""))
     if not current_figure.endswith(
-        "p87_exact_bounded_primitive_quad_projection_parity.svg"
+        "p88_exact_expanded_bounded_primitive_quad_projection_parity.svg"
     ):
         raise RuntimeError("figure manifest does not point to the canonical P86 SVG")
 
@@ -309,12 +312,13 @@ def _verify_figure_publication_sync() -> None:
         raise RuntimeError("complete figure manifest is not aligned with docs/figures")
 
     visual_atlas = _read("website/visual-atlas.html")
+    p88 = visual_atlas.index('id="p88-frontier"')
     p87 = visual_atlas.index('id="p87-frontier"')
     p86 = visual_atlas.index('id="p86-frontier"')
     p84 = visual_atlas.index('id="p84-frontier"')
     p85 = visual_atlas.index('id="p85-frontier"')
-    if not (p87 < p86 and p87 < p84 and p87 < p85):
-        raise RuntimeError("Visual Atlas does not lead with the current P87 figure")
+    if not (p88 < p87 and p88 < p86 and p88 < p84 and p88 < p85):
+        raise RuntimeError("Visual Atlas does not lead with the current P88 figure")
 
     subprocess.run(
         [sys.executable, str(ROOT / "scripts" / "sync_figure_publication.py"), "--check"],

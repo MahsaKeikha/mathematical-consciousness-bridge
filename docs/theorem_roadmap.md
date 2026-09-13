@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P87**. The proposition record runs from **P1 through P87 with explicit dependency branches**. P71-P87 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P88**. The proposition record runs from **P1 through P88 with explicit dependency branches**. P71-P88 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -550,6 +550,7 @@ Direct proof: [P80](proposition_80_simplex_coupled_model_separation.md). Provena
 | [P85](proposition_85_exact_triple_projection_parity_functional.md) | exact three-event shared-parameter parity functionals | strict strengthening beyond the complete P84 pairwise certificate | proved conditional computational theorem |
 | [P86](proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md) | minimally weighted four-event parity functionals | strict strengthening beyond the complete P85 triple certificate | proved conditional computational theorem |
 | [P87](proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md) | complete bounded primitive four-event parity functionals | same-order coefficient-family completion that strictly strengthens P86 | proved conditional computational theorem |
+| [P88](proposition_88_exact_expanded_bounded_primitive_quad_projection_parity_functional.md) | complete primitive four-event coefficient box with `0 < |c_i| <= 3` | expanded bounded-primitive parity separation strictly strengthening P87 | proved conditional computational theorem |
 
 ## 4. Calibration branch remains separate
 
@@ -608,7 +609,7 @@ P78 closes the global-lower-bound gap for the specific continuous P75 four-view 
 
 P86 closes the first minimally non-uniform four-event weighting step beyond the complete P85 triple-functional audit. The next computational question should not be chosen merely by increasing functional order or proposition number. A substantive continuation beyond P87 must close a separately stated mathematical or statistical gap and preserve the certified lower-bound direction. Natural candidates include an exact-rational support-function or convex relaxation of the full parity-coordinate image, with a certificate not already implied by P86, or an observable-specific finite-sample rejection theorem that propagates uncertainty through a selected P86 score rather than only through the global sixteen-cell radius. Target-view models with residual dependence, shared bias, temporal drift, or learned measurement pipelines also remain open.
 
-None of P71-P87 identifies a latent variable with consciousness. None proves that a failed descriptor implies nonphysical consciousness. The physical-to-experiential bridge remains open.
+None of P71-P88 identifies a latent variable with consciousness. None proves that a failed descriptor implies nonphysical consciousness. The physical-to-experiential bridge remains open.
 
 
 ## P83 predecessor frontier: exact projection-parity separation
@@ -701,6 +702,27 @@ The stronger functional uses coefficients `(1,-1,-2,2)`, empirical value `-17/24
 
 P87 remains a conditional model-separation theorem for the declared P75 family. It does not identify the latent state with consciousness or close the physical-to-experiential bridge.
 
-## After P87
+## P87 predecessor boundary
 
 The next frontier should not be inferred merely by increasing functional order. Any P88 claim must close a separately stated mathematical or scientific gap and must include a strict or otherwise informative certificate that is not already implied by P86.
+
+
+## P88: expanded bounded-primitive four-event parity-functional separation
+
+P88 closes the first larger complete primitive coefficient box after P87 while keeping the functional order fixed. It expands `0 < |c_i| <= 2` to `0 < |c_i| <= 3`, giving **632 sign-normalized primitive coefficient patterns per four-event subset** and **208,560 exact functionals** in total.
+
+On the same exact rational witness,
+
+\[
+\boxed{L_{87}=1/96<L_{88}=1/64}.
+\]
+
+The strict witness uses coefficient pattern `(1,-1,-3,2)`, so it is genuinely outside the complete P87 coefficient box.
+
+Direct proof: [P88](proposition_88_exact_expanded_bounded_primitive_quad_projection_parity_functional.md). Provenance: [P88 equation record](p88_equation_provenance.md). Implementation: [`expanded_bounded_primitive_quad_projection_parity_functional_separation.py`](../src/consciousness_bridge/expanded_bounded_primitive_quad_projection_parity_functional_separation.py). Tests: [`test_expanded_bounded_primitive_quad_projection_parity_functional_separation.py`](../tests/test_expanded_bounded_primitive_quad_projection_parity_functional_separation.py). Figure: [P88 expanded bounded-primitive certificate](figures/p88_exact_expanded_bounded_primitive_quad_projection_parity.svg).
+
+P88 remains a conditional model-separation theorem for the declared P75 family. It does not identify the latent state with consciousness and does not close the physical-to-experiential bridge.
+
+## After P88
+
+The radius-three primitive four-event box is now complete. A P89 claim should close a separately stated mathematical or scientific gap rather than continue coefficient inflation without a new structural question. Candidate directions include exact support-function geometry of the parity-coordinate image, a principled stopping criterion for coefficient-box expansion, or a finite-sample theorem that propagates sampling uncertainty through data-dependent functional selection while preserving one-sided validity.
