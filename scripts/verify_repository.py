@@ -1,8 +1,8 @@
 """Run lightweight structural checks for repository reproducibility.
 
 This script complements pytest. It verifies that the publication surfaces,
-proposition record, core scripts, manifests, and local documentation links are
-internally consistent with the current release.
+proposition record, figure publication record, core scripts, manifests, and
+local documentation links are internally consistent with the current release.
 
 Run with::
 
@@ -14,7 +14,10 @@ fresh local clone.
 
 from __future__ import annotations
 
+import json
 import re
+import subprocess
+import sys
 from pathlib import Path
 from urllib.parse import unquote
 
@@ -42,11 +45,18 @@ CORE_FILES = (
     "docs/equation_and_citation_map.md",
     "docs/figure_catalog.md",
     "docs/falsification_program.md",
+    "docs/figures/README.md",
+    "docs/figures/p84_exact_joint_projection_parity_contrast.svg",
+    "docs/figures/p85_exact_triple_projection_parity_functional.svg",
+    "docs/figures/p86_exact_minimally_weighted_quad_projection_parity.svg",
     "docs/proposition_84_exact_projection_parity_contrast.md",
     "docs/proposition_85_exact_triple_projection_parity_functional.md",
     "docs/p85_equation_provenance.md",
     "docs/proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md",
     "docs/p86_equation_provenance.md",
+    "figures/README.md",
+    "figures/CURRENT_FRONTIER.md",
+    "figures/manifest.json",
     "website/index.html",
     "website/plain-language.html",
     "website/start-here.html",
@@ -57,7 +67,10 @@ CORE_FILES = (
     "scripts/generate_quantitative_atlas.py",
     "scripts/generate_quantum_foundations_atlas.py",
     "scripts/enrich_figure_documentation.py",
+    "scripts/sync_figure_publication.py",
+    "scripts/prepare_website.py",
     "scripts/reproducibility_audit.py",
+    "tests/test_figure_publication_sync.py",
 )
 
 LINK_SURFACES = (
@@ -70,6 +83,8 @@ LINK_SURFACES = (
     "docs/reader_experience_and_visual_standard.md",
     "docs/figure_caption_and_description_standard.md",
     "docs/theorem_roadmap.md",
+    "figures/README.md",
+    "figures/CURRENT_FRONTIER.md",
 )
 
 MARKDOWN_LINK = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
@@ -131,10 +146,14 @@ def _verify_release_consistency() -> None:
     start_here = _read("START_HERE.md")
     navigation = _read("docs/research_navigation.md")
     roadmap = _read("docs/theorem_roadmap.md")
+    figure_readme = _read("docs/figures/README.md")
+    figure_gateway = _read("figures/README.md")
+    figure_frontier = _read("figures/CURRENT_FRONTIER.md")
     website = _read("website/index.html")
     website_plain = _read("website/plain-language.html")
     website_start = _read("website/start-here.html")
     research_map = _read("website/research-map.html")
+    visual_atlas = _read("website/visual-atlas.html")
 
     expected_version_markers = (
         ("pyproject.toml", pyproject, f'version = "{CURRENT_VERSION}"'),
@@ -153,10 +172,14 @@ def _verify_release_consistency() -> None:
         ("START_HERE.md", start_here),
         ("docs/research_navigation.md", navigation),
         ("docs/theorem_roadmap.md", roadmap),
+        ("docs/figures/README.md", figure_readme),
+        ("figures/README.md", figure_gateway),
+        ("figures/CURRENT_FRONTIER.md", figure_frontier),
         ("website/index.html", website),
         ("website/plain-language.html", website_plain),
         ("website/start-here.html", website_start),
         ("website/research-map.html", research_map),
+        ("website/visual-atlas.html", visual_atlas),
     )
     for path, source in frontier_markers:
         if CURRENT_FRONTIER not in source:
@@ -207,6 +230,41 @@ def _verify_local_markdown_links() -> None:
         raise RuntimeError("broken local documentation links:\n" + "\n".join(failures))
 
 
+def _verify_figure_publication_sync() -> None:
+    manifest = json.loads(_read("figures/manifest.json"))
+    if manifest.get("current_frontier") != CURRENT_FRONTIER:
+        raise RuntimeError("figure manifest does not report the current theorem frontier")
+    current_figure = str(manifest.get("current_frontier_figure", ""))
+    if not current_figure.endswith(
+        "p86_exact_minimally_weighted_quad_projection_parity.svg"
+    ):
+        raise RuntimeError("figure manifest does not point to the canonical P86 SVG")
+
+    canonical = sorted((ROOT / "docs" / "figures").rglob("*.svg"))
+    records = manifest.get("figures")
+    if not isinstance(records, list):
+        raise RuntimeError("figure manifest does not contain a figure record list")
+    declared_paths = {
+        str(record.get("path")) for record in records if isinstance(record, dict)
+    }
+    actual_paths = {path.relative_to(ROOT).as_posix() for path in canonical}
+    if manifest.get("figure_count") != len(canonical) or declared_paths != actual_paths:
+        raise RuntimeError("complete figure manifest is not aligned with docs/figures")
+
+    visual_atlas = _read("website/visual-atlas.html")
+    p86 = visual_atlas.index('id="p86-frontier"')
+    p84 = visual_atlas.index('id="p84-frontier"')
+    p85 = visual_atlas.index('id="p85-frontier"')
+    if not p86 < p84 < p85:
+        raise RuntimeError("Visual Atlas does not lead with the current P86 figure")
+
+    subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "sync_figure_publication.py"), "--check"],
+        cwd=ROOT,
+        check=True,
+    )
+
+
 def _verify_test_and_source_surfaces() -> None:
     test_files = sorted((ROOT / "tests").glob("test_*.py"))
     source_files = sorted((ROOT / "src" / "consciousness_bridge").glob("*.py"))
@@ -214,12 +272,19 @@ def _verify_test_and_source_surfaces() -> None:
         raise RuntimeError("no pytest files found")
     if not source_files:
         raise RuntimeError("no package source files found")
-    if not (ROOT / ".github" / "workflows" / "test.yml").is_file():
-        raise RuntimeError("missing GitHub Actions test workflow")
-    if not (ROOT / ".github" / "workflows" / "figures.yml").is_file():
-        raise RuntimeError("missing GitHub Actions figure workflow")
-    if not (ROOT / ".github" / "workflows" / "reproducibility.yml").is_file():
-        raise RuntimeError("missing GitHub Actions reproducibility workflow")
+    required_workflows = (
+        "test.yml",
+        "figures.yml",
+        "reproducibility.yml",
+        "pages.yml",
+    )
+    missing_workflows = [
+        name
+        for name in required_workflows
+        if not (ROOT / ".github" / "workflows" / name).is_file()
+    ]
+    if missing_workflows:
+        raise RuntimeError(f"missing GitHub Actions workflows: {missing_workflows}")
     print(
         f"[verify] discovered {len(test_files)} pytest modules and "
         f"{len(source_files)} package modules"
@@ -231,6 +296,7 @@ def main() -> None:
     _verify_release_consistency()
     _verify_proposition_files()
     _verify_local_markdown_links()
+    _verify_figure_publication_sync()
     _verify_test_and_source_surfaces()
     print(
         "[verify] repository publication and reproducibility checks passed "
