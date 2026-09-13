@@ -1,25 +1,46 @@
 # Reproducibility Guide
 
-This page is the practical entry point for reproducing the **Mathematical Consciousness Bridge** repository from a fresh clone. It covers installation, tests, linting, figure generation, figure-publication synchronization, repository-integrity checks, and GitHub Actions.
+**Use this page when you want to rerun, verify, or audit the repository rather than only read it.**
 
-The goal is simple: a reader should not have to guess which commands were used to validate the mathematics, produce generated visual atlases, verify source-authored theorem figures, or publish the current visual frontier.
+You do not need every command at once. Choose the route that matches your goal.
+
+## Choose your route
+
+| I want to... | Use this |
+| --- | --- |
+| Reproduce the maintained repository as strictly as possible | `make reproduce` |
+| Run the normal verification suite | `make check` |
+| Run only the current P87 theorem checks | focused P87 commands below |
+| Validate figures without rebuilding them | `make figures-check` |
+| Regenerate the complete visual record | `make figures` |
+| Inspect CI without installing locally | GitHub Actions |
+
+The current public theorem frontier is **P87**. The formal release remains **v0.82.0**.
 
 ---
 
 ## 1. Supported environment
 
-- **Compatibility:** Python 3.10, 3.11, or 3.12
-- **Exact reference environment:** Python 3.12.14, recorded in `.python-version`
-- **Primary test framework:** `pytest`
-- **Static checks:** `ruff`
-- **Numerical/figure dependencies:** `numpy`, `matplotlib`
-- **Package installation:** editable install from `pyproject.toml`
+The repository supports:
 
-The continuous-integration matrix runs the main test suite and Ruff on Python **3.10, 3.11, and 3.12**. Exact publication-artifact reproduction is additionally checked on Python **3.12.14** with the pinned versions in `requirements-reproducibility.txt`.
+- Python 3.10
+- Python 3.11
+- Python 3.12
+
+The exact reference environment is **Python 3.12.14**, recorded in `.python-version`.
+
+Primary tools:
+
+- `pytest` for tests
+- `ruff` for static checks
+- `numpy` and `matplotlib` for numerical and visual work
+- editable package installation from `pyproject.toml`
+
+The compatibility matrix and the exact reproduction environment answer different questions. The compatibility matrix asks whether the software works across supported Python versions. The exact environment asks whether maintained computational and publication artifacts can be rebuilt identically.
 
 ---
 
-## 2. Fresh-clone setup
+## 2. Fresh clone setup
 
 ```bash
 git clone https://github.com/MahsaKeikha/mathematical-consciousness-bridge.git
@@ -29,41 +50,47 @@ python -m pip install -e ".[dev]"
 python -m pip install -r requirements-reproducibility.txt
 ```
 
-The `dev` extra contains the development tools. The pinned reproducibility file fixes the exact numerical and plotting versions used to reproduce publication artifacts. `requirements-figures.txt` contains the exact plotting stack and can be used separately when only the figures are needed.
+If your system uses `python3` rather than `python`, substitute `python3` in the commands below.
 
-If your system provides `python3` rather than `python`, substitute `python3` in the commands below.
+`requirements-reproducibility.txt` pins the exact environment used for strict reproduction. `requirements-figures.txt` contains the plotting stack for figure work.
 
 ---
 
-## 3. Exact one-command reproduction
+## 3. Exact repository reproduction
 
-After installing the exact reference environment above, run:
-
-```bash
-python scripts/reproducibility_audit.py
-```
-
-Or:
+Run:
 
 ```bash
 make reproduce
 ```
 
-This is the strongest repository-level check. It starts from a clean Git tree, compiles the source and scripts, imports every package module, runs pytest and Ruff, verifies repository structure, regenerates the computational atlases, reapplies embedded SVG descriptions, synchronizes the public figure surfaces, requires the rebuild to match the committed artifacts exactly, regenerates a second time, and requires the second build to be byte-identical to the first. Any changed tracked file is a reproducibility failure.
+or directly:
 
-The exact reference environment is intentionally narrower than the compatibility matrix. This separates two questions cleanly: **does the software work on the supported Python versions?** and **can the published computational and figure-publication artifacts be rebuilt identically?**
+```bash
+python scripts/reproducibility_audit.py
+```
+
+This is the strongest maintained repository check. It verifies a clean Git state, compiles source and scripts, imports package modules, runs tests and static checks, verifies repository structure, regenerates computational atlases, reapplies SVG metadata, synchronizes public figure surfaces, and checks that the rebuild matches the committed record.
+
+A second generation pass is used to confirm that the maintained generated artifacts are stable.
+
+### What success means
+
+A successful exact reproduction means the repository can rebuild its maintained computational and publication surfaces under the declared reference environment.
+
+It does **not** mean that every scientific assumption is empirically true or that the bridge from physical description to experience has been established.
 
 ---
 
-## 4. Fast verification without regeneration
+## 4. Fast verification
 
-On systems with `make`:
+Run:
 
 ```bash
 make check
 ```
 
-The canonical direct commands are:
+The corresponding direct commands are:
 
 ```bash
 python -m pytest
@@ -73,17 +100,70 @@ python scripts/sync_figure_publication.py --check
 python scripts/verify_repository.py
 ```
 
+Use this route when you want to verify the current committed state without regenerating every maintained artifact.
+
 ---
 
-## 5. Run the full tests
+## 5. Focused audit of the current P87 frontier
+
+The current theorem frontier is **P87**.
+
+Its direct technical record is:
+
+```text
+docs/proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md
+docs/p87_equation_provenance.md
+src/consciousness_bridge/bounded_primitive_quad_projection_parity_functional_separation.py
+tests/test_bounded_primitive_quad_projection_parity_functional_separation.py
+docs/figures/p87_exact_bounded_primitive_quad_projection_parity_functional.svg
+figures/manifest.json
+```
+
+Run the focused theorem and figure publication checks with:
+
+```bash
+python -m pytest \
+  tests/test_bounded_primitive_quad_projection_parity_functional_separation.py \
+  tests/test_figure_publication_sync.py
+```
+
+P87 completes the declared sign normalized primitive nonzero four event coefficient family with coefficient magnitudes at most 2. The exact family contains 39,600 functionals.
+
+For the published witness, the empirical functional value is
+
+\[
+-\frac{17}{24},
+\]
+
+while the exact P75 box interval is
+
+\[
+\left[-\frac12,2\right],
+\]
+
+giving an exact functional gap
+
+\[
+\frac{5}{24}.
+\]
+
+The centered coefficient norm is 20, which yields the P87 empirical full law lower bound
+
+\[
+\frac{1}{96}.
+\]
+
+These are conditional model separation results for the declared P75 family. They do not identify the latent state with consciousness or complete the physical to experiential bridge.
+
+---
+
+## 6. Run the full tests
 
 ```bash
 python -m pytest
 ```
 
-The test suite covers theorem implementations, exact witnesses, numerical certificates, dominance relations, finite-sample logic, figure geometry/content guards, figure-publication synchronization, publication integration, and regression behavior.
-
-Useful pytest variants:
+Useful variants include:
 
 ```bash
 python -m pytest -q
@@ -92,237 +172,186 @@ python -m pytest tests/test_figure_publication_sync.py
 python -m pytest -k strict_improvement
 ```
 
-A passing test suite confirms that the declared implementation and regression checks pass. It is **not empirical evidence** that the physical-to-experiential bridge has been established.
+The test suite covers theorem implementations, exact witnesses, numerical certificates, finite data logic, figure guards, publication synchronization, reader experience contracts, and regression behavior.
+
+A passing test suite confirms that the declared implementation and repository checks pass. It is not empirical evidence about consciousness.
 
 ---
 
-## 6. Run static checks
+## 7. Static checks
+
+Run:
 
 ```bash
 python -m ruff check .
 ```
 
-Or:
+or:
 
 ```bash
 make lint
 ```
 
-Ruff checks the Python source, scripts, and tests according to the repository configuration in `pyproject.toml`.
+Ruff checks the maintained Python source, scripts, and tests according to `pyproject.toml`.
 
 ---
 
-## 7. Generate and synchronize the complete visual record
+## 8. Generate the visual record
 
-Use the unified command:
-
-```bash
-python scripts/generate_all_figures.py
-```
-
-Or:
+Run:
 
 ```bash
 make figures
 ```
 
-The command first runs the two canonical computational generators:
+or:
 
-```text
-scripts/generate_quantitative_atlas.py
-    -> docs/figures/quantitative/
-
-scripts/generate_quantum_foundations_atlas.py
-    -> docs/figures/quantum/
+```bash
+python scripts/generate_all_figures.py
 ```
 
-It then reapplies embedded SVG title/description metadata, synchronizes the GitHub-facing `figures/` gateway and the website's current-frontier visual ordering, validates the complete canonical SVG tree, and requires the synchronized publication state to be stable.
+The unified figure path runs the canonical computational generators, reapplies SVG title and description metadata, synchronizes public figure surfaces, and validates the canonical SVG tree.
 
-### Figure provenance matters
+The repository contains two different kinds of visual assets.
 
-The repository intentionally contains **two kinds of visual assets**:
+### Generated computational figures
 
-1. **Generated computational figures.** The quantitative and quantum atlases are produced by numerical scripts from explicit equations, deterministic examples, or fixed-seed simulations. Their manifests live beside the generated SVGs.
-2. **Source-controlled theorem and architecture figures.** These are publication diagrams used to communicate theorem structure, assumptions, inequalities, dependencies, and scientific boundaries. They are vector source assets stored directly in `docs/figures/`. They are validated, metadata-enriched, cataloged, and hash-audited rather than falsely described as plotting-script output.
+The quantitative and quantum atlases are produced by scripts from explicit equations, deterministic examples, or fixed seed simulations.
 
-A theorem diagram should not be mistaken for simulated evidence, and a simulation should not be mistaken for a theorem. The [Figure Catalog](figure_catalog.md) and figure captions preserve that distinction.
+### Source controlled research figures
 
-### Machine-auditable complete figure manifest
+Theorem and architecture figures communicate mathematical structure, assumptions, dependencies, inequalities, and scientific boundaries. They are source assets, not simulated evidence.
 
-The top-level [`figures/manifest.json`](../figures/manifest.json) is derived from **every SVG under `docs/figures/`**. Each record stores:
+A theorem diagram should not be mistaken for a simulation. A simulation should not be mistaken for a theorem.
 
-- canonical repository path;
-- SHA-256 digest;
-- byte size;
-- figure category;
-- embedded SVG title;
-- embedded description length.
-
-The manifest also records the current theorem frontier and its canonical figure. This prevents the public GitHub `figures/` gateway from silently remaining at an older proposition while the theorem tree advances.
+The [Figure Catalog](figure_catalog.md) records those roles explicitly.
 
 ---
 
-## 8. Validate figures without regenerating them
+## 9. Validate figures without regenerating them
+
+Run:
+
+```bash
+make figures-check
+```
+
+or:
 
 ```bash
 python scripts/generate_all_figures.py --validate-only
 python scripts/sync_figure_publication.py --check
 ```
 
-Or:
+The validation path checks the generated manifests, SVG parseability, canonical figure inventory, SHA 256 publication manifest, current frontier synchronization, and public visual ordering.
 
-```bash
-make figures-check
-```
-
-The validation path checks that:
-
-- the quantitative manifest matches the quantitative SVG set;
-- the quantum manifest matches the quantum SVG set;
-- all SVG files under `docs/figures/` are valid parseable vector documents;
-- no generated manifest silently points to a missing figure;
-- the complete SHA-256 publication manifest matches the canonical SVG tree;
-- the top-level GitHub figure gateway advertises P86;
-- the Visual Atlas presents P86 before historical P84/P85 frontiers;
-- the publication synchronizer reports zero drift.
-
----
-
-## 9. Exact-commit GitHub Pages figures
-
-The Pages builder copies the canonical `docs/figures/` tree into the deployment artifact as `_site/figures/`. During the build, image `src` values that previously referenced mutable raw-GitHub `main` URLs are rewritten to the bundled local copies.
-
-Therefore the deployed HTML and the SVGs a reader sees come from the **same checked-out commit**. For P86 the deployed artifact must contain:
+The current frontier figure is:
 
 ```text
-_site/figures/p86_exact_minimally_weighted_quad_projection_parity.svg
+docs/figures/p87_exact_bounded_primitive_quad_projection_parity_functional.svg
 ```
-
-and `visual-atlas.html` must load it as:
-
-```html
-src="figures/p86_exact_minimally_weighted_quad_projection_parity.svg"
-```
-
-The GitHub link around a figure may still point to the source file for inspection; the displayed image itself is commit-consistent with the Pages artifact.
 
 ---
 
-## 10. Verify repository publication consistency
+## 10. Figure manifest and exact publication record
 
-```bash
-python scripts/verify_repository.py
+The top level file
+
+```text
+figures/manifest.json
 ```
 
-Or:
+is derived from every SVG under `docs/figures/`.
+
+Each record stores:
+
+- canonical repository path
+- SHA 256 digest
+- byte size
+- figure category
+- embedded SVG title
+- embedded description length
+
+The manifest also records the current theorem frontier and its canonical figure. This prevents the public figure gateway from silently remaining on an older proposition.
+
+The Pages build copies canonical figures into the deployment artifact so the HTML and displayed SVGs come from the same checked out commit.
+
+---
+
+## 11. Repository consistency verification
+
+Run:
 
 ```bash
 make verify
 ```
 
-This checks reader-facing and publication-level consistency that is broader than an individual theorem unit test. The current repository frontier is **P86**, and the proof sequence is expected through Proposition 86. The figure-specific synchronization contract is additionally enforced by `scripts/sync_figure_publication.py --check` and `tests/test_figure_publication_sync.py`.
-
-The verifier is deliberately network-free so it can run in CI and in a fresh clone.
-
----
-
-## 11. GitHub Actions: see the results without installing locally
-
-### `tests`
-
-Runs on pushes and pull requests using Python 3.10, 3.11, and 3.12:
-
-```text
-install package + dev dependencies
--> pytest
--> ruff
--> repository consistency verification
-```
-
-### `reproducibility`
-
-Runs the exact reference environment on Python 3.12.14 and executes `python scripts/reproducibility_audit.py`. This is the release-level proof that the maintained code, tests, repository checks, generated computational artifacts, and publication surfaces can be reproduced from the committed record.
-
-### `figures`
-
-The figure workflow is triggered by canonical figure code, figure assets, the figure gateway, figure synchronization code, or the Visual Atlas. It performs:
-
-```text
-install exact figure environment
--> regenerate both computational atlases
--> synchronize all public figure surfaces
--> require a clean Git tree after regeneration
--> run figure publication and documentation tests
--> build the exact-commit website figure artifact
--> run repository verification
--> upload the complete reproduced visual record
-```
-
-The uploaded artifact includes the generated atlases, the current P86 theorem figure, the SHA-256 manifest, GitHub figure gateway records, and the P86 SVG as bundled into the Pages build.
-
-### `deploy-research-website`
-
-Pages deployment is also triggered by canonical figure changes. Before deployment it requires zero figure-publication drift, copies the canonical SVG tree into the site artifact, and verifies that the Visual Atlas loads P86 from the local exact-commit figure bundle rather than mutable raw-GitHub `main`.
-
----
-
-## 12. Reproduce the current P87 implementation checks directly
-
-The current theorem frontier is **P87**. Its primary records are:
-
-```text
-docs/proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md
-docs/p86_equation_provenance.md
-src/consciousness_bridge/weighted_quad_projection_parity_functional_separation.py
-tests/test_bounded_primitive_quad_projection_parity_functional_separation.py
-docs/figures/p86_exact_minimally_weighted_quad_projection_parity.svg
-figures/manifest.json
-```
-
-Run the focused theorem and figure-publication checks with:
+or:
 
 ```bash
-python -m pytest \
-  tests/test_bounded_primitive_quad_projection_parity_functional_separation.py \
-  tests/test_figure_publication_sync.py
+python scripts/verify_repository.py
 ```
 
-The P86 exact hierarchy witness is:
+This checks publication and reader facing consistency that is broader than an individual theorem unit test.
 
-```text
-L85 = 0 < L86 = 1/192
-```
-
-The focused suite is useful for auditing P86, but the full test matrix remains the release-level standard because earlier propositions and publication surfaces are dependencies of the current repository state.
+The repository verifier is designed to run without network access so it can be used in CI and in a fresh clone.
 
 ---
 
-## 13. Interpreting a successful run
+## 12. GitHub Actions
 
-A green test or figure-generation run means the **repository's formal, computational, and publication-synchronization checks completed successfully** under the declared environment. It does not mean:
+Three workflow families are especially useful to external reviewers.
 
-- every modeling assumption is empirically true;
-- a latent target has been identified with consciousness;
-- a non-rejected model has been validated;
-- a quantum description has been shown to be experiential;
-- the physical-to-experiential bridge has been solved.
+### Tests
 
-The repository deliberately keeps **software reproducibility**, **mathematical proof**, **model adequacy**, **empirical evidence**, and **ontological interpretation** separate.
+Runs the supported Python matrix and performs installation, pytest, Ruff, and repository consistency verification.
+
+### Reproducibility
+
+Runs the exact reference environment and executes the end to end reproducibility audit.
+
+### Figures and website publication
+
+Regenerates or validates the maintained visual surfaces, checks synchronization, builds the exact commit website figure artifact, and verifies that public figure references are consistent with the checked out commit.
+
+These workflows let a reader inspect current verification results without installing the repository locally.
 
 ---
 
-## 14. Recommended audit sequence for external reviewers
+## 13. How to interpret a green run
 
-For a result you want to scrutinize closely:
+A green run means the declared formal, computational, and publication checks completed successfully under the stated environment.
 
-1. read the proposition file;
-2. read its equation/provenance record when available;
-3. inspect the implementation in `src/consciousness_bridge/`;
-4. inspect the corresponding tests;
-5. run the focused test file;
-6. run `make check` or the direct equivalent;
-7. inspect the theorem figure and the [Figure Catalog](figure_catalog.md);
-8. inspect [`figures/manifest.json`](../figures/manifest.json) for the canonical figure hash;
-9. verify that the proposition's scientific-boundary statement matches the conclusion you intend to draw.
+It does not mean:
 
-For navigation by audience and background, begin with [Start Here](../START_HERE.md). For terminology, use the [Glossary](glossary.md).
+- every modeling assumption is empirically true
+- a latent target has been identified with consciousness
+- a model that was not rejected has been validated as true
+- a quantum description has been shown to be experiential
+- the physical to experiential bridge has been solved
+
+The repository deliberately keeps software reproducibility, mathematical proof, model adequacy, empirical evidence, and ontological interpretation separate.
+
+---
+
+## 14. Recommended reviewer path
+
+For a result you want to inspect closely:
+
+1. Read the proposition page.
+2. Read its provenance record when available.
+3. Inspect the corresponding implementation.
+4. Inspect the regression tests.
+5. Run the focused test file.
+6. Run `make check`.
+7. Inspect the theorem figure and the [Figure Catalog](figure_catalog.md).
+8. Inspect `figures/manifest.json` for the canonical figure hash.
+9. Confirm that the scientific boundary matches the conclusion you intend to draw.
+
+For the conceptual path, begin with [Start Here](../START_HERE.md).
+
+For terminology, use the [Glossary](glossary.md).
+
+For the theorem dependency structure, use the [Theorem Roadmap](theorem_roadmap.md).
+
+For every proposition in chronological order, use the [Detailed Proposition Record](detailed_proposition_record.md).
