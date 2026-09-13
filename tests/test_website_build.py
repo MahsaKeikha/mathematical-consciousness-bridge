@@ -2,6 +2,7 @@ from pathlib import Path
 
 from scripts.prepare_website import (
     ASSET_VERSION,
+    BASE_STYLE_TAG,
     CONTRAST_STYLE_TAG,
     FOOTER_SCRIPT_TAG,
     NAVIGATION_STYLE_TAG,
@@ -51,6 +52,7 @@ def test_prepare_website_injects_shared_publication_assets(tmp_path: Path) -> No
     for name in ("index.html", "sources.html"):
         built = (output / name).read_text(encoding="utf-8")
         assert built.count(SCRIPT_TAG) == 1
+        assert built.count(BASE_STYLE_TAG) == 1
         assert built.count(READER_LINKS_SCRIPT_TAG) == 1
         assert built.count(FOOTER_SCRIPT_TAG) == 1
         assert built.count(NAVIGATION_STYLE_TAG) == 1
@@ -116,11 +118,13 @@ def test_prepare_website_replaces_stale_navigation_assets_and_fallback(
     built = (output / "index.html").read_text(encoding="utf-8")
 
     assert f'app.js?v={ASSET_VERSION}' in built
+    assert f'styles.css?v={ASSET_VERSION}' in built
     assert f'navigation-v2.css?v={ASSET_VERSION}' in built
     assert f'research-guide-v2.css?v={ASSET_VERSION}' in built
     assert f'contrast-v2.css?v={ASSET_VERSION}' in built
     assert f'reader-experience-v2.css?v={ASSET_VERSION}' in built
     assert '<script defer src="app.js"></script>' not in built
+    assert 'href="styles.css"' not in built
     assert 'href="navigation-v2.css"' not in built
     assert 'href="reader-experience-v2.css"' not in built
     assert '>Research Lineage</a>' not in built
@@ -129,6 +133,16 @@ def test_prepare_website_replaces_stale_navigation_assets_and_fallback(
     assert '>Visual Atlas</a>' not in built
     assert '>Research</a>' in built
     assert '>Explore</a>' in built
+
+
+def test_mobile_resource_grids_collapse_without_shattering_paths() -> None:
+    css = Path("website/reader-experience-v2.css").read_text(encoding="utf-8")
+
+    assert ".implementation-links," in css
+    assert ".source-grid," in css
+    assert "grid-template-columns: minmax(0, 1fr) !important" in css
+    assert "overflow-wrap: break-word" in css
+    assert "pre {\n  overflow-x: auto;\n  overflow-wrap: normal" in css
 
 
 def test_publication_type_scale_stays_restrained() -> None:

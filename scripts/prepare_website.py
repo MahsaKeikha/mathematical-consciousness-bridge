@@ -24,10 +24,11 @@ RAW_FIGURE_PREFIX = (
 )
 CURRENT_FRONTIER_FIGURE = "p86_exact_minimally_weighted_quad_projection_parity.svg"
 
-ASSET_VERSION = "20260912-nav15-p86"
+ASSET_VERSION = "20260913-mobile16-p86"
 SCRIPT_TAG = f'<script defer src="app.js?v={ASSET_VERSION}"></script>'
 READER_LINKS_SCRIPT_TAG = '<script defer src="reader-links.js"></script>'
 FOOTER_SCRIPT_TAG = '<script defer src="footer.js"></script>'
+BASE_STYLE_TAG = f'<link rel="stylesheet" href="styles.css?v={ASSET_VERSION}" />'
 NAVIGATION_STYLE_TAG = '<link rel="stylesheet" href="navigation.css" />'
 NAVIGATION_V2_STYLE_TAG = (
     f'<link rel="stylesheet" href="navigation-v2.css?v={ASSET_VERSION}" />'
@@ -46,6 +47,9 @@ READER_EXPERIENCE_STYLE_TAG = (
 
 APP_SCRIPT_PATTERN = re.compile(
     r'<script\s+defer\s+src="app\.js(?:\?v=[^"]+)?"></script>'
+)
+BASE_STYLE_PATTERN = re.compile(
+    r'<link\s+rel="stylesheet"\s+href="styles\.css(?:\?v=[^"]+)?"\s*/?>'
 )
 NAVIGATION_V2_STYLE_PATTERN = re.compile(
     r'<link\s+rel="stylesheet"\s+href="navigation-v2\.css(?:\?v=[^"]+)?"\s*/?>'
@@ -78,6 +82,7 @@ def _normalize_navigation_assets(text: str) -> str:
     """Replace stale shared asset URLs with cache-busted canonical URLs."""
 
     text = APP_SCRIPT_PATTERN.sub(SCRIPT_TAG, text)
+    text = BASE_STYLE_PATTERN.sub(BASE_STYLE_TAG, text)
     text = NAVIGATION_V2_STYLE_PATTERN.sub(NAVIGATION_V2_STYLE_TAG, text)
     text = RESEARCH_GUIDE_STYLE_PATTERN.sub(RESEARCH_GUIDE_STYLE_TAG, text)
     text = CONTRAST_STYLE_PATTERN.sub(CONTRAST_STYLE_TAG, text)
@@ -186,6 +191,8 @@ def prepare_website(source: Path, output: Path) -> None:
         text = _localize_figure_sources(text)
 
         additions: list[str] = []
+        if BASE_STYLE_TAG not in text:
+            additions.append(BASE_STYLE_TAG)
         if NAVIGATION_STYLE_TAG not in text:
             additions.append(NAVIGATION_STYLE_TAG)
         if NAVIGATION_V2_STYLE_TAG not in text:

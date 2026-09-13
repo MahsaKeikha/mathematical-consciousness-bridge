@@ -129,13 +129,23 @@
 
 /* Long equations and labels may wrap or scroll, but may never widen a card. */
 .equation,
-pre,
-code,
 .figure-card,
 .frontier-summary-card,
 .reader-primer-card,
 .reader-step-card {
   overflow-wrap: anywhere;
+}
+
+/* Technical paths should wrap only when they truly need to, never letter-by-letter. */
+code {
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+pre {
+  overflow-x: auto;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 /*
@@ -304,6 +314,50 @@ code,
 }
 
 @media (max-width: 680px) {
+  /*
+   * Phone contract: resource/output collections are cards, never squeezed
+   * desktop columns. !important intentionally overrides legacy page-local
+   * grid declarations in old reader surfaces.
+   */
+  .source-grid,
+  .implementation-index,
+  .implementation-links,
+  .research-card-grid,
+  .reader-trail-grid,
+  .lineage-callout-actions,
+  .frontier-summary-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .source-grid > *,
+  .implementation-index > *,
+  .implementation-links > *,
+  .research-card-grid > *,
+  .reader-trail-grid > *,
+  .lineage-callout-actions > *,
+  .frontier-summary-grid > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .source-grid a,
+  .implementation-index a,
+  .implementation-links a {
+    width: 100%;
+    min-height: 0 !important;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .source-grid code,
+  .implementation-index code,
+  .implementation-links code,
+  .source-grid small,
+  .implementation-links small {
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
   .theorem-figure-shell img {
     max-height: min(62vh, 500px);
   }
