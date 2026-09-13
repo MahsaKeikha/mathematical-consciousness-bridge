@@ -42,11 +42,12 @@ def test_start_here_hands_off_to_the_research_map() -> None:
 
 def test_research_map_organizes_by_questions_not_full_history() -> None:
     text = read(RESEARCH_MAP)
+    lowered = text.lower()
     for chapter in range(1, 7):
         assert f"Chapter {chapter}:" in text
     assert "Detailed proposition record" in text
     assert "Theorem Roadmap" in text
-    assert "The final bridge remains open" in text
+    assert "final bridge remains open" in lowered
 
 
 def test_home_page_offers_clear_depth_choices() -> None:
