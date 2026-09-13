@@ -1,4 +1,4 @@
-.PHONY: install test lint figures figures-check verify check reproduce
+.PHONY: install test lint figures figures-check frontier-check publication-check website-check verify check reproduce
 
 PYTHON ?= python
 
@@ -18,10 +18,20 @@ figures:
 figures-check:
 	$(PYTHON) scripts/generate_all_figures.py --validate-only
 
-verify:
+frontier-check:
+	$(PYTHON) scripts/verify_frontier_publication.py
+
+publication-check:
+	$(PYTHON) scripts/sync_figure_publication.py --check
+
+website-check:
+	$(PYTHON) scripts/prepare_website.py --source website --output .site-check
+	rm -rf .site-check
+
+verify: frontier-check publication-check
 	$(PYTHON) scripts/verify_repository.py
 
-check: test lint figures-check verify
+check: test lint figures-check verify website-check
 
 reproduce:
 	$(PYTHON) scripts/reproducibility_audit.py
