@@ -10,6 +10,7 @@ on:
       - "scripts/synchronize_p88_reader_frontier_phrases.py"
       - "scripts/prepare_website.py"
       - "scripts/verify_repository.py"
+      - "scripts/verify_frontier_publication.py"
       - "docs/proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md"
       - "docs/p88_equation_provenance.md"
       - "docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg"
@@ -57,6 +58,7 @@ jobs:
             scripts/sync_figure_publication.py \
             scripts/synchronize_p88_reader_frontier_phrases.py \
             scripts/prepare_website.py \
+            scripts/verify_frontier_publication.py \
             scripts/verify_repository.py
           python scripts/sync_figure_publication.py --check
           python scripts/verify_repository.py
