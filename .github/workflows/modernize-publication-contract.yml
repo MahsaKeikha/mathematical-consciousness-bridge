@@ -5,6 +5,7 @@ on:
     branches: ["website-research-iii-sync"]
     paths:
       - "scripts/modernize_publication_contract.py"
+      - "docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg"
       - ".github/workflows/modernize-publication-contract.yml"
   workflow_dispatch:
 
