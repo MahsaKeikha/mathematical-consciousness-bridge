@@ -16,7 +16,7 @@ This project asks a different question: **how would we know whether a physical d
 
 The repository does not begin by declaring a brain pattern, information measure, quantum effect, hidden variable, or mathematical object to be consciousness. Instead, it builds a framework for testing proposed connections carefully enough that they can fail.
 
-**[Start here](START_HERE.md)** · **[Research map](docs/research_architecture.md)** · **[Visual atlas](docs/figure_catalog.md)** · **[Technical record](docs/detailed_proposition_record.md)** · **[Reproduce the work](docs/reproducibility.md)**
+**[Start here](START_HERE.md)** · **[Research map](docs/research_map.md)** · **[Visual atlas](docs/figure_catalog.md)** · **[Technical record](docs/detailed_proposition_record.md)** · **[Reproduce the work](docs/reproducibility.md)**
 
 ---
 
@@ -26,7 +26,7 @@ A scientific claim linking physics to experience should survive a few basic ques
 
 | Question | In plain language | Go deeper |
 | --- | --- | --- |
-| **What are we describing?** | Be clear about which physical information is actually included. | [Research architecture](docs/research_architecture.md) |
+| **What are we describing?** | Be clear about which physical information is actually included. | [Research map](docs/research_map.md) |
 | **Could something important be missing?** | A useful physical description may still leave out a distinction that matters to the target we care about. | [Bridge problem](docs/bridge_problem.md) |
 | **Can we trust what we observe?** | Reports, labels, behavior, and other measurements can be incomplete or noisy. | [Start Here](START_HERE.md) |
 | **Can the proposed model be wrong?** | A serious model must make predictions or constraints that can fail. | [Falsification program](docs/falsification_program.md) |
@@ -65,8 +65,9 @@ The current public theorem frontier is **P87**. The formal release remains **v0.
 | If you want to... | Start here |
 | --- | --- |
 | Understand the project without technical background | **[Start Here](START_HERE.md)** |
-| See how the scientific questions fit together | **[Research Architecture](docs/research_architecture.md)** |
+| See how the scientific questions fit together | **[Research Map](docs/research_map.md)** |
 | Explore the project visually | **[Figure Catalog](docs/figure_catalog.md)** |
+| Move into the formal architecture | **[Technical Research Architecture](docs/research_architecture.md)** |
 | Follow the complete mathematical development | **[Theorem Roadmap](docs/theorem_roadmap.md)** |
 | Find every proposition and its technical record | **[Detailed Proposition Record](docs/detailed_proposition_record.md)** |
 | Check equations and sources | **[Equation and Citation Map](docs/equation_and_citation_map.md)** |
