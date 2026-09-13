@@ -8,7 +8,7 @@
 
 > ## The question
 >
-> **Can a physical description ever be enough to explain an experience-related difference?**
+> **Can a physical description ever be enough to explain a difference related to experience?**
 
 Science is extraordinarily good at describing what physical systems do. We can measure activity, structure, behavior, dynamics, responses to stimulation, information flow, and many other physical properties.
 
@@ -38,7 +38,7 @@ That is the core of the project. The mathematics behind each question is availab
 
 ## Why this matters
 
-The difficult part of consciousness research is not only collecting more measurements. It is knowing **what those measurements would have to establish** before a physical description could legitimately be said to explain an experience-related distinction.
+The difficult part of consciousness research is not only collecting more measurements. It is knowing **what those measurements would have to establish** before a physical description could legitimately be said to explain a distinction related to experience.
 
 This repository tries to make that logic explicit. It separates the scientific question into smaller pieces that can be tested, challenged, reproduced, and improved independently.
 
@@ -48,11 +48,11 @@ The goal is not to make the strongest possible claim. It is to make strong claim
 
 ## What has been built
 
-The repository contains a growing mathematical and computational research program covering physical description, sufficiency, measurement, model testing, finite-data reasoning, and reproducibility.
+The repository contains a growing mathematical and computational research program covering physical description, sufficiency, measurement, model testing, reasoning with finite data, and reproducibility.
 
 You do **not** need to read the propositions in order to understand the project.
 
-If you want the complete theorem-by-theorem record, including assumptions, proofs, implementations, tests, figures, and scientific boundaries, use the **[Detailed Proposition Record](docs/detailed_proposition_record.md)** or the **[Theorem Roadmap](docs/theorem_roadmap.md)**.
+If you want the complete theorem record, including assumptions, proofs, implementations, tests, figures, and scientific boundaries, use the **[Detailed Proposition Record](docs/detailed_proposition_record.md)** or the **[Theorem Roadmap](docs/theorem_roadmap.md)**.
 
 The current public theorem frontier is **P87**. The formal release remains **v0.82.0**.
 
@@ -84,7 +84,7 @@ This repository does **not** claim that:
 - a model that survives one test is therefore uniquely correct;
 - rejection of one physical model proves that consciousness is nonphysical;
 - mathematical proof under stated assumptions makes those assumptions true in nature;
-- the physical-to-experiential bridge has been solved.
+- the final bridge from physical description to experience has been solved.
 
 The bridge remains an open scientific problem.
 
@@ -106,4 +106,4 @@ MIT License. See **[LICENSE](LICENSE)**.
 
 **Public theorem frontier:** P87  
 **Formal release:** v0.82.0  
-**Physical-to-experiential bridge:** open
+**Final bridge from physical description to experience:** open
