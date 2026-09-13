@@ -3,7 +3,7 @@ name: deploy-research-website
 on:
   push:
     branches: ["main"]
-    # P86 figures and HTML deploy together from one exact commit artifact.
+    # Final repaired P86 figures and HTML deploy from one exact commit artifact.
     paths:
       - "website/**"
       - "docs/figures/**"
