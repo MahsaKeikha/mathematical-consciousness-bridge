@@ -20,6 +20,21 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12.14"
+      - name: Correct the permanent P86 section matcher
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("scripts/sync_figure_publication.py")
+          text = path.read_text(encoding="utf-8")
+          old = r'''r'<section id="p86-frontier"\b.*?</section>' '''.strip()
+          new = r'''r'<section id="p86-frontier".*?</section>' '''.strip()
+          if old in text:
+              text = text.replace(old, new, 1)
+              path.write_text(text, encoding="utf-8")
+          elif new not in text:
+              raise SystemExit("could not locate the P86 section matcher")
+          PY
       - name: Validate synchronizer syntax
         run: python -m py_compile scripts/sync_figure_publication.py
       - name: Synchronize every public figure surface
@@ -37,6 +52,7 @@ jobs:
               ).splitlines()
           )
           allowed = {
+              "scripts/sync_figure_publication.py",
               "figures/README.md",
               "figures/CURRENT_FRONTIER.md",
               "figures/manifest.json",
@@ -49,17 +65,11 @@ jobs:
                   "unexpected synchronization changes: "
                   + ", ".join(sorted(unexpected))
               )
-          required = {
-              "figures/README.md",
-              "figures/CURRENT_FRONTIER.md",
-              "figures/manifest.json",
-              "docs/figures/README.md",
-              "website/visual-atlas.html",
-          }
+          required = allowed
           missing = required - changed
           if missing:
               raise SystemExit(
-                  "expected stale surfaces were not synchronized: "
+                  "expected synchronization changes were absent: "
                   + ", ".join(sorted(missing))
               )
           print("guarded outputs:", ", ".join(sorted(changed)))
@@ -96,6 +106,8 @@ jobs:
           assert p86 < p84 < p85
           assert 'current-frontier-visual: P86' in atlas
           assert 'L85 = 0 &lt; L86 = 1/192' in atlas
+          assert 'weighted_quad_projection_parity_functional_separation.py' in atlas
+          assert 'test_weighted_quad_projection_parity_functional_separation.py' in atlas
 
           gateway = (root / 'figures/CURRENT_FRONTIER.md').read_text()
           assert gateway.startswith('# Current visual frontier: P71-P86')
@@ -106,6 +118,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add figures/README.md figures/CURRENT_FRONTIER.md figures/manifest.json docs/figures/README.md website/visual-atlas.html
+          git add scripts/sync_figure_publication.py figures/README.md figures/CURRENT_FRONTIER.md figures/manifest.json docs/figures/README.md website/visual-atlas.html
           git commit -m "Synchronize complete P86 figure publication record"
           git push origin HEAD:main
