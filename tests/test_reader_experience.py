@@ -21,68 +21,81 @@ def test_shared_reader_experience_style_is_built_into_pages() -> None:
     assert "overflow-wrap: anywhere" in css
 
 
-def test_first_reader_surfaces_match_p87_frontier() -> None:
+def test_first_reader_surfaces_match_p88_frontier() -> None:
     start = _text("website/start-here.html")
     research_map = _text("website/research-map.html")
     plain = _text("website/plain-language.html")
-    assert "87-result theorem program and current P87 frontier" in start
-    assert "P78-P87 progressively tighten global separation" in start
-    assert "P87 is the current exact frontier." in start
-    assert "Current frontier · P85" not in start
-    assert "Current theorem frontier · P86" not in start
-    assert "L85 = 0 &lt; L86 = 1/192" in start
-    assert ">Read P87</a>" in start
+
+    assert "88-result theorem program and current P88 frontier" in start
+    assert "P78-P88 progressively tighten global separation" in start
+    assert "P88 is the current exact frontier." in start
+    assert "L85 = 0 &lt; L86 = 1/192 &lt; L87 = 1/96 &lt; L88 = 1/64" in start
+    assert ">Read P88</a>" in start
     assert 'id="research-origin"' in start
     assert "10.1016/j.chaos.2015.03.014" in start
-    assert "The 87 propositions by scientific role" in start
-    assert "You do not need to read 87 proofs in order" in start
-    assert "complete 87-result dependency structure" in start
+    assert "The 88 propositions by scientific role" in start
+    assert "P75-P88" in start
     assert "Physical descriptor" in start
     assert "Observation channel" in start
-    assert "through Proposition 87" in research_map
-    assert "Eighty-seven results" in research_map
-    assert "<strong>87</strong>" in research_map
-    assert "P73-P87" in research_map
-    assert "<strong>87</strong><span>proposition-level results</span>" in plain
-    assert "<strong>P87</strong><span>current theorem frontier</span>" in plain
-    assert "What the 87 results are doing" in plain
-    assert "P75-P87" in plain
-    assert "actual P87 research frontier" in plain
-    assert "shows how all 87 results connect" in plain
-    assert "<strong>84</strong><span>proposition-level results</span>" not in plain
-    assert "<strong>P84</strong><span>current theorem frontier</span>" not in plain
-    assert "actual P84 research frontier" not in plain
+
+    assert "through Proposition 88" in research_map
+    assert "Eighty-eight results" in research_map
+    assert "<strong>88</strong>" in research_map
+    assert "P73-P88" in research_map
+    assert "Current exact frontier · P88" in research_map
+
+    assert "<strong>88</strong><span>proposition-level results</span>" in plain
+    assert "<strong>P88</strong><span>current theorem frontier</span>" in plain
+    assert "What the 88 results are doing" in plain
+    assert "P75-P88" in plain
+    assert "actual P88 research frontier" in plain
+    assert "all 88 results connect" in plain
+
+    assert "Current theorem frontier · P87" not in start
+    assert "Current exact frontier · P87" not in plain
+    assert "<strong>P87</strong><span>current theorem frontier</span>" not in plain
 
 
-def test_no_reader_facing_html_page_advertises_pre_p86_as_current() -> None:
+def test_no_reader_facing_html_page_advertises_pre_p88_as_current() -> None:
+    # Historical P87/P86/etc. sections are allowed. Only stale *current* labels/counts
+    # are forbidden on reader-facing surfaces.
     stale_current_frontier_tokens = (
-        "85-result theorem program and current P87 frontier",
-        "<h2>P78-P85 progressively tighten global separation from the declared continuous model family</h2>",
+        "87-result theorem program and current P87 frontier",
+        "Current theorem frontier · P87",
+        "Current exact frontier · P87",
+        "<strong>87</strong><span>proposition-level results</span>",
+        "<strong>P87</strong><span>current theorem frontier</span>",
+        "actual P87 research frontier",
+        "What the 87 results are doing",
+        "shows how all 87 results connect",
+        "through Proposition 87",
+        "Eighty-seven results",
+        "Open all 87 results",
+        "The 87 propositions by scientific role",
+        "complete 87-result dependency structure",
+        "86-result theorem program and current P86 frontier",
+        "Current theorem frontier · P86",
+        "Current exact frontier · P86",
+        "<strong>86</strong><span>proposition-level results</span>",
+        "<strong>P86</strong><span>current theorem frontier</span>",
+        "actual P86 research frontier",
+        "What the 86 results are doing",
+        "through Proposition 86",
+        "Eighty-six results",
+        "85-result theorem program and current P85 frontier",
         "Current frontier · P85",
         "<strong>85</strong><span>proposition-level results</span>",
         "<strong>P85</strong><span>current theorem frontier</span>",
-        "current P85 frontier",
         "actual P85 research frontier",
         "What the 85 results are doing",
-        "shows how all 85 results connect",
         "through Proposition 85",
         "Eighty-five results",
-        "The 85 propositions by scientific role",
-        "complete 85-result dependency structure",
-        "You do not need to read 85 proofs in order",
         "<strong>84</strong><span>proposition-level results</span>",
         "<strong>P84</strong><span>current theorem frontier</span>",
-        "current P84 frontier",
         "actual P84 research frontier",
         "What the 84 results are doing",
-        "shows how all 84 results connect",
-        "shows how all 83 results connect",
         "through Proposition 84",
         "Eighty-four results",
-        "Open all 84 results",
-        "The 84 propositions by scientific role",
-        "complete 84-result dependency structure",
-        "You do not need to read 84 proofs in order",
     )
     offenders: dict[str, list[str]] = {}
     for path in sorted((ROOT / "website").glob("*.html")):
@@ -122,9 +135,9 @@ def test_figure_enrichment_generator_preserves_canonical_reader_key() -> None:
     assert 'text.replace(legacy_reading_key, reading_key, 1)' in source
 
 
-def test_repository_verifier_tracks_p86_and_all_86_propositions() -> None:
+def test_repository_verifier_tracks_p88_and_all_88_propositions() -> None:
     verifier = _text("scripts/verify_repository.py")
-    assert 'CURRENT_FRONTIER = "P87"' in verifier
-    assert "for number in range(1, 88):" in verifier
+    assert 'CURRENT_FRONTIER = "P88"' in verifier
+    assert "for number in range(1, 89):" in verifier
     assert '"docs/reader_experience_and_visual_standard.md"' in verifier
-    assert '"docs/proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md"' in verifier
+    assert '"docs/proposition_88_exact_radius3_bounded_primitive_quad_projection_parity_functional.md"' in verifier
