@@ -198,8 +198,8 @@ def _verify_release_consistency() -> None:
 
     if "10.1016/j.chaos.2015.03.014" not in sources_page or "arXiv:1401.1219" not in sources_page:
         raise RuntimeError("sources page does not expose the verified Tegmark research-origin citation")
-    if "intellectual and physical-context background" not in sources_page:
-        raise RuntimeError("sources page does not distinguish research origin from evidential support")
+    if "important conceptual starting point" not in sources_page or "distinct mathematical framework" not in sources_page:
+        raise RuntimeError("sources page does not expose the collegial Tegmark research-origin context")
 
     _verify_reader_frontier_freshness()
 

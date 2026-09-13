@@ -38,15 +38,15 @@ Generated figures, synthetic witnesses, simulations, and exact rational countere
 
 The physical-to-experiential bridge remains an open research target in this project. A model-separation theorem can reject a declared model family without proving that consciousness is nonphysical. A compatible model is not thereby validated. A latent variable is not thereby identified with experience. These interpretation boundaries are part of the scientific result and should remain visible on reader-facing surfaces.
 
-## 7. Research origins versus evidential support
+## 7. Research origins and scholarly provenance
 
-Intellectual origin and evidential support are different roles. A paper may motivate a question without proving later repository results.
+Intellectual origin and mathematical support are complementary scholarly roles. A paper may open a line of questions, while later results carry their own proof and reproducibility records.
 
 The earliest conceptual line that eventually led to this research program began while studying Max Tegmark's *Consciousness as a State of Matter* (2015):
 
 > Max Tegmark, “Consciousness as a State of Matter,” *Chaos, Solitons & Fractals* **76** (2015), 238-270. DOI: [10.1016/j.chaos.2015.03.014](https://doi.org/10.1016/j.chaos.2015.03.014). Preprint: [arXiv:1401.1219](https://arxiv.org/abs/1401.1219).
 
-That paper is cited here as an intellectual starting point for questions about physical subsystem structure, factorization, information, integration, independence, and dynamics. It is **not** cited as evidence for the repository's later original propositions, exact parity certificates, or any claim that a consciousness ontology has been established.
+That paper is cited here as an important conceptual starting point for questions about physical subsystem structure, factorization, information, integration, independence, and dynamics. The subsequent proposition sequence develops a distinct mathematical framework, with its own assumptions, derivations, implementations, tests, and provenance.
 
 ## 8. Reader-facing publication rule
 

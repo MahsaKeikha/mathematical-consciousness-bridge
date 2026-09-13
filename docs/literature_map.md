@@ -14,9 +14,9 @@ Max Tegmark, "Consciousness as a State of Matter," *Chaos, Solitons & Fractals* 
 
 **Role:** conceptual background for observer factorization, information, integration, independence, dynamics, and physically distinguished subsystem structure.
 
-**Use here:** motivates part of the physical-subsystem problem and the companion observer program. It does not supply the physical-to-experiential bridge developed in this repository.
+**Use here:** motivates part of the physical-subsystem problem and the companion observer program, and provided an important conceptual starting point for the questions pursued here. The later bridge formalism and proposition sequence are developed within this repository.
 
-**Research-origin note:** this was the earliest paper whose physical framing directly prompted the line of questions that grew into this program. That historical role is distinct from evidential support: the later repository propositions require their own proofs, code, tests, and provenance.
+**Research-origin note:** this was the earliest paper whose physical framing directly prompted the line of questions that grew into this program. The later work takes those questions in a further mathematical direction through an independently documented theorem, implementation, and reproducibility record.
 
 ---
 

@@ -7,15 +7,15 @@ def _read(relative_path: str) -> str:
     return (ROOT / relative_path).read_text(encoding="utf-8")
 
 
-def test_sources_page_records_tegmark_origin_without_overclaiming() -> None:
+def test_sources_page_records_tegmark_origin_with_collegial_scope() -> None:
     sources = _read("website/sources.html")
     assert 'id="research-origins"' in sources
     assert "Max Tegmark" in sources
     assert "Consciousness as a State of Matter" in sources
     assert "10.1016/j.chaos.2015.03.014" in sources
     assert "arXiv:1401.1219" in sources
-    assert "intellectual and physical-context background" in sources
-    assert "not evidence for the repository's later original propositions" in sources
+    assert "important conceptual starting point" in sources
+    assert "distinct mathematical framework" in sources
 
 
 def test_machine_readable_bibliography_contains_exact_tegmark_metadata() -> None:
@@ -38,7 +38,7 @@ def test_claim_evidence_standard_separates_evidential_roles() -> None:
         "Empirical claims",
         "Generated and synthetic material",
         "Open bridge and interpretation claims",
-        "Research origins versus evidential support",
+        "Research origins and scholarly provenance",
         "arXiv:1401.1219",
     )
     for marker in required:
@@ -51,7 +51,7 @@ def test_claim_source_matrix_maps_public_claims_to_support_and_boundaries() -> N
         "Claim-to-Source Scientific Audit Matrix",
         "Research origin",
         "Formal consciousness modeling",
-        "External methodological background plus repository formulation",
+        "external methodological background plus repository formulation",
         "P75 model family",
         "P86 weighted four-event compatibility",
         "L85 = 0 < L86 = 1/192",
@@ -63,13 +63,13 @@ def test_claim_source_matrix_maps_public_claims_to_support_and_boundaries() -> N
         assert marker in matrix
 
 
-def test_reference_audit_classifies_tegmark_as_origin_not_validation() -> None:
+def test_reference_audit_records_tegmark_as_research_origin() -> None:
     audit = _read("docs/reference_audit.md")
     assert "Tegmark, 2015" in audit
     assert "10.1016/j.chaos.2015.03.014" in audit
     assert "arXiv:1401.1219" in audit
-    assert "intellectual starting point" in audit
-    assert "not evidential support for later repository-original propositions" in audit
+    assert "important conceptual starting point" in audit
+    assert "distinct mathematical framework" in audit
 
 
 def test_sources_page_points_to_current_p86_audit_record() -> None:
@@ -98,6 +98,9 @@ def test_public_provenance_does_not_make_priority_or_ontology_claims() -> None:
         "proves consciousness is a new dimension",
         "Tegmark validates this framework",
         "Tegmark proves this framework",
+        "this origin citation does not make Tegmark's paper evidence",
+        "not evidence for the repository's later original propositions",
+        "not evidential support for later repository-original propositions",
     )
     for phrase in forbidden:
         assert phrase not in public
