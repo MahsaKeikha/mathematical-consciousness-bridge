@@ -64,9 +64,11 @@ def test_p84_reader_documentation_explains_the_shared_parameter_question() -> No
     assert "## Plain-language meaning" in proposition
     assert "can the same parameter choice explain two such observations at once?" in proposition
     assert "**Plain-language interpretation.**" in roadmap
-    assert "Stage 06 · P73-P84" in implementation
+    assert "Stage 06 · P73-P86" in implementation
     assert implementation.count(
-        "P73-P84 build a continuous chain from channel recovery to certified model-family separation."
+        "P73-P86 build a continuous chain from channel recovery to certified model-family separation."
     ) == 1
+    assert "P84" in implementation
+    assert "joint shared-parameter" in implementation
     assert "P84 Joint Parity Compatibility Certificate" in svg
     assert "Two parity checks can pass separately yet fail under one shared P75 parameter assignment" in svg
