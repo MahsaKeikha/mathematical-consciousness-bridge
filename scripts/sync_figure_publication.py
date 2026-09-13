@@ -1,16 +1,9 @@
 """Synchronize public figure surfaces with the canonical ``docs/figures`` tree.
 
-There is one canonical SVG archive in this repository: ``docs/figures``.  This
+There is one canonical SVG archive in this repository: ``docs/figures``. This
 command derives the GitHub-facing ``figures/`` gateway, its SHA-256 manifest,
-the current-frontier documentation, and the placement of the current theorem
-figure on the Visual Atlas.  CI can therefore detect figure-publication drift
-instead of relying on folder timestamps or manual inspection.
-
-Run from the repository root::
-
-    python scripts/sync_figure_publication.py
-
-Use ``--check`` in CI to fail on drift without rewriting files.
+the current-frontier documentation, and placement of the current theorem figure
+on the homepage and Visual Atlas.
 """
 
 from __future__ import annotations
@@ -154,8 +147,7 @@ For the full P71-P{frontier} visual progression, open
 
 [`manifest.json`](manifest.json) is generated from **every SVG under
 `docs/figures/`**. Each record contains its canonical path, SHA-256 digest, byte
-size, category, SVG title, and description length. This makes figure drift
-machine-auditable rather than relying on folder timestamps or manual inspection.
+size, category, SVG title, and description length.
 
 The curated human-readable index remains
 [`docs/figure_catalog.md`](../docs/figure_catalog.md), and the browser-facing
@@ -169,19 +161,12 @@ python scripts/sync_figure_publication.py --check
 python scripts/verify_repository.py
 ```
 
-`generate_all_figures.py` regenerates the computational atlases and validates
-the canonical SVG tree. The publication synchronizer keeps this gateway, its
-manifest, and the Visual Atlas current-frontier ordering synchronized.
-
 ## Scientific boundary
 
 Generated atlases, theorem diagrams, and architecture illustrations have
 different evidential meanings. A figure is not empirical consciousness evidence
 merely because it is visual. Its scientific status comes from the associated
 theorem, assumptions, data provenance, tests, and declared evidence class.
-
-The legacy file `p30_p37_operational_scale_map.svg` is retained for continuity;
-new theorem figures are maintained canonically under `docs/figures/`.
 """
 
 
@@ -203,17 +188,17 @@ def _frontier_page(frontier: int) -> str:
         f"[Open P{frontier} equation provenance](../docs/p{frontier}_equation_provenance.md)",
         "",
     ]
-    if frontier == 86:
+    if frontier == 87:
         lines.extend(
             [
-                "### Exact P86 hierarchy witness",
+                "### Exact P87 hierarchy witness",
                 "",
-                "The current exact rational witness preserves the complete P85 certificate at zero while the minimally weighted four-event family is strictly positive:",
+                "P87 completes the primitive four-event coefficient box with nonzero integer coefficients satisfying `|c_i| <= 2` and strictly strengthens the complete P86 certificate on the exact rational witness:",
                 "",
                 "```text",
-                "L85 = 0 < L86 = 1/192",
-                "10,560 standard P86 functionals",
-                "primitive coefficient magnitudes {1,1,1,2}",
+                "L85 = 0 < L86 = 1/192 < L87 = 1/96",
+                "120 primitive sign-normalized coefficient patterns per four-event subset",
+                "39,600 standard P87 functionals",
                 "```",
                 "",
                 "This is a conditional model-separation result inside the declared P75 family. It is not an identification of a latent state with conscious experience.",
@@ -263,9 +248,7 @@ def _frontier_page(frontier: int) -> str:
 def _docs_figure_readme(frontier: int) -> str:
     current = _one_match(f"p{frontier}_*.svg", root=DOC_FIGURES)
     recent = _frontier_records(max(71, frontier - 3), frontier)
-    recent_lines = "\n".join(
-        f"- `{Path(record['figure']).name}`" for record in recent
-    )
+    recent_lines = "\n".join(f"- `{Path(record['figure']).name}`" for record in recent)
     return f"""# Figure provenance and regeneration
 
 `docs/figures/` is the canonical visual archive for the Mathematical
@@ -285,10 +268,6 @@ Regenerate and validate them with:
 ```bash
 python scripts/generate_all_figures.py
 ```
-
-The canonical generators are `scripts/generate_quantitative_atlas.py` and
-`scripts/generate_quantum_foundations_atlas.py`. Their JSON manifests are
-validated against the generated SVG sets.
 
 ## Source-controlled theorem and architecture figures
 
@@ -319,11 +298,6 @@ python scripts/generate_all_figures.py --validate-only
 python scripts/sync_figure_publication.py --check
 ```
 
-The `.github/workflows/figures.yml` workflow regenerates the computational
-atlases, validates byte-identical reproducibility, checks figure-publication
-synchronization, runs repository verification, and uploads generated figure
-artifacts.
-
 For the curated reader-facing index, see [`docs/figure_catalog.md`](../figure_catalog.md).
 For complete setup instructions, see [`docs/reproducibility.md`](../reproducibility.md).
 
@@ -335,95 +309,92 @@ benchmark, or model calculation into empirical evidence about consciousness.
 """
 
 
-def _p86_visual_section() -> str:
-    return f'''<section id="p86-frontier" class="theorem-frontier current-frontier-visual">
+def _p87_visual_section() -> str:
+    return f'''<section id="p87-frontier" class="theorem-frontier current-frontier-visual">
   <div class="section-head">
-    <p class="eyebrow">Current theorem frontier · P86</p>
-    <h2>Minimally weighted four-event shared-parameter parity certificate</h2>
-    <p>P86 is the current exact continuous-model frontier. Its 10,560-function audit strictly separates an exact rational witness that leaves the complete P85 certificate at zero.</p>
+    <p class="eyebrow">Current theorem frontier · P87</p>
+    <h2>Complete bounded primitive four-event parity certificate</h2>
+    <p>P87 completes the nonzero primitive coefficient box with |c_i| at most 2 at the same four-event order. Its 39,600-function exact audit strictly strengthens the complete P86 certificate on the same rational witness.</p>
   </div>
   <div class="theorem-figure-shell">
-    <a href="{BLOB_PREFIX}docs/figures/p86_exact_minimally_weighted_quad_projection_parity.svg" aria-label="Open the full P86 theorem figure">
-      <img loading="eager" decoding="async" src="{RAW_FIGURE_PREFIX}p86_exact_minimally_weighted_quad_projection_parity.svg" alt="P86 minimally weighted four-event parity certificate showing L85 equals zero and L86 equals one over 192" />
+    <a href="{BLOB_PREFIX}docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg" aria-label="Open the full P87 theorem figure">
+      <img loading="eager" decoding="async" src="{RAW_FIGURE_PREFIX}p87_exact_bounded_primitive_quad_projection_parity.svg" alt="P87 bounded primitive four-event parity certificate showing L86 equals one over 192 and L87 equals one over 96" />
     </a>
   </div>
   <div class="frontier-summary-grid">
-    <article class="frontier-summary-card"><h3>Exact family</h3><p>Four distinct canonical parity events with primitive coefficient magnitudes {{1,1,1,2}} yield 10,560 sign-normalized functionals.</p></article>
-    <article class="frontier-summary-card"><h3>Strict hierarchy</h3><p>The exact witness has <strong>L85 = 0 &lt; L86 = 1/192</strong>.</p></article>
-    <article class="frontier-summary-card"><h3>Reproducible record</h3><p>The theorem, equation provenance, implementation, exhaustive regression suite, SVG, and SHA-256 figure manifest are all source controlled.</p></article>
+    <article class="frontier-summary-card"><h3>Complete bounded family</h3><p>120 primitive sign-normalized coefficient patterns per four-event subset yield 39,600 exact P87 functionals.</p></article>
+    <article class="frontier-summary-card"><h3>Strict hierarchy</h3><p>The exact witness has <strong>L85 = 0 &lt; L86 = 1/192 &lt; L87 = 1/96</strong>.</p></article>
+    <article class="frontier-summary-card"><h3>Reproducible record</h3><p>The proof, equation provenance, exact implementation, exhaustive tests, theorem SVG, and figure manifest are source controlled.</p></article>
   </div>
-  <div class="boundary"><p><strong>Scientific boundary:</strong> P86 is a conditional exact model-separation theorem for the declared P75 family. It does not identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.</p></div>
-  <p><a href="{BLOB_PREFIX}docs/proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md">Open the P86 theorem</a> · <a href="{BLOB_PREFIX}docs/p86_equation_provenance.md">Equation provenance</a> · <a href="{BLOB_PREFIX}src/consciousness_bridge/weighted_quad_projection_parity_functional_separation.py">Implementation</a> · <a href="{BLOB_PREFIX}tests/test_weighted_quad_projection_parity_functional_separation.py">Exact tests</a></p>
+  <div class="boundary"><p><strong>Scientific boundary:</strong> P87 is a conditional exact model-separation theorem for the declared P75 family. It does not identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.</p></div>
+  <p><a href="{BLOB_PREFIX}docs/proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md">Open the P87 theorem</a> · <a href="{BLOB_PREFIX}docs/p87_equation_provenance.md">Equation provenance</a> · <a href="{BLOB_PREFIX}src/consciousness_bridge/bounded_primitive_quad_projection_parity_functional_separation.py">Implementation</a> · <a href="{BLOB_PREFIX}tests/test_bounded_primitive_quad_projection_parity_functional_separation.py">Exact tests</a></p>
 </section>'''
 
 
-def _normalize_visual_atlas(text: str) -> str:
-    pattern = re.compile(r'<section id="p86-frontier".*?</section>', re.DOTALL)
-    text, count = pattern.subn("", text, count=1)
-    if count != 1:
-        raise RuntimeError(f"expected exactly one P86 Visual Atlas section, found {count}")
+def _remove_section(text: str, section_id: str) -> str:
+    pattern = re.compile(
+        rf'\s*<section id="{re.escape(section_id)}".*?</section>\s*',
+        re.DOTALL,
+    )
+    text, count = pattern.subn("\n", text, count=1)
+    if count > 1:
+        raise RuntimeError(f"expected at most one {section_id} section")
+    return text
 
-    marker = "<!-- current-frontier-visual: P86 -->"
-    text = re.sub(r"\s*" + re.escape(marker) + r"\s*", "", text)
+
+def _demote_p86(text: str) -> str:
+    return text.replace(
+        "Current theorem frontier · P86",
+        "Previous theorem frontier · P86",
+    )
+
+
+def _normalize_visual_atlas(text: str) -> str:
+    text = _remove_section(text, "p87-frontier")
+    text = _demote_p86(text)
+    text = re.sub(r"\s*<!-- current-frontier-visual: P\d+ -->\s*", "\n", text)
     boundary = re.search(r'<section class="boundary">.*?</section>', text, re.DOTALL)
     if boundary is None:
         raise RuntimeError("could not locate Visual Atlas reading-boundary section")
-
     prefix = text[: boundary.end()].rstrip()
     suffix = text[boundary.end() :].lstrip()
-    insertion = "\n\n" + marker + "\n" + _p86_visual_section() + "\n\n"
+    insertion = "\n\n<!-- current-frontier-visual: P87 -->\n" + _p87_visual_section() + "\n\n"
     result = prefix + insertion + suffix
-    had_final_newline = result.endswith("\n")
-    result = "\n".join(line.rstrip() for line in result.splitlines())
-    return result + ("\n" if had_final_newline else "")
+    return "\n".join(line.rstrip() for line in result.splitlines()) + "\n"
 
 
 def _normalize_homepage(text: str) -> str:
-    """Make P86 the first theorem visual and demote older homepage frontiers."""
-
-    pattern = re.compile(r'\s*<section id="p86-frontier".*?</section>\s*', re.DOTALL)
-    text, count = pattern.subn("\n", text, count=1)
-    if count != 1:
-        raise RuntimeError(f"expected exactly one P86 homepage section, found {count}")
-
+    text = _remove_section(text, "p87-frontier")
+    text = _demote_p86(text)
     replacements = (
-        ("Current theorem frontier · P85", "Previous theorem frontier · P85"),
-        ("The 84 results form several dependency branches.", "The 86 results form several dependency branches."),
-        ("You do not need to read all 84 propositions in numerical order", "You do not need to read all 86 propositions in numerical order"),
-        ("Focus on P19 and P71-P84, then read the falsification program.", "Focus on P19 and P71-P86, then read the falsification program."),
+        ("The 86 results form several dependency branches.", "The 87 results form several dependency branches."),
+        ("all 86 propositions", "all 87 propositions"),
+        ("P71-P86, then read the falsification program", "P71-P87, then read the falsification program"),
     )
     for old, new in replacements:
-        if old in text:
-            text = text.replace(old, new, 1)
-        elif new not in text:
-            raise RuntimeError(f"homepage frontier normalization could not resolve: {old!r}")
-
-    marker = "<!-- current-frontier-home: P86 -->"
-    text = re.sub(r"\s*" + re.escape(marker) + r"\s*", "\n", text)
+        text = text.replace(old, new)
+    text = re.sub(r"\s*<!-- current-frontier-home: P\d+ -->\s*", "\n", text)
     hero = re.search(r'<section class="hero">.*?</section>', text, re.DOTALL)
     if hero is None:
         raise RuntimeError("could not locate homepage hero section")
-
     prefix = text[: hero.end()].rstrip()
     suffix = text[hero.end() :].lstrip()
-    insertion = "\n\n" + marker + "\n" + _p86_visual_section() + "\n\n"
+    insertion = "\n\n<!-- current-frontier-home: P87 -->\n" + _p87_visual_section() + "\n\n"
     result = prefix + insertion + suffix
-    had_final_newline = result.endswith("\n")
-    result = "\n".join(line.rstrip() for line in result.splitlines())
-    return result + ("\n" if had_final_newline else "")
+    return "\n".join(line.rstrip() for line in result.splitlines()) + "\n"
 
 
 def _expected_outputs() -> dict[Path, str]:
     frontier = _current_frontier()
-    visual_source = VISUAL_ATLAS.read_text(encoding="utf-8")
-    home_source = HOME.read_text(encoding="utf-8")
+    if frontier != 87:
+        raise RuntimeError(f"P87 synchronizer expected frontier 87, found {frontier}")
     return {
         GATEWAY / "README.md": _gateway_readme(frontier),
         GATEWAY / "CURRENT_FRONTIER.md": _frontier_page(frontier),
         GATEWAY / "manifest.json": _figure_manifest(frontier),
         DOC_FIGURES / "README.md": _docs_figure_readme(frontier),
-        VISUAL_ATLAS: _normalize_visual_atlas(visual_source),
-        HOME: _normalize_homepage(home_source),
+        VISUAL_ATLAS: _normalize_visual_atlas(VISUAL_ATLAS.read_text(encoding="utf-8")),
+        HOME: _normalize_homepage(HOME.read_text(encoding="utf-8")),
     }
 
 
