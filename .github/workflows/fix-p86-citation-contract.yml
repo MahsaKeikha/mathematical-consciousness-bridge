@@ -1,0 +1,121 @@
+name: fix-p86-citation-contract
+
+on:
+  push:
+    branches: ["research/p86-four-event-parity-functional"]
+    paths:
+      - ".github/workflows/fix-p86-citation-contract.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Synchronize citation surfaces to P86
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          guide_path = Path("CITATION.md")
+          guide = guide_path.read_text(encoding="utf-8")
+          replacements = {
+              "This is the preferred citation for the research program at the current documented frontier, P84.": "This is the preferred citation for the research program at the current documented frontier, P86.",
+              "note         = {Ongoing research program. Current documented theorem frontier: P84.}": "note         = {Ongoing research program. Current documented theorem frontier: P86.}",
+              "The current citation metadata identify Version **0.82.0** and theorem frontier **P84**.": "The current citation metadata identify Version **0.82.0** and theorem frontier **P86**.",
+              "None of P78-P84 turns non-rejection into model validation or identifies the latent state with consciousness.": "None of P78-P86 turns non-rejection into model validation or identifies the latent state with consciousness.",
+              "[Detailed proposition record](docs/detailed_proposition_record.md): P1 through P84 chronological theorem record.": "[Detailed proposition record](docs/detailed_proposition_record.md): P1 through P86 chronological theorem record.",
+              "For work that specifically uses the newest continuous-family certificate, cite the program together with **Proposition 83: Exact Projection-Parity Certificate for Continuous P75 Separation**.": "For work that specifically uses the P83 projection-parity certificate, cite the program together with **Proposition 83: Exact Projection-Parity Certificate for Continuous P75 Separation**.",
+              "For work that specifically uses the current joint parity certificate, cite the program together with **Proposition 84: Exact Joint Projection-Parity Contrast Certificate**": "For work that specifically uses the P84 joint parity certificate, cite the program together with **Proposition 84: Exact Joint Projection-Parity Contrast Certificate**",
+          }
+          for old, new in replacements.items():
+              guide = guide.replace(old, new)
+
+          old_frontier = '''## Current theorem frontier: P85
+
+          The current documented theorem frontier is **P85**, the exact three-event projection-parity functional certificate. When citing this frontier result specifically, cite [Proposition 85](docs/proposition_85_exact_triple_projection_parity_functional.md) together with its [equation and provenance record](docs/p85_equation_provenance.md), implementation, tests, and exact theorem figure. P85 is conditional on the declared P75 model and does not claim that the physical-to-experiential bridge has been solved.
+
+
+          Current documented theorem frontier: **P86**, with the exact four-event projection-parity functional certificate recorded in `docs/proposition_86_exact_quadruple_projection_parity_functional.md`.'''
+          new_frontier = '''## Previous theorem frontier: P85
+
+          P85 is the previous documented theorem frontier immediately preceding P86. When citing the three-event projection-parity functional certificate specifically, cite [Proposition 85](docs/proposition_85_exact_triple_projection_parity_functional.md) together with its [equation and provenance record](docs/p85_equation_provenance.md), implementation, tests, and exact theorem figure. P85 remains part of the certified hierarchy and is conditional on the declared P75 model.
+
+          ## Current theorem frontier: P86
+
+          The current documented theorem frontier is **P86**, the exact four-event projection-parity functional certificate. P86 retains the complete P85 lower-bound hierarchy and adds 2640 sign-normalized four-event shared-parameter parity functionals. Its exact rational strict witness gives `L85 = 5/48 < L86 = 9/64`, with certified gain `7/192` on the same P75 parameter box. When citing this frontier result specifically, cite [Proposition 86](docs/proposition_86_exact_quadruple_projection_parity_functional.md) together with its [equation and provenance record](docs/p86_equation_provenance.md), implementation, tests, deterministic witness search, and exact theorem figure. P86 is conditional on the declared P75 model and does not claim that the physical-to-experiential bridge has been solved.'''
+          if old_frontier not in guide:
+              raise RuntimeError("could not locate mixed P85/P86 frontier block in CITATION.md")
+          guide = guide.replace(old_frontier, new_frontier, 1)
+
+          p84_bullet = "- [P84 equation and provenance record](docs/p84_equation_provenance.md): exact joint parity-event contrasts, common-vertex extremization, 220-contrast audit, and strict improvement over P83."
+          if "[P86 equation and provenance record]" not in guide:
+              if p84_bullet not in guide:
+                  raise RuntimeError("P84 provenance bullet missing from CITATION.md")
+              addition = p84_bullet + "\n- [P85 equation and provenance record](docs/p85_equation_provenance.md): exact three-event parity functionals, centered coefficient transfer, 660-function audit, and strict improvement over P84.\n- [P86 equation and provenance record](docs/p86_equation_provenance.md): exact four-event parity functionals, 2640-function audit, centered coefficient transfer, and strict complete-P85 hierarchy improvement."
+              guide = guide.replace(p84_bullet, addition, 1)
+
+          required = (
+              "current documented frontier, P86",
+              "theorem frontier **P86**",
+              "## Previous theorem frontier: P85",
+              "## Current theorem frontier: P86",
+              "L85 = 5/48 < L86 = 9/64",
+              "docs/p86_equation_provenance.md",
+              "P1 through P86 chronological theorem record",
+          )
+          for token in required:
+              if token not in guide:
+                  raise RuntimeError(f"CITATION.md missing {token!r}")
+          stale = (
+              "current documented frontier, P84",
+              "theorem frontier **P84**",
+              "## Current theorem frontier: P85",
+              "Current documented theorem frontier: **P86**, with the exact four-event",
+          )
+          for token in stale:
+              if token in guide:
+                  raise RuntimeError(f"CITATION.md still contains stale token {token!r}")
+          guide_path.write_text(guide, encoding="utf-8")
+
+          bib_path = Path("CITATION.bib")
+          bib = bib_path.read_text(encoding="utf-8")
+          bib = bib.replace(
+              "Current documented theorem frontier: P84.",
+              "Current documented theorem frontier: P86.",
+          )
+          if "Current documented theorem frontier: P86." not in bib:
+              raise RuntimeError("CITATION.bib frontier promotion failed")
+          bib_path.write_text(bib, encoding="utf-8")
+
+          cff_path = Path("CITATION.cff")
+          cff = cff_path.read_text(encoding="utf-8")
+          anchor = "Proposition 84 adds 220 exact joint projection-parity contrasts that preserve shared-parameter coupling between P83 parity events; its exact-rational strict witness has P83 equal to zero while P84 equals one thirty-second."
+          addition = anchor + " Proposition 85 adds 660 exact sign-normalized three-event shared-parameter parity functionals and has an exact-rational strict witness improving the complete P84 certificate from zero to one thirty-second. Proposition 86 retains the complete P85 hierarchy and adds 2640 exact sign-normalized four-event shared-parameter parity functionals; its exact-rational strict witness improves the complete P85 lower bound from five forty-eighths to nine sixty-fourths, a gain of seven one-hundred-ninety-seconds."
+          if "Proposition 86 retains the complete P85 hierarchy" not in cff:
+              if anchor not in cff:
+                  raise RuntimeError("CITATION.cff P84 abstract anchor missing")
+              cff = cff.replace(anchor, addition, 1)
+          cff_path.write_text(cff, encoding="utf-8")
+          PY
+      - name: Validate citation repair
+        run: |
+          python -m pip install -e ".[dev]"
+          python -m pytest tests/test_citation_surface.py tests/test_p86_research_integration.py
+          git diff --check
+      - name: Commit citation repair and remove one-off workflow
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/fix-p86-citation-contract.yml
+          git add CITATION.md CITATION.bib CITATION.cff
+          git commit -m "Synchronize P86 citation metadata"
+          git push origin HEAD:research/p86-four-event-parity-functional
