@@ -72,6 +72,18 @@ jobs:
               raise SystemExit("stale P87 future-work language remains")
           roadmap_path.write_text(roadmap, encoding="utf-8")
 
+          navigation_path = Path("docs/research_navigation.md")
+          navigation = navigation_path.read_text(encoding="utf-8")
+          if "p88_equation_provenance.md" not in navigation:
+              navigation += (
+                  "\n\n### P88 frontier audit links\n\n"
+                  "- [P88 formal proof](proposition_88_heldout_selected_parity_functional_certification.md)\n"
+                  "- [P88 equation provenance](p88_equation_provenance.md)\n"
+                  "- [P88 implementation](../src/consciousness_bridge/heldout_selected_parity_functional_certification.py)\n"
+                  "- [P88 exact regression tests](../tests/test_heldout_selected_parity_functional_certification.py)\n"
+              )
+          navigation_path.write_text(navigation, encoding="utf-8")
+
           reader_replacements = (
               ("current P87 frontier", "current P88 frontier"),
               ("actual P87 research frontier", "actual P88 research frontier"),
