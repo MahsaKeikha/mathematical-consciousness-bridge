@@ -1,4 +1,4 @@
-.PHONY: install test lint figures figures-check frontier-check publication-check website-check verify check reproduce
+.PHONY: install test lint figures figures-check frontier-check publication-check reader-check website-check verify check reproduce
 
 PYTHON ?= python
 
@@ -24,11 +24,14 @@ frontier-check:
 publication-check:
 	$(PYTHON) scripts/sync_figure_publication.py --check
 
+reader-check:
+	$(PYTHON) scripts/verify_reader_linkability.py
+
 website-check:
 	$(PYTHON) scripts/prepare_website.py --source website --output .site-check
 	rm -rf .site-check
 
-verify: frontier-check publication-check
+verify: frontier-check publication-check reader-check
 	$(PYTHON) scripts/verify_repository.py
 
 check: test lint figures-check verify website-check
