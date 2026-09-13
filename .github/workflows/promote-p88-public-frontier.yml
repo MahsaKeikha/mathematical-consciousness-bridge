@@ -62,6 +62,14 @@ jobs:
               )
           if r"\text{P88:" not in roadmap:
               raise SystemExit("P88 dependency-map node was not created")
+
+          roadmap = roadmap.replace("continuation beyond P87", "continuation beyond P88")
+          roadmap = roadmap.replace(
+              "Any P88 claim must close a separately stated mathematical or scientific gap and must include a strict or otherwise informative certificate that is not already implied by P86.",
+              "P88 closes the held-out selection-validity gap. Any P89 claim must close a separately stated mathematical or scientific gap not already resolved through P88.",
+          )
+          if "continuation beyond P87" in roadmap:
+              raise SystemExit("stale P87 future-work language remains")
           roadmap_path.write_text(roadmap, encoding="utf-8")
           PY
       - name: Install development and reproducibility environment
