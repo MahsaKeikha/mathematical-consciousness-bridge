@@ -8,6 +8,10 @@ on:
       - "docs/figures/**"
       - "scripts/prepare_website.py"
       - ".github/workflows/pages.yml"
+  workflow_run:
+    workflows: ["promote-p88-public-frontier"]
+    types: [completed]
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -21,13 +25,16 @@ concurrency:
 
 jobs:
   deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout
+      - name: Checkout latest main
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
