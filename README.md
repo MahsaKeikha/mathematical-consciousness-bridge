@@ -54,9 +54,9 @@ You do **not** need to read the propositions in order to understand the project.
 
 If you want the complete theorem record, including assumptions, proofs, implementations, tests, figures, and scientific boundaries, use the **[Detailed Proposition Record](docs/detailed_proposition_record.md)** or the **[Theorem Roadmap](docs/theorem_roadmap.md)**.
 
-The current public theorem frontier is **P87**. The formal release remains **v0.82.0**.
+The current public theorem frontier is **P88**. The formal release remains **v0.82.0**.
 
-**[Read the current frontier](docs/proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md)**
+**[Read the current frontier](docs/proposition_88_exact_radius3_bounded_primitive_quad_projection_parity_functional.md)**
 
 ---
 
@@ -73,6 +73,8 @@ The current public theorem frontier is **P87**. The formal release remains **v0.
 | Check equations and sources | **[Equation and Citation Map](docs/equation_and_citation_map.md)** |
 | Run the code and verification yourself | **[Reproducibility Guide](docs/reproducibility.md)** |
 | Look up terminology | **[Glossary](docs/glossary.md)** |
+
+> **Visual reading standard.** Every reader-facing figure now has a clear title, an embedded SVG description, a nearby caption or atlas explanation, a scientific-status boundary, and a direct route to the proof or source context. Use the [Complete Figure Catalog](docs/figure_catalog.md) to understand every visual without searching the repository, and the [Figure Caption and Description Standard](docs/figure_caption_and_description_standard.md) for the enforced documentation rules.
 
 ---
 
@@ -104,6 +106,6 @@ For scholarly citation, see **[CITATION.md](CITATION.md)** and **[CITATION.cff](
 
 MIT License. See **[LICENSE](LICENSE)**.
 
-**Public theorem frontier:** P87  
+**Public theorem frontier:** P88  
 **Formal release:** v0.82.0  
 **Final bridge from physical description to experience:** open
