@@ -62,7 +62,7 @@ This is a basic scientific safeguard: the evidence should not contain the conclu
 
 The target also needs a clear relationship to what is actually observed. Reports, behavior, labels, clinical judgments, and other measurements can all be incomplete or noisy.
 
-**Continue deeper:** [Target-side research path](research_navigation.md) · [Glossary](glossary.md)
+**Continue deeper:** [Target research path](research_navigation.md) · [Glossary](glossary.md)
 
 ---
 
@@ -72,7 +72,7 @@ A model becomes scientifically interesting when it risks failure.
 
 Fitting data is not enough. A flexible model can sometimes reproduce observations without making a strong explanatory claim.
 
-The later research therefore asks whether a proposed target-measurement model imposes restrictions that the observed data can violate.
+The later research therefore asks whether a proposed model of the target and its measurement imposes restrictions that the observed data can violate.
 
 The progression is intentional:
 
@@ -106,7 +106,7 @@ Even a mathematically correct rejection of a model does not tell us automaticall
 
 It may show that a particular physical descriptor is incomplete, that a measurement model is inadequate, or that a declared model family cannot reproduce the observations under its assumptions.
 
-Those are meaningful scientific results. They are not the same as proving that consciousness is nonphysical, identifying a latent variable with experience, or completing the physical-to-experiential bridge.
+Those are meaningful scientific results. They are not the same as proving that consciousness is nonphysical, identifying a latent variable with experience, or completing the final bridge from physical description to experience.
 
 That final bridge remains open.
 
@@ -118,7 +118,7 @@ This is not a weakness hidden by the repository. It is one of the central organi
 
 The public theorem frontier is **P87** and the formal release is **v0.82.0**.
 
-P87 belongs to the later **model-testing** part of the program. It strengthens a declared family of exact model-separation tests. Its importance is methodological: it asks whether a more complete family of shared-parameter constraints can expose incompatibility that weaker tests miss.
+P87 belongs to the later **model testing** part of the program. It strengthens a declared family of exact model separation tests. Its importance is methodological: it asks whether a more complete family of constraints that share the same parameters can expose incompatibility that weaker tests miss.
 
 If you want the result itself, open **[P87](proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md)**.
 
