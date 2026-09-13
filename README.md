@@ -50,6 +50,8 @@ The goal is not to make the strongest possible claim. It is to make strong claim
 
 The repository contains a growing mathematical and computational research program covering physical description, sufficiency, measurement, model testing, reasoning with finite data, and reproducibility.
 
+The current public record contains **88 proposition-level results**, from P1 through P88 with explicit dependency branches.
+
 You do **not** need to read the propositions in order to understand the project.
 
 If you want the complete theorem record, including assumptions, proofs, implementations, tests, figures, and scientific boundaries, use the **[Detailed Proposition Record](docs/detailed_proposition_record.md)** or the **[Theorem Roadmap](docs/theorem_roadmap.md)**.
