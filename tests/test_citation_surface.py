@@ -26,18 +26,11 @@ def _frontier() -> int:
     return max(numbers)
 
 
-def test_main_page_ends_with_professional_citation_section() -> None:
+def test_main_page_routes_to_professional_citation_surfaces() -> None:
     text = README.read_text(encoding="utf-8")
-    version = _project_version()
-    assert "# Citation" in text
-    assert "## Preferred scholarly citation" in text
-    assert "## BibTeX" in text
-    assert "Keikha, M. (2026)" in text
-    assert f"Version {version}" in text
-    assert "CITATION.md" in text
-    assert "CITATION.cff" in text
-    assert "CITATION.bib" in text
-    assert text.rstrip().endswith("**[BibTeX](CITATION.bib)**")
+    for path in ("CITATION.md", "CITATION.cff", "CITATION.bib"):
+        assert path in text
+    assert "## Citation and license" in text
 
 
 def test_machine_readable_citation_metadata_has_preferred_research_citation() -> None:

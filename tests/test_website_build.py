@@ -131,7 +131,8 @@ def test_prepare_website_replaces_stale_navigation_assets_and_fallback(
     assert '>Research Map</a>' not in built
     assert '>Physics &amp; Math</a>' not in built
     assert '>Visual Atlas</a>' not in built
-    assert '>Research</a>' in built
+    assert '>Research II</a>' in built
+    assert '>Research III</a>' in built
     assert '>Explore</a>' in built
 
 

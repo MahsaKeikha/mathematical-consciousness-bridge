@@ -18,13 +18,19 @@ def test_p53_documentation_exposes_core_results():
         assert phrase in text
 
 
-def test_p53_visual_and_proof_to_code_path_are_public():
-    assert FIGURE.exists()
-    readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    for token in (
-        "p53_residual_demand_reoptimization.svg",
-        "residual_demand_reoptimization.py",
-        "test_residual_demand_reoptimization.py",
-        "**Proposition 53**",
-    ):
-        assert token in readme
+def test_p53_layered_publication_route() -> None:
+    root = Path(__file__).resolve().parents[1]
+    proof = root / "docs" / "proposition_53_residual_demand_reoptimization.md"
+    figure = root / "docs" / "figures" / "p53_residual_demand_reoptimization.svg"
+    source = root / "src" / "consciousness_bridge" / "residual_demand_reoptimization.py"
+    algorithm_test = root / "tests" / "test_residual_demand_reoptimization.py"
+    record = (root / "docs" / "detailed_proposition_record.md").read_text(encoding="utf-8")
+    catalog = (root / "docs" / "figure_catalog.md").read_text(encoding="utf-8")
+    readme = (root / "README.md").read_text(encoding="utf-8")
+
+    for artifact in (proof, figure, source, algorithm_test):
+        assert artifact.is_file(), artifact
+    assert proof.name in record
+    assert figure.name in catalog
+    assert "docs/detailed_proposition_record.md" in readme
+    assert "docs/figure_catalog.md" in readme

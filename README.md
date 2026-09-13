@@ -56,6 +56,30 @@ If you want the complete theorem record, including assumptions, proofs, implemen
 
 The current public theorem frontier is **P88**. The formal release remains **v0.82.0**.
 
+| Research status | Current public value |
+| --- | --- |
+| Public theorem frontier | **P88** |
+| Proposition-level results | **88** |
+| Formal release | **v0.82.0** |
+| Physical-to-experiential bridge | **Open** |
+
+The [Theorem Roadmap](docs/theorem_roadmap.md) covers **P1 through P88 with explicit dependency branches**. The detailed theorem ledger lives in the [Detailed Proposition Record](docs/detailed_proposition_record.md), while the specialized P61-P70 optimization sequence lives in the [Calibration and Optimization Frontier](docs/calibration_optimization_frontier_p61_p70.md).
+
+### Audit routes
+
+For readers auditing provenance rather than reading the narrative linearly:
+
+- [Research Navigation](docs/research_navigation.md)
+- [Complete Figure Catalog](docs/figure_catalog.md)
+- [Figure Caption and Description Standard](docs/figure_caption_and_description_standard.md)
+- [Equation and Citation Map](docs/equation_and_citation_map.md)
+- [Foundational Physics and Mathematics Bibliography](docs/foundational_physics_mathematics_bibliography.md)
+- [Literature Map](docs/literature_map.md)
+- [Fundamental Theory Program](docs/fundamental_theory_consciousness_program.md)
+- [Fundamental Theory References](docs/fundamental_theory_references.bib)
+- [Reference Audit](docs/reference_audit.md)
+- [Citation and Reference Policy](docs/citation_and_reference_policy.md)
+
 **[Read the current frontier](docs/proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md)**
 
 ---
@@ -100,7 +124,7 @@ That project asks **which physical system is being tracked**. This repository as
 
 ## Citation and license
 
-For scholarly citation, see **[CITATION.md](CITATION.md)** and **[CITATION.cff](CITATION.cff)**.
+For scholarly citation, see **[CITATION.md](CITATION.md)**, **[CITATION.cff](CITATION.cff)**, and **[CITATION.bib](CITATION.bib)**.
 
 MIT License. See **[LICENSE](LICENSE)**.
 

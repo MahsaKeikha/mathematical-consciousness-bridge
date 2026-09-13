@@ -1,5 +1,7 @@
 # Start Here
 
+> **Current public record:** 88 proposition-level results through **P88**, with formal release **v0.82.0**. Direct frontier proof: [P88](docs/proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md).
+
 **A short introduction to the Mathematical Consciousness Bridge research program.**
 
 > ## The central question

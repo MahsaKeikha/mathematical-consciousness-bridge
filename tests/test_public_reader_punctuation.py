@@ -17,8 +17,8 @@ PUBLIC = (
 def test_published_reader_surfaces_use_ascii_punctuation():
     for path in PUBLIC:
         text = path.read_text(encoding="utf-8")
-        assert "—" not in text, path
-        assert "–" not in text, path
+        assert chr(0x2014) not in text, path
+        assert chr(0x2013) not in text, path
 
 
 def test_ascii_hyphenated_scientific_compounds_are_allowed():

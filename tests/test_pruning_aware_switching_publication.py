@@ -3,21 +3,19 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def test_p55_is_visible_on_main_page():
-    text = (ROOT / "README.md").read_text(encoding="utf-8")
-    for token in (
-        "**Proposition 55**",
-        "p55_pruning_aware_switching_monotonicity.svg",
-        "pruning_aware_switching_monotonicity.py",
-        "test_pruning_aware_switching_monotonicity.py",
-    ):
-        assert token in text
+def test_p55_layered_publication_route() -> None:
+    root = Path(__file__).resolve().parents[1]
+    proof = root / "docs" / "proposition_55_pruning_aware_switching_monotonicity.md"
+    figure = root / "docs" / "figures" / "p55_pruning_aware_switching_monotonicity.svg"
+    source = root / "src" / "consciousness_bridge" / "pruning_aware_switching_monotonicity.py"
+    algorithm_test = root / "tests" / "test_pruning_aware_switching_monotonicity.py"
+    record = (root / "docs" / "detailed_proposition_record.md").read_text(encoding="utf-8")
+    catalog = (root / "docs" / "figure_catalog.md").read_text(encoding="utf-8")
+    readme = (root / "README.md").read_text(encoding="utf-8")
 
-
-def test_p55_is_in_public_research_maps():
-    roadmap = (ROOT / "docs" / "theorem_roadmap.md").read_text(encoding="utf-8")
-    navigation = (ROOT / "docs" / "research_navigation.md").read_text(encoding="utf-8")
-    equations = (ROOT / "docs" / "equation_and_citation_map.md").read_text(encoding="utf-8")
-    assert "[P55](proposition_55_pruning_aware_switching_monotonicity.md)" in roadmap
-    assert "| P55 | [Pruning-aware metric switching-cost monotonicity]" in navigation
-    assert "# 44. P55 pruning-aware metric switching-cost monotonicity" in equations
+    for artifact in (proof, figure, source, algorithm_test):
+        assert artifact.is_file(), artifact
+    assert proof.name in record
+    assert figure.name in catalog
+    assert "docs/detailed_proposition_record.md" in readme
+    assert "docs/figure_catalog.md" in readme

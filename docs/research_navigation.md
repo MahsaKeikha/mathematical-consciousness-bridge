@@ -1,5 +1,12 @@
 # Research Navigation
 
+[Start Here](../START_HERE.md) is the shortest reader-oriented entry point. The current documented theorem frontier is **P88**.
+
+| Current frontier | Direct proof |
+| --- | --- |
+| P88 | [Exact radius-three bounded primitive quad projection-parity separation](proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md) |
+
+
 **Use this page when you know what kind of detail you want and need the shortest route to it.**
 
 This page is an index, not another chapter. If you are still learning the overall story, go one layer up to the **[Research Map](research_map.md)**.

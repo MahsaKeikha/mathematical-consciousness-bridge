@@ -77,62 +77,58 @@ def _local_targets(path: Path):
 def test_all_local_markdown_links_resolve():
     failures = []
     anchor_cache: dict[Path, set[str]] = {}
-
     for source in _markdown_files():
         for target in _local_targets(source):
             if not target or target.startswith(("http://", "https://", "mailto:", "tel:")):
                 continue
-
             path_part, separator, fragment = target.partition("#")
             path_part = unquote(path_part)
             fragment = unquote(fragment)
-
-            if path_part:
-                if path_part.startswith("/"):
-                    destination = ROOT / path_part.lstrip("/")
-                else:
-                    destination = (source.parent / path_part).resolve()
-            else:
-                destination = source.resolve()
-
+            destination = (
+                ROOT / path_part.lstrip("/")
+                if path_part.startswith("/")
+                else (source.parent / path_part).resolve()
+                if path_part
+                else source.resolve()
+            )
             try:
                 destination.relative_to(ROOT.resolve())
             except ValueError:
-                failures.append(
-                    f"{source.relative_to(ROOT)} -> {target}: target leaves repository"
-                )
+                failures.append(f"{source.relative_to(ROOT)} -> {target}: target leaves repository")
                 continue
-
             if not destination.exists():
-                failures.append(
-                    f"{source.relative_to(ROOT)} -> {target}: file does not exist"
-                )
+                failures.append(f"{source.relative_to(ROOT)} -> {target}: file does not exist")
                 continue
-
             if separator and fragment and destination.suffix.lower() == ".md":
                 anchors = anchor_cache.setdefault(destination, _anchors(destination))
                 if fragment not in anchors:
-                    failures.append(
-                        f"{source.relative_to(ROOT)} -> {target}: anchor does not exist"
-                    )
-
+                    failures.append(f"{source.relative_to(ROOT)} -> {target}: anchor does not exist")
     assert not failures, "\n".join(failures)
 
 
-def test_reader_navigation_exposes_the_complete_theorem_chain():
-    nav = (ROOT / "docs/research_navigation.md").read_text(encoding="utf-8")
-    for number in range(1, 30):
-        assert f"proposition_{number}_" in nav
+def test_reader_navigation_routes_to_complete_archives():
+    navigation = (ROOT / "docs/research_navigation.md").read_text(encoding="utf-8")
+    record = (ROOT / "docs/detailed_proposition_record.md").read_text(encoding="utf-8")
+    assert "detailed_proposition_record.md" in navigation
+    assert "theorem_roadmap.md" in navigation
+    assert "Complete P1 to P88 chronology" in record
+    for number in range(1, 89):
+        proofs = list((ROOT / "docs").glob(f"proposition_{number}_*.md"))
+        assert len(proofs) == 1, number
 
 
-def test_main_page_links_to_reader_navigation_and_provenance():
+def test_main_page_routes_to_reader_and_provenance_layers():
     text = (ROOT / "README.md").read_text(encoding="utf-8")
-    required = [
+    required = (
+        "START_HERE.md",
+        "docs/research_map.md",
         "docs/research_navigation.md",
         "docs/theorem_roadmap.md",
+        "docs/detailed_proposition_record.md",
         "docs/equation_and_citation_map.md",
         "docs/citation_and_reference_policy.md",
         "docs/reference_audit.md",
-    ]
+        "CITATION.md",
+    )
     for path in required:
         assert path in text

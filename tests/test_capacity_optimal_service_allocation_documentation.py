@@ -17,13 +17,19 @@ def test_p52_documentation_exposes_exact_results():
         assert phrase in text
 
 
-def test_p52_visual_and_proof_to_code_path_are_public():
-    assert FIGURE.exists()
-    readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    for token in (
-        "p52_capacity_optimal_service_allocation.svg",
-        "capacity_optimal_service_allocation.py",
-        "test_capacity_optimal_service_allocation.py",
-        "**Proposition 52**",
-    ):
-        assert token in readme
+def test_p52_layered_publication_route() -> None:
+    root = Path(__file__).resolve().parents[1]
+    proof = root / "docs" / "proposition_52_capacity_optimal_service_allocation.md"
+    figure = root / "docs" / "figures" / "p52_capacity_optimal_service_allocation.svg"
+    source = root / "src" / "consciousness_bridge" / "capacity_optimal_service_allocation.py"
+    algorithm_test = root / "tests" / "test_capacity_optimal_service_allocation.py"
+    record = (root / "docs" / "detailed_proposition_record.md").read_text(encoding="utf-8")
+    catalog = (root / "docs" / "figure_catalog.md").read_text(encoding="utf-8")
+    readme = (root / "README.md").read_text(encoding="utf-8")
+
+    for artifact in (proof, figure, source, algorithm_test):
+        assert artifact.is_file(), artifact
+    assert proof.name in record
+    assert figure.name in catalog
+    assert "docs/detailed_proposition_record.md" in readme
+    assert "docs/figure_catalog.md" in readme
