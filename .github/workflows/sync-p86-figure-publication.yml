@@ -1,0 +1,111 @@
+name: sync-p86-figure-publication
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/sync-p86-figure-publication.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - name: Validate synchronizer syntax
+        run: python -m py_compile scripts/sync_figure_publication.py
+      - name: Synchronize every public figure surface
+        run: |
+          python scripts/sync_figure_publication.py
+          python scripts/sync_figure_publication.py --check
+      - name: Require only declared publication outputs to change
+        run: |
+          python - <<'PY'
+          import subprocess
+
+          changed = set(
+              subprocess.check_output(
+                  ["git", "diff", "--name-only"], text=True
+              ).splitlines()
+          )
+          allowed = {
+              "figures/README.md",
+              "figures/CURRENT_FRONTIER.md",
+              "figures/manifest.json",
+              "docs/figures/README.md",
+              "website/visual-atlas.html",
+          }
+          unexpected = changed - allowed
+          if unexpected:
+              raise SystemExit(
+                  "unexpected synchronization changes: "
+                  + ", ".join(sorted(unexpected))
+              )
+          required = {
+              "figures/README.md",
+              "figures/CURRENT_FRONTIER.md",
+              "figures/manifest.json",
+              "docs/figures/README.md",
+              "website/visual-atlas.html",
+          }
+          missing = required - changed
+          if missing:
+              raise SystemExit(
+                  "expected stale surfaces were not synchronized: "
+                  + ", ".join(sorted(missing))
+              )
+          print("guarded outputs:", ", ".join(sorted(changed)))
+          PY
+          git diff --check
+      - name: Validate P86 is dominant and manifest is complete
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          root = Path('.')
+          manifest = json.loads((root / 'figures/manifest.json').read_text())
+          assert manifest['current_frontier'] == 'P86'
+          assert manifest['current_frontier_figure'].endswith(
+              'p86_exact_minimally_weighted_quad_projection_parity.svg'
+          )
+          svg_paths = sorted((root / 'docs/figures').rglob('*.svg'))
+          assert manifest['figure_count'] == len(svg_paths)
+          by_path = {item['path']: item for item in manifest['figures']}
+          assert len(by_path) == len(svg_paths)
+          for path in svg_paths:
+              relative = path.as_posix()
+              item = by_path[relative]
+              raw = path.read_bytes()
+              assert item['bytes'] == len(raw)
+              assert item['sha256'] == hashlib.sha256(raw).hexdigest()
+
+          atlas = (root / 'website/visual-atlas.html').read_text()
+          p86 = atlas.index('id="p86-frontier"')
+          p84 = atlas.index('id="p84-frontier"')
+          p85 = atlas.index('id="p85-frontier"')
+          assert p86 < p84 < p85
+          assert 'current-frontier-visual: P86' in atlas
+          assert 'L85 = 0 &lt; L86 = 1/192' in atlas
+
+          gateway = (root / 'figures/CURRENT_FRONTIER.md').read_text()
+          assert gateway.startswith('# Current visual frontier: P71-P86')
+          assert '## Current theorem frontier: P86' in gateway
+          assert 'L85 = 0 < L86 = 1/192' in gateway
+          PY
+      - name: Commit synchronized figure publication surfaces
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add figures/README.md figures/CURRENT_FRONTIER.md figures/manifest.json docs/figures/README.md website/visual-atlas.html
+          git commit -m "Synchronize complete P86 figure publication record"
+          git push origin HEAD:main
