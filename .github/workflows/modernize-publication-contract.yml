@@ -8,6 +8,7 @@ on:
       - "scripts/finalize_publication_contract.py"
       - "scripts/migrate_layered_publication_tests.py"
       - "scripts/sync_figure_publication.py"
+      - "scripts/synchronize_research_three_website.py"
       - "docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg"
       - ".github/workflows/modernize-publication-contract.yml"
   workflow_dispatch:
@@ -39,6 +40,7 @@ jobs:
           # The current staging pipeline is intentionally idempotent.
           python scripts/migrate_layered_publication_tests.py
           python scripts/sync_figure_publication.py
+          python scripts/synchronize_research_three_website.py
 
       - name: Normalize generated text endings
         run: |
