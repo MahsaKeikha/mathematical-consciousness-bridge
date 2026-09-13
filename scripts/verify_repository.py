@@ -42,6 +42,7 @@ CORE_FILES = (
     "docs/research_navigation.md",
     "docs/reader_experience_and_visual_standard.md",
     "docs/figure_caption_and_description_standard.md",
+    "docs/claim_evidence_standard.md",
     "docs/theorem_roadmap.md",
     "docs/detailed_proposition_record.md",
     "docs/equation_and_citation_map.md",
@@ -64,6 +65,7 @@ CORE_FILES = (
     "website/start-here.html",
     "website/research-map.html",
     "website/visual-atlas.html",
+    "website/sources.html",
     "website/reader-experience-v2.css",
     "scripts/generate_all_figures.py",
     "scripts/generate_quantitative_atlas.py",
@@ -85,6 +87,7 @@ LINK_SURFACES = (
     "docs/research_navigation.md",
     "docs/reader_experience_and_visual_standard.md",
     "docs/figure_caption_and_description_standard.md",
+    "docs/claim_evidence_standard.md",
     "docs/theorem_roadmap.md",
     "figures/README.md",
     "figures/CURRENT_FRONTIER.md",
@@ -93,6 +96,8 @@ LINK_SURFACES = (
 MARKDOWN_LINK = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 
 STALE_READER_FRONTIER_MARKERS = (
+    "85-result theorem program and current P86 frontier",
+    "<h2>P78-P85 progressively tighten global separation from the declared continuous model family</h2>",
     "<strong>85</strong><span>proposition-level results</span>",
     "<strong>P85</strong><span>current theorem frontier</span>",
     "current P85 frontier",
@@ -157,6 +162,7 @@ def _verify_release_consistency() -> None:
     website_start = _read("website/start-here.html")
     research_map = _read("website/research-map.html")
     visual_atlas = _read("website/visual-atlas.html")
+    sources_page = _read("website/sources.html")
 
     expected_version_markers = (
         ("pyproject.toml", pyproject, f'version = "{CURRENT_VERSION}"'),
@@ -183,10 +189,16 @@ def _verify_release_consistency() -> None:
         ("website/start-here.html", website_start),
         ("website/research-map.html", research_map),
         ("website/visual-atlas.html", visual_atlas),
+        ("website/sources.html", sources_page),
     )
     for path, source in frontier_markers:
         if CURRENT_FRONTIER not in source:
             raise RuntimeError(f"{path} does not mention frontier {CURRENT_FRONTIER}")
+
+    if "10.1016/j.chaos.2015.03.014" not in sources_page or "arXiv:1401.1219" not in sources_page:
+        raise RuntimeError("sources page does not expose the verified Tegmark research-origin citation")
+    if "intellectual and physical-context background" not in sources_page:
+        raise RuntimeError("sources page does not distinguish research origin from evidential support")
 
     _verify_reader_frontier_freshness()
 

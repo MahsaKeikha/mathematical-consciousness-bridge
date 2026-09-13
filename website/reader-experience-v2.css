@@ -282,6 +282,48 @@ pre {
   font-size: 0.86rem;
 }
 
+/* Site-wide grid containment contract:
+ * long scientific labels and repository paths must stay inside their own
+ * cards at every desktop and tablet width. */
+.status-grid > *,
+.flow > *,
+.result-grid > *,
+.source-grid > *,
+.falsify-grid > *,
+.reader-primer-grid > *,
+.reader-step-grid > *,
+.research-card-grid > *,
+.reader-trail-grid > *,
+.lineage-callout-actions > *,
+.frontier-summary-grid > *,
+.implementation-index > *,
+.implementation-links > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.source-grid h3,
+.result h3,
+.flow-node h3,
+.card h3,
+.reader-primer-card strong,
+.reader-step-card strong,
+.frontier-summary-card h3,
+.implementation-index strong,
+.implementation-links strong,
+.research-card-grid h3,
+.research-card-grid strong,
+.reader-trail-grid strong {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.button {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
 @media (max-width: 900px) {
   .figure-card,
   .reader-primer-grid,

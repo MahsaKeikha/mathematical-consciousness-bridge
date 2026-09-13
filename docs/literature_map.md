@@ -10,11 +10,13 @@ For equation-level provenance, see [Equation and Citation Map](equation_and_cita
 
 ## Tegmark 2015
 
-Max Tegmark, "Consciousness as a State of Matter," *Chaos, Solitons & Fractals* 76 (2015): 238-270. DOI: [10.1016/j.chaos.2015.03.014](https://doi.org/10.1016/j.chaos.2015.03.014).
+Max Tegmark, "Consciousness as a State of Matter," *Chaos, Solitons & Fractals* 76 (2015): 238-270. DOI: [10.1016/j.chaos.2015.03.014](https://doi.org/10.1016/j.chaos.2015.03.014). Preprint: [arXiv:1401.1219](https://arxiv.org/abs/1401.1219).
 
 **Role:** conceptual background for observer factorization, information, integration, independence, dynamics, and physically distinguished subsystem structure.
 
 **Use here:** motivates part of the physical-subsystem problem and the companion observer program. It does not supply the physical-to-experiential bridge developed in this repository.
+
+**Research-origin note:** this was the earliest paper whose physical framing directly prompted the line of questions that grew into this program. That historical role is distinct from evidential support: the later repository propositions require their own proofs, code, tests, and provenance.
 
 ---
 

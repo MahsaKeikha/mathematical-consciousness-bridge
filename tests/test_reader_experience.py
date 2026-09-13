@@ -16,12 +16,22 @@ def test_shared_reader_experience_style_is_built_into_pages() -> None:
     assert ".reader-primer-grid" in css
     assert "READER_EXPERIENCE_STYLE_TAG" in prepare
     assert '"reader-experience-v2.css"' in prepare
+    assert "Site-wide grid containment contract:" in css
+    assert ".implementation-links > *" in css
+    assert "overflow-wrap: anywhere" in css
 
 
 def test_first_reader_surfaces_match_p86_frontier() -> None:
     start = _text("website/start-here.html")
     research_map = _text("website/research-map.html")
     plain = _text("website/plain-language.html")
+    assert "86-result theorem program and current P86 frontier" in start
+    assert "P78-P86 progressively tighten global separation" in start
+    assert "P86 is the current exact frontier." in start
+    assert "L85 = 0 &lt; L86 = 1/192" in start
+    assert ">Read P86</a>" in start
+    assert 'id="research-origin"' in start
+    assert "10.1016/j.chaos.2015.03.014" in start
     assert "The 86 propositions by scientific role" in start
     assert "You do not need to read 86 proofs in order" in start
     assert "complete 86-result dependency structure" in start
@@ -44,6 +54,8 @@ def test_first_reader_surfaces_match_p86_frontier() -> None:
 
 def test_no_reader_facing_html_page_advertises_pre_p86_as_current() -> None:
     stale_current_frontier_tokens = (
+        "85-result theorem program and current P86 frontier",
+        "<h2>P78-P85 progressively tighten global separation from the declared continuous model family</h2>",
         "<strong>85</strong><span>proposition-level results</span>",
         "<strong>P85</strong><span>current theorem frontier</span>",
         "current P85 frontier",
