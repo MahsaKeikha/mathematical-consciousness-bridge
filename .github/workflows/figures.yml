@@ -19,6 +19,7 @@ on:
       - "docs/figure_catalog.md"
       - "docs/reproducibility.md"
       - "figures/**"
+      - "website/index.html"
       - "website/visual-atlas.html"
       - "tests/test_figure_publication_sync.py"
       - "pyproject.toml"
@@ -37,6 +38,7 @@ on:
       - "docs/figure_catalog.md"
       - "docs/reproducibility.md"
       - "figures/**"
+      - "website/index.html"
       - "website/visual-atlas.html"
       - "tests/test_figure_publication_sync.py"
       - "pyproject.toml"
@@ -74,6 +76,9 @@ jobs:
           python scripts/prepare_website.py --source website --output _site
           test -f _site/figures/p86_exact_minimally_weighted_quad_projection_parity.svg
           grep -q 'src="figures/p86_exact_minimally_weighted_quad_projection_parity.svg"' _site/visual-atlas.html
+          grep -q 'src="figures/p86_exact_minimally_weighted_quad_projection_parity.svg"' _site/index.html
+          python -c "from pathlib import Path; t=Path('_site/index.html').read_text(encoding='utf-8'); p=t.index('id=\"p86-frontier\"'); assert p < t.index('id=\"plain-language\"'); assert p < t.index('id=\"p84-frontier\"'); assert p < t.index('id=\"p85-frontier\"'); assert 'Current theorem frontier · P85' not in t"
+          python -c "from pathlib import Path; t=Path('_site/visual-atlas.html').read_text(encoding='utf-8'); assert t.index('id=\"p86-frontier\"') < t.index('id=\"p85-frontier\"')"
       - name: Verify repository publication surfaces
         run: python scripts/verify_repository.py
       - name: Upload complete reproduced visual record
@@ -89,4 +94,6 @@ jobs:
             figures/CURRENT_FRONTIER.md
             figures/manifest.json
             _site/figures/p86_exact_minimally_weighted_quad_projection_parity.svg
+            _site/index.html
+            _site/visual-atlas.html
           if-no-files-found: error
