@@ -3,10 +3,13 @@ name: deploy-research-website
 on:
   push:
     branches: ["main"]
-    # Workflow-file changes explicitly resynchronize Pages after the cleaned P86 reader, regression, and reproducibility audit.
+    # Figure and website changes redeploy one exact-commit Pages artifact.
     paths:
       - "website/**"
+      - "docs/figures/**"
+      - "figures/**"
       - "scripts/prepare_website.py"
+      - "scripts/sync_figure_publication.py"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -30,8 +33,17 @@ jobs:
         uses: actions/checkout@v4
       - name: Configure Pages
         uses: actions/configure-pages@v5
-      - name: Prepare navigable website
-        run: python scripts/prepare_website.py --source website --output _site
+      - name: Require synchronized figure publication state
+        run: python scripts/sync_figure_publication.py --check
+      - name: Prepare exact-commit navigable website
+        run: |
+          python scripts/prepare_website.py --source website --output _site
+          test -f _site/figures/p86_exact_minimally_weighted_quad_projection_parity.svg
+          grep -q 'src="figures/p86_exact_minimally_weighted_quad_projection_parity.svg"' _site/visual-atlas.html
+          if grep -q 'src="https://raw.githubusercontent.com/MahsaKeikha/mathematical-consciousness-bridge/main/docs/figures/' _site/visual-atlas.html; then
+            echo "Visual Atlas still depends on mutable raw-GitHub main figure URLs."
+            exit 1
+          fi
       - name: Upload website artifact
         uses: actions/upload-pages-artifact@v3
         with:
