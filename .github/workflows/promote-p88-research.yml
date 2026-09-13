@@ -1,0 +1,61 @@
+name: promote-p88-research
+
+on:
+  push:
+    branches: ["research/p88-bounded-primitive-four-event"]
+    paths:
+      - "scripts/promote_p88_research_surfaces.py"
+      - ".github/workflows/promote-p88-research.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout P88 research branch
+        uses: actions/checkout@v4
+        with:
+          ref: research/p88-bounded-primitive-four-event
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Promote P88 research surfaces
+        run: python scripts/promote_p88_research_surfaces.py
+
+      - name: Verify P88 exact tests and figure publication
+        run: |
+          python -m pip install -e ".[dev]"
+          pytest -q tests/test_bounded_primitive_radius3_quad_projection_parity_functional_separation.py
+          python scripts/sync_figure_publication.py --check
+
+      - name: Commit generated research updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            scripts/verify_repository.py \
+            docs/figure_catalog.md \
+            docs/theorem_roadmap.md \
+            docs/detailed_proposition_record.md \
+            docs/equation_and_citation_map.md \
+            docs/reproducibility.md \
+            docs/figures/README.md \
+            CITATION.cff \
+            CITATION.md \
+            figures/README.md \
+            figures/CURRENT_FRONTIER.md \
+            figures/current_frontier.svg \
+            figures/manifest.json
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit."
+            exit 0
+          fi
+          git commit -m "Integrate P88 research publication surfaces"
+          git push origin HEAD:research/p88-bounded-primitive-four-event
