@@ -13,6 +13,7 @@ def test_overview_is_canonical_88_p88_state():
     p88 = text.index('id="p88-frontier"')
     p87 = text.index('id="p87-frontier"')
 
+    assert text.count('id="p88-frontier"') == 1
     assert "Explore all 88 results" in text
     assert "Current record:</strong> 88 proposition-level results through P88" in text
     assert "The 88 results form several dependency branches." in text
@@ -52,6 +53,7 @@ def test_start_here_is_canonical_88_p88_state():
 
 def test_research_map_is_canonical_88_p88_state():
     text = _page("research-map.html")
+    assert text.count('id="p88-research-map"') == 1
     assert "through Proposition 88" in text
     assert "Eighty-eight results, one dependency-aware scientific program" in text
     assert "<strong>88</strong><span>proposition-level results</span>" in text
@@ -68,6 +70,7 @@ def test_visual_atlas_has_one_current_frontier_and_it_is_p88():
     p87 = text.index('id="p87-frontier"')
     p86 = text.index('id="p86-frontier"')
 
+    assert text.count('id="p88-frontier"') == 1
     assert "<!-- current-frontier-visual: P88 -->" in text
     assert 'id="p88-frontier" class="theorem-frontier current-frontier-visual"' in text
     assert "L85 = 0 &lt; L86 = 1/192 &lt; L87 = 1/96 &lt; L88 = 1/64" in text[p88:p87]
