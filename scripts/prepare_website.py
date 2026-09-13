@@ -3,7 +3,8 @@
 The website is copied into an auditable deployment directory, canonical figures
 from ``docs/figures`` are bundled into that artifact, shared publication assets
 are injected consistently, and the deployed reader surfaces are validated
-against the current Research II frontier and the Research III handoff.
+against the current Research II frontier and the completed Research III
+foundational framework.
 """
 
 from __future__ import annotations
@@ -12,6 +13,13 @@ import argparse
 import re
 import shutil
 from pathlib import Path
+
+from synchronize_research_three_website import (
+    CURRENT_RESEARCH_THREE_PIN,
+    LEGACY_RESEARCH_THREE_PINS,
+    P88_HOME_MARKER,
+    synchronize_site,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 CANONICAL_WEBSITE = ROOT / "website"
@@ -25,9 +33,9 @@ CURRENT_FRONTIER_FIGURE = (
 )
 CURRENT_RECORD_TEXT = "Current record:</strong> 88 proposition-level results through P88"
 MEASUREMENT_REPO = "https://github.com/MahsaKeikha/consciousness-measurement-science"
-MEASUREMENT_PIN = "8bbb7b029d70c43cc6a9dbf8b44dfe5069d0993d"
+MEASUREMENT_PIN = CURRENT_RESEARCH_THREE_PIN
 
-ASSET_VERSION = "20260913-r3-fix1"
+ASSET_VERSION = "20260913-r3-complete"
 SCRIPT_TAG = f'<script defer src="app.js?v={ASSET_VERSION}"></script>'
 READER_LINKS_SCRIPT_TAG = '<script defer src="reader-links.js"></script>'
 FOOTER_SCRIPT_TAG = '<script defer src="footer.js"></script>'
@@ -159,6 +167,8 @@ def _validate_current_frontier_pages(output: Path) -> None:
     if CURRENT_RECORD_TEXT not in homepage:
         raise RuntimeError("Homepage Project at a glance is not synchronized to 88/P88")
     _require_once(homepage, 'id="p88-frontier"', "Homepage")
+    _require_once(homepage, P88_HOME_MARKER, "Homepage source marker")
+
     reader_css = (output / "reader-experience-v2.css").read_text(encoding="utf-8")
     for token in ("#reproduce .equation", "contain: inline-size", "#reproduce.two-col > *"):
         if token not in reader_css:
@@ -185,11 +195,27 @@ def _validate_research_three(output: Path) -> None:
         MEASUREMENT_REPO,
         "what can be identified, bounded, predicted, or falsified",
         "M0-M7",
+        "Implemented now versus not yet established",
+        "CEP JSON schema",
+        "Claim JSON schema",
+        "Assumption registry",
+        "Failure-mode registry",
+        "Software and reproducibility",
+        "23</strong><span>tests in each CI job",
+        f"research-three-snapshot: {MEASUREMENT_PIN}",
         f"consciousness-measurement-science/{MEASUREMENT_PIN}/docs/figures/measurement_architecture.svg",
+        f"consciousness-measurement-science/blob/{MEASUREMENT_PIN}/schemas/cep.schema.json",
+        f"consciousness-measurement-science/blob/{MEASUREMENT_PIN}/schemas/claim.schema.json",
     )
     missing = [token for token in required if token not in measurement]
     if missing:
         raise RuntimeError(f"Research III page is missing required content: {missing}")
+
+    for legacy_pin in LEGACY_RESEARCH_THREE_PINS:
+        if legacy_pin in measurement:
+            raise RuntimeError(
+                f"Research III page contains stale snapshot pin: {legacy_pin}"
+            )
 
     lineage_path = output / "research-lineage.html"
     if not lineage_path.is_file():
@@ -201,12 +227,16 @@ def _validate_research_three(output: Path) -> None:
         "<strong>P88</strong><span>current theorem frontier</span>",
         "<strong>v0.82.0</strong><span>current documented release</span>",
         "The three repositories form a research progression",
+        MEASUREMENT_PIN,
     ):
         if token not in lineage:
             raise RuntimeError(f"Research lineage is missing current stage content: {token}")
     for stale in ("<strong>81</strong>", "<strong>P81</strong>", "v0.81.0"):
         if stale in lineage:
             raise RuntimeError(f"Research lineage contains stale Research II state: {stale}")
+    for legacy_pin in LEGACY_RESEARCH_THREE_PINS:
+        if legacy_pin in lineage:
+            raise RuntimeError(f"Research lineage contains stale Research III pin: {legacy_pin}")
 
     app = (output / "app.js").read_text(encoding="utf-8")
     if "measurement-science.html" not in app or "Research III" not in app:
@@ -224,6 +254,10 @@ def prepare_website(source: Path, output: Path) -> None:
     if output.exists():
         shutil.rmtree(output)
     shutil.copytree(source, output)
+
+    # Normalize cross-repository pins and duplicate frontier markers in the
+    # deployment copy before any reader-surface validation runs.
+    synchronize_site(output, write=True)
     _copy_canonical_figures(output)
 
     html_files = sorted(output.glob("*.html"))
@@ -285,7 +319,10 @@ def main() -> None:
     parser.add_argument("--output", type=Path, default=Path("_site"))
     args = parser.parse_args()
     prepare_website(args.source, args.output)
-    print(f"prepared website with Research II P88 and Research III: {args.output}")
+    print(
+        "prepared website with Research II P88 and Research III "
+        f"{MEASUREMENT_PIN}: {args.output}"
+    )
 
 
 if __name__ == "__main__":
