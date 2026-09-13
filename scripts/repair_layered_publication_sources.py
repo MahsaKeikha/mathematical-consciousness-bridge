@@ -3,7 +3,8 @@
 This script is deliberately narrow, deterministic, and idempotent. It repairs
 historical migration templates that encoded monolithic-README assumptions and
 updates the canonical P88 Research Map block so publication regeneration cannot
-silently discard its proof/provenance/code/test audit path.
+silently discard its proof/provenance/code/test audit path. Rerunning it after a
+fully generated publication state is expected to produce no content changes.
 """
 
 from __future__ import annotations
