@@ -357,23 +357,3 @@ For terminology, use the [Glossary](glossary.md).
 For the theorem dependency structure, use the [Theorem Roadmap](theorem_roadmap.md).
 
 For every proposition in chronological order, use the [Detailed Proposition Record](detailed_proposition_record.md).
-
-## Focused audit of the current P90 frontier
-
-The exact P90 technical record is:
-
-```text
-docs/proposition_90_exact_nonlinear_rank_one_separation.md
-docs/p90_equation_provenance.md
-src/consciousness_bridge/exact_nonlinear_rank_one_separation.py
-tests/test_exact_nonlinear_rank_one_separation.py
-docs/figures/p90_exact_nonlinear_rank_one_separation.svg
-```
-
-Run the focused theorem checks with:
-
-```bash
-python -m pytest tests/test_exact_nonlinear_rank_one_separation.py
-```
-
-The exact witness satisfies `L90 = 5/72 = (7/3)L89`. The result is limited to the declared strict single-component P75 box.
