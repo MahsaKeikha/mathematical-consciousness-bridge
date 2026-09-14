@@ -1,0 +1,68 @@
+name: temporary-promote-p89-balanced-reader
+
+on:
+  push:
+    branches: ["p89-complete-linear-parity-duality"]
+    paths:
+      - ".github/workflows/temporary-promote-p89-balanced-reader.yml"
+      - "scripts/promote_p89_public_frontier.py"
+      - "src/consciousness_bridge/complete_linear_parity_duality.py"
+      - "tests/test_complete_linear_parity_duality.py"
+      - "docs/proposition_89_complete_linear_parity_duality.md"
+      - "docs/p89_equation_provenance.md"
+      - "docs/figures/p89_complete_linear_parity_duality.svg"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: temporary-promote-p89-balanced-reader
+  cancel-in-progress: true
+
+jobs:
+  promote:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: p89-complete-linear-parity-duality
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install development environment
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+      - name: Validate P89 exact duality core
+        run: |
+          python -m pytest -q tests/test_complete_linear_parity_duality.py
+          python -m py_compile \
+            src/consciousness_bridge/complete_linear_parity_duality.py \
+            scripts/promote_p89_public_frontier.py
+      - name: Promote P89 and rebalance reader entry pages
+        run: |
+          python scripts/promote_p89_public_frontier.py
+          git diff --check
+          grep -q 'id="three-stage-progress"' website/plain-language.html
+          grep -q 'id="program-stages"' website/start-here.html
+          grep -q 'Research I' website/plain-language.html
+          grep -q 'Research II' website/plain-language.html
+          grep -q 'Research III' website/plain-language.html
+          grep -q 'Research I' website/start-here.html
+          grep -q 'Research II' website/start-here.html
+          grep -q 'Research III' website/start-here.html
+          grep -q '89 results · current frontier P89' website/plain-language.html
+          grep -q '89 results · current frontier P89' website/start-here.html
+      - name: Commit balanced P89 reader surfaces
+        run: |
+          if git diff --quiet; then
+            echo "P89 reader surfaces already synchronized."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add website
+          git commit -m "Promote P89 with balanced reader entry pages"
+          git push origin HEAD:p89-complete-linear-parity-duality
