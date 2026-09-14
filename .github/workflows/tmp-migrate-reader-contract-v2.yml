@@ -44,8 +44,8 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add website/index.html website/styles.css tests/test_publication_contract_v2.py
+          git add website/index.html website/styles.css tests/test_publication_contract_v2.py scripts/promote_p88_public_frontier.py
           git commit -m "Make Overview represent all three research programs"
           git push origin HEAD:overview-p88-provenance-clarity
 
-# Retry after selecting a unique stylesheet insertion point.
+# Retry with the P88 coherence contract aligned to the three-program dashboard.
