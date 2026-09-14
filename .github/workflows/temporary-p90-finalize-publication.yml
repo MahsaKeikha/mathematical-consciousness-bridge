@@ -32,6 +32,7 @@ jobs:
           python scripts/finalize_p90_publication.py
           python scripts/patch_p90_sources_surface.py
           python scripts/repair_p90_repository_verifier.py
+          python scripts/cleanup_p90_reader_residuals.py
 
       - name: Validate focused P90 publication state
         run: |
@@ -55,6 +56,7 @@ jobs:
             scripts/repair_p90_provenance_paths.py \
             scripts/patch_p90_sources_surface.py \
             scripts/repair_p90_repository_verifier.py \
+            scripts/cleanup_p90_reader_residuals.py \
             scripts/promote_p90_public_frontier.py \
             scripts/advance_p90_publication_contracts.py \
             scripts/sync_figure_publication.py \
@@ -71,7 +73,7 @@ jobs:
             echo "No P90 publication changes to commit"
             exit 0
           fi
-          git commit -m "Finalize P90 publication surfaces"
+          git commit -m "Close final P90 reader publication residuals"
           git push origin HEAD:p90-exact-nonlinear-rank-one-separation
 
-# workflow files are persisted separately through the GitHub connector
+# final reader-surface cleanup before removing temporary machinery
