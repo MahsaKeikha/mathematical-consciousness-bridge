@@ -12,9 +12,10 @@ import argparse
 import re
 from pathlib import Path
 
-CURRENT_RESEARCH_THREE_PIN = "7a106820158e0d33ea651f7cdeaa505206f1ccc7"
+CURRENT_RESEARCH_THREE_PIN = "b874eda1f6940f5601b7f89200b6a276b5ecbbc3"
 LEGACY_RESEARCH_THREE_PINS = (
     "8bbb7b029d70c43cc6a9dbf8b44dfe5069d0993d",
+    "7a106820158e0d33ea651f7cdeaa505206f1ccc7",
 )
 P88_HOME_MARKER = "<!-- current-frontier-home: P88 -->"
 
