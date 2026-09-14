@@ -85,14 +85,20 @@ def replace_many(text: str, replacements: tuple[tuple[str, str], ...]) -> str:
 
 def upsert_section(text: str, section_id: str, replacement: str, before_id: str) -> str:
     pattern = re.compile(
-        rf'(?:<!--[^>]*{re.escape(section_id)}[^>]*-->\s*)?'
+        rf'(?:<!--\s*current-frontier-(?:home|visual):\s*P88\s*-->\s*)?'
         rf'<section id="{re.escape(section_id)}"(?=[\s>]).*?</section>\s*',
         flags=re.DOTALL,
     )
     matches = tuple(pattern.finditer(text))
     if matches:
-        # Collapse any inherited duplicate copies to one canonical section.
+        # Collapse inherited duplicate sections and any orphaned P88 frontier
+        # comments before inserting one canonical marker + section pair.
         text = pattern.sub("", text)
+        text = re.sub(
+            r'<!--\s*current-frontier-(?:home|visual):\s*P88\s*-->\s*',
+            "",
+            text,
+        )
         marker = f'<section id="{before_id}"'
         if marker not in text:
             raise RuntimeError(f"cannot place {section_id}: missing {before_id} marker")
@@ -159,8 +165,10 @@ def promote_plain_language() -> None:
     text = replace_many(
         text,
         (
-            ("<div><strong>87</strong><span>proposition-level results</span></div>", "<div><strong>88</strong><span>proposition-level results</span></div>"),
-            ("<div><strong>P87</strong><span>current theorem frontier</span></div>", "<div><strong>P88</strong><span>current theorem frontier</span></div>"),
+            ("<div><strong>87</strong><span>proposition-level results</span></div>", "<div><strong>88</strong><span>Research II proposition-level results</span></div>"),
+            ("<div><strong>P87</strong><span>current theorem frontier</span></div>", "<div><strong>P88</strong><span>current Research II theorem frontier</span></div>"),
+            ("<div><strong>88</strong><span>proposition-level results</span></div>", "<div><strong>88</strong><span>Research II proposition-level results</span></div>"),
+            ("<div><strong>P88</strong><span>current theorem frontier</span></div>", "<div><strong>P88</strong><span>current Research II theorem frontier</span></div>"),
             ("What the 87 results are doing", "What the 88 results are doing"),
             ("P75-P87", "P75-P88"),
             ("actual P87 research frontier", "actual P88 research frontier"),
@@ -294,8 +302,8 @@ def verify_reader_coherence() -> None:
             "L85 = 0 &lt; L86 = 1/192 &lt; L87 = 1/96 &lt; L88 = 1/64",
         ),
         "website/plain-language.html": (
-            "<strong>88</strong><span>proposition-level results</span>",
-            "<strong>P88</strong><span>current theorem frontier</span>",
+            "<strong>88</strong><span>Research II proposition-level results</span>",
+            "<strong>P88</strong><span>current Research II theorem frontier</span>",
             "What the 88 results are doing",
             "Current exact frontier · P88",
         ),
@@ -333,6 +341,8 @@ def verify_reader_coherence() -> None:
         ),
         "website/plain-language.html": (
             "<strong>P87</strong><span>current theorem frontier</span>",
+            "<strong>88</strong><span>proposition-level results</span>",
+            "<strong>P88</strong><span>current theorem frontier</span>",
             "What the 87 results are doing",
         ),
         "website/start-here.html": (
@@ -362,8 +372,12 @@ def verify_reader_coherence() -> None:
     research_map = texts["website/research-map.html"]
     if index.count('id="p88-frontier"') != 1:
         raise RuntimeError("homepage must contain exactly one P88 frontier section")
+    if index.count("<!-- current-frontier-home: P88 -->") != 1:
+        raise RuntimeError("homepage must contain exactly one P88 frontier marker")
     if atlas.count('id="p88-frontier"') != 1:
         raise RuntimeError("Visual Atlas must contain exactly one P88 frontier section")
+    if atlas.count("<!-- current-frontier-visual: P88 -->") != 1:
+        raise RuntimeError("Visual Atlas must contain exactly one P88 frontier marker")
     if research_map.count('id="p88-research-map"') != 1:
         raise RuntimeError("Research Map must contain exactly one P88 result section")
     if index.index('id="p88-frontier"') > index.index('id="p87-frontier"'):
