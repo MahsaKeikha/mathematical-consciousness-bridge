@@ -1,13 +1,16 @@
-"""Normalize punctuation and trailing whitespace in reader-facing documentation.
+"""Normalize forbidden Unicode dash punctuation in reader-facing documentation.
 
 The public documentation contract intentionally avoids Unicode en dash and em dash
 characters. Reader-facing Markdown, HTML, SVG, and text files use the ASCII hyphen
 instead so generated and hand-edited publication surfaces stay consistent.
+
+This normalizer deliberately does not trim or otherwise reformat whitespace. Generated
+SVGs are byte-reproducible artifacts, and changing path-data spacing would create
+publication drift unrelated to the punctuation policy.
 """
 
 from __future__ import annotations
 
-import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -37,7 +40,7 @@ def documentation_files() -> list[Path]:
 def normalize(text: str) -> str:
     for dash in FORBIDDEN_DASHES:
         text = text.replace(dash, "-")
-    return re.sub(r"[ \t]+(?=\n|$)", "", text)
+    return text
 
 
 def main() -> None:
@@ -51,11 +54,11 @@ def main() -> None:
         changed.append(path.relative_to(ROOT).as_posix())
 
     if changed:
-        print("[documentation] normalized punctuation and whitespace:")
+        print("[documentation] normalized forbidden dash punctuation:")
         for path in changed:
             print(f"  - {path}")
     else:
-        print("[documentation] punctuation and whitespace already normalized")
+        print("[documentation] dash punctuation already normalized")
 
 
 if __name__ == "__main__":
