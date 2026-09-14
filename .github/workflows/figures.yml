@@ -13,6 +13,7 @@ on:
       - "scripts/generate_quantum_foundations_atlas.py"
       - "scripts/enrich_figure_documentation.py"
       - "scripts/sync_figure_publication.py"
+      - "scripts/promote_p88_public_frontier.py"
       - "scripts/prepare_website.py"
       - "scripts/verify_repository.py"
       - "requirements-figures.txt"
@@ -34,6 +35,7 @@ on:
       - "scripts/generate_quantum_foundations_atlas.py"
       - "scripts/enrich_figure_documentation.py"
       - "scripts/sync_figure_publication.py"
+      - "scripts/promote_p88_public_frontier.py"
       - "scripts/prepare_website.py"
       - "scripts/verify_repository.py"
       - "requirements-figures.txt"
@@ -63,35 +65,6 @@ jobs:
           python -m pip install -r requirements-figures.txt
       - name: Regenerate and synchronize complete visual publication record
         run: python scripts/generate_all_figures.py
-      - name: Normalize rerunnable P88 reader markers
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          import re
-
-          marker_specs = (
-              (Path("website/index.html"), "<!-- current-frontier-home: P88 -->"),
-              (Path("website/visual-atlas.html"), "<!-- current-frontier-visual: P88 -->"),
-          )
-          for path, marker in marker_specs:
-              text = path.read_text(encoding="utf-8")
-              text = re.sub(
-                  rf"(?:{re.escape(marker)}\s*)+",
-                  marker + "\n",
-                  text,
-                  flags=re.MULTILINE,
-              )
-              path.write_text(text, encoding="utf-8")
-
-          research_map = Path("website/research-map.html")
-          text = research_map.read_text(encoding="utf-8")
-          text = re.sub(
-              r'\n{3,}(?=<section id="p88-research-map")',
-              "\n\n",
-              text,
-          )
-          research_map.write_text(text, encoding="utf-8")
-          PY
       - name: Require byte-identical regeneration and publication sync
         run: |
           python scripts/sync_figure_publication.py --check
