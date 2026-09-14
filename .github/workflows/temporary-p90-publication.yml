@@ -29,20 +29,63 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Repair theorem-roadmap literal
+      - name: Repair permanent P90 publication sources
         run: |
           python - <<'PY'
           from pathlib import Path
 
-          path = Path("scripts/promote_p90_public_frontier.py")
-          text = path.read_text(encoding="utf-8")
+          promoter = Path("scripts/promote_p90_public_frontier.py")
+          text = promoter.read_text(encoding="utf-8")
+
           old = 'append_once(text, "## P90: exact nonlinear rank-one slice separation", f\'\'\''
           new = 'append_once(text, "## P90: exact nonlinear rank-one slice separation", fr\'\'\''
           if old in text:
               text = text.replace(old, new, 1)
           elif new not in text:
               raise SystemExit("P90 theorem-roadmap block marker not found")
-          path.write_text(text, encoding="utf-8")
+
+          footer_old = '        ("The current public theorem frontier is **P89**.", "The current public theorem frontier is **P90**."),\n'
+          footer_new = footer_old + '        ("**Public theorem frontier:** P89", "**Public theorem frontier:** P90"),\n'
+          if '"**Public theorem frontier:** P89", "**Public theorem frontier:** P90"' not in text:
+              if footer_old not in text:
+                  raise SystemExit("README frontier replacement insertion point not found")
+              text = text.replace(footer_old, footer_new, 1)
+
+          links_old = f'<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/{{PROVENANCE_NAME}}">{{PROVENANCE_NAME}}</a></p>'
+          links_new = (
+              f'<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/{{PROVENANCE_NAME}}">{{PROVENANCE_NAME}}</a> · '
+              f'<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/{{SOURCE_NAME}}">{{SOURCE_NAME}}</a> · '
+              f'<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/tests/{{TEST_NAME}}">{{TEST_NAME}}</a></p>'
+          )
+          if 'blob/main/src/consciousness_bridge/{SOURCE_NAME}' not in text:
+              if links_old not in text:
+                  raise SystemExit("P90 homepage link insertion point not found")
+              text = text.replace(links_old, links_new, 1)
+
+          promoter.write_text(text, encoding="utf-8")
+
+          contracts = Path("scripts/advance_p90_publication_contracts.py")
+          text = contracts.read_text(encoding="utf-8")
+
+          validator_old = '            ("internally consistent with P89", "internally consistent with P90"),\n'
+          validator_new = (
+              '            ("<strong>89</strong><span>proposition-level results</span>", '
+              '"<strong>90</strong><span>proposition-level results</span>"),\n'
+              + validator_old
+          )
+          if '"<strong>89</strong><span>proposition-level results</span>", "<strong>90</strong><span>proposition-level results</span>"' not in text:
+              if validator_old not in text:
+                  raise SystemExit("prepare_website count insertion point not found")
+              text = text.replace(validator_old, validator_new, 1)
+
+          marker = '    patch(\n        ".github/workflows/figures.yml",\n'
+          repair = '''    target = ROOT / "tests/test_figure_publication_sync.py"\n    test_text = target.read_text(encoding="utf-8")\n    visual_old = """def test_visual_atlas_leads_with_p90_before_historical_frontiers() -> None:\n    text = VISUAL_ATLAS.read_text(encoding=\"utf-8\")\n    p90 = text.index('id=\"p90-frontier\"')\n    p88 = text.index('id=\"p88-frontier\"')"""\n    visual_new = """def test_visual_atlas_leads_with_p90_before_historical_frontiers() -> None:\n    text = VISUAL_ATLAS.read_text(encoding=\"utf-8\")\n    p90 = text.index('id=\"p90-frontier\"')\n    p89 = text.index('id=\"p89-frontier\"')\n    p88 = text.index('id=\"p88-frontier\"')"""\n    if visual_old in test_text:\n        test_text = test_text.replace(visual_old, visual_new, 1)\n    target.write_text(test_text, encoding="utf-8")\n\n'''
+          if 'visual_old = """def test_visual_atlas_leads_with_p90_before_historical_frontiers()' not in text:
+              if marker not in text:
+                  raise SystemExit("figure-test repair insertion point not found")
+              text = text.replace(marker, repair + marker, 1)
+
+          contracts.write_text(text, encoding="utf-8")
           PY
 
       - name: Promote P90 publication surfaces
