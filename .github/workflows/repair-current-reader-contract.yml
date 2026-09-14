@@ -42,8 +42,7 @@ jobs:
                   raise SystemExit(f'{path}: expected {count} occurrence(s), found {observed}: {old!r}')
               p.write_text(text.replace(old, new), encoding='utf-8')
 
-          # The P88 reader synchronizer contains LaTeX in this literal. Make it raw
-          # so Python cannot turn the leading f in frac into a form-feed control.
+          # Preserve LaTeX literally so \frac never becomes a form-feed control.
           replace(
               'scripts/synchronize_p88_reader_frontier_phrases.py',
               'section = """## 5. Focused audit of the current P88 frontier',
@@ -51,14 +50,12 @@ jobs:
               count=1,
           )
 
-          # Repair the already-generated corruption in the reproducibility record.
           repro = root / 'docs/reproducibility.md'
           text = repro.read_text(encoding='utf-8')
           if '\x0c' not in text:
               raise SystemExit('docs/reproducibility.md: expected form-feed corruption was not found')
           repro.write_text(text.replace('\x0c', r'\f'), encoding='utf-8')
 
-          # Synchronize scholarly metadata to the documented P88 frontier.
           cff = root / 'CITATION.cff'
           text = cff.read_text(encoding='utf-8')
           text = text.replace('Current documented theorem frontier: P87.', 'Current documented theorem frontier: P88.')
@@ -89,8 +86,7 @@ jobs:
               encoding='utf-8',
           )
 
-          # Keep the source tree link-valid while allowing prepare_website.py to
-          # localize this canonical exact-commit figure into the Pages artifact.
+          # Keep the source link valid and let prepare_website.py localize it in Pages.
           lineage = root / 'website/research-lineage.html'
           text = lineage.read_text(encoding='utf-8')
           local_src = 'src="figures/research_architecture.svg"'
@@ -113,13 +109,6 @@ jobs:
                   raise SystemExit('research-lineage.html: transition heading not found')
               text = text.replace(heading, boundary, 1)
           lineage.write_text(text, encoding='utf-8')
-
-          # Remove Unicode dash punctuation from the existing repair workflow
-          # without embedding those characters in this workflow itself.
-          repair = root / '.github/workflows/repair-p88-publication-contracts.yml'
-          text = repair.read_text(encoding='utf-8')
-          text = text.replace(chr(0x2013), '-').replace(chr(0x2014), '-')
-          repair.write_text(text, encoding='utf-8')
           PY
 
       - name: Verify repaired source contracts
@@ -149,8 +138,7 @@ jobs:
             docs/reproducibility.md \
             docs/detailed_proposition_record.md \
             website/research-lineage.html \
-            scripts/synchronize_p88_reader_frontier_phrases.py \
-            .github/workflows/repair-p88-publication-contracts.yml
+            scripts/synchronize_p88_reader_frontier_phrases.py
           git commit -m "Repair P88 reader and metadata contracts"
           git fetch origin main
           git rebase origin/main
