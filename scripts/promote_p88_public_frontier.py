@@ -274,7 +274,7 @@ def append_navigation_records() -> None:
         "P88 enlarges the completed P87 primitive coefficient box to `0 < |c_i| <= 3`, exhausts 632 sign-normalized primitive coefficient patterns across 330 four-event subsets (208,560 exact functionals), and on the established rational witness strengthens the full-law `L_infinity` lower bound from `1/96` to `1/64`.\n\n"
         f"- [Proof]({P88_PROOF})\n- [Equation provenance]({P88_PROVENANCE})\n"
         f"- Implementation: `src/consciousness_bridge/{P88_IMPLEMENTATION}`\n"
-        f"- Tests: `tests/{P88_TEST}\n- Figure: `figures/{P88_FIGURE}`\n\n"
+        f"- Tests: `tests/{P88_TEST}`\n- Figure: `figures/{P88_FIGURE}`\n\n"
         "**Boundary:** conditional model separation only; the physical-to-experiential bridge remains open.\n"
     )
     record.write_text(text, encoding="utf-8")
