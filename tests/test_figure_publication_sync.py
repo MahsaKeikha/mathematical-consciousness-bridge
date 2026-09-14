@@ -81,32 +81,26 @@ def test_visual_atlas_leads_with_p88_before_historical_frontiers() -> None:
     assert "Previous theorem frontier · P87" in text[p87:]
 
 
-def test_homepage_leads_with_p88_before_historical_frontiers() -> None:
+def test_homepage_balances_three_research_stages_and_keeps_history_specialist() -> None:
     text = HOME.read_text(encoding="utf-8")
+    research_i = text.index('id="research-i-overview"')
     p88 = text.index('id="p88-frontier"')
-    plain = text.index('id="plain-language"')
-    p87 = text.index('id="p87-frontier"')
-    p86 = text.index('id="p86-frontier"')
-    p85 = text.index('id="p85-frontier"')
+    research_iii = text.index('id="research-iii-overview"')
+    reader_paths = text.index('id="reader-paths"')
 
-    assert p88 < plain
-    assert p88 < p87
-    assert p88 < p86
-    assert p88 < p85
-    current = text[p88:plain]
+    assert research_i < p88 < research_iii < reader_paths
+    current = text[p88:research_iii]
     assert "Current theorem frontier · P88" in current
     assert P88_FIGURE in current
     assert "L85 = 0 &lt; L86 = 1/192 &lt; L87 = 1/96 &lt; L88 = 1/64" in current
     assert "radius_three_bounded_primitive_quad_projection_parity_functional_separation.py" in current
     assert "test_radius_three_bounded_primitive_quad_projection_parity_functional_separation.py" in current
-    assert "Previous theorem frontier · P87" in text[p87:]
-    assert "Current theorem frontier · P87" not in text
-    assert "The 87 results form several dependency branches." not in text
-    assert "all 87 propositions" not in text
-    assert "P71-P87, then read the falsification program" not in text
+    assert "physics_pipeline.svg" in text[research_i:p88]
+    assert "measurement_architecture.svg" in text[research_iii:reader_paths]
+    for historical_id in ('id="p87-frontier"', 'id="p86-frontier"', 'id="p85-frontier"'):
+        assert historical_id not in text
     assert "The 88 results form several dependency branches." in text
     assert "all 88 propositions" in text
-
 
 def test_figure_publication_synchronizer_reports_zero_drift() -> None:
     subprocess.run(
@@ -141,5 +135,10 @@ def test_pages_build_bundles_exact_commit_p88_figure(tmp_path: Path) -> None:
     home = (site / "index.html").read_text(encoding="utf-8")
     assert f'src="figures/{P88_FIGURE}"' in home
     assert f'src="{RAW_PREFIX}' not in home
-    assert home.index('id="p88-frontier"') < home.index('id="plain-language"')
-    assert home.index('id="p88-frontier"') < home.index('id="p87-frontier"')
+    research_i = home.index('id="research-i-overview"')
+    p88 = home.index('id="p88-frontier"')
+    research_iii = home.index('id="research-iii-overview"')
+    reader_paths = home.index('id="reader-paths"')
+    assert research_i < p88 < research_iii < reader_paths < home.index('id="plain-language"')
+    for historical_id in ('id="p87-frontier"', 'id="p86-frontier"', 'id="p85-frontier"'):
+        assert historical_id not in home

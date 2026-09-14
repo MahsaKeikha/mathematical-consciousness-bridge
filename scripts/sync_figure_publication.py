@@ -313,15 +313,19 @@ def _check_reader_surfaces(frontier: int) -> None:
         "Explore all 88 results",
         "Research I · Physical-system identification",
         "<strong>58</strong><span>proposition-level statements</span>",
+        'id="research-i-overview"',
+        "physics_pipeline.svg",
         "Research II · Bridge sufficiency and falsification",
         "<strong>88</strong><span>proposition-level results</span>",
         "P88 current theorem frontier · v0.82.0",
-        "Research III · Consciousness measurement science",
-        "<strong>34</strong><span>tests in each CI job</span>",
-        "Open</strong><span>physical-to-experiential bridge",
         'id="p88-frontier"',
         "Current theorem frontier · P88",
-        "Previous theorem frontier · P87",
+        "Research III · Consciousness measurement science",
+        "<strong>34</strong><span>tests in each CI job</span>",
+        'id="research-iii-overview"',
+        "measurement_architecture.svg",
+        "Two implemented fusion regimes",
+        "Open</strong><span>physical-to-experiential bridge",
     )
     required_atlas = (
         'id="p88-frontier"',
@@ -336,10 +340,16 @@ def _check_reader_surfaces(frontier: int) -> None:
         )
     if missing_atlas:
         raise RuntimeError(f"Visual Atlas is not synchronized to P88: {missing_atlas}")
-    if home.index('class="research-dashboard"') > home.index('id="p88-frontier"'):
-        raise RuntimeError("homepage must orient readers to the full research program before P88")
-    if home.index('id="p88-frontier"') > home.index('id="p87-frontier"'):
-        raise RuntimeError("homepage does not lead with P88")
+    research_i = home.index('id="research-i-overview"')
+    p88_home = home.index('id="p88-frontier"')
+    research_iii = home.index('id="research-iii-overview"')
+    if home.index('class="research-dashboard"') > research_i:
+        raise RuntimeError("homepage must orient readers to the full research program before stage details")
+    if not (research_i < p88_home < research_iii):
+        raise RuntimeError("homepage must balance Research I, Research II/P88, and Research III in stage order")
+    for historical_id in ('id="p87-frontier"', 'id="p86-frontier"', 'id="p85-frontier"'):
+        if historical_id in home:
+            raise RuntimeError("historical Research II frontiers must remain off the Overview")
     if atlas.index('id="p88-frontier"') > atlas.index('id="p87-frontier"'):
         raise RuntimeError("Visual Atlas does not lead with P88")
 

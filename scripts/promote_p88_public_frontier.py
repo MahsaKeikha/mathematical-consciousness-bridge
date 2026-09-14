@@ -21,9 +21,9 @@ P88_TEST = "test_radius_three_bounded_primitive_quad_projection_parity_functiona
 P88_HOME = f'''<!-- current-frontier-home: P88 -->
 <section id="p88-frontier" class="theorem-frontier current-frontier-visual">
   <div class="section-head">
-    <p class="eyebrow">Current theorem frontier · P88</p>
+    <p class="eyebrow">Research II · Current theorem frontier · P88</p>
     <h2>Radius-three bounded primitive four-event parity certificate</h2>
-    <p>P88 enlarges the complete primitive four-event coefficient box from |c_i| at most 2 to |c_i| at most 3. Its 208,560-function exact audit strictly strengthens the complete P87 certificate on the same rational witness.</p>
+    <p>Research II is the bridge-sufficiency and falsification layer. P88 enlarges the complete primitive four-event coefficient box from |c_i| at most 2 to |c_i| at most 3. Its 208,560-function exact audit strictly strengthens the complete P87 certificate on the same rational witness.</p>
   </div>
   <div class="theorem-figure-shell">
     <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/figures/{P88_FIGURE}" aria-label="Open the full P88 theorem figure">
@@ -36,7 +36,7 @@ P88_HOME = f'''<!-- current-frontier-home: P88 -->
     <article class="frontier-summary-card"><h3>Reproducible record</h3><p>The proof, equation provenance, exact implementation, exhaustive tests, and theorem SVG are source controlled.</p></article>
   </div>
   <div class="boundary"><p><strong>Scientific boundary:</strong> P88 is a conditional exact model-separation theorem for the declared P75 family. It does not identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.</p></div>
-  <p><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/{P88_PROOF}">Open the P88 theorem</a> · <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/{P88_PROVENANCE}">Equation provenance</a> · <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/{P88_IMPLEMENTATION}">Implementation</a> · <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/tests/{P88_TEST}">Exact tests</a></p>
+  <p><a href="research-map.html">Research II map</a> · <a href="visual-atlas.html">Historical theorem figures</a> · <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/{P88_PROOF}">P88 theorem</a> · <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/{P88_PROVENANCE}">Equation provenance</a> · <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/{P88_IMPLEMENTATION}">Implementation</a> · <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/tests/{P88_TEST}">Exact tests</a></p>
 </section>
 
 '''
@@ -134,7 +134,7 @@ def promote_index() -> None:
             ("<!-- Current theorem asset: docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg -->", f"<!-- Current theorem asset: docs/figures/{P88_FIGURE} -->"),
         ),
     )
-    text = upsert_section(text, "p88-frontier", P88_HOME, "p87-frontier")
+    text = upsert_section(text, "p88-frontier", P88_HOME, "research-iii-overview")
     write(path, text)
 
 
@@ -298,7 +298,11 @@ def verify_reader_coherence() -> None:
             "The 88-result program",
             "L85 = 0 &lt; L86 = 1/192 &lt; L87 = 1/96 &lt; L88 = 1/64",
             'id="project-journey"',
+            'id="research-i-overview"',
+            'id="research-iii-overview"',
+            'id="reader-paths"',
             "The whole research program in three stages",
+            "Two implemented fusion regimes",
             "None of these stages by itself establishes the final physical-to-experiential bridge.",
         ),
         "website/plain-language.html": (
@@ -380,8 +384,15 @@ def verify_reader_coherence() -> None:
         raise RuntimeError("Visual Atlas must contain exactly one P88 frontier marker")
     if research_map.count('id="p88-research-map"') != 1:
         raise RuntimeError("Research Map must contain exactly one P88 result section")
-    if index.index('id="p88-frontier"') > index.index('id="p87-frontier"'):
-        raise RuntimeError("homepage does not lead with P88")
+    research_i = index.index('id="research-i-overview"')
+    p88_home = index.index('id="p88-frontier"')
+    research_iii = index.index('id="research-iii-overview"')
+    reader_paths = index.index('id="reader-paths"')
+    if not (index.index('id="project-journey"') < research_i < p88_home < research_iii < reader_paths):
+        raise RuntimeError("homepage must present Research I, Research II/P88, and Research III in balanced stage order")
+    for historical_id in ('id="p87-frontier"', 'id="p86-frontier"', 'id="p85-frontier"'):
+        if historical_id in index:
+            raise RuntimeError("historical Research II theorem frontiers belong in the specialist archive, not the Overview")
     if atlas.index('id="p88-frontier"') > atlas.index('id="p87-frontier"'):
         raise RuntimeError("Visual Atlas does not lead with P88")
 

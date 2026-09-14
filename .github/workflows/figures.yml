@@ -101,7 +101,7 @@ jobs:
           test -f _site/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg
           grep -q 'src="figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg"' _site/visual-atlas.html
           grep -q 'src="figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg"' _site/index.html
-          python -c "from pathlib import Path; t=Path('_site/index.html').read_text(encoding='utf-8'); p=t.index('id=\"p88-frontier\"'); assert p < t.index('id=\"plain-language\"'); assert p < t.index('id=\"p87-frontier\"'); assert p < t.index('id=\"p86-frontier\"'); assert 'Current theorem frontier · P87' not in t"
+          python -c "from pathlib import Path; t=Path('_site/index.html').read_text(encoding='utf-8'); r1=t.index('id=\"research-i-overview\"'); p=t.index('id=\"p88-frontier\"'); r3=t.index('id=\"research-iii-overview\"'); paths=t.index('id=\"reader-paths\"'); assert r1 < p < r3 < paths < t.index('id=\"plain-language\"'); assert all(x not in t for x in ('id=\"p87-frontier\"','id=\"p86-frontier\"','id=\"p85-frontier\"'))"
           python -c "from pathlib import Path; t=Path('_site/visual-atlas.html').read_text(encoding='utf-8'); p=t.index('id=\"p88-frontier\"'); assert p < t.index('id=\"p87-frontier\"'); assert p < t.index('id=\"p86-frontier\"')"
       - name: Verify repository publication surfaces
         run: python scripts/verify_repository.py

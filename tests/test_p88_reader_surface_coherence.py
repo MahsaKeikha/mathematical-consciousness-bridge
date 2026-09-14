@@ -10,8 +10,10 @@ def _page(name: str) -> str:
 
 def test_overview_is_canonical_88_p88_state():
     text = _page("index.html")
+    research_i = text.index('id="research-i-overview"')
     p88 = text.index('id="p88-frontier"')
-    p87 = text.index('id="p87-frontier"')
+    research_iii = text.index('id="research-iii-overview"')
+    reader_paths = text.index('id="reader-paths"')
 
     assert text.count('id="p88-frontier"') == 1
     assert "Explore all 88 results" in text
@@ -19,14 +21,16 @@ def test_overview_is_canonical_88_p88_state():
     assert "The 88 results form several dependency branches." in text
     assert "The 88-result program" in text
     assert "all 88 propositions" in text
-    assert "Current theorem frontier · P88" in text[p88:p87]
-    assert p88 < p87
+    assert "Research II · Current theorem frontier · P88" in text
+    assert research_i < p88 < research_iii < reader_paths
+    assert "physics_pipeline.svg" in text[research_i:p88]
+    assert "measurement_architecture.svg" in text[research_iii:reader_paths]
+    assert "Two implemented fusion regimes" in text[research_iii:reader_paths]
 
+    for historical_id in ('id="p87-frontier"', 'id="p86-frontier"', 'id="p85-frontier"'):
+        assert historical_id not in text
     assert "Current record:</strong> 87 proposition-level results through P87" not in text
-    assert "The 87 results form several dependency branches." not in text
-    assert "The 87-result program" not in text
     assert "Current theorem frontier · P87" not in text
-
 
 def test_plain_language_is_canonical_88_p88_state():
     text = _page("plain-language.html")
