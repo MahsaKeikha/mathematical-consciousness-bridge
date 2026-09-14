@@ -5,7 +5,9 @@ on:
     branches: ["p89-complete-linear-parity-duality"]
     paths:
       - ".github/workflows/temporary-promote-p89-balanced-reader.yml"
+      - "scripts/migrate_p89_publication_contract.py"
       - "scripts/promote_p89_public_frontier.py"
+      - "scripts/synchronize_p89_reader_frontier_phrases.py"
       - "src/consciousness_bridge/complete_linear_parity_duality.py"
       - "tests/test_complete_linear_parity_duality.py"
       - "docs/proposition_89_complete_linear_parity_duality.md"
@@ -22,7 +24,7 @@ concurrency:
 jobs:
   promote:
     runs-on: ubuntu-24.04
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
         with:
@@ -40,29 +42,48 @@ jobs:
           python -m pytest -q tests/test_complete_linear_parity_duality.py
           python -m py_compile \
             src/consciousness_bridge/complete_linear_parity_duality.py \
-            scripts/promote_p89_public_frontier.py
-      - name: Promote P89 and rebalance reader entry pages
+            scripts/migrate_p89_publication_contract.py \
+            scripts/promote_p89_public_frontier.py \
+            scripts/synchronize_p89_reader_frontier_phrases.py
+      - name: Migrate permanent publication machinery to P89
         run: |
+          python scripts/migrate_p89_publication_contract.py
+          python scripts/synchronize_p89_reader_frontier_phrases.py
           python scripts/promote_p89_public_frontier.py
+          python scripts/sync_figure_publication.py
+          python scripts/synchronize_research_three_website.py
+      - name: Validate P89 publication and balanced reader contracts
+        run: |
+          python -m pytest -q \
+            tests/test_complete_linear_parity_duality.py \
+            tests/test_figure_publication_sync.py \
+            tests/test_p89_reader_surface_coherence.py \
+            tests/test_research_website_integrity.py \
+            tests/test_website_research_orientation.py \
+            tests/test_website_link_integrity.py \
+            tests/test_website_build.py
+          python scripts/sync_figure_publication.py --check
+          python scripts/verify_repository.py
           git diff --check
           grep -q 'id="three-stage-progress"' website/plain-language.html
           grep -q 'id="program-stages"' website/start-here.html
-          grep -q 'Research I' website/plain-language.html
-          grep -q 'Research II' website/plain-language.html
-          grep -q 'Research III' website/plain-language.html
-          grep -q 'Research I' website/start-here.html
-          grep -q 'Research II' website/start-here.html
-          grep -q 'Research III' website/start-here.html
-          grep -q '89 results · current frontier P89' website/plain-language.html
-          grep -q '89 results · current frontier P89' website/start-here.html
-      - name: Commit balanced P89 reader surfaces
+          grep -q '<strong>Research I</strong><span>physical-system identification</span>' website/plain-language.html
+          grep -q '<strong>Research II</strong><span>89 results · current frontier P89</span>' website/plain-language.html
+          grep -q '<strong>Research III</strong><span>measurement science under uncertainty</span>' website/plain-language.html
+          grep -q '<strong>Research I</strong><span>physical-system identification</span>' website/start-here.html
+          grep -q '<strong>Research II</strong><span>89 results · current frontier P89</span>' website/start-here.html
+          grep -q '<strong>Research III</strong><span>measurement science under uncertainty</span>' website/start-here.html
+          grep -q 'The 89 Research II propositions by scientific role' website/start-here.html
+      - name: Commit P89 publication migration
         run: |
           if git diff --quiet; then
-            echo "P89 reader surfaces already synchronized."
+            echo "P89 publication surfaces already synchronized."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add website
-          git commit -m "Promote P89 with balanced reader entry pages"
+          git add README.md START_HERE.md CITATION.md docs figures scripts tests website
+          git commit -m "Synchronize P89 publication and balanced reader contracts"
+          git fetch origin p89-complete-linear-parity-duality
+          git rebase origin/p89-complete-linear-parity-duality
           git push origin HEAD:p89-complete-linear-parity-duality
