@@ -4,10 +4,6 @@ ROOT = Path(__file__).resolve().parents[1]
 MAP = ROOT / "website/research-map.html"
 
 
-
-
-
-
 def test_research_map_gives_direct_audit_paths():
     text = MAP.read_text(encoding="utf-8")
     required = [
@@ -35,12 +31,11 @@ def test_research_map_gives_direct_audit_paths():
         "proposition_84_exact_projection_parity_contrast.md",
         "joint_projection_parity_contrast_separation.py",
         "test_joint_projection_parity_contrast_separation.py",
-        'index.html#p88-frontier',
+        'index.html#p89-frontier',
     ]
     for token in required:
         assert token in text, token
-
-
+    assert 'index.html#p88-frontier' not in text
 
 
 def test_p84_previous_frontier_is_unique_and_structurally_inside_main():
