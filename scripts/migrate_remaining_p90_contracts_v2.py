@@ -32,7 +32,7 @@ def main() -> None:
     replace_if_present(
         "CITATION.md",
         "The current documented theorem frontier is **P89**. The formal package release remains **Version 0.82.0**. P89 closes the declared complete real linear parity-functional class on the stated P75 box with exact value `L89 = 5/168`; it does not close the physical-to-experiential bridge.",
-        "The current documented theorem frontier is **P90**. The formal package release remains **Version 0.82.0**. P90 gives the exact nonlinear rank-one model-separation value `L90 = 5/72 = (7/3)L89` on the declared P75 strict box. P89 remains the complete real linear parity-functional subfrontier at `L89 = 5/168`. Neither result closes the physical-to-experiential bridge.",
+        "The current documented theorem frontier is **P90**. The formal package release remains **Version 0.82.0**. P90 gives the exact nonlinear rank-one model-separation value `L90 = 5/72 = (7/3)L89` on the declared P75 strict box. P89 remains the complete real linear parity-functional subfrontier at `L89 = 5/168`. Neither result closes the physical-to-experiential bridge.\n\n## Historical theorem frontier: P89\n\nP89 is preserved as the complete real linear parity-functional subfrontier. It proves `L89 = 5/168` for all real linear combinations of the eleven declared parity observables on the stated P75 box. P90 strengthens the overall separation by using a genuinely nonlinear rank-one constraint; it does not erase or weaken the P89 linear completeness result.",
     )
     replace_if_present(
         "CITATION.md",
