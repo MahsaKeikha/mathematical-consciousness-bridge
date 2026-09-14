@@ -41,7 +41,7 @@ jobs:
             tests/test_figure_documentation_integrity.py
           python scripts/sync_figure_publication.py --check
           python scripts/verify_repository.py
-          python -m ruff check scripts/promote_p90_public_frontier.py scripts/repair_p90_reader_residuals.py tests/test_p90_reader_surface_coherence.py
+          python -m ruff check scripts/promote_p90_public_frontier.py scripts/repair_p90_reader_residuals.py scripts/verify_repository.py tests/test_p90_reader_surface_coherence.py
           git diff --check
       - name: Persist canonical P90 publication outputs
         run: |
@@ -52,6 +52,7 @@ jobs:
               website/plain-language.html \
               website/start-here.html \
               scripts/promote_p90_public_frontier.py \
+              scripts/verify_repository.py \
               docs/figure_catalog.md \
               docs/figures/p90_exact_nonlinear_rank_one_separation.svg \
               figures/current_frontier.svg \
