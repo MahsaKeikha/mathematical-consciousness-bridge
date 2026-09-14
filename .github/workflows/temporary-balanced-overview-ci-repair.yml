@@ -1,0 +1,80 @@
+name: temporary-balanced-overview-ci-repair
+
+on:
+  push:
+    branches:
+      - overview-reader-entry-paths
+    paths:
+      - scripts/repair_balanced_overview_regressions.py
+      - .github/workflows/temporary-balanced-overview-ci-repair.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          ref: overview-reader-entry-paths
+          fetch-depth: 0
+
+      - name: Install focused test environment
+        run: python -m pip install -e ".[dev]"
+
+      - name: Apply CI regression repairs
+        run: python scripts/repair_balanced_overview_regressions.py
+
+      - name: Run exposed and adjacent publication tests
+        run: |
+          python -m pytest -q \
+            tests/test_p84_reader_presentation.py \
+            tests/test_research_website_integrity.py \
+            tests/test_website_link_integrity.py \
+            tests/test_publication_contract_v2.py \
+            tests/test_p88_reader_surface_coherence.py \
+            tests/test_figure_publication_sync.py \
+            tests/test_website_research_orientation.py \
+            tests/test_reader_experience.py
+
+      - name: Verify publication machinery and exact website build
+        run: |
+          python scripts/promote_p88_public_frontier.py
+          python scripts/sync_figure_publication.py --check
+          python scripts/synchronize_research_three_website.py --site website --check
+          python scripts/verify_frontier_publication.py
+          rm -rf _site
+          python scripts/prepare_website.py --source website --output _site
+          grep -q 'id="research-i-overview"' _site/index.html
+          grep -q 'id="p88-frontier"' _site/index.html
+          grep -q 'id="research-iii-overview"' _site/index.html
+          grep -q 'id="audit-paths"' _site/index.html
+          ! grep -q 'id="p87-frontier"' _site/index.html
+          ! grep -q 'id="p86-frontier"' _site/index.html
+          ! grep -q 'id="p85-frontier"' _site/index.html
+          ! grep -q 'id="p84-frontier"' _site/index.html
+          git diff --check
+
+      - name: Require scoped repair
+        run: |
+          unexpected="$(git diff --name-only | grep -Ev '^(website/index.html|website/implementation.html|tests/test_p84_reader_presentation.py)$' || true)"
+          if [ -n "$unexpected" ]; then
+            echo "Unexpected files changed:"
+            echo "$unexpected"
+            exit 1
+          fi
+
+      - name: Commit permanent repair only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add website/index.html website/implementation.html tests/test_p84_reader_presentation.py
+          if git diff --cached --quiet; then
+            echo "No permanent repair changes to commit."
+            exit 0
+          fi
+          git commit -m "Repair balanced Overview publication contracts"
+          git push origin HEAD:overview-reader-entry-paths
