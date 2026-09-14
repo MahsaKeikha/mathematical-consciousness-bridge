@@ -20,7 +20,7 @@ This is the preferred citation for the research program at the current documente
   version      = {0.82.0},
   howpublished = {GitHub research repository},
   url          = {https://github.com/MahsaKeikha/mathematical-consciousness-bridge},
-  note         = {Ongoing research program. Current documented theorem frontier: P89.}
+  note         = {Ongoing research program. Current documented theorem frontier: P90.}
 }
 ```
 
@@ -98,7 +98,7 @@ These remain conditional statistical target-measurement results, not validation 
 
 When citing a theorem, readers should consult the proposition document for its assumptions and scope rather than citing the theorem statement without its declared conditions.
 
-## Current theorem frontier: P89
+## Current theorem frontier: P90
 
 The current documented theorem frontier is **P89**. The formal package release remains **Version 0.82.0**. P89 closes the declared complete real linear parity-functional class on the stated P75 box with exact value `L89 = 5/168`; it does not close the physical-to-experiential bridge.
 
@@ -190,3 +190,14 @@ P88 was the immediately preceding Research II frontier. It completed the primiti
 ## Historical theorem frontier: P87
 
 P87 was the immediately preceding theorem frontier. It completed the sign-normalized primitive nonzero four-event coefficient box with `0 < |c_i| <= 2`, auditing 39,600 exact functionals. On the stored exact rational witness, the complete P86 certificate is `1/192` and P87 certifies `1/96`. This is a conditional model-separation result for the declared P75 family, not an identification or definition of consciousness.
+
+## Current theorem frontier: P90
+
+The current documented theorem frontier is **P90**, an exact nonlinear rank-one slice separation theorem for the declared strict P75 box.
+
+- Proof: [`proposition_90_exact_nonlinear_rank_one_separation.md`](docs/proposition_90_exact_nonlinear_rank_one_separation.md)
+- Equation provenance: [`p90_equation_provenance.md`](docs/p90_equation_provenance.md)
+- Implementation: [`exact_nonlinear_rank_one_separation.py`](src/consciousness_bridge/exact_nonlinear_rank_one_separation.py)
+- Exact tests: [`test_exact_nonlinear_rank_one_separation.py`](tests/test_exact_nonlinear_rank_one_separation.py)
+
+P90 is a conditional model-separation result. It does not identify consciousness or establish nonphysicality.

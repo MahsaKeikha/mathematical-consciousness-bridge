@@ -90,6 +90,7 @@ def promote_readme() -> None:
     text = read(path)
     text = replace_many(text, (
         ("The current public theorem frontier is **P89**.", "The current public theorem frontier is **P90**."),
+        ("**Public theorem frontier:** P89", "**Public theorem frontier:** P90"),
         ("docs/proposition_89_complete_linear_parity_duality.md", f"docs/{PROOF_NAME}"),
     ))
     block = f'''### Current theorem frontier
@@ -171,8 +172,17 @@ P90 is a conditional model-separation result for the declared strict P75 box. It
         ("The current documented theorem frontier is **P89**.", "The current documented theorem frontier is **P90**."),
         ("P1 through P89 with explicit dependency branches", "P1 through P90 with explicit dependency branches"),
         ("## After P89", "## After P90"),
+        ("continuation beyond P89", "continuation beyond P90"),
+        ("A future P90 claim", "A future P91 claim"),
     ))
-    text = append_once(text, "## P90: exact nonlinear rank-one slice separation", f'''## P90: exact nonlinear rank-one slice separation
+    p89_dependency = "&\\text{P89: complete linear parity-functional duality closes all real linear directions on the eleven canonical parity coordinates}"
+    p90_dependency = "&\\text{P90: exact nonlinear rank-one slice separation exploits product-law image structure beyond the complete P89 linear envelope}"
+    if p90_dependency not in text:
+        if p89_dependency not in text:
+            raise RuntimeError("P89 dependency-map anchor missing")
+        text = text.replace(p89_dependency, p89_dependency + "\\\\n&\\Downarrow\\\\n" + p90_dependency, 1)
+
+    text = append_once(text, "## P90: exact nonlinear rank-one slice separation", fr'''## P90: exact nonlinear rank-one slice separation
 
 P90 is the first result after the complete P89 linear parity-functional closure to exploit genuinely nonlinear structure of the declared P75 image. On the strict box, prevalence is fixed at zero and the observable law is one product Bernoulli component. A canonical two-by-two slice must therefore satisfy `ad = bc`. The empirical determinant residual `5/192` gives an exact lower radius `5/72`, and a rational P75 point gives a matching full-law upper radius `5/72`.
 
@@ -241,7 +251,7 @@ def p90_home_section() -> str:
     <article class="frontier-summary-card"><h3>Beyond P89</h3><p><strong>L90 = 5/72 = (7/3)L89</strong>. The gain comes from nonlinear image structure, not a larger linear coefficient search.</p></article>
   </div>
   <div class="boundary"><p><strong>Scientific boundary:</strong> P90 is exact only for the declared strict P75 box. It does not identify consciousness, establish nonphysicality, validate an alternative theory, or close the physical-to-experiential bridge.</p></div>
-  <p><a href="research-map.html">Research II map</a> · <a href="visual-atlas.html">Theorem figures</a> · <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/{PROOF_NAME}">{PROOF_NAME}</a> · <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/{PROVENANCE_NAME}">{PROVENANCE_NAME}</a></p>
+  <p><a href="research-map.html">Research II map</a> · <a href="visual-atlas.html">Theorem figures</a> · <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/{PROOF_NAME}">{PROOF_NAME}</a> · <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/{PROVENANCE_NAME}">{PROVENANCE_NAME}</a> · <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/{SOURCE_NAME}">{SOURCE_NAME}</a> · <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/tests/{TEST_NAME}">{TEST_NAME}</a></p>
 </section>
 
 '''
@@ -256,6 +266,8 @@ def promote_website() -> None:
         ("89 proposition-level results through P89", "90 proposition-level results through P90"),
         ("P89 current theorem frontier", "P90 current theorem frontier"),
         ("Current theorem frontier · P89", "Current theorem frontier · P90"),
+        ("The 89 results form several dependency branches.", "The 90 results form several dependency branches."),
+        ("all 89 propositions", "all 90 propositions"),
         ("P71-P89", "P71-P90"), ("P73-P89", "P73-P90"), ("P74-P89", "P74-P90"), ("P75-P89", "P75-P90"), ("P1-P89", "P1-P90"),
     ))
     text = re.sub(r'<!-- current-frontier-home: P89 -->\s*<section id="p89-frontier".*?</section>\s*', "", text, count=1, flags=re.DOTALL)

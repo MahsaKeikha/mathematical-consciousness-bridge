@@ -17,7 +17,7 @@ LEGACY_RESEARCH_THREE_PINS = (
     "8bbb7b029d70c43cc6a9dbf8b44dfe5069d0993d",
     "7a106820158e0d33ea651f7cdeaa505206f1ccc7",
 )
-P89_HOME_MARKER = "<!-- current-frontier-home: P89 -->"
+CURRENT_HOME_MARKER = "<!-- current-frontier-home: P90 -->"
 
 MEASUREMENT_SCIENCE_REPLACEMENTS = {
     '<div><strong>23</strong><span>tests in each CI job</span></div>':
@@ -58,10 +58,10 @@ def _synchronize_measurement_science(text: str) -> str:
 
 def _collapse_frontier_markers(text: str) -> str:
     marker_pattern = re.compile(
-        rf"(?:{re.escape(P89_HOME_MARKER)}\s*){{2,}}",
+        rf"(?:{re.escape(CURRENT_HOME_MARKER)}\s*){{2,}}",
         flags=re.MULTILINE,
     )
-    return marker_pattern.sub(f"{P89_HOME_MARKER}\n", text)
+    return marker_pattern.sub(f"{CURRENT_HOME_MARKER}\n", text)
 
 
 def synchronize_site(site: Path, *, write: bool) -> list[str]:
@@ -89,7 +89,7 @@ def synchronize_site(site: Path, *, write: bool) -> list[str]:
         name: (site / name).read_text(encoding="utf-8")
         for name in targets
     }
-    if validation_text["index.html"].count(P89_HOME_MARKER) != 1:
+    if validation_text["index.html"].count(CURRENT_HOME_MARKER) != 1:
         raise RuntimeError("homepage must contain exactly one current P88 source marker")
 
     for surface in ("measurement-science.html", "research-lineage.html"):

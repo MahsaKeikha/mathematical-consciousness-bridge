@@ -204,6 +204,7 @@ def main() -> None:
             ('"complete_linear_parity_duality.py" in current', '"exact_nonlinear_rank_one_separation.py" in current'),
             ('"test_complete_linear_parity_duality.py" in current', '"test_exact_nonlinear_rank_one_separation.py" in current'),
             ("Previous theorem frontier · P88", "Previous theorem frontier · P89"),
+            ("text[p88:p87]", "text[p89:p88]"),
             ("assert research_i < p89 < research_iii < reader_paths", "assert research_i < p90 < research_iii < reader_paths"),
             ("current = text[p89:research_iii]", "current = text[p90:research_iii]"),
             ("text[research_i:p89]", "text[research_i:p90]"),
@@ -218,6 +219,15 @@ def main() -> None:
             ("research_i < p89 < research_iii", "research_i < p90 < research_iii"),
         ),
     )
+
+    target = ROOT / "tests/test_figure_publication_sync.py"
+    test_text = target.read_text(encoding="utf-8")
+    old = "    p90 = text.index(\'id=\"p90-frontier\"\')\n    p88 = text.index(\'id=\"p88-frontier\"\')"
+    new = "    p90 = text.index(\'id=\"p90-frontier\"\')\n    p89 = text.index(\'id=\"p89-frontier\"\')\n    p88 = text.index(\'id=\"p88-frontier\"\')"
+    if old in test_text:
+        test_text = test_text.replace(old, new, 1)
+    test_text = test_text.replace("text[p88:p87]", "text[p89:p88]", 1)
+    target.write_text(test_text, encoding="utf-8")
 
     patch(
         ".github/workflows/figures.yml",

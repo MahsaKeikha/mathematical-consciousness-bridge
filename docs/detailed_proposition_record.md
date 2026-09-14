@@ -1,6 +1,6 @@
 # Detailed proposition record
 
-## Complete P1 to P89 chronology
+## Complete P1 to P90 chronology
 
 This page preserves the proposition-by-proposition development history of the Mathematical Consciousness Bridge research program. It is intentionally separate from the main README so a first-time reader can follow the scientific argument without first learning the internal chronology of the project.
 
@@ -10,11 +10,11 @@ The scientific status rule is strict throughout: a theorem is only a theorem und
 
 ### How to use this record
 
-A first-time reader should not read this page as 89 disconnected proposition-level results. Use it as an audit index: identify the scientific role of a proposition, open its direct proof when needed, then follow implementation/tests/provenance links for verification. For the shortest conceptual path, begin with [Start Here](../START_HERE.md) and [Research Navigation](research_navigation.md). The [Reader Experience and Visual Presentation Standard](reader_experience_and_visual_standard.md) explains the repository-wide explanation and visual hierarchy.
+A first-time reader should not read this page as 90 disconnected proposition-level results. Use it as an audit index: identify the scientific role of a proposition, open its direct proof when needed, then follow implementation/tests/provenance links for verification. For the shortest conceptual path, begin with [Start Here](../START_HERE.md) and [Research Navigation](research_navigation.md). The [Reader Experience and Visual Presentation Standard](reader_experience_and_visual_standard.md) explains the repository-wide explanation and visual hierarchy.
 
 ---
 
-## Complete P1 to P89 chronology
+## Complete P1 to P90 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
@@ -334,3 +334,15 @@ The result is complete for the declared **linear parity-functional class** only.
 - Implementation: `src/consciousness_bridge/complete_linear_parity_duality.py`
 - Tests: `tests/test_complete_linear_parity_duality.py`
 - Figure: `docs/figures/p89_complete_linear_parity_duality.svg`
+
+## Proposition 90: Exact Nonlinear Rank-One Slice Separation
+
+P90 moves beyond the complete P89 linear parity-functional envelope by using a nonlinear rank-one identity of the actual strict P75 model image. Because the strict box fixes prevalence at zero, the four-view model is one product Bernoulli law, so every canonical two-by-two slice has determinant zero. The established empirical slice has determinant residual `5/192`, yielding an exact L-infinity lower bound `5/72`; one rational P75 parameter point attains full-law distance exactly `5/72`. Therefore `L90 = 5/72 = (7/3)L89` on the stated witness.
+
+- [Proof](proposition_90_exact_nonlinear_rank_one_separation.md)
+- [Equation provenance](p90_equation_provenance.md)
+- Implementation: `src/consciousness_bridge/exact_nonlinear_rank_one_separation.py`
+- Tests: `tests/test_exact_nonlinear_rank_one_separation.py`
+- Figure: `docs/figures/p90_exact_nonlinear_rank_one_separation.svg`
+
+This is a conditional exact model-separation theorem for the strict P75 box and does not identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.

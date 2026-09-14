@@ -10,12 +10,12 @@ You do not need every command at once. Choose the route that matches your goal.
 | --- | --- |
 | Reproduce the maintained repository as strictly as possible | `make reproduce` |
 | Run the normal verification suite | `make check` |
-| Run only the current P89 theorem checks | focused P89 commands below |
+| Run only the current P90 theorem checks | focused P90 commands below |
 | Validate figures without rebuilding them | `make figures-check` |
 | Regenerate the complete visual record | `make figures` |
 | Inspect CI without installing locally | GitHub Actions |
 
-The current public theorem frontier is **P89**. The formal release remains **v0.82.0**.
+The current public theorem frontier is **P90**. The formal release remains **v0.82.0**.
 
 ---
 
@@ -104,18 +104,18 @@ Use this route when you want to verify the current committed state without regen
 
 ---
 
-## 5. Focused audit of the current P89 frontier
+## 5. Focused audit of the current P90 frontier
 
-The current theorem frontier is **P89**.
+The current theorem frontier is **P90**.
 
 Its direct technical record is:
 
 ```text
-docs/proposition_89_complete_linear_parity_duality.md
-docs/p89_equation_provenance.md
-src/consciousness_bridge/complete_linear_parity_duality.py
-tests/test_complete_linear_parity_duality.py
-docs/figures/p89_complete_linear_parity_duality.svg
+docs/proposition_90_exact_nonlinear_rank_one_separation.md
+docs/proposition_90_equation_provenance.md
+src/consciousness_bridge/exact_nonlinear_rank_one_separation.py
+tests/test_exact_nonlinear_rank_one_separation.py
+docs/figures/p90_exact_nonlinear_rank_one_separation.svg
 figures/manifest.json
 ```
 
@@ -123,30 +123,39 @@ Run the focused theorem and figure-publication checks with:
 
 ```bash
 python -m pytest \
-  tests/test_complete_linear_parity_duality.py \
+  tests/test_exact_nonlinear_rank_one_separation.py \
   tests/test_figure_publication_sync.py \
-  tests/test_p89_reader_surface_coherence.py
+  tests/test_frontier_publication_consistency.py
 ```
 
-P89 considers every real linear functional of the eleven canonical P83 parity coordinates. On the published strict witness, the exact functional coefficient vector is
+P90 uses a genuinely nonlinear constraint of the declared strict P75 model image. Because prevalence is fixed at zero, the active observable law is one product Bernoulli component, and the canonical two-by-two slice must satisfy `ad = bc`. For the established empirical slice,
 
 ```text
-(0, -2, -1, 1, 1, 1, -2, -1, -3, 2, -3)
+q1000 = 1/8
+q1001 = 1/24
+q1010 = 0
+q1011 = 5/24
 ```
 
-with empirical value `-13/6`, exact P75 interval `[-51/8,-3]`, interval gap `5/6`, centering constant `-3`, and centered transfer norm `28`. The normalized lower certificate is therefore
+the determinant residual is `5/192` and the slice mass is `3/8`. Therefore every rank-one slice within L-infinity radius `epsilon` must satisfy
 
 \[
-\frac5{168}.
+\epsilon \ge \frac{5/192}{3/8} = \frac5{72}.
 \]
 
-A matching rational convex-vertex plus zero-mass perturbation certificate has exact infinity radius `5/168`. The equality of the lower and upper certificates proves that `5/168` is the exact optimum over the complete real linear parity-functional class on the stated box. Thus
+The rational P75 parameter point
+
+```text
+(0, 3/5, 1/2, 3/8, 3/4, 5/9, 1/2, 2/3, 3/4)
+```
+
+attains full-law L-infinity distance exactly `5/72`, so the lower and upper certificates match:
 
 \[
-L_{88}=\frac1{64}<L_{89}=\frac5{168}.
+L_{90}=\frac5{72}=\frac73L_{89},\qquad L_{89}=\frac5{168}.
 \]
 
-This completeness statement is limited to the declared linear parity-functional class. It does not exhaust nonlinear P75 constraints or close the physical-to-experiential bridge.
+P90 is exact only for the declared strict P75 box and its fixed extreme-prevalence product-law image. It does not identify consciousness, establish nonphysicality, exhaust more general nonlinear mixture constraints, or close the physical-to-experiential bridge.
 
 ---
 
@@ -348,3 +357,23 @@ For terminology, use the [Glossary](glossary.md).
 For the theorem dependency structure, use the [Theorem Roadmap](theorem_roadmap.md).
 
 For every proposition in chronological order, use the [Detailed Proposition Record](detailed_proposition_record.md).
+
+## Focused audit of the current P90 frontier
+
+The exact P90 technical record is:
+
+```text
+docs/proposition_90_exact_nonlinear_rank_one_separation.md
+docs/p90_equation_provenance.md
+src/consciousness_bridge/exact_nonlinear_rank_one_separation.py
+tests/test_exact_nonlinear_rank_one_separation.py
+docs/figures/p90_exact_nonlinear_rank_one_separation.svg
+```
+
+Run the focused theorem checks with:
+
+```bash
+python -m pytest tests/test_exact_nonlinear_rank_one_separation.py
+```
+
+The exact witness satisfies `L90 = 5/72 = (7/3)L89`. The result is limited to the declared strict single-component P75 box.

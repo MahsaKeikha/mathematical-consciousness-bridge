@@ -48,7 +48,7 @@ def test_current_frontier_release_and_open_boundary_are_consistent() -> None:
     assert "## Historical theorem frontier: P88" in citation
     assert "## Historical theorem frontier: P87" in citation
     assert "## Current theorem frontier: P88" not in citation
-    assert "current public frontier is **P89**" in glossary
+    assert "current public frontier is **P90**" in glossary
 
 
 def test_complete_proposition_record_is_canonical_archive() -> None:

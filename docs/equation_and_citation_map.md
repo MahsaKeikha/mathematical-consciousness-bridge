@@ -1295,3 +1295,11 @@ P87 is a conditional model-separation theorem for the declared P75 family. Its e
 - Implementation: [`complete_linear_parity_duality.py`](../src/consciousness_bridge/complete_linear_parity_duality.py)
 - Tests: [`test_complete_linear_parity_duality.py`](../tests/test_complete_linear_parity_duality.py)
 - Figure: [P89 complete-linear certificate](figures/p89_complete_linear_parity_duality.svg)
+
+## P90 exact nonlinear rank-one slice separation
+
+- Theorem: [Proposition 90](proposition_90_exact_nonlinear_rank_one_separation.md)
+- Equation provenance: [P90 equation record](p90_equation_provenance.md)
+- Implementation: [`exact_nonlinear_rank_one_separation.py`](../src/consciousness_bridge/exact_nonlinear_rank_one_separation.py)
+- Tests: [`test_exact_nonlinear_rank_one_separation.py`](../tests/test_exact_nonlinear_rank_one_separation.py)
+- Figure: [P90 nonlinear rank-one certificate](figures/p90_exact_nonlinear_rank_one_separation.svg)

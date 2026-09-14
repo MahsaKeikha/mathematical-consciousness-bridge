@@ -25,7 +25,7 @@ from verify_frontier_publication import verify_frontier_publication
 
 ROOT = Path(__file__).resolve().parents[1]
 CURRENT_VERSION = "0.82.0"
-CURRENT_FRONTIER = "P89"
+CURRENT_FRONTIER = "P90"
 
 CORE_FILES = (
     "README.md",
@@ -58,6 +58,7 @@ CORE_FILES = (
     "docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg",
     "docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg",
     "docs/figures/p89_complete_linear_parity_duality.svg",
+    "docs/figures/p90_exact_nonlinear_rank_one_separation.svg",
     "docs/proposition_84_exact_projection_parity_contrast.md",
     "docs/proposition_85_exact_triple_projection_parity_functional.md",
     "docs/p85_equation_provenance.md",
@@ -69,6 +70,8 @@ CORE_FILES = (
     "docs/p88_equation_provenance.md",
     "docs/proposition_89_complete_linear_parity_duality.md",
     "docs/p89_equation_provenance.md",
+    "docs/proposition_90_exact_nonlinear_rank_one_separation.md",
+    "docs/p90_equation_provenance.md",
     "figures/README.md",
     "figures/CURRENT_FRONTIER.md",
     "figures/manifest.json",
@@ -85,11 +88,14 @@ CORE_FILES = (
     "scripts/enrich_figure_documentation.py",
     "scripts/sync_figure_publication.py",
     "scripts/promote_p89_public_frontier.py",
+    "scripts/promote_p90_public_frontier.py",
+    "scripts/advance_p90_publication_contracts.py",
     "scripts/synchronize_p89_reader_frontier_phrases.py",
     "scripts/prepare_website.py",
     "scripts/reproducibility_audit.py",
     "scripts/verify_frontier_publication.py",
     "tests/test_figure_publication_sync.py",
+    "tests/test_exact_nonlinear_rank_one_separation.py",
 )
 
 LINK_SURFACES = (
@@ -275,7 +281,7 @@ def _verify_release_consistency() -> None:
 def _verify_proposition_files() -> None:
     missing: list[int] = []
     duplicates: dict[int, list[str]] = {}
-    for number in range(1, 90):
+    for number in range(1, 91):
         matches = sorted((ROOT / "docs").glob(f"proposition_{number}_*.md"))
         if not matches:
             missing.append(number)
@@ -317,9 +323,9 @@ def _verify_figure_publication_sync() -> None:
         raise RuntimeError("figure manifest does not report the current theorem frontier")
     current_figure = str(manifest.get("current_frontier_figure", ""))
     if not current_figure.endswith(
-        "p89_complete_linear_parity_duality.svg"
+        "p90_exact_nonlinear_rank_one_separation.svg"
     ):
-        raise RuntimeError("figure manifest does not point to the canonical P88 SVG")
+        raise RuntimeError("figure manifest does not point to the canonical P90 SVG")
 
     canonical = sorted((ROOT / "docs" / "figures").rglob("*.svg"))
     records = manifest.get("figures")
@@ -333,11 +339,11 @@ def _verify_figure_publication_sync() -> None:
         raise RuntimeError("complete figure manifest is not aligned with docs/figures")
 
     visual_atlas = _read("website/visual-atlas.html")
+    p90 = visual_atlas.index('id="p90-frontier"')
     p89 = visual_atlas.index('id="p89-frontier"')
     p88 = visual_atlas.index('id="p88-frontier"')
-    p87 = visual_atlas.index('id="p87-frontier"')
-    if not (p89 < p88 < p87):
-        raise RuntimeError("Visual Atlas does not lead with the current P89 figure")
+    if not (p90 < p89 < p88):
+        raise RuntimeError("Visual Atlas does not lead with the current P90 figure")
 
     subprocess.run(
         [sys.executable, str(ROOT / "scripts" / "sync_figure_publication.py"), "--check"],

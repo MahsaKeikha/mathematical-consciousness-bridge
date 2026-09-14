@@ -1,31 +1,29 @@
-# Current visual frontier: P71-P89
+# Current visual frontier: P71-P90
 
 This page is generated from the canonical proposition and figure tree.
 It is the compact GitHub-facing visual route through the current target-side branch.
 
-## Current theorem frontier: P89
+## Current theorem frontier: P90
 
-![P89 current theorem frontier](../docs/figures/p89_complete_linear_parity_duality.svg)
+![P90 current theorem frontier](../docs/figures/p90_exact_nonlinear_rank_one_separation.svg)
 
-[Read Proposition 89](../docs/proposition_89_complete_linear_parity_duality.md)
+[Read Proposition 90](../docs/proposition_90_exact_nonlinear_rank_one_separation.md)
 
-[Open P89 equation provenance](../docs/p89_equation_provenance.md)
+[Open P90 equation provenance](../docs/p90_equation_provenance.md)
 
-### Exact P89 complete-linear witness
+### Exact P90 nonlinear rank-one witness
 
-P89 removes both the finite coefficient-radius restriction and the exactly-four-observable support restriction. It considers every real linear functional of all eleven canonical P83 parity coordinates and proves the exact optimum by matching rational lower and upper certificates:
+P90 moves beyond the complete P89 linear envelope. On the strict box, prevalence is fixed at zero, so the selected two-by-two product-law slice must satisfy ad = bc. Matching exact rational lower and upper certificates prove:
 
 ```text
-L88 = 1/64 < L89 = 5/168
-all real coefficient vectors c in R^11 except zero
-matching zero-mass perturbation radius = 5/168
+L89 = 5/168 < L90 = 5/72
+L90 / L89 = 7/3
+empirical determinant residual = 5/192
 ```
 
-The strict P89 direction is `(0, -2, -1, 1, 1, 1, -2, -1, -3, 2, -3)`, with empirical value `-13/6`, exact P75 interval `[-51/8, -3]`, gap `5/6`, and centered norm `28`.
+The theorem is exact only for the declared strict single-component P75 box. It does not identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.
 
-This is complete only for the declared real linear parity-functional class. It does not identify a latent state with conscious experience or exhaust nonlinear P75 constraints.
-
-## P71-P89 canonical theorem-figure index
+## P71-P90 canonical theorem-figure index
 
 | Proposition | Canonical figure | Proof | Provenance |
 | --- | --- | --- | --- |
@@ -48,6 +46,7 @@ This is complete only for the declared real linear parity-functional class. It d
 | P87 | [figure](../docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg) | [proof](../docs/proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md) | [equations](../docs/p87_equation_provenance.md) |
 | P88 | [figure](../docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg) | [proof](../docs/proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md) | [equations](../docs/p88_equation_provenance.md) |
 | P89 | [figure](../docs/figures/p89_complete_linear_parity_duality.svg) | [proof](../docs/proposition_89_complete_linear_parity_duality.md) | [equations](../docs/p89_equation_provenance.md) |
+| P90 | [figure](../docs/figures/p90_exact_nonlinear_rank_one_separation.svg) | [proof](../docs/proposition_90_exact_nonlinear_rank_one_separation.md) | [equations](../docs/p90_equation_provenance.md) |
 
 ## Reproduce the visual record
 
@@ -61,4 +60,4 @@ The complete machine-readable SHA-256 inventory is in [`manifest.json`](manifest
 
 ## Interpretation boundary
 
-P71-P89 strengthens the methodology for testing a declared physical-to-target model. It does not derive consciousness from physics, prove nonphysicality, or close the physical-to-experiential bridge.
+P71-P90 strengthens the methodology for testing a declared physical-to-target model. It does not derive consciousness from physics, prove nonphysicality, or close the physical-to-experiential bridge.
