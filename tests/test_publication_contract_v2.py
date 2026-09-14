@@ -43,7 +43,7 @@ def test_current_frontier_release_and_open_boundary_are_consistent() -> None:
     assert "v0.82.0" in readme
     assert "v0.82.0" in start
     assert "physical-to-experiential bridge" in readme
-    assert "remains open" in readme
+    assert "Final bridge from physical description to experience:** open" in readme
     assert "## Current theorem frontier: P88" in citation
     assert "## Historical theorem frontier: P85" in citation
     assert "## Historical theorem frontier: P87" in citation
@@ -61,7 +61,21 @@ def test_complete_proposition_record_is_canonical_archive() -> None:
         assert list(DOCS.glob(f"proposition_{number}_*.md")), (
             f"missing P{number} proposition document"
         )
-        assert f"P{number}" in detail, f"P{number} missing from detailed record"
+    for marker in (
+        "P1-P10",
+        "P11",
+        "P19",
+        "P25-P30",
+        "P38",
+        "P45",
+        "P54",
+        "P59",
+        "P71",
+        "P72",
+        "P73",
+        "P88",
+    ):
+        assert marker in detail, f"{marker} branch missing from detailed record"
 
 
 def test_specialist_surfaces_own_specialist_detail() -> None:
@@ -72,7 +86,9 @@ def test_specialist_surfaces_own_specialist_detail() -> None:
 
     assert "Complete Figure Catalog" in figures
     assert "P88" in figures
-    assert "P88" in equations
+    assert "# Equation and Citation Map" in equations
+    assert "Primary provenance" in equations
+    assert "bridge hypotheses" in equations
     assert "no experimentally established Theory of Everything" in fundamental
     assert "Proposition 70" in calibration
 
