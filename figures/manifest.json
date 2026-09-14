@@ -640,11 +640,11 @@
     },
     {
       "path": "docs/figures/p90_exact_nonlinear_rank_one_separation.svg",
-      "sha256": "1fb67173ec7ae65b76ea8f4d59c5251d00d86dde8cfd34a166ddac8a71e49566",
-      "bytes": 6163,
+      "sha256": "d5f0323b00b150de276bc017845a9c8e7ada7660660905c5d8e94d022ea59548",
+      "bytes": 6799,
       "category": "theorem-or-architecture",
       "title": "P90 Exact Nonlinear Rank-One Slice Separation",
-      "description_chars": 330
+      "description_chars": 966
     },
     {
       "path": "docs/figures/physics_mathematics_atlas.svg",

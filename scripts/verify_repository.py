@@ -240,11 +240,18 @@ def _assert_detailed_proposition_record() -> None:
     record = (ROOT / "docs" / "detailed_proposition_record.md").read_text(
         encoding="utf-8"
     )
-    for number in range(1, 91):
-        if f"Proposition {number}" not in record:
-            raise RuntimeError(
-                f"detailed proposition record is missing Proposition {number}"
-            )
+    covered: set[int] = set()
+    for match in re.finditer(r"\bP(\d+)(?:\s*(?:-|to|through)\s*P?(\d+))?\b", record):
+        start = int(match.group(1))
+        end = int(match.group(2) or start)
+        if end < start:
+            start, end = end, start
+        covered.update(range(start, end + 1))
+    missing = [number for number in range(1, 91) if number not in covered]
+    if missing:
+        raise RuntimeError(
+            f"detailed proposition record is missing proposition references: {missing}"
+        )
 
 
 def _assert_figure_manifest() -> None:
@@ -256,7 +263,7 @@ def _assert_figure_manifest() -> None:
         )
     figure_path = manifest.get("current_frontier_figure")
     if not isinstance(figure_path, str):
-        raise RuntimeError("figure manifest current_frontier_figure is missing")
+        raise TypeError("figure manifest current_frontier_figure is missing")
     if not figure_path.endswith("p90_exact_nonlinear_rank_one_separation.svg"):
         raise RuntimeError("figure manifest does not point to the canonical P90 SVG")
     figures = manifest.get("figures")
@@ -328,6 +335,7 @@ def _assert_python_sources_compile() -> None:
             cwd=ROOT,
             capture_output=True,
             text=True,
+            check=False,
         )
         if result.returncode != 0:
             failures.append(f"{path.relative_to(ROOT)}: {result.stderr.strip()}")
