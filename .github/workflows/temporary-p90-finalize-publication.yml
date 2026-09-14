@@ -26,7 +26,7 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Repair final canonical P90 publication sources
+      - name: Repair canonical P90 publication sources
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -34,31 +34,59 @@ jobs:
           promoter = Path("scripts/promote_p90_public_frontier.py")
           text = promoter.read_text(encoding="utf-8")
 
-          old = '        ("## After P89", "## After P90"),\n'
-          new = (
-              old
-              + '        ("continuation beyond P89", "continuation beyond P90"),\n'
-              + '        ("A future P90 claim", "A future P91 claim"),\n'
+          # Keep all roadmap future-work language beyond the current P90 frontier.
+          anchor = '        ("## After P89", "## After P90"),\n'
+          additions = (
+              '        ("continuation beyond P89", "continuation beyond P90"),\n'
+              '        ("A future P90 claim", "A future P91 claim"),\n'
           )
           if '("continuation beyond P89", "continuation beyond P90")' not in text:
-              if old not in text:
-                  raise SystemExit("theorem-roadmap migration insertion point not found")
-              text = text.replace(old, new, 1)
+              if anchor not in text:
+                  raise SystemExit("roadmap migration insertion point not found")
+              text = text.replace(anchor, anchor + additions, 1)
 
-          old = '    text = text.replace(\'CURRENT_RECORD_TEXT = "Current record:</strong> 89 proposition-level results through P89"\', \'CURRENT_RECORD_TEXT = "Current record:</strong> 90 proposition-level results through P90"\')\n'
+          # Promote both README declarations, not only the introductory one.
+          anchor = '        ("The current public theorem frontier is **P89**.", "The current public theorem frontier is **P90**."),\n'
+          addition = '        ("**Public theorem frontier:** P89", "**Public theorem frontier:** P90"),\n'
+          if '"**Public theorem frontier:** P89", "**Public theorem frontier:** P90"' not in text:
+              if anchor not in text:
+                  raise SystemExit("README footer migration insertion point not found")
+              text = text.replace(anchor, anchor + addition, 1)
+
+          # Make the current homepage frontier card expose implementation and exact tests.
+          links_old = f'<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/{{PROVENANCE_NAME}}">{{PROVENANCE_NAME}}</a></p>'
+          links_new = (
+              f'<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/{{PROVENANCE_NAME}}">{{PROVENANCE_NAME}}</a> · '
+              f'<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/{{SOURCE_NAME}}">{{SOURCE_NAME}}</a> · '
+              f'<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/tests/{{TEST_NAME}}">{{TEST_NAME}}</a></p>'
+          )
+          if 'blob/main/src/consciousness_bridge/{SOURCE_NAME}' not in text:
+              if links_old not in text:
+                  raise SystemExit("homepage implementation-link insertion point not found")
+              text = text.replace(links_old, links_new, 1)
+
+          # Promote the Research Lineage validation tokens in prepare_website.py.
+          anchor = '    text = text.replace(\'CURRENT_RECORD_TEXT = "Current record:</strong> 89 proposition-level results through P89"\', \'CURRENT_RECORD_TEXT = "Current record:</strong> 90 proposition-level results through P90"\')\n'
           additions = (
               '    text = text.replace("<strong>89</strong><span>proposition-level results</span>", "<strong>90</strong><span>proposition-level results</span>")\n'
               '    text = text.replace("<strong>P89</strong><span>current theorem frontier</span>", "<strong>P90</strong><span>current theorem frontier</span>")\n'
           )
-          if 'text.replace("<strong>P89</strong><span>current theorem frontier</span>", "<strong>P90</strong><span>current theorem frontier</span>")' not in text:
-              if old not in text:
+          if 'text.replace("<strong>P89</strong><span>current theorem frontier</span>, "<strong>P90</strong><span>current theorem frontier</span>")' not in text:
+              if anchor not in text:
                   raise SystemExit("prepare_website promotion insertion point not found")
-              text = text.replace(old, old + additions, 1)
+              if 'text.replace("<strong>P89</strong><span>current theorem frontier</span>", "<strong>P90</strong><span>current theorem frontier</span>")' not in text:
+                  text = text.replace(anchor, anchor + additions, 1)
+
+          # Avoid Python invalid-escape warnings in the LaTeX roadmap block.
+          marker = 'append_once(text, "## P90: exact nonlinear rank-one slice separation", f\'\'\''
+          if marker in text:
+              text = text.replace(marker, marker[:-4] + "fr'''", 1)
 
           promoter.write_text(text, encoding="utf-8")
 
           contracts = Path("scripts/advance_p90_publication_contracts.py")
           ctext = contracts.read_text(encoding="utf-8")
+
           anchor = '            ("internally consistent with P89", "internally consistent with P90"),\n'
           extra = (
               '            ("<strong>89</strong><span>proposition-level results</span>", "<strong>90</strong><span>proposition-level results</span>"),\n'
@@ -68,10 +96,19 @@ jobs:
               if anchor not in ctext:
                   raise SystemExit("prepare_website contract insertion point not found")
               ctext = ctext.replace(anchor, extra + anchor, 1)
+
+          # Permanently repair the migrated P90/P89/P88 atlas ordering test.
+          marker = '    patch(\n        ".github/workflows/figures.yml",\n'
+          repair = '''    target = ROOT / "tests/test_figure_publication_sync.py"\n    test_text = target.read_text(encoding="utf-8")\n    old = """    p90 = text.index('id=\\\"p90-frontier\\\"')\n    p88 = text.index('id=\\\"p88-frontier\\\"')"""\n    new = """    p90 = text.index('id=\\\"p90-frontier\\\"')\n    p89 = text.index('id=\\\"p89-frontier\\\"')\n    p88 = text.index('id=\\\"p88-frontier\\\"')"""\n    if old in test_text:\n        test_text = test_text.replace(old, new, 1)\n    target.write_text(test_text, encoding="utf-8")\n\n'''
+          if 'p89 = text.index(\'id="p89-frontier"\')' not in ctext:
+              if marker not in ctext:
+                  raise SystemExit("figure-test repair insertion point not found")
+              ctext = ctext.replace(marker, repair + marker, 1)
+
           contracts.write_text(ctext, encoding="utf-8")
           PY
 
-      - name: Regenerate P90 publication state
+      - name: Regenerate and normalize P90 publication state
         run: |
           python scripts/promote_p90_public_frontier.py
           python scripts/advance_p90_publication_contracts.py
@@ -79,11 +116,24 @@ jobs:
           python scripts/sync_figure_publication.py
           python - <<'PY'
           from pathlib import Path
-          path = Path("docs/theorem_roadmap.md")
-          text = path.read_text(encoding="utf-8")
+
+          roadmap = Path("docs/theorem_roadmap.md")
+          text = roadmap.read_text(encoding="utf-8")
           text = text.replace("continuation beyond P89", "continuation beyond P90")
           text = text.replace("A future P90 claim", "A future P91 claim")
-          path.write_text(text, encoding="utf-8")
+          roadmap.write_text(text, encoding="utf-8")
+
+          readme = Path("README.md")
+          text = readme.read_text(encoding="utf-8").replace("**Public theorem frontier:** P89", "**Public theorem frontier:** P90")
+          readme.write_text(text, encoding="utf-8")
+
+          test = Path("tests/test_figure_publication_sync.py")
+          text = test.read_text(encoding="utf-8")
+          old = "    p90 = text.index('id=\"p90-frontier\"')\n    p88 = text.index('id=\"p88-frontier\"')"
+          new = "    p90 = text.index('id=\"p90-frontier\"')\n    p89 = text.index('id=\"p89-frontier\"')\n    p88 = text.index('id=\"p88-frontier\"')"
+          if old in text:
+              text = text.replace(old, new, 1)
+          test.write_text(text, encoding="utf-8")
           PY
 
       - name: Validate focused P90 publication state
