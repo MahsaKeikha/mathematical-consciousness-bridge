@@ -1,4 +1,3 @@
-import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -24,16 +23,6 @@ def test_p78_core_artifacts_exist() -> None:
     )
     for path in required:
         assert path.exists(), path
-
-
-
-
-
-
-
-
-
-
 
 
 def test_p78_publication_contains_only_permanent_artifacts() -> None:

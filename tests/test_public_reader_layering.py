@@ -1,8 +1,6 @@
 from __future__ import annotations
 
-import re
 from pathlib import Path
-
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -14,12 +12,6 @@ HOME = ROOT / "website" / "index.html"
 
 def read(path: Path) -> str:
     return path.read_text(encoding="utf-8")
-
-
-
-
-
-
 
 
 def test_research_map_organizes_by_questions_not_full_history() -> None:

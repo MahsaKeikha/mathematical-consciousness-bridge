@@ -20,12 +20,12 @@ from functools import reduce
 from itertools import combinations, product
 from math import gcd
 
+from consciousness_bridge.bounded_primitive_quad_projection_parity_functional_separation import (
+    p75_box_p87_linf_lower_bound_exact,
+)
 from consciousness_bridge.certified_continuous_model_separation import P78ParameterBox
 from consciousness_bridge.projection_parity_model_separation import (
     empirical_projection_parity_probability_exact,
-)
-from consciousness_bridge.bounded_primitive_quad_projection_parity_functional_separation import (
-    p75_box_p87_linf_lower_bound_exact,
 )
 
 _VIEW_COUNT = 4
