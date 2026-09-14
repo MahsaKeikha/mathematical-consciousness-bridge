@@ -264,18 +264,29 @@ def promote_start_here() -> None:
         '<p class="eyebrow">Program architecture</p>\n        <h2>The 89 Research II propositions by scientific role</h2>',
         '<p class="eyebrow">Inside Research II</p>\n        <h2>The 89 Research II propositions by scientific role</h2>',
     )
-    text = text.replace(
-        '<p class="eyebrow">Current certified frontier</p>\n      <h2>P78-P89 progressively tighten global separation from the declared continuous model family</h2>',
-        '<p class="eyebrow">Research II · Current certified frontier</p>\n      <h2>P78-P89 progressively tighten global separation from the declared continuous model family</h2>',
+    frontier_pattern = re.compile(
+        r'<section class="dark-section">.*?</section>',
+        re.DOTALL,
     )
-    if "P89 closes the complete real linear parity-functional class" not in text:
-        needle = "</section>\n\n    <section>\n      <div class=\"section-head\">\n        <p class=\"eyebrow\">What the mathematics does not prove</p>"
-        p89_paragraph = '''      <p><strong>P89 closes the complete real linear parity-functional class.</strong> It removes P88's finite coefficient-radius and four-observable support restrictions. On the established exact-rational witness, a matching lower and upper certificate proves <strong>L89 = 5/168</strong>, strictly above <strong>L88 = 1/64</strong>. This is complete only for the declared linear parity observables; nonlinear P75 constraints and the physical-to-experiential bridge remain open.</p>\n'''
-        frontier_start = text.find('<section class="dark-section">')
-        frontier_end = text.find('</section>', frontier_start)
-        if frontier_start == -1 or frontier_end == -1:
-            raise RuntimeError("Start Here frontier section is missing")
-        text = text[:frontier_end] + p89_paragraph + text[frontier_end:]
+    frontier_section = '''<section class="dark-section">
+      <p class="eyebrow">Research II · Current certified frontier</p>
+      <h2>P78-P89 progressively tighten global separation from the declared continuous model family</h2>
+      <p>P78 introduced exact-rational branch-and-bound for the continuous P75 target-measurement family. P79 certified the sampling-radius direction. P80 retained probability normalization. P81 added projected-event constraints. P82 added exact nested residual contrasts. P83 added exact projection-parity observables that can expose dependency incompatibilities invisible to the earlier audit.</p>
+      <p><strong>P84 and P85 added shared-parameter compatibility across multiple parity events.</strong> P84 tests paired events under one common parameter assignment, while P85 extends the idea to signed three-event functionals. These steps show why separate one-event compatibility is not enough.</p>
+      <p><strong>P86 established a strict minimally weighted four-event certificate.</strong> It audits 10,560 sign-normalized four-event functionals with primitive coefficient magnitudes {1,1,1,2}. On the established exact-rational witness, <strong>L85 = 0 &lt; L86 = 1/192</strong>.</p>
+      <p><strong>P87 completed the primitive radius-two four-event family.</strong> Its 39,600 exact functionals raise the same witness bound to <strong>L87 = 1/96</strong>.</p>
+      <p><strong>P88 extended the complete primitive four-event search to radius three.</strong> Its 208,560 exact functionals raise the bound again to <strong>L88 = 1/64</strong>.</p>
+      <p><strong>P89 closes the complete real linear parity-functional class.</strong> <strong>P89 is the current complete-linear frontier.</strong> It removes both the finite coefficient-radius restriction and the exactly-four-observable support restriction. Across every real linear functional of all eleven canonical P83 parity coordinates, matching exact lower and upper certificates prove <strong>L89 = 5/168</strong>, strictly above <strong>L88 = 1/64</strong>.</p>
+      <p>The important logical direction is one-sided. These results can strengthen rejection of the declared P75 model family. They do not identify a latent state with consciousness, do not validate the model when rejection fails, do not establish nonphysicality, and do not close the physical-to-experiential bridge.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_89_complete_linear_parity_duality.md">Read P89 theorem</a>
+        <a class="button" href="visual-atlas.html">See theorem visuals</a>
+        <a class="button" href="implementation.html#stage-06">See the implementation path</a>
+      </div>
+    </section>'''
+    text, count = frontier_pattern.subn(frontier_section, text, count=1)
+    if count != 1:
+        raise RuntimeError("Start Here frontier section is missing or duplicated")
     write(path, text)
 
 

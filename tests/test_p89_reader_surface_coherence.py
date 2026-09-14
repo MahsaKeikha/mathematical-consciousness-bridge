@@ -67,6 +67,17 @@ def test_start_here_orients_to_three_stages_before_research_ii_chronology():
     assert "Research II · Current certified frontier" in text
     assert "P78-P89 progressively tighten global separation" in text
     assert "P89 closes the complete real linear parity-functional class" in text
+    assert "P86 established a strict minimally weighted four-event certificate" in text
+    assert "P87 completed the primitive radius-two four-event family" in text
+    assert "P88 extended the complete primitive four-event search to radius three" in text
+    assert "P89 is the current complete-linear frontier" in text
+    assert "L88 = 1/64" in text
+    assert "L89 = 5/168" in text
+    assert "P88 is the current exact frontier" not in text
+    assert "Read P89 theorem" in text
+    assert "The most important boundary" in text
+    assert 'id="reader-primer"' in text
+    assert "Six terms that make the rest of the project easier to follow" in text
     assert "Formal repository release:</strong> v0.82.0" in text
 
     program_stages = text.index('id="program-stages"')
