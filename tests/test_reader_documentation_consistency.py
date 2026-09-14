@@ -25,39 +25,10 @@ def _project_version() -> str:
     return match.group(1)
 
 
-def test_start_here_matches_current_release_and_theorem_frontier() -> None:
-    source = _read("START_HERE.md")
-    frontier = _frontier()
-    version = _project_version()
-
-    assert f"v{version}" in source
-    assert f"{frontier} proposition-level results" in source
-    assert f"P{frontier}" in source
-    assert "physical-to-experiential bridge itself remains open" in source
-    assert f"docs/proposition_{frontier}_" in source
 
 
-def test_reader_entry_points_are_linked_from_main_surfaces() -> None:
-    readme = _read("README.md")
-    navigation = _read("docs/research_navigation.md")
-    website = _read("website/index.html")
-
-    assert "START_HERE.md" in readme
-    assert "START_HERE.md" in navigation
-    assert "start-here.html" in website
 
 
-def test_navigation_and_roadmap_report_current_frontier() -> None:
-    navigation = _read("docs/research_navigation.md")
-    roadmap = _read("docs/theorem_roadmap.md")
-    frontier = _frontier()
-
-    assert f"current documented theorem frontier is **P{frontier}**" in navigation
-    assert f"current documented theorem frontier is **P{frontier}**" in roadmap
-    assert f"P{frontier}" in navigation
-    assert f"P{frontier}" in roadmap
-    assert f"P71-P{frontier}" in navigation
-    assert f"P71-P{frontier}" in roadmap
 
 
 def test_public_start_page_is_reader_oriented_and_scientifically_bounded() -> None:

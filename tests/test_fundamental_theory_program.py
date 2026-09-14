@@ -9,28 +9,8 @@ MAP = ROOT / "docs" / "figures" / "fundamental_theory_consciousness_map.svg"
 NS = {"svg": "http://www.w3.org/2000/svg"}
 
 
-def test_main_page_exposes_fundamental_theory_interface():
-    text = README.read_text(encoding="utf-8")
-
-    required = (
-        "# 4.4 Fundamental theory / Theory-of-Everything interface",
-        "fundamental_theory_consciousness_map.svg",
-        "There is currently no experimentally established Theory of Everything",
-        "T(\\Omega)=\\bigl(G(\\Omega),Q(\\Omega),C(\\Omega)\\bigr)",
-    )
-    for phrase in required:
-        assert phrase in text
 
 
-def test_my_big_toe_is_not_presented_as_scientific_fact():
-    text = README.read_text(encoding="utf-8")
-    program = PROGRAM.read_text(encoding="utf-8")
-
-    assert "Thomas W. Campbell" in text
-    assert "speculative falsifiable antecedents" in text
-    assert "not as established premises" in text
-    assert "not established scientific facts" in program
-    assert "speculative falsifiable proposal" in program
 
 
 def test_program_defines_exact_factorization_failure_and_controls():

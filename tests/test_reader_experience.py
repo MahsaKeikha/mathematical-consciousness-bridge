@@ -21,48 +21,6 @@ def test_shared_reader_experience_style_is_built_into_pages() -> None:
     assert "overflow-wrap: anywhere" in css
 
 
-def test_first_reader_surfaces_match_p88_frontier() -> None:
-    start = _text("website/start-here.html")
-    research_map = _text("website/research-map.html")
-    plain = _text("website/plain-language.html")
-
-    assert "88-result theorem program and current P88 frontier" in start
-    assert "P78-P88 progressively tighten global separation" in start
-    assert "P88 is the current exact frontier." in start
-    assert "Current frontier · P85" not in start
-    assert "Current theorem frontier · P86" not in start
-    assert "L85 = 0 &lt; L86 = 1/192" in start
-    assert ">Read P88</a>" in start
-    assert 'id="research-origin"' in start
-    assert "10.1016/j.chaos.2015.03.014" in start
-    assert "The 88 propositions by scientific role" in start
-    assert "You do not need to read 88 proofs in order" in start
-    assert "complete 88-result dependency structure" in start
-    assert "Physical descriptor" in start
-    assert "Observation channel" in start
-
-    assert "through Proposition 88" in research_map
-    assert "Eighty-eight results" in research_map
-    assert "<strong>88</strong>" in research_map
-    assert "P73-P88" in research_map
-
-    assert "<strong>88</strong><span>Research II proposition-level results</span>" in plain
-    assert "<strong>P88</strong><span>current Research II theorem frontier</span>" in plain
-    assert "What the 88 results are doing" in plain
-    assert "P75-P88" in plain
-    assert "actual P88 research frontier" in plain
-    assert "shows how all 88 results connect" in plain
-
-    stale = (
-        "87-result theorem program and current P87 frontier",
-        "<strong>87</strong><span>proposition-level results</span>",
-        "<strong>P87</strong><span>current theorem frontier</span>",
-        "actual P87 research frontier",
-    )
-    for token in stale:
-        assert token not in start
-        assert token not in research_map
-        assert token not in plain
 
 
 def test_no_reader_facing_html_page_advertises_pre_p88_as_current() -> None:

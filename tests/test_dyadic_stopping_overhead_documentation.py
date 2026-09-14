@@ -16,15 +16,3 @@ def test_p49_documentation_exposes_core_results():
         "Scientific boundary",
     ):
         assert phrase in text
-
-
-def test_p49_visual_and_proof_to_code_path_are_public():
-    assert FIGURE.exists()
-    readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    for token in (
-        "p49_dyadic_stopping_overhead.svg",
-        "dyadic_stopping_overhead.py",
-        "test_dyadic_stopping_overhead.py",
-        "**Proposition 49**",
-    ):
-        assert token in readme

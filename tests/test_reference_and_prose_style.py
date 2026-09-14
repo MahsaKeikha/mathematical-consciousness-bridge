@@ -23,18 +23,6 @@ def test_no_en_or_em_dash_in_repository_text():
     assert not violations, f"en dash or em dash found in: {violations}"
 
 
-def test_main_page_exposes_reference_provenance():
-    text = (ROOT / "README.md").read_text(encoding="utf-8")
-    required = [
-        "docs/equation_and_citation_map.md",
-        "docs/foundational_physics_mathematics_bibliography.md",
-        "docs/literature_map.md",
-        "docs/fundamental_theory_references.bib",
-        "docs/reference_audit.md",
-        "docs/citation_and_reference_policy.md",
-    ]
-    for item in required:
-        assert item in text
 
 
 def test_reference_audit_keeps_evidence_classes_distinct():

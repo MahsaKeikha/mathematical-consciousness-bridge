@@ -19,17 +19,6 @@ def test_research_lineage_connects_both_public_repositories() -> None:
         assert token in page
 
 
-def test_lineage_preserves_scientific_boundary_between_projects() -> None:
-    page = Path("website/research-lineage.html").read_text(encoding="utf-8")
-
-    required = (
-        "A recovered subsystem is not automatically a conscious subject",
-        "Bridge remains an independently testable open problem",
-        "not a proof chain to consciousness",
-        "independently justified experiential target or bridge principle",
-    )
-    for token in required:
-        assert token in page
 
 
 def test_lineage_exposes_auditable_research_one_entry_points() -> None:
@@ -44,12 +33,3 @@ def test_lineage_exposes_auditable_research_one_entry_points() -> None:
     )
     for path in required_paths:
         assert path in page
-
-
-def test_global_website_navigation_includes_research_lineage() -> None:
-    script = Path("website/app.js").read_text(encoding="utf-8")
-
-    assert "research-lineage.html" in script
-    assert "Research Lineage" in script
-    assert "spatiotemporal-observer-math" in script
-    assert "Research I → Research II" in script

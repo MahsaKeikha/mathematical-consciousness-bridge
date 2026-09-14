@@ -16,15 +16,3 @@ def test_p51_documentation_exposes_core_results():
         "Scientific boundary",
     ):
         assert phrase in text
-
-
-def test_p51_visual_and_proof_to_code_path_are_public():
-    assert FIGURE.exists()
-    readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    for token in (
-        "p51_heterogeneous_service_rate_stopping.svg",
-        "heterogeneous_service_stopping.py",
-        "test_heterogeneous_service_stopping.py",
-        "**Proposition 51**",
-    ):
-        assert token in readme

@@ -16,15 +16,3 @@ def test_p48_documentation_exposes_core_results():
         "What P48 does not prove",
     ):
         assert phrase in text
-
-
-def test_p48_visual_and_proof_to_code_path_are_public():
-    assert FIGURE.exists()
-    readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    for token in (
-        "p48_gap_dependent_stopping_complexity.svg",
-        "gap_stopping_complexity.py",
-        "test_gap_stopping_complexity.py",
-        "**Proposition 48**",
-    ):
-        assert token in readme

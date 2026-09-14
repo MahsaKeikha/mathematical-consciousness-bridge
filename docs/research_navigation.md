@@ -4,7 +4,7 @@
 
 This page is an index, not another chapter. If you are still learning the overall story, go one layer up to the **[Research Map](research_map.md)**.
 
-The public theorem frontier is **P88**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains open.
+The current documented theorem frontier is **P88**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains open.
 
 ---
 
@@ -12,6 +12,7 @@ The public theorem frontier is **P88**. The formal release is **v0.82.0**. The f
 
 | I want to find... | Go here |
 | --- | --- |
+| A short first introduction | [Start Here](../START_HERE.md) |
 | The overall scientific story | [Research Map](research_map.md) |
 | The formal physical and bridge architecture | [Technical Research Architecture](research_architecture.md) |
 | The central sufficiency problem | [Bridge Problem](bridge_problem.md) |
