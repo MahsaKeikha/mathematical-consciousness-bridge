@@ -66,9 +66,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md CITATION.cff CITATION.md CITATION.bib START_HERE.md docs figures website tests scripts \
-            .github/workflows/figures.yml \
-            .github/workflows/validate-research-three-website.yml
+          git add README.md CITATION.cff CITATION.md CITATION.bib START_HERE.md docs figures website tests scripts
           if git diff --cached --quiet; then
             echo "No P90 publication changes to commit"
             exit 0
@@ -76,4 +74,4 @@ jobs:
           git commit -m "Finalize P90 publication surfaces"
           git push origin HEAD:p90-exact-nonlinear-rank-one-separation
 
-# rerun from canonical Ruff-clean P90 migration source
+# workflow files are persisted separately through the GitHub connector
