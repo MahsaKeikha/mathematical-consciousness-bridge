@@ -189,7 +189,7 @@ def _assert_version_consistency() -> None:
     website = (ROOT / "website" / "index.html").read_text(encoding="utf-8")
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
 
-    expected_cff = f'version: "{CURRENT_VERSION}"'
+    expected_cff = f'version: {CURRENT_VERSION}'
     if expected_cff not in cff:
         raise RuntimeError("CITATION.cff version does not match CURRENT_VERSION")
     expected_pyproject = f'version = "{CURRENT_VERSION}"'
@@ -289,7 +289,7 @@ def _assert_no_policy_punctuation() -> None:
     violations: list[str] = []
     for path in targets:
         text = path.read_text(encoding="utf-8")
-        if "–" in text or "—" in text:
+        if chr(0x2013) in text or chr(0x2014) in text:
             violations.append(str(path.relative_to(ROOT)))
     if violations:
         raise RuntimeError(

@@ -119,7 +119,8 @@ def test_figure_enrichment_generator_preserves_canonical_reader_key() -> None:
 def test_repository_verifier_tracks_p90_and_all_90_propositions() -> None:
     verifier = _text("scripts/verify_repository.py")
     assert 'CURRENT_FRONTIER = "P90"' in verifier
-    assert "for number in range(1, 91):" in verifier
+    assert "covered: set[int] = set()" in verifier
+    assert "range(1, 91)" in verifier
     assert '"docs/reader_experience_and_visual_standard.md"' in verifier
     assert '"docs/proposition_90_exact_nonlinear_rank_one_separation.md"' in verifier
 

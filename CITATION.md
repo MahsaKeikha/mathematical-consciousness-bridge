@@ -8,7 +8,7 @@ If this research program, one of its propositions, figures, algorithms, or imple
 
 > Keikha, M. (2026). *Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem* (Version 0.82.0). GitHub research repository. https://github.com/MahsaKeikha/mathematical-consciousness-bridge
 
-This is the preferred citation for the research program at the current documented frontier, P89.
+This is the preferred citation for the research program at the current documented frontier, P90.
 
 ## BibTeX
 
@@ -53,7 +53,7 @@ This repository is an evolving research program. For reproducible scholarly use:
 3. Cite the individual proposition or artifact when your argument depends on a specific theorem, figure, algorithm, or test.
 4. Do not attribute later propositions or later numerical results to an earlier version of the repository.
 
-The current citation metadata identify Version **0.82.0** and theorem frontier **P89**. Future research versions should update the version number, theorem frontier, citation metadata, and archival record together.
+The current citation metadata identify Version **0.82.0** and theorem frontier **P90**. Future research versions should update the version number, theorem frontier, citation metadata, and archival record together.
 
 ## DOI and archival status
 
@@ -100,7 +100,11 @@ When citing a theorem, readers should consult the proposition document for its a
 
 ## Current theorem frontier: P90
 
-The current documented theorem frontier is **P89**. The formal package release remains **Version 0.82.0**. P89 closes the declared complete real linear parity-functional class on the stated P75 box with exact value `L89 = 5/168`; it does not close the physical-to-experiential bridge.
+The current documented theorem frontier is **P90**. The formal package release remains **Version 0.82.0**. P90 gives the exact nonlinear rank-one model-separation value `L90 = 5/72 = (7/3)L89` on the declared P75 strict box. P89 remains the complete real linear parity-functional subfrontier at `L89 = 5/168`. Neither result closes the physical-to-experiential bridge.
+
+## Historical theorem frontier: P89
+
+P89 is preserved as the complete real linear parity-functional subfrontier. It proves `L89 = 5/168` for all real linear combinations of the eleven declared parity observables on the stated P75 box. P90 strengthens the overall separation by using a genuinely nonlinear rank-one constraint; it does not erase or weaken the P89 linear completeness result.
 
 ## Proposition 89 method citation
 
@@ -112,7 +116,7 @@ P89 is complete only for real linear combinations of the eleven declared parity 
 
 - [`CITATION.cff`](CITATION.cff): machine-readable Citation File Format metadata used by GitHub citation tools.
 - [`CITATION.bib`](CITATION.bib): ready-to-import BibTeX record.
-- [Detailed proposition record](docs/detailed_proposition_record.md): P1 through P89 chronological theorem record.
+- [Detailed proposition record](docs/detailed_proposition_record.md): P1 through P90 chronological theorem record.
 - [Theorem roadmap](docs/theorem_roadmap.md): dependency-oriented theorem map.
 - [P72 equation and provenance record](docs/p72_equation_provenance.md): equation-level classification for the noisy-target theorem.
 - [P73 equation and provenance record](docs/p73_equation_provenance.md): equation-level classification and external latent-class context for the target-channel identifiability theorem.
