@@ -137,13 +137,13 @@ P89 considers every real linear functional of the eleven canonical P83 parity co
 with empirical value `-13/6`, exact P75 interval `[-51/8,-3]`, interval gap `5/6`, centering constant `-3`, and centered transfer norm `28`. The normalized lower certificate is therefore
 
 \[
-rac5{168}.
+\frac5{168}.
 \]
 
 A matching rational convex-vertex plus zero-mass perturbation certificate has exact infinity radius `5/168`. The equality of the lower and upper certificates proves that `5/168` is the exact optimum over the complete real linear parity-functional class on the stated box. Thus
 
 \[
-L_{88}=rac1{64}<L_{89}=rac5{168}.
+L_{88}=\frac1{64}<L_{89}=\frac5{168}.
 \]
 
 This completeness statement is limited to the declared linear parity-functional class. It does not exhaust nonlinear P75 constraints or close the physical-to-experiential bridge.
@@ -241,7 +241,7 @@ The validation path checks the generated manifests, SVG parseability, canonical 
 The current frontier figure is:
 
 ```text
-docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg
+docs/figures/p89_complete_linear_parity_duality.svg
 ```
 
 ---

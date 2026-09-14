@@ -98,6 +98,10 @@ These remain conditional statistical target-measurement results, not validation 
 
 When citing a theorem, readers should consult the proposition document for its assumptions and scope rather than citing the theorem statement without its declared conditions.
 
+## Current theorem frontier: P89
+
+The current documented theorem frontier is **P89**. The formal package release remains **Version 0.82.0**. P89 closes the declared complete real linear parity-functional class on the stated P75 box with exact value `L89 = 5/168`; it does not close the physical-to-experiential bridge.
+
 ## Proposition 89 method citation
 
 For work that uses the complete linear parity-functional certificate, cite the program together with **Proposition 89: Complete Linear Parity-Functional Duality Certificate** and its equation-provenance record. P89 removes P88's finite coefficient-radius and four-observable support restrictions and proves, by matching exact rational lower and upper certificates, that the complete real linear parity-functional optimum on the published witness is `5/168`, strictly above `L88 = 1/64`.
@@ -179,10 +183,10 @@ For work using the minimally weighted four-event shared-parameter parity certifi
 P86 is conditional on the declared P75 model and should not be cited as an identification or definition of consciousness.
 
 
+## Historical theorem frontier: P88
+
+P88 was the immediately preceding Research II frontier. It completed the primitive four-event parity-functional search through coefficient radius three and established `L88 = 1/64` on the published exact-rational witness. P89 strictly strengthens that result while preserving P88 as part of the auditable theorem history.
+
 ## Historical theorem frontier: P87
 
 P87 was the immediately preceding theorem frontier. It completed the sign-normalized primitive nonzero four-event coefficient box with `0 < |c_i| <= 2`, auditing 39,600 exact functionals. On the stored exact rational witness, the complete P86 certificate is `1/192` and P87 certifies `1/96`. This is a conditional model-separation result for the declared P75 family, not an identification or definition of consciousness.
-
-## Current theorem frontier: P88
-
-The current documented theorem frontier is **P88**. Proposition 88 extends the exact bounded-primitive four-event parity family to radius three, auditing 208,560 exact functionals. On the stored exact rational witness, P88 certifies `L88 = 1/64`, strengthening `L87 = 1/96`. Cite [Proposition 88](docs/proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md) together with its [equation and provenance record](docs/p88_equation_provenance.md), implementation, regression tests, and exact theorem figure. P88 remains a conditional model-separation result for the declared P75 family; it does not identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.

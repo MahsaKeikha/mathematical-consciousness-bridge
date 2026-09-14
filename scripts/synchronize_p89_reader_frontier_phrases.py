@@ -263,11 +263,15 @@ L_{88}=\frac1{64}<L_{89}=\frac5{168}.
 
 This completeness statement is limited to the declared linear parity-functional class. It does not exhaust nonlinear P75 constraints or close the physical-to-experiential bridge.
 '''
-    pattern = re.compile(r"## 5\. Focused audit of the current P88 frontier\n.*?\n---\n\n## 6\.", re.DOTALL)
+    pattern = re.compile(r"## 5\. Focused audit of the current P(?:88|89) frontier\n.*?\n---\n\n## 6\.", re.DOTALL)
     if pattern.search(text):
-        text = pattern.sub(section + "\n---\n\n## 6.", text, count=1)
-    elif "## 5. Focused audit of the current P89 frontier" not in text:
-        raise RuntimeError("reproducibility P88 focused section was not found")
+        text = pattern.sub(lambda _match: section + "\n---\n\n## 6.", text, count=1)
+    else:
+        raise RuntimeError("reproducibility current focused section was not found")
+    text = text.replace(
+        "docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg",
+        "docs/figures/p89_complete_linear_parity_duality.svg",
+    )
     write_if_changed(path, text, changed)
 
 
@@ -306,6 +310,14 @@ def sync_catalogs(changed: list[str]) -> None:
     claim_matrix = DOCS / "claim_source_matrix.md"
     if claim_matrix.is_file():
         text = read(claim_matrix).replace("P75-P88", "P75-P89")
+        text = text.replace(
+            "The current repository contains 88 proposition-level results",
+            "The current repository contains 89 proposition-level results",
+        )
+        text = text.replace(
+            "| Current frontier | P88 is the current Research II theorem frontier | repository publication status | [P88 proof](proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md), implementation, tests, provenance, figure, and frontier publication tests | P87, P86, and earlier propositions remain historical certified frontiers, not current ones |",
+            "| Current frontier | P89 is the current Research II theorem frontier | repository publication status | [P89 proof](proposition_89_complete_linear_parity_duality.md), implementation, tests, provenance, figure, and frontier publication tests | P88, P87, P86, and earlier propositions remain historical certified frontiers, not current ones |",
+        )
         if "| P89 complete linear parity duality |" not in text:
             text += "\n| P89 complete linear parity duality | Every real linear functional of the eleven canonical parity coordinates is bounded by the finite P89 primal/dual certificate; the strict witness optimum is exactly 5/168 | repository theorem | [P89 proof](proposition_89_complete_linear_parity_duality.md), [P89 provenance](p89_equation_provenance.md), implementation/tests, [P89 figure](figures/p89_complete_linear_parity_duality.svg) | Complete only for the declared linear parity-functional class; no consciousness identification or nonphysicality claim |\n"
         write_if_changed(claim_matrix, text, changed)
