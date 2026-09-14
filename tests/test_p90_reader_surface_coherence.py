@@ -49,10 +49,18 @@ def test_plain_language_keeps_all_three_research_stages_primary():
     assert "Research II · Current exact frontier · P90" in text
     assert "L90 = 5/72 = (7/3)L89" in text
     assert "P89 remains the complete-linear subfrontier" in text
+    assert "P90 is the current checkpoint, not the destination" in text
+    assert "P90 is the current mathematical checkpoint inside a much larger research program." in text
+    assert "The destination is not Proposition 90, 100, or 200." in text
+    assert "shows how all 90 Research II results connect" in text
 
     assert "What the 89 results are doing" not in text
     assert "<strong>89</strong><span>Research II proposition-level results</span>" not in text
     assert "<strong>P89</strong><span>current Research II theorem frontier</span>" not in text
+    assert "P88 is a checkpoint, not the destination" not in text
+    assert "P88 is one mathematical checkpoint inside a much larger research program." not in text
+    assert "The destination is not Proposition 89, 100, or 200." not in text
+    assert "shows how all 88 Research II results connect" not in text
 
 
 def test_start_here_orients_to_three_stages_before_research_ii_chronology():
