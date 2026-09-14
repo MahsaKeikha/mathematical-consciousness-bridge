@@ -25,39 +25,78 @@ jobs:
       - name: Install focused test dependency
         run: python -m pip install pytest
 
-      - name: Apply reader-path migration
+      - name: Apply balanced Overview contract migration
         run: python scripts/add_overview_reader_entry_paths.py
 
-      - name: Verify focused reader contract
-        run: python -m pytest tests/test_publication_contract_v2.py
+      - name: Verify focused reader and publication contracts
+        run: |
+          python -m pytest -q \
+            tests/test_publication_contract_v2.py \
+            tests/test_reader_experience.py \
+            tests/test_p88_reader_surface_coherence.py \
+            tests/test_figure_publication_sync.py \
+            tests/test_website_research_orientation.py
 
       - name: Verify permanent publication machinery remains coherent
         run: |
           python scripts/synchronize_p88_reader_frontier_phrases.py
           python scripts/promote_p88_public_frontier.py
+          python scripts/sync_figure_publication.py --check
+          python scripts/synchronize_research_three_website.py --site website --check
           python scripts/verify_frontier_publication.py
+          rm -rf _site
+          python scripts/prepare_website.py --source website --output _site
+          grep -q 'id="research-i-overview"' _site/index.html
+          grep -q 'id="p88-frontier"' _site/index.html
+          grep -q 'id="research-iii-overview"' _site/index.html
+          grep -q 'physics_pipeline.svg' _site/index.html
+          grep -q 'measurement_architecture.svg' _site/index.html
+          ! grep -q 'id="p87-frontier"' _site/index.html
+          ! grep -q 'id="p86-frontier"' _site/index.html
+          ! grep -q 'id="p85-frontier"' _site/index.html
           git diff --check
 
-      - name: Require surgical change set
+      - name: Require scoped permanent change set
         run: |
-          unexpected="$(git diff --name-only | grep -Ev '^(website/index.html|tests/test_publication_contract_v2.py)$' || true)"
+          unexpected="$(git diff --name-only | grep -Ev '^(website/index.html|website/research-map.html|scripts/promote_p88_public_frontier.py|scripts/sync_figure_publication.py|tests/test_publication_contract_v2.py|tests/test_reader_experience.py|tests/test_p88_reader_surface_coherence.py|tests/test_figure_publication_sync.py|tests/test_website_research_orientation.py|\.github/workflows/figures.yml)$' || true)"
           if [ -n "$unexpected" ]; then
             echo "Unexpected files changed:"
             echo "$unexpected"
             exit 1
           fi
-          grep -q 'id="reader-paths"' website/index.html
-          grep -q 'Choose where to start' website/index.html
-          grep -q 'test_overview_offers_reader_specific_entry_paths_before_p88' tests/test_publication_contract_v2.py
+          python - <<'PY'
+          from pathlib import Path
+          t = Path('website/index.html').read_text(encoding='utf-8')
+          order = [
+              t.index('id="project-journey"'),
+              t.index('id="research-i-overview"'),
+              t.index('id="p88-frontier"'),
+              t.index('id="research-iii-overview"'),
+              t.index('id="reader-paths"'),
+              t.index('id="plain-language"'),
+          ]
+          assert order == sorted(order)
+          assert all(x not in t for x in ('id="p87-frontier"', 'id="p86-frontier"', 'id="p85-frontier"'))
+          PY
 
-      - name: Commit Overview reader paths
+      - name: Commit balanced Overview contracts
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add website/index.html tests/test_publication_contract_v2.py
+          git add \
+            website/index.html \
+            website/research-map.html \
+            scripts/promote_p88_public_frontier.py \
+            scripts/sync_figure_publication.py \
+            tests/test_publication_contract_v2.py \
+            tests/test_reader_experience.py \
+            tests/test_p88_reader_surface_coherence.py \
+            tests/test_figure_publication_sync.py \
+            tests/test_website_research_orientation.py \
+            .github/workflows/figures.yml
           if git diff --cached --quiet; then
             echo "No migration changes to commit."
             exit 0
           fi
-          git commit -m "Add reader-specific Overview entry paths"
+          git commit -m "Enforce balanced three-stage Overview"
           git push origin HEAD:overview-reader-entry-paths
