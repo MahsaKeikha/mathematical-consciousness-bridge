@@ -53,12 +53,16 @@ def test_claim_source_matrix_maps_public_claims_to_support_and_boundaries() -> N
         "Formal consciousness modeling",
         "external methodological background plus repository formulation",
         "P75 model family",
+        "audited by P75-P88",
         "P86 weighted four-event compatibility",
         "L85 = 0 < L86 = 1/192",
-        "P86 mathematical backbone",
         "P87 bounded primitive four-event compatibility",
         "L86 = 1/192 < L87 = 1/96",
-        "Reader-facing status claims",
+        "P88 radius-three bounded primitive four-event compatibility",
+        "208,560-functional P88 family",
+        "L87 = 1/96 < L88 = 1/64",
+        "The current repository contains 88 proposition-level results",
+        "P88 is the current Research II theorem frontier",
         "passing CI supports internal consistency and reproducibility; it is not external peer review",
     )
     for marker in required:
@@ -74,20 +78,29 @@ def test_reference_audit_records_tegmark_as_research_origin() -> None:
     assert "distinct mathematical framework" in audit
 
 
-def test_sources_page_points_to_current_p87_and_previous_p86_audit_records() -> None:
+def test_sources_page_points_to_current_p88_and_previous_p87_p86_records() -> None:
     sources = _read("website/sources.html")
+
+    assert 'id="p88-source"' in sources
+    assert "Current theorem source · P88" in sources
+    assert "L87 = 1/96 &lt; L88 = 1/64" in sources
+    assert "proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md" in sources
+    assert "p88_equation_provenance.md" in sources
+    assert "radius_three_bounded_primitive_quad_projection_parity_functional_separation.py" in sources
+    assert "test_radius_three_bounded_primitive_quad_projection_parity_functional_separation.py" in sources
+
     assert 'id="p87-source"' in sources
-    assert "Current theorem source · P87" in sources
+    assert "Previous theorem source · P87" in sources
     assert "L86 = 1/192 &lt; L87 = 1/96" in sources
     assert "proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md" in sources
-    assert "p87_equation_provenance.md" in sources
-    assert "bounded_primitive_quad_projection_parity_functional_separation.py" in sources
-    assert "test_bounded_primitive_quad_projection_parity_functional_separation.py" in sources
+
     assert 'id="p86-source"' in sources
     assert "Previous theorem source · P86" in sources
     assert "L85 = 0 &lt; L86 = 1/192" in sources
     assert "claim_source_matrix.md" in sources
     assert "Claim-to-source matrix" in sources
+
+    assert "Current theorem source · P87" not in sources
 
 
 def test_public_provenance_does_not_make_priority_or_ontology_claims() -> None:
