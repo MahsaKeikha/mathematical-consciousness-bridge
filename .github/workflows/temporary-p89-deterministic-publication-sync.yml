@@ -1,0 +1,89 @@
+name: temporary-p89-deterministic-publication-sync
+
+on:
+  push:
+    branches:
+      - p89-complete-linear-parity-duality
+    paths:
+      - ".github/workflows/temporary-p89-deterministic-publication-sync.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: temporary-p89-deterministic-publication-sync
+  cancel-in-progress: true
+
+jobs:
+  synchronize:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: p89-complete-linear-parity-duality
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - name: Install exact publication environment
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+          python -m pip install -r requirements-figures.txt
+      - name: Repair Start Here promotion boundary
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("scripts/promote_p89_public_frontier.py")
+          source = path.read_text(encoding="utf-8")
+          anchor = source.index("def promote_start_here() -> None:")
+          head, tail = source[:anchor], source[anchor:]
+          old = '''    status = re.compile(
+                  r'<div class="status-grid" aria-label="Current research status">.*?</div>\\s*</section>',
+                  re.DOTALL,
+              )'''
+          new = '''    status = re.compile(
+                  r'<div class="status-grid" aria-label="Current research status">.*?</div>\\s*'
+                  r'<p class="small-note"><strong>Formal repository release:</strong>.*?</p>\\s*</section>',
+                  re.DOTALL,
+              )'''
+          if tail.count(old) != 1:
+              raise SystemExit(f"expected one Start Here status regex, found {tail.count(old)}")
+          tail = tail.replace(old, new, 1)
+          path.write_text(head + tail, encoding="utf-8")
+          PY
+      - name: Regenerate deterministic P89 publication record
+        run: python scripts/generate_all_figures.py
+      - name: Validate P89 theorem, readers, figures, and punctuation
+        run: |
+          python -m pytest -q \
+            tests/test_complete_linear_parity_duality.py \
+            tests/test_documentation_punctuation.py \
+            tests/test_figure_publication_sync.py \
+            tests/test_figure_documentation_integrity.py \
+            tests/test_p89_reader_surface_coherence.py \
+            tests/test_website_research_orientation.py \
+            tests/test_website_link_integrity.py
+          python scripts/sync_figure_publication.py --check
+          python scripts/verify_repository.py
+          git diff --check
+      - name: Commit permanent deterministic publication state
+        run: |
+          if git diff --quiet; then
+            echo "No permanent synchronization changes were needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            scripts/promote_p89_public_frontier.py \
+            docs/figure_catalog.md \
+            docs/figures \
+            figures \
+            website
+          git commit -m "Synchronize deterministic P89 publication outputs"
+          git fetch origin p89-complete-linear-parity-duality
+          git rebase origin/p89-complete-linear-parity-duality
+          git push origin HEAD:p89-complete-linear-parity-duality
