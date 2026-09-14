@@ -17,7 +17,10 @@ elif new_heading not in text:
 anchor_pair = '("index.html#p88-frontier", "index.html#p89-frontier"),'
 
 research_map_marker = '("Current theorem frontier · P88", "Current theorem frontier · P89"),'
-if anchor_pair not in text[text.find("def promote_research_map"):text.find("def promote_secondary", text.find("def promote_research_map")) if "def promote_secondary" in text else len(text)]:
+if anchor_pair not in text[
+    text.find("def promote_research_map") :
+    text.find("def promote_misc_website", text.find("def promote_research_map"))
+]:
     if research_map_marker not in text:
         raise RuntimeError("P89 Research Map replacement marker was not found")
     text = text.replace(
@@ -26,12 +29,28 @@ if anchor_pair not in text[text.find("def promote_research_map"):text.find("def 
         1,
     )
 
+# The P89 Research Map may already have been created by the documentation
+# synchronizer before this promoter runs. Normalize an existing section too,
+# instead of only changing the insertion template.
+old_tail = '        text = text.replace("</main>", section + "</main>", 1)\n    write(path, text)'
+new_tail = (
+    '        text = text.replace("</main>", section + "</main>", 1)\n'
+    '    text = text.replace("<h3>Exact complete-linear optimum</h3>", '
+    '"<h3>Exact complete real linear optimum</h3>")\n'
+    '    text = text.replace("P89 complete-linear certificate", '
+    '"P89 complete real linear certificate")\n'
+    '    text = text.replace("index.html#p88-frontier", "index.html#p89-frontier")\n'
+    '    write(path, text)'
+)
+if old_tail in text:
+    text = text.replace(old_tail, new_tail, 1)
+elif 'text = text.replace("P89 complete-linear certificate"' not in text:
+    raise RuntimeError("P89 Research Map post-normalization hook was not found")
+
 secondary_marker = '("P77-P88", "P77-P89"),'
 if secondary_marker in text:
-    # This tuple feeds implementation and other specialist pages. Replacing the
-    # obsolete homepage frontier anchor here keeps navigation internally valid.
     tail = text.find(secondary_marker)
-    nearby = text[tail:tail + 800]
+    nearby = text[tail : tail + 800]
     if anchor_pair not in nearby:
         text = text[:tail] + text[tail:].replace(
             secondary_marker,
