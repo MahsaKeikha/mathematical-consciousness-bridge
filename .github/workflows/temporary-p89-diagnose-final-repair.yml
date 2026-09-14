@@ -1,0 +1,81 @@
+name: temporary-p89-diagnose-final-repair
+
+on:
+  push:
+    branches: ["p89-complete-linear-parity-duality"]
+    paths:
+      - ".github/workflows/temporary-p89-diagnose-final-repair.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: p89-complete-linear-parity-duality
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - name: Install development environment
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+      - name: Apply the exact pending repair in the diagnostic worktree
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          workflow = Path('.github/workflows/temporary-p89-final-contract-repair.yml').read_text(encoding='utf-8')
+          marker = "          python - <<'PY'\n"
+          start = workflow.index(marker) + len(marker)
+          end = workflow.index("\n          PY\n", start)
+          lines = workflow[start:end].splitlines()
+          source = "\n".join(line[10:] if line.startswith("          ") else line for line in lines) + "\n"
+          exec(compile(source, '<pending-p89-repair>', 'exec'))
+          PY
+          python scripts/promote_p89_public_frontier.py
+          python scripts/synchronize_p89_reader_frontier_phrases.py
+          python scripts/normalize_documentation_punctuation.py
+          python scripts/sync_figure_publication.py
+      - name: Capture full pytest result
+        id: pytest
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          python -m pytest -q 2>&1 | tee /tmp/p89-diagnostics.txt
+      - name: Capture post-pytest publication checks
+        if: always()
+        run: |
+          set +e
+          {
+            echo
+            echo '=== sync figure publication --check ==='
+            python scripts/sync_figure_publication.py --check; echo "status=$?"
+            echo
+            echo '=== verify repository ==='
+            python scripts/verify_repository.py; echo "status=$?"
+            echo
+            echo '=== required markers ==='
+            grep -n '## Current theorem frontier: P89' CITATION.md; echo "citation_status=$?"
+            grep -En 'P75-P89|P73-P89' docs/research_map.md website/research-map.html; echo "research_map_status=$?"
+            grep -n 'P73-P89' website/implementation.html; echo "implementation_status=$?"
+            grep -n '\\frac5{168}' docs/reproducibility.md; echo "frac_status=$?"
+            grep -n 'L_{88}=\\frac1{64}<L_{89}=\\frac5{168}' docs/reproducibility.md; echo "hierarchy_status=$?"
+            echo
+            echo '=== punctuation scan ==='
+            grep -P -n '[–—]' README.md START_HERE.md CITATION.md docs/*.md website/*.html docs/figures/*.svg; echo "punctuation_grep_status=$?"
+            echo
+            echo '=== generated figure diff ==='
+            git diff -- docs/figures figures/manifest.json; echo "figure_diff_status=$?"
+          } >> /tmp/p89-diagnostics.txt 2>&1
+      - name: Upload diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p89-final-contract-diagnostics
+          path: /tmp/p89-diagnostics.txt
+          if-no-files-found: error
