@@ -22,6 +22,9 @@ jobs:
           ref: overview-reader-entry-paths
           fetch-depth: 0
 
+      - name: Install focused test dependency
+        run: python -m pip install pytest
+
       - name: Apply reader-path migration
         run: python scripts/add_overview_reader_entry_paths.py
 
