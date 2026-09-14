@@ -6,6 +6,7 @@ on:
     paths:
       - ".github/workflows/temporary-promote-p89-balanced-reader.yml"
       - "scripts/patch_p89_navigation_sync.py"
+      - "scripts/patch_p89_promoter_contract.py"
       - "scripts/migrate_p89_publication_contract.py"
       - "scripts/promote_p89_public_frontier.py"
       - "scripts/synchronize_p89_reader_frontier_phrases.py"
@@ -49,6 +50,7 @@ jobs:
       - name: Migrate permanent publication machinery to P89
         run: |
           python scripts/patch_p89_navigation_sync.py
+          python scripts/patch_p89_promoter_contract.py
           python scripts/migrate_p89_publication_contract.py
           python scripts/synchronize_p89_reader_frontier_phrases.py
           python scripts/promote_p89_public_frontier.py
