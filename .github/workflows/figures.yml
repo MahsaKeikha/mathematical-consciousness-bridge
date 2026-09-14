@@ -76,12 +76,12 @@ jobs:
             echo
             echo "# git diff"
             git diff
-          } > figure-publication-drift.txt
+          } > "${RUNNER_TEMP}/figure-publication-drift.txt"
       - name: Upload publication drift diagnostics
         uses: actions/upload-artifact@v4
         with:
           name: figure-publication-drift-python-3.12.14
-          path: figure-publication-drift.txt
+          path: ${{ runner.temp }}/figure-publication-drift.txt
           if-no-files-found: error
       - name: Require byte-identical regeneration and publication sync
         run: |
