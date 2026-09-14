@@ -81,11 +81,24 @@ def repair_promoter() -> None:
     write(path, text)
 
 
+def repair_verifier() -> None:
+    path = "scripts/verify_repository.py"
+    text = read(path)
+    old = '''def _assert_detailed_proposition_record() -> None:\n    record = (ROOT / "docs" / "detailed_proposition_record.md").read_text(\n        encoding="utf-8"\n    )\n    for number in range(1, 91):\n        if f"Proposition {number}" not in record:\n            raise RuntimeError(\n                f"detailed proposition record is missing Proposition {number}"\n            )\n'''
+    new = '''def _assert_detailed_proposition_record() -> None:\n    record = (ROOT / "docs" / "detailed_proposition_record.md").read_text(\n        encoding="utf-8"\n    )\n    covered: set[int] = set()\n    for match in re.finditer(r"\\bP(\\d+)(?:\\s*(?:-|to|through)\\s*P?(\\d+))?\\b", record):\n        start = int(match.group(1))\n        end = int(match.group(2) or start)\n        if end < start:\n            start, end = end, start\n        covered.update(range(start, end + 1))\n    missing = [number for number in range(1, 91) if number not in covered]\n    if missing:\n        raise RuntimeError(\n            f"detailed proposition record is missing proposition references: {missing}"\n        )\n'''
+    if old in text:
+        text = text.replace(old, new, 1)
+    elif "covered: set[int] = set()" not in text:
+        raise RuntimeError("detailed proposition verifier anchor missing")
+    write(path, text)
+
+
 def main() -> None:
     repair_plain_language()
     repair_start_here()
     repair_promoter()
-    print("P90 reader residuals repaired")
+    repair_verifier()
+    print("P90 reader residuals and verifier repaired")
 
 
 if __name__ == "__main__":
