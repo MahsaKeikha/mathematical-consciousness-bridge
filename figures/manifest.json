@@ -624,11 +624,11 @@
     },
     {
       "path": "docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg",
-      "sha256": "ce8e77630229f8992749cd20d6b4a52a8850507fb7b52bea1ae88f66897de89b",
-      "bytes": 6369,
+      "sha256": "a610e34022912eb5292d3e488693947eecff114eb57bf5f5aa8a965d5e23782f",
+      "bytes": 6915,
       "category": "theorem-or-architecture",
       "title": "P88 Radius-Three Bounded-Primitive Four-Event Parity Certificate",
-      "description_chars": 546
+      "description_chars": 1092
     },
     {
       "path": "docs/figures/physics_mathematics_atlas.svg",
