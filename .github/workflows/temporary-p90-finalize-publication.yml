@@ -135,6 +135,89 @@ jobs:
           python scripts/normalize_documentation_punctuation.py
           python scripts/sync_figure_publication.py
 
+      - name: Close final two P90 publication residuals
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          repro = Path("docs/reproducibility.md")
+          text = repro.read_text(encoding="utf-8")
+          start = text.find("## 5. Focused audit of the current P89 frontier")
+          if start == -1:
+              start = text.find("## 5. Focused audit of the current P90 frontier")
+          if start == -1:
+              raise SystemExit("focused audit section not found")
+          end = text.find("\n---\n", start)
+          if end == -1:
+              end = len(text)
+          block = r'''## 5. Focused audit of the current P90 frontier
+
+The current theorem frontier is **P90**.
+
+Its direct technical record is:
+
+```text
+docs/proposition_90_exact_nonlinear_rank_one_separation.md
+docs/p90_equation_provenance.md
+src/consciousness_bridge/exact_nonlinear_rank_one_separation.py
+tests/test_exact_nonlinear_rank_one_separation.py
+docs/figures/p90_exact_nonlinear_rank_one_separation.svg
+figures/manifest.json
+```
+
+Run the focused theorem and figure-publication checks with:
+
+```bash
+python -m pytest \
+  tests/test_exact_nonlinear_rank_one_separation.py \
+  tests/test_figure_publication_sync.py \
+  tests/test_frontier_publication_consistency.py
+```
+
+P90 uses a genuinely nonlinear constraint of the declared strict P75 model image. Because prevalence is fixed at zero, the active observable law is one product Bernoulli component, and the canonical two-by-two slice must satisfy `ad = bc`. For the established empirical slice,
+
+```text
+q1000 = 1/8
+q1001 = 1/24
+q1010 = 0
+q1011 = 5/24
+```
+
+the determinant residual is `5/192` and the slice mass is `3/8`. Therefore every rank-one slice within L-infinity radius `epsilon` must satisfy
+
+\[
+\epsilon \ge \frac{5/192}{3/8} = \frac5{72}.
+\]
+
+The rational P75 parameter point
+
+```text
+(0, 3/5, 1/2, 3/8, 3/4, 5/9, 1/2, 2/3, 3/4)
+```
+
+attains full-law L-infinity distance exactly `5/72`, so the lower and upper certificates match:
+
+\[
+L_{90}=\frac5{72}=\frac73L_{89},\qquad L_{89}=\frac5{168}.
+\]
+
+P90 is exact only for the declared strict P75 box and its fixed extreme-prevalence product-law image. It does not identify consciousness, establish nonphysicality, exhaust more general nonlinear mixture constraints, or close the physical-to-experiential bridge.
+'''
+          repro.write_text(text[:start] + block + text[end:], encoding="utf-8")
+
+          prepare = Path("scripts/prepare_website.py")
+          text = prepare.read_text(encoding="utf-8")
+          old = '<strong>89</strong><span>proposition-level results</span>'
+          new = '<strong>90</strong><span>proposition-level results</span>'
+          if old in text:
+              text = text.replace(old, new)
+          if new not in text:
+              raise SystemExit("P90 Research Lineage validator token missing")
+          prepare.write_text(text, encoding="utf-8")
+          PY
+          python scripts/normalize_documentation_punctuation.py
+          python scripts/sync_figure_publication.py
+
       - name: Validate focused P90 publication state
         run: |
           python -m pip install -e ".[dev]"
