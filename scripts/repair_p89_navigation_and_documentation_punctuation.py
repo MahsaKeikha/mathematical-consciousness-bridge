@@ -1,4 +1,4 @@
-"""Repair the P89 navigation audit block and normalize documentation punctuation."""
+"""Repair P89 navigation and normalize reader documentation punctuation."""
 
 from __future__ import annotations
 
@@ -63,6 +63,7 @@ def normalize_documentation_punctuation(changed: list[str]) -> None:
         normalized = text
         for dash in FORBIDDEN_DASHES:
             normalized = normalized.replace(dash, "-")
+        normalized = re.sub(r"[ \t]+(?=\n|$)", "", normalized)
         write_if_changed(path, normalized, changed)
 
 
