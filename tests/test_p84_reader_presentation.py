@@ -13,19 +13,21 @@ def _section(html: str, section_id: str) -> str:
     return html[start:end]
 
 
-def test_p84_homepage_uses_figure_first_publication_layout() -> None:
-    section = _section(_read("website/index.html"), "p84-frontier")
+def test_p84_history_is_specialist_and_keeps_figure_first_layout() -> None:
+    overview = _read("website/index.html")
+    assert 'id="p84-frontier"' not in overview
+
+    section = _section(_read("website/visual-atlas.html"), "p84-frontier")
     assert 'class="theorem-frontier"' in section
     assert 'class="theorem-figure-shell"' in section
     assert 'class="frontier-summary-grid"' in section
     assert section.count('class="frontier-summary-card"') == 3
     assert 'class="two-col"' not in section
     assert '<aside class="card">' not in section
-    assert "two tests can pass separately and still fail together" in section
-    assert "220 coupled contrasts" in section
-    assert "L83 = 0" in section
-    assert "L84 = 1/32" in section
-    assert "does not close the physical-to-experiential bridge" in section
+    assert "P83 can accept two parity events separately" in section
+    assert "common-parameter contrast range" in section
+    assert "L83 = 0 but L84 = 1/32" in section
+    assert "not an experiential identification claim" in section
 
 
 def test_p84_visual_atlas_uses_same_nonoverlapping_reading_order() -> None:
