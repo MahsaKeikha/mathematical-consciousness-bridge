@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -10,6 +11,12 @@ NEW_PROVENANCE = "p90_equation_provenance.md"
 OLD_CURRENT_FIGURE = "docs/figures/p89_complete_linear_parity_duality.svg"
 NEW_CURRENT_FIGURE = "docs/figures/p90_exact_nonlinear_rank_one_separation.svg"
 AUDIT_HEADING = "## Focused audit of the current P90 frontier"
+P90_VISUAL_MARKER = "<!-- current-frontier-visual: P90 -->"
+P90_VISUAL_PATTERN = re.compile(
+    r'<!-- current-frontier-visual: P90 -->\s*'
+    r'<section id="p90-frontier".*?</section>\s*',
+    flags=re.DOTALL,
+)
 OLD_CATALOG_COUNT = (
     "**Current catalog:** 147 SVG figures: 17 architecture/conceptual visuals, "
     "18 foundational quantum-physics visuals, 72 proposition/theorem visuals, "
@@ -61,6 +68,51 @@ def clean_figure_catalog() -> None:
     path.write_text(text, encoding="utf-8")
 
 
+def clean_visual_atlas() -> None:
+    path = ROOT / "website" / "visual-atlas.html"
+    text = path.read_text(encoding="utf-8")
+    matches = list(P90_VISUAL_PATTERN.finditer(text))
+    if not matches:
+        raise RuntimeError("P90 current Visual Atlas section is missing")
+    canonical = matches[0].group(0).rstrip() + "\n"
+    text = P90_VISUAL_PATTERN.sub("", text)
+    p89_marker = '<section id="p89-frontier"'
+    if p89_marker not in text:
+        raise RuntimeError("P89 historical Visual Atlas section is missing")
+    text = text.replace(p89_marker, canonical + p89_marker, 1)
+    if text.count(P90_VISUAL_MARKER) != 1 or text.count('id="p90-frontier"') != 1:
+        raise RuntimeError("P90 Visual Atlas current frontier is not unique")
+    path.write_text(text, encoding="utf-8")
+
+
+def harden_promoter_visual_atlas() -> None:
+    path = ROOT / "scripts" / "promote_p90_public_frontier.py"
+    text = path.read_text(encoding="utf-8")
+    old = (
+        '    text = re.sub(r\'<!-- current-frontier-visual: P89 -->\\s*\', "", text)\n'
+        '    text = text.replace(\'<section id="p89-frontier" class="theorem-frontier current-frontier-visual">\', \'<section id="p89-frontier" class="theorem-frontier">\')\n'
+        '    text = text.replace("Current theorem frontier · P89", "Previous theorem frontier · P89")\n'
+        '    atlas = p90_home_section().replace("current-frontier-home", "current-frontier-visual")\n'
+    )
+    new = (
+        '    text = re.sub(r\'<!-- current-frontier-visual: P89 -->\\s*\', "", text)\n'
+        '    text = text.replace(\'<section id="p89-frontier" class="theorem-frontier current-frontier-visual">\', \'<section id="p89-frontier" class="theorem-frontier">\')\n'
+        '    text = text.replace("Current theorem frontier · P89", "Previous theorem frontier · P89")\n'
+        '    text = re.sub(\n'
+        '        r\'<!-- current-frontier-visual: P90 -->\\s*<section id="p90-frontier".*?</section>\\s*\',\n'
+        '        "",\n'
+        '        text,\n'
+        '        flags=re.DOTALL,\n'
+        '    )\n'
+        '    atlas = p90_home_section().replace("current-frontier-home", "current-frontier-visual")\n'
+    )
+    if new not in text:
+        if old not in text:
+            raise RuntimeError("P90 Visual Atlas promoter anchor is missing")
+        text = text.replace(old, new, 1)
+    path.write_text(text, encoding="utf-8")
+
+
 def verify_reader_surfaces() -> None:
     candidates = [ROOT / "README.md", ROOT / "START_HERE.md"]
     candidates.extend((ROOT / "docs").rglob("*.md"))
@@ -77,6 +129,8 @@ def main() -> None:
     clean_reproducibility()
     clean_sources()
     clean_figure_catalog()
+    clean_visual_atlas()
+    harden_promoter_visual_atlas()
     verify_reader_surfaces()
     print("P90 reader residuals cleaned and guarded")
 
