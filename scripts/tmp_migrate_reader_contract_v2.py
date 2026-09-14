@@ -73,7 +73,7 @@ def update_styles() -> None:
     if ".research-dashboard {" in text:
         raise SystemExit("website/styles.css: research dashboard styles already present")
 
-    anchor = ".section-head {\n"
+    anchor = ".section-head {\n  max-width: var(--reading);\n"
     css = '''.research-dashboard {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
