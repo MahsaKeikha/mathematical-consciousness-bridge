@@ -60,6 +60,16 @@ The current public theorem frontier is **P88**. The formal release remains **v0.
 
 ---
 
+## Visual architecture
+
+![Scientific architecture of the project](docs/figures/research_architecture.svg)
+
+**Figure 1. Scientific architecture of the project.** The research moves from physical dynamics to operationally measurable structure, then to mathematical sufficiency tests, target-side validity, finite-data certification, experimental design, and finally the still-open physical-to-experiential bridge. The arrows are logical dependencies, not claims that one layer has already been identified with consciousness.
+
+> **Visual reading standard.** Every reader-facing figure now has a clear title, an embedded SVG description, a nearby caption or atlas explanation, a scientific-status boundary, and a direct route to the proof or source context. Use the [Complete Figure Catalog](docs/figure_catalog.md) to understand every visual without searching the repository, and the [Figure Caption and Description Standard](docs/figure_caption_and_description_standard.md) for the enforced documentation rules.
+
+---
+
 ## Choose your path
 
 | If you want to... | Start here |
