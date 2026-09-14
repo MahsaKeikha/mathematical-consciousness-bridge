@@ -64,7 +64,13 @@ jobs:
           python scripts/verify_repository.py
           git diff --check
           grep -q 'Explore all 88 results' website/index.html
-          grep -q '<strong>P88</strong><span>current theorem frontier</span>' website/index.html
+          grep -q 'Research I · Physical-system identification' website/index.html
+          grep -q '<strong>58</strong><span>proposition-level statements</span>' website/index.html
+          grep -q 'Research II · Bridge sufficiency and falsification' website/index.html
+          grep -q 'P88 current theorem frontier · v0.82.0' website/index.html
+          grep -q 'Research III · Consciousness measurement science' website/index.html
+          grep -q '<strong>34</strong><span>tests in each CI job</span>' website/index.html
+          grep -q '<strong>Open</strong><span>physical-to-experiential bridge</span>' website/index.html
           grep -q 'id="p88-frontier" class="theorem-frontier current-frontier-visual"' website/index.html
           grep -q '208,560 exact P88 functionals' website/index.html
           grep -q '<strong>88</strong><span>Research II proposition-level results</span>' website/plain-language.html
