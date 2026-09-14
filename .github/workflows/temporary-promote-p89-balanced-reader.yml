@@ -10,6 +10,8 @@ on:
       - "scripts/migrate_p89_publication_contract.py"
       - "scripts/promote_p89_public_frontier.py"
       - "scripts/synchronize_p89_reader_frontier_phrases.py"
+      - "scripts/repair_p89_navigation_and_documentation_punctuation.py"
+      - "tests/test_documentation_punctuation.py"
       - "src/consciousness_bridge/complete_linear_parity_duality.py"
       - "tests/test_complete_linear_parity_duality.py"
       - "docs/proposition_89_complete_linear_parity_duality.md"
@@ -46,20 +48,24 @@ jobs:
             src/consciousness_bridge/complete_linear_parity_duality.py \
             scripts/migrate_p89_publication_contract.py \
             scripts/promote_p89_public_frontier.py \
-            scripts/synchronize_p89_reader_frontier_phrases.py
+            scripts/synchronize_p89_reader_frontier_phrases.py \
+            scripts/repair_p89_navigation_and_documentation_punctuation.py
       - name: Migrate permanent publication machinery to P89
         run: |
           python scripts/patch_p89_navigation_sync.py
           python scripts/patch_p89_promoter_contract.py
           python scripts/migrate_p89_publication_contract.py
+          python scripts/repair_p89_navigation_and_documentation_punctuation.py
           python scripts/synchronize_p89_reader_frontier_phrases.py
           python scripts/promote_p89_public_frontier.py
           python scripts/sync_figure_publication.py
           python scripts/synchronize_research_three_website.py
+          python scripts/repair_p89_navigation_and_documentation_punctuation.py
       - name: Validate P89 publication and balanced reader contracts
         run: |
           python -m pytest -q \
             tests/test_complete_linear_parity_duality.py \
+            tests/test_documentation_punctuation.py \
             tests/test_figure_publication_sync.py \
             tests/test_p89_reader_surface_coherence.py \
             tests/test_research_website_integrity.py \
