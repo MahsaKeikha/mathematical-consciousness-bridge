@@ -29,6 +29,7 @@ jobs:
       - name: Verify maintained Python scripts
         run: |
           python -m py_compile scripts/prepare_website.py scripts/synchronize_research_three_website.py
+          python scripts/synchronize_research_three_website.py --site website --check
 
       - name: Build exact website artifact
         run: |
@@ -38,8 +39,7 @@ jobs:
 
       - name: Verify Research II and Research III identity
         run: |
-          R3_PIN='7a106820158e0d33ea651f7cdeaa505206f1ccc7'
-          R3_OLD='8bbb7b029d70c43cc6a9dbf8b44dfe5069d0993d'
+          R3_PIN="$(python -c 'from scripts.synchronize_research_three_website import CURRENT_RESEARCH_THREE_PIN; print(CURRENT_RESEARCH_THREE_PIN)')"
 
           test "$(grep -o '<!-- current-frontier-home: P88 -->' _site/index.html | wc -l)" -eq 1
           test "$(grep -o 'id=\"p88-frontier\"' _site/index.html | wc -l)" -eq 1
@@ -53,19 +53,23 @@ jobs:
           grep -q 'Assumption registry' _site/measurement-science.html
           grep -q 'Failure-mode registry' _site/measurement-science.html
           grep -q 'Software and reproducibility' _site/measurement-science.html
-          grep -q '23</strong><span>tests in each CI job' _site/measurement-science.html
+          grep -q '34</strong><span>tests in each CI job' _site/measurement-science.html
+          grep -q 'dependence-robust partial identification with sharp Fr&eacute;chet-Hoeffding bounds' _site/measurement-science.html
+          grep -q '<strong>Two implemented fusion regimes:</strong>' _site/measurement-science.html
+          grep -q 'An interval as wide as <code>\[0,1\]</code> is a valid scientific result' _site/measurement-science.html
+          grep -q 'docs/partial-identification.md' _site/measurement-science.html
+          ! grep -q 'planned by the roadmap' _site/measurement-science.html
+          ! grep -q '23</strong><span>tests in each CI job' _site/measurement-science.html
           grep -q "research-three-snapshot: ${R3_PIN}" _site/measurement-science.html
-          ! grep -q "${R3_OLD}" _site/measurement-science.html
 
           grep -q "${R3_PIN}" _site/research-lineage.html
-          ! grep -q "${R3_OLD}" _site/research-lineage.html
           grep -q '<strong>88</strong><span>proposition-level results</span>' _site/research-lineage.html
           grep -q '<strong>P88</strong><span>current theorem frontier</span>' _site/research-lineage.html
           grep -q '<strong>v0.82.0</strong><span>current documented release</span>' _site/research-lineage.html
 
       - name: Verify deployment artifact contains pinned Research III figures
         run: |
-          R3_PIN='7a106820158e0d33ea651f7cdeaa505206f1ccc7'
+          R3_PIN="$(python -c 'from scripts.synchronize_research_three_website import CURRENT_RESEARCH_THREE_PIN; print(CURRENT_RESEARCH_THREE_PIN)')"
           grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/measurement_architecture.svg" _site/measurement-science.html
           grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/claim_ladder.svg" _site/measurement-science.html
           grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/structural_measurement_pipeline.svg" _site/measurement-science.html
