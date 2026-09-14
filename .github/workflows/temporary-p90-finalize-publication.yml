@@ -77,4 +77,4 @@ jobs:
           git commit -m "Close final P90 reader publication residuals"
           git push origin HEAD:p90-exact-nonlinear-rank-one-separation
 
-# rerun after making the P90 homepage promotion idempotent
+# rerun after making both P90 homepage and Visual Atlas promotion idempotent
