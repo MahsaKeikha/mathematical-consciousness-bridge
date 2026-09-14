@@ -54,11 +54,10 @@ def patch_p84_contract() -> None:
     assert section.count('class="frontier-summary-card"') == 3
     assert 'class="two-col"' not in section
     assert '<aside class="card">' not in section
-    assert "two tests can pass separately and still fail together" in section
-    assert "220 coupled contrasts" in section
-    assert "L83 = 0" in section
-    assert "L84 = 1/32" in section
-    assert "does not close the physical-to-experiential bridge" in section
+    assert "P83 can accept two parity events separately" in section
+    assert "common-parameter contrast range" in section
+    assert "L83 = 0 but L84 = 1/32" in section
+    assert "not an experiential identification claim" in section
 '''
     replace_once(path, old, new, "P84 specialist-surface contract")
 
