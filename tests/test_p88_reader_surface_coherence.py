@@ -30,10 +30,13 @@ def test_overview_is_canonical_88_p88_state():
 
 def test_plain_language_is_canonical_88_p88_state():
     text = _page("plain-language.html")
-    assert "<strong>88</strong><span>proposition-level results</span>" in text
-    assert "<strong>P88</strong><span>current theorem frontier</span>" in text
+    assert "<strong>88</strong><span>Research II proposition-level results</span>" in text
+    assert "<strong>P88</strong><span>current Research II theorem frontier</span>" in text
     assert "What the 88 results are doing" in text
     assert "Current exact frontier · P88" in text
+
+    assert "<strong>88</strong><span>proposition-level results</span>" not in text
+    assert "<strong>P88</strong><span>current theorem frontier</span>" not in text
     assert "<strong>P87</strong><span>current theorem frontier</span>" not in text
     assert "What the 87 results are doing" not in text
 
