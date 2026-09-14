@@ -7,6 +7,7 @@ on:
     branches:
       - main
     paths:
+      - "README.md"
       - "scripts/generate_all_figures.py"
       - "scripts/generate_quantitative_atlas.py"
       - "scripts/generate_quantum_foundations_atlas.py"
@@ -27,6 +28,7 @@ on:
       - ".github/workflows/**"
   pull_request:
     paths:
+      - "README.md"
       - "scripts/generate_all_figures.py"
       - "scripts/generate_quantitative_atlas.py"
       - "scripts/generate_quantum_foundations_atlas.py"
