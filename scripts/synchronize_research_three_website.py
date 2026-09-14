@@ -2,8 +2,8 @@
 
 This script keeps the cross-repository handoff auditable. It updates pinned
 Research III asset references, refreshes reader-facing implementation claims,
-removes duplicated P88 source markers, and checks that the Research III
-surfaces describe one exact validated commit coherently.
+collapses duplicated current-frontier source markers, and checks that the
+Research III surfaces describe one exact validated commit coherently.
 """
 
 from __future__ import annotations
@@ -90,7 +90,9 @@ def synchronize_site(site: Path, *, write: bool) -> list[str]:
         for name in targets
     }
     if validation_text["index.html"].count(CURRENT_HOME_MARKER) != 1:
-        raise RuntimeError("homepage must contain exactly one current P88 source marker")
+        raise RuntimeError(
+            f"homepage must contain exactly one current frontier source marker: {CURRENT_HOME_MARKER}"
+        )
 
     for surface in ("measurement-science.html", "research-lineage.html"):
         text = validation_text[surface]
