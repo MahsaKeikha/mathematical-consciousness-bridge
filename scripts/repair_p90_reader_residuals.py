@@ -1,5 +1,5 @@
-from pathlib import Path
 import re
+from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -90,6 +90,15 @@ def repair_verifier() -> None:
         text = text.replace(old, new, 1)
     elif "covered: set[int] = set()" not in text:
         raise RuntimeError("detailed proposition verifier anchor missing")
+    text = text.replace(
+        'raise RuntimeError("figure manifest current_frontier_figure is missing")',
+        'raise TypeError("figure manifest current_frontier_figure is missing")',
+    )
+    text = text.replace(
+        '            text=True,\n        )',
+        '            text=True,\n            check=False,\n        )',
+        1,
+    )
     write(path, text)
 
 
