@@ -1,0 +1,60 @@
+name: temporary-overview-reader-entry-paths
+
+on:
+  push:
+    branches:
+      - overview-reader-entry-paths
+    paths:
+      - scripts/add_overview_reader_entry_paths.py
+      - .github/workflows/temporary-overview-reader-entry-paths.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          ref: overview-reader-entry-paths
+          fetch-depth: 0
+
+      - name: Apply reader-path migration
+        run: python scripts/add_overview_reader_entry_paths.py
+
+      - name: Verify focused reader contract
+        run: python -m pytest tests/test_publication_contract_v2.py
+
+      - name: Verify permanent publication machinery remains coherent
+        run: |
+          python scripts/synchronize_p88_reader_frontier_phrases.py
+          python scripts/promote_p88_public_frontier.py
+          python scripts/verify_frontier_publication.py
+          git diff --check
+
+      - name: Require surgical change set
+        run: |
+          unexpected="$(git diff --name-only | grep -Ev '^(website/index.html|tests/test_publication_contract_v2.py)$' || true)"
+          if [ -n "$unexpected" ]; then
+            echo "Unexpected files changed:"
+            echo "$unexpected"
+            exit 1
+          fi
+          grep -q 'id="reader-paths"' website/index.html
+          grep -q 'Choose where to start' website/index.html
+          grep -q 'test_overview_offers_reader_specific_entry_paths_before_p88' tests/test_publication_contract_v2.py
+
+      - name: Commit Overview reader paths
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add website/index.html tests/test_publication_contract_v2.py
+          if git diff --cached --quiet; then
+            echo "No migration changes to commit."
+            exit 0
+          fi
+          git commit -m "Add reader-specific Overview entry paths"
+          git push origin HEAD:overview-reader-entry-paths
