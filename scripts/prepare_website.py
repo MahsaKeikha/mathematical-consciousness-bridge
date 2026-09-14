@@ -18,6 +18,7 @@ if __package__:
     from scripts.synchronize_research_three_website import (
         CURRENT_RESEARCH_THREE_PIN,
         LEGACY_RESEARCH_THREE_PINS,
+        MEASUREMENT_SCIENCE_REQUIRED_MARKERS,
         P88_HOME_MARKER,
         synchronize_site,
     )
@@ -25,6 +26,7 @@ else:
     from synchronize_research_three_website import (
         CURRENT_RESEARCH_THREE_PIN,
         LEGACY_RESEARCH_THREE_PINS,
+        MEASUREMENT_SCIENCE_REQUIRED_MARKERS,
         P88_HOME_MARKER,
         synchronize_site,
     )
@@ -221,7 +223,7 @@ def _validate_research_three(output: Path) -> None:
         "Assumption registry",
         "Failure-mode registry",
         "Software and reproducibility",
-        "23</strong><span>tests in each CI job",
+        *MEASUREMENT_SCIENCE_REQUIRED_MARKERS,
         f"research-three-snapshot: {MEASUREMENT_PIN}",
         f"consciousness-measurement-science/{MEASUREMENT_PIN}/docs/figures/measurement_architecture.svg",
         f"consciousness-measurement-science/blob/{MEASUREMENT_PIN}/schemas/cep.schema.json",
@@ -230,6 +232,14 @@ def _validate_research_three(output: Path) -> None:
     missing = [token for token in required if token not in measurement]
     if missing:
         raise RuntimeError(f"Research III page is missing required content: {missing}")
+
+    stale_claims = (
+        "23</strong><span>tests in each CI job",
+        "planned by the roadmap",
+    )
+    stale = [token for token in stale_claims if token in measurement]
+    if stale:
+        raise RuntimeError(f"Research III page contains stale implementation claims: {stale}")
 
     for legacy_pin in LEGACY_RESEARCH_THREE_PINS:
         if legacy_pin in measurement:
