@@ -62,28 +62,46 @@ jobs:
                   raise SystemExit("P90 homepage link insertion point not found")
               text = text.replace(links_old, links_new, 1)
 
+          prepare_old = '    text = text.replace(\'CURRENT_RECORD_TEXT = "Current record:</strong> 89 proposition-level results through P89"\', \'CURRENT_RECORD_TEXT = "Current record:</strong> 90 proposition-level results through P90"\')\n'
+          prepare_new = prepare_old + '    text = text.replace("<strong>89</strong><span>proposition-level results</span>", "<strong>90</strong><span>proposition-level results</span>")\n'
+          if 'text.replace("<strong>89</strong><span>proposition-level results</span>", "<strong>90</strong><span>proposition-level results</span>")' not in text:
+              if prepare_old not in text:
+                  raise SystemExit("prepare_website promoter insertion point not found")
+              text = text.replace(prepare_old, prepare_new, 1)
+
+          home_old = '        ("Current theorem frontier · P89", "Current theorem frontier · P90"),\n'
+          home_new = (
+              home_old
+              + '        ("The 89 results form several dependency branches.", "The 90 results form several dependency branches."),\n'
+              + '        ("all 89 propositions", "all 90 propositions"),\n'
+          )
+          if '"The 89 results form several dependency branches.", "The 90 results form several dependency branches."' not in text:
+              if home_old not in text:
+                  raise SystemExit("homepage branch-count insertion point not found")
+              text = text.replace(home_old, home_new, 1)
+
           promoter.write_text(text, encoding="utf-8")
 
           contracts = Path("scripts/advance_p90_publication_contracts.py")
           text = contracts.read_text(encoding="utf-8")
 
-          validator_old = '            ("internally consistent with P89", "internally consistent with P90"),\n'
-          validator_new = (
-              '            ("<strong>89</strong><span>proposition-level results</span>", '
-              '"<strong>90</strong><span>proposition-level results</span>"),\n'
-              + validator_old
-          )
-          if '"<strong>89</strong><span>proposition-level results</span>", "<strong>90</strong><span>proposition-level results</span>"' not in text:
-              if validator_old not in text:
-                  raise SystemExit("prepare_website count insertion point not found")
-              text = text.replace(validator_old, validator_new, 1)
-
-          marker = '    patch(\n        ".github/workflows/figures.yml",\n'
-          repair = '''    target = ROOT / "tests/test_figure_publication_sync.py"\n    test_text = target.read_text(encoding="utf-8")\n    visual_old = """def test_visual_atlas_leads_with_p90_before_historical_frontiers() -> None:\n    text = VISUAL_ATLAS.read_text(encoding=\"utf-8\")\n    p90 = text.index('id=\"p90-frontier\"')\n    p88 = text.index('id=\"p88-frontier\"')"""\n    visual_new = """def test_visual_atlas_leads_with_p90_before_historical_frontiers() -> None:\n    text = VISUAL_ATLAS.read_text(encoding=\"utf-8\")\n    p90 = text.index('id=\"p90-frontier\"')\n    p89 = text.index('id=\"p89-frontier\"')\n    p88 = text.index('id=\"p88-frontier\"')"""\n    if visual_old in test_text:\n        test_text = test_text.replace(visual_old, visual_new, 1)\n    target.write_text(test_text, encoding="utf-8")\n\n'''
-          if 'visual_old = """def test_visual_atlas_leads_with_p90_before_historical_frontiers()' not in text:
+          marker = '    patch(\n        "docs/research_map.md",\n'
+          roadmap_patch = '''    patch(\n        "docs/theorem_roadmap.md",\n        (\n            (\n                "&\\\\text{P89: complete linear parity-functional duality closes all real linear directions on the eleven canonical parity coordinates}\\n\\\\end{aligned}",\n                "&\\\\text{P89: complete linear parity-functional duality closes all real linear directions on the eleven canonical parity coordinates}\\\\\\\\\\n&\\\\Downarrow\\\\\\\\\\n&\\\\text{P90: exact nonlinear rank-one slice separation uses the actual strict P75 model image}\\n\\\\end{aligned}",\n            ),\n        ),\n    )\n\n'''
+          if 'P90: exact nonlinear rank-one slice separation uses the actual strict P75 model image' not in text:
               if marker not in text:
+                  raise SystemExit("theorem-roadmap contract insertion point not found")
+              text = text.replace(marker, roadmap_patch + marker, 1)
+
+          figure_marker = '    patch(\n        ".github/workflows/figures.yml",\n'
+          repair = '''    target = ROOT / "tests/test_figure_publication_sync.py"\n    test_text = target.read_text(encoding="utf-8")\n    visual_old = """def test_visual_atlas_leads_with_p90_before_historical_frontiers() -> None:\n    text = VISUAL_ATLAS.read_text(encoding=\"utf-8\")\n    p90 = text.index('id=\"p90-frontier\"')\n    p88 = text.index('id=\"p88-frontier\"')"""\n    visual_new = """def test_visual_atlas_leads_with_p90_before_historical_frontiers() -> None:\n    text = VISUAL_ATLAS.read_text(encoding=\"utf-8\")\n    p90 = text.index('id=\"p90-frontier\"')\n    p89 = text.index('id=\"p89-frontier\"')\n    p88 = text.index('id=\"p88-frontier\"')"""\n    if visual_old in test_text:\n        test_text = test_text.replace(visual_old, visual_new, 1)\n    test_text = test_text.replace(\n        'assert "Previous theorem frontier · P89" in text[p88:p87]',\n        'assert "Previous theorem frontier · P89" in text[p89:p88]',\n    )\n    target.write_text(test_text, encoding="utf-8")\n\n'''
+          if 'text[p89:p88]' not in text:
+              if figure_marker not in text:
                   raise SystemExit("figure-test repair insertion point not found")
-              text = text.replace(marker, repair + marker, 1)
+              text = text.replace(figure_marker, repair + figure_marker, 1)
+          elif 'visual_old = """def test_visual_atlas_leads_with_p90_before_historical_frontiers()' not in text:
+              if figure_marker not in text:
+                  raise SystemExit("figure-test repair insertion point not found")
+              text = text.replace(figure_marker, repair + figure_marker, 1)
 
           contracts.write_text(text, encoding="utf-8")
           PY
