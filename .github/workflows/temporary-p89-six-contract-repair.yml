@@ -1,0 +1,188 @@
+name: temporary-p89-six-contract-repair
+
+on:
+  push:
+    branches: ["p89-complete-linear-parity-duality"]
+    paths:
+      - ".github/workflows/temporary-p89-six-contract-repair.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: p89-complete-linear-parity-duality
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - name: Install development environment
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+      - name: Repair the six remaining P89 contracts at their canonical sources
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          root = Path('.')
+
+          # 1. Reproducibility generator: safely replace either P88 or an already
+          # promoted P89 focused section, so existing form-feed corruption is healed.
+          sync = root / 'scripts' / 'synchronize_p89_reader_frontier_phrases.py'
+          text = sync.read_text(encoding='utf-8')
+          text = text.replace(
+              'pattern = re.compile(r"## 5\\. Focused audit of the current P88 frontier\\n.*?\\n---\\n\\n## 6\\.", re.DOTALL)',
+              'pattern = re.compile(r"## 5\\. Focused audit of the current P(?:88|89) frontier\\n.*?\\n---\\n\\n## 6\\.", re.DOTALL)',
+              1,
+          )
+          text = text.replace(
+              'text = pattern.sub(section + "\\n---\\n\\n## 6.", text, count=1)',
+              'text = pattern.sub(lambda _match: section + "\\n---\\n\\n## 6.", text, count=1)',
+              1,
+          )
+          old_tail = '''    if pattern.search(text):\n        text = pattern.sub(lambda _match: section + "\\n---\\n\\n## 6.", text, count=1)\n    elif "## 5. Focused audit of the current P89 frontier" not in text:\n        raise RuntimeError("reproducibility P88 focused section was not found")\n    write_if_changed(path, text, changed)'''
+          new_tail = '''    if pattern.search(text):\n        text = pattern.sub(lambda _match: section + "\\n---\\n\\n## 6.", text, count=1)\n    else:\n        raise RuntimeError("reproducibility current focused section was not found")\n    text = text.replace(\n        "docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg",\n        "docs/figures/p89_complete_linear_parity_duality.svg",\n    )\n    write_if_changed(path, text, changed)'''
+          if old_tail in text:
+              text = text.replace(old_tail, new_tail, 1)
+          if 'P(?:88|89)' not in text or 'lambda _match: section' not in text:
+              raise RuntimeError('reproducibility generator repair was not installed')
+          sync.write_text(text, encoding='utf-8')
+
+          # 2. Permanent website promoter: expose the current P73-P89 implementation
+          # range and an explicit P75-P89 Research II range on the Research Map.
+          promoter = root / 'scripts' / 'promote_p89_public_frontier.py'
+          text = promoter.read_text(encoding='utf-8')
+          misc_anchor = '''        ("P75-P88", "P75-P89"),\n        ("P77-P88", "P77-P89"),'''
+          misc_replacement = '''        ("P73-P88", "P73-P89"),\n        ("P75-P88", "P75-P89"),\n        ("P77-P88", "P77-P89"),'''
+          if misc_anchor in text:
+              text = text.replace(misc_anchor, misc_replacement, 1)
+          section_anchor = '<section id="p89-research-map"><div class="section-head"><p class="eyebrow">IV-R · Complete linear parity-functional duality</p><h2>P89: What is the strongest possible real linear certificate from the eleven canonical parity observables?</h2></div>'
+          section_replacement = section_anchor + '<p><strong>Current Research II model-audit range: P75-P89.</strong> P75 declares the target-measurement family and P89 closes the complete real linear parity-functional class on the stated box.</p>'
+          if section_anchor in text and 'Current Research II model-audit range: P75-P89.' not in text:
+              text = text.replace(section_anchor, section_replacement, 1)
+          if '("P73-P88", "P73-P89")' not in text:
+              raise RuntimeError('implementation range rule was not installed')
+          if 'Current Research II model-audit range: P75-P89.' not in text:
+              raise RuntimeError('research-map range marker was not installed')
+          promoter.write_text(text, encoding='utf-8')
+
+          # 3. Citation chronology: preserve P87 history and explicitly add P88
+          # between the current P89 record and older historical frontiers.
+          citation = root / 'CITATION.md'
+          text = citation.read_text(encoding='utf-8')
+          if '## Current theorem frontier: P89' not in text:
+              anchor = '## Proposition 89 method citation'
+              if anchor not in text:
+                  raise RuntimeError('P89 citation anchor is missing')
+              current = ('## Current theorem frontier: P89\n\n'
+                         'The current documented theorem frontier is **P89**. The formal package release remains **Version 0.82.0**. '
+                         'P89 closes the declared complete real linear parity-functional class on the stated P75 box with exact value `L89 = 5/168`; '
+                         'it does not close the physical-to-experiential bridge.\n\n')
+              text = text.replace(anchor, current + anchor, 1)
+          if '## Historical theorem frontier: P88' not in text:
+              historical = ('## Historical theorem frontier: P88\n\n'
+                            'P88 was the immediately preceding Research II frontier. It completed the primitive four-event parity-functional search '
+                            'through coefficient radius three and established `L88 = 1/64` on the published exact-rational witness. P89 strictly strengthens '
+                            'that result while preserving P88 as part of the auditable theorem history.\n\n')
+              p87 = '## Historical theorem frontier: P87'
+              if p87 in text:
+                  text = text.replace(p87, historical + p87, 1)
+              else:
+                  anchor = '## Proposition 89 method citation'
+                  text = text.replace(anchor, historical + anchor, 1)
+          citation.write_text(text, encoding='utf-8')
+
+          # 4. Reader tests: advance only current-state expectations; historical P88
+          # proposition references remain untouched.
+          reader = root / 'tests' / 'test_reader_experience.py'
+          text = reader.read_text(encoding='utf-8')
+          text = text.replace(
+              'def test_repository_verifier_tracks_p88_and_all_88_propositions() -> None:',
+              'def test_repository_verifier_tracks_p89_and_all_89_propositions() -> None:',
+              1,
+          )
+          text = text.replace('assert \'CURRENT_FRONTIER = "P88"\' in verifier', 'assert \'CURRENT_FRONTIER = "P89"\' in verifier', 1)
+          text = text.replace('assert "for number in range(1, 89):" in verifier', 'assert "for number in range(1, 90):" in verifier', 1)
+          text = text.replace(
+              'assert \'"docs/proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md"\' in verifier',
+              'assert \'"docs/proposition_89_complete_linear_parity_duality.md"\' in verifier',
+              1,
+          )
+          text = text.replace("overview.index('id=\"p88-frontier\"')", "overview.index('id=\"p89-frontier\"')", 1)
+          reader.write_text(text, encoding='utf-8')
+
+          # This workflow must not survive the successful repair commit.
+          Path('.github/workflows/temporary-p89-six-contract-repair.yml').unlink()
+          PY
+      - name: Regenerate canonical P89 surfaces
+        run: |
+          python scripts/promote_p89_public_frontier.py
+          python scripts/synchronize_p89_reader_frontier_phrases.py
+          python scripts/normalize_documentation_punctuation.py
+          python scripts/sync_figure_publication.py
+      - name: Run focused six-contract gate
+        run: |
+          python -m pytest -q \
+            tests/test_latex_source_integrity.py \
+            tests/test_p84_reader_presentation.py \
+            tests/test_publication_contract_v2.py \
+            tests/test_reader_experience.py \
+            tests/test_scholarly_provenance_surface.py \
+            tests/test_p89_reader_surface_coherence.py
+          python - <<'PY'
+          from pathlib import Path
+          text = Path('docs/reproducibility.md').read_text(encoding='utf-8')
+          assert '\x0c' not in text
+          assert r'\frac5{168}' in text
+          assert r'L_{88}=\frac1{64}<L_{89}=\frac5{168}' in text
+          assert 'docs/figures/p89_complete_linear_parity_duality.svg' in text
+          assert 'docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg' not in text.split('The current frontier figure is:', 1)[-1].split('---', 1)[0]
+          PY
+          grep -q 'Stage 06 · P73-P89' website/implementation.html
+          grep -q 'P75-P89' website/research-map.html
+          grep -q '## Current theorem frontier: P89' CITATION.md
+          grep -q '## Historical theorem frontier: P88' CITATION.md
+          grep -q '## Historical theorem frontier: P87' CITATION.md
+          grep -q 'id="p89-frontier"' website/index.html
+      - name: Run complete repository gate
+        run: |
+          set -o pipefail
+          python -m pytest -q
+          python scripts/sync_figure_publication.py --check
+          python scripts/verify_repository.py
+          python scripts/promote_p89_public_frontier.py
+          python scripts/synchronize_p89_reader_frontier_phrases.py
+          python scripts/normalize_documentation_punctuation.py
+          python scripts/sync_figure_publication.py --check
+          git diff --check
+          python - <<'PY'
+          from pathlib import Path
+          paths = [Path('README.md'), Path('START_HERE.md'), Path('CITATION.md')]
+          paths += list(Path('docs').glob('*.md'))
+          paths += list(Path('website').glob('*.html'))
+          paths += list(Path('docs/figures').glob('*.svg'))
+          for path in paths:
+              text = path.read_text(encoding='utf-8')
+              assert '–' not in text and '—' not in text, path
+              assert '\x0c' not in text, path
+          PY
+      - name: Commit permanent repairs and self-delete
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No P89 contract repair required."
+            exit 0
+          fi
+          git commit -m "Repair final P89 publication contracts"
+          git fetch origin p89-complete-linear-parity-duality
+          git rebase origin/p89-complete-linear-parity-duality
+          git push origin HEAD:p89-complete-linear-parity-duality
