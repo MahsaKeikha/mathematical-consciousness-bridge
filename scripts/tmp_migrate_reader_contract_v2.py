@@ -230,10 +230,26 @@ def update_contract() -> None:
     path.write_text(text, encoding="utf-8")
 
 
+def update_promoter_contract() -> None:
+    path = ROOT / "scripts/promote_p88_public_frontier.py"
+    text = path.read_text(encoding="utf-8")
+    old = '''        "website/index.html": (
+            "Explore all 88 results",
+            "<strong>P88</strong><span>current theorem frontier</span>",
+            'id="p88-frontier" class="theorem-frontier current-frontier-visual"','''
+    new = '''        "website/index.html": (
+            "Explore all 88 results",
+            "P88 current theorem frontier · v0.82.0",
+            'id="p88-frontier" class="theorem-frontier current-frontier-visual"','''
+    text = replace_once(text, old, new, "scripts/promote_p88_public_frontier.py overview contract")
+    path.write_text(text, encoding="utf-8")
+
+
 def main() -> None:
     update_overview()
     update_styles()
     update_contract()
+    update_promoter_contract()
     print("Staged full-program Overview dashboard with Research I, II, III, and open bridge boundary")
 
 
