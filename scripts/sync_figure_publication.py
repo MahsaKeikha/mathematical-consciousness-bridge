@@ -311,16 +311,33 @@ def _check_reader_surfaces(frontier: int) -> None:
     atlas = VISUAL_ATLAS.read_text(encoding="utf-8")
     required_home = (
         "Explore all 88 results",
-        '<strong>P88</strong><span>current theorem frontier</span>',
+        "Research I · Physical-system identification",
+        "<strong>58</strong><span>proposition-level statements</span>",
+        "Research II · Bridge sufficiency and falsification",
+        "<strong>88</strong><span>proposition-level results</span>",
+        "P88 current theorem frontier · v0.82.0",
+        "Research III · Consciousness measurement science",
+        "<strong>34</strong><span>tests in each CI job</span>",
+        "Open</strong><span>physical-to-experiential bridge",
         'id="p88-frontier"',
         "Current theorem frontier · P88",
         "Previous theorem frontier · P87",
     )
-    required_atlas = ('id="p88-frontier"', "Current theorem frontier · P88", "Previous theorem frontier · P87")
-    if any(marker not in home for marker in required_home):
-        raise RuntimeError("homepage is not synchronized to P88")
-    if any(marker not in atlas for marker in required_atlas):
-        raise RuntimeError("Visual Atlas is not synchronized to P88")
+    required_atlas = (
+        'id="p88-frontier"',
+        "Current theorem frontier · P88",
+        "Previous theorem frontier · P87",
+    )
+    missing_home = [marker for marker in required_home if marker not in home]
+    missing_atlas = [marker for marker in required_atlas if marker not in atlas]
+    if missing_home:
+        raise RuntimeError(
+            f"homepage is not synchronized to P88 and the three-program dashboard: {missing_home}"
+        )
+    if missing_atlas:
+        raise RuntimeError(f"Visual Atlas is not synchronized to P88: {missing_atlas}")
+    if home.index('class="research-dashboard"') > home.index('id="p88-frontier"'):
+        raise RuntimeError("homepage must orient readers to the full research program before P88")
     if home.index('id="p88-frontier"') > home.index('id="p87-frontier"'):
         raise RuntimeError("homepage does not lead with P88")
     if atlas.index('id="p88-frontier"') > atlas.index('id="p87-frontier"'):
