@@ -31,6 +31,7 @@ jobs:
           python scripts/repair_p90_provenance_paths.py
           python scripts/finalize_p90_publication.py
           python scripts/patch_p90_sources_surface.py
+          python scripts/repair_p90_repository_verifier.py
 
       - name: Validate focused P90 publication state
         run: |
@@ -53,6 +54,7 @@ jobs:
             scripts/finalize_p90_publication.py \
             scripts/repair_p90_provenance_paths.py \
             scripts/patch_p90_sources_surface.py \
+            scripts/repair_p90_repository_verifier.py \
             scripts/promote_p90_public_frontier.py \
             scripts/advance_p90_publication_contracts.py \
             scripts/sync_figure_publication.py \
@@ -74,4 +76,4 @@ jobs:
           git commit -m "Finalize P90 publication surfaces"
           git push origin HEAD:p90-exact-nonlinear-rank-one-separation
 
-# rerun after aligning P90 provenance with generic frontier contract
+# rerun after repairing stale repository verifier figure contracts
