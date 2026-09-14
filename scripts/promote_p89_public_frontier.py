@@ -184,16 +184,15 @@ def promote_plain_language() -> None:
     path = "website/plain-language.html"
     text = read(path)
     status = re.compile(
-        r'<div class="status-grid" aria-label="Current research status">.*?</div>\s*</section>',
-        re.DOTALL,
+        r'<div class="status-grid" aria-label="Current research status">\n'
+        r'(?:\s*<div>.*?</div>\n){4}\s*</div>'
     )
     replacement = '''<div class="status-grid" aria-label="Current research status">
         <div><strong>Research I</strong><span>physical-system identification</span></div>
         <div><strong>Research II</strong><span>89 results · current frontier P89</span></div>
         <div><strong>Research III</strong><span>measurement science under uncertainty</span></div>
         <div><strong>Open</strong><span>final physical-to-experiential bridge</span></div>
-      </div>
-    </section>'''
+      </div>'''
     text, count = status.subn(replacement, text, count=1)
     if count != 1:
         raise RuntimeError("Plain Language status grid was not found")
@@ -244,18 +243,15 @@ def promote_start_here() -> None:
         ),
     )
     status = re.compile(
-        r'<div class="status-grid" aria-label="Current research status">.*?</div>\s*'
-        r'<p class="small-note"><strong>Formal repository release:</strong>.*?</p>\s*</section>',
-        re.DOTALL,
+        r'<div class="status-grid" aria-label="Current research status">\n'
+        r'(?:\s*<div>.*?</div>\n){4}\s*</div>'
     )
     replacement = '''<div class="status-grid" aria-label="Current research status">
         <div><strong>Research I</strong><span>physical-system identification</span></div>
         <div><strong>Research II</strong><span>89 results · current frontier P89</span></div>
         <div><strong>Research III</strong><span>measurement science under uncertainty</span></div>
         <div><strong>Open</strong><span>physical-to-experiential bridge</span></div>
-      </div>
-      <p class="small-note"><strong>Formal repository release:</strong> v0.82.0. The documented theorem frontier can advance independently of the packaged release.</p>
-    </section>'''
+      </div>'''
     text, count = status.subn(replacement, text, count=1)
     if count != 1:
         raise RuntimeError("Start Here status grid was not found")
