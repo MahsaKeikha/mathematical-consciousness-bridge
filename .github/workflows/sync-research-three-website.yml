@@ -1,0 +1,44 @@
+name: sync-research-three-website-source
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "scripts/synchronize_research_three_website.py"
+      - ".github/workflows/sync-research-three-website.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: research-three-source-sync
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Synchronize canonical website source
+        run: |
+          python scripts/synchronize_research_three_website.py --site website --write
+          python scripts/synchronize_research_three_website.py --site website --check
+          python -m py_compile scripts/synchronize_research_three_website.py scripts/prepare_website.py
+          git diff --check
+
+      - name: Commit synchronized source when needed
+        run: |
+          if git diff --quiet -- website; then
+            echo "Website source already synchronized."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add website/index.html website/measurement-science.html website/research-lineage.html
+          git commit -m "Synchronize Research III website source"
+          git push origin HEAD:main
