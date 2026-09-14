@@ -116,7 +116,7 @@ This is not a weakness hidden by the repository. It is one of the central organi
 
 ## Where the current work sits
 
-The public theorem frontier is **P88** and the formal release is **v0.82.0**.
+The public theorem frontier is **P89** and the formal release is **v0.82.0**.
 
 P87 belongs to the later **model testing** part of the program. It strengthens a declared family of exact model separation tests. Its importance is methodological: it asks whether a more complete family of constraints that share the same parameters can expose incompatibility that weaker tests miss.
 
@@ -167,7 +167,12 @@ That is the thread connecting the entire project.
 
 ---
 
-**Previous layer:** [Start Here](../START_HERE.md)  
-**Next formal layer:** [Technical Research Architecture](research_architecture.md)  
-**Full mathematical dependency map:** [Theorem Roadmap](theorem_roadmap.md)  
+**Previous layer:** [Start Here](../START_HERE.md)
+**Next formal layer:** [Technical Research Architecture](research_architecture.md)
+**Full mathematical dependency map:** [Theorem Roadmap](theorem_roadmap.md)
 **Complete audit record:** [Detailed Proposition Record](detailed_proposition_record.md)
+
+
+### P89 complete linear parity-functional closure
+
+P89 closes the complete real linear parity-functional class on the eleven canonical P83 parity coordinates for a fixed rational P75 parameter box. Matching exact rational lower and upper certificates give `L89 = 5/168` on the published strict witness, strictly above `L88 = 1/64`. Nonlinear model constraints and the physical-to-experiential bridge remain open.

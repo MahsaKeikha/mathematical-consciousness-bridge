@@ -18,7 +18,7 @@ A claim is not strengthened by adding an unrelated citation. The citation or loc
 
 | Claim family | Claim used in the project | Evidence class | Canonical support | Required boundary |
 | --- | --- | --- | --- | --- |
-| P75 model family | The four-view binary latent target-measurement family is the declared model family audited by P75-P88 | repository modeling assumption and definition | P75 proof and implementation; dependencies recorded in [Theorem Roadmap](theorem_roadmap.md) | declaring a model does not establish that its latent state is consciousness |
+| P75 model family | The four-view binary latent target-measurement family is the declared model family audited by P75-P89 | repository modeling assumption and definition | P75 proof and implementation; dependencies recorded in [Theorem Roadmap](theorem_roadmap.md) | declaring a model does not establish that its latent state is consciousness |
 | P78 continuous separation | Exact parameter-box lower bounds can be constructed for the declared P75 family by exploiting the model's multi-affine structure | repository theorem built from elementary exact mathematics | [P78 proof](proposition_78_certified_continuous_model_separation.md), P78 provenance, implementation, tests | this certifies separation from a declared family only |
 | P79 finite-data handoff | A model-distance lower bound can be compared against a separately certified sampling-radius upper bound | repository theorem using standard concentration ingredients | [P79 proof](proposition_79_certified_sampling_radius.md), P79 provenance; Hoeffding source recorded in the equation/citation map | finite-sample rejection is one-sided and does not validate a non-rejected model |
 | P83 parity audit | Exact projection-parity observables can reveal incompatibilities not captured by the complete P82 audit | repository theorem with standard binary parity algebra | P83 proof, provenance, implementation, tests, figure | parity is a model diagnostic, not a measure of consciousness |
@@ -48,8 +48,8 @@ The P86-P88 exact-certificate sequence uses several different kinds of support a
 
 | Claim family | Claim used on the website | Evidence class | Canonical support | Required boundary |
 | --- | --- | --- | --- | --- |
-| Current theorem count | The current repository contains 88 proposition-level results | repository publication status | theorem roadmap, verifier, reader tests, and current website source | this is a repository count, not an external scientific consensus statement |
-| Current frontier | P88 is the current Research II theorem frontier | repository publication status | [P88 proof](proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md), implementation, tests, provenance, figure, and frontier publication tests | P87, P86, and earlier propositions remain historical certified frontiers, not current ones |
+| Current theorem count | The current repository contains 89 proposition-level results | repository publication status | theorem roadmap, verifier, reader tests, and current website source | this is a repository count, not an external scientific consensus statement |
+| Current frontier | P89 is the current Research II theorem frontier | repository publication status | [P89 proof](proposition_89_complete_linear_parity_duality.md), implementation, tests, provenance, figure, and frontier publication tests | P88, P87, P86, and earlier propositions remain historical certified frontiers, not current ones |
 | Reproducibility | Mature computational claims are expected to be reproducible from source, tests, figures, and pinned reference environment | repository process claim | CI, reproducibility workflow, figure synchronization, verifier | passing CI supports internal consistency and reproducibility; it is not external peer review |
 | Scientific boundary | The repository does not currently claim to have solved the physical-to-experiential bridge | repository scope statement | explicit boundaries in theorem documents, website, and [Claim, Evidence, and Citation Standard](claim_evidence_standard.md) | this is a statement about what this project establishes, not a universal impossibility theorem |
 
@@ -64,3 +64,5 @@ Before a consequential claim is promoted to the public website, at least one of 
 5. it is an open question and is explicitly labeled unresolved.
 
 If a statement does not fit one of these classes, it should not be presented as an established scientific claim.
+
+| P89 complete linear parity duality | Every real linear functional of the eleven canonical parity coordinates is bounded by the finite P89 primal/dual certificate; the strict witness optimum is exactly 5/168 | repository theorem | [P89 proof](proposition_89_complete_linear_parity_duality.md), [P89 provenance](p89_equation_provenance.md), implementation/tests, [P89 figure](figures/p89_complete_linear_parity_duality.svg) | Complete only for the declared linear parity-functional class; no consciousness identification or nonphysicality claim |

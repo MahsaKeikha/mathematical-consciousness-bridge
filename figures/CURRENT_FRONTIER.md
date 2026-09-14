@@ -1,31 +1,31 @@
-# Current visual frontier: P71-P88
+# Current visual frontier: P71-P89
 
 This page is generated from the canonical proposition and figure tree.
 It is the compact GitHub-facing visual route through the current target-side branch.
 
-## Current theorem frontier: P88
+## Current theorem frontier: P89
 
-![P88 current theorem frontier](../docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg)
+![P89 current theorem frontier](../docs/figures/p89_complete_linear_parity_duality.svg)
 
-[Read Proposition 88](../docs/proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md)
+[Read Proposition 89](../docs/proposition_89_complete_linear_parity_duality.md)
 
-[Open P88 equation provenance](../docs/p88_equation_provenance.md)
+[Open P89 equation provenance](../docs/p89_equation_provenance.md)
 
-### Exact P88 hierarchy witness
+### Exact P89 complete-linear witness
 
-P88 enlarges the complete primitive four-event coefficient box to nonzero integer coefficients satisfying `|c_i| <= 3` and strictly strengthens the complete P87 certificate on the same exact rational witness:
+P89 removes both the finite coefficient-radius restriction and the exactly-four-observable support restriction. It considers every real linear functional of all eleven canonical P83 parity coordinates and proves the exact optimum by matching rational lower and upper certificates:
 
 ```text
-L85 = 0 < L86 = 1/192 < L87 = 1/96 < L88 = 1/64
-632 primitive sign-normalized coefficient patterns per four-event subset
-208,560 standard P88 functionals
+L88 = 1/64 < L89 = 5/168
+all real coefficient vectors c in R^11 except zero
+matching zero-mass perturbation radius = 5/168
 ```
 
-The strict P88 functional uses coefficients `(1, -1, -3, 2)`, has empirical value `-11/8`, exact P75 interval `[-1, 2]`, mismatch `3/8`, and centered transfer norm `24`.
+The strict P89 direction is `(0, -2, -1, 1, 1, 1, -2, -1, -3, 2, -3)`, with empirical value `-13/6`, exact P75 interval `[-51/8, -3]`, gap `5/6`, and centered norm `28`.
 
-This is a conditional model-separation result inside the declared P75 family. It is not an identification of a latent state with conscious experience.
+This is complete only for the declared real linear parity-functional class. It does not identify a latent state with conscious experience or exhaust nonlinear P75 constraints.
 
-## P71-P88 canonical theorem-figure index
+## P71-P89 canonical theorem-figure index
 
 | Proposition | Canonical figure | Proof | Provenance |
 | --- | --- | --- | --- |
@@ -47,6 +47,7 @@ This is a conditional model-separation result inside the declared P75 family. It
 | P86 | [figure](../docs/figures/p86_exact_minimally_weighted_quad_projection_parity.svg) | [proof](../docs/proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md) | [equations](../docs/p86_equation_provenance.md) |
 | P87 | [figure](../docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg) | [proof](../docs/proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md) | [equations](../docs/p87_equation_provenance.md) |
 | P88 | [figure](../docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg) | [proof](../docs/proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md) | [equations](../docs/p88_equation_provenance.md) |
+| P89 | [figure](../docs/figures/p89_complete_linear_parity_duality.svg) | [proof](../docs/proposition_89_complete_linear_parity_duality.md) | [equations](../docs/p89_equation_provenance.md) |
 
 ## Reproduce the visual record
 
@@ -60,4 +61,4 @@ The complete machine-readable SHA-256 inventory is in [`manifest.json`](manifest
 
 ## Interpretation boundary
 
-P71-P88 strengthens the methodology for testing a declared physical-to-target model. It does not derive consciousness from physics, prove nonphysicality, or close the physical-to-experiential bridge.
+P71-P89 strengthens the methodology for testing a declared physical-to-target model. It does not derive consciousness from physics, prove nonphysicality, or close the physical-to-experiential bridge.

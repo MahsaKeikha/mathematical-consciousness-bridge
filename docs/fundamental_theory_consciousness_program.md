@@ -159,7 +159,7 @@ Then:
 \[
 \boxed{
 \Omega\sim_T\Omega'
-\ \text{and}\ 
+\ \text{and}\
 E(\Omega)\ne E(\Omega')
 \Longrightarrow
 \nexists B_T\ \text{with}\ E=B_T\circ T

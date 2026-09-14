@@ -1,6 +1,6 @@
 name: reproducibility
 
-# Exact-reference P88 release audit on the same commit used by the publication gate.
+# Exact-reference P89 release audit on the same commit used by the publication gate.
 on:
   workflow_dispatch:
   push:
@@ -23,14 +23,14 @@ jobs:
           python -m pip install -r requirements-reproducibility.txt
       - name: Run end-to-end reproducibility audit
         run: python scripts/reproducibility_audit.py
-      - name: Upload reproduced P88 visual record
+      - name: Upload reproduced P89 visual record
         uses: actions/upload-artifact@v4
         with:
-          name: reproduced-visual-record-v0.82.0-p88
+          name: reproduced-visual-record-v0.82.0-p89
           path: |
             docs/figures/quantitative
             docs/figures/quantum
-            docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg
+            docs/figures/p89_complete_linear_parity_duality.svg
             figures/current_frontier.svg
             figures/manifest.json
           if-no-files-found: error

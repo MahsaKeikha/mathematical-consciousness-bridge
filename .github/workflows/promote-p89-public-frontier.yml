@@ -1,0 +1,105 @@
+name: promote-p89-public-frontier
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/promote-p89-public-frontier.yml"
+      - "scripts/promote_p89_public_frontier.py"
+      - "scripts/sync_figure_publication.py"
+      - "scripts/synchronize_p89_reader_frontier_phrases.py"
+      - "scripts/normalize_documentation_punctuation.py"
+      - "scripts/prepare_website.py"
+      - "scripts/verify_repository.py"
+      - "scripts/verify_frontier_publication.py"
+      - "docs/proposition_89_complete_linear_parity_duality.md"
+      - "docs/p89_equation_provenance.md"
+      - "docs/figures/p89_complete_linear_parity_duality.svg"
+      - "src/consciousness_bridge/complete_linear_parity_duality.py"
+      - "tests/test_complete_linear_parity_duality.py"
+      - "tests/test_documentation_punctuation.py"
+      - "tests/test_figure_publication_sync.py"
+      - "tests/test_p89_reader_surface_coherence.py"
+      - "website/plain-language.html"
+      - "website/start-here.html"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: p89-public-frontier-main
+  cancel-in-progress: true
+
+jobs:
+  promote:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - name: Install development environment
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+      - name: Synchronize P89 reader and figure publication surfaces
+        run: |
+          python scripts/synchronize_p89_reader_frontier_phrases.py
+          python scripts/promote_p89_public_frontier.py
+          python scripts/sync_figure_publication.py
+          python scripts/synchronize_research_three_website.py
+          python scripts/normalize_documentation_punctuation.py
+      - name: Validate exact P89 theorem and balanced publication contract
+        run: |
+          python -m pytest -q \
+            tests/test_complete_linear_parity_duality.py \
+            tests/test_documentation_punctuation.py \
+            tests/test_figure_publication_sync.py \
+            tests/test_p89_reader_surface_coherence.py \
+            tests/test_website_research_orientation.py \
+            tests/test_website_link_integrity.py
+          python -m py_compile \
+            src/consciousness_bridge/complete_linear_parity_duality.py \
+            scripts/promote_p89_public_frontier.py \
+            scripts/sync_figure_publication.py \
+            scripts/synchronize_p89_reader_frontier_phrases.py \
+            scripts/normalize_documentation_punctuation.py \
+            scripts/prepare_website.py \
+            scripts/verify_frontier_publication.py \
+            scripts/verify_repository.py
+          python scripts/sync_figure_publication.py --check
+          python scripts/verify_repository.py
+          git diff --check
+          grep -q 'Explore all 89 results' website/index.html
+          grep -q 'Research I · Physical-system identification' website/index.html
+          grep -q 'Research II · Current theorem frontier · P89' website/index.html
+          grep -q 'Research III · Consciousness measurement science' website/index.html
+          grep -q 'id="p89-frontier" class="theorem-frontier current-frontier-visual"' website/index.html
+          grep -q '5/168' website/index.html
+          grep -q 'id="three-stage-progress"' website/plain-language.html
+          grep -q '<strong>Research I</strong><span>physical-system identification</span>' website/plain-language.html
+          grep -q '<strong>Research II</strong><span>89 results · current frontier P89</span>' website/plain-language.html
+          grep -q '<strong>Research III</strong><span>measurement science under uncertainty</span>' website/plain-language.html
+          grep -q 'id="program-stages"' website/start-here.html
+          grep -q 'The 89 Research II propositions by scientific role' website/start-here.html
+          test "$(grep -cF '<!-- current-frontier-home: P89 -->' website/index.html)" -eq 1
+          test "$(grep -cF '<!-- current-frontier-visual: P89 -->' website/visual-atlas.html)" -eq 1
+          grep -q '"current_frontier": "P89"' figures/manifest.json
+          grep -q 'P89' README.md START_HERE.md figures/README.md figures/CURRENT_FRONTIER.md
+      - name: Commit P89 public-frontier synchronization
+        run: |
+          if git diff --quiet; then
+            echo "Publication surfaces already synchronized."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md START_HERE.md CITATION.md CITATION.cff CITATION.bib website docs figures
+          git commit -m "Synchronize public research frontier to P89"
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main

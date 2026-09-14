@@ -63,9 +63,9 @@ Those results include methods for:
 - controlling uncertainty from finite data and numerical computation;
 - making the complete reasoning chain reproducible and auditable.
 
-The public theorem frontier is **P88**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains **open**.
+The public theorem frontier is **P89**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains **open**.
 
-You do not need to read 88 propositions to understand the project.
+You do not need to read 89 propositions to understand the project.
 
 ---
 

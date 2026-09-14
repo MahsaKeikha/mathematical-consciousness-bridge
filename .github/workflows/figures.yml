@@ -1,6 +1,6 @@
 name: figures
 
-# Certified P88 visual publication gate.
+# Certified P89 visual publication gate.
 on:
   workflow_dispatch:
   push:
@@ -13,7 +13,7 @@ on:
       - "scripts/generate_quantum_foundations_atlas.py"
       - "scripts/enrich_figure_documentation.py"
       - "scripts/sync_figure_publication.py"
-      - "scripts/promote_p88_public_frontier.py"
+      - "scripts/promote_p89_public_frontier.py"
       - "scripts/prepare_website.py"
       - "scripts/verify_repository.py"
       - "requirements-figures.txt"
@@ -24,7 +24,10 @@ on:
       - "figures/**"
       - "website/index.html"
       - "website/visual-atlas.html"
+      - "website/plain-language.html"
+      - "website/start-here.html"
       - "tests/test_figure_publication_sync.py"
+      - "tests/test_p89_reader_surface_coherence.py"
       - "pyproject.toml"
       - ".github/workflows/**"
   pull_request:
@@ -35,7 +38,7 @@ on:
       - "scripts/generate_quantum_foundations_atlas.py"
       - "scripts/enrich_figure_documentation.py"
       - "scripts/sync_figure_publication.py"
-      - "scripts/promote_p88_public_frontier.py"
+      - "scripts/promote_p89_public_frontier.py"
       - "scripts/prepare_website.py"
       - "scripts/verify_repository.py"
       - "requirements-figures.txt"
@@ -46,7 +49,10 @@ on:
       - "figures/**"
       - "website/index.html"
       - "website/visual-atlas.html"
+      - "website/plain-language.html"
+      - "website/start-here.html"
       - "tests/test_figure_publication_sync.py"
+      - "tests/test_p89_reader_surface_coherence.py"
       - "pyproject.toml"
       - ".github/workflows/**"
 
@@ -94,15 +100,16 @@ jobs:
             exit 1
           fi
       - name: Run permanent figure publication contract
-        run: python -m pytest -q tests/test_figure_publication_sync.py tests/test_figure_documentation_integrity.py
+        run: python -m pytest -q tests/test_figure_publication_sync.py tests/test_figure_documentation_integrity.py tests/test_p89_reader_surface_coherence.py
       - name: Build exact-commit website figure artifact
         run: |
           python scripts/prepare_website.py --source website --output _site
-          test -f _site/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg
-          grep -q 'src="figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg"' _site/visual-atlas.html
-          grep -q 'src="figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg"' _site/index.html
-          python -c "from pathlib import Path; t=Path('_site/index.html').read_text(encoding='utf-8'); r1=t.index('id=\"research-i-overview\"'); p=t.index('id=\"p88-frontier\"'); r3=t.index('id=\"research-iii-overview\"'); paths=t.index('id=\"reader-paths\"'); assert r1 < p < r3 < paths < t.index('id=\"plain-language\"'); assert all(x not in t for x in ('id=\"p87-frontier\"','id=\"p86-frontier\"','id=\"p85-frontier\"'))"
-          python -c "from pathlib import Path; t=Path('_site/visual-atlas.html').read_text(encoding='utf-8'); p=t.index('id=\"p88-frontier\"'); assert p < t.index('id=\"p87-frontier\"'); assert p < t.index('id=\"p86-frontier\"')"
+          test -f _site/figures/p89_complete_linear_parity_duality.svg
+          grep -q 'src="figures/p89_complete_linear_parity_duality.svg"' _site/visual-atlas.html
+          grep -q 'src="figures/p89_complete_linear_parity_duality.svg"' _site/index.html
+          python -c "from pathlib import Path; t=Path('_site/index.html').read_text(encoding='utf-8'); r1=t.index('id=\"research-i-overview\"'); p=t.index('id=\"p89-frontier\"'); r3=t.index('id=\"research-iii-overview\"'); paths=t.index('id=\"reader-paths\"'); assert r1 < p < r3 < paths < t.index('id=\"plain-language\"'); assert 'id=\"p88-frontier\"' not in t"
+          python -c "from pathlib import Path; t=Path('_site/visual-atlas.html').read_text(encoding='utf-8'); p=t.index('id=\"p89-frontier\"'); assert p < t.index('id=\"p88-frontier\"'); assert p < t.index('id=\"p87-frontier\"')"
+          python -c "from pathlib import Path; p=Path('_site/plain-language.html').read_text(encoding='utf-8'); s=Path('_site/start-here.html').read_text(encoding='utf-8'); assert 'id=\"three-stage-progress\"' in p and 'id=\"program-stages\"' in s; assert all(x in p for x in ('Research I','Research II','Research III')); assert all(x in s for x in ('Research I','Research II','Research III'))"
       - name: Verify repository publication surfaces
         run: python scripts/verify_repository.py
       - name: Upload complete reproduced visual record
@@ -112,12 +119,14 @@ jobs:
           path: |
             docs/figures/quantitative
             docs/figures/quantum
-            docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg
+            docs/figures/p89_complete_linear_parity_duality.svg
             figures/current_frontier.svg
             figures/README.md
             figures/CURRENT_FRONTIER.md
             figures/manifest.json
-            _site/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg
+            _site/figures/p89_complete_linear_parity_duality.svg
             _site/index.html
+            _site/plain-language.html
+            _site/start-here.html
             _site/visual-atlas.html
           if-no-files-found: error

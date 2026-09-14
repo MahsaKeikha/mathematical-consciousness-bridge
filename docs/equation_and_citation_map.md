@@ -1286,3 +1286,12 @@ The standard audit contains 660 sign-normalized functionals. The exact strict wi
 | `L86=1/192 < L87=1/96` | strict exact rational hierarchy witness | repository-original exact construction | P87 proof, implementation, tests |
 
 P87 is a conditional model-separation theorem for the declared P75 family. Its equations do not identify the latent state with consciousness or supply the still-open physical-to-experiential bridge.
+
+
+## P89 complete linear parity-functional duality
+
+- Theorem: [Proposition 89](proposition_89_complete_linear_parity_duality.md)
+- Equation provenance: [P89 equation record](p89_equation_provenance.md)
+- Implementation: [`complete_linear_parity_duality.py`](../src/consciousness_bridge/complete_linear_parity_duality.py)
+- Tests: [`test_complete_linear_parity_duality.py`](../tests/test_complete_linear_parity_duality.py)
+- Figure: [P89 complete-linear certificate](figures/p89_complete_linear_parity_duality.svg)
