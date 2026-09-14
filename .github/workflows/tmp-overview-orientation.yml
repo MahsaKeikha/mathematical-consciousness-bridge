@@ -1,0 +1,71 @@
+name: temporary-overview-orientation
+
+on:
+  push:
+    branches: ["overview-p88-provenance-clarity"]
+    paths:
+      - ".github/workflows/tmp-overview-orientation.yml"
+      - "website/index.html"
+
+permissions:
+  contents: write
+
+jobs:
+  update-overview:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: overview-p88-provenance-clarity
+          fetch-depth: 0
+      - name: Insert first-reader three-stage orientation
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("website/index.html")
+          text = path.read_text(encoding="utf-8")
+          if 'id="project-journey"' not in text:
+              marker = '    </section>\n\n<!-- current-frontier-home: P88 -->'
+              if marker not in text:
+                  raise SystemExit("Overview hero/P88 insertion marker not found")
+              block = '''    </section>
+
+    <section id="project-journey">
+      <div class="section-head">
+        <p class="eyebrow">The whole research program in three stages</p>
+        <h2>Find the physical system. Test the proposed bridge. Make the evidence measurable.</h2>
+        <p>Subjective experience is known from the first-person point of view, while science works with observations that can be measured, compared, and challenged from the outside. This program separates that difficult problem into three stages so that no stage can quietly assume the answer to the next one.</p>
+      </div>
+      <div class="flow">
+        <div class="flow-node"><span>Research I</span><h3>Identify the physical system</h3><p>Before asking what a system experiences, first identify the persistent physical subsystem being studied from changing dynamics and measurements.</p><p><strong>Question:</strong> what physical unit remains meaningfully the same system while its state and surroundings change?</p><p><a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math">Open Research I →</a></p></div>
+        <div class="flow-node"><span>Research II</span><h3>Test whether the declared physical description is sufficient</h3><p>Given a physical system, a declared physical description, and an independently specified experience-related target, ask whether the description preserves every distinction required by that target.</p><p><strong>Test:</strong> if two cases are identical under the declared physical description but the independent target distinguishes them, that description is insufficient for that target.</p><p>The current Research II record contains 88 proposition-level results through P88. <a href="research-map.html">Explore Research II →</a></p></div>
+        <div class="flow-node"><span>Research III</span><h3>Make consciousness-related evidence scientifically measurable</h3><p>Reports, behavior, neural activity, physiological signals, interventions, and context can disagree or depend on one another. Research III develops uncertainty-aware measurement science so those assumptions stay visible.</p><p><strong>Principle:</strong> when the evidence does not identify one answer, a range, competing explanations, or “we do not yet know” can be the scientifically correct result.</p><p><a href="measurement-science.html">Open Research III →</a></p></div>
+      </div>
+      <div class="boundary"><p><strong>Each arrow is a scientific question, not an assumption.</strong> Research I identifies a physical subsystem candidate; Research II tests declared sufficiency claims; Research III develops measurement and evidence machinery. None of these stages by itself establishes the final physical-to-experiential bridge.</p></div>
+      <p><a href="plain-language.html">Read the full plain-language guide →</a></p>
+    </section>
+
+<!-- current-frontier-home: P88 -->'''
+              text = text.replace(marker, block, 1)
+              path.write_text(text, encoding="utf-8")
+
+          check = path.read_text(encoding="utf-8")
+          assert check.count('id="project-journey"') == 1
+          assert check.index('id="project-journey"') < check.index('id="p88-frontier"')
+          assert "Research I" in check and "Research II" in check and "Research III" in check
+          assert "None of these stages by itself establishes the final physical-to-experiential bridge." in check
+          PY
+      - name: Commit generated Overview source
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "Overview orientation already present."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add website/index.html
+          git commit -m "Add three-stage Overview orientation"
+          git push origin HEAD:overview-p88-provenance-clarity
