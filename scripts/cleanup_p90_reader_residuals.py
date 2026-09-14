@@ -10,6 +10,16 @@ NEW_PROVENANCE = "p90_equation_provenance.md"
 OLD_CURRENT_FIGURE = "docs/figures/p89_complete_linear_parity_duality.svg"
 NEW_CURRENT_FIGURE = "docs/figures/p90_exact_nonlinear_rank_one_separation.svg"
 AUDIT_HEADING = "## Focused audit of the current P90 frontier"
+OLD_CATALOG_COUNT = (
+    "**Current catalog:** 147 SVG figures: 17 architecture/conceptual visuals, "
+    "18 foundational quantum-physics visuals, 72 proposition/theorem visuals, "
+    "and 40 quantitative figures."
+)
+NEW_CATALOG_COUNT = (
+    "**Current catalog:** 148 SVG figures: 17 architecture/conceptual visuals, "
+    "18 foundational quantum-physics visuals, 73 proposition/theorem visuals, "
+    "and 40 quantitative figures."
+)
 
 
 def clean_reproducibility() -> None:
@@ -40,6 +50,17 @@ def clean_sources() -> None:
     path.write_text(text, encoding="utf-8")
 
 
+def clean_figure_catalog() -> None:
+    path = ROOT / "docs" / "figure_catalog.md"
+    text = path.read_text(encoding="utf-8")
+    text = text.replace(OLD_CATALOG_COUNT, NEW_CATALOG_COUNT)
+    if NEW_CATALOG_COUNT not in text:
+        raise RuntimeError("canonical P90 figure catalog count is missing")
+    if "figures/p90_exact_nonlinear_rank_one_separation.svg" not in text:
+        raise RuntimeError("P90 theorem figure is missing from the figure catalog")
+    path.write_text(text, encoding="utf-8")
+
+
 def verify_reader_surfaces() -> None:
     candidates = [ROOT / "README.md", ROOT / "START_HERE.md"]
     candidates.extend((ROOT / "docs").rglob("*.md"))
@@ -55,6 +76,7 @@ def verify_reader_surfaces() -> None:
 def main() -> None:
     clean_reproducibility()
     clean_sources()
+    clean_figure_catalog()
     verify_reader_surfaces()
     print("P90 reader residuals cleaned and guarded")
 
