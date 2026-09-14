@@ -77,4 +77,4 @@ jobs:
           git commit -m "Close final P90 reader publication residuals"
           git push origin HEAD:p90-exact-nonlinear-rank-one-separation
 
-# rerun after frontier-generic Research III website synchronization fix
+# rerun after making the P90 homepage promotion idempotent
