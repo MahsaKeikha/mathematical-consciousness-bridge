@@ -60,6 +60,7 @@ jobs:
             scripts/promote_p90_public_frontier.py \
             scripts/advance_p90_publication_contracts.py \
             scripts/sync_figure_publication.py \
+            scripts/synchronize_research_three_website.py \
             src/consciousness_bridge/exact_nonlinear_rank_one_separation.py \
             tests/test_exact_nonlinear_rank_one_separation.py
           git diff --check
@@ -76,4 +77,4 @@ jobs:
           git commit -m "Close final P90 reader publication residuals"
           git push origin HEAD:p90-exact-nonlinear-rank-one-separation
 
-# final catalog and reader-surface cleanup before removing temporary machinery
+# rerun after frontier-generic Research III website synchronization fix
