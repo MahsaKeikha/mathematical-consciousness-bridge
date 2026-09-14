@@ -27,7 +27,9 @@ jobs:
           python-version: '3.12'
 
       - name: Finalize P90 publication state
-        run: python scripts/finalize_p90_publication.py
+        run: |
+          python scripts/finalize_p90_publication.py
+          python scripts/patch_p90_sources_surface.py
 
       - name: Validate focused P90 publication state
         run: |
@@ -48,6 +50,7 @@ jobs:
           python scripts/verify_repository.py
           python -m ruff check \
             scripts/finalize_p90_publication.py \
+            scripts/patch_p90_sources_surface.py \
             scripts/promote_p90_public_frontier.py \
             scripts/advance_p90_publication_contracts.py \
             scripts/sync_figure_publication.py \
@@ -68,5 +71,3 @@ jobs:
           fi
           git commit -m "Finalize P90 publication surfaces"
           git push origin HEAD:p90-exact-nonlinear-rank-one-separation
-
-# rerun after P90 Research Lineage validator repair
