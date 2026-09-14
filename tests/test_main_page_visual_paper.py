@@ -1,126 +1,84 @@
+from __future__ import annotations
+
 import re
 from pathlib import Path
 
+
 ROOT = Path(__file__).resolve().parents[1]
 README = ROOT / "README.md"
-DETAIL = ROOT / "docs" / "detailed_proposition_record.md"
+DETAILED_RECORD = ROOT / "docs" / "detailed_proposition_record.md"
+VISUAL_ATLAS = ROOT / "website" / "visual-atlas.html"
+VERIFY = ROOT / "scripts" / "verify_repository.py"
 
 
-CURATED_MAIN_PAGE_FIGURES = (
-    "research_architecture.svg",
-    "universal_proof_ladder.svg",
-    "theorem_roadmap.svg",
-    "conscious_state_measurement_map.svg",
-    "fundamental_theory_consciousness_map.svg",
-    "causal_structure_anatomy.svg",
-    "information_geometry_response_manifold.svg",
-    "p12_collision_map.svg",
-    "p14_temporal_continuation.svg",
-    "p18_scale_sufficiency_certificate.svg",
-    "multiscale_physical_hierarchy.svg",
-    "p20_finite_sample_residual_certificate.svg",
-    "p71_target_provenance_noncircularity.svg",
-    "p72_target_measurement_channel_robustness.svg",
-    "p73_target_channel_identifiability.svg",
-    "p74_finite_sample_target_channel_recovery.svg",
-    "p75_target_model_adequacy_overidentification.svg",
-    "p76_finite_sample_target_model_adequacy.svg",
-    "p77_full_law_model_set_separation.svg",
-    "p78_certified_continuous_model_separation.svg",
-    "observer_to_bridge_handoff.svg",
-    "quantum_bridge_completeness_map.svg",
-    "p38_quantum_operational_sufficiency.svg",
-    "p41_trace_ball_quantum_envelope.svg",
-    "p47_sequential_graph_refinement.svg",
-    "theory_comparison_map.svg",
-    "equation_evidence_map.svg",
-)
+def _text(path: Path) -> str:
+    return path.read_text(encoding="utf-8")
 
 
 def _frontier() -> int:
-    numbers = []
-    for path in (ROOT / "docs").glob("proposition_*.md"):
-        match = re.match(r"proposition_(\d+)_", path.name)
-        if match:
-            numbers.append(int(match.group(1)))
-    return max(numbers)
+    match = re.search(r'CURRENT_FRONTIER = "P(\d+)"', _text(VERIFY))
+    assert match, "verify_repository.py must declare CURRENT_FRONTIER"
+    return int(match.group(1))
 
 
-def test_main_page_contains_curated_scientific_figure_sequence():
-    text = README.read_text(encoding="utf-8")
-    for figure in CURATED_MAIN_PAGE_FIGURES:
-        assert figure in text, f"README is missing curated figure {figure}"
+def _version() -> str:
+    match = re.search(r'CURRENT_VERSION = "([^"]+)"', _text(VERIFY))
+    assert match, "verify_repository.py must declare CURRENT_VERSION"
+    return match.group(1)
 
 
-def test_main_page_links_complete_visual_atlases_instead_of_embedding_them():
-    text = README.read_text(encoding="utf-8")
-    required = (
-        "website/visual-atlas.html",
-        "docs/quantitative_physics_mathematics_atlas.md",
-        "docs/quantum_foundations_and_bridge_test.md",
-        "docs/calibration_optimization_frontier_p61_p70.md",
-        "Q01-Q40",
-        "QM01-QM18",
-    )
-    for token in required:
-        assert token in text
-
-    q_tokens = sum(f"q{index:02d}_" in text for index in range(1, 41))
-    qm_tokens = sum(f"qm{index:02d}_" in text for index in range(1, 19))
-    assert q_tokens < 10
-    assert qm_tokens < 10
-
-
-def test_detailed_proposition_chronology_is_externalized():
-    readme = README.read_text(encoding="utf-8")
-    detail = DETAIL.read_text(encoding="utf-8")
+def test_readme_is_a_reader_first_scientific_front_door() -> None:
+    text = _text(README)
     frontier = _frontier()
-
-    assert "docs/detailed_proposition_record.md" in readme
-    assert f"Open the complete P1 to P{frontier} chronology" not in readme
-    assert f"Complete P1 to P{frontier} chronology" in detail
-    assert "Propositions **P1-P10**" in detail
-    assert "**P70** makes the resulting certificate diagnostic rather than opaque" in detail
-    assert "**P71** returns from the downstream calibration branch" in detail
-    assert "**P72** adds the next target-side obligation" in detail
-    assert "**P73** closes the population identifiability step" in detail
-    assert "**P74** converts the P73 population inversion into a finite-sample confidence certificate" in detail
-    assert "**P75** separates target-channel identifiability from target-model adequacy" in detail
-    assert "**P76** converts the tracked P75 population adequacy restrictions" in detail
-    assert "**P77** closes the finite-data full-law gap left explicit by P76" in detail
-    assert "**P78** supplies the continuous-family optimization certificate required by P77" in detail
-
-
-def test_main_page_declares_scientific_status_boundaries():
-    text = README.read_text(encoding="utf-8")
-    required_phrases = (
-        "Synthetic example",
-        "Open bridge problem",
-        "**does not assume that a physical quantity is consciousness**",
-        "Quantum mechanics does not by itself imply consciousness",
-        "Reproducibility and audit path",
-        "Numerical validation facts",
-        "A passing test proves only",
-        "target-construction protocol",
-        "the way it is observed",
-        "reliability of the measurement itself",
-        "not certified by the current data",
-        "generically just-identified",
-        "Passing means compatibility with the declared model",
-        "non-rejection is not model acceptance",
-        "candidate best-fit model",
-        "upper bound",
-        "cannot by itself certify rejection",
-        "exact rational arithmetic",
-        "separately valid upper bound on the P77 sampling radius",
+    required = (
+        "# Mathematical Consciousness Bridge",
+        "START_HERE.md",
+        "docs/research_map.md",
+        "docs/detailed_proposition_record.md",
+        "docs/theorem_roadmap.md",
+        "docs/figure_catalog.md",
+        "docs/reproducibility.md",
+        f"current public theorem frontier is **P{frontier}**",
+        f"v{_version()}",
+        "physical-to-experiential bridge",
+        "The bridge remains an open scientific problem.",
     )
-    for phrase in required_phrases:
-        assert phrase in text, f"README is missing scientific-boundary text: {phrase}"
+    for marker in required:
+        assert marker in text, marker
 
 
-def test_every_curated_figure_has_reader_interpretation():
-    text = README.read_text(encoding="utf-8")
-    assert text.count("**Figure ") >= len(CURATED_MAIN_PAGE_FIGURES)
-    assert "The arrows are logical dependencies" in text
-    assert "These are physical candidates to be tested for sufficiency" in text
-    assert "The scientific conclusion is conditional" in text
+def test_readme_keeps_scientific_architecture_and_current_frontier_visible() -> None:
+    text = _text(README)
+    frontier = _frontier()
+    assert "docs/figures/research_architecture.svg" in text
+    assert f"docs/figures/p{frontier}_" in text
+    assert "Figure 1. Scientific architecture of the project." in text
+    assert f"Figure 2. P{frontier}" in text
+    assert "conditional model-separation theorem" in text
+    assert "does not identify consciousness" in text
+
+
+def test_complete_proposition_chronology_lives_in_detailed_record() -> None:
+    text = _text(DETAILED_RECORD)
+    frontier = _frontier()
+    assert f"Complete P1 to P{frontier} chronology" in text
+    for number in range(1, frontier + 1):
+        assert re.search(rf"\bP{number}\b", text), f"P{number} missing from detailed record"
+
+
+def test_visual_atlas_carries_the_full_figure_publication_layer() -> None:
+    text = _text(VISUAL_ATLAS)
+    frontier = _frontier()
+    assert f"current-frontier-visual: P{frontier}" in text
+    assert f'id="p{frontier}-frontier"' in text
+    assert "How to read every figure" in text
+    assert "Scientific status" in text
+
+
+def test_readme_does_not_duplicate_the_full_technical_record() -> None:
+    text = _text(README)
+    assert "docs/detailed_proposition_record.md" in text
+    assert "docs/theorem_roadmap.md" in text
+    assert "docs/figure_catalog.md" in text
+    assert text.count("## ") < 20
+    assert "You do **not** need to read the propositions in order" in text
