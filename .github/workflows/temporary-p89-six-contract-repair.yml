@@ -61,7 +61,6 @@ jobs:
           if 'P(?:88|89)' not in text or 'lambda _match: section' not in text:
               raise RuntimeError('reproducibility generator repair was not installed')
           if 'The current repository contains 89 proposition-level results' not in text:
-              # The marker lives in the code replacement string after the edit.
               if 'contains 88 proposition-level results' not in text:
                   raise RuntimeError('claim matrix promotion rule was not installed')
           sync.write_text(text, encoding='utf-8')
@@ -117,7 +116,7 @@ jobs:
                   text = text.replace(anchor, historical + anchor, 1)
           if '## Current theorem frontier: P88' in text:
               raise RuntimeError('stale current P88 citation block survived')
-          citation.write_text(text, encoding='utf-8')
+          citation.write_text(text.rstrip() + '\n', encoding='utf-8')
 
           # Reader-experience tests: update only current-state expectations.
           reader = root / 'tests' / 'test_reader_experience.py'
