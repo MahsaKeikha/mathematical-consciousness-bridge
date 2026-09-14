@@ -1,12 +1,14 @@
-"""Normalize forbidden Unicode dash punctuation in reader-facing documentation.
+"""Normalize reader-facing documentation punctuation deterministically.
 
 The public documentation contract intentionally avoids Unicode en dash and em dash
 characters. Reader-facing Markdown, HTML, SVG, and text files use the ASCII hyphen
 instead so generated and hand-edited publication surfaces stay consistent.
 
-This normalizer deliberately does not trim or otherwise reformat whitespace. Generated
-SVGs are byte-reproducible artifacts, and changing path-data spacing would create
-publication drift unrelated to the punctuation policy.
+Generated SVG path data can also acquire trailing spaces from plotting-library output.
+Those spaces have no SVG meaning, fail repository whitespace checks, and make exact
+regeneration depend on incidental serializer formatting. SVG lines are therefore
+canonicalized by removing trailing spaces and tabs. Markdown and HTML whitespace is
+otherwise left unchanged so intentional formatting is preserved.
 """
 
 from __future__ import annotations
@@ -37,9 +39,14 @@ def documentation_files() -> list[Path]:
     return sorted(set(files))
 
 
-def normalize(text: str) -> str:
+def normalize(text: str, *, suffix: str = "") -> str:
     for dash in FORBIDDEN_DASHES:
         text = text.replace(dash, "-")
+    if suffix.lower() == ".svg":
+        had_terminal_newline = text.endswith("\n")
+        text = "\n".join(line.rstrip(" \t") for line in text.splitlines())
+        if had_terminal_newline:
+            text += "\n"
     return text
 
 
@@ -47,18 +54,18 @@ def main() -> None:
     changed: list[str] = []
     for path in documentation_files():
         original = path.read_text(encoding="utf-8")
-        updated = normalize(original)
+        updated = normalize(original, suffix=path.suffix)
         if updated == original:
             continue
         path.write_text(updated, encoding="utf-8")
         changed.append(path.relative_to(ROOT).as_posix())
 
     if changed:
-        print("[documentation] normalized forbidden dash punctuation:")
+        print("[documentation] normalized reader-facing documentation:")
         for path in changed:
             print(f"  - {path}")
     else:
-        print("[documentation] dash punctuation already normalized")
+        print("[documentation] punctuation and SVG whitespace already normalized")
 
 
 if __name__ == "__main__":
