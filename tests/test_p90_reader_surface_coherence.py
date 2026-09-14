@@ -48,6 +48,7 @@ def test_plain_language_keeps_all_three_research_stages_primary():
     assert 'id="p90-reader-frontier"' in text
     assert "Research II · Current exact frontier · P90" in text
     assert "L90 = 5/72 = (7/3)L89" in text
+    assert "P89 remains the complete-linear subfrontier" in text
 
     assert "What the 89 results are doing" not in text
     assert "<strong>89</strong><span>Research II proposition-level results</span>" not in text
@@ -67,10 +68,10 @@ def test_start_here_orients_to_three_stages_before_research_ii_chronology():
     assert "Research II · Current certified frontier" in text
     assert "P78-P90 progressively tighten global separation" in text
     assert "P89 closes the complete real linear parity-functional class" in text
+    assert "P89 is the current complete-linear frontier" in text
     assert "P90 moves beyond that complete linear envelope" in text
     assert "L89 = 5/168" in text
     assert "L90 = 5/72" in text
-    assert "P89 is the current complete-linear frontier" not in text
     assert "Read P90 theorem" in text
     assert "The most important boundary" in text
     assert 'id="reader-primer"' in text
