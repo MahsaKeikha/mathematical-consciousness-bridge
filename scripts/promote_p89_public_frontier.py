@@ -244,7 +244,8 @@ def promote_start_here() -> None:
         ),
     )
     status = re.compile(
-        r'<div class="status-grid" aria-label="Current research status">.*?</div>\s*</section>',
+        r'<div class="status-grid" aria-label="Current research status">.*?</div>\s*'
+        r'<p class="small-note"><strong>Formal repository release:</strong>.*?</p>\s*</section>',
         re.DOTALL,
     )
     replacement = '''<div class="status-grid" aria-label="Current research status">
