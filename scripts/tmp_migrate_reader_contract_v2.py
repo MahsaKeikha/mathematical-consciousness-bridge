@@ -1,149 +1,240 @@
-from __future__ import annotations
-
-import ast
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def repair_current_frontier_sources() -> None:
-    citation_path = ROOT / "CITATION.md"
-    citation = citation_path.read_text(encoding="utf-8")
-
-    citation = citation.replace(
-        "## Current theorem frontier: P85",
-        "## Historical theorem frontier: P85",
-    )
-    citation = citation.replace(
-        "The current documented theorem frontier is **P85**, the exact three-event projection-parity functional certificate. When citing this frontier result specifically, cite [Proposition 85](docs/proposition_85_exact_triple_projection_parity_functional.md) together with its [equation and provenance record](docs/p85_equation_provenance.md), implementation, tests, and exact theorem figure. P85 is conditional on the declared P75 model and does not claim that the physical-to-experiential bridge has been solved.",
-        "P85 was an earlier theorem frontier: the exact three-event projection-parity functional certificate. When citing this historical result specifically, cite [Proposition 85](docs/proposition_85_exact_triple_projection_parity_functional.md) together with its [equation and provenance record](docs/p85_equation_provenance.md), implementation, tests, and exact theorem figure. P85 is conditional on the declared P75 model and does not claim that the physical-to-experiential bridge has been solved.",
-    )
-
-    old_p87 = """## Current theorem frontier
-
-The current documented theorem frontier is **P87**. Proposition 87 completes the sign-normalized primitive nonzero four-event coefficient box with `0 < |c_i| <= 2`, auditing 39,600 exact functionals. On the stored exact rational witness, the complete P86 certificate is `1/192` and P87 certifies `1/96`. This is a conditional model-separation result for the declared P75 family, not an identification or definition of consciousness."""
-    new_p88 = """## Historical theorem frontier: P87
-
-P87 was the immediately preceding theorem frontier. It completed the sign-normalized primitive nonzero four-event coefficient box with `0 < |c_i| <= 2`, auditing 39,600 exact functionals. On the stored exact rational witness, the complete P86 certificate is `1/192` and P87 certifies `1/96`. This is a conditional model-separation result for the declared P75 family, not an identification or definition of consciousness.
-
-## Current theorem frontier: P88
-
-The current documented theorem frontier is **P88**. Proposition 88 extends the exact bounded-primitive four-event parity family to radius three, auditing 208,560 exact functionals. On the stored exact rational witness, P88 certifies `L88 = 1/64`, strengthening `L87 = 1/96`. Cite [Proposition 88](docs/proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md) together with its [equation and provenance record](docs/p88_equation_provenance.md), implementation, regression tests, and exact theorem figure. P88 remains a conditional model-separation result for the declared P75 family; it does not identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge."""
-    if old_p87 not in citation:
-        raise SystemExit("CITATION.md: expected stale P87 current-frontier block not found")
-    citation = citation.replace(old_p87, new_p88, 1)
-
-    if "## Current theorem frontier: P85" in citation:
-        raise SystemExit("CITATION.md still labels P85 as current")
-    if "The current documented theorem frontier is **P87**" in citation:
-        raise SystemExit("CITATION.md still labels P87 as current")
-    citation_path.write_text(citation, encoding="utf-8")
-
-    nav_path = ROOT / "docs/research_navigation.md"
-    nav = nav_path.read_text(encoding="utf-8")
-    nav = nav.replace(
-        "The public theorem frontier is **P88**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains open.",
-        "The current documented theorem frontier is **P88**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains open.",
-        1,
-    )
-    if (
-        "| The overall scientific story | [Research Map](research_map.md) |" in nav
-        and "../START_HERE.md" not in nav
-    ):
-        nav = nav.replace(
-            "| The overall scientific story | [Research Map](research_map.md) |",
-            "| A short first introduction | [Start Here](../START_HERE.md) |\n| The overall scientific story | [Research Map](research_map.md) |",
-            1,
-        )
-    nav_path.write_text(nav, encoding="utf-8")
+def replace_once(text: str, old: str, new: str, label: str) -> str:
+    if text.count(old) != 1:
+        raise SystemExit(f"{label}: expected exactly one replacement target, found {text.count(old)}")
+    return text.replace(old, new, 1)
 
 
-OBSOLETE: dict[str, list[str]] = {
-    "tests/test_bounded_starvation_sampling_documentation.py": ["test_p50_visual_and_proof_to_code_path_are_public"],
-    "tests/test_calibration_frontier_page.py": ["test_main_page_links_frontier_without_embedding_p61_p70_ledger"],
-    "tests/test_capacity_optimal_service_allocation_documentation.py": ["test_p52_visual_and_proof_to_code_path_are_public"],
-    "tests/test_citation_surface.py": ["test_main_page_ends_with_professional_citation_section"],
-    "tests/test_document_link_integrity.py": ["test_reader_navigation_exposes_the_complete_theorem_chain", "test_main_page_links_to_reader_navigation_and_provenance"],
-    "tests/test_dyadic_stopping_overhead_documentation.py": ["test_p49_visual_and_proof_to_code_path_are_public"],
-    "tests/test_exact_heterogeneous_integer_calibration_publication.py": ["test_p63_is_in_public_research_maps"],
-    "tests/test_exact_integer_transition_calibration_publication.py": ["test_p61_is_in_public_research_maps"],
-    "tests/test_fast_heterogeneous_integer_approximation_publication.py": ["test_p64_publication_surface"],
-    "tests/test_finite_data_metric_uncertainty_publication.py": ["test_p58_is_visible_on_main_page", "test_p58_is_in_public_research_maps"],
-    "tests/test_frontier_reader_narrative.py": ["test_current_frontier_is_consistent_across_reader_surfaces"],
-    "tests/test_fundamental_theory_program.py": ["test_main_page_exposes_fundamental_theory_interface", "test_my_big_toe_is_not_presented_as_scientific_fact"],
-    "tests/test_gap_stopping_complexity_documentation.py": ["test_p48_visual_and_proof_to_code_path_are_public"],
-    "tests/test_heterogeneous_cost_transition_calibration_publication.py": ["test_p62_is_in_public_research_maps"],
-    "tests/test_heterogeneous_service_stopping_documentation.py": ["test_p51_visual_and_proof_to_code_path_are_public"],
-    "tests/test_integer_transition_calibration_publication.py": ["test_p60_is_visible_on_main_page", "test_p60_is_in_public_research_maps"],
-    "tests/test_main_page_visual_paper.py": ["test_main_page_contains_curated_scientific_figure_sequence", "test_main_page_links_complete_visual_atlases_instead_of_embedding_them", "test_main_page_declares_scientific_status_boundaries", "test_every_curated_figure_has_reader_interpretation"],
-    "tests/test_metric_switching_publication.py": ["test_p54_is_visible_on_main_research_page", "test_p54_is_in_roadmap_navigation_and_equation_map"],
-    "tests/test_moving_start_metric_reoptimization_publication.py": ["test_p56_is_visible_on_main_page", "test_p56_is_in_public_research_maps"],
-    "tests/test_optimal_transition_calibration_publication.py": ["test_p59_is_visible_on_main_page", "test_p59_is_in_public_research_maps"],
-    "tests/test_p65_publication_integration.py": ["test_p65_remains_integrated_in_public_record"],
-    "tests/test_p66_publication_integration.py": ["test_p66_is_preserved_in_public_record"],
-    "tests/test_p67_publication_integration.py": ["test_p67_is_preserved_in_public_record"],
-    "tests/test_p68_publication_integration.py": ["test_p68_is_preserved_in_public_record"],
-    "tests/test_p69_publication_integration.py": ["test_p69_is_preserved_in_public_record"],
-    "tests/test_p70_publication_integration.py": ["test_p70_remains_integrated_as_historical_calibration_frontier"],
-    "tests/test_p75_research_integration.py": ["test_p75_public_research_surfaces_preserve_the_result", "test_p75_scientific_boundary_is_preserved_on_public_surfaces"],
-    "tests/test_p76_research_integration.py": ["test_p76_is_preserved_across_public_research_surfaces", "test_p76_plain_language_and_scientific_boundaries_remain_explicit"],
-    "tests/test_p77_research_integration.py": ["test_p77_is_exposed_across_public_research_surfaces", "test_p77_plain_language_explains_full_law_logic_without_equations", "test_p77_certification_boundary_is_preserved"],
-    "tests/test_p78_research_integration.py": ["test_p78_is_exposed_across_public_research_surfaces", "test_p78_plain_language_explains_certificate_without_equations", "test_p78_release_history_is_preserved_after_later_frontiers", "test_p78_certification_boundary_is_preserved", "test_p78_figure_sequence_is_unique_around_frontier"],
-    "tests/test_p79_research_integration.py": ["test_p79_is_exposed_across_public_research_surfaces", "test_p79_plain_language_explains_why_rounding_direction_matters", "test_p79_release_history_survives_later_frontiers", "test_p79_preserves_one_sided_certification_logic", "test_p78_release_history_survives_p79_frontier"],
-    "tests/test_pruning_aware_switching_publication.py": ["test_p55_is_visible_on_main_page", "test_p55_is_in_public_research_maps"],
-    "tests/test_public_reader_layering.py": ["test_first_reader_layers_stay_compact", "test_readme_does_not_become_a_proposition_archive", "test_start_here_hands_off_to_the_research_map", "test_home_page_offers_clear_depth_choices"],
-    "tests/test_public_reader_navigation_frontier.py": ["test_readme_theorem_roadmap_advertises_current_frontier", "test_readme_routes_calibration_frontier_to_complete_proposition_links", "test_public_navigation_documents_agree_on_current_frontier"],
-    "tests/test_public_reader_punctuation.py": ["test_public_website_visible_prose_has_no_hyphenated_words"],
-    "tests/test_reader_documentation_consistency.py": ["test_start_here_matches_current_release_and_theorem_frontier", "test_reader_entry_points_are_linked_from_main_surfaces", "test_navigation_and_roadmap_report_current_frontier"],
-    "tests/test_reader_experience.py": ["test_first_reader_surfaces_match_p88_frontier"],
-    "tests/test_reader_guide_links.py": ["test_how_to_read_table_has_direct_navigation_links"],
-    "tests/test_readme_research_orientation.py": ["test_readme_follows_reader_first_scientific_order", "test_plain_language_section_explains_full_program_without_equations", "test_research_at_a_glance_covers_the_full_scientific_program", "test_front_page_has_current_research_record_counts"],
-    "tests/test_reference_and_prose_style.py": ["test_main_page_exposes_reference_provenance"],
-    "tests/test_release_metadata_consistency.py": ["test_quantum_and_experiment_publication_paths_are_visible_on_reader_appropriate_surfaces"],
-    "tests/test_residual_demand_reoptimization_documentation.py": ["test_p53_visual_and_proof_to_code_path_are_public"],
-    "tests/test_sequential_witness_graph_documentation.py": ["test_p47_publication_visual_exists_and_is_linked"],
-    "tests/test_switching_metric_perturbation_publication.py": ["test_p57_is_visible_on_main_page", "test_p57_is_in_public_research_maps"],
-    "tests/test_theorem_roadmap_caption.py": ["test_readme_roadmap_caption_matches_displayed_scope_and_frontier"],
-    "tests/test_website_research_lineage.py": ["test_lineage_preserves_scientific_boundary_between_projects", "test_global_website_navigation_includes_research_lineage"],
-    "tests/test_website_research_orientation.py": ["test_research_map_starts_with_orientation_before_stage_details", "test_research_map_exposes_status_and_all_ten_stage_ranges", "test_research_map_presents_p77_through_p87_with_p84_history"],
+def update_overview() -> None:
+    path = ROOT / "website/index.html"
+    text = path.read_text(encoding="utf-8")
+
+    old_actions = '''      <div class="hero-actions">
+        <a class="button primary" href="#plain-language">Explain it simply</a>
+        <a class="button" href="start-here.html">Start here</a>
+        <a class="button" href="research-map.html">Explore all 88 results</a>
+        <a class="button" href="visual-atlas.html">Open the visual atlas</a>
+        <a class="button" href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge">GitHub repository</a>
+      </div>'''
+    new_actions = '''      <div class="hero-actions">
+        <a class="button primary" href="#project-journey">Explore the full research program</a>
+        <a class="button" href="#plain-language">Explain it simply</a>
+        <a class="button" href="https://github.com/MahsaKeikha/spatiotemporal-observer-math">Research I</a>
+        <a class="button" href="research-map.html">Research II · 88 results</a>
+        <a class="button" href="measurement-science.html">Research III · measurement science</a>
+        <a class="button" href="research-lineage.html">Research lineage</a>
+      </div>'''
+    text = replace_once(text, old_actions, new_actions, "website/index.html hero actions")
+
+    old_status = '''      <div class="status-grid" aria-label="Current research status">
+        <div><strong>88</strong><span>proposition-level results</span></div>
+        <div><strong>P88</strong><span>current theorem frontier</span></div>
+        <div><strong>v0.82.0</strong><span>current documented release</span></div>
+        <div><strong>Open</strong><span>physical-to-experiential bridge</span></div>
+      </div>'''
+    new_status = '''      <div class="research-dashboard" aria-label="Three-part research program and open scientific boundary">
+        <a class="research-program-card" href="https://github.com/MahsaKeikha/spatiotemporal-observer-math">
+          <span class="research-program-kicker">Research I · Physical-system identification</span>
+          <span class="research-program-metric"><strong>58</strong><span>proposition-level statements</span></span>
+          <span class="research-program-meta">45 experiments · 33 figures · 223 claim-level tests</span>
+          <span class="research-program-cta">Open Research I →</span>
+        </a>
+        <a class="research-program-card" href="research-map.html">
+          <span class="research-program-kicker">Research II · Bridge sufficiency and falsification</span>
+          <span class="research-program-metric"><strong>88</strong><span>proposition-level results</span></span>
+          <span class="research-program-meta">P88 current theorem frontier · v0.82.0</span>
+          <span class="research-program-cta">Explore all 88 results →</span>
+        </a>
+        <a class="research-program-card" href="measurement-science.html">
+          <span class="research-program-kicker">Research III · Consciousness measurement science</span>
+          <span class="research-program-metric"><strong>34</strong><span>tests in each CI job</span></span>
+          <span class="research-program-meta">5 targets · 2 research arms · M0-M7 claim ladder</span>
+          <span class="research-program-cta">Explore Research III →</span>
+        </a>
+        <a class="research-program-card open-problem-card" href="plain-language.html">
+          <span class="research-program-kicker">Shared scientific boundary</span>
+          <span class="research-program-metric"><strong>Open</strong><span>physical-to-experiential bridge</span></span>
+          <span class="research-program-meta">The three programs constrain the problem without presupposing the answer.</span>
+          <span class="research-program-cta">See what remains open →</span>
+        </a>
+      </div>'''
+    text = replace_once(text, old_status, new_status, "website/index.html research dashboard")
+
+    path.write_text(text, encoding="utf-8")
+
+
+def update_styles() -> None:
+    path = ROOT / "website/styles.css"
+    text = path.read_text(encoding="utf-8")
+    if ".research-dashboard {" in text:
+        raise SystemExit("website/styles.css: research dashboard styles already present")
+
+    anchor = ".section-head {\n"
+    css = '''.research-dashboard {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 46px;
 }
 
+.research-program-card {
+  display: flex;
+  min-width: 0;
+  min-height: 238px;
+  padding: 21px;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: var(--paper);
+  color: var(--ink);
+  transition: transform 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
+}
 
-def migrate_obsolete_tests() -> None:
-    removed = 0
-    for rel, names in OBSOLETE.items():
-        path = ROOT / rel
-        source = path.read_text(encoding="utf-8")
-        tree = ast.parse(source)
-        targets = {
-            node.name: node
-            for node in tree.body
-            if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef))
-            and node.name in names
-        }
-        missing = sorted(set(names) - set(targets))
-        if missing:
-            raise SystemExit(f"{rel}: obsolete tests not found: {missing}")
-        lines = source.splitlines(keepends=True)
-        ranges = sorted(
-            ((node.lineno - 1, node.end_lineno) for node in targets.values()),
-            reverse=True,
-        )
-        for start, end in ranges:
-            del lines[start:end]
-            removed += 1
-        path.write_text("".join(lines), encoding="utf-8")
+.research-program-card:hover {
+  transform: translateY(-2px);
+  border-color: #aeb7ca;
+  box-shadow: 0 10px 26px rgba(20, 26, 36, 0.07);
+  text-decoration: none;
+}
 
-    if removed != 84:
-        raise SystemExit(
-            f"Expected to migrate 84 obsolete assertions, migrated {removed}"
-        )
-    print(f"Migrated {removed} obsolete publication-placement assertions.")
+.research-program-kicker {
+  min-height: 3.3em;
+  color: var(--accent2);
+  font-size: 0.7rem;
+  font-weight: 760;
+  line-height: 1.45;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.research-program-metric {
+  display: block;
+  margin-top: 18px;
+}
+
+.research-program-metric strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2.15rem;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.research-program-metric > span {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.research-program-meta {
+  display: block;
+  margin-top: 15px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.research-program-cta {
+  display: block;
+  margin-top: auto;
+  padding-top: 18px;
+  color: var(--accent);
+  font-size: 0.79rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.open-problem-card {
+  background: var(--soft);
+}
+
+@media (max-width: 1000px) {
+  .research-dashboard {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .research-dashboard {
+    grid-template-columns: 1fr;
+    margin-top: 36px;
+  }
+
+  .research-program-card {
+    min-height: 0;
+  }
+
+  .research-program-kicker {
+    min-height: 0;
+  }
+}
+
+'''
+    text = replace_once(text, anchor, css + anchor, "website/styles.css insertion")
+    path.write_text(text, encoding="utf-8")
+
+
+def update_contract() -> None:
+    path = ROOT / "tests/test_publication_contract_v2.py"
+    text = path.read_text(encoding="utf-8")
+    old = '''def test_overview_orients_to_all_three_research_programs_before_p88() -> None:
+    overview = _read(WEBSITE / "index.html")
+    journey = overview.index('id="project-journey"')
+    p88 = overview.index('id="p88-frontier"')
+    assert journey < p88
+    for token in (
+        "The whole research program in three stages",
+        "Research I",
+        "Research II",
+        "Research III",
+        "spatiotemporal-observer-math",
+        "88 proposition-level results",
+        "measurement-science.html",
+        "None of these stages by itself establishes the final physical-to-experiential bridge.",
+    ):
+        assert token in overview
+'''
+    new = '''def test_overview_orients_to_all_three_research_programs_before_p88() -> None:
+    overview = _read(WEBSITE / "index.html")
+    dashboard = overview.index('class="research-dashboard"')
+    journey = overview.index('id="project-journey"')
+    p88 = overview.index('id="p88-frontier"')
+    assert dashboard < journey < p88
+    for token in (
+        "The whole research program in three stages",
+        "Research I · Physical-system identification",
+        "58</strong><span>proposition-level statements",
+        "45 experiments · 33 figures · 223 claim-level tests",
+        "spatiotemporal-observer-math",
+        "Research II · Bridge sufficiency and falsification",
+        "88</strong><span>proposition-level results",
+        "P88 current theorem frontier · v0.82.0",
+        "research-map.html",
+        "Research III · Consciousness measurement science",
+        "34</strong><span>tests in each CI job",
+        "5 targets · 2 research arms · M0-M7 claim ladder",
+        "measurement-science.html",
+        "Open</strong><span>physical-to-experiential bridge",
+        "None of these stages by itself establishes the final physical-to-experiential bridge.",
+    ):
+        assert token in overview
+'''
+    text = replace_once(text, old, new, "tests/test_publication_contract_v2.py overview contract")
+    path.write_text(text, encoding="utf-8")
 
 
 def main() -> None:
-    repair_current_frontier_sources()
-    migrate_obsolete_tests()
+    update_overview()
+    update_styles()
+    update_contract()
+    print("Staged full-program Overview dashboard with Research I, II, III, and open bridge boundary")
 
 
 if __name__ == "__main__":
