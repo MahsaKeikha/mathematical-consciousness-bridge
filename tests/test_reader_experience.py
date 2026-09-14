@@ -164,3 +164,15 @@ def test_repository_verifier_tracks_p88_and_all_88_propositions() -> None:
     assert "for number in range(1, 89):" in verifier
     assert '"docs/reader_experience_and_visual_standard.md"' in verifier
     assert '"docs/proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md"' in verifier
+
+
+def test_overview_orients_first_time_reader_before_theorem_frontier() -> None:
+    overview = _text("website/index.html")
+    assert overview.count('id="project-journey"') == 1
+    assert overview.index('id="project-journey"') < overview.index('id="p88-frontier"')
+    assert "The whole research program in three stages" in overview
+    assert "<span>Research I</span>" in overview
+    assert "<span>Research II</span>" in overview
+    assert "<span>Research III</span>" in overview
+    assert "Research I identifies a physical subsystem candidate" in overview
+    assert "None of these stages by itself establishes the final physical-to-experiential bridge." in overview
