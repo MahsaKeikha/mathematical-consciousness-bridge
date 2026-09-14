@@ -73,3 +73,5 @@ jobs:
           fi
           git commit -m "Finalize P90 publication surfaces"
           git push origin HEAD:p90-exact-nonlinear-rank-one-separation
+
+# rerun after aligning P90 provenance with generic frontier contract
