@@ -68,6 +68,29 @@ def clean_figure_catalog() -> None:
     path.write_text(text, encoding="utf-8")
 
 
+def clean_homepage() -> None:
+    path = ROOT / "website" / "index.html"
+    text = path.read_text(encoding="utf-8")
+    replacements = {
+        "The 89-result program is summarized here;": "The 90-result program is summarized here;",
+        "current P89 frontier": "current P90 frontier",
+        'href="sources.html#p89-source">P89 sources</a>': 'href="sources.html#p90-source">P90 sources</a>',
+        "<!-- Current theorem asset: docs/figures/p89_complete_linear_parity_duality.svg -->": (
+            "<!-- Current theorem asset: docs/figures/p90_exact_nonlinear_rank_one_separation.svg -->"
+        ),
+    }
+    for old, new in replacements.items():
+        text = text.replace(old, new)
+    stale = [old for old in replacements if old in text]
+    if stale:
+        raise RuntimeError(f"stale P89 homepage references remain: {stale}")
+    if text.count("<!-- current-frontier-home: P90 -->") != 1:
+        raise RuntimeError("homepage must contain exactly one P90 current-frontier marker")
+    if text.count('id="p90-frontier"') != 1:
+        raise RuntimeError("homepage must contain exactly one P90 frontier section")
+    path.write_text(text, encoding="utf-8")
+
+
 def clean_visual_atlas() -> None:
     path = ROOT / "website" / "visual-atlas.html"
     text = path.read_text(encoding="utf-8")
@@ -129,6 +152,7 @@ def main() -> None:
     clean_reproducibility()
     clean_sources()
     clean_figure_catalog()
+    clean_homepage()
     clean_visual_atlas()
     harden_promoter_visual_atlas()
     verify_reader_surfaces()
