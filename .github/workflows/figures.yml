@@ -48,11 +48,16 @@ on:
       - "pyproject.toml"
       - ".github/workflows/**"
 
+permissions:
+  contents: write
+
 jobs:
   generate-and-validate:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12.14"
@@ -63,6 +68,64 @@ jobs:
           python -m pip install -r requirements-figures.txt
       - name: Regenerate and synchronize complete visual publication record
         run: python scripts/generate_all_figures.py
+      - name: Normalize rerunnable P88 reader markers
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          marker_specs = (
+              (Path("website/index.html"), "<!-- current-frontier-home: P88 -->"),
+              (Path("website/visual-atlas.html"), "<!-- current-frontier-visual: P88 -->"),
+          )
+          for path, marker in marker_specs:
+              text = path.read_text(encoding="utf-8")
+              text = re.sub(
+                  rf"(?:{re.escape(marker)}\s*)+",
+                  marker + "\n",
+                  text,
+                  flags=re.MULTILINE,
+              )
+              path.write_text(text, encoding="utf-8")
+
+          research_map = Path("website/research-map.html")
+          text = research_map.read_text(encoding="utf-8")
+          text = re.sub(
+              r'\n{3,}(?=<section id="p88-research-map")',
+              "\n\n",
+              text,
+          )
+          research_map.write_text(text, encoding="utf-8")
+          PY
+      - name: Synchronize deterministic generated figure artifacts
+        run: |
+          python scripts/sync_figure_publication.py --check
+          if git diff --quiet; then
+            echo "Figure publication record is already byte-identical."
+            exit 0
+          fi
+
+          echo "Deterministic publication changes detected:"
+          git status --short
+          unexpected="$(git status --porcelain | sed 's/^...//' | grep -vE '^(docs/figure_catalog\.md|docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity\.svg|figures/current_frontier\.svg|figures/manifest\.json)$' || true)"
+          if [ -n "$unexpected" ]; then
+            echo "Unexpected generated drift; refusing to auto-synchronize:"
+            printf '%s\n' "$unexpected"
+            git diff
+            exit 1
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            docs/figure_catalog.md \
+            docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg \
+            figures/current_frontier.svg \
+            figures/manifest.json
+          git commit -m "Synchronize complete P88 figure publication record"
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
       - name: Require byte-identical regeneration and publication sync
         run: |
           python scripts/sync_figure_publication.py --check
