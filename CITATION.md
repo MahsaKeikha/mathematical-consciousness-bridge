@@ -158,9 +158,9 @@ For work that specifically uses the current joint parity certificate, cite the p
 The result is a conditional model-distance certificate for the declared P75 latent family. It should not be cited as an identification, definition, or measurement of consciousness, and non-rejection remains inconclusive.
 
 
-## Current theorem frontier: P85
+## Historical theorem frontier: P85
 
-The current documented theorem frontier is **P85**, the exact three-event projection-parity functional certificate. When citing this frontier result specifically, cite [Proposition 85](docs/proposition_85_exact_triple_projection_parity_functional.md) together with its [equation and provenance record](docs/p85_equation_provenance.md), implementation, tests, and exact theorem figure. P85 is conditional on the declared P75 model and does not claim that the physical-to-experiential bridge has been solved.
+P85 was an earlier theorem frontier: the exact three-event projection-parity functional certificate. When citing this historical result specifically, cite [Proposition 85](docs/proposition_85_exact_triple_projection_parity_functional.md) together with its [equation and provenance record](docs/p85_equation_provenance.md), implementation, tests, and exact theorem figure. P85 is conditional on the declared P75 model and does not claim that the physical-to-experiential bridge has been solved.
 
 
 ## Proposition 86 method citation
@@ -173,6 +173,10 @@ For work using the minimally weighted four-event shared-parameter parity certifi
 P86 is conditional on the declared P75 model and should not be cited as an identification or definition of consciousness.
 
 
-## Current theorem frontier
+## Historical theorem frontier: P87
 
-The current documented theorem frontier is **P87**. Proposition 87 completes the sign-normalized primitive nonzero four-event coefficient box with `0 < |c_i| <= 2`, auditing 39,600 exact functionals. On the stored exact rational witness, the complete P86 certificate is `1/192` and P87 certifies `1/96`. This is a conditional model-separation result for the declared P75 family, not an identification or definition of consciousness.
+P87 was the immediately preceding theorem frontier. It completed the sign-normalized primitive nonzero four-event coefficient box with `0 < |c_i| <= 2`, auditing 39,600 exact functionals. On the stored exact rational witness, the complete P86 certificate is `1/192` and P87 certifies `1/96`. This is a conditional model-separation result for the declared P75 family, not an identification or definition of consciousness.
+
+## Current theorem frontier: P88
+
+The current documented theorem frontier is **P88**. Proposition 88 extends the exact bounded-primitive four-event parity family to radius three, auditing 208,560 exact functionals. On the stored exact rational witness, P88 certifies `L88 = 1/64`, strengthening `L87 = 1/96`. Cite [Proposition 88](docs/proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md) together with its [equation and provenance record](docs/p88_equation_provenance.md), implementation, regression tests, and exact theorem figure. P88 remains a conditional model-separation result for the declared P75 family; it does not identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.

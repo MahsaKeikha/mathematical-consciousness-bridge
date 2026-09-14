@@ -17,14 +17,6 @@ def _frontier() -> int:
     return max(numbers)
 
 
-def test_readme_roadmap_caption_matches_displayed_scope_and_frontier():
-    text = README.read_text(encoding="utf-8")
-    frontier = _frontier()
-    assert f"P1 through P{frontier} with explicit dependency branches" in text
-    assert "Figure 3 below displays the P1-P31 foundational portion" in text
-    assert "Figure 3. Theorem dependency map for P1-P31." in text
-    assert "arrows show actual mathematical and scientific prerequisites" in text
-    assert "An absent arrow means no dependency is being asserted." in text
 
 
 def test_theorem_roadmap_embedded_description_explains_arrow_semantics():

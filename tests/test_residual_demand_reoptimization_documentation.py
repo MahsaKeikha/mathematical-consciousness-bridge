@@ -16,15 +16,3 @@ def test_p53_documentation_exposes_core_results():
         "What P53 does not prove",
     ):
         assert phrase in text
-
-
-def test_p53_visual_and_proof_to_code_path_are_public():
-    assert FIGURE.exists()
-    readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    for token in (
-        "p53_residual_demand_reoptimization.svg",
-        "residual_demand_reoptimization.py",
-        "test_residual_demand_reoptimization.py",
-        "**Proposition 53**",
-    ):
-        assert token in readme

@@ -215,6 +215,108 @@ main > section {
   line-height: 1.45;
 }
 
+.research-dashboard {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 46px;
+}
+
+.research-program-card {
+  display: flex;
+  min-width: 0;
+  min-height: 238px;
+  padding: 21px;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: var(--paper);
+  color: var(--ink);
+  transition: transform 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.research-program-card:hover {
+  transform: translateY(-2px);
+  border-color: #aeb7ca;
+  box-shadow: 0 10px 26px rgba(20, 26, 36, 0.07);
+  text-decoration: none;
+}
+
+.research-program-kicker {
+  min-height: 3.3em;
+  color: var(--accent2);
+  font-size: 0.7rem;
+  font-weight: 760;
+  line-height: 1.45;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.research-program-metric {
+  display: block;
+  margin-top: 18px;
+}
+
+.research-program-metric strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2.15rem;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.research-program-metric > span {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.research-program-meta {
+  display: block;
+  margin-top: 15px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.research-program-cta {
+  display: block;
+  margin-top: auto;
+  padding-top: 18px;
+  color: var(--accent);
+  font-size: 0.79rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.open-problem-card {
+  background: var(--soft);
+}
+
+@media (max-width: 1000px) {
+  .research-dashboard {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .research-dashboard {
+    grid-template-columns: 1fr;
+    margin-top: 36px;
+  }
+
+  .research-program-card {
+    min-height: 0;
+  }
+
+  .research-program-kicker {
+    min-height: 0;
+  }
+}
+
 .section-head {
   max-width: var(--reading);
   margin-bottom: 28px;

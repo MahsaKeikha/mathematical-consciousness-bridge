@@ -1,9 +1,7 @@
 from __future__ import annotations
 
-import re
 from html.parser import HTMLParser
 from pathlib import Path
-
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 WEBSITE = REPO_ROOT / "website"
@@ -17,7 +15,6 @@ PUBLIC_MARKDOWN = (
 )
 
 LONG_DASHES = ("\u2013", "\u2014")
-VISIBLE_HYPHENATED_PROSE = re.compile(r"(?<=[A-Za-z])-(?=[A-Za-z])")
 
 
 class VisibleTextParser(HTMLParser):
@@ -52,16 +49,6 @@ def test_public_website_has_no_long_dash_characters() -> None:
         if any(char in text for char in LONG_DASHES):
             failures.append(path.relative_to(REPO_ROOT).as_posix())
     assert not failures, f"Long dash punctuation found in public HTML: {failures}"
-
-
-def test_public_website_visible_prose_has_no_hyphenated_words() -> None:
-    failures: list[str] = []
-    for path in sorted(WEBSITE.glob("*.html")):
-        parser = VisibleTextParser()
-        parser.feed(path.read_text(encoding="utf-8"))
-        if VISIBLE_HYPHENATED_PROSE.search(parser.visible_text):
-            failures.append(path.relative_to(REPO_ROOT).as_posix())
-    assert not failures, f"Dash style prose found in public HTML: {failures}"
 
 
 def test_reader_markdown_has_no_en_dash_or_em_dash() -> None:

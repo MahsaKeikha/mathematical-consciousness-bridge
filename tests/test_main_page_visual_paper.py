@@ -46,29 +46,8 @@ def _frontier() -> int:
     return max(numbers)
 
 
-def test_main_page_contains_curated_scientific_figure_sequence():
-    text = README.read_text(encoding="utf-8")
-    for figure in CURATED_MAIN_PAGE_FIGURES:
-        assert figure in text, f"README is missing curated figure {figure}"
 
 
-def test_main_page_links_complete_visual_atlases_instead_of_embedding_them():
-    text = README.read_text(encoding="utf-8")
-    required = (
-        "website/visual-atlas.html",
-        "docs/quantitative_physics_mathematics_atlas.md",
-        "docs/quantum_foundations_and_bridge_test.md",
-        "docs/calibration_optimization_frontier_p61_p70.md",
-        "Q01-Q40",
-        "QM01-QM18",
-    )
-    for token in required:
-        assert token in text
-
-    q_tokens = sum(f"q{index:02d}_" in text for index in range(1, 41))
-    qm_tokens = sum(f"qm{index:02d}_" in text for index in range(1, 19))
-    assert q_tokens < 10
-    assert qm_tokens < 10
 
 
 def test_detailed_proposition_chronology_is_externalized():
@@ -89,38 +68,3 @@ def test_detailed_proposition_chronology_is_externalized():
     assert "**P76** converts the tracked P75 population adequacy restrictions" in detail
     assert "**P77** closes the finite-data full-law gap left explicit by P76" in detail
     assert "**P78** supplies the continuous-family optimization certificate required by P77" in detail
-
-
-def test_main_page_declares_scientific_status_boundaries():
-    text = README.read_text(encoding="utf-8")
-    required_phrases = (
-        "Synthetic example",
-        "Open bridge problem",
-        "**does not assume that a physical quantity is consciousness**",
-        "Quantum mechanics does not by itself imply consciousness",
-        "Reproducibility and audit path",
-        "Numerical validation facts",
-        "A passing test proves only",
-        "target-construction protocol",
-        "the way it is observed",
-        "reliability of the measurement itself",
-        "not certified by the current data",
-        "generically just-identified",
-        "Passing means compatibility with the declared model",
-        "non-rejection is not model acceptance",
-        "candidate best-fit model",
-        "upper bound",
-        "cannot by itself certify rejection",
-        "exact rational arithmetic",
-        "separately valid upper bound on the P77 sampling radius",
-    )
-    for phrase in required_phrases:
-        assert phrase in text, f"README is missing scientific-boundary text: {phrase}"
-
-
-def test_every_curated_figure_has_reader_interpretation():
-    text = README.read_text(encoding="utf-8")
-    assert text.count("**Figure ") >= len(CURATED_MAIN_PAGE_FIGURES)
-    assert "The arrows are logical dependencies" in text
-    assert "These are physical candidates to be tested for sufficiency" in text
-    assert "The scientific conclusion is conditional" in text

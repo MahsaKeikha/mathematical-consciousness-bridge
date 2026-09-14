@@ -229,7 +229,6 @@ def promote_research_map() -> None:
 def promote_status_surfaces() -> None:
     files = (
         "website/implementation.html",
-        "website/sources.html",
         "docs/research_map.md",
         "docs/research_navigation.md",
         "docs/theorem_roadmap.md",
@@ -242,7 +241,6 @@ def promote_status_surfaces() -> None:
     replacements = (
         ("current exact frontier is P87", "current exact frontier is P88"),
         ("P87 is the current exact frontier", "P88 is the current exact frontier"),
-        ("Current theorem source · P87", "Current theorem source · P88"),
         ("Current theorem frontier · P87", "Current theorem frontier · P88"),
         ("Current frontier · P87", "Current frontier · P88"),
         ("public theorem frontier is **P87**", "public theorem frontier is **P88**"),
@@ -294,11 +292,14 @@ def verify_reader_coherence() -> None:
     required = {
         "website/index.html": (
             "Explore all 88 results",
-            "<strong>P88</strong><span>current theorem frontier</span>",
+            "P88 current theorem frontier · v0.82.0",
             'id="p88-frontier" class="theorem-frontier current-frontier-visual"',
             "The 88 results form several dependency branches.",
             "The 88-result program",
             "L85 = 0 &lt; L86 = 1/192 &lt; L87 = 1/96 &lt; L88 = 1/64",
+            'id="project-journey"',
+            "The whole research program in three stages",
+            "None of these stages by itself establishes the final physical-to-experiential bridge.",
         ),
         "website/plain-language.html": (
             "<strong>88</strong><span>Research II proposition-level results</span>",
@@ -383,6 +384,31 @@ def verify_reader_coherence() -> None:
         raise RuntimeError("homepage does not lead with P88")
     if atlas.index('id="p88-frontier"') > atlas.index('id="p87-frontier"'):
         raise RuntimeError("Visual Atlas does not lead with P88")
+
+
+    sources = read("website/sources.html")
+    source_required = (
+        'id="p88-source"',
+        "Current theorem source · P88",
+        "proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md",
+        "p88_equation_provenance.md",
+        "radius_three_bounded_primitive_quad_projection_parity_functional_separation.py",
+        "test_radius_three_bounded_primitive_quad_projection_parity_functional_separation.py",
+        'id="p87-source"',
+        "Previous theorem source · P87",
+        'id="p86-source"',
+        "Previous theorem source · P86",
+    )
+    source_missing = [marker for marker in source_required if marker not in sources]
+    if source_missing:
+        raise RuntimeError(f"website/sources.html missing P88 provenance markers: {source_missing}")
+    if "Current theorem source · P87" in sources:
+        raise RuntimeError("website/sources.html incorrectly advertises P87 as current")
+    if sources.count('id="p88-source"') != 1:
+        raise RuntimeError("website/sources.html must contain exactly one P88 source section")
+
+    if index.index('id="project-journey"') > index.index('id="p88-frontier"'):
+        raise RuntimeError("homepage must orient readers to Research I/II/III before the P88 theorem frontier")
 
 
 if __name__ == "__main__":

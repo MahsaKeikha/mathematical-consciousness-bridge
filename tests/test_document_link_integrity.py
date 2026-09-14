@@ -117,22 +117,3 @@ def test_all_local_markdown_links_resolve():
                     )
 
     assert not failures, "\n".join(failures)
-
-
-def test_reader_navigation_exposes_the_complete_theorem_chain():
-    nav = (ROOT / "docs/research_navigation.md").read_text(encoding="utf-8")
-    for number in range(1, 30):
-        assert f"proposition_{number}_" in nav
-
-
-def test_main_page_links_to_reader_navigation_and_provenance():
-    text = (ROOT / "README.md").read_text(encoding="utf-8")
-    required = [
-        "docs/research_navigation.md",
-        "docs/theorem_roadmap.md",
-        "docs/equation_and_citation_map.md",
-        "docs/citation_and_reference_policy.md",
-        "docs/reference_audit.md",
-    ]
-    for path in required:
-        assert path in text

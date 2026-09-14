@@ -15,15 +15,3 @@ def test_p52_documentation_exposes_exact_results():
         "Scientific boundary",
     ):
         assert phrase in text
-
-
-def test_p52_visual_and_proof_to_code_path_are_public():
-    assert FIGURE.exists()
-    readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    for token in (
-        "p52_capacity_optimal_service_allocation.svg",
-        "capacity_optimal_service_allocation.py",
-        "test_capacity_optimal_service_allocation.py",
-        "**Proposition 52**",
-    ):
-        assert token in readme

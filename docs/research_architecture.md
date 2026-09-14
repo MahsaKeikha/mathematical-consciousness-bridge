@@ -252,7 +252,7 @@ The important asymmetry is:
 
 A clean physical descriptor and an independently motivated target are still not enough if the measurement model is wrong.
 
-P71 through P74 protect target provenance and measurement. P75 through P87 then progressively strengthen tests of model adequacy and model separation.
+P71 through P74 protect target provenance and measurement. P75 through P88 then progressively strengthen tests of model adequacy and model separation.
 
 The logic is:
 
@@ -260,7 +260,7 @@ The logic is:
 
 This is where the current theorem frontier sits.
 
-**Current frontier:** [P87](proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md)
+**Current frontier:** [P88](proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md)
 
 **Audit route:** [Research Navigation](research_navigation.md)
 
@@ -319,7 +319,7 @@ The repository has not established that final implication.
 | Bridge | What connects physical and target structure? | Open |
 | Empirical interface | What observable laws follow? | Formalized for declared model classes |
 | Sufficiency testing | Is the descriptor enough for the target? | Theorem and finite data machinery developed |
-| Target model adequacy | Does the declared measurement model fit? | Active theorem frontier through P87 |
+| Target model adequacy | Does the declared measurement model fit? | Active theorem frontier through P88 |
 | Reproducibility | Can the reasoning and computation be audited? | Implemented across the repository |
 | Final bridge from physical description to experience | Has the bridge itself been established? | **Open** |
 

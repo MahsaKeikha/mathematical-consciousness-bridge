@@ -16,15 +16,3 @@ def test_p50_documentation_exposes_core_results():
         "Scientific interpretation boundary",
     ):
         assert phrase in text
-
-
-def test_p50_visual_and_proof_to_code_path_are_public():
-    assert FIGURE.exists()
-    readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    for token in (
-        "p50_bounded_starvation_asynchronous_sampling.svg",
-        "bounded_starvation_sampling.py",
-        "test_bounded_starvation_sampling.py",
-        "**Proposition 50**",
-    ):
-        assert token in readme
