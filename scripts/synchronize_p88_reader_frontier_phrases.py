@@ -120,6 +120,15 @@ def _sync_theorem_roadmap(changed: list[str]) -> None:
 def _sync_research_navigation(changed: list[str]) -> None:
     path = DOCS / "research_navigation.md"
     text = path.read_text(encoding="utf-8")
+    canonical_frontier = "The current documented theorem frontier is **P88**."
+    for legacy_frontier in (
+        "The public theorem frontier is **P87**.",
+        "The public theorem frontier is **P88**.",
+        "The current documented theorem frontier is **P87**.",
+    ):
+        text = text.replace(legacy_frontier, canonical_frontier)
+    if canonical_frontier not in text:
+        raise RuntimeError("research navigation canonical frontier declaration is missing")
     replacements = (
         ("**Results:** P75 through P87", "**Results:** P75 through P88"),
         (
@@ -246,7 +255,7 @@ def _assert_canonical_state() -> None:
             "## After P88",
         ),
         "research navigation": (
-            "The public theorem frontier is **P88**.",
+            "The current documented theorem frontier is **P88**.",
             "**Results:** P75 through P88",
             "For P88:",
             "the full 88 proposition index",
