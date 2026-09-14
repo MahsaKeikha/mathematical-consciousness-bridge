@@ -68,6 +68,12 @@ The current public theorem frontier is **P88**. The formal release remains **v0.
 
 > **Visual reading standard.** Every reader-facing figure now has a clear title, an embedded SVG description, a nearby caption or atlas explanation, a scientific-status boundary, and a direct route to the proof or source context. Use the [Complete Figure Catalog](docs/figure_catalog.md) to understand every visual without searching the repository, and the [Figure Caption and Description Standard](docs/figure_caption_and_description_standard.md) for the enforced documentation rules.
 
+### Current theorem frontier
+
+![P88 Radius-Three Bounded-Primitive Four-Event Parity Certificate](docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg)
+
+**Figure 2. P88 exact radius-three bounded-primitive four-event parity certificate.** P88 exhausts 632 primitive sign-normalized coefficient patterns across each of 330 four-event subsets, giving 208,560 exact functionals. On the established exact rational witness, the coefficients `(1,-1,-3,2)` give empirical value `-11/8` outside the exact P75 interval `[-1,2]`, with gap `3/8`, centered norm `24`, and certified full-law lower bound `L88 = 1/64`, strictly strengthening `L87 = 1/96`. This is a conditional model-separation theorem for the declared P75 family; it does not identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.
+
 ---
 
 ## Choose your path
