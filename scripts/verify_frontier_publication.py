@@ -144,8 +144,8 @@ def verify_frontier_publication(root: Path = ROOT) -> None:
 
     navigation = (root / "docs" / "research_navigation.md").read_text(encoding="utf-8")
     _require(
-        f"The public theorem frontier is **{pfrontier}**." in navigation,
-        "research navigation public-frontier declaration is stale",
+        f"The current documented theorem frontier is **{pfrontier}**." in navigation,
+        "research navigation documented-frontier declaration is stale",
     )
     _require(
         f"**Results:** P75 through P{frontier}" in navigation,
