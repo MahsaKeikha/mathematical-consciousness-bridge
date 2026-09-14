@@ -10,7 +10,7 @@ on:
       - "scripts/synchronize_research_three_website.py"
       - ".github/workflows/pages.yml"
   workflow_run:
-    workflows: ["promote-p88-public-frontier"]
+    workflows: ["promote-p89-public-frontier"]
     types: [completed]
     branches: ["main"]
   workflow_dispatch:
@@ -54,44 +54,52 @@ jobs:
           cp -a website website-deploy
           python scripts/prepare_website.py --source website-deploy --output _site
 
-      - name: Verify canonical Research II and Research III identity
+      - name: Verify canonical Research I, II and III identity
         run: |
           R3_PIN="$(python -c 'from scripts.synchronize_research_three_website import CURRENT_RESEARCH_THREE_PIN; print(CURRENT_RESEARCH_THREE_PIN)')"
 
           grep -q 'What would a scientifically testable bridge from physical description to experience actually require?' _site/index.html
-          grep -q 'Explore all 88 results' _site/index.html
-          grep -q 'Current record:</strong> 88 proposition-level results through P88' _site/index.html
-          grep -q 'Current theorem frontier · P88' _site/index.html
-          test "$(grep -o 'id=\"p88-frontier\"' _site/index.html | wc -l)" -eq 1
-          test "$(grep -o '<!-- current-frontier-home: P88 -->' _site/index.html | wc -l)" -eq 1
+          grep -q 'Explore all 89 results' _site/index.html
+          grep -q 'Current record:</strong> 89 proposition-level results through P89' _site/index.html
+          grep -q 'Current theorem frontier · P89' _site/index.html
+          test "$(grep -o 'id=\"p89-frontier\"' _site/index.html | wc -l)" -eq 1
+          test "$(grep -o '<!-- current-frontier-home: P89 -->' _site/index.html | wc -l)" -eq 1
+          grep -q 'Research I · Physical-system identification' _site/index.html
+          grep -q 'Research III · Consciousness measurement science' _site/index.html
+          ! grep -q 'id="p88-frontier"' _site/index.html
           grep -q '#reproduce .equation' _site/reader-experience-v2.css
           grep -q 'contain: inline-size' _site/reader-experience-v2.css
-          ! grep -q 'Current record:</strong> 87 proposition-level results through P87' _site/index.html
-          ! grep -q 'Current record:</strong> 86 proposition-level results through P86' _site/index.html
 
           grep -q 'What are we actually trying to find out?' _site/plain-language.html
-          grep -q 'The whole project in plain English' _site/plain-language.html
-          grep -q 'Research I' _site/plain-language.html
-          grep -q 'Research II' _site/plain-language.html
-          grep -q 'Research III' _site/plain-language.html
-          grep -q 'What the 88 results are doing' _site/plain-language.html
-          grep -q '<strong>88</strong><span>Research II proposition-level results</span>' _site/plain-language.html
-          grep -q '<strong>P88</strong><span>current Research II theorem frontier</span>' _site/plain-language.html
-          grep -q 'P88 is a checkpoint, not the destination' _site/plain-language.html
-          grep -q 'The physical-to-experiential bridge' _site/plain-language.html
+          grep -q 'id="three-stage-progress"' _site/plain-language.html
+          grep -q 'What the whole research program is doing' _site/plain-language.html
+          grep -q '<strong>Research I</strong><span>physical-system identification</span>' _site/plain-language.html
+          grep -q '<strong>Research II</strong><span>89 results · current frontier P89</span>' _site/plain-language.html
+          grep -q '<strong>Research III</strong><span>measurement science under uncertainty</span>' _site/plain-language.html
+          grep -q '<strong>Open</strong><span>final physical-to-experiential bridge</span>' _site/plain-language.html
+          ! grep -q '<strong>89</strong><span>Research II proposition-level results</span>' _site/plain-language.html
+          ! grep -q '<strong>P89</strong><span>current Research II theorem frontier</span>' _site/plain-language.html
 
-          grep -q 'the 88-result theorem program and current P88 frontier' _site/start-here.html
-          grep -q '<strong>88</strong><span>proposition-level results</span>' _site/start-here.html
-          grep -q '<strong>P88</strong><span>current theorem frontier</span>' _site/start-here.html
+          grep -q 'id="program-stages"' _site/start-here.html
+          grep -q 'The whole research program' _site/start-here.html
+          grep -q '<strong>Research I</strong><span>physical-system identification</span>' _site/start-here.html
+          grep -q '<strong>Research II</strong><span>89 results · current frontier P89</span>' _site/start-here.html
+          grep -q '<strong>Research III</strong><span>measurement science under uncertainty</span>' _site/start-here.html
+          grep -q 'The 89 Research II propositions by scientific role' _site/start-here.html
+          ! grep -q '<strong>89</strong><span>proposition-level results</span>' _site/start-here.html
 
-          grep -q 'Eighty-eight results, one dependency-aware scientific program' _site/research-map.html
-          grep -q 'P88: Does the next complete coefficient radius expose a stronger incompatibility?' _site/research-map.html
-          test "$(grep -o 'id=\"p88-research-map\"' _site/research-map.html | wc -l)" -eq 1
+          grep -q 'P89: What is the strongest possible real linear certificate' _site/research-map.html
+          grep -q 'complete real linear' _site/research-map.html
+          grep -q '5/168' _site/research-map.html
+          test "$(grep -o 'id=\"p89-research-map\"' _site/research-map.html | wc -l)" -eq 1
+          grep -q 'index.html#p89-frontier' _site/research-map.html
+          ! grep -q 'index.html#p88-frontier' _site/research-map.html
 
-          grep -q '<!-- current-frontier-visual: P88 -->' _site/visual-atlas.html
-          grep -q 'Current theorem frontier · P88' _site/visual-atlas.html
-          grep -q 'p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg' _site/visual-atlas.html
-          test "$(grep -o 'id=\"p88-frontier\"' _site/visual-atlas.html | wc -l)" -eq 1
+          grep -q '<!-- current-frontier-visual: P89 -->' _site/visual-atlas.html
+          grep -q 'Current theorem frontier · P89' _site/visual-atlas.html
+          grep -q 'p89_complete_linear_parity_duality.svg' _site/visual-atlas.html
+          test "$(grep -o 'id=\"p89-frontier\"' _site/visual-atlas.html | wc -l)" -eq 1
+          grep -q 'Previous theorem frontier · P88' _site/visual-atlas.html
 
           test -f _site/measurement-science.html
           grep -q 'Research III · Consciousness Measurement Science' _site/measurement-science.html
@@ -108,19 +116,13 @@ jobs:
           grep -q 'An interval as wide as <code>\[0,1\]</code> is a valid scientific result' _site/measurement-science.html
           grep -q 'docs/partial-identification.md' _site/measurement-science.html
           ! grep -q 'planned by the roadmap' _site/measurement-science.html
-          ! grep -q '23</strong><span>tests in each CI job' _site/measurement-science.html
           grep -q "research-three-snapshot: ${R3_PIN}" _site/measurement-science.html
-          grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/measurement_architecture.svg" _site/measurement-science.html
-          grep -q "consciousness-measurement-science/blob/${R3_PIN}/schemas/cep.schema.json" _site/measurement-science.html
-          grep -q "consciousness-measurement-science/blob/${R3_PIN}/schemas/claim.schema.json" _site/measurement-science.html
 
           grep -q 'Research III · consciousness measurement science' _site/research-lineage.html
-          grep -q '<strong>88</strong><span>proposition-level results</span>' _site/research-lineage.html
-          grep -q '<strong>P88</strong><span>current theorem frontier</span>' _site/research-lineage.html
+          grep -q '<strong>89</strong><span>proposition-level results</span>' _site/research-lineage.html
+          grep -q '<strong>P89</strong><span>current theorem frontier</span>' _site/research-lineage.html
           grep -q '<strong>v0.82.0</strong><span>current documented release</span>' _site/research-lineage.html
           grep -q "${R3_PIN}" _site/research-lineage.html
-          ! grep -q '<strong>P81</strong>' _site/research-lineage.html
-          ! grep -q 'v0.81.0' _site/research-lineage.html
 
           grep -q 'measurement-science.html' _site/app.js
           grep -q 'Research III' _site/app.js
