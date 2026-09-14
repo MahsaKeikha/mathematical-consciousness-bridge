@@ -27,7 +27,7 @@ on:
       - "website/plain-language.html"
       - "website/start-here.html"
       - "tests/test_figure_publication_sync.py"
-      - "tests/test_p89_reader_surface_coherence.py"
+      - "tests/test_p90_reader_surface_coherence.py"
       - "pyproject.toml"
       - ".github/workflows/**"
   pull_request:
@@ -52,7 +52,7 @@ on:
       - "website/plain-language.html"
       - "website/start-here.html"
       - "tests/test_figure_publication_sync.py"
-      - "tests/test_p89_reader_surface_coherence.py"
+      - "tests/test_p90_reader_surface_coherence.py"
       - "pyproject.toml"
       - ".github/workflows/**"
 
@@ -100,7 +100,7 @@ jobs:
             exit 1
           fi
       - name: Run permanent figure publication contract
-        run: python -m pytest -q tests/test_figure_publication_sync.py tests/test_figure_documentation_integrity.py tests/test_p89_reader_surface_coherence.py
+        run: python -m pytest -q tests/test_figure_publication_sync.py tests/test_figure_documentation_integrity.py tests/test_p90_reader_surface_coherence.py
       - name: Build exact-commit website figure artifact
         run: |
           python scripts/prepare_website.py --source website --output _site
