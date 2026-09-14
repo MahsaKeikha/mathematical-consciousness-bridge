@@ -8,6 +8,7 @@ on:
       - "scripts/promote_p89_public_frontier.py"
       - "scripts/sync_figure_publication.py"
       - "scripts/synchronize_p89_reader_frontier_phrases.py"
+      - "scripts/normalize_documentation_punctuation.py"
       - "scripts/prepare_website.py"
       - "scripts/verify_repository.py"
       - "scripts/verify_frontier_publication.py"
@@ -16,6 +17,7 @@ on:
       - "docs/figures/p89_complete_linear_parity_duality.svg"
       - "src/consciousness_bridge/complete_linear_parity_duality.py"
       - "tests/test_complete_linear_parity_duality.py"
+      - "tests/test_documentation_punctuation.py"
       - "tests/test_figure_publication_sync.py"
       - "tests/test_p89_reader_surface_coherence.py"
       - "website/plain-language.html"
@@ -50,10 +52,12 @@ jobs:
           python scripts/promote_p89_public_frontier.py
           python scripts/sync_figure_publication.py
           python scripts/synchronize_research_three_website.py
+          python scripts/normalize_documentation_punctuation.py
       - name: Validate exact P89 theorem and balanced publication contract
         run: |
           python -m pytest -q \
             tests/test_complete_linear_parity_duality.py \
+            tests/test_documentation_punctuation.py \
             tests/test_figure_publication_sync.py \
             tests/test_p89_reader_surface_coherence.py \
             tests/test_website_research_orientation.py \
@@ -63,6 +67,7 @@ jobs:
             scripts/promote_p89_public_frontier.py \
             scripts/sync_figure_publication.py \
             scripts/synchronize_p89_reader_frontier_phrases.py \
+            scripts/normalize_documentation_punctuation.py \
             scripts/prepare_website.py \
             scripts/verify_frontier_publication.py \
             scripts/verify_repository.py
