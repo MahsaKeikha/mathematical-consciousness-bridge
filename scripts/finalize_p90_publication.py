@@ -1,7 +1,7 @@
 """Finalize the P90 publication state before merge.
 
 This is a temporary migration helper. It repairs the canonical P90 promoter and
-publication-contract migrator, runs them, closes the two remaining publication
+publication-contract migrator, runs them, closes the remaining publication
 residuals, and leaves the repository in a deterministic P90 state for CI.
 """
 
@@ -145,7 +145,7 @@ Its direct technical record is:
 
 ```text
 docs/proposition_90_exact_nonlinear_rank_one_separation.md
-docs/p90_equation_provenance.md
+docs/proposition_90_equation_provenance.md
 src/consciousness_bridge/exact_nonlinear_rank_one_separation.py
 tests/test_exact_nonlinear_rank_one_separation.py
 docs/figures/p90_exact_nonlinear_rank_one_separation.svg
@@ -194,11 +194,20 @@ P90 is exact only for the declared strict P75 box and its fixed extreme-prevalen
 
     prepare = ROOT / "scripts" / "prepare_website.py"
     text = prepare.read_text(encoding="utf-8")
-    old = '<strong>89</strong><span>proposition-level results</span>'
-    new = '<strong>90</strong><span>proposition-level results</span>'
-    text = text.replace(old, new)
-    if new not in text:
-        raise RuntimeError("P90 Research Lineage validator token missing")
+    replacements = (
+        (
+            '<strong>89</strong><span>proposition-level results</span>',
+            '<strong>90</strong><span>proposition-level results</span>',
+        ),
+        (
+            '<strong>P89</strong><span>current theorem frontier</span>',
+            '<strong>P90</strong><span>current theorem frontier</span>',
+        ),
+    )
+    for old, new in replacements:
+        text = text.replace(old, new)
+        if new not in text:
+            raise RuntimeError(f"P90 Research Lineage validator token missing: {new}")
     prepare.write_text(text, encoding="utf-8")
 
 
