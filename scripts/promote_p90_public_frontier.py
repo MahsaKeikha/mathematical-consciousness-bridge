@@ -318,6 +318,10 @@ def promote_website() -> None:
     text = text.replace("This is the 90-result Research II theorem program currently reaching P89.", "This is the 90-result Research II theorem program currently reaching P90.")
     text = text.replace("currently through P89.", "currently through P90.")
     text = text.replace("The current theorem frontier is P89.", "The current theorem frontier is P90.")
+    text = text.replace("P88 is a checkpoint, not the destination", "P90 is the current checkpoint, not the destination")
+    text = text.replace("P88 is one mathematical checkpoint inside a much larger research program.", "P90 is the current mathematical checkpoint inside a much larger research program.")
+    text = text.replace("The destination is not Proposition 89, 100, or 200.", "The destination is not Proposition 90, 100, or 200.")
+    text = text.replace("shows how all 88 Research II results connect", "shows how all 90 Research II results connect")
     text = re.sub(r'<section class="boundary" id="p(?:89|90)-reader-frontier">.*?</section>', '<section class="boundary" id="p90-reader-frontier"><div class="section-head"><p class="eyebrow">Research II · Current exact frontier · P90</p><h2>Exact nonlinear rank-one slice separation</h2><p>P90 moves beyond the complete P89 linear parity-functional envelope by exploiting a nonlinear identity of the declared strict P75 model image. With prevalence fixed at zero, the active law is one product Bernoulli component, so the canonical two-by-two slice must satisfy <strong>ad = bc</strong>. The empirical determinant residual is <strong>5/192</strong>, giving the exact distance <strong>L90 = 5/72 = (7/3)L89</strong>, while P89 remains the complete-linear subfrontier at <strong>5/168</strong>.</p><p>This is a conditional exact separation result for the stated strict box. It does not identify consciousness, establish nonphysicality, exhaust more general nonlinear mixture regimes, or close the physical-to-experiential bridge.</p></div></section>', text, count=1, flags=re.DOTALL)
     write(path, text)
 
