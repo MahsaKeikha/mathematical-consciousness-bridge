@@ -206,7 +206,7 @@ A future P91 result should address nonlinear structure beyond the single-compone
     path = "docs/reproducibility.md"
     text = read(path)
     text = text.replace("The current public theorem frontier is **P89**.", "The current public theorem frontier is **P90**.")
-    text = append_once(text, "Focused audit of the current P90 frontier", f'''## Focused audit of the current P90 frontier
+    text = append_once(text, "## 5. Focused audit of the current P90 frontier", f'''## 5. Focused audit of the current P90 frontier
 
 The exact P90 technical record is:
 
