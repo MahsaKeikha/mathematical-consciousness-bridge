@@ -46,35 +46,6 @@ jobs:
         run: |
           python scripts/sync_figure_publication.py
           python scripts/synchronize_p88_reader_frontier_phrases.py
-      - name: Normalize rerunnable P88 publication markers
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          import re
-
-          marker_specs = (
-              (Path("website/index.html"), "<!-- current-frontier-home: P88 -->"),
-              (Path("website/visual-atlas.html"), "<!-- current-frontier-visual: P88 -->"),
-          )
-          for path, marker in marker_specs:
-              text = path.read_text(encoding="utf-8")
-              text = re.sub(
-                  rf"(?:{re.escape(marker)}\s*)+",
-                  marker + "\n",
-                  text,
-                  flags=re.MULTILINE,
-              )
-              path.write_text(text, encoding="utf-8")
-
-          research_map = Path("website/research-map.html")
-          text = research_map.read_text(encoding="utf-8")
-          text = re.sub(
-              r'\n{3,}(?=<section id="p88-research-map")',
-              "\n\n",
-              text,
-          )
-          research_map.write_text(text, encoding="utf-8")
-          PY
       - name: Validate exact P88 theorem and publication contract
         run: |
           python -m pytest -q \
@@ -96,6 +67,8 @@ jobs:
           grep -q '<strong>P88</strong><span>current theorem frontier</span>' website/index.html
           grep -q 'id="p88-frontier" class="theorem-frontier current-frontier-visual"' website/index.html
           grep -q '208,560 exact P88 functionals' website/index.html
+          grep -q '<strong>88</strong><span>Research II proposition-level results</span>' website/plain-language.html
+          grep -q '<strong>P88</strong><span>current Research II theorem frontier</span>' website/plain-language.html
           test "$(grep -cF '<!-- current-frontier-home: P88 -->' website/index.html)" -eq 1
           test "$(grep -cF '<!-- current-frontier-visual: P88 -->' website/visual-atlas.html)" -eq 1
           grep -q '"current_frontier": "P88"' figures/manifest.json
