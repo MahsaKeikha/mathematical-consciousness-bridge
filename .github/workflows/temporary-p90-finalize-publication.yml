@@ -76,4 +76,4 @@ jobs:
           git commit -m "Close final P90 reader publication residuals"
           git push origin HEAD:p90-exact-nonlinear-rank-one-separation
 
-# final reader-surface cleanup before removing temporary machinery
+# final catalog and reader-surface cleanup before removing temporary machinery
