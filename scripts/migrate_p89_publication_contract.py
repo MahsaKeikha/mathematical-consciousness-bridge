@@ -79,7 +79,7 @@ def migrate_verifier(text: str) -> str:
     )
     atlas_block = '''    visual_atlas = _read("website/visual-atlas.html")\n    p89 = visual_atlas.index('id="p89-frontier"')\n    p88 = visual_atlas.index('id="p88-frontier"')\n    p87 = visual_atlas.index('id="p87-frontier"')\n    if not (p89 < p88 < p87):\n        raise RuntimeError("Visual Atlas does not lead with the current P89 figure")\n'''
     text, count = atlas_pattern.subn(atlas_block, text, count=1)
-    if count != 1:
+    if count != 1 and "Visual Atlas does not lead with the current P89 figure" not in text:
         raise RuntimeError("could not migrate verifier Visual Atlas contract")
     stale_insert = '    "Current theorem frontier · P88",\n    "current P88 frontier",\n    "<strong>P88</strong><span>current theorem frontier</span>",\n'
     marker = "STALE_READER_FRONTIER_MARKERS = (\n"
@@ -117,7 +117,99 @@ def migrate_research_three_sync(text: str) -> str:
     return text
 
 
+def migrate_navigation_compat(text: str) -> str:
+    text = text.replace("The current documented theorem frontier is **P88**.", "The current documented theorem frontier is **P89**.")
+    text = text.replace("**Results:** P75 through P88", "**Results:** P75 through P89")
+    text = text.replace("P74 through P88", "P74 through P89")
+    text = text.replace("P71 through P88", "P71 through P89")
+    text = text.replace("the full 88 proposition index", "the full 89 proposition index")
+    text = re.sub(
+        r"\*\*Current frontier:\*\* \[P88:[^\]]+\]\([^\)]+\)",
+        "**Current frontier:** [P89: Complete Linear Parity Functional Duality Certificate](proposition_89_complete_linear_parity_duality.md)",
+        text,
+        count=1,
+    )
+    audit_pattern = re.compile(
+        r"For P88:\n\n\| What you want \| Direct link \|\n\| --- \| --- \|\n.*?P88 is a conditional model separation result.*?experience\.\n",
+        re.DOTALL,
+    )
+    audit = '''For P89:\n\n| Audit surface | Canonical route |\n| --- | --- |\n| Direct theorem | [P89 proposition](proposition_89_complete_linear_parity_duality.md) |\n| Equation and method provenance | [P89 provenance](p89_equation_provenance.md) |\n| Implementation | [`complete_linear_parity_duality.py`](../src/consciousness_bridge/complete_linear_parity_duality.py) |\n| Regression tests | [`test_complete_linear_parity_duality.py`](../tests/test_complete_linear_parity_duality.py) |\n| Theorem figure | [P89 complete-linear certificate](figures/p89_complete_linear_parity_duality.svg) |\n| Repository reproduction | [Reproducibility Guide](reproducibility.md) |\n\nP89 is a conditional model-separation result for the declared P75 target-measurement family. It closes the declared real linear parity-functional class only; it does not identify the latent state with consciousness, establish nonphysicality, exhaust nonlinear model constraints, or close the final bridge from physical description to experience.\n'''
+    text, count = audit_pattern.subn(audit, text, count=1)
+    if count == 0 and "For P89:" not in text:
+        raise RuntimeError("could not normalize research navigation current-frontier audit block")
+    return text
+
+
+def migrate_citation_cff(text: str) -> str:
+    text = text.replace("Current documented theorem frontier: P88.", "Current documented theorem frontier: P89.")
+    text = text.replace("Current documented theorem frontier: P88.\"", "Current documented theorem frontier: P89.\"")
+    if "Proposition 89" not in text:
+        marker = "The downstream calibration branch includes lower-bounded heterogeneous calibration and exact primal-dual gap decomposition through P70."
+        addition = (
+            " Proposition 89 removes the finite coefficient-radius and four-observable support restrictions of P88, "
+            "optimizes over every real linear functional of the eleven canonical parity coordinates, and gives matching exact rational lower and upper certificates at 5/168 on the declared witness."
+        )
+        text = text.replace(marker, marker + addition)
+    return text
+
+
+def migrate_citation_bib(text: str) -> str:
+    text = re.sub(
+        r"Current documented theorem frontier: P\d+\.",
+        "Current documented theorem frontier: P89.",
+        text,
+    )
+    return text
+
+
+def migrate_citation_md(text: str) -> str:
+    replacements = (
+        ("current documented frontier, P88", "current documented frontier, P89"),
+        ("theorem frontier **P88**", "theorem frontier **P89**"),
+        ("Current documented theorem frontier: P88.", "Current documented theorem frontier: P89."),
+        ("theorem frontier **P88**.", "theorem frontier **P89**."),
+        ("P1 through P88 chronological theorem record", "P1 through P89 chronological theorem record"),
+        ("The current citation metadata identify Version **0.82.0** and theorem frontier **P88**.", "The current citation metadata identify Version **0.82.0** and theorem frontier **P89**."),
+    )
+    for old, new in replacements:
+        text = text.replace(old, new)
+    if "## Proposition 89 method citation" not in text:
+        insertion = '''\n## Proposition 89 method citation\n\nFor work that uses the complete linear parity-functional certificate, cite the program together with **Proposition 89: Complete Linear Parity-Functional Duality Certificate** and its equation-provenance record. P89 removes P88's finite coefficient-radius and four-observable support restrictions and proves, by matching exact rational lower and upper certificates, that the complete real linear parity-functional optimum on the published witness is `5/168`, strictly above `L88 = 1/64`.\n\nP89 is complete only for real linear combinations of the eleven declared parity observables on the stated P75 box. It does not identify consciousness, establish nonphysicality, validate a replacement model, exhaust nonlinear constraints, or close the physical-to-experiential bridge.\n'''
+        text = text.replace("\n## Citation metadata resources\n", insertion + "\n## Citation metadata resources\n", 1)
+    return text
+
+
+def migrate_research_architecture(text: str) -> str:
+    return text.replace("P75-P88", "P75-P89").replace("P71-P88", "P71-P89")
+
+
+def migrate_research_lineage(text: str) -> str:
+    text = text.replace("all 88 propositions", "all 89 propositions")
+    text = text.replace("P1-P88", "P1-P89")
+    text = text.replace("Frontier P88", "Frontier P89")
+    text = text.replace("frontier P88", "frontier P89")
+    return text
+
+
+def migrate_implementation(text: str) -> str:
+    text = text.replace("P77-P88", "P77-P89")
+    text = text.replace("index.html#p88-frontier", "index.html#p89-frontier")
+    text = text.replace("current P88 frontier", "current P89 frontier")
+    if "P89 closes the complete real linear parity-functional class" not in text:
+        old = "P88 enlarges that complete primitive family to radius three with 208,560 exact functionals."
+        new = old + " P89 removes the finite coefficient-radius and four-observable support restrictions entirely and closes the complete real linear parity-functional class on all eleven canonical parity coordinates with a matching exact optimum of 5/168 on the published witness."
+        text = text.replace(old, new)
+    return text
+
+
 def main() -> None:
+    rewrite("docs/research_navigation.md", migrate_navigation_compat)
+    rewrite("CITATION.cff", migrate_citation_cff)
+    rewrite("CITATION.bib", migrate_citation_bib)
+    rewrite("CITATION.md", migrate_citation_md)
+    rewrite("docs/research_architecture.md", migrate_research_architecture)
+    rewrite("website/research-lineage.html", migrate_research_lineage)
+    rewrite("website/implementation.html", migrate_implementation)
     rewrite("scripts/sync_figure_publication.py", migrate_sync)
     rewrite("scripts/verify_repository.py", migrate_verifier)
     rewrite("scripts/prepare_website.py", migrate_prepare)
