@@ -29,6 +29,22 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Repair theorem-roadmap literal
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("scripts/promote_p90_public_frontier.py")
+          text = path.read_text(encoding="utf-8")
+          old = 'append_once(text, "## P90: exact nonlinear rank-one slice separation", f\'\'\''
+          new = 'append_once(text, "## P90: exact nonlinear rank-one slice separation", fr\'\'\''
+          if old in text:
+              text = text.replace(old, new, 1)
+          elif new not in text:
+              raise SystemExit("P90 theorem-roadmap block marker not found")
+          path.write_text(text, encoding="utf-8")
+          PY
+
       - name: Promote P90 publication surfaces
         run: |
           python scripts/promote_p90_public_frontier.py
