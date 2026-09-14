@@ -22,7 +22,7 @@ jobs:
         with:
           python-version: "3.12.14"
       - name: Migrate stale P89 publication contracts to P90
-        run: python scripts/migrate_remaining_p90_contracts.py
+        run: python scripts/migrate_remaining_p90_contracts_v2.py
       - name: Install exact test environment
         run: |
           python -m pip install --upgrade pip
@@ -40,7 +40,7 @@ jobs:
             tests/test_typography_policy.py \
             tests/test_website_link_integrity.py
           python scripts/verify_repository.py
-          python -m ruff check scripts/verify_repository.py tests/test_publication_contract_v2.py tests/test_reader_experience.py tests/test_scholarly_provenance_surface.py scripts/migrate_remaining_p90_contracts.py
+          python -m ruff check scripts/verify_repository.py tests/test_publication_contract_v2.py tests/test_reader_experience.py tests/test_scholarly_provenance_surface.py scripts/migrate_remaining_p90_contracts.py scripts/migrate_remaining_p90_contracts_v2.py
           git diff --check
       - name: Persist final P90 contract migration
         run: |
