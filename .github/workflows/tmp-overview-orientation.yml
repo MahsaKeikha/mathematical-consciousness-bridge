@@ -2,10 +2,11 @@ name: temporary-overview-orientation
 
 on:
   push:
-    branches: ["overview-p88-provenance-clarity"]
+    branches:
+      - overview-p88-provenance-clarity
     paths:
-      - ".github/workflows/tmp-overview-orientation.yml"
-      - "website/index.html"
+      - .github/workflows/tmp-overview-orientation.yml
+      - website/index.html
 
 permissions:
   contents: write
@@ -19,46 +20,8 @@ jobs:
           ref: overview-p88-provenance-clarity
           fetch-depth: 0
       - name: Insert first-reader three-stage orientation
-        shell: bash
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-
-          path = Path("website/index.html")
-          text = path.read_text(encoding="utf-8")
-          if 'id="project-journey"' not in text:
-              marker = '    </section>\n\n<!-- current-frontier-home: P88 -->'
-              if marker not in text:
-                  raise SystemExit("Overview hero/P88 insertion marker not found")
-              block = '''    </section>
-
-    <section id="project-journey">
-      <div class="section-head">
-        <p class="eyebrow">The whole research program in three stages</p>
-        <h2>Find the physical system. Test the proposed bridge. Make the evidence measurable.</h2>
-        <p>Subjective experience is known from the first-person point of view, while science works with observations that can be measured, compared, and challenged from the outside. This program separates that difficult problem into three stages so that no stage can quietly assume the answer to the next one.</p>
-      </div>
-      <div class="flow">
-        <div class="flow-node"><span>Research I</span><h3>Identify the physical system</h3><p>Before asking what a system experiences, first identify the persistent physical subsystem being studied from changing dynamics and measurements.</p><p><strong>Question:</strong> what physical unit remains meaningfully the same system while its state and surroundings change?</p><p><a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math">Open Research I →</a></p></div>
-        <div class="flow-node"><span>Research II</span><h3>Test whether the declared physical description is sufficient</h3><p>Given a physical system, a declared physical description, and an independently specified experience-related target, ask whether the description preserves every distinction required by that target.</p><p><strong>Test:</strong> if two cases are identical under the declared physical description but the independent target distinguishes them, that description is insufficient for that target.</p><p>The current Research II record contains 88 proposition-level results through P88. <a href="research-map.html">Explore Research II →</a></p></div>
-        <div class="flow-node"><span>Research III</span><h3>Make consciousness-related evidence scientifically measurable</h3><p>Reports, behavior, neural activity, physiological signals, interventions, and context can disagree or depend on one another. Research III develops uncertainty-aware measurement science so those assumptions stay visible.</p><p><strong>Principle:</strong> when the evidence does not identify one answer, a range, competing explanations, or “we do not yet know” can be the scientifically correct result.</p><p><a href="measurement-science.html">Open Research III →</a></p></div>
-      </div>
-      <div class="boundary"><p><strong>Each arrow is a scientific question, not an assumption.</strong> Research I identifies a physical subsystem candidate; Research II tests declared sufficiency claims; Research III develops measurement and evidence machinery. None of these stages by itself establishes the final physical-to-experiential bridge.</p></div>
-      <p><a href="plain-language.html">Read the full plain-language guide →</a></p>
-    </section>
-
-<!-- current-frontier-home: P88 -->'''
-              text = text.replace(marker, block, 1)
-              path.write_text(text, encoding="utf-8")
-
-          check = path.read_text(encoding="utf-8")
-          assert check.count('id="project-journey"') == 1
-          assert check.index('id="project-journey"') < check.index('id="p88-frontier"')
-          assert "Research I" in check and "Research II" in check and "Research III" in check
-          assert "None of these stages by itself establishes the final physical-to-experiential bridge." in check
-          PY
+        run: echo 'ZnJvbSBwYXRobGliIGltcG9ydCBQYXRoCgpwYXRoID0gUGF0aCgid2Vic2l0ZS9pbmRleC5odG1sIikKdGV4dCA9IHBhdGgucmVhZF90ZXh0KGVuY29kaW5nPSJ1dGYtOCIpCmlmICdpZD0icHJvamVjdC1qb3VybmV5Iicgbm90IGluIHRleHQ6CiAgICBtYXJrZXIgPSAnICAgIDwvc2VjdGlvbj5cblxuPCEtLSBjdXJyZW50LWZyb250aWVyLWhvbWU6IFA4OCAtLT4nCiAgICBpZiBtYXJrZXIgbm90IGluIHRleHQ6CiAgICAgICAgcmFpc2UgU3lzdGVtRXhpdCgiT3ZlcnZpZXcgaGVyby9QODggaW5zZXJ0aW9uIG1hcmtlciBub3QgZm91bmQiKQogICAgYmxvY2sgPSAiIiIgICAgPC9zZWN0aW9uPgoKICAgIDxzZWN0aW9uIGlkPSJwcm9qZWN0LWpvdXJuZXkiPgogICAgICA8ZGl2IGNsYXNzPSJzZWN0aW9uLWhlYWQiPgogICAgICAgIDxwIGNsYXNzPSJleWVicm93Ij5UaGUgd2hvbGUgcmVzZWFyY2ggcHJvZ3JhbSBpbiB0aHJlZSBzdGFnZXM8L3A+CiAgICAgICAgPGgyPkZpbmQgdGhlIHBoeXNpY2FsIHN5c3RlbS4gVGVzdCB0aGUgcHJvcG9zZWQgYnJpZGdlLiBNYWtlIHRoZSBldmlkZW5jZSBtZWFzdXJhYmxlLjwvaDI+CiAgICAgICAgPHA+U3ViamVjdGl2ZSBleHBlcmllbmNlIGlzIGtub3duIGZyb20gdGhlIGZpcnN0LXBlcnNvbiBwb2ludCBvZiB2aWV3LCB3aGlsZSBzY2llbmNlIHdvcmtzIHdpdGggb2JzZXJ2YXRpb25zIHRoYXQgY2FuIGJlIG1lYXN1cmVkLCBjb21wYXJlZCwgYW5kIGNoYWxsZW5nZWQgZnJvbSB0aGUgb3V0c2lkZS4gVGhpcyBwcm9ncmFtIHNlcGFyYXRlcyB0aGF0IGRpZmZpY3VsdCBwcm9ibGVtIGludG8gdGhyZWUgc3RhZ2VzIHNvIHRoYXQgbm8gc3RhZ2UgY2FuIHF1aWV0bHkgYXNzdW1lIHRoZSBhbnN3ZXIgdG8gdGhlIG5leHQgb25lLjwvcD4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgY2xhc3M9ImZsb3ciPgogICAgICAgIDxkaXYgY2xhc3M9ImZsb3ctbm9kZSI+PHNwYW4+UmVzZWFyY2ggSTwvc3Bhbj48aDM+SWRlbnRpZnkgdGhlIHBoeXNpY2FsIHN5c3RlbTwvaDM+PHA+QmVmb3JlIGFza2luZyB3aGF0IGEgc3lzdGVtIGV4cGVyaWVuY2VzLCBmaXJzdCBpZGVudGlmeSB0aGUgcGVyc2lzdGVudCBwaHlzaWNhbCBzdWJzeXN0ZW0gYmVpbmcgc3R1ZGllZCBmcm9tIGNoYW5naW5nIGR5bmFtaWNzIGFuZCBtZWFzdXJlbWVudHMuPC9wPjxwPjxzdHJvbmc+UXVlc3Rpb246PC9zdHJvbmc+IHdoYXQgcGh5c2ljYWwgdW5pdCByZW1haW5zIG1lYW5pbmdmdWxseSB0aGUgc2FtZSBzeXN0ZW0gd2hpbGUgaXRzIHN0YXRlIGFuZCBzdXJyb3VuZGluZ3MgY2hhbmdlPzwvcD48cD48YSBocmVmPSJodHRwczovL2dpdGh1Yi5jb20vTWFoc2FLZWlraGEvc3BhdGlvdGVtcG9yYWwtb2JzZXJ2ZXItbWF0aCI+T3BlbiBSZXNlYXJjaCBJIOKGkjwvYT48L3A+PC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iZmxvdy1ub2RlIj48c3Bhbj5SZXNlYXJjaCBJSTwvc3Bhbj48aDM+VGVzdCB3aGV0aGVyIHRoZSBkZWNsYXJlZCBwaHlzaWNhbCBkZXNjcmlwdGlvbiBpcyBzdWZmaWNpZW50PC9oMz48cD5HaXZlbiBhIHBoeXNpY2FsIHN5c3RlbSwgYSBkZWNsYXJlZCBwaHlzaWNhbCBkZXNjcmlwdGlvbiwgYW5kIGFuIGluZGVwZW5kZW50bHkgc3BlY2lmaWVkIGV4cGVyaWVuY2UtcmVsYXRlZCB0YXJnZXQsIGFzayB3aGV0aGVyIHRoZSBkZXNjcmlwdGlvbiBwcmVzZXJ2ZXMgZXZlcnkgZGlzdGluY3Rpb24gcmVxdWlyZWQgYnkgdGhhdCB0YXJnZXQuPC9wPjxwPjxzdHJvbmc+VGVzdDo8L3N0cm9uZz4gaWYgdHdvIGNhc2VzIGFyZSBpZGVudGljYWwgdW5kZXIgdGhlIGRlY2xhcmVkIHBoeXNpY2FsIGRlc2NyaXB0aW9uIGJ1dCB0aGUgaW5kZXBlbmRlbnQgdGFyZ2V0IGRpc3Rpbmd1aXNoZXMgdGhlbSwgdGhhdCBkZXNjcmlwdGlvbiBpcyBpbnN1ZmZpY2llbnQgZm9yIHRoYXQgdGFyZ2V0LjwvcD48cD5UaGUgY3VycmVudCBSZXNlYXJjaCBJSSByZWNvcmQgY29udGFpbnMgODggcHJvcG9zaXRpb24tbGV2ZWwgcmVzdWx0cyB0aHJvdWdoIFA4OC4gPGEgaHJlZj0icmVzZWFyY2gtbWFwLmh0bWwiPkV4cGxvcmUgUmVzZWFyY2ggSUkg4oaSPC9hPjwvcD48L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJmbG93LW5vZGUiPjxzcGFuPlJlc2VhcmNoIElJSTwvc3Bhbj48aDM+TWFrZSBjb25zY2lvdXNuZXNzLXJlbGF0ZWQgZXZpZGVuY2Ugc2NpZW50aWZpY2FsbHkgbWVhc3VyYWJsZTwvaDM+PHA+UmVwb3J0cywgYmVoYXZpb3IsIG5ldXJhbCBhY3Rpdml0eSwgcGh5c2lvbG9naWNhbCBzaWduYWxzLCBpbnRlcnZlbnRpb25zLCBhbmQgY29udGV4dCBjYW4gZGlzYWdyZWUgb3IgZGVwZW5kIG9uIG9uZSBhbm90aGVyLiBSZXNlYXJjaCBJSUkgZGV2ZWxvcHMgdW5jZXJ0YWludHktYXdhcmUgbWVhc3VyZW1lbnQgc2NpZW5jZSBzbyB0aG9zZSBhc3N1bXB0aW9ucyBzdGF5IHZpc2libGUuPC9wPjxwPjxzdHJvbmc+UHJpbmNpcGxlOjwvc3Ryb25nPiB3aGVuIHRoZSBldmlkZW5jZSBkb2VzIG5vdCBpZGVudGlmeSBvbmUgYW5zd2VyLCBhIHJhbmdlLCBjb21wZXRpbmcgZXhwbGFuYXRpb25zLCBvciDigJx3ZSBkbyBub3QgeWV0IGtub3figJ0gY2FuIGJlIHRoZSBzY2llbnRpZmljYWxseSBjb3JyZWN0IHJlc3VsdC48L3A+PHA+PGEgaHJlZj0ibWVhc3VyZW1lbnQtc2NpZW5jZS5odG1sIj5PcGVuIFJlc2VhcmNoIElJSSDihpI8L2E+PC9wPjwvZGl2PgogICAgICA8L2Rpdj4KICAgICAgPGRpdiBjbGFzcz0iYm91bmRhcnkiPjxwPjxzdHJvbmc+RWFjaCBhcnJvdyBpcyBhIHNjaWVudGlmaWMgcXVlc3Rpb24sIG5vdCBhbiBhc3N1bXB0aW9uLjwvc3Ryb25nPiBSZXNlYXJjaCBJIGlkZW50aWZpZXMgYSBwaHlzaWNhbCBzdWJzeXN0ZW0gY2FuZGlkYXRlOyBSZXNlYXJjaCBJSSB0ZXN0cyBkZWNsYXJlZCBzdWZmaWNpZW5jeSBjbGFpbXM7IFJlc2VhcmNoIElJSSBkZXZlbG9wcyBtZWFzdXJlbWVudCBhbmQgZXZpZGVuY2UgbWFjaGluZXJ5LiBOb25lIG9mIHRoZXNlIHN0YWdlcyBieSBpdHNlbGYgZXN0YWJsaXNoZXMgdGhlIGZpbmFsIHBoeXNpY2FsLXRvLWV4cGVyaWVudGlhbCBicmlkZ2UuPC9wPjwvZGl2PgogICAgICA8cD48YSBocmVmPSJwbGFpbi1sYW5ndWFnZS5odG1sIj5SZWFkIHRoZSBmdWxsIHBsYWluLWxhbmd1YWdlIGd1aWRlIOKGkjwvYT48L3A+CiAgICA8L3NlY3Rpb24+Cgo8IS0tIGN1cnJlbnQtZnJvbnRpZXItaG9tZTogUDg4IC0tPiIiIgogICAgdGV4dCA9IHRleHQucmVwbGFjZShtYXJrZXIsIGJsb2NrLCAxKQogICAgcGF0aC53cml0ZV90ZXh0KHRleHQsIGVuY29kaW5nPSJ1dGYtOCIpCgpjaGVjayA9IHBhdGgucmVhZF90ZXh0KGVuY29kaW5nPSJ1dGYtOCIpCmFzc2VydCBjaGVjay5jb3VudCgnaWQ9InByb2plY3Qtam91cm5leSInKSA9PSAxCmFzc2VydCBjaGVjay5pbmRleCgnaWQ9InByb2plY3Qtam91cm5leSInKSA8IGNoZWNrLmluZGV4KCdpZD0icDg4LWZyb250aWVyIicpCmFzc2VydCAiUmVzZWFyY2ggSSIgaW4gY2hlY2sgYW5kICJSZXNlYXJjaCBJSSIgaW4gY2hlY2sgYW5kICJSZXNlYXJjaCBJSUkiIGluIGNoZWNrCmFzc2VydCAiTm9uZSBvZiB0aGVzZSBzdGFnZXMgYnkgaXRzZWxmIGVzdGFibGlzaGVzIHRoZSBmaW5hbCBwaHlzaWNhbC10by1leHBlcmllbnRpYWwgYnJpZGdlLiIgaW4gY2hlY2sK' | base64 --decode | python
       - name: Commit generated Overview source
-        shell: bash
         run: |
           if git diff --quiet; then
             echo "Overview orientation already present."
