@@ -1,0 +1,164 @@
+name: temporary-p89-final-contract-repair
+
+on:
+  push:
+    branches: ["p89-complete-linear-parity-duality"]
+    paths:
+      - ".github/workflows/temporary-p89-final-contract-repair.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: p89-complete-linear-parity-duality
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - name: Install development environment
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+      - name: Repair the remaining P89 publication contracts
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          root = Path('.')
+
+          # 1. Fix the canonical reproducibility generator. re.sub replacement
+          # strings interpret \f, so return the LaTeX-bearing section from a callable.
+          sync = root / 'scripts' / 'synchronize_p89_reader_frontier_phrases.py'
+          text = sync.read_text(encoding='utf-8')
+          old = 'text = pattern.sub(section + "\\n---\\n\\n## 6.", text, count=1)'
+          new = 'text = pattern.sub(lambda _match: section + "\\n---\\n\\n## 6.", text, count=1)'
+          if old in text:
+              text = text.replace(old, new, 1)
+          if new not in text:
+              raise RuntimeError('P89 reproducibility callable replacement contract is missing')
+          sync.write_text(text, encoding='utf-8')
+
+          # 2. Advance stale current-range labels in the permanent public promoter.
+          promoter = root / 'scripts' / 'promote_p89_public_frontier.py'
+          text = promoter.read_text(encoding='utf-8')
+          text = text.replace('P73-P88', 'P73-P89')
+          text = text.replace('P75-P88', 'P75-P89')
+          promoter.write_text(text, encoding='utf-8')
+
+          # 3. Make the citation frontier explicit without changing the version.
+          citation = root / 'CITATION.md'
+          text = citation.read_text(encoding='utf-8')
+          if '## Current theorem frontier: P89' not in text:
+              anchor = '## Proposition 89 method citation'
+              if anchor not in text:
+                  raise RuntimeError('P89 citation anchor is missing')
+              text = text.replace(anchor, '## Current theorem frontier: P89\n\nThe current documented theorem frontier is **P89**. The formal package release remains **Version 0.82.0**. P89 closes the declared complete real linear parity-functional class on the stated P75 box with exact value `L89 = 5/168`; it does not close the physical-to-experiential bridge.\n\n' + anchor, 1)
+          citation.write_text(text, encoding='utf-8')
+
+          # 4. Repair the current publication-status rows while preserving P88 history.
+          matrix = root / 'docs' / 'claim_source_matrix.md'
+          text = matrix.read_text(encoding='utf-8')
+          text = text.replace('audited by P75-P88', 'audited by P75-P89')
+          text = re.sub(
+              r'^\| Current theorem count \|.*$',
+              '| Current theorem count | The current repository contains 89 proposition-level results | repository publication status | theorem roadmap, verifier, reader tests, and current website source | this is a repository count, not an external scientific consensus statement |',
+              text,
+              count=1,
+              flags=re.MULTILINE,
+          )
+          text = re.sub(
+              r'^\| Current frontier \|.*$',
+              '| Current frontier | P89 is the current Research II theorem frontier | repository publication status | [P89 proof](proposition_89_complete_linear_parity_duality.md), [P89 provenance](p89_equation_provenance.md), implementation, exact tests, and theorem figure | complete only for the declared real linear parity-functional class; nonlinear P75 constraints and the physical-to-experiential bridge remain open |',
+              text,
+              count=1,
+              flags=re.MULTILINE,
+          )
+          matrix.write_text(text, encoding='utf-8')
+
+          # 5. Update the two stale scholarly/current-surface tests to the P89 record.
+          scholarly = root / 'tests' / 'test_scholarly_provenance_surface.py'
+          text = scholarly.read_text(encoding='utf-8')
+          text = text.replace('"audited by P75-P88"', '"audited by P75-P89"')
+          text = text.replace('"The current repository contains 88 proposition-level results"', '"The current repository contains 89 proposition-level results"')
+          text = text.replace('"P88 is the current Research II theorem frontier"', '"P89 is the current Research II theorem frontier"')
+          pattern = re.compile(
+              r'def test_sources_page_points_to_current_p88_and_previous_p87_p86_records\(\) -> None:\n.*?(?=\n\ndef test_public_provenance_does_not_make_priority_or_ontology_claims)',
+              re.DOTALL,
+          )
+          replacement = '''def test_sources_page_points_to_current_p89_and_previous_p88_records() -> None:\n    sources = _read("website/sources.html")\n\n    assert 'id="p89-source"' in sources\n    assert "Current theorem source · P89" in sources\n    assert "proposition_89_complete_linear_parity_duality.md" in sources\n    assert "p89_equation_provenance.md" in sources\n    assert "complete_linear_parity_duality.py" in sources\n    assert "test_complete_linear_parity_duality.py" in sources\n    assert "p89_complete_linear_parity_duality.svg" in sources\n\n    assert 'id="p88-source"' in sources\n    assert "Previous theorem source · P88" in sources\n    assert "proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md" in sources\n    assert "p88_equation_provenance.md" in sources\n    assert "claim_source_matrix.md" in sources\n    assert "Claim-to-source matrix" in sources\n\n    assert "Current theorem source · P88" not in sources\n'''
+          text, count = pattern.subn(replacement, text, count=1)
+          if count != 1 and 'test_sources_page_points_to_current_p89_and_previous_p88_records' not in text:
+              raise RuntimeError('scholarly P88 source test was not found')
+          scholarly.write_text(text, encoding='utf-8')
+
+          # 6. Advance only explicit current-contract literals in reader tests.
+          current_replacements = {
+              'Current theorem frontier: P88': 'Current theorem frontier: P89',
+              'P73-P88': 'P73-P89',
+              'P75-P88': 'P75-P89',
+              'P71-P88': 'P71-P89',
+              '88 proposition-level results': '89 proposition-level results',
+              'current frontier P88': 'current frontier P89',
+          }
+          for path in (root / 'tests').glob('test_*.py'):
+              source = path.read_text(encoding='utf-8')
+              if 'P89' not in source and 'P88' not in source:
+                  continue
+              revised = source
+              for old_value, new_value in current_replacements.items():
+                  revised = revised.replace(old_value, new_value)
+              if revised != source:
+                  path.write_text(revised, encoding='utf-8')
+
+          # The temporary workflows must not survive the final repair commit.
+          for temporary in (
+              root / '.github' / 'workflows' / 'temporary-p89-start-here-frontier-repair.yml',
+              root / '.github' / 'workflows' / 'temporary-p89-final-contract-repair.yml',
+          ):
+              if temporary.exists():
+                  temporary.unlink()
+          PY
+      - name: Regenerate canonical P89 publication surfaces
+        run: |
+          python scripts/promote_p89_public_frontier.py
+          python scripts/synchronize_p89_reader_frontier_phrases.py
+          python scripts/normalize_documentation_punctuation.py
+          python scripts/sync_figure_publication.py
+      - name: Validate repaired contracts before commit
+        run: |
+          set -o pipefail
+          python -m pytest -q | tee /tmp/p89-pytest.log
+          python scripts/sync_figure_publication.py --check
+          python scripts/verify_repository.py
+          python scripts/promote_p89_public_frontier.py
+          python scripts/synchronize_p89_reader_frontier_phrases.py
+          python scripts/normalize_documentation_punctuation.py
+          git diff --check
+          grep -q '## Current theorem frontier: P89' CITATION.md
+          grep -Eq 'P75-P89|P73-P89' docs/research_map.md website/research-map.html
+          grep -q 'P73-P89' website/implementation.html
+          grep -q '\\frac5{168}' docs/reproducibility.md
+          grep -q 'L_{88}=\\frac1{64}<L_{89}=\\frac5{168}' docs/reproducibility.md
+          ! grep -P '[–—]' README.md START_HERE.md CITATION.md docs/*.md website/*.html docs/figures/*.svg
+          git diff --exit-code -- docs/figures figures/manifest.json
+      - name: Commit permanent repairs and self-delete
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No final P89 contract repair required."
+            exit 0
+          fi
+          git commit -m "Repair final P89 publication contracts"
+          git fetch origin p89-complete-linear-parity-duality
+          git rebase origin/p89-complete-linear-parity-duality
+          git push origin HEAD:p89-complete-linear-parity-duality
