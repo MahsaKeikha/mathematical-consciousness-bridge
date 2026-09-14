@@ -14,12 +14,20 @@ import re
 import shutil
 from pathlib import Path
 
-from synchronize_research_three_website import (
-    CURRENT_RESEARCH_THREE_PIN,
-    LEGACY_RESEARCH_THREE_PINS,
-    P88_HOME_MARKER,
-    synchronize_site,
-)
+if __package__:
+    from scripts.synchronize_research_three_website import (
+        CURRENT_RESEARCH_THREE_PIN,
+        LEGACY_RESEARCH_THREE_PINS,
+        P88_HOME_MARKER,
+        synchronize_site,
+    )
+else:
+    from synchronize_research_three_website import (
+        CURRENT_RESEARCH_THREE_PIN,
+        LEGACY_RESEARCH_THREE_PINS,
+        P88_HOME_MARKER,
+        synchronize_site,
+    )
 
 ROOT = Path(__file__).resolve().parents[1]
 CANONICAL_WEBSITE = ROOT / "website"
