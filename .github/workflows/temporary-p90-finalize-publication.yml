@@ -74,7 +74,7 @@ jobs:
             echo "No P90 publication changes to commit"
             exit 0
           fi
-          git commit -m "Close final P90 reader publication residuals"
+          git commit -m "Finalize P90 homepage reader references"
           git push origin HEAD:p90-exact-nonlinear-rank-one-separation
 
-# rerun after making both P90 homepage and Visual Atlas promotion idempotent
+# final homepage reader cleanup before removing temporary migration machinery
