@@ -46,6 +46,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add CITATION.cff scripts/verify_repository.py website/implementation.html website/research-map.html tests/test_publication_contract_v2.py tests/test_reader_experience.py tests/test_scholarly_provenance_surface.py
+          git add CITATION.cff CITATION.md docs/glossary.md scripts/verify_repository.py website/implementation.html website/research-map.html tests/test_publication_contract_v2.py tests/test_reader_experience.py tests/test_scholarly_provenance_surface.py
           git commit -m "Migrate remaining publication contracts to P90"
           git push origin HEAD:p90-exact-nonlinear-rank-one-separation
