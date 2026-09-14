@@ -64,8 +64,7 @@ P88_ATLAS = f'''<!-- current-frontier-visual: P88 -->
 
 '''
 
-P88_RESEARCH_MAP_SECTION = f'''
-<section id="p88-research-map"><div class="section-head"><p class="eyebrow">IV-Q · Radius-three primitive parity-functional separation</p><h2>P88: Does the next complete coefficient radius expose a stronger incompatibility?</h2></div><div class="result-grid"><article class="result"><span>P88</span><h3>Exact radius-three bounded primitive four-event certificate</h3><p>P88 keeps the four-event order fixed and enlarges the primitive integer coefficient box from |c_i| ≤ 2 to |c_i| ≤ 3. The complete family contains 632 sign-normalized coefficient patterns per four-event subset and 208,560 exact functionals. On the established rational witness it strictly improves the certified full-law bound from L87 = 1/96 to L88 = 1/64.</p></article></div><div class="figure-card"><img src="https://raw.githubusercontent.com/MahsaKeikha/mathematical-consciousness-bridge/main/docs/figures/{P88_FIGURE}" alt="P88 exact radius-three bounded primitive four-event certificate"/><div><h3>P88 radius-three certificate</h3><p>The strict functional uses coefficients (1, −1, −3, 2), empirical value −11/8, exact P75 interval [−1, 2], mismatch 3/8, and centered norm 24.</p><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/{P88_PROOF}">Read Proposition 88</a></div></div></section>
+P88_RESEARCH_MAP_SECTION = f'''<section id="p88-research-map"><div class="section-head"><p class="eyebrow">IV-Q · Radius-three primitive parity-functional separation</p><h2>P88: Does the next complete coefficient radius expose a stronger incompatibility?</h2></div><div class="result-grid"><article class="result"><span>P88</span><h3>Exact radius-three bounded primitive four-event certificate</h3><p>P88 keeps the four-event order fixed and enlarges the primitive integer coefficient box from |c_i| ≤ 2 to |c_i| ≤ 3. The complete family contains 632 sign-normalized coefficient patterns per four-event subset and 208,560 exact functionals. On the established rational witness it strictly improves the certified full-law bound from L87 = 1/96 to L88 = 1/64.</p></article></div><div class="figure-card"><img src="https://raw.githubusercontent.com/MahsaKeikha/mathematical-consciousness-bridge/main/docs/figures/{P88_FIGURE}" alt="P88 exact radius-three bounded primitive four-event certificate"/><div><h3>P88 radius-three certificate</h3><p>The strict functional uses coefficients (1, −1, −3, 2), empirical value −11/8, exact P75 interval [−1, 2], mismatch 3/8, and centered norm 24.</p><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/{P88_PROOF}">Read Proposition 88</a></div></div></section>
 '''
 
 
@@ -275,7 +274,7 @@ def append_navigation_records() -> None:
         "P88 enlarges the completed P87 primitive coefficient box to `0 < |c_i| <= 3`, exhausts 632 sign-normalized primitive coefficient patterns across 330 four-event subsets (208,560 exact functionals), and on the established rational witness strengthens the full-law `L_infinity` lower bound from `1/96` to `1/64`.\n\n"
         f"- [Proof]({P88_PROOF})\n- [Equation provenance]({P88_PROVENANCE})\n"
         f"- Implementation: `src/consciousness_bridge/{P88_IMPLEMENTATION}`\n"
-        f"- Tests: `tests/{P88_TEST}`\n- Figure: `figures/{P88_FIGURE}`\n\n"
+        f"- Tests: `tests/{P88_TEST}\n- Figure: `figures/{P88_FIGURE}`\n\n"
         "**Boundary:** conditional model separation only; the physical-to-experiential bridge remains open.\n"
     )
     record.write_text(text, encoding="utf-8")
