@@ -287,6 +287,12 @@ def promote_website() -> None:
     text = re.sub(r'<!-- current-frontier-visual: P89 -->\s*', "", text)
     text = text.replace('<section id="p89-frontier" class="theorem-frontier current-frontier-visual">', '<section id="p89-frontier" class="theorem-frontier">')
     text = text.replace("Current theorem frontier · P89", "Previous theorem frontier · P89")
+    text = re.sub(
+        r'<!-- current-frontier-visual: P90 -->\s*<section id="p90-frontier".*?</section>\s*',
+        "",
+        text,
+        flags=re.DOTALL,
+    )
     atlas = p90_home_section().replace("current-frontier-home", "current-frontier-visual")
     marker = '<section id="p89-frontier"'
     if marker not in text:

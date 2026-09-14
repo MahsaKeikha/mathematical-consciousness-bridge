@@ -112,7 +112,7 @@ Its direct technical record is:
 
 ```text
 docs/proposition_90_exact_nonlinear_rank_one_separation.md
-docs/proposition_90_equation_provenance.md
+docs/p90_equation_provenance.md
 src/consciousness_bridge/exact_nonlinear_rank_one_separation.py
 tests/test_exact_nonlinear_rank_one_separation.py
 docs/figures/p90_exact_nonlinear_rank_one_separation.svg
@@ -250,7 +250,7 @@ The validation path checks the generated manifests, SVG parseability, canonical 
 The current frontier figure is:
 
 ```text
-docs/figures/p89_complete_linear_parity_duality.svg
+docs/figures/p90_exact_nonlinear_rank_one_separation.svg
 ```
 
 ---

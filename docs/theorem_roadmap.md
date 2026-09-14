@@ -53,7 +53,7 @@ The current documented theorem frontier is **P90**. The proposition record runs 
 &\Downarrow\\
 &\text{P88: radius-three bounded primitive four-event parity functionals extend the exact coefficient box to |c_i| <= 3}\\
 &\Downarrow\\
-&\text{P89: complete linear parity-functional duality closes all real linear directions on the eleven canonical parity coordinates}\\n&\Downarrow\\n&\text{P90: exact nonlinear rank-one slice separation exploits product-law image structure beyond the complete P89 linear envelope}
+&\text{P89: complete linear parity-functional duality closes all real linear directions on the eleven canonical parity coordinates}\\n&\Downarrow\\n&\text{P90: nonlinear rank-one slice separation gives exact strict-box distance }5/72\\n&\Downarrow\\n&\text{P90: exact nonlinear rank-one slice separation exploits product-law image structure beyond the complete P89 linear envelope}
 \end{aligned}
 }
 \]

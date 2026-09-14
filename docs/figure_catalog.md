@@ -2,7 +2,7 @@
 
 This is the single visual index for the **Mathematical Consciousness Bridge** repository. Every SVG is listed with a direct link, an explicit description, a reading instruction, a scientific-status statement, and a route to formal context. A reader should not need to guess from a filename, search another folder, or infer an unstated meaning from visual appearance.
 
-**Current catalog:** 147 SVG figures: 17 architecture/conceptual visuals, 18 foundational quantum-physics visuals, 72 proposition/theorem visuals, and 40 quantitative figures.
+**Current catalog:** 148 SVG figures: 17 architecture/conceptual visuals, 18 foundational quantum-physics visuals, 73 proposition/theorem visuals, and 40 quantitative figures.
 
 Every SVG also carries an embedded `<title>` and substantive `<desc>` for direct viewing and accessibility. Caption requirements are defined in the [Figure Caption and Description Standard](figure_caption_and_description_standard.md).
 
