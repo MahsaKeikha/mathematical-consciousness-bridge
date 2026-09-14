@@ -1,0 +1,76 @@
+name: validate-research-three-website
+
+on:
+  push:
+    paths:
+      - "website/**"
+      - "scripts/prepare_website.py"
+      - "scripts/synchronize_research_three_website.py"
+      - ".github/workflows/pages.yml"
+      - ".github/workflows/validate-research-three-website.yml"
+  pull_request:
+    paths:
+      - "website/**"
+      - "scripts/prepare_website.py"
+      - "scripts/synchronize_research_three_website.py"
+      - ".github/workflows/pages.yml"
+      - ".github/workflows/validate-research-three-website.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify maintained Python scripts
+        run: |
+          python -m py_compile scripts/prepare_website.py scripts/synchronize_research_three_website.py
+
+      - name: Build exact website artifact
+        run: |
+          rm -rf website-deploy _site
+          cp -a website website-deploy
+          python scripts/prepare_website.py --source website-deploy --output _site
+
+      - name: Verify Research II and Research III identity
+        run: |
+          R3_PIN='7a106820158e0d33ea651f7cdeaa505206f1ccc7'
+          R3_OLD='8bbb7b029d70c43cc6a9dbf8b44dfe5069d0993d'
+
+          test "$(grep -o '<!-- current-frontier-home: P88 -->' _site/index.html | wc -l)" -eq 1
+          test "$(grep -o 'id=\"p88-frontier\"' _site/index.html | wc -l)" -eq 1
+          grep -q 'Explore all 88 results' _site/index.html
+          grep -q 'Current record:</strong> 88 proposition-level results through P88' _site/index.html
+
+          grep -q 'Research III · Consciousness Measurement Science' _site/measurement-science.html
+          grep -q 'Implemented now versus not yet established' _site/measurement-science.html
+          grep -q 'CEP JSON schema' _site/measurement-science.html
+          grep -q 'Claim JSON schema' _site/measurement-science.html
+          grep -q 'Assumption registry' _site/measurement-science.html
+          grep -q 'Failure-mode registry' _site/measurement-science.html
+          grep -q 'Software and reproducibility' _site/measurement-science.html
+          grep -q '23</strong><span>tests in each CI job' _site/measurement-science.html
+          grep -q "research-three-snapshot: ${R3_PIN}" _site/measurement-science.html
+          ! grep -q "${R3_OLD}" _site/measurement-science.html
+
+          grep -q "${R3_PIN}" _site/research-lineage.html
+          ! grep -q "${R3_OLD}" _site/research-lineage.html
+          grep -q '<strong>88</strong><span>proposition-level results</span>' _site/research-lineage.html
+          grep -q '<strong>P88</strong><span>current theorem frontier</span>' _site/research-lineage.html
+          grep -q '<strong>v0.82.0</strong><span>current documented release</span>' _site/research-lineage.html
+
+      - name: Verify deployment artifact contains pinned Research III figures
+        run: |
+          R3_PIN='7a106820158e0d33ea651f7cdeaa505206f1ccc7'
+          grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/measurement_architecture.svg" _site/measurement-science.html
+          grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/claim_ladder.svg" _site/measurement-science.html
+          grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/structural_measurement_pipeline.svg" _site/measurement-science.html
+          test -f _site/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg
+          node --check _site/app.js
+
+      - name: Verify clean generated surface
+        run: git diff --check
