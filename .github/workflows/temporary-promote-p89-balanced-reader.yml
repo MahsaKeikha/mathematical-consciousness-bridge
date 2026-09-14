@@ -1,5 +1,6 @@
 name: temporary-promote-p89-balanced-reader
 
+# One-shot final migration gate. Remove after a successful synchronized commit.
 on:
   push:
     branches: ["p89-complete-linear-parity-duality"]
@@ -92,7 +93,7 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md START_HERE.md CITATION.md docs figures scripts tests website
+          git add README.md START_HERE.md CITATION.md CITATION.cff CITATION.bib docs figures scripts tests website
           git commit -m "Synchronize P89 publication and balanced reader contracts"
           git fetch origin p89-complete-linear-parity-duality
           git rebase origin/p89-complete-linear-parity-duality
