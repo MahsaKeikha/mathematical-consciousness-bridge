@@ -65,6 +65,24 @@ jobs:
           python -m pip install -r requirements-figures.txt
       - name: Regenerate and synchronize complete visual publication record
         run: python scripts/generate_all_figures.py
+      - name: Capture publication drift diagnostics
+        run: |
+          {
+            echo "# git status --short"
+            git status --short
+            echo
+            echo "# git diff --stat"
+            git diff --stat
+            echo
+            echo "# git diff"
+            git diff
+          } > figure-publication-drift.txt
+      - name: Upload publication drift diagnostics
+        uses: actions/upload-artifact@v4
+        with:
+          name: figure-publication-drift-python-3.12.14
+          path: figure-publication-drift.txt
+          if-no-files-found: error
       - name: Require byte-identical regeneration and publication sync
         run: |
           python scripts/sync_figure_publication.py --check
