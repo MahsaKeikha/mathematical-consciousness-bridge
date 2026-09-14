@@ -155,7 +155,7 @@ def _sync_reproducibility(changed: list[str]) -> None:
         "reproducibility route table",
     )
 
-    section = """## 5. Focused audit of the current P88 frontier
+    section = r"""## 5. Focused audit of the current P88 frontier
 
 The current theorem frontier is **P88**.
 
