@@ -47,3 +47,5 @@ jobs:
           git add website/index.html website/styles.css tests/test_publication_contract_v2.py
           git commit -m "Make Overview represent all three research programs"
           git push origin HEAD:overview-p88-provenance-clarity
+
+# Retry after selecting a unique stylesheet insertion point.
