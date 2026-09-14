@@ -25,7 +25,7 @@ from verify_frontier_publication import verify_frontier_publication
 
 ROOT = Path(__file__).resolve().parents[1]
 CURRENT_VERSION = "0.82.0"
-CURRENT_FRONTIER = "P88"
+CURRENT_FRONTIER = "P89"
 
 CORE_FILES = (
     "README.md",
@@ -57,6 +57,7 @@ CORE_FILES = (
     "docs/figures/p86_exact_minimally_weighted_quad_projection_parity.svg",
     "docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg",
     "docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg",
+    "docs/figures/p89_complete_linear_parity_duality.svg",
     "docs/proposition_84_exact_projection_parity_contrast.md",
     "docs/proposition_85_exact_triple_projection_parity_functional.md",
     "docs/p85_equation_provenance.md",
@@ -66,6 +67,8 @@ CORE_FILES = (
     "docs/p87_equation_provenance.md",
     "docs/proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md",
     "docs/p88_equation_provenance.md",
+    "docs/proposition_89_complete_linear_parity_duality.md",
+    "docs/p89_equation_provenance.md",
     "figures/README.md",
     "figures/CURRENT_FRONTIER.md",
     "figures/manifest.json",
@@ -81,6 +84,8 @@ CORE_FILES = (
     "scripts/generate_quantum_foundations_atlas.py",
     "scripts/enrich_figure_documentation.py",
     "scripts/sync_figure_publication.py",
+    "scripts/promote_p89_public_frontier.py",
+    "scripts/synchronize_p89_reader_frontier_phrases.py",
     "scripts/prepare_website.py",
     "scripts/reproducibility_audit.py",
     "scripts/verify_frontier_publication.py",
@@ -108,6 +113,9 @@ LINK_SURFACES = (
 MARKDOWN_LINK = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 
 STALE_READER_FRONTIER_MARKERS = (
+    "Current theorem frontier · P88",
+    "current P88 frontier",
+    "<strong>P88</strong><span>current theorem frontier</span>",
     "87-result theorem program and current P87 frontier",
     "Current theorem frontier · P87",
     "<strong>87</strong><span>proposition-level results</span>",
@@ -267,7 +275,7 @@ def _verify_release_consistency() -> None:
 def _verify_proposition_files() -> None:
     missing: list[int] = []
     duplicates: dict[int, list[str]] = {}
-    for number in range(1, 89):
+    for number in range(1, 90):
         matches = sorted((ROOT / "docs").glob(f"proposition_{number}_*.md"))
         if not matches:
             missing.append(number)
@@ -309,7 +317,7 @@ def _verify_figure_publication_sync() -> None:
         raise RuntimeError("figure manifest does not report the current theorem frontier")
     current_figure = str(manifest.get("current_frontier_figure", ""))
     if not current_figure.endswith(
-        "p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg"
+        "p89_complete_linear_parity_duality.svg"
     ):
         raise RuntimeError("figure manifest does not point to the canonical P88 SVG")
 
@@ -325,12 +333,11 @@ def _verify_figure_publication_sync() -> None:
         raise RuntimeError("complete figure manifest is not aligned with docs/figures")
 
     visual_atlas = _read("website/visual-atlas.html")
+    p89 = visual_atlas.index('id="p89-frontier"')
     p88 = visual_atlas.index('id="p88-frontier"')
     p87 = visual_atlas.index('id="p87-frontier"')
-    p86 = visual_atlas.index('id="p86-frontier"')
-    p85 = visual_atlas.index('id="p85-frontier"')
-    if not (p88 < p87 and p88 < p86 and p88 < p85):
-        raise RuntimeError("Visual Atlas does not lead with the current P88 figure")
+    if not (p89 < p88 < p87):
+        raise RuntimeError("Visual Atlas does not lead with the current P89 figure")
 
     subprocess.run(
         [sys.executable, str(ROOT / "scripts" / "sync_figure_publication.py"), "--check"],

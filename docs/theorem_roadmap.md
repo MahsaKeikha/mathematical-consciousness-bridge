@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P88**. The proposition record runs from **P1 through P88 with explicit dependency branches**. P71-P88 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P89**. The proposition record runs from **P1 through P89 with explicit dependency branches**. P71-P88 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -51,7 +51,9 @@ The current documented theorem frontier is **P88**. The proposition record runs 
 &\Downarrow\\
 &\text{P87: bounded primitive four-event parity functionals complete the nonzero coefficient box with |c_i| <= 2}\\
 &\Downarrow\\
-&\text{P88: radius-three bounded primitive four-event parity functionals extend the exact coefficient box to |c_i| <= 3}
+&\text{P88: radius-three bounded primitive four-event parity functionals extend the exact coefficient box to |c_i| <= 3}\\
+&\Downarrow\\
+&\text{P89: complete linear parity-functional duality closes all real linear directions on the eleven canonical parity coordinates}
 \end{aligned}
 }
 \]
@@ -553,6 +555,7 @@ Direct proof: [P80](proposition_80_simplex_coupled_model_separation.md). Provena
 | [P86](proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md) | minimally weighted four-event parity functionals | strict strengthening beyond the complete P85 triple certificate | proved conditional computational theorem |
 | [P87](proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md) | complete bounded primitive four-event parity functionals | same-order coefficient-family completion that strictly strengthens P86 | proved conditional computational theorem |
 | [P88](proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md) | radius-three bounded primitive four-event parity functionals | exact coefficient-radius extension that strictly strengthens P87 on the declared witness | proved conditional computational theorem |
+| [P89](proposition_89_complete_linear_parity_duality.md) | complete real linear parity-functional duality | removes coefficient-radius/support cutoffs and gives matching exact lower/upper certificates | proved conditional computational theorem |
 
 ## 4. Calibration branch remains separate
 
@@ -594,7 +597,7 @@ P85 is a conditional model-separation theorem for the declared P75 family. It do
 
 ## 5. Current open frontier
 
-After P88, the target-side chain has a substantially clearer scientific burden:
+After P89, the target-side chain has a substantially clearer scientific burden:
 
 1. target provenance must be non-circular relative to the physical descriptor being tested;
 2. the target-observation channel must be scientifically defensible and sufficiently informative for the claimed witness;
@@ -609,7 +612,7 @@ After P88, the target-side chain has a substantially clearer scientific burden:
 
 P78 closes the global-lower-bound gap for the specific continuous P75 four-view binary latent family. P79 certifies the one-sided sampling-radius envelope. P80 strengthens the box relaxation by retaining probability normalization. P81 adds exact marginal and projected-event constraints. P82 adds exact non-cylinder residual constraints from nested projected events. P83 adds exact projection-parity observables. P84 then preserves shared-parameter compatibility across pairs of those parity observables through 220 exact joint contrasts.
 
-P86 closes the first minimally non-uniform four-event weighting step beyond the complete P85 triple-functional audit. The next computational question should not be chosen merely by increasing functional order or proposition number. A substantive continuation beyond P88 must close a separately stated mathematical or statistical gap and preserve the certified lower-bound direction. Natural candidates include an exact-rational support-function or convex relaxation of the full parity-coordinate image, with a certificate not already implied by P88, or an observable-specific finite-sample rejection theorem that propagates uncertainty through a selected P88 score rather than only through the global sixteen-cell radius. Target-view models with residual dependence, shared bias, temporal drift, or learned measurement pipelines also remain open.
+P86 closes the first minimally non-uniform four-event weighting step beyond the complete P85 triple-functional audit. The next computational question should not be chosen merely by increasing functional order or proposition number. A substantive continuation beyond P89 must close a separately stated mathematical or statistical gap and preserve the certified lower-bound direction. Natural candidates include an exact-rational support-function or convex relaxation of the full parity-coordinate image, with a certificate not already implied by P88, or an observable-specific finite-sample rejection theorem that propagates uncertainty through a selected P88 score rather than only through the global sixteen-cell radius. Target-view models with residual dependence, shared bias, temporal drift, or learned measurement pipelines also remain open.
 
 None of P71-P88 identifies a latent variable with consciousness. None proves that a failed descriptor implies nonphysical consciousness. The physical-to-experiential bridge remains open.
 
@@ -722,6 +725,48 @@ For the strict P88 witness, the coefficient pattern `(1,-1,-3,2)` has empirical 
 
 P88 remains a conditional model-separation theorem for the declared P75 target-measurement family. It does not identify the latent state with consciousness, establish nonphysicality, validate an alternative model, or close the physical-to-experiential bridge.
 
-## After P88
+## P89: complete linear parity-functional duality
 
-The next frontier should not be inferred merely by increasing functional order. Any P89 claim must close a separately stated mathematical or scientific gap and must include a strict or otherwise informative certificate that is not already implied by P88.
+P89 closes a different gap from P88. Rather than increasing the integer coefficient radius again, it removes both the coefficient-radius restriction and the exactly-four-observable support restriction. Let \(y(p)\in\mathbb R^{11}\) be the vector of the eleven canonical P83 even-parity probabilities and let \(c\in\mathbb R^{11}\setminus\{0\}\). The scalar functional
+
+\[
+Q_c(p)=c^\top y(p)
+\]
+
+is multi-affine in the P75 parameters, so its exact range on a rational parameter box is determined by the finite parity vectors at box vertices. With the centered full-law transfer norm
+
+\[
+D(c)=\min_a\sum_x |(Ac)_x-a|,
+\]
+
+P89 defines the complete linear certificate
+
+\[
+L_{\mathrm{lin}}(B)=\sup_{c\ne0}\frac{\operatorname{dist}(c^\top y(\widehat p),I_B(c))}{D(c)}.
+\]
+
+A finite LP duality shows that this supremum equals the minimum signed full-law perturbation radius needed to write the empirical parity vector as a convex combination of P75 box-vertex parity vectors plus \(A^\top\delta\) with \(\mathbf1^\top\delta=0\). On the established rational witness, the exact lower functional
+
+```text
+(0, -2, -1, 1, 1, 1, -2, -1, -3, 2, -3)
+```
+
+has empirical value `-13/6`, exact P75 interval `[-51/8,-3]`, gap `5/6`, centered norm `28`, and therefore lower bound `5/168`. A matching rational convex-vertex plus zero-mass perturbation certificate has `||delta||_infinity = 5/168`, proving
+
+\[
+\boxed{L_{\mathrm{lin}}(B)=L_{89}(B)=\frac5{168}>\frac1{64}=L_{88}(B).}
+\]
+
+No larger coefficient radius, denser support, or other real linear combination of the same eleven parity coordinates can improve this value on the stated box. Nonlinear P75 constraints and observables outside this eleven-coordinate family remain open directions.
+
+- Proof: [P89](proposition_89_complete_linear_parity_duality.md)
+- Provenance: [p89_equation_provenance.md](p89_equation_provenance.md)
+- Figure: [P89 complete-linear certificate](figures/p89_complete_linear_parity_duality.svg)
+- Source: [`complete_linear_parity_duality.py`](../src/consciousness_bridge/complete_linear_parity_duality.py)
+- Tests: [`test_complete_linear_parity_duality.py`](../tests/test_complete_linear_parity_duality.py)
+
+P89 remains a conditional model-separation theorem for the declared P75 target-measurement family. It does not identify the latent state with consciousness, establish nonphysicality, validate an alternative model, or close the physical-to-experiential bridge.
+
+## After P89
+
+P89 closes the complete **linear** parity-functional class on the eleven declared parity coordinates. A future P90 claim should therefore address a different gap, such as nonlinear joint parity constraints, additional observable families, or a tighter use of the nonlinear P75 image, and must include a certificate not already implied by P89.

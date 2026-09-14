@@ -10,12 +10,12 @@ You do not need every command at once. Choose the route that matches your goal.
 | --- | --- |
 | Reproduce the maintained repository as strictly as possible | `make reproduce` |
 | Run the normal verification suite | `make check` |
-| Run only the current P88 theorem checks | focused P88 commands below |
+| Run only the current P89 theorem checks | focused P89 commands below |
 | Validate figures without rebuilding them | `make figures-check` |
 | Regenerate the complete visual record | `make figures` |
 | Inspect CI without installing locally | GitHub Actions |
 
-The current public theorem frontier is **P88**. The formal release remains **v0.82.0**.
+The current public theorem frontier is **P89**. The formal release remains **v0.82.0**.
 
 ---
 
@@ -104,63 +104,49 @@ Use this route when you want to verify the current committed state without regen
 
 ---
 
-## 5. Focused audit of the current P88 frontier
+## 5. Focused audit of the current P89 frontier
 
-The current theorem frontier is **P88**.
+The current theorem frontier is **P89**.
 
 Its direct technical record is:
 
 ```text
-docs/proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md
-docs/p88_equation_provenance.md
-src/consciousness_bridge/radius_three_bounded_primitive_quad_projection_parity_functional_separation.py
-tests/test_radius_three_bounded_primitive_quad_projection_parity_functional_separation.py
-docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg
+docs/proposition_89_complete_linear_parity_duality.md
+docs/p89_equation_provenance.md
+src/consciousness_bridge/complete_linear_parity_duality.py
+tests/test_complete_linear_parity_duality.py
+docs/figures/p89_complete_linear_parity_duality.svg
 figures/manifest.json
 ```
 
-Run the focused theorem and figure publication checks with:
+Run the focused theorem and figure-publication checks with:
 
 ```bash
 python -m pytest \
-  tests/test_radius_three_bounded_primitive_quad_projection_parity_functional_separation.py \
+  tests/test_complete_linear_parity_duality.py \
   tests/test_figure_publication_sync.py \
-  tests/test_p88_reader_surface_coherence.py
+  tests/test_p89_reader_surface_coherence.py
 ```
 
-P88 extends the sign-normalized primitive nonzero four-event coefficient family to coefficient magnitudes at most 3. The exact family contains 208,560 functionals across the 330 four-event subsets of the eleven canonical P83 parity coordinates.
+P89 considers every real linear functional of the eleven canonical P83 parity coordinates. On the published strict witness, the exact functional coefficient vector is
 
-For the published strict witness, the coefficient pattern is `(1,-1,-3,2)`. The empirical functional value is
+```text
+(0, -2, -1, 1, 1, 1, -2, -1, -3, 2, -3)
+```
 
-\[
--\frac{11}{8},
-\]
-
-while the exact P75 box interval is
+with empirical value `-13/6`, exact P75 interval `[-51/8,-3]`, interval gap `5/6`, centering constant `-3`, and centered transfer norm `28`. The normalized lower certificate is therefore
 
 \[
-[-1,2],
+rac5{168}.
 \]
 
-giving an exact functional gap
+A matching rational convex-vertex plus zero-mass perturbation certificate has exact infinity radius `5/168`. The equality of the lower and upper certificates proves that `5/168` is the exact optimum over the complete real linear parity-functional class on the stated box. Thus
 
 \[
-\frac{3}{8}.
+L_{88}=rac1{64}<L_{89}=rac5{168}.
 \]
 
-The centering constant is `-1` and the centered coefficient norm is 24, which yields the P88 empirical full-law lower bound
-
-\[
-\frac{1}{64}.
-\]
-
-On this strict witness the certified hierarchy is
-
-\[
-L_{85}=0<L_{86}=\frac{1}{192}<L_{87}=\frac{1}{96}<L_{88}=\frac{1}{64}.
-\]
-
-These are conditional model-separation results for the declared P75 target-measurement family. They do not identify the latent state with consciousness, establish nonphysicality, or complete the physical-to-experiential bridge.
+This completeness statement is limited to the declared linear parity-functional class. It does not exhaust nonlinear P75 constraints or close the physical-to-experiential bridge.
 
 ---
 

@@ -1,6 +1,6 @@
 # Detailed proposition record
 
-## Complete P1 to P88 chronology
+## Complete P1 to P89 chronology
 
 This page preserves the proposition-by-proposition development history of the Mathematical Consciousness Bridge research program. It is intentionally separate from the main README so a first-time reader can follow the scientific argument without first learning the internal chronology of the project.
 
@@ -10,11 +10,11 @@ The scientific status rule is strict throughout: a theorem is only a theorem und
 
 ### How to use this record
 
-A first-time reader should not read this page as 88 disconnected proposition-level results. Use it as an audit index: identify the scientific role of a proposition, open its direct proof when needed, then follow implementation/tests/provenance links for verification. For the shortest conceptual path, begin with [Start Here](../START_HERE.md) and [Research Navigation](research_navigation.md). The [Reader Experience and Visual Presentation Standard](reader_experience_and_visual_standard.md) explains the repository-wide explanation and visual hierarchy.
+A first-time reader should not read this page as 89 disconnected proposition-level results. Use it as an audit index: identify the scientific role of a proposition, open its direct proof when needed, then follow implementation/tests/provenance links for verification. For the shortest conceptual path, begin with [Start Here](../START_HERE.md) and [Research Navigation](research_navigation.md). The [Reader Experience and Visual Presentation Standard](reader_experience_and_visual_standard.md) explains the repository-wide explanation and visual hierarchy.
 
 ---
 
-## Complete P1 to P88 chronology
+## Complete P1 to P89 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
@@ -321,3 +321,16 @@ P88 enlarges the completed P87 primitive coefficient box to `0 < |c_i| <= 3`, ex
 - Figure: `figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg`
 
 **Boundary:** conditional model separation only; the physical-to-experiential bridge remains open.
+
+
+## Proposition 89: Complete Linear Parity-Functional Duality Certificate
+
+P89 removes P88's finite coefficient-radius and four-observable support restrictions and studies every real linear functional of all eleven canonical P83 parity coordinates. Finite-dimensional duality matches a functional lower certificate to a convex P75 box-vertex plus zero-mass signed-perturbation upper certificate. On the established exact rational witness both sides equal `5/168`, strictly strengthening `L88 = 1/64`.
+
+The result is complete for the declared **linear parity-functional class** only. It does not claim complete separation from the nonlinear P75 model image, identify the latent variable with experience, establish nonphysicality, or close the physical-to-experiential bridge.
+
+- [Proof](proposition_89_complete_linear_parity_duality.md)
+- [Equation provenance](p89_equation_provenance.md)
+- Implementation: `src/consciousness_bridge/complete_linear_parity_duality.py`
+- Tests: `tests/test_complete_linear_parity_duality.py`
+- Figure: `docs/figures/p89_complete_linear_parity_duality.svg`

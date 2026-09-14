@@ -194,8 +194,11 @@ def sync_navigation(changed: list[str]) -> None:
         text,
         count=1,
     )
-    audit_pattern = re.compile(r"For P88:\n\n\| Audit surface \| Canonical route \|\n\| --- \| --- \|\n.*?(?=\n\n|\Z)", re.DOTALL)
-    audit = '''For P89:\n\n| Audit surface | Canonical route |\n| --- | --- |\n| Direct theorem | [P89 proposition](proposition_89_complete_linear_parity_duality.md) |\n| Equation and method provenance | [P89 provenance](p89_equation_provenance.md) |\n| Implementation | [`complete_linear_parity_duality.py`](../src/consciousness_bridge/complete_linear_parity_duality.py) |\n| Regression tests | [`test_complete_linear_parity_duality.py`](../tests/test_complete_linear_parity_duality.py) |\n| Theorem figure | [P89 complete-linear certificate](figures/p89_complete_linear_parity_duality.svg) |'''
+    audit_pattern = re.compile(
+        r"For P88:\n\n\| What you want \| Direct link \|\n\| --- \| --- \|\n.*?(?=\n\nP88 is a conditional model separation result)",
+        re.DOTALL,
+    )
+    audit = '''For P89:\n\n| What you want | Direct link |\n| --- | --- |\n| The theorem and proof | [P89 proposition](proposition_89_complete_linear_parity_duality.md) |\n| Equation and method provenance | [P89 provenance](p89_equation_provenance.md) |\n| Implementation | [`complete_linear_parity_duality.py`](../src/consciousness_bridge/complete_linear_parity_duality.py) |\n| Regression tests | [`test_complete_linear_parity_duality.py`](../tests/test_complete_linear_parity_duality.py) |\n| Figure | [P89 complete-linear certificate](figures/p89_complete_linear_parity_duality.svg) |\n| Repository reproduction | [Reproducibility Guide](reproducibility.md) |'''
     text, count = audit_pattern.subn(audit, text, count=1)
     if count == 0 and "For P89:" not in text:
         raise RuntimeError("research navigation P88 audit block was not found")

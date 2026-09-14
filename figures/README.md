@@ -5,15 +5,15 @@ visual record of the Mathematical Consciousness Bridge project. The canonical
 SVG archive lives in [`docs/figures/`](../docs/figures/); this gateway is derived
 from that archive by code so it cannot silently remain on an older proposition.
 
-## Current theorem frontier: P88
+## Current theorem frontier: P89
 
-![P88 current theorem frontier](../docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg)
+![P89 current theorem frontier](../docs/figures/p89_complete_linear_parity_duality.svg)
 
-Canonical figure: [`p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg`](../docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg)
-Theorem: [`proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md`](../docs/proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md)
-Equation provenance: [`p88_equation_provenance.md`](../docs/p88_equation_provenance.md)
+Canonical figure: [`p89_complete_linear_parity_duality.svg`](../docs/figures/p89_complete_linear_parity_duality.svg)
+Theorem: [`proposition_89_complete_linear_parity_duality.md`](../docs/proposition_89_complete_linear_parity_duality.md)
+Equation provenance: [`p89_equation_provenance.md`](../docs/p89_equation_provenance.md)
 
-For the full P71-P88 visual progression, open
+For the full P71-P89 visual progression, open
 [`CURRENT_FRONTIER.md`](CURRENT_FRONTIER.md).
 
 ## Complete reproducible figure record

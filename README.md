@@ -54,9 +54,9 @@ You do **not** need to read the propositions in order to understand the project.
 
 If you want the complete theorem record, including assumptions, proofs, implementations, tests, figures, and scientific boundaries, use the **[Detailed Proposition Record](docs/detailed_proposition_record.md)** or the **[Theorem Roadmap](docs/theorem_roadmap.md)**.
 
-The current public theorem frontier is **P88**. The formal release remains **v0.82.0**.
+The current public theorem frontier is **P89**. The formal release remains **v0.82.0**.
 
-**[Read the current frontier](docs/proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md)**
+**[Read the current frontier](docs/proposition_89_complete_linear_parity_duality.md)**
 
 ---
 
@@ -70,11 +70,9 @@ The current public theorem frontier is **P88**. The formal release remains **v0.
 
 ### Current theorem frontier
 
-![P88 Radius-Three Bounded-Primitive Four-Event Parity Certificate](docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg)
+![P89 Complete Linear Parity-Functional Duality Certificate](docs/figures/p89_complete_linear_parity_duality.svg)
 
-**Figure 2. P88 exact radius-three bounded-primitive four-event parity certificate.** P88 exhausts 632 primitive sign-normalized coefficient patterns across each of 330 four-event subsets, giving 208,560 exact functionals. On the established exact rational witness, the coefficients `(1,-1,-3,2)` give empirical value `-11/8` outside the exact P75 interval `[-1,2]`, with gap `3/8`, centered norm `24`, and certified full-law lower bound `L88 = 1/64`, strictly strengthening `L87 = 1/96`. This is a conditional model-separation theorem for the declared P75 family; it does not identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.
-
----
+**Figure 2. P89 exact complete linear parity-functional duality certificate.** P89 removes the finite coefficient-radius and four-observable support restrictions of P88. On the established exact-rational witness, one real eleven-coordinate functional gives a normalized lower bound of `5/168`; a matching rational convex-vertex plus zero-mass perturbation certificate gives the same universal upper bound. Therefore the complete real linear parity-functional optimum is exactly `5/168`, strictly stronger than `L88 = 1/64`. This remains a conditional model-separation theorem for the declared P75 family and does not identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.
 
 ## Choose your path
 
@@ -120,6 +118,6 @@ For scholarly citation, see **[CITATION.md](CITATION.md)** and **[CITATION.cff](
 
 MIT License. See **[LICENSE](LICENSE)**.
 
-**Public theorem frontier:** P88  
-**Formal release:** v0.82.0  
+**Public theorem frontier:** P89
+**Formal release:** v0.82.0
 **Final bridge from physical description to experience:** open

@@ -149,6 +149,9 @@ def promote_index() -> None:
             ("P75-P88", "P75-P89"),
             ("P1-P88", "P1-P89"),
             ("P88 certification ladder", "P89 certification ladder"),
+            ("P88 sources", "P89 sources"),
+            ("sources.html#p88-source", "sources.html#p89-source"),
+            ("current P88 frontier", "current P89 frontier"),
             ("<!-- Current theorem asset: docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg -->", f"<!-- Current theorem asset: docs/figures/{P89_FIGURE} -->"),
         ),
     )
@@ -293,9 +296,10 @@ def promote_research_map() -> None:
             ("Current theorem frontier · P88", "Current theorem frontier · P89"),
         ),
     )
-    if 'id="p89-research-map"' not in text:
-        section = f'''<section id="p89-research-map"><div class="section-head"><p class="eyebrow">IV-R · Complete linear parity-functional duality</p><h2>P89: What is the strongest possible real linear certificate from the eleven canonical parity observables?</h2></div><div class="result-grid"><article class="result"><span>P89</span><h3>Exact complete-linear optimum</h3><p>P89 removes both the finite coefficient-radius restriction and the four-observable support restriction. Finite-dimensional duality matches a real linear-functional lower certificate to a convex P75 box-vertex plus zero-mass signed-perturbation upper certificate. On the established rational witness the exact optimum is <strong>5/168</strong>, strictly stronger than P88 = 1/64.</p></article></div><div class="figure-card"><img src="https://raw.githubusercontent.com/MahsaKeikha/mathematical-consciousness-bridge/main/docs/figures/{P89_FIGURE}" alt="P89 complete linear parity-functional duality certificate"/><div><h3>P89 complete-linear certificate</h3><p>The matching rational certificates prove that no other real linear combination of the same eleven parity coordinates can improve the 5/168 bound on the stated box.</p><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/{P89_PROOF}">Read Proposition 89</a></div></div></section>\n'''
-        text = text.replace("</main>", section + "</main>", 1)
+    text = remove_section(text, "p89-research-map")
+    section = f'''<section id="p89-research-map"><div class="section-head"><p class="eyebrow">IV-R · Complete linear parity-functional duality</p><h2>P89: What is the strongest possible real linear certificate from the eleven canonical parity observables?</h2></div><div class="result-grid"><article class="result"><span>P89</span><h3>Exact complete real linear optimum</h3><p>P89 removes both the finite coefficient-radius restriction and the four-observable support restriction. Finite-dimensional duality matches a real linear-functional lower certificate to a convex P75 box-vertex plus zero-mass signed-perturbation upper certificate. On the established rational witness the exact optimum is <strong>5/168</strong>, strictly stronger than P88 = 1/64.</p></article></div><div class="figure-card"><img src="https://raw.githubusercontent.com/MahsaKeikha/mathematical-consciousness-bridge/main/docs/figures/{P89_FIGURE}" alt="P89 complete linear parity-functional duality certificate"/><div><h3>P89 complete real linear certificate</h3><p>The matching rational certificates prove that no other real linear combination of the same eleven parity coordinates can improve the 5/168 bound on the stated box.</p><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/{P89_PROOF}">Read Proposition 89</a></div></div></section>\n'''
+    text = text.replace("</main>", section + "</main>", 1)
+    text = text.replace("index.html#p88-frontier", "index.html#p89-frontier")
     write(path, text)
 
 
@@ -307,6 +311,7 @@ def promote_misc_website() -> None:
         ("P88 current theorem frontier", "P89 current theorem frontier"),
         ("P75-P88", "P75-P89"),
         ("P77-P88", "P77-P89"),
+        ("index.html#p88-frontier", "index.html#p89-frontier"),
     )
     for path in (
         "website/research-lineage.html",
@@ -315,6 +320,24 @@ def promote_misc_website() -> None:
     ):
         if (ROOT / path).is_file():
             write(path, replace_many(read(path), replacements))
+
+    sources_path = ROOT / "website/sources.html"
+    if sources_path.is_file():
+        source_text = read("website/sources.html")
+        p89_source = f'''<section id="p89-source"><div class="section-head"><p class="eyebrow">Current theorem source · P89</p><h2>Complete real linear parity-functional duality certificate</h2><p>P89 removes the finite coefficient-radius and four-observable support restrictions of P88. It optimizes over every real linear functional of all eleven canonical P83 parity coordinates. On the established exact rational witness, the lower functional certificate and the universal convex-vertex plus zero-mass perturbation upper certificate meet at <strong>5/168</strong>, strictly above <strong>L88 = 1/64</strong>.</p></div><div class="source-grid"><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/{P89_PROOF}"><h3>Proposition 89</h3><p>Formal statement, finite-dimensional duality, exact lower and upper certificates, and scientific boundary.</p></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/{P89_PROVENANCE}"><h3>P89 provenance</h3><p>Separates inherited parity algebra and convex analysis from the repository-original complete real linear certificate.</p></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/{P89_IMPLEMENTATION}"><h3>P89 implementation</h3><p>Exact rational computation of the complete linear lower certificate and matching dual upper certificate.</p></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/tests/{P89_TEST}"><h3>P89 exact tests</h3><p>Exact witness, dual certificate, dominance over P88, and scientific-boundary regression tests.</p></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/figures/{P89_FIGURE}"><h3>P89 theorem figure</h3><p>Source-controlled visual summary synchronized with the theorem and publication manifest.</p></a></div><div class="boundary"><p><strong>Scientific boundary:</strong> P89 closes only the declared real linear parity-functional class on the stated P75 box. It does not exhaust nonlinear P75 constraints, identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.</p></div></section>
+
+'''
+        source_text = remove_section(source_text, "p89-source")
+        p88_marker = '<section id="p88-source">'
+        if p88_marker not in source_text:
+            raise RuntimeError("P88 source section is missing from website/sources.html")
+        source_text = source_text.replace(
+            '<p class="eyebrow">Current theorem source · P88</p>',
+            '<p class="eyebrow">Previous theorem source · P88</p>',
+            1,
+        )
+        source_text = source_text.replace(p88_marker, p89_source + p88_marker, 1)
+        write("website/sources.html", source_text)
 
 
 def assert_balanced_reader_state() -> None:

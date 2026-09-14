@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="p88-title p88-desc">
-  <title id="p88-title">P88 Radius-Three Bounded-Primitive Four-Event Parity Certificate</title>
-  <desc id="p88-desc">What this figure shows: Figure 2. P88 exact radius-three bounded-primitive four-event parity certificate. P88 exhausts 632 primitive sign-normalized coefficient patterns across each of 330 four-event subsets, giving 208,560 exact functionals. On the established exact rational witness, the coefficients (1,-1,-3,2) give empirical value -11/8 outside the exact P75 interval [-1,2], with gap 3/8, centered norm 24, and certified full-law lower bound L88 = 1/64, strictly strengthening L87 = 1/96. This is a conditional model-separation theorem for the declared P75 family; it does not identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge. How to read it: follow only the labeled arrows, axes, panels, set relations, or inequalities shown in the visual and interpret them using the adjacent research text. Main takeaway: the figure summarizes the stated mathematical or scientific dependency; visual proximity alone does not add a claim. Scientific status: Reader-facing research figure; formal status is controlled by the linked proof or source record.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="p89-title p89-desc">
+  <title id="p89-title">P89 Complete Linear Parity-Functional Duality Certificate</title>
+  <desc id="p89-desc">What this figure shows: Proposition 89 removes the finite coefficient-radius and four-observable support restrictions of P88 by optimizing over every real linear functional of all eleven canonical P83 parity coordinates. Exact finite-dimensional duality matches a linear-functional lower certificate to a convex box-vertex plus zero-mass perturbation upper certificate. On the established exact rational witness, coefficients (0,-2,-1,1,1,1,-2,-1,-3,2,-3) give empirical value -13/6 outside the exact P75 interval [-51/8,-3], with gap 5/6 and centered norm 28, producing 5/168. A matching signed perturbation has infinity norm 5/168, proving this is the exact unrestricted linear-parity optimum and strictly improving P88 = 1/64. Scientific status: this is a conditional model-separation theorem for the declared P75 family and complete only for real linear combinations of the eleven declared parity observables; it does not identify consciousness, establish nonphysicality, or solve the physical-to-experiential bridge.</desc>
   <defs>
     <style>
       .bg{fill:#f7f9fc}.panel{fill:#fff;stroke:#cfd8e6;stroke-width:1.5}.soft{fill:#f3f7fb;stroke:#cfd8e6;stroke-width:1.2}.accent{fill:#173b65}.accentSoft{fill:#eaf2fb;stroke:#8fb0d4;stroke-width:1.3}.success{fill:#eef8f1;stroke:#8eb89a;stroke-width:1.3}.warn{fill:#fff7e8;stroke:#d6b267;stroke-width:1.3}.ink{fill:#172235;font-family:Arial,Helvetica,sans-serif}.muted{fill:#5d6a7c;font-family:Arial,Helvetica,sans-serif}.white{fill:#fff;font-family:Arial,Helvetica,sans-serif}.title{font-size:30px;font-weight:700}.subtitle{font-size:16px}.section{font-size:20px;font-weight:700}.label{font-size:15px;font-weight:700}.body{font-size:14px}.formula{font-size:16px;font-weight:700}.metric{font-size:23px;font-weight:700}.tiny{font-size:12px}.arrow{stroke:#6c87a7;stroke-width:2;fill:none;marker-end:url(#arrowhead)}
@@ -9,63 +9,64 @@
   </defs>
   <rect class="bg" width="1280" height="760"/>
   <rect class="accent" width="1280" height="112"/>
-  <text class="white title" x="54" y="50">P88 Radius-Three Bounded-Primitive Four-Event Certificate</text>
-  <text class="white subtitle" x="54" y="79">Expanding the exact primitive coefficient radius from 2 to 3 produces a new strict shared-parameter witness.</text>
+  <text class="white title" x="54" y="50">P89 Complete Linear Parity-Functional Duality Certificate</text>
+  <text class="white subtitle" x="54" y="79">Close the entire real linear direction space on all 11 canonical parity observables, not another finite coefficient box.</text>
 
   <rect class="panel" x="48" y="144" rx="16" width="350" height="448"/>
-  <text class="ink section" x="72" y="181">1. Enlarge the exact radius</text>
-  <text class="muted body" x="72" y="210">Four distinct canonical even-parity observables</text>
-  <text class="muted body" x="72" y="232">with primitive nonzero coefficients |cᵢ| ≤ 3.</text>
-  <rect class="accentSoft" x="78" y="262" rx="12" width="290" height="92"/>
-  <text class="ink label" x="98" y="290">Primitive pattern count</text>
-  <text class="ink formula" x="98" y="318">(6⁴ − 2·2⁴) / 2 = 632</text>
-  <text class="muted body" x="98" y="340">global-sign duplicates removed</text>
-  <rect class="soft" x="78" y="374" rx="12" width="290" height="88"/>
-  <text class="ink label" x="98" y="402">Four-event subsets</text>
-  <text class="ink formula" x="98" y="430">C(11,4) = 330</text>
-  <text class="muted body" x="98" y="451">same canonical parity coordinates</text>
-  <rect class="success" x="78" y="482" rx="12" width="290" height="74"/>
-  <text class="ink label" x="98" y="510">Complete P88 family</text>
-  <text class="ink metric" x="98" y="541">208,560 exact functionals</text>
+  <text class="ink section" x="72" y="181">1. Remove P88 restrictions</text>
+  <text class="muted body" x="72" y="210">P88: exactly four parity coordinates</text>
+  <text class="muted body" x="72" y="232">and primitive integer coefficients |cᵢ| ≤ 3.</text>
+  <rect class="accentSoft" x="78" y="262" rx="12" width="290" height="98"/>
+  <text class="ink label" x="98" y="290">P89 coefficient space</text>
+  <text class="ink formula" x="98" y="320">c ∈ R¹¹ \ {0}</text>
+  <text class="muted body" x="98" y="344">arbitrary support · arbitrary magnitude</text>
+  <rect class="soft" x="78" y="382" rx="12" width="290" height="96"/>
+  <text class="ink label" x="98" y="410">Exact P75 interval</text>
+  <text class="ink formula" x="98" y="438">Iᴮ(c) = [minᵥ cᵀv, maxᵥ cᵀv]</text>
+  <text class="muted body" x="98" y="461">box-vertex support is exact by multi-affinity</text>
+  <rect class="success" x="78" y="500" rx="12" width="290" height="56"/>
+  <text class="ink label" x="98" y="524">Complete linear class</text>
+  <text class="ink formula" x="98" y="548">no coefficient-radius ceiling</text>
 
   <path class="arrow" d="M406 368 C430 368,438 368,462 368"/>
   <rect class="panel" x="470" y="144" rx="16" width="350" height="448"/>
-  <text class="ink section" x="494" y="181">2. Exact certification</text>
-  <text class="muted body" x="494" y="210">Multi-affinity keeps endpoint enumeration exact.</text>
-  <text class="muted body" x="494" y="232">Mass conservation transfers mismatch to full-law L∞.</text>
-  <rect class="soft" x="500" y="262" rx="12" width="290" height="92"/>
-  <text class="ink label" x="520" y="290">Exact P75 interval</text>
-  <text class="ink formula" x="520" y="318">Iᴮ(Q) = [Qᴸ,Qᵁ]</text>
-  <text class="muted body" x="520" y="340">rational response/prevalence endpoints</text>
-  <rect class="soft" x="500" y="374" rx="12" width="290" height="96"/>
-  <text class="ink label" x="520" y="402">Centered transfer norm</text>
-  <text class="ink formula" x="520" y="430">D(Q)=minₐ Σₓ|g(x)−a|</text>
-  <text class="muted body" x="520" y="453">exact finite median minimization</text>
-  <rect class="accentSoft" x="500" y="490" rx="12" width="290" height="66"/>
-  <text class="ink label" x="520" y="518">Complete hierarchy</text>
-  <text class="ink formula" x="520" y="544">L88 = max(L87, Lr3bp4)</text>
+  <text class="ink section" x="494" y="181">2. Matching exact duality</text>
+  <text class="muted body" x="494" y="210">Lower side: one unrestricted linear functional.</text>
+  <text class="muted body" x="494" y="232">Upper side: convex vertices + zero-mass δ.</text>
+  <rect class="soft" x="500" y="260" rx="12" width="290" height="94"/>
+  <text class="ink label" x="520" y="289">Centered transfer norm</text>
+  <text class="ink formula" x="520" y="318">D(c)=minₐ Σₓ|(Ac)ₓ−a|</text>
+  <text class="muted body" x="520" y="341">full-law L∞ transfer remains exact</text>
+  <rect class="accentSoft" x="500" y="376" rx="12" width="290" height="100"/>
+  <text class="ink label" x="520" y="404">Universal upper certificate</text>
+  <text class="ink formula" x="520" y="433">ŷ = Σᵣ λᵣvʳ + Aᵀδ</text>
+  <text class="ink formula" x="520" y="457">1ᵀδ = 0</text>
+  <text class="muted body" x="520" y="474">⇒ every linear bound ≤ ||δ||∞</text>
+  <rect class="success" x="500" y="496" rx="12" width="290" height="60"/>
+  <text class="ink label" x="520" y="522">Finite LP strong duality</text>
+  <text class="ink formula" x="520" y="546">Llin(B) = RB(ŷ)</text>
 
   <path class="arrow" d="M828 368 C850 368,862 368,884 368"/>
   <rect class="panel" x="892" y="144" rx="16" width="340" height="448"/>
   <text class="ink section" x="916" y="181">3. Exact strict witness</text>
-  <text class="muted body" x="916" y="210">Q = P(H02) − P(H13) − 3P(H123) + 2P(H0123)</text>
-  <rect class="soft" x="920" y="246" rx="11" width="284" height="76"/>
-  <text class="ink label" x="940" y="272">Empirical / P75 interval</text>
-  <text class="ink formula" x="940" y="298">Q(emp) = −11/8</text>
-  <text class="ink formula" x="940" y="316">Q(P75 box) ∈ [−1,2]</text>
-  <rect class="warn" x="920" y="338" rx="11" width="284" height="62"/>
-  <text class="ink label" x="940" y="364">Exact mismatch</text>
-  <text class="ink metric" x="940" y="391">gap = 3/8</text>
-  <rect class="soft" x="920" y="416" rx="11" width="284" height="62"/>
-  <text class="ink label" x="940" y="442">Centered norm</text>
-  <text class="ink metric" x="940" y="469">D(Q) = 24</text>
-  <rect class="success" x="920" y="494" rx="11" width="284" height="70"/>
-  <text class="ink label" x="940" y="520">Strict hierarchy improvement</text>
-  <text class="ink metric" x="940" y="551">1/96 &lt; 1/64</text>
+  <text class="muted body" x="916" y="210">c = (0,−2,−1,1,1,1,−2,−1,−3,2,−3)</text>
+  <rect class="soft" x="920" y="246" rx="11" width="284" height="84"/>
+  <text class="ink label" x="940" y="272">Empirical / exact P75 interval</text>
+  <text class="ink formula" x="940" y="298">Q(emp) = −13/6</text>
+  <text class="ink formula" x="940" y="319">Q(P75 box) ∈ [−51/8, −3]</text>
+  <rect class="warn" x="920" y="346" rx="11" width="284" height="64"/>
+  <text class="ink label" x="940" y="372">Exact lower certificate</text>
+  <text class="ink metric" x="940" y="401">gap 5/6 · D = 28</text>
+  <rect class="accentSoft" x="920" y="426" rx="11" width="284" height="58"/>
+  <text class="ink label" x="940" y="452">Matching upper radius</text>
+  <text class="ink metric" x="940" y="477">||δ||∞ = 5/168</text>
+  <rect class="success" x="920" y="500" rx="11" width="284" height="64"/>
+  <text class="ink label" x="940" y="526">Exact complete-linear optimum</text>
+  <text class="ink metric" x="940" y="555">1/64 &lt; 5/168</text>
 
   <rect class="accent" x="48" y="620" rx="14" width="1184" height="92"/>
   <text class="white label" x="72" y="650">Scientific boundary</text>
-  <text class="white body" x="72" y="676">P88 strengthens rejection of the declared P75 latent measurement family. It does not identify the latent state with consciousness,</text>
-  <text class="white body" x="72" y="697">validate an alternative ontology, or solve the physical-to-experiential bridge.</text>
-  <text class="muted tiny" x="48" y="742">Mathematical Consciousness Bridge | Proposition 88 | exact rational certificate</text>
+  <text class="white body" x="72" y="676">P89 is complete for real linear combinations of the 11 declared parity observables on the stated P75 box. It is not complete for all nonlinear</text>
+  <text class="white body" x="72" y="697">model constraints, and it does not identify consciousness, establish nonphysicality, or solve the physical-to-experiential bridge.</text>
+  <text class="muted tiny" x="48" y="742">Mathematical Consciousness Bridge | Proposition 89 | exact rational matching certificate</text>
 </svg>

@@ -3,7 +3,7 @@
 The canonical SVG archive lives in ``docs/figures``. This command derives the
 GitHub-facing figure gateway, SHA-256 manifest, current-frontier documentation,
 and stable current-frontier SVG from the repository verifier's declared
-frontier. Reader-facing website promotion is delegated to the matching P88
+frontier. Reader-facing website promotion is delegated to the matching P89
 publication script so one frontier declaration drives every public surface.
 """
 
@@ -24,7 +24,7 @@ GATEWAY = ROOT / "figures"
 HOME = ROOT / "website" / "index.html"
 VISUAL_ATLAS = ROOT / "website" / "visual-atlas.html"
 VERIFIER = ROOT / "scripts" / "verify_repository.py"
-PROMOTER = ROOT / "scripts" / "promote_p88_public_frontier.py"
+PROMOTER = ROOT / "scripts" / "promote_p89_public_frontier.py"
 FRONTIER_RE = re.compile(r'^CURRENT_FRONTIER = "P(?P<number>\d+)"$', re.MULTILINE)
 
 
@@ -170,17 +170,17 @@ def _frontier_page(frontier: int) -> str:
         f"[Read Proposition {frontier}](../{current['proposition']})", "",
         f"[Open P{frontier} equation provenance](../docs/p{frontier}_equation_provenance.md)", "",
     ]
-    if frontier == 88:
+    if frontier == 89:
         lines.extend([
-            "### Exact P88 hierarchy witness", "",
-            "P88 enlarges the complete primitive four-event coefficient box to nonzero integer coefficients satisfying `|c_i| <= 3` and strictly strengthens the complete P87 certificate on the same exact rational witness:", "",
+            "### Exact P89 complete-linear witness", "",
+            "P89 removes both the finite coefficient-radius restriction and the exactly-four-observable support restriction. It considers every real linear functional of all eleven canonical P83 parity coordinates and proves the exact optimum by matching rational lower and upper certificates:", "",
             "```text",
-            "L85 = 0 < L86 = 1/192 < L87 = 1/96 < L88 = 1/64",
-            "632 primitive sign-normalized coefficient patterns per four-event subset",
-            "208,560 standard P88 functionals",
+            "L88 = 1/64 < L89 = 5/168",
+            "all real coefficient vectors c in R^11 except zero",
+            "matching zero-mass perturbation radius = 5/168",
             "```", "",
-            "The strict P88 functional uses coefficients `(1, -1, -3, 2)`, has empirical value `-11/8`, exact P75 interval `[-1, 2]`, mismatch `3/8`, and centered transfer norm `24`.", "",
-            "This is a conditional model-separation result inside the declared P75 family. It is not an identification of a latent state with conscious experience.", "",
+            "The strict P89 direction is `(0, -2, -1, 1, 1, 1, -2, -1, -3, 2, -3)`, with empirical value `-13/6`, exact P75 interval `[-51/8, -3]`, gap `5/6`, and centered norm `28`.", "",
+            "This is complete only for the declared real linear parity-functional class. It does not identify a latent state with conscious experience or exhaust nonlinear P75 constraints.", "",
         ])
     lines.extend([
         f"## P71-P{frontier} canonical theorem-figure index", "",
@@ -305,53 +305,66 @@ def _check_expected(expected: dict[Path, str | bytes]) -> None:
 
 
 def _check_reader_surfaces(frontier: int) -> None:
-    if frontier != 88:
+    if frontier != 89:
         return
     home = HOME.read_text(encoding="utf-8")
     atlas = VISUAL_ATLAS.read_text(encoding="utf-8")
+    plain = (ROOT / "website" / "plain-language.html").read_text(encoding="utf-8")
+    start = (ROOT / "website" / "start-here.html").read_text(encoding="utf-8")
     required_home = (
-        "Explore all 88 results",
+        "Explore all 89 results",
         "Research I · Physical-system identification",
-        "<strong>58</strong><span>proposition-level statements</span>",
         'id="research-i-overview"',
         "physics_pipeline.svg",
         "Research II · Bridge sufficiency and falsification",
-        "<strong>88</strong><span>proposition-level results</span>",
-        "P88 current theorem frontier · v0.82.0",
-        'id="p88-frontier"',
-        "Current theorem frontier · P88",
+        "P89 current theorem frontier · v0.82.0",
+        'id="p89-frontier"',
+        "Current theorem frontier · P89",
         "Research III · Consciousness measurement science",
-        "<strong>34</strong><span>tests in each CI job</span>",
         'id="research-iii-overview"',
         "measurement_architecture.svg",
-        "Two implemented fusion regimes",
         "Open</strong><span>physical-to-experiential bridge",
     )
     required_atlas = (
-        'id="p88-frontier"',
-        "Current theorem frontier · P88",
-        "Previous theorem frontier · P87",
+        'id="p89-frontier"',
+        "Current theorem frontier · P89",
+        "Previous theorem frontier · P88",
     )
-    missing_home = [marker for marker in required_home if marker not in home]
-    missing_atlas = [marker for marker in required_atlas if marker not in atlas]
-    if missing_home:
-        raise RuntimeError(
-            f"homepage is not synchronized to P88 and the three-program dashboard: {missing_home}"
-        )
-    if missing_atlas:
-        raise RuntimeError(f"Visual Atlas is not synchronized to P88: {missing_atlas}")
+    required_plain = (
+        '<strong>Research I</strong><span>physical-system identification</span>',
+        '<strong>Research II</strong><span>89 results · current frontier P89</span>',
+        '<strong>Research III</strong><span>measurement science under uncertainty</span>',
+        'id="three-stage-progress"',
+        'id="p89-reader-frontier"',
+    )
+    required_start = (
+        '<strong>Research I</strong><span>physical-system identification</span>',
+        '<strong>Research II</strong><span>89 results · current frontier P89</span>',
+        '<strong>Research III</strong><span>measurement science under uncertainty</span>',
+        'id="program-stages"',
+        "The 89 Research II propositions by scientific role",
+    )
+    for label, source, markers in (
+        ("homepage", home, required_home),
+        ("Visual Atlas", atlas, required_atlas),
+        ("Plain Language", plain, required_plain),
+        ("Start Here", start, required_start),
+    ):
+        missing = [marker for marker in markers if marker not in source]
+        if missing:
+            raise RuntimeError(f"{label} is not synchronized to P89 balanced publication state: {missing}")
     research_i = home.index('id="research-i-overview"')
-    p88_home = home.index('id="p88-frontier"')
+    p89_home = home.index('id="p89-frontier"')
     research_iii = home.index('id="research-iii-overview"')
     if home.index('class="research-dashboard"') > research_i:
         raise RuntimeError("homepage must orient readers to the full research program before stage details")
-    if not (research_i < p88_home < research_iii):
-        raise RuntimeError("homepage must balance Research I, Research II/P88, and Research III in stage order")
-    for historical_id in ('id="p87-frontier"', 'id="p86-frontier"', 'id="p85-frontier"'):
+    if not (research_i < p89_home < research_iii):
+        raise RuntimeError("homepage must balance Research I, Research II/P89, and Research III in stage order")
+    for historical_id in ('id="p88-frontier"', 'id="p87-frontier"', 'id="p86-frontier"', 'id="p85-frontier"'):
         if historical_id in home:
             raise RuntimeError("historical Research II frontiers must remain off the Overview")
-    if atlas.index('id="p88-frontier"') > atlas.index('id="p87-frontier"'):
-        raise RuntimeError("Visual Atlas does not lead with P88")
+    if atlas.index('id="p89-frontier"') > atlas.index('id="p88-frontier"'):
+        raise RuntimeError("Visual Atlas does not lead with P89")
 
 
 def main() -> None:
@@ -366,7 +379,7 @@ def main() -> None:
         print(f"[figures] publication surfaces are synchronized to P{frontier}")
         return
     _write_expected(expected)
-    if frontier == 88:
+    if frontier == 89:
         subprocess.run([sys.executable, str(PROMOTER)], cwd=ROOT, check=True)
     _check_reader_surfaces(frontier)
     print(f"[figures] synchronized complete visual publication record to P{frontier}")
