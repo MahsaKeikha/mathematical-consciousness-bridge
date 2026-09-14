@@ -176,7 +176,7 @@ P90 is a conditional model-separation result for the declared strict P75 box. It
         ("A future P90 claim", "A future P91 claim"),
     ))
     p89_dependency = "&\\text{P89: complete linear parity-functional duality closes all real linear directions on the eleven canonical parity coordinates}"
-    p90_dependency = "&\\text{P90: exact nonlinear rank-one slice separation exploits product-law image structure beyond the complete P89 linear envelope}"
+    p90_dependency = "&\\text{P90: nonlinear rank-one slice separation gives exact strict-box distance }5/72"
     if p90_dependency not in text:
         if p89_dependency not in text:
             raise RuntimeError("P89 dependency-map anchor missing")
@@ -270,7 +270,12 @@ def promote_website() -> None:
         ("all 89 propositions", "all 90 propositions"),
         ("P71-P89", "P71-P90"), ("P73-P89", "P73-P90"), ("P74-P89", "P74-P90"), ("P75-P89", "P75-P90"), ("P1-P89", "P1-P90"),
     ))
-    text = re.sub(r'<!-- current-frontier-home: P89 -->\s*<section id="p89-frontier".*?</section>\s*', "", text, count=1, flags=re.DOTALL)
+    text = re.sub(
+        r'<!-- current-frontier-home: P(?:89|90) -->\s*<section id="p(?:89|90)-frontier".*?</section>\s*',
+        "",
+        text,
+        flags=re.DOTALL,
+    )
     marker = '<section id="research-iii-overview"'
     if marker not in text:
         raise RuntimeError("website index Research III marker missing")
