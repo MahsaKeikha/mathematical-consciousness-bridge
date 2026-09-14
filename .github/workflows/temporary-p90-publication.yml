@@ -1,0 +1,61 @@
+name: temporary-p90-publication
+
+on:
+  push:
+    branches:
+      - p90-exact-nonlinear-rank-one-separation
+    paths:
+      - scripts/promote_p90_public_frontier.py
+      - .github/workflows/temporary-p90-publication.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout P90 branch
+        uses: actions/checkout@v4
+        with:
+          ref: p90-exact-nonlinear-rank-one-separation
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Promote P90 publication surfaces
+        run: |
+          python scripts/promote_p90_public_frontier.py
+          python scripts/normalize_documentation_punctuation.py
+          python scripts/sync_figure_publication.py
+
+      - name: Check focused P90 publication contracts
+        run: |
+          python -m pip install -e ".[dev]"
+          python -m pytest \
+            tests/test_exact_nonlinear_rank_one_separation.py \
+            tests/test_citation_surface.py \
+            tests/test_frontier_publication_consistency.py \
+            tests/test_frontier_reader_narrative.py \
+            tests/test_main_page_visual_paper.py \
+            tests/test_p84_reader_presentation.py \
+            tests/test_reader_documentation_consistency.py \
+            tests/test_readme_research_orientation.py \
+            tests/test_research_website_integrity.py
+          python -m ruff check scripts/promote_p90_public_frontier.py src/consciousness_bridge/exact_nonlinear_rank_one_separation.py tests/test_exact_nonlinear_rank_one_separation.py
+
+      - name: Commit promoted publication state
+        run: |
+          if git diff --quiet; then
+            echo "No P90 publication changes to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md CITATION.cff CITATION.md docs figures website scripts/prepare_website.py
+          git commit -m "Promote P90 across publication surfaces"
+          git push origin HEAD:p90-exact-nonlinear-rank-one-separation
