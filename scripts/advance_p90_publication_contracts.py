@@ -67,10 +67,7 @@ def main() -> None:
         "scripts/prepare_website.py",
         (
             ("P89_HOME_MARKER", "CURRENT_HOME_MARKER"),
-            (
-                '"p89_complete_linear_parity_duality.svg"',
-                '"p90_exact_nonlinear_rank_one_separation.svg"',
-            ),
+            ('"p89_complete_linear_parity_duality.svg"', '"p90_exact_nonlinear_rank_one_separation.svg"'),
             (
                 'CURRENT_RECORD_TEXT = "Current record:</strong> 89 proposition-level results through P89"',
                 'CURRENT_RECORD_TEXT = "Current record:</strong> 90 proposition-level results through P90"',
@@ -85,27 +82,118 @@ def main() -> None:
     )
 
     patch(
-        "tests/test_reader_experience.py",
+        "website/start-here.html",
+        (
+            ("The 89 Research II propositions by scientific role", "The 90 Research II propositions by scientific role"),
+            ("89 proposition-level results", "90 proposition-level results"),
+            ("89 results", "90 results"),
+            ("current frontier P89", "current frontier P90"),
+            ("P1-P89", "P1-P90"),
+            ("P71-P89", "P71-P90"),
+            ("P75-P89", "P75-P90"),
+        ),
+    )
+
+    patch(
+        "START_HERE.md",
+        (
+            ("The public theorem frontier is **P89**.", "The public theorem frontier is **P90**."),
+            ("P1 through P89", "P1 through P90"),
+            ("P71 through P89", "P71 through P90"),
+            ("P75 through P89", "P75 through P90"),
+            ("89 proposition", "90 proposition"),
+        ),
+    )
+
+    patch(
+        "docs/research_map.md",
+        (
+            ("The public theorem frontier is **P89**", "The public theorem frontier is **P90**"),
+            ("P1-P89", "P1-P90"),
+            ("P71-P89", "P71-P90"),
+            ("P75-P89", "P75-P90"),
+        ),
+    )
+
+    patch(
+        "docs/glossary.md",
+        (("The current theorem frontier is **P89**", "The current theorem frontier is **P90**"),),
+    )
+
+    patch(
+        "docs/research_navigation.md",
+        (
+            ("The current documented theorem frontier is **P89**.", "The current documented theorem frontier is **P90**."),
+            ("**Results:** P75 through P89", "**Results:** P75 through P90"),
+            ("P74 through P89", "P74 through P90"),
+            ("P71 through P89", "P71 through P90"),
+            ("the full 89 proposition index", "the full 90 proposition index"),
+            (
+                "**Current frontier:** [P89: Complete Linear Parity Functional Duality Certificate](proposition_89_complete_linear_parity_duality.md)",
+                "**Current frontier:** [P90: Exact Nonlinear Rank-One Slice Separation](proposition_90_exact_nonlinear_rank_one_separation.md)",
+            ),
+        ),
+    )
+
+    patch(
+        "docs/detailed_proposition_record.md",
+        (("89 disconnected proposition-level results", "90 disconnected proposition-level results"),),
+    )
+
+    patch(
+        "docs/reproducibility.md",
+        (
+            ("Run only the current P89 theorem checks", "Run only the current P90 theorem checks"),
+            ("focused P89 commands below", "focused P90 commands below"),
+        ),
+    )
+
+    patch(
+        "docs/claim_source_matrix.md",
         (
             (
-                "test_repository_verifier_tracks_p89_and_all_89_propositions",
-                "test_repository_verifier_tracks_p90_and_all_90_propositions",
+                "| Current frontier | P89 is the current Research II theorem frontier |",
+                "| Current frontier | P90 is the current Research II theorem frontier |",
             ),
+            (
+                "[P89 proof](proposition_89_complete_linear_parity_duality.md), implementation, tests, provenance, figure, and frontier publication tests",
+                "[P90 proof](proposition_90_exact_nonlinear_rank_one_separation.md), implementation, tests, provenance, figure, and frontier publication tests",
+            ),
+            ("P88, P87, P86, and earlier propositions remain historical certified frontiers", "P89, P88, P87, and earlier propositions remain historical certified frontiers"),
+        ),
+    )
+
+    patch(
+        "CITATION.bib",
+        (
+            ("current theorem frontier P89", "current theorem frontier P90"),
+            ("Current theorem frontier P89", "Current theorem frontier P90"),
+        ),
+    )
+
+    patch(
+        "tests/test_reader_experience.py",
+        (
+            ("test_repository_verifier_tracks_p89_and_all_89_propositions", "test_repository_verifier_tracks_p90_and_all_90_propositions"),
             ('CURRENT_FRONTIER = "P89"', 'CURRENT_FRONTIER = "P90"'),
             ("for number in range(1, 90):", "for number in range(1, 91):"),
-            (
-                '"docs/proposition_89_complete_linear_parity_duality.md"',
-                '"docs/proposition_90_exact_nonlinear_rank_one_separation.md"',
-            ),
+            ('"docs/proposition_89_complete_linear_parity_duality.md"', '"docs/proposition_90_exact_nonlinear_rank_one_separation.md"'),
             ('id="p89-frontier"', 'id="p90-frontier"'),
+        ),
+    )
+
+    patch(
+        "tests/test_publication_contract_v2.py",
+        (
+            ("current public frontier is **P89**", "current public frontier is **P90**"),
+            ("current theorem frontier is **P89**", "current theorem frontier is **P90**"),
         ),
     )
 
     patch(
         "tests/test_figure_publication_sync.py",
         (
-            ('P89_FIGURE = "p89_complete_linear_parity_duality.svg"',
-             'P90_FIGURE = "p90_exact_nonlinear_rank_one_separation.svg"'),
+            ('P89_FIGURE = "p89_complete_linear_parity_duality.svg"', 'P90_FIGURE = "p90_exact_nonlinear_rank_one_separation.svg"'),
             ('== "P89"', '== "P90"'),
             ("P89_FIGURE", "P90_FIGURE"),
             ("tracks_p89", "tracks_p90"),
@@ -122,7 +210,6 @@ def main() -> None:
             ('"complete_linear_parity_duality.py" in current', '"exact_nonlinear_rank_one_separation.py" in current'),
             ('"test_complete_linear_parity_duality.py" in current', '"test_exact_nonlinear_rank_one_separation.py" in current'),
             ("Previous theorem frontier · P88", "Previous theorem frontier · P89"),
-            ('p89 = text.index(\'id="p89-frontier"\')', 'p90 = text.index(\'id="p90-frontier"\')'),
             ("assert research_i < p89 < research_iii < reader_paths", "assert research_i < p90 < research_iii < reader_paths"),
             ("current = text[p89:research_iii]", "current = text[p90:research_iii]"),
             ("text[research_i:p89]", "text[research_i:p90]"),
