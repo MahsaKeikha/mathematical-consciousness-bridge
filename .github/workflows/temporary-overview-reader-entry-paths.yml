@@ -79,6 +79,9 @@ jobs:
           assert all(x not in t for x in ('id="p87-frontier"', 'id="p86-frontier"', 'id="p85-frontier"'))
           PY
 
+      - name: Restore workflow-only contract for separate authenticated update
+        run: git restore -- .github/workflows/figures.yml
+
       - name: Commit balanced Overview contracts
         run: |
           git config user.name "github-actions[bot]"
@@ -90,8 +93,7 @@ jobs:
             scripts/sync_figure_publication.py \
             tests/test_p88_reader_surface_coherence.py \
             tests/test_figure_publication_sync.py \
-            tests/test_website_research_orientation.py \
-            .github/workflows/figures.yml
+            tests/test_website_research_orientation.py
           if git diff --cached --quiet; then
             echo "No migration changes to commit."
             exit 0
