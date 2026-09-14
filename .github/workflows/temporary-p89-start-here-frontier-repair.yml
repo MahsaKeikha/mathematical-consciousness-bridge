@@ -1,0 +1,86 @@
+name: temporary-p89-start-here-frontier-repair
+
+on:
+  push:
+    branches: ["p89-complete-linear-parity-duality"]
+    paths:
+      - ".github/workflows/temporary-p89-start-here-frontier-repair.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: p89-complete-linear-parity-duality
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - name: Install development environment
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+      - name: Repair canonical Start Here frontier generator and contract
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          root = Path('.')
+          promoter = root / 'scripts' / 'promote_p89_public_frontier.py'
+          text = promoter.read_text(encoding='utf-8')
+          function_start = text.index('def promote_start_here() -> None:')
+          replacement_start = text.index('    text = text.replace(\n        \'<p class="eyebrow">Current certified frontier</p>', function_start)
+          write_marker = '    write(path, text)\n'
+          replacement_end = text.index(write_marker, replacement_start) + len(write_marker)
+
+          canonical = '''    frontier_pattern = re.compile(\n        r'<section class="dark-section">.*?</section>',\n        re.DOTALL,\n    )\n    frontier_section = \'\'\'<section class="dark-section">\n      <p class="eyebrow">Research II · Current certified frontier</p>\n      <h2>P78-P89 progressively tighten global separation from the declared continuous model family</h2>\n      <p>P78 introduced exact-rational branch-and-bound for the continuous P75 target-measurement family. P79 certified the sampling-radius direction. P80 retained probability normalization. P81 added projected-event constraints. P82 added exact nested residual contrasts. P83 added exact projection-parity observables that can expose dependency incompatibilities invisible to the earlier audit.</p>\n      <p><strong>P84 and P85 added shared-parameter compatibility across multiple parity events.</strong> P84 tests paired events under one common parameter assignment, while P85 extends the idea to signed three-event functionals. These steps show why separate one-event compatibility is not enough.</p>\n      <p><strong>P86 established a strict minimally weighted four-event certificate.</strong> It audits 10,560 sign-normalized four-event functionals with primitive coefficient magnitudes {1,1,1,2}. On the established exact-rational witness, <strong>L85 = 0 &lt; L86 = 1/192</strong>.</p>\n      <p><strong>P87 completed the primitive radius-two four-event family.</strong> Its 39,600 exact functionals raise the same witness bound to <strong>L87 = 1/96</strong>.</p>\n      <p><strong>P88 extended the complete primitive four-event search to radius three.</strong> Its 208,560 exact functionals raise the bound again to <strong>L88 = 1/64</strong>.</p>\n      <p><strong>P89 is the current complete-linear frontier.</strong> It removes both the finite coefficient-radius restriction and the exactly-four-observable support restriction. Across every real linear functional of all eleven canonical P83 parity coordinates, matching exact lower and upper certificates prove <strong>L89 = 5/168</strong>, strictly above <strong>L88 = 1/64</strong>.</p>\n      <p>The important logical direction is one-sided. These results can strengthen rejection of the declared P75 model family. They do not identify a latent state with consciousness, do not validate the model when rejection fails, do not establish nonphysicality, and do not close the physical-to-experiential bridge.</p>\n      <div class="hero-actions">\n        <a class="button primary" href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_89_complete_linear_parity_duality.md">Read P89 theorem</a>\n        <a class="button" href="visual-atlas.html">See theorem visuals</a>\n        <a class="button" href="implementation.html#stage-06">See the implementation path</a>\n      </div>\n    </section>\'\'\'\n    text, count = frontier_pattern.subn(frontier_section, text, count=1)\n    if count != 1:\n        raise RuntimeError("Start Here frontier section is missing or duplicated")\n    write(path, text)\n'''
+          text = text[:replacement_start] + canonical + text[replacement_end:]
+          promoter.write_text(text, encoding='utf-8')
+
+          test_path = root / 'tests' / 'test_p89_reader_surface_coherence.py'
+          test = test_path.read_text(encoding='utf-8')
+          anchor = '    assert "P89 closes the complete real linear parity-functional class" in text\n'
+          replacement = anchor + '''    assert "P86 established a strict minimally weighted four-event certificate" in text\n    assert "P87 completed the primitive radius-two four-event family" in text\n    assert "P88 extended the complete primitive four-event search to radius three" in text\n    assert "P89 is the current complete-linear frontier" in text\n    assert "L88 = 1/64" in text\n    assert "L89 = 5/168" in text\n    assert "P88 is the current exact frontier" not in text\n    assert "Read P89 theorem" in text\n    assert "The most important boundary" in text\n    assert 'id="reader-primer"' in text\n    assert "Six terms that make the rest of the project easier to follow" in text\n'''
+          if test.count(anchor) != 1:
+              raise RuntimeError('P89 Start Here test anchor is missing or duplicated')
+          test = test.replace(anchor, replacement, 1)
+          test_path.write_text(test, encoding='utf-8')
+          PY
+      - name: Regenerate Start Here from permanent P89 promoter
+        run: |
+          python scripts/promote_p89_public_frontier.py
+          python scripts/normalize_documentation_punctuation.py
+      - name: Validate repaired reader contract
+        run: |
+          python -m pytest -q \
+            tests/test_p89_reader_surface_coherence.py \
+            tests/test_documentation_punctuation.py \
+            tests/test_figure_publication_sync.py \
+            tests/test_website_research_orientation.py \
+            tests/test_website_link_integrity.py
+          python scripts/sync_figure_publication.py --check
+          python scripts/verify_repository.py
+          grep -q 'P89 is the current complete-linear frontier' website/start-here.html
+          ! grep -q 'P88 is the current exact frontier' website/start-here.html
+          grep -q 'The most important boundary' website/start-here.html
+          grep -q 'id="reader-primer"' website/start-here.html
+          git diff --check
+      - name: Commit permanent Start Here repair
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/promote_p89_public_frontier.py website/start-here.html tests/test_p89_reader_surface_coherence.py
+          if git diff --cached --quiet; then
+            echo "No permanent Start Here repair required."
+            exit 0
+          fi
+          git commit -m "Correct Start Here P89 frontier chronology"
+          git fetch origin p89-complete-linear-parity-duality
+          git rebase origin/p89-complete-linear-parity-duality
+          git push origin HEAD:p89-complete-linear-parity-duality
