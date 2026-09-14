@@ -292,7 +292,7 @@ def verify_reader_coherence() -> None:
     required = {
         "website/index.html": (
             "Explore all 88 results",
-            "<strong>P88</strong><span>current theorem frontier</span>",
+            "P88 current theorem frontier · v0.82.0",
             'id="p88-frontier" class="theorem-frontier current-frontier-visual"',
             "The 88 results form several dependency branches.",
             "The 88-result program",

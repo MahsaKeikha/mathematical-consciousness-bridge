@@ -110,17 +110,25 @@ def test_current_frontier_has_proof_code_test_provenance_and_figure() -> None:
 
 def test_overview_orients_to_all_three_research_programs_before_p88() -> None:
     overview = _read(WEBSITE / "index.html")
+    dashboard = overview.index('class="research-dashboard"')
     journey = overview.index('id="project-journey"')
     p88 = overview.index('id="p88-frontier"')
-    assert journey < p88
+    assert dashboard < journey < p88
     for token in (
         "The whole research program in three stages",
-        "Research I",
-        "Research II",
-        "Research III",
+        "Research I · Physical-system identification",
+        "58</strong><span>proposition-level statements",
+        "45 experiments · 33 figures · 223 claim-level tests",
         "spatiotemporal-observer-math",
-        "88 proposition-level results",
+        "Research II · Bridge sufficiency and falsification",
+        "88</strong><span>proposition-level results",
+        "P88 current theorem frontier · v0.82.0",
+        "research-map.html",
+        "Research III · Consciousness measurement science",
+        "34</strong><span>tests in each CI job",
+        "5 targets · 2 research arms · M0-M7 claim ladder",
         "measurement-science.html",
+        "Open</strong><span>physical-to-experiential bridge",
         "None of these stages by itself establishes the final physical-to-experiential bridge.",
     ):
         assert token in overview
