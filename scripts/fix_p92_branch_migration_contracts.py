@@ -42,6 +42,20 @@ def patch_homepage() -> None:
     write(path, text)
 
 
+def patch_visual_atlas() -> None:
+    path = "website/visual-atlas.html"
+    text = read(path)
+    text = text.replace(
+        "Historical mixed-prevalence frontier · P91",
+        "Previous theorem frontier · P91",
+    )
+    text = text.replace(
+        "Current theorem frontier · P91",
+        "Previous theorem frontier · P91",
+    )
+    write(path, text)
+
+
 def patch_svg_accessibility() -> None:
     path = "docs/figures/p92_exact_global_mixed_prevalence_distance.svg"
     text = read(path)
@@ -86,6 +100,7 @@ def patch_implementation_range() -> None:
 
 def main() -> None:
     patch_homepage()
+    patch_visual_atlas()
     patch_svg_accessibility()
     patch_machine_citation()
     patch_implementation_range()
