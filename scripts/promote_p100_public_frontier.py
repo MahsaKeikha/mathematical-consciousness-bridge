@@ -43,7 +43,7 @@ def replace_once_required(text: str, old: str, new: str, *, label: str) -> str:
 
 
 def regex_replace_once(text: str, pattern: str, replacement: str, *, label: str) -> str:
-    updated, count = re.subn(pattern, replacement, text, count=1, flags=re.S)
+    updated, count = re.subn(pattern, lambda _match: replacement, text, count=1, flags=re.S)
     if count == 1:
         return updated
     if replacement in text:
@@ -230,7 +230,7 @@ P100 does not make reused observations fresh, permit current-round leakage, vali
 P100 completes the planned P1-P100 theorem sequence for this publication cycle. The next priority is consolidation rather than proposition-number expansion: integrate the dependency chain, exact finite-data checkpoints, selection-validity hierarchy, and anytime-valid P100 capstone into the publication manuscript and preprint. Any later theorem extension should close a newly identified scientific or inferential gap rather than continue numbering for its own sake. The physical-to-experiential bridge remains open.
 '''
     if "## P100: anytime-valid sequential e-process" not in text:
-        text, count = re.subn(old_after, p100_tail, text, count=1, flags=re.S)
+        text, count = re.subn(old_after, lambda _match: p100_tail, text, count=1, flags=re.S)
         if count != 1:
             raise RuntimeError(f"{path}: failed to replace After P99 tail")
     write(path, text)

@@ -30,7 +30,7 @@ def test_p97_is_preserved_below_p98() -> None:
     start = _read("website/start-here.html")
     research = _read("website/research-map.html")
 
-    assert 'CURRENT_FRONTIER = "P99"' in verifier
+    assert 'CURRENT_FRONTIER = "P100"' in verifier
     assert atlas.index('id="p99-frontier"') < atlas.index('id="p98-frontier"')
     assert atlas.index('id="p98-frontier"') < atlas.index('id="p97-frontier"')
     assert atlas.index('id="p98-frontier"') < atlas.index('id="p97-frontier"')
@@ -40,8 +40,8 @@ def test_p97_is_preserved_below_p98() -> None:
     assert 'id="p97-research-map"' in research
     assert research.index('id="p99-research-map"') < research.index('id="p98-research-map"')
     assert research.index('id="p98-research-map"') < research.index('id="p97-research-map"')
-    assert "99 results · current frontier P99" in plain
-    assert "99 results · current frontier P99" in start
+    assert "100 results · current frontier P100" in plain
+    assert "100 results · current frontier P100" in start
 
 
 def test_p97_repository_audit_surfaces_preserve_history() -> None:
@@ -51,15 +51,15 @@ def test_p97_repository_audit_surfaces_preserve_history() -> None:
     reproducibility = _read("docs/reproducibility.md")
     citation = _read("CITATION.md")
 
-    assert "The current public theorem frontier is **P99**." in readme
+    assert "The current public theorem frontier is **P100**." in readme
     assert "P97" in readme
     assert "## P97: simultaneous finite candidate-family selection" in roadmap
     assert "## P98: cross-fitted selection-valid certification" in roadmap
-    assert "The current documented theorem frontier is **P99**." in navigation
+    assert "The current documented theorem frontier is **P100**." in navigation
     assert "For P97" in navigation
     assert "p97_simultaneous_candidate_family_selection.svg" in navigation
-    assert "The current public theorem frontier is **P99**." in reproducibility
-    assert "## 5. Focused audit of the current P99 frontier" in reproducibility
+    assert "The current public theorem frontier is **P100**." in reproducibility
+    assert "## 5. Focused audit of the current P100 frontier" in reproducibility
     assert "P97" in citation and "P98" in citation
 
 

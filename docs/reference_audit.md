@@ -29,3 +29,11 @@ The scientific burden for any future non-reducibility claim remains higher than 
 - **DOI:** 10.1214/20-AOS2020
 - **Evidence role:** standard statistical method source for the e-value definition and averaging construction used by P99
 - **Not claimed:** P99 does not claim authorship of e-values, e-value averaging, or Markov-based rejection
+
+## P100 sequential-inference references
+
+- Ville (1939): classical nonnegative-supermartingale maximal inequality used for the anytime-valid crossing rule.
+- Howard, Ramdas, McAuliffe, and Sekhon (2021), DOI `10.1214/20-AOS1991`: modern time-uniform inference context.
+- Vovk and Wang (2021), DOI `10.1214/20-AOS2020`: e-value calibration and combination context inherited from P99.
+
+These references support standard method ingredients only. The exact P92-P100 composition, conditional freshness guards, and rational checkpoint are repository-specific results.

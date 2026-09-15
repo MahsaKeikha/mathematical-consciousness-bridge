@@ -1,33 +1,23 @@
-# Current visual frontier: P71-P99
+# Current visual frontier: P71-P100
 
 This page is generated from the canonical proposition and figure tree.
 It is the compact GitHub-facing visual route through the current target-side branch.
 
-## Current theorem frontier: P99
+## Current theorem frontier: P100
 
-![P99 current theorem frontier](../docs/figures/p99_cross_fitted_evalue_aggregation.svg)
+![P100 current theorem frontier](../docs/figures/p100_anytime_sequential_eprocess.svg)
 
-[Read Proposition 99](../docs/proposition_99_cross_fitted_evalue_aggregation.md)
+[Read Proposition 100](../docs/proposition_100_anytime_sequential_eprocess.md)
 
-[Open P99 equation provenance](../docs/p99_equation_provenance.md)
+[Open P100 equation provenance](../docs/p100_equation_provenance.md)
 
-### Exact P99 cross-fitted e-value aggregation
 
-P99 converts selection-valid P96/P98 fold rejection indicators into exact e-values and accumulates distributed evidence without assuming the final fold certificates are independent.
+P100 composes fresh, conditionally valid P99 certification rounds into an anytime-valid sequential e-process with predictable reserve stakes.
 
-```text
-fold test level tau = 1/25
-local regime alpha = 1/50
-K=2 folds, B=2 regimes, m=1
-95% mathematical crossing = 3774 per regime
-first exact denominator-24 replication = 3792 per regime
-cross-fitted unique totals = 15096 / 15168
-matched P98 crossing = 4045 / 4056 per regime
-```
+At the exact 95 percent checkpoint, one moderate round has E_t = 25/2 and half stake gives F_t = 27/4. Two fresh rounds give M_2 = 729/16 = 45.5625 > 20, with declared unique-data totals 30192 / 30336.
 
-P99 uses fixed finite calibration and exact convex e-value averaging. It does not uniformly dominate P98 and does not validate own-fold leakage, post-hoc calibration search, dependent-stream pseudo-folds, model acceptance, consciousness identification, nonphysicality, or bridge completion.
-
-## P71-P99 canonical theorem-figure index
+P100 uses standard supermartingale and Ville inequality machinery. Its repository-specific contribution is the exact integration with the P92-P99 certification chain and explicit guards against current-round leakage and non-fresh certification data.
+## P71-P100 canonical theorem-figure index
 
 | Proposition | Canonical figure | Proof | Provenance |
 | --- | --- | --- | --- |
@@ -60,6 +50,7 @@ P99 uses fixed finite calibration and exact convex e-value averaging. It does no
 | P97 | [figure](../docs/figures/p97_simultaneous_candidate_family_selection.svg) | [proof](../docs/proposition_97_simultaneous_candidate_family_selection.md) | [equations](../docs/p97_equation_provenance.md) |
 | P98 | [figure](../docs/figures/p98_cross_fitted_selection_valid_certification.svg) | [proof](../docs/proposition_98_cross_fitted_selection_valid_certification.md) | [equations](../docs/p98_equation_provenance.md) |
 | P99 | [figure](../docs/figures/p99_cross_fitted_evalue_aggregation.svg) | [proof](../docs/proposition_99_cross_fitted_evalue_aggregation.md) | [equations](../docs/p99_equation_provenance.md) |
+| P100 | [figure](../docs/figures/p100_anytime_sequential_eprocess.svg) | [proof](../docs/proposition_100_anytime_sequential_eprocess.md) | [equations](../docs/p100_equation_provenance.md) |
 
 ## Reproduce the visual record
 
@@ -73,4 +64,4 @@ The complete machine-readable SHA-256 inventory is in [`manifest.json`](manifest
 
 ## Interpretation boundary
 
-P71-P99 strengthens the methodology for testing a declared physical-to-target model. It does not derive consciousness from physics, prove nonphysicality, or close the physical-to-experiential bridge.
+P71-P100 strengthens the methodology for testing a declared physical-to-target model. It does not derive consciousness from physics, prove nonphysicality, or close the physical-to-experiential bridge.

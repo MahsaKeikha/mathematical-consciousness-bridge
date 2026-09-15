@@ -114,3 +114,11 @@ P95 drift-aware stratified sign-coherence rejection: predeclared regime-specific
 | P99 integrates this construction with cross-fitted P96/P98 certification and exact rational thresholds | Repository-original integration | P99 proof, implementation, tests, provenance | Does not claim invention of e-values or averaging |
 | Balanced distributed-evidence crossing is 3774 per regime with exact replication 3792 | Repository-original exact computation | P99 implementation and regression tests | Configuration-specific, not a universal sample-complexity theorem |
 | P99 does not uniformly dominate P98 | Repository-original comparison statement | P99 exact examples | Sparse and distributed evidence can favor different procedures |
+
+## P100 source boundary
+
+| Claim | Class | Source / audit route |
+| --- | --- | --- |
+| Nonnegative supermartingale + Ville crossing control | Standard sequential probability | Ville (1939); Howard et al. (2021) |
+| E-value calibration/composition context | Standard e-value theory | Vovk and Wang (2021) |
+| P99-to-P100 exact conditional integration and `729/16` checkpoint | Repository-original theorem/computation | [P100 theorem](proposition_100_anytime_sequential_eprocess.md), [provenance](p100_equation_provenance.md), implementation and tests |

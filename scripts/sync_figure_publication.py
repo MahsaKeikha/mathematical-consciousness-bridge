@@ -328,6 +328,15 @@ def _frontier_summary(frontier: int) -> list[str]:
             "P98 requires genuinely independent certification blocks and no own-fold leakage. The final fold certificates may be dependent; validity is combined by an outer union bound. Dependent-stream pseudo-folds, unbudgeted scheme search, model acceptance, consciousness identification, nonphysicality, and bridge completion are not established.",
             "",
         ]
+    if frontier == 100:
+        return [
+            "",
+            "P100 composes fresh, conditionally valid P99 certification rounds into an anytime-valid sequential e-process with predictable reserve stakes.",
+            "",
+            "At the exact 95 percent checkpoint, one moderate round has E_t = 25/2 and half stake gives F_t = 27/4. Two fresh rounds give M_2 = 729/16 = 45.5625 > 20, with declared unique-data totals 30192 / 30336.",
+            "",
+            "P100 uses standard supermartingale and Ville inequality machinery. Its repository-specific contribution is the exact integration with the P92-P99 certification chain and explicit guards against current-round leakage and non-fresh certification data.",
+        ]
     if frontier == 99:
         return [
             "### Exact P99 cross-fitted e-value aggregation",

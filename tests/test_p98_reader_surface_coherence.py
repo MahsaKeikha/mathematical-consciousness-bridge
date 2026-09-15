@@ -31,15 +31,15 @@ def test_p98_is_preserved_below_p99() -> None:
     start = _read("website/start-here.html")
     research = _read("website/research-map.html")
 
-    assert 'CURRENT_FRONTIER = "P99"' in verifier
+    assert 'CURRENT_FRONTIER = "P100"' in verifier
     assert atlas.index('id="p99-frontier"') < atlas.index('id="p98-frontier"')
     assert "Previous theorem frontier · P98" in atlas
     assert 'id="p98-reader-frontier"' in plain
     assert 'id="p98-reader-frontier"' in start
     assert 'id="p98-research-map"' in research
     assert research.index('id="p99-research-map"') < research.index('id="p98-research-map"')
-    assert "99 results · current frontier P99" in plain
-    assert "99 results · current frontier P99" in start
+    assert "100 results · current frontier P100" in plain
+    assert "100 results · current frontier P100" in start
 
 def test_p98_repository_audit_surfaces_preserve_history() -> None:
     readme = _read("README.md")
@@ -48,15 +48,15 @@ def test_p98_repository_audit_surfaces_preserve_history() -> None:
     reproducibility = _read("docs/reproducibility.md")
     citation = _read("CITATION.md")
 
-    assert "The current public theorem frontier is **P99**." in readme
+    assert "The current public theorem frontier is **P100**." in readme
     assert "P98" in readme
     assert "## P98: cross-fitted selection-valid certification" in roadmap
     assert "## P99: cross-fitted e-value aggregation" in roadmap
-    assert "The current documented theorem frontier is **P99**." in navigation
+    assert "The current documented theorem frontier is **P100**." in navigation
     assert "For P98" in navigation
     assert "p98_cross_fitted_selection_valid_certification.svg" in navigation
-    assert "The current public theorem frontier is **P99**." in reproducibility
-    assert "## 5. Focused audit of the current P99 frontier" in reproducibility
+    assert "The current public theorem frontier is **P100**." in reproducibility
+    assert "## 5. Focused audit of the current P100 frontier" in reproducibility
     assert "P98" in citation and "P99" in citation
 
 def test_p98_scientific_boundary_is_visible() -> None:

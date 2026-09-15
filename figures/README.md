@@ -5,15 +5,15 @@ visual record of the Mathematical Consciousness Bridge project. The canonical
 SVG archive lives in [`docs/figures/`](../docs/figures/); this gateway is derived
 from that archive by code so it cannot silently remain on an older proposition.
 
-## Current theorem frontier: P99
+## Current theorem frontier: P100
 
-![P99 current theorem frontier](../docs/figures/p99_cross_fitted_evalue_aggregation.svg)
+![P100 current theorem frontier](../docs/figures/p100_anytime_sequential_eprocess.svg)
 
-Canonical figure: [`p99_cross_fitted_evalue_aggregation.svg`](../docs/figures/p99_cross_fitted_evalue_aggregation.svg)
-Theorem: [`proposition_99_cross_fitted_evalue_aggregation.md`](../docs/proposition_99_cross_fitted_evalue_aggregation.md)
-Equation provenance: [`p99_equation_provenance.md`](../docs/p99_equation_provenance.md)
+Canonical figure: [`p100_anytime_sequential_eprocess.svg`](../docs/figures/p100_anytime_sequential_eprocess.svg)
+Theorem: [`proposition_100_anytime_sequential_eprocess.md`](../docs/proposition_100_anytime_sequential_eprocess.md)
+Equation provenance: [`p100_equation_provenance.md`](../docs/p100_equation_provenance.md)
 
-For the full P71-P99 visual progression, open
+For the full P71-P100 visual progression, open
 [`CURRENT_FRONTIER.md`](CURRENT_FRONTIER.md).
 
 ## Complete reproducible figure record

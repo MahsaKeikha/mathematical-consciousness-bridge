@@ -1,5 +1,12 @@
 # Unreleased research frontier - P99
 
+## Unreleased research frontier - P100
+
+- Added Proposition 100, an exact anytime-valid sequential e-process over fresh P99 certification rounds.
+- Added predictable exact-rational reserve stakes, conditional-freshness guards, and Ville-threshold monitoring.
+- Added the exact `25/2 -> 27/4 -> 729/16` two-round checkpoint and `30192 / 30336` unique-data accounting.
+- Added the canonical P100 figure, equation/novelty provenance, reader-surface contracts, and publication synchronization while keeping the formal release at v0.82.0.
+
 ## P99 cross-fitted e-value aggregation frontier
 
 - Added Proposition 99 as an exact distributed-evidence extension of the P96-P98 selection-valid cross-fitting chain.

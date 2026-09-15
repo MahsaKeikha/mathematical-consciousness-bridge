@@ -462,3 +462,11 @@ For `K=2`, two regimes per fold, dependence range one, equal fold weights, globa
 **Boundary.** P99 requires genuine own-fold exclusion, frozen calibration, independent certification blocks in the P98 sense, and the declared local dependence assumptions. It does not establish model acceptance, consciousness identification, nonphysicality, or completion of the physical-to-experiential bridge.
 
 Direct proof: [P99](proposition_99_cross_fitted_evalue_aggregation.md). Provenance: [P99 equation record](p99_equation_provenance.md). Implementation: [`cross_fitted_evalue_aggregation.py`](../src/consciousness_bridge/cross_fitted_evalue_aggregation.py). Tests: [`test_cross_fitted_evalue_aggregation.py`](../tests/test_cross_fitted_evalue_aggregation.py).
+
+## P100: Anytime-Valid Sequential E-Process
+
+**Question.** Can several fresh P99 certification rounds accumulate evidence over time while preserving type-I control under repeated inspection and a data-dependent stopping time?
+
+**Result.** Yes, when the current P99 e-value remains conditionally valid given the past and the current stake is predictable. With `F_t = (1 - eta_t) + eta_t E_t` and `M_t = product_{s <= t} F_s`, the process is a nonnegative supermartingale. Ville's inequality gives `P(sup_t M_t >= 1/alpha) <= alpha`. At the exact 95 percent checkpoint, `E_t = 25/2`, `eta_t = 1/2`, `F_t = 27/4`, and two fresh rounds give `M_2 = 729/16 > 20`, with declared unique-data totals `30192 / 30336`.
+
+Direct proof: [P100](proposition_100_anytime_sequential_eprocess.md). Provenance: [P100 equation record](p100_equation_provenance.md). Implementation: [`anytime_sequential_eprocess.py`](../src/consciousness_bridge/anytime_sequential_eprocess.py). Tests: [`test_anytime_sequential_eprocess.py`](../tests/test_anytime_sequential_eprocess.py).

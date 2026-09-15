@@ -1383,3 +1383,15 @@ P98 uses standard conditional holdout validity, the tower property, sample rotat
 - Standard method source: Vovk and Wang (2021), *The Annals of Statistics* 49(3), 1736-1754, DOI `10.1214/20-AOS2020`.
 
 P99 uses standard e-value expectation control, convex averaging, and Markov rejection. Repository-specific content is the integration with the exact P92-P98 certification chain, the frozen finite threshold calibration, exact-rational executable certificate, and the 3774/3792 distributed-evidence checkpoint. It does not claim a new e-value calculus.
+
+## P100: anytime-valid sequential e-process
+
+| Equation or method | Scientific role | Provenance |
+| --- | --- | --- |
+| `E[E_t | F_(t-1)] <= 1` | Conditional round e-value validity | Inherited from P99 under the declared fresh-round conditional contract |
+| `F_t = (1 - eta_t) + eta_t E_t` | Predictable reserve-stake factor | Standard betting/e-process construction; P100 exact-rational implementation |
+| `M_t = product_{s <= t} F_s` | Nonnegative supermartingale evidence process | Standard sequential evidence machinery |
+| `P(sup_t M_t >= 1/alpha) <= alpha` | Anytime-valid crossing control | Ville (1939); modern time-uniform inference context in Howard et al. (2021) |
+| `25/2 -> 27/4 -> 729/16` | Exact two-round repository checkpoint | Repository-original integration and exact arithmetic |
+
+Full boundary and source record: [P100 equation provenance](p100_equation_provenance.md).
