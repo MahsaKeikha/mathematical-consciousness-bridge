@@ -527,7 +527,7 @@ path = "website/implementation.html"
 text = read(path)
 if "P99 cross-fitted e-value aggregation" not in text:
     marker = "</main>"
-    block = """<section><div class="section-head"><p class="eyebrow">Current Research II implementation · P99</p><h2>P99 cross-fitted e-value aggregation</h2></div><p>The executable P99 layer uses exact rational fold levels, threshold-mixture weights, regime alpha weights, and fold weights. It delegates each threshold test to the selection-valid P96/P95/P94 chain and compares the final aggregate e-value with `1/alpha` exactly.</p><p><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/cross_fitted_evalue_aggregation.py">Open P99 implementation</a> · <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/tests/test_cross_fitted_evalue_aggregation.py">Open P99 tests</a></p></section>\n"
+    block = """<section><div class="section-head"><p class="eyebrow">Current Research II implementation · P99</p><h2>P99 cross-fitted e-value aggregation</h2></div><p>The executable P99 layer uses exact rational fold levels, threshold-mixture weights, regime alpha weights, and fold weights. It delegates each threshold test to the selection-valid P96/P95/P94 chain and compares the final aggregate e-value with `1/alpha` exactly.</p><p><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/cross_fitted_evalue_aggregation.py">Open P99 implementation</a> · <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/tests/test_cross_fitted_evalue_aggregation.py">Open P99 tests</a></p></section>\n"""
     text = text.replace(marker, block + marker, 1)
 write(path, text)
 
@@ -536,7 +536,7 @@ text = read(path)
 text = text.replace("P71-P98", "P71-P99")
 if "P99" not in text or "e-value aggregation" not in text.lower():
     marker = "</main>"
-    block = """<section class="boundary"><div class="section-head"><p class="eyebrow">Current Research II frontier · P99</p><h2>From selection-valid cross-fitting to distributed evidence</h2></div><p>P98 made rotated independent-block certification simultaneous. P99 adds an evidence layer: valid fold rejections become e-values, finite frozen calibrations are mixed exactly, and dependent cross-fitted fold evidence is averaged without assuming fold independence. The physical-to-experiential bridge remains open.</p></section>\n"
+    block = """<section class="boundary"><div class="section-head"><p class="eyebrow">Current Research II frontier · P99</p><h2>From selection-valid cross-fitting to distributed evidence</h2></div><p>P98 made rotated independent-block certification simultaneous. P99 adds an evidence layer: valid fold rejections become e-values, finite frozen calibrations are mixed exactly, and dependent cross-fitted fold evidence is averaged without assuming fold independence. The physical-to-experiential bridge remains open.</p></section>\n"""
     text = text.replace(marker, block + marker, 1)
 write(path, text)
 
@@ -611,3 +611,66 @@ for path in ("tests/test_p97_reader_surface_coherence.py", "tests/test_p96_reade
     write(path, text)
 
 print("[P99] public frontier promotion complete")
+
+
+# P99 final publication contract pass
+_P99_ROOT = Path(__file__).resolve().parents[1]
+
+def _p99_read(relative: str) -> str:
+    return (_P99_ROOT / relative).read_text(encoding="utf-8")
+
+def _p99_write(relative: str, value: str) -> None:
+    (_P99_ROOT / relative).write_text(value, encoding="utf-8")
+
+# Preserve the P96 historical selection-valid milestone in the README.
+_p99_text = _p99_read("README.md")
+if "P96" not in _p99_text:
+    _p99_status = "**Current theorem frontier:** P99"
+    _p99_history = (
+        "Historical selection-valid lineage: P96 introduced independent holdout "
+        "certification after data-dependent plan selection; P97, P98, and P99 extend "
+        "that line through finite candidate families, cross-fitting, and e-value aggregation.\n\n"
+    )
+    _p99_text = _p99_text.replace(_p99_status, _p99_history + _p99_status, 1)
+    _p99_write("README.md", _p99_text)
+
+# The current Visual Atlas block must link its theorem record as well as its figure.
+_p99_text = _p99_read("website/visual-atlas.html")
+_p99_start = _p99_text.index('id="p99-frontier"')
+_p99_end = _p99_text.index('id="p98-frontier"', _p99_start)
+_p99_segment = _p99_text[_p99_start:_p99_end]
+if "proposition_99_" not in _p99_segment:
+    _p99_close = _p99_segment.rfind("</section>")
+    _p99_links = (
+        '<p><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/'
+        'docs/proposition_99_cross_fitted_evalue_aggregation.md">Read Proposition 99</a> · '
+        '<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/'
+        'docs/p99_equation_provenance.md">P99 equation provenance</a></p>\n'
+    )
+    _p99_segment = _p99_segment[:_p99_close] + _p99_links + _p99_segment[_p99_close:]
+    _p99_text = _p99_text[:_p99_start] + _p99_segment + _p99_text[_p99_end:]
+    _p99_write("website/visual-atlas.html", _p99_text)
+
+# Research lineage must expose the same 99-result current-stage count as the homepage.
+_p99_text = _p99_read("website/research-lineage.html")
+_p99_text = _p99_text.replace(
+    '<strong>98</strong><span>proposition-level results</span>',
+    '<strong>99</strong><span>proposition-level results</span>',
+)
+_p99_text = _p99_text.replace("P98 current theorem frontier", "P99 current theorem frontier")
+_p99_text = _p99_text.replace("98 proposition-level results through P98", "99 proposition-level results through P99")
+_p99_text = _p99_text.replace("all 98 propositions", "all 99 propositions")
+_p99_write("website/research-lineage.html", _p99_text)
+
+# Reader links that mean current frontier must follow the P99 homepage anchor.
+for _p99_file in ("website/implementation.html", "website/research-map.html"):
+    _p99_text = _p99_read(_p99_file)
+    _p99_text = _p99_text.replace("index.html#p98-frontier", "index.html#p99-frontier")
+    _p99_write(_p99_file, _p99_text)
+
+# Keep the Research Map orientation sentence synchronized with the theorem frontier.
+_p99_text = _p99_read("website/research-map.html")
+_p99_text = _p99_text.replace("through Proposition 98.", "through Proposition 99.")
+_p99_write("website/research-map.html", _p99_text)
+
+print("[P99] final publication contract pass complete")
