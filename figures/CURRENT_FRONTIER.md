@@ -1,30 +1,30 @@
-# Current visual frontier: P71-P91
+# Current visual frontier: P71-P92
 
 This page is generated from the canonical proposition and figure tree.
 It is the compact GitHub-facing visual route through the current target-side branch.
 
-## Current theorem frontier: P91
+## Current theorem frontier: P92
 
-![P91 current theorem frontier](../docs/figures/p91_mixed_prevalence_rank_two_flattening_separation.svg)
+![P92 current theorem frontier](../docs/figures/p92_exact_global_mixed_prevalence_distance.svg)
 
-[Read Proposition 91](../docs/proposition_91_mixed_prevalence_rank_two_flattening_separation.md)
+[Read Proposition 92](../docs/proposition_92_exact_global_mixed_prevalence_distance.md)
 
-[Open P91 equation provenance](../docs/p91_equation_provenance.md)
+[Open P92 equation provenance](../docs/p92_equation_provenance.md)
 
-### Exact P91 mixed-prevalence rank-two witness
+### Exact P92 full-cube mixed-prevalence distance
 
-P91 removes the extreme-prevalence restriction. The full two-component P75 family obeys a rank-at-most-two bipartite flattening constraint.
+P92 closes the P91 bracket through a nonlinear three-minor sign-coherence invariant on the X1=1 subtensor.
 
 ```text
-empirical selected determinant = 1/512
-closed radius 1/42: minimum determinant = 23/677376 > 0
-explicit mixed P75 point: distance = 1/24
-1/42 < d_inf(P_emp, M_75) <= 1/24
+empirical determinants = (-1/48, 1/64, 5/192)
+sign-stability radii = (1/24, 3/56, 5/72)
+universal P75 determinant product >= 0
+d_inf(P_emp, M_75) = 1/24
 ```
 
-The upper endpoint is not claimed to be the exact global optimum. P91 does not identify consciousness or close the physical-to-experiential bridge.
+P92 is a conditional model-separation theorem and does not identify consciousness or close the physical-to-experiential bridge.
 
-## P71-P91 canonical theorem-figure index
+## P71-P92 canonical theorem-figure index
 
 | Proposition | Canonical figure | Proof | Provenance |
 | --- | --- | --- | --- |
@@ -49,6 +49,7 @@ The upper endpoint is not claimed to be the exact global optimum. P91 does not i
 | P89 | [figure](../docs/figures/p89_complete_linear_parity_duality.svg) | [proof](../docs/proposition_89_complete_linear_parity_duality.md) | [equations](../docs/p89_equation_provenance.md) |
 | P90 | [figure](../docs/figures/p90_exact_nonlinear_rank_one_separation.svg) | [proof](../docs/proposition_90_exact_nonlinear_rank_one_separation.md) | [equations](../docs/p90_equation_provenance.md) |
 | P91 | [figure](../docs/figures/p91_mixed_prevalence_rank_two_flattening_separation.svg) | [proof](../docs/proposition_91_mixed_prevalence_rank_two_flattening_separation.md) | [equations](../docs/p91_equation_provenance.md) |
+| P92 | [figure](../docs/figures/p92_exact_global_mixed_prevalence_distance.svg) | [proof](../docs/proposition_92_exact_global_mixed_prevalence_distance.md) | [equations](../docs/p92_equation_provenance.md) |
 
 ## Reproduce the visual record
 
@@ -62,4 +63,4 @@ The complete machine-readable SHA-256 inventory is in [`manifest.json`](manifest
 
 ## Interpretation boundary
 
-P71-P91 strengthens the methodology for testing a declared physical-to-target model. It does not derive consciousness from physics, prove nonphysicality, or close the physical-to-experiential bridge.
+P71-P92 strengthens the methodology for testing a declared physical-to-target model. It does not derive consciousness from physics, prove nonphysicality, or close the physical-to-experiential bridge.

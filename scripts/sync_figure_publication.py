@@ -203,6 +203,22 @@ def _frontier_summary(frontier: int) -> list[str]:
             "The upper endpoint is not claimed to be the exact global optimum. P91 does not identify consciousness or close the physical-to-experiential bridge.",
             "",
         ]
+    if frontier == 92:
+        return [
+            "### Exact P92 full-cube mixed-prevalence distance",
+            "",
+            "P92 closes the P91 bracket through a nonlinear three-minor sign-coherence invariant on the X1=1 subtensor.",
+            "",
+            "```text",
+            "empirical determinants = (-1/48, 1/64, 5/192)",
+            "sign-stability radii = (1/24, 3/56, 5/72)",
+            "universal P75 determinant product >= 0",
+            "d_inf(P_emp, M_75) = 1/24",
+            "```",
+            "",
+            "P92 is a conditional model-separation theorem and does not identify consciousness or close the physical-to-experiential bridge.",
+            "",
+        ]
     return []
 
 

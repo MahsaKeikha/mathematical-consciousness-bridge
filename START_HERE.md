@@ -112,3 +112,7 @@ For code and verification, open the **[Reproducibility Guide](docs/reproducibili
 ### P91 mixed-prevalence frontier
 
 The current Research II frontier is [P91](docs/proposition_91_mixed_prevalence_rank_two_flattening_separation.md). P91 shows that the nonlinear P75 separation is not confined to P90's prevalence-zero face: over the full two-component mixture cube, the established witness obeys the certified bracket `1/42 < d_inf <= 1/24`. The upper endpoint remains a constructive bound rather than a claimed exact optimum.
+
+### P92 exact full-cube frontier
+
+The current Research II frontier is [P92](docs/proposition_92_exact_global_mixed_prevalence_distance.md). P92 closes the P91 mixed-prevalence bracket and proves the exact full-cube result `d_inf(P_emp, M75) = 1/24` through a nonlinear three-minor sign-coherence invariant.

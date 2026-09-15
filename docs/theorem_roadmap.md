@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P91**. The proposition record runs from **P1 through P91 with explicit dependency branches**. P71-P91 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P92**. The proposition record runs from **P1 through P92 with explicit dependency branches**. P71-P91 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -56,6 +56,8 @@ The current documented theorem frontier is **P91**. The proposition record runs 
 &\text{P89: complete linear parity-functional duality closes all real linear directions on the eleven canonical parity coordinates}\\n&\Downarrow\\n&\text{P90: nonlinear rank-one slice separation gives exact strict-box distance }5/72\\n&\Downarrow\\n&\text{P90: exact nonlinear rank-one slice separation exploits product-law image structure beyond the complete P89 linear envelope}
 &\Downarrow\\
 &\text{P91: arbitrary-prevalence P75 mixtures obey rank at most two under the declared bipartite flattening}\\
+&\Downarrow\\
+&\text{P92: three-minor sign coherence closes the full mixed-prevalence P75 distance at 1/24}\\
 \end{aligned}
 }
 \]
@@ -561,6 +563,7 @@ Direct proof: [P80](proposition_80_simplex_coupled_model_separation.md). Provena
 
 | [P90](proposition_90_exact_nonlinear_rank_one_separation.md) | nonlinear rank-one slice identity | exact single-component strict-box model separation at 5/72 | proved conditional nonlinear theorem |
 | [P91](proposition_91_mixed_prevalence_rank_two_flattening_separation.md) | rank-two bipartite flattening and exact 3 by 3 minor interval exclusion | full mixed-prevalence P75 separation bracket `1/42 < d_inf <= 1/24` | proved conditional nonlinear theorem |
+| [P92](proposition_92_exact_global_mixed_prevalence_distance.md) | three-minor conditional sign coherence | exact full-cube mixed-prevalence P75 distance `d_inf = 1/24` | proved conditional nonlinear theorem |
 
 ## 4. Calibration branch remains separate
 
@@ -617,7 +620,7 @@ After P89, the target-side chain has a substantially clearer scientific burden:
 
 P78 closes the global-lower-bound gap for the specific continuous P75 four-view binary latent family. P79 certifies the one-sided sampling-radius envelope. P80 strengthens the box relaxation by retaining probability normalization. P81 adds exact marginal and projected-event constraints. P82 adds exact non-cylinder residual constraints from nested projected events. P83 adds exact projection-parity observables. P84 then preserves shared-parameter compatibility across pairs of those parity observables through 220 exact joint contrasts.
 
-P86 closes the first minimally non-uniform four-event weighting step beyond the complete P85 triple-functional audit. The next computational question should not be chosen merely by increasing functional order or proposition number. A substantive continuation beyond P91 must close a separately stated mathematical or statistical gap and preserve the certified lower-bound direction. Natural candidates include an exact-rational support-function or convex relaxation of the full parity-coordinate image, with a certificate not already implied by P88, or an observable-specific finite-sample rejection theorem that propagates uncertainty through a selected P88 score rather than only through the global sixteen-cell radius. Target-view models with residual dependence, shared bias, temporal drift, or learned measurement pipelines also remain open.
+P86 closes the first minimally non-uniform four-event weighting step beyond the complete P85 triple-functional audit. The next computational question should not be chosen merely by increasing functional order or proposition number. A substantive continuation beyond P92 must close a separately stated mathematical or statistical gap and preserve the certified lower-bound direction. Natural candidates include an exact-rational support-function or convex relaxation of the full parity-coordinate image, with a certificate not already implied by P88, or an observable-specific finite-sample rejection theorem that propagates uncertainty through a selected P88 score rather than only through the global sixteen-cell radius. Target-view models with residual dependence, shared bias, temporal drift, or learned measurement pipelines also remain open.
 
 None of P71-P88 identifies a latent variable with consciousness. None proves that a failed descriptor implies nonphysical consciousness. The physical-to-experiential bridge remains open.
 
@@ -814,6 +817,24 @@ For the established exact empirical witness, the selected 3 by 3 minor has deter
 
 The upper endpoint `1/24` is a constructive upper bound, not a claimed exact global optimum. P91 is a conditional model-separation result and does not identify consciousness or close the physical-to-experiential bridge.
 
-## After P91
+## P92: exact global mixed-prevalence distance
 
-The next theorem should close a new gap rather than merely increase proposition number. Natural P92 directions include tightening the mixed-prevalence global distance bracket, combining several rank-two minors into a stronger exact certificate, or deriving a finite-sample rejection theorem specialized to the P91 algebraic witness. Any P92 claim must preserve one-sided certification and the repository's scientific boundary.
+P92 closes the P91 bracket exactly. On the `X1 = 1` observable subtensor, every two-component P75 mixture has three conditional two-by-two determinants whose product is nonnegative. For the established empirical witness those determinants are `-1/48`, `1/64`, and `5/192`, with exact sign-stability radii `1/24`, `3/56`, and `5/72`.
+
+Any law closer than `1/24` therefore keeps sign pattern `(-,+,+)` and has negative determinant product, which is impossible for P75. The P91 mixed rational point attains distance exactly `1/24`, so
+
+\[
+\boxed{d_\infty(P_{\mathrm{emp}},\mathcal M_{75})=\frac{1}{24}.}
+\]
+
+- [P92](proposition_92_exact_global_mixed_prevalence_distance.md)
+- Provenance: [p92_equation_provenance.md](p92_equation_provenance.md)
+- Figure: [P92 exact global distance](figures/p92_exact_global_mixed_prevalence_distance.svg)
+- Source: [`exact_global_mixed_prevalence_distance.py`](../src/consciousness_bridge/exact_global_mixed_prevalence_distance.py)
+- Tests: [`test_exact_global_mixed_prevalence_distance.py`](../tests/test_exact_global_mixed_prevalence_distance.py)
+
+P92 is a conditional model-separation theorem and does not identify consciousness or close the physical-to-experiential bridge.
+
+## After P92
+
+The next theorem should close a new gap rather than merely increase proposition number. Natural P93 directions include finite-sample calibration of the P92 nonlinear sign certificate, stability under alternative observable slicings, or exact comparison with broader latent-class families. Any P93 claim must preserve one-sided certification and the repository's scientific boundary.

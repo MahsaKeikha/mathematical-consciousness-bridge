@@ -4,7 +4,7 @@
 
 This page is an index, not another chapter. If you are still learning the overall story, go one layer up to the **[Research Map](research_map.md)**.
 
-The current documented theorem frontier is **P91**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains open.
+The current documented theorem frontier is **P92**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains open.
 
 ---
 
@@ -89,13 +89,13 @@ Then follow P72 through P74 in the [Detailed Proposition Record](detailed_propos
 
 **Question:** Can the declared model of the target and its measurement actually reproduce the observations, or can it be rejected under its own assumptions?
 
-**Results:** P75 through P91
+**Results:** P75 through P92
 
 This branch moves from model adequacy to rejection with finite data, separation from the complete declared model set, certified bounds for continuous families, and increasingly strong exact tests that preserve shared parameters.
 
 **Start with:** [P75: Target Model Adequacy](proposition_75_target_model_adequacy_overidentification.md)
 
-**Current frontier:** [P91: Mixed-Prevalence Rank-Two Flattening Separation](proposition_91_mixed_prevalence_rank_two_flattening_separation.md)
+**Current frontier:** [P92: Exact Global Mixed-Prevalence Distance](proposition_92_exact_global_mixed_prevalence_distance.md)
 
 ---
 
@@ -140,8 +140,8 @@ The [Detailed Proposition Record](detailed_proposition_record.md) is the complet
 | --- | --- |
 | Physics | [Research Map](research_map.md) → [Technical Research Architecture](research_architecture.md) → [Quantum branch](quantum_foundations_and_bridge_test.md) |
 | Mathematics | [Research Map](research_map.md) → [Theorem Roadmap](theorem_roadmap.md) → proposition proofs |
-| Statistics and inference | [P19](proposition_19_fundamental_physical_sufficiency.md) → P20 through P24 → P74 through P91 via [Detailed Proposition Record](detailed_proposition_record.md) |
-| Consciousness science | [Bridge Problem](bridge_problem.md) → [Falsification Program](falsification_program.md) → P71 through P91 |
+| Statistics and inference | [P19](proposition_19_fundamental_physical_sufficiency.md) → P20 through P24 → P74 through P92 via [Detailed Proposition Record](detailed_proposition_record.md) |
+| Consciousness science | [Bridge Problem](bridge_problem.md) → [Falsification Program](falsification_program.md) → P71 through P92 |
 | Software and reproducibility | [Reproducibility Guide](reproducibility.md) → [`src/`](../src/) → [`tests/`](../tests/) |
 | Visual learner | [Figure Catalog](figure_catalog.md) → [Visual Atlas](../website/visual-atlas.html) |
 
@@ -149,7 +149,7 @@ The [Detailed Proposition Record](detailed_proposition_record.md) is the complet
 
 ## Where the complete detail lives
 
-This page intentionally does **not** duplicate the full 91 proposition index.
+This page intentionally does **not** duplicate the full 92 proposition index.
 
 Use:
 
@@ -182,7 +182,7 @@ For P90:
 
 P90 is a conditional model-separation result for the declared strict P75 box. It uses nonlinear model-image structure but does not identify the latent state with consciousness, establish nonphysicality, or close the physical-to-experiential bridge.
 
-## P91 current frontier
+## P91 historical mixed-prevalence frontier
 
 For P91:
 
@@ -196,3 +196,18 @@ For P91:
 | Repository reproduction | [Reproducibility Guide](reproducibility.md) |
 
 P91 certifies `1/42 < d_inf(P_emp, M75) <= 1/24` over the full P75 parameter cube. It does not claim that `1/24` is the exact global optimum and does not identify the latent state with consciousness, establish nonphysicality, or close the physical-to-experiential bridge.
+
+## P92 current frontier
+
+For P92:
+
+| What you want | Direct link |
+| --- | --- |
+| The theorem and proof | [P92 proposition](proposition_92_exact_global_mixed_prevalence_distance.md) |
+| Equation and method provenance | [P92 provenance](p92_equation_provenance.md) |
+| Implementation | [`exact_global_mixed_prevalence_distance.py`](../src/consciousness_bridge/exact_global_mixed_prevalence_distance.py) |
+| Regression tests | [`test_exact_global_mixed_prevalence_distance.py`](../tests/test_exact_global_mixed_prevalence_distance.py) |
+| Figure | [P92 exact global distance](figures/p92_exact_global_mixed_prevalence_distance.svg) |
+| Repository reproduction | [Reproducibility Guide](reproducibility.md) |
+
+P92 proves the exact full-cube result `d_inf(P_emp, M75) = 1/24`. Its lower certificate is a nonlinear three-minor sign-coherence invariant. The result does not identify the latent state with consciousness, establish nonphysicality, or close the physical-to-experiential bridge.
