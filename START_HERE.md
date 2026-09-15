@@ -63,9 +63,9 @@ Those results include methods for:
 - controlling uncertainty from finite data and numerical computation;
 - making the complete reasoning chain reproducible and auditable.
 
-The public theorem frontier is **P96**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains **open**.
+The public theorem frontier is **P97**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains **open**.
 
-You do not need to read 96 propositions to understand the project.
+You do not need to read 97 propositions to understand the project.
 
 ---
 
@@ -78,7 +78,7 @@ You do not need to read 96 propositions to understand the project.
 | Browse the research through figures | **[Figure Catalog](docs/figure_catalog.md)** |
 | Move into the formal scientific architecture | **[Technical Research Architecture](docs/research_architecture.md)** |
 | See how the mathematical results depend on one another | **[Theorem Roadmap](docs/theorem_roadmap.md)** |
-| Read the current frontier result | **[P96](docs/proposition_96_selection_valid_holdout_stratification.md)** |
+| Read the current frontier result | **[P97](docs/proposition_97_simultaneous_candidate_family_selection.md)** |
 | Inspect every proposition in the complete technical record | **[Detailed Proposition Record](docs/detailed_proposition_record.md)** |
 | Trace equations, sources, implementations, and tests | **[Research Navigation](docs/research_navigation.md)** |
 | Reproduce the computational work | **[Reproducibility Guide](docs/reproducibility.md)** |
@@ -121,17 +121,22 @@ The P92 Research II step is [P92](docs/proposition_92_exact_global_mixed_prevale
 
 The historical IID finite-sample step is [P93](docs/proposition_93_localized_sign_coherence_rejection.md). P93 takes P92's exact nonlinear sign-coherence obstruction into finite IID data. It needs simultaneous control of only seven observable cells. At 95 percent confidence, the exact mathematical radius crosses between 1622 and 1623 samples; the first exact replication of the original 24-count profile that clears the certificate is 1632 samples. Non-rejection remains inconclusive.
 
-### P94 finite-range dependent frontier
+### P94 historical finite-range dependent step
 
-The current Research II frontier is [P95](docs/proposition_95_drift_aware_stratified_sign_coherence.md). P94 keeps the seven-cell P92/P93 nonlinear rejection witness but relaxes IID sampling to a declared finite-range dependent sequence with one common marginal four-view law. For dependence range `m`, the squared confidence radius is multiplied by `m+1`. At 95 percent confidence, the established witness crosses at 1623, 3246, and 4869 samples for `m=0,1,2` respectively. An exact temporal-pooling counterexample shows why arbitrary marginal drift is outside the theorem. Non-rejection remains inconclusive, and the physical-to-experiential bridge remains open.
+[P94](docs/proposition_94_finite_range_dependent_sign_coherence.md) keeps the seven-cell P92/P93 nonlinear rejection witness but relaxes IID sampling to a declared finite-range dependent sequence with one common marginal four-view law. For dependence range `m`, the squared confidence radius is multiplied by `m+1`. At 95 percent confidence, the established witness crosses at 1623, 3246, and 4869 samples for `m=0,1,2` respectively. An exact temporal-pooling counterexample shows why arbitrary marginal drift is outside the theorem. Non-rejection remains inconclusive, and the physical-to-experiential bridge remains open.
 
 ### P95 historical drift-aware stratified rejection
 
 P94 showed why drifting marginals cannot be pooled safely. P95 makes the next valid move: declare regimes before testing, permit a different marginal law in every regime, certify each regime with its own P94 radius and error budget, and reject the all-regimes P75 null if any regime is locally incompatible. [Read P95](docs/proposition_95_drift_aware_stratified_sign_coherence.md).
 
-
-### P96: selection-valid holdout stratification
+### P96 previous frontier: selection-valid holdout stratification
 
 P95 requires the regime plan to be fixed independently of the certification witness. P96 closes one precise post-selection gap by allowing arbitrary pilot-data selection of the regime plan, freezing that plan, and then applying P95 to genuinely independent holdout information. Conditional P95 validity integrates to the same unconditional familywise guarantee, so pilot-search complexity itself requires no additional alpha spending under the declared independence assumptions. The pilot data are not reused for certification. [Read P96](docs/proposition_96_selection_valid_holdout_stratification.md).
 
-An ordinary random split of a temporally dependent stream is not automatically an independent holdout design. Same-data redesign, within-regime drift, model acceptance after non-rejection, consciousness identification, and the physical-to-experiential bridge remain outside the theorem.
+An ordinary random split of a temporally dependent stream is not automatically an independent holdout design. Same-data redesign remains outside P96.
+
+### P97: simultaneous finite candidate-family selection
+
+P97 addresses that complementary same-data case. A finite family of candidate regime plans is fixed before the certification statistics are inspected. Each candidate receives its own exact P95 familywise budget, and a second union bound across candidates makes all candidate certificates valid simultaneously. The final candidate may then be chosen after seeing the results without invalidating the selected certificate. [Read P97](docs/proposition_97_simultaneous_candidate_family_selection.md).
+
+For two predeclared candidates with two one-step-dependent regimes each, equal spending of a 5 percent global error budget gives a mathematical threshold of 4045 observations per regime and a first exact denominator-24 replication at 4056. P97 pays for same-data search through multiplicity. It does not permit generating a new candidate after inspection, unrestricted within-regime drift, model acceptance after non-rejection, consciousness identification, nonphysicality, or completion of the physical-to-experiential bridge.

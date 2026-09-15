@@ -54,9 +54,9 @@ You do **not** need to read the propositions in order to understand the project.
 
 If you want the complete theorem record, including assumptions, proofs, implementations, tests, figures, and scientific boundaries, use the **[Detailed Proposition Record](docs/detailed_proposition_record.md)** or the **[Theorem Roadmap](docs/theorem_roadmap.md)**.
 
-The current public theorem frontier is **P96**. The formal release remains **v0.82.0**.
+The current public theorem frontier is **P97**. The formal release remains **v0.82.0**.
 
-**[Read the current frontier](docs/proposition_96_selection_valid_holdout_stratification.md)**
+**[Read the current frontier](docs/proposition_97_simultaneous_candidate_family_selection.md)**
 
 ---
 
@@ -70,13 +70,13 @@ The current public theorem frontier is **P96**. The formal release remains **v0.
 
 ### Current theorem frontier
 
-![P96 Selection-Valid Holdout Stratification](docs/figures/p96_selection_valid_holdout_stratification.svg)
+![P97 Simultaneous Finite Candidate-Family Selection](docs/figures/p97_simultaneous_candidate_family_selection.svg)
 
-**Figure 2. P96 selection-valid holdout stratification.** P95 permits changing marginal laws across predeclared regimes, but it deliberately leaves data-dependent regime selection outside its guarantee. P96 closes one precise version of that gap by separating selection from certification. Pilot information may choose the number of regimes, regime definitions, declared dependence ranges, rational error budgets, and certification allocation. The selected plan is frozen before an independent holdout sample is inspected. Conditional on the pilot information, P95 applies to the fixed plan; the tower property then preserves the same unconditional familywise error bound.
+**Figure 2. P97 simultaneous finite candidate-family selection.** P96 makes adaptive regime selection valid by separating pilot selection from independent holdout certification. P97 handles a complementary case: the same certification data may be used to compare and select among a finite family of candidate regime plans, provided that the complete family is fixed before the certification statistics are inspected. Each candidate receives its own P95 familywise budget, and a second union bound across candidates makes all candidate certificates simultaneous. The final candidate can therefore be chosen after inspection without invalidating the selected certificate.
 
-For two selected regimes with one-step dependence and equal division of a 5 percent familywise budget, the holdout threshold remains **3645 observations per regime**, with the first exact denominator-24 replication at **3648 per regime**. The complexity of the pilot search itself adds no further alpha penalty under the declared independence and frozen-plan assumptions.
+For two predeclared candidates, each containing two regimes with one-step dependence and equal division of a 5 percent global error budget, the exact threshold is **4045 observations per regime**, with the first denominator-24 replication at **4056 per regime**. Because the candidates reuse the same underlying data, the balanced unique-observation totals are **8090** and **8112**, not multiplied again by the number of candidates.
 
-P96 does not justify reusing certification observations to redesign the segmentation, treating an ordinary random split of one dependent time series as automatically independent, allowing unrestricted drift inside a selected certification regime, accepting P75 after non-rejection, identifying consciousness, establishing nonphysicality, or closing the physical-to-experiential bridge.
+P97 does not justify generating a new candidate after inspecting the certification results, searching an unbounded family without additional accounting, allowing unrestricted drift inside a regime, accepting P75 after non-rejection, identifying consciousness, establishing nonphysicality, or closing the physical-to-experiential bridge.
 
 ## Choose your path
 
@@ -122,6 +122,6 @@ For scholarly citation, see **[CITATION.md](CITATION.md)** and **[CITATION.cff](
 
 MIT License. See **[LICENSE](LICENSE)**.
 
-**Public theorem frontier:** P96
+**Public theorem frontier:** P97
 **Formal release:** v0.82.0
 **Final bridge from physical description to experience:** open

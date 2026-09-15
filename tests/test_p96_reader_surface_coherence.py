@@ -23,61 +23,44 @@ def test_p96_formal_record_is_complete() -> None:
         assert (ROOT / path).is_file()
 
 
-def test_p96_is_current_reader_frontier() -> None:
+def test_p96_is_immediate_reader_predecessor_of_p97() -> None:
     verifier = _read("scripts/verify_repository.py")
-    home = _read("website/index.html")
     atlas = _read("website/visual-atlas.html")
     plain = _read("website/plain-language.html")
     start = _read("website/start-here.html")
     research = _read("website/research-map.html")
 
-    assert 'CURRENT_FRONTIER = "P96"' in verifier
-    assert '<!-- current-frontier-home: P96 -->' in home
-    assert 'id="p96-frontier"' in home
-    assert "Current theorem frontier · P96" in home
-    assert "Explore all 96 results" in home
-    assert '<!-- current-frontier-visual: P96 -->' in atlas
+    assert 'CURRENT_FRONTIER = "P97"' in verifier
+    assert atlas.index('id="p97-frontier"') < atlas.index('id="p96-frontier"')
     assert atlas.index('id="p96-frontier"') < atlas.index('id="p95-frontier"')
-    assert "Previous theorem frontier · P95" in atlas
+    assert "Previous theorem frontier · P96" in atlas
     assert 'id="p96-reader-frontier"' in plain
     assert 'id="p96-reader-frontier"' in start
-    assert "96 results · current frontier P96" in plain
-    assert "96 results · current frontier P96" in start
     assert 'id="p96-research-map"' in research
+    assert research.index('id="p97-research-map"') < research.index('id="p96-research-map"')
     assert research.index('id="p96-research-map"') < research.index('id="p95-research-map"')
-    assert "Current Research II model-audit range: P75-P96." in research
-    assert "The current theorem frontier is P96." in research
 
 
-def test_p96_repository_audit_surfaces_are_synchronized() -> None:
+def test_p96_repository_audit_surfaces_preserve_history() -> None:
     readme = _read("README.md")
     roadmap = _read("docs/theorem_roadmap.md")
     navigation = _read("docs/research_navigation.md")
-    reproducibility = _read("docs/reproducibility.md")
     citation = _read("CITATION.md")
 
-    assert "The current public theorem frontier is **P96**." in readme
-    assert "docs/proposition_96_selection_valid_holdout_stratification.md" in readme
-    assert "The current documented theorem frontier is **P96**." in roadmap
-    assert "P1 through P96 with explicit dependency branches" in roadmap
+    assert "P96" in readme
+    assert "proposition_96_selection_valid_holdout_stratification.md" in roadmap
     assert "## P96: selection-valid holdout stratification" in roadmap
-    assert "## After P96" in roadmap
-    assert "The current documented theorem frontier is **P96**." in navigation
-    assert "**Results:** P75 through P96" in navigation
-    assert "For P96:" in navigation
+    assert "For P96" in navigation
     assert "p96_selection_valid_holdout_stratification.svg" in navigation
-    assert "The current public theorem frontier is **P96**." in reproducibility
-    assert "## 5. Focused audit of the current P96 frontier" in reproducibility
-    assert "docs/figures/p96_selection_valid_holdout_stratification.svg" in reproducibility
-    assert "The current documented theorem frontier is **P96**." in citation
+    assert "P96" in citation
+    assert "P97" in readme and "P97" in roadmap and "P97" in navigation
 
 
-def test_p96_scientific_boundary_is_visible() -> None:
+def test_p96_scientific_boundary_is_visible_on_historical_surfaces() -> None:
     for path in (
-        "README.md",
         "docs/proposition_96_selection_valid_holdout_stratification.md",
         "docs/p96_equation_provenance.md",
-        "website/index.html",
+        "website/visual-atlas.html",
         "website/plain-language.html",
         "website/start-here.html",
         "website/research-map.html",

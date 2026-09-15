@@ -4,7 +4,7 @@
 
 This page is an index, not another chapter. If you are still learning the overall story, go one layer up to the **[Research Map](research_map.md)**.
 
-The current documented theorem frontier is **P96**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains open.
+The current documented theorem frontier is **P97**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains open.
 
 ---
 
@@ -89,19 +89,34 @@ Then follow P72 through P74 in the [Detailed Proposition Record](detailed_propos
 
 **Question:** Can the declared model of the target and its measurement actually reproduce the observations, or can it be rejected under its own assumptions?
 
-**Results:** P75 through P96
+**Results:** P75 through P97
 
 This branch moves from model adequacy to rejection with finite data, separation from the complete declared model set, certified bounds for continuous families, and increasingly strong exact tests that preserve shared parameters.
 
 **Start with:** [P75: Target Model Adequacy](proposition_75_target_model_adequacy_overidentification.md)
 
-**Current frontier:** [P96: Selection-Valid Holdout Stratification](proposition_96_selection_valid_holdout_stratification.md)
+**Current frontier:** [P97: Simultaneous Finite Candidate-Family Selection](proposition_97_simultaneous_candidate_family_selection.md)
 
 ---
 
 ## Audit the current frontier without searching folders
 
-For P96:
+For P97:
+
+| Audit surface | Canonical route |
+| --- | --- |
+| Direct theorem | [P97 proposition](proposition_97_simultaneous_candidate_family_selection.md) |
+| Equation and method provenance | [P97 provenance](p97_equation_provenance.md) |
+| Implementation | [`simultaneous_candidate_family_selection.py`](../src/consciousness_bridge/simultaneous_candidate_family_selection.py) |
+| Regression tests | [`test_simultaneous_candidate_family_selection.py`](../tests/test_simultaneous_candidate_family_selection.py) |
+| Theorem figure | [P97 simultaneous candidate-family certificate](figures/p97_simultaneous_candidate_family_selection.svg) |
+| Repository reproduction | [Reproducibility Guide](reproducibility.md) |
+
+P97 is a conditional same-data selection-valid model-audit result for a finite candidate family fixed before certification statistics are inspected. It pays for candidate search through explicit multiplicity rather than P96 sample separation. New post-inspection candidates, unrestricted within-regime drift, model acceptance, consciousness identification, nonphysicality, and bridge completion remain outside the theorem.
+
+---
+
+For P96 (previous frontier):
 
 | Audit surface | Canonical route |
 | --- | --- |
@@ -155,8 +170,8 @@ The [Detailed Proposition Record](detailed_proposition_record.md) is the complet
 | --- | --- |
 | Physics | [Research Map](research_map.md) → [Technical Research Architecture](research_architecture.md) → [Quantum branch](quantum_foundations_and_bridge_test.md) |
 | Mathematics | [Research Map](research_map.md) → [Theorem Roadmap](theorem_roadmap.md) → proposition proofs |
-| Statistics and inference | [P19](proposition_19_fundamental_physical_sufficiency.md) → P20 through P24 → P74 through P96 via [Detailed Proposition Record](detailed_proposition_record.md) |
-| Consciousness science | [Bridge Problem](bridge_problem.md) → [Falsification Program](falsification_program.md) → P71 through P96 |
+| Statistics and inference | [P19](proposition_19_fundamental_physical_sufficiency.md) → P20 through P24 → P74 through P97 via [Detailed Proposition Record](detailed_proposition_record.md) |
+| Consciousness science | [Bridge Problem](bridge_problem.md) → [Falsification Program](falsification_program.md) → P71 through P97 |
 | Software and reproducibility | [Reproducibility Guide](reproducibility.md) → [`src/`](../src/) → [`tests/`](../tests/) |
 | Visual learner | [Figure Catalog](figure_catalog.md) → [Visual Atlas](../website/visual-atlas.html) |
 
@@ -164,7 +179,7 @@ The [Detailed Proposition Record](detailed_proposition_record.md) is the complet
 
 ## Where the complete detail lives
 
-This page intentionally does **not** duplicate the full 96 proposition index.
+This page intentionally does **not** duplicate the full 97 proposition index.
 
 Use:
 
@@ -241,7 +256,7 @@ For P93:
 
 P93 uses seven observable cells from the P92 sign witness. The 1623 crossing is the exact mathematical confidence-radius threshold for the established sign geometry at 95 percent confidence; the first exact replication of the original profile that clears is 1632.
 
-## P94 immediate predecessor
+## P94 historical finite-range frontier
 
 For P94:
 
@@ -256,7 +271,7 @@ For P94:
 
 P94 relaxes temporal independence, not stationarity. Its confidence radius carries an exact `m+1` squared-radius penalty under a declared finite dependence range and one common marginal law. The exact pooling counterexample proves that arbitrary marginal drift can imitate the P92 negative determinant-product pattern, so drift remains outside the theorem.
 
-## P95 immediate predecessor
+## P95 historical drift-aware frontier
 
 **Immediate predecessor:** [P95: Drift-Aware Stratified Sign-Coherence Rejection](proposition_95_drift_aware_stratified_sign_coherence.md)
 
@@ -271,9 +286,9 @@ P94 relaxes temporal independence, not stationarity. Its confidence radius carri
 P95 permits marginal drift across predeclared regimes while keeping a common marginal law only within each regime. P96 keeps that local P95 logic but allows the regime plan itself to be chosen from separate pilot information.
 
 
-## P96 current frontier
+## P96 previous frontier
 
-**Current frontier:** [P96: Selection-Valid Holdout Stratification](proposition_96_selection_valid_holdout_stratification.md)
+**Current frontier:** [P97: Simultaneous Finite Candidate-Family Selection](proposition_97_simultaneous_candidate_family_selection.md)
 
 | What you want | Direct link |
 | --- | --- |
@@ -284,3 +299,18 @@ P95 permits marginal drift across predeclared regimes while keeping a common mar
 | Figure | [P96 selection-valid holdout certificate](figures/p96_selection_valid_holdout_stratification.svg) |
 
 P96 permits pilot-selected regime plans only when selection and certification are separated by a justified independent holdout design and the selected plan is frozen before holdout evaluation. It inherits the P95 local rejection logic and preserves the same familywise error budget by conditioning on the pilot information.
+
+
+## P97 current frontier
+
+**Current frontier:** [P97: Simultaneous Finite Candidate-Family Selection](proposition_97_simultaneous_candidate_family_selection.md)
+
+| What you want | Direct link |
+| --- | --- |
+| The theorem and proof | [P97 proposition](proposition_97_simultaneous_candidate_family_selection.md) |
+| Equation and method provenance | [P97 provenance](p97_equation_provenance.md) |
+| Implementation | [`simultaneous_candidate_family_selection.py`](../src/consciousness_bridge/simultaneous_candidate_family_selection.py) |
+| Regression tests | [`test_simultaneous_candidate_family_selection.py`](../tests/test_simultaneous_candidate_family_selection.py) |
+| Figure | [P97 simultaneous candidate-family certificate](figures/p97_simultaneous_candidate_family_selection.svg) |
+
+P97 permits same-data comparison and post-inspection selection only within a finite candidate family fixed before certification statistics are inspected. It assigns exact candidate-level budgets, nests P95 within each candidate, and uses a second union bound across candidates to preserve simultaneous validity.

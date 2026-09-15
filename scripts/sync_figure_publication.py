@@ -291,6 +291,24 @@ def _frontier_summary(frontier: int) -> list[str]:
             "The zero extra selection penalty is conditional on a genuinely independent holdout design and a plan frozen before holdout evaluation. Same-data redesign, naive splitting of a dependent stream, within-regime drift, model acceptance, consciousness identification, and bridge completion are not established.",
             "",
         ]
+    if frontier == 97:
+        return [
+            "### Exact P97 simultaneous finite candidate-family selection",
+            "",
+            "P97 complements P96 by permitting same-data post-inspection selection within a finite candidate family fixed before certification statistics are inspected.",
+            "",
+            "```text",
+            "candidate budgets: sum_k alpha_k <= alpha",
+            "inside candidate k: sum_b alpha_kb <= alpha_k",
+            "K=2, B=2, m=1: local alpha = 1/80",
+            "95% mathematical crossing = 4045 per regime",
+            "first exact denominator-24 replication = 4056 per regime",
+            "balanced unique-observation totals = 8090 / 8112",
+            "```",
+            "",
+            "P97 pays for same-data search through multiplicity. The candidate family must be fixed before inspection. New post-inspection candidates, unrestricted within-regime drift, model acceptance, consciousness identification, nonphysicality, and bridge completion are not established.",
+            "",
+        ]
     return []
 
 

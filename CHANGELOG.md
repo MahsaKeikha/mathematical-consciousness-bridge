@@ -1,3 +1,15 @@
+# Unreleased research frontier - P97
+
+## P97 simultaneous finite candidate-family selection frontier
+
+- Added Proposition 97 as the same-data selection-valid complement to P96 independent-holdout certification.
+- Fixed the complete finite candidate family before certification statistics are inspected and allowed arbitrary post-inspection selection only within that covered family.
+- Nested exact P95 familywise certificates inside each candidate and applied a second union bound across candidate-level error budgets; no candidate-certificate independence assumption is required.
+- Certified the balanced K=2, B=2, m=1, 95 percent crossing at 4045 observations per regime and first exact denominator-24 replication at 4056.
+- Recorded balanced unique-observation totals 8090 and 8112 because candidate plans may reuse the same underlying certification observations.
+- Preserved the boundary that newly generated post-inspection candidates, unrestricted search, within-regime drift, non-rejection as model acceptance, consciousness identification, nonphysicality, and bridge completion remain open.
+- Kept formal release v0.82.0 separate from the advancing theorem frontier.
+
 # Unreleased research frontier - P96
 
 ## P96 selection-valid holdout stratification frontier

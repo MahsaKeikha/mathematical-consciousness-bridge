@@ -1,6 +1,6 @@
 # Detailed proposition record
 
-## Complete P1 to P96 chronology
+## Complete P1 to P97 chronology
 
 This page preserves the proposition-by-proposition development history of the Mathematical Consciousness Bridge research program. It is intentionally separate from the main README so a first-time reader can follow the scientific argument without first learning the internal chronology of the project.
 
@@ -10,11 +10,11 @@ The scientific status rule is strict throughout: a theorem is only a theorem und
 
 ### How to use this record
 
-A first-time reader should not read this page as 96 disconnected proposition-level results. Use it as an audit index: identify the scientific role of a proposition, open its direct proof when needed, then follow implementation/tests/provenance links for verification. For the shortest conceptual path, begin with [Start Here](../START_HERE.md) and [Research Navigation](research_navigation.md). The [Reader Experience and Visual Presentation Standard](reader_experience_and_visual_standard.md) explains the repository-wide explanation and visual hierarchy.
+A first-time reader should not read this page as 97 disconnected proposition-level results. Use it as an audit index: identify the scientific role of a proposition, open its direct proof when needed, then follow implementation/tests/provenance links for verification. For the shortest conceptual path, begin with [Start Here](../START_HERE.md) and [Research Navigation](research_navigation.md). The [Reader Experience and Visual Presentation Standard](reader_experience_and_visual_standard.md) explains the repository-wide explanation and visual hierarchy.
 
 ---
 
-## Complete P1 to P96 chronology
+## Complete P1 to P97 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
@@ -423,3 +423,16 @@ P95 requires predeclared regimes and local common-marginal assumptions. Data-dep
 - [Figure](figures/p96_selection_valid_holdout_stratification.svg)
 - [Implementation](../src/consciousness_bridge/selection_valid_holdout_stratification.py)
 - [Tests](../tests/test_selection_valid_holdout_stratification.py)
+
+
+## P97: Simultaneous Finite Candidate-Family Selection
+
+**Question.** Can the same certification data be used to compare candidate regime plans and then select one after inspection without invalidating the selected rejection certificate?
+
+**Result.** Yes for a finite candidate family fixed before certification statistics are inspected. Candidate `k` receives an exact familywise budget `alpha_k`; P95 controls all regimes inside that candidate, and a second union bound controls all candidates simultaneously when `sum_k alpha_k <= alpha`. On that simultaneous event, any post-inspection selection rule restricted to the predeclared family preserves validity of the selected candidate certificate.
+
+For two equally budgeted candidates, each with two regimes and dependence range one, the 95 percent mathematical threshold is 4045 observations per regime and the first exact denominator-24 replication is 4056. Because the candidates reuse the same underlying observations, the balanced unique-observation totals are 8090 and 8112.
+
+**Boundary.** The candidate family itself must be fixed before inspection. Newly generated post-inspection candidates, unrestricted search, within-regime drift beyond the local assumptions, model acceptance after non-rejection, consciousness identification, nonphysicality, and completion of the physical-to-experiential bridge remain open.
+
+Direct proof: [P97](proposition_97_simultaneous_candidate_family_selection.md). Provenance: [P97 equation record](p97_equation_provenance.md). Implementation: [`simultaneous_candidate_family_selection.py`](../src/consciousness_bridge/simultaneous_candidate_family_selection.py). Tests: [`test_simultaneous_candidate_family_selection.py`](../tests/test_simultaneous_candidate_family_selection.py).

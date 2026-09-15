@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P96**. The proposition record runs from **P1 through P96 with explicit dependency branches**. P71-P96 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P97**. The proposition record runs from **P1 through P97 with explicit dependency branches**. P71-P97 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -66,6 +66,8 @@ The current documented theorem frontier is **P96**. The proposition record runs 
 &\text{P95: predeclared drift regimes combine local P94 gates with familywise error control}\\
 &\Downarrow\\
 &\text{P96: pilot-selected regime plans are frozen and certified on independent holdout information}\\
+&\Downarrow\\
+&\text{P97: finite predeclared candidate families support same-data selection by simultaneous error accounting}\\
 \end{aligned}
 }
 \]
@@ -896,7 +898,8 @@ With pilot information \(\mathcal S\) and certification information \(\mathcal C
 Conditional on \(\mathcal S\), the selected plan is fixed and P95 gives
 
 \[
-\Pr\left(igcap_b \mathcal A_b\mid\mathcal Sight)
+\Pr\left(igcap_b \mathcal A_b\mid\mathcal S
+ight)
 \ge 1-\sum_blpha_b\ge 1-lpha.
 \]
 
@@ -908,6 +911,32 @@ Direct proof: [P96](proposition_96_selection_valid_holdout_stratification.md). P
 
 P96 is sufficient under a genuinely independent holdout design. A naive random split of one temporally dependent stream is not automatically covered. Same-data redesign, gradual within-regime drift, unknown dependence structure, model acceptance, consciousness identification, nonphysicality, and bridge completion remain open.
 
-## After P96
+## P97: simultaneous finite candidate-family selection
 
-P96 closes the independent-holdout version of adaptive regime selection. Any P97 candidate must close a genuinely new mathematical or scientific gap. Natural directions include guarded cross-fitting or multiple independent splits that recover pilot efficiency without invalidating selection, simultaneous candidate-family accounting without sample splitting, gradual within-regime drift with an explicitly time-varying target, or concentration under broader declared dependence classes. The physical-to-experiential bridge remains open.
+P96 obtains selection validity by separating pilot selection from independent holdout certification. P97 proves a complementary theorem for finite same-data search. Before inspecting certification statistics, fix a finite family of candidate regime plans indexed by `k=1,...,K`. Candidate `k` receives a familywise budget `alpha_k`, and the budgets obey
+
+\[
+\sum_{k=1}^{K}\alpha_k \le \alpha.
+\]
+
+Inside each candidate, P95 controls all declared regimes. Therefore candidate `k` fails with probability at most `alpha_k`. A union bound across candidates gives
+
+\[
+\Pr(\text{any candidate certificate fails})
+\le
+\sum_{k=1}^{K}\alpha_k
+\le
+\alpha.
+\]
+
+On the simultaneous event, every candidate certificate is valid at once, so the final candidate can be selected after inspection by any rule restricted to the predeclared family.
+
+For `K=2`, two regimes per candidate, dependence range one, and equal spending of a 5 percent global budget, the local error budget is `1/80`. The mathematical threshold is 4045 observations per regime and the first exact denominator-24 replication is 4056. Because the candidates reuse the same dataset, the balanced unique-observation totals are 8090 and 8112.
+
+Direct proof: [P97](proposition_97_simultaneous_candidate_family_selection.md). Provenance: [P97 equation record](p97_equation_provenance.md). Implementation: [`simultaneous_candidate_family_selection.py`](../src/consciousness_bridge/simultaneous_candidate_family_selection.py). Tests: [`test_simultaneous_candidate_family_selection.py`](../tests/test_simultaneous_candidate_family_selection.py).
+
+P97 does not validate a candidate generated after inspecting certification results, an unrestricted or infinite search without additional control, within-regime drift beyond the local assumptions, model acceptance under non-rejection, consciousness identification, nonphysicality, or bridge completion.
+
+## After P97
+
+P96 closes the independent-holdout version of adaptive regime selection. Any P98 candidate must close a genuinely new mathematical or scientific gap. Natural directions include guarded cross-fitting or multiple independent splits that recover pilot efficiency without invalidating selection, simultaneous candidate-family accounting without sample splitting, gradual within-regime drift with an explicitly time-varying target, or concentration under broader declared dependence classes. The physical-to-experiential bridge remains open.
