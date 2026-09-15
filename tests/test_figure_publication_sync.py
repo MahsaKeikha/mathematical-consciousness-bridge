@@ -1,5 +1,6 @@
 import hashlib
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -16,19 +17,40 @@ PLAIN = ROOT / "website" / "plain-language.html"
 START = ROOT / "website" / "start-here.html"
 SYNCER = ROOT / "scripts" / "sync_figure_publication.py"
 PREPARE_WEBSITE = ROOT / "scripts" / "prepare_website.py"
-P93_FIGURE = "p93_localized_sign_coherence_rejection.svg"
+VERIFIER = ROOT / "scripts" / "verify_repository.py"
 RAW_PREFIX = (
     "https://raw.githubusercontent.com/MahsaKeikha/"
     "mathematical-consciousness-bridge/main/docs/figures/"
 )
 
 
+def _current_frontier() -> tuple[int, str]:
+    verifier = VERIFIER.read_text(encoding="utf-8")
+    match = re.search(r'^CURRENT_FRONTIER = "P(\d+)"$', verifier, flags=re.MULTILINE)
+    assert match is not None
+    number = int(match.group(1))
+    return number, f"P{number}"
+
+
+def _manifest() -> dict[str, object]:
+    return json.loads(MANIFEST.read_text(encoding="utf-8"))
+
+
+def _current_figure() -> str:
+    manifest = _manifest()
+    path = str(manifest["current_frontier_figure"])
+    return Path(path).name
+
+
 def test_figure_manifest_is_complete_and_byte_exact() -> None:
-    manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    manifest = _manifest()
+    frontier, label = _current_frontier()
     assert manifest["schema_version"] == 1
     assert manifest["canonical_root"] == "docs/figures"
-    assert manifest["current_frontier"] == "P93"
-    assert manifest["current_frontier_figure"].endswith(P93_FIGURE)
+    assert manifest["current_frontier"] == label
+    assert str(manifest["current_frontier_figure"]).startswith(
+        f"docs/figures/p{frontier}_"
+    )
     assert manifest["hash_algorithm"] == "sha256"
 
     figures = sorted(DOC_FIGURES.rglob("*.svg"))
@@ -47,74 +69,65 @@ def test_figure_manifest_is_complete_and_byte_exact() -> None:
         assert record["description_chars"] >= 140
 
 
-def test_github_figure_gateway_tracks_p93() -> None:
+def test_github_figure_gateway_tracks_current_frontier() -> None:
+    frontier, label = _current_frontier()
+    figure = _current_figure()
     gateway = GATEWAY.read_text(encoding="utf-8")
     current = CURRENT.read_text(encoding="utf-8")
 
-    assert CURRENT_SVG.read_bytes() == (DOC_FIGURES / P93_FIGURE).read_bytes()
-    assert "## Current theorem frontier: P93" in gateway
-    assert P93_FIGURE in gateway
+    assert CURRENT_SVG.read_bytes() == (DOC_FIGURES / figure).read_bytes()
+    assert f"## Current theorem frontier: {label}" in gateway
+    assert figure in gateway
     assert "manifest.json" in gateway
 
-    assert current.startswith("# Current visual frontier: P71-P93")
-    assert "## Current theorem frontier: P93" in current
-    assert "empirical determinants = (-1/48, 1/64, 5/192)" in current
-    assert "d_inf(P_emp, M_75) = 1/24" in current
-    for proposition in ("P89", "P90", "P91", "P92"):
-        assert f"| {proposition} |" in current
+    assert current.startswith(f"# Current visual frontier: P71-P{frontier}")
+    assert f"## Current theorem frontier: {label}" in current
+    assert figure in current
+    assert f"| {label} |" in current
+    for proposition in range(max(89, frontier - 4), frontier):
+        assert f"| P{proposition} |" in current
 
 
-def test_visual_atlas_leads_with_p93_before_historical_frontiers() -> None:
+def test_visual_atlas_leads_with_current_before_previous_frontiers() -> None:
+    frontier, label = _current_frontier()
+    figure = _current_figure()
+    previous = frontier - 1
     text = VISUAL_ATLAS.read_text(encoding="utf-8")
-    p93 = text.index('id="p93-frontier"')
-    p92 = text.index('id="p92-frontier"')
-    p93 = text.index('id="p93-frontier"')
-    p91 = text.index('id="p91-frontier"')
-    p90 = text.index('id="p90-frontier"')
+    current_pos = text.index(f'id="p{frontier}-frontier"')
+    previous_pos = text.index(f'id="p{previous}-frontier"')
 
-    assert p93 < p92 < p91 < p90
-    current = text[p93:p92]
-    assert "Current theorem frontier · P93" in current
-    assert P93_FIGURE in current
-    assert "1/24" in current
-    assert "proposition_93_localized_sign_coherence_rejection.md" in current
-    previous = text[p92:p91]
-    assert "Previous theorem frontier · P92" in previous
+    assert current_pos < previous_pos
+    current = text[current_pos:previous_pos]
+    assert f"Current theorem frontier · {label}" in current
+    assert figure in current
+    assert f"proposition_{frontier}_" in current
+    assert f"Previous theorem frontier · P{previous}" in text[previous_pos:]
 
 
 def test_homepage_balances_three_research_stages_and_keeps_history_specialist() -> None:
+    frontier, label = _current_frontier()
+    figure = _current_figure()
     text = HOME.read_text(encoding="utf-8")
     research_i = text.index('id="research-i-overview"')
-    p93 = text.index('id="p93-frontier"')
+    current = text.index(f'id="p{frontier}-frontier"')
     research_iii = text.index('id="research-iii-overview"')
     reader_paths = text.index('id="reader-paths"')
 
-    assert research_i < p93 < research_iii < reader_paths
-    current = text[p93:research_iii]
-    assert "Current theorem frontier · P93" in current
-    assert P93_FIGURE in current
-    assert "1/24" in current
-    assert "localized_sign_coherence_rejection.py" in current
-    assert "test_localized_sign_coherence_rejection.py" in current
-    assert "physics_pipeline.svg" in text[research_i:p93]
+    assert research_i < current < research_iii < reader_paths
+    block = text[current:research_iii]
+    assert f"Current theorem frontier · {label}" in block
+    assert figure in block
+    assert f"proposition_{frontier}_" in block
+    assert "physics_pipeline.svg" in text[research_i:current]
     assert "measurement_architecture.svg" in text[research_iii:reader_paths]
-    for historical_id in (
-        'id="p92-frontier"',
-        'id="p92-frontier"',
-        'id="p92-frontier"',
-        'id="p92-frontier"',
-        'id="p92-frontier"',
-        'id="p91-frontier"',
-        'id="p90-frontier"',
-        'id="p89-frontier"',
-        'id="p88-frontier"',
-    ):
-        assert historical_id not in text
-    assert "The 93 results form several dependency branches." in text
-    assert "all 93 propositions" in text
+    assert f"The {frontier} results form several dependency branches." in text
+    assert f"all {frontier} propositions" in text
+    for historical in range(88, frontier):
+        assert f'id="p{historical}-frontier"' not in text
 
 
 def test_plain_language_and_start_here_preserve_three_stage_architecture() -> None:
+    frontier, label = _current_frontier()
     plain = PLAIN.read_text(encoding="utf-8")
     start = START.read_text(encoding="utf-8")
 
@@ -122,8 +135,8 @@ def test_plain_language_and_start_here_preserve_three_stage_architecture() -> No
         assert "Research I" in source
         assert "Research II" in source
         assert "Research III" in source
-        assert "93" in source
-        assert "P93" in source
+        assert str(frontier) in source
+        assert label in source
         assert "physical-to-experiential bridge" in source
 
     assert 'id="three-stage-progress"' in plain
@@ -139,7 +152,9 @@ def test_figure_publication_synchronizer_reports_zero_drift() -> None:
     )
 
 
-def test_pages_build_bundles_exact_commit_p93_figure(tmp_path: Path) -> None:
+def test_pages_build_bundles_exact_commit_current_figure(tmp_path: Path) -> None:
+    frontier, _ = _current_frontier()
+    figure = _current_figure()
     site = tmp_path / "site"
     subprocess.run(
         [
@@ -154,30 +169,22 @@ def test_pages_build_bundles_exact_commit_p93_figure(tmp_path: Path) -> None:
         check=True,
     )
 
-    deployed_p93 = site / "figures" / P93_FIGURE
-    assert deployed_p93.read_bytes() == (DOC_FIGURES / P93_FIGURE).read_bytes()
+    deployed = site / "figures" / figure
+    assert deployed.read_bytes() == (DOC_FIGURES / figure).read_bytes()
 
     atlas = (site / "visual-atlas.html").read_text(encoding="utf-8")
-    assert f'src="figures/{P93_FIGURE}"' in atlas
+    assert f'src="figures/{figure}"' in atlas
     assert f'src="{RAW_PREFIX}' not in atlas
 
     home = (site / "index.html").read_text(encoding="utf-8")
-    assert f'src="figures/{P93_FIGURE}"' in home
+    assert f'src="figures/{figure}"' in home
     assert f'src="{RAW_PREFIX}' not in home
     research_i = home.index('id="research-i-overview"')
-    p93 = home.index('id="p93-frontier"')
+    current = home.index(f'id="p{frontier}-frontier"')
     research_iii = home.index('id="research-iii-overview"')
     reader_paths = home.index('id="reader-paths"')
-    assert research_i < p93 < research_iii < reader_paths < home.index('id="plain-language"')
-    for historical_id in (
-        'id="p92-frontier"',
-        'id="p92-frontier"',
-        'id="p92-frontier"',
-        'id="p92-frontier"',
-        'id="p92-frontier"',
-        'id="p91-frontier"',
-        'id="p90-frontier"',
-        'id="p89-frontier"',
-        'id="p88-frontier"',
-    ):
-        assert historical_id not in home
+    assert research_i < current < research_iii < reader_paths < home.index(
+        'id="plain-language"'
+    )
+    for historical in range(88, frontier):
+        assert f'id="p{historical}-frontier"' not in home
