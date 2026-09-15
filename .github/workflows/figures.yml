@@ -78,6 +78,36 @@ jobs:
       - name: Promote and regenerate P91 publication surfaces
         run: |
           python scripts/promote_p91_public_frontier.py
+          python - <<'PY'
+          from pathlib import Path
+
+          def replace(path, pairs):
+              p = Path(path)
+              text = p.read_text(encoding="utf-8")
+              for old, new in pairs:
+                  text = text.replace(old, new)
+              p.write_text(text, encoding="utf-8")
+
+          replace("website/index.html", (
+              ('<strong>90</strong><span>proposition-level results</span>', '<strong>91</strong><span>proposition-level results</span>'),
+              ('P90 current theorem frontier · v0.82.0', 'P91 current theorem frontier · v0.82.0'),
+              ('Explore all 90 results', 'Explore all 91 results'),
+              ('90 proposition-level results through P90', '91 proposition-level results through P91'),
+              ('The 90 results form several dependency branches.', 'The 91 results form several dependency branches.'),
+              ('The 90-result program', 'The 91-result program'),
+              ('all 90 propositions', 'all 91 propositions'),
+          ))
+          replace("website/visual-atlas.html", (
+              ('Current theorem frontier · P90', 'Previous theorem frontier · P90'),
+          ))
+          replace("website/plain-language.html", (
+              ('<strong>Research II</strong><span>90 results · current frontier P90</span>', '<strong>Research II</strong><span>91 results · current frontier P91</span>'),
+          ))
+          replace("website/start-here.html", (
+              ('<strong>Research II</strong><span>90 results · current frontier P90</span>', '<strong>Research II</strong><span>91 results · current frontier P91</span>'),
+              ('The 90 Research II propositions by scientific role', 'The 91 Research II propositions by scientific role'),
+          ))
+          PY
           python scripts/generate_all_figures.py
       - name: Commit synchronized P91 publication state to PR branch
         if: github.event_name == 'pull_request'
