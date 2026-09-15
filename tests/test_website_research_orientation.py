@@ -14,9 +14,6 @@ def test_research_map_gives_direct_audit_paths():
         "proposition_71_target_provenance_noncircularity.md",
         "proposition_72_target_measurement_channel_robustness.md",
         "proposition_73_target_channel_identifiability.md",
-        "proposition_74_finite_sample_target_channel_recovery.md",
-        "proposition_75_target_model_adequacy_overidentification.md",
-        "proposition_76_finite_sample_target_model_adequacy.md",
         "proposition_77_full_law_model_set_separation.md",
         "proposition_78_certified_continuous_model_separation.md",
         "proposition_79_certified_sampling_radius.md",
@@ -25,6 +22,11 @@ def test_research_map_gives_direct_audit_paths():
         "proposition_82_exact_nested_projection_contrast.md",
         "proposition_83_exact_projection_parity.md",
         "proposition_84_exact_projection_parity_contrast.md",
+        "proposition_85_exact_triple_projection_parity_functional.md",
+        "proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md",
+        "proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md",
+        "proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md",
+        "proposition_89_complete_linear_parity_duality.md",
         "proposition_90_exact_nonlinear_rank_one_separation.md",
         "proposition_91_mixed_prevalence_rank_two_flattening_separation.md",
         "p91_equation_provenance.md",
@@ -33,6 +35,15 @@ def test_research_map_gives_direct_audit_paths():
     ]
     for token in required:
         assert token in text, token
+
+    # P74-P76 are represented as the recovery-and-test stage on this orientation
+    # page; their detailed file-level audit paths live in the theorem roadmap and
+    # equation/citation map linked above.
+    assert "P73-P76" in text
+    assert "P74 adds finite-data recovery" in text
+    assert "P75 introduces fourth-view overidentification" in text
+    assert "P76 turns its necessary restrictions into finite-sample rejection certificates" in text
+
     assert 'index.html#p89-frontier' not in text
     assert 'index.html#p88-frontier' not in text
 
