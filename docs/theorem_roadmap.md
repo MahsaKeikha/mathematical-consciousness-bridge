@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P94**. The proposition record runs from **P1 through P94 with explicit dependency branches**. P71-P94 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P95**. The proposition record runs from **P1 through P95 with explicit dependency branches**. P71-P95 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -62,6 +62,8 @@ The current documented theorem frontier is **P94**. The proposition record runs 
 &\text{P93: the P92 sign-coherence witness yields a localized seven-cell finite-sample rejection certificate}\\
 &\Downarrow\\
 &\text{P94: finite-range dependence preserves the localized rejection gate under one common marginal law}\\
+&\Downarrow\\
+&\text{P95: predeclared drift regimes combine local P94 gates with familywise error control}\\
 \end{aligned}
 }
 \]
@@ -570,6 +572,7 @@ Direct proof: [P80](proposition_80_simplex_coupled_model_separation.md). Provena
 | [P92](proposition_92_exact_global_mixed_prevalence_distance.md) | three-minor conditional sign coherence | exact full-cube mixed-prevalence P75 distance `d_inf = 1/24` | proved conditional nonlinear theorem |
 | [P93](proposition_93_localized_sign_coherence_rejection.md) | seven-cell finite-sample sign preservation | localized IID rejection of P75 | proved conditional statistical theorem |
 | [P94](proposition_94_finite_range_dependent_sign_coherence.md) | finite-range coloring, Holder-Hoeffding concentration, exact rational radius certification | localized finite-range dependent rejection plus temporal-pooling no-go | proved conditional statistical theorem |
+| [P95](proposition_95_drift_aware_stratified_sign_coherence.md) | predeclared drift regimes, local P94 gates, familywise error allocation | drift-aware rejection of the all-regimes P75 null | proved conditional statistical theorem |
 
 ## 4. Calibration branch remains separate
 
@@ -626,9 +629,9 @@ After P89, the target-side chain has a substantially clearer scientific burden:
 
 P78 closes the global-lower-bound gap for the specific continuous P75 four-view binary latent family. P79 certifies the one-sided sampling-radius envelope. P80 strengthens the box relaxation by retaining probability normalization. P81 adds exact marginal and projected-event constraints. P82 adds exact non-cylinder residual constraints from nested projected events. P83 adds exact projection-parity observables. P84 then preserves shared-parameter compatibility across pairs of those parity observables through 220 exact joint contrasts.
 
-P86 closes the first minimally non-uniform four-event weighting step beyond the complete P85 triple-functional audit. The next computational question should not be chosen merely by increasing functional order or proposition number. A substantive continuation beyond P94 must close a separately stated mathematical or statistical gap and preserve the certified lower-bound direction. Natural candidates include an exact-rational support-function or convex relaxation of the full parity-coordinate image, with a certificate not already implied by P88, or an observable-specific finite-sample rejection theorem that propagates uncertainty through a selected P88 score rather than only through the global sixteen-cell radius. Target-view models with residual dependence, shared bias, temporal drift, or learned measurement pipelines also remain open.
+P86 closes the first minimally non-uniform four-event weighting step beyond the complete P85 triple-functional audit. The next computational question should not be chosen merely by increasing functional order or proposition number. P95 closes the separately stated drift-aware statistical gap left by P94 and preserve the certified lower-bound direction. Natural candidates include an exact-rational support-function or convex relaxation of the full parity-coordinate image, with a certificate not already implied by P88, or an observable-specific finite-sample rejection theorem that propagates uncertainty through a selected P88 score rather than only through the global sixteen-cell radius. Target-view models with residual dependence, shared bias, temporal drift, or learned measurement pipelines also remain open.
 
-None of P71-P94 identifies a latent variable with consciousness. None proves that a failed descriptor implies nonphysical consciousness. The physical-to-experiential bridge remains open.
+None of P71-P95 identifies a latent variable with consciousness. None proves that a failed descriptor implies nonphysical consciousness. The physical-to-experiential bridge remains open.
 
 
 ## P83 predecessor frontier: exact projection-parity separation
@@ -870,6 +873,14 @@ The executable certificate compares the squared radius using P79 exact rational 
 
 Direct proof: [P94](proposition_94_finite_range_dependent_sign_coherence.md). Provenance: [P94 equation record](p94_equation_provenance.md). Implementation: [`finite_range_dependent_sign_coherence.py`](../src/consciousness_bridge/finite_range_dependent_sign_coherence.py). Tests: [`test_finite_range_dependent_sign_coherence.py`](../tests/test_finite_range_dependent_sign_coherence.py).
 
-## After P94
+## P95: drift-aware stratified sign-coherence rejection
 
-P94 closes the first short-range temporal-dependence extension of the localized P92/P93 witness. Any P95 candidate must close a genuinely new mathematical or scientific gap. Natural directions include an explicitly drift-aware target, unknown-range or mixing-process concentration with declared assumptions, or a different observable witness not already implied by P92-P94. The physical-to-experiential bridge remains open.
+P94 proves that arbitrary pooling across changing marginals can create the forbidden P92 sign pattern even when the time-specific laws are individually P75-compatible. P95 therefore changes the population target rather than weakening the stationary theorem. It declares temporal regimes before testing, permits a different marginal law and finite dependence range in each regime, applies the P94 sign-stability gate locally, and allocates exact regime-specific error budgets whose sum is bounded by the desired familywise level. If any regime rejects, the joint null that every regime-specific marginal belongs to P75 is rejected. Cross-regime independence is not required.
+
+For the established P92 witness, two equally budgeted regimes with dependence range one cross the strict 95 percent familywise gate at 3645 observations per regime; the first exact denominator-24 replication is 3648.
+
+Direct proof: [P95](proposition_95_drift_aware_stratified_sign_coherence.md). Provenance: [P95 equation record](p95_equation_provenance.md). Implementation: [`drift_aware_stratified_sign_coherence.py`](../src/consciousness_bridge/drift_aware_stratified_sign_coherence.py). Tests: [`test_drift_aware_stratified_sign_coherence.py`](../tests/test_drift_aware_stratified_sign_coherence.py).
+
+## After P95
+
+P95 closes the first predeclared-regime repair of the P94 temporal-pooling no-go. Any P96 candidate must close a genuinely new mathematical or scientific gap. Natural directions include data-dependent segmentation with valid selection accounting, gradual within-regime drift with an explicitly time-varying target, unknown-range or mixing-process concentration under declared assumptions, or a different observable witness not already implied by P92-P95. The physical-to-experiential bridge remains open.

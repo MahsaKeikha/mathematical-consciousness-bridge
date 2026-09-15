@@ -69,7 +69,7 @@ The vocabulary falls into four groups:
 | Term | Meaning in this repository |
 | --- | --- |
 | **Scientific boundary** | An explicit statement of what a theorem does not establish. It prevents a valid mathematical result from being extended into an unsupported empirical or ontological claim. |
-| **Theorem frontier** | The highest numbered proposition currently integrated into the documented public research program. The current public frontier is **P94**. |
+| **Theorem frontier** | The highest numbered proposition currently integrated into the documented public research program. The current public frontier is **P95**. |
 | **Formal release** | The tagged software and publication release line. The current formal release remains **v0.82.0**, which is intentionally distinct from the theorem frontier. |
 
 ## Three distinctions worth remembering
@@ -105,8 +105,17 @@ For the complete technical record, open **[Research Navigation](research_navigat
 P93 is the historical IID finite-sample predecessor of P94. P92 remains the exact population-distance theorem at `d_inf(P_emp, M75) = 1/24`; P93 adds the localized seven-cell IID rejection handoff. P94 then extends that handoff to declared finite-range temporal dependence under one common marginal law. None of these frontier labels identifies consciousness or closes the physical-to-experiential bridge.
 
 
-## Current theorem frontier: P94
+## Historical finite-range predecessor: P94
 
 **Finite-range dependence:** observations may depend across nearby time indices but sigma-fields separated by more than a declared range `m` are independent. P94 uses residue classes modulo `m+1` to recover independent groups.
 
 **Common marginal law:** every observation has the same four-view population law. P94 requires this because an exact counterexample shows that pooling different valid P75 regimes can create a negative P92 determinant product.
+
+
+## Current theorem frontier: P95
+
+**Predeclared regime:** a time or experimental block whose boundary is fixed independently of the selected sign-coherence witness. P95 tests such regimes separately instead of pooling drifting marginal laws.
+
+**Familywise regime certificate:** each regime receives its own P94-style finite-range confidence event and error budget `alpha_b`. If the budgets satisfy `sum_b alpha_b <= alpha`, a union bound provides simultaneous confidence at least `1-alpha` without requiring independence between regimes.
+
+**P95 boundary:** data-dependent segmentation, unrestricted gradual drift inside a regime, model acceptance under non-rejection, consciousness identification, nonphysicality, and completion of the physical-to-experiential bridge are not established.

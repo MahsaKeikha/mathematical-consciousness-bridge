@@ -116,13 +116,13 @@ This is not a weakness hidden by the repository. It is one of the central organi
 
 ## Where the current work sits
 
-The public theorem frontier is **P94** and the formal release remains **v0.82.0**.
+The public theorem frontier is **P95** and the formal release remains **v0.82.0**.
 
 P94 extends the P93 localized seven-cell rejection theorem from IID observations to a declared finite-range dependent sequence with one common marginal four-view law. The squared finite-sample radius carries the exact factor `m+1` for dependence range `m`, while the P92 determinant geometry is unchanged.
 
 P94 also proves an exact temporal-pooling no-go: two individually valid interior P75 regimes can pool to a law with the negative determinant-product sign pattern used for rejection. Arbitrary marginal drift is therefore a separate problem and is not silently treated as finite-range dependence.
 
-If you want the current result itself, open **[P94](proposition_94_finite_range_dependent_sign_coherence.md)**. For the IID predecessor, open **[P93](proposition_93_localized_sign_coherence_rejection.md)**. For the complete dependency chain, use the **[Theorem Roadmap](theorem_roadmap.md)**.
+If you want the current result itself, open **[P95](proposition_95_drift_aware_stratified_sign_coherence.md)**. For the finite-range single-marginal predecessor, open **[P94](proposition_94_finite_range_dependent_sign_coherence.md)**. For the IID predecessor, open **[P93](proposition_93_localized_sign_coherence_rejection.md)**. For the complete dependency chain, use the **[Theorem Roadmap](theorem_roadmap.md)**.
 
 ---
 
@@ -184,3 +184,7 @@ P93 is the historical IID finite-sample handoff from P92. It uses only seven sel
 ### P94 finite-range dependent sign-coherence rejection
 
 P94 is the current Research II theorem frontier. It preserves the seven-cell P92/P93 nonlinear witness under a declared finite-range dependent sequence with one common marginal law, using exact rational certification of the dependence-adjusted confidence radius. Its exact pooling counterexample also marks the limit of that extension: arbitrary temporal drift remains outside the theorem. [Read P94](proposition_94_finite_range_dependent_sign_coherence.md).
+
+### P95: What if the marginal law drifts across predeclared regimes?
+
+P95 does not pool those regimes. It gives each predeclared regime its own marginal law, finite-range dependence assumption, sample size, and error budget. Local P94 certificates are then combined by a familywise union bound. If any regime is certified outside P75, the all-regimes P75 null is rejected at the declared familywise confidence. [Read P95](proposition_95_drift_aware_stratified_sign_coherence.md).

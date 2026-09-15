@@ -98,9 +98,9 @@ These remain conditional statistical target-measurement results, not validation 
 
 When citing a theorem, readers should consult the proposition document for its assumptions and scope rather than citing the theorem statement without its declared conditions.
 
-## Current theorem frontier: P94
+## Previous theorem frontier: P94
 
-The current documented theorem frontier is **P94**. The formal package release remains **Version 0.82.0**. P94 extends the localized P92/P93 sign-coherence rejection witness from IID observations to a declared finite-range dependent sequence with one common marginal four-view law. With dependence range `m`, its seven-cell confidence radius is
+P94 is the immediate finite-range predecessor to the current frontier. The formal package release remains **Version 0.82.0**. P94 extends the localized P92/P93 sign-coherence rejection witness from IID observations to a declared finite-range dependent sequence with one common marginal four-view law. With dependence range `m`, its seven-cell confidence radius is
 
 \[
 \varepsilon^{(m)}_{n,7}(\alpha)
@@ -177,3 +177,19 @@ For work that uses the exact full-cube mixed-prevalence distance theorem, cite t
 ## Proposition 93 method citation
 
 For work using the localized finite-sample P92 sign-coherence rejection gate, cite the program together with **Proposition 93: Localized Finite-Sample Sign-Coherence Rejection** and its [equation provenance record](docs/p93_equation_provenance.md). P93 gives a seven-cell familywise rejection rule and an exact 95 percent radius crossing between sample sizes 1622 and 1623 for the established sign geometry. The first exact replication of the original 24-count profile that clears the certificate is 1632. The theorem does not claim universal or minimax sample complexity.
+
+## Current theorem frontier: P95
+
+The current documented theorem frontier is **P95**. The formal package release remains **Version 0.82.0**.
+
+P95 is the drift-aware stratified continuation of P94. It permits different marginal four-view laws across predeclared regimes, applies the P94 finite-range certificate inside each regime, and controls the complete family by exact error-budget allocation and a union bound. No independence between regime confidence events is required.
+
+For the established P92 witness, two equally budgeted one-dependent regimes at 95 percent familywise confidence have a first mathematical crossing at `3645` observations per regime and a first exact denominator-24 replication at `3648`.
+
+- Proof: [`proposition_95_drift_aware_stratified_sign_coherence.md`](docs/proposition_95_drift_aware_stratified_sign_coherence.md)
+- Equation provenance: [`p95_equation_provenance.md`](docs/p95_equation_provenance.md)
+- Implementation: [`drift_aware_stratified_sign_coherence.py`](src/consciousness_bridge/drift_aware_stratified_sign_coherence.py)
+- Tests: [`test_drift_aware_stratified_sign_coherence.py`](tests/test_drift_aware_stratified_sign_coherence.py)
+- Figure: [`p95_drift_aware_stratified_sign_coherence.svg`](docs/figures/p95_drift_aware_stratified_sign_coherence.svg)
+
+P95 is a conditional model-audit theorem. It does not validate data-dependent segmentation, establish P75 under non-rejection, identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.

@@ -26,18 +26,18 @@ validated as SVG documents and enriched with accessible `<title>` and `<desc>`
 metadata. They are not reclassified as empirical evidence simply because they
 are visual.
 
-## Current frontier: P94
+## Current frontier: P95
 
-![P94 current theorem frontier](p94_finite_range_dependent_sign_coherence.svg)
+![P95 current theorem frontier](p95_drift_aware_stratified_sign_coherence.svg)
 
-Canonical current-frontier figure: `p94_finite_range_dependent_sign_coherence.svg`
+Canonical current-frontier figure: `p95_drift_aware_stratified_sign_coherence.svg`
 
 Recent exact frontier figures:
 
-- `p91_mixed_prevalence_rank_two_flattening_separation.svg`
 - `p92_exact_global_mixed_prevalence_distance.svg`
 - `p93_localized_sign_coherence_rejection.svg`
 - `p94_finite_range_dependent_sign_coherence.svg`
+- `p95_drift_aware_stratified_sign_coherence.svg`
 
 The GitHub-facing [`figures/`](../../figures/) gateway and its SHA-256
 [`manifest.json`](../../figures/manifest.json) are deterministically synchronized

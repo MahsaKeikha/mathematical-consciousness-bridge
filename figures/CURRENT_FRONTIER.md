@@ -1,32 +1,31 @@
-# Current visual frontier: P71-P94
+# Current visual frontier: P71-P95
 
 This page is generated from the canonical proposition and figure tree.
 It is the compact GitHub-facing visual route through the current target-side branch.
 
-## Current theorem frontier: P94
+## Current theorem frontier: P95
 
-![P94 current theorem frontier](../docs/figures/p94_finite_range_dependent_sign_coherence.svg)
+![P95 current theorem frontier](../docs/figures/p95_drift_aware_stratified_sign_coherence.svg)
 
-[Read Proposition 94](../docs/proposition_94_finite_range_dependent_sign_coherence.md)
+[Read Proposition 95](../docs/proposition_95_drift_aware_stratified_sign_coherence.md)
 
-[Open P94 equation provenance](../docs/p94_equation_provenance.md)
+[Open P95 equation provenance](../docs/p95_equation_provenance.md)
 
-### Exact P94 finite-range dependent sign-coherence rejection
+### Exact P95 drift-aware stratified sign-coherence rejection
 
-P94 preserves the P92/P93 nonlinear rejection witness under a declared finite-range dependent stream with one common marginal law.
+P95 responds to the P94 temporal-pooling no-go by testing predeclared regimes separately and controlling the complete family with one explicit error budget.
 
 ```text
-eps_m^2 = (m+1) log(14/alpha) / (2n)
-m=0: crossing 1623; exact replication 1632
-m=1: crossing 3246; exact replication 3264
-m=2: crossing 4869; exact replication 4872
-pooled-drift no-go determinants = (-65/65536, 11/65536, 3/65536)
-pooled determinant product = -2145/281474976710656
+local radius: eps_b^2 = (m_b+1) log(14/alpha_b) / (2 n_b)
+familywise condition: sum_b alpha_b <= alpha
+joint null: P_b belongs to M_75 for every declared regime b
+B=2, m=1, 95% familywise crossing = 3645 per regime
+first exact denominator-24 replication = 3648 per regime
 ```
 
-P94 is conditional on the declared dependence range and common marginal law. It does not establish arbitrary drift robustness or identify consciousness.
+P95 permits arbitrary marginal changes between predeclared regimes and requires only local common-marginal finite-range assumptions. It does not validate data-dependent segmentation, unrestricted gradual drift, model acceptance, or any consciousness ontology.
 
-## P71-P94 canonical theorem-figure index
+## P71-P95 canonical theorem-figure index
 
 | Proposition | Canonical figure | Proof | Provenance |
 | --- | --- | --- | --- |
@@ -54,6 +53,7 @@ P94 is conditional on the declared dependence range and common marginal law. It 
 | P92 | [figure](../docs/figures/p92_exact_global_mixed_prevalence_distance.svg) | [proof](../docs/proposition_92_exact_global_mixed_prevalence_distance.md) | [equations](../docs/p92_equation_provenance.md) |
 | P93 | [figure](../docs/figures/p93_localized_sign_coherence_rejection.svg) | [proof](../docs/proposition_93_localized_sign_coherence_rejection.md) | [equations](../docs/p93_equation_provenance.md) |
 | P94 | [figure](../docs/figures/p94_finite_range_dependent_sign_coherence.svg) | [proof](../docs/proposition_94_finite_range_dependent_sign_coherence.md) | [equations](../docs/p94_equation_provenance.md) |
+| P95 | [figure](../docs/figures/p95_drift_aware_stratified_sign_coherence.svg) | [proof](../docs/proposition_95_drift_aware_stratified_sign_coherence.md) | [equations](../docs/p95_equation_provenance.md) |
 
 ## Reproduce the visual record
 
@@ -67,4 +67,4 @@ The complete machine-readable SHA-256 inventory is in [`manifest.json`](manifest
 
 ## Interpretation boundary
 
-P71-P94 strengthens the methodology for testing a declared physical-to-target model. It does not derive consciousness from physics, prove nonphysicality, or close the physical-to-experiential bridge.
+P71-P95 strengthens the methodology for testing a declared physical-to-target model. It does not derive consciousness from physics, prove nonphysicality, or close the physical-to-experiential bridge.

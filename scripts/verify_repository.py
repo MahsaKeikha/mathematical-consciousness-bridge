@@ -25,7 +25,7 @@ from verify_frontier_publication import verify_frontier_publication
 
 ROOT = Path(__file__).resolve().parents[1]
 CURRENT_VERSION = "0.82.0"
-CURRENT_FRONTIER = "P94"
+CURRENT_FRONTIER = "P95"
 
 CORE_FILES = (
     "README.md",
@@ -89,6 +89,11 @@ CORE_FILES = (
     "src/consciousness_bridge/finite_range_dependent_sign_coherence.py",
     "src/consciousness_bridge/finite_range_dependent_sign_coherence_threshold.py",
     "tests/test_finite_range_dependent_sign_coherence.py",
+    "docs/proposition_95_drift_aware_stratified_sign_coherence.md",
+    "docs/p95_equation_provenance.md",
+    "docs/figures/p95_drift_aware_stratified_sign_coherence.svg",
+    "src/consciousness_bridge/drift_aware_stratified_sign_coherence.py",
+    "tests/test_drift_aware_stratified_sign_coherence.py",
     "src/consciousness_bridge/mixed_prevalence_rank_two_flattening_separation.py",
     "src/consciousness_bridge/exact_global_mixed_prevalence_distance.py",
     "tests/test_mixed_prevalence_rank_two_flattening_separation.py",

@@ -1,0 +1,13 @@
+name: p95-final-contract-repair-retired
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  retired:
+    runs-on: ubuntu-24.04
+    steps:
+      - run: echo "Final P95 publication contract repair is complete; this one-time workflow is retired."

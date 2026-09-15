@@ -23,21 +23,20 @@ def test_p94_formal_record_is_complete() -> None:
         assert (ROOT / path).is_file()
 
 
-def test_p94_is_current_reader_frontier() -> None:
+def test_p94_remains_visible_as_immediate_predecessor() -> None:
     home = _read("website/index.html")
     atlas = _read("website/visual-atlas.html")
     plain = _read("website/plain-language.html")
     start = _read("website/start-here.html")
     research = _read("website/research-map.html")
-    assert 'id="p94-frontier"' in home
-    assert "Current theorem frontier · P94" in home
-    assert atlas.index('id="p94-frontier"') < atlas.index('id="p93-frontier"')
-    assert "Previous theorem frontier · P93" in atlas
+    assert 'id="p94-frontier"' not in home
+    assert atlas.index('id="p95-frontier"') < atlas.index('id="p94-frontier"')
+    assert "Previous theorem frontier · P94" in atlas
     assert 'id="p94-reader-frontier"' in plain
     assert 'id="p94-reader-frontier"' in start
     assert 'id="p94-research-map"' in research
-    assert "94 results · current frontier P94" in plain
-    assert "94 results · current frontier P94" in start
+    assert "95 results · current frontier P95" in plain
+    assert "95 results · current frontier P95" in start
 
 
 def test_p94_drift_boundary_is_visible_to_readers() -> None:

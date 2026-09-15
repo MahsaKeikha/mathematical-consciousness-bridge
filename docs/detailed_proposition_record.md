@@ -1,6 +1,6 @@
 # Detailed proposition record
 
-## Complete P1 to P94 chronology
+## Complete P1 to P95 chronology
 
 This page preserves the proposition-by-proposition development history of the Mathematical Consciousness Bridge research program. It is intentionally separate from the main README so a first-time reader can follow the scientific argument without first learning the internal chronology of the project.
 
@@ -14,7 +14,7 @@ A first-time reader should not read this page as 94 disconnected proposition-lev
 
 ---
 
-## Complete P1 to P94 chronology
+## Complete P1 to P95 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
@@ -394,3 +394,15 @@ For the established sign geometry at `alpha = 0.05`, the mathematical radius cro
 - Figure: `docs/figures/p94_finite_range_dependent_sign_coherence.svg`
 
 P94 replaces P93's IID sampling assumption by a declared finite-range dependent sequence with one common marginal law. It also contains an exact temporal-pooling no-go showing that arbitrary drift can imitate the P92 sign rejection pattern.
+
+## Proposition 95: Drift-Aware Stratified Sign-Coherence Rejection
+
+P95 responds directly to the P94 temporal-pooling no-go. The observation stream is partitioned into predeclared regimes, and each regime may have its own marginal four-view law, sample size, finite dependence range, and exact error budget. P94 is applied locally. A union bound then gives simultaneous familywise validity without requiring independence between regimes. If any regime has a certified negative P92 determinant product, the joint null that every regime-specific marginal belongs to P75 is rejected. For two equally budgeted one-dependent regimes at 95 percent familywise confidence, the established witness crosses at 3645 observations per regime and first clears on an exact 24-count replication at 3648.
+
+- [Proof](proposition_95_drift_aware_stratified_sign_coherence.md)
+- [Equation provenance](p95_equation_provenance.md)
+- Implementation: `../src/consciousness_bridge/drift_aware_stratified_sign_coherence.py`
+- Tests: `../tests/test_drift_aware_stratified_sign_coherence.py`
+- Figure: `figures/p95_drift_aware_stratified_sign_coherence.svg`
+
+P95 requires predeclared regimes and local common-marginal assumptions. Data-dependent segmentation and unrestricted gradual drift remain open.

@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "canonical_root": "docs/figures",
-  "current_frontier": "P94",
-  "current_frontier_figure": "docs/figures/p94_finite_range_dependent_sign_coherence.svg",
-  "figure_count": 152,
+  "current_frontier": "P95",
+  "current_frontier_figure": "docs/figures/p95_drift_aware_stratified_sign_coherence.svg",
+  "figure_count": 153,
   "hash_algorithm": "sha256",
   "figures": [
     {
@@ -677,6 +677,14 @@
       "category": "theorem-or-architecture",
       "title": "P94 Finite-Range Dependent Sign-Coherence Rejection",
       "description_chars": 782
+    },
+    {
+      "path": "docs/figures/p95_drift_aware_stratified_sign_coherence.svg",
+      "sha256": "027106d6b45ca515b2c031dd694e82759a41ef738661efe06a815555db288c44",
+      "bytes": 6708,
+      "category": "theorem-or-architecture",
+      "title": "P95 Drift-Aware Stratified Sign-Coherence Rejection",
+      "description_chars": 992
     },
     {
       "path": "docs/figures/physics_mathematics_atlas.svg",

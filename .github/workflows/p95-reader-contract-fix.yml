@@ -1,0 +1,13 @@
+name: p95-reader-contract-fix-retired
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  retired:
+    runs-on: ubuntu-24.04
+    steps:
+      - run: echo "P95 reader synchronization is complete; this one-time workflow is retired."
