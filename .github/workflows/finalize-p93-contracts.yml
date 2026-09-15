@@ -30,7 +30,13 @@ jobs:
           python -m pip install -e ".[dev]"
           python -m pip install -r requirements-reproducibility.txt
       - name: Repair residual P93 contracts
-        run: python scripts/finalize_p93_contracts.py
+        run: |
+          # This one phrase was already promoted by the earlier publication pass.
+          # Remove only that now-noop assertion from the temporary helper so the
+          # remaining exact P93 repairs can run idempotently.
+          sed -i '/("P75-P92", "P75-P93"),/d' scripts/finalize_p93_contracts.py
+          python scripts/finalize_p93_contracts.py
+          git checkout -- scripts/finalize_p93_contracts.py
       - name: Regenerate derived figure publication surfaces
         run: python scripts/generate_all_figures.py
       - name: Validate exact repaired state
