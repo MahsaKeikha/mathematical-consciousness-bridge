@@ -132,6 +132,7 @@ jobs:
             echo "P91 publication state already synchronized."
             exit 0
           fi
+          git restore .github/workflows/figures.yml .github/workflows/reproducibility.yml .github/workflows/validate-research-three-website.yml || true
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
