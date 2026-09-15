@@ -38,21 +38,38 @@ jobs:
           python scripts/finalize_p93_contracts.py
           python - <<'PY'
           from pathlib import Path
-          path = Path('docs/theorem_roadmap.md')
-          text = path.read_text(encoding='utf-8')
-          text = text.replace(
+
+          roadmap_path = Path('docs/theorem_roadmap.md')
+          roadmap = roadmap_path.read_text(encoding='utf-8')
+          roadmap = roadmap.replace(
               "Any P93 claim must preserve one-sided certification and the repository's scientific boundary.",
               "The realized P93 theorem preserves one-sided certification and the repository's scientific boundary.",
           )
-          text = text.replace(
+          roadmap = roadmap.replace(
               "A substantive continuation beyond P92 must close a separately stated mathematical or statistical gap",
               "A substantive continuation beyond P93 must close a separately stated mathematical or statistical gap",
           )
-          text = text.replace(
+          roadmap = roadmap.replace(
               "None of P71-P88 identifies a latent variable with consciousness.",
               "None of P71-P93 identifies a latent variable with consciousness.",
           )
-          path.write_text(text, encoding='utf-8')
+          roadmap_path.write_text(roadmap, encoding='utf-8')
+
+          nav_path = Path('docs/research_navigation.md')
+          nav = nav_path.read_text(encoding='utf-8')
+          nav = nav.replace("**Results:** P75 through P92", "**Results:** P75 through P93")
+          nav = nav.replace(
+              "**Current frontier:** [P92: Exact Global Mixed-Prevalence Distance](proposition_92_exact_global_mixed_prevalence_distance.md)",
+              "**Current frontier:** [P93: Localized Finite-Sample Sign-Coherence Rejection](proposition_93_localized_sign_coherence_rejection.md)",
+          )
+          nav = nav.replace("P74 through P92 via", "P74 through P93 via")
+          nav = nav.replace("## P90 current frontier", "## P90 historical nonlinear frontier")
+          nav = nav.replace("## P92 current frontier", "## P92 historical exact population frontier")
+          nav = nav.replace(
+              "## P93 current frontier\n\n| What you want | Direct link |",
+              "## P93 current frontier\n\nFor P93:\n\n| What you want | Direct link |",
+          )
+          nav_path.write_text(nav, encoding='utf-8')
           PY
           git checkout -- scripts/finalize_p93_contracts.py
       - name: Regenerate derived figure publication surfaces
