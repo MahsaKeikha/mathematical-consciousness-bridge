@@ -37,11 +37,14 @@ jobs:
           python -m pip install -e ".[dev]"
           python -m pip install -r requirements-reproducibility.txt
 
+      - name: Validate P93 citation baseline
+        run: python scripts/fix_p94_generated_contracts.py pre
+
       - name: Apply P94 source publication migration
         run: python scripts/promote_p94_public_frontier.py
 
-      - name: Normalize generated P94 migration contracts
-        run: python scripts/fix_p94_generated_contracts.py
+      - name: Repair generated P94 test contract
+        run: python scripts/fix_p94_generated_contracts.py post
 
       - name: Finalize P94 publication contracts
         run: python scripts/finalize_p94_publication.py
