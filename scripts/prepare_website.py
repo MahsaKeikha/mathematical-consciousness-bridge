@@ -16,18 +16,18 @@ from pathlib import Path
 
 if __package__:
     from scripts.synchronize_research_three_website import (
+        CURRENT_HOME_MARKER,
         CURRENT_RESEARCH_THREE_PIN,
         LEGACY_RESEARCH_THREE_PINS,
         MEASUREMENT_SCIENCE_REQUIRED_MARKERS,
-        CURRENT_HOME_MARKER,
         synchronize_site,
     )
 else:
     from synchronize_research_three_website import (
+        CURRENT_HOME_MARKER,
         CURRENT_RESEARCH_THREE_PIN,
         LEGACY_RESEARCH_THREE_PINS,
         MEASUREMENT_SCIENCE_REQUIRED_MARKERS,
-        CURRENT_HOME_MARKER,
         synchronize_site,
     )
 
@@ -355,7 +355,7 @@ def main() -> None:
     args = parser.parse_args()
     prepare_website(args.source, args.output)
     print(
-        "prepared website with Research II P88 and Research III "
+        "prepared website with Research II P90 and Research III "
         f"{MEASUREMENT_PIN}: {args.output}"
     )
 
