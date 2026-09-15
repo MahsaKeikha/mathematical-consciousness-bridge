@@ -1,0 +1,53 @@
+name: fix-p91-final-publication-contracts
+
+on:
+  push:
+    branches:
+      - p91-mixed-prevalence-rank-two-flattening
+    paths:
+      - ".p91-final-publication-fix.trigger"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fix-p91-final-publication-contracts
+  cancel-in-progress: false
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: p91-mixed-prevalence-rank-two-flattening
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Apply guarded publication fixes
+        run: python scripts/fix_p91_final_publication_contracts.py
+      - name: Install repository
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+      - name: Run focused publication regression tests
+        run: |
+          python -m pytest -q \
+            tests/test_p84_reader_presentation.py \
+            tests/test_p90_reader_surface_coherence.py \
+            tests/test_p91_reader_surface_coherence.py \
+            tests/test_reader_experience.py \
+            tests/test_scholarly_provenance_surface.py \
+            tests/test_website_link_integrity.py
+      - name: Verify repository publication state
+        run: |
+          python scripts/verify_repository.py
+          git diff --check
+      - name: Commit fixes and remove one-shot maintenance files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add website/implementation.html website/visual-atlas.html website/sources.html
+          git rm .p91-final-publication-fix.trigger scripts/fix_p91_final_publication_contracts.py .github/workflows/fix-p91-final-publication-contracts.yml
+          git commit -m "Fix remaining P91 publication contracts"
+          git push origin HEAD:p91-mixed-prevalence-rank-two-flattening
