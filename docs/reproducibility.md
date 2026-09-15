@@ -10,12 +10,12 @@ You do not need every command at once. Choose the route that matches your goal.
 | --- | --- |
 | Reproduce the maintained repository as strictly as possible | `make reproduce` |
 | Run the normal verification suite | `make check` |
-| Run only the current P97 theorem checks | focused P97 commands below |
+| Run only the current P98 theorem checks | focused P98 commands below |
 | Validate figures without rebuilding them | `make figures-check` |
 | Regenerate the complete visual record | `make figures` |
 | Inspect CI without installing locally | GitHub Actions |
 
-The current public theorem frontier is **P97**. The formal release remains **v0.82.0**.
+The current public theorem frontier is **P98**. The formal release remains **v0.82.0**.
 
 ---
 
@@ -104,18 +104,18 @@ Use this route when you want to verify the current committed state without regen
 
 ---
 
-## 5. Focused audit of the current P97 frontier
+## 5. Focused audit of the current P98 frontier
 
-The current theorem frontier is **P97**.
+The current theorem frontier is **P98**.
 
 Its direct technical record is:
 
 ```text
-docs/proposition_97_simultaneous_candidate_family_selection.md
-docs/p97_equation_provenance.md
-src/consciousness_bridge/simultaneous_candidate_family_selection.py
-tests/test_simultaneous_candidate_family_selection.py
-docs/figures/p97_simultaneous_candidate_family_selection.svg
+docs/proposition_98_cross_fitted_selection_valid_certification.md
+docs/p98_equation_provenance.md
+src/consciousness_bridge/cross_fitted_selection_valid_certification.py
+tests/test_cross_fitted_selection_valid_certification.py
+docs/figures/p98_cross_fitted_selection_valid_certification.svg
 figures/manifest.json
 ```
 
@@ -123,9 +123,9 @@ Run the focused theorem and publication checks with:
 
 ```bash
 python -m pytest -q \
-  tests/test_simultaneous_candidate_family_selection.py \
+  tests/test_cross_fitted_selection_valid_certification.py \
+  tests/test_p98_reader_surface_coherence.py \
   tests/test_p97_reader_surface_coherence.py \
-  tests/test_p96_reader_surface_coherence.py \
   tests/test_frontier_reader_narrative.py \
   tests/test_figure_publication_sync.py \
   tests/test_frontier_publication_consistency.py
@@ -133,11 +133,11 @@ python scripts/sync_figure_publication.py --check
 python scripts/verify_repository.py
 ```
 
-P97 permits the same certification data to be used across a finite predeclared candidate family. Candidate-level P95 certificates are made simultaneous by a second union bound, so a final post-inspection choice within that fixed family preserves validity.
+P98 rotates P96 holdout validity across genuinely independent blocks. Each fold excludes its own certification block from plan selection, and an outer exact fold budget plus union bound makes all rotated certificates simultaneous.
 
-For two equally budgeted candidates with two one-step-dependent regimes each, the 95 percent threshold is `4045` observations per regime and the first exact denominator-24 replication is `4056`. The balanced unique-observation totals are `8090` and `8112` because candidate plans reuse the same data.
+For two folds with two one-step-dependent regimes each, the 95 percent per-regime threshold is `4045`, first exact replication is `4056`, and the unique-data totals are `16180` and `16224`.
 
-A new candidate generated after inspection is outside the theorem. Non-rejection remains inconclusive. P97 does not license unrestricted same-data search, identify a latent state with consciousness, establish nonphysicality, validate an alternative ontology, or close the physical-to-experiential bridge.
+A random partition of one dependent stream is not automatically a valid cross-fitted design. Own-fold leakage, unbudgeted scheme search, model acceptance, consciousness identification, nonphysicality, and bridge completion remain outside P98.
 
 ---
 
@@ -232,7 +232,7 @@ The validation path checks the generated manifests, SVG parseability, canonical 
 The current frontier figure is:
 
 ```text
-docs/figures/p97_simultaneous_candidate_family_selection.svg
+docs/figures/p98_cross_fitted_selection_valid_certification.svg
 ```
 
 ---

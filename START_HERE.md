@@ -63,9 +63,9 @@ Those results include methods for:
 - controlling uncertainty from finite data and numerical computation;
 - making the complete reasoning chain reproducible and auditable.
 
-The public theorem frontier is **P97**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains **open**.
+The public theorem frontier is **P98**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains **open**.
 
-You do not need to read 97 propositions to understand the project.
+You do not need to read 98 propositions to understand the project.
 
 ---
 
@@ -78,7 +78,7 @@ You do not need to read 97 propositions to understand the project.
 | Browse the research through figures | **[Figure Catalog](docs/figure_catalog.md)** |
 | Move into the formal scientific architecture | **[Technical Research Architecture](docs/research_architecture.md)** |
 | See how the mathematical results depend on one another | **[Theorem Roadmap](docs/theorem_roadmap.md)** |
-| Read the current frontier result | **[P97](docs/proposition_97_simultaneous_candidate_family_selection.md)** |
+| Read the current frontier result | **[P98](docs/proposition_98_cross_fitted_selection_valid_certification.md)** |
 | Inspect every proposition in the complete technical record | **[Detailed Proposition Record](docs/detailed_proposition_record.md)** |
 | Trace equations, sources, implementations, and tests | **[Research Navigation](docs/research_navigation.md)** |
 | Reproduce the computational work | **[Reproducibility Guide](docs/reproducibility.md)** |
@@ -140,3 +140,12 @@ An ordinary random split of a temporally dependent stream is not automatically a
 P97 addresses that complementary same-data case. A finite family of candidate regime plans is fixed before the certification statistics are inspected. Each candidate receives its own exact P95 familywise budget, and a second union bound across candidates makes all candidate certificates valid simultaneously. The final candidate may then be chosen after seeing the results without invalidating the selected certificate. [Read P97](docs/proposition_97_simultaneous_candidate_family_selection.md).
 
 For two predeclared candidates with two one-step-dependent regimes each, equal spending of a 5 percent global error budget gives a mathematical threshold of 4045 observations per regime and a first exact denominator-24 replication at 4056. P97 pays for same-data search through multiplicity. It does not permit generating a new candidate after inspection, unrestricted within-regime drift, model acceptance after non-rejection, consciousness identification, nonphysicality, or completion of the physical-to-experiential bridge.
+
+
+### P98: cross-fitted selection-valid certification
+
+P98 rotates the P96 independent-holdout idea across mutually independent blocks. Each fold may choose its regime plan using the other blocks, but its own certification block is excluded from that selection and is evaluated only after the plan is frozen. The fold certificates are allowed to be dependent; an outer union bound controls their total error budget.
+
+For two folds with two one-step-dependent regimes each, the 95 percent per-regime threshold is 4045 and the first exact denominator-24 replication is 4056. Because the folds are genuinely different certification blocks, the unique totals are 16180 and 16224.
+
+P98 does not make an ordinary split of a dependent time series independent. It does not permit own-fold leakage, unbudgeted cross-fitting search, model acceptance after non-rejection, consciousness identification, nonphysicality, or completion of the physical-to-experiential bridge. [Read P98](docs/proposition_98_cross_fitted_selection_valid_certification.md).

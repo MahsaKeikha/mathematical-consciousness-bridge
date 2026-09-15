@@ -116,13 +116,13 @@ This is not a weakness hidden by the repository. It is one of the central organi
 
 ## Where the current work sits
 
-The public theorem frontier is **P97** and the formal release remains **v0.82.0**.
+The public theorem frontier is **P98** and the formal release remains **v0.82.0**.
 
 P94 extends the P93 localized seven-cell rejection theorem from IID observations to a declared finite-range dependent sequence with one common marginal four-view law. The squared finite-sample radius carries the exact factor `m+1` for dependence range `m`, while the P92 determinant geometry is unchanged.
 
 P94 also proves an exact temporal-pooling no-go: two individually valid interior P75 regimes can pool to a law with the negative determinant-product sign pattern used for rejection. Arbitrary marginal drift is therefore a separate problem and is not silently treated as finite-range dependence.
 
-If you want the current result itself, open **[P97](proposition_97_simultaneous_candidate_family_selection.md)**. For the previous independent-holdout frontier, open **[P96](proposition_96_selection_valid_holdout_stratification.md)**. For the finite-range single-marginal predecessor, open **[P94](proposition_94_finite_range_dependent_sign_coherence.md)**. For the IID predecessor, open **[P93](proposition_93_localized_sign_coherence_rejection.md)**. For the complete dependency chain, use the **[Theorem Roadmap](theorem_roadmap.md)**.
+If you want the current result itself, open **[P98](proposition_98_cross_fitted_selection_valid_certification.md)**. For the previous finite same-data family frontier, open **[P97](proposition_97_simultaneous_candidate_family_selection.md)**. For the previous independent-holdout frontier, open **[P96](proposition_96_selection_valid_holdout_stratification.md)**. For the finite-range single-marginal predecessor, open **[P94](proposition_94_finite_range_dependent_sign_coherence.md)**. For the IID predecessor, open **[P93](proposition_93_localized_sign_coherence_rejection.md)**. For the complete dependency chain, use the **[Theorem Roadmap](theorem_roadmap.md)**.
 
 ---
 
@@ -206,3 +206,14 @@ Each candidate receives its own exact P95 familywise error budget. A second unio
 For two equally budgeted candidates with two one-step-dependent regimes each, the 95 percent threshold is 4045 observations per regime, with first exact denominator-24 replication at 4056. The multiplicity cost replaces P96's sample-separation cost.
 
 P97 does not justify creating a new candidate after inspection, unbounded same-data search, unrestricted within-regime drift, model acceptance after non-rejection, consciousness identification, nonphysicality, or completion of the physical-to-experiential bridge.
+
+
+## P98: cross-fitted selection-valid certification
+
+P98 returns to the P96 independent-holdout principle and rotates it across several mutually independent blocks. In fold `k`, the plan may be learned by any procedure using the other blocks, but block `k` is excluded from its own selection information and is used only after the plan is frozen.
+
+Each fold therefore receives a valid P96 certificate with failure budget `beta_k`. The fold certificates may be dependent because their selection information overlaps. P98 does not multiply their probabilities; it combines their unconditional failure bounds with one union bound. Any post-inspection selected fold remains valid on the simultaneous event.
+
+For two folds, two regimes per fold, and one-step dependence, the 95 percent per-regime crossing remains 4045 and the first exact replication remains 4056. Unlike P97, the folds are genuinely different certification blocks, so the unique-data totals are 16180 and 16224.
+
+P98 does not justify splitting one dependent stream and calling the pieces independent, using a fold's own certification statistics to choose its plan, unbudgeted exploration of many cross-fitting schemes, model acceptance after non-rejection, consciousness identification, nonphysicality, or completion of the physical-to-experiential bridge.

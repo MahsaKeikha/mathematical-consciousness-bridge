@@ -54,9 +54,9 @@ You do **not** need to read the propositions in order to understand the project.
 
 If you want the complete theorem record, including assumptions, proofs, implementations, tests, figures, and scientific boundaries, use the **[Detailed Proposition Record](docs/detailed_proposition_record.md)** or the **[Theorem Roadmap](docs/theorem_roadmap.md)**.
 
-The current public theorem frontier is **P97**. The formal release remains **v0.82.0**.
+The current public theorem frontier is **P98**. The formal release remains **v0.82.0**.
 
-**[Read the current frontier](docs/proposition_97_simultaneous_candidate_family_selection.md)**
+**[Read the current frontier](docs/proposition_98_cross_fitted_selection_valid_certification.md)**
 
 ---
 
@@ -70,13 +70,17 @@ The current public theorem frontier is **P97**. The formal release remains **v0.
 
 ### Current theorem frontier
 
-![P97 Simultaneous Finite Candidate-Family Selection](docs/figures/p97_simultaneous_candidate_family_selection.svg)
+![P98 Cross-Fitted Selection-Valid Certification](docs/figures/p98_cross_fitted_selection_valid_certification.svg)
 
-**Figure 2. P97 simultaneous finite candidate-family selection.** P96 makes adaptive regime selection valid by separating pilot selection from independent holdout certification. P97 handles a complementary case: the same certification data may be used to compare and select among a finite family of candidate regime plans, provided that the complete family is fixed before the certification statistics are inspected. Each candidate receives its own P95 familywise budget, and a second union bound across candidates makes all candidate certificates simultaneous. The final candidate can therefore be chosen after inspection without invalidating the selected certificate.
+**Figure 2. P98 cross-fitted selection-valid certification.** P98 rotates the P96 holdout principle across mutually independent data blocks. In fold `k`, an arbitrary plan may be learned from the other blocks, but block `k` is excluded from its own selection rule and is inspected only after the fold plan is frozen. P96 then supplies a fold-level guarantee, and one outer union bound controls the complete set of rotated certificates without assuming that the final fold certificates are independent.
 
-For two predeclared candidates, each containing two regimes with one-step dependence and equal division of a 5 percent global error budget, the exact threshold is **4045 observations per regime**, with the first denominator-24 replication at **4056 per regime**. Because the candidates reuse the same underlying data, the balanced unique-observation totals are **8090** and **8112**, not multiplied again by the number of candidates.
+For two folds with two one-step-dependent regimes each at 95 percent global confidence, the per-regime crossing is **4045**, the first exact denominator-24 replication is **4056**, each certification fold contains **8090 / 8112** observations, and the two-fold unique-data totals are **16180 / 16224**.
 
-P97 does not justify generating a new candidate after inspecting the certification results, searching an unbounded family without additional accounting, allowing unrestricted drift inside a regime, accepting P75 after non-rejection, identifying consciousness, establishing nonphysicality, or closing the physical-to-experiential bridge.
+P98 does not justify treating arbitrary pieces of one dependent stream as independent folds, using a fold's own certification statistics to choose the plan later tested on that fold, unbudgeted exploration of many cross-fitting schemes, accepting P75 after non-rejection, identifying consciousness, establishing nonphysicality, or closing the physical-to-experiential bridge.
+
+### Immediate predecessor: P97
+
+[P97: Simultaneous Finite Candidate-Family Selection](docs/proposition_97_simultaneous_candidate_family_selection.md) remains the immediate same-data selection predecessor to P98. P97 permits post-inspection choice only within a finite candidate family fixed before certification statistics are inspected and pays for that search through explicit multiplicity. P98 takes a different route by rotating genuinely independent certification blocks while enforcing own-fold exclusion.
 
 ## Choose your path
 
@@ -122,6 +126,6 @@ For scholarly citation, see **[CITATION.md](CITATION.md)** and **[CITATION.cff](
 
 MIT License. See **[LICENSE](LICENSE)**.
 
-**Public theorem frontier:** P97
+**Public theorem frontier:** P98
 **Formal release:** v0.82.0
 **Final bridge from physical description to experience:** open

@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P97**. The proposition record runs from **P1 through P97 with explicit dependency branches**. P71-P97 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P98**. The proposition record runs from **P1 through P98 with explicit dependency branches**. P71-P98 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -68,6 +68,8 @@ The current documented theorem frontier is **P97**. The proposition record runs 
 &\text{P96: pilot-selected regime plans are frozen and certified on independent holdout information}\\
 &\Downarrow\\
 &\text{P97: finite predeclared candidate families support same-data selection by simultaneous error accounting}\\
+&\Downarrow\\
+&\text{P98: rotated independent-block holdouts support cross-fitted selection-valid certification}\\
 \end{aligned}
 }
 \]
@@ -937,6 +939,38 @@ Direct proof: [P97](proposition_97_simultaneous_candidate_family_selection.md). 
 
 P97 does not validate a candidate generated after inspecting certification results, an unrestricted or infinite search without additional control, within-regime drift beyond the local assumptions, model acceptance under non-rejection, consciousness identification, nonphysicality, or bridge completion.
 
-## After P97
+## P98: cross-fitted selection-valid certification
 
-P96 closes the independent-holdout version of adaptive regime selection. Any P98 candidate must close a genuinely new mathematical or scientific gap. Natural directions include guarded cross-fitting or multiple independent splits that recover pilot efficiency without invalidating selection, simultaneous candidate-family accounting without sample splitting, gradual within-regime drift with an explicitly time-varying target, or concentration under broader declared dependence classes. The physical-to-experiential bridge remains open.
+P98 rotates the P96 selection-certification separation across `K` mutually independent data blocks. For fold `k`, the selected plan `Pi_k` may depend arbitrarily on the other blocks but not on the certification block `D_k` itself. Thus
+
+\[
+D_k \perp S_k,
+\]
+
+and P96 gives a fold-level event `A_k` with
+
+\[
+\Pr(A_k^c) \le \beta_k.
+\]
+
+The final fold certificates need not be independent because their selection information overlaps. If
+
+\[
+\sum_{k=1}^{K} \beta_k \le \alpha,
+\]
+
+then the union bound gives
+
+\[
+\Pr\left(\bigcap_{k=1}^{K} A_k\right) \ge 1-\alpha.
+\]
+
+For two folds, two regimes per fold, dependence range one, and equal 5 percent spending, the per-regime threshold is 4045 and the first exact denominator-24 replication is 4056. Each certification fold uses 8090 or 8112 observations, while the two-fold unique totals are 16180 or 16224.
+
+Direct proof: [P98](proposition_98_cross_fitted_selection_valid_certification.md). Provenance: [P98 equation record](p98_equation_provenance.md). Implementation: [`cross_fitted_selection_valid_certification.py`](../src/consciousness_bridge/cross_fitted_selection_valid_certification.py). Tests: [`test_cross_fitted_selection_valid_certification.py`](../tests/test_cross_fitted_selection_valid_certification.py).
+
+P98 does not validate dependent-stream pseudo-folds, own-fold leakage, misspecified dependence, unrestricted within-regime drift, unbudgeted cross-fitting search, model acceptance, consciousness identification, nonphysicality, or bridge completion.
+
+## After P98
+
+P96 closes the independent-holdout version of adaptive regime selection. Any P99 candidate must close a genuinely new mathematical or scientific gap. Natural directions include guarded cross-fitting or multiple independent splits that recover pilot efficiency without invalidating selection, simultaneous candidate-family accounting without sample splitting, gradual within-regime drift with an explicitly time-varying target, or concentration under broader declared dependence classes. The physical-to-experiential bridge remains open.

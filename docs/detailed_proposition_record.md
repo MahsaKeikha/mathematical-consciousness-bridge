@@ -1,6 +1,6 @@
 # Detailed proposition record
 
-## Complete P1 to P97 chronology
+## Complete P1 to P98 chronology
 
 This page preserves the proposition-by-proposition development history of the Mathematical Consciousness Bridge research program. It is intentionally separate from the main README so a first-time reader can follow the scientific argument without first learning the internal chronology of the project.
 
@@ -10,11 +10,11 @@ The scientific status rule is strict throughout: a theorem is only a theorem und
 
 ### How to use this record
 
-A first-time reader should not read this page as 97 disconnected proposition-level results. Use it as an audit index: identify the scientific role of a proposition, open its direct proof when needed, then follow implementation/tests/provenance links for verification. For the shortest conceptual path, begin with [Start Here](../START_HERE.md) and [Research Navigation](research_navigation.md). The [Reader Experience and Visual Presentation Standard](reader_experience_and_visual_standard.md) explains the repository-wide explanation and visual hierarchy.
+A first-time reader should not read this page as 98 disconnected proposition-level results. Use it as an audit index: identify the scientific role of a proposition, open its direct proof when needed, then follow implementation/tests/provenance links for verification. For the shortest conceptual path, begin with [Start Here](../START_HERE.md) and [Research Navigation](research_navigation.md). The [Reader Experience and Visual Presentation Standard](reader_experience_and_visual_standard.md) explains the repository-wide explanation and visual hierarchy.
 
 ---
 
-## Complete P1 to P97 chronology
+## Complete P1 to P98 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
@@ -436,3 +436,16 @@ For two equally budgeted candidates, each with two regimes and dependence range 
 **Boundary.** The candidate family itself must be fixed before inspection. Newly generated post-inspection candidates, unrestricted search, within-regime drift beyond the local assumptions, model acceptance after non-rejection, consciousness identification, nonphysicality, and completion of the physical-to-experiential bridge remain open.
 
 Direct proof: [P97](proposition_97_simultaneous_candidate_family_selection.md). Provenance: [P97 equation record](p97_equation_provenance.md). Implementation: [`simultaneous_candidate_family_selection.py`](../src/consciousness_bridge/simultaneous_candidate_family_selection.py). Tests: [`test_simultaneous_candidate_family_selection.py`](../tests/test_simultaneous_candidate_family_selection.py).
+
+
+## P98: Cross-Fitted Selection-Valid Certification
+
+**Question.** Can the P96 independent-holdout principle be rotated so every genuinely independent data block contributes to final certification somewhere, without allowing a fold to select and certify its own plan on the same information?
+
+**Result.** Yes. Let mutually independent blocks `D_1,...,D_K` be given. For fold `k`, the selected P95/P96 regime plan may be an arbitrary function of the other blocks but must exclude `D_k` from its own selection information and be frozen before `D_k` is evaluated. P96 then gives a fold-level failure probability bounded by `beta_k`. When `sum_k beta_k <= alpha`, a union bound yields one simultaneous event of confidence at least `1-alpha` for all rotated fold certificates. The fold certificates themselves need not be independent.
+
+For two folds, two regimes per fold, dependence range one, and equal 5 percent global spending, the local budget is `1/80`, the first mathematical crossing is 4045 observations per regime, and the first exact denominator-24 replication is 4056. Each certification fold therefore uses 8090 or 8112 observations, and the two-fold unique-data totals are 16180 or 16224.
+
+**Boundary.** P98 requires genuinely independent certification blocks and own-fold exclusion. A random partition of one dependent time series is not automatically valid. Misspecified dependence ranges, unrestricted within-regime drift, unbudgeted exploration of multiple cross-fitting schemes, model acceptance, consciousness identification, nonphysicality, and completion of the physical-to-experiential bridge remain open.
+
+Direct proof: [P98](proposition_98_cross_fitted_selection_valid_certification.md). Provenance: [P98 equation record](p98_equation_provenance.md). Implementation: [`cross_fitted_selection_valid_certification.py`](../src/consciousness_bridge/cross_fitted_selection_valid_certification.py). Tests: [`test_cross_fitted_selection_valid_certification.py`](../tests/test_cross_fitted_selection_valid_certification.py).

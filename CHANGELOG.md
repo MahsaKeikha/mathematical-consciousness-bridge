@@ -1,3 +1,15 @@
+# Unreleased research frontier - P98
+
+## P98 cross-fitted selection-valid certification frontier
+
+- Added Proposition 98 as the rotated independent-block extension of P96 holdout selection validity.
+- Allowed every independent block to serve once as certification information and elsewhere as selection information, while forbidding a fold from using its own certification statistics to choose the plan later tested on that fold.
+- Combined fold-level P96 guarantees with exact rational fold budgets and one outer union bound; no independence between the final fold certificates is assumed.
+- Certified the balanced K=2, B=2, m=1, 95 percent crossing at 4045 observations per regime and first exact denominator-24 replication at 4056.
+- Recorded 8090/8112 observations per certification fold and 16180/16224 unique observations across two genuinely distinct folds.
+- Preserved the boundary that arbitrary splits of a dependent stream, own-fold leakage, unbudgeted cross-fitting search, model acceptance, consciousness identification, nonphysicality, and bridge completion remain open.
+- Kept formal release v0.82.0 separate from the advancing theorem frontier.
+
 # Unreleased research frontier - P97
 
 ## P97 simultaneous finite candidate-family selection frontier

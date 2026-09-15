@@ -8,7 +8,7 @@ If this research program, one of its propositions, figures, algorithms, or imple
 
 > Keikha, M. (2026). *Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem* (Version 0.82.0). GitHub research repository. https://github.com/MahsaKeikha/mathematical-consciousness-bridge
 
-This is the preferred citation for the research program at the current documented frontier, P97.
+This is the preferred citation for the research program at the current documented frontier, P98.
 
 ## BibTeX
 
@@ -20,7 +20,7 @@ This is the preferred citation for the research program at the current documente
   version      = {0.82.0},
   howpublished = {GitHub research repository},
   url          = {https://github.com/MahsaKeikha/mathematical-consciousness-bridge},
-  note         = {Ongoing research program. Current documented theorem frontier: P97.}
+  note         = {Ongoing research program. Current documented theorem frontier: P98.}
 }
 ```
 
@@ -53,13 +53,21 @@ This repository is an evolving research program. For reproducible scholarly use:
 3. Cite the individual proposition or artifact when your argument depends on a specific theorem, figure, algorithm, or test.
 4. Do not attribute later propositions or later numerical results to an earlier version of the repository.
 
-The current citation metadata identify Version **0.82.0** and theorem frontier **P97**. Future research versions should update the version number, theorem frontier, citation metadata, and archival record together.
+The current citation metadata identify Version **0.82.0** and theorem frontier **P98**. Future research versions should update the version number, theorem frontier, citation metadata, and archival record together.
 
-## Current theorem frontier: P97
+## Previous theorem frontier: P97
 
 The current documented theorem frontier is **P97**. P97 permits same-data post-inspection selection among a finite candidate family fixed before certification statistics are inspected. Each candidate receives an exact P95 familywise budget, and a second union bound across candidates makes the candidate certificates simultaneous. The formal package release remains **Version 0.82.0**.
 
 P97 is a conditional model-rejection theorem. It does not validate newly generated post-inspection candidates, unrestricted search, model acceptance after non-rejection, consciousness identification, nonphysicality, or completion of the physical-to-experiential bridge.
+
+## Current theorem frontier: P98
+
+The current documented theorem frontier is **P98**. P98 rotates the P96 independent-holdout construction across mutually independent data blocks. For fold `k`, the selected regime plan may be an arbitrarily complicated function of the other blocks, but block `k` must be excluded from its own selection rule and the plan must be frozen before block `k` is inspected for certification. Exact fold-level error budgets are then combined by a union bound, so the final fold certificates need not be independent.
+
+For two folds with two one-step-dependent regimes each at 95 percent global confidence, the per-regime mathematical crossing is **4045**, the first exact denominator-24 replication is **4056**, and the unique-data totals are **16180 / 16224**.
+
+P98 is a conditional model-rejection theorem. It does not validate arbitrary splits of one dependent stream, leakage of a fold into its own plan selection, unbudgeted exploration of multiple cross-fitting schemes, model acceptance after non-rejection, consciousness identification, nonphysicality, or completion of the physical-to-experiential bridge.
 
 ## DOI and archival status
 
@@ -151,7 +159,7 @@ P89 is complete only for real linear combinations of the eleven declared parity 
 
 - [`CITATION.cff`](CITATION.cff): machine-readable Citation File Format metadata used by GitHub citation tools.
 - [`CITATION.bib`](CITATION.bib): ready-to-import BibTeX record.
-- [Detailed proposition record](docs/detailed_proposition_record.md): P1 through P97 chronological theorem record.
+- [Detailed proposition record](docs/detailed_proposition_record.md): P1 through P98 chronological theorem record.
 - [Theorem roadmap](docs/theorem_roadmap.md): dependency-oriented theorem map.
 - [P72 equation and provenance record](docs/p72_equation_provenance.md): equation-level classification for the noisy-target theorem.
 - [P73 equation and provenance record](docs/p73_equation_provenance.md): equation-level classification and external latent-class context for the target-channel identifiability theorem.

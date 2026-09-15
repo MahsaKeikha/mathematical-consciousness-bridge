@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "canonical_root": "docs/figures",
-  "current_frontier": "P97",
-  "current_frontier_figure": "docs/figures/p97_simultaneous_candidate_family_selection.svg",
-  "figure_count": 155,
+  "current_frontier": "P98",
+  "current_frontier_figure": "docs/figures/p98_cross_fitted_selection_valid_certification.svg",
+  "figure_count": 156,
   "hash_algorithm": "sha256",
   "figures": [
     {
@@ -701,6 +701,14 @@
       "category": "theorem-or-architecture",
       "title": "P97 Simultaneous Finite Candidate-Family Selection",
       "description_chars": 1069
+    },
+    {
+      "path": "docs/figures/p98_cross_fitted_selection_valid_certification.svg",
+      "sha256": "21ee117242f8a93ce18b1de5e0fb50a914cb7c5ae380f60d9c7c7e4f682eccdc",
+      "bytes": 6733,
+      "category": "theorem-or-architecture",
+      "title": "P98 Cross-Fitted Selection-Valid Certification",
+      "description_chars": 1234
     },
     {
       "path": "docs/figures/physics_mathematics_atlas.svg",
