@@ -1,1 +1,2 @@
-Final P99 publication synchronization trigger after canonical roadmap EOF repair. Remove during P99 migration cleanup.
+Final P99 publication synchronization trigger after canonical roadmap EOF repair.
+Final trigger after stale P99 future-roadmap removal was moved into the canonical promoter. Remove during P99 migration cleanup.
