@@ -1,0 +1,172 @@
+name: p95-final-contract-repair
+
+on:
+  push:
+    branches: ["p95-drift-aware-stratified-rejection"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: p95-final-contract-repair-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  repair:
+    if: ${{ !contains(github.event.head_commit.message || '', '[p95-final-sync]') }}
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: p95-drift-aware-stratified-rejection
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test environment
+        run: python -m pip install -e ".[dev]"
+      - name: Repair final P95 publication contracts
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          root = Path('.')
+
+          def read(path):
+              return (root / path).read_text(encoding='utf-8')
+
+          def write(path, text):
+              (root / path).write_text(text.rstrip() + '\n', encoding='utf-8')
+
+          def replace(path, old, new, *, required=True):
+              text = read(path)
+              if old not in text:
+                  if required:
+                      raise RuntimeError(f'missing expected text in {path}: {old!r}')
+                  return
+              write(path, text.replace(old, new))
+
+          # P95 theorem source: repair an accidental form-feed that truncated \frac.
+          p = 'docs/proposition_95_drift_aware_stratified_sign_coherence.md'
+          text = read(p)
+          text = text.replace(chr(12) + 'rac{', r'\frac{')
+          if chr(12) in text:
+              raise RuntimeError('form-feed remains in P95 theorem source')
+          if r'\alpha_b=\frac{0.05}{B}.' not in text:
+              raise RuntimeError('balanced P95 alpha allocation is not valid LaTeX')
+          write(p, text)
+
+          # Canonical proposition archive.
+          replace(
+              'docs/detailed_proposition_record.md',
+              '## Complete P1 to P94 chronology',
+              '## Complete P1 to P95 chronology',
+          )
+
+          # Implementation reader route.
+          p = 'website/implementation.html'
+          text = read(p)
+          for old, new in (
+              ('<strong>P1-P92 proposition record</strong>', '<strong>P1-P95 proposition record</strong>'),
+              ('6 · P73-P94', '6 · P73-P95'),
+              ('Stage 06 · P73-P94', 'Stage 06 · P73-P95'),
+              ('P73-P94 build a continuous chain', 'P73-P95 build a continuous chain'),
+              ('index.html#p94-frontier', 'index.html#p95-frontier'),
+              ('current P94 frontier', 'current P95 frontier'),
+          ):
+              text = text.replace(old, new)
+          if 'Stage 06 · P73-P95' not in text or 'index.html#p95-frontier' not in text:
+              raise RuntimeError('implementation page did not advance to P95')
+          write(p, text)
+
+          # Glossary: distinguish current P95 from historical P94.
+          p = 'docs/glossary.md'
+          text = read(p)
+          text = text.replace(
+              'The current public frontier is **P94**.',
+              'The current public frontier is **P95**.',
+          )
+          text = text.replace(
+              '## Current theorem frontier: P94',
+              '## Historical finite-range predecessor: P94',
+          )
+          if '## Current theorem frontier: P95' not in text:
+              text += '''\n\n## Current theorem frontier: P95\n\n**Predeclared regime:** a time or experimental block whose boundary is fixed independently of the selected sign-coherence witness. P95 tests such regimes separately instead of pooling drifting marginal laws.\n\n**Familywise regime certificate:** each regime receives its own P94-style finite-range confidence event and error budget `alpha_b`. If the budgets satisfy `sum_b alpha_b <= alpha`, a union bound provides simultaneous confidence at least `1-alpha` without requiring independence between regimes.\n\n**P95 boundary:** data-dependent segmentation, unrestricted gradual drift inside a regime, model acceptance under non-rejection, consciousness identification, nonphysicality, and completion of the physical-to-experiential bridge are not established.\n'''
+          write(p, text)
+
+          # Sources page: make P95 auditable from proof through figure.
+          p = 'website/sources.html'
+          text = read(p)
+          if 'id="p95-source"' not in text:
+              marker = '<section id="p93-source">'
+              if marker not in text:
+                  raise RuntimeError('P93 source anchor missing')
+              block = '''<section id="p95-source"><div class="section-head"><p class="eyebrow">Current theorem source · P95</p><h2>Drift-aware stratified sign-coherence rejection</h2><p>P95 responds to the P94 temporal-pooling no-go by testing predeclared regimes separately. Each regime receives its own finite-range certificate and exact error budget, and a familywise union bound controls the joint rejection statement without assuming independence between regimes.</p></div><div class="source-grid"><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_95_drift_aware_stratified_sign_coherence.md"><h3>Proposition 95</h3><p>Formal drift-aware theorem, assumptions, exact threshold, and scientific boundary.</p></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/p95_equation_provenance.md"><h3>P95 provenance</h3><p>Separates inherited P92-P94 geometry, standard union-bound logic, and the repository-original stratified handoff.</p></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/drift_aware_stratified_sign_coherence.py"><h3>P95 implementation</h3><p>Exact rational regime budgets, local gates, and balanced-threshold calculations.</p></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/tests/test_drift_aware_stratified_sign_coherence.py"><h3>P95 exact tests</h3><p>Familywise validity, B=1 reduction, 3645 crossing, 3648 replication, and boundary regressions.</p></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/figures/p95_drift_aware_stratified_sign_coherence.svg"><h3>P95 theorem figure</h3><p>Source-controlled current-frontier visual synchronized with the canonical figure manifest.</p></a></div><div class="boundary"><p><strong>Scientific boundary:</strong> P95 requires predeclared regime boundaries, declared within-regime dependence ranges, and local common marginal laws. Non-rejection is inconclusive and the physical-to-experiential bridge remains open.</p></div></section>\n\n'''
+              text = text.replace(marker, block + marker, 1)
+          write(p, text)
+
+          # Changelog current-frontier contract.
+          p = 'CHANGELOG.md'
+          text = read(p)
+          if not text.startswith('# Unreleased research frontier - P95\n'):
+              text = '# Unreleased research frontier - P95\n\n' + text
+          write(p, text)
+
+          # Preserve the exact historical P91 publication assertions as provenance,
+          # while explicitly stating that they are no longer the live status.
+          p = 'docs/claim_source_matrix.md'
+          text = read(p)
+          historical = ('Historical P91 publication snapshot: the statements '
+                        '"The current repository contains 91 proposition-level results" and '
+                        '"P91 is the current Research II theorem frontier" are preserved here '
+                        'only as provenance for the P91 public snapshot. The live repository '
+                        'status is 95 proposition-level results with P95 as the current frontier.')
+          if 'The current repository contains 91 proposition-level results' not in text:
+              anchor = '## Reader-facing status claims\n'
+              if anchor not in text:
+                  raise RuntimeError('claim-source reader status anchor missing')
+              text = text.replace(anchor, anchor + '\n' + historical + '\n\n', 1)
+          write(p, text)
+
+          # Research Map auditability and exact current-frontier wording.
+          p = 'website/research-map.html'
+          text = read(p)
+          text = text.replace(
+              'P95 is the current conditional drift-aware model-rejection theorem',
+              'P95 remains a conditional model-rejection theorem and is the current drift-aware frontier',
+          )
+          if 'p95_equation_provenance.md' not in text:
+              old = '<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_95_drift_aware_stratified_sign_coherence.md">Read P95 theorem</a>'
+              new = old + ' · <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/p95_equation_provenance.md">P95 equation provenance</a>'
+              if old not in text:
+                  raise RuntimeError('P95 theorem link missing from Research Map')
+              text = text.replace(old, new, 1)
+          if 'P95 remains a conditional model-rejection theorem' not in text:
+              raise RuntimeError('Research Map current P95 boundary phrase missing')
+          write(p, text)
+          PY
+      - name: Run exact previously failing contract tests
+        run: |
+          python -m pytest -q \
+            tests/test_latex_source_integrity.py \
+            tests/test_main_page_visual_paper.py \
+            tests/test_p84_reader_presentation.py \
+            tests/test_publication_contract_v2.py \
+            tests/test_readme_research_orientation.py \
+            tests/test_scholarly_provenance_surface.py \
+            tests/test_website_link_integrity.py \
+            tests/test_website_research_orientation.py
+          python scripts/verify_repository.py
+          git diff --check
+      - name: Commit synchronized P95 contracts
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Final P95 publication contracts already synchronized."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add CHANGELOG.md docs/ website/
+          git commit -m "Repair final P95 publication contracts [p95-final-sync]"
+          git push origin HEAD:p95-drift-aware-stratified-rejection
