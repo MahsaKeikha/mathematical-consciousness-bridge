@@ -55,12 +55,34 @@ jobs:
               '<strong>93</strong><span>proposition-level results</span>': '<strong>94</strong><span>proposition-level results</span>',
               'P93 current theorem frontier · v0.82.0': 'P94 current theorem frontier · v0.82.0',
               'Explore all 93 results': 'Explore all 94 results',
+              'current P93 frontier': 'current P94 frontier',
+              'sources.html#p93-source">P93 sources': 'sources.html#p94-source">P94 sources',
           }
           for old, new in replacements.items():
               if old not in home:
                   raise RuntimeError(f'homepage promotion marker missing: {old!r}')
               home = home.replace(old, new, 1)
           home_path.write_text(home, encoding='utf-8')
+
+          map_path = root / 'website/research-map.html'
+          research = map_path.read_text(encoding='utf-8')
+          map_replacements = {
+              'P71-P93 return': 'P71-P94 return',
+              '<strong>93</strong><span>proposition-level results</span>': '<strong>94</strong><span>proposition-level results</span>',
+              '<strong>P93</strong><span>current theorem frontier</span>': '<strong>P94</strong><span>current theorem frontier</span>',
+              'P74-P93 continue': 'P74-P94 continue',
+              '<span>6 · P73-P93</span>': '<span>6 · P73-P94</span>',
+              'culminating in P92 exact global mixed-prevalence distance and the P93 finite-sample rejection handoff.': 'culminating in P92 exact global mixed-prevalence distance, the P93 IID finite-sample handoff, and P94 finite-range dependent rejection.',
+              'P19 and P71-P93: from sufficiency to falsifiable target-model separation': 'P19 and P71-P94: from sufficiency to finite-range dependent target-model falsification',
+              'href="index.html#p93-frontier">Continue to the current P93 frontier': 'href="index.html#p94-frontier">Continue to the current P94 frontier',
+              'href="visual-atlas.html#p93-frontier">See the P93 figure': 'href="visual-atlas.html#p94-frontier">See the P94 figure',
+              'docs/p93_equation_provenance.md">Audit P93 provenance': 'docs/p94_equation_provenance.md">Audit P94 provenance',
+          }
+          for old, new in map_replacements.items():
+              if old not in research:
+                  raise RuntimeError(f'research-map promotion marker missing: {old!r}')
+              research = research.replace(old, new, 1)
+          map_path.write_text(research, encoding='utf-8')
 
           sync_path = root / 'scripts/synchronize_research_three_website.py'
           sync = sync_path.read_text(encoding='utf-8')
@@ -73,7 +95,6 @@ jobs:
 
           prep_path = root / 'scripts/prepare_website.py'
           prep = prep_path.read_text(encoding='utf-8')
-          prep = prep.replace('    "p94_finite_range_dependent_sign_coherence.svg"\n', '    "p94_finite_range_dependent_sign_coherence.svg"\n', 1)
           prep = prep.replace('    """Require the deployed site to be internally consistent with P93."""', '    """Require the deployed site to match the declared current frontier."""')
           prep = prep.replace('"website build is missing the current P93 theorem figure: "', '"website build is missing the current theorem figure: "')
           prep = prep.replace('"Visual Atlas does not use the bundled P93 theorem figure"', '"Visual Atlas does not use the bundled current theorem figure"')
