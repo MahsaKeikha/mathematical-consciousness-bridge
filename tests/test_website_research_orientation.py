@@ -3,7 +3,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MAP = ROOT / "website/research-map.html"
-VERIFIER = ROOT / "scripts/verify_repository.py"
+VERIFIER = ROOT / "scripts" / "verify_repository.py"
 
 
 def _frontier() -> int:
@@ -60,6 +60,16 @@ def test_research_map_gives_direct_audit_paths():
     assert "P76 turns its necessary restrictions into finite-sample rejection certificates" in text
     assert 'index.html#p91-frontier' not in text
     assert 'index.html#p88-frontier' not in text
+
+
+def test_research_map_current_frontier_labels_do_not_lag():
+    frontier = _frontier()
+    text = MAP.read_text(encoding="utf-8")
+    assert f"through Proposition {frontier}." in text
+    assert f"The current theorem frontier is P{frontier}." in text
+    assert f"Research Map · Current theorem frontier P{frontier}</p>" in text
+    assert f"P77-P{frontier}" in text
+    assert f"P{frontier} remains a conditional model-rejection theorem" in text
 
 
 def test_current_and_previous_nonlinear_frontiers_are_structurally_inside_main():
