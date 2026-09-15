@@ -98,6 +98,14 @@ jobs:
           name: figure-publication-drift-python-3.12.14
           path: ${{ runner.temp }}/figure-publication-drift.txt
           if-no-files-found: error
+      - name: Upload regenerated publication records
+        uses: actions/upload-artifact@v4
+        with:
+          name: regenerated-publication-records-python-3.12.14
+          path: |
+            docs/figure_catalog.md
+            figures/manifest.json
+          if-no-files-found: error
       - name: Require byte-identical regeneration and publication sync
         run: |
           python scripts/sync_figure_publication.py --check
