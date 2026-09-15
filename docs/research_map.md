@@ -188,3 +188,10 @@ P94 is the current Research II theorem frontier. It preserves the seven-cell P92
 ### P95: What if the marginal law drifts across predeclared regimes?
 
 P95 does not pool those regimes. It gives each predeclared regime its own marginal law, finite-range dependence assumption, sample size, and error budget. Local P94 certificates are then combined by a familywise union bound. If any regime is certified outside P75, the all-regimes P75 null is rejected at the declared familywise confidence. [Read P95](proposition_95_drift_aware_stratified_sign_coherence.md).
+
+
+## P96: selection-valid holdout stratification
+
+P96 closes one explicit adaptive-selection gap left by P95. Pilot information may select the finite regime plan, dependence ranges, and rational error allocation. The plan is frozen before a genuinely independent certification sample is evaluated. Conditioning on the pilot information makes the selected P95 plan fixed, and the tower property preserves the same unconditional familywise bound.
+
+This is a sample-separation theorem, not a general same-data post-selection result. Pilot observations do not count as certification observations, and a naive split of one temporally dependent stream is not automatically independent.

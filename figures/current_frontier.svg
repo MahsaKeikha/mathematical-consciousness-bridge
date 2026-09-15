@@ -1,48 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
-<title id="title">P95 Drift-Aware Stratified Sign-Coherence Rejection</title>
-<desc id="desc">What this figure shows: P95 responds to the P94 temporal-pooling no-go by replacing one pooled stationary target with a family of predeclared regime-specific P75 tests. Each regime may have its own marginal law, sample size, dependence range, and exact error budget. A union bound controls all local P94 confidence events without requiring independence between regimes. How to read it: move from the P94 pooling warning on the left, through predeclared regime-specific laws in the center, to the familywise rejection rule on the right. The lower strip gives the balanced two-regime one-dependent 95 percent checkpoint. Main takeaway: drift across regimes is allowed, but stationarity is still required locally inside each declared regime. Scientific status: conditional statistical model-audit theorem. It does not validate data-dependent segmentation, prove model acceptance after non-rejection, identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.</desc>
-<rect width="1440" height="900" fill="#ffffff"/>
-<text x="70" y="65" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700" fill="#111827">P95 - Drift-Aware Stratified Sign-Coherence Rejection</text>
-<text x="70" y="105" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#475569">Do not pool drifting P75 regimes. Test predeclared regimes locally and control the familywise error exactly.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="860" viewBox="0 0 1400 860" role="img" aria-labelledby="title desc">
+  <title id="title">P96 Selection-Valid Holdout Stratification</title>
+  <desc id="desc">What this figure shows: Figure 2. P96 selection-valid holdout stratification. P95 permits changing marginal laws across predeclared regimes, but it deliberately leaves data-dependent regime selection outside its guarantee. P96 closes one precise version of that gap by separating selection from certification. Pilot information may choose the number of regimes, regime definitions, declared dependence ranges, rational error budgets, and certification allocation. The selected plan is frozen before an independent holdout sample is inspected. Conditional on the pilot information, P95 applies to the fixed plan; the tower property then preserves the same unconditional familywise error bound. How to read it: follow only the labeled arrows, axes, panels, set relations, or inequalities shown in the visual and interpret them using the adjacent research text. Main takeaway: the figure summarizes the stated mathematical or scientific dependency; visual proximity alone does not add a claim. Scientific status: Reader-facing research figure; formal status is controlled by the linked proof or source record.</desc>
+  <rect width="1400" height="860" fill="#f8fafc"/>
+  <rect x="40" y="35" width="1320" height="790" rx="24" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+  <text x="80" y="92" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#0f172a">P96 Selection-Valid Holdout Stratification</text>
+  <text x="80" y="128" font-family="Arial, sans-serif" font-size="19" fill="#334155">Adaptive pilot selection, frozen plan, independent certification</text>
 
-<rect x="60" y="155" width="400" height="515" rx="22" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
-<text x="92" y="205" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#111827">1. P94 pooling no-go</text>
-<text x="92" y="250" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">Two valid time-specific P75 laws can have</text>
-<text x="92" y="282" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">a pooled law with the forbidden sign pattern.</text>
-<rect x="95" y="325" width="330" height="95" rx="15" fill="#ffffff" stroke="#fb923c"/>
-<text x="260" y="362" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#111827">Regime 1: D1 D2 D3 &gt; 0</text>
-<text x="260" y="397" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#111827">Regime 2: D1 D2 D3 &gt; 0</text>
-<text x="92" y="470" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#c2410c">Pooled signs: (-,+,+)</text>
-<text x="92" y="510" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">Conclusion: the pooled marginal is not a valid</text>
-<text x="92" y="540" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">stationary target when the process drifts.</text>
-<text x="92" y="610" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#9a3412">DO NOT POOL</text>
+  <rect x="80" y="175" width="355" height="280" rx="18" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="110" y="220" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#1e3a8a">1. Pilot selection</text>
+  <text x="110" y="258" font-family="Arial, sans-serif" font-size="18" fill="#1e293b">Use pilot information S to choose:</text>
+  <text x="128" y="294" font-family="Arial, sans-serif" font-size="17" fill="#334155">B - number of regimes</text>
+  <text x="128" y="326" font-family="Arial, sans-serif" font-size="17" fill="#334155">R_b - regime definitions</text>
+  <text x="128" y="358" font-family="Arial, sans-serif" font-size="17" fill="#334155">m_b - dependence ranges</text>
+  <text x="128" y="390" font-family="Arial, sans-serif" font-size="17" fill="#334155">alpha_b - rational error budgets</text>
+  <text x="110" y="430" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1e3a8a">Then freeze the complete plan.</text>
 
-<rect x="520" y="155" width="400" height="515" rx="22" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
-<text x="552" y="205" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#111827">2. Predeclared regimes</text>
-<text x="552" y="250" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">For b = 1,...,B declare before testing:</text>
-<text x="552" y="300" font-family="Georgia, serif" font-size="21" fill="#111827">P_b, n_b, m_b, alpha_b</text>
-<text x="552" y="350" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">Local assumption: one common marginal P_b</text>
-<text x="552" y="380" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">inside regime b and m_b-dependent sampling.</text>
-<text x="552" y="435" font-family="Georgia, serif" font-size="20" fill="#111827">sum_b alpha_b &lt;= alpha</text>
-<text x="552" y="490" font-family="Georgia, serif" font-size="19" fill="#111827">eps_b^2 = (m_b+1) log(14/alpha_b)/(2 n_b)</text>
-<text x="552" y="545" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">Different regimes may have different marginals.</text>
-<text x="552" y="575" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">No cross-regime independence is required.</text>
-<text x="552" y="625" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#1d4ed8">Boundaries and error budgets must be predeclared.</text>
+  <path d="M 445 315 L 520 315" stroke="#0f172a" stroke-width="4" fill="none"/>
+  <polygon points="520,315 501,304 501,326" fill="#0f172a"/>
 
-<rect x="980" y="155" width="400" height="515" rx="22" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
-<text x="1012" y="205" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#111827">3. Familywise rejection</text>
-<text x="1012" y="250" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">Joint null:</text>
-<text x="1012" y="292" font-family="Georgia, serif" font-size="20" fill="#111827">H0: P_b in M75 for every b</text>
-<text x="1012" y="348" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">If one regime has</text>
-<text x="1012" y="390" font-family="Georgia, serif" font-size="19" fill="#111827">D1 D2 D3 &lt; 0</text>
-<text x="1012" y="425" font-family="Georgia, serif" font-size="19" fill="#111827">and eps_b &lt; min_i r_bi</text>
-<text x="1012" y="480" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">then that regime is outside P75 and</text>
-<text x="1012" y="510" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">the all-regimes joint null is rejected.</text>
-<text x="1012" y="565" font-family="Georgia, serif" font-size="20" fill="#166534">confidence &gt;= 1 - sum_b alpha_b</text>
-<text x="1012" y="615" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#166534">Union bound only: regime events may be dependent.</text>
+  <rect x="525" y="175" width="300" height="280" rx="18" fill="#fefce8" stroke="#ca8a04" stroke-width="2"/>
+  <text x="555" y="220" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#854d0e">2. Independence gate</text>
+  <text x="555" y="270" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#713f12">C independent of S</text>
+  <text x="555" y="312" font-family="Arial, sans-serif" font-size="17" fill="#3f3f46">Holdout statistics cannot be</text>
+  <text x="555" y="342" font-family="Arial, sans-serif" font-size="17" fill="#3f3f46">used to redesign segmentation.</text>
+  <line x1="570" y1="375" x2="780" y2="375" stroke="#ca8a04" stroke-width="2" stroke-dasharray="8 7"/>
+  <text x="555" y="414" font-family="Arial, sans-serif" font-size="17" fill="#713f12">No reuse of certification data</text>
 
-<rect x="60" y="715" width="1320" height="120" rx="22" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
-<text x="90" y="755" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#111827">Balanced 95 percent checkpoint</text>
-<text x="90" y="795" font-family="Georgia, serif" font-size="21" fill="#111827">B = 2, m = 1, alpha_b = 0.025: mathematical crossing n = 3645 per regime; first exact 24-count replication n = 3648.</text>
-<text x="90" y="824" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#64748b">Boundary: P95 handles predeclared regime drift, not data-selected change points or unrestricted gradual drift. The physical-to-experiential bridge remains open.</text>
+  <path d="M 835 315 L 910 315" stroke="#0f172a" stroke-width="4" fill="none"/>
+  <polygon points="910,315 891,304 891,326" fill="#0f172a"/>
+
+  <rect x="915" y="175" width="405" height="280" rx="18" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="945" y="220" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#065f46">3. Holdout certification</text>
+  <text x="945" y="260" font-family="Arial, sans-serif" font-size="17" fill="#1f2937">For each selected regime:</text>
+  <text x="965" y="295" font-family="Arial, sans-serif" font-size="17" fill="#334155">common holdout marginal P_b</text>
+  <text x="965" y="327" font-family="Arial, sans-serif" font-size="17" fill="#334155">declared m_b dependence</text>
+  <text x="965" y="359" font-family="Arial, sans-serif" font-size="17" fill="#334155">P94 local exact gate</text>
+  <text x="965" y="391" font-family="Arial, sans-serif" font-size="17" fill="#334155">P95 familywise union bound</text>
+  <text x="945" y="430" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#065f46">Reject if any selected regime certifies.</text>
+
+  <rect x="80" y="500" width="1240" height="135" rx="18" fill="#f1f5f9" stroke="#475569" stroke-width="2"/>
+  <text x="110" y="540" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#0f172a">Conditional validity becomes unconditional validity</text>
+  <text x="110" y="580" font-family="Arial, sans-serif" font-size="20" fill="#1e293b">Pr(all A_b | S) &gt;= 1 - sum_b alpha_b &gt;= 1 - alpha</text>
+  <text x="760" y="580" font-family="Arial, sans-serif" font-size="20" fill="#1e293b">implies   Pr(all A_b) &gt;= 1 - alpha</text>
+  <text x="110" y="615" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#334155">Extra alpha penalty for pilot-selection complexity: 0</text>
+
+  <rect x="80" y="675" width="600" height="105" rx="16" fill="#eef2ff" stroke="#4f46e5" stroke-width="2"/>
+  <text x="110" y="714" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#3730a3">Balanced exact checkpoint</text>
+  <text x="110" y="748" font-family="Arial, sans-serif" font-size="17" fill="#312e81">B=2, m=1: 3645 holdout per regime; exact replication 3648</text>
+
+  <rect x="710" y="675" width="610" height="105" rx="16" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="740" y="714" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#9a3412">Scientific boundary</text>
+  <text x="740" y="746" font-family="Arial, sans-serif" font-size="16" fill="#7c2d12">Same-data redesign, within-regime drift, model acceptance,</text>
+  <text x="740" y="770" font-family="Arial, sans-serif" font-size="16" fill="#7c2d12">consciousness identification, and bridge completion are not established.</text>
 </svg>

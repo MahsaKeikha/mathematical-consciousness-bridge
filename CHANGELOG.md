@@ -1,3 +1,16 @@
+# Unreleased research frontier - P96
+
+## P96 selection-valid holdout stratification frontier
+
+- Added Proposition 96 as the independent-holdout selection-valid continuation of P95.
+- Allowed arbitrary pilot-data selection of regime count, regime definitions, declared finite dependence ranges, rational error budgets, and certification resource allocation.
+- Required the selected plan to be frozen before certification and the certification information to be independent of the pilot-selection information.
+- Proved conditional P95 familywise validity and integrated it with the tower property to preserve the same unconditional error bound without an extra pilot-selection-complexity alpha penalty.
+- Preserved the P95 balanced holdout threshold: 3645 observations per regime for B=2 and m=1 at 95 percent familywise confidence, with first exact denominator-24 replication at 3648 per regime.
+- Made the sample-separation cost explicit: pilot observations do not count as certification observations.
+- Preserved the boundary that a naive split of one dependent time series is not automatically independent; same-data redesign, within-regime drift, non-rejection as acceptance, consciousness identification, and bridge completion remain open.
+- Kept formal release v0.82.0 separate from the advancing theorem frontier.
+
 # Unreleased research frontier - P95
 
 ## P95 drift-aware stratified sign-coherence frontier

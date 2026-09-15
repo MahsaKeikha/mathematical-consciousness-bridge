@@ -8,7 +8,7 @@ If this research program, one of its propositions, figures, algorithms, or imple
 
 > Keikha, M. (2026). *Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem* (Version 0.82.0). GitHub research repository. https://github.com/MahsaKeikha/mathematical-consciousness-bridge
 
-This is the preferred citation for the research program at the current documented frontier, P94.
+This is the preferred citation for the research program at the current documented frontier, P96.
 
 ## BibTeX
 
@@ -20,7 +20,7 @@ This is the preferred citation for the research program at the current documente
   version      = {0.82.0},
   howpublished = {GitHub research repository},
   url          = {https://github.com/MahsaKeikha/mathematical-consciousness-bridge},
-  note         = {Ongoing research program. Current documented theorem frontier: P94.}
+  note         = {Ongoing research program. Current documented theorem frontier: P96.}
 }
 ```
 
@@ -53,7 +53,7 @@ This repository is an evolving research program. For reproducible scholarly use:
 3. Cite the individual proposition or artifact when your argument depends on a specific theorem, figure, algorithm, or test.
 4. Do not attribute later propositions or later numerical results to an earlier version of the repository.
 
-The current citation metadata identify Version **0.82.0** and theorem frontier **P94**. Future research versions should update the version number, theorem frontier, citation metadata, and archival record together.
+The current citation metadata identify Version **0.82.0** and theorem frontier **P96**. Future research versions should update the version number, theorem frontier, citation metadata, and archival record together.
 
 ## DOI and archival status
 
@@ -143,7 +143,7 @@ P89 is complete only for real linear combinations of the eleven declared parity 
 
 - [`CITATION.cff`](CITATION.cff): machine-readable Citation File Format metadata used by GitHub citation tools.
 - [`CITATION.bib`](CITATION.bib): ready-to-import BibTeX record.
-- [Detailed proposition record](docs/detailed_proposition_record.md): P1 through P94 chronological theorem record.
+- [Detailed proposition record](docs/detailed_proposition_record.md): P1 through P96 chronological theorem record.
 - [Theorem roadmap](docs/theorem_roadmap.md): dependency-oriented theorem map.
 - [P72 equation and provenance record](docs/p72_equation_provenance.md): equation-level classification for the noisy-target theorem.
 - [P73 equation and provenance record](docs/p73_equation_provenance.md): equation-level classification and external latent-class context for the target-channel identifiability theorem.
@@ -180,7 +180,7 @@ For work using the localized finite-sample P92 sign-coherence rejection gate, ci
 
 ## Current theorem frontier: P95
 
-The current documented theorem frontier is **P95**. The formal package release remains **Version 0.82.0**.
+The current documented theorem frontier is **P96**. The formal package release remains **Version 0.82.0**.
 
 P95 is the drift-aware stratified continuation of P94. It permits different marginal four-view laws across predeclared regimes, applies the P94 finite-range certificate inside each regime, and controls the complete family by exact error-budget allocation and a union bound. No independence between regime confidence events is required.
 
@@ -193,3 +193,16 @@ For the established P92 witness, two equally budgeted one-dependent regimes at 9
 - Figure: [`p95_drift_aware_stratified_sign_coherence.svg`](docs/figures/p95_drift_aware_stratified_sign_coherence.svg)
 
 P95 is a conditional model-audit theorem. It does not validate data-dependent segmentation, establish P75 under non-rejection, identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.
+
+
+## Current theorem frontier: P96
+
+P96 is the selection-valid independent-holdout continuation of P95. Pilot information may choose the regime count, regime definitions, declared finite dependence ranges, and rational error budgets. The complete plan must be frozen before an independent certification sample is evaluated. Conditional on the pilot information, the selected plan is fixed and the P95 familywise guarantee applies; averaging the conditional failure probability preserves the same unconditional error bound.
+
+- Proof: [`proposition_96_selection_valid_holdout_stratification.md`](docs/proposition_96_selection_valid_holdout_stratification.md)
+- Equation provenance: [`p96_equation_provenance.md`](docs/p96_equation_provenance.md)
+- Implementation: [`selection_valid_holdout_stratification.py`](src/consciousness_bridge/selection_valid_holdout_stratification.py)
+- Tests: [`test_selection_valid_holdout_stratification.py`](tests/test_selection_valid_holdout_stratification.py)
+- Figure: [`p96_selection_valid_holdout_stratification.svg`](docs/figures/p96_selection_valid_holdout_stratification.svg)
+
+The sample-splitting, conditioning, union-bound, and tower-property ingredients are standard. The repository-original contribution is their explicit integration with the P92-P95 sign-coherence chain and executable guards for this model-audit problem. P96 does not license same-data redesign, assume that a naive split of a dependent time series is independent, establish model acceptance after non-rejection, identify consciousness, or close the physical-to-experiential bridge.

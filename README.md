@@ -54,9 +54,9 @@ You do **not** need to read the propositions in order to understand the project.
 
 If you want the complete theorem record, including assumptions, proofs, implementations, tests, figures, and scientific boundaries, use the **[Detailed Proposition Record](docs/detailed_proposition_record.md)** or the **[Theorem Roadmap](docs/theorem_roadmap.md)**.
 
-The current public theorem frontier is **P95**. The formal release remains **v0.82.0**.
+The current public theorem frontier is **P96**. The formal release remains **v0.82.0**.
 
-**[Read the current frontier](docs/proposition_95_drift_aware_stratified_sign_coherence.md)**
+**[Read the current frontier](docs/proposition_96_selection_valid_holdout_stratification.md)**
 
 ---
 
@@ -70,11 +70,13 @@ The current public theorem frontier is **P95**. The formal release remains **v0.
 
 ### Current theorem frontier
 
-![P95 Drift-Aware Stratified Sign-Coherence Rejection](docs/figures/p95_drift_aware_stratified_sign_coherence.svg)
+![P96 Selection-Valid Holdout Stratification](docs/figures/p96_selection_valid_holdout_stratification.svg)
 
-**Figure 2. P95 drift-aware stratified sign-coherence rejection.** P94 proved that pooling time-varying P75 marginals can manufacture the same negative three-minor sign pattern used for rejection. P95 therefore changes the target instead of pretending the pooled stream is stationary. The stream is split into predeclared regimes; each regime receives its own P94 finite-range certificate and exact error budget. A union bound then controls the complete family without requiring independence between regimes. At 95 percent familywise confidence, two equally budgeted one-dependent regimes cross the established P92 witness threshold at 3645 observations per regime, with the first exact denominator-24 replication at 3648.
+**Figure 2. P96 selection-valid holdout stratification.** P95 permits changing marginal laws across predeclared regimes, but it deliberately leaves data-dependent regime selection outside its guarantee. P96 closes one precise version of that gap by separating selection from certification. Pilot information may choose the number of regimes, regime definitions, declared dependence ranges, rational error budgets, and certification allocation. The selected plan is frozen before an independent holdout sample is inspected. Conditional on the pilot information, P95 applies to the fixed plan; the tower property then preserves the same unconditional familywise error bound.
 
-P95 permits arbitrary marginal changes between predeclared regimes, but it still requires one common marginal law inside each regime and predeclared boundaries. It does not validate data-dependent segmentation, prove P75 after non-rejection, identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.
+For two selected regimes with one-step dependence and equal division of a 5 percent familywise budget, the holdout threshold remains **3645 observations per regime**, with the first exact denominator-24 replication at **3648 per regime**. The complexity of the pilot search itself adds no further alpha penalty under the declared independence and frozen-plan assumptions.
+
+P96 does not justify reusing certification observations to redesign the segmentation, treating an ordinary random split of one dependent time series as automatically independent, allowing unrestricted drift inside a selected certification regime, accepting P75 after non-rejection, identifying consciousness, establishing nonphysicality, or closing the physical-to-experiential bridge.
 
 ## Choose your path
 
@@ -120,6 +122,6 @@ For scholarly citation, see **[CITATION.md](CITATION.md)** and **[CITATION.cff](
 
 MIT License. See **[LICENSE](LICENSE)**.
 
-**Public theorem frontier:** P95
+**Public theorem frontier:** P96
 **Formal release:** v0.82.0
 **Final bridge from physical description to experience:** open

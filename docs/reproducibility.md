@@ -10,12 +10,12 @@ You do not need every command at once. Choose the route that matches your goal.
 | --- | --- |
 | Reproduce the maintained repository as strictly as possible | `make reproduce` |
 | Run the normal verification suite | `make check` |
-| Run only the current P95 theorem checks | focused P95 commands below |
+| Run only the current P96 theorem checks | focused P95 commands below |
 | Validate figures without rebuilding them | `make figures-check` |
 | Regenerate the complete visual record | `make figures` |
 | Inspect CI without installing locally | GitHub Actions |
 
-The current public theorem frontier is **P95**. The formal release remains **v0.82.0**.
+The current public theorem frontier is **P96**. The formal release remains **v0.82.0**.
 
 ---
 
@@ -104,18 +104,18 @@ Use this route when you want to verify the current committed state without regen
 
 ---
 
-## 5. Focused audit of the current P95 frontier
+## 5. Focused audit of the current P96 frontier
 
-The current theorem frontier is **P95**.
+The current theorem frontier is **P96**.
 
 Its direct technical record is:
 
 ```text
-docs/proposition_95_drift_aware_stratified_sign_coherence.md
-docs/p95_equation_provenance.md
-src/consciousness_bridge/drift_aware_stratified_sign_coherence.py
-tests/test_drift_aware_stratified_sign_coherence.py
-docs/figures/p95_drift_aware_stratified_sign_coherence.svg
+docs/proposition_96_selection_valid_holdout_stratification.md
+docs/p96_equation_provenance.md
+src/consciousness_bridge/selection_valid_holdout_stratification.py
+tests/test_selection_valid_holdout_stratification.py
+docs/figures/p96_selection_valid_holdout_stratification.svg
 figures/manifest.json
 ```
 
@@ -123,7 +123,8 @@ Run the focused theorem and publication checks with:
 
 ```bash
 python -m pytest -q \
-  tests/test_drift_aware_stratified_sign_coherence.py \
+  tests/test_selection_valid_holdout_stratification.py \
+  tests/test_p96_reader_surface_coherence.py \
   tests/test_p95_reader_surface_coherence.py \
   tests/test_frontier_reader_narrative.py \
   tests/test_figure_publication_sync.py \
@@ -132,11 +133,11 @@ python scripts/sync_figure_publication.py --check
 python scripts/verify_repository.py
 ```
 
-P95 responds to the P94 temporal-pooling no-go by replacing one pooled marginal target with a family of predeclared regime-specific targets. Each regime has its own local P94 finite-range radius and exact error budget, and the union bound controls the complete family without requiring independence between regimes.
+P96 permits arbitrary pilot selection of the regime plan, freezes the plan before holdout evaluation, and applies P95 to independent certification information. Conditional P95 validity and the tower property preserve the same unconditional familywise error bound, so no additional alpha penalty is charged for pilot-selection complexity under the declared independence assumptions.
 
-For two equally budgeted regimes with dependence range one at 95 percent familywise confidence, the established P92 witness crosses at `3645` observations per regime. The first exact denominator-24 replication that clears the gate is `3648` per regime.
+For two equally budgeted selected regimes with dependence range one at 95 percent familywise confidence, the holdout threshold remains `3645` observations per regime, with first exact denominator-24 replication at `3648` per regime. Pilot observations are additional and do not count toward certification.
 
-Non-rejection remains inconclusive. P95 does not validate data-dependent change-point selection, identify the latent state with consciousness, establish nonphysicality, validate an alternative ontology, or close the physical-to-experiential bridge.
+A naive random split of one dependent time series is not automatically independent. Non-rejection remains inconclusive. P96 does not license same-data redesign, identify a latent state with consciousness, establish nonphysicality, validate an alternative ontology, or close the physical-to-experiential bridge.
 
 ---
 
@@ -231,7 +232,7 @@ The validation path checks the generated manifests, SVG parseability, canonical 
 The current frontier figure is:
 
 ```text
-docs/figures/p92_exact_global_mixed_prevalence_distance.svg
+docs/figures/p96_selection_valid_holdout_stratification.svg
 ```
 
 ---

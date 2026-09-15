@@ -1344,3 +1344,8 @@ P93 combines standard Hoeffding concentration and a seven-cell union bound with 
 - Regression tests: [`test_finite_range_dependent_sign_coherence.py`](../tests/test_finite_range_dependent_sign_coherence.py)
 
 P95 drift-aware stratified sign-coherence rejection: predeclared regime-specific P94 confidence events with exact error allocation are combined by a familywise union bound. The theorem permits marginal drift across regimes but not data-dependent segmentation without additional selection accounting. Formal record: [proposition_95_drift_aware_stratified_sign_coherence.md](proposition_95_drift_aware_stratified_sign_coherence.md) and [p95_equation_provenance.md](p95_equation_provenance.md).
+
+
+## P96 selection-valid holdout stratification
+
+P96 conditions on pilot-selection information, applies the fixed-plan P95 guarantee to independent certification data, and uses the tower property to recover the same unconditional familywise error bound. The sample-splitting, conditioning, union-bound, and tower-property ingredients are standard. The project-specific synthesis and executable guard conditions are documented in [p96_equation_provenance.md](p96_equation_provenance.md) and [Proposition 96](proposition_96_selection_valid_holdout_stratification.md).

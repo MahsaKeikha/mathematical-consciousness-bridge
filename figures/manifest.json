@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "canonical_root": "docs/figures",
-  "current_frontier": "P95",
-  "current_frontier_figure": "docs/figures/p95_drift_aware_stratified_sign_coherence.svg",
-  "figure_count": 153,
+  "current_frontier": "P96",
+  "current_frontier_figure": "docs/figures/p96_selection_valid_holdout_stratification.svg",
+  "figure_count": 154,
   "hash_algorithm": "sha256",
   "figures": [
     {
@@ -685,6 +685,14 @@
       "category": "theorem-or-architecture",
       "title": "P95 Drift-Aware Stratified Sign-Coherence Rejection",
       "description_chars": 992
+    },
+    {
+      "path": "docs/figures/p96_selection_valid_holdout_stratification.svg",
+      "sha256": "98cfb4846b8a5ac471d56b7a479649497822cdf6477032060b3e0a889dc5ebc3",
+      "bytes": 6578,
+      "category": "theorem-or-architecture",
+      "title": "P96 Selection-Valid Holdout Stratification",
+      "description_chars": 1106
     },
     {
       "path": "docs/figures/physics_mathematics_atlas.svg",
