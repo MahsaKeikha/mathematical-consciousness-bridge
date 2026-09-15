@@ -12,6 +12,8 @@ The capstone exact checkpoint is:
 
 The public P100 contract includes the theorem, equation and novelty provenance, exact implementation and tests, canonical theorem figure, figure catalog, README, theorem roadmap, research navigation, reproducibility guide, citation surfaces, Start Here and plain-language entries, Research Map, implementation guide, research lineage, source index, and historical P99/P98 audit routes.
 
+The reader-surface contract explicitly identifies P100 as the current frontier in both Start Here and Plain Language while preserving P99 as the immediate fixed-round predecessor and P98 as an auditable historical selection-validity checkpoint.
+
 P100 remains a conditional model-rejection and sequential-inference theorem. Its guarantee requires predictable current-round choices and conditionally valid fresh certification data. It does not turn non-rejection into model acceptance, identify a latent state with consciousness, establish nonphysicality, or complete the physical-to-experiential bridge.
 
 This record exists to make the final publication boundary explicit before manuscript and preprint consolidation.
