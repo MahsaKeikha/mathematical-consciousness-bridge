@@ -295,6 +295,7 @@ def _assert_figure_manifest() -> None:
 def _assert_visual_atlas_order() -> None:
     visual_atlas = (ROOT / "website" / "visual-atlas.html").read_text(encoding="utf-8")
     p93 = visual_atlas.index('id="p93-frontier"')
+    p93 = visual_atlas.index('id="p93-frontier"')
     p92 = visual_atlas.index('id="p92-frontier"')
     p91 = visual_atlas.index('id="p91-frontier"')
     p90 = visual_atlas.index('id="p90-frontier"')

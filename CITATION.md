@@ -100,15 +100,16 @@ When citing a theorem, readers should consult the proposition document for its a
 
 ## Current theorem frontier: P93
 
-The current documented theorem frontier is **P92**. The formal package release remains **Version 0.82.0**. P92 closes the global mixed-prevalence P75 distance bracket left open by P91. A nonlinear three-minor sign-coherence invariant on the `X1 = 1` observable subtensor gives the exact lower bound `d_inf >= 1/24`, and the explicit genuinely mixed rational P75 point from P91 attains `1/24`. Therefore P92 proves `d_inf(P_emp, M75) = 1/24` over the complete P75 parameter cube.
+The current documented theorem frontier is **P93**. The formal package release remains **Version 0.82.0**. P93 converts P92's exact nonlinear three-minor sign-coherence obstruction into a finite-sample rejection theorem using only the seven observable cells entering that witness. At 95 percent confidence, exact P79 rational sampling-radius certification places the mathematical crossing between `n = 1622` and `n = 1623`. Because the established empirical proportions have denominator 24, the first exact replication of the original profile that also clears the certificate is `n = 1632 = 68 x 24`.
 
-- Proof: [`proposition_92_exact_global_mixed_prevalence_distance.md`](docs/proposition_92_exact_global_mixed_prevalence_distance.md)
-- Equation provenance: [`p92_equation_provenance.md`](docs/p92_equation_provenance.md)
-- Implementation: [`exact_global_mixed_prevalence_distance.py`](src/consciousness_bridge/exact_global_mixed_prevalence_distance.py)
-- Exact tests: [`test_exact_global_mixed_prevalence_distance.py`](tests/test_exact_global_mixed_prevalence_distance.py)
+For comparison, the generic P77 full-law fixed-population-margin sufficient condition at margin `1/24` crosses at `n = 7444`. P77 and P93 provide different guarantees, and P93 does not claim universal or minimax sample complexity.
 
-P92 remains a conditional model-separation theorem. It does not identify consciousness, establish nonphysicality, validate an alternative theory, or close the physical-to-experiential bridge.
+- Proof: [`proposition_93_localized_sign_coherence_rejection.md`](docs/proposition_93_localized_sign_coherence_rejection.md)
+- Equation provenance: [`p93_equation_provenance.md`](docs/p93_equation_provenance.md)
+- Implementation: [`localized_sign_coherence_rejection.py`](src/consciousness_bridge/localized_sign_coherence_rejection.py)
+- Exact tests: [`test_localized_sign_coherence_rejection.py`](tests/test_localized_sign_coherence_rejection.py)
 
+P93 remains a conditional finite-sample model-rejection theorem. Non-rejection is inconclusive. It does not identify consciousness, establish nonphysicality, validate an alternative theory, or close the physical-to-experiential bridge.
 ## Historical mixed-prevalence frontier: P91
 
 P91 remains the preceding full-cube nonlinear theorem. It proves `1/42 < d_inf(P_emp, M75) <= 1/24` by a rank-two flattening certificate plus the mixed upper point. P92 closes that bracket exactly and does not erase the P91 structural result.
@@ -130,7 +131,7 @@ P89 is complete only for real linear combinations of the eleven declared parity 
 
 - [`CITATION.cff`](CITATION.cff): machine-readable Citation File Format metadata used by GitHub citation tools.
 - [`CITATION.bib`](CITATION.bib): ready-to-import BibTeX record.
-- [Detailed proposition record](docs/detailed_proposition_record.md): P1 through P92 chronological theorem record.
+- [Detailed proposition record](docs/detailed_proposition_record.md): P1 through P93 chronological theorem record.
 - [Theorem roadmap](docs/theorem_roadmap.md): dependency-oriented theorem map.
 - [P72 equation and provenance record](docs/p72_equation_provenance.md): equation-level classification for the noisy-target theorem.
 - [P73 equation and provenance record](docs/p73_equation_provenance.md): equation-level classification and external latent-class context for the target-channel identifiability theorem.
@@ -156,10 +157,6 @@ P89 is complete only for real linear combinations of the eleven declared parity 
 ## Proposition 91 method citation
 
 For work that uses the full mixed-prevalence rank-two flattening certificate, cite the program together with **Proposition 91: Mixed-Prevalence Rank-Two Flattening Separation** and its [equation provenance record](docs/p91_equation_provenance.md). The theorem gives the certified global bracket `1/42 < d_inf(P_emp, M75) <= 1/24` for the established witness and full P75 parameter cube. The constructive upper endpoint is not claimed to be the exact global optimum.
-
-## Proposition 92 method citation
-
-For work that uses the exact full-cube mixed-prevalence distance theorem, cite the program together with **Proposition 92: Exact Global Mixed-Prevalence Distance** and its [equation provenance record](docs/p92_equation_provenance.md). P92 proves `d_inf(P_emp, M75) = 1/24` for the established witness and complete P75 parameter cube.
 
 ## Proposition 92 method citation
 

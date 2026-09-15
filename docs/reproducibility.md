@@ -10,7 +10,7 @@ You do not need every command at once. Choose the route that matches your goal.
 | --- | --- |
 | Reproduce the maintained repository as strictly as possible | `make reproduce` |
 | Run the normal verification suite | `make check` |
-| Run only the current P90 theorem checks | focused P90 commands below |
+| Run only the current P93 theorem checks | focused P93 commands below |
 | Validate figures without rebuilding them | `make figures-check` |
 | Regenerate the complete visual record | `make figures` |
 | Inspect CI without installing locally | GitHub Actions |
@@ -106,57 +106,67 @@ Use this route when you want to verify the current committed state without regen
 
 ## 5. Focused audit of the current P93 frontier
 
-The current theorem frontier is **P92**.
+The current theorem frontier is **P93**.
 
 Its direct technical record is:
 
 ```text
-docs/proposition_92_exact_global_mixed_prevalence_distance.md
-docs/p92_equation_provenance.md
-src/consciousness_bridge/exact_global_mixed_prevalence_distance.py
-tests/test_exact_global_mixed_prevalence_distance.py
-docs/figures/p92_exact_global_mixed_prevalence_distance.svg
+docs/proposition_93_localized_sign_coherence_rejection.md
+docs/p93_equation_provenance.md
+src/consciousness_bridge/localized_sign_coherence_rejection.py
+tests/test_localized_sign_coherence_rejection.py
+docs/figures/p93_localized_sign_coherence_rejection.svg
 figures/manifest.json
 ```
 
-Run the focused theorem and figure-publication checks with:
+Run the focused theorem and publication checks with:
 
 ```bash
-python -m pytest \
-  tests/test_exact_global_mixed_prevalence_distance.py \
+python -m pytest -q \
+  tests/test_localized_sign_coherence_rejection.py \
+  tests/test_p93_reader_surface_coherence.py \
   tests/test_figure_publication_sync.py \
   tests/test_frontier_publication_consistency.py
+python scripts/sync_figure_publication.py --check
+python scripts/verify_repository.py
 ```
 
-P90 uses a genuinely nonlinear constraint of the declared strict P75 model image. Because prevalence is fixed at zero, the active observable law is one product Bernoulli component, and the canonical two-by-two slice must satisfy `ad = bc`. For the established empirical slice,
-
-```text
-q1000 = 1/8
-q1001 = 1/24
-q1010 = 0
-q1011 = 5/24
-```
-
-the determinant residual is `5/192` and the slice mass is `3/8`. Therefore every rank-one slice within L-infinity radius `epsilon` must satisfy
+P93 is the finite-data continuation of P92's nonlinear three-minor sign-coherence witness. The three determinants use only seven distinct observable cells, so the simultaneous IID confidence radius is
 
 \[
-\epsilon \ge \frac{5/192}{3/8} = \frac5{72}.
+\varepsilon_{n,7}(\alpha)
+=
+\sqrt{\frac{\log(14/\alpha)}{2n}}.
 \]
 
-The rational P75 parameter point
-
-```text
-(0, 3/5, 1/2, 3/8, 3/4, 5/9, 1/2, 2/3, 3/4)
-```
-
-attains full-law L-infinity distance exactly `5/72`, so the lower and upper certificates match:
+For the established witness, the determinant values are
 
 \[
-L_{90}=\frac5{72}=\frac73L_{89},\qquad L_{89}=\frac5{168}.
+-\frac1{48},\qquad \frac1{64},\qquad \frac5{192},
 \]
 
-P90 is exact only for the declared strict P75 box and its fixed extreme-prevalence product-law image. It does not identify consciousness, establish nonphysicality, exhaust more general nonlinear mixture constraints, or close the physical-to-experiential bridge.
+with exact sign-stability radii
 
+\[
+\frac1{24},\qquad \frac3{56},\qquad \frac5{72}.
+\]
+
+The limiting radius is therefore `1/24`. At 95 percent confidence, exact P79 rational certification proves
+
+```text
+epsilon_1622,7 > 1/24
+epsilon_1623,7 < 1/24
+```
+
+so **1623 is the exact mathematical crossing**. Because the established empirical proportions have denominator 24, the first exact replication of that profile that also clears the certificate is
+
+```text
+1632 = 68 x 24.
+```
+
+For comparison, the generic P77 full-law fixed-population-margin sufficient condition at margin `1/24` crosses at 7444. These are different guarantees: P77 is a generic full-law design bound, while P93 is localized to the observed P92 nonlinear sign witness.
+
+P93 does not claim universal or minimax sample complexity. Non-rejection remains inconclusive. The theorem does not identify the latent state with consciousness, establish nonphysicality, validate an alternative ontology, or close the physical-to-experiential bridge.
 ---
 
 ## 6. Run the full tests

@@ -57,7 +57,7 @@ def test_complete_proposition_record_is_canonical_archive() -> None:
     roadmap = _read(DOCS / "theorem_roadmap.md")
     assert "Complete P1 to P93 chronology" in detail
     assert "P1 through P93 with explicit dependency branches" in roadmap
-    for number in range(1, 93):
+    for number in range(1, 94):
         assert list(DOCS.glob(f"proposition_{number}_*.md")), (
             f"missing P{number} proposition document"
         )

@@ -21,7 +21,7 @@ def test_shared_reader_experience_style_is_built_into_pages() -> None:
     assert "overflow-wrap: anywhere" in css
 
 
-def test_no_reader_facing_html_page_advertises_pre_p92_as_current() -> None:
+def test_no_reader_facing_html_page_advertises_pre_p93_as_current() -> None:
     stale_current_frontier_tokens = (
         "Current theorem frontier · P91",
         "<strong>P91</strong><span>current theorem frontier</span>",
@@ -140,7 +140,7 @@ def test_repository_verifier_tracks_p93_and_all_93_propositions() -> None:
 def test_overview_orients_first_time_reader_before_theorem_frontier() -> None:
     overview = _text("website/index.html")
     assert overview.count('id="project-journey"') == 1
-    assert overview.index('id="project-journey"') < overview.index('id="p92-frontier"')
+    assert overview.index('id="project-journey"') < overview.index('id="p93-frontier"')
     assert "The whole research program in three stages" in overview
     assert "<span>Research I</span>" in overview
     assert "<span>Research II</span>" in overview
