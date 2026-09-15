@@ -1303,3 +1303,13 @@ P87 is a conditional model-separation theorem for the declared P75 family. Its e
 - Implementation: [`exact_nonlinear_rank_one_separation.py`](../src/consciousness_bridge/exact_nonlinear_rank_one_separation.py)
 - Tests: [`test_exact_nonlinear_rank_one_separation.py`](../tests/test_exact_nonlinear_rank_one_separation.py)
 - Figure: [P90 nonlinear rank-one certificate](figures/p90_exact_nonlinear_rank_one_separation.svg)
+
+## P91 mixed-prevalence rank-two flattening separation
+
+- Theorem: [Proposition 91](proposition_91_mixed_prevalence_rank_two_flattening_separation.md)
+- Equation provenance: [P91 equation record](p91_equation_provenance.md)
+- Implementation: [`mixed_prevalence_rank_two_flattening_separation.py`](../src/consciousness_bridge/mixed_prevalence_rank_two_flattening_separation.py)
+- Exact tests: [`test_mixed_prevalence_rank_two_flattening_separation.py`](../tests/test_mixed_prevalence_rank_two_flattening_separation.py)
+- Figure: [`p91_mixed_prevalence_rank_two_flattening_separation.svg`](figures/p91_mixed_prevalence_rank_two_flattening_separation.svg)
+
+The rank-at-most-two implication is standard linear algebra applied to a two-component product mixture. The repository-original content is the selected exact witness, nonnegative 512-vertex interval certificate, and resulting global P75 distance bracket.

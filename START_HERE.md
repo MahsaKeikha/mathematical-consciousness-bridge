@@ -108,3 +108,7 @@ For the full proposition audit trail, open the **[Detailed Proposition Record](d
 For figures first, open the **[Figure Catalog](docs/figure_catalog.md)**.
 
 For code and verification, open the **[Reproducibility Guide](docs/reproducibility.md)**.
+
+### P91 mixed-prevalence frontier
+
+The current Research II frontier is [P91](docs/proposition_91_mixed_prevalence_rank_two_flattening_separation.md). P91 shows that the nonlinear P75 separation is not confined to P90's prevalence-zero face: over the full two-component mixture cube, the established witness obeys the certified bracket `1/42 < d_inf <= 1/24`. The upper endpoint remains a constructive bound rather than a claimed exact optimum.

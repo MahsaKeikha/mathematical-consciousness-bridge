@@ -1,29 +1,30 @@
-# Current visual frontier: P71-P90
+# Current visual frontier: P71-P91
 
 This page is generated from the canonical proposition and figure tree.
 It is the compact GitHub-facing visual route through the current target-side branch.
 
-## Current theorem frontier: P90
+## Current theorem frontier: P91
 
-![P90 current theorem frontier](../docs/figures/p90_exact_nonlinear_rank_one_separation.svg)
+![P91 current theorem frontier](../docs/figures/p91_mixed_prevalence_rank_two_flattening_separation.svg)
 
-[Read Proposition 90](../docs/proposition_90_exact_nonlinear_rank_one_separation.md)
+[Read Proposition 91](../docs/proposition_91_mixed_prevalence_rank_two_flattening_separation.md)
 
-[Open P90 equation provenance](../docs/p90_equation_provenance.md)
+[Open P91 equation provenance](../docs/p91_equation_provenance.md)
 
-### Exact P90 nonlinear rank-one witness
+### Exact P91 mixed-prevalence rank-two witness
 
-P90 moves beyond the complete P89 linear envelope. On the strict box, prevalence is fixed at zero, so the selected two-by-two product-law slice must satisfy ad = bc. Matching exact rational lower and upper certificates prove:
+P91 removes the extreme-prevalence restriction. The full two-component P75 family obeys a rank-at-most-two bipartite flattening constraint.
 
 ```text
-L89 = 5/168 < L90 = 5/72
-L90 / L89 = 7/3
-empirical determinant residual = 5/192
+empirical selected determinant = 1/512
+closed radius 1/42: minimum determinant = 23/677376 > 0
+explicit mixed P75 point: distance = 1/24
+1/42 < d_inf(P_emp, M_75) <= 1/24
 ```
 
-The theorem is exact only for the declared strict single-component P75 box. It does not identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.
+The upper endpoint is not claimed to be the exact global optimum. P91 does not identify consciousness or close the physical-to-experiential bridge.
 
-## P71-P90 canonical theorem-figure index
+## P71-P91 canonical theorem-figure index
 
 | Proposition | Canonical figure | Proof | Provenance |
 | --- | --- | --- | --- |
@@ -47,6 +48,7 @@ The theorem is exact only for the declared strict single-component P75 box. It d
 | P88 | [figure](../docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg) | [proof](../docs/proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md) | [equations](../docs/p88_equation_provenance.md) |
 | P89 | [figure](../docs/figures/p89_complete_linear_parity_duality.svg) | [proof](../docs/proposition_89_complete_linear_parity_duality.md) | [equations](../docs/p89_equation_provenance.md) |
 | P90 | [figure](../docs/figures/p90_exact_nonlinear_rank_one_separation.svg) | [proof](../docs/proposition_90_exact_nonlinear_rank_one_separation.md) | [equations](../docs/p90_equation_provenance.md) |
+| P91 | [figure](../docs/figures/p91_mixed_prevalence_rank_two_flattening_separation.svg) | [proof](../docs/proposition_91_mixed_prevalence_rank_two_flattening_separation.md) | [equations](../docs/p91_equation_provenance.md) |
 
 ## Reproduce the visual record
 
@@ -60,4 +62,4 @@ The complete machine-readable SHA-256 inventory is in [`manifest.json`](manifest
 
 ## Interpretation boundary
 
-P71-P90 strengthens the methodology for testing a declared physical-to-target model. It does not derive consciousness from physics, prove nonphysicality, or close the physical-to-experiential bridge.
+P71-P91 strengthens the methodology for testing a declared physical-to-target model. It does not derive consciousness from physics, prove nonphysicality, or close the physical-to-experiential bridge.

@@ -8,7 +8,7 @@ If this research program, one of its propositions, figures, algorithms, or imple
 
 > Keikha, M. (2026). *Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem* (Version 0.82.0). GitHub research repository. https://github.com/MahsaKeikha/mathematical-consciousness-bridge
 
-This is the preferred citation for the research program at the current documented frontier, P90.
+This is the preferred citation for the research program at the current documented frontier, P91.
 
 ## BibTeX
 
@@ -20,7 +20,7 @@ This is the preferred citation for the research program at the current documente
   version      = {0.82.0},
   howpublished = {GitHub research repository},
   url          = {https://github.com/MahsaKeikha/mathematical-consciousness-bridge},
-  note         = {Ongoing research program. Current documented theorem frontier: P90.}
+  note         = {Ongoing research program. Current documented theorem frontier: P91.}
 }
 ```
 
@@ -53,7 +53,7 @@ This repository is an evolving research program. For reproducible scholarly use:
 3. Cite the individual proposition or artifact when your argument depends on a specific theorem, figure, algorithm, or test.
 4. Do not attribute later propositions or later numerical results to an earlier version of the repository.
 
-The current citation metadata identify Version **0.82.0** and theorem frontier **P90**. Future research versions should update the version number, theorem frontier, citation metadata, and archival record together.
+The current citation metadata identify Version **0.82.0** and theorem frontier **P91**. Future research versions should update the version number, theorem frontier, citation metadata, and archival record together.
 
 ## DOI and archival status
 
@@ -98,10 +98,20 @@ These remain conditional statistical target-measurement results, not validation 
 
 When citing a theorem, readers should consult the proposition document for its assumptions and scope rather than citing the theorem statement without its declared conditions.
 
-## Current theorem frontier: P90
+## Current theorem frontier: P91
 
-The current documented theorem frontier is **P90**. The formal package release remains **Version 0.82.0**. P90 gives the exact nonlinear rank-one model-separation value `L90 = 5/72 = (7/3)L89` on the declared P75 strict box. P89 remains the complete real linear parity-functional subfrontier at `L89 = 5/168`. Neither result closes the physical-to-experiential bridge.
+The current documented theorem frontier is **P91**. The formal package release remains **Version 0.82.0**. P91 removes P90's extreme-prevalence restriction. Every two-component P75 law has rank at most two under the declared `(X1,X4)|(X2,X3)` flattening. For the established witness, an exact 512-vertex nonnegative interval calculation excludes the entire closed full-law L-infinity ball of radius `1/42`, while an explicit rational P75 point with prevalence `4/5` lies at distance exactly `1/24`. Therefore P91 certifies `1/42 < d_inf(P_emp, M75) <= 1/24` over the full P75 parameter cube. The upper endpoint is not claimed to be the exact global optimum.
 
+- Proof: [`proposition_91_mixed_prevalence_rank_two_flattening_separation.md`](docs/proposition_91_mixed_prevalence_rank_two_flattening_separation.md)
+- Equation provenance: [`p91_equation_provenance.md`](docs/p91_equation_provenance.md)
+- Implementation: [`mixed_prevalence_rank_two_flattening_separation.py`](src/consciousness_bridge/mixed_prevalence_rank_two_flattening_separation.py)
+- Exact tests: [`test_mixed_prevalence_rank_two_flattening_separation.py`](tests/test_mixed_prevalence_rank_two_flattening_separation.py)
+
+P91 remains a conditional model-separation theorem. It does not identify consciousness, establish nonphysicality, validate an alternative theory, or close the physical-to-experiential bridge.
+
+## Historical nonlinear frontier: P90
+
+P90 remains the exact single-component nonlinear subfrontier at `L90 = 5/72 = (7/3)L89` on the declared strict prevalence-zero P75 face. P91 enlarges the model family to arbitrary prevalence and therefore answers a different question; its bracket must not be compared to `L90` as though both optimized over the same model set.
 ## Historical theorem frontier: P89
 
 P89 is preserved as the complete real linear parity-functional subfrontier. It proves `L89 = 5/168` for all real linear combinations of the eleven declared parity observables on the stated P75 box. P90 strengthens the overall separation by using a genuinely nonlinear rank-one constraint; it does not erase or weaken the P89 linear completeness result.
@@ -116,7 +126,7 @@ P89 is complete only for real linear combinations of the eleven declared parity 
 
 - [`CITATION.cff`](CITATION.cff): machine-readable Citation File Format metadata used by GitHub citation tools.
 - [`CITATION.bib`](CITATION.bib): ready-to-import BibTeX record.
-- [Detailed proposition record](docs/detailed_proposition_record.md): P1 through P90 chronological theorem record.
+- [Detailed proposition record](docs/detailed_proposition_record.md): P1 through P91 chronological theorem record.
 - [Theorem roadmap](docs/theorem_roadmap.md): dependency-oriented theorem map.
 - [P72 equation and provenance record](docs/p72_equation_provenance.md): equation-level classification for the noisy-target theorem.
 - [P73 equation and provenance record](docs/p73_equation_provenance.md): equation-level classification and external latent-class context for the target-channel identifiability theorem.
@@ -195,7 +205,7 @@ P88 was the immediately preceding Research II frontier. It completed the primiti
 
 P87 was the immediately preceding theorem frontier. It completed the sign-normalized primitive nonzero four-event coefficient box with `0 < |c_i| <= 2`, auditing 39,600 exact functionals. On the stored exact rational witness, the complete P86 certificate is `1/192` and P87 certifies `1/96`. This is a conditional model-separation result for the declared P75 family, not an identification or definition of consciousness.
 
-## Current theorem frontier: P90
+## Current theorem frontier: P91
 
 The current documented theorem frontier is **P90**, an exact nonlinear rank-one slice separation theorem for the declared strict P75 box.
 
@@ -205,3 +215,7 @@ The current documented theorem frontier is **P90**, an exact nonlinear rank-one 
 - Exact tests: [`test_exact_nonlinear_rank_one_separation.py`](tests/test_exact_nonlinear_rank_one_separation.py)
 
 P90 is a conditional model-separation result. It does not identify consciousness or establish nonphysicality.
+
+## Proposition 91 method citation
+
+For work that uses the full mixed-prevalence rank-two flattening certificate, cite the program together with **Proposition 91: Mixed-Prevalence Rank-Two Flattening Separation** and its [equation provenance record](docs/p91_equation_provenance.md). The theorem gives the certified global bracket `1/42 < d_inf(P_emp, M75) <= 1/24` for the established witness and full P75 parameter cube. The constructive upper endpoint is not claimed to be the exact global optimum.

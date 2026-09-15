@@ -5,15 +5,15 @@ visual record of the Mathematical Consciousness Bridge project. The canonical
 SVG archive lives in [`docs/figures/`](../docs/figures/); this gateway is derived
 from that archive by code so it cannot silently remain on an older proposition.
 
-## Current theorem frontier: P90
+## Current theorem frontier: P91
 
-![P90 current theorem frontier](../docs/figures/p90_exact_nonlinear_rank_one_separation.svg)
+![P91 current theorem frontier](../docs/figures/p91_mixed_prevalence_rank_two_flattening_separation.svg)
 
-Canonical figure: [`p90_exact_nonlinear_rank_one_separation.svg`](../docs/figures/p90_exact_nonlinear_rank_one_separation.svg)
-Theorem: [`proposition_90_exact_nonlinear_rank_one_separation.md`](../docs/proposition_90_exact_nonlinear_rank_one_separation.md)
-Equation provenance: [`p90_equation_provenance.md`](../docs/p90_equation_provenance.md)
+Canonical figure: [`p91_mixed_prevalence_rank_two_flattening_separation.svg`](../docs/figures/p91_mixed_prevalence_rank_two_flattening_separation.svg)
+Theorem: [`proposition_91_mixed_prevalence_rank_two_flattening_separation.md`](../docs/proposition_91_mixed_prevalence_rank_two_flattening_separation.md)
+Equation provenance: [`p91_equation_provenance.md`](../docs/p91_equation_provenance.md)
 
-For the full P71-P90 visual progression, open
+For the full P71-P91 visual progression, open
 [`CURRENT_FRONTIER.md`](CURRENT_FRONTIER.md).
 
 ## Complete reproducible figure record

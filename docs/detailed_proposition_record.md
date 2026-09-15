@@ -1,6 +1,6 @@
 # Detailed proposition record
 
-## Complete P1 to P90 chronology
+## Complete P1 to P91 chronology
 
 This page preserves the proposition-by-proposition development history of the Mathematical Consciousness Bridge research program. It is intentionally separate from the main README so a first-time reader can follow the scientific argument without first learning the internal chronology of the project.
 
@@ -10,11 +10,11 @@ The scientific status rule is strict throughout: a theorem is only a theorem und
 
 ### How to use this record
 
-A first-time reader should not read this page as 90 disconnected proposition-level results. Use it as an audit index: identify the scientific role of a proposition, open its direct proof when needed, then follow implementation/tests/provenance links for verification. For the shortest conceptual path, begin with [Start Here](../START_HERE.md) and [Research Navigation](research_navigation.md). The [Reader Experience and Visual Presentation Standard](reader_experience_and_visual_standard.md) explains the repository-wide explanation and visual hierarchy.
+A first-time reader should not read this page as 91 disconnected proposition-level results. Use it as an audit index: identify the scientific role of a proposition, open its direct proof when needed, then follow implementation/tests/provenance links for verification. For the shortest conceptual path, begin with [Start Here](../START_HERE.md) and [Research Navigation](research_navigation.md). The [Reader Experience and Visual Presentation Standard](reader_experience_and_visual_standard.md) explains the repository-wide explanation and visual hierarchy.
 
 ---
 
-## Complete P1 to P90 chronology
+## Complete P1 to P91 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
@@ -346,3 +346,15 @@ P90 moves beyond the complete P89 linear parity-functional envelope by using a n
 - Figure: `docs/figures/p90_exact_nonlinear_rank_one_separation.svg`
 
 This is a conditional exact model-separation theorem for the strict P75 box and does not identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.
+
+## Proposition 91: Mixed-Prevalence Rank-Two Flattening Separation
+
+P91 removes P90's extreme-prevalence restriction. Every two-component P75 law has rank at most two after the declared `(X1,X4)|(X2,X3)` flattening. The selected empirical 3 by 3 minor has determinant `1/512`; exhaustive exact rational evaluation of all 512 nonnegative interval-box vertices at radius `1/42` keeps that determinant strictly positive, excluding the full P75 family from the closed ball. An explicit rational P75 point with prevalence `4/5` lies at distance `1/24`, yielding `1/42 < d_inf(P_emp, M75) <= 1/24`.
+
+- [Proof](proposition_91_mixed_prevalence_rank_two_flattening_separation.md)
+- [Equation provenance](p91_equation_provenance.md)
+- Implementation: `src/consciousness_bridge/mixed_prevalence_rank_two_flattening_separation.py`
+- Tests: `tests/test_mixed_prevalence_rank_two_flattening_separation.py`
+- Figure: `docs/figures/p91_mixed_prevalence_rank_two_flattening_separation.svg`
+
+The upper endpoint is not claimed to be the exact global optimum. This is a conditional model-separation theorem and does not identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.
