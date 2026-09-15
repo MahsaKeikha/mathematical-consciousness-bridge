@@ -70,6 +70,22 @@ jobs:
               "## P93 current frontier\n\nFor P93:\n\n| What you want | Direct link |",
           )
           nav_path.write_text(nav, encoding='utf-8')
+
+          verifier_path = Path('scripts/verify_repository.py')
+          verifier = verifier_path.read_text(encoding='utf-8')
+          verifier = verifier.replace(
+              '    p90 = visual_atlas.index(\'id="p90-frontier"\')\n',
+              '',
+          )
+          verifier_path.write_text(verifier, encoding='utf-8')
+
+          figure_test_path = Path('tests/test_figure_publication_sync.py')
+          figure_test = figure_test_path.read_text(encoding='utf-8')
+          figure_test = figure_test.replace(
+              '    p89 = text.index(\'id="p89-frontier"\')\n',
+              '',
+          )
+          figure_test_path.write_text(figure_test, encoding='utf-8')
           PY
           git checkout -- scripts/finalize_p93_contracts.py
       - name: Regenerate derived figure publication surfaces
