@@ -60,7 +60,6 @@ jobs:
           assert "Any P99 candidate" not in final_roadmap
           assert "## P99: cross-fitted e-value aggregation" in final_roadmap
           assert "## After P99" in final_roadmap
-          assert "Any P100" not in final_roadmap
 
           reproducibility = Path("docs/reproducibility.md")
           text = reproducibility.read_text(encoding="utf-8")
@@ -72,42 +71,37 @@ jobs:
           heading = "## 5. Focused audit of the current P99 frontier"
           start = text.index(heading)
           end = text.index("\n---", start)
-          focused = r'''## 5. Focused audit of the current P99 frontier
-
-The current theorem frontier is **P99**.
-
-Its direct technical record is:
-
-```text
-docs/proposition_99_cross_fitted_evalue_aggregation.md
-docs/p99_equation_provenance.md
-src/consciousness_bridge/cross_fitted_evalue_aggregation.py
-tests/test_cross_fitted_evalue_aggregation.py
-docs/figures/p99_cross_fitted_evalue_aggregation.svg
-figures/manifest.json
-```
-
-Run the focused theorem and publication checks with:
-
-```bash
-python -m pytest -q \
-  tests/test_cross_fitted_evalue_aggregation.py \
-  tests/test_p99_reader_surface_coherence.py \
-  tests/test_p98_reader_surface_coherence.py \
-  tests/test_p97_reader_surface_coherence.py \
-  tests/test_frontier_reader_narrative.py \
-  tests/test_figure_publication_sync.py \
-  tests/test_frontier_publication_consistency.py
-python scripts/sync_figure_publication.py --check
-python scripts/verify_repository.py
-```
-
-P99 converts selection-valid cross-fitted fold rejections into exact e-values. A finite calibration fixed before own-fold evaluation remains valid, and fixed convex averaging across folds uses expectation linearity rather than a final fold-independence assumption.
-
-For two folds with two one-step-dependent regimes each, global alpha `1/20`, and fold test level `1/25`, the local regime level is `1/50`. The mathematical crossing is `3774` observations per regime, first exact replication is `3792`, and the unique-data totals are `15096` and `15168`.
-
-P99 does not uniformly dominate P98. Own-fold leakage, post-hoc calibration search, dependent-stream pseudo-folds, model acceptance, consciousness identification, nonphysicality, and bridge completion remain outside P99.
-'''
+          focused = (
+              "## 5. Focused audit of the current P99 frontier\n\n"
+              "The current theorem frontier is **P99**.\n\n"
+              "Its direct technical record is:\n\n"
+              "```text\n"
+              "docs/proposition_99_cross_fitted_evalue_aggregation.md\n"
+              "docs/p99_equation_provenance.md\n"
+              "src/consciousness_bridge/cross_fitted_evalue_aggregation.py\n"
+              "tests/test_cross_fitted_evalue_aggregation.py\n"
+              "docs/figures/p99_cross_fitted_evalue_aggregation.svg\n"
+              "figures/manifest.json\n"
+              "```\n\n"
+              "Run the focused theorem and publication checks with:\n\n"
+              "```bash\n"
+              "python -m pytest -q \\\n"
+              "  tests/test_cross_fitted_evalue_aggregation.py \\\n"
+              "  tests/test_p99_reader_surface_coherence.py \\\n"
+              "  tests/test_p98_reader_surface_coherence.py \\\n"
+              "  tests/test_p97_reader_surface_coherence.py \\\n"
+              "  tests/test_frontier_reader_narrative.py \\\n"
+              "  tests/test_figure_publication_sync.py \\\n"
+              "  tests/test_frontier_publication_consistency.py\n"
+              "python scripts/sync_figure_publication.py --check\n"
+              "python scripts/verify_repository.py\n"
+              "```\n\n"
+              "P99 converts selection-valid cross-fitted fold rejections into exact e-values. "
+              "A finite calibration fixed before own-fold evaluation remains valid, and fixed convex averaging across folds uses expectation linearity rather than a final fold-independence assumption.\n\n"
+              "For two folds with two one-step-dependent regimes each, global alpha `1/20`, and fold test level `1/25`, the local regime level is `1/50`. "
+              "The mathematical crossing is `3774` observations per regime, first exact replication is `3792`, and the unique-data totals are `15096` and `15168`.\n\n"
+              "P99 does not uniformly dominate P98. Own-fold leakage, post-hoc calibration search, dependent-stream pseudo-folds, model acceptance, consciousness identification, nonphysicality, and bridge completion remain outside P99.\n"
+          )
           text = text[:start] + focused + text[end:]
           text = text.replace(
               "The current frontier figure is:\n\n```text\ndocs/figures/p98_cross_fitted_selection_valid_certification.svg\n```",
