@@ -49,14 +49,17 @@ jobs:
         run: python scripts/generate_all_figures.py
       - name: Normalize reader-facing punctuation
         run: python scripts/normalize_documentation_punctuation.py
-      - name: Canonicalize generated page endings
+      - name: Canonicalize generated HTML endings
         run: |
           python - <<'PY'
           from pathlib import Path
 
-          for relative in ('website/plain-language.html', 'website/start-here.html'):
-              path = Path(relative)
-              path.write_text(path.read_text(encoding='utf-8').rstrip() + '\n', encoding='utf-8')
+          for path in sorted(Path('website').glob('*.html')):
+              text = path.read_text(encoding='utf-8')
+              closing = '</html>'
+              if closing in text:
+                  text = text[: text.index(closing) + len(closing)]
+              path.write_text(text.rstrip() + '\n', encoding='utf-8')
           PY
       - name: Validate generated patch
         run: |
