@@ -1,34 +1,65 @@
-    p92_block = rf'''## P92: exact global mixed-prevalence distance
+"""Audit the completed P92 publication migration.
 
-P92 closes the P91 bracket exactly. On the `X1 = 1` observable subtensor, every two-component P75 mixture has three conditional two-by-two determinants whose product is nonnegative. For the established empirical witness those determinants are `-1/48`, `1/64`, and `5/192`, with exact sign-stability radii `1/24`, `3/56`, and `5/72`.
+The P91 to P92 reader-surface migration has already been applied on the P92
+feature branch. This retained helper is intentionally read-only: permanent
+publication workflows must never rewrite repository state.
 
-Any law closer than `1/24` therefore keeps sign pattern `(-,+,+)` and has negative determinant product, which is impossible for P75. The P91 mixed rational point attains distance exactly `1/24`, so
+Run with::
 
-\[
-\\boxed{{d_\\infty(P_{{\\mathrm{{emp}}}},\\mathcal M_{{75}})=\\frac{{1}}{{24}}.}}
-\]
+    python scripts/promote_p92_public_frontier.py
 
-- [P92]({PROOF})
-- Provenance: [{PROVENANCE}]({PROVENANCE})
-- Figure: [P92 exact global distance](figures/{FIGURE})
-- Source: [`{SOURCE}`](../src/consciousness_bridge/{SOURCE})
-- Tests: [`{TEST}`](../tests/{TEST})
+The command checks the canonical P92 frontier declarations and exits without
+modifying any file.
+"""
 
-P92 is a conditional model-separation theorem and does not identify consciousness or close the physical-to-experiential bridge.'''
-    if "## P92: exact global mixed-prevalence distance" not in text:
-        text = text.replace("\n## After P92", "\n" + p92_block + "\n\n## After P92", 1)
-    text = text.replace(
-        "Natural P92 directions include tightening the mixed-prevalence global distance bracket, combining several rank-two minors into a stronger exact certificate, or deriving a finite-sample rejection theorem specialized to the P91 algebraic witness.",
-        "Natural P93 directions include finite-sample calibration of the P92 nonlinear sign certificate, stability under alternative observable slicings, or exact comparison with broader latent-class families.",
-    )
-    write(path, text)
+from __future__ import annotations
+
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
 
 
-def promote_records() -> None:
-    path = "docs/detailed_proposition_record.md"
-    text = replace_many(
-        read(path),
-        (
-            ("## Complete P1 to P91 chronology", "## Complete P1 to P92 chronology"),
-            ("P1 through P91", "P1 through P92"),
+def _read(path: str) -> str:
+    return (ROOT / path).read_text(encoding="utf-8")
+
+
+def main() -> None:
+    checks = {
+        "README.md": (
+            "current public theorem frontier is **P92**",
+            "proposition_92_exact_global_mixed_prevalence_distance.md",
         ),
+        "scripts/verify_repository.py": ('CURRENT_FRONTIER = "P92"',),
+        "website/index.html": (
+            'id="p92-frontier"',
+            "P92 current theorem frontier",
+        ),
+        "website/plain-language.html": ("current frontier P92",),
+        "website/start-here.html": ("current frontier P92",),
+        "website/research-map.html": (
+            'id="p92-research-map"',
+            "d_inf(P_emp, M75) = 1/24",
+        ),
+        "figures/CURRENT_FRONTIER.md": (
+            "Current theorem frontier: P92",
+            "d_inf(P_emp, M_75) = 1/24",
+        ),
+    }
+
+    failures: list[str] = []
+    for path, required in checks.items():
+        text = _read(path)
+        for token in required:
+            if token not in text:
+                failures.append(f"{path}: missing {token!r}")
+
+    if failures:
+        raise RuntimeError(
+            "P92 publication migration is incomplete:\n" + "\n".join(failures)
+        )
+
+    print("[P92] publication migration is present; no files were modified")
+
+
+if __name__ == "__main__":
+    main()
