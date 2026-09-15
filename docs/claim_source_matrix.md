@@ -46,6 +46,9 @@ The P86-P88 exact-certificate sequence uses several different kinds of support a
 
 ## Reader-facing status claims
 
+Historical P91 publication snapshot: the statements "The current repository contains 91 proposition-level results" and "P91 is the current Research II theorem frontier" are preserved here only as provenance for the P91 public snapshot. The live repository status is 95 proposition-level results with P95 as the current frontier.
+
+
 | Claim family | Claim used on the website | Evidence class | Canonical support | Required boundary |
 | --- | --- | --- | --- | --- |
 | Current theorem count | The current repository contains 95 proposition-level results | repository publication status | theorem roadmap, verifier, reader tests, and current website source | this is a repository count, not an external scientific consensus statement |

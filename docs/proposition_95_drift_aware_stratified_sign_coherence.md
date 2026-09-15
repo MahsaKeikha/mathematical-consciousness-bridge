@@ -236,7 +236,7 @@ All quantities in this final gate are rational.
 For a simple balanced design, split the total 5 percent familywise error budget equally:
 
 \[
-\alpha_b=rac{0.05}{B}.
+\alpha_b=\frac{0.05}{B}.
 \]
 
 For the established P92 witness,
