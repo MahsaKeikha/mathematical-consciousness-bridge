@@ -1,0 +1,90 @@
+name: p92-finalize-publication
+
+on:
+  push:
+    branches:
+      - p92-exact-global-mixed-distance
+    paths:
+      - ".github/workflows/p92-finalize-publication.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: p92-exact-global-mixed-distance
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - name: Install exact publication environment
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+          python -m pip install -r requirements-figures.txt
+      - name: Repair remaining P92 reader contracts
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          def replace(path: str, old: str, new: str) -> None:
+              p = Path(path)
+              text = p.read_text(encoding="utf-8")
+              if old not in text:
+                  print(f"[P92] already absent or fixed: {path} :: {old!r}")
+                  return
+              p.write_text(text.replace(old, new), encoding="utf-8")
+              print(f"[P92] repaired {path}")
+
+          replace(
+              "website/visual-atlas.html",
+              "<!-- current-frontier-visual: P91 -->",
+              "<!-- current-frontier-visual: P92 -->",
+          )
+          replace(
+              "website/implementation.html",
+              "index.html#p91-frontier",
+              "index.html#p92-frontier",
+          )
+          replace(
+              "website/plain-language.html",
+              "currently through P91.",
+              "currently through P92.",
+          )
+
+          p = Path("website/research-map.html")
+          text = p.read_text(encoding="utf-8")
+          needle = '<a href="index.html#p92-frontier">Current frontier</a>'
+          test_link = '<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/tests/test_exact_global_mixed_prevalence_distance.py">test_exact_global_mixed_prevalence_distance.py</a> · '
+          if "test_exact_global_mixed_prevalence_distance.py" not in text:
+              if needle not in text:
+                  raise SystemExit("P92 research-map frontier anchor not found")
+              text = text.replace(needle, test_link + needle, 1)
+              p.write_text(text, encoding="utf-8")
+              print("[P92] added exact test audit link to research map")
+          PY
+      - name: Regenerate and synchronize canonical figure record
+        run: |
+          python scripts/generate_all_figures.py
+          python scripts/sync_figure_publication.py
+          python scripts/normalize_documentation_punctuation.py
+      - name: Validate finalization diff
+        run: |
+          git diff --check
+          python scripts/promote_p92_public_frontier.py
+      - name: Commit finalized P92 publication state
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "P92 publication state already finalized."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Finalize P92 publication record"
+          git push origin HEAD:p92-exact-global-mixed-distance
