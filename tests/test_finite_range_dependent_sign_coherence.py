@@ -8,6 +8,7 @@ from consciousness_bridge.certified_continuous_model_separation import (
 from consciousness_bridge.finite_range_dependent_sign_coherence import (
     certified_p94_dependent_squared_radius,
     certify_p94_finite_range_rejection_exact,
+    certify_p94_temporal_drift_no_go_exact,
 )
 from consciousness_bridge.finite_range_dependent_sign_coherence_threshold import (
     certify_p94_witness_95_threshold_exact,
@@ -96,6 +97,31 @@ def test_p94_dependence_penalty_increases_squared_radius_exactly():
     assert one_dependent.squared_radius_upper == 2 * iid.squared_radius_upper
 
 
+def test_p94_temporal_drift_can_manufacture_negative_sign_product():
+    certificate = certify_p94_temporal_drift_no_go_exact()
+    assert certificate.all_parameters_interior
+    assert certificate.each_regime_sign_coherent
+    assert certificate.average_violates_sign_coherence
+    assert certificate.regime_one_determinants == (
+        Fraction(-1, 1024),
+        Fraction(-3, 4096),
+        Fraction(3, 4096),
+    )
+    assert certificate.regime_two_determinants == (
+        Fraction(-9, 16384),
+        Fraction(3, 4096),
+        Fraction(-3, 4096),
+    )
+    assert certificate.average_determinants == (
+        Fraction(-65, 65536),
+        Fraction(11, 65536),
+        Fraction(3, 65536),
+    )
+    assert certificate.regime_one_product == Fraction(9, 17179869184)
+    assert certificate.regime_two_product == Fraction(81, 274877906944)
+    assert certificate.average_product == Fraction(-2145, 281474976710656)
+
+
 def test_p94_requires_sample_compatible_empirical_law():
     with pytest.raises(ValueError, match="not compatible"):
         certify_p94_finite_range_rejection_exact(
@@ -118,8 +144,7 @@ def test_p94_rejects_invalid_dependence_range_and_preserves_boundary():
         fromlist=["dummy"],
     )
     source = (module.__doc__ or "").lower()
-    assert "common marginal" in source
+    assert "common-marginal" in source
     assert "does not establish drift robustness" in source
-    assert "does not" in source
     assert "nonphysicality" in source
     assert "physical-to-experiential bridge" in source
