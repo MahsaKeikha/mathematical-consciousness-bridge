@@ -101,6 +101,13 @@ def test_p91_research_map_top_level_orientation_is_current() -> None:
     assert "culminating in P91 mixed-prevalence rank-two flattening separation" in text
     assert "Current Research II model-audit range: P75-P91." in text
     assert "Historical P90 figure" in text
+    assert "Historical exact frontier · P87" in text
+    assert "Continuous-model certification lineage" in text
+    assert "P77-P91: from full-law rejection to nonlinear mixed-prevalence certification" in text
+    assert "Continue to the current P91 frontier" in text
+    assert text.count(
+        "P89 closes the complete real linear parity-functional class, P90 adds exact nonlinear single-component separation, and P91 extends nonlinear separation to arbitrary latent mixing through a rank-two flattening certificate."
+    ) == 1
 
     p90 = text.index('id="p90-research-map"')
     p91 = text.index('id="p91-research-map"')
@@ -116,6 +123,10 @@ def test_p91_research_map_top_level_orientation_is_current() -> None:
         "culminating in P88 exact radius-three bounded primitive four-event shared-parameter parity-functional separation",
         "Current Research II model-audit range: P75-P90.",
         '<a href="index.html#p90-frontier">Current frontier</a>',
+        "Current exact frontier · P87",
+        "Current continuous-model frontier",
+        "P77-P87: from full-law rejection to exact dependency-aware certification",
+        "Continue to the current P89 frontier",
     )
     for marker in stale:
         assert marker not in text
