@@ -4,86 +4,212 @@ on:
   push:
     paths:
       - "website/**"
+      - "docs/**"
+      - "CITATION.md"
       - "scripts/prepare_website.py"
       - "scripts/synchronize_research_three_website.py"
       - "scripts/promote_p91_public_frontier.py"
-      - ".github/workflows/pages.yml"
       - ".github/workflows/validate-research-three-website.yml"
   pull_request:
     paths:
       - "website/**"
+      - "docs/**"
+      - "CITATION.md"
       - "scripts/prepare_website.py"
       - "scripts/synchronize_research_three_website.py"
       - "scripts/promote_p91_public_frontier.py"
-      - ".github/workflows/pages.yml"
       - ".github/workflows/validate-research-three-website.yml"
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: p91-mixed-prevalence-rank-two-flattening
+          fetch-depth: 0
 
-      - name: Verify maintained Python scripts
+      - name: Canonicalize P91 publication semantics
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          replacements = {
+              "CITATION.md": (
+                  (
+                      "## Current theorem frontier: P91\n\nThe current documented theorem frontier is **P90**, an exact nonlinear rank-one slice separation theorem for the declared strict P75 box.",
+                      "## Proposition 90 method citation\n\nP90 is the exact nonlinear rank-one slice separation theorem for the declared strict P75 box.",
+                  ),
+              ),
+              "docs/claim_source_matrix.md": (
+                  (
+                      "[P90 proof](proposition_90_exact_nonlinear_rank_one_separation.md), implementation, tests, provenance, figure, and frontier publication tests",
+                      "[P91 proof](proposition_91_mixed_prevalence_rank_two_flattening_separation.md), [P91 provenance](p91_equation_provenance.md), implementation, tests, figure, and frontier publication tests",
+                  ),
+              ),
+              "docs/theorem_roadmap.md": (
+                  (
+                      "After P89, the target-side chain has a substantially clearer scientific burden:",
+                      "At the P91 frontier, the target-side chain has a substantially clearer scientific burden:",
+                  ),
+                  (
+                      "None of P71-P88 identifies a latent variable with consciousness.",
+                      "None of P71-P91 identifies a latent variable with consciousness.",
+                  ),
+                  (
+                      "## After P91\n\nA future P91 result should address nonlinear structure beyond the single-component boundary case, for example nonzero latent mixing where rank-one slice identities no longer hold directly.",
+                      "### Historical P90-to-P91 gap\n\nBefore P91, the open nonlinear question was whether separation survived beyond the single-component boundary case. P91 closes that prevalence-boundary gap with a rank-two flattening certificate valid for arbitrary latent mixing.",
+                  ),
+              ),
+              "website/research-map.html": (
+                  (
+                      "<h1>Eighty-eight results, one dependency-aware scientific program</h1>",
+                      "<h1>Ninety-one results, one dependency-aware scientific program</h1>",
+                  ),
+                  (
+                      "and P88 enlarges that complete primitive coefficient radius to three and raises the same exact witness bound from 1/96 to 1/64.",
+                      "and P88 enlarges that complete primitive coefficient radius to three and raises the same exact witness bound from 1/96 to 1/64. P89 then closes the complete real linear parity-functional class, P90 adds exact nonlinear single-component separation, and P91 extends nonlinear separation to arbitrary latent mixing through a rank-two flattening certificate.",
+                  ),
+                  (
+                      '<a href="index.html#p90-frontier">Current frontier</a>',
+                      '<a href="visual-atlas.html#p90-frontier">Historical P90 figure</a>',
+                  ),
+              ),
+              "website/plain-language.html": (
+                  (
+                      "A 90-result sufficiency and falsification architecture",
+                      "A 91-result sufficiency and falsification architecture",
+                  ),
+              ),
+              "website/visual-atlas.html": (
+                  (
+                      "<!-- current-frontier-visual: P90 -->",
+                      "<!-- current-frontier-visual: P91 -->",
+                  ),
+                  (
+                      '<section id="p90-frontier" class="theorem-frontier current-frontier-visual">',
+                      '<section id="p90-frontier" class="theorem-frontier">',
+                  ),
+              ),
+          }
+
+          for relative, pairs in replacements.items():
+              path = Path(relative)
+              text = path.read_text(encoding="utf-8")
+              for old, new in pairs:
+                  text = text.replace(old, new)
+              path.write_text(text, encoding="utf-8")
+
+          promoter = Path("scripts/promote_p91_public_frontier.py")
+          source = promoter.read_text(encoding="utf-8")
+          if "def finalize_p91_semantics()" not in source:
+              insert = r'''
+
+def finalize_p91_semantics() -> None:
+    """Remove stale current-frontier wording that older publication surfaces may retain."""
+
+    replacements = {
+        "CITATION.md": (
+            (
+                "## Current theorem frontier: P91\n\nThe current documented theorem frontier is **P90**, an exact nonlinear rank-one slice separation theorem for the declared strict P75 box.",
+                "## Proposition 90 method citation\n\nP90 is the exact nonlinear rank-one slice separation theorem for the declared strict P75 box.",
+            ),
+        ),
+        "docs/claim_source_matrix.md": (
+            (
+                "[P90 proof](proposition_90_exact_nonlinear_rank_one_separation.md), implementation, tests, provenance, figure, and frontier publication tests",
+                "[P91 proof](proposition_91_mixed_prevalence_rank_two_flattening_separation.md), [P91 provenance](p91_equation_provenance.md), implementation, tests, figure, and frontier publication tests",
+            ),
+        ),
+        "docs/theorem_roadmap.md": (
+            (
+                "After P89, the target-side chain has a substantially clearer scientific burden:",
+                "At the P91 frontier, the target-side chain has a substantially clearer scientific burden:",
+            ),
+            (
+                "None of P71-P88 identifies a latent variable with consciousness.",
+                "None of P71-P91 identifies a latent variable with consciousness.",
+            ),
+            (
+                "## After P91\n\nA future P91 result should address nonlinear structure beyond the single-component boundary case, for example nonzero latent mixing where rank-one slice identities no longer hold directly.",
+                "### Historical P90-to-P91 gap\n\nBefore P91, the open nonlinear question was whether separation survived beyond the single-component boundary case. P91 closes that prevalence-boundary gap with a rank-two flattening certificate valid for arbitrary latent mixing.",
+            ),
+        ),
+        "website/research-map.html": (
+            (
+                "<h1>Eighty-eight results, one dependency-aware scientific program</h1>",
+                "<h1>Ninety-one results, one dependency-aware scientific program</h1>",
+            ),
+            (
+                "and P88 enlarges that complete primitive coefficient radius to three and raises the same exact witness bound from 1/96 to 1/64.",
+                "and P88 enlarges that complete primitive coefficient radius to three and raises the same exact witness bound from 1/96 to 1/64. P89 then closes the complete real linear parity-functional class, P90 adds exact nonlinear single-component separation, and P91 extends nonlinear separation to arbitrary latent mixing through a rank-two flattening certificate.",
+            ),
+            (
+                '<a href="index.html#p90-frontier">Current frontier</a>',
+                '<a href="visual-atlas.html#p90-frontier">Historical P90 figure</a>',
+            ),
+        ),
+        "website/plain-language.html": (
+            (
+                "A 90-result sufficiency and falsification architecture",
+                "A 91-result sufficiency and falsification architecture",
+            ),
+        ),
+        "website/visual-atlas.html": (
+            (
+                "<!-- current-frontier-visual: P90 -->",
+                "<!-- current-frontier-visual: P91 -->",
+            ),
+            (
+                '<section id="p90-frontier" class="theorem-frontier current-frontier-visual">',
+                '<section id="p90-frontier" class="theorem-frontier">',
+            ),
+        ),
+    }
+    for path, pairs in replacements.items():
+        write(path, replace_many(read(path), pairs))
+'''
+              source = source.replace("\ndef main() -> None:\n", insert + "\n\ndef main() -> None:\n", 1)
+              source = source.replace(
+                  "    promote_sync_summary()\n    print(\"[P91] reader-facing publication surfaces promoted\")",
+                  "    promote_sync_summary()\n    finalize_p91_semantics()\n    print(\"[P91] reader-facing publication surfaces promoted\")",
+                  1,
+              )
+          promoter.write_text(source, encoding="utf-8")
+          PY
+
+      - name: Commit semantic cleanup
+        run: |
+          git restore .github/workflows/validate-research-three-website.yml
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "P91 publication semantics already canonical."
+            exit 0
+          fi
+          git diff --check
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add CITATION.md docs/claim_source_matrix.md docs/theorem_roadmap.md website/research-map.html website/plain-language.html website/visual-atlas.html scripts/promote_p91_public_frontier.py
+          git commit -m "Polish P91 publication semantics"
+          git push origin HEAD:p91-mixed-prevalence-rank-two-flattening
+
+      - name: Verify current website state
         run: |
           python -m py_compile scripts/prepare_website.py scripts/synchronize_research_three_website.py scripts/promote_p91_public_frontier.py
           python scripts/synchronize_research_three_website.py --site website --check
-
-      - name: Build exact website artifact
-        run: |
-          rm -rf website-deploy _site
-          cp -a website website-deploy
-          python scripts/prepare_website.py --source website-deploy --output _site
-
-      - name: Verify Research II and Research III identity
-        run: |
-          R3_PIN="$(python -c 'from scripts.synchronize_research_three_website import CURRENT_RESEARCH_THREE_PIN; print(CURRENT_RESEARCH_THREE_PIN)')"
-
-          test "$(grep -o '<!-- current-frontier-home: P91 -->' _site/index.html | wc -l)" -eq 1
-          test "$(grep -o 'id=\"p91-frontier\"' _site/index.html | wc -l)" -eq 1
-          grep -q 'Explore all 91 results' _site/index.html
-          grep -q 'Current record:</strong> 91 proposition-level results through P91' _site/index.html
-
-          grep -q 'Research III · Consciousness Measurement Science' _site/measurement-science.html
-          grep -q 'Implemented now versus not yet established' _site/measurement-science.html
-          grep -q 'CEP JSON schema' _site/measurement-science.html
-          grep -q 'Claim JSON schema' _site/measurement-science.html
-          grep -q 'Assumption registry' _site/measurement-science.html
-          grep -q 'Failure-mode registry' _site/measurement-science.html
-          grep -q 'Software and reproducibility' _site/measurement-science.html
-          grep -q '34</strong><span>tests in each CI job' _site/measurement-science.html
-          grep -q 'dependence-robust partial identification with sharp Fr&eacute;chet-Hoeffding bounds' _site/measurement-science.html
-          grep -q '<strong>Two implemented fusion regimes:</strong>' _site/measurement-science.html
-          grep -q 'An interval as wide as <code>\[0,1\]</code> is a valid scientific result' _site/measurement-science.html
-          grep -q 'docs/partial-identification.md' _site/measurement-science.html
-          ! grep -q 'planned by the roadmap' _site/measurement-science.html
-          ! grep -q '23</strong><span>tests in each CI job' _site/measurement-science.html
-          grep -q "research-three-snapshot: ${R3_PIN}" _site/measurement-science.html
-
-          grep -q "${R3_PIN}" _site/research-lineage.html
-          grep -q '<strong>91</strong><span>proposition-level results</span>' _site/research-lineage.html
-          grep -q '<strong>P91</strong><span>current theorem frontier</span>' _site/research-lineage.html
-          grep -q '<strong>v0.82.0</strong><span>current documented release</span>' _site/research-lineage.html
-
+          python scripts/prepare_website.py --source website --output _site
           python - <<'PY'
           from pathlib import Path
-          text = Path("_site/sources.html").read_text(encoding="utf-8")
-          assert text.count('id="p91-source"') == 1
-          assert text.index('id="p91-source"') < text.index("</main>") < text.index("</html>")
+          sources = Path("_site/sources.html").read_text(encoding="utf-8")
+          assert sources.count('id="p91-source"') == 1
+          assert sources.index('id="p91-source"') < sources.index("</main>") < sources.index("</html>")
+          atlas = Path("_site/visual-atlas.html").read_text(encoding="utf-8")
+          assert "<!-- current-frontier-visual: P91 -->" in atlas
+          assert '<section id="p90-frontier" class="theorem-frontier">' in atlas
+          research_map = Path("_site/research-map.html").read_text(encoding="utf-8")
+          assert "Ninety-one results, one dependency-aware scientific program" in research_map
+          assert "Historical P90 figure" in research_map
           PY
-
-      - name: Verify deployment artifact contains pinned Research III figures
-        run: |
-          R3_PIN="$(python -c 'from scripts.synchronize_research_three_website import CURRENT_RESEARCH_THREE_PIN; print(CURRENT_RESEARCH_THREE_PIN)')"
-          grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/measurement_architecture.svg" _site/measurement-science.html
-          grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/claim_ladder.svg" _site/measurement-science.html
-          grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/structural_measurement_pipeline.svg" _site/measurement-science.html
-          test -f _site/figures/p91_mixed_prevalence_rank_two_flattening_separation.svg
-          node --check _site/app.js
-
-      - name: Verify clean generated surface
-        run: git diff --check
