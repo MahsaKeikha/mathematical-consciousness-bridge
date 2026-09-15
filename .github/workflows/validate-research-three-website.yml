@@ -132,5 +132,6 @@ jobs:
 
       - name: Verify clean generated surface
         run: |
+          rm -rf website-deploy _site
           git diff --check
           test -z "$(git status --porcelain)"
