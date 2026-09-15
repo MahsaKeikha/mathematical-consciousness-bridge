@@ -1,9 +1,10 @@
-"""Repair the changelog baseline and promotion contract for PR #156.
+"""Repair changelog and temporary P94 migration-source contracts for PR #156.
 
 This is a temporary migration helper. The pre phase reconstructs the missing
 P85 through P93 changelog history before P94 promotion. The post phase demotes
-the former P93 current heading after P94 has been prepended, leaving exactly one
-current frontier heading at the top of CHANGELOG.md.
+the former P93 current heading after P94 has been prepended, leaves exactly one
+current frontier heading at the top of CHANGELOG.md, and converts two LaTeX
+Markdown literals in the temporary migration scripts to raw Python strings.
 
 Delete this helper together with the one-run P94 promotion workflow after the
 exact promoted head is validated.
@@ -80,6 +81,29 @@ def write(text: str) -> None:
     CHANGELOG.write_text(text, encoding="utf-8")
 
 
+def replace_once_in_file(path: Path, old: str, new: str) -> None:
+    text = path.read_text(encoding="utf-8")
+    if new in text:
+        return
+    if text.count(old) != 1:
+        raise RuntimeError(f"{path.relative_to(ROOT)}: expected one {old!r}")
+    path.write_text(text.replace(old, new, 1), encoding="utf-8")
+
+
+def repair_python_latex_literals() -> None:
+    replace_once_in_file(
+        ROOT / "scripts" / "promote_p94_public_frontier.py",
+        "after = '''## P94: finite-range dependent sign-coherence rejection",
+        "after = r'''## P94: finite-range dependent sign-coherence rejection",
+    )
+    replace_once_in_file(
+        ROOT / "scripts" / "repair_p94_reader_contracts.py",
+        'section = """## Current theorem frontier: P94',
+        'section = r"""## Current theorem frontier: P94',
+    )
+    print("[P94] temporary LaTeX migration literals are raw and lint-safe")
+
+
 def repair_pre() -> None:
     text = read()
     if text.startswith(P93_TOP):
@@ -118,6 +142,8 @@ def repair_post() -> None:
         raise RuntimeError("CHANGELOG.md still contains a second current P93 heading")
     if final.count("# Unreleased research frontier - P94") != 1:
         raise RuntimeError("CHANGELOG.md must contain exactly one P94 current heading")
+
+    repair_python_latex_literals()
     print("[P94] changelog promotion contract normalized")
 
 
