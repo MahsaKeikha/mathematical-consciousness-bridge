@@ -1,0 +1,56 @@
+name: P100 Start Here final fix
+
+on:
+  push:
+    branches:
+      - p100-anytime-sequential-eprocess
+    paths:
+      - .github/workflows/p100-start-here-final-fix.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Synchronize final P100 Start Here language
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path("website/start-here.html")
+          text = path.read_text(encoding="utf-8")
+          replacements = {
+              '>Read P100</a>': '>Read P100 theorem</a>',
+              'You do not need to read 99 Research II proofs in order': 'You do not need to read 100 Research II proofs in order',
+              'Focus on P19 and P71-P99, then the falsification program.': 'Focus on P19 and P71-P100, then the falsification program.',
+              'P74-P99.': 'P74-P100.',
+              'complete 99-result Research II dependency structure': 'complete 100-result Research II dependency structure',
+              '<p class="eyebrow">Research II · Current certified frontier</p>': '<p class="eyebrow">Research II · Fixed-round certification lineage through P99</p>',
+              '<h2>P92-P99 connect exact population separation to dependence-aware, selection-valid certification</h2>': '<h2>P92-P99 connect exact population separation to dependence-aware, selection-valid fixed-round certification</h2>',
+              '<p><strong>P99 is the current frontier.</strong>': '<p><strong>P99 is the immediate fixed-round predecessor to P100.</strong>',
+          }
+          for old, new in replacements.items():
+              text = text.replace(old, new)
+          required = [
+              'Read P100 theorem',
+              '100 results · current frontier P100',
+              'Open all 100 Research II results',
+              'id="p100-reader-frontier"',
+          ]
+          for token in required:
+              if token not in text:
+                  raise SystemExit(f"missing required P100 Start Here token: {token}")
+          path.write_text(text, encoding="utf-8")
+          PY
+      - name: Remove one-shot workflow and commit
+        run: |
+          rm .github/workflows/p100-start-here-final-fix.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Synchronize final P100 Start Here reader surface"
+          git push origin HEAD:p100-anytime-sequential-eprocess
