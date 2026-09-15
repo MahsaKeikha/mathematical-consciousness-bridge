@@ -45,7 +45,11 @@ def replace_many(text: str, replacements: tuple[tuple[str, str], ...]) -> str:
 
 def append_once(text: str, marker: str, block: str) -> str:
     if marker not in text:
-        text = text.rstrip() + "\n\n" + block.strip() + "\n"
+        rendered = block.strip()
+        if rendered.startswith("<section") and "</main>" in text:
+            text = text.replace("</main>", rendered + "\n\n</main>", 1)
+        else:
+            text = text.rstrip() + "\n\n" + rendered + "\n"
     return text
 
 
@@ -172,7 +176,7 @@ def promote_roadmap() -> None:
     text = append_once(
         text,
         "## P91: mixed-prevalence rank-two flattening separation",
-        f'''## P91: mixed-prevalence rank-two flattening separation
+        fr'''## P91: mixed-prevalence rank-two flattening separation
 
 P91 removes the extreme-prevalence restriction used by P90. For any P75 parameter vector, grouping `(X1,X4)` against `(X2,X3)` expresses the 4 by 4 observable probability flattening as the sum of two rank-one matrices, hence its rank is at most two and every 3 by 3 minor vanishes.
 
@@ -499,7 +503,6 @@ def main() -> None:
     promote_prepare_website()
     promote_workflows()
     promote_sync_summary()
-    write_p91_reader_test()
     print("[P91] reader-facing publication surfaces promoted")
 
 
