@@ -84,6 +84,14 @@ jobs:
               research = research.replace(old, new, 1)
           map_path.write_text(research, encoding='utf-8')
 
+          verifier_path = root / 'scripts/verify_repository.py'
+          verifier = verifier_path.read_text(encoding='utf-8')
+          old = 'if f"Current documented theorem frontier: {CURRENT_FRONTIER}" not in citation:\n        raise RuntimeError(f"CITATION.md does not declare {CURRENT_FRONTIER} as the current theorem frontier")'
+          new = 'if f"The current documented theorem frontier is **{CURRENT_FRONTIER}**." not in citation:\n        raise RuntimeError(f"CITATION.md does not declare {CURRENT_FRONTIER} as the current theorem frontier")'
+          if old not in verifier:
+              raise RuntimeError('generic citation-integrity check was not found after P94 promotion')
+          verifier_path.write_text(verifier.replace(old, new, 1), encoding='utf-8')
+
           sync_path = root / 'scripts/synchronize_research_three_website.py'
           sync = sync_path.read_text(encoding='utf-8')
           old = 'CURRENT_HOME_MARKER = "<!-- current-frontier-home: P93 -->"'
