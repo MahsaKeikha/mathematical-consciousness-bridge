@@ -1,0 +1,59 @@
+name: link-connected-care
+
+on:
+  push:
+    branches:
+      - about-question-wording-cleanup
+
+permissions:
+  contents: write
+
+jobs:
+  link-and-clean:
+    if: ${{ !contains(github.event.head_commit.message, '[connected-care-linked]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: about-question-wording-cleanup
+          fetch-depth: 0
+      - name: Link Connected Care on public researcher surfaces
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          url = 'https://www.connectioncare.org/'
+          link = f'<a href="{url}">Connected Care</a>'
+
+          replacements = {
+              'website/index.html': [
+                  ('<strong>Connected Care</strong>', f'<strong>{link}</strong>'),
+                  ('<p><strong>Founder &amp; CEO, Connected Care</strong></p>', f'<p><strong>Founder &amp; CEO, {link}</strong></p>'),
+              ],
+              'website/about.html': [
+                  ('<p class="eyebrow">About the researcher · Mahsa Keikha, PhD · Connected Care</p>', f'<p class="eyebrow">About the researcher · Mahsa Keikha, PhD · {link}</p>'),
+                  ('<strong>Connected Care</strong>', f'<strong>{link}</strong>'),
+                  ('<p><strong>Founder &amp; CEO, Connected Care</strong></p>', f'<p><strong>Founder &amp; CEO, {link}</strong></p>'),
+                  ('Mathematical Consciousness Bridge · Mahsa Keikha, PhD · Connected Care ·', f'Mathematical Consciousness Bridge · Mahsa Keikha, PhD · {link} ·'),
+              ],
+          }
+
+          for rel, pairs in replacements.items():
+              path = Path(rel)
+              text = path.read_text(encoding='utf-8')
+              for old, new in pairs:
+                  count = text.count(old)
+                  if count != 1:
+                      raise RuntimeError(f'expected exactly one occurrence in {rel}: {old!r}; found {count}')
+                  text = text.replace(old, new, 1)
+              path.write_text(text, encoding='utf-8')
+          PY
+      - name: Remove one-time workflow and commit
+        run: |
+          rm .github/workflows/link-connected-care.yml
+          git diff --check
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Link Connected Care on researcher website surfaces [connected-care-linked]"
+          git push origin HEAD:about-question-wording-cleanup
