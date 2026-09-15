@@ -12,7 +12,6 @@ from consciousness_bridge.selective_sign_coherence_rejection import (
     p93_witness_alpha_allocation_95,
 )
 
-
 COUNTS = (0, 1, 0, 2, 0, 2, 1, 3, 3, 1, 0, 5, 0, 3, 0, 3)
 EMPIRICAL_LAW = tuple(Fraction(count, 24) for count in COUNTS)
 ALPHA_95 = Fraction(1, 20)
