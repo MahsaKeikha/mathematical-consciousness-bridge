@@ -656,11 +656,11 @@
     },
     {
       "path": "docs/figures/p92_exact_global_mixed_prevalence_distance.svg",
-      "sha256": "d927976f8f059c6d281d4cad9ccd6cf8a5451a599b3a582cf322bcdc603907e4",
-      "bytes": 6678,
+      "sha256": "a93c165574ebdfd44675501bbabe93cb719c49380b8edc167944faa99acc8a76",
+      "bytes": 7276,
       "category": "theorem-or-architecture",
-      "title": "P92 exact global mixed-prevalence distance",
-      "description_chars": 411
+      "title": "P92 Exact Global Mixed-Prevalence Distance",
+      "description_chars": 1009
     },
     {
       "path": "docs/figures/physics_mathematics_atlas.svg",
