@@ -1,9 +1,12 @@
-"""Repair exact generated P94 migration contracts before finalization.
+"""Repair exact generated P94 migration contracts during the one-run promotion.
 
 Temporary helper for PR #156. Delete it after the promoted P94 publication head
 is validated and before merge.
 """
 
+from __future__ import annotations
+
+import argparse
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -29,18 +32,18 @@ def verify_pre_promotion_citations() -> None:
     print("[P94] pre-promotion citation metadata agree on P93")
 
 
-def repair_intermediate_bib_frontier() -> None:
+def normalize_bib_for_legacy_finalizer() -> None:
     text = BIB_PATH.read_text(encoding="utf-8")
     p89 = "Current documented theorem frontier: P89."
     p93 = "Current documented theorem frontier: P93."
     if p93 in text:
         text = text.replace(p93, p89, 1)
         BIB_PATH.write_text(text, encoding="utf-8")
-        print("[P94] normalized intermediate BibTeX frontier for legacy finalizer compatibility")
+        print("[P94] normalized BibTeX input for legacy finalizer compatibility")
         return
     if p89 in text:
         return
-    raise RuntimeError("CITATION.bib is neither at the legacy P89 nor intermediate P93 marker")
+    raise RuntimeError("CITATION.bib is neither at the legacy P89 nor synchronized P93 marker")
 
 
 def repair_generated_test_escape() -> None:
@@ -59,8 +62,15 @@ def repair_generated_test_escape() -> None:
 
 
 def main() -> None:
-    verify_pre_promotion_citations()
-    repair_intermediate_bib_frontier()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("phase", choices=("pre", "post"))
+    args = parser.parse_args()
+
+    if args.phase == "pre":
+        verify_pre_promotion_citations()
+        normalize_bib_for_legacy_finalizer()
+        return
+
     repair_generated_test_escape()
 
 
