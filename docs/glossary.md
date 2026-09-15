@@ -69,7 +69,7 @@ The vocabulary falls into four groups:
 | Term | Meaning in this repository |
 | --- | --- |
 | **Scientific boundary** | An explicit statement of what a theorem does not establish. It prevents a valid mathematical result from being extended into an unsupported empirical or ontological claim. |
-| **Theorem frontier** | The highest numbered proposition currently integrated into the documented public research program. The current public frontier is **P92**. |
+| **Theorem frontier** | The highest numbered proposition currently integrated into the documented public research program. The current public frontier is **P94**. |
 | **Formal release** | The tagged software and publication release line. The current formal release remains **v0.82.0**, which is intentionally distinct from the theorem frontier. |
 
 ## Three distinctions worth remembering
@@ -100,6 +100,13 @@ For equations and source roles, open the **[Equation and Citation Map](equation_
 
 For the complete technical record, open **[Research Navigation](research_navigation.md)**.
 
-## Current theorem frontier: P93
+## Historical IID theorem frontier: P93
 
-The current documented Research II theorem frontier is **P93**. P92 remains the exact population-distance theorem at `d_inf(P_emp, M75) = 1/24`; P93 adds the localized seven-cell finite-sample rejection handoff. This frontier status does not identify consciousness or close the physical-to-experiential bridge.
+P93 is the historical IID finite-sample predecessor of P94. P92 remains the exact population-distance theorem at `d_inf(P_emp, M75) = 1/24`; P93 adds the localized seven-cell IID rejection handoff. P94 then extends that handoff to declared finite-range temporal dependence under one common marginal law. None of these frontier labels identifies consciousness or closes the physical-to-experiential bridge.
+
+
+## Current theorem frontier: P94
+
+**Finite-range dependence:** observations may depend across nearby time indices but sigma-fields separated by more than a declared range `m` are independent. P94 uses residue classes modulo `m+1` to recover independent groups.
+
+**Common marginal law:** every observation has the same four-view population law. P94 requires this because an exact counterexample shows that pooling different valid P75 regimes can create a negative P92 determinant product.

@@ -54,9 +54,9 @@ You do **not** need to read the propositions in order to understand the project.
 
 If you want the complete theorem record, including assumptions, proofs, implementations, tests, figures, and scientific boundaries, use the **[Detailed Proposition Record](docs/detailed_proposition_record.md)** or the **[Theorem Roadmap](docs/theorem_roadmap.md)**.
 
-The current public theorem frontier is **P93**. The formal release remains **v0.82.0**.
+The current public theorem frontier is **P94**. The formal release remains **v0.82.0**.
 
-**[Read the current frontier](docs/proposition_93_localized_sign_coherence_rejection.md)**
+**[Read the current frontier](docs/proposition_94_finite_range_dependent_sign_coherence.md)**
 
 ---
 
@@ -70,13 +70,12 @@ The current public theorem frontier is **P93**. The formal release remains **v0.
 
 ### Current theorem frontier
 
-![P93 Localized Finite-Sample Sign-Coherence Rejection](docs/figures/p93_localized_sign_coherence_rejection.svg)
+![P94 Finite-Range Dependent Sign-Coherence Rejection](docs/figures/p94_finite_range_dependent_sign_coherence.svg)
 
-**Figure 2. P93 localized finite-sample sign-coherence rejection.** P92 proves the exact nonlinear population obstruction. P93 turns that obstruction into a finite-data rejection rule using only the seven observable cells that enter the three P92 minors. For the established sign geometry, the exact determinant stability radii are `1/24`, `3/56`, and `5/72`. At 95 percent confidence, P79 exact-rational envelopes prove that the seven-cell sampling radius is still above `1/24` at `n = 1622` and below it at `n = 1623`. The first exact replication of the original 24-count profile that clears the certificate is `n = 1632 = 68 x 24`.
+**Figure 2. P94 finite-range dependent sign-coherence rejection.** P94 keeps the P92/P93 seven-cell nonlinear witness but replaces the IID concentration step with a declared finite-range dependence model. For dependence range `m`, the squared confidence radius is multiplied by `m+1`. At 95 percent confidence, the established witness crosses at 1623 for `m=0`, 3246 for `m=1`, and 4869 for `m=2`. An exact temporal-pooling no-go construction shows why arbitrary drift is outside this theorem: two individually valid interior P75 regimes can pool to a law with negative determinant product.
 
-The generic P77 fixed-population-margin sufficient bound crosses at `n = 7444`, but that is a different guarantee. P93 is a localized observed-data certificate for the P92 sign witness. It is not claimed to be minimax optimal or universally sufficient.
+P94 is conditional on one common marginal four-view law and a declared finite dependence range. Non-rejection remains inconclusive. The result does not identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.
 
-P93 is a conditional finite-sample model-rejection theorem. Non-rejection remains inconclusive. It does not identify consciousness, establish nonphysicality, validate an alternative theory, or close the physical-to-experiential bridge.
 ## Choose your path
 
 | If you want to... | Start here |
@@ -121,6 +120,6 @@ For scholarly citation, see **[CITATION.md](CITATION.md)** and **[CITATION.cff](
 
 MIT License. See **[LICENSE](LICENSE)**.
 
-**Public theorem frontier:** P93
+**Public theorem frontier:** P94
 **Formal release:** v0.82.0
 **Final bridge from physical description to experience:** open

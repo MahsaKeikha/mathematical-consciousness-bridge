@@ -1333,3 +1333,12 @@ The two-rank-one determinant identity is elementary linear algebra. The reposito
 - Figure: [`p93_localized_sign_coherence_rejection.svg`](figures/p93_localized_sign_coherence_rejection.svg)
 
 P93 combines standard Hoeffding concentration and a seven-cell union bound with the repository's P92 determinant sign-stability theorem and P79 exact-rational sampling-radius envelope. The repository-original contribution is the localized finite-sample handoff for the P92 nonlinear invariant.
+
+
+### P94 finite-range dependent sign-coherence rejection
+
+- Theorem: [Proposition 94](proposition_94_finite_range_dependent_sign_coherence.md)
+- Equation provenance: [P94 equation record](p94_equation_provenance.md)
+- Implementation: [`finite_range_dependent_sign_coherence.py`](../src/consciousness_bridge/finite_range_dependent_sign_coherence.py)
+- Exact thresholds: [`finite_range_dependent_sign_coherence_threshold.py`](../src/consciousness_bridge/finite_range_dependent_sign_coherence_threshold.py)
+- Regression tests: [`test_finite_range_dependent_sign_coherence.py`](../tests/test_finite_range_dependent_sign_coherence.py)

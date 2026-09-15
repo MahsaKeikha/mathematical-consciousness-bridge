@@ -1,35 +1,32 @@
-# Current visual frontier: P71-P93
+# Current visual frontier: P71-P94
 
 This page is generated from the canonical proposition and figure tree.
 It is the compact GitHub-facing visual route through the current target-side branch.
 
-## Current theorem frontier: P93
+## Current theorem frontier: P94
 
-![P93 current theorem frontier](../docs/figures/p93_localized_sign_coherence_rejection.svg)
+![P94 current theorem frontier](../docs/figures/p94_finite_range_dependent_sign_coherence.svg)
 
-[Read Proposition 93](../docs/proposition_93_localized_sign_coherence_rejection.md)
+[Read Proposition 94](../docs/proposition_94_finite_range_dependent_sign_coherence.md)
 
-[Open P93 equation provenance](../docs/p93_equation_provenance.md)
+[Open P94 equation provenance](../docs/p94_equation_provenance.md)
 
-### Exact P93 localized finite-sample sign-coherence rejection
+### Exact P94 finite-range dependent sign-coherence rejection
 
-P93 carries the P92 nonlinear sign-coherence obstruction into finite IID data using only seven selected observable cells.
+P94 preserves the P92/P93 nonlinear rejection witness under a declared finite-range dependent stream with one common marginal law.
 
 ```text
-empirical determinants = (-1/48, 1/64, 5/192)
-empirical determinants = (-1/48, 1/64, 5/192)
-empirical determinant signs = (-,+,+)
-d_inf(P_emp, M_75) = 1/24
-d_inf(P_emp, M_75) = 1/24
-sign-stability radii = (1/24, 3/56, 5/72)
-95% mathematical crossing = 1622 / 1623
-first exact 24-count replication that clears = 1632
-generic P77 fixed-margin comparison = 7444
+eps_m^2 = (m+1) log(14/alpha) / (2n)
+m=0: crossing 1623; exact replication 1632
+m=1: crossing 3246; exact replication 3264
+m=2: crossing 4869; exact replication 4872
+pooled-drift no-go determinants = (-65/65536, 11/65536, 3/65536)
+pooled determinant product = -2145/281474976710656
 ```
 
-The P77 comparison is a different guarantee. P93 is localized to the observed P92 sign witness, does not claim universal or minimax sample complexity, and does not identify consciousness.
+P94 is conditional on the declared dependence range and common marginal law. It does not establish arbitrary drift robustness or identify consciousness.
 
-## P71-P93 canonical theorem-figure index
+## P71-P94 canonical theorem-figure index
 
 | Proposition | Canonical figure | Proof | Provenance |
 | --- | --- | --- | --- |
@@ -56,6 +53,7 @@ The P77 comparison is a different guarantee. P93 is localized to the observed P9
 | P91 | [figure](../docs/figures/p91_mixed_prevalence_rank_two_flattening_separation.svg) | [proof](../docs/proposition_91_mixed_prevalence_rank_two_flattening_separation.md) | [equations](../docs/p91_equation_provenance.md) |
 | P92 | [figure](../docs/figures/p92_exact_global_mixed_prevalence_distance.svg) | [proof](../docs/proposition_92_exact_global_mixed_prevalence_distance.md) | [equations](../docs/p92_equation_provenance.md) |
 | P93 | [figure](../docs/figures/p93_localized_sign_coherence_rejection.svg) | [proof](../docs/proposition_93_localized_sign_coherence_rejection.md) | [equations](../docs/p93_equation_provenance.md) |
+| P94 | [figure](../docs/figures/p94_finite_range_dependent_sign_coherence.svg) | [proof](../docs/proposition_94_finite_range_dependent_sign_coherence.md) | [equations](../docs/p94_equation_provenance.md) |
 
 ## Reproduce the visual record
 
@@ -69,4 +67,4 @@ The complete machine-readable SHA-256 inventory is in [`manifest.json`](manifest
 
 ## Interpretation boundary
 
-P71-P93 strengthens the methodology for testing a declared physical-to-target model. It does not derive consciousness from physics, prove nonphysicality, or close the physical-to-experiential bridge.
+P71-P94 strengthens the methodology for testing a declared physical-to-target model. It does not derive consciousness from physics, prove nonphysicality, or close the physical-to-experiential bridge.

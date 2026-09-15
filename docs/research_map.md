@@ -116,13 +116,13 @@ This is not a weakness hidden by the repository. It is one of the central organi
 
 ## Where the current work sits
 
-The public theorem frontier is **P90** and the formal release is **v0.82.0**.
+The public theorem frontier is **P94** and the formal release remains **v0.82.0**.
 
-P87 belongs to the later **model testing** part of the program. It strengthens a declared family of exact model separation tests. Its importance is methodological: it asks whether a more complete family of constraints that share the same parameters can expose incompatibility that weaker tests miss.
+P94 extends the P93 localized seven-cell rejection theorem from IID observations to a declared finite-range dependent sequence with one common marginal four-view law. The squared finite-sample radius carries the exact factor `m+1` for dependence range `m`, while the P92 determinant geometry is unchanged.
 
-If you want the result itself, open **[P87](proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md)**.
+P94 also proves an exact temporal-pooling no-go: two individually valid interior P75 regimes can pool to a law with the negative determinant-product sign pattern used for rejection. Arbitrary marginal drift is therefore a separate problem and is not silently treated as finite-range dependence.
 
-If you want to understand how P87 emerged from earlier work, use the **[Theorem Roadmap](theorem_roadmap.md)**.
+If you want the current result itself, open **[P94](proposition_94_finite_range_dependent_sign_coherence.md)**. For the IID predecessor, open **[P93](proposition_93_localized_sign_coherence_rejection.md)**. For the complete dependency chain, use the **[Theorem Roadmap](theorem_roadmap.md)**.
 
 ---
 
@@ -177,6 +177,10 @@ That is the thread connecting the entire project.
 
 P89 closes the complete real linear parity-functional class on the eleven canonical P83 parity coordinates for a fixed rational P75 parameter box. Matching exact rational lower and upper certificates give `L89 = 5/168` on the published strict witness, strictly above `L88 = 1/64`. Nonlinear model constraints and the physical-to-experiential bridge remain open.
 
-### P93 localized finite-sample sign-coherence rejection
+### P93 historical IID finite-sample sign-coherence rejection
 
-P93 asks whether finite IID data preserve P92's impossible determinant sign pattern strongly enough to reject the complete P75 family. It uses only seven selected cells and exact P79 sampling-radius certification. [Read P93](proposition_93_localized_sign_coherence_rejection.md).
+P93 is the historical IID finite-sample handoff from P92. It uses only seven selected cells and exact P79 sampling-radius certification. [Read P93](proposition_93_localized_sign_coherence_rejection.md).
+
+### P94 finite-range dependent sign-coherence rejection
+
+P94 is the current Research II theorem frontier. It preserves the seven-cell P92/P93 nonlinear witness under a declared finite-range dependent sequence with one common marginal law, using exact rational certification of the dependence-adjusted confidence radius. Its exact pooling counterexample also marks the limit of that extension: arbitrary temporal drift remains outside the theorem. [Read P94](proposition_94_finite_range_dependent_sign_coherence.md).

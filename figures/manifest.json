@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "canonical_root": "docs/figures",
-  "current_frontier": "P93",
-  "current_frontier_figure": "docs/figures/p93_localized_sign_coherence_rejection.svg",
-  "figure_count": 151,
+  "current_frontier": "P94",
+  "current_frontier_figure": "docs/figures/p94_finite_range_dependent_sign_coherence.svg",
+  "figure_count": 152,
   "hash_algorithm": "sha256",
   "figures": [
     {
@@ -669,6 +669,14 @@
       "category": "theorem-or-architecture",
       "title": "P93 Localized Finite-Sample Sign-Coherence Rejection",
       "description_chars": 882
+    },
+    {
+      "path": "docs/figures/p94_finite_range_dependent_sign_coherence.svg",
+      "sha256": "8ca9a7731f48097fa2bfe3e92a37b0988a1b2e41ba4b35108fdb95c9a3feb8fe",
+      "bytes": 8964,
+      "category": "theorem-or-architecture",
+      "title": "P94 Finite-Range Dependent Sign-Coherence Rejection",
+      "description_chars": 782
     },
     {
       "path": "docs/figures/physics_mathematics_atlas.svg",

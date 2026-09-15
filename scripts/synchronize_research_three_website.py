@@ -18,7 +18,19 @@ LEGACY_RESEARCH_THREE_PINS = (
     "8bbb7b029d70c43cc6a9dbf8b44dfe5069d0993d",
     "7a106820158e0d33ea651f7cdeaa505206f1ccc7",
 )
-CURRENT_HOME_MARKER = "<!-- current-frontier-home: P93 -->"
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def _current_frontier_label() -> str:
+    verifier = (ROOT / "scripts" / "verify_repository.py").read_text(encoding="utf-8")
+    match = re.search(r'^CURRENT_FRONTIER = "(P\d+)"$', verifier, flags=re.MULTILINE)
+    if match is None:
+        raise RuntimeError("could not determine current Research II frontier")
+    return match.group(1)
+
+
+CURRENT_FRONTIER_LABEL = _current_frontier_label()
+CURRENT_HOME_MARKER = f"<!-- current-frontier-home: {CURRENT_FRONTIER_LABEL} -->"
 
 MEASUREMENT_SCIENCE_REPLACEMENTS = {
     '<div><strong>23</strong><span>tests in each CI job</span></div>':

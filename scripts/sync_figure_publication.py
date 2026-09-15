@@ -227,9 +227,7 @@ def _frontier_summary(frontier: int) -> list[str]:
             "",
             "```text",
             "empirical determinants = (-1/48, 1/64, 5/192)",
-            "empirical determinants = (-1/48, 1/64, 5/192)",
             "empirical determinant signs = (-,+,+)",
-            "d_inf(P_emp, M_75) = 1/24",
             "d_inf(P_emp, M_75) = 1/24",
             "sign-stability radii = (1/24, 3/56, 5/72)",
             "95% mathematical crossing = 1622 / 1623",
@@ -238,6 +236,24 @@ def _frontier_summary(frontier: int) -> list[str]:
             "```",
             "",
             "The P77 comparison is a different guarantee. P93 is localized to the observed P92 sign witness, does not claim universal or minimax sample complexity, and does not identify consciousness.",
+            "",
+        ]
+    if frontier == 94:
+        return [
+            "### Exact P94 finite-range dependent sign-coherence rejection",
+            "",
+            "P94 preserves the P92/P93 nonlinear rejection witness under a declared finite-range dependent stream with one common marginal law.",
+            "",
+            "```text",
+            "eps_m^2 = (m+1) log(14/alpha) / (2n)",
+            "m=0: crossing 1623; exact replication 1632",
+            "m=1: crossing 3246; exact replication 3264",
+            "m=2: crossing 4869; exact replication 4872",
+            "pooled-drift no-go determinants = (-65/65536, 11/65536, 3/65536)",
+            "pooled determinant product = -2145/281474976710656",
+            "```",
+            "",
+            "P94 is conditional on the declared dependence range and common marginal law. It does not establish arbitrary drift robustness or identify consciousness.",
             "",
         ]
     return []

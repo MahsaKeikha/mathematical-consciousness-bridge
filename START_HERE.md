@@ -63,9 +63,9 @@ Those results include methods for:
 - controlling uncertainty from finite data and numerical computation;
 - making the complete reasoning chain reproducible and auditable.
 
-The public theorem frontier is **P93**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains **open**.
+The public theorem frontier is **P94**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains **open**.
 
-You do not need to read 93 propositions to understand the project.
+You do not need to read 94 propositions to understand the project.
 
 ---
 
@@ -78,7 +78,7 @@ You do not need to read 93 propositions to understand the project.
 | Browse the research through figures | **[Figure Catalog](docs/figure_catalog.md)** |
 | Move into the formal scientific architecture | **[Technical Research Architecture](docs/research_architecture.md)** |
 | See how the mathematical results depend on one another | **[Theorem Roadmap](docs/theorem_roadmap.md)** |
-| Read the current frontier result | **[P93](docs/proposition_93_localized_sign_coherence_rejection.md)** |
+| Read the current frontier result | **[P94](docs/proposition_94_finite_range_dependent_sign_coherence.md)** |
 | Inspect every proposition in the complete technical record | **[Detailed Proposition Record](docs/detailed_proposition_record.md)** |
 | Trace equations, sources, implementations, and tests | **[Research Navigation](docs/research_navigation.md)** |
 | Reproduce the computational work | **[Reproducibility Guide](docs/reproducibility.md)** |
@@ -117,6 +117,10 @@ The P91 Research II step is [P91](docs/proposition_91_mixed_prevalence_rank_two_
 
 The P92 Research II step is [P92](docs/proposition_92_exact_global_mixed_prevalence_distance.md). P92 closes the P91 mixed-prevalence bracket and proves the exact full-cube result `d_inf(P_emp, M75) = 1/24` through a nonlinear three-minor sign-coherence invariant.
 
-### P93 localized finite-sample frontier
+### P93 historical IID finite-sample step
 
-The current Research II frontier is [P93](docs/proposition_93_localized_sign_coherence_rejection.md). P93 takes P92's exact nonlinear sign-coherence obstruction into finite IID data. It needs simultaneous control of only seven observable cells. At 95 percent confidence, the exact mathematical radius crosses between 1622 and 1623 samples; the first exact replication of the original 24-count profile that clears the certificate is 1632 samples. Non-rejection remains inconclusive.
+The historical IID finite-sample step is [P93](docs/proposition_93_localized_sign_coherence_rejection.md). P93 takes P92's exact nonlinear sign-coherence obstruction into finite IID data. It needs simultaneous control of only seven observable cells. At 95 percent confidence, the exact mathematical radius crosses between 1622 and 1623 samples; the first exact replication of the original 24-count profile that clears the certificate is 1632 samples. Non-rejection remains inconclusive.
+
+### P94 finite-range dependent frontier
+
+The current Research II frontier is [P94](docs/proposition_94_finite_range_dependent_sign_coherence.md). P94 keeps the seven-cell P92/P93 nonlinear rejection witness but relaxes IID sampling to a declared finite-range dependent sequence with one common marginal four-view law. For dependence range `m`, the squared confidence radius is multiplied by `m+1`. At 95 percent confidence, the established witness crosses at 1623, 3246, and 4869 samples for `m=0,1,2` respectively. An exact temporal-pooling counterexample shows why arbitrary marginal drift is outside the theorem. Non-rejection remains inconclusive, and the physical-to-experiential bridge remains open.

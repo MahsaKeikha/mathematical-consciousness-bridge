@@ -4,7 +4,7 @@
 
 This page is an index, not another chapter. If you are still learning the overall story, go one layer up to the **[Research Map](research_map.md)**.
 
-The current documented theorem frontier is **P93**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains open.
+The current documented theorem frontier is **P94**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains open.
 
 ---
 
@@ -89,13 +89,13 @@ Then follow P72 through P74 in the [Detailed Proposition Record](detailed_propos
 
 **Question:** Can the declared model of the target and its measurement actually reproduce the observations, or can it be rejected under its own assumptions?
 
-**Results:** P75 through P93
+**Results:** P75 through P94
 
 This branch moves from model adequacy to rejection with finite data, separation from the complete declared model set, certified bounds for continuous families, and increasingly strong exact tests that preserve shared parameters.
 
 **Start with:** [P75: Target Model Adequacy](proposition_75_target_model_adequacy_overidentification.md)
 
-**Current frontier:** [P93: Localized Finite-Sample Sign-Coherence Rejection](proposition_93_localized_sign_coherence_rejection.md)
+**Current frontier:** [P94: Finite-Range Dependent Sign-Coherence Rejection](proposition_94_finite_range_dependent_sign_coherence.md)
 
 ---
 
@@ -140,8 +140,8 @@ The [Detailed Proposition Record](detailed_proposition_record.md) is the complet
 | --- | --- |
 | Physics | [Research Map](research_map.md) → [Technical Research Architecture](research_architecture.md) → [Quantum branch](quantum_foundations_and_bridge_test.md) |
 | Mathematics | [Research Map](research_map.md) → [Theorem Roadmap](theorem_roadmap.md) → proposition proofs |
-| Statistics and inference | [P19](proposition_19_fundamental_physical_sufficiency.md) → P20 through P24 → P74 through P93 via [Detailed Proposition Record](detailed_proposition_record.md) |
-| Consciousness science | [Bridge Problem](bridge_problem.md) → [Falsification Program](falsification_program.md) → P71 through P93 |
+| Statistics and inference | [P19](proposition_19_fundamental_physical_sufficiency.md) → P20 through P24 → P74 through P94 via [Detailed Proposition Record](detailed_proposition_record.md) |
+| Consciousness science | [Bridge Problem](bridge_problem.md) → [Falsification Program](falsification_program.md) → P71 through P94 |
 | Software and reproducibility | [Reproducibility Guide](reproducibility.md) → [`src/`](../src/) → [`tests/`](../tests/) |
 | Visual learner | [Figure Catalog](figure_catalog.md) → [Visual Atlas](../website/visual-atlas.html) |
 
@@ -149,7 +149,7 @@ The [Detailed Proposition Record](detailed_proposition_record.md) is the complet
 
 ## Where the complete detail lives
 
-This page intentionally does **not** duplicate the full 93 proposition index.
+This page intentionally does **not** duplicate the full 94 proposition index.
 
 Use:
 
@@ -212,7 +212,7 @@ For P92:
 
 P92 proves the exact full-cube result `d_inf(P_emp, M75) = 1/24`. Its lower certificate is a nonlinear three-minor sign-coherence invariant. The result does not identify the latent state with consciousness, establish nonphysicality, or close the physical-to-experiential bridge.
 
-## P93 current frontier
+## P93 historical IID finite-sample frontier
 
 For P93:
 
@@ -225,3 +225,18 @@ For P93:
 | Figure | [P93 localized finite-sample certificate](figures/p93_localized_sign_coherence_rejection.svg) |
 
 P93 uses seven observable cells from the P92 sign witness. The 1623 crossing is the exact mathematical confidence-radius threshold for the established sign geometry at 95 percent confidence; the first exact replication of the original profile that clears is 1632.
+
+## P94 current frontier
+
+For P94:
+
+| What you want | Direct link |
+| --- | --- |
+| The theorem and proof | [P94 proposition](proposition_94_finite_range_dependent_sign_coherence.md) |
+| Equation and method provenance | [P94 provenance](p94_equation_provenance.md) |
+| Implementation | [`finite_range_dependent_sign_coherence.py`](../src/consciousness_bridge/finite_range_dependent_sign_coherence.py) |
+| Exact threshold implementation | [`finite_range_dependent_sign_coherence_threshold.py`](../src/consciousness_bridge/finite_range_dependent_sign_coherence_threshold.py) |
+| Exact tests | [`test_finite_range_dependent_sign_coherence.py`](../tests/test_finite_range_dependent_sign_coherence.py) |
+| Figure | [P94 finite-range dependence certificate](figures/p94_finite_range_dependent_sign_coherence.svg) |
+
+P94 relaxes temporal independence, not stationarity. Its confidence radius carries an exact `m+1` squared-radius penalty under a declared finite dependence range and one common marginal law. The exact pooling counterexample proves that arbitrary marginal drift can imitate the P92 negative determinant-product pattern, so drift remains outside the theorem.

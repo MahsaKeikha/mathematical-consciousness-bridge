@@ -8,7 +8,7 @@ If this research program, one of its propositions, figures, algorithms, or imple
 
 > Keikha, M. (2026). *Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem* (Version 0.82.0). GitHub research repository. https://github.com/MahsaKeikha/mathematical-consciousness-bridge
 
-This is the preferred citation for the research program at the current documented frontier, P93.
+This is the preferred citation for the research program at the current documented frontier, P94.
 
 ## BibTeX
 
@@ -20,7 +20,7 @@ This is the preferred citation for the research program at the current documente
   version      = {0.82.0},
   howpublished = {GitHub research repository},
   url          = {https://github.com/MahsaKeikha/mathematical-consciousness-bridge},
-  note         = {Ongoing research program. Current documented theorem frontier: P93.}
+  note         = {Ongoing research program. Current documented theorem frontier: P94.}
 }
 ```
 
@@ -53,7 +53,7 @@ This repository is an evolving research program. For reproducible scholarly use:
 3. Cite the individual proposition or artifact when your argument depends on a specific theorem, figure, algorithm, or test.
 4. Do not attribute later propositions or later numerical results to an earlier version of the repository.
 
-The current citation metadata identify Version **0.82.0** and theorem frontier **P93**. Future research versions should update the version number, theorem frontier, citation metadata, and archival record together.
+The current citation metadata identify Version **0.82.0** and theorem frontier **P94**. Future research versions should update the version number, theorem frontier, citation metadata, and archival record together.
 
 ## DOI and archival status
 
@@ -98,18 +98,30 @@ These remain conditional statistical target-measurement results, not validation 
 
 When citing a theorem, readers should consult the proposition document for its assumptions and scope rather than citing the theorem statement without its declared conditions.
 
-## Current theorem frontier: P93
+## Current theorem frontier: P94
 
-The current documented theorem frontier is **P93**. The formal package release remains **Version 0.82.0**. P93 converts P92's exact nonlinear three-minor sign-coherence obstruction into a finite-sample rejection theorem using only the seven observable cells entering that witness. At 95 percent confidence, exact P79 rational sampling-radius certification places the mathematical crossing between `n = 1622` and `n = 1623`. Because the established empirical proportions have denominator 24, the first exact replication of the original profile that also clears the certificate is `n = 1632 = 68 x 24`.
+The current documented theorem frontier is **P94**. The formal package release remains **Version 0.82.0**. P94 extends the localized P92/P93 sign-coherence rejection witness from IID observations to a declared finite-range dependent sequence with one common marginal four-view law. With dependence range `m`, its seven-cell confidence radius is
 
-For comparison, the generic P77 full-law fixed-population-margin sufficient condition at margin `1/24` crosses at `n = 7444`. P77 and P93 provide different guarantees, and P93 does not claim universal or minimax sample complexity.
+\[
+\varepsilon^{(m)}_{n,7}(\alpha)
+=
+\sqrt{\frac{(m+1)\log(14/\alpha)}{2n}}.
+\]
 
-- Proof: [`proposition_93_localized_sign_coherence_rejection.md`](docs/proposition_93_localized_sign_coherence_rejection.md)
-- Equation provenance: [`p93_equation_provenance.md`](docs/p93_equation_provenance.md)
-- Implementation: [`localized_sign_coherence_rejection.py`](src/consciousness_bridge/localized_sign_coherence_rejection.py)
-- Exact tests: [`test_localized_sign_coherence_rejection.py`](tests/test_localized_sign_coherence_rejection.py)
+At 95 percent confidence, exact rational certification gives mathematical crossings 1623, 3246, and 4869 for `m=0,1,2`, with first exact denominator-24 replications 1632, 3264, and 4872. P94 also includes an exact temporal-pooling no-go construction: two individually valid interior P75 regimes can pool to determinants `(-65/65536, 11/65536, 3/65536)` with negative product. The theorem therefore does not claim robustness to arbitrary marginal drift.
 
-P93 remains a conditional finite-sample model-rejection theorem. Non-rejection is inconclusive. It does not identify consciousness, establish nonphysicality, validate an alternative theory, or close the physical-to-experiential bridge.
+- Proof: [`proposition_94_finite_range_dependent_sign_coherence.md`](docs/proposition_94_finite_range_dependent_sign_coherence.md)
+- Equation provenance: [`p94_equation_provenance.md`](docs/p94_equation_provenance.md)
+- Implementation: [`finite_range_dependent_sign_coherence.py`](src/consciousness_bridge/finite_range_dependent_sign_coherence.py)
+- Exact thresholds: [`finite_range_dependent_sign_coherence_threshold.py`](src/consciousness_bridge/finite_range_dependent_sign_coherence_threshold.py)
+- Exact tests: [`test_finite_range_dependent_sign_coherence.py`](tests/test_finite_range_dependent_sign_coherence.py)
+
+P94 remains a conditional finite-sample model-rejection theorem. Non-rejection is inconclusive. It does not identify consciousness, establish nonphysicality, validate an alternative theory, or close the physical-to-experiential bridge.
+
+## Historical IID finite-sample frontier: P93
+
+P93 remains the IID localized seven-cell theorem that P94 extends. At 95 percent confidence, its exact mathematical crossing is 1623 and the first exact denominator-24 replication is 1632. P93 remains scientifically valid under its stated IID assumptions and is preserved as the immediate historical predecessor of P94.
+
 ## Historical mixed-prevalence frontier: P91
 
 P91 remains the preceding full-cube nonlinear theorem. It proves `1/42 < d_inf(P_emp, M75) <= 1/24` by a rank-two flattening certificate plus the mixed upper point. P92 closes that bracket exactly and does not erase the P91 structural result.
@@ -131,7 +143,7 @@ P89 is complete only for real linear combinations of the eleven declared parity 
 
 - [`CITATION.cff`](CITATION.cff): machine-readable Citation File Format metadata used by GitHub citation tools.
 - [`CITATION.bib`](CITATION.bib): ready-to-import BibTeX record.
-- [Detailed proposition record](docs/detailed_proposition_record.md): P1 through P93 chronological theorem record.
+- [Detailed proposition record](docs/detailed_proposition_record.md): P1 through P94 chronological theorem record.
 - [Theorem roadmap](docs/theorem_roadmap.md): dependency-oriented theorem map.
 - [P72 equation and provenance record](docs/p72_equation_provenance.md): equation-level classification for the noisy-target theorem.
 - [P73 equation and provenance record](docs/p73_equation_provenance.md): equation-level classification and external latent-class context for the target-channel identifiability theorem.

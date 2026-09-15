@@ -1,6 +1,6 @@
 name: reproducibility
 
-# Exact-reference P93 release audit. This workflow is permanently read-only.
+# Exact-reference current-frontier audit. This workflow is permanently read-only.
 on:
   workflow_dispatch:
   push:
@@ -28,11 +28,11 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -e ".[dev]"
           python -m pip install -r requirements-reproducibility.txt
-      - name: Validate committed P93 publication state
+      - name: Validate committed current-frontier publication state
         run: |
           python -m pytest -q \
             tests/test_localized_sign_coherence_rejection.py \
-            tests/test_p93_reader_surface_coherence.py \
+            tests/test_finite_range_dependent_sign_coherence.py \
             tests/test_frontier_reader_narrative.py \
             tests/test_reader_documentation_consistency.py \
             tests/test_research_website_integrity.py \
@@ -42,25 +42,26 @@ jobs:
           python scripts/verify_repository.py
           python -m ruff check \
             src/consciousness_bridge/localized_sign_coherence_rejection.py \
+            src/consciousness_bridge/finite_range_dependent_sign_coherence.py \
+            src/consciousness_bridge/finite_range_dependent_sign_coherence_threshold.py \
             scripts/verify_repository.py \
             scripts/synchronize_research_three_website.py \
-            tests/test_p93_reader_surface_coherence.py
+            tests/test_finite_range_dependent_sign_coherence.py
           git diff --check
           if [ -n "$(git status --porcelain)" ]; then
-            echo "Committed P93 publication state is not clean."
+            echo "Committed current-frontier publication state is not clean."
             git status --short
             exit 1
           fi
       - name: Run end-to-end reproducibility audit
         run: python scripts/reproducibility_audit.py
-      - name: Upload reproduced P93 visual record
+      - name: Upload reproduced current-frontier visual record
         uses: actions/upload-artifact@v4
         with:
-          name: reproduced-visual-record-v0.82.0-p93
+          name: reproduced-current-frontier-visual-record-v0.82.0
           path: |
             docs/figures/quantitative
             docs/figures/quantum
-            docs/figures/p93_localized_sign_coherence_rejection.svg
             figures/current_frontier.svg
             figures/manifest.json
           if-no-files-found: error

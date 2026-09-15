@@ -25,7 +25,7 @@ from verify_frontier_publication import verify_frontier_publication
 
 ROOT = Path(__file__).resolve().parents[1]
 CURRENT_VERSION = "0.82.0"
-CURRENT_FRONTIER = "P93"
+CURRENT_FRONTIER = "P94"
 
 CORE_FILES = (
     "README.md",
@@ -83,6 +83,12 @@ CORE_FILES = (
     "docs/figures/p93_localized_sign_coherence_rejection.svg",
     "src/consciousness_bridge/localized_sign_coherence_rejection.py",
     "tests/test_localized_sign_coherence_rejection.py",
+    "docs/proposition_94_finite_range_dependent_sign_coherence.md",
+    "docs/p94_equation_provenance.md",
+    "docs/figures/p94_finite_range_dependent_sign_coherence.svg",
+    "src/consciousness_bridge/finite_range_dependent_sign_coherence.py",
+    "src/consciousness_bridge/finite_range_dependent_sign_coherence_threshold.py",
+    "tests/test_finite_range_dependent_sign_coherence.py",
     "src/consciousness_bridge/mixed_prevalence_rank_two_flattening_separation.py",
     "src/consciousness_bridge/exact_global_mixed_prevalence_distance.py",
     "tests/test_mixed_prevalence_rank_two_flattening_separation.py",
@@ -133,6 +139,9 @@ LINK_SURFACES = (
 MARKDOWN_LINK = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 
 STALE_READER_FRONTIER_MARKERS = (
+    "Current theorem frontier · P93",
+    "current P93 frontier",
+    "<strong>P93</strong><span>current theorem frontier</span>",
     "Current theorem frontier · P92",
     "current P92 frontier",
     "<strong>P92</strong><span>current theorem frontier</span>",
@@ -251,8 +260,8 @@ def _assert_no_stale_reader_frontier() -> None:
 
 def _assert_citation_integrity() -> None:
     citation = (ROOT / "CITATION.md").read_text(encoding="utf-8")
-    if "Current documented theorem frontier: P93" not in citation:
-        raise RuntimeError("CITATION.md does not declare P93 as the current theorem frontier")
+    if f"The current documented theorem frontier is **{CURRENT_FRONTIER}**." not in citation:
+        raise RuntimeError(f"CITATION.md does not declare {CURRENT_FRONTIER} as the current theorem frontier")
     if CURRENT_FRONTIER not in (ROOT / "CITATION.cff").read_text(encoding="utf-8"):
         raise RuntimeError(f"CITATION.cff does not mention {CURRENT_FRONTIER}")
 
@@ -268,7 +277,8 @@ def _assert_detailed_proposition_record() -> None:
         if end < start:
             start, end = end, start
         covered.update(range(start, end + 1))
-    missing = [number for number in range(1, 94) if number not in covered]
+    frontier_number = int(CURRENT_FRONTIER.removeprefix("P"))
+    missing = [number for number in range(1, frontier_number + 1) if number not in covered]
     if missing:
         raise RuntimeError(
             f"detailed proposition record is missing proposition references: {missing}"
@@ -285,20 +295,35 @@ def _assert_figure_manifest() -> None:
     figure_path = manifest.get("current_frontier_figure")
     if not isinstance(figure_path, str):
         raise TypeError("figure manifest current_frontier_figure is missing")
-    if not figure_path.endswith("p93_localized_sign_coherence_rejection.svg"):
-        raise RuntimeError("figure manifest does not point to the canonical P93 SVG")
+    frontier_number = int(CURRENT_FRONTIER.removeprefix("P"))
+    expected = sorted((ROOT / "docs" / "figures").glob(f"p{frontier_number}_*.svg"))
+    if len(expected) != 1:
+        raise RuntimeError(f"expected exactly one canonical {CURRENT_FRONTIER} SVG, found {expected}")
+    expected_path = expected[0].relative_to(ROOT).as_posix()
+    if figure_path != expected_path:
+        raise RuntimeError(
+            f"figure manifest current figure is {figure_path!r}, expected {expected_path!r}"
+        )
     figures = manifest.get("figures")
-    if not isinstance(figures, list) or len(figures) != 151:
-        raise RuntimeError("figure manifest does not contain the canonical 151 figures")
+    canonical_count = len(list((ROOT / "docs" / "figures").rglob("*.svg")))
+    if not isinstance(figures, list) or len(figures) != canonical_count:
+        observed = len(figures) if isinstance(figures, list) else "invalid"
+        raise RuntimeError(
+            f"figure manifest contains {observed} figures; canonical tree contains {canonical_count}"
+        )
 
 
 def _assert_visual_atlas_order() -> None:
     visual_atlas = (ROOT / "website" / "visual-atlas.html").read_text(encoding="utf-8")
-    p93 = visual_atlas.index('id="p93-frontier"')
-    p92 = visual_atlas.index('id="p92-frontier"')
-    p91 = visual_atlas.index('id="p91-frontier"')
-    if not (p93 < p92 < p91):
-        raise RuntimeError("Visual Atlas does not lead with the current P93 figure")
+    frontier_number = int(CURRENT_FRONTIER.removeprefix("P"))
+    current_marker = f'id="p{frontier_number}-frontier"'
+    previous_marker = f'id="p{frontier_number - 1}-frontier"'
+    current_position = visual_atlas.index(current_marker)
+    previous_position = visual_atlas.index(previous_marker)
+    if current_position >= previous_position:
+        raise RuntimeError(
+            f"Visual Atlas does not lead P{frontier_number} ahead of P{frontier_number - 1}"
+        )
 
 
 def _assert_no_policy_punctuation() -> None:

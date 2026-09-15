@@ -1,4 +1,5 @@
 import ast
+import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -128,19 +129,24 @@ def test_figure_enrichment_generator_preserves_canonical_reader_key() -> None:
     assert 'text.replace(legacy_reading_key, reading_key, 1)' in source
 
 
-def test_repository_verifier_tracks_p93_and_all_93_propositions() -> None:
+def test_repository_verifier_tracks_declared_frontier_and_all_propositions() -> None:
+    manifest = json.loads(_text("figures/manifest.json"))
+    frontier = str(manifest["current_frontier"])
     verifier = _text("scripts/verify_repository.py")
-    assert 'CURRENT_FRONTIER = "P93"' in verifier
+    assert f'CURRENT_FRONTIER = "{frontier}"' in verifier
     assert "covered: set[int] = set()" in verifier
-    assert "range(1, 94)" in verifier
+    assert 'frontier_number = int(CURRENT_FRONTIER.removeprefix("P"))' in verifier
+    assert "range(1, frontier_number + 1)" in verifier
     assert '"docs/reader_experience_and_visual_standard.md"' in verifier
     assert '"docs/proposition_92_exact_global_mixed_prevalence_distance.md"' in verifier
 
 
 def test_overview_orients_first_time_reader_before_theorem_frontier() -> None:
+    manifest = json.loads(_text("figures/manifest.json"))
+    frontier_id = f'id="{str(manifest["current_frontier"]).lower()}-frontier"'
     overview = _text("website/index.html")
     assert overview.count('id="project-journey"') == 1
-    assert overview.index('id="project-journey"') < overview.index('id="p93-frontier"')
+    assert overview.index('id="project-journey"') < overview.index(frontier_id)
     assert "The whole research program in three stages" in overview
     assert "<span>Research I</span>" in overview
     assert "<span>Research II</span>" in overview
