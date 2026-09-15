@@ -45,19 +45,28 @@ jobs:
       - name: Apply synchronized P100 promotion
         run: python scripts/promote_p100_public_frontier.py
 
-      - name: Synchronize remaining P100 research lineage marker
+      - name: Synchronize remaining P100 historical labels
         run: |
           python - <<'PY'
           from pathlib import Path
-          path = Path("website/research-lineage.html")
-          text = path.read_text(encoding="utf-8")
+
+          lineage = Path("website/research-lineage.html")
+          text = lineage.read_text(encoding="utf-8")
           text = text.replace(
               '<strong>P99</strong><span>current theorem frontier</span>',
               '<strong>P100</strong><span>current theorem frontier</span>',
           )
           text = text.replace("P99 current theorem frontier", "P100 current theorem frontier")
           text = text.replace("current P99 frontier", "current P100 frontier")
-          path.write_text(text, encoding="utf-8")
+          lineage.write_text(text, encoding="utf-8")
+
+          navigation = Path("docs/research_navigation.md")
+          text = navigation.read_text(encoding="utf-8")
+          text = text.replace(
+              "**Current frontier:** [P99: Cross-Fitted E-Value Aggregation](proposition_99_cross_fitted_evalue_aggregation.md)",
+              "**Immediate predecessor:** [P99: Cross-Fitted E-Value Aggregation](proposition_99_cross_fitted_evalue_aggregation.md)",
+          )
+          navigation.write_text(text, encoding="utf-8")
           PY
 
       - name: Verify figure publication contract
