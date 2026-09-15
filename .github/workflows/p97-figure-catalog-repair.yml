@@ -1,0 +1,42 @@
+name: p97-figure-catalog-repair
+
+on:
+  push:
+    branches: ["p97-simultaneous-candidate-family-selection"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  canonicalize:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: p97-simultaneous-candidate-family-selection
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - run: |
+          python -m pip install -e ".[dev]"
+          python -m pip install -r requirements-figures.txt
+      - name: Regenerate canonical visual publication record
+        run: python scripts/generate_all_figures.py
+      - name: Verify canonical figure state
+        run: |
+          python scripts/sync_figure_publication.py --check
+          python scripts/verify_repository.py
+          git diff --check
+      - name: Commit canonical figure catalog
+        run: |
+          if git diff --quiet -- docs/figure_catalog.md; then
+            echo "Figure catalog already canonical."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/figure_catalog.md
+          git commit -m "Canonicalize P97 figure catalog"
+          git push origin HEAD:p97-simultaneous-candidate-family-selection
