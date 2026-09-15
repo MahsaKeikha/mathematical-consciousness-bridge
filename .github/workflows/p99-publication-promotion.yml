@@ -77,6 +77,18 @@ jobs:
               "P98 remains a conditional model-rejection theorem",
               "P99 remains a conditional model-rejection theorem",
           )
+          text = text.replace(
+              'href="index.html#p98-frontier">Continue to the current P98 frontier</a>',
+              'href="index.html#p99-frontier">Continue to the current P99 frontier</a>',
+          )
+          text = text.replace(
+              'href="visual-atlas.html#p98-frontier">See the P98 figure</a>',
+              'href="visual-atlas.html#p99-frontier">See the P99 figure</a>',
+          )
+          text = text.replace(
+              'docs/p98_equation_provenance.md">Audit P98 provenance</a>',
+              'docs/p99_equation_provenance.md">Audit P99 provenance</a>',
+          )
           text = re.sub(
               r"Research Map · Current theorem frontier P\d+</p>",
               "Research Map · Current theorem frontier P99</p>",
@@ -91,6 +103,11 @@ jobs:
           assert "Research Map · Current theorem frontier P99</p>" in final_map
           assert "P77-P99" in final_map
           assert "P99 remains a conditional model-rejection theorem" in final_map
+          assert "Continue to the current P99 frontier" in final_map
+          assert 'href="index.html#p99-frontier"' in final_map
+          assert 'href="visual-atlas.html#p99-frontier"' in final_map
+          assert 'docs/p99_equation_provenance.md' in final_map
+          assert "current P98 frontier" not in final_map
           PY
       - name: Preserve full linked TRIUMF name in About surfaces
         run: |
