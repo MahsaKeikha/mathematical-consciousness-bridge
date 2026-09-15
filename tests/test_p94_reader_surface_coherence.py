@@ -23,26 +23,25 @@ def test_p94_formal_record_is_complete() -> None:
         assert (ROOT / path).is_file()
 
 
-def test_p94_remains_visible_as_immediate_predecessor() -> None:
+def test_p94_remains_visible_below_p95_and_p96() -> None:
     home = _read("website/index.html")
     atlas = _read("website/visual-atlas.html")
     plain = _read("website/plain-language.html")
     start = _read("website/start-here.html")
     research = _read("website/research-map.html")
     assert 'id="p94-frontier"' not in home
-    assert atlas.index('id="p95-frontier"') < atlas.index('id="p94-frontier"')
+    assert atlas.index('id="p96-frontier"') < atlas.index('id="p95-frontier"') < atlas.index('id="p94-frontier"')
     assert "Previous theorem frontier · P94" in atlas
     assert 'id="p94-reader-frontier"' in plain
     assert 'id="p94-reader-frontier"' in start
     assert 'id="p94-research-map"' in research
-    assert "95 results · current frontier P95" in plain
-    assert "95 results · current frontier P95" in start
+    assert "96 results · current frontier P96" in plain
+    assert "96 results · current frontier P96" in start
 
 
-def test_p94_drift_boundary_is_visible_to_readers() -> None:
+def test_p94_drift_boundary_is_preserved_on_historical_surfaces() -> None:
     for path in (
-        "README.md",
-        "website/index.html",
+        "docs/proposition_94_finite_range_dependent_sign_coherence.md",
         "website/plain-language.html",
         "website/start-here.html",
         "website/research-map.html",

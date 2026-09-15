@@ -1,6 +1,6 @@
 # Detailed proposition record
 
-## Complete P1 to P95 chronology
+## Complete P1 to P96 chronology
 
 This page preserves the proposition-by-proposition development history of the Mathematical Consciousness Bridge research program. It is intentionally separate from the main README so a first-time reader can follow the scientific argument without first learning the internal chronology of the project.
 
@@ -10,11 +10,11 @@ The scientific status rule is strict throughout: a theorem is only a theorem und
 
 ### How to use this record
 
-A first-time reader should not read this page as 94 disconnected proposition-level results. Use it as an audit index: identify the scientific role of a proposition, open its direct proof when needed, then follow implementation/tests/provenance links for verification. For the shortest conceptual path, begin with [Start Here](../START_HERE.md) and [Research Navigation](research_navigation.md). The [Reader Experience and Visual Presentation Standard](reader_experience_and_visual_standard.md) explains the repository-wide explanation and visual hierarchy.
+A first-time reader should not read this page as 96 disconnected proposition-level results. Use it as an audit index: identify the scientific role of a proposition, open its direct proof when needed, then follow implementation/tests/provenance links for verification. For the shortest conceptual path, begin with [Start Here](../START_HERE.md) and [Research Navigation](research_navigation.md). The [Reader Experience and Visual Presentation Standard](reader_experience_and_visual_standard.md) explains the repository-wide explanation and visual hierarchy.
 
 ---
 
-## Complete P1 to P95 chronology
+## Complete P1 to P96 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
