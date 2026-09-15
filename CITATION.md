@@ -8,7 +8,7 @@ If this research program, one of its propositions, figures, algorithms, or imple
 
 > Keikha, M. (2026). *Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem* (Version 0.82.0). GitHub research repository. https://github.com/MahsaKeikha/mathematical-consciousness-bridge
 
-This is the preferred citation for the research program at the current documented frontier, P98.
+This is the preferred citation for the research program at the current documented frontier, P99.
 
 ## BibTeX
 
@@ -20,7 +20,7 @@ This is the preferred citation for the research program at the current documente
   version      = {0.82.0},
   howpublished = {GitHub research repository},
   url          = {https://github.com/MahsaKeikha/mathematical-consciousness-bridge},
-  note         = {Ongoing research program. Current documented theorem frontier: P98.}
+  note         = {Ongoing research program. Current documented theorem frontier: P99.}
 }
 ```
 
@@ -53,7 +53,7 @@ This repository is an evolving research program. For reproducible scholarly use:
 3. Cite the individual proposition or artifact when your argument depends on a specific theorem, figure, algorithm, or test.
 4. Do not attribute later propositions or later numerical results to an earlier version of the repository.
 
-The current citation metadata identify Version **0.82.0** and theorem frontier **P98**. Future research versions should update the version number, theorem frontier, citation metadata, and archival record together.
+The current citation metadata identify Version **0.82.0** and theorem frontier **P99**. Future research versions should update the version number, theorem frontier, citation metadata, and archival record together.
 
 ## Previous theorem frontier: P97
 
@@ -61,7 +61,15 @@ The current documented theorem frontier is **P97**. P97 permits same-data post-i
 
 P97 is a conditional model-rejection theorem. It does not validate newly generated post-inspection candidates, unrestricted search, model acceptance after non-rejection, consciousness identification, nonphysicality, or completion of the physical-to-experiential bridge.
 
-## Current theorem frontier: P98
+## Current theorem frontier: P99
+
+The current documented theorem frontier is **P99**. P99 turns selection-valid P96/P98 fold rejection indicators into exact e-values, permits a finite calibration mixture fixed before own-fold evaluation, and combines the resulting cross-fitted fold evidence by a fixed convex average. The aggregate remains a valid e-value without assuming the final fold certificates are independent, and a global level-alpha rejection is obtained at aggregate e-value at least `1/alpha`.
+
+For the declared two-fold, two-regime, one-step-dependent distributed-evidence checkpoint at 95 percent confidence, the per-regime crossing is **3774** and the first denominator-24 exact replication is **3792**, with unique totals **15096 / 15168**. This is a configuration-specific gain over the matched equal-split P98 checkpoint, not a uniform dominance claim.
+
+P99 remains a conditional model-rejection theorem. It does not justify own-fold leakage, post-hoc calibration search, naive dependent-stream splitting, model acceptance after non-rejection, consciousness identification, nonphysicality, or completion of the physical-to-experiential bridge.
+
+## Immediate predecessor theorem frontier: P98
 
 The current documented theorem frontier is **P98**. P98 rotates the P96 independent-holdout construction across mutually independent data blocks. For fold `k`, the selected regime plan may be an arbitrarily complicated function of the other blocks, but block `k` must be excluded from its own selection rule and the plan must be frozen before block `k` is inspected for certification. Exact fold-level error budgets are then combined by a union bound, so the final fold certificates need not be independent.
 
@@ -159,7 +167,7 @@ P89 is complete only for real linear combinations of the eleven declared parity 
 
 - [`CITATION.cff`](CITATION.cff): machine-readable Citation File Format metadata used by GitHub citation tools.
 - [`CITATION.bib`](CITATION.bib): ready-to-import BibTeX record.
-- [Detailed proposition record](docs/detailed_proposition_record.md): P1 through P98 chronological theorem record.
+- [Detailed proposition record](docs/detailed_proposition_record.md): P1 through P99 chronological theorem record.
 - [Theorem roadmap](docs/theorem_roadmap.md): dependency-oriented theorem map.
 - [P72 equation and provenance record](docs/p72_equation_provenance.md): equation-level classification for the noisy-target theorem.
 - [P73 equation and provenance record](docs/p73_equation_provenance.md): equation-level classification and external latent-class context for the target-channel identifiability theorem.

@@ -322,3 +322,10 @@ The program therefore maintains
 \]
 
 The final theorem target requires these layers to meet explicitly rather than allowing one layer to substitute for another.
+
+
+### Vovk and Wang 2021: e-values
+
+**Reference:** Vladimir Vovk and Ruodu Wang, *E-values: Calibration, combination, and applications*, The Annals of Statistics 49(3), 1736-1754, DOI 10.1214/20-AOS2020.
+
+**Role here:** standard source for e-values, expectation-based evidence, and valid e-value averaging. P99 cites this work for the general evidence calculus and does not present those standard ingredients as repository-original.

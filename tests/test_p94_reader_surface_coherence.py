@@ -30,6 +30,7 @@ def test_p94_remains_visible_below_later_frontiers() -> None:
     start = _read("website/start-here.html")
     research = _read("website/research-map.html")
     assert 'id="p94-frontier"' not in home
+    assert atlas.index('id="p99-frontier"') < atlas.index('id="p98-frontier"')
     assert atlas.index('id="p98-frontier"') < atlas.index('id="p97-frontier"')
     assert atlas.index('id="p97-frontier"') < atlas.index('id="p96-frontier"')
     assert atlas.index('id="p96-frontier"') < atlas.index('id="p95-frontier"')
@@ -38,8 +39,8 @@ def test_p94_remains_visible_below_later_frontiers() -> None:
     assert 'id="p94-reader-frontier"' in plain
     assert 'id="p94-reader-frontier"' in start
     assert 'id="p94-research-map"' in research
-    assert "98 results · current frontier P98" in plain
-    assert "98 results · current frontier P98" in start
+    assert "99 results · current frontier P99" in plain
+    assert "99 results · current frontier P99" in start
 
 
 def test_p94_drift_boundary_is_preserved_on_historical_surfaces() -> None:

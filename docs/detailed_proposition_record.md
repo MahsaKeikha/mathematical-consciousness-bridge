@@ -1,6 +1,6 @@
 # Detailed proposition record
 
-## Complete P1 to P98 chronology
+## Complete P1 to P99 chronology
 
 This page preserves the proposition-by-proposition development history of the Mathematical Consciousness Bridge research program. It is intentionally separate from the main README so a first-time reader can follow the scientific argument without first learning the internal chronology of the project.
 
@@ -10,11 +10,11 @@ The scientific status rule is strict throughout: a theorem is only a theorem und
 
 ### How to use this record
 
-A first-time reader should not read this page as 98 disconnected proposition-level results. Use it as an audit index: identify the scientific role of a proposition, open its direct proof when needed, then follow implementation/tests/provenance links for verification. For the shortest conceptual path, begin with [Start Here](../START_HERE.md) and [Research Navigation](research_navigation.md). The [Reader Experience and Visual Presentation Standard](reader_experience_and_visual_standard.md) explains the repository-wide explanation and visual hierarchy.
+A first-time reader should not read this page as 99 disconnected proposition-level results. Use it as an audit index: identify the scientific role of a proposition, open its direct proof when needed, then follow implementation/tests/provenance links for verification. For the shortest conceptual path, begin with [Start Here](../START_HERE.md) and [Research Navigation](research_navigation.md). The [Reader Experience and Visual Presentation Standard](reader_experience_and_visual_standard.md) explains the repository-wide explanation and visual hierarchy.
 
 ---
 
-## Complete P1 to P98 chronology
+## Complete P1 to P99 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
@@ -449,3 +449,16 @@ For two folds, two regimes per fold, dependence range one, and equal 5 percent g
 **Boundary.** P98 requires genuinely independent certification blocks and own-fold exclusion. A random partition of one dependent time series is not automatically valid. Misspecified dependence ranges, unrestricted within-regime drift, unbudgeted exploration of multiple cross-fitting schemes, model acceptance, consciousness identification, nonphysicality, and completion of the physical-to-experiential bridge remain open.
 
 Direct proof: [P98](proposition_98_cross_fitted_selection_valid_certification.md). Provenance: [P98 equation record](p98_equation_provenance.md). Implementation: [`cross_fitted_selection_valid_certification.py`](../src/consciousness_bridge/cross_fitted_selection_valid_certification.py). Tests: [`test_cross_fitted_selection_valid_certification.py`](../tests/test_cross_fitted_selection_valid_certification.py).
+
+
+## P99: Cross-Fitted E-Value Aggregation
+
+**Question.** Can several selection-valid cross-fitted folds contribute moderate evidence toward one global rejection without assuming fold independence and without splitting the global alpha across folds in advance?
+
+**Result.** Yes, for a declared finite e-value calibration. A valid P96 fold rejection at level `tau` gives the exact e-value `R(tau)/tau`. Finite exact-rational mixtures across thresholds remain fold e-values when calibration is frozen before own-fold evaluation. Fixed convex averaging across folds preserves null expectation at most one even when the fold certificates are dependent. Markov's inequality then gives a global level-alpha rejection at aggregate e-value at least `1/alpha`.
+
+For `K=2`, two regimes per fold, dependence range one, equal fold weights, global alpha `1/20`, and fold test level `1/25`, the local regime level is `1/50`. The per-regime crossing is 3774 and the first exact denominator-24 replication is 3792, giving unique totals 15096 / 15168. The matched equal-split P98 crossing is 4045 / 4056 per regime. The P99 gain is configuration-specific and is not a uniform dominance theorem.
+
+**Boundary.** P99 requires genuine own-fold exclusion, frozen calibration, independent certification blocks in the P98 sense, and the declared local dependence assumptions. It does not establish model acceptance, consciousness identification, nonphysicality, or completion of the physical-to-experiential bridge.
+
+Direct proof: [P99](proposition_99_cross_fitted_evalue_aggregation.md). Provenance: [P99 equation record](p99_equation_provenance.md). Implementation: [`cross_fitted_evalue_aggregation.py`](../src/consciousness_bridge/cross_fitted_evalue_aggregation.py). Tests: [`test_cross_fitted_evalue_aggregation.py`](../tests/test_cross_fitted_evalue_aggregation.py).

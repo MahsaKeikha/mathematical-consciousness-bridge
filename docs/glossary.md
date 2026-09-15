@@ -69,7 +69,7 @@ The vocabulary falls into four groups:
 | Term | Meaning in this repository |
 | --- | --- |
 | **Scientific boundary** | An explicit statement of what a theorem does not establish. It prevents a valid mathematical result from being extended into an unsupported empirical or ontological claim. |
-| **Theorem frontier** | The highest numbered proposition currently integrated into the documented public research program. The current public frontier is **P98**. |
+| **Theorem frontier** | The highest numbered proposition currently integrated into the documented public research program. The current public frontier is **P99**. |
 | **Formal release** | The tagged software and publication release line. The current formal release remains **v0.82.0**, which is intentionally distinct from the theorem frontier. |
 
 ## Three distinctions worth remembering
@@ -147,7 +147,7 @@ P93 is the historical IID finite-sample predecessor of P94. P92 remains the exac
 **P97 boundary:** a candidate created after inspecting certification results is outside the theorem. Unbounded post-inspection search, unrestricted within-regime drift, model acceptance under non-rejection, consciousness identification, nonphysicality, and completion of the physical-to-experiential bridge are not established.
 
 
-## Current theorem frontier: P98
+## Immediate predecessor theorem frontier: P98
 
 **Cross-fitted certification block:** one of several mutually independent data blocks used as certification information in exactly one fold while the complementary blocks may be used for that fold's plan selection.
 
@@ -158,3 +158,18 @@ P93 is the historical IID finite-sample predecessor of P94. P92 remains the exac
 **Fold-level error budget:** the exact rational failure budget `beta_k` assigned to fold `k`. The P98 simultaneous guarantee requires the fold budgets to sum to no more than the global error budget.
 
 **P98 boundary:** ordinary splitting of one dependent stream does not create independent certification blocks. Own-fold leakage, misspecified dependence, unrestricted within-regime drift, unbudgeted exploration of cross-fitting schemes, model acceptance, consciousness identification, nonphysicality, and completion of the physical-to-experiential bridge are not established.
+
+
+## Current theorem frontier: P99
+
+**E-value:** a realized value of a nonnegative random variable whose expectation under the null is at most one.
+
+**Fold test level:** a threshold `tau` at which a selection-valid P96 fold certificate is evaluated before conversion to the e-value `R(tau)/tau`.
+
+**Threshold mixture:** a finite convex combination of fold e-values at predeclared test levels. The grid and weights must be frozen before the fold's own certification statistics are inspected.
+
+**Cross-fitted e-value aggregate:** a fixed convex average of valid fold e-values. P99 does not require the final fold e-values to be independent.
+
+**Distributed evidence:** an evidence geometry in which several folds contribute moderately to the global rejection rather than one fold being individually decisive.
+
+**P99 boundary:** the theorem does not permit own-fold leakage, post-hoc calibration search, arbitrary dependent-stream splitting, model acceptance, consciousness identification, nonphysicality, or bridge completion. P99 does not uniformly dominate P98.

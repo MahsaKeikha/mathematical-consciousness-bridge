@@ -63,9 +63,9 @@ Those results include methods for:
 - controlling uncertainty from finite data and numerical computation;
 - making the complete reasoning chain reproducible and auditable.
 
-The public theorem frontier is **P98**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains **open**.
+The public theorem frontier is **P99**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains **open**.
 
-You do not need to read 98 propositions to understand the project.
+You do not need to read 99 propositions to understand the project.
 
 ---
 
@@ -78,7 +78,7 @@ You do not need to read 98 propositions to understand the project.
 | Browse the research through figures | **[Figure Catalog](docs/figure_catalog.md)** |
 | Move into the formal scientific architecture | **[Technical Research Architecture](docs/research_architecture.md)** |
 | See how the mathematical results depend on one another | **[Theorem Roadmap](docs/theorem_roadmap.md)** |
-| Read the current frontier result | **[P98](docs/proposition_98_cross_fitted_selection_valid_certification.md)** |
+| Read the current frontier result | **[P99](docs/proposition_99_cross_fitted_evalue_aggregation.md)** |
 | Inspect every proposition in the complete technical record | **[Detailed Proposition Record](docs/detailed_proposition_record.md)** |
 | Trace equations, sources, implementations, and tests | **[Research Navigation](docs/research_navigation.md)** |
 | Reproduce the computational work | **[Reproducibility Guide](docs/reproducibility.md)** |
@@ -149,3 +149,12 @@ P98 rotates the P96 independent-holdout idea across mutually independent blocks.
 For two folds with two one-step-dependent regimes each, the 95 percent per-regime threshold is 4045 and the first exact denominator-24 replication is 4056. Because the folds are genuinely different certification blocks, the unique totals are 16180 and 16224.
 
 P98 does not make an ordinary split of a dependent time series independent. It does not permit own-fold leakage, unbudgeted cross-fitting search, model acceptance after non-rejection, consciousness identification, nonphysicality, or completion of the physical-to-experiential bridge. [Read P98](docs/proposition_98_cross_fitted_selection_valid_certification.md).
+
+
+### P99: cross-fitted e-value aggregation
+
+P99 extends the P98 cross-fitted design from simultaneous foldwise error spending to exact evidence aggregation. A valid level-`tau` fold rejection becomes the e-value `R(tau)/tau`. Finite calibration mixtures fixed before own-fold evaluation remain e-values, and a fixed convex average across folds remains valid without assuming the fold certificates are independent.
+
+For two folds with two one-step-dependent regimes each, the declared 95 percent distributed-evidence checkpoint crosses at 3774 observations per regime and first reaches an exact denominator-24 replication at 3792. Unique two-fold totals are 15096 and 15168. The gain over P98 is configuration-specific, and neither procedure uniformly dominates the other.
+
+P99 does not justify own-fold leakage, post-hoc calibration search, naive dependent-stream splitting, model acceptance, consciousness identification, nonphysicality, or completion of the physical-to-experiential bridge. [Read P99](docs/proposition_99_cross_fitted_evalue_aggregation.md).

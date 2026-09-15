@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "canonical_root": "docs/figures",
-  "current_frontier": "P98",
-  "current_frontier_figure": "docs/figures/p98_cross_fitted_selection_valid_certification.svg",
-  "figure_count": 156,
+  "current_frontier": "P99",
+  "current_frontier_figure": "docs/figures/p99_cross_fitted_evalue_aggregation.svg",
+  "figure_count": 157,
   "hash_algorithm": "sha256",
   "figures": [
     {
@@ -709,6 +709,14 @@
       "category": "theorem-or-architecture",
       "title": "P98 Cross-Fitted Selection-Valid Certification",
       "description_chars": 1234
+    },
+    {
+      "path": "docs/figures/p99_cross_fitted_evalue_aggregation.svg",
+      "sha256": "ca26e7d3fc1a66f526ab3416e4c93ebf810520663a56dc6d1c76e576a536c08c",
+      "bytes": 6282,
+      "category": "theorem-or-architecture",
+      "title": "P99 Cross-Fitted E-Value Aggregation",
+      "description_chars": 857
     },
     {
       "path": "docs/figures/physics_mathematics_atlas.svg",
