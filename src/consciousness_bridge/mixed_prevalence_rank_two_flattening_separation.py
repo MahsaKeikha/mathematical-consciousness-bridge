@@ -11,7 +11,11 @@ For the established exact empirical witness, one selected 3 by 3 minor of the
 the 512 vertices of the nonnegative entrywise L-infinity box at radius 1/42
 shows that the determinant remains at least 23/677376, which is strictly
 positive. Hence no P75 model law, at any prevalence in [0, 1], can lie in the
-closed L-infinity ball of radius 1/42 around the empirical law.
+closed L-infinity ball of radius 1/42 around the empirical law. The P75 law map
+is polynomial and therefore continuous on compact [0, 1]^9, so its image is
+compact and the L-infinity distance to that image is attained. Closed-ball
+exclusion at radius 1/42 therefore gives a strict lower bound, not merely a
+possibly unattained infimum.
 
 An explicit rational P75 parameter point with prevalence 4/5 attains full-law
 L-infinity distance exactly 1/24. Thus P91 gives the certified global bracket
