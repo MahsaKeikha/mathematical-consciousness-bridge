@@ -1,31 +1,32 @@
-# Current visual frontier: P71-P95
+# Current visual frontier: P71-P96
 
 This page is generated from the canonical proposition and figure tree.
 It is the compact GitHub-facing visual route through the current target-side branch.
 
-## Current theorem frontier: P95
+## Current theorem frontier: P96
 
-![P95 current theorem frontier](../docs/figures/p95_drift_aware_stratified_sign_coherence.svg)
+![P96 current theorem frontier](../docs/figures/p96_selection_valid_holdout_stratification.svg)
 
-[Read Proposition 95](../docs/proposition_95_drift_aware_stratified_sign_coherence.md)
+[Read Proposition 96](../docs/proposition_96_selection_valid_holdout_stratification.md)
 
-[Open P95 equation provenance](../docs/p95_equation_provenance.md)
+[Open P96 equation provenance](../docs/p96_equation_provenance.md)
 
-### Exact P95 drift-aware stratified sign-coherence rejection
+### Exact P96 selection-valid holdout stratification
 
-P95 responds to the P94 temporal-pooling no-go by testing predeclared regimes separately and controlling the complete family with one explicit error budget.
+P96 closes one precise adaptive-regime gap left open by P95: pilot information may choose the regime plan, but the plan is frozen before an independent certification sample is inspected.
 
 ```text
-local radius: eps_b^2 = (m_b+1) log(14/alpha_b) / (2 n_b)
+pilot selects: B, regime definitions, m_b, alpha_b
+holdout requirement: C independent of S
 familywise condition: sum_b alpha_b <= alpha
-joint null: P_b belongs to M_75 for every declared regime b
-B=2, m=1, 95% familywise crossing = 3645 per regime
-first exact denominator-24 replication = 3648 per regime
+extra alpha penalty for pilot-selection complexity = 0
+B=2, m=1, 95% holdout crossing = 3645 per regime
+first exact denominator-24 holdout replication = 3648 per regime
 ```
 
-P95 permits arbitrary marginal changes between predeclared regimes and requires only local common-marginal finite-range assumptions. It does not validate data-dependent segmentation, unrestricted gradual drift, model acceptance, or any consciousness ontology.
+The zero extra selection penalty is conditional on a genuinely independent holdout design and a plan frozen before holdout evaluation. Same-data redesign, naive splitting of a dependent stream, within-regime drift, model acceptance, consciousness identification, and bridge completion are not established.
 
-## P71-P95 canonical theorem-figure index
+## P71-P96 canonical theorem-figure index
 
 | Proposition | Canonical figure | Proof | Provenance |
 | --- | --- | --- | --- |
@@ -54,6 +55,7 @@ P95 permits arbitrary marginal changes between predeclared regimes and requires 
 | P93 | [figure](../docs/figures/p93_localized_sign_coherence_rejection.svg) | [proof](../docs/proposition_93_localized_sign_coherence_rejection.md) | [equations](../docs/p93_equation_provenance.md) |
 | P94 | [figure](../docs/figures/p94_finite_range_dependent_sign_coherence.svg) | [proof](../docs/proposition_94_finite_range_dependent_sign_coherence.md) | [equations](../docs/p94_equation_provenance.md) |
 | P95 | [figure](../docs/figures/p95_drift_aware_stratified_sign_coherence.svg) | [proof](../docs/proposition_95_drift_aware_stratified_sign_coherence.md) | [equations](../docs/p95_equation_provenance.md) |
+| P96 | [figure](../docs/figures/p96_selection_valid_holdout_stratification.svg) | [proof](../docs/proposition_96_selection_valid_holdout_stratification.md) | [equations](../docs/p96_equation_provenance.md) |
 
 ## Reproduce the visual record
 
@@ -67,4 +69,4 @@ The complete machine-readable SHA-256 inventory is in [`manifest.json`](manifest
 
 ## Interpretation boundary
 
-P71-P95 strengthens the methodology for testing a declared physical-to-target model. It does not derive consciousness from physics, prove nonphysicality, or close the physical-to-experiential bridge.
+P71-P96 strengthens the methodology for testing a declared physical-to-target model. It does not derive consciousness from physics, prove nonphysicality, or close the physical-to-experiential bridge.

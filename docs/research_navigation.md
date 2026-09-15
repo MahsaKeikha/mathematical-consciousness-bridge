@@ -4,7 +4,7 @@
 
 This page is an index, not another chapter. If you are still learning the overall story, go one layer up to the **[Research Map](research_map.md)**.
 
-The current documented theorem frontier is **P95**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains open.
+The current documented theorem frontier is **P96**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains open.
 
 ---
 
@@ -89,30 +89,30 @@ Then follow P72 through P74 in the [Detailed Proposition Record](detailed_propos
 
 **Question:** Can the declared model of the target and its measurement actually reproduce the observations, or can it be rejected under its own assumptions?
 
-**Results:** P75 through P95
+**Results:** P75 through P96
 
 This branch moves from model adequacy to rejection with finite data, separation from the complete declared model set, certified bounds for continuous families, and increasingly strong exact tests that preserve shared parameters.
 
 **Start with:** [P75: Target Model Adequacy](proposition_75_target_model_adequacy_overidentification.md)
 
-**Current frontier:** [P95: Drift-Aware Stratified Sign-Coherence Rejection](proposition_95_drift_aware_stratified_sign_coherence.md)
+**Current frontier:** [P96: Selection-Valid Holdout Stratification](proposition_96_selection_valid_holdout_stratification.md)
 
 ---
 
 ## Audit the current frontier without searching folders
 
-For P95:
+For P96:
 
 | Audit surface | Canonical route |
 | --- | --- |
-| Direct theorem | [P95 proposition](proposition_95_drift_aware_stratified_sign_coherence.md) |
-| Equation and method provenance | [P95 provenance](p95_equation_provenance.md) |
-| Implementation | [`drift_aware_stratified_sign_coherence.py`](../src/consciousness_bridge/drift_aware_stratified_sign_coherence.py) |
-| Regression tests | [`test_drift_aware_stratified_sign_coherence.py`](../tests/test_drift_aware_stratified_sign_coherence.py) |
-| Theorem figure | [P95 drift-aware stratified certificate](figures/p95_drift_aware_stratified_sign_coherence.svg) |
+| Direct theorem | [P96 proposition](proposition_96_selection_valid_holdout_stratification.md) |
+| Equation and method provenance | [P96 provenance](p96_equation_provenance.md) |
+| Implementation | [`selection_valid_holdout_stratification.py`](../src/consciousness_bridge/selection_valid_holdout_stratification.py) |
+| Regression tests | [`test_selection_valid_holdout_stratification.py`](../tests/test_selection_valid_holdout_stratification.py) |
+| Theorem figure | [P96 selection-valid holdout certificate](figures/p96_selection_valid_holdout_stratification.svg) |
 | Repository reproduction | [Reproducibility Guide](reproducibility.md) |
 
-P95 is a conditional drift-aware model-audit result for the declared P75 family. Regime boundaries and error budgets must be predeclared. The theorem does not validate data-dependent segmentation, establish model acceptance after non-rejection, identify a latent state with consciousness, establish nonphysicality, or close the physical-to-experiential bridge.
+P96 is a conditional selection-valid model-audit result. Pilot selection may be arbitrarily complicated, but the selected plan must be frozen before evaluation on genuinely independent holdout information that satisfies the selected local P94 assumptions. A naive split of one dependent stream is not automatically independent. The theorem does not establish model acceptance after non-rejection, identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.
 
 ---
 
@@ -155,8 +155,8 @@ The [Detailed Proposition Record](detailed_proposition_record.md) is the complet
 | --- | --- |
 | Physics | [Research Map](research_map.md) → [Technical Research Architecture](research_architecture.md) → [Quantum branch](quantum_foundations_and_bridge_test.md) |
 | Mathematics | [Research Map](research_map.md) → [Theorem Roadmap](theorem_roadmap.md) → proposition proofs |
-| Statistics and inference | [P19](proposition_19_fundamental_physical_sufficiency.md) → P20 through P24 → P74 through P95 via [Detailed Proposition Record](detailed_proposition_record.md) |
-| Consciousness science | [Bridge Problem](bridge_problem.md) → [Falsification Program](falsification_program.md) → P71 through P95 |
+| Statistics and inference | [P19](proposition_19_fundamental_physical_sufficiency.md) → P20 through P24 → P74 through P96 via [Detailed Proposition Record](detailed_proposition_record.md) |
+| Consciousness science | [Bridge Problem](bridge_problem.md) → [Falsification Program](falsification_program.md) → P71 through P96 |
 | Software and reproducibility | [Reproducibility Guide](reproducibility.md) → [`src/`](../src/) → [`tests/`](../tests/) |
 | Visual learner | [Figure Catalog](figure_catalog.md) → [Visual Atlas](../website/visual-atlas.html) |
 
@@ -164,7 +164,7 @@ The [Detailed Proposition Record](detailed_proposition_record.md) is the complet
 
 ## Where the complete detail lives
 
-This page intentionally does **not** duplicate the full 95 proposition index.
+This page intentionally does **not** duplicate the full 96 proposition index.
 
 Use:
 
@@ -256,9 +256,9 @@ For P94:
 
 P94 relaxes temporal independence, not stationarity. Its confidence radius carries an exact `m+1` squared-radius penalty under a declared finite dependence range and one common marginal law. The exact pooling counterexample proves that arbitrary marginal drift can imitate the P92 negative determinant-product pattern, so drift remains outside the theorem.
 
-## P95 current frontier
+## P95 immediate predecessor
 
-**Current frontier:** [P95: Drift-Aware Stratified Sign-Coherence Rejection](proposition_95_drift_aware_stratified_sign_coherence.md)
+**Immediate predecessor:** [P95: Drift-Aware Stratified Sign-Coherence Rejection](proposition_95_drift_aware_stratified_sign_coherence.md)
 
 | What you want | Direct link |
 | --- | --- |
@@ -268,4 +268,19 @@ P94 relaxes temporal independence, not stationarity. Its confidence radius carri
 | Regression tests | [`test_drift_aware_stratified_sign_coherence.py`](../tests/test_drift_aware_stratified_sign_coherence.py) |
 | Figure | [P95 drift-aware stratified certificate](figures/p95_drift_aware_stratified_sign_coherence.svg) |
 
-P95 permits marginal drift across predeclared regimes while keeping a common marginal law only within each regime. It replaces invalid pooling with a familywise statement about the regime-specific P75 laws.
+P95 permits marginal drift across predeclared regimes while keeping a common marginal law only within each regime. P96 keeps that local P95 logic but allows the regime plan itself to be chosen from separate pilot information.
+
+
+## P96 current frontier
+
+**Current frontier:** [P96: Selection-Valid Holdout Stratification](proposition_96_selection_valid_holdout_stratification.md)
+
+| What you want | Direct link |
+| --- | --- |
+| The theorem and proof | [P96 proposition](proposition_96_selection_valid_holdout_stratification.md) |
+| Equation and method provenance | [P96 provenance](p96_equation_provenance.md) |
+| Implementation | [`selection_valid_holdout_stratification.py`](../src/consciousness_bridge/selection_valid_holdout_stratification.py) |
+| Regression tests | [`test_selection_valid_holdout_stratification.py`](../tests/test_selection_valid_holdout_stratification.py) |
+| Figure | [P96 selection-valid holdout certificate](figures/p96_selection_valid_holdout_stratification.svg) |
+
+P96 permits pilot-selected regime plans only when selection and certification are separated by a justified independent holdout design and the selected plan is frozen before holdout evaluation. It inherits the P95 local rejection logic and preserves the same familywise error budget by conditioning on the pilot information.

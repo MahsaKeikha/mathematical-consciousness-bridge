@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P95**. The proposition record runs from **P1 through P95 with explicit dependency branches**. P71-P95 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P96**. The proposition record runs from **P1 through P96 with explicit dependency branches**. P71-P96 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -64,6 +64,8 @@ The current documented theorem frontier is **P95**. The proposition record runs 
 &\text{P94: finite-range dependence preserves the localized rejection gate under one common marginal law}\\
 &\Downarrow\\
 &\text{P95: predeclared drift regimes combine local P94 gates with familywise error control}\\
+&\Downarrow\\
+&\text{P96: pilot-selected regime plans are frozen and certified on independent holdout information}\\
 \end{aligned}
 }
 \]
@@ -881,6 +883,31 @@ For the established P92 witness, two equally budgeted regimes with dependence ra
 
 Direct proof: [P95](proposition_95_drift_aware_stratified_sign_coherence.md). Provenance: [P95 equation record](p95_equation_provenance.md). Implementation: [`drift_aware_stratified_sign_coherence.py`](../src/consciousness_bridge/drift_aware_stratified_sign_coherence.py). Tests: [`test_drift_aware_stratified_sign_coherence.py`](../tests/test_drift_aware_stratified_sign_coherence.py).
 
-## After P95
+## P96: selection-valid holdout stratification
 
-P95 closes the first predeclared-regime repair of the P94 temporal-pooling no-go. Any P96 candidate must close a genuinely new mathematical or scientific gap. Natural directions include data-dependent segmentation with valid selection accounting, gradual within-regime drift with an explicitly time-varying target, unknown-range or mixing-process concentration under declared assumptions, or a different observable witness not already implied by P92-P95. The physical-to-experiential bridge remains open.
+P95 requires regime boundaries and error budgets to be fixed independently of the certification witness. P96 closes one precise post-selection gap by introducing a pilot-selection sigma-field and a separate certification sample. The pilot may choose the number of regimes, their definitions, declared finite dependence ranges, rational error budgets, and certification allocation. The complete plan is frozen before holdout evaluation.
+
+With pilot information \(\mathcal S\) and certification information \(\mathcal C\), P96 assumes the holdout design justifies
+
+\[
+\mathcal C\perp\!\!\!\perp\mathcal S.
+\]
+
+Conditional on \(\mathcal S\), the selected plan is fixed and P95 gives
+
+\[
+\Pr\left(igcap_b \mathcal A_b\mid\mathcal Sight)
+\ge 1-\sum_blpha_b\ge 1-lpha.
+\]
+
+The tower property therefore preserves the same unconditional familywise bound. No additional alpha penalty depending on pilot-search complexity is required under these assumptions. The cost is data separation: pilot observations are not certification observations.
+
+For two selected regimes with dependence range one and equal allocation of a 5 percent familywise budget, the holdout threshold remains 3645 observations per regime, with first exact denominator-24 replication at 3648.
+
+Direct proof: [P96](proposition_96_selection_valid_holdout_stratification.md). Provenance: [P96 equation record](p96_equation_provenance.md). Implementation: [`selection_valid_holdout_stratification.py`](../src/consciousness_bridge/selection_valid_holdout_stratification.py). Tests: [`test_selection_valid_holdout_stratification.py`](../tests/test_selection_valid_holdout_stratification.py).
+
+P96 is sufficient under a genuinely independent holdout design. A naive random split of one temporally dependent stream is not automatically covered. Same-data redesign, gradual within-regime drift, unknown dependence structure, model acceptance, consciousness identification, nonphysicality, and bridge completion remain open.
+
+## After P96
+
+P96 closes the independent-holdout version of adaptive regime selection. Any P97 candidate must close a genuinely new mathematical or scientific gap. Natural directions include guarded cross-fitting or multiple independent splits that recover pilot efficiency without invalidating selection, simultaneous candidate-family accounting without sample splitting, gradual within-regime drift with an explicitly time-varying target, or concentration under broader declared dependence classes. The physical-to-experiential bridge remains open.

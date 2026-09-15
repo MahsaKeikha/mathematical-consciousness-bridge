@@ -273,6 +273,24 @@ def _frontier_summary(frontier: int) -> list[str]:
             "P95 permits arbitrary marginal changes between predeclared regimes and requires only local common-marginal finite-range assumptions. It does not validate data-dependent segmentation, unrestricted gradual drift, model acceptance, or any consciousness ontology.",
             "",
         ]
+    if frontier == 96:
+        return [
+            "### Exact P96 selection-valid holdout stratification",
+            "",
+            "P96 closes one precise adaptive-regime gap left open by P95: pilot information may choose the regime plan, but the plan is frozen before an independent certification sample is inspected.",
+            "",
+            "```text",
+            "pilot selects: B, regime definitions, m_b, alpha_b",
+            "holdout requirement: C independent of S",
+            "familywise condition: sum_b alpha_b <= alpha",
+            "extra alpha penalty for pilot-selection complexity = 0",
+            "B=2, m=1, 95% holdout crossing = 3645 per regime",
+            "first exact denominator-24 holdout replication = 3648 per regime",
+            "```",
+            "",
+            "The zero extra selection penalty is conditional on a genuinely independent holdout design and a plan frozen before holdout evaluation. Same-data redesign, naive splitting of a dependent stream, within-regime drift, model acceptance, consciousness identification, and bridge completion are not established.",
+            "",
+        ]
     return []
 
 

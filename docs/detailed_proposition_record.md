@@ -1,6 +1,6 @@
 # Detailed proposition record
 
-## Complete P1 to P95 chronology
+## Complete P1 to P96 chronology
 
 This page preserves the proposition-by-proposition development history of the Mathematical Consciousness Bridge research program. It is intentionally separate from the main README so a first-time reader can follow the scientific argument without first learning the internal chronology of the project.
 
@@ -10,11 +10,11 @@ The scientific status rule is strict throughout: a theorem is only a theorem und
 
 ### How to use this record
 
-A first-time reader should not read this page as 94 disconnected proposition-level results. Use it as an audit index: identify the scientific role of a proposition, open its direct proof when needed, then follow implementation/tests/provenance links for verification. For the shortest conceptual path, begin with [Start Here](../START_HERE.md) and [Research Navigation](research_navigation.md). The [Reader Experience and Visual Presentation Standard](reader_experience_and_visual_standard.md) explains the repository-wide explanation and visual hierarchy.
+A first-time reader should not read this page as 96 disconnected proposition-level results. Use it as an audit index: identify the scientific role of a proposition, open its direct proof when needed, then follow implementation/tests/provenance links for verification. For the shortest conceptual path, begin with [Start Here](../START_HERE.md) and [Research Navigation](research_navigation.md). The [Reader Experience and Visual Presentation Standard](reader_experience_and_visual_standard.md) explains the repository-wide explanation and visual hierarchy.
 
 ---
 
-## Complete P1 to P95 chronology
+## Complete P1 to P96 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
@@ -406,3 +406,20 @@ P95 responds directly to the P94 temporal-pooling no-go. The observation stream 
 - Figure: `figures/p95_drift_aware_stratified_sign_coherence.svg`
 
 P95 requires predeclared regimes and local common-marginal assumptions. Data-dependent segmentation and unrestricted gradual drift remain open.
+
+
+## P96: Selection-Valid Holdout Stratification
+
+**Question.** Can P95 remain selection-valid when the regime plan is chosen adaptively from data?
+
+**Result.** Yes for one precise design: use pilot information to choose the complete finite regime plan, freeze that plan, and certify it on independent holdout information. Conditional on the pilot sigma-field, P95 applies to the fixed plan; the tower property preserves the same unconditional familywise error bound. No extra alpha penalty is required for the complexity of the pilot search under the stated independence assumptions.
+
+**Exact checkpoint.** For two selected regimes, one-step dependence, and a 5 percent familywise budget split equally, the holdout threshold remains 3645 per regime and the first exact denominator-24 replication remains 3648 per regime.
+
+**Boundary.** Pilot observations are not certification observations. A naive split of a dependent time series is not automatically independent. Same-data redesign, within-regime drift, model acceptance, consciousness identification, nonphysicality, and bridge completion are not established.
+
+- [Proof](proposition_96_selection_valid_holdout_stratification.md)
+- [Equation provenance](p96_equation_provenance.md)
+- [Figure](figures/p96_selection_valid_holdout_stratification.svg)
+- [Implementation](../src/consciousness_bridge/selection_valid_holdout_stratification.py)
+- [Tests](../tests/test_selection_valid_holdout_stratification.py)

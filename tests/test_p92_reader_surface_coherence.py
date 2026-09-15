@@ -43,8 +43,14 @@ def test_visual_atlas_orders_p92_before_p91_and_p90() -> None:
     assert "p92_exact_global_mixed_prevalence_distance.svg" in text[p92:p91]
 
 
-def test_p92_reader_surfaces_preserve_scientific_boundary() -> None:
-    for path in ("README.md", "website/index.html", "website/plain-language.html", "website/start-here.html", "website/research-map.html"):
+def test_p92_historical_reader_surfaces_preserve_scientific_boundary() -> None:
+    for path in (
+        "docs/proposition_92_exact_global_mixed_prevalence_distance.md",
+        "website/visual-atlas.html",
+        "website/plain-language.html",
+        "website/start-here.html",
+        "website/research-map.html",
+    ):
         text = _read(path).lower()
         assert "p92" in text
         assert "physical-to-experiential bridge" in text

@@ -69,7 +69,7 @@ The vocabulary falls into four groups:
 | Term | Meaning in this repository |
 | --- | --- |
 | **Scientific boundary** | An explicit statement of what a theorem does not establish. It prevents a valid mathematical result from being extended into an unsupported empirical or ontological claim. |
-| **Theorem frontier** | The highest numbered proposition currently integrated into the documented public research program. The current public frontier is **P95**. |
+| **Theorem frontier** | The highest numbered proposition currently integrated into the documented public research program. The current public frontier is **P96**. |
 | **Formal release** | The tagged software and publication release line. The current formal release remains **v0.82.0**, which is intentionally distinct from the theorem frontier. |
 
 ## Three distinctions worth remembering
@@ -112,10 +112,23 @@ P93 is the historical IID finite-sample predecessor of P94. P92 remains the exac
 **Common marginal law:** every observation has the same four-view population law. P94 requires this because an exact counterexample shows that pooling different valid P75 regimes can create a negative P92 determinant product.
 
 
-## Current theorem frontier: P95
+## Immediate predecessor theorem frontier: P95
 
 **Predeclared regime:** a time or experimental block whose boundary is fixed independently of the selected sign-coherence witness. P95 tests such regimes separately instead of pooling drifting marginal laws.
 
 **Familywise regime certificate:** each regime receives its own P94-style finite-range confidence event and error budget `alpha_b`. If the budgets satisfy `sum_b alpha_b <= alpha`, a union bound provides simultaneous confidence at least `1-alpha` without requiring independence between regimes.
 
 **P95 boundary:** data-dependent segmentation, unrestricted gradual drift inside a regime, model acceptance under non-rejection, consciousness identification, nonphysicality, and completion of the physical-to-experiential bridge are not established.
+
+
+## Current theorem frontier: P96
+
+**Pilot-selection information:** the information used to choose a finite regime plan before certification. P96 permits this selection rule to be arbitrarily complicated under its declared sample-separation assumptions.
+
+**Frozen plan:** the selected number of regimes, regime definitions, declared dependence ranges, rational error budgets, and certification allocation are fixed before holdout statistics are inspected.
+
+**Independent holdout certification:** certification information is independent of the pilot-selection information in the sense required by the conditional P96 theorem. An ordinary random split of one temporally dependent stream is not automatically such an independent holdout design.
+
+**Selection-complexity alpha penalty:** under the P96 independent-holdout and frozen-plan assumptions, the pilot search itself requires no additional alpha spending. The cost is sample separation: pilot observations are not certification observations.
+
+**P96 boundary:** same-data redesign, unrestricted within-regime drift, model acceptance under non-rejection, consciousness identification, nonphysicality, and completion of the physical-to-experiential bridge are not established.
