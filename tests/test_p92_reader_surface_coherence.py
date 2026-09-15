@@ -16,16 +16,19 @@ def test_p92_proof_states_exact_global_distance_and_boundary() -> None:
     assert "physical-to-experiential bridge remains open" in lower
 
 
-def test_p92_homepage_is_current_and_links_complete_record() -> None:
-    text = _read("website/index.html")
-    assert 'id="p92-frontier"' in text
-    assert "Current theorem frontier · P92" in text
-    assert "p92_exact_global_mixed_prevalence_distance.svg" in text
-    assert "proposition_92_exact_global_mixed_prevalence_distance.md" in text
-    assert "p92_equation_provenance.md" in text
-    assert "exact_global_mixed_prevalence_distance.py" in text
-    assert "test_exact_global_mixed_prevalence_distance.py" in text
-    assert "d_inf = 1/24" in text
+def test_p92_is_historical_while_p93_owns_the_homepage() -> None:
+    home = _read("website/index.html")
+    atlas = _read("website/visual-atlas.html")
+    assert 'id="p93-frontier"' in home
+    assert 'id="p92-frontier"' not in home
+    p93 = atlas.index('id="p93-frontier"')
+    p92 = atlas.index('id="p92-frontier"')
+    assert p93 < p92
+    historical = atlas[p92:]
+    assert "Previous theorem frontier · P92" in historical
+    assert "p92_exact_global_mixed_prevalence_distance.svg" in historical
+    assert "proposition_92_exact_global_mixed_prevalence_distance.md" in historical
+    assert "p92_equation_provenance.md" in historical
 
 
 def test_visual_atlas_orders_p92_before_p91_and_p90() -> None:

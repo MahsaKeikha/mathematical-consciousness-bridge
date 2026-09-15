@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="930" viewBox="0 0 1600 930" role="img" aria-labelledby="title desc">
+  <title id="title">Proposition 13: pairwise causal-structure component insufficiency and irredundancy</title>
+  <desc id="desc">What this figure shows: Proposition 12 proves that each major component of the intervention-resolved causal-structure candidate is individually insufficient to reconstruct the three-component physical fingerprint. Visible guideposts include: Every two-component projection loses information carried by the omitted component.; Full component-level physical fingerprint; F_C(p) = (G_p, A_p, K_p); response geometry · directed influence · partition irreducibility; Keep (G, A); omit K; MATCHED PAIRWISE PROJECTION. How to read it: follow the diagram in the direction of its arrows and use each box, panel, inequality, or highlighted region only with the meaning printed beside it. Main takeaway: this is the visual companion to Proposition 13; the proposition document supplies the assumptions, proof, and exact scope of every implication. Scientific status: Proposition 13 theorem/certificate visual. It is not independent empirical evidence and does not, by itself, identify a physical or latent variable with consciousness.</desc>
+  <defs>
+    <style>
+      .title{font:700 37px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 18px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .head{font:700 19px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 14.5px Inter,Segoe UI,Arial,sans-serif;fill:#334155}
+      .label{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
+      .eq{font:600 17px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .divider{stroke:#cbd5e1;stroke-width:1}
+    </style>
+  </defs>
+
+  <rect width="1600" height="930" fill="#ffffff"/>
+  <text x="70" y="64" class="title">Proposition 13 - Pairwise Component Irredundancy</text>
+  <text x="70" y="96" class="subtitle">Every two-component projection loses information carried by the omitted component.</text>
+
+  <rect x="310" y="145" width="980" height="120" rx="16" fill="#0f172a"/>
+  <text x="350" y="185" style="font:700 20px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Full component-level physical fingerprint</text>
+  <text x="350" y="224" style="font:600 20px Georgia,'Times New Roman',serif;fill:#e2e8f0">F_C(p) = (G_p, A_p, K_p)</text>
+  <text x="760" y="224" style="font:400 14px Inter,Segoe UI,Arial,sans-serif;fill:#94a3b8">response geometry · directed influence · partition irreducibility</text>
+
+  <rect x="70" y="330" width="455" height="380" rx="16" fill="#f5fcf8" stroke="#059669" stroke-width="1.6"/>
+  <text x="98" y="370" class="head">Keep (G, A); omit K</text><line x1="98" y1="386" x2="497" y2="386" class="divider"/>
+  <text x="98" y="424" class="label">MATCHED PAIRWISE PROJECTION</text><text x="98" y="458" class="eq">G_L = G_H</text><text x="98" y="488" class="eq">A_L = A_H</text>
+  <text x="98" y="532" class="label">OMITTED COMPONENT DIFFERS</text><text x="98" y="566" class="eq">K_L = 1/2, K_H = 3/4</text>
+  <text x="98" y="612" class="body">Same response geometry and directed influence</text><text x="98" y="637" class="body">do not determine irreducibility.</text>
+  <text x="98" y="680" class="label">CONCLUSION: K IS IRREDUNDANT</text>
+
+  <rect x="572" y="330" width="455" height="380" rx="16" fill="#faf8ff" stroke="#7c3aed" stroke-width="1.6"/>
+  <text x="600" y="370" class="head">Keep (G, K); omit A</text><line x1="600" y1="386" x2="999" y2="386" class="divider"/>
+  <text x="600" y="424" class="label">MATCHED PAIRWISE PROJECTION</text><text x="600" y="458" class="eq">G_0 = G_+</text><text x="600" y="488" class="eq">K_0 = K_+</text>
+  <text x="600" y="532" class="label">OMITTED COMPONENT DIFFERS</text><text x="600" y="566" class="eq">A_0 = 0, A_+ ≠ 0</text>
+  <text x="600" y="612" class="body">Same geometry and irreducibility do not</text><text x="600" y="637" class="body">determine directed perturbational influence.</text>
+  <text x="600" y="680" class="label">CONCLUSION: A IS IRREDUNDANT</text>
+
+  <rect x="1075" y="330" width="455" height="380" rx="16" fill="#fffaf7" stroke="#ea580c" stroke-width="1.6"/>
+  <text x="1103" y="370" class="head">Keep (A, K); omit G</text><line x1="1103" y1="386" x2="1502" y2="386" class="divider"/>
+  <text x="1103" y="424" class="label">MATCHED PAIRWISE PROJECTION</text><text x="1103" y="458" class="eq">A_D = A_S</text><text x="1103" y="488" class="eq">K_D = K_S</text>
+  <text x="1103" y="532" class="label">OMITTED COMPONENT DIFFERS</text><text x="1103" y="566" class="eq">G_D ≠ G_S</text>
+  <text x="1103" y="612" class="body">Same influence and irreducibility do not</text><text x="1103" y="637" class="body">determine intervention-response geometry.</text>
+  <text x="1103" y="680" class="label">CONCLUSION: G IS IRREDUNDANT</text>
+
+  <rect x="70" y="770" width="1460" height="110" rx="14" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.4"/>
+  <text x="100" y="801" class="head">P13 conclusion on the declared audit domain</text>
+  <text x="100" y="833" class="body">The projections (G,A), (G,K), and (A,K) are all incomplete.</text>
+  <text x="100" y="858" class="body">Any future reduction needs assumptions that make the omitted component reconstructible.</text>
+</svg>

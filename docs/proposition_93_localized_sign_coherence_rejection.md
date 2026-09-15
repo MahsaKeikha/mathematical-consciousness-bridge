@@ -390,7 +390,7 @@ P93 does not claim that 1623 samples are universally sufficient for every altern
 
 P93 also does not claim minimax optimality, model acceptance under non-rejection, semantic validity of the latent state, nonphysicality of consciousness, or a completed physical-to-experiential bridge.
 
-The physical-to-experiential bridge remains open.
+Non-rejection remains inconclusive. The physical-to-experiential bridge remains open.
 
 ---
 

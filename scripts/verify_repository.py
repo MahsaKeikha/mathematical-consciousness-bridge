@@ -253,8 +253,8 @@ def _assert_citation_integrity() -> None:
     citation = (ROOT / "CITATION.md").read_text(encoding="utf-8")
     if "Current documented theorem frontier: P93" not in citation:
         raise RuntimeError("CITATION.md does not declare P93 as the current theorem frontier")
-    if "P92" not in (ROOT / "CITATION.cff").read_text(encoding="utf-8"):
-        raise RuntimeError("CITATION.cff does not mention P92")
+    if CURRENT_FRONTIER not in (ROOT / "CITATION.cff").read_text(encoding="utf-8"):
+        raise RuntimeError(f"CITATION.cff does not mention {CURRENT_FRONTIER}")
 
 
 def _assert_detailed_proposition_record() -> None:
@@ -295,13 +295,8 @@ def _assert_figure_manifest() -> None:
 def _assert_visual_atlas_order() -> None:
     visual_atlas = (ROOT / "website" / "visual-atlas.html").read_text(encoding="utf-8")
     p93 = visual_atlas.index('id="p93-frontier"')
-    p93 = visual_atlas.index('id="p93-frontier"')
-    p93 = visual_atlas.index('id="p93-frontier"')
-    p93 = visual_atlas.index('id="p93-frontier"')
-    p93 = visual_atlas.index('id="p93-frontier"')
     p92 = visual_atlas.index('id="p92-frontier"')
     p91 = visual_atlas.index('id="p91-frontier"')
-    p90 = visual_atlas.index('id="p90-frontier"')
     if not (p93 < p92 < p91):
         raise RuntimeError("Visual Atlas does not lead with the current P93 figure")
 

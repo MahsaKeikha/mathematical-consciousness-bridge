@@ -157,12 +157,12 @@ def _require_once(text: str, token: str, surface: str) -> None:
 
 
 def _validate_current_frontier_pages(output: Path) -> None:
-    """Require the deployed site to be internally consistent with P92."""
+    """Require the deployed site to be internally consistent with P93."""
 
     frontier_figure = output / "figures" / CURRENT_FRONTIER_FIGURE
     if not frontier_figure.is_file():
         raise RuntimeError(
-            "website build is missing the current P92 theorem figure: "
+            "website build is missing the current P93 theorem figure: "
             f"{frontier_figure}"
         )
 
@@ -173,7 +173,7 @@ def _validate_current_frontier_pages(output: Path) -> None:
         raise RuntimeError("website build is missing visual-atlas.html")
     visual_atlas = visual_atlas_path.read_text(encoding="utf-8")
     if local_frontier_src not in visual_atlas:
-        raise RuntimeError("Visual Atlas does not use the bundled P92 theorem figure")
+        raise RuntimeError("Visual Atlas does not use the bundled P93 theorem figure")
     if f'src="{RAW_FIGURE_PREFIX}' in visual_atlas:
         raise RuntimeError("Visual Atlas still depends on raw GitHub main for figures")
     _require_once(visual_atlas, 'id="p93-frontier"', "Visual Atlas")
@@ -183,11 +183,11 @@ def _validate_current_frontier_pages(output: Path) -> None:
         raise RuntimeError("website build is missing index.html")
     homepage = homepage_path.read_text(encoding="utf-8")
     if local_frontier_src not in homepage:
-        raise RuntimeError("Homepage does not use the bundled P92 theorem figure")
+        raise RuntimeError("Homepage does not use the bundled P93 theorem figure")
     if f'src="{RAW_FIGURE_PREFIX}' in homepage:
         raise RuntimeError("Homepage still depends on raw GitHub main for figures")
     if CURRENT_RECORD_TEXT not in homepage:
-        raise RuntimeError("Homepage Project at a glance is not synchronized to 92/P92")
+        raise RuntimeError("Homepage Project at a glance is not synchronized to 93/P93")
     _require_once(homepage, 'id="p93-frontier"', "Homepage")
     _require_once(homepage, CURRENT_HOME_MARKER, "Homepage source marker")
 
@@ -204,7 +204,7 @@ def _validate_current_frontier_pages(output: Path) -> None:
     )
     stale = [token for token in stale_tokens if token in homepage]
     if stale:
-        raise RuntimeError(f"Homepage contains stale pre-P92 reader text: {stale}")
+        raise RuntimeError(f"Homepage contains stale pre-P93 reader text: {stale}")
 
 
 def _validate_research_three(output: Path) -> None:
@@ -355,7 +355,7 @@ def main() -> None:
     args = parser.parse_args()
     prepare_website(args.source, args.output)
     print(
-        "prepared website with Research II P92 and Research III "
+        "prepared website with Research II P93 and Research III "
         f"{MEASUREMENT_PIN}: {args.output}"
     )
 

@@ -1,0 +1,133 @@
+{
+  "figure_count": 18,
+  "scope": "quantum foundations and quantum-information mathematics",
+  "scientific_boundary": "These figures establish or illustrate standard quantum-mechanical structure. They do not establish that consciousness is quantum, that consciousness is a new physical dimension, or that quantum formalism is incomplete.",
+  "figures": [
+    {
+      "file": "qm01_free_gaussian_wavepacket.svg",
+      "title": "Free Gaussian wavepacket spreading",
+      "equation": "i hbar d_t psi = -(hbar^2/2m) d_x^2 psi",
+      "fact": "A minimum-uncertainty free Gaussian broadens because different momentum components acquire different phases.",
+      "status": "Exact free-particle Gaussian solution in dimensionless units"
+    },
+    {
+      "file": "qm02_infinite_well_eigenstates.svg",
+      "title": "Infinite square-well eigenstates",
+      "equation": "E_n = n^2 pi^2 hbar^2/(2mL^2), psi_n=sqrt(2/L) sin(n pi x/L)",
+      "fact": "Boundary conditions discretize the allowed stationary energies and eigenmodes.",
+      "status": "Standard quantum-mechanical eigenvalue problem"
+    },
+    {
+      "file": "qm03_double_slit_interference.svg",
+      "title": "Double-slit interference",
+      "equation": "I(theta) proportional sinc^2(beta) cos^2(alpha)",
+      "fact": "Amplitude superposition produces interference fringes whose visibility is constrained by the single-slit envelope.",
+      "status": "Standard wave-mechanical interference law"
+    },
+    {
+      "file": "qm04_uncertainty_frontier.svg",
+      "title": "Heisenberg uncertainty frontier",
+      "equation": "Delta x Delta p >= hbar/2",
+      "fact": "Gaussian minimum-uncertainty states saturate the boundary while squeezing trades position variance against momentum variance.",
+      "status": "Standard quantum-mechanical uncertainty relation"
+    },
+    {
+      "file": "qm05_bloch_sphere.svg",
+      "title": "Bloch-sphere state geometry",
+      "equation": "rho = (I + r dot sigma)/2; pure states satisfy |r|=1",
+      "fact": "A qubit density matrix maps to a Bloch vector; pure states lie on the unit sphere and mixed states lie inside it.",
+      "status": "Standard finite-dimensional quantum-state geometry"
+    },
+    {
+      "file": "qm06_born_probabilities.svg",
+      "title": "Born probabilities",
+      "equation": "P(0)=cos^2(theta/2), P(1)=sin^2(theta/2)",
+      "fact": "Measurement probabilities are squared projection amplitudes and sum to one for a complete projective measurement.",
+      "status": "Standard Born rule for a pure qubit"
+    },
+    {
+      "file": "qm07_rabi_oscillations.svg",
+      "title": "Rabi oscillations",
+      "equation": "P_e(t)=sin^2(Omega t/2)",
+      "fact": "A resonantly driven two-level system exchanges population coherently between basis states.",
+      "status": "Standard two-level coherent dynamics"
+    },
+    {
+      "file": "qm08_dephasing_coherence.svg",
+      "title": "Pure-dephasing coherence decay",
+      "equation": "|rho_01(t)|=|rho_01(0)| exp(-Gamma t)",
+      "fact": "Pure dephasing suppresses off-diagonal density-matrix coherence while leaving basis populations unchanged.",
+      "status": "Lindblad pure-dephasing model"
+    },
+    {
+      "file": "qm09_purity_under_dephasing.svg",
+      "title": "Purity under dephasing",
+      "equation": "Tr(rho^2)=[1+exp(-2 Gamma t)]/2 for initial |+><+|",
+      "fact": "The initial pure state approaches a basis-dephased mixed state with purity one half.",
+      "status": "Closed-form Lindblad dephasing result"
+    },
+    {
+      "file": "qm10_von_neumann_entropy.svg",
+      "title": "Von Neumann entropy",
+      "equation": "S(rho)=-Tr(rho log2 rho)",
+      "fact": "For eigenvalues p and 1-p, entropy is zero for a pure state and one bit for a maximally mixed qubit.",
+      "status": "Standard quantum-information entropy"
+    },
+    {
+      "file": "qm11_entanglement_entropy.svg",
+      "title": "Two-qubit entanglement entropy",
+      "equation": "|psi>=cos(theta)|00>+sin(theta)|11>",
+      "fact": "The reduced-state entropy is zero for product states and reaches one bit at maximal entanglement.",
+      "status": "Standard pure-state bipartite entanglement result"
+    },
+    {
+      "file": "qm12_chsh_violation.svg",
+      "title": "Bell-CHSH correlation",
+      "equation": "|S_CHSH|<=2 classically; |S_CHSH|<=2 sqrt(2) quantum mechanically",
+      "fact": "Entangled quantum correlations can violate the local hidden-variable CHSH bound without permitting superluminal signalling.",
+      "status": "Standard Bell-test quantum prediction"
+    },
+    {
+      "file": "qm13_wigner_negativity.svg",
+      "title": "Wigner-function negativity",
+      "equation": "W_1(x,p)=(2 r^2-1) exp(-r^2)/pi in the chosen scaling",
+      "fact": "The first excited harmonic-oscillator state has a negative central Wigner region, a nonclassical quasiprobability feature.",
+      "status": "Standard harmonic-oscillator Wigner-function example"
+    },
+    {
+      "file": "qm14_hilbert_space_dimension.svg",
+      "title": "Hilbert-space dimension scaling",
+      "equation": "dim[(C^2)^(tensor N)] = 2^N",
+      "fact": "The state-vector dimension of N qubits grows exponentially with subsystem count.",
+      "status": "Standard tensor-product dimension fact"
+    },
+    {
+      "file": "qm15_trace_distance_contraction.svg",
+      "title": "Quantum distinguishability contraction",
+      "equation": "Lambda_p(rho)=(1-p)rho+p I/2; D(Lambda rho,Lambda sigma)=(1-p)D(rho,sigma)",
+      "fact": "Depolarizing noise contracts operational distinguishability, directly paralleling classical data-processing loss under coarse descriptions.",
+      "status": "Standard CPTP-channel trace-distance contraction example"
+    },
+    {
+      "file": "qm16_fidelity_trace_distance.svg",
+      "title": "Pure-state fidelity and trace distance",
+      "equation": "F=cos^2(theta/2), D=sqrt(1-F)=sin(theta/2)",
+      "fact": "Pure states become less faithful and more distinguishable as their projective angle increases.",
+      "status": "Standard pure-state quantum-information identity"
+    },
+    {
+      "file": "qm17_quantum_zeno_survival.svg",
+      "title": "Quantum Zeno effect",
+      "equation": "P_N(t)=cos^(2N)(Omega t/(2N))",
+      "fact": "In the ideal projective limit, increasingly frequent survival measurements suppress coherent transition away from the initial state.",
+      "status": "Idealized repeated-projective-measurement result"
+    },
+    {
+      "file": "qm18_reduced_density_spectrum.svg",
+      "title": "Reduced-state spectrum under partial trace",
+      "equation": "rho_A=Tr_B |psi><psi| has eigenvalues cos^2(theta), sin^2(theta)",
+      "fact": "A globally pure entangled state can induce a mixed local reduced state after tracing out its partner.",
+      "status": "Standard partial-trace result for a Schmidt pair"
+    }
+  ]
+}

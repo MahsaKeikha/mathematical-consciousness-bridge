@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">P92 Exact Global Mixed-Prevalence Distance</title>
+  <desc id="desc">What this figure shows: Figure 2. P92 exact global mixed-prevalence distance. P92 closes the full-cube P75 distance problem left open by P91. On the observable X1 = 1 subtensor, three conditional two-by-two determinants of every two-component P75 mixture have a nonnegative sign product. The empirical determinants are exactly -1/48, 1/64, and 5/192, with exact sign-stability radii 1/24, 3/56, and 5/72. Therefore no P75 law can lie strictly closer than 1/24. The explicit genuinely mixed rational P75 point from P91 lies exactly at 1/24, so d_inf(P_emp, M75) = 1/24 over the complete P75 cube. How to read it: follow only the labeled arrows, axes, panels, set relations, or inequalities shown in the visual and interpret them using the adjacent research text. Main takeaway: the figure summarizes the stated mathematical or scientific dependency; visual proximity alone does not add a claim. Scientific status: Reader-facing research figure; formal status is controlled by the linked proof or source record.</desc>
+  <rect width="1600" height="1000" rx="36" fill="#f7f8fb"/>
+  <rect x="48" y="42" width="1504" height="164" rx="28" fill="#111827"/>
+  <text x="90" y="98" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#a5b4fc">PROPOSITION 92</text>
+  <text x="90" y="146" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" fill="#ffffff">Exact Global Mixed-Prevalence Distance</text>
+  <text x="90" y="184" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#d1d5db">A nonlinear three-minor sign-coherence certificate closes the P91 bracket exactly.</text>
+  <rect x="1120" y="78" width="382" height="92" rx="22" fill="#eef2ff"/>
+  <text x="1311" y="116" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#3730a3">FULL P75 CUBE</text>
+  <text x="1311" y="153" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#111827">d_inf = 1/24</text>
+
+  <rect x="48" y="238" width="724" height="480" rx="28" fill="#ffffff" stroke="#d1d5db" stroke-width="2"/>
+  <text x="82" y="286" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700" fill="#111827">Empirical X1 = 1 subtensor</text>
+  <text x="82" y="320" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#4b5563">Set A = X2, B = X3, C = X4. Three conditional 2 by 2 minors are enough.</text>
+
+  <rect x="82" y="354" width="656" height="94" rx="18" fill="#f9fafb" stroke="#e5e7eb"/>
+  <text x="106" y="385" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#111827">AB given C=1</text>
+  <text x="106" y="418" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#374151">[[1/24, 5/24], [1/8, 1/8]]</text>
+  <text x="518" y="388" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#b91c1c">det = -1/48</text>
+  <text x="518" y="420" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#4b5563">radius = 1/24</text>
+
+  <rect x="82" y="466" width="656" height="94" rx="18" fill="#f9fafb" stroke="#e5e7eb"/>
+  <text x="106" y="497" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#111827">AC given B=0</text>
+  <text x="106" y="530" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#374151">[[1/8, 1/24], [0, 1/8]]</text>
+  <text x="518" y="500" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#047857">det = 1/64</text>
+  <text x="518" y="532" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#4b5563">radius = 3/56</text>
+
+  <rect x="82" y="578" width="656" height="94" rx="18" fill="#f9fafb" stroke="#e5e7eb"/>
+  <text x="106" y="609" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#111827">BC given A=0</text>
+  <text x="106" y="642" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#374151">[[1/8, 1/24], [0, 5/24]]</text>
+  <text x="518" y="612" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#047857">det = 5/192</text>
+  <text x="518" y="644" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#4b5563">radius = 5/72</text>
+
+  <rect x="806" y="238" width="746" height="480" rx="28" fill="#ffffff" stroke="#d1d5db" stroke-width="2"/>
+  <text x="840" y="286" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700" fill="#111827">Universal P75 sign coherence</text>
+  <text x="840" y="324" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#4b5563">Each determinant factors through the same two latent components.</text>
+
+  <rect x="840" y="358" width="678" height="148" rx="20" fill="#eef2ff"/>
+  <text x="1179" y="400" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#312e81">D_AB|C1  D_AC|B0  D_BC|A0</text>
+  <text x="1179" y="442" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#111827">= K (Delta_A Delta_B Delta_C)^2</text>
+  <text x="1179" y="480" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#047857">K ≥ 0, so the product must be ≥ 0</text>
+
+  <rect x="840" y="530" width="678" height="142" rx="20" fill="#fff7ed" stroke="#fed7aa"/>
+  <text x="1179" y="571" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#9a3412">Empirical sign pattern</text>
+  <text x="1179" y="612" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="35" font-weight="700" fill="#111827">(-, +, +)</text>
+  <text x="1179" y="648" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#9a3412">product = -5/589824 &lt; 0</text>
+
+  <rect x="48" y="752" width="1504" height="196" rx="28" fill="#ffffff" stroke="#d1d5db" stroke-width="2"/>
+  <text x="82" y="798" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700" fill="#111827">Exact closure of the P91 gap</text>
+  <line x1="116" y1="862" x2="1480" y2="862" stroke="#9ca3af" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="572" cy="862" r="13" fill="#6366f1"/>
+  <circle cx="1040" cy="862" r="16" fill="#111827"/>
+  <text x="572" y="836" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#4338ca">P91 strict lower: 1/42</text>
+  <text x="1040" y="830" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#111827">P92 exact boundary: 1/24</text>
+  <text x="1040" y="908" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" fill="#374151">lower certificate = explicit mixed upper certificate</text>
+  <text x="82" y="932" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#6b7280">Scientific boundary: exact separation of the declared P75 model does not identify consciousness or establish a replacement ontology.</text>
+</svg>

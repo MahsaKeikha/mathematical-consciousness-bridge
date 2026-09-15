@@ -89,13 +89,13 @@ Then follow P72 through P74 in the [Detailed Proposition Record](detailed_propos
 
 **Question:** Can the declared model of the target and its measurement actually reproduce the observations, or can it be rejected under its own assumptions?
 
-**Results:** P75 through P92
+**Results:** P75 through P93
 
 This branch moves from model adequacy to rejection with finite data, separation from the complete declared model set, certified bounds for continuous families, and increasingly strong exact tests that preserve shared parameters.
 
 **Start with:** [P75: Target Model Adequacy](proposition_75_target_model_adequacy_overidentification.md)
 
-**Current frontier:** [P92: Exact Global Mixed-Prevalence Distance](proposition_92_exact_global_mixed_prevalence_distance.md)
+**Current frontier:** [P93: Localized Finite-Sample Sign-Coherence Rejection](proposition_93_localized_sign_coherence_rejection.md)
 
 ---
 
@@ -140,7 +140,7 @@ The [Detailed Proposition Record](detailed_proposition_record.md) is the complet
 | --- | --- |
 | Physics | [Research Map](research_map.md) → [Technical Research Architecture](research_architecture.md) → [Quantum branch](quantum_foundations_and_bridge_test.md) |
 | Mathematics | [Research Map](research_map.md) → [Theorem Roadmap](theorem_roadmap.md) → proposition proofs |
-| Statistics and inference | [P19](proposition_19_fundamental_physical_sufficiency.md) → P20 through P24 → P74 through P92 via [Detailed Proposition Record](detailed_proposition_record.md) |
+| Statistics and inference | [P19](proposition_19_fundamental_physical_sufficiency.md) → P20 through P24 → P74 through P93 via [Detailed Proposition Record](detailed_proposition_record.md) |
 | Consciousness science | [Bridge Problem](bridge_problem.md) → [Falsification Program](falsification_program.md) → P71 through P93 |
 | Software and reproducibility | [Reproducibility Guide](reproducibility.md) → [`src/`](../src/) → [`tests/`](../tests/) |
 | Visual learner | [Figure Catalog](figure_catalog.md) → [Visual Atlas](../website/visual-atlas.html) |
@@ -167,7 +167,7 @@ That separation is deliberate: each page should have one job.
 **Formal dependency layer:** [Theorem Roadmap](theorem_roadmap.md)
 **Complete theorem archive:** [Detailed Proposition Record](detailed_proposition_record.md)
 
-## P90 current frontier
+## P90 historical nonlinear frontier
 
 For P90:
 
@@ -197,7 +197,7 @@ For P91:
 
 P91 certifies `1/42 < d_inf(P_emp, M75) <= 1/24` over the full P75 parameter cube. It does not claim that `1/24` is the exact global optimum and does not identify the latent state with consciousness, establish nonphysicality, or close the physical-to-experiential bridge.
 
-## P92 current frontier
+## P92 historical exact population frontier
 
 For P92:
 
@@ -213,6 +213,8 @@ For P92:
 P92 proves the exact full-cube result `d_inf(P_emp, M75) = 1/24`. Its lower certificate is a nonlinear three-minor sign-coherence invariant. The result does not identify the latent state with consciousness, establish nonphysicality, or close the physical-to-experiential bridge.
 
 ## P93 current frontier
+
+For P93:
 
 | What you want | Direct link |
 | --- | --- |

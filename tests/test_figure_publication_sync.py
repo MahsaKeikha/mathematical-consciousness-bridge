@@ -69,11 +69,8 @@ def test_visual_atlas_leads_with_p93_before_historical_frontiers() -> None:
     p93 = text.index('id="p93-frontier"')
     p92 = text.index('id="p92-frontier"')
     p93 = text.index('id="p93-frontier"')
-    p93 = text.index('id="p93-frontier"')
-    p93 = text.index('id="p93-frontier"')
     p91 = text.index('id="p91-frontier"')
     p90 = text.index('id="p90-frontier"')
-    p89 = text.index('id="p89-frontier"')
 
     assert p93 < p92 < p91 < p90
     current = text[p93:p92]
