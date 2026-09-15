@@ -56,6 +56,50 @@ def patch_visual_atlas() -> None:
     write(path, text)
 
 
+def patch_reader_dashboards() -> None:
+    path = "website/plain-language.html"
+    text = read(path)
+    replacements = (
+        (
+            "<strong>Research II</strong><span>91 results · current frontier P91</span>",
+            "<strong>Research II</strong><span>92 results · current frontier P92</span>",
+        ),
+        (
+            "This is the 91-result Research II theorem program currently reaching P91.",
+            "This is the 92-result Research II theorem program currently reaching P92.",
+        ),
+        ("A 91-result sufficiency and falsification architecture", "A 92-result sufficiency and falsification architecture"),
+        ("The 91-result proposition program", "The 92-result proposition program"),
+        ("The current theorem frontier is P91.", "The current theorem frontier is P92."),
+        ("P91 is the current checkpoint", "P92 is the current checkpoint"),
+        ("P91 is the current mathematical checkpoint", "P92 is the current mathematical checkpoint"),
+        ("all 91 Research II results", "all 92 Research II results"),
+    )
+    for old, new in replacements:
+        text = text.replace(old, new)
+    write(path, text)
+
+    path = "website/start-here.html"
+    text = read(path)
+    replacements = (
+        (
+            "<strong>Research II</strong><span>91 results · current frontier P91</span>",
+            "<strong>Research II</strong><span>92 results · current frontier P92</span>",
+        ),
+        ("current Research II P91 frontier", "current Research II P92 frontier"),
+        ("Open all 91 Research II results", "Open all 92 Research II results"),
+        ("The 91 propositions are the formal theorem record of Research II", "The 92 propositions are the formal theorem record of Research II"),
+        ("P1-P91 build the mathematical conditions", "P1-P92 build the mathematical conditions"),
+        ("P75-P91 test the declared target-measurement model", "P75-P92 test the declared target-measurement model"),
+        ("<span>P75-P91</span>", "<span>P75-P92</span>"),
+        ("The 91 Research II propositions by scientific role", "The 92 Research II propositions by scientific role"),
+        ("You do not need to read 91 Research II proofs in order", "You do not need to read 92 Research II proofs in order"),
+    )
+    for old, new in replacements:
+        text = text.replace(old, new)
+    write(path, text)
+
+
 def patch_svg_accessibility() -> None:
     path = "docs/figures/p92_exact_global_mixed_prevalence_distance.svg"
     text = read(path)
@@ -101,6 +145,7 @@ def patch_implementation_range() -> None:
 def main() -> None:
     patch_homepage()
     patch_visual_atlas()
+    patch_reader_dashboards()
     patch_svg_accessibility()
     patch_machine_citation()
     patch_implementation_range()
