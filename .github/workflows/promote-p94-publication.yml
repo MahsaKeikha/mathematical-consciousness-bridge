@@ -41,6 +41,14 @@ jobs:
 
           root = Path('.')
 
+          formal_path = root / 'docs/proposition_94_finite_range_dependent_sign_coherence.md'
+          formal = formal_path.read_text(encoding='utf-8')
+          wrong = 'certify_p94_temporal_pooling_no_go_exact()'
+          right = 'certify_p94_temporal_drift_no_go_exact()'
+          if formal.count(wrong) != 1:
+              raise RuntimeError(f'formal P94 drift provenance marker count is {formal.count(wrong)}, expected 1')
+          formal_path.write_text(formal.replace(wrong, right, 1), encoding='utf-8')
+
           home_path = root / 'website/index.html'
           home = home_path.read_text(encoding='utf-8')
           replacements = {
