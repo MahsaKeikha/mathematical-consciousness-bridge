@@ -11,6 +11,7 @@ on:
       - "scripts/repair_p94_reader_contracts.py"
       - "scripts/fix_p94_generated_contracts.py"
       - "scripts/repair_p94_full_suite_residue.py"
+      - "scripts/repair_p94_changelog_contract.py"
       - ".github/workflows/promote-p94-publication.yml"
 
 concurrency:
@@ -38,11 +39,17 @@ jobs:
           python -m pip install -e ".[dev]"
           python -m pip install -r requirements-reproducibility.txt
 
+      - name: Repair and validate P93 changelog baseline
+        run: python scripts/repair_p94_changelog_contract.py pre
+
       - name: Validate P93 citation baseline
         run: python scripts/fix_p94_generated_contracts.py pre
 
       - name: Apply P94 source publication migration
         run: python scripts/promote_p94_public_frontier.py
+
+      - name: Normalize P94 changelog contract
+        run: python scripts/repair_p94_changelog_contract.py post
 
       - name: Repair generated P94 test contract
         run: python scripts/fix_p94_generated_contracts.py post
