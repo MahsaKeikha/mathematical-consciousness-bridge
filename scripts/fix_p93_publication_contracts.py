@@ -133,8 +133,6 @@ For work that uses the exact full-cube mixed-prevalence distance theorem, cite t
 
 
 def main() -> None:
-    # Narrow public-label repairs that the main promoter intentionally leaves to
-    # the post-promotion contract pass.
     _replace("website/index.html", "Explore all 92 results", "Explore all 93 results")
     _replace(
         "website/index.html",
@@ -142,8 +140,6 @@ def main() -> None:
         "P93 current theorem frontier · v0.82.0",
     )
 
-    # Exact-head figure publication tests must track the generated P93 manifest
-    # and the P93 -> P92 -> P91 visual-atlas ordering.
     _replace(
         "tests/test_figure_publication_sync.py",
         'assert manifest["current_frontier"] == "P92"',
@@ -160,8 +156,6 @@ def main() -> None:
         "    p93 = text.index('id=\"p93-frontier\"')\n    research_iii =",
     )
 
-    # The overview contains only the current frontier, while the Visual Atlas
-    # preserves the historical frontiers.
     _replace(
         "tests/test_reader_experience.py",
         "def test_no_reader_facing_html_page_advertises_pre_p92_as_current() -> None:",
@@ -178,14 +172,20 @@ def main() -> None:
         "for number in range(1, 94):",
     )
 
-    # Reader-facing audit records must describe the current theorem rather than
-    # merely changing their headings to P93.
     _rewrite_p93_reproducibility_section()
     _rewrite_citation_frontier()
     _replace(
         "docs/detailed_proposition_record.md",
         "A first-time reader should not read this page as 91 disconnected proposition-level results.",
         "A first-time reader should not read this page as 93 disconnected proposition-level results.",
+    )
+
+    # Research III synchronization is independent of theorem mathematics, but
+    # its homepage marker must follow the current Research II publication head.
+    _replace(
+        "scripts/synchronize_research_three_website.py",
+        'CURRENT_HOME_MARKER = "<!-- current-frontier-home: P92 -->"',
+        'CURRENT_HOME_MARKER = "<!-- current-frontier-home: P93 -->"',
     )
 
     print("[P93] publication contracts repaired")
