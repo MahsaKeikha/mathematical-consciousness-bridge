@@ -1,6 +1,6 @@
-# Unreleased research frontier - P99
+# Unreleased research frontier - P100
 
-## Unreleased research frontier - P100
+## P100 anytime-valid sequential e-process frontier
 
 - Added Proposition 100, an exact anytime-valid sequential e-process over fresh P99 certification rounds.
 - Added predictable exact-rational reserve stakes, conditional-freshness guards, and Ville-threshold monitoring.
