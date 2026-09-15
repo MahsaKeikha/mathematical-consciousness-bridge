@@ -22,6 +22,21 @@ jobs:
           python-version: "3.12"
       - name: Repair publication residue
         run: python scripts/repair_p100_publication_residue.py
+      - name: Preserve explicit P100 scientific boundary on Research Map
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path("website/research-map.html")
+          text = path.read_text(encoding="utf-8")
+          sentence = "P100 remains a conditional model-rejection theorem"
+          if sentence not in text:
+              anchor = '<p><strong>Current Research II model-audit range: P75-P100.</strong> The current theorem frontier is P100. The physical-to-experiential bridge remains open.</p>'
+              addition = '<p><strong>Scientific boundary:</strong> P100 remains a conditional model-rejection theorem under its declared sequential and freshness assumptions. Rejection does not identify the latent state with consciousness, establish nonphysicality, or complete the physical-to-experiential bridge.</p>'
+              if anchor not in text:
+                  raise RuntimeError("Research Map current-frontier anchor missing")
+              text = text.replace(anchor, anchor + "\n  " + addition, 1)
+          path.write_text(text, encoding="utf-8")
+          PY
       - name: Install focused test runner
         run: python -m pip install pytest
       - name: Run failed publication regression cluster
