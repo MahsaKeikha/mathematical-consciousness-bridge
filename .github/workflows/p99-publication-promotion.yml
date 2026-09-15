@@ -24,6 +24,67 @@ jobs:
         run: python -m py_compile scripts/promote_p99_public_frontier.py
       - name: Promote P99 public frontier
         run: python scripts/promote_p99_public_frontier.py
+      - name: Repair final P99 reader contracts
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          readme = Path("README.md")
+          text = readme.read_text(encoding="utf-8")
+          if "P96" not in text:
+              marker = "The current public theorem frontier is **P99**."
+              history = (
+                  "Historical selection-valid lineage: P96 introduced independent holdout "
+                  "certification after data-dependent plan selection; P97, P98, and P99 extend "
+                  "that line through finite candidate families, cross-fitting, and e-value aggregation.\n\n"
+              )
+              if marker not in text:
+                  raise RuntimeError("README P99 frontier marker not found")
+              text = text.replace(marker, history + marker, 1)
+          readme.write_text(text, encoding="utf-8")
+
+          lineage = Path("website/research-lineage.html")
+          text = lineage.read_text(encoding="utf-8")
+          text = text.replace(
+              '<strong>98</strong><span>proposition-level results</span>',
+              '<strong>99</strong><span>proposition-level results</span>',
+          )
+          text = text.replace(
+              '<strong>P98</strong><span>current theorem frontier</span>',
+              '<strong>P99</strong><span>current theorem frontier</span>',
+          )
+          lineage.write_text(text, encoding="utf-8")
+
+          research_map = Path("website/research-map.html")
+          text = research_map.read_text(encoding="utf-8")
+          text = text.replace(
+              '<strong>96</strong><span>proposition-level results</span>',
+              '<strong>99</strong><span>proposition-level results</span>',
+          )
+          text = text.replace(
+              '<strong>98</strong><span>proposition-level results</span>',
+              '<strong>99</strong><span>proposition-level results</span>',
+          )
+          text = text.replace(
+              '<strong>P98</strong><span>current theorem frontier</span>',
+              '<strong>P99</strong><span>current theorem frontier</span>',
+          )
+          text = text.replace("through Proposition 98.", "through Proposition 99.")
+          text = text.replace("The current theorem frontier is P98.", "The current theorem frontier is P99.")
+          text = re.sub(
+              r"Research Map · Current theorem frontier P\d+</p>",
+              "Research Map · Current theorem frontier P99</p>",
+              text,
+          )
+          research_map.write_text(text, encoding="utf-8")
+
+          assert "P96" in readme.read_text(encoding="utf-8")
+          assert '<strong>P99</strong><span>current theorem frontier</span>' in lineage.read_text(encoding="utf-8")
+          final_map = research_map.read_text(encoding="utf-8")
+          assert "through Proposition 99." in final_map
+          assert "Research Map · Current theorem frontier P99</p>" in final_map
+          PY
       - name: Preserve full linked TRIUMF name in About surfaces
         run: |
           python - <<'PY'
