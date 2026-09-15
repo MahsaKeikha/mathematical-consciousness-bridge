@@ -10,6 +10,7 @@ foundational framework.
 from __future__ import annotations
 
 import argparse
+import json
 import re
 import shutil
 from pathlib import Path
@@ -38,10 +39,15 @@ RAW_FIGURE_PREFIX = (
     "https://raw.githubusercontent.com/MahsaKeikha/"
     "mathematical-consciousness-bridge/main/docs/figures/"
 )
-CURRENT_FRONTIER_FIGURE = (
-    "p93_localized_sign_coherence_rejection.svg"
+FIGURE_MANIFEST = ROOT / "figures" / "manifest.json"
+_FRONTIER_MANIFEST = json.loads(FIGURE_MANIFEST.read_text(encoding="utf-8"))
+CURRENT_FRONTIER_LABEL = str(_FRONTIER_MANIFEST["current_frontier"])
+CURRENT_FRONTIER = int(CURRENT_FRONTIER_LABEL.removeprefix("P"))
+CURRENT_FRONTIER_FIGURE = Path(str(_FRONTIER_MANIFEST["current_frontier_figure"])).name
+CURRENT_RECORD_TEXT = (
+    f"Current record:</strong> {CURRENT_FRONTIER} proposition-level results "
+    f"through P{CURRENT_FRONTIER}"
 )
-CURRENT_RECORD_TEXT = "Current record:</strong> 93 proposition-level results through P93"
 MEASUREMENT_REPO = "https://github.com/MahsaKeikha/consciousness-measurement-science"
 MEASUREMENT_PIN = CURRENT_RESEARCH_THREE_PIN
 FULL_SITE_SURFACES = (
@@ -157,12 +163,12 @@ def _require_once(text: str, token: str, surface: str) -> None:
 
 
 def _validate_current_frontier_pages(output: Path) -> None:
-    """Require the deployed site to be internally consistent with P93."""
+    """Require the deployed site to match the declared current frontier."""
 
     frontier_figure = output / "figures" / CURRENT_FRONTIER_FIGURE
     if not frontier_figure.is_file():
         raise RuntimeError(
-            "website build is missing the current P93 theorem figure: "
+            "website build is missing the current theorem figure: "
             f"{frontier_figure}"
         )
 
@@ -173,22 +179,22 @@ def _validate_current_frontier_pages(output: Path) -> None:
         raise RuntimeError("website build is missing visual-atlas.html")
     visual_atlas = visual_atlas_path.read_text(encoding="utf-8")
     if local_frontier_src not in visual_atlas:
-        raise RuntimeError("Visual Atlas does not use the bundled P93 theorem figure")
+        raise RuntimeError("Visual Atlas does not use the bundled current theorem figure")
     if f'src="{RAW_FIGURE_PREFIX}' in visual_atlas:
         raise RuntimeError("Visual Atlas still depends on raw GitHub main for figures")
-    _require_once(visual_atlas, 'id="p93-frontier"', "Visual Atlas")
+    _require_once(visual_atlas, f'id="p{CURRENT_FRONTIER}-frontier"', "Visual Atlas")
 
     homepage_path = output / "index.html"
     if not homepage_path.is_file():
         raise RuntimeError("website build is missing index.html")
     homepage = homepage_path.read_text(encoding="utf-8")
     if local_frontier_src not in homepage:
-        raise RuntimeError("Homepage does not use the bundled P93 theorem figure")
+        raise RuntimeError("Homepage does not use the bundled current theorem figure")
     if f'src="{RAW_FIGURE_PREFIX}' in homepage:
         raise RuntimeError("Homepage still depends on raw GitHub main for figures")
     if CURRENT_RECORD_TEXT not in homepage:
-        raise RuntimeError("Homepage Project at a glance is not synchronized to 93/P93")
-    _require_once(homepage, 'id="p93-frontier"', "Homepage")
+        raise RuntimeError("Homepage Project at a glance is not synchronized to the current frontier")
+    _require_once(homepage, f'id="p{CURRENT_FRONTIER}-frontier"', "Homepage")
     _require_once(homepage, CURRENT_HOME_MARKER, "Homepage source marker")
 
     reader_css = (output / "reader-experience-v2.css").read_text(encoding="utf-8")
@@ -253,8 +259,8 @@ def _validate_research_three(output: Path) -> None:
     lineage = lineage_path.read_text(encoding="utf-8")
     for token in (
         "Research III · consciousness measurement science",
-        "<strong>93</strong><span>proposition-level results</span>",
-        "<strong>P93</strong><span>current theorem frontier</span>",
+        f"<strong>{CURRENT_FRONTIER}</strong><span>proposition-level results</span>",
+        f"<strong>P{CURRENT_FRONTIER}</strong><span>current theorem frontier</span>",
         "<strong>v0.82.0</strong><span>current documented release</span>",
         "The three repositories form a research progression",
         MEASUREMENT_PIN,
@@ -355,7 +361,7 @@ def main() -> None:
     args = parser.parse_args()
     prepare_website(args.source, args.output)
     print(
-        "prepared website with Research II P93 and Research III "
+        f"prepared website with Research II P{CURRENT_FRONTIER} and Research III "
         f"{MEASUREMENT_PIN}: {args.output}"
     )
 

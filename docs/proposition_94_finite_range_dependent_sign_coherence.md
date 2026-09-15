@@ -1,4 +1,4 @@
-# P94 Candidate: Finite-Range Dependent Sign-Coherence Rejection
+# Proposition 94: Finite-Range Dependent Sign-Coherence Rejection
 
 ## Purpose
 
@@ -310,6 +310,46 @@ For \(m=2\), the first mathematical crossing is \(n=4869\), and the first exact 
 These are sufficient thresholds for this declared dependence model and this observed sign geometry. They are not minimax claims.
 
 ---
+
+
+## P94G. Exact temporal-drift no-go certificate
+
+The common-marginal assumption is not a cosmetic restriction. The P75 family is
+not closed under arbitrary pooling of time-varying parameter regimes.
+
+P94 supplies two explicit parameter vectors, each strictly inside the P75 cube.
+Each time-specific P75 law has a strictly positive P92 determinant product. Yet
+the equal-weight pooled law has
+
+\[
+(D_1,D_2,D_3)
+=
+\left(
+-\frac{65}{65536},
+\frac{11}{65536},
+\frac{3}{65536}
+\right),
+\]
+
+so
+
+\[
+\boxed{
+D_1D_2D_3
+=
+-\frac{2145}{281474976710656}<0.
+}
+\]
+
+Thus a pooled sample from drifting but individually valid P75 regimes can
+produce exactly the qualitative sign pattern used by the P92 rejection witness.
+Finite-range dependence with one common marginal law is therefore a different
+problem from temporal drift. A future drift theorem must declare a population
+target that remains meaningful under time variation rather than silently
+interpreting the pooled law as one stationary P75 distribution.
+
+The exact construction is implemented by
+`certify_p94_temporal_drift_no_go_exact()` and covered by regression tests.
 
 ## Scientific boundary
 

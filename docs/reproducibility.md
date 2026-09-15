@@ -10,12 +10,12 @@ You do not need every command at once. Choose the route that matches your goal.
 | --- | --- |
 | Reproduce the maintained repository as strictly as possible | `make reproduce` |
 | Run the normal verification suite | `make check` |
-| Run only the current P93 theorem checks | focused P93 commands below |
+| Run only the current P94 theorem checks | focused P94 commands below |
 | Validate figures without rebuilding them | `make figures-check` |
 | Regenerate the complete visual record | `make figures` |
 | Inspect CI without installing locally | GitHub Actions |
 
-The current public theorem frontier is **P93**. The formal release remains **v0.82.0**.
+The current public theorem frontier is **P94**. The formal release remains **v0.82.0**.
 
 ---
 
@@ -104,18 +104,19 @@ Use this route when you want to verify the current committed state without regen
 
 ---
 
-## 5. Focused audit of the current P93 frontier
+## 5. Focused audit of the current P94 frontier
 
-The current theorem frontier is **P93**.
+The current theorem frontier is **P94**.
 
 Its direct technical record is:
 
 ```text
-docs/proposition_93_localized_sign_coherence_rejection.md
-docs/p93_equation_provenance.md
-src/consciousness_bridge/localized_sign_coherence_rejection.py
-tests/test_localized_sign_coherence_rejection.py
-docs/figures/p93_localized_sign_coherence_rejection.svg
+docs/proposition_94_finite_range_dependent_sign_coherence.md
+docs/p94_equation_provenance.md
+src/consciousness_bridge/finite_range_dependent_sign_coherence.py
+src/consciousness_bridge/finite_range_dependent_sign_coherence_threshold.py
+tests/test_finite_range_dependent_sign_coherence.py
+docs/figures/p94_finite_range_dependent_sign_coherence.svg
 figures/manifest.json
 ```
 
@@ -123,50 +124,28 @@ Run the focused theorem and publication checks with:
 
 ```bash
 python -m pytest -q \
-  tests/test_localized_sign_coherence_rejection.py \
-  tests/test_p93_reader_surface_coherence.py \
+  tests/test_finite_range_dependent_sign_coherence.py \
+  tests/test_frontier_reader_narrative.py \
   tests/test_figure_publication_sync.py \
   tests/test_frontier_publication_consistency.py
 python scripts/sync_figure_publication.py --check
 python scripts/verify_repository.py
 ```
 
-P93 is the finite-data continuation of P92's nonlinear three-minor sign-coherence witness. The three determinants use only seven distinct observable cells, so the simultaneous IID confidence radius is
+P94 extends P93 from IID observations to a declared `m`-dependent sequence sharing one common marginal four-view law. Its seven-cell radius is
 
 \[
-\varepsilon_{n,7}(\alpha)
+\varepsilon^{(m)}_{n,7}(\alpha)
 =
-\sqrt{\frac{\log(14/\alpha)}{2n}}.
+\sqrt{\frac{(m+1)\log(14/\alpha)}{2n}}.
 \]
 
-For the established witness, the determinant values are
+For the established `1/24` limiting sign radius at 95 percent confidence, exact rational certification gives crossings `1623`, `3246`, and `4869` for `m=0,1,2`. The first exact denominator-24 replications are `1632`, `3264`, and `4872`.
 
-\[
--\frac1{48},\qquad \frac1{64},\qquad \frac5{192},
-\]
+The exact temporal-pooling no-go certificate is also part of P94. It shows that two individually valid interior P75 regimes can pool to determinants `(-65/65536, 11/65536, 3/65536)` with negative product. P94 therefore does not treat arbitrary temporal drift as finite-range dependence.
 
-with exact sign-stability radii
+Non-rejection remains inconclusive. P94 does not identify the latent state with consciousness, establish nonphysicality, validate an alternative ontology, or close the physical-to-experiential bridge.
 
-\[
-\frac1{24},\qquad \frac3{56},\qquad \frac5{72}.
-\]
-
-The limiting radius is therefore `1/24`. At 95 percent confidence, exact P79 rational certification proves
-
-```text
-epsilon_1622,7 > 1/24
-epsilon_1623,7 < 1/24
-```
-
-so **1623 is the exact mathematical crossing**. Because the established empirical proportions have denominator 24, the first exact replication of that profile that also clears the certificate is
-
-```text
-1632 = 68 x 24.
-```
-
-For comparison, the generic P77 full-law fixed-population-margin sufficient condition at margin `1/24` crosses at 7444. These are different guarantees: P77 is a generic full-law design bound, while P93 is localized to the observed P92 nonlinear sign witness.
-
-P93 does not claim universal or minimax sample complexity. Non-rejection remains inconclusive. The theorem does not identify the latent state with consciousness, establish nonphysicality, validate an alternative ontology, or close the physical-to-experiential bridge.
 ---
 
 ## 6. Run the full tests

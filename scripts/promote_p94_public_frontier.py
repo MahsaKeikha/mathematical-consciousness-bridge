@@ -398,7 +398,7 @@ def promote_roadmap() -> None:
     after_match = after_pattern.search(text)
     if after_match is None:
         raise RuntimeError("roadmap After P93 block missing")
-    after = '''## P94: finite-range dependent sign-coherence rejection
+    after = r'''## P94: finite-range dependent sign-coherence rejection
 
 P94 keeps the P92 population sign-coherence obstruction and P93 seven-cell localization, but replaces IID sampling by a declared finite-range dependent sequence with one common marginal law. With `q=m+1`, residue classes modulo `q` are internally independent and generalized Holder combines their Hoeffding moment bounds without requiring independence between classes. This gives
 

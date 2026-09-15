@@ -98,7 +98,7 @@ def repair_citation_markdown() -> None:
     match = pattern.search(text)
     if match is None:
         raise RuntimeError("CITATION.md: promoted P94 current-frontier section missing")
-    section = """## Current theorem frontier: P94
+    section = r"""## Current theorem frontier: P94
 
 The current documented theorem frontier is **P94**. The formal package release remains **Version 0.82.0**. P94 extends the localized P92/P93 sign-coherence rejection witness from IID observations to a declared finite-range dependent sequence with one common marginal four-view law. With dependence range `m`, its seven-cell confidence radius is
 

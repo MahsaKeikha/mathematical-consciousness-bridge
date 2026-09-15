@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -16,14 +17,16 @@ def test_p92_proof_states_exact_global_distance_and_boundary() -> None:
     assert "physical-to-experiential bridge remains open" in lower
 
 
-def test_p92_is_historical_while_p93_owns_the_homepage() -> None:
+def test_p92_is_historical_beneath_the_declared_homepage_frontier() -> None:
+    manifest = json.loads(_read("figures/manifest.json"))
+    current = str(manifest["current_frontier"]).lower()
     home = _read("website/index.html")
     atlas = _read("website/visual-atlas.html")
-    assert 'id="p93-frontier"' in home
+    assert f'id="{current}-frontier"' in home
     assert 'id="p92-frontier"' not in home
-    p93 = atlas.index('id="p93-frontier"')
+    current_position = atlas.index(f'id="{current}-frontier"')
     p92 = atlas.index('id="p92-frontier"')
-    assert p93 < p92
+    assert current_position < p92
     historical = atlas[p92:]
     assert "Previous theorem frontier · P92" in historical
     assert "p92_exact_global_mixed_prevalence_distance.svg" in historical

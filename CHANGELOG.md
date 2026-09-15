@@ -1,4 +1,64 @@
-# Unreleased research frontier - P84
+# Unreleased research frontier - P94
+
+- Added Proposition 94, Finite-Range Dependent Sign-Coherence Rejection.
+- Extended P93 from IID observations to a declared m-dependent sequence with one common marginal four-view law.
+- Derived the seven-cell radius `sqrt((m+1) log(14/alpha)/(2n))` by residue-class coloring, Holder, and Hoeffding concentration.
+- Kept the executable rejection direction exact by comparing squared radii using P79 rational logarithm brackets.
+- Certified 95 percent witness crossings 1623, 3246, and 4869 for dependence ranges 0, 1, and 2, with first exact 24-count replications 1632, 3264, and 4872.
+- Added an exact temporal-pooling no-go certificate: two individually valid interior P75 regimes can pool to a law with negative P92 determinant product.
+- Preserved the scientific boundary that non-rejection is inconclusive and the physical-to-experiential bridge remains open.
+- Kept formal release v0.82.0 separate from the advancing theorem frontier.
+
+### P93 predecessor frontier
+
+- Added Proposition 93, Localized Finite-Sample Sign-Coherence Rejection.
+- Localized the P92 nonlinear sign-coherence witness to the seven observable cells entering its three determinants.
+- Combined a simultaneous seven-cell Hoeffding event with the exact P92 sign-stability radii and P79 rational certification.
+- Certified the 95 percent mathematical crossing at n = 1623 and the first exact denominator-24 replication at n = 1632.
+- Kept non-rejection explicitly inconclusive and preserved the open physical-to-experiential bridge boundary.
+- Kept formal release v0.82.0 separate from the advancing theorem frontier.
+
+### P92 predecessor frontier
+
+- Added Proposition 92, Exact Global Mixed-Prevalence Distance.
+- Proved the three-determinant sign-coherence obstruction for the full P75 family and closed the established witness at exact L-infinity distance 1/24.
+
+### P91 predecessor frontier
+
+- Added Proposition 91, Mixed-Prevalence Rank-Two Flattening Separation.
+- Extended nonlinear separation beyond the P90 prevalence restriction and certified 1/42 < d_inf(P_emp, M75) <= 1/24 on the established witness.
+
+### P90 predecessor frontier
+
+- Added Proposition 90, Exact Nonlinear Rank-One Slice Separation.
+- Moved beyond the complete P89 linear envelope with an exact nonlinear slice determinant certificate attaining L90 = 5/72 on the strict P75 witness.
+
+### P89 predecessor frontier
+
+- Added Proposition 89, Complete Linear Parity-Functional Duality Certificate.
+- Removed finite coefficient-radius and support restrictions for the declared eleven-coordinate linear parity-functional class and matched lower and upper certificates at 5/168.
+
+### P88 predecessor frontier
+
+- Added Proposition 88, Exact Radius-Three Bounded Primitive Four-Event Projection-Parity Functional Certificate.
+- Expanded the P87 coefficient radius to three and strengthened the established exact witness from 1/96 to 1/64.
+
+### P87 predecessor frontier
+
+- Added Proposition 87, Exact Bounded Primitive Four-Event Projection-Parity Functional Certificate.
+- Exhausted primitive four-event coefficient vectors with absolute coefficients at most two and strengthened the established witness to 1/96.
+
+### P86 predecessor frontier
+
+- Added Proposition 86, Exact Minimally Weighted Four-Event Projection-Parity Functional Certificate.
+- Added the primitive coefficient-magnitude family {1,1,1,2} and obtained the strict exact witness L85 = 0 < L86 = 1/192.
+
+### P85 predecessor frontier
+
+- Added Proposition 85, Exact Three-Event Projection-Parity Functional Certificate.
+- Added 660 sign-normalized three-event functionals and an exact strict witness with L84 = 0 < L85 = 1/32.
+
+### P84 predecessor frontier
 
 - Added Proposition 84, Exact Joint Projection-Parity Contrast Certificate.
 - Added 220 genuinely coupled parity-event contrasts that preserve one shared P75 parameter assignment instead of checking P83 parity ranges independently.

@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P93**. The proposition record runs from **P1 through P93 with explicit dependency branches**. P71-P93 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P94**. The proposition record runs from **P1 through P94 with explicit dependency branches**. P71-P94 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -60,6 +60,8 @@ The current documented theorem frontier is **P93**. The proposition record runs 
 &\text{P92: three-minor sign coherence closes the full mixed-prevalence P75 distance at 1/24}\\
 &\Downarrow\\
 &\text{P93: the P92 sign-coherence witness yields a localized seven-cell finite-sample rejection certificate}\\
+&\Downarrow\\
+&\text{P94: finite-range dependence preserves the localized rejection gate under one common marginal law}\\
 \end{aligned}
 }
 \]
@@ -566,6 +568,8 @@ Direct proof: [P80](proposition_80_simplex_coupled_model_separation.md). Provena
 | [P90](proposition_90_exact_nonlinear_rank_one_separation.md) | nonlinear rank-one slice identity | exact single-component strict-box model separation at 5/72 | proved conditional nonlinear theorem |
 | [P91](proposition_91_mixed_prevalence_rank_two_flattening_separation.md) | rank-two bipartite flattening and exact 3 by 3 minor interval exclusion | full mixed-prevalence P75 separation bracket `1/42 < d_inf <= 1/24` | proved conditional nonlinear theorem |
 | [P92](proposition_92_exact_global_mixed_prevalence_distance.md) | three-minor conditional sign coherence | exact full-cube mixed-prevalence P75 distance `d_inf = 1/24` | proved conditional nonlinear theorem |
+| [P93](proposition_93_localized_sign_coherence_rejection.md) | seven-cell finite-sample sign preservation | localized IID rejection of P75 | proved conditional statistical theorem |
+| [P94](proposition_94_finite_range_dependent_sign_coherence.md) | finite-range coloring, Holder-Hoeffding concentration, exact rational radius certification | localized finite-range dependent rejection plus temporal-pooling no-go | proved conditional statistical theorem |
 
 ## 4. Calibration branch remains separate
 
@@ -622,9 +626,9 @@ After P89, the target-side chain has a substantially clearer scientific burden:
 
 P78 closes the global-lower-bound gap for the specific continuous P75 four-view binary latent family. P79 certifies the one-sided sampling-radius envelope. P80 strengthens the box relaxation by retaining probability normalization. P81 adds exact marginal and projected-event constraints. P82 adds exact non-cylinder residual constraints from nested projected events. P83 adds exact projection-parity observables. P84 then preserves shared-parameter compatibility across pairs of those parity observables through 220 exact joint contrasts.
 
-P86 closes the first minimally non-uniform four-event weighting step beyond the complete P85 triple-functional audit. The next computational question should not be chosen merely by increasing functional order or proposition number. A substantive continuation beyond P93 must close a separately stated mathematical or statistical gap and preserve the certified lower-bound direction. Natural candidates include an exact-rational support-function or convex relaxation of the full parity-coordinate image, with a certificate not already implied by P88, or an observable-specific finite-sample rejection theorem that propagates uncertainty through a selected P88 score rather than only through the global sixteen-cell radius. Target-view models with residual dependence, shared bias, temporal drift, or learned measurement pipelines also remain open.
+P86 closes the first minimally non-uniform four-event weighting step beyond the complete P85 triple-functional audit. The next computational question should not be chosen merely by increasing functional order or proposition number. A substantive continuation beyond P94 must close a separately stated mathematical or statistical gap and preserve the certified lower-bound direction. Natural candidates include an exact-rational support-function or convex relaxation of the full parity-coordinate image, with a certificate not already implied by P88, or an observable-specific finite-sample rejection theorem that propagates uncertainty through a selected P88 score rather than only through the global sixteen-cell radius. Target-view models with residual dependence, shared bias, temporal drift, or learned measurement pipelines also remain open.
 
-None of P71-P93 identifies a latent variable with consciousness. None proves that a failed descriptor implies nonphysical consciousness. The physical-to-experiential bridge remains open.
+None of P71-P94 identifies a latent variable with consciousness. None proves that a failed descriptor implies nonphysical consciousness. The physical-to-experiential bridge remains open.
 
 
 ## P83 predecessor frontier: exact projection-parity separation
@@ -854,6 +858,18 @@ For the established sign geometry at 95 percent confidence, exact P79 envelopes 
 
 P93 does not claim universal or minimax sample complexity. Non-rejection remains inconclusive, and the physical-to-experiential bridge remains open.
 
-## After P93
+## P94: finite-range dependent sign-coherence rejection
 
-P93 closes the localized finite-sample handoff for the established P92 sign witness. Any P94 candidate must close a genuinely new mathematical or scientific gap rather than merely increase proposition number. Natural directions include alternative observable slicings, broader latent-class families, or sharper finite-sample procedures with equally explicit one-sided certification. The physical-to-experiential bridge remains open.
+P94 keeps the P92 population sign-coherence obstruction and P93 seven-cell localization, but replaces IID sampling by a declared finite-range dependent sequence with one common marginal law. With `q=m+1`, residue classes modulo `q` are internally independent and generalized Holder combines their Hoeffding moment bounds without requiring independence between classes. This gives
+
+\[
+\varepsilon^{(m)}_{n,7}(\alpha)=\sqrt{\frac{(m+1)\log(14/\alpha)}{2n}}.
+\]
+
+The executable certificate compares the squared radius using P79 exact rational logarithm bounds. The exact drift no-go construction separately proves that pooling time-varying but individually valid P75 regimes can create a negative P92 determinant product, so common marginality is scientifically necessary for this theorem.
+
+Direct proof: [P94](proposition_94_finite_range_dependent_sign_coherence.md). Provenance: [P94 equation record](p94_equation_provenance.md). Implementation: [`finite_range_dependent_sign_coherence.py`](../src/consciousness_bridge/finite_range_dependent_sign_coherence.py). Tests: [`test_finite_range_dependent_sign_coherence.py`](../tests/test_finite_range_dependent_sign_coherence.py).
+
+## After P94
+
+P94 closes the first short-range temporal-dependence extension of the localized P92/P93 witness. Any P95 candidate must close a genuinely new mathematical or scientific gap. Natural directions include an explicitly drift-aware target, unknown-range or mixing-process concentration with declared assumptions, or a different observable witness not already implied by P92-P94. The physical-to-experiential bridge remains open.
