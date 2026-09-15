@@ -193,6 +193,8 @@ Therefore **every** nonnegative three-by-three matrix within entrywise radius \(
 
 But every P75 law has flattening rank at most two and hence selected-minor determinant zero. This is impossible inside the closed radius-\(1/42\) ball.
 
+The P75 parameter cube \([0,1]^9\) is compact, and the P75 law map is polynomial in those nine parameters and therefore continuous. Its image \(\mathcal M_{75}\) is consequently compact. The L-infinity distance from the fixed empirical law to \(\mathcal M_{75}\) is therefore attained. Since the entire closed radius-\(1/42\) ball is excluded, the attained minimum cannot equal \(1/42\).
+
 Therefore
 
 \[
