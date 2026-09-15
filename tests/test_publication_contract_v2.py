@@ -214,3 +214,9 @@ def test_citation_surface_is_professional_and_current() -> None:
     assert f"## Current theorem frontier: {label}" in citation
     assert marker in bib
     assert marker in cff
+
+
+def test_changelog_tracks_declared_current_frontier() -> None:
+    frontier = _frontier()
+    changelog = _read(ROOT / "CHANGELOG.md")
+    assert changelog.startswith(f"# Unreleased research frontier - P{frontier}\n")
