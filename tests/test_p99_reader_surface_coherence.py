@@ -43,6 +43,11 @@ def test_p99_is_current_reader_frontier() -> None:
     assert 'id="p99-reader-frontier"' in start
     assert "99 results · current frontier P99" in plain
     assert "99 results · current frontier P99" in start
+    assert "This is the 99-result Research II theorem program currently reaching P99." in plain
+    assert "The current theorem frontier is P99." in plain
+    assert "shows how all 99 Research II results connect." in plain
+    assert "This is the 98-result Research II theorem program currently reaching P98." not in plain
+    assert "The current theorem frontier is P98." not in plain
     assert "Open all 99 Research II results" in start
     assert "The 99 propositions are the formal theorem record of Research II." in start
     assert "P92-P99 connect exact population separation" in start
