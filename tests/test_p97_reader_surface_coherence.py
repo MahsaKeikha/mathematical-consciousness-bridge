@@ -11,7 +11,7 @@ def test_p97_formal_record_is_complete() -> None:
     proof = _read("docs/proposition_97_simultaneous_candidate_family_selection.md")
     lower = proof.lower()
     assert "same data" in lower
-    assert "finite candidate" in lower
+    assert "finite family" in lower
     assert "simultaneous" in lower
     assert "4045" in proof and "4056" in proof
     for path in (
@@ -69,7 +69,7 @@ def test_p97_repository_audit_surfaces_are_synchronized() -> None:
     assert "The current public theorem frontier is **P97**." in reproducibility
     assert "## 5. Focused audit of the current P97 frontier" in reproducibility
     assert "docs/figures/p97_simultaneous_candidate_family_selection.svg" in reproducibility
-    assert "The current documented theorem frontier is **P97**." in citation
+    assert "## Current theorem frontier: P97" in citation
 
 
 def test_p97_scientific_boundary_is_visible() -> None:
