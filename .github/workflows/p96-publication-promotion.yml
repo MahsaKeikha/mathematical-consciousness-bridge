@@ -29,6 +29,7 @@ jobs:
           python - <<'PY'
           import re
           import runpy
+          from pathlib import Path
 
           original_sub = re.sub
 
@@ -51,6 +52,14 @@ jobs:
 
           re.sub = literal_sub
           runpy.run_path("scripts/promote_p96_public_frontier.py", run_name="__main__")
+
+          path = Path("docs/research_navigation.md")
+          text = path.read_text(encoding="utf-8")
+          text = text.replace(
+              "**Current frontier:** [P95: Drift-Aware Stratified Sign-Coherence Rejection](proposition_95_drift_aware_stratified_sign_coherence.md)",
+              "**Immediate predecessor:** [P95: Drift-Aware Stratified Sign-Coherence Rejection](proposition_95_drift_aware_stratified_sign_coherence.md)",
+          )
+          path.write_text(text, encoding="utf-8")
           PY
       - name: Regenerate and synchronize canonical visual record
         run: |
