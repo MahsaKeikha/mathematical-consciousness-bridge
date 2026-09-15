@@ -60,12 +60,20 @@ text = text.replace(
 )
 write(path, text)
 
-# Research map: remove the final stale route into the old home frontier and
-# state the P98 scientific boundary in the wording required by the generic
-# publication contract.
+# Research map: remove stale routes and status labels that still identify P97
+# as current, then state the P98 boundary in the wording required by the
+# generic publication contract.
 path = "website/research-map.html"
 text = read(path)
 text = text.replace("index.html#p97-frontier", "index.html#p98-frontier")
+text = text.replace(
+    "<strong>97</strong><span>proposition-level results</span>",
+    "<strong>98</strong><span>proposition-level results</span>",
+)
+text = text.replace(
+    "<strong>P97</strong><span>current theorem frontier</span>",
+    "<strong>P98</strong><span>current theorem frontier</span>",
+)
 text = text.replace(
     "P97 remains a conditional model-rejection theorem under its declared pilot-selection, frozen-plan, and independent-holdout assumptions.",
     "P98 remains a conditional model-rejection theorem under its declared independent-block, own-fold-exclusion, frozen-plan, and exact error-budget assumptions.",
