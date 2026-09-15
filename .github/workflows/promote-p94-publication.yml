@@ -10,6 +10,7 @@ on:
       - "scripts/finalize_p94_publication.py"
       - "scripts/repair_p94_reader_contracts.py"
       - "scripts/fix_p94_generated_contracts.py"
+      - "scripts/repair_p94_full_suite_residue.py"
       - ".github/workflows/promote-p94-publication.yml"
 
 concurrency:
@@ -49,8 +50,8 @@ jobs:
       - name: Finalize P94 publication contracts
         run: python scripts/finalize_p94_publication.py
 
-      - name: Close residual P94 publication contracts
-        run: python scripts/fix_p94_generated_contracts.py final
+      - name: Repair residual P94 full-suite contracts
+        run: python scripts/repair_p94_full_suite_residue.py
 
       - name: Regenerate canonical visual publication record
         run: python scripts/generate_all_figures.py
