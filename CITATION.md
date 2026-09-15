@@ -112,6 +112,7 @@ P91 remains a conditional model-separation theorem. It does not identify conscio
 ## Historical nonlinear frontier: P90
 
 P90 remains the exact single-component nonlinear subfrontier at `L90 = 5/72 = (7/3)L89` on the declared strict prevalence-zero P75 face. P91 enlarges the model family to arbitrary prevalence and therefore answers a different question; its bracket must not be compared to `L90` as though both optimized over the same model set.
+
 ## Historical theorem frontier: P89
 
 P89 is preserved as the complete real linear parity-functional subfrontier. It proves `L89 = 5/168` for all real linear combinations of the eleven declared parity observables on the stated P75 box. P90 strengthens the overall separation by using a genuinely nonlinear rank-one constraint; it does not erase or weaken the P89 linear completeness result.
