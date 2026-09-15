@@ -77,18 +77,12 @@ jobs:
               "P98 remains a conditional model-rejection theorem",
               "P99 remains a conditional model-rejection theorem",
           )
-          text = text.replace(
-              'href="index.html#p98-frontier">Continue to the current P98 frontier</a>',
-              'href="index.html#p99-frontier">Continue to the current P99 frontier</a>',
-          )
-          text = text.replace(
-              'href="visual-atlas.html#p98-frontier">See the P98 figure</a>',
-              'href="visual-atlas.html#p99-frontier">See the P99 figure</a>',
-          )
-          text = text.replace(
-              'docs/p98_equation_provenance.md">Audit P98 provenance</a>',
-              'docs/p99_equation_provenance.md">Audit P99 provenance</a>',
-          )
+          text = text.replace("Continue to the current P98 frontier", "Continue to the current P99 frontier")
+          text = text.replace("index.html#p98-frontier", "index.html#p99-frontier")
+          text = text.replace("visual-atlas.html#p98-frontier", "visual-atlas.html#p99-frontier")
+          text = text.replace("See the P98 figure", "See the P99 figure")
+          text = text.replace("docs/p98_equation_provenance.md", "docs/p99_equation_provenance.md")
+          text = text.replace("Audit P98 provenance", "Audit P99 provenance")
           text = re.sub(
               r"Research Map · Current theorem frontier P\d+</p>",
               "Research Map · Current theorem frontier P99</p>",
