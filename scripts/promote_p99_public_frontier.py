@@ -271,21 +271,21 @@ if "## P99: cross-fitted e-value aggregation" not in text:
 
 P98 controls the collection of cross-fitted fold statements by allocating a global error budget across folds. P99 provides a complementary distributed-evidence construction. Conditional on the selection information for fold `k`, a valid level-`tau` P96 rejection indicator satisfies
 
-\[
-\Pr(R_k(\tau)=1\mid\mathcal S_k)\le\tau.
-\]
+\\[
+\\Pr(R_k(\tau)=1\\mid\\mathcal S_k)\\le\tau.
+\\]
 
 Therefore
 
-\[
+\\[
 E_k(\tau)=R_k(\tau)/\tau
-\]
+\\]
 
 has conditional and unconditional null expectation at most one. Finite threshold mixtures remain fold e-values, and a fixed convex average
 
-\[
-E_{\mathrm{CF}}=\sum_k w_kE_k
-\]
+\\[
+E_{\\mathrm{CF}}=\\sum_k w_kE_k
+\\]
 
 remains an e-value even when the final cross-fitted fold certificates are dependent. Markov's inequality yields a global level-alpha rejection rule at `E_CF >= 1/alpha`.
 
