@@ -6,13 +6,12 @@ on:
     paths:
       - "website/**"
       - "docs/figures/**"
+      - "figures/manifest.json"
       - "scripts/prepare_website.py"
       - "scripts/synchronize_research_three_website.py"
+      - "scripts/verify_repository.py"
+      - "scripts/verify_frontier_publication.py"
       - ".github/workflows/pages.yml"
-  workflow_run:
-    workflows: ["promote-p89-public-frontier"]
-    types: [completed]
-    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -26,106 +25,91 @@ concurrency:
 
 jobs:
   deploy:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout latest main
+      - name: Checkout canonical main
         uses: actions/checkout@v4
         with:
           ref: main
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
-      - name: Verify website source synchronization
+      - name: Resolve canonical theorem frontier
+        shell: bash
         run: |
-          python -m py_compile scripts/prepare_website.py scripts/synchronize_research_three_website.py
+          FRONTIER="$(python - <<'PY'
+          import re
+          from pathlib import Path
+
+          text = Path('scripts/verify_repository.py').read_text(encoding='utf-8')
+          match = re.search(r'^CURRENT_FRONTIER = "(P[0-9]+)"$', text, re.MULTILINE)
+          if match is None:
+              raise SystemExit('CURRENT_FRONTIER is missing from scripts/verify_repository.py')
+          print(match.group(1))
+          PY
+          )"
+          FIGURE_PATH="$(python - <<'PY'
+          import json
+          from pathlib import Path
+
+          manifest = json.loads(Path('figures/manifest.json').read_text(encoding='utf-8'))
+          frontier = manifest.get('current_frontier')
+          figure = manifest.get('current_frontier_figure')
+          if not isinstance(frontier, str) or not isinstance(figure, str):
+              raise SystemExit('figure manifest is missing current frontier metadata')
+          print(figure)
+          PY
+          )"
+          MANIFEST_FRONTIER="$(python - <<'PY'
+          import json
+          from pathlib import Path
+          print(json.loads(Path('figures/manifest.json').read_text(encoding='utf-8'))['current_frontier'])
+          PY
+          )"
+          test "${FRONTIER}" = "${MANIFEST_FRONTIER}"
+          echo "FRONTIER=${FRONTIER}" >> "${GITHUB_ENV}"
+          echo "FRONTIER_NUMBER=${FRONTIER#P}" >> "${GITHUB_ENV}"
+          echo "FRONTIER_FIGURE=$(basename "${FIGURE_PATH}")" >> "${GITHUB_ENV}"
+
+      - name: Verify repository and website source synchronization
+        run: |
+          python -m py_compile scripts/prepare_website.py scripts/synchronize_research_three_website.py scripts/verify_repository.py scripts/verify_frontier_publication.py
           python scripts/synchronize_research_three_website.py --site website --check
+          python scripts/verify_repository.py
+          node --check website/app.js
 
-      - name: Verify website JavaScript parses
-        run: node --check website/app.js
-
-      - name: Build research website
+      - name: Build exact main website
         run: |
           rm -rf website-deploy _site
           cp -a website website-deploy
           python scripts/prepare_website.py --source website-deploy --output _site
 
-      - name: Verify canonical Research I, II and III identity
+      - name: Verify canonical built frontier
+        shell: bash
         run: |
-          R3_PIN="$(python -c 'from scripts.synchronize_research_three_website import CURRENT_RESEARCH_THREE_PIN; print(CURRENT_RESEARCH_THREE_PIN)')"
-
-          grep -q 'What would a scientifically testable bridge from physical description to experience actually require?' _site/index.html
-          grep -q 'Explore all 89 results' _site/index.html
-          grep -q 'Current record:</strong> 89 proposition-level results through P89' _site/index.html
-          grep -q 'Current theorem frontier · P89' _site/index.html
-          test "$(grep -o 'id=\"p89-frontier\"' _site/index.html | wc -l)" -eq 1
-          test "$(grep -o '<!-- current-frontier-home: P89 -->' _site/index.html | wc -l)" -eq 1
+          FRONTIER_LOWER="$(printf '%s' "${FRONTIER}" | tr '[:upper:]' '[:lower:]')"
+          test -f "_site/figures/${FRONTIER_FIGURE}"
+          grep -q "Current theorem frontier · ${FRONTIER}" _site/index.html
+          grep -q "Current theorem frontier · ${FRONTIER}" _site/visual-atlas.html
+          grep -q "id=\"${FRONTIER_LOWER}-frontier\"" _site/index.html
+          grep -q "id=\"${FRONTIER_LOWER}-frontier\"" _site/visual-atlas.html
+          grep -q "${FRONTIER_FIGURE}" _site/index.html
+          grep -q "${FRONTIER_FIGURE}" _site/visual-atlas.html
+          grep -q "${FRONTIER_NUMBER} proposition-level results" _site/index.html
           grep -q 'Research I · Physical-system identification' _site/index.html
           grep -q 'Research III · Consciousness measurement science' _site/index.html
-          ! grep -q 'id="p88-frontier"' _site/index.html
-          grep -q '#reproduce .equation' _site/reader-experience-v2.css
-          grep -q 'contain: inline-size' _site/reader-experience-v2.css
-
-          grep -q 'What are we actually trying to find out?' _site/plain-language.html
-          grep -q 'id="three-stage-progress"' _site/plain-language.html
-          grep -q 'What the whole research program is doing' _site/plain-language.html
-          grep -q '<strong>Research I</strong><span>physical-system identification</span>' _site/plain-language.html
-          grep -q '<strong>Research II</strong><span>89 results · current frontier P89</span>' _site/plain-language.html
-          grep -q '<strong>Research III</strong><span>measurement science under uncertainty</span>' _site/plain-language.html
-          grep -q '<strong>Open</strong><span>final physical-to-experiential bridge</span>' _site/plain-language.html
-          ! grep -q '<strong>89</strong><span>Research II proposition-level results</span>' _site/plain-language.html
-          ! grep -q '<strong>P89</strong><span>current Research II theorem frontier</span>' _site/plain-language.html
-
-          grep -q 'id="program-stages"' _site/start-here.html
-          grep -q 'The whole research program' _site/start-here.html
-          grep -q '<strong>Research I</strong><span>physical-system identification</span>' _site/start-here.html
-          grep -q '<strong>Research II</strong><span>89 results · current frontier P89</span>' _site/start-here.html
-          grep -q '<strong>Research III</strong><span>measurement science under uncertainty</span>' _site/start-here.html
-          grep -q 'The 89 Research II propositions by scientific role' _site/start-here.html
-          ! grep -q '<strong>89</strong><span>proposition-level results</span>' _site/start-here.html
-
-          grep -q 'P89: What is the strongest possible real linear certificate' _site/research-map.html
-          grep -q 'complete real linear' _site/research-map.html
-          grep -q '5/168' _site/research-map.html
-          test "$(grep -o 'id=\"p89-research-map\"' _site/research-map.html | wc -l)" -eq 1
-          grep -q 'index.html#p89-frontier' _site/research-map.html
-          ! grep -q 'index.html#p88-frontier' _site/research-map.html
-
-          grep -q '<!-- current-frontier-visual: P89 -->' _site/visual-atlas.html
-          grep -q 'Current theorem frontier · P89' _site/visual-atlas.html
-          grep -q 'p89_complete_linear_parity_duality.svg' _site/visual-atlas.html
-          test "$(grep -o 'id=\"p89-frontier\"' _site/visual-atlas.html | wc -l)" -eq 1
-          grep -q 'Previous theorem frontier · P88' _site/visual-atlas.html
-
-          test -f _site/measurement-science.html
-          grep -q 'Research III · Consciousness Measurement Science' _site/measurement-science.html
-          grep -q 'what can be identified, bounded, predicted, or falsified' _site/measurement-science.html
-          grep -q 'Implemented now versus not yet established' _site/measurement-science.html
-          grep -q 'CEP JSON schema' _site/measurement-science.html
-          grep -q 'Claim JSON schema' _site/measurement-science.html
-          grep -q 'Assumption registry' _site/measurement-science.html
-          grep -q 'Failure-mode registry' _site/measurement-science.html
-          grep -q 'Software and reproducibility' _site/measurement-science.html
-          grep -q '34</strong><span>tests in each CI job' _site/measurement-science.html
-          grep -q 'dependence-robust partial identification with sharp Fr&eacute;chet-Hoeffding bounds' _site/measurement-science.html
-          grep -q '<strong>Two implemented fusion regimes:</strong>' _site/measurement-science.html
-          grep -q 'An interval as wide as <code>\[0,1\]</code> is a valid scientific result' _site/measurement-science.html
-          grep -q 'docs/partial-identification.md' _site/measurement-science.html
-          ! grep -q 'planned by the roadmap' _site/measurement-science.html
-          grep -q "research-three-snapshot: ${R3_PIN}" _site/measurement-science.html
-
-          grep -q 'Research III · consciousness measurement science' _site/research-lineage.html
-          grep -q '<strong>89</strong><span>proposition-level results</span>' _site/research-lineage.html
-          grep -q '<strong>P89</strong><span>current theorem frontier</span>' _site/research-lineage.html
-          grep -q '<strong>v0.82.0</strong><span>current documented release</span>' _site/research-lineage.html
-          grep -q "${R3_PIN}" _site/research-lineage.html
-
+          grep -q 'physical-to-experiential bridge' _site/plain-language.html
+          grep -q 'physical-to-experiential bridge' _site/start-here.html
           grep -q 'measurement-science.html' _site/app.js
-          grep -q 'Research III' _site/app.js
           node --check _site/app.js
 
       - name: Upload website artifact
