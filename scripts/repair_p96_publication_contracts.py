@@ -91,6 +91,10 @@ for old_range, new_range in (
 text = text.replace("index.html#p95-frontier", "index.html#p96-frontier")
 text = text.replace("current P95 frontier", "current P96 frontier")
 text = text.replace(
+    "Research Map · Current theorem frontier P95</p>",
+    "Research Map · Current theorem frontier P96</p>",
+)
+text = text.replace(
     "and P95 adds predeclared drift-aware stratification with familywise error control.",
     "P95 adds predeclared drift-aware stratification with familywise error control, and P96 separates pilot-selected regime design from independent holdout certification.",
 )
