@@ -9,6 +9,24 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 TEST_PATH = ROOT / "tests" / "test_p94_reader_surface_coherence.py"
 BIB_PATH = ROOT / "CITATION.bib"
+CITATION_PATH = ROOT / "CITATION.md"
+CFF_PATH = ROOT / "CITATION.cff"
+
+
+def verify_pre_promotion_citations() -> None:
+    marker = "Current documented theorem frontier: P93."
+    markdown = CITATION_PATH.read_text(encoding="utf-8")
+    bib = BIB_PATH.read_text(encoding="utf-8")
+    cff = CFF_PATH.read_text(encoding="utf-8")
+
+    if marker not in markdown:
+        raise RuntimeError("CITATION.md is not synchronized to the P93 source frontier")
+    if marker not in bib:
+        raise RuntimeError("CITATION.bib is not synchronized to the P93 source frontier")
+    if marker not in cff:
+        raise RuntimeError("CITATION.cff is not synchronized to the P93 source frontier")
+
+    print("[P94] pre-promotion citation metadata agree on P93")
 
 
 def repair_intermediate_bib_frontier() -> None:
@@ -18,7 +36,7 @@ def repair_intermediate_bib_frontier() -> None:
     if p93 in text:
         text = text.replace(p93, p89, 1)
         BIB_PATH.write_text(text, encoding="utf-8")
-        print("[P94] normalized intermediate BibTeX frontier for finalization")
+        print("[P94] normalized intermediate BibTeX frontier for legacy finalizer compatibility")
         return
     if p89 in text:
         return
@@ -41,6 +59,7 @@ def repair_generated_test_escape() -> None:
 
 
 def main() -> None:
+    verify_pre_promotion_citations()
     repair_intermediate_bib_frontier()
     repair_generated_test_escape()
 
