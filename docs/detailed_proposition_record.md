@@ -1,6 +1,6 @@
 # Detailed proposition record
 
-## Complete P1 to P92 chronology
+## Complete P1 to P93 chronology
 
 This page preserves the proposition-by-proposition development history of the Mathematical Consciousness Bridge research program. It is intentionally separate from the main README so a first-time reader can follow the scientific argument without first learning the internal chronology of the project.
 
@@ -14,7 +14,7 @@ A first-time reader should not read this page as 91 disconnected proposition-lev
 
 ---
 
-## Complete P1 to P92 chronology
+## Complete P1 to P93 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
@@ -370,3 +370,15 @@ P92 closes the P91 full-cube bracket. Three conditional two-by-two determinants 
 - Figure: `docs/figures/p92_exact_global_mixed_prevalence_distance.svg`
 
 This is a conditional model-separation theorem. It does not identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.
+
+## Proposition 93: Localized Finite-Sample Sign-Coherence Rejection
+
+P93 is the finite-data continuation of P92's nonlinear three-minor sign-coherence invariant. It uses only the seven observable cells entering those minors. A simultaneous seven-cell Hoeffding event plus the exact P92 determinant sign-stability radii and the P79 one-sided rational sampling-radius envelope gives a confidence-valid P75 rejection rule.
+
+For the established sign geometry at `alpha = 0.05`, the mathematical radius crossing is 1622/1623. The first exact replication of the original 24-count profile that clears is `1632 = 68 x 24`. This is a localized observed-data certificate, not a universal sample-complexity theorem.
+
+- [Proof](proposition_93_localized_sign_coherence_rejection.md)
+- [Equation provenance](p93_equation_provenance.md)
+- Implementation: `src/consciousness_bridge/localized_sign_coherence_rejection.py`
+- Tests: `tests/test_localized_sign_coherence_rejection.py`
+- Figure: `docs/figures/p93_localized_sign_coherence_rejection.svg`

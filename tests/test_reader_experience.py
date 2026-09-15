@@ -128,11 +128,11 @@ def test_figure_enrichment_generator_preserves_canonical_reader_key() -> None:
     assert 'text.replace(legacy_reading_key, reading_key, 1)' in source
 
 
-def test_repository_verifier_tracks_p92_and_all_92_propositions() -> None:
+def test_repository_verifier_tracks_p93_and_all_93_propositions() -> None:
     verifier = _text("scripts/verify_repository.py")
-    assert 'CURRENT_FRONTIER = "P92"' in verifier
+    assert 'CURRENT_FRONTIER = "P93"' in verifier
     assert "covered: set[int] = set()" in verifier
-    assert "range(1, 93)" in verifier
+    assert "range(1, 94)" in verifier
     assert '"docs/reader_experience_and_visual_standard.md"' in verifier
     assert '"docs/proposition_92_exact_global_mixed_prevalence_distance.md"' in verifier
 

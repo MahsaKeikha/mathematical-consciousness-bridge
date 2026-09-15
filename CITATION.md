@@ -8,7 +8,7 @@ If this research program, one of its propositions, figures, algorithms, or imple
 
 > Keikha, M. (2026). *Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem* (Version 0.82.0). GitHub research repository. https://github.com/MahsaKeikha/mathematical-consciousness-bridge
 
-This is the preferred citation for the research program at the current documented frontier, P92.
+This is the preferred citation for the research program at the current documented frontier, P93.
 
 ## BibTeX
 
@@ -20,7 +20,7 @@ This is the preferred citation for the research program at the current documente
   version      = {0.82.0},
   howpublished = {GitHub research repository},
   url          = {https://github.com/MahsaKeikha/mathematical-consciousness-bridge},
-  note         = {Ongoing research program. Current documented theorem frontier: P92.}
+  note         = {Ongoing research program. Current documented theorem frontier: P93.}
 }
 ```
 
@@ -53,7 +53,7 @@ This repository is an evolving research program. For reproducible scholarly use:
 3. Cite the individual proposition or artifact when your argument depends on a specific theorem, figure, algorithm, or test.
 4. Do not attribute later propositions or later numerical results to an earlier version of the repository.
 
-The current citation metadata identify Version **0.82.0** and theorem frontier **P92**. Future research versions should update the version number, theorem frontier, citation metadata, and archival record together.
+The current citation metadata identify Version **0.82.0** and theorem frontier **P93**. Future research versions should update the version number, theorem frontier, citation metadata, and archival record together.
 
 ## DOI and archival status
 
@@ -98,7 +98,7 @@ These remain conditional statistical target-measurement results, not validation 
 
 When citing a theorem, readers should consult the proposition document for its assumptions and scope rather than citing the theorem statement without its declared conditions.
 
-## Current theorem frontier: P92
+## Current theorem frontier: P93
 
 The current documented theorem frontier is **P92**. The formal package release remains **Version 0.82.0**. P92 closes the global mixed-prevalence P75 distance bracket left open by P91. A nonlinear three-minor sign-coherence invariant on the `X1 = 1` observable subtensor gives the exact lower bound `d_inf >= 1/24`, and the explicit genuinely mixed rational P75 point from P91 attains `1/24`. Therefore P92 proves `d_inf(P_emp, M75) = 1/24` over the complete P75 parameter cube.
 
@@ -164,3 +164,7 @@ For work that uses the exact full-cube mixed-prevalence distance theorem, cite t
 ## Proposition 92 method citation
 
 For work that uses the exact full-cube mixed-prevalence distance theorem, cite the program together with **Proposition 92: Exact Global Mixed-Prevalence Distance** and its [equation provenance record](docs/p92_equation_provenance.md). P92 proves `d_inf(P_emp, M75) = 1/24` for the established witness and complete P75 parameter cube.
+
+## Proposition 93 method citation
+
+For work using the localized finite-sample P92 sign-coherence rejection gate, cite the program together with **Proposition 93: Localized Finite-Sample Sign-Coherence Rejection** and its [equation provenance record](docs/p93_equation_provenance.md). P93 gives a seven-cell familywise rejection rule and an exact 95 percent radius crossing between sample sizes 1622 and 1623 for the established sign geometry. The first exact replication of the original 24-count profile that clears the certificate is 1632. The theorem does not claim universal or minimax sample complexity.

@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P92**. The proposition record runs from **P1 through P92 with explicit dependency branches**. P71-P91 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P93**. The proposition record runs from **P1 through P93 with explicit dependency branches**. P71-P93 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -58,6 +58,8 @@ The current documented theorem frontier is **P92**. The proposition record runs 
 &\text{P91: arbitrary-prevalence P75 mixtures obey rank at most two under the declared bipartite flattening}\\
 &\Downarrow\\
 &\text{P92: three-minor sign coherence closes the full mixed-prevalence P75 distance at 1/24}\\
+&\Downarrow\\
+&\text{P93: the P92 sign-coherence witness yields a localized seven-cell finite-sample rejection certificate}\\
 \end{aligned}
 }
 \]
@@ -838,3 +840,16 @@ P92 is a conditional model-separation theorem and does not identify consciousnes
 ## After P92
 
 The next theorem should close a new gap rather than merely increase proposition number. Natural P93 directions include finite-sample calibration of the P92 nonlinear sign certificate, stability under alternative observable slicings, or exact comparison with broader latent-class families. Any P93 claim must preserve one-sided certification and the repository's scientific boundary.
+
+## P93: localized finite-sample sign-coherence rejection
+
+P93 converts the P92 nonlinear three-minor invariant into a finite-sample rejection theorem. The three P92 minors involve only seven distinct cell probabilities, so one seven-cell Hoeffding event is sufficient. If the empirical determinant product is negative and a P79-certified upper sampling radius is smaller than every empirical determinant sign-stability radius, the population determinant product is also negative and the complete P75 family is rejected at confidence at least `1-alpha`.
+
+For the established sign geometry at 95 percent confidence, exact P79 envelopes certify the mathematical radius crossing between `n = 1622` and `n = 1623`. The first exact replication of the original 24-count profile that clears the certificate is `n = 1632 = 68 x 24`. The generic P77 fixed-margin sufficient condition at the P92 population margin crosses at 7444, but that is a different guarantee.
+
+- [P93 proof](proposition_93_localized_sign_coherence_rejection.md)
+- [P93 provenance](p93_equation_provenance.md)
+- Source: [`localized_sign_coherence_rejection.py`](../src/consciousness_bridge/localized_sign_coherence_rejection.py)
+- Tests: [`test_localized_sign_coherence_rejection.py`](../tests/test_localized_sign_coherence_rejection.py)
+
+P93 does not claim universal or minimax sample complexity. Non-rejection remains inconclusive, and the physical-to-experiential bridge remains open.

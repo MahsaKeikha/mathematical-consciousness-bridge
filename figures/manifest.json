@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "canonical_root": "docs/figures",
-  "current_frontier": "P92",
-  "current_frontier_figure": "docs/figures/p92_exact_global_mixed_prevalence_distance.svg",
-  "figure_count": 150,
+  "current_frontier": "P93",
+  "current_frontier_figure": "docs/figures/p93_localized_sign_coherence_rejection.svg",
+  "figure_count": 151,
   "hash_algorithm": "sha256",
   "figures": [
     {
@@ -661,6 +661,14 @@
       "category": "theorem-or-architecture",
       "title": "P92 Exact Global Mixed-Prevalence Distance",
       "description_chars": 1009
+    },
+    {
+      "path": "docs/figures/p93_localized_sign_coherence_rejection.svg",
+      "sha256": "00a4354f5e58ae0c182f4d4602b00597c7d22ba3b66860f210a63bdabcbef8e5",
+      "bytes": 8688,
+      "category": "theorem-or-architecture",
+      "title": "P93 Localized Finite-Sample Sign-Coherence Rejection",
+      "description_chars": 882
     },
     {
       "path": "docs/figures/physics_mathematics_atlas.svg",

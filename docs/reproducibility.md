@@ -15,7 +15,7 @@ You do not need every command at once. Choose the route that matches your goal.
 | Regenerate the complete visual record | `make figures` |
 | Inspect CI without installing locally | GitHub Actions |
 
-The current public theorem frontier is **P92**. The formal release remains **v0.82.0**.
+The current public theorem frontier is **P93**. The formal release remains **v0.82.0**.
 
 ---
 
@@ -104,7 +104,7 @@ Use this route when you want to verify the current committed state without regen
 
 ---
 
-## 5. Focused audit of the current P92 frontier
+## 5. Focused audit of the current P93 frontier
 
 The current theorem frontier is **P92**.
 
@@ -377,3 +377,13 @@ python scripts/verify_repository.py
 ```
 
 The P92 theorem uses exact `Fraction` arithmetic for all published determinant values, sign radii, factorization checks, and the matching `1/24` upper certificate.
+
+### P93 focused audit
+
+```bash
+python -m pytest -q tests/test_localized_sign_coherence_rejection.py
+python scripts/sync_figure_publication.py --check
+python scripts/verify_repository.py
+```
+
+The P93 threshold audit uses P79 exact rational lower and upper sampling-radius envelopes and distinguishes the mathematical 1623 crossing from the first realizable exact 24-count replication at 1632.

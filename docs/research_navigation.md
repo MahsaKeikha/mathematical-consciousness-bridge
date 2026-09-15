@@ -4,7 +4,7 @@
 
 This page is an index, not another chapter. If you are still learning the overall story, go one layer up to the **[Research Map](research_map.md)**.
 
-The current documented theorem frontier is **P92**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains open.
+The current documented theorem frontier is **P93**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains open.
 
 ---
 
@@ -141,7 +141,7 @@ The [Detailed Proposition Record](detailed_proposition_record.md) is the complet
 | Physics | [Research Map](research_map.md) → [Technical Research Architecture](research_architecture.md) → [Quantum branch](quantum_foundations_and_bridge_test.md) |
 | Mathematics | [Research Map](research_map.md) → [Theorem Roadmap](theorem_roadmap.md) → proposition proofs |
 | Statistics and inference | [P19](proposition_19_fundamental_physical_sufficiency.md) → P20 through P24 → P74 through P92 via [Detailed Proposition Record](detailed_proposition_record.md) |
-| Consciousness science | [Bridge Problem](bridge_problem.md) → [Falsification Program](falsification_program.md) → P71 through P92 |
+| Consciousness science | [Bridge Problem](bridge_problem.md) → [Falsification Program](falsification_program.md) → P71 through P93 |
 | Software and reproducibility | [Reproducibility Guide](reproducibility.md) → [`src/`](../src/) → [`tests/`](../tests/) |
 | Visual learner | [Figure Catalog](figure_catalog.md) → [Visual Atlas](../website/visual-atlas.html) |
 
@@ -149,7 +149,7 @@ The [Detailed Proposition Record](detailed_proposition_record.md) is the complet
 
 ## Where the complete detail lives
 
-This page intentionally does **not** duplicate the full 92 proposition index.
+This page intentionally does **not** duplicate the full 93 proposition index.
 
 Use:
 
@@ -211,3 +211,15 @@ For P92:
 | Repository reproduction | [Reproducibility Guide](reproducibility.md) |
 
 P92 proves the exact full-cube result `d_inf(P_emp, M75) = 1/24`. Its lower certificate is a nonlinear three-minor sign-coherence invariant. The result does not identify the latent state with consciousness, establish nonphysicality, or close the physical-to-experiential bridge.
+
+## P93 current frontier
+
+| What you want | Direct link |
+| --- | --- |
+| The theorem and proof | [P93 proposition](proposition_93_localized_sign_coherence_rejection.md) |
+| Equation and method provenance | [P93 provenance](p93_equation_provenance.md) |
+| Implementation | [`localized_sign_coherence_rejection.py`](../src/consciousness_bridge/localized_sign_coherence_rejection.py) |
+| Exact tests | [`test_localized_sign_coherence_rejection.py`](../tests/test_localized_sign_coherence_rejection.py) |
+| Figure | [P93 localized finite-sample certificate](figures/p93_localized_sign_coherence_rejection.svg) |
+
+P93 uses seven observable cells from the P92 sign witness. The 1623 crossing is the exact mathematical confidence-radius threshold for the established sign geometry at 95 percent confidence; the first exact replication of the original profile that clears is 1632.

@@ -25,7 +25,7 @@ from verify_frontier_publication import verify_frontier_publication
 
 ROOT = Path(__file__).resolve().parents[1]
 CURRENT_VERSION = "0.82.0"
-CURRENT_FRONTIER = "P92"
+CURRENT_FRONTIER = "P93"
 
 CORE_FILES = (
     "README.md",
@@ -60,8 +60,7 @@ CORE_FILES = (
     "docs/figures/p89_complete_linear_parity_duality.svg",
     "docs/figures/p90_exact_nonlinear_rank_one_separation.svg",
     "docs/figures/p91_mixed_prevalence_rank_two_flattening_separation.svg",
-    "docs/figures/p92_exact_global_mixed_prevalence_distance.svg",
-    "docs/figures/p92_exact_global_mixed_prevalence_distance.svg",
+    "docs/figures/p93_localized_sign_coherence_rejection.svg",
     "docs/proposition_84_exact_projection_parity_contrast.md",
     "docs/proposition_85_exact_triple_projection_parity_functional.md",
     "docs/p85_equation_provenance.md",
@@ -79,13 +78,14 @@ CORE_FILES = (
     "docs/p91_equation_provenance.md",
     "docs/proposition_92_exact_global_mixed_prevalence_distance.md",
     "docs/p92_equation_provenance.md",
-    "docs/proposition_92_exact_global_mixed_prevalence_distance.md",
-    "docs/p92_equation_provenance.md",
+    "docs/proposition_93_localized_sign_coherence_rejection.md",
+    "docs/p93_equation_provenance.md",
+    "docs/figures/p93_localized_sign_coherence_rejection.svg",
+    "src/consciousness_bridge/localized_sign_coherence_rejection.py",
+    "tests/test_localized_sign_coherence_rejection.py",
     "src/consciousness_bridge/mixed_prevalence_rank_two_flattening_separation.py",
     "src/consciousness_bridge/exact_global_mixed_prevalence_distance.py",
-    "src/consciousness_bridge/exact_global_mixed_prevalence_distance.py",
     "tests/test_mixed_prevalence_rank_two_flattening_separation.py",
-    "tests/test_exact_global_mixed_prevalence_distance.py",
     "tests/test_exact_global_mixed_prevalence_distance.py",
     "figures/README.md",
     "figures/CURRENT_FRONTIER.md",
@@ -133,6 +133,9 @@ LINK_SURFACES = (
 MARKDOWN_LINK = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 
 STALE_READER_FRONTIER_MARKERS = (
+    "Current theorem frontier · P92",
+    "current P92 frontier",
+    "<strong>P92</strong><span>current theorem frontier</span>",
     "Current theorem frontier · P91",
     "current P91 frontier",
     "<strong>P91</strong><span>current theorem frontier</span>",
@@ -248,8 +251,8 @@ def _assert_no_stale_reader_frontier() -> None:
 
 def _assert_citation_integrity() -> None:
     citation = (ROOT / "CITATION.md").read_text(encoding="utf-8")
-    if "Current documented theorem frontier: P92" not in citation:
-        raise RuntimeError("CITATION.md does not declare P92 as the current theorem frontier")
+    if "Current documented theorem frontier: P93" not in citation:
+        raise RuntimeError("CITATION.md does not declare P93 as the current theorem frontier")
     if "P92" not in (ROOT / "CITATION.cff").read_text(encoding="utf-8"):
         raise RuntimeError("CITATION.cff does not mention P92")
 
@@ -265,7 +268,7 @@ def _assert_detailed_proposition_record() -> None:
         if end < start:
             start, end = end, start
         covered.update(range(start, end + 1))
-    missing = [number for number in range(1, 93) if number not in covered]
+    missing = [number for number in range(1, 94) if number not in covered]
     if missing:
         raise RuntimeError(
             f"detailed proposition record is missing proposition references: {missing}"
@@ -282,20 +285,21 @@ def _assert_figure_manifest() -> None:
     figure_path = manifest.get("current_frontier_figure")
     if not isinstance(figure_path, str):
         raise TypeError("figure manifest current_frontier_figure is missing")
-    if not figure_path.endswith("p92_exact_global_mixed_prevalence_distance.svg"):
-        raise RuntimeError("figure manifest does not point to the canonical P91 SVG")
+    if not figure_path.endswith("p93_localized_sign_coherence_rejection.svg"):
+        raise RuntimeError("figure manifest does not point to the canonical P93 SVG")
     figures = manifest.get("figures")
-    if not isinstance(figures, list) or len(figures) != 150:
-        raise RuntimeError("figure manifest does not contain the canonical 150 figures")
+    if not isinstance(figures, list) or len(figures) != 151:
+        raise RuntimeError("figure manifest does not contain the canonical 151 figures")
 
 
 def _assert_visual_atlas_order() -> None:
     visual_atlas = (ROOT / "website" / "visual-atlas.html").read_text(encoding="utf-8")
+    p93 = visual_atlas.index('id="p93-frontier"')
     p92 = visual_atlas.index('id="p92-frontier"')
     p91 = visual_atlas.index('id="p91-frontier"')
     p90 = visual_atlas.index('id="p90-frontier"')
-    if not (p92 < p91 < p90):
-        raise RuntimeError("Visual Atlas does not lead with the current P92 figure")
+    if not (p93 < p92 < p91):
+        raise RuntimeError("Visual Atlas does not lead with the current P93 figure")
 
 
 def _assert_no_policy_punctuation() -> None:
