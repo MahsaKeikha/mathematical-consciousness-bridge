@@ -1,6 +1,7 @@
 """Repair exact generated P94 migration contracts during the one-run promotion.
 
-Temporary helper for PR #156. Delete it after the promoted P94 publication head
+Temporary helper for PR #156. The promotion workflow invokes its phases around
+the generator and finalizer. Delete it after the promoted P94 publication head
 is validated and before merge.
 """
 
