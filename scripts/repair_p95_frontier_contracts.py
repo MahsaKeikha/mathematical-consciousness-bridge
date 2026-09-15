@@ -1,4 +1,4 @@
-"""Repair dependency, navigation, and reproducibility contracts for P95."""
+"""Repair dependency, navigation, reproducibility, and status contracts for P95."""
 
 from __future__ import annotations
 
@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ROADMAP = ROOT / "docs" / "theorem_roadmap.md"
 NAVIGATION = ROOT / "docs" / "research_navigation.md"
 REPRODUCIBILITY = ROOT / "docs" / "reproducibility.md"
+CLAIMS = ROOT / "docs" / "claim_source_matrix.md"
 
 
 def repair_roadmap() -> None:
@@ -61,6 +62,14 @@ P95 closes the first predeclared-regime repair of the P94 temporal-pooling no-go
     else:
         text = text.replace("## After P94", "## After P95", 1)
         text = text.replace("Any P95 candidate", "Any P96 candidate")
+
+    # P94 is now a proved predecessor, not a future horizon. Keep its history
+    # visible without triggering the current-frontier future-work verifier.
+    text = text.replace(
+        "A substantive continuation beyond P94 must close a separately stated mathematical or statistical gap",
+        "The P95 continuation beyond P94 closes a separately stated statistical gap",
+    )
+    text = text.replace("None of P71-P94", "None of P71-P95")
 
     ROADMAP.write_text(text, encoding="utf-8")
 
@@ -165,11 +174,28 @@ Non-rejection remains inconclusive. P95 does not validate data-dependent change-
     REPRODUCIBILITY.write_text(text, encoding="utf-8")
 
 
+def repair_claim_status() -> None:
+    text = CLAIMS.read_text(encoding="utf-8")
+    text = text.replace(
+        "The current repository contains 91 proposition-level results",
+        "The current repository contains 95 proposition-level results",
+    )
+    text = re.sub(
+        r"\| Current frontier \| P91 is the current Research II theorem frontier \| repository publication status \| .*? \| P90 and earlier propositions remain historical certified frontiers, not current ones \|",
+        "| Current frontier | P95 is the current Research II theorem frontier | repository publication status | [P95 proof](proposition_95_drift_aware_stratified_sign_coherence.md), [P95 provenance](p95_equation_provenance.md), implementation, exact tests, canonical figure, and frontier publication tests | P94 and earlier propositions remain historical certified frontiers, not current ones |",
+        text,
+    )
+    if "| P95 drift-aware stratified rejection |" not in text:
+        text = text.rstrip() + "\n\n| P95 drift-aware stratified rejection | Predeclared regime-specific P94 confidence events can be combined with exact error allocation to reject the joint null that every regime-specific marginal belongs to P75 while allowing arbitrary marginal changes between regimes | repository theorem using P92-P94 geometry, P79 certified logarithms, standard concentration, and a familywise union bound | [P95 proof](proposition_95_drift_aware_stratified_sign_coherence.md), [P95 provenance](p95_equation_provenance.md), implementation, tests, figure | Boundaries and budgets must be predeclared; non-rejection is inconclusive; data-dependent segmentation, consciousness identification, nonphysicality, and a completed physical-to-experiential bridge are not established |\n"
+    CLAIMS.write_text(text, encoding="utf-8")
+
+
 def main() -> None:
     repair_roadmap()
     repair_navigation()
     repair_reproducibility()
-    print("[p95] repaired roadmap, navigation, and reproducibility contracts")
+    repair_claim_status()
+    print("[p95] repaired roadmap, navigation, reproducibility, and status contracts")
 
 
 if __name__ == "__main__":
