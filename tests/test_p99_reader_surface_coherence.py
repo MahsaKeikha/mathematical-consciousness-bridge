@@ -30,6 +30,7 @@ def test_p99_is_current_reader_frontier() -> None:
     plain = _read("website/plain-language.html")
     start = _read("website/start-here.html")
     research = _read("website/research-map.html")
+    implementation = _read("website/implementation.html")
 
     assert 'CURRENT_FRONTIER = "P99"' in verifier
     assert '<!-- current-frontier-home: P99 -->' in home
@@ -58,6 +59,10 @@ def test_p99_is_current_reader_frontier() -> None:
     assert research.index('id="p99-research-map"') < research.index('id="p98-research-map"')
     assert "Current Research II model-audit range: P75-P99." in research
     assert "The current theorem frontier is P99." in research
+    assert "Stage 06 · P73-P99" in implementation
+    assert "P73-P99 build a continuous chain" in implementation
+    assert "current P99 frontier" in implementation
+    assert "P99 aggregates selection-valid fold evidence with exact e-values" in implementation
 
 
 def test_p99_repository_audit_surfaces_are_synchronized() -> None:
