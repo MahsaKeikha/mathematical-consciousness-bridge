@@ -1,107 +1,13 @@
-name: p95-reader-contract-fix
+name: p95-reader-contract-fix-retired
 
 on:
-  push:
-    branches: ["p95-drift-aware-stratified-rejection"]
   workflow_dispatch:
 
 permissions:
-  contents: write
-
-concurrency:
-  group: p95-reader-contract-fix-${{ github.ref }}
-  cancel-in-progress: true
+  contents: read
 
 jobs:
-  fix:
-    if: ${{ !contains(github.event.head_commit.message || '', '[p95-reader-sync]') }}
+  retired:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: p95-drift-aware-stratified-rejection
-          fetch-depth: 0
-      - name: Synchronize remaining P95 reader contracts
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          import re
-
-          root = Path('.')
-
-          def patch(path, replacements):
-              p = root / path
-              text = p.read_text(encoding='utf-8')
-              for old, new in replacements:
-                  text = text.replace(old, new)
-              p.write_text(text.rstrip() + '\n', encoding='utf-8')
-
-          patch('website/visual-atlas.html', (
-              ('<!-- current-frontier-visual: P94 -->', '<!-- current-frontier-visual: P95 -->'),
-          ))
-
-          patch('website/start-here.html', (
-              ('current Research II P93 frontier', 'current Research II P95 frontier'),
-              ('Open all 94 Research II results', 'Open all 95 Research II results'),
-              ('The 93 propositions are the formal theorem record of Research II.', 'The 95 propositions are the formal theorem record of Research II.'),
-              ('P1-P93 build the mathematical conditions', 'P1-P95 build the mathematical conditions'),
-              ('P75-P93 test the declared target-measurement model itself', 'P75-P95 test the declared target-measurement model itself'),
-              ('<span>P75-P93</span><h3>Target-model adequacy</h3>', '<span>P75-P95</span><h3>Target-model adequacy</h3>'),
-              ('P78-P93 develop certified nonlinear separation and its finite-sample handoff', 'P78-P95 develop certified nonlinear separation, dependence control, and drift-aware stratification'),
-          ))
-
-          patch('website/plain-language.html', (
-              ('The current theorem frontier is P94.', 'The current theorem frontier is P95.'),
-              ('94-result Research II theorem program currently reaching P94', '95-result Research II theorem program currently reaching P95'),
-          ))
-
-          research_path = root / 'website/research-map.html'
-          research = research_path.read_text(encoding='utf-8')
-          for old, new in (
-              ('through Proposition 94', 'through Proposition 95'),
-              ('Ninety-four results, one dependency-aware scientific program', 'Ninety-five results, one dependency-aware scientific program'),
-              ('P71-P94 return to the P19 bridge-sufficiency lineage', 'P71-P95 return to the P19 bridge-sufficiency lineage'),
-              ('P75-P94', 'P75-P95'),
-              ('P74-P94 continue', 'P74-P95 continue'),
-              ('P73-P94', 'P73-P95'),
-              ('P71-P94:', 'P71-P95:'),
-              ('P77-P94', 'P77-P95'),
-              ('P94 remains a conditional model-rejection theorem', 'P95 is the current conditional drift-aware model-rejection theorem'),
-              ('Current theorem frontier P94', 'Current theorem frontier P95'),
-              ('index.html#p94-frontier', 'index.html#p95-frontier'),
-              ('P94 extends that localized certificate to declared finite-range dependent sampling under one common marginal law.', 'P94 extends that localized certificate to declared finite-range dependent sampling under one common marginal law, and P95 adds predeclared drift-aware stratification with familywise error control.'),
-              ('culminating in P92 exact global mixed-prevalence distance, the P93 IID finite-sample handoff, and P94 finite-range dependent rejection.', 'culminating in P92 exact global mixed-prevalence distance, the P93 IID finite-sample handoff, P94 finite-range dependent rejection, and P95 drift-aware stratified rejection.'),
-              ('P93 adds localized IID finite-sample sign preservation, and P94 extends that rejection gate to declared finite-range dependence under one common marginal law.', 'P93 adds localized IID finite-sample sign preservation, P94 extends that rejection gate to declared finite-range dependence under one common marginal law, and P95 adds predeclared regime-level drift handling without pooling.'),
-          ):
-              research = research.replace(old, new)
-
-          p95_pattern = re.compile(r'\n<section class="result" id="p95-research-map">.*?</section>\n', re.DOTALL)
-          match = p95_pattern.search(research)
-          if match:
-              p95_block = match.group(0).strip('\n')
-              research = p95_pattern.sub('\n', research, count=1)
-              marker = '<section id="p94-research-map" class="theorem-frontier">'
-              if marker not in research:
-                  raise RuntimeError('P94 research-map anchor missing')
-              research = research.replace(marker, p95_block + '\n\n' + marker, 1)
-          else:
-              raise RuntimeError('P95 research-map block missing')
-
-          research_path.write_text(research.rstrip() + '\n', encoding='utf-8')
-
-          patch('website/research-lineage.html', (
-              ('through P94', 'through P95'),
-              ('P94</strong><span>current theorem frontier', 'P95</strong><span>current theorem frontier'),
-          ))
-          PY
-      - name: Commit reader synchronization
-        run: |
-          if [ -z "$(git status --porcelain)" ]; then
-            echo "Reader contracts already synchronized."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add website/
-          git commit -m "Synchronize remaining P95 reader contracts [p95-reader-sync]"
-          git push origin HEAD:p95-drift-aware-stratified-rejection
+      - run: echo "P95 reader synchronization is complete; this one-time workflow is retired."
