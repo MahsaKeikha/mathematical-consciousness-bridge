@@ -91,9 +91,13 @@ text = text.replace(
 )
 write(path, text)
 
-# Historical P96 links must not point to a removed home-page anchor.
+# Research Map: remove the last P96 current-status card and preserve historical links.
 path = "website/research-map.html"
 text = read(path)
+text = text.replace(
+    "<strong>P96</strong><span>current theorem frontier</span>",
+    "<strong>P97</strong><span>current theorem frontier</span>",
+)
 text = text.replace('href="index.html#p96-frontier"', 'href="visual-atlas.html#p96-frontier"')
 write(path, text)
 
