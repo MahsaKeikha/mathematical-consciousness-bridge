@@ -67,11 +67,8 @@ def test_github_figure_gateway_tracks_p90() -> None:
 def test_visual_atlas_leads_with_p90_before_historical_frontiers() -> None:
     text = VISUAL_ATLAS.read_text(encoding="utf-8")
     p90 = text.index('id="p90-frontier"')
-    p90 = text.index('id="p90-frontier"')
-    p90 = text.index('id="p90-frontier"')
     p89 = text.index('id="p89-frontier"')
     p88 = text.index('id="p88-frontier"')
-    p87 = text.index('id="p87-frontier"')
 
     assert p90 < p89 < p88
     current = text[p90:p89]
