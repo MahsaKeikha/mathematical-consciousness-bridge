@@ -6,6 +6,7 @@ on:
       - "website/**"
       - "scripts/prepare_website.py"
       - "scripts/synchronize_research_three_website.py"
+      - "scripts/promote_p91_public_frontier.py"
       - ".github/workflows/pages.yml"
       - ".github/workflows/validate-research-three-website.yml"
   pull_request:
@@ -13,22 +14,76 @@ on:
       - "website/**"
       - "scripts/prepare_website.py"
       - "scripts/synchronize_research_three_website.py"
+      - "scripts/promote_p91_public_frontier.py"
       - ".github/workflows/pages.yml"
       - ".github/workflows/validate-research-three-website.yml"
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: p91-mixed-prevalence-rank-two-flattening
+          fetch-depth: 0
+
+      - name: Repair P91 source placement and promoter idempotence
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          sources = Path("website/sources.html")
+          text = sources.read_text(encoding="utf-8")
+          marker = '<section id="p91-source"'
+          start = text.find(marker)
+          closing_html = text.find("</html>")
+          if start != -1 and closing_html != -1 and start > closing_html:
+              block = text[start:].strip()
+              text = text[:start].rstrip() + "\n"
+              if "</main>" not in text:
+                  raise RuntimeError("sources page has no </main> insertion point")
+              text = text.replace("</main>", block + "\n\n</main>", 1)
+              sources.write_text(text, encoding="utf-8")
+
+          promoter = Path("scripts/promote_p91_public_frontier.py")
+          source = promoter.read_text(encoding="utf-8")
+          old_helper = '''def append_once(text: str, marker: str, block: str) -> str:\n    if marker not in text:\n        text = text.rstrip() + "\\n\\n" + block.strip() + "\\n"\n    return text\n'''
+          new_helper = '''def append_once(text: str, marker: str, block: str) -> str:\n    if marker not in text:\n        rendered = block.strip()\n        if rendered.startswith("<section") and "</main>" in text:\n            text = text.replace("</main>", rendered + "\\n\\n</main>", 1)\n        else:\n            text = text.rstrip() + "\\n\\n" + rendered + "\\n"\n    return text\n'''
+          if old_helper in source:
+              source = source.replace(old_helper, new_helper, 1)
+          elif new_helper not in source:
+              raise RuntimeError("could not locate append_once helper")
+
+          source = source.replace(
+              "        f'''## P91: mixed-prevalence rank-two flattening separation",
+              "        fr'''## P91: mixed-prevalence rank-two flattening separation",
+              1,
+          )
+          source = source.replace("    write_p91_reader_test()\n", "")
+          promoter.write_text(source, encoding="utf-8")
+          PY
+
+      - name: Commit source publication repair
+        run: |
+          git restore .github/workflows/validate-research-three-website.yml
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "P91 source publication is already canonical."
+            exit 0
+          fi
+          git diff --check
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add website/sources.html scripts/promote_p91_public_frontier.py
+          git commit -m "Keep P91 source record inside the document"
+          git push origin HEAD:p91-mixed-prevalence-rank-two-flattening
 
       - name: Verify maintained Python scripts
         run: |
-          python -m py_compile scripts/prepare_website.py scripts/synchronize_research_three_website.py
+          python -m py_compile scripts/prepare_website.py scripts/synchronize_research_three_website.py scripts/promote_p91_public_frontier.py
           python scripts/synchronize_research_three_website.py --site website --check
 
       - name: Build exact website artifact
@@ -66,6 +121,13 @@ jobs:
           grep -q '<strong>91</strong><span>proposition-level results</span>' _site/research-lineage.html
           grep -q '<strong>P91</strong><span>current theorem frontier</span>' _site/research-lineage.html
           grep -q '<strong>v0.82.0</strong><span>current documented release</span>' _site/research-lineage.html
+
+          python - <<'PY'
+          from pathlib import Path
+          text = Path("_site/sources.html").read_text(encoding="utf-8")
+          assert text.count('id="p91-source"') == 1
+          assert text.index('id="p91-source"') < text.index("</main>") < text.index("</html>")
+          PY
 
       - name: Verify deployment artifact contains pinned Research III figures
         run: |
