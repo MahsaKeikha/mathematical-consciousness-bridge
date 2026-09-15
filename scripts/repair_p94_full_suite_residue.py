@@ -156,6 +156,15 @@ def repair_reader_experience_regressions() -> None:
     write(path, text)
 
 
+def normalize_research_navigation_eof() -> None:
+    path = "docs/research_navigation.md"
+    text = read(path)
+    normalized = text.rstrip("\n") + "\n"
+    write(path, normalized)
+    if read(path).endswith("\n\n"):
+        raise RuntimeError(f"{path}: extra blank line remains at EOF")
+
+
 def verify() -> None:
     roadmap = read("docs/theorem_roadmap.md")
     if any(control in roadmap for control in ("\x0c", "\x0b", "\x07")):
@@ -175,6 +184,8 @@ def verify() -> None:
         raise RuntimeError("reader experience still hard-codes the P93 homepage anchor")
     if 'CURRENT_FRONTIER = "P93"' in reader_test:
         raise RuntimeError("reader experience still hard-codes P93 verifier state")
+    if read("docs/research_navigation.md").endswith("\n\n"):
+        raise RuntimeError("research navigation has an extra blank line at EOF")
 
 
 def main() -> None:
@@ -182,6 +193,7 @@ def main() -> None:
     repair_website_residue()
     repair_p92_reader_regression()
     repair_reader_experience_regressions()
+    normalize_research_navigation_eof()
     verify()
     print("[P94] full-suite migration residue repaired")
 
