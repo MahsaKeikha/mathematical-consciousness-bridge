@@ -57,13 +57,16 @@ on:
       - ".github/workflows/**"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   generate-and-validate:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: p91-mixed-prevalence-rank-two-flattening
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12.14"
@@ -72,8 +75,69 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -e ".[dev]"
           python -m pip install -r requirements-figures.txt
+      - name: Repair residual P91 Start Here wording
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("website/start-here.html")
+          text = path.read_text(encoding="utf-8")
+          replacements = (
+              ("current Research II P90 frontier", "current Research II P91 frontier"),
+              ("Open all 90 Research II results", "Open all 91 Research II results"),
+              ("The 90 propositions are the formal theorem record of Research II", "The 91 propositions are the formal theorem record of Research II"),
+              ("P1-P90 build the mathematical conditions", "P1-P91 build the mathematical conditions"),
+              ("P75-P90 test the declared target-measurement model itself", "P75-P91 test the declared target-measurement model itself"),
+              ("<span>P75-P90</span>", "<span>P75-P91</span>"),
+              ("P78-P90 progressively tighten global separation from the declared continuous model family", "P78-P91 develop certified nonlinear separation from the declared continuous model family"),
+              ("Read P90 theorem", "Read P91 theorem"),
+              ("docs/proposition_90_exact_nonlinear_rank_one_separation.md", "docs/proposition_91_mixed_prevalence_rank_two_flattening_separation.md"),
+              ("You do not need to read 89 Research II proofs in order", "You do not need to read 91 Research II proofs in order"),
+              ("P19 and P71-P90", "P19 and P71-P91"),
+              ("P74-P89", "P74-P91"),
+          )
+          for old, new in replacements:
+              text = text.replace(old, new)
+
+          p90 = '<p><strong>P90 moves beyond that complete linear envelope.</strong> On the strict P75 box, prevalence is fixed at zero, so the active observable law is a single product Bernoulli component and a canonical two-by-two slice must satisfy <strong>ad = bc</strong>. The empirical determinant residual gives a lower radius of <strong>5/72</strong>, and an explicit rational P75 point attains the same full-law distance. Thus <strong>L90 = 5/72 = (7/3)L89</strong>.</p>'
+          p91 = '<p><strong>P91 extends the nonlinear result to arbitrary latent prevalence.</strong> For every two-component P75 law, the declared (X1,X4) versus (X2,X3) 4 by 4 flattening has rank at most two, so every 3 by 3 minor vanishes. On the established empirical witness, exact nonnegative interval certification excludes the closed full-law L-infinity ball of radius <strong>1/42</strong>, while an explicit rational point with prevalence <strong>4/5</strong> lies at distance <strong>1/24</strong>. Thus <strong>1/42 &lt; d_inf(P_emp, M75) &lt;= 1/24</strong>. The upper endpoint is not claimed to be the exact global optimum.</p>'
+          if p91 not in text:
+              if p90 not in text:
+                  raise RuntimeError("P90 historical paragraph anchor not found")
+              text = text.replace(p90, p90 + "\n      " + p91, 1)
+
+          required = (
+              "current Research II P91 frontier",
+              "Open all 91 Research II results",
+              "The 91 propositions are the formal theorem record of Research II",
+              "P1-P91 build the mathematical conditions",
+              "P75-P91 test the declared target-measurement model",
+              "<span>P75-P91</span>",
+              "P91 extends the nonlinear result to arbitrary latent prevalence",
+              "Read P91 theorem",
+              "You do not need to read 91 Research II proofs in order",
+          )
+          missing = [marker for marker in required if marker not in text]
+          if missing:
+              raise RuntimeError(f"P91 Start Here repair incomplete: {missing}")
+
+          path.write_text(text, encoding="utf-8")
+          PY
       - name: Regenerate and synchronize complete visual publication record
         run: python scripts/generate_all_figures.py
+      - name: Commit synchronized Start Here page
+        if: github.event_name == 'pull_request'
+        run: |
+          git show HEAD^:.github/workflows/figures.yml > .github/workflows/figures.yml
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "P91 Start Here is already synchronized."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add website/start-here.html .github/workflows/figures.yml figures docs/figures
+          git commit -m "Synchronize P91 Start Here surface"
+          git push origin HEAD:p91-mixed-prevalence-rank-two-flattening
       - name: Capture publication drift diagnostics
         run: |
           {
