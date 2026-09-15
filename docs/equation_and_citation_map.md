@@ -1313,3 +1313,13 @@ P87 is a conditional model-separation theorem for the declared P75 family. Its e
 - Figure: [`p91_mixed_prevalence_rank_two_flattening_separation.svg`](figures/p91_mixed_prevalence_rank_two_flattening_separation.svg)
 
 The rank-at-most-two implication is standard linear algebra applied to a two-component product mixture. The repository-original content is the selected exact witness, nonnegative 512-vertex interval certificate, and resulting global P75 distance bracket.
+
+## P92 exact global mixed-prevalence distance
+
+- Theorem: [Proposition 92](proposition_92_exact_global_mixed_prevalence_distance.md)
+- Equation provenance: [P92 equation record](p92_equation_provenance.md)
+- Implementation: [`exact_global_mixed_prevalence_distance.py`](../src/consciousness_bridge/exact_global_mixed_prevalence_distance.py)
+- Exact tests: [`test_exact_global_mixed_prevalence_distance.py`](../tests/test_exact_global_mixed_prevalence_distance.py)
+- Figure: [`p92_exact_global_mixed_prevalence_distance.svg`](figures/p92_exact_global_mixed_prevalence_distance.svg)
+
+The two-rank-one determinant identity is elementary linear algebra. The repository-original content is the selected three-minor sign-coherence certificate, exact empirical radii, and matching full-cube distance theorem.

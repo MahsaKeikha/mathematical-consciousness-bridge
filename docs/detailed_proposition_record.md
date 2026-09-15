@@ -1,6 +1,6 @@
 # Detailed proposition record
 
-## Complete P1 to P91 chronology
+## Complete P1 to P92 chronology
 
 This page preserves the proposition-by-proposition development history of the Mathematical Consciousness Bridge research program. It is intentionally separate from the main README so a first-time reader can follow the scientific argument without first learning the internal chronology of the project.
 
@@ -14,7 +14,7 @@ A first-time reader should not read this page as 91 disconnected proposition-lev
 
 ---
 
-## Complete P1 to P91 chronology
+## Complete P1 to P92 chronology
 
 Propositions **P1-P10** establish representation invariance, empirical theory identifiability, observational equivalence, discriminating experiment design, feature sufficiency, canonical bridge completeness, experimental recoverability, finite-error recovery, sample complexity, and robust protocol design.
 
@@ -358,3 +358,15 @@ P91 removes P90's extreme-prevalence restriction. Every two-component P75 law ha
 - Figure: `docs/figures/p91_mixed_prevalence_rank_two_flattening_separation.svg`
 
 The upper endpoint is not claimed to be the exact global optimum. This is a conditional model-separation theorem and does not identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.
+
+## Proposition 92: Exact Global Mixed-Prevalence Distance
+
+P92 closes the P91 full-cube bracket. Three conditional two-by-two determinants on the `X1 = 1` subtensor have nonnegative product for every P75 law. The empirical determinant values are `-1/48`, `1/64`, and `5/192`; their exact sign-stability radii are `1/24`, `3/56`, and `5/72`. Hence every P75 law is at least `1/24` away, and the explicit mixed P91 point attains exactly `1/24`.
+
+- [Proof](proposition_92_exact_global_mixed_prevalence_distance.md)
+- [Equation provenance](p92_equation_provenance.md)
+- Implementation: `src/consciousness_bridge/exact_global_mixed_prevalence_distance.py`
+- Tests: `tests/test_exact_global_mixed_prevalence_distance.py`
+- Figure: `docs/figures/p92_exact_global_mixed_prevalence_distance.svg`
+
+This is a conditional model-separation theorem. It does not identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.

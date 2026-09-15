@@ -1,6 +1,6 @@
 name: figures
 
-# Certified P91 visual publication gate.
+# Certified P92 visual publication gate.
 on:
   workflow_dispatch:
   push:
@@ -13,7 +13,7 @@ on:
       - "scripts/generate_quantum_foundations_atlas.py"
       - "scripts/enrich_figure_documentation.py"
       - "scripts/sync_figure_publication.py"
-      - "scripts/promote_p91_public_frontier.py"
+      - "scripts/promote_p92_public_frontier.py"
       - "scripts/prepare_website.py"
       - "scripts/verify_repository.py"
       - "requirements-figures.txt"
@@ -28,7 +28,7 @@ on:
       - "website/start-here.html"
       - "website/research-map.html"
       - "tests/test_figure_publication_sync.py"
-      - "tests/test_p91_reader_surface_coherence.py"
+      - "tests/test_p92_reader_surface_coherence.py"
       - "pyproject.toml"
       - ".github/workflows/**"
   pull_request:
@@ -39,7 +39,7 @@ on:
       - "scripts/generate_quantum_foundations_atlas.py"
       - "scripts/enrich_figure_documentation.py"
       - "scripts/sync_figure_publication.py"
-      - "scripts/promote_p91_public_frontier.py"
+      - "scripts/promote_p92_public_frontier.py"
       - "scripts/prepare_website.py"
       - "scripts/verify_repository.py"
       - "requirements-figures.txt"
@@ -54,7 +54,7 @@ on:
       - "website/start-here.html"
       - "website/research-map.html"
       - "tests/test_figure_publication_sync.py"
-      - "tests/test_p91_reader_surface_coherence.py"
+      - "tests/test_p92_reader_surface_coherence.py"
       - "pyproject.toml"
       - ".github/workflows/**"
 
@@ -109,16 +109,16 @@ jobs:
             exit 1
           fi
       - name: Run permanent figure publication contract
-        run: python -m pytest -q tests/test_figure_publication_sync.py tests/test_figure_documentation_integrity.py tests/test_p91_reader_surface_coherence.py
+        run: python -m pytest -q tests/test_figure_publication_sync.py tests/test_figure_documentation_integrity.py tests/test_p92_reader_surface_coherence.py
       - name: Build exact-commit website figure artifact
         run: |
           python scripts/prepare_website.py --source website --output _site
-          test -f _site/figures/p91_mixed_prevalence_rank_two_flattening_separation.svg
-          grep -q 'src="figures/p91_mixed_prevalence_rank_two_flattening_separation.svg"' _site/visual-atlas.html
-          grep -q 'src="figures/p91_mixed_prevalence_rank_two_flattening_separation.svg"' _site/index.html
-          python -c "from pathlib import Path; t=Path('_site/index.html').read_text(encoding='utf-8'); r1=t.index('id=\"research-i-overview\"'); p=t.index('id=\"p91-frontier\"'); r3=t.index('id=\"research-iii-overview\"'); paths=t.index('id=\"reader-paths\"'); assert r1 < p < r3 < paths < t.index('id=\"plain-language\"'); assert 'id=\"p88-frontier\"' not in t"
-          python -c "from pathlib import Path; t=Path('_site/visual-atlas.html').read_text(encoding='utf-8'); p91=t.index('id=\"p91-frontier\"'); p90=t.index('id=\"p90-frontier\"'); p89=t.index('id=\"p89-frontier\"'); assert p91 < p90 < p89"
-          python -c "from pathlib import Path; p=Path('_site/plain-language.html').read_text(encoding='utf-8'); s=Path('_site/start-here.html').read_text(encoding='utf-8'); r=Path('_site/research-map.html').read_text(encoding='utf-8'); assert 'id=\"three-stage-progress\"' in p and 'id=\"program-stages\"' in s; assert all(x in p for x in ('Research I','Research II','Research III')); assert all(x in s for x in ('Research I','Research II','Research III')); assert 'P91' in r and '91' in r"
+          test -f _site/figures/p92_exact_global_mixed_prevalence_distance.svg
+          grep -q 'src="figures/p92_exact_global_mixed_prevalence_distance.svg"' _site/visual-atlas.html
+          grep -q 'src="figures/p92_exact_global_mixed_prevalence_distance.svg"' _site/index.html
+          python -c "from pathlib import Path; t=Path('_site/index.html').read_text(encoding='utf-8'); r1=t.index('id=\"research-i-overview\"'); p=t.index('id=\"p92-frontier\"'); r3=t.index('id=\"research-iii-overview\"'); paths=t.index('id=\"reader-paths\"'); assert r1 < p < r3 < paths < t.index('id=\"plain-language\"'); assert 'id=\"p88-frontier\"' not in t"
+          python -c "from pathlib import Path; t=Path('_site/visual-atlas.html').read_text(encoding='utf-8'); p92=t.index('id=\"p92-frontier\"'); p91=t.index('id=\"p91-frontier\"'); p90=t.index('id=\"p90-frontier\"'); assert p92 < p91 < p90"
+          python -c "from pathlib import Path; p=Path('_site/plain-language.html').read_text(encoding='utf-8'); s=Path('_site/start-here.html').read_text(encoding='utf-8'); r=Path('_site/research-map.html').read_text(encoding='utf-8'); assert 'id=\"three-stage-progress\"' in p and 'id=\"program-stages\"' in s; assert all(x in p for x in ('Research I','Research II','Research III')); assert all(x in s for x in ('Research I','Research II','Research III')); assert 'P92' in r and '92' in r"
       - name: Verify repository publication surfaces
         run: python scripts/verify_repository.py
       - name: Upload complete reproduced visual record
@@ -128,12 +128,12 @@ jobs:
           path: |
             docs/figures/quantitative
             docs/figures/quantum
-            docs/figures/p91_mixed_prevalence_rank_two_flattening_separation.svg
+            docs/figures/p92_exact_global_mixed_prevalence_distance.svg
             figures/current_frontier.svg
             figures/README.md
             figures/CURRENT_FRONTIER.md
             figures/manifest.json
-            _site/figures/p91_mixed_prevalence_rank_two_flattening_separation.svg
+            _site/figures/p92_exact_global_mixed_prevalence_distance.svg
             _site/index.html
             _site/plain-language.html
             _site/start-here.html

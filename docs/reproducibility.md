@@ -15,7 +15,7 @@ You do not need every command at once. Choose the route that matches your goal.
 | Regenerate the complete visual record | `make figures` |
 | Inspect CI without installing locally | GitHub Actions |
 
-The current public theorem frontier is **P91**. The formal release remains **v0.82.0**.
+The current public theorem frontier is **P92**. The formal release remains **v0.82.0**.
 
 ---
 
@@ -104,18 +104,18 @@ Use this route when you want to verify the current committed state without regen
 
 ---
 
-## 5. Focused audit of the current P91 frontier
+## 5. Focused audit of the current P92 frontier
 
-The current theorem frontier is **P91**.
+The current theorem frontier is **P92**.
 
 Its direct technical record is:
 
 ```text
-docs/proposition_91_mixed_prevalence_rank_two_flattening_separation.md
-docs/p91_equation_provenance.md
-src/consciousness_bridge/mixed_prevalence_rank_two_flattening_separation.py
-tests/test_mixed_prevalence_rank_two_flattening_separation.py
-docs/figures/p91_mixed_prevalence_rank_two_flattening_separation.svg
+docs/proposition_92_exact_global_mixed_prevalence_distance.md
+docs/p92_equation_provenance.md
+src/consciousness_bridge/exact_global_mixed_prevalence_distance.py
+tests/test_exact_global_mixed_prevalence_distance.py
+docs/figures/p92_exact_global_mixed_prevalence_distance.svg
 figures/manifest.json
 ```
 
@@ -123,7 +123,7 @@ Run the focused theorem and figure-publication checks with:
 
 ```bash
 python -m pytest \
-  tests/test_mixed_prevalence_rank_two_flattening_separation.py \
+  tests/test_exact_global_mixed_prevalence_distance.py \
   tests/test_figure_publication_sync.py \
   tests/test_frontier_publication_consistency.py
 ```
@@ -250,7 +250,7 @@ The validation path checks the generated manifests, SVG parseability, canonical 
 The current frontier figure is:
 
 ```text
-docs/figures/p91_mixed_prevalence_rank_two_flattening_separation.svg
+docs/figures/p92_exact_global_mixed_prevalence_distance.svg
 ```
 
 ---
@@ -361,9 +361,19 @@ For every proposition in chronological order, use the [Detailed Proposition Reco
 ### P91 exact audit command
 
 ```bash
-python -m pytest -q tests/test_mixed_prevalence_rank_two_flattening_separation.py
+python -m pytest -q tests/test_exact_global_mixed_prevalence_distance.py
 python scripts/sync_figure_publication.py --check
 python scripts/verify_repository.py
 ```
 
 The P91 lower certificate uses only exact `Fraction` arithmetic and checks all 512 vertices of the selected nonnegative determinant box.
+
+### P92 exact audit command
+
+```bash
+python -m pytest -q tests/test_exact_global_mixed_prevalence_distance.py
+python scripts/sync_figure_publication.py --check
+python scripts/verify_repository.py
+```
+
+The P92 theorem uses exact `Fraction` arithmetic for all published determinant values, sign radii, factorization checks, and the matching `1/24` upper certificate.

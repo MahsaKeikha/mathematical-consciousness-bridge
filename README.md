@@ -54,9 +54,9 @@ You do **not** need to read the propositions in order to understand the project.
 
 If you want the complete theorem record, including assumptions, proofs, implementations, tests, figures, and scientific boundaries, use the **[Detailed Proposition Record](docs/detailed_proposition_record.md)** or the **[Theorem Roadmap](docs/theorem_roadmap.md)**.
 
-The current public theorem frontier is **P91**. The formal release remains **v0.82.0**.
+The current public theorem frontier is **P92**. The formal release remains **v0.82.0**.
 
-**[Read the current frontier](docs/proposition_91_mixed_prevalence_rank_two_flattening_separation.md)**
+**[Read the current frontier](docs/proposition_92_exact_global_mixed_prevalence_distance.md)**
 
 ---
 
@@ -70,12 +70,11 @@ The current public theorem frontier is **P91**. The formal release remains **v0.
 
 ### Current theorem frontier
 
-![P91 Mixed-Prevalence Rank-Two Flattening Separation](docs/figures/p91_mixed_prevalence_rank_two_flattening_separation.svg)
+![P92 Exact Global Mixed-Prevalence Distance](docs/figures/p92_exact_global_mixed_prevalence_distance.svg)
 
-**Figure 2. P91 mixed-prevalence rank-two flattening separation.** P91 removes P90's extreme-prevalence restriction. For arbitrary latent prevalence, the `(X1,X4)|(X2,X3)` flattening of every two-component P75 law has rank at most two, so all three-by-three minors vanish. The selected empirical minor has determinant exactly `1/512`. Exact nonnegative interval propagation over all 512 determinant-box vertices proves that every law in the closed full-law L-infinity ball of radius `1/42` still has positive selected determinant. An explicit rational P75 point with prevalence `4/5` lies at distance exactly `1/24`. Therefore `1/42 < d_inf(P_emp, M75) <= 1/24` over the full P75 model cube.
+**Figure 2. P92 exact global mixed-prevalence distance.** P92 closes the full-cube P75 distance problem left open by P91. On the observable `X1 = 1` subtensor, three conditional two-by-two determinants of every two-component P75 mixture have a nonnegative sign product. The empirical determinants are exactly `-1/48`, `1/64`, and `5/192`, with exact sign-stability radii `1/24`, `3/56`, and `5/72`. Therefore no P75 law can lie strictly closer than `1/24`. The explicit genuinely mixed rational P75 point from P91 lies exactly at `1/24`, so `d_inf(P_emp, M75) = 1/24` over the complete P75 cube.
 
-P91 is a conditional model-separation theorem. The upper endpoint `1/24` is not claimed to be the exact global optimum. The result does not identify consciousness, establish nonphysicality, validate an alternative theory, or close the physical-to-experiential bridge.
-
+P92 is a conditional model-separation theorem. It does not identify consciousness, establish nonphysicality, validate an alternative theory, or close the physical-to-experiential bridge.
 ## Choose your path
 
 | If you want to... | Start here |
@@ -120,6 +119,6 @@ For scholarly citation, see **[CITATION.md](CITATION.md)** and **[CITATION.cff](
 
 MIT License. See **[LICENSE](LICENSE)**.
 
-**Public theorem frontier:** P91
+**Public theorem frontier:** P92
 **Formal release:** v0.82.0
 **Final bridge from physical description to experience:** open

@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "canonical_root": "docs/figures",
-  "current_frontier": "P91",
-  "current_frontier_figure": "docs/figures/p91_mixed_prevalence_rank_two_flattening_separation.svg",
-  "figure_count": 149,
+  "current_frontier": "P92",
+  "current_frontier_figure": "docs/figures/p92_exact_global_mixed_prevalence_distance.svg",
+  "figure_count": 150,
   "hash_algorithm": "sha256",
   "figures": [
     {
@@ -653,6 +653,14 @@
       "category": "theorem-or-architecture",
       "title": "P91 Mixed-Prevalence Rank-Two Flattening Separation",
       "description_chars": 673
+    },
+    {
+      "path": "docs/figures/p92_exact_global_mixed_prevalence_distance.svg",
+      "sha256": "a93c165574ebdfd44675501bbabe93cb719c49380b8edc167944faa99acc8a76",
+      "bytes": 7276,
+      "category": "theorem-or-architecture",
+      "title": "P92 Exact Global Mixed-Prevalence Distance",
+      "description_chars": 1009
     },
     {
       "path": "docs/figures/physics_mathematics_atlas.svg",
