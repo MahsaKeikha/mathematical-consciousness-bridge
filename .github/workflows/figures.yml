@@ -1,6 +1,6 @@
 name: figures
 
-# Certified P93 visual-publication gate. This workflow is permanently read-only.
+# Certified current-frontier visual-publication gate. This workflow is permanently read-only.
 on:
   workflow_dispatch:
   push:
@@ -11,14 +11,14 @@ on:
       - "docs/**"
       - "figures/**"
       - "website/**"
-      - "src/consciousness_bridge/localized_sign_coherence_rejection.py"
+      - "src/consciousness_bridge/**"
       - "scripts/generate_all_figures.py"
       - "scripts/sync_figure_publication.py"
       - "scripts/prepare_website.py"
       - "scripts/verify_repository.py"
-      - "tests/test_localized_sign_coherence_rejection.py"
+      - "tests/test_*sign_coherence*.py"
       - "tests/test_figure_publication_sync.py"
-      - "tests/test_p93_reader_surface_coherence.py"
+      - "tests/test_frontier_reader_narrative.py"
       - "requirements-figures.txt"
       - ".github/workflows/figures.yml"
   pull_request:
@@ -28,14 +28,14 @@ on:
       - "docs/**"
       - "figures/**"
       - "website/**"
-      - "src/consciousness_bridge/localized_sign_coherence_rejection.py"
+      - "src/consciousness_bridge/**"
       - "scripts/generate_all_figures.py"
       - "scripts/sync_figure_publication.py"
       - "scripts/prepare_website.py"
       - "scripts/verify_repository.py"
-      - "tests/test_localized_sign_coherence_rejection.py"
+      - "tests/test_*sign_coherence*.py"
       - "tests/test_figure_publication_sync.py"
-      - "tests/test_p93_reader_surface_coherence.py"
+      - "tests/test_frontier_reader_narrative.py"
       - "requirements-figures.txt"
       - ".github/workflows/figures.yml"
 
@@ -72,20 +72,29 @@ jobs:
             git diff --stat
             exit 1
           fi
-      - name: Run P93 figure and reader contracts
+      - name: Run current-frontier figure and reader contracts
         run: |
           python -m pytest -q \
             tests/test_localized_sign_coherence_rejection.py \
+            tests/test_finite_range_dependent_sign_coherence.py \
             tests/test_figure_publication_sync.py \
-            tests/test_p93_reader_surface_coherence.py
+            tests/test_frontier_reader_narrative.py \
+            tests/test_reader_documentation_consistency.py \
+            tests/test_research_website_integrity.py
       - name: Build and inspect exact website artifact
         run: |
           rm -rf _site
           python scripts/prepare_website.py --source website --output _site
           python - <<'PY'
+          import json
           from pathlib import Path
 
-          figure = "p93_localized_sign_coherence_rejection.svg"
+          manifest = json.loads(Path("figures/manifest.json").read_text(encoding="utf-8"))
+          frontier = str(manifest["current_frontier"]).lower()
+          frontier_number = int(frontier.removeprefix("p"))
+          previous = f"p{frontier_number - 1}"
+          figure = Path(str(manifest["current_frontier_figure"])).name
+
           home = Path("_site/index.html").read_text(encoding="utf-8")
           atlas = Path("_site/visual-atlas.html").read_text(encoding="utf-8")
           plain = Path("_site/plain-language.html").read_text(encoding="utf-8")
@@ -93,26 +102,26 @@ jobs:
           research = Path("_site/research-map.html").read_text(encoding="utf-8")
 
           assert Path(f"_site/figures/{figure}").is_file()
-          assert home.count('id="p93-frontier"') == 1
-          assert 'id="p92-frontier"' not in home
+          assert home.count(f'id="{frontier}-frontier"') == 1
           assert figure in home
-          assert atlas.index('id="p93-frontier"') < atlas.index('id="p92-frontier"') < atlas.index('id="p91-frontier"')
+          assert atlas.index(f'id="{frontier}-frontier"') < atlas.index(f'id="{previous}-frontier"')
           assert figure in atlas
-          assert "93 results · current frontier P93" in plain
-          assert "93 results · current frontier P93" in start
-          assert plain.count('id="p93-reader-frontier"') == 1
-          assert start.count('id="p93-reader-frontier"') == 1
-          assert research.count('id="p93-research-map"') == 1
-          assert "Current theorem frontier P93" in research
+          phrase = f"{frontier_number} results · current frontier P{frontier_number}"
+          assert phrase in plain
+          assert phrase in start
+          assert plain.count(f'id="{frontier}-reader-frontier"') == 1
+          assert start.count(f'id="{frontier}-reader-frontier"') == 1
+          assert research.count(f'id="{frontier}-research-map"') == 1
+          assert f"Current theorem frontier P{frontier_number}" in research
           for path in sorted(Path("_site").glob("*.html")):
               assert path.read_text(encoding="utf-8").rstrip().endswith("</html>"), path
           PY
-      - name: Upload exact P93 visual record
+      - name: Upload exact current-frontier visual record
         uses: actions/upload-artifact@v4
         with:
-          name: p93-visual-publication-record
+          name: current-frontier-visual-publication-record
           path: |
-            docs/figures/p93_localized_sign_coherence_rejection.svg
             figures/current_frontier.svg
             figures/manifest.json
-            _site/figures/p93_localized_sign_coherence_rejection.svg
+            _site/figures
+          if-no-files-found: error
