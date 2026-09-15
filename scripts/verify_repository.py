@@ -298,6 +298,7 @@ def _assert_visual_atlas_order() -> None:
     p93 = visual_atlas.index('id="p93-frontier"')
     p93 = visual_atlas.index('id="p93-frontier"')
     p93 = visual_atlas.index('id="p93-frontier"')
+    p93 = visual_atlas.index('id="p93-frontier"')
     p92 = visual_atlas.index('id="p92-frontier"')
     p91 = visual_atlas.index('id="p91-frontier"')
     p90 = visual_atlas.index('id="p90-frontier"')
