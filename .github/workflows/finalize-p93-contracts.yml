@@ -44,6 +44,14 @@ jobs:
               "Any P93 claim must preserve one-sided certification and the repository's scientific boundary.",
               "The realized P93 theorem preserves one-sided certification and the repository's scientific boundary.",
           )
+          text = text.replace(
+              "A substantive continuation beyond P92 must close a separately stated mathematical or statistical gap",
+              "A substantive continuation beyond P93 must close a separately stated mathematical or statistical gap",
+          )
+          text = text.replace(
+              "None of P71-P88 identifies a latent variable with consciousness.",
+              "None of P71-P93 identifies a latent variable with consciousness.",
+          )
           path.write_text(text, encoding='utf-8')
           PY
           git checkout -- scripts/finalize_p93_contracts.py
