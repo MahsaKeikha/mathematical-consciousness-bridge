@@ -43,7 +43,7 @@ def replace_once_required(text: str, old: str, new: str, *, label: str) -> str:
 
 
 def regex_replace_once(text: str, pattern: str, replacement: str, *, label: str) -> str:
-    updated, count = re.subn(pattern, lambda _match: replacement, text, count=1, flags=re.S)
+    updated, count = re.subn(pattern, lambda _match: replacement, text, count=1, flags=re.DOTALL)
     if count == 1:
         return updated
     if replacement in text:
@@ -230,7 +230,7 @@ P100 does not make reused observations fresh, permit current-round leakage, vali
 P100 completes the planned P1-P100 theorem sequence for this publication cycle. The next priority is consolidation rather than proposition-number expansion: integrate the dependency chain, exact finite-data checkpoints, selection-validity hierarchy, and anytime-valid P100 capstone into the publication manuscript and preprint. Any later theorem extension should close a newly identified scientific or inferential gap rather than continue numbering for its own sake. The physical-to-experiential bridge remains open.
 '''
     if "## P100: anytime-valid sequential e-process" not in text:
-        text, count = re.subn(old_after, lambda _match: p100_tail, text, count=1, flags=re.S)
+        text, count = re.subn(old_after, lambda _match: p100_tail, text, count=1, flags=re.DOTALL)
         if count != 1:
             raise RuntimeError(f"{path}: failed to replace After P99 tail")
     write(path, text)
@@ -448,7 +448,7 @@ def patch_websites() -> None:
 
     path = "website/visual-atlas.html"
     text = read(path)
-    match = re.search(r'<!-- current-frontier-visual: P99 -->\n(<section id="p99-frontier".*?</section>\n)', text, flags=re.S)
+    match = re.search(r'<!-- current-frontier-visual: P99 -->\n(<section id="p99-frontier".*?</section>\n)', text, flags=re.DOTALL)
     if match:
         p99 = match.group(1).replace("Current theorem frontier · P99", "Previous theorem frontier · P99", 1)
         p99 = p99.replace('class="theorem-frontier current-frontier-visual"', 'class="theorem-frontier"', 1)
@@ -467,7 +467,7 @@ def patch_websites() -> None:
         text = text.replace("P75-P99", "P75-P100")
         text = text.replace("The 99 Research II propositions by scientific role", "The 100 Research II propositions by scientific role")
         if 'id="p100-reader-frontier"' not in text:
-            match = re.search(r'(<section class="boundary" id="p99-reader-frontier">.*?</section>\n)', text, flags=re.S)
+            match = re.search(r'(<section class="boundary" id="p99-reader-frontier">.*?</section>\n)', text, flags=re.DOTALL)
             if not match:
                 raise RuntimeError(f"{path}: P99 reader frontier not found")
             p99 = match.group(1).replace("Research II · Current frontier · P99", "Research II · Previous frontier · P99", 1)
