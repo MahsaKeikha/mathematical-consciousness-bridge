@@ -19,8 +19,7 @@ This zero extra selection penalty is paid for by data separation: pilot data
 are not reused as certification data. The certification observations must still
 satisfy the selected regime-specific P94 assumptions, including a common
 marginal law inside each selected regime and the declared finite dependence
-range. Ordinary splitting of one dependent time series is not automatically an
-independent holdout design.
+range. Ordinary splitting of one dependent time series is not automatically an independent holdout design.
 
 P96 does not validate reuse of certification observations for segmentation,
 unknown within-regime drift, misspecified dependence ranges, model acceptance
