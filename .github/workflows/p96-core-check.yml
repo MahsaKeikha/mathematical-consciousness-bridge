@@ -1,0 +1,30 @@
+name: p96-core-check
+
+on:
+  push:
+    branches: ["p96-selection-valid-holdout-stratification"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -e ".[dev]"
+      - name: Validate P96 mathematical core
+        run: |
+          python -m pytest -q tests/test_selection_valid_holdout_stratification.py tests/test_drift_aware_stratified_sign_coherence.py tests/test_latex_source_integrity.py
+          python -m ruff check src/consciousness_bridge/selection_valid_holdout_stratification.py tests/test_selection_valid_holdout_stratification.py
+          python - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+          ET.parse(Path('docs/figures/p96_selection_valid_holdout_stratification.svg'))
+          print('P96 SVG parses successfully')
+          PY
+          git diff --check
