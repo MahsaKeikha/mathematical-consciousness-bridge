@@ -84,6 +84,15 @@ jobs:
           rm -f .github/workflows/promote-p93-branch.yml
           rm -f scripts/promote_p93_public_frontier.py
           rm -f scripts/fix_p93_publication_contracts.py
+      - name: Canonicalize generated page endings
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          for relative in ('website/plain-language.html', 'website/start-here.html'):
+              path = Path(relative)
+              path.write_text(path.read_text(encoding='utf-8').rstrip() + '\n', encoding='utf-8')
+          PY
       - name: Validate generated patch
         run: |
           git diff --check
