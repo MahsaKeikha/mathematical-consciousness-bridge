@@ -24,8 +24,8 @@ def test_first_reader_surfaces_are_layered_not_archives() -> None:
         "docs/reproducibility.md",
     ):
         assert path in readme
-    assert "91" in start
-    assert "the full 91 proposition index" in navigation
+    assert "92" in start
+    assert "the full 92 proposition index" in navigation
     assert "Detailed Proposition Record" in navigation
     assert "Theorem Roadmap" in navigation
 
@@ -39,24 +39,25 @@ def test_current_frontier_release_and_open_boundary_are_consistent() -> None:
     glossary = _read(DOCS / "glossary.md")
 
     for text in (readme, start, roadmap, navigation, citation, glossary):
-        assert "P91" in text
+        assert "P92" in text
     assert "v0.82.0" in readme
     assert "v0.82.0" in start
     assert "physical-to-experiential bridge" in readme
     assert "Final bridge from physical description to experience:** open" in readme
-    assert "## Current theorem frontier: P91" in citation
+    assert "## Current theorem frontier: P92" in citation
+    assert "P91" in citation
     assert "P90" in citation
     assert "## Historical theorem frontier: P89" in citation
-    assert "## Current theorem frontier: P90" not in citation
-    assert "P91" in glossary
+    assert "## Current theorem frontier: P91" not in citation
+    assert "P92" in glossary
 
 
 def test_complete_proposition_record_is_canonical_archive() -> None:
     detail = _read(DOCS / "detailed_proposition_record.md")
     roadmap = _read(DOCS / "theorem_roadmap.md")
-    assert "Complete P1 to P91 chronology" in detail
-    assert "P1 through P91 with explicit dependency branches" in roadmap
-    for number in range(1, 92):
+    assert "Complete P1 to P92 chronology" in detail
+    assert "P1 through P92 with explicit dependency branches" in roadmap
+    for number in range(1, 93):
         assert list(DOCS.glob(f"proposition_{number}_*.md")), (
             f"missing P{number} proposition document"
         )
@@ -74,6 +75,7 @@ def test_complete_proposition_record_is_canonical_archive() -> None:
         "P89",
         "P90",
         "P91",
+        "P92",
     ):
         assert marker in detail, f"{marker} branch missing from detailed record"
 
@@ -85,10 +87,10 @@ def test_specialist_surfaces_own_specialist_detail() -> None:
     calibration = _read(DOCS / "calibration_optimization_frontier_p61_p70.md")
 
     assert "Complete Figure Catalog" in figures
-    assert "P91" in figures
-    assert "p91_mixed_prevalence_rank_two_flattening_separation.svg" in figures
+    assert "P92" in figures
+    assert "p92_exact_global_mixed_prevalence_distance.svg" in figures
     assert "# Equation and Citation Map" in equations
-    assert "p91_equation_provenance.md" in equations
+    assert "p92_equation_provenance.md" in equations
     assert "bridge hypotheses" in equations
     assert "no experimentally established Theory of Everything" in fundamental
     assert "Proposition 70" in calibration
@@ -96,32 +98,32 @@ def test_specialist_surfaces_own_specialist_detail() -> None:
 
 def test_current_frontier_has_proof_code_test_provenance_and_figure() -> None:
     sources = _read(WEBSITE / "sources.html")
-    assert 'id="p91-source"' in sources
-    assert "P91" in sources
+    assert 'id="p92-source"' in sources
+    assert "P92" in sources
     for token in (
-        "proposition_91_mixed_prevalence_rank_two_flattening_separation.md",
-        "p91_equation_provenance.md",
-        "mixed_prevalence_rank_two_flattening_separation.py",
-        "test_mixed_prevalence_rank_two_flattening_separation.py",
+        "proposition_92_exact_global_mixed_prevalence_distance.md",
+        "p92_equation_provenance.md",
+        "exact_global_mixed_prevalence_distance.py",
+        "test_exact_global_mixed_prevalence_distance.py",
     ):
         assert token in sources
-    assert 'id="p90-source"' in sources
+    assert 'id="p91-source"' in sources
 
 
-def test_overview_orients_to_all_three_research_programs_before_p91() -> None:
+def test_overview_orients_to_all_three_research_programs_before_p92() -> None:
     overview = _read(WEBSITE / "index.html")
     dashboard = overview.index('class="research-dashboard"')
     journey = overview.index('id="project-journey"')
-    p91 = overview.index('id="p91-frontier"')
-    assert dashboard < journey < p91
+    p92 = overview.index('id="p92-frontier"')
+    assert dashboard < journey < p92
     for token in (
         "The whole research program in three stages",
         "Research I · Physical-system identification",
         "58</strong><span>proposition-level statements",
         "Research II · Bridge sufficiency and falsification",
-        "91</strong><span>proposition-level results",
-        "P91 current theorem frontier · v0.82.0",
-        "Explore all 91 results",
+        "92</strong><span>proposition-level results",
+        "P92 current theorem frontier · v0.82.0",
+        "Explore all 92 results",
         "research-map.html",
         "Research III · Consciousness measurement science",
         "measurement-science.html",
@@ -138,13 +140,13 @@ def test_plain_language_and_start_here_are_three_stage_reader_entries() -> None:
     for source in (plain, start):
         for token in ("Research I", "Research II", "Research III"):
             assert token in source
-        assert "91 results · current frontier P91" in source
+        assert "92 results · current frontier P92" in source
         assert "physical-to-experiential bridge" in source
 
     assert 'id="three-stage-progress"' in plain
     assert "What the whole research program is doing" in plain
     assert 'id="program-stages"' in start
-    assert "The 91 Research II propositions by scientific role" in start
+    assert "The 92 Research II propositions by scientific role" in start
     assert "Inside Research II" in start
 
 
@@ -155,8 +157,8 @@ def test_research_lineage_preserves_counts_and_scientific_boundaries() -> None:
         "45</strong><span>reproducible experiments",
         "33</strong><span>scientific result figures",
         "223</strong><span>claim-level tests",
-        "91</strong><span>proposition-level results",
-        "P91</strong><span>current theorem frontier",
+        "92</strong><span>proposition-level results",
+        "P92</strong><span>current theorem frontier",
         "Research III · consciousness measurement science",
         "A recovered subsystem is not automatically a conscious subject",
         "Bridge remains an independently testable open problem",
@@ -164,15 +166,14 @@ def test_research_lineage_preserves_counts_and_scientific_boundaries() -> None:
         assert token in lineage
 
 
-def test_research_map_and_plain_language_use_current_p91_state() -> None:
+def test_research_map_and_plain_language_use_current_p92_state() -> None:
     research_map = _read(WEBSITE / "research-map.html")
     plain = _read(WEBSITE / "plain-language.html")
-    assert "P91" in research_map
-    assert 'id="p91-research-map"' in research_map
-    assert "1/42" in research_map
-    assert "1/24" in research_map
+    assert "P92" in research_map
+    assert 'id="p92-research-map"' in research_map
+    assert "d_inf(P_emp, M75) = 1/24" in research_map
     assert "Research II" in plain
-    assert "current frontier P91" in plain
+    assert "current frontier P92" in plain
     assert "Research III" in plain
 
 
@@ -183,4 +184,4 @@ def test_citation_surface_is_professional_and_current() -> None:
     assert "CITATION.md" in readme
     assert "CITATION.cff" in readme
     assert "Version 0.82.0" in citation
-    assert "current documented frontier, P91" in citation
+    assert "current documented frontier, P92" in citation
