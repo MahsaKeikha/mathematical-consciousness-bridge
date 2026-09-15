@@ -40,11 +40,11 @@ jobs:
       - name: Apply P94 source publication migration
         run: python scripts/promote_p94_public_frontier.py
 
+      - name: Normalize generated P94 migration contracts
+        run: python scripts/fix_p94_generated_contracts.py
+
       - name: Finalize P94 publication contracts
         run: python scripts/finalize_p94_publication.py
-
-      - name: Repair generated P94 contracts
-        run: python scripts/fix_p94_generated_contracts.py
 
       - name: Regenerate canonical visual publication record
         run: python scripts/generate_all_figures.py
