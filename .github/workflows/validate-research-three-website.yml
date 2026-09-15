@@ -90,9 +90,13 @@ jobs:
           assert "P91 is the current checkpoint, not the destination" in plain
 
           research = Path("_site/research-map.html").read_text(encoding="utf-8")
+          summary = "P89 closes the complete real linear parity-functional class, P90 adds exact nonlinear single-component separation, and P91 extends nonlinear separation to arbitrary latent mixing through a rank-two flattening certificate."
           assert "Ninety-one results, one dependency-aware scientific program" in research
           assert "Current Research II model-audit range: P75-P91." in research
-          assert research.index('id="p90-research-map"') < research.index('id="p91-research-map"') < research.index("</main>")
+          assert research.count(summary) == 1
+          assert research.index('id="p90-research-map"') < research.index('id="p91-research-map"') < research.index("</main>") < research.index("</html>")
+          assert "Current exact frontier · P87" not in research
+          assert "Current continuous-model frontier" not in research
           PY
 
       - name: Verify deployment artifact contains pinned figures
