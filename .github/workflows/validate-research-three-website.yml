@@ -4,115 +4,105 @@ on:
   push:
     paths:
       - "website/**"
-      - "docs/**"
-      - "CITATION.md"
+      - "scripts/prepare_website.py"
+      - "scripts/synchronize_research_three_website.py"
+      - ".github/workflows/pages.yml"
+      - ".github/workflows/validate-research-three-website.yml"
+  pull_request:
+    paths:
+      - "website/**"
+      - "scripts/prepare_website.py"
+      - "scripts/synchronize_research_three_website.py"
+      - ".github/workflows/pages.yml"
       - ".github/workflows/validate-research-three-website.yml"
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  normalize:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: p91-mixed-prevalence-rank-two-flattening
-          fetch-depth: 0
 
-      - name: Normalize final P91 publication surfaces
+      - name: Verify maintained Python scripts
+        run: |
+          python -m py_compile scripts/prepare_website.py scripts/synchronize_research_three_website.py
+          python scripts/synchronize_research_three_website.py --site website --check
+
+      - name: Build exact website artifact
+        run: |
+          rm -rf website-deploy _site
+          cp -a website website-deploy
+          python scripts/prepare_website.py --source website-deploy --output _site
+
+      - name: Verify Research II and Research III identity
+        run: |
+          R3_PIN="$(python -c 'from scripts.synchronize_research_three_website import CURRENT_RESEARCH_THREE_PIN; print(CURRENT_RESEARCH_THREE_PIN)')"
+
+          test "$(grep -o '<!-- current-frontier-home: P91 -->' _site/index.html | wc -l)" -eq 1
+          test "$(grep -o 'id=\"p91-frontier\"' _site/index.html | wc -l)" -eq 1
+          grep -q 'Current record:</strong> 91 proposition-level results through P91' _site/index.html
+          grep -q 'all 91 propositions' _site/index.html
+
+          grep -q 'Research III · Consciousness Measurement Science' _site/measurement-science.html
+          grep -q 'Implemented now versus not yet established' _site/measurement-science.html
+          grep -q 'CEP JSON schema' _site/measurement-science.html
+          grep -q 'Claim JSON schema' _site/measurement-science.html
+          grep -q 'Assumption registry' _site/measurement-science.html
+          grep -q 'Failure-mode registry' _site/measurement-science.html
+          grep -q 'Software and reproducibility' _site/measurement-science.html
+          grep -q '34</strong><span>tests in each CI job' _site/measurement-science.html
+          grep -q 'dependence-robust partial identification with sharp Fr&eacute;chet-Hoeffding bounds' _site/measurement-science.html
+          grep -q '<strong>Two implemented fusion regimes:</strong>' _site/measurement-science.html
+          grep -q 'An interval as wide as <code>\[0,1\]</code> is a valid scientific result' _site/measurement-science.html
+          grep -q 'docs/partial-identification.md' _site/measurement-science.html
+          ! grep -q 'planned by the roadmap' _site/measurement-science.html
+          ! grep -q '23</strong><span>tests in each CI job' _site/measurement-science.html
+          grep -q "research-three-snapshot: ${R3_PIN}" _site/measurement-science.html
+
+          grep -q "${R3_PIN}" _site/research-lineage.html
+          grep -q '<strong>91</strong><span>proposition-level results</span>' _site/research-lineage.html
+          grep -q '<strong>P91</strong><span>current theorem frontier</span>' _site/research-lineage.html
+          grep -q '<strong>v0.82.0</strong><span>current documented release</span>' _site/research-lineage.html
+
+      - name: Verify P91 reader coherence
         run: |
           python - <<'PY'
           from pathlib import Path
 
-          def read(path):
-              return Path(path).read_text(encoding="utf-8")
+          atlas = Path("_site/visual-atlas.html").read_text(encoding="utf-8")
+          p91 = atlas.index('id="p91-frontier"')
+          p90 = atlas.index('id="p90-frontier"')
+          p89 = atlas.index('id="p89-frontier"')
+          assert p91 < p90 < p89
+          assert "<!-- current-frontier-visual: P91 -->" in atlas
 
-          def write(path, text):
-              Path(path).write_text(text, encoding="utf-8")
+          start = Path("_site/start-here.html").read_text(encoding="utf-8")
+          assert "91 results · current frontier P91" in start
+          assert "Open all 91 Research II results" in start
+          assert "P91 extends the nonlinear result to arbitrary latent prevalence" in start
+          assert "Read P91 theorem" in start
 
-          path = "CITATION.md"
-          text = read(path)
-          stale = (
-              "## Current theorem frontier: P91\n\n"
-              "The current documented theorem frontier is **P90**, an exact nonlinear rank-one slice separation theorem for the declared strict P75 box.\n\n"
-              "- Proof: [`proposition_90_exact_nonlinear_rank_one_separation.md`](docs/proposition_90_exact_nonlinear_rank_one_separation.md)\n"
-              "- Equation provenance: [`p90_equation_provenance.md`](docs/p90_equation_provenance.md)\n"
-              "- Implementation: [`exact_nonlinear_rank_one_separation.py`](src/consciousness_bridge/exact_nonlinear_rank_one_separation.py)\n"
-              "- Exact tests: [`test_exact_nonlinear_rank_one_separation.py`](tests/test_exact_nonlinear_rank_one_separation.py)\n\n"
-              "P90 is a conditional model-separation result. It does not identify consciousness or establish nonphysicality.\n\n"
-          )
-          text = text.replace(stale, "")
-          write(path, text)
+          plain = Path("_site/plain-language.html").read_text(encoding="utf-8")
+          assert "This is the 91-result Research II theorem program currently reaching P91." in plain
+          assert "P91 is the current checkpoint, not the destination" in plain
 
-          path = "docs/claim_source_matrix.md"
-          text = read(path).replace(
-              "| Current frontier | P91 is the current Research II theorem frontier | repository publication status | [P90 proof](proposition_90_exact_nonlinear_rank_one_separation.md), implementation, tests, provenance, figure, and frontier publication tests | P89, P88, P87, and earlier propositions remain historical certified frontiers, not current ones |",
-              "| Current frontier | P91 is the current Research II theorem frontier | repository publication status | [P91 proof](proposition_91_mixed_prevalence_rank_two_flattening_separation.md), [P91 provenance](p91_equation_provenance.md), implementation, exact tests, figure, and frontier publication tests | P90 and earlier propositions remain historical certified frontiers, not current ones |",
-          )
-          write(path, text)
-
-          path = "website/research-map.html"
-          text = read(path)
-          replacements = (
-              ('content="Scientific dependency map of the Mathematical Consciousness Bridge through Proposition 88."', 'content="Scientific dependency map of the Mathematical Consciousness Bridge through Proposition 91."'),
-              ('<h1>Eighty-eight results, one dependency-aware scientific program</h1>', '<h1>Ninety-one results, one dependency-aware scientific program</h1>'),
-              ('<p class="eyebrow">Current exact frontier · P87</p>', '<p class="eyebrow">Historical exact frontier · P87</p>'),
-              ('<strong>Current Research II model-audit range: P75-P90.</strong>', '<strong>Current Research II model-audit range: P75-P91.</strong>'),
-              ('<a href="index.html#p90-frontier">Current frontier</a>', '<a href="visual-atlas.html#p90-frontier">Historical P90 figure</a>'),
-          )
-          for old, new in replacements:
-              text = text.replace(old, new)
-          p90_start = text.find('<section id="p90-research-map"')
-          html_end = text.find('</html>')
-          if p90_start != -1 and html_end != -1 and p90_start > html_end:
-              trailing = text[p90_start:].strip()
-              text = text[:p90_start].rstrip() + "\n"
-              if "</main>" not in text:
-                  raise RuntimeError("Research Map has no </main> insertion point")
-              text = text.replace("</main>", trailing + "\n\n</main>", 1)
-          write(path, text)
-
-          path = "website/visual-atlas.html"
-          text = read(path).replace(
-              '<!-- current-frontier-visual: P90 -->',
-              '<!-- current-frontier-visual: P91 -->',
-          )
-          write(path, text)
-
-          path = "website/plain-language.html"
-          text = read(path).replace(
-              "A 90-result sufficiency and falsification architecture",
-              "A 91-result sufficiency and falsification architecture",
-          )
-          write(path, text)
-
-          path = "docs/theorem_roadmap.md"
-          text = read(path)
-          text = text.replace(
-              "## After P91\n\nP89 closes the complete **linear** parity-functional class on the eleven declared parity coordinates. A future P92 claim should therefore address a different gap, such as nonlinear joint parity constraints, additional observable families, or a tighter use of the nonlinear P75 image, and must include a certificate not already implied by P89.",
-              "## Beyond the complete P89 linear frontier\n\nP89 closes the complete **linear** parity-functional class on the eleven declared parity coordinates. P90 and P91 move beyond that closure by using nonlinear algebraic structure of the declared P75 model image.",
-              1,
-          )
-          text = text.replace(
-              "## After P91\n\nA future P91 result should address nonlinear structure beyond the single-component boundary case, for example nonzero latent mixing where rank-one slice identities no longer hold directly.",
-              "## From P90 to P91\n\nP91 addresses the nonlinear structure left open by P90's single-component boundary case by allowing nonzero latent mixing and using a rank-two bipartite flattening constraint.",
-              1,
-          )
-          write(path, text)
+          research = Path("_site/research-map.html").read_text(encoding="utf-8")
+          assert "Ninety-one results, one dependency-aware scientific program" in research
+          assert "Current Research II model-audit range: P75-P91." in research
+          assert research.index('id="p90-research-map"') < research.index('id="p91-research-map"') < research.index("</main>")
           PY
 
-      - name: Commit publication normalization
+      - name: Verify deployment artifact contains pinned figures
         run: |
-          git restore .github/workflows/validate-research-three-website.yml
-          if [ -z "$(git status --porcelain)" ]; then
-            echo "P91 publication surfaces already normalized."
-            exit 0
-          fi
-          git diff --check
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add CITATION.md docs/claim_source_matrix.md docs/theorem_roadmap.md website/research-map.html website/visual-atlas.html website/plain-language.html
-          git commit -m "Normalize final P91 publication surfaces"
-          git push origin HEAD:p91-mixed-prevalence-rank-two-flattening
+          R3_PIN="$(python -c 'from scripts.synchronize_research_three_website import CURRENT_RESEARCH_THREE_PIN; print(CURRENT_RESEARCH_THREE_PIN)')"
+          grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/measurement_architecture.svg" _site/measurement-science.html
+          grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/claim_ladder.svg" _site/measurement-science.html
+          grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/structural_measurement_pipeline.svg" _site/measurement-science.html
+          test -f _site/figures/p91_mixed_prevalence_rank_two_flattening_separation.svg
+          node --check _site/app.js
+
+      - name: Verify clean generated surface
+        run: git diff --check
