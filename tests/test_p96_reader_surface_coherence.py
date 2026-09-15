@@ -23,22 +23,22 @@ def test_p96_formal_record_is_complete() -> None:
         assert (ROOT / path).is_file()
 
 
-def test_p96_is_immediate_reader_predecessor_of_p97() -> None:
+def test_p96_remains_below_p97_and_p98() -> None:
     verifier = _read("scripts/verify_repository.py")
     atlas = _read("website/visual-atlas.html")
     plain = _read("website/plain-language.html")
     start = _read("website/start-here.html")
     research = _read("website/research-map.html")
 
-    assert 'CURRENT_FRONTIER = "P97"' in verifier
+    assert 'CURRENT_FRONTIER = "P98"' in verifier
+    assert atlas.index('id="p98-frontier"') < atlas.index('id="p97-frontier"')
     assert atlas.index('id="p97-frontier"') < atlas.index('id="p96-frontier"')
     assert atlas.index('id="p96-frontier"') < atlas.index('id="p95-frontier"')
-    assert "Previous theorem frontier · P96" in atlas
     assert 'id="p96-reader-frontier"' in plain
     assert 'id="p96-reader-frontier"' in start
     assert 'id="p96-research-map"' in research
+    assert research.index('id="p98-research-map"') < research.index('id="p97-research-map"')
     assert research.index('id="p97-research-map"') < research.index('id="p96-research-map"')
-    assert research.index('id="p96-research-map"') < research.index('id="p95-research-map"')
 
 
 def test_p96_repository_audit_surfaces_preserve_history() -> None:
@@ -54,6 +54,7 @@ def test_p96_repository_audit_surfaces_preserve_history() -> None:
     assert "p96_selection_valid_holdout_stratification.svg" in navigation
     assert "P96" in citation
     assert "P97" in readme and "P97" in roadmap and "P97" in navigation
+    assert "P98" in readme and "P98" in roadmap and "P98" in navigation
 
 
 def test_p96_scientific_boundary_is_visible_on_historical_surfaces() -> None:
