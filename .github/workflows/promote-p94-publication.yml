@@ -84,6 +84,11 @@ jobs:
         run: |
           test -z "$(git diff --name-only -- .github/workflows)"
 
+      - name: Require promotion checkout is still branch head
+        run: |
+          git fetch origin p94-finite-range-dependent-sign-coherence
+          test "$(git rev-parse HEAD)" = "$(git rev-parse origin/p94-finite-range-dependent-sign-coherence)"
+
       - name: Commit exact promoted state
         run: |
           git config user.name "github-actions[bot]"
