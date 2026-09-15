@@ -47,3 +47,5 @@ jobs:
           fi
           git commit -m "Promote P92 public frontier"
           git push origin HEAD:p92-exact-global-mixed-distance
+
+# Branch-only retrigger marker. Delete this workflow before merge.
