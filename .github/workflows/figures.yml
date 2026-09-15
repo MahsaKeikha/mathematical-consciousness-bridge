@@ -107,6 +107,22 @@ jobs:
               ('<strong>Research II</strong><span>90 results · current frontier P90</span>', '<strong>Research II</strong><span>91 results · current frontier P91</span>'),
               ('The 90 Research II propositions by scientific role', 'The 91 Research II propositions by scientific role'),
           ))
+          replace("website/sources.html", (
+              ('Current theorem source · P90', 'Previous theorem source · P90'),
+              ('Current theorem source record · P91', 'Current theorem source · P91'),
+          ))
+          replace("docs/claim_source_matrix.md", (
+              ('The current repository contains 90 proposition-level results', 'The current repository contains 91 proposition-level results'),
+              ('P90 is the current Research II theorem frontier', 'P91 is the current Research II theorem frontier'),
+              ('audited by P75-P90', 'audited by P75-P91'),
+          ))
+          replace("docs/glossary.md", (
+              ('current public frontier is **P90**', 'current public frontier is **P91**'),
+              ('Current public frontier is **P90**', 'Current public frontier is **P91**'),
+          ))
+          replace("docs/detailed_proposition_record.md", (
+              ('90 disconnected proposition-level results', '91 disconnected proposition-level results'),
+          ))
           PY
           python scripts/generate_all_figures.py
       - name: Commit synchronized P91 publication state to PR branch
