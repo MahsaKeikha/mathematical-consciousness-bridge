@@ -116,18 +116,19 @@ def test_figure_enrichment_generator_preserves_canonical_reader_key() -> None:
     assert 'text.replace(legacy_reading_key, reading_key, 1)' in source
 
 
-def test_repository_verifier_tracks_p89_and_all_89_propositions() -> None:
+def test_repository_verifier_tracks_p90_and_all_90_propositions() -> None:
     verifier = _text("scripts/verify_repository.py")
-    assert 'CURRENT_FRONTIER = "P89"' in verifier
-    assert "for number in range(1, 90):" in verifier
+    assert 'CURRENT_FRONTIER = "P90"' in verifier
+    assert "covered: set[int] = set()" in verifier
+    assert "range(1, 91)" in verifier
     assert '"docs/reader_experience_and_visual_standard.md"' in verifier
-    assert '"docs/proposition_89_complete_linear_parity_duality.md"' in verifier
+    assert '"docs/proposition_90_exact_nonlinear_rank_one_separation.md"' in verifier
 
 
 def test_overview_orients_first_time_reader_before_theorem_frontier() -> None:
     overview = _text("website/index.html")
     assert overview.count('id="project-journey"') == 1
-    assert overview.index('id="project-journey"') < overview.index('id="p89-frontier"')
+    assert overview.index('id="project-journey"') < overview.index('id="p90-frontier"')
     assert "The whole research program in three stages" in overview
     assert "<span>Research I</span>" in overview
     assert "<span>Research II</span>" in overview

@@ -4,7 +4,7 @@
 
 This page is an index, not another chapter. If you are still learning the overall story, go one layer up to the **[Research Map](research_map.md)**.
 
-The current documented theorem frontier is **P89**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains open.
+The current documented theorem frontier is **P90**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains open.
 
 ---
 
@@ -89,13 +89,13 @@ Then follow P72 through P74 in the [Detailed Proposition Record](detailed_propos
 
 **Question:** Can the declared model of the target and its measurement actually reproduce the observations, or can it be rejected under its own assumptions?
 
-**Results:** P75 through P89
+**Results:** P75 through P90
 
 This branch moves from model adequacy to rejection with finite data, separation from the complete declared model set, certified bounds for continuous families, and increasingly strong exact tests that preserve shared parameters.
 
 **Start with:** [P75: Target Model Adequacy](proposition_75_target_model_adequacy_overidentification.md)
 
-**Current frontier:** [P89: Complete Linear Parity Functional Duality Certificate](proposition_89_complete_linear_parity_duality.md)
+**Current frontier:** [P90: Exact Nonlinear Rank-One Slice Separation](proposition_90_exact_nonlinear_rank_one_separation.md)
 
 ---
 
@@ -140,8 +140,8 @@ The [Detailed Proposition Record](detailed_proposition_record.md) is the complet
 | --- | --- |
 | Physics | [Research Map](research_map.md) → [Technical Research Architecture](research_architecture.md) → [Quantum branch](quantum_foundations_and_bridge_test.md) |
 | Mathematics | [Research Map](research_map.md) → [Theorem Roadmap](theorem_roadmap.md) → proposition proofs |
-| Statistics and inference | [P19](proposition_19_fundamental_physical_sufficiency.md) → P20 through P24 → P74 through P89 via [Detailed Proposition Record](detailed_proposition_record.md) |
-| Consciousness science | [Bridge Problem](bridge_problem.md) → [Falsification Program](falsification_program.md) → P71 through P89 |
+| Statistics and inference | [P19](proposition_19_fundamental_physical_sufficiency.md) → P20 through P24 → P74 through P90 via [Detailed Proposition Record](detailed_proposition_record.md) |
+| Consciousness science | [Bridge Problem](bridge_problem.md) → [Falsification Program](falsification_program.md) → P71 through P90 |
 | Software and reproducibility | [Reproducibility Guide](reproducibility.md) → [`src/`](../src/) → [`tests/`](../tests/) |
 | Visual learner | [Figure Catalog](figure_catalog.md) → [Visual Atlas](../website/visual-atlas.html) |
 
@@ -149,7 +149,7 @@ The [Detailed Proposition Record](detailed_proposition_record.md) is the complet
 
 ## Where the complete detail lives
 
-This page intentionally does **not** duplicate the full 89 proposition index.
+This page intentionally does **not** duplicate the full 90 proposition index.
 
 Use:
 
@@ -166,3 +166,18 @@ That separation is deliberate: each page should have one job.
 **One layer up:** [Research Map](research_map.md)
 **Formal dependency layer:** [Theorem Roadmap](theorem_roadmap.md)
 **Complete theorem archive:** [Detailed Proposition Record](detailed_proposition_record.md)
+
+## P90 current frontier
+
+For P90:
+
+| What you want | Direct link |
+| --- | --- |
+| The theorem and proof | [P90 proposition](proposition_90_exact_nonlinear_rank_one_separation.md) |
+| Equation and method provenance | [P90 provenance](p90_equation_provenance.md) |
+| Implementation | [`exact_nonlinear_rank_one_separation.py`](../src/consciousness_bridge/exact_nonlinear_rank_one_separation.py) |
+| Regression tests | [`test_exact_nonlinear_rank_one_separation.py`](../tests/test_exact_nonlinear_rank_one_separation.py) |
+| Figure | [P90 nonlinear rank-one certificate](figures/p90_exact_nonlinear_rank_one_separation.svg) |
+| Repository reproduction | [Reproducibility Guide](reproducibility.md) |
+
+P90 is a conditional model-separation result for the declared strict P75 box. It uses nonlinear model-image structure but does not identify the latent state with consciousness, establish nonphysicality, or close the physical-to-experiential bridge.

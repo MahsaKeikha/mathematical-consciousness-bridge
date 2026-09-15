@@ -1,10 +1,9 @@
-"""Synchronize public figure surfaces with the canonical ``docs/figures`` tree.
+"""Synchronize public figure surfaces with the canonical docs/figures tree.
 
-The canonical SVG archive lives in ``docs/figures``. This command derives the
-GitHub-facing figure gateway, SHA-256 manifest, current-frontier documentation,
-and stable current-frontier SVG from the repository verifier's declared
-frontier. Reader-facing website promotion is delegated to the matching P89
-publication script so one frontier declaration drives every public surface.
+The synchronizer is frontier-generic. It reads the repository verifier's
+CURRENT_FRONTIER declaration, derives the complete visual gateway from the
+canonical SVG archive, and validates the balanced Research I, II, III reader
+surfaces without running an older frontier promoter.
 """
 
 from __future__ import annotations
@@ -13,8 +12,6 @@ import argparse
 import hashlib
 import json
 import re
-import subprocess
-import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
@@ -24,7 +21,6 @@ GATEWAY = ROOT / "figures"
 HOME = ROOT / "website" / "index.html"
 VISUAL_ATLAS = ROOT / "website" / "visual-atlas.html"
 VERIFIER = ROOT / "scripts" / "verify_repository.py"
-PROMOTER = ROOT / "scripts" / "promote_p89_public_frontier.py"
 FRONTIER_RE = re.compile(r'^CURRENT_FRONTIER = "P(?P<number>\d+)"$', re.MULTILINE)
 
 
@@ -57,7 +53,9 @@ def _frontier_records(start: int, stop: int) -> list[dict[str, str | int]]:
                 "number": number,
                 "figure": figure.relative_to(ROOT).as_posix(),
                 "proposition": proposition.relative_to(ROOT).as_posix(),
-                "provenance": provenance.relative_to(ROOT).as_posix() if provenance.is_file() else "",
+                "provenance": provenance.relative_to(ROOT).as_posix()
+                if provenance.is_file()
+                else "",
             }
         )
     return records
@@ -69,7 +67,11 @@ def _svg_metadata(path: Path) -> tuple[str, str]:
     title = root.find("svg:title", namespace)
     description = root.find("svg:desc", namespace)
     title_text = "" if title is None or title.text is None else " ".join(title.text.split())
-    description_text = "" if description is None or description.text is None else " ".join(description.text.split())
+    description_text = (
+        ""
+        if description is None or description.text is None
+        else " ".join(description.text.split())
+    )
     return title_text, description_text
 
 
@@ -158,57 +160,99 @@ theorem, assumptions, data provenance, tests, and declared evidence class.
 """
 
 
+def _frontier_summary(frontier: int) -> list[str]:
+    if frontier == 89:
+        return [
+            "### Exact P89 complete-linear witness",
+            "",
+            "P89 closes every real linear functional of the eleven canonical parity coordinates on the declared strict box.",
+            "",
+            "```text",
+            "L88 = 1/64 < L89 = 5/168",
+            "```",
+            "",
+        ]
+    if frontier == 90:
+        return [
+            "### Exact P90 nonlinear rank-one witness",
+            "",
+            "P90 moves beyond the complete P89 linear envelope. On the strict box, prevalence is fixed at zero, so the selected two-by-two product-law slice must satisfy ad = bc. Matching exact rational lower and upper certificates prove:",
+            "",
+            "```text",
+            "L89 = 5/168 < L90 = 5/72",
+            "L90 / L89 = 7/3",
+            "empirical determinant residual = 5/192",
+            "```",
+            "",
+            "The theorem is exact only for the declared strict single-component P75 box. It does not identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.",
+            "",
+        ]
+    return []
+
+
 def _frontier_page(frontier: int) -> str:
     records = _frontier_records(71, frontier)
     current = records[-1]
     lines = [
-        f"# Current visual frontier: P71-P{frontier}", "",
+        f"# Current visual frontier: P71-P{frontier}",
+        "",
         "This page is generated from the canonical proposition and figure tree.",
-        "It is the compact GitHub-facing visual route through the current target-side branch.", "",
-        f"## Current theorem frontier: P{frontier}", "",
-        f"![P{frontier} current theorem frontier](../{current['figure']})", "",
-        f"[Read Proposition {frontier}](../{current['proposition']})", "",
-        f"[Open P{frontier} equation provenance](../docs/p{frontier}_equation_provenance.md)", "",
+        "It is the compact GitHub-facing visual route through the current target-side branch.",
+        "",
+        f"## Current theorem frontier: P{frontier}",
+        "",
+        f"![P{frontier} current theorem frontier](../{current['figure']})",
+        "",
+        f"[Read Proposition {frontier}](../{current['proposition']})",
+        "",
+        f"[Open P{frontier} equation provenance](../docs/p{frontier}_equation_provenance.md)",
+        "",
     ]
-    if frontier == 89:
-        lines.extend([
-            "### Exact P89 complete-linear witness", "",
-            "P89 removes both the finite coefficient-radius restriction and the exactly-four-observable support restriction. It considers every real linear functional of all eleven canonical P83 parity coordinates and proves the exact optimum by matching rational lower and upper certificates:", "",
-            "```text",
-            "L88 = 1/64 < L89 = 5/168",
-            "all real coefficient vectors c in R^11 except zero",
-            "matching zero-mass perturbation radius = 5/168",
-            "```", "",
-            "The strict P89 direction is `(0, -2, -1, 1, 1, 1, -2, -1, -3, 2, -3)`, with empirical value `-13/6`, exact P75 interval `[-51/8, -3]`, gap `5/6`, and centered norm `28`.", "",
-            "This is complete only for the declared real linear parity-functional class. It does not identify a latent state with conscious experience or exhaust nonlinear P75 constraints.", "",
-        ])
-    lines.extend([
-        f"## P71-P{frontier} canonical theorem-figure index", "",
-        "| Proposition | Canonical figure | Proof | Provenance |",
-        "| --- | --- | --- | --- |",
-    ])
+    lines.extend(_frontier_summary(frontier))
+    lines.extend(
+        [
+            f"## P71-P{frontier} canonical theorem-figure index",
+            "",
+            "| Proposition | Canonical figure | Proof | Provenance |",
+            "| --- | --- | --- | --- |",
+        ]
+    )
     for record in records:
-        provenance = f"[equations](../{record['provenance']})" if record["provenance"] else "N/A"
+        provenance = (
+            f"[equations](../{record['provenance']})" if record["provenance"] else "N/A"
+        )
         lines.append(
             f"| P{record['number']} | [figure](../{record['figure']}) | "
             f"[proof](../{record['proposition']}) | {provenance} |"
         )
-    lines.extend([
-        "", "## Reproduce the visual record", "", "```bash",
-        "python scripts/generate_all_figures.py",
-        "python scripts/sync_figure_publication.py --check",
-        "python scripts/verify_repository.py", "```", "",
-        "The complete machine-readable SHA-256 inventory is in [`manifest.json`](manifest.json).", "",
-        "## Interpretation boundary", "",
-        f"P71-P{frontier} strengthens the methodology for testing a declared physical-to-target model. It does not derive consciousness from physics, prove nonphysicality, or close the physical-to-experiential bridge.", "",
-    ])
+    lines.extend(
+        [
+            "",
+            "## Reproduce the visual record",
+            "",
+            "```bash",
+            "python scripts/generate_all_figures.py",
+            "python scripts/sync_figure_publication.py --check",
+            "python scripts/verify_repository.py",
+            "```",
+            "",
+            "The complete machine-readable SHA-256 inventory is in [`manifest.json`](manifest.json).",
+            "",
+            "## Interpretation boundary",
+            "",
+            f"P71-P{frontier} strengthens the methodology for testing a declared physical-to-target model. It does not derive consciousness from physics, prove nonphysicality, or close the physical-to-experiential bridge.",
+            "",
+        ]
+    )
     return "\n".join(lines)
 
 
 def _docs_figure_readme(frontier: int) -> str:
     current = _one_match(f"p{frontier}_*.svg", root=DOC_FIGURES)
     recent = _frontier_records(max(71, frontier - 3), frontier)
-    recent_lines = "\n".join(f"- `{Path(record['figure']).name}`" for record in recent)
+    recent_lines = "\n".join(
+        f"- `{Path(record['figure']).name}`" for record in recent
+    )
     return f"""# Figure provenance and regeneration
 
 `docs/figures/` is the canonical visual archive for the Mathematical
@@ -305,44 +349,42 @@ def _check_expected(expected: dict[Path, str | bytes]) -> None:
 
 
 def _check_reader_surfaces(frontier: int) -> None:
-    if frontier != 89:
-        return
     home = HOME.read_text(encoding="utf-8")
     atlas = VISUAL_ATLAS.read_text(encoding="utf-8")
     plain = (ROOT / "website" / "plain-language.html").read_text(encoding="utf-8")
     start = (ROOT / "website" / "start-here.html").read_text(encoding="utf-8")
+    previous = frontier - 1
     required_home = (
-        "Explore all 89 results",
+        f"Explore all {frontier} results",
         "Research I · Physical-system identification",
         'id="research-i-overview"',
         "physics_pipeline.svg",
         "Research II · Bridge sufficiency and falsification",
-        "P89 current theorem frontier · v0.82.0",
-        'id="p89-frontier"',
-        "Current theorem frontier · P89",
+        f"P{frontier} current theorem frontier · v0.82.0",
+        f'id="p{frontier}-frontier"',
+        f"Current theorem frontier · P{frontier}",
         "Research III · Consciousness measurement science",
         'id="research-iii-overview"',
         "measurement_architecture.svg",
         "Open</strong><span>physical-to-experiential bridge",
     )
     required_atlas = (
-        'id="p89-frontier"',
-        "Current theorem frontier · P89",
-        "Previous theorem frontier · P88",
+        f'id="p{frontier}-frontier"',
+        f"Current theorem frontier · P{frontier}",
+        f"Previous theorem frontier · P{previous}",
     )
     required_plain = (
         '<strong>Research I</strong><span>physical-system identification</span>',
-        '<strong>Research II</strong><span>89 results · current frontier P89</span>',
+        f'<strong>Research II</strong><span>{frontier} results · current frontier P{frontier}</span>',
         '<strong>Research III</strong><span>measurement science under uncertainty</span>',
         'id="three-stage-progress"',
-        'id="p89-reader-frontier"',
     )
     required_start = (
         '<strong>Research I</strong><span>physical-system identification</span>',
-        '<strong>Research II</strong><span>89 results · current frontier P89</span>',
+        f'<strong>Research II</strong><span>{frontier} results · current frontier P{frontier}</span>',
         '<strong>Research III</strong><span>measurement science under uncertainty</span>',
         'id="program-stages"',
-        "The 89 Research II propositions by scientific role",
+        f"The {frontier} Research II propositions by scientific role",
     )
     for label, source, markers in (
         ("homepage", home, required_home),
@@ -352,19 +394,27 @@ def _check_reader_surfaces(frontier: int) -> None:
     ):
         missing = [marker for marker in markers if marker not in source]
         if missing:
-            raise RuntimeError(f"{label} is not synchronized to P89 balanced publication state: {missing}")
+            raise RuntimeError(
+                f"{label} is not synchronized to P{frontier} balanced publication state: {missing}"
+            )
     research_i = home.index('id="research-i-overview"')
-    p89_home = home.index('id="p89-frontier"')
+    current_home = home.index(f'id="p{frontier}-frontier"')
     research_iii = home.index('id="research-iii-overview"')
     if home.index('class="research-dashboard"') > research_i:
-        raise RuntimeError("homepage must orient readers to the full research program before stage details")
-    if not (research_i < p89_home < research_iii):
-        raise RuntimeError("homepage must balance Research I, Research II/P89, and Research III in stage order")
-    for historical_id in ('id="p88-frontier"', 'id="p87-frontier"', 'id="p86-frontier"', 'id="p85-frontier"'):
-        if historical_id in home:
+        raise RuntimeError(
+            "homepage must orient readers to the full research program before stage details"
+        )
+    if not (research_i < current_home < research_iii):
+        raise RuntimeError(
+            f"homepage must balance Research I, Research II/P{frontier}, and Research III in stage order"
+        )
+    for number in range(previous, max(70, frontier - 5), -1):
+        if f'id="p{number}-frontier"' in home:
             raise RuntimeError("historical Research II frontiers must remain off the Overview")
-    if atlas.index('id="p89-frontier"') > atlas.index('id="p88-frontier"'):
-        raise RuntimeError("Visual Atlas does not lead with P89")
+    if atlas.index(f'id="p{frontier}-frontier"') > atlas.index(
+        f'id="p{previous}-frontier"'
+    ):
+        raise RuntimeError(f"Visual Atlas does not lead with P{frontier}")
 
 
 def main() -> None:
@@ -379,8 +429,6 @@ def main() -> None:
         print(f"[figures] publication surfaces are synchronized to P{frontier}")
         return
     _write_expected(expected)
-    if frontier == 89:
-        subprocess.run([sys.executable, str(PROMOTER)], cwd=ROOT, check=True)
     _check_reader_surfaces(frontier)
     print(f"[figures] synchronized complete visual publication record to P{frontier}")
 

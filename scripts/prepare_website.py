@@ -16,18 +16,18 @@ from pathlib import Path
 
 if __package__:
     from scripts.synchronize_research_three_website import (
+        CURRENT_HOME_MARKER,
         CURRENT_RESEARCH_THREE_PIN,
         LEGACY_RESEARCH_THREE_PINS,
         MEASUREMENT_SCIENCE_REQUIRED_MARKERS,
-        P89_HOME_MARKER,
         synchronize_site,
     )
 else:
     from synchronize_research_three_website import (
+        CURRENT_HOME_MARKER,
         CURRENT_RESEARCH_THREE_PIN,
         LEGACY_RESEARCH_THREE_PINS,
         MEASUREMENT_SCIENCE_REQUIRED_MARKERS,
-        P89_HOME_MARKER,
         synchronize_site,
     )
 
@@ -39,9 +39,9 @@ RAW_FIGURE_PREFIX = (
     "mathematical-consciousness-bridge/main/docs/figures/"
 )
 CURRENT_FRONTIER_FIGURE = (
-    "p89_complete_linear_parity_duality.svg"
+    "p90_exact_nonlinear_rank_one_separation.svg"
 )
-CURRENT_RECORD_TEXT = "Current record:</strong> 89 proposition-level results through P89"
+CURRENT_RECORD_TEXT = "Current record:</strong> 90 proposition-level results through P90"
 MEASUREMENT_REPO = "https://github.com/MahsaKeikha/consciousness-measurement-science"
 MEASUREMENT_PIN = CURRENT_RESEARCH_THREE_PIN
 FULL_SITE_SURFACES = (
@@ -157,12 +157,12 @@ def _require_once(text: str, token: str, surface: str) -> None:
 
 
 def _validate_current_frontier_pages(output: Path) -> None:
-    """Require the deployed site to be internally consistent with P89."""
+    """Require the deployed site to be internally consistent with P90."""
 
     frontier_figure = output / "figures" / CURRENT_FRONTIER_FIGURE
     if not frontier_figure.is_file():
         raise RuntimeError(
-            "website build is missing the current P89 theorem figure: "
+            "website build is missing the current P90 theorem figure: "
             f"{frontier_figure}"
         )
 
@@ -173,23 +173,23 @@ def _validate_current_frontier_pages(output: Path) -> None:
         raise RuntimeError("website build is missing visual-atlas.html")
     visual_atlas = visual_atlas_path.read_text(encoding="utf-8")
     if local_frontier_src not in visual_atlas:
-        raise RuntimeError("Visual Atlas does not use the bundled P89 theorem figure")
+        raise RuntimeError("Visual Atlas does not use the bundled P90 theorem figure")
     if f'src="{RAW_FIGURE_PREFIX}' in visual_atlas:
         raise RuntimeError("Visual Atlas still depends on raw GitHub main for figures")
-    _require_once(visual_atlas, 'id="p89-frontier"', "Visual Atlas")
+    _require_once(visual_atlas, 'id="p90-frontier"', "Visual Atlas")
 
     homepage_path = output / "index.html"
     if not homepage_path.is_file():
         raise RuntimeError("website build is missing index.html")
     homepage = homepage_path.read_text(encoding="utf-8")
     if local_frontier_src not in homepage:
-        raise RuntimeError("Homepage does not use the bundled P89 theorem figure")
+        raise RuntimeError("Homepage does not use the bundled P90 theorem figure")
     if f'src="{RAW_FIGURE_PREFIX}' in homepage:
         raise RuntimeError("Homepage still depends on raw GitHub main for figures")
     if CURRENT_RECORD_TEXT not in homepage:
-        raise RuntimeError("Homepage Project at a glance is not synchronized to 89/P89")
-    _require_once(homepage, 'id="p89-frontier"', "Homepage")
-    _require_once(homepage, P89_HOME_MARKER, "Homepage source marker")
+        raise RuntimeError("Homepage Project at a glance is not synchronized to 90/P90")
+    _require_once(homepage, 'id="p90-frontier"', "Homepage")
+    _require_once(homepage, CURRENT_HOME_MARKER, "Homepage source marker")
 
     reader_css = (output / "reader-experience-v2.css").read_text(encoding="utf-8")
     for token in ("#reproduce .equation", "contain: inline-size", "#reproduce.two-col > *"):
@@ -204,7 +204,7 @@ def _validate_current_frontier_pages(output: Path) -> None:
     )
     stale = [token for token in stale_tokens if token in homepage]
     if stale:
-        raise RuntimeError(f"Homepage contains stale pre-P89 reader text: {stale}")
+        raise RuntimeError(f"Homepage contains stale pre-P90 reader text: {stale}")
 
 
 def _validate_research_three(output: Path) -> None:
@@ -253,8 +253,8 @@ def _validate_research_three(output: Path) -> None:
     lineage = lineage_path.read_text(encoding="utf-8")
     for token in (
         "Research III · consciousness measurement science",
-        "<strong>89</strong><span>proposition-level results</span>",
-        "<strong>P89</strong><span>current theorem frontier</span>",
+        "<strong>90</strong><span>proposition-level results</span>",
+        "<strong>P90</strong><span>current theorem frontier</span>",
         "<strong>v0.82.0</strong><span>current documented release</span>",
         "The three repositories form a research progression",
         MEASUREMENT_PIN,
@@ -355,7 +355,7 @@ def main() -> None:
     args = parser.parse_args()
     prepare_website(args.source, args.output)
     print(
-        "prepared website with Research II P88 and Research III "
+        "prepared website with Research II P90 and Research III "
         f"{MEASUREMENT_PIN}: {args.output}"
     )
 

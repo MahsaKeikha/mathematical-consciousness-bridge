@@ -116,7 +116,7 @@ This is not a weakness hidden by the repository. It is one of the central organi
 
 ## Where the current work sits
 
-The public theorem frontier is **P89** and the formal release is **v0.82.0**.
+The public theorem frontier is **P90** and the formal release is **v0.82.0**.
 
 P87 belongs to the later **model testing** part of the program. It strengthens a declared family of exact model separation tests. Its importance is methodological: it asks whether a more complete family of constraints that share the same parameters can expose incompatibility that weaker tests miss.
 

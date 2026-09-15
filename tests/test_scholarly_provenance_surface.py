@@ -53,7 +53,7 @@ def test_claim_source_matrix_maps_public_claims_to_support_and_boundaries() -> N
         "Formal consciousness modeling",
         "external methodological background plus repository formulation",
         "P75 model family",
-        "audited by P75-P89",
+        "audited by P75-P90",
         "P86 weighted four-event compatibility",
         "L85 = 0 < L86 = 1/192",
         "P87 bounded primitive four-event compatibility",
@@ -61,8 +61,8 @@ def test_claim_source_matrix_maps_public_claims_to_support_and_boundaries() -> N
         "P88 radius-three bounded primitive four-event compatibility",
         "208,560-functional P88 family",
         "L87 = 1/96 < L88 = 1/64",
-        "The current repository contains 89 proposition-level results",
-        "P89 is the current Research II theorem frontier",
+        "The current repository contains 90 proposition-level results",
+        "P90 is the current Research II theorem frontier",
         "passing CI supports internal consistency and reproducibility; it is not external peer review",
     )
     for marker in required:
@@ -78,16 +78,22 @@ def test_reference_audit_records_tegmark_as_research_origin() -> None:
     assert "distinct mathematical framework" in audit
 
 
-def test_sources_page_points_to_current_p89_and_previous_p88_p87_p86_records() -> None:
+def test_sources_page_points_to_current_p90_and_previous_p89_p88_p87_records() -> None:
     sources = _read("website/sources.html")
 
+    assert 'id="p90-source"' in sources
+    assert "Current theorem source · P90" in sources
+    assert "5/72" in sources
+    assert "proposition_90_exact_nonlinear_rank_one_separation.md" in sources
+    assert "p90_equation_provenance.md" in sources
+    assert "exact_nonlinear_rank_one_separation.py" in sources
+    assert "test_exact_nonlinear_rank_one_separation.py" in sources
+
     assert 'id="p89-source"' in sources
-    assert "Current theorem source · P89" in sources
+    assert "Previous theorem source · P89" in sources
     assert "5/168" in sources
     assert "proposition_89_complete_linear_parity_duality.md" in sources
     assert "p89_equation_provenance.md" in sources
-    assert "complete_linear_parity_duality.py" in sources
-    assert "test_complete_linear_parity_duality.py" in sources
 
     assert 'id="p88-source"' in sources
     assert "Previous theorem source · P88" in sources
@@ -108,8 +114,8 @@ def test_sources_page_points_to_current_p89_and_previous_p88_p87_p86_records() -
     assert "claim_source_matrix.md" in sources
     assert "Claim-to-source matrix" in sources
 
+    assert "Current theorem source · P89" not in sources
     assert "Current theorem source · P88" not in sources
-    assert "Current theorem source · P87" not in sources
 
 
 def test_public_provenance_does_not_make_priority_or_ontology_claims() -> None:

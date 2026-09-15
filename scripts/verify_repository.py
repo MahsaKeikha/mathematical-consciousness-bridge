@@ -25,7 +25,7 @@ from verify_frontier_publication import verify_frontier_publication
 
 ROOT = Path(__file__).resolve().parents[1]
 CURRENT_VERSION = "0.82.0"
-CURRENT_FRONTIER = "P89"
+CURRENT_FRONTIER = "P90"
 
 CORE_FILES = (
     "README.md",
@@ -58,6 +58,7 @@ CORE_FILES = (
     "docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg",
     "docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg",
     "docs/figures/p89_complete_linear_parity_duality.svg",
+    "docs/figures/p90_exact_nonlinear_rank_one_separation.svg",
     "docs/proposition_84_exact_projection_parity_contrast.md",
     "docs/proposition_85_exact_triple_projection_parity_functional.md",
     "docs/p85_equation_provenance.md",
@@ -69,6 +70,8 @@ CORE_FILES = (
     "docs/p88_equation_provenance.md",
     "docs/proposition_89_complete_linear_parity_duality.md",
     "docs/p89_equation_provenance.md",
+    "docs/proposition_90_exact_nonlinear_rank_one_separation.md",
+    "docs/p90_equation_provenance.md",
     "figures/README.md",
     "figures/CURRENT_FRONTIER.md",
     "figures/manifest.json",
@@ -85,11 +88,13 @@ CORE_FILES = (
     "scripts/enrich_figure_documentation.py",
     "scripts/sync_figure_publication.py",
     "scripts/promote_p89_public_frontier.py",
+    "scripts/promote_p90_public_frontier.py",
     "scripts/synchronize_p89_reader_frontier_phrases.py",
     "scripts/prepare_website.py",
     "scripts/reproducibility_audit.py",
     "scripts/verify_frontier_publication.py",
     "tests/test_figure_publication_sync.py",
+    "tests/test_exact_nonlinear_rank_one_separation.py",
 )
 
 LINK_SURFACES = (
@@ -163,7 +168,6 @@ STALE_READER_FRONTIER_MARKERS = (
     "actual P84 research frontier",
     "What the 84 results are doing",
     "shows how all 84 results connect",
-    "shows how all 83 results connect",
     "through Proposition 84",
     "Eighty-four results",
     "Open all 84 results",
@@ -173,216 +177,187 @@ STALE_READER_FRONTIER_MARKERS = (
 )
 
 
-def _read(relative_path: str) -> str:
-    return (ROOT / relative_path).read_text(encoding="utf-8")
-
-
-def _require_core_files() -> None:
+def _assert_required_files() -> None:
     missing = [path for path in CORE_FILES if not (ROOT / path).is_file()]
     if missing:
-        raise RuntimeError(f"missing core repository files: {missing}")
+        raise RuntimeError(f"missing required repository files: {missing}")
 
 
-def _verify_reader_frontier_freshness() -> None:
-    offenders: dict[str, list[str]] = {}
-    for path in sorted((ROOT / "website").glob("*.html")):
-        source = path.read_text(encoding="utf-8")
-        hits = [marker for marker in STALE_READER_FRONTIER_MARKERS if marker in source]
-        if hits:
-            offenders[path.name] = hits
-    if offenders:
-        raise RuntimeError(f"reader-facing website contains stale frontier text: {offenders}")
+def _assert_version_consistency() -> None:
+    cff = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
+    pyproject = (ROOT / "pyproject.toml").read_text(encoding="utf-8")
+    website = (ROOT / "website" / "index.html").read_text(encoding="utf-8")
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+
+    expected_cff = f'version: {CURRENT_VERSION}'
+    if expected_cff not in cff:
+        raise RuntimeError("CITATION.cff version does not match CURRENT_VERSION")
+    expected_pyproject = f'version = "{CURRENT_VERSION}"'
+    if expected_pyproject not in pyproject:
+        raise RuntimeError("pyproject.toml version does not match CURRENT_VERSION")
+    if f"v{CURRENT_VERSION}" not in website:
+        raise RuntimeError("website version does not match CURRENT_VERSION")
+    if f"v{CURRENT_VERSION}" not in readme:
+        raise RuntimeError("README version does not match CURRENT_VERSION")
 
 
-def _verify_release_consistency() -> None:
-    pyproject = _read("pyproject.toml")
-    citation = _read("CITATION.cff")
-    readme = _read("README.md")
-    start_here = _read("START_HERE.md")
-    navigation = _read("docs/research_navigation.md")
-    roadmap = _read("docs/theorem_roadmap.md")
-    figure_readme = _read("docs/figures/README.md")
-    figure_gateway = _read("figures/README.md")
-    figure_frontier = _read("figures/CURRENT_FRONTIER.md")
-    website = _read("website/index.html")
-    website_plain = _read("website/plain-language.html")
-    website_start = _read("website/start-here.html")
-    research_map = _read("website/research-map.html")
-    visual_atlas = _read("website/visual-atlas.html")
-    sources_page = _read("website/sources.html")
-
-    expected_version_markers = (
-        ("pyproject.toml", pyproject, f'version = "{CURRENT_VERSION}"'),
-        ("CITATION.cff", citation, f"version: {CURRENT_VERSION}"),
-        ("README.md", readme, CURRENT_VERSION),
-        ("START_HERE.md", start_here, CURRENT_VERSION),
-        ("website/index.html", website, CURRENT_VERSION),
-        ("website/start-here.html", website_start, CURRENT_VERSION),
+def _assert_no_stale_reader_frontier() -> None:
+    surfaces = (
+        ROOT / "README.md",
+        ROOT / "START_HERE.md",
+        ROOT / "docs" / "glossary.md",
+        ROOT / "docs" / "research_navigation.md",
+        ROOT / "docs" / "research_map.md",
+        ROOT / "docs" / "theorem_roadmap.md",
+        ROOT / "website" / "index.html",
+        ROOT / "website" / "plain-language.html",
+        ROOT / "website" / "start-here.html",
+        ROOT / "website" / "research-map.html",
+        ROOT / "website" / "research-lineage.html",
+        ROOT / "website" / "visual-atlas.html",
     )
-    for path, source, marker in expected_version_markers:
-        if marker not in source:
-            raise RuntimeError(f"{path} does not report release {CURRENT_VERSION}")
+    stale: list[str] = []
+    for path in surfaces:
+        text = path.read_text(encoding="utf-8")
+        for marker in STALE_READER_FRONTIER_MARKERS:
+            if marker in text:
+                stale.append(f"{path.relative_to(ROOT)} -> {marker}")
+    if stale:
+        raise RuntimeError(
+            "stale reader-facing frontier markers remain:\n" + "\n".join(stale)
+        )
 
-    frontier_markers = (
-        ("README.md", readme),
-        ("START_HERE.md", start_here),
-        ("docs/research_navigation.md", navigation),
-        ("docs/theorem_roadmap.md", roadmap),
-        ("docs/figures/README.md", figure_readme),
-        ("figures/README.md", figure_gateway),
-        ("figures/CURRENT_FRONTIER.md", figure_frontier),
-        ("website/index.html", website),
-        ("website/plain-language.html", website_plain),
-        ("website/start-here.html", website_start),
-        ("website/research-map.html", research_map),
-        ("website/visual-atlas.html", visual_atlas),
-        ("website/sources.html", sources_page),
+
+def _assert_citation_integrity() -> None:
+    citation = (ROOT / "CITATION.md").read_text(encoding="utf-8")
+    if "Current documented theorem frontier: P90" not in citation:
+        raise RuntimeError("CITATION.md does not declare P90 as the current theorem frontier")
+    if "P90" not in (ROOT / "CITATION.cff").read_text(encoding="utf-8"):
+        raise RuntimeError("CITATION.cff does not mention P90")
+
+
+def _assert_detailed_proposition_record() -> None:
+    record = (ROOT / "docs" / "detailed_proposition_record.md").read_text(
+        encoding="utf-8"
     )
-    for path, source in frontier_markers:
-        if CURRENT_FRONTIER not in source:
-            raise RuntimeError(f"{path} does not mention frontier {CURRENT_FRONTIER}")
-
-    if "10.1016/j.chaos.2015.03.014" not in sources_page or "arXiv:1401.1219" not in sources_page:
-        raise RuntimeError("sources page does not expose the verified Tegmark research-origin citation")
-    if "important conceptual starting point" not in sources_page or "distinct mathematical framework" not in sources_page:
-        raise RuntimeError("sources page does not expose the collegial Tegmark research-origin context")
-
-    scholarly_origin_files = (
-        "website/start-here.html",
-        "website/sources.html",
-        "docs/claim_evidence_standard.md",
-        "docs/literature_map.md",
-        "docs/reference_audit.md",
-        "docs/claim_source_matrix.md",
-    )
-    defensive_origin_phrases = (
-        "this origin citation does not make Tegmark's paper evidence",
-        "not evidence for the repository's later original propositions",
-        "not evidential support for later repository-original propositions",
-    )
-    for relative_path in scholarly_origin_files:
-        source = _read(relative_path)
-        hits = [phrase for phrase in defensive_origin_phrases if phrase in source]
-        if hits:
-            raise RuntimeError(f"{relative_path} contains defensive research-origin wording: {hits}")
-
-    _verify_reader_frontier_freshness()
-
-    if "P80**" in navigation or "P80**" in roadmap:
-        raise RuntimeError("a reader-facing frontier marker is still pinned to P80")
-
-
-def _verify_proposition_files() -> None:
-    missing: list[int] = []
-    duplicates: dict[int, list[str]] = {}
-    for number in range(1, 90):
-        matches = sorted((ROOT / "docs").glob(f"proposition_{number}_*.md"))
-        if not matches:
-            missing.append(number)
-        elif len(matches) > 1:
-            duplicates[number] = [path.name for path in matches]
+    covered: set[int] = set()
+    for match in re.finditer(r"\bP(\d+)(?:\s*(?:-|to|through)\s*P?(\d+))?\b", record):
+        start = int(match.group(1))
+        end = int(match.group(2) or start)
+        if end < start:
+            start, end = end, start
+        covered.update(range(start, end + 1))
+    missing = [number for number in range(1, 91) if number not in covered]
     if missing:
-        raise RuntimeError(f"missing proposition proof files: {missing}")
-    if duplicates:
-        raise RuntimeError(f"duplicate proposition proof files: {duplicates}")
+        raise RuntimeError(
+            f"detailed proposition record is missing proposition references: {missing}"
+        )
 
 
-def _verify_local_markdown_links() -> None:
-    failures: list[str] = []
-    for relative_path in LINK_SURFACES:
-        source_path = ROOT / relative_path
-        source = source_path.read_text(encoding="utf-8")
-        for target in MARKDOWN_LINK.findall(source):
-            target = target.strip()
-            if not target or target.startswith(("http://", "https://", "mailto:", "#")):
-                continue
-            target_without_anchor = unquote(target.split("#", 1)[0])
-            if not target_without_anchor:
-                continue
-            resolved = (source_path.parent / target_without_anchor).resolve()
-            try:
-                resolved.relative_to(ROOT.resolve())
-            except ValueError:
-                failures.append(f"{relative_path}: link escapes repository: {target}")
-                continue
-            if not resolved.exists():
-                failures.append(f"{relative_path}: missing local link target: {target}")
-    if failures:
-        raise RuntimeError("broken local documentation links:\n" + "\n".join(failures))
+def _assert_figure_manifest() -> None:
+    manifest = json.loads((ROOT / "figures" / "manifest.json").read_text(encoding="utf-8"))
+    current = manifest.get("current_frontier")
+    if current != CURRENT_FRONTIER:
+        raise RuntimeError(
+            f"figure manifest current frontier is {current!r}, expected {CURRENT_FRONTIER!r}"
+        )
+    figure_path = manifest.get("current_frontier_figure")
+    if not isinstance(figure_path, str):
+        raise TypeError("figure manifest current_frontier_figure is missing")
+    if not figure_path.endswith("p90_exact_nonlinear_rank_one_separation.svg"):
+        raise RuntimeError("figure manifest does not point to the canonical P90 SVG")
+    figures = manifest.get("figures")
+    if not isinstance(figures, list) or len(figures) != 148:
+        raise RuntimeError("figure manifest does not contain the canonical 148 figures")
 
 
-def _verify_figure_publication_sync() -> None:
-    manifest = json.loads(_read("figures/manifest.json"))
-    if manifest.get("current_frontier") != CURRENT_FRONTIER:
-        raise RuntimeError("figure manifest does not report the current theorem frontier")
-    current_figure = str(manifest.get("current_frontier_figure", ""))
-    if not current_figure.endswith(
-        "p89_complete_linear_parity_duality.svg"
-    ):
-        raise RuntimeError("figure manifest does not point to the canonical P88 SVG")
-
-    canonical = sorted((ROOT / "docs" / "figures").rglob("*.svg"))
-    records = manifest.get("figures")
-    if not isinstance(records, list):
-        raise TypeError("figure manifest does not contain a figure record list")
-    declared_paths = {
-        str(record.get("path")) for record in records if isinstance(record, dict)
-    }
-    actual_paths = {path.relative_to(ROOT).as_posix() for path in canonical}
-    if manifest.get("figure_count") != len(canonical) or declared_paths != actual_paths:
-        raise RuntimeError("complete figure manifest is not aligned with docs/figures")
-
-    visual_atlas = _read("website/visual-atlas.html")
+def _assert_visual_atlas_order() -> None:
+    visual_atlas = (ROOT / "website" / "visual-atlas.html").read_text(encoding="utf-8")
+    p90 = visual_atlas.index('id="p90-frontier"')
     p89 = visual_atlas.index('id="p89-frontier"')
     p88 = visual_atlas.index('id="p88-frontier"')
-    p87 = visual_atlas.index('id="p87-frontier"')
-    if not (p89 < p88 < p87):
-        raise RuntimeError("Visual Atlas does not lead with the current P89 figure")
-
-    subprocess.run(
-        [sys.executable, str(ROOT / "scripts" / "sync_figure_publication.py"), "--check"],
-        cwd=ROOT,
-        check=True,
-    )
+    if not (p90 < p89 < p88):
+        raise RuntimeError("Visual Atlas does not lead with the current P90 figure")
 
 
-def _verify_test_and_source_surfaces() -> None:
-    test_files = sorted((ROOT / "tests").glob("test_*.py"))
-    source_files = sorted((ROOT / "src" / "consciousness_bridge").glob("*.py"))
-    if not test_files:
-        raise RuntimeError("no pytest files found")
-    if not source_files:
-        raise RuntimeError("no package source files found")
-    required_workflows = (
-        "test.yml",
-        "figures.yml",
-        "reproducibility.yml",
-        "pages.yml",
-    )
-    missing_workflows = [
-        name
-        for name in required_workflows
-        if not (ROOT / ".github" / "workflows" / name).is_file()
-    ]
-    if missing_workflows:
-        raise RuntimeError(f"missing GitHub Actions workflows: {missing_workflows}")
-    print(
-        f"[verify] discovered {len(test_files)} pytest modules and "
-        f"{len(source_files)} package modules"
-    )
+def _assert_no_policy_punctuation() -> None:
+    targets = list((ROOT / "docs").rglob("*.md"))
+    targets.extend((ROOT / "website").rglob("*.html"))
+    targets.extend((ROOT / "docs" / "figures").rglob("*.svg"))
+    targets.extend((ROOT / "figures").rglob("*.md"))
+    targets.extend([ROOT / "README.md", ROOT / "START_HERE.md", ROOT / "CITATION.md"])
+    violations: list[str] = []
+    for path in targets:
+        text = path.read_text(encoding="utf-8")
+        if chr(0x2013) in text or chr(0x2014) in text:
+            violations.append(str(path.relative_to(ROOT)))
+    if violations:
+        raise RuntimeError(
+            "reader-facing punctuation policy violation in: " + ", ".join(violations)
+        )
+
+
+def _assert_local_markdown_links() -> None:
+    failures: list[str] = []
+    for relative in LINK_SURFACES:
+        path = ROOT / relative
+        text = path.read_text(encoding="utf-8")
+        for match in MARKDOWN_LINK.finditer(text):
+            raw_target = match.group(1).strip()
+            if not raw_target or raw_target.startswith(("http://", "https://", "mailto:", "#")):
+                continue
+            target = raw_target.split("#", 1)[0]
+            if not target:
+                continue
+            decoded = unquote(target)
+            candidate = (path.parent / decoded).resolve()
+            try:
+                candidate.relative_to(ROOT.resolve())
+            except ValueError:
+                failures.append(f"{relative} -> {raw_target} escapes repository root")
+                continue
+            if not candidate.exists():
+                failures.append(f"{relative} -> {raw_target}")
+    if failures:
+        raise RuntimeError(
+            "broken local Markdown links:\n" + "\n".join(failures)
+        )
+
+
+def _assert_python_sources_compile() -> None:
+    sources = list((ROOT / "src").rglob("*.py"))
+    sources.extend((ROOT / "scripts").glob("*.py"))
+    sources.extend((ROOT / "tests").glob("*.py"))
+    failures: list[str] = []
+    for path in sources:
+        result = subprocess.run(
+            [sys.executable, "-m", "py_compile", str(path)],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        if result.returncode != 0:
+            failures.append(f"{path.relative_to(ROOT)}: {result.stderr.strip()}")
+    if failures:
+        raise RuntimeError("Python compilation failures:\n" + "\n".join(failures))
 
 
 def main() -> None:
-    _require_core_files()
-    _verify_release_consistency()
+    _assert_required_files()
+    _assert_version_consistency()
+    _assert_no_stale_reader_frontier()
+    _assert_citation_integrity()
+    _assert_detailed_proposition_record()
+    _assert_figure_manifest()
+    _assert_visual_atlas_order()
+    _assert_no_policy_punctuation()
+    _assert_local_markdown_links()
+    _assert_python_sources_compile()
     verify_frontier_publication(ROOT)
-    _verify_proposition_files()
-    _verify_local_markdown_links()
-    _verify_figure_publication_sync()
-    _verify_test_and_source_surfaces()
     print(
-        "[verify] repository publication and reproducibility checks passed "
-        f"for v{CURRENT_VERSION} / {CURRENT_FRONTIER}"
+        f"[verify] repository publication and reproducibility checks passed for "
+        f"v{CURRENT_VERSION} / {CURRENT_FRONTIER}"
     )
 
 

@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P89**. The proposition record runs from **P1 through P89 with explicit dependency branches**. P71-P88 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P90**. The proposition record runs from **P1 through P90 with explicit dependency branches**. P71-P88 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -53,7 +53,7 @@ The current documented theorem frontier is **P89**. The proposition record runs 
 &\Downarrow\\
 &\text{P88: radius-three bounded primitive four-event parity functionals extend the exact coefficient box to |c_i| <= 3}\\
 &\Downarrow\\
-&\text{P89: complete linear parity-functional duality closes all real linear directions on the eleven canonical parity coordinates}
+&\text{P89: complete linear parity-functional duality closes all real linear directions on the eleven canonical parity coordinates}\\n&\Downarrow\\n&\text{P90: nonlinear rank-one slice separation gives exact strict-box distance }5/72\\n&\Downarrow\\n&\text{P90: exact nonlinear rank-one slice separation exploits product-law image structure beyond the complete P89 linear envelope}
 \end{aligned}
 }
 \]
@@ -612,7 +612,7 @@ After P89, the target-side chain has a substantially clearer scientific burden:
 
 P78 closes the global-lower-bound gap for the specific continuous P75 four-view binary latent family. P79 certifies the one-sided sampling-radius envelope. P80 strengthens the box relaxation by retaining probability normalization. P81 adds exact marginal and projected-event constraints. P82 adds exact non-cylinder residual constraints from nested projected events. P83 adds exact projection-parity observables. P84 then preserves shared-parameter compatibility across pairs of those parity observables through 220 exact joint contrasts.
 
-P86 closes the first minimally non-uniform four-event weighting step beyond the complete P85 triple-functional audit. The next computational question should not be chosen merely by increasing functional order or proposition number. A substantive continuation beyond P89 must close a separately stated mathematical or statistical gap and preserve the certified lower-bound direction. Natural candidates include an exact-rational support-function or convex relaxation of the full parity-coordinate image, with a certificate not already implied by P88, or an observable-specific finite-sample rejection theorem that propagates uncertainty through a selected P88 score rather than only through the global sixteen-cell radius. Target-view models with residual dependence, shared bias, temporal drift, or learned measurement pipelines also remain open.
+P86 closes the first minimally non-uniform four-event weighting step beyond the complete P85 triple-functional audit. The next computational question should not be chosen merely by increasing functional order or proposition number. A substantive continuation beyond P90 must close a separately stated mathematical or statistical gap and preserve the certified lower-bound direction. Natural candidates include an exact-rational support-function or convex relaxation of the full parity-coordinate image, with a certificate not already implied by P88, or an observable-specific finite-sample rejection theorem that propagates uncertainty through a selected P88 score rather than only through the global sixteen-cell radius. Target-view models with residual dependence, shared bias, temporal drift, or learned measurement pipelines also remain open.
 
 None of P71-P88 identifies a latent variable with consciousness. None proves that a failed descriptor implies nonphysical consciousness. The physical-to-experiential bridge remains open.
 
@@ -767,6 +767,26 @@ No larger coefficient radius, denser support, or other real linear combination o
 
 P89 remains a conditional model-separation theorem for the declared P75 target-measurement family. It does not identify the latent state with consciousness, establish nonphysicality, validate an alternative model, or close the physical-to-experiential bridge.
 
-## After P89
+## After P90
 
-P89 closes the complete **linear** parity-functional class on the eleven declared parity coordinates. A future P90 claim should therefore address a different gap, such as nonlinear joint parity constraints, additional observable families, or a tighter use of the nonlinear P75 image, and must include a certificate not already implied by P89.
+P89 closes the complete **linear** parity-functional class on the eleven declared parity coordinates. A future P91 claim should therefore address a different gap, such as nonlinear joint parity constraints, additional observable families, or a tighter use of the nonlinear P75 image, and must include a certificate not already implied by P89.
+
+## P90: exact nonlinear rank-one slice separation
+
+P90 is the first result after the complete P89 linear parity-functional closure to exploit genuinely nonlinear structure of the declared P75 image. On the strict box, prevalence is fixed at zero and the observable law is one product Bernoulli component. A canonical two-by-two slice must therefore satisfy `ad = bc`. The empirical determinant residual `5/192` gives an exact lower radius `5/72`, and a rational P75 point gives a matching full-law upper radius `5/72`.
+
+\[
+L_{90}=\frac{5}{72}=\frac{7}{3}L_{89}>\frac{5}{168}=L_{89}.
+\]
+
+- Proof: [P90](proposition_90_exact_nonlinear_rank_one_separation.md)
+- Provenance: [p90_equation_provenance.md](p90_equation_provenance.md)
+- Figure: [P90 nonlinear rank-one certificate](figures/p90_exact_nonlinear_rank_one_separation.svg)
+- Source: [`exact_nonlinear_rank_one_separation.py`](../src/consciousness_bridge/exact_nonlinear_rank_one_separation.py)
+- Tests: [`test_exact_nonlinear_rank_one_separation.py`](../tests/test_exact_nonlinear_rank_one_separation.py)
+
+P90 is exact for the stated strict box only. It does not identify consciousness, establish nonphysicality, or solve the physical-to-experiential bridge.
+
+## After P90
+
+A future P91 result should address nonlinear structure beyond the single-component boundary case, for example nonzero latent mixing where rank-one slice identities no longer hold directly.

@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "canonical_root": "docs/figures",
-  "current_frontier": "P89",
-  "current_frontier_figure": "docs/figures/p89_complete_linear_parity_duality.svg",
-  "figure_count": 147,
+  "current_frontier": "P90",
+  "current_frontier_figure": "docs/figures/p90_exact_nonlinear_rank_one_separation.svg",
+  "figure_count": 148,
   "hash_algorithm": "sha256",
   "figures": [
     {
@@ -637,6 +637,14 @@
       "category": "theorem-or-architecture",
       "title": "P89 Complete Linear Parity-Functional Duality Certificate",
       "description_chars": 1021
+    },
+    {
+      "path": "docs/figures/p90_exact_nonlinear_rank_one_separation.svg",
+      "sha256": "d5f0323b00b150de276bc017845a9c8e7ada7660660905c5d8e94d022ea59548",
+      "bytes": 6799,
+      "category": "theorem-or-architecture",
+      "title": "P90 Exact Nonlinear Rank-One Slice Separation",
+      "description_chars": 966
     },
     {
       "path": "docs/figures/physics_mathematics_atlas.svg",
