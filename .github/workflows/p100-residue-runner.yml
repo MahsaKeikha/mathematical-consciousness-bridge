@@ -1,0 +1,53 @@
+name: P100 residue runner
+
+on:
+  push:
+    branches:
+      - p100-anytime-sequential-eprocess
+    paths:
+      - .p100-residue-trigger
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Repair publication residue
+        run: python scripts/repair_p100_publication_residue.py
+      - name: Install focused test runner
+        run: python -m pip install pytest
+      - name: Run failed publication regression cluster
+        run: |
+          python -m pytest -q \
+            tests/test_figure_documentation_integrity.py \
+            tests/test_figure_publication_sync.py \
+            tests/test_main_page_visual_paper.py \
+            tests/test_p98_reader_surface_coherence.py \
+            tests/test_publication_contract_v2.py \
+            tests/test_readme_research_orientation.py \
+            tests/test_website_link_integrity.py \
+            tests/test_website_research_orientation.py
+      - name: Verify publication contract
+        run: |
+          python scripts/sync_figure_publication.py --check
+          python scripts/verify_repository.py
+      - name: Commit repairs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git reset .github/workflows/p100-residue-runner.yml .p100-residue-trigger
+          if git diff --cached --quiet; then
+            echo "No repairs needed."
+          else
+            git commit -m "Repair final P100 publication residue"
+            git push origin HEAD:p100-anytime-sequential-eprocess
+          fi
