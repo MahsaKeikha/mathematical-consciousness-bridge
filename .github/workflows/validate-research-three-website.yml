@@ -45,10 +45,10 @@ jobs:
         run: |
           R3_PIN="$(python -c 'from scripts.synchronize_research_three_website import CURRENT_RESEARCH_THREE_PIN; print(CURRENT_RESEARCH_THREE_PIN)')"
 
-          test "$(grep -o '<!-- current-frontier-home: P91 -->' _site/index.html | wc -l)" -eq 1
-          test "$(grep -o 'id=\"p91-frontier\"' _site/index.html | wc -l)" -eq 1
-          grep -q 'Current record:</strong> 91 proposition-level results through P91' _site/index.html
-          grep -q 'all 91 propositions' _site/index.html
+          test "$(grep -o '<!-- current-frontier-home: P92 -->' _site/index.html | wc -l)" -eq 1
+          test "$(grep -o 'id=\"p92-frontier\"' _site/index.html | wc -l)" -eq 1
+          grep -q 'Current record:</strong> 92 proposition-level results through P92' _site/index.html
+          grep -q 'all 92 propositions' _site/index.html
 
           grep -q 'Research III · Consciousness Measurement Science' _site/measurement-science.html
           grep -q 'Implemented now versus not yet established' _site/measurement-science.html
@@ -67,38 +67,41 @@ jobs:
           grep -q "research-three-snapshot: ${R3_PIN}" _site/measurement-science.html
 
           grep -q "${R3_PIN}" _site/research-lineage.html
-          grep -q '<strong>91</strong><span>proposition-level results</span>' _site/research-lineage.html
-          grep -q '<strong>P91</strong><span>current theorem frontier</span>' _site/research-lineage.html
+          grep -q '<strong>92</strong><span>proposition-level results</span>' _site/research-lineage.html
+          grep -q '<strong>P92</strong><span>current theorem frontier</span>' _site/research-lineage.html
           grep -q '<strong>v0.82.0</strong><span>current documented release</span>' _site/research-lineage.html
 
-      - name: Verify P91 reader coherence
+      - name: Verify P92 reader coherence
         run: |
           python - <<'PY'
           from pathlib import Path
 
           atlas = Path("_site/visual-atlas.html").read_text(encoding="utf-8")
+          p92 = atlas.index('id="p92-frontier"')
           p91 = atlas.index('id="p91-frontier"')
           p90 = atlas.index('id="p90-frontier"')
-          p89 = atlas.index('id="p89-frontier"')
-          assert p91 < p90 < p89
-          assert "<!-- current-frontier-visual: P91 -->" in atlas
+          assert p92 < p91 < p90
+          assert "<!-- current-frontier-visual: P92 -->" in atlas
+          assert "Previous theorem frontier · P91" in atlas
 
           start = Path("_site/start-here.html").read_text(encoding="utf-8")
-          assert "91 results · current frontier P91" in start
-          assert "Open all 91 Research II results" in start
-          assert "P91 extends the nonlinear result to arbitrary latent prevalence" in start
-          assert "Read P91 theorem" in start
+          assert "92 results · current frontier P92" in start
+          assert "Open all 92 Research II results" in start
+          assert "Read P92 theorem" in start
+          assert "d_inf(P_emp, M75) = 1/24" in start
 
           plain = Path("_site/plain-language.html").read_text(encoding="utf-8")
-          assert "This is the 91-result Research II theorem program currently reaching P91." in plain
-          assert "P91 is the current checkpoint, not the destination" in plain
+          assert "This is the 92-result Research II theorem program currently reaching P92." in plain
+          assert "The current theorem frontier is P92." in plain
+          assert 'id="p92-reader-frontier"' in plain
 
           research = Path("_site/research-map.html").read_text(encoding="utf-8")
-          summary = "P89 closes the complete real linear parity-functional class, P90 adds exact nonlinear single-component separation, and P91 extends nonlinear separation to arbitrary latent mixing through a rank-two flattening certificate."
-          assert "Ninety-one results, one dependency-aware scientific program" in research
-          assert "Current Research II model-audit range: P75-P91." in research
-          assert research.count(summary) == 1
-          assert research.index('id="p90-research-map"') < research.index('id="p91-research-map"') < research.index("</main>") < research.index("</html>")
+          assert "Ninety-two results, one dependency-aware scientific program" in research
+          assert "Current Research II model-audit range: P75-P92." in research
+          assert "The current theorem frontier is P92." in research
+          assert 'id="p92-research-map"' in research
+          assert "d_inf(P_emp, M75) = 1/24" in research
+          assert research.index('id="p91-research-map"') < research.index('id="p92-research-map"') < research.index("</main>") < research.index("</html>")
           assert "Current exact frontier · P87" not in research
           assert "Current continuous-model frontier" not in research
           PY
@@ -109,7 +112,7 @@ jobs:
           grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/measurement_architecture.svg" _site/measurement-science.html
           grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/claim_ladder.svg" _site/measurement-science.html
           grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/structural_measurement_pipeline.svg" _site/measurement-science.html
-          test -f _site/figures/p91_mixed_prevalence_rank_two_flattening_separation.svg
+          test -f _site/figures/p92_exact_global_mixed_prevalence_distance.svg
           node --check _site/app.js
 
       - name: Verify clean generated surface
