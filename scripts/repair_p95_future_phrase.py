@@ -10,5 +10,5 @@ text = text.replace(
     "The P95 continuation beyond P94 closes a separately stated statistical gap",
     "P95 closes the separately stated drift-aware statistical gap left by P94",
 )
-PATH.write_text(text, encoding="utf-8")
-print("[p95] removed stale P94 future-work trigger")
+PATH.write_text(text.rstrip() + "\n", encoding="utf-8")
+print("[p95] removed stale P94 future-work trigger and normalized EOF")
