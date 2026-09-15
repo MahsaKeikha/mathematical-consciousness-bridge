@@ -27,8 +27,8 @@ reused certification data fresh by declaration.
 P100 remains conditional on the P95-P99 model family, dependence assumptions,
 selection-valid data separation, and the sequential freshness condition. It does
 not turn non-rejection into model acceptance, identify a latent state with
-consciousness, establish nonphysicality, or complete the physical-to-experiential
-bridge.
+consciousness, establish nonphysicality, or complete the
+physical-to-experiential bridge.
 """
 
 from __future__ import annotations
