@@ -1,0 +1,52 @@
+name: p93-branch-generated-record-sync
+
+on:
+  push:
+    branches:
+      - p93-selective-sign-coherence-rejection
+    paths:
+      - ".github/workflows/p93-branch-generated-record-sync.yml"
+      - "docs/figures/p93_selective_sign_coherence_rejection.svg"
+      - "docs/figure_catalog.md"
+      - "figures/manifest.json"
+      - "scripts/generate_all_figures.py"
+      - "scripts/enrich_figure_documentation.py"
+      - "scripts/sync_figure_publication.py"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: p93-branch-generated-record-sync
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    if: github.ref == 'refs/heads/p93-selective-sign-coherence-rejection'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: p93-selective-sign-coherence-rejection
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - name: Install exact figure environment
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+          python -m pip install -r requirements-figures.txt
+      - name: Regenerate canonical figure publication records
+        run: python scripts/generate_all_figures.py
+      - name: Commit only generated catalog and manifest drift
+        run: |
+          git add docs/figure_catalog.md figures/manifest.json
+          if git diff --cached --quiet; then
+            echo "Generated P93 catalog and manifest are already canonical."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Synchronize generated P93 figure records [skip ci]"
+          git push origin HEAD:p93-selective-sign-coherence-rejection
