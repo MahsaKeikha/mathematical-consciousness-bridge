@@ -21,7 +21,7 @@ def test_shared_reader_experience_style_is_built_into_pages() -> None:
     assert "overflow-wrap: anywhere" in css
 
 
-def test_no_reader_facing_html_page_advertises_pre_p92_as_current() -> None:
+def test_no_reader_facing_html_page_advertises_pre_p93_as_current() -> None:
     stale_current_frontier_tokens = (
         "Current theorem frontier · P91",
         "<strong>P91</strong><span>current theorem frontier</span>",
@@ -128,11 +128,11 @@ def test_figure_enrichment_generator_preserves_canonical_reader_key() -> None:
     assert 'text.replace(legacy_reading_key, reading_key, 1)' in source
 
 
-def test_repository_verifier_tracks_p92_and_all_92_propositions() -> None:
+def test_repository_verifier_tracks_p93_and_all_93_propositions() -> None:
     verifier = _text("scripts/verify_repository.py")
-    assert 'CURRENT_FRONTIER = "P92"' in verifier
+    assert 'CURRENT_FRONTIER = "P93"' in verifier
     assert "covered: set[int] = set()" in verifier
-    assert "range(1, 93)" in verifier
+    assert "range(1, 94)" in verifier
     assert '"docs/reader_experience_and_visual_standard.md"' in verifier
     assert '"docs/proposition_92_exact_global_mixed_prevalence_distance.md"' in verifier
 
@@ -140,7 +140,7 @@ def test_repository_verifier_tracks_p92_and_all_92_propositions() -> None:
 def test_overview_orients_first_time_reader_before_theorem_frontier() -> None:
     overview = _text("website/index.html")
     assert overview.count('id="project-journey"') == 1
-    assert overview.index('id="project-journey"') < overview.index('id="p92-frontier"')
+    assert overview.index('id="project-journey"') < overview.index('id="p93-frontier"')
     assert "The whole research program in three stages" in overview
     assert "<span>Research I</span>" in overview
     assert "<span>Research II</span>" in overview

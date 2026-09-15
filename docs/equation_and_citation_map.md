@@ -1323,3 +1323,13 @@ The rank-at-most-two implication is standard linear algebra applied to a two-com
 - Figure: [`p92_exact_global_mixed_prevalence_distance.svg`](figures/p92_exact_global_mixed_prevalence_distance.svg)
 
 The two-rank-one determinant identity is elementary linear algebra. The repository-original content is the selected three-minor sign-coherence certificate, exact empirical radii, and matching full-cube distance theorem.
+
+## P93 localized finite-sample sign-coherence rejection
+
+- Theorem: [Proposition 93](proposition_93_localized_sign_coherence_rejection.md)
+- Equation provenance: [P93 equation record](p93_equation_provenance.md)
+- Implementation: [`localized_sign_coherence_rejection.py`](../src/consciousness_bridge/localized_sign_coherence_rejection.py)
+- Exact tests: [`test_localized_sign_coherence_rejection.py`](../tests/test_localized_sign_coherence_rejection.py)
+- Figure: [`p93_localized_sign_coherence_rejection.svg`](figures/p93_localized_sign_coherence_rejection.svg)
+
+P93 combines standard Hoeffding concentration and a seven-cell union bound with the repository's P92 determinant sign-stability theorem and P79 exact-rational sampling-radius envelope. The repository-original contribution is the localized finite-sample handoff for the P92 nonlinear invariant.

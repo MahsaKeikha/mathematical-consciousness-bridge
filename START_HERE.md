@@ -63,9 +63,9 @@ Those results include methods for:
 - controlling uncertainty from finite data and numerical computation;
 - making the complete reasoning chain reproducible and auditable.
 
-The public theorem frontier is **P90**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains **open**.
+The public theorem frontier is **P93**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains **open**.
 
-You do not need to read 90 propositions to understand the project.
+You do not need to read 93 propositions to understand the project.
 
 ---
 
@@ -78,7 +78,7 @@ You do not need to read 90 propositions to understand the project.
 | Browse the research through figures | **[Figure Catalog](docs/figure_catalog.md)** |
 | Move into the formal scientific architecture | **[Technical Research Architecture](docs/research_architecture.md)** |
 | See how the mathematical results depend on one another | **[Theorem Roadmap](docs/theorem_roadmap.md)** |
-| Read the current frontier result | **[P88](docs/proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md)** |
+| Read the current frontier result | **[P93](docs/proposition_93_localized_sign_coherence_rejection.md)** |
 | Inspect every proposition in the complete technical record | **[Detailed Proposition Record](docs/detailed_proposition_record.md)** |
 | Trace equations, sources, implementations, and tests | **[Research Navigation](docs/research_navigation.md)** |
 | Reproduce the computational work | **[Reproducibility Guide](docs/reproducibility.md)** |
@@ -109,10 +109,14 @@ For figures first, open the **[Figure Catalog](docs/figure_catalog.md)**.
 
 For code and verification, open the **[Reproducibility Guide](docs/reproducibility.md)**.
 
-### P91 mixed-prevalence frontier
+### P91 historical mixed-prevalence step
 
-The current Research II frontier is [P91](docs/proposition_91_mixed_prevalence_rank_two_flattening_separation.md). P91 shows that the nonlinear P75 separation is not confined to P90's prevalence-zero face: over the full two-component mixture cube, the established witness obeys the certified bracket `1/42 < d_inf <= 1/24`. The upper endpoint remains a constructive bound rather than a claimed exact optimum.
+The P91 Research II step is [P91](docs/proposition_91_mixed_prevalence_rank_two_flattening_separation.md). P91 shows that the nonlinear P75 separation is not confined to P90's prevalence-zero face: over the full two-component mixture cube, the established witness obeys the certified bracket `1/42 < d_inf <= 1/24`. The upper endpoint remains a constructive bound rather than a claimed exact optimum.
 
-### P92 exact full-cube frontier
+### P92 historical exact full-cube step
 
-The current Research II frontier is [P92](docs/proposition_92_exact_global_mixed_prevalence_distance.md). P92 closes the P91 mixed-prevalence bracket and proves the exact full-cube result `d_inf(P_emp, M75) = 1/24` through a nonlinear three-minor sign-coherence invariant.
+The P92 Research II step is [P92](docs/proposition_92_exact_global_mixed_prevalence_distance.md). P92 closes the P91 mixed-prevalence bracket and proves the exact full-cube result `d_inf(P_emp, M75) = 1/24` through a nonlinear three-minor sign-coherence invariant.
+
+### P93 localized finite-sample frontier
+
+The current Research II frontier is [P93](docs/proposition_93_localized_sign_coherence_rejection.md). P93 takes P92's exact nonlinear sign-coherence obstruction into finite IID data. It needs simultaneous control of only seven observable cells. At 95 percent confidence, the exact mathematical radius crosses between 1622 and 1623 samples; the first exact replication of the original 24-count profile that clears the certificate is 1632 samples. Non-rejection remains inconclusive.

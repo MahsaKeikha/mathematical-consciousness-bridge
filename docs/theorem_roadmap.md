@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P92**. The proposition record runs from **P1 through P92 with explicit dependency branches**. P71-P91 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P93**. The proposition record runs from **P1 through P93 with explicit dependency branches**. P71-P93 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -58,6 +58,8 @@ The current documented theorem frontier is **P92**. The proposition record runs 
 &\text{P91: arbitrary-prevalence P75 mixtures obey rank at most two under the declared bipartite flattening}\\
 &\Downarrow\\
 &\text{P92: three-minor sign coherence closes the full mixed-prevalence P75 distance at 1/24}\\
+&\Downarrow\\
+&\text{P93: the P92 sign-coherence witness yields a localized seven-cell finite-sample rejection certificate}\\
 \end{aligned}
 }
 \]
@@ -620,9 +622,9 @@ After P89, the target-side chain has a substantially clearer scientific burden:
 
 P78 closes the global-lower-bound gap for the specific continuous P75 four-view binary latent family. P79 certifies the one-sided sampling-radius envelope. P80 strengthens the box relaxation by retaining probability normalization. P81 adds exact marginal and projected-event constraints. P82 adds exact non-cylinder residual constraints from nested projected events. P83 adds exact projection-parity observables. P84 then preserves shared-parameter compatibility across pairs of those parity observables through 220 exact joint contrasts.
 
-P86 closes the first minimally non-uniform four-event weighting step beyond the complete P85 triple-functional audit. The next computational question should not be chosen merely by increasing functional order or proposition number. A substantive continuation beyond P92 must close a separately stated mathematical or statistical gap and preserve the certified lower-bound direction. Natural candidates include an exact-rational support-function or convex relaxation of the full parity-coordinate image, with a certificate not already implied by P88, or an observable-specific finite-sample rejection theorem that propagates uncertainty through a selected P88 score rather than only through the global sixteen-cell radius. Target-view models with residual dependence, shared bias, temporal drift, or learned measurement pipelines also remain open.
+P86 closes the first minimally non-uniform four-event weighting step beyond the complete P85 triple-functional audit. The next computational question should not be chosen merely by increasing functional order or proposition number. A substantive continuation beyond P93 must close a separately stated mathematical or statistical gap and preserve the certified lower-bound direction. Natural candidates include an exact-rational support-function or convex relaxation of the full parity-coordinate image, with a certificate not already implied by P88, or an observable-specific finite-sample rejection theorem that propagates uncertainty through a selected P88 score rather than only through the global sixteen-cell radius. Target-view models with residual dependence, shared bias, temporal drift, or learned measurement pipelines also remain open.
 
-None of P71-P88 identifies a latent variable with consciousness. None proves that a failed descriptor implies nonphysical consciousness. The physical-to-experiential bridge remains open.
+None of P71-P93 identifies a latent variable with consciousness. None proves that a failed descriptor implies nonphysical consciousness. The physical-to-experiential bridge remains open.
 
 
 ## P83 predecessor frontier: exact projection-parity separation
@@ -835,6 +837,23 @@ Any law closer than `1/24` therefore keeps sign pattern `(-,+,+)` and has negati
 
 P92 is a conditional model-separation theorem and does not identify consciousness or close the physical-to-experiential bridge.
 
-## After P92
+## Historical transition from P92 to P93
 
-The next theorem should close a new gap rather than merely increase proposition number. Natural P93 directions include finite-sample calibration of the P92 nonlinear sign certificate, stability under alternative observable slicings, or exact comparison with broader latent-class families. Any P93 claim must preserve one-sided certification and the repository's scientific boundary.
+The next theorem should close a new gap rather than merely increase proposition number. Natural P93 directions include finite-sample calibration of the P92 nonlinear sign certificate, stability under alternative observable slicings, or exact comparison with broader latent-class families. The realized P93 theorem preserves one-sided certification and the repository's scientific boundary.
+
+## P93: localized finite-sample sign-coherence rejection
+
+P93 converts the P92 nonlinear three-minor invariant into a finite-sample rejection theorem. The three P92 minors involve only seven distinct cell probabilities, so one seven-cell Hoeffding event is sufficient. If the empirical determinant product is negative and a P79-certified upper sampling radius is smaller than every empirical determinant sign-stability radius, the population determinant product is also negative and the complete P75 family is rejected at confidence at least `1-alpha`.
+
+For the established sign geometry at 95 percent confidence, exact P79 envelopes certify the mathematical radius crossing between `n = 1622` and `n = 1623`. The first exact replication of the original 24-count profile that clears the certificate is `n = 1632 = 68 x 24`. The generic P77 fixed-margin sufficient condition at the P92 population margin crosses at 7444, but that is a different guarantee.
+
+- [P93](proposition_93_localized_sign_coherence_rejection.md)
+- [P93 provenance](p93_equation_provenance.md)
+- Source: [`localized_sign_coherence_rejection.py`](../src/consciousness_bridge/localized_sign_coherence_rejection.py)
+- Tests: [`test_localized_sign_coherence_rejection.py`](../tests/test_localized_sign_coherence_rejection.py)
+
+P93 does not claim universal or minimax sample complexity. Non-rejection remains inconclusive, and the physical-to-experiential bridge remains open.
+
+## After P93
+
+P93 closes the localized finite-sample handoff for the established P92 sign witness. Any P94 candidate must close a genuinely new mathematical or scientific gap rather than merely increase proposition number. Natural directions include alternative observable slicings, broader latent-class families, or sharper finite-sample procedures with equally explicit one-sided certification. The physical-to-experiential bridge remains open.

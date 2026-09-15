@@ -99,3 +99,7 @@ For model failure logic, open the **[Falsification Program](falsification_progra
 For equations and source roles, open the **[Equation and Citation Map](equation_and_citation_map.md)**.
 
 For the complete technical record, open **[Research Navigation](research_navigation.md)**.
+
+## Current theorem frontier: P93
+
+The current documented Research II theorem frontier is **P93**. P92 remains the exact population-distance theorem at `d_inf(P_emp, M75) = 1/24`; P93 adds the localized seven-cell finite-sample rejection handoff. This frontier status does not identify consciousness or close the physical-to-experiential bridge.

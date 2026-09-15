@@ -31,20 +31,17 @@ def test_research_map_gives_direct_audit_paths():
         "proposition_91_mixed_prevalence_rank_two_flattening_separation.md",
         "proposition_92_exact_global_mixed_prevalence_distance.md",
         "p92_equation_provenance.md",
-        "test_exact_global_mixed_prevalence_distance.py",
-        'index.html#p92-frontier',
+        "proposition_93_localized_sign_coherence_rejection.md",
+        "p93_equation_provenance.md",
+        'index.html#p93-frontier',
     ]
     for token in required:
         assert token in text, token
 
-    # P74-P76 are represented as the recovery-and-test stage on this orientation
-    # page; their detailed file-level audit paths live in the theorem roadmap and
-    # equation/citation map linked above.
     assert "P73-P76" in text
     assert "P74 adds finite-data recovery" in text
     assert "P75 introduces fourth-view overidentification" in text
     assert "P76 turns its necessary restrictions into finite-sample rejection certificates" in text
-
     assert 'index.html#p91-frontier' not in text
     assert 'index.html#p88-frontier' not in text
 
@@ -55,19 +52,19 @@ def test_current_and_previous_nonlinear_frontiers_are_structurally_inside_main()
     main_close = text.index("</main>")
     p90 = text.index('id="p90-research-map"')
     p91 = text.index('id="p91-research-map"')
+    p93 = text.index('id="p93-research-map"')
     p92 = text.index('id="p92-research-map"')
-    p90_text = text[p90:p91]
-    p91_text = text[p91:p92]
-    p92_text = text[p92:main_close]
 
     assert text.count('id="p90-research-map"') == 1
     assert text.count('id="p91-research-map"') == 1
     assert text.count('id="p92-research-map"') == 1
-    assert main_open < p90 < p91 < p92 < main_close
-    assert "Historical P90 checkpoint" in p90_text
-    assert "Current Research II theorem frontier" not in p90_text
-    assert "Current Research II theorem frontier" not in p91_text
-    assert "Current Research II theorem frontier · P92" in p92_text
+    assert text.count('id="p93-research-map"') == 1
+    assert main_open < p90 < p91 < p93 < p92 < main_close
+    assert "Historical P90 checkpoint" in text[p90:p91]
+    assert "Current Research II theorem frontier" not in text[p90:p91]
+    assert "Current Research II theorem frontier" not in text[p91:p93]
+    assert "P93 · Localized finite-sample nonlinear rejection" in text[p93:p92]
+    assert "Historical exact population checkpoint · P92" in text[p92:main_close]
 
 
 def test_continuous_frontier_keeps_lineage_and_current_provenance_auditable():

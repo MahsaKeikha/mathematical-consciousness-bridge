@@ -219,6 +219,27 @@ def _frontier_summary(frontier: int) -> list[str]:
             "P92 is a conditional model-separation theorem and does not identify consciousness or close the physical-to-experiential bridge.",
             "",
         ]
+    if frontier == 93:
+        return [
+            "### Exact P93 localized finite-sample sign-coherence rejection",
+            "",
+            "P93 carries the P92 nonlinear sign-coherence obstruction into finite IID data using only seven selected observable cells.",
+            "",
+            "```text",
+            "empirical determinants = (-1/48, 1/64, 5/192)",
+            "empirical determinants = (-1/48, 1/64, 5/192)",
+            "empirical determinant signs = (-,+,+)",
+            "d_inf(P_emp, M_75) = 1/24",
+            "d_inf(P_emp, M_75) = 1/24",
+            "sign-stability radii = (1/24, 3/56, 5/72)",
+            "95% mathematical crossing = 1622 / 1623",
+            "first exact 24-count replication that clears = 1632",
+            "generic P77 fixed-margin comparison = 7444",
+            "```",
+            "",
+            "The P77 comparison is a different guarantee. P93 is localized to the observed P92 sign witness, does not claim universal or minimax sample complexity, and does not identify consciousness.",
+            "",
+        ]
     return []
 
 

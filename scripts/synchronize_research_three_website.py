@@ -18,7 +18,7 @@ LEGACY_RESEARCH_THREE_PINS = (
     "8bbb7b029d70c43cc6a9dbf8b44dfe5069d0993d",
     "7a106820158e0d33ea651f7cdeaa505206f1ccc7",
 )
-CURRENT_HOME_MARKER = "<!-- current-frontier-home: P92 -->"
+CURRENT_HOME_MARKER = "<!-- current-frontier-home: P93 -->"
 
 MEASUREMENT_SCIENCE_REPLACEMENTS = {
     '<div><strong>23</strong><span>tests in each CI job</span></div>':

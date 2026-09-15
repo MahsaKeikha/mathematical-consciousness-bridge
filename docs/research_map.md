@@ -176,3 +176,7 @@ That is the thread connecting the entire project.
 ### P89 complete linear parity-functional closure
 
 P89 closes the complete real linear parity-functional class on the eleven canonical P83 parity coordinates for a fixed rational P75 parameter box. Matching exact rational lower and upper certificates give `L89 = 5/168` on the published strict witness, strictly above `L88 = 1/64`. Nonlinear model constraints and the physical-to-experiential bridge remain open.
+
+### P93 localized finite-sample sign-coherence rejection
+
+P93 asks whether finite IID data preserve P92's impossible determinant sign pattern strongly enough to reject the complete P75 family. It uses only seven selected cells and exact P79 sampling-radius certification. [Read P93](proposition_93_localized_sign_coherence_rejection.md).

@@ -1,30 +1,35 @@
-# Current visual frontier: P71-P92
+# Current visual frontier: P71-P93
 
 This page is generated from the canonical proposition and figure tree.
 It is the compact GitHub-facing visual route through the current target-side branch.
 
-## Current theorem frontier: P92
+## Current theorem frontier: P93
 
-![P92 current theorem frontier](../docs/figures/p92_exact_global_mixed_prevalence_distance.svg)
+![P93 current theorem frontier](../docs/figures/p93_localized_sign_coherence_rejection.svg)
 
-[Read Proposition 92](../docs/proposition_92_exact_global_mixed_prevalence_distance.md)
+[Read Proposition 93](../docs/proposition_93_localized_sign_coherence_rejection.md)
 
-[Open P92 equation provenance](../docs/p92_equation_provenance.md)
+[Open P93 equation provenance](../docs/p93_equation_provenance.md)
 
-### Exact P92 full-cube mixed-prevalence distance
+### Exact P93 localized finite-sample sign-coherence rejection
 
-P92 closes the P91 bracket through a nonlinear three-minor sign-coherence invariant on the X1=1 subtensor.
+P93 carries the P92 nonlinear sign-coherence obstruction into finite IID data using only seven selected observable cells.
 
 ```text
 empirical determinants = (-1/48, 1/64, 5/192)
-sign-stability radii = (1/24, 3/56, 5/72)
-universal P75 determinant product >= 0
+empirical determinants = (-1/48, 1/64, 5/192)
+empirical determinant signs = (-,+,+)
 d_inf(P_emp, M_75) = 1/24
+d_inf(P_emp, M_75) = 1/24
+sign-stability radii = (1/24, 3/56, 5/72)
+95% mathematical crossing = 1622 / 1623
+first exact 24-count replication that clears = 1632
+generic P77 fixed-margin comparison = 7444
 ```
 
-P92 is a conditional model-separation theorem and does not identify consciousness or close the physical-to-experiential bridge.
+The P77 comparison is a different guarantee. P93 is localized to the observed P92 sign witness, does not claim universal or minimax sample complexity, and does not identify consciousness.
 
-## P71-P92 canonical theorem-figure index
+## P71-P93 canonical theorem-figure index
 
 | Proposition | Canonical figure | Proof | Provenance |
 | --- | --- | --- | --- |
@@ -50,6 +55,7 @@ P92 is a conditional model-separation theorem and does not identify consciousnes
 | P90 | [figure](../docs/figures/p90_exact_nonlinear_rank_one_separation.svg) | [proof](../docs/proposition_90_exact_nonlinear_rank_one_separation.md) | [equations](../docs/p90_equation_provenance.md) |
 | P91 | [figure](../docs/figures/p91_mixed_prevalence_rank_two_flattening_separation.svg) | [proof](../docs/proposition_91_mixed_prevalence_rank_two_flattening_separation.md) | [equations](../docs/p91_equation_provenance.md) |
 | P92 | [figure](../docs/figures/p92_exact_global_mixed_prevalence_distance.svg) | [proof](../docs/proposition_92_exact_global_mixed_prevalence_distance.md) | [equations](../docs/p92_equation_provenance.md) |
+| P93 | [figure](../docs/figures/p93_localized_sign_coherence_rejection.svg) | [proof](../docs/proposition_93_localized_sign_coherence_rejection.md) | [equations](../docs/p93_equation_provenance.md) |
 
 ## Reproduce the visual record
 
@@ -63,4 +69,4 @@ The complete machine-readable SHA-256 inventory is in [`manifest.json`](manifest
 
 ## Interpretation boundary
 
-P71-P92 strengthens the methodology for testing a declared physical-to-target model. It does not derive consciousness from physics, prove nonphysicality, or close the physical-to-experiential bridge.
+P71-P93 strengthens the methodology for testing a declared physical-to-target model. It does not derive consciousness from physics, prove nonphysicality, or close the physical-to-experiential bridge.

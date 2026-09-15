@@ -5,15 +5,15 @@ visual record of the Mathematical Consciousness Bridge project. The canonical
 SVG archive lives in [`docs/figures/`](../docs/figures/); this gateway is derived
 from that archive by code so it cannot silently remain on an older proposition.
 
-## Current theorem frontier: P92
+## Current theorem frontier: P93
 
-![P92 current theorem frontier](../docs/figures/p92_exact_global_mixed_prevalence_distance.svg)
+![P93 current theorem frontier](../docs/figures/p93_localized_sign_coherence_rejection.svg)
 
-Canonical figure: [`p92_exact_global_mixed_prevalence_distance.svg`](../docs/figures/p92_exact_global_mixed_prevalence_distance.svg)
-Theorem: [`proposition_92_exact_global_mixed_prevalence_distance.md`](../docs/proposition_92_exact_global_mixed_prevalence_distance.md)
-Equation provenance: [`p92_equation_provenance.md`](../docs/p92_equation_provenance.md)
+Canonical figure: [`p93_localized_sign_coherence_rejection.svg`](../docs/figures/p93_localized_sign_coherence_rejection.svg)
+Theorem: [`proposition_93_localized_sign_coherence_rejection.md`](../docs/proposition_93_localized_sign_coherence_rejection.md)
+Equation provenance: [`p93_equation_provenance.md`](../docs/p93_equation_provenance.md)
 
-For the full P71-P92 visual progression, open
+For the full P71-P93 visual progression, open
 [`CURRENT_FRONTIER.md`](CURRENT_FRONTIER.md).
 
 ## Complete reproducible figure record
