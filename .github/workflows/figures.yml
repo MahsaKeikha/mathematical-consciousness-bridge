@@ -8,6 +8,7 @@ on:
       - "README.md"
       - "START_HERE.md"
       - "scripts/promote_p93_public_frontier.py"
+      - "scripts/fix_p93_publication_contracts.py"
       - "scripts/generate_all_figures.py"
       - "scripts/sync_figure_publication.py"
       - "scripts/prepare_website.py"
@@ -42,6 +43,8 @@ jobs:
           python -m pip install -r requirements-figures.txt
       - name: Promote P93 publication surfaces
         run: python scripts/promote_p93_public_frontier.py
+      - name: Repair exact P93 publication labels
+        run: python scripts/fix_p93_publication_contracts.py
       - name: Regenerate canonical visual publication record
         run: python scripts/generate_all_figures.py
       - name: Normalize reader-facing punctuation
@@ -80,6 +83,7 @@ jobs:
           PY
           rm -f .github/workflows/promote-p93-branch.yml
           rm -f scripts/promote_p93_public_frontier.py
+          rm -f scripts/fix_p93_publication_contracts.py
       - name: Validate generated patch
         run: |
           git diff --check
