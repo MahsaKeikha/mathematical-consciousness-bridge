@@ -5,19 +5,7 @@ on:
     paths:
       - "website/**"
       - "docs/**"
-      - "scripts/prepare_website.py"
-      - "scripts/synchronize_research_three_website.py"
-      - "scripts/promote_p91_public_frontier.py"
-      - ".github/workflows/pages.yml"
-      - ".github/workflows/validate-research-three-website.yml"
-  pull_request:
-    paths:
-      - "website/**"
-      - "docs/**"
-      - "scripts/prepare_website.py"
-      - "scripts/synchronize_research_three_website.py"
-      - "scripts/promote_p91_public_frontier.py"
-      - ".github/workflows/pages.yml"
+      - "CITATION.md"
       - ".github/workflows/validate-research-three-website.yml"
   workflow_dispatch:
 
@@ -25,7 +13,7 @@ permissions:
   contents: write
 
 jobs:
-  validate:
+  normalize:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -44,44 +32,37 @@ jobs:
           def write(path, text):
               Path(path).write_text(text, encoding="utf-8")
 
-          # Remove the obsolete duplicate P90-current citation block that survived
-          # the P91 promotion under a P91 heading.
           path = "CITATION.md"
           text = read(path)
-          stale = '''## Current theorem frontier: P91
-
-          The current documented theorem frontier is **P90**, an exact nonlinear rank-one slice separation theorem for the declared strict P75 box.
-
-          - Proof: [`proposition_90_exact_nonlinear_rank_one_separation.md`](docs/proposition_90_exact_nonlinear_rank_one_separation.md)
-          - Equation provenance: [`p90_equation_provenance.md`](docs/p90_equation_provenance.md)
-          - Implementation: [`exact_nonlinear_rank_one_separation.py`](src/consciousness_bridge/exact_nonlinear_rank_one_separation.py)
-          - Exact tests: [`test_exact_nonlinear_rank_one_separation.py`](tests/test_exact_nonlinear_rank_one_separation.py)
-
-          P90 is a conditional model-separation result. It does not identify consciousness or establish nonphysicality.
-
-          '''
+          stale = (
+              "## Current theorem frontier: P91\n\n"
+              "The current documented theorem frontier is **P90**, an exact nonlinear rank-one slice separation theorem for the declared strict P75 box.\n\n"
+              "- Proof: [`proposition_90_exact_nonlinear_rank_one_separation.md`](docs/proposition_90_exact_nonlinear_rank_one_separation.md)\n"
+              "- Equation provenance: [`p90_equation_provenance.md`](docs/p90_equation_provenance.md)\n"
+              "- Implementation: [`exact_nonlinear_rank_one_separation.py`](src/consciousness_bridge/exact_nonlinear_rank_one_separation.py)\n"
+              "- Exact tests: [`test_exact_nonlinear_rank_one_separation.py`](tests/test_exact_nonlinear_rank_one_separation.py)\n\n"
+              "P90 is a conditional model-separation result. It does not identify consciousness or establish nonphysicality.\n\n"
+          )
           text = text.replace(stale, "")
           write(path, text)
 
-          # Point the current-frontier claim to the actual current theorem.
           path = "docs/claim_source_matrix.md"
-          text = read(path)
-          text = text.replace(
-              '| Current frontier | P91 is the current Research II theorem frontier | repository publication status | [P90 proof](proposition_90_exact_nonlinear_rank_one_separation.md), implementation, tests, provenance, figure, and frontier publication tests | P89, P88, P87, and earlier propositions remain historical certified frontiers, not current ones |',
-              '| Current frontier | P91 is the current Research II theorem frontier | repository publication status | [P91 proof](proposition_91_mixed_prevalence_rank_two_flattening_separation.md), [P91 provenance](p91_equation_provenance.md), implementation, exact tests, figure, and frontier publication tests | P90 and earlier propositions remain historical certified frontiers, not current ones |',
+          text = read(path).replace(
+              "| Current frontier | P91 is the current Research II theorem frontier | repository publication status | [P90 proof](proposition_90_exact_nonlinear_rank_one_separation.md), implementation, tests, provenance, figure, and frontier publication tests | P89, P88, P87, and earlier propositions remain historical certified frontiers, not current ones |",
+              "| Current frontier | P91 is the current Research II theorem frontier | repository publication status | [P91 proof](proposition_91_mixed_prevalence_rank_two_flattening_separation.md), [P91 provenance](p91_equation_provenance.md), implementation, exact tests, figure, and frontier publication tests | P90 and earlier propositions remain historical certified frontiers, not current ones |",
           )
           write(path, text)
 
-          # Normalize the Research Map and move appended frontier sections inside main.
           path = "website/research-map.html"
           text = read(path)
-          for old, new in (
+          replacements = (
               ('content="Scientific dependency map of the Mathematical Consciousness Bridge through Proposition 88."', 'content="Scientific dependency map of the Mathematical Consciousness Bridge through Proposition 91."'),
               ('<h1>Eighty-eight results, one dependency-aware scientific program</h1>', '<h1>Ninety-one results, one dependency-aware scientific program</h1>'),
               ('<p class="eyebrow">Current exact frontier · P87</p>', '<p class="eyebrow">Historical exact frontier · P87</p>'),
               ('<strong>Current Research II model-audit range: P75-P90.</strong>', '<strong>Current Research II model-audit range: P75-P91.</strong>'),
               ('<a href="index.html#p90-frontier">Current frontier</a>', '<a href="visual-atlas.html#p90-frontier">Historical P90 figure</a>'),
-          ):
+          )
+          for old, new in replacements:
               text = text.replace(old, new)
           p90_start = text.find('<section id="p90-research-map"')
           html_end = text.find('</html>')
@@ -102,122 +83,24 @@ jobs:
 
           path = "website/plain-language.html"
           text = read(path).replace(
-              'A 90-result sufficiency and falsification architecture',
-              'A 91-result sufficiency and falsification architecture',
+              "A 90-result sufficiency and falsification architecture",
+              "A 91-result sufficiency and falsification architecture",
           )
           write(path, text)
 
-          # Clarify chronology around P89/P90/P91 instead of labeling pre-P91 text as future P91 work.
           path = "docs/theorem_roadmap.md"
           text = read(path)
           text = text.replace(
-              '''## After P91
-
-          P89 closes the complete **linear** parity-functional class on the eleven declared parity coordinates. A future P92 claim should therefore address a different gap, such as nonlinear joint parity constraints, additional observable families, or a tighter use of the nonlinear P75 image, and must include a certificate not already implied by P89.''',
-              '''## Beyond the complete P89 linear frontier
-
-          P89 closes the complete **linear** parity-functional class on the eleven declared parity coordinates. P90 and P91 move beyond that closure by using nonlinear algebraic structure of the declared P75 model image.''',
+              "## After P91\n\nP89 closes the complete **linear** parity-functional class on the eleven declared parity coordinates. A future P92 claim should therefore address a different gap, such as nonlinear joint parity constraints, additional observable families, or a tighter use of the nonlinear P75 image, and must include a certificate not already implied by P89.",
+              "## Beyond the complete P89 linear frontier\n\nP89 closes the complete **linear** parity-functional class on the eleven declared parity coordinates. P90 and P91 move beyond that closure by using nonlinear algebraic structure of the declared P75 model image.",
               1,
           )
           text = text.replace(
-              '''## After P91
-
-          A future P91 result should address nonlinear structure beyond the single-component boundary case, for example nonzero latent mixing where rank-one slice identities no longer hold directly.''',
-              '''## From P90 to P91
-
-          P91 addresses the nonlinear structure left open by P90's single-component boundary case by allowing nonzero latent mixing and using a rank-two bipartite flattening constraint.''',
+              "## After P91\n\nA future P91 result should address nonlinear structure beyond the single-component boundary case, for example nonzero latent mixing where rank-one slice identities no longer hold directly.",
+              "## From P90 to P91\n\nP91 addresses the nonlinear structure left open by P90's single-component boundary case by allowing nonzero latent mixing and using a rank-two bipartite flattening constraint.",
               1,
           )
           write(path, text)
-
-          # Add an idempotent final-quality normalizer to the promoter so the same
-          # issues cannot reappear after future P91 regeneration.
-          path = "scripts/promote_p91_public_frontier.py"
-          source = read(path)
-          marker = "def cleanup_p91_publication_quality() -> None:"
-          if marker not in source:
-              function = r'''
-
-def cleanup_p91_publication_quality() -> None:
-    """Normalize final P91 publication wording and HTML placement idempotently."""
-
-    path = "CITATION.md"
-    text = read(path)
-    stale = '''## Current theorem frontier: P91
-
-The current documented theorem frontier is **P90**, an exact nonlinear rank-one slice separation theorem for the declared strict P75 box.
-
-- Proof: [`proposition_90_exact_nonlinear_rank_one_separation.md`](docs/proposition_90_exact_nonlinear_rank_one_separation.md)
-- Equation provenance: [`p90_equation_provenance.md`](docs/p90_equation_provenance.md)
-- Implementation: [`exact_nonlinear_rank_one_separation.py`](src/consciousness_bridge/exact_nonlinear_rank_one_separation.py)
-- Exact tests: [`test_exact_nonlinear_rank_one_separation.py`](tests/test_exact_nonlinear_rank_one_separation.py)
-
-P90 is a conditional model-separation result. It does not identify consciousness or establish nonphysicality.
-
-'''
-    text = text.replace(stale, "")
-    write(path, text)
-
-    path = "docs/claim_source_matrix.md"
-    text = read(path).replace(
-        '| Current frontier | P91 is the current Research II theorem frontier | repository publication status | [P90 proof](proposition_90_exact_nonlinear_rank_one_separation.md), implementation, tests, provenance, figure, and frontier publication tests | P89, P88, P87, and earlier propositions remain historical certified frontiers, not current ones |',
-        '| Current frontier | P91 is the current Research II theorem frontier | repository publication status | [P91 proof](proposition_91_mixed_prevalence_rank_two_flattening_separation.md), [P91 provenance](p91_equation_provenance.md), implementation, exact tests, figure, and frontier publication tests | P90 and earlier propositions remain historical certified frontiers, not current ones |',
-    )
-    write(path, text)
-
-    path = "website/research-map.html"
-    text = read(path)
-    for old, new in (
-        ('content="Scientific dependency map of the Mathematical Consciousness Bridge through Proposition 88."', 'content="Scientific dependency map of the Mathematical Consciousness Bridge through Proposition 91."'),
-        ('<h1>Eighty-eight results, one dependency-aware scientific program</h1>', '<h1>Ninety-one results, one dependency-aware scientific program</h1>'),
-        ('<p class="eyebrow">Current exact frontier · P87</p>', '<p class="eyebrow">Historical exact frontier · P87</p>'),
-        ('<strong>Current Research II model-audit range: P75-P90.</strong>', '<strong>Current Research II model-audit range: P75-P91.</strong>'),
-        ('<a href="index.html#p90-frontier">Current frontier</a>', '<a href="visual-atlas.html#p90-frontier">Historical P90 figure</a>'),
-    ):
-        text = text.replace(old, new)
-    p90_start = text.find('<section id="p90-research-map"')
-    html_end = text.find('</html>')
-    if p90_start != -1 and html_end != -1 and p90_start > html_end:
-        trailing = text[p90_start:].strip()
-        text = text[:p90_start].rstrip() + "\n"
-        text = text.replace("</main>", trailing + "\n\n</main>", 1)
-    write(path, text)
-
-    path = "website/visual-atlas.html"
-    write(path, read(path).replace('<!-- current-frontier-visual: P90 -->', '<!-- current-frontier-visual: P91 -->'))
-
-    path = "website/plain-language.html"
-    write(path, read(path).replace('A 90-result sufficiency and falsification architecture', 'A 91-result sufficiency and falsification architecture'))
-
-    path = "docs/theorem_roadmap.md"
-    text = read(path)
-    text = text.replace(
-        '''## After P91
-
-P89 closes the complete **linear** parity-functional class on the eleven declared parity coordinates. A future P92 claim should therefore address a different gap, such as nonlinear joint parity constraints, additional observable families, or a tighter use of the nonlinear P75 image, and must include a certificate not already implied by P89.''',
-        '''## Beyond the complete P89 linear frontier
-
-P89 closes the complete **linear** parity-functional class on the eleven declared parity coordinates. P90 and P91 move beyond that closure by using nonlinear algebraic structure of the declared P75 model image.''',
-        1,
-    )
-    text = text.replace(
-        '''## After P91
-
-A future P91 result should address nonlinear structure beyond the single-component boundary case, for example nonzero latent mixing where rank-one slice identities no longer hold directly.''',
-        '''## From P90 to P91
-
-P91 addresses the nonlinear structure left open by P90's single-component boundary case by allowing nonzero latent mixing and using a rank-two bipartite flattening constraint.''',
-        1,
-    )
-    write(path, text)
-'''
-              source = source.replace("\ndef main() -> None:\n", function + "\ndef main() -> None:\n", 1)
-              source = source.replace(
-                  "    promote_sync_summary()\n    print(\"[P91] reader-facing publication surfaces promoted\")",
-                  "    promote_sync_summary()\n    cleanup_p91_publication_quality()\n    print(\"[P91] reader-facing publication surfaces promoted\")",
-                  1,
-              )
-          write(path, source)
           PY
 
       - name: Commit publication normalization
@@ -230,45 +113,6 @@ P91 addresses the nonlinear structure left open by P90's single-component bounda
           git diff --check
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add CITATION.md docs/claim_source_matrix.md docs/theorem_roadmap.md website/research-map.html website/visual-atlas.html website/plain-language.html scripts/promote_p91_public_frontier.py
+          git add CITATION.md docs/claim_source_matrix.md docs/theorem_roadmap.md website/research-map.html website/visual-atlas.html website/plain-language.html
           git commit -m "Normalize final P91 publication surfaces"
           git push origin HEAD:p91-mixed-prevalence-rank-two-flattening
-
-      - name: Verify maintained Python scripts
-        run: |
-          python -m py_compile scripts/prepare_website.py scripts/synchronize_research_three_website.py scripts/promote_p91_public_frontier.py
-          python scripts/synchronize_research_three_website.py --site website --check
-
-      - name: Build exact website artifact
-        run: |
-          rm -rf website-deploy _site
-          cp -a website website-deploy
-          python scripts/prepare_website.py --source website-deploy --output _site
-
-      - name: Verify P91 reader coherence
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-
-          atlas = Path("_site/visual-atlas.html").read_text(encoding="utf-8")
-          assert "<!-- current-frontier-visual: P91 -->" in atlas
-          assert atlas.index('id="p91-frontier"') < atlas.index('id="p90-frontier"') < atlas.index('id="p89-frontier"')
-
-          research_map = Path("_site/research-map.html").read_text(encoding="utf-8")
-          assert "Ninety-one results" in research_map
-          assert "through Proposition 91" in research_map
-          assert research_map.count('id="p91-research-map"') == 1
-          assert research_map.count('id="p90-research-map"') == 1
-          assert research_map.index('id="p90-research-map"') < research_map.index('id="p91-research-map"') < research_map.index("</main>") < research_map.index("</html>")
-          assert "Current exact frontier · P87" not in research_map
-          assert "Current Research II model-audit range: P75-P90" not in research_map
-
-          citation = Path("CITATION.md").read_text(encoding="utf-8")
-          assert "The current documented theorem frontier is **P90**" not in citation
-
-          matrix = Path("docs/claim_source_matrix.md").read_text(encoding="utf-8")
-          assert "[P91 proof](proposition_91_mixed_prevalence_rank_two_flattening_separation.md)" in matrix
-          PY
-
-      - name: Verify clean generated surface
-        run: git diff --check
