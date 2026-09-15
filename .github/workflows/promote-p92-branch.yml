@@ -37,6 +37,10 @@ jobs:
         run: python scripts/fix_p92_branch_migration_contracts.py
       - name: Synchronize figure publication record
         run: python scripts/sync_figure_publication.py
+      - name: Keep normal workflow files out of the bot migration commit
+        run: |
+          git checkout -- .github/workflows/figures.yml
+          git checkout -- .github/workflows/reproducibility.yml
       - name: Validate migration diff
         run: git diff --check
       - name: Commit branch-only migration
