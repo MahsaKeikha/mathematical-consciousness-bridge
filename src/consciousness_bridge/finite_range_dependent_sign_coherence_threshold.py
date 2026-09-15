@@ -9,6 +9,9 @@ from consciousness_bridge.finite_range_dependent_sign_coherence import (
     P94DependentRadiusCertificate,
     certified_p94_dependent_squared_radius,
 )
+from consciousness_bridge.localized_sign_coherence_rejection import (
+    certify_p93_witness_95_threshold_exact,
+)
 
 _WITNESS_RADIUS = Fraction(1, 24)
 _ALPHA_95 = Fraction(1, 20)
@@ -41,17 +44,19 @@ def certify_p94_witness_95_threshold_exact(
 ) -> P94WitnessThresholdCertificate:
     """Locate the first integer clearing the P94 witness radius at 95 percent.
 
-    P93 certifies that 288 log(280) lies strictly between 1622 and 1623.
-    For q=m+1, the P94 threshold is q times that real number. Hence the first
-    integer lies between 1622*q and 1623*q. Exact P79 logarithm brackets then
-    classify candidates by monotone binary search.
+    P93 supplies the exact IID bracket. For q=m+1, the P94 threshold is q times
+    the same real boundary. Exact P79 logarithm brackets then classify the
+    integer candidates by monotone binary search.
     """
 
     dependence_range = _validate_dependence_range(dependence_range)
     color_count = dependence_range + 1
     target_squared = _WITNESS_RADIUS * _WITNESS_RADIUS
-    low = 1622 * color_count
-    high = 1623 * color_count
+    iid_threshold = certify_p93_witness_95_threshold_exact(
+        series_terms=series_terms,
+    )
+    low = iid_threshold.last_noncertifying_sample_size * color_count
+    high = iid_threshold.first_certifying_sample_size * color_count
 
     def radius(sample_size: int) -> P94DependentRadiusCertificate:
         return certified_p94_dependent_squared_radius(
@@ -80,8 +85,10 @@ def certify_p94_witness_95_threshold_exact(
 
     last_radius = radius(low)
     first_radius = radius(high)
-    base_sample_size = 24
-    first_replication = ((high + base_sample_size - 1) // base_sample_size) * base_sample_size
+    base_sample_size = iid_threshold.base_profile_sample_size
+    first_replication = (
+        (high + base_sample_size - 1) // base_sample_size
+    ) * base_sample_size
     return P94WitnessThresholdCertificate(
         dependence_range=dependence_range,
         color_count=color_count,
