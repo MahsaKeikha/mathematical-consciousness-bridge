@@ -1,0 +1,17 @@
+# P100 Publication Audit
+
+P100 is the current documented theorem frontier for the Mathematical Consciousness Bridge research program. The formal package release remains v0.82.0; theorem-frontier advancement and release numbering are intentionally separate.
+
+The capstone exact checkpoint is:
+
+- P99 round e-value: `E_t = 25/2 = 12.5`;
+- predictable reserve stake: `eta_t = 1/2`;
+- round factor: `F_t = 27/4 = 6.75`;
+- two-round process: `M_2 = 729/16 = 45.5625 > 20`;
+- declared two-round unique-observation totals: `30192 / 30336`.
+
+The public P100 contract includes the theorem, equation and novelty provenance, exact implementation and tests, canonical theorem figure, figure catalog, README, theorem roadmap, research navigation, reproducibility guide, citation surfaces, Start Here and plain-language entries, Research Map, implementation guide, research lineage, source index, and historical P99/P98 audit routes.
+
+P100 remains a conditional model-rejection and sequential-inference theorem. Its guarantee requires predictable current-round choices and conditionally valid fresh certification data. It does not turn non-rejection into model acceptance, identify a latent state with consciousness, establish nonphysicality, or complete the physical-to-experiential bridge.
+
+This record exists to make the final publication boundary explicit before manuscript and preprint consolidation.
