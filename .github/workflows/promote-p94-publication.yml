@@ -49,6 +49,9 @@ jobs:
       - name: Finalize P94 publication contracts
         run: python scripts/finalize_p94_publication.py
 
+      - name: Close residual P94 publication contracts
+        run: python scripts/fix_p94_generated_contracts.py final
+
       - name: Regenerate canonical visual publication record
         run: python scripts/generate_all_figures.py
 
