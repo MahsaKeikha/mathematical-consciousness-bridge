@@ -256,6 +256,23 @@ def _frontier_summary(frontier: int) -> list[str]:
             "P94 is conditional on the declared dependence range and common marginal law. It does not establish arbitrary drift robustness or identify consciousness.",
             "",
         ]
+    if frontier == 95:
+        return [
+            "### Exact P95 drift-aware stratified sign-coherence rejection",
+            "",
+            "P95 responds to the P94 temporal-pooling no-go by testing predeclared regimes separately and controlling the complete family with one explicit error budget.",
+            "",
+            "```text",
+            "local radius: eps_b^2 = (m_b+1) log(14/alpha_b) / (2 n_b)",
+            "familywise condition: sum_b alpha_b <= alpha",
+            "joint null: P_b belongs to M_75 for every declared regime b",
+            "B=2, m=1, 95% familywise crossing = 3645 per regime",
+            "first exact denominator-24 replication = 3648 per regime",
+            "```",
+            "",
+            "P95 permits arbitrary marginal changes between predeclared regimes and requires only local common-marginal finite-range assumptions. It does not validate data-dependent segmentation, unrestricted gradual drift, model acceptance, or any consciousness ontology.",
+            "",
+        ]
     return []
 
 

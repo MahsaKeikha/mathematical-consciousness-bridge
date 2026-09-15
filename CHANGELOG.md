@@ -1,3 +1,12 @@
+## P95 drift-aware stratified sign-coherence frontier
+
+- Added Proposition 95 as the drift-aware continuation of the P94 temporal-pooling no-go.
+- Replaced invalid pooled-stationary inference with predeclared regime-specific P94 gates and exact familywise error allocation.
+- Permitted arbitrary marginal changes between regimes, different within-regime dependence ranges, and dependent regime confidence events.
+- Certified the balanced B=2, m=1 95 percent crossing at 3645 observations per regime and first exact denominator-24 replication at 3648.
+- Preserved the scientific boundary: data-dependent segmentation and unrestricted gradual drift remain open, non-rejection is inconclusive, and the physical-to-experiential bridge remains open.
+- Kept formal release v0.82.0 separate from the advancing theorem frontier.
+
 # Unreleased research frontier - P94
 
 - Added Proposition 94, Finite-Range Dependent Sign-Coherence Rejection.

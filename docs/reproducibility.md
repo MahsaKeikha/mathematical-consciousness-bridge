@@ -10,12 +10,12 @@ You do not need every command at once. Choose the route that matches your goal.
 | --- | --- |
 | Reproduce the maintained repository as strictly as possible | `make reproduce` |
 | Run the normal verification suite | `make check` |
-| Run only the current P94 theorem checks | focused P94 commands below |
+| Run only the current P95 theorem checks | focused P95 commands below |
 | Validate figures without rebuilding them | `make figures-check` |
 | Regenerate the complete visual record | `make figures` |
 | Inspect CI without installing locally | GitHub Actions |
 
-The current public theorem frontier is **P94**. The formal release remains **v0.82.0**.
+The current public theorem frontier is **P95**. The formal release remains **v0.82.0**.
 
 ---
 
@@ -104,19 +104,18 @@ Use this route when you want to verify the current committed state without regen
 
 ---
 
-## 5. Focused audit of the current P94 frontier
+## 5. Focused audit of the current P95 frontier
 
-The current theorem frontier is **P94**.
+The current theorem frontier is **P95**.
 
 Its direct technical record is:
 
 ```text
-docs/proposition_94_finite_range_dependent_sign_coherence.md
-docs/p94_equation_provenance.md
-src/consciousness_bridge/finite_range_dependent_sign_coherence.py
-src/consciousness_bridge/finite_range_dependent_sign_coherence_threshold.py
-tests/test_finite_range_dependent_sign_coherence.py
-docs/figures/p94_finite_range_dependent_sign_coherence.svg
+docs/proposition_95_drift_aware_stratified_sign_coherence.md
+docs/p95_equation_provenance.md
+src/consciousness_bridge/drift_aware_stratified_sign_coherence.py
+tests/test_drift_aware_stratified_sign_coherence.py
+docs/figures/p95_drift_aware_stratified_sign_coherence.svg
 figures/manifest.json
 ```
 
@@ -124,7 +123,8 @@ Run the focused theorem and publication checks with:
 
 ```bash
 python -m pytest -q \
-  tests/test_finite_range_dependent_sign_coherence.py \
+  tests/test_drift_aware_stratified_sign_coherence.py \
+  tests/test_p95_reader_surface_coherence.py \
   tests/test_frontier_reader_narrative.py \
   tests/test_figure_publication_sync.py \
   tests/test_frontier_publication_consistency.py
@@ -132,19 +132,11 @@ python scripts/sync_figure_publication.py --check
 python scripts/verify_repository.py
 ```
 
-P94 extends P93 from IID observations to a declared `m`-dependent sequence sharing one common marginal four-view law. Its seven-cell radius is
+P95 responds to the P94 temporal-pooling no-go by replacing one pooled marginal target with a family of predeclared regime-specific targets. Each regime has its own local P94 finite-range radius and exact error budget, and the union bound controls the complete family without requiring independence between regimes.
 
-\[
-\varepsilon^{(m)}_{n,7}(\alpha)
-=
-\sqrt{\frac{(m+1)\log(14/\alpha)}{2n}}.
-\]
+For two equally budgeted regimes with dependence range one at 95 percent familywise confidence, the established P92 witness crosses at `3645` observations per regime. The first exact denominator-24 replication that clears the gate is `3648` per regime.
 
-For the established `1/24` limiting sign radius at 95 percent confidence, exact rational certification gives crossings `1623`, `3246`, and `4869` for `m=0,1,2`. The first exact denominator-24 replications are `1632`, `3264`, and `4872`.
-
-The exact temporal-pooling no-go certificate is also part of P94. It shows that two individually valid interior P75 regimes can pool to determinants `(-65/65536, 11/65536, 3/65536)` with negative product. P94 therefore does not treat arbitrary temporal drift as finite-range dependence.
-
-Non-rejection remains inconclusive. P94 does not identify the latent state with consciousness, establish nonphysicality, validate an alternative ontology, or close the physical-to-experiential bridge.
+Non-rejection remains inconclusive. P95 does not validate data-dependent change-point selection, identify the latent state with consciousness, establish nonphysicality, validate an alternative ontology, or close the physical-to-experiential bridge.
 
 ---
 
@@ -376,3 +368,19 @@ python scripts/verify_repository.py
 ```
 
 The P93 threshold audit uses P79 exact rational lower and upper sampling-radius envelopes and distinguishes the mathematical 1623 crossing from the first realizable exact 24-count replication at 1632.
+
+P95 direct technical record:
+
+```text
+docs/proposition_95_drift_aware_stratified_sign_coherence.md
+docs/p95_equation_provenance.md
+docs/figures/p95_drift_aware_stratified_sign_coherence.svg
+src/consciousness_bridge/drift_aware_stratified_sign_coherence.py
+tests/test_drift_aware_stratified_sign_coherence.py
+```
+
+Focused check:
+
+```bash
+python -m pytest -q tests/test_drift_aware_stratified_sign_coherence.py
+```

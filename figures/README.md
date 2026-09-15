@@ -5,15 +5,15 @@ visual record of the Mathematical Consciousness Bridge project. The canonical
 SVG archive lives in [`docs/figures/`](../docs/figures/); this gateway is derived
 from that archive by code so it cannot silently remain on an older proposition.
 
-## Current theorem frontier: P94
+## Current theorem frontier: P95
 
-![P94 current theorem frontier](../docs/figures/p94_finite_range_dependent_sign_coherence.svg)
+![P95 current theorem frontier](../docs/figures/p95_drift_aware_stratified_sign_coherence.svg)
 
-Canonical figure: [`p94_finite_range_dependent_sign_coherence.svg`](../docs/figures/p94_finite_range_dependent_sign_coherence.svg)
-Theorem: [`proposition_94_finite_range_dependent_sign_coherence.md`](../docs/proposition_94_finite_range_dependent_sign_coherence.md)
-Equation provenance: [`p94_equation_provenance.md`](../docs/p94_equation_provenance.md)
+Canonical figure: [`p95_drift_aware_stratified_sign_coherence.svg`](../docs/figures/p95_drift_aware_stratified_sign_coherence.svg)
+Theorem: [`proposition_95_drift_aware_stratified_sign_coherence.md`](../docs/proposition_95_drift_aware_stratified_sign_coherence.md)
+Equation provenance: [`p95_equation_provenance.md`](../docs/p95_equation_provenance.md)
 
-For the full P71-P94 visual progression, open
+For the full P71-P95 visual progression, open
 [`CURRENT_FRONTIER.md`](CURRENT_FRONTIER.md).
 
 ## Complete reproducible figure record
