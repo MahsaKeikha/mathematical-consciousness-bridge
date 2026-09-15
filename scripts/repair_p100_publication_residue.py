@@ -123,6 +123,10 @@ def main() -> None:
     path = "website/research-map.html"
     text = read(path)
     text = text.replace("P71-P98 return to the P19 bridge-sufficiency lineage", "P71-P100 return to the P19 bridge-sufficiency lineage")
+    text = text.replace(
+        "Mathematical Consciousness Bridge · Research Map · Current theorem frontier P99</p>",
+        "Mathematical Consciousness Bridge · Research Map · Current theorem frontier P100</p>",
+    )
     if "through Proposition 100." not in text:
         anchor = '<p><strong>Current Research II model-audit range: P75-P100.</strong> The current theorem frontier is P100. The physical-to-experiential bridge remains open.</p>'
         if anchor not in text:
