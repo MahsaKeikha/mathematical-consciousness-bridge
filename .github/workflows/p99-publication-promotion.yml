@@ -26,6 +26,24 @@ jobs:
           python -m py_compile scripts/promote_p99_public_frontier.py
       - name: Promote P99 public frontier
         run: python scripts/promote_p99_public_frontier.py
+      - name: Preserve full linked TRIUMF name in About surfaces
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          linked = '<strong><a href="https://triumf.ca/">TRIUMF, Canada\'s Particle Accelerator Centre</a></strong>'
+          for filename in ("website/index.html", "website/about.html"):
+              path = Path(filename)
+              text = path.read_text(encoding="utf-8")
+              text = text.replace("<strong>TRIUMF</strong>", linked)
+              path.write_text(text, encoding="utf-8")
+
+          about = Path("website/about.html").read_text(encoding="utf-8")
+          home = Path("website/index.html").read_text(encoding="utf-8")
+          for page in (about, home):
+              assert "TRIUMF, Canada's Particle Accelerator Centre" in page
+              assert 'href="https://triumf.ca/"' in page
+          PY
       - name: Regenerate canonical figures
         run: python scripts/generate_all_figures.py
       - name: Synchronize figure publication record
