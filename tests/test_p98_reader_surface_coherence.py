@@ -24,54 +24,40 @@ def test_p98_formal_record_is_complete() -> None:
         assert (ROOT / path).is_file()
 
 
-def test_p98_is_current_reader_frontier() -> None:
+def test_p98_is_preserved_below_p99() -> None:
     verifier = _read("scripts/verify_repository.py")
-    home = _read("website/index.html")
     atlas = _read("website/visual-atlas.html")
     plain = _read("website/plain-language.html")
     start = _read("website/start-here.html")
     research = _read("website/research-map.html")
 
-    assert 'CURRENT_FRONTIER = "P98"' in verifier
-    assert '<!-- current-frontier-home: P98 -->' in home
-    assert 'id="p98-frontier"' in home
-    assert "Current theorem frontier · P98" in home
-    assert "Explore all 98 results" in home
-    assert '<!-- current-frontier-visual: P98 -->' in atlas
-    assert atlas.index('id="p98-frontier"') < atlas.index('id="p97-frontier"')
-    assert "Previous theorem frontier · P97" in atlas
+    assert 'CURRENT_FRONTIER = "P99"' in verifier
+    assert atlas.index('id="p99-frontier"') < atlas.index('id="p98-frontier"')
+    assert "Previous theorem frontier · P98" in atlas
     assert 'id="p98-reader-frontier"' in plain
     assert 'id="p98-reader-frontier"' in start
-    assert "98 results · current frontier P98" in plain
-    assert "98 results · current frontier P98" in start
     assert 'id="p98-research-map"' in research
-    assert research.index('id="p98-research-map"') < research.index('id="p97-research-map"')
-    assert "Current Research II model-audit range: P75-P98." in research
-    assert "The current theorem frontier is P98." in research
+    assert research.index('id="p99-research-map"') < research.index('id="p98-research-map"')
+    assert "99 results · current frontier P99" in plain
+    assert "99 results · current frontier P99" in start
 
-
-def test_p98_repository_audit_surfaces_are_synchronized() -> None:
+def test_p98_repository_audit_surfaces_preserve_history() -> None:
     readme = _read("README.md")
     roadmap = _read("docs/theorem_roadmap.md")
     navigation = _read("docs/research_navigation.md")
     reproducibility = _read("docs/reproducibility.md")
     citation = _read("CITATION.md")
 
-    assert "The current public theorem frontier is **P98**." in readme
-    assert "docs/proposition_98_cross_fitted_selection_valid_certification.md" in readme
-    assert "The current documented theorem frontier is **P98**." in roadmap
-    assert "P1 through P98 with explicit dependency branches" in roadmap
+    assert "The current public theorem frontier is **P99**." in readme
+    assert "P98" in readme
     assert "## P98: cross-fitted selection-valid certification" in roadmap
-    assert "## After P98" in roadmap
-    assert "The current documented theorem frontier is **P98**." in navigation
-    assert "**Results:** P75 through P98" in navigation
-    assert "For P98:" in navigation
+    assert "## P99: cross-fitted e-value aggregation" in roadmap
+    assert "The current documented theorem frontier is **P99**." in navigation
+    assert "For P98" in navigation
     assert "p98_cross_fitted_selection_valid_certification.svg" in navigation
-    assert "The current public theorem frontier is **P98**." in reproducibility
-    assert "## 5. Focused audit of the current P98 frontier" in reproducibility
-    assert "docs/figures/p98_cross_fitted_selection_valid_certification.svg" in reproducibility
-    assert "## Current theorem frontier: P98" in citation
-
+    assert "The current public theorem frontier is **P99**." in reproducibility
+    assert "## 5. Focused audit of the current P99 frontier" in reproducibility
+    assert "P98" in citation and "P99" in citation
 
 def test_p98_scientific_boundary_is_visible() -> None:
     for path in (

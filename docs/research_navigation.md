@@ -4,7 +4,7 @@
 
 This page is an index, not another chapter. If you are still learning the overall story, go one layer up to the **[Research Map](research_map.md)**.
 
-The current documented theorem frontier is **P98**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains open.
+The current documented theorem frontier is **P99**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains open.
 
 ---
 
@@ -89,7 +89,7 @@ Then follow P72 through P74 in the [Detailed Proposition Record](detailed_propos
 
 **Question:** Can the declared model of the target and its measurement actually reproduce the observations, or can it be rejected under its own assumptions?
 
-**Results:** P75 through P98
+**Results:** P75 through P99
 
 This branch moves from model adequacy to rejection with finite data, separation from the complete declared model set, certified bounds for continuous families, and increasingly strong exact tests that preserve shared parameters.
 
@@ -100,6 +100,19 @@ This branch moves from model adequacy to rejection with finite data, separation 
 ---
 
 ## Audit the current frontier without searching folders
+
+For P99:
+
+| Audit surface | Canonical route |
+| --- | --- |
+| Direct theorem | [P99 proposition](proposition_99_cross_fitted_evalue_aggregation.md) |
+| Equation and method provenance | [P99 provenance](p99_equation_provenance.md) |
+| Implementation | [`cross_fitted_evalue_aggregation.py`](../src/consciousness_bridge/cross_fitted_evalue_aggregation.py) |
+| Regression tests | [`test_cross_fitted_evalue_aggregation.py`](../tests/test_cross_fitted_evalue_aggregation.py) |
+| Theorem figure | [P99 cross-fitted e-value aggregation](figures/p99_cross_fitted_evalue_aggregation.svg) |
+| Repository reproduction | [Reproducibility Guide](reproducibility.md) |
+
+P99 is a conditional distributed-evidence model-audit result. The fold plan and finite e-value calibration must be fixed without using the fold's own certification statistics. P99 does not require final fold e-values to be independent, but it still requires the P98 independent-block structure for selection-valid certification.
 
 For P98:
 
@@ -185,8 +198,8 @@ The [Detailed Proposition Record](detailed_proposition_record.md) is the complet
 | --- | --- |
 | Physics | [Research Map](research_map.md) → [Technical Research Architecture](research_architecture.md) → [Quantum branch](quantum_foundations_and_bridge_test.md) |
 | Mathematics | [Research Map](research_map.md) → [Theorem Roadmap](theorem_roadmap.md) → proposition proofs |
-| Statistics and inference | [P19](proposition_19_fundamental_physical_sufficiency.md) → P20 through P24 → P74 through P98 via [Detailed Proposition Record](detailed_proposition_record.md) |
-| Consciousness science | [Bridge Problem](bridge_problem.md) → [Falsification Program](falsification_program.md) → P71 through P98 |
+| Statistics and inference | [P19](proposition_19_fundamental_physical_sufficiency.md) → P20 through P24 → P74 through P99 via [Detailed Proposition Record](detailed_proposition_record.md) |
+| Consciousness science | [Bridge Problem](bridge_problem.md) → [Falsification Program](falsification_program.md) → P71 through P99 |
 | Software and reproducibility | [Reproducibility Guide](reproducibility.md) → [`src/`](../src/) → [`tests/`](../tests/) |
 | Visual learner | [Figure Catalog](figure_catalog.md) → [Visual Atlas](../website/visual-atlas.html) |
 
@@ -194,7 +207,7 @@ The [Detailed Proposition Record](detailed_proposition_record.md) is the complet
 
 ## Where the complete detail lives
 
-This page intentionally does **not** duplicate the full 98 proposition index.
+This page intentionally does **not** duplicate the full 99 proposition index.
 
 Use:
 
@@ -331,9 +344,9 @@ P96 permits pilot-selected regime plans only when selection and certification ar
 P97 permits same-data comparison and post-inspection selection only within a finite candidate family fixed before certification statistics are inspected. It assigns exact candidate-level budgets, nests P95 within each candidate, and uses a second union bound across candidates to preserve simultaneous validity.
 
 
-## P98 current frontier
+## P98 immediate predecessor frontier
 
-**Current frontier:** [P98: Cross-Fitted Selection-Valid Certification](proposition_98_cross_fitted_selection_valid_certification.md)
+**Current frontier:** [P99: Cross-Fitted E-Value Aggregation](proposition_99_cross_fitted_evalue_aggregation.md)
 
 | What you want | Direct link |
 | --- | --- |

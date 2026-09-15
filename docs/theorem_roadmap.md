@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P98**. The proposition record runs from **P1 through P98 with explicit dependency branches**. P71-P98 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P99**. The proposition record runs from **P1 through P99 with explicit dependency branches**. P71-P99 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -70,6 +70,8 @@ The current documented theorem frontier is **P98**. The proposition record runs 
 &\text{P97: finite predeclared candidate families support same-data selection by simultaneous error accounting}\\
 &\Downarrow\\
 &\text{P98: rotated independent-block holdouts support cross-fitted selection-valid certification}\\
+&\Downarrow\\
+&\text{P99: exact e-value aggregation accumulates distributed cross-fitted evidence without fold independence}\\
 \end{aligned}
 }
 \]
@@ -971,6 +973,34 @@ Direct proof: [P98](proposition_98_cross_fitted_selection_valid_certification.md
 
 P98 does not validate dependent-stream pseudo-folds, own-fold leakage, misspecified dependence, unrestricted within-regime drift, unbudgeted cross-fitting search, model acceptance, consciousness identification, nonphysicality, or bridge completion.
 
-## After P98
+## P99: cross-fitted e-value aggregation
 
-P96 closes the independent-holdout version of adaptive regime selection. Any P99 candidate must close a genuinely new mathematical or scientific gap. Natural directions include guarded cross-fitting or multiple independent splits that recover pilot efficiency without invalidating selection, simultaneous candidate-family accounting without sample splitting, gradual within-regime drift with an explicitly time-varying target, or concentration under broader declared dependence classes. The physical-to-experiential bridge remains open.
+P98 controls the collection of cross-fitted fold statements by allocating a global error budget across folds. P99 provides a complementary distributed-evidence construction. Conditional on the selection information for fold `k`, a valid level-`tau` P96 rejection indicator satisfies
+
+\[
+\Pr(R_k(	au)=1\mid\mathcal S_k)\le	au.
+\]
+
+Therefore
+
+\[
+E_k(	au)=R_k(	au)/	au
+\]
+
+has conditional and unconditional null expectation at most one. Finite threshold mixtures remain fold e-values, and a fixed convex average
+
+\[
+E_{\mathrm{CF}}=\sum_k w_kE_k
+\]
+
+remains an e-value even when the final cross-fitted fold certificates are dependent. Markov's inequality yields a global level-alpha rejection rule at `E_CF >= 1/alpha`.
+
+For two equally weighted folds with two one-step-dependent regimes each, global alpha `1/20`, and fold test level `1/25`, the local regime budget is `1/50`. The exact mathematical crossing is 3774 observations per regime and the first denominator-24 replication is 3792, giving unique totals 15096 / 15168. The matched P98 equal-split design crosses at 4045 / 4056 per regime. P99 does not uniformly dominate P98; its advantage is specific to distributed-evidence configurations.
+
+Direct proof: [P99](proposition_99_cross_fitted_evalue_aggregation.md). Provenance: [P99 equation record](p99_equation_provenance.md). Implementation: [`cross_fitted_evalue_aggregation.py`](../src/consciousness_bridge/cross_fitted_evalue_aggregation.py). Tests: [`test_cross_fitted_evalue_aggregation.py`](../tests/test_cross_fitted_evalue_aggregation.py).
+
+P99 does not validate own-fold leakage, post-hoc calibration search, dependent-stream pseudo-folds, misspecified local dependence, model acceptance, consciousness identification, nonphysicality, or bridge completion.
+
+## After P99
+
+P99 closes the finite fixed-round distributed-evidence aggregation gap left open by P98. A natural P100 direction is an anytime-valid sequential extension in which fresh independent certification rounds contribute e-values over time and optional stopping is controlled by an explicit test-martingale or e-process argument. The physical-to-experiential bridge remains open.

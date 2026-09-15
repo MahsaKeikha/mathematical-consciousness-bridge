@@ -1371,3 +1371,15 @@ P97 uses standard union-bound logic at two nested levels, but the exact integrat
 - Figure: [`p98_cross_fitted_selection_valid_certification.svg`](figures/p98_cross_fitted_selection_valid_certification.svg)
 
 P98 uses standard conditional holdout validity, the tower property, sample rotation, and a union bound. The repository-specific contribution is the exact integration of those ingredients with the P92-P96 sign-coherence chain, explicit own-fold exclusion, exact rational fold and regime budgets, and the executable 4045/4056 and 16180/16224 checkpoints.
+
+
+## P99 cross-fitted e-value aggregation
+
+- Theorem: [`proposition_99_cross_fitted_evalue_aggregation.md`](proposition_99_cross_fitted_evalue_aggregation.md)
+- Equation and novelty provenance: [`p99_equation_provenance.md`](p99_equation_provenance.md)
+- Implementation: [`cross_fitted_evalue_aggregation.py`](../src/consciousness_bridge/cross_fitted_evalue_aggregation.py)
+- Tests: [`test_cross_fitted_evalue_aggregation.py`](../tests/test_cross_fitted_evalue_aggregation.py)
+- Figure: [`p99_cross_fitted_evalue_aggregation.svg`](figures/p99_cross_fitted_evalue_aggregation.svg)
+- Standard method source: Vovk and Wang (2021), *The Annals of Statistics* 49(3), 1736-1754, DOI `10.1214/20-AOS2020`.
+
+P99 uses standard e-value expectation control, convex averaging, and Markov rejection. Repository-specific content is the integration with the exact P92-P98 certification chain, the frozen finite threshold calibration, exact-rational executable certificate, and the 3774/3792 distributed-evidence checkpoint. It does not claim a new e-value calculus.

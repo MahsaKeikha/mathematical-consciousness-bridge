@@ -116,13 +116,13 @@ This is not a weakness hidden by the repository. It is one of the central organi
 
 ## Where the current work sits
 
-The public theorem frontier is **P98** and the formal release remains **v0.82.0**.
+The public theorem frontier is **P99** and the formal release remains **v0.82.0**.
 
 P94 extends the P93 localized seven-cell rejection theorem from IID observations to a declared finite-range dependent sequence with one common marginal four-view law. The squared finite-sample radius carries the exact factor `m+1` for dependence range `m`, while the P92 determinant geometry is unchanged.
 
 P94 also proves an exact temporal-pooling no-go: two individually valid interior P75 regimes can pool to a law with the negative determinant-product sign pattern used for rejection. Arbitrary marginal drift is therefore a separate problem and is not silently treated as finite-range dependence.
 
-If you want the current result itself, open **[P98](proposition_98_cross_fitted_selection_valid_certification.md)**. For the previous finite same-data family frontier, open **[P97](proposition_97_simultaneous_candidate_family_selection.md)**. For the previous independent-holdout frontier, open **[P96](proposition_96_selection_valid_holdout_stratification.md)**. For the finite-range single-marginal predecessor, open **[P94](proposition_94_finite_range_dependent_sign_coherence.md)**. For the IID predecessor, open **[P93](proposition_93_localized_sign_coherence_rejection.md)**. For the complete dependency chain, use the **[Theorem Roadmap](theorem_roadmap.md)**.
+If you want the current result itself, open **[P99](proposition_99_cross_fitted_evalue_aggregation.md)**. For the previous cross-fitted simultaneous-error frontier, open **[P98](proposition_98_cross_fitted_selection_valid_certification.md)**. For the previous finite same-data family frontier, open **[P97](proposition_97_simultaneous_candidate_family_selection.md)**. For the previous independent-holdout frontier, open **[P96](proposition_96_selection_valid_holdout_stratification.md)**. For the finite-range single-marginal predecessor, open **[P94](proposition_94_finite_range_dependent_sign_coherence.md)**. For the IID predecessor, open **[P93](proposition_93_localized_sign_coherence_rejection.md)**. For the complete dependency chain, use the **[Theorem Roadmap](theorem_roadmap.md)**.
 
 ---
 
@@ -217,3 +217,12 @@ Each fold therefore receives a valid P96 certificate with failure budget `beta_k
 For two folds, two regimes per fold, and one-step dependence, the 95 percent per-regime crossing remains 4045 and the first exact replication remains 4056. Unlike P97, the folds are genuinely different certification blocks, so the unique-data totals are 16180 and 16224.
 
 P98 does not justify splitting one dependent stream and calling the pieces independent, using a fold's own certification statistics to choose its plan, unbudgeted exploration of many cross-fitting schemes, model acceptance after non-rejection, consciousness identification, nonphysicality, or completion of the physical-to-experiential bridge.
+
+
+## P99: cross-fitted e-value aggregation
+
+P99 asks whether moderate evidence from several selection-valid cross-fitted folds can be accumulated without assuming the final fold certificates are independent. At a test level `tau` fixed before own-fold evaluation, a valid P96 fold rejection indicator becomes the e-value `R(tau)/tau`. Finite threshold mixtures and a fixed convex average across folds preserve null expectation at most one. Markov's inequality converts the final aggregate into a global level-alpha rejection rule.
+
+For two folds with two one-step-dependent regimes each, fold test level `1/25`, and global alpha `1/20`, the local regime level is `1/50`. The mathematical threshold is 3774 observations per regime and the first exact denominator-24 replication is 3792, with unique totals 15096 / 15168.
+
+P99 is complementary to P98. It can gain in distributed-evidence configurations but does not uniformly dominate P98. Own-fold leakage, post-hoc calibration search, dependent-stream pseudo-folds, model acceptance, consciousness identification, nonphysicality, and completion of the physical-to-experiential bridge remain outside the theorem.

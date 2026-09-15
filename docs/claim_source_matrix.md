@@ -103,3 +103,14 @@ P95 drift-aware stratified sign-coherence rejection: predeclared regime-specific
 | Mutually independent blocks can rotate between selection and certification when each fold excludes its own certification block from its own plan selection | Theorem under declared assumptions | [`proposition_98_cross_fitted_selection_valid_certification.md`](proposition_98_cross_fitted_selection_valid_certification.md) |
 | Two folds, two regimes, `m=1`, equal 5 percent global spending give 4045/4056 per regime and 16180/16224 unique observations | Exact rational computation | [`test_cross_fitted_selection_valid_certification.py`](../tests/test_cross_fitted_selection_valid_certification.py) |
 | P98 does not validate dependent-stream pseudo-folds, own-fold leakage, or a consciousness ontology | Scientific boundary | [`p98_equation_provenance.md`](p98_equation_provenance.md) |
+
+
+## P99 cross-fitted e-value aggregation
+
+| Claim | Evidence role | Support | Boundary |
+| --- | --- | --- | --- |
+| A valid level-`tau` fold rejection gives `R(tau)/tau` with null expectation at most one | Standard probability / e-value construction | Vovk and Wang (2021); P96 fold validity | Requires fold test validity at the declared level |
+| Fixed convex averages of fold e-values remain e-values without fold independence | Standard e-value merging by averaging | Vovk and Wang (2021); linearity of expectation | Weights must be fixed independently of certification outcomes |
+| P99 integrates this construction with cross-fitted P96/P98 certification and exact rational thresholds | Repository-original integration | P99 proof, implementation, tests, provenance | Does not claim invention of e-values or averaging |
+| Balanced distributed-evidence crossing is 3774 per regime with exact replication 3792 | Repository-original exact computation | P99 implementation and regression tests | Configuration-specific, not a universal sample-complexity theorem |
+| P99 does not uniformly dominate P98 | Repository-original comparison statement | P99 exact examples | Sparse and distributed evidence can favor different procedures |

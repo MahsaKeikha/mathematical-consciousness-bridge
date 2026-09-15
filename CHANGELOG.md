@@ -1,3 +1,17 @@
+# Unreleased research frontier - P99
+
+## P99 cross-fitted e-value aggregation frontier
+
+- Added Proposition 99 as an exact distributed-evidence extension of the P96-P98 selection-valid cross-fitting chain.
+- Converted valid level-tau fold rejection indicators into exact e-values R(tau)/tau.
+- Allowed finite exact-rational threshold mixtures fixed before own-fold evaluation.
+- Aggregated dependent cross-fitted fold e-values by a fixed convex average, using only expectation linearity and Markov's inequality.
+- Certified the balanced K=2, B=2, m=1, 95 percent distributed-evidence crossing at 3774 observations per regime and first denominator-24 replication at 3792.
+- Recorded unique two-fold totals 15096 and 15168, compared with P98 totals 16180 and 16224 for the matched equal-split design.
+- Proved that the gain is configuration-specific: P99 does not uniformly dominate P98 and P98 does not uniformly dominate P99.
+- Preserved the boundary that own-fold leakage, post-hoc calibration search, dependent-stream pseudo-folds, model acceptance, consciousness identification, nonphysicality, and bridge completion remain outside the theorem.
+- Kept formal release v0.82.0 separate from the advancing theorem frontier.
+
 # Unreleased research frontier - P98
 
 ## P98 cross-fitted selection-valid certification frontier

@@ -328,6 +328,25 @@ def _frontier_summary(frontier: int) -> list[str]:
             "P98 requires genuinely independent certification blocks and no own-fold leakage. The final fold certificates may be dependent; validity is combined by an outer union bound. Dependent-stream pseudo-folds, unbudgeted scheme search, model acceptance, consciousness identification, nonphysicality, and bridge completion are not established.",
             "",
         ]
+    if frontier == 99:
+        return [
+            "### Exact P99 cross-fitted e-value aggregation",
+            "",
+            "P99 converts selection-valid P96/P98 fold rejection indicators into exact e-values and accumulates distributed evidence without assuming the final fold certificates are independent.",
+            "",
+            "```text",
+            "fold test level tau = 1/25",
+            "local regime alpha = 1/50",
+            "K=2 folds, B=2 regimes, m=1",
+            "95% mathematical crossing = 3774 per regime",
+            "first exact denominator-24 replication = 3792 per regime",
+            "cross-fitted unique totals = 15096 / 15168",
+            "matched P98 crossing = 4045 / 4056 per regime",
+            "```",
+            "",
+            "P99 uses fixed finite calibration and exact convex e-value averaging. It does not uniformly dominate P98 and does not validate own-fold leakage, post-hoc calibration search, dependent-stream pseudo-folds, model acceptance, consciousness identification, nonphysicality, or bridge completion.",
+            "",
+        ]
     return []
 
 

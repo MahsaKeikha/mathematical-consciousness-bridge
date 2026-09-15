@@ -30,13 +30,15 @@ def test_p96_remains_below_p97_and_p98() -> None:
     start = _read("website/start-here.html")
     research = _read("website/research-map.html")
 
-    assert 'CURRENT_FRONTIER = "P98"' in verifier
+    assert 'CURRENT_FRONTIER = "P99"' in verifier
+    assert atlas.index('id="p99-frontier"') < atlas.index('id="p98-frontier"')
     assert atlas.index('id="p98-frontier"') < atlas.index('id="p97-frontier"')
     assert atlas.index('id="p97-frontier"') < atlas.index('id="p96-frontier"')
     assert atlas.index('id="p96-frontier"') < atlas.index('id="p95-frontier"')
     assert 'id="p96-reader-frontier"' in plain
     assert 'id="p96-reader-frontier"' in start
     assert 'id="p96-research-map"' in research
+    assert research.index('id="p99-research-map"') < research.index('id="p98-research-map"')
     assert research.index('id="p98-research-map"') < research.index('id="p97-research-map"')
     assert research.index('id="p97-research-map"') < research.index('id="p96-research-map"')
 

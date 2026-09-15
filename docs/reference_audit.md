@@ -20,3 +20,12 @@ This audit records the source class and bibliographic metadata for references th
 A citation to quantum gravity does not imply a citation to consciousness. A citation to neural correlates does not establish bridge sufficiency. A mathematical consciousness formalism supplies definitions and structural tools, not empirical validation by itself. The repository's own propositions remain conditional on their declared assumptions.
 
 The scientific burden for any future non-reducibility claim remains higher than correlation. Such a result would require a demonstrably adequate physical descriptor, independently justified experiential variables, explicit measurement models, finite-sample certification, omitted-variable controls, and reproducible evidence.
+
+
+### Vovk and Wang 2021
+
+- **Title:** E-values: Calibration, combination, and applications
+- **Journal:** The Annals of Statistics 49(3), 1736-1754
+- **DOI:** 10.1214/20-AOS2020
+- **Evidence role:** standard statistical method source for the e-value definition and averaging construction used by P99
+- **Not claimed:** P99 does not claim authorship of e-values, e-value averaging, or Markov-based rejection

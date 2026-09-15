@@ -10,12 +10,12 @@ You do not need every command at once. Choose the route that matches your goal.
 | --- | --- |
 | Reproduce the maintained repository as strictly as possible | `make reproduce` |
 | Run the normal verification suite | `make check` |
-| Run only the current P98 theorem checks | focused P98 commands below |
+| Run only the current P99 theorem checks | focused P99 commands below |
 | Validate figures without rebuilding them | `make figures-check` |
 | Regenerate the complete visual record | `make figures` |
 | Inspect CI without installing locally | GitHub Actions |
 
-The current public theorem frontier is **P98**. The formal release remains **v0.82.0**.
+The current public theorem frontier is **P99**. The formal release remains **v0.82.0**.
 
 ---
 
@@ -104,18 +104,18 @@ Use this route when you want to verify the current committed state without regen
 
 ---
 
-## 5. Focused audit of the current P98 frontier
+## 5. Focused audit of the current P99 frontier
 
-The current theorem frontier is **P98**.
+The current theorem frontier is **P99**.
 
 Its direct technical record is:
 
 ```text
-docs/proposition_98_cross_fitted_selection_valid_certification.md
-docs/p98_equation_provenance.md
-src/consciousness_bridge/cross_fitted_selection_valid_certification.py
-tests/test_cross_fitted_selection_valid_certification.py
-docs/figures/p98_cross_fitted_selection_valid_certification.svg
+docs/proposition_99_cross_fitted_evalue_aggregation.md
+docs/p99_equation_provenance.md
+src/consciousness_bridge/cross_fitted_evalue_aggregation.py
+tests/test_cross_fitted_evalue_aggregation.py
+docs/figures/p99_cross_fitted_evalue_aggregation.svg
 figures/manifest.json
 ```
 
@@ -123,7 +123,8 @@ Run the focused theorem and publication checks with:
 
 ```bash
 python -m pytest -q \
-  tests/test_cross_fitted_selection_valid_certification.py \
+  tests/test_cross_fitted_evalue_aggregation.py \
+  tests/test_p99_reader_surface_coherence.py \
   tests/test_p98_reader_surface_coherence.py \
   tests/test_p97_reader_surface_coherence.py \
   tests/test_frontier_reader_narrative.py \
@@ -133,11 +134,11 @@ python scripts/sync_figure_publication.py --check
 python scripts/verify_repository.py
 ```
 
-P98 rotates P96 holdout validity across genuinely independent blocks. Each fold excludes its own certification block from plan selection, and an outer exact fold budget plus union bound makes all rotated certificates simultaneous.
+P99 converts selection-valid cross-fitted fold rejections into exact e-values. A finite calibration fixed before own-fold evaluation remains valid, and fixed convex averaging across folds uses expectation linearity rather than a final fold-independence assumption.
 
-For two folds with two one-step-dependent regimes each, the 95 percent per-regime threshold is `4045`, first exact replication is `4056`, and the unique-data totals are `16180` and `16224`.
+For two folds with two one-step-dependent regimes each, global alpha `1/20`, and fold test level `1/25`, the local regime level is `1/50`. The mathematical crossing is `3774` observations per regime, first exact replication is `3792`, and the unique-data totals are `15096` and `15168`.
 
-A random partition of one dependent stream is not automatically a valid cross-fitted design. Own-fold leakage, unbudgeted scheme search, model acceptance, consciousness identification, nonphysicality, and bridge completion remain outside P98.
+P99 does not uniformly dominate P98. Own-fold leakage, post-hoc calibration search, dependent-stream pseudo-folds, model acceptance, consciousness identification, nonphysicality, and bridge completion remain outside P99.
 
 ---
 
@@ -232,7 +233,7 @@ The validation path checks the generated manifests, SVG parseability, canonical 
 The current frontier figure is:
 
 ```text
-docs/figures/p98_cross_fitted_selection_valid_certification.svg
+docs/figures/p99_cross_fitted_evalue_aggregation.svg
 ```
 
 ---

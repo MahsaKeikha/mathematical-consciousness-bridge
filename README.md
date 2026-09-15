@@ -54,9 +54,11 @@ You do **not** need to read the propositions in order to understand the project.
 
 If you want the complete theorem record, including assumptions, proofs, implementations, tests, figures, and scientific boundaries, use the **[Detailed Proposition Record](docs/detailed_proposition_record.md)** or the **[Theorem Roadmap](docs/theorem_roadmap.md)**.
 
-The current public theorem frontier is **P98**. The formal release remains **v0.82.0**.
+Historical selection-valid lineage: P96 introduced independent holdout certification after data-dependent plan selection; P97, P98, and P99 extend that line through finite candidate families, cross-fitting, and e-value aggregation.
 
-**[Read the current frontier](docs/proposition_98_cross_fitted_selection_valid_certification.md)**
+The current public theorem frontier is **P99**. The formal release remains **v0.82.0**.
+
+**[Read the current frontier](docs/proposition_99_cross_fitted_evalue_aggregation.md)**
 
 ---
 
@@ -70,13 +72,13 @@ The current public theorem frontier is **P98**. The formal release remains **v0.
 
 ### Current theorem frontier
 
-![P98 Cross-Fitted Selection-Valid Certification](docs/figures/p98_cross_fitted_selection_valid_certification.svg)
+![P99 Cross-Fitted E-Value Aggregation](docs/figures/p99_cross_fitted_evalue_aggregation.svg)
 
-**Figure 2. P98 cross-fitted selection-valid certification.** P98 rotates the P96 holdout principle across mutually independent data blocks. In fold `k`, an arbitrary plan may be learned from the other blocks, but block `k` is excluded from its own selection rule and is inspected only after the fold plan is frozen. P96 then supplies a fold-level guarantee, and one outer union bound controls the complete set of rotated certificates without assuming that the final fold certificates are independent.
+**Figure 2. P99 cross-fitted e-value aggregation.** P99 converts a selection-valid level-`tau` fold rejection into the exact e-value `R(tau)/tau`. Finite threshold mixtures remain valid when their calibration is frozen before own-fold evaluation. Fixed convex averaging across folds remains valid even when the cross-fitted fold certificates are dependent, because the proof uses expectation linearity rather than independence.
 
-For two folds with two one-step-dependent regimes each at 95 percent global confidence, the per-regime crossing is **4045**, the first exact denominator-24 replication is **4056**, each certification fold contains **8090 / 8112** observations, and the two-fold unique-data totals are **16180 / 16224**.
+For two equally weighted folds, two regimes per fold, one-step dependence, and 5 percent global error, the declared distributed-evidence design uses fold test level **1/25** and local regime level **1/50**. The exact mathematical crossing is **3774 observations per regime**, with first denominator-24 replication at **3792**. The unique two-fold totals are **15096 / 15168**. The matched equal-split P98 checkpoint is **4045 / 4056** per regime and **16180 / 16224** unique observations.
 
-P98 does not justify treating arbitrary pieces of one dependent stream as independent folds, using a fold's own certification statistics to choose the plan later tested on that fold, unbudgeted exploration of many cross-fitting schemes, accepting P75 after non-rejection, identifying consciousness, establishing nonphysicality, or closing the physical-to-experiential bridge.
+P99 does not uniformly dominate P98. It is designed to accumulate distributed evidence across several valid folds, while P98 can be better when one fold is individually decisive. P99 does not justify post-hoc calibration search, own-fold leakage, dependent-stream pseudo-folds, model acceptance, consciousness identification, nonphysicality, or completion of the physical-to-experiential bridge.
 
 ### Immediate predecessor: P97
 
@@ -126,6 +128,6 @@ For scholarly citation, see **[CITATION.md](CITATION.md)** and **[CITATION.cff](
 
 MIT License. See **[LICENSE](LICENSE)**.
 
-**Public theorem frontier:** P98
+**Public theorem frontier:** P99
 **Formal release:** v0.82.0
 **Final bridge from physical description to experience:** open
