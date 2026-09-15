@@ -301,7 +301,7 @@ P99 closes the finite fixed-round distributed-evidence aggregation gap left open
 
 """
     text = text.replace(marker, block, 1)
-write(path, text)
+write(path, text.rstrip() + "\n")
 
 # Reproducibility guide.
 path = "docs/reproducibility.md"
