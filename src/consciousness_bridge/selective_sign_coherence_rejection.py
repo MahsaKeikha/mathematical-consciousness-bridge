@@ -23,9 +23,9 @@ solve the physical-to-experiential bridge.
 
 from __future__ import annotations
 
+from collections.abc import Mapping
 from dataclasses import dataclass
 from fractions import Fraction
-from typing import Mapping
 
 from consciousness_bridge.certified_sampling_radius import (
     certified_finite_alphabet_sampling_radius,
@@ -87,7 +87,6 @@ class P93SelectiveRejectionCertificate:
     conclusion: str
 
 
-
 def p93_selected_cells_exact(
     law: tuple[Fraction, ...],
 ) -> dict[str, Fraction]:
@@ -114,7 +113,6 @@ def p93_selected_cells_exact(
     }
 
 
-
 def p93_uniform_alpha_allocation(alpha: Fraction) -> dict[str, Fraction]:
     """Split a rational familywise error budget equally across seven cells."""
 
@@ -124,7 +122,6 @@ def p93_uniform_alpha_allocation(alpha: Fraction) -> dict[str, Fraction]:
         raise ValueError("alpha must lie strictly between zero and one")
     share = alpha / len(_SELECTED_LABELS)
     return {label: share for label in _SELECTED_LABELS}
-
 
 
 def p93_witness_alpha_allocation_95() -> dict[str, Fraction]:
@@ -150,7 +147,6 @@ def p93_witness_alpha_allocation_95() -> dict[str, Fraction]:
     return allocation
 
 
-
 def _validate_empirical_law(
     law: tuple[Fraction, ...],
     *,
@@ -164,7 +160,6 @@ def _validate_empirical_law(
     if any((value * sample_size).denominator != 1 for value in law):
         raise ValueError("law is not an empirical table for this sample_size")
     return law
-
 
 
 def _validate_allocation(
@@ -193,7 +188,6 @@ def _validate_allocation(
     return result
 
 
-
 def _determinant_interval_exact(
     matrix: tuple[
         tuple[P93CellInterval, P93CellInterval],
@@ -213,7 +207,6 @@ def _determinant_interval_exact(
     else:
         sign = 0
     return P93DeterminantInterval(lower=lower, upper=upper, forced_sign=sign)
-
 
 
 def certify_p93_selective_sign_coherence_rejection(
@@ -286,7 +279,10 @@ def certify_p93_selective_sign_coherence_rejection(
         for labels in _MINOR_LABELS
     )
     forced_signs = tuple(interval.forced_sign for interval in determinant_intervals)
-    reject = 0 not in forced_signs and forced_signs[0] * forced_signs[1] * forced_signs[2] < 0
+    reject = (
+        0 not in forced_signs
+        and forced_signs[0] * forced_signs[1] * forced_signs[2] < 0
+    )
     empirical_determinants = p92_selected_determinants_exact(empirical_law)
     alpha_spent = sum(allocation.values(), start=Fraction(0))
     conclusion = (
