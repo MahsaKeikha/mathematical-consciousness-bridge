@@ -1,0 +1,63 @@
+name: p99-publication-promotion
+
+on:
+  push:
+    branches: ["p99-cross-fitted-evalue-aggregation"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  promote-and-validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: p99-cross-fitted-evalue-aggregation
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - run: python -m pip install -e ".[dev]"
+      - name: Promote P99 public frontier
+        run: python scripts/promote_p99_public_frontier.py
+      - name: Regenerate canonical figures
+        run: python scripts/generate_all_figures.py
+      - name: Synchronize figure publication record
+        run: python scripts/sync_figure_publication.py
+      - name: Run focused P99 and reader contracts
+        run: |
+          python -m pytest -q \
+            tests/test_cross_fitted_evalue_aggregation.py \
+            tests/test_p99_reader_surface_coherence.py \
+            tests/test_p98_reader_surface_coherence.py \
+            tests/test_p97_reader_surface_coherence.py \
+            tests/test_p96_reader_surface_coherence.py \
+            tests/test_p94_reader_surface_coherence.py \
+            tests/test_figure_publication_sync.py \
+            tests/test_website_link_integrity.py \
+            tests/test_website_research_orientation.py \
+            tests/test_main_page_visual_paper.py \
+            tests/test_about_researcher_website.py
+      - name: Verify repository publication state
+        run: python scripts/verify_repository.py
+      - name: Build deployable website artifact
+        run: |
+          rm -rf website-deploy
+          python scripts/prepare_website.py --output website-deploy
+      - name: Run Ruff
+        run: python -m ruff check src tests scripts
+      - name: Check formatting drift
+        run: git diff --check
+      - name: Commit synchronized P99 publication state
+        run: |
+          if git diff --quiet && git diff --cached --quiet; then
+            echo "No P99 publication changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Promote P99 public theorem frontier"
+          git push origin HEAD:p99-cross-fitted-evalue-aggregation
