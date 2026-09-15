@@ -102,6 +102,8 @@ jobs:
             echo "Finalizer must not rewrite workflow files."
             exit 1
           fi
+      - name: Remove ephemeral website build
+        run: rm -rf _site
       - name: Commit final P93 contracts
         run: |
           if [ -z "$(git status --porcelain)" ]; then
@@ -111,5 +113,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "Finalize P93 publication contracts"
+          git commit -m "Remove ephemeral P93 website build"
           git push origin HEAD:p93-localized-sign-coherence-rejection
