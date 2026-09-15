@@ -1,0 +1,41 @@
+name: p99-roadmap-eof-fix
+
+on:
+  push:
+    branches: ["p99-cross-fitted-evalue-aggregation"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix-and-clean:
+    if: ${{ !contains(github.event.head_commit.message, '[p99-eof-fixed]') }}
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: p99-cross-fitted-evalue-aggregation
+          fetch-depth: 0
+      - name: Canonicalize roadmap repair writer
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('.github/workflows/p99-publication-promotion.yml')
+          text = path.read_text(encoding='utf-8')
+          old = '          roadmap.write_text(text, encoding="utf-8")'
+          new = '          roadmap.write_text(text.rstrip() + "\\n", encoding="utf-8")'
+          if old not in text and new not in text:
+              raise RuntimeError('roadmap writer marker not found')
+          text = text.replace(old, new, 1)
+          path.write_text(text, encoding='utf-8')
+          PY
+      - name: Remove one-time repair workflow and commit
+        run: |
+          rm .github/workflows/p99-roadmap-eof-fix.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/workflows/p99-publication-promotion.yml .github/workflows/p99-roadmap-eof-fix.yml
+          git commit -m "Canonicalize P99 roadmap EOF [p99-eof-fixed]"
+          git push origin HEAD:p99-cross-fitted-evalue-aggregation
