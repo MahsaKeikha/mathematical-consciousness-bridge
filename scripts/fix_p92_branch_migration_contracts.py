@@ -100,6 +100,27 @@ def patch_reader_dashboards() -> None:
     write(path, text)
 
 
+def patch_research_map() -> None:
+    path = "website/research-map.html"
+    text = read(path)
+    replacements = (
+        (
+            "P89 closes the complete real linear parity-functional class, P90 adds exact nonlinear single-component separation, and P91 extends nonlinear separation to arbitrary latent mixing through a rank-two flattening certificate.",
+            "P89 closes the complete real linear parity-functional class, P90 adds exact nonlinear single-component separation, P91 extends nonlinear separation to arbitrary latent mixing through a rank-two flattening certificate, and P92 closes the remaining mixed-prevalence distance bracket at the exact value 1/24.",
+        ),
+        ("The current theorem frontier is P91.", "The current theorem frontier is P92."),
+        ("<div><strong>91</strong><span>proposition-level results</span></div>", "<div><strong>92</strong><span>proposition-level results</span></div>"),
+        ("<div><strong>P91</strong><span>current theorem frontier</span></div>", "<div><strong>P92</strong><span>current theorem frontier</span></div>"),
+        ('href="index.html#p91-frontier">Continue to the current P92 frontier', 'href="index.html#p92-frontier">Continue to the current P92 frontier'),
+        ('href="visual-atlas.html#p91-frontier">See the P91 figure', 'href="visual-atlas.html#p92-frontier">See the P92 figure'),
+        ('docs/p91_equation_provenance.md">Audit P91 provenance', 'docs/p92_equation_provenance.md">Audit P92 provenance'),
+        ("Research Map · Current theorem frontier P91", "Research Map · Current theorem frontier P92"),
+    )
+    for old, new in replacements:
+        text = text.replace(old, new)
+    write(path, text)
+
+
 def patch_svg_accessibility() -> None:
     path = "docs/figures/p92_exact_global_mixed_prevalence_distance.svg"
     text = read(path)
@@ -146,6 +167,7 @@ def main() -> None:
     patch_homepage()
     patch_visual_atlas()
     patch_reader_dashboards()
+    patch_research_map()
     patch_svg_accessibility()
     patch_machine_citation()
     patch_implementation_range()
