@@ -199,10 +199,18 @@ def test_research_map_and_plain_language_use_current_state() -> None:
 
 def test_citation_surface_is_professional_and_current() -> None:
     frontier = _frontier()
+    label = f"P{frontier}"
     citation = _read(ROOT / "CITATION.md")
+    bib = _read(ROOT / "CITATION.bib")
+    cff = _read(ROOT / "CITATION.cff")
     readme = _read(ROOT / "README.md")
+    marker = f"Current documented theorem frontier: {label}."
+
     assert "## Preferred scholarly citation" in citation
     assert "CITATION.md" in readme
+    assert "CITATION.bib" in citation
     assert "CITATION.cff" in readme
     assert "Version 0.82.0" in citation
-    assert f"## Current theorem frontier: P{frontier}" in citation
+    assert f"## Current theorem frontier: {label}" in citation
+    assert marker in bib
+    assert marker in cff
