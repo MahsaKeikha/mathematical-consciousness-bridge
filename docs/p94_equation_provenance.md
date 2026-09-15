@@ -4,7 +4,7 @@
 
 P94 extends P93 from IID observations to a declared finite-range dependent sequence with one common marginal four-view law.
 
-The proposition does not claim a new general concentration inequality. The probability step is a specialized dependency-graph style Hoeffding argument. The repository-specific contribution is the exact integration of that dependence penalty with the P92 nonlinear sign-coherence obstruction, the P93 seven-cell localization, and the P79 rational certification layer.
+The proposition does not claim a new general concentration inequality. The probability step is a specialized dependency-graph style Hoeffding argument. The repository-specific contribution is the exact integration of that dependence penalty with the P92 nonlinear sign-coherence obstruction, the P93 seven-cell localization, the P79 rational certification layer, and an exact counterexample showing why temporal drift cannot be silently pooled.
 
 ## Provenance table
 
@@ -18,6 +18,7 @@ The proposition does not claim a new general concentration inequality. The proba
 | P92 exact determinant sign-stability radius | converts cellwise perturbation control into sign preservation | repository theorem P92 |
 | P93 seven-cell localization | restricts simultaneous concentration to exactly the cells used by the nonlinear witness | repository theorem P93 |
 | P79 rational logarithm bracket | certifies the final strict squared-radius comparison | repository theorem P79 |
+| exact two-regime P75 counterexample | proves that temporal pooling can create a negative P92 sign product | repository P94 construction |
 
 ## External mathematical precedent
 
@@ -33,7 +34,7 @@ A recent finite-sample result by Chatchawan Panraksa also uses residue classes m
 
 This provides additional contemporary precedent for the residue-class decomposition itself.
 
-## P94 derivation
+## P94 concentration derivation
 
 For one selected cell indicator, P94 proves directly that
 
@@ -69,13 +70,29 @@ n>288(m+1)\log280.
 
 The exact code certifies the first crossings `3246` for `m=1` and `4869` for `m=2`, with first denominator-24 exact replications `3264` and `4872` respectively.
 
+## Exact temporal-drift no-go
+
+The common-marginal assumption is not a presentation convenience. P94 constructs two parameter vectors lying strictly inside the P75 cube. Each time-specific P75 law has a strictly positive product of the three P92 determinants, but their equal temporal average has determinant tuple
+
+```text
+(-65/65536, 11/65536, 3/65536)
+```
+
+and exact product
+
+```text
+-2145/281474976710656 < 0.
+```
+
+Thus arbitrary temporal pooling can manufacture the qualitative P92 rejection pattern even when every regime is individually compatible with P75. The complete exact record is in [`p94_temporal_drift_no_go.md`](p94_temporal_drift_no_go.md) and is executable through `certify_p94_temporal_drift_no_go_exact`.
+
 ## Novelty boundary
 
 P94 is new relative to P93 because P93's proof requires independent cell indicators across observations. P94 supplies a different MGF argument and a dependence-adjusted finite-sample certificate.
 
 P94 is not claimed as a new universal theorem about `m`-dependent concentration. Its scientific value inside this program is narrower: the previously exact P92/P93 nonlinear model-rejection witness remains statistically usable under a declared class of short-range dependent data streams.
 
-P94 deliberately does not extend to temporal drift. A changing marginal law creates a different inferential target because an average of time-specific P75 laws need not itself lie in the P75 family. Any later drift theorem must state and control that distinction explicitly.
+The temporal-drift counterexample is also deliberately narrow. It proves that pooling different valid P75 regimes is unsafe for the P92 sign-coherence target. It does not provide a general drift-correction theorem.
 
 ## Scientific boundary
 
