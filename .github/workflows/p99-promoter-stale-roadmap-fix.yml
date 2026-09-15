@@ -1,0 +1,53 @@
+name: p99-promoter-stale-roadmap-fix
+
+on:
+  push:
+    branches: ["p99-cross-fitted-evalue-aggregation"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix-and-clean:
+    if: ${{ !contains(github.event.head_commit.message, '[p99-stale-roadmap-fixed]') }}
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: p99-cross-fitted-evalue-aggregation
+          fetch-depth: 0
+      - name: Move obsolete P99-future removal into promoter
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('scripts/promote_p99_public_frontier.py')
+          text = path.read_text(encoding='utf-8')
+          target = 'write(path, text.rstrip() + "\\n")'
+          marker = '# Theorem roadmap.\npath = "docs/theorem_roadmap.md"'
+          start = text.index(marker)
+          pos = text.index(target, start)
+          repair = '''text = re.sub(
+              r"\\nP96 closes the independent-holdout version of adaptive regime selection\\. "
+              r"Any P99 candidate must close a genuinely new mathematical or scientific gap\\. "
+              r"Natural directions include .*?The physical-to-experiential bridge remains open\\.\\n",
+              "\\n",
+              text,
+              count=1,
+              flags=re.DOTALL,
+          )
+          '''
+          if 'Any P99 candidate must close a genuinely new mathematical or scientific gap' not in text[start:pos]:
+              text = text[:pos] + repair + text[pos:]
+          path.write_text(text, encoding='utf-8')
+          PY
+          python -m py_compile scripts/promote_p99_public_frontier.py
+      - name: Remove one-time helper and commit
+        run: |
+          rm .github/workflows/p99-promoter-stale-roadmap-fix.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/promote_p99_public_frontier.py .github/workflows/p99-promoter-stale-roadmap-fix.yml
+          git commit -m "Canonicalize obsolete P99 roadmap removal [p99-stale-roadmap-fixed]"
+          git push origin HEAD:p99-cross-fitted-evalue-aggregation
