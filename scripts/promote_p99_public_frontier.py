@@ -301,6 +301,15 @@ P99 closes the finite fixed-round distributed-evidence aggregation gap left open
 
 """
     text = text.replace(marker, block, 1)
+text = re.sub(
+    r"\nP96 closes the independent-holdout version of adaptive regime selection\. "
+    r"Any P99 candidate must close a genuinely new mathematical or scientific gap\. "
+    r"Natural directions include .*?The physical-to-experiential bridge remains open\.\n",
+    "\n",
+    text,
+    count=1,
+    flags=re.DOTALL,
+)
 write(path, text.rstrip() + "\n")
 
 # Reproducibility guide.
