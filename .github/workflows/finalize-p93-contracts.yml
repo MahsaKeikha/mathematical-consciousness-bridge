@@ -36,11 +36,22 @@ jobs:
           # remaining exact P93 repairs can run idempotently.
           sed -i '/("P75-P92", "P75-P93"),/d' scripts/finalize_p93_contracts.py
           python scripts/finalize_p93_contracts.py
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('docs/theorem_roadmap.md')
+          text = path.read_text(encoding='utf-8')
+          text = text.replace(
+              "Any P93 claim must preserve one-sided certification and the repository's scientific boundary.",
+              "The realized P93 theorem preserves one-sided certification and the repository's scientific boundary.",
+          )
+          path.write_text(text, encoding='utf-8')
+          PY
           git checkout -- scripts/finalize_p93_contracts.py
       - name: Regenerate derived figure publication surfaces
         run: python scripts/generate_all_figures.py
       - name: Validate exact repaired state
         run: |
+          python scripts/verify_frontier_publication.py
           python -m pytest -q
           python scripts/verify_repository.py
           python scripts/prepare_website.py --source website --output _site
