@@ -1,0 +1,255 @@
+name: P100 publication residue repair
+
+on:
+  push:
+    branches:
+      - p100-anytime-sequential-eprocess
+    paths:
+      - .github/workflows/p100-publication-residue-repair.yml
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out P100 branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Repair remaining synchronized publication surfaces
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          ROOT = Path('.')
+
+          def read(path: str) -> str:
+              return (ROOT / path).read_text(encoding='utf-8')
+
+          def write(path: str, text: str) -> None:
+              (ROOT / path).write_text(text, encoding='utf-8')
+
+          # 1. Complete figure catalog: count + explicit P100 row.
+          path = 'docs/figure_catalog.md'
+          text = read(path)
+          text = text.replace(
+              '**Current catalog:** 157 SVG figures: 17 architecture/conceptual visuals, 18 foundational quantum-physics visuals, 82 proposition/theorem visuals, and 40 quantitative figures.',
+              '**Current catalog:** 158 SVG figures: 17 architecture/conceptual visuals, 18 foundational quantum-physics visuals, 83 proposition/theorem visuals, and 40 quantitative figures.',
+          )
+          p100_row = '| [P100 anytime-valid sequential e-process](figures/p100_anytime_sequential_eprocess.svg) | What this figure shows: P100 composes fresh, conditionally valid P99 certification-round e-values with predictable reserve stakes into one sequential evidence process. How to read it: follow the fresh rounds from left to right, compute each factor F_t = (1 - eta_t) + eta_t E_t, and compare the cumulative product M_t with the anytime-valid threshold 1/alpha. Main takeaway: two individually non-decisive half-staked rounds with E_t = 25/2 give M_2 = 729/16 > 20 while preserving the declared sequential null control. | Exact sequential-inference theorem figure. Its guarantee requires current-round choices to be predictable and current certification data to remain conditionally valid given the past; it does not establish consciousness identification, nonphysicality, or completion of the physical-to-experiential bridge. | [Proposition 100](proposition_100_anytime_sequential_eprocess.md) |'
+          if 'figures/p100_anytime_sequential_eprocess.svg' not in text:
+              lines = text.splitlines()
+              for i, line in enumerate(lines):
+                  if 'figures/p99_cross_fitted_evalue_aggregation.svg' in line:
+                      lines.insert(i + 1, p100_row)
+                      break
+              else:
+                  marker = '## Quantitative figures'
+                  if marker not in text:
+                      raise RuntimeError('figure catalog insertion point not found')
+                  text = text.replace(marker, p100_row + '\n\n' + marker, 1)
+                  lines = None
+              if lines is not None:
+                  text = '\n'.join(lines) + ('\n' if text.endswith('\n') else '')
+          write(path, text)
+
+          # 2. Homepage count contract, P98 historical continuity, and source label.
+          path = 'website/index.html'
+          text = read(path)
+          text = text.replace('The 99 results form several dependency branches.', 'The 100 results form several dependency branches.')
+          text = text.replace('>P94 sources</a>', '>P100 sources</a>')
+          if 'P98 cross-fitted certification' not in text:
+              anchor = '<p>The 100-result program is summarized here; <a href="research-map.html">all 100 propositions</a> remain in the Research Map.</p>'
+              addition = '<p>Historical selection-valid lineage: P96 introduced independent holdout certification, P97 added finite candidate-family protection, P98 cross-fitted certification rotated genuinely independent holdouts, P99 aggregated valid fold evidence with e-values, and P100 adds the outer anytime-valid sequential layer.</p>'
+              if anchor not in text:
+                  raise RuntimeError('homepage Research II insertion anchor missing')
+              text = text.replace(anchor, anchor + '\n          ' + addition, 1)
+          write(path, text)
+
+          # 3. Research lineage: exact count and current P100 summary.
+          path = 'website/research-lineage.html'
+          text = read(path)
+          text = text.replace('<div><strong>99</strong><span>proposition-level results</span></div>', '<div><strong>100</strong><span>proposition-level results</span></div>')
+          old = '<section class="boundary"><div class="section-head"><p class="eyebrow">Current Research II frontier · P99</p><h2>From selection-valid cross-fitting to distributed evidence</h2></div><p>P98 made rotated independent-block certification simultaneous. P99 adds an evidence layer: valid fold rejections become e-values, finite frozen calibrations are mixed exactly, and dependent cross-fitted fold evidence is averaged without assuming fold independence. The physical-to-experiential bridge remains open.</p></section>'
+          new = '<section class="boundary"><div class="section-head"><p class="eyebrow">Current Research II frontier · P100</p><h2>From selection-valid evidence to anytime-valid sequential accumulation</h2></div><p>P98 established rotated independent-block certification, P99 converted valid cross-fitted evidence into exact e-values, and P100 adds a fresh-round sequential layer with predictable reserve stakes. Under the declared conditional-validity contract, the cumulative process is a nonnegative supermartingale and the first crossing of 1 / alpha is anytime-valid. The physical-to-experiential bridge remains open.</p></section>'
+          text = text.replace(old, new)
+          write(path, text)
+
+          # 4. Detailed chronology is now P1-P100.
+          path = 'docs/detailed_proposition_record.md'
+          text = read(path)
+          text = text.replace('Complete P1 to P99 chronology', 'Complete P1 to P100 chronology')
+          text = text.replace('99 disconnected proposition-level results', '100 disconnected proposition-level results')
+          write(path, text)
+
+          # 5. Current theorem source route.
+          path = 'website/sources.html'
+          text = read(path)
+          if 'id="p100-source"' not in text:
+              section = '''\n<section id="p100-source" class="boundary"><div class="section-head"><p class="eyebrow">Current Research II theorem source · P100</p><h2>Anytime-valid sequential e-process</h2><p>P100 composes fresh, conditionally valid P99 certification rounds with predictable exact-rational reserve stakes into a nonnegative supermartingale. Ville's inequality protects repeated inspection and stopping at the first crossing of 1 / alpha.</p></div><div class="source-grid"><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_100_anytime_sequential_eprocess.md"><h3>Proposition 100</h3><p>Formal theorem, conditional-validity contract, exact checkpoint, and scientific boundary.</p></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/p100_equation_provenance.md"><h3>P100 provenance</h3><p>Separates standard supermartingale, e-process, and Ville machinery from the repository-specific P99-to-P100 integration.</p></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/anytime_sequential_eprocess.py"><h3>P100 implementation</h3><p>Exact-rational sequential factors, cumulative evidence, crossing logic, freshness guards, and sample accounting.</p></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/tests/test_anytime_sequential_eprocess.py"><h3>P100 tests</h3><p>Regression coverage for 25/2, 27/4, 729/16, reserve behavior, predictability, freshness, and invalid stakes.</p></a><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/figures/p100_anytime_sequential_eprocess.svg"><h3>P100 theorem figure</h3><p>Canonical visual of the anytime-valid two-round checkpoint and its scientific boundary.</p></a></div><div class="boundary"><p><strong>Scientific boundary:</strong> current-round plans, calibrations, and stakes must be frozen from past information, and current certification data must retain conditional P99 validity given that past. P100 does not make reused data fresh, establish model acceptance, identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.</p></div></section>\n'''
+              if '</main>' not in text:
+                  raise RuntimeError('sources closing main not found')
+              text = text.replace('</main>', section + '</main>', 1)
+          write(path, text)
+
+          # 6. Scholarly citation marker.
+          path = 'CITATION.bib'
+          text = read(path).replace('Current documented theorem frontier: P99.', 'Current documented theorem frontier: P100.')
+          write(path, text)
+
+          # 7. Changelog must begin at P100, with P99 retained as history below it.
+          path = 'CHANGELOG.md'
+          text = read(path)
+          text = text.replace('# Unreleased research frontier - P99\n\n## Unreleased research frontier - P100\n', '# Unreleased research frontier - P100\n\n## P100 anytime-valid sequential e-process frontier\n', 1)
+          write(path, text)
+
+          # 8. Implementation page: current links/status plus P99 historical predecessor.
+          path = 'website/implementation.html'
+          text = read(path)
+          text = text.replace('<strong>P1-P95 proposition record</strong>', '<strong>P1-P100 proposition record</strong>')
+          text = text.replace('<strong>6 · P73-P99</strong>', '<strong>6 · P73-P100</strong>')
+          text = text.replace('index.html#p99-frontier">current P100 frontier', 'index.html#p100-frontier">current P100 frontier')
+          text = text.replace('P100 compounds fresh P99 round evidence through predictable reserve stakes into an anytime-valid sequential e-process and fixed convex averaging.', 'P100 compounds fresh P99 round evidence through predictable reserve stakes into an anytime-valid sequential e-process.')
+          current_p99 = '<section><div class="section-head"><p class="eyebrow">Current Research II implementation · P99</p><h2>P99 cross-fitted e-value aggregation</h2></div><p>The executable P99 layer uses exact rational fold levels, threshold-mixture weights, regime alpha weights, and fold weights. It delegates each threshold test to the selection-valid P96/P95/P94 chain and compares the final aggregate e-value with `1/alpha` exactly.</p><p><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/cross_fitted_evalue_aggregation.py">Open P99 implementation</a> · <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/tests/test_cross_fitted_evalue_aggregation.py">Open P99 tests</a></p></section>'
+          if 'Current Research II implementation · P100' not in text:
+              replacement = '<section><div class="section-head"><p class="eyebrow">Current Research II implementation · P100</p><h2>P100 anytime-valid sequential e-process</h2></div><p>The executable P100 layer nests the P99 certificate inside fresh sequential rounds, applies predictable exact-rational reserve stakes, accumulates the product process exactly, and records the first anytime-valid threshold crossing. Current-round predictability and conditional freshness are enforced as explicit guards.</p><p><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/anytime_sequential_eprocess.py">Open P100 implementation</a> · <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/tests/test_anytime_sequential_eprocess.py">Open P100 tests</a></p></section>\n<section><div class="section-head"><p class="eyebrow">Previous Research II implementation · P99</p><h2>P99 cross-fitted e-value aggregation</h2></div><p>The executable P99 layer uses exact rational fold levels, threshold-mixture weights, regime alpha weights, and fold weights. It delegates each threshold test to the selection-valid P96/P95/P94 chain and compares the final aggregate e-value with `1/alpha` exactly.</p><p><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/cross_fitted_evalue_aggregation.py">Open P99 implementation</a> · <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/tests/test_cross_fitted_evalue_aggregation.py">Open P99 tests</a></p></section>'
+              if current_p99 not in text:
+                  raise RuntimeError('implementation P99 current section not found')
+              text = text.replace(current_p99, replacement, 1)
+          write(path, text)
+
+          # 9. Research map exact orientation phrase and full current lineage.
+          path = 'website/research-map.html'
+          text = read(path)
+          text = text.replace('P71-P98 return to the P19 bridge-sufficiency lineage', 'P71-P100 return to the P19 bridge-sufficiency lineage')
+          if 'through Proposition 100.' not in text:
+              anchor = '<p><strong>Current Research II model-audit range: P75-P100.</strong> The current theorem frontier is P100. The physical-to-experiential bridge remains open.</p>'
+              if anchor not in text:
+                  raise RuntimeError('research map current-range anchor missing')
+              text = text.replace(anchor, anchor + '\n  <p>This map tracks the formal program through Proposition 100.</p>', 1)
+          write(path, text)
+
+          # 10. Preserve P98 as a meaningful historical checkpoint on every reader surface protected by its regression test.
+          for path in ('README.md', 'website/index.html', 'website/plain-language.html', 'website/start-here.html', 'website/research-map.html'):
+              text = read(path)
+              if 'p98' not in text.lower():
+                  note = '<section class="boundary"><p><strong>Historical P98 checkpoint:</strong> P98 established cross-fitted selection-valid certification across genuinely independent certification blocks with own-fold exclusion. P99 and P100 build on that inference boundary rather than replacing it.</p></section>\n'
+                  if path.endswith('.md'):
+                      text = text.rstrip() + '\n\n### Historical P98 checkpoint\n\nP98 established cross-fitted selection-valid certification across genuinely independent certification blocks with own-fold exclusion. P99 and P100 build on that inference boundary rather than replacing it.\n'
+                  elif '</main>' in text:
+                      text = text.replace('</main>', note + '</main>', 1)
+                  else:
+                      raise RuntimeError(f'cannot insert P98 historical note in {path}')
+                  write(path, text)
+
+          # 11. Make the promotion helper reproduce these repairs idempotently.
+          helper_path = ROOT / 'scripts/promote_p100_public_frontier.py'
+          helper = helper_path.read_text(encoding='utf-8')
+          helper = helper.replace(
+              '    if "Unreleased research frontier - P100" not in text:\n',
+              '    text = text.replace("# Unreleased research frontier - P99\\n\\n## Unreleased research frontier - P100\\n", "# Unreleased research frontier - P100\\n\\n## P100 anytime-valid sequential e-process frontier\\n", 1)\n    if not text.startswith("# Unreleased research frontier - P100\\n") and "Unreleased research frontier - P100" not in text:\n',
+          )
+          if 'def patch_remaining_publication_contract()' not in helper:
+              function = r'''
+
+def patch_remaining_publication_contract() -> None:
+    path = "docs/figure_catalog.md"
+    text = read(path)
+    text = text.replace("**Current catalog:** 157 SVG figures: 17 architecture/conceptual visuals, 18 foundational quantum-physics visuals, 82 proposition/theorem visuals, and 40 quantitative figures.", "**Current catalog:** 158 SVG figures: 17 architecture/conceptual visuals, 18 foundational quantum-physics visuals, 83 proposition/theorem visuals, and 40 quantitative figures.")
+    if "figures/p100_anytime_sequential_eprocess.svg" not in text:
+        row = "| [P100 anytime-valid sequential e-process](figures/p100_anytime_sequential_eprocess.svg) | P100 composes fresh conditionally valid P99 e-values with predictable reserve stakes; two moderate half-staked rounds give M_2 = 729/16 > 20. | Exact sequential-inference theorem figure; conditional on predictability and fresh-round validity. | [Proposition 100](proposition_100_anytime_sequential_eprocess.md) |"
+        lines = text.splitlines()
+        for index, line in enumerate(lines):
+            if "figures/p99_cross_fitted_evalue_aggregation.svg" in line:
+                lines.insert(index + 1, row)
+                text = "\n".join(lines) + "\n"
+                break
+    write(path, text)
+
+    path = "website/index.html"
+    text = read(path).replace("The 99 results form several dependency branches.", "The 100 results form several dependency branches.").replace(">P94 sources</a>", ">P100 sources</a>")
+    if "P98 cross-fitted certification" not in text:
+        anchor = '<p>The 100-result program is summarized here; <a href="research-map.html">all 100 propositions</a> remain in the Research Map.</p>'
+        text = text.replace(anchor, anchor + '\n          <p>Historical selection-valid lineage: P96 introduced independent holdout certification, P97 added finite candidate-family protection, P98 cross-fitted certification rotated genuinely independent holdouts, P99 aggregated valid fold evidence with e-values, and P100 adds the outer anytime-valid sequential layer.</p>', 1)
+    write(path, text)
+
+    path = "website/research-lineage.html"
+    text = read(path).replace('<div><strong>99</strong><span>proposition-level results</span></div>', '<div><strong>100</strong><span>proposition-level results</span></div>')
+    text = text.replace('Current Research II frontier · P99', 'Current Research II frontier · P100').replace('From selection-valid cross-fitting to distributed evidence', 'From selection-valid evidence to anytime-valid sequential accumulation')
+    write(path, text)
+
+    path = "docs/detailed_proposition_record.md"
+    text = read(path).replace("Complete P1 to P99 chronology", "Complete P1 to P100 chronology").replace("99 disconnected proposition-level results", "100 disconnected proposition-level results")
+    write(path, text)
+
+    path = "website/sources.html"
+    text = read(path)
+    if 'id="p100-source"' not in text:
+        section = '<section id="p100-source" class="boundary"><div class="section-head"><p class="eyebrow">Current Research II theorem source · P100</p><h2>Anytime-valid sequential e-process</h2></div><p>Proof: <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_100_anytime_sequential_eprocess.md">proposition_100_anytime_sequential_eprocess.md</a> · provenance: <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/p100_equation_provenance.md">p100_equation_provenance.md</a> · implementation: <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/src/consciousness_bridge/anytime_sequential_eprocess.py">anytime_sequential_eprocess.py</a> · tests: <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/tests/test_anytime_sequential_eprocess.py">test_anytime_sequential_eprocess.py</a>.</p></section>\n'
+        text = text.replace("</main>", section + "</main>", 1)
+    write(path, text)
+
+    path = "CITATION.bib"
+    write(path, read(path).replace("Current documented theorem frontier: P99.", "Current documented theorem frontier: P100."))
+
+    path = "CHANGELOG.md"
+    text = read(path).replace("# Unreleased research frontier - P99\n\n## Unreleased research frontier - P100\n", "# Unreleased research frontier - P100\n\n## P100 anytime-valid sequential e-process frontier\n", 1)
+    write(path, text)
+
+    path = "website/implementation.html"
+    text = read(path).replace("<strong>P1-P95 proposition record</strong>", "<strong>P1-P100 proposition record</strong>").replace("<strong>6 · P73-P99</strong>", "<strong>6 · P73-P100</strong>").replace('index.html#p99-frontier">current P100 frontier', 'index.html#p100-frontier">current P100 frontier')
+    write(path, text)
+
+    path = "website/research-map.html"
+    text = read(path).replace("P71-P98 return to the P19 bridge-sufficiency lineage", "P71-P100 return to the P19 bridge-sufficiency lineage")
+    if "through Proposition 100." not in text:
+        anchor = '<p><strong>Current Research II model-audit range: P75-P100.</strong> The current theorem frontier is P100. The physical-to-experiential bridge remains open.</p>'
+        text = text.replace(anchor, anchor + '\n  <p>This map tracks the formal program through Proposition 100.</p>', 1)
+    write(path, text)
+'''
+              helper = helper.replace('\ndef main() -> None:\n', function + '\ndef main() -> None:\n', 1)
+              helper = helper.replace('    patch_change_log()\n    patch_reader_tests()\n', '    patch_change_log()\n    patch_remaining_publication_contract()\n    patch_reader_tests()\n', 1)
+          helper_path.write_text(helper, encoding='utf-8')
+          PY
+
+      - name: Install focused test runner
+        run: python -m pip install pytest
+
+      - name: Run the publication regressions that failed in full CI
+        run: |
+          python -m pytest -q \
+            tests/test_figure_documentation_integrity.py \
+            tests/test_figure_publication_sync.py \
+            tests/test_main_page_visual_paper.py \
+            tests/test_p98_reader_surface_coherence.py \
+            tests/test_publication_contract_v2.py \
+            tests/test_readme_research_orientation.py \
+            tests/test_website_link_integrity.py \
+            tests/test_website_research_orientation.py
+
+      - name: Recheck publication synchronizers
+        run: |
+          python scripts/sync_figure_publication.py --check
+          python scripts/verify_repository.py
+
+      - name: Commit repaired publication contract
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git reset .github/workflows/p100-publication-residue-repair.yml
+          if git diff --cached --quiet; then
+            echo "No residue repairs were needed."
+          else
+            git commit -m "Repair P100 publication synchronization"
+            git push origin HEAD:p100-anytime-sequential-eprocess
+          fi
