@@ -67,8 +67,59 @@ def test_p91_start_here_has_no_stale_current_frontier_language() -> None:
         assert marker not in text
 
 
+def test_p91_plain_language_has_current_program_count_and_checkpoint() -> None:
+    text = _read("website/plain-language.html")
+    assert "This is the 91-result Research II theorem program currently reaching P91." in text
+    assert "A 91-result sufficiency and falsification architecture" in text
+    assert "The 91-result proposition program" in text
+    assert "The current theorem frontier is P91." in text
+    assert "P91 is the current checkpoint, not the destination" in text
+    assert "P91 is the current mathematical checkpoint" in text
+    assert "shows how all 91 Research II results connect" in text
+    assert 'id="p91-reader-frontier"' in text
+    assert 'id="p90-reader-frontier"' in text
+
+    stale = (
+        "This is the 90-result Research II theorem program currently reaching P90.",
+        "A 90-result sufficiency and falsification architecture",
+        "The 90-result proposition program",
+        "The current theorem frontier is P90.",
+        "P90 is the current checkpoint, not the destination",
+        "P90 is the current mathematical checkpoint inside a much larger research program.",
+        "shows how all 90 Research II results connect",
+    )
+    for marker in stale:
+        assert marker not in text
+
+
+def test_p91_research_map_top_level_orientation_is_current() -> None:
+    text = _read("website/research-map.html")
+    assert 'content="Scientific dependency map of the Mathematical Consciousness Bridge through Proposition 91."' in text
+    assert "Ninety-one results, one dependency-aware scientific program" in text
+    assert "<strong>91</strong><span>proposition-level results</span>" in text
+    assert "<span>6 · P73-P91</span>" in text
+    assert "culminating in P91 mixed-prevalence rank-two flattening separation" in text
+    assert 'id="p91-research-map"' in text
+
+    stale = (
+        "through Proposition 88",
+        "Eighty-eight results, one dependency-aware scientific program",
+        "<strong>88</strong><span>proposition-level results</span>",
+        "<span>6 · P73-P88</span>",
+        "culminating in P88 exact radius-three bounded primitive four-event shared-parameter parity-functional separation",
+    )
+    for marker in stale:
+        assert marker not in text
+
+
 def test_p91_reader_surfaces_preserve_scientific_boundary() -> None:
-    for path in ("README.md", "website/index.html", "website/plain-language.html"):
+    for path in (
+        "README.md",
+        "website/index.html",
+        "website/plain-language.html",
+        "website/start-here.html",
+        "website/research-map.html",
+    ):
         text = _read(path).lower()
         assert "p91" in text
         assert "physical-to-experiential bridge" in text
