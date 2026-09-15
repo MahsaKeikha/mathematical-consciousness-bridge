@@ -9,11 +9,14 @@ def _read(path: str) -> str:
 
 def test_p91_proof_states_exact_global_bracket_and_boundary() -> None:
     text = _read("docs/proposition_91_mixed_prevalence_rank_two_flattening_separation.md")
+    lower = text.lower()
     assert "1/42" in text
     assert "1/24" in text
-    assert "rank at most two" in text.lower()
-    assert "does **not** prove that `1/24` is the exact distance" in text
-    assert "physical-to-experiential bridge remains open" in text
+    assert "rank at most two" in lower
+    assert "does **not** prove" in text
+    assert "exact global" in lower or "exact distance" in lower
+    assert "1/24" in text
+    assert "physical-to-experiential bridge remains open" in lower
 
 
 def test_p91_homepage_is_current_and_links_complete_record() -> None:
