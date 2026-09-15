@@ -24,6 +24,8 @@ jobs:
         run: python scripts/promote_p97_public_frontier.py
       - name: Synchronize figure publication record
         run: python scripts/sync_figure_publication.py
+      - name: Repair stale publication contracts
+        run: python scripts/repair_p97_publication_contracts.py
       - name: Validate P97 publication state
         run: |
           python -m pytest -q \
