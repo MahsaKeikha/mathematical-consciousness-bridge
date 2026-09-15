@@ -1360,3 +1360,14 @@ P96 conditions on pilot-selection information, applies the fixed-plan P95 guaran
 - Figure: [`p97_simultaneous_candidate_family_selection.svg`](figures/p97_simultaneous_candidate_family_selection.svg)
 
 P97 uses standard union-bound logic at two nested levels, but the exact integration with the P92-P95 sign-coherence chain, the candidate-family certificate object, and the 4045/4056 exact checkpoint are repository-specific constructions documented in the P97 provenance record.
+
+
+## P98 cross-fitted selection-valid certification
+
+- Theorem: [`proposition_98_cross_fitted_selection_valid_certification.md`](proposition_98_cross_fitted_selection_valid_certification.md)
+- Equation and novelty provenance: [`p98_equation_provenance.md`](p98_equation_provenance.md)
+- Implementation: [`cross_fitted_selection_valid_certification.py`](../src/consciousness_bridge/cross_fitted_selection_valid_certification.py)
+- Exact tests: [`test_cross_fitted_selection_valid_certification.py`](../tests/test_cross_fitted_selection_valid_certification.py)
+- Figure: [`p98_cross_fitted_selection_valid_certification.svg`](figures/p98_cross_fitted_selection_valid_certification.svg)
+
+P98 uses standard conditional holdout validity, the tower property, sample rotation, and a union bound. The repository-specific contribution is the exact integration of those ingredients with the P92-P96 sign-coherence chain, explicit own-fold exclusion, exact rational fold and regime budgets, and the executable 4045/4056 and 16180/16224 checkpoints.

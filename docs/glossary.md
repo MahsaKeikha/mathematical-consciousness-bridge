@@ -69,7 +69,7 @@ The vocabulary falls into four groups:
 | Term | Meaning in this repository |
 | --- | --- |
 | **Scientific boundary** | An explicit statement of what a theorem does not establish. It prevents a valid mathematical result from being extended into an unsupported empirical or ontological claim. |
-| **Theorem frontier** | The highest numbered proposition currently integrated into the documented public research program. The current public frontier is **P97**. |
+| **Theorem frontier** | The highest numbered proposition currently integrated into the documented public research program. The current public frontier is **P98**. |
 | **Formal release** | The tagged software and publication release line. The current formal release remains **v0.82.0**, which is intentionally distinct from the theorem frontier. |
 
 ## Three distinctions worth remembering
@@ -134,7 +134,7 @@ P93 is the historical IID finite-sample predecessor of P94. P92 remains the exac
 **P96 boundary:** same-data redesign, unrestricted within-regime drift, model acceptance under non-rejection, consciousness identification, nonphysicality, and completion of the physical-to-experiential bridge are not established.
 
 
-## Current theorem frontier: P97
+## Immediate predecessor theorem frontier: P97
 
 **Finite candidate family:** a complete list of candidate regime plans fixed before the certification statistics are inspected. P97 permits post-inspection selection only from this predeclared finite family.
 
@@ -145,3 +145,16 @@ P93 is the historical IID finite-sample predecessor of P94. P92 remains the exac
 **Same-data selection cost:** unlike P96, P97 does not require a separate pilot sample. It pays instead through multiplicity: the global error budget is split across the predeclared candidates.
 
 **P97 boundary:** a candidate created after inspecting certification results is outside the theorem. Unbounded post-inspection search, unrestricted within-regime drift, model acceptance under non-rejection, consciousness identification, nonphysicality, and completion of the physical-to-experiential bridge are not established.
+
+
+## Current theorem frontier: P98
+
+**Cross-fitted certification block:** one of several mutually independent data blocks used as certification information in exactly one fold while the complementary blocks may be used for that fold's plan selection.
+
+**Own-fold exclusion:** the requirement that fold `k` cannot use certification statistics from block `k` to choose the plan later certified on block `k`.
+
+**Rotated holdout:** the P98 design in which each independent block takes a turn as the held-out certification block and may serve as selection information for other folds.
+
+**Fold-level error budget:** the exact rational failure budget `beta_k` assigned to fold `k`. The P98 simultaneous guarantee requires the fold budgets to sum to no more than the global error budget.
+
+**P98 boundary:** ordinary splitting of one dependent stream does not create independent certification blocks. Own-fold leakage, misspecified dependence, unrestricted within-regime drift, unbudgeted exploration of cross-fitting schemes, model acceptance, consciousness identification, nonphysicality, and completion of the physical-to-experiential bridge are not established.

@@ -32,7 +32,7 @@ def test_p97_is_preserved_below_p98() -> None:
 
     assert 'CURRENT_FRONTIER = "P98"' in verifier
     assert atlas.index('id="p98-frontier"') < atlas.index('id="p97-frontier"')
-    assert atlas.index('id="p97-frontier"') < atlas.index('id="p96-frontier"')
+    assert atlas.index('id="p98-frontier"') < atlas.index('id="p97-frontier"')
     assert "Previous theorem frontier · P97" in atlas
     assert 'id="p97-reader-frontier"' in plain
     assert 'id="p97-reader-frontier"' in start

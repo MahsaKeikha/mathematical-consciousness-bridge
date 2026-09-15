@@ -1,32 +1,33 @@
-# Current visual frontier: P71-P97
+# Current visual frontier: P71-P98
 
 This page is generated from the canonical proposition and figure tree.
 It is the compact GitHub-facing visual route through the current target-side branch.
 
-## Current theorem frontier: P97
+## Current theorem frontier: P98
 
-![P97 current theorem frontier](../docs/figures/p97_simultaneous_candidate_family_selection.svg)
+![P98 current theorem frontier](../docs/figures/p98_cross_fitted_selection_valid_certification.svg)
 
-[Read Proposition 97](../docs/proposition_97_simultaneous_candidate_family_selection.md)
+[Read Proposition 98](../docs/proposition_98_cross_fitted_selection_valid_certification.md)
 
-[Open P97 equation provenance](../docs/p97_equation_provenance.md)
+[Open P98 equation provenance](../docs/p98_equation_provenance.md)
 
-### Exact P97 simultaneous finite candidate-family selection
+### Exact P98 cross-fitted selection-valid certification
 
-P97 complements P96 by permitting same-data post-inspection selection within a finite candidate family fixed before certification statistics are inspected.
+P98 rotates the P96 independent-holdout principle across mutually independent certification blocks while preserving own-fold exclusion from plan selection.
 
 ```text
-candidate budgets: sum_k alpha_k <= alpha
-inside candidate k: sum_b alpha_kb <= alpha_k
-K=2, B=2, m=1: local alpha = 1/80
+fold budgets: sum_k beta_k <= alpha
+inside fold k: sum_b alpha_kb <= beta_k
+K=2 folds, B=2 regimes, m=1: local alpha = 1/80
 95% mathematical crossing = 4045 per regime
 first exact denominator-24 replication = 4056 per regime
-balanced unique-observation totals = 8090 / 8112
+per-fold totals = 8090 / 8112
+cross-fitted unique totals = 16180 / 16224
 ```
 
-P97 pays for same-data search through multiplicity. The candidate family must be fixed before inspection. New post-inspection candidates, unrestricted within-regime drift, model acceptance, consciousness identification, nonphysicality, and bridge completion are not established.
+P98 requires genuinely independent certification blocks and no own-fold leakage. The final fold certificates may be dependent; validity is combined by an outer union bound. Dependent-stream pseudo-folds, unbudgeted scheme search, model acceptance, consciousness identification, nonphysicality, and bridge completion are not established.
 
-## P71-P97 canonical theorem-figure index
+## P71-P98 canonical theorem-figure index
 
 | Proposition | Canonical figure | Proof | Provenance |
 | --- | --- | --- | --- |
@@ -57,6 +58,7 @@ P97 pays for same-data search through multiplicity. The candidate family must be
 | P95 | [figure](../docs/figures/p95_drift_aware_stratified_sign_coherence.svg) | [proof](../docs/proposition_95_drift_aware_stratified_sign_coherence.md) | [equations](../docs/p95_equation_provenance.md) |
 | P96 | [figure](../docs/figures/p96_selection_valid_holdout_stratification.svg) | [proof](../docs/proposition_96_selection_valid_holdout_stratification.md) | [equations](../docs/p96_equation_provenance.md) |
 | P97 | [figure](../docs/figures/p97_simultaneous_candidate_family_selection.svg) | [proof](../docs/proposition_97_simultaneous_candidate_family_selection.md) | [equations](../docs/p97_equation_provenance.md) |
+| P98 | [figure](../docs/figures/p98_cross_fitted_selection_valid_certification.svg) | [proof](../docs/proposition_98_cross_fitted_selection_valid_certification.md) | [equations](../docs/p98_equation_provenance.md) |
 
 ## Reproduce the visual record
 
@@ -70,4 +72,4 @@ The complete machine-readable SHA-256 inventory is in [`manifest.json`](manifest
 
 ## Interpretation boundary
 
-P71-P97 strengthens the methodology for testing a declared physical-to-target model. It does not derive consciousness from physics, prove nonphysicality, or close the physical-to-experiential bridge.
+P71-P98 strengthens the methodology for testing a declared physical-to-target model. It does not derive consciousness from physics, prove nonphysicality, or close the physical-to-experiential bridge.

@@ -4,7 +4,7 @@
 
 This page is an index, not another chapter. If you are still learning the overall story, go one layer up to the **[Research Map](research_map.md)**.
 
-The current documented theorem frontier is **P97**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains open.
+The current documented theorem frontier is **P98**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains open.
 
 ---
 
@@ -89,19 +89,34 @@ Then follow P72 through P74 in the [Detailed Proposition Record](detailed_propos
 
 **Question:** Can the declared model of the target and its measurement actually reproduce the observations, or can it be rejected under its own assumptions?
 
-**Results:** P75 through P97
+**Results:** P75 through P98
 
 This branch moves from model adequacy to rejection with finite data, separation from the complete declared model set, certified bounds for continuous families, and increasingly strong exact tests that preserve shared parameters.
 
 **Start with:** [P75: Target Model Adequacy](proposition_75_target_model_adequacy_overidentification.md)
 
-**Current frontier:** [P97: Simultaneous Finite Candidate-Family Selection](proposition_97_simultaneous_candidate_family_selection.md)
+**Previous frontier:** [P97: Simultaneous Finite Candidate-Family Selection](proposition_97_simultaneous_candidate_family_selection.md)
 
 ---
 
 ## Audit the current frontier without searching folders
 
-For P97:
+For P98:
+
+| Audit surface | Canonical route |
+| --- | --- |
+| Direct theorem | [P98 proposition](proposition_98_cross_fitted_selection_valid_certification.md) |
+| Equation and method provenance | [P98 provenance](p98_equation_provenance.md) |
+| Implementation | [`cross_fitted_selection_valid_certification.py`](../src/consciousness_bridge/cross_fitted_selection_valid_certification.py) |
+| Regression tests | [`test_cross_fitted_selection_valid_certification.py`](../tests/test_cross_fitted_selection_valid_certification.py) |
+| Theorem figure | [P98 cross-fitted certificate](figures/p98_cross_fitted_selection_valid_certification.svg) |
+| Repository reproduction | [Reproducibility Guide](reproducibility.md) |
+
+P98 is a conditional rotated-holdout theorem. It requires mutually independent certification blocks, own-fold exclusion from selection, frozen fold plans, and exact fold-level error accounting. The final fold certificates may be dependent.
+
+---
+
+For P97 (previous frontier):
 
 | Audit surface | Canonical route |
 | --- | --- |
@@ -170,8 +185,8 @@ The [Detailed Proposition Record](detailed_proposition_record.md) is the complet
 | --- | --- |
 | Physics | [Research Map](research_map.md) → [Technical Research Architecture](research_architecture.md) → [Quantum branch](quantum_foundations_and_bridge_test.md) |
 | Mathematics | [Research Map](research_map.md) → [Theorem Roadmap](theorem_roadmap.md) → proposition proofs |
-| Statistics and inference | [P19](proposition_19_fundamental_physical_sufficiency.md) → P20 through P24 → P74 through P97 via [Detailed Proposition Record](detailed_proposition_record.md) |
-| Consciousness science | [Bridge Problem](bridge_problem.md) → [Falsification Program](falsification_program.md) → P71 through P97 |
+| Statistics and inference | [P19](proposition_19_fundamental_physical_sufficiency.md) → P20 through P24 → P74 through P98 via [Detailed Proposition Record](detailed_proposition_record.md) |
+| Consciousness science | [Bridge Problem](bridge_problem.md) → [Falsification Program](falsification_program.md) → P71 through P98 |
 | Software and reproducibility | [Reproducibility Guide](reproducibility.md) → [`src/`](../src/) → [`tests/`](../tests/) |
 | Visual learner | [Figure Catalog](figure_catalog.md) → [Visual Atlas](../website/visual-atlas.html) |
 
@@ -179,7 +194,7 @@ The [Detailed Proposition Record](detailed_proposition_record.md) is the complet
 
 ## Where the complete detail lives
 
-This page intentionally does **not** duplicate the full 97 proposition index.
+This page intentionally does **not** duplicate the full 98 proposition index.
 
 Use:
 
@@ -288,7 +303,7 @@ P95 permits marginal drift across predeclared regimes while keeping a common mar
 
 ## P96 previous frontier
 
-**Current frontier:** [P97: Simultaneous Finite Candidate-Family Selection](proposition_97_simultaneous_candidate_family_selection.md)
+**Previous frontier:** [P97: Simultaneous Finite Candidate-Family Selection](proposition_97_simultaneous_candidate_family_selection.md)
 
 | What you want | Direct link |
 | --- | --- |
@@ -301,9 +316,9 @@ P95 permits marginal drift across predeclared regimes while keeping a common mar
 P96 permits pilot-selected regime plans only when selection and certification are separated by a justified independent holdout design and the selected plan is frozen before holdout evaluation. It inherits the P95 local rejection logic and preserves the same familywise error budget by conditioning on the pilot information.
 
 
-## P97 current frontier
+## P97 previous frontier
 
-**Current frontier:** [P97: Simultaneous Finite Candidate-Family Selection](proposition_97_simultaneous_candidate_family_selection.md)
+**Previous frontier:** [P97: Simultaneous Finite Candidate-Family Selection](proposition_97_simultaneous_candidate_family_selection.md)
 
 | What you want | Direct link |
 | --- | --- |
@@ -314,3 +329,18 @@ P96 permits pilot-selected regime plans only when selection and certification ar
 | Figure | [P97 simultaneous candidate-family certificate](figures/p97_simultaneous_candidate_family_selection.svg) |
 
 P97 permits same-data comparison and post-inspection selection only within a finite candidate family fixed before certification statistics are inspected. It assigns exact candidate-level budgets, nests P95 within each candidate, and uses a second union bound across candidates to preserve simultaneous validity.
+
+
+## P98 current frontier
+
+**Current frontier:** [P98: Cross-Fitted Selection-Valid Certification](proposition_98_cross_fitted_selection_valid_certification.md)
+
+| What you want | Direct link |
+| --- | --- |
+| The theorem and proof | [P98 proposition](proposition_98_cross_fitted_selection_valid_certification.md) |
+| Equation and method provenance | [P98 provenance](p98_equation_provenance.md) |
+| Implementation | [`cross_fitted_selection_valid_certification.py`](../src/consciousness_bridge/cross_fitted_selection_valid_certification.py) |
+| Regression tests | [`test_cross_fitted_selection_valid_certification.py`](../tests/test_cross_fitted_selection_valid_certification.py) |
+| Figure | [P98 cross-fitted certificate](figures/p98_cross_fitted_selection_valid_certification.svg) |
+
+P98 rotates independent holdout certification across mutually independent blocks. Every block may contribute to selection for other folds and to certification in its own fold, but no fold may use its own certification statistics to choose the plan later tested on that fold.

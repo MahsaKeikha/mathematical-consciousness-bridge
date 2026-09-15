@@ -94,3 +94,12 @@ P95 drift-aware stratified sign-coherence rejection: predeclared regime-specific
 | A finite candidate family fixed before inspection can support same-data post-inspection selection when all candidate P95 certificates are made simultaneous | Theorem under declared assumptions | [`proposition_97_simultaneous_candidate_family_selection.md`](proposition_97_simultaneous_candidate_family_selection.md) |
 | Two candidates, two regimes, `m=1`, equal 5 percent global spending cross at 4045 per regime and first exact replicate at 4056 | Exact rational computation | [`test_simultaneous_candidate_family_selection.py`](../tests/test_simultaneous_candidate_family_selection.py) |
 | P97 does not validate newly generated post-inspection candidates or establish consciousness ontology | Scientific boundary | [`p97_equation_provenance.md`](p97_equation_provenance.md) |
+
+
+### P98 current frontier
+
+| Claim | Evidence class | Canonical source |
+| --- | --- | --- |
+| Mutually independent blocks can rotate between selection and certification when each fold excludes its own certification block from its own plan selection | Theorem under declared assumptions | [`proposition_98_cross_fitted_selection_valid_certification.md`](proposition_98_cross_fitted_selection_valid_certification.md) |
+| Two folds, two regimes, `m=1`, equal 5 percent global spending give 4045/4056 per regime and 16180/16224 unique observations | Exact rational computation | [`test_cross_fitted_selection_valid_certification.py`](../tests/test_cross_fitted_selection_valid_certification.py) |
+| P98 does not validate dependent-stream pseudo-folds, own-fold leakage, or a consciousness ontology | Scientific boundary | [`p98_equation_provenance.md`](p98_equation_provenance.md) |

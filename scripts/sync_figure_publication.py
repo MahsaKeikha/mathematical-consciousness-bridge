@@ -309,6 +309,25 @@ def _frontier_summary(frontier: int) -> list[str]:
             "P97 pays for same-data search through multiplicity. The candidate family must be fixed before inspection. New post-inspection candidates, unrestricted within-regime drift, model acceptance, consciousness identification, nonphysicality, and bridge completion are not established.",
             "",
         ]
+    if frontier == 98:
+        return [
+            "### Exact P98 cross-fitted selection-valid certification",
+            "",
+            "P98 rotates the P96 independent-holdout principle across mutually independent certification blocks while preserving own-fold exclusion from plan selection.",
+            "",
+            "```text",
+            "fold budgets: sum_k beta_k <= alpha",
+            "inside fold k: sum_b alpha_kb <= beta_k",
+            "K=2 folds, B=2 regimes, m=1: local alpha = 1/80",
+            "95% mathematical crossing = 4045 per regime",
+            "first exact denominator-24 replication = 4056 per regime",
+            "per-fold totals = 8090 / 8112",
+            "cross-fitted unique totals = 16180 / 16224",
+            "```",
+            "",
+            "P98 requires genuinely independent certification blocks and no own-fold leakage. The final fold certificates may be dependent; validity is combined by an outer union bound. Dependent-stream pseudo-folds, unbudgeted scheme search, model acceptance, consciousness identification, nonphysicality, and bridge completion are not established.",
+            "",
+        ]
     return []
 
 
