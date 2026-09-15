@@ -112,7 +112,7 @@ jobs:
           assert plain.count(f'id="{frontier}-reader-frontier"') == 1
           assert start.count(f'id="{frontier}-reader-frontier"') == 1
           assert research.count(f'id="{frontier}-research-map"') == 1
-          assert f"Current theorem frontier P{frontier_number}" in research
+          assert f"The current theorem frontier is P{frontier_number}." in research
           for path in sorted(Path("_site").glob("*.html")):
               assert path.read_text(encoding="utf-8").rstrip().endswith("</html>"), path
           PY
