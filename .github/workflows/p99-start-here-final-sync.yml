@@ -1,0 +1,90 @@
+name: p99-start-here-final-sync
+
+on:
+  push:
+    branches: ["p99-cross-fitted-evalue-aggregation"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-and-clean:
+    if: ${{ !contains(github.event.head_commit.message, '[p99-start-here-synced]') }}
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: p99-cross-fitted-evalue-aggregation
+          fetch-depth: 0
+      - name: Synchronize Start Here to P99
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('website/start-here.html')
+          text = path.read_text(encoding='utf-8')
+
+          replacements = {
+              'current Research II P98 frontier.': 'current Research II P99 frontier.',
+              'Open all 98 Research II results': 'Open all 99 Research II results',
+              'The 98 propositions are the formal theorem record of Research II.': 'The 99 propositions are the formal theorem record of Research II.',
+              'P1-P98 build the mathematical conditions': 'P1-P99 build the mathematical conditions',
+              'P75-P98 test the declared target-measurement model itself': 'P75-P99 test the declared target-measurement model itself',
+              '<article class="result"><span>P75-P98</span>': '<article class="result"><span>P75-P99</span>',
+              'P92-P98 connect exact population separation to dependence-aware, selection-valid certification': 'P92-P99 connect exact population separation to dependence-aware, selection-valid certification',
+              '<strong>P98 is the current frontier.</strong>': '<strong>P98 is the immediate predecessor.</strong>',
+              'You do not need to read 98 Research II proofs in order': 'You do not need to read 99 Research II proofs in order',
+              'P19 and P71-P98': 'P19 and P71-P99',
+              'P74-P98.': 'P74-P99.',
+              'complete 98-result Research II dependency structure': 'complete 99-result Research II dependency structure',
+          }
+          for old, new in replacements.items():
+              text = text.replace(old, new)
+
+          p98_checkpoint = (
+              '<p><strong>Exact P98 checkpoint:</strong> for two folds, two one-step-dependent regimes per fold, and 95 percent global confidence, '
+              'the crossing is <strong>4045 observations per regime</strong>, the first exact denominator-24 replication is <strong>4056</strong>, '
+              'and the two-fold unique-data totals are <strong>16180 / 16224</strong>.</p>'
+          )
+          p99_block = (
+              p98_checkpoint
+              + '\n      <p><strong>P99 is the current frontier.</strong> It converts each selection-valid cross-fitted fold rejection into an exact e-value and combines fold evidence by a fixed convex average. The validity argument uses conditional fold validity, expectation linearity, and Markov\'s inequality, so the final fold certificates do not need to be independent.</p>'
+              + '\n      <p><strong>Exact P99 checkpoint:</strong> for the declared two-fold, two-regime, one-step-dependent distributed-evidence design at 95 percent global confidence, the crossing is <strong>3774 observations per regime</strong>, the first exact denominator-24 replication is <strong>3792</strong>, and the unique-data totals are <strong>15096 / 15168</strong>. P99 does not uniformly dominate P98.</p>'
+          )
+          if 'Exact P99 checkpoint:' not in text:
+              if p98_checkpoint not in text:
+                  raise RuntimeError('P98 checkpoint marker not found')
+              text = text.replace(p98_checkpoint, p99_block, 1)
+
+          text = text.replace(
+              'href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_98_cross_fitted_selection_valid_certification.md">Read P98 theorem</a>',
+              'href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_99_cross_fitted_evalue_aggregation.md">Read P99 theorem</a>',
+              1,
+          )
+
+          required = (
+              'Open all 99 Research II results',
+              'The 99 propositions are the formal theorem record of Research II.',
+              'P1-P99 build the mathematical conditions',
+              'P75-P99 test the declared target-measurement model itself',
+              'P92-P99 connect exact population separation to dependence-aware, selection-valid certification',
+              '<strong>P99 is the current frontier.</strong>',
+              'Exact P99 checkpoint:',
+              'Read P99 theorem',
+              'complete 99-result Research II dependency structure',
+              'id="p99-reader-frontier"',
+          )
+          for marker in required:
+              assert marker in text, marker
+
+          path.write_text(text.rstrip() + '\n', encoding='utf-8')
+          PY
+      - name: Remove helper and commit
+        run: |
+          rm .github/workflows/p99-start-here-final-sync.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add website/start-here.html .github/workflows/p99-start-here-final-sync.yml
+          git commit -m "Synchronize P99 Start Here reader surface [p99-start-here-synced]"
+          git push origin HEAD:p99-cross-fitted-evalue-aggregation
