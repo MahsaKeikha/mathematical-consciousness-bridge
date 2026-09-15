@@ -45,7 +45,7 @@ def test_claim_evidence_standard_separates_evidential_roles() -> None:
         assert marker in standard
 
 
-def test_claim_source_matrix_maps_public_claims_to_support_and_boundaries() -> None:
+def test_claim_source_matrix_maps_p91_public_claims_to_support_and_boundaries() -> None:
     matrix = _read("docs/claim_source_matrix.md")
     required = (
         "Claim-to-Source Scientific Audit Matrix",
@@ -53,7 +53,6 @@ def test_claim_source_matrix_maps_public_claims_to_support_and_boundaries() -> N
         "Formal consciousness modeling",
         "external methodological background plus repository formulation",
         "P75 model family",
-        "audited by P75-P90",
         "P86 weighted four-event compatibility",
         "L85 = 0 < L86 = 1/192",
         "P87 bounded primitive four-event compatibility",
@@ -61,8 +60,9 @@ def test_claim_source_matrix_maps_public_claims_to_support_and_boundaries() -> N
         "P88 radius-three bounded primitive four-event compatibility",
         "208,560-functional P88 family",
         "L87 = 1/96 < L88 = 1/64",
-        "The current repository contains 90 proposition-level results",
-        "P90 is the current Research II theorem frontier",
+        "The current repository contains 91 proposition-level results",
+        "P91 is the current Research II theorem frontier",
+        "P91 mixed-prevalence rank-two flattening separation",
         "passing CI supports internal consistency and reproducibility; it is not external peer review",
     )
     for marker in required:
@@ -78,16 +78,23 @@ def test_reference_audit_records_tegmark_as_research_origin() -> None:
     assert "distinct mathematical framework" in audit
 
 
-def test_sources_page_points_to_current_p90_and_previous_p89_p88_p87_records() -> None:
+def test_sources_page_points_to_current_p91_and_historical_frontiers() -> None:
     sources = _read("website/sources.html")
 
+    assert 'id="p91-source"' in sources
+    assert "Current theorem source · P91" in sources
+    assert "1/42" in sources
+    assert "1/24" in sources
+    assert "proposition_91_mixed_prevalence_rank_two_flattening_separation.md" in sources
+    assert "p91_equation_provenance.md" in sources
+    assert "mixed_prevalence_rank_two_flattening_separation.py" in sources
+    assert "test_mixed_prevalence_rank_two_flattening_separation.py" in sources
+
     assert 'id="p90-source"' in sources
-    assert "Current theorem source · P90" in sources
+    assert "Previous theorem source · P90" in sources
     assert "5/72" in sources
     assert "proposition_90_exact_nonlinear_rank_one_separation.md" in sources
     assert "p90_equation_provenance.md" in sources
-    assert "exact_nonlinear_rank_one_separation.py" in sources
-    assert "test_exact_nonlinear_rank_one_separation.py" in sources
 
     assert 'id="p89-source"' in sources
     assert "Previous theorem source · P89" in sources
@@ -98,24 +105,18 @@ def test_sources_page_points_to_current_p90_and_previous_p89_p88_p87_records() -
     assert 'id="p88-source"' in sources
     assert "Previous theorem source · P88" in sources
     assert "L87 = 1/96 &lt; L88 = 1/64" in sources
-    assert "proposition_88_exact_radius_three_bounded_primitive_quad_projection_parity_functional.md" in sources
-    assert "p88_equation_provenance.md" in sources
-    assert "radius_three_bounded_primitive_quad_projection_parity_functional_separation.py" in sources
-    assert "test_radius_three_bounded_primitive_quad_projection_parity_functional_separation.py" in sources
 
     assert 'id="p87-source"' in sources
     assert "Previous theorem source · P87" in sources
     assert "L86 = 1/192 &lt; L87 = 1/96" in sources
-    assert "proposition_87_exact_bounded_primitive_quad_projection_parity_functional.md" in sources
 
     assert 'id="p86-source"' in sources
     assert "Previous theorem source · P86" in sources
     assert "L85 = 0 &lt; L86 = 1/192" in sources
     assert "claim_source_matrix.md" in sources
-    assert "Claim-to-source matrix" in sources
 
+    assert "Current theorem source · P90" not in sources
     assert "Current theorem source · P89" not in sources
-    assert "Current theorem source · P88" not in sources
 
 
 def test_public_provenance_does_not_make_priority_or_ontology_claims() -> None:
