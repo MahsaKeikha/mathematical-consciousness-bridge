@@ -1,0 +1,40 @@
+name: research-three-pin-sync
+
+on:
+  push:
+    branches:
+      - research-three-measurement-figure-pin
+    paths:
+      - ".github/workflows/research-three-pin-sync.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  synchronize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research-three-measurement-figure-pin
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - name: Synchronize Research III website surfaces
+        run: |
+          python scripts/synchronize_research_three_website.py --write
+          python scripts/synchronize_research_three_website.py --check
+          git diff --check
+      - name: Commit synchronized Research III pin
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Research III website surfaces already synchronized."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add website/index.html website/measurement-science.html website/research-lineage.html
+          git commit -m "Synchronize Research III measurement figure pin"
+          git push origin HEAD:research-three-measurement-figure-pin
