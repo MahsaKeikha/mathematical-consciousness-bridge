@@ -26,18 +26,18 @@ validated as SVG documents and enriched with accessible `<title>` and `<desc>`
 metadata. They are not reclassified as empirical evidence simply because they
 are visual.
 
-## Current frontier: P90
+## Current frontier: P91
 
-![P90 current theorem frontier](p90_exact_nonlinear_rank_one_separation.svg)
+![P91 current theorem frontier](p91_mixed_prevalence_rank_two_flattening_separation.svg)
 
-Canonical current-frontier figure: `p90_exact_nonlinear_rank_one_separation.svg`
+Canonical current-frontier figure: `p91_mixed_prevalence_rank_two_flattening_separation.svg`
 
 Recent exact frontier figures:
 
-- `p87_exact_bounded_primitive_quad_projection_parity.svg`
 - `p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg`
 - `p89_complete_linear_parity_duality.svg`
 - `p90_exact_nonlinear_rank_one_separation.svg`
+- `p91_mixed_prevalence_rank_two_flattening_separation.svg`
 
 The GitHub-facing [`figures/`](../../figures/) gateway and its SHA-256
 [`manifest.json`](../../figures/manifest.json) are deterministically synchronized

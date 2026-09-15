@@ -25,7 +25,7 @@ from verify_frontier_publication import verify_frontier_publication
 
 ROOT = Path(__file__).resolve().parents[1]
 CURRENT_VERSION = "0.82.0"
-CURRENT_FRONTIER = "P90"
+CURRENT_FRONTIER = "P91"
 
 CORE_FILES = (
     "README.md",
@@ -59,6 +59,7 @@ CORE_FILES = (
     "docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg",
     "docs/figures/p89_complete_linear_parity_duality.svg",
     "docs/figures/p90_exact_nonlinear_rank_one_separation.svg",
+    "docs/figures/p91_mixed_prevalence_rank_two_flattening_separation.svg",
     "docs/proposition_84_exact_projection_parity_contrast.md",
     "docs/proposition_85_exact_triple_projection_parity_functional.md",
     "docs/p85_equation_provenance.md",
@@ -72,6 +73,10 @@ CORE_FILES = (
     "docs/p89_equation_provenance.md",
     "docs/proposition_90_exact_nonlinear_rank_one_separation.md",
     "docs/p90_equation_provenance.md",
+    "docs/proposition_91_mixed_prevalence_rank_two_flattening_separation.md",
+    "docs/p91_equation_provenance.md",
+    "src/consciousness_bridge/mixed_prevalence_rank_two_flattening_separation.py",
+    "tests/test_mixed_prevalence_rank_two_flattening_separation.py",
     "figures/README.md",
     "figures/CURRENT_FRONTIER.md",
     "figures/manifest.json",
@@ -230,10 +235,10 @@ def _assert_no_stale_reader_frontier() -> None:
 
 def _assert_citation_integrity() -> None:
     citation = (ROOT / "CITATION.md").read_text(encoding="utf-8")
-    if "Current documented theorem frontier: P90" not in citation:
-        raise RuntimeError("CITATION.md does not declare P90 as the current theorem frontier")
-    if "P90" not in (ROOT / "CITATION.cff").read_text(encoding="utf-8"):
-        raise RuntimeError("CITATION.cff does not mention P90")
+    if "Current documented theorem frontier: P91" not in citation:
+        raise RuntimeError("CITATION.md does not declare P91 as the current theorem frontier")
+    if "P91" not in (ROOT / "CITATION.cff").read_text(encoding="utf-8"):
+        raise RuntimeError("CITATION.cff does not mention P91")
 
 
 def _assert_detailed_proposition_record() -> None:
@@ -247,7 +252,7 @@ def _assert_detailed_proposition_record() -> None:
         if end < start:
             start, end = end, start
         covered.update(range(start, end + 1))
-    missing = [number for number in range(1, 91) if number not in covered]
+    missing = [number for number in range(1, 92) if number not in covered]
     if missing:
         raise RuntimeError(
             f"detailed proposition record is missing proposition references: {missing}"
@@ -264,20 +269,20 @@ def _assert_figure_manifest() -> None:
     figure_path = manifest.get("current_frontier_figure")
     if not isinstance(figure_path, str):
         raise TypeError("figure manifest current_frontier_figure is missing")
-    if not figure_path.endswith("p90_exact_nonlinear_rank_one_separation.svg"):
-        raise RuntimeError("figure manifest does not point to the canonical P90 SVG")
+    if not figure_path.endswith("p91_mixed_prevalence_rank_two_flattening_separation.svg"):
+        raise RuntimeError("figure manifest does not point to the canonical P91 SVG")
     figures = manifest.get("figures")
-    if not isinstance(figures, list) or len(figures) != 148:
-        raise RuntimeError("figure manifest does not contain the canonical 148 figures")
+    if not isinstance(figures, list) or len(figures) != 149:
+        raise RuntimeError("figure manifest does not contain the canonical 149 figures")
 
 
 def _assert_visual_atlas_order() -> None:
     visual_atlas = (ROOT / "website" / "visual-atlas.html").read_text(encoding="utf-8")
+    p91 = visual_atlas.index('id="p91-frontier"')
     p90 = visual_atlas.index('id="p90-frontier"')
     p89 = visual_atlas.index('id="p89-frontier"')
-    p88 = visual_atlas.index('id="p88-frontier"')
-    if not (p90 < p89 < p88):
-        raise RuntimeError("Visual Atlas does not lead with the current P90 figure")
+    if not (p91 < p90 < p89):
+        raise RuntimeError("Visual Atlas does not lead with the current P91 figure")
 
 
 def _assert_no_policy_punctuation() -> None:

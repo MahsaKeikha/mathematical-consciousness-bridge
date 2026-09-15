@@ -8,7 +8,7 @@ If this research program, one of its propositions, figures, algorithms, or imple
 
 > Keikha, M. (2026). *Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem* (Version 0.82.0). GitHub research repository. https://github.com/MahsaKeikha/mathematical-consciousness-bridge
 
-This is the preferred citation for the research program at the current documented frontier, P90.
+This is the preferred citation for the research program at the current documented frontier, P91.
 
 ## BibTeX
 
@@ -20,7 +20,7 @@ This is the preferred citation for the research program at the current documente
   version      = {0.82.0},
   howpublished = {GitHub research repository},
   url          = {https://github.com/MahsaKeikha/mathematical-consciousness-bridge},
-  note         = {Ongoing research program. Current documented theorem frontier: P90.}
+  note         = {Ongoing research program. Current documented theorem frontier: P91.}
 }
 ```
 
@@ -53,7 +53,7 @@ This repository is an evolving research program. For reproducible scholarly use:
 3. Cite the individual proposition or artifact when your argument depends on a specific theorem, figure, algorithm, or test.
 4. Do not attribute later propositions or later numerical results to an earlier version of the repository.
 
-The current citation metadata identify Version **0.82.0** and theorem frontier **P90**. Future research versions should update the version number, theorem frontier, citation metadata, and archival record together.
+The current citation metadata identify Version **0.82.0** and theorem frontier **P91**. Future research versions should update the version number, theorem frontier, citation metadata, and archival record together.
 
 ## DOI and archival status
 
@@ -98,9 +98,20 @@ These remain conditional statistical target-measurement results, not validation 
 
 When citing a theorem, readers should consult the proposition document for its assumptions and scope rather than citing the theorem statement without its declared conditions.
 
-## Current theorem frontier: P90
+## Current theorem frontier: P91
 
-The current documented theorem frontier is **P90**. The formal package release remains **Version 0.82.0**. P90 gives the exact nonlinear rank-one model-separation value `L90 = 5/72 = (7/3)L89` on the declared P75 strict box. P89 remains the complete real linear parity-functional subfrontier at `L89 = 5/168`. Neither result closes the physical-to-experiential bridge.
+The current documented theorem frontier is **P91**. The formal package release remains **Version 0.82.0**. P91 removes P90's extreme-prevalence restriction. Every two-component P75 law has rank at most two under the declared `(X1,X4)|(X2,X3)` flattening. For the established witness, an exact 512-vertex nonnegative interval calculation excludes the entire closed full-law L-infinity ball of radius `1/42`, while an explicit rational P75 point with prevalence `4/5` lies at distance exactly `1/24`. Therefore P91 certifies `1/42 < d_inf(P_emp, M75) <= 1/24` over the full P75 parameter cube. The upper endpoint is not claimed to be the exact global optimum.
+
+- Proof: [`proposition_91_mixed_prevalence_rank_two_flattening_separation.md`](docs/proposition_91_mixed_prevalence_rank_two_flattening_separation.md)
+- Equation provenance: [`p91_equation_provenance.md`](docs/p91_equation_provenance.md)
+- Implementation: [`mixed_prevalence_rank_two_flattening_separation.py`](src/consciousness_bridge/mixed_prevalence_rank_two_flattening_separation.py)
+- Exact tests: [`test_mixed_prevalence_rank_two_flattening_separation.py`](tests/test_mixed_prevalence_rank_two_flattening_separation.py)
+
+P91 remains a conditional model-separation theorem. It does not identify consciousness, establish nonphysicality, validate an alternative theory, or close the physical-to-experiential bridge.
+
+## Historical nonlinear frontier: P90
+
+P90 remains the exact single-component nonlinear subfrontier at `L90 = 5/72 = (7/3)L89` on the declared strict prevalence-zero P75 face. P91 enlarges the model family to arbitrary prevalence and therefore answers a different question; its bracket must not be compared to `L90` as though both optimized over the same model set.
 
 ## Historical theorem frontier: P89
 
@@ -116,7 +127,7 @@ P89 is complete only for real linear combinations of the eleven declared parity 
 
 - [`CITATION.cff`](CITATION.cff): machine-readable Citation File Format metadata used by GitHub citation tools.
 - [`CITATION.bib`](CITATION.bib): ready-to-import BibTeX record.
-- [Detailed proposition record](docs/detailed_proposition_record.md): P1 through P90 chronological theorem record.
+- [Detailed proposition record](docs/detailed_proposition_record.md): P1 through P91 chronological theorem record.
 - [Theorem roadmap](docs/theorem_roadmap.md): dependency-oriented theorem map.
 - [P72 equation and provenance record](docs/p72_equation_provenance.md): equation-level classification for the noisy-target theorem.
 - [P73 equation and provenance record](docs/p73_equation_provenance.md): equation-level classification and external latent-class context for the target-channel identifiability theorem.
@@ -128,80 +139,17 @@ P89 is complete only for real linear combinations of the eleven declared parity 
 - [P79 equation and provenance record](docs/p79_equation_provenance.md): one-sided exact-rational sampling-radius certification and safe numerical handoff.
 - [P80 equation and provenance record](docs/p80_equation_provenance.md): probability-simplex coupling, exact interval-simplex distance, and P80/P78 dominance.
 - [P81 equation and provenance record](docs/p81_equation_provenance.md): projected-event box intervals, event-size distance transfer, dominance, and the P79 rejection handoff.
-- [P82 equation and provenance record](docs/p82_equation_provenance.md): exact nested residual-event intervals, direct residual extremization, dominance, and the P79 rejection handoff.
-- [P83 equation and provenance record](docs/p83_equation_provenance.md): exact projection-parity identities, parity box intervals, dominance, and strict improvement over P82.
-- [P84 equation and provenance record](docs/p84_equation_provenance.md): exact joint parity-event contrasts, common-vertex extremization, 220-contrast audit, and strict improvement over P83.
-- [Equation and citation map](docs/equation_and_citation_map.md): provenance of equations, assumptions, and external sources.
-- [Citation and reference policy](docs/citation_and_reference_policy.md): repository rules for attribution and scientific sourcing.
+- [P82 equation and provenance record](docs/p82_equation_provenance.md): nested residual-event exact intervals, direct shared-parameter residual extremization, complete 256-contrast audit, and the exact 1/12 versus 1/16 strict-improvement witness.
+- [P83 equation and provenance record](docs/p83_equation_provenance.md): standard parity identities, repository-original parity audit, exact transfer norm, dominance theorem, and the P82 = 0 versus P83 = 1/16 witness.
+- [P84 equation and provenance record](docs/p84_equation_provenance.md): exact joint parity-contrast interval, transfer norm, complete 220-pair audit, dominance theorem, and the P83 = 0 versus P84 = 1/32 witness.
+- [P85 equation and provenance record](docs/p85_equation_provenance.md): exact triple parity-functional interval, centered transfer norm, complete 660-triple audit, and dominance over the P84 pair certificate.
+- [P86 equation and provenance record](docs/p86_equation_provenance.md): minimally weighted four-event parity functionals, 10,560-functional enumeration, exact transfer norm, dominance over the complete P85 audit, and the P85 = 0 versus P86 = 1/192 strict witness.
+- [P87 equation and provenance record](docs/p87_equation_provenance.md): complete bounded primitive four-event coefficient family with `0 < |c_i| <= 2`, exact sign-normalized enumeration, transfer norm, dominance over P86, and the P86 = 1/192 versus P87 = 1/96 strict witness.
+- [P88 equation and provenance record](docs/p88_equation_provenance.md): complete radius-three primitive four-event coefficient family with `0 < |c_i| <= 3`, exact sign-normalized enumeration, transfer norm, dominance over P87, and the P87 = 1/96 versus P88 = 1/64 strict witness.
+- [P89 equation and provenance record](docs/p89_equation_provenance.md): complete real linear parity-functional duality, exact lower/upper certificates, and the exact value `L89 = 5/168`.
+- [P90 equation and provenance record](docs/p90_equation_provenance.md): exact nonlinear rank-one slice separation, matching lower/upper certificates, and the exact value `L90 = 5/72` on the declared strict box.
+- [P91 equation and provenance record](docs/p91_equation_provenance.md): full mixed-prevalence rank-two flattening constraint, exact selected-minor interval certificate, and global distance bracket `1/42 < d_inf <= 1/24`.
 
+## Proposition 91 method citation
 
-## Proposition 79
-
-For the exact-rational sampling-radius certificate, cite the repository together with [Proposition 79](docs/proposition_79_certified_sampling_radius.md) and its [equation provenance record](docs/p79_equation_provenance.md).
-
-
-## Proposition 80
-
-For the simplex-coupled continuous-model certificate, cite the repository together with [Proposition 80](docs/proposition_80_simplex_coupled_model_separation.md) and its [equation provenance record](docs/p80_equation_provenance.md). P80 is a computational tightening of the P78 continuous P75 separation certificate and should not be cited as an identification of consciousness.
-
-
-## Proposition 81
-
-For the projection-event continuous-model certificate, cite the repository together with [Proposition 81](docs/proposition_81_projection_event_model_separation.md) and its [equation provenance record](docs/p81_equation_provenance.md). P81 is a computational tightening of the P80/P78 continuous P75 separation chain and should not be cited as an identification of consciousness.
-
-## Proposition 82
-
-For the exact nested projection-contrast certificate, cite the repository together with [Proposition 82](docs/proposition_82_exact_nested_projection_contrast.md) and its [equation provenance record](docs/p82_equation_provenance.md). P82 is a conditional computational model-distance theorem for the declared P75 family. It should not be cited as an identification of consciousness.
-
-## P82 frontier citation note
-
-P82 strengthens the P81 continuous P75 separation chain through exact nested residual-event intervals. It is a conditional model-distance certificate and should not be cited as an identification of consciousness.
-
-
-## Proposition 83 method citation
-
-For work that specifically uses the newest continuous-family certificate, cite the program together with **Proposition 83: Exact Projection-Parity Certificate for Continuous P75 Separation**. P83 adds 22 parity observables, exact rational box extremization through the Bernoulli parity identity, and a strict witness with `L82 = 0 < L83 = 1/16`.
-
-The result is a conditional model-distance certificate for the declared P75 latent family. It should not be cited as an identification, definition, or measurement of consciousness, and non-rejection remains inconclusive.
-
-
-## Proposition 84 method citation
-
-For work that specifically uses the current joint parity certificate, cite the program together with **Proposition 84: Exact Joint Projection-Parity Contrast Certificate** and its [equation provenance record](docs/p84_equation_provenance.md). P84 retains all of P83 and adds 220 exact coupled parity-event contrasts that preserve one shared P75 parameter assignment. Its exact-rational strict witness has `L83 = 0 < L84 = 1/32`.
-
-The result is a conditional model-distance certificate for the declared P75 latent family. It should not be cited as an identification, definition, or measurement of consciousness, and non-rejection remains inconclusive.
-
-
-## Historical theorem frontier: P85
-
-P85 was an earlier theorem frontier: the exact three-event projection-parity functional certificate. When citing this historical result specifically, cite [Proposition 85](docs/proposition_85_exact_triple_projection_parity_functional.md) together with its [equation and provenance record](docs/p85_equation_provenance.md), implementation, tests, and exact theorem figure. P85 is conditional on the declared P75 model and does not claim that the physical-to-experiential bridge has been solved.
-
-
-## Proposition 86 method citation
-
-For work using the minimally weighted four-event shared-parameter parity certificate, cite the program together with **Proposition 86: Exact Minimally Weighted Four-Event Projection-Parity Functional Certificate**. P86 exhausts 10,560 exact functionals with primitive coefficient magnitudes `{1,1,1,2}` and includes the strict exact-rational hierarchy witness `L85 = 0 < L86 = 1/192`.
-
-- [P86 proof](docs/proposition_86_exact_minimally_weighted_quad_projection_parity_functional.md)
-- [P86 equation provenance](docs/p86_equation_provenance.md)
-
-P86 is conditional on the declared P75 model and should not be cited as an identification or definition of consciousness.
-
-
-## Historical theorem frontier: P88
-
-P88 was the immediately preceding Research II frontier. It completed the primitive four-event parity-functional search through coefficient radius three and established `L88 = 1/64` on the published exact-rational witness. P89 strictly strengthens that result while preserving P88 as part of the auditable theorem history.
-
-## Historical theorem frontier: P87
-
-P87 was the immediately preceding theorem frontier. It completed the sign-normalized primitive nonzero four-event coefficient box with `0 < |c_i| <= 2`, auditing 39,600 exact functionals. On the stored exact rational witness, the complete P86 certificate is `1/192` and P87 certifies `1/96`. This is a conditional model-separation result for the declared P75 family, not an identification or definition of consciousness.
-
-## Current theorem frontier: P90
-
-The current documented theorem frontier is **P90**, an exact nonlinear rank-one slice separation theorem for the declared strict P75 box.
-
-- Proof: [`proposition_90_exact_nonlinear_rank_one_separation.md`](docs/proposition_90_exact_nonlinear_rank_one_separation.md)
-- Equation provenance: [`p90_equation_provenance.md`](docs/p90_equation_provenance.md)
-- Implementation: [`exact_nonlinear_rank_one_separation.py`](src/consciousness_bridge/exact_nonlinear_rank_one_separation.py)
-- Exact tests: [`test_exact_nonlinear_rank_one_separation.py`](tests/test_exact_nonlinear_rank_one_separation.py)
-
-P90 is a conditional model-separation result. It does not identify consciousness or establish nonphysicality.
+For work that uses the full mixed-prevalence rank-two flattening certificate, cite the program together with **Proposition 91: Mixed-Prevalence Rank-Two Flattening Separation** and its [equation provenance record](docs/p91_equation_provenance.md). The theorem gives the certified global bracket `1/42 < d_inf(P_emp, M75) <= 1/24` for the established witness and full P75 parameter cube. The constructive upper endpoint is not claimed to be the exact global optimum.

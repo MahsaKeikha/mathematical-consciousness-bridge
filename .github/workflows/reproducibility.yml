@@ -1,12 +1,16 @@
 name: reproducibility
 
-# Exact-reference P90 release audit on the same commit used by the publication gate.
+# Exact-reference P91 release audit on the same commit used by the publication gate.
 on:
   workflow_dispatch:
   push:
     branches:
       - main
   pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -24,10 +28,10 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -e ".[dev]"
           python -m pip install -r requirements-reproducibility.txt
-      - name: Validate committed P90 publication state
+      - name: Validate committed P91 publication state
         run: |
           python -m pytest -q \
-            tests/test_p90_reader_surface_coherence.py \
+            tests/test_p91_reader_surface_coherence.py \
             tests/test_frontier_reader_narrative.py \
             tests/test_reader_documentation_consistency.py \
             tests/test_research_website_integrity.py \
@@ -35,18 +39,18 @@ jobs:
             tests/test_figure_documentation_integrity.py
           python scripts/sync_figure_publication.py --check
           python scripts/verify_repository.py
-          python -m ruff check scripts/promote_p90_public_frontier.py scripts/verify_repository.py tests/test_p90_reader_surface_coherence.py
+          python -m ruff check scripts/promote_p91_public_frontier.py scripts/verify_repository.py tests/test_p91_reader_surface_coherence.py
           git diff --check
       - name: Run end-to-end reproducibility audit
         run: python scripts/reproducibility_audit.py
-      - name: Upload reproduced P90 visual record
+      - name: Upload reproduced P91 visual record
         uses: actions/upload-artifact@v4
         with:
-          name: reproduced-visual-record-v0.82.0-p90
+          name: reproduced-visual-record-v0.82.0-p91
           path: |
             docs/figures/quantitative
             docs/figures/quantum
-            docs/figures/p90_exact_nonlinear_rank_one_separation.svg
+            docs/figures/p91_mixed_prevalence_rank_two_flattening_separation.svg
             figures/current_frontier.svg
             figures/manifest.json
           if-no-files-found: error

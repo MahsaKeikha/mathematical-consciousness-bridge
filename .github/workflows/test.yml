@@ -1,9 +1,16 @@
 name: tests
 
-# Final P89 publication gate: run the compatibility matrix on every pushed HEAD.
+# Current publication gate: run the compatibility matrix on every pushed HEAD.
 on:
   push:
   pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
 
 jobs:
   test:

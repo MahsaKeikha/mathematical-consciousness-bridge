@@ -187,6 +187,22 @@ def _frontier_summary(frontier: int) -> list[str]:
             "The theorem is exact only for the declared strict single-component P75 box. It does not identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.",
             "",
         ]
+    if frontier == 91:
+        return [
+            "### Exact P91 mixed-prevalence rank-two witness",
+            "",
+            "P91 removes the extreme-prevalence restriction. The full two-component P75 family obeys a rank-at-most-two bipartite flattening constraint.",
+            "",
+            "```text",
+            "empirical selected determinant = 1/512",
+            "closed radius 1/42: minimum determinant = 23/677376 > 0",
+            "explicit mixed P75 point: distance = 1/24",
+            "1/42 < d_inf(P_emp, M_75) <= 1/24",
+            "```",
+            "",
+            "The upper endpoint is not claimed to be the exact global optimum. P91 does not identify consciousness or close the physical-to-experiential bridge.",
+            "",
+        ]
     return []
 
 

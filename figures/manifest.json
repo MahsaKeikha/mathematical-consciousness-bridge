@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "canonical_root": "docs/figures",
-  "current_frontier": "P90",
-  "current_frontier_figure": "docs/figures/p90_exact_nonlinear_rank_one_separation.svg",
-  "figure_count": 148,
+  "current_frontier": "P91",
+  "current_frontier_figure": "docs/figures/p91_mixed_prevalence_rank_two_flattening_separation.svg",
+  "figure_count": 149,
   "hash_algorithm": "sha256",
   "figures": [
     {
@@ -645,6 +645,14 @@
       "category": "theorem-or-architecture",
       "title": "P90 Exact Nonlinear Rank-One Slice Separation",
       "description_chars": 966
+    },
+    {
+      "path": "docs/figures/p91_mixed_prevalence_rank_two_flattening_separation.svg",
+      "sha256": "18b14dcf70b78644659c974784c2784254bb51b2a14c3c93de1055c7c2a642f0",
+      "bytes": 8267,
+      "category": "theorem-or-architecture",
+      "title": "P91 Mixed-Prevalence Rank-Two Flattening Separation",
+      "description_chars": 673
     },
     {
       "path": "docs/figures/physics_mathematics_atlas.svg",

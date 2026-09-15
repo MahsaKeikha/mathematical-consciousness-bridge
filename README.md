@@ -54,9 +54,9 @@ You do **not** need to read the propositions in order to understand the project.
 
 If you want the complete theorem record, including assumptions, proofs, implementations, tests, figures, and scientific boundaries, use the **[Detailed Proposition Record](docs/detailed_proposition_record.md)** or the **[Theorem Roadmap](docs/theorem_roadmap.md)**.
 
-The current public theorem frontier is **P90**. The formal release remains **v0.82.0**.
+The current public theorem frontier is **P91**. The formal release remains **v0.82.0**.
 
-**[Read the current frontier](docs/proposition_90_exact_nonlinear_rank_one_separation.md)**
+**[Read the current frontier](docs/proposition_91_mixed_prevalence_rank_two_flattening_separation.md)**
 
 ---
 
@@ -70,11 +70,11 @@ The current public theorem frontier is **P90**. The formal release remains **v0.
 
 ### Current theorem frontier
 
-![P90 Exact Nonlinear Rank-One Slice Separation](docs/figures/p90_exact_nonlinear_rank_one_separation.svg)
+![P91 Mixed-Prevalence Rank-Two Flattening Separation](docs/figures/p91_mixed_prevalence_rank_two_flattening_separation.svg)
 
-**Figure 2. P90 exact nonlinear rank-one slice separation.** P90 moves beyond the complete P89 linear parity-functional envelope. On the established strict P75 box, prevalence is fixed at zero, so the observable family is a single product Bernoulli law and the canonical two-by-two slice must satisfy `ad = bc`. The empirical slice has exact determinant residual `5/192`, forcing full-law L-infinity distance at least `5/72`; an explicit rational P75 point attains exactly `5/72`. Thus the exact nonlinear distance is `L90 = 5/72 = (7/3)L89`.
+**Figure 2. P91 mixed-prevalence rank-two flattening separation.** P91 removes P90's extreme-prevalence restriction. For arbitrary latent prevalence, the `(X1,X4)|(X2,X3)` flattening of every two-component P75 law has rank at most two, so all three-by-three minors vanish. The selected empirical minor has determinant exactly `1/512`. Exact nonnegative interval propagation over all 512 determinant-box vertices proves that every law in the closed full-law L-infinity ball of radius `1/42` still has positive selected determinant. An explicit rational P75 point with prevalence `4/5` lies at distance exactly `1/24`. Therefore `1/42 < d_inf(P_emp, M75) <= 1/24` over the full P75 model cube.
 
-P90 remains a conditional model-separation theorem for the declared strict P75 box. It does not identify consciousness, establish nonphysicality, validate an alternative theory, or close the physical-to-experiential bridge.
+P91 is a conditional model-separation theorem. The upper endpoint `1/24` is not claimed to be the exact global optimum. The result does not identify consciousness, establish nonphysicality, validate an alternative theory, or close the physical-to-experiential bridge.
 
 ## Choose your path
 
@@ -120,6 +120,6 @@ For scholarly citation, see **[CITATION.md](CITATION.md)** and **[CITATION.cff](
 
 MIT License. See **[LICENSE](LICENSE)**.
 
-**Public theorem frontier:** P90
+**Public theorem frontier:** P91
 **Formal release:** v0.82.0
 **Final bridge from physical description to experience:** open
