@@ -1349,3 +1349,14 @@ P95 drift-aware stratified sign-coherence rejection: predeclared regime-specific
 ## P96 selection-valid holdout stratification
 
 P96 conditions on pilot-selection information, applies the fixed-plan P95 guarantee to independent certification data, and uses the tower property to recover the same unconditional familywise error bound. The sample-splitting, conditioning, union-bound, and tower-property ingredients are standard. The project-specific synthesis and executable guard conditions are documented in [p96_equation_provenance.md](p96_equation_provenance.md) and [Proposition 96](proposition_96_selection_valid_holdout_stratification.md).
+
+
+## P97 same-data finite candidate-family selection
+
+- Theorem: [`proposition_97_simultaneous_candidate_family_selection.md`](proposition_97_simultaneous_candidate_family_selection.md)
+- Equation and novelty provenance: [`p97_equation_provenance.md`](p97_equation_provenance.md)
+- Implementation: [`simultaneous_candidate_family_selection.py`](../src/consciousness_bridge/simultaneous_candidate_family_selection.py)
+- Exact tests: [`test_simultaneous_candidate_family_selection.py`](../tests/test_simultaneous_candidate_family_selection.py)
+- Figure: [`p97_simultaneous_candidate_family_selection.svg`](figures/p97_simultaneous_candidate_family_selection.svg)
+
+P97 uses standard union-bound logic at two nested levels, but the exact integration with the P92-P95 sign-coherence chain, the candidate-family certificate object, and the 4045/4056 exact checkpoint are repository-specific constructions documented in the P97 provenance record.

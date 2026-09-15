@@ -25,7 +25,7 @@ from verify_frontier_publication import verify_frontier_publication
 
 ROOT = Path(__file__).resolve().parents[1]
 CURRENT_VERSION = "0.82.0"
-CURRENT_FRONTIER = "P96"
+CURRENT_FRONTIER = "P97"
 
 CORE_FILES = (
     "README.md",
@@ -99,6 +99,12 @@ CORE_FILES = (
     "docs/figures/p96_selection_valid_holdout_stratification.svg",
     "src/consciousness_bridge/selection_valid_holdout_stratification.py",
     "tests/test_selection_valid_holdout_stratification.py",
+    "docs/proposition_97_simultaneous_candidate_family_selection.md",
+    "docs/p97_equation_provenance.md",
+    "docs/figures/p97_simultaneous_candidate_family_selection.svg",
+    "src/consciousness_bridge/simultaneous_candidate_family_selection.py",
+    "tests/test_simultaneous_candidate_family_selection.py",
+    "tests/test_p97_reader_surface_coherence.py",
     "src/consciousness_bridge/mixed_prevalence_rank_two_flattening_separation.py",
     "src/consciousness_bridge/exact_global_mixed_prevalence_distance.py",
     "tests/test_mixed_prevalence_rank_two_flattening_separation.py",
@@ -149,6 +155,11 @@ LINK_SURFACES = (
 MARKDOWN_LINK = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 
 STALE_READER_FRONTIER_MARKERS = (
+    "Current theorem frontier · P96",
+    "current P96 frontier",
+    "<strong>P96</strong><span>current theorem frontier</span>",
+    "96 results · current frontier P96",
+    "Explore all 96 results",
     "Current theorem frontier · P95",
     "current P95 frontier",
     "<strong>P95</strong><span>current theorem frontier</span>",

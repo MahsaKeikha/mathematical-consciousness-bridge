@@ -5,15 +5,15 @@ visual record of the Mathematical Consciousness Bridge project. The canonical
 SVG archive lives in [`docs/figures/`](../docs/figures/); this gateway is derived
 from that archive by code so it cannot silently remain on an older proposition.
 
-## Current theorem frontier: P96
+## Current theorem frontier: P97
 
-![P96 current theorem frontier](../docs/figures/p96_selection_valid_holdout_stratification.svg)
+![P97 current theorem frontier](../docs/figures/p97_simultaneous_candidate_family_selection.svg)
 
-Canonical figure: [`p96_selection_valid_holdout_stratification.svg`](../docs/figures/p96_selection_valid_holdout_stratification.svg)
-Theorem: [`proposition_96_selection_valid_holdout_stratification.md`](../docs/proposition_96_selection_valid_holdout_stratification.md)
-Equation provenance: [`p96_equation_provenance.md`](../docs/p96_equation_provenance.md)
+Canonical figure: [`p97_simultaneous_candidate_family_selection.svg`](../docs/figures/p97_simultaneous_candidate_family_selection.svg)
+Theorem: [`proposition_97_simultaneous_candidate_family_selection.md`](../docs/proposition_97_simultaneous_candidate_family_selection.md)
+Equation provenance: [`p97_equation_provenance.md`](../docs/p97_equation_provenance.md)
 
-For the full P71-P96 visual progression, open
+For the full P71-P97 visual progression, open
 [`CURRENT_FRONTIER.md`](CURRENT_FRONTIER.md).
 
 ## Complete reproducible figure record

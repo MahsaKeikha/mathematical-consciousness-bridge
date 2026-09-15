@@ -10,12 +10,12 @@ You do not need every command at once. Choose the route that matches your goal.
 | --- | --- |
 | Reproduce the maintained repository as strictly as possible | `make reproduce` |
 | Run the normal verification suite | `make check` |
-| Run only the current P96 theorem checks | focused P95 commands below |
+| Run only the current P97 theorem checks | focused P97 commands below |
 | Validate figures without rebuilding them | `make figures-check` |
 | Regenerate the complete visual record | `make figures` |
 | Inspect CI without installing locally | GitHub Actions |
 
-The current public theorem frontier is **P96**. The formal release remains **v0.82.0**.
+The current public theorem frontier is **P97**. The formal release remains **v0.82.0**.
 
 ---
 
@@ -104,18 +104,18 @@ Use this route when you want to verify the current committed state without regen
 
 ---
 
-## 5. Focused audit of the current P96 frontier
+## 5. Focused audit of the current P97 frontier
 
-The current theorem frontier is **P96**.
+The current theorem frontier is **P97**.
 
 Its direct technical record is:
 
 ```text
-docs/proposition_96_selection_valid_holdout_stratification.md
-docs/p96_equation_provenance.md
-src/consciousness_bridge/selection_valid_holdout_stratification.py
-tests/test_selection_valid_holdout_stratification.py
-docs/figures/p96_selection_valid_holdout_stratification.svg
+docs/proposition_97_simultaneous_candidate_family_selection.md
+docs/p97_equation_provenance.md
+src/consciousness_bridge/simultaneous_candidate_family_selection.py
+tests/test_simultaneous_candidate_family_selection.py
+docs/figures/p97_simultaneous_candidate_family_selection.svg
 figures/manifest.json
 ```
 
@@ -123,9 +123,9 @@ Run the focused theorem and publication checks with:
 
 ```bash
 python -m pytest -q \
-  tests/test_selection_valid_holdout_stratification.py \
+  tests/test_simultaneous_candidate_family_selection.py \
+  tests/test_p97_reader_surface_coherence.py \
   tests/test_p96_reader_surface_coherence.py \
-  tests/test_p95_reader_surface_coherence.py \
   tests/test_frontier_reader_narrative.py \
   tests/test_figure_publication_sync.py \
   tests/test_frontier_publication_consistency.py
@@ -133,11 +133,11 @@ python scripts/sync_figure_publication.py --check
 python scripts/verify_repository.py
 ```
 
-P96 permits arbitrary pilot selection of the regime plan, freezes the plan before holdout evaluation, and applies P95 to independent certification information. Conditional P95 validity and the tower property preserve the same unconditional familywise error bound, so no additional alpha penalty is charged for pilot-selection complexity under the declared independence assumptions.
+P97 permits the same certification data to be used across a finite predeclared candidate family. Candidate-level P95 certificates are made simultaneous by a second union bound, so a final post-inspection choice within that fixed family preserves validity.
 
-For two equally budgeted selected regimes with dependence range one at 95 percent familywise confidence, the holdout threshold remains `3645` observations per regime, with first exact denominator-24 replication at `3648` per regime. Pilot observations are additional and do not count toward certification.
+For two equally budgeted candidates with two one-step-dependent regimes each, the 95 percent threshold is `4045` observations per regime and the first exact denominator-24 replication is `4056`. The balanced unique-observation totals are `8090` and `8112` because candidate plans reuse the same data.
 
-A naive random split of one dependent time series is not automatically independent. Non-rejection remains inconclusive. P96 does not license same-data redesign, identify a latent state with consciousness, establish nonphysicality, validate an alternative ontology, or close the physical-to-experiential bridge.
+A new candidate generated after inspection is outside the theorem. Non-rejection remains inconclusive. P97 does not license unrestricted same-data search, identify a latent state with consciousness, establish nonphysicality, validate an alternative ontology, or close the physical-to-experiential bridge.
 
 ---
 
@@ -232,7 +232,7 @@ The validation path checks the generated manifests, SVG parseability, canonical 
 The current frontier figure is:
 
 ```text
-docs/figures/p96_selection_valid_holdout_stratification.svg
+docs/figures/p97_simultaneous_candidate_family_selection.svg
 ```
 
 ---

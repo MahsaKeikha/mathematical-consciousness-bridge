@@ -116,13 +116,13 @@ This is not a weakness hidden by the repository. It is one of the central organi
 
 ## Where the current work sits
 
-The public theorem frontier is **P95** and the formal release remains **v0.82.0**.
+The public theorem frontier is **P97** and the formal release remains **v0.82.0**.
 
 P94 extends the P93 localized seven-cell rejection theorem from IID observations to a declared finite-range dependent sequence with one common marginal four-view law. The squared finite-sample radius carries the exact factor `m+1` for dependence range `m`, while the P92 determinant geometry is unchanged.
 
 P94 also proves an exact temporal-pooling no-go: two individually valid interior P75 regimes can pool to a law with the negative determinant-product sign pattern used for rejection. Arbitrary marginal drift is therefore a separate problem and is not silently treated as finite-range dependence.
 
-If you want the current result itself, open **[P95](proposition_95_drift_aware_stratified_sign_coherence.md)**. For the finite-range single-marginal predecessor, open **[P94](proposition_94_finite_range_dependent_sign_coherence.md)**. For the IID predecessor, open **[P93](proposition_93_localized_sign_coherence_rejection.md)**. For the complete dependency chain, use the **[Theorem Roadmap](theorem_roadmap.md)**.
+If you want the current result itself, open **[P97](proposition_97_simultaneous_candidate_family_selection.md)**. For the previous independent-holdout frontier, open **[P96](proposition_96_selection_valid_holdout_stratification.md)**. For the finite-range single-marginal predecessor, open **[P94](proposition_94_finite_range_dependent_sign_coherence.md)**. For the IID predecessor, open **[P93](proposition_93_localized_sign_coherence_rejection.md)**. For the complete dependency chain, use the **[Theorem Roadmap](theorem_roadmap.md)**.
 
 ---
 
@@ -183,7 +183,7 @@ P93 is the historical IID finite-sample handoff from P92. It uses only seven sel
 
 ### P94 finite-range dependent sign-coherence rejection
 
-P94 is the current Research II theorem frontier. It preserves the seven-cell P92/P93 nonlinear witness under a declared finite-range dependent sequence with one common marginal law, using exact rational certification of the dependence-adjusted confidence radius. Its exact pooling counterexample also marks the limit of that extension: arbitrary temporal drift remains outside the theorem. [Read P94](proposition_94_finite_range_dependent_sign_coherence.md).
+P94 is a historical finite-range Research II step. It preserves the seven-cell P92/P93 nonlinear witness under a declared finite-range dependent sequence with one common marginal law, using exact rational certification of the dependence-adjusted confidence radius. Its exact pooling counterexample also marks the limit of that extension: arbitrary temporal drift remains outside the theorem. [Read P94](proposition_94_finite_range_dependent_sign_coherence.md).
 
 ### P95: What if the marginal law drifts across predeclared regimes?
 
@@ -195,3 +195,14 @@ P95 does not pool those regimes. It gives each predeclared regime its own margin
 P96 closes one explicit adaptive-selection gap left by P95. Pilot information may select the finite regime plan, dependence ranges, and rational error allocation. The plan is frozen before a genuinely independent certification sample is evaluated. Conditioning on the pilot information makes the selected P95 plan fixed, and the tower property preserves the same unconditional familywise bound.
 
 This is a sample-separation theorem, not a general same-data post-selection result. Pilot observations do not count as certification observations, and a naive split of one temporally dependent stream is not automatically independent.
+
+
+## P97: simultaneous finite candidate-family selection
+
+P97 addresses a complementary selection problem to P96. Instead of separating pilot and holdout data, it permits the same certification data to be reused across a finite family of candidate regime plans, provided the complete family is fixed before the certification statistics are inspected.
+
+Each candidate receives its own exact P95 familywise error budget. A second union bound across candidates produces one simultaneous event on which every candidate certificate is valid. The final candidate may therefore be selected after inspection without invalidating the selected certificate.
+
+For two equally budgeted candidates with two one-step-dependent regimes each, the 95 percent threshold is 4045 observations per regime, with first exact denominator-24 replication at 4056. The multiplicity cost replaces P96's sample-separation cost.
+
+P97 does not justify creating a new candidate after inspection, unbounded same-data search, unrestricted within-regime drift, model acceptance after non-rejection, consciousness identification, nonphysicality, or completion of the physical-to-experiential bridge.

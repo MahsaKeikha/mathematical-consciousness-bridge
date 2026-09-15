@@ -85,3 +85,12 @@ P95 drift-aware stratified sign-coherence rejection: predeclared regime-specific
 | P95 drift-aware stratified rejection | Predeclared regime-specific P94 confidence events can be combined with exact error allocation to reject the joint null that every regime-specific marginal belongs to P75 while allowing arbitrary marginal changes between regimes | repository theorem using P92-P94 geometry, P79 certified logarithms, standard concentration, and a familywise union bound | [P95 proof](proposition_95_drift_aware_stratified_sign_coherence.md), [P95 provenance](p95_equation_provenance.md), implementation, tests, figure | Boundaries and budgets must be predeclared; non-rejection is inconclusive; data-dependent segmentation, consciousness identification, nonphysicality, and a completed physical-to-experiential bridge are not established |
 
 | P96 selection-valid holdout stratification | A pilot-selected regime plan may be certified with the P95 familywise guarantee without an extra pilot-search alpha penalty when the plan is frozen before evaluation on genuinely independent holdout information satisfying the selected local assumptions. | Repository-original synthesis of standard conditional/sample-splitting logic with the P92-P95 chain | `docs/proposition_96_selection_valid_holdout_stratification.md`, `docs/p96_equation_provenance.md`, exact implementation and tests | Independence and frozen-plan assumptions are essential; naive splitting of a dependent stream and same-data redesign are not covered; non-rejection is not acceptance and no consciousness ontology follows. |
+
+
+### P97 current frontier
+
+| Claim | Evidence class | Canonical source |
+| --- | --- | --- |
+| A finite candidate family fixed before inspection can support same-data post-inspection selection when all candidate P95 certificates are made simultaneous | Theorem under declared assumptions | [`proposition_97_simultaneous_candidate_family_selection.md`](proposition_97_simultaneous_candidate_family_selection.md) |
+| Two candidates, two regimes, `m=1`, equal 5 percent global spending cross at 4045 per regime and first exact replicate at 4056 | Exact rational computation | [`test_simultaneous_candidate_family_selection.py`](../tests/test_simultaneous_candidate_family_selection.py) |
+| P97 does not validate newly generated post-inspection candidates or establish consciousness ontology | Scientific boundary | [`p97_equation_provenance.md`](p97_equation_provenance.md) |

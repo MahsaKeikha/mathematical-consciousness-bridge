@@ -69,7 +69,7 @@ The vocabulary falls into four groups:
 | Term | Meaning in this repository |
 | --- | --- |
 | **Scientific boundary** | An explicit statement of what a theorem does not establish. It prevents a valid mathematical result from being extended into an unsupported empirical or ontological claim. |
-| **Theorem frontier** | The highest numbered proposition currently integrated into the documented public research program. The current public frontier is **P96**. |
+| **Theorem frontier** | The highest numbered proposition currently integrated into the documented public research program. The current public frontier is **P97**. |
 | **Formal release** | The tagged software and publication release line. The current formal release remains **v0.82.0**, which is intentionally distinct from the theorem frontier. |
 
 ## Three distinctions worth remembering
@@ -121,7 +121,7 @@ P93 is the historical IID finite-sample predecessor of P94. P92 remains the exac
 **P95 boundary:** data-dependent segmentation, unrestricted gradual drift inside a regime, model acceptance under non-rejection, consciousness identification, nonphysicality, and completion of the physical-to-experiential bridge are not established.
 
 
-## Current theorem frontier: P96
+## Immediate predecessor theorem frontier: P96
 
 **Pilot-selection information:** the information used to choose a finite regime plan before certification. P96 permits this selection rule to be arbitrarily complicated under its declared sample-separation assumptions.
 
@@ -132,3 +132,16 @@ P93 is the historical IID finite-sample predecessor of P94. P92 remains the exac
 **Selection-complexity alpha penalty:** under the P96 independent-holdout and frozen-plan assumptions, the pilot search itself requires no additional alpha spending. The cost is sample separation: pilot observations are not certification observations.
 
 **P96 boundary:** same-data redesign, unrestricted within-regime drift, model acceptance under non-rejection, consciousness identification, nonphysicality, and completion of the physical-to-experiential bridge are not established.
+
+
+## Current theorem frontier: P97
+
+**Finite candidate family:** a complete list of candidate regime plans fixed before the certification statistics are inspected. P97 permits post-inspection selection only from this predeclared finite family.
+
+**Candidate-level error budget:** the exact rational failure budget assigned to one candidate plan. Inside that candidate, P95 divides or otherwise allocates the candidate budget across its regimes.
+
+**Simultaneous candidate certificate:** the event on which every candidate-specific P95 certificate is valid at once. P97 obtains it by a union bound across candidates, so the candidate certificates may reuse the same observations and may be statistically dependent.
+
+**Same-data selection cost:** unlike P96, P97 does not require a separate pilot sample. It pays instead through multiplicity: the global error budget is split across the predeclared candidates.
+
+**P97 boundary:** a candidate created after inspecting certification results is outside the theorem. Unbounded post-inspection search, unrestricted within-regime drift, model acceptance under non-rejection, consciousness identification, nonphysicality, and completion of the physical-to-experiential bridge are not established.

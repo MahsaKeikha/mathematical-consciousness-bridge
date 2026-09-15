@@ -1,32 +1,32 @@
-# Current visual frontier: P71-P96
+# Current visual frontier: P71-P97
 
 This page is generated from the canonical proposition and figure tree.
 It is the compact GitHub-facing visual route through the current target-side branch.
 
-## Current theorem frontier: P96
+## Current theorem frontier: P97
 
-![P96 current theorem frontier](../docs/figures/p96_selection_valid_holdout_stratification.svg)
+![P97 current theorem frontier](../docs/figures/p97_simultaneous_candidate_family_selection.svg)
 
-[Read Proposition 96](../docs/proposition_96_selection_valid_holdout_stratification.md)
+[Read Proposition 97](../docs/proposition_97_simultaneous_candidate_family_selection.md)
 
-[Open P96 equation provenance](../docs/p96_equation_provenance.md)
+[Open P97 equation provenance](../docs/p97_equation_provenance.md)
 
-### Exact P96 selection-valid holdout stratification
+### Exact P97 simultaneous finite candidate-family selection
 
-P96 closes one precise adaptive-regime gap left open by P95: pilot information may choose the regime plan, but the plan is frozen before an independent certification sample is inspected.
+P97 complements P96 by permitting same-data post-inspection selection within a finite candidate family fixed before certification statistics are inspected.
 
 ```text
-pilot selects: B, regime definitions, m_b, alpha_b
-holdout requirement: C independent of S
-familywise condition: sum_b alpha_b <= alpha
-extra alpha penalty for pilot-selection complexity = 0
-B=2, m=1, 95% holdout crossing = 3645 per regime
-first exact denominator-24 holdout replication = 3648 per regime
+candidate budgets: sum_k alpha_k <= alpha
+inside candidate k: sum_b alpha_kb <= alpha_k
+K=2, B=2, m=1: local alpha = 1/80
+95% mathematical crossing = 4045 per regime
+first exact denominator-24 replication = 4056 per regime
+balanced unique-observation totals = 8090 / 8112
 ```
 
-The zero extra selection penalty is conditional on a genuinely independent holdout design and a plan frozen before holdout evaluation. Same-data redesign, naive splitting of a dependent stream, within-regime drift, model acceptance, consciousness identification, and bridge completion are not established.
+P97 pays for same-data search through multiplicity. The candidate family must be fixed before inspection. New post-inspection candidates, unrestricted within-regime drift, model acceptance, consciousness identification, nonphysicality, and bridge completion are not established.
 
-## P71-P96 canonical theorem-figure index
+## P71-P97 canonical theorem-figure index
 
 | Proposition | Canonical figure | Proof | Provenance |
 | --- | --- | --- | --- |
@@ -56,6 +56,7 @@ The zero extra selection penalty is conditional on a genuinely independent holdo
 | P94 | [figure](../docs/figures/p94_finite_range_dependent_sign_coherence.svg) | [proof](../docs/proposition_94_finite_range_dependent_sign_coherence.md) | [equations](../docs/p94_equation_provenance.md) |
 | P95 | [figure](../docs/figures/p95_drift_aware_stratified_sign_coherence.svg) | [proof](../docs/proposition_95_drift_aware_stratified_sign_coherence.md) | [equations](../docs/p95_equation_provenance.md) |
 | P96 | [figure](../docs/figures/p96_selection_valid_holdout_stratification.svg) | [proof](../docs/proposition_96_selection_valid_holdout_stratification.md) | [equations](../docs/p96_equation_provenance.md) |
+| P97 | [figure](../docs/figures/p97_simultaneous_candidate_family_selection.svg) | [proof](../docs/proposition_97_simultaneous_candidate_family_selection.md) | [equations](../docs/p97_equation_provenance.md) |
 
 ## Reproduce the visual record
 
@@ -69,4 +70,4 @@ The complete machine-readable SHA-256 inventory is in [`manifest.json`](manifest
 
 ## Interpretation boundary
 
-P71-P96 strengthens the methodology for testing a declared physical-to-target model. It does not derive consciousness from physics, prove nonphysicality, or close the physical-to-experiential bridge.
+P71-P97 strengthens the methodology for testing a declared physical-to-target model. It does not derive consciousness from physics, prove nonphysicality, or close the physical-to-experiential bridge.

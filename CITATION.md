@@ -8,7 +8,7 @@ If this research program, one of its propositions, figures, algorithms, or imple
 
 > Keikha, M. (2026). *Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem* (Version 0.82.0). GitHub research repository. https://github.com/MahsaKeikha/mathematical-consciousness-bridge
 
-This is the preferred citation for the research program at the current documented frontier, P96.
+This is the preferred citation for the research program at the current documented frontier, P97.
 
 ## BibTeX
 
@@ -20,7 +20,7 @@ This is the preferred citation for the research program at the current documente
   version      = {0.82.0},
   howpublished = {GitHub research repository},
   url          = {https://github.com/MahsaKeikha/mathematical-consciousness-bridge},
-  note         = {Ongoing research program. Current documented theorem frontier: P96.}
+  note         = {Ongoing research program. Current documented theorem frontier: P97.}
 }
 ```
 
@@ -53,7 +53,13 @@ This repository is an evolving research program. For reproducible scholarly use:
 3. Cite the individual proposition or artifact when your argument depends on a specific theorem, figure, algorithm, or test.
 4. Do not attribute later propositions or later numerical results to an earlier version of the repository.
 
-The current citation metadata identify Version **0.82.0** and theorem frontier **P96**. Future research versions should update the version number, theorem frontier, citation metadata, and archival record together.
+The current citation metadata identify Version **0.82.0** and theorem frontier **P97**. Future research versions should update the version number, theorem frontier, citation metadata, and archival record together.
+
+## Current theorem frontier: P97
+
+The current documented theorem frontier is **P97**. P97 permits same-data post-inspection selection among a finite candidate family fixed before certification statistics are inspected. Each candidate receives an exact P95 familywise budget, and a second union bound across candidates makes the candidate certificates simultaneous. The formal package release remains **Version 0.82.0**.
+
+P97 is a conditional model-rejection theorem. It does not validate newly generated post-inspection candidates, unrestricted search, model acceptance after non-rejection, consciousness identification, nonphysicality, or completion of the physical-to-experiential bridge.
 
 ## DOI and archival status
 
@@ -93,6 +99,8 @@ P80 tightens the P78 parameter-box relaxation by intersecting the exact observed
 P81 further tightens the declared continuous-family test by retaining exact parameter-box ranges for every nonempty projected binary event. Event-level mismatch is divided by the number of full observed cells in that event to obtain a sound full-law L-infinity lower bound. The combined P81 certificate is never weaker than P80 and can be strictly stronger. None of P78-P84 turns non-rejection into model validation or identifies the latent state with consciousness.
 
 P82 strengthens that chain again by retaining exact common-parameter structure for residual events formed from nested projected cylinders. It computes each residual interval directly from the P75 branchwise factorization rather than by subtracting separate P81 event intervals, audits 256 genuinely new residual events, and preserves the one-sided model-rejection interpretation. Its exact witness gives P80 = 0, P81 = 1/16, and P82 = 1/12. This is a stronger certificate against the declared P75 family, not evidence that its latent variable is consciousness.
+
+P97 complements P96 by covering a finite same-data selection problem. The complete candidate family must be fixed before certification statistics are inspected. Each candidate receives an exact P95 familywise budget, and a second union bound across candidates makes all candidate certificates simultaneous. The final candidate may then be selected after inspection without invalidating the selected certificate. P97 does not cover newly generated post-inspection candidates, unrestricted candidate families, model acceptance, consciousness identification, nonphysicality, or bridge completion.
 
 These remain conditional statistical target-measurement results, not validation of an experiential ontology or a privileged consciousness label.
 
@@ -143,7 +151,7 @@ P89 is complete only for real linear combinations of the eleven declared parity 
 
 - [`CITATION.cff`](CITATION.cff): machine-readable Citation File Format metadata used by GitHub citation tools.
 - [`CITATION.bib`](CITATION.bib): ready-to-import BibTeX record.
-- [Detailed proposition record](docs/detailed_proposition_record.md): P1 through P96 chronological theorem record.
+- [Detailed proposition record](docs/detailed_proposition_record.md): P1 through P97 chronological theorem record.
 - [Theorem roadmap](docs/theorem_roadmap.md): dependency-oriented theorem map.
 - [P72 equation and provenance record](docs/p72_equation_provenance.md): equation-level classification for the noisy-target theorem.
 - [P73 equation and provenance record](docs/p73_equation_provenance.md): equation-level classification and external latent-class context for the target-channel identifiability theorem.
