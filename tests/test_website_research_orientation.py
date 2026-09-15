@@ -82,4 +82,6 @@ def test_continuous_frontier_keeps_lineage_and_current_provenance_auditable():
     assert "proposition_91_mixed_prevalence_rank_two_flattening_separation.md" in frontier_text
     assert "p91_equation_provenance.md" in frontier_text or "p92_equation_provenance.md" in text
     assert "proposition_92_exact_global_mixed_prevalence_distance.md" in text
+    assert "p92_equation_provenance.md" in text or "p92_equation_provenance.md" in text
+    assert "proposition_92_exact_global_mixed_prevalence_distance.md" in text
     assert "p92_equation_provenance.md" in text

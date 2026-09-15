@@ -160,3 +160,7 @@ For work that uses the full mixed-prevalence rank-two flattening certificate, ci
 ## Proposition 92 method citation
 
 For work that uses the exact full-cube mixed-prevalence distance theorem, cite the program together with **Proposition 92: Exact Global Mixed-Prevalence Distance** and its [equation provenance record](docs/p92_equation_provenance.md). P92 proves `d_inf(P_emp, M75) = 1/24` for the established witness and complete P75 parameter cube.
+
+## Proposition 92 method citation
+
+For work that uses the exact full-cube mixed-prevalence distance theorem, cite the program together with **Proposition 92: Exact Global Mixed-Prevalence Distance** and its [equation provenance record](docs/p92_equation_provenance.md). P92 proves `d_inf(P_emp, M75) = 1/24` for the established witness and complete P75 parameter cube.
