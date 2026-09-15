@@ -40,6 +40,33 @@ def test_visual_atlas_orders_p91_before_historical_p90_and_p89() -> None:
     assert "p91_mixed_prevalence_rank_two_flattening_separation.svg" in text[p91:p90]
 
 
+def test_p91_start_here_has_no_stale_current_frontier_language() -> None:
+    text = _read("website/start-here.html")
+    assert "current Research II P91 frontier" in text
+    assert "Open all 91 Research II results" in text
+    assert "The 91 propositions are the formal theorem record of Research II" in text
+    assert "P1-P91 build the mathematical conditions" in text
+    assert "P75-P91 test the declared target-measurement model" in text
+    assert "<span>P75-P91</span>" in text
+    assert "P91 extends the nonlinear result to arbitrary latent prevalence" in text
+    assert "Read P91 theorem" in text
+    assert "You do not need to read 91 Research II proofs in order" in text
+
+    stale = (
+        "current Research II P90 frontier",
+        "Open all 90 Research II results",
+        "The 90 propositions are the formal theorem record of Research II",
+        "P1-P90 build the mathematical conditions",
+        "P75-P90 test the declared target-measurement model",
+        "<span>P75-P90</span>",
+        "P78-P90 progressively tighten global separation",
+        "Read P90 theorem",
+        "You do not need to read 89 Research II proofs in order",
+    )
+    for marker in stale:
+        assert marker not in text
+
+
 def test_p91_reader_surfaces_preserve_scientific_boundary() -> None:
     for path in ("README.md", "website/index.html", "website/plain-language.html"):
         text = _read(path).lower()
