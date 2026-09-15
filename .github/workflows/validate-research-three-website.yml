@@ -41,10 +41,10 @@ jobs:
         run: |
           R3_PIN="$(python -c 'from scripts.synchronize_research_three_website import CURRENT_RESEARCH_THREE_PIN; print(CURRENT_RESEARCH_THREE_PIN)')"
 
-          test "$(grep -o '<!-- current-frontier-home: P90 -->' _site/index.html | wc -l)" -eq 1
-          test "$(grep -o 'id=\"p90-frontier\"' _site/index.html | wc -l)" -eq 1
-          grep -q 'Explore all 90 results' _site/index.html
-          grep -q 'Current record:</strong> 90 proposition-level results through P90' _site/index.html
+          test "$(grep -o '<!-- current-frontier-home: P91 -->' _site/index.html | wc -l)" -eq 1
+          test "$(grep -o 'id=\"p91-frontier\"' _site/index.html | wc -l)" -eq 1
+          grep -q 'Explore all 91 results' _site/index.html
+          grep -q 'Current record:</strong> 91 proposition-level results through P91' _site/index.html
 
           grep -q 'Research III · Consciousness Measurement Science' _site/measurement-science.html
           grep -q 'Implemented now versus not yet established' _site/measurement-science.html
@@ -63,8 +63,8 @@ jobs:
           grep -q "research-three-snapshot: ${R3_PIN}" _site/measurement-science.html
 
           grep -q "${R3_PIN}" _site/research-lineage.html
-          grep -q '<strong>90</strong><span>proposition-level results</span>' _site/research-lineage.html
-          grep -q '<strong>P90</strong><span>current theorem frontier</span>' _site/research-lineage.html
+          grep -q '<strong>91</strong><span>proposition-level results</span>' _site/research-lineage.html
+          grep -q '<strong>P91</strong><span>current theorem frontier</span>' _site/research-lineage.html
           grep -q '<strong>v0.82.0</strong><span>current documented release</span>' _site/research-lineage.html
 
       - name: Verify deployment artifact contains pinned Research III figures
@@ -73,7 +73,7 @@ jobs:
           grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/measurement_architecture.svg" _site/measurement-science.html
           grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/claim_ladder.svg" _site/measurement-science.html
           grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/structural_measurement_pipeline.svg" _site/measurement-science.html
-          test -f _site/figures/p90_exact_nonlinear_rank_one_separation.svg
+          test -f _site/figures/p91_mixed_prevalence_rank_two_flattening_separation.svg
           node --check _site/app.js
 
       - name: Verify clean generated surface
