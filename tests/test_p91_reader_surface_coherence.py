@@ -99,7 +99,14 @@ def test_p91_research_map_top_level_orientation_is_current() -> None:
     assert "<strong>91</strong><span>proposition-level results</span>" in text
     assert "<span>6 · P73-P91</span>" in text
     assert "culminating in P91 mixed-prevalence rank-two flattening separation" in text
-    assert 'id="p91-research-map"' in text
+    assert "Current Research II model-audit range: P75-P91." in text
+    assert "Historical P90 figure" in text
+
+    p90 = text.index('id="p90-research-map"')
+    p91 = text.index('id="p91-research-map"')
+    close_main = text.index("</main>")
+    close_html = text.index("</html>")
+    assert p90 < p91 < close_main < close_html
 
     stale = (
         "through Proposition 88",
@@ -107,6 +114,8 @@ def test_p91_research_map_top_level_orientation_is_current() -> None:
         "<strong>88</strong><span>proposition-level results</span>",
         "<span>6 · P73-P88</span>",
         "culminating in P88 exact radius-three bounded primitive four-event shared-parameter parity-functional separation",
+        "Current Research II model-audit range: P75-P90.",
+        '<a href="index.html#p90-frontier">Current frontier</a>',
     )
     for marker in stale:
         assert marker not in text
