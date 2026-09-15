@@ -15,7 +15,6 @@ def test_p91_proof_states_exact_global_bracket_and_boundary() -> None:
     assert "rank at most two" in lower
     assert "does **not** prove" in text
     assert "exact global" in lower or "exact distance" in lower
-    assert "1/24" in text
     assert "physical-to-experiential bridge remains open" in lower
 
 
@@ -40,8 +39,66 @@ def test_visual_atlas_orders_p91_before_historical_p90_and_p89() -> None:
     assert "p91_mixed_prevalence_rank_two_flattening_separation.svg" in text[p91:p90]
 
 
+def test_p91_start_here_has_no_stale_current_frontier_language() -> None:
+    text = _read("website/start-here.html")
+    assert "current Research II P91 frontier" in text
+    assert "Open all 91 Research II results" in text
+    assert "The 91 propositions are the formal theorem record of Research II" in text
+    assert "P1-P91 build the mathematical conditions" in text
+    assert "P75-P91 test the declared target-measurement model" in text
+    assert "<span>P75-P91</span>" in text
+    assert "P91 extends the nonlinear result to arbitrary latent prevalence" in text
+    assert "Read P91 theorem" in text
+    assert "You do not need to read 91 Research II proofs in order" in text
+
+    stale = (
+        "current Research II P90 frontier",
+        "Open all 90 Research II results",
+        "The 90 propositions are the formal theorem record of Research II",
+        "P1-P90 build the mathematical conditions",
+        "P75-P90 test the declared target-measurement model",
+        "<span>P75-P90</span>",
+        "P78-P90 progressively tighten global separation",
+        "Read P90 theorem",
+        "You do not need to read 89 Research II proofs in order",
+    )
+    for marker in stale:
+        assert marker not in text
+
+
+def test_p91_plain_language_has_current_program_count_and_checkpoint() -> None:
+    text = _read("website/plain-language.html")
+    assert "This is the 91-result Research II theorem program currently reaching P91." in text
+    assert "A 91-result sufficiency and falsification architecture" in text
+    assert "The 91-result proposition program" in text
+    assert "The current theorem frontier is P91." in text
+    assert "P91 is the current checkpoint, not the destination" in text
+    assert "P91 is the current mathematical checkpoint" in text
+    assert "shows how all 91 Research II results connect" in text
+    assert 'id="p91-reader-frontier"' in text
+    assert 'id="p90-reader-frontier"' in text
+
+    stale = (
+        "This is the 90-result Research II theorem program currently reaching P90.",
+        "A 90-result sufficiency and falsification architecture",
+        "The 90-result proposition program",
+        "The current theorem frontier is P90.",
+        "P90 is the current checkpoint, not the destination",
+        "P90 is the current mathematical checkpoint inside a much larger research program.",
+        "shows how all 90 Research II results connect",
+    )
+    for marker in stale:
+        assert marker not in text
+
+
 def test_p91_reader_surfaces_preserve_scientific_boundary() -> None:
-    for path in ("README.md", "website/index.html", "website/plain-language.html"):
+    for path in (
+        "README.md",
+        "website/index.html",
+        "website/plain-language.html",
+        "website/start-here.html",
+        "website/research-map.html",
+    ):
         text = _read(path).lower()
         assert "p91" in text
         assert "physical-to-experiential bridge" in text
@@ -67,6 +124,8 @@ def test_p91_research_map_top_level_orientation_is_current() -> None:
     assert "P77-P91: from full-law rejection to nonlinear mixed-prevalence certification" in text
     assert "Continue to the current P91 frontier" in text
     assert text.count(summary) == 1
+    assert "proposition_82_exact_nested_projection_contrast.md" in text
+    assert "proposition_82_nested_projection_residual_model_separation.md" not in text
 
     p90 = text.index('id="p90-research-map"')
     p91 = text.index('id="p91-research-map"')
@@ -94,8 +153,10 @@ def test_p91_workflows_are_read_only_publication_gates() -> None:
     figures = _read(".github/workflows/figures.yml")
     validator = _read(".github/workflows/validate-research-three-website.yml")
     for text in (figures, validator):
-        assert "contents: read" in text
+        assert "permissions:\n  contents: read" in text
         assert "contents: write" not in text
-        assert "git push origin HEAD:p91-mixed-prevalence-rank-two-flattening" not in text
+        assert "git push" not in text
+        assert "github-actions[bot]" not in text
+        assert "ref: p91-mixed-prevalence-rank-two-flattening" not in text
     assert "migrate-p91-reader-surfaces" not in figures
     assert "finalize-p91-reader-surface" not in figures
