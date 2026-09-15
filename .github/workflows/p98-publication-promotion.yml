@@ -1,0 +1,61 @@
+name: p98-publication-promotion
+
+on:
+  push:
+    branches: ["p98-cross-fitted-selection-valid-certification"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  promote-and-validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: p98-cross-fitted-selection-valid-certification
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - run: python -m pip install -e ".[dev]"
+      - name: Promote P98 publication surfaces
+        run: python scripts/promote_p98_public_frontier.py
+      - name: Synchronize figure publication record
+        run: python scripts/sync_figure_publication.py
+      - name: Validate P98 publication state
+        run: |
+          python -m pytest -q \
+            tests/test_cross_fitted_selection_valid_certification.py \
+            tests/test_p98_reader_surface_coherence.py \
+            tests/test_p97_reader_surface_coherence.py \
+            tests/test_p96_reader_surface_coherence.py \
+            tests/test_p95_reader_surface_coherence.py \
+            tests/test_p94_reader_surface_coherence.py \
+            tests/test_main_page_visual_paper.py \
+            tests/test_publication_contract_v2.py \
+            tests/test_readme_research_orientation.py \
+            tests/test_website_link_integrity.py \
+            tests/test_website_research_orientation.py \
+            tests/test_figure_publication_sync.py \
+            tests/test_frontier_publication_consistency.py
+          python -m ruff check \
+            src/consciousness_bridge/cross_fitted_selection_valid_certification.py \
+            tests/test_cross_fitted_selection_valid_certification.py
+          python scripts/sync_figure_publication.py --check
+          python scripts/verify_repository.py
+          rm -rf website-deploy
+          python scripts/prepare_website.py --output website-deploy
+          git diff --check
+      - name: Commit promoted P98 publication state
+        run: |
+          if git diff --quiet && git diff --cached --quiet; then
+            echo "No promotion changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Promote P98 public theorem frontier"
+          git push origin HEAD:p98-cross-fitted-selection-valid-certification
