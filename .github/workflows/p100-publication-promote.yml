@@ -25,6 +25,23 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Repair literal replacement handling
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path("scripts/promote_p100_public_frontier.py")
+          text = path.read_text(encoding="utf-8")
+          text = text.replace(
+              "updated, count = re.subn(pattern, replacement, text, count=1, flags=re.S)",
+              "updated, count = re.subn(pattern, lambda _match: replacement, text, count=1, flags=re.S)",
+          )
+          text = text.replace(
+              "text, count = re.subn(old_after, p100_tail, text, count=1, flags=re.S)",
+              "text, count = re.subn(old_after, lambda _match: p100_tail, text, count=1, flags=re.S)",
+          )
+          path.write_text(text, encoding="utf-8")
+          PY
+
       - name: Apply synchronized P100 promotion
         run: python scripts/promote_p100_public_frontier.py
 
