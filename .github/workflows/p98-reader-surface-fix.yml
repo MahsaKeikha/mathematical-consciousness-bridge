@@ -1,0 +1,126 @@
+name: p98-reader-surface-fix
+
+on:
+  push:
+    branches: ["p98-cross-fitted-selection-valid-certification"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  synchronize:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: p98-cross-fitted-selection-valid-certification
+          fetch-depth: 0
+      - name: Synchronize Start Here and Plain Language to P98
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          root = Path('.')
+
+          start_path = root / 'website' / 'start-here.html'
+          start = start_path.read_text(encoding='utf-8')
+          replacements = {
+              'The 97 propositions are the formal theorem record of Research II.': 'The 98 propositions are the formal theorem record of Research II.',
+              'P1-P97 build the mathematical conditions': 'P1-P98 build the mathematical conditions',
+              'P75-P97 test the declared target-measurement model itself': 'P75-P98 test the declared target-measurement model itself',
+              '<span>P75-P97</span>': '<span>P75-P98</span>',
+              '<h2>P78-P97 develop certified nonlinear separation, dependence control, and selection-valid certification</h2>': '<h2>P78-P98 develop certified nonlinear separation, dependence control, and selection-valid certification</h2>',
+              'You do not need to read 97 Research II proofs in order': 'You do not need to read 98 Research II proofs in order',
+              'Focus on P19 and P71-P97, then the falsification program.': 'Focus on P19 and P71-P98, then the falsification program.',
+              'P47-P60, and P74-P97.': 'P47-P60, and P74-P98.',
+          }
+          for old, new in replacements.items():
+              start = start.replace(old, new)
+
+          current_section = '''    <section class="dark-section">
+      <p class="eyebrow">Research II · Current certified frontier</p>
+      <h2>P92-P98 connect exact population separation to dependence-aware, selection-valid certification</h2>
+      <p><strong>P92 closes the mixed-prevalence population distance exactly.</strong> Three selected determinant signs imply the exact full-cube distance <strong>d_inf(P_emp, M75) = 1/24</strong>.</p>
+      <p><strong>P93 carries that obstruction into finite IID data.</strong> A simultaneous seven-cell confidence event yields the 95 percent mathematical crossing at 1623 samples, with the first exact 24-count replication clearing at 1632.</p>
+      <p><strong>P94 allows a declared finite dependence range.</strong> The same sign-coherence witness remains certifiable under an m-dependent stream with one common marginal law, while an exact counterexample shows why arbitrary temporal drift cannot simply be pooled away.</p>
+      <p><strong>P95 handles declared drift by stratification.</strong> Predeclared regimes receive local finite-range certificates and one familywise error budget, allowing their marginal laws to differ without pretending the pooled stream is stationary.</p>
+      <p><strong>P96 separates adaptive plan selection from final certification.</strong> Pilot information may choose the regime plan, but that plan must be frozen before a genuinely independent holdout sample is inspected.</p>
+      <p><strong>P97 permits same-data selection inside one predeclared finite candidate family.</strong> It pays explicitly for the search through simultaneous candidate-level error accounting.</p>
+      <p><strong>P98 is the current frontier.</strong> It rotates the P96 holdout principle across mutually independent data blocks. In fold k, the plan may use the other blocks, but block k is excluded from its own plan-selection rule and is inspected only after that plan is frozen. The final fold certificates may be dependent because their selection information overlaps; one outer union bound controls them simultaneously.</p>
+      <p><strong>Exact P98 checkpoint:</strong> for two folds, two one-step-dependent regimes per fold, and 95 percent global confidence, the crossing is <strong>4045 observations per regime</strong>, the first exact denominator-24 replication is <strong>4056</strong>, and the two-fold unique-data totals are <strong>16180 / 16224</strong>.</p>
+      <p>The logical direction remains one-sided. These results can reject the declared P75 model family under their assumptions. They do not validate the model after non-rejection, identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_98_cross_fitted_selection_valid_certification.md">Read P98 theorem</a>
+        <a class="button" href="visual-atlas.html">See theorem visuals</a>
+        <a class="button" href="implementation.html#stage-06">See the implementation path</a>
+      </div>
+    </section>'''
+          start, count = re.subn(
+              r'    <section class="dark-section">.*?    </section>',
+              current_section,
+              start,
+              count=1,
+              flags=re.DOTALL,
+          )
+          if count != 1:
+              raise SystemExit(f'expected one Start Here dark-section replacement, got {count}')
+
+          p98_old = '<p><strong>Boundary:</strong> a random split of one dependent stream is not automatically an independent cross-fitted design. Own-fold leakage, unbudgeted scheme search, model acceptance, consciousness identification, nonphysicality, and the physical-to-experiential bridge remain open.</p></section>'
+          p98_new = '<p><strong>Boundary:</strong> a random split of one dependent stream is not automatically an independent cross-fitted design. Own-fold leakage, unbudgeted scheme search, model acceptance, consciousness identification, nonphysicality, and the physical-to-experiential bridge remain open.</p><p><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_98_cross_fitted_selection_valid_certification.md">Read P98 theorem</a></p></section>'
+          if p98_old not in start:
+              raise SystemExit('P98 Start Here boundary marker not found')
+          start = start.replace(p98_old, p98_new, 1)
+          start_path.write_text(start, encoding='utf-8')
+
+          plain_path = root / 'website' / 'plain-language.html'
+          plain = plain_path.read_text(encoding='utf-8')
+          plain_replacements = {
+              'This is the 97-result Research II theorem program currently reaching P97.': 'This is the 98-result Research II theorem program currently reaching P98.',
+              'A 97-result sufficiency and falsification architecture': 'A 98-result sufficiency and falsification architecture',
+              'currently through P97.': 'currently through P98.',
+              'The current theorem frontier is P97.': 'The current theorem frontier is P98.',
+              'P1-P97': 'P1-P98',
+              'P75-P97': 'P75-P98',
+              'P71-P97': 'P71-P98',
+              'P74-P97': 'P74-P98',
+              '97 Research II': '98 Research II',
+          }
+          for old, new in plain_replacements.items():
+              plain = plain.replace(old, new)
+          if 'Read P98 theorem' not in plain:
+              marker = '<p><strong>Boundary:</strong> a random split of one dependent stream is not automatically an independent cross-fitted design. Own-fold leakage, unbudgeted scheme search, model acceptance, consciousness identification, nonphysicality, and the physical-to-experiential bridge remain open.</p></section>'
+              replacement = '<p><strong>Boundary:</strong> a random split of one dependent stream is not automatically an independent cross-fitted design. Own-fold leakage, unbudgeted scheme search, model acceptance, consciousness identification, nonphysicality, and the physical-to-experiential bridge remain open.</p><p><a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_98_cross_fitted_selection_valid_certification.md">Read P98 theorem</a></p></section>'
+              if marker not in plain:
+                  raise SystemExit('P98 Plain Language boundary marker not found')
+              plain = plain.replace(marker, replacement, 1)
+          plain_path.write_text(plain, encoding='utf-8')
+
+          # This workflow is one-shot migration machinery. Remove it in the same
+          # commit so no temporary workflow remains in the finished PR.
+          Path('.github/workflows/p98-reader-surface-fix.yml').unlink()
+          PY
+      - name: Validate synchronized reader surfaces
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          start = Path('website/start-here.html').read_text(encoding='utf-8')
+          plain = Path('website/plain-language.html').read_text(encoding='utf-8')
+          for text in (start, plain):
+              assert '98 results · current frontier P98' in text
+              assert 'id="p98-reader-frontier"' in text
+              assert 'Read P98 theorem' in text
+          assert 'You do not need to read 98 Research II proofs in order' in start
+          assert 'P75-P98' in start
+          assert 'This is the 98-result Research II theorem program currently reaching P98.' in plain
+          assert 'The current theorem frontier is P98.' in plain
+          PY
+          git diff --check
+      - name: Commit reader synchronization and self-remove
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Synchronize P98 reader surfaces"
+          git push origin HEAD:p98-cross-fitted-selection-valid-certification
