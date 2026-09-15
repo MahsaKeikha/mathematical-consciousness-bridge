@@ -772,9 +772,9 @@ No larger coefficient radius, denser support, or other real linear combination o
 
 P89 remains a conditional model-separation theorem for the declared P75 target-measurement family. It does not identify the latent state with consciousness, establish nonphysicality, validate an alternative model, or close the physical-to-experiential bridge.
 
-## After P91
+## Beyond the complete P89 linear frontier
 
-P89 closes the complete **linear** parity-functional class on the eleven declared parity coordinates. A future P92 claim should therefore address a different gap, such as nonlinear joint parity constraints, additional observable families, or a tighter use of the nonlinear P75 image, and must include a certificate not already implied by P89.
+P89 closes the complete **linear** parity-functional class on the eleven declared parity coordinates. P90 and P91 move beyond that closure by using nonlinear algebraic structure of the declared P75 model image.
 
 ## P90: exact nonlinear rank-one slice separation
 
@@ -792,9 +792,9 @@ L_{90}=\frac{5}{72}=\frac{7}{3}L_{89}>\frac{5}{168}=L_{89}.
 
 P90 is exact for the stated strict box only. It does not identify consciousness, establish nonphysicality, or solve the physical-to-experiential bridge.
 
-## After P91
+## From P90 to P91
 
-A future P91 result should address nonlinear structure beyond the single-component boundary case, for example nonzero latent mixing where rank-one slice identities no longer hold directly.
+P91 addresses the nonlinear structure left open by P90's single-component boundary case by allowing nonzero latent mixing and using a rank-two bipartite flattening constraint.
 
 ## P91: mixed-prevalence rank-two flattening separation
 

@@ -205,17 +205,6 @@ P88 was the immediately preceding Research II frontier. It completed the primiti
 
 P87 was the immediately preceding theorem frontier. It completed the sign-normalized primitive nonzero four-event coefficient box with `0 < |c_i| <= 2`, auditing 39,600 exact functionals. On the stored exact rational witness, the complete P86 certificate is `1/192` and P87 certifies `1/96`. This is a conditional model-separation result for the declared P75 family, not an identification or definition of consciousness.
 
-## Current theorem frontier: P91
-
-The current documented theorem frontier is **P90**, an exact nonlinear rank-one slice separation theorem for the declared strict P75 box.
-
-- Proof: [`proposition_90_exact_nonlinear_rank_one_separation.md`](docs/proposition_90_exact_nonlinear_rank_one_separation.md)
-- Equation provenance: [`p90_equation_provenance.md`](docs/p90_equation_provenance.md)
-- Implementation: [`exact_nonlinear_rank_one_separation.py`](src/consciousness_bridge/exact_nonlinear_rank_one_separation.py)
-- Exact tests: [`test_exact_nonlinear_rank_one_separation.py`](tests/test_exact_nonlinear_rank_one_separation.py)
-
-P90 is a conditional model-separation result. It does not identify consciousness or establish nonphysicality.
-
 ## Proposition 91 method citation
 
 For work that uses the full mixed-prevalence rank-two flattening certificate, cite the program together with **Proposition 91: Mixed-Prevalence Rank-Two Flattening Separation** and its [equation provenance record](docs/p91_equation_provenance.md). The theorem gives the certified global bracket `1/42 < d_inf(P_emp, M75) <= 1/24` for the established witness and full P75 parameter cube. The constructive upper endpoint is not claimed to be the exact global optimum.
