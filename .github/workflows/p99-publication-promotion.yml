@@ -73,6 +73,10 @@ jobs:
           text = text.replace("through Proposition 98.", "through Proposition 99.")
           text = text.replace("The current theorem frontier is P98.", "The current theorem frontier is P99.")
           text = text.replace("P77-P98", "P77-P99")
+          text = text.replace(
+              "P98 remains a conditional model-rejection theorem",
+              "P99 remains a conditional model-rejection theorem",
+          )
           text = re.sub(
               r"Research Map · Current theorem frontier P\d+</p>",
               "Research Map · Current theorem frontier P99</p>",
@@ -86,6 +90,7 @@ jobs:
           assert "through Proposition 99." in final_map
           assert "Research Map · Current theorem frontier P99</p>" in final_map
           assert "P77-P99" in final_map
+          assert "P99 remains a conditional model-rejection theorem" in final_map
           PY
       - name: Preserve full linked TRIUMF name in About surfaces
         run: |
