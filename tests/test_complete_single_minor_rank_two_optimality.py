@@ -1,4 +1,5 @@
 from fractions import Fraction
+from pathlib import Path
 
 import pytest
 
@@ -14,6 +15,8 @@ from consciousness_bridge.complete_single_minor_rank_two_optimality import (
     complete_minor_box_audit_exact,
     p75_bipartite_rank_two_factorization_exact,
 )
+
+ROOT = Path(__file__).resolve().parents[1]
 
 
 def _empirical_law() -> tuple[Fraction, ...]:
@@ -126,6 +129,14 @@ def test_p92_complete_certificate_states_unique_optimality(p92_certificate):
     assert p92_certificate.selected_minimum_at_published_radius == Fraction(23, 677376)
     assert "uniquely optimal" in p92_certificate.conclusion
     assert "(17 - sqrt(193)) / 128" in p92_certificate.conclusion
+
+
+def test_p92_technical_records_are_staged_outside_published_frontier():
+    draft_root = ROOT / "docs" / "drafts"
+    assert (draft_root / "proposition_92_complete_single_minor_rank_two_optimality.md").is_file()
+    assert (draft_root / "p92_equation_provenance.md").is_file()
+    assert not (ROOT / "docs" / "proposition_92_complete_single_minor_rank_two_optimality.md").exists()
+    assert not (ROOT / "docs" / "p92_equation_provenance.md").exists()
 
 
 def test_p92_source_preserves_scientific_interpretation_boundary():
