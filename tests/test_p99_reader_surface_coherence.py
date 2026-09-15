@@ -43,6 +43,12 @@ def test_p99_is_current_reader_frontier() -> None:
     assert 'id="p99-reader-frontier"' in start
     assert "99 results · current frontier P99" in plain
     assert "99 results · current frontier P99" in start
+    assert "Open all 99 Research II results" in start
+    assert "The 99 propositions are the formal theorem record of Research II." in start
+    assert "P92-P99 connect exact population separation" in start
+    assert "<strong>P99 is the current frontier.</strong>" in start
+    assert "Exact P99 checkpoint:" in start
+    assert "<strong>P98 is the current frontier.</strong>" not in start
     assert 'id="p99-research-map"' in research
     assert research.index('id="p99-research-map"') < research.index('id="p98-research-map"')
     assert "Current Research II model-audit range: P75-P99." in research
