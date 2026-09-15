@@ -1,0 +1,41 @@
+name: P100 Plain Language final fix
+
+on:
+  push:
+    branches:
+      - p100-anytime-sequential-eprocess
+    paths:
+      - .github/workflows/p100-plain-language-final-fix.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Add explicit P100 frontier sentence
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path("website/plain-language.html")
+          text = path.read_text(encoding="utf-8")
+          sentence = "The current theorem frontier is P100."
+          if sentence not in text:
+              anchor = '<p>This is the 100-result Research II theorem program currently reaching P100.</p>'
+              if anchor not in text:
+                  raise SystemExit("Plain Language P100 anchor missing")
+              text = text.replace(anchor, anchor + '\n          <p><strong>The current theorem frontier is P100.</strong></p>', 1)
+          path.write_text(text, encoding="utf-8")
+          PY
+      - name: Remove one-shot workflow and commit
+        run: |
+          rm .github/workflows/p100-plain-language-final-fix.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Make P100 frontier explicit in Plain Language"
+          git push origin HEAD:p100-anytime-sequential-eprocess
