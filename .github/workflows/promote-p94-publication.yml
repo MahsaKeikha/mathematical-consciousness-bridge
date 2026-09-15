@@ -86,11 +86,30 @@ jobs:
 
           verifier_path = root / 'scripts/verify_repository.py'
           verifier = verifier_path.read_text(encoding='utf-8')
-          old = 'if f"Current documented theorem frontier: {CURRENT_FRONTIER}" not in citation:\n        raise RuntimeError(f"CITATION.md does not declare {CURRENT_FRONTIER} as the current theorem frontier")'
-          new = 'if f"The current documented theorem frontier is **{CURRENT_FRONTIER}**." not in citation:\n        raise RuntimeError(f"CITATION.md does not declare {CURRENT_FRONTIER} as the current theorem frontier")'
-          if old not in verifier:
+          citation_old = 'if f"Current documented theorem frontier: {CURRENT_FRONTIER}" not in citation:\n        raise RuntimeError(f"CITATION.md does not declare {CURRENT_FRONTIER} as the current theorem frontier")'
+          citation_new = 'if f"The current documented theorem frontier is **{CURRENT_FRONTIER}**." not in citation:\n        raise RuntimeError(f"CITATION.md does not declare {CURRENT_FRONTIER} as the current theorem frontier")'
+          if citation_old not in verifier:
               raise RuntimeError('generic citation-integrity check was not found after P94 promotion')
-          verifier_path.write_text(verifier.replace(old, new, 1), encoding='utf-8')
+          verifier = verifier.replace(citation_old, citation_new, 1)
+
+          coverage_old = 'missing = [number for number in range(1, 94) if number not in covered]'
+          coverage_new = 'frontier_number = int(CURRENT_FRONTIER.removeprefix("P"))\n    missing = [number for number in range(1, frontier_number + 1) if number not in covered]'
+          if coverage_old not in verifier:
+              raise RuntimeError('hard-coded proposition coverage range was not found')
+          verifier = verifier.replace(coverage_old, coverage_new, 1)
+
+          figure_old = '''    if not figure_path.endswith("p93_localized_sign_coherence_rejection.svg"):\n        raise RuntimeError("figure manifest does not point to the canonical P93 SVG")\n    figures = manifest.get("figures")\n    if not isinstance(figures, list) or len(figures) != 151:\n        raise RuntimeError("figure manifest does not contain the canonical 151 figures")'''
+          figure_new = '''    frontier_number = int(CURRENT_FRONTIER.removeprefix("P"))\n    expected = sorted((ROOT / "docs" / "figures").glob(f"p{frontier_number}_*.svg"))\n    if len(expected) != 1:\n        raise RuntimeError(f"expected exactly one canonical {CURRENT_FRONTIER} SVG, found {expected}")\n    expected_path = expected[0].relative_to(ROOT).as_posix()\n    if figure_path != expected_path:\n        raise RuntimeError(\n            f"figure manifest current figure is {figure_path!r}, expected {expected_path!r}"\n        )\n    figures = manifest.get("figures")\n    canonical_count = len(list((ROOT / "docs" / "figures").rglob("*.svg")))\n    if not isinstance(figures, list) or len(figures) != canonical_count:\n        raise RuntimeError(\n            f"figure manifest contains {len(figures) if isinstance(figures, list) else 'invalid'} figures; "\n            f"canonical tree contains {canonical_count}"\n        )'''
+          if figure_old not in verifier:
+              raise RuntimeError('hard-coded P93 figure-manifest check was not found')
+          verifier = verifier.replace(figure_old, figure_new, 1)
+
+          atlas_old = '''    p93 = visual_atlas.index('id="p93-frontier"')\n    p92 = visual_atlas.index('id="p92-frontier"')\n    p91 = visual_atlas.index('id="p91-frontier"')\n    if not (p93 < p92 < p91):\n        raise RuntimeError("Visual Atlas does not lead with the current P93 figure")'''
+          atlas_new = '''    frontier_number = int(CURRENT_FRONTIER.removeprefix("P"))\n    current_marker = f'id="p{frontier_number}-frontier"'\n    previous_marker = f'id="p{frontier_number - 1}-frontier"'\n    current_position = visual_atlas.index(current_marker)\n    previous_position = visual_atlas.index(previous_marker)\n    if current_position >= previous_position:\n        raise RuntimeError(\n            f"Visual Atlas does not lead P{frontier_number} ahead of P{frontier_number - 1}"\n        )'''
+          if atlas_old not in verifier:
+              raise RuntimeError('hard-coded P93 Visual Atlas ordering check was not found')
+          verifier = verifier.replace(atlas_old, atlas_new, 1)
+          verifier_path.write_text(verifier, encoding='utf-8')
 
           sync_path = root / 'scripts/synchronize_research_three_website.py'
           sync = sync_path.read_text(encoding='utf-8')
