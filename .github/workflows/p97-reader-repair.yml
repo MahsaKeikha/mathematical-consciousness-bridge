@@ -1,0 +1,59 @@
+name: p97-reader-repair
+
+on:
+  push:
+    branches: ["p97-simultaneous-candidate-family-selection"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: p97-simultaneous-candidate-family-selection
+          fetch-depth: 0
+      - name: Repair current-frontier reader navigation
+        run: python scripts/repair_p97_reader_navigation.py
+      - name: Build and verify website reader contract
+        run: |
+          rm -rf website-deploy _site
+          cp -a website website-deploy
+          python scripts/prepare_website.py --source website-deploy --output _site
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          manifest = json.loads(Path("figures/manifest.json").read_text(encoding="utf-8"))
+          frontier = int(str(manifest["current_frontier"]).removeprefix("P"))
+          previous = frontier - 1
+          start = Path("_site/start-here.html").read_text(encoding="utf-8")
+          assert f"{frontier} results · current frontier P{frontier}" in start
+          assert f"Open all {frontier} Research II results" in start
+          assert f"Read P{frontier} theorem" in start
+          assert start.count(f'id="p{frontier}-reader-frontier"') == 1
+          plain = Path("_site/plain-language.html").read_text(encoding="utf-8")
+          assert f"This is the {frontier}-result Research II theorem program currently reaching P{frontier}." in plain
+          assert f"The current theorem frontier is P{frontier}." in plain
+          assert plain.count(f'id="p{frontier}-reader-frontier"') == 1
+          research = Path("_site/research-map.html").read_text(encoding="utf-8")
+          assert f"Current Research II model-audit range: P75-P{frontier}." in research
+          assert f"The current theorem frontier is P{frontier}." in research
+          assert research.index(f'id="p{frontier}-research-map"') < research.index(f'id="p{previous}-research-map"') < research.index("</main>")
+          PY
+          python scripts/verify_repository.py
+          git diff --check
+      - name: Commit repaired reader surfaces
+        run: |
+          rm -rf website-deploy _site
+          if git diff --quiet && git diff --cached --quiet; then
+            echo "No reader repairs to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add website/start-here.html website/plain-language.html
+          git commit -m "Synchronize P97 reader navigation"
+          git push origin HEAD:p97-simultaneous-candidate-family-selection
