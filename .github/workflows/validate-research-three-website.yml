@@ -57,13 +57,14 @@ jobs:
           grep -q 'Assumption registry' _site/measurement-science.html
           grep -q 'Failure-mode registry' _site/measurement-science.html
           grep -q 'Software and reproducibility' _site/measurement-science.html
-          grep -q '34</strong><span>tests in each CI job' _site/measurement-science.html
+          grep -q '35</strong><span>tests in each CI job' _site/measurement-science.html
           grep -q 'dependence-robust partial identification with sharp Fr&eacute;chet-Hoeffding bounds' _site/measurement-science.html
           grep -q '<strong>Two implemented fusion regimes:</strong>' _site/measurement-science.html
           grep -q 'An interval as wide as <code>\[0,1\]</code> is a valid scientific result' _site/measurement-science.html
           grep -q 'docs/partial-identification.md' _site/measurement-science.html
           ! grep -q 'planned by the roadmap' _site/measurement-science.html
           ! grep -q '23</strong><span>tests in each CI job' _site/measurement-science.html
+          ! grep -q '34</strong><span>tests in each CI job' _site/measurement-science.html
           grep -q "research-three-snapshot: ${R3_PIN}" _site/measurement-science.html
 
           grep -q "${R3_PIN}" _site/research-lineage.html
@@ -109,7 +110,9 @@ jobs:
       - name: Verify deployment artifact contains pinned figures
         run: |
           R3_PIN="$(python -c 'from scripts.synchronize_research_three_website import CURRENT_RESEARCH_THREE_PIN; print(CURRENT_RESEARCH_THREE_PIN)')"
+          grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/measurement_architecture.svg" _site/index.html
           grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/measurement_architecture.svg" _site/measurement-science.html
+          grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/measurement_architecture.svg" _site/research-lineage.html
           grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/claim_ladder.svg" _site/measurement-science.html
           grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/structural_measurement_pipeline.svg" _site/measurement-science.html
           test -f _site/figures/p92_exact_global_mixed_prevalence_distance.svg
