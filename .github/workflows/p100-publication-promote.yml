@@ -1,0 +1,47 @@
+name: P100 publication promotion
+
+on:
+  push:
+    branches:
+      - p100-anytime-sequential-eprocess
+    paths:
+      - scripts/promote_p100_public_frontier.py
+      - .github/workflows/p100-publication-promote.yml
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out P100 branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Apply synchronized P100 promotion
+        run: python scripts/promote_p100_public_frontier.py
+
+      - name: Verify figure publication contract
+        run: python scripts/sync_figure_publication.py --check
+
+      - name: Verify repository publication contract
+        run: python scripts/verify_repository.py
+
+      - name: Commit promoted frontier
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "P100 publication surfaces are already synchronized."
+          else
+            git commit -m "Promote P100 public theorem frontier"
+            git push origin HEAD:p100-anytime-sequential-eprocess
+          fi
