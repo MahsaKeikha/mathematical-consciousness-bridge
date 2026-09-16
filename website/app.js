@@ -388,8 +388,26 @@
     });
   }
 
+  function loadScientificOrientation() {
+    if (!document.querySelector('link[data-scientific-orientation]')) {
+      const stylesheet = document.createElement('link');
+      stylesheet.rel = 'stylesheet';
+      stylesheet.href = 'research-orientation.css';
+      stylesheet.dataset.scientificOrientation = 'style';
+      document.head.append(stylesheet);
+    }
+
+    if (!document.querySelector('script[data-scientific-orientation]')) {
+      const script = document.createElement('script');
+      script.src = 'research-orientation.js';
+      script.dataset.scientificOrientation = 'script';
+      document.head.append(script);
+    }
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     ensureNavigation();
+    loadScientificOrientation();
     addBreadcrumbs();
     addLineageCallout();
     addResearchAnchors();
