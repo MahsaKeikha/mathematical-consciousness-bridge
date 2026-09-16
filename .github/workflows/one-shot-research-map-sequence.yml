@@ -26,6 +26,9 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Install focused test dependency
+        run: python -m pip install pytest
+
       - name: Normalize Research Map sequence
         run: python scripts/one_shot_research_map_sequence.py
 
