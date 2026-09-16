@@ -25,12 +25,12 @@
       program: 'Research II',
       label: 'Representative theorem-program visual',
       title: 'Research architecture and falsification structure',
-      image: 'figures/research_architecture.svg',
+      image: 'figures/research_architecture.svg?v=20260916-color-safe',
       alt: 'Research II research architecture and falsification structure',
       caption:
         'The architecture view keeps the P1-P100 theorem record in context: declared physical descriptions, independent targets, bridge tests, falsification logic, finite-data certification, and the still-open physical-to-experiential bridge.',
       contextHref: `${BRIDGE_REPO}/blob/main/docs/theorem_roadmap.md`,
-      figureHref: `${BRIDGE_REPO}/blob/main/figures/research_architecture.svg`,
+      figureHref: `${BRIDGE_REPO}/blob/main/docs/figures/research_architecture.svg`,
     },
     {
       sectionId: 'research-iii-source-program',
