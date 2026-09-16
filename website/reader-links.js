@@ -64,38 +64,104 @@
     });
   }
 
+  function addResearchStatusCardStyles() {
+    if (document.getElementById('research-status-card-styles')) return;
+    const style = document.createElement('style');
+    style.id = 'research-status-card-styles';
+    style.textContent = `
+      .status-grid > a.research-status-link {
+        position: relative;
+        display: block;
+        min-width: 0;
+        padding: 18px 19px 50px;
+        border: 1px solid var(--line);
+        border-radius: 13px;
+        background: var(--paper);
+        color: var(--ink);
+        text-decoration: none !important;
+        cursor: pointer;
+        transition: transform 150ms ease, border-color 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
+      }
+      .status-grid > a.research-status-link:hover,
+      .status-grid > a.research-status-link:focus-visible {
+        transform: translateY(-2px);
+        border-color: #8f9db7;
+        background: #fbfcff;
+        box-shadow: 0 9px 24px rgba(31, 45, 84, 0.09);
+        text-decoration: none !important;
+      }
+      .status-grid > a.research-status-link::after {
+        content: 'Open research page →';
+      }
+    `;
+    document.head.append(style);
+  }
+
+  function wireResearchStatusCards() {
+    const destinations = new Map([
+      ['research i', 'observer-research.html'],
+      ['research ii', 'research-map.html'],
+      ['research iii', 'measurement-science.html'],
+    ]);
+
+    let linkedAny = false;
+    document.querySelectorAll('.status-grid').forEach((grid) => {
+      Array.from(grid.children).forEach((card) => {
+        if (card.matches('a')) return;
+        const label = card.querySelector('strong')?.textContent?.trim().toLowerCase();
+        const href = label ? destinations.get(label) : null;
+        if (!href) return;
+
+        const link = document.createElement('a');
+        link.className = `${card.className || ''} research-status-link`.trim();
+        link.href = href;
+        link.innerHTML = card.innerHTML;
+        link.setAttribute('aria-label', `Open ${card.querySelector('strong')?.textContent?.trim()} website page`);
+        link.title = 'Open research page';
+        card.replaceWith(link);
+        linkedAny = true;
+      });
+    });
+
+    if (linkedAny) addResearchStatusCardStyles();
+  }
+
   function addResearchPathCardStyles() {
     if (document.getElementById('research-path-card-styles')) return;
     const style = document.createElement('style');
     style.id = 'research-path-card-styles';
     style.textContent = `
-      .research-path-card {
+      a.research-path-card {
         cursor: pointer;
         position: relative;
+        display: block;
+        color: var(--ink);
+        text-decoration: none !important;
         transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
       }
-      .research-path-card:hover,
-      .research-path-card:focus-visible {
+      a.research-path-card:hover,
+      a.research-path-card:focus-visible {
         transform: translateY(-3px);
+        border-color: #8f9db7;
+        background: #fbfcff;
         box-shadow: 0 14px 36px rgba(15, 23, 42, 0.12);
         outline: none;
+        text-decoration: none !important;
       }
-      .research-path-card:focus-visible {
-        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.28), 0 14px 36px rgba(15, 23, 42, 0.12);
-      }
-      .research-path-card .research-path-cue {
+      a.research-path-card .research-path-cue {
         display: inline-block;
         margin-top: 0.8rem;
         font-weight: 700;
         line-height: 1.35;
-        color: var(--link, #1d4ed8);
+        color: var(--accent, #1f3a7a);
       }
     `;
     document.head.append(style);
   }
 
   function wireResearchPathCards() {
-    if (!document.body || !document.querySelector('#orientation')) return;
+    const stageGrid = document.querySelector('#program-stages .result-grid');
+    if (!stageGrid) return;
 
     const destinations = [
       'implementation.html#stage-01',
@@ -110,50 +176,71 @@
       'implementation.html#stage-10',
     ];
 
-    const firstGrid = document.querySelector('#orientation .result-grid');
-    if (!firstGrid) return;
-
-    const cards = Array.from(firstGrid.children).filter((element) => element.matches('.result'));
+    const cards = Array.from(stageGrid.children).filter((element) => element.matches('.result'));
     if (cards.length < destinations.length) return;
 
     addResearchPathCardStyles();
 
     cards.slice(0, destinations.length).forEach((card, index) => {
-      if (card.dataset.implementationLinked === 'true') return;
       const href = destinations[index];
       const title = card.querySelector('h3')?.textContent?.trim() || `research stage ${index + 1}`;
+      const link = document.createElement('a');
+      link.className = `${card.className || 'result'} research-path-card`.trim();
+      link.href = href;
+      link.innerHTML = card.innerHTML;
+      link.setAttribute('aria-label', `${title}: open how it works and implementation details`);
+      link.title = 'Open implementation details';
+
       const cue = document.createElement('span');
       cue.className = 'research-path-cue';
       cue.textContent = 'How it works & implementation →';
       cue.setAttribute('aria-hidden', 'true');
-      card.append(cue);
+      link.append(cue);
 
-      card.classList.add('research-path-card');
-      card.dataset.implementationLinked = 'true';
-      card.tabIndex = 0;
-      card.setAttribute('role', 'link');
-      card.setAttribute('aria-label', `${title}: open how it works and implementation details`);
-      card.title = 'Open implementation details';
-
-      const open = () => {
-        window.location.href = href;
-      };
-      card.addEventListener('click', (event) => {
-        if (event.target.closest('a, button')) return;
-        open();
-      });
-      card.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          open();
-        }
-      });
+      card.replaceWith(link);
     });
+  }
+
+  function addResearchOverviewDiagramStyles() {
+    if (document.getElementById('research-overview-diagram-styles')) return;
+    const style = document.createElement('style');
+    style.id = 'research-overview-diagram-styles';
+    style.textContent = `
+      #research-ii-overview .research-ii-figure-card {
+        grid-template-columns: minmax(280px, 0.82fr) minmax(320px, 1.18fr);
+        align-items: center;
+      }
+      #research-ii-overview .research-ii-figure-card > a {
+        display: flex;
+        min-width: 0;
+        align-items: center;
+        justify-content: center;
+      }
+      #research-ii-overview .research-ii-figure-card img {
+        width: min(100%, 560px);
+        max-width: 100%;
+        height: auto;
+        max-height: 360px;
+        object-fit: contain;
+      }
+      @media (max-width: 900px) {
+        #research-ii-overview .research-ii-figure-card {
+          grid-template-columns: 1fr;
+        }
+        #research-ii-overview .research-ii-figure-card img {
+          width: min(100%, 620px);
+          max-height: none;
+        }
+      }
+    `;
+    document.head.append(style);
   }
 
   document.addEventListener('DOMContentLoaded', () => {
     addHeadingAnchors();
     makeStandaloneFiguresOpenable();
+    wireResearchStatusCards();
     wireResearchPathCards();
+    addResearchOverviewDiagramStyles();
   });
 })();

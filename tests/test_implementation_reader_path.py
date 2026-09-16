@@ -7,13 +7,44 @@ WEBSITE = ROOT / "website"
 def test_research_path_cards_open_stage_specific_implementation_sections() -> None:
     script = (WEBSITE / "reader-links.js").read_text(encoding="utf-8")
 
+    assert "#program-stages .result-grid" in script
+    assert "document.createElement('a')" in script
+    assert "card.replaceWith(link)" in script
     for stage in range(1, 11):
         target = f"implementation.html#stage-{stage:02d}"
         assert target in script
 
     assert "How it works & implementation" in script
-    assert "role', 'link'" in script
-    assert "card.tabIndex = 0" in script
+    assert "research-path-card" in script
+    assert "Open implementation details" in script
+    assert "#orientation .result-grid" not in script
+
+
+def test_research_status_cards_open_exact_stage_pages() -> None:
+    script = (WEBSITE / "reader-links.js").read_text(encoding="utf-8")
+
+    required_destinations = {
+        "research i": "observer-research.html",
+        "research ii": "research-map.html",
+        "research iii": "measurement-science.html",
+    }
+    for label, destination in required_destinations.items():
+        assert f"['{label}', '{destination}']" in script
+
+    assert "wireResearchStatusCards();" in script
+    assert "research-status-link" in script
+    assert "Open research page" in script
+    assert "card.replaceWith(link)" in script
+
+
+def test_research_ii_overview_diagram_is_constrained_without_global_css_replacement() -> None:
+    script = (WEBSITE / "reader-links.js").read_text(encoding="utf-8")
+
+    assert "addResearchOverviewDiagramStyles" in script
+    assert "#research-ii-overview .research-ii-figure-card" in script
+    assert "width: min(100%, 560px);" in script
+    assert "max-height: 360px;" in script
+    assert "grid-template-columns: 1fr;" in script
 
 
 def test_implementation_guide_covers_all_ten_research_stages() -> None:
