@@ -7,6 +7,7 @@ on:
     paths:
       - .github/workflows/one-shot-complete-research-map-navigator.yml
       - scripts/one_shot_complete_research_map_navigator.py
+      - scripts/one_shot_research_map_p100_polish.py
 
 permissions:
   contents: write
@@ -22,6 +23,9 @@ jobs:
 
       - name: Generate static P1-P100 navigator
         run: python scripts/one_shot_complete_research_map_navigator.py
+
+      - name: Polish P100 frontier copy and card text
+        run: python scripts/one_shot_research_map_p100_polish.py
 
       - name: Verify generated navigator contract
         run: |
@@ -66,6 +70,13 @@ jobs:
           )[0]
           assert '–' not in navigator
           assert '—' not in navigator
+          assert '`' not in navigator
+          assert '<strong>Representation-independent bridge objects</strong>' in navigator
+
+          assert 'P19 and P71-P100: from sufficiency to selection-valid and anytime-valid target-model falsification' in page
+          assert 'P77-P100: from full-law rejection to anytime-valid sequential certification' in page
+          assert 'P100 remains a conditional sequential model-rejection theorem' in page
+          assert 'P99 remains a conditional model-rejection theorem under its declared independent-block' not in page
           PY
 
       - name: Verify clean diff formatting
@@ -80,5 +91,5 @@ jobs:
             echo "No navigator changes to commit"
             exit 0
           fi
-          git commit -m "Add complete P1-P100 Research Map navigator"
+          git commit -m "Polish complete P1-P100 Research Map navigator"
           git push origin HEAD:complete-p1-p100-research-map-navigator
