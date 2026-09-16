@@ -37,15 +37,19 @@ def test_overview_explains_research_ii_before_p100_jargon() -> None:
         assert token in plain
 
 
-def test_overview_keeps_dense_p100_svg_out_of_first_reader_page() -> None:
+def test_overview_collapses_dense_p100_svg_behind_technical_disclosure() -> None:
     overview = _text(OVERVIEW)
     frontier_start = overview.index('id="p100-frontier"')
     frontier_end = overview.index('id="research-iii-overview"')
     frontier = overview[frontier_start:frontier_end]
 
-    assert "p100_anytime_sequential_eprocess.svg" not in frontier
     assert "P100 plain-language evidence sequence" in frontier
-    assert "Open the full P100 theorem figure" in frontier
+    assert '<details class="technical-figure-details">' in frontier
+    assert "Open the full technical P100 theorem figure" in frontier
+    assert "p100_anytime_sequential_eprocess.svg" in frontier
+    assert frontier.index("P100 plain-language evidence sequence") < frontier.index(
+        "p100_anytime_sequential_eprocess.svg"
+    )
 
 
 def test_repository_has_matching_plain_language_research_ii_path() -> None:
@@ -57,6 +61,7 @@ def test_repository_has_matching_plain_language_research_ii_path() -> None:
     assert "Visual architecture without the dense diagram" in readme
     assert "```mermaid" in readme
     assert "research_architecture.svg" not in readme
+    assert "**Figure 1. Scientific architecture of the project.**" in readme
 
     assert "## The testing sequence" in plain
     assert "## What has actually been completed" in plain
