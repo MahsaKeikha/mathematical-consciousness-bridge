@@ -32,33 +32,6 @@
   object-fit: contain;
 }
 
-/* Research II's first-reader diagram is intentionally compact. The detailed
- * explanation sits beside it, so the figure should orient rather than dominate. */
-.research-ii-figure-card {
-  grid-template-columns: minmax(300px, 0.9fr) minmax(320px, 1.1fr);
-  gap: clamp(24px, 3vw, 42px);
-  align-items: center;
-}
-
-.research-ii-figure-card > a {
-  display: grid;
-  place-items: center;
-  padding: clamp(8px, 1vw, 14px);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  background: #fbfcff;
-}
-
-.research-ii-figure-card img {
-  width: min(100%, 540px);
-  max-height: 365px;
-  margin: 0 auto;
-}
-
-.research-ii-figure-card > div {
-  align-self: center;
-}
-
 .theorem-figure-shell {
   width: min(100%, var(--figure-reading-max));
   margin: 24px auto 0;
@@ -346,13 +319,238 @@ pre {
   word-break: normal;
 }
 
+.button {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
 @media (max-width: 900px) {
-  .research-ii-figure-card {
+  .figure-card,
+  .reader-primer-grid,
+  .reader-step-grid {
     grid-template-columns: 1fr;
   }
 
-  .research-ii-figure-card img {
-    width: min(100%, 620px);
-    max-height: none;
+  .figure-card img {
+    width: min(100%, 820px);
+    max-height: min(66vh, 540px);
+  }
+
+  .reader-primer-grid,
+  .reader-step-grid {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 760px) {
+  #p84-frontier,
+  #p85-frontier {
+    padding: 19px 17px;
+  }
+
+  #p84-frontier .frontier-summary-grid,
+  #p85-frontier .frontier-summary-grid,
+  #p85-frontier .two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  /*
+   * Phone contract: resource/output collections are cards, never squeezed
+   * desktop columns. !important intentionally overrides legacy page-local
+   * grid declarations in old reader surfaces.
+   */
+  .source-grid,
+  .implementation-index,
+  .implementation-links,
+  .research-card-grid,
+  .reader-trail-grid,
+  .lineage-callout-actions,
+  .frontier-summary-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .source-grid > *,
+  .implementation-index > *,
+  .implementation-links > *,
+  .research-card-grid > *,
+  .reader-trail-grid > *,
+  .lineage-callout-actions > *,
+  .frontier-summary-grid > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .source-grid a,
+  .implementation-index a,
+  .implementation-links a {
+    width: 100%;
+    min-height: 0 !important;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .source-grid code,
+  .implementation-index code,
+  .implementation-links code,
+  .source-grid small,
+  .implementation-links small {
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  .theorem-figure-shell img {
+    max-height: min(62vh, 500px);
+  }
+
+  .atlas-thumb,
+  .result .atlas-thumb,
+  .evidence-card img {
+    height: auto;
+    max-height: 230px;
+  }
+
+  .reader-primer-card,
+  .reader-step-card {
+    padding: 16px 17px;
+  }
+}
+
+
+/* Research III and reproducibility containment. */
+.repro-command {
+  display: grid;
+  grid-template-columns: minmax(0, auto) auto minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  margin: 18px 0;
+  padding: 16px 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+}
+
+.repro-command code {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  padding: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.repro-command span {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+#reproduce.two-col {
+  grid-template-columns: minmax(0, 1.25fr) minmax(240px, 0.75fr);
+  width: 100%;
+  max-width: 100%;
+}
+
+#reproduce.two-col > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+#reproduce .equation {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  contain: inline-size;
+}
+
+#reproduce .equation mjx-container,
+#reproduce .equation mjx-container[jax="SVG"] {
+  display: block;
+  min-width: max-content;
+  max-width: none;
+}
+
+.lineage-callout-actions {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.measurement-figure-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.measurement-figure-grid .figure-card {
+  display: block;
+  min-width: 0;
+}
+
+.measurement-figure-grid img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 980px) {
+  .lineage-callout-actions,
+  .measurement-figure-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  #reproduce.two-col,
+  .lineage-callout-actions,
+  .measurement-figure-grid,
+  .repro-command {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .repro-command span {
+    display: none;
+  }
+}
+
+
+.lineage-comparison.three-stage .comparison-head,
+.lineage-comparison.three-stage .comparison-row {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.lineage-comparison.three-stage .comparison-row > * {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.lineage-comparison.three-stage .comparison-row strong:nth-child(2) {
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .lineage-comparison.three-stage .comparison-head,
+  .lineage-comparison.three-stage .comparison-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lineage-comparison.three-stage .comparison-head span {
+    display: block !important;
+    text-align: left !important;
+  }
+
+  .lineage-comparison.three-stage .comparison-row strong:nth-child(2) {
+    text-align: left;
   }
 }
