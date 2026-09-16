@@ -8,7 +8,7 @@ If this research program, one of its propositions, figures, algorithms, or imple
 
 > Keikha, M. (2026). *Mathematical Consciousness Bridge: A Mathematical-Physics Test Architecture for the Physical-to-Experiential Bridge Problem* (Version 0.82.0). GitHub research repository. https://github.com/MahsaKeikha/mathematical-consciousness-bridge
 
-This is the preferred citation for the research program at the current documented frontier, P99.
+This is the preferred citation for the research program at the current documented frontier, P100.
 
 ## BibTeX
 
@@ -20,7 +20,7 @@ This is the preferred citation for the research program at the current documente
   version      = {0.82.0},
   howpublished = {GitHub research repository},
   url          = {https://github.com/MahsaKeikha/mathematical-consciousness-bridge},
-  note         = {Ongoing research program. Current documented theorem frontier: P99.}
+  note         = {Ongoing research program. Current documented theorem frontier: P100.}
 }
 ```
 
@@ -53,25 +53,33 @@ This repository is an evolving research program. For reproducible scholarly use:
 3. Cite the individual proposition or artifact when your argument depends on a specific theorem, figure, algorithm, or test.
 4. Do not attribute later propositions or later numerical results to an earlier version of the repository.
 
-The current citation metadata identify Version **0.82.0** and theorem frontier **P99**. Future research versions should update the version number, theorem frontier, citation metadata, and archival record together.
+The current citation metadata identify Version **0.82.0** and theorem frontier **P100**. Future research versions should update the version number, theorem frontier, citation metadata, and archival record together.
 
-## Previous theorem frontier: P97
+## Earlier theorem frontier: P97
 
-The current documented theorem frontier is **P97**. P97 permits same-data post-inspection selection among a finite candidate family fixed before certification statistics are inspected. Each candidate receives an exact P95 familywise budget, and a second union bound across candidates makes the candidate certificates simultaneous. The formal package release remains **Version 0.82.0**.
+At that stage, the documented theorem frontier was **P97**. P97 permits same-data post-inspection selection among a finite candidate family fixed before certification statistics are inspected. Each candidate receives an exact P95 familywise budget, and a second union bound across candidates makes the candidate certificates simultaneous. The formal package release remains **Version 0.82.0**.
 
 P97 is a conditional model-rejection theorem. It does not validate newly generated post-inspection candidates, unrestricted search, model acceptance after non-rejection, consciousness identification, nonphysicality, or completion of the physical-to-experiential bridge.
 
 ## Current theorem frontier: P100
 
-The current documented theorem frontier is **P100**. P99 turns selection-valid P96/P98 fold rejection indicators into exact e-values, permits a finite calibration mixture fixed before own-fold evaluation, and combines the resulting cross-fitted fold evidence by a fixed convex average. The aggregate remains a valid e-value without assuming the final fold certificates are independent, and a global level-alpha rejection is obtained at aggregate e-value at least `1/alpha`.
+The current documented theorem frontier is **P100**. P100 composes genuinely fresh P99 certification rounds into an anytime-valid sequential evidence process. For each round, the P99 e-value must remain conditionally valid given the accumulated past, and the reserve stake must be chosen predictably before that round's certification data are inspected. Under those conditions, the reserve-stake product is a nonnegative supermartingale and Ville's inequality controls threshold crossing under repeated inspection and adaptive stopping.
+
+At the exact 95 percent checkpoint, one moderate P99 round has `E_t = 25/2` and a half stake gives `F_t = 27/4`. Two fresh rounds give `M_2 = 729/16 = 45.5625 > 20`, with declared two-round unique-data totals `30192 / 30336`.
+
+P100 is a conditional sequential-inference theorem. It does not make reused certification data fresh, permit current-round leakage, establish model acceptance, identify consciousness, establish nonphysicality, or complete the physical-to-experiential bridge.
+
+## Immediate predecessor theorem frontier: P99
+
+At the preceding stage, the documented theorem frontier was **P99**. P99 turns selection-valid P96/P98 fold rejection indicators into exact e-values, permits a finite calibration mixture fixed before own-fold evaluation, and combines the resulting cross-fitted fold evidence by a fixed convex average. The aggregate remains a valid e-value without assuming the final fold certificates are independent, and a global level-alpha rejection is obtained at aggregate e-value at least `1/alpha`.
 
 For the declared two-fold, two-regime, one-step-dependent distributed-evidence checkpoint at 95 percent confidence, the per-regime crossing is **3774** and the first denominator-24 exact replication is **3792**, with unique totals **15096 / 15168**. This is a configuration-specific gain over the matched equal-split P98 checkpoint, not a uniform dominance claim.
 
-P99 remains a conditional model-rejection theorem. It does not justify own-fold leakage, post-hoc calibration search, naive dependent-stream splitting, model acceptance after non-rejection, consciousness identification, nonphysicality, or completion of the physical-to-experiential bridge.
+P99 is a conditional model-rejection theorem. It does not justify own-fold leakage, post-hoc calibration search, naive dependent-stream splitting, model acceptance after non-rejection, consciousness identification, nonphysicality, or completion of the physical-to-experiential bridge.
 
-## Immediate predecessor theorem frontier: P98
+## Earlier theorem frontier: P98
 
-The current documented theorem frontier is **P98**. P98 rotates the P96 independent-holdout construction across mutually independent data blocks. For fold `k`, the selected regime plan may be an arbitrarily complicated function of the other blocks, but block `k` must be excluded from its own selection rule and the plan must be frozen before block `k` is inspected for certification. Exact fold-level error budgets are then combined by a union bound, so the final fold certificates need not be independent.
+At that stage, the documented theorem frontier was **P98**. P98 rotates the P96 independent-holdout construction across mutually independent data blocks. For fold `k`, the selected regime plan may be an arbitrarily complicated function of the other blocks, but block `k` must be excluded from its own selection rule and the plan must be frozen before block `k` is inspected for certification. Exact fold-level error budgets are then combined by a union bound, so the final fold certificates need not be independent.
 
 For two folds with two one-step-dependent regimes each at 95 percent global confidence, the per-regime mathematical crossing is **4045**, the first exact denominator-24 replication is **4056**, and the unique-data totals are **16180 / 16224**.
 
