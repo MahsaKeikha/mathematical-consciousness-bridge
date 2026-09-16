@@ -70,33 +70,34 @@ def test_overview_runtime_adds_reader_friendly_research_ii_visuals() -> None:
 def test_research_ii_visual_is_compact_self_explanatory_and_bounded() -> None:
     visual = _text(RESEARCH_II_VISUAL)
     for token in (
-        "Research II sufficiency test in four steps",
+        "Research II sufficiency test",
         "Descriptor D",
         "Independent target Y",
-        "Equivalent cases",
         "D(x₁) = D(x₂)",
         "Y(x₁) ?= Y(x₂)",
         "NO TARGET SEPARATION",
-        "TARGET DIFFERS",
-        "Survives this test",
-        "Sufficiency fails",
-        "Richer physical descriptions may remain possible",
+        "TARGET SEPARATION",
+        "Compatible with this test",
+        "Sufficiency rejected",
+        "richer physical descriptions may remain possible",
     ):
         assert token in visual
     assert "<desc" in visual
-    assert 'viewBox="0 0 1200 620"' in visual
+    assert 'viewBox="0 0 960 620"' in visual
+    assert 'width="960" height="620"' in visual
     assert 'width="1600" height="920"' not in visual
+    assert "Bridge sufficiency and falsification" not in visual
 
 
 def test_research_ii_visual_has_attached_flow_arrows() -> None:
     visual = _text(RESEARCH_II_VISUAL)
 
     for segment in (
-        'x1="290" y1="258" x2="344" y2="258"',
-        'x1="586" y1="258" x2="640" y2="258"',
-        'x1="882" y1="258" x2="936" y2="258"',
-        'M1044 365 L1044 405 L753 405 L753 442',
-        'M1044 405 L1044 442',
+        'x1="430" y1="125" x2="530" y2="125"',
+        'M725 200 L725 222 L235 222 L235 245',
+        'x1="430" y1="320" x2="530" y2="320"',
+        'M725 395 L725 420 L260 420 L260 450',
+        'M725 420 L700 420 L700 450',
     ):
         assert segment in visual
 
