@@ -206,6 +206,75 @@
     return match ? Number(match[1]) : null;
   }
 
+  function normalizeResearchMapResultBoxes() {
+    const bridge = document.querySelector('#bridge-lineage');
+    if (bridge && !bridge.querySelector('.research-map-detail-grid')) {
+      const headings = Array.from(bridge.children).filter(
+        (element) => element.tagName === 'H3' && /^P(?:71|72|73):/.test(element.textContent.trim()),
+      );
+
+      if (headings.length) {
+        const grid = document.createElement('div');
+        grid.className = 'result-grid research-map-detail-grid';
+        bridge.insertBefore(grid, headings[0]);
+
+        headings.forEach((heading) => {
+          const detail = heading.nextElementSibling;
+          const number = propositionNumber(heading.textContent);
+          const card = document.createElement('article');
+          card.className = 'result research-map-result-card';
+          if (number) card.id = `p${number}`;
+
+          const badge = document.createElement('span');
+          badge.textContent = number ? `P${number}` : 'Result';
+          card.append(badge);
+          grid.append(card);
+          card.append(heading);
+          if (detail?.tagName === 'P') card.append(detail);
+        });
+
+        const missing = [
+          {
+            number: 74,
+            title: 'Finite-sample target-channel recovery certification',
+            description:
+              'Propagate simultaneous eight-cell sampling uncertainty through the P73 inversion and refuse recovery when finite-data margins remain too close to the degeneracy boundary.',
+            href: 'https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_74_finite_sample_target_channel_recovery.md',
+          },
+          {
+            number: 75,
+            title: 'Target-model adequacy and four-view overidentification',
+            description:
+              'Separate identifiability from adequacy: a fourth binary view introduces observable restrictions that can falsify the declared conditional-independence target model.',
+            href: 'https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_75_target_model_adequacy_overidentification.md',
+          },
+          {
+            number: 76,
+            title: 'Finite-sample target-model adequacy rejection',
+            description:
+              'Reject only when finite IID uncertainty leaves a necessary P75 restriction separated from zero. Nonrejection remains nonacceptance.',
+            href: 'https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_76_finite_sample_target_model_adequacy.md',
+          },
+        ];
+
+        missing.forEach(({ number, title, description, href }) => {
+          if (document.getElementById(`p${number}`)) return;
+          const card = document.createElement('article');
+          card.className = 'result research-map-result-card';
+          card.id = `p${number}`;
+          card.innerHTML = `<span>P${number}</span><h3>P${number}: ${title}</h3><p>${description}</p><p><a href="${href}">Read P${number}</a></p>`;
+          grid.append(card);
+        });
+      }
+    }
+
+    ['#p92-research-map', '#p93-research-map', '#p94-research-map'].forEach((selector) => {
+      const section = document.querySelector(selector);
+      if (!section) return;
+      section.classList.add('result', 'research-map-result-card');
+    });
+  }
+
   function primaryCardHref(card) {
     const links = Array.from(card.querySelectorAll('a[href]')).filter(
       (link) => !link.classList.contains('heading-anchor'),
@@ -318,6 +387,7 @@
     makeStandaloneFiguresOpenable();
     wireResearchStatusCards();
     wireResearchPathCards();
+    normalizeResearchMapResultBoxes();
     wireAllResultCards();
     addResearchOverviewDiagramStyles();
   });
