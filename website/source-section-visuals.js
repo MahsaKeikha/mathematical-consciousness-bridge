@@ -3,7 +3,9 @@
   const OBSERVER_RAW = 'https://raw.githubusercontent.com/MahsaKeikha/spatiotemporal-observer-math/main';
   const BRIDGE_REPO = 'https://github.com/MahsaKeikha/mathematical-consciousness-bridge';
   const MEASUREMENT_REPO = 'https://github.com/MahsaKeikha/consciousness-measurement-science';
-  const MEASUREMENT_RAW = 'https://raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/main';
+  const MEASUREMENT_PIN = '1ceea4c428d835ec9a8a417cbf238d9bcfe1d7c3';
+  const MEASUREMENT_RAW =
+    `https://raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/${MEASUREMENT_PIN}`;
 
   const VISUALS = [
     {
@@ -42,8 +44,8 @@
       alt: 'Research III consciousness measurement architecture',
       caption:
         'The measurement architecture shows how declared experiential targets, observables, assumptions, identification limits, uncertainty, and allowed scientific claims are kept separate instead of collapsing a proxy into experience itself.',
-      contextHref: `${MEASUREMENT_REPO}/blob/main/docs/measurement-framework.md`,
-      figureHref: `${MEASUREMENT_REPO}/blob/main/docs/figures/measurement_architecture.svg`,
+      contextHref: `${MEASUREMENT_REPO}/blob/${MEASUREMENT_PIN}/docs/measurement-framework.md`,
+      figureHref: `${MEASUREMENT_REPO}/blob/${MEASUREMENT_PIN}/docs/figures/measurement_architecture.svg`,
     },
   ];
 
