@@ -4,11 +4,14 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OVERVIEW = ROOT / "website" / "index.html"
+APP = ROOT / "website" / "app.js"
 README = ROOT / "README.md"
 PLAIN = ROOT / "docs" / "research_ii_in_plain_language.md"
 IGNORE = ROOT / ".gitignore"
 PYTHON_VERSION = ROOT / ".python-version"
 READER_CSS = ROOT / "website" / "reader-experience-v2.css"
+RESEARCH_II_VISUAL = ROOT / "website" / "research-ii-sufficiency-falsification-overview.svg"
+P100_VISUAL = ROOT / "website" / "p100-anytime-valid-sequence-overview.svg"
 
 
 def _text(path: Path) -> str:
@@ -50,6 +53,57 @@ def test_overview_collapses_dense_p100_svg_behind_technical_disclosure() -> None
     assert frontier.index("P100 plain-language evidence sequence") < frontier.index(
         "p100_anytime_sequential_eprocess.svg"
     )
+
+
+def test_overview_runtime_adds_reader_friendly_research_ii_visuals() -> None:
+    app = _text(APP)
+    assert "function addResearchTwoVisuals()" in app
+    assert "research-ii-sufficiency-falsification-overview.svg" in app
+    assert "Research II testing architecture" in app
+    assert "p100-anytime-valid-sequence-overview.svg" in app
+    assert "P100 sequential evidence architecture" in app
+    assert "addResearchTwoVisuals();" in app
+    assert "current physical-to-experiential test architecture through P100" in app
+    assert "Bridge-test program through P100" in app
+
+
+def test_research_ii_visual_is_self_explanatory_and_bounded() -> None:
+    visual = _text(RESEARCH_II_VISUAL)
+    for token in (
+        "Research II testing architecture",
+        "State exactly what",
+        "Measure the target",
+        "MATCH EQUIVALENT CASES",
+        "D(x₁) = D(x₂)",
+        "Y(x₁) ?= Y(x₂)",
+        "No target separation found",
+        "Target separation found",
+        "SCIENTIFIC BOUNDARY",
+        "does not prove nonphysicality",
+    ):
+        assert token in visual
+    assert "<desc" in visual
+    assert 'viewBox="0 0 1600 920"' in visual
+
+
+def test_p100_visual_separates_reader_overview_from_technical_theorem_art() -> None:
+    visual = _text(P100_VISUAL)
+    for token in (
+        "Anytime-valid evidence across fresh certification rounds",
+        "PAST INFORMATION",
+        "FREEZE THE PLAN",
+        "FRESH DATA",
+        "ROUND-LEVEL EVIDENCE",
+        "Fₜ = (1 - ηₜ) + ηₜEₜ",
+        "Mₜ = ∏ Fₛ",
+        "Mₜ ≥ 1 / α",
+        "EXACT 95% CHECKPOINT",
+        "M₂ = 45.5625",
+        "SCIENTIFIC BOUNDARY",
+    ):
+        assert token in visual
+    assert "<desc" in visual
+    assert 'viewBox="0 0 1600 920"' in visual
 
 
 def test_repository_has_matching_plain_language_research_ii_path() -> None:

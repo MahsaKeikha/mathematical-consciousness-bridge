@@ -33,7 +33,7 @@
           file: 'research-map.html',
           kicker: 'Research II',
           label: 'Bridge theorem map',
-          description: 'The current physical-to-experiential test architecture through P88.',
+          description: 'The current physical-to-experiential test architecture through P100.',
         },
         {
           file: 'measurement-science.html',
@@ -221,7 +221,7 @@
       </div>
       <div class="lineage-callout-actions">
         <a class="lineage-mini-card" href="observer-research.html"><span>Research I</span><strong>Spatiotemporal Observer Mathematics</strong><small>Physical observer architecture →</small></a>
-        <a class="lineage-mini-card" href="research-map.html"><span>Research II</span><strong>Mathematical Consciousness Bridge</strong><small>Bridge-test program through P88 →</small></a>
+        <a class="lineage-mini-card" href="research-map.html"><span>Research II</span><strong>Mathematical Consciousness Bridge</strong><small>Bridge-test program through P100 →</small></a>
         <a class="lineage-mini-card current" href="measurement-science.html"><span>Research III</span><strong>Consciousness Measurement Science</strong><small>Multimodal measurement program →</small></a>
         <a class="lineage-mini-card" href="research-lineage.html"><span>Research lineage</span><strong>See the full scientific handoff</strong><small>What carries forward and what remains open →</small></a>
       </div>`;
@@ -258,6 +258,48 @@
         ${nextHtml}
       </div>`;
     main.append(trail);
+  }
+
+  function addResearchTwoVisuals() {
+    if (currentFile() !== 'index.html') return;
+
+    const overview = document.querySelector('#research-ii-overview');
+    const overviewHead = overview?.querySelector('.section-head');
+    if (overview && overviewHead && !overview.querySelector('.research-ii-figure-card')) {
+      const figure = document.createElement('div');
+      figure.className = 'figure-card research-ii-figure-card';
+      figure.innerHTML = `
+        <a href="research-ii-sufficiency-falsification-overview.svg" aria-label="Open the full Research II sufficiency and falsification architecture figure">
+          <img loading="lazy" decoding="async" src="research-ii-sufficiency-falsification-overview.svg" alt="Research II testing architecture showing a declared physical or computational descriptor, an independently defined target, descriptor-equivalent cases, and falsification when the target distinguishes cases the declared description treats as equivalent" />
+        </a>
+        <div>
+          <p class="eyebrow">Research II testing architecture</p>
+          <h3>Declare the description → define the target independently → compare equivalent cases → try to falsify sufficiency</h3>
+          <p>Research II reformulates a broad bridge claim as a falsification problem. A theory must first declare the physical or computational description it claims is sufficient. The target is then defined through an independent measurement route, so the answer is not built into the test itself.</p>
+          <p>The framework then compares cases that are equivalent under the declared description. If the independently defined target still distinguishes those cases in a way the model forbids, the sufficiency claim is rejected for that descriptor. If no such separation is found, the descriptor remains compatible with the current evidence, but it is not thereby confirmed as the true theory.</p>
+          <p><a href="research-map.html">Open the complete Research II testing map →</a></p>
+        </div>`;
+      overviewHead.insertAdjacentElement('afterend', figure);
+    }
+
+    const frontier = document.querySelector('#p100-frontier');
+    const frontierHead = frontier?.querySelector('.section-head');
+    if (frontier && frontierHead && !frontier.querySelector('.p100-figure-card')) {
+      const figure = document.createElement('div');
+      figure.className = 'figure-card p100-figure-card';
+      figure.innerHTML = `
+        <a href="p100-anytime-valid-sequence-overview.svg" aria-label="Open the plain-language P100 anytime-valid sequence overview">
+          <img loading="lazy" decoding="async" src="p100-anytime-valid-sequence-overview.svg" alt="P100 diagram showing past information, a frozen next-round plan, fresh certification data, a valid e-value, a predictable stake, multiplicative evidence accumulation, and anytime-valid threshold crossing" />
+        </a>
+        <div>
+          <p class="eyebrow">P100 sequential evidence architecture</p>
+          <h3>Past information → freeze the next-round plan → collect fresh certification data → accumulate valid evidence → stop at the first justified crossing</h3>
+          <p>P100 extends the Research II testing program from a single protected certification round to a sequence of fresh rounds. The next plan may adapt to past results, but current certification data cannot be used to choose their own calibration, selection rule, or stake.</p>
+          <p>Under those conditions, evidence can be accumulated across rounds and inspected after every update. A threshold crossing then remains anytime-valid rather than being invalidated by repeated looks.</p>
+          <p><a href="visual-atlas.html">Open the full technical P100 figure in the Visual Atlas →</a></p>
+        </div>`;
+      frontierHead.insertAdjacentElement('afterend', figure);
+    }
   }
 
   function propositionNumber(text) {
@@ -351,6 +393,7 @@
     addBreadcrumbs();
     addLineageCallout();
     addResearchAnchors();
+    addResearchTwoVisuals();
     activateCards();
     addReaderTrail();
     addBackToTop();
