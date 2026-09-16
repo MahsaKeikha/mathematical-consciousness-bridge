@@ -33,6 +33,23 @@ def test_sources_resource_and_audit_cards_have_destinations() -> None:
     assert "docs/claim_evidence_standard.md" in script
 
 
+def test_sources_page_is_runtime_synchronized_to_p100_frontier() -> None:
+    source = (WEBSITE / "sources.html").read_text(encoding="utf-8")
+    script = (WEBSITE / "footer.js").read_text(encoding="utf-8")
+
+    assert 'id="p99-source"' in source
+    assert "function syncSourcesFrontier()" in script
+    assert "Current theorem source · P100" in script
+    assert "Immediate predecessor theorem source · P99" in script
+    assert "proposition_100_anytime_sequential_eprocess.md" in script
+    assert "p100_equation_provenance.md" in script
+    assert "anytime_sequential_eprocess.py" in script
+    assert "test_anytime_sequential_eprocess.py" in script
+    assert "p100_anytime_sequential_eprocess.svg" in script
+    assert "P100 is a sequential inference theorem" in script
+    assert "syncSourcesFrontier();" in script
+
+
 def test_research_map_milestones_link_to_real_canonical_proofs() -> None:
     guide = (WEBSITE / "research-map-guide.js").read_text(encoding="utf-8")
 
