@@ -30,6 +30,12 @@ def test_sources_visuals_use_scientific_project_figures() -> None:
         assert token in VISUALS
 
 
+def test_sources_research_iii_visual_uses_validated_pin() -> None:
+    assert "1ceea4c428d835ec9a8a417cbf238d9bcfe1d7c3" in VISUALS
+    assert "consciousness-measurement-science/${MEASUREMENT_PIN}" in VISUALS
+    assert "blob/${MEASUREMENT_PIN}/docs/measurement-framework.md" in VISUALS
+
+
 def test_sources_visuals_are_inserted_before_source_card_catalogs() -> None:
     assert "section.querySelector('.program-record-grid')" in VISUALS
     assert "metrics.insertAdjacentElement('afterend', figure)" in VISUALS
