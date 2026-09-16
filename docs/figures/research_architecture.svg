@@ -1,136 +1,131 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1080" viewBox="0 0 1800 1080" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
   <title id="title">Research architecture</title>
-  <desc id="desc">What this figure shows: the Mathematical Consciousness Bridge research architecture as eight staged scientific layers. The program moves from physical realization and quotienting to a candidate physical signature, an explicitly unresolved bridge structure, an experiential quotient, observable predictions, finite-data recovery, and falsification. How to read it: follow the arrows clockwise from the upper-left card. The color families distinguish physical modeling, quotient and invariance structure, causal signature construction, open bridge assumptions, experiential formalization, observable predictions, finite-data certification, and falsification. Main takeaway: physical description, bridge assumptions, empirical tests, and experiential formalization remain separate scientific objects. Scientific status: reader-facing research architecture. The diagram does not claim that the physical-to-experiential bridge has been solved.</desc>
+  <desc id="desc">What this figure shows: Figure 1. Scientific architecture of the project. The research moves from physical dynamics to operationally measurable structure, then to mathematical sufficiency tests, target-side validity, finite-data certification, experimental design, and finally the still-open physical-to-experiential bridge. The arrows are logical dependencies, not claims that one layer has already been identified with consciousness. How to read it: follow only the labeled arrows, axes, panels, set relations, or inequalities shown in the visual and interpret them using the adjacent research text. Main takeaway: the figure summarizes the stated mathematical or scientific dependency; visual proximity alone does not add a claim. Scientific status: Reader-facing research figure; formal status is controlled by the linked proof or source record.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
-      <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
+      <path d="M0 0 L0 8 L10 4 z" fill="#475569"/>
     </marker>
     <style>
-      .title{font:700 44px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
-      .subtitle{font:400 21px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
-      .boxTitle{font:700 23px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
-      .body{font:400 17px Inter,Segoe UI,Arial,sans-serif;fill:#334155}
-      .eq{font:600 20px Georgia,'Times New Roman',serif;fill:#0f172a}
-      .status{font:700 12px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px}
-      .arrow{stroke:#64748b;stroke-width:2.8;fill:none;marker-end:url(#arrow)}
-      .divider{stroke:#cbd5e1;stroke-width:1.2}
+      .title{font:700 38px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .subtitle{font:400 19px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .boxTitle{font:700 20px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .body{font:400 15px Inter,Segoe UI,Arial,sans-serif;fill:#334155}
+      .eq{font:600 18px Georgia,'Times New Roman',serif;fill:#0f172a}
+      .status{font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.7px}
+      .arrow{stroke:#475569;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+      .divider{stroke:#cbd5e1;stroke-width:1}
     </style>
   </defs>
 
-  <rect width="1800" height="1080" fill="#ffffff"/>
-  <text x="70" y="66" class="title">Mathematical Consciousness Bridge: Research Architecture</text>
-  <text x="70" y="104" class="subtitle">A staged mathematical-physics program that keeps physical structure, bridge assumptions, empirical tests, and experiential formalization distinct.</text>
+  <rect width="1600" height="980" fill="#ffffff"/>
+  <text x="70" y="66" class="title">Mathematical Consciousness Bridge - Research Architecture</text>
+  <text x="70" y="100" class="subtitle">A staged mathematical-physics program separating physical structure, bridge assumptions, empirical tests, and experiential formalization.</text>
 
   <g>
-    <rect x="60" y="160" width="395" height="250" rx="18" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
-    <text x="88" y="202" class="boxTitle">1. Physical realization</text>
-    <line x1="88" y1="218" x2="427" y2="218" class="divider"/>
-    <text x="88" y="255" class="eq">p = (X, D, I, O)</text>
-    <text x="88" y="292" class="body">State space and dynamics</text>
-    <text x="88" y="321" class="body">Admissible interventions</text>
-    <text x="88" y="350" class="body">Observable and measurement maps</text>
-    <rect x="88" y="369" width="142" height="30" rx="9" fill="#dbeafe"/>
-    <text x="106" y="389" class="status" fill="#1d4ed8">PHYSICAL MODEL</text>
+    <rect x="70" y="160" width="340" height="240" rx="16" fill="#f7fbff" stroke="#3b82f6" stroke-width="1.6"/>
+    <text x="94" y="196" class="boxTitle">1. Physical realization</text>
+    <line x1="94" y1="210" x2="386" y2="210" class="divider"/>
+    <text x="94" y="244" class="eq">p = (X, D, I, O)</text>
+    <text x="94" y="278" class="body">State space and dynamics</text>
+    <text x="94" y="304" class="body">Admissible interventions</text>
+    <text x="94" y="330" class="body">Observable and measurement maps</text>
+    <rect x="94" y="353" width="112" height="28" rx="8" fill="#dbeafe"/>
+    <text x="112" y="372" class="status" fill="#1d4ed8">PHYSICAL MODEL</text>
   </g>
 
   <g>
-    <rect x="485" y="160" width="395" height="250" rx="18" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
-    <text x="513" y="202" class="boxTitle">2. Physical quotient</text>
-    <line x1="513" y1="218" x2="852" y2="218" class="divider"/>
-    <text x="513" y="255" class="eq">Qₚ = P / ∼ₚ</text>
-    <text x="513" y="292" class="body">Removes representation artifacts:</text>
-    <text x="533" y="321" class="body">coordinates, units, labels, encodings</text>
-    <text x="513" y="350" class="body">Keeps declared physical content</text>
-    <rect x="513" y="369" width="148" height="30" rx="9" fill="#cffafe"/>
-    <text x="531" y="389" class="status" fill="#0e7490">P1 INVARIANCE</text>
+    <rect x="450" y="160" width="340" height="240" rx="16" fill="#f5fcfd" stroke="#0891b2" stroke-width="1.6"/>
+    <text x="474" y="196" class="boxTitle">2. Physical quotient</text>
+    <line x1="474" y1="210" x2="766" y2="210" class="divider"/>
+    <text x="474" y="244" class="eq">Qₚ = P / ∼ₚ</text>
+    <text x="474" y="278" class="body">Removes representation artifacts:</text>
+    <text x="494" y="304" class="body">coordinates, units, labels, encodings</text>
+    <text x="474" y="330" class="body">Keeps the declared physical content</text>
+    <rect x="474" y="353" width="118" height="28" rx="8" fill="#cffafe"/>
+    <text x="491" y="372" class="status" fill="#0e7490">P1 INVARIANCE</text>
   </g>
 
   <g>
-    <rect x="910" y="160" width="395" height="250" rx="18" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
-    <text x="938" y="202" class="boxTitle">3. Candidate physical signature</text>
-    <line x1="938" y1="218" x2="1277" y2="218" class="divider"/>
-    <text x="938" y="255" class="eq">F<tspan baseline-shift="sub" font-size="13">causal</tspan>(p) = [Cₚ]≅</text>
-    <text x="938" y="292" class="body">Response geometry Gₚ</text>
-    <text x="938" y="321" class="body">Directed interventional influence Aₚ</text>
-    <text x="938" y="350" class="body">Partition irreducibility Kₚ</text>
-    <rect x="938" y="369" width="164" height="30" rx="9" fill="#d1fae5"/>
-    <text x="956" y="389" class="status" fill="#047857">P11-P13 AUDITED</text>
+    <rect x="830" y="160" width="340" height="240" rx="16" fill="#f5fcf8" stroke="#059669" stroke-width="1.6"/>
+    <text x="854" y="196" class="boxTitle">3. Candidate physical signature</text>
+    <line x1="854" y1="210" x2="1146" y2="210" class="divider"/>
+    <text x="854" y="244" class="eq">F<tspan baseline-shift="sub" font-size="12">causal</tspan>(p) = [Cₚ]≅</text>
+    <text x="854" y="278" class="body">Response geometry  Gₚ</text>
+    <text x="854" y="304" class="body">Directed interventional influence  Aₚ</text>
+    <text x="854" y="330" class="body">Partition irreducibility  Kₚ</text>
+    <rect x="854" y="353" width="132" height="28" rx="8" fill="#d1fae5"/>
+    <text x="870" y="372" class="status" fill="#047857">P11-P13 AUDITED</text>
   </g>
 
   <g>
-    <rect x="1335" y="160" width="395" height="250" rx="18" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
-    <text x="1363" y="202" class="boxTitle">4. Bridge structure</text>
-    <line x1="1363" y1="218" x2="1702" y2="218" class="divider"/>
-    <text x="1363" y="255" class="eq">B̄ : Qₚ → Qₑ</text>
-    <text x="1363" y="292" class="body">Explicit bridge principles</text>
-    <text x="1363" y="321" class="body">Independent justification required</text>
-    <text x="1363" y="350" class="body">Empirical consequences required</text>
-    <rect x="1363" y="369" width="178" height="30" rx="9" fill="#ede9fe"/>
-    <text x="1381" y="389" class="status" fill="#6d28d9">UNRESOLVED LAYER</text>
+    <rect x="1210" y="160" width="320" height="240" rx="16" fill="#faf8ff" stroke="#7c3aed" stroke-width="1.6"/>
+    <text x="1234" y="196" class="boxTitle">4. Bridge structure</text>
+    <line x1="1234" y1="210" x2="1506" y2="210" class="divider"/>
+    <text x="1234" y="244" class="eq">B̄ : Qₚ → Qₑ</text>
+    <text x="1234" y="278" class="body">Explicit bridge principles</text>
+    <text x="1234" y="304" class="body">Independent justification required</text>
+    <text x="1234" y="330" class="body">Empirical consequences required</text>
+    <rect x="1234" y="353" width="150" height="28" rx="8" fill="#ede9fe"/>
+    <text x="1251" y="372" class="status" fill="#6d28d9">UNRESOLVED LAYER</text>
   </g>
 
-  <path class="arrow" d="M455 285 H473"/>
-  <path class="arrow" d="M880 285 H898"/>
-  <path class="arrow" d="M1305 285 H1323"/>
+  <path class="arrow" d="M410 280 H438"/>
+  <path class="arrow" d="M790 280 H818"/>
+  <path class="arrow" d="M1170 280 H1198"/>
 
   <g>
-    <rect x="1335" y="525" width="395" height="250" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
-    <text x="1363" y="567" class="boxTitle">5. Experiential quotient</text>
-    <line x1="1363" y1="583" x2="1702" y2="583" class="divider"/>
-    <text x="1363" y="620" class="eq">Qₑ = E / ∼ₑ</text>
-    <text x="1363" y="657" class="body">Formal experiential structures</text>
-    <text x="1363" y="686" class="body">Experiential equivalence relation</text>
-    <text x="1363" y="715" class="body">Independent target-side semantics</text>
-    <rect x="1363" y="734" width="178" height="30" rx="9" fill="#ffedd5"/>
-    <text x="1381" y="754" class="status" fill="#c2410c">CORE OPEN PROBLEM</text>
-  </g>
-
-  <g>
-    <rect x="910" y="525" width="395" height="250" rx="18" fill="#fffbeb" stroke="#d97706" stroke-width="2"/>
-    <text x="938" y="567" class="boxTitle">6. Observable predictions</text>
-    <line x1="938" y1="583" x2="1277" y2="583" class="divider"/>
-    <text x="938" y="620" class="eq">P<tspan baseline-shift="sub" font-size="13">T</tspan>(π, q)</text>
-    <text x="938" y="657" class="body">Theory-specific probability laws</text>
-    <text x="938" y="686" class="body">Generated under declared protocols</text>
-    <text x="938" y="715" class="body">Compared with independent evidence</text>
-    <rect x="938" y="734" width="170" height="30" rx="9" fill="#fef3c7"/>
-    <text x="956" y="754" class="status" fill="#a16207">P2-P4 TESTABLE</text>
+    <rect x="1210" y="500" width="320" height="220" rx="16" fill="#fffaf7" stroke="#ea580c" stroke-width="1.6"/>
+    <text x="1234" y="536" class="boxTitle">5. Experiential quotient</text>
+    <line x1="1234" y1="550" x2="1506" y2="550" class="divider"/>
+    <text x="1234" y="584" class="eq">Qₑ = E / ∼ₑ</text>
+    <text x="1234" y="618" class="body">Formal experiential structures</text>
+    <text x="1234" y="644" class="body">Experiential equivalence relation</text>
+    <rect x="1234" y="674" width="150" height="28" rx="8" fill="#ffedd5"/>
+    <text x="1250" y="693" class="status" fill="#c2410c">CORE OPEN PROBLEM</text>
   </g>
 
   <g>
-    <rect x="485" y="525" width="395" height="250" rx="18" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
-    <text x="513" y="567" class="boxTitle">7. Finite-data recovery</text>
-    <line x1="513" y1="583" x2="852" y2="583" class="divider"/>
-    <text x="513" y="620" class="eq">γₛ &gt; 4ε</text>
-    <text x="513" y="657" class="body">Explicit confidence requirements</text>
-    <text x="513" y="686" class="body">Finite trial-count guarantees</text>
-    <text x="513" y="715" class="body">Certification separated from fit</text>
-    <rect x="513" y="734" width="182" height="30" rx="9" fill="#dcfce7"/>
-    <text x="531" y="754" class="status" fill="#15803d">P7-P10 CERTIFIED</text>
+    <rect x="830" y="500" width="340" height="220" rx="16" fill="#fffdf5" stroke="#ca8a04" stroke-width="1.6"/>
+    <text x="854" y="536" class="boxTitle">6. Observable predictions</text>
+    <line x1="854" y1="550" x2="1146" y2="550" class="divider"/>
+    <text x="854" y="584" class="eq">P<tspan baseline-shift="sub" font-size="12">T</tspan>(π, q)</text>
+    <text x="854" y="618" class="body">Theory-specific probability laws</text>
+    <text x="854" y="644" class="body">Generated under declared protocols</text>
+    <rect x="854" y="674" width="150" height="28" rx="8" fill="#fef3c7"/>
+    <text x="870" y="693" class="status" fill="#a16207">P2-P4 TESTABLE</text>
   </g>
 
   <g>
-    <rect x="60" y="525" width="395" height="250" rx="18" fill="#fff1f2" stroke="#e11d48" stroke-width="2"/>
-    <text x="88" y="567" class="boxTitle">8. Falsification</text>
-    <line x1="88" y1="583" x2="427" y2="583" class="divider"/>
-    <text x="88" y="620" class="eq">Counterexample or no-go theorem</text>
-    <text x="88" y="657" class="body">Representation and identifiability</text>
-    <text x="88" y="686" class="body">Minimality, temporal, composition</text>
-    <text x="88" y="715" class="body">Empirical counterexamples</text>
-    <rect x="88" y="734" width="164" height="30" rx="9" fill="#ffe4e6"/>
-    <text x="106" y="754" class="status" fill="#be123c">ACTIVE PROGRAM</text>
+    <rect x="450" y="500" width="340" height="220" rx="16" fill="#f6fcf7" stroke="#16a34a" stroke-width="1.6"/>
+    <text x="474" y="536" class="boxTitle">7. Finite-data recovery</text>
+    <line x1="474" y1="550" x2="766" y2="550" class="divider"/>
+    <text x="474" y="584" class="eq">γₛ &gt; 4ε</text>
+    <text x="474" y="618" class="body">Explicit confidence requirements</text>
+    <text x="474" y="644" class="body">Finite trial-count guarantees</text>
+    <rect x="474" y="674" width="156" height="28" rx="8" fill="#dcfce7"/>
+    <text x="490" y="693" class="status" fill="#15803d">P7-P10 CERTIFIED</text>
   </g>
 
-  <path class="arrow" d="M1533 410 V513"/>
-  <path class="arrow" d="M1335 650 H1317"/>
-  <path class="arrow" d="M910 650 H892"/>
-  <path class="arrow" d="M485 650 H467"/>
+  <g>
+    <rect x="70" y="500" width="340" height="220" rx="16" fill="#fff8f9" stroke="#e11d48" stroke-width="1.6"/>
+    <text x="94" y="536" class="boxTitle">8. Falsification</text>
+    <line x1="94" y1="550" x2="386" y2="550" class="divider"/>
+    <text x="94" y="584" class="eq">Counterexample or no-go theorem</text>
+    <text x="94" y="618" class="body">Representation and identifiability</text>
+    <text x="94" y="644" class="body">Minimality, temporal, composition, empirical</text>
+    <rect x="94" y="674" width="142" height="28" rx="8" fill="#ffe4e6"/>
+    <text x="111" y="693" class="status" fill="#be123c">ACTIVE PROGRAM</text>
+  </g>
 
-  <rect x="60" y="855" width="1670" height="155" rx="18" fill="#0f172a"/>
-  <text x="94" y="895" style="font:700 19px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Strongest target</text>
-  <text x="94" y="934" style="font:600 20px Georgia,'Times New Roman',serif;fill:#e2e8f0">physical first principles + validated bridge premises + finite-data certification</text>
-  <text x="94" y="965" style="font:600 20px Georgia,'Times New Roman',serif;fill:#e2e8f0">→ formal experiential property</text>
-  <line x1="1500" y1="880" x2="1500" y2="985" stroke="#475569"/>
-  <text x="1535" y="912" style="font:700 12px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#94a3b8">RESEARCH STATUS</text>
-  <text x="1535" y="955" style="font:700 21px Inter,Segoe UI,Arial,sans-serif;fill:#f59e0b">OPEN</text>
+  <path class="arrow" d="M1370 400 V488"/>
+  <path class="arrow" d="M1210 610 H1182"/>
+  <path class="arrow" d="M830 610 H802"/>
+  <path class="arrow" d="M450 610 H422"/>
+
+  <rect x="70" y="800" width="1460" height="110" rx="14" fill="#0f172a"/>
+  <text x="100" y="838" style="font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Strongest target</text>
+  <text x="100" y="874" style="font:600 19px Georgia,'Times New Roman',serif;fill:#e2e8f0">physical first principles + validated bridge premises + finite-data certification  →  formal experiential property</text>
+  <line x1="1360" y1="822" x2="1360" y2="890" stroke="#475569"/>
+  <text x="1390" y="844" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.7px;fill:#94a3b8">RESEARCH STATUS</text>
+  <text x="1390" y="876" style="font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#f59e0b">OPEN</text>
 </svg>
