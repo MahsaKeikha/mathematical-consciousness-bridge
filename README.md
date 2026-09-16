@@ -100,6 +100,8 @@ flowchart LR
     B3 -->|Not found| B5[Model remains compatible\nnot proven true]
 ```
 
+**Figure 1. Scientific architecture of the project.** The research moves from physical dynamics to operationally measurable structure, then to mathematical sufficiency tests, target-side validity, finite-data certification, experimental design, and finally the still-open physical-to-experiential bridge. The arrows are logical dependencies, not claims that one layer has already been identified with consciousness.
+
 **How to read this diagram.** Research II is not trying to derive consciousness from a box of equations. It asks whether a specific claimed description is sufficient for a separately defined target. A failure tells us that the declared model is missing something relevant under its assumptions. It does not tell us automatically what the missing ingredient is.
 
 For the full technical architecture, see the [Visual Atlas](docs/figure_catalog.md) and [Technical Research Architecture](docs/research_architecture.md).
