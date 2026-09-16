@@ -56,7 +56,12 @@ def _word_count(text: str) -> int:
 
 
 def _citation_keys(text: str) -> set[str]:
-    return set(re.findall(r"@([A-Za-z0-9_:-]+)", text))
+    """Return Pandoc-style citation keys without mistaking email addresses for cites."""
+
+    # A real citation marker may follow whitespace or punctuation, for example
+    # [@key], (@key), or [@key1; @key2]. An email address has a word-like local
+    # part immediately before @, so exclude that context explicitly.
+    return set(re.findall(r"(?<![\w.+-])@([A-Za-z0-9_:-]+)", text))
 
 
 def _bib_keys(text: str) -> set[str]:
