@@ -994,3 +994,62 @@ img {
   }
 }
 /* END COMPLETE PROPOSITION NAVIGATOR */
+
+/* BEGIN COMPLETE SOURCE SEQUENCE */
+.source-proposition-sequence {
+  margin-top: 8px;
+}
+
+.source-sequence-roadmap {
+  margin: 26px 0 34px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--soft);
+}
+
+.source-sequence-rule {
+  display: grid;
+  grid-template-columns: minmax(130px, 0.3fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 18px;
+}
+
+.source-sequence-rule strong {
+  color: var(--accent2);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.source-sequence-rule span,
+.source-sequence-caption {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.62;
+}
+
+.source-sequence-caption {
+  margin: 14px 2px 0;
+}
+
+.source-proposition-sequence .proposition-nav-card {
+  scroll-margin-top: 100px;
+}
+
+.expanded-source-records {
+  margin-top: 48px;
+}
+
+@media (max-width: 680px) {
+  .source-sequence-roadmap {
+    padding: 14px;
+  }
+
+  .source-sequence-rule {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+}
+/* END COMPLETE SOURCE SEQUENCE */
