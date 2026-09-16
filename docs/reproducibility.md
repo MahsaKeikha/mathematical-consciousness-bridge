@@ -15,7 +15,7 @@ You do not need every command at once. Choose the route that matches your goal.
 | Regenerate the complete visual record | `make figures` |
 | Inspect CI without installing locally | GitHub Actions |
 
-The current public theorem frontier is **P99**. The formal release remains **v0.82.0**.
+The current public theorem frontier is **P100**. The formal release remains **v0.82.0**.
 
 ---
 
@@ -104,18 +104,18 @@ Use this route when you want to verify the current committed state without regen
 
 ---
 
-## 5. Focused audit of the current P99 frontier
+## 5. Focused audit of the current P100 frontier
 
-The current theorem frontier is **P99**.
+The current theorem frontier is **P100**.
 
 Its direct technical record is:
 
 ```text
-docs/proposition_99_cross_fitted_evalue_aggregation.md
-docs/p99_equation_provenance.md
-src/consciousness_bridge/cross_fitted_evalue_aggregation.py
-tests/test_cross_fitted_evalue_aggregation.py
-docs/figures/p99_cross_fitted_evalue_aggregation.svg
+docs/proposition_100_anytime_sequential_eprocess.md
+docs/p100_equation_provenance.md
+src/consciousness_bridge/anytime_sequential_eprocess.py
+tests/test_anytime_sequential_eprocess.py
+docs/figures/p100_anytime_sequential_eprocess.svg
 figures/manifest.json
 ```
 
@@ -123,22 +123,20 @@ Run the focused theorem and publication checks with:
 
 ```bash
 python -m pytest -q \
-  tests/test_cross_fitted_evalue_aggregation.py \
+  tests/test_anytime_sequential_eprocess.py \
+  tests/test_p100_reader_surface_coherence.py \
   tests/test_p99_reader_surface_coherence.py \
-  tests/test_p98_reader_surface_coherence.py \
-  tests/test_p97_reader_surface_coherence.py \
-  tests/test_frontier_reader_narrative.py \
   tests/test_figure_publication_sync.py \
   tests/test_frontier_publication_consistency.py
 python scripts/sync_figure_publication.py --check
 python scripts/verify_repository.py
 ```
 
-P99 converts selection-valid cross-fitted fold rejections into exact e-values. A finite calibration fixed before own-fold evaluation remains valid, and fixed convex averaging across folds uses expectation linearity rather than a final fold-independence assumption.
+P100 composes fresh P99 round e-values with predictable reserve stakes. Under the declared sequential null, each current round remains conditionally valid given the past, the cumulative product is a nonnegative supermartingale, and Ville's inequality protects repeated inspection and adaptive stopping.
 
-For two folds with two one-step-dependent regimes each, global alpha `1/20`, and fold test level `1/25`, the local regime level is `1/50`. The mathematical crossing is `3774` observations per regime, first exact replication is `3792`, and the unique-data totals are `15096` and `15168`.
+For the exact 95 percent checkpoint, a moderate round has `E_t = 25/2`, half stake gives `F_t = 27/4`, and two fresh rounds give `M_2 = 729/16 = 45.5625 > 20`. The inherited per-regime crossings are `3774 / 3792`; the two-round unique-data totals are `30192 / 30336`.
 
-P99 does not uniformly dominate P98. Own-fold leakage, post-hoc calibration search, dependent-stream pseudo-folds, model acceptance, consciousness identification, nonphysicality, and bridge completion remain outside P99.
+P100 does not make reused certification data fresh, permit current-round leakage, establish model acceptance, identify consciousness, establish nonphysicality, or complete the physical-to-experiential bridge.
 
 ---
 

@@ -26,18 +26,18 @@ validated as SVG documents and enriched with accessible `<title>` and `<desc>`
 metadata. They are not reclassified as empirical evidence simply because they
 are visual.
 
-## Current frontier: P99
+## Current frontier: P100
 
-![P99 current theorem frontier](p99_cross_fitted_evalue_aggregation.svg)
+![P100 current theorem frontier](p100_anytime_sequential_eprocess.svg)
 
-Canonical current-frontier figure: `p99_cross_fitted_evalue_aggregation.svg`
+Canonical current-frontier figure: `p100_anytime_sequential_eprocess.svg`
 
 Recent exact frontier figures:
 
-- `p96_selection_valid_holdout_stratification.svg`
 - `p97_simultaneous_candidate_family_selection.svg`
 - `p98_cross_fitted_selection_valid_certification.svg`
 - `p99_cross_fitted_evalue_aggregation.svg`
+- `p100_anytime_sequential_eprocess.svg`
 
 The GitHub-facing [`figures/`](../../figures/) gateway and its SHA-256
 [`manifest.json`](../../figures/manifest.json) are deterministically synchronized

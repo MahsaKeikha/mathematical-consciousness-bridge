@@ -4,7 +4,7 @@
 
 This page is an index, not another chapter. If you are still learning the overall story, go one layer up to the **[Research Map](research_map.md)**.
 
-The current documented theorem frontier is **P99**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains open.
+The current documented theorem frontier is **P100**. The formal release is **v0.82.0**. The final bridge from physical description to experience remains open.
 
 ---
 
@@ -89,17 +89,34 @@ Then follow P72 through P74 in the [Detailed Proposition Record](detailed_propos
 
 **Question:** Can the declared model of the target and its measurement actually reproduce the observations, or can it be rejected under its own assumptions?
 
-**Results:** P75 through P99
+**Results:** P75 through P100
 
 This branch moves from model adequacy to rejection with finite data, separation from the complete declared model set, certified bounds for continuous families, and increasingly strong exact tests that preserve shared parameters.
 
 **Start with:** [P75: Target Model Adequacy](proposition_75_target_model_adequacy_overidentification.md)
+
+**Current frontier:** [P100: Anytime-Valid Sequential E-Process](proposition_100_anytime_sequential_eprocess.md)
+
+**Immediate predecessor:** [P99: Cross-Fitted E-Value Aggregation](proposition_99_cross_fitted_evalue_aggregation.md)
 
 **Previous frontier:** [P97: Simultaneous Finite Candidate-Family Selection](proposition_97_simultaneous_candidate_family_selection.md)
 
 ---
 
 ## Audit the current frontier without searching folders
+
+For P100:
+
+| Audit surface | Canonical route |
+| --- | --- |
+| Direct theorem | [P100 proposition](proposition_100_anytime_sequential_eprocess.md) |
+| Equation and method provenance | [P100 provenance](p100_equation_provenance.md) |
+| Implementation | [`anytime_sequential_eprocess.py`](../src/consciousness_bridge/anytime_sequential_eprocess.py) |
+| Regression tests | [`test_anytime_sequential_eprocess.py`](../tests/test_anytime_sequential_eprocess.py) |
+| Theorem figure | [P100 anytime-valid sequential e-process](figures/p100_anytime_sequential_eprocess.svg) |
+| Repository reproduction | [Reproducibility Guide](reproducibility.md) |
+
+P100 is a conditional anytime-valid sequential model-audit result. Current-round plan, calibration, and stake choices must be predictable from past information only, and current certification data must preserve conditional P99 validity given that past. Reused-data relabeling and current-round leakage are not covered.
 
 For P99:
 
@@ -207,7 +224,7 @@ The [Detailed Proposition Record](detailed_proposition_record.md) is the complet
 
 ## Where the complete detail lives
 
-This page intentionally does **not** duplicate the full 99 proposition index.
+This page intentionally does **not** duplicate the full 100 proposition index.
 
 Use:
 
@@ -346,7 +363,7 @@ P97 permits same-data comparison and post-inspection selection only within a fin
 
 ## P98 immediate predecessor frontier
 
-**Current frontier:** [P99: Cross-Fitted E-Value Aggregation](proposition_99_cross_fitted_evalue_aggregation.md)
+**Immediate predecessor:** [P99: Cross-Fitted E-Value Aggregation](proposition_99_cross_fitted_evalue_aggregation.md)
 
 | What you want | Direct link |
 | --- | --- |

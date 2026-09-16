@@ -61,9 +61,9 @@ The current documented theorem frontier is **P97**. P97 permits same-data post-i
 
 P97 is a conditional model-rejection theorem. It does not validate newly generated post-inspection candidates, unrestricted search, model acceptance after non-rejection, consciousness identification, nonphysicality, or completion of the physical-to-experiential bridge.
 
-## Current theorem frontier: P99
+## Current theorem frontier: P100
 
-The current documented theorem frontier is **P99**. P99 turns selection-valid P96/P98 fold rejection indicators into exact e-values, permits a finite calibration mixture fixed before own-fold evaluation, and combines the resulting cross-fitted fold evidence by a fixed convex average. The aggregate remains a valid e-value without assuming the final fold certificates are independent, and a global level-alpha rejection is obtained at aggregate e-value at least `1/alpha`.
+The current documented theorem frontier is **P100**. P99 turns selection-valid P96/P98 fold rejection indicators into exact e-values, permits a finite calibration mixture fixed before own-fold evaluation, and combines the resulting cross-fitted fold evidence by a fixed convex average. The aggregate remains a valid e-value without assuming the final fold certificates are independent, and a global level-alpha rejection is obtained at aggregate e-value at least `1/alpha`.
 
 For the declared two-fold, two-regime, one-step-dependent distributed-evidence checkpoint at 95 percent confidence, the per-regime crossing is **3774** and the first denominator-24 exact replication is **3792**, with unique totals **15096 / 15168**. This is a configuration-specific gain over the matched equal-split P98 checkpoint, not a uniform dominance claim.
 
@@ -230,3 +230,7 @@ P96 is the selection-valid independent-holdout continuation of P95. Pilot inform
 - Figure: [`p96_selection_valid_holdout_stratification.svg`](docs/figures/p96_selection_valid_holdout_stratification.svg)
 
 The sample-splitting, conditioning, union-bound, and tower-property ingredients are standard. The repository-original contribution is their explicit integration with the P92-P95 sign-coherence chain and executable guards for this model-audit problem. P96 does not license same-data redesign, assume that a naive split of a dependent time series is independent, establish model acceptance after non-rejection, identify consciousness, or close the physical-to-experiential bridge.
+
+### P100 anytime-valid sequential e-process
+
+The P100 capstone composes fresh selection-valid P99 e-values with predictable reserve stakes into a nonnegative supermartingale. Its standard sequential ingredients are sourced to Ville and modern e-process/time-uniform inference literature; the repository-specific contribution is the exact integration with the P92-P99 certification chain, explicit current-round predictability/freshness guards, and the exact `729/16` two-round crossing.

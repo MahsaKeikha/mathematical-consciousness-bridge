@@ -329,3 +329,7 @@ The final theorem target requires these layers to meet explicitly rather than al
 **Reference:** Vladimir Vovk and Ruodu Wang, *E-values: Calibration, combination, and applications*, The Annals of Statistics 49(3), 1736-1754, DOI 10.1214/20-AOS2020.
 
 **Role here:** standard source for e-values, expectation-based evidence, and valid e-value averaging. P99 cites this work for the general evidence calculus and does not present those standard ingredients as repository-original.
+
+## Sequential evidence and anytime-valid inference used by P100
+
+P100 uses standard nonnegative-supermartingale and time-uniform inference machinery rather than claiming that machinery as new. Ville (1939) supplies the classical maximal inequality. Howard, Ramdas, McAuliffe, and Sekhon (2021) provide modern time-uniform inference context, and Vovk and Wang (2021) provide the e-value calibration and combination context already used by P99. P100's novel scope is the repository-specific exact integration with the P92-P99 certification chain.

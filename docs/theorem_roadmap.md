@@ -2,7 +2,7 @@
 
 This roadmap records the proved mathematical chain and the open route toward a scientifically meaningful physical-to-experiential bridge. It is organized by **logical dependency**, not by development date.
 
-The current documented theorem frontier is **P99**. The proposition record runs from **P1 through P99 with explicit dependency branches**. P71-P99 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
+The current documented theorem frontier is **P100**. The proposition record runs from **P1 through P100 with explicit dependency branches**. P71-P100 return to the core P19 bridge-sufficiency lineage; they do not extend the P61-P70 calibration branch.
 
 ![Core theorem roadmap](figures/theorem_roadmap.svg)
 
@@ -72,6 +72,8 @@ The current documented theorem frontier is **P99**. The proposition record runs 
 &\text{P98: rotated independent-block holdouts support cross-fitted selection-valid certification}\\
 &\Downarrow\\
 &\text{P99: exact e-value aggregation accumulates distributed cross-fitted evidence without fold independence}\\
+&\Downarrow\\
+&\text{P100: predictable reserve stakes turn fresh P99 rounds into an anytime-valid sequential e-process}\\
 \end{aligned}
 }
 \]
@@ -1001,6 +1003,40 @@ Direct proof: [P99](proposition_99_cross_fitted_evalue_aggregation.md). Provenan
 
 P99 does not validate own-fold leakage, post-hoc calibration search, dependent-stream pseudo-folds, misspecified local dependence, model acceptance, consciousness identification, nonphysicality, or bridge completion.
 
-## After P99
+## P100: anytime-valid sequential e-process
 
-P99 closes the finite fixed-round distributed-evidence aggregation gap left open by P98. A natural P100 direction is an anytime-valid sequential extension in which fresh independent certification rounds contribute e-values over time and optional stopping is controlled by an explicit test-martingale or e-process argument. The physical-to-experiential bridge remains open.
+P100 closes the fixed-round boundary left open by P99. Let `E_t` be the P99 e-value from the current certification round, and require conditional validity given the accumulated past:
+
+\[
+\mathbb E[E_t\mid\mathcal F_{t-1}]\le1.
+\]
+
+Choose an exact-rational stake `eta_t` from past information only and define
+
+\[
+F_t=(1-\eta_t)+\eta_tE_t,
+\qquad
+M_t=\prod_{s=1}^{t}F_s.
+\]
+
+Then `M_t` is a nonnegative supermartingale. Ville's inequality yields
+
+\[
+\Pr\left(\sup_t M_t\ge1/\alpha\right)\le\alpha,
+\]
+
+so the process may be inspected after every round and stopped at the first threshold crossing. Cross-round mutual independence is not the theorem's requirement; the essential requirement is current-round conditional e-value validity given the past, together with the inherited P99 within-round certification contract.
+
+At the exact 95 percent checkpoint, one moderate P99 round has `E_t = 25/2`. With half stake, `F_t = 27/4`; two fresh rounds give `M_2 = 729/16 = 45.5625 > 20`. The two-round unique-data accounting is 30192 at the mathematical crossing and 30336 at the first exact denominator-24 replication.
+
+- Proof: [P100](proposition_100_anytime_sequential_eprocess.md)
+- Provenance: [p100_equation_provenance.md](p100_equation_provenance.md)
+- Figure: [P100 anytime-valid sequential e-process](figures/p100_anytime_sequential_eprocess.svg)
+- Source: [`anytime_sequential_eprocess.py`](../src/consciousness_bridge/anytime_sequential_eprocess.py)
+- Tests: [`test_anytime_sequential_eprocess.py`](../tests/test_anytime_sequential_eprocess.py)
+
+P100 does not make reused observations fresh, permit current-round leakage, validate misspecified conditional null laws, establish model acceptance after non-rejection, identify a latent state with consciousness, establish nonphysicality, or close the physical-to-experiential bridge.
+
+## After P100
+
+P100 completes the planned P1-P100 theorem sequence for this publication cycle. The next priority is consolidation rather than proposition-number expansion: integrate the dependency chain, exact finite-data checkpoints, selection-validity hierarchy, and anytime-valid P100 capstone into the publication manuscript and preprint. Any later theorem extension should close a newly identified scientific or inferential gap rather than continue numbering for its own sake. The physical-to-experiential bridge remains open.

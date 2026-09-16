@@ -158,3 +158,13 @@ P99 extends the P98 cross-fitted design from simultaneous foldwise error spendin
 For two folds with two one-step-dependent regimes each, the declared 95 percent distributed-evidence checkpoint crosses at 3774 observations per regime and first reaches an exact denominator-24 replication at 3792. Unique two-fold totals are 15096 and 15168. The gain over P98 is configuration-specific, and neither procedure uniformly dominates the other.
 
 P99 does not justify own-fold leakage, post-hoc calibration search, naive dependent-stream splitting, model acceptance, consciousness identification, nonphysicality, or completion of the physical-to-experiential bridge. [Read P99](docs/proposition_99_cross_fitted_evalue_aggregation.md).
+
+### P100: anytime-valid sequential e-process
+
+P100 adds a sequential outer layer to P99. Each new certification round produces a P99 e-value `E_t` that must remain conditionally valid given the completed history. A stake `eta_t` is chosen from past information only, and the factor `F_t = (1 - eta_t) + eta_t E_t` updates the cumulative process `M_t`.
+
+The exact 95 percent checkpoint is intentionally easy to audit: `E_t = 25/2` is not individually decisive; half stake gives `F_t = 27/4`; two fresh rounds give `M_2 = 729/16 = 45.5625 > 20`. The declared two-round unique-data totals are `30192 / 30336`.
+
+The protection is anytime-valid because `M_t` is a nonnegative supermartingale under the declared sequential null and Ville's inequality controls the probability of ever crossing `1 / alpha`. P100 does not permit current-round leakage or reused-data relabeling.
+
+Direct proof: [P100](docs/proposition_100_anytime_sequential_eprocess.md).

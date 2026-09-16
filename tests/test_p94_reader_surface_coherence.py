@@ -39,8 +39,8 @@ def test_p94_remains_visible_below_later_frontiers() -> None:
     assert 'id="p94-reader-frontier"' in plain
     assert 'id="p94-reader-frontier"' in start
     assert 'id="p94-research-map"' in research
-    assert "99 results · current frontier P99" in plain
-    assert "99 results · current frontier P99" in start
+    assert "100 results · current frontier P100" in plain
+    assert "100 results · current frontier P100" in start
 
 
 def test_p94_drift_boundary_is_preserved_on_historical_surfaces() -> None:

@@ -54,11 +54,11 @@ You do **not** need to read the propositions in order to understand the project.
 
 If you want the complete theorem record, including assumptions, proofs, implementations, tests, figures, and scientific boundaries, use the **[Detailed Proposition Record](docs/detailed_proposition_record.md)** or the **[Theorem Roadmap](docs/theorem_roadmap.md)**.
 
-Historical selection-valid lineage: P96 introduced independent holdout certification after data-dependent plan selection; P97, P98, and P99 extend that line through finite candidate families, cross-fitting, and e-value aggregation.
+Historical selection-valid lineage: P96 introduced independent holdout certification after data-dependent plan selection; P97, P98, and P99 extend that line through finite candidate families, cross-fitting, and e-value aggregation. P100 adds the outer anytime-valid sequential layer across fresh certification rounds.
 
-The current public theorem frontier is **P99**. The formal release remains **v0.82.0**.
+The current public theorem frontier is **P100**. The formal release remains **v0.82.0**.
 
-**[Read the current frontier](docs/proposition_99_cross_fitted_evalue_aggregation.md)**
+**[Read the current frontier](docs/proposition_100_anytime_sequential_eprocess.md)**
 
 ---
 
@@ -72,17 +72,17 @@ The current public theorem frontier is **P99**. The formal release remains **v0.
 
 ### Current theorem frontier
 
-![P99 Cross-Fitted E-Value Aggregation](docs/figures/p99_cross_fitted_evalue_aggregation.svg)
+![P100 Anytime-Valid Sequential E-Process](docs/figures/p100_anytime_sequential_eprocess.svg)
 
-**Figure 2. P99 cross-fitted e-value aggregation.** P99 converts a selection-valid level-`tau` fold rejection into the exact e-value `R(tau)/tau`. Finite threshold mixtures remain valid when their calibration is frozen before own-fold evaluation. Fixed convex averaging across folds remains valid even when the cross-fitted fold certificates are dependent, because the proof uses expectation linearity rather than independence.
+**Figure 2. P100 anytime-valid sequential e-process.** P100 takes the selection-valid P99 e-value from each fresh certification round and forms the predictable reserve factor `F_t = (1 - eta_t) + eta_t E_t`. Under the sequential null, the conditional expectation of each factor is at most one, so the product `M_t` is a nonnegative supermartingale and Ville's inequality makes the first crossing of `1 / alpha` anytime-valid.
 
-For two equally weighted folds, two regimes per fold, one-step dependence, and 5 percent global error, the declared distributed-evidence design uses fold test level **1/25** and local regime level **1/50**. The exact mathematical crossing is **3774 observations per regime**, with first denominator-24 replication at **3792**. The unique two-fold totals are **15096 / 15168**. The matched equal-split P98 checkpoint is **4045 / 4056** per regime and **16180 / 16224** unique observations.
+At the exact 95 percent checkpoint, a moderate P99 round has `E_t = 25/2 = 12.5`, below the single-round threshold 20. With `eta_t = 1/2`, the factor is `27/4 = 6.75`. Two fresh rounds produce `M_2 = 729/16 = 45.5625 > 20`. The inherited mathematical crossing is 3774 observations per regime, exact denominator-24 replication is 3792, one round uses 15096 / 15168 unique observations, and the two-round crossing uses **30192 / 30336**.
 
-P99 does not uniformly dominate P98. It is designed to accumulate distributed evidence across several valid folds, while P98 can be better when one fold is individually decisive. P99 does not justify post-hoc calibration search, own-fold leakage, dependent-stream pseudo-folds, model acceptance, consciousness identification, nonphysicality, or completion of the physical-to-experiential bridge.
+P100 uses standard e-process, supermartingale, predictable-stake, and Ville-inequality machinery. The repository-specific result is the exact integration with P92-P99, explicit current-round predictability and freshness guards, exact-rational bookkeeping, and the reproducible two-round crossing. It does not validate reused-data relabeling, current-round leakage, model acceptance, consciousness identification, nonphysicality, or completion of the physical-to-experiential bridge.
 
-### Immediate predecessor: P97
+### Immediate predecessor: P99
 
-[P97: Simultaneous Finite Candidate-Family Selection](docs/proposition_97_simultaneous_candidate_family_selection.md) remains the immediate same-data selection predecessor to P98. P97 permits post-inspection choice only within a finite candidate family fixed before certification statistics are inspected and pays for that search through explicit multiplicity. P98 takes a different route by rotating genuinely independent certification blocks while enforcing own-fold exclusion.
+[P99: Cross-Fitted E-Value Aggregation](docs/proposition_99_cross_fitted_evalue_aggregation.md) is the immediate fixed-round evidence predecessor to P100. P99 aggregates valid cross-fitted evidence within one certification round; P100 adds the outer sequential layer across fresh rounds.
 
 ## Choose your path
 
@@ -128,6 +128,6 @@ For scholarly citation, see **[CITATION.md](CITATION.md)** and **[CITATION.cff](
 
 MIT License. See **[LICENSE](LICENSE)**.
 
-**Public theorem frontier:** P99
+**Public theorem frontier:** P100
 **Formal release:** v0.82.0
 **Final bridge from physical description to experience:** open

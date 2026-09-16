@@ -226,3 +226,11 @@ P99 asks whether moderate evidence from several selection-valid cross-fitted fol
 For two folds with two one-step-dependent regimes each, fold test level `1/25`, and global alpha `1/20`, the local regime level is `1/50`. The mathematical threshold is 3774 observations per regime and the first exact denominator-24 replication is 3792, with unique totals 15096 / 15168.
 
 P99 is complementary to P98. It can gain in distributed-evidence configurations but does not uniformly dominate P98. Own-fold leakage, post-hoc calibration search, dependent-stream pseudo-folds, model acceptance, consciousness identification, nonphysicality, and completion of the physical-to-experiential bridge remain outside the theorem.
+
+## P100: anytime-valid sequential e-process
+
+P100 adds the outer sequential layer to P99. Each current fresh P99 e-value must remain conditionally valid given the accumulated past; the current exact-rational stake must be chosen before current certification data are inspected. The product of reserve-stake factors is a nonnegative supermartingale, and Ville's inequality controls the probability of ever crossing `1/alpha`.
+
+At the exact 95 percent checkpoint, `E_t = 25/2`, `eta_t = 1/2`, and `F_t = 27/4`; two fresh rounds give `M_2 = 729/16 = 45.5625 > 20`. The declared two-round unique-data totals are `30192 / 30336`.
+
+Direct theorem: [P100](proposition_100_anytime_sequential_eprocess.md). Provenance: [P100 equation record](p100_equation_provenance.md).

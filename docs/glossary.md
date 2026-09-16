@@ -173,3 +173,11 @@ P93 is the historical IID finite-sample predecessor of P94. P92 remains the exac
 **Distributed evidence:** an evidence geometry in which several folds contribute moderately to the global rejection rather than one fold being individually decisive.
 
 **P99 boundary:** the theorem does not permit own-fold leakage, post-hoc calibration search, arbitrary dependent-stream splitting, model acceptance, consciousness identification, nonphysicality, or bridge completion. P99 does not uniformly dominate P98.
+
+### E-process
+
+A nonnegative evidence process whose sequential validity is preserved under the declared null. In P100, `M_t = product_{s <= t} ((1 - eta_s) + eta_s E_s)` is a nonnegative supermartingale when each current P99 e-value is conditionally valid given the past and each stake is predictable.
+
+### Predictable stake
+
+A stake chosen from information available before the current certification data are inspected. P100 permits adaptation to completed rounds but rejects current-round leakage.
