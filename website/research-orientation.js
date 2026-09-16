@@ -214,10 +214,22 @@
     document.head.appendChild(script);
   }
 
+  function loadAtlasArchitectureRefresh() {
+    if (currentFile() !== 'visual-atlas.html') return;
+    if (document.querySelector('script[data-atlas-architecture-refresh]')) return;
+
+    const script = document.createElement('script');
+    script.src = 'atlas-architecture-refresh.js';
+    script.defer = true;
+    script.dataset.atlasArchitectureRefresh = 'script';
+    document.head.appendChild(script);
+  }
+
   function initialize() {
     renderScientificOrientation();
     loadThreeProgramEvidence();
     loadSourceSectionVisuals();
+    loadAtlasArchitectureRefresh();
   }
 
   if (document.readyState === 'loading') {
