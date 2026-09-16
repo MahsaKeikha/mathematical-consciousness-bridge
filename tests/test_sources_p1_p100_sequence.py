@@ -36,7 +36,7 @@ def test_sources_has_exact_ordered_p1_p100_source_sequence():
     assert [number for number, _, _ in cards] == list(range(1, 101))
     assert len({number for number, _, _ in cards}) == 100
     assert [int(value) for value in re.findall(r'id="source-p(\d+)"', block)] == list(range(1, 101))
-    assert "Follow every theorem source from P1 through P100 in order" in block
+    assert "Research II: follow every theorem source from P1 through P100 in order" in block
     assert "Complete theorem roadmap P1-P100" in block
     assert "Core bridge lineage: P1-P24 then P71-P100" in block
     assert "physical-to-experiential bridge remains open" in block
