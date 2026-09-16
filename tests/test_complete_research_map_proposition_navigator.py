@@ -67,8 +67,8 @@ def test_complete_navigator_reader_text_obeys_punctuation_policy() -> None:
     block = page.split("<!-- BEGIN COMPLETE PROPOSITION NAVIGATOR -->", 1)[1].split(
         "<!-- END COMPLETE PROPOSITION NAVIGATOR -->", 1
     )[0]
-    assert "–" not in block
-    assert "—" not in block
+    assert "\u2013" not in block
+    assert "\u2014" not in block
 
 
 def test_research_map_p100_frontier_copy_is_current() -> None:
