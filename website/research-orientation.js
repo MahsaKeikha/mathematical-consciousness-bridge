@@ -112,13 +112,13 @@
       stage: 'Three-program visual evidence record',
       question: 'What visual evidence, architecture, or computational record belongs to Research I, Research II, and Research III, and what scientific status does each visual carry?',
       established:
-        'The Atlas separates Research I physical-system visuals, Research II theorem and frontier visuals, and Research III measurement-science architecture. Research I now exposes its complete 33-figure scientific-result inventory directly on the page. Within Research II, P100 remains the current visual frontier and the detailed archive remains current-first. Research III exposes its complete current three-figure canonical directory.',
+        'The Atlas now uses one explicit gallery language across all three programs. Research I exposes all 33 scientific-result figures. Research II renders exactly 100 unique canonical core visuals from the bundled release manifest while preserving the longer theorem archive separately. Research III exposes its complete pinned 3 / 3 canonical figure set.',
       open:
         'A figure does not upgrade the status of its underlying evidence. Research I world-tube recovery is not consciousness identification, Research II model rejection is not bridge completion, and Research III specification is not empirical or clinical validation.',
       links: [
         ['#research-i-complete-figure-gallery', 'Open all 33 Research I result figures'],
-        ['#research-ii-visual-program', 'Open Research II visuals'],
-        ['#research-iii-visual-program', 'Open Research III visuals'],
+        ['#research-ii-complete-core-gallery', 'Open all 100 Research II core visuals'],
+        ['#research-iii-complete-figure-gallery', 'Open all 3 Research III canonical figures'],
       ],
     },
     'sources.html': {
