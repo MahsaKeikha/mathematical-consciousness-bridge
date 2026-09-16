@@ -36,9 +36,9 @@
     <text x="108" y="189" class="step">DECLARE</text>
     <text x="70" y="232" class="cardTitle">Descriptor D</text>
     <text x="70" y="270" class="body">
-      <tspan x="70" dy="0">State exactly what physical</tspan>
-      <tspan x="70" dy="22">or computational information</tspan>
-      <tspan x="70" dy="22">is claimed to be sufficient.</tspan>
+      <tspan x="70" dy="0">State the exact physical</tspan>
+      <tspan x="70" dy="22">or computational content</tspan>
+      <tspan x="70" dy="22">claimed to be sufficient.</tspan>
     </text>
 
     <rect x="344" y="150" width="242" height="215" rx="18" fill="#ffffff" stroke="#cfd9e8" stroke-width="2"/>
@@ -48,8 +48,8 @@
     <text x="366" y="232" class="cardTitle">Independent target Y</text>
     <text x="366" y="270" class="body">
       <tspan x="366" dy="0">Define the target through</tspan>
-      <tspan x="366" dy="22">an independent measurement</tspan>
-      <tspan x="366" dy="22">or definition route.</tspan>
+      <tspan x="366" dy="22">an independent route.</tspan>
+      <tspan x="366" dy="22">Do not derive it from D.</tspan>
     </text>
 
     <rect x="640" y="150" width="242" height="215" rx="18" fill="#ffffff" stroke="#cfd9e8" stroke-width="2"/>
@@ -59,19 +59,19 @@
     <text x="662" y="232" class="cardTitle">Equivalent cases</text>
     <text x="662" y="274" class="formula">D(x₁) = D(x₂)</text>
     <text x="662" y="309" class="body">
-      <tspan x="662" dy="0">Choose cases the declared</tspan>
-      <tspan x="662" dy="22">descriptor treats as the same.</tspan>
+      <tspan x="662" dy="0">Choose cases that D</tspan>
+      <tspan x="662" dy="22">treats as equivalent.</tspan>
     </text>
 
     <rect x="936" y="150" width="216" height="215" rx="18" fill="#ffffff" stroke="#cfd9e8" stroke-width="2"/>
     <circle cx="970" cy="184" r="18" fill="#e9f0ff"/>
     <text x="970" y="189" text-anchor="middle" class="num">4</text>
     <text x="996" y="189" class="step">TEST</text>
-    <text x="958" y="232" class="cardTitle">Compare the target</text>
+    <text x="958" y="232" class="cardTitle">Test target Y</text>
     <text x="958" y="274" class="formula">Y(x₁) ?= Y(x₂)</text>
     <text x="958" y="309" class="body">
-      <tspan x="958" dy="0">Does the independent target</tspan>
-      <tspan x="958" dy="22">still distinguish the cases?</tspan>
+      <tspan x="958" dy="0">Does target Y still</tspan>
+      <tspan x="958" dy="22">distinguish the cases?</tspan>
     </text>
   </g>
 
