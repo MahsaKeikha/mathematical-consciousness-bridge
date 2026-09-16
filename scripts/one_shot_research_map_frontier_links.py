@@ -33,7 +33,7 @@ def main() -> None:
     marker = "def test_research_map_historical_sections_link_to_current_p100_frontier() -> None:"
     if marker not in test:
         test += '''\n\n\ndef test_research_map_historical_sections_link_to_current_p100_frontier() -> None:\n    page = PAGE.read_text(encoding="utf-8")\n    assert 'visual-atlas.html#p100-frontier">See the current P100 figure</a>' in page\n    assert 'visual-atlas.html#p100-frontier">Current P100 frontier</a>' in page\n    assert 'visual-atlas.html#p96-frontier">Current frontier</a>' not in page\n    assert '>See the P96 figure</a>' not in page\n'''
-    TEST.write_text(test + "\n", encoding="utf-8")
+    TEST.write_text(test.rstrip() + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":
