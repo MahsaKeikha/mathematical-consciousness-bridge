@@ -79,3 +79,85 @@ def test_footer_loads_research_map_guide_only_on_research_map() -> None:
     assert "currentFile() !== 'research-map.html'" in script
     assert "script.src = 'research-map-guide.js'" in script
     assert "loadResearchMapGuide();" in script
+
+
+def test_sitewide_card_affordance_contract_is_explicit() -> None:
+    script = (WEBSITE / "footer.js").read_text(encoding="utf-8")
+
+    for selector in (
+        ".result",
+        ".flow-node",
+        ".figure-card",
+        ".card",
+        ".frontier-summary-card",
+        ".evidence-card",
+        ".reader-primer-card",
+        ".reader-step-card",
+        ".source-grid > a",
+        ".research-program-card",
+        ".lineage-mini-card",
+        ".trail-card",
+        ".theorem-figure-shell",
+    ):
+        assert selector in script
+
+    assert "function classifyCardAffordances()" in script
+    assert "card-affordance-actionable" in script
+    assert "card-affordance-static" in script
+    assert "card-action-hint" in script
+    assert "Open →" in script
+    assert "interactive-card::after" in script
+    assert "content: none !important" in script
+    assert "classifyCardAffordances();" in script
+
+
+def test_p100_overview_cards_have_exact_theorem_destinations() -> None:
+    script = (WEBSITE / "footer.js").read_text(encoding="utf-8")
+    proof = (ROOT / "docs" / "proposition_100_anytime_sequential_eprocess.md").read_text(
+        encoding="utf-8"
+    )
+
+    expected = (
+        (
+            "Collect certification data that were not used to choose their own test",
+            "#p100b-conditional-p99-round-validity",
+            "## P100B. Conditional P99 round validity",
+        ),
+        (
+            "Turn each valid round into evidence that can be multiplied safely",
+            "#p100d-product-process-is-a-nonnegative-supermartingale",
+            "## P100D. Product process is a nonnegative supermartingale",
+        ),
+        (
+            "Inspect after every round without paying a new error penalty for every look",
+            "#p100e-anytime-valid-rejection-by-villes-inequality",
+            "## P100E. Anytime-valid rejection by Ville's inequality",
+        ),
+        (
+            "Predictable reserve stake",
+            "#p100c-predictable-reserve-stake-factor",
+            "## P100C. Predictable reserve-stake factor",
+        ),
+        (
+            "Exact two-round checkpoint",
+            "#p100g-exact-95-percent-moderate-evidence-checkpoint",
+            "## P100G. Exact 95 percent moderate-evidence checkpoint",
+        ),
+    )
+    for heading, fragment, theorem_heading in expected:
+        assert heading in script
+        assert fragment in script
+        assert theorem_heading in proof
+
+
+def test_p100_full_technical_figure_control_is_replaced_by_real_link() -> None:
+    overview = (WEBSITE / "index.html").read_text(encoding="utf-8")
+    script = (WEBSITE / "footer.js").read_text(encoding="utf-8")
+    atlas = (WEBSITE / "visual-atlas.html").read_text(encoding="utf-8")
+
+    assert '<details class="technical-figure-details">' in overview
+    assert "function fixP100TechnicalFigureControl()" in script
+    assert "details.replaceWith(link)" in script
+    assert "visual-atlas.html#p100-frontier" in script
+    assert "Open the full technical P100 theorem figure →" in script
+    assert 'id="p100-frontier"' in atlas
