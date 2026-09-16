@@ -8,12 +8,17 @@ on:
       - .github/workflows/one-shot-p100-roadmap-coherence.yml
       - scripts/one_shot_p100_roadmap_patch.py
 
+permissions:
+  contents: write
+
 jobs:
   build-patch:
     runs-on: ubuntu-latest
     steps:
       - name: Check out coherence branch
         uses: actions/checkout@v4
+        with:
+          ref: static-p100-reader-metadata-coherence
 
       - name: Generate corrected roadmap and reader files
         run: python scripts/one_shot_p100_roadmap_patch.py
@@ -70,13 +75,14 @@ jobs:
       - name: Verify clean patch formatting
         run: git diff --check
 
-      - name: Upload corrected files
-        uses: actions/upload-artifact@v4
-        with:
-          name: p100-roadmap-coherence
-          path: |
-            docs/theorem_roadmap.md
-            website/research-map.html
-            website/plain-language.html
-            tests/test_p100_roadmap_coherence.py
-          if-no-files-found: error
+      - name: Commit verified coherence files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/theorem_roadmap.md website/research-map.html website/plain-language.html tests/test_p100_roadmap_coherence.py
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit"
+            exit 0
+          fi
+          git commit -m "Complete P1-P100 roadmap and static reader frontier"
+          git push origin HEAD:static-p100-reader-metadata-coherence
