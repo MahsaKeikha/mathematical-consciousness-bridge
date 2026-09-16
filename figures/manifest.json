@@ -720,7 +720,7 @@
     },
     {
       "path": "docs/figures/p99_cross_fitted_evalue_aggregation.svg",
-      "sha256": "8b988b9cc29714fc10d1875a307a459887fd468f432afbad55ade1acd7dea0c0",
+      "sha256": "988666331f653296c50777720b6ab0d14fe96a9c4c89fc504a8257d6e9c06a20",
       "bytes": 6621,
       "category": "theorem-or-architecture",
       "title": "P99 Cross-Fitted E-Value Aggregation",
