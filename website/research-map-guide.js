@@ -12,7 +12,7 @@
       number: 11,
       title: 'Intervention-resolved causal structure',
       role: 'Move from passive state description to controlled physical response structure.',
-      slug: 'intervention_causal_structure',
+      slug: 'intervention_resolved_causal_structure',
     },
     {
       number: 19,
