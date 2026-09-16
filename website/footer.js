@@ -237,6 +237,35 @@
     addCardHint(card);
   }
 
+  function neutralizeAmbiguousWholeCard(card) {
+    card.classList.remove('interactive-card', 'card-affordance-actionable');
+    card.classList.add('card-affordance-static', 'card-affordance-multi');
+    card.removeAttribute('role');
+    card.removeAttribute('tabindex');
+
+    if (card.dataset.ambiguityGuardReady === 'true') return;
+    card.dataset.ambiguityGuardReady = 'true';
+
+    card.addEventListener(
+      'click',
+      (event) => {
+        if (event.target.closest('a, button, input, select, textarea, summary')) return;
+        event.stopImmediatePropagation();
+      },
+      true,
+    );
+    card.addEventListener(
+      'keydown',
+      (event) => {
+        if (event.target.closest('a, button, input, select, textarea, summary')) return;
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        event.stopImmediatePropagation();
+      },
+      true,
+    );
+  }
+
   function p100CardTarget(card) {
     if (currentFile() !== 'index.html') return null;
     if (!card.closest('#p100-frontier')) return null;
@@ -256,6 +285,11 @@
       const isAlreadyInteractive = card.classList.contains('interactive-card');
       const nestedLinks = Array.from(card.querySelectorAll('a[href]'));
       const uniqueTargets = new Set(nestedLinks.map((link) => link.href));
+
+      if (!nativeLink && uniqueTargets.size > 1) {
+        neutralizeAmbiguousWholeCard(card);
+        return;
+      }
 
       if (nativeLink || isAlreadyInteractive) {
         card.classList.remove('card-affordance-static');
