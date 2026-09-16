@@ -24,7 +24,7 @@ def test_p98_formal_record_is_complete() -> None:
         assert (ROOT / path).is_file()
 
 
-def test_p98_is_preserved_below_p99() -> None:
+def test_p98_is_historical_in_atlas_and_chronological_on_research_map() -> None:
     verifier = _read("scripts/verify_repository.py")
     atlas = _read("website/visual-atlas.html")
     plain = _read("website/plain-language.html")
@@ -37,9 +37,10 @@ def test_p98_is_preserved_below_p99() -> None:
     assert 'id="p98-reader-frontier"' in plain
     assert 'id="p98-reader-frontier"' in start
     assert 'id="p98-research-map"' in research
-    assert research.index('id="p99-research-map"') < research.index('id="p98-research-map"')
+    assert research.index('id="p98-research-map"') < research.index('id="p99-research-map"')
     assert "100 results · current frontier P100" in plain
     assert "100 results · current frontier P100" in start
+
 
 def test_p98_repository_audit_surfaces_preserve_history() -> None:
     readme = _read("README.md")
@@ -58,6 +59,7 @@ def test_p98_repository_audit_surfaces_preserve_history() -> None:
     assert "The current public theorem frontier is **P100**." in reproducibility
     assert "## 5. Focused audit of the current P100 frontier" in reproducibility
     assert "P98" in citation and "P99" in citation
+
 
 def test_p98_scientific_boundary_is_visible() -> None:
     for path in (
