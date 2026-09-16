@@ -64,7 +64,7 @@ def test_research_iii_complete_figure_directory_is_explicit() -> None:
         assert figure in EVIDENCE
 
 
-def test_research_i_source_manifest_exposes_formal_and_machine_records() -> None:
+def test_research_i_source_manifest_exposes_formal_machine_and_visual_records() -> None:
     required = (
         "docs/visual_research_guide.md",
         "docs/research_index.md",
@@ -78,11 +78,13 @@ def test_research_i_source_manifest_exposes_formal_and_machine_records() -> None
         "observer_bridge_dimension_audit.json",
     )
     assert "research-i-source-manifest" in EVIDENCE
+    assert "All 33 scientific result figures with provenance" in EVIDENCE
+    assert "researchIFigures.map(figureCard)" in EVIDENCE
     for token in required:
         assert token in EVIDENCE
 
 
-def test_research_iii_source_manifest_exposes_full_specification_path() -> None:
+def test_research_iii_source_manifest_exposes_full_specification_and_visuals() -> None:
     required = (
         "docs/epistemic-boundaries.md",
         "docs/measurement-framework.md",
@@ -99,6 +101,8 @@ def test_research_iii_source_manifest_exposes_full_specification_path() -> None:
         "scripts/verify_repository_policy.py",
     )
     assert "research-iii-source-manifest" in EVIDENCE
+    assert "Complete canonical Research III figure set with provenance" in EVIDENCE
+    assert "researchIIIFigures.map(researchIIIFigureCard)" in EVIDENCE
     for token in required:
         assert token in EVIDENCE
 
