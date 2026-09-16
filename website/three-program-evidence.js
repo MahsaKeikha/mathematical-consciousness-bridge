@@ -142,9 +142,9 @@
   ];
 
   const researchIIIFigures = [
-    ['Measurement architecture', 'docs/figures/measurement_architecture.svg'],
-    ['Structural measurement pipeline', 'docs/figures/structural_measurement_pipeline.svg'],
-    ['M0-M7 claim ladder', 'docs/figures/claim_ladder.svg'],
+    ['Measurement architecture', 'docs/figures/measurement_architecture.svg', 'docs/measurement-framework.md'],
+    ['Structural measurement pipeline', 'docs/figures/structural_measurement_pipeline.svg', 'docs/phenomenal-structure.md'],
+    ['M0-M7 claim ladder', 'docs/figures/claim_ladder.svg', 'docs/claim-registry.md'],
   ];
 
   function currentFile() {
@@ -198,6 +198,21 @@
       </article>`;
   }
 
+  function researchIIIFigureCard([title, path, context]) {
+    const image = `${MEASUREMENT_RAW}/${path}`;
+    const figurePage = `${MEASUREMENT_REPO}/blob/main/${path}`;
+    const contextPage = `${MEASUREMENT_REPO}/blob/main/${context}`;
+    return `
+      <article class="complete-figure-card" data-research-iii-figure="${path}">
+        <a href="${figurePage}" aria-label="Open full-resolution ${title}"><img loading="lazy" decoding="async" src="${image}" alt="Research III ${title}" /></a>
+        <div class="complete-figure-card-body">
+          <span class="figure-phase">Research III · canonical figure</span>
+          <h4>${title}</h4>
+          <div class="figure-source-links"><a href="${contextPage}">Scientific context</a><a href="${figurePage}">Figure source</a></div>
+        </div>
+      </article>`;
+  }
+
   function renderResearchIAtlas() {
     const section = document.getElementById('research-i-visual-program');
     if (!section || document.getElementById('research-i-complete-figure-gallery')) return;
@@ -237,13 +252,12 @@
     const block = document.createElement('div');
     block.className = 'complete-record-block';
     block.id = 'research-i-source-manifest';
-    const figureLinks = researchIFigures.map(([, title, file]) => `<a class="manifest-link" href="${OBSERVER_REPO}/blob/main/docs/${file}">${title}<small>docs/${file}</small></a>`).join('');
     const dataLinks = researchIDataSources.map(file => `<a class="manifest-link" href="${OBSERVER_REPO}/blob/main/docs/${file}">${file.replace(/\.json$/, '').replaceAll('_', ' ')}<small>docs/${file}</small></a>`).join('');
     block.innerHTML = `
-      <div class="complete-record-head"><div><span class="record-badge">Research I source manifest</span><h3>The provenance record is visible here, not only one click away</h3><p>Core documentation, the P44-P58 formal frontier, all 33 scientific result figure files, and machine-readable result records are indexed directly on this page.</p></div><span class="record-badge">58 results · 33 result figures</span></div>
+      <div class="complete-record-head"><div><span class="record-badge">Research I source manifest</span><h3>The provenance record is visible here, not only one click away</h3><p>Core documentation, the P44-P58 formal frontier, all 33 scientific result figures, and machine-readable result records are shown directly on this page.</p></div><span class="record-badge">58 results · 33 result figures</span></div>
       <div class="manifest-group"><h4>Core scientific and reproducibility documents</h4>${linkGrid(researchICoreSources, OBSERVER_REPO)}</div>
       <div class="manifest-group"><h4>P44-P58 formal frontier sources</h4>${linkGrid(researchIFrontierSources, OBSERVER_REPO)}</div>
-      <div class="manifest-group"><h4>All 33 scientific result figure source files</h4><div class="figure-file-grid">${figureLinks}</div></div>
+      <div class="manifest-group"><h4>All 33 scientific result figures with provenance</h4><div class="complete-figure-grid">${researchIFigures.map(figureCard).join('')}</div></div>
       <div class="manifest-group"><h4>Machine-readable result records</h4><div class="figure-file-grid">${dataLinks}</div></div>`;
     section.appendChild(block);
   }
@@ -254,12 +268,11 @@
     const block = document.createElement('div');
     block.className = 'complete-record-block';
     block.id = 'research-iii-source-manifest';
-    const figureLinks = researchIIIFigures.map(([label, path]) => `<a class="manifest-link" href="${MEASUREMENT_REPO}/blob/main/${path}">${label}<small>${path}</small></a>`).join('');
     block.innerHTML = `
-      <div class="complete-record-head"><div><span class="record-badge">Research III source manifest</span><h3>Measurement-science specification, figures, schemas, and audit files</h3><p>The complete reader-facing documentation map and the current canonical figure directory are surfaced directly here. Their status remains specification and computational scaffold unless a document explicitly records empirical validation.</p></div><span class="record-badge">3 / 3 canonical figures</span></div>
+      <div class="complete-record-head"><div><span class="record-badge">Research III source manifest</span><h3>Measurement-science specification, figures, schemas, and audit files</h3><p>The complete reader-facing documentation map and all current canonical Research III figures are shown directly here. Their status remains specification and computational scaffold unless a document explicitly records empirical validation.</p></div><span class="record-badge">3 / 3 canonical figures</span></div>
       <div class="manifest-group"><h4>Reader-facing scientific specification</h4>${linkGrid(researchIIIDocSources, MEASUREMENT_REPO)}</div>
       <div class="manifest-group"><h4>Machine-readable schemas and verification</h4>${linkGrid(researchIIIMachineSources, MEASUREMENT_REPO)}</div>
-      <div class="manifest-group"><h4>Complete canonical Research III figure directory</h4><div class="source-manifest-grid">${figureLinks}</div></div>`;
+      <div class="manifest-group"><h4>Complete canonical Research III figure set with provenance</h4><div class="complete-figure-grid">${researchIIIFigures.map(researchIIIFigureCard).join('')}</div></div>`;
     section.appendChild(block);
   }
 
