@@ -1,0 +1,27 @@
+name: temp-sync-figure-manifest
+
+on:
+  push:
+    branches: ["fix-p95-p99-p100-svg-overflow"]
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - name: Regenerate synchronized figure publication metadata
+        run: |
+          python scripts/sync_figure_publication.py
+          python scripts/sync_figure_publication.py --check
+      - name: Upload synchronized manifest
+        uses: actions/upload-artifact@v4
+        with:
+          name: synchronized-figure-manifest
+          path: figures/manifest.json
+          if-no-files-found: error
