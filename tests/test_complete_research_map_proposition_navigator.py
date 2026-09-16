@@ -74,7 +74,7 @@ def test_complete_navigator_reader_text_obeys_punctuation_policy() -> None:
 def test_research_map_p100_frontier_copy_is_current() -> None:
     page = PAGE.read_text(encoding="utf-8")
     assert "P19 and P71-P100: from sufficiency to selection-valid and anytime-valid target-model falsification" in page
-    assert "P77-P100: from full-law rejection to anytime-valid sequential certification" in page
+    assert "P77-P100: one ordered path from model-set rejection to anytime-valid sequential certification" in page
     assert "P100 remains a conditional sequential model-rejection theorem" in page
     assert "P97 protects same-data selection over a finite predeclared candidate family" in page
     assert "P99 aggregates distributed cross-fitted evidence with e-values" in page
@@ -93,9 +93,10 @@ def test_navigator_cards_render_plain_reader_text() -> None:
     assert "<strong>Full mixed-prevalence P75 separation bracket" in block
 
 
-def test_research_map_historical_sections_link_to_current_p100_frontier() -> None:
+def test_research_map_ordered_sequence_links_to_current_p100_frontier() -> None:
     page = PAGE.read_text(encoding="utf-8")
-    assert 'visual-atlas.html#p100-frontier">See the current P100 figure</a>' in page
-    assert 'visual-atlas.html#p100-frontier">Current P100 frontier</a>' in page
+    assert 'visual-atlas.html#p100-frontier">See the P100 figure</a>' in page
+    assert 'index.html#p100-frontier">Open P100 overview</a>' in page
+    assert 'docs/p100_equation_provenance.md">Audit P100 provenance</a>' in page
     assert 'visual-atlas.html#p96-frontier">Current frontier</a>' not in page
     assert '>See the P96 figure</a>' not in page
