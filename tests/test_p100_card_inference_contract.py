@@ -16,7 +16,7 @@ def test_app_refuses_to_infer_whole_card_link_for_ranges_or_multiple_proposition
     app = (WEBSITE / "app.js").read_text(encoding="utf-8")
 
     assert r"/\bP\d{1,3}\s*-\s*P?\d{1,3}\b/i" in app
-    assert "new Set(propositionMentions(text)).size > 1" in app
+    assert "new Set(propositionMentions(value)).size > 1" in app
     assert "if (hasAmbiguousPropositionText(text)) return null;" in app
 
 
