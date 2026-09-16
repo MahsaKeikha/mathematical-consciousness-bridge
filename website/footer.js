@@ -18,6 +18,10 @@
     'Check scientific boundary': [`${REPO}/blob/main/docs/claim_evidence_standard.md`, 'Open claim and evidence standard'],
   };
 
+  function currentFile() {
+    return window.location.pathname.split('/').pop() || 'index.html';
+  }
+
   function addAuthorAttribution() {
     document.querySelectorAll('footer').forEach((footer) => {
       let attribution = footer.querySelector('.footer-attribution');
@@ -40,8 +44,7 @@
   }
 
   function wireSourceCards() {
-    const file = window.location.pathname.split('/').pop() || 'index.html';
-    if (file !== 'sources.html') return;
+    if (currentFile() !== 'sources.html') return;
 
     document.querySelectorAll('.result, .flow-node').forEach((card) => {
       const heading = card.querySelector('h3')?.textContent?.trim();
@@ -64,9 +67,20 @@
     });
   }
 
+  function loadResearchMapGuide() {
+    if (currentFile() !== 'research-map.html') return;
+    if (document.querySelector('script[data-research-map-guide]')) return;
+
+    const script = document.createElement('script');
+    script.src = 'research-map-guide.js';
+    script.dataset.researchMapGuide = 'true';
+    document.head.append(script);
+  }
+
   function run() {
     addAuthorAttribution();
     wireSourceCards();
+    loadResearchMapGuide();
   }
 
   if (document.readyState === 'loading') {
