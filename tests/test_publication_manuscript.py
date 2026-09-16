@@ -21,3 +21,15 @@ def _load_verifier():
 def test_publication_manuscript_contracts() -> None:
     verifier = _load_verifier()
     assert verifier.validate() == []
+
+
+def test_publication_citation_parser_ignores_email_addresses() -> None:
+    verifier = _load_verifier()
+    text = (
+        "Correspondence: mahsa@connectioncare.net. "
+        "See [@sethbayne2022theories; @cogitate2025adversarial]."
+    )
+    assert verifier._citation_keys(text) == {
+        "sethbayne2022theories",
+        "cogitate2025adversarial",
+    }
