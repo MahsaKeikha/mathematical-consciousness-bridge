@@ -165,3 +165,18 @@ def test_p100_full_technical_figure_control_is_replaced_by_real_link() -> None:
     assert "visual-atlas.html#p100-frontier" in script
     assert "Open the full technical P100 theorem figure →" in script
     assert 'id="p100-frontier"' in atlas
+
+
+def test_about_page_uses_measurement_science_language_for_human_signals() -> None:
+    about = (WEBSITE / "about.html").read_text(encoding="utf-8")
+
+    assert (
+        "What can observable human signals legitimately tell us about an underlying conscious "
+        "or experiential target, and what remains non-identifiable?"
+    ) in about
+    assert "A physiological signal is not consciousness." in about
+    assert "A neural measurement is not experience." in about
+    assert "Measurement, latent human state, and the limits of inference" in about
+    assert "separately defined experiential or consciousness-related target" in about
+    assert "identity, experience, and dignity" not in about
+    assert "Measurement, dignity" not in about
