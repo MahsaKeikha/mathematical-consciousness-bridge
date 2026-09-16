@@ -1,120 +1,99 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="920" viewBox="0 0 1600 920" role="img" aria-labelledby="title desc">
-  <title id="title">Research II testing architecture</title>
-  <desc id="desc">A four step diagram showing how Research II declares a physical or computational descriptor, defines the target independently, matches descriptor equivalent cases, compares the target, and distinguishes between a surviving test and falsification of the declared sufficiency claim.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">Research II sufficiency test in four steps</title>
+  <desc id="desc">A compact four step Research II diagram. Declare a physical or computational descriptor, define the target independently, match cases that are equivalent under the descriptor, then test whether the independent target distinguishes those cases. No separation means the descriptor survives this test without being validated. Separation means the declared descriptor is insufficient for that target.</desc>
   <defs>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="8" stdDeviation="18" flood-color="#1a2d55" flood-opacity="0.08"/>
-    </filter>
-    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6e8fc5"/>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#6482b8"/>
     </marker>
     <style>
       .ui { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
       .display { font-family: Georgia, "Times New Roman", serif; }
-      .kicker { font-size: 17px; font-weight: 750; letter-spacing: 3px; fill: #365aa8; }
-      .title { font-size: 46px; font-weight: 700; fill: #172033; }
-      .subtitle { font-size: 22px; fill: #5a6578; }
-      .step { font-size: 16px; font-weight: 800; letter-spacing: 1.5px; fill: #365aa8; }
-      .cardTitle { font-size: 27px; font-weight: 760; fill: #172033; }
-      .body { font-size: 20px; fill: #5a6578; }
-      .formula { font-size: 27px; font-weight: 700; fill: #233a75; }
-      .outcomeTitle { font-size: 26px; font-weight: 760; }
-      .outcomeBody { font-size: 19px; fill: #596579; }
-      .boundaryLabel { font-size: 15px; font-weight: 800; letter-spacing: 2px; fill: #365aa8; }
-      .boundary { font-size: 18px; fill: #5a6578; }
+      .kicker { font-size: 14px; font-weight: 800; letter-spacing: 2.2px; fill: #365aa8; }
+      .title { font-size: 31px; font-weight: 700; fill: #172033; }
+      .subtitle { font-size: 16px; fill: #586477; }
+      .num { font-size: 15px; font-weight: 800; fill: #365aa8; }
+      .step { font-size: 13px; font-weight: 800; letter-spacing: 1.1px; fill: #365aa8; }
+      .cardTitle { font-size: 20px; font-weight: 760; fill: #172033; }
+      .formula { font-size: 22px; font-weight: 720; fill: #233a75; }
+      .body { font-size: 15px; fill: #586477; }
+      .outcomeKicker { font-size: 12px; font-weight: 800; letter-spacing: 1px; }
+      .outcomeTitle { font-size: 18px; font-weight: 760; fill: #172033; }
+      .outcomeBody { font-size: 14px; fill: #586477; }
+      .boundary { font-size: 13px; fill: #586477; }
     </style>
   </defs>
 
-  <rect width="1600" height="920" rx="28" fill="#f8faff"/>
+  <rect width="1200" height="620" rx="20" fill="#f8faff"/>
 
-  <text x="800" y="62" text-anchor="middle" class="ui kicker">RESEARCH II</text>
-  <text x="800" y="118" text-anchor="middle" class="display title">Bridge sufficiency and falsification</text>
-  <text x="800" y="158" text-anchor="middle" class="ui subtitle">Turn a declared physical sufficiency claim into a test that can genuinely fail.</text>
-
-  <g filter="url(#shadow)">
-    <rect x="42" y="220" width="335" height="330" rx="24" fill="#ffffff" stroke="#d6dfef" stroke-width="2"/>
-    <rect x="426" y="220" width="335" height="330" rx="24" fill="#ffffff" stroke="#d6dfef" stroke-width="2"/>
-    <rect x="810" y="220" width="335" height="330" rx="24" fill="#ffffff" stroke="#d6dfef" stroke-width="2"/>
-    <rect x="1194" y="220" width="364" height="330" rx="24" fill="#ffffff" stroke="#d6dfef" stroke-width="2"/>
-  </g>
+  <text x="48" y="44" class="ui kicker">RESEARCH II</text>
+  <text x="48" y="82" class="display title">Sufficiency test in four steps</text>
+  <text x="48" y="110" class="ui subtitle">The target must be defined independently of the descriptor being tested.</text>
 
   <g class="ui">
-    <circle cx="90" cy="268" r="25" fill="#eaf1ff"/>
-    <text x="90" y="276" text-anchor="middle" font-size="20" font-weight="800" fill="#365aa8">1</text>
-    <text x="126" y="275" class="step">DECLARE</text>
-    <text x="72" y="337" class="cardTitle">
-      <tspan x="72" dy="0">State exactly what</tspan>
-      <tspan x="72" dy="36">information is claimed</tspan>
-      <tspan x="72" dy="36">to be sufficient</tspan>
+    <rect x="48" y="150" width="242" height="215" rx="18" fill="#ffffff" stroke="#cfd9e8" stroke-width="2"/>
+    <circle cx="82" cy="184" r="18" fill="#e9f0ff"/>
+    <text x="82" y="189" text-anchor="middle" class="num">1</text>
+    <text x="108" y="189" class="step">DECLARE</text>
+    <text x="70" y="232" class="cardTitle">Descriptor D</text>
+    <text x="70" y="270" class="body">
+      <tspan x="70" dy="0">State exactly what physical</tspan>
+      <tspan x="70" dy="22">or computational information</tspan>
+      <tspan x="70" dy="22">is claimed to be sufficient.</tspan>
     </text>
-    <text x="72" y="462" class="formula">Descriptor D(x)</text>
-    <text x="72" y="500" class="body">The claim is tested only relative</text>
-    <text x="72" y="528" class="body">to what D explicitly contains.</text>
 
-    <circle cx="474" cy="268" r="25" fill="#eaf1ff"/>
-    <text x="474" y="276" text-anchor="middle" font-size="20" font-weight="800" fill="#365aa8">2</text>
-    <text x="510" y="275" class="step">DEFINE TARGET INDEPENDENTLY</text>
-    <text x="456" y="337" class="cardTitle">
-      <tspan x="456" dy="0">Measure the target</tspan>
-      <tspan x="456" dy="36">without building the</tspan>
-      <tspan x="456" dy="36">answer into the test</tspan>
+    <rect x="344" y="150" width="242" height="215" rx="18" fill="#ffffff" stroke="#cfd9e8" stroke-width="2"/>
+    <circle cx="378" cy="184" r="18" fill="#e9f0ff"/>
+    <text x="378" y="189" text-anchor="middle" class="num">2</text>
+    <text x="404" y="189" class="step">MEASURE</text>
+    <text x="366" y="232" class="cardTitle">Independent target Y</text>
+    <text x="366" y="270" class="body">
+      <tspan x="366" dy="0">Define the target through</tspan>
+      <tspan x="366" dy="22">an independent measurement</tspan>
+      <tspan x="366" dy="22">or definition route.</tspan>
     </text>
-    <text x="456" y="462" class="formula">Target Y(x)</text>
-    <text x="456" y="500" class="body">Y must come from an independent</text>
-    <text x="456" y="528" class="body">measurement or definition route.</text>
 
-    <circle cx="858" cy="268" r="25" fill="#eaf1ff"/>
-    <text x="858" y="276" text-anchor="middle" font-size="20" font-weight="800" fill="#365aa8">3</text>
-    <text x="894" y="275" class="step">MATCH EQUIVALENT CASES</text>
-    <text x="840" y="337" class="cardTitle">
-      <tspan x="840" dy="0">Find cases the declared</tspan>
-      <tspan x="840" dy="36">description treats as</tspan>
-      <tspan x="840" dy="36">the same</tspan>
+    <rect x="640" y="150" width="242" height="215" rx="18" fill="#ffffff" stroke="#cfd9e8" stroke-width="2"/>
+    <circle cx="674" cy="184" r="18" fill="#e9f0ff"/>
+    <text x="674" y="189" text-anchor="middle" class="num">3</text>
+    <text x="700" y="189" class="step">MATCH</text>
+    <text x="662" y="232" class="cardTitle">Equivalent cases</text>
+    <text x="662" y="274" class="formula">D(x₁) = D(x₂)</text>
+    <text x="662" y="309" class="body">
+      <tspan x="662" dy="0">Choose cases the declared</tspan>
+      <tspan x="662" dy="22">descriptor treats as the same.</tspan>
     </text>
-    <text x="840" y="462" class="formula">D(x₁) = D(x₂)</text>
-    <text x="840" y="500" class="body">Under the theory's own descriptor,</text>
-    <text x="840" y="528" class="body">the two cases are equivalent.</text>
 
-    <circle cx="1242" cy="268" r="25" fill="#eaf1ff"/>
-    <text x="1242" y="276" text-anchor="middle" font-size="20" font-weight="800" fill="#365aa8">4</text>
-    <text x="1278" y="275" class="step">COMPARE THE TARGET</text>
-    <text x="1224" y="337" class="cardTitle">
-      <tspan x="1224" dy="0">Ask whether the</tspan>
-      <tspan x="1224" dy="36">independent target</tspan>
-      <tspan x="1224" dy="36">still separates them</tspan>
+    <rect x="936" y="150" width="216" height="215" rx="18" fill="#ffffff" stroke="#cfd9e8" stroke-width="2"/>
+    <circle cx="970" cy="184" r="18" fill="#e9f0ff"/>
+    <text x="970" y="189" text-anchor="middle" class="num">4</text>
+    <text x="996" y="189" class="step">TEST</text>
+    <text x="958" y="232" class="cardTitle">Compare the target</text>
+    <text x="958" y="274" class="formula">Y(x₁) ?= Y(x₂)</text>
+    <text x="958" y="309" class="body">
+      <tspan x="958" dy="0">Does the independent target</tspan>
+      <tspan x="958" dy="22">still distinguish the cases?</tspan>
     </text>
-    <text x="1224" y="462" class="formula">Y(x₁) ?= Y(x₂)</text>
-    <text x="1224" y="500" class="body">This is the point where the</text>
-    <text x="1224" y="528" class="body">sufficiency claim can fail.</text>
   </g>
 
-  <line x1="382" y1="385" x2="415" y2="385" stroke="#6e8fc5" stroke-width="4" marker-end="url(#arrow)"/>
-  <line x1="766" y1="385" x2="799" y2="385" stroke="#6e8fc5" stroke-width="4" marker-end="url(#arrow)"/>
-  <line x1="1150" y1="385" x2="1183" y2="385" stroke="#6e8fc5" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="290" y1="258" x2="334" y2="258" stroke="#6482b8" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="586" y1="258" x2="630" y2="258" stroke="#6482b8" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="882" y1="258" x2="926" y2="258" stroke="#6482b8" stroke-width="3" marker-end="url(#arrow)"/>
 
-  <path d="M1376 551 L1376 590 L800 590 L800 620" fill="none" stroke="#8ea4c9" stroke-width="3"/>
-  <path d="M800 590 L390 590 L390 620" fill="none" stroke="#8ea4c9" stroke-width="3" marker-end="url(#arrow)"/>
-  <path d="M800 590 L1210 590 L1210 620" fill="none" stroke="#8ea4c9" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M1044 365 L1044 405 L753 405 L753 430" fill="none" stroke="#6482b8" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M1044 405 L1044 430" fill="none" stroke="#6482b8" stroke-width="3" marker-end="url(#arrow)"/>
 
-  <g filter="url(#shadow)" class="ui">
-    <rect x="145" y="635" width="555" height="150" rx="22" fill="#f1f7ff" stroke="#b9d3f2" stroke-width="2"/>
-    <circle cx="202" cy="690" r="28" fill="#dcecff"/>
-    <path d="M188 690 l10 10 l19 -22" fill="none" stroke="#2f67b4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="250" y="677" class="outcomeTitle" fill="#245b9f">No target separation found</text>
-    <text x="250" y="711" class="outcomeBody">The descriptor survives this test.</text>
-    <text x="250" y="742" class="outcomeBody" font-weight="700">Compatible with the evidence, not validated as true.</text>
+  <g class="ui">
+    <rect x="608" y="442" width="290" height="105" rx="16" fill="#eef5ff" stroke="#b9d0ee" stroke-width="2"/>
+    <text x="632" y="470" class="outcomeKicker" fill="#315e9d">NO TARGET SEPARATION</text>
+    <text x="632" y="498" class="outcomeTitle">Survives this test</text>
+    <text x="632" y="525" class="outcomeBody">Compatible with the evidence, not validated.</text>
 
-    <rect x="900" y="635" width="555" height="150" rx="22" fill="#fff5ef" stroke="#efc7b1" stroke-width="2"/>
-    <circle cx="957" cy="690" r="28" fill="#ffe2d5"/>
-    <path d="M946 679 L968 701 M968 679 L946 701" fill="none" stroke="#c85b32" stroke-width="5" stroke-linecap="round"/>
-    <text x="1005" y="677" class="outcomeTitle" fill="#ad4826">Target separation found</text>
-    <text x="1005" y="711" class="outcomeBody">The model forbids a distinction the target exhibits.</text>
-    <text x="1005" y="742" class="outcomeBody" font-weight="700">The declared descriptor is insufficient for this target.</text>
+    <rect x="916" y="442" width="236" height="105" rx="16" fill="#fff4ed" stroke="#ebc3ae" stroke-width="2"/>
+    <text x="940" y="470" class="outcomeKicker" fill="#b5532f">TARGET DIFFERS</text>
+    <text x="940" y="498" class="outcomeTitle">Sufficiency fails</text>
+    <text x="940" y="525" class="outcomeBody">Descriptor insufficient for this target.</text>
   </g>
 
-  <line x1="72" y1="835" x2="1528" y2="835" stroke="#d6dfef" stroke-width="2"/>
-  <circle cx="96" cy="873" r="17" fill="#eaf1ff" stroke="#98afd5"/>
-  <text x="96" y="879" text-anchor="middle" class="ui" font-size="19" font-weight="800" fill="#365aa8">i</text>
-  <text x="132" y="868" class="ui boundaryLabel">SCIENTIFIC BOUNDARY</text>
-  <text x="132" y="897" class="ui boundary">Rejection applies to the declared descriptor or model family. It does not prove nonphysicality, identify consciousness directly, or rule out richer physical descriptions.</text>
+  <line x1="48" y1="580" x2="1152" y2="580" stroke="#d5deeb" stroke-width="1.5"/>
+  <text x="48" y="605" class="ui boundary">Boundary: rejection is relative to the declared descriptor. Richer physical descriptions may remain possible.</text>
 </svg>
