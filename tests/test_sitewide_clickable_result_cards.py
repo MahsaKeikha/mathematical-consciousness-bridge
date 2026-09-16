@@ -21,6 +21,24 @@ def test_reader_script_wires_whole_result_cards() -> None:
         assert token in script
 
 
+def test_research_map_normalizes_proposition_result_boxes() -> None:
+    script = READER_LINKS.read_text(encoding="utf-8")
+
+    required = (
+        "function normalizeResearchMapResultBoxes()",
+        "research-map-detail-grid",
+        "number: 74",
+        "number: 75",
+        "number: 76",
+        "#p92-research-map",
+        "#p93-research-map",
+        "#p94-research-map",
+        "normalizeResearchMapResultBoxes();",
+    )
+    for token in required:
+        assert token in script
+
+
 def test_whole_card_click_preserves_nested_link_behavior() -> None:
     script = READER_LINKS.read_text(encoding="utf-8")
 
