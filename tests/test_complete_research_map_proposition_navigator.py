@@ -91,3 +91,11 @@ def test_navigator_cards_render_plain_reader_text() -> None:
     assert "`" not in block
     assert "<strong>Representation-independent bridge objects</strong>" in block
     assert "<strong>Full mixed-prevalence P75 separation bracket" in block
+
+
+def test_research_map_historical_sections_link_to_current_p100_frontier() -> None:
+    page = PAGE.read_text(encoding="utf-8")
+    assert 'visual-atlas.html#p100-frontier">See the current P100 figure</a>' in page
+    assert 'visual-atlas.html#p100-frontier">Current P100 frontier</a>' in page
+    assert 'visual-atlas.html#p96-frontier">Current frontier</a>' not in page
+    assert '>See the P96 figure</a>' not in page
