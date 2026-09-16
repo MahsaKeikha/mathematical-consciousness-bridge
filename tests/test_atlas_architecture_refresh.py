@@ -9,14 +9,25 @@ SOURCES_VISUALS = (ROOT / "website" / "source-section-visuals.js").read_text(
 )
 
 
-def test_atlas_refresh_only_pins_research_iii_sources() -> None:
+def test_atlas_refresh_pins_validated_research_iii_sources() -> None:
     assert "1ceea4c428d835ec9a8a417cbf238d9bcfe1d7c3" in REFRESH
     assert "consciousness-measurement-science/main/docs/figures/" in REFRESH
     assert "pinResearchIIIVisualSources" in REFRESH
     assert "currentFile() !== 'visual-atlas.html'" in REFRESH
 
 
-def test_atlas_refresh_does_not_mutate_layout_or_sizing() -> None:
+def test_atlas_refresh_reuses_existing_card_styles_without_sizing_overrides() -> None:
+    required = (
+        "complete-record-block",
+        "complete-figure-grid",
+        "complete-figure-card",
+        "complete-figure-card-body",
+        "figure-phase",
+        "figure-source-links",
+    )
+    for token in required:
+        assert token in REFRESH
+
     forbidden = (
         "createElement('style')",
         'createElement("style")',
@@ -30,6 +41,14 @@ def test_atlas_refresh_does_not_mutate_layout_or_sizing() -> None:
     )
     for token in forbidden:
         assert token not in REFRESH
+
+
+def test_atlas_refresh_collapses_only_the_detailed_research_ii_archive() -> None:
+    assert "research-ii-frontier-archive" in REFRESH
+    assert "research-ii-detailed-archive" in REFRESH
+    assert "collapsed-by-default" in REFRESH
+    assert "hashchange" in REFRESH
+    assert "details.open = true" in REFRESH
 
 
 def test_sources_research_ii_keeps_versioned_architecture_asset() -> None:
