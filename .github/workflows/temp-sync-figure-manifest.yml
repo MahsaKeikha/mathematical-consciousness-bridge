@@ -5,13 +5,15 @@ on:
     branches: ["fix-p95-p99-p100-svg-overflow"]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   sync:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: fix-p95-p99-p100-svg-overflow
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12.14"
@@ -19,9 +21,14 @@ jobs:
         run: |
           python scripts/sync_figure_publication.py
           python scripts/sync_figure_publication.py --check
-      - name: Upload synchronized manifest
-        uses: actions/upload-artifact@v4
-        with:
-          name: synchronized-figure-manifest
-          path: figures/manifest.json
-          if-no-files-found: error
+      - name: Commit synchronized manifest
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add figures/manifest.json figures/current_frontier.svg
+          if git diff --cached --quiet; then
+            echo "No synchronized figure metadata changes to commit."
+          else
+            git commit -m "Synchronize figure publication manifest"
+            git push origin HEAD:fix-p95-p99-p100-svg-overflow
+          fi
