@@ -201,6 +201,152 @@
     });
   }
 
+  function propositionNumber(text) {
+    const match = String(text || '').match(/\bP(\d{1,3})\b/i);
+    return match ? Number(match[1]) : null;
+  }
+
+  function normalizeResearchMapResultBoxes() {
+    const bridge = document.querySelector('#bridge-lineage');
+    if (bridge && !bridge.querySelector('.research-map-detail-grid')) {
+      const headings = Array.from(bridge.children).filter(
+        (element) => element.tagName === 'H3' && /^P(?:71|72|73):/.test(element.textContent.trim()),
+      );
+
+      if (headings.length) {
+        const grid = document.createElement('div');
+        grid.className = 'result-grid research-map-detail-grid';
+        bridge.insertBefore(grid, headings[0]);
+
+        headings.forEach((heading) => {
+          const detail = heading.nextElementSibling;
+          const number = propositionNumber(heading.textContent);
+          const card = document.createElement('article');
+          card.className = 'result research-map-result-card';
+          if (number) card.id = `p${number}`;
+
+          const badge = document.createElement('span');
+          badge.textContent = number ? `P${number}` : 'Result';
+          card.append(badge);
+          grid.append(card);
+          card.append(heading);
+          if (detail?.tagName === 'P') card.append(detail);
+        });
+
+        const missing = [
+          {
+            number: 74,
+            title: 'Finite-sample target-channel recovery certification',
+            description:
+              'Propagate simultaneous eight-cell sampling uncertainty through the P73 inversion and refuse recovery when finite-data margins remain too close to the degeneracy boundary.',
+            href: 'https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_74_finite_sample_target_channel_recovery.md',
+          },
+          {
+            number: 75,
+            title: 'Target-model adequacy and four-view overidentification',
+            description:
+              'Separate identifiability from adequacy: a fourth binary view introduces observable restrictions that can falsify the declared conditional-independence target model.',
+            href: 'https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_75_target_model_adequacy_overidentification.md',
+          },
+          {
+            number: 76,
+            title: 'Finite-sample target-model adequacy rejection',
+            description:
+              'Reject only when finite IID uncertainty leaves a necessary P75 restriction separated from zero. Nonrejection remains nonacceptance.',
+            href: 'https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_76_finite_sample_target_model_adequacy.md',
+          },
+        ];
+
+        missing.forEach(({ number, title, description, href }) => {
+          if (document.getElementById(`p${number}`)) return;
+          const card = document.createElement('article');
+          card.className = 'result research-map-result-card';
+          card.id = `p${number}`;
+          card.innerHTML = `<span>P${number}</span><h3>P${number}: ${title}</h3><p>${description}</p><p><a href="${href}">Read P${number}</a></p>`;
+          grid.append(card);
+        });
+      }
+    }
+
+    ['#p92-research-map', '#p93-research-map', '#p94-research-map'].forEach((selector) => {
+      const section = document.querySelector(selector);
+      if (!section) return;
+      section.classList.add('result', 'research-map-result-card');
+    });
+  }
+
+  function primaryCardHref(card) {
+    const links = Array.from(card.querySelectorAll('a[href]')).filter(
+      (link) => !link.classList.contains('heading-anchor'),
+    );
+    const preferred = links.find((link) => {
+      const label = (link.textContent || '').toLowerCase();
+      return label.includes('theorem') || label.includes('proposition') || label.includes('open p') || label.includes('read p');
+    });
+    if (preferred) return preferred.href;
+    if (links.length) return links[0].href;
+
+    const number = propositionNumber(card.textContent);
+    if (number) return `research-map.html#p${number}`;
+    return null;
+  }
+
+  function clickableCardLabel(card) {
+    const heading = card.querySelector('h2, h3, h4, strong');
+    const title = heading?.textContent?.trim();
+    if (title) return `Open result: ${title}`;
+    const number = propositionNumber(card.textContent);
+    return number ? `Open result P${number}` : 'Open result';
+  }
+
+  function wireWholeResultCard(card) {
+    if (!(card instanceof HTMLElement)) return;
+    if (card.matches('a')) return;
+    if (card.dataset.clickableReady === 'true') return;
+
+    const href = primaryCardHref(card);
+    if (!href) return;
+
+    card.dataset.clickableReady = 'true';
+    card.classList.add('interactive-card');
+    card.tabIndex = 0;
+    card.setAttribute('role', 'link');
+    card.setAttribute('aria-label', clickableCardLabel(card));
+    card.title = 'Open this result';
+
+    const open = () => {
+      window.location.href = href;
+    };
+
+    card.addEventListener('click', (event) => {
+      if (event.target.closest('a, button, input, select, textarea, summary')) return;
+      open();
+    });
+
+    card.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      if (event.target.closest('a, button, input, select, textarea, summary')) return;
+      event.preventDefault();
+      open();
+    });
+  }
+
+  function wireAllResultCards() {
+    const cards = new Set();
+    const containers = document.querySelectorAll(
+      '.result-grid, .results-grid, .theorem-grid, .theorem-cards, .key-results, .key-results-grid, .frontier-summary-grid, .roadmap-grid',
+    );
+    containers.forEach((container) => {
+      Array.from(container.children).forEach((card) => cards.add(card));
+    });
+
+    document
+      .querySelectorAll('.result, .result-card, .result-tile, .theorem-card, .theorem-tile, .key-result, .key-result-card, .frontier-summary-card')
+      .forEach((card) => cards.add(card));
+
+    cards.forEach(wireWholeResultCard);
+  }
+
   function addResearchOverviewDiagramStyles() {
     if (document.getElementById('research-overview-diagram-styles')) return;
     const style = document.createElement('style');
@@ -241,6 +387,8 @@
     makeStandaloneFiguresOpenable();
     wireResearchStatusCards();
     wireResearchPathCards();
+    normalizeResearchMapResultBoxes();
+    wireAllResultCards();
     addResearchOverviewDiagramStyles();
   });
 })();
