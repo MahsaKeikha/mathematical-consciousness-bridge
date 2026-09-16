@@ -201,10 +201,46 @@
     });
   }
 
+  function addResearchOverviewDiagramStyles() {
+    if (document.getElementById('research-overview-diagram-styles')) return;
+    const style = document.createElement('style');
+    style.id = 'research-overview-diagram-styles';
+    style.textContent = `
+      #research-ii-overview .research-ii-figure-card {
+        grid-template-columns: minmax(280px, 0.82fr) minmax(320px, 1.18fr);
+        align-items: center;
+      }
+      #research-ii-overview .research-ii-figure-card > a {
+        display: flex;
+        min-width: 0;
+        align-items: center;
+        justify-content: center;
+      }
+      #research-ii-overview .research-ii-figure-card img {
+        width: min(100%, 560px);
+        max-width: 100%;
+        height: auto;
+        max-height: 360px;
+        object-fit: contain;
+      }
+      @media (max-width: 900px) {
+        #research-ii-overview .research-ii-figure-card {
+          grid-template-columns: 1fr;
+        }
+        #research-ii-overview .research-ii-figure-card img {
+          width: min(100%, 620px);
+          max-height: none;
+        }
+      }
+    `;
+    document.head.append(style);
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     addHeadingAnchors();
     makeStandaloneFiguresOpenable();
     wireResearchStatusCards();
     wireResearchPathCards();
+    addResearchOverviewDiagramStyles();
   });
 })();
