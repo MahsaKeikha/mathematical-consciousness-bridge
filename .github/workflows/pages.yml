@@ -92,12 +92,14 @@ jobs:
           rm -rf website-deploy _site
           cp -a website website-deploy
           python scripts/prepare_website.py --source website-deploy --output _site
+          cp figures/manifest.json _site/figures/manifest.json
 
       - name: Verify canonical built frontier
         shell: bash
         run: |
           FRONTIER_LOWER="$(printf '%s' "${FRONTIER}" | tr '[:upper:]' '[:lower:]')"
           test -f "_site/figures/${FRONTIER_FIGURE}"
+          test -f "_site/figures/manifest.json"
           grep -q "Current theorem frontier · ${FRONTIER}" _site/index.html
           grep -q "Current theorem frontier · ${FRONTIER}" _site/visual-atlas.html
           grep -q "id=\"${FRONTIER_LOWER}-frontier\"" _site/index.html
