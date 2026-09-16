@@ -9,14 +9,24 @@ SOURCES_VISUALS = (ROOT / "website" / "source-section-visuals.js").read_text(
 )
 
 
-def test_atlas_runtime_override_is_disabled() -> None:
-    assert "Intentionally no runtime Atlas mutations" in REFRESH
+def test_atlas_refresh_only_pins_research_iii_sources() -> None:
+    assert "1ceea4c428d835ec9a8a417cbf238d9bcfe1d7c3" in REFRESH
+    assert "consciousness-measurement-science/main/docs/figures/" in REFRESH
+    assert "pinResearchIIIVisualSources" in REFRESH
+    assert "currentFile() !== 'visual-atlas.html'" in REFRESH
+
+
+def test_atlas_refresh_does_not_mutate_layout_or_sizing() -> None:
     forbidden = (
-        "querySelectorAll(",
-        "image.src =",
+        "createElement('style')",
+        'createElement("style")',
+        "classList.add",
         "atlas-architecture-current",
-        "max-height: 530px",
-        "object-fit: contain",
+        "max-height",
+        "object-fit",
+        "style.width",
+        "style.height",
+        "research_architecture.svg?v=",
     )
     for token in forbidden:
         assert token not in REFRESH
