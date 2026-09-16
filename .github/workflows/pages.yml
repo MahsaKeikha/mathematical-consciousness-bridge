@@ -86,6 +86,9 @@ jobs:
           python scripts/synchronize_research_three_website.py --site website --check
           python scripts/verify_repository.py
           node --check website/app.js
+          node --check website/research-orientation.js
+          node --check website/atlas-architecture-refresh.js
+          node --check website/three-program-evidence.js
 
       - name: Build exact main website
         run: |
@@ -100,6 +103,9 @@ jobs:
           FRONTIER_LOWER="$(printf '%s' "${FRONTIER}" | tr '[:upper:]' '[:lower:]')"
           test -f "_site/figures/${FRONTIER_FIGURE}"
           test -f "_site/figures/manifest.json"
+          test -f "_site/atlas-architecture-refresh.js"
+          test -f "_site/three-program-evidence.js"
+          test -f "_site/research-orientation.js"
           grep -q "Current theorem frontier · ${FRONTIER}" _site/index.html
           grep -q "Current theorem frontier · ${FRONTIER}" _site/visual-atlas.html
           grep -q "id=\"${FRONTIER_LOWER}-frontier\"" _site/index.html
@@ -112,7 +118,37 @@ jobs:
           grep -q 'physical-to-experiential bridge' _site/plain-language.html
           grep -q 'physical-to-experiential bridge' _site/start-here.html
           grep -q 'measurement-science.html' _site/app.js
+          grep -q 'research-i-complete-figure-gallery' _site/three-program-evidence.js
+          grep -q 'research-ii-complete-core-gallery' _site/atlas-architecture-refresh.js
+          grep -q 'research-iii-complete-figure-gallery' _site/atlas-architecture-refresh.js
+          grep -q 'const RESEARCH_II_CORE_EXPECTED = 100' _site/atlas-architecture-refresh.js
+          grep -q '3 / 3 visible' _site/atlas-architecture-refresh.js
+          grep -q '#research-ii-complete-core-gallery' _site/research-orientation.js
+          grep -q '#research-iii-complete-figure-gallery' _site/research-orientation.js
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          manifest = json.loads(Path('_site/figures/manifest.json').read_text(encoding='utf-8'))
+          figures = manifest.get('figures')
+          if not isinstance(figures, list):
+              raise SystemExit('deployed figure manifest is missing figures list')
+          core = [
+              record
+              for record in figures
+              if isinstance(record, dict)
+              and record.get('category') == 'theorem-or-architecture'
+          ]
+          paths = [record.get('path') for record in core]
+          if len(core) != 100 or len(set(paths)) != 100:
+              raise SystemExit('deployed Research II core gallery contract is not exactly 100 unique figures')
+          if manifest.get('figure_count') != 158:
+              raise SystemExit('deployed canonical figure count is not 158')
+          PY
           node --check _site/app.js
+          node --check _site/research-orientation.js
+          node --check _site/atlas-architecture-refresh.js
+          node --check _site/three-program-evidence.js
 
       - name: Upload website artifact
         uses: actions/upload-pages-artifact@v3

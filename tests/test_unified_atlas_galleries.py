@@ -11,6 +11,9 @@ ATLAS_REFRESH = (ROOT / "website" / "atlas-architecture-refresh.js").read_text(
 EVIDENCE = (ROOT / "website" / "three-program-evidence.js").read_text(
     encoding="utf-8"
 )
+ORIENTATION = (ROOT / "website" / "research-orientation.js").read_text(
+    encoding="utf-8"
+)
 PAGES_WORKFLOW = (ROOT / ".github" / "workflows" / "pages.yml").read_text(
     encoding="utf-8"
 )
@@ -49,6 +52,23 @@ def test_research_ii_core_gallery_is_exactly_100_unique_canonical_visuals() -> N
 def test_pages_artifact_bundles_the_canonical_manifest_for_the_gallery() -> None:
     assert "cp figures/manifest.json _site/figures/manifest.json" in PAGES_WORKFLOW
     assert 'test -f "_site/figures/manifest.json"' in PAGES_WORKFLOW
+
+
+def test_pages_deployment_enforces_the_unified_gallery_contract() -> None:
+    required = (
+        "research-i-complete-figure-gallery",
+        "research-ii-complete-core-gallery",
+        "research-iii-complete-figure-gallery",
+        "const RESEARCH_II_CORE_EXPECTED = 100",
+        "3 / 3 visible",
+        "deployed Research II core gallery contract is not exactly 100 unique figures",
+        "deployed canonical figure count is not 158",
+        "node --check _site/research-orientation.js",
+        "node --check _site/atlas-architecture-refresh.js",
+        "node --check _site/three-program-evidence.js",
+    )
+    for token in required:
+        assert token in PAGES_WORKFLOW
 
 
 def test_research_ii_gallery_reads_the_bundled_manifest_and_fails_closed() -> None:
@@ -97,6 +117,19 @@ def test_research_iii_gallery_is_complete_and_pinned() -> None:
         assert figure in ATLAS_REFRESH
 
 
+def test_atlas_orientation_points_to_exact_complete_galleries() -> None:
+    assert "exactly 100 unique canonical core visuals" in ORIENTATION
+    assert "complete pinned 3 / 3 canonical figure set" in ORIENTATION
+    for anchor in (
+        "#research-i-complete-figure-gallery",
+        "#research-ii-complete-core-gallery",
+        "#research-iii-complete-figure-gallery",
+    ):
+        assert anchor in ORIENTATION
+
+
 def test_new_atlas_surface_keeps_reader_punctuation_contract() -> None:
     assert "\u2013" not in ATLAS_REFRESH
     assert "\u2014" not in ATLAS_REFRESH
+    assert "\u2013" not in ORIENTATION
+    assert "\u2014" not in ORIENTATION
