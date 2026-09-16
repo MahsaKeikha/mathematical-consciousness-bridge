@@ -16,6 +16,22 @@ def test_research_path_cards_open_stage_specific_implementation_sections() -> No
     assert "card.tabIndex = 0" in script
 
 
+def test_research_status_cards_open_exact_stage_pages() -> None:
+    script = (WEBSITE / "reader-links.js").read_text(encoding="utf-8")
+
+    required_destinations = {
+        "research i": "observer-research.html",
+        "research ii": "research-map.html",
+        "research iii": "measurement-science.html",
+    }
+    for label, destination in required_destinations.items():
+        assert f"['{label}', '{destination}']" in script
+
+    assert "wireResearchStatusCards();" in script
+    assert "research-status-link" in script
+    assert "Open research page" in script
+
+
 def test_implementation_guide_covers_all_ten_research_stages() -> None:
     page = (WEBSITE / "implementation.html").read_text(encoding="utf-8")
 
