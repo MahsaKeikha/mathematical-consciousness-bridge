@@ -103,7 +103,7 @@ jobs:
           atlas = Path("_site/visual-atlas.html").read_text(encoding="utf-8")
           assert atlas.index(f'id="p{frontier}-frontier"') < atlas.index(f'id="p{previous}-frontier"')
           assert f"<!-- current-frontier-visual: P{frontier} -->" in atlas
-          assert f"Previous theorem frontier · P{previous}" in atlas
+          assert f"Immediate predecessor · P{previous}" in atlas
           assert figure in atlas
 
           start = Path("_site/start-here.html").read_text(encoding="utf-8")
