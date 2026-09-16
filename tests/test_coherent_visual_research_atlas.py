@@ -1,5 +1,5 @@
-from pathlib import Path
 import re
+from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -10,7 +10,7 @@ def _reader_script() -> str:
     return (WEBSITE / "reader-links.js").read_text(encoding="utf-8")
 
 
-def test_visual_atlas_indexes_every_proposition_exactly_once() -> None:
+def _proposition_slugs() -> list[str]:
     script = _reader_script()
     match = re.search(
         r"const PROPOSITION_DOC_SLUGS = \[(.*?)\];",
@@ -18,14 +18,23 @@ def test_visual_atlas_indexes_every_proposition_exactly_once() -> None:
         flags=re.DOTALL,
     )
     assert match is not None
+    return re.findall(r"^\s*'([^']+)',\s*$", match.group(1), flags=re.MULTILINE)
 
-    slugs = re.findall(r"^\s*'([^']+)',\s*$", match.group(1), flags=re.MULTILINE)
+
+def test_visual_atlas_indexes_every_proposition_exactly_once() -> None:
+    slugs = _proposition_slugs()
     assert len(slugs) == 100
     assert len(set(slugs)) == 100
     assert slugs[0] == "representation_invariance"
     assert slugs[18] == "fundamental_physical_sufficiency"
     assert slugs[70] == "target_provenance_noncircularity"
     assert slugs[-1] == "anytime_sequential_eprocess"
+
+
+def test_visual_atlas_points_to_real_canonical_proposition_documents() -> None:
+    for number, slug in enumerate(_proposition_slugs(), start=1):
+        path = ROOT / "docs" / f"proposition_{number}_{slug}.md"
+        assert path.is_file(), f"missing canonical proposition document: {path.name}"
 
 
 def test_visual_atlas_preserves_canonical_proposition_links() -> None:
