@@ -33,6 +33,19 @@ jobs:
       - name: Generate three-program Atlas and Sources surfaces
         run: python scripts/one_shot_three_program_atlas_sources.py
 
+      - name: Preserve sitewide traceability boundary
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('website/research-orientation.js')
+          text = path.read_text(encoding='utf-8')
+          old = 'Traceability establishes an inspectable research record, not scientific truth. Each program still has to earn its own mathematical, computational, empirical, external-validation, or clinical claims at the level appropriate to that program.'
+          new = 'Traceability is necessary for rigor, but an inspectable research record is not scientific truth by itself. Each program still has to earn its own mathematical, computational, empirical, external-validation, or clinical claims at the level appropriate to that program.'
+          if text.count(old) != 1:
+              raise RuntimeError('expected one generated Sources traceability sentence')
+          path.write_text(text.replace(old, new, 1), encoding='utf-8')
+          PY
+
       - name: Run focused reader and publication contracts
         run: |
           python -m pytest -q \
