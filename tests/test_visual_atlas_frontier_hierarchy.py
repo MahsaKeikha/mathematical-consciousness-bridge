@@ -18,7 +18,7 @@ def test_visual_atlas_has_one_unambiguous_current_frontier() -> None:
 def test_visual_atlas_explains_current_first_order() -> None:
     atlas = _read("website/visual-atlas.html")
     assert 'id="atlas-reading-rule"' in atlas
-    assert "this atlas is intentionally current-first" in atlas
+    assert "Within Research II, the detailed frontier archive is intentionally current-first" in atlas
     assert 'research-map.html#continuous-model-frontier' in atlas
     assert atlas.index('id="p100-frontier"') < atlas.index('id="p99-frontier"')
     for number in range(99, 86, -1):

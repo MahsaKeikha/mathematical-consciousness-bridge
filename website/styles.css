@@ -1053,3 +1053,229 @@ img {
   }
 }
 /* END COMPLETE SOURCE SEQUENCE */
+
+/* three-program-atlas-sources */
+.three-program-index,
+.program-overview-section,
+.research-program-divider {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+
+.three-program-index {
+  padding-top: 42px;
+  padding-bottom: 30px;
+}
+
+.three-program-index-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.program-index-card,
+.program-visual-card,
+.program-source-card {
+  position: relative;
+  display: block;
+  color: var(--ink);
+  text-decoration: none !important;
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  background: var(--paper);
+  box-shadow: 0 10px 28px rgba(20, 26, 36, 0.055);
+  transition: transform 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.program-index-card {
+  min-height: 150px;
+  padding: 21px 22px 48px;
+}
+
+.program-index-card span,
+.program-visual-card > span,
+.program-source-card > span {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--accent2);
+  font-size: 0.71rem;
+  font-weight: 780;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.program-index-card strong {
+  display: block;
+  margin-bottom: 7px;
+  font-family: var(--font-display);
+  font-size: 1.22rem;
+  line-height: 1.2;
+}
+
+.program-index-card small {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.program-index-card::after,
+.program-visual-card::after,
+.program-source-card::after {
+  content: 'Open record →';
+  position: absolute;
+  right: 18px;
+  bottom: 16px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 740;
+}
+
+.program-index-card:hover,
+.program-index-card:focus-visible,
+.program-visual-card:hover,
+.program-visual-card:focus-visible,
+.program-source-card:hover,
+.program-source-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: #8f9db7;
+  box-shadow: 0 14px 36px rgba(20, 26, 36, 0.1);
+  outline: none;
+}
+
+.program-overview-section + .program-overview-section {
+  border-top: 1px solid var(--line);
+}
+
+.program-record-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 22px 0 28px;
+}
+
+.program-record-metric {
+  min-height: 102px;
+  padding: 16px 17px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: var(--soft);
+}
+
+.program-record-metric strong,
+.program-record-metric span {
+  display: block;
+}
+
+.program-record-metric strong {
+  margin-bottom: 5px;
+  color: var(--accent);
+  font-size: 1.25rem;
+  line-height: 1.1;
+}
+
+.program-record-metric span {
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.4;
+}
+
+.program-visual-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.program-visual-card {
+  overflow: hidden;
+  padding: 0 18px 52px;
+}
+
+.program-visual-card img {
+  display: block;
+  width: calc(100% + 36px);
+  height: 230px;
+  margin: 0 -18px 18px;
+  object-fit: contain;
+  background: #f7f9fc;
+  border-bottom: 1px solid var(--line);
+}
+
+.program-visual-card h3,
+.program-source-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.08rem;
+  line-height: 1.28;
+}
+
+.program-visual-card p,
+.program-source-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.91rem;
+  line-height: 1.55;
+}
+
+.program-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 22px 0;
+}
+
+.program-actions a {
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+  font-size: 0.85rem;
+  font-weight: 680;
+  text-decoration: none;
+}
+
+.program-source-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 22px 0;
+}
+
+.program-source-card {
+  min-height: 188px;
+  padding: 20px 20px 50px;
+}
+
+.research-program-divider {
+  padding-top: 52px;
+  padding-bottom: 22px;
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 900px) {
+  .three-program-index-grid,
+  .program-visual-grid,
+  .program-source-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .program-record-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .program-visual-card img {
+    height: auto;
+    max-height: 440px;
+  }
+}
+
+@media (max-width: 520px) {
+  .program-record-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .three-program-index,
+  .program-overview-section,
+  .research-program-divider {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
