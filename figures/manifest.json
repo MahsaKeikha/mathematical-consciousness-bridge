@@ -1240,11 +1240,11 @@
     },
     {
       "path": "docs/figures/theorem_roadmap.svg",
-      "sha256": "d0596d822ceca4d103fa346f57b0a654d5d49d75c5214bcad14e3a668f93c8e9",
-      "bytes": 14520,
+      "sha256": "471bbd30f126cc4190175b26e823a6e6afb472e70c38be290e89b0137532c65c",
+      "bytes": 28294,
       "category": "theorem-or-architecture",
-      "title": "Theorem dependency map for P1-P31",
-      "description_chars": 959
+      "title": "Complete theorem dependency map for P1-P100",
+      "description_chars": 1083
     },
     {
       "path": "docs/figures/theory_comparison_map.svg",
