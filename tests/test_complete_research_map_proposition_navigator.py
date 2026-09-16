@@ -69,3 +69,25 @@ def test_complete_navigator_reader_text_obeys_punctuation_policy() -> None:
     )[0]
     assert "–" not in block
     assert "—" not in block
+
+
+def test_research_map_p100_frontier_copy_is_current() -> None:
+    page = PAGE.read_text(encoding="utf-8")
+    assert "P19 and P71-P100: from sufficiency to selection-valid and anytime-valid target-model falsification" in page
+    assert "P77-P100: from full-law rejection to anytime-valid sequential certification" in page
+    assert "P100 remains a conditional sequential model-rejection theorem" in page
+    assert "P97 protects same-data selection over a finite predeclared candidate family" in page
+    assert "P99 aggregates distributed cross-fitted evidence with e-values" in page
+    assert "P100 makes fresh P99 rounds anytime-valid under predictable reserve stakes" in page
+    assert "P77-P100: from full-law rejection to finite-range dependent localized nonlinear certification" not in page
+    assert "P99 remains a conditional model-rejection theorem under its declared independent-block" not in page
+
+
+def test_navigator_cards_render_plain_reader_text() -> None:
+    page = PAGE.read_text(encoding="utf-8")
+    block = page.split("<!-- BEGIN COMPLETE PROPOSITION NAVIGATOR -->", 1)[1].split(
+        "<!-- END COMPLETE PROPOSITION NAVIGATOR -->", 1
+    )[0]
+    assert "`" not in block
+    assert "<strong>Representation-independent bridge objects</strong>" in block
+    assert "<strong>Full mixed-prevalence P75 separation bracket" in block
