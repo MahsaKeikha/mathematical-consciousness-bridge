@@ -46,6 +46,22 @@ jobs:
           path.write_text(text.replace(old, new, 1), encoding='utf-8')
           PY
 
+      - name: Normalize generated text endings
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          for name in (
+              'website/styles.css',
+              'website/visual-atlas.html',
+              'website/sources.html',
+              'website/research-orientation.js',
+              'tests/test_visual_atlas_frontier_hierarchy.py',
+              'tests/test_three_program_atlas_sources.py',
+          ):
+              path = Path(name)
+              path.write_text(path.read_text(encoding='utf-8').rstrip() + '\n', encoding='utf-8')
+          PY
+
       - name: Run focused reader and publication contracts
         run: |
           python -m pytest -q \
