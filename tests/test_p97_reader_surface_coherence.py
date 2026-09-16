@@ -33,7 +33,7 @@ def test_p97_is_historical_in_atlas_and_chronological_on_research_map() -> None:
     assert 'CURRENT_FRONTIER = "P100"' in verifier
     assert atlas.index('id="p99-frontier"') < atlas.index('id="p98-frontier"')
     assert atlas.index('id="p98-frontier"') < atlas.index('id="p97-frontier"')
-    assert "Previous theorem frontier · P98" in atlas
+    assert "Historical theorem frontier · P98" in atlas
     assert 'id="p97-reader-frontier"' in plain
     assert 'id="p97-reader-frontier"' in start
     assert 'id="p97-research-map"' in research
