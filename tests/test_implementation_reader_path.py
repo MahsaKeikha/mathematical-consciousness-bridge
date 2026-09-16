@@ -37,6 +37,16 @@ def test_research_status_cards_open_exact_stage_pages() -> None:
     assert "card.replaceWith(link)" in script
 
 
+def test_research_ii_overview_diagram_is_constrained_without_global_css_replacement() -> None:
+    script = (WEBSITE / "reader-links.js").read_text(encoding="utf-8")
+
+    assert "addResearchOverviewDiagramStyles" in script
+    assert "#research-ii-overview .research-ii-figure-card" in script
+    assert "width: min(100%, 560px);" in script
+    assert "max-height: 360px;" in script
+    assert "grid-template-columns: 1fr;" in script
+
+
 def test_implementation_guide_covers_all_ten_research_stages() -> None:
     page = (WEBSITE / "implementation.html").read_text(encoding="utf-8")
 
