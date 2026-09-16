@@ -1,6 +1,5 @@
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 EVIDENCE = (ROOT / "website" / "three-program-evidence.js").read_text(encoding="utf-8")
 ORIENTATION = (ROOT / "website" / "research-orientation.js").read_text(encoding="utf-8")
