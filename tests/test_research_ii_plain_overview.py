@@ -93,11 +93,11 @@ def test_research_ii_visual_has_attached_flow_arrows_and_compact_page_size() -> 
     css = _text(READER_CSS)
 
     for segment in (
-        'x1="290" y1="258" x2="334" y2="258"',
-        'x1="586" y1="258" x2="630" y2="258"',
-        'x1="882" y1="258" x2="926" y2="258"',
-        'M1044 365 L1044 405 L753 405 L753 430',
-        'M1044 405 L1044 430',
+        'x1="290" y1="258" x2="344" y2="258"',
+        'x1="586" y1="258" x2="640" y2="258"',
+        'x1="882" y1="258" x2="936" y2="258"',
+        'M1044 365 L1044 405 L753 405 L753 442',
+        'M1044 405 L1044 442',
     ):
         assert segment in visual
 
