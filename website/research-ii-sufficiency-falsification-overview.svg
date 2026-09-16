@@ -2,7 +2,7 @@
   <title id="title">Research II sufficiency test in four steps</title>
   <desc id="desc">A compact four step Research II diagram. Declare a physical or computational descriptor, define the target independently, match cases that are equivalent under the descriptor, then test whether the independent target distinguishes those cases. No separation means the descriptor survives this test without being validated. Separation means the declared descriptor is insufficient for that target.</desc>
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M0,0 L10,5 L0,10 Z" fill="#6482b8"/>
     </marker>
     <style>
@@ -16,7 +16,7 @@
       .cardTitle { font-size: 20px; font-weight: 760; fill: #172033; }
       .formula { font-size: 22px; font-weight: 720; fill: #233a75; }
       .body { font-size: 15px; fill: #586477; }
-      .outcomeKicker { font-size: 12px; font-weight: 800; letter-spacing: 1px; }
+      .outcomeKicker { font-size: 12px; font-weight: 800; letter-spacing: 0.9px; }
       .outcomeTitle { font-size: 18px; font-weight: 760; fill: #172033; }
       .outcomeBody { font-size: 14px; fill: #586477; }
       .boundary { font-size: 13px; fill: #586477; }
@@ -75,23 +75,23 @@
     </text>
   </g>
 
-  <line x1="290" y1="258" x2="334" y2="258" stroke="#6482b8" stroke-width="3" marker-end="url(#arrow)"/>
-  <line x1="586" y1="258" x2="630" y2="258" stroke="#6482b8" stroke-width="3" marker-end="url(#arrow)"/>
-  <line x1="882" y1="258" x2="926" y2="258" stroke="#6482b8" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="290" y1="258" x2="344" y2="258" stroke="#6482b8" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="586" y1="258" x2="640" y2="258" stroke="#6482b8" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="882" y1="258" x2="936" y2="258" stroke="#6482b8" stroke-width="3" marker-end="url(#arrow)"/>
 
-  <path d="M1044 365 L1044 405 L753 405 L753 430" fill="none" stroke="#6482b8" stroke-width="3" marker-end="url(#arrow)"/>
-  <path d="M1044 405 L1044 430" fill="none" stroke="#6482b8" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M1044 365 L1044 405 L753 405 L753 442" fill="none" stroke="#6482b8" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M1044 405 L1044 442" fill="none" stroke="#6482b8" stroke-width="3" marker-end="url(#arrow)"/>
 
   <g class="ui">
     <rect x="608" y="442" width="290" height="105" rx="16" fill="#eef5ff" stroke="#b9d0ee" stroke-width="2"/>
     <text x="632" y="470" class="outcomeKicker" fill="#315e9d">NO TARGET SEPARATION</text>
     <text x="632" y="498" class="outcomeTitle">Survives this test</text>
-    <text x="632" y="525" class="outcomeBody">Compatible with the evidence, not validated.</text>
+    <text x="632" y="525" class="outcomeBody">Compatible, not validated.</text>
 
     <rect x="916" y="442" width="236" height="105" rx="16" fill="#fff4ed" stroke="#ebc3ae" stroke-width="2"/>
     <text x="940" y="470" class="outcomeKicker" fill="#b5532f">TARGET DIFFERS</text>
     <text x="940" y="498" class="outcomeTitle">Sufficiency fails</text>
-    <text x="940" y="525" class="outcomeBody">Descriptor insufficient for this target.</text>
+    <text x="940" y="525" class="outcomeBody">Descriptor is insufficient.</text>
   </g>
 
   <line x1="48" y1="580" x2="1152" y2="580" stroke="#d5deeb" stroke-width="1.5"/>
