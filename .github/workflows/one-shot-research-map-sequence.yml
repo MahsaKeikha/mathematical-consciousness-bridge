@@ -32,6 +32,36 @@ jobs:
       - name: Normalize Research Map sequence
         run: python scripts/one_shot_research_map_sequence.py
 
+      - name: Preserve direct provenance and overview audit paths
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('website/research-map.html')
+          text = path.read_text(encoding='utf-8')
+
+          p92_old = '>Open P92 theorem</a></p>'
+          p92_new = (
+              '>Open P92 theorem</a> · '
+              '<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/'
+              'blob/main/docs/p92_equation_provenance.md">Audit P92 provenance</a></p>'
+          )
+          if p92_old not in text:
+              raise SystemExit('P92 theorem link insertion point not found')
+          text = text.replace(p92_old, p92_new, 1)
+
+          p100_old = '<a class="button primary" href="#p100-research-map">Jump to P100</a>'
+          p100_new = (
+              p100_old
+              + '\n    <a class="button" href="index.html#p100-frontier">Open P100 overview</a>'
+          )
+          if p100_old not in text:
+              raise SystemExit('P100 overview insertion point not found')
+          text = text.replace(p100_old, p100_new, 1)
+
+          path.write_text(text, encoding='utf-8')
+          PY
+
       - name: Run focused sequence contracts
         run: |
           python -m pytest -q \
