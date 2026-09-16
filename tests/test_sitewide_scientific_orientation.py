@@ -75,5 +75,5 @@ def test_orientation_styles_are_responsive_and_visually_structured() -> None:
 def test_new_reader_surface_respects_dash_policy() -> None:
     for path in ("website/research-orientation.js", "website/research-orientation.css"):
         text = _read(path)
-        assert "–" not in text
-        assert "—" not in text
+        assert "\u2013" not in text
+        assert "\u2014" not in text
