@@ -21,14 +21,14 @@ def test_p95_formal_record_is_preserved() -> None:
         assert (ROOT / path).is_file()
 
 
-def test_p95_remains_visible_below_p96_and_p97() -> None:
+def test_p95_is_historical_in_atlas_and_chronological_on_research_map() -> None:
     atlas = _read("website/visual-atlas.html")
     research = _read("website/research-map.html")
     assert atlas.index('id="p97-frontier"') < atlas.index('id="p96-frontier"')
     assert atlas.index('id="p96-frontier"') < atlas.index('id="p95-frontier"')
     assert "Historical theorem frontier · P95" in atlas
-    assert research.index('id="p97-research-map"') < research.index('id="p96-research-map"')
-    assert research.index('id="p96-research-map"') < research.index('id="p95-research-map"')
+    assert research.index('id="p95-research-map"') < research.index('id="p96-research-map"')
+    assert research.index('id="p96-research-map"') < research.index('id="p97-research-map"')
 
 
 def test_p95_scientific_boundary_remains_visible() -> None:
