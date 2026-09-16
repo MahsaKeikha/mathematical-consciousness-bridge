@@ -64,6 +64,68 @@
     });
   }
 
+  function addResearchStatusCardStyles() {
+    if (document.getElementById('research-status-card-styles')) return;
+    const style = document.createElement('style');
+    style.id = 'research-status-card-styles';
+    style.textContent = `
+      .status-grid > a.research-status-link {
+        position: relative;
+        display: block;
+        min-width: 0;
+        padding: 18px 19px 50px;
+        border: 1px solid var(--line);
+        border-radius: 13px;
+        background: var(--paper);
+        color: var(--ink);
+        text-decoration: none !important;
+        cursor: pointer;
+        transition: transform 150ms ease, border-color 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
+      }
+      .status-grid > a.research-status-link:hover,
+      .status-grid > a.research-status-link:focus-visible {
+        transform: translateY(-2px);
+        border-color: #8f9db7;
+        background: #fbfcff;
+        box-shadow: 0 9px 24px rgba(31, 45, 84, 0.09);
+        text-decoration: none !important;
+      }
+      .status-grid > a.research-status-link::after {
+        content: 'Open research page →';
+      }
+    `;
+    document.head.append(style);
+  }
+
+  function wireResearchStatusCards() {
+    const destinations = new Map([
+      ['research i', 'observer-research.html'],
+      ['research ii', 'research-map.html'],
+      ['research iii', 'measurement-science.html'],
+    ]);
+
+    let linkedAny = false;
+    document.querySelectorAll('.status-grid').forEach((grid) => {
+      Array.from(grid.children).forEach((card) => {
+        if (card.matches('a')) return;
+        const label = card.querySelector('strong')?.textContent?.trim().toLowerCase();
+        const href = label ? destinations.get(label) : null;
+        if (!href) return;
+
+        const link = document.createElement('a');
+        link.className = `${card.className || ''} research-status-link`.trim();
+        link.href = href;
+        link.innerHTML = card.innerHTML;
+        link.setAttribute('aria-label', `Open ${card.querySelector('strong')?.textContent?.trim()} website page`);
+        link.title = 'Open research page';
+        card.replaceWith(link);
+        linkedAny = true;
+      });
+    });
+
+    if (linkedAny) addResearchStatusCardStyles();
+  }
+
   function addResearchPathCardStyles() {
     if (document.getElementById('research-path-card-styles')) return;
     const style = document.createElement('style');
@@ -154,6 +216,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     addHeadingAnchors();
     makeStandaloneFiguresOpenable();
+    wireResearchStatusCards();
     wireResearchPathCards();
   });
 })();
