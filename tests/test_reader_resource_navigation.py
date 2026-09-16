@@ -102,8 +102,12 @@ def test_sitewide_card_affordance_contract_is_explicit() -> None:
         assert selector in script
 
     assert "function classifyCardAffordances()" in script
+    assert "function neutralizeAmbiguousWholeCard(card)" in script
+    assert "uniqueTargets.size > 1" in script
     assert "card-affordance-actionable" in script
     assert "card-affordance-static" in script
+    assert "card-affordance-multi" in script
+    assert "event.stopImmediatePropagation()" in script
     assert "card-action-hint" in script
     assert "Open →" in script
     assert "interactive-card::after" in script
