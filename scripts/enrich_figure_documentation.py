@@ -447,7 +447,12 @@ def _update_visual_atlas() -> None:
         '<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/figure_caption_and_description_standard.md">Figure Caption and Description Standard</a> and the '
         '<a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/reader_experience_and_visual_standard.md">Reader Experience and Visual Presentation Standard</a>.</p></section>\n'
     )
-    if legacy_reading_key.strip() in text and reading_key.strip() in text:
+    current_reading_rule = (
+        '<section class="boundary" id="atlas-reading-rule"><h2>How to read every figure</h2>'
+    )
+    if current_reading_rule in text:
+        pass
+    elif legacy_reading_key.strip() in text and reading_key.strip() in text:
         text = text.replace(legacy_reading_key, "", 1)
     elif legacy_reading_key.strip() in text:
         text = text.replace(legacy_reading_key, reading_key, 1)

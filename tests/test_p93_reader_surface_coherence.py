@@ -20,7 +20,7 @@ def test_p93_proof_states_localized_rejection_and_boundary() -> None:
 def test_p93_is_preserved_as_historical_iid_frontier() -> None:
     atlas = _read("website/visual-atlas.html")
     assert 'id="p93-frontier"' in atlas
-    assert "Previous theorem frontier · P93" in atlas
+    assert "Historical theorem frontier · P93" in atlas
     assert "p93_localized_sign_coherence_rejection.svg" in atlas
     assert atlas.index('id="p94-frontier"') < atlas.index('id="p93-frontier"')
 

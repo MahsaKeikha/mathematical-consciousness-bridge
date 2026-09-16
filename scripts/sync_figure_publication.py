@@ -540,7 +540,7 @@ def _check_reader_surfaces(frontier: int) -> None:
     required_atlas = (
         f'id="p{frontier}-frontier"',
         f"Current theorem frontier · P{frontier}",
-        f"Previous theorem frontier · P{previous}",
+        f"Immediate predecessor · P{previous}",
     )
     required_plain = (
         '<strong>Research I</strong><span>physical-system identification</span>',

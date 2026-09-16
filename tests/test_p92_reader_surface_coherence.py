@@ -28,7 +28,7 @@ def test_p92_is_historical_beneath_the_declared_homepage_frontier() -> None:
     p92 = atlas.index('id="p92-frontier"')
     assert current_position < p92
     historical = atlas[p92:]
-    assert "Previous theorem frontier · P92" in historical
+    assert "Historical theorem frontier · P92" in historical
     assert "p92_exact_global_mixed_prevalence_distance.svg" in historical
     assert "proposition_92_exact_global_mixed_prevalence_distance.md" in historical
     assert "p92_equation_provenance.md" in historical

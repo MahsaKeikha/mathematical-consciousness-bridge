@@ -32,7 +32,7 @@ def test_p90_is_historical_after_p91_on_visual_atlas() -> None:
 
     assert p91 < p90 < p89
     historical = text[p90:p89]
-    assert "Previous theorem frontier · P90" in historical
+    assert "Historical theorem frontier · P90" in historical
     assert "p90_exact_nonlinear_rank_one_separation.svg" in historical
     assert "5/72" in historical
     assert "5/168" in historical

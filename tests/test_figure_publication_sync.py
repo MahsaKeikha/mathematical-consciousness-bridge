@@ -101,7 +101,7 @@ def test_visual_atlas_leads_with_current_before_previous_frontiers() -> None:
     assert f"Current theorem frontier · {label}" in current
     assert figure in current
     assert f"proposition_{frontier}_" in current
-    assert f"Previous theorem frontier · P{previous}" in text[previous_pos:]
+    assert f"Immediate predecessor · P{previous}" in text[previous_pos:]
 
 
 def test_homepage_balances_three_research_stages_and_keeps_history_specialist() -> None:
