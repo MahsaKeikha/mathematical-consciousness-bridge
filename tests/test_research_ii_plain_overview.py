@@ -67,23 +67,38 @@ def test_overview_runtime_adds_reader_friendly_research_ii_visuals() -> None:
     assert "Bridge-test program through P100" in app
 
 
-def test_research_ii_visual_is_self_explanatory_and_bounded() -> None:
+def test_research_ii_visual_is_compact_self_explanatory_and_bounded() -> None:
     visual = _text(RESEARCH_II_VISUAL)
     for token in (
-        "Research II testing architecture",
-        "State exactly what",
-        "Measure the target",
-        "MATCH EQUIVALENT CASES",
+        "Research II sufficiency test in four steps",
+        "Descriptor D",
+        "Independent target Y",
+        "Equivalent cases",
         "D(x₁) = D(x₂)",
         "Y(x₁) ?= Y(x₂)",
-        "No target separation found",
-        "Target separation found",
-        "SCIENTIFIC BOUNDARY",
-        "does not prove nonphysicality",
+        "NO TARGET SEPARATION",
+        "TARGET DIFFERS",
+        "Survives this test",
+        "Sufficiency fails",
+        "Richer physical descriptions may remain possible",
     ):
         assert token in visual
     assert "<desc" in visual
-    assert 'viewBox="0 0 1600 920"' in visual
+    assert 'viewBox="0 0 1200 620"' in visual
+    assert 'width="1600" height="920"' not in visual
+
+
+def test_research_ii_visual_has_attached_flow_arrows() -> None:
+    visual = _text(RESEARCH_II_VISUAL)
+
+    for segment in (
+        'x1="290" y1="258" x2="344" y2="258"',
+        'x1="586" y1="258" x2="640" y2="258"',
+        'x1="882" y1="258" x2="936" y2="258"',
+        'M1044 365 L1044 405 L753 405 L753 442',
+        'M1044 405 L1044 442',
+    ):
+        assert segment in visual
 
 
 def test_p100_visual_separates_reader_overview_from_technical_theorem_art() -> None:
