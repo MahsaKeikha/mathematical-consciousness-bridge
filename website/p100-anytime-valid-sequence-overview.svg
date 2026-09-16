@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="920" viewBox="0 0 1600 920" role="img" aria-labelledby="title desc">
+  <title id="title">P100 anytime-valid sequential evidence architecture</title>
+  <desc id="desc">A reader-friendly diagram showing how past information freezes the next-round plan, fresh certification data produce a valid e-value, a predictable stake forms a multiplicative factor, evidence accumulates across rounds, and threshold crossing remains anytime-valid under the declared sequential null.</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="18" flood-color="#1a2d55" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6e8fc5"/>
+    </marker>
+    <style>
+      .ui { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+      .display { font-family: Georgia, "Times New Roman", serif; }
+      .kicker { font-size: 17px; font-weight: 750; letter-spacing: 3px; fill: #365aa8; }
+      .title { font-size: 44px; font-weight: 700; fill: #172033; }
+      .subtitle { font-size: 22px; fill: #5a6578; }
+      .step { font-size: 15px; font-weight: 800; letter-spacing: 1.35px; fill: #365aa8; }
+      .cardTitle { font-size: 24px; font-weight: 760; fill: #172033; }
+      .body { font-size: 18px; fill: #5a6578; }
+      .formula { font-size: 25px; font-weight: 720; fill: #233a75; }
+      .checkpointTitle { font-size: 19px; font-weight: 800; letter-spacing: 1px; fill: #245b9f; }
+      .checkpoint { font-size: 21px; font-weight: 650; fill: #264372; }
+      .boundaryLabel { font-size: 15px; font-weight: 800; letter-spacing: 2px; fill: #365aa8; }
+      .boundary { font-size: 18px; fill: #5a6578; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="920" rx="28" fill="#f8faff"/>
+  <text x="800" y="62" text-anchor="middle" class="ui kicker">P100 CURRENT FRONTIER</text>
+  <text x="800" y="116" text-anchor="middle" class="display title">Anytime-valid evidence across fresh certification rounds</text>
+  <text x="800" y="157" text-anchor="middle" class="ui subtitle">Adapt using the past, protect the current round, accumulate evidence, and stop without invalidating the error guarantee.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="58" y="220" width="330" height="245" rx="22" fill="#ffffff" stroke="#d6dfef" stroke-width="2"/>
+    <rect x="424" y="220" width="330" height="245" rx="22" fill="#ffffff" stroke="#d6dfef" stroke-width="2"/>
+    <rect x="790" y="220" width="330" height="245" rx="22" fill="#ffffff" stroke="#d6dfef" stroke-width="2"/>
+    <rect x="1156" y="220" width="386" height="245" rx="22" fill="#ffffff" stroke="#d6dfef" stroke-width="2"/>
+
+    <rect x="242" y="545" width="330" height="190" rx="22" fill="#ffffff" stroke="#d6dfef" stroke-width="2"/>
+    <rect x="635" y="545" width="330" height="190" rx="22" fill="#ffffff" stroke="#d6dfef" stroke-width="2"/>
+    <rect x="1028" y="545" width="330" height="190" rx="22" fill="#f1f7ff" stroke="#b9d3f2" stroke-width="2"/>
+  </g>
+
+  <g class="ui">
+    <circle cx="105" cy="268" r="24" fill="#eaf1ff"/>
+    <text x="105" y="276" text-anchor="middle" font-size="19" font-weight="800" fill="#365aa8">1</text>
+    <text x="141" y="274" class="step">PAST INFORMATION</text>
+    <text x="86" y="327" class="cardTitle">Use only what is already known</text>
+    <text x="86" y="366" class="body">Past rounds may guide the next design,</text>
+    <text x="86" y="394" class="body">but they cannot contain the current</text>
+    <text x="86" y="422" class="body">certification outcomes.</text>
+
+    <circle cx="471" cy="268" r="24" fill="#eaf1ff"/>
+    <text x="471" y="276" text-anchor="middle" font-size="19" font-weight="800" fill="#365aa8">2</text>
+    <text x="507" y="274" class="step">FREEZE THE PLAN</text>
+    <text x="452" y="327" class="cardTitle">Choose the next-round rules first</text>
+    <text x="452" y="366" class="body">Calibration, selection, and stake must</text>
+    <text x="452" y="394" class="body">be fixed before current certification</text>
+    <text x="452" y="422" class="body">data are inspected.</text>
+
+    <circle cx="837" cy="268" r="24" fill="#eaf1ff"/>
+    <text x="837" y="276" text-anchor="middle" font-size="19" font-weight="800" fill="#365aa8">3</text>
+    <text x="873" y="274" class="step">FRESH DATA</text>
+    <text x="818" y="327" class="cardTitle">Run a protected certification round</text>
+    <text x="818" y="366" class="body">The current certification sample is</text>
+    <text x="818" y="394" class="body">fresh relative to the choices that</text>
+    <text x="818" y="422" class="body">define its own test.</text>
+
+    <circle cx="1203" cy="268" r="24" fill="#eaf1ff"/>
+    <text x="1203" y="276" text-anchor="middle" font-size="19" font-weight="800" fill="#365aa8">4</text>
+    <text x="1239" y="274" class="step">ROUND-LEVEL EVIDENCE</text>
+    <text x="1184" y="327" class="cardTitle">Produce a valid e-value</text>
+    <text x="1184" y="366" class="formula">Eₜ</text>
+    <text x="1232" y="366" class="body">with conditional null mean at most 1</text>
+    <text x="1184" y="406" class="body">This is the protected evidence unit</text>
+    <text x="1184" y="434" class="body">that can enter the sequential process.</text>
+
+    <text x="270" y="590" class="step">5  PREDICTABLE STAKE</text>
+    <text x="270" y="630" class="cardTitle">Control how much is invested</text>
+    <text x="270" y="670" class="formula">Fₜ = (1 - ηₜ) + ηₜEₜ</text>
+    <text x="270" y="706" class="body">ηₜ is chosen from past information only.</text>
+
+    <text x="663" y="590" class="step">6  ACCUMULATE</text>
+    <text x="663" y="630" class="cardTitle">Multiply valid round factors</text>
+    <text x="663" y="670" class="formula">Mₜ = ∏ Fₛ</text>
+    <text x="663" y="706" class="body">The process remains a nonnegative supermartingale.</text>
+
+    <text x="1056" y="590" class="step">7  STOP VALIDLY</text>
+    <text x="1056" y="630" class="cardTitle">Inspect after every fresh round</text>
+    <text x="1056" y="670" class="formula">Mₜ ≥ 1 / α</text>
+    <text x="1056" y="706" class="body">Crossing the threshold is anytime-valid.</text>
+  </g>
+
+  <line x1="394" y1="343" x2="413" y2="343" stroke="#6e8fc5" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="760" y1="343" x2="779" y2="343" stroke="#6e8fc5" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="1126" y1="343" x2="1145" y2="343" stroke="#6e8fc5" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M1349 467 L1349 505 L407 505 L407 534" fill="none" stroke="#6e8fc5" stroke-width="3.5" marker-end="url(#arrow)"/>
+  <line x1="578" y1="640" x2="624" y2="640" stroke="#6e8fc5" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="971" y1="640" x2="1017" y2="640" stroke="#6e8fc5" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)" class="ui">
+    <rect x="355" y="770" width="890" height="82" rx="20" fill="#eef6ff" stroke="#bed3ef" stroke-width="2"/>
+    <text x="390" y="802" class="checkpointTitle">EXACT 95% CHECKPOINT</text>
+    <text x="390" y="832" class="checkpoint">Eₜ = 12.5, ηₜ = 0.5, Fₜ = 6.75, and after two fresh rounds M₂ = 45.5625 &gt; 20.</text>
+  </g>
+
+  <line x1="72" y1="875" x2="1528" y2="875" stroke="#d6dfef" stroke-width="2"/>
+  <text x="82" y="906" class="ui boundaryLabel">SCIENTIFIC BOUNDARY</text>
+  <text x="300" y="906" class="ui boundary">Current-round leakage, reused-data relabeling, or nonpredictable calibration are outside the theorem's guarantee.</text>
+</svg>
