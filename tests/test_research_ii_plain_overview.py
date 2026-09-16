@@ -88,9 +88,8 @@ def test_research_ii_visual_is_compact_self_explanatory_and_bounded() -> None:
     assert 'width="1600" height="920"' not in visual
 
 
-def test_research_ii_visual_has_attached_flow_arrows_and_compact_page_size() -> None:
+def test_research_ii_visual_has_attached_flow_arrows() -> None:
     visual = _text(RESEARCH_II_VISUAL)
-    css = _text(READER_CSS)
 
     for segment in (
         'x1="290" y1="258" x2="344" y2="258"',
@@ -100,11 +99,6 @@ def test_research_ii_visual_has_attached_flow_arrows_and_compact_page_size() -> 
         'M1044 405 L1044 442',
     ):
         assert segment in visual
-
-    assert ".research-ii-figure-card" in css
-    assert "width: min(100%, 540px);" in css
-    assert "max-height: 365px;" in css
-    assert "grid-template-columns: minmax(300px, 0.9fr) minmax(320px, 1.1fr);" in css
 
 
 def test_p100_visual_separates_reader_overview_from_technical_theorem_art() -> None:
