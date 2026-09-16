@@ -201,6 +201,83 @@
     });
   }
 
+  function propositionNumber(text) {
+    const match = String(text || '').match(/\bP(\d{1,3})\b/i);
+    return match ? Number(match[1]) : null;
+  }
+
+  function primaryCardHref(card) {
+    const links = Array.from(card.querySelectorAll('a[href]')).filter(
+      (link) => !link.classList.contains('heading-anchor'),
+    );
+    const preferred = links.find((link) => {
+      const label = (link.textContent || '').toLowerCase();
+      return label.includes('theorem') || label.includes('proposition') || label.includes('open p') || label.includes('read p');
+    });
+    if (preferred) return preferred.href;
+    if (links.length) return links[0].href;
+
+    const number = propositionNumber(card.textContent);
+    if (number) return `research-map.html#p${number}`;
+    return null;
+  }
+
+  function clickableCardLabel(card) {
+    const heading = card.querySelector('h2, h3, h4, strong');
+    const title = heading?.textContent?.trim();
+    if (title) return `Open result: ${title}`;
+    const number = propositionNumber(card.textContent);
+    return number ? `Open result P${number}` : 'Open result';
+  }
+
+  function wireWholeResultCard(card) {
+    if (!(card instanceof HTMLElement)) return;
+    if (card.matches('a')) return;
+    if (card.dataset.clickableReady === 'true') return;
+
+    const href = primaryCardHref(card);
+    if (!href) return;
+
+    card.dataset.clickableReady = 'true';
+    card.classList.add('interactive-card');
+    card.tabIndex = 0;
+    card.setAttribute('role', 'link');
+    card.setAttribute('aria-label', clickableCardLabel(card));
+    card.title = 'Open this result';
+
+    const open = () => {
+      window.location.href = href;
+    };
+
+    card.addEventListener('click', (event) => {
+      if (event.target.closest('a, button, input, select, textarea, summary')) return;
+      open();
+    });
+
+    card.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      if (event.target.closest('a, button, input, select, textarea, summary')) return;
+      event.preventDefault();
+      open();
+    });
+  }
+
+  function wireAllResultCards() {
+    const cards = new Set();
+    const containers = document.querySelectorAll(
+      '.result-grid, .results-grid, .theorem-grid, .theorem-cards, .key-results, .key-results-grid, .frontier-summary-grid, .roadmap-grid',
+    );
+    containers.forEach((container) => {
+      Array.from(container.children).forEach((card) => cards.add(card));
+    });
+
+    document
+      .querySelectorAll('.result, .result-card, .result-tile, .theorem-card, .theorem-tile, .key-result, .key-result-card, .frontier-summary-card')
+      .forEach((card) => cards.add(card));
+
+    cards.forEach(wireWholeResultCard);
+  }
+
   function addResearchOverviewDiagramStyles() {
     if (document.getElementById('research-overview-diagram-styles')) return;
     const style = document.createElement('style');
@@ -241,6 +318,7 @@
     makeStandaloneFiguresOpenable();
     wireResearchStatusCards();
     wireResearchPathCards();
+    wireAllResultCards();
     addResearchOverviewDiagramStyles();
   });
 })();
