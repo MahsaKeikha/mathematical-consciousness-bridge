@@ -64,8 +64,8 @@
     },
     {
       "path": "docs/figures/p100_anytime_sequential_eprocess.svg",
-      "sha256": "bae62cef4354762b15bc0dd0f17f341fa823614a44279d0dc31d8a595e4afdd4",
-      "bytes": 8083,
+      "sha256": "a76f173ef3270e2a744e7adeafe722ce08ef97efb77178dd194daa291d6767a3",
+      "bytes": 8265,
       "category": "theorem-or-architecture",
       "title": "P100 Anytime-Valid Sequential E-Process",
       "description_chars": 1039
@@ -688,8 +688,8 @@
     },
     {
       "path": "docs/figures/p95_drift_aware_stratified_sign_coherence.svg",
-      "sha256": "027106d6b45ca515b2c031dd694e82759a41ef738661efe06a815555db288c44",
-      "bytes": 6708,
+      "sha256": "d4598285ae4890c3ef923a6b75fe904f2d435c81bf93586a2c52fe7bf63faea2",
+      "bytes": 6839,
       "category": "theorem-or-architecture",
       "title": "P95 Drift-Aware Stratified Sign-Coherence Rejection",
       "description_chars": 992
@@ -720,8 +720,8 @@
     },
     {
       "path": "docs/figures/p99_cross_fitted_evalue_aggregation.svg",
-      "sha256": "ca26e7d3fc1a66f526ab3416e4c93ebf810520663a56dc6d1c76e576a536c08c",
-      "bytes": 6282,
+      "sha256": "8b988b9cc29714fc10d1875a307a459887fd468f432afbad55ade1acd7dea0c0",
+      "bytes": 6621,
       "category": "theorem-or-architecture",
       "title": "P99 Cross-Fitted E-Value Aggregation",
       "description_chars": 857
