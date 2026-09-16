@@ -1,6 +1,4 @@
 from pathlib import Path
-import re
-
 
 ROOT = Path(__file__).resolve().parents[1]
 WEBSITE = ROOT / "website"
@@ -12,13 +10,15 @@ def _reader_script() -> str:
 
 def _proposition_slugs() -> list[str]:
     script = _reader_script()
-    match = re.search(
-        r"const PROPOSITION_DOC_SLUGS = \[(.*?)\];",
-        script,
-        flags=re.DOTALL,
-    )
-    assert match is not None
-    return re.findall(r"^\s*'([^']+)',\s*$", match.group(1), flags=re.MULTILINE)
+    start_marker = "const PROPOSITION_DOC_SLUGS = ["
+    start = script.index(start_marker) + len(start_marker)
+    end = script.index("\n  ];", start)
+    slugs = []
+    for line in script[start:end].splitlines():
+        item = line.strip()
+        if item.startswith("'") and item.endswith("',"):
+            slugs.append(item[1:-2])
+    return slugs
 
 
 def test_visual_atlas_indexes_every_proposition_exactly_once() -> None:
