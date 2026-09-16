@@ -2,47 +2,49 @@
 <title id="title">P95 Drift-Aware Stratified Sign-Coherence Rejection</title>
 <desc id="desc">What this figure shows: P95 responds to the P94 temporal-pooling no-go by replacing one pooled stationary target with a family of predeclared regime-specific P75 tests. Each regime may have its own marginal law, sample size, dependence range, and exact error budget. A union bound controls all local P94 confidence events without requiring independence between regimes. How to read it: move from the P94 pooling warning on the left, through predeclared regime-specific laws in the center, to the familywise rejection rule on the right. The lower strip gives the balanced two-regime one-dependent 95 percent checkpoint. Main takeaway: drift across regimes is allowed, but stationarity is still required locally inside each declared regime. Scientific status: conditional statistical model-audit theorem. It does not validate data-dependent segmentation, prove model acceptance after non-rejection, identify consciousness, establish nonphysicality, or close the physical-to-experiential bridge.</desc>
 <rect width="1440" height="900" fill="#ffffff"/>
-<text x="70" y="65" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700" fill="#111827">P95 - Drift-Aware Stratified Sign-Coherence Rejection</text>
-<text x="70" y="105" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#475569">Do not pool drifting P75 regimes. Test predeclared regimes locally and control the familywise error exactly.</text>
+<text x="70" y="65" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#111827">P95 - Drift-Aware Stratified Sign-Coherence Rejection</text>
+<text x="70" y="105" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#475569">Do not pool drifting P75 regimes. Test predeclared regimes locally and control the familywise error exactly.</text>
 
 <rect x="60" y="155" width="400" height="515" rx="22" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
-<text x="92" y="205" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#111827">1. P94 pooling no-go</text>
-<text x="92" y="250" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">Two valid time-specific P75 laws can have</text>
-<text x="92" y="282" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">a pooled law with the forbidden sign pattern.</text>
-<rect x="95" y="325" width="330" height="95" rx="15" fill="#ffffff" stroke="#fb923c"/>
-<text x="260" y="362" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#111827">Regime 1: D1 D2 D3 &gt; 0</text>
-<text x="260" y="397" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#111827">Regime 2: D1 D2 D3 &gt; 0</text>
-<text x="92" y="470" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#c2410c">Pooled signs: (-,+,+)</text>
-<text x="92" y="510" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">Conclusion: the pooled marginal is not a valid</text>
-<text x="92" y="540" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">stationary target when the process drifts.</text>
-<text x="92" y="610" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#9a3412">DO NOT POOL</text>
+<text x="92" y="205" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#111827">1. P94 pooling no-go</text>
+<text x="92" y="250" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#475569">Two valid time-specific P75 laws can have</text>
+<text x="92" y="280" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#475569">a pooled law with the forbidden sign pattern.</text>
+<rect x="95" y="320" width="330" height="95" rx="15" fill="#ffffff" stroke="#fb923c"/>
+<text x="260" y="357" text-anchor="middle" font-family="Georgia, serif" font-size="19" fill="#111827">Regime 1: D1 D2 D3 &gt; 0</text>
+<text x="260" y="392" text-anchor="middle" font-family="Georgia, serif" font-size="19" fill="#111827">Regime 2: D1 D2 D3 &gt; 0</text>
+<text x="92" y="463" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#c2410c">Pooled signs: (-,+,+)</text>
+<text x="92" y="505" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#475569">Conclusion: the pooled marginal is not a valid</text>
+<text x="92" y="534" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#475569">stationary target when the process drifts.</text>
+<text x="92" y="610" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#9a3412">DO NOT POOL</text>
 
 <rect x="520" y="155" width="400" height="515" rx="22" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
-<text x="552" y="205" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#111827">2. Predeclared regimes</text>
-<text x="552" y="250" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">For b = 1,...,B declare before testing:</text>
-<text x="552" y="300" font-family="Georgia, serif" font-size="21" fill="#111827">P_b, n_b, m_b, alpha_b</text>
-<text x="552" y="350" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">Local assumption: one common marginal P_b</text>
-<text x="552" y="380" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">inside regime b and m_b-dependent sampling.</text>
-<text x="552" y="435" font-family="Georgia, serif" font-size="20" fill="#111827">sum_b alpha_b &lt;= alpha</text>
-<text x="552" y="490" font-family="Georgia, serif" font-size="19" fill="#111827">eps_b^2 = (m_b+1) log(14/alpha_b)/(2 n_b)</text>
-<text x="552" y="545" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">Different regimes may have different marginals.</text>
-<text x="552" y="575" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">No cross-regime independence is required.</text>
-<text x="552" y="625" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#1d4ed8">Boundaries and error budgets must be predeclared.</text>
+<text x="552" y="205" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#111827">2. Predeclared regimes</text>
+<text x="552" y="250" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#475569">For b = 1,...,B declare before testing:</text>
+<text x="552" y="298" font-family="Georgia, serif" font-size="20" fill="#111827">P_b, n_b, m_b, alpha_b</text>
+<text x="552" y="345" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#475569">Local assumption: one common marginal P_b</text>
+<text x="552" y="374" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#475569">inside regime b with m_b-dependent sampling.</text>
+<text x="552" y="425" font-family="Georgia, serif" font-size="19" fill="#111827">sum_b alpha_b &lt;= alpha</text>
+<text x="552" y="472" font-family="Georgia, serif" font-size="17" fill="#111827">eps_b^2 = (m_b+1) log(14/alpha_b)</text>
+<text x="552" y="500" font-family="Georgia, serif" font-size="17" fill="#111827">/ (2 n_b)</text>
+<text x="552" y="548" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#475569">Different regimes may have different marginals.</text>
+<text x="552" y="577" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#475569">No cross-regime independence is required.</text>
+<text x="552" y="625" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1d4ed8">Boundaries and error budgets must be predeclared.</text>
 
 <rect x="980" y="155" width="400" height="515" rx="22" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
-<text x="1012" y="205" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#111827">3. Familywise rejection</text>
-<text x="1012" y="250" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">Joint null:</text>
-<text x="1012" y="292" font-family="Georgia, serif" font-size="20" fill="#111827">H0: P_b in M75 for every b</text>
-<text x="1012" y="348" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">If one regime has</text>
-<text x="1012" y="390" font-family="Georgia, serif" font-size="19" fill="#111827">D1 D2 D3 &lt; 0</text>
-<text x="1012" y="425" font-family="Georgia, serif" font-size="19" fill="#111827">and eps_b &lt; min_i r_bi</text>
-<text x="1012" y="480" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">then that regime is outside P75 and</text>
-<text x="1012" y="510" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">the all-regimes joint null is rejected.</text>
-<text x="1012" y="565" font-family="Georgia, serif" font-size="20" fill="#166534">confidence &gt;= 1 - sum_b alpha_b</text>
-<text x="1012" y="615" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#166534">Union bound only: regime events may be dependent.</text>
+<text x="1012" y="205" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#111827">3. Familywise rejection</text>
+<text x="1012" y="250" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#475569">Joint null:</text>
+<text x="1012" y="290" font-family="Georgia, serif" font-size="19" fill="#111827">H0: P_b in M75 for every b</text>
+<text x="1012" y="345" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#475569">If one regime has</text>
+<text x="1012" y="386" font-family="Georgia, serif" font-size="18" fill="#111827">D1 D2 D3 &lt; 0</text>
+<text x="1012" y="420" font-family="Georgia, serif" font-size="18" fill="#111827">and eps_b &lt; min_i r_bi</text>
+<text x="1012" y="474" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#475569">then that regime is outside P75 and</text>
+<text x="1012" y="503" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#475569">the all-regimes joint null is rejected.</text>
+<text x="1012" y="558" font-family="Georgia, serif" font-size="18" fill="#166534">confidence &gt;= 1 - sum_b alpha_b</text>
+<text x="1012" y="607" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#166534">Union bound only: regime events may be</text>
+<text x="1012" y="633" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#166534">dependent.</text>
 
 <rect x="60" y="715" width="1320" height="120" rx="22" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
-<text x="90" y="755" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#111827">Balanced 95 percent checkpoint</text>
-<text x="90" y="795" font-family="Georgia, serif" font-size="21" fill="#111827">B = 2, m = 1, alpha_b = 0.025: mathematical crossing n = 3645 per regime; first exact 24-count replication n = 3648.</text>
-<text x="90" y="824" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#64748b">Boundary: P95 handles predeclared regime drift, not data-selected change points or unrestricted gradual drift. The physical-to-experiential bridge remains open.</text>
+<text x="90" y="752" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#111827">Balanced 95 percent checkpoint</text>
+<text x="90" y="787" font-family="Georgia, serif" font-size="18" fill="#111827">B = 2, m = 1, alpha_b = 0.025: crossing n = 3645 per regime; first exact 24-count replication n = 3648.</text>
+<text x="90" y="817" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#64748b">Boundary: P95 handles predeclared regime drift, not data-selected change points or unrestricted gradual drift.</text>
 </svg>
