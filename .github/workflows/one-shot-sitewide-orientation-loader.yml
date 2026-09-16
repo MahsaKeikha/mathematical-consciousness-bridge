@@ -1,0 +1,73 @@
+name: One Shot Scientific Orientation Loader
+
+on:
+  push:
+    branches:
+      - sitewide-scientific-orientation
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  wire:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: sitewide-scientific-orientation
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install repository test environment
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: Wire scientific orientation assets through app.js
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('website/app.js')
+          text = path.read_text(encoding='utf-8')
+          anchor = "  document.addEventListener('DOMContentLoaded', () => {\n"
+          loader = '''  function loadScientificOrientation() {\n    if (!document.querySelector('link[data-scientific-orientation]')) {\n      const stylesheet = document.createElement('link');\n      stylesheet.rel = 'stylesheet';\n      stylesheet.href = 'research-orientation.css';\n      stylesheet.dataset.scientificOrientation = 'style';\n      document.head.append(stylesheet);\n    }\n\n    if (!document.querySelector('script[data-scientific-orientation]')) {\n      const script = document.createElement('script');\n      script.src = 'research-orientation.js';\n      script.dataset.scientificOrientation = 'script';\n      document.head.append(script);\n    }\n  }\n\n'''
+          if 'function loadScientificOrientation()' not in text:
+              if text.count(anchor) != 1:
+                  raise RuntimeError('could not find unique DOMContentLoaded anchor in app.js')
+              text = text.replace(anchor, loader + anchor, 1)
+
+          call_anchor = "  document.addEventListener('DOMContentLoaded', () => {\n    ensureNavigation();\n"
+          call_replacement = "  document.addEventListener('DOMContentLoaded', () => {\n    ensureNavigation();\n    loadScientificOrientation();\n"
+          if '    loadScientificOrientation();\n' not in text:
+              if text.count(call_anchor) != 1:
+                  raise RuntimeError('could not find unique orientation call anchor in app.js')
+              text = text.replace(call_anchor, call_replacement, 1)
+
+          path.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Run focused website and orientation contracts
+        run: |
+          python -m pytest -q \
+            tests/test_sitewide_scientific_orientation.py \
+            tests/test_website_build.py \
+            tests/test_website_link_integrity.py \
+            tests/test_public_reader_punctuation.py
+          python -m ruff check tests/test_sitewide_scientific_orientation.py
+          git diff --check
+
+      - name: Commit permanent app wiring
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add website/app.js
+          git commit -m "Wire scientific orientation across reader pages"
+          git push origin HEAD:sitewide-scientific-orientation
