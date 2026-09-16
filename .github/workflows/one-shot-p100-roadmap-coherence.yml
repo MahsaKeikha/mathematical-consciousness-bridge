@@ -1,0 +1,149 @@
+name: one-shot-p100-roadmap-coherence
+
+on:
+  push:
+    branches:
+      - static-p100-reader-metadata-coherence
+    paths:
+      - .github/workflows/one-shot-p100-roadmap-coherence.yml
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out coherence branch
+        uses: actions/checkout@v4
+        with:
+          ref: static-p100-reader-metadata-coherence
+          fetch-depth: 0
+
+      - name: Complete P100 roadmap and static reader sources
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          roadmap_path = Path('docs/theorem_roadmap.md')
+          roadmap = roadmap_path.read_text(encoding='utf-8')
+
+          dependency_pattern = re.compile(
+              r'&\\text\{P89: complete linear parity-functional duality closes all real linear directions on the eleven canonical parity coordinates\}.*?&\\text\{P91:',
+              re.S,
+          )
+          dependency_replacement = r'''&\text{P89: complete linear parity-functional duality closes all real linear directions on the eleven canonical parity coordinates}\\
+&\Downarrow\\
+&\text{P90: nonlinear rank-one slice identity yields exact strict-box distance 5/72 beyond the complete P89 linear envelope}\\
+&\Downarrow\\
+&\text{P91:'''
+          roadmap, dependency_count = dependency_pattern.subn(
+              lambda _match: dependency_replacement,
+              roadmap,
+              count=1,
+          )
+          if dependency_count != 1:
+              raise SystemExit(f'Expected one P89-to-P91 dependency block, found {dependency_count}')
+
+          table_pattern = re.compile(
+              r'^\| \[P89\]\(proposition_89_complete_linear_parity_duality\.md\).*?^## 4\. Calibration branch remains separate$',
+              re.M | re.S,
+          )
+          table_replacement = '''| [P89](proposition_89_complete_linear_parity_duality.md) | complete real linear parity-functional duality | removes coefficient-radius/support cutoffs and gives matching exact lower/upper certificates | proved conditional computational theorem |
+| [P90](proposition_90_exact_nonlinear_rank_one_separation.md) | nonlinear rank-one slice identity | exact single-component strict-box model separation at 5/72 | proved conditional nonlinear theorem |
+| [P91](proposition_91_mixed_prevalence_rank_two_flattening_separation.md) | rank-two bipartite flattening and exact 3 by 3 minor interval exclusion | full mixed-prevalence P75 separation bracket `1/42 < d_inf <= 1/24` | proved conditional nonlinear theorem |
+| [P92](proposition_92_exact_global_mixed_prevalence_distance.md) | three-minor conditional sign coherence | exact full-cube mixed-prevalence P75 distance `d_inf = 1/24` | proved conditional nonlinear theorem |
+| [P93](proposition_93_localized_sign_coherence_rejection.md) | seven-cell finite-sample sign preservation | localized IID rejection of P75 | proved conditional statistical theorem |
+| [P94](proposition_94_finite_range_dependent_sign_coherence.md) | finite-range coloring, Holder-Hoeffding concentration, exact rational radius certification | localized finite-range dependent rejection plus temporal-pooling no-go | proved conditional statistical theorem |
+| [P95](proposition_95_drift_aware_stratified_sign_coherence.md) | predeclared drift regimes, local P94 gates, familywise error allocation | drift-aware rejection of the all-regimes P75 null | proved conditional statistical theorem |
+| [P96](proposition_96_selection_valid_holdout_stratification.md) | pilot selection with independent holdout certification | post-selection-valid drift-regime certification under a frozen plan | proved conditional statistical theorem |
+| [P97](proposition_97_simultaneous_candidate_family_selection.md) | simultaneous finite-family error accounting | same-data selection over a finite predeclared candidate family | proved conditional statistical theorem |
+| [P98](proposition_98_cross_fitted_selection_valid_certification.md) | rotated independent-block holdouts and foldwise error control | cross-fitted selection-valid certification without own-fold leakage | proved conditional statistical theorem |
+| [P99](proposition_99_cross_fitted_evalue_aggregation.md) | conditional e-values and convex cross-fold aggregation | distributed cross-fitted evidence accumulation without fold independence | proved conditional statistical theorem |
+| [P100](proposition_100_anytime_sequential_eprocess.md) | predictable reserve stakes, supermartingale products, and Ville control | anytime-valid repeated inspection and stopping across fresh P99 rounds | proved conditional sequential inference theorem |
+
+## 4. Calibration branch remains separate'''
+          roadmap, table_count = table_pattern.subn(table_replacement, roadmap, count=1)
+          if table_count != 1:
+              raise SystemExit(f'Expected one P89-to-section-4 table tail, found {table_count}')
+
+          frontier_pattern = re.compile(
+              r'## 5\. Current open frontier\n.*?(?=\n\n## P83 predecessor frontier:)',
+              re.S,
+          )
+          frontier_replacement = '''## 5. Current frontier and remaining scientific boundary
+
+Through P100, the target-side chain now separates several obligations that must not be collapsed into one claim:
+
+1. target provenance must be non-circular relative to the physical descriptor being tested;
+2. the target-observation channel must be scientifically defensible and sufficiently informative for the claimed witness;
+3. channel reliability must be identified or externally calibrated under a declared measurement model;
+4. finite data must resolve the channel far enough from singularity for recovery to be certified;
+5. the target-measurement model must survive adequacy tests rather than being accepted because it can be fit;
+6. finite data must separate genuine adequacy failure from sampling noise before rejection is claimed;
+7. full-law rejection must be defined against the complete declared model family;
+8. continuous-family separation must use a certified global lower bound rather than a local optimizer value;
+9. the sampling-radius side of the rejection gate must have a certified upper direction;
+10. computational relaxations must preserve the lower-bound direction while retaining as much exact probability structure as possible;
+11. nonlinear structure beyond the complete P89 linear parity envelope must be tested explicitly rather than inferred from linear closure;
+12. temporal drift and finite-range dependence must be handled by declared local laws and valid error allocation rather than uncontrolled pooling;
+13. post-selection certification must use an independent holdout, simultaneous finite-family control, or leakage-free cross-fitting under its stated assumptions; and
+14. repeated inspection and stopping across fresh rounds must preserve conditional e-value validity with predictable stakes.
+
+P78-P89 build the certified continuous-family and parity-separation machinery, ending with the complete real linear parity-functional certificate on the declared eleven-coordinate family. P90-P92 move beyond that linear closure with nonlinear rank and sign-coherence structure and close the declared mixed-prevalence P75 distance at the exact witness value `1/24`.
+
+P93-P95 convert that population obstruction into localized finite-sample, finite-range dependent, and drift-aware rejection statements. P96-P98 then protect regime selection through independent holdout certification, simultaneous finite candidate-family control, and rotated independent-block cross-fitting. P99 converts valid fold-level rejection evidence into exact e-values and aggregates them without requiring fold independence. P100 adds the outer sequential layer: fresh P99 rounds may be inspected repeatedly and stopped adaptively when current-round conditional validity and predictable-stake requirements hold.
+
+None of P71-P100 identifies a latent variable with consciousness. None proves that failure of one declared physical descriptor implies nonphysical consciousness. Non-rejection does not establish model truth. The physical-to-experiential bridge remains open.'''
+          roadmap, frontier_count = frontier_pattern.subn(frontier_replacement, roadmap, count=1)
+          if frontier_count != 1:
+              raise SystemExit(f'Expected one current-open-frontier section, found {frontier_count}')
+
+          roadmap_path.write_text(roadmap, encoding='utf-8')
+
+          research_map_path = Path('website/research-map.html')
+          research_map = research_map_path.read_text(encoding='utf-8')
+          old_meta = 'Scientific dependency map of the Mathematical Consciousness Bridge through Proposition 99.'
+          new_meta = 'Scientific dependency map of the Mathematical Consciousness Bridge through Proposition 100.'
+          if old_meta not in research_map:
+              raise SystemExit('Expected stale Proposition 99 research-map metadata')
+          research_map_path.write_text(research_map.replace(old_meta, new_meta), encoding='utf-8')
+
+          plain_path = Path('website/plain-language.html')
+          plain = plain_path.read_text(encoding='utf-8')
+          replacements = {
+              'A 99-result sufficiency and falsification architecture': 'A 100-result sufficiency and falsification architecture',
+              'currently through P99.': 'currently through P100.',
+              'The 99-result proposition program asks': 'The 100-result proposition program asks',
+              'The current theorem frontier is P99.': 'The current theorem frontier is P100.',
+          }
+          for old, new in replacements.items():
+              if old not in plain:
+                  raise SystemExit(f'Expected stale plain-language phrase: {old}')
+              plain = plain.replace(old, new)
+          plain_path.write_text(plain, encoding='utf-8')
+
+          test_path = Path('tests/test_p100_roadmap_coherence.py')
+          test_path.write_text(
+              '''from pathlib import Path\nimport re\n\nROOT = Path(__file__).resolve().parents[1]\n\n\ndef test_complete_proposition_index_is_one_contiguous_p1_p100_table() -> None:\n    roadmap = (ROOT / "docs" / "theorem_roadmap.md").read_text(encoding="utf-8")\n    block = roadmap.split("## 3. Complete proposition index", 1)[1].split(\n        "## 4. Calibration branch remains separate", 1\n    )[0]\n    rows = re.findall(r"^\\| \\[P(\\d+)\\]\\(", block, flags=re.MULTILINE)\n    assert rows == [str(number) for number in range(1, 101)]\n    assert "\\n\\n| [P90]" not in block\n    assert "\\n\\n| [P96]" not in block\n\n\ndef test_p100_roadmap_frontier_language_is_current() -> None:\n    roadmap = (ROOT / "docs" / "theorem_roadmap.md").read_text(encoding="utf-8")\n    assert "## 5. Current frontier and remaining scientific boundary" in roadmap\n    assert "None of P71-P100 identifies a latent variable with consciousness." in roadmap\n    assert "After P89, the target-side chain" not in roadmap\n    assert "None of P71-P95" not in roadmap\n\n\ndef test_static_reader_sources_are_p100_current() -> None:\n    research_map = (ROOT / "website" / "research-map.html").read_text(encoding="utf-8")\n    plain = (ROOT / "website" / "plain-language.html").read_text(encoding="utf-8")\n    assert "through Proposition 100" in research_map\n    assert "through Proposition 99" not in research_map\n    assert "A 100-result sufficiency and falsification architecture" in plain\n    assert "The 100-result proposition program asks" in plain\n    assert "The current theorem frontier is P100." in plain\n    assert "A 99-result sufficiency and falsification architecture" not in plain\n    assert "The 99-result proposition program asks" not in plain\n    assert "The current theorem frontier is P99." not in plain\n''',
+              encoding='utf-8',
+          )
+          PY
+
+      - name: Verify patch shape
+        run: |
+          python -m pytest tests/test_p100_roadmap_coherence.py -q
+          git diff --check
+
+      - name: Commit coherence fixes
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/theorem_roadmap.md website/research-map.html website/plain-language.html tests/test_p100_roadmap_coherence.py
+          git commit -m "Complete P1-P100 roadmap and static reader frontier"
+          git push origin HEAD:static-p100-reader-metadata-coherence
