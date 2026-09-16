@@ -109,29 +109,29 @@
       ],
     },
     'visual-atlas.html': {
-      stage: 'Visual evidence record',
-      question: 'What does the current theorem frontier look like, and how do the historical figures support the development of the research?',
+      stage: 'Three-program visual evidence record',
+      question: 'What visual evidence, architecture, or computational record belongs to Research I, Research II, and Research III, and what scientific status does each visual carry?',
       established:
-        'The Atlas presents P100 as the current visual frontier, P99 as its immediate predecessor, and earlier retained frontier figures as historical theorem records. It is intentionally current-first rather than chronological.',
+        'The Atlas now separates Research I physical-system visuals, Research II theorem and frontier visuals, and Research III measurement-science architecture. Within Research II, P100 remains the current visual frontier and the detailed archive remains current-first.',
       open:
-        'A figure is an audit surface for a declared result, not independent proof of an experiential interpretation. Scientific meaning still comes from the theorem assumptions, proof record, computation, and tests.',
+        'A figure does not upgrade the status of its underlying evidence. Research I world-tube recovery is not consciousness identification, Research II model rejection is not bridge completion, and Research III specification is not empirical or clinical validation.',
       links: [
-        ['#p100-frontier', 'Jump to the current P100 visual frontier'],
-        ['research-map.html', 'Follow the chronological theorem sequence'],
-        ['sources.html', 'Audit provenance and reproducibility'],
+        ['#research-i-visual-program', 'Open Research I visuals'],
+        ['#research-ii-visual-program', 'Open Research II visuals'],
+        ['#research-iii-visual-program', 'Open Research III visuals'],
       ],
     },
     'sources.html': {
-      stage: 'Provenance and reproducibility',
-      question: 'Where do the equations, references, implementations, tests, and figure records come from, and how can a reader audit them?',
+      stage: 'Three-program provenance and reproducibility',
+      question: 'Where do the formal results, experiments, figures, specifications, assumptions, code, tests, and reproducibility records for all three research programs live?',
       established:
-        'The source layer connects public claims to proposition records, equation provenance, implementations, tests, figure manifests, and cited literature so the research trail can be independently inspected.',
+        'The source page now separates Research I physical-system provenance, Research II P1-P100 theorem provenance, and Research III measurement-science specification and scaffold provenance while preserving direct audit paths for each program.',
       open:
-        'Traceability is necessary for rigor but does not make a scientific claim true by itself. Assumptions, derivations, numerical checks, and empirical relevance still require substantive evaluation.',
+        'Traceability is necessary for rigor, but an inspectable research record is not scientific truth by itself. Each program still has to earn its own mathematical, computational, empirical, external-validation, or clinical claims at the level appropriate to that program.',
       links: [
-        [REPO, 'Open the complete repository'],
-        [`${REPO}/tree/main/tests`, 'Inspect the test suite'],
-        [`${REPO}/blob/main/figures/manifest.json`, 'Inspect the figure manifest'],
+        ['#research-i-source-program', 'Audit Research I'],
+        ['#research-ii-source-program', 'Audit Research II'],
+        ['#research-iii-source-program', 'Audit Research III'],
       ],
     },
   };
