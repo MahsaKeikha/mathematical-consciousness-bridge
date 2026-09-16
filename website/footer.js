@@ -273,6 +273,41 @@
     return heading ? P100_CARD_LINKS[heading] || null : null;
   }
 
+  function propositionMentions(text) {
+    return new Set(
+      Array.from(String(text || '').matchAll(/\bP(\d{1,3})\b/gi), (match) => Number(match[1])),
+    );
+  }
+
+  function hasAmbiguousPropositionScope(card) {
+    if (card.matches('a[href]')) return false;
+    const text = card.textContent || '';
+    if (/\bP\d{1,3}\s*-\s*P?\d{1,3}\b/i.test(text)) return true;
+    return propositionMentions(text).size > 1;
+  }
+
+  function syncPlainLanguageFrontier() {
+    if (currentFile() !== 'plain-language.html') return;
+
+    const replacements = new Map([
+      ['99-result', '100-result'],
+      ['all 99 Research II results', 'all 100 Research II results'],
+      ['currently through P99', 'currently through P100'],
+      ['current theorem frontier is P99', 'current theorem frontier is P100'],
+    ]);
+
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach((node) => {
+      let value = node.nodeValue;
+      replacements.forEach((replacement, stale) => {
+        value = value.replaceAll(stale, replacement);
+      });
+      node.nodeValue = value;
+    });
+  }
+
   function classifyCardAffordances() {
     document.querySelectorAll(CARD_LIKE_SELECTOR).forEach((card) => {
       const exact = p100CardTarget(card);
@@ -285,6 +320,11 @@
       const isAlreadyInteractive = card.classList.contains('interactive-card');
       const nestedLinks = Array.from(card.querySelectorAll('a[href]'));
       const uniqueTargets = new Set(nestedLinks.map((link) => link.href));
+
+      if (hasAmbiguousPropositionScope(card)) {
+        neutralizeAmbiguousWholeCard(card);
+        return;
+      }
 
       if (!nativeLink && uniqueTargets.size > 1) {
         neutralizeAmbiguousWholeCard(card);
@@ -336,6 +376,7 @@
   function run() {
     addAuthorAttribution();
     syncSourcesFrontier();
+    syncPlainLanguageFrontier();
     wireSourceCards();
     addCardAffordanceStyles();
     fixP100TechnicalFigureControl();
