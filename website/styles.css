@@ -849,3 +849,148 @@ img {
     padding: 17px;
   }
 }
+
+/* BEGIN COMPLETE PROPOSITION NAVIGATOR */
+.proposition-navigator {
+  border-top: 1px solid var(--line);
+}
+
+.proposition-nav-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 24px 0 38px;
+}
+
+.proposition-nav-index a {
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.proposition-nav-index a:hover,
+.proposition-nav-index a:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.proposition-nav-group + .proposition-nav-group {
+  margin-top: 38px;
+}
+
+.proposition-nav-group-head {
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+  margin-bottom: 14px;
+}
+
+.proposition-nav-group-head > span {
+  color: var(--accent2);
+  font-size: 0.76rem;
+  font-weight: 760;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.proposition-nav-group-head h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.proposition-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 11px;
+}
+
+.proposition-nav-card {
+  display: flex;
+  min-width: 0;
+  min-height: 164px;
+  padding: 16px;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.proposition-nav-card:hover,
+.proposition-nav-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: 0 9px 22px rgba(20, 26, 36, 0.07);
+  text-decoration: none;
+}
+
+.proposition-nav-number {
+  color: var(--accent2);
+  font-size: 0.76rem;
+  font-weight: 780;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.proposition-nav-card strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.95rem;
+  line-height: 1.38;
+}
+
+.proposition-nav-object {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.77rem;
+  line-height: 1.45;
+}
+
+.proposition-nav-status {
+  display: block;
+  margin-top: auto;
+  padding-top: 10px;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+@media (max-width: 1100px) {
+  .proposition-nav-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 780px) {
+  .proposition-nav-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .proposition-nav-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .proposition-nav-group-head {
+    display: block;
+  }
+
+  .proposition-nav-group-head h3 {
+    margin-top: 4px;
+  }
+}
+/* END COMPLETE PROPOSITION NAVIGATOR */
