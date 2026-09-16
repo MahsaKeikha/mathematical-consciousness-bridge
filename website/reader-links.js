@@ -131,33 +131,37 @@
     const style = document.createElement('style');
     style.id = 'research-path-card-styles';
     style.textContent = `
-      .research-path-card {
+      a.research-path-card {
         cursor: pointer;
         position: relative;
+        display: block;
+        color: var(--ink);
+        text-decoration: none !important;
         transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
       }
-      .research-path-card:hover,
-      .research-path-card:focus-visible {
+      a.research-path-card:hover,
+      a.research-path-card:focus-visible {
         transform: translateY(-3px);
+        border-color: #8f9db7;
+        background: #fbfcff;
         box-shadow: 0 14px 36px rgba(15, 23, 42, 0.12);
         outline: none;
+        text-decoration: none !important;
       }
-      .research-path-card:focus-visible {
-        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.28), 0 14px 36px rgba(15, 23, 42, 0.12);
-      }
-      .research-path-card .research-path-cue {
+      a.research-path-card .research-path-cue {
         display: inline-block;
         margin-top: 0.8rem;
         font-weight: 700;
         line-height: 1.35;
-        color: var(--link, #1d4ed8);
+        color: var(--accent, #1f3a7a);
       }
     `;
     document.head.append(style);
   }
 
   function wireResearchPathCards() {
-    if (!document.body || !document.querySelector('#orientation')) return;
+    const stageGrid = document.querySelector('#program-stages .result-grid');
+    if (!stageGrid) return;
 
     const destinations = [
       'implementation.html#stage-01',
@@ -172,44 +176,28 @@
       'implementation.html#stage-10',
     ];
 
-    const firstGrid = document.querySelector('#orientation .result-grid');
-    if (!firstGrid) return;
-
-    const cards = Array.from(firstGrid.children).filter((element) => element.matches('.result'));
+    const cards = Array.from(stageGrid.children).filter((element) => element.matches('.result'));
     if (cards.length < destinations.length) return;
 
     addResearchPathCardStyles();
 
     cards.slice(0, destinations.length).forEach((card, index) => {
-      if (card.dataset.implementationLinked === 'true') return;
       const href = destinations[index];
       const title = card.querySelector('h3')?.textContent?.trim() || `research stage ${index + 1}`;
+      const link = document.createElement('a');
+      link.className = `${card.className || 'result'} research-path-card`.trim();
+      link.href = href;
+      link.innerHTML = card.innerHTML;
+      link.setAttribute('aria-label', `${title}: open how it works and implementation details`);
+      link.title = 'Open implementation details';
+
       const cue = document.createElement('span');
       cue.className = 'research-path-cue';
       cue.textContent = 'How it works & implementation →';
       cue.setAttribute('aria-hidden', 'true');
-      card.append(cue);
+      link.append(cue);
 
-      card.classList.add('research-path-card');
-      card.dataset.implementationLinked = 'true';
-      card.tabIndex = 0;
-      card.setAttribute('role', 'link');
-      card.setAttribute('aria-label', `${title}: open how it works and implementation details`);
-      card.title = 'Open implementation details';
-
-      const open = () => {
-        window.location.href = href;
-      };
-      card.addEventListener('click', (event) => {
-        if (event.target.closest('a, button')) return;
-        open();
-      });
-      card.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          open();
-        }
-      });
+      card.replaceWith(link);
     });
   }
 
