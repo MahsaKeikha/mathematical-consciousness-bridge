@@ -11,8 +11,8 @@ ATLAS_REFRESH = (ROOT / "website" / "atlas-architecture-refresh.js").read_text(
 EVIDENCE = (ROOT / "website" / "three-program-evidence.js").read_text(
     encoding="utf-8"
 )
-DOC_MANIFEST = json.loads(
-    (ROOT / "docs" / "figures" / "manifest.json").read_text(encoding="utf-8")
+PAGES_WORKFLOW = (ROOT / ".github" / "workflows" / "pages.yml").read_text(
+    encoding="utf-8"
 )
 PUBLICATION_MANIFEST = json.loads(
     (ROOT / "figures" / "manifest.json").read_text(encoding="utf-8")
@@ -31,12 +31,12 @@ def _core_records(manifest: dict[str, object]) -> list[dict[str, object]]:
 
 
 def test_research_ii_core_gallery_is_exactly_100_unique_canonical_visuals() -> None:
-    core = _core_records(DOC_MANIFEST)
+    core = _core_records(PUBLICATION_MANIFEST)
     paths = [str(record["path"]) for record in core]
 
     assert len(core) == 100
     assert len(set(paths)) == 100
-    assert DOC_MANIFEST["figure_count"] == 158
+    assert PUBLICATION_MANIFEST["figure_count"] == 158
 
     theorem_paths = [
         path for path in paths if re.match(r"^docs/figures/p[0-9]+_", path)
@@ -46,13 +46,9 @@ def test_research_ii_core_gallery_is_exactly_100_unique_canonical_visuals() -> N
     assert len(architecture_paths) == 17
 
 
-def test_deployment_and_publication_manifests_agree_on_core_visuals() -> None:
-    docs_paths = {str(record["path"]) for record in _core_records(DOC_MANIFEST)}
-    publication_paths = {
-        str(record["path"]) for record in _core_records(PUBLICATION_MANIFEST)
-    }
-    assert docs_paths == publication_paths
-    assert DOC_MANIFEST["figure_count"] == PUBLICATION_MANIFEST["figure_count"] == 158
+def test_pages_artifact_bundles_the_canonical_manifest_for_the_gallery() -> None:
+    assert "cp figures/manifest.json _site/figures/manifest.json" in PAGES_WORKFLOW
+    assert 'test -f "_site/figures/manifest.json"' in PAGES_WORKFLOW
 
 
 def test_research_ii_gallery_reads_the_bundled_manifest_and_fails_closed() -> None:
