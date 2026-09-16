@@ -96,6 +96,8 @@
   function syncSourcesFrontier() {
     if (currentFile() !== 'sources.html') return;
 
+    if (document.querySelector('#p100-source')) return;
+
     const p99 = document.querySelector('#p99-source');
     if (!p99) return;
 
@@ -103,8 +105,6 @@
     if (p99Eyebrow) {
       p99Eyebrow.textContent = 'Immediate predecessor theorem source · P99';
     }
-
-    if (document.querySelector('#p100-source')) return;
 
     const p100 = document.createElement('section');
     p100.id = 'p100-source';
