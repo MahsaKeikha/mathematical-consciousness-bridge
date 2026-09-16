@@ -112,11 +112,11 @@
       stage: 'Three-program visual evidence record',
       question: 'What visual evidence, architecture, or computational record belongs to Research I, Research II, and Research III, and what scientific status does each visual carry?',
       established:
-        'The Atlas now separates Research I physical-system visuals, Research II theorem and frontier visuals, and Research III measurement-science architecture. Within Research II, P100 remains the current visual frontier and the detailed archive remains current-first.',
+        'The Atlas separates Research I physical-system visuals, Research II theorem and frontier visuals, and Research III measurement-science architecture. Research I now exposes its complete 33-figure scientific-result inventory directly on the page. Within Research II, P100 remains the current visual frontier and the detailed archive remains current-first. Research III exposes its complete current three-figure canonical directory.',
       open:
         'A figure does not upgrade the status of its underlying evidence. Research I world-tube recovery is not consciousness identification, Research II model rejection is not bridge completion, and Research III specification is not empirical or clinical validation.',
       links: [
-        ['#research-i-visual-program', 'Open Research I visuals'],
+        ['#research-i-complete-figure-gallery', 'Open all 33 Research I result figures'],
         ['#research-ii-visual-program', 'Open Research II visuals'],
         ['#research-iii-visual-program', 'Open Research III visuals'],
       ],
@@ -125,13 +125,13 @@
       stage: 'Three-program provenance and reproducibility',
       question: 'Where do the formal results, experiments, figures, specifications, assumptions, code, tests, and reproducibility records for all three research programs live?',
       established:
-        'The source page now separates Research I physical-system provenance, Research II P1-P100 theorem provenance, and Research III measurement-science specification and scaffold provenance while preserving direct audit paths for each program.',
+        'The source page separates Research I physical-system provenance, Research II P1-P100 theorem provenance, and Research III measurement-science specification and scaffold provenance. Research I and Research III now also expose direct source manifests on the page rather than requiring readers to hunt across repositories.',
       open:
         'Traceability is necessary for rigor, but an inspectable research record is not scientific truth by itself. Each program still has to earn its own mathematical, computational, empirical, external-validation, or clinical claims at the level appropriate to that program.',
       links: [
-        ['#research-i-source-program', 'Audit Research I'],
+        ['#research-i-source-manifest', 'Audit the Research I source manifest'],
         ['#research-ii-source-program', 'Audit Research II'],
-        ['#research-iii-source-program', 'Audit Research III'],
+        ['#research-iii-source-manifest', 'Audit the Research III source manifest'],
       ],
     },
   };
@@ -191,9 +191,26 @@
     hero.insertAdjacentElement('afterend', section);
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', renderScientificOrientation, { once: true });
-  } else {
+  function loadThreeProgramEvidence() {
+    const page = currentFile();
+    if (page !== 'visual-atlas.html' && page !== 'sources.html') return;
+    if (document.querySelector('script[data-three-program-evidence]')) return;
+
+    const script = document.createElement('script');
+    script.src = 'three-program-evidence.js';
+    script.defer = true;
+    script.dataset.threeProgramEvidence = 'script';
+    document.head.appendChild(script);
+  }
+
+  function initialize() {
     renderScientificOrientation();
+    loadThreeProgramEvidence();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initialize, { once: true });
+  } else {
+    initialize();
   }
 })();
