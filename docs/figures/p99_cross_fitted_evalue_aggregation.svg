@@ -34,19 +34,19 @@
   <text x="700" y="540" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#111827">25 &gt;= 20 = 1 / alpha</text>
   <text x="700" y="573" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#374151">Global rejection at alpha = 1/20</text>
 
-  <rect x="60" y="645" width="620" height="175" rx="20" fill="#f9fafb" stroke="#9ca3af" stroke-width="2"/>
-  <text x="370" y="685" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#111827">Matched balanced checkpoint</text>
-  <text x="95" y="725" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#1f2937">P98: 4045 per regime, exact replication 4056</text>
-  <text x="95" y="758" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#1f2937">P99: 3774 per regime, exact replication 3792</text>
-  <text x="95" y="790" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#4b5563">Configuration-specific gain: 271 observations per regime</text>
+  <rect x="60" y="640" width="620" height="180" rx="20" fill="#f9fafb" stroke="#9ca3af" stroke-width="2"/>
+  <text x="370" y="680" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#111827">Matched balanced checkpoint</text>
+  <text x="95" y="720" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#1f2937">P98: 4045 per regime, exact replication 4056</text>
+  <text x="95" y="753" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#1f2937">P99: 3774 per regime, exact replication 3792</text>
+  <text x="95" y="785" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#4b5563">Configuration-specific gain: 271 observations per regime</text>
 
-  <rect x="720" y="645" width="620" height="190" rx="20" fill="#fff7ed" stroke="#c2410c" stroke-width="2"/>
-  <text x="1030" y="685" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#9a3412">Scientific boundary</text>
-  <text x="755" y="723" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#431407">No own-fold leakage or post-hoc calibration search.</text>
-  <text x="755" y="752" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#431407">Independent certification blocks and declared dependence</text>
-  <text x="755" y="779" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#431407">assumptions remain required.</text>
-  <text x="755" y="806" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#431407">No model acceptance, consciousness identification,</text>
-  <text x="755" y="830" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#431407">nonphysicality, or bridge completion.</text>
+  <rect x="720" y="640" width="620" height="205" rx="20" fill="#fff7ed" stroke="#c2410c" stroke-width="2"/>
+  <text x="1030" y="680" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#9a3412">Scientific boundary</text>
+  <text x="755" y="718" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#431407">No own-fold leakage or post-hoc calibration search.</text>
+  <text x="755" y="747" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#431407">Independent certification blocks and declared dependence</text>
+  <text x="755" y="774" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#431407">assumptions remain required.</text>
+  <text x="755" y="801" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#431407">No model acceptance, consciousness identification,</text>
+  <text x="755" y="825" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#431407">nonphysicality, or bridge completion.</text>
 
-  <text x="700" y="875" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#6b7280">P99 accumulates distributed fold evidence. It does not uniformly dominate P98.</text>
+  <text x="700" y="880" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#6b7280">P99 accumulates distributed fold evidence. It does not uniformly dominate P98.</text>
 </svg>
