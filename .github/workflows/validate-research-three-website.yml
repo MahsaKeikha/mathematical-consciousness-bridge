@@ -122,7 +122,7 @@ jobs:
           assert f"The current theorem frontier is P{frontier}." in research
           assert research.count(f'id="p{frontier}-research-map"') == 1
           assert f'id="p{previous}-research-map"' in research
-          assert research.index(f'id="p{frontier}-research-map"') < research.index(f'id="p{previous}-research-map"') < research.index("</main>") < research.index("</html>")
+          assert research.index(f'id="p{previous}-research-map"') < research.index(f'id="p{frontier}-research-map"') < research.index("</main>") < research.index("</html>")
 
           for path in Path("_site").glob("*.html"):
               assert path.read_text(encoding="utf-8").rstrip().endswith("</html>"), path

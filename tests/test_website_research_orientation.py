@@ -72,40 +72,33 @@ def test_research_map_current_frontier_labels_do_not_lag():
     assert f"P{frontier} remains a conditional model-rejection theorem" in text
 
 
-def test_current_and_previous_nonlinear_frontiers_are_structurally_inside_main():
-    frontier = _frontier()
-    previous = frontier - 1
+def test_continuous_model_frontier_is_strictly_ordered_inside_main():
     text = MAP.read_text(encoding="utf-8")
     main_open = text.index("<main>")
     main_close = text.index("</main>")
-    p90 = text.index('id="p90-research-map"')
-    p91 = text.index('id="p91-research-map"')
-    current = text.index(f'id="p{frontier}-research-map"')
-    prior = text.index(f'id="p{previous}-research-map"')
+    positions = [text.index(f'id="p{number}-research-map"') for number in range(77, 101)]
 
-    for number in (90, 91, previous, frontier):
+    assert positions == sorted(positions)
+    assert main_open < positions[0] < positions[-1] < main_close
+    for number in range(77, 101):
         assert text.count(f'id="p{number}-research-map"') == 1
-    assert main_open < p90 < p91 < current < prior < main_close
-    assert "Historical P90 checkpoint" in text[p90:p91]
-    assert "Current Research II theorem frontier" not in text[p90:p91]
-    current_block = text[current:prior]
-    previous_block = text[prior:main_close]
-    assert f"P{frontier}" in current_block
-    assert f"P{previous}" in previous_block
 
+    assert 'id="historical-frontiers"' not in text
+    assert 'id="p87-reader-frontier"' not in text
+    assert "Historical P90 checkpoint" not in text
+    assert "P100 - Current theorem frontier" in text[positions[-1]:main_close]
 
 def test_continuous_frontier_keeps_lineage_and_current_provenance_auditable():
-    frontier = _frontier()
     text = MAP.read_text(encoding="utf-8")
-    continuous = text.index('id="continuous-model-frontier"')
-    continuous_close = text.index("</section>", continuous)
-    frontier_text = text[continuous:continuous_close]
+    begin = text.index("<!-- BEGIN CONTINUOUS MODEL FRONTIER -->")
+    end = text.index("<!-- END CONTINUOUS MODEL FRONTIER -->")
+    frontier_text = text[begin:end]
 
-    assert "proposition_82_exact_nested_projection_contrast.md" in frontier_text
-    assert "proposition_83_exact_projection_parity.md" in frontier_text
-    assert "proposition_90_exact_nonlinear_rank_one_separation.md" in frontier_text
-    assert "proposition_91_mixed_prevalence_rank_two_flattening_separation.md" in frontier_text
-    assert "proposition_92_exact_global_mixed_prevalence_distance.md" in text
-    assert "p92_equation_provenance.md" in text
-    assert _proof_name(frontier) in text
-    assert f"p{frontier}_equation_provenance.md" in text
+    for number in range(77, 101):
+        assert f'id="p{number}-research-map"' in frontier_text
+        assert _proof_name(number) in frontier_text
+
+    assert frontier_text.index('id="p90-research-map"') < frontier_text.index('id="p91-research-map"')
+    assert frontier_text.index('id="p99-research-map"') < frontier_text.index('id="p100-research-map"')
+    assert "P100 - Current theorem frontier" in frontier_text
+    assert "p100_equation_provenance.md" in text

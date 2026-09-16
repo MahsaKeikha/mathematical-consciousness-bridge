@@ -24,7 +24,7 @@ def test_p99_is_preserved_as_the_immediate_historical_predecessor() -> None:
     assert 'id="p99-reader-frontier"' in plain
     assert 'id="p99-reader-frontier"' in start
     assert 'id="p99-research-map"' in research
-    assert research.index('id="p100-research-map"') < research.index('id="p99-research-map"')
+    assert research.index('id="p99-research-map"') < research.index('id="p100-research-map"')
     assert "## P99: cross-fitted e-value aggregation" in roadmap
     assert "For P99:" in navigation
     assert "p99_cross_fitted_evalue_aggregation.svg" in navigation
