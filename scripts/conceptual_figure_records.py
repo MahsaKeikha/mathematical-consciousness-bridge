@@ -138,14 +138,12 @@ RECORDS: dict[str, dict[str, str]] = {
         ),
     },
     "docs/figures/theorem_roadmap.svg": {
-        "title": "Theorem dependency map for P1-P31",
+        "title": 'Complete theorem dependency map for P1-P100',
         "description": (
-            "What this figure shows: the theorem roadmap for Propositions 1 through 31, with arrows encoding actual mathematical or scientific prerequisites rather than mere numerical sequence or vertical proximity. "
-            "How to read it: follow the arrows, not just the page order. The central target-sufficiency lineage runs from P19 through P24. P25-P31 are physical-scale, aggregation, metric, and quotient branches whose prerequisites are shown explicitly by the connectors. An absent arrow means that the figure is not asserting a prerequisite. "
-            "Main takeaway: proposition numbering records development order, whereas the arrow topology records dependency structure. Later P61-P70 and P71-P80 are separate continuations documented in the theorem index."
+            'What this figure shows: the complete theorem roadmap for Propositions 1 through 100. Every proposition P1 through P100 appears explicitly. Solid arrows show the primary bridge-sufficiency lineage from foundations through P19-P24 and then P71-P100. Dashed connectors show connected physical, quantum, evidence-acquisition, scheduling, and calibration branches P25-P70; they do not assert that every proposition in one block is a prerequisite for every proposition in the next. How to read it: follow the lane labels and connectors rather than proposition number alone. P71-P100 returns to the P19 bridge-sufficiency lineage and does not extend the P61-P70 calibration branch. Main takeaway: proposition numbering records development order, while the roadmap separates the core bridge lineage from connected machinery branches and marks P100 as the current theorem frontier.'
         ),
         "status": (
-            "Research-orientation figure. It summarizes dependency structure among the displayed theorem branches; it does not add a theorem, empirical consciousness result, or physical-to-experiential bridge claim."
+            'Research-orientation figure. It summarizes documented dependency structure across P1-P100; it does not add a theorem, empirical consciousness result, or physical-to-experiential bridge claim.'
         ),
     },
     "docs/figures/fundamental_theory_consciousness_map.svg": {

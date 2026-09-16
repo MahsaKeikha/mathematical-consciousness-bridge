@@ -1,189 +1,250 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="3840" viewBox="0 0 1600 3840" role="img" aria-labelledby="title desc">
-  <title id="title">Theorem dependency map for P1-P31</title>
-  <desc id="desc">What this figure shows: the theorem roadmap for Propositions 1 through 31, with arrows encoding actual mathematical or scientific prerequisites rather than mere numerical sequence or vertical proximity. How to read it: follow the arrows, not just the page order. The central target-sufficiency lineage runs from P19 through P24. P25-P31 are physical-scale, aggregation, metric, and quotient branches whose prerequisites are shown explicitly by the connectors. An absent arrow means that the figure is not asserting a prerequisite. Main takeaway: proposition numbering records development order, whereas the arrow topology records dependency structure. Later P61-P70 and P71-P82 are separate continuations documented in the theorem index. Scientific status: Research-orientation figure. It summarizes dependency structure among the displayed theorem branches; it does not add a theorem, empirical consciousness result, or physical-to-experiential bridge claim.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2800" viewBox="0 0 1600 2800" role="img" aria-labelledby="title desc">
+  <title id="title">Complete theorem dependency map for P1-P100</title>
+  <desc id="desc">What this figure shows: the complete theorem roadmap for Propositions 1 through 100. Every proposition P1 through P100 appears explicitly. Solid arrows show the primary bridge-sufficiency lineage from foundations through P19-P24 and then P71-P100. Dashed connectors show connected physical, quantum, evidence-acquisition, scheduling, and calibration branches P25-P70; they do not assert that every proposition in one block is a prerequisite for every proposition in the next. How to read it: follow the lane labels and connectors rather than proposition number alone. P71-P100 returns to the P19 bridge-sufficiency lineage and does not extend the P61-P70 calibration branch. Main takeaway: proposition numbering records development order, while the roadmap separates the core bridge lineage from connected machinery branches and marks P100 as the current theorem frontier. Scientific status: Research-orientation figure. It summarizes documented dependency structure across P1-P100; it does not add a theorem, empirical consciousness result, or physical-to-experiential bridge claim.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
       <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
     </marker>
     <style>
-      .title{font:700 36px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .title{font:700 38px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
       .subtitle{font:400 17px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
+      .lane{font:700 12px Inter,Segoe UI,Arial,sans-serif;letter-spacing:1.2px;fill:#334155}
+      .label{font:700 10px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
       .head{font:700 17px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
       .body{font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
       .eq{font:600 15px Georgia,'Times New Roman',serif;fill:#0f172a}
-      .label{font:700 10px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#64748b}
-      .arrow{stroke:#64748b;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+      .chip rect{fill:#ffffff;stroke:#cbd5e1;stroke-width:1}
+      .chipText{font:700 11px Inter,Segoe UI,Arial,sans-serif;fill:#334155}
+      .current rect{fill:#ecfdf5;stroke:#059669;stroke-width:2}
+      .current .chipText{fill:#047857}
+      .arrow{stroke:#475569;stroke-width:2.4;fill:none;marker-end:url(#arrow)}
+      .branch{stroke:#94a3b8;stroke-width:2.2;stroke-dasharray:8 8;fill:none;marker-end:url(#arrow)}
+      .legend{font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#475569}
     </style>
   </defs>
-
-  <rect width="1600" height="3840" fill="#ffffff"/>
-  <text x="70" y="62" class="title">Theorem Roadmap - P1 through P31</text>
-  <text x="70" y="94" class="subtitle">The chain separates physical structure, finite-data certification, refinement, adaptive selection, and repeated-look validity.</text>
-
-  <rect x="95" y="145" width="420" height="180" rx="18" fill="#eff6ff" stroke="#3b82f6"/>
-  <text x="125" y="178" class="label">FOUNDATION · P1-P4</text>
-  <text x="125" y="212" class="head">Invariance and identifiability</text>
-  <text x="125" y="248" class="body">P1 representation invariance</text>
-  <text x="125" y="272" class="body">P2-P3 empirical equivalence and tests</text>
-  <text x="125" y="296" class="body">P4 discriminating experiment design</text>
-
-  <rect x="590" y="145" width="420" height="180" rx="18" fill="#faf5ff" stroke="#8b5cf6"/>
-  <text x="620" y="178" class="label">SUFFICIENCY · P5-P10</text>
-  <text x="620" y="212" class="head">Recovery under finite data</text>
-  <text x="620" y="248" class="body">P5-P7 feature sufficiency and recoverability</text>
-  <text x="620" y="272" class="body">P8 finite-error recovery</text>
-  <text x="620" y="296" class="body">P9-P10 sample complexity and robust design</text>
-
-  <rect x="1085" y="145" width="420" height="180" rx="18" fill="#ecfdf5" stroke="#10b981"/>
-  <text x="1115" y="178" class="label">PHYSICAL CANDIDATE · P11-P13</text>
-  <text x="1115" y="212" class="head">Causal structure and no-go tests</text>
-  <text x="1115" y="248" class="body">P11 intervention-resolved causal structure</text>
-  <text x="1115" y="272" class="body">P12 single-component insufficiency</text>
-  <text x="1115" y="296" class="body">P13 pairwise irredundancy</text>
-
+  <rect width="1600" height="2800" fill="#ffffff"/>
+  <text x="70" y="62" class="title">Complete Theorem Roadmap - P1 through P100</text>
+  <text x="70" y="94" class="subtitle">All 100 proposition nodes are shown. Solid arrows mark the core bridge lineage; dashed connectors mark connected branches.</text>
+  <g class="group-box">
+    <rect x="95" y="145" width="420" height="180" rx="18" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.8"/>
+    <text x="123" y="179" class="label">FOUNDATION | P1-P4</text>
+    <text x="123" y="214" class="head">Invariance and identifiability</text>
+    <text x="123" y="241" class="body">Representation, equivalence, design</text>
+    <g class="chip" data-proposition="P1"><rect x="119" y="257" width="56" height="30" rx="8"/><text x="147" y="277" class="chipText" text-anchor="middle">P1</text></g>
+    <g class="chip" data-proposition="P2"><rect x="185" y="257" width="56" height="30" rx="8"/><text x="213" y="277" class="chipText" text-anchor="middle">P2</text></g>
+    <g class="chip" data-proposition="P3"><rect x="251" y="257" width="56" height="30" rx="8"/><text x="279" y="277" class="chipText" text-anchor="middle">P3</text></g>
+    <g class="chip" data-proposition="P4"><rect x="317" y="257" width="56" height="30" rx="8"/><text x="345" y="277" class="chipText" text-anchor="middle">P4</text></g>
+  </g>
+  <g class="group-box">
+    <rect x="590" y="145" width="420" height="180" rx="18" fill="#faf5ff" stroke="#8b5cf6" stroke-width="1.8"/>
+    <text x="618" y="179" class="label">FOUNDATION | P5-P10</text>
+    <text x="618" y="214" class="head">Recovery and finite data</text>
+    <text x="618" y="241" class="body">Recovery, sample complexity, robust design</text>
+    <g class="chip" data-proposition="P5"><rect x="614" y="257" width="56" height="30" rx="8"/><text x="642" y="277" class="chipText" text-anchor="middle">P5</text></g>
+    <g class="chip" data-proposition="P6"><rect x="680" y="257" width="56" height="30" rx="8"/><text x="708" y="277" class="chipText" text-anchor="middle">P6</text></g>
+    <g class="chip" data-proposition="P7"><rect x="746" y="257" width="56" height="30" rx="8"/><text x="774" y="277" class="chipText" text-anchor="middle">P7</text></g>
+    <g class="chip" data-proposition="P8"><rect x="812" y="257" width="56" height="30" rx="8"/><text x="840" y="277" class="chipText" text-anchor="middle">P8</text></g>
+    <g class="chip" data-proposition="P9"><rect x="878" y="257" width="56" height="30" rx="8"/><text x="906" y="277" class="chipText" text-anchor="middle">P9</text></g>
+    <g class="chip" data-proposition="P10"><rect x="944" y="257" width="56" height="30" rx="8"/><text x="972" y="277" class="chipText" text-anchor="middle">P10</text></g>
+  </g>
+  <g class="group-box">
+    <rect x="1085" y="145" width="420" height="180" rx="18" fill="#ecfdf5" stroke="#10b981" stroke-width="1.8"/>
+    <text x="1113" y="179" class="label">PHYSICS | P11-P13</text>
+    <text x="1113" y="214" class="head">Intervention-resolved structure</text>
+    <text x="1113" y="241" class="body">Causal response and irredundancy tests</text>
+    <g class="chip" data-proposition="P11"><rect x="1109" y="257" width="56" height="30" rx="8"/><text x="1137" y="277" class="chipText" text-anchor="middle">P11</text></g>
+    <g class="chip" data-proposition="P12"><rect x="1175" y="257" width="56" height="30" rx="8"/><text x="1203" y="277" class="chipText" text-anchor="middle">P12</text></g>
+    <g class="chip" data-proposition="P13"><rect x="1241" y="257" width="56" height="30" rx="8"/><text x="1269" y="277" class="chipText" text-anchor="middle">P13</text></g>
+  </g>
+  <g class="group-box">
+    <rect x="95" y="410" width="420" height="180" rx="18" fill="#fff7ed" stroke="#f97316" stroke-width="1.8"/>
+    <text x="123" y="444" class="label">TIME | P14-P15</text>
+    <text x="123" y="479" class="head">Temporal continuation</text>
+    <text x="123" y="506" class="body">Temporal geometry and certification</text>
+    <g class="chip" data-proposition="P14"><rect x="119" y="522" width="56" height="30" rx="8"/><text x="147" y="542" class="chipText" text-anchor="middle">P14</text></g>
+    <g class="chip" data-proposition="P15"><rect x="185" y="522" width="56" height="30" rx="8"/><text x="213" y="542" class="chipText" text-anchor="middle">P15</text></g>
+  </g>
+  <g class="group-box">
+    <rect x="590" y="410" width="420" height="180" rx="18" fill="#f0fdfa" stroke="#14b8a6" stroke-width="1.8"/>
+    <text x="618" y="444" class="label">COMPOSITION | P16</text>
+    <text x="618" y="479" class="head">Independent systems and coupling</text>
+    <text x="618" y="506" class="body">Product structure and coupling</text>
+    <g class="chip" data-proposition="P16"><rect x="614" y="522" width="56" height="30" rx="8"/><text x="642" y="542" class="chipText" text-anchor="middle">P16</text></g>
+  </g>
+  <g class="group-box">
+    <rect x="1085" y="410" width="420" height="180" rx="18" fill="#fff1f2" stroke="#e11d48" stroke-width="1.8"/>
+    <text x="1113" y="444" class="label">SCALE | P17-P18</text>
+    <text x="1113" y="479" class="head">Loss and recoverable sufficiency</text>
+    <text x="1113" y="506" class="body">Coarse loss and reconstruction control</text>
+    <g class="chip" data-proposition="P17"><rect x="1109" y="522" width="56" height="30" rx="8"/><text x="1137" y="542" class="chipText" text-anchor="middle">P17</text></g>
+    <g class="chip" data-proposition="P18"><rect x="1175" y="522" width="56" height="30" rx="8"/><text x="1203" y="542" class="chipText" text-anchor="middle">P18</text></g>
+  </g>
   <path class="arrow" d="M515 235 H578"/>
   <path class="arrow" d="M1010 235 H1073"/>
-
-  <rect x="95" y="410" width="420" height="180" rx="18" fill="#fff7ed" stroke="#f97316"/>
-  <text x="125" y="443" class="label">TIME · P14-P15</text>
-  <text x="125" y="477" class="head">Temporal continuation</text>
-  <text x="125" y="513" class="body">P14 quotient temporal geometry</text>
-  <text x="125" y="537" class="body">P15 finite-error temporal certification</text>
-  <text x="125" y="566" class="eq">|d̂ − d| ≤ εs + εt</text>
-
-  <rect x="590" y="410" width="420" height="180" rx="18" fill="#f0fdfa" stroke="#14b8a6"/>
-  <text x="620" y="443" class="label">COMPOSITION · P16</text>
-  <text x="620" y="477" class="head">Independent systems and coupling</text>
-  <text x="620" y="513" class="body">Product response gives the independence null.</text>
-  <text x="620" y="537" class="body">Cross-system coupling breaks factorization.</text>
-  <text x="620" y="566" class="eq">χA|B = κAB(πA|B)</text>
-
-  <rect x="1085" y="410" width="420" height="180" rx="18" fill="#fff1f2" stroke="#e11d48"/>
-  <text x="1115" y="443" class="label">SCALE · P17-P18</text>
-  <text x="1115" y="477" class="head">Loss and recoverable sufficiency</text>
-  <text x="1115" y="513" class="body">P17 coarse-graining contracts distinctions.</text>
-  <text x="1115" y="537" class="body">P18 reconstruction bounds distortion.</text>
-  <text x="1115" y="566" class="eq">δc ≥ δf − 2ρF</text>
-
   <path class="arrow" d="M1295 325 V360 H305 V398"/>
   <path class="arrow" d="M515 500 H578"/>
   <path class="arrow" d="M1010 500 H1073"/>
-
-  <rect x="225" y="675" width="1150" height="205" rx="20" fill="#f8fafc" stroke="#0f172a" stroke-width="1.8"/>
-  <text x="265" y="712" class="label">FUNDAMENTAL PHYSICAL SUFFICIENCY · P19</text>
-  <text x="265" y="750" class="head">Population factorization and residual tests</text>
-  <text x="265" y="782" class="body">Can target E be reconstructed from the declared descriptor T?</text>
-  <text x="265" y="820" class="eq">E = BT ∘ T  iff  T(Ω)=T(Ω′) ⇒ E(Ω)=E(Ω′)</text>
-  <text x="265" y="851" class="eq">stochastic criterion: I(E;Ω | T) = 0</text>
-  <text x="925" y="820" class="eq">rank D(T,E) = rank DT</text>
-  <text x="925" y="851" class="body">Residuals first test the completeness of T.</text>
-
-  <path class="arrow" d="M1295 590 V635 H800 V663"/>
-  <path class="arrow" d="M800 880 V920"/>
-
-  <rect x="225" y="932" width="1150" height="180" rx="20" fill="#ecfdf5" stroke="#059669" stroke-width="1.8"/>
-  <text x="265" y="969" class="label">FINITE-SAMPLE RESIDUAL CERTIFICATION · P20</text>
-  <text x="265" y="1007" class="head">Confidence interval for the P19 stochastic residual</text>
-  <text x="265" y="1040" class="body">IID finite-alphabet data give a joint-TV radius and entropy bound.</text>
-  <text x="265" y="1074" class="eq">|I(E;Ω | T) − În| ≤ ΔCMI(τn(α))</text>
-  <text x="925" y="1074" class="eq">Ln &gt; 0 ⇒ residual certified at 1−α</text>
-
-  <path class="arrow" d="M800 1112 V1150"/>
-
-  <rect x="225" y="1162" width="1150" height="188" rx="20" fill="#eff6ff" stroke="#2563eb" stroke-width="1.8"/>
-  <text x="265" y="1199" class="label">OMITTED-PHYSICS CONTROL · P21</text>
-  <text x="265" y="1237" class="head">Descriptor refinement and residual persistence</text>
-  <text x="265" y="1271" class="body">Valid refinement cannot increase the unresolved residual.</text>
-  <text x="265" y="1306" class="eq">R(Tc) = I(E;Tf | Tc) + R(Tf)</text>
-  <text x="925" y="1306" class="eq">R0 ≥ R1 ≥ ··· ≥ Rm ≥ 0</text>
-  <text x="265" y="1336" class="body">Each decrease is target information captured by added physical detail.</text>
-
-  <path class="arrow" d="M800 1350 V1385"/>
-
-  <rect x="225" y="1397" width="1150" height="188" rx="20" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.8"/>
-  <text x="265" y="1434" class="label">SIMULTANEOUS CHAIN CERTIFICATION · P22</text>
-  <text x="265" y="1472" class="head">One base confidence event controls the full chain</text>
-  <text x="265" y="1506" class="body">Deterministic pushforwards inherit one joint-TV confidence event.</text>
-  <text x="265" y="1541" class="eq">Pr(Rk ∈ IkR ∀k, Gk ∈ IkG ∀k) ≥ 1−α</text>
-  <text x="925" y="1541" class="eq">no α/(2m+1) split</text>
-  <text x="265" y="1571" class="body">Alphabet size, not level count, is the main finite-sample bottleneck here.</text>
-
-  <path class="arrow" d="M800 1585 V1620"/>
-
-  <rect x="225" y="1632" width="1150" height="188" rx="20" fill="#fff7ed" stroke="#ea580c" stroke-width="1.8"/>
-  <text x="265" y="1669" class="label">POST-SELECTION CONTROL · P23</text>
-  <text x="265" y="1707" class="head">Adaptive descriptor selection remains certifiable</text>
-  <text x="265" y="1741" class="body">One base event controls every deterministic candidate.</text>
-  <text x="265" y="1776" class="eq">f̂ ∈ arg maxf Ĝf</text>
-  <text x="925" y="1776" class="eq">G* − Gf̂ ≤ maxf Uf − Lf̂ ≤ 2Γmax</text>
-  <text x="265" y="1806" class="body">Selected residual excess equals refinement-gain regret.</text>
-  <path class="arrow" d="M800 1820 V1855"/>
-
-  <rect x="225" y="1867" width="1150" height="188" rx="20" fill="#ecfeff" stroke="#0891b2" stroke-width="1.8"/>
-  <text x="265" y="1904" class="label">ANYTIME-VALID CONTROL · P24</text>
-  <text x="265" y="1942" class="head">Repeated inspection and finite stopping remain certifiable</text>
-  <text x="265" y="1976" class="body">A summable error schedule creates one event valid for every sample size.</text>
-  <text x="265" y="2011" class="eq">αn = 6α/(π²n²),  Σn≥1 αn = α</text>
-  <text x="805" y="2011" class="eq">Pr(∀n: ‖P−P̂n‖TV ≤ τnany) ≥ 1−α</text>
-  <text x="265" y="2041" class="body">P23 selection and regret remain valid at every finite stopping time.</text>
-
-  <rect x="225" y="2100" width="1150" height="190" rx="20" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.8"/>
-  <text x="265" y="2137" class="label">PHYSICAL SCALE BRANCH · P25</text>
-  <text x="265" y="2175" class="head">P11 directed influence + P18 reconstruction control</text>
-  <text x="265" y="2209" class="body">Target coarse observation cannot increase matched-pair influence.</text>
-  <text x="265" y="2244" class="eq">0 ≤ Af − Ac ≤ 2ρ</text>
-  <text x="725" y="2244" class="eq">Af &gt; θ + 2ρ ⇒ Ac &gt; θ</text>
-  <text x="265" y="2274" class="body">Dependency branch: P11 + P18; P24 is not a mathematical prerequisite.</text>
-
-  <rect x="225" y="2320" width="1150" height="190" rx="20" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.8"/>
-  <text x="265" y="2357" class="label">PHYSICAL SCALE BRANCH · P26</text>
-  <text x="265" y="2395" class="head">P11 partition structure + P17-P18 scale control</text>
-  <text x="265" y="2429" class="body">Block-compatible observation cannot increase declared irreducibility.</text>
-  <text x="265" y="2464" class="eq">0 ≤ κf − κc ≤ ρ(P) + ρ(Pπ)</text>
-  <text x="790" y="2464" class="eq">κf &gt; θ + ε ⇒ κc &gt; θ</text>
-  <text x="265" y="2494" class="body">Partition-lattice transport under node aggregation remains open.</text>
-
-  <rect x="225" y="2550" width="1150" height="190" rx="20" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.8"/>
-  <text x="265" y="2587" class="label">NODE-AGGREGATION BRANCH · P27</text>
-  <text x="265" y="2625" class="head">Exact partition descent through a surjective node quotient</text>
-  <text x="265" y="2659" class="body">Only aggregation-saturated fine partitions survive as coarse partitions.</text>
-  <text x="265" y="2694" class="eq">Part(Vc) ≅ Partsat(Vf;a)</text>
-  <text x="765" y="2694" class="eq">0 ≤ κf − κc ≤ ρ(P)+ρ(Pπf)</text>
-  <text x="265" y="2724" class="body">Intervention and source aggregation remain separate theorem burdens.</text>
-
-  <rect x="225" y="2790" width="1150" height="190" rx="20" fill="#ecfeff" stroke="#0891b2" stroke-width="1.8"/>
-  <text x="265" y="2827" class="label">INTERVENTION AGGREGATION · P28</text>
-  <text x="265" y="2865" class="head">Matched-pair source labels must descend consistently</text>
-  <text x="265" y="2899" class="body">Each inherited pair has at most one aggregate source image.</text>
-  <text x="265" y="2934" class="eq">|{a(i):i∈Sf(e)}| ≤ 1</text>
-  <text x="765" y="2934" class="eq">0 ≤ Af − Ac ≤ 2ρ</text>
-  <text x="265" y="2964" class="body">Pair pooling is not a new simultaneous aggregate intervention.</text>
-
-  <rect x="225" y="3030" width="1150" height="190" rx="20" fill="#fff7ed" stroke="#ea580c" stroke-width="1.8"/>
-  <text x="265" y="3067" class="label">RESPONSE GEOMETRY · P29</text>
-  <text x="265" y="3105" class="head">Response geometry controlled across every delay</text>
-  <text x="265" y="3139" class="body">The experiment grid is fixed while the response state is aggregated.</text>
-  <text x="265" y="3174" class="eq">||Gf-Gc||∞ ≤ 2ρ*</text>
-  <text x="765" y="3174" class="eq">ρ*=0 ⇒ Gf=Gc</text>
-  <text x="265" y="3204" class="body">P27, P28, and P29 now cover K, A, and G separately.</text>
-
-  <rect x="225" y="3260" width="1150" height="190" rx="20" fill="#ecfdf5" stroke="#059669" stroke-width="1.8"/>
-  <text x="265" y="3297" class="label">FULL P11 ASSEMBLY · P30</text>
-  <text x="265" y="3335" class="head">One shared declaration controls G, A, and K</text>
-  <text x="265" y="3369" class="body">Semantic compatibility is required before component bounds can be combined.</text>
-  <text x="265" y="3404" class="eq">||DP11||∞ ≤ max{2ρG*,2ρA*,ρP*+ρΠ*}</text>
-  <text x="820" y="3404" class="eq">zero distortion ≠ semantic compatibility</text>
-  <text x="265" y="3434" class="body">The result is a physical-signature certificate, not a consciousness theorem.</text>
-
-  <rect x="225" y="3490" width="1150" height="190" rx="20" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.8"/>
-  <text x="265" y="3527" class="label">INTERVENTION QUOTIENT · P31</text>
-  <text x="265" y="3565" class="head">Coarse interventions require fiberwise response agreement</text>
-  <text x="265" y="3599" class="body">Labels may merge only when response laws descend through the quotient.</text>
-  <text x="265" y="3634" class="eq">ηb = supτ supb(u)=b(v) ||P̄u,τ−P̄v,τ||TV</text>
-  <text x="900" y="3634" class="eq">ηb=0 ⇔ exact descent</text>
-  <text x="265" y="3664" class="body">Representative-dependent geometry is bounded by 2ηb.</text>
-
-  <rect x="95" y="3720" width="1410" height="62" rx="14" fill="#0f172a"/>
-  <text x="125" y="3745" style="font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.8px;fill:#cbd5e1">OPEN BRIDGE FRONTIER</text>
-  <text x="125" y="3768" style="font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc">Delay/time quotienting, physical completeness, experiential formalization, and the bridge theorem remain open.</text>
+  <text x="90" y="658" class="lane">CORE BRIDGE-SUFFICIENCY LINEAGE</text>
+  <text x="1030" y="658" class="lane">CONNECTED PHYSICAL / EXPERIMENTAL BRANCHES</text>
+  <g class="group-box">
+    <rect x="90" y="700" width="880" height="250" rx="18" fill="#f8fafc" stroke="#0f172a" stroke-width="1.8"/>
+    <text x="118" y="734" class="label">CORE | P19-P24</text>
+    <text x="118" y="769" class="head">Physical sufficiency and adaptive validity</text>
+    <text x="118" y="796" class="body">P19 screening-off; P20-P24 finite data, refinement, selection, repeated looks</text>
+    <g class="chip" data-proposition="P19"><rect x="114" y="812" width="56" height="30" rx="8"/><text x="142" y="832" class="chipText" text-anchor="middle">P19</text></g>
+    <g class="chip" data-proposition="P20"><rect x="180" y="812" width="56" height="30" rx="8"/><text x="208" y="832" class="chipText" text-anchor="middle">P20</text></g>
+    <g class="chip" data-proposition="P21"><rect x="246" y="812" width="56" height="30" rx="8"/><text x="274" y="832" class="chipText" text-anchor="middle">P21</text></g>
+    <g class="chip" data-proposition="P22"><rect x="312" y="812" width="56" height="30" rx="8"/><text x="340" y="832" class="chipText" text-anchor="middle">P22</text></g>
+    <g class="chip" data-proposition="P23"><rect x="378" y="812" width="56" height="30" rx="8"/><text x="406" y="832" class="chipText" text-anchor="middle">P23</text></g>
+    <g class="chip" data-proposition="P24"><rect x="444" y="812" width="56" height="30" rx="8"/><text x="472" y="832" class="chipText" text-anchor="middle">P24</text></g>
+  </g>
+  <g class="group-box">
+    <rect x="90" y="1030" width="880" height="250" rx="18" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.8"/>
+    <text x="118" y="1064" class="label">CORE | P71-P76</text>
+    <text x="118" y="1099" class="head">Target provenance, measurement, and adequacy</text>
+    <text x="118" y="1126" class="body">Independent target provenance, channel robustness, recovery, model adequacy</text>
+    <g class="chip" data-proposition="P71"><rect x="114" y="1142" width="56" height="30" rx="8"/><text x="142" y="1162" class="chipText" text-anchor="middle">P71</text></g>
+    <g class="chip" data-proposition="P72"><rect x="180" y="1142" width="56" height="30" rx="8"/><text x="208" y="1162" class="chipText" text-anchor="middle">P72</text></g>
+    <g class="chip" data-proposition="P73"><rect x="246" y="1142" width="56" height="30" rx="8"/><text x="274" y="1162" class="chipText" text-anchor="middle">P73</text></g>
+    <g class="chip" data-proposition="P74"><rect x="312" y="1142" width="56" height="30" rx="8"/><text x="340" y="1162" class="chipText" text-anchor="middle">P74</text></g>
+    <g class="chip" data-proposition="P75"><rect x="378" y="1142" width="56" height="30" rx="8"/><text x="406" y="1162" class="chipText" text-anchor="middle">P75</text></g>
+    <g class="chip" data-proposition="P76"><rect x="444" y="1142" width="56" height="30" rx="8"/><text x="472" y="1162" class="chipText" text-anchor="middle">P76</text></g>
+  </g>
+  <g class="group-box">
+    <rect x="90" y="1360" width="880" height="300" rx="18" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.8"/>
+    <text x="118" y="1394" class="label">CORE | P77-P89</text>
+    <text x="118" y="1429" class="head">Certified continuous-family model separation</text>
+    <text x="118" y="1456" class="body">Full-law rejection, global bounds, parity constraints, complete linear duality</text>
+    <g class="chip" data-proposition="P77"><rect x="114" y="1472" width="56" height="30" rx="8"/><text x="142" y="1492" class="chipText" text-anchor="middle">P77</text></g>
+    <g class="chip" data-proposition="P78"><rect x="180" y="1472" width="56" height="30" rx="8"/><text x="208" y="1492" class="chipText" text-anchor="middle">P78</text></g>
+    <g class="chip" data-proposition="P79"><rect x="246" y="1472" width="56" height="30" rx="8"/><text x="274" y="1492" class="chipText" text-anchor="middle">P79</text></g>
+    <g class="chip" data-proposition="P80"><rect x="312" y="1472" width="56" height="30" rx="8"/><text x="340" y="1492" class="chipText" text-anchor="middle">P80</text></g>
+    <g class="chip" data-proposition="P81"><rect x="378" y="1472" width="56" height="30" rx="8"/><text x="406" y="1492" class="chipText" text-anchor="middle">P81</text></g>
+    <g class="chip" data-proposition="P82"><rect x="444" y="1472" width="56" height="30" rx="8"/><text x="472" y="1492" class="chipText" text-anchor="middle">P82</text></g>
+    <g class="chip" data-proposition="P83"><rect x="510" y="1472" width="56" height="30" rx="8"/><text x="538" y="1492" class="chipText" text-anchor="middle">P83</text></g>
+    <g class="chip" data-proposition="P84"><rect x="576" y="1472" width="56" height="30" rx="8"/><text x="604" y="1492" class="chipText" text-anchor="middle">P84</text></g>
+    <g class="chip" data-proposition="P85"><rect x="642" y="1472" width="56" height="30" rx="8"/><text x="670" y="1492" class="chipText" text-anchor="middle">P85</text></g>
+    <g class="chip" data-proposition="P86"><rect x="708" y="1472" width="56" height="30" rx="8"/><text x="736" y="1492" class="chipText" text-anchor="middle">P86</text></g>
+    <g class="chip" data-proposition="P87"><rect x="114" y="1514" width="56" height="30" rx="8"/><text x="142" y="1534" class="chipText" text-anchor="middle">P87</text></g>
+    <g class="chip" data-proposition="P88"><rect x="180" y="1514" width="56" height="30" rx="8"/><text x="208" y="1534" class="chipText" text-anchor="middle">P88</text></g>
+    <g class="chip" data-proposition="P89"><rect x="246" y="1514" width="56" height="30" rx="8"/><text x="274" y="1534" class="chipText" text-anchor="middle">P89</text></g>
+  </g>
+  <g class="group-box">
+    <rect x="90" y="1740" width="880" height="250" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="1.8"/>
+    <text x="118" y="1774" class="label">CORE | P90-P95</text>
+    <text x="118" y="1809" class="head">Nonlinear geometry and finite-sample rejection</text>
+    <text x="118" y="1836" class="body">Rank constraints, exact distance, IID and dependent rejection, drift-aware gates</text>
+    <g class="chip" data-proposition="P90"><rect x="114" y="1852" width="56" height="30" rx="8"/><text x="142" y="1872" class="chipText" text-anchor="middle">P90</text></g>
+    <g class="chip" data-proposition="P91"><rect x="180" y="1852" width="56" height="30" rx="8"/><text x="208" y="1872" class="chipText" text-anchor="middle">P91</text></g>
+    <g class="chip" data-proposition="P92"><rect x="246" y="1852" width="56" height="30" rx="8"/><text x="274" y="1872" class="chipText" text-anchor="middle">P92</text></g>
+    <g class="chip" data-proposition="P93"><rect x="312" y="1852" width="56" height="30" rx="8"/><text x="340" y="1872" class="chipText" text-anchor="middle">P93</text></g>
+    <g class="chip" data-proposition="P94"><rect x="378" y="1852" width="56" height="30" rx="8"/><text x="406" y="1872" class="chipText" text-anchor="middle">P94</text></g>
+    <g class="chip" data-proposition="P95"><rect x="444" y="1852" width="56" height="30" rx="8"/><text x="472" y="1872" class="chipText" text-anchor="middle">P95</text></g>
+  </g>
+  <g class="group-box">
+    <rect x="90" y="2070" width="880" height="250" rx="18" fill="#ecfdf5" stroke="#059669" stroke-width="1.8"/>
+    <text x="118" y="2104" class="label">CORE | P96-P100</text>
+    <text x="118" y="2139" class="head">Selection-valid and anytime-valid inference</text>
+    <text x="118" y="2166" class="body">Holdout, candidate selection, cross-fitting, e-values, sequential stopping</text>
+    <g class="chip" data-proposition="P96"><rect x="114" y="2182" width="56" height="30" rx="8"/><text x="142" y="2202" class="chipText" text-anchor="middle">P96</text></g>
+    <g class="chip" data-proposition="P97"><rect x="180" y="2182" width="56" height="30" rx="8"/><text x="208" y="2202" class="chipText" text-anchor="middle">P97</text></g>
+    <g class="chip" data-proposition="P98"><rect x="246" y="2182" width="56" height="30" rx="8"/><text x="274" y="2202" class="chipText" text-anchor="middle">P98</text></g>
+    <g class="chip" data-proposition="P99"><rect x="312" y="2182" width="56" height="30" rx="8"/><text x="340" y="2202" class="chipText" text-anchor="middle">P99</text></g>
+    <g class="chip current" data-proposition="P100"><rect x="378" y="2182" width="56" height="30" rx="8"/><text x="406" y="2202" class="chipText" text-anchor="middle">P100</text></g>
+  </g>
+  <g class="group-box">
+    <rect x="1030" y="700" width="480" height="300" rx="18" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.8"/>
+    <text x="1058" y="734" class="label">BRANCH | P25-P37</text>
+    <text x="1058" y="769" class="head">Operational scale and quotient compatibility</text>
+    <text x="1058" y="796" class="body">Scale transport, aggregation, metrics, quotients</text>
+    <g class="chip" data-proposition="P25"><rect x="1054" y="812" width="56" height="30" rx="8"/><text x="1082" y="832" class="chipText" text-anchor="middle">P25</text></g>
+    <g class="chip" data-proposition="P26"><rect x="1120" y="812" width="56" height="30" rx="8"/><text x="1148" y="832" class="chipText" text-anchor="middle">P26</text></g>
+    <g class="chip" data-proposition="P27"><rect x="1186" y="812" width="56" height="30" rx="8"/><text x="1214" y="832" class="chipText" text-anchor="middle">P27</text></g>
+    <g class="chip" data-proposition="P28"><rect x="1252" y="812" width="56" height="30" rx="8"/><text x="1280" y="832" class="chipText" text-anchor="middle">P28</text></g>
+    <g class="chip" data-proposition="P29"><rect x="1318" y="812" width="56" height="30" rx="8"/><text x="1346" y="832" class="chipText" text-anchor="middle">P29</text></g>
+    <g class="chip" data-proposition="P30"><rect x="1384" y="812" width="56" height="30" rx="8"/><text x="1412" y="832" class="chipText" text-anchor="middle">P30</text></g>
+    <g class="chip" data-proposition="P31"><rect x="1054" y="854" width="56" height="30" rx="8"/><text x="1082" y="874" class="chipText" text-anchor="middle">P31</text></g>
+    <g class="chip" data-proposition="P32"><rect x="1120" y="854" width="56" height="30" rx="8"/><text x="1148" y="874" class="chipText" text-anchor="middle">P32</text></g>
+    <g class="chip" data-proposition="P33"><rect x="1186" y="854" width="56" height="30" rx="8"/><text x="1214" y="874" class="chipText" text-anchor="middle">P33</text></g>
+    <g class="chip" data-proposition="P34"><rect x="1252" y="854" width="56" height="30" rx="8"/><text x="1280" y="874" class="chipText" text-anchor="middle">P34</text></g>
+    <g class="chip" data-proposition="P35"><rect x="1318" y="854" width="56" height="30" rx="8"/><text x="1346" y="874" class="chipText" text-anchor="middle">P35</text></g>
+    <g class="chip" data-proposition="P36"><rect x="1384" y="854" width="56" height="30" rx="8"/><text x="1412" y="874" class="chipText" text-anchor="middle">P36</text></g>
+    <g class="chip" data-proposition="P37"><rect x="1054" y="896" width="56" height="30" rx="8"/><text x="1082" y="916" class="chipText" text-anchor="middle">P37</text></g>
+  </g>
+  <g class="group-box">
+    <rect x="1030" y="1080" width="480" height="250" rx="18" fill="#eff6ff" stroke="#2563eb" stroke-width="1.8"/>
+    <text x="1058" y="1114" class="label">BRANCH | P38-P44</text>
+    <text x="1058" y="1149" class="head">Quantum operational interface</text>
+    <text x="1058" y="1176" class="body">Operational sufficiency and quantum regularity tests</text>
+    <g class="chip" data-proposition="P38"><rect x="1054" y="1192" width="56" height="30" rx="8"/><text x="1082" y="1212" class="chipText" text-anchor="middle">P38</text></g>
+    <g class="chip" data-proposition="P39"><rect x="1120" y="1192" width="56" height="30" rx="8"/><text x="1148" y="1212" class="chipText" text-anchor="middle">P39</text></g>
+    <g class="chip" data-proposition="P40"><rect x="1186" y="1192" width="56" height="30" rx="8"/><text x="1214" y="1212" class="chipText" text-anchor="middle">P40</text></g>
+    <g class="chip" data-proposition="P41"><rect x="1252" y="1192" width="56" height="30" rx="8"/><text x="1280" y="1212" class="chipText" text-anchor="middle">P41</text></g>
+    <g class="chip" data-proposition="P42"><rect x="1318" y="1192" width="56" height="30" rx="8"/><text x="1346" y="1212" class="chipText" text-anchor="middle">P42</text></g>
+    <g class="chip" data-proposition="P43"><rect x="1384" y="1192" width="56" height="30" rx="8"/><text x="1412" y="1212" class="chipText" text-anchor="middle">P43</text></g>
+    <g class="chip" data-proposition="P44"><rect x="1054" y="1234" width="56" height="30" rx="8"/><text x="1082" y="1254" class="chipText" text-anchor="middle">P44</text></g>
+  </g>
+  <g class="group-box">
+    <rect x="1030" y="1410" width="480" height="260" rx="18" fill="#fff7ed" stroke="#f59e0b" stroke-width="1.8"/>
+    <text x="1058" y="1444" class="label">BRANCH | P45-P53</text>
+    <text x="1058" y="1479" class="head">Adaptive evidence acquisition</text>
+    <text x="1058" y="1506" class="body">Witness graphs, allocation, starvation, stopping</text>
+    <g class="chip" data-proposition="P45"><rect x="1054" y="1522" width="56" height="30" rx="8"/><text x="1082" y="1542" class="chipText" text-anchor="middle">P45</text></g>
+    <g class="chip" data-proposition="P46"><rect x="1120" y="1522" width="56" height="30" rx="8"/><text x="1148" y="1542" class="chipText" text-anchor="middle">P46</text></g>
+    <g class="chip" data-proposition="P47"><rect x="1186" y="1522" width="56" height="30" rx="8"/><text x="1214" y="1542" class="chipText" text-anchor="middle">P47</text></g>
+    <g class="chip" data-proposition="P48"><rect x="1252" y="1522" width="56" height="30" rx="8"/><text x="1280" y="1542" class="chipText" text-anchor="middle">P48</text></g>
+    <g class="chip" data-proposition="P49"><rect x="1318" y="1522" width="56" height="30" rx="8"/><text x="1346" y="1542" class="chipText" text-anchor="middle">P49</text></g>
+    <g class="chip" data-proposition="P50"><rect x="1384" y="1522" width="56" height="30" rx="8"/><text x="1412" y="1542" class="chipText" text-anchor="middle">P50</text></g>
+    <g class="chip" data-proposition="P51"><rect x="1054" y="1564" width="56" height="30" rx="8"/><text x="1082" y="1584" class="chipText" text-anchor="middle">P51</text></g>
+    <g class="chip" data-proposition="P52"><rect x="1120" y="1564" width="56" height="30" rx="8"/><text x="1148" y="1584" class="chipText" text-anchor="middle">P52</text></g>
+    <g class="chip" data-proposition="P53"><rect x="1186" y="1564" width="56" height="30" rx="8"/><text x="1214" y="1584" class="chipText" text-anchor="middle">P53</text></g>
+  </g>
+  <g class="group-box">
+    <rect x="1030" y="1750" width="480" height="250" rx="18" fill="#fdf2f8" stroke="#db2777" stroke-width="1.8"/>
+    <text x="1058" y="1784" class="label">BRANCH | P54-P60</text>
+    <text x="1058" y="1819" class="head">Scheduling and calibration setup</text>
+    <text x="1058" y="1846" class="body">Routing, reoptimization, uncertainty, calibration</text>
+    <g class="chip" data-proposition="P54"><rect x="1054" y="1862" width="56" height="30" rx="8"/><text x="1082" y="1882" class="chipText" text-anchor="middle">P54</text></g>
+    <g class="chip" data-proposition="P55"><rect x="1120" y="1862" width="56" height="30" rx="8"/><text x="1148" y="1882" class="chipText" text-anchor="middle">P55</text></g>
+    <g class="chip" data-proposition="P56"><rect x="1186" y="1862" width="56" height="30" rx="8"/><text x="1214" y="1882" class="chipText" text-anchor="middle">P56</text></g>
+    <g class="chip" data-proposition="P57"><rect x="1252" y="1862" width="56" height="30" rx="8"/><text x="1280" y="1882" class="chipText" text-anchor="middle">P57</text></g>
+    <g class="chip" data-proposition="P58"><rect x="1318" y="1862" width="56" height="30" rx="8"/><text x="1346" y="1882" class="chipText" text-anchor="middle">P58</text></g>
+    <g class="chip" data-proposition="P59"><rect x="1384" y="1862" width="56" height="30" rx="8"/><text x="1412" y="1882" class="chipText" text-anchor="middle">P59</text></g>
+    <g class="chip" data-proposition="P60"><rect x="1054" y="1904" width="56" height="30" rx="8"/><text x="1082" y="1924" class="chipText" text-anchor="middle">P60</text></g>
+  </g>
+  <g class="group-box">
+    <rect x="1030" y="2080" width="480" height="260" rx="18" fill="#faf5ff" stroke="#9333ea" stroke-width="1.8"/>
+    <text x="1058" y="2114" class="label">BRANCH | P61-P70</text>
+    <text x="1058" y="2149" class="head">Exact calibration and optimization</text>
+    <text x="1058" y="2176" class="body">Integer allocation, costs, approximation, dual gaps</text>
+    <g class="chip" data-proposition="P61"><rect x="1054" y="2192" width="56" height="30" rx="8"/><text x="1082" y="2212" class="chipText" text-anchor="middle">P61</text></g>
+    <g class="chip" data-proposition="P62"><rect x="1120" y="2192" width="56" height="30" rx="8"/><text x="1148" y="2212" class="chipText" text-anchor="middle">P62</text></g>
+    <g class="chip" data-proposition="P63"><rect x="1186" y="2192" width="56" height="30" rx="8"/><text x="1214" y="2212" class="chipText" text-anchor="middle">P63</text></g>
+    <g class="chip" data-proposition="P64"><rect x="1252" y="2192" width="56" height="30" rx="8"/><text x="1280" y="2212" class="chipText" text-anchor="middle">P64</text></g>
+    <g class="chip" data-proposition="P65"><rect x="1318" y="2192" width="56" height="30" rx="8"/><text x="1346" y="2212" class="chipText" text-anchor="middle">P65</text></g>
+    <g class="chip" data-proposition="P66"><rect x="1384" y="2192" width="56" height="30" rx="8"/><text x="1412" y="2212" class="chipText" text-anchor="middle">P66</text></g>
+    <g class="chip" data-proposition="P67"><rect x="1054" y="2234" width="56" height="30" rx="8"/><text x="1082" y="2254" class="chipText" text-anchor="middle">P67</text></g>
+    <g class="chip" data-proposition="P68"><rect x="1120" y="2234" width="56" height="30" rx="8"/><text x="1148" y="2254" class="chipText" text-anchor="middle">P68</text></g>
+    <g class="chip" data-proposition="P69"><rect x="1186" y="2234" width="56" height="30" rx="8"/><text x="1214" y="2254" class="chipText" text-anchor="middle">P69</text></g>
+    <g class="chip" data-proposition="P70"><rect x="1252" y="2234" width="56" height="30" rx="8"/><text x="1280" y="2254" class="chipText" text-anchor="middle">P70</text></g>
+  </g>
+  <path class="arrow" d="M1295 590 V640 H530 V688"/>
+  <path class="branch" d="M1295 590 V640 H1270 V688"/>
+  <path class="arrow" d="M530 950 V1018"/>
+  <path class="arrow" d="M530 1280 V1348"/>
+  <path class="arrow" d="M530 1660 V1728"/>
+  <path class="arrow" d="M530 1990 V2058"/>
+  <path class="branch" d="M1270 1000 V1068"/>
+  <path class="branch" d="M1270 1330 V1398"/>
+  <path class="branch" d="M1270 1670 V1738"/>
+  <path class="branch" d="M1270 2000 V2068"/>
+  <rect x="90" y="2390" width="1420" height="300" rx="20" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="125" y="2432" class="head">How to read this complete roadmap</text>
+  <path class="arrow" d="M130 2476 H235"/>
+  <text x="255" y="2481" class="legend">Solid arrows: primary bridge-sufficiency lineage summarized in the theorem roadmap.</text>
+  <path class="branch" d="M130 2522 H235"/>
+  <text x="255" y="2527" class="legend">Dashed connectors: connected branch handoffs, not universal pairwise prerequisites.</text>
+  <text x="125" y="2580" class="legend">P71-P100 returns to the P19 bridge lineage. It does not extend the P61-P70 calibration branch.</text>
+  <text x="125" y="2620" class="legend">Every proposition P1 through P100 is explicitly represented above; P100 is the current documented theorem frontier.</text>
+  <text x="125" y="2660" class="legend">This figure summarizes dependency structure only; it does not close the physical-to-experiential bridge.</text>
 </svg>
