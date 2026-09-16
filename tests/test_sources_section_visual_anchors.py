@@ -1,8 +1,12 @@
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VISUALS = (ROOT / "website" / "source-section-visuals.js").read_text(encoding="utf-8")
-ORIENTATION = (ROOT / "website" / "research-orientation.js").read_text(encoding="utf-8")
+VISUALS = (ROOT / "website" / "source-section-visuals.js").read_text(
+    encoding="utf-8"
+)
+ORIENTATION = (ROOT / "website" / "research-orientation.js").read_text(
+    encoding="utf-8"
+)
 
 
 def test_sources_page_has_one_visual_anchor_per_research_program() -> None:
