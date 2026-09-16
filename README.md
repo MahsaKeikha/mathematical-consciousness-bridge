@@ -77,6 +77,8 @@ You do **not** need to read the propositions in order to understand the project.
 
 At the center is P19, which states the exact deterministic and stochastic conditions under which an independently defined target can depend only on a declared physical descriptor. P71-P95 then make that question scientifically harder to game by checking target provenance, measurement quality, full model-family adequacy, finite-data uncertainty, dependence, and drift. P96-P100 protect the evidence when analysis becomes adaptive, selected, cross-fitted, aggregated, and sequential.
 
+The recent adaptive evidence chain is explicit: **P96** introduces selection-valid holdout stratification, **P97** controls simultaneous candidate-family selection, **P98** gives cross-fitted selection-valid certification, **P99** aggregates valid cross-fitted evidence with e-values, and **P100** adds the anytime-valid sequential layer across genuinely fresh certification rounds. These are validity guarantees for a declared testing program, not evidence that consciousness has been identified or that one rejected descriptor has no richer physical replacement.
+
 If you want the complete theorem record, including assumptions, proofs, implementations, tests, figures, and scientific boundaries, use the **[Detailed Proposition Record](docs/detailed_proposition_record.md)** or the **[Theorem Roadmap](docs/theorem_roadmap.md)**.
 
 The current public theorem frontier is **P100**. The formal release remains **v0.82.0**.
@@ -101,6 +103,8 @@ flowchart LR
 ```
 
 **Figure 1. Scientific architecture of the project.** The research moves from physical dynamics to operationally measurable structure, then to mathematical sufficiency tests, target-side validity, finite-data certification, experimental design, and finally the still-open physical-to-experiential bridge. The arrows are logical dependencies, not claims that one layer has already been identified with consciousness.
+
+> **Visual reading standard.** Every reader-facing figure now has a clear title, an embedded SVG description, a nearby caption or atlas explanation, a scientific-status boundary, and a direct route to the proof or source context. Use the [Complete Figure Catalog](docs/figure_catalog.md) to understand every visual without searching the repository, and the [Figure Caption and Description Standard](docs/figure_caption_and_description_standard.md) for the enforced documentation rules.
 
 **How to read this diagram.** Research II is not trying to derive consciousness from a box of equations. It asks whether a specific claimed description is sufficient for a separately defined target. A failure tells us that the declared model is missing something relevant under its assumptions. It does not tell us automatically what the missing ingredient is.
 
