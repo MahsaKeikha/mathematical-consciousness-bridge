@@ -111,5 +111,7 @@ def test_atlas_and_sources_load_the_evidence_expansion() -> None:
     assert "visual-atlas.html" in ORIENTATION
     assert "sources.html" in ORIENTATION
     assert "#research-i-complete-figure-gallery" in ORIENTATION
-    assert "#research-i-source-manifest" in ORIENTATION
-    assert "#research-iii-source-manifest" in ORIENTATION
+    assert "#research-i-source-visual-anchor" in ORIENTATION
+    assert "#research-iii-source-visual-anchor" in ORIENTATION
+    assert "research-i-source-manifest" in EVIDENCE
+    assert "research-iii-source-manifest" in EVIDENCE

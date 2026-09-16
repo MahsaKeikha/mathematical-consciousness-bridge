@@ -125,13 +125,13 @@
       stage: 'Three-program provenance and reproducibility',
       question: 'Where do the formal results, experiments, figures, specifications, assumptions, code, tests, and reproducibility records for all three research programs live?',
       established:
-        'The source page separates Research I physical-system provenance, Research II P1-P100 theorem provenance, and Research III measurement-science specification and scaffold provenance. Research I and Research III now also expose direct source manifests on the page rather than requiring readers to hunt across repositories.',
+        'The source page separates Research I physical-system provenance, Research II P1-P100 theorem provenance, and Research III measurement-science specification and scaffold provenance. Each research section now opens with a representative scientific visual before its source catalog, while Research I and Research III retain their complete direct source manifests.',
       open:
         'Traceability is necessary for rigor, but an inspectable research record is not scientific truth by itself. Each program still has to earn its own mathematical, computational, empirical, external-validation, or clinical claims at the level appropriate to that program.',
       links: [
-        ['#research-i-source-manifest', 'Audit the Research I source manifest'],
-        ['#research-ii-source-program', 'Audit Research II'],
-        ['#research-iii-source-manifest', 'Audit the Research III source manifest'],
+        ['#research-i-source-visual-anchor', 'See the Research I visual source anchor'],
+        ['#research-ii-source-visual-anchor', 'See the Research II visual source anchor'],
+        ['#research-iii-source-visual-anchor', 'See the Research III visual source anchor'],
       ],
     },
   };
@@ -203,9 +203,33 @@
     document.head.appendChild(script);
   }
 
+  function loadSourceSectionVisuals() {
+    if (currentFile() !== 'sources.html') return;
+    if (document.querySelector('script[data-source-section-visuals]')) return;
+
+    const script = document.createElement('script');
+    script.src = 'source-section-visuals.js';
+    script.defer = true;
+    script.dataset.sourceSectionVisuals = 'script';
+    document.head.appendChild(script);
+  }
+
+  function loadAtlasArchitectureRefresh() {
+    if (currentFile() !== 'visual-atlas.html') return;
+    if (document.querySelector('script[data-atlas-architecture-refresh]')) return;
+
+    const script = document.createElement('script');
+    script.src = 'atlas-architecture-refresh.js';
+    script.defer = true;
+    script.dataset.atlasArchitectureRefresh = 'script';
+    document.head.appendChild(script);
+  }
+
   function initialize() {
     renderScientificOrientation();
     loadThreeProgramEvidence();
+    loadSourceSectionVisuals();
+    loadAtlasArchitectureRefresh();
   }
 
   if (document.readyState === 'loading') {
