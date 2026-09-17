@@ -10,45 +10,9 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  repair-arrowheads:
-    if: github.ref == 'refs/heads/fix-repository-wide-arrowheads' && github.actor != 'github-actions[bot]'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: fix-repository-wide-arrowheads
-          fetch-depth: 0
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - name: Normalize all reader-facing SVG markers
-        run: python scripts/normalize_svg_arrowheads.py
-      - name: Synchronize figure publication metadata
-        run: python scripts/sync_figure_publication.py
-      - name: Verify canonical arrowhead geometry
-        run: |
-          python scripts/normalize_svg_arrowheads.py --check
-          python scripts/sync_figure_publication.py --check
-          if grep -RIn 'markerUnits="strokeWidth"' docs/figures website figures --include='*.svg'; then
-            echo 'stroke-scaled marker remains'
-            exit 1
-          fi
-          git diff --check
-      - name: Commit repaired visual record
-        run: |
-          if [ -z "$(git status --porcelain)" ]; then
-            echo 'No SVG normalization changes required.'
-            exit 0
-          fi
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add docs/figures website figures
-          git commit -m 'Normalize reader-facing arrowheads repository-wide'
-          git push origin HEAD:fix-repository-wide-arrowheads
-
   test:
     runs-on: ubuntu-latest
     strategy:
