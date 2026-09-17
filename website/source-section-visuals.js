@@ -116,6 +116,7 @@
       label: 'Representative measurement-science visual',
       title: 'Consciousness measurement architecture',
       image: `${MEASUREMENT_RAW}/docs/figures/measurement_architecture.svg`,
+      rawHref: `${MEASUREMENT_RAW}/docs/figures/measurement_architecture.svg`,
       alt: 'Research III consciousness measurement architecture',
       caption:
         'The measurement architecture shows how declared experiential targets, observables, assumptions, identification limits, uncertainty, and allowed scientific claims are kept separate instead of collapsing a proxy into experience itself.',
@@ -142,39 +143,46 @@
     const style = document.createElement('style');
     style.id = 'source-section-visual-styles';
     style.textContent = `
-      .source-section-visual{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(250px,.75fr);gap:1.25rem;align-items:stretch;margin:1.35rem 0 1.6rem;border:1px solid rgba(120,140,170,.28);border-radius:20px;overflow:hidden;background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.012));box-shadow:0 18px 42px rgba(0,0,0,.12)}
-      .source-section-visual-stage{display:flex;align-items:center;justify-content:center;min-height:310px;padding:1rem;background:#fff}
-      .source-section-visual-stage img{display:block;width:100%;height:100%;max-height:390px;object-fit:contain;background:#fff}
-      .source-section-visual-copy{display:flex;flex-direction:column;justify-content:center;padding:1.3rem 1.35rem 1.35rem 0}
+      .source-section-visual{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(280px,.65fr);gap:1.1rem;align-items:stretch;margin:1.35rem 0 1.6rem;border:1px solid rgba(120,140,170,.28);border-radius:20px;overflow:hidden;background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.012));box-shadow:0 18px 42px rgba(0,0,0,.12)}
+      .source-section-visual-stage{display:flex;align-items:center;justify-content:center;min-height:500px;padding:.45rem;background:#fff}
+      .source-section-visual-stage a{display:flex;width:100%;height:100%;align-items:center;justify-content:center}
+      .source-section-visual-stage img{display:block;width:100%;height:auto;max-height:640px;object-fit:contain;background:#fff}
+      .source-section-visual-copy{display:flex;flex-direction:column;justify-content:center;padding:1.3rem 1.35rem 1.35rem .25rem}
       .source-section-visual-copy .eyebrow{margin:0 0 .45rem}
       .source-section-visual-copy h3{margin:0 0 .7rem;font-size:clamp(1.22rem,2vw,1.65rem);line-height:1.2}
       .source-section-visual-copy p{margin:0;line-height:1.65}
-      .source-section-visual-links{display:flex;gap:.65rem;flex-wrap:wrap;margin-top:1rem}
+      .source-section-visual-links{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:1rem}
       .source-section-visual-links a{display:inline-flex;align-items:center;min-height:38px;padding:.55rem .78rem;border:1px solid rgba(120,140,170,.3);border-radius:999px;text-decoration:none;font-size:.82rem;font-weight:800}
       .source-section-visual-links a:first-child{background:rgba(255,255,255,.055)}
       .source-visual-record{margin:1.5rem 0;padding:1.35rem;border:1px solid rgba(120,140,170,.28);border-radius:20px;background:rgba(255,255,255,.025)}
       .source-visual-record-head{display:flex;gap:1rem;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;margin-bottom:1rem}
       .source-visual-record-head h3{margin:.3rem 0 .45rem}
-      .source-visual-record-head p{margin:0;max-width:860px;line-height:1.65}
+      .source-visual-record-head p{margin:0;max-width:920px;line-height:1.65}
       .source-visual-badge{display:inline-flex;align-items:center;padding:.35rem .65rem;border:1px solid rgba(120,140,170,.34);border-radius:999px;font-size:.78rem;font-weight:800;letter-spacing:.02em;white-space:nowrap}
-      .source-visual-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem}
+      .source-visual-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(470px,1fr));gap:1.2rem}
       .source-visual-card{display:flex;flex-direction:column;min-width:0;border:1px solid rgba(120,140,170,.24);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.02)}
-      .source-visual-card>a{display:flex;align-items:center;justify-content:center;min-height:210px;padding:.75rem;background:#fff}
-      .source-visual-card img{display:block;width:100%;height:220px;object-fit:contain;background:#fff}
-      .source-visual-card-body{display:flex;flex-direction:column;flex:1;padding:1rem}
+      .source-visual-card>.source-visual-image-link{display:flex;align-items:center;justify-content:center;min-height:360px;padding:.35rem;background:#fff}
+      .source-visual-card img{display:block;width:100%;height:360px;object-fit:contain;background:#fff}
+      .source-visual-card-body{display:flex;flex-direction:column;flex:1;padding:1rem 1.05rem 1.1rem}
       .source-visual-card-body span{font-size:.76rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;opacity:.76}
-      .source-visual-card-body h4{margin:.5rem 0 .55rem;font-size:1.05rem;line-height:1.28}
+      .source-visual-card-body h4{margin:.5rem 0 .55rem;font-size:1.08rem;line-height:1.28}
       .source-visual-card-body p{margin:0;line-height:1.55;font-size:.92rem}
       .source-visual-card-body .source-section-visual-links{margin-top:auto;padding-top:.85rem}
-      @media (max-width:820px){.source-section-visual{grid-template-columns:1fr}.source-section-visual-stage{min-height:230px}.source-section-visual-copy{padding:0 1rem 1.15rem}.source-section-visual-stage img{max-height:320px}.source-visual-card img{height:200px}}
+      .source-visual-reading-note{margin:.85rem 0 0;font-size:.83rem;line-height:1.5;opacity:.8}
+      @media (max-width:1050px){.source-visual-grid{grid-template-columns:1fr}.source-visual-card img{height:auto;max-height:520px}.source-visual-card>.source-visual-image-link{min-height:320px}}
+      @media (max-width:820px){.source-section-visual{grid-template-columns:1fr}.source-section-visual-stage{min-height:300px;padding:.25rem}.source-section-visual-copy{padding:0 1rem 1.15rem}.source-section-visual-stage img{max-height:480px}.source-visual-grid{grid-template-columns:1fr}.source-visual-card img{height:auto;max-height:460px}.source-visual-card>.source-visual-image-link{min-height:280px;padding:.25rem}}
     `;
     document.head.appendChild(style);
   }
 
   function visualMarkup(visual) {
+    const imageHref = visual.rawHref || visual.figureHref;
+    const fullResolutionLink = visual.rawHref
+      ? `<a href="${visual.rawHref}" target="_blank" rel="noopener noreferrer">Open full-resolution SVG</a>`
+      : '';
     return `
       <div class="source-section-visual-stage">
-        <a href="${visual.figureHref}" aria-label="Open full-resolution ${visual.title}">
+        <a href="${imageHref}" target="_blank" rel="noopener noreferrer" aria-label="Open full-resolution ${visual.title}">
           <img loading="lazy" decoding="async" src="${visual.image}" alt="${visual.alt}" />
         </a>
       </div>
@@ -185,7 +193,9 @@
         <div class="source-section-visual-links">
           <a href="${visual.contextHref}">Scientific context</a>
           <a href="${visual.figureHref}">Figure source</a>
+          ${fullResolutionLink}
         </div>
+        ${visual.rawHref ? '<p class="source-visual-reading-note">The full-resolution SVG opens directly in the browser so you can zoom without GitHub shrinking the preview.</p>' : ''}
       </figcaption>`;
   }
 
@@ -206,22 +216,31 @@
     else section.appendChild(figure);
   }
 
+  function researchIIIRawHref(record) {
+    return `${MEASUREMENT_RAW}/docs/figures/${record.file}`;
+  }
+
+  function researchIIISourceHref(record) {
+    return `${MEASUREMENT_REPO}/blob/${MEASUREMENT_PIN}/docs/figures/${record.file}`;
+  }
+
   function researchIIISourceLinks(record) {
-    return `<div class="source-section-visual-links"><a href="${MEASUREMENT_REPO}/blob/${MEASUREMENT_PIN}/${record.context}">Scientific context</a><a href="${MEASUREMENT_REPO}/blob/${MEASUREMENT_PIN}/docs/figures/${record.file}">Figure source</a></div>`;
+    return `<div class="source-section-visual-links"><a href="${MEASUREMENT_REPO}/blob/${MEASUREMENT_PIN}/${record.context}">Scientific context</a><a href="${researchIIISourceHref(record)}">Figure source</a><a href="${researchIIIRawHref(record)}" target="_blank" rel="noopener noreferrer">Open full-resolution SVG</a></div>`;
   }
 
   function researchIIISourceCard(record) {
     const title = escapeHTML(record.title);
     return `
       <article class="source-visual-card" data-research-iii-source-figure="docs/figures/${escapeHTML(record.file)}">
-        <a href="${MEASUREMENT_REPO}/blob/${MEASUREMENT_PIN}/docs/figures/${record.file}" aria-label="Open full-resolution ${title}">
-          <img loading="lazy" decoding="async" src="${MEASUREMENT_RAW}/docs/figures/${record.file}" alt="Research III ${title}" />
+        <a class="source-visual-image-link" href="${researchIIIRawHref(record)}" target="_blank" rel="noopener noreferrer" aria-label="Open full-resolution ${title}">
+          <img loading="lazy" decoding="async" src="${researchIIIRawHref(record)}" alt="Research III ${title}" />
         </a>
         <div class="source-visual-card-body">
           <span>${escapeHTML(record.phase)}</span>
           <h4>${title}</h4>
           <p>${escapeHTML(record.summary)}</p>
           ${researchIIISourceLinks(record)}
+          <p class="source-visual-reading-note">Use the full-resolution SVG for a zoomable browser view; the GitHub source link remains available for provenance and history.</p>
         </div>
       </article>`;
   }
@@ -239,7 +258,7 @@
     story.className = 'source-visual-record';
     story.innerHTML = `
       <div class="source-visual-record-head">
-        <div><span class="source-visual-badge">Curated Research III source path</span><h3>Follow the measurement-science record from target to falsification</h3><p>These six source-linked visuals provide the shortest rigorous path through the Research III record: define the program, match evidence to the target, preserve the evidence profile, state identification limits, validate transport and causal robustness, then compare competing theories.</p></div>
+        <div><span class="source-visual-badge">Curated Research III source path</span><h3>Follow the measurement-science record from target to falsification</h3><p>These six source-linked visuals provide the shortest rigorous path through the Research III record: define the program, match evidence to the target, preserve the evidence profile, state identification limits, validate transport and causal robustness, then compare competing theories. The previews are deliberately large so labels remain readable without relying on GitHub's compact SVG preview.</p></div>
         <span class="source-visual-badge">6-stage source path</span>
       </div>
       <div class="source-visual-grid">${curated.map(researchIIISourceCard).join('')}</div>`;
@@ -249,7 +268,7 @@
     complete.className = 'source-visual-record';
     complete.innerHTML = `
       <div class="source-visual-record-head">
-        <div><span class="source-visual-badge">Complete pinned Research III visual record</span><h3>All 9 canonical Research III figures with source context</h3><p>This gallery exposes the complete current Research III figure set from validated revision ${MEASUREMENT_PIN.slice(0, 8)}. Each figure links directly to the scientific document that defines its role and to the exact pinned SVG source.</p></div>
+        <div><span class="source-visual-badge">Complete pinned Research III visual record</span><h3>All 9 canonical Research III figures with readable source views</h3><p>This gallery exposes the complete current Research III figure set from validated revision ${MEASUREMENT_PIN.slice(0, 8)}. Each figure is rendered at a substantially larger reading size and links to its scientific context, GitHub source history, and direct full-resolution SVG.</p></div>
         <span class="source-visual-badge">9 / 9 visible</span>
       </div>
       <div class="source-section-visual-links"><a href="${MEASUREMENT_REPO}/blob/${MEASUREMENT_PIN}/docs/visual-research-guide.md">Open the Research III visual guide</a><a href="${MEASUREMENT_REPO}/blob/${MEASUREMENT_PIN}/docs/figure-catalog.md">Open the Research III figure catalog</a></div>
