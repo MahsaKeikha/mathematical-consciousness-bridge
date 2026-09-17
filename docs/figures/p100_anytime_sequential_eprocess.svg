@@ -1,6 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
   <title id="title">P100 Anytime-Valid Sequential E-Process</title>
   <desc id="desc">What this figure shows: Figure 2. P100 anytime-valid sequential e-process. Each fresh P99 certification round produces a conditionally valid e-value E_t. A predictable stake eta_t chosen from past information only forms the factor F_t = (1 - eta_t) + eta_t E_t, and the product M_t is a nonnegative supermartingale. Ville's inequality makes the first crossing of 1/alpha anytime-valid. The exact checkpoint shows two individually non-decisive rounds with E_t = 25/2 and eta_t = 1/2: each factor is 27/4, so M_2 = 729/16 = 45.5625 exceeds the 95 percent threshold 20. How to read it: follow the round sequence from left to right, then compare the cumulative process with the horizontal threshold. Main takeaway: valid fresh-round evidence can accumulate across adaptive inspection times without a new alpha split, provided current-round choices are predictable and current certification data remain conditionally fresh. Scientific status: Reader-facing research figure; formal status is controlled by the linked proof and provenance record.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 8 8" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" refX="7.2" refY="4" orient="auto">
+      <path d="M0.8 0.8 L7.2 4 L0.8 7.2 z" fill="#475569"/>
+    </marker>
+  </defs>
   <rect width="1400" height="900" fill="#ffffff"/>
   <text x="700" y="58" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#111827">P100 Anytime-Valid Sequential E-Process</text>
   <text x="700" y="94" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#374151">Fresh P99 evidence accumulates through predictable stakes and remains valid under repeated inspection</text>
@@ -13,8 +18,7 @@
   <text x="80" y="340" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#1f2937">eta1 = 1 / 2  -&gt;  F1 = 27 / 4</text>
   <text x="80" y="374" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#4b5563">M1 = 27 / 4 = 6.75 &lt; 20</text>
 
-  <path d="M440 270 L505 270" fill="none" stroke="#475569" stroke-width="3"/>
-  <polygon points="505,270 490,261 490,279" fill="#475569"/>
+  <path d="M440 270 L505 270" fill="none" stroke="#475569" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrow)"/>
   <text x="472" y="246" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#475569">updates plan</text>
 
   <rect x="505" y="145" width="390" height="250" rx="22" fill="#eef2ff" stroke="#4338ca" stroke-width="3"/>
@@ -25,8 +29,7 @@
   <text x="535" y="340" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#1f2937">eta2 = 1 / 2  -&gt;  F2 = 27 / 4</text>
   <text x="535" y="374" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#312e81">M2 = 729 / 16 = 45.5625 &gt; 20</text>
 
-  <path d="M895 270 L960 270" fill="none" stroke="#475569" stroke-width="3"/>
-  <polygon points="960,270 945,261 945,279" fill="#475569"/>
+  <path d="M895 270 L960 270" fill="none" stroke="#475569" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrow)"/>
   <text x="927" y="246" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#475569">continue</text>
 
   <rect x="960" y="145" width="390" height="250" rx="22" fill="#f8fafc" stroke="#334155" stroke-width="2"/>

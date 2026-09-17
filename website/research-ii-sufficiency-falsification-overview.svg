@@ -2,8 +2,8 @@
   <title id="title">Research II sufficiency test</title>
   <desc id="desc">A compact two-column Research II flow. First declare the physical or computational descriptor. Second define the target independently. Third match cases that are equivalent under the descriptor. Fourth test whether the independent target still distinguishes them. No target separation leaves the descriptor compatible with this test but not validated. Target separation rejects sufficiency for that declared descriptor.</desc>
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-      <path d="M0,0 L10,5 L0,10 Z" fill="#6b87b8"/>
+    <marker id="arrow" viewBox="0 0 8 8" markerUnits="userSpaceOnUse" refX="7.2" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0.8,0.8 L7.2,4 L0.8,7.2 Z" fill="#6b87b8"/>
     </marker>
     <style>
       .ui { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
@@ -18,6 +18,7 @@
       .outcomeBody { font-size: 14px; fill: #586477; }
       .boundaryLabel { font-size: 11px; font-weight: 800; letter-spacing: 1.4px; fill: #365aa8; }
       .boundary { font-size: 12px; fill: #586477; }
+      .connector { stroke:#6b87b8; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; fill:none; marker-end:url(#arrow); }
     </style>
   </defs>
 
@@ -58,12 +59,12 @@
     <text x="558" y="381" class="body">distinguish the matched cases?</text>
   </g>
 
-  <line x1="430" y1="125" x2="530" y2="125" stroke="#6b87b8" stroke-width="3" marker-end="url(#arrow)"/>
-  <path d="M725 200 L725 222 L235 222 L235 245" fill="none" stroke="#6b87b8" stroke-width="3" marker-end="url(#arrow)"/>
-  <line x1="430" y1="320" x2="530" y2="320" stroke="#6b87b8" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="430" y1="125" x2="530" y2="125" class="connector"/>
+  <path d="M725 200 L725 222 L235 222 L235 245" class="connector"/>
+  <line x1="430" y1="320" x2="530" y2="320" class="connector"/>
 
-  <path d="M725 395 L725 420 L260 420 L260 450" fill="none" stroke="#6b87b8" stroke-width="3" marker-end="url(#arrow)"/>
-  <path d="M725 420 L700 420 L700 450" fill="none" stroke="#6b87b8" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M725 395 L725 420 L260 420 L260 450" class="connector"/>
+  <path d="M725 420 L700 420 L700 450" class="connector"/>
 
   <g class="ui">
     <rect x="90" y="450" width="340" height="92" rx="16" fill="#eef5ff" stroke="#b9d0ee" stroke-width="2"/>

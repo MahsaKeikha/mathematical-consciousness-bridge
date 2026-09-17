@@ -64,8 +64,8 @@
     },
     {
       "path": "docs/figures/p100_anytime_sequential_eprocess.svg",
-      "sha256": "a76f173ef3270e2a744e7adeafe722ce08ef97efb77178dd194daa291d6767a3",
-      "bytes": 8265,
+      "sha256": "cfe8d28a2749993677d528b9215f8894842af4842e55c7dd0b31b3d567b14c52",
+      "bytes": 8474,
       "category": "theorem-or-architecture",
       "title": "P100 Anytime-Valid Sequential E-Process",
       "description_chars": 1039
@@ -1216,8 +1216,8 @@
     },
     {
       "path": "docs/figures/research_architecture.svg",
-      "sha256": "327907135a92f4bb4baa56c99fe26c930a54238e6a7119f057b1626dad504e96",
-      "bytes": 8703,
+      "sha256": "6ad48df2f888b4fbeac9277406211572f61400c7791186709ed244eae2c9d7ee",
+      "bytes": 8801,
       "category": "theorem-or-architecture",
       "title": "Research architecture",
       "description_chars": 849
