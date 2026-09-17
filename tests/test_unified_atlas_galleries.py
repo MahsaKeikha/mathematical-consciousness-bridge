@@ -4,6 +4,8 @@ import json
 import re
 from pathlib import Path
 
+from scripts.synchronize_research_three_website import CURRENT_RESEARCH_THREE_PIN
+
 ROOT = Path(__file__).resolve().parents[1]
 ATLAS_REFRESH = (ROOT / "website" / "atlas-architecture-refresh.js").read_text(
     encoding="utf-8"
@@ -23,7 +25,6 @@ PAGES_WORKFLOW = (ROOT / ".github" / "workflows" / "pages.yml").read_text(
 PUBLICATION_MANIFEST = json.loads(
     (ROOT / "figures" / "manifest.json").read_text(encoding="utf-8")
 )
-RESEARCH_III_PIN = "a9ef67ed15595c26b0c9f4e449f53f8078d6a1ee"
 
 
 def _core_records(manifest: dict[str, object]) -> list[dict[str, object]]:
@@ -123,7 +124,8 @@ def test_research_iii_gallery_exposes_architecture_and_validation_records() -> N
     assert "6-stage visual path" in RESEARCH_III_REFRESH
     assert "9 / 9 visible" in RESEARCH_III_REFRESH
     assert "10 / 10 visible" in RESEARCH_III_REFRESH
-    assert RESEARCH_III_PIN in RESEARCH_III_REFRESH
+    assert "const RESEARCH_III_PIN" in RESEARCH_III_REFRESH
+    assert CURRENT_RESEARCH_THREE_PIN.startswith("64b2bc47")
 
     architecture_figures = (
         "research_program_map.svg",
