@@ -1,45 +1,38 @@
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+PIN = "a9ef67ed15595c26b0c9f4e449f53f8078d6a1ee"
 
 
 def _read(path: str) -> str:
     return (ROOT / path).read_text(encoding="utf-8")
 
 
-def test_research_three_snapshot_banner_is_removed_only_at_render_time() -> None:
-    script = _read("website/research-orientation.js")
-
-    assert "function removeRedundantResearchThreeSnapshot()" in script
-    assert "currentFile() !== 'measurement-science.html'" in script
-    assert "Verified repository snapshot" in script
-    assert "The public page is pinned to the completed foundational framework" in script
-    assert "section.remove();" in script
-    assert "removeRedundantResearchThreeSnapshot();" in script
-
-
-def test_research_three_source_content_remains_intact() -> None:
+def test_research_three_snapshot_is_now_a_visible_validation_record() -> None:
     page = _read("website/measurement-science.html")
 
-    # The source remains auditable and synchronized; only the redundant visual
-    # banner is removed from the rendered Research III page.
     assert "Verified repository snapshot" in page
-    assert "Central measurement question" in page
-    assert "Five measurement targets" in page
-    assert "Consciousness Evidence Profile" in page
-    assert "Phenomenal structure measurement" in page
-    assert "Software and reproducibility" in page
-    assert "3cf9202977953644c980246c1f3e46a3514b3a4a" in page
+    assert "Formal validation V1-V10" in page
+    assert "81</strong><span>tests in each CI job" in page
+    assert "19</strong><span>scientific visuals: 9 architecture + 10 validation" in page
+    assert PIN in page
 
 
-def test_banner_removal_does_not_apply_to_other_reader_pages() -> None:
+def test_homepage_orientation_promotes_engineering_validation() -> None:
     script = _read("website/research-orientation.js")
 
-    start = script.index("function removeRedundantResearchThreeSnapshot()")
-    end = script.index("function renderScientificOrientation()")
-    function_body = script[start:end]
+    assert "function enhanceHomepageResearchIII()" in script
+    assert "Measurement engineering and formal validation" in script
+    assert "V1-V10 formal validation" in script
+    assert "81</strong><span>tests in each CI job" in script
+    assert "10 result figures" in script
+    assert "machine-readable outputs" in script
+    assert "enhanceHomepageResearchIII();" in script
 
-    assert "measurement-science.html" in function_body
-    assert "observer-research.html" not in function_body
-    assert "research-map.html" not in function_body
-    assert "visual-atlas.html" not in function_body
+
+def test_homepage_engineering_summary_preserves_scientific_boundary() -> None:
+    script = _read("website/research-orientation.js")
+
+    assert "does not yet provide human empirical calibration" in script
+    assert "analytic and synthetic validation" in script
+    assert "does not turn successful analytic and synthetic validation" in script
