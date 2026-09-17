@@ -32,7 +32,7 @@ def test_curated_connectors_use_round_professional_line_geometry() -> None:
         text = figure.read_text(encoding="utf-8")
         assert 'marker-end="url(#arrow)"' in text
         assert "markerUnits=\"strokeWidth\"" not in text
-        assert "stroke-linecap:\"round\"" not in text
+        assert "stroke-linecap:round" in text or 'stroke-linecap="round"' in text
 
 
 def test_p100_theorem_figure_does_not_use_oversized_manual_arrow_polygons() -> None:
