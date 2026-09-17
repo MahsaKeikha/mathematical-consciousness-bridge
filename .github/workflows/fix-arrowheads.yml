@@ -1,5 +1,6 @@
 name: fix-arrowheads
 
+# Temporary one-shot workflow used to normalize the existing committed SVG record.
 on:
   push:
     branches:
