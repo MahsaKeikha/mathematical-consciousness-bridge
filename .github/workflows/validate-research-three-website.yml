@@ -82,8 +82,10 @@ jobs:
           grep -q 'docs/validation-atlas.md' _site/measurement-science.html
           grep -q 'results/README.md' _site/measurement-science.html
           grep -q 'resolution_abstention_frontier.svg' _site/measurement-science.html
-          grep -q 'analytic and synthetic validation results' _site/measurement-science.html
+          grep -q 'V10 marginal erroneous-release bound' _site/measurement-science.html
           grep -q "research-three-snapshot: ${R3_PIN}" _site/measurement-science.html
+          ! grep -q 'Verified repository snapshot' _site/measurement-science.html
+          ! grep -q 'This page is pinned to the corrected V1-V10 Research III record' _site/measurement-science.html
           grep -q "${R3_PIN}" _site/research-lineage.html
           grep -q "${R3_PIN}" _site/research-orientation.js
           grep -q 'function enhanceHomepageResearchIII()' _site/research-orientation.js
@@ -183,6 +185,7 @@ jobs:
           assert "finite_sample_identification.svg" in measurement
           assert f"research-three-snapshot: {pin}" in measurement
           assert "Formal validation V1-V10" in measurement
+          assert "Verified repository snapshot" not in measurement
           assert pin in lineage
           assert "Research III · consciousness measurement science" in lineage
 
