@@ -108,7 +108,7 @@ def test_research_ii_gallery_uses_the_research_i_complete_card_language() -> Non
 def test_research_iii_gallery_is_complete_and_pinned() -> None:
     assert "research-iii-complete-figure-gallery" in ATLAS_REFRESH
     assert "3 / 3 visible" in ATLAS_REFRESH
-    assert "1ceea4c428d835ec9a8a417cbf238d9bcfe1d7c3" in ATLAS_REFRESH
+    assert "4082a357929beecc2158fe5bc159e42562de19bf" in ATLAS_REFRESH
     for figure in (
         "measurement_architecture.svg",
         "structural_measurement_pipeline.svg",
