@@ -8,6 +8,9 @@ ROOT = Path(__file__).resolve().parents[1]
 ATLAS_REFRESH = (ROOT / "website" / "atlas-architecture-refresh.js").read_text(
     encoding="utf-8"
 )
+RESEARCH_III_REFRESH = (
+    ROOT / "website" / "research-iii-atlas-refresh.js"
+).read_text(encoding="utf-8")
 EVIDENCE = (ROOT / "website" / "three-program-evidence.js").read_text(
     encoding="utf-8"
 )
@@ -59,12 +62,14 @@ def test_pages_deployment_enforces_the_unified_gallery_contract() -> None:
         "research-i-complete-figure-gallery",
         "research-ii-complete-core-gallery",
         "research-iii-complete-figure-gallery",
+        "research-iii-curated-visual-story",
         "const RESEARCH_II_CORE_EXPECTED = 100",
-        "3 / 3 visible",
+        "9 / 9 visible",
         "deployed Research II core gallery contract is not exactly 100 unique figures",
         "deployed canonical figure count is not 158",
         "node --check _site/research-orientation.js",
         "node --check _site/atlas-architecture-refresh.js",
+        "node --check _site/research-iii-atlas-refresh.js",
         "node --check _site/three-program-evidence.js",
     )
     for token in required:
@@ -105,31 +110,59 @@ def test_research_ii_gallery_uses_the_research_i_complete_card_language() -> Non
     assert "research-ii-complete-core-gallery" in ATLAS_REFRESH
 
 
-def test_research_iii_gallery_is_complete_and_pinned() -> None:
-    assert "research-iii-complete-figure-gallery" in ATLAS_REFRESH
-    assert "3 / 3 visible" in ATLAS_REFRESH
-    assert "383a6cdab720b3f87c17191b7c98bd6828213b72" in ATLAS_REFRESH
-    for figure in (
+def test_research_iii_gallery_is_complete_curated_and_pinned() -> None:
+    assert "research-iii-curated-visual-story" in RESEARCH_III_REFRESH
+    assert "research-iii-complete-figure-gallery" in RESEARCH_III_REFRESH
+    assert "6-stage visual path" in RESEARCH_III_REFRESH
+    assert "9 / 9 visible" in RESEARCH_III_REFRESH
+    assert "383a6cdab720b3f87c17191b7c98bd6828213b72" in RESEARCH_III_REFRESH
+
+    canonical_figures = (
+        "research_program_map.svg",
+        "target_evidence_matrix.svg",
         "measurement_architecture.svg",
+        "cep_anatomy.svg",
+        "identification_uncertainty_pipeline.svg",
         "structural_measurement_pipeline.svg",
+        "validation_program_map.svg",
+        "theory_falsification_map.svg",
         "claim_ladder.svg",
-    ):
-        assert figure in ATLAS_REFRESH
+    )
+    for figure in canonical_figures:
+        assert figure in RESEARCH_III_REFRESH
+
+    curated_figures = (
+        "research_program_map.svg",
+        "target_evidence_matrix.svg",
+        "cep_anatomy.svg",
+        "identification_uncertainty_pipeline.svg",
+        "validation_program_map.svg",
+        "theory_falsification_map.svg",
+    )
+    for figure in curated_figures:
+        assert f"'{figure}'" in RESEARCH_III_REFRESH
 
 
 def test_atlas_orientation_points_to_exact_complete_galleries() -> None:
     assert "exactly 100 unique canonical core visuals" in ORIENTATION
-    assert "complete pinned 3 / 3 canonical figure set" in ORIENTATION
+    assert "complete pinned 9 / 9 canonical scientific figure set" in ORIENTATION
+    assert "curated six-stage measurement-science visual path" in ORIENTATION
     for anchor in (
         "#research-i-complete-figure-gallery",
         "#research-ii-complete-core-gallery",
+        "#research-iii-curated-visual-story",
         "#research-iii-complete-figure-gallery",
     ):
         assert anchor in ORIENTATION
 
 
+def test_research_iii_refresh_is_loaded_by_orientation() -> None:
+    assert "research-iii-atlas-refresh.js" in ORIENTATION
+    assert "loadResearchIIIAtlasRefresh();" in ORIENTATION
+    assert "data-research-iii-atlas-refresh" in ORIENTATION
+
+
 def test_new_atlas_surface_keeps_reader_punctuation_contract() -> None:
-    assert "\u2013" not in ATLAS_REFRESH
-    assert "\u2014" not in ATLAS_REFRESH
-    assert "\u2013" not in ORIENTATION
-    assert "\u2014" not in ORIENTATION
+    for surface in (ATLAS_REFRESH, RESEARCH_III_REFRESH, ORIENTATION):
+        assert "\u2013" not in surface
+        assert "\u2014" not in surface
