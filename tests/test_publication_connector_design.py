@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import hashlib
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
@@ -31,8 +30,11 @@ def test_curated_arrowheads_are_absolute_and_restrained() -> None:
 def test_curated_connectors_use_round_professional_line_geometry() -> None:
     for figure in CURATED_ARROW_FIGURES:
         text = figure.read_text(encoding="utf-8")
-        assert 'marker-end="url(#arrow)"' in text
-        assert "markerUnits=\"strokeWidth\"" not in text
+        assert (
+            'marker-end="url(#arrow)"' in text
+            or "marker-end:url(#arrow)" in text
+        )
+        assert 'markerUnits="strokeWidth"' not in text
         assert "stroke-linecap:round" in text or 'stroke-linecap="round"' in text
 
 
@@ -40,15 +42,3 @@ def test_p100_theorem_figure_does_not_use_oversized_manual_arrow_polygons() -> N
     figure = ROOT / "docs" / "figures" / "p100_anytime_sequential_eprocess.svg"
     root = ET.parse(figure).getroot()
     assert not list(root.iter(f"{SVG_NS}polygon"))
-
-
-def test_report_updated_publication_hashes() -> None:
-    figures = (
-        ROOT / "docs" / "figures" / "p100_anytime_sequential_eprocess.svg",
-        ROOT / "docs" / "figures" / "research_architecture.svg",
-    )
-    report = []
-    for figure in figures:
-        raw = figure.read_bytes()
-        report.append((figure.name, len(raw), hashlib.sha256(raw).hexdigest()))
-    raise AssertionError(report)
