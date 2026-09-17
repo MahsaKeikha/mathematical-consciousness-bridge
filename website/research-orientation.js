@@ -148,6 +148,22 @@
       .join('');
   }
 
+  function removeRedundantResearchThreeSnapshot() {
+    if (currentFile() !== 'measurement-science.html') return;
+
+    const boundaries = document.querySelectorAll('main > section.boundary');
+    for (const section of boundaries) {
+      const text = section.textContent || '';
+      if (
+        text.includes('Verified repository snapshot') &&
+        text.includes('The public page is pinned to the completed foundational framework')
+      ) {
+        section.remove();
+        return;
+      }
+    }
+  }
+
   function renderScientificOrientation() {
     const page = currentFile();
     const contract = PAGE_CONTRACTS[page];
@@ -238,6 +254,7 @@
   }
 
   function initialize() {
+    removeRedundantResearchThreeSnapshot();
     renderScientificOrientation();
     loadThreeProgramEvidence();
     loadSourceSectionVisuals();
