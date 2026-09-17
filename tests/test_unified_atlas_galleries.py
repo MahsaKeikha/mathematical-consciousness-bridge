@@ -23,6 +23,7 @@ PAGES_WORKFLOW = (ROOT / ".github" / "workflows" / "pages.yml").read_text(
 PUBLICATION_MANIFEST = json.loads(
     (ROOT / "figures" / "manifest.json").read_text(encoding="utf-8")
 )
+RESEARCH_III_PIN = "a9ef67ed15595c26b0c9f4e449f53f8078d6a1ee"
 
 
 def _core_records(manifest: dict[str, object]) -> list[dict[str, object]]:
@@ -63,8 +64,12 @@ def test_pages_deployment_enforces_the_unified_gallery_contract() -> None:
         "research-ii-complete-core-gallery",
         "research-iii-complete-figure-gallery",
         "research-iii-curated-visual-story",
+        "research-iii-validation-figure-gallery",
+        "research-iii-source-validation-gallery",
         "const RESEARCH_II_CORE_EXPECTED = 100",
         "9 / 9 visible",
+        "10 / 10 visible",
+        "resolution_abstention_frontier.svg",
         "deployed Research II core gallery contract is not exactly 100 unique figures",
         "deployed canonical figure count is not 158",
         "node --check _site/research-orientation.js",
@@ -110,14 +115,17 @@ def test_research_ii_gallery_uses_the_research_i_complete_card_language() -> Non
     assert "research-ii-complete-core-gallery" in ATLAS_REFRESH
 
 
-def test_research_iii_gallery_is_complete_curated_and_pinned() -> None:
+def test_research_iii_gallery_exposes_architecture_and_validation_records() -> None:
     assert "research-iii-curated-visual-story" in RESEARCH_III_REFRESH
     assert "research-iii-complete-figure-gallery" in RESEARCH_III_REFRESH
+    assert "research-iii-validation-figure-gallery" in RESEARCH_III_REFRESH
+    assert "research-iii-source-validation-gallery" in RESEARCH_III_REFRESH
     assert "6-stage visual path" in RESEARCH_III_REFRESH
     assert "9 / 9 visible" in RESEARCH_III_REFRESH
-    assert "3cf9202977953644c980246c1f3e46a3514b3a4a" in RESEARCH_III_REFRESH
+    assert "10 / 10 visible" in RESEARCH_III_REFRESH
+    assert RESEARCH_III_PIN in RESEARCH_III_REFRESH
 
-    canonical_figures = (
+    architecture_figures = (
         "research_program_map.svg",
         "target_evidence_matrix.svg",
         "measurement_architecture.svg",
@@ -128,39 +136,39 @@ def test_research_iii_gallery_is_complete_curated_and_pinned() -> None:
         "theory_falsification_map.svg",
         "claim_ladder.svg",
     )
-    for figure in canonical_figures:
+    validation_figures = (
+        "finite_sample_identification.svg",
+        "finite_sample_coverage.svg",
+        "transport_bias_surface.svg",
+        "dependence_stress.svg",
+        "structural_alignment_power.svg",
+        "calibration_sample_uncertainty.svg",
+        "missingness_identification_loss.svg",
+        "inverse_conditioning_youden.svg",
+        "two_site_partial_identification.svg",
+        "resolution_abstention_frontier.svg",
+    )
+    for figure in architecture_figures + validation_figures:
         assert figure in RESEARCH_III_REFRESH
 
-    curated_figures = (
-        "research_program_map.svg",
-        "target_evidence_matrix.svg",
-        "cep_anatomy.svg",
-        "identification_uncertainty_pipeline.svg",
-        "validation_program_map.svg",
-        "theory_falsification_map.svg",
-    )
-    for figure in curated_figures:
-        assert f"'{figure}'" in RESEARCH_III_REFRESH
 
-
-def test_atlas_orientation_points_to_exact_complete_galleries() -> None:
-    assert "exactly 100 unique canonical core visuals" in ORIENTATION
-    assert "Research III measurement-science architecture" in ORIENTATION
-    assert "curated six-stage visual path" in ORIENTATION
-    assert "complete pinned 9 / 9 canonical scientific figure set" in ORIENTATION
+def test_atlas_orientation_points_to_architecture_and_validation_galleries() -> None:
+    assert "Research III now exposes 9 foundational architecture visuals" in ORIENTATION
+    assert "10 code-generated V1-V10 validation-result figures" in ORIENTATION
     for anchor in (
         "#research-i-complete-figure-gallery",
         "#research-ii-complete-core-gallery",
-        "#research-iii-curated-visual-story",
         "#research-iii-complete-figure-gallery",
+        "#research-iii-validation-figure-gallery",
     ):
         assert anchor in ORIENTATION
 
 
-def test_research_iii_refresh_is_loaded_by_orientation() -> None:
+def test_research_iii_refresh_is_loaded_for_atlas_and_sources() -> None:
     assert "research-iii-atlas-refresh.js" in ORIENTATION
     assert "loadResearchIIIAtlasRefresh();" in ORIENTATION
     assert "dataset.researchIiiAtlasRefresh" in ORIENTATION
+    assert "page !== 'visual-atlas.html' && page !== 'sources.html'" in ORIENTATION
 
 
 def test_new_atlas_surface_keeps_reader_punctuation_contract() -> None:
