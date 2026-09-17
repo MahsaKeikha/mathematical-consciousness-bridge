@@ -253,14 +253,15 @@
     document.head.appendChild(script);
   }
 
-  function loadResearchIIIPageFigures() {
-    if (currentFile() !== 'measurement-science.html') return;
-    if (document.querySelector('script[data-research-iii-page-figures]')) return;
+  function loadResearchResultsLinks() {
+    const page = currentFile();
+    if (!['observer-research.html', 'research-map.html', 'measurement-science.html'].includes(page)) return;
+    if (document.querySelector('script[data-research-results-links]')) return;
 
     const script = document.createElement('script');
-    script.src = 'research-iii-page-figures.js';
+    script.src = 'research-results-links.js';
     script.defer = true;
-    script.dataset.researchIiiPageFigures = 'script';
+    script.dataset.researchResultsLinks = 'script';
     document.head.appendChild(script);
   }
 
@@ -271,7 +272,7 @@
     loadSourceSectionVisuals();
     loadAtlasArchitectureRefresh();
     loadResearchIIIAtlasRefresh();
-    loadResearchIIIPageFigures();
+    loadResearchResultsLinks();
   }
 
   if (document.readyState === 'loading') {
