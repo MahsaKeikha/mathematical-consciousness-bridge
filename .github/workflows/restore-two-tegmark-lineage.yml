@@ -1,0 +1,71 @@
+name: restore-two-tegmark-lineage
+
+on:
+  push:
+    branches:
+      - restore-research-i-tegmark-lineage
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: restore-research-i-tegmark-lineage
+      - name: Restore complete two-paper Tegmark lineage
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('website/observer-research.html')
+          text = path.read_text(encoding='utf-8')
+          start = text.index('    <section id="conceptual-lineage" class="boundary">')
+          end = text.index('    <section id="dynamics">', start)
+          replacement = '''    <section id="conceptual-lineage" class="boundary">
+      <p class="eyebrow">Foundational scientific lineage</p>
+      <h2>From Tegmark's factorization and integrated-information questions to a moving subsystem</h2>
+      <p>Research I grew from two closely related questions in Max Tegmark's work: how observer-like physical organization depends on the factorization of a larger physical system, and how integration can be quantified across alternative partitions. These papers are acknowledged here as important intellectual and mathematical context for the questions that motivated this research.</p>
+
+      <div class="two-col">
+        <article class="card">
+          <p class="eyebrow">Foundational paper 1</p>
+          <h3>Consciousness as a State of Matter</h3>
+          <p><strong>Max Tegmark.</strong> <em>Chaos, Solitons &amp; Fractals</em> 76 (2015), 238-270.</p>
+          <p>This paper provides the primary conceptual starting point for the observer-factorization question: why one factorization of a larger physical system should be associated with observer-like structure rather than another.</p>
+          <p><a href="https://doi.org/10.1016/j.chaos.2015.03.014">DOI 10.1016/j.chaos.2015.03.014</a><br/><a href="https://arxiv.org/abs/1401.1219">arXiv:1401.1219</a></p>
+        </article>
+        <article class="card">
+          <p class="eyebrow">Foundational paper 2</p>
+          <h3>Improved Measures of Integrated Information</h3>
+          <p><strong>Max Tegmark.</strong> <em>PLOS Computational Biology</em> 12(11) (2016), e1005123.</p>
+          <p>This paper provides related mathematical context for comparing integrated-information measures across factorization choices and helps motivate treating integration as one declared ingredient in a broader operational subsystem criterion.</p>
+          <p><a href="https://doi.org/10.1371/journal.pcbi.1005123">DOI 10.1371/journal.pcbi.1005123</a><br/><a href="https://arxiv.org/abs/1601.02626">arXiv:1601.02626</a></p>
+        </article>
+      </div>
+
+      <h3>How Research I relates to this lineage</h3>
+      <p>Research I does not present the moving world-tube framework as a restatement of Tegmark's results. It takes the factorization problem into a different operational setting: the candidate subsystem boundary is allowed to change through time, and the research asks when measured dynamics and finite data support one moving path over its competitors. The resulting world-tube objective, transport functional, recovery theory, identifiability analysis, physical-time calibration, and finite-sample certification are developed and tested separately in this repository.</p>
+      <p><strong>Scientific and scholarly note:</strong> these two papers are cited with respect as foundational intellectual lineage for the questions that motivated Research I. The later theorem, computational, and reproducibility claims are the responsibility of this research program and stand on their own stated assumptions, derivations, experiments, tests, and source record. Nothing here should be read as attributing those later results to Tegmark, or as implying that either cited paper establishes that a recovered world-tube is conscious or resolves the physical-to-experiential problem.</p>
+
+      <div class="research-section-actions">
+        <a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/README.md#where-the-idea-came-from">Research I origin statement →</a>
+        <a href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/main/docs/bibliography.md">Research I bibliography →</a>
+        <a href="https://doi.org/10.1016/j.chaos.2015.03.014">Open Tegmark 2015 DOI →</a>
+        <a href="https://doi.org/10.1371/journal.pcbi.1005123">Open Tegmark 2016 DOI →</a>
+      </div>
+    </section>
+
+'''
+          path.write_text(text[:start] + replacement + text[end:], encoding='utf-8')
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add website/observer-research.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Restore full two-paper Tegmark lineage on Research I page"
+            git push origin HEAD:restore-research-i-tegmark-lineage
+          fi
