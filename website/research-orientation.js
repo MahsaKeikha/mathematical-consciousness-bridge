@@ -253,6 +253,17 @@
     document.head.appendChild(script);
   }
 
+  function loadResearchIIIPageFigures() {
+    if (currentFile() !== 'measurement-science.html') return;
+    if (document.querySelector('script[data-research-iii-page-figures]')) return;
+
+    const script = document.createElement('script');
+    script.src = 'research-iii-page-figures.js';
+    script.defer = true;
+    script.dataset.researchIiiPageFigures = 'script';
+    document.head.appendChild(script);
+  }
+
   function initialize() {
     removeRedundantResearchThreeSnapshot();
     renderScientificOrientation();
@@ -260,6 +271,7 @@
     loadSourceSectionVisuals();
     loadAtlasArchitectureRefresh();
     loadResearchIIIAtlasRefresh();
+    loadResearchIIIPageFigures();
   }
 
   if (document.readyState === 'loading') {
