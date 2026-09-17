@@ -33,7 +33,7 @@ def test_research_three_page_does_not_restore_the_old_audit_banner() -> None:
         "Verified repository snapshot",
         "The public page is pinned to the completed foundational framework",
         "What would it take to measure consciousness without defining it by the signal we happen to record?",
-        "Implemented now versus not yet established",
+        '<p class="eyebrow">Implemented now versus not yet established</p>',
     )
     for marker in forbidden:
         assert marker not in text
@@ -44,7 +44,7 @@ def test_provenance_is_kept_but_moved_below_the_scientific_content() -> None:
 
     science_anchor = text.index("Canonical scientific record")
     scope_anchor = text.index("Scope of current evidence")
-    provenance_anchor = text.index("Reproducibility and provenance")
+    provenance_anchor = text.index("Software and reproducibility")
 
     assert science_anchor < scope_anchor < provenance_anchor
     assert "3cf9202977953644c980246c1f3e46a3514b3a4a" in text
