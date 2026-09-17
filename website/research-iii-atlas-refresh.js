@@ -1,10 +1,12 @@
 (() => {
-  const RESEARCH_III_PIN = 'a9ef67ed15595c26b0c9f4e449f53f8078d6a1ee';
+  const RESEARCH_III_PIN = '7a2a1a3a60263e48b7a268642eecc6941e84d1b4';
   const MEASUREMENT_REPO = 'https://github.com/MahsaKeikha/consciousness-measurement-science';
   const RAW_PIN_PREFIX =
     `https://raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/${RESEARCH_III_PIN}/docs/figures/`;
   const BLOB_PIN_PREFIX =
     `https://github.com/MahsaKeikha/consciousness-measurement-science/blob/${RESEARCH_III_PIN}/docs/figures/`;
+  const RESULT_PIN_PREFIX =
+    `${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/`;
 
   const LEGACY_PINS = [
     '3cf9202977953644c980246c1f3e46a3514b3a4a',
@@ -12,6 +14,8 @@
     'b874eda1f6940f5601b7f89200b6a276b5ecbbc3',
     '8bbb7b029d70c43cc6a9dbf8b44dfe5069d0993d',
     '7a106820158e0d33ea651f7cdeaa505206f1ccc7',
+    'a9ef67ed15595c26b0c9f4e449f53f8078d6a1ee',
+    '64b2bc47461fe110b135080f8dc70883552d6fd9',
   ];
 
   const FOUNDATION_FIGURES = [
@@ -20,21 +24,21 @@
       file: 'research_program_map.svg',
       context: 'docs/measurement-framework.md',
       phase: 'Whole-program architecture',
-      summary: 'Five declared experiential targets are separated from observable evidence, assumptions, identification, validation, and the final claim ceiling.',
+      summary: 'Declared experiential targets are separated from observable evidence, assumptions, identification, validation, and the final claim ceiling.',
     },
     {
       title: 'Target-specific evidence matrix',
       file: 'target_evidence_matrix.svg',
       context: 'docs/measurement-instrument-spec.md',
       phase: 'Target and evidence design',
-      summary: 'A channel can be informative for one target and insufficient for another; the matrix prevents cross-target category errors.',
+      summary: 'A channel can be informative for one target and insufficient for another, preventing cross-target category errors.',
     },
     {
       title: 'Consciousness measurement architecture',
       file: 'measurement_architecture.svg',
       context: 'docs/measurement-framework.md',
       phase: 'Measurement architecture',
-      summary: 'The latent experiential target remains distinct from report, behavior, neural activity, perturbation, physiology, context, and intervention.',
+      summary: 'The declared latent target remains distinct from report, behavior, neural activity, perturbation, physiology, context, and intervention.',
     },
     {
       title: 'Consciousness Evidence Profile anatomy',
@@ -85,6 +89,7 @@
       title: 'Finite-sample identification',
       file: 'finite_sample_identification.svg',
       context: 'docs/formal-validation-program.md',
+      result: 'finite_sample_coverage.csv',
       phase: 'V2 · finite-sample identification',
       summary: 'The outer identified interval contracts with deployment sample size while retaining declared calibration uncertainty.',
     },
@@ -92,6 +97,7 @@
       title: 'Finite-sample coverage',
       file: 'finite_sample_coverage.svg',
       context: 'docs/formal-validation-program.md',
+      result: 'finite_sample_coverage.csv',
       phase: 'V2 · coverage',
       summary: 'Repeated fixed-seed sampling checks whether the declared finite-sample interval covers the known synthetic target.',
     },
@@ -99,6 +105,7 @@
       title: 'Calibration transport bias',
       file: 'transport_bias_surface.svg',
       context: 'docs/formal-validation-program.md',
+      result: 'transport_stress.csv',
       phase: 'V3 · transport',
       summary: 'The stress surface shows exact latent-contrast bias when sensitivity or specificity shifts but baseline calibration is reused.',
     },
@@ -106,6 +113,7 @@
       title: 'Conditional-dependence stress',
       file: 'dependence_stress.svg',
       context: 'docs/formal-validation-program.md',
+      result: 'dependence_stress.csv',
       phase: 'V4 · dependence',
       summary: 'A correlated-channel construction preserves marginal calibration while exposing false confidence from naive likelihood-ratio multiplication.',
     },
@@ -113,6 +121,7 @@
       title: 'Structural alignment null and power',
       file: 'structural_alignment_power.svg',
       context: 'docs/formal-validation-program.md',
+      result: 'structural_alignment_power.csv',
       phase: 'V5 · structural falsification',
       summary: 'Permutation testing is checked under a null construction and under increasing planted relational correspondence.',
     },
@@ -120,6 +129,7 @@
       title: 'Finite calibration-sample uncertainty',
       file: 'calibration_sample_uncertainty.svg',
       context: 'docs/formal-validation-program-v6-v10.md',
+      result: 'calibration_sample_uncertainty.csv',
       phase: 'V6 · calibration samples',
       summary: 'Sensitivity and specificity are estimated from finite reference samples, making calibration sample size part of the uncertainty budget.',
     },
@@ -127,6 +137,7 @@
       title: 'Missingness identification loss',
       file: 'missingness_identification_loss.svg',
       context: 'docs/formal-validation-program-v6-v10.md',
+      result: 'missingness_stress.csv',
       phase: 'V7 · arbitrary missingness',
       summary: 'Sharp worst-case bounds widen as outcomes go missing without a missing-at-random assumption; missing data are not converted into negative evidence.',
     },
@@ -134,6 +145,7 @@
       title: 'Inverse conditioning by Youden margin',
       file: 'inverse_conditioning_youden.svg',
       context: 'docs/formal-validation-program-v6-v10.md',
+      result: 'conditioning_stress.csv',
       phase: 'V8 · inverse conditioning',
       summary: 'The exact 1/J amplification law shows when an algebraically invertible channel becomes numerically unstable.',
     },
@@ -141,6 +153,7 @@
       title: 'Two-site partial identification',
       file: 'two_site_partial_identification.svg',
       context: 'docs/formal-validation-program-v6-v10.md',
+      result: 'two_site_nonidentifiability.csv',
       phase: 'V9 · site heterogeneity',
       summary: 'Different site calibration makes one pooled observable compatible with a range of population-average latent prevalences.',
     },
@@ -148,8 +161,41 @@
       title: 'Resolution abstention frontier',
       file: 'resolution_abstention_frontier.svg',
       context: 'docs/formal-validation-program-v6-v10.md',
-      phase: 'V10 · abstention',
-      summary: 'The pipeline releases a result only when a predeclared maximum interval width is achieved; otherwise the scientific output is inconclusive.',
+      result: 'resolution_abstention_frontier.csv',
+      phase: 'V10 · resolution-aware abstention',
+      summary: 'A predeclared width threshold controls when an interval is precise enough to release; marginal coverage controls erroneous releases, while conditional coverage is assessed separately.',
+    },
+    {
+      title: 'Missingness information law',
+      file: 'v11_missingness_information_law.svg',
+      context: 'docs/formal-validation-program-v11-v15.md',
+      result: 'v11_missingness_information_law.csv',
+      phase: 'V11 · exact information loss',
+      summary: 'Away from boundary clipping and with known positive calibration, the exact latent identified-set width equals the missing fraction divided by the Youden information margin.',
+    },
+    {
+      title: 'Multisite identification under heterogeneous information',
+      file: 'v12_v13_multisite_heterogeneity.svg',
+      context: 'docs/formal-validation-program-v11-v15.md',
+      result: 'v12_v13_multisite_identification.csv',
+      phase: 'V12-V13 · multisite identification',
+      summary: 'The population-average latent prevalence is point-identified from the pooled rate when site information margins are equal and becomes sharply set-identified as slope heterogeneity grows.',
+    },
+    {
+      title: 'Resolution sample-size law',
+      file: 'v14_resolution_sample_size.svg',
+      context: 'docs/formal-validation-program-v11-v15.md',
+      result: 'v14_resolution_sample_size.csv',
+      phase: 'V14 · engineering design law',
+      summary: 'The sufficient deployment sample size rises quadratically as the requested latent resolution tightens and as the measurement channel weakens.',
+    },
+    {
+      title: 'Independent pilot gate',
+      file: 'v15_independent_pilot_gate.svg',
+      context: 'docs/formal-validation-program-v11-v15.md',
+      result: 'v15_independent_pilot_gate.csv',
+      phase: 'V15 · selection-safe release design',
+      summary: 'Pilot data decide whether to proceed, while an independent confirmatory interval preserves its validity among released designs. The fixed-seed record is byte-stable across supported Python and NumPy environments.',
     },
   ];
 
@@ -181,6 +227,10 @@
     updated = updated.replace(
       'github.com/MahsaKeikha/consciousness-measurement-science/blob/main/',
       `github.com/MahsaKeikha/consciousness-measurement-science/blob/${RESEARCH_III_PIN}/`,
+    );
+    updated = updated.replace(
+      'github.com/MahsaKeikha/consciousness-measurement-science/tree/main/',
+      `github.com/MahsaKeikha/consciousness-measurement-science/tree/${RESEARCH_III_PIN}/`,
     );
     updated = updated.replace(
       'raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/main/',
@@ -224,6 +274,10 @@
       .r3-validation-card-body p{margin:0;line-height:1.55;font-size:.92rem}
       .r3-validation-links{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:auto;padding-top:.85rem}
       .r3-validation-links a{display:inline-flex;align-items:center;padding:.5rem .7rem;border:1px solid rgba(120,140,170,.3);border-radius:999px;text-decoration:none;font-size:.78rem;font-weight:800}
+      .r3-stage-extension{margin-top:2rem}.r3-stage-extension .section-head{margin-bottom:1rem}
+      .r3-design-law-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:1rem}
+      .r3-design-law-grid article{padding:18px;border:1px solid rgba(120,140,170,.25);border-radius:14px;background:rgba(255,255,255,.03)}
+      .r3-design-law-grid strong{display:block;margin-bottom:7px;font-size:1.06rem}.r3-design-law-grid p{margin:0;line-height:1.55;font-size:.91rem}
       @media(max-width:820px){.r3-validation-grid{grid-template-columns:1fr}.r3-validation-card img{height:auto;max-height:460px}.r3-validation-card>a{min-height:260px}}
     `;
     document.head.appendChild(style);
@@ -232,7 +286,8 @@
   function sourceLinks(record) {
     const context = `${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/${record.context}`;
     const figure = `${BLOB_PIN_PREFIX}${record.file}`;
-    return `<div class="figure-source-links"><a href="${context}">Scientific context</a><a href="${figure}">Figure source</a></div>`;
+    const result = record.result ? `${RESULT_PIN_PREFIX}${record.result}` : null;
+    return `<div class="figure-source-links"><a href="${context}">Scientific context</a>${result ? `<a href="${result}">Result data</a>` : ''}<a href="${figure}">Figure source</a></div>`;
   }
 
   function curatedCard(record) {
@@ -264,29 +319,44 @@
       <article class="r3-validation-card" data-research-iii-validation-figure="docs/figures/${escapeHTML(record.file)}">
         <a href="${BLOB_PIN_PREFIX}${record.file}" aria-label="Open full-resolution ${escapeHTML(record.title)}"><img loading="lazy" decoding="async" src="${RAW_PIN_PREFIX}${record.file}" alt="Research III ${escapeHTML(record.title)}" /></a>
         <div class="r3-validation-card-body">
-          <span>${escapeHTML(record.phase)}</span>
+          <span>${escapeHTML(record.phase)} · analytic/synthetic validation</span>
           <h4>${escapeHTML(record.title)}</h4>
           <p>${escapeHTML(record.summary)}</p>
-          <div class="r3-validation-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/${record.context}">Derivation</a><a href="${BLOB_PIN_PREFIX}${record.file}">Figure source</a></div>
+          <div class="r3-validation-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/${record.context}">Derivation</a><a href="${RESULT_PIN_PREFIX}${record.result}">Result data</a><a href="${BLOB_PIN_PREFIX}${record.file}">Figure source</a></div>
         </div>
       </article>`;
+  }
+
+  function setMetric(metrics, selector, value, label) {
+    let metric = metrics.querySelector(selector);
+    if (!metric) {
+      metric = document.createElement('div');
+      metric.className = 'program-record-metric';
+      metrics.appendChild(metric);
+    }
+    metric.setAttribute(selector.match(/\[([^=\]]+)/)?.[1] || 'data-research-iii-metric', String(value));
+    metric.innerHTML = `<strong>${value}</strong><span>${label}</span>`;
   }
 
   function addFigureMetrics(section) {
     const metrics = section.querySelector('.program-record-grid');
     if (!metrics) return;
-    if (!metrics.querySelector('[data-research-iii-figure-count]')) {
+    const architecture = metrics.querySelector('[data-research-iii-figure-count]');
+    if (architecture) architecture.innerHTML = '<strong>9</strong><span>foundational scientific visuals</span>';
+    else {
       const metric = document.createElement('div');
       metric.className = 'program-record-metric';
       metric.dataset.researchIiiFigureCount = '9';
       metric.innerHTML = '<strong>9</strong><span>foundational scientific visuals</span>';
       metrics.appendChild(metric);
     }
-    if (!metrics.querySelector('[data-research-iii-validation-count]')) {
+    const validation = metrics.querySelector('[data-research-iii-validation-count]');
+    if (validation) validation.innerHTML = '<strong>14</strong><span>formal validation result figures</span>';
+    else {
       const metric = document.createElement('div');
       metric.className = 'program-record-metric';
-      metric.dataset.researchIiiValidationCount = '10';
-      metric.innerHTML = '<strong>10</strong><span>formal validation result figures</span>';
+      metric.dataset.researchIiiValidationCount = '14';
+      metric.innerHTML = '<strong>14</strong><span>formal validation result figures</span>';
       metrics.appendChild(metric);
     }
   }
@@ -336,10 +406,10 @@
     validation.className = 'r3-validation-record';
     validation.innerHTML = `
       <div class="r3-validation-head">
-        <div><span class="record-badge">Executable formal validation</span><h3>V1-V10 result record</h3><p>Ten code-generated result figures connect the mathematical program to deterministic simulations, failure tests, machine-readable outputs, and reproducible source code.</p></div>
-        <span class="record-badge">10 / 10 visible</span>
+        <div><span class="record-badge">Executable formal validation</span><h3>V1-V15 result record</h3><p>Fourteen code-generated result figures connect the mathematical program to deterministic simulations, exact design laws, failure tests, machine-readable outputs, and reproducible source code.</p></div>
+        <span class="record-badge">14 / 14 visible</span>
       </div>
-      <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">V1-V10 program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Machine-readable results</a></div>
+      <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">V1-V15 program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Machine-readable results</a></div>
       <div class="r3-validation-grid">${VALIDATION_FIGURES.map(validationCard).join('')}</div>`;
 
     if (boundary) {
@@ -356,17 +426,17 @@
     if (currentFile() !== 'sources.html') return false;
     const section = document.getElementById('research-iii-source-program');
     if (!section) return false;
-    if (document.getElementById('research-iii-source-validation-gallery')) return true;
+    document.getElementById('research-iii-source-validation-gallery')?.remove();
 
     const block = document.createElement('div');
     block.id = 'research-iii-source-validation-gallery';
     block.className = 'r3-validation-record';
     block.innerHTML = `
       <div class="r3-validation-head">
-        <div><span class="source-visual-badge">Research III executable evidence</span><h3>Formal validation V1-V10: figures, equations, code, tests, and result files</h3><p>The architecture sources remain separate from the result record. This block exposes the ten validation figures and links each one back to its formal derivation at the exact validated Research III commit.</p></div>
-        <span class="source-visual-badge">10 result figures</span>
+        <div><span class="source-visual-badge">Research III executable evidence</span><h3>Formal validation V1-V15: derivations, result data, figures, code, and tests</h3><p>The architecture sources remain separate from the result record. Every validation figure below is pinned to the same verified Research III commit and links to its formal derivation, exact machine-readable result file, and figure source.</p></div>
+        <span class="source-visual-badge">14 result figures</span>
       </div>
-      <div class="source-section-visual-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">Validation program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Result index</a><a href="${MEASUREMENT_REPO}/tree/${RESEARCH_III_PIN}/tests">Tests</a></div>
+      <div class="source-section-visual-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">Validation program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Result index</a><a href="${MEASUREMENT_REPO}/tree/${RESEARCH_III_PIN}/tests">98-test suite</a></div>
       <div class="r3-validation-grid">${VALIDATION_FIGURES.map(validationCard).join('')}</div>`;
 
     const existing = document.getElementById('research-iii-source-complete-figure-gallery');
@@ -375,13 +445,127 @@
     return true;
   }
 
+  function findSectionByText(pattern) {
+    return [...document.querySelectorAll('main > section')].find((section) => pattern.test(section.textContent));
+  }
+
+  function renderResearchIIIMeasurementPage() {
+    if (currentFile() !== 'measurement-science.html') return false;
+    repinResearchIIIAssets();
+
+    const status = document.querySelector('.status-grid');
+    if (status) {
+      const cells = status.querySelectorAll(':scope > div');
+      if (cells[0]) cells[0].innerHTML = '<strong>V1-V15</strong><span>formal validation stages</span>';
+      if (cells[1]) cells[1].innerHTML = '<strong>23</strong><span>scientific visuals: 9 architecture + 14 validation</span>';
+      if (cells[2]) cells[2].innerHTML = '<strong>98</strong><span>tests in each CI job</span>';
+      if (cells[3]) cells[3].innerHTML = '<strong>3</strong><span>Python versions in the CI matrix</span>';
+    }
+
+    const primary = document.querySelector('.hero-actions .button.primary');
+    if (primary) {
+      primary.textContent = 'Open V1-V15 validation program';
+      primary.href = `${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md`;
+    }
+
+    const follow = document.querySelector('.source-grid a:first-child p');
+    if (follow) follow.textContent = 'The compact V1-V15 map: scientific question, mathematical object, executable evidence, result record, and failure condition.';
+
+    document.getElementById('formal-validation-v11-v15')?.remove();
+    const baseStages = document.getElementById('formal-validation-v1-v10');
+    if (baseStages) {
+      const extension = document.createElement('section');
+      extension.id = 'formal-validation-v11-v15';
+      extension.className = 'r3-stage-extension';
+      extension.innerHTML = `
+        <div class="section-head">
+          <p class="eyebrow">Formal validation V11-V15</p>
+          <h2>From robustness diagnosis to explicit measurement-design laws</h2>
+          <p>The second theorem layer asks how much information missingness destroys, when pooled multisite inference is point-identified, how to compute the sharp identified set when it is not, how resolution determines sample size, and how to separate design selection from confirmatory inference.</p>
+        </div>
+        <div class="result-grid">
+          <article class="result"><span>V11</span><h3>Exact missingness law</h3><p>Derives the interior identified-set width as missing fraction divided by the Youden information margin under known positive calibration.</p></article>
+          <article class="result"><span>V12</span><h3>Multisite point-identification criterion</h3><p>Gives the condition under which one pooled observable identifies the population-average latent prevalence: the site information margins must be equal.</p></article>
+          <article class="result"><span>V13</span><h3>Sharp K-site identified set</h3><p>Computes the exact population-average interval when heterogeneous site slopes prevent point identification.</p></article>
+          <article class="result"><span>V14</span><h3>Resolution sample-size law</h3><p>Converts requested latent resolution and channel strength into a sufficient finite-sample deployment size.</p></article>
+          <article class="result"><span>V15</span><h3>Independent pilot release gate</h3><p>Uses pilot data only for the go/no-go decision and fresh confirmatory data for inference, preserving confirmatory validity among released designs.</p></article>
+        </div>`;
+      baseStages.insertAdjacentElement('afterend', extension);
+    }
+
+    document.getElementById('v11-v15-result-figures')?.remove();
+    const v6Section = findSectionByText(/V6-V10 robustness figures/);
+    if (v6Section) {
+      const figures = document.createElement('section');
+      figures.id = 'v11-v15-result-figures';
+      figures.innerHTML = `
+        <div class="section-head">
+          <p class="eyebrow">V11-V15 design-law figures</p>
+          <h2>Exact information loss, multisite identification, sample-size design, and selection-safe release</h2>
+          <p>These figures are generated by the third deterministic validation runner from the committed CSV/JSON result record at Research III revision ${RESEARCH_III_PIN.slice(0, 8)}.</p>
+        </div>
+        <div class="measurement-figure-grid">${VALIDATION_FIGURES.slice(10).map((record) => `
+          <article class="figure-card">
+            <a href="${BLOB_PIN_PREFIX}${record.file}"><img loading="lazy" decoding="async" src="${RAW_PIN_PREFIX}${record.file}" alt="Research III ${escapeHTML(record.title)}" /></a>
+            <p class="eyebrow">${escapeHTML(record.phase)}</p>
+            <h3>${escapeHTML(record.title)}</h3>
+            <p>${escapeHTML(record.summary)}</p>
+            <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/${record.context}">Derivation</a><a href="${RESULT_PIN_PREFIX}${record.result}">Result data</a><a href="${BLOB_PIN_PREFIX}${record.file}">Figure source</a></div>
+          </article>`).join('')}</div>
+        <div class="r3-design-law-grid">
+          <article><strong>V11: 0.1333 width</strong><p>At 10% missingness and J = 0.75, the exact interior identified-set width is 0.1333.</p></article>
+          <article><strong>V12-V13: 0 to 0.3333</strong><p>Equal site information margins give point identification in the canonical design; a 0.30 slope spread widens the sharp set to 0.3333.</p></article>
+          <article><strong>V14: n = 1312</strong><p>For J = 0.75, a 95% Hoeffding guarantee with latent width at most 0.10 requires a sufficient deployment size of 1312.</p></article>
+          <article><strong>V15: 47.25% release at n = 900</strong><p>The stable fixed-seed pilot gate releases 756 of 1600 designs at planned confirmatory n = 900; confirmatory coverage is evaluated only on independent confirmatory data.</p></article>
+        </div>`;
+      v6Section.insertAdjacentElement('afterend', figures);
+    }
+
+    const reproduction = findSectionByText(/Two deterministic runners regenerate|Reproducibility/);
+    if (reproduction) {
+      const heading = reproduction.querySelector('h2');
+      if (heading && heading.textContent.includes('Two deterministic runners')) {
+        heading.textContent = 'Three deterministic runners regenerate the validation results and figures';
+      }
+      const firstColumn = reproduction.querySelector('.two-col > div');
+      if (firstColumn && !firstColumn.querySelector('[data-v11-v15-runner]')) {
+        const p = document.createElement('p');
+        p.dataset.v11V15Runner = 'true';
+        p.innerHTML = '<strong>V11-V15 runner:</strong> <code>python scripts/run_identification_design_validation.py</code>';
+        const wholeRepo = [...firstColumn.querySelectorAll('p')].find((node) => node.textContent.includes('Whole repository'));
+        if (wholeRepo) wholeRepo.insertAdjacentElement('beforebegin', p);
+        else firstColumn.appendChild(p);
+      }
+    }
+
+    repinResearchIIIAssets();
+    return true;
+  }
+
+  function renderHomepageMetrics() {
+    if (currentFile() !== 'index.html') return false;
+    const programCard = [...document.querySelectorAll('.research-program-card')].find((card) =>
+      card.textContent.includes('Research III · Consciousness measurement science')
+    );
+    if (!programCard) return false;
+    const metric = programCard.querySelector('.research-program-metric');
+    const meta = programCard.querySelector('.research-program-meta');
+    if (metric) metric.innerHTML = '<strong>98</strong><span>tests in each CI job</span>';
+    if (meta) meta.textContent = 'V1-V15 formal validation · 23 scientific visuals · 3 deterministic runners';
+    return true;
+  }
+
   function refresh() {
     ensureStyles();
     repinResearchIIIAssets();
-    const atlasReady = renderResearchIIIAtlas();
-    const sourcesReady = renderResearchIIISources();
+    const ready = [
+      renderResearchIIIAtlas(),
+      renderResearchIIISources(),
+      renderResearchIIIMeasurementPage(),
+      renderHomepageMetrics(),
+    ].some(Boolean);
     repinResearchIIIAssets();
-    return atlasReady || sourcesReady;
+    return ready;
   }
 
   function scheduleRefresh() {
