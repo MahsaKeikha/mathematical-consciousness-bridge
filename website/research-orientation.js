@@ -2,45 +2,46 @@
   const REPO = 'https://github.com/MahsaKeikha/mathematical-consciousness-bridge';
   const OBSERVER_REPO = 'https://github.com/MahsaKeikha/spatiotemporal-observer-math';
   const MEASUREMENT_REPO = 'https://github.com/MahsaKeikha/consciousness-measurement-science';
+  const MEASUREMENT_PIN = 'a9ef67ed15595c26b0c9f4e449f53f8078d6a1ee';
 
   const PAGE_CONTRACTS = {
     'index.html': {
       stage: 'Whole program',
       question: 'How do the three research programs fit together, and where is the current formal frontier?',
       established:
-        'The site documents a three-stage program: physical-system identification in Research I, bridge sufficiency and falsification through P100 in Research II, and measurement science in Research III.',
+        'The site documents a three-stage program: physical-system identification in Research I, bridge sufficiency and falsification through P100 in Research II, and a V1-V10 formal measurement-validation program in Research III.',
       open:
-        'The physical-to-experiential bridge remains open. The overview organizes the evidence but does not add a new bridge principle or experiential identification claim.',
+        'The physical-to-experiential bridge remains open. The overview organizes the mathematical, computational, and measurement-science evidence but does not add a new bridge principle or experiential identification claim.',
       links: [
         ['research-lineage.html', 'See the three-stage scientific handoff'],
         ['research-map.html', 'Audit the Research II theorem map'],
-        ['sources.html', 'Open sources and reproducibility'],
+        ['measurement-science.html', 'Open Research III V1-V10'],
       ],
     },
     'plain-language.html': {
       stage: 'Reader translation',
       question: 'What is the research actually claiming in language that does not require reading the proofs first?',
       established:
-        'The page translates the formal distinctions among physical description, independent target, compatibility, rejection, and measurement assumptions without changing the theorem statements.',
+        'The page translates the formal distinctions among physical description, independent target, compatibility, rejection, measurement assumptions, uncertainty, and validation without changing the underlying claims.',
       open:
         'A simpler explanation is not a weaker scientific boundary. Compatibility is not validation, rejection of one descriptor is not proof of nonphysical consciousness, and the final bridge remains unresolved.',
       links: [
         ['start-here.html', 'Move from intuition to the formal reading path'],
         ['research-map.html', 'Check the formal Research II record'],
-        ['sources.html', 'Verify sources and audit surfaces'],
+        ['measurement-science.html', 'See the Research III measurement tests'],
       ],
     },
     'start-here.html': {
       stage: 'First-reader guide',
-      question: 'What should a new reader understand before entering the proposition chronology?',
+      question: 'What should a new reader understand before entering the proposition chronology and measurement program?',
       established:
-        'The reading path fixes the project vocabulary, the sufficiency question, the interpretation boundary, and the relationship among Research I, II, and III before proposition-level detail begins.',
+        'The reading path fixes the project vocabulary, the sufficiency question, the interpretation boundary, and the relationship among Research I, II, and III before proposition-level or validation-stage detail begins.',
       open:
         'The guide does not identify consciousness with a latent variable, physical descriptor, observer subsystem, or measurement channel. Those identifications require independent scientific justification.',
       links: [
-        ['#chain', 'Follow the seven-layer inference chain'],
+        ['#chain', 'Follow the inference chain'],
         ['research-map.html', 'Open all 100 Research II results'],
-        ['visual-atlas.html', 'See the visual theorem record'],
+        ['measurement-science.html', 'Open Research III formal validation'],
       ],
     },
     'observer-research.html': {
@@ -60,13 +61,13 @@
       stage: 'Scientific handoff',
       question: 'Which conclusions pass from Research I to II to III, and which assumptions must be re-tested at each handoff?',
       established:
-        'The lineage page separates physical-system identification, bridge sufficiency testing, and measurement science so that outputs from one stage are not silently promoted into conclusions belonging to another.',
+        'The lineage separates physical-system identification, bridge sufficiency testing, and measurement science so outputs from one stage are not silently promoted into conclusions belonging to another. Research III now adds V1-V10 formal validation of its measurement machinery.',
       open:
         'No handoff by itself establishes the physical-to-experiential bridge. The bridge requires an independently justified principle and empirical support beyond stage-to-stage bookkeeping.',
       links: [
         ['observer-research.html', 'Inspect Research I'],
         ['research-map.html', 'Inspect Research II'],
-        ['measurement-science.html', 'Inspect Research III'],
+        ['measurement-science.html', 'Inspect Research III V1-V10'],
       ],
     },
     'research-map.html': {
@@ -79,32 +80,32 @@
       links: [
         [`${REPO}/blob/main/docs/theorem_roadmap.md`, 'Open the formal theorem roadmap'],
         ['visual-atlas.html', 'Inspect the visual evidence record'],
-        ['sources.html', 'Audit provenance and reproducibility'],
+        ['measurement-science.html', 'Continue to Research III measurement science'],
       ],
     },
     'measurement-science.html': {
       stage: 'Research III',
-      question: 'What can observable reports, behavior, neural signals, physiology, interventions, and context legitimately identify about experiential targets?',
+      question: 'What can observable channels legitimately identify about a declared experiential target, and exactly where does that inference fail?',
       established:
-        'Research III develops target-specific measurement claims under explicit uncertainty, dependence, competing explanations, and non-identification conditions rather than treating any one observable as experience itself.',
+        'Research III now contains a reproducible V1-V10 formal validation program covering calibrated inversion, partial identification, finite-sample coverage, transport bias, channel dependence, structural null and power testing, finite calibration uncertainty, arbitrary missingness, inverse conditioning, site heterogeneity, and principled abstention.',
       open:
-        'A measurement model can constrain or identify a declared target only under its assumptions. It does not turn an observable proxy into consciousness by definition, and principled non-identification remains an allowed result.',
+        'These analytic and synthetic results validate measurement machinery under declared models. They do not establish empirical calibration for consciousness in humans or other systems, and principled non-identification remains an allowed result.',
       links: [
-        [MEASUREMENT_REPO, 'Open the Research III repository'],
-        ['research-lineage.html', 'See the Research II to III handoff'],
-        ['sources.html', 'Open shared provenance and sources'],
+        [`${MEASUREMENT_REPO}/blob/${MEASUREMENT_PIN}/VALIDATION.md`, 'Open the V1-V10 validation program'],
+        [`${MEASUREMENT_REPO}/blob/${MEASUREMENT_PIN}/docs/validation-atlas.md`, 'Open the validation atlas'],
+        [`${MEASUREMENT_REPO}/blob/${MEASUREMENT_PIN}/results/README.md`, 'Audit machine-readable results'],
       ],
     },
     'physics-mathematics.html': {
       stage: 'Foundations',
-      question: 'Which mathematical and physical structures are used by the bridge-testing program, and exactly where do their assumptions enter?',
+      question: 'Which mathematical and physical structures are used by the bridge-testing and measurement programs, and exactly where do their assumptions enter?',
       established:
-        'This page organizes the physical, probabilistic, information-theoretic, causal, statistical, and quantum tools used to state and test the Research II claims.',
+        'This page organizes the physical, probabilistic, information-theoretic, causal, statistical, and quantum tools used to state and test the Research II claims and interpret the Research III measurement program.',
       open:
         'Mathematical consistency inside a chosen framework does not by itself supply an experiential interpretation. The foundations constrain bridge claims but do not manufacture the missing bridge principle.',
       links: [
-        ['research-map.html', 'See where each foundation enters Research II'],
-        ['visual-atlas.html', 'Inspect the mathematical figures'],
+        ['research-map.html', 'See where foundations enter Research II'],
+        ['measurement-science.html', 'See how measurement assumptions are stress-tested'],
         ['sources.html', 'Trace equations and references'],
       ],
     },
@@ -112,27 +113,28 @@
       stage: 'Three-program visual evidence record',
       question: 'What visual evidence, architecture, or computational record belongs to Research I, Research II, and Research III, and what scientific status does each visual carry?',
       established:
-        'The Atlas uses one explicit gallery language across all three programs. Research I physical-system visuals expose all 33 scientific-result figures. Research II theorem and frontier visuals render exactly 100 unique canonical core visuals from the bundled release manifest while preserving the longer theorem archive separately. Research III measurement-science architecture now exposes a curated six-stage visual path and its complete pinned 9 / 9 canonical scientific figure set.',
+        'The Atlas uses one explicit gallery language across all three programs. Research I exposes its scientific-result figures, Research II renders its canonical theorem and architecture record, and Research III now exposes 9 foundational architecture visuals plus 10 code-generated V1-V10 validation-result figures.',
       open:
-        'A figure does not upgrade the status of its underlying evidence. Research I world-tube recovery is not consciousness identification, Research II model rejection is not bridge completion, and Research III specification is not empirical or clinical validation.',
+        'A figure does not upgrade the status of its underlying evidence. Research I world-tube recovery is not consciousness identification, Research II model rejection is not bridge completion, and Research III synthetic validation is not human or clinical validation.',
       links: [
-        ['#research-i-complete-figure-gallery', 'Open all 33 Research I result figures'],
-        ['#research-ii-complete-core-gallery', 'Open all 100 Research II core visuals'],
-        ['#research-iii-curated-visual-story', 'Follow the curated Research III visual path'],
-        ['#research-iii-complete-figure-gallery', 'Open all 9 Research III canonical figures'],
+        ['#research-i-complete-figure-gallery', 'Open the Research I result figures'],
+        ['#research-ii-complete-core-gallery', 'Open the Research II core visuals'],
+        ['#research-iii-complete-figure-gallery', 'Open all 9 Research III architecture figures'],
+        ['#research-iii-validation-figure-gallery', 'Open all 10 Research III validation figures'],
       ],
     },
     'sources.html': {
       stage: 'Three-program provenance and reproducibility',
       question: 'Where do the formal results, experiments, figures, specifications, assumptions, code, tests, and reproducibility records for all three research programs live?',
       established:
-        'The source page separates Research I physical-system provenance, Research II P1-P100 theorem provenance, and Research III measurement-science specification and scaffold provenance. Each research section now opens with a representative scientific visual before its source catalog, while Research I and Research III retain their complete direct source manifests.',
+        'The Sources page separates Research I physical-system provenance, Research II P1-P100 theorem provenance, and Research III architecture from its V1-V10 executable validation record. Research III validation figures link back to exact derivations, code, tests, and machine-readable results at one pinned commit.',
       open:
-        'Traceability is necessary for rigor, but an inspectable research record is not scientific truth by itself. Each program still has to earn its own mathematical, computational, empirical, external-validation, or clinical claims at the level appropriate to that program.',
+        'Traceability is necessary for rigor, but an inspectable research record is not scientific truth by itself. Each program still has to earn its mathematical, computational, empirical, external-validation, or clinical claims at the level appropriate to that program.',
       links: [
         ['#research-i-source-visual-anchor', 'See the Research I visual source anchor'],
         ['#research-ii-source-visual-anchor', 'See the Research II visual source anchor'],
-        ['#research-iii-source-visual-anchor', 'See the Research III visual source anchor'],
+        ['#research-iii-source-visual-anchor', 'See the Research III architecture source anchor'],
+        ['#research-iii-source-validation-gallery', 'See the Research III validation source record'],
       ],
     },
   };
@@ -146,22 +148,6 @@
     return links
       .map(([href, label]) => `<a href="${href}">${label}<span aria-hidden="true"> →</span></a>`)
       .join('');
-  }
-
-  function removeRedundantResearchThreeSnapshot() {
-    if (currentFile() !== 'measurement-science.html') return;
-
-    const boundaries = document.querySelectorAll('main > section.boundary');
-    for (const section of boundaries) {
-      const text = section.textContent || '';
-      if (
-        text.includes('Verified repository snapshot') &&
-        text.includes('The public page is pinned to the completed foundational framework')
-      ) {
-        section.remove();
-        return;
-      }
-    }
   }
 
   function renderScientificOrientation() {
@@ -243,7 +229,8 @@
   }
 
   function loadResearchIIIAtlasRefresh() {
-    if (currentFile() !== 'visual-atlas.html') return;
+    const page = currentFile();
+    if (page !== 'visual-atlas.html' && page !== 'sources.html') return;
     if (document.querySelector('script[data-research-iii-atlas-refresh]')) return;
 
     const script = document.createElement('script');
@@ -254,7 +241,6 @@
   }
 
   function initialize() {
-    removeRedundantResearchThreeSnapshot();
     renderScientificOrientation();
     loadThreeProgramEvidence();
     loadSourceSectionVisuals();
