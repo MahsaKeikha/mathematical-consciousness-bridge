@@ -115,7 +115,7 @@ def test_research_iii_gallery_is_complete_curated_and_pinned() -> None:
     assert "research-iii-complete-figure-gallery" in RESEARCH_III_REFRESH
     assert "6-stage visual path" in RESEARCH_III_REFRESH
     assert "9 / 9 visible" in RESEARCH_III_REFRESH
-    assert "383a6cdab720b3f87c17191b7c98bd6828213b72" in RESEARCH_III_REFRESH
+    assert "3cf9202977953644c980246c1f3e46a3514b3a4a" in RESEARCH_III_REFRESH
 
     canonical_figures = (
         "research_program_map.svg",
