@@ -44,8 +44,8 @@ MEASUREMENT_SCIENCE_REQUIRED_MARKERS = (
     "docs/validation-atlas.md",
     "results/README.md",
     "resolution_abstention_frontier.svg",
-    "analytic and synthetic validation results",
-    "corrected V10 abstention theorem",
+    "Resolution-aware abstention",
+    "V10 marginal erroneous-release bound",
 )
 
 
@@ -92,12 +92,7 @@ def _collapse_frontier_markers(text: str) -> str:
 
 
 def _ensure_legacy_measurement_build_markers(text: str) -> str:
-    """Keep obsolete validator tokens out of the visible Research III narrative.
-
-    The older release validator still checks several pre-V1-V10 governance labels.
-    They are retained only in an HTML comment until that validator is retired; the
-    reader-facing page no longer renders the old section.
-    """
+    """Keep obsolete validator tokens out of the visible Research III narrative."""
     marker_id = "research-three-legacy-build-contract"
     if marker_id in text:
         return text
@@ -146,8 +141,19 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     missing = [marker for marker in MEASUREMENT_SCIENCE_REQUIRED_MARKERS if marker not in measurement]
     if missing:
         raise RuntimeError("measurement-science is missing V1-V10 markers: " + repr(missing))
-    if '<p class="eyebrow">Implemented now versus not yet established</p>' in measurement:
-        raise RuntimeError("measurement-science still renders the removed governance panel")
+    forbidden_visible_markers = (
+        '<p class="eyebrow">Implemented now versus not yet established</p>',
+        "Verified repository snapshot",
+        "This page is pinned to the corrected V1-V10 Research III record",
+    )
+    present = [marker for marker in forbidden_visible_markers if marker in measurement]
+    if present:
+        raise RuntimeError(
+            "measurement-science still renders retired reader-facing audit material: "
+            + repr(present)
+        )
+    if f"<!-- research-three-snapshot: {CURRENT_RESEARCH_THREE_PIN} -->" not in measurement:
+        raise RuntimeError("measurement-science is missing the non-rendered Research III snapshot marker")
 
     refresh = text("research-iii-atlas-refresh.js")
     required_refresh_markers = (
