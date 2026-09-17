@@ -9,7 +9,7 @@ SVG_ROOTS = (
     ROOT / "website",
     ROOT / "figures",
 )
-MARKER_BLOCK_RE = re.compile(r"<marker\b(?P<attrs>[^>]*)>(?P<body>.*?)</marker>", re.S)
+MARKER_BLOCK_RE = re.compile(r"<marker\b(?P<attrs>[^>]*)>(?P<body>.*?)</marker>", re.DOTALL)
 ATTR_RE = re.compile(r"(?P<name>[A-Za-z_:][-A-Za-z0-9_:.]*)=(?P<quote>['\"])(?P<value>.*?)(?P=quote)")
 MARKER_REF_RE = re.compile(r"marker-(?:start|mid|end)\s*[:=]\s*['\"]?url\(#(?P<id>[^)]+)\)")
 MAX_MARKER_SIZE = 8.0
