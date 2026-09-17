@@ -192,6 +192,24 @@
     hero.insertAdjacentElement('afterend', section);
   }
 
+  function compactResearchIIIStatus() {
+    if (currentFile() !== 'measurement-science.html') return;
+    const main = document.querySelector('main');
+    if (!main) return;
+    const snapshot = Array.from(main.querySelectorAll('section.boundary')).find((section) =>
+      section.textContent.includes('Verified repository snapshot'),
+    );
+    if (!snapshot) return;
+
+    snapshot.className = 'boundary research-status-compact';
+    snapshot.setAttribute('aria-label', 'Research III status and scope');
+    snapshot.innerHTML = `
+      <p class="eyebrow">Research status</p>
+      <h2>Foundational measurement framework, not a validated consciousness instrument</h2>
+      <p>Research III currently provides a theory-neutral measurement architecture, explicit uncertainty and identification rules, reproducible software scaffolds, and a claim ladder from M0 to M7. It does not claim a universal consciousness biomarker, direct measurement of qualia, clinical validation, or a settled ontology of consciousness.</p>
+      <p><a href="${MEASUREMENT_REPO}/blob/main/docs/evidence-to-claim-audit.md">Evidence-to-Claim Audit and figure traceability →</a></p>`;
+  }
+
   function loadThreeProgramEvidence() {
     const page = currentFile();
     if (page !== 'visual-atlas.html' && page !== 'sources.html') return;
@@ -239,6 +257,7 @@
 
   function initialize() {
     renderScientificOrientation();
+    compactResearchIIIStatus();
     loadThreeProgramEvidence();
     loadSourceSectionVisuals();
     loadAtlasArchitectureRefresh();
