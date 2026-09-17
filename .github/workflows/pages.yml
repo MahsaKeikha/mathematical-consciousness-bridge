@@ -75,14 +75,17 @@ jobs:
           print(json.loads(Path('figures/manifest.json').read_text(encoding='utf-8'))['current_frontier'])
           PY
           )"
+          R3_PIN="$(python -c 'from scripts.synchronize_research_three_website import CURRENT_RESEARCH_THREE_PIN; print(CURRENT_RESEARCH_THREE_PIN)')"
           test "${FRONTIER}" = "${MANIFEST_FRONTIER}"
           echo "FRONTIER=${FRONTIER}" >> "${GITHUB_ENV}"
           echo "FRONTIER_NUMBER=${FRONTIER#P}" >> "${GITHUB_ENV}"
           echo "FRONTIER_FIGURE=$(basename "${FIGURE_PATH}")" >> "${GITHUB_ENV}"
+          echo "R3_PIN=${R3_PIN}" >> "${GITHUB_ENV}"
 
-      - name: Verify repository and website source synchronization
+      - name: Verify repository and synchronize public Research III source
         run: |
           python -m py_compile scripts/prepare_website.py scripts/synchronize_research_three_website.py scripts/verify_repository.py scripts/verify_frontier_publication.py
+          python scripts/synchronize_research_three_website.py --site website --write
           python scripts/synchronize_research_three_website.py --site website --check
           python scripts/verify_repository.py
           node --check website/app.js
@@ -98,7 +101,7 @@ jobs:
           python scripts/prepare_website.py --source website-deploy --output _site
           cp figures/manifest.json _site/figures/manifest.json
 
-      - name: Verify canonical built frontier
+      - name: Verify canonical built frontier and Research III validation record
         shell: bash
         run: |
           FRONTIER_LOWER="$(printf '%s' "${FRONTIER}" | tr '[:upper:]' '[:lower:]')"
@@ -120,21 +123,35 @@ jobs:
           grep -q 'physical-to-experiential bridge' _site/plain-language.html
           grep -q 'physical-to-experiential bridge' _site/start-here.html
           grep -q 'measurement-science.html' _site/app.js
+          grep -q "${R3_PIN}" _site/measurement-science.html
+          grep -q "${R3_PIN}" _site/research-orientation.js
+          grep -q 'Formal validation V1-V10' _site/measurement-science.html
+          grep -q '81</strong><span>tests in each CI job' _site/measurement-science.html
+          grep -q '19</strong><span>scientific visuals: 9 architecture + 10 validation' _site/measurement-science.html
+          grep -q 'function enhanceHomepageResearchIII()' _site/research-orientation.js
+          grep -q 'Measurement engineering and formal validation' _site/research-orientation.js
+          grep -q 'V1-V10 formal validation' _site/research-orientation.js
           grep -q 'research-i-complete-figure-gallery' _site/three-program-evidence.js
           grep -q 'research-ii-complete-core-gallery' _site/atlas-architecture-refresh.js
           grep -q 'research-iii-complete-figure-gallery' _site/research-iii-atlas-refresh.js
           grep -q 'research-iii-curated-visual-story' _site/research-iii-atlas-refresh.js
+          grep -q 'research-iii-validation-figure-gallery' _site/research-iii-atlas-refresh.js
+          grep -q 'research-iii-source-validation-gallery' _site/research-iii-atlas-refresh.js
           grep -q 'const RESEARCH_II_CORE_EXPECTED = 100' _site/atlas-architecture-refresh.js
           grep -q '9 / 9 visible' _site/research-iii-atlas-refresh.js
+          grep -q '10 / 10 visible' _site/research-iii-atlas-refresh.js
           grep -q 'research_program_map.svg' _site/research-iii-atlas-refresh.js
-          grep -q 'target_evidence_matrix.svg' _site/research-iii-atlas-refresh.js
-          grep -q 'cep_anatomy.svg' _site/research-iii-atlas-refresh.js
-          grep -q 'identification_uncertainty_pipeline.svg' _site/research-iii-atlas-refresh.js
           grep -q 'validation_program_map.svg' _site/research-iii-atlas-refresh.js
-          grep -q 'theory_falsification_map.svg' _site/research-iii-atlas-refresh.js
+          grep -q 'finite_sample_identification.svg' _site/research-iii-atlas-refresh.js
+          grep -q 'dependence_stress.svg' _site/research-iii-atlas-refresh.js
+          grep -q 'calibration_sample_uncertainty.svg' _site/research-iii-atlas-refresh.js
+          grep -q 'missingness_identification_loss.svg' _site/research-iii-atlas-refresh.js
+          grep -q 'inverse_conditioning_youden.svg' _site/research-iii-atlas-refresh.js
+          grep -q 'two_site_partial_identification.svg' _site/research-iii-atlas-refresh.js
+          grep -q 'resolution_abstention_frontier.svg' _site/research-iii-atlas-refresh.js
           grep -q '#research-ii-complete-core-gallery' _site/research-orientation.js
-          grep -q '#research-iii-curated-visual-story' _site/research-orientation.js
           grep -q '#research-iii-complete-figure-gallery' _site/research-orientation.js
+          grep -q '#research-iii-validation-figure-gallery' _site/research-orientation.js
           python - <<'PY'
           import json
           from pathlib import Path
