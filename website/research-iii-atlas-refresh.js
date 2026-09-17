@@ -1,5 +1,5 @@
 (() => {
-  const RESEARCH_III_PIN = '383a6cdab720b3f87c17191b7c98bd6828213b72';
+  const RESEARCH_III_PIN = '3cf9202977953644c980246c1f3e46a3514b3a4a';
   const MEASUREMENT_REPO = 'https://github.com/MahsaKeikha/consciousness-measurement-science';
   const RAW_PIN_PREFIX =
     `https://raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/${RESEARCH_III_PIN}/docs/figures/`;
