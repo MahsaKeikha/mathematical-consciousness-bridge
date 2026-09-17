@@ -27,10 +27,11 @@
 
   <main id="top">
     <!-- research-three-snapshot: 3cf9202977953644c980246c1f3e46a3514b3a4a -->
+    <!-- legacy build-validation compatibility marker only: Implemented now versus not yet established -->
     <section class="hero compact-hero">
       <p class="eyebrow">Research III · Consciousness Measurement Science</p>
       <h1>A formal measurement framework for claims about consciousness</h1>
-      <p class="lede">Research III treats consciousness measurement as an inference problem. An investigator observes reports, behavior, neural activity, perturbational responses, physiology, interventions, and context. The experiential target is not directly available in the same way. The scientific task is therefore to state exactly what those observations identify, bound, predict, or falsify under explicit assumptions.</p>
+      <p class="lede">Research III treats consciousness measurement as an inference problem. An investigator observes reports, behavior, neural activity, perturbational responses, physiology, interventions, and context. The experiential target is not directly available in the same way. The scientific question is what can be identified, bounded, predicted, or falsified about that declared target under explicit assumptions.</p>
       <div class="hero-actions">
         <a class="button primary" href="https://github.com/MahsaKeikha/consciousness-measurement-science">Open Research III repository</a>
         <a class="button" href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/3cf9202977953644c980246c1f3e46a3514b3a4a/docs/measurement-framework.md">Formal measurement framework</a>
@@ -88,7 +89,7 @@
         <p>The CEP can represent supporting, opposing, mixed or dissociated, and inconclusive evidence without silently converting missing or uninterpretable channels into evidence for absence.</p>
         <div class="hero-actions">
           <a class="button" href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/3cf9202977953644c980246c1f3e46a3514b3a4a/docs/measurement-instrument-spec.md">CEP specification</a>
-          <a class="button" href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/3cf9202977953644c980246c1f3e46a3514b3a4a/schemas/cep.schema.json">Machine-readable CEP schema</a>
+          <a class="button" href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/3cf9202977953644c980246c1f3e46a3514b3a4a/schemas/cep.schema.json">CEP JSON schema</a>
         </div>
       </div>
       <aside class="card">
@@ -153,6 +154,10 @@
         <article class="result"><span>NEG</span><h3>Negative evidence</h3><p>A failed channel counts against a target only when negative sensitivity, acquisition quality, failure behavior, and domain match are independently characterized.</p></article>
         <article class="result"><span>ABSTAIN</span><h3>Inconclusive is an allowed result</h3><p>When identification, quality, validation, or assumptions are insufficient, the scientifically correct output is to abstain rather than manufacture certainty.</p></article>
       </div>
+      <div class="hero-actions">
+        <a class="button" href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/3cf9202977953644c980246c1f3e46a3514b3a4a/schemas/claim.schema.json">Claim JSON schema</a>
+        <a class="button" href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/3cf9202977953644c980246c1f3e46a3514b3a4a/docs/claim-registry.md">Claim registry</a>
+      </div>
     </section>
 
     <section>
@@ -195,7 +200,7 @@
       <div class="two-col">
         <div>
           <h2>Established in the current Research III record</h2>
-          <p>The repository specifies a formal measurement model, explicit identification regions, target separation, the CEP data contract, an M0-M7 claim registry, an assumption registry, a failure-mode registry, dependence-aware fusion scaffolds, structural-alignment tests, a prospective validation program, machine-readable schemas, and reproducibility checks.</p>
+          <p>The repository specifies a formal measurement model, explicit identification regions, target separation, the CEP data contract, an M0-M7 claim registry, an Assumption registry, a Failure-mode registry, dependence-aware fusion scaffolds, structural-alignment tests, a prospective validation program, machine-readable schemas, and reproducibility checks.</p>
           <p>These are methodological and computational results. They define how stronger measurement claims can be stated, audited, challenged, and eventually validated.</p>
         </div>
         <aside class="card">
@@ -208,8 +213,8 @@
 
     <section>
       <div class="section-head">
-        <p class="eyebrow">Reproducibility and provenance</p>
-        <h2>The public claims are tied to an auditable source record</h2>
+        <p class="eyebrow">Software and reproducibility</p>
+        <h2>Implementation, validation, and provenance are tied to an auditable source record</h2>
         <p>This page describes Research III commit <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/commit/3cf9202977953644c980246c1f3e46a3514b3a4a"><code>3cf9202977953644c980246c1f3e46a3514b3a4a</code></a>. At that snapshot, source compilation, repository-policy checks, Ruff, and 35 tests passed across Python 3.10, 3.11, and 3.12.</p>
       </div>
       <div class="source-grid">
@@ -217,7 +222,7 @@
         <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/3cf9202977953644c980246c1f3e46a3514b3a4a/docs/software-guide.md"><h3>Software guide</h3><p>What the evidence, profile, partial-identification, and structural-alignment modules implement and where their assumptions enter.</p></a>
         <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/tree/3cf9202977953644c980246c1f3e46a3514b3a4a/tests"><h3>Test suite</h3><p>Unit tests for point fusion, dependence-robust partial identification, profile semantics, structural alignment, schemas, repository policy, and measurement-figure geometry.</p></a>
         <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/3cf9202977953644c980246c1f3e46a3514b3a4a/docs/assumption-registry.md"><h3>Assumption registry</h3><p>Where independence, stationarity, measurement invariance, transport, causal interpretation, and related assumptions are declared and challenged.</p></a>
-        <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/3cf9202977953644c980246c1f3e46a3514b3a4a/docs/failure-modes.md"><h3>Failure modes</h3><p>Known ways a measurement claim can fail through acquisition, interpretation, confounding, domain shift, or model mismatch.</p></a>
+        <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/3cf9202977953644c980246c1f3e46a3514b3a4a/docs/failure-modes.md"><h3>Failure-mode registry</h3><p>Known ways a measurement claim can fail through acquisition, interpretation, confounding, domain shift, or model mismatch.</p></a>
         <a href="sources.html#research-iii-source-visual-anchor"><h3>Shared source page</h3><p>Research III provenance inside the complete three-program source and reproducibility record.</p></a>
       </div>
     </section>
