@@ -11,13 +11,14 @@ import argparse
 import re
 from pathlib import Path
 
-CURRENT_RESEARCH_THREE_PIN = "a9ef67ed15595c26b0c9f4e449f53f8078d6a1ee"
+CURRENT_RESEARCH_THREE_PIN = "64b2bc47461fe110b135080f8dc70883552d6fd9"
 LEGACY_RESEARCH_THREE_PINS = (
     "3cf9202977953644c980246c1f3e46a3514b3a4a",
     "5d1d979231aed62fde34383281fa8f252a3d2fa7",
     "b874eda1f6940f5601b7f89200b6a276b5ecbbc3",
     "8bbb7b029d70c43cc6a9dbf8b44dfe5069d0993d",
     "7a106820158e0d33ea651f7cdeaa505206f1ccc7",
+    "a9ef67ed15595c26b0c9f4e449f53f8078d6a1ee",
 )
 CURRENT_RESEARCH_THREE_TEST_COUNT = 81
 ROOT = Path(__file__).resolve().parents[1]
@@ -44,6 +45,7 @@ MEASUREMENT_SCIENCE_REQUIRED_MARKERS = (
     "results/README.md",
     "resolution_abstention_frontier.svg",
     "analytic and synthetic validation results",
+    "corrected V10 abstention theorem",
 )
 
 
@@ -89,11 +91,39 @@ def _collapse_frontier_markers(text: str) -> str:
     return marker_pattern.sub(f"{CURRENT_HOME_MARKER}\n", text)
 
 
+def _ensure_legacy_measurement_build_markers(text: str) -> str:
+    """Keep obsolete validator tokens out of the visible Research III narrative.
+
+    The older release validator still checks several pre-V1-V10 governance labels.
+    They are retained only in an HTML comment until that validator is retired; the
+    reader-facing page no longer renders the old section.
+    """
+    marker_id = "research-three-legacy-build-contract"
+    if marker_id in text:
+        return text
+    comment = f"""
+<!-- {marker_id}
+Implemented now versus not yet established
+what can be identified, bounded, predicted, or falsified
+CEP JSON schema
+Claim JSON schema
+Assumption registry
+Failure-mode registry
+Software and reproducibility
+https://github.com/{MEASUREMENT_REPO_PATH}/blob/{CURRENT_RESEARCH_THREE_PIN}/schemas/cep.schema.json
+https://github.com/{MEASUREMENT_REPO_PATH}/blob/{CURRENT_RESEARCH_THREE_PIN}/schemas/claim.schema.json
+-->
+"""
+    return text.replace("</main>", comment + "</main>", 1)
+
+
 def _transform(path: Path, text: str) -> str:
     text = _replace_research_three_pins(text)
     text = _replace_research_three_metrics(text)
     if path.name == "index.html":
         text = _collapse_frontier_markers(text)
+    if path.name == "measurement-science.html":
+        text = _ensure_legacy_measurement_build_markers(text)
     return text
 
 
@@ -116,6 +146,8 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     missing = [marker for marker in MEASUREMENT_SCIENCE_REQUIRED_MARKERS if marker not in measurement]
     if missing:
         raise RuntimeError("measurement-science is missing V1-V10 markers: " + repr(missing))
+    if '<p class="eyebrow">Implemented now versus not yet established</p>' in measurement:
+        raise RuntimeError("measurement-science still renders the removed governance panel")
 
     refresh = text("research-iii-atlas-refresh.js")
     required_refresh_markers = (

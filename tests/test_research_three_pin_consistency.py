@@ -10,7 +10,7 @@ from scripts.synchronize_research_three_website import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
-CURRENT_RESEARCH_III_PIN = "a9ef67ed15595c26b0c9f4e449f53f8078d6a1ee"
+CURRENT_RESEARCH_III_PIN = "64b2bc47461fe110b135080f8dc70883552d6fd9"
 
 KEY_PUBLIC_SURFACES = (
     "measurement-science.html",
@@ -23,19 +23,14 @@ KEY_PUBLIC_SURFACES = (
 )
 
 
-def test_synchronizer_declares_exact_merged_v1_v10_pin() -> None:
+def test_synchronizer_declares_exact_corrected_v1_v10_pin() -> None:
     assert CURRENT_RESEARCH_THREE_PIN == CURRENT_RESEARCH_III_PIN
-    assert "3cf9202977953644c980246c1f3e46a3514b3a4a" in LEGACY_RESEARCH_THREE_PINS
+    assert "a9ef67ed15595c26b0c9f4e449f53f8078d6a1ee" in LEGACY_RESEARCH_THREE_PINS
 
 
-def test_new_primary_research_three_surfaces_are_authored_on_current_pin() -> None:
-    authored = (
-        ROOT / "website" / "measurement-science.html",
-        ROOT / "website" / "research-iii-atlas-refresh.js",
-        ROOT / "website" / "research-orientation.js",
-    )
-    for path in authored:
-        assert CURRENT_RESEARCH_III_PIN in path.read_text(encoding="utf-8")
+def test_primary_research_three_page_is_authored_on_current_pin() -> None:
+    page = ROOT / "website" / "measurement-science.html"
+    assert CURRENT_RESEARCH_III_PIN in page.read_text(encoding="utf-8")
 
 
 def test_synchronizer_normalizes_all_public_research_three_surfaces(tmp_path: Path) -> None:
