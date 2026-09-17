@@ -43,7 +43,7 @@ MEASUREMENT_SCIENCE_REQUIRED_MARKERS = (
     "formal validation",
     "docs/validation-atlas.md",
     "results/README.md",
-    "analytic and synthetic",
+    "Scientific boundary",
 )
 
 
