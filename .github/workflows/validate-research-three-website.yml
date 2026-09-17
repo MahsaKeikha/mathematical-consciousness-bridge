@@ -36,12 +36,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Verify maintained Python scripts
+      - name: Verify maintained Python and JavaScript sources
         run: |
           python -m py_compile scripts/prepare_website.py scripts/synchronize_research_three_website.py scripts/verify_repository.py
-          python scripts/synchronize_research_three_website.py --site website --check
+          node --check website/app.js
+          node --check website/research-orientation.js
+          node --check website/research-iii-atlas-refresh.js
+          node --check website/atlas-architecture-refresh.js
+          node --check website/three-program-evidence.js
 
-      - name: Build exact website artifact
+      - name: Build exact synchronized website artifact
         run: |
           rm -rf website-deploy _site
           cp -a website website-deploy
@@ -72,22 +76,24 @@ jobs:
 
           R3_PIN="$(python -c 'from scripts.synchronize_research_three_website import CURRENT_RESEARCH_THREE_PIN; print(CURRENT_RESEARCH_THREE_PIN)')"
           grep -q 'Research III · Consciousness Measurement Science' _site/measurement-science.html
-          grep -q 'Implemented now versus not yet established' _site/measurement-science.html
-          grep -q 'CEP JSON schema' _site/measurement-science.html
-          grep -q 'Claim JSON schema' _site/measurement-science.html
-          grep -q 'Assumption registry' _site/measurement-science.html
-          grep -q 'Failure-mode registry' _site/measurement-science.html
-          grep -q 'Software and reproducibility' _site/measurement-science.html
-          grep -q '35</strong><span>tests in each CI job' _site/measurement-science.html
-          grep -q 'dependence-robust partial identification with sharp Fr&eacute;chet-Hoeffding bounds' _site/measurement-science.html
-          grep -q '<strong>Two implemented fusion regimes:</strong>' _site/measurement-science.html
-          grep -q 'An interval as wide as <code>\[0,1\]</code> is a valid scientific result' _site/measurement-science.html
-          grep -q 'docs/partial-identification.md' _site/measurement-science.html
-          ! grep -q 'planned by the roadmap' _site/measurement-science.html
-          ! grep -q '23</strong><span>tests in each CI job' _site/measurement-science.html
-          ! grep -q '34</strong><span>tests in each CI job' _site/measurement-science.html
+          grep -q 'Formal validation V1-V10' _site/measurement-science.html
+          grep -q '81</strong><span>tests in each CI job' _site/measurement-science.html
+          grep -q '19</strong><span>scientific visuals: 9 architecture + 10 validation' _site/measurement-science.html
+          grep -q 'docs/validation-atlas.md' _site/measurement-science.html
+          grep -q 'results/README.md' _site/measurement-science.html
+          grep -q 'resolution_abstention_frontier.svg' _site/measurement-science.html
+          grep -q 'analytic and synthetic validation results' _site/measurement-science.html
           grep -q "research-three-snapshot: ${R3_PIN}" _site/measurement-science.html
           grep -q "${R3_PIN}" _site/research-lineage.html
+          grep -q "${R3_PIN}" _site/research-orientation.js
+          grep -q 'function enhanceHomepageResearchIII()' _site/research-orientation.js
+          grep -q 'Measurement engineering and formal validation' _site/research-orientation.js
+          grep -q 'V1-V10 formal validation' _site/research-orientation.js
+          grep -q '10 result figures' _site/research-orientation.js
+          grep -q 'machine-readable outputs' _site/research-orientation.js
+          ! grep -q '23</strong><span>tests in each CI job' _site/measurement-science.html
+          ! grep -q '34</strong><span>tests in each CI job' _site/measurement-science.html
+          ! grep -q '35</strong><span>tests in each CI job' _site/measurement-science.html
 
       - name: Verify current-frontier reader coherence
         run: |
@@ -128,14 +134,38 @@ jobs:
               assert path.read_text(encoding="utf-8").rstrip().endswith("</html>"), path
           PY
 
+      - name: Verify Research III architecture and validation galleries
+        run: |
+          R3_PIN="$(python -c 'from scripts.synchronize_research_three_website import CURRENT_RESEARCH_THREE_PIN; print(CURRENT_RESEARCH_THREE_PIN)')"
+          grep -q "${R3_PIN}" _site/research-iii-atlas-refresh.js
+          grep -q 'research-iii-complete-figure-gallery' _site/research-iii-atlas-refresh.js
+          grep -q 'research-iii-validation-figure-gallery' _site/research-iii-atlas-refresh.js
+          grep -q 'research-iii-source-validation-gallery' _site/research-iii-atlas-refresh.js
+          grep -q '9 / 9 visible' _site/research-iii-atlas-refresh.js
+          grep -q '10 / 10 visible' _site/research-iii-atlas-refresh.js
+          grep -q 'finite_sample_identification.svg' _site/research-iii-atlas-refresh.js
+          grep -q 'finite_sample_coverage.svg' _site/research-iii-atlas-refresh.js
+          grep -q 'transport_bias_surface.svg' _site/research-iii-atlas-refresh.js
+          grep -q 'dependence_stress.svg' _site/research-iii-atlas-refresh.js
+          grep -q 'structural_alignment_power.svg' _site/research-iii-atlas-refresh.js
+          grep -q 'calibration_sample_uncertainty.svg' _site/research-iii-atlas-refresh.js
+          grep -q 'missingness_identification_loss.svg' _site/research-iii-atlas-refresh.js
+          grep -q 'inverse_conditioning_youden.svg' _site/research-iii-atlas-refresh.js
+          grep -q 'two_site_partial_identification.svg' _site/research-iii-atlas-refresh.js
+          grep -q 'resolution_abstention_frontier.svg' _site/research-iii-atlas-refresh.js
+          node --check _site/app.js
+          node --check _site/research-orientation.js
+          node --check _site/research-iii-atlas-refresh.js
+          node --check _site/atlas-architecture-refresh.js
+          node --check _site/three-program-evidence.js
+
       - name: Verify deployment artifact contains pinned figures
         run: |
           R3_PIN="$(python -c 'from scripts.synchronize_research_three_website import CURRENT_RESEARCH_THREE_PIN; print(CURRENT_RESEARCH_THREE_PIN)')"
           grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/measurement_architecture.svg" _site/index.html
-          grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/measurement_architecture.svg" _site/measurement-science.html
           grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/measurement_architecture.svg" _site/research-lineage.html
-          grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/claim_ladder.svg" _site/measurement-science.html
-          grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/structural_measurement_pipeline.svg" _site/measurement-science.html
+          grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/validation_program_map.svg" _site/measurement-science.html
+          grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/inverse_conditioning_youden.svg" _site/measurement-science.html
           python - <<'PY'
           import json
           from pathlib import Path
@@ -143,7 +173,6 @@ jobs:
           figure = Path(str(manifest["current_frontier_figure"])).name
           assert Path("_site/figures", figure).is_file()
           PY
-          node --check _site/app.js
 
       - name: Verify clean generated surface
         run: |
