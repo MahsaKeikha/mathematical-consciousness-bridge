@@ -5,8 +5,8 @@
     <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
       <feDropShadow dx="0" dy="8" stdDeviation="18" flood-color="#1a2d55" flood-opacity="0.08"/>
     </filter>
-    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6e8fc5"/>
+    <marker id="arrow" viewBox="0 0 8 8" markerUnits="userSpaceOnUse" refX="7.2" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0.8 0.8 L7.2 4 L0.8 7.2 z" fill="#6e8fc5"/>
     </marker>
     <style>
       .ui { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
@@ -22,6 +22,7 @@
       .checkpoint { font-size: 17px; font-weight: 650; fill: #264372; }
       .boundaryLabel { font-size: 14px; font-weight: 800; letter-spacing: 1.8px; fill: #365aa8; }
       .boundary { font-size: 15px; fill: #5a6578; }
+      .connector { stroke:#6e8fc5; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; fill:none; marker-end:url(#arrow); }
     </style>
   </defs>
 
@@ -93,12 +94,12 @@
     <text x="1056" y="704" class="body">Crossing the threshold is anytime-valid.</text>
   </g>
 
-  <line x1="394" y1="343" x2="413" y2="343" stroke="#6e8fc5" stroke-width="4" marker-end="url(#arrow)"/>
-  <line x1="760" y1="343" x2="779" y2="343" stroke="#6e8fc5" stroke-width="4" marker-end="url(#arrow)"/>
-  <line x1="1126" y1="343" x2="1145" y2="343" stroke="#6e8fc5" stroke-width="4" marker-end="url(#arrow)"/>
-  <path d="M1349 465 L1349 505 L407 505 L407 534" fill="none" stroke="#6e8fc5" stroke-width="3.5" marker-end="url(#arrow)"/>
-  <line x1="578" y1="640" x2="624" y2="640" stroke="#6e8fc5" stroke-width="4" marker-end="url(#arrow)"/>
-  <line x1="971" y1="640" x2="1017" y2="640" stroke="#6e8fc5" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="388" y1="343" x2="424" y2="343" class="connector"/>
+  <line x1="754" y1="343" x2="790" y2="343" class="connector"/>
+  <line x1="1120" y1="343" x2="1156" y2="343" class="connector"/>
+  <path d="M1349 465 L1349 505 L407 505 L407 545" class="connector"/>
+  <line x1="572" y1="640" x2="635" y2="640" class="connector"/>
+  <line x1="965" y1="640" x2="1028" y2="640" class="connector"/>
 
   <g class="ui">
     <rect x="355" y="765" width="890" height="92" rx="20" fill="#eef6ff" stroke="#9fbfe4" stroke-width="2"/>
