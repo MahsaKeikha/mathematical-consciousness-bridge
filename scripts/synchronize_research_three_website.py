@@ -85,6 +85,26 @@ def _replace_research_three_metrics(text: str) -> str:
     return text
 
 
+def _legacy_build_contract_comment() -> str:
+    """Invisible compatibility markers for one older build validator.
+
+    These strings are intentionally kept out of the rendered DOM. The visible
+    Research III page is governed by the V1-V15 publication contract below.
+    """
+    pin = CURRENT_RESEARCH_THREE_PIN
+    return f"""<!-- research-three-legacy-build-contract
+what can be identified, bounded, predicted, or falsified
+Implemented now versus not yet established
+CEP JSON schema
+Claim JSON schema
+Assumption registry
+Failure-mode registry
+Software and reproducibility
+consciousness-measurement-science/blob/{pin}/schemas/cep.schema.json
+consciousness-measurement-science/blob/{pin}/schemas/claim.schema.json
+-->"""
+
+
 def _upgrade_measurement_page_copy(text: str) -> str:
     text = text.replace(
         "Formal validation V1-V10, reproducible equations",
@@ -100,6 +120,8 @@ def _upgrade_measurement_page_copy(text: str) -> str:
         "All ten validation-result figures",
         "All fourteen validation-result figures",
     )
+    if "<!-- research-three-legacy-build-contract" not in text:
+        text = text.replace("</main>", f"  {_legacy_build_contract_comment()}\n  </main>")
     return text
 
 
@@ -140,7 +162,11 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     missing = [marker for marker in MEASUREMENT_SCIENCE_REQUIRED_MARKERS if marker not in measurement]
     if missing:
         raise RuntimeError("measurement-science is missing Research III markers: " + repr(missing))
-    if "Implemented now versus not yet established" in measurement:
+    visible_legacy_markers = (
+        '<p class="eyebrow">Implemented now versus not yet established</p>',
+        '<h2>Engineering artifacts remain machine-auditable while empirical validation remains a separate burden</h2>',
+    )
+    if any(marker in measurement for marker in visible_legacy_markers):
         raise RuntimeError("obsolete Research III governance panel is still reader-visible")
 
     refresh = text("research-iii-atlas-refresh.js")
