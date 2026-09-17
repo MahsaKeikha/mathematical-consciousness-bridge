@@ -145,8 +145,9 @@ def test_research_iii_gallery_is_complete_curated_and_pinned() -> None:
 
 def test_atlas_orientation_points_to_exact_complete_galleries() -> None:
     assert "exactly 100 unique canonical core visuals" in ORIENTATION
+    assert "Research III measurement-science architecture" in ORIENTATION
+    assert "curated six-stage visual path" in ORIENTATION
     assert "complete pinned 9 / 9 canonical scientific figure set" in ORIENTATION
-    assert "curated six-stage measurement-science visual path" in ORIENTATION
     for anchor in (
         "#research-i-complete-figure-gallery",
         "#research-ii-complete-core-gallery",
