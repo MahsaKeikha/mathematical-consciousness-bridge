@@ -25,6 +25,25 @@ def test_observer_research_has_its_own_dedicated_public_page() -> None:
         assert token in page
 
 
+def test_observer_research_restores_tegmark_conceptual_lineage() -> None:
+    page = PAGE.read_text(encoding="utf-8")
+
+    required = (
+        'id="conceptual-lineage"',
+        "Consciousness as a State of Matter",
+        "Max Tegmark",
+        "observer-factorization question",
+        "lets the subsystem boundary change with time",
+        "DOI 10.1016/j.chaos.2015.03.014",
+        "arXiv:1401.1219",
+        "conceptual lineage only",
+        "This citation is not evidence that a recovered world-tube is conscious",
+        "README.md#where-the-idea-came-from",
+    )
+    for token in required:
+        assert token in page
+
+
 def test_observer_research_preserves_physical_to_experiential_boundary() -> None:
     page = PAGE.read_text(encoding="utf-8")
 
@@ -74,10 +93,21 @@ def test_observer_research_links_forward_without_conflating_programs() -> None:
 def test_observer_research_is_visually_navigable_without_guessing() -> None:
     page = PAGE.read_text(encoding="utf-8")
 
-    for section_id in ("question", "dynamics", "mathematics", "scores", "objective", "evidence", "handoff", "record"):
+    for section_id in (
+        "question",
+        "conceptual-lineage",
+        "dynamics",
+        "mathematics",
+        "scores",
+        "objective",
+        "evidence",
+        "handoff",
+        "record",
+    ):
         assert f'id="{section_id}"' in page
 
     assert "research-jumpbar" in page
+    assert 'href="#conceptual-lineage"' in page
     assert "research-flowline" in page
     assert "research-card-grid" in page
     assert "research-figure-grid" in page
