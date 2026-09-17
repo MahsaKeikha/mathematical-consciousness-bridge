@@ -67,6 +67,23 @@ def test_sources_research_iii_cards_link_context_and_exact_figure_source() -> No
     assert "docs/figure-catalog.md" in VISUALS
 
 
+def test_sources_research_iii_offers_readable_full_resolution_svg_views() -> None:
+    assert "Open full-resolution SVG" in VISUALS
+    assert "researchIIIRawHref" in VISUALS
+    assert "${MEASUREMENT_RAW}/docs/figures/${record.file}" in VISUALS
+    assert 'target="_blank"' in VISUALS
+    assert 'rel="noopener noreferrer"' in VISUALS
+    assert "GitHub's compact SVG preview" in VISUALS
+
+
+def test_sources_research_iii_preview_geometry_is_reader_sized() -> None:
+    assert "minmax(470px,1fr)" in VISUALS
+    assert "height:360px" in VISUALS
+    assert "min-height:360px" in VISUALS
+    assert "max-height:520px" in VISUALS
+    assert "min-height:500px" in VISUALS
+
+
 def test_sources_visuals_are_inserted_before_source_card_catalogs() -> None:
     assert "section.querySelector('.program-record-grid')" in VISUALS
     assert "metrics.insertAdjacentElement('afterend', figure)" in VISUALS
