@@ -180,7 +180,7 @@ jobs:
           assert "function enhanceHomepageResearchIII()" in orientation
           assert "validation_program_map.svg" in orientation
           assert "inverse_conditioning_youden.svg" in measurement
-          assert "validation_program_map.svg" in measurement
+          assert "finite_sample_identification.svg" in measurement
           assert f"research-three-snapshot: {pin}" in measurement
           assert "Formal validation V1-V10" in measurement
           assert pin in lineage
