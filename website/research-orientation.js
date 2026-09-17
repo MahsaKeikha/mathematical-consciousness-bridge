@@ -112,13 +112,14 @@
       stage: 'Three-program visual evidence record',
       question: 'What visual evidence, architecture, or computational record belongs to Research I, Research II, and Research III, and what scientific status does each visual carry?',
       established:
-        'The Atlas now uses one explicit gallery language across all three programs. Research I physical-system visuals expose all 33 scientific-result figures. Research II theorem and frontier visuals now render exactly 100 unique canonical core visuals from the bundled release manifest while preserving the longer theorem archive separately. Research III measurement-science architecture exposes its complete pinned 3 / 3 canonical figure set.',
+        'The Atlas uses one explicit gallery language across all three programs. Research I physical-system visuals expose all 33 scientific-result figures. Research II theorem and frontier visuals render exactly 100 unique canonical core visuals from the bundled release manifest while preserving the longer theorem archive separately. Research III measurement-science architecture now exposes a curated six-stage visual path and its complete pinned 9 / 9 canonical scientific figure set.',
       open:
         'A figure does not upgrade the status of its underlying evidence. Research I world-tube recovery is not consciousness identification, Research II model rejection is not bridge completion, and Research III specification is not empirical or clinical validation.',
       links: [
         ['#research-i-complete-figure-gallery', 'Open all 33 Research I result figures'],
         ['#research-ii-complete-core-gallery', 'Open all 100 Research II core visuals'],
-        ['#research-iii-complete-figure-gallery', 'Open all 3 Research III canonical figures'],
+        ['#research-iii-curated-visual-story', 'Follow the curated Research III visual path'],
+        ['#research-iii-complete-figure-gallery', 'Open all 9 Research III canonical figures'],
       ],
     },
     'sources.html': {
@@ -225,11 +226,23 @@
     document.head.appendChild(script);
   }
 
+  function loadResearchIIIAtlasRefresh() {
+    if (currentFile() !== 'visual-atlas.html') return;
+    if (document.querySelector('script[data-research-iii-atlas-refresh]')) return;
+
+    const script = document.createElement('script');
+    script.src = 'research-iii-atlas-refresh.js';
+    script.defer = true;
+    script.dataset.researchIiiAtlasRefresh = 'script';
+    document.head.appendChild(script);
+  }
+
   function initialize() {
     renderScientificOrientation();
     loadThreeProgramEvidence();
     loadSourceSectionVisuals();
     loadAtlasArchitectureRefresh();
+    loadResearchIIIAtlasRefresh();
   }
 
   if (document.readyState === 'loading') {
