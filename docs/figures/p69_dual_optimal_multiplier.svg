@@ -2,7 +2,7 @@
   <title id="title">P69 certified dual-optimal multiplier search</title>
   <desc id="desc">What this figure shows: P69 turns the P68 family of valid dual lower bounds into a certified one-dimensional search for the strongest dual value. The five numbered stages move from the dual function, through exact minimizing spends and the supergradient interval, into a sign-changing multiplier bracket and a supporting-line enclosure of the optimum. How to read it: follow the attached arrows from stages 1 through 5. The supergradient interval determines the search direction; bisection keeps the dual optimizer inside the bracket; evaluated values provide Q_low while supporting lines provide Q_up. Main takeaway: when Q_up minus Q_low is below tolerance, the strongest P68 dual value is certified to that tolerance without assuming strong duality. Scientific status: exact optimization-certificate visual for Proposition 69. Dual optimality is not primal exactness, is not evidence about consciousness or quantum ontology, and the physical-to-experiential bridge remains open.</desc>
   <defs>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="9" refY="3" orient="auto" markerUnits="userSpaceOnUse" viewBox="0 0 10 10">
       <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
     </marker>
     <style>

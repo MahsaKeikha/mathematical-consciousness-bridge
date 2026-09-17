@@ -8,56 +8,56 @@
   "figures": [
     {
       "path": "docs/figures/causal_structure_anatomy.svg",
-      "sha256": "378e8b5aa6067be1888d99ada8f2e2c16726545cf758852bcc350834dcb11627",
-      "bytes": 7289,
+      "sha256": "c8961bef48dd4e3fd67a6287e2716527c69a6e06da09af152ec33e2cfa2fa09f",
+      "bytes": 7336,
       "category": "theorem-or-architecture",
       "title": "Causal structure anatomy",
       "description_chars": 796
     },
     {
       "path": "docs/figures/conscious_state_measurement_map.svg",
-      "sha256": "1729c9b21f1294755947f04db69b5effe5aed5cc222171d56ee1329041750c7e",
-      "bytes": 7563,
+      "sha256": "84f9f5294085b3dd665ae403cc6dbf570d3a571723e5020e4f3f19f51073f67e",
+      "bytes": 7610,
       "category": "theorem-or-architecture",
       "title": "Conscious-state measurement and dissociation map",
       "description_chars": 747
     },
     {
       "path": "docs/figures/equation_evidence_map.svg",
-      "sha256": "e78505b064efc55a1cf83d15ebb565095de5b1202a559526ae125a7c064dd5bb",
-      "bytes": 9545,
+      "sha256": "6f6041129478b1a5a5da34b4a18f5e5d73e19491e10a0703d7067cd6ee1d619e",
+      "bytes": 9592,
       "category": "theorem-or-architecture",
       "title": "Equation evidence map",
       "description_chars": 676
     },
     {
       "path": "docs/figures/fundamental_theory_consciousness_map.svg",
-      "sha256": "134569fc385f54051e66ed81658287d74330dc5a610c185c47d29673229e1030",
-      "bytes": 8568,
+      "sha256": "5cc983c3f2003dd9ad61a6dfe7f516dccbdd01a164311e83b557c67b72972e8e",
+      "bytes": 8615,
       "category": "theorem-or-architecture",
       "title": "Fundamental Theory to Consciousness map",
       "description_chars": 1169
     },
     {
       "path": "docs/figures/information_geometry_response_manifold.svg",
-      "sha256": "8ae0331a56f66920c367fb56ab63e3c9fa03d3b891e5ccac128cb6598ac1c06d",
-      "bytes": 6333,
+      "sha256": "1cd9ce4d9e3001e5fa7c2bf90a061c437538cec939c1d4c3345ab6483c78f138",
+      "bytes": 6380,
       "category": "theorem-or-architecture",
       "title": "Information geometry of intervention-response laws",
       "description_chars": 693
     },
     {
       "path": "docs/figures/multiscale_physical_hierarchy.svg",
-      "sha256": "b939f9556f0166b6add778dbe7866168294ed8c02d414c5b96b8e1bbcac61153",
-      "bytes": 9040,
+      "sha256": "7c72bab6774ac89ad8e682d5757e92b514661af96044edcc9c70b9660453ea61",
+      "bytes": 9087,
       "category": "theorem-or-architecture",
       "title": "Multiscale physical hierarchy",
       "description_chars": 636
     },
     {
       "path": "docs/figures/observer_to_bridge_handoff.svg",
-      "sha256": "7cb8d00213337a42442bd8f06c1ac392fc71fced92978cd6cb51be81b33217ff",
-      "bytes": 7519,
+      "sha256": "58e728052f2c9bc3980889dc22d2b5c26154392df902669c99f0556a4cc7e183",
+      "bytes": 7566,
       "category": "theorem-or-architecture",
       "title": "Observer-to-bridge research handoff",
       "description_chars": 764
@@ -88,8 +88,8 @@
     },
     {
       "path": "docs/figures/p14_temporal_continuation.svg",
-      "sha256": "9d14e55f4aa278ee052abe5187aad5275c8e2f636c4c16e032a5a649d20aa9e5",
-      "bytes": 6887,
+      "sha256": "5e7247de5bba56453d1167e4ae151c5f47f9b7426176d84869a4521f2bb82eec",
+      "bytes": 6934,
       "category": "theorem-or-architecture",
       "title": "Temporal continuation",
       "description_chars": 666
@@ -104,176 +104,176 @@
     },
     {
       "path": "docs/figures/p16_composition_coupling.svg",
-      "sha256": "2544c875d67f2d3d1a8c6b7f736e736d7289875b53a4761321c42ca17871d29f",
-      "bytes": 7726,
+      "sha256": "dffa1804cf29f84ccd3c1708af96568c949ebaa4dbc9e770c439dcc448cd02e7",
+      "bytes": 7773,
       "category": "theorem-or-architecture",
       "title": "Proposition 16: independent composition and controlled coupling",
       "description_chars": 995
     },
     {
       "path": "docs/figures/p17_coarse_graining_refinement.svg",
-      "sha256": "b6ee0b52c694460676bf5cd9a76a2669a1ae9d8f46efa2b66ae57527af9fd777",
-      "bytes": 6045,
+      "sha256": "34630f848f803ff8e7958fdc16b5caab9c20ce4a9daf0d72760bd10f74c15238",
+      "bytes": 6092,
       "category": "theorem-or-architecture",
       "title": "Proposition 17: coarse-graining, refinement, and recoverability",
       "description_chars": 1037
     },
     {
       "path": "docs/figures/p18_scale_sufficiency_certificate.svg",
-      "sha256": "782a8900bf3501f7e617cd09fdfaf7bb7b406074fa04c323e83de6e50de422ba",
-      "bytes": 5752,
+      "sha256": "854d82e7c31198cf886c20d2925093a16c53fb528b3df48adb1b6fdd2fe5ad95",
+      "bytes": 5799,
       "category": "theorem-or-architecture",
       "title": "Scale sufficiency certificate",
       "description_chars": 593
     },
     {
       "path": "docs/figures/p19_fundamental_physical_sufficiency.svg",
-      "sha256": "3542ef588c5b07af1f801175791cbb95edc29829fe4cdb0806e0ef12a32b8e6c",
-      "bytes": 5333,
+      "sha256": "656fe2c186c35d37d2c10764807c9575fbf17f36b9afdb0ccff0df647b7d3b0b",
+      "bytes": 5380,
       "category": "theorem-or-architecture",
       "title": "P19: factorization and nonfactorization",
       "description_chars": 410
     },
     {
       "path": "docs/figures/p20_finite_sample_residual_certificate.svg",
-      "sha256": "379db1b7f230e524c8b5196a6bf14820a77a1d04e26832f1789d38e15d3f4c20",
-      "bytes": 5781,
+      "sha256": "02622f89cbf50ed681d4c1d6aba762f83ed46d4f39fc828d6e6891e35ec63e4c",
+      "bytes": 5828,
       "category": "theorem-or-architecture",
       "title": "Finite-sample residual certificate",
       "description_chars": 629
     },
     {
       "path": "docs/figures/p21_descriptor_refinement_residual_persistence.svg",
-      "sha256": "f95da535d923a72f442c17c1c0a931db4eaa6e47d66ced8916be91efa9d93738",
-      "bytes": 4958,
+      "sha256": "462aaceda77fed17f4394a71eddd215dac3fbb3ba20c5fa69eddbd68a89ea757",
+      "bytes": 5005,
       "category": "theorem-or-architecture",
       "title": "Proposition 21 - Physical-Descriptor Refinement and Residual Persistence",
       "description_chars": 964
     },
     {
       "path": "docs/figures/p22_simultaneous_refinement_chain_certification.svg",
-      "sha256": "7769bc29e75f1026ca41a6076e9eb792d4d018720d0390b25d76f1755ca5c572",
-      "bytes": 5551,
+      "sha256": "c8efa466c1b5eb55e291a0cea13ba4ceb71faed2e242f78900119288bb76127c",
+      "bytes": 5598,
       "category": "theorem-or-architecture",
       "title": "Proposition 22 - Simultaneous Finite-Sample Certification of Physical-Refinement Chains",
       "description_chars": 959
     },
     {
       "path": "docs/figures/p23_adaptive_descriptor_selection_certification.svg",
-      "sha256": "65c74ecc74bda9f85f0cc46e83316014a795d6b177094ba7a36c7a5b2bb43ff6",
-      "bytes": 5899,
+      "sha256": "e370395a751a61f2c5c8f68cbe194d2aae9935499afd1bfd25b20ccb1fb048e6",
+      "bytes": 5946,
       "category": "theorem-or-architecture",
       "title": "Proposition 23: adaptive physical-descriptor selection under a shared base confidence ball",
       "description_chars": 1216
     },
     {
       "path": "docs/figures/p24_anytime_adaptive_refinement_certification.svg",
-      "sha256": "b4e455198e41c6aca7df7df0a786edf777eb84f81a2aff36ab0d895b3c695a99",
-      "bytes": 5951,
+      "sha256": "9052cd06d224b7913df4766f7e943f3acc866bf321f6814ed59732af503b6161",
+      "bytes": 5998,
       "category": "theorem-or-architecture",
       "title": "Proposition 24: anytime-valid adaptive physical-refinement certification",
       "description_chars": 995
     },
     {
       "path": "docs/figures/p25_directed_influence_scale_certification.svg",
-      "sha256": "12b90799b6bc3d4673970d0c794a986adc3cd5930bd6f3df148fbe2dad17db0d",
-      "bytes": 5798,
+      "sha256": "22ea8fa35f9ab412872cf569cd363db5c6a0aa02171f66dcc8e98f21225c6d1f",
+      "bytes": 5845,
       "category": "theorem-or-architecture",
       "title": "Proposition 25 - Directed-Influence Scale Certification",
       "description_chars": 1207
     },
     {
       "path": "docs/figures/p26_partition_irreducibility_scale_certification.svg",
-      "sha256": "a3631161de79505922618a54e76bdbb3b362115417a906c3f3f6a8c1e62d0ee0",
-      "bytes": 5817,
+      "sha256": "71b9e7b613ba6833ce094021649991a7d77e3464c4cce9755f720fba4027447b",
+      "bytes": 5864,
       "category": "theorem-or-architecture",
       "title": "Proposition 26: Partition-Irreducibility Scale Certification",
       "description_chars": 942
     },
     {
       "path": "docs/figures/p27_partition_lattice_node_aggregation.svg",
-      "sha256": "597fb42fcf6c762cc18537929409e5cad5339e67699d99f81173a27770126b60",
-      "bytes": 7024,
+      "sha256": "0bcdbbb9df8b358e37a9ee6f21fac55e8cd327b436a9b7dcd82523424f8b6b5f",
+      "bytes": 7071,
       "category": "theorem-or-architecture",
       "title": "Proposition 27: Partition-Lattice Transport Under Node Aggregation",
       "description_chars": 982
     },
     {
       "path": "docs/figures/p28_intervention_node_aggregation_compatibility.svg",
-      "sha256": "8a5f69b03ea126922dbb5646729a55f47ffbbbd97b6a31c975ec25a5e09b2953",
-      "bytes": 6966,
+      "sha256": "e53405790da6ddc2950f2907774ddedf7ef9856095ffa175037f73e661e31132",
+      "bytes": 7013,
       "category": "theorem-or-architecture",
       "title": "Proposition 28: Intervention Compatibility Under Node Aggregation",
       "description_chars": 1006
     },
     {
       "path": "docs/figures/p29_response_geometry_node_aggregation.svg",
-      "sha256": "973e0b8e91f3f20fd7d1ef3dbe2ee7f9b979f0f42ff6700386a3899e6369d82c",
-      "bytes": 6722,
+      "sha256": "64db46873765bc78a3043e97033aeeb51da97e39c799af15e7101c0b4e5c8f23",
+      "bytes": 6769,
       "category": "theorem-or-architecture",
       "title": "Proposition 29: Response-Geometry Transport Under Node Aggregation",
       "description_chars": 946
     },
     {
       "path": "docs/figures/p30_full_p11_scale_compatibility.svg",
-      "sha256": "4bdc79cb5ce46137015fbaedf312a9a13fe3e29fca68721c38e422a661c99685",
-      "bytes": 6326,
+      "sha256": "76400dc3c9bc378c3c32e72533841a99baf627096be4edb19733106edde90bce",
+      "bytes": 6373,
       "category": "theorem-or-architecture",
       "title": "Proposition 30: Full declared P11 scale compatibility",
       "description_chars": 1256
     },
     {
       "path": "docs/figures/p31_intervention_quotient_compatibility.svg",
-      "sha256": "d8e85494e372c70ba0f095d994a688a250171f46c6e693fe0336e7fb759989fd",
-      "bytes": 6211,
+      "sha256": "c3b74bef51b174f9c2a0df13ee5fcac5bc833abc7031154e08447e4c0b424112",
+      "bytes": 6258,
       "category": "theorem-or-architecture",
       "title": "Proposition 31: Intervention-quotient compatibility",
       "description_chars": 1230
     },
     {
       "path": "docs/figures/p38_quantum_operational_sufficiency.svg",
-      "sha256": "75edf1c1345fd6c46eb7f4a107f73d96e58ba2650d5d7a3391ffc02626b61824",
-      "bytes": 5109,
+      "sha256": "b001bf9936e46bce3ce8b21ca69f3a8e992095bee11d8489291217fdfe93f24c",
+      "bytes": 5156,
       "category": "theorem-or-architecture",
       "title": "Quantum operational sufficiency",
       "description_chars": 668
     },
     {
       "path": "docs/figures/p39_finite_data_quantum_nonfactorization.svg",
-      "sha256": "3cea152d6e429e461123529e8b80b5cb6e121ecec2a4456026777aaa89004a0c",
-      "bytes": 5514,
+      "sha256": "7a6a556145c9e0c9c0f3332d5111806745ae78cc6192f4fbfef7143ff43fe35f",
+      "bytes": 5561,
       "category": "theorem-or-architecture",
       "title": "Proposition 39: Finite-data quantum model-set non-factorization certification",
       "description_chars": 1055
     },
     {
       "path": "docs/figures/p40_continuous_quantum_region_regularity.svg",
-      "sha256": "24a0508c13a95c2831aceddb6ff655d430fab1cf728afb001d0b4b60470e862b",
-      "bytes": 5659,
+      "sha256": "bf599fdcd2d7d6f3b293f6aa97f85644f11c9a9fd0575fd061e5924c03f07ca4",
+      "bytes": 5706,
       "category": "theorem-or-architecture",
       "title": "Proposition 40: Continuous quantum confidence regions and regularity obstructions",
       "description_chars": 1179
     },
     {
       "path": "docs/figures/p41_trace_ball_quantum_envelope.svg",
-      "sha256": "e6af46a1db2268dc735c57a4498d706fae322bbaac31890665f1a188757f79ed",
-      "bytes": 5143,
+      "sha256": "f8bd2c6a005b6a3560c3df67c0b784c40512e8c5774b67f3451762fd0b928311",
+      "bytes": 5190,
       "category": "theorem-or-architecture",
       "title": "Trace-ball quantum envelope",
       "description_chars": 723
     },
     {
       "path": "docs/figures/p42_quantum_regular_bridge_sample_complexity.svg",
-      "sha256": "14a8910e4f0cf3263c93509018f5bd0a73160ad977a2280ccaac6a6ec149d400",
-      "bytes": 5625,
+      "sha256": "f366ad16aebbbbddbfd4aafba06fdb7a46385a5663a09157d6d6e83b3917aea8",
+      "bytes": 5672,
       "category": "theorem-or-architecture",
       "title": "Proposition 42: Quantum regular-bridge sample complexity under fixed IC measurement",
       "description_chars": 1114
     },
     {
       "path": "docs/figures/p43_optimal_quantum_target_allocation.svg",
-      "sha256": "24809d24e0a40ce3a95fb02dea625e0fbbdc9faeb6d63bf26f2d50e5a6fb7780",
-      "bytes": 5140,
+      "sha256": "48e004882515a6f057549f9346f02db2acb4f3fa34e0d76ac1d7c760571c00da",
+      "bytes": 5187,
       "category": "theorem-or-architecture",
       "title": "Proposition 43: Optimal quantum-target uncertainty allocation",
       "description_chars": 982
@@ -304,56 +304,56 @@
     },
     {
       "path": "docs/figures/p47_sequential_graph_refinement.svg",
-      "sha256": "f632d402633b5f9bed65982fc4518e5c09fff4d6770639372dc3132d44fa7616",
-      "bytes": 5898,
+      "sha256": "fa961c67694f315147737b02d67eda5c24424396c86f0129c8f3815c42861b05",
+      "bytes": 5919,
       "category": "theorem-or-architecture",
       "title": "Sequential graph refinement",
       "description_chars": 625
     },
     {
       "path": "docs/figures/p48_gap_dependent_stopping_complexity.svg",
-      "sha256": "dc37c217ec85630362cc161ee8fa28939126390993c039f563c244a7a789a45e",
-      "bytes": 6834,
+      "sha256": "4c933ef618755df30b993b4137557b9d293862300a4d42c10e6631c5021fc9ab",
+      "bytes": 6855,
       "category": "theorem-or-architecture",
       "title": "Proposition 48: Gap-dependent stopping complexity for sequential witness graphs",
       "description_chars": 1018
     },
     {
       "path": "docs/figures/p49_dyadic_stopping_overhead.svg",
-      "sha256": "47c8d06deb32387e2ede9cd87a0cd11f9d14ab537737af8a399bb66518ffa166",
-      "bytes": 6069,
+      "sha256": "e1584a9b99e5feb7764f7773b62cbbfb90a333f54a3c0780e841086df5938242",
+      "bytes": 6090,
       "category": "theorem-or-architecture",
       "title": "Proposition 49: Dyadic certification schedules with less-than-two stopping overhead",
       "description_chars": 1062
     },
     {
       "path": "docs/figures/p50_bounded_starvation_asynchronous_sampling.svg",
-      "sha256": "7ada22a611df5ced701a9338520e3aed112f61242cfcc3f904cf67f4cfd92968",
-      "bytes": 7028,
+      "sha256": "2c25120ef059bdded5c8b9272779c0af00ccee2a805247a3f10040e2ca459bec",
+      "bytes": 7049,
       "category": "theorem-or-architecture",
       "title": "Proposition 50: Bounded-starvation asynchronous sampling",
       "description_chars": 909
     },
     {
       "path": "docs/figures/p51_heterogeneous_service_rate_stopping.svg",
-      "sha256": "9361b9cb404972b8247bb720fea524ee9dd0ea0b3a94046ca9c12582b03a726d",
-      "bytes": 5743,
+      "sha256": "0cc0c18708469b78278ef53a2993057fbd330e0229e6d4ec209aa945f2d8efaf",
+      "bytes": 5764,
       "category": "theorem-or-architecture",
       "title": "Proposition 51: Heterogeneous finite-window service-rate stopping",
       "description_chars": 933
     },
     {
       "path": "docs/figures/p52_capacity_optimal_service_allocation.svg",
-      "sha256": "b1bac1ce44354ffedbeeb34a5bdf08beaa61f3086925b2341e7516e58bb88074",
-      "bytes": 5365,
+      "sha256": "e1266b4f63770358f34e477421b3003f66b509a5b05d302a502edb03c06f0cae",
+      "bytes": 5386,
       "category": "theorem-or-architecture",
       "title": "Proposition 52: Capacity-optimal service allocation",
       "description_chars": 910
     },
     {
       "path": "docs/figures/p53_residual_demand_reoptimization.svg",
-      "sha256": "bb596622dec2eb4474666e3fb21cde390e7e22f229cf7d18f71a52c3b3fa3a55",
-      "bytes": 5512,
+      "sha256": "f8aefdf6cbe75c1bb2b8574efc8b75edf61c51a50e0f717c6b673c4e8bacfd52",
+      "bytes": 5533,
       "category": "theorem-or-architecture",
       "title": "Proposition 53: Residual-demand reoptimization after safe pruning",
       "description_chars": 948
@@ -368,280 +368,280 @@
     },
     {
       "path": "docs/figures/p55_pruning_aware_switching_monotonicity.svg",
-      "sha256": "c8d50b34c4359e6e4cea20b8feafa58239d54d7447346a600a2fd575b995772e",
-      "bytes": 8531,
+      "sha256": "719b07688053eafef1f1cef5ae0447284427af8291914dafe1a42d70168b79cb",
+      "bytes": 8552,
       "category": "theorem-or-architecture",
       "title": "P55 pruning-aware metric switching-cost monotonicity",
       "description_chars": 1398
     },
     {
       "path": "docs/figures/p56_moving_start_metric_reoptimization_stability.svg",
-      "sha256": "d96ca8074d959b98415e77406e6de3773f3bb18e547c230ca909f6ef04d3bd77",
-      "bytes": 8719,
+      "sha256": "3a61c66510e0d4bcd3855e05934661cf62da044fde6b188f07a1d5aef0174473",
+      "bytes": 8740,
       "category": "theorem-or-architecture",
       "title": "P56 moving-start metric reoptimization stability",
       "description_chars": 1299
     },
     {
       "path": "docs/figures/p57_switching_metric_perturbation.svg",
-      "sha256": "b172e52f964c7cac5188116ffb70923d5347bcd9cc96ed21bf19b907a3e125f7",
-      "bytes": 8784,
+      "sha256": "8b234985f375170877b74076c985cfe5972618ddfa760325724b2f8ec6619341",
+      "bytes": 8805,
       "category": "theorem-or-architecture",
       "title": "P57 deterministic switching-metric perturbation stability",
       "description_chars": 1369
     },
     {
       "path": "docs/figures/p58_finite_data_metric_uncertainty.svg",
-      "sha256": "9432323d72d9b30cd5740a07134a0e313864baa061bdae5c0f6f6909210f37bf",
-      "bytes": 9404,
+      "sha256": "4c5acdac338a2071f2daff5c23c7f4ab9c3755c710e976734b6e9a73cd4693d1",
+      "bytes": 9425,
       "category": "theorem-or-architecture",
       "title": "P58 finite-data switching-metric uncertainty and robust routing",
       "description_chars": 1578
     },
     {
       "path": "docs/figures/p59_optimal_transition_calibration.svg",
-      "sha256": "d521b203f6714af4112bc5b9969270253e8f8cdb9930052584169057e1ff2cd3",
-      "bytes": 8854,
+      "sha256": "489ff56fff32b8a90d37d53107cf048745705d736f67a49a33dd24daad392ff5",
+      "bytes": 8875,
       "category": "theorem-or-architecture",
       "title": "P59 exact continuous transition-calibration allocation",
       "description_chars": 1481
     },
     {
       "path": "docs/figures/p60_integer_transition_calibration.svg",
-      "sha256": "f26d5adf0e9ad88d4d94f5b9d4a0d8808fc7b03b024c0a962ebad44c09d1ab94",
-      "bytes": 8800,
+      "sha256": "8a1d5defc113d8cde5813319d0b3a40d4d9ba9f09a4949bf3e4fa8de3dbf02e7",
+      "bytes": 8821,
       "category": "theorem-or-architecture",
       "title": "P60 hard-budget integer rounding with certified overhead",
       "description_chars": 1321
     },
     {
       "path": "docs/figures/p61_exact_integer_transition_calibration.svg",
-      "sha256": "269ca7b5406a91b9fb04b6d7c8f1f0d46ef27bb0f8521c00edc66743936f2529",
-      "bytes": 8668,
+      "sha256": "1540d3ae0e5e80006ad646aed844614110a9c50b1d5f99e37e41e24221a574ee",
+      "bytes": 8689,
       "category": "theorem-or-architecture",
       "title": "P61 exact unit-cost integer transition calibration",
       "description_chars": 1217
     },
     {
       "path": "docs/figures/p62_heterogeneous_cost_transition_calibration.svg",
-      "sha256": "025f564dfc067ee6aa9aeabbc793baae6cfd0d3aa8e16f1ff811d47b1f59df5e",
-      "bytes": 8125,
+      "sha256": "41bf0f3a782da825c08b8b9dc271ea0d9e7dac2583655e672f6eb1450f8a597e",
+      "bytes": 8146,
       "category": "theorem-or-architecture",
       "title": "P62 exact heterogeneous-cost continuous calibration",
       "description_chars": 1073
     },
     {
       "path": "docs/figures/p63_exact_heterogeneous_integer_calibration.svg",
-      "sha256": "6dc9f14f2e4c3180c7881e991c6cda561f1cb170b9093f996c64d5a4c4bb7f90",
-      "bytes": 8728,
+      "sha256": "10882f42310fb79965b73a82108296eeb994f6d85898e6a818ad3581c84c7015",
+      "bytes": 8749,
       "category": "theorem-or-architecture",
       "title": "P63 exact heterogeneous-cost integer calibration",
       "description_chars": 1297
     },
     {
       "path": "docs/figures/p64_fast_heterogeneous_integer_approximation.svg",
-      "sha256": "0230472296dd51e180f7b9770ce1c25a0e15a82caf98a9f568ecfc988fed932c",
-      "bytes": 7596,
+      "sha256": "4bbcbf965d86d06ac2c41af312aac726711f136bebbab57544cd7c856ef511a1",
+      "bytes": 7617,
       "category": "theorem-or-architecture",
       "title": "P64 fast certified heterogeneous-cost integer approximation",
       "description_chars": 1104
     },
     {
       "path": "docs/figures/p65_lower_bounded_heterogeneous_calibration.svg",
-      "sha256": "3a3b21a09be52df762abded3a15d79ceaf07a7f6120a5a461d19fd58486d9109",
-      "bytes": 7612,
+      "sha256": "d469a76e491dd7511e4331732cbf7541c7c0b58f8cedbf8bc428fd26e40dae5b",
+      "bytes": 7633,
       "category": "theorem-or-architecture",
       "title": "P65 lower-bounded heterogeneous calibration",
       "description_chars": 1096
     },
     {
       "path": "docs/figures/p66_residual_exact_calibration_augmentation.svg",
-      "sha256": "d07e647f8f367be73ae889f64ecf84097d369ebbb1f260716af7a0cba7efa683",
-      "bytes": 6959,
+      "sha256": "8913bccc4d01988491d6222e81f7a8859c1d3896044bd46beb39320d4d57d037",
+      "bytes": 6980,
       "category": "theorem-or-architecture",
       "title": "P66 residual-exact augmentation after P65 flooring",
       "description_chars": 1129
     },
     {
       "path": "docs/figures/p67_global_integer_optimality_certificate.svg",
-      "sha256": "2d7bdef656f9c146303efd25975619ccf3aeacaa8541781b0d38c752998132bd",
-      "bytes": 6771,
+      "sha256": "322aa21603c694d86cb1ecca18ab5b94c6afb2e108924acc51f8c7c00199cf7a",
+      "bytes": 6792,
       "category": "theorem-or-architecture",
       "title": "P67 global integer optimality certificate",
       "description_chars": 1000
     },
     {
       "path": "docs/figures/p68_lagrangian_optimality_gap.svg",
-      "sha256": "93ba4c07d168cfcb928e718aaedcf722299af43050a62e60fe5368761414e5d5",
-      "bytes": 8414,
+      "sha256": "1939e9f58e2fd709b64f485b239d3dc385644485a68e5324a1089d2a79fd310e",
+      "bytes": 8435,
       "category": "theorem-or-architecture",
       "title": "P68 Lagrangian lower bounds and quantitative integer optimality gaps",
       "description_chars": 1374
     },
     {
       "path": "docs/figures/p69_dual_optimal_multiplier.svg",
-      "sha256": "b892c58ace8d861a4a3e069c42d288ee5f6fe5834a0f26f8266ff4ee35add14f",
-      "bytes": 7340,
+      "sha256": "9d08d067d1c79f72c7ce9e3cb4e938bc053dd3b1cfeeb1c9156ea3243b51a9df",
+      "bytes": 7361,
       "category": "theorem-or-architecture",
       "title": "P69 certified dual-optimal multiplier search",
       "description_chars": 981
     },
     {
       "path": "docs/figures/p70_primal_dual_gap_decomposition.svg",
-      "sha256": "a1bbecab71903ee6aecf32cc493af4398828431cc3abd09d7cc7e01463dfcc17",
-      "bytes": 9046,
+      "sha256": "000b3e28d9109c8700a9f6568bea35204611b1351426c253941e0154aa7b31a7",
+      "bytes": 9095,
       "category": "theorem-or-architecture",
       "title": "P70 exact primal-dual gap decomposition",
       "description_chars": 938
     },
     {
       "path": "docs/figures/p71_target_provenance_noncircularity.svg",
-      "sha256": "d3c0dfad57f1e7836b2a19064dca24715b76a1487c04443a2522fe3137743906",
-      "bytes": 9475,
+      "sha256": "c01fd3c5f4ce9266f669d41ea65d8240243d10e5bd070aa860600c15698d5fc4",
+      "bytes": 9559,
       "category": "theorem-or-architecture",
       "title": "P71 target-provenance non-circularity",
       "description_chars": 1204
     },
     {
       "path": "docs/figures/p72_target_measurement_channel_robustness.svg",
-      "sha256": "ef29291750b184c89ee5be4139185e4982ae4c4c7b0768f85f020215f70e5fcd",
-      "bytes": 7672,
+      "sha256": "b4e6a27c4b622c8a936b0fc226c34456abc1e72dd06c2219ad9cca6e29d29c7a",
+      "bytes": 7693,
       "category": "theorem-or-architecture",
       "title": "P72 target-measurement channel robustness",
       "description_chars": 961
     },
     {
       "path": "docs/figures/p73_target_channel_identifiability.svg",
-      "sha256": "6444ffb620ae8e2e528a5a12937f79e5a22349b510e22d6463c694f78246e159",
-      "bytes": 6705,
+      "sha256": "a0ccdfb8699ee4d705e01e9f28a45dc4229bc1e38786bb078c4513c35d8a4d95",
+      "bytes": 6726,
       "category": "theorem-or-architecture",
       "title": "P73 target-channel identifiability",
       "description_chars": 962
     },
     {
       "path": "docs/figures/p74_finite_sample_target_channel_recovery.svg",
-      "sha256": "6b3e9798668979472557ff324619eee4c767152926f98dfebbcd5a424292dd70",
-      "bytes": 7410,
+      "sha256": "6e640c1fec8e505719725ba460a332f865f836c0efb9adb64b97fef695d7283b",
+      "bytes": 7431,
       "category": "theorem-or-architecture",
       "title": "P74 finite-sample target-channel recovery",
       "description_chars": 905
     },
     {
       "path": "docs/figures/p75_target_model_adequacy_overidentification.svg",
-      "sha256": "463d021c84255780ce244afffe61e6429225d475a7c3eed89301f55d047768a9",
-      "bytes": 7139,
+      "sha256": "ac7df59bb76b520725602dcce92c2b06e764ffd6a3d6e968a661fabbdef68ec1",
+      "bytes": 7160,
       "category": "theorem-or-architecture",
       "title": "P75 target-model adequacy and four-view overidentification",
       "description_chars": 986
     },
     {
       "path": "docs/figures/p76_finite_sample_target_model_adequacy.svg",
-      "sha256": "5d9a05c933b359d013923b65b1bb8cd3bc8b5630ef0ebeca08a4a71d32c6a57a",
-      "bytes": 6619,
+      "sha256": "86b2f7cdc030750fe84d1744ef5a7ff7e2c20cd87f590368727f085692c05a18",
+      "bytes": 6640,
       "category": "theorem-or-architecture",
       "title": "P76 finite-sample target-model adequacy rejection",
       "description_chars": 833
     },
     {
       "path": "docs/figures/p77_full_law_model_set_separation.svg",
-      "sha256": "b0ff3132bf9851a79420857d6af786068f7ef51cf25600c9ef65c43158f176fd",
-      "bytes": 9399,
+      "sha256": "054c808fceafb09df5779c770f435a34496a6af92bded67a3f18d0a8a2c233b2",
+      "bytes": 9420,
       "category": "theorem-or-architecture",
       "title": "P77 finite-sample full-law model-set separation",
       "description_chars": 1226
     },
     {
       "path": "docs/figures/p78_certified_continuous_model_separation.svg",
-      "sha256": "d17d73f1db20f43e34ec9ec401c567321191215beef4f772a64a83e43934c2a9",
-      "bytes": 7862,
+      "sha256": "3ef228325262ad026e6fb3345069c3fce7541682d76a6c3c45b8e8504787a0dd",
+      "bytes": 7883,
       "category": "theorem-or-architecture",
       "title": "P78 certified continuous model separation",
       "description_chars": 988
     },
     {
       "path": "docs/figures/p79_certified_sampling_radius.svg",
-      "sha256": "d70d0b211643597668b5c160ccb97faaa680bde529eb6b0c1b20be268786f15c",
-      "bytes": 8185,
+      "sha256": "5d6c699f664e73127672b7cdecbf9508ee5e4e24122f67836726a8bf1d2c43f3",
+      "bytes": 8206,
       "category": "theorem-or-architecture",
       "title": "P79 certified rational sampling-radius envelope",
       "description_chars": 937
     },
     {
       "path": "docs/figures/p80_simplex_coupled_model_separation.svg",
-      "sha256": "59284a505f5f9093c13b35d1e753252328fb4868fa5f2e2a6c0d308190917aa8",
-      "bytes": 10346,
+      "sha256": "15ae18f7c94dba471d327d6099d522cd1a756a81f3cdc75e1264f08fc5c93579",
+      "bytes": 10367,
       "category": "theorem-or-architecture",
       "title": "P80 simplex-coupled model separation",
       "description_chars": 982
     },
     {
       "path": "docs/figures/p81_projection_event_model_separation.svg",
-      "sha256": "c172aaebcbbb8b82d83b34d6caa64ad826b6a3140271108ac78b34195859d41a",
-      "bytes": 10509,
+      "sha256": "e407728ae948a8a320c9358a2c07c77269cb3634e5c624a696d7baeb559ea18e",
+      "bytes": 10530,
       "category": "theorem-or-architecture",
       "title": "P81 projection-event model separation certificate",
       "description_chars": 1089
     },
     {
       "path": "docs/figures/p82_exact_nested_projection_contrast.svg",
-      "sha256": "135cbbae5df64d78d27270ece6c00a8d12831a96966d256c761b08a9d9d8e32b",
-      "bytes": 11011,
+      "sha256": "8526a0189cb7b002b4a10ec37c283cd6c495813d20b7cd2ee21530335f420891",
+      "bytes": 11032,
       "category": "theorem-or-architecture",
       "title": "P82 exact nested projection-contrast certificate",
       "description_chars": 1140
     },
     {
       "path": "docs/figures/p83_exact_projection_parity.svg",
-      "sha256": "4284842069bd5020e9432f291458244a359652b1e8239821c6bcc766383b5752",
-      "bytes": 10860,
+      "sha256": "02177f9561f9df70d9e573728d8756a5046ba753c330c3526f5cca28d5c0f225",
+      "bytes": 10881,
       "category": "theorem-or-architecture",
       "title": "P83 exact projection-parity certificate",
       "description_chars": 1015
     },
     {
       "path": "docs/figures/p84_exact_joint_projection_parity_contrast.svg",
-      "sha256": "0cbd1c4bc0855ca419e47fcfbab988f8204be5053783a3c1038e9d489b5e17f5",
-      "bytes": 10795,
+      "sha256": "f6f619383a2d67cab7a346b1c124c63aa252e9ca1c987f2c73d90facf9c58d65",
+      "bytes": 10816,
       "category": "theorem-or-architecture",
       "title": "P84 joint parity compatibility certificate",
       "description_chars": 703
     },
     {
       "path": "docs/figures/p85_exact_triple_projection_parity_functional.svg",
-      "sha256": "6cde3f62e66d3887b75d16523283191b5403f7d41befc824ab827740d1c59709",
-      "bytes": 7362,
+      "sha256": "b06cdda84c33fac606ee8362c857d8cf39192abe5519eead15ffaff722195a2c",
+      "bytes": 7409,
       "category": "theorem-or-architecture",
       "title": "P85 Three-Event Shared-Parameter Parity Certificate",
       "description_chars": 879
     },
     {
       "path": "docs/figures/p86_exact_minimally_weighted_quad_projection_parity.svg",
-      "sha256": "dfd0388410696e7b03fce7b4691fdb5ef949d9c615594fa8586bf7f41767f0d1",
-      "bytes": 7686,
+      "sha256": "d22086ed25dc0fa36455439f838594ad08405c56aedc7ffb53c8cf8149227580",
+      "bytes": 7733,
       "category": "theorem-or-architecture",
       "title": "P86 Minimally Weighted Four-Event Parity Certificate",
       "description_chars": 931
     },
     {
       "path": "docs/figures/p87_exact_bounded_primitive_quad_projection_parity.svg",
-      "sha256": "1b1c6583f5811b63b651c2b162048fec19bd16cc43a4dc8e1b8a06258e9d3bc5",
-      "bytes": 7651,
+      "sha256": "dda273ce926e75ad4824a4c5630a015d8f6639430f099a3b066e1e13925f0753",
+      "bytes": 7698,
       "category": "theorem-or-architecture",
       "title": "P87 Bounded Primitive Four-Event Parity Certificate",
       "description_chars": 890
     },
     {
       "path": "docs/figures/p88_exact_radius_three_bounded_primitive_quad_projection_parity.svg",
-      "sha256": "a610e34022912eb5292d3e488693947eecff114eb57bf5f5aa8a965d5e23782f",
-      "bytes": 6915,
+      "sha256": "38b6ab54cece30d61faa88cc5226a4bb291e5c28b8f1aba59c764ffec82ec0a4",
+      "bytes": 6962,
       "category": "theorem-or-architecture",
       "title": "P88 Radius-Three Bounded-Primitive Four-Event Parity Certificate",
       "description_chars": 1092
     },
     {
       "path": "docs/figures/p89_complete_linear_parity_duality.svg",
-      "sha256": "195a5b9bc959ba615be1a6a6a162f3db7299e3fab084d57e0feae634dcd670ad",
-      "bytes": 7079,
+      "sha256": "a4d196a13d3199001a073d0e9d980c2c97728e71c35139c589c8324aa85cb94b",
+      "bytes": 7126,
       "category": "theorem-or-architecture",
       "title": "P89 Complete Linear Parity-Functional Duality Certificate",
       "description_chars": 1021
@@ -728,8 +728,8 @@
     },
     {
       "path": "docs/figures/physics_mathematics_atlas.svg",
-      "sha256": "e7be03648ce499bdb248084dec8dce327a22ac8a402a21f4c63fc2585811f4dd",
-      "bytes": 8922,
+      "sha256": "02ce79cf278ef9251960c70978f91492a526a20d30978fbdf7adab4f0eaaaed4",
+      "bytes": 8969,
       "category": "theorem-or-architecture",
       "title": "Physics and mathematics atlas for consciousness research",
       "description_chars": 1054
@@ -1208,8 +1208,8 @@
     },
     {
       "path": "docs/figures/quantum_bridge_completeness_map.svg",
-      "sha256": "5659d2723c80bd759efd221f7981860aff9af0a1d30b8997e08d2f6c2911f55d",
-      "bytes": 7726,
+      "sha256": "2c2206d48bb994bca60ff139db30dcf7d4a64319c0b2d366b59e81d20db0e5af",
+      "bytes": 7773,
       "category": "theorem-or-architecture",
       "title": "Quantum bridge completeness map",
       "description_chars": 647
@@ -1224,24 +1224,24 @@
     },
     {
       "path": "docs/figures/spaceflight_extreme_environment_map.svg",
-      "sha256": "ff4e199f90fee554cbbbfe31e2fe3ab924358f2ac2d8a86a3ba972c413d5c65f",
-      "bytes": 7327,
+      "sha256": "db3b8f4c2ecae4cf57a2d9a1ada0f79eb656139bcecd5d339bca76c047ce2c26",
+      "bytes": 7374,
       "category": "theorem-or-architecture",
       "title": "Spaceflight and extreme-environment relevance map",
       "description_chars": 1045
     },
     {
       "path": "docs/figures/state_space_dynamics_map.svg",
-      "sha256": "219fbb3aa7cc3a6bc037cb670b627fc14e76a62deed155831af77ec8fa23e0c1",
-      "bytes": 7273,
+      "sha256": "48ebbe037d3a443aa577697a7e3a14c4c1396e538c22929ff2af0be6f9984f26",
+      "bytes": 7367,
       "category": "theorem-or-architecture",
       "title": "State-space dynamics, perturbations, and empirical regimes",
       "description_chars": 975
     },
     {
       "path": "docs/figures/theorem_roadmap.svg",
-      "sha256": "471bbd30f126cc4190175b26e823a6e6afb472e70c38be290e89b0137532c65c",
-      "bytes": 28294,
+      "sha256": "49086667e700cb6063fd89405e00422fade307f3d0380f201973a52a7bb5f375",
+      "bytes": 28341,
       "category": "theorem-or-architecture",
       "title": "Complete theorem dependency map for P1-P100",
       "description_chars": 1083
@@ -1256,8 +1256,8 @@
     },
     {
       "path": "docs/figures/thermodynamics_information_processing.svg",
-      "sha256": "b129f0de4fb4725ca2f2658c407eeb3221a95c50fbef7eebb518f6ff790efac7",
-      "bytes": 7120,
+      "sha256": "a1c1f33fa2557f3761e012111e0afd94e859c7dd03587cfdcbe86122184d3726",
+      "bytes": 7167,
       "category": "theorem-or-architecture",
       "title": "Thermodynamics of information processing and consciousness research",
       "description_chars": 1095

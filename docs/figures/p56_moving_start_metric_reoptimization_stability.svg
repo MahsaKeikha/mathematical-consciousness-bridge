@@ -2,7 +2,7 @@
   <title id="title">P56 moving-start metric reoptimization stability</title>
   <desc id="desc">What this figure shows: P56 controls exact P54 reoptimization when the apparatus or setup start moves from s to s-prime while one declared finite switching metric remains fixed. The optimal route value is one-Lipschitz in the start state, and the coefficient one is sharp. How to read it: the three upper cards specify the fixed metric geometry and the two alternative start states for the same active support. Their attached arrows feed the central Lipschitz theorem and its route-reuse proof idea. The three lower cards then propagate that theorem to fixed residual demand, combine it with the P55 fixed-start release after residual demand decreases, and state a sufficient strict-decrease certificate. Main takeaway: start motion can erase at most one metric displacement worth of the saving certified by P55, so a fixed-start release larger than c(s,s-prime) guarantees that the new exact total cost is still strictly lower; the converse is not claimed. Scientific status: Deterministic one-metric scheduling perturbation theorem. It assumes the same valid switching metric before and after reoptimization. It does not validate pruning, prove statistical minimaxity, identify a scheduling quantity with consciousness, establish a physical-to-experiential bridge, or imply quantum incompleteness.</desc>
   <defs>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="9" refY="3" orient="auto" markerUnits="userSpaceOnUse" viewBox="0 0 10 10">
       <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
     </marker>
     <style>

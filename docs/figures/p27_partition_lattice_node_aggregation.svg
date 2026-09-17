@@ -2,7 +2,7 @@
   <title id="title">Proposition 27: Partition-Lattice Transport Under Node Aggregation</title>
   <desc id="desc">What this figure shows: Repository theorem. Proposition 27 formalizes when a partition of fine physical nodes has a mathematically well-defined counterpart after several fine nodes are represented by one coarse node.. Visible guideposts include: Which fine partitions still have an exact meaning when several physical nodes become one coarse node?; NODE AGGREGATION; Surjective node map; a : Vf ↠ Vc; Fc = a⁻¹(c); Each coarse node represents one fine aggregation fiber.. How to read it: follow the diagram in the direction of its arrows and use each box, panel, inequality, or highlighted region only with the meaning printed beside it. Main takeaway: this is the visual companion to Proposition 27; the proposition document supplies the assumptions, proof, and exact scope of every implication. Scientific status: Proposition 27 theorem/certificate visual. It is not independent empirical evidence and does not, by itself, identify a physical or latent variable with consciousness.</desc>
   <defs>
-    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="10" refY="4" orient="auto" viewBox="0 0 12 12" markerUnits="userSpaceOnUse">
       <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
     </marker>
     <style>

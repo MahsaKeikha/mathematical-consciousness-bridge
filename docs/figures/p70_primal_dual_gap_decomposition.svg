@@ -2,7 +2,7 @@
   <title id="title">P70 exact primal-dual gap decomposition</title>
   <desc id="desc">What this figure shows: P70 decomposes the certified primal-dual gap into edgewise Lagrangian regret and unused-budget penalty, making the P68 optimization certificate diagnostically inspectable without assuming strong duality. How to read it: start with the feasible integer candidate and P68 dual lower bound, follow the attached arrows into the certificate-gap card, then split that gap into the two nonnegative diagnostic components and recombine them in the exact P70 identity. The bottom cards connect the identity to the P69 strongest-dual diagnostic and the scientific interpretation boundary. Main takeaway: a small total gap has an explicit mathematical accounting, and a zero decomposition requires both a tight budget and a common edgewise minimizer. Scientific status: exact optimization-certificate diagnostic. It is not evidence about consciousness or quantum ontology, and the physical-to-experiential bridge remains open.</desc>
   <defs>
-    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <marker id="arrowhead" markerWidth="8" markerHeight="5.6" refX="9" refY="3.5" orient="auto" viewBox="0 0 10 7" markerUnits="userSpaceOnUse">
       <polygon points="0 0, 10 3.5, 0 7" fill="#334155"/>
     </marker>
     <style>

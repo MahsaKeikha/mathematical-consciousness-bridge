@@ -7,7 +7,7 @@
     .accent{fill:#eef2ff;stroke:#4338ca;stroke-width:2;rx:18}.final{fill:#ecfdf5;stroke:#047857;stroke-width:3;rx:20}
     .arrow{stroke:#6b7280;stroke-width:3;fill:none;marker-end:url(#a)}
   </style>
-  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#6b7280"/></marker></defs>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L10 5 L0 10 z" fill="#6b7280"/></marker></defs>
   <text x="700" y="55" text-anchor="middle" class="title">Operational Scale Theorem Chain: P30 → P37</text>
   <text x="700" y="88" text-anchor="middle" class="sub">One declared transformation of nodes, states, interventions and time</text>
 

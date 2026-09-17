@@ -2,7 +2,7 @@
   <title id="title">Sequential graph refinement</title>
   <desc id="desc">What this figure shows: Figure 25. Adaptive evidence collection. The experiment may choose what to sample next based on previous observations, but validity is protected by a shared time-uniform confidence event. How to read it: follow only the labeled arrows, axes, panels, set relations, or inequalities shown in the visual and interpret them using the adjacent research text. Main takeaway: the figure summarizes the stated mathematical or scientific dependency; visual proximity alone does not add a claim. Scientific status: Reader-facing research figure; formal status is controlled by the linked proof or source record.</desc>
   <defs>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse" viewBox="0 0 10 10">
       <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
     </marker>
     <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">

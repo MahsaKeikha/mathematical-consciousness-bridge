@@ -2,7 +2,7 @@
   <title id="title">Complete theorem dependency map for P1-P100</title>
   <desc id="desc">What this figure shows: the complete theorem roadmap for Propositions 1 through 100. Every proposition P1 through P100 appears explicitly. Solid arrows show the primary bridge-sufficiency lineage from foundations through P19-P24 and then P71-P100. Dashed connectors show connected physical, quantum, evidence-acquisition, scheduling, and calibration branches P25-P70; they do not assert that every proposition in one block is a prerequisite for every proposition in the next. How to read it: follow the lane labels and connectors rather than proposition number alone. P71-P100 returns to the P19 bridge-sufficiency lineage and does not extend the P61-P70 calibration branch. Main takeaway: proposition numbering records development order, while the roadmap separates the core bridge lineage from connected machinery branches and marks P100 as the current theorem frontier. Scientific status: Research-orientation figure. It summarizes documented dependency structure across P1-P100; it does not add a theorem, empirical consciousness result, or physical-to-experiential bridge claim.</desc>
   <defs>
-    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="10" refY="4" orient="auto" viewBox="0 0 12 12" markerUnits="userSpaceOnUse">
       <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
     </marker>
     <style>

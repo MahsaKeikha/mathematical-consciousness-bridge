@@ -3,7 +3,7 @@
   <desc id="desc">What this figure shows: P77 strengthens the P76 finite-sample adequacy audit from selected necessary polynomial constraints to separation of the entire simultaneous confidence region from the entire declared model set. The left panel summarizes the P76 constraint route and its limitation; the right panel shows the complete model family, the empirical-law confidence region, and the certified separation gap required for full-law rejection. How to read it: move from the three P76 constraint families into the limitation card, then follow the attached full-law audit arrow into the P77 geometry. The measured gap runs exactly from the boundary of the declared model set to the boundary of the confidence region. The lower band distinguishes a sound lower bound from an ordinary candidate best fit. Main takeaway: full-law rejection requires a certified lower bound proving that every admissible model is farther away than the sampling radius; a candidate best fit alone cannot certify rejection. Scientific status: finite-sample model-set separation theorem figure. Non-rejection is not model acceptance; the theorem does not identify the latent state with consciousness, and the physical-to-experiential bridge remains open.</desc>
 
   <defs>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="9" refY="3" orient="auto" markerUnits="userSpaceOnUse" viewBox="0 0 10 10">
       <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
     </marker>
     <style>
