@@ -1,0 +1,81 @@
+name: unify-research-iii-pin-migration
+
+on:
+  push:
+    branches:
+      - unify-research-iii-pin-3cf92029
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: unify-research-iii-pin-3cf92029
+          fetch-depth: 0
+      - name: Unify Research III pin
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          old = "5d1d979231aed62fde34383281fa8f252a3d2fa7"
+          new = "3cf9202977953644c980246c1f3e46a3514b3a4a"
+          files = [
+              Path("scripts/synchronize_research_three_website.py"),
+              Path("website/measurement-science.html"),
+              Path("website/index.html"),
+              Path("website/research-lineage.html"),
+          ]
+          for path in files:
+              text = path.read_text(encoding="utf-8")
+              updated = text.replace(old, new)
+              if path.name == "synchronize_research_three_website.py":
+                  marker = "LEGACY_RESEARCH_THREE_PINS = (\n"
+                  legacy_line = f'    "{old}",\n'
+                  if legacy_line not in updated:
+                      updated = updated.replace(marker, marker + legacy_line, 1)
+              path.write_text(updated, encoding="utf-8")
+          PY
+      - name: Verify single current Research III pin
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          old = "5d1d979231aed62fde34383281fa8f252a3d2fa7"
+          new = "3cf9202977953644c980246c1f3e46a3514b3a4a"
+          public = [
+              Path("website/measurement-science.html"),
+              Path("website/index.html"),
+              Path("website/research-lineage.html"),
+              Path("website/source-section-visuals.js"),
+              Path("website/research-iii-atlas-refresh.js"),
+              Path("website/atlas-architecture-refresh.js"),
+          ]
+          for path in public:
+              text = path.read_text(encoding="utf-8")
+              if new not in text:
+                  raise SystemExit(f"{path} is not pinned to {new}")
+              if old in text:
+                  raise SystemExit(f"{path} still contains stale pin {old}")
+          sync = Path("scripts/synchronize_research_three_website.py").read_text(encoding="utf-8")
+          if f'CURRENT_RESEARCH_THREE_PIN = "{new}"' not in sync:
+              raise SystemExit("synchronizer current pin is not unified")
+          if f'    "{old}",' not in sync:
+              raise SystemExit("previous pin is not retained as a legacy migration source")
+          PY
+      - name: Commit synchronized sources
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "Research III pin already unified."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/synchronize_research_three_website.py website/measurement-science.html website/index.html website/research-lineage.html
+          git commit -m "Unify Research III website pin"
+          git push origin HEAD:unify-research-iii-pin-3cf92029
