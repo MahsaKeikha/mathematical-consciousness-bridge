@@ -194,6 +194,100 @@
     hero.insertAdjacentElement('afterend', section);
   }
 
+  function enhanceHomepageResearchIII() {
+    if (currentFile() !== 'index.html') return;
+
+    const programCard = [...document.querySelectorAll('.research-program-card')].find((card) =>
+      card.textContent.includes('Research III · Consciousness measurement science')
+    );
+    if (programCard) {
+      const metric = programCard.querySelector('.research-program-metric');
+      const meta = programCard.querySelector('.research-program-meta');
+      if (metric) metric.innerHTML = '<strong>81</strong><span>tests in each CI job</span>';
+      if (meta) meta.textContent = 'V1-V10 formal validation · 19 scientific visuals · 2 deterministic runners';
+    }
+
+    const journey = document.querySelector('#project-journey .flow');
+    if (journey) {
+      const node = [...journey.querySelectorAll('.flow-node')].find((item) =>
+        item.querySelector('span')?.textContent.trim() === 'Research III'
+      );
+      if (node) {
+        node.innerHTML = `
+          <span>Research III</span>
+          <h3>Engineer and falsify the measurement layer</h3>
+          <p>Model the observable channel explicitly, prove when latent inference is identifiable, propagate calibration and finite-sample uncertainty, stress dependence and transport, and refuse a precise estimate when the data cannot support it.</p>
+          <p><strong>Current record:</strong> V1-V10 formal validation, deterministic simulations, 10 generated result figures, CSV/JSON outputs, theorem tests, and CI across Python 3.10, 3.11, and 3.12.</p>
+          <p><a href="measurement-science.html">Research III engineering record →</a></p>`;
+      }
+    }
+
+    const section = document.getElementById('research-iii-overview');
+    if (section) {
+      section.innerHTML = `
+        <div class="section-head">
+          <p class="eyebrow">Research III · Measurement engineering and formal validation</p>
+          <h2>When does an observable channel support a latent claim, how unstable is the inverse, and when must the system abstain?</h2>
+          <p>Research III is now an executable measurement-science program rather than only an architecture. It starts from a declared latent target and an observable evidence channel, then tests identification, finite-sample uncertainty, calibration transport, multimodal dependence, structural falsification, missing data, numerical conditioning, heterogeneous sites, and resolution-based abstention.</p>
+        </div>
+        <div class="figure-card">
+          <a href="${MEASUREMENT_REPO}/blob/${MEASUREMENT_PIN}/docs/figures/validation_program_map.svg" aria-label="Open the Research III validation program map">
+            <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/${MEASUREMENT_PIN}/docs/figures/validation_program_map.svg" alt="Research III formal measurement validation program from declared target and calibrated evidence through falsification and claim control" />
+          </a>
+          <div>
+            <p class="eyebrow">Formal validation V1-V10</p>
+            <h3>Equation → identification → uncertainty → stress test → reproducible result</h3>
+            <p>The core binary channel uses <code>q = (1 - beta) + (alpha + beta - 1) pi</code>. The research does not stop at algebraic inversion. Each stage asks whether the inverse remains scientifically defensible once ideal assumptions are weakened.</p>
+            <p><a href="${MEASUREMENT_REPO}/blob/${MEASUREMENT_PIN}/VALIDATION.md">Open the complete V1-V10 validation program →</a></p>
+          </div>
+        </div>
+        <div class="frontier-summary-grid">
+          <article class="frontier-summary-card"><h3>V1-V3 · Identification and transport</h3><p>Exact calibrated inversion, finite-sample outer identification, and an analytic calibration-shift bias equation establish what can be recovered and when transport fails.</p></article>
+          <article class="frontier-summary-card"><h3>V4-V5 · Dependence and falsification</h3><p>Correlated-channel counterexamples expose false multimodal confidence, while permutation testing measures structural-alignment type-I error and power.</p></article>
+          <article class="frontier-summary-card"><h3>V6-V8 · Calibration, missingness, conditioning</h3><p>Finite reference-sample uncertainty, sharp arbitrary-missingness bounds, and exact inverse sensitivities quantify how uncertainty and instability propagate.</p></article>
+          <article class="frontier-summary-card"><h3>V9-V10 · Heterogeneous sites and abstention</h3><p>A constructive pooled-site non-identifiability result is paired with an explicit engineering rule that withholds a claim when interval resolution is insufficient.</p></article>
+          <article class="frontier-summary-card"><h3>81 tests · 3 Python versions</h3><p>Repository policy, compilation, pytest, and Ruff pass across Python 3.10, 3.11, and 3.12 for the merged V1-V10 record.</p></article>
+          <article class="frontier-summary-card"><h3>10 result figures · machine-readable outputs</h3><p>Fixed-seed runners generate the validation figures from committed CSV/JSON records rather than hand-entered chart values.</p></article>
+        </div>
+        <div class="result-grid">
+          <article class="result"><span>0.997 → 0.84</span><h3>Dependence stress</h3><p>Naive independence versus the exact posterior in the canonical shared-dependence construction.</p></article>
+          <article class="result"><span>20×</span><h3>Weak-channel amplification</h3><p>Proxy-rate error amplification when the Youden information margin is 0.05.</p></article>
+          <article class="result"><span>0.375–0.5625</span><h3>Site non-identifiability</h3><p>Average latent prevalence compatible with the same pooled proxy rate 0.45 in the canonical two-site construction.</p></article>
+          <article class="result"><span>44.4%</span><h3>Resolution-qualified release</h3><p>Canonical V10 release rate at deployment n=1000 under maximum interval width 0.28.</p></article>
+        </div>
+        <div class="boundary"><p><strong>Scientific boundary:</strong> V1-V10 provides mathematical proofs, deterministic simulations, stress tests, code, and reproducible engineering validation for the measurement machinery. It does not yet provide human empirical calibration showing that a neural, behavioral, physiological, perturbational, or artificial-system channel measures consciousness itself.</p></div>
+        <p><a href="measurement-science.html">Full Research III website guide</a> · <a href="${MEASUREMENT_REPO}/blob/${MEASUREMENT_PIN}/docs/validation-atlas.md">Validation atlas</a> · <a href="${MEASUREMENT_REPO}/blob/${MEASUREMENT_PIN}/results/README.md">CSV/JSON results</a> · <a href="${MEASUREMENT_REPO}/tree/${MEASUREMENT_PIN}/tests">Test suite</a></p>`;
+    }
+
+    const readerCard = [...document.querySelectorAll('#reader-paths .card')].find((card) =>
+      card.querySelector('h3')?.textContent.trim() === 'Follow Research III'
+    );
+    if (readerCard) {
+      const paragraph = readerCard.querySelector('h3 + p');
+      if (paragraph) {
+        paragraph.textContent = 'Inspect calibrated inverse models, identifiability proofs, finite-sample uncertainty, dependence and transport stress, missingness, conditioning, heterogeneous-site bounds, abstention, simulations, figures, and tests.';
+      }
+    }
+
+    const sharedBoundary = document.getElementById('shared-boundary');
+    if (sharedBoundary) {
+      const paragraphs = sharedBoundary.querySelectorAll('p');
+      if (paragraphs[1]) {
+        paragraphs[1].innerHTML = 'The repository does <strong>not</strong> claim that consciousness has already been derived from physics. Research I does not turn a recovered physical subsystem into a conscious subject. Research II does not turn conditional model separation into proof of consciousness or nonphysicality. Research III does not turn successful analytic and synthetic validation of a measurement model into empirical proof that consciousness itself has been measured.';
+      }
+    }
+
+    const record = [...document.querySelectorAll('.result')].find((item) =>
+      item.querySelector('h3')?.textContent.trim() === 'Research III record'
+    );
+    if (record) {
+      const paragraph = record.querySelector('p');
+      if (paragraph) {
+        paragraph.textContent = 'Measurement engineering with V1-V10 formal validation, identifiability and robustness mathematics, deterministic simulations, 19 scientific visuals, machine-readable results, reproducible runners, and 81 CI-tested checks per Python job.';
+      }
+    }
+  }
+
   function loadThreeProgramEvidence() {
     const page = currentFile();
     if (page !== 'visual-atlas.html' && page !== 'sources.html') return;
@@ -242,6 +336,7 @@
 
   function initialize() {
     renderScientificOrientation();
+    enhanceHomepageResearchIII();
     loadThreeProgramEvidence();
     loadSourceSectionVisuals();
     loadAtlasArchitectureRefresh();
