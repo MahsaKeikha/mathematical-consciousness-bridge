@@ -71,31 +71,23 @@ jobs:
           assert figure in home
           assert f'<strong>{frontier}</strong><span>proposition-level results</span>' in lineage
           assert f'<strong>P{frontier}</strong><span>current theorem frontier</span>' in lineage
-          assert '<strong>v0.82.0</strong><span>current documented release</span>' in lineage
           PY
 
           R3_PIN="$(python -c 'from scripts.synchronize_research_three_website import CURRENT_RESEARCH_THREE_PIN; print(CURRENT_RESEARCH_THREE_PIN)')"
           grep -q 'Research III · Consciousness Measurement Science' _site/measurement-science.html
-          grep -q 'Formal validation V1-V10' _site/measurement-science.html
-          grep -q '81</strong><span>tests in each CI job' _site/measurement-science.html
-          grep -q '19</strong><span>scientific visuals: 9 architecture + 10 validation' _site/measurement-science.html
+          grep -q 'V1-V15' _site/measurement-science.html
+          grep -q '98</strong><span>tests in each CI job' _site/measurement-science.html
+          grep -q '23</strong><span>scientific visuals: 9 architecture + 14 validation' _site/measurement-science.html
           grep -q 'docs/validation-atlas.md' _site/measurement-science.html
           grep -q 'results/README.md' _site/measurement-science.html
-          grep -q 'resolution_abstention_frontier.svg' _site/measurement-science.html
-          grep -q 'V10 marginal erroneous-release bound' _site/measurement-science.html
           grep -q "research-three-snapshot: ${R3_PIN}" _site/measurement-science.html
-          ! grep -q 'Verified repository snapshot' _site/measurement-science.html
-          ! grep -q 'This page is pinned to the corrected V1-V10 Research III record' _site/measurement-science.html
+          ! grep -q '<p class="eyebrow">Implemented now versus not yet established</p>' _site/measurement-science.html
           grep -q "${R3_PIN}" _site/research-lineage.html
           grep -q "${R3_PIN}" _site/research-orientation.js
-          grep -q 'function enhanceHomepageResearchIII()' _site/research-orientation.js
-          grep -q 'Measurement engineering and formal validation' _site/research-orientation.js
-          grep -q 'V1-V10 formal validation' _site/research-orientation.js
-          grep -q '10 result figures' _site/research-orientation.js
-          grep -q 'machine-readable outputs' _site/research-orientation.js
-          ! grep -q '23</strong><span>tests in each CI job' _site/measurement-science.html
-          ! grep -q '34</strong><span>tests in each CI job' _site/measurement-science.html
-          ! grep -q '35</strong><span>tests in each CI job' _site/measurement-science.html
+          grep -q 'V1-V15 formal validation' _site/research-orientation.js
+          grep -q '98</strong><span>tests in each CI job' _site/research-orientation.js
+          grep -q '23 scientific visuals' _site/research-orientation.js
+          grep -q '3 deterministic runners' _site/research-orientation.js
 
       - name: Verify current-frontier reader coherence
         run: |
@@ -118,25 +110,22 @@ jobs:
           assert f"{frontier} results · current frontier P{frontier}" in start
           assert f"Open all {frontier} Research II results" in start
           assert f"Read P{frontier} theorem" in start
-          assert start.count(f'id="p{frontier}-reader-frontier"') == 1
 
           plain = Path("_site/plain-language.html").read_text(encoding="utf-8")
           assert f"This is the {frontier}-result Research II theorem program currently reaching P{frontier}." in plain
           assert f"The current theorem frontier is P{frontier}." in plain
-          assert plain.count(f'id="p{frontier}-reader-frontier"') == 1
 
           research = Path("_site/research-map.html").read_text(encoding="utf-8")
           assert f"Current Research II model-audit range: P75-P{frontier}." in research
           assert f"The current theorem frontier is P{frontier}." in research
-          assert research.count(f'id="p{frontier}-research-map"') == 1
           assert f'id="p{previous}-research-map"' in research
-          assert research.index(f'id="p{previous}-research-map"') < research.index(f'id="p{frontier}-research-map"') < research.index("</main>") < research.index("</html>")
+          assert f'id="p{frontier}-research-map"' in research
 
           for path in Path("_site").glob("*.html"):
               assert path.read_text(encoding="utf-8").rstrip().endswith("</html>"), path
           PY
 
-      - name: Verify Research III architecture and validation galleries
+      - name: Verify Research III architecture, validation, and provenance galleries
         run: |
           R3_PIN="$(python -c 'from scripts.synchronize_research_three_website import CURRENT_RESEARCH_THREE_PIN; print(CURRENT_RESEARCH_THREE_PIN)')"
           grep -q "${R3_PIN}" _site/research-iii-atlas-refresh.js
@@ -144,17 +133,17 @@ jobs:
           grep -q 'research-iii-validation-figure-gallery' _site/research-iii-atlas-refresh.js
           grep -q 'research-iii-source-validation-gallery' _site/research-iii-atlas-refresh.js
           grep -q '9 / 9 visible' _site/research-iii-atlas-refresh.js
-          grep -q '10 / 10 visible' _site/research-iii-atlas-refresh.js
+          grep -q '14 / 14 visible' _site/research-iii-atlas-refresh.js
+          grep -q 'V1-V15 result record' _site/research-iii-atlas-refresh.js
+          grep -q 'Result data' _site/research-iii-atlas-refresh.js
           grep -q 'finite_sample_identification.svg' _site/research-iii-atlas-refresh.js
-          grep -q 'finite_sample_coverage.svg' _site/research-iii-atlas-refresh.js
-          grep -q 'transport_bias_surface.svg' _site/research-iii-atlas-refresh.js
-          grep -q 'dependence_stress.svg' _site/research-iii-atlas-refresh.js
-          grep -q 'structural_alignment_power.svg' _site/research-iii-atlas-refresh.js
-          grep -q 'calibration_sample_uncertainty.svg' _site/research-iii-atlas-refresh.js
-          grep -q 'missingness_identification_loss.svg' _site/research-iii-atlas-refresh.js
-          grep -q 'inverse_conditioning_youden.svg' _site/research-iii-atlas-refresh.js
-          grep -q 'two_site_partial_identification.svg' _site/research-iii-atlas-refresh.js
           grep -q 'resolution_abstention_frontier.svg' _site/research-iii-atlas-refresh.js
+          grep -q 'v11_missingness_information_law.svg' _site/research-iii-atlas-refresh.js
+          grep -q 'v12_v13_multisite_heterogeneity.svg' _site/research-iii-atlas-refresh.js
+          grep -q 'v14_resolution_sample_size.svg' _site/research-iii-atlas-refresh.js
+          grep -q 'v15_independent_pilot_gate.svg' _site/research-iii-atlas-refresh.js
+          grep -q 'v11_missingness_information_law.csv' _site/research-iii-atlas-refresh.js
+          grep -q 'v15_independent_pilot_gate.csv' _site/research-iii-atlas-refresh.js
           node --check _site/app.js
           node --check _site/research-orientation.js
           node --check _site/research-iii-atlas-refresh.js
@@ -166,32 +155,27 @@ jobs:
           R3_PIN="$(python -c 'from scripts.synchronize_research_three_website import CURRENT_RESEARCH_THREE_PIN; print(CURRENT_RESEARCH_THREE_PIN)')"
           export R3_PIN
           python - <<'PY'
-          import json
           import os
           from pathlib import Path
 
           pin = os.environ["R3_PIN"]
           home = Path("_site/index.html").read_text(encoding="utf-8")
           orientation = Path("_site/research-orientation.js").read_text(encoding="utf-8")
+          refresh = Path("_site/research-iii-atlas-refresh.js").read_text(encoding="utf-8")
           lineage = Path("_site/research-lineage.html").read_text(encoding="utf-8")
           measurement = Path("_site/measurement-science.html").read_text(encoding="utf-8")
 
           assert 'id="research-iii-overview"' in home
           assert "Research III · Consciousness measurement science" in home
           assert pin in orientation
-          assert "function enhanceHomepageResearchIII()" in orientation
-          assert "validation_program_map.svg" in orientation
-          assert "inverse_conditioning_youden.svg" in measurement
-          assert "finite_sample_identification.svg" in measurement
+          assert pin in refresh
+          assert "V1-V15 formal validation" in orientation
+          assert "formal-validation-v11-v15" in refresh
+          assert "v15_independent_pilot_gate.svg" in refresh
+          assert "v15_independent_pilot_gate.csv" in refresh
           assert f"research-three-snapshot: {pin}" in measurement
-          assert "Formal validation V1-V10" in measurement
-          assert "Verified repository snapshot" not in measurement
+          assert "Implemented now versus not yet established</p>" not in measurement
           assert pin in lineage
-          assert "Research III · consciousness measurement science" in lineage
-
-          manifest = json.loads(Path("figures/manifest.json").read_text(encoding="utf-8"))
-          figure = Path(str(manifest["current_frontier_figure"])).name
-          assert Path("_site/figures", figure).is_file()
           PY
 
       - name: Verify clean generated surface

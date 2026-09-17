@@ -6,22 +6,27 @@
 
 .scientific-orientation-head {
   display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(240px, 0.75fr);
-  gap: 28px;
-  align-items: end;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
   margin-bottom: 22px;
   padding: 26px 28px 0;
   border-top: 1px solid var(--line);
 }
 
+.scientific-orientation-head > div {
+  max-width: 1040px;
+}
+
 .scientific-orientation-head h2 {
-  max-width: 760px;
+  max-width: 980px;
   margin: 0;
   font-size: clamp(1.7rem, 3vw, 2.45rem);
   line-height: 1.08;
 }
 
 .scientific-orientation-intro {
+  max-width: 900px;
   margin: 0;
   color: var(--muted);
   font-size: 0.95rem;
@@ -130,8 +135,7 @@
   }
 
   .scientific-orientation-head {
-    grid-template-columns: 1fr;
-    gap: 13px;
+    gap: 9px;
     padding: 22px 4px 0;
   }
 

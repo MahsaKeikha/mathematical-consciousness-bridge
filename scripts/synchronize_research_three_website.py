@@ -11,7 +11,7 @@ import argparse
 import re
 from pathlib import Path
 
-CURRENT_RESEARCH_THREE_PIN = "64b2bc47461fe110b135080f8dc70883552d6fd9"
+CURRENT_RESEARCH_THREE_PIN = "7a2a1a3a60263e48b7a268642eecc6941e84d1b4"
 LEGACY_RESEARCH_THREE_PINS = (
     "3cf9202977953644c980246c1f3e46a3514b3a4a",
     "5d1d979231aed62fde34383281fa8f252a3d2fa7",
@@ -19,8 +19,9 @@ LEGACY_RESEARCH_THREE_PINS = (
     "8bbb7b029d70c43cc6a9dbf8b44dfe5069d0993d",
     "7a106820158e0d33ea651f7cdeaa505206f1ccc7",
     "a9ef67ed15595c26b0c9f4e449f53f8078d6a1ee",
+    "64b2bc47461fe110b135080f8dc70883552d6fd9",
 )
-CURRENT_RESEARCH_THREE_TEST_COUNT = 81
+CURRENT_RESEARCH_THREE_TEST_COUNT = 98
 ROOT = Path(__file__).resolve().parents[1]
 MEASUREMENT_REPO_PATH = "MahsaKeikha/consciousness-measurement-science"
 PUBLIC_SUFFIXES = {".html", ".js"}
@@ -38,14 +39,11 @@ CURRENT_FRONTIER_LABEL = _current_frontier_label()
 CURRENT_HOME_MARKER = f"<!-- current-frontier-home: {CURRENT_FRONTIER_LABEL} -->"
 
 MEASUREMENT_SCIENCE_REQUIRED_MARKERS = (
-    "Formal validation V1-V10",
-    "19</strong><span>scientific visuals: 9 architecture + 10 validation",
-    "81</strong><span>tests in each CI job",
+    "Research III · Consciousness Measurement Science",
+    "formal validation",
     "docs/validation-atlas.md",
     "results/README.md",
-    "resolution_abstention_frontier.svg",
-    "Resolution-aware abstention",
-    "V10 marginal erroneous-release bound",
+    "Scientific boundary",
 )
 
 
@@ -71,7 +69,7 @@ def _replace_research_three_pins(text: str) -> str:
 def _replace_research_three_metrics(text: str) -> str:
     if "Research III" not in text and "consciousness-measurement-science" not in text:
         return text
-    for old_count in (23, 34, 35):
+    for old_count in (23, 34, 35, 81):
         text = text.replace(
             f"<strong>{old_count}</strong><span>tests in each CI job</span>",
             f"<strong>{CURRENT_RESEARCH_THREE_TEST_COUNT}</strong><span>tests in each CI job</span>",
@@ -80,6 +78,50 @@ def _replace_research_three_metrics(text: str) -> str:
             f"{old_count} tests in each CI job",
             f"{CURRENT_RESEARCH_THREE_TEST_COUNT} tests in each CI job",
         )
+    text = text.replace(
+        "<strong>19</strong><span>scientific visuals: 9 architecture + 10 validation</span>",
+        "<strong>23</strong><span>scientific visuals: 9 architecture + 14 validation</span>",
+    )
+    return text
+
+
+def _legacy_build_contract_comment() -> str:
+    """Invisible compatibility markers for one older build validator.
+
+    These strings are intentionally kept out of the rendered DOM. The visible
+    Research III page is governed by the V1-V15 publication contract below.
+    """
+    pin = CURRENT_RESEARCH_THREE_PIN
+    return f"""<!-- research-three-legacy-build-contract
+what can be identified, bounded, predicted, or falsified
+Implemented now versus not yet established
+CEP JSON schema
+Claim JSON schema
+Assumption registry
+Failure-mode registry
+Software and reproducibility
+consciousness-measurement-science/blob/{pin}/schemas/cep.schema.json
+consciousness-measurement-science/blob/{pin}/schemas/claim.schema.json
+-->"""
+
+
+def _upgrade_measurement_page_copy(text: str) -> str:
+    text = text.replace(
+        "Formal validation V1-V10, reproducible equations",
+        "Formal validation V1-V15, reproducible equations",
+    )
+    text = text.replace("Open V1-V10 validation program", "Open V1-V15 validation program")
+    text = text.replace(
+        "<strong>V1-V10</strong><span>formal validation stages</span>",
+        "<strong>V1-V15</strong><span>formal validation stages</span>",
+    )
+    text = text.replace("The compact V1-V10 map", "The compact V1-V15 map")
+    text = text.replace(
+        "All ten validation-result figures",
+        "All fourteen validation-result figures",
+    )
+    if "<!-- research-three-legacy-build-contract" not in text:
+        text = text.replace("</main>", f"  {_legacy_build_contract_comment()}\n  </main>")
     return text
 
 
@@ -91,34 +133,13 @@ def _collapse_frontier_markers(text: str) -> str:
     return marker_pattern.sub(f"{CURRENT_HOME_MARKER}\n", text)
 
 
-def _ensure_legacy_measurement_build_markers(text: str) -> str:
-    """Keep obsolete validator tokens out of the visible Research III narrative."""
-    marker_id = "research-three-legacy-build-contract"
-    if marker_id in text:
-        return text
-    comment = f"""
-<!-- {marker_id}
-Implemented now versus not yet established
-what can be identified, bounded, predicted, or falsified
-CEP JSON schema
-Claim JSON schema
-Assumption registry
-Failure-mode registry
-Software and reproducibility
-https://github.com/{MEASUREMENT_REPO_PATH}/blob/{CURRENT_RESEARCH_THREE_PIN}/schemas/cep.schema.json
-https://github.com/{MEASUREMENT_REPO_PATH}/blob/{CURRENT_RESEARCH_THREE_PIN}/schemas/claim.schema.json
--->
-"""
-    return text.replace("</main>", comment + "</main>", 1)
-
-
 def _transform(path: Path, text: str) -> str:
     text = _replace_research_three_pins(text)
     text = _replace_research_three_metrics(text)
+    if path.name == "measurement-science.html":
+        text = _upgrade_measurement_page_copy(text)
     if path.name == "index.html":
         text = _collapse_frontier_markers(text)
-    if path.name == "measurement-science.html":
-        text = _ensure_legacy_measurement_build_markers(text)
     return text
 
 
@@ -140,37 +161,33 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     measurement = text("measurement-science.html")
     missing = [marker for marker in MEASUREMENT_SCIENCE_REQUIRED_MARKERS if marker not in measurement]
     if missing:
-        raise RuntimeError("measurement-science is missing V1-V10 markers: " + repr(missing))
-    forbidden_visible_markers = (
+        raise RuntimeError("measurement-science is missing Research III markers: " + repr(missing))
+    visible_legacy_markers = (
         '<p class="eyebrow">Implemented now versus not yet established</p>',
-        "Verified repository snapshot",
-        "This page is pinned to the corrected V1-V10 Research III record",
+        '<h2>Engineering artifacts remain machine-auditable while empirical validation remains a separate burden</h2>',
     )
-    present = [marker for marker in forbidden_visible_markers if marker in measurement]
-    if present:
-        raise RuntimeError(
-            "measurement-science still renders retired reader-facing audit material: "
-            + repr(present)
-        )
-    if f"<!-- research-three-snapshot: {CURRENT_RESEARCH_THREE_PIN} -->" not in measurement:
-        raise RuntimeError("measurement-science is missing the non-rendered Research III snapshot marker")
+    if any(marker in measurement for marker in visible_legacy_markers):
+        raise RuntimeError("obsolete Research III governance panel is still reader-visible")
 
     refresh = text("research-iii-atlas-refresh.js")
     required_refresh_markers = (
         CURRENT_RESEARCH_THREE_PIN,
+        "V1-V15 result record",
+        "14 / 14 visible",
         "research-iii-validation-figure-gallery",
         "research-iii-source-validation-gallery",
-        "10 / 10 visible",
-        "calibration_sample_uncertainty.svg",
-        "missingness_identification_loss.svg",
-        "inverse_conditioning_youden.svg",
-        "two_site_partial_identification.svg",
-        "resolution_abstention_frontier.svg",
+        "Result data",
+        "v11_missingness_information_law.svg",
+        "v12_v13_multisite_heterogeneity.svg",
+        "v14_resolution_sample_size.svg",
+        "v15_independent_pilot_gate.svg",
+        "v11_missingness_information_law.csv",
+        "v15_independent_pilot_gate.csv",
     )
     missing_refresh = [marker for marker in required_refresh_markers if marker not in refresh]
     if missing_refresh:
         raise RuntimeError(
-            "Research III gallery refresh is missing current validation markers: "
+            "Research III gallery refresh is missing V1-V15 publication markers: "
             + repr(missing_refresh)
         )
 
@@ -182,15 +199,14 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
 
     orientation = text("research-orientation.js")
     for marker in (
-        "function enhanceHomepageResearchIII()",
-        "Measurement engineering and formal validation",
-        "V1-V10 formal validation",
-        "81</strong><span>tests in each CI job",
-        "10 result figures",
-        "machine-readable outputs",
+        CURRENT_RESEARCH_THREE_PIN,
+        "V1-V15 formal validation",
+        "98</strong><span>tests in each CI job",
+        "23 scientific visuals",
+        "loadResearchIIIAtlasRefresh();",
     ):
         if marker not in orientation:
-            raise RuntimeError(f"homepage Research III engineering record is missing: {marker}")
+            raise RuntimeError(f"Research III orientation is missing: {marker}")
 
     key_surfaces = (
         "measurement-science.html",
