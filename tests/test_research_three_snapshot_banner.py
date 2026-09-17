@@ -8,15 +8,16 @@ def _read(path: str) -> str:
     return (ROOT / path).read_text(encoding="utf-8")
 
 
-def test_research_three_snapshot_is_a_visible_validation_record() -> None:
+def test_research_three_snapshot_is_audit_metadata_not_a_reader_card() -> None:
     page = _read("website/measurement-science.html")
 
-    assert "Verified repository snapshot" in page
-    assert "corrected V10 abstention theorem" in page
+    assert "Verified repository snapshot" not in page
+    assert "This page is pinned to the corrected V1-V10 Research III record" not in page
+    assert f"<!-- research-three-snapshot: {PIN} -->" in page
+    assert f"/commit/{PIN}" in page
     assert "Formal validation V1-V10" in page
     assert "81</strong><span>tests in each CI job" in page
     assert "19</strong><span>scientific visuals: 9 architecture + 10 validation" in page
-    assert PIN in page
 
 
 def test_research_three_page_no_longer_uses_governance_as_a_major_section() -> None:
