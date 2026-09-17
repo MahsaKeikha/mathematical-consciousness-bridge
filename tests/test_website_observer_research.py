@@ -25,6 +25,30 @@ def test_observer_research_has_its_own_dedicated_public_page() -> None:
         assert token in page
 
 
+def test_observer_research_restores_two_paper_tegmark_lineage() -> None:
+    page = PAGE.read_text(encoding="utf-8")
+
+    required = (
+        'id="conceptual-lineage"',
+        "Foundational scientific lineage",
+        "Consciousness as a State of Matter",
+        "DOI 10.1016/j.chaos.2015.03.014",
+        "arXiv:1401.1219",
+        "Improved Measures of Integrated Information",
+        "DOI 10.1371/journal.pcbi.1005123",
+        "arXiv:1601.02626",
+        "observer-factorization question",
+        "factorization choices",
+        "foundational intellectual lineage",
+        "candidate subsystem boundary is allowed to change through time",
+        "does not present the moving world-tube framework as a restatement of Tegmark's results",
+        "Nothing here should be read as attributing those later results to Tegmark",
+        "README.md#where-the-idea-came-from",
+    )
+    for token in required:
+        assert token in page
+
+
 def test_observer_research_preserves_physical_to_experiential_boundary() -> None:
     page = PAGE.read_text(encoding="utf-8")
 
@@ -32,6 +56,8 @@ def test_observer_research_preserves_physical_to_experiential_boundary() -> None
         "Recovering a world-tube is a physical subsystem-identification result, not a conclusion about subjective experience",
         "It does <strong>not</strong> prove that the recovered subsystem is conscious",
         "A well-specified physical subsystem is the starting point of the bridge problem, not its answer",
+        "either cited paper establishes that a recovered world-tube is conscious",
+        "physical-to-experiential problem",
         "physical-to-experiential bridge",
     )
     for token in required:
@@ -74,10 +100,21 @@ def test_observer_research_links_forward_without_conflating_programs() -> None:
 def test_observer_research_is_visually_navigable_without_guessing() -> None:
     page = PAGE.read_text(encoding="utf-8")
 
-    for section_id in ("question", "dynamics", "mathematics", "scores", "objective", "evidence", "handoff", "record"):
+    for section_id in (
+        "question",
+        "conceptual-lineage",
+        "dynamics",
+        "mathematics",
+        "scores",
+        "objective",
+        "evidence",
+        "handoff",
+        "record",
+    ):
         assert f'id="{section_id}"' in page
 
     assert "research-jumpbar" in page
+    assert 'href="#conceptual-lineage"' in page
     assert "research-flowline" in page
     assert "research-card-grid" in page
     assert "research-figure-grid" in page
