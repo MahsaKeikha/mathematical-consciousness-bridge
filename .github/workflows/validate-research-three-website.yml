@@ -159,16 +159,33 @@ jobs:
           node --check _site/atlas-architecture-refresh.js
           node --check _site/three-program-evidence.js
 
-      - name: Verify deployment artifact contains pinned figures
+      - name: Verify deployment artifact structure and pinned Research III evidence
         run: |
           R3_PIN="$(python -c 'from scripts.synchronize_research_three_website import CURRENT_RESEARCH_THREE_PIN; print(CURRENT_RESEARCH_THREE_PIN)')"
-          grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/measurement_architecture.svg" _site/index.html
-          grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/measurement_architecture.svg" _site/research-lineage.html
-          grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/validation_program_map.svg" _site/measurement-science.html
-          grep -q "consciousness-measurement-science/${R3_PIN}/docs/figures/inverse_conditioning_youden.svg" _site/measurement-science.html
+          export R3_PIN
           python - <<'PY'
           import json
+          import os
           from pathlib import Path
+
+          pin = os.environ["R3_PIN"]
+          home = Path("_site/index.html").read_text(encoding="utf-8")
+          orientation = Path("_site/research-orientation.js").read_text(encoding="utf-8")
+          lineage = Path("_site/research-lineage.html").read_text(encoding="utf-8")
+          measurement = Path("_site/measurement-science.html").read_text(encoding="utf-8")
+
+          assert 'id="research-iii-overview"' in home
+          assert "Research III · Consciousness measurement science" in home
+          assert pin in orientation
+          assert "function enhanceHomepageResearchIII()" in orientation
+          assert "validation_program_map.svg" in orientation
+          assert "inverse_conditioning_youden.svg" in measurement
+          assert "validation_program_map.svg" in measurement
+          assert f"research-three-snapshot: {pin}" in measurement
+          assert "Formal validation V1-V10" in measurement
+          assert pin in lineage
+          assert "Research III · consciousness measurement science" in lineage
+
           manifest = json.loads(Path("figures/manifest.json").read_text(encoding="utf-8"))
           figure = Path(str(manifest["current_frontier_figure"])).name
           assert Path("_site/figures", figure).is_file()
