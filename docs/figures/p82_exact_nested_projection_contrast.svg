@@ -3,7 +3,7 @@
   <desc id="desc">What this figure shows: P82 strengthens the P81 continuous P75 model-distance certificate by adding exact residual events A minus B from nested cylinder pairs. How to read it: a parent cylinder A and strict child B define a generally non-cylinder residual event. Inside each P75 latent branch, conditional independence factorizes the residual probability as P_s(A) times one minus P_s(D), where D contains the added child constraints. Parent and added-view factors use disjoint response coordinates, so exact box endpoints are simultaneously attainable; affine prevalence mixing then gives the exact residual interval. The residual mismatch divided by its support size is a valid full-law L-infinity lower bound. P82 audits 256 genuinely new nested contrasts and takes the maximum with P81. A strict exact-rational witness gives P80 equal to zero, P81 equal to one sixteenth, and P82 equal to one twelfth. Scientific status: conditional exact-rational computational-certification theorem. It does not identify a latent variable with consciousness, does not validate non-rejected models, and the physical-to-experiential bridge remains open.</desc>
 
   <defs>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="9" refY="3" orient="auto" markerUnits="userSpaceOnUse" viewBox="0 0 10 10">
       <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
     </marker>
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">

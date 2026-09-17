@@ -3,7 +3,7 @@
   <desc id="desc">What this figure shows: P83 strengthens P82 by adding 22 exact parity observables on two, three, and four binary views. How to read it: conditional independence inside each P75 latent branch gives an exact Bernoulli parity identity involving the product of one minus twice each response probability. That product is multi-affine, so its extrema on a rational parameter box occur at endpoint vertices. The two branch extrema can be combined exactly and prevalence is affine, yielding an exact latent-mixture parity interval. Event-mass mismatch divided by eight gives a full-law L-infinity lower bound. A strict witness fixes the third observed channel to one half in both latent branches; P82 is zero while P83 certifies one sixteenth from the even parity of views three and four. Scientific status: conditional exact-rational computational-certification theorem. It does not identify a latent variable with consciousness, does not validate non-rejected models, and the physical-to-experiential bridge remains open.</desc>
 
   <defs>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="9" refY="3" orient="auto" markerUnits="userSpaceOnUse" viewBox="0 0 10 10">
       <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
     </marker>
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">

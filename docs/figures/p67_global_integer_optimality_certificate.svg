@@ -2,7 +2,7 @@
   <title id="title">P67 global integer optimality certificate</title>
   <desc id="desc">What this figure shows: P67 gives a sufficient common-multiplier certificate that can upgrade one feasible integer allocation to the unrestricted P63 optimum. How to read it: move left to right across the three upper cards. First require a feasible positive-integer allocation that spends the budget exactly. Next form the edgewise multiplier intervals implied by discrete marginal gains. Then test whether all intervals share one positive multiplier. From that common-intersection gate, follow the labeled pass branch to exact global optimality or the labeled fail branch to an explicitly inconclusive result. Main takeaway: a tight budget plus one common multiplier proves global optimality for the declared integer calibration problem; failure of the sufficient certificate does not prove suboptimality. Scientific status: optimization-certificate theorem figure for the declared surrogate. It is not a consciousness theorem, physical-to-experiential bridge theorem, or quantum-completeness claim.</desc>
   <defs>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="9" refY="3" orient="auto" markerUnits="userSpaceOnUse" viewBox="0 0 10 10">
       <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
     </marker>
     <style>

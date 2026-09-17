@@ -2,7 +2,7 @@
   <title id="title">Proposition 51: Heterogeneous finite-window service-rate stopping</title>
   <desc id="desc">What this figure shows: Proved instance-dependent global-round stopping theorem under preparation-specific finite-window service guarantees.. Visible guideposts include: Each preparation gets its own service window and quota, yielding instance-dependent edge stopping times.; Preparation-specific service; (Wᵢ,qᵢ), 1 ≤ qᵢ ≤ Wᵢ; If i stays active for Wᵢ rounds,; it is sampled at least qᵢ times.; Exact finite-time growth. How to read it: follow the diagram in the direction of its arrows and use each box, panel, inequality, or highlighted region only with the meaning printed beside it. Main takeaway: this is the visual companion to Proposition 51; the proposition document supplies the assumptions, proof, and exact scope of every implication. Scientific status: Proposition 51 theorem/certificate visual. It is not independent empirical evidence and does not, by itself, identify a physical or latent variable with consciousness.</desc>
   <defs>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse" viewBox="0 0 10 10">
       <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
     </marker>
     <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">

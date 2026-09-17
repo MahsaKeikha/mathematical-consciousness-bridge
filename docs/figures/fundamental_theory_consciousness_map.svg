@@ -2,7 +2,7 @@
   <title id="title">Fundamental Theory to Consciousness map</title>
   <desc id="desc">What this figure shows: a declared candidate fundamental relational state can be projected into geometry/spacetime, quantum-operational, causal/intervention, and independently formalized experiential structures. How to read it: follow the four solid arrows from the candidate fundamental state to the four declared projections. The geometry, quantum, and causal projections then converge through three separate solid arrows into the complete declared physical map T=(G,Q,C). The experiential projection does not enter T; instead, its dashed independent route joins the final bridge factorization/residual test from the right, while T enters that test from above. Main takeaway: the bridge test compares an independently specified experiential structure against a complete declared physical descriptor rather than silently folding experience into the physical descriptor. Scientific status: research-architecture figure. It formalizes a sufficiency question and an open bridge requirement; it does not assert a fifth spatial dimension, nonphysical substance, simulation ontology, failure of quantum mechanics, or that the physical-to-experiential bridge has been solved.</desc>
   <defs>
-    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="10" refY="4" orient="auto" viewBox="0 0 12 12" markerUnits="userSpaceOnUse">
       <path d="M0 0 L0 8 L10 4 z" fill="#64748b"/>
     </marker>
     <style>

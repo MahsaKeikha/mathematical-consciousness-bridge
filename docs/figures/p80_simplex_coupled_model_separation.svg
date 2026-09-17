@@ -3,7 +3,7 @@
   <desc id="desc">What this figure shows: P80 tightens each P78 parameter-box relaxation by intersecting its exact coordinate intervals with probability normalization. The complete feasibility radius is the maximum of the coordinate-overlap radius r_box and the two normalization-crossing radii r_A and r_C. How to read it: move from the P78 box enclosure to the simplex-coupled set, then read L80(B)=max(r_box,r_A,r_C) as a certified lower bound that is never weaker than L78(B). At the rejection handoff, compare the P80 lower bound with the P79 certified upper sampling radius; rejection requires a strict separation. Main takeaway: simplex coupling strengthens continuous-family separation while preserving the one-sided logic of the P78-P79 certificate chain. Scientific status: Exact-rational computational-certification theorem figure. It does not establish that the P75 latent variable is experiential, and non-rejection remains inconclusive; the physical-to-experiential bridge remains open.</desc>
 
   <defs>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="9" refY="3" orient="auto" markerUnits="userSpaceOnUse" viewBox="0 0 10 10">
       <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
     </marker>
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">

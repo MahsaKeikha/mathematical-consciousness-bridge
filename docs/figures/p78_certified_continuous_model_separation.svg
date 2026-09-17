@@ -2,7 +2,7 @@
   <title id="title">P78 certified continuous model separation</title>
   <desc id="desc">What this figure shows: P78 turns the P77 full-law rejection requirement into a certified global optimization procedure for the continuous nine-parameter P75 model. Adaptive boxes cover the full parameter cube, exact multi-affine cell enclosures produce boxwise lower bounds, and the minimum active-box bound gives a global lower bound while any explicit admissible parameter gives an upper bound. How to read it: follow the attached stage arrows from parameter partitioning to exact box certification to the final global distance bracket, then use the P77 handoff only when the certified lower bound strictly exceeds a valid sampling-radius upper bound. Main takeaway: a best fit supplies only the upper side of the distance bracket; a formal rejection requires the certified lower side. Scientific status: Exact-rational continuous-family optimization certificate under the declared P75 model. Non-rejection is not model acceptance, and the physical-to-experiential bridge remains open.</desc>
   <defs>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="9" refY="3" orient="auto" markerUnits="userSpaceOnUse" viewBox="0 0 10 10">
       <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
     </marker>
     <style>
