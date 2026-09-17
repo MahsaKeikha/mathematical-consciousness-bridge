@@ -252,7 +252,7 @@
         <div class="result-grid">
           <article class="result"><span>0.997 → 0.84</span><h3>Dependence stress</h3><p>Naive independence versus the exact posterior in the canonical shared-dependence construction.</p></article>
           <article class="result"><span>20×</span><h3>Weak-channel amplification</h3><p>Proxy-rate error amplification when the Youden information margin is 0.05.</p></article>
-          <article class="result"><span>0.375–0.5625</span><h3>Site non-identifiability</h3><p>Average latent prevalence compatible with the same pooled proxy rate 0.45 in the canonical two-site construction.</p></article>
+          <article class="result"><span>0.375 to 0.5625</span><h3>Site non-identifiability</h3><p>Average latent prevalence compatible with the same pooled proxy rate 0.45 in the canonical two-site construction.</p></article>
           <article class="result"><span>44.4%</span><h3>Resolution-qualified release</h3><p>Canonical V10 release rate at deployment n=1000 under maximum interval width 0.28.</p></article>
         </div>
         <div class="boundary"><p><strong>Scientific boundary:</strong> V1-V10 provides mathematical proofs, deterministic simulations, stress tests, code, and reproducible engineering validation for the measurement machinery. It does not yet provide human empirical calibration showing that a neural, behavioral, physiological, perturbational, or artificial-system channel measures consciousness itself.</p></div>
