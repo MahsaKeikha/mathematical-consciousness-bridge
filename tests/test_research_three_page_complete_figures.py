@@ -1,6 +1,5 @@
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 ORIENTATION = (ROOT / "website" / "research-orientation.js").read_text(encoding="utf-8")
 PAGE_FIGURES = (ROOT / "website" / "research-iii-page-figures.js").read_text(encoding="utf-8")
