@@ -159,7 +159,7 @@ def test_atlas_orientation_points_to_exact_complete_galleries() -> None:
 def test_research_iii_refresh_is_loaded_by_orientation() -> None:
     assert "research-iii-atlas-refresh.js" in ORIENTATION
     assert "loadResearchIIIAtlasRefresh();" in ORIENTATION
-    assert "data-research-iii-atlas-refresh" in ORIENTATION
+    assert "dataset.researchIiiAtlasRefresh" in ORIENTATION
 
 
 def test_new_atlas_surface_keeps_reader_punctuation_contract() -> None:
