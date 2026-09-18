@@ -1,7 +1,7 @@
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PIN = "7a2a1a3a60263e48b7a268642eecc6941e84d1b4"
+PIN = "d93e768d9a7d6054ff208de2a1b9c14e79192bc5"
 
 
 def _read(path: str) -> str:
@@ -22,10 +22,10 @@ def test_research_three_v15_public_layer_uses_verified_snapshot() -> None:
 
     assert PIN in refresh
     assert PIN in orientation
-    assert "V1-V15 result record" in refresh
-    assert "14 / 14 visible" in refresh
-    assert "98</strong><span>tests in each CI job" in orientation
-    assert "23 scientific visuals" in orientation
+    assert "V1-V20 result record" in refresh
+    assert "15 / 15 visible" in refresh
+    assert "109</strong><span>tests in each CI job" in orientation
+    assert "24 scientific visuals" in orientation
 
 
 def test_research_three_page_has_visual_v1_v15_reproducibility_map() -> None:
@@ -55,7 +55,7 @@ def test_research_three_page_has_visual_v1_v15_reproducibility_map() -> None:
     assert "grid-template-columns: repeat(5, minmax(0, 1fr))" in styles
     assert "Two deterministic runners regenerate" not in page
     assert "data-v11-v15-runner" not in refresh
-    assert "What V1-V15 establishes, and what it does not" in page
+    assert "What V1-V20 establishes, and what it does not" in page
     assert "Scientific boundary" in page
 
 
@@ -63,10 +63,10 @@ def test_homepage_orientation_promotes_engineering_validation() -> None:
     script = _read("website/research-orientation.js")
 
     assert "function enhanceHomepageResearchIII()" in script
-    assert "V1-V15 formal validation" in script
-    assert "98</strong><span>tests in each CI job" in script
-    assert "23 scientific visuals" in script
-    assert "3 deterministic runners" in script
+    assert "V1-V20 formal validation" in script
+    assert "109</strong><span>tests in each CI job" in script
+    assert "24 scientific visuals" in script
+    assert "4 reproducible validation runners" in script
     assert "enhanceHomepageResearchIII();" in script
 
 
