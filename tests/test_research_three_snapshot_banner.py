@@ -1,7 +1,7 @@
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PIN = "0072642d93d77fa594634a643e46e73769af0655"
+PIN = "edc1db943d6efe8bdc679dbc5d77ecb7633476ab"
 
 
 def _read(path: str) -> str:
@@ -22,10 +22,10 @@ def test_research_three_v45_public_layer_uses_verified_snapshot() -> None:
 
     assert PIN in refresh
     assert PIN in orientation
-    assert "V1-V45 result record" in refresh
-    assert "20 / 20 visible" in refresh
-    assert "171</strong><span>tests in each CI job" in orientation
-    assert "29 scientific visuals" in orientation
+    assert "V1-V50 result record" in refresh
+    assert "21 / 21 visible" in refresh
+    assert "182</strong><span>tests in each CI job" in orientation
+    assert "30 scientific visuals" in orientation
 
 
 def test_research_three_page_has_visual_v1_v45_reproducibility_map() -> None:
@@ -63,7 +63,7 @@ def test_research_three_page_has_visual_v1_v45_reproducibility_map() -> None:
     assert "grid-template-columns: repeat(5, minmax(0, 1fr))" in styles
     assert "Two deterministic runners regenerate" not in page
     assert "data-v11-v15-runner" not in refresh
-    assert "What V1-V45 establishes, and what it does not" in page
+    assert "What V1-V50 establishes, and what it does not" in page
     assert "v16_v20_electromagnetic_validation.svg" in page
     assert "electromagnetic_validation_summary.json" in page
     assert "electromagnetic-field-program.md" in page
@@ -99,10 +99,10 @@ def test_homepage_orientation_promotes_engineering_validation() -> None:
     script = _read("website/research-orientation.js")
 
     assert "function enhanceHomepageResearchIII()" in script
-    assert "V1-V45 formal validation" in script
-    assert "171</strong><span>tests in each CI job" in script
-    assert "29 scientific visuals" in script
-    assert "9 reproducible validation runners" in script
+    assert "V1-V50 formal validation" in script
+    assert "182</strong><span>tests in each CI job" in script
+    assert "30 scientific visuals" in script
+    assert "10 reproducible validation runners" in script
     assert "enhanceHomepageResearchIII();" in script
 
 
@@ -118,10 +118,10 @@ def test_research_lineage_exposes_current_research_three_v45_record() -> None:
     lineage = _read("website/research-lineage.html")
 
     assert PIN in lineage
-    assert "<strong>V1-V45</strong><span>formal validation stages</span>" in lineage
-    assert "<strong>20</strong><span>code-generated validation figures</span>" in lineage
-    assert "<strong>171</strong><span>tests in each CI job</span>" in lineage
-    assert "<strong>9</strong><span>reproducible validation runners</span>" in lineage
+    assert "<strong>V1-V50</strong><span>formal validation stages</span>" in lineage
+    assert "<strong>21</strong><span>code-generated validation figures</span>" in lineage
+    assert "<strong>182</strong><span>tests in each CI job</span>" in lineage
+    assert "<strong>10</strong><span>reproducible validation runners</span>" in lineage
     assert "v41_v45_electromagnetic_selection_validation.svg" in lineage
     assert "V41-V45 selection-safe inference" in lineage
     assert "electromagnetic-selection-safe-inference.md" in lineage
