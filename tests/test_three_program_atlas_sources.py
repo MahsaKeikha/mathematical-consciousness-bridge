@@ -149,7 +149,7 @@ def test_three_program_cards_are_native_links_and_static_metrics_do_not_mimic_li
     assert atlas.count('<a class="program-index-card"') == 3
     assert sources.count('<a class="program-index-card"') == 3
     assert atlas.count('<a class="program-visual-card"') == 14
-    assert sources.count('<a class="program-source-card"') == 28
+    assert sources.count('<a class="program-source-card"') == 29
     assert ".program-record-metric" in css
     assert ".program-visual-card::after" in css
     assert ".program-source-card::after" in css
