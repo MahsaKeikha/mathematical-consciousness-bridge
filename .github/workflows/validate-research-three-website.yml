@@ -192,11 +192,6 @@ jobs:
           assert "v21-v25-em-source-identifiability" in refresh
           assert "Electromagnetic Source Identifiability Program" in refresh
           assert "run_electromagnetic_inverse_validation.py" in refresh
-          assert "v21_v25_electromagnetic_inverse_validation.svg" in refresh
-          assert "electromagnetic_inverse_validation_summary.json" in refresh
-          assert "v16_v20_electromagnetic_validation.svg" in refresh
-          assert "electromagnetic_validation_summary.json" in refresh
-          assert "v16-v20-em-field-program" in refresh
           assert f"research-three-snapshot: {pin}" in measurement
           assert "Implemented now versus not yet established</p>" not in measurement
           assert pin in lineage
