@@ -29,8 +29,9 @@ def test_static_reader_sources_are_p100_current() -> None:
     assert "through Proposition 100" in research_map
     assert "through Proposition 99" not in research_map
     assert "A 100-result sufficiency and falsification architecture" in plain
-    assert "The 100-result proposition program asks" in plain
-    assert "The current theorem frontier is P100." in plain
+    assert "100 linked results · technical endpoint P100" in plain
+    assert "A note about proposition numbers" in plain
+    assert "The current theorem frontier is P100." not in plain
     assert "A 99-result sufficiency and falsification architecture" not in plain
-    assert "The 99-result proposition program asks" not in plain
+    assert "99 linked results · technical endpoint P99" not in plain
     assert "The current theorem frontier is P99." not in plain
