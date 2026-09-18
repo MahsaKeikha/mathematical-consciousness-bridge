@@ -36,7 +36,7 @@ def test_lineage_exposes_auditable_research_one_entry_points() -> None:
 
 
 
-def test_lineage_exposes_current_research_three_v45_progression() -> None:
+def test_lineage_exposes_current_research_three_v50_progression() -> None:
     page = Path("website/research-lineage.html").read_text(encoding="utf-8")
 
     for token in (
@@ -44,7 +44,7 @@ def test_lineage_exposes_current_research_three_v45_progression() -> None:
         "21</strong><span>code-generated validation figures",
         "182</strong><span>tests in each CI job",
         "10</strong><span>reproducible validation runners",
-        "Seven linked validation layers",
+        "Eight linked validation layers",
         "V1-V15 · identification and validation",
         "V16-V20 · electromagnetic observables",
         "V21-V25 · source identifiability",
@@ -56,6 +56,9 @@ def test_lineage_exposes_current_research_three_v45_progression() -> None:
         "v41_v45_electromagnetic_selection_validation.svg",
         "electromagnetic-finite-sample-inference.md",
         "electromagnetic-selection-safe-inference.md",
+        "V46-V50 · cross-site replication inference and stability",
+        "v46_v50_electromagnetic_replication_validation.svg",
+        "electromagnetic-replication-inference.md",
         "statistically valid source inference is still not direct evidence that a source is consciousness or qualia",
     ):
         assert token in page
