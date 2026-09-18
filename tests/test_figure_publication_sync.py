@@ -139,8 +139,10 @@ def test_plain_language_and_start_here_preserve_three_stage_architecture() -> No
         assert label in source
         assert "physical-to-experiential bridge" in source
 
-    assert 'id="three-stage-progress"' in plain
-    assert "What the whole research program is doing" in plain
+    assert 'id="project-journey"' in plain
+    assert "If you remember only three things" in plain
+    assert "A note about proposition numbers" in plain
+    assert re.search(r'id="p\\d+-reader-frontier"', plain) is None
     assert 'id="program-stages"' in start
 
 
