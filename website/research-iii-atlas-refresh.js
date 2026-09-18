@@ -265,6 +265,12 @@
       .r3-validation-head{display:flex;gap:1rem;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;margin-bottom:1rem}
       .r3-validation-head h3{margin:.3rem 0 .45rem}.r3-validation-head p{margin:0;max-width:900px;line-height:1.6}
       .r3-validation-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:1rem}
+      #research-iii-validation-figure-gallery .r3-validation-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+      #research-iii-validation-figure-gallery .r3-validation-card>a{min-height:190px}
+      #research-iii-validation-figure-gallery .r3-validation-card img{height:210px}
+      #research-iii-validation-figure-gallery .r3-validation-card-body{padding:.9rem}
+      #research-iii-validation-figure-gallery .r3-validation-card-body h4{font-size:1rem}
+      #research-iii-validation-figure-gallery .r3-validation-card-body p{font-size:.86rem}
       .r3-validation-card{display:flex;flex-direction:column;border:1px solid rgba(120,140,170,.24);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.02)}
       .r3-validation-card>a{display:flex;align-items:center;justify-content:center;min-height:320px;padding:.35rem;background:#fff}
       .r3-validation-card img{display:block;width:100%;height:340px;object-fit:contain;background:#fff}
@@ -278,7 +284,9 @@
       .r3-design-law-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:1rem}
       .r3-design-law-grid article{padding:18px;border:1px solid rgba(120,140,170,.25);border-radius:14px;background:rgba(255,255,255,.03)}
       .r3-design-law-grid strong{display:block;margin-bottom:7px;font-size:1.06rem}.r3-design-law-grid p{margin:0;line-height:1.55;font-size:.91rem}
+      @media(max-width:1180px){#research-iii-validation-figure-gallery .r3-validation-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
       @media(max-width:820px){.r3-validation-grid{grid-template-columns:1fr}.r3-validation-card img{height:auto;max-height:460px}.r3-validation-card>a{min-height:260px}}
+      @media(max-width:680px){#research-iii-validation-figure-gallery .r3-validation-grid{grid-template-columns:1fr}#research-iii-validation-figure-gallery .r3-validation-card img{height:auto;max-height:460px}#research-iii-validation-figure-gallery .r3-validation-card>a{min-height:260px}}
     `;
     document.head.appendChild(style);
   }
