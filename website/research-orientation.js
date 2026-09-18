@@ -2,7 +2,7 @@
   const REPO = 'https://github.com/MahsaKeikha/mathematical-consciousness-bridge';
   const OBSERVER_REPO = 'https://github.com/MahsaKeikha/spatiotemporal-observer-math';
   const MEASUREMENT_REPO = 'https://github.com/MahsaKeikha/consciousness-measurement-science';
-  const MEASUREMENT_PIN = '7a2a1a3a60263e48b7a268642eecc6941e84d1b4';
+  const MEASUREMENT_PIN = '792c846f341521cea2fdbc8b699fcd6ea702c225';
 
   const PAGE_CONTRACTS = {
     'index.html': {
@@ -61,7 +61,7 @@
       stage: 'Scientific handoff',
       question: 'Which conclusions pass from Research I to II to III, and which assumptions must be re-tested at each handoff?',
       established:
-        'The lineage separates physical-system identification, bridge sufficiency testing, and measurement science so outputs from one stage are not silently promoted into conclusions belonging to another. Research III now adds V1-V15 formal validation and measurement-design laws.',
+        'The lineage separates physical-system identification, bridge sufficiency testing, and measurement science so outputs from one stage are not silently promoted into conclusions belonging to another. Research III now adds V1-V20 formal validation and measurement-design laws.',
       open:
         'No handoff by itself establishes the physical-to-experiential bridge. The bridge requires an independently justified principle and empirical support beyond stage-to-stage bookkeeping.',
       links: [
@@ -89,7 +89,7 @@
       intro: 'The formal results below concern identifiability, uncertainty, robustness, and measurement design. This orientation separates what is proved or simulated from what still requires empirical calibration.',
       question: 'What can observable channels legitimately identify about a declared experiential target, and exactly where does that inference fail?',
       established:
-        'Research III contains a reproducible V1-V15 formal validation program covering calibrated inversion, partial identification, finite-sample coverage, transport bias, channel dependence, structural null and power testing, calibration uncertainty, arbitrary missingness, inverse conditioning, multisite identification, exact missingness-information loss, resolution sample-size design, and an independent pilot release gate.',
+        'Research III contains a reproducible V1-V20 formal validation program covering calibrated inversion, partial identification, finite-sample coverage, transport bias, channel dependence, structural null and power testing, calibration uncertainty, arbitrary missingness, inverse conditioning, multisite identification, exact missingness-information loss, resolution sample-size design, and an independent pilot release gate.',
       open:
         'These analytic and synthetic results validate measurement machinery under declared models. They do not establish empirical calibration for consciousness in humans or other systems, and principled non-identification remains an allowed result.',
       links: [
@@ -115,14 +115,14 @@
       stage: 'Three-program visual evidence record',
       question: 'What visual evidence, architecture, or computational record belongs to Research I, Research II, and Research III, and what scientific status does each visual carry?',
       established:
-        'The Atlas uses one explicit gallery language across all three programs. Research I exposes its scientific-result figures, Research II renders its canonical theorem and architecture record, and Research III exposes 9 foundational architecture visuals plus 14 code-generated V1-V15 validation-result figures.',
+        'The Atlas uses one explicit gallery language across all three programs. Research I exposes its scientific-result figures, Research II renders its canonical theorem and architecture record, and Research III exposes 9 foundational architecture visuals plus 15 code-generated V1-V20 validation-result figures.',
       open:
         'A figure does not upgrade the status of its underlying evidence. Research I world-tube recovery is not consciousness identification, Research II model rejection is not bridge completion, and Research III analytic or synthetic validation is not human or clinical validation.',
       links: [
         ['#research-i-complete-figure-gallery', 'Open the Research I result figures'],
         ['#research-ii-complete-core-gallery', 'Open the Research II core visuals'],
         ['#research-iii-complete-figure-gallery', 'Open all 9 Research III architecture figures'],
-        ['#research-iii-validation-figure-gallery', 'Open all 14 Research III validation figures'],
+        ['#research-iii-validation-figure-gallery', 'Open all 15 Research III validation figures'],
       ],
     },
     'sources.html': {
@@ -189,8 +189,8 @@
     if (programCard) {
       const metric = programCard.querySelector('.research-program-metric');
       const meta = programCard.querySelector('.research-program-meta');
-      if (metric) metric.innerHTML = '<strong>98</strong><span>tests in each CI job</span>';
-      if (meta) meta.textContent = 'V1-V15 formal validation · 23 scientific visuals · 3 deterministic runners';
+      if (metric) metric.innerHTML = '<strong>109</strong><span>tests in each CI job</span>';
+      if (meta) meta.textContent = 'V1-V20 formal validation · 24 scientific visuals · 4 deterministic runners';
     }
 
     const journey = document.querySelector('#project-journey .flow');
@@ -203,7 +203,7 @@
           <span>Research III</span>
           <h3>Engineer and falsify the measurement layer</h3>
           <p>Model the observable channel explicitly, prove when latent inference is identifiable, propagate calibration and finite-sample uncertainty, stress dependence and transport, quantify multisite and missing-data information loss, and design release rules that separate pilot selection from confirmatory inference.</p>
-          <p><strong>Current record:</strong> V1-V15 formal validation, deterministic simulations, 14 generated result figures, CSV/JSON outputs, theorem tests, and CI across Python 3.10, 3.11, and 3.12.</p>
+          <p><strong>Current record:</strong> V1-V20 formal validation, deterministic simulations, 15 generated result figures, CSV/JSON outputs, theorem tests, and CI across Python 3.10, 3.11, and 3.12.</p>
           <p><a href="measurement-science.html">Research III engineering record →</a></p>`;
       }
     }
