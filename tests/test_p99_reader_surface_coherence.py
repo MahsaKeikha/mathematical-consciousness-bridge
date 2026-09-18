@@ -21,7 +21,7 @@ def test_p99_is_preserved_as_the_immediate_historical_predecessor() -> None:
     assert 'id="p99-frontier"' in atlas
     assert atlas.index('id="p100-frontier"') < atlas.index('id="p99-frontier"')
     assert "Immediate predecessor · P99" in atlas
-    assert 'id="p99-reader-frontier"' in plain
+    assert 'id="p99-reader-frontier"' not in plain
     assert 'id="p99-reader-frontier"' in start
     assert 'id="p99-research-map"' in research
     assert research.index('id="p99-research-map"') < research.index('id="p100-research-map"')
