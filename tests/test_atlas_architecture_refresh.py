@@ -10,7 +10,7 @@ SOURCES_VISUALS = (ROOT / "website" / "source-section-visuals.js").read_text(
 
 
 def test_atlas_refresh_pins_validated_research_iii_sources() -> None:
-    assert "771bca04b92cf775eb4f75fb3b576be6f43e0940" in REFRESH
+    assert "b3f240f2c7c8fa4c94667d2fea4d8f9f07df360c" in REFRESH
     assert "consciousness-measurement-science/main/docs/figures/" in REFRESH
     assert "pinResearchIIIVisualSources" in REFRESH
     assert "currentFile() !== 'visual-atlas.html'" in REFRESH
