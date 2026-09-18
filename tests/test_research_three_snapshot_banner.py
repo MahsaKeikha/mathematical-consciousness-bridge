@@ -28,15 +28,18 @@ def test_research_three_v15_public_layer_uses_verified_snapshot() -> None:
     assert "23 scientific visuals" in orientation
 
 
-def test_research_three_page_has_reader_first_reproducibility_map() -> None:
+def test_research_three_page_has_visual_v1_v15_reproducibility_map() -> None:
     page = _read("website/measurement-science.html")
+    styles = _read("website/styles.css")
     refresh = _read("website/research-iii-atlas-refresh.js")
 
-    assert "Three validation programs connect each scientific question to equations, code, figures, and exact result files" in page
+    assert "Three validation programs move from identifiability to robustness to study design" in page
     for stage in ("V1-V5", "V6-V10", "V11-V15"):
         assert stage in page
-    for label in ("Read derivation", "Run code", "Open results", "See figures"):
-        assert page.count(label) >= 3
+    for label in ("Derivation", "Code", "Results", "Figures"):
+        assert page.count(f">{label}<") >= 3
+    for node in range(1, 16):
+        assert f"<span>V{node}</span>" in page
     for seed in ("20260917", "20260918", "20260919"):
         assert seed in page
     for runner in (
@@ -46,6 +49,10 @@ def test_research_three_page_has_reader_first_reproducibility_map() -> None:
     ):
         assert runner in page
 
+    assert 'class="validation-flow"' in page
+    assert page.count('class="validation-node"') == 15
+    assert ".validation-flow::before" in styles
+    assert "grid-template-columns: repeat(5, minmax(0, 1fr))" in styles
     assert "Two deterministic runners regenerate" not in page
     assert "data-v11-v15-runner" not in refresh
     assert "What V1-V15 establishes, and what it does not" in page
