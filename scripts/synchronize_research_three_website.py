@@ -131,9 +131,9 @@ def _replace_research_three_metrics(text: str) -> str:
         )
 
     text = text.replace("20 result figures", "21 result figures")
-    text = text.replace("21 / 21 visible", "21 / 21 visible")
+    text = text.replace("20 / 20 visible", "21 / 21 visible")
     text = text.replace("All twenty validation-result figures", "All twenty-one validation-result figures")
-    text = text.replace("V1-V50", "V1-V50")
+    text = text.replace("V1-V45", "V1-V50")
 
     for old_runners in (4, 5, 6, 7, 8, 9):
         text = text.replace(
@@ -173,10 +173,10 @@ def _upgrade_measurement_page_copy(text: str) -> str:
     )
     text = text.replace("V1-V30", "V1-V50")
     text = text.replace("V1-V25", "V1-V50")
-    text = text.replace("All sixteen validation-result figures", "All twenty validation-result figures")
+    text = text.replace("All sixteen validation-result figures", "All twenty-one validation-result figures")
     text = text.replace(
         "Formal validation V1-V10, reproducible equations",
-        "Formal validation V1-V45, reproducible equations",
+        "Formal validation V1-V50, reproducible equations",
     )
     text = text.replace("Open V1-V10 validation program", "Open V1-V50 validation program")
     text = text.replace("Open V1-V15 validation program", "Open V1-V50 validation program")
@@ -200,10 +200,10 @@ def _upgrade_measurement_page_copy(text: str) -> str:
     text = text.replace("The compact V1-V20 map", "The compact V1-V50 map")
     text = text.replace(
         "All ten validation-result figures",
-        "All twenty validation-result figures",
+        "All twenty-one validation-result figures",
     )
-    text = text.replace("All fourteen validation-result figures", "All twenty validation-result figures")
-    text = text.replace("All fifteen validation-result figures", "All twenty validation-result figures")
+    text = text.replace("All fourteen validation-result figures", "All twenty-one validation-result figures")
+    text = text.replace("All fifteen validation-result figures", "All twenty-one validation-result figures")
     text = text.replace("V1-V15", "V1-V50")
     text = text.replace("V1-V20", "V1-V50")
     text = text.replace("23 scientific visuals", "30 scientific visuals")
@@ -281,7 +281,7 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     required_refresh_markers = (
         CURRENT_RESEARCH_THREE_PIN,
         "V1-V50 result record",
-        "20 / 20 visible",
+        "21 / 21 visible",
         "research-iii-validation-figure-gallery",
         "research-iii-source-validation-gallery",
         "Result data",
@@ -359,7 +359,7 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     sources = text("sources.html")
     for marker in (
         "V1-V50",
-        "20 result figures",
+        "21 result figures",
         "171 tests",
         "V26-V30 electromagnetic resolution and information program",
         "docs/electromagnetic-resolution-program.md",
@@ -385,7 +385,7 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
         "V41-V45 selection-safe inference",
         "docs/electromagnetic-selection-safe-inference.md",
         "v46_v50_electromagnetic_replication_validation.svg",
-        "V46-V50 replication inference and stability",
+        "V46-V50 · cross-site replication inference and stability",
         "docs/electromagnetic-replication-inference.md",
     ):
         if marker not in lineage:
