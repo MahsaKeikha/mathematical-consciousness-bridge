@@ -10,10 +10,12 @@ from scripts.synchronize_research_three_website import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
-CURRENT_RESEARCH_III_PIN = "771bca04b92cf775eb4f75fb3b576be6f43e0940"
+CURRENT_RESEARCH_III_PIN = "b3f240f2c7c8fa4c94667d2fea4d8f9f07df360c"
 
 KEY_PUBLIC_SURFACES = (
     "measurement-science.html",
+    "visual-atlas.html",
+    "sources.html",
     "index.html",
     "research-lineage.html",
     "source-section-visuals.js",
@@ -23,12 +25,13 @@ KEY_PUBLIC_SURFACES = (
 )
 
 
-def test_synchronizer_declares_exact_v1_v25_pin() -> None:
+def test_synchronizer_declares_exact_v1_v30_pin() -> None:
     assert CURRENT_RESEARCH_THREE_PIN == CURRENT_RESEARCH_III_PIN
     assert "a9ef67ed15595c26b0c9f4e449f53f8078d6a1ee" in LEGACY_RESEARCH_THREE_PINS
     assert "64b2bc47461fe110b135080f8dc70883552d6fd9" in LEGACY_RESEARCH_THREE_PINS
     assert "7a2a1a3a60263e48b7a268642eecc6941e84d1b4" in LEGACY_RESEARCH_THREE_PINS
     assert "d93e768d9a7d6054ff208de2a1b9c14e79192bc5" in LEGACY_RESEARCH_THREE_PINS
+    assert "771bca04b92cf775eb4f75fb3b576be6f43e0940" in LEGACY_RESEARCH_THREE_PINS
 
 
 def test_primary_dynamic_research_three_surfaces_are_authored_on_current_pin() -> None:
