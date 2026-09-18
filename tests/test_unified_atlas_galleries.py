@@ -76,6 +76,8 @@ def test_pages_deployment_enforces_the_unified_gallery_contract() -> None:
         "v12_v13_multisite_heterogeneity.svg",
         "v14_resolution_sample_size.svg",
         "v15_independent_pilot_gate.svg",
+        "v16_v20_electromagnetic_validation.svg",
+        "electromagnetic_validation_summary.json",
         "deployed Research II core gallery contract is not exactly 100 unique figures",
         "deployed canonical figure count is not 158",
         "node --check _site/research-orientation.js",
@@ -131,6 +133,8 @@ def test_research_iii_gallery_exposes_architecture_validation_and_result_provena
     assert "15 / 15 visible" in RESEARCH_III_REFRESH
     assert "V1-V20 result record" in RESEARCH_III_REFRESH
     assert "Result data" in RESEARCH_III_REFRESH
+    assert "Electromagnetic Field Measurement Program" in RESEARCH_III_REFRESH
+    assert "V16-V20 · electromagnetic measurement arm" in RESEARCH_III_REFRESH
     assert CURRENT_RESEARCH_THREE_PIN == "d93e768d9a7d6054ff208de2a1b9c14e79192bc5"
 
     architecture_figures = (
@@ -159,6 +163,7 @@ def test_research_iii_gallery_exposes_architecture_validation_and_result_provena
         "v12_v13_multisite_heterogeneity.svg",
         "v14_resolution_sample_size.svg",
         "v15_independent_pilot_gate.svg",
+        "v16_v20_electromagnetic_validation.svg",
     )
     result_files = (
         "finite_sample_coverage.csv",
@@ -174,6 +179,7 @@ def test_research_iii_gallery_exposes_architecture_validation_and_result_provena
         "v12_v13_multisite_identification.csv",
         "v14_resolution_sample_size.csv",
         "v15_independent_pilot_gate.csv",
+        "electromagnetic_validation_summary.json",
     )
     for figure in architecture_figures + validation_figures:
         assert figure in RESEARCH_III_REFRESH
