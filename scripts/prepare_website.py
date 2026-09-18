@@ -234,6 +234,9 @@ def _validate_research_three(output: Path) -> None:
         f"consciousness-measurement-science/{MEASUREMENT_PIN}/docs/figures/measurement_architecture.svg",
         f"consciousness-measurement-science/blob/{MEASUREMENT_PIN}/schemas/cep.schema.json",
         f"consciousness-measurement-science/blob/{MEASUREMENT_PIN}/schemas/claim.schema.json",
+        f"consciousness-measurement-science/blob/{MEASUREMENT_PIN}/docs/electromagnetic-field-program.md",
+        f"consciousness-measurement-science/{MEASUREMENT_PIN}/docs/figures/v16_v20_electromagnetic_validation.svg",
+        "Claim ceiling today:",
     )
     missing = [token for token in required if token not in measurement]
     if missing:
