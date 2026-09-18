@@ -11,8 +11,9 @@ import argparse
 import re
 from pathlib import Path
 
-CURRENT_RESEARCH_THREE_PIN = "771bca04b92cf775eb4f75fb3b576be6f43e0940"
+CURRENT_RESEARCH_THREE_PIN = "b3f240f2c7c8fa4c94667d2fea4d8f9f07df360c"
 LEGACY_RESEARCH_THREE_PINS = (
+    "771bca04b92cf775eb4f75fb3b576be6f43e0940",
     "d93e768d9a7d6054ff208de2a1b9c14e79192bc5",
     "7a2a1a3a60263e48b7a268642eecc6941e84d1b4",
     "3cf9202977953644c980246c1f3e46a3514b3a4a",
@@ -23,7 +24,7 @@ LEGACY_RESEARCH_THREE_PINS = (
     "a9ef67ed15595c26b0c9f4e449f53f8078d6a1ee",
     "64b2bc47461fe110b135080f8dc70883552d6fd9",
 )
-CURRENT_RESEARCH_THREE_TEST_COUNT = 121
+CURRENT_RESEARCH_THREE_TEST_COUNT = 133
 ROOT = Path(__file__).resolve().parents[1]
 MEASUREMENT_REPO_PATH = "MahsaKeikha/consciousness-measurement-science"
 PUBLIC_SUFFIXES = {".html", ".js"}
@@ -47,8 +48,10 @@ MEASUREMENT_SCIENCE_REQUIRED_MARKERS = (
     "results/README.md",
     "docs/electromagnetic-field-program.md",
     "docs/electromagnetic-source-identifiability.md",
+    "docs/electromagnetic-resolution-program.md",
     "v16_v20_electromagnetic_validation.svg",
     "v21_v25_electromagnetic_inverse_validation.svg",
+    "v26_v30_electromagnetic_resolution_validation.svg",
     "Claim ceiling today:",
     "Scientific boundary",
 )
@@ -76,7 +79,7 @@ def _replace_research_three_pins(text: str) -> str:
 def _replace_research_three_metrics(text: str) -> str:
     if "Research III" not in text and "consciousness-measurement-science" not in text:
         return text
-    for old_count in (23, 34, 35, 81, 98, 109):
+    for old_count in (23, 34, 35, 81, 98, 109, 121):
         text = text.replace(
             f"<strong>{old_count}</strong><span>tests in each CI job</span>",
             f"<strong>{CURRENT_RESEARCH_THREE_TEST_COUNT}</strong><span>tests in each CI job</span>",
@@ -87,19 +90,23 @@ def _replace_research_three_metrics(text: str) -> str:
         )
     text = text.replace(
         "<strong>19</strong><span>scientific visuals: 9 architecture + 10 validation</span>",
-        "<strong>25</strong><span>scientific visuals: 9 architecture + 16 validation</span>",
+        "<strong>26</strong><span>scientific visuals: 9 architecture + 17 validation</span>",
     )
     text = text.replace(
         "<strong>23</strong><span>scientific visuals: 9 architecture + 14 validation</span>",
-        "<strong>25</strong><span>scientific visuals: 9 architecture + 16 validation</span>",
+        "<strong>26</strong><span>scientific visuals: 9 architecture + 17 validation</span>",
     )
     text = text.replace(
         "<strong>24</strong><span>scientific visuals: 9 architecture + 15 validation</span>",
-        "<strong>25</strong><span>scientific visuals: 9 architecture + 16 validation</span>",
+        "<strong>26</strong><span>scientific visuals: 9 architecture + 17 validation</span>",
     )
-    text = text.replace("24 scientific visuals", "25 scientific visuals")
-    text = text.replace("15 validation", "16 validation")
-    text = text.replace("4 reproducible validation runners", "5 reproducible validation runners")
+    text = text.replace(
+        "<strong>25</strong><span>scientific visuals: 9 architecture + 16 validation</span>",
+        "<strong>26</strong><span>scientific visuals: 9 architecture + 17 validation</span>",
+    )
+    text = text.replace("24 scientific visuals", "26 scientific visuals")
+    text = text.replace("15 validation", "17 validation")
+    text = text.replace("4 reproducible validation runners", "6 reproducible validation runners")
     return text
 
 
@@ -107,7 +114,7 @@ def _legacy_build_contract_comment() -> str:
     """Invisible compatibility markers for one older build validator.
 
     These strings are intentionally kept out of the rendered DOM. The visible
-    Research III page is governed by the V1-V25 publication contract below.
+    Research III page is governed by the V1-V30 publication contract below.
     """
     pin = CURRENT_RESEARCH_THREE_PIN
     return f"""<!-- research-three-legacy-build-contract
@@ -126,44 +133,44 @@ consciousness-measurement-science/blob/{pin}/schemas/claim.schema.json
 def _upgrade_measurement_page_copy(text: str) -> str:
     text = text.replace(
         "Formal validation V1-V10, reproducible equations",
-        "Formal validation V1-V25, reproducible equations",
+        "Formal validation V1-V30, reproducible equations",
     )
-    text = text.replace("Open V1-V10 validation program", "Open V1-V25 validation program")
-    text = text.replace("Open V1-V15 validation program", "Open V1-V25 validation program")
-    text = text.replace("Open V1-V16 validation program", "Open V1-V25 validation program")
-    text = text.replace("Open V1-V20 validation program", "Open V1-V25 validation program")
+    text = text.replace("Open V1-V10 validation program", "Open V1-V30 validation program")
+    text = text.replace("Open V1-V15 validation program", "Open V1-V30 validation program")
+    text = text.replace("Open V1-V17 validation program", "Open V1-V30 validation program")
+    text = text.replace("Open V1-V20 validation program", "Open V1-V30 validation program")
     text = text.replace(
         "<strong>V1-V10</strong><span>formal validation stages</span>",
-        "<strong>V1-V25</strong><span>formal validation stages</span>",
+        "<strong>V1-V30</strong><span>formal validation stages</span>",
     )
     text = text.replace(
         "<strong>V1-V15</strong><span>formal validation stages</span>",
-        "<strong>V1-V25</strong><span>formal validation stages</span>",
+        "<strong>V1-V30</strong><span>formal validation stages</span>",
     )
     text = text.replace(
         "<strong>V1-V20</strong><span>formal validation stages</span>",
-        "<strong>V1-V25</strong><span>formal validation stages</span>",
+        "<strong>V1-V30</strong><span>formal validation stages</span>",
     )
-    text = text.replace("The compact V1-V10 map", "The compact V1-V25 map")
-    text = text.replace("The compact V1-V15 map", "The compact V1-V25 map")
-    text = text.replace("The compact V1-V20 map", "The compact V1-V25 map")
+    text = text.replace("The compact V1-V10 map", "The compact V1-V30 map")
+    text = text.replace("The compact V1-V15 map", "The compact V1-V30 map")
+    text = text.replace("The compact V1-V20 map", "The compact V1-V30 map")
     text = text.replace(
         "All ten validation-result figures",
-        "All sixteen validation-result figures",
+        "All seventeen validation-result figures",
     )
-    text = text.replace("All fourteen validation-result figures", "All sixteen validation-result figures")
-    text = text.replace("All fifteen validation-result figures", "All sixteen validation-result figures")
-    text = text.replace("V1-V15", "V1-V25")
-    text = text.replace("V1-V20", "V1-V25")
-    text = text.replace("23 scientific visuals", "25 scientific visuals")
-    text = text.replace("24 scientific visuals", "25 scientific visuals")
-    text = text.replace("14 validation", "16 validation")
-    text = text.replace("15 validation", "16 validation")
-    text = text.replace("98-test suite", "121-test suite")
-    text = text.replace("109-test suite", "121-test suite")
-    text = text.replace("98 tests in each CI job", "121 tests in each CI job")
-    text = text.replace("109 tests in each CI job", "121 tests in each CI job")
-    text = text.replace("4 reproducible validation runners", "5 reproducible validation runners")
+    text = text.replace("All fourteen validation-result figures", "All seventeen validation-result figures")
+    text = text.replace("All fifteen validation-result figures", "All seventeen validation-result figures")
+    text = text.replace("V1-V15", "V1-V30")
+    text = text.replace("V1-V20", "V1-V30")
+    text = text.replace("23 scientific visuals", "26 scientific visuals")
+    text = text.replace("24 scientific visuals", "26 scientific visuals")
+    text = text.replace("14 validation", "17 validation")
+    text = text.replace("15 validation", "17 validation")
+    text = text.replace("98-test suite", "133-test suite")
+    text = text.replace("109-test suite", "133-test suite")
+    text = text.replace("98 tests in each CI job", "133 tests in each CI job")
+    text = text.replace("109 tests in each CI job", "133 tests in each CI job")
+    text = text.replace("4 reproducible validation runners", "6 reproducible validation runners")
     if "<!-- research-three-legacy-build-contract" not in text:
         text = text.replace("</main>", f"  {_legacy_build_contract_comment()}\n  </main>")
     return text
@@ -216,7 +223,7 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     refresh = text("research-iii-atlas-refresh.js")
     required_refresh_markers = (
         CURRENT_RESEARCH_THREE_PIN,
-        "V1-V25 result record",
+        "V1-V30 result record",
         "16 / 16 visible",
         "research-iii-validation-figure-gallery",
         "research-iii-source-validation-gallery",
@@ -232,12 +239,15 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
         "Electromagnetic Field Measurement Program",
         "v21_v25_electromagnetic_inverse_validation.svg",
         "electromagnetic_inverse_validation_summary.json",
+        "v26_v30_electromagnetic_resolution_validation.svg",
+        "electromagnetic_resolution_validation_summary.json",
+        "Electromagnetic Resolution and Information Program",
         "Electromagnetic Source Identifiability Program",
     )
     missing_refresh = [marker for marker in required_refresh_markers if marker not in refresh]
     if missing_refresh:
         raise RuntimeError(
-            "Research III gallery refresh is missing V1-V25 publication markers: "
+            "Research III gallery refresh is missing V1-V30 publication markers: "
             + repr(missing_refresh)
         )
 
@@ -250,9 +260,9 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     orientation = text("research-orientation.js")
     for marker in (
         CURRENT_RESEARCH_THREE_PIN,
-        "V1-V25 formal validation",
+        "V1-V30 formal validation",
         "121</strong><span>tests in each CI job",
-        "25 scientific visuals",
+        "26 scientific visuals",
         "loadResearchIIIAtlasRefresh();",
     ):
         if marker not in orientation:
