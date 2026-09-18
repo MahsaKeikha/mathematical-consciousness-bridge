@@ -44,6 +44,9 @@ MEASUREMENT_SCIENCE_REQUIRED_MARKERS = (
     "formal validation",
     "docs/validation-atlas.md",
     "results/README.md",
+    "docs/electromagnetic-field-program.md",
+    "v16_v20_electromagnetic_validation.svg",
+    "Claim ceiling today:",
     "Scientific boundary",
 )
 
