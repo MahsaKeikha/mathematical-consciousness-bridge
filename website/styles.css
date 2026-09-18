@@ -1557,3 +1557,54 @@ img {
   }
 }
 
+/* Reader-first disclosure for the technical Research II archive on Plain Language. */
+#technical-frontier-history details {
+  margin-top: 22px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--paper);
+  box-shadow: 0 10px 28px rgba(20, 26, 36, 0.05);
+}
+
+#technical-frontier-history summary {
+  cursor: pointer;
+  padding: 18px 20px;
+  color: var(--ink);
+  font-size: 0.96rem;
+  line-height: 1.45;
+}
+
+#technical-frontier-history summary::marker {
+  color: var(--accent);
+}
+
+#technical-frontier-history details[open] summary {
+  border-bottom: 1px solid var(--line);
+}
+
+#technical-frontier-history .technical-history {
+  padding: 4px 18px 18px;
+}
+
+#technical-frontier-history .technical-history > section {
+  margin-top: 18px;
+}
+
+#research-i,
+#research-ii,
+#research-iii,
+#three-stage-progress,
+#technical-frontier-history {
+  scroll-margin-top: 96px;
+}
+
+@media (max-width: 680px) {
+  #technical-frontier-history summary {
+    padding: 16px;
+  }
+
+  #technical-frontier-history .technical-history {
+    padding: 2px 10px 12px;
+  }
+}
+
