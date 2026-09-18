@@ -101,13 +101,13 @@ def _replace_research_three_metrics(text: str) -> str:
             "<strong>28</strong><span>scientific visuals: 9 architecture + 19 validation</span>",
         )
 
-    for old_visuals in (19, 23, 24, 25, 26):
+    for old_visuals in (19, 23, 24, 25, 26, 27):
         text = text.replace(f"{old_visuals} scientific visuals", "28 scientific visuals")
 
     for old_validation in (10, 14, 15, 16, 17, 18):
         text = text.replace(
             f"{old_validation} validation-result figures",
-            "18 validation-result figures",
+            "19 validation-result figures",
         )
         text = text.replace(
             f"{old_validation} code-generated",
@@ -186,17 +186,21 @@ def _upgrade_measurement_page_copy(text: str) -> str:
     )
     text = text.replace("All fourteen validation-result figures", "All nineteen validation-result figures")
     text = text.replace("All fifteen validation-result figures", "All nineteen validation-result figures")
-    text = text.replace("V1-V15", "V1-V35")
-    text = text.replace("V1-V20", "V1-V35")
+    text = text.replace("V1-V15", "V1-V40")
+    text = text.replace("V1-V20", "V1-V40")
     text = text.replace("23 scientific visuals", "28 scientific visuals")
     text = text.replace("24 scientific visuals", "28 scientific visuals")
-    text = text.replace("14 validation", "18 validation")
-    text = text.replace("15 validation", "18 validation")
-    text = text.replace("98-test suite", "144-test suite")
-    text = text.replace("109-test suite", "144-test suite")
-    text = text.replace("98 tests in each CI job", "144 tests in each CI job")
-    text = text.replace("109 tests in each CI job", "144 tests in each CI job")
+    text = text.replace("14 validation", "19 validation")
+    text = text.replace("15 validation", "19 validation")
+    text = text.replace("18 validation", "19 validation")
+    text = text.replace("98-test suite", "159-test suite")
+    text = text.replace("109-test suite", "159-test suite")
+    text = text.replace("144-test suite", "159-test suite")
+    text = text.replace("98 tests in each CI job", "159 tests in each CI job")
+    text = text.replace("109 tests in each CI job", "159 tests in each CI job")
+    text = text.replace("144 tests in each CI job", "159 tests in each CI job")
     text = text.replace("4 reproducible validation runners", "8 reproducible validation runners")
+    text = text.replace("7 reproducible validation runners", "8 reproducible validation runners")
 
     # Broad legacy metric substitutions above can touch the phrase "V15 validation".
     # Normalize the V11-V15 accessibility range last so stage semantics stay exact.
@@ -325,9 +329,9 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
 
     sources = text("sources.html")
     for marker in (
-        "V1-V35",
-        "18 result figures",
-        "144 tests",
+        "V1-V40",
+        "19 result figures",
+        "159 tests",
         "V26-V30 electromagnetic resolution and information program",
         "docs/electromagnetic-resolution-program.md",
         "V31-V35 electromagnetic design and spatial specificity program",
