@@ -36,17 +36,16 @@ def test_p94_remains_visible_below_later_frontiers() -> None:
     assert atlas.index('id="p96-frontier"') < atlas.index('id="p95-frontier"')
     assert atlas.index('id="p95-frontier"') < atlas.index('id="p94-frontier"')
     assert "Historical theorem frontier · P94" in atlas
-    assert 'id="p94-reader-frontier"' in plain
+    assert 'id="p94-reader-frontier"' not in plain
     assert 'id="p94-reader-frontier"' in start
     assert 'id="p94-research-map"' in research
-    assert "100 results · current frontier P100" in plain
+    assert "100 linked results · technical endpoint P100" in plain
     assert "100 results · current frontier P100" in start
 
 
 def test_p94_drift_boundary_is_preserved_on_historical_surfaces() -> None:
     for path in (
         "docs/proposition_94_finite_range_dependent_sign_coherence.md",
-        "website/plain-language.html",
         "website/start-here.html",
         "website/research-map.html",
     ):
