@@ -187,6 +187,9 @@ jobs:
           grep -q 'electromagnetic_validation_summary.json' _site/research-iii-atlas-refresh.js
           grep -q 'Electromagnetic Field Measurement Program' _site/research-iii-atlas-refresh.js
           grep -q 'Electromagnetic Source Identifiability Program' _site/research-iii-atlas-refresh.js
+          grep -q 'Multiplicity and Selection-Safe Electromagnetic Inference Program' _site/research-iii-atlas-refresh.js
+          grep -q 'run_electromagnetic_selection_validation.py' _site/research-iii-atlas-refresh.js
+          grep -q 'v41-v45-em-selection-safe-inference' _site/research-iii-atlas-refresh.js
           node --check _site/app.js
           node --check _site/research-orientation.js
           node --check _site/research-iii-atlas-refresh.js
@@ -225,9 +228,26 @@ jobs:
           assert "v21-v25-em-source-identifiability" in refresh
           assert "Electromagnetic Source Identifiability Program" in refresh
           assert "run_electromagnetic_inverse_validation.py" in refresh
+          assert "v41_v45_electromagnetic_selection_validation.svg" in refresh
+          assert "electromagnetic_selection_validation_summary.json" in refresh
+          assert "electromagnetic-selection-safe-inference.md" in refresh
+          assert "Multiplicity and Selection-Safe Electromagnetic Inference Program" in refresh
+          assert "run_electromagnetic_selection_validation.py" in refresh
+          assert "v41-v45-em-selection-safe-inference" in refresh
+          assert "v41-v45-electromagnetic-selection-safe-inference" in measurement
+          assert "v41_v45_electromagnetic_selection_validation.svg" in measurement
+          assert "electromagnetic_selection_validation_summary.json" in measurement
+          assert "run_electromagnetic_selection_validation.py" in measurement
           assert f"research-three-snapshot: {pin}" in measurement
           assert "Implemented now versus not yet established</p>" not in measurement
           assert pin in lineage
+          assert "<strong>V1-V45</strong><span>formal validation stages</span>" in lineage
+          assert "<strong>20</strong><span>code-generated validation figures</span>" in lineage
+          assert "<strong>171</strong><span>tests in each CI job</span>" in lineage
+          assert "<strong>9</strong><span>reproducible validation runners</span>" in lineage
+          assert "v41_v45_electromagnetic_selection_validation.svg" in lineage
+          assert "V41-V45 selection-safe inference" in lineage
+          assert "electromagnetic-selection-safe-inference.md" in lineage
           PY
 
       - name: Verify clean generated surface
