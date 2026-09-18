@@ -70,3 +70,27 @@ def test_lineage_keeps_research_three_empirical_boundary_visible() -> None:
     assert "Research III does not assume that consciousness is nonphysical" in page
     assert "statistical significance identifies an experiential target" in page
     assert "one scalar can serve as a universal consciousness meter" in page
+
+
+
+def test_lineage_keeps_each_research_program_in_its_own_stage() -> None:
+    page = Path("website/research-lineage.html").read_text(encoding="utf-8")
+
+    research_i = page.index("Research I · physical subsystem identification")
+    research_ii = page.index("Research II · bridge test architecture")
+    research_iii = page.index('id="research-iii"')
+    v50 = page.index("v46_v50_electromagnetic_replication_validation.svg")
+
+    assert research_i < research_ii < research_iii < v50
+    assert research_i < page.index("Research I in four steps") < research_ii
+    assert research_ii < page.index("Research II in five steps") < research_iii
+    assert "The current Research III frontier makes search and selection part of the scientific claim" not in page
+
+
+def test_lineage_has_one_clear_handoff_per_program() -> None:
+    page = Path("website/research-lineage.html").read_text(encoding="utf-8")
+
+    assert page.count('aria-label="Transition from Research I to Research II"') == 1
+    assert page.count('aria-label="Transition from Research II to Research III"') == 1
+    assert "Current Research II frontier · P100" not in page
+    assert "The three repositories form a research progression, not a proof chain to consciousness" in page
