@@ -544,9 +544,11 @@ def _check_reader_surfaces(frontier: int) -> None:
     )
     required_plain = (
         '<strong>Research I</strong><span>physical-system identification</span>',
-        f'<strong>Research II</strong><span>{frontier} results · current frontier P{frontier}</span>',
+        f'<strong>Research II</strong><span>{frontier} linked results · technical endpoint P{frontier}</span>',
         '<strong>Research III</strong><span>measurement science under uncertainty</span>',
-        'id="three-stage-progress"',
+        'id="project-journey"',
+        "If you remember only three things",
+        "A note about proposition numbers",
     )
     required_start = (
         '<strong>Research I</strong><span>physical-system identification</span>',
@@ -566,6 +568,10 @@ def _check_reader_surfaces(frontier: int) -> None:
             raise RuntimeError(
                 f"{label} is not synchronized to P{frontier} balanced publication state: {missing}"
             )
+    if re.search(r'id="p\\d+-reader-frontier"', plain):
+        raise RuntimeError(
+            "Plain Language must not contain proposition-by-proposition reader frontier appendices"
+        )
     research_i = home.index('id="research-i-overview"')
     current_home = home.index(f'id="p{frontier}-frontier"')
     research_iii = home.index('id="research-iii-overview"')
