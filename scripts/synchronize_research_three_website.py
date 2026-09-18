@@ -11,8 +11,9 @@ import argparse
 import re
 from pathlib import Path
 
-CURRENT_RESEARCH_THREE_PIN = "7a2a1a3a60263e48b7a268642eecc6941e84d1b4"
+CURRENT_RESEARCH_THREE_PIN = "d93e768d9a7d6054ff208de2a1b9c14e79192bc5"
 LEGACY_RESEARCH_THREE_PINS = (
+    "7a2a1a3a60263e48b7a268642eecc6941e84d1b4",
     "3cf9202977953644c980246c1f3e46a3514b3a4a",
     "5d1d979231aed62fde34383281fa8f252a3d2fa7",
     "b874eda1f6940f5601b7f89200b6a276b5ecbbc3",
@@ -21,7 +22,7 @@ LEGACY_RESEARCH_THREE_PINS = (
     "a9ef67ed15595c26b0c9f4e449f53f8078d6a1ee",
     "64b2bc47461fe110b135080f8dc70883552d6fd9",
 )
-CURRENT_RESEARCH_THREE_TEST_COUNT = 98
+CURRENT_RESEARCH_THREE_TEST_COUNT = 109
 ROOT = Path(__file__).resolve().parents[1]
 MEASUREMENT_REPO_PATH = "MahsaKeikha/consciousness-measurement-science"
 PUBLIC_SUFFIXES = {".html", ".js"}
@@ -89,7 +90,7 @@ def _legacy_build_contract_comment() -> str:
     """Invisible compatibility markers for one older build validator.
 
     These strings are intentionally kept out of the rendered DOM. The visible
-    Research III page is governed by the V1-V15 publication contract below.
+    Research III page is governed by the V1-V20 publication contract below.
     """
     pin = CURRENT_RESEARCH_THREE_PIN
     return f"""<!-- research-three-legacy-build-contract
@@ -108,18 +109,26 @@ consciousness-measurement-science/blob/{pin}/schemas/claim.schema.json
 def _upgrade_measurement_page_copy(text: str) -> str:
     text = text.replace(
         "Formal validation V1-V10, reproducible equations",
-        "Formal validation V1-V15, reproducible equations",
+        "Formal validation V1-V20, reproducible equations",
     )
-    text = text.replace("Open V1-V10 validation program", "Open V1-V15 validation program")
+    text = text.replace("Open V1-V10 validation program", "Open V1-V20 validation program")
+    text = text.replace("Open V1-V15 validation program", "Open V1-V20 validation program")
     text = text.replace(
         "<strong>V1-V10</strong><span>formal validation stages</span>",
-        "<strong>V1-V15</strong><span>formal validation stages</span>",
+        "<strong>V1-V20</strong><span>formal validation stages</span>",
     )
-    text = text.replace("The compact V1-V10 map", "The compact V1-V15 map")
+    text = text.replace("The compact V1-V10 map", "The compact V1-V20 map")
+    text = text.replace("The compact V1-V15 map", "The compact V1-V20 map")
     text = text.replace(
         "All ten validation-result figures",
-        "All fourteen validation-result figures",
+        "All fifteen validation-result figures",
     )
+    text = text.replace("All fourteen validation-result figures", "All fifteen validation-result figures")
+    text = text.replace("V1-V15", "V1-V20")
+    text = text.replace("23 scientific visuals", "24 scientific visuals")
+    text = text.replace("14 validation", "15 validation")
+    text = text.replace("98-test suite", "109-test suite")
+    text = text.replace("98 tests in each CI job", "109 tests in each CI job")
     if "<!-- research-three-legacy-build-contract" not in text:
         text = text.replace("</main>", f"  {_legacy_build_contract_comment()}\n  </main>")
     return text
@@ -172,8 +181,8 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     refresh = text("research-iii-atlas-refresh.js")
     required_refresh_markers = (
         CURRENT_RESEARCH_THREE_PIN,
-        "V1-V15 result record",
-        "14 / 14 visible",
+        "V1-V20 result record",
+        "15 / 15 visible",
         "research-iii-validation-figure-gallery",
         "research-iii-source-validation-gallery",
         "Result data",
@@ -183,6 +192,9 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
         "v15_independent_pilot_gate.svg",
         "v11_missingness_information_law.csv",
         "v15_independent_pilot_gate.csv",
+        "v16_v20_electromagnetic_validation.svg",
+        "electromagnetic_validation_summary.json",
+        "Electromagnetic Field Measurement Program",
     )
     missing_refresh = [marker for marker in required_refresh_markers if marker not in refresh]
     if missing_refresh:
@@ -200,9 +212,9 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     orientation = text("research-orientation.js")
     for marker in (
         CURRENT_RESEARCH_THREE_PIN,
-        "V1-V15 formal validation",
-        "98</strong><span>tests in each CI job",
-        "23 scientific visuals",
+        "V1-V20 formal validation",
+        "109</strong><span>tests in each CI job",
+        "24 scientific visuals",
         "loadResearchIIIAtlasRefresh();",
     ):
         if marker not in orientation:
