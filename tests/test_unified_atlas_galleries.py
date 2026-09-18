@@ -84,18 +84,21 @@ def test_pages_deployment_enforces_the_unified_gallery_contract() -> None:
         "v31_v35_electromagnetic_design_validation.svg",
         "v36_v40_electromagnetic_finite_sample_validation.svg",
         "v41_v45_electromagnetic_selection_validation.svg",
+        "v46_v50_electromagnetic_replication_validation.svg",
         "v36_v40_electromagnetic_finite_sample_validation.svg",
         "electromagnetic_inverse_validation_summary.json",
         "electromagnetic_resolution_validation_summary.json",
         "electromagnetic_design_validation_summary.json",
         "electromagnetic_finite_sample_validation_summary.json",
         "electromagnetic_selection_validation_summary.json",
+        "electromagnetic_replication_validation_summary.json",
         "electromagnetic_finite_sample_validation_summary.json",
         "Electromagnetic Source Identifiability Program",
         "Electromagnetic Resolution and Information Program",
         "Electromagnetic Design and Spatial Specificity Program",
         "Finite-Sample Electromagnetic Inference Program",
         "Multiplicity and Selection-Safe Electromagnetic Inference Program",
+        "Cross-Site Replication Inference and Stability Program",
         "deployed Research II core gallery contract is not exactly 100 unique figures",
         "deployed canonical figure count is not 158",
         "node --check _site/research-orientation.js",
@@ -163,6 +166,10 @@ def test_research_iii_gallery_exposes_architecture_validation_and_result_provena
     assert "V36-V40 · finite-sample electromagnetic inference" in RESEARCH_III_REFRESH
     assert "Multiplicity and Selection-Safe Electromagnetic Inference Program" in RESEARCH_III_REFRESH
     assert "V41-V45 · multiplicity and selection-safe inference" in RESEARCH_III_REFRESH
+    assert "Cross-Site Replication Inference and Stability Program" in RESEARCH_III_REFRESH
+    assert "V46-V50 · cross-site replication inference" in RESEARCH_III_REFRESH
+    assert "v46_v50_electromagnetic_replication_validation.svg" in RESEARCH_III_REFRESH
+    assert "electromagnetic_replication_validation_summary.json" in RESEARCH_III_REFRESH
     assert "Electromagnetic Source Identifiability Program" in RESEARCH_III_REFRESH
     assert "V21-V25 · electromagnetic source identifiability" in RESEARCH_III_REFRESH
     assert CURRENT_RESEARCH_THREE_PIN == "edc1db943d6efe8bdc679dbc5d77ecb7633476ab"
