@@ -193,6 +193,8 @@ def test_research_iii_gallery_exposes_architecture_validation_and_result_provena
         "v21_v25_electromagnetic_inverse_validation.svg",
         "v26_v30_electromagnetic_resolution_validation.svg",
         "v31_v35_electromagnetic_design_validation.svg",
+        "v36_v40_electromagnetic_finite_sample_validation.svg",
+        "v41_v45_electromagnetic_selection_validation.svg",
     )
     result_files = (
         "finite_sample_coverage.csv",
@@ -212,6 +214,8 @@ def test_research_iii_gallery_exposes_architecture_validation_and_result_provena
         "electromagnetic_inverse_validation_summary.json",
         "electromagnetic_resolution_validation_summary.json",
         "electromagnetic_design_validation_summary.json",
+        "electromagnetic_finite_sample_validation_summary.json",
+        "electromagnetic_selection_validation_summary.json",
     )
     for figure in architecture_figures + validation_figures:
         assert figure in RESEARCH_III_REFRESH
