@@ -25,12 +25,13 @@ def test_p93_is_preserved_as_historical_iid_frontier() -> None:
     assert atlas.index('id="p94-frontier"') < atlas.index('id="p93-frontier"')
 
 
-def test_p93_reader_surfaces_remain_linked_as_history() -> None:
+def test_p93_history_stays_in_start_here_not_plain_language() -> None:
     plain = _read("website/plain-language.html")
     start = _read("website/start-here.html")
-    assert 'id="p93-reader-frontier"' in plain
+    assert 'id="p93-reader-frontier"' in start
+    assert 'id="p93-reader-frontier"' not in plain
     assert "P93" in start
-    assert "P93" in plain
+    assert "100 linked results · technical endpoint P100" in plain
 
 
 def test_permanent_publication_workflows_are_read_only() -> None:
