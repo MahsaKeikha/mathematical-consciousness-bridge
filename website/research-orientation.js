@@ -85,6 +85,8 @@
     },
     'measurement-science.html': {
       stage: 'Research III',
+      heading: 'Scientific scope and validation status',
+      intro: 'The formal results below concern identifiability, uncertainty, robustness, and measurement design. This orientation separates what is proved or simulated from what still requires empirical calibration.',
       question: 'What can observable channels legitimately identify about a declared experiential target, and exactly where does that inference fail?',
       established:
         'Research III contains a reproducible V1-V15 formal validation program covering calibrated inversion, partial identification, finite-sample coverage, transport bias, channel dependence, structural null and power testing, calibration uncertainty, arbitrary missingness, inverse conditioning, multisite identification, exact missingness-information loss, resolution sample-size design, and an independent pilot release gate.',
@@ -166,9 +168,9 @@
       <div class="scientific-orientation-head">
         <div>
           <p class="eyebrow">Scientific orientation · ${contract.stage}</p>
-          <h2 id="scientific-orientation-title">Know what this page establishes before entering the details</h2>
+          <h2 id="scientific-orientation-title">${contract.heading || 'Scientific scope, evidence level, and audit path'}</h2>
+          <p class="scientific-orientation-intro">${contract.intro || 'The four statements below keep the research question, current result, remaining uncertainty, and audit path together before the detailed record begins.'}</p>
         </div>
-        <p class="scientific-orientation-intro">Four fixed questions keep the research question, current result, remaining uncertainty, and audit path together before the detailed record begins.</p>
       </div>
       <div class="scientific-orientation-grid">
         <article class="orientation-card orientation-question"><span class="orientation-number">01</span><div><strong>Question</strong><p>${contract.question}</p></div></article>
