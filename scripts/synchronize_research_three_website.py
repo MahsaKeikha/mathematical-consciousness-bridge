@@ -130,8 +130,8 @@ def _replace_research_three_metrics(text: str) -> str:
             "9 architecture + 21 validation",
         )
 
-    text = text.replace("20 result figures", "21 result figures")
-    text = text.replace("20 / 20 visible", "21 / 21 visible")
+    text = text.replace("21 result figures", "21 result figures")
+    text = text.replace("21 / 21 visible", "21 / 21 visible")
     text = text.replace("All twenty validation-result figures", "All twenty-one validation-result figures")
     text = text.replace("V1-V45", "V1-V50")
 
@@ -345,8 +345,8 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     atlas = text("visual-atlas.html")
     for marker in (
         "V1-V50",
-        "20</strong><span>code-generated validation figures",
-        "171</strong><span>tests in each CI job",
+        "21</strong><span>code-generated validation figures",
+        "182</strong><span>tests in each CI job",
         "v26_v30_electromagnetic_resolution_validation.svg",
         "v31_v35_electromagnetic_design_validation.svg",
         "v36_v40_electromagnetic_finite_sample_validation.svg",
@@ -360,7 +360,7 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     for marker in (
         "V1-V50",
         "21 result figures",
-        "171 tests",
+        "182 tests",
         "V26-V30 electromagnetic resolution and information program",
         "docs/electromagnetic-resolution-program.md",
         "V31-V35 electromagnetic design and spatial specificity program",
@@ -378,9 +378,9 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     lineage = text("research-lineage.html")
     for marker in (
         "V1-V50",
-        "20</strong><span>code-generated validation figures",
-        "171</strong><span>tests in each CI job",
-        "9</strong><span>reproducible validation runners",
+        "21</strong><span>code-generated validation figures",
+        "182</strong><span>tests in each CI job",
+        "10</strong><span>reproducible validation runners",
         "v41_v45_electromagnetic_selection_validation.svg",
         "V41-V45 selection-safe inference",
         "docs/electromagnetic-selection-safe-inference.md",
