@@ -505,20 +505,20 @@
     const status = document.querySelector('.status-grid');
     if (status) {
       const cells = status.querySelectorAll(':scope > div');
-      if (cells[0]) cells[0].innerHTML = '<strong>V1-V40</strong><span>formal validation stages</span>';
-      if (cells[1]) cells[1].innerHTML = '<strong>28</strong><span>scientific visuals: 9 architecture + 19 validation</span>';
+      if (cells[0]) cells[0].innerHTML = '<strong>V1-V45</strong><span>formal validation stages</span>';
+      if (cells[1]) cells[1].innerHTML = '<strong>29</strong><span>scientific visuals: 9 architecture + 20 validation</span>';
       if (cells[2]) cells[2].innerHTML = '<strong>171</strong><span>tests in each CI job</span>';
       if (cells[3]) cells[3].innerHTML = '<strong>3</strong><span>Python versions in the CI matrix</span>';
     }
 
     const primary = document.querySelector('.hero-actions .button.primary');
     if (primary) {
-      primary.textContent = 'Open V1-V40 validation program';
+      primary.textContent = 'Open V1-V45 validation program';
       primary.href = `${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md`;
     }
 
     const follow = document.querySelector('.source-grid a:first-child p');
-    if (follow) follow.textContent = 'The compact V1-V40 map: scientific question, mathematical object, executable evidence, result record, and failure condition.';
+    if (follow) follow.textContent = 'The compact V1-V45 map: scientific question, mathematical object, executable evidence, result record, and failure condition.';
 
     document.getElementById('formal-validation-v11-v15')?.remove();
     const baseStages = document.getElementById('formal-validation-v1-v10');
