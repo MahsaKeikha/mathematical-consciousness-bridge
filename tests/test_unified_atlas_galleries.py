@@ -213,3 +213,16 @@ def test_research_iii_atlas_validation_gallery_uses_four_column_desktop_layout()
     assert "@media(max-width:1180px)" in RESEARCH_III_REFRESH
     assert "grid-template-columns:repeat(2,minmax(0,1fr))" in RESEARCH_III_REFRESH
     assert "@media(max-width:680px)" in RESEARCH_III_REFRESH
+
+
+def test_research_iii_measurement_page_uses_formal_design_law_panel() -> None:
+    assert "From identification limits to measurement design" in RESEARCH_III_REFRESH
+    assert 'class="r3-design-panel"' in RESEARCH_III_REFRESH
+    assert 'data-v11-v15-design-stage="V11"' in RESEARCH_III_REFRESH
+    assert 'data-v11-v15-design-stage="V15"' in RESEARCH_III_REFRESH
+    assert "W<sub>miss</sub> = (m/N)/J" in RESEARCH_III_REFRESH
+    assert "J<sub>1</sub> = ... = J<sub>K</sub>" in RESEARCH_III_REFRESH
+    assert "n &gt;= 2 log(2/delta)/(J<sup>2</sup> omega<sup>2</sup>)" in RESEARCH_III_REFRESH
+    assert "P(C | G) = P(C) &gt;= 1 - delta" in RESEARCH_III_REFRESH
+    assert 'class="r3-design-checkpoints"' in RESEARCH_III_REFRESH
+    assert "Interpretation boundary." in RESEARCH_III_REFRESH
