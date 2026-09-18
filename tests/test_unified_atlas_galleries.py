@@ -69,8 +69,8 @@ def test_pages_deployment_enforces_the_unified_gallery_contract() -> None:
         "research-iii-source-validation-gallery",
         "const RESEARCH_II_CORE_EXPECTED = 100",
         "9 / 9 visible",
-        "14 / 14 visible",
-        "V1-V15 result record",
+        "15 / 15 visible",
+        "V1-V20 result record",
         "Result data",
         "v11_missingness_information_law.svg",
         "v12_v13_multisite_heterogeneity.svg",
@@ -128,10 +128,10 @@ def test_research_iii_gallery_exposes_architecture_validation_and_result_provena
     assert "research-iii-source-validation-gallery" in RESEARCH_III_REFRESH
     assert "6-stage visual path" in RESEARCH_III_REFRESH
     assert "9 / 9 visible" in RESEARCH_III_REFRESH
-    assert "14 / 14 visible" in RESEARCH_III_REFRESH
-    assert "V1-V15 result record" in RESEARCH_III_REFRESH
+    assert "15 / 15 visible" in RESEARCH_III_REFRESH
+    assert "V1-V20 result record" in RESEARCH_III_REFRESH
     assert "Result data" in RESEARCH_III_REFRESH
-    assert CURRENT_RESEARCH_THREE_PIN == "7a2a1a3a60263e48b7a268642eecc6941e84d1b4"
+    assert CURRENT_RESEARCH_THREE_PIN == "d93e768d9a7d6054ff208de2a1b9c14e79192bc5"
 
     architecture_figures = (
         "research_program_map.svg",
@@ -183,7 +183,7 @@ def test_research_iii_gallery_exposes_architecture_validation_and_result_provena
 
 def test_atlas_orientation_points_to_architecture_and_validation_galleries() -> None:
     assert "Research III exposes 9 foundational architecture visuals" in ORIENTATION
-    assert "14 code-generated V1-V15 validation-result figures" in ORIENTATION
+    assert "15 code-generated V1-V20 validation-result figures" in ORIENTATION
     for anchor in (
         "#research-i-complete-figure-gallery",
         "#research-ii-complete-core-gallery",
