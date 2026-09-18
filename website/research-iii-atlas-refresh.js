@@ -280,13 +280,27 @@
       .r3-validation-card-body p{margin:0;line-height:1.55;font-size:.92rem}
       .r3-validation-links{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:auto;padding-top:.85rem}
       .r3-validation-links a{display:inline-flex;align-items:center;padding:.5rem .7rem;border:1px solid rgba(120,140,170,.3);border-radius:999px;text-decoration:none;font-size:.78rem;font-weight:800}
-      .r3-stage-extension{margin-top:2rem}.r3-stage-extension .section-head{margin-bottom:1rem}
-      .r3-design-law-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:1rem}
-      .r3-design-law-grid article{padding:18px;border:1px solid rgba(120,140,170,.25);border-radius:14px;background:rgba(255,255,255,.03)}
-      .r3-design-law-grid strong{display:block;margin-bottom:7px;font-size:1.06rem}.r3-design-law-grid p{margin:0;line-height:1.55;font-size:.91rem}
-      @media(max-width:1180px){#research-iii-validation-figure-gallery .r3-validation-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+      .r3-stage-extension{margin-top:2.4rem}
+      .r3-stage-extension .section-head{max-width:980px;margin-bottom:1.35rem}
+      .r3-design-panel{overflow:hidden;border:1px solid rgba(120,140,170,.30);border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(247,249,253,.96));box-shadow:0 14px 34px rgba(31,45,78,.06)}
+      .r3-design-panel-head{display:grid;grid-template-columns:84px minmax(220px,.95fr) minmax(260px,1.15fr);gap:18px;padding:14px 20px;border-bottom:1px solid rgba(120,140,170,.22);background:rgba(239,243,250,.72);font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#526071}
+      .r3-design-row{display:grid;grid-template-columns:84px minmax(220px,.95fr) minmax(260px,1.15fr);gap:18px;align-items:start;padding:20px;border-bottom:1px solid rgba(120,140,170,.18)}
+      .r3-design-row:last-child{border-bottom:0}
+      .r3-design-stage{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border:1px solid rgba(54,91,160,.30);border-radius:50%;background:#fff;font-weight:800;color:#2e5799;letter-spacing:.03em}
+      .r3-design-result h3{margin:0 0 8px;font-size:1rem;line-height:1.35;color:#182235}
+      .r3-design-equation{display:inline-block;padding:5px 9px;border-radius:7px;background:#edf2fa;color:#233f72;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.82rem;line-height:1.45}
+      .r3-design-meaning p{margin:0;color:#536174;font-size:.91rem;line-height:1.58}
+      .r3-design-note{margin-top:12px;padding:11px 14px;border-left:3px solid rgba(54,91,160,.55);background:rgba(241,245,252,.7);color:#4a586a;font-size:.85rem;line-height:1.5}
+      .r3-design-checkpoints{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:16px;border:1px solid rgba(120,140,170,.24);border-radius:16px;background:#fff;overflow:hidden}
+      .r3-design-checkpoint{padding:17px 18px;border-right:1px solid rgba(120,140,170,.18)}
+      .r3-design-checkpoint:last-child{border-right:0}
+      .r3-design-checkpoint span{display:block;margin-bottom:5px;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#5f6d80}
+      .r3-design-checkpoint strong{display:block;margin-bottom:6px;font-size:1.25rem;line-height:1.1;color:#172133}
+      .r3-design-checkpoint p{margin:0;color:#596778;font-size:.79rem;line-height:1.45}
+      @media(max-width:1180px){#research-iii-validation-figure-gallery .r3-validation-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.r3-design-checkpoints{grid-template-columns:repeat(2,minmax(0,1fr))}.r3-design-checkpoint:nth-child(2){border-right:0}.r3-design-checkpoint:nth-child(-n+2){border-bottom:1px solid rgba(120,140,170,.18)}}
+      @media(max-width:900px){.r3-design-panel-head{display:none}.r3-design-row{grid-template-columns:68px 1fr;gap:14px}.r3-design-meaning{grid-column:2}.r3-design-stage{width:48px;height:48px}}
       @media(max-width:820px){.r3-validation-grid{grid-template-columns:1fr}.r3-validation-card img{height:auto;max-height:460px}.r3-validation-card>a{min-height:260px}}
-      @media(max-width:680px){#research-iii-validation-figure-gallery .r3-validation-grid{grid-template-columns:1fr}#research-iii-validation-figure-gallery .r3-validation-card img{height:auto;max-height:460px}#research-iii-validation-figure-gallery .r3-validation-card>a{min-height:260px}}
+      @media(max-width:680px){#research-iii-validation-figure-gallery .r3-validation-grid{grid-template-columns:1fr}#research-iii-validation-figure-gallery .r3-validation-card img{height:auto;max-height:460px}#research-iii-validation-figure-gallery .r3-validation-card>a{min-height:260px}.r3-design-checkpoints{grid-template-columns:1fr}.r3-design-checkpoint{border-right:0;border-bottom:1px solid rgba(120,140,170,.18)}.r3-design-checkpoint:last-child{border-bottom:0}.r3-design-row{grid-template-columns:1fr;padding:17px}.r3-design-stage{width:auto;height:auto;justify-content:flex-start;border:0;background:transparent}.r3-design-meaning{grid-column:auto}}
     `;
     document.head.appendChild(style);
   }
@@ -488,15 +502,43 @@
       extension.innerHTML = `
         <div class="section-head">
           <p class="eyebrow">Formal validation V11-V15</p>
-          <h2>From robustness diagnosis to explicit measurement-design laws</h2>
-          <p>The second theorem layer asks how much information missingness destroys, when pooled multisite inference is point-identified, how to compute the sharp identified set when it is not, how resolution determines sample size, and how to separate design selection from confirmatory inference.</p>
+          <h2>From identification limits to measurement design</h2>
+          <p>Five formal results turn the robustness analysis into quantities an experimenter can design around: information loss from missingness, the exact condition for pooled multisite identification, sharp set identification when that condition fails, finite-sample resolution planning, and a release design that separates selection from confirmation.</p>
         </div>
-        <div class="result-grid">
-          <article class="result"><span>V11</span><h3>Exact missingness law</h3><p>Derives the interior identified-set width as missing fraction divided by the Youden information margin under known positive calibration.</p></article>
-          <article class="result"><span>V12</span><h3>Multisite point-identification criterion</h3><p>Gives the condition under which one pooled observable identifies the population-average latent prevalence: the site information margins must be equal.</p></article>
-          <article class="result"><span>V13</span><h3>Sharp K-site identified set</h3><p>Computes the exact population-average interval when heterogeneous site slopes prevent point identification.</p></article>
-          <article class="result"><span>V14</span><h3>Resolution sample-size law</h3><p>Converts requested latent resolution and channel strength into a sufficient finite-sample deployment size.</p></article>
-          <article class="result"><span>V15</span><h3>Independent pilot release gate</h3><p>Uses pilot data only for the go/no-go decision and fresh confirmatory data for inference, preserving confirmatory validity among released designs.</p></article>
+        <div class="r3-design-panel" aria-label="Research III V11 to V15 theorem and design map">
+          <div class="r3-design-panel-head" aria-hidden="true"><span>Stage</span><span>Formal result</span><span>Scientific consequence</span></div>
+          <article class="r3-design-row" data-v11-v15-design-stage="V11">
+            <div class="r3-design-stage">V11</div>
+            <div class="r3-design-result"><h3>Exact missingness resolution law</h3><span class="r3-design-equation">W<sub>miss</sub> = (m/N)/J</span></div>
+            <div class="r3-design-meaning"><p>With known positive calibration and away from boundary clipping, arbitrary missing outcomes widen the sharp latent identified set by exactly the missing fraction divided by the channel information margin.</p></div>
+          </article>
+          <article class="r3-design-row" data-v11-v15-design-stage="V12">
+            <div class="r3-design-stage">V12</div>
+            <div class="r3-design-result"><h3>Pooled multisite point identification</h3><span class="r3-design-equation">J<sub>1</sub> = ... = J<sub>K</sub></span></div>
+            <div class="r3-design-meaning"><p>One pooled proxy rate identifies the population-average latent prevalence for every feasible site mixture if and only if the site information slopes are equal.</p></div>
+          </article>
+          <article class="r3-design-row" data-v11-v15-design-stage="V13">
+            <div class="r3-design-stage">V13</div>
+            <div class="r3-design-result"><h3>Sharp K-site partial identification</h3><span class="r3-design-equation">pi-bar in [L<sub>sharp</sub>, U<sub>sharp</sub>]</span></div>
+            <div class="r3-design-meaning"><p>When site slopes differ, the exact population-average interval is obtained by allocating constraint mass in the order implied by the site information margins, with at most one fractional site.</p></div>
+          </article>
+          <article class="r3-design-row" data-v11-v15-design-stage="V14">
+            <div class="r3-design-stage">V14</div>
+            <div class="r3-design-result"><h3>Resolution-driven sample design</h3><span class="r3-design-equation">n &gt;= 2 log(2/delta)/(J<sup>2</sup> omega<sup>2</sup>)</span></div>
+            <div class="r3-design-meaning"><p>The sufficient deployment size grows quadratically as the requested latent interval narrows and as the measurement channel weakens.</p></div>
+          </article>
+          <article class="r3-design-row" data-v11-v15-design-stage="V15">
+            <div class="r3-design-stage">V15</div>
+            <div class="r3-design-result"><h3>Selection-safe release design</h3><span class="r3-design-equation">P(C | G) = P(C) &gt;= 1 - delta</span></div>
+            <div class="r3-design-meaning"><p>An independent pilot may decide whether to proceed while fresh confirmatory data retain the stated coverage guarantee among released designs.</p></div>
+          </article>
+        </div>
+        <div class="r3-design-note"><strong>Interpretation boundary.</strong> These results are properties of the declared imperfect-proxy measurement model. They do not supply empirical calibration for a consciousness biomarker.</div>
+        <div class="r3-design-checkpoints" aria-label="Canonical V11 to V15 numerical checkpoints">
+          <article class="r3-design-checkpoint"><span>V11 checkpoint</span><strong>0.1333</strong><p>Exact interior width at 10% missingness with J = 0.75.</p></article>
+          <article class="r3-design-checkpoint"><span>V12-V13 checkpoint</span><strong>0 to 0.3333</strong><p>Point identification at equal information slopes; sharp-set width at spread 0.30.</p></article>
+          <article class="r3-design-checkpoint"><span>V14 checkpoint</span><strong>n = 1312</strong><p>Sufficient size for J = 0.75, 95% coverage, and latent width at most 0.10.</p></article>
+          <article class="r3-design-checkpoint"><span>V15 checkpoint</span><strong>47.25%</strong><p>Fixed-seed pilot release rate at planned confirmatory n = 900.</p></article>
         </div>`;
       baseStages.insertAdjacentElement('afterend', extension);
     }
