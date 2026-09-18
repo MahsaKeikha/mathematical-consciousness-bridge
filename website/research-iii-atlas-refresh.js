@@ -1,5 +1,5 @@
 (() => {
-  const RESEARCH_III_PIN = 'e5063b0ac1e85577dd3e1a7c4c4003c122210d48';
+  const RESEARCH_III_PIN = '0072642d93d77fa594634a643e46e73769af0655';
   const MEASUREMENT_REPO = 'https://github.com/MahsaKeikha/consciousness-measurement-science';
   const RAW_PIN_PREFIX =
     `https://raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/${RESEARCH_III_PIN}/docs/figures/`;
@@ -8,7 +8,7 @@
   const RESULT_PIN_PREFIX =
     `${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/`;
 
-  const LEGACY_PINS = [];
+  const LEGACY_PINS = ['e5063b0ac1e85577dd3e1a7c4c4003c122210d48'];
 
 
   const FOUNDATION_FIGURES = [
@@ -230,6 +230,14 @@
       phase: 'V36-V40 · finite-sample electromagnetic inference',
       summary: 'GLS efficiency, inverse-covariance bias, Gaussian source discrimination, independent-search family-wise error control, and covariance-mismatch calibration are validated without treating statistical significance as consciousness.',
     },
+    {
+      title: 'Multiplicity and selection-safe electromagnetic inference',
+      file: 'v41_v45_electromagnetic_selection_validation.svg',
+      context: 'docs/electromagnetic-selection-safe-inference.md',
+      result: 'electromagnetic_selection_validation_summary.json',
+      phase: 'V41-V45 · multiplicity and selection-safe inference',
+      summary: 'Bonferroni and Holm family-wise error control, exact sign-flip inference, post-selection coverage collapse, and independent holdout confirmation are validated without treating statistical significance as consciousness evidence.',
+    },
   ];
 
   const CURATED_FILES = new Set([
@@ -258,15 +266,15 @@
     let updated = value;
     for (const pin of LEGACY_PINS) updated = updated.replaceAll(pin, RESEARCH_III_PIN);
     updated = updated.replace(
-      'github.com/MahsaKeikha/consciousness-measurement-science/blob/e5063b0ac1e85577dd3e1a7c4c4003c122210d48/',
+      'github.com/MahsaKeikha/consciousness-measurement-science/blob/0072642d93d77fa594634a643e46e73769af0655/',
       `github.com/MahsaKeikha/consciousness-measurement-science/blob/${RESEARCH_III_PIN}/`,
     );
     updated = updated.replace(
-      'github.com/MahsaKeikha/consciousness-measurement-science/tree/e5063b0ac1e85577dd3e1a7c4c4003c122210d48/',
+      'github.com/MahsaKeikha/consciousness-measurement-science/tree/0072642d93d77fa594634a643e46e73769af0655/',
       `github.com/MahsaKeikha/consciousness-measurement-science/tree/${RESEARCH_III_PIN}/`,
     );
     updated = updated.replace(
-      'raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/e5063b0ac1e85577dd3e1a7c4c4003c122210d48/',
+      'raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/0072642d93d77fa594634a643e46e73769af0655/',
       `raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/${RESEARCH_III_PIN}/`,
     );
     return updated;
@@ -447,10 +455,10 @@
     validation.className = 'r3-validation-record';
     validation.innerHTML = `
       <div class="r3-validation-head">
-        <div><span class="record-badge">Executable formal validation</span><h3>V1-V40 result record</h3><p>Nineteen code-generated result figures connect the mathematical program to deterministic simulations, exact design laws, failure tests, machine-readable outputs, and reproducible source code.</p></div>
-        <span class="record-badge">19 / 19 visible</span>
+        <div><span class="record-badge">Executable formal validation</span><h3>V1-V45 result record</h3><p>Twenty code-generated result figures connect the mathematical program to deterministic simulations, exact design laws, failure tests, machine-readable outputs, and reproducible source code.</p></div>
+        <span class="record-badge">20 / 20 visible</span>
       </div>
-      <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">V1-V40 program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Machine-readable results</a></div>
+      <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">V1-V45 program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Machine-readable results</a></div>
       <div class="r3-validation-grid">${VALIDATION_FIGURES.map(validationCard).join('')}</div>`;
 
     if (boundary) {
@@ -474,8 +482,8 @@
     block.className = 'r3-validation-record';
     block.innerHTML = `
       <div class="r3-validation-head">
-        <div><span class="source-visual-badge">Research III executable evidence</span><h3>Formal validation V1-V40: derivations, result data, figures, code, and tests</h3><p>The architecture sources remain separate from the result record. Every validation figure below is pinned to the same verified Research III commit and links to its formal derivation, exact machine-readable result file, and figure source.</p></div>
-        <span class="source-visual-badge">19 result figures</span>
+        <div><span class="source-visual-badge">Research III executable evidence</span><h3>Formal validation V1-V45: derivations, result data, figures, code, and tests</h3><p>The architecture sources remain separate from the result record. Every validation figure below is pinned to the same verified Research III commit and links to its formal derivation, exact machine-readable result file, and figure source.</p></div>
+        <span class="source-visual-badge">20 result figures</span>
       </div>
       <div class="source-section-visual-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">Validation program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Result index</a><a href="${MEASUREMENT_REPO}/tree/${RESEARCH_III_PIN}/tests">159-test suite</a></div>
       <div class="r3-validation-grid">${VALIDATION_FIGURES.map(validationCard).join('')}</div>`;
@@ -499,7 +507,7 @@
       const cells = status.querySelectorAll(':scope > div');
       if (cells[0]) cells[0].innerHTML = '<strong>V1-V40</strong><span>formal validation stages</span>';
       if (cells[1]) cells[1].innerHTML = '<strong>28</strong><span>scientific visuals: 9 architecture + 19 validation</span>';
-      if (cells[2]) cells[2].innerHTML = '<strong>159</strong><span>tests in each CI job</span>';
+      if (cells[2]) cells[2].innerHTML = '<strong>171</strong><span>tests in each CI job</span>';
       if (cells[3]) cells[3].innerHTML = '<strong>3</strong><span>Python versions in the CI matrix</span>';
     }
 
@@ -600,6 +608,7 @@
     document.getElementById('v26-v30-em-resolution-information')?.remove();
     document.getElementById('v31-v35-em-design-spatial-specificity')?.remove();
     document.getElementById('v36-v40-em-finite-sample-inference')?.remove();
+    document.getElementById('v41-v45-em-selection-safe-inference')?.remove();
     const emSection = document.getElementById('v16-v20-em-field-program');
     if (emSection) {
       const inverse = document.createElement('section');
@@ -735,8 +744,8 @@
     if (!programCard) return false;
     const metric = programCard.querySelector('.research-program-metric');
     const meta = programCard.querySelector('.research-program-meta');
-    if (metric) metric.innerHTML = '<strong>159</strong><span>tests in each CI job</span>';
-    if (meta) meta.textContent = 'V1-V40 formal validation · 28 scientific visuals · 8 reproducible validation runners';
+    if (metric) metric.innerHTML = '<strong>171</strong><span>tests in each CI job</span>';
+    if (meta) meta.textContent = 'V1-V45 formal validation · 29 scientific visuals · 9 reproducible validation runners';
     return true;
   }
 
