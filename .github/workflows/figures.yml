@@ -106,10 +106,12 @@ jobs:
           assert figure in home
           assert atlas.index(f'id="{frontier}-frontier"') < atlas.index(f'id="{previous}-frontier"')
           assert figure in atlas
-          phrase = f"{frontier_number} results · current frontier P{frontier_number}"
-          assert phrase in plain
-          assert phrase in start
-          assert plain.count(f'id="{frontier}-reader-frontier"') == 1
+          plain_phrase = f"{frontier_number} linked results · technical endpoint P{frontier_number}"
+          start_phrase = f"{frontier_number} results · current frontier P{frontier_number}"
+          assert plain_phrase in plain
+          assert "A note about proposition numbers" in plain
+          assert "reader-frontier" not in plain
+          assert start_phrase in start
           assert start.count(f'id="{frontier}-reader-frontier"') == 1
           assert research.count(f'id="{frontier}-research-map"') == 1
           assert f"The current theorem frontier is P{frontier_number}." in research
