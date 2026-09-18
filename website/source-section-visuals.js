@@ -3,7 +3,7 @@
   const OBSERVER_RAW = 'https://raw.githubusercontent.com/MahsaKeikha/spatiotemporal-observer-math/main';
   const BRIDGE_REPO = 'https://github.com/MahsaKeikha/mathematical-consciousness-bridge';
   const MEASUREMENT_REPO = 'https://github.com/MahsaKeikha/consciousness-measurement-science';
-  const MEASUREMENT_PIN = '0072642d93d77fa594634a643e46e73769af0655';
+  const MEASUREMENT_PIN = 'edc1db943d6efe8bdc679dbc5d77ecb7633476ab';
   const MEASUREMENT_RAW =
     `https://raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/${MEASUREMENT_PIN}`;
 

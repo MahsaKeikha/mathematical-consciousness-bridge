@@ -20,12 +20,13 @@ def test_visual_atlas_has_all_three_programs_with_distinct_status() -> None:
 
     assert "58" in atlas and "45" in atlas and "33" in atlas and "223" in atlas
     assert "100" in atlas and "158" in atlas and "P100" in atlas
-    assert "V1-V45" in atlas and "19" in atlas and "171" in atlas and "M0-M7" in atlas
+    assert "V1-V50" in atlas and "21" in atlas and "182" in atlas and "M0-M7" in atlas
     assert "V21-V25 source identifiability" in atlas
     assert "V26-V30 resolution and information limits" in atlas
     assert "V31-V35 design and spatial specificity" in atlas
     assert "V36-V40 finite-sample electromagnetic inference" in atlas
-    assert "V36-V40 finite-sample electromagnetic inference" in atlas
+    assert "V41-V45 selection-safe inference" in atlas
+    assert "V46-V50 replication inference" in atlas
     assert "not an empirically or clinically validated consciousness instrument" in atlas
     assert "physical world-tube" in atlas
     assert "does not by itself identify that subsystem as a conscious subject" in atlas
@@ -48,10 +49,11 @@ def test_visual_atlas_uses_canonical_figures_from_all_three_programs() -> None:
         "v31_v35_electromagnetic_design_validation.svg",
         "v36_v40_electromagnetic_finite_sample_validation.svg",
         "v41_v45_electromagnetic_selection_validation.svg",
+        "v46_v50_electromagnetic_replication_validation.svg",
     ):
         assert figure in atlas
 
-    assert atlas.count('class="program-visual-card"') == 13
+    assert atlas.count('class="program-visual-card"') == 14
     assert atlas.index('id="research-i-visual-program"') < atlas.index('id="research-ii-visual-program"')
     assert atlas.index('id="research-ii-visual-program"') < atlas.index('id="research-iii-visual-program"')
     assert atlas.index('id="research-iii-visual-program"') < atlas.index('id="research-ii-frontier-archive"')
@@ -88,22 +90,23 @@ def test_sources_links_each_program_to_its_real_audit_record() -> None:
         "mathematical-consciousness-bridge/blob/main/docs/theorem_roadmap.md",
         "mathematical-consciousness-bridge/blob/main/figures/manifest.json",
         "mathematical-consciousness-bridge/tree/main/tests",
-        "consciousness-measurement-science/blob/0072642d93d77fa594634a643e46e73769af0655/docs/epistemic-boundaries.md",
-        "consciousness-measurement-science/blob/0072642d93d77fa594634a643e46e73769af0655/docs/measurement-framework.md",
-        "consciousness-measurement-science/blob/0072642d93d77fa594634a643e46e73769af0655/docs/statistical-validation.md",
-        "consciousness-measurement-science/blob/0072642d93d77fa594634a643e46e73769af0655/docs/reproducibility.md",
-        "consciousness-measurement-science/blob/0072642d93d77fa594634a643e46e73769af0655/docs/electromagnetic-field-program.md",
-        "consciousness-measurement-science/blob/0072642d93d77fa594634a643e46e73769af0655/docs/electromagnetic-source-identifiability.md",
-        "consciousness-measurement-science/blob/0072642d93d77fa594634a643e46e73769af0655/docs/electromagnetic-resolution-program.md",
-        "consciousness-measurement-science/blob/0072642d93d77fa594634a643e46e73769af0655/docs/electromagnetic-design-spatial-specificity.md",
-        "consciousness-measurement-science/blob/0072642d93d77fa594634a643e46e73769af0655/docs/electromagnetic-finite-sample-inference.md",
-        "consciousness-measurement-science/blob/0072642d93d77fa594634a643e46e73769af0655/docs/electromagnetic-selection-safe-inference.md",
-        "consciousness-measurement-science/blob/0072642d93d77fa594634a643e46e73769af0655/docs/electromagnetic-source-identifiability.md",
-        "consciousness-measurement-science/tree/0072642d93d77fa594634a643e46e73769af0655/schemas",
+        "consciousness-measurement-science/blob/edc1db943d6efe8bdc679dbc5d77ecb7633476ab/docs/epistemic-boundaries.md",
+        "consciousness-measurement-science/blob/edc1db943d6efe8bdc679dbc5d77ecb7633476ab/docs/measurement-framework.md",
+        "consciousness-measurement-science/blob/edc1db943d6efe8bdc679dbc5d77ecb7633476ab/docs/statistical-validation.md",
+        "consciousness-measurement-science/blob/edc1db943d6efe8bdc679dbc5d77ecb7633476ab/docs/reproducibility.md",
+        "consciousness-measurement-science/blob/edc1db943d6efe8bdc679dbc5d77ecb7633476ab/docs/electromagnetic-field-program.md",
+        "consciousness-measurement-science/blob/edc1db943d6efe8bdc679dbc5d77ecb7633476ab/docs/electromagnetic-source-identifiability.md",
+        "consciousness-measurement-science/blob/edc1db943d6efe8bdc679dbc5d77ecb7633476ab/docs/electromagnetic-resolution-program.md",
+        "consciousness-measurement-science/blob/edc1db943d6efe8bdc679dbc5d77ecb7633476ab/docs/electromagnetic-design-spatial-specificity.md",
+        "consciousness-measurement-science/blob/edc1db943d6efe8bdc679dbc5d77ecb7633476ab/docs/electromagnetic-finite-sample-inference.md",
+        "consciousness-measurement-science/blob/edc1db943d6efe8bdc679dbc5d77ecb7633476ab/docs/electromagnetic-selection-safe-inference.md",
+        "consciousness-measurement-science/blob/edc1db943d6efe8bdc679dbc5d77ecb7633476ab/docs/electromagnetic-replication-inference.md",
+        "consciousness-measurement-science/blob/edc1db943d6efe8bdc679dbc5d77ecb7633476ab/docs/electromagnetic-source-identifiability.md",
+        "consciousness-measurement-science/tree/edc1db943d6efe8bdc679dbc5d77ecb7633476ab/schemas",
     ):
         assert token in sources
 
-    assert sources.count('class="program-source-card"') == 28
+    assert sources.count('class="program-source-card"') == 29
     assert "analytic and synthetic validation, specification, and software scaffolding are not empirical consciousness evidence" in sources
     assert "external validation" in sources
     assert "clinical validation" in sources
@@ -119,6 +122,8 @@ def test_sources_links_each_program_to_its_real_audit_record() -> None:
     assert "docs/electromagnetic-finite-sample-inference.md" in sources
     assert "V41-V45 multiplicity and selection-safe electromagnetic inference program" in sources
     assert "docs/electromagnetic-selection-safe-inference.md" in sources
+    assert "V46-V50 cross-site replication inference and stability program" in sources
+    assert "docs/electromagnetic-replication-inference.md" in sources
     assert "V21-V25 electromagnetic source-identifiability program" in sources
     assert "docs/electromagnetic-source-identifiability.md" in sources
 
@@ -129,11 +134,11 @@ def test_sitewide_orientation_describes_atlas_and_sources_as_three_program_surfa
     assert "Three-program visual evidence record" in orientation
     assert "Research I exposes its scientific-result figures" in orientation
     assert "Research II renders its canonical theorem and architecture record" in orientation
-    assert "Research III exposes 9 foundational architecture visuals plus 20 code-generated V1-V45 validation-result figures" in orientation
+    assert "Research III exposes 9 foundational architecture visuals plus 21 code-generated V1-V50 validation-result figures" in orientation
     assert "Three-program provenance and reproducibility" in orientation
     assert "Research I physical-system provenance" in orientation
     assert "Research II P1-P100 theorem provenance" in orientation
-    assert "Research III architecture from its V1-V45 executable validation record" in orientation
+    assert "Research III architecture from its V1-V50 executable validation record" in orientation
 
 
 def test_three_program_cards_are_native_links_and_static_metrics_do_not_mimic_links() -> None:
@@ -143,8 +148,8 @@ def test_three_program_cards_are_native_links_and_static_metrics_do_not_mimic_li
 
     assert atlas.count('<a class="program-index-card"') == 3
     assert sources.count('<a class="program-index-card"') == 3
-    assert atlas.count('<a class="program-visual-card"') == 13
-    assert sources.count('<a class="program-source-card"') == 28
+    assert atlas.count('<a class="program-visual-card"') == 14
+    assert sources.count('<a class="program-source-card"') == 29
     assert ".program-record-metric" in css
     assert ".program-visual-card::after" in css
     assert ".program-source-card::after" in css

@@ -1,5 +1,5 @@
 (() => {
-  const RESEARCH_III_PIN = '0072642d93d77fa594634a643e46e73769af0655';
+  const RESEARCH_III_PIN = 'edc1db943d6efe8bdc679dbc5d77ecb7633476ab';
   const MEASUREMENT_REPO = 'https://github.com/MahsaKeikha/consciousness-measurement-science';
   const RAW_PIN_PREFIX =
     `https://raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/${RESEARCH_III_PIN}/docs/figures/`;
@@ -8,7 +8,7 @@
   const RESULT_PIN_PREFIX =
     `${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/`;
 
-  const LEGACY_PINS = ['0072642d93d77fa594634a643e46e73769af0655'];
+  const LEGACY_PINS = [];
 
 
   const FOUNDATION_FIGURES = [
@@ -238,6 +238,14 @@
       phase: 'V41-V45 · multiplicity and selection-safe inference',
       summary: 'Bonferroni and Holm family-wise error control, exact sign-flip inference, post-selection coverage collapse, and independent holdout confirmation are validated without treating statistical significance as consciousness evidence.',
     },
+    {
+      title: 'Cross-site replication inference and stability',
+      file: 'v46_v50_electromagnetic_replication_validation.svg',
+      context: 'docs/electromagnetic-replication-inference.md',
+      result: 'electromagnetic_replication_validation_summary.json',
+      phase: 'V46-V50 · cross-site replication inference',
+      summary: 'Common-effect pooling, heterogeneity calibration, leave-one-site-out influence, partial-conjunction replicability, and site-weight concentration are audited without treating synthetic sites as external empirical replication.',
+    },
   ];
 
   const CURATED_FILES = new Set([
@@ -266,15 +274,15 @@
     let updated = value;
     for (const pin of LEGACY_PINS) updated = updated.replaceAll(pin, RESEARCH_III_PIN);
     updated = updated.replace(
-      'github.com/MahsaKeikha/consciousness-measurement-science/blob/0072642d93d77fa594634a643e46e73769af0655/',
+      'github.com/MahsaKeikha/consciousness-measurement-science/blob/edc1db943d6efe8bdc679dbc5d77ecb7633476ab/',
       `github.com/MahsaKeikha/consciousness-measurement-science/blob/${RESEARCH_III_PIN}/`,
     );
     updated = updated.replace(
-      'github.com/MahsaKeikha/consciousness-measurement-science/tree/0072642d93d77fa594634a643e46e73769af0655/',
+      'github.com/MahsaKeikha/consciousness-measurement-science/tree/edc1db943d6efe8bdc679dbc5d77ecb7633476ab/',
       `github.com/MahsaKeikha/consciousness-measurement-science/tree/${RESEARCH_III_PIN}/`,
     );
     updated = updated.replace(
-      'raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/0072642d93d77fa594634a643e46e73769af0655/',
+      'raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/edc1db943d6efe8bdc679dbc5d77ecb7633476ab/',
       `raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/${RESEARCH_III_PIN}/`,
     );
     return updated;
@@ -455,10 +463,10 @@
     validation.className = 'r3-validation-record';
     validation.innerHTML = `
       <div class="r3-validation-head">
-        <div><span class="record-badge">Executable formal validation</span><h3>V1-V45 result record</h3><p>Twenty code-generated result figures connect the mathematical program to deterministic simulations, exact design laws, failure tests, machine-readable outputs, and reproducible source code.</p></div>
-        <span class="record-badge">20 / 20 visible</span>
+        <div><span class="record-badge">Executable formal validation</span><h3>V1-V50 result record</h3><p>Twenty-one code-generated result figures connect the mathematical program to deterministic simulations, exact design laws, failure tests, machine-readable outputs, and reproducible source code.</p></div>
+        <span class="record-badge">21 / 21 visible</span>
       </div>
-      <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">V1-V45 program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Machine-readable results</a></div>
+      <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">V1-V50 program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Machine-readable results</a></div>
       <div class="r3-validation-grid">${VALIDATION_FIGURES.map(validationCard).join('')}</div>`;
 
     if (boundary) {
@@ -482,10 +490,10 @@
     block.className = 'r3-validation-record';
     block.innerHTML = `
       <div class="r3-validation-head">
-        <div><span class="source-visual-badge">Research III executable evidence</span><h3>Formal validation V1-V45: derivations, result data, figures, code, and tests</h3><p>The architecture sources remain separate from the result record. Every validation figure below is pinned to the same verified Research III commit and links to its formal derivation, exact machine-readable result file, and figure source.</p></div>
-        <span class="source-visual-badge">20 result figures</span>
+        <div><span class="source-visual-badge">Research III executable evidence</span><h3>Formal validation V1-V50: derivations, result data, figures, code, and tests</h3><p>The architecture sources remain separate from the result record. Every validation figure below is pinned to the same verified Research III commit and links to its formal derivation, exact machine-readable result file, and figure source.</p></div>
+        <span class="source-visual-badge">21 result figures</span>
       </div>
-      <div class="source-section-visual-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">Validation program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Result index</a><a href="${MEASUREMENT_REPO}/tree/${RESEARCH_III_PIN}/tests">159-test suite</a></div>
+      <div class="source-section-visual-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">Validation program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Result index</a><a href="${MEASUREMENT_REPO}/tree/${RESEARCH_III_PIN}/tests">182-test suite</a></div>
       <div class="r3-validation-grid">${VALIDATION_FIGURES.map(validationCard).join('')}</div>`;
 
     const existing = document.getElementById('research-iii-source-complete-figure-gallery');
@@ -505,20 +513,20 @@
     const status = document.querySelector('.status-grid');
     if (status) {
       const cells = status.querySelectorAll(':scope > div');
-      if (cells[0]) cells[0].innerHTML = '<strong>V1-V45</strong><span>formal validation stages</span>';
-      if (cells[1]) cells[1].innerHTML = '<strong>29</strong><span>scientific visuals: 9 architecture + 20 validation</span>';
-      if (cells[2]) cells[2].innerHTML = '<strong>171</strong><span>tests in each CI job</span>';
+      if (cells[0]) cells[0].innerHTML = '<strong>V1-V50</strong><span>formal validation stages</span>';
+      if (cells[1]) cells[1].innerHTML = '<strong>30</strong><span>scientific visuals: 9 architecture + 21 validation</span>';
+      if (cells[2]) cells[2].innerHTML = '<strong>182</strong><span>tests in each CI job</span>';
       if (cells[3]) cells[3].innerHTML = '<strong>3</strong><span>Python versions in the CI matrix</span>';
     }
 
     const primary = document.querySelector('.hero-actions .button.primary');
     if (primary) {
-      primary.textContent = 'Open V1-V45 validation program';
+      primary.textContent = 'Open V1-V50 validation program';
       primary.href = `${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md`;
     }
 
     const follow = document.querySelector('.source-grid a:first-child p');
-    if (follow) follow.textContent = 'The compact V1-V45 map: scientific question, mathematical object, executable evidence, result record, and failure condition.';
+    if (follow) follow.textContent = 'The compact V1-V50 map: scientific question, mathematical object, executable evidence, result record, and failure condition.';
 
     document.getElementById('formal-validation-v11-v15')?.remove();
     const baseStages = document.getElementById('formal-validation-v1-v10');
@@ -609,6 +617,7 @@
     document.getElementById('v31-v35-em-design-spatial-specificity')?.remove();
     document.getElementById('v36-v40-em-finite-sample-inference')?.remove();
     document.getElementById('v41-v45-em-selection-safe-inference')?.remove();
+    document.getElementById('v46-v50-em-replication-inference')?.remove();
     const emSection = document.getElementById('v16-v20-em-field-program');
     if (emSection) {
       const inverse = document.createElement('section');
@@ -760,6 +769,36 @@
         </div>
         <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/src/consciousness_measurement/electromagnetic_selection.py">Selection-safe inference code</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/src/consciousness_measurement/electromagnetic_selection_simulations.py">Validation simulations</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/scripts/run_electromagnetic_selection_validation.py">Reproduce V41-V45</a></div>`;
       inference.insertAdjacentElement('afterend', selection);
+
+      const replication = document.createElement('section');
+      replication.id = 'v46-v50-em-replication-inference';
+      replication.className = 'r3-stage-extension';
+      replication.innerHTML = `
+        <div class="section-head">
+          <p class="eyebrow">V46-V50 · Cross-site replication inference and stability</p>
+          <h2>Distinguish a pooled result from a result that is genuinely supported across sites</h2>
+          <p>This layer audits common-effect pooling, heterogeneity, leave-one-site-out influence, partial-conjunction replicability, and concentration of inverse-variance weight across sites.</p>
+        </div>
+        <div class="boundary">
+          <p><strong>Scientific claim boundary:</strong> V46-V50 use analytic and synthetic site records. They validate replication-inference machinery but do not constitute external replication in real cohorts or laboratories, and they do not show that an electromagnetic association is specific to consciousness or qualia.</p>
+        </div>
+        <div class="measurement-figure-grid">
+          <article class="figure-card">
+            <a href="${BLOB_PIN_PREFIX}v46_v50_electromagnetic_replication_validation.svg"><img loading="lazy" decoding="async" src="${RAW_PIN_PREFIX}v46_v50_electromagnetic_replication_validation.svg" alt="Research III cross-site replication inference and stability validation V46 to V50" /></a>
+            <p class="eyebrow">V46-V50 · replication inference</p>
+            <h3>Pooling, heterogeneity, influence, replicability, and effective site count</h3>
+            <p>V46 gives the exact inverse-variance pooled estimate. V47 checks the known-variance Cochran Q moment law in 50,000 fixed-seed simulations. V48 verifies the exact delete-one shift identity. V49 asks how many sites support a non-null effect. V50 exposes when one high-weight site makes the nominal site count misleading.</p>
+            <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/electromagnetic-replication-inference.md">Cross-Site Replication Inference and Stability Program</a><a href="${RESULT_PIN_PREFIX}electromagnetic_replication_validation_summary.json">Result record</a><a href="${BLOB_PIN_PREFIX}v46_v50_electromagnetic_replication_validation.svg">Figure source</a></div>
+          </article>
+        </div>
+        <div class="r3-design-law-grid">
+          <article><strong>V46: pooling is a model, not a vote count</strong><p>The inverse-variance common-effect estimate is 0.42686 with known-variance standard error 0.06392 in the declared four-site construction.</p></article>
+          <article><strong>V47-V48: heterogeneity and influence remain visible</strong><p>The Q statistic is calibrated against its declared reference law, and every site is deleted once to expose how much it moves the pooled estimate.</p></article>
+          <article><strong>V49: evidence somewhere is not replication</strong><p>Partial-conjunction inference distinguishes one non-null site from evidence that at least two, three, or more sites carry an effect.</p></article>
+          <article><strong>V50: nominal sites can overstate evidential diversity</strong><p>In the dominant-site construction, four nominal sites reduce to an effective site count of about 1.394 and deleting the dominant site inflates variance by about 6.33.</p></article>
+        </div>
+        <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/src/consciousness_measurement/electromagnetic_replication.py">Replication inference code</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/src/consciousness_measurement/electromagnetic_replication_simulations.py">Validation simulations</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/scripts/run_electromagnetic_replication_validation.py">Reproduce V46-V50</a></div>`;
+      selection.insertAdjacentElement('afterend', replication);
     }
 
     repinResearchIIIAssets();
@@ -774,8 +813,8 @@
     if (!programCard) return false;
     const metric = programCard.querySelector('.research-program-metric');
     const meta = programCard.querySelector('.research-program-meta');
-    if (metric) metric.innerHTML = '<strong>171</strong><span>tests in each CI job</span>';
-    if (meta) meta.textContent = 'V1-V45 formal validation · 29 scientific visuals · 9 reproducible validation runners';
+    if (metric) metric.innerHTML = '<strong>182</strong><span>tests in each CI job</span>';
+    if (meta) meta.textContent = 'V1-V50 formal validation · 30 scientific visuals · 10 reproducible validation runners';
     return true;
   }
 
