@@ -559,7 +559,7 @@
             <p class="eyebrow">V16-V20 · electromagnetic observables</p>
             <h3>Matched-power structure, common-mode confounding, and frequency specificity</h3>
             <p>V18 constructs equal-power fields with different spatial phase organization. V19 shows that a shared contaminant can create strong apparent global organization. V20 shows that the same multichannel signal can be aligned at one frequency and phase-balanced at another.</p>
-            <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/electromagnetic-field-program.md">Research program</a><a href="${RESULT_PIN_PREFIX}electromagnetic_validation_summary.json">Result record</a><a href="${BLOB_PIN_PREFIX}v16_v20_electromagnetic_validation.svg">Figure source</a></div>
+            <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/electromagnetic-field-program.md">Electromagnetic Field Measurement Program</a><a href="${RESULT_PIN_PREFIX}electromagnetic_validation_summary.json">Result record</a><a href="${BLOB_PIN_PREFIX}v16_v20_electromagnetic_validation.svg">Figure source</a></div>
           </article>
         </div>
         <div class="r3-design-law-grid">
