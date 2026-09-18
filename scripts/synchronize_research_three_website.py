@@ -191,8 +191,8 @@ def _upgrade_measurement_page_copy(text: str) -> str:
     )
     text = text.replace("All fourteen validation-result figures", "All twenty validation-result figures")
     text = text.replace("All fifteen validation-result figures", "All twenty validation-result figures")
-    text = text.replace("V1-V15", "V1-V40")
-    text = text.replace("V1-V20", "V1-V40")
+    text = text.replace("V1-V15", "V1-V45")
+    text = text.replace("V1-V20", "V1-V45")
     text = text.replace("23 scientific visuals", "29 scientific visuals")
     text = text.replace("24 scientific visuals", "29 scientific visuals")
     text = text.replace("14 validation", "20 validation")
@@ -326,8 +326,8 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
 
     atlas = text("visual-atlas.html")
     for marker in (
-        "V1-V40",
-        "19</strong><span>code-generated validation figures",
+        "V1-V45",
+        "20</strong><span>code-generated validation figures",
         "171</strong><span>tests in each CI job",
         "v26_v30_electromagnetic_resolution_validation.svg",
         "v31_v35_electromagnetic_design_validation.svg",
@@ -353,6 +353,19 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     ):
         if marker not in sources:
             raise RuntimeError(f"Sources page is missing Research III V1-V45 marker: {marker}")
+
+    lineage = text("research-lineage.html")
+    for marker in (
+        "V1-V45",
+        "20</strong><span>code-generated validation figures",
+        "171</strong><span>tests in each CI job",
+        "9</strong><span>reproducible validation runners",
+        "v41_v45_electromagnetic_selection_validation.svg",
+        "V41-V45 selection-safe inference",
+        "docs/electromagnetic-selection-safe-inference.md",
+    ):
+        if marker not in lineage:
+            raise RuntimeError(f"Research Lineage is missing Research III V1-V45 marker: {marker}")
 
     key_surfaces = (
         "measurement-science.html",
