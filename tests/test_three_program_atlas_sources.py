@@ -100,11 +100,11 @@ def test_sitewide_orientation_describes_atlas_and_sources_as_three_program_surfa
     assert "Three-program visual evidence record" in orientation
     assert "Research I exposes its scientific-result figures" in orientation
     assert "Research II renders its canonical theorem and architecture record" in orientation
-    assert "Research III exposes 9 foundational architecture visuals plus 14 code-generated V1-V15 validation-result figures" in orientation
+    assert "Research III exposes 9 foundational architecture visuals plus 15 code-generated V1-V20 validation-result figures" in orientation
     assert "Three-program provenance and reproducibility" in orientation
     assert "Research I physical-system provenance" in orientation
     assert "Research II P1-P100 theorem provenance" in orientation
-    assert "Research III architecture from its V1-V15 executable validation record" in orientation
+    assert "Research III architecture from its V1-V20 executable validation record" in orientation
 
 
 def test_three_program_cards_are_native_links_and_static_metrics_do_not_mimic_links() -> None:
