@@ -70,7 +70,7 @@ def _replace_research_three_pins(text: str) -> str:
 def _replace_research_three_metrics(text: str) -> str:
     if "Research III" not in text and "consciousness-measurement-science" not in text:
         return text
-    for old_count in (23, 34, 35, 81):
+    for old_count in (23, 34, 35, 81, 98):
         text = text.replace(
             f"<strong>{old_count}</strong><span>tests in each CI job</span>",
             f"<strong>{CURRENT_RESEARCH_THREE_TEST_COUNT}</strong><span>tests in each CI job</span>",
@@ -81,7 +81,11 @@ def _replace_research_three_metrics(text: str) -> str:
         )
     text = text.replace(
         "<strong>19</strong><span>scientific visuals: 9 architecture + 10 validation</span>",
+        "<strong>24</strong><span>scientific visuals: 9 architecture + 15 validation</span>",
+    )
+    text = text.replace(
         "<strong>23</strong><span>scientific visuals: 9 architecture + 14 validation</span>",
+        "<strong>24</strong><span>scientific visuals: 9 architecture + 15 validation</span>",
     )
     return text
 
