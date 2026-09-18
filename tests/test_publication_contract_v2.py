@@ -186,6 +186,8 @@ def test_research_lineage_preserves_counts_and_scientific_boundaries() -> None:
         "10</strong><span>reproducible validation runners",
         "V36-V40 · finite-sample electromagnetic inference",
         "V41-V45 · multiplicity and selection-safe inference",
+        "V46-V50 · cross-site replication inference and stability",
+        "v46_v50_electromagnetic_replication_validation.svg",
         "A recovered subsystem is not automatically a conscious subject",
         "Bridge remains an independently testable open problem",
     ):
