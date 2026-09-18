@@ -152,7 +152,6 @@ def _upgrade_measurement_page_copy(text: str) -> str:
     text = text.replace("V1-V30", "V1-V35")
     text = text.replace("V1-V25", "V1-V35")
     text = text.replace("All sixteen validation-result figures", "All eighteen validation-result figures")
-    text = text.replace("All eighteen validation-result figures", "All eighteen validation-result figures")
     text = text.replace(
         "Formal validation V1-V10, reproducible equations",
         "Formal validation V1-V35, reproducible equations",
@@ -194,6 +193,15 @@ def _upgrade_measurement_page_copy(text: str) -> str:
     text = text.replace("98 tests in each CI job", "144 tests in each CI job")
     text = text.replace("109 tests in each CI job", "144 tests in each CI job")
     text = text.replace("4 reproducible validation runners", "7 reproducible validation runners")
+
+    # Broad legacy metric substitutions above can touch the phrase "V15 validation".
+    # Normalize the V11-V15 accessibility range last so stage semantics stay exact.
+    for stale_range in ("V11 to V16", "V11 to V17", "V11 to V18"):
+        text = text.replace(
+            f'aria-label="{stale_range} validation sequence"',
+            'aria-label="V11 to V15 validation sequence"',
+        )
+
     if "<!-- research-three-legacy-build-contract" not in text:
         text = text.replace("</main>", f"  {_legacy_build_contract_comment()}\n  </main>")
     return text
