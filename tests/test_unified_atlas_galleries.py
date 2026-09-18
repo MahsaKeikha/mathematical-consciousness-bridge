@@ -140,6 +140,8 @@ def test_research_iii_gallery_exposes_architecture_validation_and_result_provena
     assert "V16-V20 · electromagnetic measurement arm" in RESEARCH_III_REFRESH
     assert "Electromagnetic Source Identifiability Program" in RESEARCH_III_REFRESH
     assert "V21-V25 · electromagnetic source identifiability" in RESEARCH_III_REFRESH
+    assert "Electromagnetic Source Identifiability Program" in RESEARCH_III_REFRESH
+    assert "V21-V25 · electromagnetic source identifiability" in RESEARCH_III_REFRESH
     assert CURRENT_RESEARCH_THREE_PIN == "771bca04b92cf775eb4f75fb3b576be6f43e0940"
 
     architecture_figures = (
