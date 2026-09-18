@@ -74,3 +74,14 @@ def test_visual_and_narrative_pin_contract_is_not_split_after_sync(tmp_path: Pat
     )
     assert all(CURRENT_RESEARCH_III_PIN in path.read_text(encoding="utf-8") for path in narrative)
     assert all(CURRENT_RESEARCH_III_PIN in path.read_text(encoding="utf-8") for path in visuals)
+
+
+def test_synchronizer_preserves_validation_band_accessibility_ranges(tmp_path: Path) -> None:
+    site = tmp_path / "website"
+    shutil.copytree(ROOT / "website", site)
+    synchronize_site(site, write=True)
+
+    page = (site / "measurement-science.html").read_text(encoding="utf-8")
+    assert 'aria-label="V11 to V15 validation sequence"' in page
+    assert 'aria-label="V11 to V17 validation sequence"' not in page
+    assert 'aria-label="V11 to V18 validation sequence"' not in page
