@@ -108,6 +108,7 @@ jobs:
         run: |
           python - <<'PY'
           import json
+          import re
           from pathlib import Path
 
           manifest = json.loads(Path("figures/manifest.json").read_text(encoding="utf-8"))
