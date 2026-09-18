@@ -83,6 +83,14 @@ jobs:
           grep -q "research-three-snapshot: ${R3_PIN}" _site/measurement-science.html
           ! grep -q '<p class="eyebrow">Implemented now versus not yet established</p>' _site/measurement-science.html
           grep -q "${R3_PIN}" _site/research-lineage.html
+          grep -q 'V1-V35' _site/research-lineage.html
+          grep -q '144</strong><span>tests in each source CI job' _site/research-lineage.html
+          grep -q '18</strong><span>code-generated validation-result figures' _site/research-lineage.html
+          grep -q '7</strong><span>reproducible validation runners' _site/research-lineage.html
+          grep -q 'V31-V35 · design and spatial specificity' _site/research-lineage.html
+          grep -q 'electromagnetic-design-spatial-specificity.md' _site/research-lineage.html
+          ! grep -q '<strong>2</strong><span>research arms</span>' _site/research-lineage.html
+
           grep -q "${R3_PIN}" _site/research-orientation.js
           grep -q 'V1-V35 formal validation' _site/research-orientation.js
           grep -q '144</strong><span>tests in each CI job' _site/research-orientation.js
