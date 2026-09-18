@@ -203,7 +203,7 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     missing_refresh = [marker for marker in required_refresh_markers if marker not in refresh]
     if missing_refresh:
         raise RuntimeError(
-            "Research III gallery refresh is missing V1-V15 publication markers: "
+            "Research III gallery refresh is missing V1-V20 publication markers: "
             + repr(missing_refresh)
         )
 
