@@ -39,6 +39,6 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add website/index.html website/measurement-science.html website/research-lineage.html
+          git add website
           git commit -m "Synchronize Research III website source"
           git push origin HEAD:main
