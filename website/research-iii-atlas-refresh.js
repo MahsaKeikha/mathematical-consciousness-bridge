@@ -730,6 +730,36 @@
         </div>
         <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/src/consciousness_measurement/electromagnetic_finite_sample.py">Inference code</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/src/consciousness_measurement/electromagnetic_finite_sample_simulations.py">Validation simulations</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/scripts/run_electromagnetic_finite_sample_validation.py">Reproduce V36-V40</a></div>`;
       design.insertAdjacentElement('afterend', inference);
+
+      const selection = document.createElement('section');
+      selection.id = 'v41-v45-em-selection-safe-inference';
+      selection.className = 'r3-stage-extension';
+      selection.innerHTML = `
+        <div class="section-head">
+          <p class="eyebrow">V41-V45 · Multiplicity and selection-safe electromagnetic inference</p>
+          <h2>Search-wide significance and same-data selection require explicit error control before any source claim is released</h2>
+          <p>This layer makes multiplicity, exact randomization, post-selection coverage, and independent confirmation explicit when many sources, times, frequencies, or preprocessing choices are searched.</p>
+        </div>
+        <div class="boundary">
+          <p><strong>Scientific claim boundary:</strong> V41-V45 are analytic or fixed-seed synthetic inference results. They establish statistical error-control and selection-safety properties only. They do not show that a significant electromagnetic source is a consciousness source or that statistical validity solves experiential target identification.</p>
+        </div>
+        <div class="measurement-figure-grid">
+          <article class="figure-card">
+            <a href="${BLOB_PIN_PREFIX}v41_v45_electromagnetic_selection_validation.svg"><img loading="lazy" decoding="async" src="${RAW_PIN_PREFIX}v41_v45_electromagnetic_selection_validation.svg" alt="Research III multiplicity and selection-safe electromagnetic inference validation V41 to V45" /></a>
+            <p class="eyebrow">V41-V45 · search-wide inference</p>
+            <h3>Multiplicity control, exact randomization, post-selection failure, and independent confirmation</h3>
+            <p>V41 gives Bonferroni FWER control under arbitrary dependence. V42 shows Holm can gain rejections while retaining strong FWER control. V43 computes an exact sign-flip maximum-statistic p-value. V44 proves selected same-data coverage collapses as c^K. V45 shows independent confirmation restores selected-coordinate Type I error under the declared null.</p>
+            <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/electromagnetic-selection-safe-inference.md">Multiplicity and Selection-Safe Electromagnetic Inference Program</a><a href="${RESULT_PIN_PREFIX}electromagnetic_selection_validation_summary.json">Result record</a><a href="${BLOB_PIN_PREFIX}v41_v45_electromagnetic_selection_validation.svg">Figure source</a></div>
+          </article>
+        </div>
+        <div class="r3-design-law-grid">
+          <article><strong>V41: arbitrary dependence still permits Bonferroni control</strong><p>The union bound gives FWER at most alpha without requiring independent source statistics.</p></article>
+          <article><strong>V42-V43: step-down and exact randomization sharpen inference</strong><p>Holm improves rejection efficiency, while a finite sign-flip orbit gives an exact randomization p-value under the declared symmetry.</p></article>
+          <article><strong>V44: same-data selection can destroy nominal coverage</strong><p>For K searched null coordinates with marginal coverage c, selected-coordinate coverage falls exactly to c^K in the declared independent construction.</p></article>
+          <article><strong>V45: confirmation must be independent</strong><p>The fixed-seed K = 100 experiment separates near-certain same-data false positives from approximately nominal independent-holdout Type I error.</p></article>
+        </div>
+        <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/src/consciousness_measurement/electromagnetic_selection.py">Selection-safe inference code</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/src/consciousness_measurement/electromagnetic_selection_simulations.py">Validation simulations</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/scripts/run_electromagnetic_selection_validation.py">Reproduce V41-V45</a></div>`;
+      inference.insertAdjacentElement('afterend', selection);
     }
 
     repinResearchIIIAssets();
