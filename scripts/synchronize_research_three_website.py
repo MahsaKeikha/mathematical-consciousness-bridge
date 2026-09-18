@@ -269,6 +269,7 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
         "docs/electromagnetic-design-spatial-specificity.md",
         "Electromagnetic Resolution and Information Program",
         "Electromagnetic Design and Spatial Specificity Program",
+        "run_electromagnetic_design_validation.py",
         "Electromagnetic Source Identifiability Program",
     )
     missing_refresh = [marker for marker in required_refresh_markers if marker not in refresh]
