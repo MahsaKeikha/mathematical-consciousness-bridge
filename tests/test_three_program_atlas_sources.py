@@ -51,7 +51,7 @@ def test_visual_atlas_uses_canonical_figures_from_all_three_programs() -> None:
     ):
         assert figure in atlas
 
-    assert atlas.count('class="program-visual-card"') == 12
+    assert atlas.count('class="program-visual-card"') == 13
     assert atlas.index('id="research-i-visual-program"') < atlas.index('id="research-ii-visual-program"')
     assert atlas.index('id="research-ii-visual-program"') < atlas.index('id="research-iii-visual-program"')
     assert atlas.index('id="research-iii-visual-program"') < atlas.index('id="research-ii-frontier-archive"')
@@ -103,7 +103,7 @@ def test_sources_links_each_program_to_its_real_audit_record() -> None:
     ):
         assert token in sources
 
-    assert sources.count('class="program-source-card"') == 27
+    assert sources.count('class="program-source-card"') == 28
     assert "analytic and synthetic validation, specification, and software scaffolding are not empirical consciousness evidence" in sources
     assert "external validation" in sources
     assert "clinical validation" in sources
