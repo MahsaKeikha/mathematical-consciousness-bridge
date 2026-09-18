@@ -142,7 +142,7 @@
       <div class="section-head">
         <p class="eyebrow">Foundational measurement architecture</p>
         <h2>The formal validation layer sits on top of nine separate architecture visuals</h2>
-        <p>The architecture figures specify the target, evidence channels, evidence profile, identification states, phenomenal-structure arm, validation program, theory comparison, and M0-M7 claim discipline. The ten validation-result figures test pieces of that architecture computationally.</p>
+        <p>The architecture figures specify the target, evidence channels, evidence profile, identification states, phenomenal-structure arm, validation program, theory comparison, and M0-M7 claim discipline. The fourteen validation-result figures test pieces of that architecture computationally.</p>
       </div>
       <div class="measurement-figure-grid">
         <article class="figure-card"><a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/figures/research_program_map.svg"><img src="https://raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/figures/research_program_map.svg" alt="Research III program map" /></a><h3>Research program map</h3><p>Declared targets, observables, assumptions, identification, validation, and claim control remain separate.</p></article>
@@ -152,31 +152,63 @@
       <p><a href="visual-atlas.html#research-iii-visual-program">Open the complete Research III visual record in the Visual Atlas →</a> · <a href="sources.html#research-iii-source-program">Audit the Research III source and reproducibility record →</a></p>
     </section>
 
-    <section>
-      <div class="section-head">
-        <p class="eyebrow">Reproducibility</p>
-        <h2>Two deterministic runners regenerate the validation results and figures</h2>
+    <section id="research-iii-reproducibility" class="reproducibility-audit">
+      <div class="section-head reproducibility-head">
+        <p class="eyebrow">Reproducibility and computational audit</p>
+        <h2>Every reported result is tied to a versioned analysis path</h2>
+        <p>Reproducibility is treated as a chain of custody from mathematical statement to executable implementation, machine-readable result, generated figure, and regression test. The canonical validation record can be regenerated from the pinned Research III snapshot and compared directly with the committed outputs.</p>
       </div>
-      <div class="two-col">
-        <div>
-          <p><strong>V1-V5 runner:</strong> <code>python scripts/run_validation_program.py</code></p>
-          <p><strong>V6-V10 runner:</strong> <code>python scripts/run_robustness_validation.py</code></p>
-          <p><strong>Whole repository:</strong> <code>make check</code></p>
-          <p>The canonical seeds are <code>20260917</code> and <code>20260918</code>. The result files are committed so reviewers can compare regeneration against the published record.</p>
-        </div>
-        <aside class="card">
-          <h3>Executable research objects</h3>
-          <p><a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/src/consciousness_measurement/latent_measurement.py">Latent measurement mathematics</a></p>
-          <p><a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/src/consciousness_measurement/measurement_robustness.py">Robustness mathematics</a></p>
-          <p><a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/src/consciousness_measurement/simulation_validation.py">V1-V5 simulations</a></p>
-          <p><a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/src/consciousness_measurement/robustness_simulations.py">V6-V10 simulations</a></p>
-        </aside>
+
+      <div class="repro-audit-grid">
+        <article class="repro-audit-panel">
+          <span class="repro-audit-kicker">Canonical regeneration</span>
+          <h3>Three deterministic validation families</h3>
+          <p>The validation program is divided into three independently reproducible analysis families. Each runner regenerates its corresponding result tables and scientific figures from source-controlled code and fixed experimental seeds.</p>
+          <div class="repro-command-list">
+            <div>
+              <strong>V1-V5 · identification and falsification</strong>
+              <code>python scripts/run_validation_program.py</code>
+            </div>
+            <div>
+              <strong>V6-V10 · robustness and abstention</strong>
+              <code>python scripts/run_robustness_validation.py</code>
+            </div>
+            <div data-v11-v15-runner="true">
+              <strong>V11-V15 · identification and design laws</strong>
+              <code>python scripts/run_identification_design_validation.py</code>
+            </div>
+          </div>
+        </article>
+
+        <article class="repro-audit-panel">
+          <span class="repro-audit-kicker">Verification contract</span>
+          <h3>Fixed inputs, committed outputs, cross-version checks</h3>
+          <p>The canonical stochastic checks use fixed seeds <code>20260917</code>, <code>20260918</code>, and <code>20260919</code>. CSV and JSON records are committed alongside the generated SVG figures, allowing regenerated outputs to be compared against the published snapshot.</p>
+          <dl class="repro-metrics">
+            <div><dt>Research snapshot</dt><dd><code>7a2a1a3a...</code></dd></div>
+            <div><dt>Validation tests</dt><dd>98 per CI environment</dd></div>
+            <div><dt>Python matrix</dt><dd>3.10 · 3.11 · 3.12</dd></div>
+            <div><dt>Repository audit</dt><dd><code>make check</code></dd></div>
+          </dl>
+        </article>
+
+        <article class="repro-audit-panel repro-provenance-panel">
+          <span class="repro-audit-kicker">Independent audit trail</span>
+          <h3>From formal derivation to archived evidence</h3>
+          <p>Readers can inspect the mathematical derivations, implementation modules, exact result files, figure-generation record, and regression tests separately. No figure is treated as an independent source of truth when an underlying CSV or JSON record exists.</p>
+          <nav class="repro-link-list" aria-label="Research III reproducibility links">
+            <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/VALIDATION.md"><strong>Formal validation record</strong><span>V1-V15 derivations and stage map</span></a>
+            <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/results/README.md"><strong>Machine-readable results</strong><span>CSV and JSON source records</span></a>
+            <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/tree/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/tests"><strong>Verification tests</strong><span>Theorem, simulation, traceability, and regression checks</span></a>
+            <a href="sources.html#research-iii-source-program"><strong>Public provenance map</strong><span>Derivation, result data, and figure-source links</span></a>
+          </nav>
+        </article>
       </div>
     </section>
 
     <section class="dark-section">
       <p class="eyebrow">Scientific boundary</p>
-      <h2>What V1-V10 establishes, and what it does not</h2>
+      <h2>What V1-V15 establishes, and what it does not</h2>
       <div class="falsify-grid">
         <div><h3>Established mathematically</h3><p>Under declared binary-channel assumptions, the inverse, partial-identification bounds, finite-sample guarantees, transport-bias equation, conditioning behavior, two-site identified sets, and V10 marginal erroneous-release bound are explicit and testable.</p></div>
         <div><h3>Established computationally</h3><p>Fixed-seed simulations exercise coverage, dependence failure, structural null/power behavior, calibration uncertainty, missingness, site heterogeneity, release rate, and empirical conditional coverage after abstention.</p></div>
