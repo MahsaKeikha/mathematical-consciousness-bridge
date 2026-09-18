@@ -155,90 +155,93 @@
     <section id="reproducibility">
       <div class="section-head">
         <p class="eyebrow">Reproducibility</p>
-        <h2>Three validation programs connect each scientific question to equations, code, figures, and exact result files</h2>
-        <p>Research III is reproduced in three stages. Each stage has a distinct scientific purpose, its own deterministic runner, a fixed canonical seed where simulation is used, and direct links to the formal derivation and machine-readable evidence.</p>
+        <h2>Three validation programs move from identifiability to robustness to study design</h2>
+        <p>Each band below is a complete scientific unit: a formal question, five linked validation stages, deterministic code where simulation is used, and an auditable result record.</p>
       </div>
 
-      <div class="validation-stage-grid">
-        <article class="validation-stage-card">
-          <div class="validation-stage-header">
-            <span class="validation-stage-range">V1-V5</span>
+      <div class="validation-program-stack">
+        <article class="validation-program-band">
+          <div class="validation-program-head">
             <div>
+              <span class="validation-stage-range">V1-V5</span>
               <p class="validation-stage-kicker">Core identification and falsification</p>
-              <h3><a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/formal-validation-program.md">When can an observable channel support a latent-state claim?</a></h3>
+              <h3>Can an observable channel support the latent claim at all?</h3>
+              <p class="validation-program-summary">Start with the calibrated inverse, then test finite-sample uncertainty, transport, dependence, and structural falsification before accepting the measurement claim.</p>
+            </div>
+            <div class="validation-stage-actions" aria-label="V1 to V5 resources">
+              <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/formal-validation-program.md">Derivation</a>
+              <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/scripts/run_validation_program.py">Code</a>
+              <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/results/README.md#v1-v5-outputs">Results</a>
+              <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/validation-atlas.md#v1-point-identification-through-an-imperfect-channel">Figures</a>
             </div>
           </div>
-          <div class="validation-stage-list">
-            <p><strong>V1</strong><span>Point identification through a calibrated binary channel.</span></p>
-            <p><strong>V2</strong><span>Finite-sample partial identification and coverage.</span></p>
-            <p><strong>V3</strong><span>Bias when calibration does not transport across conditions.</span></p>
-            <p><strong>V4</strong><span>Failure of naive multimodal fusion under channel dependence.</span></p>
-            <p><strong>V5</strong><span>Permutation null behavior and power for structural alignment.</span></p>
+          <div class="validation-flow" aria-label="V1 to V5 validation sequence">
+            <a class="validation-node" href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/formal-validation-program.md#v1-exact-identification-through-an-imperfect-channel"><span>V1</span><strong>Identify</strong><small>Calibrated inverse</small></a>
+            <a class="validation-node" href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/formal-validation-program.md#v2-finite-sample-identification-and-coverage"><span>V2</span><strong>Bound</strong><small>Finite sample</small></a>
+            <a class="validation-node" href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/formal-validation-program.md#v3-transport-under-calibration-shift"><span>V3</span><strong>Transport</strong><small>Calibration shift</small></a>
+            <a class="validation-node" href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/formal-validation-program.md#v4-multimodal-dependence-stress-test"><span>V4</span><strong>Stress</strong><small>Channel dependence</small></a>
+            <a class="validation-node" href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/formal-validation-program.md#v5-held-out-structural-alignment-null-and-power"><span>V5</span><strong>Falsify</strong><small>Structural null</small></a>
           </div>
-          <div class="validation-stage-actions">
-            <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/formal-validation-program.md">Read derivation</a>
-            <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/scripts/run_validation_program.py">Run code</a>
-            <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/results/README.md#v1-v5-outputs">Open results</a>
-            <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/validation-atlas.md#v1-point-identification-through-an-imperfect-channel">See figures</a>
-          </div>
-          <div class="validation-stage-meta">
-            <span>Canonical seed <code>20260917</code></span>
-            <code>python scripts/run_validation_program.py</code>
-          </div>
+          <details class="validation-reproduce">
+            <summary>Reproduce V1-V5</summary>
+            <div><span>Canonical seed <code>20260917</code></span><code>python scripts/run_validation_program.py</code></div>
+          </details>
         </article>
 
-        <article class="validation-stage-card">
-          <div class="validation-stage-header">
-            <span class="validation-stage-range">V6-V10</span>
+        <article class="validation-program-band">
+          <div class="validation-program-head">
             <div>
+              <span class="validation-stage-range">V6-V10</span>
               <p class="validation-stage-kicker">Robustness under imperfect measurement</p>
-              <h3><a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/formal-validation-program-v6-v10.md">What survives calibration uncertainty, missing data, instability, and heterogeneous sites?</a></h3>
+              <h3>What remains defensible when the measurement process is not ideal?</h3>
+              <p class="validation-program-summary">Propagate uncertainty from finite calibration, missing outcomes, weak channels, heterogeneous sites, and insufficient resolution instead of hiding those failure modes.</p>
+            </div>
+            <div class="validation-stage-actions" aria-label="V6 to V10 resources">
+              <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/formal-validation-program-v6-v10.md">Derivation</a>
+              <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/scripts/run_robustness_validation.py">Code</a>
+              <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/results/README.md#v6-v10-outputs">Results</a>
+              <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/validation-atlas.md#v6-finite-calibration-sample-uncertainty">Figures</a>
             </div>
           </div>
-          <div class="validation-stage-list">
-            <p><strong>V6</strong><span>Finite reference-sample uncertainty in sensitivity and specificity.</span></p>
-            <p><strong>V7</strong><span>Sharp worst-case bounds under arbitrary missing outcomes.</span></p>
-            <p><strong>V8</strong><span>Exact inverse conditioning as the information margin weakens.</span></p>
-            <p><strong>V9</strong><span>Partial identification created by site-specific calibration.</span></p>
-            <p><strong>V10</strong><span>Resolution-aware abstention when an interval is too wide to justify release.</span></p>
+          <div class="validation-flow" aria-label="V6 to V10 validation sequence">
+            <a class="validation-node" href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/formal-validation-program-v6-v10.md#v6-finite-calibration-sample-uncertainty"><span>V6</span><strong>Calibrate</strong><small>Finite reference</small></a>
+            <a class="validation-node" href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/formal-validation-program-v6-v10.md#v7-arbitrary-missing-outcomes"><span>V7</span><strong>Recover</strong><small>Missing outcomes</small></a>
+            <a class="validation-node" href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/formal-validation-program-v6-v10.md#v8-inverse-conditioning"><span>V8</span><strong>Condition</strong><small>Weak channel</small></a>
+            <a class="validation-node" href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/formal-validation-program-v6-v10.md#v9-heterogeneous-site-non-identifiability"><span>V9</span><strong>Pool</strong><small>Site heterogeneity</small></a>
+            <a class="validation-node" href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/formal-validation-program-v6-v10.md#v10-resolution-based-abstention"><span>V10</span><strong>Abstain</strong><small>Insufficient resolution</small></a>
           </div>
-          <div class="validation-stage-actions">
-            <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/formal-validation-program-v6-v10.md">Read derivation</a>
-            <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/scripts/run_robustness_validation.py">Run code</a>
-            <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/results/README.md#v6-v10-outputs">Open results</a>
-            <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/validation-atlas.md#v6-finite-calibration-sample-uncertainty">See figures</a>
-          </div>
-          <div class="validation-stage-meta">
-            <span>Canonical seed <code>20260918</code></span>
-            <code>python scripts/run_robustness_validation.py</code>
-          </div>
+          <details class="validation-reproduce">
+            <summary>Reproduce V6-V10</summary>
+            <div><span>Canonical seed <code>20260918</code></span><code>python scripts/run_robustness_validation.py</code></div>
+          </details>
         </article>
 
-        <article class="validation-stage-card">
-          <div class="validation-stage-header">
-            <span class="validation-stage-range">V11-V15</span>
+        <article class="validation-program-band">
+          <div class="validation-program-head">
             <div>
-              <p class="validation-stage-kicker">Identification and measurement-design laws</p>
-              <h3><a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/formal-validation-program-v11-v15.md">How much information is fundamentally available, and how should a valid study be designed?</a></h3>
+              <span class="validation-stage-range">V11-V15</span>
+              <p class="validation-stage-kicker">Identification and study-design laws</p>
+              <h3>How much information is fundamentally available, and how should the study be designed?</h3>
+              <p class="validation-program-summary">Move from robustness diagnostics to exact information laws, multisite identification conditions, sharp identified sets, sample-size requirements, and selection-safe confirmatory design.</p>
+            </div>
+            <div class="validation-stage-actions" aria-label="V11 to V15 resources">
+              <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/formal-validation-program-v11-v15.md">Derivation</a>
+              <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/scripts/run_identification_design_validation.py">Code</a>
+              <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/results/README.md#v11-v15-outputs">Results</a>
+              <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/validation-atlas.md#v11-exact-missingness-information-law">Figures</a>
             </div>
           </div>
-          <div class="validation-stage-list">
-            <p><strong>V11</strong><span>Exact information loss from unrestricted missingness.</span></p>
-            <p><strong>V12</strong><span>Necessary and sufficient multisite point-identification condition.</span></p>
-            <p><strong>V13</strong><span>Sharp multisite identified interval when information margins differ.</span></p>
-            <p><strong>V14</strong><span>Sample-size law for a predeclared latent-resolution target.</span></p>
-            <p><strong>V15</strong><span>Independent pilot gating that preserves confirmatory validity.</span></p>
+          <div class="validation-flow" aria-label="V11 to V15 validation sequence">
+            <a class="validation-node" href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/formal-validation-program-v11-v15.md#v11-exact-missingness-information-law"><span>V11</span><strong>Quantify</strong><small>Missingness law</small></a>
+            <a class="validation-node" href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/formal-validation-program-v11-v15.md#v12-multisite-point-identification-theorem"><span>V12</span><strong>Identify</strong><small>Multisite condition</small></a>
+            <a class="validation-node" href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/formal-validation-program-v11-v15.md#v13-sharp-k-site-identified-interval"><span>V13</span><strong>Sharpen</strong><small>K-site interval</small></a>
+            <a class="validation-node" href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/formal-validation-program-v11-v15.md#v14-finite-sample-resolution-design-law"><span>V14</span><strong>Design</strong><small>Sample-size law</small></a>
+            <a class="validation-node" href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/formal-validation-program-v11-v15.md#v15-independent-pilot-gating"><span>V15</span><strong>Confirm</strong><small>Independent pilot gate</small></a>
           </div>
-          <div class="validation-stage-actions">
-            <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/formal-validation-program-v11-v15.md">Read derivation</a>
-            <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/scripts/run_identification_design_validation.py">Run code</a>
-            <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/results/README.md#v11-v15-outputs">Open results</a>
-            <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/7a2a1a3a60263e48b7a268642eecc6941e84d1b4/docs/validation-atlas.md#v11-exact-missingness-information-law">See figures</a>
-          </div>
-          <div class="validation-stage-meta">
-            <span>Canonical seed <code>20260919</code></span>
-            <code>python scripts/run_identification_design_validation.py</code>
-          </div>
+          <details class="validation-reproduce">
+            <summary>Reproduce V11-V15</summary>
+            <div><span>Canonical seed <code>20260919</code></span><code>python scripts/run_identification_design_validation.py</code></div>
+          </details>
         </article>
       </div>
 
