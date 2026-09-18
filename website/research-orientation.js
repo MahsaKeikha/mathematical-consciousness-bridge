@@ -202,8 +202,8 @@
         node.innerHTML = `
           <span>Research III</span>
           <h3>Engineer and falsify the measurement layer</h3>
-          <p>Model the observable channel explicitly, prove when latent inference is identifiable, propagate calibration and finite-sample uncertainty, stress dependence and transport, quantify multisite and missing-data information loss, design selection-safe release rules, and test electromagnetic field observables against gain, power-only, nuisance, and frequency-specific counterexamples, then stress source reconstruction with reference, null-space, regularization, multimodal, and forward-model perturbation tests.</p>
-          <p><strong>Current record:</strong> V1-V30 formal validation, deterministic simulations, 16 generated result figures, CSV/JSON outputs, theorem tests, and CI across Python 3.10, 3.11, and 3.12.</p>
+          <p>Model the observable channel explicitly, prove when latent inference is identifiable, propagate calibration and finite-sample uncertainty, stress dependence and transport, quantify multisite and missing-data information loss, design selection-safe release rules, and test electromagnetic field observables against gain, power-only, nuisance, and frequency-specific counterexamples, then stress source reconstruction with reference, null-space, regularization, multimodal, and forward-model perturbation tests, followed by covariance-aware residual geometry, inverse-resolution leakage, Fisher-information limits, temporal aliasing, and singular-direction noise amplification.</p>
+          <p><strong>Current record:</strong> V1-V30 formal validation, deterministic simulations, 17 generated result figures, CSV/JSON outputs, theorem tests, and CI across Python 3.10, 3.11, and 3.12.</p>
           <p><a href="measurement-science.html">Research III engineering record →</a></p>`;
       }
     }
@@ -211,7 +211,7 @@
     const section = document.getElementById('research-iii-overview');
     if (section) {
       section.querySelector('.section-head p:last-child')?.replaceChildren(document.createTextNode(
-        'Research III is an executable measurement-science program. It tests identification, finite-sample uncertainty, calibration transport, dependence, missingness, inverse conditioning, heterogeneous sites, exact information loss, sample-size design, selection-safe release, electromagnetic field organization, and forward/inverse source identifiability.'
+        'Research III is an executable measurement-science program. It tests identification, finite-sample uncertainty, calibration transport, dependence, missingness, inverse conditioning, heterogeneous sites, exact information loss, sample-size design, selection-safe release, electromagnetic field organization, forward/inverse source identifiability, and explicit resolution, information, sampling, and inverse-stability limits.'
       ));
     }
   }
