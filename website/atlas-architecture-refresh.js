@@ -6,11 +6,11 @@
   const RESEARCH_III_PIN = '0cd578fb553ab19006155a563c484511b4271a5f';
   const MEASUREMENT_REPO = 'https://github.com/MahsaKeikha/consciousness-measurement-science';
   const RAW_MAIN_PREFIX =
-    'https://raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/main/docs/figures/';
+    'https://raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/0cd578fb553ab19006155a563c484511b4271a5f/docs/figures/';
   const RAW_PIN_PREFIX =
     `https://raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/${RESEARCH_III_PIN}/docs/figures/`;
   const BLOB_MAIN_PREFIX =
-    'https://github.com/MahsaKeikha/consciousness-measurement-science/blob/main/docs/figures/';
+    'https://github.com/MahsaKeikha/consciousness-measurement-science/blob/0cd578fb553ab19006155a563c484511b4271a5f/docs/figures/';
   const BLOB_PIN_PREFIX =
     `https://github.com/MahsaKeikha/consciousness-measurement-science/blob/${RESEARCH_III_PIN}/docs/figures/`;
 

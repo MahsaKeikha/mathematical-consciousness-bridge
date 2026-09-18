@@ -9,17 +9,17 @@
     `${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/`;
 
   const LEGACY_PINS = [
-    'b3f240f2c7c8fa4c94667d2fea4d8f9f07df360c',
-    '771bca04b92cf775eb4f75fb3b576be6f43e0940',
-    'd93e768d9a7d6054ff208de2a1b9c14e79192bc5',
-    '7a2a1a3a60263e48b7a268642eecc6941e84d1b4',
-    '3cf9202977953644c980246c1f3e46a3514b3a4a',
-    '5d1d979231aed62fde34383281fa8f252a3d2fa7',
-    'b874eda1f6940f5601b7f89200b6a276b5ecbbc3',
-    '8bbb7b029d70c43cc6a9dbf8b44dfe5069d0993d',
-    '7a106820158e0d33ea651f7cdeaa505206f1ccc7',
-    'a9ef67ed15595c26b0c9f4e449f53f8078d6a1ee',
-    '64b2bc47461fe110b135080f8dc70883552d6fd9',
+    '0cd578fb553ab19006155a563c484511b4271a5f',
+    '0cd578fb553ab19006155a563c484511b4271a5f',
+    '0cd578fb553ab19006155a563c484511b4271a5f',
+    '0cd578fb553ab19006155a563c484511b4271a5f',
+    '0cd578fb553ab19006155a563c484511b4271a5f',
+    '0cd578fb553ab19006155a563c484511b4271a5f',
+    '0cd578fb553ab19006155a563c484511b4271a5f',
+    '0cd578fb553ab19006155a563c484511b4271a5f',
+    '0cd578fb553ab19006155a563c484511b4271a5f',
+    '0cd578fb553ab19006155a563c484511b4271a5f',
+    '0cd578fb553ab19006155a563c484511b4271a5f',
   ];
 
   const FOUNDATION_FIGURES = [
@@ -261,15 +261,15 @@
     let updated = value;
     for (const pin of LEGACY_PINS) updated = updated.replaceAll(pin, RESEARCH_III_PIN);
     updated = updated.replace(
-      'github.com/MahsaKeikha/consciousness-measurement-science/blob/main/',
+      'github.com/MahsaKeikha/consciousness-measurement-science/blob/0cd578fb553ab19006155a563c484511b4271a5f/',
       `github.com/MahsaKeikha/consciousness-measurement-science/blob/${RESEARCH_III_PIN}/`,
     );
     updated = updated.replace(
-      'github.com/MahsaKeikha/consciousness-measurement-science/tree/main/',
+      'github.com/MahsaKeikha/consciousness-measurement-science/tree/0cd578fb553ab19006155a563c484511b4271a5f/',
       `github.com/MahsaKeikha/consciousness-measurement-science/tree/${RESEARCH_III_PIN}/`,
     );
     updated = updated.replace(
-      'raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/main/',
+      'raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/0cd578fb553ab19006155a563c484511b4271a5f/',
       `raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/${RESEARCH_III_PIN}/`,
     );
     return updated;
