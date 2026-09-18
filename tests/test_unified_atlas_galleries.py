@@ -147,6 +147,10 @@ def test_research_iii_gallery_exposes_architecture_validation_and_result_provena
     assert "V16-V20 · electromagnetic measurement arm" in RESEARCH_III_REFRESH
     assert "Electromagnetic Source Identifiability Program" in RESEARCH_III_REFRESH
     assert "V21-V25 · electromagnetic source identifiability" in RESEARCH_III_REFRESH
+    assert "Electromagnetic Resolution and Information Program" in RESEARCH_III_REFRESH
+    assert "V26-V30 · electromagnetic resolution and information" in RESEARCH_III_REFRESH
+    assert "Electromagnetic Design and Spatial Specificity Program" in RESEARCH_III_REFRESH
+    assert "V31-V35 · electromagnetic design and spatial specificity" in RESEARCH_III_REFRESH
     assert "Electromagnetic Source Identifiability Program" in RESEARCH_III_REFRESH
     assert "V21-V25 · electromagnetic source identifiability" in RESEARCH_III_REFRESH
     assert CURRENT_RESEARCH_THREE_PIN == "0cd578fb553ab19006155a563c484511b4271a5f"
@@ -179,6 +183,8 @@ def test_research_iii_gallery_exposes_architecture_validation_and_result_provena
         "v15_independent_pilot_gate.svg",
         "v16_v20_electromagnetic_validation.svg",
         "v21_v25_electromagnetic_inverse_validation.svg",
+        "v26_v30_electromagnetic_resolution_validation.svg",
+        "v31_v35_electromagnetic_design_validation.svg",
     )
     result_files = (
         "finite_sample_coverage.csv",
@@ -196,6 +202,8 @@ def test_research_iii_gallery_exposes_architecture_validation_and_result_provena
         "v15_independent_pilot_gate.csv",
         "electromagnetic_validation_summary.json",
         "electromagnetic_inverse_validation_summary.json",
+        "electromagnetic_resolution_validation_summary.json",
+        "electromagnetic_design_validation_summary.json",
     )
     for figure in architecture_figures + validation_figures:
         assert figure in RESEARCH_III_REFRESH
