@@ -33,11 +33,11 @@ def test_research_three_page_has_visual_v1_v20_reproducibility_map() -> None:
     styles = _read("website/styles.css")
     refresh = _read("website/research-iii-atlas-refresh.js")
 
-    assert "Three validation programs move from identifiability to robustness to study design" in page
+    assert "Four validation programs move from identifiability to robustness, study design, and electromagnetic measurement" in page
     for stage in ("V1-V5", "V6-V10", "V11-V15", "V16-V20"):
         assert stage in page
     for label in ("Derivation", "Code", "Results", "Figures"):
-        assert page.count(f">{label}<") >= 3
+        assert page.count(f">{label}<") >= 4
     for node in range(1, 21):
         assert f"<span>V{node}</span>" in page
     for seed in ("20260917", "20260918", "20260919"):
@@ -57,6 +57,11 @@ def test_research_three_page_has_visual_v1_v20_reproducibility_map() -> None:
     assert "Two deterministic runners regenerate" not in page
     assert "data-v11-v15-runner" not in refresh
     assert "What V1-V20 establishes, and what it does not" in page
+    assert "v16_v20_electromagnetic_validation.svg" in page
+    assert "electromagnetic_validation_summary.json" in page
+    assert "electromagnetic-field-program.md" in page
+    assert "Claim ceiling today:" in page
+    assert "universal electromagnetic consciousness signature" in page
     assert "Scientific boundary" in page
     assert "Electromagnetic measurement arm" in page
     assert "v16_v20_electromagnetic_validation.svg" in page
