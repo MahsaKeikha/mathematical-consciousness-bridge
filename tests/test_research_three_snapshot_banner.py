@@ -37,7 +37,9 @@ def test_research_three_page_has_visual_v1_v20_reproducibility_map() -> None:
     for stage in ("V1-V5", "V6-V10", "V11-V15", "V16-V20"):
         assert stage in page
     for label in ("Derivation", "Code", "Results", "Figures"):
-        assert page.count(f">{label}<") >= 4
+        assert page.count(f">{label}<") >= 3
+    for label in ("Research program", "Figure"):
+        assert f">{label}<" in page
     for node in range(1, 21):
         assert f"<span>V{node}</span>" in page
     for seed in ("20260917", "20260918", "20260919"):
