@@ -10,7 +10,7 @@ from scripts.synchronize_research_three_website import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
-CURRENT_RESEARCH_III_PIN = "7a2a1a3a60263e48b7a268642eecc6941e84d1b4"
+CURRENT_RESEARCH_III_PIN = "d93e768d9a7d6054ff208de2a1b9c14e79192bc5"
 
 KEY_PUBLIC_SURFACES = (
     "measurement-science.html",
