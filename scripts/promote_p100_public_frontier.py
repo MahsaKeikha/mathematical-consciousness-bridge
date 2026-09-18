@@ -582,7 +582,7 @@ def test_p99_is_preserved_as_the_immediate_historical_predecessor() -> None:
     assert 'id="p99-frontier"' in atlas
     assert atlas.index('id="p100-frontier"') < atlas.index('id="p99-frontier"')
     assert "Previous theorem frontier · P99" in atlas
-    assert 'id="p99-reader-frontier"' in plain
+    assert 'id="p99-reader-frontier"' not in plain
     assert 'id="p99-reader-frontier"' in start
     assert 'id="p99-research-map"' in research
     assert research.index('id="p100-research-map"') < research.index('id="p99-research-map"')
@@ -635,9 +635,9 @@ def test_p100_is_current_across_reader_and_publication_surfaces() -> None:
     assert '<!-- current-frontier-visual: P100 -->' in atlas
     assert atlas.index('id="p100-frontier"') < atlas.index('id="p99-frontier"')
     assert "Previous theorem frontier · P99" in atlas
-    assert 'id="p100-reader-frontier"' in plain
+    assert 'id="p100-reader-frontier"' not in plain
     assert 'id="p100-reader-frontier"' in start
-    assert "100 results · current frontier P100" in plain
+    assert "100 linked results · technical endpoint P100" in plain
     assert "100 results · current frontier P100" in start
     assert 'id="p100-research-map"' in research
     assert "Current Research II model-audit range: P75-P100." in research
