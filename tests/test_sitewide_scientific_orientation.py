@@ -72,6 +72,21 @@ def test_orientation_styles_are_responsive_and_visually_structured() -> None:
     assert "@media (max-width: 520px)" in css
 
 
+
+def test_research_three_orientation_keeps_intro_with_heading() -> None:
+    script = _read("website/research-orientation.js")
+    css = _read("website/research-orientation.css")
+    app = _read("website/app.js")
+
+    assert "heading: 'Scientific scope and validation status'" in script
+    assert "The formal results below concern identifiability, uncertainty, robustness, and measurement design." in script
+    assert '<p class="scientific-orientation-intro">${contract.intro' in script
+    assert "</p>\n        </div>\n      </div>" in script
+    assert "grid-template-columns: minmax(0, 1fr);" not in css
+    assert ".scientific-orientation-head > div" in css
+    assert "research-orientation.css?v=20260918-1" in app
+    assert "research-orientation.js?v=20260918-1" in app
+
 def test_new_reader_surface_respects_dash_policy() -> None:
     for path in ("website/research-orientation.js", "website/research-orientation.css"):
         text = _read(path)
