@@ -59,7 +59,7 @@ def test_p92_start_here_preserves_history_while_plain_language_stays_conceptual(
     start = _read("website/start-here.html")
     plain = _read("website/plain-language.html")
     assert "P92" in start and "92" in start
-    assert 'id="p92-reader-frontier"' in start
+    assert 'id="p92-start-frontier"' in start
     assert 'id="p92-reader-frontier"' not in plain
     assert "100 linked results · technical endpoint P100" in plain
 
