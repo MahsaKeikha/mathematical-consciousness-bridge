@@ -91,37 +91,35 @@ def _replace_research_three_metrics(text: str) -> str:
             f"{old_count} tests in each CI job",
             f"{CURRENT_RESEARCH_THREE_TEST_COUNT} tests in each CI job",
         )
-    text = text.replace(
-        "<strong>19</strong><span>scientific visuals: 9 architecture + 10 validation</span>",
-        "<strong>26</strong><span>scientific visuals: 9 architecture + 17 validation</span>",
-    )
-    text = text.replace(
-        "<strong>23</strong><span>scientific visuals: 9 architecture + 14 validation</span>",
-        "<strong>26</strong><span>scientific visuals: 9 architecture + 17 validation</span>",
-    )
-    text = text.replace(
-        "<strong>24</strong><span>scientific visuals: 9 architecture + 15 validation</span>",
-        "<strong>26</strong><span>scientific visuals: 9 architecture + 17 validation</span>",
-    )
-    text = text.replace(
-        "<strong>25</strong><span>scientific visuals: 9 architecture + 16 validation</span>",
-        "<strong>27</strong><span>scientific visuals: 9 architecture + 18 validation</span>",
-    )
-    text = text.replace(
-        "<strong>26</strong><span>scientific visuals: 9 architecture + 17 validation</span>",
-        "<strong>27</strong><span>scientific visuals: 9 architecture + 18 validation</span>",
-    )
-    text = text.replace("24 scientific visuals", "27 scientific visuals")
-    text = text.replace("25 scientific visuals", "27 scientific visuals")
-    text = text.replace("27 scientific visuals", "27 scientific visuals")
-    text = text.replace("16 code-generated", "18 code-generated")
-    text = text.replace("17 code-generated", "18 code-generated")
-    text = text.replace("15 validation", "18 validation")
-    text = text.replace("16 validation", "18 validation")
-    text = text.replace("17 validation", "18 validation")
-    text = text.replace("4 reproducible validation runners", "7 reproducible validation runners")
-    text = text.replace("5 reproducible validation runners", "7 reproducible validation runners")
-    text = text.replace("6 reproducible validation runners", "7 reproducible validation runners")
+
+    for old_visuals, old_validation in ((19, 10), (23, 14), (24, 15), (25, 16), (26, 17)):
+        text = text.replace(
+            f"<strong>{old_visuals}</strong><span>scientific visuals: 9 architecture + {old_validation} validation</span>",
+            "<strong>27</strong><span>scientific visuals: 9 architecture + 18 validation</span>",
+        )
+
+    for old_visuals in (19, 23, 24, 25, 26):
+        text = text.replace(f"{old_visuals} scientific visuals", "27 scientific visuals")
+
+    for old_validation in (10, 14, 15, 16, 17):
+        text = text.replace(
+            f"{old_validation} validation-result figures",
+            "18 validation-result figures",
+        )
+        text = text.replace(
+            f"{old_validation} code-generated",
+            "18 code-generated",
+        )
+        text = text.replace(
+            f"9 architecture + {old_validation} validation",
+            "9 architecture + 18 validation",
+        )
+
+    for old_runners in (4, 5, 6):
+        text = text.replace(
+            f"{old_runners} reproducible validation runners",
+            "7 reproducible validation runners",
+        )
     return text
 
 
