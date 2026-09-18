@@ -205,3 +205,11 @@ def test_new_atlas_surface_keeps_reader_punctuation_contract() -> None:
     for surface in (ATLAS_REFRESH, RESEARCH_III_REFRESH, ORIENTATION):
         assert "\u2013" not in surface
         assert "\u2014" not in surface
+
+
+def test_research_iii_atlas_validation_gallery_uses_four_column_desktop_layout() -> None:
+    assert "#research-iii-validation-figure-gallery .r3-validation-grid" in RESEARCH_III_REFRESH
+    assert "grid-template-columns:repeat(4,minmax(0,1fr))" in RESEARCH_III_REFRESH
+    assert "@media(max-width:1180px)" in RESEARCH_III_REFRESH
+    assert "grid-template-columns:repeat(2,minmax(0,1fr))" in RESEARCH_III_REFRESH
+    assert "@media(max-width:680px)" in RESEARCH_III_REFRESH
