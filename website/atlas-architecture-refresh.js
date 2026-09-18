@@ -3,7 +3,7 @@
   const RESEARCH_II_MANIFEST = 'figures/manifest.json';
   const RESEARCH_II_CORE_CATEGORY = 'theorem-or-architecture';
   const RESEARCH_II_CORE_EXPECTED = 100;
-  const RESEARCH_III_PIN = '3cf9202977953644c980246c1f3e46a3514b3a4a';
+  const RESEARCH_III_PIN = '771bca04b92cf775eb4f75fb3b576be6f43e0940';
   const MEASUREMENT_REPO = 'https://github.com/MahsaKeikha/consciousness-measurement-science';
   const RAW_MAIN_PREFIX =
     'https://raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/main/docs/figures/';

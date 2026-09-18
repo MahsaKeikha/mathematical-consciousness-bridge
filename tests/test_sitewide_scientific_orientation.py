@@ -40,7 +40,7 @@ def test_orientation_keeps_claim_boundary_and_audit_visible() -> None:
     assert "physical-to-experiential bridge remains open" in script
     assert "not automatically a conscious subject" in script
     assert "Surviving the tests also does not establish" in script
-    assert "principled non-identification remains an allowed result" in script
+    assert "Principled non-identification remains an allowed result." in script
     assert "Traceability is necessary for rigor" in script
 
 

@@ -69,13 +69,18 @@ def test_pages_deployment_enforces_the_unified_gallery_contract() -> None:
         "research-iii-source-validation-gallery",
         "const RESEARCH_II_CORE_EXPECTED = 100",
         "9 / 9 visible",
-        "14 / 14 visible",
-        "V1-V15 result record",
+        "16 / 16 visible",
+        "V1-V25 result record",
         "Result data",
         "v11_missingness_information_law.svg",
         "v12_v13_multisite_heterogeneity.svg",
         "v14_resolution_sample_size.svg",
         "v15_independent_pilot_gate.svg",
+        "v16_v20_electromagnetic_validation.svg",
+        "electromagnetic_validation_summary.json",
+        "v21_v25_electromagnetic_inverse_validation.svg",
+        "electromagnetic_inverse_validation_summary.json",
+        "Electromagnetic Source Identifiability Program",
         "deployed Research II core gallery contract is not exactly 100 unique figures",
         "deployed canonical figure count is not 158",
         "node --check _site/research-orientation.js",
@@ -128,10 +133,16 @@ def test_research_iii_gallery_exposes_architecture_validation_and_result_provena
     assert "research-iii-source-validation-gallery" in RESEARCH_III_REFRESH
     assert "6-stage visual path" in RESEARCH_III_REFRESH
     assert "9 / 9 visible" in RESEARCH_III_REFRESH
-    assert "14 / 14 visible" in RESEARCH_III_REFRESH
-    assert "V1-V15 result record" in RESEARCH_III_REFRESH
+    assert "16 / 16 visible" in RESEARCH_III_REFRESH
+    assert "V1-V25 result record" in RESEARCH_III_REFRESH
     assert "Result data" in RESEARCH_III_REFRESH
-    assert CURRENT_RESEARCH_THREE_PIN == "7a2a1a3a60263e48b7a268642eecc6941e84d1b4"
+    assert "Electromagnetic Field Measurement Program" in RESEARCH_III_REFRESH
+    assert "V16-V20 · electromagnetic measurement arm" in RESEARCH_III_REFRESH
+    assert "Electromagnetic Source Identifiability Program" in RESEARCH_III_REFRESH
+    assert "V21-V25 · electromagnetic source identifiability" in RESEARCH_III_REFRESH
+    assert "Electromagnetic Source Identifiability Program" in RESEARCH_III_REFRESH
+    assert "V21-V25 · electromagnetic source identifiability" in RESEARCH_III_REFRESH
+    assert CURRENT_RESEARCH_THREE_PIN == "771bca04b92cf775eb4f75fb3b576be6f43e0940"
 
     architecture_figures = (
         "research_program_map.svg",
@@ -159,6 +170,8 @@ def test_research_iii_gallery_exposes_architecture_validation_and_result_provena
         "v12_v13_multisite_heterogeneity.svg",
         "v14_resolution_sample_size.svg",
         "v15_independent_pilot_gate.svg",
+        "v16_v20_electromagnetic_validation.svg",
+        "v21_v25_electromagnetic_inverse_validation.svg",
     )
     result_files = (
         "finite_sample_coverage.csv",
@@ -174,6 +187,8 @@ def test_research_iii_gallery_exposes_architecture_validation_and_result_provena
         "v12_v13_multisite_identification.csv",
         "v14_resolution_sample_size.csv",
         "v15_independent_pilot_gate.csv",
+        "electromagnetic_validation_summary.json",
+        "electromagnetic_inverse_validation_summary.json",
     )
     for figure in architecture_figures + validation_figures:
         assert figure in RESEARCH_III_REFRESH
@@ -183,7 +198,7 @@ def test_research_iii_gallery_exposes_architecture_validation_and_result_provena
 
 def test_atlas_orientation_points_to_architecture_and_validation_galleries() -> None:
     assert "Research III exposes 9 foundational architecture visuals" in ORIENTATION
-    assert "14 code-generated V1-V15 validation-result figures" in ORIENTATION
+    assert "16 code-generated V1-V25 validation-result figures" in ORIENTATION
     for anchor in (
         "#research-i-complete-figure-gallery",
         "#research-ii-complete-core-gallery",
