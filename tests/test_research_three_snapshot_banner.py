@@ -102,3 +102,23 @@ def test_research_three_orientation_preserves_empirical_boundary() -> None:
     assert "source reconstructions remain model- and prior-dependent inferences" in script
     assert "No current result establishes a universal electromagnetic consciousness signature" in script
     assert "analytic or synthetic validation is not human or clinical validation" in script
+
+
+def test_research_lineage_exposes_complete_v1_v35_program() -> None:
+    lineage = _read("website/research-lineage.html")
+
+    for marker in (
+        "V1-V35",
+        "<strong>144</strong><span>tests in each source CI job</span>",
+        "<strong>18</strong><span>code-generated validation-result figures</span>",
+        "<strong>7</strong><span>reproducible validation runners</span>",
+        "V16-V20 · electromagnetic observables",
+        "V21-V25 · source identifiability",
+        "V26-V30 · resolution and information limits",
+        "V31-V35 · design and spatial specificity",
+        "electromagnetic-design-spatial-specificity.md",
+        "v31_v35_electromagnetic_design_validation.svg",
+    ):
+        assert marker in lineage
+
+    assert "<strong>2</strong><span>research arms</span>" not in lineage
