@@ -86,6 +86,7 @@ def test_sources_links_each_program_to_its_real_audit_record() -> None:
         "consciousness-measurement-science/blob/main/docs/reproducibility.md",
         "consciousness-measurement-science/blob/main/docs/electromagnetic-field-program.md",
         "consciousness-measurement-science/blob/main/docs/electromagnetic-source-identifiability.md",
+        "consciousness-measurement-science/blob/main/docs/electromagnetic-source-identifiability.md",
         "consciousness-measurement-science/tree/main/schemas",
     ):
         assert token in sources
@@ -96,6 +97,8 @@ def test_sources_links_each_program_to_its_real_audit_record() -> None:
     assert "clinical validation" in sources
     assert "V16-V20 electromagnetic field program" in sources
     assert "docs/electromagnetic-field-program.md" in sources
+    assert "V21-V25 electromagnetic source-identifiability program" in sources
+    assert "docs/electromagnetic-source-identifiability.md" in sources
     assert "V21-V25 electromagnetic source-identifiability program" in sources
     assert "docs/electromagnetic-source-identifiability.md" in sources
 
