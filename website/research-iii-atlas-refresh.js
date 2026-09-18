@@ -1,5 +1,5 @@
 (() => {
-  const RESEARCH_III_PIN = '0cd578fb553ab19006155a563c484511b4271a5f';
+  const RESEARCH_III_PIN = 'c6415f2d50d68b664860f43e9da440d0a36c2997';
   const MEASUREMENT_REPO = 'https://github.com/MahsaKeikha/consciousness-measurement-science';
   const RAW_PIN_PREFIX =
     `https://raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/${RESEARCH_III_PIN}/docs/figures/`;
@@ -9,17 +9,18 @@
     `${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/`;
 
   const LEGACY_PINS = [
-    '0cd578fb553ab19006155a563c484511b4271a5f',
-    '0cd578fb553ab19006155a563c484511b4271a5f',
-    '0cd578fb553ab19006155a563c484511b4271a5f',
-    '0cd578fb553ab19006155a563c484511b4271a5f',
-    '0cd578fb553ab19006155a563c484511b4271a5f',
-    '0cd578fb553ab19006155a563c484511b4271a5f',
-    '0cd578fb553ab19006155a563c484511b4271a5f',
-    '0cd578fb553ab19006155a563c484511b4271a5f',
-    '0cd578fb553ab19006155a563c484511b4271a5f',
-    '0cd578fb553ab19006155a563c484511b4271a5f',
-    '0cd578fb553ab19006155a563c484511b4271a5f',
+    'c6415f2d50d68b664860f43e9da440d0a36c2997',
+    'b3f240f2c7c8fa4c94667d2fea4d8f9f07df360c',
+    '771bca04b92cf775eb4f75fb3b576be6f43e0940',
+    'd93e768d9a7d6054ff208de2a1b9c14e79192bc5',
+    '7a2a1a3a60263e48b7a268642eecc6941e84d1b4',
+    '3cf9202977953644c980246c1f3e46a3514b3a4a',
+    '5d1d979231aed62fde34383281fa8f252a3d2fa7',
+    'b874eda1f6940f5601b7f89200b6a276b5ecbbc3',
+    '8bbb7b029d70c43cc6a9dbf8b44dfe5069d0993d',
+    '7a106820158e0d33ea651f7cdeaa505206f1ccc7',
+    'a9ef67ed15595c26b0c9f4e449f53f8078d6a1ee',
+    '64b2bc47461fe110b135080f8dc70883552d6fd9',
   ];
 
   const FOUNDATION_FIGURES = [
@@ -233,6 +234,14 @@
       phase: 'V31-V35 · electromagnetic design and spatial specificity',
       summary: 'Point-spread and cross-talk, covariance-aware source distinguishability, Fisher-information sensor design, nuisance-subspace information loss, and robust model uncertainty are validated without treating any design statistic as consciousness.',
     },
+    {
+      title: 'Finite-sample electromagnetic inference',
+      file: 'v36_v40_electromagnetic_finite_sample_validation.svg',
+      context: 'docs/electromagnetic-finite-sample-inference.md',
+      result: 'electromagnetic_finite_sample_validation_summary.json',
+      phase: 'V36-V40 · finite-sample electromagnetic inference',
+      summary: 'GLS efficiency, inverse-covariance bias, Gaussian source discrimination, independent-search family-wise error control, and covariance-mismatch calibration are validated without treating statistical significance as consciousness.',
+    },
   ];
 
   const CURATED_FILES = new Set([
@@ -261,15 +270,15 @@
     let updated = value;
     for (const pin of LEGACY_PINS) updated = updated.replaceAll(pin, RESEARCH_III_PIN);
     updated = updated.replace(
-      'github.com/MahsaKeikha/consciousness-measurement-science/blob/0cd578fb553ab19006155a563c484511b4271a5f/',
+      'github.com/MahsaKeikha/consciousness-measurement-science/blob/c6415f2d50d68b664860f43e9da440d0a36c2997/',
       `github.com/MahsaKeikha/consciousness-measurement-science/blob/${RESEARCH_III_PIN}/`,
     );
     updated = updated.replace(
-      'github.com/MahsaKeikha/consciousness-measurement-science/tree/0cd578fb553ab19006155a563c484511b4271a5f/',
+      'github.com/MahsaKeikha/consciousness-measurement-science/tree/c6415f2d50d68b664860f43e9da440d0a36c2997/',
       `github.com/MahsaKeikha/consciousness-measurement-science/tree/${RESEARCH_III_PIN}/`,
     );
     updated = updated.replace(
-      'raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/0cd578fb553ab19006155a563c484511b4271a5f/',
+      'raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/c6415f2d50d68b664860f43e9da440d0a36c2997/',
       `raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/${RESEARCH_III_PIN}/`,
     );
     return updated;
@@ -450,10 +459,10 @@
     validation.className = 'r3-validation-record';
     validation.innerHTML = `
       <div class="r3-validation-head">
-        <div><span class="record-badge">Executable formal validation</span><h3>V1-V35 result record</h3><p>Eighteen code-generated result figures connect the mathematical program to deterministic simulations, exact design laws, failure tests, machine-readable outputs, and reproducible source code.</p></div>
-        <span class="record-badge">18 / 18 visible</span>
+        <div><span class="record-badge">Executable formal validation</span><h3>V1-V40 result record</h3><p>Nineteen code-generated result figures connect the mathematical program to deterministic simulations, exact design laws, failure tests, machine-readable outputs, and reproducible source code.</p></div>
+        <span class="record-badge">19 / 19 visible</span>
       </div>
-      <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">V1-V35 program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Machine-readable results</a></div>
+      <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">V1-V40 program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Machine-readable results</a></div>
       <div class="r3-validation-grid">${VALIDATION_FIGURES.map(validationCard).join('')}</div>`;
 
     if (boundary) {
@@ -477,10 +486,10 @@
     block.className = 'r3-validation-record';
     block.innerHTML = `
       <div class="r3-validation-head">
-        <div><span class="source-visual-badge">Research III executable evidence</span><h3>Formal validation V1-V35: derivations, result data, figures, code, and tests</h3><p>The architecture sources remain separate from the result record. Every validation figure below is pinned to the same verified Research III commit and links to its formal derivation, exact machine-readable result file, and figure source.</p></div>
-        <span class="source-visual-badge">18 result figures</span>
+        <div><span class="source-visual-badge">Research III executable evidence</span><h3>Formal validation V1-V40: derivations, result data, figures, code, and tests</h3><p>The architecture sources remain separate from the result record. Every validation figure below is pinned to the same verified Research III commit and links to its formal derivation, exact machine-readable result file, and figure source.</p></div>
+        <span class="source-visual-badge">19 result figures</span>
       </div>
-      <div class="source-section-visual-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">Validation program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Result index</a><a href="${MEASUREMENT_REPO}/tree/${RESEARCH_III_PIN}/tests">144-test suite</a></div>
+      <div class="source-section-visual-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">Validation program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Result index</a><a href="${MEASUREMENT_REPO}/tree/${RESEARCH_III_PIN}/tests">159-test suite</a></div>
       <div class="r3-validation-grid">${VALIDATION_FIGURES.map(validationCard).join('')}</div>`;
 
     const existing = document.getElementById('research-iii-source-complete-figure-gallery');
@@ -500,20 +509,20 @@
     const status = document.querySelector('.status-grid');
     if (status) {
       const cells = status.querySelectorAll(':scope > div');
-      if (cells[0]) cells[0].innerHTML = '<strong>V1-V35</strong><span>formal validation stages</span>';
-      if (cells[1]) cells[1].innerHTML = '<strong>27</strong><span>scientific visuals: 9 architecture + 18 validation</span>';
-      if (cells[2]) cells[2].innerHTML = '<strong>144</strong><span>tests in each CI job</span>';
+      if (cells[0]) cells[0].innerHTML = '<strong>V1-V40</strong><span>formal validation stages</span>';
+      if (cells[1]) cells[1].innerHTML = '<strong>28</strong><span>scientific visuals: 9 architecture + 19 validation</span>';
+      if (cells[2]) cells[2].innerHTML = '<strong>159</strong><span>tests in each CI job</span>';
       if (cells[3]) cells[3].innerHTML = '<strong>3</strong><span>Python versions in the CI matrix</span>';
     }
 
     const primary = document.querySelector('.hero-actions .button.primary');
     if (primary) {
-      primary.textContent = 'Open V1-V35 validation program';
+      primary.textContent = 'Open V1-V40 validation program';
       primary.href = `${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md`;
     }
 
     const follow = document.querySelector('.source-grid a:first-child p');
-    if (follow) follow.textContent = 'The compact V1-V35 map: scientific question, mathematical object, executable evidence, result record, and failure condition.';
+    if (follow) follow.textContent = 'The compact V1-V40 map: scientific question, mathematical object, executable evidence, result record, and failure condition.';
 
     document.getElementById('formal-validation-v11-v15')?.remove();
     const baseStages = document.getElementById('formal-validation-v1-v10');
@@ -602,6 +611,7 @@
     document.getElementById('v21-v25-em-source-identifiability')?.remove();
     document.getElementById('v26-v30-em-resolution-information')?.remove();
     document.getElementById('v31-v35-em-design-spatial-specificity')?.remove();
+    document.getElementById('v36-v40-em-finite-sample-inference')?.remove();
     const emSection = document.getElementById('v16-v20-em-field-program');
     if (emSection) {
       const inverse = document.createElement('section');
@@ -693,6 +703,36 @@
         </div>
         <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/src/consciousness_measurement/electromagnetic_design.py">Design code</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/src/consciousness_measurement/electromagnetic_design_simulations.py">Validation simulations</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/scripts/run_electromagnetic_design_validation.py">Reproduce V31-V35</a></div>`;
       resolution.insertAdjacentElement('afterend', design);
+
+      const inference = document.createElement('section');
+      inference.id = 'v36-v40-em-finite-sample-inference';
+      inference.className = 'r3-stage-extension';
+      inference.innerHTML = `
+        <div class="section-head">
+          <p class="eyebrow">V36-V40 · Finite-sample electromagnetic inference</p>
+          <h2>Separate a source estimate from the statistical calibration needed to trust it</h2>
+          <p>This layer adds efficient scalar-amplitude inference, finite inverse-covariance bias, exact Gaussian source-discrimination error, search-wide false-positive control, and covariance-mismatch uncertainty calibration.</p>
+        </div>
+        <div class="boundary">
+          <p><strong>Scientific claim boundary:</strong> V36-V40 are analytic or fixed-seed synthetic inference results. They do not show that a statistically significant source estimate, a low classification error, a corrected p-value, or a calibrated electromagnetic statistic directly measures consciousness or qualia.</p>
+        </div>
+        <div class="measurement-figure-grid">
+          <article class="figure-card">
+            <a href="${BLOB_PIN_PREFIX}v36_v40_electromagnetic_finite_sample_validation.svg"><img loading="lazy" decoding="async" src="${RAW_PIN_PREFIX}v36_v40_electromagnetic_finite_sample_validation.svg" alt="Research III finite-sample electromagnetic inference validation V36 to V40" /></a>
+            <p class="eyebrow">V36-V40 · finite-sample inference</p>
+            <h3>Estimator efficiency, covariance uncertainty, discrimination, multiplicity, and calibration</h3>
+            <p>V36 proves GLS unbiasedness and CRLB attainment under known covariance and checks 40,000 fixed-seed Gaussian trials. V37 exposes finite inverse-covariance bias. V38 gives exact equal-prior Gaussian Bayes error from Mahalanobis separation. V39 gives an exact independent-search FWER baseline. V40 shows how covariance mismatch can understate uncertainty by about 33 percent in the canonical construction.</p>
+            <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/electromagnetic-finite-sample-inference.md">Finite-Sample Electromagnetic Inference Program</a><a href="${RESULT_PIN_PREFIX}electromagnetic_finite_sample_validation_summary.json">Result record</a><a href="${BLOB_PIN_PREFIX}v36_v40_electromagnetic_finite_sample_validation.svg">Figure source</a></div>
+          </article>
+        </div>
+        <div class="r3-design-law-grid">
+          <article><strong>V36: point estimate is not enough</strong><p>Under the declared Gaussian model, GLS has an exact variance equal to the CRLB, and finite-sample coverage can be checked against that law.</p></article>
+          <article><strong>V37: estimated precision can be biased</strong><p>Even an unbiased sample covariance does not imply an unbiased inverse covariance when the noise sample is finite.</p></article>
+          <article><strong>V38-V39: distinguishability and significance are different burdens</strong><p>Mahalanobis separation determines ideal Gaussian discrimination error, while search multiplicity determines the threshold needed to control false positives.</p></article>
+          <article><strong>V40: nominal precision can be overconfident</strong><p>The sandwich variance exposes uncertainty inflation when the weighting covariance is not the true covariance.</p></article>
+        </div>
+        <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/src/consciousness_measurement/electromagnetic_finite_sample.py">Inference code</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/src/consciousness_measurement/electromagnetic_finite_sample_simulations.py">Validation simulations</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/scripts/run_electromagnetic_finite_sample_validation.py">Reproduce V36-V40</a></div>`;
+      design.insertAdjacentElement('afterend', inference);
     }
 
     repinResearchIIIAssets();
@@ -707,8 +747,8 @@
     if (!programCard) return false;
     const metric = programCard.querySelector('.research-program-metric');
     const meta = programCard.querySelector('.research-program-meta');
-    if (metric) metric.innerHTML = '<strong>144</strong><span>tests in each CI job</span>';
-    if (meta) meta.textContent = 'V1-V35 formal validation · 27 scientific visuals · 7 reproducible validation runners';
+    if (metric) metric.innerHTML = '<strong>159</strong><span>tests in each CI job</span>';
+    if (meta) meta.textContent = 'V1-V40 formal validation · 28 scientific visuals · 8 reproducible validation runners';
     return true;
   }
 
