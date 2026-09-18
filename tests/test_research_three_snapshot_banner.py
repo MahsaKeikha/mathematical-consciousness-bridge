@@ -35,7 +35,44 @@ def test_research_three_page_keeps_reproducibility_and_scientific_boundary() -> 
     assert "Resolution-aware abstention" in page
     assert "Scientific boundary" in page
     assert "formal-validation-v11-v15" in refresh
-    assert "run_identification_design_validation.py" in refresh
+    assert "run_identification_design_validation.py" in page
+
+
+def test_research_three_reproducibility_is_an_authored_computational_audit() -> None:
+    page = _read("website/measurement-science.html")
+    styles = _read("website/styles.css")
+    refresh = _read("website/research-iii-atlas-refresh.js")
+
+    required = (
+        'id="research-iii-reproducibility"',
+        "Reproducibility and computational audit",
+        "Every reported result is tied to a versioned analysis path",
+        "chain of custody from mathematical statement to executable implementation",
+        "Canonical regeneration",
+        "Verification contract",
+        "Independent audit trail",
+        "run_validation_program.py",
+        "run_robustness_validation.py",
+        "run_identification_design_validation.py",
+        "20260917",
+        "20260918",
+        "20260919",
+        "98 per CI environment",
+        "3.10 · 3.11 · 3.12",
+        "Machine-readable results",
+        "Verification tests",
+        "Public provenance map",
+    )
+    for marker in required:
+        assert marker in page
+
+    assert "Two deterministic runners regenerate the validation results and figures" not in page
+    assert "Three deterministic runners regenerate the validation results and figures" not in page
+    assert "const reproduction = findSectionByText" not in refresh
+    assert ".repro-audit-grid" in styles
+    assert ".repro-command-list" in styles
+    assert ".repro-metrics" in styles
+    assert ".repro-link-list" in styles
 
 
 def test_homepage_orientation_promotes_engineering_validation() -> None:
