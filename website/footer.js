@@ -290,6 +290,7 @@
     if (currentFile() !== 'plain-language.html') return;
 
     const replacements = new Map([
+      ['99 linked results · technical endpoint P99', '100 linked results · technical endpoint P100'],
       ['99-result', '100-result'],
       ['all 99 Research II results', 'all 100 Research II results'],
       ['currently through P99', 'currently through P100'],
