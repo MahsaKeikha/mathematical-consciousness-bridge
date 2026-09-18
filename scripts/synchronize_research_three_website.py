@@ -11,8 +11,9 @@ import argparse
 import re
 from pathlib import Path
 
-CURRENT_RESEARCH_THREE_PIN = "7a2a1a3a60263e48b7a268642eecc6941e84d1b4"
+CURRENT_RESEARCH_THREE_PIN = "792c846f341521cea2fdbc8b699fcd6ea702c225"
 LEGACY_RESEARCH_THREE_PINS = (
+    "7a2a1a3a60263e48b7a268642eecc6941e84d1b4",
     "3cf9202977953644c980246c1f3e46a3514b3a4a",
     "5d1d979231aed62fde34383281fa8f252a3d2fa7",
     "b874eda1f6940f5601b7f89200b6a276b5ecbbc3",
@@ -21,7 +22,7 @@ LEGACY_RESEARCH_THREE_PINS = (
     "a9ef67ed15595c26b0c9f4e449f53f8078d6a1ee",
     "64b2bc47461fe110b135080f8dc70883552d6fd9",
 )
-CURRENT_RESEARCH_THREE_TEST_COUNT = 98
+CURRENT_RESEARCH_THREE_TEST_COUNT = 109
 ROOT = Path(__file__).resolve().parents[1]
 MEASUREMENT_REPO_PATH = "MahsaKeikha/consciousness-measurement-science"
 PUBLIC_SUFFIXES = {".html", ".js"}
@@ -80,7 +81,11 @@ def _replace_research_three_metrics(text: str) -> str:
         )
     text = text.replace(
         "<strong>19</strong><span>scientific visuals: 9 architecture + 10 validation</span>",
+        "<strong>24</strong><span>scientific visuals: 9 architecture + 15 validation</span>",
+    )
+    text = text.replace(
         "<strong>23</strong><span>scientific visuals: 9 architecture + 14 validation</span>",
+        "<strong>24</strong><span>scientific visuals: 9 architecture + 15 validation</span>",
     )
     return text
 
@@ -89,7 +94,7 @@ def _legacy_build_contract_comment() -> str:
     """Invisible compatibility markers for one older build validator.
 
     These strings are intentionally kept out of the rendered DOM. The visible
-    Research III page is governed by the V1-V15 publication contract below.
+    Research III page is governed by the V1-V20 publication contract below.
     """
     pin = CURRENT_RESEARCH_THREE_PIN
     return f"""<!-- research-three-legacy-build-contract
@@ -172,8 +177,8 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     refresh = text("research-iii-atlas-refresh.js")
     required_refresh_markers = (
         CURRENT_RESEARCH_THREE_PIN,
-        "V1-V15 result record",
-        "14 / 14 visible",
+        "V1-V20 result record",
+        "15 / 15 visible",
         "research-iii-validation-figure-gallery",
         "research-iii-source-validation-gallery",
         "Result data",
@@ -183,11 +188,14 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
         "v15_independent_pilot_gate.svg",
         "v11_missingness_information_law.csv",
         "v15_independent_pilot_gate.csv",
+        "v16_v20_electromagnetic_validation.svg",
+        "electromagnetic_validation_summary.json",
+        "docs/electromagnetic-field-program.md",
     )
     missing_refresh = [marker for marker in required_refresh_markers if marker not in refresh]
     if missing_refresh:
         raise RuntimeError(
-            "Research III gallery refresh is missing V1-V15 publication markers: "
+            "Research III gallery refresh is missing V1-V20 publication markers: "
             + repr(missing_refresh)
         )
 
@@ -200,9 +208,9 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     orientation = text("research-orientation.js")
     for marker in (
         CURRENT_RESEARCH_THREE_PIN,
-        "V1-V15 formal validation",
-        "98</strong><span>tests in each CI job",
-        "23 scientific visuals",
+        "V1-V20 formal validation",
+        "109</strong><span>tests in each CI job",
+        "24 scientific visuals",
         "loadResearchIIIAtlasRefresh();",
     ):
         if marker not in orientation:
