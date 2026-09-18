@@ -1,5 +1,5 @@
 (() => {
-  const RESEARCH_III_PIN = '7a2a1a3a60263e48b7a268642eecc6941e84d1b4';
+  const RESEARCH_III_PIN = '792c846f341521cea2fdbc8b699fcd6ea702c225';
   const MEASUREMENT_REPO = 'https://github.com/MahsaKeikha/consciousness-measurement-science';
   const RAW_PIN_PREFIX =
     `https://raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/${RESEARCH_III_PIN}/docs/figures/`;
@@ -9,6 +9,7 @@
     `${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/`;
 
   const LEGACY_PINS = [
+    '7a2a1a3a60263e48b7a268642eecc6941e84d1b4',
     '3cf9202977953644c980246c1f3e46a3514b3a4a',
     '5d1d979231aed62fde34383281fa8f252a3d2fa7',
     'b874eda1f6940f5601b7f89200b6a276b5ecbbc3',
@@ -196,6 +197,14 @@
       result: 'v15_independent_pilot_gate.csv',
       phase: 'V15 · selection-safe release design',
       summary: 'Pilot data decide whether to proceed, while an independent confirmatory interval preserves its validity among released designs. The fixed-seed record is byte-stable across supported Python and NumPy environments.',
+    },
+    {
+      title: 'Electromagnetic observables and confound stress tests',
+      file: 'v16_v20_electromagnetic_validation.svg',
+      context: 'docs/electromagnetic-field-program.md',
+      result: 'electromagnetic_validation_summary.json',
+      phase: 'V16-V20 · electromagnetic measurement',
+      summary: 'Physical field sanity checks, gain-invariant organization descriptors, a matched-power phase-structure counterexample, common-mode confound stress, and frequency-specific organization. This is measurement validation, not a consciousness detector.',
     },
   ];
 
@@ -414,10 +423,10 @@
     validation.className = 'r3-validation-record';
     validation.innerHTML = `
       <div class="r3-validation-head">
-        <div><span class="record-badge">Executable formal validation</span><h3>V1-V15 result record</h3><p>Fourteen code-generated result figures connect the mathematical program to deterministic simulations, exact design laws, failure tests, machine-readable outputs, and reproducible source code.</p></div>
-        <span class="record-badge">14 / 14 visible</span>
+        <div><span class="record-badge">Executable formal validation</span><h3>V1-V20 result record</h3><p>Fifteen code-generated result figures connect the mathematical program to deterministic simulations, exact design laws, failure tests, machine-readable outputs, and reproducible source code.</p></div>
+        <span class="record-badge">15 / 15 visible</span>
       </div>
-      <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">V1-V15 program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Machine-readable results</a></div>
+      <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">V1-V20 program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Machine-readable results</a></div>
       <div class="r3-validation-grid">${VALIDATION_FIGURES.map(validationCard).join('')}</div>`;
 
     if (boundary) {
@@ -466,7 +475,7 @@
       const cells = status.querySelectorAll(':scope > div');
       if (cells[0]) cells[0].innerHTML = '<strong>V1-V15</strong><span>formal validation stages</span>';
       if (cells[1]) cells[1].innerHTML = '<strong>23</strong><span>scientific visuals: 9 architecture + 14 validation</span>';
-      if (cells[2]) cells[2].innerHTML = '<strong>98</strong><span>tests in each CI job</span>';
+      if (cells[2]) cells[2].innerHTML = '<strong>109</strong><span>tests in each CI job</span>';
       if (cells[3]) cells[3].innerHTML = '<strong>3</strong><span>Python versions in the CI matrix</span>';
     }
 
@@ -541,8 +550,8 @@
     if (!programCard) return false;
     const metric = programCard.querySelector('.research-program-metric');
     const meta = programCard.querySelector('.research-program-meta');
-    if (metric) metric.innerHTML = '<strong>98</strong><span>tests in each CI job</span>';
-    if (meta) meta.textContent = 'V1-V15 formal validation · 23 scientific visuals · 3 deterministic runners';
+    if (metric) metric.innerHTML = '<strong>109</strong><span>tests in each CI job</span>';
+    if (meta) meta.textContent = 'V1-V20 formal validation · 24 scientific visuals · 4 deterministic runners';
     return true;
   }
 
