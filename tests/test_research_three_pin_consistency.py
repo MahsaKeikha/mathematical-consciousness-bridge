@@ -14,6 +14,8 @@ CURRENT_RESEARCH_III_PIN = "b3f240f2c7c8fa4c94667d2fea4d8f9f07df360c"
 
 KEY_PUBLIC_SURFACES = (
     "measurement-science.html",
+    "visual-atlas.html",
+    "sources.html",
     "index.html",
     "research-lineage.html",
     "source-section-visuals.js",
