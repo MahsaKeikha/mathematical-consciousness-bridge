@@ -1,7 +1,7 @@
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PIN = "b3f240f2c7c8fa4c94667d2fea4d8f9f07df360c"
+PIN = "0cd578fb553ab19006155a563c484511b4271a5f"
 
 
 def _read(path: str) -> str:
@@ -16,31 +16,31 @@ def test_research_three_snapshot_is_audit_metadata_not_a_reader_card() -> None:
     assert '<p class="eyebrow">Implemented now versus not yet established</p>' not in page
 
 
-def test_research_three_v30_public_layer_uses_verified_snapshot() -> None:
+def test_research_three_v35_public_layer_uses_verified_snapshot() -> None:
     refresh = _read("website/research-iii-atlas-refresh.js")
     orientation = _read("website/research-orientation.js")
 
     assert PIN in refresh
     assert PIN in orientation
-    assert "V1-V30 result record" in refresh
-    assert "17 / 17 visible" in refresh
-    assert "133</strong><span>tests in each CI job" in orientation
-    assert "26 scientific visuals" in orientation
+    assert "V1-V35 result record" in refresh
+    assert "18 / 18 visible" in refresh
+    assert "144</strong><span>tests in each CI job" in orientation
+    assert "27 scientific visuals" in orientation
 
 
-def test_research_three_page_has_visual_v1_v30_reproducibility_map() -> None:
+def test_research_three_page_has_visual_v1_v35_reproducibility_map() -> None:
     page = _read("website/measurement-science.html")
     styles = _read("website/styles.css")
     refresh = _read("website/research-iii-atlas-refresh.js")
 
-    assert "Six validation programs move from identifiability to robustness, study design, electromagnetic measurement, source identifiability, and resolution and information limits" in page
-    for stage in ("V1-V5", "V6-V10", "V11-V15", "V16-V20", "V21-V25", "V26-V30"):
+    assert "Seven validation programs move from identifiability to robustness, study design, electromagnetic measurement, source identifiability, resolution and information limits, and design and spatial specificity" in page
+    for stage in ("V1-V5", "V6-V10", "V11-V15", "V16-V20", "V21-V25", "V26-V30", "V31-V35"):
         assert stage in page
     for label in ("Derivation", "Code", "Results", "Figures"):
         assert page.count(f">{label}<") >= 3
     for label in ("Research program", "Figure"):
         assert f">{label}<" in page
-    for node in range(1, 31):
+    for node in range(1, 36):
         assert f"<span>V{node}</span>" in page
     for seed in ("20260917", "20260918", "20260919"):
         assert seed in page
@@ -51,16 +51,17 @@ def test_research_three_page_has_visual_v1_v30_reproducibility_map() -> None:
         "run_electromagnetic_validation.py",
         "run_electromagnetic_inverse_validation.py",
         "run_electromagnetic_resolution_validation.py",
+        "run_electromagnetic_design_validation.py",
     ):
         assert runner in page
 
     assert 'class="validation-flow"' in page
-    assert page.count('class="validation-node"') == 30
+    assert page.count('class="validation-node"') == 35
     assert ".validation-flow::before" in styles
     assert "grid-template-columns: repeat(5, minmax(0, 1fr))" in styles
     assert "Two deterministic runners regenerate" not in page
     assert "data-v11-v15-runner" not in refresh
-    assert "What V1-V30 establishes, and what it does not" in page
+    assert "What V1-V35 establishes, and what it does not" in page
     assert "v16_v20_electromagnetic_validation.svg" in page
     assert "electromagnetic_validation_summary.json" in page
     assert "electromagnetic-field-program.md" in page
@@ -78,16 +79,20 @@ def test_research_three_page_has_visual_v1_v30_reproducibility_map() -> None:
     assert "electromagnetic_resolution_validation_summary.json" in page
     assert "electromagnetic-resolution-program.md" in page
     assert "v26-v30-electromagnetic-resolution-information" in page
+    assert "v31_v35_electromagnetic_design_validation.svg" in page
+    assert "electromagnetic_design_validation_summary.json" in page
+    assert "electromagnetic-design-spatial-specificity.md" in page
+    assert "v31-v35-electromagnetic-design-spatial-specificity" in page
 
 
 def test_homepage_orientation_promotes_engineering_validation() -> None:
     script = _read("website/research-orientation.js")
 
     assert "function enhanceHomepageResearchIII()" in script
-    assert "V1-V30 formal validation" in script
-    assert "133</strong><span>tests in each CI job" in script
-    assert "26 scientific visuals" in script
-    assert "6 reproducible validation runners" in script
+    assert "V1-V35 formal validation" in script
+    assert "144</strong><span>tests in each CI job" in script
+    assert "27 scientific visuals" in script
+    assert "7 reproducible validation runners" in script
     assert "enhanceHomepageResearchIII();" in script
 
 
