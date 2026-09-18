@@ -93,6 +93,8 @@ def test_sources_links_each_program_to_its_real_audit_record() -> None:
     assert "analytic and synthetic validation, specification, and software scaffolding are not empirical consciousness evidence" in sources
     assert "external validation" in sources
     assert "clinical validation" in sources
+    assert "V16-V20 electromagnetic field program" in sources
+    assert "docs/electromagnetic-field-program.md" in sources
 
 
 def test_sitewide_orientation_describes_atlas_and_sources_as_three_program_surfaces() -> None:
