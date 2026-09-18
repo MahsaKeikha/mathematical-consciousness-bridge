@@ -131,6 +131,14 @@ jobs:
           grep -q '144</strong><span>tests in each CI job' _site/research-orientation.js
           grep -q '27 scientific visuals' _site/research-orientation.js
           grep -q '7 reproducible validation runners' _site/research-orientation.js
+          grep -q 'V1-V35' _site/research-lineage.html
+          grep -q '144</strong><span>tests in each source CI job' _site/research-lineage.html
+          grep -q '18</strong><span>code-generated validation-result figures' _site/research-lineage.html
+          grep -q '7</strong><span>reproducible validation runners' _site/research-lineage.html
+          grep -q 'V31-V35 · design and spatial specificity' _site/research-lineage.html
+          grep -q 'electromagnetic-design-spatial-specificity.md' _site/research-lineage.html
+          ! grep -q '<strong>2</strong><span>research arms</span>' _site/research-lineage.html
+
           grep -q 'research-i-complete-figure-gallery' _site/three-program-evidence.js
           grep -q 'research-ii-complete-core-gallery' _site/atlas-architecture-refresh.js
           grep -q 'research-iii-complete-figure-gallery' _site/research-iii-atlas-refresh.js
