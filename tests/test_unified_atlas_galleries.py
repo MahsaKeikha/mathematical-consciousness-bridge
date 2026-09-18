@@ -70,6 +70,7 @@ def test_pages_deployment_enforces_the_unified_gallery_contract() -> None:
         "const RESEARCH_II_CORE_EXPECTED = 100",
         "9 / 9 visible",
         "17 / 17 visible",
+        "17 result figures",
         "V1-V30 result record",
         "Result data",
         "v11_missingness_information_law.svg",
