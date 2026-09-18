@@ -158,7 +158,7 @@ def test_research_iii_gallery_exposes_architecture_validation_and_result_provena
     assert "V36-V40 · finite-sample electromagnetic inference" in RESEARCH_III_REFRESH
     assert "Electromagnetic Source Identifiability Program" in RESEARCH_III_REFRESH
     assert "V21-V25 · electromagnetic source identifiability" in RESEARCH_III_REFRESH
-    assert CURRENT_RESEARCH_THREE_PIN == "c6415f2d50d68b664860f43e9da440d0a36c2997"
+    assert CURRENT_RESEARCH_THREE_PIN == "e5063b0ac1e85577dd3e1a7c4c4003c122210d48"
 
     architecture_figures = (
         "research_program_map.svg",
