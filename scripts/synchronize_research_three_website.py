@@ -125,6 +125,22 @@ def _upgrade_measurement_page_copy(text: str) -> str:
         "All ten validation-result figures",
         "All fourteen validation-result figures",
     )
+    text = text.replace(
+        "Formal validation V1-V15, reproducible equations",
+        "Formal validation V1-V20, reproducible equations",
+    )
+    text = text.replace("Open V1-V15 validation program", "Open V1-V20 validation program")
+    text = text.replace(
+        "<strong>V1-V15</strong><span>formal validation stages</span>",
+        "<strong>V1-V20</strong><span>formal validation stages</span>",
+    )
+    text = text.replace("The compact V1-V15 map", "The compact V1-V20 map")
+    text = text.replace(
+        "All fourteen validation-result figures",
+        "All fifteen validation-result figures",
+    )
+    text = text.replace("V1-V15 tests", "V1-V20 tests")
+    text = text.replace("fourteen validation-result figures", "fifteen validation-result figures")
     if "<!-- research-three-legacy-build-contract" not in text:
         text = text.replace("</main>", f"  {_legacy_build_contract_comment()}\n  </main>")
     return text
