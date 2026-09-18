@@ -105,6 +105,8 @@ def _replace_research_three_metrics(text: str) -> str:
         "<strong>26</strong><span>scientific visuals: 9 architecture + 17 validation</span>",
     )
     text = text.replace("24 scientific visuals", "26 scientific visuals")
+    text = text.replace("25 scientific visuals", "26 scientific visuals")
+    text = text.replace("16 code-generated", "17 code-generated")
     text = text.replace("15 validation", "17 validation")
     text = text.replace("16 validation", "17 validation")
     text = text.replace("4 reproducible validation runners", "6 reproducible validation runners")
@@ -272,8 +274,31 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
         if marker not in orientation:
             raise RuntimeError(f"Research III orientation is missing: {marker}")
 
+    atlas = text("visual-atlas.html")
+    for marker in (
+        "V1-V30",
+        "17</strong><span>code-generated validation figures",
+        "133</strong><span>tests in each CI job",
+        "v26_v30_electromagnetic_resolution_validation.svg",
+    ):
+        if marker not in atlas:
+            raise RuntimeError(f"Visual Atlas is missing Research III V1-V30 marker: {marker}")
+
+    sources = text("sources.html")
+    for marker in (
+        "V1-V30",
+        "17 result figures",
+        "133 tests",
+        "V26-V30 electromagnetic resolution and information program",
+        "docs/electromagnetic-resolution-program.md",
+    ):
+        if marker not in sources:
+            raise RuntimeError(f"Sources page is missing Research III V1-V30 marker: {marker}")
+
     key_surfaces = (
         "measurement-science.html",
+        "visual-atlas.html",
+        "sources.html",
         "index.html",
         "research-lineage.html",
         "research-iii-atlas-refresh.js",
