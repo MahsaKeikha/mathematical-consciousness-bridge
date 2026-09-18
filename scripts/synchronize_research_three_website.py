@@ -144,56 +144,43 @@ consciousness-measurement-science/blob/{pin}/schemas/claim.schema.json
 
 
 def _upgrade_measurement_page_copy(text: str) -> str:
-    for stale_range in ("V11 to V16", "V11 to V17", "V11 to V18"):
+    for old_stage in ("V1-V10", "V1-V15", "V1-V17", "V1-V20", "V1-V25", "V1-V30"):
+        text = text.replace(old_stage, "V1-V35")
+
+    for old_count_word in ("ten", "fourteen", "fifteen", "sixteen", "seventeen"):
         text = text.replace(
-            f'aria-label="{stale_range} validation sequence"',
-            'aria-label="V11 to V15 validation sequence"',
+            f"All {old_count_word} validation-result figures",
+            "All eighteen validation-result figures",
         )
-    text = text.replace("V1-V30", "V1-V35")
-    text = text.replace("V1-V25", "V1-V30")
-    text = text.replace("All sixteen validation-result figures", "All eighteen validation-result figures")
-    text = text.replace("All seventeen validation-result figures", "All eighteen validation-result figures")
-    text = text.replace(
-        "Formal validation V1-V10, reproducible equations",
-        "Formal validation V1-V35, reproducible equations",
-    )
-    text = text.replace("Open V1-V10 validation program", "Open V1-V30 validation program")
-    text = text.replace("Open V1-V15 validation program", "Open V1-V30 validation program")
-    text = text.replace("Open V1-V17 validation program", "Open V1-V30 validation program")
-    text = text.replace("Open V1-V20 validation program", "Open V1-V35 validation program")
-    text = text.replace("Open V1-V30 validation program", "Open V1-V35 validation program")
-    text = text.replace(
-        "<strong>V1-V10</strong><span>formal validation stages</span>",
-        "<strong>V1-V30</strong><span>formal validation stages</span>",
-    )
-    text = text.replace(
-        "<strong>V1-V15</strong><span>formal validation stages</span>",
-        "<strong>V1-V30</strong><span>formal validation stages</span>",
-    )
-    text = text.replace(
-        "<strong>V1-V20</strong><span>formal validation stages</span>",
-        "<strong>V1-V30</strong><span>formal validation stages</span>",
-    )
-    text = text.replace("The compact V1-V10 map", "The compact V1-V30 map")
-    text = text.replace("The compact V1-V15 map", "The compact V1-V30 map")
-    text = text.replace("The compact V1-V20 map", "The compact V1-V30 map")
-    text = text.replace(
-        "All ten validation-result figures",
-        "All seventeen validation-result figures",
-    )
-    text = text.replace("All fourteen validation-result figures", "All seventeen validation-result figures")
-    text = text.replace("All fifteen validation-result figures", "All seventeen validation-result figures")
-    text = text.replace("V1-V15", "V1-V30")
-    text = text.replace("V1-V20", "V1-V30")
-    text = text.replace("23 scientific visuals", "27 scientific visuals")
-    text = text.replace("24 scientific visuals", "27 scientific visuals")
-    text = text.replace("14 validation", "17 validation")
-    text = text.replace("15 validation", "18 validation")
-    text = text.replace("98-test suite", "133-test suite")
-    text = text.replace("109-test suite", "133-test suite")
-    text = text.replace("98 tests in each CI job", "133 tests in each CI job")
-    text = text.replace("109 tests in each CI job", "133 tests in each CI job")
-    text = text.replace("4 reproducible validation runners", "7 reproducible validation runners")
+
+    for old_visual_count in (19, 23, 24, 25, 26):
+        text = text.replace(
+            f"{old_visual_count} scientific visuals",
+            "27 scientific visuals",
+        )
+
+    for old_validation_count in (10, 14, 15, 16, 17):
+        text = text.replace(
+            f"9 architecture + {old_validation_count} validation",
+            "9 architecture + 18 validation",
+        )
+
+    for old_test_count in (98, 109, 121, 133):
+        text = text.replace(
+            f"{old_test_count}-test suite",
+            "144-test suite",
+        )
+        text = text.replace(
+            f"{old_test_count} tests in each CI job",
+            "144 tests in each CI job",
+        )
+
+    for old_runner_count in (4, 5, 6):
+        text = text.replace(
+            f"{old_runner_count} reproducible validation runners",
+            "7 reproducible validation runners",
+        )
+
     if "<!-- research-three-legacy-build-contract" not in text:
         text = text.replace("</main>", f"  {_legacy_build_contract_comment()}\n  </main>")
     return text
