@@ -84,5 +84,5 @@ def test_homepage_orientation_promotes_engineering_validation() -> None:
 def test_research_three_orientation_preserves_empirical_boundary() -> None:
     script = _read("website/research-orientation.js")
 
-    assert "do not establish empirical calibration for consciousness" in script
+    assert "No current result establishes a universal EM consciousness signature or empirical calibration for consciousness" in script
     assert "analytic or synthetic validation is not human or clinical validation" in script
