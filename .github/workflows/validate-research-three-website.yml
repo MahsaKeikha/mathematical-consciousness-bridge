@@ -186,6 +186,9 @@ jobs:
           assert "electromagnetic_validation_summary.json" in refresh
           assert "electromagnetic-field-program.md" in refresh
           assert "v16-v20-em-field-program" in refresh
+          assert "v21-v25-em-source-program" in refresh
+          assert "v21_v25_electromagnetic_inverse_validation.svg" in refresh
+          assert "electromagnetic_inverse_validation_summary.json" in refresh
           assert "v21-v25-em-source-identifiability" in refresh
           assert "v21_v25_electromagnetic_inverse_validation.svg" in refresh
           assert "electromagnetic_inverse_validation_summary.json" in refresh
