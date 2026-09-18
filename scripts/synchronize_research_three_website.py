@@ -152,14 +152,14 @@ consciousness-measurement-science/blob/{pin}/schemas/claim.schema.json
 
 def _upgrade_measurement_page_copy(text: str) -> str:
     text = text.replace("V1-V40", "V1-V45")
-    text = text.replace("V1-V35", "V1-V40")
+    text = text.replace("V1-V35", "V1-V45")
     for stale_range in ("V11 to V16", "V11 to V17", "V11 to V18", "V11 to V19", "V11 to V20"):
         text = text.replace(
             f'aria-label="{stale_range} validation sequence"',
             'aria-label="V11 to V15 validation sequence"',
         )
-    text = text.replace("V1-V30", "V1-V40")
-    text = text.replace("V1-V25", "V1-V40")
+    text = text.replace("V1-V30", "V1-V45")
+    text = text.replace("V1-V25", "V1-V45")
     text = text.replace("All sixteen validation-result figures", "All twenty validation-result figures")
     text = text.replace(
         "Formal validation V1-V10, reproducible equations",
@@ -191,8 +191,8 @@ def _upgrade_measurement_page_copy(text: str) -> str:
     )
     text = text.replace("All fourteen validation-result figures", "All twenty validation-result figures")
     text = text.replace("All fifteen validation-result figures", "All twenty validation-result figures")
-    text = text.replace("V1-V15", "V1-V40")
-    text = text.replace("V1-V20", "V1-V40")
+    text = text.replace("V1-V15", "V1-V45")
+    text = text.replace("V1-V20", "V1-V45")
     text = text.replace("23 scientific visuals", "29 scientific visuals")
     text = text.replace("24 scientific visuals", "29 scientific visuals")
     text = text.replace("14 validation", "20 validation")
