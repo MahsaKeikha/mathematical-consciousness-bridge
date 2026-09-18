@@ -28,14 +28,28 @@ def test_research_three_v15_public_layer_uses_verified_snapshot() -> None:
     assert "23 scientific visuals" in orientation
 
 
-def test_research_three_page_keeps_reproducibility_and_scientific_boundary() -> None:
+def test_research_three_page_has_reader_first_reproducibility_map() -> None:
     page = _read("website/measurement-science.html")
     refresh = _read("website/research-iii-atlas-refresh.js")
 
-    assert "Resolution-aware abstention" in page
+    assert "Three validation programs connect each scientific question to equations, code, figures, and exact result files" in page
+    for stage in ("V1-V5", "V6-V10", "V11-V15"):
+        assert stage in page
+    for label in ("Read derivation", "Run code", "Open results", "See figures"):
+        assert page.count(label) >= 3
+    for seed in ("20260917", "20260918", "20260919"):
+        assert seed in page
+    for runner in (
+        "run_validation_program.py",
+        "run_robustness_validation.py",
+        "run_identification_design_validation.py",
+    ):
+        assert runner in page
+
+    assert "Two deterministic runners regenerate" not in page
+    assert "data-v11-v15-runner" not in refresh
+    assert "What V1-V15 establishes, and what it does not" in page
     assert "Scientific boundary" in page
-    assert "formal-validation-v11-v15" in refresh
-    assert "run_identification_design_validation.py" in refresh
 
 
 def test_homepage_orientation_promotes_engineering_validation() -> None:
