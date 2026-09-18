@@ -40,10 +40,10 @@ def test_lineage_exposes_current_research_three_v45_progression() -> None:
     page = Path("website/research-lineage.html").read_text(encoding="utf-8")
 
     for token in (
-        "V1-V45</strong><span>formal validation stages",
-        "20</strong><span>code-generated validation figures",
-        "171</strong><span>tests in each CI job",
-        "9</strong><span>reproducible validation runners",
+        "V1-V50</strong><span>formal validation stages",
+        "21</strong><span>code-generated validation figures",
+        "182</strong><span>tests in each CI job",
+        "10</strong><span>reproducible validation runners",
         "Seven linked validation layers",
         "V1-V15 · identification and validation",
         "V16-V20 · electromagnetic observables",
