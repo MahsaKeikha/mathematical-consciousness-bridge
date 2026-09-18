@@ -153,11 +153,11 @@ consciousness-measurement-science/blob/{pin}/schemas/claim.schema.json
 def _upgrade_measurement_page_copy(text: str) -> str:
     text = text.replace("V1-V40", "V1-V45")
     text = text.replace("V1-V35", "V1-V45")
-    for stale_range in ("V11 to V16", "V11 to V17", "V11 to V18", "V11 to V19", "V11 to V45"):
-        text = text.replace(
-            f'aria-label="{stale_range} validation sequence"',
-            'aria-label="V11 to V15 validation sequence"',
-        )
+    text = re.sub(
+        r'aria-label="V11 to V[0-9]+ validation sequence"',
+        'aria-label="V11 to V15 validation sequence"',
+        text,
+    )
     text = text.replace("V1-V30", "V1-V45")
     text = text.replace("V1-V25", "V1-V45")
     text = text.replace("All sixteen validation-result figures", "All twenty validation-result figures")
@@ -209,11 +209,11 @@ def _upgrade_measurement_page_copy(text: str) -> str:
 
     # Broad legacy metric substitutions above can touch the phrase "V15 validation".
     # Normalize the V11-V15 accessibility range last so stage semantics stay exact.
-    for stale_range in ("V11 to V16", "V11 to V17", "V11 to V18", "V11 to V19", "V11 to V45"):
-        text = text.replace(
-            f'aria-label="{stale_range} validation sequence"',
-            'aria-label="V11 to V15 validation sequence"',
-        )
+    text = re.sub(
+        r'aria-label="V11 to V[0-9]+ validation sequence"',
+        'aria-label="V11 to V15 validation sequence"',
+        text,
+    )
 
     if "<!-- research-three-legacy-build-contract" not in text:
         text = text.replace("</main>", f"  {_legacy_build_contract_comment()}\n  </main>")
