@@ -135,23 +135,40 @@ jobs:
           grep -q 'v41_v45_electromagnetic_selection_validation.svg' _site/research-lineage.html
           grep -q 'V41-V45 selection-safe inference' _site/research-lineage.html
           grep -q 'electromagnetic-selection-safe-inference.md' _site/research-lineage.html
+          grep -q 'v46_v50_electromagnetic_replication_validation.svg' _site/research-lineage.html
+          grep -q 'V46-V50 replication inference' _site/research-lineage.html
+          grep -q 'electromagnetic-replication-inference.md' _site/research-lineage.html
           grep -q 'v41-v45-electromagnetic-selection-safe-inference' _site/measurement-science.html
           grep -q 'v41_v45_electromagnetic_selection_validation.svg' _site/measurement-science.html
           grep -q 'electromagnetic_selection_validation_summary.json' _site/measurement-science.html
           grep -q 'run_electromagnetic_selection_validation.py' _site/measurement-science.html
+          grep -q 'v46-v50-electromagnetic-replication-inference' _site/measurement-science.html
+          grep -q 'v46_v50_electromagnetic_replication_validation.svg' _site/measurement-science.html
+          grep -q 'electromagnetic_replication_validation_summary.json' _site/measurement-science.html
+          grep -q 'run_electromagnetic_replication_validation.py' _site/measurement-science.html
           grep -q 'v41-v45-em-selection-safe-inference' _site/research-iii-atlas-refresh.js
           grep -q 'v41_v45_electromagnetic_selection_validation.svg' _site/research-iii-atlas-refresh.js
           grep -q 'electromagnetic_selection_validation_summary.json' _site/research-iii-atlas-refresh.js
           grep -q 'electromagnetic-selection-safe-inference.md' _site/research-iii-atlas-refresh.js
           grep -q 'Multiplicity and Selection-Safe Electromagnetic Inference Program' _site/research-iii-atlas-refresh.js
           grep -q 'run_electromagnetic_selection_validation.py' _site/research-iii-atlas-refresh.js
+          grep -q 'v46-v50-em-replication-inference' _site/research-iii-atlas-refresh.js
+          grep -q 'v46_v50_electromagnetic_replication_validation.svg' _site/research-iii-atlas-refresh.js
+          grep -q 'electromagnetic_replication_validation_summary.json' _site/research-iii-atlas-refresh.js
+          grep -q 'electromagnetic-replication-inference.md' _site/research-iii-atlas-refresh.js
+          grep -q 'Cross-Site Replication Inference and Stability Program' _site/research-iii-atlas-refresh.js
+          grep -q 'run_electromagnetic_replication_validation.py' _site/research-iii-atlas-refresh.js
           grep -q 'V41-V45 multiplicity and selection-safe electromagnetic inference program' _site/sources.html
+          grep -q 'V46-V50 cross-site replication inference and stability program' _site/sources.html
+          grep -q 'electromagnetic-replication-inference.md' _site/sources.html
           grep -q 'v41_v45_electromagnetic_selection_validation.svg' _site/visual-atlas.html
+          grep -q 'v46_v50_electromagnetic_replication_validation.svg' _site/visual-atlas.html
+          grep -q 'V46-V50 replication inference' _site/visual-atlas.html
           grep -q "${R3_PIN}" _site/research-orientation.js
           grep -q "${R3_PIN}" _site/research-iii-atlas-refresh.js
           grep -q 'V1-V50' _site/measurement-science.html
           grep -q '182</strong><span>tests in each CI job' _site/measurement-science.html
-          grep -q '29</strong><span>scientific visuals: 9 architecture + 20 validation' _site/measurement-science.html
+          grep -q '30</strong><span>scientific visuals: 9 architecture + 21 validation' _site/measurement-science.html
           grep -q 'V1-V50 formal validation' _site/research-orientation.js
           grep -q '182</strong><span>tests in each CI job' _site/research-orientation.js
           grep -q '30 scientific visuals' _site/research-orientation.js
