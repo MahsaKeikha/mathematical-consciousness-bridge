@@ -203,7 +203,8 @@ def test_research_map_and_plain_language_use_current_state() -> None:
     assert f"P{frontier}" in research_map
     assert f'id="p{frontier}-research-map"' in research_map
     assert "Research II" in plain
-    assert f"current frontier P{frontier}" in plain
+    assert f"{frontier} linked results · technical endpoint P{frontier}" in plain
+    assert "A note about proposition numbers" in plain
     assert "Research III" in plain
 
 
