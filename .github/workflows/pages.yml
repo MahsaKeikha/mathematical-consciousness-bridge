@@ -99,7 +99,7 @@ jobs:
           python scripts/prepare_website.py --source website-deploy --output _site
           cp figures/manifest.json _site/figures/manifest.json
 
-      - name: Verify canonical built frontier and Research III V1-V15 record
+      - name: Verify canonical built frontier and Research III V1-V20 record
         shell: bash
         run: |
           FRONTIER_LOWER="$(printf '%s' "${FRONTIER}" | tr '[:upper:]' '[:lower:]')"
@@ -124,12 +124,12 @@ jobs:
           grep -q "${R3_PIN}" _site/measurement-science.html
           grep -q "${R3_PIN}" _site/research-orientation.js
           grep -q "${R3_PIN}" _site/research-iii-atlas-refresh.js
-          grep -q 'V1-V15' _site/measurement-science.html
-          grep -q '98</strong><span>tests in each CI job' _site/measurement-science.html
-          grep -q '23</strong><span>scientific visuals: 9 architecture + 14 validation' _site/measurement-science.html
-          grep -q 'V1-V15 formal validation' _site/research-orientation.js
-          grep -q '98</strong><span>tests in each CI job' _site/research-orientation.js
-          grep -q '23 scientific visuals' _site/research-orientation.js
+          grep -q 'V1-V20' _site/measurement-science.html
+          grep -q '109</strong><span>tests in each CI job' _site/measurement-science.html
+          grep -q '24</strong><span>scientific visuals: 9 architecture + 15 validation' _site/measurement-science.html
+          grep -q 'V1-V20 formal validation' _site/research-orientation.js
+          grep -q '109</strong><span>tests in each CI job' _site/research-orientation.js
+          grep -q '24 scientific visuals' _site/research-orientation.js
           grep -q 'research-i-complete-figure-gallery' _site/three-program-evidence.js
           grep -q 'research-ii-complete-core-gallery' _site/atlas-architecture-refresh.js
           grep -q 'research-iii-complete-figure-gallery' _site/research-iii-atlas-refresh.js
@@ -138,8 +138,8 @@ jobs:
           grep -q 'research-iii-source-validation-gallery' _site/research-iii-atlas-refresh.js
           grep -q 'const RESEARCH_II_CORE_EXPECTED = 100' _site/atlas-architecture-refresh.js
           grep -q '9 / 9 visible' _site/research-iii-atlas-refresh.js
-          grep -q '14 / 14 visible' _site/research-iii-atlas-refresh.js
-          grep -q 'V1-V15 result record' _site/research-iii-atlas-refresh.js
+          grep -q '15 / 15 visible' _site/research-iii-atlas-refresh.js
+          grep -q 'V1-V20 result record' _site/research-iii-atlas-refresh.js
           grep -q 'Result data' _site/research-iii-atlas-refresh.js
           grep -q 'v11_missingness_information_law.svg' _site/research-iii-atlas-refresh.js
           grep -q 'v12_v13_multisite_heterogeneity.svg' _site/research-iii-atlas-refresh.js
@@ -147,6 +147,9 @@ jobs:
           grep -q 'v15_independent_pilot_gate.svg' _site/research-iii-atlas-refresh.js
           grep -q 'v11_missingness_information_law.csv' _site/research-iii-atlas-refresh.js
           grep -q 'v15_independent_pilot_gate.csv' _site/research-iii-atlas-refresh.js
+          grep -q 'v16_v20_electromagnetic_validation.svg' _site/research-iii-atlas-refresh.js
+          grep -q 'electromagnetic_validation_summary.json' _site/research-iii-atlas-refresh.js
+          grep -q 'electromagnetic-field-program.md' _site/research-iii-atlas-refresh.js
           ! grep -q '<p class="eyebrow">Implemented now versus not yet established</p>' _site/measurement-science.html
           python - <<'PY'
           import json
