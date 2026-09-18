@@ -148,7 +148,7 @@ consciousness-measurement-science/blob/{pin}/schemas/claim.schema.json
 
 def _upgrade_measurement_page_copy(text: str) -> str:
     text = text.replace("V1-V35", "V1-V40")
-    for stale_range in ("V11 to V16", "V11 to V17", "V11 to V18"):
+    for stale_range in ("V11 to V16", "V11 to V17", "V11 to V18", "V11 to V19"):
         text = text.replace(
             f'aria-label="{stale_range} validation sequence"',
             'aria-label="V11 to V15 validation sequence"',
