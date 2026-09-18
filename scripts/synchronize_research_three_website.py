@@ -106,7 +106,9 @@ def _replace_research_three_metrics(text: str) -> str:
     )
     text = text.replace("24 scientific visuals", "26 scientific visuals")
     text = text.replace("15 validation", "17 validation")
+    text = text.replace("16 validation", "17 validation")
     text = text.replace("4 reproducible validation runners", "6 reproducible validation runners")
+    text = text.replace("5 reproducible validation runners", "6 reproducible validation runners")
     return text
 
 
@@ -131,6 +133,8 @@ consciousness-measurement-science/blob/{pin}/schemas/claim.schema.json
 
 
 def _upgrade_measurement_page_copy(text: str) -> str:
+    text = text.replace("V1-V25", "V1-V30")
+    text = text.replace("All sixteen validation-result figures", "All seventeen validation-result figures")
     text = text.replace(
         "Formal validation V1-V10, reproducible equations",
         "Formal validation V1-V30, reproducible equations",
@@ -224,7 +228,7 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     required_refresh_markers = (
         CURRENT_RESEARCH_THREE_PIN,
         "V1-V30 result record",
-        "16 / 16 visible",
+        "17 / 17 visible",
         "research-iii-validation-figure-gallery",
         "research-iii-source-validation-gallery",
         "Result data",
@@ -261,7 +265,7 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     for marker in (
         CURRENT_RESEARCH_THREE_PIN,
         "V1-V30 formal validation",
-        "121</strong><span>tests in each CI job",
+        "133</strong><span>tests in each CI job",
         "26 scientific visuals",
         "loadResearchIIIAtlasRefresh();",
     ):
