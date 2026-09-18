@@ -20,8 +20,8 @@ def test_visual_atlas_has_all_three_programs_with_distinct_status() -> None:
 
     assert "58" in atlas and "45" in atlas and "33" in atlas and "223" in atlas
     assert "100" in atlas and "158" in atlas and "P100" in atlas
-    assert "5" in atlas and "M0-M7" in atlas and "4" in atlas
-    assert "foundational research program and computational scaffold" in atlas
+    assert "V1-V20" in atlas and "15" in atlas and "109" in atlas and "M0-M7" in atlas
+    assert "executable formal validation through V20" in atlas
     assert "not an empirically or clinically validated consciousness instrument" in atlas
     assert "physical world-tube" in atlas
     assert "does not by itself identify that subsystem as a conscious subject" in atlas
@@ -84,12 +84,13 @@ def test_sources_links_each_program_to_its_real_audit_record() -> None:
         "consciousness-measurement-science/blob/main/docs/measurement-framework.md",
         "consciousness-measurement-science/blob/main/docs/statistical-validation.md",
         "consciousness-measurement-science/blob/main/docs/reproducibility.md",
+        "consciousness-measurement-science/blob/main/docs/electromagnetic-field-program.md",
         "consciousness-measurement-science/tree/main/schemas",
     ):
         assert token in sources
 
-    assert sources.count('class="program-source-card"') == 22
-    assert "specification and software scaffolding are not empirical evidence" in sources
+    assert sources.count('class="program-source-card"') == 23
+    assert "analytic and synthetic validation, specification, and software scaffolding are not empirical consciousness evidence" in sources
     assert "external validation" in sources
     assert "clinical validation" in sources
 
