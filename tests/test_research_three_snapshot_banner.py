@@ -16,7 +16,7 @@ def test_research_three_snapshot_is_audit_metadata_not_a_reader_card() -> None:
     assert '<p class="eyebrow">Implemented now versus not yet established</p>' not in page
 
 
-def test_research_three_v45_public_layer_uses_verified_snapshot() -> None:
+def test_research_three_v50_public_layer_uses_verified_snapshot() -> None:
     refresh = _read("website/research-iii-atlas-refresh.js")
     orientation = _read("website/research-orientation.js")
 
@@ -28,19 +28,19 @@ def test_research_three_v45_public_layer_uses_verified_snapshot() -> None:
     assert "30 scientific visuals" in orientation
 
 
-def test_research_three_page_has_visual_v1_v45_reproducibility_map() -> None:
+def test_research_three_page_has_visual_v1_v50_reproducibility_map() -> None:
     page = _read("website/measurement-science.html")
     styles = _read("website/styles.css")
     refresh = _read("website/research-iii-atlas-refresh.js")
 
     assert "Nine validation programs move from identifiability to robustness, study design, electromagnetic measurement, source identifiability, resolution and information limits, design and spatial specificity, finite-sample inference, and selection-safe inference" in page
-    for stage in ("V1-V5", "V6-V10", "V11-V15", "V16-V20", "V21-V25", "V26-V30", "V31-V35", "V36-V40", "V41-V45"):
+    for stage in ("V1-V5", "V6-V10", "V11-V15", "V16-V20", "V21-V25", "V26-V30", "V31-V35", "V36-V40", "V41-V45", "V46-V50"):
         assert stage in page
     for label in ("Derivation", "Code", "Results", "Figures"):
         assert page.count(f">{label}<") >= 3
     for label in ("Research program", "Figure"):
         assert f">{label}<" in page
-    for node in range(1, 46):
+    for node in range(1, 51):
         assert f"<span>V{node}</span>" in page
     for seed in ("20260917", "20260918", "20260919"):
         assert seed in page
@@ -54,11 +54,12 @@ def test_research_three_page_has_visual_v1_v45_reproducibility_map() -> None:
         "run_electromagnetic_design_validation.py",
         "run_electromagnetic_finite_sample_validation.py",
         "run_electromagnetic_selection_validation.py",
+        "run_electromagnetic_replication_validation.py",
     ):
         assert runner in page
 
     assert 'class="validation-flow"' in page
-    assert page.count('class="validation-node"') == 45
+    assert page.count('class="validation-node"') == 50
     assert ".validation-flow::before" in styles
     assert "grid-template-columns: repeat(5, minmax(0, 1fr))" in styles
     assert "Two deterministic runners regenerate" not in page
@@ -93,6 +94,10 @@ def test_research_three_page_has_visual_v1_v45_reproducibility_map() -> None:
     assert "electromagnetic_selection_validation_summary.json" in page
     assert "electromagnetic-selection-safe-inference.md" in page
     assert "v41-v45-electromagnetic-selection-safe-inference" in page
+    assert "v46_v50_electromagnetic_replication_validation.svg" in page
+    assert "electromagnetic_replication_validation_summary.json" in page
+    assert "electromagnetic-replication-inference.md" in page
+    assert "v46-v50-electromagnetic-replication-inference" in page
 
 
 def test_homepage_orientation_promotes_engineering_validation() -> None:
@@ -114,7 +119,7 @@ def test_research_three_orientation_preserves_empirical_boundary() -> None:
     assert "analytic or synthetic validation is not human or clinical validation" in script
 
 
-def test_research_lineage_exposes_current_research_three_v45_record() -> None:
+def test_research_lineage_exposes_current_research_three_v50_record() -> None:
     lineage = _read("website/research-lineage.html")
 
     assert PIN in lineage
@@ -125,4 +130,7 @@ def test_research_lineage_exposes_current_research_three_v45_record() -> None:
     assert "v41_v45_electromagnetic_selection_validation.svg" in lineage
     assert "V41-V45 selection-safe inference" in lineage
     assert "electromagnetic-selection-safe-inference.md" in lineage
+    assert "v46_v50_electromagnetic_replication_validation.svg" in lineage
+    assert "V46-V50 replication inference" in lineage
+    assert "electromagnetic-replication-inference.md" in lineage
     assert "statistically valid source inference is still not direct evidence" in lineage
