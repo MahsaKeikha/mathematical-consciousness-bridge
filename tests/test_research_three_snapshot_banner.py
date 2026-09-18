@@ -1,7 +1,7 @@
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PIN = "7a2a1a3a60263e48b7a268642eecc6941e84d1b4"
+PIN = "792c846f341521cea2fdbc8b699fcd6ea702c225"
 
 
 def _read(path: str) -> str:
@@ -16,29 +16,29 @@ def test_research_three_snapshot_is_audit_metadata_not_a_reader_card() -> None:
     assert '<p class="eyebrow">Implemented now versus not yet established</p>' not in page
 
 
-def test_research_three_v15_public_layer_uses_verified_snapshot() -> None:
+def test_research_three_v20_public_layer_uses_verified_snapshot() -> None:
     refresh = _read("website/research-iii-atlas-refresh.js")
     orientation = _read("website/research-orientation.js")
 
     assert PIN in refresh
     assert PIN in orientation
-    assert "V1-V15 result record" in refresh
-    assert "14 / 14 visible" in refresh
-    assert "98</strong><span>tests in each CI job" in orientation
-    assert "23 scientific visuals" in orientation
+    assert "V1-V20 result record" in refresh
+    assert "15 / 15 visible" in refresh
+    assert "109</strong><span>tests in each CI job" in orientation
+    assert "24 scientific visuals" in orientation
 
 
-def test_research_three_page_has_visual_v1_v15_reproducibility_map() -> None:
+def test_research_three_page_has_visual_v1_v20_reproducibility_map() -> None:
     page = _read("website/measurement-science.html")
     styles = _read("website/styles.css")
     refresh = _read("website/research-iii-atlas-refresh.js")
 
     assert "Three validation programs move from identifiability to robustness to study design" in page
-    for stage in ("V1-V5", "V6-V10", "V11-V15"):
+    for stage in ("V1-V5", "V6-V10", "V11-V15", "V16-V20"):
         assert stage in page
     for label in ("Derivation", "Code", "Results", "Figures"):
         assert page.count(f">{label}<") >= 3
-    for node in range(1, 16):
+    for node in range(1, 21):
         assert f"<span>V{node}</span>" in page
     for seed in ("20260917", "20260918", "20260919"):
         assert seed in page
@@ -46,27 +46,31 @@ def test_research_three_page_has_visual_v1_v15_reproducibility_map() -> None:
         "run_validation_program.py",
         "run_robustness_validation.py",
         "run_identification_design_validation.py",
+        "run_electromagnetic_validation.py",
     ):
         assert runner in page
 
     assert 'class="validation-flow"' in page
-    assert page.count('class="validation-node"') == 15
+    assert page.count('class="validation-node"') == 20
     assert ".validation-flow::before" in styles
     assert "grid-template-columns: repeat(5, minmax(0, 1fr))" in styles
     assert "Two deterministic runners regenerate" not in page
     assert "data-v11-v15-runner" not in refresh
-    assert "What V1-V15 establishes, and what it does not" in page
+    assert "What V1-V20 establishes, and what it does not" in page
     assert "Scientific boundary" in page
+    assert 'id="electromagnetic-measurement"' in page
+    assert "v16_v20_electromagnetic_validation.svg" in page
+    assert "electromagnetic-field-program.md" in page
 
 
 def test_homepage_orientation_promotes_engineering_validation() -> None:
     script = _read("website/research-orientation.js")
 
     assert "function enhanceHomepageResearchIII()" in script
-    assert "V1-V15 formal validation" in script
-    assert "98</strong><span>tests in each CI job" in script
-    assert "23 scientific visuals" in script
-    assert "3 deterministic runners" in script
+    assert "V1-V20 formal validation" in script
+    assert "109</strong><span>tests in each CI job" in script
+    assert "24 scientific visuals" in script
+    assert "4 deterministic runners" in script
     assert "enhanceHomepageResearchIII();" in script
 
 
