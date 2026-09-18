@@ -258,15 +258,15 @@
     let updated = value;
     for (const pin of LEGACY_PINS) updated = updated.replaceAll(pin, RESEARCH_III_PIN);
     updated = updated.replace(
-      'github.com/MahsaKeikha/consciousness-measurement-science/blob/main/',
+      'github.com/MahsaKeikha/consciousness-measurement-science/blob/e5063b0ac1e85577dd3e1a7c4c4003c122210d48/',
       `github.com/MahsaKeikha/consciousness-measurement-science/blob/${RESEARCH_III_PIN}/`,
     );
     updated = updated.replace(
-      'github.com/MahsaKeikha/consciousness-measurement-science/tree/main/',
+      'github.com/MahsaKeikha/consciousness-measurement-science/tree/e5063b0ac1e85577dd3e1a7c4c4003c122210d48/',
       `github.com/MahsaKeikha/consciousness-measurement-science/tree/${RESEARCH_III_PIN}/`,
     );
     updated = updated.replace(
-      'raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/main/',
+      'raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/e5063b0ac1e85577dd3e1a7c4c4003c122210d48/',
       `raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/${RESEARCH_III_PIN}/`,
     );
     return updated;
