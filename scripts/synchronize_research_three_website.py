@@ -327,6 +327,21 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
         if marker not in sources:
             raise RuntimeError(f"Sources page is missing Research III V1-V35 marker: {marker}")
 
+    lineage = text("research-lineage.html")
+    for marker in (
+        "V1-V35",
+        "144</strong><span>tests in each source CI job",
+        "18</strong><span>code-generated validation-result figures",
+        "7</strong><span>reproducible validation runners",
+        "V16-V20 · electromagnetic observables",
+        "V21-V25 · source identifiability",
+        "V26-V30 · resolution and information limits",
+        "V31-V35 · design and spatial specificity",
+        "docs/electromagnetic-design-spatial-specificity.md",
+    ):
+        if marker not in lineage:
+            raise RuntimeError(f"Research lineage is missing Research III V1-V35 marker: {marker}")
+
     key_surfaces = (
         "measurement-science.html",
         "visual-atlas.html",
