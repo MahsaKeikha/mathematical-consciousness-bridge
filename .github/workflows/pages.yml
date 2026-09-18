@@ -126,7 +126,7 @@ jobs:
           grep -q "${R3_PIN}" _site/research-iii-atlas-refresh.js
           grep -q 'V1-V20' _site/measurement-science.html
           grep -q '109</strong><span>tests in each CI job' _site/measurement-science.html
-          grep -q '23</strong><span>scientific visuals: 9 architecture + 15 validation' _site/measurement-science.html
+          grep -q '24</strong><span>scientific visuals: 9 architecture + 15 validation' _site/measurement-science.html
           grep -q 'V1-V20 formal validation' _site/research-orientation.js
           grep -q '109</strong><span>tests in each CI job' _site/research-orientation.js
           grep -q '24 scientific visuals' _site/research-orientation.js
@@ -140,6 +140,9 @@ jobs:
           grep -q '9 / 9 visible' _site/research-iii-atlas-refresh.js
           grep -q '15 / 15 visible' _site/research-iii-atlas-refresh.js
           grep -q 'V1-V20 result record' _site/research-iii-atlas-refresh.js
+          grep -q 'v16_v20_electromagnetic_validation.svg' _site/research-iii-atlas-refresh.js
+          grep -q 'electromagnetic_validation_summary.json' _site/research-iii-atlas-refresh.js
+          grep -q 'Electromagnetic Field Measurement Program' _site/research-iii-atlas-refresh.js
           grep -q 'Result data' _site/research-iii-atlas-refresh.js
           grep -q 'v11_missingness_information_law.svg' _site/research-iii-atlas-refresh.js
           grep -q 'v12_v13_multisite_heterogeneity.svg' _site/research-iii-atlas-refresh.js
