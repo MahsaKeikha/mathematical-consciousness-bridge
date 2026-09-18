@@ -1,5 +1,5 @@
 (() => {
-  const RESEARCH_III_PIN = '7a2a1a3a60263e48b7a268642eecc6941e84d1b4';
+  const RESEARCH_III_PIN = 'd93e768d9a7d6054ff208de2a1b9c14e79192bc5';
   const MEASUREMENT_REPO = 'https://github.com/MahsaKeikha/consciousness-measurement-science';
   const RAW_PIN_PREFIX =
     `https://raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/${RESEARCH_III_PIN}/docs/figures/`;
@@ -9,6 +9,7 @@
     `${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/`;
 
   const LEGACY_PINS = [
+    '7a2a1a3a60263e48b7a268642eecc6941e84d1b4',
     '3cf9202977953644c980246c1f3e46a3514b3a4a',
     '5d1d979231aed62fde34383281fa8f252a3d2fa7',
     'b874eda1f6940f5601b7f89200b6a276b5ecbbc3',
@@ -196,6 +197,14 @@
       result: 'v15_independent_pilot_gate.csv',
       phase: 'V15 · selection-safe release design',
       summary: 'Pilot data decide whether to proceed, while an independent confirmatory interval preserves its validity among released designs. The fixed-seed record is byte-stable across supported Python and NumPy environments.',
+    },
+    {
+      title: 'Electromagnetic observables and confound validation',
+      file: 'v16_v20_electromagnetic_validation.svg',
+      context: 'docs/electromagnetic-field-program.md',
+      result: 'electromagnetic_validation_summary.json',
+      phase: 'V16-V20 · electromagnetic measurement arm',
+      summary: 'Physical EM sanity checks, gain-invariant organization features, matched-power non-identifiability, common-mode confound stress, and frequency-specific structure are validated without treating any field statistic as consciousness itself.',
     },
   ];
 
@@ -414,10 +423,10 @@
     validation.className = 'r3-validation-record';
     validation.innerHTML = `
       <div class="r3-validation-head">
-        <div><span class="record-badge">Executable formal validation</span><h3>V1-V15 result record</h3><p>Fourteen code-generated result figures connect the mathematical program to deterministic simulations, exact design laws, failure tests, machine-readable outputs, and reproducible source code.</p></div>
-        <span class="record-badge">14 / 14 visible</span>
+        <div><span class="record-badge">Executable formal validation</span><h3>V1-V20 result record</h3><p>Fifteen code-generated result figures connect the mathematical program to deterministic simulations, exact design laws, failure tests, machine-readable outputs, and reproducible source code.</p></div>
+        <span class="record-badge">15 / 15 visible</span>
       </div>
-      <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">V1-V15 program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Machine-readable results</a></div>
+      <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">V1-V20 program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Machine-readable results</a></div>
       <div class="r3-validation-grid">${VALIDATION_FIGURES.map(validationCard).join('')}</div>`;
 
     if (boundary) {
@@ -441,10 +450,10 @@
     block.className = 'r3-validation-record';
     block.innerHTML = `
       <div class="r3-validation-head">
-        <div><span class="source-visual-badge">Research III executable evidence</span><h3>Formal validation V1-V15: derivations, result data, figures, code, and tests</h3><p>The architecture sources remain separate from the result record. Every validation figure below is pinned to the same verified Research III commit and links to its formal derivation, exact machine-readable result file, and figure source.</p></div>
-        <span class="source-visual-badge">14 result figures</span>
+        <div><span class="source-visual-badge">Research III executable evidence</span><h3>Formal validation V1-V20: derivations, result data, figures, code, and tests</h3><p>The architecture sources remain separate from the result record. Every validation figure below is pinned to the same verified Research III commit and links to its formal derivation, exact machine-readable result file, and figure source.</p></div>
+        <span class="source-visual-badge">15 result figures</span>
       </div>
-      <div class="source-section-visual-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">Validation program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Result index</a><a href="${MEASUREMENT_REPO}/tree/${RESEARCH_III_PIN}/tests">98-test suite</a></div>
+      <div class="source-section-visual-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">Validation program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Result index</a><a href="${MEASUREMENT_REPO}/tree/${RESEARCH_III_PIN}/tests">109-test suite</a></div>
       <div class="r3-validation-grid">${VALIDATION_FIGURES.map(validationCard).join('')}</div>`;
 
     const existing = document.getElementById('research-iii-source-complete-figure-gallery');
@@ -464,20 +473,20 @@
     const status = document.querySelector('.status-grid');
     if (status) {
       const cells = status.querySelectorAll(':scope > div');
-      if (cells[0]) cells[0].innerHTML = '<strong>V1-V15</strong><span>formal validation stages</span>';
-      if (cells[1]) cells[1].innerHTML = '<strong>23</strong><span>scientific visuals: 9 architecture + 14 validation</span>';
-      if (cells[2]) cells[2].innerHTML = '<strong>98</strong><span>tests in each CI job</span>';
+      if (cells[0]) cells[0].innerHTML = '<strong>V1-V20</strong><span>formal validation stages</span>';
+      if (cells[1]) cells[1].innerHTML = '<strong>24</strong><span>scientific visuals: 9 architecture + 15 validation</span>';
+      if (cells[2]) cells[2].innerHTML = '<strong>109</strong><span>tests in each CI job</span>';
       if (cells[3]) cells[3].innerHTML = '<strong>3</strong><span>Python versions in the CI matrix</span>';
     }
 
     const primary = document.querySelector('.hero-actions .button.primary');
     if (primary) {
-      primary.textContent = 'Open V1-V15 validation program';
+      primary.textContent = 'Open V1-V20 validation program';
       primary.href = `${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md`;
     }
 
     const follow = document.querySelector('.source-grid a:first-child p');
-    if (follow) follow.textContent = 'The compact V1-V15 map: scientific question, mathematical object, executable evidence, result record, and failure condition.';
+    if (follow) follow.textContent = 'The compact V1-V20 map: scientific question, mathematical object, executable evidence, result record, and failure condition.';
 
     document.getElementById('formal-validation-v11-v15')?.remove();
     const baseStages = document.getElementById('formal-validation-v1-v10');
@@ -529,6 +538,40 @@
       v6Section.insertAdjacentElement('afterend', figures);
     }
 
+    document.getElementById('v16-v20-em-field-program')?.remove();
+    const designSection = document.getElementById('v11-v15-result-figures');
+    if (designSection) {
+      const em = document.createElement('section');
+      em.id = 'v16-v20-em-field-program';
+      em.className = 'r3-stage-extension';
+      em.innerHTML = `
+        <div class="section-head">
+          <p class="eyebrow">V16-V20 · Electromagnetic field measurement</p>
+          <h2>Measure electromagnetic organization as a falsifiable evidence channel, not as a shortcut to consciousness</h2>
+          <p>The new EM arm starts from measurable electric and magnetic observables, then tests organization descriptors, invariance, information loss, nuisance sensitivity, and frequency dependence before any consciousness-related interpretation is allowed.</p>
+        </div>
+        <div class="boundary">
+          <p><strong>Scientific claim boundary:</strong> EEG, MEG, and other electromagnetic recordings can quantify physical and neural field dynamics. The present V16-V20 results establish measurement and synthetic validation properties only. They do not show that field strength, power, phase concentration, entropy, effective rank, or any other EM statistic is consciousness itself.</p>
+        </div>
+        <div class="measurement-figure-grid">
+          <article class="figure-card">
+            <a href="${BLOB_PIN_PREFIX}v16_v20_electromagnetic_validation.svg"><img loading="lazy" decoding="async" src="${RAW_PIN_PREFIX}v16_v20_electromagnetic_validation.svg" alt="Research III electromagnetic validation V16 to V20" /></a>
+            <p class="eyebrow">V16-V20 · electromagnetic observables</p>
+            <h3>Matched-power structure, common-mode confounding, and frequency specificity</h3>
+            <p>V18 constructs equal-power fields with different spatial phase organization. V19 shows that a shared contaminant can create strong apparent global organization. V20 shows that the same multichannel signal can be aligned at one frequency and phase-balanced at another.</p>
+            <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/electromagnetic-field-program.md">Research program</a><a href="${RESULT_PIN_PREFIX}electromagnetic_validation_summary.json">Result record</a><a href="${BLOB_PIN_PREFIX}v16_v20_electromagnetic_validation.svg">Figure source</a></div>
+          </article>
+        </div>
+        <div class="r3-design-law-grid">
+          <article><strong>V17: gain invariance</strong><p>Normalized organization descriptors remain unchanged under global signal scaling in the declared deterministic construction.</p></article>
+          <article><strong>V18: power is insufficient</strong><p>Channel power matches to numerical precision while spatial phase concentration changes from 1 to approximately 0.</p></article>
+          <article><strong>V19: nuisance can mimic structure</strong><p>A shared contaminant raises raw phase concentration to about 0.935 in the canonical stress test.</p></article>
+          <article><strong>V20: structure is frequency-specific</strong><p>The same signal is fully aligned at 10 Hz and phase-balanced at 17 Hz, ruling out an unqualified one-number field description.</p></article>
+        </div>
+        <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/src/consciousness_measurement/electromagnetic_observables.py">Observable code</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/src/consciousness_measurement/electromagnetic_simulations.py">Validation simulations</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/scripts/run_electromagnetic_validation.py">Reproduce V16-V20</a></div>`;
+      designSection.insertAdjacentElement('afterend', em);
+    }
+
     repinResearchIIIAssets();
     return true;
   }
@@ -541,8 +584,8 @@
     if (!programCard) return false;
     const metric = programCard.querySelector('.research-program-metric');
     const meta = programCard.querySelector('.research-program-meta');
-    if (metric) metric.innerHTML = '<strong>98</strong><span>tests in each CI job</span>';
-    if (meta) meta.textContent = 'V1-V15 formal validation · 23 scientific visuals · 3 deterministic runners';
+    if (metric) metric.innerHTML = '<strong>109</strong><span>tests in each CI job</span>';
+    if (meta) meta.textContent = 'V1-V20 formal validation · 24 scientific visuals · 4 reproducible validation runners';
     return true;
   }
 
