@@ -159,6 +159,7 @@ jobs:
           grep -q 'electromagnetic_validation_summary.json' _site/research-iii-atlas-refresh.js
           grep -q 'Electromagnetic Field Measurement Program' _site/research-iii-atlas-refresh.js
           grep -q 'Electromagnetic Source Identifiability Program' _site/research-iii-atlas-refresh.js
+          grep -q 'Electromagnetic Resolution and Information Program' _site/research-iii-atlas-refresh.js
           grep -q 'run_electromagnetic_inverse_validation.py' _site/research-iii-atlas-refresh.js
           grep -q 'run_electromagnetic_resolution_validation.py' _site/research-iii-atlas-refresh.js
           grep -q 'v21-v25-em-source-identifiability' _site/research-iii-atlas-refresh.js
