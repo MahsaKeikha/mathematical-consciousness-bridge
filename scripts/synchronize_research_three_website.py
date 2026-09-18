@@ -11,8 +11,9 @@ import argparse
 import re
 from pathlib import Path
 
-CURRENT_RESEARCH_THREE_PIN = "e5063b0ac1e85577dd3e1a7c4c4003c122210d48"
+CURRENT_RESEARCH_THREE_PIN = "0072642d93d77fa594634a643e46e73769af0655"
 LEGACY_RESEARCH_THREE_PINS = (
+    "e5063b0ac1e85577dd3e1a7c4c4003c122210d48",
     "c6415f2d50d68b664860f43e9da440d0a36c2997",
     "0cd578fb553ab19006155a563c484511b4271a5f",
     "b3f240f2c7c8fa4c94667d2fea4d8f9f07df360c",
@@ -27,7 +28,7 @@ LEGACY_RESEARCH_THREE_PINS = (
     "a9ef67ed15595c26b0c9f4e449f53f8078d6a1ee",
     "64b2bc47461fe110b135080f8dc70883552d6fd9",
 )
-CURRENT_RESEARCH_THREE_TEST_COUNT = 159
+CURRENT_RESEARCH_THREE_TEST_COUNT = 171
 ROOT = Path(__file__).resolve().parents[1]
 MEASUREMENT_REPO_PATH = "MahsaKeikha/consciousness-measurement-science"
 PUBLIC_SUFFIXES = {".html", ".js"}
@@ -54,11 +55,13 @@ MEASUREMENT_SCIENCE_REQUIRED_MARKERS = (
     "docs/electromagnetic-resolution-program.md",
     "docs/electromagnetic-design-spatial-specificity.md",
     "docs/electromagnetic-finite-sample-inference.md",
+    "docs/electromagnetic-selection-safe-inference.md",
     "v16_v20_electromagnetic_validation.svg",
     "v21_v25_electromagnetic_inverse_validation.svg",
     "v26_v30_electromagnetic_resolution_validation.svg",
     "v31_v35_electromagnetic_design_validation.svg",
     "v36_v40_electromagnetic_finite_sample_validation.svg",
+    "v41_v45_electromagnetic_selection_validation.svg",
     "Claim ceiling today:",
     "Scientific boundary",
 )
@@ -86,7 +89,7 @@ def _replace_research_three_pins(text: str) -> str:
 def _replace_research_three_metrics(text: str) -> str:
     if "Research III" not in text and "consciousness-measurement-science" not in text:
         return text
-    for old_count in (23, 34, 35, 81, 98, 109, 121, 133, 144):
+    for old_count in (23, 34, 35, 81, 98, 109, 121, 133, 144, 159):
         text = text.replace(
             f"<strong>{old_count}</strong><span>tests in each CI job</span>",
             f"<strong>{CURRENT_RESEARCH_THREE_TEST_COUNT}</strong><span>tests in each CI job</span>",
@@ -96,33 +99,33 @@ def _replace_research_three_metrics(text: str) -> str:
             f"{CURRENT_RESEARCH_THREE_TEST_COUNT} tests in each CI job",
         )
 
-    for old_visuals, old_validation in ((19, 10), (23, 14), (24, 15), (25, 16), (26, 17), (27, 18)):
+    for old_visuals, old_validation in ((19, 10), (23, 14), (24, 15), (25, 16), (26, 17), (27, 18), (28, 19)):
         text = text.replace(
             f"<strong>{old_visuals}</strong><span>scientific visuals: 9 architecture + {old_validation} validation</span>",
-            "<strong>28</strong><span>scientific visuals: 9 architecture + 19 validation</span>",
+            "<strong>29</strong><span>scientific visuals: 9 architecture + 20 validation</span>",
         )
 
-    for old_visuals in (19, 23, 24, 25, 26, 27):
-        text = text.replace(f"{old_visuals} scientific visuals", "28 scientific visuals")
+    for old_visuals in (19, 23, 24, 25, 26, 27, 28):
+        text = text.replace(f"{old_visuals} scientific visuals", "29 scientific visuals")
 
-    for old_validation in (10, 14, 15, 16, 17, 18):
+    for old_validation in (10, 14, 15, 16, 17, 18, 19):
         text = text.replace(
             f"{old_validation} validation-result figures",
-            "19 validation-result figures",
+            "20 validation-result figures",
         )
         text = text.replace(
             f"{old_validation} code-generated",
-            "19 code-generated",
+            "20 code-generated",
         )
         text = text.replace(
             f"9 architecture + {old_validation} validation",
-            "9 architecture + 19 validation",
+            "9 architecture + 20 validation",
         )
 
-    for old_runners in (4, 5, 6, 7):
+    for old_runners in (4, 5, 6, 7, 8):
         text = text.replace(
             f"{old_runners} reproducible validation runners",
-            "8 reproducible validation runners",
+            "9 reproducible validation runners",
         )
     return text
 
@@ -131,7 +134,7 @@ def _legacy_build_contract_comment() -> str:
     """Invisible compatibility markers for one older build validator.
 
     These strings are intentionally kept out of the rendered DOM. The visible
-    Research III page is governed by the V1-V40 publication contract below.
+    Research III page is governed by the V1-V45 publication contract below.
     """
     pin = CURRENT_RESEARCH_THREE_PIN
     return f"""<!-- research-three-legacy-build-contract
@@ -148,60 +151,61 @@ consciousness-measurement-science/blob/{pin}/schemas/claim.schema.json
 
 
 def _upgrade_measurement_page_copy(text: str) -> str:
-    text = text.replace("V1-V35", "V1-V40")
+    text = text.replace("V1-V40", "V1-V45")
+    text = text.replace("V1-V35", "V1-V45")
     for stale_range in ("V11 to V16", "V11 to V17", "V11 to V18", "V11 to V19"):
         text = text.replace(
             f'aria-label="{stale_range} validation sequence"',
             'aria-label="V11 to V15 validation sequence"',
         )
-    text = text.replace("V1-V30", "V1-V40")
-    text = text.replace("V1-V25", "V1-V40")
-    text = text.replace("All sixteen validation-result figures", "All nineteen validation-result figures")
+    text = text.replace("V1-V30", "V1-V45")
+    text = text.replace("V1-V25", "V1-V45")
+    text = text.replace("All sixteen validation-result figures", "All twenty validation-result figures")
     text = text.replace(
         "Formal validation V1-V10, reproducible equations",
-        "Formal validation V1-V40, reproducible equations",
+        "Formal validation V1-V45, reproducible equations",
     )
-    text = text.replace("Open V1-V10 validation program", "Open V1-V40 validation program")
-    text = text.replace("Open V1-V15 validation program", "Open V1-V40 validation program")
-    text = text.replace("Open V1-V17 validation program", "Open V1-V40 validation program")
-    text = text.replace("Open V1-V20 validation program", "Open V1-V40 validation program")
-    text = text.replace("Open V1-V30 validation program", "Open V1-V40 validation program")
+    text = text.replace("Open V1-V10 validation program", "Open V1-V45 validation program")
+    text = text.replace("Open V1-V15 validation program", "Open V1-V45 validation program")
+    text = text.replace("Open V1-V17 validation program", "Open V1-V45 validation program")
+    text = text.replace("Open V1-V20 validation program", "Open V1-V45 validation program")
+    text = text.replace("Open V1-V30 validation program", "Open V1-V45 validation program")
     text = text.replace(
         "<strong>V1-V10</strong><span>formal validation stages</span>",
-        "<strong>V1-V40</strong><span>formal validation stages</span>",
+        "<strong>V1-V45</strong><span>formal validation stages</span>",
     )
     text = text.replace(
         "<strong>V1-V15</strong><span>formal validation stages</span>",
-        "<strong>V1-V40</strong><span>formal validation stages</span>",
+        "<strong>V1-V45</strong><span>formal validation stages</span>",
     )
     text = text.replace(
         "<strong>V1-V20</strong><span>formal validation stages</span>",
-        "<strong>V1-V40</strong><span>formal validation stages</span>",
+        "<strong>V1-V45</strong><span>formal validation stages</span>",
     )
-    text = text.replace("The compact V1-V10 map", "The compact V1-V40 map")
-    text = text.replace("The compact V1-V15 map", "The compact V1-V40 map")
-    text = text.replace("The compact V1-V20 map", "The compact V1-V40 map")
+    text = text.replace("The compact V1-V10 map", "The compact V1-V45 map")
+    text = text.replace("The compact V1-V15 map", "The compact V1-V45 map")
+    text = text.replace("The compact V1-V20 map", "The compact V1-V45 map")
     text = text.replace(
         "All ten validation-result figures",
-        "All nineteen validation-result figures",
+        "All twenty validation-result figures",
     )
-    text = text.replace("All fourteen validation-result figures", "All nineteen validation-result figures")
-    text = text.replace("All fifteen validation-result figures", "All nineteen validation-result figures")
+    text = text.replace("All fourteen validation-result figures", "All twenty validation-result figures")
+    text = text.replace("All fifteen validation-result figures", "All twenty validation-result figures")
     text = text.replace("V1-V15", "V1-V40")
     text = text.replace("V1-V20", "V1-V40")
-    text = text.replace("23 scientific visuals", "28 scientific visuals")
-    text = text.replace("24 scientific visuals", "28 scientific visuals")
-    text = text.replace("14 validation", "19 validation")
-    text = text.replace("15 validation", "19 validation")
-    text = text.replace("18 validation", "19 validation")
-    text = text.replace("98-test suite", "159-test suite")
-    text = text.replace("109-test suite", "159-test suite")
-    text = text.replace("144-test suite", "159-test suite")
-    text = text.replace("98 tests in each CI job", "159 tests in each CI job")
-    text = text.replace("109 tests in each CI job", "159 tests in each CI job")
-    text = text.replace("144 tests in each CI job", "159 tests in each CI job")
-    text = text.replace("4 reproducible validation runners", "8 reproducible validation runners")
-    text = text.replace("7 reproducible validation runners", "8 reproducible validation runners")
+    text = text.replace("23 scientific visuals", "29 scientific visuals")
+    text = text.replace("24 scientific visuals", "29 scientific visuals")
+    text = text.replace("14 validation", "20 validation")
+    text = text.replace("15 validation", "20 validation")
+    text = text.replace("18 validation", "20 validation")
+    text = text.replace("98-test suite", "171-test suite")
+    text = text.replace("109-test suite", "171-test suite")
+    text = text.replace("144-test suite", "171-test suite")
+    text = text.replace("98 tests in each CI job", "171 tests in each CI job")
+    text = text.replace("109 tests in each CI job", "171 tests in each CI job")
+    text = text.replace("144 tests in each CI job", "171 tests in each CI job")
+    text = text.replace("4 reproducible validation runners", "9 reproducible validation runners")
+    text = text.replace("7 reproducible validation runners", "9 reproducible validation runners")
 
     # Broad legacy metric substitutions above can touch the phrase "V15 validation".
     # Normalize the V11-V15 accessibility range last so stage semantics stay exact.
@@ -263,8 +267,8 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     refresh = text("research-iii-atlas-refresh.js")
     required_refresh_markers = (
         CURRENT_RESEARCH_THREE_PIN,
-        "V1-V40 result record",
-        "19 / 19 visible",
+        "V1-V45 result record",
+        "20 / 20 visible",
         "research-iii-validation-figure-gallery",
         "research-iii-source-validation-gallery",
         "Result data",
@@ -287,15 +291,19 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
         "v36_v40_electromagnetic_finite_sample_validation.svg",
         "electromagnetic_finite_sample_validation_summary.json",
         "docs/electromagnetic-finite-sample-inference.md",
+        "v41_v45_electromagnetic_selection_validation.svg",
+        "electromagnetic_selection_validation_summary.json",
+        "docs/electromagnetic-selection-safe-inference.md",
         "Electromagnetic Resolution and Information Program",
         "Electromagnetic Design and Spatial Specificity Program",
         "Finite-Sample Electromagnetic Inference Program",
+        "Multiplicity and Selection-Safe Electromagnetic Inference Program",
         "Electromagnetic Source Identifiability Program",
     )
     missing_refresh = [marker for marker in required_refresh_markers if marker not in refresh]
     if missing_refresh:
         raise RuntimeError(
-            "Research III gallery refresh is missing V1-V40 publication markers: "
+            "Research III gallery refresh is missing V1-V45 publication markers: "
             + repr(missing_refresh)
         )
 
@@ -308,9 +316,9 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     orientation = text("research-orientation.js")
     for marker in (
         CURRENT_RESEARCH_THREE_PIN,
-        "V1-V40 formal validation",
-        "159</strong><span>tests in each CI job",
-        "28 scientific visuals",
+        "V1-V45 formal validation",
+        "171</strong><span>tests in each CI job",
+        "29 scientific visuals",
         "loadResearchIIIAtlasRefresh();",
     ):
         if marker not in orientation:
@@ -320,28 +328,31 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     for marker in (
         "V1-V40",
         "19</strong><span>code-generated validation figures",
-        "159</strong><span>tests in each CI job",
+        "171</strong><span>tests in each CI job",
         "v26_v30_electromagnetic_resolution_validation.svg",
         "v31_v35_electromagnetic_design_validation.svg",
         "v36_v40_electromagnetic_finite_sample_validation.svg",
+        "v41_v45_electromagnetic_selection_validation.svg",
     ):
         if marker not in atlas:
-            raise RuntimeError(f"Visual Atlas is missing Research III V1-V40 marker: {marker}")
+            raise RuntimeError(f"Visual Atlas is missing Research III V1-V45 marker: {marker}")
 
     sources = text("sources.html")
     for marker in (
-        "V1-V40",
-        "19 result figures",
-        "159 tests",
+        "V1-V45",
+        "20 result figures",
+        "171 tests",
         "V26-V30 electromagnetic resolution and information program",
         "docs/electromagnetic-resolution-program.md",
         "V31-V35 electromagnetic design and spatial specificity program",
         "docs/electromagnetic-design-spatial-specificity.md",
         "V36-V40 finite-sample electromagnetic inference program",
         "docs/electromagnetic-finite-sample-inference.md",
+        "V41-V45 multiplicity and selection-safe electromagnetic inference program",
+        "docs/electromagnetic-selection-safe-inference.md",
     ):
         if marker not in sources:
-            raise RuntimeError(f"Sources page is missing Research III V1-V40 marker: {marker}")
+            raise RuntimeError(f"Sources page is missing Research III V1-V45 marker: {marker}")
 
     key_surfaces = (
         "measurement-science.html",
