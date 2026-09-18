@@ -20,8 +20,9 @@ def test_visual_atlas_has_all_three_programs_with_distinct_status() -> None:
 
     assert "58" in atlas and "45" in atlas and "33" in atlas and "223" in atlas
     assert "100" in atlas and "158" in atlas and "P100" in atlas
-    assert "V1-V25" in atlas and "16" in atlas and "121" in atlas and "M0-M7" in atlas
-    assert "V21-V25 electromagnetic source-identifiability layers" in atlas
+    assert "V1-V30" in atlas and "17" in atlas and "133" in atlas and "M0-M7" in atlas
+    assert "V21-V25 electromagnetic source-identifiability" in atlas
+    assert "V26-V30 electromagnetic resolution and information limits" in atlas
     assert "not an empirically or clinically validated consciousness instrument" in atlas
     assert "physical world-tube" in atlas
     assert "does not by itself identify that subsystem as a conscious subject" in atlas
@@ -40,10 +41,11 @@ def test_visual_atlas_uses_canonical_figures_from_all_three_programs() -> None:
         "measurement_architecture.svg",
         "structural_measurement_pipeline.svg",
         "claim_ladder.svg",
+        "v26_v30_electromagnetic_resolution_validation.svg",
     ):
         assert figure in atlas
 
-    assert atlas.count('class="program-visual-card"') == 9
+    assert atlas.count('class="program-visual-card"') == 10
     assert atlas.index('id="research-i-visual-program"') < atlas.index('id="research-ii-visual-program"')
     assert atlas.index('id="research-ii-visual-program"') < atlas.index('id="research-iii-visual-program"')
     assert atlas.index('id="research-iii-visual-program"') < atlas.index('id="research-ii-frontier-archive"')
@@ -80,18 +82,19 @@ def test_sources_links_each_program_to_its_real_audit_record() -> None:
         "mathematical-consciousness-bridge/blob/main/docs/theorem_roadmap.md",
         "mathematical-consciousness-bridge/blob/main/figures/manifest.json",
         "mathematical-consciousness-bridge/tree/main/tests",
-        "consciousness-measurement-science/blob/main/docs/epistemic-boundaries.md",
-        "consciousness-measurement-science/blob/main/docs/measurement-framework.md",
-        "consciousness-measurement-science/blob/main/docs/statistical-validation.md",
-        "consciousness-measurement-science/blob/main/docs/reproducibility.md",
-        "consciousness-measurement-science/blob/main/docs/electromagnetic-field-program.md",
-        "consciousness-measurement-science/blob/main/docs/electromagnetic-source-identifiability.md",
-        "consciousness-measurement-science/blob/main/docs/electromagnetic-source-identifiability.md",
-        "consciousness-measurement-science/tree/main/schemas",
+        "consciousness-measurement-science/blob/b3f240f2c7c8fa4c94667d2fea4d8f9f07df360c/docs/epistemic-boundaries.md",
+        "consciousness-measurement-science/blob/b3f240f2c7c8fa4c94667d2fea4d8f9f07df360c/docs/measurement-framework.md",
+        "consciousness-measurement-science/blob/b3f240f2c7c8fa4c94667d2fea4d8f9f07df360c/docs/statistical-validation.md",
+        "consciousness-measurement-science/blob/b3f240f2c7c8fa4c94667d2fea4d8f9f07df360c/docs/reproducibility.md",
+        "consciousness-measurement-science/blob/b3f240f2c7c8fa4c94667d2fea4d8f9f07df360c/docs/electromagnetic-field-program.md",
+        "consciousness-measurement-science/blob/b3f240f2c7c8fa4c94667d2fea4d8f9f07df360c/docs/electromagnetic-source-identifiability.md",
+        "consciousness-measurement-science/blob/b3f240f2c7c8fa4c94667d2fea4d8f9f07df360c/docs/electromagnetic-resolution-program.md",
+        "consciousness-measurement-science/blob/b3f240f2c7c8fa4c94667d2fea4d8f9f07df360c/docs/electromagnetic-source-identifiability.md",
+        "consciousness-measurement-science/tree/b3f240f2c7c8fa4c94667d2fea4d8f9f07df360c/schemas",
     ):
         assert token in sources
 
-    assert sources.count('class="program-source-card"') == 24
+    assert sources.count('class="program-source-card"') == 25
     assert "analytic and synthetic validation, specification, and software scaffolding are not empirical consciousness evidence" in sources
     assert "external validation" in sources
     assert "clinical validation" in sources
@@ -99,6 +102,8 @@ def test_sources_links_each_program_to_its_real_audit_record() -> None:
     assert "docs/electromagnetic-field-program.md" in sources
     assert "V21-V25 electromagnetic source-identifiability program" in sources
     assert "docs/electromagnetic-source-identifiability.md" in sources
+    assert "V26-V30 electromagnetic resolution and information program" in sources
+    assert "docs/electromagnetic-resolution-program.md" in sources
     assert "V21-V25 electromagnetic source-identifiability program" in sources
     assert "docs/electromagnetic-source-identifiability.md" in sources
 
@@ -109,11 +114,11 @@ def test_sitewide_orientation_describes_atlas_and_sources_as_three_program_surfa
     assert "Three-program visual evidence record" in orientation
     assert "Research I exposes its scientific-result figures" in orientation
     assert "Research II renders its canonical theorem and architecture record" in orientation
-    assert "Research III exposes 9 foundational architecture visuals plus 16 code-generated V1-V25 validation-result figures" in orientation
+    assert "Research III exposes 9 foundational architecture visuals plus 17 code-generated V1-V30 validation-result figures" in orientation
     assert "Three-program provenance and reproducibility" in orientation
     assert "Research I physical-system provenance" in orientation
     assert "Research II P1-P100 theorem provenance" in orientation
-    assert "Research III architecture from its V1-V25 executable validation record" in orientation
+    assert "Research III architecture from its V1-V30 executable validation record" in orientation
 
 
 def test_three_program_cards_are_native_links_and_static_metrics_do_not_mimic_links() -> None:
