@@ -93,6 +93,13 @@ def _replace_research_three_metrics(text: str) -> str:
         "<strong>23</strong><span>scientific visuals: 9 architecture + 14 validation</span>",
         "<strong>25</strong><span>scientific visuals: 9 architecture + 16 validation</span>",
     )
+    text = text.replace(
+        "<strong>24</strong><span>scientific visuals: 9 architecture + 15 validation</span>",
+        "<strong>25</strong><span>scientific visuals: 9 architecture + 16 validation</span>",
+    )
+    text = text.replace("24 scientific visuals", "25 scientific visuals")
+    text = text.replace("15 validation", "16 validation")
+    text = text.replace("4 reproducible validation runners", "5 reproducible validation runners")
     return text
 
 
@@ -122,23 +129,41 @@ def _upgrade_measurement_page_copy(text: str) -> str:
         "Formal validation V1-V25, reproducible equations",
     )
     text = text.replace("Open V1-V10 validation program", "Open V1-V25 validation program")
+    text = text.replace("Open V1-V15 validation program", "Open V1-V25 validation program")
     text = text.replace("Open V1-V16 validation program", "Open V1-V25 validation program")
+    text = text.replace("Open V1-V20 validation program", "Open V1-V25 validation program")
     text = text.replace(
         "<strong>V1-V10</strong><span>formal validation stages</span>",
         "<strong>V1-V25</strong><span>formal validation stages</span>",
     )
+    text = text.replace(
+        "<strong>V1-V15</strong><span>formal validation stages</span>",
+        "<strong>V1-V25</strong><span>formal validation stages</span>",
+    )
+    text = text.replace(
+        "<strong>V1-V20</strong><span>formal validation stages</span>",
+        "<strong>V1-V25</strong><span>formal validation stages</span>",
+    )
     text = text.replace("The compact V1-V10 map", "The compact V1-V25 map")
     text = text.replace("The compact V1-V15 map", "The compact V1-V25 map")
+    text = text.replace("The compact V1-V20 map", "The compact V1-V25 map")
     text = text.replace(
         "All ten validation-result figures",
         "All sixteen validation-result figures",
     )
     text = text.replace("All fourteen validation-result figures", "All sixteen validation-result figures")
+    text = text.replace("All fifteen validation-result figures", "All sixteen validation-result figures")
     text = text.replace("V1-V15", "V1-V25")
+    text = text.replace("V1-V20", "V1-V25")
     text = text.replace("23 scientific visuals", "25 scientific visuals")
+    text = text.replace("24 scientific visuals", "25 scientific visuals")
     text = text.replace("14 validation", "16 validation")
+    text = text.replace("15 validation", "16 validation")
     text = text.replace("98-test suite", "121-test suite")
+    text = text.replace("109-test suite", "121-test suite")
     text = text.replace("98 tests in each CI job", "121 tests in each CI job")
+    text = text.replace("109 tests in each CI job", "121 tests in each CI job")
+    text = text.replace("4 reproducible validation runners", "5 reproducible validation runners")
     if "<!-- research-three-legacy-build-contract" not in text:
         text = text.replace("</main>", f"  {_legacy_build_contract_comment()}\n  </main>")
     return text
@@ -226,7 +251,7 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     for marker in (
         CURRENT_RESEARCH_THREE_PIN,
         "V1-V25 formal validation",
-        "109</strong><span>tests in each CI job",
+        "121</strong><span>tests in each CI job",
         "25 scientific visuals",
         "loadResearchIIIAtlasRefresh();",
     ):
