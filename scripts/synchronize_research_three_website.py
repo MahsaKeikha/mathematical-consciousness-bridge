@@ -183,7 +183,6 @@ def _upgrade_measurement_page_copy(text: str) -> str:
     text = text.replace("23 scientific visuals", "27 scientific visuals")
     text = text.replace("24 scientific visuals", "27 scientific visuals")
     text = text.replace("14 validation", "17 validation")
-    text = text.replace("15 validation", "18 validation")
     text = text.replace("98-test suite", "133-test suite")
     text = text.replace("109-test suite", "133-test suite")
     text = text.replace("98 tests in each CI job", "133 tests in each CI job")
