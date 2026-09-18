@@ -244,6 +244,9 @@ def _validate_research_three(output: Path) -> None:
 
     stale_claims = (
         "23</strong><span>tests in each CI job",
+        "98</strong><span>tests in each CI job",
+        "<strong>V1-V15</strong><span>formal validation stages</span>",
+        "23</strong><span>scientific visuals: 9 architecture + 14 validation",
         "planned by the roadmap",
     )
     stale = [token for token in stale_claims if token in measurement]
