@@ -75,19 +75,19 @@ jobs:
 
           R3_PIN="$(python -c 'from scripts.synchronize_research_three_website import CURRENT_RESEARCH_THREE_PIN; print(CURRENT_RESEARCH_THREE_PIN)')"
           grep -q 'Research III · Consciousness Measurement Science' _site/measurement-science.html
-          grep -q 'V1-V35' _site/measurement-science.html
-          grep -q '144</strong><span>tests in each CI job' _site/measurement-science.html
-          grep -q '27</strong><span>scientific visuals: 9 architecture + 18 validation' _site/measurement-science.html
+          grep -q 'V1-V40' _site/measurement-science.html
+          grep -q '159</strong><span>tests in each CI job' _site/measurement-science.html
+          grep -q '28</strong><span>scientific visuals: 9 architecture + 19 validation' _site/measurement-science.html
           grep -q 'docs/validation-atlas.md' _site/measurement-science.html
           grep -q 'results/README.md' _site/measurement-science.html
           grep -q "research-three-snapshot: ${R3_PIN}" _site/measurement-science.html
           ! grep -q '<p class="eyebrow">Implemented now versus not yet established</p>' _site/measurement-science.html
           grep -q "${R3_PIN}" _site/research-lineage.html
           grep -q "${R3_PIN}" _site/research-orientation.js
-          grep -q 'V1-V35 formal validation' _site/research-orientation.js
-          grep -q '144</strong><span>tests in each CI job' _site/research-orientation.js
-          grep -q '27 scientific visuals' _site/research-orientation.js
-          grep -q '7 reproducible validation runners' _site/research-orientation.js
+          grep -q 'V1-V40 formal validation' _site/research-orientation.js
+          grep -q '159</strong><span>tests in each CI job' _site/research-orientation.js
+          grep -q '28 scientific visuals' _site/research-orientation.js
+          grep -q '8 reproducible validation runners' _site/research-orientation.js
 
       - name: Verify current-frontier reader coherence
         run: |
@@ -132,19 +132,21 @@ jobs:
           grep -q 'research-iii-complete-figure-gallery' _site/research-iii-atlas-refresh.js
           grep -q 'research-iii-validation-figure-gallery' _site/research-iii-atlas-refresh.js
           grep -q 'research-iii-source-validation-gallery' _site/research-iii-atlas-refresh.js
-          grep -q 'V1-V35' _site/sources.html
-          grep -q '18 result figures' _site/sources.html
-          grep -q '144 tests' _site/sources.html
+          grep -q 'V1-V40' _site/sources.html
+          grep -q '19 result figures' _site/sources.html
+          grep -q '159 tests' _site/sources.html
           grep -q 'V26-V30 electromagnetic resolution and information program' _site/sources.html
           grep -q 'V31-V35 electromagnetic design and spatial specificity program' _site/sources.html
-          grep -q 'V1-V35' _site/visual-atlas.html
-          grep -q '18</strong><span>code-generated validation figures' _site/visual-atlas.html
-          grep -q '144</strong><span>tests in each CI job' _site/visual-atlas.html
+          grep -q 'V36-V40 finite-sample electromagnetic inference program' _site/sources.html
+          grep -q 'V1-V40' _site/visual-atlas.html
+          grep -q '19</strong><span>code-generated validation figures' _site/visual-atlas.html
+          grep -q '159</strong><span>tests in each CI job' _site/visual-atlas.html
           grep -q 'v26_v30_electromagnetic_resolution_validation.svg' _site/visual-atlas.html
           grep -q 'v31_v35_electromagnetic_design_validation.svg' _site/visual-atlas.html
+          grep -q 'v36_v40_electromagnetic_finite_sample_validation.svg' _site/visual-atlas.html
           grep -q '9 / 9 visible' _site/research-iii-atlas-refresh.js
-          grep -q '18 / 18 visible' _site/research-iii-atlas-refresh.js
-          grep -q 'V1-V35 result record' _site/research-iii-atlas-refresh.js
+          grep -q '19 / 19 visible' _site/research-iii-atlas-refresh.js
+          grep -q 'V1-V40 result record' _site/research-iii-atlas-refresh.js
           grep -q 'Result data' _site/research-iii-atlas-refresh.js
           grep -q 'finite_sample_identification.svg' _site/research-iii-atlas-refresh.js
           grep -q 'resolution_abstention_frontier.svg' _site/research-iii-atlas-refresh.js
@@ -156,12 +158,15 @@ jobs:
           grep -q 'v21_v25_electromagnetic_inverse_validation.svg' _site/research-iii-atlas-refresh.js
           grep -q 'v26_v30_electromagnetic_resolution_validation.svg' _site/research-iii-atlas-refresh.js
           grep -q 'v31_v35_electromagnetic_design_validation.svg' _site/research-iii-atlas-refresh.js
+          grep -q 'v36_v40_electromagnetic_finite_sample_validation.svg' _site/research-iii-atlas-refresh.js
           grep -q 'electromagnetic_inverse_validation_summary.json' _site/research-iii-atlas-refresh.js
           grep -q 'electromagnetic_resolution_validation_summary.json' _site/research-iii-atlas-refresh.js
           grep -q 'electromagnetic_design_validation_summary.json' _site/research-iii-atlas-refresh.js
+          grep -q 'electromagnetic_finite_sample_validation_summary.json' _site/research-iii-atlas-refresh.js
           grep -q 'electromagnetic-source-identifiability.md' _site/research-iii-atlas-refresh.js
           grep -q 'electromagnetic-resolution-program.md' _site/research-iii-atlas-refresh.js
           grep -q 'electromagnetic-design-spatial-specificity.md' _site/research-iii-atlas-refresh.js
+          grep -q 'electromagnetic-finite-sample-inference.md' _site/research-iii-atlas-refresh.js
           grep -q 'electromagnetic_validation_summary.json' _site/research-iii-atlas-refresh.js
           grep -q 'electromagnetic-field-program.md' _site/research-iii-atlas-refresh.js
           grep -q 'v11_missingness_information_law.csv' _site/research-iii-atlas-refresh.js
@@ -195,7 +200,7 @@ jobs:
           assert "Research III · Consciousness measurement science" in home
           assert pin in orientation
           assert pin in refresh
-          assert "V1-V35 formal validation" in orientation
+          assert "V1-V40 formal validation" in orientation
           assert "formal-validation-v11-v15" in refresh
           assert "v15_independent_pilot_gate.svg" in refresh
           assert "v15_independent_pilot_gate.csv" in refresh
