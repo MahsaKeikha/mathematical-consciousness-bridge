@@ -294,10 +294,11 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
 
     atlas = text("visual-atlas.html")
     for marker in (
-        "V1-V30",
-        "17</strong><span>code-generated validation figures",
+        "V1-V35",
+        "18</strong><span>code-generated validation figures",
         "144</strong><span>tests in each CI job",
         "v26_v30_electromagnetic_resolution_validation.svg",
+        "v31_v35_electromagnetic_design_validation.svg",
     ):
         if marker not in atlas:
             raise RuntimeError(f"Visual Atlas is missing Research III V1-V35 marker: {marker}")
