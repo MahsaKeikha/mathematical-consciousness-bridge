@@ -150,49 +150,49 @@ def _upgrade_measurement_page_copy(text: str) -> str:
             'aria-label="V11 to V15 validation sequence"',
         )
     text = text.replace("V1-V30", "V1-V35")
-    text = text.replace("V1-V25", "V1-V30")
+    text = text.replace("V1-V25", "V1-V35")
     text = text.replace("All sixteen validation-result figures", "All eighteen validation-result figures")
-    text = text.replace("All seventeen validation-result figures", "All eighteen validation-result figures")
+    text = text.replace("All eighteen validation-result figures", "All eighteen validation-result figures")
     text = text.replace(
         "Formal validation V1-V10, reproducible equations",
         "Formal validation V1-V35, reproducible equations",
     )
-    text = text.replace("Open V1-V10 validation program", "Open V1-V30 validation program")
-    text = text.replace("Open V1-V15 validation program", "Open V1-V30 validation program")
-    text = text.replace("Open V1-V17 validation program", "Open V1-V30 validation program")
+    text = text.replace("Open V1-V10 validation program", "Open V1-V35 validation program")
+    text = text.replace("Open V1-V15 validation program", "Open V1-V35 validation program")
+    text = text.replace("Open V1-V17 validation program", "Open V1-V35 validation program")
     text = text.replace("Open V1-V20 validation program", "Open V1-V35 validation program")
     text = text.replace("Open V1-V30 validation program", "Open V1-V35 validation program")
     text = text.replace(
         "<strong>V1-V10</strong><span>formal validation stages</span>",
-        "<strong>V1-V30</strong><span>formal validation stages</span>",
+        "<strong>V1-V35</strong><span>formal validation stages</span>",
     )
     text = text.replace(
         "<strong>V1-V15</strong><span>formal validation stages</span>",
-        "<strong>V1-V30</strong><span>formal validation stages</span>",
+        "<strong>V1-V35</strong><span>formal validation stages</span>",
     )
     text = text.replace(
         "<strong>V1-V20</strong><span>formal validation stages</span>",
-        "<strong>V1-V30</strong><span>formal validation stages</span>",
+        "<strong>V1-V35</strong><span>formal validation stages</span>",
     )
-    text = text.replace("The compact V1-V10 map", "The compact V1-V30 map")
-    text = text.replace("The compact V1-V15 map", "The compact V1-V30 map")
-    text = text.replace("The compact V1-V20 map", "The compact V1-V30 map")
+    text = text.replace("The compact V1-V10 map", "The compact V1-V35 map")
+    text = text.replace("The compact V1-V15 map", "The compact V1-V35 map")
+    text = text.replace("The compact V1-V20 map", "The compact V1-V35 map")
     text = text.replace(
         "All ten validation-result figures",
-        "All seventeen validation-result figures",
+        "All eighteen validation-result figures",
     )
-    text = text.replace("All fourteen validation-result figures", "All seventeen validation-result figures")
-    text = text.replace("All fifteen validation-result figures", "All seventeen validation-result figures")
-    text = text.replace("V1-V15", "V1-V30")
-    text = text.replace("V1-V20", "V1-V30")
+    text = text.replace("All fourteen validation-result figures", "All eighteen validation-result figures")
+    text = text.replace("All fifteen validation-result figures", "All eighteen validation-result figures")
+    text = text.replace("V1-V15", "V1-V35")
+    text = text.replace("V1-V20", "V1-V35")
     text = text.replace("23 scientific visuals", "27 scientific visuals")
     text = text.replace("24 scientific visuals", "27 scientific visuals")
-    text = text.replace("14 validation", "17 validation")
+    text = text.replace("14 validation", "18 validation")
     text = text.replace("15 validation", "18 validation")
-    text = text.replace("98-test suite", "133-test suite")
-    text = text.replace("109-test suite", "133-test suite")
-    text = text.replace("98 tests in each CI job", "133 tests in each CI job")
-    text = text.replace("109 tests in each CI job", "133 tests in each CI job")
+    text = text.replace("98-test suite", "144-test suite")
+    text = text.replace("109-test suite", "144-test suite")
+    text = text.replace("98 tests in each CI job", "144 tests in each CI job")
+    text = text.replace("109 tests in each CI job", "144 tests in each CI job")
     text = text.replace("4 reproducible validation runners", "7 reproducible validation runners")
     if "<!-- research-three-legacy-build-contract" not in text:
         text = text.replace("</main>", f"  {_legacy_build_contract_comment()}\n  </main>")
