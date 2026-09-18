@@ -2,20 +2,20 @@
   const REPO = 'https://github.com/MahsaKeikha/mathematical-consciousness-bridge';
   const OBSERVER_REPO = 'https://github.com/MahsaKeikha/spatiotemporal-observer-math';
   const MEASUREMENT_REPO = 'https://github.com/MahsaKeikha/consciousness-measurement-science';
-  const MEASUREMENT_PIN = '0cd578fb553ab19006155a563c484511b4271a5f';
+  const MEASUREMENT_PIN = 'e5063b0ac1e85577dd3e1a7c4c4003c122210d48';
 
   const PAGE_CONTRACTS = {
     'index.html': {
       stage: 'Whole program',
       question: 'How do the three research programs fit together, and where is the current formal frontier?',
       established:
-        'The site documents a three-stage program: physical-system identification in Research I, bridge sufficiency and falsification through P100 in Research II, and a V1-V35 formal measurement-validation program in Research III.',
+        'The site documents a three-stage program: physical-system identification in Research I, bridge sufficiency and falsification through P100 in Research II, and a V1-V40 formal measurement-validation program in Research III.',
       open:
         'The physical-to-experiential bridge remains open. The overview organizes mathematical, computational, and measurement-science evidence but does not add a new bridge principle or experiential identification claim.',
       links: [
         ['research-lineage.html', 'See the three-stage scientific handoff'],
         ['research-map.html', 'Audit the Research II theorem map'],
-        ['measurement-science.html', 'Open Research III V1-V35'],
+        ['measurement-science.html', 'Open Research III V1-V40'],
       ],
     },
     'plain-language.html': {
@@ -61,13 +61,13 @@
       stage: 'Scientific handoff',
       question: 'Which conclusions pass from Research I to II to III, and which assumptions must be re-tested at each handoff?',
       established:
-        'The lineage separates physical-system identification, bridge sufficiency testing, and measurement science so outputs from one stage are not silently promoted into conclusions belonging to another. Research III now adds V1-V35 formal validation and measurement-design laws.',
+        'The lineage separates physical-system identification, bridge sufficiency testing, and measurement science so outputs from one stage are not silently promoted into conclusions belonging to another. Research III now adds V1-V40 formal validation and measurement-design laws.',
       open:
         'No handoff by itself establishes the physical-to-experiential bridge. The bridge requires an independently justified principle and empirical support beyond stage-to-stage bookkeeping.',
       links: [
         ['observer-research.html', 'Inspect Research I'],
         ['research-map.html', 'Inspect Research II'],
-        ['measurement-science.html', 'Inspect Research III V1-V35'],
+        ['measurement-science.html', 'Inspect Research III V1-V40'],
       ],
     },
     'research-map.html': {
@@ -89,11 +89,11 @@
       intro: 'The formal results below concern identifiability, uncertainty, robustness, and measurement design. This orientation separates what is proved or simulated from what still requires empirical calibration.',
       question: 'What can observable channels legitimately identify about a declared experiential target, and exactly where does that inference fail?',
       established:
-        'Research III contains a reproducible V1-V35 formal validation program covering calibrated inversion, partial identification, finite-sample coverage, transport bias, channel dependence, structural null and power testing, calibration uncertainty, arbitrary missingness, inverse conditioning, multisite identification, exact missingness-information loss, resolution sample-size design, independent pilot release gating, sensor-level electromagnetic measurement, and electromagnetic source-identifiability tests for reference invariance, lead-field null spaces, inverse regularization, multimodal complementarity, and forward-model perturbation.',
+        'Research III contains a reproducible V1-V40 formal validation program covering calibrated inversion, partial identification, finite-sample coverage, transport bias, channel dependence, structural null and power testing, calibration uncertainty, arbitrary missingness, inverse conditioning, multisite identification, exact missingness-information loss, resolution sample-size design, independent pilot release gating, sensor-level electromagnetic measurement, and electromagnetic source-identifiability tests for reference invariance, lead-field null spaces, inverse regularization, multimodal complementarity, and forward-model perturbation.',
       open:
         'These analytic and synthetic results validate measurement machinery under declared models. EEG, MEG, and related fields are treated as candidate observables, while source reconstructions remain model- and prior-dependent inferences. No current result establishes a universal electromagnetic consciousness signature, a uniquely true reconstructed source, or empirical calibration for consciousness in humans or other systems. Principled non-identification remains an allowed result.',
       links: [
-        [`${MEASUREMENT_REPO}/blob/${MEASUREMENT_PIN}/VALIDATION.md`, 'Open the V1-V35 validation program'],
+        [`${MEASUREMENT_REPO}/blob/${MEASUREMENT_PIN}/VALIDATION.md`, 'Open the V1-V40 validation program'],
         [`${MEASUREMENT_REPO}/blob/${MEASUREMENT_PIN}/docs/validation-atlas.md`, 'Open the validation atlas'],
         [`${MEASUREMENT_REPO}/blob/${MEASUREMENT_PIN}/results/README.md`, 'Audit machine-readable results'],
       ],
@@ -115,7 +115,7 @@
       stage: 'Three-program visual evidence record',
       question: 'What visual evidence, architecture, or computational record belongs to Research I, Research II, and Research III, and what scientific status does each visual carry?',
       established:
-        'The Atlas uses one explicit gallery language across all three programs. Research I exposes its scientific-result figures, Research II renders its canonical theorem and architecture record, and Research III exposes 9 foundational architecture visuals plus 18 code-generated V1-V35 validation-result figures.',
+        'The Atlas uses one explicit gallery language across all three programs. Research I exposes its scientific-result figures, Research II renders its canonical theorem and architecture record, and Research III exposes 9 foundational architecture visuals plus 19 code-generated V1-V40 validation-result figures.',
       open:
         'A figure does not upgrade the status of its underlying evidence. Research I world-tube recovery is not consciousness identification, Research II model rejection is not bridge completion, and Research III analytic or synthetic validation is not human or clinical validation.',
       links: [
@@ -129,7 +129,7 @@
       stage: 'Three-program provenance and reproducibility',
       question: 'Where do the formal results, experiments, figures, specifications, assumptions, code, tests, and reproducibility records for all three research programs live?',
       established:
-        'The Sources page separates Research I physical-system provenance, Research II P1-P100 theorem provenance, and Research III architecture from its V1-V35 executable validation record. Each Research III validation visual links to the exact derivation, machine-readable result data, and figure source at one pinned commit.',
+        'The Sources page separates Research I physical-system provenance, Research II P1-P100 theorem provenance, and Research III architecture from its V1-V40 executable validation record. Each Research III validation visual links to the exact derivation, machine-readable result data, and figure source at one pinned commit.',
       open:
         'Traceability is necessary for rigor, but an inspectable research record is not scientific truth by itself. Each program still has to earn its mathematical, computational, empirical, external-validation, or clinical claims at the level appropriate to that program.',
       links: [
@@ -189,8 +189,8 @@
     if (programCard) {
       const metric = programCard.querySelector('.research-program-metric');
       const meta = programCard.querySelector('.research-program-meta');
-      if (metric) metric.innerHTML = '<strong>144</strong><span>tests in each CI job</span>';
-      if (meta) meta.textContent = 'V1-V35 formal validation · 27 scientific visuals · 7 reproducible validation runners';
+      if (metric) metric.innerHTML = '<strong>159</strong><span>tests in each CI job</span>';
+      if (meta) meta.textContent = 'V1-V40 formal validation · 28 scientific visuals · 8 reproducible validation runners';
     }
 
     const journey = document.querySelector('#project-journey .flow');
@@ -202,8 +202,8 @@
         node.innerHTML = `
           <span>Research III</span>
           <h3>Engineer and falsify the measurement layer</h3>
-          <p>Model the observable channel explicitly, prove when latent inference is identifiable, propagate calibration and finite-sample uncertainty, stress dependence and transport, quantify multisite and missing-data information loss, design selection-safe release rules, and test electromagnetic field observables against gain, power-only, nuisance, and frequency-specific counterexamples, then stress source reconstruction with reference, null-space, regularization, multimodal, and forward-model perturbation tests, followed by covariance-aware residual geometry, inverse-resolution leakage, Fisher-information limits, temporal aliasing, singular-direction noise amplification, point-spread and cross-talk analysis, information-aware sensor design, nuisance-loss quantification, and robust model-uncertainty bounds.</p>
-          <p><strong>Current record:</strong> V1-V35 formal validation, deterministic simulations, 18 generated result figures, CSV/JSON outputs, theorem tests, and CI across Python 3.10, 3.11, and 3.12.</p>
+          <p>Model the observable channel explicitly, prove when latent inference is identifiable, propagate calibration and finite-sample uncertainty, stress dependence and transport, quantify multisite and missing-data information loss, design selection-safe release rules, and test electromagnetic field observables against gain, power-only, nuisance, and frequency-specific counterexamples, then stress source reconstruction with reference, null-space, regularization, multimodal, and forward-model perturbation tests, followed by covariance-aware residual geometry, inverse-resolution leakage, Fisher-information limits, temporal aliasing, singular-direction noise amplification, point-spread and cross-talk analysis, information-aware sensor design, nuisance-loss quantification, robust model-uncertainty bounds, and finite-sample inference checks for covariance estimation, Gaussian source discrimination, multiplicity, and sandwich uncertainty calibration.</p>
+          <p><strong>Current record:</strong> V1-V40 formal validation, deterministic simulations, 19 generated result figures, CSV/JSON outputs, theorem tests, and CI across Python 3.10, 3.11, and 3.12.</p>
           <p><a href="measurement-science.html">Research III engineering record →</a></p>`;
       }
     }
