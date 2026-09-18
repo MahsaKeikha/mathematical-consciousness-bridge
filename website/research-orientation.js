@@ -91,7 +91,7 @@
       established:
         'Research III contains a reproducible V1-V20 formal validation program covering calibrated inversion, partial identification, finite-sample coverage, transport bias, channel dependence, structural null and power testing, calibration uncertainty, arbitrary missingness, inverse conditioning, multisite identification, exact missingness-information loss, resolution sample-size design, independent pilot release gating, and a new electromagnetic measurement arm that tests physical field observables, gain invariance, matched-power non-identifiability, common-mode confounding, and frequency-specific organization.',
       open:
-        'These analytic and synthetic results validate measurement machinery under declared models. The electromagnetic arm treats EEG, MEG, and related fields as candidate observables, not as consciousness itself. No current result establishes a universal EM consciousness signature or empirical calibration for consciousness in humans or other systems, and principled non-identification remains an allowed result.',
+        'These analytic and synthetic results validate measurement machinery under declared models. The electromagnetic arm treats EEG, MEG, and related fields as candidate observables, not as consciousness itself. These results do not establish empirical calibration for consciousness in humans or other systems, and no current result establishes a universal EM consciousness signature. Principled non-identification remains an allowed result.',
       links: [
         [`${MEASUREMENT_REPO}/blob/${MEASUREMENT_PIN}/VALIDATION.md`, 'Open the V1-V20 validation program'],
         [`${MEASUREMENT_REPO}/blob/${MEASUREMENT_PIN}/docs/validation-atlas.md`, 'Open the validation atlas'],
