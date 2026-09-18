@@ -142,6 +142,9 @@ jobs:
           grep -q 'v12_v13_multisite_heterogeneity.svg' _site/research-iii-atlas-refresh.js
           grep -q 'v14_resolution_sample_size.svg' _site/research-iii-atlas-refresh.js
           grep -q 'v15_independent_pilot_gate.svg' _site/research-iii-atlas-refresh.js
+          grep -q 'v16_v20_electromagnetic_validation.svg' _site/research-iii-atlas-refresh.js
+          grep -q 'electromagnetic_validation_summary.json' _site/research-iii-atlas-refresh.js
+          grep -q 'electromagnetic-field-program.md' _site/research-iii-atlas-refresh.js
           grep -q 'v11_missingness_information_law.csv' _site/research-iii-atlas-refresh.js
           grep -q 'v15_independent_pilot_gate.csv' _site/research-iii-atlas-refresh.js
           grep -q 'v16_v20_electromagnetic_validation.svg' _site/research-iii-atlas-refresh.js
@@ -176,6 +179,10 @@ jobs:
           assert "formal-validation-v11-v15" in refresh
           assert "v15_independent_pilot_gate.svg" in refresh
           assert "v15_independent_pilot_gate.csv" in refresh
+          assert "v16_v20_electromagnetic_validation.svg" in refresh
+          assert "electromagnetic_validation_summary.json" in refresh
+          assert "electromagnetic-field-program.md" in refresh
+          assert "v16-v20-em-field-program" in refresh
           assert "v16_v20_electromagnetic_validation.svg" in refresh
           assert "electromagnetic_validation_summary.json" in refresh
           assert "v16-v20-em-field-program" in refresh
