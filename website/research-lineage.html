@@ -137,8 +137,8 @@
     <section id="research-iii">
       <div class="section-head">
         <p class="eyebrow">Research III · consciousness measurement science</p>
-        <h2>Consciousness Measurement Science</h2>
-        <p>The third repository is a theory-neutral, multimodal, causal, and structural research program for determining what observations and interventions can justify a scientific measurement claim about consciousness. Its current executable record reaches V1-V45, extending from identification and robustness through electromagnetic source inference, finite-sample calibration, multiplicity control, and selection-safe confirmation.</p>
+        <h2>From measurement architecture to finite-sample, multiplicity-controlled, selection-safe inference</h2>
+        <p>The third repository is a theory-neutral, multimodal, causal, and structural measurement-science program. Its executable record now spans V1-V45: target definition and identification, calibration and transport, electromagnetic observables, source non-identifiability, inverse resolution, spatial specificity, finite-sample inference, multiplicity control, post-selection failure analysis, and independent confirmation.</p>
       </div>
 
       <div class="lineage-stage">
@@ -171,6 +171,61 @@
         <div><strong>20</strong><span>code-generated validation figures</span></div>
         <div><strong>171</strong><span>tests in each CI job</span></div>
         <div><strong>9</strong><span>reproducible validation runners</span></div>
+      </div>
+
+      <div class="section-head">
+        <p class="eyebrow">How Research III evolved</p>
+        <h2>Seven linked validation layers make the measurement chain explicit from target definition to independent confirmation</h2>
+        <p>The sequence is cumulative. Later source-space and statistical claims inherit the acquisition, identification, calibration, resolution, and design assumptions established earlier. A result at one layer does not bypass the scientific burden at another.</p>
+      </div>
+
+      <div class="source-grid lineage-links" aria-label="Research III V1 to V45 validation layers">
+        <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/0072642d93d77fa594634a643e46e73769af0655/docs/validation-atlas.md">
+          <h3>V1-V15 · identification and validation</h3>
+          <p>Finite-sample identification, calibration uncertainty, missingness, dependence, transport, multisite heterogeneity, resolution-aware sample size, and independent release gates.</p>
+        </a>
+        <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/0072642d93d77fa594634a643e46e73769af0655/docs/electromagnetic-field-program.md">
+          <h3>V16-V20 · electromagnetic observables</h3>
+          <p>Field energy, Poynting flow, gain-invariant organization, equal-power counterexamples, common-mode confounding, and frequency-specific structure.</p>
+        </a>
+        <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/0072642d93d77fa594634a643e46e73769af0655/docs/electromagnetic-source-identifiability.md">
+          <h3>V21-V25 · source identifiability</h3>
+          <p>Reference invariance, lead-field null spaces, regularization sensitivity, multimodal complementarity, and forward-model perturbation.</p>
+        </a>
+        <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/0072642d93d77fa594634a643e46e73769af0655/docs/electromagnetic-resolution-program.md">
+          <h3>V26-V30 · resolution and information limits</h3>
+          <p>Noise whitening, inverse-resolution leakage, a rank-only resolution floor, Fisher information, exact temporal aliasing, and worst-case inverse noise amplification.</p>
+        </a>
+        <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/0072642d93d77fa594634a643e46e73769af0655/docs/electromagnetic-design-spatial-specificity.md">
+          <h3>V31-V35 · design and spatial specificity</h3>
+          <p>Point-spread and cross-talk functions, covariance-aware source distinguishability, Fisher-information sensor design, nuisance-subspace information loss, and robust model uncertainty.</p>
+        </a>
+        <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/0072642d93d77fa594634a643e46e73769af0655/docs/electromagnetic-finite-sample-inference.md">
+          <h3>V36-V40 · finite-sample electromagnetic inference</h3>
+          <p>Efficient GLS amplitude inference, inverse-covariance bias, exact Gaussian source-discrimination error, search-wide error control, and covariance-mismatch calibration.</p>
+        </a>
+        <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/0072642d93d77fa594634a643e46e73769af0655/docs/electromagnetic-selection-safe-inference.md">
+          <h3>V41-V45 · multiplicity and selection-safe inference</h3>
+          <p>Arbitrary-dependence family-wise error control, Holm step-down testing, exact sign-flip inference, post-selection coverage failure, and independent holdout confirmation.</p>
+        </a>
+      </div>
+
+      <div class="lineage-stage">
+        <div class="lineage-visual">
+          <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/0072642d93d77fa594634a643e46e73769af0655/docs/electromagnetic-finite-sample-inference.md" aria-label="Open Research III V36 to V40 finite-sample electromagnetic inference">
+            <img src="https://raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/0072642d93d77fa594634a643e46e73769af0655/docs/figures/v36_v40_electromagnetic_finite_sample_validation.svg" alt="Research III V36 to V40 finite-sample electromagnetic inference validation" />
+          </a>
+        </div>
+        <div class="lineage-copy">
+          <span class="lineage-number">V40</span>
+          <h3>Finite-sample inference makes covariance estimation and search-wide error part of the measurement model</h3>
+          <p>V36-V40 move beyond nominal information limits to the behavior of estimators with finite data. The program derives efficient generalized least-squares amplitude inference, quantifies inverse-covariance bias, connects Gaussian source separation to exact classification error, makes search-wide false-positive inflation explicit, and uses sandwich variance to expose covariance-mismatch miscalibration.</p>
+          <p>The methodological consequence is direct: a clean source-space estimate is not enough. The covariance estimator, sample size, comparison count, and uncertainty model determine whether the reported precision is actually calibrated.</p>
+          <div class="source-grid lineage-links">
+            <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/0072642d93d77fa594634a643e46e73769af0655/docs/electromagnetic-finite-sample-inference.md"><h3>V36-V40 proof record</h3><p>Read the finite-sample derivations and declared assumptions.</p></a>
+            <a href="https://github.com/MahsaKeikha/consciousness-measurement-science/blob/0072642d93d77fa594634a643e46e73769af0655/results/electromagnetic_finite_sample_validation_summary.json"><h3>Machine-readable results</h3><p>Inspect the canonical finite-sample validation summary.</p></a>
+          </div>
+        </div>
       </div>
 
       <div class="lineage-stage">
