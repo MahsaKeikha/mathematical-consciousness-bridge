@@ -529,23 +529,6 @@
       v6Section.insertAdjacentElement('afterend', figures);
     }
 
-    const reproduction = findSectionByText(/Two deterministic runners regenerate|Reproducibility/);
-    if (reproduction) {
-      const heading = reproduction.querySelector('h2');
-      if (heading && heading.textContent.includes('Two deterministic runners')) {
-        heading.textContent = 'Three deterministic runners regenerate the validation results and figures';
-      }
-      const firstColumn = reproduction.querySelector('.two-col > div');
-      if (firstColumn && !firstColumn.querySelector('[data-v11-v15-runner]')) {
-        const p = document.createElement('p');
-        p.dataset.v11V15Runner = 'true';
-        p.innerHTML = '<strong>V11-V15 runner:</strong> <code>python scripts/run_identification_design_validation.py</code>';
-        const wholeRepo = [...firstColumn.querySelectorAll('p')].find((node) => node.textContent.includes('Whole repository'));
-        if (wholeRepo) wholeRepo.insertAdjacentElement('beforebegin', p);
-        else firstColumn.appendChild(p);
-      }
-    }
-
     repinResearchIIIAssets();
     return true;
   }
