@@ -130,6 +130,7 @@ jobs:
           grep -q 'V1-V25 formal validation' _site/research-orientation.js
           grep -q '121</strong><span>tests in each CI job' _site/research-orientation.js
           grep -q '25 scientific visuals' _site/research-orientation.js
+          grep -q '5 reproducible validation runners' _site/research-orientation.js
           grep -q 'research-i-complete-figure-gallery' _site/three-program-evidence.js
           grep -q 'research-ii-complete-core-gallery' _site/atlas-architecture-refresh.js
           grep -q 'research-iii-complete-figure-gallery' _site/research-iii-atlas-refresh.js
@@ -146,6 +147,9 @@ jobs:
           grep -q 'electromagnetic-source-identifiability.md' _site/research-iii-atlas-refresh.js
           grep -q 'electromagnetic_validation_summary.json' _site/research-iii-atlas-refresh.js
           grep -q 'Electromagnetic Field Measurement Program' _site/research-iii-atlas-refresh.js
+          grep -q 'Electromagnetic Source Identifiability Program' _site/research-iii-atlas-refresh.js
+          grep -q 'run_electromagnetic_inverse_validation.py' _site/research-iii-atlas-refresh.js
+          grep -q 'v21-v25-em-source-identifiability' _site/research-iii-atlas-refresh.js
           grep -q 'Result data' _site/research-iii-atlas-refresh.js
           grep -q 'v11_missingness_information_law.svg' _site/research-iii-atlas-refresh.js
           grep -q 'v12_v13_multisite_heterogeneity.svg' _site/research-iii-atlas-refresh.js
