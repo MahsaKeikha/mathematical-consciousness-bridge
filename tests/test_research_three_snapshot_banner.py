@@ -33,7 +33,7 @@ def test_research_three_page_has_visual_v1_v50_reproducibility_map() -> None:
     styles = _read("website/styles.css")
     refresh = _read("website/research-iii-atlas-refresh.js")
 
-    assert "Nine validation programs move from identifiability to robustness, study design, electromagnetic measurement, source identifiability, resolution and information limits, design and spatial specificity, finite-sample inference, and selection-safe inference" in page
+    assert "Ten validation programs move from identifiability to robustness, study design, electromagnetic measurement, source identifiability, resolution and information limits, design and spatial specificity, finite-sample inference, selection-safe inference, and cross-site replication inference" in page
     for stage in ("V1-V5", "V6-V10", "V11-V15", "V16-V20", "V21-V25", "V26-V30", "V31-V35", "V36-V40", "V41-V45", "V46-V50"):
         assert stage in page
     for label in ("Derivation", "Code", "Results", "Figures"):
