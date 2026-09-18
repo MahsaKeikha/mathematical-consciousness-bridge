@@ -99,7 +99,7 @@ jobs:
           python scripts/prepare_website.py --source website-deploy --output _site
           cp figures/manifest.json _site/figures/manifest.json
 
-      - name: Verify canonical built frontier and Research III V1-V30 record
+      - name: Verify canonical built frontier and Research III V1-V35 record
         shell: bash
         run: |
           FRONTIER_LOWER="$(printf '%s' "${FRONTIER}" | tr '[:upper:]' '[:lower:]')"
@@ -124,45 +124,53 @@ jobs:
           grep -q "${R3_PIN}" _site/measurement-science.html
           grep -q "${R3_PIN}" _site/research-orientation.js
           grep -q "${R3_PIN}" _site/research-iii-atlas-refresh.js
-          grep -q 'V1-V30' _site/measurement-science.html
-          grep -q '133</strong><span>tests in each CI job' _site/measurement-science.html
-          grep -q '26</strong><span>scientific visuals: 9 architecture + 17 validation' _site/measurement-science.html
-          grep -q 'V1-V30 formal validation' _site/research-orientation.js
-          grep -q '133</strong><span>tests in each CI job' _site/research-orientation.js
-          grep -q '26 scientific visuals' _site/research-orientation.js
-          grep -q '6 reproducible validation runners' _site/research-orientation.js
+          grep -q 'V1-V35' _site/measurement-science.html
+          grep -q '144</strong><span>tests in each CI job' _site/measurement-science.html
+          grep -q '27</strong><span>scientific visuals: 9 architecture + 18 validation' _site/measurement-science.html
+          grep -q 'V1-V35 formal validation' _site/research-orientation.js
+          grep -q '144</strong><span>tests in each CI job' _site/research-orientation.js
+          grep -q '27 scientific visuals' _site/research-orientation.js
+          grep -q '7 reproducible validation runners' _site/research-orientation.js
           grep -q 'research-i-complete-figure-gallery' _site/three-program-evidence.js
           grep -q 'research-ii-complete-core-gallery' _site/atlas-architecture-refresh.js
           grep -q 'research-iii-complete-figure-gallery' _site/research-iii-atlas-refresh.js
           grep -q 'research-iii-curated-visual-story' _site/research-iii-atlas-refresh.js
           grep -q 'research-iii-validation-figure-gallery' _site/research-iii-atlas-refresh.js
           grep -q 'research-iii-source-validation-gallery' _site/research-iii-atlas-refresh.js
-          grep -q 'V1-V30' _site/sources.html
-          grep -q '17 result figures' _site/sources.html
-          grep -q '133 tests' _site/sources.html
+          grep -q 'V1-V35' _site/sources.html
+          grep -q '18 result figures' _site/sources.html
+          grep -q '144 tests' _site/sources.html
           grep -q 'V26-V30 electromagnetic resolution and information program' _site/sources.html
-          grep -q 'V1-V30' _site/visual-atlas.html
-          grep -q '17</strong><span>code-generated validation figures' _site/visual-atlas.html
-          grep -q '133</strong><span>tests in each CI job' _site/visual-atlas.html
+          grep -q 'V31-V35 electromagnetic design and spatial specificity program' _site/sources.html
+          grep -q 'V1-V35' _site/visual-atlas.html
+          grep -q '18</strong><span>code-generated validation figures' _site/visual-atlas.html
+          grep -q '144</strong><span>tests in each CI job' _site/visual-atlas.html
           grep -q 'v26_v30_electromagnetic_resolution_validation.svg' _site/visual-atlas.html
+          grep -q 'v31_v35_electromagnetic_design_validation.svg' _site/visual-atlas.html
           grep -q 'const RESEARCH_II_CORE_EXPECTED = 100' _site/atlas-architecture-refresh.js
           grep -q '9 / 9 visible' _site/research-iii-atlas-refresh.js
-          grep -q '17 / 17 visible' _site/research-iii-atlas-refresh.js
-          grep -q 'V1-V30 result record' _site/research-iii-atlas-refresh.js
+          grep -q '18 / 18 visible' _site/research-iii-atlas-refresh.js
+          grep -q 'V1-V35 result record' _site/research-iii-atlas-refresh.js
           grep -q 'v16_v20_electromagnetic_validation.svg' _site/research-iii-atlas-refresh.js
           grep -q 'v21_v25_electromagnetic_inverse_validation.svg' _site/research-iii-atlas-refresh.js
           grep -q 'v26_v30_electromagnetic_resolution_validation.svg' _site/research-iii-atlas-refresh.js
+          grep -q 'v31_v35_electromagnetic_design_validation.svg' _site/research-iii-atlas-refresh.js
           grep -q 'electromagnetic_inverse_validation_summary.json' _site/research-iii-atlas-refresh.js
           grep -q 'electromagnetic_resolution_validation_summary.json' _site/research-iii-atlas-refresh.js
+          grep -q 'electromagnetic_design_validation_summary.json' _site/research-iii-atlas-refresh.js
           grep -q 'electromagnetic-source-identifiability.md' _site/research-iii-atlas-refresh.js
           grep -q 'electromagnetic-resolution-program.md' _site/research-iii-atlas-refresh.js
+          grep -q 'electromagnetic-design-spatial-specificity.md' _site/research-iii-atlas-refresh.js
           grep -q 'electromagnetic_validation_summary.json' _site/research-iii-atlas-refresh.js
           grep -q 'Electromagnetic Field Measurement Program' _site/research-iii-atlas-refresh.js
           grep -q 'Electromagnetic Source Identifiability Program' _site/research-iii-atlas-refresh.js
           grep -q 'Electromagnetic Resolution and Information Program' _site/research-iii-atlas-refresh.js
+          grep -q 'Electromagnetic Design and Spatial Specificity Program' _site/research-iii-atlas-refresh.js
           grep -q 'run_electromagnetic_inverse_validation.py' _site/research-iii-atlas-refresh.js
           grep -q 'run_electromagnetic_resolution_validation.py' _site/research-iii-atlas-refresh.js
+          grep -q 'run_electromagnetic_design_validation.py' _site/research-iii-atlas-refresh.js
           grep -q 'v21-v25-em-source-identifiability' _site/research-iii-atlas-refresh.js
+          grep -q 'v31-v35-em-design-spatial-specificity' _site/research-iii-atlas-refresh.js
           grep -q 'Result data' _site/research-iii-atlas-refresh.js
           grep -q 'v11_missingness_information_law.svg' _site/research-iii-atlas-refresh.js
           grep -q 'v12_v13_multisite_heterogeneity.svg' _site/research-iii-atlas-refresh.js
