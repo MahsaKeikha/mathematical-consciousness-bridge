@@ -69,9 +69,9 @@ def test_pages_deployment_enforces_the_unified_gallery_contract() -> None:
         "research-iii-source-validation-gallery",
         "const RESEARCH_II_CORE_EXPECTED = 100",
         "9 / 9 visible",
-        "20 / 20 visible",
-        "20 result figures",
-        "V1-V45 result record",
+        "21 / 21 visible",
+        "21 result figures",
+        "V1-V50 result record",
         "Result data",
         "v11_missingness_information_law.svg",
         "v12_v13_multisite_heterogeneity.svg",
@@ -148,8 +148,8 @@ def test_research_iii_gallery_exposes_architecture_validation_and_result_provena
     assert "research-iii-source-validation-gallery" in RESEARCH_III_REFRESH
     assert "6-stage visual path" in RESEARCH_III_REFRESH
     assert "9 / 9 visible" in RESEARCH_III_REFRESH
-    assert "20 / 20 visible" in RESEARCH_III_REFRESH
-    assert "V1-V45 result record" in RESEARCH_III_REFRESH
+    assert "21 / 21 visible" in RESEARCH_III_REFRESH
+    assert "V1-V50 result record" in RESEARCH_III_REFRESH
     assert "Result data" in RESEARCH_III_REFRESH
     assert "Electromagnetic Field Measurement Program" in RESEARCH_III_REFRESH
     assert "V16-V20 · electromagnetic measurement arm" in RESEARCH_III_REFRESH
@@ -165,7 +165,7 @@ def test_research_iii_gallery_exposes_architecture_validation_and_result_provena
     assert "V41-V45 · multiplicity and selection-safe inference" in RESEARCH_III_REFRESH
     assert "Electromagnetic Source Identifiability Program" in RESEARCH_III_REFRESH
     assert "V21-V25 · electromagnetic source identifiability" in RESEARCH_III_REFRESH
-    assert CURRENT_RESEARCH_THREE_PIN == "0072642d93d77fa594634a643e46e73769af0655"
+    assert CURRENT_RESEARCH_THREE_PIN == "edc1db943d6efe8bdc679dbc5d77ecb7633476ab"
 
     architecture_figures = (
         "research_program_map.svg",
@@ -225,7 +225,7 @@ def test_research_iii_gallery_exposes_architecture_validation_and_result_provena
 
 def test_atlas_orientation_points_to_architecture_and_validation_galleries() -> None:
     assert "Research III exposes 9 foundational architecture visuals" in ORIENTATION
-    assert "20 code-generated V1-V45 validation-result figures" in ORIENTATION
+    assert "21 code-generated V1-V50 validation-result figures" in ORIENTATION
     for anchor in (
         "#research-i-complete-figure-gallery",
         "#research-ii-complete-core-gallery",
