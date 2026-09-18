@@ -1,5 +1,5 @@
 (() => {
-  const RESEARCH_III_PIN = '771bca04b92cf775eb4f75fb3b576be6f43e0940';
+  const RESEARCH_III_PIN = 'b3f240f2c7c8fa4c94667d2fea4d8f9f07df360c';
   const MEASUREMENT_REPO = 'https://github.com/MahsaKeikha/consciousness-measurement-science';
   const RAW_PIN_PREFIX =
     `https://raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/${RESEARCH_III_PIN}/docs/figures/`;
@@ -9,6 +9,7 @@
     `${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/`;
 
   const LEGACY_PINS = [
+    '771bca04b92cf775eb4f75fb3b576be6f43e0940',
     'd93e768d9a7d6054ff208de2a1b9c14e79192bc5',
     '7a2a1a3a60263e48b7a268642eecc6941e84d1b4',
     '3cf9202977953644c980246c1f3e46a3514b3a4a',
@@ -214,6 +215,14 @@
       result: 'electromagnetic_inverse_validation_summary.json',
       phase: 'V21-V25 · electromagnetic source identifiability',
       summary: 'Reference invariance, exact lead-field source non-identifiability, inverse regularization sensitivity, multimodal null-space reduction, and forward-model perturbation are validated without treating one reconstructed source as uniquely true.',
+    },
+    {
+      title: 'Electromagnetic resolution and information limits',
+      file: 'v26_v30_electromagnetic_resolution_validation.svg',
+      context: 'docs/electromagnetic-resolution-program.md',
+      result: 'electromagnetic_resolution_validation_summary.json',
+      phase: 'V26-V30 · electromagnetic resolution and information',
+      summary: 'Covariance-aware residual geometry, a rank-limited resolution floor, Fisher-information loss, exact temporal aliasing, and weakest-singular-direction noise amplification are validated without treating any resolution statistic as consciousness.',
     },
   ];
 
@@ -432,10 +441,10 @@
     validation.className = 'r3-validation-record';
     validation.innerHTML = `
       <div class="r3-validation-head">
-        <div><span class="record-badge">Executable formal validation</span><h3>V1-V25 result record</h3><p>Sixteen code-generated result figures connect the mathematical program to deterministic simulations, exact design laws, failure tests, machine-readable outputs, and reproducible source code.</p></div>
-        <span class="record-badge">16 / 16 visible</span>
+        <div><span class="record-badge">Executable formal validation</span><h3>V1-V30 result record</h3><p>Seventeen code-generated result figures connect the mathematical program to deterministic simulations, exact design laws, failure tests, machine-readable outputs, and reproducible source code.</p></div>
+        <span class="record-badge">17 / 17 visible</span>
       </div>
-      <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">V1-V25 program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Machine-readable results</a></div>
+      <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">V1-V30 program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Machine-readable results</a></div>
       <div class="r3-validation-grid">${VALIDATION_FIGURES.map(validationCard).join('')}</div>`;
 
     if (boundary) {
@@ -459,10 +468,10 @@
     block.className = 'r3-validation-record';
     block.innerHTML = `
       <div class="r3-validation-head">
-        <div><span class="source-visual-badge">Research III executable evidence</span><h3>Formal validation V1-V25: derivations, result data, figures, code, and tests</h3><p>The architecture sources remain separate from the result record. Every validation figure below is pinned to the same verified Research III commit and links to its formal derivation, exact machine-readable result file, and figure source.</p></div>
-        <span class="source-visual-badge">16 result figures</span>
+        <div><span class="source-visual-badge">Research III executable evidence</span><h3>Formal validation V1-V30: derivations, result data, figures, code, and tests</h3><p>The architecture sources remain separate from the result record. Every validation figure below is pinned to the same verified Research III commit and links to its formal derivation, exact machine-readable result file, and figure source.</p></div>
+        <span class="source-visual-badge">17 result figures</span>
       </div>
-      <div class="source-section-visual-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">Validation program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Result index</a><a href="${MEASUREMENT_REPO}/tree/${RESEARCH_III_PIN}/tests">121-test suite</a></div>
+      <div class="source-section-visual-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">Validation program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Result index</a><a href="${MEASUREMENT_REPO}/tree/${RESEARCH_III_PIN}/tests">133-test suite</a></div>
       <div class="r3-validation-grid">${VALIDATION_FIGURES.map(validationCard).join('')}</div>`;
 
     const existing = document.getElementById('research-iii-source-complete-figure-gallery');
@@ -482,20 +491,20 @@
     const status = document.querySelector('.status-grid');
     if (status) {
       const cells = status.querySelectorAll(':scope > div');
-      if (cells[0]) cells[0].innerHTML = '<strong>V1-V25</strong><span>formal validation stages</span>';
-      if (cells[1]) cells[1].innerHTML = '<strong>25</strong><span>scientific visuals: 9 architecture + 16 validation</span>';
-      if (cells[2]) cells[2].innerHTML = '<strong>121</strong><span>tests in each CI job</span>';
+      if (cells[0]) cells[0].innerHTML = '<strong>V1-V30</strong><span>formal validation stages</span>';
+      if (cells[1]) cells[1].innerHTML = '<strong>26</strong><span>scientific visuals: 9 architecture + 17 validation</span>';
+      if (cells[2]) cells[2].innerHTML = '<strong>133</strong><span>tests in each CI job</span>';
       if (cells[3]) cells[3].innerHTML = '<strong>3</strong><span>Python versions in the CI matrix</span>';
     }
 
     const primary = document.querySelector('.hero-actions .button.primary');
     if (primary) {
-      primary.textContent = 'Open V1-V25 validation program';
+      primary.textContent = 'Open V1-V30 validation program';
       primary.href = `${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md`;
     }
 
     const follow = document.querySelector('.source-grid a:first-child p');
-    if (follow) follow.textContent = 'The compact V1-V25 map: scientific question, mathematical object, executable evidence, result record, and failure condition.';
+    if (follow) follow.textContent = 'The compact V1-V30 map: scientific question, mathematical object, executable evidence, result record, and failure condition.';
 
     document.getElementById('formal-validation-v11-v15')?.remove();
     const baseStages = document.getElementById('formal-validation-v1-v10');
@@ -582,6 +591,7 @@
     }
 
     document.getElementById('v21-v25-em-source-identifiability')?.remove();
+    document.getElementById('v26-v30-em-resolution-information')?.remove();
     const emSection = document.getElementById('v16-v20-em-field-program');
     if (emSection) {
       const inverse = document.createElement('section');
@@ -613,6 +623,36 @@
         </div>
         <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/src/consciousness_measurement/electromagnetic_inverse.py">Forward/inverse code</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/src/consciousness_measurement/electromagnetic_inverse_simulations.py">Validation simulations</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/scripts/run_electromagnetic_inverse_validation.py">Reproduce V21-V25</a></div>`;
       emSection.insertAdjacentElement('afterend', inverse);
+
+      const resolution = document.createElement('section');
+      resolution.id = 'v26-v30-em-resolution-information';
+      resolution.className = 'r3-stage-extension';
+      resolution.innerHTML = `
+        <div class="section-head">
+          <p class="eyebrow">V26-V30 · Electromagnetic resolution and information limits</p>
+          <h2>Quantify what the acquisition and inverse system can resolve before interpreting source-space structure</h2>
+          <p>This layer makes correlated sensor noise, finite inverse resolution, information bounds, sampling ambiguity, and ill-conditioned noise amplification explicit. It asks what can be recovered from the declared measurement system before any consciousness-specific interpretation is attempted.</p>
+        </div>
+        <div class="boundary">
+          <p><strong>Scientific claim boundary:</strong> V26-V30 are analytic and deterministic synthetic measurement results. They do not show that EEG, MEG, OPM-MEG, a reconstructed source, a resolution matrix, Fisher information, or any electromagnetic descriptor directly measures consciousness or qualia.</p>
+        </div>
+        <div class="measurement-figure-grid">
+          <article class="figure-card">
+            <a href="${BLOB_PIN_PREFIX}v26_v30_electromagnetic_resolution_validation.svg"><img loading="lazy" decoding="async" src="${RAW_PIN_PREFIX}v26_v30_electromagnetic_resolution_validation.svg" alt="Research III electromagnetic resolution and information validation V26 to V30" /></a>
+            <p class="eyebrow">V26-V30 · resolution and information</p>
+            <h3>Noise geometry, rank limits, information loss, aliasing, and inverse amplification</h3>
+            <p>V27 proves a rank-only normalized identity-error floor of 1/sqrt(2) for the canonical three-sensor, six-source system. V28 shows Fisher information falling as shared sensor noise rises. V29 gives an exact 17 Hz versus 83 Hz alias at 100 Hz sampling. V30 reaches the pseudoinverse noise-amplification bound in the weakest singular direction.</p>
+            <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/electromagnetic-resolution-program.md">Electromagnetic Resolution and Information Program</a><a href="${RESULT_PIN_PREFIX}electromagnetic_resolution_validation_summary.json">Result record</a><a href="${BLOB_PIN_PREFIX}v26_v30_electromagnetic_resolution_validation.svg">Figure source</a></div>
+          </article>
+        </div>
+        <div class="r3-design-law-grid">
+          <article><strong>V26: noise geometry is part of the model</strong><p>Covariance whitening preserves Mahalanobis residual energy to floating-point precision.</p></article>
+          <article><strong>V27: rank imposes a resolution floor</strong><p>For source dimension 6 and operator rank at most 3, normalized identity error cannot fall below 1/sqrt(2), about 0.707106781.</p></article>
+          <article><strong>V28-V29: information can be lost before inversion</strong><p>Common sensor noise lowers Fisher information, while insufficient sampling can make distinct continuous frequencies observationally identical.</p></article>
+          <article><strong>V30: weak singular directions amplify noise</strong><p>At smallest singular value 0.01, the canonical construction attains 100-fold source-space amplification.</p></article>
+        </div>
+        <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/src/consciousness_measurement/electromagnetic_resolution.py">Resolution code</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/src/consciousness_measurement/electromagnetic_resolution_simulations.py">Validation simulations</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/scripts/run_electromagnetic_resolution_validation.py">Reproduce V26-V30</a></div>`;
+      inverse.insertAdjacentElement('afterend', resolution);
     }
 
     repinResearchIIIAssets();
@@ -627,8 +667,8 @@
     if (!programCard) return false;
     const metric = programCard.querySelector('.research-program-metric');
     const meta = programCard.querySelector('.research-program-meta');
-    if (metric) metric.innerHTML = '<strong>121</strong><span>tests in each CI job</span>';
-    if (meta) meta.textContent = 'V1-V25 formal validation · 25 scientific visuals · 5 reproducible validation runners';
+    if (metric) metric.innerHTML = '<strong>133</strong><span>tests in each CI job</span>';
+    if (meta) meta.textContent = 'V1-V30 formal validation · 26 scientific visuals · 6 reproducible validation runners';
     return true;
   }
 
