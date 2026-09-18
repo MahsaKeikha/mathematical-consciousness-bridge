@@ -591,6 +591,7 @@
     }
 
     document.getElementById('v21-v25-em-source-identifiability')?.remove();
+    document.getElementById('v26-v30-em-resolution-information')?.remove();
     const emSection = document.getElementById('v16-v20-em-field-program');
     if (emSection) {
       const inverse = document.createElement('section');
