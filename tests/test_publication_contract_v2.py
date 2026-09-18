@@ -159,11 +159,13 @@ def test_plain_language_and_start_here_are_three_stage_reader_entries() -> None:
     for source in (plain, start):
         for token in ("Research I", "Research II", "Research III"):
             assert token in source
-        assert f"{frontier} results · current frontier P{frontier}" in source
         assert "physical-to-experiential bridge" in source
 
-    assert 'id="three-stage-progress"' in plain
-    assert "What the whole research program is doing" in plain
+    assert f"{frontier} linked results · technical endpoint P{frontier}" in plain
+    assert 'id="project-journey"' in plain
+    assert "If you remember only three things" in plain
+    assert re.search(r'id="p\\d+-reader-frontier"', plain) is None
+    assert f"{frontier} results · current frontier P{frontier}" in start
     assert 'id="program-stages"' in start
     assert f"The {frontier} Research II propositions by scientific role" in start
     assert "Inside Research II" in start
