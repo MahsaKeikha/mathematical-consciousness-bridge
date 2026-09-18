@@ -473,15 +473,15 @@
     const status = document.querySelector('.status-grid');
     if (status) {
       const cells = status.querySelectorAll(':scope > div');
-      if (cells[0]) cells[0].innerHTML = '<strong>V1-V15</strong><span>formal validation stages</span>';
-      if (cells[1]) cells[1].innerHTML = '<strong>23</strong><span>scientific visuals: 9 architecture + 14 validation</span>';
+      if (cells[0]) cells[0].innerHTML = '<strong>V1-V20</strong><span>formal validation stages</span>';
+      if (cells[1]) cells[1].innerHTML = '<strong>24</strong><span>scientific visuals: 9 architecture + 15 validation</span>';
       if (cells[2]) cells[2].innerHTML = '<strong>109</strong><span>tests in each CI job</span>';
       if (cells[3]) cells[3].innerHTML = '<strong>3</strong><span>Python versions in the CI matrix</span>';
     }
 
     const primary = document.querySelector('.hero-actions .button.primary');
     if (primary) {
-      primary.textContent = 'Open V1-V15 validation program';
+      primary.textContent = 'Open V1-V20 validation program';
       primary.href = `${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md`;
     }
 
