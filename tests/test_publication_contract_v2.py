@@ -180,6 +180,12 @@ def test_research_lineage_preserves_counts_and_scientific_boundaries() -> None:
         f"{frontier}</strong><span>proposition-level results",
         f"P{frontier}</strong><span>current theorem frontier",
         "Research III · consciousness measurement science",
+        "V1-V45</strong><span>formal validation stages",
+        "171</strong><span>tests in each CI job",
+        "20</strong><span>code-generated validation figures",
+        "9</strong><span>reproducible validation runners",
+        "V36-V40 · finite-sample electromagnetic inference",
+        "V41-V45 · multiplicity and selection-safe inference",
         "A recovered subsystem is not automatically a conscious subject",
         "Bridge remains an independently testable open problem",
     ):

@@ -48,8 +48,24 @@ def test_synchronizer_normalizes_all_public_research_three_surfaces(tmp_path: Pa
     site = tmp_path / "website"
     shutil.copytree(ROOT / "website", site)
 
+    # The committed public site is already canonical, so synchronization must
+    # be idempotent rather than manufacturing a change on every build.
+    assert synchronize_site(site, write=False) == []
+
+    # Recreate a genuinely stale public state and verify that every declared
+    # Research III surface is repaired back to the immutable current snapshot.
+    legacy_pin = LEGACY_RESEARCH_THREE_PINS[0]
+    for relative in KEY_PUBLIC_SURFACES:
+        path = site / relative
+        text = path.read_text(encoding="utf-8")
+        assert CURRENT_RESEARCH_III_PIN in text
+        path.write_text(
+            text.replace(CURRENT_RESEARCH_III_PIN, legacy_pin),
+            encoding="utf-8",
+        )
+
     changed = synchronize_site(site, write=True)
-    assert changed
+    assert set(KEY_PUBLIC_SURFACES).issubset(set(changed))
     assert synchronize_site(site, write=False) == []
 
     for relative in KEY_PUBLIC_SURFACES:
