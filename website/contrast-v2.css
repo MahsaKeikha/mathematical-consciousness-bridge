@@ -117,6 +117,28 @@ footer a:hover {
   color: #bfd0ff !important;
 }
 
+/* Research III hero uses a dark editorial background. Keep every secondary
+   text token explicitly light so the generic muted-text layer cannot win. */
+body.research-iii-page main > .hero .lede,
+body.research-iii-page main > .hero p:not(.eyebrow),
+body.research-iii-page main > .hero .status-grid span,
+body.research-iii-page main > .hero .status-grid small {
+  color: #e2e8f0 !important;
+}
+
+body.research-iii-page main > .hero .eyebrow {
+  color: #c9d5ff !important;
+}
+
+body.research-iii-page main > .hero .status-grid strong {
+  color: #ffffff !important;
+}
+
+body.research-iii-page main > .hero .status-grid,
+body.research-iii-page main > .hero .status-grid > div {
+  border-color: rgba(226, 232, 240, 0.36) !important;
+}
+
 /* Falsification cards need stronger separation than generic dark cards. */
 .dark-section .falsify-grid > div {
   background: #18243a !important;
