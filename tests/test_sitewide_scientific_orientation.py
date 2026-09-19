@@ -77,6 +77,7 @@ def test_research_three_orientation_keeps_intro_with_heading() -> None:
     script = _read("website/research-orientation.js")
     css = _read("website/research-orientation.css")
     app = _read("website/app.js")
+    orientation = _read("website/research-orientation.js")
 
     assert "heading: 'Scientific scope and validation status'" in script
     assert "The formal results below concern identifiability, uncertainty, robustness, and measurement design." in script
@@ -84,8 +85,9 @@ def test_research_three_orientation_keeps_intro_with_heading() -> None:
     assert "</p>\n        </div>\n      </div>" in script
     assert "grid-template-columns: minmax(0, 1fr);" not in css
     assert ".scientific-orientation-head > div" in css
-    assert "research-orientation.css?v=20260918-1" in app
-    assert "research-orientation.js?v=20260918-1" in app
+    assert "research-orientation.css?v=20260919-r3-runtime-layout" in app
+    assert "research-orientation.js?v=20260919-r3-runtime-layout" in app
+    assert "research-iii-atlas-refresh.js?v=20260919-r3-runtime-layout" in orientation
 
 def test_new_reader_surface_respects_dash_policy() -> None:
     for path in ("website/research-orientation.js", "website/research-orientation.css"):
