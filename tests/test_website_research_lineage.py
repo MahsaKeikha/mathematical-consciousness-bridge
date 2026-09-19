@@ -40,11 +40,11 @@ def test_lineage_exposes_current_research_three_v50_progression() -> None:
     page = Path("website/research-lineage.html").read_text(encoding="utf-8")
 
     for token in (
-        "V1-V50</strong><span>formal validation stages",
-        "21</strong><span>code-generated validation figures",
-        "182</strong><span>tests in each CI job",
-        "10</strong><span>reproducible validation runners",
-        "Eight linked validation layers",
+        "V1-V55</strong><span>formal validation stages",
+        "22</strong><span>code-generated validation figures",
+        "192</strong><span>tests in each CI job",
+        "11</strong><span>reproducible validation runners",
+        "Nine linked validation layers",
         "V1-V15 · identification and validation",
         "V16-V20 · electromagnetic observables",
         "V21-V25 · source identifiability",
@@ -59,6 +59,9 @@ def test_lineage_exposes_current_research_three_v50_progression() -> None:
         "V46-V50 · cross-site replication inference and stability",
         "v46_v50_electromagnetic_replication_validation.svg",
         "electromagnetic-replication-inference.md",
+        "V51-V55 · transportability across sensor systems, hardware, and states",
+        "v51_v55_transportability_validation.svg",
+        "transportability-program.md",
         "statistically valid source inference is still not direct evidence that a source is consciousness or qualia",
     ):
         assert token in page
