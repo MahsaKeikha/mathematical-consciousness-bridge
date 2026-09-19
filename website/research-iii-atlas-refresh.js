@@ -338,6 +338,18 @@
       .r3-validation-links{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:auto;padding-top:.85rem}
       .r3-validation-links a{display:inline-flex;align-items:center;padding:.5rem .7rem;border:1px solid rgba(120,140,170,.3);border-radius:999px;text-decoration:none;font-size:.78rem;font-weight:800}
       .r3-stage-extension{margin-top:2rem}.r3-stage-extension .section-head{margin-bottom:1rem}
+      body.research-iii-page .r3-stage-extension{display:flex!important;max-width:none!important;margin:0!important;padding:70px max(24px,calc((100vw - 1160px)/2)) 72px!important;flex-direction:column!important;gap:0!important;border-top:1px solid var(--line)!important}
+      body.research-iii-page .r3-stage-extension>.section-head{order:1!important;width:100%!important;max-width:1000px!important;margin:0 0 30px!important}
+      body.research-iii-page .r3-stage-extension>.measurement-figure-grid{order:2!important;display:block!important;grid-template-columns:none!important;width:100%!important;max-width:none!important;margin:0!important}
+      body.research-iii-page .r3-stage-extension .measurement-figure-grid>.figure-card{display:block!important;grid-template-columns:none!important;width:100%!important;max-width:none!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important}
+      body.research-iii-page .r3-stage-extension .measurement-figure-grid>.figure-card>a:first-child{display:block!important;width:100%!important;max-width:none!important;padding:12px!important;border:1px solid #d5dbe6!important;border-radius:16px!important;background:#fff!important;box-shadow:0 18px 45px rgba(24,35,63,.08)!important}
+      body.research-iii-page .r3-stage-extension .measurement-figure-grid>.figure-card>a:first-child>img{display:block!important;width:100%!important;max-width:none!important;height:auto!important;max-height:none!important;margin:0!important;object-fit:initial!important}
+      body.research-iii-page .r3-stage-extension>.r3-design-law-grid{order:3!important;width:100%!important;margin:30px 0 0!important}
+      body.research-iii-page .r3-stage-extension>.boundary{order:4!important;width:100%!important;max-width:980px!important;margin:24px 0 0!important;padding:14px 18px!important;border:0!important;border-left:3px solid #6477b9!important;border-radius:0!important;background:rgba(99,119,185,.075)!important}
+      body.research-iii-page .r3-stage-extension>.figure-source-links{order:5!important;width:100%!important;margin-top:16px!important}
+      body.research-iii-page .r3-stage-extension .figure-card>.eyebrow{margin:22px 0 5px!important}
+      body.research-iii-page .r3-stage-extension .figure-card>h3{max-width:880px!important;margin:0 0 8px!important}
+      body.research-iii-page .r3-stage-extension .figure-card>p:not(.eyebrow){max-width:900px!important;margin:0 0 14px!important}
       .r3-design-law-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:1rem}
       .r3-design-law-grid article{padding:18px;border:1px solid rgba(120,140,170,.25);border-radius:14px;background:rgba(255,255,255,.03)}
       .r3-design-law-grid strong{display:block;margin-bottom:7px;font-size:1.06rem}.r3-design-law-grid p{margin:0;line-height:1.55;font-size:.91rem}
