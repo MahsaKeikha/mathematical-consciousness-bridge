@@ -350,6 +350,11 @@
       body.research-iii-page .r3-stage-extension .figure-card>.eyebrow{margin:22px 0 5px!important}
       body.research-iii-page .r3-stage-extension .figure-card>h3{max-width:880px!important;margin:0 0 8px!important}
       body.research-iii-page .r3-stage-extension .figure-card>p:not(.eyebrow){max-width:900px!important;margin:0 0 14px!important}
+      body.research-iii-page #v16-v20-em-field-program .measurement-figure-grid>.figure-card{width:min(100%,900px)!important;max-width:900px!important;margin-left:auto!important;margin-right:auto!important}
+      body.research-iii-page :is(#v21-v25-em-source-identifiability,#v26-v30-em-resolution-information) .measurement-figure-grid>.figure-card{width:min(100%,1040px)!important;max-width:1040px!important;margin-left:auto!important;margin-right:auto!important}
+      body.research-iii-page :is(#v16-v20-em-field-program,#v21-v25-em-source-identifiability,#v26-v30-em-resolution-information) .measurement-figure-grid>.figure-card>a:first-child{padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
+      body.research-iii-page #v16-v20-em-field-program .measurement-figure-grid>.figure-card>a:first-child>img{width:100%!important;max-width:900px!important;height:auto!important;max-height:none!important;object-fit:contain!important}
+      body.research-iii-page :is(#v21-v25-em-source-identifiability,#v26-v30-em-resolution-information) .measurement-figure-grid>.figure-card>a:first-child>img{width:100%!important;max-width:1040px!important;height:auto!important;max-height:none!important;object-fit:contain!important}
       .r3-design-law-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:1rem}
       .r3-design-law-grid article{padding:18px;border:1px solid rgba(120,140,170,.25);border-radius:14px;background:rgba(255,255,255,.03)}
       .r3-design-law-grid strong{display:block;margin-bottom:7px;font-size:1.06rem}.r3-design-law-grid p{margin:0;line-height:1.55;font-size:.91rem}
