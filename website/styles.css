@@ -1736,9 +1736,11 @@ img {
   section[id^="v46-"],
   section[id^="v51-"]
 ) {
+  display: flex;
   max-width: none;
   margin: 0;
   padding: 70px max(24px, calc((100vw - 1160px) / 2)) 72px;
+  flex-direction: column;
   border-top: 1px solid var(--line);
   scroll-margin-top: 72px;
 }
@@ -1771,6 +1773,7 @@ img {
   section[id^="v46-"],
   section[id^="v51-"]
 ) > .section-head {
+  order: 1;
   max-width: 1000px;
   margin: 0 0 30px;
 }
@@ -1832,6 +1835,7 @@ img {
   section[id^="v46-"],
   section[id^="v51-"]
 ) > .measurement-figure-grid {
+  order: 2;
   display: block !important;
   width: 100%;
   margin: 0 !important;
@@ -1954,6 +1958,7 @@ img {
   section[id^="v46-"],
   section[id^="v51-"]
 ) > .r3-design-law-grid {
+  order: 3;
   display: grid !important;
   grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
   gap: 0 !important;
@@ -2035,6 +2040,7 @@ img {
   section[id^="v46-"],
   section[id^="v51-"]
 ) > .boundary {
+  order: 4;
   max-width: 980px;
   margin: 24px 0 0 !important;
   padding: 14px 18px !important;
@@ -2069,6 +2075,7 @@ img {
   section[id^="v46-"],
   section[id^="v51-"]
 ) > .figure-source-links {
+  order: 5;
   margin-top: 16px;
 }
 
