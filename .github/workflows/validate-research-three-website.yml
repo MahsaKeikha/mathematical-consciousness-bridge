@@ -169,7 +169,7 @@ jobs:
           grep -q 'research-iii-source-validation-gallery' _site/research-iii-atlas-refresh.js
           grep -q 'V1-V55' _site/sources.html
           grep -q '22 result figures' _site/sources.html
-          grep -q '192 tests' _site/sources.html
+          grep -q '194 tests' _site/sources.html
           grep -q 'V26-V30 electromagnetic resolution and information program' _site/sources.html
           grep -q 'V31-V35 electromagnetic design and spatial specificity program' _site/sources.html
           grep -q 'V36-V40 finite-sample electromagnetic inference program' _site/sources.html
