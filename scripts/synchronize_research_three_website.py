@@ -33,7 +33,7 @@ LEGACY_RESEARCH_THREE_PINS = (
     "a9ef67ed15595c26b0c9f4e449f53f8078d6a1ee",
     "64b2bc47461fe110b135080f8dc70883552d6fd9",
 )
-CURRENT_RESEARCH_THREE_TEST_COUNT = 196
+CURRENT_RESEARCH_THREE_TEST_COUNT = 198
 ROOT = Path(__file__).resolve().parents[1]
 MEASUREMENT_REPO_PATH = "MahsaKeikha/consciousness-measurement-science"
 PUBLIC_SUFFIXES = {".html", ".js"}
@@ -98,18 +98,25 @@ def _replace_research_three_pins(text: str) -> str:
 def _replace_research_three_metrics(text: str) -> str:
     if "Research III" not in text and "consciousness-measurement-science" not in text:
         return text
-    for old_count in (23, 34, 35, 81, 98, 109, 121, 133, 144, 159, 171, 182, 192):
+    for old_count in (23, 34, 35, 81, 98, 109, 121, 133, 144, 159, 171, 182, 192, 196):
         text = text.replace(
             f"<strong>{old_count}</strong><span>tests in each CI job</span>",
             f"<strong>{CURRENT_RESEARCH_THREE_TEST_COUNT}</strong><span>tests in each CI job</span>",
         )
-        text = text.replace(
-            f"{old_count} tests in each CI job",
+        text = re.sub(
+            rf"(?<!\\d){old_count} tests in each CI job\\b",
             f"{CURRENT_RESEARCH_THREE_TEST_COUNT} tests in each CI job",
+            text,
         )
-        text = text.replace(
-            f"{old_count}-test suite",
+        text = re.sub(
+            rf"(?<!\\d){old_count}-test suite\\b",
             f"{CURRENT_RESEARCH_THREE_TEST_COUNT}-test suite",
+            text,
+        )
+        text = re.sub(
+            rf"(?<!\\d){old_count} tests\\b",
+            f"{CURRENT_RESEARCH_THREE_TEST_COUNT} tests",
+            text,
         )
 
     for old_visuals, old_validation in ((19, 10), (23, 14), (24, 15), (25, 16), (26, 17), (27, 18), (28, 19), (29, 20), (30, 21)):
@@ -216,12 +223,17 @@ def _upgrade_measurement_page_copy(text: str) -> str:
     text = text.replace("14 validation", "22 validation")
     text = text.replace("15 validation", "22 validation")
     text = text.replace("18 validation", "22 validation")
-    text = text.replace("98-test suite", "196-test suite")
-    text = text.replace("109-test suite", "196-test suite")
-    text = text.replace("144-test suite", "196-test suite")
-    text = text.replace("98 tests in each CI job", "196 tests in each CI job")
-    text = text.replace("109 tests in each CI job", "196 tests in each CI job")
-    text = text.replace("144 tests in each CI job", "196 tests in each CI job")
+    for old_count in (98, 109, 144):
+        text = re.sub(
+            rf"(?<!\\d){old_count}-test suite\\b",
+            "198-test suite",
+            text,
+        )
+        text = re.sub(
+            rf"(?<!\\d){old_count} tests in each CI job\\b",
+            "198 tests in each CI job",
+            text,
+        )
     text = text.replace("4 reproducible validation runners", "11 reproducible validation runners")
     text = text.replace("7 reproducible validation runners", "11 reproducible validation runners")
 
@@ -345,7 +357,7 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     for marker in (
         CURRENT_RESEARCH_THREE_PIN,
         "V1-V55 formal validation",
-        "196</strong><span>tests in each CI job",
+        "198</strong><span>tests in each CI job",
         "31 scientific visuals",
         "loadResearchIIIAtlasRefresh();",
     ):
@@ -356,7 +368,7 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     for marker in (
         "V1-V55",
         "22</strong><span>code-generated validation figures",
-        "196</strong><span>tests in each CI job",
+        "198</strong><span>tests in each CI job",
         "v26_v30_electromagnetic_resolution_validation.svg",
         "v31_v35_electromagnetic_design_validation.svg",
         "v36_v40_electromagnetic_finite_sample_validation.svg",
@@ -371,7 +383,7 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     for marker in (
         "V1-V55",
         "22 result figures",
-        "196</strong><span>tests in each CI job",
+        "198</strong><span>tests in each CI job",
         "V26-V30 electromagnetic resolution and information program",
         "docs/electromagnetic-resolution-program.md",
         "V31-V35 electromagnetic design and spatial specificity program",
@@ -392,7 +404,7 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     for marker in (
         "V1-V55",
         "22</strong><span>code-generated validation figures",
-        "196</strong><span>tests in each CI job",
+        "198</strong><span>tests in each CI job",
         "11</strong><span>reproducible validation runners",
         "v41_v45_electromagnetic_selection_validation.svg",
         "V41-V45 selection-safe inference",
