@@ -153,3 +153,13 @@ def test_overview_orients_first_time_reader_before_theorem_frontier() -> None:
     assert "<span>Research III</span>" in overview
     assert "Research I identifies a physical subsystem candidate" in overview
     assert "None of these stages by itself establishes the final physical-to-experiential bridge." in overview
+
+
+def test_shared_reader_css_does_not_override_research_three_stage_geometry() -> None:
+    css = _text("website/reader-experience-v2.css")
+
+    assert "Research III owns its result-stage composition" in css
+    assert "body.research-iii-page .measurement-figure-grid" in css
+    assert "grid-template-columns: none !important" in css
+    assert "body.research-iii-page .measurement-figure-grid .figure-card img" in css
+    assert "max-height: none !important" in css

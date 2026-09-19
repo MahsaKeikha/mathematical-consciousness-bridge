@@ -159,3 +159,17 @@ def test_research_three_page_uses_editorial_full_width_result_stages() -> None:
     assert "order: 4;" in styles
     assert "grid-template-columns: repeat(4, minmax(0, 1fr)) !important" in styles
     assert "linear-gradient(135deg, #111827 0%, #17233a 48%, #1d2e5c 100%)" in styles
+
+
+def test_research_three_runtime_renderer_cannot_restore_narrow_figure_cards() -> None:
+    refresh = _read("website/research-iii-atlas-refresh.js")
+
+    assert "body.research-iii-page .r3-stage-extension>.measurement-figure-grid" in refresh
+    assert "display:block!important" in refresh
+    assert "grid-template-columns:none!important" in refresh
+    assert "body.research-iii-page .r3-stage-extension .measurement-figure-grid>.figure-card" in refresh
+    assert "max-width:none!important" in refresh
+    assert "max-height:none!important" in refresh
+    assert "object-fit:initial!important" in refresh
+    assert "order:2!important" in refresh
+    assert "order:4!important" in refresh
