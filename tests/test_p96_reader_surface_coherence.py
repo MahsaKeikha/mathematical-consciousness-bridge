@@ -35,7 +35,7 @@ def test_p96_is_historical_in_atlas_and_chronological_on_research_map() -> None:
     assert atlas.index('id="p98-frontier"') < atlas.index('id="p97-frontier"')
     assert atlas.index('id="p97-frontier"') < atlas.index('id="p96-frontier"')
     assert atlas.index('id="p96-frontier"') < atlas.index('id="p95-frontier"')
-    assert 'id="p96-reader-frontier"' in plain
+    assert 'id="p96-reader-frontier"' not in plain
     assert 'id="p96-reader-frontier"' in start
     assert 'id="p96-research-map"' in research
     assert research.index('id="p96-research-map"') < research.index('id="p97-research-map"')
@@ -64,7 +64,6 @@ def test_p96_scientific_boundary_is_visible_on_historical_surfaces() -> None:
         "docs/proposition_96_selection_valid_holdout_stratification.md",
         "docs/p96_equation_provenance.md",
         "website/visual-atlas.html",
-        "website/plain-language.html",
         "website/start-here.html",
         "website/research-map.html",
     ):

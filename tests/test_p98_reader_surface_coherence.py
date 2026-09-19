@@ -34,11 +34,11 @@ def test_p98_is_historical_in_atlas_and_chronological_on_research_map() -> None:
     assert 'CURRENT_FRONTIER = "P100"' in verifier
     assert atlas.index('id="p99-frontier"') < atlas.index('id="p98-frontier"')
     assert "Historical theorem frontier · P98" in atlas
-    assert 'id="p98-reader-frontier"' in plain
+    assert 'id="p98-reader-frontier"' not in plain
     assert 'id="p98-reader-frontier"' in start
     assert 'id="p98-research-map"' in research
     assert research.index('id="p98-research-map"') < research.index('id="p99-research-map"')
-    assert "100 results · current frontier P100" in plain
+    assert "100 linked results · technical endpoint P100" in plain
     assert "100 results · current frontier P100" in start
 
 
@@ -67,7 +67,6 @@ def test_p98_scientific_boundary_is_visible() -> None:
         "docs/proposition_98_cross_fitted_selection_valid_certification.md",
         "docs/p98_equation_provenance.md",
         "website/index.html",
-        "website/plain-language.html",
         "website/start-here.html",
         "website/research-map.html",
     ):

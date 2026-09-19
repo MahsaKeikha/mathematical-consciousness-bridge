@@ -55,6 +55,7 @@ jobs:
         run: |
           python - <<'PY'
           import json
+          import re
           from pathlib import Path
 
           manifest = json.loads(Path("figures/manifest.json").read_text(encoding="utf-8"))
@@ -107,6 +108,7 @@ jobs:
         run: |
           python - <<'PY'
           import json
+          import re
           from pathlib import Path
 
           manifest = json.loads(Path("figures/manifest.json").read_text(encoding="utf-8"))
@@ -126,8 +128,10 @@ jobs:
           assert f"Read P{frontier} theorem" in start
 
           plain = Path("_site/plain-language.html").read_text(encoding="utf-8")
-          assert f"This is the {frontier}-result Research II theorem program currently reaching P{frontier}." in plain
-          assert f"The current theorem frontier is P{frontier}." in plain
+          assert f"{frontier} linked results · technical endpoint P{frontier}" in plain
+          assert "A note about proposition numbers" in plain
+          assert "If you remember only three things" in plain
+          assert re.search(r'id="p\\d+-reader-frontier"', plain) is None
 
           research = Path("_site/research-map.html").read_text(encoding="utf-8")
           assert f"Current Research II model-audit range: P75-P{frontier}." in research

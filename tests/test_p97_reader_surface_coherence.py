@@ -34,12 +34,12 @@ def test_p97_is_historical_in_atlas_and_chronological_on_research_map() -> None:
     assert atlas.index('id="p99-frontier"') < atlas.index('id="p98-frontier"')
     assert atlas.index('id="p98-frontier"') < atlas.index('id="p97-frontier"')
     assert "Historical theorem frontier · P98" in atlas
-    assert 'id="p97-reader-frontier"' in plain
+    assert 'id="p97-reader-frontier"' not in plain
     assert 'id="p97-reader-frontier"' in start
     assert 'id="p97-research-map"' in research
     assert research.index('id="p97-research-map"') < research.index('id="p98-research-map"')
     assert research.index('id="p98-research-map"') < research.index('id="p99-research-map"')
-    assert "100 results · current frontier P100" in plain
+    assert "100 linked results · technical endpoint P100" in plain
     assert "100 results · current frontier P100" in start
 
 
@@ -67,7 +67,6 @@ def test_p97_scientific_boundary_is_visible_on_historical_surfaces() -> None:
         "docs/proposition_97_simultaneous_candidate_family_selection.md",
         "docs/p97_equation_provenance.md",
         "website/visual-atlas.html",
-        "website/plain-language.html",
         "website/start-here.html",
         "website/research-map.html",
     ):

@@ -47,7 +47,6 @@ def test_p92_historical_reader_surfaces_preserve_scientific_boundary() -> None:
     for path in (
         "docs/proposition_92_exact_global_mixed_prevalence_distance.md",
         "website/visual-atlas.html",
-        "website/plain-language.html",
         "website/start-here.html",
         "website/research-map.html",
     ):
@@ -56,12 +55,13 @@ def test_p92_historical_reader_surfaces_preserve_scientific_boundary() -> None:
         assert "physical-to-experiential bridge" in text
 
 
-def test_p92_start_here_and_plain_language_are_current() -> None:
+def test_p92_start_here_preserves_history_while_plain_language_stays_conceptual() -> None:
     start = _read("website/start-here.html")
     plain = _read("website/plain-language.html")
     assert "P92" in start and "92" in start
-    assert "P92" in plain and "92" in plain
-    assert 'id="p92-reader-frontier"' in plain
+    assert 'id="p92-start-frontier"' in start
+    assert 'id="p92-reader-frontier"' not in plain
+    assert "100 linked results · technical endpoint P100" in plain
 
 
 def test_p92_workflows_are_read_only_publication_gates() -> None:

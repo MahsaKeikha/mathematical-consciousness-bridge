@@ -23,17 +23,16 @@ def test_native_range_navigation_cards_remain_explicit_links() -> None:
     assert "if (nativeLink || isAlreadyInteractive)" in script
 
 
-def test_plain_language_frontier_is_static_p100_with_runtime_fallback() -> None:
+def test_plain_language_status_is_static_p100_with_runtime_fallback() -> None:
     page = (WEBSITE / "plain-language.html").read_text(encoding="utf-8")
     script = (WEBSITE / "footer.js").read_text(encoding="utf-8")
 
-    assert "100-result" in page
-    assert "current theorem frontier is P100" in page
-    assert "99-result" not in page
+    assert "100 linked results · technical endpoint P100" in page
+    assert "99 linked results · technical endpoint P99" not in page
+    assert "current theorem frontier is P100" not in page
     assert "current theorem frontier is P99" not in page
     assert "function syncPlainLanguageFrontier()" in script
+    assert "['99 linked results · technical endpoint P99', '100 linked results · technical endpoint P100']" in script
     assert "['99-result', '100-result']" in script
     assert "['all 99 Research II results', 'all 100 Research II results']" in script
-    assert "['currently through P99', 'currently through P100']" in script
-    assert "['current theorem frontier is P99', 'current theorem frontier is P100']" in script
     assert "syncPlainLanguageFrontier();" in script
