@@ -11,8 +11,9 @@ import argparse
 import re
 from pathlib import Path
 
-CURRENT_RESEARCH_THREE_PIN = "89581ff150d768998967500d079d7ba61deafe86"
+CURRENT_RESEARCH_THREE_PIN = "466b327dcd31dadee630d3b7d36fa55817766496"
 LEGACY_RESEARCH_THREE_PINS = (
+    "89581ff150d768998967500d079d7ba61deafe86",
     "edc1db943d6efe8bdc679dbc5d77ecb7633476ab",
     "0072642d93d77fa594634a643e46e73769af0655",
     "880014743cad3ac39578161d95686f8d0b03f0a1",
@@ -31,7 +32,7 @@ LEGACY_RESEARCH_THREE_PINS = (
     "a9ef67ed15595c26b0c9f4e449f53f8078d6a1ee",
     "64b2bc47461fe110b135080f8dc70883552d6fd9",
 )
-CURRENT_RESEARCH_THREE_TEST_COUNT = 192
+CURRENT_RESEARCH_THREE_TEST_COUNT = 196
 ROOT = Path(__file__).resolve().parents[1]
 MEASUREMENT_REPO_PATH = "MahsaKeikha/consciousness-measurement-science"
 PUBLIC_SUFFIXES = {".html", ".js"}
@@ -96,7 +97,7 @@ def _replace_research_three_pins(text: str) -> str:
 def _replace_research_three_metrics(text: str) -> str:
     if "Research III" not in text and "consciousness-measurement-science" not in text:
         return text
-    for old_count in (23, 34, 35, 81, 98, 109, 121, 133, 144, 159, 171, 182):
+    for old_count in (23, 34, 35, 81, 98, 109, 121, 133, 144, 159, 171, 182, 192):
         text = text.replace(
             f"<strong>{old_count}</strong><span>tests in each CI job</span>",
             f"<strong>{CURRENT_RESEARCH_THREE_TEST_COUNT}</strong><span>tests in each CI job</span>",
