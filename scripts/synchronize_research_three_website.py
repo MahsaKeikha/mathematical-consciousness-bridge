@@ -113,7 +113,7 @@ def _replace_research_three_metrics(text: str) -> str:
     for old_visuals, old_validation in ((19, 10), (23, 14), (24, 15), (25, 16), (26, 17), (27, 18), (28, 19), (29, 20), (30, 21)):
         text = text.replace(
             f"<strong>{old_visuals}</strong><span>scientific visuals: 9 architecture + {old_validation} validation</span>",
-            "<strong>30</strong><span>scientific visuals: 9 architecture + 22 validation</span>",
+            "<strong>31</strong><span>scientific visuals: 9 architecture + 22 validation</span>",
         )
 
     for old_visuals in (19, 23, 24, 25, 26, 27, 28, 29, 30):
@@ -133,10 +133,10 @@ def _replace_research_three_metrics(text: str) -> str:
             "9 architecture + 22 validation",
         )
 
-    text = text.replace("22 result figures", "22 result figures")
-    text = text.replace("22 / 22 visible", "22 / 22 visible")
+    text = text.replace("21 result figures", "22 result figures")
+    text = text.replace("21 / 21 visible", "22 / 22 visible")
     text = text.replace("All twenty validation-result figures", "All twenty-two validation-result figures")
-    text = text.replace("V1-V55", "V1-V55")
+    text = text.replace("V1-V50", "V1-V55")
 
     for old_runners in (4, 5, 6, 7, 8, 9, 10):
         text = text.replace(
@@ -211,9 +211,9 @@ def _upgrade_measurement_page_copy(text: str) -> str:
     text = text.replace("V1-V20", "V1-V55")
     text = text.replace("23 scientific visuals", "31 scientific visuals")
     text = text.replace("24 scientific visuals", "31 scientific visuals")
-    text = text.replace("14 validation", "21 validation")
-    text = text.replace("15 validation", "21 validation")
-    text = text.replace("18 validation", "21 validation")
+    text = text.replace("14 validation", "22 validation")
+    text = text.replace("15 validation", "22 validation")
+    text = text.replace("18 validation", "22 validation")
     text = text.replace("98-test suite", "192-test suite")
     text = text.replace("109-test suite", "192-test suite")
     text = text.replace("144-test suite", "192-test suite")
@@ -353,7 +353,7 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     atlas = text("visual-atlas.html")
     for marker in (
         "V1-V55",
-        "21</strong><span>code-generated validation figures",
+        "22</strong><span>code-generated validation figures",
         "192</strong><span>tests in each CI job",
         "v26_v30_electromagnetic_resolution_validation.svg",
         "v31_v35_electromagnetic_design_validation.svg",
@@ -369,7 +369,7 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     for marker in (
         "V1-V55",
         "22 result figures",
-        "182 tests",
+        "192 tests",
         "V26-V30 electromagnetic resolution and information program",
         "docs/electromagnetic-resolution-program.md",
         "V31-V35 electromagnetic design and spatial specificity program",
@@ -389,9 +389,9 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     lineage = text("research-lineage.html")
     for marker in (
         "V1-V55",
-        "21</strong><span>code-generated validation figures",
+        "22</strong><span>code-generated validation figures",
         "192</strong><span>tests in each CI job",
-        "10</strong><span>reproducible validation runners",
+        "11</strong><span>reproducible validation runners",
         "v41_v45_electromagnetic_selection_validation.svg",
         "V41-V45 selection-safe inference",
         "docs/electromagnetic-selection-safe-inference.md",
