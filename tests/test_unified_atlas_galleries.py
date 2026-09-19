@@ -240,7 +240,7 @@ def test_research_iii_gallery_exposes_architecture_validation_and_result_provena
 
 
 def test_atlas_orientation_points_to_architecture_and_validation_galleries() -> None:
-    assert "Research III exposes 9 foundational architecture visuals" in ORIENTATION
+    assert "Research III opens with a V16-V55 evidence-architecture schematic" in ORIENTATION
     assert "22 code-generated V1-V55 validation-result figures" in ORIENTATION
     for anchor in (
         "#research-i-complete-figure-gallery",
