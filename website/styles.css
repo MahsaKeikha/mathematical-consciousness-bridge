@@ -1559,7 +1559,7 @@ img {
 
 
 
-/* Research III integrated scientific narrative */
+/* Research III journal-style scientific narrative */
 .research-iii-page main > section {
   scroll-margin-top: 82px;
 }
@@ -1568,329 +1568,466 @@ img {
   max-width: 980px;
 }
 
-.research-iii-page main > section[id^="v16-"],
-.research-iii-page main > section[id^="v21-"],
-.research-iii-page main > section[id^="v26-"],
-.research-iii-page main > section[id^="v31-"],
-.research-iii-page main > section[id^="v36-"],
-.research-iii-page main > section[id^="v41-"],
-.research-iii-page main > section[id^="v46-"],
-.research-iii-page main > section[id^="v51-"] {
-  display: grid;
-  grid-template-columns: minmax(0, 1.04fr) minmax(430px, 0.96fr);
-  column-gap: 42px;
-  row-gap: 18px;
-  align-items: start;
-  margin-top: 0;
-  padding-top: 50px;
-  padding-bottom: 50px;
+.research-iii-page main > :is(
+  section[id^="v16-"],
+  section[id^="v21-"],
+  section[id^="v26-"],
+  section[id^="v31-"],
+  section[id^="v36-"],
+  section[id^="v41-"],
+  section[id^="v46-"],
+  section[id^="v51-"]
+) {
+  display: flex;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 58px 24px 62px;
+  flex-direction: column;
+  gap: 22px;
   border-top: 1px solid var(--line);
 }
 
-.research-iii-page main > section[id^="v16-"] > .section-head,
-.research-iii-page main > section[id^="v21-"] > .section-head,
-.research-iii-page main > section[id^="v26-"] > .section-head,
-.research-iii-page main > section[id^="v31-"] > .section-head,
-.research-iii-page main > section[id^="v36-"] > .section-head,
-.research-iii-page main > section[id^="v41-"] > .section-head,
-.research-iii-page main > section[id^="v46-"] > .section-head,
-.research-iii-page main > section[id^="v51-"] > .section-head {
-  grid-column: 1;
-  grid-row: 1;
-  max-width: none;
+.research-iii-page main > :is(
+  section[id^="v16-"],
+  section[id^="v21-"],
+  section[id^="v26-"],
+  section[id^="v31-"],
+  section[id^="v36-"],
+  section[id^="v41-"],
+  section[id^="v46-"],
+  section[id^="v51-"]
+) > .section-head {
+  order: 1;
+  max-width: 930px;
   margin: 0;
 }
 
-.research-iii-page main > section[id^="v16-"] > .section-head h2,
-.research-iii-page main > section[id^="v21-"] > .section-head h2,
-.research-iii-page main > section[id^="v26-"] > .section-head h2,
-.research-iii-page main > section[id^="v31-"] > .section-head h2,
-.research-iii-page main > section[id^="v36-"] > .section-head h2,
-.research-iii-page main > section[id^="v41-"] > .section-head h2,
-.research-iii-page main > section[id^="v46-"] > .section-head h2,
-.research-iii-page main > section[id^="v51-"] > .section-head h2 {
-  max-width: 21ch;
-  font-size: clamp(1.9rem, 2.7vw, 2.55rem);
+.research-iii-page main > :is(
+  section[id^="v16-"],
+  section[id^="v21-"],
+  section[id^="v26-"],
+  section[id^="v31-"],
+  section[id^="v36-"],
+  section[id^="v41-"],
+  section[id^="v46-"],
+  section[id^="v51-"]
+) > .section-head h2 {
+  max-width: 27ch;
+  margin-bottom: 0.42em;
+  font-size: clamp(2rem, 3.2vw, 3.05rem);
+  line-height: 1.08;
 }
 
-.research-iii-page main > section[id^="v16-"] > .section-head > p:last-child,
-.research-iii-page main > section[id^="v21-"] > .section-head > p:last-child,
-.research-iii-page main > section[id^="v26-"] > .section-head > p:last-child,
-.research-iii-page main > section[id^="v31-"] > .section-head > p:last-child,
-.research-iii-page main > section[id^="v36-"] > .section-head > p:last-child,
-.research-iii-page main > section[id^="v41-"] > .section-head > p:last-child,
-.research-iii-page main > section[id^="v46-"] > .section-head > p:last-child,
-.research-iii-page main > section[id^="v51-"] > .section-head > p:last-child {
-  max-width: 68ch;
-  font-size: 0.97rem;
-  line-height: 1.7;
+.research-iii-page main > :is(
+  section[id^="v16-"],
+  section[id^="v21-"],
+  section[id^="v26-"],
+  section[id^="v31-"],
+  section[id^="v36-"],
+  section[id^="v41-"],
+  section[id^="v46-"],
+  section[id^="v51-"]
+) > .section-head > p:last-child {
+  max-width: 76ch;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.72;
 }
 
-.research-iii-page main > section[id^="v16-"] > .measurement-figure-grid,
-.research-iii-page main > section[id^="v21-"] > .measurement-figure-grid,
-.research-iii-page main > section[id^="v26-"] > .measurement-figure-grid,
-.research-iii-page main > section[id^="v31-"] > .measurement-figure-grid,
-.research-iii-page main > section[id^="v36-"] > .measurement-figure-grid,
-.research-iii-page main > section[id^="v41-"] > .measurement-figure-grid,
-.research-iii-page main > section[id^="v46-"] > .measurement-figure-grid,
-.research-iii-page main > section[id^="v51-"] > .measurement-figure-grid {
-  grid-column: 2;
-  grid-row: 1 / span 2;
-  width: 100%;
-  margin: 0;
-}
-
-.research-iii-page main > section[id^="v16-"] .measurement-figure-grid .figure-card,
-.research-iii-page main > section[id^="v21-"] .measurement-figure-grid .figure-card,
-.research-iii-page main > section[id^="v26-"] .measurement-figure-grid .figure-card,
-.research-iii-page main > section[id^="v31-"] .measurement-figure-grid .figure-card,
-.research-iii-page main > section[id^="v36-"] .measurement-figure-grid .figure-card,
-.research-iii-page main > section[id^="v41-"] .measurement-figure-grid .figure-card,
-.research-iii-page main > section[id^="v46-"] .measurement-figure-grid .figure-card,
-.research-iii-page main > section[id^="v51-"] .measurement-figure-grid .figure-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  width: 100%;
-  margin: 0;
-  padding: 14px 14px 18px;
-  border-radius: 16px;
-}
-
-.research-iii-page main > section[id^="v16-"] .measurement-figure-grid .figure-card > a,
-.research-iii-page main > section[id^="v21-"] .measurement-figure-grid .figure-card > a,
-.research-iii-page main > section[id^="v26-"] .measurement-figure-grid .figure-card > a,
-.research-iii-page main > section[id^="v31-"] .measurement-figure-grid .figure-card > a,
-.research-iii-page main > section[id^="v36-"] .measurement-figure-grid .figure-card > a,
-.research-iii-page main > section[id^="v41-"] .measurement-figure-grid .figure-card > a,
-.research-iii-page main > section[id^="v46-"] .measurement-figure-grid .figure-card > a,
-.research-iii-page main > section[id^="v51-"] .measurement-figure-grid .figure-card > a {
+.research-iii-page main > :is(
+  section[id^="v16-"],
+  section[id^="v21-"],
+  section[id^="v26-"],
+  section[id^="v31-"],
+  section[id^="v36-"],
+  section[id^="v41-"],
+  section[id^="v46-"],
+  section[id^="v51-"]
+) > .measurement-figure-grid {
   display: block;
-  padding: 8px;
-  border-radius: 11px;
+  order: 2;
+  width: 100%;
+  margin: 6px 0 0;
+}
+
+.research-iii-page main > :is(
+  section[id^="v16-"],
+  section[id^="v21-"],
+  section[id^="v26-"],
+  section[id^="v31-"],
+  section[id^="v36-"],
+  section[id^="v41-"],
+  section[id^="v46-"],
+  section[id^="v51-"]
+) .measurement-figure-grid .figure-card {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.research-iii-page main > :is(
+  section[id^="v16-"],
+  section[id^="v21-"],
+  section[id^="v26-"],
+  section[id^="v31-"],
+  section[id^="v36-"],
+  section[id^="v41-"],
+  section[id^="v46-"],
+  section[id^="v51-"]
+) .measurement-figure-grid .figure-card > a:first-child {
+  display: block;
+  width: 100%;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
   background: #ffffff;
 }
 
-.research-iii-page main > section[id^="v16-"] .measurement-figure-grid .figure-card img,
-.research-iii-page main > section[id^="v21-"] .measurement-figure-grid .figure-card img,
-.research-iii-page main > section[id^="v26-"] .measurement-figure-grid .figure-card img,
-.research-iii-page main > section[id^="v31-"] .measurement-figure-grid .figure-card img,
-.research-iii-page main > section[id^="v36-"] .measurement-figure-grid .figure-card img,
-.research-iii-page main > section[id^="v41-"] .measurement-figure-grid .figure-card img,
-.research-iii-page main > section[id^="v46-"] .measurement-figure-grid .figure-card img,
-.research-iii-page main > section[id^="v51-"] .measurement-figure-grid .figure-card img {
+.research-iii-page main > :is(
+  section[id^="v16-"],
+  section[id^="v21-"],
+  section[id^="v26-"],
+  section[id^="v31-"],
+  section[id^="v36-"],
+  section[id^="v41-"],
+  section[id^="v46-"],
+  section[id^="v51-"]
+) .measurement-figure-grid .figure-card img {
+  display: block;
   width: 100%;
-  max-height: 500px;
+  max-height: 690px;
+  margin: 0 auto;
+  border-radius: 6px;
   object-fit: contain;
 }
 
-.research-iii-page main > section[id^="v16-"] .measurement-figure-grid .figure-card > .eyebrow,
-.research-iii-page main > section[id^="v21-"] .measurement-figure-grid .figure-card > .eyebrow,
-.research-iii-page main > section[id^="v26-"] .measurement-figure-grid .figure-card > .eyebrow,
-.research-iii-page main > section[id^="v31-"] .measurement-figure-grid .figure-card > .eyebrow,
-.research-iii-page main > section[id^="v36-"] .measurement-figure-grid .figure-card > .eyebrow,
-.research-iii-page main > section[id^="v41-"] .measurement-figure-grid .figure-card > .eyebrow,
-.research-iii-page main > section[id^="v46-"] .measurement-figure-grid .figure-card > .eyebrow,
-.research-iii-page main > section[id^="v51-"] .measurement-figure-grid .figure-card > .eyebrow {
-  margin: 17px 4px 4px;
+.research-iii-page main > :is(
+  section[id^="v16-"],
+  section[id^="v21-"],
+  section[id^="v26-"],
+  section[id^="v31-"],
+  section[id^="v36-"],
+  section[id^="v41-"],
+  section[id^="v46-"],
+  section[id^="v51-"]
+) .measurement-figure-grid .figure-card > .eyebrow {
+  margin: 18px 0 5px;
 }
 
-.research-iii-page main > section[id^="v16-"] .measurement-figure-grid .figure-card > h3,
-.research-iii-page main > section[id^="v21-"] .measurement-figure-grid .figure-card > h3,
-.research-iii-page main > section[id^="v26-"] .measurement-figure-grid .figure-card > h3,
-.research-iii-page main > section[id^="v31-"] .measurement-figure-grid .figure-card > h3,
-.research-iii-page main > section[id^="v36-"] .measurement-figure-grid .figure-card > h3,
-.research-iii-page main > section[id^="v41-"] .measurement-figure-grid .figure-card > h3,
-.research-iii-page main > section[id^="v46-"] .measurement-figure-grid .figure-card > h3,
-.research-iii-page main > section[id^="v51-"] .measurement-figure-grid .figure-card > h3 {
-  margin: 4px 4px 7px;
-  font-size: 1.08rem;
+.research-iii-page main > :is(
+  section[id^="v16-"],
+  section[id^="v21-"],
+  section[id^="v26-"],
+  section[id^="v31-"],
+  section[id^="v36-"],
+  section[id^="v41-"],
+  section[id^="v46-"],
+  section[id^="v51-"]
+) .measurement-figure-grid .figure-card > h3 {
+  max-width: 850px;
+  margin: 0 0 7px;
+  font-size: 1.14rem;
+  line-height: 1.38;
 }
 
-.research-iii-page main > section[id^="v16-"] .measurement-figure-grid .figure-card > p:not(.eyebrow),
-.research-iii-page main > section[id^="v21-"] .measurement-figure-grid .figure-card > p:not(.eyebrow),
-.research-iii-page main > section[id^="v26-"] .measurement-figure-grid .figure-card > p:not(.eyebrow),
-.research-iii-page main > section[id^="v31-"] .measurement-figure-grid .figure-card > p:not(.eyebrow),
-.research-iii-page main > section[id^="v36-"] .measurement-figure-grid .figure-card > p:not(.eyebrow),
-.research-iii-page main > section[id^="v41-"] .measurement-figure-grid .figure-card > p:not(.eyebrow),
-.research-iii-page main > section[id^="v46-"] .measurement-figure-grid .figure-card > p:not(.eyebrow),
-.research-iii-page main > section[id^="v51-"] .measurement-figure-grid .figure-card > p:not(.eyebrow) {
-  margin: 0 4px 10px;
+.research-iii-page main > :is(
+  section[id^="v16-"],
+  section[id^="v21-"],
+  section[id^="v26-"],
+  section[id^="v31-"],
+  section[id^="v36-"],
+  section[id^="v41-"],
+  section[id^="v46-"],
+  section[id^="v51-"]
+) .measurement-figure-grid .figure-card > p:not(.eyebrow) {
+  max-width: 900px;
+  margin: 0 0 12px;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.92rem;
+  line-height: 1.64;
+}
+
+.research-iii-page main > :is(
+  section[id^="v16-"],
+  section[id^="v21-"],
+  section[id^="v26-"],
+  section[id^="v31-"],
+  section[id^="v36-"],
+  section[id^="v41-"],
+  section[id^="v46-"],
+  section[id^="v51-"]
+) > .r3-design-law-grid {
+  order: 3;
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 0 !important;
+  margin: 4px 0 0 !important;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.research-iii-page main > :is(
+  section[id^="v16-"],
+  section[id^="v21-"],
+  section[id^="v26-"],
+  section[id^="v31-"],
+  section[id^="v36-"],
+  section[id^="v41-"],
+  section[id^="v46-"],
+  section[id^="v51-"]
+) > .r3-design-law-grid article {
+  min-width: 0;
+  padding: 20px 20px 22px !important;
+  border: 0 !important;
+  border-right: 1px solid var(--line) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+.research-iii-page main > :is(
+  section[id^="v16-"],
+  section[id^="v21-"],
+  section[id^="v26-"],
+  section[id^="v31-"],
+  section[id^="v36-"],
+  section[id^="v41-"],
+  section[id^="v46-"],
+  section[id^="v51-"]
+) > .r3-design-law-grid article:last-child {
+  border-right: 0 !important;
+}
+
+.research-iii-page main > :is(
+  section[id^="v16-"],
+  section[id^="v21-"],
+  section[id^="v26-"],
+  section[id^="v31-"],
+  section[id^="v36-"],
+  section[id^="v41-"],
+  section[id^="v46-"],
+  section[id^="v51-"]
+) > .r3-design-law-grid strong {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 0.94rem;
+  line-height: 1.42;
+}
+
+.research-iii-page main > :is(
+  section[id^="v16-"],
+  section[id^="v21-"],
+  section[id^="v26-"],
+  section[id^="v31-"],
+  section[id^="v36-"],
+  section[id^="v41-"],
+  section[id^="v46-"],
+  section[id^="v51-"]
+) > .r3-design-law-grid p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.84rem;
   line-height: 1.58;
 }
 
-.research-iii-page main > section[id^="v16-"] > .boundary,
-.research-iii-page main > section[id^="v21-"] > .boundary,
-.research-iii-page main > section[id^="v26-"] > .boundary,
-.research-iii-page main > section[id^="v31-"] > .boundary,
-.research-iii-page main > section[id^="v36-"] > .boundary,
-.research-iii-page main > section[id^="v41-"] > .boundary,
-.research-iii-page main > section[id^="v46-"] > .boundary,
-.research-iii-page main > section[id^="v51-"] > .boundary {
-  grid-column: 1;
-  grid-row: 2;
-  margin: 0 !important;
-  padding: 19px 21px !important;
-  border-radius: 14px;
-  align-self: start;
+.research-iii-page main > :is(
+  section[id^="v16-"],
+  section[id^="v21-"],
+  section[id^="v26-"],
+  section[id^="v31-"],
+  section[id^="v36-"],
+  section[id^="v41-"],
+  section[id^="v46-"],
+  section[id^="v51-"]
+) > .boundary {
+  order: 4;
+  max-width: 980px;
+  margin: 2px 0 0 !important;
+  padding: 14px 18px !important;
+  border: 0 !important;
+  border-left: 3px solid var(--accent2) !important;
+  border-radius: 0 !important;
+  background: var(--soft) !important;
 }
 
-.research-iii-page main > section[id^="v16-"] > .r3-design-law-grid,
-.research-iii-page main > section[id^="v21-"] > .r3-design-law-grid,
-.research-iii-page main > section[id^="v26-"] > .r3-design-law-grid,
-.research-iii-page main > section[id^="v31-"] > .r3-design-law-grid,
-.research-iii-page main > section[id^="v36-"] > .r3-design-law-grid,
-.research-iii-page main > section[id^="v41-"] > .r3-design-law-grid,
-.research-iii-page main > section[id^="v46-"] > .r3-design-law-grid,
-.research-iii-page main > section[id^="v51-"] > .r3-design-law-grid {
-  grid-column: 1 / -1;
-  grid-row: 3;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin-top: 4px;
+.research-iii-page main > :is(
+  section[id^="v16-"],
+  section[id^="v21-"],
+  section[id^="v26-"],
+  section[id^="v31-"],
+  section[id^="v36-"],
+  section[id^="v41-"],
+  section[id^="v46-"],
+  section[id^="v51-"]
+) > .boundary p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
 
-.research-iii-page main > section[id^="v16-"] > .figure-source-links,
-.research-iii-page main > section[id^="v21-"] > .figure-source-links,
-.research-iii-page main > section[id^="v26-"] > .figure-source-links,
-.research-iii-page main > section[id^="v31-"] > .figure-source-links,
-.research-iii-page main > section[id^="v36-"] > .figure-source-links,
-.research-iii-page main > section[id^="v41-"] > .figure-source-links,
-.research-iii-page main > section[id^="v46-"] > .figure-source-links,
-.research-iii-page main > section[id^="v51-"] > .figure-source-links {
-  grid-column: 1 / -1;
-  grid-row: 4;
-  margin-top: 0;
+.research-iii-page main > :is(
+  section[id^="v16-"],
+  section[id^="v21-"],
+  section[id^="v26-"],
+  section[id^="v31-"],
+  section[id^="v36-"],
+  section[id^="v41-"],
+  section[id^="v46-"],
+  section[id^="v51-"]
+) > .figure-source-links {
+  order: 5;
+  margin: 0;
 }
 
-.research-iii-page main > section[id^="v16-"] .figure-source-links,
-.research-iii-page main > section[id^="v21-"] .figure-source-links,
-.research-iii-page main > section[id^="v26-"] .figure-source-links,
-.research-iii-page main > section[id^="v31-"] .figure-source-links,
-.research-iii-page main > section[id^="v36-"] .figure-source-links,
-.research-iii-page main > section[id^="v41-"] .figure-source-links,
-.research-iii-page main > section[id^="v46-"] .figure-source-links,
-.research-iii-page main > section[id^="v51-"] .figure-source-links {
+.research-iii-page main > :is(
+  section[id^="v16-"],
+  section[id^="v21-"],
+  section[id^="v26-"],
+  section[id^="v31-"],
+  section[id^="v36-"],
+  section[id^="v41-"],
+  section[id^="v46-"],
+  section[id^="v51-"]
+) .figure-source-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 7px;
 }
 
-.research-iii-page main > section[id^="v16-"] .figure-source-links a,
-.research-iii-page main > section[id^="v21-"] .figure-source-links a,
-.research-iii-page main > section[id^="v26-"] .figure-source-links a,
-.research-iii-page main > section[id^="v31-"] .figure-source-links a,
-.research-iii-page main > section[id^="v36-"] .figure-source-links a,
-.research-iii-page main > section[id^="v41-"] .figure-source-links a,
-.research-iii-page main > section[id^="v46-"] .figure-source-links a,
-.research-iii-page main > section[id^="v51-"] .figure-source-links a {
+.research-iii-page main > :is(
+  section[id^="v16-"],
+  section[id^="v21-"],
+  section[id^="v26-"],
+  section[id^="v31-"],
+  section[id^="v36-"],
+  section[id^="v41-"],
+  section[id^="v46-"],
+  section[id^="v51-"]
+) .figure-source-links a {
   display: inline-flex;
   align-items: center;
-  min-height: 34px;
-  padding: 7px 10px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--paper);
-  font-size: 0.76rem;
+  min-height: 31px;
+  padding: 5px 8px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  font-size: 0.74rem;
   font-weight: 700;
   text-decoration: none;
 }
 
-@media (max-width: 1080px) {
-  .research-iii-page main > section[id^="v16-"],
-  .research-iii-page main > section[id^="v21-"],
-  .research-iii-page main > section[id^="v26-"],
-  .research-iii-page main > section[id^="v31-"],
-  .research-iii-page main > section[id^="v36-"],
-  .research-iii-page main > section[id^="v41-"],
-  .research-iii-page main > section[id^="v46-"],
-  .research-iii-page main > section[id^="v51-"] {
-    grid-template-columns: 1fr;
-    row-gap: 20px;
+@media (max-width: 900px) {
+  .research-iii-page main > :is(
+    section[id^="v16-"],
+    section[id^="v21-"],
+    section[id^="v26-"],
+    section[id^="v31-"],
+    section[id^="v36-"],
+    section[id^="v41-"],
+    section[id^="v46-"],
+    section[id^="v51-"]
+  ) > .r3-design-law-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 
-  .research-iii-page main > section[id^="v16-"] > .section-head,
-  .research-iii-page main > section[id^="v21-"] > .section-head,
-  .research-iii-page main > section[id^="v26-"] > .section-head,
-  .research-iii-page main > section[id^="v31-"] > .section-head,
-  .research-iii-page main > section[id^="v36-"] > .section-head,
-  .research-iii-page main > section[id^="v41-"] > .section-head,
-  .research-iii-page main > section[id^="v46-"] > .section-head,
-  .research-iii-page main > section[id^="v51-"] > .section-head,
-  .research-iii-page main > section[id^="v16-"] > .measurement-figure-grid,
-  .research-iii-page main > section[id^="v21-"] > .measurement-figure-grid,
-  .research-iii-page main > section[id^="v26-"] > .measurement-figure-grid,
-  .research-iii-page main > section[id^="v31-"] > .measurement-figure-grid,
-  .research-iii-page main > section[id^="v36-"] > .measurement-figure-grid,
-  .research-iii-page main > section[id^="v41-"] > .measurement-figure-grid,
-  .research-iii-page main > section[id^="v46-"] > .measurement-figure-grid,
-  .research-iii-page main > section[id^="v51-"] > .measurement-figure-grid,
-  .research-iii-page main > section[id^="v16-"] > .boundary,
-  .research-iii-page main > section[id^="v21-"] > .boundary,
-  .research-iii-page main > section[id^="v26-"] > .boundary,
-  .research-iii-page main > section[id^="v31-"] > .boundary,
-  .research-iii-page main > section[id^="v36-"] > .boundary,
-  .research-iii-page main > section[id^="v41-"] > .boundary,
-  .research-iii-page main > section[id^="v46-"] > .boundary,
-  .research-iii-page main > section[id^="v51-"] > .boundary {
-    grid-column: 1;
-    grid-row: auto;
+  .research-iii-page main > :is(
+    section[id^="v16-"],
+    section[id^="v21-"],
+    section[id^="v26-"],
+    section[id^="v31-"],
+    section[id^="v36-"],
+    section[id^="v41-"],
+    section[id^="v46-"],
+    section[id^="v51-"]
+  ) > .r3-design-law-grid article:nth-child(2) {
+    border-right: 0 !important;
   }
 
-  .research-iii-page main > section[id^="v16-"] > .r3-design-law-grid,
-  .research-iii-page main > section[id^="v21-"] > .r3-design-law-grid,
-  .research-iii-page main > section[id^="v26-"] > .r3-design-law-grid,
-  .research-iii-page main > section[id^="v31-"] > .r3-design-law-grid,
-  .research-iii-page main > section[id^="v36-"] > .r3-design-law-grid,
-  .research-iii-page main > section[id^="v41-"] > .r3-design-law-grid,
-  .research-iii-page main > section[id^="v46-"] > .r3-design-law-grid,
-  .research-iii-page main > section[id^="v51-"] > .r3-design-law-grid,
-  .research-iii-page main > section[id^="v16-"] > .figure-source-links,
-  .research-iii-page main > section[id^="v21-"] > .figure-source-links,
-  .research-iii-page main > section[id^="v26-"] > .figure-source-links,
-  .research-iii-page main > section[id^="v31-"] > .figure-source-links,
-  .research-iii-page main > section[id^="v36-"] > .figure-source-links,
-  .research-iii-page main > section[id^="v41-"] > .figure-source-links,
-  .research-iii-page main > section[id^="v46-"] > .figure-source-links,
-  .research-iii-page main > section[id^="v51-"] > .figure-source-links {
-    grid-column: 1;
-    grid-row: auto;
-  }
-
-  .research-iii-page main > section[id^="v16-"] > .r3-design-law-grid,
-  .research-iii-page main > section[id^="v21-"] > .r3-design-law-grid,
-  .research-iii-page main > section[id^="v26-"] > .r3-design-law-grid,
-  .research-iii-page main > section[id^="v31-"] > .r3-design-law-grid,
-  .research-iii-page main > section[id^="v36-"] > .r3-design-law-grid,
-  .research-iii-page main > section[id^="v41-"] > .r3-design-law-grid,
-  .research-iii-page main > section[id^="v46-"] > .r3-design-law-grid,
-  .research-iii-page main > section[id^="v51-"] > .r3-design-law-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .research-iii-page main > :is(
+    section[id^="v16-"],
+    section[id^="v21-"],
+    section[id^="v26-"],
+    section[id^="v31-"],
+    section[id^="v36-"],
+    section[id^="v41-"],
+    section[id^="v46-"],
+    section[id^="v51-"]
+  ) > .r3-design-law-grid article:nth-child(-n+2) {
+    border-bottom: 1px solid var(--line) !important;
   }
 }
 
-@media (max-width: 680px) {
-  .research-iii-page main > section[id^="v16-"],
-  .research-iii-page main > section[id^="v21-"],
-  .research-iii-page main > section[id^="v26-"],
-  .research-iii-page main > section[id^="v31-"],
-  .research-iii-page main > section[id^="v36-"],
-  .research-iii-page main > section[id^="v41-"],
-  .research-iii-page main > section[id^="v46-"],
-  .research-iii-page main > section[id^="v51-"] {
-    padding-top: 42px;
-    padding-bottom: 42px;
+@media (max-width: 620px) {
+  .research-iii-page main > :is(
+    section[id^="v16-"],
+    section[id^="v21-"],
+    section[id^="v26-"],
+    section[id^="v31-"],
+    section[id^="v36-"],
+    section[id^="v41-"],
+    section[id^="v46-"],
+    section[id^="v51-"]
+  ) {
+    padding-top: 44px;
+    padding-bottom: 48px;
+    gap: 18px;
   }
 
-  .research-iii-page main > section[id^="v16-"] > .r3-design-law-grid,
-  .research-iii-page main > section[id^="v21-"] > .r3-design-law-grid,
-  .research-iii-page main > section[id^="v26-"] > .r3-design-law-grid,
-  .research-iii-page main > section[id^="v31-"] > .r3-design-law-grid,
-  .research-iii-page main > section[id^="v36-"] > .r3-design-law-grid,
-  .research-iii-page main > section[id^="v41-"] > .r3-design-law-grid,
-  .research-iii-page main > section[id^="v46-"] > .r3-design-law-grid,
-  .research-iii-page main > section[id^="v51-"] > .r3-design-law-grid {
-    grid-template-columns: 1fr;
+  .research-iii-page main > :is(
+    section[id^="v16-"],
+    section[id^="v21-"],
+    section[id^="v26-"],
+    section[id^="v31-"],
+    section[id^="v36-"],
+    section[id^="v41-"],
+    section[id^="v46-"],
+    section[id^="v51-"]
+  ) > .r3-design-law-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .research-iii-page main > :is(
+    section[id^="v16-"],
+    section[id^="v21-"],
+    section[id^="v26-"],
+    section[id^="v31-"],
+    section[id^="v36-"],
+    section[id^="v41-"],
+    section[id^="v46-"],
+    section[id^="v51-"]
+  ) > .r3-design-law-grid article {
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--line) !important;
+  }
+
+  .research-iii-page main > :is(
+    section[id^="v16-"],
+    section[id^="v21-"],
+    section[id^="v26-"],
+    section[id^="v31-"],
+    section[id^="v36-"],
+    section[id^="v41-"],
+    section[id^="v46-"],
+    section[id^="v51-"]
+  ) > .r3-design-law-grid article:last-child {
+    border-bottom: 0 !important;
+  }
+
+  .research-iii-page main > :is(
+    section[id^="v16-"],
+    section[id^="v21-"],
+    section[id^="v26-"],
+    section[id^="v31-"],
+    section[id^="v36-"],
+    section[id^="v41-"],
+    section[id^="v46-"],
+    section[id^="v51-"]
+  ) .measurement-figure-grid .figure-card > a:first-child {
+    padding: 8px;
   }
 }
