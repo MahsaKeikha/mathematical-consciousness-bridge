@@ -140,16 +140,19 @@ def test_research_lineage_exposes_current_research_three_v50_record() -> None:
     assert "statistically valid source inference is still not direct evidence" in lineage
 
 
-def test_research_three_stage_layout_uses_journal_style_full_width_figures() -> None:
+def test_research_three_page_uses_editorial_full_width_result_stages() -> None:
     page = _read("website/measurement-science.html")
     styles = _read("website/styles.css")
 
     assert '<body class="research-iii-page">' in page
-    assert "Research III journal-style scientific narrative" in styles
+    assert "Research III editorial research experience" in styles
+    assert 'class="research-iii-stage-nav"' in page
+    assert "Follow the result journey" in page
+    assert "Open the V1-V55 validation record" in page
     assert 'section[id^="v31-"]' in styles
     assert 'section[id^="v51-"]' in styles
-    assert "display: flex;" in styles
-    assert "max-width: 1180px;" in styles
-    assert "max-height: 690px;" in styles
-    assert "border-left: 3px solid var(--accent2)" in styles
+    assert "max-width: none !important" in styles
+    assert "height: auto !important" in styles
+    assert "max-height: none !important" in styles
     assert "grid-template-columns: repeat(4, minmax(0, 1fr)) !important" in styles
+    assert "linear-gradient(135deg, #111827 0%, #17233a 48%, #1d2e5c 100%)" in styles
