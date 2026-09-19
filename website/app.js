@@ -302,16 +302,29 @@
     }
   }
 
+  function propositionMentions(text) {
+    return Array.from(String(text || '').matchAll(/\bP(\d{1,3})\b/gi), (match) => Number(match[1]));
+  }
+
   function propositionNumber(text) {
-    const match = text.match(/\bP(\d{1,2})\b/i);
-    return match ? Number(match[1]) : null;
+    const mentions = propositionMentions(text);
+    return mentions.length ? mentions[0] : null;
+  }
+
+  function hasAmbiguousPropositionText(text) {
+    const value = String(text || '');
+    if (/\bP\d{1,3}\s*-\s*P?\d{1,3}\b/i.test(value)) return true;
+    return new Set(propositionMentions(value)).size > 1;
   }
 
   function inferredCardHref(card) {
     const direct = card.querySelector('a[href]');
     if (direct) return direct.href;
 
-    const number = propositionNumber(card.textContent || '');
+    const text = card.textContent || '';
+    if (hasAmbiguousPropositionText(text)) return null;
+
+    const number = propositionNumber(text);
     if (number && propositionLinks[number]) return propositionLinks[number];
     if (number) return `research-map.html#p${number}`;
 
@@ -356,6 +369,7 @@
     document.querySelectorAll('section').forEach((section) => {
       if (section.id) return;
       const text = section.textContent || '';
+      if (hasAmbiguousPropositionText(text)) return;
       const number = propositionNumber(text);
       if (number) section.id = `p${number}`;
     });
