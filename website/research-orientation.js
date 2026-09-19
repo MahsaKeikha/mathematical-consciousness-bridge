@@ -2,7 +2,7 @@
   const REPO = 'https://github.com/MahsaKeikha/mathematical-consciousness-bridge';
   const OBSERVER_REPO = 'https://github.com/MahsaKeikha/spatiotemporal-observer-math';
   const MEASUREMENT_REPO = 'https://github.com/MahsaKeikha/consciousness-measurement-science';
-  const MEASUREMENT_PIN = '89581ff150d768998967500d079d7ba61deafe86';
+  const MEASUREMENT_PIN = '466b327dcd31dadee630d3b7d36fa55817766496';
 
   const PAGE_CONTRACTS = {
     'index.html': {
@@ -189,7 +189,7 @@
     if (programCard) {
       const metric = programCard.querySelector('.research-program-metric');
       const meta = programCard.querySelector('.research-program-meta');
-      if (metric) metric.innerHTML = '<strong>192</strong><span>tests in each CI job</span>';
+      if (metric) metric.innerHTML = '<strong>196</strong><span>tests in each CI job</span>';
       if (meta) meta.textContent = 'V1-V55 formal validation · 31 scientific visuals · 11 reproducible validation runners';
     }
 
