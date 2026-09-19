@@ -63,6 +63,7 @@ MEASUREMENT_SCIENCE_REQUIRED_MARKERS = (
     "docs/electromagnetic-finite-sample-inference.md",
     "docs/electromagnetic-selection-safe-inference.md",
     "docs/electromagnetic-replication-inference.md",
+    "research_iii_evidence_architecture.svg",
     "v16_v20_electromagnetic_validation.svg",
     "v21_v25_electromagnetic_inverse_validation.svg",
     "v26_v30_electromagnetic_resolution_validation.svg",
