@@ -1581,8 +1581,9 @@ img {
   column-gap: 42px;
   row-gap: 18px;
   align-items: start;
-  padding-top: 56px;
-  padding-bottom: 56px;
+  margin-top: 0;
+  padding-top: 50px;
+  padding-bottom: 50px;
   border-top: 1px solid var(--line);
 }
 
