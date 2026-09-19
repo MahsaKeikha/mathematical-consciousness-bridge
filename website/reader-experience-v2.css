@@ -557,15 +557,25 @@ pre {
 
 
 /* Research III owns its result-stage composition.
- * Do not reapply the shared card/grid geometry on that page. */
-body.research-iii-page .measurement-figure-grid {
-  display: block !important;
-  grid-template-columns: none !important;
-  width: 100% !important;
-  max-width: none !important;
+ * Early validation figures are deliberately compact; later technical stages may use full width. */
+body.research-iii-page :is(
+  #v1-v5-result-figures,
+  #v6-v10-result-figures,
+  #v11-v15-result-figures
+) .measurement-figure-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+  width: min(100%, 1120px) !important;
+  max-width: 1120px !important;
+  margin: 24px auto 0 !important;
 }
 
-body.research-iii-page .measurement-figure-grid .figure-card {
+body.research-iii-page :is(
+  #v1-v5-result-figures,
+  #v6-v10-result-figures,
+  #v11-v15-result-figures
+) .measurement-figure-grid .figure-card {
   display: block !important;
   grid-template-columns: none !important;
   width: 100% !important;
@@ -573,7 +583,95 @@ body.research-iii-page .measurement-figure-grid .figure-card {
   align-items: initial !important;
 }
 
-body.research-iii-page .measurement-figure-grid .figure-card img {
+body.research-iii-page :is(
+  #v1-v5-result-figures,
+  #v6-v10-result-figures,
+  #v11-v15-result-figures
+) .measurement-figure-grid .figure-card img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: 390px !important;
+  margin: 0 auto !important;
+  object-fit: contain !important;
+}
+
+body.research-iii-page :is(
+  #v16-v20-electromagnetic-program,
+  #v16-v20-em-field-program
+) .measurement-figure-grid {
+  display: block !important;
+  grid-template-columns: none !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+body.research-iii-page :is(
+  #v16-v20-electromagnetic-program,
+  #v16-v20-em-field-program
+) .measurement-figure-grid .figure-card {
+  display: block !important;
+  grid-template-columns: none !important;
+  width: min(100%, 920px) !important;
+  max-width: 920px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+body.research-iii-page :is(
+  #v16-v20-electromagnetic-program,
+  #v16-v20-em-field-program
+) .measurement-figure-grid .figure-card img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 920px !important;
+  height: auto !important;
+  max-height: 620px !important;
+  margin: 0 auto !important;
+  object-fit: contain !important;
+}
+
+body.research-iii-page main > :is(
+  section[id^="v21-"],
+  section[id^="v26-"],
+  section[id^="v31-"],
+  section[id^="v36-"],
+  section[id^="v41-"],
+  section[id^="v46-"],
+  section[id^="v51-"]
+) .measurement-figure-grid {
+  display: block !important;
+  grid-template-columns: none !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+body.research-iii-page main > :is(
+  section[id^="v21-"],
+  section[id^="v26-"],
+  section[id^="v31-"],
+  section[id^="v36-"],
+  section[id^="v41-"],
+  section[id^="v46-"],
+  section[id^="v51-"]
+) .measurement-figure-grid .figure-card {
+  display: block !important;
+  grid-template-columns: none !important;
+  width: 100% !important;
+  max-width: none !important;
+  align-items: initial !important;
+}
+
+body.research-iii-page main > :is(
+  section[id^="v21-"],
+  section[id^="v26-"],
+  section[id^="v31-"],
+  section[id^="v36-"],
+  section[id^="v41-"],
+  section[id^="v46-"],
+  section[id^="v51-"]
+) .measurement-figure-grid .figure-card img {
   display: block !important;
   width: 100% !important;
   max-width: none !important;
@@ -581,4 +679,22 @@ body.research-iii-page .measurement-figure-grid .figure-card img {
   max-height: none !important;
   margin: 0 !important;
   object-fit: initial !important;
+}
+
+@media (max-width: 760px) {
+  body.research-iii-page :is(
+    #v1-v5-result-figures,
+    #v6-v10-result-figures,
+    #v11-v15-result-figures
+  ) .measurement-figure-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  body.research-iii-page :is(
+    #v16-v20-electromagnetic-program,
+    #v16-v20-em-field-program
+  ) .measurement-figure-grid .figure-card {
+    width: 100% !important;
+    max-width: none !important;
+  }
 }
