@@ -137,3 +137,16 @@ def test_research_lineage_exposes_current_research_three_v50_record() -> None:
     assert "V46-V50 replication inference" in lineage
     assert "electromagnetic-replication-inference.md" in lineage
     assert "statistically valid source inference is still not direct evidence" in lineage
+
+
+def test_research_three_stage_layout_is_integrated_and_space_efficient() -> None:
+    page = _read("website/measurement-science.html")
+    styles = _read("website/styles.css")
+
+    assert '<body class="research-iii-page">' in page
+    assert "Research III integrated scientific narrative" in styles
+    assert 'section[id^="v31-"]' in styles
+    assert 'section[id^="v36-"]' in styles
+    assert "grid-template-columns: minmax(0, 1.04fr) minmax(430px, 0.96fr)" in styles
+    assert "grid-row: 1 / span 2" in styles
+    assert "grid-template-columns: repeat(4, minmax(0, 1fr))" in styles
