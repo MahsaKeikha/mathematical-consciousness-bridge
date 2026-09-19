@@ -3,14 +3,14 @@
   const RESEARCH_II_MANIFEST = 'figures/manifest.json';
   const RESEARCH_II_CORE_CATEGORY = 'theorem-or-architecture';
   const RESEARCH_II_CORE_EXPECTED = 100;
-  const RESEARCH_III_PIN = '89581ff150d768998967500d079d7ba61deafe86';
+  const RESEARCH_III_PIN = '8de006a11d09d290fa3a45d144f8b024012fac3d';
   const MEASUREMENT_REPO = 'https://github.com/MahsaKeikha/consciousness-measurement-science';
   const RAW_MAIN_PREFIX =
-    'https://raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/89581ff150d768998967500d079d7ba61deafe86/docs/figures/';
+    'https://raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/8de006a11d09d290fa3a45d144f8b024012fac3d/docs/figures/';
   const RAW_PIN_PREFIX =
     `https://raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/${RESEARCH_III_PIN}/docs/figures/`;
   const BLOB_MAIN_PREFIX =
-    'https://github.com/MahsaKeikha/consciousness-measurement-science/blob/89581ff150d768998967500d079d7ba61deafe86/docs/figures/';
+    'https://github.com/MahsaKeikha/consciousness-measurement-science/blob/8de006a11d09d290fa3a45d144f8b024012fac3d/docs/figures/';
   const BLOB_PIN_PREFIX =
     `https://github.com/MahsaKeikha/consciousness-measurement-science/blob/${RESEARCH_III_PIN}/docs/figures/`;
 
