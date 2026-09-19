@@ -177,7 +177,7 @@ def test_research_iii_gallery_exposes_architecture_validation_and_result_provena
     assert "electromagnetic_replication_validation_summary.json" in RESEARCH_III_REFRESH
     assert "Electromagnetic Source Identifiability Program" in RESEARCH_III_REFRESH
     assert "V21-V25 · electromagnetic source identifiability" in RESEARCH_III_REFRESH
-    assert CURRENT_RESEARCH_THREE_PIN == "89581ff150d768998967500d079d7ba61deafe86"
+    assert CURRENT_RESEARCH_THREE_PIN == "c8694e86de229fefa91b343066da8be8b29da4b2"
 
     architecture_figures = (
         "research_program_map.svg",
