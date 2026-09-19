@@ -67,10 +67,12 @@ def test_contrast_layer_is_injected_into_every_deployed_page() -> None:
 def test_research_three_dark_hero_overrides_generic_muted_text() -> None:
     assert "body.research-iii-page main > .hero .lede" in CSS
     assert "body.research-iii-page main > .hero .status-grid span" in CSS
-    assert "color: #e2e8f0 !important" in CSS
+    assert "color: #f2f6ff !important" in CSS
     assert "body.research-iii-page main > .hero .eyebrow" in CSS
-    assert "color: #c9d5ff !important" in CSS
+    assert "color: #d7dfff !important" in CSS
     assert "body.research-iii-page main > .hero .status-grid strong" in CSS
     assert "color: #ffffff !important" in CSS
-    assert _contrast("#e2e8f0", "#1d2e5c") >= 7.0
-    assert _contrast("#c9d5ff", "#1d2e5c") >= 7.0
+    assert "color: #dbe7f5 !important" in CSS
+    assert _contrast("#f2f6ff", "#1d2e5c") >= 7.0
+    assert _contrast("#dbe7f5", "#1d2e5c") >= 7.0
+    assert _contrast("#d7dfff", "#1d2e5c") >= 7.0
