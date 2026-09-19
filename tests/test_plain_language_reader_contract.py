@@ -25,3 +25,21 @@ def test_plain_language_keeps_the_three_programs_distinct() -> None:
     assert "Finding a physical system is not the same as finding consciousness" in page
     assert "A failed bridge test has a limited meaning" in page
     assert "Uncertainty is a valid scientific result" in page
+
+
+def test_plain_language_explains_current_research_three_without_technical_jargon() -> None:
+    page = (ROOT / "website/plain-language.html").read_text(encoding="utf-8")
+
+    assert 'id="research-three-now"' in page
+    assert "Could two different situations produce the same measurement?" in page
+    assert "Would the result survive different equipment, a different group of people, or a different state?" in page
+    assert "measuring a field is not the same as measuring consciousness itself" in page
+    for jargon in (
+        "Fisher information",
+        "covariate shift",
+        "total variation",
+        "topography mismatch",
+        "partial conjunction",
+        "Youden",
+    ):
+        assert jargon not in page
