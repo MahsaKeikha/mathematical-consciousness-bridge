@@ -189,7 +189,7 @@
     if (programCard) {
       const metric = programCard.querySelector('.research-program-metric');
       const meta = programCard.querySelector('.research-program-meta');
-      if (metric) metric.innerHTML = '<strong>192</strong><span>tests in each CI job</span>';
+      if (metric) metric.innerHTML = '<strong>194</strong><span>tests in each CI job</span>';
       if (meta) meta.textContent = 'V1-V55 formal validation · 31 scientific visuals · 11 reproducible validation runners';
     }
 
