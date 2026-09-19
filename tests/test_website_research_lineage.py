@@ -62,6 +62,8 @@ def test_lineage_exposes_current_research_three_v55_progression() -> None:
         "V51-V55 · transportability across sensor systems, hardware, and states",
         "v51_v55_transportability_validation.svg",
         "transportability-program.md",
+        "transportability_validation_summary.json",
+        "run_transportability_validation.py",
         "statistically valid source inference is still not direct evidence that a source is consciousness or qualia",
     ):
         assert token in page
