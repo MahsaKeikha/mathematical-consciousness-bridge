@@ -146,6 +146,10 @@ def test_research_ii_gallery_uses_the_research_i_complete_card_language() -> Non
 
 
 def test_research_iii_gallery_exposes_architecture_validation_and_result_provenance() -> None:
+    assert "research-iii-evidence-architecture" in RESEARCH_III_REFRESH
+    assert "research_iii_evidence_architecture.svg" in RESEARCH_III_REFRESH
+    assert "Eight explicit failure gates" in RESEARCH_III_REFRESH
+    assert "Claim ceiling remains visible" in RESEARCH_III_REFRESH
     assert "research-iii-curated-visual-story" in RESEARCH_III_REFRESH
     assert "research-iii-complete-figure-gallery" in RESEARCH_III_REFRESH
     assert "research-iii-validation-figure-gallery" in RESEARCH_III_REFRESH
@@ -241,6 +245,7 @@ def test_atlas_orientation_points_to_architecture_and_validation_galleries() -> 
     for anchor in (
         "#research-i-complete-figure-gallery",
         "#research-ii-complete-core-gallery",
+        "#research-iii-evidence-architecture",
         "#research-iii-complete-figure-gallery",
         "#research-iii-validation-figure-gallery",
     ):
