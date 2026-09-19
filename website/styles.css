@@ -1559,13 +1559,171 @@ img {
 
 
 
-/* Research III journal-style scientific narrative */
-.research-iii-page main > section {
-  scroll-margin-top: 82px;
+/* Research III editorial research experience */
+.research-iii-page {
+  background: #f4f6fa;
 }
 
-.research-iii-page .section-head {
-  max-width: 980px;
+.research-iii-page main > .hero {
+  max-width: none;
+  padding-left: max(24px, calc((100vw - 1160px) / 2)) !important;
+  padding-right: max(24px, calc((100vw - 1160px) / 2)) !important;
+  padding-top: 92px !important;
+  padding-bottom: 54px !important;
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(96, 119, 210, 0.28), transparent 31%),
+    radial-gradient(circle at 12% 88%, rgba(91, 155, 181, 0.16), transparent 32%),
+    linear-gradient(135deg, #111827 0%, #17233a 48%, #1d2e5c 100%);
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.research-iii-page main > .hero .eyebrow {
+  color: #b9c7ff;
+}
+
+.research-iii-page main > .hero h1 {
+  max-width: 22ch;
+  margin-bottom: 22px;
+  font-size: clamp(2.75rem, 5vw, 5.15rem);
+  line-height: .99;
+  letter-spacing: -.045em;
+}
+
+.research-iii-page main > .hero .lede {
+  max-width: 900px;
+  color: #d6dceb;
+  font-size: 1.08rem;
+  line-height: 1.76;
+}
+
+.research-iii-page .research-iii-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 30px;
+}
+
+.research-iii-page .research-iii-hero-actions .button {
+  border-color: rgba(255,255,255,.24);
+  background: rgba(255,255,255,.06);
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.research-iii-page .research-iii-hero-actions .button.primary {
+  border-color: #ffffff;
+  background: #ffffff;
+  color: #18233f;
+}
+
+.research-iii-page main > .hero .status-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 46px;
+  border-top: 1px solid rgba(255,255,255,.16);
+  border-bottom: 1px solid rgba(255,255,255,.16);
+}
+
+.research-iii-page main > .hero .status-grid > div {
+  padding: 20px 22px 19px 0;
+  border: 0;
+  border-right: 1px solid rgba(255,255,255,.14);
+  border-radius: 0;
+  background: transparent;
+}
+
+.research-iii-page main > .hero .status-grid > div:not(:first-child) {
+  padding-left: 22px;
+}
+
+.research-iii-page main > .hero .status-grid > div:last-child {
+  border-right: 0;
+}
+
+.research-iii-page main > .hero .status-grid strong {
+  color: #ffffff;
+  font-size: 1.35rem;
+}
+
+.research-iii-page main > .hero .status-grid span {
+  color: #bdc7d9;
+}
+
+.research-iii-page .research-iii-stage-nav {
+  max-width: none;
+  padding: 42px max(24px, calc((100vw - 1160px) / 2)) 46px;
+  background: #ffffff;
+  border-bottom: 1px solid var(--line);
+}
+
+.research-iii-page .stage-nav-intro {
+  display: grid;
+  grid-template-columns: minmax(260px,.72fr) minmax(0,1.28fr);
+  column-gap: 64px;
+  align-items: end;
+  margin-bottom: 26px;
+}
+
+.research-iii-page .stage-nav-intro .eyebrow {
+  grid-column: 1 / -1;
+}
+
+.research-iii-page .stage-nav-intro h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -.032em;
+}
+
+.research-iii-page .stage-nav-intro p:last-child {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.68;
+}
+
+.research-iii-page .stage-nav-track {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.research-iii-page .stage-nav-track a {
+  display: grid;
+  min-height: 116px;
+  padding: 17px 18px;
+  align-content: space-between;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: #ffffff;
+  color: var(--ink);
+  text-decoration: none;
+  transition: background .18s ease, transform .18s ease;
+}
+
+.research-iii-page .stage-nav-track a:hover {
+  background: #f3f6fb;
+  transform: translateY(-2px);
+}
+
+.research-iii-page .stage-nav-track span,
+.research-iii-page .stage-nav-track small {
+  color: var(--muted);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.research-iii-page .stage-nav-track strong {
+  margin: 12px 0 5px;
+  font-family: var(--font-display);
+  font-size: 1.03rem;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 .research-iii-page main > :is(
@@ -1578,13 +1736,29 @@ img {
   section[id^="v46-"],
   section[id^="v51-"]
 ) {
-  display: flex;
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 58px 24px 62px;
-  flex-direction: column;
-  gap: 22px;
+  max-width: none;
+  margin: 0;
+  padding: 70px max(24px, calc((100vw - 1160px) / 2)) 72px;
   border-top: 1px solid var(--line);
+  scroll-margin-top: 72px;
+}
+
+.research-iii-page main > :is(
+  section[id^="v16-"],
+  section[id^="v26-"],
+  section[id^="v36-"],
+  section[id^="v46-"]
+) {
+  background: #ffffff;
+}
+
+.research-iii-page main > :is(
+  section[id^="v21-"],
+  section[id^="v31-"],
+  section[id^="v41-"],
+  section[id^="v51-"]
+) {
+  background: #f4f6fa;
 }
 
 .research-iii-page main > :is(
@@ -1597,9 +1771,21 @@ img {
   section[id^="v46-"],
   section[id^="v51-"]
 ) > .section-head {
-  order: 1;
-  max-width: 930px;
-  margin: 0;
+  max-width: 1000px;
+  margin: 0 0 30px;
+}
+
+.research-iii-page main > :is(
+  section[id^="v16-"],
+  section[id^="v21-"],
+  section[id^="v26-"],
+  section[id^="v31-"],
+  section[id^="v36-"],
+  section[id^="v41-"],
+  section[id^="v46-"],
+  section[id^="v51-"]
+) > .section-head .eyebrow {
+  margin-bottom: 10px;
 }
 
 .research-iii-page main > :is(
@@ -1612,10 +1798,11 @@ img {
   section[id^="v46-"],
   section[id^="v51-"]
 ) > .section-head h2 {
-  max-width: 27ch;
-  margin-bottom: 0.42em;
-  font-size: clamp(2rem, 3.2vw, 3.05rem);
-  line-height: 1.08;
+  max-width: 26ch;
+  margin: 0 0 14px;
+  font-size: clamp(2.15rem, 3.6vw, 3.5rem);
+  line-height: 1.03;
+  letter-spacing: -.04em;
 }
 
 .research-iii-page main > :is(
@@ -1628,10 +1815,10 @@ img {
   section[id^="v46-"],
   section[id^="v51-"]
 ) > .section-head > p:last-child {
-  max-width: 76ch;
-  margin-bottom: 0;
+  max-width: 850px;
+  margin: 0;
   color: var(--muted);
-  font-size: 1rem;
+  font-size: 1.01rem;
   line-height: 1.72;
 }
 
@@ -1645,10 +1832,9 @@ img {
   section[id^="v46-"],
   section[id^="v51-"]
 ) > .measurement-figure-grid {
-  display: block;
-  order: 2;
+  display: block !important;
   width: 100%;
-  margin: 6px 0 0;
+  margin: 0 !important;
 }
 
 .research-iii-page main > :is(
@@ -1661,13 +1847,13 @@ img {
   section[id^="v46-"],
   section[id^="v51-"]
 ) .measurement-figure-grid .figure-card {
-  display: block;
+  display: block !important;
   width: 100%;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
 }
 
 .research-iii-page main > :is(
@@ -1682,10 +1868,12 @@ img {
 ) .measurement-figure-grid .figure-card > a:first-child {
   display: block;
   width: 100%;
-  padding: 18px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
+  padding: 12px;
+  overflow: hidden;
+  border: 1px solid #d5dbe6;
+  border-radius: 16px;
   background: #ffffff;
+  box-shadow: 0 18px 45px rgba(24, 35, 63, .08);
 }
 
 .research-iii-page main > :is(
@@ -1698,12 +1886,14 @@ img {
   section[id^="v46-"],
   section[id^="v51-"]
 ) .measurement-figure-grid .figure-card img {
-  display: block;
-  width: 100%;
-  max-height: 690px;
-  margin: 0 auto;
-  border-radius: 6px;
-  object-fit: contain;
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: auto !important;
+  max-height: none !important;
+  margin: 0 !important;
+  border-radius: 8px;
+  object-fit: initial !important;
 }
 
 .research-iii-page main > :is(
@@ -1716,7 +1906,7 @@ img {
   section[id^="v46-"],
   section[id^="v51-"]
 ) .measurement-figure-grid .figure-card > .eyebrow {
-  margin: 18px 0 5px;
+  margin: 22px 0 5px;
 }
 
 .research-iii-page main > :is(
@@ -1729,10 +1919,12 @@ img {
   section[id^="v46-"],
   section[id^="v51-"]
 ) .measurement-figure-grid .figure-card > h3 {
-  max-width: 850px;
-  margin: 0 0 7px;
-  font-size: 1.14rem;
-  line-height: 1.38;
+  max-width: 880px;
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: 1.42rem;
+  font-weight: 600;
+  line-height: 1.3;
 }
 
 .research-iii-page main > :is(
@@ -1746,10 +1938,10 @@ img {
   section[id^="v51-"]
 ) .measurement-figure-grid .figure-card > p:not(.eyebrow) {
   max-width: 900px;
-  margin: 0 0 12px;
+  margin: 0 0 14px;
   color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.64;
+  font-size: .94rem;
+  line-height: 1.65;
 }
 
 .research-iii-page main > :is(
@@ -1762,13 +1954,12 @@ img {
   section[id^="v46-"],
   section[id^="v51-"]
 ) > .r3-design-law-grid {
-  order: 3;
   display: grid !important;
   grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
   gap: 0 !important;
-  margin: 4px 0 0 !important;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  margin: 30px 0 0 !important;
+  border-top: 1px solid #cfd6e2;
+  border-bottom: 1px solid #cfd6e2;
 }
 
 .research-iii-page main > :is(
@@ -1782,9 +1973,9 @@ img {
   section[id^="v51-"]
 ) > .r3-design-law-grid article {
   min-width: 0;
-  padding: 20px 20px 22px !important;
+  padding: 20px 22px 22px !important;
   border: 0 !important;
-  border-right: 1px solid var(--line) !important;
+  border-right: 1px solid #cfd6e2 !important;
   border-radius: 0 !important;
   background: transparent !important;
 }
@@ -1814,8 +2005,8 @@ img {
 ) > .r3-design-law-grid strong {
   display: block;
   margin-bottom: 7px;
-  font-size: 0.94rem;
-  line-height: 1.42;
+  font-size: .94rem;
+  line-height: 1.4;
 }
 
 .research-iii-page main > :is(
@@ -1830,8 +2021,8 @@ img {
 ) > .r3-design-law-grid p {
   margin: 0;
   color: var(--muted);
-  font-size: 0.84rem;
-  line-height: 1.58;
+  font-size: .84rem;
+  line-height: 1.57;
 }
 
 .research-iii-page main > :is(
@@ -1844,14 +2035,13 @@ img {
   section[id^="v46-"],
   section[id^="v51-"]
 ) > .boundary {
-  order: 4;
   max-width: 980px;
-  margin: 2px 0 0 !important;
+  margin: 24px 0 0 !important;
   padding: 14px 18px !important;
   border: 0 !important;
-  border-left: 3px solid var(--accent2) !important;
+  border-left: 3px solid #6477b9 !important;
   border-radius: 0 !important;
-  background: var(--soft) !important;
+  background: rgba(99, 119, 185, .075) !important;
 }
 
 .research-iii-page main > :is(
@@ -1865,8 +2055,8 @@ img {
   section[id^="v51-"]
 ) > .boundary p {
   margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-size: .9rem;
+  line-height: 1.58;
 }
 
 .research-iii-page main > :is(
@@ -1879,8 +2069,7 @@ img {
   section[id^="v46-"],
   section[id^="v51-"]
 ) > .figure-source-links {
-  order: 5;
-  margin: 0;
+  margin-top: 16px;
 }
 
 .research-iii-page main > :is(
@@ -1895,7 +2084,7 @@ img {
 ) .figure-source-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
+  gap: 8px 18px;
 }
 
 .research-iii-page main > :is(
@@ -1908,20 +2097,31 @@ img {
   section[id^="v46-"],
   section[id^="v51-"]
 ) .figure-source-links a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 31px;
-  padding: 5px 8px;
+  padding: 0;
   border: 0;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid #b9c2d2;
   border-radius: 0;
   background: transparent;
-  font-size: 0.74rem;
+  font-size: .78rem;
   font-weight: 700;
   text-decoration: none;
 }
 
+.research-iii-page .r3-stage-extension {
+  margin-top: 0 !important;
+}
+
 @media (max-width: 900px) {
+  .research-iii-page main > .hero .status-grid,
+  .research-iii-page .stage-nav-track {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .research-iii-page .stage-nav-intro {
+    grid-template-columns: 1fr;
+    row-gap: 14px;
+  }
+
   .research-iii-page main > :is(
     section[id^="v16-"],
     section[id^="v21-"],
@@ -1944,7 +2144,7 @@ img {
     section[id^="v41-"],
     section[id^="v46-"],
     section[id^="v51-"]
-  ) > .r3-design-law-grid article:nth-child(2) {
+  ) > .r3-design-law-grid article:nth-child(2n) {
     border-right: 0 !important;
   }
 
@@ -1958,11 +2158,41 @@ img {
     section[id^="v46-"],
     section[id^="v51-"]
   ) > .r3-design-law-grid article:nth-child(-n+2) {
-    border-bottom: 1px solid var(--line) !important;
+    border-bottom: 1px solid #cfd6e2 !important;
   }
 }
 
 @media (max-width: 620px) {
+  .research-iii-page main > .hero {
+    padding-top: 62px !important;
+    padding-bottom: 38px !important;
+  }
+
+  .research-iii-page main > .hero h1 {
+    font-size: clamp(2.45rem, 12vw, 3.55rem);
+  }
+
+  .research-iii-page main > .hero .status-grid,
+  .research-iii-page .stage-nav-track {
+    grid-template-columns: 1fr;
+  }
+
+  .research-iii-page main > .hero .status-grid > div,
+  .research-iii-page main > .hero .status-grid > div:not(:first-child) {
+    padding: 15px 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255,255,255,.13);
+  }
+
+  .research-iii-page main > .hero .status-grid > div:last-child {
+    border-bottom: 0;
+  }
+
+  .research-iii-page .research-iii-stage-nav {
+    padding-top: 34px;
+    padding-bottom: 36px;
+  }
+
   .research-iii-page main > :is(
     section[id^="v16-"],
     section[id^="v21-"],
@@ -1973,9 +2203,8 @@ img {
     section[id^="v46-"],
     section[id^="v51-"]
   ) {
-    padding-top: 44px;
-    padding-bottom: 48px;
-    gap: 18px;
+    padding-top: 50px;
+    padding-bottom: 52px;
   }
 
   .research-iii-page main > :is(
@@ -2002,7 +2231,7 @@ img {
     section[id^="v51-"]
   ) > .r3-design-law-grid article {
     border-right: 0 !important;
-    border-bottom: 1px solid var(--line) !important;
+    border-bottom: 1px solid #cfd6e2 !important;
   }
 
   .research-iii-page main > :is(
@@ -2016,18 +2245,5 @@ img {
     section[id^="v51-"]
   ) > .r3-design-law-grid article:last-child {
     border-bottom: 0 !important;
-  }
-
-  .research-iii-page main > :is(
-    section[id^="v16-"],
-    section[id^="v21-"],
-    section[id^="v26-"],
-    section[id^="v31-"],
-    section[id^="v36-"],
-    section[id^="v41-"],
-    section[id^="v46-"],
-    section[id^="v51-"]
-  ) .measurement-figure-grid .figure-card > a:first-child {
-    padding: 8px;
   }
 }
