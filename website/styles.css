@@ -1667,8 +1667,9 @@ img {
   border-bottom: 1px solid rgba(255,255,255,.12);
 }
 
-.research-iii-page main > .hero .eyebrow {
-  color: #b9c7ff;
+body.research-iii-page main > .hero .eyebrow {
+  color: #d7dfff !important;
+  opacity: 1 !important;
 }
 
 .research-iii-page main > .hero h1 {
@@ -1679,11 +1680,14 @@ img {
   letter-spacing: -.045em;
 }
 
-.research-iii-page main > .hero .lede {
+body.research-iii-page main > .hero .lede,
+body.research-iii-page main > .hero p:not(.eyebrow) {
   max-width: 900px;
-  color: #d6dceb;
+  color: #f2f6ff !important;
+  opacity: 1 !important;
   font-size: 1.08rem;
   line-height: 1.76;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .16);
 }
 
 .research-iii-page .research-iii-hero-actions {
@@ -1730,13 +1734,21 @@ img {
   border-right: 0;
 }
 
-.research-iii-page main > .hero .status-grid strong {
-  color: #ffffff;
+body.research-iii-page main > .hero .status-grid strong {
+  color: #ffffff !important;
+  opacity: 1 !important;
   font-size: 1.35rem;
 }
 
-.research-iii-page main > .hero .status-grid span {
-  color: #bdc7d9;
+body.research-iii-page main > .hero .status-grid span,
+body.research-iii-page main > .hero .status-grid small {
+  color: #dbe7f5 !important;
+  opacity: 1 !important;
+}
+
+body.research-iii-page main > .hero .status-grid,
+body.research-iii-page main > .hero .status-grid > div {
+  border-color: rgba(242, 246, 255, .42) !important;
 }
 
 .research-iii-page .research-iii-stage-nav {
