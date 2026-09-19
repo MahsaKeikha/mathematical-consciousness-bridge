@@ -139,14 +139,16 @@ def test_research_lineage_exposes_current_research_three_v50_record() -> None:
     assert "statistically valid source inference is still not direct evidence" in lineage
 
 
-def test_research_three_stage_layout_is_integrated_and_space_efficient() -> None:
+def test_research_three_stage_layout_uses_journal_style_full_width_figures() -> None:
     page = _read("website/measurement-science.html")
     styles = _read("website/styles.css")
 
     assert '<body class="research-iii-page">' in page
-    assert "Research III integrated scientific narrative" in styles
+    assert "Research III journal-style scientific narrative" in styles
     assert 'section[id^="v31-"]' in styles
-    assert 'section[id^="v36-"]' in styles
-    assert "grid-template-columns: minmax(0, 1.04fr) minmax(430px, 0.96fr)" in styles
-    assert "grid-row: 1 / span 2" in styles
-    assert "grid-template-columns: repeat(4, minmax(0, 1fr))" in styles
+    assert 'section[id^="v51-"]' in styles
+    assert "display: flex;" in styles
+    assert "max-width: 1180px;" in styles
+    assert "max-height: 690px;" in styles
+    assert "border-left: 3px solid var(--accent2)" in styles
+    assert "grid-template-columns: repeat(4, minmax(0, 1fr)) !important" in styles
