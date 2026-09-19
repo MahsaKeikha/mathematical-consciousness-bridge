@@ -111,6 +111,10 @@ def _replace_research_three_metrics(text: str) -> str:
             f"{old_count}-test suite",
             f"{CURRENT_RESEARCH_THREE_TEST_COUNT}-test suite",
         )
+        text = text.replace(
+            f"{old_count} tests",
+            f"{CURRENT_RESEARCH_THREE_TEST_COUNT} tests",
+        )
 
     for old_visuals, old_validation in ((19, 10), (23, 14), (24, 15), (25, 16), (26, 17), (27, 18), (28, 19), (29, 20), (30, 21)):
         text = text.replace(
