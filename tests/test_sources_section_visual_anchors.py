@@ -31,7 +31,7 @@ def test_sources_visuals_use_scientific_project_figures() -> None:
 
 
 def test_sources_research_iii_visual_uses_validated_pin() -> None:
-    assert "466b327dcd31dadee630d3b7d36fa55817766496" in VISUALS
+    assert "8de006a11d09d290fa3a45d144f8b024012fac3d" in VISUALS
     assert "consciousness-measurement-science/${MEASUREMENT_PIN}" in VISUALS
     assert "blob/${MEASUREMENT_PIN}/docs/measurement-framework.md" in VISUALS
 
