@@ -126,7 +126,7 @@ jobs:
           grep -q "${R3_PIN}" _site/research-lineage.html
           grep -q 'V1-V55' _site/research-lineage.html
           grep -q '22</strong><span>code-generated validation figures' _site/research-lineage.html
-          grep -q '192</strong><span>tests in each CI job' _site/research-lineage.html
+          grep -q '196</strong><span>tests in each CI job' _site/research-lineage.html
           grep -q '11</strong><span>reproducible validation runners' _site/research-lineage.html
           grep -q 'v36_v40_electromagnetic_finite_sample_validation.svg' _site/research-lineage.html
           grep -q 'V36-V40 · finite-sample electromagnetic inference' _site/research-lineage.html
@@ -184,10 +184,10 @@ jobs:
           grep -q "${R3_PIN}" _site/research-orientation.js
           grep -q "${R3_PIN}" _site/research-iii-atlas-refresh.js
           grep -q 'V1-V55' _site/measurement-science.html
-          grep -q '192</strong><span>tests in each CI job' _site/measurement-science.html
+          grep -q '196</strong><span>tests in each CI job' _site/measurement-science.html
           grep -q '31</strong><span>scientific visuals: 9 architecture + 22 validation' _site/measurement-science.html
           grep -q 'V1-V55 formal validation' _site/research-orientation.js
-          grep -q '192</strong><span>tests in each CI job' _site/research-orientation.js
+          grep -q '196</strong><span>tests in each CI job' _site/research-orientation.js
           grep -q '31 scientific visuals' _site/research-orientation.js
           grep -q '11 reproducible validation runners' _site/research-orientation.js
           grep -q 'research-i-complete-figure-gallery' _site/three-program-evidence.js
@@ -205,7 +205,7 @@ jobs:
           grep -q 'V41-V45 multiplicity and selection-safe electromagnetic inference program' _site/sources.html
           grep -q 'V1-V55' _site/visual-atlas.html
           grep -q '22</strong><span>code-generated validation figures' _site/visual-atlas.html
-          grep -q '192</strong><span>tests in each CI job' _site/visual-atlas.html
+          grep -q '196</strong><span>tests in each CI job' _site/visual-atlas.html
           grep -q 'v26_v30_electromagnetic_resolution_validation.svg' _site/visual-atlas.html
           grep -q 'v31_v35_electromagnetic_design_validation.svg' _site/visual-atlas.html
           grep -q 'v36_v40_electromagnetic_finite_sample_validation.svg' _site/visual-atlas.html
