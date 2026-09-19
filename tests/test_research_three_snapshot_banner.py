@@ -129,7 +129,7 @@ def test_research_lineage_exposes_current_research_three_v50_record() -> None:
     assert PIN in lineage
     assert "<strong>V1-V55</strong><span>formal validation stages</span>" in lineage
     assert "<strong>22</strong><span>code-generated validation figures</span>" in lineage
-    assert "<strong>196</strong><span>tests in each CI job</span>" in lineage
+    assert "<strong>198</strong><span>tests in each CI job</span>" in lineage
     assert "<strong>11</strong><span>reproducible validation runners</span>" in lineage
     assert "v41_v45_electromagnetic_selection_validation.svg" in lineage
     assert "V41-V45 selection-safe inference" in lineage
