@@ -164,7 +164,15 @@ def test_plain_language_and_start_here_are_three_stage_reader_entries() -> None:
     assert f"{frontier} linked results · technical endpoint P{frontier}" in plain
     assert 'id="project-journey"' in plain
     assert "If you remember only three things" in plain
+    assert "Finding a physical system is not the same as finding consciousness" in plain
+    assert "A failed bridge test has a limited meaning" in plain
+    assert "Uncertainty is a valid scientific result" in plain
+    assert "P93 is the current checkpoint" not in plain
     assert re.search(r'id="p\\d+-reader-frontier"', plain) is None
+    research_i = plain.index("<span>Research I</span>")
+    research_ii = plain.index("<span>Research II</span>")
+    research_iii = plain.index("<span>Research III</span>")
+    assert research_i < research_ii < research_iii
     assert f"{frontier} results · current frontier P{frontier}" in start
     assert 'id="program-stages"' in start
     assert f"The {frontier} Research II propositions by scientific role" in start
