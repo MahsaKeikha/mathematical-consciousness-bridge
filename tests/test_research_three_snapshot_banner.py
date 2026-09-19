@@ -28,19 +28,19 @@ def test_research_three_v50_public_layer_uses_verified_snapshot() -> None:
     assert "31 scientific visuals" in orientation
 
 
-def test_research_three_page_has_visual_v1_v50_reproducibility_map() -> None:
+def test_research_three_page_has_visual_v1_v55_reproducibility_map() -> None:
     page = _read("website/measurement-science.html")
     styles = _read("website/styles.css")
     refresh = _read("website/research-iii-atlas-refresh.js")
 
-    assert "Ten validation programs move from identifiability to robustness, study design, electromagnetic measurement, source identifiability, resolution and information limits, design and spatial specificity, finite-sample inference, selection-safe inference, and cross-site replication inference" in page
-    for stage in ("V1-V5", "V6-V10", "V11-V15", "V16-V20", "V21-V25", "V26-V30", "V31-V35", "V36-V40", "V41-V45", "V46-V50"):
+    assert "Eleven validation programs move from identifiability to robustness, study design, electromagnetic measurement, source identifiability, resolution and information limits, design and spatial specificity, finite-sample inference, selection-safe inference, cross-site replication inference, and transportability" in page
+    for stage in ("V1-V5", "V6-V10", "V11-V15", "V16-V20", "V21-V25", "V26-V30", "V31-V35", "V36-V40", "V41-V45", "V46-V50", "V51-V55"):
         assert stage in page
     for label in ("Derivation", "Code", "Results", "Figures"):
         assert page.count(f">{label}<") >= 3
     for label in ("Research program", "Figure"):
         assert f">{label}<" in page
-    for node in range(1, 51):
+    for node in range(1, 56):
         assert f"<span>V{node}</span>" in page
     for seed in ("20260917", "20260918", "20260919"):
         assert seed in page
@@ -55,11 +55,12 @@ def test_research_three_page_has_visual_v1_v50_reproducibility_map() -> None:
         "run_electromagnetic_finite_sample_validation.py",
         "run_electromagnetic_selection_validation.py",
         "run_electromagnetic_replication_validation.py",
+        "run_transportability_validation.py",
     ):
         assert runner in page
 
     assert 'class="validation-flow"' in page
-    assert page.count('class="validation-node"') == 50
+    assert page.count('class="validation-node"') == 55
     assert ".validation-flow::before" in styles
     assert "grid-template-columns: repeat(5, minmax(0, 1fr))" in styles
     assert "Two deterministic runners regenerate" not in page
@@ -139,14 +140,22 @@ def test_research_lineage_exposes_current_research_three_v50_record() -> None:
     assert "statistically valid source inference is still not direct evidence" in lineage
 
 
-def test_research_three_stage_layout_is_integrated_and_space_efficient() -> None:
+def test_research_three_page_uses_editorial_full_width_result_stages() -> None:
     page = _read("website/measurement-science.html")
     styles = _read("website/styles.css")
 
     assert '<body class="research-iii-page">' in page
-    assert "Research III integrated scientific narrative" in styles
+    assert "Research III editorial research experience" in styles
+    assert 'class="research-iii-stage-nav"' in page
+    assert "Follow the result journey" in page
+    assert "Open the V1-V55 validation record" in page
     assert 'section[id^="v31-"]' in styles
-    assert 'section[id^="v36-"]' in styles
-    assert "grid-template-columns: minmax(0, 1.04fr) minmax(430px, 0.96fr)" in styles
-    assert "grid-row: 1 / span 2" in styles
-    assert "grid-template-columns: repeat(4, minmax(0, 1fr))" in styles
+    assert 'section[id^="v51-"]' in styles
+    assert "max-width: none !important" in styles
+    assert "height: auto !important" in styles
+    assert "max-height: none !important" in styles
+    assert "grid-template-columns: minmax(0, 1.04fr) minmax(430px, 0.96fr)" not in styles
+    assert "order: 2;" in styles
+    assert "order: 4;" in styles
+    assert "grid-template-columns: repeat(4, minmax(0, 1fr)) !important" in styles
+    assert "linear-gradient(135deg, #111827 0%, #17233a 48%, #1d2e5c 100%)" in styles
