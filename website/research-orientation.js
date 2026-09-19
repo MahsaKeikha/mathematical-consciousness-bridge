@@ -121,6 +121,7 @@
       links: [
         ['#research-i-complete-figure-gallery', 'Open the Research I result figures'],
         ['#research-ii-complete-core-gallery', 'Open the Research II core visuals'],
+        ['#research-iii-evidence-architecture', 'Open the Research III V16-V55 evidence architecture'],
         ['#research-iii-complete-figure-gallery', 'Open all 9 Research III architecture figures'],
         ['#research-iii-validation-figure-gallery', 'Open all 22 Research III validation figures'],
       ],
