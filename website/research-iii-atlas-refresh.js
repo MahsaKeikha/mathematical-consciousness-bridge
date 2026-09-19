@@ -513,7 +513,7 @@
         <div><span class="source-visual-badge">Research III executable evidence</span><h3>Formal validation V1-V55: derivations, result data, figures, code, and tests</h3><p>The architecture sources remain separate from the result record. Every validation figure below is pinned to the same verified Research III commit and links to its formal derivation, exact machine-readable result file, and figure source.</p></div>
         <span class="source-visual-badge">22 result figures</span>
       </div>
-      <div class="source-section-visual-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">Validation program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Result index</a><a href="${MEASUREMENT_REPO}/tree/${RESEARCH_III_PIN}/tests">196-test suite</a></div>
+      <div class="source-section-visual-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">Validation program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Result index</a><a href="${MEASUREMENT_REPO}/tree/${RESEARCH_III_PIN}/tests">198-test suite</a></div>
       <div class="r3-validation-grid">${VALIDATION_FIGURES.map(validationCard).join('')}</div>`;
 
     const existing = document.getElementById('research-iii-source-complete-figure-gallery');
@@ -535,7 +535,7 @@
       const cells = status.querySelectorAll(':scope > div');
       if (cells[0]) cells[0].innerHTML = '<strong>V1-V55</strong><span>formal validation stages</span>';
       if (cells[1]) cells[1].innerHTML = '<strong>31</strong><span>scientific visuals: 9 architecture + 22 validation</span>';
-      if (cells[2]) cells[2].innerHTML = '<strong>196</strong><span>tests in each CI job</span>';
+      if (cells[2]) cells[2].innerHTML = '<strong>198</strong><span>tests in each CI job</span>';
       if (cells[3]) cells[3].innerHTML = '<strong>3</strong><span>Python versions in the CI matrix</span>';
     }
 
@@ -864,7 +864,7 @@
     if (!programCard) return false;
     const metric = programCard.querySelector('.research-program-metric');
     const meta = programCard.querySelector('.research-program-meta');
-    if (metric) metric.innerHTML = '<strong>196</strong><span>tests in each CI job</span>';
+    if (metric) metric.innerHTML = '<strong>198</strong><span>tests in each CI job</span>';
     if (meta) meta.textContent = 'V1-V55 formal validation · 31 scientific visuals · 11 reproducible validation runners';
     return true;
   }
