@@ -1,5 +1,5 @@
 (() => {
-  const RESEARCH_III_PIN = '8de006a11d09d290fa3a45d144f8b024012fac3d';
+  const RESEARCH_III_PIN = '03a0a14398060a3b4ea2599499510664e5db5108';
   const MEASUREMENT_REPO = 'https://github.com/MahsaKeikha/consciousness-measurement-science';
   const RAW_PIN_PREFIX =
     `https://raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/${RESEARCH_III_PIN}/docs/figures/`;
@@ -8,8 +8,16 @@
   const RESULT_PIN_PREFIX =
     `${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/`;
 
-  const LEGACY_PINS = ['8de006a11d09d290fa3a45d144f8b024012fac3d'];
+  const LEGACY_PINS = [];
 
+
+  const ORIENTATION_FIGURE = {
+    title: 'Research III evidence architecture',
+    file: 'research_iii_evidence_architecture.svg',
+    context: 'docs/visual-research-guide.md',
+    phase: 'V16-V55 evidence architecture',
+    summary: 'Eight linked validation layers expose the scientific question, failure gate, evidence path, and claim ceiling from electromagnetic organization through transportability.',
+  };
 
   const FOUNDATION_FIGURES = [
     {
@@ -281,18 +289,6 @@
   function repinValue(value) {
     let updated = value;
     for (const pin of LEGACY_PINS) updated = updated.replaceAll(pin, RESEARCH_III_PIN);
-    updated = updated.replace(
-      'github.com/MahsaKeikha/consciousness-measurement-science/blob/8de006a11d09d290fa3a45d144f8b024012fac3d/',
-      `github.com/MahsaKeikha/consciousness-measurement-science/blob/${RESEARCH_III_PIN}/`,
-    );
-    updated = updated.replace(
-      'github.com/MahsaKeikha/consciousness-measurement-science/tree/8de006a11d09d290fa3a45d144f8b024012fac3d/',
-      `github.com/MahsaKeikha/consciousness-measurement-science/tree/${RESEARCH_III_PIN}/`,
-    );
-    updated = updated.replace(
-      'raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/8de006a11d09d290fa3a45d144f8b024012fac3d/',
-      `raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/${RESEARCH_III_PIN}/`,
-    );
     return updated;
   }
 
@@ -318,6 +314,11 @@
     const style = document.createElement('style');
     style.id = 'research-iii-validation-styles';
     style.textContent = `
+      .r3-evidence-architecture{margin:1.6rem 0 2rem;padding:1.35rem;border:1px solid rgba(89,112,153,.28);border-radius:22px;background:linear-gradient(180deg,rgba(249,251,254,.98),rgba(244,248,252,.98));box-shadow:0 18px 46px rgba(24,35,63,.07)}
+      .r3-evidence-architecture .r3-architecture-frame{display:block;margin:1rem 0 1.15rem;padding:.75rem;border:1px solid #d5dde8;border-radius:18px;background:#fff}
+      .r3-evidence-architecture .r3-architecture-frame img{display:block;width:100%;height:auto;max-height:760px;object-fit:contain;background:#fff}
+      .r3-evidence-architecture .section-head{max-width:980px;margin-bottom:.6rem}
+      .r3-evidence-architecture .boundary{margin-top:1rem}
       .r3-validation-record{margin:1.4rem 0;padding:1.25rem;border:1px solid rgba(120,140,170,.28);border-radius:20px;background:rgba(255,255,255,.025)}
       .r3-validation-head{display:flex;gap:1rem;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;margin-bottom:1rem}
       .r3-validation-head h3{margin:.3rem 0 .45rem}.r3-validation-head p{margin:0;max-width:900px;line-height:1.6}
@@ -358,6 +359,25 @@
       @media(max-width:680px){#research-iii-validation-figure-gallery .r3-validation-grid{grid-template-columns:1fr}#research-iii-validation-figure-gallery .r3-validation-card img{height:auto;max-height:460px}#research-iii-validation-figure-gallery .r3-validation-card>a{min-height:260px}}
     `;
     document.head.appendChild(style);
+  }
+
+  function evidenceArchitectureMarkup() {
+    const figureUrl = `${BLOB_PIN_PREFIX}${ORIENTATION_FIGURE.file}`;
+    const rawUrl = `${RAW_PIN_PREFIX}${ORIENTATION_FIGURE.file}`;
+    return `
+      <div class="section-head">
+        <p class="eyebrow">Research III · Evidence architecture</p>
+        <h2>Read the research as a chain of failure gates, not as a collection of plots</h2>
+        <p>This orientation schematic shows how V16-V55 advances from physical field organization through source identifiability, resolution, design, finite-sample inference, selection safety, replication, and transport. Each layer can stop the claim when its own assumptions fail.</p>
+      </div>
+      <a class="r3-architecture-frame" href="${figureUrl}" aria-label="Open full-resolution Research III evidence architecture"><img loading="eager" decoding="async" src="${rawUrl}" alt="Research III V16 to V55 evidence architecture with eight validation layers, failure gates, evidence path, and claim ceiling" /></a>
+      <div class="r3-design-law-grid">
+        <article><strong>Eight explicit failure gates</strong><p>Each layer states what would invalidate or limit the inference before a stronger interpretation is allowed.</p></article>
+        <article><strong>Equations beside evidence</strong><p>The redesigned V-series figures place governing laws, reference conditions, and diagnostics next to the plotted result.</p></article>
+        <article><strong>Claim ceiling remains visible</strong><p>Passing a measurement-science gate does not convert an electromagnetic statistic into a direct measure of consciousness.</p></article>
+      </div>
+      <div class="boundary"><p><strong>Scientific status:</strong> this is an orientation schematic for the validated analytic and synthetic program. It is not an additional empirical result and does not increase the 31 scientific-result figure count.</p></div>
+      <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/visual-research-guide.md">Visual research guide</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/figure-catalog.md">Figure catalog</a><a href="${figureUrl}">Figure source</a></div>`;
   }
 
   function sourceLinks(record) {
@@ -450,11 +470,16 @@
       legacyShowcase.setAttribute('aria-hidden', 'true');
     }
 
+    document.getElementById('research-iii-evidence-architecture')?.remove();
     document.getElementById('research-iii-complete-figure-gallery')?.remove();
     document.getElementById('research-iii-curated-visual-story')?.remove();
     document.getElementById('research-iii-validation-figure-gallery')?.remove();
 
     const boundary = section.querySelector('.boundary');
+    const orientation = document.createElement('div');
+    orientation.id = 'research-iii-evidence-architecture';
+    orientation.className = 'r3-evidence-architecture';
+    orientation.innerHTML = evidenceArchitectureMarkup();
     const curated = FOUNDATION_FIGURES.filter((record) => CURATED_FILES.has(record.file));
 
     const story = document.createElement('div');
@@ -490,11 +515,12 @@
       <div class="r3-validation-grid">${VALIDATION_FIGURES.map(validationCard).join('')}</div>`;
 
     if (boundary) {
+      boundary.insertAdjacentElement('beforebegin', orientation);
       boundary.insertAdjacentElement('beforebegin', story);
       boundary.insertAdjacentElement('beforebegin', complete);
       boundary.insertAdjacentElement('beforebegin', validation);
     } else {
-      section.append(story, complete, validation);
+      section.append(orientation, story, complete, validation);
     }
     return true;
   }
@@ -529,6 +555,16 @@
   function renderResearchIIIMeasurementPage() {
     if (currentFile() !== 'measurement-science.html') return false;
     repinResearchIIIAssets();
+
+    document.getElementById('research-iii-evidence-architecture')?.remove();
+    const hero = document.querySelector('main > section.hero');
+    if (hero) {
+      const orientation = document.createElement('section');
+      orientation.id = 'research-iii-evidence-architecture';
+      orientation.className = 'r3-evidence-architecture';
+      orientation.innerHTML = evidenceArchitectureMarkup();
+      hero.insertAdjacentElement('afterend', orientation);
+    }
 
     const status = document.querySelector('.status-grid');
     if (status) {
