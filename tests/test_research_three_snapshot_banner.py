@@ -1,7 +1,7 @@
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PIN = "edc1db943d6efe8bdc679dbc5d77ecb7633476ab"
+PIN = "89581ff150d768998967500d079d7ba61deafe86"
 
 
 def _read(path: str) -> str:
@@ -22,10 +22,10 @@ def test_research_three_v50_public_layer_uses_verified_snapshot() -> None:
 
     assert PIN in refresh
     assert PIN in orientation
-    assert "V1-V50 result record" in refresh
-    assert "21 / 21 visible" in refresh
-    assert "182</strong><span>tests in each CI job" in orientation
-    assert "30 scientific visuals" in orientation
+    assert "V1-V55 result record" in refresh
+    assert "22 / 22 visible" in refresh
+    assert "192</strong><span>tests in each CI job" in orientation
+    assert "31 scientific visuals" in orientation
 
 
 def test_research_three_page_has_visual_v1_v50_reproducibility_map() -> None:
@@ -64,7 +64,7 @@ def test_research_three_page_has_visual_v1_v50_reproducibility_map() -> None:
     assert "grid-template-columns: repeat(5, minmax(0, 1fr))" in styles
     assert "Two deterministic runners regenerate" not in page
     assert "data-v11-v15-runner" not in refresh
-    assert "What V1-V50 establishes, and what it does not" in page
+    assert "What V1-V55 establishes, and what it does not" in page
     assert "v16_v20_electromagnetic_validation.svg" in page
     assert "electromagnetic_validation_summary.json" in page
     assert "electromagnetic-field-program.md" in page
@@ -95,6 +95,9 @@ def test_research_three_page_has_visual_v1_v50_reproducibility_map() -> None:
     assert "electromagnetic-selection-safe-inference.md" in page
     assert "v41-v45-electromagnetic-selection-safe-inference" in page
     assert "v46_v50_electromagnetic_replication_validation.svg" in page
+    assert "v51_v55_transportability_validation.svg" in page
+    assert "transportability_validation_summary.json" in page
+    assert "transportability-program.md" in page
     assert "electromagnetic_replication_validation_summary.json" in page
     assert "electromagnetic-replication-inference.md" in page
     assert "v46-v50-electromagnetic-replication-inference" in page
@@ -104,10 +107,10 @@ def test_homepage_orientation_promotes_engineering_validation() -> None:
     script = _read("website/research-orientation.js")
 
     assert "function enhanceHomepageResearchIII()" in script
-    assert "V1-V50 formal validation" in script
-    assert "182</strong><span>tests in each CI job" in script
-    assert "30 scientific visuals" in script
-    assert "10 reproducible validation runners" in script
+    assert "V1-V55 formal validation" in script
+    assert "192</strong><span>tests in each CI job" in script
+    assert "31 scientific visuals" in script
+    assert "11 reproducible validation runners" in script
     assert "enhanceHomepageResearchIII();" in script
 
 
@@ -123,10 +126,10 @@ def test_research_lineage_exposes_current_research_three_v50_record() -> None:
     lineage = _read("website/research-lineage.html")
 
     assert PIN in lineage
-    assert "<strong>V1-V50</strong><span>formal validation stages</span>" in lineage
-    assert "<strong>21</strong><span>code-generated validation figures</span>" in lineage
-    assert "<strong>182</strong><span>tests in each CI job</span>" in lineage
-    assert "<strong>10</strong><span>reproducible validation runners</span>" in lineage
+    assert "<strong>V1-V55</strong><span>formal validation stages</span>" in lineage
+    assert "<strong>22</strong><span>code-generated validation figures</span>" in lineage
+    assert "<strong>192</strong><span>tests in each CI job</span>" in lineage
+    assert "<strong>11</strong><span>reproducible validation runners</span>" in lineage
     assert "v41_v45_electromagnetic_selection_validation.svg" in lineage
     assert "V41-V45 selection-safe inference" in lineage
     assert "electromagnetic-selection-safe-inference.md" in lineage
