@@ -20,7 +20,7 @@ def test_visual_atlas_has_all_three_programs_with_distinct_status() -> None:
 
     assert "58" in atlas and "45" in atlas and "33" in atlas and "223" in atlas
     assert "100" in atlas and "158" in atlas and "P100" in atlas
-    assert "V1-V55" in atlas and "22" in atlas and "198" in atlas and "M0-M7" in atlas
+    assert "V1-V55" in atlas and "22" in atlas and "200" in atlas and "M0-M7" in atlas
     assert "V21-V25 source identifiability" in atlas
     assert "V26-V30 resolution and information limits" in atlas
     assert "V31-V35 design and spatial specificity" in atlas
@@ -92,19 +92,19 @@ def test_sources_links_each_program_to_its_real_audit_record() -> None:
         "mathematical-consciousness-bridge/blob/main/docs/theorem_roadmap.md",
         "mathematical-consciousness-bridge/blob/main/figures/manifest.json",
         "mathematical-consciousness-bridge/tree/main/tests",
-        "consciousness-measurement-science/blob/8de006a11d09d290fa3a45d144f8b024012fac3d/docs/epistemic-boundaries.md",
-        "consciousness-measurement-science/blob/8de006a11d09d290fa3a45d144f8b024012fac3d/docs/measurement-framework.md",
-        "consciousness-measurement-science/blob/8de006a11d09d290fa3a45d144f8b024012fac3d/docs/statistical-validation.md",
-        "consciousness-measurement-science/blob/8de006a11d09d290fa3a45d144f8b024012fac3d/docs/reproducibility.md",
-        "consciousness-measurement-science/blob/8de006a11d09d290fa3a45d144f8b024012fac3d/docs/electromagnetic-field-program.md",
-        "consciousness-measurement-science/blob/8de006a11d09d290fa3a45d144f8b024012fac3d/docs/electromagnetic-source-identifiability.md",
-        "consciousness-measurement-science/blob/8de006a11d09d290fa3a45d144f8b024012fac3d/docs/electromagnetic-resolution-program.md",
-        "consciousness-measurement-science/blob/8de006a11d09d290fa3a45d144f8b024012fac3d/docs/electromagnetic-design-spatial-specificity.md",
-        "consciousness-measurement-science/blob/8de006a11d09d290fa3a45d144f8b024012fac3d/docs/electromagnetic-finite-sample-inference.md",
-        "consciousness-measurement-science/blob/8de006a11d09d290fa3a45d144f8b024012fac3d/docs/electromagnetic-selection-safe-inference.md",
-        "consciousness-measurement-science/blob/8de006a11d09d290fa3a45d144f8b024012fac3d/docs/electromagnetic-replication-inference.md",
-        "consciousness-measurement-science/blob/8de006a11d09d290fa3a45d144f8b024012fac3d/docs/electromagnetic-source-identifiability.md",
-        "consciousness-measurement-science/tree/8de006a11d09d290fa3a45d144f8b024012fac3d/schemas",
+        "consciousness-measurement-science/blob/03a0a14398060a3b4ea2599499510664e5db5108/docs/epistemic-boundaries.md",
+        "consciousness-measurement-science/blob/03a0a14398060a3b4ea2599499510664e5db5108/docs/measurement-framework.md",
+        "consciousness-measurement-science/blob/03a0a14398060a3b4ea2599499510664e5db5108/docs/statistical-validation.md",
+        "consciousness-measurement-science/blob/03a0a14398060a3b4ea2599499510664e5db5108/docs/reproducibility.md",
+        "consciousness-measurement-science/blob/03a0a14398060a3b4ea2599499510664e5db5108/docs/electromagnetic-field-program.md",
+        "consciousness-measurement-science/blob/03a0a14398060a3b4ea2599499510664e5db5108/docs/electromagnetic-source-identifiability.md",
+        "consciousness-measurement-science/blob/03a0a14398060a3b4ea2599499510664e5db5108/docs/electromagnetic-resolution-program.md",
+        "consciousness-measurement-science/blob/03a0a14398060a3b4ea2599499510664e5db5108/docs/electromagnetic-design-spatial-specificity.md",
+        "consciousness-measurement-science/blob/03a0a14398060a3b4ea2599499510664e5db5108/docs/electromagnetic-finite-sample-inference.md",
+        "consciousness-measurement-science/blob/03a0a14398060a3b4ea2599499510664e5db5108/docs/electromagnetic-selection-safe-inference.md",
+        "consciousness-measurement-science/blob/03a0a14398060a3b4ea2599499510664e5db5108/docs/electromagnetic-replication-inference.md",
+        "consciousness-measurement-science/blob/03a0a14398060a3b4ea2599499510664e5db5108/docs/electromagnetic-source-identifiability.md",
+        "consciousness-measurement-science/tree/03a0a14398060a3b4ea2599499510664e5db5108/schemas",
     ):
         assert token in sources
 
@@ -138,7 +138,7 @@ def test_sitewide_orientation_describes_atlas_and_sources_as_three_program_surfa
     assert "Three-program visual evidence record" in orientation
     assert "Research I exposes its scientific-result figures" in orientation
     assert "Research II renders its canonical theorem and architecture record" in orientation
-    assert "Research III exposes 9 foundational architecture visuals plus 22 code-generated V1-V55 validation-result figures" in orientation
+    assert "Research III opens with a V16-V55 evidence-architecture schematic before 9 foundational architecture visuals and 22 code-generated V1-V55 validation-result figures" in orientation
     assert "Three-program provenance and reproducibility" in orientation
     assert "Research I physical-system provenance" in orientation
     assert "Research II P1-P100 theorem provenance" in orientation

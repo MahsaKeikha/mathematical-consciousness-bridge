@@ -1,7 +1,7 @@
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PIN = "8de006a11d09d290fa3a45d144f8b024012fac3d"
+PIN = "03a0a14398060a3b4ea2599499510664e5db5108"
 
 
 def _read(path: str) -> str:
@@ -24,7 +24,7 @@ def test_research_three_v50_public_layer_uses_verified_snapshot() -> None:
     assert PIN in orientation
     assert "V1-V55 result record" in refresh
     assert "22 / 22 visible" in refresh
-    assert "198</strong><span>tests in each CI job" in orientation
+    assert "200</strong><span>tests in each CI job" in orientation
     assert "31 scientific visuals" in orientation
 
 
@@ -109,7 +109,7 @@ def test_homepage_orientation_promotes_engineering_validation() -> None:
 
     assert "function enhanceHomepageResearchIII()" in script
     assert "V1-V55 formal validation" in script
-    assert "198</strong><span>tests in each CI job" in script
+    assert "200</strong><span>tests in each CI job" in script
     assert "31 scientific visuals" in script
     assert "11 reproducible validation runners" in script
     assert "enhanceHomepageResearchIII();" in script
@@ -129,7 +129,7 @@ def test_research_lineage_exposes_current_research_three_v50_record() -> None:
     assert PIN in lineage
     assert "<strong>V1-V55</strong><span>formal validation stages</span>" in lineage
     assert "<strong>22</strong><span>code-generated validation figures</span>" in lineage
-    assert "<strong>198</strong><span>tests in each CI job</span>" in lineage
+    assert "<strong>200</strong><span>tests in each CI job</span>" in lineage
     assert "<strong>11</strong><span>reproducible validation runners</span>" in lineage
     assert "v41_v45_electromagnetic_selection_validation.svg" in lineage
     assert "V41-V45 selection-safe inference" in lineage
@@ -173,3 +173,19 @@ def test_research_three_runtime_renderer_cannot_restore_narrow_figure_cards() ->
     assert "object-fit:initial!important" in refresh
     assert "order:2!important" in refresh
     assert "order:4!important" in refresh
+
+
+def test_research_three_publication_visual_system_is_reader_visible() -> None:
+    page = _read("website/measurement-science.html")
+    refresh = _read("website/research-iii-atlas-refresh.js")
+
+    for surface in (page, refresh):
+        assert "research_iii_evidence_architecture.svg" in surface
+        assert "Read the research as a chain of failure gates, not as a collection of plots" in surface
+        assert "Eight explicit failure gates" in surface
+        assert "Claim ceiling remains visible" in surface
+
+    assert "does not increase the 31 scientific-result figure count" in page
+    assert "does not increase the 31 scientific-result figure count" in refresh
+    assert "SCIENTIFIC QUESTION" not in page
+    assert "31</strong><span>scientific visuals: 9 architecture + 22 validation" in page

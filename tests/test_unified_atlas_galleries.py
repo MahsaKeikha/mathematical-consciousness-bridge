@@ -146,6 +146,10 @@ def test_research_ii_gallery_uses_the_research_i_complete_card_language() -> Non
 
 
 def test_research_iii_gallery_exposes_architecture_validation_and_result_provenance() -> None:
+    assert "research-iii-evidence-architecture" in RESEARCH_III_REFRESH
+    assert "research_iii_evidence_architecture.svg" in RESEARCH_III_REFRESH
+    assert "Eight explicit failure gates" in RESEARCH_III_REFRESH
+    assert "Claim ceiling remains visible" in RESEARCH_III_REFRESH
     assert "research-iii-curated-visual-story" in RESEARCH_III_REFRESH
     assert "research-iii-complete-figure-gallery" in RESEARCH_III_REFRESH
     assert "research-iii-validation-figure-gallery" in RESEARCH_III_REFRESH
@@ -177,7 +181,7 @@ def test_research_iii_gallery_exposes_architecture_validation_and_result_provena
     assert "electromagnetic_replication_validation_summary.json" in RESEARCH_III_REFRESH
     assert "Electromagnetic Source Identifiability Program" in RESEARCH_III_REFRESH
     assert "V21-V25 · electromagnetic source identifiability" in RESEARCH_III_REFRESH
-    assert CURRENT_RESEARCH_THREE_PIN == "8de006a11d09d290fa3a45d144f8b024012fac3d"
+    assert CURRENT_RESEARCH_THREE_PIN == "03a0a14398060a3b4ea2599499510664e5db5108"
 
     architecture_figures = (
         "research_program_map.svg",
@@ -236,11 +240,12 @@ def test_research_iii_gallery_exposes_architecture_validation_and_result_provena
 
 
 def test_atlas_orientation_points_to_architecture_and_validation_galleries() -> None:
-    assert "Research III exposes 9 foundational architecture visuals" in ORIENTATION
+    assert "Research III opens with a V16-V55 evidence-architecture schematic" in ORIENTATION
     assert "22 code-generated V1-V55 validation-result figures" in ORIENTATION
     for anchor in (
         "#research-i-complete-figure-gallery",
         "#research-ii-complete-core-gallery",
+        "#research-iii-evidence-architecture",
         "#research-iii-complete-figure-gallery",
         "#research-iii-validation-figure-gallery",
     ):

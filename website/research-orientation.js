@@ -2,7 +2,7 @@
   const REPO = 'https://github.com/MahsaKeikha/mathematical-consciousness-bridge';
   const OBSERVER_REPO = 'https://github.com/MahsaKeikha/spatiotemporal-observer-math';
   const MEASUREMENT_REPO = 'https://github.com/MahsaKeikha/consciousness-measurement-science';
-  const MEASUREMENT_PIN = '8de006a11d09d290fa3a45d144f8b024012fac3d';
+  const MEASUREMENT_PIN = '03a0a14398060a3b4ea2599499510664e5db5108';
 
   const PAGE_CONTRACTS = {
     'index.html': {
@@ -115,12 +115,13 @@
       stage: 'Three-program visual evidence record',
       question: 'What visual evidence, architecture, or computational record belongs to Research I, Research II, and Research III, and what scientific status does each visual carry?',
       established:
-        'The Atlas uses one explicit gallery language across all three programs. Research I exposes its scientific-result figures, Research II renders its canonical theorem and architecture record, and Research III exposes 9 foundational architecture visuals plus 22 code-generated V1-V55 validation-result figures.',
+        'The Atlas uses one explicit gallery language across all three programs. Research I exposes its scientific-result figures, Research II renders its canonical theorem and architecture record, and Research III opens with a V16-V55 evidence-architecture schematic before 9 foundational architecture visuals and 22 code-generated V1-V55 validation-result figures.',
       open:
         'A figure does not upgrade the status of its underlying evidence. Research I world-tube recovery is not consciousness identification, Research II model rejection is not bridge completion, and Research III analytic or synthetic validation is not human or clinical validation.',
       links: [
         ['#research-i-complete-figure-gallery', 'Open the Research I result figures'],
         ['#research-ii-complete-core-gallery', 'Open the Research II core visuals'],
+        ['#research-iii-evidence-architecture', 'Open the Research III V16-V55 evidence architecture'],
         ['#research-iii-complete-figure-gallery', 'Open all 9 Research III architecture figures'],
         ['#research-iii-validation-figure-gallery', 'Open all 22 Research III validation figures'],
       ],
@@ -189,7 +190,7 @@
     if (programCard) {
       const metric = programCard.querySelector('.research-program-metric');
       const meta = programCard.querySelector('.research-program-meta');
-      if (metric) metric.innerHTML = '<strong>198</strong><span>tests in each CI job</span>';
+      if (metric) metric.innerHTML = '<strong>200</strong><span>tests in each CI job</span>';
       if (meta) meta.textContent = 'V1-V55 formal validation · 31 scientific visuals · 11 reproducible validation runners';
     }
 
@@ -244,7 +245,7 @@
   function loadResearchIIIAtlasRefresh() {
     const page = currentFile();
     if (!['index.html', 'measurement-science.html', 'visual-atlas.html', 'sources.html'].includes(page)) return;
-    loadScriptOnce('research-iii-atlas-refresh.js?v=20260919-r3-figure-scale', 'data-research-iii-atlas-refresh');
+    loadScriptOnce('research-iii-atlas-refresh.js?v=20260919-r3-publication-visual-system', 'data-research-iii-atlas-refresh');
   }
 
   function initialize() {
