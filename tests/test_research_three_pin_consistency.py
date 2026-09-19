@@ -6,7 +6,6 @@ from pathlib import Path
 from scripts.synchronize_research_three_website import (
     CURRENT_RESEARCH_THREE_PIN,
     LEGACY_RESEARCH_THREE_PINS,
-    assert "edc1db943d6efe8bdc679dbc5d77ecb7633476ab" in LEGACY_RESEARCH_THREE_PINS
     synchronize_site,
 )
 
@@ -28,6 +27,7 @@ KEY_PUBLIC_SURFACES = (
 
 def test_synchronizer_declares_exact_v1_v55_pin() -> None:
     assert CURRENT_RESEARCH_THREE_PIN == CURRENT_RESEARCH_III_PIN
+    assert "edc1db943d6efe8bdc679dbc5d77ecb7633476ab" in LEGACY_RESEARCH_THREE_PINS
     assert "0072642d93d77fa594634a643e46e73769af0655" in LEGACY_RESEARCH_THREE_PINS
     assert "880014743cad3ac39578161d95686f8d0b03f0a1" in LEGACY_RESEARCH_THREE_PINS
     assert "a9ef67ed15595c26b0c9f4e449f53f8078d6a1ee" in LEGACY_RESEARCH_THREE_PINS
