@@ -189,7 +189,7 @@
     if (programCard) {
       const metric = programCard.querySelector('.research-program-metric');
       const meta = programCard.querySelector('.research-program-meta');
-      if (metric) metric.innerHTML = '<strong>196</strong><span>tests in each CI job</span>';
+      if (metric) metric.innerHTML = '<strong>198</strong><span>tests in each CI job</span>';
       if (meta) meta.textContent = 'V1-V55 formal validation · 31 scientific visuals · 11 reproducible validation runners';
     }
 
@@ -244,7 +244,7 @@
   function loadResearchIIIAtlasRefresh() {
     const page = currentFile();
     if (!['index.html', 'measurement-science.html', 'visual-atlas.html', 'sources.html'].includes(page)) return;
-    loadScriptOnce('research-iii-atlas-refresh.js?v=20260919-r3-runtime-layout', 'data-research-iii-atlas-refresh');
+    loadScriptOnce('research-iii-atlas-refresh.js?v=20260919-r3-figure-scale', 'data-research-iii-atlas-refresh');
   }
 
   function initialize() {
