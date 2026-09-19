@@ -28,19 +28,19 @@ def test_research_three_v50_public_layer_uses_verified_snapshot() -> None:
     assert "31 scientific visuals" in orientation
 
 
-def test_research_three_page_has_visual_v1_v50_reproducibility_map() -> None:
+def test_research_three_page_has_visual_v1_v55_reproducibility_map() -> None:
     page = _read("website/measurement-science.html")
     styles = _read("website/styles.css")
     refresh = _read("website/research-iii-atlas-refresh.js")
 
-    assert "Ten validation programs move from identifiability to robustness, study design, electromagnetic measurement, source identifiability, resolution and information limits, design and spatial specificity, finite-sample inference, selection-safe inference, and cross-site replication inference" in page
-    for stage in ("V1-V5", "V6-V10", "V11-V15", "V16-V20", "V21-V25", "V26-V30", "V31-V35", "V36-V40", "V41-V45", "V46-V50"):
+    assert "Eleven validation programs move from identifiability to robustness, study design, electromagnetic measurement, source identifiability, resolution and information limits, design and spatial specificity, finite-sample inference, selection-safe inference, cross-site replication inference, and transportability" in page
+    for stage in ("V1-V5", "V6-V10", "V11-V15", "V16-V20", "V21-V25", "V26-V30", "V31-V35", "V36-V40", "V41-V45", "V46-V50", "V51-V55"):
         assert stage in page
     for label in ("Derivation", "Code", "Results", "Figures"):
         assert page.count(f">{label}<") >= 3
     for label in ("Research program", "Figure"):
         assert f">{label}<" in page
-    for node in range(1, 51):
+    for node in range(1, 56):
         assert f"<span>V{node}</span>" in page
     for seed in ("20260917", "20260918", "20260919"):
         assert seed in page
@@ -55,6 +55,7 @@ def test_research_three_page_has_visual_v1_v50_reproducibility_map() -> None:
         "run_electromagnetic_finite_sample_validation.py",
         "run_electromagnetic_selection_validation.py",
         "run_electromagnetic_replication_validation.py",
+        "run_transportability_validation.py",
     ):
         assert runner in page
 
