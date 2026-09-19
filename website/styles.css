@@ -2527,3 +2527,93 @@ body.research-iii-page main > .hero .status-grid > div {
     border-top: 0;
   }
 }
+
+
+/* Research III containment contract: scientific text must never escape its panel. */
+body.research-iii-page :is(
+  .hero,
+  .status-grid,
+  .status-grid > *,
+  .research-iii-stage-nav,
+  .stage-nav-track,
+  .stage-nav-track > *,
+  .validation-program-band,
+  .validation-program-head,
+  .validation-program-head > *,
+  .validation-flow,
+  .validation-node,
+  .validation-reproduce,
+  .validation-reproduce > div,
+  .measurement-figure-grid,
+  .figure-card,
+  .figure-card > *,
+  .r3-design-law-grid,
+  .r3-design-law-grid > *,
+  .r3-validation-grid,
+  .r3-validation-card,
+  .r3-validation-card-body,
+  .r3-evidence-architecture,
+  .r3-architecture-frame,
+  .boundary,
+  .figure-source-links
+) {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+body.research-iii-page :is(
+  h1, h2, h3, h4, p, span, small, strong, a, code,
+  .validation-program-summary,
+  .validation-stage-kicker,
+  .validation-node,
+  .r3-validation-card-body,
+  .r3-design-law-grid article
+) {
+  overflow-wrap: anywhere;
+  word-break: normal;
+  hyphens: auto;
+}
+
+body.research-iii-page :is(
+  .validation-reproduce code,
+  .equation,
+  mjx-container,
+  mjx-container[jax="SVG"]
+) {
+  max-width: 100%;
+}
+
+body.research-iii-page .validation-reproduce code {
+  display: block;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+body.research-iii-page .r3-design-law-grid article,
+body.research-iii-page .r3-validation-card-body,
+body.research-iii-page .validation-node {
+  overflow: hidden;
+}
+
+body.research-iii-page .figure-source-links a,
+body.research-iii-page .validation-stage-actions a,
+body.research-iii-page .r3-validation-links a {
+  max-width: 100%;
+  white-space: normal;
+  text-align: left;
+}
+
+@media (max-width: 1180px) {
+  body.research-iii-page .r3-design-law-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 700px) {
+  body.research-iii-page .r3-design-law-grid,
+  body.research-iii-page .r3-validation-grid,
+  body.research-iii-page .validation-flow {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
