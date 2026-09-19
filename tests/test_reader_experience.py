@@ -159,7 +159,25 @@ def test_shared_reader_css_does_not_override_research_three_stage_geometry() -> 
     css = _text("website/reader-experience-v2.css")
 
     assert "Research III owns its result-stage composition" in css
-    assert "body.research-iii-page .measurement-figure-grid" in css
+    assert "#v1-v5-result-figures" in css
+    assert "#v16-v20-electromagnetic-program" in css
+    assert 'section[id^="v21-"]' in css
     assert "grid-template-columns: none !important" in css
-    assert "body.research-iii-page .measurement-figure-grid .figure-card img" in css
     assert "max-height: none !important" in css
+    assert "body.research-iii-page .measurement-figure-grid {" not in css
+
+
+def test_research_three_early_figures_use_compact_hierarchy() -> None:
+    page = _text("website/measurement-science.html")
+    css = _text("website/reader-experience-v2.css")
+
+    assert 'id="v1-v5-result-figures"' in page
+    assert 'id="v6-v10-result-figures"' in page
+    assert "#v11-v15-result-figures" in css
+    assert "grid-template-columns: repeat(2, minmax(0, 1fr)) !important" in css
+    assert "max-height: 390px !important" in css
+    assert "#v16-v20-electromagnetic-program" in css
+    assert "#v16-v20-em-field-program" in css
+    assert "width: min(100%, 920px) !important" in css
+    assert "max-height: 620px !important" in css
+    assert "section[id^=\"v21-\"]" in css
