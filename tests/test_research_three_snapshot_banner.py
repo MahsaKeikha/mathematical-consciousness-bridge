@@ -154,5 +154,8 @@ def test_research_three_page_uses_editorial_full_width_result_stages() -> None:
     assert "max-width: none !important" in styles
     assert "height: auto !important" in styles
     assert "max-height: none !important" in styles
+    assert "grid-template-columns: minmax(0, 1.04fr) minmax(430px, 0.96fr)" not in styles
+    assert "order: 2;" in styles
+    assert "order: 4;" in styles
     assert "grid-template-columns: repeat(4, minmax(0, 1fr)) !important" in styles
     assert "linear-gradient(135deg, #111827 0%, #17233a 48%, #1d2e5c 100%)" in styles
