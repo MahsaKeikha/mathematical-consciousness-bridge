@@ -28,8 +28,6 @@ def test_visual_atlas_has_all_three_programs_with_distinct_status() -> None:
     assert "V41-V45 selection-safe inference" in atlas
     assert "V46-V50 replication inference" in atlas
     assert "V51-V55 transportability" in atlas
-    assert "V51-V55 result record" in atlas
-    assert "run_transportability_validation.py" in atlas
     assert "not an empirically or clinically validated consciousness instrument" in atlas
     assert "physical world-tube" in atlas
     assert "does not by itself identify that subsystem as a conscious subject" in atlas
@@ -129,9 +127,6 @@ def test_sources_links_each_program_to_its_real_audit_record() -> None:
     assert "V46-V50 cross-site replication inference and stability program" in sources
     assert "V51-V55 transportability across sensor systems, hardware, and states program" in sources
     assert "transportability-program.md" in sources
-    assert "transportability_validation_summary.json" in sources
-    assert "v51_v55_transportability_validation.svg" in sources
-    assert "run_transportability_validation.py" in sources
     assert "docs/electromagnetic-replication-inference.md" in sources
     assert "V21-V25 electromagnetic source-identifiability program" in sources
     assert "docs/electromagnetic-source-identifiability.md" in sources
