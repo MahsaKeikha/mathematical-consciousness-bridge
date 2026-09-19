@@ -10,7 +10,7 @@ from scripts.synchronize_research_three_website import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
-CURRENT_RESEARCH_III_PIN = "03a0a14398060a3b4ea2599499510664e5db5108"
+CURRENT_RESEARCH_III_PIN = "61103b07828532ab4b84ca4f813e0bbef2ab8d4f"
 
 KEY_PUBLIC_SURFACES = (
     "measurement-science.html",
@@ -42,6 +42,7 @@ def test_synchronizer_declares_exact_v1_v55_pin() -> None:
     assert "b3f240f2c7c8fa4c94667d2fea4d8f9f07df360c" in LEGACY_RESEARCH_THREE_PINS
     assert "771bca04b92cf775eb4f75fb3b576be6f43e0940" in LEGACY_RESEARCH_THREE_PINS
     assert "8de006a11d09d290fa3a45d144f8b024012fac3d" in LEGACY_RESEARCH_THREE_PINS
+    assert "03a0a14398060a3b4ea2599499510664e5db5108" in LEGACY_RESEARCH_THREE_PINS
 
 
 def test_primary_dynamic_research_three_surfaces_are_authored_on_current_pin() -> None:
