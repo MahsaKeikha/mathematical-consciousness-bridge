@@ -103,17 +103,20 @@ def _replace_research_three_metrics(text: str) -> str:
             f"<strong>{old_count}</strong><span>tests in each CI job</span>",
             f"<strong>{CURRENT_RESEARCH_THREE_TEST_COUNT}</strong><span>tests in each CI job</span>",
         )
-        text = text.replace(
-            f"{old_count} tests in each CI job",
+        text = re.sub(
+            rf"(?<!\\d){old_count} tests in each CI job\\b",
             f"{CURRENT_RESEARCH_THREE_TEST_COUNT} tests in each CI job",
+            text,
         )
-        text = text.replace(
-            f"{old_count}-test suite",
+        text = re.sub(
+            rf"(?<!\\d){old_count}-test suite\\b",
             f"{CURRENT_RESEARCH_THREE_TEST_COUNT}-test suite",
+            text,
         )
-        text = text.replace(
-            f"{old_count} tests",
+        text = re.sub(
+            rf"(?<!\\d){old_count} tests\\b",
             f"{CURRENT_RESEARCH_THREE_TEST_COUNT} tests",
+            text,
         )
 
     for old_visuals, old_validation in ((19, 10), (23, 14), (24, 15), (25, 16), (26, 17), (27, 18), (28, 19), (29, 20), (30, 21)):
@@ -220,12 +223,17 @@ def _upgrade_measurement_page_copy(text: str) -> str:
     text = text.replace("14 validation", "22 validation")
     text = text.replace("15 validation", "22 validation")
     text = text.replace("18 validation", "22 validation")
-    text = text.replace("98-test suite", "198-test suite")
-    text = text.replace("109-test suite", "198-test suite")
-    text = text.replace("144-test suite", "198-test suite")
-    text = text.replace("98 tests in each CI job", "198 tests in each CI job")
-    text = text.replace("109 tests in each CI job", "198 tests in each CI job")
-    text = text.replace("144 tests in each CI job", "198 tests in each CI job")
+    for old_count in (98, 109, 144):
+        text = re.sub(
+            rf"(?<!\\d){old_count}-test suite\\b",
+            "198-test suite",
+            text,
+        )
+        text = re.sub(
+            rf"(?<!\\d){old_count} tests in each CI job\\b",
+            "198 tests in each CI job",
+            text,
+        )
     text = text.replace("4 reproducible validation runners", "11 reproducible validation runners")
     text = text.replace("7 reproducible validation runners", "11 reproducible validation runners")
 
