@@ -24,7 +24,7 @@ def test_research_three_v50_public_layer_uses_verified_snapshot() -> None:
     assert PIN in orientation
     assert "V1-V55 result record" in refresh
     assert "22 / 22 visible" in refresh
-    assert "196</strong><span>tests in each CI job" in orientation
+    assert "198</strong><span>tests in each CI job" in orientation
     assert "31 scientific visuals" in orientation
 
 
@@ -109,7 +109,7 @@ def test_homepage_orientation_promotes_engineering_validation() -> None:
 
     assert "function enhanceHomepageResearchIII()" in script
     assert "V1-V55 formal validation" in script
-    assert "196</strong><span>tests in each CI job" in script
+    assert "198</strong><span>tests in each CI job" in script
     assert "31 scientific visuals" in script
     assert "11 reproducible validation runners" in script
     assert "enhanceHomepageResearchIII();" in script
