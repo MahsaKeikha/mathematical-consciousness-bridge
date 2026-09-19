@@ -1,7 +1,7 @@
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PIN = "03a0a14398060a3b4ea2599499510664e5db5108"
+PIN = "61103b07828532ab4b84ca4f813e0bbef2ab8d4f"
 
 
 def _read(path: str) -> str:
@@ -24,7 +24,7 @@ def test_research_three_v50_public_layer_uses_verified_snapshot() -> None:
     assert PIN in orientation
     assert "V1-V55 result record" in refresh
     assert "22 / 22 visible" in refresh
-    assert "200</strong><span>tests in each CI job" in orientation
+    assert "201</strong><span>tests in each CI job" in orientation
     assert "31 scientific visuals" in orientation
 
 
@@ -109,7 +109,7 @@ def test_homepage_orientation_promotes_engineering_validation() -> None:
 
     assert "function enhanceHomepageResearchIII()" in script
     assert "V1-V55 formal validation" in script
-    assert "200</strong><span>tests in each CI job" in script
+    assert "201</strong><span>tests in each CI job" in script
     assert "31 scientific visuals" in script
     assert "11 reproducible validation runners" in script
     assert "enhanceHomepageResearchIII();" in script
@@ -129,7 +129,7 @@ def test_research_lineage_exposes_current_research_three_v50_record() -> None:
     assert PIN in lineage
     assert "<strong>V1-V55</strong><span>formal validation stages</span>" in lineage
     assert "<strong>22</strong><span>code-generated validation figures</span>" in lineage
-    assert "<strong>200</strong><span>tests in each CI job</span>" in lineage
+    assert "<strong>201</strong><span>tests in each CI job</span>" in lineage
     assert "<strong>11</strong><span>reproducible validation runners</span>" in lineage
     assert "v41_v45_electromagnetic_selection_validation.svg" in lineage
     assert "V41-V45 selection-safe inference" in lineage
