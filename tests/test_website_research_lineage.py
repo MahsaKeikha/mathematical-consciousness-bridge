@@ -36,7 +36,7 @@ def test_lineage_exposes_auditable_research_one_entry_points() -> None:
 
 
 
-def test_lineage_exposes_current_research_three_v50_progression() -> None:
+def test_lineage_exposes_current_research_three_v55_progression() -> None:
     page = Path("website/research-lineage.html").read_text(encoding="utf-8")
 
     for token in (
@@ -83,8 +83,10 @@ def test_lineage_keeps_each_research_program_in_its_own_stage() -> None:
     research_ii = page.index("Research II · bridge test architecture")
     research_iii = page.index('id="research-iii"')
     v50 = page.index("v46_v50_electromagnetic_replication_validation.svg")
+    v55 = page.index("v51_v55_transportability_validation.svg")
+    research_iii_boundary = page.index("What Research III does not assume")
 
-    assert research_i < research_ii < research_iii < v50
+    assert research_i < research_ii < research_iii < v50 < v55 < research_iii_boundary
     assert research_i < page.index("Research I in four steps") < research_ii
     assert research_ii < page.index("Research II in five steps") < research_iii
     assert "The current Research III frontier makes search and selection part of the scientific claim" not in page
