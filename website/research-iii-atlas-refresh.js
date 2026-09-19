@@ -8,7 +8,7 @@
   const RESULT_PIN_PREFIX =
     `${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/`;
 
-  const LEGACY_PINS = ['edc1db943d6efe8bdc679dbc5d77ecb7633476ab'];
+  const LEGACY_PINS = ['89581ff150d768998967500d079d7ba61deafe86'];
 
 
   const FOUNDATION_FIGURES = [
