@@ -1735,8 +1735,32 @@ img {
   font-size: 1.35rem;
 }
 
-.research-iii-page main > .hero .status-grid span {
-  color: #bdc7d9;
+body.research-iii-page main > .hero .lede,
+body.research-iii-page main > .hero p:not(.eyebrow),
+body.research-iii-page main > .hero .status-grid span,
+body.research-iii-page main > .hero .status-grid small {
+  color: #f2f6ff !important;
+  opacity: 1 !important;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .16);
+}
+
+body.research-iii-page main > .hero .eyebrow {
+  color: #d7dfff !important;
+  opacity: 1 !important;
+}
+
+body.research-iii-page main > .hero .status-grid strong {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+body.research-iii-page main > .hero .status-grid,
+body.research-iii-page main > .hero .status-grid > div {
+  border-color: rgba(242, 246, 255, .42) !important;
+}
+
+body.research-iii-page main > .hero .status-grid span {
+  color: #dbe7f5 !important;
 }
 
 .research-iii-page .research-iii-stage-nav {
