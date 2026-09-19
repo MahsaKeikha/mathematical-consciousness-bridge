@@ -1,7 +1,7 @@
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PIN = "466b327dcd31dadee630d3b7d36fa55817766496"
+PIN = "8de006a11d09d290fa3a45d144f8b024012fac3d"
 
 
 def _read(path: str) -> str:
