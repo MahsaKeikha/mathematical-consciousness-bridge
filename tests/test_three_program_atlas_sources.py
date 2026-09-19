@@ -138,7 +138,7 @@ def test_sitewide_orientation_describes_atlas_and_sources_as_three_program_surfa
     assert "Three-program visual evidence record" in orientation
     assert "Research I exposes its scientific-result figures" in orientation
     assert "Research II renders its canonical theorem and architecture record" in orientation
-    assert "Research III opens with a V16-V55 evidence-architecture schematic before 9 foundational architecture visuals and 22 code-generated validation-result figures" in orientation
+    assert "Research III opens with a V16-V55 evidence-architecture schematic before 9 foundational architecture visuals and 22 code-generated V1-V55 validation-result figures" in orientation
     assert "Three-program provenance and reproducibility" in orientation
     assert "Research I physical-system provenance" in orientation
     assert "Research II P1-P100 theorem provenance" in orientation
