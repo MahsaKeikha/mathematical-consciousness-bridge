@@ -42,7 +42,7 @@ def test_lineage_exposes_current_research_three_v55_progression() -> None:
     for token in (
         "V1-V55</strong><span>formal validation stages",
         "22</strong><span>code-generated validation figures",
-        "200</strong><span>tests in each CI job",
+        "201</strong><span>tests in each CI job",
         "11</strong><span>reproducible validation runners",
         "Nine linked validation layers",
         "V1-V15 · identification and validation",
