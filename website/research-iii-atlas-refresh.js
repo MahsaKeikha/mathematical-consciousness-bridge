@@ -1,5 +1,5 @@
 (() => {
-  const RESEARCH_III_PIN = 'edc1db943d6efe8bdc679dbc5d77ecb7633476ab';
+  const RESEARCH_III_PIN = '89581ff150d768998967500d079d7ba61deafe86';
   const MEASUREMENT_REPO = 'https://github.com/MahsaKeikha/consciousness-measurement-science';
   const RAW_PIN_PREFIX =
     `https://raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/${RESEARCH_III_PIN}/docs/figures/`;
@@ -8,7 +8,7 @@
   const RESULT_PIN_PREFIX =
     `${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/`;
 
-  const LEGACY_PINS = [];
+  const LEGACY_PINS = ['edc1db943d6efe8bdc679dbc5d77ecb7633476ab'];
 
 
   const FOUNDATION_FIGURES = [
@@ -246,6 +246,14 @@
       phase: 'V46-V50 · cross-site replication inference',
       summary: 'Common-effect pooling, heterogeneity calibration, leave-one-site-out influence, partial-conjunction replicability, and site-weight concentration are audited without treating synthetic sites as external empirical replication.',
     },
+    {
+      title: 'Transportability across sensors, hardware, and states',
+      file: 'v51_v55_transportability_validation.svg',
+      context: 'docs/transportability-program.md',
+      result: 'transportability_validation_summary.json',
+      phase: 'V51-V55 · transportability and distribution shift',
+      summary: 'Coordinate invariance, projection information loss, cross-hardware topography mismatch, importance-weight overlap, and sharp total-variation transport budgets are audited without treating analytic transport laws as empirical generalization.',
+    },
   ];
 
   const CURATED_FILES = new Set([
@@ -274,15 +282,15 @@
     let updated = value;
     for (const pin of LEGACY_PINS) updated = updated.replaceAll(pin, RESEARCH_III_PIN);
     updated = updated.replace(
-      'github.com/MahsaKeikha/consciousness-measurement-science/blob/edc1db943d6efe8bdc679dbc5d77ecb7633476ab/',
+      'github.com/MahsaKeikha/consciousness-measurement-science/blob/89581ff150d768998967500d079d7ba61deafe86/',
       `github.com/MahsaKeikha/consciousness-measurement-science/blob/${RESEARCH_III_PIN}/`,
     );
     updated = updated.replace(
-      'github.com/MahsaKeikha/consciousness-measurement-science/tree/edc1db943d6efe8bdc679dbc5d77ecb7633476ab/',
+      'github.com/MahsaKeikha/consciousness-measurement-science/tree/89581ff150d768998967500d079d7ba61deafe86/',
       `github.com/MahsaKeikha/consciousness-measurement-science/tree/${RESEARCH_III_PIN}/`,
     );
     updated = updated.replace(
-      'raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/edc1db943d6efe8bdc679dbc5d77ecb7633476ab/',
+      'raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/89581ff150d768998967500d079d7ba61deafe86/',
       `raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/${RESEARCH_III_PIN}/`,
     );
     return updated;
@@ -463,10 +471,10 @@
     validation.className = 'r3-validation-record';
     validation.innerHTML = `
       <div class="r3-validation-head">
-        <div><span class="record-badge">Executable formal validation</span><h3>V1-V50 result record</h3><p>Twenty-one code-generated result figures connect the mathematical program to deterministic simulations, exact design laws, failure tests, machine-readable outputs, and reproducible source code.</p></div>
-        <span class="record-badge">21 / 21 visible</span>
+        <div><span class="record-badge">Executable formal validation</span><h3>V1-V55 result record</h3><p>Twenty-two code-generated result figures connect the mathematical program to deterministic simulations, exact design laws, failure tests, machine-readable outputs, and reproducible source code.</p></div>
+        <span class="record-badge">22 / 22 visible</span>
       </div>
-      <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">V1-V50 program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Machine-readable results</a></div>
+      <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">V1-V55 program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Machine-readable results</a></div>
       <div class="r3-validation-grid">${VALIDATION_FIGURES.map(validationCard).join('')}</div>`;
 
     if (boundary) {
@@ -490,10 +498,10 @@
     block.className = 'r3-validation-record';
     block.innerHTML = `
       <div class="r3-validation-head">
-        <div><span class="source-visual-badge">Research III executable evidence</span><h3>Formal validation V1-V50: derivations, result data, figures, code, and tests</h3><p>The architecture sources remain separate from the result record. Every validation figure below is pinned to the same verified Research III commit and links to its formal derivation, exact machine-readable result file, and figure source.</p></div>
-        <span class="source-visual-badge">21 result figures</span>
+        <div><span class="source-visual-badge">Research III executable evidence</span><h3>Formal validation V1-V55: derivations, result data, figures, code, and tests</h3><p>The architecture sources remain separate from the result record. Every validation figure below is pinned to the same verified Research III commit and links to its formal derivation, exact machine-readable result file, and figure source.</p></div>
+        <span class="source-visual-badge">22 result figures</span>
       </div>
-      <div class="source-section-visual-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">Validation program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Result index</a><a href="${MEASUREMENT_REPO}/tree/${RESEARCH_III_PIN}/tests">182-test suite</a></div>
+      <div class="source-section-visual-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md">Validation program</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/validation-atlas.md">Validation atlas</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/README.md">Result index</a><a href="${MEASUREMENT_REPO}/tree/${RESEARCH_III_PIN}/tests">192-test suite</a></div>
       <div class="r3-validation-grid">${VALIDATION_FIGURES.map(validationCard).join('')}</div>`;
 
     const existing = document.getElementById('research-iii-source-complete-figure-gallery');
@@ -513,20 +521,20 @@
     const status = document.querySelector('.status-grid');
     if (status) {
       const cells = status.querySelectorAll(':scope > div');
-      if (cells[0]) cells[0].innerHTML = '<strong>V1-V50</strong><span>formal validation stages</span>';
-      if (cells[1]) cells[1].innerHTML = '<strong>30</strong><span>scientific visuals: 9 architecture + 21 validation</span>';
-      if (cells[2]) cells[2].innerHTML = '<strong>182</strong><span>tests in each CI job</span>';
+      if (cells[0]) cells[0].innerHTML = '<strong>V1-V55</strong><span>formal validation stages</span>';
+      if (cells[1]) cells[1].innerHTML = '<strong>31</strong><span>scientific visuals: 9 architecture + 22 validation</span>';
+      if (cells[2]) cells[2].innerHTML = '<strong>192</strong><span>tests in each CI job</span>';
       if (cells[3]) cells[3].innerHTML = '<strong>3</strong><span>Python versions in the CI matrix</span>';
     }
 
     const primary = document.querySelector('.hero-actions .button.primary');
     if (primary) {
-      primary.textContent = 'Open V1-V50 validation program';
+      primary.textContent = 'Open V1-V55 validation program';
       primary.href = `${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/VALIDATION.md`;
     }
 
     const follow = document.querySelector('.source-grid a:first-child p');
-    if (follow) follow.textContent = 'The compact V1-V50 map: scientific question, mathematical object, executable evidence, result record, and failure condition.';
+    if (follow) follow.textContent = 'The compact V1-V55 map: scientific question, mathematical object, executable evidence, result record, and failure condition.';
 
     document.getElementById('formal-validation-v11-v15')?.remove();
     const baseStages = document.getElementById('formal-validation-v1-v10');
@@ -618,6 +626,7 @@
     document.getElementById('v36-v40-em-finite-sample-inference')?.remove();
     document.getElementById('v41-v45-em-selection-safe-inference')?.remove();
     document.getElementById('v46-v50-em-replication-inference')?.remove();
+    document.getElementById('v51-v55-transportability')?.remove();
     const emSection = document.getElementById('v16-v20-em-field-program');
     if (emSection) {
       const inverse = document.createElement('section');
@@ -799,6 +808,36 @@
         </div>
         <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/src/consciousness_measurement/electromagnetic_replication.py">Replication inference code</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/src/consciousness_measurement/electromagnetic_replication_simulations.py">Validation simulations</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/scripts/run_electromagnetic_replication_validation.py">Reproduce V46-V50</a></div>`;
       selection.insertAdjacentElement('afterend', replication);
+
+      const transport = document.createElement('section');
+      transport.id = 'v51-v55-transportability';
+      transport.className = 'r3-stage-extension';
+      transport.innerHTML = `
+        <div class="section-head">
+          <p class="eyebrow">V51-V55 · Transportability across sensor systems, hardware, and states</p>
+          <h2>Ask whether the measurement survives a change of representation, acquisition system, or population before calling it general</h2>
+          <p>This layer moves beyond replication at fixed assumptions. It separates harmless invertible coordinate changes from lossy projections, quantifies forward-topography mismatch, makes support overlap visible under covariate shift, and bounds how far bounded outputs can move under distribution shift.</p>
+        </div>
+        <div class="boundary">
+          <p><strong>Scientific claim boundary:</strong> V51-V55 are analytic and deterministic transportability results. They do not constitute empirical cross-device, cross-state, or cross-population validation, and they do not establish that an electromagnetic marker measures consciousness or qualia.</p>
+        </div>
+        <div class="measurement-figure-grid">
+          <article class="figure-card">
+            <a href="${BLOB_PIN_PREFIX}v51_v55_transportability_validation.svg"><img loading="lazy" decoding="async" src="${RAW_PIN_PREFIX}v51_v55_transportability_validation.svg" alt="Research III transportability validation V51 to V55" /></a>
+            <p class="eyebrow">V51-V55 · transportability</p>
+            <h3>Coordinate invariance, information loss, model mismatch, overlap, and bounded shift</h3>
+            <p>V51 verifies exact invariance under a consistently modeled invertible sensor transform. V52 shows that rank-reducing projection cannot increase Fisher information. V53 quantifies topography-mismatch bias. V54 recovers the target expectation exactly under declared covariate-shift assumptions while exposing effective-sample loss. V55 gives a sharp total-variation expectation-shift budget for bounded outputs.</p>
+            <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/docs/transportability-program.md">Transportability Across Sensor Systems, Hardware, and States Program</a><a href="${RESULT_PIN_PREFIX}transportability_validation_summary.json">Result record</a><a href="${BLOB_PIN_PREFIX}v51_v55_transportability_validation.svg">Figure source</a></div>
+          </article>
+        </div>
+        <div class="r3-design-law-grid">
+          <article><strong>V51: coordinate changes are not information changes</strong><p>When observation, topography, and covariance are transformed together by an invertible map, the GLS amplitude estimate and scalar Fisher information are preserved to floating-point precision.</p></article>
+          <article><strong>V52: lossy projection cannot create target information</strong><p>The canonical two-sensor projection retains about 82.44% of full information; a single mixed channel retains about 67.73%.</p></article>
+          <article><strong>V53: hardware mismatch becomes estimator bias</strong><p>Forward-topography mismatch changes the expected amplitude gain, with the relative bias bounded by the declared covariance-weighted Cauchy-Schwarz limit.</p></article>
+          <article><strong>V54-V55: transport requires overlap and a shift budget</strong><p>Importance weighting exactly recovers the target expectation under the declared support and conditional-stability assumptions, while effective sample fraction falls to about 0.472 in the strongest canonical shift. For bounded outputs, total variation gives a sharp worst-case expectation-shift budget.</p></article>
+        </div>
+        <div class="figure-source-links"><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/src/consciousness_measurement/transportability.py">Transportability code</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/src/consciousness_measurement/transportability_simulations.py">Validation constructions</a><a href="${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/scripts/run_transportability_validation.py">Reproduce V51-V55</a></div>`;
+      replication.insertAdjacentElement('afterend', transport);
     }
 
     repinResearchIIIAssets();
@@ -813,8 +852,8 @@
     if (!programCard) return false;
     const metric = programCard.querySelector('.research-program-metric');
     const meta = programCard.querySelector('.research-program-meta');
-    if (metric) metric.innerHTML = '<strong>182</strong><span>tests in each CI job</span>';
-    if (meta) meta.textContent = 'V1-V50 formal validation · 30 scientific visuals · 10 reproducible validation runners';
+    if (metric) metric.innerHTML = '<strong>192</strong><span>tests in each CI job</span>';
+    if (meta) meta.textContent = 'V1-V55 formal validation · 31 scientific visuals · 11 reproducible validation runners';
     return true;
   }
 
