@@ -69,9 +69,9 @@ def test_pages_deployment_enforces_the_unified_gallery_contract() -> None:
         "research-iii-source-validation-gallery",
         "const RESEARCH_II_CORE_EXPECTED = 100",
         "9 / 9 visible",
-        "21 / 21 visible",
-        "21 result figures",
-        "V1-V50 result record",
+        "22 / 22 visible",
+        "22 result figures",
+        "V1-V55 result record",
         "Result data",
         "v11_missingness_information_law.svg",
         "v12_v13_multisite_heterogeneity.svg",
@@ -85,6 +85,7 @@ def test_pages_deployment_enforces_the_unified_gallery_contract() -> None:
         "v36_v40_electromagnetic_finite_sample_validation.svg",
         "v41_v45_electromagnetic_selection_validation.svg",
         "v46_v50_electromagnetic_replication_validation.svg",
+        "v51_v55_transportability_validation.svg",
         "v36_v40_electromagnetic_finite_sample_validation.svg",
         "electromagnetic_inverse_validation_summary.json",
         "electromagnetic_resolution_validation_summary.json",
@@ -151,8 +152,8 @@ def test_research_iii_gallery_exposes_architecture_validation_and_result_provena
     assert "research-iii-source-validation-gallery" in RESEARCH_III_REFRESH
     assert "6-stage visual path" in RESEARCH_III_REFRESH
     assert "9 / 9 visible" in RESEARCH_III_REFRESH
-    assert "21 / 21 visible" in RESEARCH_III_REFRESH
-    assert "V1-V50 result record" in RESEARCH_III_REFRESH
+    assert "22 / 22 visible" in RESEARCH_III_REFRESH
+    assert "V1-V55 result record" in RESEARCH_III_REFRESH
     assert "Result data" in RESEARCH_III_REFRESH
     assert "Electromagnetic Field Measurement Program" in RESEARCH_III_REFRESH
     assert "V16-V20 · electromagnetic measurement arm" in RESEARCH_III_REFRESH
@@ -167,12 +168,16 @@ def test_research_iii_gallery_exposes_architecture_validation_and_result_provena
     assert "Multiplicity and Selection-Safe Electromagnetic Inference Program" in RESEARCH_III_REFRESH
     assert "V41-V45 · multiplicity and selection-safe inference" in RESEARCH_III_REFRESH
     assert "Cross-Site Replication Inference and Stability Program" in RESEARCH_III_REFRESH
+    assert "Transportability Across Sensor Systems, Hardware, and States Program" in RESEARCH_III_REFRESH
+    assert "V51-V55 · transportability" in RESEARCH_III_REFRESH
+    assert "transportability_validation_summary.json" in RESEARCH_III_REFRESH
+    assert "run_transportability_validation.py" in RESEARCH_III_REFRESH
     assert "V46-V50 · cross-site replication inference" in RESEARCH_III_REFRESH
     assert "v46_v50_electromagnetic_replication_validation.svg" in RESEARCH_III_REFRESH
     assert "electromagnetic_replication_validation_summary.json" in RESEARCH_III_REFRESH
     assert "Electromagnetic Source Identifiability Program" in RESEARCH_III_REFRESH
     assert "V21-V25 · electromagnetic source identifiability" in RESEARCH_III_REFRESH
-    assert CURRENT_RESEARCH_THREE_PIN == "edc1db943d6efe8bdc679dbc5d77ecb7633476ab"
+    assert CURRENT_RESEARCH_THREE_PIN == "89581ff150d768998967500d079d7ba61deafe86"
 
     architecture_figures = (
         "research_program_map.svg",
@@ -232,7 +237,7 @@ def test_research_iii_gallery_exposes_architecture_validation_and_result_provena
 
 def test_atlas_orientation_points_to_architecture_and_validation_galleries() -> None:
     assert "Research III exposes 9 foundational architecture visuals" in ORIENTATION
-    assert "21 code-generated V1-V50 validation-result figures" in ORIENTATION
+    assert "22 code-generated V1-V55 validation-result figures" in ORIENTATION
     for anchor in (
         "#research-i-complete-figure-gallery",
         "#research-ii-complete-core-gallery",
