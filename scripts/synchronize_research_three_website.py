@@ -369,7 +369,7 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     for marker in (
         "V1-V55",
         "22 result figures",
-        "192 tests",
+        "192</strong><span>tests in each CI job",
         "V26-V30 electromagnetic resolution and information program",
         "docs/electromagnetic-resolution-program.md",
         "V31-V35 electromagnetic design and spatial specificity program",
