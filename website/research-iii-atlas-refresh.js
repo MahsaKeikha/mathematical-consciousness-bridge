@@ -1,5 +1,5 @@
 (() => {
-  const RESEARCH_III_PIN = '466b327dcd31dadee630d3b7d36fa55817766496';
+  const RESEARCH_III_PIN = '8de006a11d09d290fa3a45d144f8b024012fac3d';
   const MEASUREMENT_REPO = 'https://github.com/MahsaKeikha/consciousness-measurement-science';
   const RAW_PIN_PREFIX =
     `https://raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/${RESEARCH_III_PIN}/docs/figures/`;
@@ -8,7 +8,7 @@
   const RESULT_PIN_PREFIX =
     `${MEASUREMENT_REPO}/blob/${RESEARCH_III_PIN}/results/`;
 
-  const LEGACY_PINS = ['466b327dcd31dadee630d3b7d36fa55817766496'];
+  const LEGACY_PINS = ['8de006a11d09d290fa3a45d144f8b024012fac3d'];
 
 
   const FOUNDATION_FIGURES = [
@@ -282,15 +282,15 @@
     let updated = value;
     for (const pin of LEGACY_PINS) updated = updated.replaceAll(pin, RESEARCH_III_PIN);
     updated = updated.replace(
-      'github.com/MahsaKeikha/consciousness-measurement-science/blob/466b327dcd31dadee630d3b7d36fa55817766496/',
+      'github.com/MahsaKeikha/consciousness-measurement-science/blob/8de006a11d09d290fa3a45d144f8b024012fac3d/',
       `github.com/MahsaKeikha/consciousness-measurement-science/blob/${RESEARCH_III_PIN}/`,
     );
     updated = updated.replace(
-      'github.com/MahsaKeikha/consciousness-measurement-science/tree/466b327dcd31dadee630d3b7d36fa55817766496/',
+      'github.com/MahsaKeikha/consciousness-measurement-science/tree/8de006a11d09d290fa3a45d144f8b024012fac3d/',
       `github.com/MahsaKeikha/consciousness-measurement-science/tree/${RESEARCH_III_PIN}/`,
     );
     updated = updated.replace(
-      'raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/466b327dcd31dadee630d3b7d36fa55817766496/',
+      'raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/8de006a11d09d290fa3a45d144f8b024012fac3d/',
       `raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/${RESEARCH_III_PIN}/`,
     );
     return updated;
