@@ -11,8 +11,9 @@ import argparse
 import re
 from pathlib import Path
 
-CURRENT_RESEARCH_THREE_PIN = "03a0a14398060a3b4ea2599499510664e5db5108"
+CURRENT_RESEARCH_THREE_PIN = "61103b07828532ab4b84ca4f813e0bbef2ab8d4f"
 LEGACY_RESEARCH_THREE_PINS = (
+    "03a0a14398060a3b4ea2599499510664e5db5108",
     "8de006a11d09d290fa3a45d144f8b024012fac3d",
     "466b327dcd31dadee630d3b7d36fa55817766496",
     "89581ff150d768998967500d079d7ba61deafe86",
@@ -34,7 +35,7 @@ LEGACY_RESEARCH_THREE_PINS = (
     "a9ef67ed15595c26b0c9f4e449f53f8078d6a1ee",
     "64b2bc47461fe110b135080f8dc70883552d6fd9",
 )
-CURRENT_RESEARCH_THREE_TEST_COUNT = 200
+CURRENT_RESEARCH_THREE_TEST_COUNT = 201
 ROOT = Path(__file__).resolve().parents[1]
 MEASUREMENT_REPO_PATH = "MahsaKeikha/consciousness-measurement-science"
 PUBLIC_SUFFIXES = {".html", ".js"}
@@ -100,7 +101,7 @@ def _replace_research_three_pins(text: str) -> str:
 def _replace_research_three_metrics(text: str) -> str:
     if "Research III" not in text and "consciousness-measurement-science" not in text:
         return text
-    for old_count in (23, 34, 35, 81, 98, 109, 121, 133, 144, 159, 171, 182, 192, 196, 198):
+    for old_count in (23, 34, 35, 81, 98, 109, 121, 133, 144, 159, 171, 182, 192, 196, 198, 200):
         text = text.replace(
             f"<strong>{old_count}</strong><span>tests in each CI job</span>",
             f"<strong>{CURRENT_RESEARCH_THREE_TEST_COUNT}</strong><span>tests in each CI job</span>",
@@ -228,12 +229,12 @@ def _upgrade_measurement_page_copy(text: str) -> str:
     for old_count in (98, 109, 144):
         text = re.sub(
             rf"(?<!\\d){old_count}-test suite\\b",
-            "200-test suite",
+            "201-test suite",
             text,
         )
         text = re.sub(
             rf"(?<!\\d){old_count} tests in each CI job\\b",
-            "200 tests in each CI job",
+            "201 tests in each CI job",
             text,
         )
     text = text.replace("4 reproducible validation runners", "11 reproducible validation runners")
@@ -359,7 +360,7 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     for marker in (
         CURRENT_RESEARCH_THREE_PIN,
         "V1-V55 formal validation",
-        "200</strong><span>tests in each CI job",
+        "201</strong><span>tests in each CI job",
         "31 scientific visuals",
         "loadResearchIIIAtlasRefresh();",
     ):
@@ -370,7 +371,7 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     for marker in (
         "V1-V55",
         "22</strong><span>code-generated validation figures",
-        "200</strong><span>tests in each CI job",
+        "201</strong><span>tests in each CI job",
         "v26_v30_electromagnetic_resolution_validation.svg",
         "v31_v35_electromagnetic_design_validation.svg",
         "v36_v40_electromagnetic_finite_sample_validation.svg",
@@ -385,7 +386,7 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     for marker in (
         "V1-V55",
         "22 result figures",
-        "200</strong><span>tests in each CI job",
+        "201</strong><span>tests in each CI job",
         "V26-V30 electromagnetic resolution and information program",
         "docs/electromagnetic-resolution-program.md",
         "V31-V35 electromagnetic design and spatial specificity program",
@@ -406,7 +407,7 @@ def _validate_site(site: Path, transformed: dict[Path, str]) -> None:
     for marker in (
         "V1-V55",
         "22</strong><span>code-generated validation figures",
-        "200</strong><span>tests in each CI job",
+        "201</strong><span>tests in each CI job",
         "11</strong><span>reproducible validation runners",
         "v41_v45_electromagnetic_selection_validation.svg",
         "V41-V45 selection-safe inference",
