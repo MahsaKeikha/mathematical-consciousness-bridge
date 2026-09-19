@@ -2,7 +2,7 @@
   const REPO = 'https://github.com/MahsaKeikha/mathematical-consciousness-bridge';
   const OBSERVER_REPO = 'https://github.com/MahsaKeikha/spatiotemporal-observer-math';
   const MEASUREMENT_REPO = 'https://github.com/MahsaKeikha/consciousness-measurement-science';
-  const MEASUREMENT_PIN = '89581ff150d768998967500d079d7ba61deafe86';
+  const MEASUREMENT_PIN = '8de006a11d09d290fa3a45d144f8b024012fac3d';
 
   const PAGE_CONTRACTS = {
     'index.html': {
@@ -244,7 +244,7 @@
   function loadResearchIIIAtlasRefresh() {
     const page = currentFile();
     if (!['index.html', 'measurement-science.html', 'visual-atlas.html', 'sources.html'].includes(page)) return;
-    loadScriptOnce('research-iii-atlas-refresh.js?v=20260919-r3-runtime-layout', 'data-research-iii-atlas-refresh');
+    loadScriptOnce('research-iii-atlas-refresh.js?v=20260919-r3-figure-scale', 'data-research-iii-atlas-refresh');
   }
 
   function initialize() {
