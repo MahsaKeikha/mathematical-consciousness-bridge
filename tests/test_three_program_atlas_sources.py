@@ -20,7 +20,7 @@ def test_visual_atlas_has_all_three_programs_with_distinct_status() -> None:
 
     assert "58" in atlas and "45" in atlas and "33" in atlas and "223" in atlas
     assert "100" in atlas and "158" in atlas and "P100" in atlas
-    assert "V1-V55" in atlas and "22" in atlas and "201" in atlas and "M0-M7" in atlas
+    assert "V1-V55" in atlas and "22" in atlas and "202" in atlas and "M0-M7" in atlas
     assert "V21-V25 source identifiability" in atlas
     assert "V26-V30 resolution and information limits" in atlas
     assert "V31-V35 design and spatial specificity" in atlas
