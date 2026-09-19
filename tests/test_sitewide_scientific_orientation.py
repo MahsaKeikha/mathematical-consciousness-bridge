@@ -77,6 +77,7 @@ def test_research_three_orientation_keeps_intro_with_heading() -> None:
     script = _read("website/research-orientation.js")
     css = _read("website/research-orientation.css")
     app = _read("website/app.js")
+    orientation = _read("website/research-orientation.js")
 
     assert "heading: 'Scientific scope and validation status'" in script
     assert "The formal results below concern identifiability, uncertainty, robustness, and measurement design." in script
