@@ -74,3 +74,17 @@ def test_research_three_dark_hero_overrides_generic_muted_text() -> None:
     assert "color: #ffffff !important" in CSS
     assert _contrast("#e2e8f0", "#1d2e5c") >= 7.0
     assert _contrast("#c9d5ff", "#1d2e5c") >= 7.0
+
+
+def test_research_three_page_has_global_text_containment_contract() -> None:
+    styles = (ROOT / "website" / "styles.css").read_text(encoding="utf-8")
+
+    assert "Research III containment contract" in styles
+    assert "body.research-iii-page :is(" in styles
+    assert "overflow-wrap: anywhere" in styles
+    assert "min-width: 0" in styles
+    assert "max-width: 100%" in styles
+    assert "body.research-iii-page .validation-reproduce code" in styles
+    assert "white-space: pre-wrap" in styles
+    assert "body.research-iii-page .r3-design-law-grid article" in styles
+    assert "overflow: hidden" in styles
