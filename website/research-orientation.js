@@ -245,7 +245,7 @@
   function loadResearchIIIAtlasRefresh() {
     const page = currentFile();
     if (!['index.html', 'measurement-science.html', 'visual-atlas.html', 'sources.html'].includes(page)) return;
-    loadScriptOnce('research-iii-atlas-refresh.js?v=20260919-r3-hero-contrast', 'data-research-iii-atlas-refresh');
+    loadScriptOnce('research-iii-atlas-refresh.js?v=20260919-r3-hero-contrast-v2', 'data-research-iii-atlas-refresh');
   }
 
   function initialize() {
