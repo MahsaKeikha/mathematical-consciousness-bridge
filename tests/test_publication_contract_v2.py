@@ -183,7 +183,7 @@ def test_research_lineage_preserves_counts_and_scientific_boundaries() -> None:
         f"P{frontier}</strong><span>current theorem frontier",
         "Research III · consciousness measurement science",
         "V1-V55</strong><span>formal validation stages",
-        "200</strong><span>tests in each CI job",
+        "201</strong><span>tests in each CI job",
         "22</strong><span>code-generated validation figures",
         "11</strong><span>reproducible validation runners",
         "V36-V40 · finite-sample electromagnetic inference",
