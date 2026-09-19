@@ -173,3 +173,19 @@ def test_research_three_runtime_renderer_cannot_restore_narrow_figure_cards() ->
     assert "object-fit:initial!important" in refresh
     assert "order:2!important" in refresh
     assert "order:4!important" in refresh
+
+
+def test_research_three_publication_visual_system_is_reader_visible() -> None:
+    page = _read("website/measurement-science.html")
+    refresh = _read("website/research-iii-atlas-refresh.js")
+
+    for surface in (page, refresh):
+        assert "research_iii_evidence_architecture.svg" in surface
+        assert "Read the research as a chain of failure gates, not as a collection of plots" in surface
+        assert "Eight explicit failure gates" in surface
+        assert "Claim ceiling remains visible" in surface
+
+    assert "does not increase the 31 scientific-result figure count" in page
+    assert "does not increase the 31 scientific-result figure count" in refresh
+    assert "SCIENTIFIC QUESTION" not in page
+    assert "31</strong><span>scientific visuals: 9 architecture + 22 validation" in page
