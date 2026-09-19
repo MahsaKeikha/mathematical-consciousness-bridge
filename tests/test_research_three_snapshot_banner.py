@@ -173,3 +173,17 @@ def test_research_three_runtime_renderer_cannot_restore_narrow_figure_cards() ->
     assert "object-fit:initial!important" in refresh
     assert "order:2!important" in refresh
     assert "order:4!important" in refresh
+
+
+def test_redesigned_em_figures_use_restrained_web_scale() -> None:
+    reader = _read("website/reader-experience-v2.css")
+    refresh = _read("website/research-iii-atlas-refresh.js")
+
+    assert "Research III redesigned electromagnetic figures: restrained publication scale" in reader
+    assert "max-width: 900px !important" in reader
+    assert "max-width: 1040px !important" in reader
+    assert "#v16-v20-em-field-program .measurement-figure-grid>.figure-card" in refresh
+    assert "max-width:900px!important" in refresh
+    assert "#v21-v25-em-source-identifiability,#v26-v30-em-resolution-information" in refresh
+    assert "max-width:1040px!important" in refresh
+    assert "box-shadow:none!important" in refresh
