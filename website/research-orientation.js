@@ -115,7 +115,7 @@
       stage: 'Three-program visual evidence record',
       question: 'What visual evidence, architecture, or computational record belongs to Research I, Research II, and Research III, and what scientific status does each visual carry?',
       established:
-        'The Atlas uses one explicit gallery language across all three programs. Research I exposes its scientific-result figures, Research II renders its canonical theorem and architecture record, and Research III exposes 9 foundational architecture visuals plus 22 code-generated V1-V55 validation-result figures.',
+        'The Atlas uses one explicit gallery language across all three programs. Research I exposes its scientific-result figures, Research II renders its canonical theorem and architecture record, and Research III opens with a V16-V55 evidence-architecture schematic before 9 foundational architecture visuals and 22 code-generated validation-result figures.',
       open:
         'A figure does not upgrade the status of its underlying evidence. Research I world-tube recovery is not consciousness identification, Research II model rejection is not bridge completion, and Research III analytic or synthetic validation is not human or clinical validation.',
       links: [
