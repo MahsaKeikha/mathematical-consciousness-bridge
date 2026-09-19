@@ -60,7 +60,7 @@ def test_research_three_page_has_visual_v1_v55_reproducibility_map() -> None:
         assert runner in page
 
     assert 'class="validation-flow"' in page
-    assert page.count('class="validation-node"') == 50
+    assert page.count('class="validation-node"') == 55
     assert ".validation-flow::before" in styles
     assert "grid-template-columns: repeat(5, minmax(0, 1fr))" in styles
     assert "Two deterministic runners regenerate" not in page
