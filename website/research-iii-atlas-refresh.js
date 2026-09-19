@@ -1,5 +1,5 @@
 (() => {
-  const RESEARCH_III_PIN = '03a0a14398060a3b4ea2599499510664e5db5108';
+  const RESEARCH_III_PIN = '61103b07828532ab4b84ca4f813e0bbef2ab8d4f';
   const MEASUREMENT_REPO = 'https://github.com/MahsaKeikha/consciousness-measurement-science';
   const RAW_PIN_PREFIX =
     `https://raw.githubusercontent.com/MahsaKeikha/consciousness-measurement-science/${RESEARCH_III_PIN}/docs/figures/`;
@@ -571,7 +571,7 @@
       const cells = status.querySelectorAll(':scope > div');
       if (cells[0]) cells[0].innerHTML = '<strong>V1-V55</strong><span>formal validation stages</span>';
       if (cells[1]) cells[1].innerHTML = '<strong>31</strong><span>scientific visuals: 9 architecture + 22 validation</span>';
-      if (cells[2]) cells[2].innerHTML = '<strong>200</strong><span>tests in each CI job</span>';
+      if (cells[2]) cells[2].innerHTML = '<strong>201</strong><span>tests in each CI job</span>';
       if (cells[3]) cells[3].innerHTML = '<strong>3</strong><span>Python versions in the CI matrix</span>';
     }
 
@@ -900,7 +900,7 @@
     if (!programCard) return false;
     const metric = programCard.querySelector('.research-program-metric');
     const meta = programCard.querySelector('.research-program-meta');
-    if (metric) metric.innerHTML = '<strong>200</strong><span>tests in each CI job</span>';
+    if (metric) metric.innerHTML = '<strong>201</strong><span>tests in each CI job</span>';
     if (meta) meta.textContent = 'V1-V55 formal validation · 31 scientific visuals · 11 reproducible validation runners';
     return true;
   }
