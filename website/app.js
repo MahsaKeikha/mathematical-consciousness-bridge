@@ -392,14 +392,14 @@
     if (!document.querySelector('link[data-scientific-orientation]')) {
       const stylesheet = document.createElement('link');
       stylesheet.rel = 'stylesheet';
-      stylesheet.href = 'research-orientation.css?v=20260919-r3-figure-scale';
+      stylesheet.href = 'research-orientation.css?v=20260919-r3-publication-visual-system';
       stylesheet.dataset.scientificOrientation = 'style';
       document.head.append(stylesheet);
     }
 
     if (!document.querySelector('script[data-scientific-orientation]')) {
       const script = document.createElement('script');
-      script.src = 'research-orientation.js?v=20260919-r3-figure-scale';
+      script.src = 'research-orientation.js?v=20260919-r3-publication-visual-system';
       script.dataset.scientificOrientation = 'script';
       document.head.append(script);
     }
