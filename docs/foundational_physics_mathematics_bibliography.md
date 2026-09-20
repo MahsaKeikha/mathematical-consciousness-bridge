@@ -233,12 +233,6 @@ Andrea I. Luppi et al., "Convergent transcriptomic and connectomic controllers o
 
 # 8. Mathematical consciousness and theory comparison
 
-## Tegmark 2015
-
-Max Tegmark, "Consciousness as a State of Matter," *Chaos, Solitons & Fractals* 76 (2015): 238-270. DOI: [10.1016/j.chaos.2015.03.014](https://doi.org/10.1016/j.chaos.2015.03.014).
-
-**Role:** physics/factorization lineage and conceptual background for observer-like physical organization.
-
 ## Kleiner 2019
 
 Johannes Kleiner, "Mathematical Models of Consciousness," arXiv:1907.03223.
