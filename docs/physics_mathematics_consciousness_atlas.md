@@ -333,11 +333,8 @@ Thermodynamic constraints tell us what physical information processing costs and
 
 # 11. Quantum and factorization questions
 
-Max Tegmark's state-of-matter program asked whether information, integration, independence, dynamics, and utility principles could distinguish observer-like physical organization and explored the associated factorization problem.
-
 ## Primary source
 
-Max Tegmark, **Consciousness as a State of Matter**, *Chaos, Solitons & Fractals* 76 (2015): 238-270. DOI: `10.1016/j.chaos.2015.03.014`, arXiv:1401.1219.
 
 ## Role here
 
