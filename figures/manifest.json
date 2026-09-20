@@ -48,8 +48,8 @@
     },
     {
       "path": "docs/figures/multiscale_physical_hierarchy.svg",
-      "sha256": "7c72bab6774ac89ad8e682d5757e92b514661af96044edcc9c70b9660453ea61",
-      "bytes": 9087,
+      "sha256": "d6dee7e4be51ff009c85fee185531c628a9016c1993b83d40deb013af0f22d06",
+      "bytes": 9076,
       "category": "theorem-or-architecture",
       "title": "Multiscale physical hierarchy",
       "description_chars": 636
