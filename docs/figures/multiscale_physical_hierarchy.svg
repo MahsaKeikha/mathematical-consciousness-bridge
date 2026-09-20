@@ -140,6 +140,6 @@
   <!-- Footer -->
   <rect x="80" y="1080" width="1640" height="115" rx="16" fill="#f8fafc" stroke="#cbd5e1"/>
   <text x="115" y="1118" class="label">FOUNDATIONAL LINEAGE</text>
-  <text x="115" y="1152" class="body">Shannon · Amari · Landauer · Seifert · Pearl · Tegmark</text>
+  <text x="115" y="1152" class="body">Shannon · Amari · Landauer · Seifert · Pearl</text>
   <text x="115" y="1178" class="small">Empirical and theory-specific sources are separated in the role-aware bibliographies.</text>
 </svg>
