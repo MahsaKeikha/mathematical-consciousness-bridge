@@ -40,13 +40,9 @@ The physical-to-experiential bridge remains an open research target in this proj
 
 ## 7. Research origins and scholarly provenance
 
-Intellectual origin and mathematical support are complementary scholarly roles. A paper may open a line of questions, while later results carry their own proof and reproducibility records.
+Historical motivation and mathematical support are distinct scholarly roles. The current repository presents its research questions through explicit assumptions, formal definitions, proofs, implementations, tests, and reproducibility records rather than assigning the program to a single external intellectual origin.
 
-The earliest conceptual line that eventually led to this research program began while studying Max Tegmark's *Consciousness as a State of Matter* (2015):
-
-> Max Tegmark, “Consciousness as a State of Matter,” *Chaos, Solitons & Fractals* **76** (2015), 238-270. DOI: [10.1016/j.chaos.2015.03.014](https://doi.org/10.1016/j.chaos.2015.03.014). Preprint: [arXiv:1401.1219](https://arxiv.org/abs/1401.1219).
-
-That paper is cited here as an important conceptual starting point for questions about physical subsystem structure, factorization, information, integration, independence, and dynamics. The subsequent proposition sequence develops a distinct mathematical framework, with its own assumptions, derivations, implementations, tests, and provenance.
+External literature is cited where it supplies a specific established mathematical, physical, statistical, neuroscientific, or methodological result. Repository-original propositions remain supported by their own local proof and reproducibility records.
 
 ## 8. Reader-facing publication rule
 
