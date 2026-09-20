@@ -334,8 +334,6 @@ This is one reason the project does not begin by proposing a new scalar consciou
 
 # 7. Relation to existing consciousness mathematics
 
-Tegmark 2015 emphasizes the importance of factorization and invariance questions in connecting physical descriptions to observer-like structure.
-
 Kleiner 2019 develops a general mathematical framework for models of consciousness and emphasizes the need to justify the mathematical representation of phenomenal experience.
 
 Kleiner and Tull formalize the mathematical structure of IIT in an axiomatic setting.
