@@ -164,10 +164,10 @@ This preserves a clean logical separation:
 
 ---
 
-## 5. External physical lineage
+## 5. External physical and mathematical context
 
-The role of Tegmark 2015 is conceptual: physical organization, information, integration, independence, and dynamics are investigated as candidate principles relevant to observer-like structure.
+The physical layer draws on standard ideas from dynamical systems, stochastic processes, information theory, causal intervention, and representation invariance. Those external sources are used for the specific established tools they provide.
 
-The present physical layer is more general. It permits deterministic or stochastic dynamics, explicit intervention families, observational maps, and physical equivalence classes before any bridge to experience is imposed.
+The present physical layer permits deterministic or stochastic dynamics, explicit intervention families, observational maps, and physical equivalence classes before any bridge to experience is imposed.
 
 See [Literature Map](literature_map.md) and [`references.bib`](../references.bib).
