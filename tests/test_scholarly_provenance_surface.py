@@ -7,16 +7,16 @@ def _read(relative_path: str) -> str:
     return (ROOT / relative_path).read_text(encoding="utf-8")
 
 
-def test_sources_page_records_tegmark_origin_with_collegial_scope() -> None:
+def test_public_sources_page_uses_self_contained_research_i_provenance() -> None:
     sources = _read("website/sources.html")
     assert 'id="research-origins"' in sources
-    assert "Max Tegmark" in sources
-    assert "Consciousness as a State of Matter" in sources
-    assert "10.1016/j.chaos.2015.03.014" in sources
-    assert "arXiv:1401.1219" in sources
-    assert "important conceptual starting point" in sources
-    assert "distinct mathematical framework" in sources
-
+    assert "Research I provenance" in sources
+    assert "self-contained mathematical and computational research program" in sources
+    assert "repository-original results" in sources
+    assert "Tegmark" not in sources
+    assert "Consciousness as a State of Matter" not in sources
+    assert "10.1016/j.chaos.2015.03.014" not in sources
+    assert "arXiv:1401.1219" not in sources
 
 def test_machine_readable_bibliography_contains_exact_tegmark_metadata() -> None:
     bibliography = _read("references.bib")
