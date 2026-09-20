@@ -285,7 +285,6 @@ The figure combines several source traditions, but their roles remain separate:
 | Amari | statistical-manifold / information-geometric structure |
 | Landauer and Seifert | thermodynamics of information and nonequilibrium trajectories |
 | Pearl | intervention semantics |
-| Tegmark | physical factorization / observer-structure lineage |
 | Casali and related perturbational work | empirical perturbation-response interface |
 | Luppi and related information-integration work | empirical integration / control / state evidence |
 | adversarial theory-testing literature | cross-theory empirical discrimination |
