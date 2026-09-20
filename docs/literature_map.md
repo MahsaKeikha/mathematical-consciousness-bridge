@@ -268,7 +268,7 @@ Mahsa Keikha, *Spatiotemporal Observer Mathematics*.
 
 | Repository result | Standard mathematical/statistical lineage | Consciousness / physical-science role |
 | --- | --- | --- |
-| P1 | quotient-set factorization | representation/factorization context: Tegmark; Kleiner |
+| P1 | quotient-set factorization | representation/factorization context: Kleiner |
 | P2 | total variation, binary testing, Hoeffding | unfolding and adversarial theory testing |
 | P3 | equivalence relations and quotient sets | unresolved theory multiplicity |
 | P4 | finite maximin optimization and set cover | adversarial experiment design |
