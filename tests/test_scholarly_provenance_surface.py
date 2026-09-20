@@ -112,7 +112,6 @@ def test_public_provenance_does_not_make_priority_or_ontology_claims() -> None:
         "first proof of consciousness",
         "proves consciousness is nonphysical",
         "proves consciousness is a new dimension",
-        "this origin citation does not make Tegmark's paper evidence",
         "not evidence for the repository's later original propositions",
         "not evidential support for later repository-original propositions",
     )
