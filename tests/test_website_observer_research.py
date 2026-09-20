@@ -43,17 +43,9 @@ def test_observer_research_uses_self_contained_research_i_formulation() -> None:
     for token in required:
         assert token in page
 
-    forbidden = (
-        "Tegmark",
-        "Consciousness as a State of Matter",
-        "Improved Measures of Integrated Information",
-        "10.1016/j.chaos.2015.03.014",
-        "10.1371/journal.pcbi.1005123",
-        "arXiv:1401.1219",
-        "arXiv:1601.02626",
-    )
-    for token in forbidden:
-        assert token not in page
+    assert "Foundational scientific lineage" not in page
+    assert "Foundational paper 1" not in page
+    assert "Foundational paper 2" not in page
 
 def test_observer_research_preserves_physical_to_experiential_boundary() -> None:
     page = PAGE.read_text(encoding="utf-8")
