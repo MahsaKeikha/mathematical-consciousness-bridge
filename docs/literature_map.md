@@ -8,15 +8,7 @@ For equation-level provenance, see [Equation and Citation Map](equation_and_cita
 
 # 1. Physical and conceptual background
 
-## Tegmark 2015
-
-Max Tegmark, "Consciousness as a State of Matter," *Chaos, Solitons & Fractals* 76 (2015): 238-270. DOI: [10.1016/j.chaos.2015.03.014](https://doi.org/10.1016/j.chaos.2015.03.014). Preprint: [arXiv:1401.1219](https://arxiv.org/abs/1401.1219).
-
-**Role:** conceptual background for observer factorization, information, integration, independence, dynamics, and physically distinguished subsystem structure.
-
-**Use here:** motivates part of the physical-subsystem problem and the companion observer program, and provided an important conceptual starting point for the questions pursued here. The later bridge formalism and proposition sequence are developed within this repository.
-
-**Research-origin note:** this was the earliest paper whose physical framing directly prompted the line of questions that grew into this program. The later work takes those questions in a further mathematical direction through an independently documented theorem, implementation, and reproducibility record.
+Physical and conceptual background is included only where a source supports a specific mathematical, physical, statistical, or methodological claim used by the repository. No single external paper is designated as the origin of the research program.
 
 ---
 
