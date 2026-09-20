@@ -18,15 +18,10 @@ def test_public_sources_page_uses_self_contained_research_i_provenance() -> None
     assert "10.1016/j.chaos.2015.03.014" not in sources
     assert "arXiv:1401.1219" not in sources
 
-def test_machine_readable_bibliography_contains_exact_tegmark_metadata() -> None:
+def test_machine_readable_bibliography_has_no_removed_origin_entry() -> None:
     bibliography = _read("references.bib")
-    assert "@article{tegmark2015consciousness" in bibliography
-    assert "Consciousness as a State of Matter" in bibliography
-    assert "Chaos, Solitons \\& Fractals" in bibliography
-    assert "volume  = {76}" in bibliography
-    assert "pages   = {238--270}" in bibliography
-    assert "year    = {2015}" in bibliography
-    assert "doi     = {10.1016/j.chaos.2015.03.014}" in bibliography
+    assert "Consciousness as a State of Matter" not in bibliography
+    assert "10.1016/j.chaos.2015.03.014" not in bibliography
 
 
 def test_claim_evidence_standard_separates_evidential_roles() -> None:
@@ -39,7 +34,6 @@ def test_claim_evidence_standard_separates_evidential_roles() -> None:
         "Generated and synthetic material",
         "Open bridge and interpretation claims",
         "Research origins and scholarly provenance",
-        "arXiv:1401.1219",
     )
     for marker in required:
         assert marker in standard
@@ -49,7 +43,6 @@ def test_claim_source_matrix_preserves_p91_publication_snapshot() -> None:
     matrix = _read("docs/claim_source_matrix.md")
     required = (
         "Claim-to-Source Scientific Audit Matrix",
-        "Research origin",
         "Formal consciousness modeling",
         "external methodological background plus repository formulation",
         "P75 model family",
@@ -70,13 +63,10 @@ def test_claim_source_matrix_preserves_p91_publication_snapshot() -> None:
         assert marker in matrix
 
 
-def test_reference_audit_records_tegmark_as_research_origin() -> None:
+def test_reference_audit_excludes_removed_origin_reference() -> None:
     audit = _read("docs/reference_audit.md")
-    assert "Tegmark, 2015" in audit
-    assert "10.1016/j.chaos.2015.03.014" in audit
-    assert "arXiv:1401.1219" in audit
-    assert "important conceptual starting point" in audit
-    assert "distinct mathematical framework" in audit
+    assert "Consciousness as a State of Matter" not in audit
+    assert "10.1016/j.chaos.2015.03.014" not in audit
 
 
 def test_sources_page_points_to_current_p100_and_ordered_historical_records() -> None:
@@ -125,8 +115,6 @@ def test_public_provenance_does_not_make_priority_or_ontology_claims() -> None:
         "first proof of consciousness",
         "proves consciousness is nonphysical",
         "proves consciousness is a new dimension",
-        "Tegmark validates this framework",
-        "Tegmark proves this framework",
         "this origin citation does not make Tegmark's paper evidence",
         "not evidence for the repository's later original propositions",
         "not evidential support for later repository-original propositions",
