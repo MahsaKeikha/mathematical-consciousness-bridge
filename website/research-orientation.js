@@ -2,7 +2,7 @@
   const REPO = 'https://github.com/MahsaKeikha/mathematical-consciousness-bridge';
   const OBSERVER_REPO = 'https://github.com/MahsaKeikha/spatiotemporal-observer-math';
   const MEASUREMENT_REPO = 'https://github.com/MahsaKeikha/consciousness-measurement-science';
-  const MEASUREMENT_PIN = '03a0a14398060a3b4ea2599499510664e5db5108';
+  const MEASUREMENT_PIN = '10228e525e5901661bf1a4c5ab0f2c91bbb5c7f0';
 
   const PAGE_CONTRACTS = {
     'index.html': {
@@ -190,7 +190,7 @@
     if (programCard) {
       const metric = programCard.querySelector('.research-program-metric');
       const meta = programCard.querySelector('.research-program-meta');
-      if (metric) metric.innerHTML = '<strong>200</strong><span>tests in each CI job</span>';
+      if (metric) metric.innerHTML = '<strong>202</strong><span>tests in each CI job</span>';
       if (meta) meta.textContent = 'V1-V55 formal validation · 31 scientific visuals · 11 reproducible validation runners';
     }
 
@@ -245,7 +245,7 @@
   function loadResearchIIIAtlasRefresh() {
     const page = currentFile();
     if (!['index.html', 'measurement-science.html', 'visual-atlas.html', 'sources.html'].includes(page)) return;
-    loadScriptOnce('research-iii-atlas-refresh.js?v=20260919-r3-hero-contrast', 'data-research-iii-atlas-refresh');
+    loadScriptOnce('research-iii-atlas-refresh.js?v=20260919-r3-hero-contrast-v2', 'data-research-iii-atlas-refresh');
   }
 
   function initialize() {

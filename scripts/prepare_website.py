@@ -57,7 +57,7 @@ FULL_SITE_SURFACES = (
     "research-lineage.html",
 )
 
-ASSET_VERSION = "20260919-r3-hero-contrast"
+ASSET_VERSION = "20260919-r3-hero-contrast-v2"
 SCRIPT_TAG = f'<script defer src="app.js?v={ASSET_VERSION}"></script>'
 READER_LINKS_SCRIPT_TAG = '<script defer src="reader-links.js"></script>'
 FOOTER_SCRIPT_TAG = '<script defer src="footer.js"></script>'
