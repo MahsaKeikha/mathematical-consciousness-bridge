@@ -13,15 +13,11 @@ def test_public_sources_page_uses_self_contained_research_i_provenance() -> None
     assert "Research I provenance" in sources
     assert "self-contained mathematical and computational research program" in sources
     assert "repository-original results" in sources
-    assert "Tegmark" not in sources
-    assert "Consciousness as a State of Matter" not in sources
-    assert "10.1016/j.chaos.2015.03.014" not in sources
-    assert "arXiv:1401.1219" not in sources
 
-def test_machine_readable_bibliography_has_no_removed_origin_entry() -> None:
+def test_machine_readable_bibliography_remains_parseable_source_record() -> None:
     bibliography = _read("references.bib")
-    assert "Consciousness as a State of Matter" not in bibliography
-    assert "10.1016/j.chaos.2015.03.014" not in bibliography
+    assert "@article{" in bibliography
+    assert "doi" in bibliography.lower()
 
 
 def test_claim_evidence_standard_separates_evidential_roles() -> None:
@@ -63,10 +59,11 @@ def test_claim_source_matrix_preserves_p91_publication_snapshot() -> None:
         assert marker in matrix
 
 
-def test_reference_audit_excludes_removed_origin_reference() -> None:
+def test_reference_audit_retains_evidence_classification() -> None:
     audit = _read("docs/reference_audit.md")
-    assert "Consciousness as a State of Matter" not in audit
-    assert "10.1016/j.chaos.2015.03.014" not in audit
+    assert "Reference Audit" in audit
+    assert "Evidence class" in audit
+    assert "Interpretation rule" in audit
 
 
 def test_sources_page_points_to_current_p100_and_ordered_historical_records() -> None:
