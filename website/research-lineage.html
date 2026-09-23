@@ -334,6 +334,26 @@
       </div>
     </section>
 
+    <section class="section" id="boundary-robust-handoff">
+      <div class="section-head">
+        <p class="eyebrow">Research I → Research II · New engineering interface</p>
+        <h2>The physical boundary is no longer treated as an oracle</h2>
+        <p>Research I estimates which moving physical subsystem is being followed. Research II asks whether a declared description of that subsystem is sufficient for an independently specified target. The new handoff makes the uncertainty between those two questions explicit instead of silently replacing an estimated boundary with a known one.</p>
+      </div>
+      <div class="flow">
+        <div class="flow-node"><span>1 · Identify</span><h3>Infer a moving world-tube</h3><p>Use stochastic dynamics to score candidate subsystem paths and record the best path, competitors, margins, assumptions, and finite-data uncertainty.</p></div>
+        <div class="flow-node"><span>2 · Freeze or bound</span><h3>Carry boundary uncertainty forward</h3><p>Either freeze a boundary using pilot data before downstream certification, or retain a confidence set of admissible world-tubes. Do not let certification outcomes choose their own physical boundary.</p></div>
+        <div class="flow-node"><span>3 · Construct</span><h3>Build a path-dependent descriptor</h3><p>For each admissible world-tube W, construct the physical descriptor Z<sup>W</sup>. The descriptor now records which inferred physical support generated it.</p></div>
+        <div class="flow-node"><span>4 · Test</span><h3>Ask a boundary-robust sufficiency question</h3><p>A downstream conclusion must survive the boundary uncertainty that remains. Evidence against one convenient selected path is not automatically evidence against every still-admissible physical description.</p></div>
+      </div>
+      <div class="boundary">
+        <p><strong>Why this matters:</strong> subsystem identification uncertainty becomes part of the statistical inference rather than an invisible preprocessing step. This creates a concrete research interface among dynamical-system identification, combinatorial world-tube uncertainty, descriptor construction, selection-valid testing, cross-fitting, and sequential evidence.</p>
+        <p><strong>Current step:</strong> P61 formalizes the clean sample-split case: identify and freeze the boundary on pilot data, then use genuinely protected certification data downstream. P62 will address confidence sets of multiple admissible world-tubes.</p>
+        <p><strong>Scientific boundary:</strong> this interface tests declared physical descriptors against independently declared targets. It does not identify an inferred subsystem or target with consciousness.</p>
+      </div>
+      <p><a class="button primary" href="https://github.com/MahsaKeikha/spatiotemporal-observer-math/blob/p61-boundary-freeze-bridge-interface/docs/proposition_61_sample_split_boundary_freeze.md">Audit the P61 theorem and engineering contract</a></p>
+    </section>
+
     <section class="boundary">
       <p class="eyebrow">Scientific continuity without overclaiming</p>
       <h2>The three repositories form a research progression, not a proof chain to consciousness</h2>
