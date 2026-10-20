@@ -40,3 +40,9 @@ These are population identities under the specified distribution, not sample res
 6. Keep Research II-B and II-C principal novelty in their companion papers.
 
 This page is a **paper-facing audit index**, not a replacement for the formal proposition records.
+
+## Journal positioning check (2026-10-20)
+
+The revised manuscript now explicitly separates standard mathematics from the proposed methodological integration. Conditional mutual information, factorization, entropy continuity, and classical latent identification are not claimed as individually new. The psychological contribution is a prespecified testing workflow joining independent target provenance, observation-model reliability, adequacy, and sampling uncertainty. Five threats must be evaluated before extrapolating synthetic results: correlated view errors, differential measurement, dependent or drifting samples, conservative high-dimensional bounds, and unchecked model selection.
+
+The current manuscript is a **21-page draft with 25 references**. Rendering was performed, but independent external mathematical peer review and complete source-test reproducibility remain outstanding. No acceptance claim is made.
