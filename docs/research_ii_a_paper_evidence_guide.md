@@ -45,4 +45,9 @@ This page is a **paper-facing audit index**, not a replacement for the formal pr
 
 The revised manuscript now explicitly separates standard mathematics from the proposed methodological integration. Conditional mutual information, factorization, entropy continuity, and classical latent identification are not claimed as individually new. The psychological contribution is a prespecified testing workflow joining independent target provenance, observation-model reliability, adequacy, and sampling uncertainty. Five threats must be evaluated before extrapolating synthetic results: correlated view errors, differential measurement, dependent or drifting samples, conservative high-dimensional bounds, and unchecked model selection.
 
-The current manuscript is a **21-page draft with 25 references**. Rendering was performed, but independent external mathematical peer review and complete source-test reproducibility remain outstanding. No acceptance claim is made.
+The working blinded manuscript contains **25 references and six figures**. Pagination depends on its rendered submission version. Rendering was performed, but independent external mathematical peer review and complete source-test reproducibility remain outstanding. No acceptance claim is made.
+
+
+## Manuscript figure gallery
+
+The website's [Research II-A evidence page](../website/research-ii-paper.html) displays six purpose-built SVG figures in `website/figures/research-ii-a/`, following the same six conceptual topics and numbering as the 2026-10-20 submission manuscript. The vector diagrams are independently redrawn for accessibility and high-resolution browser rendering; the manuscript itself contains separately rendered publication figures. No proof or empirical claim is made by a diagram alone. Review the source proposition records before citing the figures as evidence.
