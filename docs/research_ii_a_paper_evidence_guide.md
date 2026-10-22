@@ -51,3 +51,13 @@ The working blinded manuscript contains **25 references and six figures**. Pagin
 ## Manuscript figure gallery
 
 The website's [Research II-A evidence page](../website/research-ii-paper.html) displays six purpose-built SVG figures in `website/figures/research-ii-a/`, following the same six conceptual topics and numbering as the 2026-10-20 submission manuscript. The vector diagrams are independently redrawn for accessibility and high-resolution browser rendering; the manuscript itself contains separately rendered publication figures. No proof or empirical claim is made by a diagram alone. Review the source proposition records before citing the figures as evidence.
+
+## Submission-stage methodological clarification (October 2026)
+
+The current reviewer-strengthened draft clarifies three interpretive boundaries:
+
+1. **Non-rejection is not sufficiency.** A lower confidence bound that does not exceed zero is inconclusive about the descriptor. An affirmative bounded equivalence statement requires a prespecified tolerance, an appropriate upper bound and independent construct validity.
+2. **Two synthetic experiments test different objects.** Residual-certificate frequencies are not the same as the three-view covariance nondegeneracy-gate passage frequencies. Neither establishes empirical psychological validity or general coverage under model misspecification.
+3. **Uniform guarantees have defined scope.** Shared base-law events protect admissible deterministic descriptor pushforwards for a declared target and finite IID model; they do not automatically protect newly selected targets, dependent recordings, arbitrary learned observation channels or distribution shift.
+
+These notes are a documentation alignment with the manuscript's claims, not a report of independent proof verification or new participant evidence. For the journal manuscript, source proposition identifiers should stay out of the reader-facing figures and prose; these identifiers remain here for traceability.
