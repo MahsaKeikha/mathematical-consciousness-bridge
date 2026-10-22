@@ -65,3 +65,7 @@ These notes are a documentation alignment with the manuscript's claims, not a re
 ## Next validation gate
 
 Before treating the reviewer-strengthened draft as submission-final, reproduce the binary information-certificate and three-view covariance-gate experiments from archived source code, verify the full proof appendix against manuscript assumptions, and confirm the psychological sampling units. The manuscript's illustrative visual-detection design is proposed rather than conducted, and repeated within-subject neural trials do not become IID merely by randomizing trial order. Report this limitation in both manuscript and study preregistration.
+
+## Fixed-time and repeated-look reporting check
+
+The manuscript's theorem statements must distinguish a fixed-n base-law confidence event from an error-spent simultaneous sequence. For a declared alpha, the allocation alpha_n = 6 alpha / (pi^2 n^2) sums to alpha over positive integer n. A countable union bound then provides a simultaneous event, supporting inspections at an almost surely finite data-dependent stopping time only within the fixed finite-alphabet IID sampling model. The conclusion is not a generic confidence-sequence result for dependent trials, drifting distributions, newly constructed targets or arbitrary adaptive observation channels. This is a clarification of a standard proof mechanism, not a novel sequential-inference theorem.
