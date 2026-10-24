@@ -31,3 +31,8 @@ The sequential assumptions can be checked against [P100](proposition_100_anytime
 - Ensure submission identity, competing interests, and AI assistance disclosures comply with the receiving journal's current instructions.
 
 This document records a review workflow and known boundaries; it is not an independent guarantee of mathematical correctness.
+## Reviewer revision v2: proposed control-system design (24 October 2026)
+
+The working manuscript now includes an explicitly **proposed**, not executed, application to finite-alphabet sensor-model monitoring after adaptive feedback-controller selection. It separates pilot selection of the controller and measurement regime from independent confirmation, requires a declared filtration and fresh certification unit, and identifies false-alarm frequency, abstention rate, crossing rate, and sample use as outcomes for any future simulation. Rejection is evidence against the declared sensor-response model, **not** a proof of controller unsafety. Serially dependent closed-loop trajectories cannot be relabeled independent folds; valid application requires independent reset episodes or a separately justified dependence-aware certificate. These requirements should be validated prior to any empirical or simulation-performance claim.
+
+The manuscript's AI-assistance disclosure was also changed to avoid claiming completed independent verification of every proof and computation. Author disclosures remain subject to author confirmation. No new control experiment has been reported.
