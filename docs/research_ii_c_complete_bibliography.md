@@ -2,13 +2,13 @@
 
 These references correspond to the numbered citations in the Research II-C working manuscript. They are ordered by first manuscript citation. The list is for transparent review; not all publisher metadata and DOI details have been independently verified.
 
-1. Cox, D. R. (1975). A note on data-splitting for the evaluation of significance levels. Biometrika, 62(2), 441-444.
+1. Cox, D. R. (1975). A note on data-splitting for the evaluation of significance levels. Biometrika, 62(2), 441-444. https://doi.org/10.1093/biomet/62.2.441
 2. Chernozhukov, V., Chetverikov, D., Demirer, M., Duflo, E., Hansen, C., Newey, W., and Robins, J. (2018). Double/debiased machine learning for treatment and structural parameters. The Econometrics Journal, 21(1), C1-C68.
 3. Vovk, V., and Wang, R. (2021). E-values: Calibration, combination, and applications. The Annals of Statistics, 49(3), 1736-1754.
 4. Shafer, G., Shen, A., Vereshchagin, N., and Vovk, V. (2011). Test martingales, Bayes factors and p-values. Statistical Science, 26(1), 84-101.
 5. Ville, J. (1939). Etude critique de la notion de collectif. Paris: Gauthier-Villars.
 6. Howard, S. R., Ramdas, A., McAuliffe, J., and Sekhon, J. S. (2021). Time-uniform, nonparametric, nonasymptotic confidence sequences. The Annals of Statistics, 49(2), 1055-1080.
-7. Wasserman, L., Ramdas, A., and Balakrishnan, S. (2020). Universal inference. Proceedings of the National Academy of Sciences, 117(29), 16880-16890.
+7. Wasserman, L., Ramdas, A., and Balakrishnan, S. (2020). Universal inference. Proceedings of the National Academy of Sciences, 117(29), 16880-16890. https://doi.org/10.1073/pnas.1922664117
 8. Berk, R., Brown, L., Buja, A., Zhang, K., and Zhao, L. (2013). Valid post-selection inference. The Annals of Statistics, 41(2), 802-837.
 9. Lee, J. D., Sun, D. L., Sun, Y., and Taylor, J. E. (2016). Exact post-selection inference, with application to the lasso. The Annals of Statistics, 44(3), 907-927.
 10. Fithian, W., Sun, D., and Taylor, J. (2014). Optimal inference after model selection. arXiv:1410.2597.
@@ -22,7 +22,7 @@ These references correspond to the numbered citations in the Research II-C worki
 18. Robins, J. M., Rotnitzky, A., and Zhao, L. P. (1994). Estimation of regression coefficients when some regressors are not always observed. Journal of the American Statistical Association, 89(427), 846-866.
 19. Neyman, J. (1979). C(alpha) tests and their use. Sankhya: The Indian Journal of Statistics, Series A, 41(1/2), 1-21.
 20. Shafer, G., and Vovk, V. (2019). Game-Theoretic Foundations for Probability and Finance. Wiley.
-21. Ramdas, A., Grunwald, P., Vovk, V., and Shafer, G. (2023). Game-theoretic statistics and safe anytime-valid inference. Statistical Science, 38(4), 576-597.
+21. Ramdas, A., Grunwald, P., Vovk, V., and Shafer, G. (2023). Game-theoretic statistics and safe anytime-valid inference. Statistical Science, 38(4), 576-601.
 22. Howard, S. R., Ramdas, A., McAuliffe, J., and Sekhon, J. S. (2020). Time-uniform Chernoff bounds via nonnegative supermartingales. Probability Surveys, 17, 257-317.
 23. Darling, D. A., and Robbins, H. (1967). Confidence sequences for mean, variance, and median. Proceedings of the National Academy of Sciences, 58(1), 66-68.
 24. Wald, A. (1945). Sequential tests of statistical hypotheses. The Annals of Mathematical Statistics, 16(2), 117-186.
