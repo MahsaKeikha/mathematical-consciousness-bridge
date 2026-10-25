@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Research II-C submission evidence, assumptions, and reproducibility boundaries for adaptive model-selection inference.">
+<title>Research II-C | Adaptive evidence and sequential e-processes</title>
+<link rel="stylesheet" href="styles.css">
+<style>main{max-width:930px;margin:3rem auto;padding:0 1.3rem;line-height:1.65}table{width:100%;border-collapse:collapse}td,th{border:1px solid #9da8b7;padding:.7rem;text-align:left;vertical-align:top}.notice{padding:1rem;border-left:4px solid #6b8299;background:rgba(130,130,130,.08)}code{overflow-wrap:anywhere}</style></head>
+<body><main><p><a href="index.html">Research home</a> | <a href="research-map.html">Research map</a></p>
+<h1>Research II-C: selection-valid and anytime-valid evidence</h1>
+<p class="notice"><strong>Working paper:</strong> Selection-Valid and Anytime-Valid Evidence after Adaptive Model Search: Holdout Stratification, Cross-Fitting, E-Value Aggregation, and Sequential E-Processes. This is submission-stage documentation, not peer review, acceptance, or empirical control-system validation.</p>
+<h2>What the method protects</h2>
+<p>The framework considers different forms of adaptive model criticism: predeclared regimes, pilot/holdout selection, fixed finite-family searches, cross-fitting with own-fold exclusion, aggregation of valid fold-level e-values, and sequential accumulation across genuinely fresh rounds. The significance is a guarded composition of established methods around a declared model-rejection certificate.</p>
+<table><thead><tr><th>Stage</th><th>Non-negotiable validity condition</th></tr></thead><tbody>
+<tr><td>Holdout certification</td><td>Certification data must remain valid conditional on the pilot-selected design.</td></tr>
+<tr><td>Cross-fitting</td><td>Own-fold exclusion and the declared independent data units must be respected; fold e-values may be dependent.</td></tr>
+<tr><td>Aggregation</td><td>Prespecified nonnegative convex weights preserve an e-value's null expectation bound.</td></tr>
+<tr><td>Sequential monitoring</td><td>Each round must retain conditional null validity given the past; stakes must be predictable.</td></tr>
+</tbody></table>
+<h2>Exact arithmetic versus simulated operating characteristics</h2>
+<p>A reported exact checkpoint has round e-value 25/2. With a predictable half-stake, the round factor equals 27/4, and two valid fresh rounds give wealth 729/16 = 45.5625, above the 5% crossing boundary of 20. The arithmetic alone is not a proof that a particular empirical certificate meets the conditional-null assumptions.</p>
+<p>A separate idealized null simulation used 20,000 seeded sequences and 100 fresh rounds. It observed 545 crossings of the threshold 20, an estimated frequency of 2.725% (Wilson 95% interval approximately 2.508% to 2.960%). The simulation tests aggregation and repeated inspection under an assumed valid Bernoulli fold null, not the full latent-model implementation or a feedback controller. <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/scripts/research_ii_c_eprocess_null_stress.py">Simulation source (available after merge)</a>.</p>
+<h2>Control engineering relevance and its limits</h2>
+<p>The manuscript proposes adaptive controller selection on pilot data followed by sensor-model assessment on independent reset episodes. This application has not yet been executed. Rejecting a sensor-model family is not evidence by itself that a controller is unsafe, unstable, or suboptimal. Observations within a single closed-loop trajectory generally cannot be treated as independent episodes.</p>
+<h2>Audit trail</h2>
+<p>Read the <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/research_ii_c_rico_submission_audit.md">journal submission audit</a>, the <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/proposition_100_anytime_sequential_eprocess.md">sequential e-process theorem record</a>, and the <a href="https://github.com/MahsaKeikha/mathematical-consciousness-bridge/blob/main/docs/reproducibility.md">repository reproducibility guide</a>. The draft manuscript still requires full proof checking, bibliographic verification, and a performed controller experiment before claims of empirical engineering performance would be justified.</p>
+</main></body></html>
