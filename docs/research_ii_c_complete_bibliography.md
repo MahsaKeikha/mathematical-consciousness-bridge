@@ -34,4 +34,4 @@ These references correspond to the numbered citations in the Research II-C worki
 30. Politis, D. N., and Romano, J. P. (1994). The stationary bootstrap. Journal of the American Statistical Association, 89(428), 1303-1313.
 31. Ljung, L. (1999). System Identification: Theory for the User (2nd ed.). Prentice Hall.
 32. Astrom, K. J., and Murray, R. M. (2008). Feedback Systems: An Introduction for Scientists and Engineers. Princeton University Press.
-33. Mesbah, A. (2016). Stochastic model predictive control: An introductory review and future perspectives. IEEE Control Systems Magazine, 36(6), 30-44.
+33. Mesbah, A. (2016). Stochastic model predictive control: An overview and perspectives for future research. IEEE Control Systems Magazine, 36(6), 30-44.
