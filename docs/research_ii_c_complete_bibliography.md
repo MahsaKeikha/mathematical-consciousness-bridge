@@ -22,7 +22,7 @@ These references correspond to the numbered citations in the Research II-C worki
 18. Robins, J. M., Rotnitzky, A., and Zhao, L. P. (1994). Estimation of regression coefficients when some regressors are not always observed. Journal of the American Statistical Association, 89(427), 846-866.
 19. Neyman, J. (1979). C(alpha) tests and their use. Sankhya: The Indian Journal of Statistics, Series A, 41(1/2), 1-21.
 20. Shafer, G., and Vovk, V. (2019). Game-Theoretic Foundations for Probability and Finance. Wiley.
-21. Ramdas, A., Grunwald, P., Vovk, V., and Shafer, G. (2023). Game-theoretic statistics and safe anytime-valid inference. Statistical Science, 38(4), 576-597.
+21. Ramdas, A., Grunwald, P., Vovk, V., and Shafer, G. (2023). Game-theoretic statistics and safe anytime-valid inference. Statistical Science, 38(4), 576-601.
 22. Howard, S. R., Ramdas, A., McAuliffe, J., and Sekhon, J. S. (2020). Time-uniform Chernoff bounds via nonnegative supermartingales. Probability Surveys, 17, 257-317.
 23. Darling, D. A., and Robbins, H. (1967). Confidence sequences for mean, variance, and median. Proceedings of the National Academy of Sciences, 58(1), 66-68.
 24. Wald, A. (1945). Sequential tests of statistical hypotheses. The Annals of Mathematical Statistics, 16(2), 117-186.
