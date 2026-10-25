@@ -3,8 +3,8 @@
 **Working manuscript:** `RICO_Selection_Valid_Citations_Figures_v15.docx` (review copy distributed separately).
 
 ## Bibliography
-- 33 numbered entries, [1]–[33], in sequential numerical order.
-- 33 entries have in-text citations; the expanded context appears in the *Relation to established statistical ideas* section. Earlier canonical citations [1]–[7] are retained.
+- 33 numbered entries, [1]-[33], in sequential numerical order.
+- 33 entries have in-text citations; the expanded context appears in the *Relation to established statistical ideas* section. Earlier canonical citations [1]-[7] are retained.
 - Topic coverage: data splitting, selective inference, multiple testing, double/debiased ML, orthogonal estimation, e-values, martingales and e-processes, time-uniform boundaries, dependent data, system identification, and stochastic MPC.
 - Metadata verification is **not yet complete for all 33 entries**. Final journal submission requires author-level checking of title, volume, pagination, publisher/DOI and the precise relevance of each reference.
 
