@@ -17,3 +17,7 @@
 
 ## Outstanding independent checks
 Full peer-review-level line-by-line proof validation, comprehensive DOI verification, and model-specific controller simulation remain outstanding. Do not present this typography/citation audit as validation of theorems or simulations.
+
+## Independently checked bibliographic correction
+
+Reference [33] (Mesbah, 2016) is *Stochastic Model Predictive Control: An Overview and Perspectives for Future Research*, IEEE Control Systems Magazine 36(6), 30-44, DOI: 10.1109/MCS.2016.2602087. The earlier phrase 'An introductory review and future perspectives' was not the published title and has been corrected in the working manuscript and website bibliography.
