@@ -50,4 +50,38 @@ The working blinded manuscript contains **25 references and six figures**. Pagin
 
 ## Manuscript figure gallery
 
-The website's [Research II-A evidence page](../website/research-ii-paper.html) displays six purpose-built SVG figures in `website/figures/research-ii-a/`, following the same six conceptual topics and numbering as the 2026-10-20 submission manuscript. The vector diagrams are independently redrawn for accessibility and high-resolution browser rendering; the manuscript itself contains separately rendered publication figures. No proof or empirical claim is made by a diagram alone. Review the source proposition records before citing the figures as evidence.
+The website's [Research II-A evidence page](../website/research-ii-paper.html) displays six purpose-built SVG figures in `website/figures/research-ii-a/`, following the same six conceptual topics and numbering as the working manuscript. The vector diagrams are independently redrawn for accessibility and high-resolution browser rendering; the manuscript itself contains separately rendered publication figures. No proof or empirical claim is made by a diagram alone. Review the source proposition records before citing the figures as evidence.
+
+## Submission-stage methodological clarification (October 2026)
+
+The current reviewer-strengthened draft clarifies three interpretive boundaries:
+
+1. **Non-rejection is not sufficiency.** A lower confidence bound that does not exceed zero is inconclusive about the descriptor. An affirmative bounded equivalence statement requires a prespecified tolerance, an appropriate upper bound and independent construct validity.
+2. **Two synthetic experiments test different objects.** Residual-certificate frequencies are not the same as the three-view covariance nondegeneracy-gate passage frequencies. Neither establishes empirical psychological validity or general coverage under model misspecification.
+3. **Uniform guarantees have defined scope.** Shared base-law events protect admissible deterministic descriptor pushforwards for a declared target and finite IID model; they do not automatically protect newly selected targets, dependent recordings, arbitrary learned observation channels or distribution shift.
+
+These notes are a documentation alignment with the manuscript's claims, not a report of independent proof verification or new participant evidence. For the journal manuscript, source proposition identifiers should stay out of the reader-facing figures and prose; these identifiers remain here for traceability.
+
+## Next validation gate
+
+Before treating the reviewer-strengthened draft as submission-final, reproduce the binary information-certificate and three-view covariance-gate experiments from archived source code, verify the full proof appendix against manuscript assumptions, and confirm the psychological sampling units. The manuscript's illustrative visual-detection design is proposed rather than conducted, and repeated within-subject neural trials do not become IID merely by randomizing trial order. Report this limitation in both manuscript and study preregistration.
+
+## Fixed-time and repeated-look reporting check
+
+The manuscript's theorem statements must distinguish a fixed-n base-law confidence event from an error-spent simultaneous sequence. For a declared alpha, the allocation alpha_n = 6 alpha / (pi^2 n^2) sums to alpha over positive integer n. A countable union bound then provides a simultaneous event, supporting inspections at an almost surely finite data-dependent stopping time only within the fixed finite-alphabet IID sampling model. The conclusion is not a generic confidence-sequence result for dependent trials, drifting distributions, newly constructed targets or arbitrary adaptive observation channels. This is a clarification of a standard proof mechanism, not a novel sequential-inference theorem.
+
+## Three-view inversion boundary (manuscript verification, October 2026)
+
+In one fixed physical stratum, assume a binary latent target with interior prevalence and three conditionally independent binary observation views with nonzero loadings. The population identities are `C_ij = b_i b_j (1-m^2)` and `M_123 = -2m(1-m^2)b_1b_2b_3`. Consequently `C_12 C_13 C_23 > 0` and `q = M_123^2/(C_12 C_13 C_23) = 4m^2/(1-m^2)`. An observed zero third centered moment is compatible with a balanced latent state (`m=0`); it does not by itself invalidate identification. A zero pair covariance invalidates the nondegenerate moment inversion, and a covariance sign pattern with negative product challenges the declared model. The finite-sample covariance gate remains a sufficient refusal criterion, not an empirical validation of conditional independence, construct interpretation, or parameter-orbit coverage under model violations.
+
+This audit reconciles the manuscript interpretation with [the three-view proposition](proposition_73_target_channel_identifiability.md) and [the finite-sample recovery proposition](proposition_74_finite_sample_target_channel_recovery.md). The reviewer-strengthened manuscript remains a draft, not an independently peer-certified mathematical result.
+
+## Eight-cell concentration and certification audit (22 October 2026)
+
+For IID triples within one prespecified stratum, the eight empirical cell proportions admit the simultaneous cellwise Hoeffding radius `epsilon_n = sqrt(log(16/alpha)/(2n))` with probability at least `1-alpha`. The implied L1 bound is `delta_n = min(2, 8*epsilon_n)`. Under that common event, a conservative bound for every first moment is `delta_n`; for every pair covariance it is `3*delta_n`; and for the third centered moment it is `13*delta_n`. These constants follow from expansion in raw bounded moments and triangle inequalities and are not claimed optimal. Recovery must refuse to invert unless all three pair-covariance intervals exclude zero and their sign product is compatible with the positive product implied by the assumed nondegenerate binary three-view latent model. This is a conditional finite-sample statement, not an independent empirical model-fit test. It does not cover data-dependent stratum or target selection without additional simultaneous calibration.
+
+The revised paper states the finite-sample certificate in reader-facing terms without internal proposition numbers. The repository retains provenance and formal proof records. Mathematical review of every appendix lemma and full simulation replication remain separate outstanding checks.
+
+## Manuscript Version 9: moment-error bound audit
+
+The manuscript now spells out the raw-moment expansion underlying the conservative `delta_n`, `3 delta_n`, and `13 delta_n` simultaneous mean, pair-covariance, and third-centered-moment bounds. The common eight-cell probability event is the only claimed source of joint coverage. Failed nondegeneracy certification is a refusal to invert, not evidence that the target is absent. These are source-alignment checks, not a substitute for independent external proof review or full empirical validation.
